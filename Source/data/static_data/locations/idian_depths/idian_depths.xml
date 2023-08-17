@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Idian Depths 4.8
+	Made By (Encom)
+ -->
+<idian_depths xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="idian_depths.xsd">
+	<!-- 시그니아 -->
+	<idian_location id="1"/>
+	<!-- 엔샤르 -->
+	<idian_location id="2"/>
+	<!-- 分かれたカタラム -->
+	<idian_location id="3"/>
+	<!-- ゲルハ -->
+	<idian_location id="4"/>
+</idian_depths>

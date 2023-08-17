@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+	용사의 룬의 보호탑
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="301370000">
+	    <!-- Large Aither 400P -->
+        <spawn npc_id="409239" respawn_time="295">
+            <spot x="270.1844" y="258.60712" z="455.24808" h="65"/>
+        </spawn>
+    </spawn_map>
+</spawns>

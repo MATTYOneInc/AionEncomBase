@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Inggison 5.3
+	Make By (Encom)
+ -->
+	<report_to id="11074" start_npc_ids="798938" end_npc_ids="799025"/>
+	<report_to id="11075" start_npc_ids="798939" end_npc_ids="799067"/>
+	<report_to id="11451" start_npc_ids="798952" end_npc_ids="798933"/>
+	<report_to id="11453" start_npc_ids="798933" end_npc_ids="799070"/>
+	<report_to id="30001" start_npc_ids="798927" end_npc_ids="799029"/>
+	<report_to id="30012" start_npc_ids="799032" end_npc_ids="799030"/>
+	<report_to id="30015" start_npc_ids="798903" end_npc_ids="799032"/>
+	<report_to id="30017" start_npc_ids="798903" end_npc_ids="799032"/>
+	<report_to id="30019" start_npc_ids="798903" end_npc_ids="799032"/>
+	<report_to id="30021" start_npc_ids="798903" end_npc_ids="799032"/>
+	<report_to id="30023" start_npc_ids="798903" end_npc_ids="799032"/>
+	<report_to id="30025" start_npc_ids="798903" end_npc_ids="799032"/>
+	<report_to id="30027" start_npc_ids="798903" end_npc_ids="799032"/>
+	<report_to id="30029" start_npc_ids="798903" end_npc_ids="799032"/>
+	<report_to id="30031" start_npc_ids="798903" end_npc_ids="799032"/>
+	<!-- 훼손된 마력총 (Elyos Only) -->
+	<report_to id="30034" start_npc_ids="798903" end_npc_ids="799032"/>
+	<!-- 훼손된 마력포 (Elyos Only) -->
+	<report_to id="30036" start_npc_ids="798903" end_npc_ids="799032"/>
+	<!-- 훼손된 현악기 (Elyos Only) -->
+	<report_to id="30038" start_npc_ids="798903" end_npc_ids="799032"/>
+	<!-- 훼손된 기동쇠 (Elyos Only) -->
+	<report_to id="30040" start_npc_ids="798903" end_npc_ids="799032"/>
+	<item_collecting id="11004" start_npc_ids="798933" action_item_ids="700609"/>
+	<item_collecting id="11011" start_npc_ids="799071"/>
+	<item_collecting id="11022" start_npc_ids="798914"/>
+	<item_collecting id="11024" start_npc_ids="799049"/>
+	<item_collecting id="11025" start_npc_ids="798950"/>
+	<item_collecting id="11028" start_npc_ids="798951"/>
+	<item_collecting id="11037" start_npc_ids="798956"/>
+	<item_collecting id="11039" start_npc_ids="799035"/>
+	<item_collecting id="11042" start_npc_ids="798957"/>
+	<item_collecting id="11043" start_npc_ids="798953" action_item_ids="700611 700612 700613 700614"/>
+	<item_collecting id="11044" start_npc_ids="798953"/>
+	<item_collecting id="11047" start_npc_ids="798952"/>
+	<item_collecting id="11064" start_npc_ids="799043"/>
+	<item_collecting id="11065" start_npc_ids="799043"/>
+	<item_collecting id="11066" start_npc_ids="799049"/>
+	<item_collecting id="11067" start_npc_ids="799049"/>
+	<item_collecting id="11101" start_npc_ids="798981"/>
+	<item_collecting id="11104" start_npc_ids="798978"/>
+	<item_collecting id="11108" start_npc_ids="798965"/>
+	<item_collecting id="11111" start_npc_ids="799075"/>
+	<item_collecting id="11112" start_npc_ids="798984" action_item_ids="700615"/>
+	<item_collecting id="11113" start_npc_ids="798984"/>
+	<item_collecting id="11114" start_npc_ids="798984"/>
+	<item_collecting id="11115" start_npc_ids="798985"/>
+	<item_collecting id="11121" start_npc_ids="798991"/>
+	<item_collecting id="11125" start_npc_ids="798996"/>
+	<item_collecting id="11127" start_npc_ids="798998"/>
+	<item_collecting id="11128" start_npc_ids="798998"/>
+	<item_collecting id="11130" start_npc_ids="798996"/>
+	<item_collecting id="11142" start_npc_ids="798986"/>
+	<item_collecting id="11146" start_npc_ids="798997" action_item_ids="700910"/>
+	<item_collecting id="11148" start_npc_ids="798993"/>
+	<item_collecting id="11203" start_npc_ids="799008"/>
+	<item_collecting id="11204" start_npc_ids="799008" action_item_ids="700911 700912 700913 700914"/>
+	<item_collecting id="11211" start_npc_ids="799010" action_item_ids="700620 700621 700622 700623"/>
+	<item_collecting id="11223" start_npc_ids="799000"/>
+	<item_collecting id="11226" start_npc_ids="798971"/>
+	<item_collecting id="11229" start_npc_ids="296491" action_item_ids="700915 700916 700917"/>
+	<item_collecting id="11230" start_npc_ids="799077"/>
+	<item_collecting id="11231" start_npc_ids="799077"/>
+	<item_collecting id="11232" start_npc_ids="799077"/>
+	<item_collecting id="11268" start_npc_ids="798958"/>
+	<item_collecting id="11269" start_npc_ids="798958"/>
+	<item_collecting id="11270" start_npc_ids="798958"/>
+	<item_collecting id="11271" start_npc_ids="798958"/>
+	<item_collecting id="11272" start_npc_ids="798958"/>
+	<item_collecting id="11273" start_npc_ids="798958"/>
+	<item_collecting id="11274" start_npc_ids="798958"/>
+	<item_collecting id="11452" start_npc_ids="798933"/>
+	<item_collecting id="11454" start_npc_ids="799070"/>
+	<item_collecting id="11457" start_npc_ids="798953" action_item_ids="700635"/>
+	<item_collecting id="11461" start_npc_ids="798955" action_item_ids="700636"/>
+	<item_collecting id="11464" start_npc_ids="799526" end_npc_ids="799503" action_item_ids="700634"/>
+	<item_collecting id="21233" start_npc_ids="799354"/>
+	<item_collecting id="21234" start_npc_ids="799354"/>
+	<item_collecting id="21235" start_npc_ids="799360"/>
+	<item_collecting id="21236" start_npc_ids="799360"/>
+	<item_collecting id="30016" start_npc_ids="799032"/>
+	<item_collecting id="30018" start_npc_ids="799032"/>
+	<item_collecting id="30020" start_npc_ids="799032"/>
+	<item_collecting id="30022" start_npc_ids="799032"/>
+	<item_collecting id="30024" start_npc_ids="799032"/>
+	<item_collecting id="30026" start_npc_ids="799032"/>
+	<item_collecting id="30028" start_npc_ids="799032"/>
+	<item_collecting id="30030" start_npc_ids="799032"/>
+	<item_collecting id="30032" start_npc_ids="799032"/>
+	<!-- 마력총 복원 (Elyos Only) -->
+	<item_collecting id="30035" start_npc_ids="799032"/>
+	<!-- 마력포 복원 (Elyos Only) -->
+	<item_collecting id="30037" start_npc_ids="799032"/>
+	<!-- 현악기 복원 (Elyos Only) -->
+	<item_collecting id="30039" start_npc_ids="799032"/>
+	<!-- 기동쇠 복원 (Elyos Only) -->
+	<item_collecting id="30041" start_npc_ids="799032"/>
+	<item_collecting id="38502" start_npc_ids="799085"/>
+	<item_collecting id="38503" start_npc_ids="799086"/>
+	<item_collecting id="38505" start_npc_ids="799085"/>
+	<item_collecting id="38506" start_npc_ids="799086"/>
+	
+	<relic_rewards id="11279" start_npc_ids="799945 205553" relic_var1="186000066" relic_var2="186000065" relic_var3="186000064" relic_var4="186000063"/>
+	<relic_rewards id="11280" start_npc_ids="799946 205554" relic_var1="186000062" relic_var2="186000061" relic_var3="186000060" relic_var4="186000059"/>
+	<relic_rewards id="11281" start_npc_ids="799947 205555" relic_var1="186000058" relic_var2="186000057" relic_var3="186000056" relic_var4="186000055"/>
+	<relic_rewards id="11282" start_npc_ids="799948 205556" relic_var1="186000054" relic_var2="186000053" relic_var3="186000052" relic_var4="186000051"/>
+	<relic_rewards id="11283" start_npc_ids="205539" relic_var1="186000066" relic_var2="186000065" relic_var3="186000064" relic_var4="186000063" relic_count="10"/>
+	<relic_rewards id="11284" start_npc_ids="205540" relic_var1="186000062" relic_var2="186000061" relic_var3="186000060" relic_var4="186000059" relic_count="10"/>
+	<relic_rewards id="11285" start_npc_ids="205541" relic_var1="186000058" relic_var2="186000057" relic_var3="186000056" relic_var4="186000055" relic_count="10"/>
+	<relic_rewards id="11286" start_npc_ids="205542" relic_var1="186000054" relic_var2="186000053" relic_var3="186000052" relic_var4="186000051" relic_count="10"/>
+	
+	<monster_hunt id="11002" start_npc_ids="798939">
+		<monster var="0" end_var="3" npc_ids="215780 215781"/>
+		<monster var="1" end_var="7" npc_ids="215496 215497"/>
+	</monster_hunt>
+	<monster_hunt id="11023" start_npc_ids="798951">
+		<monster var="0" end_var="3" npc_ids="215498 215499"/>
+		<monster var="1" end_var="7" npc_ids="215490 215491"/>
+	</monster_hunt>
+	<monster_hunt id="11027" start_npc_ids="798951">
+		<monster var="0" end_var="4" npc_ids="215519"/>
+		<monster var="1" end_var="6" npc_ids="215518"/>
+	</monster_hunt>
+	<monster_hunt id="11029" start_npc_ids="798960">
+		<monster var="0" end_var="10" npc_ids="216693 216694"/>
+	</monster_hunt>
+	<monster_hunt id="11030" start_npc_ids="798960">
+		<monster var="0" end_var="1" npc_ids="216486"/>
+	</monster_hunt>
+	<monster_hunt id="11034" start_npc_ids="798957">
+		<monster var="0" end_var="6" npc_ids="215576 215577"/>
+		<monster var="1" end_var="4" npc_ids="215528 215529"/>
+	</monster_hunt>
+	<monster_hunt id="11035" start_npc_ids="798955">
+		<monster var="0" end_var="9" npc_ids="215530 215531"/>
+		<monster var="1" end_var="1" npc_ids="216487"/>
+	</monster_hunt>
+	<monster_hunt id="11038" start_npc_ids="799035">
+		<monster var="0" end_var="6" npc_ids="216466 216706 216707 216467 216709 216710"/>
+		<monster var="1" end_var="4" npc_ids="216468 215563 215564 216469 215566 216718"/>
+	</monster_hunt>
+	<monster_hunt id="11045" start_npc_ids="798952">
+		<monster var="0" end_var="10" npc_ids="216465"/>
+	</monster_hunt>
+	<monster_hunt id="11071" start_npc_ids="798943">
+		<monster var="0" end_var="10" npc_ids="215532 215533"/>
+	</monster_hunt>
+	<monster_hunt id="11073" start_npc_ids="798936">
+		<monster var="0" end_var="4" npc_ids="215534 215535"/>
+		<monster var="1" end_var="6" npc_ids="215528 215529"/>
+	</monster_hunt>
+	<monster_hunt id="11100" start_npc_ids="798983">
+		<monster var="0" end_var="10" npc_ids="215593 215594"/>
+	</monster_hunt>
+	<monster_hunt id="11102" start_npc_ids="798981">
+		<monster var="0" end_var="1" npc_ids="216489"/>
+		<monster var="1" end_var="1" npc_ids="216490"/>
+		<monster var="2" end_var="1" npc_ids="216491"/>
+	</monster_hunt>
+	<monster_hunt id="11119" start_npc_ids="798989">
+		<monster var="0" end_var="6" npc_ids="215658 215659"/>
+		<monster var="1" end_var="4" npc_ids="215652 215653"/>
+	</monster_hunt>
+	<monster_hunt id="11120" start_npc_ids="798991">
+		<monster var="0" end_var="3" npc_ids="215642 215643"/>
+		<monster var="1" end_var="3" npc_ids="215644 215645"/>
+		<monster var="2" end_var="3" npc_ids="215648 215649"/>
+	</monster_hunt>
+	<monster_hunt id="11122" start_npc_ids="798990">
+		<monster var="0" end_var="1" npc_ids="216495"/>
+		<monster var="1" end_var="1" npc_ids="216496"/>
+	</monster_hunt>
+	<monster_hunt id="11124" start_npc_ids="798999">
+		<monster var="0" end_var="6" npc_ids="215716 215717"/>
+		<monster var="1" end_var="4" npc_ids="215718 215719"/>
+	</monster_hunt>
+	<monster_hunt id="11126" start_npc_ids="798998">
+		<monster var="0" end_var="6" npc_ids="216429 215695"/>
+		<monster var="1" end_var="4" npc_ids="215696 215697"/>
+	</monster_hunt>
+	<monster_hunt id="11138" start_npc_ids="798981">
+		<monster var="0" end_var="10" npc_ids="215597 215598"/>
+	</monster_hunt>
+	<monster_hunt id="11140" start_npc_ids="799076">
+		<monster var="0" end_var="10" npc_ids="215599 215600"/>
+	</monster_hunt>
+	<monster_hunt id="11141" start_npc_ids="798985">
+		<monster var="0" end_var="10" npc_ids="215636 215637 215638 215639 215640 215641"/>
+	</monster_hunt>
+	<monster_hunt id="11144" start_npc_ids="799030">
+		<monster var="0" end_var="7" npc_ids="215656 215657"/>
+		<monster var="1" end_var="3" npc_ids="215654 215655"/>
+	</monster_hunt>
+	<monster_hunt id="11145" start_npc_ids="799030">
+		<monster var="0" end_var="5" npc_ids="215660 215661 215662 215663"/>
+		<monster var="1" end_var="5" npc_ids="215668 215669 215670 215671"/>
+	</monster_hunt>
+	<monster_hunt id="11202" start_npc_ids="799009">
+		<monster var="0" end_var="4" npc_ids="215730"/>
+		<monster var="1" end_var="6" npc_ids="216732"/>
+	</monster_hunt>
+	<monster_hunt id="11210" start_npc_ids="799010">
+		<monster var="0" end_var="7" npc_ids="215746"/>
+		<monster var="1" end_var="3" npc_ids="215752"/>
+	</monster_hunt>
+	<monster_hunt id="11213" start_npc_ids="799019">
+		<monster var="0" end_var="6" npc_ids="215758"/>
+		<monster var="1" end_var="4" npc_ids="215870"/>
+	</monster_hunt>
+	<monster_hunt id="11222" start_npc_ids="257225">
+		<monster var="0" end_var="4" npc_ids="215872"/>
+		<monster var="1" end_var="6" npc_ids="215873"/>
+	</monster_hunt>
+	<monster_hunt id="11224" start_npc_ids="799019">
+		<monster var="0" end_var="5" npc_ids="216593"/>
+		<monster var="1" end_var="5" npc_ids="216594"/>
+	</monster_hunt>
+	<monster_hunt id="11227" start_npc_ids="799076">
+		<monster var="0" npc_ids="217071" end_var="1"/>
+		<monster var="1" npc_ids="217070" end_var="1"/>
+		<monster var="2" npc_ids="217069" end_var="1"/>
+		<monster var="3" npc_ids="217068" end_var="1"/>
+	</monster_hunt>
+	
+	<!-- Quest 4.7 -->
+	<!-- The Exterminator (Elyos Only) -->
+	<monster_hunt id="11456" start_npc_ids="798954">
+		<monster var="0" npc_ids="215454 215455 215456 215457 215458 215459" end_var="100"/>
+		<monster var="0" npc_ids="215460 215461 215462 215463 215464 215465" end_var="100"/>
+		<monster var="0" npc_ids="215466 215467 215482 216133 216134 216135" end_var="100"/>
+		<monster var="0" npc_ids="216136 216137 216138 216139 216140 216141" end_var="100"/>
+		<monster var="0" npc_ids="216142 216143 216144 216145 216146 216459 216460" end_var="100"/>
+	</monster_hunt>
+	<!-- The Balance (Elyos Only) -->
+	<monster_hunt id="11459" start_npc_ids="798952">
+		<monster var="0" npc_ids="215468 215469 215470 215471 215472 215473" end_var="40"/>
+		<monster var="0" npc_ids="215474 215475 215476 215477 215478 215479 215480" end_var="40"/>
+	</monster_hunt>
+	
+	<!-- Quest 4.8 -->
+	<!-- [Daily/Spy] No Mo' Asmos (Elyos Only) -->
+	<kill_in_world id="11324" start_npc_ids="798927" end_npc_ids="798927" worlds="220070000" amount="2"/>
+	<!-- [Daily] Get 'em Out Of Inggison (Elyos Only) -->
+	<kill_in_world id="11325" start_npc_ids="798927" end_npc_ids="798927" worlds="210050000" amount="2"/>
+</quest_scripts>

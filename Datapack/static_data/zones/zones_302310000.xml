@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+	<zone mapid="302300000" name="ARENA_OF_TENACITY_302310000" area_type="POLYGON" zone_type="PVP" flags="64">
+        <points bottom="32.849998" top="232.850006">
+            <point x="192.000000" y="192.000000"/>
+            <point x="192.000000" y="320.000000"/>
+            <point x="320.000000" y="320.000000"/>
+            <point x="320.000000" y="192.000000"/>
+		</points>
+    </zone>
+</zones>

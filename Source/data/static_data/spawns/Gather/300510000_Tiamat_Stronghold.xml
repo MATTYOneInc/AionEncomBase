@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+	ティアマト城塞
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="300510000">
+	    <!-- Large Aither 400P -->
+        <spawn npc_id="409239" respawn_time="295">
+            <spot x="639.58716" y="1297.8195" z="487.58743" h="23"/>
+        </spawn>
+    </spawn_map>
+</spawns>

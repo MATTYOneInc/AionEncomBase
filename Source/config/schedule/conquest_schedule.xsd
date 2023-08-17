@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="conquest" type="conquest"/>
+	<xs:element name="conquest_schedule" type="conquestSchedule"/>
+	<xs:complexType name="conquestSchedule">
+		<xs:sequence>
+			<xs:element ref="conquest" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="conquest">
+		<xs:sequence>
+			<xs:element name="offeringTime" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:int" use="required"/>
+	</xs:complexType>
+</xs:schema>

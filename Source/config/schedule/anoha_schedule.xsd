@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="anoha" type="anoha"/>
+	<xs:element name="anoha_schedule" type="anohaSchedule"/>
+	<xs:complexType name="anohaSchedule">
+		<xs:sequence>
+			<xs:element ref="anoha" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="anoha">
+		<xs:sequence>
+			<xs:element name="berserkTime" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:int" use="required"/>
+	</xs:complexType>
+</xs:schema>

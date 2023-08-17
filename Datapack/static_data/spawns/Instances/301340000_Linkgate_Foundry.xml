@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	バルナ次元研究所
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="301340000">
+        <!-- Secret Zone Invasion Corridor -->
+        <spawn npc_id="731532">
+            <spot x="209.27135" y="292.69138" z="397.09052" entity_id="141"/>
+        </spawn>
+        <!-- Central Lab Entrance -->
+		<spawn npc_id="702339">
+			<spot x="162.02763" y="258.59445" z="312.54651" entity_id="51"/>
+		</spawn>
+        <!-- Spy Ditono -->
+        <spawn npc_id="804556">
+            <spot x="207.13373" y="303.79062" z="392.3871" h="59"/>
+        </spawn>
+		<!-- Containment Barrier
+		<spawn npc_id="234193">
+			<spot x="304.25235" y="235.94572" z="392.20209" entity_id="162"/>
+			<spot x="218.59782" y="319.44357" z="392.20724" entity_id="338"/>
+		</spawn> -->
+		<!-- Linkgate Lookout -->
+        <spawn npc_id="234680">
+            <spot x="247.38011" y="309.43850" z="395.42487" h="27"/>
+            <spot x="241.70723" y="309.64450" z="395.42880" h="36"/>
+        </spawn>
+    </spawn_map>
+</spawns>

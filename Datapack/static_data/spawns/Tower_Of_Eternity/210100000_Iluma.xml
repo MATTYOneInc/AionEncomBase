@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Tower Of Eternity
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="210100000">
+		<tower_of_eternity_spawn id="1">
+			<tower_of_eternity_type tstate="OPEN">
+				<!-- Tower Of Eternity -->
+				<spawn npc_id="806081">
+				    <spot x="1458.0706" y="1300.4155" z="334.83932" entity_id="60"/>
+				</spawn>
+				<!-- Tower Of Eternity Flag -->
+				<spawn npc_id="833765">
+					<spot x="1459.6559" y="1300.2413" z="337.90170" entity_id="2566"/>
+				</spawn>
+			</tower_of_eternity_type>
+			<tower_of_eternity_type tstate="CLOSED">
+			</tower_of_eternity_type>
+		</tower_of_eternity_spawn>
+		<tower_of_eternity_spawn id="2">
+			<tower_of_eternity_type tstate="OPEN">
+				<!-- Tower Of Eternity -->
+				<spawn npc_id="806081">
+				    <spot x="1511.7439" y="1859.2944" z="315.51968" entity_id="597"/>
+				</spawn>
+				<!-- Tower Of Eternity Flag -->
+				<spawn npc_id="833765">
+					<spot x="1512.4071" y="1861.8770" z="318.49194" entity_id="910"/>
+				</spawn>
+			</tower_of_eternity_type>
+			<tower_of_eternity_type tstate="CLOSED">
+			</tower_of_eternity_type>
+		</tower_of_eternity_spawn>
+		<tower_of_eternity_spawn id="3">
+			<tower_of_eternity_type tstate="OPEN">
+				<!-- Tower Of Eternity -->
+				<spawn npc_id="806081">
+				    <spot x="1967.0010" y="1400.6051" z="293.57266" entity_id="1486"/>
+				</spawn>
+				<!-- Tower Of Eternity Flag -->
+				<spawn npc_id="833765">
+					<spot x="1969.0811" y="1399.2303" z="296.94415" entity_id="709"/>
+				</spawn>
+			</tower_of_eternity_type>
+			<tower_of_eternity_type tstate="CLOSED">
+			</tower_of_eternity_type>
+		</tower_of_eternity_spawn>
+		<tower_of_eternity_spawn id="4">
+			<tower_of_eternity_type tstate="OPEN">
+				<!-- Tower Of Eternity -->
+				<spawn npc_id="806081">
+				    <spot x="1780.6860" y="821.51312" z="306.67737" entity_id="1768"/>
+				</spawn>
+				<!-- Tower Of Eternity Flag -->
+				<spawn npc_id="833765">
+					<spot x="1782.6375" y="820.17743" z="309.68439" entity_id="708"/>
+				</spawn>
+			</tower_of_eternity_type>
+			<tower_of_eternity_type tstate="CLOSED">
+			</tower_of_eternity_type>
+		</tower_of_eternity_spawn>
+		<tower_of_eternity_spawn id="5">
+			<tower_of_eternity_type tstate="OPEN">
+				<!-- Tower Of Eternity -->
+				<spawn npc_id="806081">
+				    <spot x="1239.1770" y="941.38324" z="324.19589" entity_id="1769"/>
+				</spawn>
+				<!-- Tower Of Eternity Flag -->
+				<spawn npc_id="833765">
+					<spot x="1237.0413" y="940.03851" z="327.32068" entity_id="915"/>
+				</spawn>
+			</tower_of_eternity_type>
+			<tower_of_eternity_type tstate="CLOSED">
+			</tower_of_eternity_type>
+		</tower_of_eternity_spawn>
+    </spawn_map>
+</spawns>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- 
+	Upgrade Arcade Reward
+	Made By (Encom)
+ -->
+<arcadelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="arcadelist.xsd">
+	<tab id="1">
+	    <item item_id="165061001" normalcount="1" frenzycount="1"/> <!-- Masterwork Level Reduction Stone -->
+		<item item_id="165050002" normalcount="1" frenzycount="1"/> <!-- [Jakurerk] Soul Binding Removal Magic Stone -->
+		<item item_id="186000454" normalcount="5" frenzycount="10"/> <!-- Spinel Medal -->
+		<item item_id="188100391" normalcount="50" frenzycount="100"/> <!-- Fragmented Medal -->
+		<item item_id="186000236" normalcount="10" frenzycount="20"/> <!-- Blood Mark -->
+		<item item_id="186000469" normalcount="10" frenzycount="20"/> <!-- Petra Medal -->
+		<item item_id="186000237" normalcount="10" frenzycount="20"/> <!-- Ancient Coin -->
+		<item item_id="186000472" normalcount="2" frenzycount="4"/> <!-- Battle Mark -->
+		<item item_id="186000492" normalcount="1" frenzycount="3"/> <!-- 스피넬주화 -->
+		<item item_id="186000500" normalcount="1" frenzycount="3"/> <!-- 회색늑대 증표 -->
+		<item item_id="190200000" normalcount="10" frenzycount="50"/> <!-- Minium -->
+		<item item_id="190080005" normalcount="1" frenzycount="5"/> <!-- Lesser Minion Contract -->
+		<item item_id="190080006" normalcount="1" frenzycount="5"/> <!-- Greater Minion Contract -->
+		<item item_id="190080007" normalcount="1" frenzycount="5"/> <!-- Major Minion Contract -->
+		<item item_id="190080008" normalcount="1" frenzycount="5"/> <!-- Cute Minion Contract -->
+		<item item_id="186000440" normalcount="1" frenzycount="1"/> <!-- Cube Expension Key -->
+		<item item_id="186000476" normalcount="1" frenzycount="5"/> <!-- Coin Of Growth -->
+		<item item_id="186000477" normalcount="1" frenzycount="5"/> <!-- Shining Coin Of Growth -->
+		<item item_id="164000506" normalcount="1" frenzycount="1"/> <!-- Mark Of Growth (30 Days) -->
+		<item item_id="164000507" normalcount="1" frenzycount="1"/> <!-- Mark Of Growth (30 Days) -->
+		<item item_id="164000508" normalcount="1" frenzycount="1"/> <!-- Shining Mark Of Growth (60 Days) -->
+		<item item_id="164000509" normalcount="1" frenzycount="1"/> <!-- Shining Mark Of Growth (60 Days) -->
+		<item item_id="166060002" normalcount="1" frenzycount="2"/> <!-- [자쿠룽] 스티그마 강화석 -->
+		<item item_id="166032002" normalcount="1" frenzycount="2"/> <!-- [자쿠룽] 초월한 각성수 -->
+		<item item_id="152012766" normalcount="1" frenzycount="4"/> <!-- 파루샤 장비 영석 -->
+	</tab>
+	<tab id="2">
+	    <item item_id="188054270" normalcount="1" frenzycount="1"/> <!-- Bright Ice Composite Manastone Box -->
+		<item item_id="188056776" normalcount="1" frenzycount="1"/> <!-- [Event] Arena Conqueror’s Divine Armor Box -->
+		<item item_id="188056799" normalcount="1" frenzycount="1"/> <!-- Elaborate Frigida Legion Weapon Box -->
+		<item item_id="188056800" normalcount="1" frenzycount="1"/> <!-- Elaborate Frigida Legion Armor Box -->
+		<item item_id="188056802" normalcount="1" frenzycount="1"/> <!-- Pure Frigida Legion Weapon Box -->
+		<item item_id="188054603" normalcount="1" frenzycount="1"/> <!-- Mysterious Commander's Accessory Box -->
+		<item item_id="188054637" normalcount="1" frenzycount="1"/> <!-- [Event] Commander Weapon Box -->
+		<item item_id="188054638" normalcount="1" frenzycount="1"/> <!-- [Event] Commander Armor Box -->
+		<item item_id="188055643" normalcount="1" frenzycount="1"/> <!-- Empyrean Bracelet Box -->
+		<item item_id="188052951" normalcount="1" frenzycount="1"/> <!-- Prestige Supplies -->
+		<item item_id="188055791" normalcount="1" frenzycount="1"/> <!-- Provenance Weapon Box -->
+		<item item_id="188055491" normalcount="1" frenzycount="1"/> <!-- Tike Manastone Bundle: +1 -->
+		<item item_id="188055492" normalcount="1" frenzycount="1"/> <!-- Tike Manastone Bundle: +2 -->
+		<item item_id="188055493" normalcount="1" frenzycount="1"/> <!-- Tike Manastone Bundle: +3 -->
+		<item item_id="188055494" normalcount="1" frenzycount="1"/> <!-- Tike Manastone Bundle: +4 -->
+		<item item_id="188055495" normalcount="1" frenzycount="1"/> <!-- Tike Manastone Bundle: +5 -->
+		<item item_id="188055496" normalcount="1" frenzycount="1"/> <!-- Tike Manastone Bundle: +6 -->
+		<item item_id="188055497" normalcount="1" frenzycount="1"/> <!-- Tike Manastone Bundle: +7 -->
+		<item item_id="188055498" normalcount="1" frenzycount="1"/> <!-- Tike Manastone Bundle: +8 -->
+		<item item_id="188055499" normalcount="1" frenzycount="1"/> <!-- Tike Manastone Bundle: +9 -->
+		<item item_id="188057672" normalcount="1" frenzycount="1"/> <!-- Noble +10 Manastone Bundle -->
+		<item item_id="188057030" normalcount="1" frenzycount="1"/> <!-- Transcendent Thunder Dragon King Weapon Chest -->
+		<item item_id="188057031" normalcount="1" frenzycount="1"/> <!-- Upgraded Thunder Dragon King Weapon Chest -->
+		<item item_id="188053623" normalcount="1" frenzycount="1"/> <!-- Fire Dragon King's Weapon Bundle -->
+		<item item_id="188054244" normalcount="1" frenzycount="1"/> <!-- Dreaming Nether Water Dragon King's Weapon Chest -->
+		<item item_id="188058413" normalcount="1" frenzycount="1"/> <!-- 이계 암룡의 무기 상자 -->
+	</tab>
+	<tab id="3">
+		<item item_id="190100300" normalcount="1" frenzycount="1"/> <!-- 네모난 토끼 친구 -->
+		<item item_id="190100290" normalcount="1" frenzycount="1"/> <!-- 전설의 사냥꾼 파가티 -->
+		<item item_id="190100285" normalcount="1" frenzycount="1"/> <!-- 길들인 백호 -->
+		<item item_id="190100283" normalcount="1" frenzycount="1"/> <!-- Speedy Flight Bykion -->
+		<item item_id="190100281" normalcount="1" frenzycount="1"/> <!-- 몽글몽글 양 -->
+		<item item_id="190100279" normalcount="1" frenzycount="1"/> <!-- Specialized Steampunk Bikron -->
+		<item item_id="190100274" normalcount="1" frenzycount="1"/> <!-- White Tiger Of Darkness -->
+		<item item_id="190100265" normalcount="1" frenzycount="1"/> <!-- Panda Bike -->
+		<item item_id="190100263" normalcount="1" frenzycount="1"/> <!-- Cuckoo -->
+		<item item_id="190100262" normalcount="1" frenzycount="1"/> <!-- Lightspeed Ironfang -->
+		<item item_id="190100256" normalcount="1" frenzycount="1"/> <!-- Shugo Airship -->
+		<item item_id="190100254" normalcount="1" frenzycount="1"/> <!-- Scooter -->
+		<item item_id="190100246" normalcount="1" frenzycount="1"/> <!-- Snowkissed Aetherboard -->
+		<item item_id="190100245" normalcount="1" frenzycount="1"/> <!-- Flamekissed Aetherboard -->
+		<item item_id="190100238" normalcount="1" frenzycount="1"/> <!-- Tamed Riding Wolf -->
+		<item item_id="190100229" normalcount="1" frenzycount="1"/> <!-- Unicorn -->
+		<item item_id="190100224" normalcount="1" frenzycount="1"/> <!-- Tamed Lion -->
+		<item item_id="190100218" normalcount="1" frenzycount="1"/> <!-- Wind Flower -->
+		<item item_id="190100197" normalcount="1" frenzycount="1"/> <!-- Miss Meow Pink Bike -->
+		<item item_id="190100182" normalcount="1" frenzycount="1"/> <!-- Executioner's Steed -->
+		<item item_id="190100159" normalcount="1" frenzycount="1"/> <!-- The Afterburner -->
+		<item item_id="190100156" normalcount="1" frenzycount="1"/> <!-- Quick Frillneck -->
+		<item item_id="190100140" normalcount="1" frenzycount="1"/> <!-- Sleek Hovercycle -->
+		<item item_id="190100131" normalcount="1" frenzycount="1"/> <!-- Lustrous Skymane -->
+		<item item_id="190100051" normalcount="1" frenzycount="1"/> <!-- Flying Pagati -->
+		<item item_id="190020294" normalcount="1" frenzycount="1"/> <!-- Cat Wizard Kathy’s Egg -->
+		<item item_id="190020290" normalcount="1" frenzycount="1"/> <!-- Puppy Knight Tom’s Egg -->
+	</tab>
+	<tab id="4">
+		<item item_id="168000247" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Meslamtaeda's Greed -->
+	    <item item_id="168000248" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Ereshkigal's Honor -->
+	    <item item_id="168000249" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Nezakan's Advance -->
+	    <item item_id="168000250" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Beritra's Plot -->
+	    <item item_id="168000251" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Fregion's Trick -->
+	    <item item_id="168000252" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Kaisinel's Fantasy -->
+	    <item item_id="168000254" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Zikel's Arrogance -->
+	    <item item_id="168000255" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Pregion's Stratagem -->
+	    <item item_id="168000256" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Tiamat's Counterattack -->
+	    <item item_id="168000257" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Marchutan's Impartiality -->
+	    <item item_id="168000258" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Yustiel's Generosity -->
+	    <item item_id="168000259" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Beritra's Selfishness -->
+	    <item item_id="168000260" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Tiamat's Fury -->
+	    <item item_id="168000261" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Triniel's Rationality -->
+	    <item item_id="168000262" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Vaizel's Vow -->
+	    <item item_id="168000263" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Strengthened Meslamtaeda's Regret -->
+	    <item item_id="168000264" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Kasaka's Restraints -->
+	    <item item_id="168000265" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Consierd's Assault -->
+	    <item item_id="168000266" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Saendukal's Charge -->
+	    <item item_id="168000267" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Zapiel's Wave -->
+	    <item item_id="168000268" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Alukina's Echo -->
+	    <item item_id="168000269" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Padmarashka's Hallucination -->
+	    <item item_id="168000270" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Behemoth 's Binding -->
+	    <item item_id="168000271" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Nataraz’s Curse -->
+	    <item item_id="168000272" normalcount="1" frenzycount="1"/> <!-- Illusion Godstone: Valonte's Strike -->
+	</tab>
+</arcadelist>

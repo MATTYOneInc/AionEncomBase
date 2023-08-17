@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Steel Rake 4.9.1
+	Make By (Encom)
+-->
+    <!-- Snow Blessing (Elyos Only) -->
+	<report_to_many id="3201" start_npc_ids="798318" end_npc_ids="204534">
+		<npc_infos npc_id="278651" var="0" quest_dialog="1352"/>
+		<npc_infos npc_id="204534" var="1" quest_dialog="2375" close_dialog="1009"/>
+	</report_to_many>
+	<!-- A Promise To A Customer (Elyos Only) -->
+	<item_collecting id="3202" start_npc_ids="204534" action_item_ids="700523"/>
+	<!-- The Manduri Imperative (Elyos Only) -->
+	<item_collecting id="3203" start_npc_ids="805834"/>
+	<!-- Shameless Peperinrinerk (Elyos Only) -->
+	<report_to id="3204" start_npc_ids="798319" end_npc_ids="278651" item_id="182209085"/>
+	<!-- Hairpin Ahoy! (Elyos Only) -->
+	<item_collecting id="3206" start_npc_ids="805835"/>
+	<!-- The Pirates' Log (Elyos Only) -->
+	<item_collecting id="3207" start_npc_ids="805836" action_item_ids="700524"/>
+	<!-- [Group] Steel Rake Spy (Elyos Only) -->
+	<report_to id="3209" start_npc_ids="805832" end_npc_ids="798331"/>
+	<!-- [Group] Against The Steel Rake (Elyos Only) -->
+	<monster_hunt id="3211" start_npc_ids="798331" end_npc_ids="805832">
+		<monster var="1" npc_ids="215069" end_var="1"/>
+		<monster var="2" npc_ids="215070" end_var="1"/>
+		<monster var="3" npc_ids="215081" end_var="1"/>
+	</monster_hunt>
+	<!-- [Group] Revenge Of Maximus (Elyos Only) -->
+	<monster_hunt id="3213" start_npc_ids="204535">
+		<monster var="0" npc_ids="203735" end_var="20"/>
+	</monster_hunt>
+	<!-- [Group] The Pirates' Pouch (Elyos Only) -->
+	<item_collecting id="3214" start_npc_ids="805835"/>
+	<!-- [Group] Bring Back The Booty (Elyos Only) -->
+	<item_collecting id="3215" start_npc_ids="805838"/>
+	<!-- [Group] Plunder The Pirates (Elyos Only) -->
+	<item_collecting id="3216" start_npc_ids="805833"/>
+	<!-- [Group] The Difficulties Of Beauty (Elyos Only) -->
+	<report_to id="3218" start_npc_ids="798334" end_npc_ids="805835" item_id="182209096"/>
+	<!-- Suspicious Shugo (Elyos Only) -->
+	<report_to id="3221" start_npc_ids="204530" end_npc_ids="204658"/>
+	
+	<!-- Sandblossom Wine (Asmodians Only) -->
+	<report_to id="4201" start_npc_ids="278151" end_npc_ids="204791"/>
+	<!-- Request Of A Wine Lover (Asmodians Only) -->
+	<item_collecting id="4202" start_npc_ids="204791"/>
+	<!-- Anikiki's Taming Manual (Asmodians Only) -->
+	<item_collecting id="4203" start_npc_ids="805841"/>
+	<!-- Deliver The Taming Manual (Asmodians Only) -->
+	<report_to id="4204" start_npc_ids="204283" end_npc_ids="278151" item_id="182209100"/>
+	<!-- Hat Of The Steel Rake Pirates (Asmodians Only) -->
+	<item_collecting id="4206" start_npc_ids="805842"/>
+	<!-- Log Of The Steel Rake (Asmodians Only) -->
+	<item_collecting id="4207" start_npc_ids="805843" action_item_ids="700524"/>
+	<!-- [Group] Rendezvous With The Spy (Asmodians Only) -->
+	<report_to id="4209" start_npc_ids="805839" end_npc_ids="798331"/>
+	<!-- [Group] Steel Rake Slaughter (Asmodians Only) -->
+	<monster_hunt id="4211" start_npc_ids="798331" end_npc_ids="805839">
+		<monster var="1" npc_ids="215069" end_var="1"/>
+		<monster var="2" npc_ids="215070" end_var="1"/>
+		<monster var="3" npc_ids="215081" end_var="1"/>
+	</monster_hunt>
+	<!-- [Group] Unfortunate Baba Hun (Asmodians Only) -->
+	<monster_hunt id="4213" start_npc_ids="204792">
+		<monster npc_ids="215032" var="0" end_var="4"/>
+		<monster npc_ids="215038" var="1" end_var="4"/>
+	</monster_hunt>
+	<!-- [Group] Black Cloud Ledgers (Asmodians Only) -->
+	<item_collecting id="4214" start_npc_ids="805843"/>
+	<!-- [Group] The Medicine Thief (Asmodians Only) -->
+	<item_collecting id="4215" start_npc_ids="805846"/>
+	<!-- [Group] A Present For Father (Asmodians Only) -->
+	<item_collecting id="4216" start_npc_ids="805840"/>
+	<!-- [Group] Mysterious Amabille (Asmodians Only) -->
+	<report_to id="4218" start_npc_ids="798334" end_npc_ids="805843" item_id="182209111"/>
+	<!-- The Shugo From Pandaemonium (Asmodians Only) -->
+	<report_to id="4221" start_npc_ids="204710" end_npc_ids="204839"/>
+</quest_scripts>

@@ -1,0 +1,1 @@
+DELETE FROM player_quests WHERE quest_id = -1;

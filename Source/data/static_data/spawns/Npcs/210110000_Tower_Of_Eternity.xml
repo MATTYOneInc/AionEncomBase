@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Tower Of Eternity 5.5
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="210110000">
+		<!-- Mailbox -->
+	    <spawn npc_id="700000" respawn_time="295">
+            <spot x="505.59653" y="506.92575" z="302.38852" h="14"/>
+        </spawn>
+		<!-- Room Of The Sage Corridor
+		An Elyos corridor that leads to the Room of the Sage inside the Tower of Eternity.
+		Located inside the Tower of Eternity.
+		-->
+		<spawn npc_id="731717" respawn_time="295">
+		    <spot x="557.9449" y="498.00113" z="299.85013" h="60"/>
+		</spawn>
+		<!-- Room Of The Sage Exit -->
+		<spawn npc_id="731718" respawn_time="295">
+		    <spot x="494.47815" y="500.0035" z="348.8464" h="0"/>
+		</spawn>
+		<!-- Archives Of Eternity -->
+		<spawn npc_id="806028" respawn_time="295">
+			<spot x="371.17728" y="515.09894" z="322.94241" entity_id="9"/>
+		</spawn>
+		<!-- Cradle Of Eternity -->
+		<spawn npc_id="806030" respawn_time="295">
+			<spot x="373.19901" y="508.41525" z="357.63672" entity_id="1"/>
+		</spawn>
+		<!-- Heart Of Eternity -->
+		<spawn npc_id="806032" respawn_time="295">
+			<spot x="372.23135" y="501.32590" z="386.36182" entity_id="3"/>
+		</spawn>
+		<!-- Aionic Ward -->
+		<spawn npc_id="806083" respawn_time="295">
+			<spot x="498.60571" y="499.99774" z="302.45605" entity_id="11"/>
+		</spawn>
+		<!-- Eusebios
+		<Guardian Commander> -->
+		<spawn npc_id="806232" respawn_time="295">
+		    <spot x="473.22833" y="499.9748" z="302.3885" h="60"/>
+		</spawn>
+		<!-- Tower Of Eternity Guardian -->
+		<spawn npc_id="806234" respawn_time="295">
+		    <spot x="484.8338" y="493.29144" z="302.3885" h="20"/>
+            <spot x="485.38068" y="506.70386" z="302.3885" h="104"/>
+            <spot x="512.1093" y="493.09662" z="302.3885" h="43"/>
+            <spot x="512.52344" y="506.85507" z="302.3885" h="81"/>
+            <spot x="465.09744" y="510.10986" z="299.85013" h="69"/>
+            <spot x="465.35916" y="489.31955" z="299.85013" h="48"/>
+		</spawn>
+		<!-- Dejabobo
+		<Sage Of The Tower Of Eternity> -->
+		<spawn npc_id="806291" respawn_time="295">
+		    <spot x="498.52692" y="499.85306" z="348.79135" h="118"/>
+		</spawn>
+		<!-- Pores
+		<Hymn Of Aion Legion> -->
+		<spawn npc_id="806393" respawn_time="295">
+		    <spot x="551.18555" y="499.9848" z="299.85013" h="60"/>
+		</spawn>
+	</spawn_map>
+</spawns>

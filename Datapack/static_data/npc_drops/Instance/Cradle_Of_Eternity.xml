@@ -1,0 +1,2057 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc_drops>
+        <!-- CRADLE OF ETERNITY 5.1 -->
+		<!-- BOSS -->
+		<npc_drop npc_id="220526">
+                <drop_group name="WEAPON_MYTHIC">
+						<drop chance="10.0" item_id="100002102" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002103" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002104" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002105" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002106" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101568" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101569" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101570" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101571" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101572" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201747" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201748" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201749" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201750" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201751" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501525" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501526" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501527" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501528" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501529" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601637" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601638" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601639" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601640" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601641" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901606" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901607" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901608" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901609" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901610" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301485" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301486" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301487" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301488" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301489" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501586" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501587" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501588" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501589" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501590" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701588" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701589" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701590" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701591" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701592" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801405" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801406" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801407" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801408" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801409" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901311" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901312" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901313" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901314" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901315" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001433" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001434" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001435" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001436" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001437" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101248" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101249" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101250" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101251" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101252" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002058" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002059" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002060" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002061" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002062" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ARMOR_MYTHIC">
+						<drop chance="10.0" item_id="110102096" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102097" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102098" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102099" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102100" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302072" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302073" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302074" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302075" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302076" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551440" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551441" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551442" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551443" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551444" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601860" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601861" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601862" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601863" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601864" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101894" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101895" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101896" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101897" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101898" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302017" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302018" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302019" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302020" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302021" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502009" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502010" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502011" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502012" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502013" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601830" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601831" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601832" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601833" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601834" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101838" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101839" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101840" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101841" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101842" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301954" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301955" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301956" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301957" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301958" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501945" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501946" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501947" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501948" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501949" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601811" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601812" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601813" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601814" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601815" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101901" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101902" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101903" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101904" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101905" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302042" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302043" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302044" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302045" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302046" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502019" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502020" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502021" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502022" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502023" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601807" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601808" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601809" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601810" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601811" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101935" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101936" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101937" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101938" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101939" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302079" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302080" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302081" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302082" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302083" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502027" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502028" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502029" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502030" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502031" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601813" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601814" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601815" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601816" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601817" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ACCESSORY_MYTHIC">
+						<drop chance="10.0" item_id="120001634" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="120001635" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="120001636" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="120001637" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001515" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001516" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001517" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001518" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001800" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001801" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001802" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001803" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001549" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001550" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001551" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001552" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004865" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004866" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004867" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004868" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004869" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004870" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004871" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004872" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004873" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004874" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004875" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004876" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004877" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004878" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004879" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004880" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004881" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004882" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004883" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004884" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="WING_MYTHIC">
+						<drop chance="10.0" item_id="187000209" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220534">
+                <drop_group name="WEAPON_MYTHIC">
+						<drop chance="10.0" item_id="100002102" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002103" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002104" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002105" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002106" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101568" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101569" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101570" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101571" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101572" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201747" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201748" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201749" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201750" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201751" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501525" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501526" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501527" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501528" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501529" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601637" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601638" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601639" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601640" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601641" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901606" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901607" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901608" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901609" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901610" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301485" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301486" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301487" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301488" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301489" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501586" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501587" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501588" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501589" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501590" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701588" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701589" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701590" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701591" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701592" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801405" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801406" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801407" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801408" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801409" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901311" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901312" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901313" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901314" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901315" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001433" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001434" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001435" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001436" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001437" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101248" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101249" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101250" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101251" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101252" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002058" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002059" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002060" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002061" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002062" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ARMOR_MYTHIC">
+						<drop chance="10.0" item_id="110102096" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102097" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102098" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102099" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102100" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302072" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302073" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302074" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302075" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302076" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551440" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551441" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551442" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551443" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551444" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601860" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601861" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601862" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601863" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601864" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101894" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101895" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101896" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101897" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101898" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302017" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302018" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302019" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302020" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302021" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502009" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502010" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502011" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502012" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502013" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601830" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601831" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601832" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601833" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601834" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101838" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101839" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101840" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101841" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101842" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301954" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301955" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301956" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301957" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301958" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501945" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501946" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501947" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501948" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501949" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601811" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601812" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601813" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601814" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601815" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101901" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101902" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101903" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101904" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101905" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302042" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302043" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302044" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302045" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302046" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502019" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502020" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502021" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502022" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502023" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601807" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601808" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601809" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601810" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601811" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101935" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101936" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101937" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101938" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101939" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302079" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302080" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302081" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302082" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302083" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502027" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502028" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502029" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502030" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502031" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601813" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601814" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601815" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601816" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601817" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ACCESSORY_MYTHIC">
+						<drop chance="10.0" item_id="120001634" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="120001635" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="120001636" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="120001637" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001515" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001516" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001517" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001518" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001800" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001801" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001802" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001803" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001549" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001550" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001551" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001552" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004865" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004866" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004867" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004868" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004869" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004870" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004871" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004872" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004873" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004874" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004875" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004876" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004877" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004878" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004879" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004880" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004881" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004882" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004883" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004884" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="WING_MYTHIC">
+						<drop chance="10.0" item_id="187000209" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220540">
+                <drop_group name="WEAPON_MYTHIC">
+						<drop chance="10.0" item_id="100002102" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002103" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002104" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002105" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100002106" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101568" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101569" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101570" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101571" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100101572" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201747" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201748" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201749" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201750" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100201751" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501525" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501526" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501527" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501528" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100501529" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601637" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601638" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601639" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601640" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100601641" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901606" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901607" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901608" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901609" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="100901610" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301485" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301486" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301487" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301488" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101301489" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501586" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501587" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501588" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501589" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101501590" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701588" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701589" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701590" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701591" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101701592" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801405" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801406" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801407" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801408" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101801409" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901311" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901312" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901313" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901314" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="101901315" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001433" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001434" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001435" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001436" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102001437" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101248" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101249" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101250" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101251" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="102101252" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002058" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002059" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002060" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002061" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="115002062" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ARMOR_MYTHIC">
+						<drop chance="10.0" item_id="110102096" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102097" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102098" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102099" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110102100" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302072" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302073" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302074" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302075" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110302076" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551440" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551441" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551442" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551443" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110551444" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601860" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601861" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601862" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601863" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="110601864" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101894" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101895" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101896" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101897" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111101898" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302017" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302018" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302019" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302020" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111302021" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502009" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502010" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502011" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502012" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111502013" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601830" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601831" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601832" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601833" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="111601834" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101838" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101839" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101840" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101841" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112101842" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301954" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301955" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301956" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301957" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112301958" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501945" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501946" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501947" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501948" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112501949" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601811" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601812" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601813" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601814" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="112601815" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101901" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101902" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101903" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101904" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113101905" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302042" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302043" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302044" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302045" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113302046" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502019" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502020" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502021" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502022" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113502023" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601807" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601808" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601809" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601810" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="113601811" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101935" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101936" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101937" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101938" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114101939" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302079" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302080" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302081" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302082" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114302083" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502027" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502028" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502029" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502030" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114502031" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601813" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601814" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601815" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601816" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="114601817" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ACCESSORY_MYTHIC">
+						<drop chance="10.0" item_id="120001634" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="120001635" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="120001636" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="120001637" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001515" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001516" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001517" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="121001518" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001800" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001801" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001802" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="122001803" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001549" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001550" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001551" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="123001552" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004865" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004866" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004867" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004868" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004869" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004870" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004871" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004872" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004873" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004874" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004875" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004876" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004877" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004878" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004879" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004880" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004881" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004882" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004883" max_amount="1" min_amount="1"/>
+						<drop chance="10.0" item_id="125004884" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="WING_MYTHIC">
+						<drop chance="10.0" item_id="187000209" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<!-- MOBS -->
+		<npc_drop npc_id="220458">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220459">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220460">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220462">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220465">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220466">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220467">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220469">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220470">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220471">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220472">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220475">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220476">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220477">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220479">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220480">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220483">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220484">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220485">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220486">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220487">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220488">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220491">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220494">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220495">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220498">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220499">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220500">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220503">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220504">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220506">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220594">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220595">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220597">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220670">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220671">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220672">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220673">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220674">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+		<npc_drop npc_id="220675">
+                <drop_group name="ANIMA">
+						<drop chance="7.0" item_id="188100336" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100337" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100338" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="188100339" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="ELEMENTAL_STONES">
+						<drop chance="7.0" item_id="152012711" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012712" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012713" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012714" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="152012715" max_amount="1" min_amount="1"/>
+                </drop_group>
+				<drop_group name="MANASTONE_UNIQUE">
+						<drop chance="7.0" item_id="167010274" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010275" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010276" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010277" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010278" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010279" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010280" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010281" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010282" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010283" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010284" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010285" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010286" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010287" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010288" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010289" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010290" max_amount="1" min_amount="1"/>
+						<drop chance="7.0" item_id="167010291" max_amount="1" min_amount="1"/>
+                </drop_group>
+        </npc_drop>
+</npc_drops>

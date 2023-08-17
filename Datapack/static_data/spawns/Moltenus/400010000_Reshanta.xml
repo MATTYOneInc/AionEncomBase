@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Resurrected Moltenus 5.3
+	エレシュランタ
+	Spawn By (Encom)
+	
+	일요일 4시 요새전이 중요
+	분노의 파편 메노티오스는 어비스 상층 중심부에서 등장한다.
+	때문에 상층 중심부의 요새를 차지했다면 그만큼 전투를 유리하게 끌고갈 수 있다.
+	
+	특히, 밀폐형 구조인 라미렌 요새를 차지했을 경우 키스크를
+	설치하는 거점으로 이용하기 좋아서 더욱 유용하다. 즉, 일요
+	일 오후 4시에 있는 요새전(상층 중앙 요새 3곳 진행)의 결
+	과가 분노의 파편 메노티오스 공략에 큰 영향을 끼친다는 얘기.
+	http://aion.power.plaync.com/wiki/%EB%B6%84%EB%85%B8%EC%9D%98+%ED%8C%8C%ED%8E%B8+%EB%A9%94%EB%85%B8%ED%8B%B0%EC%98%A4%EC%8A%A4
+ -->
+<spawns>
+	<spawn_map map_id="400010000">
+		<!-- [KROTAN ROCK] -->
+		<moltenus_spawn id="1">
+			<moltenus_type mstate="FIGHT">
+			    <!-- Resurrected Moltenus -->
+				<spawn npc_id="883324">
+				    <spot h="38" z="2889.584" y="1254.3115" x="1052.4497"/>
+				</spawn>
+			</moltenus_type>
+			<moltenus_type mstate="PEACE">
+				<spawn npc_id="702548">
+					<spot h="38" z="2889.584" y="1254.3115" x="1052.4497"/>
+				</spawn>
+			</moltenus_type>
+		</moltenus_spawn>
+		<!-- [KYSIS ISLE] -->
+		<moltenus_spawn id="2">
+			<moltenus_type mstate="FIGHT">
+			    <!-- Resurrected Moltenus -->
+				<spawn npc_id="883324">
+				    <spot h="63" z="2879.3977" y="1300.3555" x="1908.345"/>
+				</spawn>
+			</moltenus_type>
+			<moltenus_type mstate="PEACE">
+			    <spawn npc_id="702548">
+					<spot h="63" z="2879.3977" y="1300.3555" x="1908.345"/>
+				</spawn>
+			</moltenus_type>
+		</moltenus_spawn>
+		<!-- [MIREN ISLAND] -->
+		<moltenus_spawn id="3">
+			<moltenus_type mstate="FIGHT">
+			    <!-- Resurrected Moltenus -->
+				<spawn npc_id="883324">
+				    <spot h="32" z="2871.8643" y="2056.976" x="1745.7917"/>
+				</spawn>
+			</moltenus_type>
+			<moltenus_type mstate="PEACE">
+			    <spawn npc_id="702548">
+					<spot h="32" z="2871.8643" y="2056.976" x="1745.7917"/>
+				</spawn>
+			</moltenus_type>
+		</moltenus_spawn>
+		
+		<!-- [ENRAGED GUARDIAN 5.3] -->
+		<moltenus_spawn id="4">
+			<moltenus_type mstate="FIGHT">
+			    <!-- Ab1_Boss_Flag_01 -->
+				<spawn npc_id="834847">
+				    <spot h="101" z="1500.6034" y="756.5936" x="1133.2723"/>
+				</spawn>
+				<!-- Enraged Sulfur Guardian -->
+				<spawn npc_id="220899">
+				    <spot h="101" z="1500.6034" y="756.5936" x="1133.2723"/>
+				</spawn>
+			</moltenus_type>
+			<moltenus_type mstate="PEACE">
+			    <spawn npc_id="702548">
+					<spot h="101" z="1500.6034" y="756.5936" x="1133.2723"/>
+				</spawn>
+			</moltenus_type>
+		</moltenus_spawn>
+		<moltenus_spawn id="5">
+			<moltenus_type mstate="FIGHT">
+				<!-- Ab1_Boss_Flag_02 -->
+				<spawn npc_id="834848">
+				    <spot h="52" z="1430.6241" y="2441.3955" x="2415.1633"/>
+				</spawn>
+				<!-- Enraged Western Guardian -->
+				<spawn npc_id="220900">
+				    <spot h="52" z="1430.6241" y="2441.3955" x="2415.1633"/>
+				</spawn>
+			</moltenus_type>
+			<moltenus_type mstate="PEACE">
+			    <spawn npc_id="702548">
+					<spot h="52" z="1430.6241" y="2441.3955" x="2415.1633"/>
+				</spawn>
+			</moltenus_type>
+		</moltenus_spawn>
+		<moltenus_spawn id="6">
+			<moltenus_type mstate="FIGHT">
+				<!-- Ab1_Boss_Flag_03 -->
+				<spawn npc_id="834849">
+				    <spot h="39" z="1400.688" y="2583.4175" x="2232.373"/>
+				</spawn>
+				<!-- Enraged Eastern Guardian -->
+				<spawn npc_id="220901">
+				    <spot h="39" z="1400.688" y="2583.4175" x="2232.373"/>
+				</spawn>
+			</moltenus_type>
+			<moltenus_type mstate="PEACE">
+			    <spawn npc_id="702548">
+					<spot h="39" z="1400.688" y="2583.4175" x="2232.373"/>
+				</spawn>
+			</moltenus_type>
+		</moltenus_spawn>
+		<moltenus_spawn id="7">
+			<moltenus_type mstate="FIGHT">
+			    <!-- Ab1_Boss_Flag_01 -->
+				<spawn npc_id="834847">
+				    <spot h="101" z="1500.6034" y="756.5936" x="1133.2723"/>
+				</spawn>
+				<!-- Enraged Sulfur Guardian -->
+				<spawn npc_id="220902">
+				    <spot h="101" z="1500.6034" y="756.5936" x="1133.2723"/>
+				</spawn>
+			</moltenus_type>
+			<moltenus_type mstate="PEACE">
+			    <spawn npc_id="702548">
+					<spot h="101" z="1500.6034" y="756.5936" x="1133.2723"/>
+				</spawn>
+			</moltenus_type>
+		</moltenus_spawn>
+		<moltenus_spawn id="8">
+			<moltenus_type mstate="FIGHT">
+				<!-- Ab1_Boss_Flag_02 -->
+				<spawn npc_id="834848">
+				    <spot h="52" z="1430.6241" y="2441.3955" x="2415.1633"/>
+				</spawn>
+				<!-- Enraged Western Guardian -->
+				<spawn npc_id="220903">
+				    <spot h="52" z="1430.6241" y="2441.3955" x="2415.1633"/>
+				</spawn>
+			</moltenus_type>
+			<moltenus_type mstate="PEACE">
+			    <spawn npc_id="702548">
+					<spot h="52" z="1430.6241" y="2441.3955" x="2415.1633"/>
+				</spawn>
+			</moltenus_type>
+		</moltenus_spawn>
+		<moltenus_spawn id="9">
+			<moltenus_type mstate="FIGHT">
+				<!-- Ab1_Boss_Flag_03 -->
+				<spawn npc_id="834849">
+				    <spot h="39" z="1400.688" y="2583.4175" x="2232.373"/>
+				</spawn>
+				<!-- Enraged Eastern Guardian -->
+				<spawn npc_id="220904">
+				    <spot h="39" z="1400.688" y="2583.4175" x="2232.373"/>
+				</spawn>
+			</moltenus_type>
+			<moltenus_type mstate="PEACE">
+			    <spawn npc_id="702548">
+					<spot h="39" z="1400.688" y="2583.4175" x="2232.373"/>
+				</spawn>
+			</moltenus_type>
+		</moltenus_spawn>
+    </spawn_map>
+</spawns>

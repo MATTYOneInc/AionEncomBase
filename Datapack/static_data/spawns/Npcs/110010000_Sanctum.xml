@@ -1,0 +1,1646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    エリュシオン 5.8
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="110010000">
+		<!-- Miriya -->
+		<spawn npc_id="203711" respawn_time="295">
+			<spot x="1877.27" y="1485.76" z="805.518" h="60"/>
+		</spawn>
+		<!-- Clymene -->
+		<spawn npc_id="203709" respawn_time="295">
+			<spot x="1871.03" y="1481.61" z="805.518" h="30"/>
+		</spawn>
+		<!-- Mikarinerk -->
+		<spawn npc_id="798320" respawn_time="295">
+			<spot x="1832.65" y="2186.43" z="528.766" h="3"/>
+		</spawn>
+		<!-- Charna -->
+		<spawn npc_id="203706" respawn_time="295">
+			<spot x="1880.06" y="1506.88" z="805.518" h="60"/>
+		</spawn>
+		<!-- Thrasymedes -->
+		<spawn npc_id="203707" respawn_time="295">
+			<spot x="1879.99" y="1515.24" z="805.518" h="60"/>
+		</spawn>
+		<!-- Koruchinerk -->
+		<spawn npc_id="798321" respawn_time="295">
+			<spot x="1750.74" y="2119.86" z="517.907" h="51"/>
+		</spawn>
+		<!-- Kuruminerk -->
+		<spawn npc_id="798322" respawn_time="295">
+			<spot x="1856.94" y="2068.38" z="517.907" h="110"/>
+		</spawn>
+		<!-- Boreas -->
+		<spawn npc_id="203704" respawn_time="295">
+			<spot x="1857.0337" y="1500.7255" z="805.5178" h="0"/>
+		</spawn>
+		<!-- Jumentis -->
+		<spawn npc_id="203705" respawn_time="295">
+			<spot x="1856.8123" y="1521.2911" z="805.5178" h="0"/>
+		</spawn>
+		<!-- Jupion -->
+		<spawn npc_id="203702" respawn_time="295">
+			<spot x="1869.44" y="1497.93" z="811.081" h="60"/>
+		</spawn>
+		<!-- Likesan -->
+		<spawn npc_id="203703" respawn_time="295">
+			<spot x="1869.5" y="1523.82" z="811.081" h="60"/>
+		</spawn>
+		<!-- Fasimedes -->
+		<spawn npc_id="203700" respawn_time="295">
+			<spot x="1876.29" y="1511.2" z="812.675" h="60"/>
+		</spawn>
+		<!-- Lavirintos -->
+		<spawn npc_id="203701" respawn_time="295">
+			<spot x="1878.27" y="1513.74" z="812.675" h="56"/>
+		</spawn>
+		<!-- Arenzes -->
+		<spawn npc_id="798309" respawn_time="295">
+			<spot x="1366.43" y="1373.21" z="573.386" h="10"/>
+		</spawn>
+		<!-- Senarinrinerk -->
+		<spawn npc_id="798311" respawn_time="295">
+			<spot x="1426.952" y="1398.5713" z="574.0407" h="54"/>
+		</spawn>
+		<!-- Kinthia -->
+		<spawn npc_id="798310" respawn_time="295">
+			<spot x="1350.25" y="1408.18" z="573.386" h="6"/>
+		</spawn>
+		<!-- Anusis -->
+		<spawn npc_id="798316" respawn_time="295">
+			<spot x="1845.27" y="1556.21" z="590.109" h="30"/>
+		</spawn>
+		<!-- Peperinrinerk -->
+		<spawn npc_id="798319" respawn_time="295">
+			<spot x="1856.11" y="2067.16" z="517.907" h="110"/>
+		</spawn>
+		<!-- Mikurunrunerk -->
+		<spawn npc_id="798318" respawn_time="295">
+			<spot x="1834.2" y="2186.75" z="528.766" h="63"/>
+		</spawn>
+		<!-- Andreas -->
+		<spawn npc_id="798303" respawn_time="295">
+			<spot x="1810.7" y="2133.33" z="527.93" h="36"/>
+		</spawn>
+		<!-- Avrus -->
+		<spawn npc_id="203770" respawn_time="295">
+			<spot x="1811.71" y="1550.08" z="579.0594" h="100" walker_id="689B9E819118249397B2DD115443971D7B4D7C01"/>
+		</spawn>
+		<!-- Fermina -->
+		<spawn npc_id="203771" respawn_time="295">
+			<spot x="1662.88" y="1576.93" z="548.737"/>
+		</spawn>
+		<!-- Akeri -->
+		<spawn npc_id="203768" respawn_time="295">
+			<spot x="1663.39" y="1449.98" z="549.397" h="30"/>
+		</spawn>
+		<!-- Agamemnon -->
+		<spawn npc_id="203769" respawn_time="295">
+			<spot x="1649.3" y="1507.29" z="548.871338" h="90" walker_id="542CE08FFE3E598B798BC12A9058D3D6C35391FB"/>
+		</spawn>
+		<!-- Nitato -->
+		<spawn npc_id="203774" respawn_time="295">
+			<spot x="1859.74" y="1595.29" z="590.002" h="30"/>
+		</spawn>
+		<!-- Zumia -->
+		<spawn npc_id="203775" respawn_time="295">
+			<spot x="1875.08" y="1595.29" z="590.015" h="30"/>
+		</spawn>
+		<!-- Himeros -->
+		<spawn npc_id="203772" respawn_time="295">
+			<spot x="1732.15" y="1501.7" z="587.057" h="90"/>
+		</spawn>
+		<!-- Lumias -->
+		<spawn npc_id="203773" respawn_time="295">
+			<spot x="1800.39" y="1495.88" z="579.06"/>
+		</spawn>
+		<!-- Tercus -->
+		<spawn npc_id="203762" respawn_time="295">
+			<spot x="1471.87" y="1363.22" z="564.649" h="100"/>
+		</spawn>
+		<!-- Leonida -->
+		<spawn npc_id="203763" respawn_time="295">
+			<spot x="1483.56" y="1357.01" z="564.562" h="21"/>
+		</spawn>
+		<!-- Bellia -->
+		<spawn npc_id="203760" respawn_time="295">
+			<spot x="1396.98" y="1643.54" z="573.977"/>
+		</spawn>
+		<!-- Hygea -->
+		<spawn npc_id="203761" respawn_time="295">
+			<spot x="1463.75" y="1666.23" z="573.706" h="66"/>
+		</spawn>
+		<!-- Bellasia -->
+		<spawn npc_id="203766" respawn_time="295">
+			<spot x="1669.78" y="1392.92" z="553.515" h="20"/>
+		</spawn>
+		<!-- Regmos -->
+		<spawn npc_id="203767" respawn_time="295">
+			<spot x="1644.29" y="1391.59" z="553.515" h="40"/>
+		</spawn>
+		<!-- Epeios -->
+		<spawn npc_id="203764" respawn_time="295">
+			<spot x="1466.15" y="1334.04" z="566.416" h="21"/>
+		</spawn>
+		<!-- Kreon -->
+		<spawn npc_id="203765" respawn_time="295">
+			<spot x="1662.58" y="1367.37" z="557.233" h="40"/>
+		</spawn>
+		<!-- Jinus -->
+		<spawn npc_id="203755" respawn_time="295">
+			<spot x="1490.21" y="1664.09" z="573.76" h="63"/>
+		</spawn>
+		<!-- Aithra -->
+		<spawn npc_id="203754" respawn_time="295">
+			<spot x="1387.6859" y="1688.9938" z="573.28613" h="115"/>
+		</spawn>
+		<!-- Sibylla -->
+		<spawn npc_id="203753" respawn_time="295">
+			<spot x="1385.7035" y="1691.4752" z="573.28613" h="112"/>
+		</spawn>
+		<!-- Jucleas -->
+		<spawn npc_id="203752" respawn_time="295">
+			<spot x="1390.89" y="1692.88" z="573.286" h="105"/>
+		</spawn>
+		<!-- Eumelos -->
+		<spawn npc_id="203759" respawn_time="295">
+			<spot x="1438.92" y="1684.05" z="573.706" h="90"/>
+		</spawn>
+		<!-- Macus -->
+		<spawn npc_id="203758" respawn_time="295">
+			<spot x="1427.37" y="1613.81" z="573.706" h="40"/>
+		</spawn>
+		<!-- Perikles -->
+		<spawn npc_id="203757" respawn_time="295">
+			<spot x="1436.69" y="1644.83" z="573.197" h="103"/>
+		</spawn>
+		<!-- Telemos 5.3
+		<Soul Healer> -->
+		<spawn npc_id="203756" respawn_time="295">
+			<spot x="1369.0734" y="1509.3839" z="569.06744" h="63"/>
+		</spawn>
+		<!-- Jordan -->
+		<spawn npc_id="203747" respawn_time="295">
+			<spot x="1576.14" y="1616.07" z="563.4386" h="96" walker_id="6D1D49B75608A076FFF882A987A0D83921633F01"/>
+		</spawn>
+		<!-- Kris -->
+		<spawn npc_id="203746" respawn_time="295">
+			<spot x="1576.14" y="1616.07" z="563.4386" h="60" walker_id="6D1D49B75608A076FFF882A987A0D83921633F01"/>
+		</spawn>
+		<!-- Mich -->
+		<spawn npc_id="203745" respawn_time="295">
+			<spot x="1576.14" y="1616.07" z="563.4386" h="34" walker_id="6D1D49B75608A076FFF882A987A0D83921633F01"/>
+		</spawn>
+		<!-- Leinon -->
+		<spawn npc_id="203744" respawn_time="295">
+			<spot x="1580.76" y="1372.29" z="564.577" h="26"/>
+		</spawn>
+		<!-- Pauton -->
+		<spawn npc_id="203751" respawn_time="295">
+			<spot x="1319.19" y="1405.36" z="575.27" h="96"/>
+		</spawn>
+		<!-- Lukania -->
+		<spawn npc_id="203750" respawn_time="295">
+			<spot x="1367.1" y="1371.85" z="573.386" h="10"/>
+		</spawn>
+		<!-- Bustant -->
+		<spawn npc_id="203749" respawn_time="295">
+			<spot x="1349.71" y="1409.72" z="573.386" h="6"/>
+		</spawn>
+		<!-- Alynsia -->
+		<spawn npc_id="203748" respawn_time="295">
+			<spot x="1393.12" y="1407.51" z="573.307" h="10"/>
+		</spawn>
+		<!-- Servillia -->
+		<spawn npc_id="203736" respawn_time="295">
+			<spot x="1554.85" y="1598.61" z="573.063" h="80"/>
+		</spawn>
+		<!-- Rotund Ayas -->
+		<spawn npc_id="799734" respawn_time="295">
+			<spot x="1556.42" y="1447.52" z="572.872" h="100" random_walk="5"/>
+		</spawn>
+		<!-- Compai -->
+		<spawn npc_id="203737" respawn_time="295">
+			<spot x="1482.62" y="1511.71" z="566.036"/>
+		</spawn>
+		<!-- Hungry Porgus -->
+		<spawn npc_id="799735" respawn_time="295">
+			<spot x="1558.27" y="1449.54" z="572.872" h="86" random_walk="5"/>
+		</spawn>
+		<!-- Payurkus -->
+		<spawn npc_id="203738" respawn_time="295">
+			<spot x="1486.44" y="1605.75" z="572.871" h="105"/>
+		</spawn>
+		<!-- Button-Eye Mookie -->
+		<spawn npc_id="799732" respawn_time="295">
+			<spot x="1568.28" y="1431.6" z="573.036" h="40"/>
+		</spawn>
+		<!-- Valendir -->
+		<spawn npc_id="203739" respawn_time="295">
+			<spot x="1459.46" y="1511.67" z="573.072" h="60"/>
+		</spawn>
+		<!-- Mellow Ksellid -->
+		<spawn npc_id="799733" respawn_time="295">
+			<spot x="1562.61" y="1448.69" z="572.872" h="103" random_walk="3"/>
+		</spawn>
+		<!-- Erdos -->
+		<spawn npc_id="203740" respawn_time="295">
+			<spot x="1576.18" y="1546.96" z="572.871" h="60"/>
+		</spawn>
+		<!-- Ericina -->
+		<spawn npc_id="203741" respawn_time="295">
+			<spot x="1571.73" y="1511.49" z="572.506"/>
+		</spawn>
+		<!-- Goldentail Dorion -->
+		<spawn npc_id="799731" respawn_time="295">
+			<spot x="1560.38" y="1452.49" z="572.872" h="119" random_walk="3"/>
+		</spawn>
+		<!-- Pusfene -->
+		<spawn npc_id="203742" respawn_time="295">
+			<spot x="1577.06" y="1377.97" z="564.577" h="30"/>
+		</spawn>
+		<!-- Striped Elroco -->
+		<spawn npc_id="799728" respawn_time="295">
+			<spot x="1552.15" y="1453.42" z="572.872" h="9" random_walk="2"/>
+		</spawn>
+		<!-- Kumnen -->
+		<spawn npc_id="203743" respawn_time="295">
+			<spot x="1573.18" y="1372.21" z="564.577" h="33"/>
+		</spawn>
+		<!-- Golden Wuf -->
+		<spawn npc_id="799729" respawn_time="295">
+			<spot x="1552.1866" y="1444.8" z="572.8715" h="100" random_walk="2"/>
+		</spawn>
+		<!-- Evestina -->
+		<spawn npc_id="203728" respawn_time="295">
+			<spot x="1613.86" y="1559.2" z="573.391" h="73"/>
+		</spawn>
+		<!-- Judisina -->
+		<spawn npc_id="203732" respawn_time="295">
+			<spot x="1620.31" y="1501.48" z="573.629" h="60"/>
+		</spawn>
+		<!-- Pulo -->
+		<spawn npc_id="203733" respawn_time="295">
+			<spot x="1518.82" y="1425.59" z="573.063" h="20"/>
+		</spawn>
+		<!-- Brantes -->
+		<spawn npc_id="203734" respawn_time="295">
+			<spot x="1526.33" y="1599.63" z="573.009" h="100"/>
+		</spawn>
+		<!-- Wild Kitter -->
+		<spawn npc_id="799736" respawn_time="295">
+			<spot x="1553.49" y="1449.6033" z="572.8717" h="20" random_walk="2"/>
+		</spawn>
+		<!-- Himusus -->
+		<spawn npc_id="203735" respawn_time="295">
+			<spot x="1551.36" y="1423.39" z="573.051" h="30"/>
+		</spawn>
+		<!-- White Dagg -->
+		<spawn npc_id="799737" respawn_time="295">
+			<spot x="1549.5782" y="1450.5353" z="572.87177" h="66" random_walk="2"/>
+		</spawn>
+		<!-- Unirus -->
+		<spawn npc_id="203721" respawn_time="295">
+			<spot x="1328.97" y="1517.59" z="569.062" h="60"/>
+		</spawn>
+		<!-- Pilianae -->
+		<spawn npc_id="203720" respawn_time="295">
+			<spot x="1329.04" y="1506.5" z="569.057" h="60"/>
+		</spawn>
+		<!-- Ulbert -->
+		<spawn npc_id="203723" respawn_time="295">
+			<spot x="1398.71" y="1512.01" z="572.994263" h="120" walker_id="B7035D40E51AB5562CA9A56DFC3D7695B32A63B9"/>
+		</spawn>
+		<!-- Akeas -->
+		<spawn npc_id="203722" respawn_time="295">
+			<spot x="1358.26" y="1511.87" z="569.079651" h="60" walker_id="3C3CD5FAF7ED1319189EB402556EB4C870A55653"/>
+		</spawn>
+		<!-- Leah [Ver.5.3] -->
+		<spawn npc_id="203725" respawn_time="295">
+			<spot x="1392.0127" y="1511.7783" z="572.99426" h="1"/>
+		</spawn>
+		<!-- Gwenspena -->
+		<spawn npc_id="203724" respawn_time="295">
+			<spot x="1901.39" y="1399.43" z="590.381" h="100"/>
+		</spawn>
+		<!-- Tunotos -->
+		<spawn npc_id="203727" respawn_time="295">
+			<spot x="1612.48" y="1462.3" z="573.402" h="50"/>
+		</spawn>
+		<!-- Polyidus -->
+		<spawn npc_id="203726" respawn_time="295">
+			<spot x="1315.990" y="1513.86" z="568.107" h="114"/>
+		</spawn>
+		<!-- Miragent's Holy Templar -->
+		<spawn npc_id="203713" respawn_time="295">
+			<spot x="1856.12" y="1514.86" z="805.518"/>
+		</spawn>
+		<!-- Miragent's Holy Templar -->
+		<spawn npc_id="203712" respawn_time="295">
+			<spot x="1856.1" y="1507.34" z="805.518"/>
+		</spawn>
+		<!-- Rotund Methu -->
+		<spawn npc_id="799726" respawn_time="295">
+			<spot x="1551.52" y="1455.68" z="572.872" h="93" random_walk="2"/>
+		</spawn>
+		<!-- Miragent's Holy Templar -->
+		<spawn npc_id="203715" respawn_time="295">
+			<spot x="1862.38" y="1493.64" z="805.518" h="30"/>
+		</spawn>
+		<!-- Manic Aukwi -->
+		<spawn npc_id="799725" respawn_time="295">
+			<spot x="1550.9" y="1456.27" z="572.872" h="15" random_walk="2"/>
+		</spawn>
+		<!-- Miragent's Holy Templar -->
+		<spawn npc_id="203714" respawn_time="295">
+			<spot x="1858.52" y="1493.57" z="805.518" h="30"/>
+		</spawn>
+		<!-- Quick Kirca -->
+		<spawn npc_id="799724" respawn_time="295">
+			<spot x="1549.03" y="1454.5" z="572.872" h="106" random_walk="2"/>
+		</spawn>
+		<!-- Miragent's Holy Templar -->
+		<spawn npc_id="203717" respawn_time="295">
+			<spot x="1862.73" y="1528.74" z="805.518" h="90"/>
+		</spawn>
+		<!-- Red Eye Larail -->
+		<spawn npc_id="799723" respawn_time="295">
+			<spot x="1552.42" y="1456.37" z="572.872" h="96" random_walk="2"/>
+		</spawn>
+		<!-- Miragent's Holy Templar -->
+		<spawn npc_id="203716" respawn_time="295">
+			<spot x="1858.7" y="1528.67" z="805.518" h="90"/>
+		</spawn>
+		<!-- Miragent's Holy Templar -->
+		<spawn npc_id="203719" respawn_time="295">
+			<spot x="1879.91" y="1517.91" z="812.675" h="60"/>
+		</spawn>
+		<!-- Miragent's Holy Templar -->
+		<spawn npc_id="203718" respawn_time="295">
+			<spot x="1880.1" y="1505.14" z="812.675" h="60"/>
+		</spawn>
+		<!-- Chaokin -->
+		<spawn npc_id="798444" respawn_time="295">
+			<spot x="1864.85" y="2054.78" z="517.907" h="50"/>
+		</spawn>
+		<!-- Letia -->
+		<spawn npc_id="798440" respawn_time="295">
+			<spot x="1551.14" y="1457.97" z="572.872" h="90"/>
+		</spawn>
+		<!-- Devourer Sheluk -->
+		<spawn npc_id="211278" respawn_time="295">
+			<spot x="1450.47" y="1297.58" z="555.383" h="41" random_walk="10"/>
+			<spot x="1447.15" y="1283.4" z="555.589" h="83" random_walk="10"/>
+			<spot x="1453.5" y="1311.79" z="555.178" h="36" random_walk="10"/>
+		</spawn>
+		<!-- Tacitus -->
+		<spawn npc_id="798436" respawn_time="295">
+			<spot x="1887.05" y="1503.35" z="590.008" h="60"/>
+		</spawn>
+		<!-- Granite Gorgon -->
+		<spawn npc_id="211276" respawn_time="295">
+			<spot x="1453.77" y="1300.89" z="555.32" h="4" random_walk="10"/>
+			<spot x="1452.59" y="1306.29" z="555.256" h="7" random_walk="10"/>
+		</spawn>
+		<!-- Unos -->
+		<spawn npc_id="798438" respawn_time="295">
+			<spot x="1561.398" y="1428.928" z="573.034" h="30"/>
+		</spawn>
+		<!-- Petrahulk -->
+		<spawn npc_id="211277" respawn_time="295">
+			<spot x="1451" y="1297.12" z="555.386" h="81" random_walk="10"/>
+			<spot x="1454.06" y="1301.5" z="555.31" h="22" random_walk="10"/>
+		</spawn>
+		<!-- Amis -->
+		<spawn npc_id="798439" respawn_time="295">
+			<spot x="1566.63" y="1431.8" z="573.037" h="40"/>
+		</spawn>
+		<!-- Thorntail Scolopen -->
+		<spawn npc_id="211274" respawn_time="295">
+			<spot x="1443.88" y="1297.67" z="555.422" h="44" random_walk="10"/>
+			<spot x="1454.22" y="1296.98" z="555.368" h="14" random_walk="10"/>
+		</spawn>
+		<!-- Jaichinerk -->
+		<spawn npc_id="798432" respawn_time="295">
+			<spot x="1945.28" y="1548.64" z="590.364" h="90"/>
+		</spawn>
+		<!-- Vicious Fangwing -->
+		<spawn npc_id="211275" respawn_time="295">
+			<spot x="1443.04" y="1298.47" z="555.417" h="27" random_walk="10"/>
+			<spot x="1447.39" y="1303.06" z="555.33" h="97" random_walk="10"/>
+		</spawn>
+		<!-- Wasteland Kurin -->
+		<spawn npc_id="211272" respawn_time="295">
+			<spot x="1454.86" y="1296.65" z="555.368" h="17" random_walk="10"/>
+			<spot x="1451.27" y="1314.6" z="555.155" h="48" random_walk="10"/>
+			<spot x="1455.38" y="1304.62" z="555.261" h="76" random_walk="10"/>
+		</spawn>
+		<!-- Centipede -->
+		<spawn npc_id="211273" respawn_time="295">
+			<spot x="1447.07" y="1297.27" z="555.408" h="16" random_walk="10"/>
+			<spot x="1455.67" y="1302.74" z="555.284" h="72" random_walk="10"/>
+		</spawn>
+		<!-- Jairinerk -->
+		<spawn npc_id="798431" respawn_time="295">
+			<spot x="1943.51" y="1548.67" z="590.364" h="90"/>
+		</spawn>
+		<!-- Jairunerk -->
+		<spawn npc_id="798430" respawn_time="295">
+			<spot x="1945.31" y="1492.11" z="590.364" h="90"/>
+		</spawn>
+		<!-- Abydus -->
+		<spawn npc_id="798426" respawn_time="295">
+			<spot x="1843" y="1492" z="590.125"/>
+		</spawn>
+		<!-- Kalipyerk -->
+		<spawn npc_id="798420" respawn_time="295">
+			<spot x="1517.18" y="1426.29" z="573.063" h="20"/>
+		</spawn>
+		<!-- Rinurinirerk -->
+		<spawn npc_id="798419" respawn_time="295">
+			<spot x="1612.78" y="1560.77" z="573.391" h="73"/>
+		</spawn>
+		<!-- Nagirunerk -->
+		<spawn npc_id="798418" respawn_time="295">
+			<spot x="1613.65" y="1463.7" z="573.402" h="50"/>
+		</spawn>
+		<!-- Tieco -->
+		<spawn npc_id="798410" respawn_time="295">
+			<spot x="1607.01" y="1548.44" z="549.551" h="113"/>
+		</spawn>
+		<!-- Margela -->
+		<spawn npc_id="798411" respawn_time="295">
+			<spot x="1606.85" y="1534.53" z="549.551" h="6"/>
+		</spawn>
+		<!-- Sibylle -->
+		<spawn npc_id="798408" respawn_time="295">
+			<spot x="1738.24" y="2062.73" z="517.907" h="10"/>
+		</spawn>
+		<!-- Persate -->
+		<spawn npc_id="798404" respawn_time="295">
+			<spot x="1602.9" y="1476.5" z="549.551" h="6"/>
+		</spawn>
+		<!-- Rebbana -->
+		<spawn npc_id="798405" respawn_time="295">
+			<spot x="1602.88" y="1489.39" z="549.551" h="113"/>
+		</spawn>
+		<!-- Lampard -->
+		<spawn npc_id="798397" respawn_time="295">
+			<spot h="4" z="565.8782" y="1535.3221" x="1527.2163"/>
+		</spawn>
+		<!-- Etonia -->
+		<spawn npc_id="798398" respawn_time="295">
+			<spot h="62" z="565.8781" y="1535.6235" x="1528.3798"/>
+		</spawn>
+		<!-- Flora -->
+		<spawn npc_id="798384" respawn_time="295">
+			<spot x="1435.4" y="1503.18" z="573.217"/>
+		</spawn>
+		<!-- Andu -->
+		<spawn npc_id="798391" respawn_time="295">
+			<spot x="1623.15" y="1556.92" z="549.623" h="70" walker_id="B0B98681337984AA4042DE5DDC200E12DA9F89E6"/>
+		</spawn>
+		<!-- Palentine -->
+		<spawn npc_id="798390" respawn_time="295">
+			<spot x="1618.33" y="1468.15" z="549.625" h="30"/>
+		</spawn>
+		<!-- Hikarunerk -->
+		<spawn npc_id="798378" respawn_time="295">
+			<spot x="1869.89" y="2067.38" z="517.907" h="53"/>
+		</spawn>
+		<!-- Nianalo [Miragent Holy Templar] -->
+		<spawn npc_id="798359" respawn_time="295">
+			<spot x="1809" y="1505" z="573.279" h="60"/>
+		</spawn>
+		<!-- Shoshinerk -->
+		<spawn npc_id="798357" respawn_time="295">
+			<spot x="1887.5013" y="1499.1527" z="590.15826" h="61"/>
+		</spawn>
+		<!-- Ettamirel -->
+		<spawn npc_id="203316" respawn_time="295">
+			<spot x="1876.8" y="1493.88" z="811.081" h="43"/>
+		</spawn>
+		<!-- Small Methu -->
+		<spawn npc_id="213792" respawn_time="295">
+			<spot x="1393.0437" y="1513.4274" z="572.99426" h="93"/>
+            <spot x="1393.172" y="1511.8362" z="572.99426" h="61"/>
+            <spot x="1392.3152" y="1510.438" z="572.99426" h="50"/>
+            <spot x="1391.7186" y="1513.108" z="572.99426" h="108"/>
+            <spot x="1391.4865" y="1511.0703" z="572.99426" h="8"/>
+			<spot x="1572.97" y="1510.72" z="572.506" h="3"/>
+			<spot x="1573.15" y="1511.53" z="572.506" h="3"/>
+			<spot x="1572.05" y="1512.15" z="572.506" h="105"/>
+			<spot x="1571.51" y="1510.75" z="572.506" h="38"/>
+		</spawn>
+		<!-- Creusa -->
+		<spawn npc_id="203384" respawn_time="295">
+			<spot x="2046.44" y="1450.27" z="592.225" h="15"/>
+		</spawn>
+		<!-- Adetes -->
+		<spawn npc_id="203386" respawn_time="295">
+			<spot x="1869.425" y="1537.6566" z="805.5178" h="0"/>
+		</spawn>
+		<!-- Alcyone -->
+		<spawn npc_id="203387" respawn_time="295">
+			<spot x="1869.425" y="1534.9937" z="805.5178" h="119"/>
+		</spawn>
+		<!-- Iocaste -->
+		<spawn npc_id="203708" respawn_time="295">
+			<spot x="1878.1449" y="1537.6475" z="805.5178" h="60"/>
+		</spawn>
+		<!-- Dairos -->
+		<spawn npc_id="203710" respawn_time="295">
+			<spot x="1878.1637" y="1535.0464" z="805.5178" h="60"/>
+		</spawn>
+		<!-- Elizar -->
+		<spawn npc_id="203329" respawn_time="295">
+			<spot x="1877.73" y="1494.91" z="811.081" h="43"/>
+		</spawn>
+		<!-- Training Dummy -->
+		<spawn npc_id="700571" respawn_time="295">
+		    <spot x="1907.0" y="1479.0" z="590.2402" h="0"/>
+			<spot x="1809.6545" y="1457.3129" z="579.0601" h="0"/>
+			<spot x="1907.0" y="1549.13" z="590.23987" h="0"/>
+			<spot x="1907.0" y="1557.79" z="590.23975" h="0"/>
+		</spawn>
+		<!-- Training Dummy -->
+		<spawn npc_id="700588" respawn_time="295">
+		    <spot x="1907.0" y="1483.36" z="590.24146" h="0"/>
+			<spot x="1907.0" y="1475.29" z="590.2391" h="0"/>
+			<spot x="1907.0" y="1553.14" z="590.23987" h="0"/>
+		</spawn>
+		<!-- Gaoshunerk -->
+		<spawn npc_id="798017" respawn_time="295">
+			<spot x="1911.96" y="1776.41" z="576.804" h="90"/>
+		</spawn>
+		<!-- Yaorunerk -->
+		<spawn npc_id="798016" respawn_time="295">
+			<spot x="1890.92" y="1755.37" z="576.759" h="90"/>
+		</spawn>
+		<!-- Feyshunerk -->
+		<spawn npc_id="798019" respawn_time="295">
+			<spot x="1739.16" y="2078.01" z="517.9073" h="115" walker_id="993C49E2073739C592EF12654D6DA4DCD28D0A2C"/>
+		</spawn>
+		<!-- Paorunerk -->
+		<spawn npc_id="798018" respawn_time="295">
+			<spot x="1848" y="2189" z="528.512" h="10"/>
+		</spawn>
+		<!-- Ruoshinerk -->
+		<spawn npc_id="798021" respawn_time="295">
+			<spot x="1793.16" y="2093.16" z="527.93" h="60"/>
+		</spawn>
+		<!-- Layrunerk -->
+		<spawn npc_id="798020" respawn_time="295">
+			<spot x="1845.3" y="2046.28" z="517.9073" h="22" walker_id="3B43AF5BB8AC7105CE689CB389DEFBE583B00039"/>
+		</spawn>
+		<!-- Kazmonerk -->
+		<spawn npc_id="798023" respawn_time="295">
+			<spot x="1731.56" y="2092.7" z="517.907" h="56"/>
+		</spawn>
+		<!-- Maorinerk -->
+		<spawn npc_id="798022" respawn_time="295">
+			<spot x="1839.94" y="2030.88" z="517.907" h="41"/>
+		</spawn>
+		<!-- Mapirerk -->
+		<spawn npc_id="798025" respawn_time="295">
+			<spot x="1896.95" y="1752.39" z="576.759" h="90"/>
+		</spawn>
+		<!-- Kierunerk -->
+		<spawn npc_id="798024" respawn_time="295">
+			<spot x="1804.08" y="2114.77" z="527.93" h="20"/>
+		</spawn>
+		<!-- Amporonerk -->
+		<spawn npc_id="798027" respawn_time="295">
+			<spot x="1653.22" y="1507.76" z="543.029" h="105"/>
+		</spawn>
+		<!-- Kunberunerk -->
+		<spawn npc_id="798026" respawn_time="295">
+			<spot x="1823.9358" y="2190.046" z="528.76605" h="14"/>
+			<spot x="1968.6163" y="1771.4144" z="576.7586" h="62"/>
+		</spawn>
+		<!-- Furinerk -->
+		<spawn npc_id="798014" respawn_time="295">
+			<spot x="1883.43" y="1454.45" z="590.089"/>
+		</spawn>
+		<!-- Torirunerk -->
+		<spawn npc_id="798015" respawn_time="295">
+			<spot x="1886.16" y="1752.24" z="576.759" h="90"/>
+		</spawn>
+		<!-- Yiehmonerk -->
+		<spawn npc_id="798012" respawn_time="295">
+			<spot x="1403.54" y="1437.83" z="573.386" h="70"/>
+		</spawn>
+		<!-- Chiwurinerk -->
+		<spawn npc_id="798013" respawn_time="295">
+			<spot x="1892.09" y="1452.79" z="590.089" h="60"/>
+		</spawn>
+		<!-- Angparinerk -->
+		<spawn npc_id="798010" respawn_time="295">
+			<spot x="1426.11" y="1401.52" z="573.471" h="54"/>
+		</spawn>
+		<!-- Heerunerk -->
+		<spawn npc_id="798011" respawn_time="295">
+			<spot x="1408.3936" y="1433.2091" z="573.4828" h="81"/>
+		</spawn>
+		<!-- Taraerinerk -->
+		<spawn npc_id="798009" respawn_time="295">
+			<spot x="1423.63" y="1394.88" z="573.471" h="40"/>
+		</spawn>
+		<!-- Della -->
+		<spawn npc_id="203854" respawn_time="295">
+			<spot x="1848.99" y="2190.28" z="528.512" h="80"/>
+		</spawn>
+		<!-- Ayurinrinerk -->
+		<spawn npc_id="798152" respawn_time="295">
+			<spot x="1847" y="1521" z="590.158"/>
+		</spawn>
+		<!-- Py -->
+		<spawn npc_id="203855" respawn_time="295">
+			<spot x="1821.91" y="2193.63" z="528.766" h="36"/>
+		</spawn>
+		<!-- Ludina -->
+		<spawn npc_id="203852" respawn_time="295">
+			<spot x="1827.2" y="2182.74" z="528.5118" h="17" walker_id="8317628F64AC2D04CAD64C0C17BB14FE8073E298"/>
+		</spawn>
+		<!-- Genon -->
+		<spawn npc_id="203853" respawn_time="295">
+			<spot x="1837.46" y="2199.35" z="528.766" h="10"/>
+		</spawn>
+		<!-- Faye -->
+		<spawn npc_id="203850" respawn_time="295">
+			<spot x="1802.79" y="1435.88" z="579.062" h="60"/>
+		</spawn>
+		<!-- Phogus -->
+		<spawn npc_id="203851" respawn_time="295">
+			<spot x="1659.92" y="1502.61" z="543.182" h="60"/>
+		</spawn>
+		<!-- Menon -->
+		<spawn npc_id="203848" respawn_time="295">
+			<spot x="1877.34" y="2198.5" z="527.908" h="20"/>
+		</spawn>
+		<!-- Myrtil -->
+		<spawn npc_id="203849" respawn_time="295">
+			<spot x="1802.04" y="1437.57" z="579.062" h="60"/>
+		</spawn>
+		<!-- Benorun -->
+		<spawn npc_id="203846" respawn_time="295">
+			<spot x="1877.49" y="2199.76" z="527.908" h="83"/>
+		</spawn>
+		<!-- Deke -->
+		<spawn npc_id="203847" respawn_time="295">
+			<spot x="1869.9" y="2207.61" z="527.908" h="96"/>
+		</spawn>
+		<!-- Lemias -->
+		<spawn npc_id="203844" respawn_time="295">
+			<spot x="1859.88" y="1699.94" z="576.759" h="50"/>
+		</spawn>
+		<!-- Lityerses -->
+		<spawn npc_id="203845" respawn_time="295">
+			<spot x="1875.06" y="2207.32" z="527.907" h="76"/>
+		</spawn>
+		<!-- Lufe -->
+		<spawn npc_id="203842" respawn_time="295">
+			<spot x="1968.49" y="1772.9" z="576.759" h="60"/>
+		</spawn>
+		<!-- Tikeron -->
+		<spawn npc_id="203843" respawn_time="295">
+			<spot x="1953.79" y="1786" z="576.759" h="90"/>
+		</spawn>
+		<!-- Basmos -->
+		<spawn npc_id="203840" respawn_time="295">
+			<spot x="1936.53" y="1768.76" z="576.759"/>
+		</spawn>
+		<!-- Emir -->
+		<spawn npc_id="203841" respawn_time="295">
+			<spot x="1938.78" y="1724.13" z="576.759" h="30"/>
+		</spawn>
+		<!-- Arion -->
+		<spawn npc_id="203871" respawn_time="295">
+			<spot x="1666.13" y="1357.54" z="557.2329" h="51" walker_id="688C63508BE3F16F153F73E9F8177EC6FA61D484"/>
+		</spawn>
+		<!-- Libitina -->
+		<spawn npc_id="203870" respawn_time="295">
+			<spot x="1496.38" y="1446.33" z="572.8724" h="22" walker_id="D9E38819C01A85E27BE8CC955648D8F62E9AF497"/>
+		</spawn>
+		<!-- Hether -->
+		<spawn npc_id="203869" respawn_time="295">
+			<spot x="1918.91" y="1511.69" z="590.011047" h="30" walker_id="DE02101D412E196AF6C492B83BD7B3833239E64C"/>
+		</spawn>
+		<!-- Lustiena -->
+		<spawn npc_id="203868" respawn_time="295">
+			<spot x="1655.63" y="1649.91" z="548.734253" h="100" walker_id="5A23467206A49934755C510330016D5D2698909F"/>
+		</spawn>
+		<!-- Laitos -->
+		<spawn npc_id="203867" respawn_time="295">
+			<spot x="1791.33" y="2175.36" z="527.9234" h="63" walker_id="44A3B0091FB102D32C144F88C78848605916010E"/>
+		</spawn>
+		<!-- Kadmos -->
+		<spawn npc_id="203866" respawn_time="295">
+			<spot x="1801.11" y="2117.77" z="527.93" h="8"/>
+		</spawn>
+		<!-- Morgana -->
+		<spawn npc_id="203865" respawn_time="295">
+			<spot x="1787.93" y="2079.47" z="527.929443" h="31" walker_id="90DB30E57A5FABE649D38F8376D50F30387286F3"/>
+		</spawn>
+		<!-- Marmeia -->
+		<spawn npc_id="203864" respawn_time="295">
+			<spot x="1975.19" y="1757.22" z="576.759"/>
+		</spawn>
+		<!-- Codinaus -->
+		<spawn npc_id="203863" respawn_time="295">
+			<spot x="1860.93" y="2090.25" z="517.907" h="116"/>
+		</spawn>
+		<!-- Iana -->
+		<spawn npc_id="203862" respawn_time="295">
+			<spot x="1811.11" y="2078.15" z="527.929443" h="94" walker_id="C27CF28B807915BE9AEBD1B131E682F45144D728"/>
+		</spawn>
+		<!-- Mara -->
+		<spawn npc_id="203861" respawn_time="295">
+			<spot x="1815.59" y="2129.19" z="529.084" h="75"/>
+		</spawn>
+		<!-- Bella -->
+		<spawn npc_id="203860" respawn_time="295">
+			<spot x="1811.84" y="2123.7" z="529.087" h="26"/>
+		</spawn>
+		<!-- Mustapino -->
+		<spawn npc_id="203859" respawn_time="295">
+			<spot x="1813.91" y="2130.15" z="529.084" h="83"/>
+		</spawn>
+		<!-- Lapis -->
+		<spawn npc_id="203858" respawn_time="295">
+			<spot x="1811.92" y="2130.47" z="529.084" h="90"/>
+		</spawn>
+		<!-- Menoa -->
+		<spawn npc_id="203857" respawn_time="295">
+			<spot x="1821.61" y="2195.34" z="528.766" h="93"/>
+		</spawn>
+		<!-- Mino -->
+		<spawn npc_id="203856" respawn_time="295">
+			<spot x="1806.19" y="2119.44" z="529.084" h="75"/>
+		</spawn>
+		<!-- Atifure -->
+		<spawn npc_id="203884" respawn_time="295">
+			<spot x="1827.53" y="2190.61" z="528.766" h="83"/>
+		</spawn>
+		<!-- Tures -->
+		<spawn npc_id="203885" respawn_time="295">
+			<spot x="1829.76" y="2189.67" z="528.766" h="83"/>
+		</spawn>
+		<!-- Maenia -->
+		<spawn npc_id="203880" respawn_time="295">
+			<spot x="1942.78" y="1560.15" z="590.363" h="30"/>
+		</spawn>
+		<!-- Ipikio -->
+		<spawn npc_id="203882" respawn_time="295">
+			<spot x="2058.18" y="1492.89" z="592.225"/>
+		</spawn>
+		<!-- Leno -->
+		<spawn npc_id="203883" respawn_time="295">
+			<spot x="2052.32" y="1542.91" z="592.225" h="15"/>
+		</spawn>
+		<!-- Rinos -->
+		<spawn npc_id="203876" respawn_time="295">
+			<spot x="1426.3" y="1248.49" z="569.47" h="21"/>
+		</spawn>
+		<!-- Euripides -->
+		<spawn npc_id="203878" respawn_time="295">
+			<spot x="1831.8" y="2206.56" z="528.766" h="30"/>
+		</spawn>
+		<!-- Idomeneus -->
+		<spawn npc_id="203879" respawn_time="295">
+			<spot x="1738.01" y="1513.48" z="587.04"/>
+		</spawn>
+		<!-- Nidia -->
+		<spawn npc_id="203872" respawn_time="295">
+			<spot x="1988.21" y="1726.46" z="576.7586" h="90" walker_id="594BB47E13A83BEF5F4F064EE4E3090B275A3BBB"/>
+		</spawn>
+		<!-- Etere -->
+		<spawn npc_id="203873" respawn_time="295">
+			<spot x="1529.58" y="1559.73" z="573.0382" h="38" walker_id="E96DFB914D0AC7D2967EBE97630CFF91E060D619"/>
+		</spawn>
+		<!-- Nepis -->
+		<spawn npc_id="203875" respawn_time="295">
+			<spot x="1456.36" y="1330.09" z="564.141" h="81"/>
+		</spawn>
+		<!-- Momus -->
+		<spawn npc_id="203897" respawn_time="295">
+			<spot x="1879.96" y="1522.81" z="805.518" h="60"/>
+		</spawn>
+		<!-- Melicar -->
+		<spawn npc_id="203896" respawn_time="295">
+			<spot x="1879.87" y="1526.66" z="805.518" h="60"/>
+		</spawn>
+		<!-- Opeia -->
+		<spawn npc_id="203899" respawn_time="295">
+			<temporary_spawn spawn_time="21.*.*" despawn_time="4.*.*"/>
+			<spot x="1839" y="2189" z="528.766" h="105"/>
+		</spawn>
+		<!-- Coeus -->
+		<spawn npc_id="203898" respawn_time="295">
+			<spot x="2041" y="1496" z="581.139" h="43"/>
+		</spawn>
+		<!-- Thersites -->
+		<spawn npc_id="203893" respawn_time="295">
+			<spot x="1755.33" y="1401.62" z="575.852661" h="66" walker_id="EAAAD62D428C4327ABD8749DE6E7F05E90023832"/>
+		</spawn>
+		<!-- Elephenor -->
+		<spawn npc_id="203892" respawn_time="295">
+			<spot x="1473.98" y="1652.46" z="573.198" h="63"/>
+		</spawn>
+		<!-- Lamid -->
+		<spawn npc_id="203895" respawn_time="295">
+			<spot x="2030.99" y="1474.16" z="592.225"/>
+		</spawn>
+		<!-- Latri -->
+		<spawn npc_id="203894" respawn_time="295">
+			<spot x="2008.22" y="1478.07" z="592.229" h="50"/>
+		</spawn>
+		<!-- Tigares -->
+		<spawn npc_id="203888" respawn_time="295">
+			<spot x="1950.65" y="1560.19" z="590.364" h="30"/>
+		</spawn>
+		<!-- Karon -->
+		<spawn npc_id="203891" respawn_time="295">
+			<spot x="1879.06" y="1497.23" z="805.518" h="60"/>
+		</spawn>
+		<!-- Ulaguru -->
+		<spawn npc_id="203890" respawn_time="295">
+			<spot x="1980.04" y="1757.17" z="577" h="90"/>
+		</spawn>
+		<!-- Diana -->
+		<spawn npc_id="203786" respawn_time="295">
+			<spot x="1846.19" y="1452.73" z="590.122" h="90"/>
+		</spawn>
+		<!-- Darius -->
+		<spawn npc_id="203787" respawn_time="295">
+			<spot x="1840.21" y="1452.81" z="590.122"/>
+		</spawn>
+		<!-- Hestia -->
+		<spawn npc_id="203784" respawn_time="295">
+			<spot x="1848" y="1544" z="590.158"/>
+		</spawn>
+		<!-- Luelas -->
+		<spawn npc_id="203785" respawn_time="295">
+			<spot x="1843.5" y="1537.82" z="590.158"/>
+		</spawn>
+		<!-- Vulcanus -->
+		<spawn npc_id="203790" respawn_time="295">
+			<spot x="1883.04" y="1568.33" z="590.122"/>
+		</spawn>
+		<!-- Menomes -->
+		<spawn npc_id="203791" respawn_time="295">
+			<spot x="1891.9279" y="1569.5618" z="590.12213" h="60"/>
+		</spawn>
+		<!-- Anteros -->
+		<spawn npc_id="203788" respawn_time="295">
+			<spot x="1850" y="1568.58" z="590.122" h="60"/>
+		</spawn>
+		<!-- Nakia -->
+		<spawn npc_id="203789" respawn_time="295">
+			<spot x="1840.25" y="1568.68" z="590.122"/>
+		</spawn>
+		<!-- Zakeron -->
+		<spawn npc_id="203778" respawn_time="295">
+			<spot x="1909.04" y="1507.38" z="590.013"/>
+		</spawn>
+		<!-- Manuka -->
+		<spawn npc_id="203779" respawn_time="295">
+			<spot x="1908.93" y="1515.4" z="590.012"/>
+		</spawn>
+		<!-- Noris -->
+		<spawn npc_id="203776" respawn_time="295">
+			<spot x="1859.25" y="1428.33" z="590.04" h="90"/>
+		</spawn>
+		<!-- Numakas -->
+		<spawn npc_id="203777" respawn_time="295">
+			<spot x="1873.07" y="1428.42" z="590.008" h="90"/>
+		</spawn>
+		<!-- Cornelius
+		<Essencetapping Master> -->
+		<spawn npc_id="203780" respawn_time="295">
+			<spot x="1847.8724" y="1475.6836" z="590.1246" h="30"/>
+		</spawn>
+		<!-- Sabotes 
+		<Essencetapping Items> -->
+		<spawn npc_id="203781" respawn_time="295">
+			<spot x="1843.146" y="1482.776" z="590.125" h="0"/>
+		</spawn>
+		<!-- Jhaelas
+		<Aethertapping Master> -->
+		<spawn npc_id="203782" respawn_time="295">
+			<spot x="1853.0872" y="1475.6787" z="590.1246" h="29"/>
+		</spawn>
+		<!-- Maire
+		<Aethertapping Items> -->
+		<spawn npc_id="203783" respawn_time="295">
+			<spot x="1843.136" y="1484.590" z="590.125" h="0"/>
+		</spawn>
+		<!-- Inofe -->
+		<spawn npc_id="203807" respawn_time="295">
+			<spot x="1921.48" y="1396.94" z="590.381" h="55"/>
+		</spawn>
+		<!-- Losadis -->
+		<spawn npc_id="203806" respawn_time="295">
+			<spot x="1917.46" y="1388.3" z="590.365" h="40"/>
+		</spawn>
+		<!-- Demodocos -->
+		<spawn npc_id="203795" respawn_time="295">
+			<spot x="1846.64" y="1511.12" z="590.07"/>
+		</spawn>
+		<!-- Proserpina -->
+		<spawn npc_id="203794" respawn_time="295">
+			<spot x="1889.0269" y="1538.3944" z="590.1345" h="54"/>
+		</spawn>
+		<!-- Daphnis -->
+		<spawn npc_id="203793" respawn_time="295">
+			<spot x="1882" y="1543" z="590.135" h="60"/>
+		</spawn>
+		<!-- Utsida -->
+		<spawn npc_id="203792" respawn_time="295">
+			<spot x="1887" y="1453" z="590.089" h="30"/>
+		</spawn>
+		<!-- Aurnia -->
+		<spawn npc_id="203797" respawn_time="295">
+			<spot x="1886.7" y="1518.83" z="590.008" h="60"/>
+		</spawn>
+		<!-- Himeira -->
+		<spawn npc_id="203796" respawn_time="295">
+			<spot x="1860.27" y="1500.18" z="590.008"/>
+		</spawn>
+		<!-- Hesione -->
+		<spawn npc_id="203816" respawn_time="295">
+			<spot x="1953.89" y="1541.06" z="590.365" h="60"/>
+		</spawn>
+		<!-- Aegist -->
+		<spawn npc_id="203817" respawn_time="295">
+			<spot x="1944.4" y="1529.31" z="590.364" h="30"/>
+		</spawn>
+		<!-- Islene -->
+		<spawn npc_id="203818" respawn_time="295">
+			<spot x="1905" y="1630" z="590.359" h="96"/>
+		</spawn>
+		<!-- Aktus -->
+		<spawn npc_id="203819" respawn_time="295">
+			<spot x="1914" y="1629" z="590.359" h="83"/>
+		</spawn>
+		<!-- Layla -->
+		<spawn npc_id="203820" respawn_time="295">
+			<spot x="1901.79" y="1626.24" z="590.359" h="110"/>
+		</spawn>
+		<!-- Beomas -->
+		<spawn npc_id="203821" respawn_time="295">
+			<spot x="1918.73" y="1617.33" z="590.359" h="56"/>
+		</spawn>
+		<!-- Quintus -->
+		<spawn npc_id="203822" respawn_time="295">
+			<spot x="1869.2" y="1624.29" z="590.242" h="26"/>
+		</spawn>
+		<!-- Alkestis -->
+		<spawn npc_id="203823" respawn_time="295">
+			<spot x="1929.52" y="1428.42" z="590.242" h="113"/>
+		</spawn>
+		<!-- Ophenes -->
+		<spawn npc_id="203808" respawn_time="295">
+			<spot x="1955.49" y="1448.99" z="590.365" h="60"/>
+		</spawn>
+		<!-- Perena -->
+		<spawn npc_id="203809" respawn_time="295">
+			<spot x="1955.47" y="1451.01" z="590.365" h="60"/>
+		</spawn>
+		<!-- Benes -->
+		<spawn npc_id="203810" respawn_time="295">
+			<spot x="1946.97" y="1568.94" z="590.409058" h="93" walker_id="3C50A69DB5309DFA8B3916923BDF3F9D1BB9FF00"/>
+		</spawn>
+		<!-- Daarunerk -->
+		<spawn npc_id="798116" respawn_time="295">
+			<spot x="2057.23" y="1528.87" z="592.225"/>
+		</spawn>
+		<!-- Arcinia -->
+		<spawn npc_id="203811" respawn_time="295">
+			<spot x="1954.87" y="1569.41" z="590.365" h="60"/>
+		</spawn>
+		<!-- Jooma -->
+		<spawn npc_id="203812" respawn_time="295">
+			<spot x="1945.18" y="1577.93" z="590.364" h="90"/>
+		</spawn>
+		<!-- Esca -->
+		<spawn npc_id="203813" respawn_time="295">
+			<spot x="1954.56" y="1482.52" z="590.365" h="60"/>
+		</spawn>
+		<!-- Euchenor -->
+		<spawn npc_id="203814" respawn_time="295">
+			<spot x="1954.56" y="1484.59" z="590.365" h="60"/>
+		</spawn>
+		<!-- Soana -->
+		<spawn npc_id="203815" respawn_time="295">
+			<spot x="1953.9" y="1539.11" z="590.365" h="60"/>
+		</spawn>
+		<!-- Xenophon -->
+		<spawn npc_id="203833" respawn_time="295">
+			<spot x="2047.28" y="1484.31" z="581.139" h="30"/>
+		</spawn>
+		<!-- Dimos -->
+		<spawn npc_id="203832" respawn_time="295">
+			<spot x="2021.16" y="1486.94" z="581.222" h="30"/>
+		</spawn>
+		<!-- Seirenia -->
+		<spawn npc_id="203835" respawn_time="295">
+			<spot x="2044.69" y="1527.41" z="581.139" h="15"/>
+		</spawn>
+		<!-- Nestor -->
+		<spawn npc_id="203834" respawn_time="295">
+			<spot x="2005.74" y="1487.62" z="581.139" h="111"/>
+		</spawn>
+		<!-- Gerania -->
+		<spawn npc_id="203837" respawn_time="295">
+			<spot x="2033.56" y="1582.05" z="592.225" h="26"/>
+		</spawn>
+		<!-- Gromoros -->
+		<spawn npc_id="203836" respawn_time="295">
+			<spot x="2049.34" y="1511" z="581.361" h="50"/>
+		</spawn>
+		<!-- Lukian -->
+		<spawn npc_id="203839" respawn_time="295">
+			<spot x="1977.14" y="1788.87" z="576.759" h="113"/>
+		</spawn>
+		<!-- Haimon -->
+		<spawn npc_id="203838" respawn_time="295">
+			<spot x="1964" y="1786" z="576.759" h="90"/>
+		</spawn>
+		<!-- Atia -->
+		<spawn npc_id="203825" respawn_time="295">
+			<spot x="1892.94" y="1602.64" z="590.011841" h="42" walker_id="B66F7D9377C145CBFCD38FD86CE33CAB23FA1AFF"/>
+		</spawn>
+		<!-- Nephalion -->
+		<spawn npc_id="203824" respawn_time="295">
+			<spot x="1888.07" y="1412.61" z="590.0084" h="47" walker_id="11CEF6A55CF383F616878F6105E1E61DAFA57575"/>
+		</spawn>
+		<!-- Kareinus -->
+		<spawn npc_id="203827" respawn_time="295">
+			<spot x="1836.46" y="1623.61" z="584.628" h="60"/>
+		</spawn>
+		<!-- Ballos -->
+		<spawn npc_id="203826" respawn_time="295">
+			<spot x="1836.18" y="1605.56" z="584.54" h="60"/>
+		</spawn>
+		<!-- Minyae -->
+		<spawn npc_id="203829" respawn_time="295">
+			<spot x="1833.12" y="1408.98" z="586.045" h="60"/>
+		</spawn>
+		<!-- Dione -->
+		<spawn npc_id="203828" respawn_time="295">
+			<spot x="1833.02" y="1396.96" z="585.937" h="60"/>
+		</spawn>
+		<!-- Biesa -->
+		<spawn npc_id="203831" respawn_time="295">
+			<spot x="2018.45" y="1534.36" z="581.252" h="90"/>
+		</spawn>
+		<!-- Fuchsia -->
+		<spawn npc_id="203830" respawn_time="295">
+			<spot x="2006.9" y="1511.1" z="581.859"/>
+		</spawn>
+		<!-- Viconbarius -->
+		<spawn npc_id="205455" respawn_time="295">
+			<spot x="1620.08276" y="1493.35986" z="573.346741" h="60"/>
+		</spawn>
+		<!-- Cinna -->
+		<spawn npc_id="798446" respawn_time="295">
+			<spot x="1624.85" y="1495.67" z="549.5507" h="64" walker_id="3C1E288F46F2F579A1B8B33BC040952B7924C96A"/>
+		</spawn>
+		<!-- Amirinrinerk -->
+		<spawn npc_id="798462" respawn_time="295">
+			<spot x="1867.790" y="2062.195" z="517.907" h="53"/>
+		</spawn>
+		<!-- Lurine -->
+		<spawn npc_id="798451" respawn_time="295">
+			<spot x="1889.634" y="1483.327" z="590.158" h="61"/>
+		</spawn>
+		<!-- Undin -->
+		<spawn npc_id="798450" respawn_time="295">
+			<spot x="1885.473" y="1479.049" z="590.158" h="60"/>
+		</spawn>
+		<!-- Haridus -->
+		<spawn npc_id="798458" respawn_time="295">
+			<spot x="1459.353" y="1496.156" z="573.072" h="53"/>
+		</spawn>
+		<!-- Legna -->
+		<spawn npc_id="798460" respawn_time="295">
+			<spot x="1564.2837" y="1429.8239" z="573.0343" h="39"/>
+		</spawn>
+		<!-- Obelisk -->
+		<spawn npc_id="700018" respawn_time="295">
+			<spot x="1368.7158" y="1511.7944" z="569.90546" entity_id="134"/>
+		</spawn>
+		<!-- Mailbox -->
+		<spawn npc_id="700000" respawn_time="295">
+			<spot x="1462.3433" y="1431.0303" z="572.87238" entity_id="248"/>
+		</spawn>
+		<!-- Elyos Square Teleport Statue -->
+		<spawn npc_id="730015" respawn_time="295">
+			<spot x="1458.5054" y="1447.9446" z="572.87531" entity_id="318"/>
+		</spawn>
+		<!-- Divine Road Teleport Statue -->
+		<spawn npc_id="730016" respawn_time="295">
+			<spot x="1932.7197" y="1517.0426" z="590.00916" entity_id="135"/>
+		</spawn>
+		<!-- Aerolink To Inggison -->
+		<spawn npc_id="730218" respawn_time="295">
+			<spot x="1741.3492" y="2058.9143" z="518.84711" entity_id="1601"/>
+		</spawn>
+		<!-- Sanctum Outer Port Teleport Statue -->
+		<spawn npc_id="730264" respawn_time="295">
+			<spot x="1812.2661" y="2155.9753" z="527.90723" entity_id="1126"/>
+		</spawn>
+		<!-- Cloister Of Kaisinel Teleport Statue -->
+		<spawn npc_id="730265" respawn_time="295">
+			<spot x="1366.5089" y="1543.5742" z="569.02234" entity_id="1136"/>
+		</spawn>
+		<!-- Book [Rare Poison Guide] -->
+		<spawn npc_id="730091" respawn_time="295">
+			<spot x="2048.5222" y="1501.0757" z="583.50623" entity_id="1430"/>
+		</spawn>
+		<!-- Book [Guide To The Abyss] -->
+		<spawn npc_id="730092" respawn_time="295">
+			<spot x="2032.4822" y="1537.7520" z="583.46606" entity_id="968"/>
+		</spawn>
+		<!-- Book [Book Of Prophecy] -->
+		<spawn npc_id="730093" respawn_time="295">
+			<spot x="2059.3486" y="1497.5369" z="595.75085" entity_id="982"/>
+		</spawn>
+		<!-- Book [Wind Breeze] -->
+		<spawn npc_id="730094" respawn_time="295">
+			<spot x="2054.5000" y="1542.7500" z="596.56055" entity_id="983"/>
+		</spawn>
+		<!-- Book [Eltnen's Fall] -->
+		<spawn npc_id="730095" respawn_time="295">
+			<spot x="2046.3628" y="1570.5249" z="594.7984" entity_id="984"/>
+		</spawn>
+		<!-- Book [Studies On Balaur Ruins] -->
+		<spawn npc_id="730096" respawn_time="295">
+			<spot x="2055.5981" y="1547.7977" z="583.6405" entity_id="985"/>
+		</spawn>
+		<!-- Book [Fall Of The Zumion Ruins] -->
+		<spawn npc_id="730097" respawn_time="295">
+			<spot x="2047.9817" y="1543.1049" z="583.76898" entity_id="986"/>
+		</spawn>
+		<!-- Book [Deltras And Storm Legion] -->
+		<spawn npc_id="730098" respawn_time="295">
+			<spot x="2034.2192" y="1549.8323" z="582.88629" entity_id="987"/>
+		</spawn>
+		<!-- Book [Introduction To Alchemy] -->
+		<spawn npc_id="730099" respawn_time="295">
+			<spot x="2055.6433" y="1473.3054" z="584.4209" entity_id="988"/>
+		</spawn>
+		<!-- Book [A History Of Legions] -->
+		<spawn npc_id="730100" respawn_time="295">
+			<spot x="2042.4034" y="1475.6287" z="583.71265" entity_id="990"/>
+		</spawn>
+		<!-- Book [Flora Of Elysea] -->
+		<spawn npc_id="730101" respawn_time="295">
+			<spot x="2031.9373" y="1473.7717" z="583.60071" entity_id="991"/>
+		</spawn>
+		<!-- Book [Glories Of Sanctum] -->
+		<spawn npc_id="730125" respawn_time="295">
+			<spot x="1436.9865" y="1645.6874" z="573.73328" entity_id="1047"/>
+		</spawn>
+		<!-- Book [Memorable Daevas] -->
+		<spawn npc_id="730126" respawn_time="295">
+			<spot x="1953.568" y="1746.3002" z="577.99982" entity_id="1048"/>
+		</spawn>
+		<!-- Book [The Right Of Daeva] -->
+		<spawn npc_id="730127" respawn_time="295">
+			<spot x="1830.5243" y="2201.0134" z="530.72778" entity_id="1049"/>
+		</spawn>
+		<!-- Book [Steel Beard] -->
+		<spawn npc_id="748006" respawn_time="295">
+			<spot x="1856.2800" y="2069.5515" z="517.90961" entity_id="1131"/>
+		</spawn>
+		<!-- Book [Legendary Weapons Vol.1] -->
+		<spawn npc_id="748007" respawn_time="295">
+			<spot x="2048.6118" y="1523.2145" z="582.12799" entity_id="1128"/>
+		</spawn>
+		<!-- Book [Who's Who Of Fashion] -->
+		<spawn npc_id="748010" respawn_time="295">
+			<spot x="1607.5601" y="1535.5066" z="550.51910" entity_id="1134"/>
+		</spawn>
+		<!-- Book [Dancing Children] -->
+		<spawn npc_id="748011" respawn_time="295">
+			<spot x="2049.7915" y="1495.1567" z="582.67303" entity_id="1130"/>
+		</spawn>
+		<!-- Book [Acetlar and Heimdal The Fool] -->
+		<spawn npc_id="748012" respawn_time="295">
+			<spot x="2050.5144" y="1495.1567" z="582.67303" entity_id="1132"/>
+		</spawn>
+		<!-- Book [Legends And Nymphs Book Vol.5] -->
+		<spawn npc_id="748016" respawn_time="295">
+			<spot x="2053.5996" y="1495.1002" z="584.44647" entity_id="1694"/>
+		</spawn>
+		<!-- Book [LC1_StoryBook_HighDeva_01] -->
+		<spawn npc_id="731671" respawn_time="295">
+			<spot x="2047.1088" y="1541.9950" z="582.88403" entity_id="3"/>
+		</spawn>
+		<!-- Book [LC1_StoryBook_HighDeva_02] -->
+		<spawn npc_id="731672" respawn_time="295">
+			<spot x="2037.6331" y="1476.8833" z="582.83197" entity_id="47"/>
+		</spawn>
+		<!-- Book [LC1_StoryBook_HighDeva_03] -->
+		<spawn npc_id="731673" respawn_time="295">
+			<spot x="2050.2429" y="1573.8669" z="594.56561" entity_id="60"/>
+		</spawn>
+		<!-- Book [LC1_StoryBook_HighDeva_04] -->
+		<spawn npc_id="731673" respawn_time="295">
+			<spot x="2051.2678" y="1447.2811" z="593.77380" entity_id="63"/>
+		</spawn>
+		<!-- Book [LC1_StoryBook_HighDeva_05] -->
+		<spawn npc_id="731673" respawn_time="295">
+			<spot x="2006.5048" y="1488.7393" z="581.99738" entity_id="272"/>
+		</spawn>
+		<!-- Book [LC1_StoryBook_HighDeva_06] -->
+		<spawn npc_id="731673" respawn_time="295">
+			<spot x="2017.1890" y="1516.2203" z="583.04089" entity_id="64"/>
+		</spawn>
+		<!-- Sanctum To Wisplight Abbey 4.7 -->
+		<spawn npc_id="209676" respawn_time="295">
+			<spot x="1366.5076" y="1480.3691" z="569.02234" entity_id="1"/>
+		</spawn>
+		<!-- Exalted Path Teleport Statue 4.9 -->
+		<spawn npc_id="731652" respawn_time="295">
+			<spot x="1362.9241" y="1479.1323" z="569.53149" entity_id="2"/>
+		</spawn>
+		<!-- Frosted Ellianan
+		<Guestbloom Of Wishing> -->
+		<spawn npc_id="703386" respawn_time="1800">
+		    <spot x="1540.9883" y="1457.1543" z="572.86218" entity_id="287"/>
+		</spawn>
+		<!-- Magic Ward Of Dark Energy -->
+		<spawn npc_id="703390" respawn_time="295">
+			<spot x="1967.1138" y="1739.1139" z="576.79938" entity_id="2051"/>
+		</spawn>
+		<!-- Revived Ellianan -->
+		<spawn npc_id="703392" respawn_time="295">
+		    <spot x="1967.3314" y="1740.5907" z="576.75500" entity_id="310"/>
+		</spawn>
+		<!-- Omblic Brandy Bottle -->
+		<spawn npc_id="703394" respawn_time="295">
+		    <spot x="1942.0000" y="1723.0000" z="576.74622" entity_id="2052"/>
+		</spawn>
+		
+		<!-- Sanctum Npc 3.5 -->
+	    <!-- Ellano (NPC Normal lvl:60) -->
+	    <spawn npc_id="800444" respawn_time="295">
+            <spot x="1903.65" y="1393.52" z="590.363" h="9"/>
+        </spawn>
+	    <!-- Benad (NPC Normal lvl:60) -->
+	    <spawn npc_id="800445" respawn_time="295">
+	        <spot x="1916.28" y="1407.06" z="590.363" h="88"/>
+	    </spawn>
+	    <!-- Morad (NPC Normal lvl:60) -->
+	    <spawn npc_id="800446" respawn_time="295">
+            <spot x="1919.44" y="1403.84" z="590.363" h="69"/>
+        </spawn>
+	    <!-- Ceana (NPC Normal lvl:60) -->
+	    <spawn npc_id="800447" respawn_time="295">
+	        <spot x="1912.38" y="1404.89" z="590.363" h="99"/>
+	    </spawn>
+	    <!-- Famien (NPC Normal lvl:60) -->
+	    <spawn npc_id="800448" respawn_time="295">
+	       <spot x="1905.99" y="1389.54" z="590.364" h="10"/>
+	    </spawn>
+		<!-- Dianara (NPC Normal lvl:40) -->
+	    <spawn npc_id="798394" respawn_time="295">
+		    <spot x="1942.8" y="1577.71" z="590.363" h="90"/>
+	    </spawn>
+	    <!-- Hilara (NPC Normal lvl:40) -->
+	    <spawn npc_id="798395" respawn_time="295">
+		    <spot x="1947.4" y="1577.64" z="590.364" h="90"/>
+	    </spawn>
+		<!-- Nebrith (NPC Normal lvl:60) -->
+		<spawn npc_id="831031" respawn_time="295">
+            <spot x="1429.028" y="1653.4441" z="573.19714" h="44"/>
+        </spawn>
+		<!-- Zephyrin (NPC Normal lvl:60) -->
+		<spawn npc_id="831384" respawn_time="295">
+            <spot x="1393.9044" y="1696.9183" z="573.28613" h="100"/>
+        </spawn>
+		<!-- Yurith (NPC Normal lvl:60) -->
+        <spawn npc_id="831385" respawn_time="295">
+            <spot x="1390.7808" y="1698.0422" z="573.28613" h="105"/>
+        </spawn>
+		<!-- Reitia (NPC Normal lvl:60) -->
+        <spawn npc_id="831386" respawn_time="295">
+            <spot x="1386.7451" y="1696.2421" z="573.28613" h="106"/>
+        </spawn>
+		<!-- Black Cloud Traders Administrator -->
+		<spawn npc_id="831985" respawn_time="295">
+			<spot x="1528.2179" y="1439.3346" z="573.0228" h="27"/>
+        </spawn>
+		<!-- Damocles -->
+		<spawn npc_id="801212" respawn_time="295">
+	        <spot x="1412.923096" y="1627.135742" z="574.683105" h="0"/>
+		</spawn>
+		<!-- Aspasia -->
+		<spawn npc_id="801213" respawn_time="295">
+	        <spot x="1451.8022" y="1676.0693" z="573.6464" h="76"/>
+		</spawn>
+		<!-- Oakley -->
+		<spawn npc_id="801214" respawn_time="295">
+		    <spot x="1867.4421" y="1526.8828" z="805.5178" h="90"/>
+		</spawn>
+		<!-- Dion -->
+		<spawn npc_id="801215" respawn_time="295">
+		    <spot x="1867.8955" y="1494.2804" z="805.5178" h="30"/>
+		</spawn>
+		<!-- Darion -->
+		<spawn npc_id="801329" respawn_time="295">
+		    <spot x="1873.0829" y="1481.7756" z="805.5178" h="30"/>
+		</spawn>
+		<!-- Ranklis (NPC Normal lvl:60) -->
+		<spawn npc_id="831342" respawn_time="295">
+			<spot x="1457.9862" y="1534.2163" z="573.0719" h="73"/>
+		</spawn>
+		<!-- Toinon -->
+		<spawn npc_id="206334" respawn_time="295">
+			<spot x="1892.056" y="1567.5514" z="590.12213" h="60"/>
+		</spawn>
+		<!-- Hagiaphilia -->
+		<spawn npc_id="206335" respawn_time="295">
+			<spot x="1889.0315" y="1537.3948" z="590.1345" h="67"/>
+		</spawn>
+		<!-- Logina -->
+		<spawn npc_id="804492" respawn_time="295">
+			<spot x="1873.498" y="1541.7751" z="805.5178" h="90"/>
+		</spawn>
+		<!-- Fenikus -->
+		<spawn npc_id="804493" respawn_time="295">
+			<spot x="1877.6807" y="1541.691" z="805.5178" h="74"/>
+		</spawn>
+		<!-- Penna [Plume Tuner] -->
+		<spawn npc_id="832826" respawn_time="295">
+			<spot x="1617.0000" y="1552.0000" z="573.3451" h="60"/>
+		</spawn>
+		<!-- Bidshulack -->
+	    <spawn npc_id="700962" respawn_time="295">
+		    <spot x="1313.4412" y="1512.1337" z="568.26025" h="118"/>
+	    </spawn>
+		<!-- Teleios [Equipment Purifier] NPC Normal lvl:65) -->
+		<spawn npc_id="804188" respawn_time="295">
+            <spot x="1624.2274" y="1511.5392" z="573.6294" h="60"/>
+        </spawn>
+		<!-- Neperphon [Daeva Essence Officer] -->
+		<spawn npc_id="832843" respawn_time="295">
+			<spot x="1619.93" y="1524.7838" z="573.62933" h="63"/>
+		</spawn>
+		<!-- Lukrunerk -->
+        <spawn npc_id="832866" respawn_time="295">
+            <spot x="1440.0833" y="1531.429" z="573.0719" h="111"/>
+		</spawn>
+		<!-- Junkurunerk
+		<Junk Dealer> -->
+		<spawn npc_id="832850" respawn_time="295">
+            <spot h="107" z="572.9914" y="1493.6797" x="1573.5656"/>
+        </spawn>
+		<!-- Mighty Lovely
+		<spawn npc_id="832884" respawn_time="295">
+            <spot x="1503.756" y="1537.1582" z="565.8802" h="106"/>
+        </spawn>
+		Mighty Mister
+        <spawn npc_id="832885" respawn_time="295">
+            <spot x="1505.2312" y="1538.5369" z="565.88007" h="105"/>
+        </spawn> -->
+		
+		<!-- PURPLE REIGN -->
+		<!-- Revoruna -->
+        <spawn npc_id="832747" respawn_time="295">
+			<temporary_spawn spawn_time="18.*.*" despawn_time="22.*.*"/>
+			<spot x="1402.5593" y="1416.7795" z="573.13306" h="99"/>
+        </spawn>
+		<spawn npc_id="832753" respawn_time="295">
+			<temporary_spawn spawn_time="18.*.*" despawn_time="22.*.*"/>
+			<spot x="1391.4944" y="1417.764" z="573.1309" h="85"/>
+        </spawn>
+		<spawn npc_id="832755" respawn_time="295">
+			<temporary_spawn spawn_time="18.*.*" despawn_time="22.*.*"/>
+			<spot x="1397.9043" y="1416.4625" z="573.14465" h="87"/>
+        </spawn>
+		<spawn npc_id="832757" respawn_time="295">
+			<temporary_spawn spawn_time="18.*.*" despawn_time="22.*.*"/>
+			<spot x="1394.7776" y="1417.1365" z="573.1443" h="86"/>
+        </spawn>
+		<spawn npc_id="832759" respawn_time="295">
+			<temporary_spawn spawn_time="18.*.*" despawn_time="22.*.*"/>
+			<spot x="1402.9398" y="1406.4556" z="573.1632" h="50"/>
+        </spawn>
+		<spawn npc_id="832761" respawn_time="295">
+			<temporary_spawn spawn_time="18.*.*" despawn_time="22.*.*"/>
+			<spot x="1399.9309" y="1400.6292" z="573.1704" h="52"/>
+        </spawn>
+		<spawn npc_id="832763" respawn_time="295">
+			<temporary_spawn spawn_time="18.*.*" despawn_time="22.*.*"/>
+			<spot x="1401.5695" y="1403.5739" z="573.17957" h="51"/>
+        </spawn>
+		<!-- Matidia
+		<Violet Revolutionary Captain> -->
+		<spawn npc_id="832815" respawn_time="295">
+			<temporary_spawn spawn_time="18.*.*" despawn_time="22.*.*"/>
+			<spot x="1396.4224" y="1410.1132" z="573.0781" h="10"/>
+        </spawn>
+		<!-- Mai
+		<Special Support Corps Consumables Merchant> -->
+		<spawn npc_id="209808" respawn_time="295">
+            <spot x="1607.3862" y="1500.5084" z="573.62933" h="19"/>
+        </spawn>
+		<!-- Levia
+		<Special Support Corps Consumables Contributor> -->
+        <spawn npc_id="209809" respawn_time="295">
+            <spot x="1604.7056" y="1502.872" z="573.62933" h="14"/>
+        </spawn>
+		<!-- Lankas
+		<Superb Weapon Rental Merchant> -->
+        <spawn npc_id="805309" respawn_time="295">
+            <spot x="1606.3431" y="1520.9924" z="573.62933" h="104"/>
+        </spawn>
+		<!-- Morinas
+		<Superb Armor Rental Merchant> -->
+		<spawn npc_id="805310" respawn_time="295">
+            <spot x="1604.5519" y="1519.064" z="573.62933" h="108"/>
+        </spawn>
+		<!-- Yudixia
+		<Kaisinel's Wings> -->
+		<spawn npc_id="805738" respawn_time="295">
+			<spot x="1846.2955" y="1508.0012" z="590.06964" h="0"/>
+		</spawn>
+		<!-- Yunian -->
+		<spawn npc_id="806140" respawn_time="295">
+            <spot x="1457.8773" y="1523.9813" z="573.0719" h="59"/>
+        </spawn>
+		<!-- Suminus -->
+        <spawn npc_id="806141" respawn_time="295">
+            <spot h="53" z="565.87836" y="1488.2119" x="1525.236"/>
+        </spawn>
+		<!-- Duyona -->
+        <spawn npc_id="806142" respawn_time="295">
+            <spot h="115" z="565.8785" y="1488.6553" x="1524.0681"/>
+        </spawn>
+		<!-- Juina -->
+        <spawn npc_id="806143" respawn_time="295">
+            <spot x="1317.0455" y="1512.0762" z="568.107" h="0" walker_id="Juina"/>
+        </spawn>
+		<!-- Felen [ArchDaeva Mission] -->
+        <spawn npc_id="806073" respawn_time="295">
+            <spot x="2036.7107" y="1543.5226" z="581.1387" h="116"/>
+        </spawn>
+		<!-- Pikarsi
+		<Enchantment Stone Exchanger> -->
+        <spawn npc_id="210028" respawn_time="295">
+            <spot x="1608.0985" y="1524.1467" z="573.62933" h="113"/>
+        </spawn>
+		<!-- Pertale
+		<Enchantment Stone Exchanger> -->
+        <spawn npc_id="210030" respawn_time="295">
+            <spot x="1608.1001" y="1526.2626" z="573.6293" h="0"/>
+        </spawn>
+		<!-- Quilven
+		<Crucible Outreach> -->
+		<spawn  npc_id="205471" respawn_time="295">
+            <spot x="1363.4683" y="1543.5482" z="569.0382" h="91"/>
+        </spawn>
+		<!-- Cinuos
+		<Housing Decor> -->
+		<spawn npc_id="205549" respawn_time="295">
+            <spot x="1898.7048" y="1428.9658" z="590.2104" h="92"/>
+        </spawn>
+		<!-- Moray
+		<Equipment Design> -->
+        <spawn npc_id="205550" respawn_time="295">
+            <spot x="1895.1295" y="1428.8677" z="590.2104" h="96"/>
+        </spawn>
+		<!-- Maginus
+		<Special Weaponsmithing Merchant> -->
+		<spawn npc_id="207948" respawn_time="295">
+            <spot x="1849.9518" y="1565.8097" z="590.12213" h="53"/>
+        </spawn>
+		<!-- Kafre 
+		<Special Armorsmithing Merchant> -->
+        <spawn npc_id="207949" respawn_time="295">
+            <spot x="1882.9062" y="1571.0027" z="590.12213" h="111"/>
+        </spawn>
+		<!-- Espexia
+		<Special Tailoring Merchant> -->
+        <spawn npc_id="207950" respawn_time="295">
+            <spot x="1887.6672" y="1541.7589" z="590.1345" h="65"/>
+        </spawn>
+		<!-- Aridade
+		<Special Alchemy Merchant> -->
+        <spawn npc_id="207951" respawn_time="295">
+            <spot x="1841.703" y="1456.1019" z="590.12213" h="114"/>
+        </spawn>
+		<!-- Kostucci
+		<Special Handicrafting Merchant> -->
+        <spawn npc_id="207952" respawn_time="295">
+            <spot x="1883.4243" y="1451.0977" z="590.0892" h="0"/>
+        </spawn>
+		<!-- Damasion -->
+        <spawn npc_id="806555" respawn_time="295">
+            <spot x="1820.5859" y="1670.0327" z="578.0684" h="118"/>
+ 		</spawn>
+		<!-- Eunomia -->
+		<spawn npc_id="798172" respawn_time="295">
+			<spot h="87" x="1534.2017" y="1551.6965" z="565.9855"/>
+		</spawn>
+		<!-- Euterpe -->
+		<spawn npc_id="798173" respawn_time="295">
+			<spot h="94" x="1530.0828" y="1551.4445" z="565.9842"/>
+		</spawn>
+		<!-- Guneus -->
+		<spawn npc_id="798174" respawn_time="295">
+			<spot h="95" x="1528.0038" y="1550.8092" z="565.9744"/>
+		</spawn>
+		<!-- Charites -->
+		<spawn npc_id="798175" respawn_time="295">
+			<spot h="92" x="1532.0349" y="1551.5682" z="565.9848"/>
+		</spawn>
+		<!-- Protectors Captain Sherylin -->
+		<spawn npc_id="831833" respawn_time="295">
+			<spot h="89" x="1538.806" y="1550.8197" z="565.9893"/>
+		</spawn>
+		<!-- Protectors Captain Asif -->
+		<spawn npc_id="831834" respawn_time="295">
+			<spot h="74" x="1540.7227" y="1549.7041" z="565.9815"/>
+		</spawn>
+		
+		<!-- Npc Growth 5.5 -->
+		<!-- 레이나
+		<성장지원 교관> -->
+		<spawn npc_id="806698" respawn_time="295">
+            <spot x="1371.5511" y="1491.5732" z="569.0383" h="52"/>
+        </spawn>
+		<!-- 멜리아나
+		<성장지원 보상관> -->
+        <spawn npc_id="806699" respawn_time="295">
+            <spot x="1372.2574" y="1492.9342" z="569.09235" h="52"/>
+        </spawn>
+		<!-- 프리나
+		<성장지원 빛나는 보상관> -->
+        <spawn npc_id="806708" respawn_time="295">
+            <spot x="1371.0973" y="1490.1442" z="569.0383" h="52"/>
+        </spawn>
+		<!-- 메라토
+		<성장지원 교역단> -->
+        <spawn npc_id="835482" respawn_time="295">
+            <spot x="1370.9384" y="1488.3923" z="569.0384" h="60"/>
+        </spawn>
+		<!-- LC1_Familiar_E -->
+		<spawn npc_id="836073" respawn_time="295">
+            <spot x="1371.2981" y="1516.5188" z="569.06744" h="46"/>
+        </spawn>
+		<!-- Deco_Cherubim_D_MINION -->
+        <spawn npc_id="836120" respawn_time="295">
+            <spot x="1371.3082" y="1518.6411" z="569.06744" h="56"/>
+            <spot x="1369.0905" y="1515.7305" z="569.06744" h="40"/>
+        </spawn>
+		<!-- Make Kinah NOW! -->
+		<spawn npc_id="731677" respawn_time="295">
+            <spot h="61" z="572.87427" y="1443.9829" x="1471.2542"/>
+            <spot h="11" z="576.7586" y="1727.1439" x="1893.674"/>
+            <spot h="92" z="527.92993" y="2158.6797" x="1819.6536"/>
+        </spawn>
+        <!-- Masurerk -->
+		<spawn npc_id="836197" respawn_time="295">
+            <spot h="15" z="565.88" y="1483.5762" x="1506.128"/>
+        </spawn>
+		
+		<!-- NPC CUSTOM -->
+		<!-- Collecting Material Emporium -->
+		<spawn npc_id="203234" respawn_time="295">
+            <spot x="1848.5463" y="1505.2852" z="590.00854" h="0"/>
+        </spawn>
+		<!-- Crafting Parts Emporium -->
+        <spawn npc_id="203235" respawn_time="295">
+            <spot x="1848.5587" y="1516.6477" z="590.00854" h="0"/>
+        </spawn>
+		
+		<!-- NPC KAHRUN -->
+		<spawn npc_id="205560" respawn_time="295">
+            <spot x="1539.2778" y="1472.7131" z="565.9847" h="34"/>
+        </spawn>
+        <spawn npc_id="205880" respawn_time="295">
+            <spot x="1536.0942" y="1472.2626" z="565.982" h="31"/>
+        </spawn>
+        <spawn npc_id="205881" respawn_time="295">
+            <spot x="1532.582" y="1472.0063" z="565.9809" h="31"/>
+        </spawn>
+        <spawn npc_id="205882" respawn_time="295">
+            <spot x="1529.415" y="1472.1931" z="565.9799" h="28"/>
+        </spawn>
+        <spawn npc_id="205883" respawn_time="295">
+            <spot x="1526.3007" y="1472.509" z="565.94977" h="28"/>
+        </spawn>
+		<!-- Griffoen 4.9 -->
+        <spawn npc_id="730539" respawn_time="295">
+            <spot x="1370.44" y="1543.41" z="569.038" h="91"/>
+        </spawn>
+	</spawn_map>
+</spawns>

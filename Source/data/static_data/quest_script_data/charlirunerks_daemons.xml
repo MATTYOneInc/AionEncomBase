@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Charlirunerk's Daemon's 4.8
+	Make By (Encom)
+ -->
+	<item_collecting id="46015" start_npc_ids="0" end_npc_ids="799882 799883" action_item_ids="700781"/>
+	<item_collecting id="46016" start_npc_ids="0" end_npc_ids="799882 799883" action_item_ids="700782"/>
+	<item_collecting id="46017" start_npc_ids="799882 799883" end_npc_ids="799882 799883" action_item_ids="700807"/>
+	<item_collecting id="46503" start_npc_ids="0" end_npc_ids="799882 799883"/>
+	<item_collecting id="46509" start_npc_ids="0" end_npc_ids="799882 799883"/>
+	<item_collecting id="46515" start_npc_ids="0" end_npc_ids="799882 799883"/>
+	<item_collecting id="46519" start_npc_ids="799882 799883" end_npc_ids="799882 799883"/>
+	<item_collecting id="46521" start_npc_ids="0" end_npc_ids="799882 799883"/>
+	<item_collecting id="46524" start_npc_ids="0" end_npc_ids="799882 799883"/>
+	<item_collecting id="46525" start_npc_ids="0" end_npc_ids="799882 799883"/>
+	<item_collecting id="46526" start_npc_ids="0" end_npc_ids="799882 799883"/>
+	<item_collecting id="46528" start_npc_ids="0" end_npc_ids="799882 799883"/>
+	<!-- [일일] 폭포 보물 상자 찾기 -->
+	<item_collecting id="46529" start_npc_ids="0" end_npc_ids="804955" action_item_ids="702756"/>
+	<!-- [일일] 바다의 결정 찾기 -->
+	<item_collecting id="46530" start_npc_ids="0" end_npc_ids="804955" action_item_ids="702757"/>
+	<!-- [일일] 바다의 결정 찾기 -->
+	<item_collecting id="46537" start_npc_ids="0" end_npc_ids="804955" action_item_ids="702758"/>
+	<!-- [일일] 바다의 결정 찾기 -->
+	<item_collecting id="46538" start_npc_ids="0" end_npc_ids="804955" action_item_ids="702759"/>
+	
+	<monster_hunt id="46500" start_npc_ids="0" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="216624"/>
+	</monster_hunt>
+	<monster_hunt id="46502" start_npc_ids="0" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="216626"/>
+	</monster_hunt>
+	<monster_hunt id="46506" start_npc_ids="0" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="216632"/>
+	</monster_hunt>
+	<monster_hunt id="46508" start_npc_ids="0" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="216634"/>
+	</monster_hunt>
+	<monster_hunt id="46512" start_npc_ids="0" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="216636"/>
+	</monster_hunt>
+	<monster_hunt id="46514" start_npc_ids="0" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="216638"/>
+	</monster_hunt>
+	<monster_hunt id="46518" start_npc_ids="799882 799883" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="216630"/>
+	</monster_hunt>
+	<monster_hunt id="46520" start_npc_ids="0" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="217016"/>
+	</monster_hunt>
+	<monster_hunt id="46522" start_npc_ids="0" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="217018"/>
+	</monster_hunt>
+	<monster_hunt id="46523" start_npc_ids="0" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="217019"/>
+	</monster_hunt>
+	<monster_hunt id="46527" start_npc_ids="0" end_npc_ids="799882 799883">
+		<monster end_var="1" var="0" npc_ids="217023"/>
+	</monster_hunt>
+	<!-- [일일] 큰 비늘 부링고 처치 -->
+	<monster_hunt id="46531" start_npc_ids="0" end_npc_ids="804955">
+		<monster end_var="1" var="0" npc_ids="220045"/>
+	</monster_hunt>
+	<!-- [일일] 바람 날개 클라레 처치 -->
+	<monster_hunt id="46532" start_npc_ids="0" end_npc_ids="804958">
+		<monster end_var="1" var="0" npc_ids="220046"/>
+	</monster_hunt>
+	<!-- [일일] 붉은 날개 메누이 처치 -->
+	<monster_hunt id="46533" start_npc_ids="0" end_npc_ids="804958">
+		<monster end_var="1" var="0" npc_ids="220047"/>
+	</monster_hunt>
+	<!-- [일일] 거대한 황금집게 처치 -->
+	<monster_hunt id="46534" start_npc_ids="0" end_npc_ids="804956">
+		<monster end_var="1" var="0" npc_ids="220048"/>
+	</monster_hunt>
+	<!-- [일일] 일곱 손가락 메두자 처치 -->
+	<monster_hunt id="46535" start_npc_ids="0" end_npc_ids="804959">
+		<monster end_var="1" var="0" npc_ids="220049"/>
+	</monster_hunt>
+	<!-- [일일] 껍질 왕관 바르툴 처치 -->
+	<monster_hunt id="46536" start_npc_ids="0" end_npc_ids="804955">
+		<monster end_var="1" var="0" npc_ids="220050"/>
+	</monster_hunt>
+	<!-- [일일] 죽음의 꼬리 베노드 처치 -->
+	<monster_hunt id="46539" start_npc_ids="0" end_npc_ids="804960">
+		<monster end_var="1" var="0" npc_ids="220051"/>
+	</monster_hunt>
+	<!-- [일일] 느린걸음 마르그 처치 -->
+	<monster_hunt id="46540" start_npc_ids="0" end_npc_ids="804960">
+		<monster end_var="1" var="0" npc_ids="220052"/>
+	</monster_hunt>
+	<!-- [일일] 사막의 왕 두리아느 처치 -->
+	<monster_hunt id="46541" start_npc_ids="0" end_npc_ids="804957">
+		<monster end_var="1" var="0" npc_ids="220053"/>
+	</monster_hunt>
+	<!-- [일일] 공포의 쟈스 처치 -->
+	<monster_hunt id="46542" start_npc_ids="0" end_npc_ids="804961">
+		<monster end_var="1" var="0" npc_ids="220054"/>
+	</monster_hunt>
+	<!-- [일일] 철갑비늘 토칼 처치 -->
+	<monster_hunt id="46543" start_npc_ids="0" end_npc_ids="804929">
+		<monster end_var="1" var="0" npc_ids="220055"/>
+	</monster_hunt>
+	<!-- [일일] 불타는 비늘 앨리게이트 처치 -->
+	<monster_hunt id="46544" start_npc_ids="0" end_npc_ids="804957">
+		<monster end_var="1" var="0" npc_ids="220056"/>
+	</monster_hunt>
+	<!-- [잠입/일일] 강철 껍데기 스티쉬 처치 -->
+	<monster_hunt id="46545" start_npc_ids="0" end_npc_ids="804955">
+		<monster end_var="1" var="0" npc_ids="236642"/>
+	</monster_hunt>
+	<!-- [잠입/일일] 바위 집게 링크롤 처치 -->
+	<monster_hunt id="46546" start_npc_ids="0" end_npc_ids="804955">
+		<monster end_var="1" var="0" npc_ids="236643"/>
+	</monster_hunt>
+	<!-- [잠입/일일] 진흙 걸음 게르게르 처치 -->
+	<monster_hunt id="46547" start_npc_ids="0" end_npc_ids="804955">
+		<monster end_var="1" var="0" npc_ids="236646"/>
+	</monster_hunt>
+	<!-- [잠입/일일] 빛처럼 빠른 타키 처치 -->
+	<monster_hunt id="46548" start_npc_ids="0" end_npc_ids="804955">
+		<monster end_var="1" var="0" npc_ids="236650"/>
+	</monster_hunt>
+	
+	<kill_spawned id="46504" start_npc_ids="0" end_npc_ids="799882 799883">
+		<spawned_monster end_var="1" var="0" spawner_object="700772" npc_ids="216640"/>
+	</kill_spawned>
+	<kill_spawned id="46505" start_npc_ids="0" end_npc_ids="799882 799883">
+		<spawned_monster end_var="1" var="0" spawner_object="700773" npc_ids="216628"/>
+	</kill_spawned>
+	<kill_spawned id="46510" start_npc_ids="0" end_npc_ids="799882 799883">
+		<spawned_monster end_var="1" var="0" spawner_object="700774" npc_ids="216641"/>
+	</kill_spawned>
+	<kill_spawned id="46511" start_npc_ids="0" end_npc_ids="799882 799883">
+		<spawned_monster end_var="1" var="0" spawner_object="700775" npc_ids="216629"/>
+	</kill_spawned>
+	<kill_spawned id="46516" start_npc_ids="0" end_npc_ids="799882 799883">
+		<spawned_monster end_var="1" var="0" spawner_object="700776" npc_ids="216642"/>
+	</kill_spawned>
+	<kill_spawned id="46517" start_npc_ids="0" end_npc_ids="799882 799883">
+		<spawned_monster end_var="1" var="0" spawner_object="700777" npc_ids="216643"/>
+	</kill_spawned>
+</quest_scripts>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	루키부키 서커스단 4.3
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="210040000">
+		<nightmare_circus_spawn id="4">
+			<nightmare_circus_type nstate="OPEN">
+			    <!-- Aine
+				<Dream Faerie> -->
+				<spawn npc_id="831544">
+				    <spot x="2540.6995" y="348.41055" z="411.1446" h="47"/>
+				</spawn>
+			</nightmare_circus_type>
+			<nightmare_circus_type nstate="CLOSED">
+			</nightmare_circus_type>
+		</nightmare_circus_spawn>
+    </spawn_map>
+</spawns>

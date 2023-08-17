@@ -1,0 +1,89 @@
+/*
+ * This file is part of Encom. **ENCOM FUCK OTHER SVN**
+ *
+ *  Encom is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Lesser Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  Encom is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Lesser Public License for more details.
+ *
+ *  You should have received a copy of the GNU Lesser Public License
+ *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package com.aionemu.gameserver.services.abysslandingservice.landingspecialservice;
+
+import com.aionemu.commons.database.dao.DAOManager;
+import com.aionemu.gameserver.dao.AbyssSpecialLandingDAO;
+import com.aionemu.gameserver.model.landing_special.LandingSpecialLocation;
+import com.aionemu.gameserver.model.landing_special.LandingSpecialStateType;
+import com.aionemu.gameserver.services.AbyssLandingSpecialService;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+
+public abstract class SpecialLanding <RL extends LandingSpecialLocation>
+{
+    private boolean started;
+    private final RL spacialLandingLocation;
+    private LandingSpecialStateType type;
+    protected abstract void stopLanding();
+    protected abstract void startLanding();
+    private final AtomicBoolean closed = new AtomicBoolean();
+	
+    public SpecialLanding(RL specialLandingLocation) {
+        this.spacialLandingLocation = specialLandingLocation;
+    }
+	
+    public final void start() {
+        boolean doubleStart = false;
+        synchronized (this) {
+            if (started) {
+                doubleStart = true;
+            } else {
+                started = true;
+            }
+        } if (doubleStart) {
+            return;
+        }
+        startLanding();
+    }
+	
+    public final void stop() {
+        stopLanding();
+    }
+	
+    protected void spawn(LandingSpecialStateType type) {
+        AbyssLandingSpecialService.spawn(getSpecialLandingLocation(), type);
+    }
+	
+    protected void despawn() {
+        AbyssLandingSpecialService.despawn(getSpecialLandingLocation());
+    }
+	
+    public boolean isClosed() {
+        return closed.get();
+    }
+	
+    public RL getSpecialLandingLocation() {
+        return spacialLandingLocation;
+    }
+	
+    public int getSpecialLandingLocationId() {
+        return spacialLandingLocation.getId();
+    }
+	
+    public LandingSpecialStateType getType() {
+        return this.type;
+    }
+	
+    public void setType(LandingSpecialStateType tp) {
+        this.type = tp;
+    }
+	
+	private AbyssSpecialLandingDAO getDAO() {
+        return DAOManager.getDAO(AbyssSpecialLandingDAO.class);
+    }
+}

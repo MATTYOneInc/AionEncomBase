@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" jxb:version="2.1">
+	<xs:include schemaLocation="../modifiers.xsd"/>
+	<xs:element name="serial_guards">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="guard_rank_restriction" type="GuardRankRestriction" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="guard_type_restriction" type="GuardTypeRestriction" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Rank -->
+	<xs:complexType name="GuardRankRestriction">
+		<xs:sequence>
+			<xs:element name="guard_penalty_attr" type="GuardRankPenaltyAttr" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="rank_num" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="GuardRankPenaltyAttr">
+		<xs:attribute name="stat" type="modifiersenum" use="required"/>
+		<xs:attribute name="func" type="StatFunc" use="required"/>
+		<xs:attribute name="value" type="xs:int" use="required"/>
+	</xs:complexType>
+	<!-- Type -->
+	<xs:complexType name="GuardTypeRestriction">
+		<xs:sequence>
+			<xs:element name="guard_penalty_attr" type="GuardTypePenaltyAttr" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="type_num" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="GuardTypePenaltyAttr">
+		<xs:attribute name="stat" type="modifiersenum" use="required"/>
+		<xs:attribute name="func" type="StatFunc" use="required"/>
+		<xs:attribute name="value" type="xs:int" use="required"/>
+	</xs:complexType>
+</xs:schema>

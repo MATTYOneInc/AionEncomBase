@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player_stats_templates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../stats.xsd">
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="9">
+		<stats_template maxHp="720" maxMp="951" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="194" block="194" parry="194" main_hand_attack="20" main_hand_accuracy="262" main_hand_crit_rate="3" magic_accuracy="128" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="10">
+		<stats_template maxHp="782" maxMp="1032" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="206" block="206" parry="206" main_hand_attack="20" main_hand_accuracy="270" main_hand_crit_rate="3" magic_accuracy="142" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="11">
+		<stats_template maxHp="852" maxMp="1116" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="218" block="218" parry="218" main_hand_attack="20" main_hand_accuracy="278" main_hand_crit_rate="3" magic_accuracy="156" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="12">
+		<stats_template maxHp="925" maxMp="1200" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="230" block="230" parry="230" main_hand_attack="20" main_hand_accuracy="286" main_hand_crit_rate="3" magic_accuracy="171" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="13">
+		<stats_template maxHp="1001" maxMp="1285" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="243" block="243" parry="243" main_hand_attack="20" main_hand_accuracy="294" main_hand_crit_rate="3" magic_accuracy="185" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="14">
+		<stats_template maxHp="1078" maxMp="1369" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="255" block="255" parry="255" main_hand_attack="20" main_hand_accuracy="302" main_hand_crit_rate="3" magic_accuracy="199" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="15">
+		<stats_template maxHp="1158" maxMp="1453" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="268" block="268" parry="268" main_hand_attack="20" main_hand_accuracy="310" main_hand_crit_rate="3" magic_accuracy="213" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="16">
+		<stats_template maxHp="1242" maxMp="1537" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="280" block="280" parry="280" main_hand_attack="20" main_hand_accuracy="318" main_hand_crit_rate="3" magic_accuracy="228" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="17">
+		<stats_template maxHp="1326" maxMp="1621" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="292" block="292" parry="292" main_hand_attack="20" main_hand_accuracy="326" main_hand_crit_rate="3" magic_accuracy="242" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="18">
+		<stats_template maxHp="1413" maxMp="1705" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="305" block="305" parry="305" main_hand_attack="20" main_hand_accuracy="334" main_hand_crit_rate="3" magic_accuracy="256" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="19">
+		<stats_template maxHp="1503" maxMp="1790" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="317" block="317" parry="317" main_hand_attack="20" main_hand_accuracy="342" main_hand_crit_rate="3" magic_accuracy="270" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="20">
+		<stats_template maxHp="1598" maxMp="1875" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="361" block="341" parry="541" main_hand_attack="20" main_hand_accuracy="370" main_hand_crit_rate="3" magic_accuracy="385" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="21">
+		<stats_template maxHp="1692" maxMp="1959" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="373" block="353" parry="553" main_hand_attack="20" main_hand_accuracy="378" main_hand_crit_rate="3" magic_accuracy="399" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="22">
+		<stats_template maxHp="1789" maxMp="2043" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="385" block="365" parry="565" main_hand_attack="20" main_hand_accuracy="386" main_hand_crit_rate="3" magic_accuracy="413" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="23">
+		<stats_template maxHp="1888" maxMp="2127" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="398" block="378" parry="578" main_hand_attack="20" main_hand_accuracy="394" main_hand_crit_rate="3" magic_accuracy="427" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="24">
+		<stats_template maxHp="1990" maxMp="2211" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="410" block="390" parry="590" main_hand_attack="20" main_hand_accuracy="382" main_hand_crit_rate="3" magic_accuracy="342" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="25">
+		<stats_template maxHp="2094" maxMp="2295" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="423" block="403" parry="603" main_hand_attack="20" main_hand_accuracy="410" main_hand_crit_rate="3" magic_accuracy="456" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="26">
+		<stats_template maxHp="2200" maxMp="2379" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="435" block="415" parry="615" main_hand_attack="20" main_hand_accuracy="418" main_hand_crit_rate="3" magic_accuracy="470" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="27">
+		<stats_template maxHp="2309" maxMp="2464" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="447" block="427" parry="627" main_hand_attack="20" main_hand_accuracy="426" main_hand_crit_rate="3" magic_accuracy="484" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="28">
+		<stats_template maxHp="2420" maxMp="2548" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="460" block="440" parry="640" main_hand_attack="20" main_hand_accuracy="434" main_hand_crit_rate="3" magic_accuracy="499" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="29">
+		<stats_template maxHp="2534" maxMp="2632" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="472" block="452" parry="652" main_hand_attack="20" main_hand_accuracy="442" main_hand_crit_rate="3" magic_accuracy="513" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="30">
+		<stats_template maxHp="2651" maxMp="2717" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="485" block="465" parry="665" main_hand_attack="20" main_hand_accuracy="450" main_hand_crit_rate="3" magic_accuracy="527" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="31">
+		<stats_template maxHp="2769" maxMp="2801" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="497" block="477" parry="677" main_hand_attack="20" main_hand_accuracy="458" main_hand_crit_rate="3" magic_accuracy="541" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="32">
+		<stats_template maxHp="2890" maxMp="2885" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="509" block="489" parry="689" main_hand_attack="20" main_hand_accuracy="466" main_hand_crit_rate="3" magic_accuracy="556" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="33">
+		<stats_template maxHp="3014" maxMp="2969" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="522" block="502" parry="702" main_hand_attack="20" main_hand_accuracy="474" main_hand_crit_rate="3" magic_accuracy="570" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="34">
+		<stats_template maxHp="3140" maxMp="3054" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="534" block="514" parry="714" main_hand_attack="20" main_hand_accuracy="482" main_hand_crit_rate="3" magic_accuracy="584" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="35">
+		<stats_template maxHp="3268" maxMp="3138" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="547" block="527" parry="727" main_hand_attack="20" main_hand_accuracy="490" main_hand_crit_rate="3" magic_accuracy="598" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="36">
+		<stats_template maxHp="3399" maxMp="3223" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="559" block="539" parry="739" main_hand_attack="20" main_hand_accuracy="498" main_hand_crit_rate="3" magic_accuracy="613" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="37">
+		<stats_template maxHp="3532" maxMp="3307" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="571" block="551" parry="751" main_hand_attack="20" main_hand_accuracy="506" main_hand_crit_rate="3" magic_accuracy="627" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="38">
+		<stats_template maxHp="3668" maxMp="3392" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="584" block="564" parry="764" main_hand_attack="20" main_hand_accuracy="514" main_hand_crit_rate="3" magic_accuracy="641" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="39">
+		<stats_template maxHp="3806" maxMp="3476" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="596" block="576" parry="776" main_hand_attack="20" main_hand_accuracy="522" main_hand_crit_rate="3" magic_accuracy="655" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="40">
+		<stats_template maxHp="3947" maxMp="3561" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="609" block="589" parry="789" main_hand_attack="20" main_hand_accuracy="530" main_hand_crit_rate="3" magic_accuracy="670" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="41">
+		<stats_template maxHp="4089" maxMp="3645" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="621" block="601" parry="801" main_hand_attack="20" main_hand_accuracy="538" main_hand_crit_rate="3" magic_accuracy="684" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="42">
+		<stats_template maxHp="4235" maxMp="3730" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="633" block="613" parry="813" main_hand_attack="20" main_hand_accuracy="546" main_hand_crit_rate="3" magic_accuracy="698" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="43">
+		<stats_template maxHp="4383" maxMp="3814" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="658" block="638" parry="838" main_hand_attack="20" main_hand_accuracy="554" main_hand_crit_rate="3" magic_accuracy="727" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="44">
+		<stats_template maxHp="4533" maxMp="3899" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="612" block="612" parry="612" main_hand_attack="20" main_hand_accuracy="562" main_hand_crit_rate="3" magic_accuracy="627" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="45">
+		<stats_template maxHp="4686" maxMp="3983" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="671" block="651" parry="851" main_hand_attack="20" main_hand_accuracy="570" main_hand_crit_rate="3" magic_accuracy="741" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="46">
+		<stats_template maxHp="4841" maxMp="4068" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="683" block="663" parry="863" main_hand_attack="20" main_hand_accuracy="578" main_hand_crit_rate="3" magic_accuracy="755" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="47">
+		<stats_template maxHp="4998" maxMp="4152" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="695" block="675" parry="875" main_hand_attack="20" main_hand_accuracy="586" main_hand_crit_rate="3" magic_accuracy="769" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="48">
+		<stats_template maxHp="5158" maxMp="4237" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="708" block="688" parry="888" main_hand_attack="20" main_hand_accuracy="594" main_hand_crit_rate="3" magic_accuracy="784" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="49">
+		<stats_template maxHp="5321" maxMp="4322" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="720" block="700" parry="900" main_hand_attack="20" main_hand_accuracy="602" main_hand_crit_rate="3" magic_accuracy="798" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="50">
+		<stats_template maxHp="5486" maxMp="4407" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="733" block="713" parry="913" main_hand_attack="20" main_hand_accuracy="610" main_hand_crit_rate="3" magic_accuracy="812" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="51">
+		<stats_template maxHp="5653" maxMp="4491" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="745" block="725" parry="925" main_hand_attack="20" main_hand_accuracy="618" main_hand_crit_rate="3" magic_accuracy="826" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="52">
+		<stats_template maxHp="5822" maxMp="4576" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="757" block="737" parry="937" main_hand_attack="20" main_hand_accuracy="626" main_hand_crit_rate="3" magic_accuracy="841" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="53">
+		<stats_template maxHp="5995" maxMp="4661" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="770" block="750" parry="950" main_hand_attack="20" main_hand_accuracy="634" main_hand_crit_rate="3" magic_accuracy="855" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="54">
+		<stats_template maxHp="6169" maxMp="4745" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="782" block="762" parry="962" main_hand_attack="20" main_hand_accuracy="642" main_hand_crit_rate="3" magic_accuracy="869" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="55">
+		<stats_template maxHp="6346" maxMp="4830" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="795" block="775" parry="975" main_hand_attack="20" main_hand_accuracy="650" main_hand_crit_rate="3" magic_accuracy="883" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="56">
+		<stats_template maxHp="6526" maxMp="4915" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="807" block="787" parry="987" main_hand_attack="20" main_hand_accuracy="658" main_hand_crit_rate="3" magic_accuracy="898" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="57">
+		<stats_template maxHp="6707" maxMp="5000" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="819" block="799" parry="999" main_hand_attack="20" main_hand_accuracy="666" main_hand_crit_rate="3" magic_accuracy="912" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="58">
+		<stats_template maxHp="6892" maxMp="5085" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="832" block="812" parry="1012" main_hand_attack="20" main_hand_accuracy="674" main_hand_crit_rate="3" magic_accuracy="926" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="59">
+		<stats_template maxHp="7078" maxMp="5170" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="844" block="824" parry="1024" main_hand_attack="20" main_hand_accuracy="682" main_hand_crit_rate="3" magic_accuracy="940" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="60">
+		<stats_template maxHp="7268" maxMp="5255" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="857" block="837" parry="1037" main_hand_attack="20" main_hand_accuracy="690" main_hand_crit_rate="3" magic_accuracy="955" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="61">
+		<stats_template maxHp="7459" maxMp="5339" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="869" block="849" parry="1049" main_hand_attack="20" main_hand_accuracy="698" main_hand_crit_rate="3" magic_accuracy="969" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="62">
+		<stats_template maxHp="7653" maxMp="5424" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="881" block="861" parry="1061" main_hand_attack="20" main_hand_accuracy="706" main_hand_crit_rate="3" magic_accuracy="983" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="63">
+		<stats_template maxHp="7849" maxMp="5509" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="894" block="874" parry="1074" main_hand_attack="20" main_hand_accuracy="714" main_hand_crit_rate="3" magic_accuracy="997" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="64">
+		<stats_template maxHp="8048" maxMp="5594" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="906" block="886" parry="1086" main_hand_attack="20" main_hand_accuracy="722" main_hand_crit_rate="3" magic_accuracy="1012" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="65">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="919" block="899" parry="1099" main_hand_attack="20" main_hand_accuracy="730" main_hand_crit_rate="3" magic_accuracy="1026" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="66">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="931" block="911" parry="1111" main_hand_attack="20" main_hand_accuracy="738" main_hand_crit_rate="3" magic_accuracy="1040" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="67">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="943" block="923" parry="1123" main_hand_attack="20" main_hand_accuracy="746" main_hand_crit_rate="3" magic_accuracy="1054" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="68">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="956" block="936" parry="1136" main_hand_attack="20" main_hand_accuracy="754" main_hand_crit_rate="3" magic_accuracy="1069" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="69">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="968" block="948" parry="1148" main_hand_attack="20" main_hand_accuracy="762" main_hand_crit_rate="3" magic_accuracy="1083" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="70">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="981" block="961" parry="1161" main_hand_attack="20" main_hand_accuracy="770" main_hand_crit_rate="3" magic_accuracy="1097" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="71">
+		<stats_template maxHp="9462" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="993" block="973" parry="1173" main_hand_attack="20" main_hand_accuracy="778" main_hand_crit_rate="3" magic_accuracy="1111" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="72">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1005" block="985" parry="1185" main_hand_attack="20" main_hand_accuracy="786" main_hand_crit_rate="3" magic_accuracy="1126" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="73">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1018" block="998" parry="1198" main_hand_attack="20" main_hand_accuracy="794" main_hand_crit_rate="3" magic_accuracy="1140" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="74">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1030" block="1010" parry="1210" main_hand_attack="20" main_hand_accuracy="802" main_hand_crit_rate="3" magic_accuracy="1154" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="75">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1043" block="1023" parry="1223" main_hand_attack="20" main_hand_accuracy="810" main_hand_crit_rate="3" magic_accuracy="1168" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="76">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1056" block="1036" parry="1236" main_hand_attack="20" main_hand_accuracy="818" main_hand_crit_rate="3" magic_accuracy="1182" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="77">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1069" block="1049" parry="1249" main_hand_attack="20" main_hand_accuracy="826" main_hand_crit_rate="3" magic_accuracy="1196" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="78">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1082" block="1062" parry="1262" main_hand_attack="20" main_hand_accuracy="834" main_hand_crit_rate="3" magic_accuracy="1210" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="79">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1095" block="1075" parry="1275" main_hand_attack="20" main_hand_accuracy="842" main_hand_crit_rate="3" magic_accuracy="1224" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="80">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1108" block="1088" parry="1288" main_hand_attack="20" main_hand_accuracy="850" main_hand_crit_rate="3" magic_accuracy="1238" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="81">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1121" block="1101" parry="1301" main_hand_attack="20" main_hand_accuracy="858" main_hand_crit_rate="3" magic_accuracy="1252" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="82">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1134" block="1114" parry="1314" main_hand_attack="20" main_hand_accuracy="866" main_hand_crit_rate="3" magic_accuracy="1266" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="AETHERTECH" level="83">
+		<stats_template maxHp="8250" maxMp="5679" power="110" health="100" agility="110" accuracy="110" knowledge="90" will="90" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1147" block="1127" parry="1327" main_hand_attack="20" main_hand_accuracy="874" main_hand_crit_rate="3" magic_accuracy="1280" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+</player_stats_templates>

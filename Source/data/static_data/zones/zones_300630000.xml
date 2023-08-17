@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+    <zone mapid="300630000" name="PETRIFICATIONS_REALM_300630000" area_type="POLYGON" zone_type="SUB" priority="15" flags="0">
+        <points bottom="150.000000" top="350.000000">
+            <point x="699.320007" y="748.020020"/>
+            <point x="899.320007" y="748.020020"/>
+            <point x="899.320007" y="948.020020"/>
+            <point x="699.320007" y="948.020020"/>
+		</points>
+    </zone>
+    <zone mapid="300630000" name="FISSURES_REALM_300630000" area_type="POLYGON" zone_type="SUB" priority="15" flags="0">
+        <points bottom="150.000000" top="350.000000">
+            <point x="100.052788" y="80.094238"/>
+            <point x="300.052795" y="80.094238"/>
+            <point x="300.052795" y="280.094238"/>
+            <point x="100.052788" y="280.094238"/>
+		</points>
+    </zone>
+    <zone mapid="300630000" name="ANGUISHED_DRAGON_LORDS_REFUGE_1_300630000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="1.000000" top="801.000000">
+            <point x="28.000000" y="28.000000"/>
+            <point x="988.000000" y="28.000000"/>
+            <point x="988.000000" y="988.000000"/>
+            <point x="28.000000" y="988.000000"/>
+		</points>
+    </zone>
+    <zone mapid="300630000" name="WRATHS_REALM_300630000" area_type="POLYGON" zone_type="SUB" priority="15" flags="0">
+        <points bottom="150.000000" top="350.000000">
+            <point x="100.052788" y="748.019104"/>
+            <point x="300.052795" y="748.019104"/>
+            <point x="300.052795" y="948.019104"/>
+            <point x="100.052788" y="948.019104"/>
+		</points>
+    </zone>
+    <zone mapid="300630000" name="GRAVITYS_REALM_300630000" area_type="POLYGON" zone_type="SUB" priority="15" flags="0">
+        <points bottom="150.000000" top="350.000000">
+            <point x="699.324646" y="80.094238"/>
+            <point x="899.324646" y="80.094238"/>
+            <point x="899.324646" y="280.094238"/>
+            <point x="699.324646" y="280.094238"/>
+		</points>
+    </zone>
+    <zone mapid="300630000" name="THRONE_OF_BLOOD_300630000" area_type="POLYGON" zone_type="SUB" priority="13" flags="0">
+        <points bottom="370.000000" top="570.000000">
+            <point x="388.829987" y="406.799988"/>
+            <point x="608.830017" y="406.799988"/>
+            <point x="608.830017" y="626.799988"/>
+            <point x="388.829987" y="626.799988"/>
+		</points>
+    </zone>
+    <zone mapid="300630000" name="ANGUISHED_DRAGON_LORDS_REFUGE_300630000" area_type="POLYGON" zone_type="SUB" priority="15" flags="0">
+        <points bottom="200.000000" top="400.000000">
+            <point x="397.799622" y="417.244995"/>
+            <point x="597.799622" y="417.244995"/>
+            <point x="597.799622" y="617.244995"/>
+            <point x="397.799622" y="617.244995"/>
+		</points>
+    </zone>
+</zones>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Siege Spring 5.3
+	Made By (Encom)
+ -->
+<spring_objects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="spring_objects.xsd">
+	<!-- RESHANTA -->
+	<spring_object map_id="400010000" x="2050.7300" y="2009.6730" z="1503.3420" range="10"/>
+	<spring_object map_id="400010000" x="1824.3323" y="2222.3906" z="1499.2969" range="10"/>
+	<spring_object map_id="400010000" x="886.28890" y="771.99180" z="1507.4191" range="10"/>
+	<spring_object map_id="400010000" x="1446.2225" y="913.06390" z="2956.3618" range="10"/>
+	<spring_object map_id="400010000" x="1882.3746" y="1710.9396" z="3006.6702" range="10"/>
+	<spring_object map_id="400010000" x="1174.4520" y="1907.3463" z="2942.5054" range="10"/>
+	<!-- KALDOR -->
+	<spring_object map_id="600090000" x="786.97711" y="259.64624" z="143.00507" range="10"/>
+	<spring_object map_id="600090000" x="802.72742" y="297.94226" z="143.00507" range="10"/>
+	<spring_object map_id="600090000" x="771.23541" y="297.91895" z="143.00507" range="10"/>
+</spring_objects>

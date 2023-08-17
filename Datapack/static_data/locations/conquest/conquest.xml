@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Conquest/Offering 4.8
+	The Shugo Emperor's Vault 4.7.5
+	Emperor Trillirunerk's Safe 4.9.1
+	Smoldering Fire Temple 5.1
+	Kumuki Cave 5.3
+	IDEvent_Def 5.6
+	Tiamaranta's Eye 5.8
+ -->
+<conquest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="conquest.xsd">
+	<!-- [CONQUEST/OFFERING 4.8] -->
+	<!-- [Inggison] -->
+	<conquest_location id="1"/>
+	<!-- [Gelkmaros] -->
+	<conquest_location id="2"/>
+	
+	<!-- [Shugo Emperor's Vault 4.7.5 - Sanctum] -->
+	<conquest_location id="3"/>
+	<!-- [Emperor Trillirunerk's Safe 4.9.1 - Sanctum] -->
+	<conquest_location id="4"/>
+	<!-- [Smoldering Fire Temple 5.1 - Sanctum] -->
+	<conquest_location id="5"/>
+	<!-- [Kumuki Cave 5.3 - Sanctum] -->
+	<conquest_location id="6"/>
+	<!-- [IDEvent_Def 5.6 - Sanctum] -->
+	<conquest_location id="11"/>
+	<!-- [Tiamaranta's Eye 5.8 - Sanctum] -->
+	<conquest_location id="13"/>
+	
+	<!-- [Shugo Emperor's Vault 4.7.5 - Pandaemonium] -->
+	<conquest_location id="7"/>
+	<!-- [Emperor Trillirunerk's Safe 4.9.1 - Pandaemonium] -->
+	<conquest_location id="8"/>
+	<!-- [Smoldering Fire Temple 5.1 - Pandaemonium] -->
+	<conquest_location id="9"/>
+	<!-- [Kumuki Cave 5.3 - Pandaemonium] -->
+	<conquest_location id="10"/>
+	<!-- [IDEvent_Def 5.6 - Pandaemonium] -->
+	<conquest_location id="12"/>
+	<!-- [Tiamaranta's Eye 5.8 - Pandaemonium] -->
+	<conquest_location id="14"/>
+</conquest>

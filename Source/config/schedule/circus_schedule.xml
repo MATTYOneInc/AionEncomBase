@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	루키부키 서커스단 4.3
+	Made By (Encom)
+ -->
+<circus_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-circus" xsi:noNamespaceSchemaLocation="circus_schedule.xsd">
+	<!-- ポエタ -->
+	<circus id="1">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- ベルテロン -->
+	<circus id="2">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- エルテネン -->
+	<circus id="3">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- インタルディカ -->
+	<circus id="4">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- インギスオン -->
+	<circus id="5">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- テオボモス -->
+	<circus id="6">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- イスハルゲン -->
+	<circus id="7">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- アルトガルド -->
+	<circus id="8">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- モルヘイム -->
+	<circus id="9">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- ベルスラン -->
+	<circus id="10">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- ブルストホーニン -->
+	<circus id="11">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+	<!-- ゲルクマルス -->
+	<circus id="12">
+		<circusTime>0 0 17 ? * SUN *</circusTime>
+	</circus>
+</circus_schedule>

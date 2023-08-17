@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	니달베르
+	[Q2041 Hold The Front Line]
+	[Q24031 Enemy At The Doorstep]
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="320040000">
+		<!-- Dragon Portal
+		[No Utility] -->
+		<spawn npc_id="700813">
+			<spot x="276.32733" y="161.67171" z="203.65775" entity_id="17"/>
+		</spawn>
+		<!-- Broken Large Teleporter
+		[Q24031 Enemy At The Doorstep]
+		<spawn npc_id="730898">
+			<spot x="257.10001" y="257.0600" z="226.40285" entity_id="74"/>
+		</spawn> -->
+		<!-- Captain Hagarkan
+		[Q24031 Enemy At The Doorstep] -->
+		<spawn npc_id="233879">
+            <spot x="251.67194" y="264.56833" z="228.81387" h="91"/>
+        </spawn>
+		<!-- Moving Hyperion
+		[Q24031 Enemy At The Doorstep] -->
+		<spawn npc_id="702091">
+			<spot x="251.08765" y="270.24231" z="230.22379" entity_id="75"/>
+		</spawn>
+		<!-- Large Teleporter
+		[Q24031 Enemy At The Doorstep] -->
+		<spawn npc_id="730888">
+			<spot x="257.10001" y="257.0600" z="226.40285" entity_id="76"/>
+		</spawn>
+		<!-- Kargate
+		[Silver Mane Prophet]-->
+		<spawn npc_id="204432">
+			<spot x="257.38528" y="223.65582" z="212.26299" h="94"/>
+		</spawn>
+	</spawn_map>
+</spawns>

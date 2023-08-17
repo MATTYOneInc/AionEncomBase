@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Instance Rift 4.9/5.0
+	エレシュランタ
+	Made By (Encom)
+ -->
+<instance_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="instance_schedule.xsd">
+	<!-- Ver 4.9 -->
+	<!-- ISLE OF ROOTS STOREROOM -->
+	<instance id="1">
+		<instanceTime>0 0 18 ? * MON,THU,SUN *</instanceTime>
+	</instance>
+	<!-- GRAVE OF STEEL STOREROOM -->
+	<instance id="2">
+		<instanceTime>0 0 18 ? * TUE,FRI,SUN *</instanceTime>
+	</instance>
+	<!-- TWILIGHT BATTELFIELD STOREROOM -->
+	<instance id="3">
+		<instanceTime>0 0 18 ? * WED,SAT,SUN *</instanceTime>
+	</instance>
+	<!-- CARPUS ISLE STOREROOM -->
+	<instance id="4">
+		<instanceTime>0 0 18 ? * TUE,THU,SAT,SUN *</instanceTime>
+	</instance>
+	<!-- HAMATE ISLE STOREROOM -->
+	<instance id="5">
+		<instanceTime>0 0 18 ? * MON,WED,FRI,SUN *</instanceTime>
+	</instance>
+	<!-- Ver 5.0 -->
+	<!-- IDF6_Adma 5.0 [Iluma] -->
+	<instance id="6">
+		<instanceTime>0 0 18 ? * MON,WED,FRI *</instanceTime>
+	</instance>
+	<!-- IDF6_Lap 5.0 [Iluma] -->
+	<instance id="7">
+		<instanceTime>0 0 18 ? * TUE,THU,SAT *</instanceTime>
+	</instance>
+	<!-- IDF6_Adma 5.0 [Norsvold] -->
+	<instance id="8">
+		<instanceTime>0 0 18 ? * MON,WED,FRI *</instanceTime>
+	</instance>
+	<!-- IDF6_Lap 5.0 [Norsvold] -->
+	<instance id="9">
+		<instanceTime>0 0 18 ? * TUE,THU,SAT *</instanceTime>
+	</instance>
+</instance_schedule>

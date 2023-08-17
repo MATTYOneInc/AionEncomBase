@@ -1,0 +1,148 @@
+   <?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Stonespear Reach 4.8 (19 Novembre 2014)
+	Made By (Encom)
+ -->
+<stonespear_reachs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="stonespear_reach.xsd">
+	<!-- STONESPEAR REACH ASMODIANS -->
+	<stonespear_reach rank="1" world="220080000" race="ASMODIANS" name_id="404623">
+		<rank id="1">
+		    <rank_reward reward_gp="300" item_id1="188053896" count="1" time="604800"/>
+			<rank_reward reward_gp="300" item_id2="185000233" count="1" time="604800"/>
+			<rank_reward reward_gp="300" item_id3="169610352" count="1" time="604800"/>
+		</rank>
+		<rank id="2">
+			<rank_reward reward_gp="250" item_id1="188053896" count="1" time="604800"/>
+		</rank>
+		<rank id="3">
+		    <rank_reward reward_gp="200" item_id1="188053897" count="1" time="604800"/>
+		</rank>
+		<rank id="4">
+		    <rank_reward reward_gp="150" item_id1="166000010" count="13" time="120"/>
+			<rank_reward reward_gp="150" item_id2="166000011" count="15"/>
+			<rank_reward reward_gp="150" item_id3="166000012" count="1" time="240"/>
+		</rank>
+		<rank id="5">
+		    <rank_reward reward_gp="70" item_id1="166000050" count="9" time="360"/>
+			<rank_reward reward_gp="70" item_id2="166000051" count="2" time="180"/>
+			<rank_reward reward_gp="70" item_id3="166000052" count="6" time="300"/>
+		</rank>
+	</stonespear_reach>
+	<stonespear_reach rank="2" world="220080000" race="ASMODIANS" name_id="404624">
+		<rank id="1">
+		    <rank_reward reward_gp="350" item_id1="188053896" count="1" time="604800"/>
+			<rank_reward reward_gp="350" item_id2="185000234" count="1" time="604800"/>
+			<rank_reward reward_gp="350" item_id3="169610353" count="1" time="604800"/>
+		</rank>
+		<rank id="2">
+			<rank_reward reward_gp="500" item_id1="188053896" count="1" time="604800"/>
+		</rank>
+		<rank id="3">
+		    <rank_reward reward_gp="100" item_id1="188053897" count="1" time="604800"/>
+		</rank>
+		<rank id="4">
+		    <rank_reward reward_gp="300" item_id1="166000069" count="10" time="120"/>
+			<rank_reward reward_gp="300" item_id2="166000070" count="8"/>
+			<rank_reward reward_gp="300" item_id3="166000071" count="2" time="240"/>
+		</rank>
+		<rank id="5">
+		    <rank_reward reward_gp="900" item_id1="166000072" count="10" time="360"/>
+			<rank_reward reward_gp="900" item_id2="166000073" count="5" time="180"/>
+			<rank_reward reward_gp="900" item_id3="166000074" count="4" time="300"/>
+		</rank>
+	</stonespear_reach>
+	<stonespear_reach rank="3" world="220080000" race="ASMODIANS" name_id="404625">
+		<rank id="1">
+		    <rank_reward reward_gp="350" item_id1="188053896" count="1" time="604800"/>
+			<rank_reward reward_gp="350" item_id2="185000235" count="1" time="604800"/>
+			<rank_reward reward_gp="350" item_id3="169610354" count="1" time="604800"/>
+		</rank>
+		<rank id="2">
+			<rank_reward reward_gp="500" item_id1="188053896" count="1" time="604800"/>
+		</rank>
+		<rank id="3">
+		    <rank_reward reward_gp="100" item_id1="188053897" count="1" time="604800"/>
+		</rank>
+		<rank id="4">
+		    <rank_reward reward_gp="300" item_id1="166000069" count="10" time="120"/>
+			<rank_reward reward_gp="300" item_id2="166000070" count="8"/>
+			<rank_reward reward_gp="300" item_id3="166000071" count="2" time="240"/>
+		</rank>
+		<rank id="5">
+		    <rank_reward reward_gp="900" item_id1="166000072" count="10" time="360"/>
+			<rank_reward reward_gp="900" item_id2="166000073" count="5" time="180"/>
+			<rank_reward reward_gp="900" item_id3="166000074" count="4" time="300"/>
+		</rank>
+	</stonespear_reach>
+	
+	<!-- STONESPEAR REACH ELYOS -->
+	<stonespear_reach rank="4" world="210070000" race="ELYOS" name_id="404633">
+		<rank id="1">
+		    <rank_reward reward_gp="300" item_id1="188053896" count="1" time="604800"/>
+			<rank_reward reward_gp="300" item_id2="185000227" count="1" time="604800"/>
+			<rank_reward reward_gp="300" item_id3="169610349" count="1" time="604800"/>
+		</rank>
+		<rank id="2">
+			<rank_reward reward_gp="250" item_id1="188053896" count="1" time="604800"/>
+		</rank>
+		<rank id="3">
+		    <rank_reward reward_gp="200" item_id1="188053897" count="1" time="604800"/>
+		</rank>
+		<rank id="4">
+		    <rank_reward reward_gp="150" item_id1="166000010" count="13" time="120"/>
+			<rank_reward reward_gp="150" item_id2="166000011" count="15"/>
+			<rank_reward reward_gp="150" item_id3="166000012" count="1" time="240"/>
+		</rank>
+		<rank id="5">
+		    <rank_reward reward_gp="70" item_id1="166000050" count="9" time="360"/>
+			<rank_reward reward_gp="70" item_id2="166000051" count="2" time="180"/>
+			<rank_reward reward_gp="70" item_id3="166000052" count="6" time="300"/>
+		</rank>
+	</stonespear_reach>
+	<stonespear_reach rank="5" world="210070000" race="ELYOS" name_id="404634">
+		<rank id="1">
+		    <rank_reward reward_gp="350" item_id1="188053896" count="1" time="604800"/>
+			<rank_reward reward_gp="350" item_id2="185000231" count="1" time="604800"/>
+			<rank_reward reward_gp="350" item_id3="169610350" count="1" time="604800"/>
+		</rank>
+		<rank id="2">
+			<rank_reward reward_gp="500" item_id1="188053896" count="1" time="604800"/>
+		</rank>
+		<rank id="3">
+		    <rank_reward reward_gp="100" item_id1="188053897" count="1" time="604800"/>
+		</rank>
+		<rank id="4">
+		    <rank_reward reward_gp="300" item_id1="166000069" count="10" time="120"/>
+			<rank_reward reward_gp="300" item_id2="166000070" count="8"/>
+			<rank_reward reward_gp="300" item_id3="166000071" count="2" time="240"/>
+		</rank>
+		<rank id="5">
+		    <rank_reward reward_gp="900" item_id1="166000072" count="10" time="360"/>
+			<rank_reward reward_gp="900" item_id2="166000073" count="5" time="180"/>
+			<rank_reward reward_gp="900" item_id3="166000074" count="4" time="300"/>
+		</rank>
+	</stonespear_reach>
+	<stonespear_reach rank="6" world="210070000" race="ELYOS" name_id="404635">
+		<rank id="1">
+		    <rank_reward reward_gp="350" item_id1="188053896" count="1" time="604800"/>
+			<rank_reward reward_gp="350" item_id2="185000232" count="1" time="604800"/>
+			<rank_reward reward_gp="350" item_id3="169610351" count="1" time="604800"/>
+		</rank>
+		<rank id="2">
+			<rank_reward reward_gp="500" item_id1="188053896" count="1" time="604800"/>
+		</rank>
+		<rank id="3">
+		    <rank_reward reward_gp="100" item_id1="188053897" count="1" time="604800"/>
+		</rank>
+		<rank id="4">
+		    <rank_reward reward_gp="300" item_id1="166000069" count="10" time="120"/>
+			<rank_reward reward_gp="300" item_id2="166000070" count="8"/>
+			<rank_reward reward_gp="300" item_id3="166000071" count="2" time="240"/>
+		</rank>
+		<rank id="5">
+		    <rank_reward reward_gp="900" item_id1="166000072" count="10" time="360"/>
+			<rank_reward reward_gp="900" item_id2="166000073" count="5" time="180"/>
+			<rank_reward reward_gp="900" item_id3="166000074" count="4" time="300"/>
+		</rank>
+	</stonespear_reach>
+</stonespear_reachs>

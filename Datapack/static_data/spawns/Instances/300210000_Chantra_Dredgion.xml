@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	チャントラ ドレドギオン
+	Spawn By (Encom)
+-->
+<spawns>
+	<spawn_map map_id="300210000">
+		<!-- Horizonist Anuta
+		<Chantra Legion> -->
+		<spawn npc_id="216876">
+			<spot x="341.49973" y="415.8883" z="410.66293" h="117"/>
+		</spawn>
+		<!-- First Mate Rukana
+		<Chantra Legion> -->
+		<spawn npc_id="216877">
+            <spot x="627.15643" y="409.6418" z="410.62933" h="69"/>
+        </spawn>
+		<!-- Skylord Vundar
+		<Chantra Legion> -->
+		<spawn npc_id="216878">
+			<spot x="410.95197" y="494.48758" z="393.75522" h="60"/>
+		</spawn>
+		<!-- First Mate Dubakar
+		<Chantra Legion> -->
+		<spawn npc_id="216879">
+			<spot x="556.89" y="489.416" z="393.648" h="1"/>
+		</spawn>
+		<!-- Chief Daraka
+		<Chantra Legion> -->
+		<spawn npc_id="216880">
+			<spot x="390.77063" y="569.32166" z="408.91055" h="116"/>
+		</spawn>
+		<!-- Trigger
+		<Chantra Legion> -->
+		<spawn npc_id="216881">
+			<spot x="581.96893" y="563.54694" z="408.83063" h="99"/>
+		</spawn>
+		<!-- Sahadena The Abettor
+		<Chantra Legion> -->
+		<spawn npc_id="216882">
+			<spot x="465.55896" y="607.9618" z="391.57822" h="114"/>
+		</spawn>
+		<!-- Quartermaster Nupakun
+		<Chantra Legion> -->
+		<spawn npc_id="216883">
+			<spot x="389.32837" y="711.0463" z="401.7698" h="88"/>
+		</spawn>
+		<!-- Takahan
+		<Chantra Legion> -->
+		<spawn npc_id="216884">
+			<spot x="577.86346" y="709.25836" z="401.7698" h="90"/>
+		</spawn>
+		<!-- Windfinder Kumar
+		<Chantra Legion> -->
+		<spawn npc_id="216890">
+			<spot x="504.8392" y="608.13403" z="391.57822" h="70"/>
+		</spawn>
+		<!-- Gatekeeper Sarta
+		<Chantra Legion> -->
+		<spawn npc_id="217037">
+			<spot x="484.01807" y="516.49536" z="397.9869" h="91"/>
+		</spawn>
+		<!-- Chantra Mariner
+		<Chantra Legion> -->
+		<spawn npc_id="216856">
+			<spot h="35" z="404.12006" y="312.7594" x="517.6292"/>
+            <spot h="91" z="402.42203" y="327.37534" x="516.9158"/>
+            <spot h="16" z="398.23315" y="467.3678" x="482.28018"/>
+            <spot h="44" z="398.22717" y="465.02408" x="490.2993"/>
+            <spot h="25" z="410.63132" y="418.01535" x="337.99118"/>
+            <spot h="48" z="410.52762" y="426.9128" x="358.05396"/>
+            <spot h="71" z="398.11615" y="519.9723" x="488.4621"/>
+            <spot h="98" z="398.17673" y="521.5512" x="480.2259"/>
+            <spot h="56" z="402.91376" y="317.57355" x="464.665"/>
+            <spot h="49" z="410.0985" y="264.20752" x="428.8755"/>
+            <spot h="22" z="409.7934" y="264.3575" x="417.91824"/>
+            <spot h="8" z="405.20718" y="892.59406" x="462.0512"/>
+            <spot h="58" z="405.20062" y="892.5068" x="508.34348"/>
+            <spot h="13" z="409.8467" y="265.9885" x="542.6821"/>
+            <spot h="34" z="409.75793" y="264.75806" x="550.45667"/>
+		</spawn>
+		<!-- Chantra Trooper
+		<Chantra Legion> -->
+		<spawn npc_id="216857">
+			<spot h="36" z="411.8913" y="399.14407" x="354.6776"/>
+            <spot h="63" z="405.20096" y="895.6394" x="507.45032"/>
+            <spot h="4" z="405.21906" y="895.8114" x="463.14325"/>
+            <spot h="25" z="404.08755" y="311.10483" x="453.15927"/>
+            <spot h="87" z="402.53857" y="331.99188" x="457.76904"/>
+            <spot h="4" z="402.91318" y="318.5161" x="504.55023"/>
+		</spawn>
+		<!-- Chantra Patroller
+		<Chantra Legion> -->
+		<spawn npc_id="216858">
+			<spot h="111" z="405.24435" y="882.2625" x="475.4465"/>
+            <spot h="107" z="397.93176" y="499.3924" x="504.5552"/>
+			<spot h="61" z="410.8118" y="567.0326" x="407.01678"/>
+            <spot h="12" z="408.96814" y="559.471" x="571.7337"/>
+		</spawn>
+		<!-- Chantra Bloodbinder
+		<Chantra Legion> -->
+		<spawn npc_id="216859">
+			<spot h="82" z="405.21228" y="882.0306" x="495.10858"/>
+            <spot h="105" z="399.03894" y="507.80975" x="464.84735"/>
+		</spawn>
+		<!-- Chantra Assassin
+		<Chantra Legion> -->
+		<spawn npc_id="216860">
+			<spot h="75" z="409.73944" y="293.14365" x="427.16855"/>
+            <spot h="70" z="411.60934" y="420.60727" x="372.90878"/>
+            <spot h="84" z="402.90027" y="333.6244" x="490.37744"/>
+            <spot h="89" z="402.86252" y="335.66437" x="480.32657"/>
+            <spot h="92" z="409.84753" y="298.6537" x="554.8239"/>
+            <spot h="102" z="399.18936" y="513.1953" x="471.78867"/>
+            <spot h="89" z="410.05997" y="298.6194" x="412.4577"/>
+            <spot h="101" z="410.06357" y="295.6654" x="403.99506"/>
+            <spot h="115" z="410.65787" y="412.76065" x="349.6784"/>
+            <spot h="58" z="402.8152" y="318.32697" x="477.56906"/>
+            <spot h="29" z="411.62494" y="397.98907" x="331.51456"/>
+            <spot h="87" z="409.7311" y="282.60928" x="548.9173"/>
+            <spot h="57" z="411.69644" y="424.58316" x="645.60596"/>
+            <spot h="43" z="410.53616" y="399.5156" x="638.3551"/>
+            <spot h="26" z="410.59845" y="428.8107" x="331.3628"/>
+            <spot h="107" z="410.0597" y="292.99167" x="541.55786"/>
+            <spot h="78" z="409.9605" y="294.81726" x="564.8786"/>
+		</spawn>
+		<!-- Chantra Curatus
+		<Chantra Legion> -->
+		<spawn npc_id="216869">
+			<spot h="71" z="409.7311" y="283.1194" x="565.20544"/>
+            <spot h="36" z="413.0127" y="387.48782" x="626.8166"/>
+            <spot h="15" z="409.7311" y="282.40552" x="405.40308"/>
+            <spot h="16" z="412.448" y="389.29504" x="367.26355"/>
+            <spot h="32" z="411.63403" y="396.43997" x="343.54135"/>
+            <spot h="69" z="399.05923" y="512.22656" x="500.32138"/>
+            <spot h="7" z="402.82986" y="309.7572" x="492.52548"/>
+		</spawn>
+		<!-- Chantra Vindicator
+		<Chantra Legion> -->
+		<spawn npc_id="216871">
+			<spot h="72" z="387.73267" y="655.7882" x="489.755"/>
+            <spot h="104" z="387.7321" y="656.12" x="480.43292"/>
+            <spot h="108" z="387.31863" y="727.24225" x="480.42892"/>
+            <spot h="80" z="387.3195" y="727.82135" x="490.01498"/>
+            <spot h="77" z="387.6075" y="691.70264" x="490.83163"/>
+            <spot h="102" z="387.60056" y="691.01086" x="479.57846"/>
+            <spot h="110" z="408.9958" y="583.6569" x="564.3104"/>
+            <spot h="76" z="408.71323" y="581.417" x="575.177"/>
+            <spot h="30" z="416.656" y="823.7686" x="485.35126"/>
+            <spot h="15" z="405.23767" y="870.82446" x="476.03302"/>
+            <spot h="45" z="405.24963" y="870.7987" x="494.88184"/>
+            <spot h="89" z="388.66757" y="767.5702" x="480.02634"/>
+            <spot h="90" z="388.66797" y="767.75885" x="490.03192"/>
+            <spot h="18" z="408.45712" y="556.59424" x="360.15536"/>
+            <spot h="27" z="408.22235" y="550.73315" x="369.72293"/>
+            <spot h="56" z="408.4364" y="554.60657" x="609.8856"/>
+            <spot h="39" z="408.51602" y="551.24194" x="599.561"/>
+            <spot h="5" z="413.51944" y="792.39087" x="533.3987"/>
+            <spot h="90" z="413.4872" y="798.05316" x="538.8672"/>
+            <spot h="33" z="408.88217" y="557.2632" x="384.10947"/>
+            <spot h="99" z="408.78348" y="575.3233" x="381.76074"/>
+            <spot h="93" z="390.8887" y="620.2575" x="488.89453"/>
+            <spot h="90" z="390.88995" y="619.7003" x="482.0217"/>
+			<spot h="77" z="410.4763" y="414.70236" x="596.0152"/>
+            <spot h="60" z="410.67102" y="403.3708" x="607.2005"/>
+            <spot h="105" z="409.2309" y="445.8829" x="626.281"/>
+            <spot h="72" z="409.31534" y="444.13016" x="635.74475"/>
+		</spawn>
+		<!-- Chantra Sniper
+		<Chantra Legion> -->
+		<spawn npc_id="216872">
+			<spot h="95" z="413.45328" y="798.4138" x="541.86774"/>
+            <spot h="9" z="413.51587" y="789.77954" x="535.03754"/>
+            <spot h="88" z="413.48178" y="798.28876" x="430.73965"/>
+            <spot h="55" z="413.51956" y="792.7348" x="436.7479"/>
+            <spot h="91" z="405.01505" y="876.9212" x="488.28693"/>
+            <spot h="91" z="405.01477" y="876.79816" x="482.33154"/>
+            <spot h="40" z="402.22354" y="717.16833" x="574.36896"/>
+            <spot h="19" z="402.22354" y="718.12683" x="392.48245"/>
+		</spawn>
+		<!-- Chantra Highmagus
+		<Chantra Legion> -->
+		<spawn npc_id="216873">
+			<spot h="101" z="408.85327" y="576.8062" x="384.19693"/>
+            <spot h="35" z="408.8244" y="556.8232" x="381.32184"/>
+            <spot h="31" z="402.2188" y="704.08417" x="403.8275"/>
+            <spot h="11" z="410.0614" y="560.6123" x="562.50977"/>
+            <spot h="37" z="409.65924" y="545.7702" x="590.33014"/>
+            <spot h="56" z="413.51904" y="790.0933" x="435.9648"/>
+            <spot h="92" z="413.44995" y="798.19025" x="427.8838"/>
+            <spot h="88" z="409.71188" y="584.1297" x="406.69498"/>
+            <spot h="98" z="408.60257" y="583.45245" x="394.7528"/>
+            <spot h="81" z="408.78503" y="576.07166" x="595.4384"/>
+            <spot h="105" z="402.21918" y="701.52124" x="569.58905"/>
+            <spot h="44" z="409.10013" y="551.5957" x="401.04895"/>
+			<spot h="27" z="410.46527" y="257.11908" x="546.0164"/>
+		</spawn>
+		<!-- Chantra Medic
+		<Chantra Legion> -->
+		<spawn npc_id="216874">
+			<spot h="89" z="402.22354" y="704.8612" x="584.67676"/>
+            <spot h="28" z="416.65332" y="823.72925" x="490.10046"/>
+            <spot h="34" z="416.65326" y="823.7503" x="480.41663"/>
+            <spot h="94" z="402.22354" y="704.6178" x="385.588"/>
+			<spot h="33" z="410.47614" y="257.06152" x="424.36176"/>
+		</spawn>
+		
+		<!-- Armory Maintenance Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700838">
+			<spot x="418.58847" y="281.88992" z="409.7311" entity_id="21"/>
+	    </spawn>
+		<!-- Armory Maintenance Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700839">
+			<spot x="553.40283" y="279.2841" z="409.7311" entity_id="30"/>
+	    </spawn>
+		<!-- Gravity Control Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700840">
+			<spot x="484.983" y="292.94415" z="402.24442" entity_id="19"/>
+	    </spawn>
+		<!-- Nuclear Control Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700841">
+			<spot x="346.1355" y="414.7247" z="410.5666" entity_id="20"/>
+	    </spawn>
+		<!-- Nuclear Control Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700842">
+			<spot x="625.6797" y="412.0587" z="410.52228" entity_id="28"/>
+	    </spawn>
+		<!-- Main Cannon Control Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700843">
+			<spot x="393.52335" y="567.063" z="408.91293" entity_id="25"/>
+	    </spawn>
+		<!-- Main Cannon Control Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700844">
+			<spot x="579.9327" y="566.6443" z="408.83307" entity_id="31"/>
+	    </spawn>
+		<!-- Drop Device Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700845">
+			<spot x="413.06436" y="490.7967" z="393.68185" entity_id="23"/>
+	    </spawn>
+		<!-- Drop Device Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700846">
+			<spot x="555.7624" y="491.23868" z="393.66724" entity_id="32"/>
+	    </spawn>
+		<!-- Fighter Enhancing Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700847">
+			<spot x="466.01926" y="607.2219" z="391.57822" entity_id="22"/>
+	    </spawn>
+		<!-- Storage Power Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700848">
+			<spot x="392.2063" y="710.7605" z="401.7698" entity_id="29"/>
+	    </spawn>
+		<!-- Storage Power Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700849">
+			<spot x="577.821" y="711.1901" z="401.7698" entity_id="24"/>
+	    </spawn>
+		<!-- Bridge Power Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700850">
+			<spot x="485.00003" y="881.68243" z="405.01794" entity_id="27"/>
+	    </spawn>
+		<!-- Captain's Cabin Power Surkana (Object Normal lvl:3) -->
+	    <spawn npc_id="700851">
+			<spot x="485.34122" y="817.6004" z="416.68781" entity_id="26"/>
+	    </spawn>
+		<!-- Portside Defense Shield (Object Normal lvl:3) -->
+	    <spawn npc_id="730345">
+			<spot x="448.39151" y="493.64182" z="394.13174" entity_id="12"/>
+	    </spawn>
+		<!-- Starboard Defense Shield (Object Normal lvl:3) -->
+	    <spawn npc_id="730346">
+			<spot x="520.87555" y="493.40115" z="394.43292" entity_id="133"/>
+	    </spawn>
+		<!-- Portside Teleporter Generator (Object Normal lvl:3) -->
+		<spawn npc_id="730349">
+			<spot x="467.42523" y="586.23065" z="391.53033" entity_id="40"/>
+		</spawn>
+		<!-- Starboard Teleporter Generator (Object Normal lvl:3) -->
+		<spawn npc_id="730350">
+			<spot x="503.45291" y="586.89984" z="391.51694" entity_id="41"/>
+		</spawn>
+		<!-- Portside Defense Shield Generator (Object Normal lvl:3) -->
+		<spawn npc_id="730351">
+			<spot x="363.65765" y="571.69086" z="410.74249" entity_id="16"/>
+		</spawn>
+		<!-- Starboard Defense Shield Generator (Object Normal lvl:3) -->
+		<spawn npc_id="730352">
+			<spot x="604.64386" y="570.05841" z="409.4982" entity_id="7"/>
+		</spawn>
+		<!-- Port Bulkhead (Object Normal lvl:3) -->
+		<spawn npc_id="730353">
+			<spot x="445.52554" y="322.47467" z="402.4762" entity_id="95"/>
+		</spawn>
+		<!-- Starboard Bulkhead (Object Normal lvl:3) -->
+		<spawn npc_id="730354">
+			<spot x="524.67957" y="322.53738" z="402.4071" entity_id="98"/>
+		</spawn>
+		<!-- Weapon Chest -->
+		<spawn npc_id="700836">
+			<spot x="540.557" y="265.744" z="409.748" entity_id="135"/>
+			<spot x="537.898" y="277.142" z="409.869" entity_id="136"/>
+			<spot x="401.196" y="282.939" z="410.098" entity_id="148"/>
+			<spot x="432.615" y="278.621" z="409.722" entity_id="145"/>
+			<spot x="429.098" y="264.377" z="409.722" entity_id="144"/>
+			<spot x="416.870" y="299.059" z="409.722" entity_id="147"/>
+			<spot x="570.688" y="287.488" z="410.364" entity_id="131"/>
+			<spot x="554.555" y="298.672" z="409.560" entity_id="118"/>
+			<spot x="538.707" y="290.148" z="409.666" entity_id="137"/>
+			<spot x="568.136" y="269.952" z="409.880" entity_id="134"/>
+			<spot x="430.699" y="291.901" z="409.722" entity_id="146"/>
+			<spot x="407.619" y="265.643" z="409.666" entity_id="149"/>
+		</spawn>
+		<!-- Balaur Supplies -->
+		<spawn npc_id="700837">
+			<spot x="387.531" y="724.726" z="403.242" entity_id="142"/>
+			<spot x="405.443" y="715.202" z="402.211" entity_id="143"/>
+			<spot x="409.043" y="708.291" z="403.151" entity_id="140"/>
+			<spot x="404.149" y="695.797" z="403.127" entity_id="138"/>
+			<spot x="569.249" y="695.968" z="402.208" entity_id="109"/>
+			<spot x="562.14" y="699.657" z="403.1510" entity_id="15"/>
+			<spot x="562.632" y="714.337" z="403.127" entity_id="93"/>
+			<spot x="584.932" y="723.724" z="402.224" entity_id="114"/>
+			<spot x="380.338" y="697.062" z="402.193" entity_id="141"/>
+			<spot x="377.426" y="710.056" z="402.214" entity_id="139"/>
+			<spot x="589.487" y="701.352" z="402.193" entity_id="6"/>
+			<spot x="590.463" y="716.159" z="402.199" entity_id="108"/>
+		</spawn>
+		<!-- Balaur Weapon -->
+		<spawn npc_id="700948">
+			<spot x="401.530" y="283.013" z="410.087" entity_id="65"/>
+			<spot x="416.806" y="298.851" z="410.401" entity_id="64"/>
+			<spot x="538.886" y="290.032" z="409.629" entity_id="161"/>
+			<spot x="407.770" y="266.117" z="410.389" entity_id="155"/>
+			<spot x="554.613" y="298.356" z="410.134" entity_id="162"/>
+			<spot x="567.644" y="270.089" z="409.957" entity_id="160"/>
+			<spot x="540.624" y="265.886" z="410.396" entity_id="163"/>
+			<spot x="570.593" y="287.591" z="411.072" entity_id="158"/>
+			<spot x="430.477" y="291.822" z="410.473" entity_id="156"/>
+			<spot x="537.880" y="277.133" z="410.379" entity_id="159"/>
+			<spot x="428.873" y="264.365" z="409.712" entity_id="91"/>
+			<spot x="432.740" y="278.621" z="410.307" entity_id="49"/>
+		</spawn>
+	</spawn_map>
+</spawns>

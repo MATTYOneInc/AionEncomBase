@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Fortress 5.8
+	エレシュランタ
+	Made By (Encom)
+ -->
+<siege_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="siege_schedule.xsd">
+	<!-- RESHANTA 5.8 -->
+	<!-- Divine Fortress -->
+	<fortress id="1011">
+		<siegeTime>0 0 14 ? * SAT *</siegeTime>
+		<siegeTime>0 0 16 ? * MON,TUE,WED,THU,FRI *</siegeTime>
+	</fortress>
+	<!-- Siel's Western Fortress -->
+	<fortress id="1131">
+	    <siegeTime>0 0 14 ? * SAT *</siegeTime>
+		<siegeTime>0 0 16 ? * MON,TUE,WED,THU,FRI *</siegeTime>
+	</fortress>
+	<!-- Siel's Eastern Fortress -->
+	<fortress id="1132">
+		<siegeTime>0 0 14 ? * SAT *</siegeTime>
+		<siegeTime>0 0 16 ? * MON,TUE,WED,THU,FRI *</siegeTime>
+	</fortress>
+	<!-- Sulfur Fortress -->
+	<fortress id="1141">
+		<siegeTime>0 0 14 ? * SAT *</siegeTime>
+		<siegeTime>0 0 16 ? * MON,TUE,WED,THU,FRI *</siegeTime>
+	</fortress>
+
+	<!-- Krotan Refuge -->
+	<fortress id="1221">
+	    <siegeTime>0 0 18 ? * SAT *</siegeTime>
+	    <siegeTime>0 0 18 ? * SUN *</siegeTime>
+		<siegeTime>0 0 18 ? * TUE,WED *</siegeTime>
+	</fortress>
+	<!-- Kysis Fortress -->
+	<fortress id="1231">
+	    <siegeTime>0 0 18 ? * SAT *</siegeTime>
+		<siegeTime>0 0 18 ? * SUN *</siegeTime>
+		<siegeTime>0 0 18 ? * MON,THU *</siegeTime>
+	</fortress>
+	<!-- Miren Fortress -->
+	<fortress id="1241">
+	    <siegeTime>0 0 18 ? * SAT *</siegeTime>
+		<siegeTime>0 0 18 ? * SUN *</siegeTime>
+		<siegeTime>0 0 18 ? * TUE,FRI *</siegeTime>
+	</fortress>
+
+	<!-- KALDOR 4.7 -->
+	<!-- Wealhtheow's Keep -->
+	<fortress id="7011">
+	    <siegeTime>0 0 13 ? * SAT *</siegeTime>
+		<siegeTime>0 0 15 ? * SUN *</siegeTime>
+		<siegeTime>0 0 19 ? * TUE,WED *</siegeTime>	
+	</fortress>
+
+	<!-- PANESTERRA 4.7 -->
+	<!-- Arcadian Fortress -->
+	<fortress id="10111">
+		<siegeTime>0 0 6 ? * MON-SUN *</siegeTime>
+	</fortress>
+	<!-- Umbral Fortress -->
+	<fortress id="10211">
+		<siegeTime>0 0 6 ? * MON-SUN *</siegeTime>
+	</fortress>
+	<!-- Eternum Fortress -->
+	<fortress id="10311">
+		<siegeTime>0 0 6 ? * MON-SUN *</siegeTime>
+	</fortress>
+	<!-- Skyclash Fortress -->
+	<fortress id="10411">
+		<siegeTime>0 0 6 ? * MON-SUN *</siegeTime>
+	</fortress>
+</siege_schedule>

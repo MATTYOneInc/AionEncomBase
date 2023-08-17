@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Rift Iluma 5.0
+	Made By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="210100000">
+		<!-- Rift -->
+		<spawn npc_id="700137" handler="RIFT">
+			<spot x="2772.7205" y="1411.0378" z="228.40994" anchor="ILUMA_AM"/>
+            <spot x="2803.8160" y="2449.9224" z="214.88650" anchor="ILUMA_BM"/>
+            <spot x="1752.4337" y="2815.7358" z="365.35850" anchor="ILUMA_CM"/>
+            <spot x="1411.8943" y="2825.8591" z="381.87940" anchor="ILUMA_DM"/>
+            <spot x="406.65700" y="1606.9851" z="228.16772" anchor="ILUMA_EM"/>
+            <spot x="580.47530" y="528.89435" z="281.69410" anchor="ILUMA_FM"/>
+            <spot x="1046.9720" y="408.43450" z="386.06130" anchor="ILUMA_GM"/>
+			<spot x="165.20547" y="555.43414" z="259.11545" anchor="ILUMA_AS"/>
+		</spawn>
+	</spawn_map>
+</spawns>

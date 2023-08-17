@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quest_scripts>
+<!--
+    Quest Occupied/Rentus Base 4.8
+	Make By (Encom)
+ -->
+	<!-- [Group] An Old Friend (Elyos Only) -->
+	<report_to id="30507" start_npc_ids="799543" end_npc_ids="790001"/>
+	<!-- [Group] Returning The Favor (Elyos Only) -->
+	<report_to id="30508" start_npc_ids="790001" end_npc_ids="799543"/>
+	<!-- [Group] Seal Their Doom (Elyos Only) -->
+	<item_collecting id="30511" start_npc_ids="0"/>
+	<!-- [Group] Pride Of The Elyos (Elyos Only) -->
+	<monster_hunt id="30512" start_npc_ids="0">
+        <monster var="0" npc_ids="217290 217295 236267 236289" end_var="15"/>
+    </monster_hunt>
+	<!-- [Group] Powerful Rangers (Elyos Only) -->
+	<item_collecting id="30513" start_npc_ids="0" end_npc_ids="0"/>
+	<!-- [Group] Tragedy Of The Past (Asmodian Only) -->
+	<report_to id="30557" start_npc_ids="799543" end_npc_ids="203643"/>
+	<!-- [Group] Shame Of Ohe Gergers (Asmodian Only) -->
+	<report_to id="30558" start_npc_ids="203643" end_npc_ids="799543"/>
+	<!-- [Group] For The Reians' Sake (Asmodian Only) -->
+	<item_collecting id="30561" start_npc_ids="0"/>
+	<!-- [Group] Slaking Bloodthirst (Asmodian Only) -->
+	<monster_hunt id="30562" start_npc_ids="0">
+        <monster var="0" npc_ids="217290 217295 236267 236289" end_var="15"/>
+    </monster_hunt>
+	<!-- [Group] Never Bow Down (Asmodian Only) -->
+	<item_collecting id="30563" start_npc_ids="0" end_npc_ids="0"/>
+</quest_scripts>

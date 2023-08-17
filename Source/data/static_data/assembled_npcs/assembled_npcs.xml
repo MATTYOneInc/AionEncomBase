@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Abyss Carrier 5.3
+	Recode By (Encom)
+ -->
+<assembled_npcs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="assembled_npcs.xsd">
+	<assembled_npc nr="1" routeId="356" liveTime="3600000" mapId="400010000">
+		<assembled_part npcId="276724" entityId="357"/>
+		<assembled_part npcId="276724" entityId="358"/>
+		<assembled_part npcId="276724" entityId="359"/>
+		<assembled_part npcId="276724" entityId="360"/>
+		<assembled_part npcId="276724" entityId="362"/>
+		<assembled_part npcId="276724" entityId="369"/>
+		<assembled_part npcId="276724" entityId="371"/>
+		<assembled_part npcId="276724" entityId="373"/>
+		<assembled_part npcId="276724" entityId="378"/>
+		<assembled_part npcId="276724" entityId="379"/>
+		<assembled_part npcId="276724" entityId="380"/>
+		<assembled_part npcId="276724" entityId="381"/>
+		<assembled_part npcId="276724" entityId="382"/>
+		<assembled_part npcId="276724" entityId="383"/>
+		<assembled_part npcId="276724" entityId="385"/>
+		<assembled_part npcId="276724" entityId="386"/>
+		<assembled_part npcId="276724" entityId="389"/>
+		<assembled_part npcId="276724" entityId="390"/>
+		<assembled_part npcId="276724" entityId="1245"/>
+		<assembled_part npcId="276724" entityId="1248"/>
+		<assembled_part npcId="276724" entityId="1251"/>
+		<assembled_part npcId="277024" entityId="1244"/>
+		<assembled_part npcId="277025" entityId="370"/>
+		<assembled_part npcId="277025" entityId="1333"/>
+		<assembled_part npcId="277026" entityId="377"/>
+		<assembled_part npcId="277028" entityId="364"/>
+		<assembled_part npcId="277029" entityId="367"/>
+		<assembled_part npcId="277030" entityId="363"/>
+		<assembled_part npcId="701374" entityId="361"/>
+		<assembled_part npcId="701374" entityId="374"/>
+		<assembled_part npcId="701374" entityId="375"/>
+		<assembled_part npcId="701374" entityId="378"/>
+		<assembled_part npcId="701374" entityId="825"/>
+	</assembled_npc>
+	<assembled_npc nr="2" routeId="376" liveTime="3600000" mapId="400010000">
+		<assembled_part npcId="276724" entityId="35"/>
+		<assembled_part npcId="276724" entityId="40"/>
+		<assembled_part npcId="276724" entityId="72"/>
+		<assembled_part npcId="276724" entityId="74"/>
+		<assembled_part npcId="276724" entityId="75"/>
+		<assembled_part npcId="276724" entityId="76"/>
+		<assembled_part npcId="276724" entityId="77"/>
+		<assembled_part npcId="276724" entityId="78"/>
+		<assembled_part npcId="276724" entityId="79"/>
+		<assembled_part npcId="276724" entityId="83"/>
+		<assembled_part npcId="276724" entityId="89"/>
+		<assembled_part npcId="276724" entityId="90"/>
+		<assembled_part npcId="276724" entityId="154"/>
+		<assembled_part npcId="276724" entityId="366"/>
+		<assembled_part npcId="276724" entityId="372"/>
+		<assembled_part npcId="276724" entityId="384"/>
+		<assembled_part npcId="276724" entityId="388"/>
+		<assembled_part npcId="276724" entityId="1241"/>
+		<assembled_part npcId="276724" entityId="1242"/>
+		<assembled_part npcId="276724" entityId="1252"/>
+		<assembled_part npcId="277024" entityId="70"/>
+		<assembled_part npcId="277025" entityId="67"/>
+		<assembled_part npcId="277025" entityId="69"/>
+		<assembled_part npcId="277026" entityId="73"/>
+		<assembled_part npcId="277028" entityId="1337"/>
+		<assembled_part npcId="277029" entityId="36"/>
+		<assembled_part npcId="277030" entityId="1336"/>
+		<assembled_part npcId="701374" entityId="82"/>
+		<assembled_part npcId="701374" entityId="88"/>
+		<assembled_part npcId="701374" entityId="91"/>
+		<assembled_part npcId="701374" entityId="365"/>
+		<assembled_part npcId="701374" entityId="1243"/>
+	</assembled_npc>
+</assembled_npcs>

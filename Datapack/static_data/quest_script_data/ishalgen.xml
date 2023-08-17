@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Ishalgen
+	Make By (Encom)
+ -->
+	<!-- On Your Feet! (Asmodian Only) -->
+	<report_to id="2101" start_npc_ids="203500" end_npc_ids="203504"/>
+	<!-- The Sprigg Report (Asmodian Only) -->
+	<report_to id="2103" start_npc_ids="203504" end_npc_ids="203501"/>
+	<!-- Idle Hands (Asmodian Only) -->
+	<report_to id="2110" start_npc_ids="203522" end_npc_ids="203533" item_id="182203110"/>
+	<!-- Sap For Leather (Asmodian Only) -->
+	<report_to id="2115" start_npc_ids="203534" end_npc_ids="203515" item_id="182203114"/>
+	<!-- Checking On A Friend (Asmodian Only) -->
+	<report_to id="2121" start_npc_ids="203540" end_npc_ids="203547" item_id="182203119"/>
+	<!-- A Delivery Of Leather (Asmodian Only) -->
+	<report_to id="2131" start_npc_ids="203515" end_npc_ids="203542" item_id="182203129"/>
+	<!-- A Cursed Opal (Asmodian Only) -->
+	<report_to id="2137" start_npc_ids="203539" end_npc_ids="203541" item_id="182203132"/>
+
+	<!-- The Shinier The Better (Asmodian Only) -->
+	<item_collecting id="2108" start_npc_ids="798037"/>
+	<!-- Urd's Request (Asmodian Only) -->
+	<item_collecting id="2112" start_npc_ids="790003"/>
+	<!-- Token Of A Lost Love (Asmodian Only) -->
+	<item_collecting id="2113" start_npc_ids="203534"/>
+	<!-- Up To No Good (Asmodian Only) -->
+	<item_collecting id="2118" start_npc_ids="203539"/>
+	<!-- A Brax Skin Rug (Asmodian Only) -->
+	<item_collecting id="2120" start_npc_ids="203542"/>
+	<!-- The Captain's Secret (Asmodian Only) -->
+	<item_collecting id="2124" start_npc_ids="203548"/>
+	<!-- Pearls Before Swine (Asmodian Only) -->
+	<item_collecting id="2127" start_npc_ids="203544"/>
+	<!-- A Good Tonic (Asmodian Only) -->
+	<item_collecting id="2128" start_npc_ids="203543"/>
+	<!-- Azpha For Health And Well-being (Asmodian Only) -->
+	<item_collecting id="2133" start_npc_ids="203519"/>
+	<!-- Alfrigh's Request (Asmodian Only) -->
+	<item_collecting id="2134" start_npc_ids="203543"/>
+	<!-- Meeting The Fruit Quota (Asmodian Only) -->
+	<item_collecting id="2104" start_npc_ids="203502" end_npc_ids="203502" action_item_ids="700124"/>
+	<!-- Love In Bloom (Asmodian Only) -->
+	<item_collecting id="2109" start_npc_ids="203532" action_item_ids="700125"/>
+	<!-- Black Opal (Asmodian Only) -->
+	<item_collecting id="2119" start_npc_ids="203541" action_item_ids="700127"/>
+	<!-- As Much As You Can Carry (Asmodian Only) -->
+	<item_collecting id="2126" start_npc_ids="203544" action_item_ids="700129"/>
+	<!-- A Treasure Map (Asmodian Only) -->
+	<item_collecting id="2116" start_npc_ids="203541" action_item_ids="700139"/>
+	
+	<!-- Return To Sender (Asmodian Only) -->
+	<item_order id="2107" start_item_id="182203107" talk_npc_id1="203516" end_npc_id="203512"/>
+	<!-- Ashes To Ashes (Asmodian Only) -->
+	<item_order id="2122" start_item_id="182203120" talk_npc_id1="203551" talk_npc_id2="700148" end_npc_id="730029"/>
+	
+	<!-- A Bloody Task (Asmodian Only) -->
+	<monster_hunt id="2102" start_npc_ids="203504">
+		<monster npc_ids="210363 210364" var="0" end_var="4"/>
+	</monster_hunt>
+	<!-- Food Bandits (Asmodian Only) -->
+	<monster_hunt id="2117" start_npc_ids="203540">
+		<monster npc_ids="210389" var="0" end_var="9"/>
+	</monster_hunt>
+	<!-- Suspicious Activity (Asmodian Only) -->
+	<monster_hunt id="2129" start_npc_ids="203552" end_npc_ids="203516">
+		<monster var="0" npc_ids="210408" end_var="1"/>
+		<monster var="1" npc_ids="210409" end_var="1"/>
+	</monster_hunt>
+</quest_scripts>

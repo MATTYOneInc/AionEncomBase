@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+	バルナ次元研究所
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="301270000">
+	    <!-- Aither 400P -->
+        <spawn npc_id="409238" respawn_time="295">
+            <spot x="262.63605" y="257.9927" z="312.59003" h="60"/>
+        </spawn>
+    </spawn_map>
+</spawns>

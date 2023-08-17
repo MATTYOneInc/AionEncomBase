@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Tiamaranta's Eye 5.8
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="600040000">
+		<!-- [GOVERNOR SUNAYAKA] -->
+		<agent_spawn id="2">
+			<agent_type astate="FIGHT">
+				<!-- Governor Sunayaka -->
+				<spawn npc_id="218553">
+				    <spot x="757.03253" y="766.7746" z="1217.0035" h="9"/>
+				</spawn>
+				<!-- Limb Render -->
+				<spawn npc_id="283072">
+				    <spot x="781.65076" y="734.69794" z="1217.0035" h="41"/>
+				</spawn>
+				<!-- Limb Render -->
+				<spawn npc_id="283074">
+				    <spot x="725.06165" y="741.974" z="1217.0035" h="12"/>
+				</spawn>
+				<!-- Limb Render -->
+				<spawn npc_id="283076">
+				    <spot x="732.044" y="798.37616" z="1217.0035" h="103"/>
+				</spawn>
+			</agent_type>
+			<agent_type astate="PEACE">
+			    <!-- WorldRaid_SP_Object -->
+				<spawn npc_id="702548">
+					<spot x="757.03253" y="766.7746" z="1217.0035" h="9"/>
+				</spawn>
+			</agent_type>
+		</agent_spawn>
+		<!-- [BERSERKER SUNAYAKA] -->
+		<agent_spawn id="3">
+			<agent_type astate="FIGHT">
+				<!-- Berserker Sunayaka -->
+				<spawn npc_id="219311">
+				    <spot x="757.03253" y="766.7746" z="1217.0035" h="9"/>
+				</spawn>
+				<!-- Limb Render -->
+				<spawn npc_id="283072">
+				    <spot x="781.65076" y="734.69794" z="1217.0035" h="41"/>
+				</spawn>
+				<!-- Limb Render -->
+				<spawn npc_id="283074">
+				    <spot x="725.06165" y="741.974" z="1217.0035" h="12"/>
+				</spawn>
+				<!-- Limb Render -->
+				<spawn npc_id="283076">
+				    <spot x="732.044" y="798.37616" z="1217.0035" h="103"/>
+				</spawn>
+			</agent_type>
+			<agent_type astate="PEACE">
+			    <!-- WorldRaid_SP_Object -->
+				<spawn npc_id="702548">
+					<spot x="757.03253" y="766.7746" z="1217.0035" h="9"/>
+				</spawn>
+			</agent_type>
+		</agent_spawn>
+    </spawn_map>
+</spawns>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Resurrected Moltenus 5.3
+	Enraged Guardian 5.3
+	Made By (Encom)
+	
+	일요일 4시 요새전이 중요
+	분노의 파편 메노티오스는 어비스 상층 중심부에서 등장한다.
+	때문에 상층 중심부의 요새를 차지했다면 그만큼 전투를 유리하게 끌고갈 수 있다.
+	
+	특히, 밀폐형 구조인 라미렌 요새를 차지했을 경우 키스크를
+	설치하는 거점으로 이용하기 좋아서 더욱 유용하다. 즉, 일요
+	일 오후 4시에 있는 요새전(상층 중앙 요새 3곳 진행)의 결
+	과가 분노의 파편 메노티오스 공략에 큰 영향을 끼친다는 얘기.
+	http://aion.power.plaync.com/wiki/%EB%B6%84%EB%85%B8%EC%9D%98+%ED%8C%8C%ED%8E%B8+%EB%A9%94%EB%85%B8%ED%8B%B0%EC%98%A4%EC%8A%A4
+ -->
+<moltenus_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="moltenus_schedule.xsd">
+	<!-- RESURRECTED MOLTENUS [RESHANTA 5.3] -->
+	<!-- [KROTAN ROCK] -->
+	<moltenus id="1">
+		<fightTime>0 0 22 ? * MON,WED,FRI,SAT *</fightTime>
+	</moltenus>
+	<!-- [KYSIS ISLE] -->
+	<moltenus id="2">
+		<fightTime>0 0 22 ? * MON,WED,FRI,SAT *</fightTime>
+	</moltenus>
+	<!-- [MIREN ISLAND] -->
+	<moltenus id="3">
+		<fightTime>0 0 22 ? * MON,WED,FRI,SAT *</fightTime>
+	</moltenus>
+	
+	<!-- [ENRAGED GUARDIAN ELYOS] -->
+	<!-- Sulfur Fortress -->
+	<moltenus id="4">
+		<fightTime>0 0 18 ? * MON,WED,FRI *</fightTime>
+	</moltenus>
+	<!-- Siel's Western Fortress -->
+	<moltenus id="5">
+		<fightTime>0 0 18 ? * MON,WED,FRI *</fightTime>
+	</moltenus>
+	<!-- Siel's Eastern Fortress -->
+	<moltenus id="6">
+		<fightTime>0 0 18 ? * MON,WED,FRI *</fightTime>
+	</moltenus>
+	
+	<!-- [ENRAGED GUARDIAN ASMODIANS] -->
+	<!-- Sulfur Fortress -->
+	<moltenus id="7">
+		<fightTime>0 0 18 ? * TUE,THU,SAT *</fightTime>
+	</moltenus>
+	<!-- Siel's Western Fortress -->
+	<moltenus id="8">
+		<fightTime>0 0 18 ? * TUE,THU,SAT *</fightTime>
+	</moltenus>
+	<!-- Siel's Eastern Fortress -->
+	<moltenus id="9">
+		<fightTime>0 0 18 ? * TUE,THU,SAT *</fightTime>
+	</moltenus>
+</moltenus_schedule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Siege Weapon 4.8
+	Made By Rinzler & The Moose (Encom)
+	Checked By Encom 11/04/2015
+ -->
+<summon_stats_templates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../stats.xsd">
+	<!-- ************ -->
+	<!-- SIEGE WEAPON -->
+	<!-- ************ -->
+	<summon_stats npc_id_light="201054" npc_id_dark="201055" level="40">
+          <stats_template maxHp="250000" pdefense="1750" mresist="1850" main_hand_attack="1500" run_speed="8.0" main_hand_accuracy="1750" main_hand_crit_rate="18" magic_accuracy="1250" evasion="1350" mcrit="18" parry="0"/>
+    </summon_stats>
+</summon_stats_templates>

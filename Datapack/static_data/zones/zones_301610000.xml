@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+	<zone mapid="301610000" name="ARACHNE_INFESTED_LIBRARY_301610000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="178.100006" top="278.100006">
+            <point x="196.000000" y="331.000000"/>
+            <point x="196.000000" y="384.000000"/>
+            <point x="237.000000" y="384.000000"/>
+            <point x="237.000000" y="331.000000"/>
+        </points>
+    </zone>
+	<zone mapid="301610000" name="LABORATORY_PROPER_301610000" area_type="POLYGON" zone_type="SUB" priority="14" flags="0">
+        <points bottom="148.100006" top="248.100006">
+            <point x="195.000000" y="109.000000"/>
+            <point x="195.000000" y="182.000000"/>
+            <point x="168.000000" y="205.000000"/>
+            <point x="168.000000" y="247.000000"/>
+            <point x="195.000000" y="273.000000"/>
+            <point x="195.000000" y="322.000000"/>
+            <point x="216.000000" y="332.000000"/>
+            <point x="229.000000" y="332.000000"/>
+            <point x="239.000000" y="322.000000"/>
+            <point x="245.000000" y="272.000000"/>
+            <point x="245.000000" y="210.000000"/>
+            <point x="225.000000" y="183.000000"/>
+            <point x="225.000000" y="135.000000"/>
+            <point x="238.000000" y="135.000000"/>
+            <point x="253.000000" y="131.000000"/>
+            <point x="253.000000" y="109.000000"/>
+        </points>
+    </zone>
+    <zone mapid="301610000" name="ELEMENTAL_ATHANOR_301610000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="166.100006" top="266.100006">
+            <point x="251.000000" y="56.000000"/>
+            <point x="251.000000" y="198.000000"/>
+            <point x="358.000000" y="198.000000"/>
+            <point x="358.000000" y="56.000000"/>
+        </points>
+	</zone>
+</zones>

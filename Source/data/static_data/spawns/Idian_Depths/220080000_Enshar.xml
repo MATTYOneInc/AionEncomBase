@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Idian Depths 4.8
+	엔샤르 4.8
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="220080000">
+		<idian_depths_spawn id="2">
+			<idian_depths_type istate="OPEN">
+				<!-- Idian Depths Corridor
+				<The Blood Grains> -->
+				<spawn npc_id="731632">
+				    <spot x="1764.2205" y="557.8873" z="207.97919" h="95"/>
+				</spawn>
+			</idian_depths_type>
+			<idian_depths_type istate="CLOSED">
+			</idian_depths_type>
+		</idian_depths_spawn>
+    </spawn_map>
+</spawns>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Tower Of Eternity
+	Made By (Encom)
+ -->
+<tower_of_eternity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="tower_of_eternity.xsd">
+	<!-- Iluma
+	[Tower Of Eternity] -->
+	<tower_location id="1" world="210100000"/>
+	<tower_location id="2" world="210100000"/>
+	<tower_location id="3" world="210100000"/>
+	<tower_location id="4" world="210100000"/>
+	<tower_location id="5" world="210100000"/>
+	<!-- Norsvold
+	[Tower Of Eternity] -->
+	<tower_location id="6" world="220110000"/>
+	<tower_location id="7" world="220110000"/>
+	<tower_location id="8" world="220110000"/>
+	<tower_location id="9" world="220110000"/>
+	<tower_location id="10" world="220110000"/>
+</tower_of_eternity>

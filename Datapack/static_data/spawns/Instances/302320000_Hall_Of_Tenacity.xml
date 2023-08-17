@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+	Hall Of Tenacity 5.3
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="302320000">
+		<!-- Dromion
+		<Warehouse Manager> -->
+		<spawn npc_id="834970">
+	        <spot h="33" z="236.35573" y="227.4939" x="282.19608"/>
+        </spawn>
+		<!-- Kurilam
+		<Warehouse Manager> -->
+	    <spawn npc_id="834971">
+	        <spot h="90" z="236.35573" y="284.5418" x="282.79114"/>
+        </spawn>
+		<!-- Kartia
+		<Conditioning Officer> -->
+	    <spawn npc_id="834974">
+	        <spot h="45" z="236.35573" y="235.47989" x="299.70355"/>
+        </spawn>
+		<!-- Roshadga
+		<Conditioning Officer> -->
+	    <spawn npc_id="834975">
+	        <spot h="75" z="236.35573" y="277.26602" x="299.2168"/>
+        </spawn>
+		<!-- Reseion
+		<Augmenting Officer> -->
+	    <spawn npc_id="834978">
+	        <spot h="50" z="236.35573" y="238.56874" x="302.30774"/>
+        </spawn>
+		<!-- Quibos
+		<Augmenting Officer> -->
+	    <spawn npc_id="834979">
+	        <spot h="74" z="236.35573" y="274.10342" x="302.387"/>
+        </spawn>
+		<!-- Pordina
+		<Stigma Master> -->
+	    <spawn npc_id="834982">
+	        <spot h="44" z="236.35573" y="232.34361" x="296.12698"/>
+        </spawn>
+		<!-- Tinke
+		<Stigma Master> -->
+	    <spawn npc_id="834983">
+	        <spot h="80" z="236.35573" y="280.15286" x="295.6577"/>
+        </spawn>
+		<!-- Peorunerk
+		<Red Sand Traders> -->
+	    <spawn npc_id="834987">
+	        <spot h="0" z="236.35573" y="256.36" x="278.4182"/>
+        </spawn>
+		<!-- Talkative Shugo
+		<Red Sand Traders> -->
+	    <spawn npc_id="834989">
+	        <spot h="99" z="230.56024" y="272.222" x="368.7199"/>
+            <spot h="46" z="230.56024" y="235.25117" x="406.98672"/>
+        </spawn>
+		<!-- Talkative Shugo
+		<Red Sand Traders> -->
+	    <spawn npc_id="834991">
+	        <spot h="108" z="230.56024" y="274.79224" x="361.15015"/>
+            <spot h="46" z="230.56024" y="234.36238" x="410.07468"/>
+            <spot h="76" z="230.56024" y="278.9021" x="408.0301"/>
+            <spot h="16" z="230.56024" y="231.44524" x="363.8814"/>
+        </spawn>
+		<!-- Talkative Shugo
+		<Red Sand Traders> -->
+	    <spawn npc_id="834993">
+	        <spot h="105" z="230.56024" y="277.63693" x="363.9111"/>
+            <spot h="61" z="230.56024" y="274.8561" x="408.11154"/>
+            <spot h="41" z="230.56024" y="232.20206" x="407.6832"/>
+            <spot h="44" z="230.56024" y="239.44156" x="400.61264"/>
+            <spot h="16" z="230.56024" y="233.62456" x="361.38937"/>
+        </spawn>
+		<!-- Shugo Guard
+		<Red Sand Mercenary> -->
+	    <spawn npc_id="834995">
+	        <spot h="30" z="230.56024" y="233.76765" x="378.11154"/>
+            <spot h="60" z="236.35573" y="244.02501" x="315.33664"/>
+            <spot h="30" z="236.6571" y="216.37834" x="276.9981"/>
+            <spot h="60" z="230.56024" y="260.4438" x="410.64304"/>
+            <spot h="45" z="236.65814" y="226.59895" x="305.4972"/>
+            <spot h="15" z="236.35564" y="248.66455" x="338.45444"/>
+            <spot h="104" z="236.35564" y="263.94995" x="338.4344"/>
+            <spot h="17" z="230.56024" y="246.98775" x="362.45874"/>
+            <spot h="89" z="236.65733" y="295.98648" x="280.9633"/>
+            <spot h="30" z="230.56024" y="233.93327" x="391.42343"/>
+            <spot h="60" z="230.56024" y="251.11385" x="410.80405"/>
+            <spot h="90" z="230.56024" y="277.97467" x="391.2611"/>
+            <spot h="90" z="230.56024" y="278.10672" x="377.60455"/>
+            <spot h="45" z="236.65799" y="230.04782" x="308.96854"/>
+            <spot h="31" z="236.65694" y="216.39212" x="281.16904"/>
+            <spot h="15" z="236.65639" y="229.28978" x="249.38498"/>
+            <spot h="15" z="236.65677" y="226.22426" x="252.50427"/>
+            <spot h="106" z="236.6565" y="282.57275" x="248.86101"/>
+            <spot h="106" z="236.65585" y="285.80542" x="252.00557"/>
+            <spot h="92" z="236.65732" y="295.94257" x="276.33038"/>
+            <spot h="77" z="236.6566" y="286.20038" x="305.32568"/>
+            <spot h="75" z="236.65712" y="282.86124" x="308.58713"/>
+            <spot h="60" z="236.35573" y="265.6628" x="315.4092"/>
+            <spot h="74" z="236.35564" y="263.9089" x="326.1667"/>
+            <spot h="45" z="236.35564" y="248.58919" x="326.00595"/>
+            <spot h="0" z="236.35573" y="252.15244" x="278.3765"/>
+            <spot h="0" z="236.35573" y="260.40567" x="278.26828"/>
+        </spawn>
+		<!-- Shugo Guard
+		<Red Sand Mercenary> -->
+	    <spawn npc_id="834997">
+	        <spot h="60" z="236.35573" y="268.52008" x="315.27042"/>
+            <spot h="60" z="236.35573" y="246.92142" x="315.27512"/>
+            <spot h="102" z="230.56024" y="264.4605" x="362.36688"/>
+        </spawn>
+		<!-- Hall Of Tenacity Exit -->
+	    <spawn npc_id="835001">
+	        <spot x="384.95297" y="220.55016" z="238.93727" entity_id="18"/>
+        </spawn>
+		<!-- Hall Of Tenacity Exit -->
+	    <spawn npc_id="835002">
+	        <spot x="384.32516" y="291.00150" z="238.93727" entity_id="17"/>
+        </spawn>
+		<!-- Amaerunerk
+		<Red Sand Traders> -->
+	    <spawn npc_id="835015">
+            <spot h="46" z="230.56024" y="241.47278" x="402.635"/>
+        </spawn>
+		<!-- Chiorinerk
+		<Red Sand Traders> -->
+	    <spawn npc_id="835017">
+	        <spot h="59" z="230.56024" y="276.95374" x="406.00345"/>
+        </spawn>
+		<!-- Maksirunerk
+		<Red Sand Traders> -->
+	    <spawn npc_id="835019">
+	        <spot h="105" z="230.56024" y="274.41263" x="364.2222"/>
+        </spawn>
+		<!-- Minirinerk
+		<Red Sand Traders> -->
+	    <spawn npc_id="835021">
+	        <spot h="16" z="230.56024" y="233.76021" x="363.78992"/>
+        </spawn>
+		<!-- Lutz
+		<General Goods Merchant> -->
+	    <spawn npc_id="835024">
+	        <spot h="30" z="236.35573" y="227.13257" x="278.24686"/>
+        </spawn>
+		<!-- Huego
+		<General Goods Merchant> -->
+	    <spawn npc_id="835025">
+	        <spot h="90" z="236.35573" y="284.8358" x="278.30356"/>
+        </spawn>
+		<!-- Telum
+		<Consumable Items Contributor> -->
+	    <spawn npc_id="835060">
+	        <spot h="30" z="236.35573" y="226.92497" x="273.58377"/>
+        </spawn>
+		<!-- Bale
+		<Consumable Item Distributor> -->
+	    <spawn npc_id="835061">
+	        <spot h="94" z="236.35573" y="284.66843" x="273.51764"/>
+        </spawn>
+	</spawn_map>
+</spawns>

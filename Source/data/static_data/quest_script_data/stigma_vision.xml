@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Stigma Vision 4.8
+	Make By (Encom)
+ -->
+	<!-- 스티그마 슬롯의 의식 -->
+	<report_to id="30216" start_npc_ids="798941" end_npc_ids="798909"/>
+	<!-- 스티그마 슬롯을 여는 의식 -->
+	<report_to id="30316" start_npc_ids="799322" end_npc_ids="799208"/>
+	<!-- [파티] 아이슈마의 복수 -->
+	<monster_hunt id="30218" start_npc_ids="799504">
+		<monster var="0" npc_ids="216195 216196 216197 216198 216276 216277 216278 216279" end_var="25"/>
+	</monster_hunt>
+	<!-- [파티] 헌신적인 마나다르 처치 -->
+	<monster_hunt id="30219" start_npc_ids="799504">
+		<monster var="0" npc_ids="216160" end_var="1"/>
+	</monster_hunt>
+	<!-- [파티] 완수하지 못한 임무 -->
+	<monster_hunt id="30220" start_npc_ids="799505">
+		<monster var="0" npc_ids="216199 216200 216201 216202 216203 216280 216281 216282" end_var="25"/>
+	</monster_hunt>
+	<!-- [파티] 임무 완수를 위하여 -->
+	<monster_hunt id="30221" start_npc_ids="799505">
+		<monster var="0" npc_ids="216242" end_var="1"/>
+	</monster_hunt>
+	<!-- [파티] 아이슈마의 보복 -->
+	<monster_hunt id="30318" start_npc_ids="799504">
+		<monster var="0" npc_ids="216195 216196 216197 216198 216276 216277 216278 216279" end_var="25"/>
+	</monster_hunt>
+	<!-- [파티] 헌신적인 마나다르 제거 -->
+	<monster_hunt id="30319" start_npc_ids="799504">
+		<monster var="0" npc_ids="216160" end_var="1"/>
+	</monster_hunt>
+	<!-- [파티] 못다 한 임무 완수 -->
+	<monster_hunt id="30320" start_npc_ids="799505">
+		<monster var="0" npc_ids="216199 216200 216201 216202 216203 216280 216281 216282" end_var="25"/>
+	</monster_hunt>
+	<!-- [파티] 최후의 임무 완수 -->
+	<monster_hunt id="30321" start_npc_ids="799505">
+		<monster var="0" npc_ids="216242" end_var="1"/>
+	</monster_hunt>
+</quest_scripts>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="../global_types.xsd"/>
+    <xs:element name="tower_reward_templates">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tower_reward_template" type="TowerStageReward" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="TowerStageReward">
+        <xs:attribute name="floor" type="xs:int" use="required"/>
+        <xs:attribute name="name" type="xs:string" use="optional"/>
+        <xs:attribute name="item_id" type="xs:int" use="optional" default="0"/>
+        <xs:attribute name="item_count" type="xs:int" use="optional" default="0"/>
+        <xs:attribute name="item_id2" type="xs:int" use="optional" default="0"/>
+        <xs:attribute name="item_count2" type="xs:int" use="optional" default="0"/>
+        <xs:attribute name="ap_count" type="xs:int" use="optional" default="0"/>
+        <xs:attribute name="gp_count" type="xs:int" use="optional" default="0"/>
+        <xs:attribute name="exp_count" type="xs:int" use="optional" default="0"/>
+        <xs:attribute name="kinah_count" type="xs:int" use="optional" default="0"/>
+    </xs:complexType>
+</xs:schema>

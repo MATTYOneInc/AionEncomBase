@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	"Base Location"
+	Made By (Encom)
+ -->
+<base_locations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="base_locations.xsd">
+	<!-- [KALDOR
+	Hero's Fall/Ashen Glade/Smoldering Crag Defense Point] -->
+	<base_location id="3" world="600090000" name="East Gate"/>
+	<base_location id="4" world="600090000" name="North Gate"/>
+	<base_location id="5" world="600090000" name="South Gate"/>
+
+	<!-- [TRANSIDIUM ANNEX 4.7] -->
+	<base_location id="6" world="400030000" name="Belus Staging Area"/>
+	<base_location id="7" world="400030000" name="Aspida Staging Area"/>
+	<base_location id="8" world="400030000" name="Atanatos Staging Area"/>
+	<base_location id="9" world="400030000" name="Disillon Staging Area"/>
+
+	<!-- [PANESTERRA 4.7] -->
+	<base_location id="11" world="400020000" name="Belani Fort"/>
+	<base_location id="12" world="400020000" name="Belfarth Fort"/>
+	<base_location id="13" world="400020000" name="Beling Fort"/>
+	<base_location id="14" world="400020000" name="Belsal Fort"/>
+	<base_location id="21" world="400040000" name="Aspamon Hold"/>
+	<base_location id="22" world="400040000" name="Aspatyr Hold"/>
+	<base_location id="23" world="400040000" name="Aspar Hold"/>
+	<base_location id="24" world="400040000" name="Aspal Hold"/>
+	<base_location id="31" world="400050000" name="Atasin Post"/>
+	<base_location id="32" world="400050000" name="Atair Post"/>
+	<base_location id="33" world="400050000" name="Atangal Post"/>
+	<base_location id="34" world="400050000" name="Ataj Post"/>
+	<base_location id="41" world="400060000" name="Disilgot Redoubt"/>
+	<base_location id="42" world="400060000" name="Disilveir Redoubt"/>
+	<base_location id="43" world="400060000" name="Disiltroll Redoubt"/>
+	<base_location id="44" world="400060000" name="Disilheim Redoubt"/>
+
+	<!-- [BASE ELTNEN 4.3] -->
+	<base_location id="45" world="210020000" name="Kaidan Watchpost"/>
+	<base_location id="46" world="210020000" name="Eracus Outpost"/>
+
+	<!-- [BASE HEIRON 4.3] -->
+	<base_location id="47" world="210040000" name="Kishar Outpost"/>
+	<base_location id="48" world="210040000" name="Research Center Outpost"/>
+
+	<!-- [BASE MORHEIM 4.3] -->
+	<base_location id="49" world="220020000" name="Musphel Outpost"/>
+	<base_location id="50" world="220020000" name="Mist Mane Defense Post"/>
+
+	<!-- [BASE BELUSLAN 4.3] -->
+	<base_location id="51" world="220040000" name="Malek Pass Outpost"/>
+	<base_location id="52" world="220040000" name="Hoarfrost Watchpost"/>
+
+	<!-- [BASE RESHANTA 5.3] -->
+	<base_location id="53" world="400010000" name="Rattlefrost Outpost"/>
+	<base_location id="54" world="400010000" name="Sliversleet Outpost"/>
+	<base_location id="55" world="400010000" name="Coldforge Outpost"/>
+	<base_location id="56" world="400010000" name="Shimmerfrost Outpost"/>
+	<base_location id="57" world="400010000" name="Icehowl Outpost"/>
+	<base_location id="58" world="400010000" name="Chillhaunt Outpost"/>
+	<base_location id="59" world="400010000" name="Sootguzzle Outpost"/>
+	<base_location id="60" world="400010000" name="Flameruin Outpost"/>
+	<base_location id="61" world="400010000" name="Stokebellow Outpost"/>
+	<base_location id="62" world="400010000" name="Blazerack Outpost"/>
+	<base_location id="63" world="400010000" name="Smoldergeist Outpost"/>
+	<base_location id="64" world="400010000" name="Moltenspike Outpost"/>
+
+	<!-- [BASE KATALAM 4.3] -->
+    <base_location id="71" world="600050000" name="Occupier's Lounge"/>
+    <base_location id="72" world="600050000" name="Spiralroot Shelter"/>
+    <base_location id="73" world="600050000" name="Beritran Foothold"/>
+    <base_location id="74" world="600050000" name="Primeval Ruins"/>
+    <base_location id="75" world="600050000" name="Broken Cliff Camp"/>
+    <base_location id="76" world="600050000" name="Irigani Keep"/>
+    <base_location id="77" world="600050000" name="Crumbling Redoubt"/>
+    <base_location id="78" world="600050000" name="Windswept Camp"/>
+    <base_location id="79" world="600050000" name="Sillus Pass Watchpost"/>
+
+	<!-- [BASE LEVINSHOR 4.7] -->
+	<base_location id="90" world="600100000" name="Dragon Lord's Shrine"/>
+	<base_location id="91" world="600100000" name="North Relay"/>
+	<base_location id="92" world="600100000" name="South Relay"/>
+	<base_location id="93" world="600100000" name="North Outpost"/>
+	<base_location id="94" world="600100000" name="East Outpost"/>
+	<base_location id="95" world="600100000" name="East Relay"/>
+	<base_location id="96" world="600100000" name="West Picket"/>
+	<base_location id="97" world="600100000" name="South Outpost"/>
+	<base_location id="98" world="600100000" name="West Outpost"/>
+	<base_location id="99" world="600100000" name="West Relay"/>
+	<base_location id="100" world="600100000" name="East Picket"/>
+	<base_location id="101" world="600100000" name="North Picket"/>
+	<base_location id="102" world="600100000" name="South Picket"/>
+
+	<!-- [BASE KALDOR 4.7] -->
+	<base_location id="103" world="600090000" name="Stonereach Outpost"/>
+	<base_location id="104" world="600090000" name="Flamecrest Outpost"/>
+
+	<!-- [PANESTERRA ARTIFACT 4.7] -->
+	<base_location id="1001" world="400020000" name="Mirage Dance [Dawn Quarter]"/>
+	<base_location id="1002" world="400020000" name="Chaos Wind [Dawn Quarter]"/>
+	<base_location id="1003" world="400020000" name="Mirage Dance [Verdant Quarter]"/>
+	<base_location id="1004" world="400020000" name="Chaos Wind [Verdant Quarter]"/>
+	<base_location id="1005" world="400020000" name="Mirage Dance [Autroenn Quarter]"/>
+	<base_location id="1006" world="400020000" name="Chaos Wind [Autroenn Quarter]"/>
+	<base_location id="1007" world="400020000" name="Mirage Dance [Fontanus Quarter]"/>
+	<base_location id="1008" world="400020000" name="Chaos Wind [Fontanus Quarter]"/>
+	<base_location id="1009" world="400040000" name="Mirage Dance [Phantasmal Quarter]"/>
+	<base_location id="1010" world="400040000" name="Chaos Wind [Phantasmal Quarter]"/>
+	<base_location id="1011" world="400040000" name="Mirage Dance [Destiny Quarter]"/>
+	<base_location id="1012" world="400040000" name="Chaos Wind [Destiny Quarter]"/>
+	<base_location id="1013" world="400040000" name="Mirage Dance [Luminarie Quarter]"/>
+	<base_location id="1014" world="400040000" name="Chaos Wind [Luminarie Quarter]"/>
+	<base_location id="1015" world="400040000" name="Mirage Dance [Stellare Quarter]"/>
+	<base_location id="1016" world="400040000" name="Chaos Wind [Stellare Quarter]"/>
+	<base_location id="1017" world="400050000" name="Mirage Dance [Redwind Quarter]"/>
+	<base_location id="1018" world="400050000" name="Chaos Wind [Redwind Quarter]"/>
+	<base_location id="1019" world="400050000" name="Mirage Dance [New Sky Quarter]"/>
+	<base_location id="1020" world="400050000" name="Chaos Wind [New Sky Quarter]"/>
+	<base_location id="1021" world="400050000" name="Mirage Dance [Auric Quarter]"/>
+	<base_location id="1022" world="400050000" name="Chaos Wind [Auric Quarter]"/>
+	<base_location id="1023" world="400050000" name="Mirage Dance [Edel Quarter]"/>
+	<base_location id="1024" world="400050000" name="Chaos Wind [Edel Quarter]"/>
+	<base_location id="1025" world="400060000" name="Mirage Dance [Nakhbolt Quarter]"/>
+	<base_location id="1026" world="400060000" name="Chaos Wind [Nakhbolt Quarter]"/>
+	<base_location id="1027" world="400060000" name="Mirage Dance [Turbulentus Quarter]"/>
+	<base_location id="1028" world="400060000" name="Chaos Wind [Turbulentus Quarter]"/>
+	<base_location id="1029" world="400060000" name="Mirage Dance [Domesden Quarter]"/>
+	<base_location id="1030" world="400060000" name="Chaos Wind [Domesden Quarter]"/>
+	<base_location id="1031" world="400060000" name="Mirage Dance [Pyrogenes Temple]"/>
+	<base_location id="1032" world="400060000" name="Chaos Wind [Pyrogenes Temple]"/>
+</base_locations>

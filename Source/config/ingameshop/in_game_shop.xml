@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<in_game_shop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="in_game_shop.xsd">
+	<category id="0" name="ELYOS">
+		<sub_category id="3" name="Bag Support"/>
+		<sub_category id="4" name="Skins"/>
+		<sub_category id="5" name="Food"/>
+		<sub_category id="6" name="Potion"/>
+		<sub_category id="7" name="Dyes"/>
+		<sub_category id="8" name="Character"/>
+		<sub_category id="9" name="Wings"/>
+		<sub_category id="10" name="Scroll"/>
+		<sub_category id="11" name="Rides"/>
+		<sub_category id="12" name="Enchantment Stone"/>
+		<sub_category id="13" name="Pets Enhancer"/>
+		<sub_category id="14" name="Pets Carrier"/>
+		<sub_category id="15" name="Pets Browser"/>
+		<sub_category id="16" name="Pets Food"/>
+		<sub_category id="17" name="Siege/Abyss/Pvp"/>
+		<sub_category id="18" name="Emotion/Motion Card"/>
+		<sub_category id="19" name="Event"/>
+	</category>
+	<category id="1" name="ASMODIANS">
+		<sub_category id="3" name="Bag Support"/>
+		<sub_category id="4" name="Skins"/>
+		<sub_category id="5" name="Food"/>
+		<sub_category id="6" name="Potion"/>
+		<sub_category id="7" name="Dyes"/>
+		<sub_category id="8" name="Character"/>
+		<sub_category id="9" name="Wings"/>
+		<sub_category id="10" name="Scroll"/>
+		<sub_category id="11" name="Rides"/>
+		<sub_category id="12" name="Enchantment Stone"/>
+		<sub_category id="13" name="Pets Enhancer"/>
+		<sub_category id="14" name="Pets Carrier"/>
+		<sub_category id="15" name="Pets Browser"/>
+		<sub_category id="16" name="Pets Food"/>
+		<sub_category id="17" name="Siege/Abyss/Pvp"/>
+		<sub_category id="18" name="Emotion/Motion Card"/>
+		<sub_category id="19" name="Event"/>
+	</category>
+</in_game_shop>

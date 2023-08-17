@@ -1,0 +1,2779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Decomposable Items
+	Made By (Encom)
+ -->
+<decomposable_items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="decomposable_items.xsd">
+	<!-- Harvest Decomposable -->
+	<!-- Juicy Pepento -->
+	<decomposable item_id="152000065">
+		<items>
+			<item id="152000064" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Greater Gold Ore -->
+	<decomposable item_id="152000103">
+		<items>
+			<item id="152000102" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Platinum Ore -->
+	<decomposable item_id="152000105">
+		<items>
+			<item id="152000104" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Platinum Ore -->
+	<decomposable item_id="152000106">
+		<items>
+			<item id="152000105" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Mithril Ore -->
+	<decomposable item_id="152000108">
+		<items>
+			<item id="152000107" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Mithril Ore -->
+	<decomposable item_id="152000109">
+		<items>
+			<item id="152000108" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Brilliant Mithril Ore -->
+	<decomposable item_id="152000112">
+		<items>
+			<item id="152000109" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Malevite Ore -->
+	<decomposable item_id="152000114">
+		<items>
+			<item id="152000113" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Malevite Ore -->
+	<decomposable item_id="152000115">
+		<items>
+			<item id="152000114" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Brilliant Malevite Ore -->
+	<decomposable item_id="152000116">
+		<items>
+			<item id="152000115" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Ceramium Ore -->
+	<decomposable item_id="152000124">
+		<items>
+			<item id="152000123" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Pure Ceramium Ore -->
+	<decomposable item_id="152000125">
+		<items>
+			<item id="152000124" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Greater Titanium Ore -->
+	<decomposable item_id="152000203">
+		<items>
+			<item id="152000202" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Adamantium Ore -->
+	<decomposable item_id="152000205">
+		<items>
+			<item id="152000204" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Adamantium Ore -->
+	<decomposable item_id="152000206">
+		<items>
+			<item id="152000205" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Orichalcum Ore -->
+	<decomposable item_id="152000208">
+		<items>
+			<item id="152000207" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Orichalcum Ore -->
+	<decomposable item_id="152000209">
+		<items>
+			<item id="152000208" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Brilliant Orichalcum Ore -->
+	<decomposable item_id="152000213">
+		<items>
+			<item id="152000209" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Drenite Ore -->
+	<decomposable item_id="152000215">
+		<items>
+			<item id="152000214" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Drenite Ore -->
+	<decomposable item_id="152000216">
+		<items>
+			<item id="152000215" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Brilliant Drenite Ore -->
+	<decomposable item_id="152000217">
+		<items>
+			<item id="152000216" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Katalium -->
+	<decomposable item_id="152000221">
+		<items>
+			<item id="152000220" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Katalium -->
+	<decomposable item_id="152000222">
+		<items>
+			<item id="152000221" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Anarium -->
+	<decomposable item_id="152000224">
+		<items>
+			<item id="152000223" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Anarium -->
+	<decomposable item_id="152000225">
+		<items>
+			<item id="152000224" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Big Garnet Ore -->
+	<decomposable item_id="152000308">
+		<items>
+			<item id="152000307" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Big Lazuli Ore -->
+	<decomposable item_id="152000310">
+		<items>
+			<item id="152000309" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Big Moonstone Ore -->
+	<decomposable item_id="152000312">
+		<items>
+			<item id="152000311" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Big Ruby Ore -->
+	<decomposable item_id="152000314">
+		<items>
+			<item id="152000313" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Big Sapphire Ore -->
+	<decomposable item_id="152000316">
+		<items>
+			<item id="152000315" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Rich Diamond Ore -->
+	<decomposable item_id="152000318">
+		<items>
+			<item id="152000317" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Big Corundum Ore -->
+	<decomposable item_id="152000321">
+		<items>
+			<item id="152000320" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Big Turquoise Ore -->
+	<decomposable item_id="152000323">
+		<items>
+			<item id="152000322" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Big Elatrite Ore -->
+	<decomposable item_id="152000325">
+		<items>
+			<item id="152000324" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Dazzling Corundum Ore -->
+	<decomposable item_id="152000326">
+		<items>
+			<item id="152000321" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Dazzling Turquoise Ore -->
+	<decomposable item_id="152000327">
+		<items>
+			<item id="152000323" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Dazzling Elatrite Ore -->
+	<decomposable item_id="152000328">
+		<items>
+			<item id="152000325" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Dazzling Corundum Ore -->
+	<decomposable item_id="152000329">
+		<items>
+			<item id="152000326" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Dazzling Turquoise Ore -->
+	<decomposable item_id="152000330">
+		<items>
+			<item id="152000327" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Dazzling Elatrite Ore -->
+	<decomposable item_id="152000331">
+		<items>
+			<item id="152000328" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Big Opal Ore -->
+	<decomposable item_id="152000333">
+		<items>
+			<item id="152000332" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Dazzling Opal Ore -->
+	<decomposable item_id="152000334">
+		<items>
+			<item id="152000333" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Big Nolan Ore -->
+	<decomposable item_id="152000336">
+		<items>
+			<item id="152000335" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Dazzling Nolan Ore -->
+	<decomposable item_id="152000337">
+		<items>
+			<item id="152000336" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Aria -->
+	<decomposable item_id="152000402">
+		<items>
+			<item id="152000401" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Targena -->
+	<decomposable item_id="152000404">
+		<items>
+			<item id="152000403" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Lumesia -->
+	<decomposable item_id="152000406">
+		<items>
+			<item id="152000405" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Umblia -->
+	<decomposable item_id="152000408">
+		<items>
+			<item id="152000407" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Nepeta -->
+	<decomposable item_id="152000410">
+		<items>
+			<item id="152000409" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Amalil -->
+	<decomposable item_id="152000412">
+		<items>
+			<item id="152000411" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Ferilla -->
+	<decomposable item_id="152000414">
+		<items>
+			<item id="152000413" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Griffonia -->
+	<decomposable item_id="152000416">
+		<items>
+			<item id="152000415" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Zeldt -->
+	<decomposable item_id="152000418">
+		<items>
+			<item id="152000417" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Hintera -->
+	<decomposable item_id="152000420">
+		<items>
+			<item id="152000419" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Azpha -->
+	<decomposable item_id="152000452">
+		<items>
+			<item id="152000451" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Kandula -->
+	<decomposable item_id="152000454">
+		<items>
+			<item id="152000453" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Theonia -->
+	<decomposable item_id="152000456">
+		<items>
+			<item id="152000455" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Hasia -->
+	<decomposable item_id="152000458">
+		<items>
+			<item id="152000457" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Neunan -->
+	<decomposable item_id="152000460">
+		<items>
+			<item id="152000459" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Calamot -->
+	<decomposable item_id="152000462">
+		<items>
+			<item id="152000461" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Subella -->
+	<decomposable item_id="152000464">
+		<items>
+			<item id="152000463" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Grobule -->
+	<decomposable item_id="152000466">
+		<items>
+			<item id="152000465" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Plia -->
+	<decomposable item_id="152000469">
+		<items>
+			<item id="152000468" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Fresh Liconsis -->
+	<decomposable item_id="152000471">
+		<items>
+			<item id="152000470" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Koa Log Bundle -->
+	<decomposable item_id="152000506">
+		<items chance="1">
+			<item id="152000502" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000502" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Ulmus Log Bundle -->
+	<decomposable item_id="152000507">
+		<items chance="1">
+			<item id="152000503" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000503" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Egrasi Log Bundle -->
+	<decomposable item_id="152000508">
+		<items chance="1">
+			<item id="152000504" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000504" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Nanyu Log Bundle -->
+	<decomposable item_id="152000509">
+		<items chance="1">
+			<item id="152000505" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000505" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Hefty Pakira Log -->
+	<decomposable item_id="152000511">
+		<items>
+			<item id="152000510" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Smooth Pakira Log -->
+	<decomposable item_id="152000512">
+		<items>
+			<item id="152000511" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Hefty Pirian Log -->
+	<decomposable item_id="152000514">
+		<items>
+			<item id="152000513" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Smooth Pirian Log -->
+	<decomposable item_id="152000515">
+		<items>
+			<item id="152000514" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Wrud Log Bundle -->
+	<decomposable item_id="152000557">
+		<items chance="1">
+			<item id="152000552" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000552" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Salix Log Bundle -->
+	<decomposable item_id="152000558">
+		<items chance="1">
+			<item id="152000553" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000553" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Asvata Log Bundle -->
+	<decomposable item_id="152000559">
+		<items chance="1">
+			<item id="152000554" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000554" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Korie Log Bundle -->
+	<decomposable item_id="152000560">
+		<items chance="1">
+			<item id="152000556" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000556" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Fess Fiber Bundle -->
+	<decomposable item_id="152000608">
+		<items chance="1">
+			<item id="152000602" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000602" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Sobi Fiber Bundle -->
+	<decomposable item_id="152000609">
+		<items chance="1">
+			<item id="152000603" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000603" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Linon Fiber Bundle -->
+	<decomposable item_id="152000610">
+		<items chance="1">
+			<item id="152000604" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000604" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Prolix Fiber Bundle -->
+	<decomposable item_id="152000611">
+		<items chance="1">
+			<item id="152000605" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000605" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Strong Ponica Fiber -->
+	<decomposable item_id="152000613">
+		<items>
+			<item id="152000612" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Fine Ponica Fiber -->
+	<decomposable item_id="152000614">
+		<items>
+			<item id="152000613" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Twisp Fiber Bundle -->
+	<decomposable item_id="152000658">
+		<items chance="1">
+			<item id="152000652" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000652" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Xilix Fiber Bundle -->
+	<decomposable item_id="152000659">
+		<items chance="1">
+			<item id="152000653" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000653" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Anathe Fiber Bundle -->
+	<decomposable item_id="152000660">
+		<items chance="1">
+			<item id="152000654" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000654" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Hoca Fiber Bundle -->
+	<decomposable item_id="152000661">
+		<items chance="1">
+			<item id="152000656" count="3"/>
+		</items>
+		<items chance="1">
+			<item id="152000656" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Succulent Plucar -->
+	<decomposable item_id="152000715">
+		<items>
+			<item id="152000714" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Succulent Rava -->
+	<decomposable item_id="152000717">
+		<items>
+			<item id="152000716" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Savory Kucien -->
+	<decomposable item_id="152000814">
+		<items>
+			<item id="152000813" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Aether Crystal -->
+	<decomposable item_id="152000903">
+		<items>
+			<item id="152000902" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Aether Gem -->
+	<decomposable item_id="152000905">
+		<items>
+			<item id="152000904" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Aether Gem -->
+	<decomposable item_id="152000906">
+		<items>
+			<item id="152000905" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Aether -->
+	<decomposable item_id="152000908">
+		<items>
+			<item id="152000907" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Aether -->
+	<decomposable item_id="152000909">
+		<items>
+			<item id="152000908" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Brilliant Aether -->
+	<decomposable item_id="152000910">
+		<items>
+			<item id="152000909" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Magical Aether -->
+	<decomposable item_id="152000912">
+		<items>
+			<item id="152000911" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Pure Magical Aether -->
+	<decomposable item_id="152000913">
+		<items>
+			<item id="152000912" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Brilliant Magical Aether -->
+	<decomposable item_id="152000914">
+		<items>
+			<item id="152000913" count="3"/>
+		</items>
+	</decomposable>
+	<!-- Greater Ancient Aether -->
+	<decomposable item_id="152000917">
+		<items>
+			<item id="152000916" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Pure Ancient Aether -->
+	<decomposable item_id="152000918">
+		<items>
+			<item id="152000917" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Polished Menthcrem -->
+	<decomposable item_id="152001007">
+		<items>
+			<item id="152001006" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Preserved Ide -->
+	<decomposable item_id="152003014">
+		<items>
+			<item id="152003013" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Flawless Ide -->
+	<decomposable item_id="152003015">
+		<items>
+			<item id="152003014" count="2"/>
+		</items>
+	</decomposable>
+	<!-- Unknown Bundle -->
+	<decomposable item_id="188051162">
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="186000001" count="2" race="ELYOS"/>
+			<item id="186000006" count="2" race="ASMODIANS"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="186000002" count="2" race="ELYOS"/>
+			<item id="186000007" count="2" race="ASMODIANS"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="186000003" count="2" race="ELYOS"/>
+			<item id="186000008" count="2" race="ASMODIANS"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="186000004" count="2" race="ELYOS"/>
+			<item id="186000009" count="2" race="ASMODIANS"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170410023" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170410024" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170420029" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170420030" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="186000005" count="1" race="ELYOS"/>
+			<item id="186000010" count="1" race="ASMODIANS"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170410023" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170410024" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170420029" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170420030" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="186000018" count="1" race="ELYOS"/>
+			<item id="186000019" count="1" race="ASMODIANS"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170110023" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170110024" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170410023" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170410024" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170420029" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170420030" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="186000018" count="1" race="ELYOS"/>
+			<item id="186000019" count="1" race="ASMODIANS"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170110023" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170110024" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170410023" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170410024" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170420029" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170420030" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="186000231" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170110023" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170110024" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170410023" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170410024" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170420029" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170420030" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="66" maxlevel="83" chance="1">
+			<item id="188057891" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Pet's Present (Pet's Gifting Every 1 Hours) -->
+	<decomposable item_id="188051379">
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="186000001" count="2" race="ELYOS"/>
+			<item id="186000006" count="2" race="ASMODIANS"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="10" maxlevel="20" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="186000002" count="2" race="ELYOS"/>
+			<item id="186000007" count="2" race="ASMODIANS"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="21" maxlevel="30" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="186000003" count="2" race="ELYOS"/>
+			<item id="186000008" count="2" race="ASMODIANS"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="31" maxlevel="40" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="186000004" count="2" race="ELYOS"/>
+			<item id="186000009" count="2" race="ASMODIANS"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170410023" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170410024" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170420029" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170420030" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="41" maxlevel="45" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="186000005" count="1" race="ELYOS"/>
+			<item id="186000010" count="1" race="ASMODIANS"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170410023" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170410024" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170420029" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170420030" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="46" maxlevel="50" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="186000018" count="1" race="ELYOS"/>
+			<item id="186000019" count="1" race="ASMODIANS"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170110023" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170110024" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170410023" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170410024" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170420029" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170420030" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="51" maxlevel="55" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="186000018" count="1" race="ELYOS"/>
+			<item id="186000019" count="1" race="ASMODIANS"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170110023" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170110024" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170410023" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170410024" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170420029" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170420030" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="56" maxlevel="60" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="186000231" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170110023" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170110024" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170410023" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170410024" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170420029" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170420030" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170020030" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170020031" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="170020032" count="1"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="186000146" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="186000159" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="152011092" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="152011093" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="152011094" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="152011095" count="5"/>
+		</items>
+		<items minlevel="61" maxlevel="65" chance="1">
+			<item id="152011096" count="5"/>
+		</items>
+		<items minlevel="66" maxlevel="83" chance="1">
+			<item id="188057894" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Key Pouch -->
+	<decomposable item_id="188052640">
+		<items>
+			<item id="185000185" count="1"/>
+		</items>
+		<items>
+			<item id="185000186" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Alchemist's Pouch -->
+	<decomposable item_id="188052641">
+	    <items>
+			<item id="188100126" count="1"/>
+		</items>
+		<items>
+			<item id="188100127" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Mega Kinah 300 -->
+	<decomposable item_id="188052643">
+	    <items>
+			<item id="182007058" count="1"/>
+		</items>
+		<items>
+			<item id="182007059" count="1"/>
+		</items>
+		<items>
+			<item id="182007060" count="1"/>
+		</items>
+		<items>
+			<item id="182007061" count="1"/>
+		</items>
+		<items>
+			<item id="182007062" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Mega Kinah 100 -->
+	<decomposable item_id="188052672">
+	    <items>
+			<item id="182007119" count="1"/>
+		</items>
+		<items>
+			<item id="182007120" count="1"/>
+		</items>
+		<items>
+			<item id="182007121" count="1"/>
+		</items>
+		<items>
+			<item id="182007122" count="1"/>
+		</items>
+		<items>
+			<item id="182007123" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Mega Kinah 5 -->
+	<decomposable item_id="188052673">
+	    <items>
+			<item id="182007124" count="1"/>
+		</items>
+		<items>
+			<item id="182007125" count="1"/>
+		</items>
+		<items>
+			<item id="182007126" count="1"/>
+		</items>
+		<items>
+			<item id="182007127" count="1"/>
+		</items>
+		<items>
+			<item id="182007128" count="1"/>
+		</items>
+	</decomposable>
+	<!-- +1 Snowflake -->
+	<decomposable item_id="188052986">
+	    <items>
+			<item id="188052987" count="1"/>
+		</items>
+		<items>
+			<item id="182007148" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Aion Ascended Pack -->
+	<decomposable item_id="188054509">
+	    <items>
+			<item id="186000419" count="10"/>
+			<item id="190020076" count="1"/>
+			<item id="184002026" count="1" race="ELYOS"/>
+			<item id="184002027" count="1" race="ASMODIANS"/>
+			<item id="162000050" count="250"/>
+			<item id="162001062" count="10"/>
+			<item id="188053295" count="1"/>
+			<item id="161000003" count="5"/>
+		</items>
+	</decomposable>
+	<!-- Aion Daevic Pack -->
+	<decomposable item_id="188054519">
+	    <items>
+			<item id="186000419" count="15"/>
+			<item id="170100026" count="1"/>
+			<item id="125040076" count="1"/>
+			<item id="190020018" count="1"/>
+			<item id="169620178" count="10"/>
+			<item id="162001062" count="10"/>
+			<item id="110900104" count="1"/>
+			<item id="169620084" count="5"/>
+			<item id="169620075" count="5"/>
+		</items>
+	</decomposable>
+	<!-- Aion Empyrean Pack -->
+	<decomposable item_id="188054529">
+	    <items>
+			<item id="186000419" count="25"/>
+			<item id="169610137" count="1"/>
+			<item id="125045430" count="1"/>
+			<item id="110900731" count="1"/>
+			<item id="190100121" count="1"/>
+			<item id="170100025" count="1"/>
+			<item id="187000090" count="1"/>
+			<item id="190020174" count="1"/>
+		</items>
+	</decomposable>
+	<!-- +2 Snowflake -->
+	<decomposable item_id="188052987">
+	    <items>
+			<item id="188052988" count="1"/>
+		</items>
+		<items>
+			<item id="182007148" count="1"/>
+		</items>
+	</decomposable>
+	<!-- +3 Snowflake -->
+	<decomposable item_id="188052988">
+	    <items>
+			<item id="188052989" count="1"/>
+		</items>
+		<items>
+			<item id="182007148" count="1"/>
+		</items>
+	</decomposable>
+	<!-- +4 Snowflake -->
+	<decomposable item_id="188052989">
+	    <items>
+			<item id="188052990" count="1"/>
+		</items>
+		<items>
+			<item id="182007148" count="1"/>
+		</items>
+	</decomposable>
+	<!-- +5 Snowflake -->
+	<decomposable item_id="188052990">
+	    <items>
+			<item id="188052991" count="1"/>
+		</items>
+		<items>
+			<item id="182007148" count="1"/>
+		</items>
+	</decomposable>
+	<!-- +6 Snowflake -->
+	<decomposable item_id="188052991">
+	    <items>
+			<item id="188052992" count="1"/>
+		</items>
+		<items>
+			<item id="182007148" count="1"/>
+		</items>
+	</decomposable>
+	<!-- +7 Snowflake -->
+	<decomposable item_id="188052992">
+	    <items>
+			<item id="188052993" count="1"/>
+		</items>
+		<items>
+			<item id="182007148" count="1"/>
+		</items>
+	</decomposable>
+	<!-- +8 Snowflake -->
+	<decomposable item_id="188052993">
+	    <items>
+			<item id="188052994" count="1"/>
+		</items>
+		<items>
+			<item id="182007148" count="1"/>
+		</items>
+	</decomposable>
+	<!-- +9 Snowflake -->
+	<decomposable item_id="188052994">
+	    <items>
+			<item id="188052995" count="1"/>
+		</items>
+		<items>
+			<item id="182007148" count="1"/>
+		</items>
+	</decomposable>
+	<!-- +10 Snowflake -->
+	<decomposable item_id="188052995">
+	    <items>
+			<item id="188100149" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Scroll Bundle (Linkgate Foundry) -->
+	<decomposable item_id="188053238">
+	    <items>
+			<item id="162000151" count="3"/>
+			<item id="164000291" count="3"/>
+			<item id="164000292" count="2"/>
+			<item id="164000293" count="1"/>
+			<item id="164000294" count="1"/>
+			<item id="164000296" count="1"/>
+			<item id="164000298" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Scroll Bundle (Linkgate Foundry) -->
+	<decomposable item_id="188053239">
+	    <items>
+			<item id="162000151" count="3"/>
+			<item id="164000291" count="3"/>
+			<item id="164000292" count="2"/>
+			<item id="164000293" count="1"/>
+			<item id="164000295" count="1"/>
+			<item id="164000297" count="1"/>
+			<item id="164000299" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Ding-Dong's Present -->
+	<decomposable item_id="188053672">
+	    <items>
+			<item id="188100257" count="1"/>
+		</items>
+		<items>
+			<item id="188100258" count="1"/>
+		</items>
+		<items>
+			<item id="188100259" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Long-Long's Gift -->
+	<decomposable item_id="188053674">
+		<items>
+			<item id="110900441" count="1"/>
+		</items>
+		<items>
+			<item id="110900442" count="1"/>
+		</items>
+		<items>
+			<item id="110900443" count="1"/>
+		</items>
+		<items>
+			<item id="186000242" count="10"/>
+		</items>
+		<items>
+			<item id="169620112" count="1"/>
+		</items>
+		<items>
+			<item id="166030005" count="5"/>
+		</items>
+		<items>
+			<item id="188053295" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Shu-Ghost's Egg & Aether Cherry Box -->
+	<decomposable item_id="188053543">
+	    <items>
+			<item id="190020222" count="1"/>
+			<item id="182007162" count="200"/>
+		</items>
+	</decomposable>
+	<!-- Pinkybell's Egg & Aether Cherry Box -->
+	<decomposable item_id="188053544">
+	    <items>
+			<item id="190020224" count="1"/>
+			<item id="182007162" count="200"/>
+		</items>
+	</decomposable>
+	<!-- Royal Kitter's Egg & Aether Cherry Box -->
+	<decomposable item_id="188053545">
+	    <items>
+			<item id="190020211" count="1"/>
+			<item id="182007162" count="200"/>
+		</items>
+	</decomposable>
+	<!-- Bundle Of Honor And Conquest -->
+	<decomposable item_id="188053697">
+	    <items>
+			<item id="186000238" count="1"/>
+		</items>
+		<items>
+			<item id="186000238" count="1000"/>
+		</items>
+	</decomposable>
+	
+	<!-- Lowest Grade Enchantment Stone Dust Bundle -->
+	<decomposable item_id="188054716">
+	    <items>
+			<item id="188100335" count="9"/>
+		</items>
+	</decomposable>
+	<!-- Low Grade Enchantment Stone Dust Bundle -->
+	<decomposable item_id="188054717">
+	    <items>
+			<item id="188100335" count="14"/>
+		</items>
+	</decomposable>
+	<!-- Enchantment Stone Dust Bundle -->
+	<decomposable item_id="188054718">
+	    <items>
+			<item id="188100335" count="82"/>
+		</items>
+	</decomposable>
+	<!-- Greater Enchantment Stone Dust Bundle -->
+	<decomposable item_id="188054719">
+	    <items>
+			<item id="188100335" count="1200"/>
+		</items>
+	</decomposable>
+	<!-- Supreme Enchantment Stone Dust Bundle -->
+	<decomposable item_id="188054720">
+	    <items>
+			<item id="188100335" count="8000"/>
+		</items>
+	</decomposable>
+	
+	<!-- Resurgent Daevanion Cloth Box -->
+	<decomposable item_id="188053556">
+		<items>
+			<item id="110101861" player_class="SORCERER" count="1"/>
+			<item id="111101675" player_class="SORCERER" count="1"/>
+			<item id="112101625" player_class="SORCERER" count="1"/>
+			<item id="113101687" player_class="SORCERER" count="1"/>
+			<item id="114101721" player_class="SORCERER" count="1"/>
+			<item id="110101861" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="111101675" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="112101625" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="113101687" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="114101721" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="110101861" player_class="SONGWEAVER" count="1"/>
+			<item id="111101675" player_class="SONGWEAVER" count="1"/>
+			<item id="112101625" player_class="SONGWEAVER" count="1"/>
+			<item id="113101687" player_class="SONGWEAVER" count="1"/>
+			<item id="114101721" player_class="SONGWEAVER" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Resurgent Daevanion Leather Box -->
+	<decomposable item_id="188053557">
+		<items>
+			<item id="110301852" player_class="ASSASSIN" count="1"/>
+			<item id="111301790" player_class="ASSASSIN" count="1"/>
+			<item id="112301729" player_class="ASSASSIN" count="1"/>
+			<item id="113301821" player_class="ASSASSIN" count="1"/>
+			<item id="114301858" player_class="ASSASSIN" count="1"/>
+			<item id="110301852" player_class="RANGER" count="1"/>
+			<item id="111301790" player_class="RANGER" count="1"/>
+			<item id="112301729" player_class="RANGER" count="1"/>
+			<item id="113301821" player_class="RANGER" count="1"/>
+			<item id="114301858" player_class="RANGER" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Resurgent Daevanion Magic Leather Box -->
+	<decomposable item_id="188053558">
+		<items>
+			<item id="110301853" player_class="GUNSLINGER" count="1"/>
+			<item id="111301791" player_class="GUNSLINGER" count="1"/>
+			<item id="112301730" player_class="GUNSLINGER" count="1"/>
+			<item id="113301822" player_class="GUNSLINGER" count="1"/>
+			<item id="114301859" player_class="GUNSLINGER" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Resurgent Daevanion Chain Box -->
+	<decomposable item_id="188053559">
+		<items>
+			<item id="110551180" player_class="CLERIC" count="1"/>
+			<item id="111501739" player_class="CLERIC" count="1"/>
+			<item id="112501678" player_class="CLERIC" count="1"/>
+			<item id="113501757" player_class="CLERIC" count="1"/>
+			<item id="114501767" player_class="CLERIC" count="1"/>
+			<item id="110551180" player_class="CHANTER" count="1"/>
+			<item id="111501739" player_class="CHANTER" count="1"/>
+			<item id="112501678" player_class="CHANTER" count="1"/>
+			<item id="113501757" player_class="CHANTER" count="1"/>
+			<item id="114501767" player_class="CHANTER" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Resurgent Daevanion Magic Chain Box -->
+	<decomposable item_id="188053560">
+		<items>
+			<item id="110551181" player_class="AETHERTECH" count="1"/>
+			<item id="111501740" player_class="AETHERTECH" count="1"/>
+			<item id="112501679" player_class="AETHERTECH" count="1"/>
+			<item id="113501758" player_class="AETHERTECH" count="1"/>
+			<item id="114501768" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Resurgent Daevanion Plate Box -->
+	<decomposable item_id="188053561">
+	    <items>
+			<item id="110601651" player_class="GLADIATOR" count="1"/>
+			<item id="111601614" player_class="GLADIATOR" count="1"/>
+			<item id="112601596" player_class="GLADIATOR" count="1"/>
+			<item id="113601597" player_class="GLADIATOR" count="1"/>
+			<item id="114601604" player_class="GLADIATOR" count="1"/>
+			<item id="110601651" player_class="TEMPLAR" count="1"/>
+			<item id="111601614" player_class="TEMPLAR" count="1"/>
+			<item id="112601596" player_class="TEMPLAR" count="1"/>
+			<item id="113601597" player_class="TEMPLAR" count="1"/>
+			<item id="114601604" player_class="TEMPLAR" count="1"/>
+		</items>
+	</decomposable>
+	
+	<!-- Renewed Daevanion Cloth Box -->
+	<decomposable item_id="188053565">
+		<items>
+			<item id="110101862" player_class="SORCERER" count="1"/>
+			<item id="111101676" player_class="SORCERER" count="1"/>
+			<item id="112101626" player_class="SORCERER" count="1"/>
+			<item id="113101688" player_class="SORCERER" count="1"/>
+			<item id="114101722" player_class="SORCERER" count="1"/>
+			<item id="110101862" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="111101676" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="112101626" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="113101688" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="114101722" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="110101862" player_class="SONGWEAVER" count="1"/>
+			<item id="111101676" player_class="SONGWEAVER" count="1"/>
+			<item id="112101626" player_class="SONGWEAVER" count="1"/>
+			<item id="113101688" player_class="SONGWEAVER" count="1"/>
+			<item id="114101722" player_class="SONGWEAVER" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Renewed Daevanion Leather Box -->
+	<decomposable item_id="188053566">
+		<items>
+			<item id="110301854" player_class="ASSASSIN" count="1"/>
+			<item id="111301792" player_class="ASSASSIN" count="1"/>
+			<item id="112301731" player_class="ASSASSIN" count="1"/>
+			<item id="113301823" player_class="ASSASSIN" count="1"/>
+			<item id="114301860" player_class="ASSASSIN" count="1"/>
+			<item id="110301854" player_class="RANGER" count="1"/>
+			<item id="111301792" player_class="RANGER" count="1"/>
+			<item id="112301731" player_class="RANGER" count="1"/>
+			<item id="113301823" player_class="RANGER" count="1"/>
+			<item id="114301860" player_class="RANGER" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Renewed Daevanion Magic Leather Box -->
+	<decomposable item_id="188053567">
+		<items>
+			<item id="110301855" player_class="GUNSLINGER" count="1"/>
+			<item id="111301793" player_class="GUNSLINGER" count="1"/>
+			<item id="112301732" player_class="GUNSLINGER" count="1"/>
+			<item id="113301824" player_class="GUNSLINGER" count="1"/>
+			<item id="114301861" player_class="GUNSLINGER" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Renewed Daevanion Chain Box -->
+	<decomposable item_id="188053568">
+		<items>
+			<item id="110551182" player_class="CLERIC" count="1"/>
+			<item id="111501741" player_class="CLERIC" count="1"/>
+			<item id="112501680" player_class="CLERIC" count="1"/>
+			<item id="113501759" player_class="CLERIC" count="1"/>
+			<item id="114501769" player_class="CLERIC" count="1"/>
+			<item id="110551182" player_class="CHANTER" count="1"/>
+			<item id="111501741" player_class="CHANTER" count="1"/>
+			<item id="112501680" player_class="CHANTER" count="1"/>
+			<item id="113501759" player_class="CHANTER" count="1"/>
+			<item id="114501769" player_class="CHANTER" count="1"/>
+			<item id="110551182" player_class="AETHERTECH" count="1"/>
+			<item id="111501741" player_class="AETHERTECH" count="1"/>
+			<item id="112501680" player_class="AETHERTECH" count="1"/>
+			<item id="113501759" player_class="AETHERTECH" count="1"/>
+			<item id="114501769" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Renewed Daevanion Plate Box -->
+	<decomposable item_id="188053569">
+	    <items>
+			<item id="110601652" player_class="GLADIATOR" count="1"/>
+			<item id="111601615" player_class="GLADIATOR" count="1"/>
+			<item id="112601597" player_class="GLADIATOR" count="1"/>
+			<item id="113601598" player_class="GLADIATOR" count="1"/>
+			<item id="114601605" player_class="GLADIATOR" count="1"/>
+			<item id="110601652" player_class="TEMPLAR" count="1"/>
+			<item id="111601615" player_class="TEMPLAR" count="1"/>
+			<item id="112601597" player_class="TEMPLAR" count="1"/>
+			<item id="113601598" player_class="TEMPLAR" count="1"/>
+			<item id="114601605" player_class="TEMPLAR" count="1"/>
+		</items>
+	</decomposable>
+	
+	<!-- Abbey Resurgence Box
+	[Q19600 Welcome To Wisplight Abbey & Q29600 Welcome Back] -->
+	<decomposable item_id="188053581">
+	    <items>
+			<item id="188053561" player_class="GLADIATOR" count="1"/>
+			<item id="188053562" player_class="GLADIATOR" count="1"/>
+			<item id="188053569" player_class="GLADIATOR" count="1"/>
+			<item id="188053570" player_class="GLADIATOR" count="1"/>
+			<item id="188053561" player_class="TEMPLAR" count="1"/>
+			<item id="188053562" player_class="TEMPLAR" count="1"/>
+			<item id="188053569" player_class="TEMPLAR" count="1"/>
+			<item id="188053570" player_class="TEMPLAR" count="1"/>
+			<item id="188053557" player_class="ASSASSIN" count="1"/>
+			<item id="188053562" player_class="ASSASSIN" count="1"/>
+			<item id="188053566" player_class="ASSASSIN" count="1"/>
+			<item id="188053570" player_class="ASSASSIN" count="1"/>
+			<item id="188053557" player_class="RANGER" count="1"/>
+			<item id="188053562" player_class="RANGER" count="1"/>
+			<item id="188053566" player_class="RANGER" count="1"/>
+			<item id="188053570" player_class="RANGER" count="1"/>
+			<item id="188053559" player_class="CLERIC" count="1"/>
+			<item id="188053562" player_class="CLERIC" count="1"/>
+			<item id="188053568" player_class="CLERIC" count="1"/>
+			<item id="188053570" player_class="CLERIC" count="1"/>
+			<item id="188053559" player_class="CHANTER" count="1"/>
+			<item id="188053562" player_class="CHANTER" count="1"/>
+			<item id="188053568" player_class="CHANTER" count="1"/>
+			<item id="188053570" player_class="CHANTER" count="1"/>
+			<item id="188053556" player_class="SORCERER" count="1"/>
+			<item id="188053562" player_class="SORCERER" count="1"/>
+			<item id="188053565" player_class="SORCERER" count="1"/>
+			<item id="188053570" player_class="SORCERER" count="1"/>
+			<item id="188053556" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188053562" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188053565" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188053570" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188053558" player_class="GUNSLINGER" count="1"/>
+			<item id="188053562" player_class="GUNSLINGER" count="1"/>
+			<item id="188053567" player_class="GUNSLINGER" count="1"/>
+			<item id="188053570" player_class="GUNSLINGER" count="1"/>
+			<item id="188053556" player_class="SONGWEAVER" count="1"/>
+			<item id="188053562" player_class="SONGWEAVER" count="1"/>
+			<item id="188053565" player_class="SONGWEAVER" count="1"/>
+			<item id="188053570" player_class="SONGWEAVER" count="1"/>
+			<item id="188053560" player_class="AETHERTECH" count="1"/>
+			<item id="188053562" player_class="AETHERTECH" count="1"/>
+			<item id="188053568" player_class="AETHERTECH" count="1"/>
+			<item id="188053570" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	
+	<!-- Major Blood Mark Bundle -->
+	<decomposable item_id="188054277">
+	    <items>
+			<item id="186000236" count="10"/>
+		</items>
+	</decomposable>
+	<!-- Greater Blood Mark Bundle -->
+	<decomposable item_id="188054278">
+	    <items>
+			<item id="186000236" count="20"/>
+		</items>
+	</decomposable>
+	<!-- Middle Grade Blood Mark Bundle -->
+	<decomposable item_id="188054279">
+	    <items>
+			<item id="186000236" count="30"/>
+		</items>
+	</decomposable>
+	<!-- Blood Mark Box -->
+	<decomposable item_id="188054283">
+	    <items>
+			<item id="186000236" count="5"/>
+		</items>
+	</decomposable>
+	<!-- Blood Mark Box -->
+	<decomposable item_id="188054284">
+	    <items>
+			<item id="186000236" count="5"/>
+		</items>
+	</decomposable>
+	
+	<!-- [Jakurerk] Noble Daevanion Armor Box -->
+	<decomposable item_id="188054489">
+	    <items>
+			<item id="111601672" player_class="GLADIATOR" count="1" race="ELYOS"/>
+			<item id="113601655" player_class="GLADIATOR" count="1" race="ELYOS"/>
+			<item id="110601708" player_class="GLADIATOR" count="1" race="ELYOS"/>
+			<item id="114601661" player_class="GLADIATOR" count="1" race="ELYOS"/>
+			<item id="112601653" player_class="GLADIATOR" count="1" race="ELYOS"/>
+			<item id="111601674" player_class="GLADIATOR" count="1" race="ASMODIANS"/>
+			<item id="113601657" player_class="GLADIATOR" count="1" race="ASMODIANS"/>
+			<item id="110601710" player_class="GLADIATOR" count="1" race="ASMODIANS"/>
+			<item id="114601663" player_class="GLADIATOR" count="1" race="ASMODIANS"/>
+			<item id="112601655" player_class="GLADIATOR" count="1" race="ASMODIANS"/>
+			<item id="111601672" player_class="TEMPLAR" count="1" race="ELYOS"/>
+			<item id="113601655" player_class="TEMPLAR" count="1" race="ELYOS"/>
+			<item id="110601708" player_class="TEMPLAR" count="1" race="ELYOS"/>
+			<item id="114601661" player_class="TEMPLAR" count="1" race="ELYOS"/>
+			<item id="112601653" player_class="TEMPLAR" count="1" race="ELYOS"/>
+			<item id="111601674" player_class="TEMPLAR" count="1" race="ASMODIANS"/>
+			<item id="113601657" player_class="TEMPLAR" count="1" race="ASMODIANS"/>
+			<item id="110601710" player_class="TEMPLAR" count="1" race="ASMODIANS"/>
+			<item id="114601663" player_class="TEMPLAR" count="1" race="ASMODIANS"/>
+			<item id="112601655" player_class="TEMPLAR" count="1" race="ASMODIANS"/>
+			<item id="111301850" player_class="ASSASSIN" count="1" race="ELYOS"/>
+			<item id="113301881" player_class="ASSASSIN" count="1" race="ELYOS"/>
+			<item id="110301911" player_class="ASSASSIN" count="1" race="ELYOS"/>
+			<item id="114301918" player_class="ASSASSIN" count="1" race="ELYOS"/>
+			<item id="112301788" player_class="ASSASSIN" count="1" race="ELYOS"/>
+			<item id="111301854" player_class="ASSASSIN" count="1" race="ASMODIANS"/>
+			<item id="113301885" player_class="ASSASSIN" count="1" race="ASMODIANS"/>
+			<item id="110301915" player_class="ASSASSIN" count="1" race="ASMODIANS"/>
+			<item id="114301922" player_class="ASSASSIN" count="1" race="ASMODIANS"/>
+			<item id="112301792" player_class="ASSASSIN" count="1" race="ASMODIANS"/>
+			<item id="111301850" player_class="RANGER" count="1" race="ELYOS"/>
+			<item id="113301881" player_class="RANGER" count="1" race="ELYOS"/>
+			<item id="110301911" player_class="RANGER" count="1" race="ELYOS"/>
+			<item id="114301918" player_class="RANGER" count="1" race="ELYOS"/>
+			<item id="112301788" player_class="RANGER" count="1" race="ELYOS"/>
+			<item id="111301854" player_class="RANGER" count="1" race="ASMODIANS"/>
+			<item id="113301885" player_class="RANGER" count="1" race="ASMODIANS"/>
+			<item id="110301915" player_class="RANGER" count="1" race="ASMODIANS"/>
+			<item id="114301922" player_class="RANGER" count="1" race="ASMODIANS"/>
+			<item id="112301792" player_class="RANGER" count="1" race="ASMODIANS"/>
+			<item id="111501810" player_class="CLERIC" count="1" race="ELYOS"/>
+			<item id="113501829" player_class="CLERIC" count="1" race="ELYOS"/>
+			<item id="110551250" player_class="CLERIC" count="1" race="ELYOS"/>
+			<item id="114501837" player_class="CLERIC" count="1" race="ELYOS"/>
+			<item id="112501746" player_class="CLERIC" count="1" race="ELYOS"/>
+			<item id="111501814" player_class="CLERIC" count="1" race="ASMODIANS"/>
+			<item id="113501833" player_class="CLERIC" count="1" race="ASMODIANS"/>
+			<item id="110551254" player_class="CLERIC" count="1" race="ASMODIANS"/>
+			<item id="114501841" player_class="CLERIC" count="1" race="ASMODIANS"/>
+			<item id="112501750" player_class="CLERIC" count="1" race="ASMODIANS"/>
+			<item id="111501810" player_class="CHANTER" count="1" race="ELYOS"/>
+			<item id="113501829" player_class="CHANTER" count="1" race="ELYOS"/>
+			<item id="110551250" player_class="CHANTER" count="1" race="ELYOS"/>
+			<item id="114501837" player_class="CHANTER" count="1" race="ELYOS"/>
+			<item id="112501746" player_class="CHANTER" count="1" race="ELYOS"/>
+			<item id="111501814" player_class="CHANTER" count="1" race="ASMODIANS"/>
+			<item id="113501833" player_class="CHANTER" count="1" race="ASMODIANS"/>
+			<item id="110551254" player_class="CHANTER" count="1" race="ASMODIANS"/>
+			<item id="114501841" player_class="CHANTER" count="1" race="ASMODIANS"/>
+			<item id="112501750" player_class="CHANTER" count="1" race="ASMODIANS"/>
+			<item id="111101734" player_class="SORCERER" count="1" race="ELYOS"/>
+			<item id="113101745" player_class="SORCERER" count="1" race="ELYOS"/>
+			<item id="110101918" player_class="SORCERER" count="1" race="ELYOS"/>
+			<item id="114101779" player_class="SORCERER" count="1" race="ELYOS"/>
+			<item id="112101680" player_class="SORCERER" count="1" race="ELYOS"/>
+			<item id="111101736" player_class="SORCERER" count="1" race="ASMODIANS"/>
+			<item id="113101747" player_class="SORCERER" count="1" race="ASMODIANS"/>
+			<item id="110101920" player_class="SORCERER" count="1" race="ASMODIANS"/>
+			<item id="114101781" player_class="SORCERER" count="1" race="ASMODIANS"/>
+			<item id="112101682" player_class="SORCERER" count="1" race="ASMODIANS"/>
+			<item id="111101734" player_class="SPIRIT_MASTER" count="1" race="ELYOS"/>
+			<item id="113101745" player_class="SPIRIT_MASTER" count="1" race="ELYOS"/>
+			<item id="110101918" player_class="SPIRIT_MASTER" count="1" race="ELYOS"/>
+			<item id="114101779" player_class="SPIRIT_MASTER" count="1" race="ELYOS"/>
+			<item id="112101680" player_class="SPIRIT_MASTER" count="1" race="ELYOS"/>
+			<item id="111101736" player_class="SPIRIT_MASTER" count="1" race="ASMODIANS"/>
+			<item id="113101747" player_class="SPIRIT_MASTER" count="1" race="ASMODIANS"/>
+			<item id="110101920" player_class="SPIRIT_MASTER" count="1" race="ASMODIANS"/>
+			<item id="114101781" player_class="SPIRIT_MASTER" count="1" race="ASMODIANS"/>
+			<item id="112101682" player_class="SPIRIT_MASTER" count="1" race="ASMODIANS"/>
+			<item id="111301851" player_class="GUNSLINGER" count="1" race="ELYOS"/>
+			<item id="113301882" player_class="GUNSLINGER" count="1" race="ELYOS"/>
+			<item id="110301912" player_class="GUNSLINGER" count="1" race="ELYOS"/>
+			<item id="114301919" player_class="GUNSLINGER" count="1" race="ELYOS"/>
+			<item id="112301789" player_class="GUNSLINGER" count="1" race="ELYOS"/>
+			<item id="111301855" player_class="GUNSLINGER" count="1" race="ASMODIANS"/>
+			<item id="113301886" player_class="GUNSLINGER" count="1" race="ASMODIANS"/>
+			<item id="110301916" player_class="GUNSLINGER" count="1" race="ASMODIANS"/>
+			<item id="114301923" player_class="GUNSLINGER" count="1" race="ASMODIANS"/>
+			<item id="112301793" player_class="GUNSLINGER" count="1" race="ASMODIANS"/>
+			<item id="111101734" player_class="SONGWEAVER" count="1" race="ELYOS"/>
+			<item id="113101745" player_class="SONGWEAVER" count="1" race="ELYOS"/>
+			<item id="110101918" player_class="SONGWEAVER" count="1" race="ELYOS"/>
+			<item id="114101779" player_class="SONGWEAVER" count="1" race="ELYOS"/>
+			<item id="112101680" player_class="SONGWEAVER" count="1" race="ELYOS"/>
+			<item id="111101736" player_class="SONGWEAVER" count="1" race="ASMODIANS"/>
+			<item id="113101747" player_class="SONGWEAVER" count="1" race="ASMODIANS"/>
+			<item id="110101920" player_class="SONGWEAVER" count="1" race="ASMODIANS"/>
+			<item id="114101781" player_class="SONGWEAVER" count="1" race="ASMODIANS"/>
+			<item id="112101682" player_class="SONGWEAVER" count="1" race="ASMODIANS"/>
+			<item id="111501826" player_class="AETHERTECH" count="1" race="ELYOS"/>
+			<item id="113501845" player_class="AETHERTECH" count="1" race="ELYOS"/>
+			<item id="110551266" player_class="AETHERTECH" count="1" race="ELYOS"/>
+			<item id="114501853" player_class="AETHERTECH" count="1" race="ELYOS"/>
+			<item id="112501762" player_class="AETHERTECH" count="1" race="ELYOS"/>
+			<item id="111501828" player_class="AETHERTECH" count="1" race="ASMODIANS"/>
+			<item id="113501847" player_class="AETHERTECH" count="1" race="ASMODIANS"/>
+			<item id="110551268" player_class="AETHERTECH" count="1" race="ASMODIANS"/>
+			<item id="114501855" player_class="AETHERTECH" count="1" race="ASMODIANS"/>
+			<item id="112501764" player_class="AETHERTECH" count="1" race="ASMODIANS"/>
+		</items>
+	</decomposable>
+	<!-- [Jakurerk] Noble Daevanion Plate Armor Box -->
+	<decomposable item_id="188054490">
+	    <items>
+			<item id="111601672" player_class="GLADIATOR" count="1" race="ELYOS"/>
+			<item id="113601655" player_class="GLADIATOR" count="1" race="ELYOS"/>
+			<item id="110601708" player_class="GLADIATOR" count="1" race="ELYOS"/>
+			<item id="114601661" player_class="GLADIATOR" count="1" race="ELYOS"/>
+			<item id="112601653" player_class="GLADIATOR" count="1" race="ELYOS"/>
+			<item id="111601674" player_class="GLADIATOR" count="1" race="ASMODIANS"/>
+			<item id="113601657" player_class="GLADIATOR" count="1" race="ASMODIANS"/>
+			<item id="110601710" player_class="GLADIATOR" count="1" race="ASMODIANS"/>
+			<item id="114601663" player_class="GLADIATOR" count="1" race="ASMODIANS"/>
+			<item id="112601655" player_class="GLADIATOR" count="1" race="ASMODIANS"/>
+			<item id="111601672" player_class="TEMPLAR" count="1" race="ELYOS"/>
+			<item id="113601655" player_class="TEMPLAR" count="1" race="ELYOS"/>
+			<item id="110601708" player_class="TEMPLAR" count="1" race="ELYOS"/>
+			<item id="114601661" player_class="TEMPLAR" count="1" race="ELYOS"/>
+			<item id="112601653" player_class="TEMPLAR" count="1" race="ELYOS"/>
+			<item id="111601674" player_class="TEMPLAR" count="1" race="ASMODIANS"/>
+			<item id="113601657" player_class="TEMPLAR" count="1" race="ASMODIANS"/>
+			<item id="110601710" player_class="TEMPLAR" count="1" race="ASMODIANS"/>
+			<item id="114601663" player_class="TEMPLAR" count="1" race="ASMODIANS"/>
+			<item id="112601655" player_class="TEMPLAR" count="1" race="ASMODIANS"/>
+		</items>
+	</decomposable>
+	<!-- [Jakurerk] Noble Daevanion Leather Armor Box -->
+	<decomposable item_id="188054491">
+		<items>
+			<item id="111301850" player_class="ASSASSIN" count="1" race="ELYOS"/>
+			<item id="113301881" player_class="ASSASSIN" count="1" race="ELYOS"/>
+			<item id="110301911" player_class="ASSASSIN" count="1" race="ELYOS"/>
+			<item id="114301918" player_class="ASSASSIN" count="1" race="ELYOS"/>
+			<item id="112301788" player_class="ASSASSIN" count="1" race="ELYOS"/>
+			<item id="111301854" player_class="ASSASSIN" count="1" race="ASMODIANS"/>
+			<item id="113301885" player_class="ASSASSIN" count="1" race="ASMODIANS"/>
+			<item id="110301915" player_class="ASSASSIN" count="1" race="ASMODIANS"/>
+			<item id="114301922" player_class="ASSASSIN" count="1" race="ASMODIANS"/>
+			<item id="112301792" player_class="ASSASSIN" count="1" race="ASMODIANS"/>
+			<item id="111301850" player_class="RANGER" count="1" race="ELYOS"/>
+			<item id="113301881" player_class="RANGER" count="1" race="ELYOS"/>
+			<item id="110301911" player_class="RANGER" count="1" race="ELYOS"/>
+			<item id="114301918" player_class="RANGER" count="1" race="ELYOS"/>
+			<item id="112301788" player_class="RANGER" count="1" race="ELYOS"/>
+			<item id="111301854" player_class="RANGER" count="1" race="ASMODIANS"/>
+			<item id="113301885" player_class="RANGER" count="1" race="ASMODIANS"/>
+			<item id="110301915" player_class="RANGER" count="1" race="ASMODIANS"/>
+			<item id="114301922" player_class="RANGER" count="1" race="ASMODIANS"/>
+			<item id="112301792" player_class="RANGER" count="1" race="ASMODIANS"/>
+			<item id="111301851" player_class="GUNSLINGER" count="1" race="ELYOS"/>
+			<item id="113301882" player_class="GUNSLINGER" count="1" race="ELYOS"/>
+			<item id="110301912" player_class="GUNSLINGER" count="1" race="ELYOS"/>
+			<item id="114301919" player_class="GUNSLINGER" count="1" race="ELYOS"/>
+			<item id="112301789" player_class="GUNSLINGER" count="1" race="ELYOS"/>
+			<item id="111301855" player_class="GUNSLINGER" count="1" race="ASMODIANS"/>
+			<item id="113301886" player_class="GUNSLINGER" count="1" race="ASMODIANS"/>
+			<item id="110301916" player_class="GUNSLINGER" count="1" race="ASMODIANS"/>
+			<item id="114301923" player_class="GUNSLINGER" count="1" race="ASMODIANS"/>
+			<item id="112301793" player_class="GUNSLINGER" count="1" race="ASMODIANS"/>
+		</items>
+	</decomposable>
+	<!-- [Jakurerk] Noble Daevanion Chain Armor Box -->
+	<decomposable item_id="188054492">
+		<items>
+			<item id="111501810" player_class="CLERIC" count="1" race="ELYOS"/>
+			<item id="113501829" player_class="CLERIC" count="1" race="ELYOS"/>
+			<item id="110551250" player_class="CLERIC" count="1" race="ELYOS"/>
+			<item id="114501837" player_class="CLERIC" count="1" race="ELYOS"/>
+			<item id="112501746" player_class="CLERIC" count="1" race="ELYOS"/>
+			<item id="111501814" player_class="CLERIC" count="1" race="ASMODIANS"/>
+			<item id="113501833" player_class="CLERIC" count="1" race="ASMODIANS"/>
+			<item id="110551254" player_class="CLERIC" count="1" race="ASMODIANS"/>
+			<item id="114501841" player_class="CLERIC" count="1" race="ASMODIANS"/>
+			<item id="112501750" player_class="CLERIC" count="1" race="ASMODIANS"/>
+			<item id="111501810" player_class="CHANTER" count="1" race="ELYOS"/>
+			<item id="113501829" player_class="CHANTER" count="1" race="ELYOS"/>
+			<item id="110551250" player_class="CHANTER" count="1" race="ELYOS"/>
+			<item id="114501837" player_class="CHANTER" count="1" race="ELYOS"/>
+			<item id="112501746" player_class="CHANTER" count="1" race="ELYOS"/>
+			<item id="111501814" player_class="CHANTER" count="1" race="ASMODIANS"/>
+			<item id="113501833" player_class="CHANTER" count="1" race="ASMODIANS"/>
+			<item id="110551254" player_class="CHANTER" count="1" race="ASMODIANS"/>
+			<item id="114501841" player_class="CHANTER" count="1" race="ASMODIANS"/>
+			<item id="112501750" player_class="CHANTER" count="1" race="ASMODIANS"/>
+			<item id="111501826" player_class="AETHERTECH" count="1" race="ELYOS"/>
+			<item id="113501845" player_class="AETHERTECH" count="1" race="ELYOS"/>
+			<item id="110551266" player_class="AETHERTECH" count="1" race="ELYOS"/>
+			<item id="114501853" player_class="AETHERTECH" count="1" race="ELYOS"/>
+			<item id="112501762" player_class="AETHERTECH" count="1" race="ELYOS"/>
+			<item id="111501828" player_class="AETHERTECH" count="1" race="ASMODIANS"/>
+			<item id="113501847" player_class="AETHERTECH" count="1" race="ASMODIANS"/>
+			<item id="110551268" player_class="AETHERTECH" count="1" race="ASMODIANS"/>
+			<item id="114501855" player_class="AETHERTECH" count="1" race="ASMODIANS"/>
+			<item id="112501764" player_class="AETHERTECH" count="1" race="ASMODIANS"/>
+		</items>
+	</decomposable>
+	<!-- [Jakurerk] Noble Daevanion Cloth Armor Box -->
+	<decomposable item_id="188054493">
+		<items>
+			<item id="111101734" player_class="SORCERER" count="1" race="ELYOS"/>
+			<item id="113101745" player_class="SORCERER" count="1" race="ELYOS"/>
+			<item id="110101918" player_class="SORCERER" count="1" race="ELYOS"/>
+			<item id="114101779" player_class="SORCERER" count="1" race="ELYOS"/>
+			<item id="112101680" player_class="SORCERER" count="1" race="ELYOS"/>
+			<item id="111101736" player_class="SORCERER" count="1" race="ASMODIANS"/>
+			<item id="113101747" player_class="SORCERER" count="1" race="ASMODIANS"/>
+			<item id="110101920" player_class="SORCERER" count="1" race="ASMODIANS"/>
+			<item id="114101781" player_class="SORCERER" count="1" race="ASMODIANS"/>
+			<item id="112101682" player_class="SORCERER" count="1" race="ASMODIANS"/>
+			<item id="111101734" player_class="SPIRIT_MASTER" count="1" race="ELYOS"/>
+			<item id="113101745" player_class="SPIRIT_MASTER" count="1" race="ELYOS"/>
+			<item id="110101918" player_class="SPIRIT_MASTER" count="1" race="ELYOS"/>
+			<item id="114101779" player_class="SPIRIT_MASTER" count="1" race="ELYOS"/>
+			<item id="112101680" player_class="SPIRIT_MASTER" count="1" race="ELYOS"/>
+			<item id="111101736" player_class="SPIRIT_MASTER" count="1" race="ASMODIANS"/>
+			<item id="113101747" player_class="SPIRIT_MASTER" count="1" race="ASMODIANS"/>
+			<item id="110101920" player_class="SPIRIT_MASTER" count="1" race="ASMODIANS"/>
+			<item id="114101781" player_class="SPIRIT_MASTER" count="1" race="ASMODIANS"/>
+			<item id="112101682" player_class="SPIRIT_MASTER" count="1" race="ASMODIANS"/>
+			<item id="111101734" player_class="SONGWEAVER" count="1" race="ELYOS"/>
+			<item id="113101745" player_class="SONGWEAVER" count="1" race="ELYOS"/>
+			<item id="110101918" player_class="SONGWEAVER" count="1" race="ELYOS"/>
+			<item id="114101779" player_class="SONGWEAVER" count="1" race="ELYOS"/>
+			<item id="112101680" player_class="SONGWEAVER" count="1" race="ELYOS"/>
+			<item id="111101736" player_class="SONGWEAVER" count="1" race="ASMODIANS"/>
+			<item id="113101747" player_class="SONGWEAVER" count="1" race="ASMODIANS"/>
+			<item id="110101920" player_class="SONGWEAVER" count="1" race="ASMODIANS"/>
+			<item id="114101781" player_class="SONGWEAVER" count="1" race="ASMODIANS"/>
+			<item id="112101682" player_class="SONGWEAVER" count="1" race="ASMODIANS"/>
+		</items>
+	</decomposable>
+	
+	<!-- [Event] Blood Medal Box -->
+	<decomposable item_id="188055168">
+	    <items>
+		    <item id="186000414" count="10"/>
+		</items>
+	</decomposable>
+	
+	<!-- [Event] Twin's Gift Level 1 -->
+	<decomposable item_id="188057152">
+	    <items>
+			<item id="188054489" count="1"/>
+			<item id="188054488" count="1"/>
+			<item id="152012734" count="1"/>
+			<item id="164000421" count="1"/>
+			<item id="161000004" count="2"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 11 -->
+	<decomposable item_id="188057153">
+	    <items>
+			<item id="162002052" count="5"/>
+			<item id="188057144" count="1"/>
+			<item id="169630007" count="1"/>
+			<item id="152012734" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 14 -->
+	<decomposable item_id="188057154">
+	    <items>
+			<item id="187060089" count="1"/>
+			<item id="152012734" count="1"/>
+			<item id="188051641" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 18 -->
+	<decomposable item_id="188057155">
+	    <items>
+			<item id="169620104" count="1"/>
+			<item id="152012734" count="1"/>
+			<item id="188057149" count="1"/>
+			<item id="190020117" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 22 -->
+	<decomposable item_id="188057156">
+	    <items>
+			<item id="188057144" count="1"/>
+			<item id="166000196" count="5"/>
+			<item id="152012734" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 24 -->
+	<decomposable item_id="188057157">
+	    <items>
+			<item id="152012734" count="1"/>
+			<item id="162000023" count="5"/>
+			<item id="187060092" count="1"/>
+			<item id="188057145" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 28 -->
+	<decomposable item_id="188057158">
+	    <items>
+			<item id="125045350" count="1"/>
+			<item id="110900677" count="1"/>
+			<item id="188055585" count="1"/>
+			<item id="152012734" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 32 -->
+	<decomposable item_id="188057159">
+	    <items>
+			<item id="169670001" count="1"/>
+			<item id="160009013" count="5"/>
+			<item id="188057144" count="1"/>
+			<item id="160009015" count="5"/>
+			<item id="152012734" count="1"/>
+			<item id="188057146" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 38 -->
+	<decomposable item_id="188057160">
+	    <items>
+			<item id="190020102" count="1"/>
+			<item id="152012734" count="1"/>
+			<item id="188057146" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 43 -->
+	<decomposable item_id="188057161">
+	    <items>
+			<item id="187060082" count="1"/>
+			<item id="152012734" count="1"/>
+			<item id="188057147" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 49 -->
+	<decomposable item_id="188057162">
+	    <items>
+		    <item id="188508005" count="1"/>
+			<item id="152012734" count="1"/>
+			<item id="188057147" count="1"/>
+			<item id="161001005" count="5"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 53 -->
+	<decomposable item_id="188057163">
+	    <items>
+			<item id="188500015" count="1"/>
+			<item id="187060013" count="1"/>
+			<item id="152012734" count="1"/>
+			<item id="188057148" count="1"/>
+			<item id="188055315" count="1"/>
+			<item id="190020118" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 59 -->
+	<decomposable item_id="188057164">
+	    <items>
+			<item id="166030007" count="5"/>
+			<item id="187060223" count="1"/>
+			<item id="188053625" count="1"/>
+			<item id="152012734" count="1"/>
+			<item id="188051641" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 62 -->
+	<decomposable item_id="188057165">
+	    <items>
+			<item id="162001063" count="2"/>
+			<item id="187060188" count="1"/>
+			<item id="166030007" count="5"/>
+			<item id="188055643" count="1"/>
+			<item id="152012734" count="1"/>
+		</items>
+	</decomposable>
+	<!-- [Event] Twin's Gift Level 65 -->
+	<decomposable item_id="188057166">
+	    <items>
+			<item id="188052320" count="1"/>
+			<item id="166020003" count="10"/>
+			<item id="182007162" count="100"/>
+			<item id="166000196" count="10"/>
+			<item id="188055355" count="1"/>
+			<item id="188055354" count="1"/>
+			<item id="190020221" count="1"/>
+		</items>
+	</decomposable>
+	
+	<!-- Fledgling Daeva's Equipment Box -->
+	<decomposable item_id="188057339">
+	    <items>
+		    <item id="188057340" player_class="GLADIATOR" count="1"/>
+			<item id="188057342" player_class="GLADIATOR" count="1"/>
+		    <item id="188057340" player_class="TEMPLAR" count="1"/>
+			<item id="188057341" player_class="TEMPLAR" count="1"/>
+		    <item id="188057340" player_class="ASSASSIN" count="1"/>
+			<item id="188057343" player_class="ASSASSIN" count="1"/>
+		    <item id="188057340" player_class="RANGER" count="1"/>
+			<item id="188057344" player_class="RANGER" count="1"/>
+		    <item id="188057340" player_class="CLERIC" count="1"/>
+			<item id="188057350" player_class="CLERIC" count="1"/>
+		    <item id="188057340" player_class="CHANTER" count="1"/>
+			<item id="188057349" player_class="CHANTER" count="1"/>
+		    <item id="188057340" player_class="SORCERER" count="1"/>
+			<item id="188057346" player_class="SORCERER" count="1"/>
+		    <item id="188057340" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188057347" player_class="SPIRIT_MASTER" count="1"/>
+		    <item id="188057340" player_class="GUNSLINGER" count="1"/>
+			<item id="188057345" player_class="GUNSLINGER" count="1"/>
+		    <item id="188057340" player_class="SONGWEAVER" count="1"/>
+		    <item id="188057348" player_class="SONGWEAVER" count="1"/>
+		    <item id="188057340" player_class="AETHERTECH" count="1"/>
+		    <item id="188057351" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	
+	<!-- Fledgling Daeva's Templar Armor Box -->
+	<decomposable item_id="188057341">
+	    <items>
+		    <item id="110601959" count="1"/>
+			<item id="111601929" count="1"/>
+			<item id="112601911" count="1"/>
+			<item id="113601906" count="1"/>
+			<item id="114601912" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Fledgling Daeva's Gladiator Armor Box -->
+	<decomposable item_id="188057342">
+	    <items>
+		    <item id="110601960" count="1"/>
+			<item id="111601930" count="1"/>
+			<item id="112601912" count="1"/>
+			<item id="113601907" count="1"/>
+			<item id="114601913" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Fledgling Daeva's Assassin Armor Box -->
+	<decomposable item_id="188057343">
+	    <items>
+		    <item id="110302190" count="1"/>
+			<item id="111302143" count="1"/>
+			<item id="112302072" count="1"/>
+			<item id="113302160" count="1"/>
+			<item id="114302205" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Fledgling Daeva's Marksman Armor Box -->
+	<decomposable item_id="188057344">
+	    <items>
+		    <item id="110302190" count="1"/>
+			<item id="111302143" count="1"/>
+			<item id="112302072" count="1"/>
+			<item id="113302160" count="1"/>
+			<item id="114302205" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Fledgling Daeva's Gunslinger Armor Box -->
+	<decomposable item_id="188057345">
+	    <items>
+		    <item id="110302191" count="1"/>
+			<item id="111302144" count="1"/>
+			<item id="112302073" count="1"/>
+			<item id="113302161" count="1"/>
+			<item id="114302206" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Fledgling Daeva's Sorcerer Armor Box -->
+	<decomposable item_id="188057346">
+	    <items>
+		    <item id="110102201" count="1"/>
+		    <item id="111102006" count="1"/>
+		    <item id="112101944" count="1"/>
+		    <item id="113102007" count="1"/>
+		    <item id="114102047" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Fledgling Daeva's Spiritmaster Armor Box -->
+	<decomposable item_id="188057347">
+	    <items>
+		    <item id="110102201" count="1"/>
+		    <item id="111102006" count="1"/>
+		    <item id="112101944" count="1"/>
+		    <item id="113102007" count="1"/>
+		    <item id="114102047" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Fledgling Daeva's Songweaver Armor Box -->
+	<decomposable item_id="188057348">
+	    <items>
+		    <item id="110102202" count="1"/>
+		    <item id="111102007" count="1"/>
+		    <item id="112101945" count="1"/>
+		    <item id="113102008" count="1"/>
+		    <item id="114102048" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Fledgling Daeva's Chanter Armor Box -->
+	<decomposable item_id="188057349">
+	    <items>
+		    <item id="110551572" count="1"/>
+		    <item id="111502143" count="1"/>
+		    <item id="112502077" count="1"/>
+		    <item id="113502151" count="1"/>
+		    <item id="114502161" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Fledgling Daeva's Cleric Armor Box -->
+	<decomposable item_id="188057350">
+	    <items>
+		    <item id="110551573" count="1"/>
+		    <item id="111502144" count="1"/>
+		    <item id="112502078" count="1"/>
+		    <item id="113502152" count="1"/>
+		    <item id="114502162" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Fledgling Daeva's Aethertech Armor Box -->
+	<decomposable item_id="188057351">
+	    <items>
+		    <item id="110551574" count="1"/>
+		    <item id="111502145" count="1"/>
+		    <item id="112502079" count="1"/>
+		    <item id="113502153" count="1"/>
+		    <item id="114502163" count="1"/>
+		</items>
+	</decomposable>
+	
+	<!-- Elite Fledgling Daeva's Equipment Box -->
+	<decomposable item_id="188057352">
+	    <items>
+		    <item id="188057353" player_class="GLADIATOR" count="1"/>
+			<item id="188057354" player_class="GLADIATOR" count="1"/>
+		    <item id="188057353" player_class="TEMPLAR" count="1"/>
+			<item id="188057355" player_class="TEMPLAR" count="1"/>
+		    <item id="188057353" player_class="ASSASSIN" count="1"/>
+			<item id="188057356" player_class="ASSASSIN" count="1"/>
+		    <item id="188057353" player_class="RANGER" count="1"/>
+			<item id="188057357" player_class="RANGER" count="1"/>
+		    <item id="188057353" player_class="CLERIC" count="1"/>
+			<item id="188057362" player_class="CLERIC" count="1"/>
+		    <item id="188057353" player_class="CHANTER" count="1"/>
+			<item id="188057363" player_class="CHANTER" count="1"/>
+		    <item id="188057353" player_class="SORCERER" count="1"/>
+			<item id="188057359" player_class="SORCERER" count="1"/>
+		    <item id="188057353" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188057360" player_class="SPIRIT_MASTER" count="1"/>
+		    <item id="188057353" player_class="GUNSLINGER" count="1"/>
+			<item id="188057358" player_class="GUNSLINGER" count="1"/>
+		    <item id="188057353" player_class="SONGWEAVER" count="1"/>
+			<item id="188057361" player_class="SONGWEAVER" count="1"/>
+		    <item id="188057353" player_class="AETHERTECH" count="1"/>
+			<item id="188057364" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Templar Armor Box -->
+	<decomposable item_id="188057354">
+	    <items>
+			<item id="110601961" count="1"/>
+			<item id="111601931" count="1"/>
+			<item id="112601913" count="1"/>
+			<item id="113601908" count="1"/>
+			<item id="114601914" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Gladiator Armor Box -->
+	<decomposable item_id="188057355">
+	    <items>
+			<item id="110601962" count="1"/>
+			<item id="111601932" count="1"/>
+			<item id="112601914" count="1"/>
+			<item id="113601909" count="1"/>
+			<item id="114601915" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Assassin Armor Box -->
+	<decomposable item_id="188057356">
+	    <items>
+			<item id="110302192" count="1"/>
+			<item id="111302145" count="1"/>
+			<item id="112302074" count="1"/>
+			<item id="113302162" count="1"/>
+			<item id="114302207" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Marksman Armor Box -->
+	<decomposable item_id="188057357">
+	    <items>
+			<item id="110302192" count="1"/>
+			<item id="111302145" count="1"/>
+			<item id="112302074" count="1"/>
+			<item id="113302162" count="1"/>
+			<item id="114302207" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Gunslinger Armor Box -->
+	<decomposable item_id="188057358">
+	    <items>
+			<item id="110302193" count="1"/>
+			<item id="111302146" count="1"/>
+			<item id="112302075" count="1"/>
+			<item id="113302163" count="1"/>
+			<item id="114302208" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Sorcerer Armor Box -->
+	<decomposable item_id="188057359">
+	    <items>
+			<item id="110102203" count="1"/>
+			<item id="111102008" count="1"/>
+			<item id="112101946" count="1"/>
+			<item id="113102009" count="1"/>
+			<item id="114102049" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Spiritmaster Armor Box -->
+	<decomposable item_id="188057360">
+	    <items>
+			<item id="110102203" count="1"/>
+			<item id="111102008" count="1"/>
+			<item id="112101946" count="1"/>
+			<item id="113102009" count="1"/>
+			<item id="114102049" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Songweaver Armor Box -->
+	<decomposable item_id="188057361">
+	    <items>
+			<item id="110102204" count="1"/>
+			<item id="111102009" count="1"/>
+			<item id="112101947" count="1"/>
+			<item id="113102010" count="1"/>
+			<item id="114102050" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Chanter Armor Box -->
+	<decomposable item_id="188057362">
+	    <items>
+			<item id="110551575" count="1"/>
+			<item id="111502146" count="1"/>
+			<item id="112502080" count="1"/>
+			<item id="113502154" count="1"/>
+			<item id="114502164" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Cleric Armor Box -->
+	<decomposable item_id="188057363">
+	    <items>
+			<item id="110551576" count="1"/>
+			<item id="111502147" count="1"/>
+			<item id="112502081" count="1"/>
+			<item id="113502155" count="1"/>
+			<item id="114502165" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Elite Fledgling Daeva's Aethertech Armor Box -->
+	<decomposable item_id="188057364">
+	    <items>
+			<item id="110551577" count="1"/>
+			<item id="111502148" count="1"/>
+			<item id="112502082" count="1"/>
+			<item id="113502156" count="1"/>
+			<item id="114502166" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Remodeled Hero's Armor Chest Of The Ancient Runes -->
+	<decomposable item_id="188055355">
+	    <items>
+			<item id="110601754" player_class="GLADIATOR" count="1"/>
+			<item id="111601718" player_class="GLADIATOR" count="1"/>
+			<item id="112601699" player_class="GLADIATOR" count="1"/>
+			<item id="113601701" player_class="GLADIATOR" count="1"/>
+			<item id="114601707" player_class="GLADIATOR" count="1"/>
+			<item id="110601755" player_class="GLADIATOR" count="1"/>
+			<item id="111601719" player_class="GLADIATOR" count="1"/>
+			<item id="112601700" player_class="GLADIATOR" count="1"/>
+			<item id="113601702" player_class="GLADIATOR" count="1"/>
+			<item id="114601708" player_class="GLADIATOR" count="1"/>
+		    <item id="110601754" player_class="TEMPLAR" count="1"/>
+			<item id="111601718" player_class="TEMPLAR" count="1"/>
+			<item id="112601699" player_class="TEMPLAR" count="1"/>
+			<item id="113601701" player_class="TEMPLAR" count="1"/>
+			<item id="114601707" player_class="TEMPLAR" count="1"/>
+			<item id="110601755" player_class="TEMPLAR" count="1"/>
+			<item id="111601719" player_class="TEMPLAR" count="1"/>
+			<item id="112601700" player_class="TEMPLAR" count="1"/>
+			<item id="113601702" player_class="TEMPLAR" count="1"/>
+			<item id="114601708" player_class="TEMPLAR" count="1"/>
+			<item id="110301966" player_class="ASSASSIN" count="1"/>
+			<item id="111301905" player_class="ASSASSIN" count="1"/>
+			<item id="112301842" player_class="ASSASSIN" count="1"/>
+			<item id="113301936" player_class="ASSASSIN" count="1"/>
+			<item id="114301973" player_class="ASSASSIN" count="1"/>
+			<item id="110301967" player_class="ASSASSIN" count="1"/>
+			<item id="111301906" player_class="ASSASSIN" count="1"/>
+			<item id="112301843" player_class="ASSASSIN" count="1"/>
+			<item id="113301937" player_class="ASSASSIN" count="1"/>
+			<item id="114301974" player_class="ASSASSIN" count="1"/>
+			<item id="110301966" player_class="RANGER" count="1"/>
+			<item id="111301905" player_class="RANGER" count="1"/>
+			<item id="112301842" player_class="RANGER" count="1"/>
+			<item id="113301936" player_class="RANGER" count="1"/>
+			<item id="114301973" player_class="RANGER" count="1"/>
+			<item id="110301967" player_class="RANGER" count="1"/>
+			<item id="111301906" player_class="RANGER" count="1"/>
+			<item id="112301843" player_class="RANGER" count="1"/>
+			<item id="113301937" player_class="RANGER" count="1"/>
+			<item id="114301974" player_class="RANGER" count="1"/>
+			<item id="110551314" player_class="CLERIC" count="1"/>
+			<item id="111501874" player_class="CLERIC" count="1"/>
+			<item id="112501810" player_class="CLERIC" count="1"/>
+			<item id="113501893" player_class="CLERIC" count="1"/>
+			<item id="114501901" player_class="CLERIC" count="1"/>
+			<item id="110551315" player_class="CLERIC" count="1"/>
+			<item id="111501875" player_class="CLERIC" count="1"/>
+			<item id="112501811" player_class="CLERIC" count="1"/>
+			<item id="113501894" player_class="CLERIC" count="1"/>
+			<item id="114501902" player_class="CLERIC" count="1"/>
+			<item id="110551316" player_class="CLERIC" count="1"/>
+			<item id="111501876" player_class="CLERIC" count="1"/>
+			<item id="112501812" player_class="CLERIC" count="1"/>
+			<item id="113501895" player_class="CLERIC" count="1"/>
+			<item id="114501903" player_class="CLERIC" count="1"/>
+			<item id="110551314" player_class="CHANTER" count="1"/>
+			<item id="111501874" player_class="CHANTER" count="1"/>
+			<item id="112501810" player_class="CHANTER" count="1"/>
+			<item id="113501893" player_class="CHANTER" count="1"/>
+			<item id="114501901" player_class="CHANTER" count="1"/>
+			<item id="110551315" player_class="CHANTER" count="1"/>
+			<item id="111501875" player_class="CHANTER" count="1"/>
+			<item id="112501811" player_class="CHANTER" count="1"/>
+			<item id="113501894" player_class="CHANTER" count="1"/>
+			<item id="114501902" player_class="CHANTER" count="1"/>
+			<item id="110551316" player_class="CHANTER" count="1"/>
+			<item id="111501876" player_class="CHANTER" count="1"/>
+			<item id="112501812" player_class="CHANTER" count="1"/>
+			<item id="113501895" player_class="CHANTER" count="1"/>
+			<item id="114501903" player_class="CHANTER" count="1"/>
+			<item id="110101990" player_class="SORCERER" count="1"/>
+			<item id="111101784" player_class="SORCERER" count="1"/>
+			<item id="112101729" player_class="SORCERER" count="1"/>
+			<item id="113101795" player_class="SORCERER" count="1"/>
+			<item id="114101829" player_class="SORCERER" count="1"/>
+			<item id="110101991" player_class="SORCERER" count="1"/>
+			<item id="111101785" player_class="SORCERER" count="1"/>
+			<item id="112101730" player_class="SORCERER" count="1"/>
+			<item id="113101796" player_class="SORCERER" count="1"/>
+			<item id="114101830" player_class="SORCERER" count="1"/>
+			<item id="110101990" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="111101784" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="112101729" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="113101795" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="114101829" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="110101991" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="111101785" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="112101730" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="113101796" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="114101830" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="110301966" player_class="GUNSLINGER" count="1"/>
+			<item id="111301905" player_class="GUNSLINGER" count="1"/>
+			<item id="112301842" player_class="GUNSLINGER" count="1"/>
+			<item id="113301936" player_class="GUNSLINGER" count="1"/>
+			<item id="114301973" player_class="GUNSLINGER" count="1"/>
+			<item id="110301967" player_class="GUNSLINGER" count="1"/>
+			<item id="111301906" player_class="GUNSLINGER" count="1"/>
+			<item id="112301843" player_class="GUNSLINGER" count="1"/>
+			<item id="113301937" player_class="GUNSLINGER" count="1"/>
+			<item id="114301974" player_class="GUNSLINGER" count="1"/>
+			<item id="110101990" player_class="SONGWEAVER" count="1"/>
+			<item id="111101784" player_class="SONGWEAVER" count="1"/>
+			<item id="112101729" player_class="SONGWEAVER" count="1"/>
+			<item id="113101795" player_class="SONGWEAVER" count="1"/>
+			<item id="114101829" player_class="SONGWEAVER" count="1"/>
+			<item id="110101991" player_class="SONGWEAVER" count="1"/>
+			<item id="111101785" player_class="SONGWEAVER" count="1"/>
+			<item id="112101730" player_class="SONGWEAVER" count="1"/>
+			<item id="113101796" player_class="SONGWEAVER" count="1"/>
+			<item id="114101830" player_class="SONGWEAVER" count="1"/>
+			<item id="110551314" player_class="AETHERTECH" count="1"/>
+			<item id="111501874" player_class="AETHERTECH" count="1"/>
+			<item id="112501810" player_class="AETHERTECH" count="1"/>
+			<item id="113501893" player_class="AETHERTECH" count="1"/>
+			<item id="114501901" player_class="AETHERTECH" count="1"/>
+			<item id="110551315" player_class="AETHERTECH" count="1"/>
+			<item id="111501875" player_class="AETHERTECH" count="1"/>
+			<item id="112501811" player_class="AETHERTECH" count="1"/>
+			<item id="113501894" player_class="AETHERTECH" count="1"/>
+			<item id="114501902" player_class="AETHERTECH" count="1"/>
+			<item id="110551316" player_class="AETHERTECH" count="1"/>
+			<item id="111501876" player_class="AETHERTECH" count="1"/>
+			<item id="112501812" player_class="AETHERTECH" count="1"/>
+			<item id="113501895" player_class="AETHERTECH" count="1"/>
+			<item id="114501903" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Gold Medal -->
+	<decomposable item_id="186000030">
+		<items>
+			<item id="186000469" count="100"/>
+		</items>
+	</decomposable>
+	<!-- Silver Medal -->
+	<decomposable item_id="186000031">
+		<items>
+			<item id="186000469" count="150"/>
+		</items>
+	</decomposable>
+	<!-- Platinum Medal -->
+	<decomposable item_id="186000096">
+		<items>
+			<item id="186000469" count="200"/>
+		</items>
+	</decomposable>
+	<!-- Mithril Medal -->
+	<decomposable item_id="186000147">
+		<items>
+			<item id="186000469" count="1000"/>
+		</items>
+	</decomposable>
+	<!-- Ceramium Medal -->
+	<decomposable item_id="186000242">
+		<items>
+			<item id="186000469" count="1000"/>
+		</items>
+	</decomposable>
+	<!-- Shattered Ceranium -->
+	<decomposable item_id="186000243">
+		<items>
+			<item id="186000469" count="500"/>
+		</items>
+	</decomposable>
+</decomposable_items>

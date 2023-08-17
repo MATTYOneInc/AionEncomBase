@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Zorshiv Dredgion 2.1
+	ゲルハ
+	Made By (Encom)
+ -->
+<dredgion_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dredgion_schedule.xsd">
+	<!-- TWILIGHT UNDERWOOD -->
+	<dredgion id="1">
+		<zorshivTime>0 0 13 ? * MON-SUN *</zorshivTime>
+		<zorshivTime>0 0 18 ? * MON-SUN *</zorshivTime>
+		<zorshivTime>0 0 23 ? * MON-SUN *</zorshivTime>
+		<zorshivTime>0 0 4 ? * MON-SUN *</zorshivTime>
+		<zorshivTime>0 0 9 ? * MON-SUN *</zorshivTime>
+	</dredgion>
+	<!-- THE OLD ROAD -->
+	<dredgion id="2">
+		<zorshivTime>0 0 15 ? * MON-SUN *</zorshivTime>
+		<zorshivTime>0 0 20 ? * MON-SUN *</zorshivTime>
+		<zorshivTime>0 0 1 ? * MON-SUN *</zorshivTime>
+		<zorshivTime>0 0 6 ? * MON-SUN *</zorshivTime>
+		<zorshivTime>0 0 11 ? * MON-SUN *</zorshivTime>
+	</dredgion>
+</dredgion_schedule>

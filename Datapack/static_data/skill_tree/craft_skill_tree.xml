@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Craft Skill Tree 4.5/5.1
+	Made By (Encom)
+ -->
+<skill_tree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="skill_tree.xsd">
+	<!-- Collection -->
+	<skill minLevel="1" skillId="30001" skillLevel="1" name="Collection" race="PC_ALL" classId="ALL"/>
+	<!-- Essencetapping -->
+	<skill minLevel="10" skillId="30002" skillLevel="1" name="Essencetapping" race="PC_ALL" classId="ALL"/>
+	<!-- Aethertapping -->
+	<skill minLevel="10" skillId="30003" skillLevel="1" name="Aethertapping" race="PC_ALL" classId="ALL"/>
+	<!-- Morph Substances -->
+	<skill minLevel="10" skillId="40009" skillLevel="1" name="Morph Substances" race="PC_ALL" classId="ALL"/>
+	<!-- Aetherforging 5.1 -->
+	<skill minLevel="66" skillId="40011" skillLevel="1" name="Aetherforging" race="PC_ALL" classId="ALL"/>
+	<!-- Coalescence 5.1 -->
+	<skill minLevel="66" skillId="40012" skillLevel="1" name="Coalescence" race="PC_ALL" classId="ALL"/>
+</skill_tree>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Dynamic Rift
+	Shugo League Merchant
+	Made By (Encom)
+ -->
+<dynamic_rift xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dynamic_rift.xsd">
+	<!-- Heiron [Draupnir Cave] -->
+	<dynamic_location id="1"/>
+	<!-- Heiron [Indratoo Fortress] -->
+	<dynamic_location id="2"/>
+	<!-- Beluslan [Draupnir Cave] -->
+	<dynamic_location id="3"/>
+	<!-- Beluslan [Indratoo Fortress] -->
+	<dynamic_location id="4"/>
+	<!-- Oriel [Shugo League Merchant] -->
+	<dynamic_location id="5"/>
+	<!-- Pernon [Shugo League Merchant] -->
+	<dynamic_location id="6"/>
+</dynamic_rift>

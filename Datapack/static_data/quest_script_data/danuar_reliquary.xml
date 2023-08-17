@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quest_scripts>
+<!--
+    Quest Danuar Reliquary 4.8
+	Make By (Encom)
+ -->
+	<!-- 16922 Shugo Checkup handled by script (Elyos Only) -->
+	<!-- [Group] Walking Up To Modor (Elyos Only) -->
+	<item_collecting id="16921" start_npc_ids="802431"/>
+	
+	<!-- 26922 Another Passage handled by script (Asmodians Only) -->
+	<!-- [Group] Modor’s Tale (Asmodians Only) -->
+	<item_collecting id="26921" start_npc_ids="802433"/>
+ </quest_scripts>

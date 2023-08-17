@@ -1,0 +1,3707 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+	Tribe 5.8 [KOR 444]
+	Made By themoose (Encom)
+ -->
+<tribe_relations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="tribe_relations.xsd">
+	<tribe name="PC">
+        <friendly>LIGHT_MOB LIGHT_SUR_MOB LIGHT_LICH F6_INVASION_DA F6_EVENT_ATTACKER_LI F6_EVENT_CANNON_LI F6_EVENT_LI AB1_U_SHUGO EVENT_SOLO_PORGUSS EVENT_SOLO_POLYMORPH EVENT_SOLO_TOG IDAB1_ERE_HERO IDAB1_ERE_DEVA IDETERNITY_WAR_PIECE IDAB1_ERE_ESCORT_DEVA IDAB1_ERE_HEAL_01 IDAB1_ERE_HEAL_02 IDAB1_ERE_HEAL_03 F6_EVENT_HIGH_PO_LI F6_EVENT_HIGH_WI_LI IDAB1_HEROES_POLYMORPH</friendly>
+        <neutral>IDTRANSFORM_DRAGON_CINEMA FIELD_OBJECT_ALL FIELD_OBJECT_ALL_HOSTILEMONSTER</neutral>
+		<none>LASBERG NEUTRAL_DGUARD YDUMMY_DGUARD YDUMMY2_DGUARD LDF4B_SPARRING_DGUARD LDF4B_SPARRING_DGUARD2 XDRAKAN_UNATTACK LDF5_DUMMY1_DGUARD LDF5_DUMMY2_DGUARD LDF5_SPARRING1_DGUARD LDF5_SPARRING2_DGUARD F6_INVASION_LI IDETERNITY_02_BOSS_AREA DREADGION_MODULE_WEAPON IDAB1_ERE_PRISON_DOOR IDAB1_ERE_POLY_BOMB IDAB1_ERE_POLY_ICE IDETERNITY_WAR_FLAG_LI IDAB1_ERE_DARKSOUL IDAB1_ERE_POLY_SOUL IDETERNITY_03_EVENT_DA IDINFINITY_TARGET AB1_WEAPON_LI_NOATK AB1_WEAPON_DA_NOATK</none>
+    </tribe>
+	<tribe name="GENERAL">
+		<friendly>IDTRANSFORM_PC IDTRANSFORM_DEVA EVENT_SOLO_MONSTER IDETERNITY_WAR_ALB_LI IDETERNITY_WAR_PIECE</friendly>
+		<none>NEUTRAL_DGUARD YDUMMY_DGUARD YDUMMY2_DGUARD LDF4B_SPARRING_DGUARD LDF4B_SPARRING_DGUARD2 LDF5_DUMMY1_DGUARD LDF5_DUMMY2_DGUARD LDF5_SPARRING1_DGUARD LDF5_SPARRING2_DGUARD F6_INVASION_DA F6_INVASION_LI IDETERNITY_WAR_FLAG_LI</none>
+    </tribe>
+	<tribe name="GUARD">
+        <aggressive>ERESUKIGAL GUARD_DRAGON PC_DARK</aggressive>
+		<friendly>GENERAL LDF5_OWLLAU ELEMENTAL_LIGHT KRALL DUMMY DUMMY2 PROTECTGUARD_LIGHT_HERO LDF4_ADVANCE_GODELITEDM TIAMATREMNANT_DRAKAN FANATIC LDF4_ADVANCE_DACHAPIRE LDF4_ADVANCE_LIPOPOKU LDF4_ADVANCE_NEUTH F4RAID AGGRESSIVEMONSTER AGGRESSIVESUPPORTMONSTER AGGRESSIVESINGLEMONSTER DRAKEPURPLE_MASTER DRAKEPURPLE_SLAVE ELEMENTAL_AIR ELEMENTAL_EARTH ELEMENTAL_FIRE ELEMENTAL_WATER ETTIN LEHPAR MONSTER NLIZARDMAN NLIZARDRAISER NLIZARDPET DARK_LICH DARK_SUR_MOB</friendly>
+        <support>GUARD</support>
+    </tribe>
+	<tribe name="PC_DARK">
+        <friendly>DARK_MOB DARK_SUR_MOB DARK_LICH F6_INVASION_LI F6_EVENT_ATTACKER_DA F6_EVENT_CANNON_DA F6_EVENT_DA AB1_U_SHUGO EVENT_SOLO_PORGUSS EVENT_SOLO_POLYMORPH EVENT_SOLO_TOG IDAB1_ERE_HERO IDAB1_ERE_DEVA IDETERNITY_WAR_PIECE IDAB1_ERE_ESCORT_DEVA IDAB1_ERE_HEAL_01 IDAB1_ERE_HEAL_02 IDAB1_ERE_HEAL_03 F6_EVENT_HIGH_PO_DA F6_EVENT_HIGH_WI_DA IDAB1_HEROES_POLYMORPH</friendly>
+        <neutral>IDTRANSFORM_DRAGON_CINEMA FIELD_OBJECT_ALL FIELD_OBJECT_ALL_HOSTILEMONSTER</neutral>
+        <none>NEUTRAL_LGUARD YDUMMY_LGUARD YDUMMY2_LGUARD LDF4B_SPARRING_GUARD LDF4B_SPARRING_GUARD2 XDRAKAN_UNATTACK LDF5_DUMMY1_LGUARD LDF5_DUMMY2_LGUARD LDF5_SPARRING1_LGUARD LDF5_SPARRING2_LGUARD F6_INVASION_DA IDETERNITY_02_BOSS_AREA DREADGION_MODULE_WEAPON IDAB1_ERE_PRISON_DOOR IDAB1_ERE_POLY_BOMB IDAB1_ERE_POLY_ICE IDETERNITY_WAR_FLAG_DA IDAB1_ERE_DARKSOUL IDAB1_ERE_POLY_SOUL IDETERNITY_03_EVENT_LI IDINFINITY_TARGET AB1_WEAPON_LI_NOATK AB1_WEAPON_DA_NOATK</none>
+    </tribe>
+    <tribe name="GENERAL_DARK">
+        <friendly>IDTRANSFORM_PC IDTRANSFORM_DEVA EVENT_SOLO_MONSTER IDETERNITY_WAR_ALB_DA IDETERNITY_WAR_PIECE</friendly>
+		<none>NEUTRAL_LGUARD YDUMMY_LGUARD YDUMMY2_LGUARD LDF4B_SPARRING_GUARD LDF4B_SPARRING_GUARD2 LDF5_DUMMY1_LGUARD LDF5_DUMMY2_LGUARD LDF5_SPARRING1_LGUARD LDF5_SPARRING2_LGUARD F6_INVASION_DA F6_INVASION_LI IDETERNITY_WAR_FLAG_DA</none>
+    </tribe>
+    <tribe name="GUARD_DARK">
+		<aggressive>ERESUKIGAL GUARD_DRAGON PC</aggressive>
+		<friendly>GENERAL_DARK LDF5_OWLLAU ELEMENTAL_LIGHT KRALL DUMMY DUMMY2 PROTECTGUARD_DARK_HERO LDF4_ADVANCE_GODELITELF TIAMATREMNANT_DRAKAN FANATIC LDF4_ADVANCE_DACHAPIRE LDF4_ADVANCE_LIPOPOKU LDF4_ADVANCE_NEUTH F4RAID AGGRESSIVEMONSTER AGGRESSIVESUPPORTMONSTER AGGRESSIVESINGLEMONSTER DRAKEPURPLE_MASTER DRAKEPURPLE_SLAVE ELEMENTAL_AIR ELEMENTAL_EARTH ELEMENTAL_FIRE ELEMENTAL_WATER ETTIN LEHPAR MONSTER NLIZARDMAN NLIZARDRAISER NLIZARDPET DARK_LICH DARK_SUR_MOB</friendly>
+        <support>GUARD_DARK</support>
+    </tribe>
+	<tribe name="PC_DRAGON">
+		<friendly>USEALL_TELEPORTER_LI USEALL_TELEPORTER_DA</friendly>
+	</tribe>
+	<tribe name="GENERAL_DRAGON" base="MONSTER">
+	    <friendly>USEALL_TELEPORTER_LI USEALL_TELEPORTER_DA</friendly>
+	</tribe>
+	<tribe name="GUARD_DRAGON" base="MONSTER">
+	    <aggressive>GUARD GUARD_DARK PC PC_DARK</aggressive>
+		<friendly>USEALL_TELEPORTER_LI USEALL_TELEPORTER_DA</friendly>
+	</tribe>
+	<tribe name="MONSTER">
+		<hostile>YUN_GUARD IDAB1_ERE_SMIGOL IDAB1_ERE_HEAL_01 IDAB1_ERE_HEAL_02 IDAB1_ERE_HEAL_03</hostile>
+        <friendly>POLYMORPHPARROT USEALL_TELEPORTER_LI USEALL_TELEPORTER_DA</friendly>
+		<none>IDAB1_ERE_PRISON_DOOR</none>
+    </tribe>
+	<tribe name="PET" base="PC"/>
+    <tribe name="PET_DARK" base="PC_DARK"/>
+	<tribe name="AGGRESSIVESINGLEMONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK IDSTATION_POLYMORP_H</aggressive>
+		<none>F6_INVASION_DA F6_INVASION_LI PROTECTGUARD_DARK PROTECTGUARD_LIGHT IDAB1_ERE_PRISON_DOOR</none>
+    </tribe>
+	<tribe name="AGGRESSIVESUPPORTMONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK IDSTATION_POLYMORP_H</aggressive>
+        <support>AGGRESSIVESUPPORTMONSTER</support>
+		<none>F6_INVASION_DA F6_INVASION_LI PROTECTGUARD_DARK PROTECTGUARD_LIGHT</none>
+    </tribe>
+	<tribe name="FRILLFAIMAMCOUPLE" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>FRILLFAIMAMCOUPLE</support>
+    </tribe>
+	<tribe name="SPAKY" base="MONSTER">
+        <aggressive>FUNGUS</aggressive>
+        <support>SPAKY</support>
+    </tribe>
+	<tribe name="MUTA" base="MONSTER">
+        <aggressive>FUNGUS</aggressive>
+    </tribe>
+	<tribe name="FUNGUS" base="MONSTER">
+        <friendly>PC GUARD PC_DARK GUARD_DARK</friendly>
+    </tribe>
+	<tribe name="ORC" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>ORC GOBLIN</support>
+    </tribe>
+	<tribe name="GOBLIN" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>ORC GOBLIN</support>
+    </tribe>
+	<tribe name="POLYMORPHFUNGY" base="PC">
+        <friendly>MONSTER PC_DARK GUARD_DARK QUESTGUARD_DARK</friendly>
+    </tribe>
+	<tribe name="FUNGY" base="MONSTER">
+        <aggressive>POLYMORPHFUNGY</aggressive>
+    </tribe>
+	<tribe name="BRAX" base="MONSTER">
+	    <aggressive>PC PC_DARK</aggressive>
+        <support>BRAX</support>
+    </tribe>
+	<tribe name="HIPPOLIZARD" base="MONSTER">
+        <support>HIPPOLIZARD</support>
+    </tribe>
+	<tribe name="FRILLFAIMAMBABY" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>FRILLFAIMAMMOM</support>
+    </tribe>
+	<tribe name="FRILLFAIMAMMOM" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>FRILLFAIMAMBABY</support>
+    </tribe>
+	<tribe name="FETHLOT" base="MONSTER">
+        <support>FETHLOT</support>
+    </tribe>
+	<tribe name="GARGOYLE" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>GARGOYLE</support>
+    </tribe>
+	<tribe name="MINX" base="MONSTER">
+        <hostile>ZAIF</hostile>
+    </tribe>
+	<tribe name="ZAIF" base="MONSTER">
+        <aggressive>PC PC_DARK MINX TOG</aggressive>
+    </tribe>
+	<tribe name="TOG" base="MONSTER">
+        <aggressive>PC PC_DARK MINX ZAIF</aggressive>
+    </tribe>
+	<tribe name="GUARD_D1NOATTACK" base="GENERAL">
+        <friendly>ZAIF</friendly>
+    </tribe>
+	<tribe name="ZAIF_ATOG" base="MONSTER">
+        <aggressive>PC PC_DARK TOG_AZAIF</aggressive>
+    </tribe>
+	<tribe name="TOG_AZAIF" base="MONSTER">
+        <aggressive>PC PC_DARK ZAIF_ATOG</aggressive>
+    </tribe>
+	<tribe name="ZAIF_AMINX" base="MONSTER">
+        <aggressive>PC PC_DARK MINX_HZAIF</aggressive>
+    </tribe>
+	<tribe name="MINX_HZAIF" base="MONSTER">
+        <hostile>ZAIF_AMINX</hostile>
+    </tribe>
+	<tribe name="MERDION" base="MONSTER">
+        <support>MERDION</support>
+    </tribe>
+	<tribe name="GUARDIAN" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="DARU" base="MONSTER">
+        <support>DARU</support>
+    </tribe>
+	<tribe name="LUPYLLINI" base="MONSTER">
+        <support>LUPYLLINI</support>
+    </tribe>
+	<tribe name="MOSBEARBABY" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>MOSBEARFATHER</support>
+    </tribe>
+	<tribe name="MOSBEARFATHER" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>MOSBEARBABY</support>
+    </tribe>
+	<tribe name="SOULEDSTONE" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>SOULEDSTONE_MINI</support>
+    </tribe>
+	<tribe name="SOULEDSTONE_MINI" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="MINX_HKALNIF" base="MONSTER">
+        <hostile>KALNIF_AMINX</hostile>
+    </tribe>
+	<tribe name="KALNIF_AMINX" base="MONSTER">
+        <aggressive>PC PC_DARK MINX_HKALNIF</aggressive>
+    </tribe>
+	<tribe name="KALNIF_ATOG" base="MONSTER">
+        <aggressive>PC PC_DARK TOG_AKALNIF</aggressive>
+    </tribe>
+	<tribe name="TOG_AKALNIF" base="MONSTER">
+        <aggressive>PC PC_DARK KALNIF_ATOG</aggressive>
+    </tribe>
+	<tribe name="FARMER_HKERUBIM_LF1" base="GENERAL">
+        <hostile>KERUBIM_AFARMER_LF1</hostile>
+    </tribe>
+	<tribe name="KERUBIM_AFARMER_LF1" base="MONSTER">
+        <aggressive>FARMER_HKERUBIM_LF1</aggressive>
+        <hostile>GUARD_LIGHT_AKERUBIM_LF1</hostile>
+    </tribe>
+	<tribe name="GUARD_LIGHT_AKERUBIM_LF1" base="GUARD">
+        <aggressive>KERUBIM_AFARMER_LF1</aggressive>
+    </tribe>
+	<tribe name="D1_HKERUBIM_LF1" base="MONSTER">
+        <hostile>KERUBIM_AD1_LF1</hostile>
+    </tribe>
+	<tribe name="KERUBIM_AD1_LF1" base="MONSTER">
+        <aggressive>D1_HKERUBIM_LF1</aggressive>
+    </tribe>
+	<tribe name="BROWNIE" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>KRALL BROWNIE</support>
+    </tribe>
+	<tribe name="BROWNIECOWARD" base="MONSTER">
+        <support>BROWNIECOWARD</support>
+    </tribe>
+	<tribe name="BROWNIEGUARD" base="MONSTER">
+        <support>KRALL BROWNIE BROWNIECOWARD</support>
+    </tribe>
+	<tribe name="BROWNIEFELLER_HZAIF_LF1" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <hostile>ZAIF_ABROWNIEFELLER_LF1</hostile>
+    </tribe>
+	<tribe name="ZAIF_ABROWNIEFELLER_LF1" base="MONSTER">
+        <aggressive>PC PC_DARK BROWNIEFELLER_HZAIF_LF1</aggressive>
+    </tribe>
+	<tribe name="KRALL" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>KRALL KRALLMASTER KRALL_TRAINING</support>
+        <none>KRALLWIZARDCY</none>
+    </tribe>
+	<tribe name="KRALLMASTER" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+    </tribe>
+	<tribe name="KRALLWIZARDCY" base="MONSTER">
+        <aggressive>PC PC_DARK CYCLOPSBOSS</aggressive>
+        <support>KRALL</support>
+    </tribe>
+	<tribe name="KRALL_TRAINING" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK TARGETBASFELT_DF1</aggressive>
+        <support>KRALL KRALLMASTER KRALL_TRAINING</support>
+        <none>KRALLWIZARDCY</none>
+    </tribe>
+	<tribe name="SPRIGG_HROBBERALDER_DF1" base="MONSTER">
+        <aggressive>ROBBERALDER_ASPRIGG_DF1</aggressive>
+    </tribe>
+	<tribe name="ROBBERALDER_ASPRIGG_DF1" base="GENERAL_DARK">
+        <aggressive>DUMMY SPRIGG_HROBBERALDER_DF1</aggressive>
+    </tribe>
+	<tribe name="SPRIGGREFUSE_DF1" base="MONSTER">
+        <support>SPRIGGREFUSE_DF1</support>
+    </tribe>
+	<tribe name="ARCHERYBASFELT_ATARGETBASFELT_DF1" base="GENERAL_DARK">
+        <aggressive>DUMMY TARGETBASFELT_DF1</aggressive>
+    </tribe>
+	<tribe name="ARCHERYBASFELT_ATARGETBASFELT_LF1" base="GENERAL">
+        <aggressive>DUMMY TARGETBASFELT_DF1</aggressive>
+    </tribe>
+	<tribe name="TARGETBASFELT_DF1" base="MONSTER"/>
+	<tribe name="ARCHERYBASFELT2_ATARGETBASFELT2_DF1" base="GENERAL_DARK">
+        <aggressive>TARGETBASFELT2_DF1</aggressive>
+    </tribe>
+	<tribe name="ARCHERYBASFELT2_ATARGETBASFELT2_LF1" base="GENERAL">
+        <aggressive>TARGETBASFELT2_DF1</aggressive>
+    </tribe>
+	<tribe name="TARGETBASFELT2_DF1" base="MONSTER"/>
+	<tribe name="GUARD_FTARGETBASFELT_DF1" base="GUARD_DARK">
+        <friendly>TARGETBASFELT_DF1 TARGETBASFELT2_DF1</friendly>
+    </tribe>
+	<tribe name="GUARD_FTARGETBASFELT_LF1" base="GUARD">
+        <friendly>TARGETBASFELT_DF1 TARGETBASFELT2_DF1</friendly>
+    </tribe>
+	<tribe name="LYCAN" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LYCAN LYCAN_MAGE LYCAN_PET LYCAN_HUNTER RATMANWORKER LYCANMASTER TOWERMAN LYCAN_AGUARD_DARK_DF1 LYCAN_TRAINING</support>
+    </tribe>
+	<tribe name="LYCAN_HUNTER" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LYCAN LYCAN_MAGE LYCAN_PET LYCAN_HUNTER RATMANWORKER LYCANMASTER TOWERMAN LYCAN_AGUARD_DARK_DF1 LYCAN_TRAINING</support>
+    </tribe>
+	<tribe name="LYCAN_MAGE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LYCAN LYCAN_MAGE LYCAN_PET LYCAN_HUNTER RATMANWORKER LYCANMASTER TOWERMAN LYCAN_AGUARD_DARK_DF1 LYCAN_TRAINING</support>
+    </tribe>
+	<tribe name="LYCAN_AGUARD_DARK_DF1" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK GUARD_DARK_ALYCANARATMAN_DF1</aggressive>
+        <support>LYCAN LYCAN_MAGE LYCAN_PET LYCAN_HUNTER RATMANWORKER LYCANMASTER TOWERMAN LYCAN_AGUARD_DARK_DF1 LYCAN_TRAINING</support>
+    </tribe>
+	<tribe name="LYCAN_TRAINING" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK TARGETBASFELT_DF1</aggressive>
+        <support>LYCAN LYCAN_MAGE LYCAN_PET LYCAN_HUNTER RATMANWORKER LYCANMASTER TOWERMAN LYCAN_AGUARD_DARK_DF1 LYCAN_TRAINING</support>
+    </tribe>
+	<tribe name="LYCANMASTER" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LYCAN</support>
+    </tribe>
+	<tribe name="LYCAN_PET" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LYCAN_HUNTER</support>
+    </tribe>
+    <tribe name="LYCAN_PET_TRAINING" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK TARGETBASFELT_DF1</aggressive>
+        <support>LYCAN_HUNTER</support>
+    </tribe>
+	<tribe name="LYCAN_SUM" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LYCAN_MAGE</support>
+    </tribe>
+	<tribe name="LYCANDF2MASTER" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LYCANDF2SLAVE1</support>
+    </tribe>
+	<tribe name="LYCANDF2SLAVE1" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LYCANDF2MASTER</support>
+    </tribe>
+    <tribe name="LYCANDF2SLAVE2" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LYCANDF2MASTER</support>
+    </tribe>
+	<tribe name="TOWERMAN" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="RATMAN" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>TOWERMAN</support>
+    </tribe>
+	<tribe name="RATMANWORKER" base="MONSTER">
+        <aggressive>SAMM</aggressive>
+        <support>RATMAN RATMANWORKER LYCANMASTER LYCAN LYCAN_AGUARD_DARK_DF1 RATMAN_AGUARD_DARK_DF1</support>
+    </tribe>
+	<tribe name="RATMANDFWORKER" base="MONSTER">
+        <aggressive>SAMM</aggressive>
+        <support>RATMAN RATMANWORKER RATMANDFWORKER</support>
+    </tribe>
+	<tribe name="SAMM" base="MONSTER">
+        <hostile>RATMANWORKER</hostile>
+    </tribe>
+	<tribe name="RATMAN_AGUARD_DARK_DF1" base="MONSTER">
+        <aggressive>PC PC_DARK GUARD_DARK_ALYCANARATMAN_DF1</aggressive>
+        <support>TOWERMAN</support>
+    </tribe>
+	<tribe name="GUARD_DARK_ALYCANARATMAN_DF1" base="GUARD_DARK">
+        <aggressive>LYCAN_AGUARD_DARK_DF1 RATMAN_AGUARD_DARK_DF1</aggressive>
+    </tribe>
+	<tribe name="UNDEADGRADIATOR_DF1" base="MONSTER">
+        <aggressive>UNDEADGRADIATOR_DF1</aggressive>
+    </tribe>
+	<tribe name="GUARD_LIGHTMA" base="GUARD">
+        <friendly>PC GENERAL GUARD</friendly>
+    </tribe>
+	<tribe name="GUARD_DARKMA" base="GUARD_DARK">
+        <friendly>PC_DARK GENERAL_DARK GUARD_DARK</friendly>
+    </tribe>
+	<tribe name="GUARD_DRAGONMA" base="GUARD_DRAGON">
+        <friendly>PC_DRAGON GENERAL_DRAGON GUARD_DRAGON</friendly>
+    </tribe>
+	<tribe name="NEUT" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NEUT NEUTQUEEN</support>
+    </tribe>
+	<tribe name="NEUTQUEEN" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NEUT NEUTQUEEN</support>
+    </tribe>
+	<tribe name="NEUTBUG" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NEUTQUEEN</support>
+    </tribe>
+	<tribe name="AGGRESSIVE_LIGHT" base="MONSTER">
+        <aggressive>PC GENERAL GUARD</aggressive>
+    </tribe>
+	<tribe name="AGGRESSIVE_DARK" base="MONSTER">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+    </tribe>
+	<tribe name="AGGRESSIVE_DRAGON" base="MONSTER">
+        <aggressive>PC_DRAGON GENERAL_DRAGON GUARD_DRAGON</aggressive>
+    </tribe>
+	<tribe name="POLYMORPHPARROT" base="PC">
+        <friendly>MONSTER</friendly>
+    </tribe>
+	<tribe name="ABDRAGON_AABDARK" base="MONSTER">
+        <aggressive>ABDARK_AABDRAGON</aggressive>
+    </tribe>
+	<tribe name="ABDARK_AABDRAGON" base="MONSTER">
+        <aggressive>ABDRAGON_AABDARK</aggressive>
+    </tribe>
+	<tribe name="OCTASIDEBABY" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>OCTASIDEBABY</support>
+    </tribe>
+	<tribe name="GUARD_DARKAENEMY" base="GUARD_DARK">
+        <aggressive>ENEMY_AGUARD_DARK</aggressive>
+    </tribe>
+	<tribe name="ENEMY_AGUARD_DARK" base="MONSTER">
+        <aggressive>GUARD_DARKAENEMY</aggressive>
+    </tribe>
+	<tribe name="GRIFFO" base="MONSTER">
+        <support>GRIFFON GRIFFO</support>
+    </tribe>
+	<tribe name="GRIFFON" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>GRIFFO</support>
+    </tribe>
+	<tribe name="SHELLIZARDMOM" base="MONSTER">
+        <support>SHELLIZARDBABY</support>
+    </tribe>
+	<tribe name="SHELLIZARDBABY" base="MONSTER">
+        <support>SHELLIZARDMOM</support>
+    </tribe>
+	<tribe name="MANDURITWEAK" base="MONSTER">
+        <support>MANDURITWEAK</support>
+    </tribe>
+	<tribe name="CHERUBIM2ND" base="MONSTER">
+        <support>CHERUBIM2ND</support>
+    </tribe>
+	<tribe name="LEHPAR" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LEHPAR LEHPAR_AGUARDDARK LEHPAR_APRETOR</support>
+    </tribe>
+	<tribe name="GUARDDARK_ALEHPAR" base="GUARD_DARK">
+        <aggressive>LEHPAR_AGUARDDARK</aggressive>
+    </tribe>
+	<tribe name="LEHPAR_AGUARDDARK" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK GUARDDARK_ALEHPAR</aggressive>
+        <support>LEHPAR LEHPAR_AGUARDDARK LEHPAR_APRETOR</support>
+    </tribe>
+	<tribe name="AGGRESSIVE1_AAGGRESSIVE2" base="MONSTER">
+        <aggressive>AGGRESSIVE2_AAGGRESSIVE1</aggressive>
+    </tribe>
+	<tribe name="AGGRESSIVE2_AAGGRESSIVE1" base="MONSTER">
+		<aggressive>AGGRESSIVE1_AAGGRESSIVE2</aggressive>
+    </tribe>
+	<tribe name="LEHPAR_APRETOR" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK PRETOR_ALEHPAR</aggressive>
+        <support>LEHPAR LEHPAR_AGUARDDARK LEHPAR_APRETOR</support>
+    </tribe>
+	<tribe name="PRETOR_ALEHPAR" base="MONSTER">
+        <aggressive>PC PC_DARK LEHPAR_APRETOR</aggressive>
+    </tribe>
+	<tribe name="CYCLOPSBOSS" base="MONSTER">
+        <aggressive>PC PC_DARK KRALLWIZARDCY</aggressive>
+    </tribe>
+	<tribe name="FIREELBOSS" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="FIREEL1" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>FIREEL1 FIREELBOSS</support>
+    </tribe>
+    <tribe name="FIREEL2" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>FIREEL2 FIREELBOSS</support>
+    </tribe>
+    <tribe name="FIREEL3" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>FIREEL3 FIREELBOSS</support>
+    </tribe>
+	<tribe name="AIRELBOSS" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="AIREL1" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>AIREL1 AIRELBOSS</support>
+    </tribe>
+    <tribe name="AIREL2" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>AIREL2 AIRELBOSS</support>
+    </tribe>
+    <tribe name="AIREL3" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>AIREL3 AIRELBOSS</support>
+    </tribe>
+	<tribe name="ETTIN" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>ETTIN</support>
+    </tribe>
+	<tribe name="L_DRGUARD_ADRAGGMOB1" base="GUARD">
+        <aggressive>DRAGGMOB_ADRGUARD1</aggressive>
+    </tribe>
+	<tribe name="DRAGGMOB_ADRGUARD1" base="MONSTER">
+        <aggressive>L_DRGUARD_ADRAGGMOB1</aggressive>
+    </tribe>
+	<tribe name="DARU_HZAIF" base="MONSTER">
+        <hostile>ZAIF_ADARU</hostile>
+    </tribe>
+	<tribe name="ZAIF_ADARU" base="MONSTER">
+        <aggressive>PC PC_DARK DARU_HZAIF</aggressive>
+    </tribe>
+	<tribe name="MUTA_HOCTASIDE" base="MONSTER">
+        <hostile>OCTASIDE_AMUTA</hostile>
+    </tribe>
+	<tribe name="OCTASIDE_AMUTA" base="MONSTER">
+        <aggressive>PC PC_DARK MUTA_HOCTASIDE</aggressive>
+    </tribe>
+	<tribe name="LIZARDMAN" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>LIZARDMAN</support>
+    </tribe>
+	<tribe name="ATAURIC" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>AHELLHOUND</support>
+    </tribe>
+	<tribe name="AHELLHOUND" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>ATAURIC</support>
+    </tribe>
+	<tribe name="APRETOR" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>ATAURIC</support>
+    </tribe>
+	<tribe name="GHOSTLIGHT" base="GENERAL">
+        <aggressive>PC_DARK</aggressive>
+        <friendly>PC</friendly>
+        <support>GHOSTLIGHT</support>
+    </tribe>
+	<tribe name="GHOSTDARK" base="GENERAL_DARK">
+        <aggressive>PC</aggressive>
+        <friendly>PC_DARK</friendly>
+        <support>GHOSTDARK</support>
+    </tribe>
+	<tribe name="BMLGUARDIAN" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>BMLGUARDIAN</support>
+    </tribe>
+	<tribe name="BMDGUARDIAN" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>BMDGUARDIAN</support>
+    </tribe>
+	<tribe name="GMASTER" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>GSLAVE</support>
+    </tribe>
+	<tribe name="GSLAVE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>GMASTER</support>
+    </tribe>
+	<tribe name="ELEMENTAL_FIRE" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+		<friendly>GUARD GUARD_DARK PROTECTGUARD_DARK PROTECTGUARD_LIGHT</friendly>
+        <support>ELEMENTAL_FIRE</support>
+    </tribe>
+	<tribe name="ELEMENTAL_EARTH" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+		<friendly>GUARD GUARD_DARK PROTECTGUARD_DARK PROTECTGUARD_LIGHT</friendly>
+        <support>ELEMENTAL_EARTH</support>
+    </tribe>
+	<tribe name="ELEMENTAL_AIR" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+		<friendly>GUARD GUARD_DARK PROTECTGUARD_DARK PROTECTGUARD_LIGHT</friendly>
+        <support>ELEMENTAL_AIR</support>
+    </tribe>
+	<tribe name="ELEMENTAL_WATER" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+		<friendly>GUARD GUARD_DARK PROTECTGUARD_DARK PROTECTGUARD_LIGHT</friendly>
+        <support>ELEMENTAL_WATER</support>
+    </tribe>	
+	<tribe name="BAT_FAMILY_ELITE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>BAT_FAMILY_ELITE</support>
+    </tribe>
+	<tribe name="SUCCUBUS_ELITE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>SUCCUBUS_ELITE</support>
+    </tribe>
+	<tribe name="SAM_ELITE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>GARGOYLE_ELITE SAM_ELITE MAIDENGOLEM_ELITE</support>
+    </tribe>
+	<tribe name="MAIDENGOLEM_ELITE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>GARGOYLE_ELITE SAM_ELITE MAIDENGOLEM_ELITE</support>
+    </tribe>
+	<tribe name="GARGOYLE_ELITE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>GARGOYLE_ELITE SAM_ELITE MAIDENGOLEM_ELITE</support>
+    </tribe>
+	<tribe name="AGGRESSIVE_LIGHT_HSPECTRE" base="MONSTER">
+        <aggressive>PC GENERAL GUARD</aggressive>
+        <hostile>SPECTRE_AALIGHTDARK</hostile>
+    </tribe>
+	<tribe name="AGGRESSIVE_DARK_HSPECTRE" base="MONSTER">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <hostile>SPECTRE_AALIGHTDARK</hostile>
+    </tribe>
+	<tribe name="SPECTRE_AALIGHTDARK" base="MONSTER">
+        <aggressive>PC PC_DARK AGGRESSIVE_LIGHT_HSPECTRE AGGRESSIVE_DARK_HSPECTRE</aggressive>
+    </tribe>
+	<tribe name="DRAMA_EVE_NONPC_A" base="GENERAL">
+        <aggressive>DRAMA_EVE_NONPC_B</aggressive>
+    </tribe>
+    <tribe name="DRAMA_EVE_NONPC_B" base="GENERAL">
+        <aggressive>DRAMA_EVE_NONPC_A</aggressive>
+    </tribe>
+	<tribe name="DRAMA_KIMEIA_NPC" base="GENERAL">
+        <friendly>DRAMA_KIMEIA_MOB</friendly>
+    </tribe>
+	<tribe name="DRAMA_EVE_NONPC_DARKA" base="GENERAL_DARK">
+        <aggressive>DRAMA_EVE_NONPC_B</aggressive>
+    </tribe>
+	<tribe name="DRAMA_EVE_NONPC_DARKB" base="GENERAL_DARK">
+        <aggressive>DRAMA_EVE_NONPC_A</aggressive>
+    </tribe>
+	<tribe name="DRAMA_KIMEIA_DARKNPC" base="GENERAL_DARK">
+        <friendly>DRAMA_KIMEIA_MOB</friendly>
+    </tribe>
+	<tribe name="DRAMA_KIMEIA_MOB" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK DRAMA_KIMEIA_NPC DRAMA_KIMEIA_DARKNPC</aggressive>
+    </tribe>
+	<tribe name="XIPETO" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="XIPETOBABY" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>XIPETO</support>
+    </tribe>
+	<tribe name="TAURIC" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>TAURIC</support>
+    </tribe>
+	<tribe name="CRESTLICH" base="MONSTER">
+        <support>CRESTLICH</support>
+    </tribe>
+	<tribe name="NNAGA" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NLIZARDMAN NLIZARDRAISER NLIZARDPET NLIZARDPRIEST NNAGA_PRIEST NNAGA NNAGA_ELEMENTALIST NNAGA_PRIESTBOSS XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON</support>
+    </tribe>
+	<tribe name="NNAGA_PRIEST" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NLIZARDMAN NLIZARDRAISER NLIZARDPET NLIZARDPRIEST NNAGA_PRIEST NNAGA NNAGA_ELEMENTALIST NNAGA_PRIESTBOSS NNAGA_SERVANT XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON</support>
+    </tribe>
+	<tribe name="NNAGA_SERVANT" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NNAGA_PRIEST</support>
+    </tribe>
+	<tribe name="NNAGA_ELEMENTALIST" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NLIZARDMAN NLIZARDRAISER NLIZARDPET NLIZARDPRIEST NNAGA_PRIEST NNAGA NNAGA_ELEMENTALIST NNAGA_PRIESTBOSS NNAGA_ELEMENTAL XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON</support>
+    </tribe>
+	<tribe name="NNAGA_ELEMENTAL" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NNAGA_ELEMENTALIST</support>
+    </tribe>
+	<tribe name="NLIZARDMAN" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NLIZARDMAN NLIZARDRAISER NLIZARDPET NLIZARDPRIEST NNAGA_PRIEST NNAGA NNAGA_ELEMENTALIST NNAGA_PRIESTBOSS XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON NLIZARDMAN2</support>
+    </tribe>
+	<tribe name="NLIZARDRAISER" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NLIZARDMAN NLIZARDRAISER NLIZARDPET NLIZARDPRIEST NNAGA_PRIEST NNAGA NNAGA_ELEMENTALIST NNAGA_PRIESTBOSS XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON</support>
+    </tribe>
+	<tribe name="NLIZARDPET" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NLIZARDRAISER</support>
+    </tribe>
+	<tribe name="NLIZARDPRIEST" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NLIZARDMAN NLIZARDRAISER NLIZARDPET NLIZARDPRIEST NNAGA_PRIEST NNAGA NNAGA_ELEMENTALIST NNAGA_PRIESTBOSS XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON</support>
+    </tribe>
+	<tribe name="NNAGA_PRIESTBOSS" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NLIZARDMAN NLIZARDRAISER NLIZARDPET NLIZARDPRIEST NNAGA_PRIEST NNAGA NNAGA_ELEMENTALIST XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON</support>
+    </tribe>
+	<tribe name="NNAGA_BOSS_SERVANT" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>NNAGA_PRIESTBOSS</support>
+    </tribe>
+	<tribe name="SEIREN_MASTER" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>SEIREN_MASTER SEIREN_SNAKE SEIREN</support>
+    </tribe>
+	<tribe name="SEIREN_SNAKE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>SEIREN_MASTER</support>
+    </tribe>
+	<tribe name="GENERAL_ADADR" base="GENERAL">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK PC_DRAGON GENERAL_DRAGON GUARD_DRAGON</aggressive>
+        <friendly>F4RAID</friendly>
+        <support>PC</support>
+    </tribe>
+	<tribe name="GENERALDA_ALIDR" base="GENERAL_DARK">
+        <aggressive>PC GENERAL GUARD PC_DRAGON GENERAL_DRAGON GUARD_DRAGON</aggressive>
+        <friendly>F4RAID</friendly>
+        <support>PC_DARK</support>
+    </tribe>
+	<tribe name="GENERALDR_ALIDA" base="GENERAL_DRAGON">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <friendly>F4RAID</friendly>
+    </tribe>
+	<tribe name="LIZARDMAN_BOMB" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <friendly>BOMB_LIZARDMAN</friendly>
+        <support>LIZARDMAN_BOMB</support>
+    </tribe>
+	<tribe name="BOMB_LIZARDMAN" base="GENERAL_DARK">
+        <aggressive>LIZARDMAN_BOMB</aggressive>
+        <friendly>NNAGA</friendly>
+    </tribe>
+	<tribe name="LIZARDMAN_KB" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+    </tribe>
+	<tribe name="DRAKEPURPLE_MASTER" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+    </tribe>
+	<tribe name="DRAKEPURPLE_SLAVE" base="MONSTER">
+        <support>DRAKEPURPLE_MASTER</support>
+    </tribe>
+	<tribe name="DRAKY_BOMB_MASTER" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <support>NLIZARDMAN NLIZARDRAISER NLIZARDPET NLIZARDPRIEST NNAGA_PRIEST NNAGA NNAGA_ELEMENTALIST</support>
+    </tribe>
+	<tribe name="DRAKY_BOMB_EX" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <support>DRAKY_BOMB_MASTER</support>
+    </tribe>
+	<tribe name="FIREFUNGY" base="MONSTER">
+        <support>FIREFUNGY</support>
+    </tribe>
+	<tribe name="NOFIGHT" base="MONSTER">
+        <friendly>PC GUARD PC_DARK GUARD_DARK</friendly>
+    </tribe>
+	<tribe name="FIELD_OBJECT_ALL" base="FIELD_OBJECT_LIGHT">
+        <neutral>PC_DARK</neutral>
+    </tribe>
+	<tribe name="DRAKANDF3BOSS" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <support>DRAKANDF3SLAVE DRAKANDF3BOSS</support>
+    </tribe>
+	<tribe name="DRAKANDF3SLAVE" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <support>DRAKANDF3BOSS</support>
+    </tribe>
+	<tribe name="CONSIADE" base="MONSTER">
+        <aggressive>PC GENERAL PC_DARK GENERAL_DARK</aggressive>
+    </tribe>
+	<tribe name="CONSIADE_SUM" base="MONSTER">
+        <aggressive>PC GENERAL PC_DARK GENERAL_DARK</aggressive>
+        <support>CONSIADE</support>
+    </tribe>
+	<tribe name="PARENTSMONSTER" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <friendly>CHILDMONSTER</friendly>
+    </tribe>
+	<tribe name="CHILDMONSTER" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <friendly>PARENTSMONSTER</friendly>
+    </tribe>
+	<tribe name="SEIREN" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>SEIREN_MASTER SEIREN_SNAKE SEIREN</support>
+    </tribe>
+	<tribe name="TEST_LIGHT_ADARK" base="GENERAL">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+    </tribe>
+	<tribe name="TEST_LIGHT_ADRAGON" base="GENERAL">
+        <aggressive>PC_DRAGON GENERAL_DRAGON GUARD_DRAGON</aggressive>
+    </tribe>
+	<tribe name="TEST_LIGHT_AETC" base="GENERAL">
+        <aggressive>MONSTER</aggressive>
+    </tribe>
+	<tribe name="TEST_DARK_ALIGHT" base="GENERAL_DARK">
+        <aggressive>PC GENERAL GUARD</aggressive>
+    </tribe>
+	<tribe name="TEST_DARK_ADRAGON" base="GENERAL_DARK">
+        <aggressive>PC_DRAGON GENERAL_DRAGON GUARD_DRAGON</aggressive>
+    </tribe>
+	<tribe name="TEST_DARK_AETC" base="GENERAL_DARK">
+        <aggressive>MONSTER</aggressive>
+    </tribe>
+	<tribe name="TEST_DRAGON_ALIGHT" base="GENERAL_DRAGON">
+        <aggressive>PC GENERAL GUARD</aggressive>
+    </tribe>
+	<tribe name="TEST_DRAGON_ADARK" base="GENERAL_DRAGON">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+    </tribe>
+	<tribe name="TEST_DRAGON_AETC" base="GENERAL_DRAGON">
+        <aggressive>MONSTER</aggressive>
+    </tribe>
+	<tribe name="TEST_ETC_ALIGHT" base="MONSTER">
+        <aggressive>PC GENERAL GUARD</aggressive>
+    </tribe>
+	<tribe name="TEST_ETC_ADARK" base="MONSTER">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+    </tribe>
+    <tribe name="TEST_ETC_ADRAGON" base="MONSTER">
+        <aggressive>PC_DRAGON GENERAL_DRAGON GUARD_DRAGON</aggressive>
+    </tribe>
+	<tribe name="ABYSSDRAKANGATE" base="MONSTER">
+        <friendly>GUARD GUARD_DARK GUARD_DRAGON PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="DARK_NPC" base="GENERAL_DARK">
+        <aggressive>PC GENERAL GUARD</aggressive>
+        <friendly>PC_DARK GENERAL_DARK GUARD_DARK DARK_SUR_MOB DARK_LICH LICH_SOULEDSTONE DARK_MOB</friendly>
+    </tribe>
+	<tribe name="LIGHT_NPC" base="GENERAL">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <friendly>PC GENERAL GUARD LIGHT_SUR_MOB LIGHT_LICH LICH_SOULEDSTONE LIGHT_MOB</friendly>
+    </tribe>
+	<tribe name="DARK_MOB" base="MONSTER">
+        <aggressive>PC GENERAL GUARD</aggressive>
+        <friendly>PC_DARK GENERAL_DARK GUARD_DARK</friendly>
+        <support>DARK_NPC</support>
+    </tribe>
+	<tribe name="LIGHT_MOB" base="MONSTER">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <friendly>PC GENERAL GUARD</friendly>
+        <support>LIGHT_NPC</support>
+    </tribe>
+	<tribe name="DARK_SUR_MOB" base="MONSTER">
+        <aggressive>PC GENERAL GUARD</aggressive>
+        <friendly>GUARD PC_DARK GENERAL_DARK GUARD_DARK</friendly>
+        <support>DARK_NPC DARK_SUR_MOB</support>
+    </tribe>
+	<tribe name="LIGHT_SUR_MOB" base="MONSTER">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <friendly>PC GENERAL GUARD</friendly>
+        <support>LIGHT_NPC LIGHT_SUR_MOB</support>
+    </tribe>
+	<tribe name="DARK_LICH" base="MONSTER">
+        <aggressive>PC GENERAL GUARD</aggressive>
+        <friendly>PC_DARK GENERAL_DARK GUARD_DARK</friendly>
+        <support>DARK_NPC DARK_SUR_MOB</support>
+    </tribe>
+	<tribe name="LIGHT_LICH" base="MONSTER">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <friendly>PC GENERAL GUARD</friendly>
+        <support>LIGHT_NPC LIGHT_SUR_MOB</support>
+    </tribe>
+	<tribe name="LICH_SOULEDSTONE" base="MONSTER">
+        <friendly>DARK_LICH LIGHT_LICH</friendly>
+    </tribe>
+	<tribe name="LIGHT_DENLABIS" base="GENERAL">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <friendly>PC GENERAL GUARD FIRETEMPLE_MOB</friendly>
+    </tribe>
+	<tribe name="FIRETEMPLE_MOB" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <friendly>LIGHT_DENLABIS</friendly>
+        <support>FIRETEMPLE_MOB</support>
+    </tribe>
+	<tribe name="QUESTGUARD_DARK" base="GENERAL_DARK">
+        <aggressive>PC GENERAL GUARD</aggressive>
+        <support>PC_DARK</support>
+    </tribe>
+    <tribe name="QUESTGUARD_LIGHT" base="GENERAL">
+        <aggressive>PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <support>PC</support>
+    </tribe>
+	<tribe name="BROHUM" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>BROHUM</support>
+    </tribe>
+	<tribe name="CALYDON" base="MONSTER">
+        <aggressive>PC GENERAL GUARD</aggressive>
+        <support>CALYDON</support>
+    </tribe>
+	<tribe name="CALYDON_POLYMORPH" base="MONSTER">
+        <friendly>MONSTER PC_DARK GENERAL_DARK GUARD_DARK PC GENERAL GUARD</friendly>
+    </tribe>
+	<tribe name="SWELLFISH" base="MONSTER">
+        <support>SWELLFISH</support>
+    </tribe>
+	<tribe name="TRICON" base="MONSTER">
+        <aggressive>PC_DARK PC</aggressive>
+        <support>TRICON TRICO</support>
+    </tribe>
+	<tribe name="TRICO" base="MONSTER"/>
+	<tribe name="PROTECTGUARD_LIGHT" base="GUARD">
+		<aggressive>F6_EVENT_DA F6_EVENT_ATTACKER_DA F6_EVENT_CANNON_DA RVR_DGUARD_01 RVR_DGUARD_02 RVR_DGUARD_03</aggressive>
+		<friendly>AB1_AGGRESSIVESINGLEMONSTER AB1_AGGRESSIVESUPPORTMONSTER ELEMENTAL_LIGHT BROHUM TRICO PROTECTGUARD_LIGHT_HERO LDF4_ADVANCE_GODELITEDM TIAMATREMNANT_DRAKAN FANATIC LDF4_ADVANCE_DACHAPIRE LDF4_ADVANCE_LIPOPOKU LDF4_ADVANCE_NEUTH F4RAID FANATIC AGGRESSIVEMONSTER AGGRESSIVESUPPORTMONSTER AGGRESSIVESINGLEMONSTER DRAKEPURPLE_MASTER DRAKEPURPLE_SLAVE ELEMENTAL_AIR ELEMENTAL_EARTH ELEMENTAL_FIRE ELEMENTAL_WATER ETTIN LEHPAR MONSTER NLIZARDMAN NLIZARDRAISER NLIZARDPET DARK_LICH DARK_SUR_MOB PROTECTGUARD_LIGHT_F2A F6_EVENT_LI F6_EVENT_ATTACKER_LI F6_EVENT_CANNON_LI</friendly>
+	</tribe>
+	<tribe name="PROTECTGUARD_DARK" base="GUARD_DARK">
+		<aggressive>F6_EVENT_LI F6_EVENT_ATTACKER_LI F6_EVENT_CANNON_LI RVR_LGUARD_01 RVR_LGUARD_02 RVR_LGUARD_03</aggressive>
+		<friendly>AB1_AGGRESSIVESINGLEMONSTER AB1_AGGRESSIVESUPPORTMONSTER ELEMENTAL_LIGHT BROHUM TRICO PROTECTGUARD_DARK_HERO LDF4_ADVANCE_GODELITELF TIAMATREMNANT_DRAKAN FANATIC LDF4_ADVANCE_DACHAPIRE LDF4_ADVANCE_LIPOPOKU LDF4_ADVANCE_NEUTH F4RAID FANATIC AGGRESSIVEMONSTER AGGRESSIVESUPPORTMONSTER AGGRESSIVESINGLEMONSTER DRAKEPURPLE_MASTER DRAKEPURPLE_SLAVE ELEMENTAL_AIR ELEMENTAL_EARTH ELEMENTAL_FIRE ELEMENTAL_WATER ETTIN LEHPAR MONSTER NLIZARDMAN NLIZARDRAISER NLIZARDPET DARK_LICH DARK_SUR_MOB PROTECTGUARD_DARK_F2A F6_EVENT_DA F6_EVENT_ATTACKER_DA F6_EVENT_CANNON_DA</friendly>
+    </tribe>
+    <tribe name="PROTECTGUARD_LIGHT" base="GUARD">
+        <friendly>MONSTER</friendly>
+    </tribe>
+    <tribe name="PROTECTGUARD_DARK" base="GUARD_DARK">
+        <friendly>MONSTER</friendly>
+    </tribe>
+	<tribe name="FIELD_OBJECT_ALL_MONSTER" base="GENERAL">
+        <friendly>MONSTER PC_DARK GENERAL_DARK GUARD_DARK</friendly>
+    </tribe>
+	<tribe name="HOLYSERVANT" base="MONSTER">
+        <aggressive>HOLYSERVANT_DEBUFFER PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="HOLYSERVANT_DEBUFFER" base="USEALL">
+        <aggressive>HOLYSERVANT</aggressive>
+    </tribe>
+    <tribe name="HOLYSERVANT_DESPAWN" base="MONSTER">
+        <friendly>MONSTER</friendly>
+        <support>HOLYSERVANT</support>
+    </tribe>
+	<tribe name="RANMARK" base="MONSTER">
+        <aggressive>PC PC_DARK GENERAL GENERAL_DARK</aggressive>
+        <support>RANMARK</support>
+    </tribe>
+	<tribe name="AGGRESSIVESUPPORTMONSTER2" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>AGGRESSIVESINGLEMONSTER AGGRESSIVESUPPORTMONSTER</support>
+    </tribe>
+	<tribe name="LASBERG" base="GENERAL_DARK">
+        <none>PC</none>
+    </tribe>
+	<tribe name="SHULACK" base="MONSTER">
+        <aggressive>PC PC_DARK AGGRESSIVETOSHULACK2</aggressive>
+        <friendly>SHULACK_ATTACKED</friendly>
+        <support>SHULACK SHULACK_DECK SHULACK_ATTACKING SHULACK_SUPPORT</support>
+    </tribe>
+	<tribe name="ESCORT" base="USEALL">
+        <hostile>MONSTER</hostile>
+        <friendly>PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="AGGRESSIVEESCORT" base="MONSTER">
+        <aggressive>ESCORT</aggressive>
+    </tribe>
+	<tribe name="XDRAKAN" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT IDSTATION_POLYMORP_H IDAB1_ERE_HERO IDAB1_ERE_SMIGOL IDAB1_ERE_ESCORT_DEVA IDAB1_HEROES_POLYMORPH</aggressive>
+        <hostile>IDCATACOMBS_TAROS</hostile>
+        <neutral>DRAKAN_LGUARD DRAKAN_DGUARD</neutral>
+        <support>XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON</support>
+		<none>IDAB1_ERE_PRISON_DOOR</none>
+    </tribe>
+	<tribe name="XDRAKAN_ELEMENTALIST" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+        <support>XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON</support>
+    </tribe>
+	<tribe name="XDRAKAN_PET" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+        <support>XDRAKAN_ELEMENTALIST</support>
+    </tribe>
+	<tribe name="XDRAKAN_PRIEST" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+        <support>XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON</support>
+    </tribe>
+	<tribe name="XDRAKAN_SERVANT" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+        <support>XDRAKAN_PRIEST</support>
+    </tribe>
+	<tribe name="AGGRESSIVETOSHULACK" base="MONSTER">
+        <aggressive>SHULACK</aggressive>
+        <support>AGGRESSIVETOSHULACK</support>
+    </tribe>
+	<tribe name="SHULACK_DECK" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>SHULACK SHULACK_DECK</support>
+    </tribe>
+	<tribe name="SHULACK_DECK_KILLER" base="MONSTER">
+        <aggressive>SHULACK_DECK</aggressive>
+    </tribe>
+	<tribe name="DRAGON" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+    </tribe>
+	<tribe name="DRAGON_SLAVE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>DRAGON</support>
+    </tribe>
+	<tribe name="DRAGON_CTRL" base="USEALL">
+        <aggressive>DRAGON</aggressive>
+    </tribe>
+	<tribe name="AGGRESSIVETOSHULACK2" base="MONSTER">
+        <aggressive>SHULACK</aggressive>
+    </tribe>
+	<tribe name="SPALLER" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK SPALLERCTRL</aggressive>
+    </tribe>
+	<tribe name="SPALLERCTRL" base="MONSTER">
+        <aggressive>SPALLER</aggressive>
+    </tribe>
+	<tribe name="SHULACK_SLAVE" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>SHULACK SHULACK_SLAVE</support>
+    </tribe>
+	<tribe name="IDLF1_MONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK ESCORT</aggressive>
+        <support>IDLF1_MONSTER</support>
+    </tribe>
+	<tribe name="AGGRESSIVETOPCPET" base="MONSTER">
+        <hostile>PC PC_DARK GENERAL GENERAL_DARK</hostile>
+    </tribe>
+	<tribe name="GENERALDR_ALIDA_SUPPORT" base="GENERAL_DRAGON">
+        <support>GENERALDR_ALIDA</support>
+    </tribe>
+	<tribe name="GOLEM_SWITCH" base="MONSTER">
+        <support>AGGRESSIVESINGLEMONSTER</support>
+    </tribe>
+	<tribe name="USEALLNONETOMONSTER" base="USEALL">
+        <none>MONSTER</none>
+    </tribe>
+	<tribe name="FANATIC" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>FANATIC XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON XDRAKAN</support>
+    </tribe>
+	<tribe name="IDTEMPLE_BUGS" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>IDTEMPLE_BUGS</support>
+    </tribe>
+	<tribe name="IDTEMPLE_STONE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>IDTEMPLE_STONE</support>
+    </tribe>
+	<tribe name="IDELIM" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK GENERAL_DARK AGGRESSIVETOIDELIM</aggressive>
+        <neutral>IDELIM_FRIEND</neutral>
+        <support>IDELIM</support>
+    </tribe>
+	<tribe name="IDELIM_FRIEND" base="MONSTER">
+        <hostile>IDELIM</hostile>
+        <friendly>PC GUARD GENERAL PC_DARK GUARD_DARK GENERAL_DARK USEALL</friendly>
+    </tribe>
+	<tribe name="FRIENDLYTOIDELIM" base="MONSTER">
+        <aggressive>GENERAL</aggressive>
+        <friendly>IDELIM</friendly>
+    </tribe>
+	<tribe name="AGGRESSIVETOIDELIM" base="USEALL">
+        <aggressive>IDELIM</aggressive>
+        <neutral>IDELIM_FRIEND</neutral>
+        <support>PC GUARD GENERAL PC_DARK GUARD_DARK GENERAL_DARK</support>
+    </tribe>
+	<tribe name="IDCATACOMBS_TAROS" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <support>XDRAKAN</support>
+    </tribe>
+	<tribe name="IDCATACOMBS_DRAKE" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <friendly>IDCATACOMBS_DRAKE_SUM</friendly>
+    </tribe>
+	<tribe name="IDCATACOMBS_DRAKE_SUM" base="MONSTER">
+        <aggressive>PC PC_DARK IDCATACOMBS_DRAKE</aggressive>
+    </tribe>
+	<tribe name="DUMMY" base="MONSTER"/>
+	<tribe name="HOSTILE_ALL" base="MONSTER">
+        <hostile>PC PC_DARK PC_DRAGON GENERAL GUARD GENERAL_DARK GUARD_DARK GENERAL_DRAGON GUARD_DRAGON USEALL MONSTER</hostile>
+    </tribe>
+	<tribe name="AGGRESSIVE_ALL" base="MONSTER">
+        <aggressive>PC PC_DARK PC_DRAGON GENERAL GUARD GENERAL_DARK GUARD_DARK GENERAL_DRAGON GUARD_DRAGON USEALL MONSTER</aggressive>
+    </tribe>
+	<tribe name="F4GUARD_LIGHT" base="GUARD">
+		<aggressive>PROTECTGUARD_DARK PC_DARK</aggressive>
+    </tribe>
+	<tribe name="F4GUARD_DARK" base="GUARD_DARK">
+		<aggressive>PROTECTGUARD_LIGHT PC</aggressive>
+    </tribe>
+	<tribe name="F4GUARD_DRAGON" base="GUARD_DRAGON">
+        <friendly>F4RAID</friendly>
+		<aggressive>PROTECTGUARD_DARK PROTECTGUARD_LIGHT PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="F4RAID" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <friendly>F4GUARD_LIGHT F4GUARD_DARK GENERAL_ADADR GENERALDA_ALIDR F4GUARD_DRAGON GENERALDR_ALIDA GUARD GUARD_DARK PROTECTGUARD_LIGHT PROTECTGUARD_DARK</friendly>
+    </tribe>
+	<tribe name="DRAMATA" base="MONSTER">
+        <aggressive>PC GUARD GENERAL PC_DARK GUARD_DARK GENERAL_DARK</aggressive>
+        <neutral>AGGRESSIVESUPPORTMONSTER</neutral>
+        <support>DRAMATA</support>
+    </tribe>
+	<tribe name="DRAMATATIMERA" base="MONSTER"/>
+    <tribe name="DRAMATATIMERB" base="MONSTER">
+        <aggressive>DRAMATATIMERA</aggressive>
+    </tribe>
+	<tribe name="DRAKANPOLYMORPH" base="MONSTER">
+        <aggressive>DRAKANDOOR</aggressive>
+        <friendly>PC GENERAL GUARD_DARK</friendly>
+    </tribe>
+	<tribe name="DRAKANDOOR" base="MONSTER"/>
+	<tribe name="GHTIMER" base="MONSTER">
+        <aggressive>GUARD GUARD_DARK</aggressive>
+    </tribe>
+	<tribe name="SHULACK_ATTACKING" base="MONSTER">
+        <aggressive>PC GUARD GENERAL PC_DARK GUARD_DARK GENERAL_DARK SHULACK_ATTACKED</aggressive>
+        <support>SHULACK SHULACK_SUPPORT</support>
+    </tribe>
+	<tribe name="SHULACK_ATTACKED" base="MONSTER">
+        <aggressive>SHULACK_ATTACKING</aggressive>
+    </tribe>
+	<tribe name="SHULACK_SUPPORT" base="MONSTER">
+        <support>SHULACK SHULACK_ATTACKING</support>
+    </tribe>
+	<tribe name="NLIZARDMAN2" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+    </tribe>
+	<tribe name="DUMMY2" base="MONSTER"/>
+	<tribe name="DUMMY_DGUARD" base="GUARD_DARK">
+        <aggressive>DUMMY</aggressive>
+    </tribe>
+	<tribe name="DUMMY2_DGUARD" base="GUARD_DARK">
+        <aggressive>DUMMY2</aggressive>
+    </tribe>
+	<tribe name="CRYSTAL" base="MONSTER">
+        <aggressive>ANTI_CRYSTAL PC PC_DARK</aggressive>
+        <friendly>MONSTER CRYSTAL_NMDD</friendly>
+        <support>CRYSTAL</support>
+    </tribe>
+	<tribe name="ANTI_CRYSTAL" base="MONSTER">
+        <aggressive>CRYSTAL</aggressive>
+        <hostile>PC PC_DARK</hostile>
+        <support>ANTI_CRYSTAL</support>
+    </tribe>
+	<tribe name="DUMMY_LGUARD" base="GUARD">
+        <aggressive>DUMMY</aggressive>
+    </tribe>
+	<tribe name="DUMMY2_LGUARD" base="GUARD">
+        <aggressive>DUMMY2</aggressive>
+    </tribe>
+	<tribe name="HOSTILEONLYMONSTER" base="USEALL">
+        <aggressive>MONSTER AGGRESSIVESINGLEMONSTER AGGRESSIVESUPPORTMONSTER</aggressive>
+    </tribe>
+	<tribe name="ATKDRAKAN" base="USEALL">
+        <aggressive>MONSTER PC_DRAGON GENERAL_DRAGON GUARD_DRAGON</aggressive>
+    </tribe>
+	<tribe name="CRYSTAL_NMDD" base="MONSTER">
+        <hostile>PC PC_DARK GUARD GUARD_DARK</hostile>
+        <friendly>CRYSTAL_SUM</friendly>
+    </tribe>
+	<tribe name="CRYSTAL_SUM" base="MONSTER">
+        <aggressive>CRYSTAL_NMDD</aggressive>
+    </tribe>
+	<tribe name="GENERAL_KRALL" base="GENERAL">
+        <friendly>KRALL KRALL_PC</friendly>
+    </tribe>
+	<tribe name="GENERAL_DARK_LYCAN" base="GENERAL_DARK">
+        <friendly>LYCAN LYCAN_PC</friendly>
+    </tribe>
+	<tribe name="WAVE_TREE" base="USEALL">
+        <aggressive>WAVE_SWARM1 WAVE_SWARM2 XDRAKAN</aggressive>
+        <friendly>PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="WAVE_SWARM1" base="MONSTER">
+        <aggressive>WAVE_TREE PC PC_DARK</aggressive>
+        <friendly>WAVE_SWARM2</friendly>
+    </tribe>
+    <tribe name="WAVE_SWARM2" base="MONSTER">
+        <aggressive>WAVE_TREE</aggressive>
+        <friendly>WAVE_SWARM1</friendly>
+    </tribe>
+	<tribe name="LYCAN_PC" base="MONSTER">
+        <hostile>PC GUARD PC_DARK GUARD_DARK</hostile>
+    </tribe>
+	<tribe name="KRALL_PC" base="MONSTER">
+        <hostile>PC GUARD PC_DARK GUARD_DARK</hostile>
+    </tribe>
+	<tribe name="IDELEMENTAL_2_HEAL_SUM" base="USEALL">
+        <aggressive>AGGRESSIVEMONSTER</aggressive>
+        <none>USEALL</none>
+    </tribe>
+	<tribe name="AGGRESSIVEMONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="IDYUN_XDRAKAN" base="MONSTER">
+        <aggressive>PC PC_DARK IDYUN_ANCIENT IDYUN_POLYMORPH</aggressive>
+        <support>IDYUN_XDRAKAN</support>
+    </tribe>
+	<tribe name="IDYUN_SIEGEWEAPON" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="IDYUN_ANCIENT" base="USEALL">
+        <aggressive>IDYUN_XDRAKAN</aggressive>
+    </tribe>
+	<tribe name="IDYUN_HDRAKAN" base="MONSTER">
+        <aggressive>PC PC_DARK IDYUN_D1</aggressive>
+    </tribe>
+	<tribe name="IDYUN_ODRAKAN" base="MONSTER">
+        <aggressive>PC PC_DARK IDYUN_OBJECTS</aggressive>
+    </tribe>
+	<tribe name="IDYUN_RDRAKAN" base="MONSTER">
+        <aggressive>IDYUN_TARGET</aggressive>
+    </tribe>
+	<tribe name="IDYUN_D1" base="MONSTER">
+        <hostile>PC PC_DARK</hostile>
+    </tribe>
+	<tribe name="IDYUN_OBJECTS" base="MONSTER"/>
+	<tribe name="IDYUN_TARGET" base="MONSTER"/>
+	<tribe name="IDRAKSHA_DRAKAN" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <neutral>IDRAKSHA_DRAGONTOOTH IDRAKSHA_NORMAL</neutral>
+        <support>IDRAKSHA_DRAKAN IDRAKSHA_RAKSHA</support>
+    </tribe>
+	<tribe name="IDRAKSHA_DRAGONTOOTH" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <neutral>IDRAKSHA_NORMAL</neutral>
+        <support>IDRAKSHA_DRAKAN IDRAKSHA_DRAGONTOOTH IDRAKSHA_RAKSHA</support>
+    </tribe>
+	<tribe name="IDRAKSHA_NORMAL" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <neutral>IDRAKSHA_DRAKAN IDRAKSHA_DRAGONTOOTH</neutral>
+        <support>IDRAKSHA_NORMAL IDRAKSHA_RAKSHA</support>
+    </tribe>
+	<tribe name="IDRAKSHA_RAKSHA" base="MONSTER">
+        <hostile>PC GUARD PC_DARK GUARD_DARK</hostile>
+    </tribe>
+	<tribe name="DECOY" base="USEALL">
+        <friendly>PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="DECOY_HUNGER" base="MONSTER">
+        <aggressive>DECOY</aggressive>
+        <hostile>PC PC_DARK</hostile>
+        <support>DECOY_HUNGER</support>
+    </tribe>
+	<tribe name="IDYUN_BOMBER" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>IDYUN_ANCIENT</support>
+    </tribe>
+	<tribe name="IDYUN_ANTIBOMBER" base="MONSTER">
+        <hostile>IDYUN_BOMBER</hostile>
+        <friendly>PC PC_DARK IDYUN_ANCIENT</friendly>
+    </tribe>
+	<tribe name="PREDATOR" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK PREY</aggressive>
+        <support>PREDATOR</support>
+    </tribe>
+	<tribe name="PREY" base="MONSTER">
+        <hostile>PREDATOR PC PC_DARK</hostile>
+        <support>PREY</support>
+    </tribe>
+	<tribe name="IDYUN_POLYMORPH" base="MONSTER">
+        <aggressive>IDYUN_DOOR XDRAKAN</aggressive>
+        <hostile>IDYUN_XDRAKAN</hostile>
+        <friendly>PC PC_DARK IDYUN_ANCIENT</friendly>
+    </tribe>
+	<tribe name="IDYUN_DOOR" base="MONSTER">
+        <aggressive>IDYUN_VASARTI</aggressive>
+        <hostile>IDYUN_SIEGEWEAPON</hostile>
+        <friendly>PC PC_DARK IDYUN_ANCIENT</friendly>
+    </tribe>
+	<tribe name="IDYUN_VASARTI" base="MONSTER">
+        <aggressive>IDYUN_MEROPS</aggressive>
+    </tribe>
+	<tribe name="IDYUN_MEROPS" base="USEALL">
+        <hostile>IDYUN_VASARTI</hostile>
+        <friendly>PC PC_DARK IDYUN_ANCIENT</friendly>
+    </tribe>
+	<tribe name="IDYUN_FIST" base="USEALL">
+        <hostile>IDYUN_VASARTI</hostile>
+        <friendly>PC PC_DARK IDYUN_ANCIENT</friendly>
+    </tribe>
+	<tribe name="LDF4A_SANDWARM" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <support>LDF4A_SANDWARM</support>
+    </tribe>
+	<tribe name="LDF4A_NEPILIM" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <support>LDF4A_NEPILIM</support>
+    </tribe>
+	<tribe name="LDF4A_OWLLAU" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <support>LDF4A_OWLLAU</support>
+    </tribe>
+	<tribe name="LDF4A_CALYDON" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <support>LDF4A_CALYDON</support>
+    </tribe>
+	<tribe name="LDF4B_AGGRESSIVEYUNSOLDIER" base="USEALL">
+        <aggressive>LDF4B_FANATIC</aggressive>
+        <hostile>AGGRESSIVESINGLEMONSTER</hostile>
+        <support>PC PC_DARK</support>
+    </tribe>
+	<tribe name="LDF4B_ATTACKWAGON" base="MONSTER">
+        <aggressive>LDF4B_WAGON</aggressive>
+        <hostile>PC GUARD PC_DARK GUARD_DARK</hostile>
+    </tribe>
+	<tribe name="LDF4B_FANATIC" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <hostile>LDF4B_AGGRESSIVEYUNSOLDIER</hostile>
+        <support>LDF4B_FANATIC</support>
+    </tribe>
+	<tribe name="IDLDF4A_DECOY" base="MONSTER">
+        <aggressive>DECOY PC PC_DARK</aggressive>
+        <support>DECOY_HUNGER</support>
+    </tribe>
+	<tribe name="GENERAL_IDLDF4A_INTRO" base="GENERAL">
+        <aggressive>GENERAL_DARK_IDLDF4A_INTRO</aggressive>
+        <hostile>PC_DARK</hostile>
+    </tribe>
+	<tribe name="GENERAL_DARK_IDLDF4A_INTRO" base="GENERAL_DARK">
+        <aggressive>GENERAL_IDLDF4A_INTRO</aggressive>
+        <hostile>PC</hostile>
+    </tribe>
+	<tribe name="AGRESSIVETOMONSTER" base="GENERAL">
+        <aggressive>MONSTER</aggressive>
+        <friendly>PC GUARD</friendly>
+    </tribe>
+	<tribe name="LDF4A_PUBLIC_MONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK</aggressive>
+        <friendly>LDF4A_PUBLIC_MONSTER</friendly>
+        <support>LDF4A_PUBLIC_MONSTER</support>
+    </tribe>
+	<tribe name="GENERAL_LDF4A_PUBLIC_YUN" base="USEALL">
+        <aggressive>MONSTER_LDF4A_PUBLIC_LIZARDMAN</aggressive>
+        <hostile>MONSTER</hostile>
+        <friendly>PC GUARD PC_DARK GUARD_DARK</friendly>
+    </tribe>
+	<tribe name="MONSTER_LDF4A_PUBLIC_LIZARDMAN" base="MONSTER">
+        <aggressive>GENERAL_LDF4A_PUBLIC_YUN</aggressive>
+        <hostile>PC GUARD PC_DARK GUARD_DARK</hostile>
+        <friendly>LDF4A_PUBLIC_MONSTER</friendly>
+    </tribe>
+	<tribe name="YDUMMY" base="MONSTER"/>
+    <tribe name="YDUMMY2" base="MONSTER"/>
+	<tribe name="YDUMMY_GUARD" base="USEALL">
+        <aggressive>YDUMMY</aggressive>
+        <neutral>YDUMMY2</neutral>
+    </tribe>
+	<tribe name="YDUMMY2_GUARD" base="USEALL">
+        <aggressive>YDUMMY2</aggressive>
+        <neutral>YDUMMY</neutral>
+    </tribe>
+	<tribe name="YUN_GUARD" base="USEALL">
+        <aggressive>IDYUN_XDRAKAN</aggressive>
+        <hostile>MONSTER</hostile>
+        <friendly>PC PC_DARK YDUMMY YDUMMY2</friendly>
+        <support>PC PC_DARK YUN_GUARD NEUTRAL_LGUARD NEUTRAL_DGUARD</support>
+    </tribe>
+	<tribe name="LDF4B_WAGON" base="USEALL"/>
+	<tribe name="LDF4B_SPARRING_GUARD" base="GENERAL">
+        <aggressive>LDF4B_SPARRING_Y</aggressive>
+        <none>PC_DARK</none>
+    </tribe>
+	<tribe name="LDF4B_SPARRING_Y" base="USEALL">
+        <aggressive>LDF4B_SPARRING_GUARD LDF4B_SPARRING_DGUARD</aggressive>
+    </tribe>
+	<tribe name="GURURU_D1" base="MONSTER">
+        <hostile>PC PC_DARK</hostile>
+    </tribe>
+	<tribe name="GURURU_DECO" base="MONSTER">
+        <aggressive>GURURU_D1</aggressive>
+        <hostile>PC PC_DARK</hostile>
+    </tribe>
+	<tribe name="LDF4B_SPARRING_GUARD2" base="GENERAL">
+        <aggressive>LDF4B_SPARRING_Y2</aggressive>
+        <none>PC_DARK</none>
+    </tribe>
+	<tribe name="LDF4B_SPARRING_Y2" base="USEALL">
+        <aggressive>LDF4B_SPARRING_GUARD2 LDF4B_SPARRING_DGUARD2</aggressive>
+    </tribe>
+	<tribe name="YDUMMY_LGUARD" base="GENERAL">
+        <aggressive>YDUMMY</aggressive>
+        <neutral>YDUMMY2</neutral>
+        <none>PC_DARK</none>
+    </tribe>
+	<tribe name="YDUMMY2_LGUARD" base="GENERAL">
+        <aggressive>YDUMMY2</aggressive>
+        <neutral>YDUMMY</neutral>
+        <none>PC_DARK</none>
+    </tribe>
+	<tribe name="YDUMMY_DGUARD" base="GENERAL_DARK">
+        <aggressive>YDUMMY</aggressive>
+        <neutral>YDUMMY2</neutral>
+        <none>PC</none>
+    </tribe>
+	<tribe name="YDUMMY2_DGUARD" base="GENERAL_DARK">
+        <aggressive>YDUMMY2</aggressive>
+        <neutral>YDUMMY</neutral>
+        <none>PC</none>
+    </tribe>
+	<tribe name="LDF4B_SPARRING_DGUARD" base="GENERAL_DARK">
+        <aggressive>LDF4B_SPARRING_Y</aggressive>
+        <none>PC</none>
+    </tribe>
+    <tribe name="LDF4B_SPARRING_DGUARD2" base="GENERAL_DARK">
+        <aggressive>LDF4B_SPARRING_Y2</aggressive>
+        <none>PC</none>
+    </tribe>
+	<tribe name="TDOWN_DRAKAN" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>TDOWN_DRAKAN</support>
+    </tribe>
+	<tribe name="NEUTRAL_LGUARD" base="GUARD">
+        <aggressive>IDYUN_XDRAKAN</aggressive>
+        <friendly>PC_DARK</friendly>
+        <neutral>YDUMMY_LGUARD YDUMMY2_LGUARD YDUMMY YDUMMY2</neutral>
+        <support>PC PC_DARK YUN_GUARD NEUTRAL_LGUARD NEUTRAL_DGUARD</support>
+    </tribe>
+	<tribe name="NEUTRAL_DGUARD" base="GUARD_DARK">
+        <aggressive>IDYUN_XDRAKAN</aggressive>
+        <friendly>PC</friendly>
+        <neutral>YDUMMY_DGUARD YDUMMY2_DGUARD YDUMMY YDUMMY2</neutral>
+        <support>PC PC_DARK YUN_GUARD NEUTRAL_LGUARD NEUTRAL_DGUARD</support>
+    </tribe>
+	<tribe name="LDF4A_NEPILIM_SUMMON" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <support>LDF4A_NEPILIM LDF4A_NEPILIM_SUMMON</support>
+    </tribe>
+	<tribe name="DRAKAN_LGUARD" base="GUARD">
+        <neutral>XDRAKAN</neutral>
+    </tribe>
+	<tribe name="DRAKAN_DGUARD" base="GUARD_DARK">
+        <neutral>XDRAKAN</neutral>
+    </tribe>
+	<tribe name="LDF4B_MINE" base="MONSTER">
+        <aggressive>IDYUN_XDRAKAN</aggressive>
+        <friendly>PC PC_DARK IDYUN_ANCIENT</friendly>
+    </tribe>
+	<tribe name="LDF4A_YUN_GUARD" base="USEALL">
+        <aggressive>XDRAKAN</aggressive>
+		<hostile>MONSTER</hostile>
+        <friendly>PC PC_DARK LDF4A_YUN_GUARD LDF4A_SANDWARM LDF4A_NEPILIM LDF4A_OWLLAU LDF4A_CALYDON LDF4A_PUBLIC_MONSTER</friendly>
+		<support>PC PC_DARK LDF4A_YUN_GUARD</support>
+    </tribe>
+	<tribe name="XDRAKAN_LGUARD" base="GUARD">
+        <aggressive>XDRAKAN</aggressive>
+        <support>XDRAKAN_LGUARD PC</support>
+    </tribe>
+	<tribe name="XDRAKAN_DGUARD" base="GUARD_DARK">
+        <aggressive>XDRAKAN</aggressive>
+        <support>XDRAKAN_DGUARD PC_DARK</support>
+    </tribe>
+	<tribe name="LDF4A_LG_SKILL" base="MONSTER">
+        <aggressive>LDF4A_LG_SKILL_RECEIVE</aggressive>
+        <friendly>PC PC_DARK LDF4A_NEPILIM</friendly>
+    </tribe>
+    <tribe name="LDF4A_LG_SKILL_RECEIVE" base="MONSTER">
+        <aggressive>LDF4A_LG_SKILL</aggressive>
+        <friendly>PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="LDF4A_POLY_SHULACK" base="MONSTER">
+        <friendly>SHULACK LDF4A_YUN_GUARD</friendly>
+    </tribe>
+	<tribe name="TESTBATTLE_NPC" base="PC">
+        <aggressive>MONSTER</aggressive>
+        <friendly>USEALL</friendly>
+        <support>PC PC_DARK TESTBATTLE_NPC</support>
+    </tribe>
+	<tribe name="TIAMATREMNANT_DRAKAN" base="PC">
+		<aggressive>PC PC_DARK GUARD GUARD_DARK</aggressive>
+		<friendly>TIAMATREMNANT_LIZARD</friendly>
+		<support>TIAMATREMNANT_DRAKAN</support>
+    </tribe>
+	<tribe name="TIAMATREMNANT_LIZARD" base="PC">
+		<aggressive>PC PC_DARK GUARD GUARD_DARK</aggressive>
+		<support>TIAMATREMNANT_DRAKAN TIAMATREMNANT_LIZARD</support>
+    </tribe>
+    <tribe name="TIAMATREMNANT_LIZARD_INJURY" base="PC">
+		<hostile>GUARD GUARD_DARK PC PC_DARK</hostile>
+		<support>TIAMATREMNANT_DRAKAN TIAMATREMNANT_LIZARD</support>
+    </tribe>
+	<tribe name="NEUTRAL_GUARD" base="USEALL">
+		<neutral>PC PC_DARK</neutral>
+		<support>NEUTRAL_GUARD NEUTRAL_GUARD_ON_ATTACK NEUTRAL_GUARD_ON_ATTACK01</support>
+    </tribe>
+	<tribe name="VRITRA" base="MONSTER">
+		<aggressive>PC PC_DARK GUARD GUARD_DARK ESCORT</aggressive>
+		<neutral>XDRAKAN</neutral>
+    </tribe>
+	<tribe name="IDEVENT01_SUMMON" base="USEALL">
+		<aggressive>IDEVENT01_TOWER</aggressive>
+		<support>IDEVENT01_SUMMON</support>
+    </tribe>
+	<tribe name="LIGHT_SUR_MOB_DF2ADIRECTPORTAL" base="MONSTER">
+		<aggressive>GENERAL_DARK GUARD_DARK PC_DARK</aggressive>
+		<hostile>GENERAL GUARD PC</hostile>
+		<support>LIGHT_NPC LIGHT_SUR_MOB LIGHT_SUR_MOB_DF2ADIRECTPORTAL LIGHT_LICH_DF2ADIRECTPORTAL</support>
+    </tribe>
+	<tribe name="LIGHT_LICH_DF2ADIRECTPORTAL" base="MONSTER">
+		<aggressive>GENERAL_DARK GUARD_DARK PC_DARK</aggressive>
+		<hostile>GENERAL GUARD PC</hostile>
+		<support>LIGHT_NPC LIGHT_SUR_MOB LIGHT_SUR_MOB_DF2ADIRECTPORTAL LIGHT_LICH_DF2ADIRECTPORTAL</support>
+    </tribe>
+	<tribe name="LDF5_CALYDON" base="MONSTER">
+		<aggressive>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</aggressive>
+		<support>LDF5_CALYDON</support>
+    </tribe>
+	<tribe name="LDF5_OWLLAU" base="MONSTER">
+		<aggressive>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</aggressive>
+		<support>LDF5_OWLLAU</support>
+    </tribe>
+	<tribe name="LDF5_GURURU" base="MONSTER">
+		<aggressive>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</aggressive>
+		<support>LDF5_GURURU</support>
+    </tribe>
+	<tribe name="ELEMENTAL_LIGHT" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+		<friendly>GUARD GUARD_DARK PROTECTGUARD_DARK PROTECTGUARD_LIGHT</friendly>
+        <support>ELEMENTAL_LIGHT</support>
+    </tribe>
+	<tribe name="NEUTRAL_GUARD_ON_ATTACK" base="GUARD_DRAGON">
+		<hostile>PC PC_DARK</hostile>
+		<support>NEUTRAL_GUARD NEUTRAL_GUARD_ON_ATTACK NEUTRAL_GUARD_ON_ATTACK01</support>
+		<none>MONSTER</none>
+    </tribe>
+	<tribe name="NEUTRAL_GUARD_ON_ATTACK01" base="GUARD_DRAGON">
+		<hostile>PC PC_DARK</hostile>
+		<support>NEUTRAL_GUARD NEUTRAL_GUARD_ON_ATTACK NEUTRAL_GUARD_ON_ATTACK01</support>
+    </tribe>
+	<tribe name="XDRAKAN_UNATTACK" base="MONSTER">
+		<friendly>XDRAKAN</friendly>
+		<none>PC PC_DARK</none>
+    </tribe>
+	<tribe name="GOD_KAISINEL" base="GENERAL">
+		<aggressive>TIAMAT</aggressive>
+		<hostile>GUARD_DARK PC_DARK TIAMAT</hostile>
+    </tribe>
+	<tribe name="GOD_MARCHUTAN" base="GENERAL_DARK">
+		<aggressive>TIAMAT</aggressive>
+		<hostile>GUARD PC TIAMAT</hostile>
+    </tribe>
+	<tribe name="TIAMAT" base="MONSTER">
+		<aggressive>GOD_KAISINEL GOD_MARCHUTAN</aggressive>
+		<hostile>KAHRUN PC PC_DARK</hostile>
+    </tribe>
+	<tribe name="LDF5_VESPA" base="MONSTER">
+		<hostile>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</hostile>
+		<support>LDF5_VESPA</support>
+    </tribe>
+	<tribe name="LDF5_SPAKLE" base="MONSTER">
+		<hostile>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</hostile>
+		<support>LDF5_SPAKLE</support>
+    </tribe>
+	<tribe name="LDF5_LUPYLLINI" base="MONSTER">
+		<hostile>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</hostile>
+		<support>LDF5_LUPYLLINI </support>
+    </tribe>
+	<tribe name="LDF5_BRAX" base="MONSTER">
+		<aggressive>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</aggressive>
+		<friendly>LDF5_BRAX</friendly>
+		<support>BRAX</support>
+    </tribe>
+	<tribe name="LDF5_SHULACK_KEEPER" base="MONSTER">
+		<aggressive>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</aggressive>
+		<support>SHULACK LDF5_WORKER</support>
+    </tribe>
+	<tribe name="LDF5_WORKER" base="MONSTER">
+		<hostile>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</hostile>
+		<friendly>SHULACK LDF5_SHULACK_KEEPER</friendly>
+		<neutral>SHULACK</neutral>
+		<support>LDF5_WORKER</support>
+    </tribe>
+	<tribe name="KAHRUN" base="USEALL">
+		<hostile>TIAMAT XDRAKAN</hostile>
+		<friendly>PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="IDTIAMAT_XDRAKAN" base="MONSTER">
+		<aggressive>IDTIAMAT_ANCIENT PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="IDTIAMAT_ANCIENT" base="USEALL">
+		<aggressive>IDTIAMAT_XDRAKAN</aggressive>
+    </tribe>
+	<tribe name="LDF5_DARU" base="MONSTER">
+		<aggressive>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</aggressive>
+		<friendly>LDF5_DARU</friendly>
+		<support>DARU</support>
+    </tribe>
+	<tribe name="IDEVENT01_TOWER" base="USEALL">
+		<aggressive>IDEVENT01_SUMMON AGGRESSIVESINGLEMONSTER</aggressive>
+		<friendly>PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="IDTIAMAT_SPAWNHEAL" base="MONSTER">
+		<aggressive>XDRAKAN</aggressive>
+		<friendly>GOD_KAISINEL GOD_MARCHUTAN PC PC_DARK TIAMAT</friendly>
+    </tribe>
+	<tribe name="IDTIAMAT_AREAHIDE" base="MONSTER">
+		<hostile> XDRAKAN </hostile>
+    </tribe>
+	<tribe name="IDEVENT01_POLYMORPH_L" base="PC">
+		<aggressive>IDEVENT01_SUMMON</aggressive>
+		<friendly>PC_DARK IDEVENT01_MC</friendly>
+    </tribe>
+	<tribe name="IDEVENT01_POLYMORPH_D" base="PC_DARK">
+		<hostile>IDEVENT01_SUMMON</hostile>
+		<friendly>PC IDEVENT01_MC</friendly>
+    </tribe>
+	<tribe name="IDF5_SIEGEWEAPON" base="PC">
+		<friendly>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</friendly>
+    </tribe>
+	<tribe name="IDF5_SIEGEWEAPON_ATTACK" base="MONSTER">
+		<aggressive>IDF5_SIEGEWEAPON</aggressive>
+    </tribe>
+	<tribe name="IDEVENT01_MC" base="MONSTER">
+		<hostile>PC PC_DARK</hostile>
+		<friendly>IDEVENT01_POLYMORPH_L IDEVENT01_POLYMORPH_D DRAGON</friendly>
+		<support>IDEVENT01_POLYMORPH_L IDEVENT01_POLYMORPH_D DRAGON</support>
+    </tribe>
+	<tribe name="IDF5_R2_SYNC1" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="IDF5_R2_SYNC1_ATTACK" base="MONSTER">
+		<aggressive>IDF5_R2_SYNC1</aggressive>
+		<none>PC PC_DARK</none>
+    </tribe>
+	<tribe name="IDF5_R2_SYNC2" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="IDF5_R2_SYNC2_ATTACK" base="MONSTER">
+		<aggressive>IDF5_R2_SYNC2</aggressive>
+		<none>PC PC_DARK</none>
+    </tribe>
+	<tribe name="IDF5_R2_SYNC3" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+    </tribe>
+	<tribe name="IDF5_R2_SYNC3_ATTACK" base="MONSTER">
+		<aggressive>IDF5_R2_SYNC3</aggressive>
+		<none>PC PC_DARK</none>
+    </tribe>
+	<tribe name="LDF5_FUNGY" base="MONSTER">
+		<aggressive>GENERAL GENERAL_DARK GUARD GUARD_DARK PC PC_DARK</aggressive>
+		<support>LDF5_FUNGY</support>
+    </tribe>
+	<tribe name="LDF5_V_CHIEF_L" base="GUARD">
+		<aggressive>LDF5_V_KILLER_D LDF5_V_KILLER_DR PC_DARK GUARD_DARK PC_DRAGON GUARD_DRAGON GENERAL_DRAGON</aggressive>
+		<friendly>PC GUARD GENERAL</friendly>
+    </tribe>
+	<tribe name="LDF5_V_CHIEF_D" base="GUARD_DARK">
+		<aggressive>LDF5_V_KILLER_L LDF5_V_KILLER_DR PC GUARD PC_DRAGON GUARD_DRAGON GENERAL_DRAGON</aggressive>
+		<friendly>PC_DARK GUARD_DARK GENERAL_DARK</friendly>
+    </tribe>
+	<tribe name="LDF5_V_CHIEF_DR" base="GUARD_DRAGON">
+		<aggressive>LDF5_V_KILLER_L LDF5_V_KILLER_D PC PC_DARK GUARD GUARD_DARK GENERAL GENERAL_DARK</aggressive>
+		<friendly>PC_DRAGON GUARD_DRAGON GENERAL_DRAGON</friendly>
+    </tribe>
+	<tribe name="LDF5_V_KILLER_L" base="GUARD">
+		<aggressive>LDF5_V_CHIEF_D LDF5_V_CHIEF_DR</aggressive>
+    </tribe>
+	<tribe name="LDF5_V_KILLER_D" base="GUARD_DARK">
+		<aggressive>LDF5_V_CHIEF_L LDF5_V_CHIEF_DR</aggressive>
+    </tribe>
+	<tribe name="LDF5_V_KILLER_DR" base="GUARD_DRAGON">
+		<aggressive>LDF5_V_CHIEF_L LDF5_V_CHIEF_D</aggressive>
+    </tribe>
+	<tribe name="LDF5_BABARIAN" base="MONSTER">
+		<aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+		<support>LDF5_BABARIAN</support>
+    </tribe>
+	<tribe name="IDF5_TD_WEAPON_PC" base="USEALL">
+		<hostile>MONSTER</hostile>
+		<friendly>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</friendly>
+    </tribe>
+	<tribe name="IDF5_TD_DOOR" base="USEALL">
+		<hostile>MONSTER</hostile>
+		<friendly>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</friendly>
+    </tribe>
+	<tribe name="IDF5_TD_ASSULT" base="MONSTER">
+		<aggressive>IDF5_TD_COMMANDER_DA IDF5_TD_COMMANDER_LI PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK IDF5_TD_WEAPON_PC</aggressive>
+		<friendly>VRITRA IDF5_TD_ASSULT</friendly>
+    </tribe>
+	<tribe name="IDF5_TD_SIEGE" base="MONSTER">
+		<aggressive>IDF5_TD_COMMANDER_DA IDF5_TD_COMMANDER_LI PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK IDF5_TD_DOOR</aggressive>
+		<friendly>VRITRA IDF5_TD_SIEGE</friendly>
+    </tribe>
+	<tribe name="TEST_ATTACKTOPC" base="GUARD_DARK">
+        <aggressive>PC</aggressive>
+        <support>PC_DARK</support>
+    </tribe>
+	<tribe name="TEST_ATTACKTOPC_DARK" base="GUARD">
+        <aggressive>PC_DARK</aggressive>
+        <support>PC</support>
+    </tribe>
+	<tribe name="TEST_ATTACKTONPC" base="MONSTER">
+        <aggressive>TEST_ATTACKTOPC TEST_ATTACKTOPC_DARK</aggressive>
+    </tribe>
+	<tribe name="TEST_SUPPORTNPC" base="USEALL">
+		<hostile>TEST_DRAKAN</hostile>
+		<support>PC PC_DARK</support>
+    </tribe>
+	<tribe name="TEST_DRAKAN" base="MONSTER">
+        <aggressive>TEST_SUPPORTNPC</aggressive>
+		<support>XDRAKAN</support>
+    </tribe>
+	<tribe name="LDF_V_CHIEF_L" base="GUARD">
+		<aggressive>LDF_V_KILLER_LEHPAR LDF_V_KILLER_KRALL LDF_V_KILLER_LYCAN</aggressive>
+    </tribe>
+	<tribe name="LDF_V_CHIEF_D" base="GUARD_DARK">
+		<aggressive>LDF_V_KILLER_LEHPAR LDF_V_KILLER_KRALL LDF_V_KILLER_LYCAN</aggressive>
+    </tribe>
+	<tribe name="LDF_V_KILLER_LEHPAR" base="MONSTER">
+		<aggressive>LDF_V_CHIEF_L LDF_V_CHIEF_D</aggressive>
+    </tribe>
+	<tribe name="LDF_V_KILLER_KRALL" base="MONSTER">
+		<aggressive>LDF_V_CHIEF_L LDF_V_CHIEF_D</aggressive>
+    </tribe>
+	<tribe name="LDF_V_KILLER_LYCAN" base="MONSTER">
+		<aggressive>LDF_V_CHIEF_L LDF_V_CHIEF_D</aggressive>
+    </tribe>
+	<tribe name="LDF_V_GUARD_LIGHT" base="GUARD">
+		<aggressive>LYCAN LEHPAR KRALL</aggressive>
+		<friendly>MONSTER</friendly>
+    </tribe>
+	<tribe name="LDF_V_GUARD_DARK" base="GUARD_DARK">
+		<aggressive>LYCAN LEHPAR KRALL</aggressive>
+		<friendly>MONSTER</friendly>
+    </tribe>
+	<tribe name="IDF5_TD_COMMANDER_LI" base="GUARD">
+		<aggressive>IDF5_TD_ASSULT IDF5_TD_SIEGE VRITRA</aggressive>
+		<hostile>MONSTER</hostile>
+    </tribe>
+	<tribe name="IDF5_TD_COMMANDER_DA" base="GUARD_DARK">
+		<aggressive>IDF5_TD_ASSULT IDF5_TD_SIEGE VRITRA</aggressive>
+		<hostile>MONSTER</hostile>
+    </tribe>
+	<tribe name="IDLDF5_UNDER_RUNE" base="MONSTER">
+		<aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+		<friendly>IDLDF5_UNDER_RUNE</friendly>
+    </tribe>
+	<tribe name="LDF5B_KILLER" base="USEALL">
+		<aggressive>LDF5B_DOOR_LI LDF5B_DOOR_DA LDF5B_DOOR_DR</aggressive>
+    </tribe>
+	<tribe name="LDF5B_DOOR_LI" base="GENERAL">
+		<aggressive>LDF5B_KILLER</aggressive>
+    </tribe>
+	<tribe name="LDF5B_DOOR_DA" base="GENERAL_DARK">
+		<aggressive>LDF5B_KILLER</aggressive>
+    </tribe>
+	<tribe name="LDF5B_DOOR_DR" base="GENERAL_DRAGON">
+		<aggressive>LDF5B_KILLER</aggressive>
+    </tribe>
+	<tribe name="FIELD_OBJECT_ALL_HOSTILEMONSTER" base="FIELD_OBJECT_LIGHT">
+        <hostile>MONSTER</hostile>
+		<neutral>PC_DARK</neutral>
+    </tribe>
+	<tribe name="LDF5B_FOBJ_HOSTILEPC" base="MONSTER">
+        <hostile>PC PC_DARK</hostile>
+		<neutral>GENERAL GENERAL_DARK GENERAL_DRAGON</neutral>
+    </tribe>
+	<tribe name="IDF5_TD_GUARD_LIGHT" base="GUARD">
+		<aggressive>IDF5_TD_ASSULT IDF5_TD_SIEGE VRITRA</aggressive>
+		<hostile>MONSTER</hostile>
+		<friendly>PC GENERAL</friendly>
+		<support>GUARD IDF5_TD_GUARD_LIGHT</support>
+    </tribe>
+	<tribe name="IDF5_TD_GUARD_DARK" base="GUARD_DARK">
+		<aggressive>IDF5_TD_ASSULT IDF5_TD_SIEGE VRITRA</aggressive>
+		<hostile>MONSTER</hostile>
+		<friendly>PC_DARK GENERAL_DARK</friendly>
+		<support>GUARD_DARK IDF5_TD_GUARD_DARK</support>
+    </tribe>
+	<tribe name="IDRUNEWP_VRITRA" base="MONSTER">
+		<aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+		<neutral>XDRAKAN</neutral>
+		<support>VRITRA IDRUNEWP_ESCORT IDRUNEWP_VRITRA</support>
+    </tribe>
+	<tribe name="IDRUNEWP_ESCORT" base="MONSTER">
+		<neutral>VRITRA IDRUNEWP_VRITRA</neutral>
+    </tribe>
+	<tribe name="IDRUNEWP_ANCIENTARM" base="MONSTER">
+		<aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+		<neutral>IDRUNEWP_ESCORT</neutral>
+    </tribe>
+	<tribe name="LDF5_DEBRIE" base="MONSTER">
+		<hostile>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</hostile>
+		<support>LDF5_DEBRIE</support>
+    </tribe>
+	<tribe name="LDF5_NEUT" base="MONSTER">
+		<hostile>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</hostile>
+		<support>LDF5_NEUT NEUT NEUTQUEEN</support>
+    </tribe>
+	<tribe name="IDLDF5RE_SOLO_Q" base="USEALL">
+        <aggressive>VRITRA</aggressive>
+    </tribe>
+	<tribe name="LDF5_SHULACK_DIRECT" base="MONSTER">
+		<aggressive>LDF5_NATIVE_DIRECT</aggressive>
+		<hostile>PC PC_DARK</hostile>
+    </tribe>
+	<tribe name="LDF5_NATIVE_DIRECT" base="MONSTER">
+		<aggressive>LDF5_SHULACK_DIRECT</aggressive>
+		<hostile>PC PC_DARK</hostile>
+    </tribe>
+	<tribe name="SHULACK_SLAVE_NOTAGGRESSIVE" base="MONSTER">
+        <support>SHULACK</support>
+    </tribe>
+	<tribe name="LDF5B_OUT_DOOR_KILLER_LI" base="GENERAL">
+		<aggressive>LDF5B_DOOR_LI LDF5B_DOOR_DR</aggressive>
+    </tribe>
+	<tribe name="LDF5B_OUT_DOOR_KILLER_DA" base="GENERAL_DARK">
+		<aggressive>LDF5B_DOOR_DA LDF5B_DOOR_DR</aggressive>
+    </tribe>
+	<tribe name="LDF5_MUTA" base="MONSTER">
+		<hostile>PC PC_DARK</hostile>
+		<support>LDF5_MUTA</support>
+    </tribe>
+	<tribe name="USEALL_LDF5_TOWER_LI" base="GENERAL">
+        <aggressive>PC_DARK GUARD_DARK GENERAL_DARK</aggressive>
+    </tribe>
+	<tribe name="USEALL_LDF5_TOWER_DA" base="GENERAL_DARK">
+        <aggressive>PC GUARD GENERAL</aggressive>
+    </tribe>
+	<tribe name="MONSTER_FRIENDLY_LDFCHIEF" base="MONSTER">
+        <neutral>LDF_V_CHIEF_L LDF_V_CHIEF_D</neutral>
+    </tribe>
+	<tribe name="USEALL_TELEPORTER_LI" base="GENERAL">
+        <none>MONSTER</none>
+    </tribe>
+	<tribe name="USEALL_TELEPORTER_DA" base="GENERAL_DARK">
+        <none>MONSTER</none>
+    </tribe>
+	<tribe name="IDASTERIA_IU_MONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK IDASTERIA_IU_POLYMORPH_L IDASTERIA_IU_POLYMORPH_D</aggressive>
+		<support>IDASTERIA_IU_MONSTER IDASTERIA_IU_MONSTER2</support>
+		<none>IDASTERIA_IU_NPC</none>
+    </tribe>
+	<tribe name="IDASTERIA_IU_NPC" base="USEALL">
+        <hostile>IDASTERIA_IU_MONSTER IDASTERIA_IU_MONSTER2</hostile>
+		<friendly>IDASTERIA_IU_POLYMORPH_L IDASTERIA_IU_POLYMORPH_D PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="IDASTERIA_IU_POLYMORPH_L" base="PC">
+        <hostile>IDASTERIA_IU_MONSTER IDASTERIA_IU_MONSTER2</hostile>
+        <friendly>PC_DARK IDASTERIA_IU_ATK</friendly>
+    </tribe>
+	<tribe name="IDASTERIA_IU_POLYMORPH_D" base="PC_DARK">
+        <hostile>IDASTERIA_IU_MONSTER IDASTERIA_IU_MONSTER2</hostile>
+        <friendly>PC IDASTERIA_IU_ATK</friendly>
+    </tribe>
+	<tribe name="IDF5_R2_CANNON" base="USEALL">
+        <hostile>IDF5_R2_CANNON_ATTACK</hostile>
+        <friendly>MONSTER</friendly>
+    </tribe>
+    <tribe name="IDF5_R2_CANNON_ATTACK" base="MONSTER">
+        <aggressive>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK</aggressive>
+        <friendly>IDF5_R2_CANNON</friendly>
+    </tribe>
+	<tribe name="IDASTERIA_IU_ATK" base="MONSTER">
+        <friendly>IDASTERIA_IU_POLYMORPH_L IDASTERIA_IU_POLYMORPH_D PC PC_DARK</friendly>
+        <none>IDASTERIA_IU_NPC</none>
+    </tribe>
+	<tribe name="USEALL_HOSTILEPC" base="USEALL">
+        <hostile>PC PC_DARK PET PET_DARK</hostile>
+	</tribe>
+	<tribe name="IDRUNEWP_RUNEDEVICE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+        <support>IDRUNEWP_ANCIENTARM</support>
+    </tribe>
+	<tribe name="IDASTERIA_IU_MONSTER2" base="MONSTER">
+        <hostile>PC PC_DARK IDASTERIA_IU_POLYMORPH_L IDASTERIA_IU_POLYMORPH_D</hostile>
+        <support>IDASTERIA_IU_MONSTER IDASTERIA_IU_MONSTER2</support>
+        <none>IDASTERIA_IU_NPC</none>
+    </tribe>
+	<tribe name="NONAGRRESSIVEFRIENDLYVRITRA" base="MONSTER">
+        <hostile>PC_DARK GUARD_DARK GENERAL_DARK</hostile>
+        <friendly>VRITRA VRITRASUPPORT IDVRITRA_BASE_REBIRTH IDF5_TD_ASSULT IDF5_TD_SIEGE AGRRESSIVEFRIENDLYVRITRA AGRRESSIVEFRIENDLYVRITRA2 VRITRATANK</friendly>
+    </tribe>
+	<tribe name="IDVRITRA_BASE_REBIRTH" base="MONSTER">
+        <aggressive>VRITRA VRITRASUPPORT</aggressive>
+	</tribe>
+	<tribe name="IDKAMAR_VRITRA" base="GUARD_DRAGON">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <hostile>IDKAMAR_SIEGEWEAPON_LIGHT IDKAMAR_SIEGEWEAPON_DARK</hostile>
+        <friendly>IDKAMAR_PROTECTGUARD_LIGHT IDKAMAR_PROTECTGUARD_DARK</friendly>
+        <support>IDKAMAR_VRITRA</support>
+    </tribe>
+	<tribe name="IDRUNEWP_VRITRADEVICE" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+        <neutral>XDRAKAN</neutral>
+        <support>VRITRA IDRUNEWP_ESCORT IDRUNEWP_VRITRA</support>
+    </tribe>
+	<tribe name="IDKAMAR_SIEGEWEAPON_LIGHT" base="GUARD">
+        <aggressive>IDKAMAR_CANNON</aggressive>
+        <hostile>IDKAMAR_VRITRA</hostile>
+    </tribe>
+	<tribe name="IDKAMAR_SIEGEWEAPON_DARK" base="GUARD_DARK">
+        <aggressive>IDKAMAR_CANNON</aggressive>
+        <hostile>IDKAMAR_VRITRA</hostile>
+    </tribe>
+	<tribe name="IDF5_TD_WEAPON_PC_DARK" base="PC_DARK">
+        <hostile>MONSTER PC GENERAL GUARD IDF5_TD_WEAPON_PC</hostile>
+        <friendly>PC_DARK GENERAL_DARK GUARD_DARK IDF5_TD_WEAPON_PC_DARK</friendly>
+    </tribe>
+	<tribe name="IDRUNEWP_AGGRESSIVEANCIENTARM" base="USEALL">
+        <aggressive>IDRUNEWP_ANCIENTARM</aggressive>
+    </tribe>
+	<tribe name="VRITRASUPPORT" base="GUARD_DRAGON">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <neutral>XDRAKAN</neutral>
+        <friendly>VRITRA NONAGRRESSIVEFRIENDLYVRITRA IDVRITRA_BASE_REBIRTH IDF5_TD_ASSULT IDF5_TD_SIEGE AGRRESSIVEFRIENDLYVRITRA AGRRESSIVEFRIENDLYVRITRA2 VRITRATANK</friendly>
+        <support>VRITRASUPPORT</support>
+    </tribe>
+	<tribe name="AGRRESSIVEFRIENDLYVRITRA" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <neutral>XDRAKAN</neutral>
+        <friendly>VRITRA NONAGRRESSIVEFRIENDLYVRITRA IDVRITRA_BASE_REBIRTH IDF5_TD_ASSULT IDF5_TD_SIEGE VRITRASUPPORT AGRRESSIVEFRIENDLYVRITRA2 VRITRATANK</friendly>
+        <support>AGRRESSIVEFRIENDLYVRITRA</support>
+    </tribe>
+	<tribe name="AGRRESSIVEFRIENDLYVRITRA2" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <neutral>XDRAKAN</neutral>
+        <friendly>VRITRA NONAGRRESSIVEFRIENDLYVRITRA IDVRITRA_BASE_REBIRTH IDF5_TD_ASSULT IDF5_TD_SIEGE AGRRESSIVEFRIENDLYVRITRA VRITRASUPPORT AGRRESSIVEFRIENDLYVRITRA VRITRATANK</friendly>
+        <support>AGRRESSIVEFRIENDLYVRITRA2</support>
+    </tribe>
+	<tribe name="VRITRATANK" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <neutral>XDRAKAN</neutral>
+        <friendly>VRITRA NONAGRRESSIVEFRIENDLYVRITRA IDVRITRA_BASE_REBIRTH IDF5_TD_ASSULT IDF5_TD_SIEGE AGRRESSIVEFRIENDLYVRITRA AGRRESSIVEFRIENDLYVRITRA2</friendly>
+        <support>VRITRASUPPORT</support>
+    </tribe>
+	<tribe name="AGRRESSIVEVRITRAANDPC" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK VRITRA NONAGRRESSIVEFRIENDLYVRITRA IDVRITRA_BASE_REBIRTH IDF5_TD_ASSULT IDF5_TD_SIEGE AGRRESSIVEFRIENDLYVRITRA AGRRESSIVEFRIENDLYVRITRA2 VRITRASUPPORT</aggressive>
+    </tribe>
+	<tribe name="TIGRAN" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>TIGRAN</support>
+    </tribe>
+	<tribe name="IDF5U1_VRITRA" base="GUARD_DRAGON">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT IDF5U1_TANK IDF5U1_PCFLAG</aggressive>
+        <neutral>XDRAKAN</neutral>
+        <support>IDF5U1_VRITRA IDF5U1_VRITRAFLAG IDF5U1_VRITRAWEAPON</support>
+    </tribe>
+	<tribe name="IDF5U1_VRITRAWEAPON" base="MONSTER">
+        <hostile>PC GUARD PC_DARK GUARD_DARK ESCORT IDF5U1_TANK IDF5U1_PCFLAG</hostile>
+        <neutral>XDRAKAN</neutral>
+        <friendly>IDF5U1_VRITRA</friendly>
+    </tribe>
+	<tribe name="IDF5U1_VRITRATRAP" base="GUARD_DRAGON">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT IDF5U1_TANK IDF5U1_PCFLAG</aggressive>
+        <neutral>XDRAKAN</neutral>
+        <friendly>IDF5U1_VRITRA</friendly>
+        <support>IDF5U1_VRITRAFLAG IDF5U1_VRITRAWEAPON</support>
+    </tribe>
+	<tribe name="IDF5U1_TANK" base="USEALL">
+        <hostile>IDF5U1_VRITRAWEAPON</hostile>
+        <neutral>IDF5U1_AGGRESSIVETANK IDF5U1_VRITRAFLAG IDF5U1_VRITRATRAP MONSTER</neutral>
+    </tribe>
+	<tribe name="IDF5U1_AGGRESSIVETANK" base="MONSTER">
+        <aggressive>IDF5U1_TANK</aggressive>
+    </tribe>
+	<tribe name="IDKAMAR_SIEGEWEAPON_ATTACK" base="MONSTER">
+        <aggressive>PROTECTGUARD_LIGHT_SIEGEWEAPON PROTECTGUARD_DARK_SIEGEWEAPON</aggressive>
+    </tribe>
+	<tribe name="PROTECTGUARD_LIGHT_SIEGEWEAPON" base="GUARD">
+        <aggressive>IDKAMAR_CANNON</aggressive>
+        <friendly>MONSTER</friendly>
+    </tribe>
+	<tribe name="PROTECTGUARD_DARK_SIEGEWEAPON" base="GUARD_DARK">
+        <aggressive>IDKAMAR_CANNON</aggressive>
+        <friendly>MONSTER</friendly>
+    </tribe>
+	<tribe name="IDF5_TD_BOMBER" base="MONSTER">
+        <aggressive>IDF5_TD_DOOR</aggressive>
+        <friendly>VRITRA IDF5_TD_SIEGE IDF5_TD_ASSULT VRITRASUPPORT PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="IDF5U2_VRITRA" base="GUARD_DRAGON">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+        <neutral>MONSTER IDF5U2_GUARD IDF5U2_GUARD_DARK IDF5U2_SHULACK IDF5U2_SHULACK_SLAVE</neutral>
+        <friendly>IDF5U2_ARROWTRAP</friendly>
+        <support>IDF5U2_VRITRA</support>
+    </tribe>
+	<tribe name="IDF5U2_VRITRATRAP" base="GUARD_DRAGON">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+        <neutral>MONSTER IDF5U2_GUARD IDF5U2_GUARD_DARK IDF5U2_SHULACK IDF5U2_SHULACK_SLAVE</neutral>
+        <friendly>IDF5U2_VRITRA IDF5U2_ARROWTRAP</friendly>
+    </tribe>
+	<tribe name="IDF5U2_GUARD" base="GUARD">
+        <neutral>MONSTER IDF5U2_VRITRA IDF5U2_VRITRATRAP IDF5U2_SHULACK IDF5U2_SHULACK_SLAVE</neutral>
+        <friendly>IDF5U2_ARROWTRAP</friendly>
+        <support>IDF5U2_GUARD</support>
+    </tribe>
+	<tribe name="IDF5U2_GUARD_DARK" base="GUARD_DARK">
+        <neutral>MONSTER IDF5U2_VRITRA IDF5U2_VRITRATRAP IDF5U2_SHULACK IDF5U2_SHULACK_SLAVE</neutral>
+        <friendly>IDF5U2_ARROWTRAP</friendly>
+        <support>IDF5U2_GUARD_DARK</support>
+    </tribe>
+	<tribe name="IDF5U2_SHULACK" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <neutral>MONSTER IDF5U2_GUARD IDF5U2_GUARD_DARK IDF5U2_VRITRA IDF5U2_VRITRATRAP</neutral>
+        <friendly>IDF5U2_ARROWTRAP</friendly>
+        <support>IDF5U2_SHULACK IDF5U2_SHULACK_ESCORT</support>
+    </tribe>
+	<tribe name="IDF5U2_SHULACK_SLAVE" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <neutral>MONSTER IDF5U2_GUARD IDF5U2_GUARD_DARK IDF5U2_VRITRA IDF5U2_VRITRATRAP</neutral>
+        <friendly>IDF5U2_ARROWTRAP</friendly>
+        <support>IDF5U2_SHULACK IDF5U2_SHULACK_SLAVE IDF5U2_SHULACK_ESCORT</support>
+    </tribe>
+	<tribe name="IDF5U2_SHULACK_ESCORT" base="MONSTER">
+        <friendly>IDF5U2_ARROWTRAP</friendly>
+    </tribe>
+	<tribe name="IDF5U1_VRITRAFLAG" base="MONSTER">
+        <hostile>PC GUARD PC_DARK GUARD_DARK ESCORT IDF5U1_TANK IDF5U1_PCFLAG</hostile>
+        <neutral>XDRAKAN</neutral>
+        <friendly>IDF5U1_VRITRA</friendly>
+    </tribe>
+	<tribe name="IDF5U1_PCFLAG" base="NONE">
+        <hostile>IDF5U1_VRITRA IDF5U1_VRITRAWEAPON IDF5U1_VRITRATRAP IDF5U1_AGGRESSIVETANK</hostile>
+        <neutral>PC PC_DARK IDF5U1_TANK</neutral>
+    </tribe>
+	<tribe name="IDKAMAR_PROTECTGUARD_LIGHT" base="GUARD">
+        <friendly>MONSTER IDKAMAR_VRITRA</friendly>
+    </tribe>
+	<tribe name="IDKAMAR_PROTECTGUARD_DARK" base="GUARD_DARK">
+        <friendly>MONSTER IDKAMAR_VRITRA</friendly>
+    </tribe>
+	<tribe name="IDF5U2_ARROWTRAP" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK</hostile>
+    </tribe>
+	<tribe name="IDKAMAR_CANNON" base="USEALL">
+        <aggressive>IDKAMAR_SIEGEWEAPON_DARK IDKAMAR_SIEGEWEAPON_LIGHT PROTECTGUARD_LIGHT_SIEGEWEAPON PROTECTGUARD_DARK_SIEGEWEAPON</aggressive>
+    </tribe>
+	<tribe name="IDASTERIA_IU_WORLD_MONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK IDASTERIA_IU_WORLD_POLYMORPH_L IDASTERIA_IU_WORLD_POLYMORPH_D</aggressive>
+        <support>IDASTERIA_IU_WORLD_MONSTER IDASTERIA_IU_WORLD_MONSTER2</support>
+        <none>IDASTERIA_IU_WORLD_NPC</none>
+    </tribe>
+	<tribe name="IDASTERIA_IU_WORLD_NPC" base="USEALL">
+        <hostile>IDASTERIA_IU_WORLD_MONSTER IDASTERIA_IU_WORLD_MONSTER2</hostile>
+        <friendly>IDASTERIA_IU_WORLD_POLYMORPH_L IDASTERIA_IU_WORLD_POLYMORPH_D PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="IDASTERIA_IU_WORLD_POLYMORPH_L" base="PC">
+        <hostile>IDASTERIA_IU_WORLD_MONSTER IDASTERIA_IU_WORLD_MONSTER2</hostile>
+        <friendly>PC_DARK</friendly>
+    </tribe>
+	<tribe name="IDASTERIA_IU_WORLD_POLYMORPH_D" base="PC_DARK">
+        <hostile>IDASTERIA_IU_WORLD_MONSTER IDASTERIA_IU_WORLD_MONSTER2</hostile>
+        <friendly>PC</friendly>
+    </tribe>
+	<tribe name="IDASTERIA_IU_WORLD_MONSTER2" base="MONSTER">
+        <hostile>PC PC_DARK IDASTERIA_IU_WORLD_POLYMORPH_L IDASTERIA_IU_WORLD_POLYMORPH_D</hostile>
+        <support>IDASTERIA_IU_WORLD_MONSTER IDASTERIA_IU_WORLD_MONSTER2</support>
+        <none>IDASTERIA_IU_WORLD_NPC</none>
+    </tribe>
+	<tribe name="IDF5U2_FOBJ" base="MONSTER">
+        <neutral>PC PC_DARK PET PET_DARK</neutral>
+        <friendly>IDF5U2_FOBJ</friendly>
+    </tribe>
+	<tribe name="IDF5_TELEPORT_MONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK IDF5_TELEPORT_NPC</aggressive>
+        <support>IDF5_TELEPORT_MONSTER</support>
+    </tribe>
+	<tribe name="IDF5_TELEPORT_NPC" base="USEALL">
+        <aggressive>IDF5_TELEPORT_MONSTER</aggressive>
+        <friendly>PC PC_DARK PET PET_DARK</friendly>
+        <support>IDF5_TELEPORT_NPC</support>
+    </tribe>
+	<tribe name="UNDER_01_WAR_VRITRA" base="GUARD_DRAGON">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT IDLDF5RE_SOLO_Q</aggressive>
+        <neutral>IDF5U1_WAR_01_GUARD IDF5U1_WAR_01_GUARD_DARK XDRAKAN</neutral>
+        <friendly>VRITRA VRITRASUPPORT NONAGRRESSIVEFRIENDLYVRITRA AGRRESSIVEFRIENDLYVRITRA AGRRESSIVEFRIENDLYVRITRA2 IDVRITRA_BASE_REBIRTH IDF5_TD_ASSULT IDF5_TD_SIEGE IDRUNEWP_VRITRA IDRUNEWP_ANCIENTARM</friendly>
+        <support>UNDER_01_WAR_VRITRA</support>
+    </tribe>
+	<tribe name="IDF5U3_OBJ" base="USEALL">
+        <hostile>IDF5U3_VRITRA_01 IDF5U3_VRITRA_02 IDF5U3_VRITRA_HIDE VRITRA VRITRASUPPORT IDF5U3_VRITRA_SUM IDF5U3_VRITRA</hostile>
+        <friendly>PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="IDF5U3_VRITRA_01" base="MONSTER">
+        <aggressive>IDF5U3_OBJ</aggressive>
+        <hostile>PC PC_DARK</hostile>
+        <neutral>XDRAKAN</neutral>
+        <friendly>IDF5U3_VRITRA_HIDE IDF5U3_VRITRA_02 IDF5U3_CANNON IDF5U3_VRITRA_SUM IDF5U3_VRITRA_BOSS_SUM</friendly>
+        <support>VRITRA VRITRASUPPORT IDF5U3_VRITRA_01 IDF5U3_VRITRA</support>
+    </tribe>
+    <tribe name="IDF5U3_VRITRA_02" base="MONSTER">
+        <aggressive>IDF5U3_OBJ</aggressive>
+        <hostile>PC PC_DARK</hostile>
+        <neutral>XDRAKAN</neutral>
+        <friendly>IDF5U3_VRITRA_HIDE IDF5U3_VRITRA_01 IDF5U3_CANNON IDF5U3_VRITRA_SUM IDF5U3_VRITRA_BOSS_SUM</friendly>
+        <support>VRITRA VRITRASUPPORT IDF5U3_VRITRA_02 IDF5U3_VRITRA</support>
+    </tribe>
+	<tribe name="IDF5U3_VRITRA_HIDE" base="MONSTER">
+        <aggressive>IDF5U3_OBJ</aggressive>
+        <hostile>PC PC_DARK</hostile>
+        <neutral>XDRAKAN</neutral>
+        <friendly>IDF5U3_VRITRA_01 IDF5U3_VRITRA_02 IDF5U3_CANNON IDF5U3_VRITRA_SUM</friendly>
+        <support>VRITRA VRITRASUPPORT IDF5U3_VRITRA_HIDE IDF5U3_VRITRA</support>
+    </tribe>
+	<tribe name="IDF5_TD_WAR_LIGHT" base="GUARD">
+       <friendly>GENERAL_DARK MONSTER VRITRA VRITRASUPPORT</friendly>
+    </tribe>
+	<tribe name="IDF5_TD_WAR_DARK" base="GUARD_DARK">
+        <friendly>GENERAL MONSTER VRITRA VRITRASUPPORT</friendly>
+    </tribe>
+	<tribe name="IDF5U3_CANNON" base="USEALL">
+        <hostile>IDF5U3_VRITRA_01 IDF5U3_VRITRA_02 IDF5U3_VRITRA_HIDE VRITRA VRITRASUPPORT</hostile>
+        <support>PC PC_DARK IDF5U3_CANNON IDF5U3_OBJ</support>
+    </tribe>
+	<tribe name="IDF5U1_WAR_01_GUARD" base="GUARD">
+        <aggressive>MONSTER PC_DARK GENERAL_DARK IDF5U1_WAR_01_GUARD_DARK</aggressive>
+        <neutral>UNDER_01_WAR_VRITRA FIELD_OBJECT_ALL FIELD_OBJECT_LIGHT FIELD_OBJECT_DARK IDF5U1_WAR_01_REWARD</neutral>
+        <friendly>PC IDF5U1_WAR_01_GUARD</friendly>
+        <support>PC IDF5U1_WAR_01_GUARD</support>
+    </tribe>
+	<tribe name="IDF5U1_WAR_01_GUARD_DARK" base="GUARD_DARK">
+        <aggressive>MONSTER PC GENERAL IDF5U1_WAR_01_GUARD</aggressive>
+        <neutral>UNDER_01_WAR_VRITRA FIELD_OBJECT_ALL FIELD_OBJECT_LIGHT FIELD_OBJECT_DARK IDF5U1_WAR_01_REWARD</neutral>
+        <friendly>PC_DARK IDF5U1_WAR_01_GUARD_DARK</friendly>
+        <support>PC_DARK IDF5U1_WAR_01_GUARD_DARK</support>
+    </tribe>
+	<tribe name="IDF5U1_WAR_01_REWARD" base="MONSTER"/>
+	<tribe name="IDF5U3_VRITRA" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <hostile>IDF5U3_OBJ</hostile>
+        <friendly>IDF5U3_VRITRA_SUM IDF5U3_VRITRA_HIDE IDF5U3_VRITRA_01 IDF5U3_VRITRA_02 IDF5U3_CANNON IDF5U3_VRITRA_BOSS_SUM</friendly>
+        <support>IDF5U3_VRITRA</support>
+    </tribe>
+	<tribe name="IDF5U3_VRITRA_SUM" base="MONSTER">
+        <aggressive>PC PC_DARK IDF5U3_OBJ</aggressive>
+        <friendly>IDF5U3_VRITRA_SUM IDF5U3_CANNON IDF5U3_VRITRA_BOSS_SUM</friendly>
+        <support>IDF5U3_VRITRA IDF5U3_VRITRA_HIDE IDF5U3_VRITRA_01 IDF5U3_VRITRA_02</support>
+	</tribe>
+    <tribe name="IDF5U3_VRITRA_BOSS_SUM" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>IDF5U3_VRITRA</support>
+    </tribe>
+	<tribe name="GAB1_01_POINT_01">
+        <aggressive>GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_SUB_DEST_70 GAB1_SUB_DEST_71 GAB1_SUB_DEST_72 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_KILLER GAB1_MONSTER_NONAGGRE GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET GAB1_SUB_DEST_69 GAB1_SUB_DEST_69_AGGRESSIVE</friendly>
+    </tribe>
+    <tribe name="GAB1_01_POINT_02">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_01_POINT_03">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+	<tribe name="GAB1_01_POINT_04">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_01_POINT_05">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+	<tribe name="GAB1_02_POINT_01">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_SUB_DEST_69 GAB1_SUB_DEST_71 GAB1_SUB_DEST_72 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_KILLER GAB1_MONSTER_NONAGGRE GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET GAB1_SUB_DEST_70 GAB1_SUB_DEST_70_AGGRESSIVE</friendly>
+    </tribe>
+    <tribe name="GAB1_02_POINT_02">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_02_POINT_03">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_02_POINT_04">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_02_POINT_05">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+	<tribe name="GAB1_03_POINT_01">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_SUB_DEST_69 GAB1_SUB_DEST_70 GAB1_SUB_DEST_72 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_KILLER GAB1_MONSTER_NONAGGRE GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET GAB1_SUB_DEST_71 GAB1_SUB_DEST_71_AGGRESSIVE</friendly>
+    </tribe>
+    <tribe name="GAB1_03_POINT_02">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_03_POINT_03">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_03_POINT_04">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_03_POINT_05">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+	<tribe name="GAB1_04_POINT_01">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_SUB_DEST_69 GAB1_SUB_DEST_70 GAB1_SUB_DEST_71 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_KILLER GAB1_MONSTER_NONAGGRE GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET GAB1_SUB_DEST_72 GAB1_SUB_DEST_72_AGGRESSIVE</friendly>
+    </tribe>
+    <tribe name="GAB1_04_POINT_02">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_04_POINT_03">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_04_POINT_04">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+    <tribe name="GAB1_04_POINT_05">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER GAB1_KILLER</aggressive>
+        <hostile>GAB1_MONSTER_NONAGGRE</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET</friendly>
+    </tribe>
+	<tribe name="GAB1_MONSTER">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT</aggressive>
+        <friendly>GAB1_SHUGO GAB1_TURRET GAB1_KILLER</friendly>
+    </tribe>
+	<tribe name="GAB1_SHUGO">
+        <friendly>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 </friendly>
+    </tribe>
+	<tribe name="IDFORTRESS_SWITCH_LIGHT" base="GUARD">
+        <neutral>MONSTER IDFORTRESS_VRITRA VRITRASUPPORT IDFORTRESS_VRITRA</neutral>
+    </tribe>
+	<tribe name="IDFORTRESS_SWITCH_DARK" base="GUARD_DARK">
+        <neutral>MONSTER IDFORTRESS_VRITRA VRITRASUPPORT GENERAL IDFORTRESS_VRITRA</neutral>
+    </tribe>
+	<tribe name="IDFORTRESS_VRITRA" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+        <neutral>MONSTER IDFORTRESS_SWITCH_LIGHT IDFORTRESS_SWITCH_DARK</neutral>
+    </tribe>
+	<tribe name="GAB1_01_REMNANT">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT</aggressive>
+        <friendly>GAB1_SHUGO</friendly>
+    </tribe>    
+	<tribe name="GAB1_02_REMNANT">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT</aggressive>
+        <friendly>GAB1_SHUGO</friendly>
+    </tribe>    
+	<tribe name="GAB1_03_REMNANT">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_04_REMNANT</aggressive>
+        <friendly>GAB1_SHUGO</friendly>
+    </tribe>    
+	<tribe name="GAB1_04_REMNANT">
+        <aggressive>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT</aggressive>
+        <friendly>GAB1_SHUGO</friendly>
+    </tribe>
+	<tribe name="IDRUNEWP_RUNEFRIEND" base="USEALL">
+        <support>IDRUNEWP_ANCIENTARM</support>
+	</tribe>
+	<tribe name="IDLDF4_RE_01" base="MONSTER">
+        <aggressive>PC PC_DARK IDLDF4_RE_01_GUARD IDLDF4_RE_01_GUARD_DARK</aggressive>
+        <neutral>IDLDF4_RE_01_DOOR</neutral>
+        <support>IDLDF4_RE_01 AGGRESSIVESINGLEMONSTER IDLDF4_RE_01_FRIEND</support>
+    </tribe>
+    <tribe name="IDLDF4_RE_01_DOOR" base="USEALL">
+        <neutral>IDLDF4_RE_01 AGGRESSIVESINGLEMONSTER IDLDF4_RE_01_FRIEND</neutral>
+        <friendly>PC PC_DARK IDLDF4_RE_01_GUARD</friendly>
+    </tribe>
+	<tribe name="IDLDF4_RE_01_GUARD" base="GUARD">
+        <aggressive>IDLDF4_RE_01 AGGRESSIVESINGLEMONSTER</aggressive>
+        <support>PC</support>
+		<none>ERESUKIGAL IDLDF4_RE_01_GUARD_DARK PC_DARK</none>
+    </tribe>
+	<tribe name="GAB1_TURRET">
+        <friendly>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT GAB1_MONSTER</friendly>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_SINGLE" base="MONSTER">
+        <hostile>PC PC_DARK</hostile>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_SAAM" base="MONSTER">
+        <hostile>PC PC_DARK</hostile>
+        <support>LDF4_ADVANCE_SAAM</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_WORKER" base="MONSTER">
+        <hostile>PC PC_DARK</hostile>
+        <support>LDF4_ADVANCE_WORKER</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_CHAPIRE_SINGLE" base="MONSTER">
+        <hostile>PC PC_DARK</hostile>
+        <support>LDF4_ADVANCE_CHAPIRE_SINGLE</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_POTCRAB" base="MONSTER">
+        <hostile>PC PC_DARK</hostile>
+        <support>LDF4_ADVANCE_POTCRAB</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_TIAMAT">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>LDF4_ADVANCE_TIAMAT</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_MANDURI">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>LDF4_ADVANCE_MANDURI</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_CHAPIRE_SUPPORT">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>LDF4_ADVANCE_CHAPIRE_SUPPORT</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_NEUTH">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>LDF4_ADVANCE_NEUTH</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_XIPRTO">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>LDF4_ADVANCE_XIPRTO</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_POPOKU">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>LDF4_ADVANCE_POPOKU</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_MUDTHORN">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>LDF4_ADVANCE_MUDTHORN</support>
+    </tribe>
+	<tribe name="IDLDF4_RE_01_GUARD_DARK" base="GUARD_DARK">
+        <aggressive>IDLDF4_RE_01 AGGRESSIVESINGLEMONSTER</aggressive>
+        <support>PC_DARK</support>
+		<none>ERESUKIGAL IDLDF4_RE_01_GUARD PC</none>
+    </tribe>
+	<tribe name="GAB1_SUB_DRAKAN">
+        <aggressive>GAB1_01_POINT_01 GAB1_02_POINT_01 GAB1_03_POINT_01 GAB1_04_POINT_01</aggressive>
+        <hostile>GAB1_SUB_DEST_69 GAB1_SUB_DEST_70 GAB1_SUB_DEST_71 GAB1_SUB_DEST_72 GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</hostile>
+        <support>GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN</support>
+    </tribe>
+	<tribe name="GAB1_SUB_NONAGGRESSIVE_DRAKAN">
+        <hostile>GAB1_01_POINT_01 GAB1_02_POINT_01 GAB1_03_POINT_01 GAB1_04_POINT_01 GAB1_SUB_DEST_69 GAB1_SUB_DEST_70 GAB1_SUB_DEST_71 GAB1_SUB_DEST_72 GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</hostile>
+        <friendly>GAB1_SUB_NONAGGRESSIVE_DRAKAN</friendly>
+        <support>GAB1_SUB_DRAKAN</support>
+    </tribe>
+	<tribe name="GAB1_SUB_DEST_69">
+        <hostile>GAB1_02_POINT_01 GAB1_03_POINT_01 GAB1_04_POINT_01 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_DEST_70 GAB1_SUB_DEST_71 GAB1_SUB_DEST_72 GAB1_SUB_KILLER GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</hostile>
+        <friendly>GAB1_01_POINT_01 GAB1_SUB_DEST_69 GAB1_SUB_DEST_69_AGGRESSIVE</friendly>
+    </tribe>
+    <tribe name="GAB1_SUB_DEST_70">
+        <hostile>GAB1_01_POINT_01 GAB1_03_POINT_01 GAB1_04_POINT_01 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_DEST_69 GAB1_SUB_DEST_71 GAB1_SUB_DEST_72 GAB1_SUB_KILLER GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</hostile>
+        <friendly>GAB1_02_POINT_01 GAB1_SUB_DEST_70 GAB1_SUB_DEST_70_AGGRESSIVE</friendly>
+    </tribe>
+    <tribe name="GAB1_SUB_DEST_71">
+        <hostile>GAB1_01_POINT_01 GAB1_02_POINT_01 GAB1_04_POINT_01 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_DEST_69 GAB1_SUB_DEST_70 GAB1_SUB_DEST_72 GAB1_SUB_KILLER GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</hostile>
+        <friendly>GAB1_03_POINT_01 GAB1_SUB_DEST_71 GAB1_SUB_DEST_71_AGGRESSIVE</friendly>
+    </tribe>
+    <tribe name="GAB1_SUB_DEST_72">
+        <hostile>GAB1_01_POINT_01 GAB1_02_POINT_01 GAB1_03_POINT_01 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_DEST_69 GAB1_SUB_DEST_70 GAB1_SUB_DEST_71 GAB1_SUB_KILLER GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE</hostile>
+        <friendly>GAB1_04_POINT_01 GAB1_SUB_DEST_72 GAB1_SUB_DEST_72_AGGRESSIVE</friendly>
+    </tribe>
+	<tribe name="GAB1_SUB_KILLER">
+        <aggressive>GAB1_SUB_DEST_69 GAB1_SUB_DEST_70 GAB1_SUB_DEST_71 GAB1_SUB_DEST_72 GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</aggressive>
+        <hostile>GAB1_01_POINT_01 GAB1_02_POINT_01 GAB1_03_POINT_01 GAB1_04_POINT_01</hostile>
+        <friendly>GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_ATTACKABLE_FOBJ</friendly>
+    </tribe>
+	<tribe name="GAB1_KILLER">
+        <aggressive>GAB1_01_POINT_01 GAB1_02_POINT_01 GAB1_03_POINT_01 GAB1_04_POINT_01</aggressive>
+        <friendly>GAB1_SHUGO GAB1_TURRET GAB1_MONSTER</friendly>
+    </tribe>
+	<tribe name="LDF5_FORTRESS_VRITRA" base="MONSTER">
+        <aggressive>LDF5_FORTRESS_LIGHT LDF5_FORTRESS_DARK</aggressive>
+    </tribe>
+	<tribe name="LDF5_FORTRESS_LIGHT" base="PC">
+        <aggressive>LDF5_FORTRESS_VRITRA LDF5_FORTRESS_DARK</aggressive>
+        <hostile>PC_DARK</hostile>
+    </tribe>
+	<tribe name="LDF5_FORTRESS_DARK" base="PC_DARK">
+        <aggressive>LDF5_FORTRESS_VRITRA LDF5_FORTRESS_LIGHT</aggressive>
+        <hostile>PC</hostile>
+    </tribe>
+	<tribe name="IDLDF4_RE_01_FRIEND" base="MONSTER">
+        <neutral>IDLDF4_RE_01_DOOR</neutral>
+        <friendly>IDLDF4_RE_01_DOOR</friendly>
+        <support>IDLDF4_RE_01 AGGRESSIVESINGLEMONSTER</support>
+    </tribe>
+	<tribe name="WORLDRAID_MONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <hostile>WORLDRAID_MONSTER_SANDWORMSUM</hostile>
+        <friendly>GUARD GUARD_DARK GUARD_DRAGON NEUTRAL_GUARD MONSTER AGGRESSIVESINGLEMONSTER AGGRESSIVESUPPORTMONSTER XDRAKAN VRITRA WORLDRAID_MONSTER</friendly>
+    </tribe>
+	<tribe name="LDF5_DUMMY1" base="MONSTER"/>
+    <tribe name="LDF5_DUMMY2" base="MONSTER"/>
+	<tribe name="LDF5_DUMMY1_LGUARD" base="GENERAL">
+        <aggressive>LDF5_DUMMY1 LDF5_DUMMY2</aggressive>
+        <none>PC_DARK</none>
+    </tribe>
+	<tribe name="LDF5_DUMMY2_LGUARD" base="GENERAL">
+        <aggressive>LDF5_DUMMY1 LDF5_DUMMY2</aggressive>
+        <none>PC_DARK</none>
+    </tribe>
+	<tribe name="LDF5_DUMMY1_DGUARD" base="GENERAL_DARK">
+        <aggressive>LDF5_DUMMY1 LDF5_DUMMY2</aggressive>
+        <none>PC</none>
+    </tribe>	
+    <tribe name="LDF5_DUMMY2_DGUARD" base="GENERAL_DARK">
+        <aggressive>LDF5_DUMMY1 LDF5_DUMMY2</aggressive>
+        <neutral>LDF5_DUMMY1</neutral>
+        <none>PC</none>
+    </tribe>
+	<tribe name="LDF5_SPARRING1_LGUARD" base="GENERAL">
+        <aggressive>LDF5_SPARRING2_LGUARD</aggressive>
+        <none>PC_DARK</none>
+    </tribe>
+	<tribe name="LDF5_SPARRING2_LGUARD" base="GENERAL">
+        <aggressive>LDF5_SPARRING1_LGUARD</aggressive>
+        <none>PC_DARK</none>
+    </tribe>
+	<tribe name="LDF5_SPARRING1_DGUARD" base="GENERAL_DARK">
+        <aggressive>LDF5_SPARRING2_DGUARD</aggressive>
+        <none>PC</none>
+    </tribe>	
+    <tribe name="LDF5_SPARRING2_DGUARD" base="GENERAL_DARK">
+        <aggressive>LDF5_SPARRING1_DGUARD</aggressive>
+        <none>PC</none>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_LGUARD" base="GUARD">
+        <aggressive>PC_DARK LDF4_ADVANCE_DGUARD LDF4_ADVANCE_DRGUARD</aggressive>
+        <neutral>LDF4_ADVANCE_SINGLE LDF4_ADVANCE_SAAM LDF4_ADVANCE_WORKER LDF4_ADVANCE_CHAPIRE_SINGLE LDF4_ADVANCE_POTCRAB LDF4_ADVANCE_TIAMAT LDF4_ADVANCE_MANDURI LDF4_ADVANCE_CHAPIRE_SUPPORT LDF4_ADVANCE_NEUTH LDF4_ADVANCE_XIPRTO LDF4_ADVANCE_POPOKU LDF4_ADVANCE_MUDTHORN</neutral>
+        <support>PC LDF4_ADVANCE_LGUARD</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_DGUARD" base="GUARD_DARK">
+        <aggressive>PC LDF4_ADVANCE_LGUARD LDF4_ADVANCE_DRGUARD</aggressive>
+        <neutral>LDF4_ADVANCE_SINGLE LDF4_ADVANCE_SAAM LDF4_ADVANCE_WORKER LDF4_ADVANCE_CHAPIRE_SINGLE LDF4_ADVANCE_POTCRAB LDF4_ADVANCE_TIAMAT LDF4_ADVANCE_MANDURI LDF4_ADVANCE_CHAPIRE_SUPPORT LDF4_ADVANCE_NEUTH LDF4_ADVANCE_XIPRTO LDF4_ADVANCE_POPOKU LDF4_ADVANCE_MUDTHORN</neutral>
+        <support>PC_DARK LDF4_ADVANCE_DGUARD</support>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_DRGUARD" base="GUARD_DRAGON">
+        <aggressive>PC PC_DARK LDF4_ADVANCE_LGUARD LDF4_ADVANCE_DGUARD</aggressive>
+        <neutral>LDF4_ADVANCE_SINGLE LDF4_ADVANCE_SAAM LDF4_ADVANCE_WORKER LDF4_ADVANCE_CHAPIRE_SINGLE LDF4_ADVANCE_POTCRAB LDF4_ADVANCE_TIAMAT LDF4_ADVANCE_MANDURI LDF4_ADVANCE_CHAPIRE_SUPPORT LDF4_ADVANCE_NEUTH LDF4_ADVANCE_XIPRTO LDF4_ADVANCE_POPOKU LDF4_ADVANCE_MUDTHORN</neutral>
+        <support>LDF4_ADVANCE_DRGUARD</support>
+    </tribe>
+	<tribe name="WORLDRAID_MONSTER_SANDWORMSUM" base="MONSTER">
+        <friendly>PC PC_DARK GUARD GUARD_DARK GUARD_DRAGON NEUTRAL_GUARD MONSTER AGGRESSIVESINGLEMONSTER AGGRESSIVESUPPORTMONSTER XDRAKAN VRITRA WORLDRAID_MONSTER WORLDRAID_MONSTER_SANDWORMSUM</friendly>
+    </tribe>
+	<tribe name="LDF5_FORTRESS_TANK_LIGHT" base="PC">
+        <hostile>GUARD_DARK GUARD_DRAGON MONSTER TELEPORTOR_LI TELEPORTOR_DA</hostile>
+        <support>PROTECTGUARD_LIGHT GENERAL GUARD</support>
+    </tribe>
+    <tribe name="LDF5_FORTRESS_TANK_DARK" base="PC_DARK">
+        <hostile>GUARD GUARD_DRAGON MONSTER TELEPORTOR_LI TELEPORTOR_DA</hostile>
+        <support>PROTECTGUARD_DARK GENERAL_DARK GUARD_DARK</support>
+    </tribe>
+	<tribe name="TELEPORTOR_LI" base="GENERAL">
+        <none>NEUTRAL_DGUARD YDUMMY_DGUARD YDUMMY2_DGUARD LDF4B_SPARRING_DGUARD LDF4B_SPARRING_DGUARD2 LDF5_DUMMY1_DGUARD LDF5_DUMMY2_DGUARD LDF5_SPARRING1_DGUARD LDF5_SPARRING2_DGUARD</none>
+    </tribe>
+	<tribe name="TELEPORTOR_DA" base="GENERAL_DARK">
+        <none>NEUTRAL_LGUARD YDUMMY_LGUARD YDUMMY2_LGUARD LDF4B_SPARRING_GUARD LDF4B_SPARRING_GUARD2 LDF5_DUMMY1_LGUARD LDF5_DUMMY2_LGUARD LDF5_SPARRING1_LGUARD LDF5_SPARRING2_LGUARD</none>
+    </tribe>
+	<tribe name="GAB1_MONSTER_NONAGGRE">
+        <hostile>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT</hostile>
+        <friendly>GAB1_SHUGO GAB1_TURRET GAB1_KILLER GAB1_MONSTER</friendly>
+    </tribe>
+	<tribe name="IDVRITRA_BASE_GI_BEACON" base="MONSTER">
+        <hostile>PC PC_DARK</hostile>
+        <friendly>VRITRA VRITRASUPPORT AGRRESSIVEFRIENDLYVRITRA AGRRESSIVEFRIENDLYVRITRA2 NONAGRRESSIVEFRIENDLYVRITRA</friendly>
+    </tribe>
+	<tribe name="IDVRITRA_BASE_GI_CANNON" base="MONSTER">
+        <aggressive>IDVRITRA_BASE_GI_BEACON</aggressive>
+        <hostile>PC PC_DARK</hostile>
+        <friendly>VRITRA VRITRASUPPORT AGRRESSIVEFRIENDLYVRITRA AGRRESSIVEFRIENDLYVRITRA2 NONAGRRESSIVEFRIENDLYVRITRA</friendly>
+    </tribe>
+	<tribe name="IDF5_SIEGEWEAPON_PC_DARK" base="PC_DARK">
+        <friendly>PC GENERAL GUARD PC_DARK GENERAL_DARK GUARD_DARK IDF5_SIEGEWEAPON_PC_DARK IDF5_SIEGEWEAPON</friendly>
+    </tribe>
+	<tribe name="WORLDRAID_NPC" base="USEALL">
+        <none>PC PC_DARK</none>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_LIPOPOKU" base="GENERAL">
+        <aggressive>PC_DARK LDF4_ADVANCE_DGUARD</aggressive>
+        <friendly>LDF4_ADVANCE_LIPOPOKU PC LDF4_ADVANCE_LGUARD</friendly>
+        <support>LDF4_ADVANCE_LIPOPOKU PC LDF4_ADVANCE_LGUARD</support>
+		<none>LDF4_ADVANCE_DACHAPIRE</none>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_DACHAPIRE" base="GENERAL_DARK">
+        <aggressive>PC LDF4_ADVANCE_LGUARD</aggressive>
+        <friendly>LDF4_ADVANCE_DACHAPIRE PC_DARK LDF4_ADVANCE_DGUARD</friendly>
+        <support>LDF4_ADVANCE_DACHAPIRE PC_DARK LDF4_ADVANCE_DGUARD</support>
+		<none>LDF4_ADVANCE_LIPOPOKU</none>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_GODELITELF" base="GUARD">
+        <aggressive>PC_DARK LDF4_ADVANCE_GODELITEDM</aggressive>
+		<none>LDF4_ADVANCE_SINGLE LDF4_ADVANCE_SAAM LDF4_ADVANCE_WORKER LDF4_ADVANCE_CHAPIRE_SINGLE LDF4_ADVANCE_POTCRAB LDF4_ADVANCE_TIAMAT LDF4_ADVANCE_MANDURI LDF4_ADVANCE_CHAPIRE_SUPPORT LDF4_ADVANCE_NEUTH LDF4_ADVANCE_XIPRTO LDF4_ADVANCE_POPOKU LDF4_ADVANCE_MUDTHORN LDF4_ADVANCE_LIPOPOKU LDF4_ADVANCE_NEUTH LDF4_ADVANCE_DACHAPIRE AGGRESSIVESINGLEMONSTER AGGRESSIVESUPPORTMONSTER LDF4_ADVANCE_AGGRESSIVESINGLE</none>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_GODELITEDM" base="GUARD_DARK">
+        <aggressive>PC LDF4_ADVANCE_GODELITELF</aggressive>
+        <none>LDF4_ADVANCE_SINGLE LDF4_ADVANCE_SAAM LDF4_ADVANCE_WORKER LDF4_ADVANCE_CHAPIRE_SINGLE LDF4_ADVANCE_POTCRAB LDF4_ADVANCE_TIAMAT LDF4_ADVANCE_MANDURI LDF4_ADVANCE_CHAPIRE_SUPPORT LDF4_ADVANCE_NEUTH LDF4_ADVANCE_XIPRTO LDF4_ADVANCE_POPOKU LDF4_ADVANCE_MUDTHORN LDF4_ADVANCE_LIPOPOKU LDF4_ADVANCE_NEUTH LDF4_ADVANCE_DACHAPIRE AGGRESSIVESINGLEMONSTER AGGRESSIVESUPPORTMONSTER LDF4_ADVANCE_AGGRESSIVESINGLE</none>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_AGGRESSIVESINGLE" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <none>LDF4_ADVANCE_GODELITELF LDF4_ADVANCE_GODELITEDM</none>
+    </tribe>
+	<tribe name="LDF4_ADVANCE_FNAMED_FOBJ" base="USEALL">
+        <friendly>PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="GAB1_SUB_ATTACKABLE_FOBJ">
+        <hostile>GAB1_01_POINT_01 GAB1_02_POINT_01 GAB1_03_POINT_01 GAB1_04_POINT_01 GAB1_SUB_DEST_69 GAB1_SUB_DEST_70 GAB1_SUB_DEST_71 GAB1_SUB_DEST_72</hostile>
+        <friendly>GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_DRAKAN GAB1_SUB_KILLER</friendly>
+    </tribe>
+	<tribe name="GAB1_SUB_DEST_69_AGGRESSIVE">
+        <aggressive>GAB1_02_POINT_01 GAB1_03_POINT_01 GAB1_04_POINT_01 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_DEST_70 GAB1_SUB_DEST_71 GAB1_SUB_DEST_72 GAB1_SUB_KILLER GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</aggressive>
+        <friendly>GAB1_01_POINT_01 GAB1_SUB_DEST_69 GAB1_SUB_DEST_69_AGGRESSIVE</friendly>
+    </tribe>
+    <tribe name="GAB1_SUB_DEST_70_AGGRESSIVE">
+        <aggressive>GAB1_01_POINT_01 GAB1_03_POINT_01 GAB1_04_POINT_01 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_DEST_69 GAB1_SUB_DEST_71 GAB1_SUB_DEST_72 GAB1_SUB_KILLER GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</aggressive>
+        <friendly>GAB1_02_POINT_01 GAB1_SUB_DEST_70 GAB1_SUB_DEST_70_AGGRESSIVE</friendly>
+    </tribe>
+    <tribe name="GAB1_SUB_DEST_71_AGGRESSIVE">
+        <aggressive>GAB1_01_POINT_01 GAB1_02_POINT_01 GAB1_04_POINT_01 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_DEST_69 GAB1_SUB_DEST_70 GAB1_SUB_DEST_72 GAB1_SUB_KILLER GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_72_AGGRESSIVE</aggressive>
+        <friendly>GAB1_03_POINT_01 GAB1_SUB_DEST_71 GAB1_SUB_DEST_71_AGGRESSIVE</friendly>
+    </tribe>
+    <tribe name="GAB1_SUB_DEST_72_AGGRESSIVE">
+        <aggressive>GAB1_01_POINT_01 GAB1_02_POINT_01 GAB1_03_POINT_01 GAB1_SUB_DRAKAN GAB1_SUB_NONAGGRESSIVE_DRAKAN GAB1_SUB_DEST_69 GAB1_SUB_DEST_70 GAB1_SUB_DEST_71 GAB1_SUB_KILLER GAB1_SUB_ATTACKABLE_FOBJ GAB1_SUB_DEST_69_AGGRESSIVE GAB1_SUB_DEST_70_AGGRESSIVE GAB1_SUB_DEST_71_AGGRESSIVE</aggressive>
+        <friendly>GAB1_04_POINT_01 GAB1_SUB_DEST_72 GAB1_SUB_DEST_72_AGGRESSIVE</friendly>
+    </tribe>
+	<tribe name="SIEGE_WEAPON_PC" base="GENERAL">
+        <hostile>PC_DARK GUARD_DARK GENERAL_DARK</hostile>
+        <friendly>PC GUARD GENERAL PROTECTGUARD_LIGHT MONSTER</friendly>
+    </tribe>
+	<tribe name="SIEGE_WEAPON_PC_DARK" base="GENERAL_DARK">
+        <hostile>PC GUARD GENERAL</hostile>
+        <friendly>PC_DARK GUARD_DARK GENERAL_DARK PROTECTGUARD_DARK MONSTER</friendly>
+    </tribe>
+	<tribe name="GAB1_PEACE">
+        <friendly>GAB1_01_POINT_01 GAB1_01_POINT_02 GAB1_01_POINT_03 GAB1_01_POINT_04 GAB1_01_POINT_05 GAB1_02_POINT_01 GAB1_02_POINT_02 GAB1_02_POINT_03 GAB1_02_POINT_04 GAB1_02_POINT_05 GAB1_03_POINT_01 GAB1_03_POINT_02 GAB1_03_POINT_03 GAB1_03_POINT_04 GAB1_03_POINT_05 GAB1_04_POINT_01 GAB1_04_POINT_02 GAB1_04_POINT_03 GAB1_04_POINT_04 GAB1_04_POINT_05 GAB1_01_REMNANT GAB1_02_REMNANT GAB1_03_REMNANT GAB1_04_REMNANT</friendly>
+    </tribe>
+	<tribe name="IDSTATION_BOOM" base="GENERAL">
+        <hostile>AGGRESSIVESINGLEMONSTER AGGRESSIVESUPPORTMONSTER</hostile>
+        <friendly>PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="IDSWEEP_MONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK IDSWEEP_POLYMORPH_L IDSWEEP_POLYMORPH_D IDSWEEP_MINE</aggressive>
+        <support>IDSWEEP_MONSTER IDSWEEP_MONSTER_2</support>
+        <none>IDSWEEP_NPC</none>
+    </tribe>
+    <tribe name="IDSWEEP_MONSTER_2" base="MONSTER">
+        <aggressive>PC PC_DARK IDSWEEP_POLYMORPH_L IDSWEEP_POLYMORPH_D IDSWEEP_MINE</aggressive>
+        <support>IDSWEEP_MONSTER IDSWEEP_MONSTER_2</support>
+        <none>IDSWEEP_NPC</none>
+    </tribe>
+	<tribe name="IDSWEEP_MINE" base="NPC">
+        <aggressive>IDSWEEP_MONSTER IDSWEEP_MONSTER_2 IDSWEEP_MONSTER_3</aggressive>
+        <friendly>PC PC_DARK IDSWEEP_POLYMORPH_L IDSWEEP_POLYMORPH_D IDSWEEP_MINE</friendly>
+        <none>IDSWEEP_NPC</none>
+    </tribe>
+    <tribe name="IDSWEEP_NPC" base="USEALL">
+        <friendly>PC PC_DARK</friendly>
+        <none>IDSWEEP_MONSTER IDSWEEP_MONSTER_2 IDSWEEP_MONSTER_3</none>
+    </tribe>
+	<tribe name="IDSWEEP_POLYMORPH_L" base="PC">
+        <hostile>IDSWEEP_MONSTER IDSWEEP_MONSTER_2 IDSWEEP_NPC IDSWEEP_MONSTER_3</hostile>
+        <friendly>PC_DARK IDSWEEP_MINE</friendly>
+    </tribe>
+	<tribe name="IDSWEEP_POLYMORPH_D" base="PC_DARK">
+        <hostile>IDSWEEP_MONSTER IDSWEEP_MONSTER_2 IDSWEEP_NPC IDSWEEP_MONSTER_3</hostile>
+        <friendly>PC IDSWEEP_MINE</friendly>
+    </tribe>
+	<tribe name="LF5_ITEM" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <friendly>LF5_ITEM</friendly>
+        <support>LF5_ITEM</support>
+    </tribe>
+	<tribe name="LF5_ITEM_SUM" base="MONSTER">
+	    <aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+        <friendly>LF5_ITEM</friendly>
+        <support>LF5_ITEM</support>
+    </tribe>
+	<tribe name="IDSWEEP_MONSTER_3" base="MONSTER">
+        <aggressive>PC PC_DARK IDSWEEP_POLYMORPH_L IDSWEEP_POLYMORPH_D IDSWEEP_MINE</aggressive>
+        <support>IDSWEEP_MONSTER IDSWEEP_MONSTER_2 IDSWEEP_MONSTER_3</support>
+        <none>IDSWEEP_NPC</none>
+    </tribe>
+	<tribe name="IDSTATION_GUIDE" base="GENERAL">
+        <none>PC PC_DARK IDSTATION_POLYMORP_H IDSTATION_MONSTER</none>
+    </tribe>
+	<tribe name="AB1_DOOR_LI" base="GENERAL"/>
+	<tribe name="AB1_DOOR_DA" base="GENERAL"/>
+	<tribe name="AB1_DOOR_KILLER" base="NONE">
+	    <aggressive>AB1_DOOR_DA AB1_DOOR_LI</aggressive>
+    </tribe>
+	<tribe name="IDSWEEP_BONUS" base="MONSTER">
+        <aggressive>PC PC_DARK IDSWEEP_POLYMORPH_L IDSWEEP_POLYMORPH_D IDSWEEP_MINE</aggressive>
+        <friendly>IDSWEEP_MONSTER IDSWEEP_MONSTER_2 IDSWEEP_MONSTER_3</friendly>
+        <none>IDSWEEP_NPC</none>
+    </tribe>
+	<tribe name="IDSTATION_POLYMORP_H" base="USEALL">
+        <aggressive>IDSTATION_MONSTER</aggressive>
+        <friendly>PC_DARK PC</friendly>
+        <none>IDSTATION_GUIDE</none>
+    </tribe>
+	<tribe name="IDSTATION_MONSTER" base="MONSTER">
+        <aggressive>IDSTATION_POLYMORP_H PC PC_DARK</aggressive>
+        <support>IDSTATION_MONSTER</support>
+        <none>IDSTATION_GUIDE</none>
+    </tribe>
+	<tribe name="IDSEAL_PCGUARD" base="USEALL">
+        <aggressive>IDSEAL_BOSS IDSEAL_WAVE_DEALER IDSEAL_WAVE_TANKER IDSEAL_WAVE_HEALER IDSEAL_WAVE_LEADER</aggressive>
+        <friendly>IDSEAL_MONSTER</friendly>
+    </tribe>
+	<tribe name="IDSEAL_PCGUARD_SCENE" base="USEALL">
+        <none>MONSTER</none>
+    </tribe>
+	<tribe name="IDSEAL_BOSS" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_BOSS_OBEY</aggressive>
+        <hostile>IDSEAL_BOSS_SKILL_01 IDSEAL_PCGUARD IDSEAL_BOSS_SKILL_04</hostile>
+        <friendly>IDSEAL_BOSS_SUMMON IDSEAL_PCGUARD_SCENE IDSEAL_BOSS_SCENE</friendly>
+    </tribe>
+	<tribe name="IDSEAL_BOSS_SCENE" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_BOSS_OBEY</hostile>
+        <friendly>IDSEAL_BOSS_SUMMON IDSEAL_BOSS IDSEAL_PCGUARD_SCENE</friendly>
+    </tribe>
+	<tribe name="IDSEAL_BOSS_OBEY" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_SEALGUARD IDSEAL_PCGUARD</hostile>
+        <friendly>IDSEAL_BOSS_OBEY IDSEAL_BOSS IDSEAL_BOSS_SUMMON IDSEAL_PCGUARD_SCENE</friendly>
+    </tribe>
+	<tribe name="IDSEAL_BOSS_SUMMON" base="USEALL">
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_BOSS_OBEY IDSEAL_PCGUARD</hostile>
+        <friendly>IDSEAL_BOSS IDSEAL_BOSS_SKILL_01 IDSEAL_BOSS_SKILL_02 IDSEAL_BOSS_SKILL_03 IDSEAL_PCGUARD_SCENE</friendly>
+    </tribe>
+	<tribe name="IDSEAL_SEALGUARD" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_BOSS_OBEY</aggressive>
+        <friendly>IDSEAL_BOSS_SUMMON IDSEAL_BOSS IDSEAL_PCGUARD_SCENE IDSEAL_BOSS_SCENE</friendly>
+    </tribe>
+	<tribe name="IDSEAL_SEAL_GUARD_SKILL" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_BOSS IDSEAL_BOSS_OBEY</aggressive>
+        <friendly>IDSEAL_PCGUARD IDSEAL_BOSS_SUMMON IDSEAL_BOSS_SKILL_01 IDSEAL_BOSS_SKILL_02 IDSEAL_BOSS_SKILL_03 IDSEAL_BOSS_SKILL_04 IDSEAL_BOSS_SKILL_05 IDSEAL_BOSS_SCENE</friendly>
+    </tribe>
+	<tribe name="IDSEAL_BOSS_SKILL_01" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_BOSS</hostile>
+        <friendly>IDSEAL_BOSS_SKILL_01 IDSEAL_BOSS_SUMMON IDSEAL_PCGUARD_SCENE</friendly>
+    </tribe>
+    <tribe name="IDSEAL_BOSS_SKILL_02" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_BOSS_OBEY IDSEAL_BOSS_SKILL_03</hostile>
+        <friendly>IDSEAL_BOSS IDSEAL_BOSS_SKILL_02 IDSEAL_BOSS_SUMMON IDSEAL_PCGUARD_SCENE</friendly>
+    </tribe>
+    <tribe name="IDSEAL_BOSS_SKILL_03" base="MONSTER">
+        <friendly>IDSEAL_BOSS IDSEAL_BOSS_SKILL_03 IDSEAL_BOSS_SUMMON IDSEAL_PCGUARD_SCENE</friendly>
+    </tribe>
+	<tribe name="IDSEAL_BOSS_SKILL_04" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK</hostile>
+        <friendly>IDSEAL_BOSS_SKILL_01 IDSEAL_BOSS_SUMMON IDSEAL_BOSS_SKILL_04 IDSEAL_BOSS IDSEAL_PCGUARD_SCENE</friendly>
+    </tribe>
+    <tribe name="IDSEAL_BOSS_SKILL_05" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_BOSS_OBEY</aggressive>
+        <hostile>IDSEAL_PCGUARD</hostile>
+        <friendly>IDSEAL_BOSS_SUMMON IDSEAL_BOSS IDSEAL_PCGUARD_SCENE IDSEAL_BOSS_SCENE</friendly>
+    </tribe>
+	<tribe name="IDSEAL_WAVE_DEALER" base="MONSTER">
+        <aggressive>IDSEAL_PCGUARD</aggressive>
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK IDSEAL_WAVE_TARGET</hostile>
+        <friendly>IDSEAL_WAVE_DEALER IDSEAL_WAVE_TANKER IDSEAL_PCGUARD_SCENE</friendly>
+        <support>IDSEAL_WAVE_HEALER IDSEAL_WAVE_LEADER</support>
+    </tribe>
+	<tribe name="IDSEAL_WAVE_TANKER" base="MONSTER">
+        <aggressive>IDSEAL_PCGUARD</aggressive>
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK</hostile>
+        <friendly>IDSEAL_WAVE_LEADER IDSEAL_WAVE_TANKER IDSEAL_PCGUARD_SCENE</friendly>
+        <support>IDSEAL_WAVE_DEALER IDSEAL_WAVE_HEALER</support>
+    </tribe>
+	<tribe name="IDSEAL_WAVE_HEALER" base="MONSTER">
+        <aggressive>IDSEAL_PCGUARD</aggressive>
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK</hostile>
+        <friendly>IDSEAL_WAVE_DEALER IDSEAL_WAVE_HEALER IDSEAL_WAVE_TANKER IDSEAL_PCGUARD_SCENE</friendly>
+        <support>IDSEAL_WAVE_LEADER</support>
+    </tribe>
+    <tribe name="IDSEAL_WAVE_LEADER" base="MONSTER">
+        <aggressive>IDSEAL_PCGUARD</aggressive>
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK</hostile>
+        <friendly>IDSEAL_WAVE_LEADER IDSEAL_WAVE_DEALER IDSEAL_WAVE_TANKER IDSEAL_PCGUARD_SCENE</friendly>
+        <support>IDSEAL_WAVE_HEALER</support>
+    </tribe>
+	<tribe name="IDSEAL_WAVE_TARGET" base="USEALL">
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_PCGUARD</hostile>
+        <friendly>IDSEAL_WAVE_LEADER IDSEAL_WAVE_DEALER IDSEAL_WAVE_HEALER IDSEAL_WAVE_TANKER IDSEAL_PCGUARD_SCENE</friendly>
+    </tribe>
+	<tribe name="IDSEAL_GROUP_MONSTER_1" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK IDSEAL_PCGUARD</hostile>
+        <friendly>IDSEAL_PCGUARD_SCENE</friendly>
+        <support>IDSEAL_GROUP_LEADER_1</support>
+    </tribe>
+    <tribe name="IDSEAL_GROUP_MONSTER_2" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK IDSEAL_PCGUARD</hostile>
+        <friendly>IDSEAL_PCGUARD_SCENE</friendly>
+        <support>IDSEAL_GROUP_LEADER_2</support>
+    </tribe>
+    <tribe name="IDSEAL_GROUP_MONSTER_3" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK IDSEAL_PCGUARD</hostile>
+        <friendly>IDSEAL_PCGUARD_SCENE</friendly>
+        <support>IDSEAL_GROUP_LEADER_3</support>
+    </tribe>
+	<tribe name="IDSEAL_GROUP_LEADER_1" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK</aggressive>
+        <friendly>IDSEAL_PCGUARD_SCENE IDSEAL_PCGUARD</friendly>
+    </tribe>
+    <tribe name="IDSEAL_GROUP_LEADER_2" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK</aggressive>
+        <friendly>IDSEAL_PCGUARD_SCENE IDSEAL_PCGUARD</friendly>
+    </tribe>
+    <tribe name="IDSEAL_GROUP_LEADER_3" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK</aggressive>
+        <friendly>IDSEAL_PCGUARD_SCENE IDSEAL_PCGUARD</friendly>
+    </tribe>
+	<tribe name="IDSEAL_MONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK</aggressive>
+        <friendly>IDSEAL_PCGUARD_SCENE IDSEAL_PCGUARD</friendly>
+    </tribe>
+	<tribe name="IDLDF5RE_SOLO_VRITRA_01" base="MONSTER">
+        <aggressive>PC PC_DARK IDLDF5RE_SOLO_CRISTAL_01</aggressive>
+        <neutral>XDRAKAN</neutral>
+        <friendly>IDLDF5RE_SOLO_VRITRA_01</friendly>
+    </tribe>
+	<tribe name="IDLDF5RE_SOLO_CRISTAL_01" base="USEALL">
+       <aggressive>IDLDF5RE_SOLO_VRITRA_01</aggressive>
+       <hostile>IDF5U3_VRITRA_01 IDF5U3_VRITRA_02 IDF5U3_VRITRA_HIDE VRITRA VRITRASUPPORT IDF5U3_VRITRA_SUM IDF5U3_VRITRA IDLDF5RE_SOLO_VRITRA_01</hostile>
+       <friendly>PC PC_DARK</friendly>
+    </tribe>
+	<tribe name="DF5_FUNGY" base="MONSTER">
+        <hostile>DF5_MERMAN</hostile>
+        <support>DF5_FUNGY</support>
+    </tribe>
+	<tribe name="DF5_MERMAN" base="MONSTER">
+        <aggressive>DF5_FUNGY DF5_FRILLFAIMAM DF5_FRILLFAIMAM_BABY PC PC_DARK DF5_MERMAN_MURATUN</aggressive>
+        <support>DF5_MERMAN</support>
+    </tribe>
+	<tribe name="DF5_FRILLFAIMAM" base="MONSTER">
+        <aggressive>PC PC_DARK DF5_MERMAN</aggressive>
+        <support>DF5_FRILLFAIMAM</support>
+    </tribe>
+	<tribe name="DF5_DUMMY1" base="MONSTER"/>
+    <tribe name="DF5_DUMMY2" base="MONSTER"/>
+    <tribe name="DF5_DUMMY1_DGUARD" base="GENERAL_DARK">
+        <aggressive>DF5_DUMMY1 DF5_DUMMY2</aggressive>
+        <none>PC DF5_DUMMY2_DGUARD</none>
+    </tribe>
+    <tribe name="DF5_DUMMY2_DGUARD" base="GENERAL_DARK">
+        <aggressive>DF5_DUMMY2 DF5_DUMMY1</aggressive>
+        <none>PC DF5_DUMMY1_DGUARD</none>
+    </tribe>
+	<tribe name="DF5_FRILLFAIMAM_BABY" base="MONSTER">
+        <aggressive>DF5_MERMAN</aggressive>
+        <hostile>PC PC_DARK</hostile>
+        <support>DF5_FRILLFAIMAM DF5_FRILLFAIMAM_BABY</support>
+    </tribe>
+	<tribe name="DF5_MERMAN_MURATUN" base="USEALL">
+        <hostile>DF5_MERMAN</hostile>
+    </tribe>
+	<tribe name="LF5_DUMMY1" base="MONSTER"/>
+    <tribe name="LF5_DUMMY2" base="MONSTER"/>
+    <tribe name="LF5_DUMMY1_LGUARD" base="GUARD">
+        <aggressive>LF5_DUMMY1</aggressive>
+        <neutral>LF5_DUMMY2 DUMMY LDF5_DUMMY1 LDF5_DUMMY2</neutral>
+        <none>PC_DARK</none>
+    </tribe>
+    <tribe name="LF5_DUMMY2_LGUARD" base="GUARD">
+        <aggressive>LF5_DUMMY2</aggressive>
+        <neutral>LF5_DUMMY1 DUMMY LDF5_DUMMY1 LDF5_DUMMY2</neutral>
+        <none>PC_DARK</none>
+    </tribe>
+	<tribe name="DF5_VRITRA" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <support>DF5_VRITRA</support>
+    </tribe>
+	<tribe name="DF5_GUARD_SCENE" base="GENERAL_DARK">
+        <aggressive>DF5_VRITRA_SCENE</aggressive>
+        <support>DF5_GUARD_SCENE</support>
+    </tribe>
+	<tribe name="DF5_VRITRA_SCENE" base="MONSTER">
+        <aggressive>DF5_GUARD_SCENE</aggressive>
+        <support>DF5_VRITRA_SCENE</support>
+    </tribe>
+	<tribe name="LF5_GUARD_01_LIGHT" base="GENERAL">
+        <aggressive>PC_DARK GUARD_DARK</aggressive>
+        <friendly>MONSTER PROTECTGUARD_LIGHT</friendly>
+        <support>LF5_GUARD_01_LIGHT</support>
+    </tribe>
+    <tribe name="LF5_GUARD_02_LIGHT" base="GENERAL">
+        <aggressive>PC_DARK GUARD_DARK</aggressive>
+        <friendly>MONSTER PROTECTGUARD_LIGHT</friendly>
+        <support>LF5_GUARD_02_LIGHT</support>
+    </tribe>
+    <tribe name="LF5_GUARD_03_LIGHT" base="GENERAL">
+        <aggressive>PC_DARK GUARD_DARK</aggressive>
+        <friendly>MONSTER PROTECTGUARD_LIGHT</friendly>
+        <support>LF5_GUARD_03_LIGHT</support>
+    </tribe>
+    <tribe name="LF5_GUARD_04_LIGHT" base="GENERAL">
+        <aggressive>PC_DARK GUARD_DARK</aggressive>
+        <friendly>MONSTER PROTECTGUARD_LIGHT</friendly>
+        <support>LF5_GUARD_04_LIGHT</support>
+    </tribe>
+	<tribe name="DF5_GUARD_01_DARK" base="GENERAL_DARK">
+        <aggressive>PC GUARD</aggressive>
+        <friendly>MONSTER PROTECTGUARD_DARK</friendly>
+        <support>DF5_GUARD_01_DARK</support>
+    </tribe>
+	<tribe name="DF5_GUARD_02_DARK" base="GENERAL_DARK">
+        <aggressive>PC GUARD</aggressive>
+        <friendly>MONSTER PROTECTGUARD_DARK</friendly>
+        <support>DF5_GUARD_02_DARK</support>
+	</tribe>
+	<tribe name="DF5_GUARD_03_DARK" base="GENERAL_DARK">
+        <aggressive>PC GUARD</aggressive>
+        <friendly>MONSTER PROTECTGUARD_DARK</friendly>
+        <support>DF5_GUARD_03_DARK</support>
+	</tribe>
+	<tribe name="DF5_GUARD_04_DARK" base="GENERAL_DARK">
+        <aggressive>PC GUARD</aggressive>
+        <friendly>MONSTER PROTECTGUARD_DARK</friendly>
+        <support>DF5_GUARD_04_DARK</support>
+	</tribe>
+	<tribe name="LF5_GUARD_TRAP" base="GENERAL">
+        <aggressive>PC_DARK GUARD_DARK</aggressive>
+        <friendly>MONSTER PROTECTGUARD_LIGHT</friendly>
+    </tribe>
+	<tribe name="DF5_GUARD_TRAP" base="GENERAL_DARK">
+        <aggressive>PC GUARD</aggressive>
+        <friendly>MONSTER PROTECTGUARD_DARK</friendly>
+	</tribe>
+	<tribe name="ERESUKIGAL" base="GUARD_DRAGON">
+        <aggressive>PC PC_DARK PET PET_DARK GUARD GUARD_DARK</aggressive>
+        <friendly>MONSTER AB1_BOSS</friendly>
+        <support>ERESUKIGAL</support>
+        <none>AB1_AGGRESSIVESINGLEMONSTER AB1_AGGRESSIVESUPPORTMONSTER ERESUKIGAL_ENEMY_WEAPON_02 IDLDF4_RE_01_GUARD IDLDF4_RE_01_GUARD_DARK</none>
+    </tribe>
+	<tribe name="AB1_BOSS" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK</aggressive>
+        <friendly>MONSTER ERESUKIGAL</friendly>
+        <support>AB1_BOSS</support>
+        <none>AB1_AGGRESSIVESINGLEMONSTER AB1_AGGRESSIVESUPPORTMONSTER</none>
+    </tribe>
+	<tribe name="IDELEMENTAL_2_E_NPC" base="MONSTER">
+        <aggressive>IDELEMENTAL_2_E_BOSS</aggressive>
+        <none>PC PC_DARK</none>
+    </tribe>
+	<tribe name="IDELEMENTAL_2_E_BOSS" base="MONSTER">
+        <aggressive>PC GUARD PC_DARK GUARD_DARK ESCORT</aggressive>
+        <hostile>IDCATACOMBS_TAROS</hostile>
+        <neutral>DRAKAN_LGUARD DRAKAN_DGUARD</neutral>
+        <support>XDRAKAN XDRAKAN_ELEMENTALIST XDRAKAN_PRIEST DRAGON</support>
+    </tribe>
+	<tribe name="PROTECTGUARD_LIGHT_F2A" base="GUARD">
+        <friendly>PROTECTGUARD_LIGHT</friendly>
+        <support>PROTECTGUARD_LIGHT_HERO</support>
+        <none>MONSTER</none>
+    </tribe>
+	<tribe name="PROTECTGUARD_DARK_F2A" base="GUARD_DARK">
+       <friendly>PROTECTGUARD_DARK</friendly>
+       <support>PROTECTGUARD_DARK_HERO</support>
+       <none>MONSTER</none>
+    </tribe>
+	<tribe name="IDSEAL_Q_MOB" base="MONSTER">
+        <aggressive>IDSEAL_Q_GUARD IDSEAL_Q_GUARD_PRIEST</aggressive>
+        <hostile>PC PC_DARK PET PET_DARK IDSEAL_Q_NPC</hostile>
+        <friendly>IDSEAL_Q_MOB_A IDSEAL_Q_BOSS IDSEAL_Q_WAVE IDSEAL_Q_SKILL_01 IDSEAL_Q_SKILL_02 IDSEAL_Q_SKILL_03 IDSEAL_Q_SKILL_04</friendly>
+    </tribe>
+    <tribe name="IDSEAL_Q_MOB_A" base="MONSTER">
+        <aggressive>PC PC_DARK IDSEAL_Q_GUARD IDSEAL_Q_GUARD_PRIEST</aggressive>
+        <hostile>PET PET_DARK IDSEAL_Q_NPC</hostile>
+        <friendly>IDSEAL_Q_MOB IDSEAL_Q_BOSS IDSEAL_Q_WAVE IDSEAL_Q_SKILL_01 IDSEAL_Q_SKILL_02 IDSEAL_Q_SKILL_03 IDSEAL_Q_SKILL_04</friendly>
+    </tribe>
+	<tribe name="IDSEAL_Q_BOSS" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK IDSEAL_Q_GUARD IDSEAL_Q_NPC IDSEAL_Q_GUARD_PRIEST</aggressive>
+        <hostile>IDSEAL_Q_SKILL_02</hostile>
+        <friendly>IDSEAL_Q_MOB IDSEAL_Q_MOB_A IDSEAL_Q_WAVE IDSEAL_Q_SKILL_01 IDSEAL_Q_SKILL_03 IDSEAL_Q_SKILL_04</friendly>
+    </tribe>
+	<tribe name="IDSEAL_Q_KEYNAMED" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK</aggressive>
+        <hostile>IDSEAL_Q_SKILL_02</hostile>
+        <friendly>IDSEAL_Q_MOB IDSEAL_Q_MOB_A IDSEAL_Q_WAVE IDSEAL_Q_SKILL_01 IDSEAL_Q_SKILL_03 IDSEAL_Q_SKILL_04 IDSEAL_Q_GUARD IDSEAL_Q_NPC IDSEAL_Q_GUARD_PRIEST</friendly>
+    </tribe>
+	<tribe name="IDSEAL_Q_WAVE" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK IDSEAL_Q_GUARD IDSEAL_Q_NPC IDSEAL_Q_GUARD_PRIEST</aggressive>
+        <friendly>IDSEAL_Q_MOB IDSEAL_Q_MOB_A IDSEAL_Q_BOSS IDSEAL_Q_SKILL_01 IDSEAL_Q_SKILL_02 IDSEAL_Q_SKILL_03 IDSEAL_Q_SKILL_04</friendly>
+    </tribe>
+	<tribe name="IDSEAL_Q_GUARD" base="USEALL">
+        <aggressive>IDSEAL_Q_MOB IDSEAL_Q_MOB_A IDSEAL_Q_BOSS IDSEAL_Q_WAVE</aggressive>
+        <friendly>PET PET_DARK IDSEAL_Q_NPC IDSEAL_Q_SKILL_01 IDSEAL_Q_SKILL_02 IDSEAL_Q_SKILL_03 IDSEAL_Q_SKILL_04 IDSEAL_Q_KEYNAMED</friendly>
+        <support>PC PC_DARK</support>
+    </tribe>
+	<tribe name="IDSEAL_Q_GUARD_PRIEST" base="USEALL">
+        <aggressive>IDSEAL_Q_MOB IDSEAL_Q_MOB_A IDSEAL_Q_BOSS IDSEAL_Q_WAVE</aggressive>
+        <friendly>PET PET_DARK IDSEAL_Q_NPC IDSEAL_Q_SKILL_01 IDSEAL_Q_SKILL_02 IDSEAL_Q_SKILL_03 IDSEAL_Q_SKILL_04 IDSEAL_Q_KEYNAMED</friendly>
+        <support>PC PC_DARK</support>
+    </tribe>
+	<tribe name="IDSEAL_Q_NPC" base="USEALL">
+        <hostile>IDSEAL_Q_MOB IDSEAL_Q_MOB_A IDSEAL_Q_BOSS IDSEAL_Q_WAVE IDSEAL_Q_SKILL_04</hostile>
+        <friendly>PC PC_DARK PET PET_DARK IDSEAL_Q_GUARD IDSEAL_Q_SKILL_01 IDSEAL_Q_SKILL_02 IDSEAL_Q_SKILL_03 IDSEAL_Q_SKILL_04 IDSEAL_Q_KEYNAMED IDSEAL_Q_GUARD_PRIEST</friendly>
+    </tribe>
+	<tribe name="IDSEAL_Q_SKILL_01" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK IDSEAL_Q_GUARD IDSEAL_Q_NPC IDSEAL_Q_GUARD_PRIEST</hostile>
+        <friendly>IDSEAL_Q_MOB IDSEAL_Q_MOB_A IDSEAL_Q_BOSS IDSEAL_Q_WAVE IDSEAL_Q_SKILL_02 IDSEAL_Q_SKILL_03 IDSEAL_Q_SKILL_04</friendly>
+    </tribe>
+    <tribe name="IDSEAL_Q_SKILL_02" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK IDSEAL_Q_GUARD IDSEAL_Q_NPC IDSEAL_Q_BOSS IDSEAL_Q_GUARD_PRIEST</hostile>
+        <friendly>IDSEAL_Q_MOB IDSEAL_Q_MOB_A IDSEAL_Q_WAVE IDSEAL_Q_SKILL_01 IDSEAL_Q_SKILL_02 IDSEAL_Q_SKILL_03 IDSEAL_Q_SKILL_04</friendly>
+    </tribe>
+    <tribe name="IDSEAL_Q_SKILL_03" base="MONSTER">
+        <hostile>PC PC_DARK PET PET_DARK IDSEAL_Q_GUARD IDSEAL_Q_NPC IDSEAL_Q_SKILL_04 IDSEAL_Q_GUARD_PRIEST</hostile>
+        <friendly>IDSEAL_Q_MOB IDSEAL_Q_MOB_A IDSEAL_Q_WAVE IDSEAL_Q_BOSS IDSEAL_Q_SKILL_01 IDSEAL_Q_SKILL_02 IDSEAL_Q_SKILL_03</friendly>
+    </tribe>
+    <tribe name="IDSEAL_Q_SKILL_04" base="USEALL">
+        <hostile>IDSEAL_Q_NPC</hostile>
+    </tribe>
+	<tribe name="PROTECTGUARD_LIGHT_HERO" base="GUARD">
+        <friendly>PROTECTGUARD_LIGHT PROTECTGUARD_LIGHT_F2A</friendly>
+        <none>MONSTER</none>
+    </tribe>
+	<tribe name="PROTECTGUARD_DARK_HERO" base="GUARD_DARK">
+        <friendly>PROTECTGUARD_DARK PROTECTGUARD_DARK_F2A</friendly>
+        <none>MONSTER</none>
+    </tribe>
+	<tribe name="AB1_AGGRESSIVESINGLEMONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <friendly>AB1_BOSS</friendly>
+        <none>PROTECTGUARD_LIGHT PROTECTGUARD_DARK ERESUKIGAL</none>
+    </tribe>
+    <tribe name="AB1_AGGRESSIVESUPPORTMONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <friendly>AB1_BOSS</friendly>
+        <support>AGGRESSIVESUPPORTMONSTER AB1_AGGRESSIVESUPPORTMONSTER</support>
+        <none>PROTECTGUARD_LIGHT PROTECTGUARD_DARK ERESUKIGAL</none>
+    </tribe>
+	<tribe name="IDDF3_DRAGON_T_BOSS" base="MONSTER">
+		<aggressive>PC PC_DARK PET PET_DARK GENERAL GENERAL_DARK GUARD GUARD_DARK IDSEAL_BOSS_OBEY</aggressive>
+		<friendly>IDDF3_DRAGON_T_BOSS</friendly>
+	</tribe>
+	<tribe name="F6_INVASION_DA">
+		<aggressive>GUARD F6_EVENT_LI</aggressive>
+		<friendly>PC MONSTER AGGRESSIVESINGLEMONSTER GUARD_DARK F6_EVENT_DA GENERAL_DARK</friendly>
+		<none>PC_DARK</none>
+	</tribe>
+	<tribe name="F6_INVASION_LI">
+		<aggressive>GUARD_DARK F6_EVENT_DA</aggressive>
+		<friendly>PC_DARK MONSTER AGGRESSIVESINGLEMONSTER GUARD F6_EVENT_LI GENERAL</friendly>
+		<none>PC</none>
+	</tribe>
+	<tribe name="F6_EVENT_ATTACKER_DA">
+		<aggressive>F6_EVENT_LI PC</aggressive>
+		<friendly>PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="F6_EVENT_ATTACKER_LI">
+		<aggressive>F6_EVENT_DA PC_DARK</aggressive>
+		<friendly>PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="F6_EVENT_DA">
+		<aggressive>F6_EVENT_LI PC F6_INVASION_LI F6_EVENT_ATTACKER_LI</aggressive>
+		<friendly>F6_EVENT_DA GUARD_DARK F6_EVENT_CANNON_DA F6_EVENT_CANNON_LI F6_INVASION_DA PC_DARK GENERAL_DARK</friendly>
+	</tribe>
+	<tribe name="F6_EVENT_LI">
+		<aggressive>F6_EVENT_DA PC_DARK F6_INVASION_DA F6_EVENT_ATTACKER_DA</aggressive>
+		<friendly>F6_EVENT_LI GUARD F6_EVENT_CANNON_DA F6_EVENT_CANNON_LI F6_INVASION_LI PC GENERAL</friendly>
+	</tribe>
+	<tribe name="F6_EVENT_CANNON_DA">
+		<aggressive>F6_EVENT_LI PC</aggressive>
+		<friendly>F6_EVENT_CANNON_DA F6_EVENT_DA PC_DARK</friendly>
+	</tribe>
+	<tribe name="F6_EVENT_CANNON_LI">
+		<aggressive>F6_EVENT_DA PC_DARK</aggressive>
+		<friendly>F6_EVENT_CANNON_LI F6_EVENT_LI PC</friendly>
+	</tribe>
+	<tribe name="F6_KRALL" base="MONSTER">
+		<aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+		<support>KRALL KRALLMASTER KRALL_TRAINING F6_KRALL</support>
+		<none>KRALLWIZARDCY F6_OWLLAU</none>
+	</tribe>
+	<tribe name="F6_OWLLAU" base="MONSTER">
+		<aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+		<support>LDF4A_OWLLAU LDF5_OWLLAU F6_OWLLAU</support>
+		<none>F6_KRALL</none>
+	</tribe>
+	<tribe name="F6_LYCAN" base="MONSTER">
+		<aggressive>PC GUARD PC_DARK GUARD_DARK</aggressive>
+		<support>LYCAN LYCAN_MAGE LYCAN_PET LYCAN_HUNTER RATMANWORKER LYCANMASTER TOWERMAN LYCAN_AGUARD_DARK_DF1 LYCAN_TRAINING F6_LYCAN</support>
+		<none>F6_CALYDON</none>
+	</tribe>
+	<tribe name="F6_CALYDON" base="MONSTER">
+		<aggressive>PC PC_DARK F6_LYCAN</aggressive>
+		<support>CALYDON LDF4A_CALYDON LDF5_CALYDON F6_CALYDON</support>
+	</tribe>
+	<tribe name="GRAND_RVR" base="GUARD">
+		<aggressive>GRAND_RVR_DARK</aggressive>
+		<neutral>MONSTER PC_DARK</neutral>
+	</tribe>
+	<tribe name="GRAND_RVR_DARK" base="GUARD_DARK">
+		<aggressive>GRAND_RVR</aggressive>
+		<neutral>MONSTER PC</neutral>
+	</tribe>
+	<tribe name="IDETERNITY_01_SUPPORTMONSTER" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<support>IDETERNITY_01_SUPPORTMONSTER IDETERNITY_01_SINGLEMONSTER</support>
+	</tribe>
+	<tribe name="IDETERNITY_01_SINGLEMONSTER" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<support>IDETERNITY_01_SINGLEMONSTER</support>
+	</tribe>
+	<tribe name="IDETERNITY_01_ARTIFACT" base="MONSTER">
+		<neutral>MONSTER PC_DARK PC</neutral>
+	</tribe>
+	<tribe name="IDETERNITY_01_ARTIFACTROOMCHECK" base="MONSTER">
+		<support>IDETERNITY_01_ARTIFACT</support>
+	</tribe>
+	<tribe name="WORLDRAID_EVENT_AGGRESSIVE" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<friendly>GUARD GUARD_DARK GUARD_DRAGON NEUTRAL_GUARD MONSTER AGGRESSIVESINGLEMONSTER AGGRESSIVESUPPORTMONSTER XDRAKAN WORLDRAID_MONSTER</friendly>
+	</tribe>
+	<tribe name="WORLDRAID_EVENT" base="MONSTER">
+		<friendly>GUARD GUARD_DARK GUARD_DRAGON NEUTRAL_GUARD MONSTER AGGRESSIVESINGLEMONSTER AGGRESSIVESUPPORTMONSTER XDRAKAN WORLDRAID_MONSTER</friendly>
+		<hostile>PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LGUARD_01" base="GENERAL">
+		<aggressive>RVR_LIZARD_GUARD_01 RVR_DGUARD_01</aggressive>
+		<hostile>GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LGUARD_02" base="GENERAL">
+		<aggressive>RVR_LIZARD_GUARD_02 RVR_DGUARD_02</aggressive>
+		<hostile>GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LGUARD_03" base="GENERAL">
+		<aggressive>RVR_LIZARD_GUARD_03 RVR_DGUARD_03</aggressive>
+		<hostile>GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LGUARD_04" base="GENERAL">
+		<aggressive>RVR_LIZARD_GUARD_04 RVR_DGUARD_04</aggressive>
+		<hostile>GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LGUARD_05" base="GENERAL">
+		<aggressive>RVR_LIZARD_GUARD_05 RVR_DGUARD_05</aggressive>
+		<hostile>GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LGUARD_06" base="GENERAL">
+		<aggressive>RVR_LIZARD_GUARD_06 RVR_DGUARD_06</aggressive>
+		<hostile>GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LGUARD_07" base="GENERAL">
+		<aggressive>RVR_LIZARD_GUARD_07 RVR_DGUARD_07</aggressive>
+		<hostile>GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LGUARD_08" base="GENERAL">
+		<aggressive>RVR_LIZARD_GUARD_08 RVR_DGUARD_08</aggressive>
+		<hostile>GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LGUARD_09" base="GENERAL">
+		<aggressive>RVR_LIZARD_GUARD_09 RVR_DGUARD_09</aggressive>
+		<hostile>GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_DGUARD_01" base="GENERAL_DARK">
+		<aggressive>RVR_LIZARD_GUARD_01 RVR_LGUARD_01</aggressive>
+		<hostile>GUARD PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_DGUARD_02" base="GENERAL_DARK">
+		<aggressive>RVR_LIZARD_GUARD_02 RVR_LGUARD_02</aggressive>
+		<hostile>GUARD PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_DGUARD_03" base="GENERAL_DARK">
+		<aggressive>RVR_LIZARD_GUARD_03 RVR_LGUARD_03</aggressive>
+		<hostile>GUARD PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_DGUARD_04" base="GENERAL_DARK">
+		<aggressive>RVR_LIZARD_GUARD_04 RVR_LGUARD_04</aggressive>
+		<hostile>GUARD PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_DGUARD_05" base="GENERAL_DARK">
+		<aggressive>RVR_LIZARD_GUARD_05 RVR_LGUARD_05</aggressive>
+		<hostile>GUARD PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_DGUARD_06" base="GENERAL_DARK">
+		<aggressive>RVR_LIZARD_GUARD_06 RVR_LGUARD_06</aggressive>
+		<hostile>GUARD PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_DGUARD_07" base="GENERAL_DARK">
+		<aggressive>RVR_LIZARD_GUARD_07 RVR_LGUARD_07</aggressive>
+		<hostile>GUARD PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_DGUARD_08" base="GENERAL_DARK">
+		<aggressive>RVR_LIZARD_GUARD_08 RVR_LGUARD_08</aggressive>
+		<hostile>GUARD PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_DGUARD_09" base="GENERAL_DARK">
+		<aggressive>RVR_LIZARD_GUARD_09 RVR_LGUARD_09</aggressive>
+		<hostile>GUARD PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LIZARD_GUARD_01" base="MONSTER">
+		<aggressive>RVR_LGUARD_01 RVR_DGUARD_01</aggressive>
+		<hostile>GUARD GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LIZARD_GUARD_02" base="MONSTER">
+		<aggressive>RVR_LGUARD_02 RVR_DGUARD_02</aggressive>
+		<hostile>GUARD GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LIZARD_GUARD_03" base="MONSTER">
+		<aggressive>RVR_LGUARD_03 RVR_DGUARD_03</aggressive>
+		<hostile>GUARD GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LIZARD_GUARD_04" base="MONSTER">
+		<aggressive>RVR_LGUARD_04 RVR_DGUARD_04</aggressive>
+		<hostile>GUARD GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LIZARD_GUARD_05" base="MONSTER">
+		<aggressive>RVR_LGUARD_05 RVR_DGUARD_05</aggressive>
+		<hostile>GUARD GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LIZARD_GUARD_06" base="MONSTER">
+		<aggressive>RVR_LGUARD_06 RVR_DGUARD_06</aggressive>
+		<hostile>GUARD GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LIZARD_GUARD_07" base="MONSTER">
+		<aggressive>RVR_LGUARD_07 RVR_DGUARD_07</aggressive>
+		<hostile>GUARD GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LIZARD_GUARD_08" base="MONSTER">
+		<aggressive>RVR_LGUARD_08 RVR_DGUARD_08</aggressive>
+		<hostile>GUARD GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RVR_LIZARD_GUARD_09" base="MONSTER">
+		<aggressive>RVR_LGUARD_09 RVR_DGUARD_09</aggressive>
+		<hostile>GUARD GUARD_DARK PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="IDETERNITY_01_NAMED" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+	</tribe>
+	<tribe name="IDETERNITY_01_SUMMON" base="MONSTER">
+		<aggressive>IDETERNITY_01_NAMED</aggressive>
+		<neutral>PC PC_DARK</neutral>
+	</tribe>
+	<tribe name="IDF6_ADMA_ZOMBIE" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<support>IDF6_ADMA_ZOMBIE</support>
+		<neutral>IDF6_ADMA_BAT</neutral>
+	</tribe>
+	<tribe name="IDF6_ADMA_BAT" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<support>IDF6_ADMA_BAT</support>
+		<neutral>IDF6_ADMA_ZOMBIE</neutral>
+	</tribe>
+	<tribe name="IDF6_LAP_STATUE" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<support>IDF6_LAP_STATUE</support>
+		<neutral>IDF6_LAP_TESINON</neutral>
+	</tribe>
+	<tribe name="IDF6_LAP_TESINON" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<support>IDF6_LAP_TESINON</support>
+		<neutral>IDF6_LAP_STATUE</neutral>
+	</tribe>
+	<tribe name="IDF6_LAP_SHELUK" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<support>IDF6_LAP_SHELUK</support>
+		<neutral>IDF6_LAP_SHELUK_BABY</neutral>
+	</tribe>
+	<tribe name="IDF6_LAP_SHELUK_BABY" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<support>IDF6_LAP_SHELUK</support>
+	</tribe>
+	<tribe name="IDETERNITY_01_PCSUPPORT" base="USEALL">
+		<hostile>IDETERNITY_01_NAMED</hostile>
+	</tribe>
+	<tribe name="IDF6_DRAGON_ARTIFACT" base="MONSTER">		
+		<neutral>MONSTER PC PC_DARK</neutral>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_MONSTER" base="MONSTER">
+		<aggressive>PC PC_DARK IDLUNA_SIEGE_POLYMORPH_L IDLUNA_SIEGE_POLYMORPH_D IDLUNA_SIEGE_NPC</aggressive>
+		<support>IDLUNA_SIEGE_MONSTER</support>
+		<neutral>IDLUNA_SIEGE_CANNON</neutral>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_NPC" base="USEALL">
+		<aggressive>IDLUNA_SIEGE_MONSTER IDLUNA_SIEGE_TOWER</aggressive>
+		<friendly>PC PC_DARK IDLUNA_SIEGE_CANNON IDLUNA_SIEGE_POLYMORPH_L IDLUNA_SIEGE_POLYMORPH_D</friendly>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_POLYMORPH_L" base="PC">
+		<aggressive>IDLUNA_SIEGE_MONSTER</aggressive>
+		<friendly>PC PC_DARK IDLUNA_SIEGE_CANNON IDLUNA_SIEGE_POLYMORPH_L IDLUNA_SIEGE_POLYMORPH_D</friendly>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_POLYMORPH_D" base="PC_DARK">
+		<aggressive>IDLUNA_SIEGE_MONSTER</aggressive>
+		<friendly>PC PC_DARK IDLUNA_SIEGE_CANNON IDLUNA_SIEGE_POLYMORPH_L IDLUNA_SIEGE_POLYMORPH_D</friendly>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_BOMB" base="MONSTER">
+		<friendly>IDLUNA_SIEGE_MONSTER</friendly>
+		<hostile>PC PC_DARK IDLUNA_SIEGE_POLYMORPH_L IDLUNA_SIEGE_POLYMORPH_D IDLUNA_SIEGE_NPC</hostile>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_CANNON" base="USEALL">
+		<aggressive>IDLUNA_SIEGE_TOWER IDLUNA_SIEGE_BOMB</aggressive>
+		<friendly>PC PC_DARK IDLUNA_SIEGE_POLYMORPH_L IDLUNA_SIEGE_POLYMORPH_D</friendly>
+		<neutral>IDLUNA_SIEGE_MONSTER</neutral>
+	</tribe>
+	<tribe name="IDLUNA_DEF_MONSTER" base="MONSTER">
+		<aggressive>PC PC_DARK IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D IDLUNA_DEF_NPC IDLUNA_DEF_NPC3</aggressive>
+		<support>IDLUNA_DEF_MONSTER</support>
+		<neutral>IDLUNA_DEF_DEAD_NPC</neutral>
+	</tribe>
+	<tribe name="IDLUNA_DEF_NPC" base="USEALL">
+		<aggressive>IDLUNA_DEF_MONSTER IDLUNA_DEF_MONSTER2 IDLUNA_DEF_MONSTER4</aggressive>
+		<friendly>PC PC_DARK IDLUNA_DEF_DEAD_NPC IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</friendly>
+	</tribe>
+	<tribe name="IDLUNA_DEF_POLYMORPH_L" base="PC">
+		<aggressive>IDLUNA_DEF_MONSTER</aggressive>
+		<friendly>PC PC_DARK IDLUNA_DEF_DEAD_NPC IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</friendly>
+	</tribe>
+	<tribe name="IDLUNA_DEF_POLYMORPH_D" base="PC_DARK">
+		<aggressive>IDLUNA_DEF_MONSTER</aggressive>
+		<friendly>PC PC_DARK IDLUNA_DEF_DEAD_NPC IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</friendly>
+	</tribe>
+	<tribe name="IDLUNA_DEF_BOMB" base="MONSTER">
+		<hostile>PC PC_DARK IDLUNA_DEF_MONSTER IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D IDLUNA_DEF_NPC</hostile>
+	</tribe>
+	<tribe name="IDLUNA_DEF_DEAD_NPC" base="NPC">
+		<friendly>PC PC_DARK IDLUNA_DEF_DEAD_NPC IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</friendly>
+		<neutral>IDLUNA_DEF_MONSTER</neutral>
+	</tribe>
+	<tribe name="IDLUNA_DEF_NPC2" base="USEALL">
+		<aggressive>IDLUNA_DEF_MONSTER</aggressive>
+		<friendly>PC PC_DARK IDLUNA_DEF_DEAD_NPC IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</friendly>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_TOWER" base="MONSTER">
+		<aggressive>PC PC_DARK IDLUNA_SIEGE_POLYMORPH_L IDLUNA_SIEGE_POLYMORPH_D IDLUNA_SIEGE_NPC</aggressive>
+		<friendly>IDLUNA_SIEGE_MONSTER</friendly>
+		<neutral>IDLUNA_SIEGE_BOMB</neutral>
+	</tribe>
+	<tribe name="IDLUNA_DEF_NPC3" base="USEALL">
+	    <aggressive>IDLUNA_DEF_MONSTER IDLUNA_DEF_MONSTER2 IDLUNA_DEF_MONSTER4</aggressive>
+		<friendly>PC PC_DARK IDLUNA_DEF_DEAD_NPC IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</friendly>
+	</tribe>
+	<tribe name="ESCORT_IDF6_LF1" base="MONSTER">
+		<aggressive>XDRAKAN_ANU</aggressive>
+		<friendly>ESCORT_IDF6_LF1 PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="XDRAKAN_ANU" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<friendly>XDRAKAN_ANU</friendly>
+	</tribe>
+	<tribe name="DC_HERO" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<friendly>DC_HERO</friendly>
+	</tribe>
+	<tribe name="DC_VILLAIN" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<friendly>DC_VILLAIN</friendly>
+	</tribe>
+	<tribe name="SHUGOBOB_BTGROUND_L" base="PC">
+		<aggressive>SHUGOBOB_HI_L</aggressive>
+		<friendly>SHUGOBOB_L MONSTER PC</friendly>
+	</tribe>
+	<tribe name="SHUGOBOB_BTGROUND_D" base="PC_DARK">
+		<aggressive>SHUGOBOB_HI_L</aggressive>
+		<friendly>SHUGOBOB_D MONSTER PC_DARK</friendly>
+	</tribe>
+	<tribe name="SHUGOBOB_L" base="MONSTER">
+		<friendly>SHUGOBOB_BTGROUND_L</friendly>
+		<neutral>PC PC_DARK</neutral>
+	</tribe>
+	<tribe name="SHUGOBOB_D" base="MONSTER">
+		<friendly>SHUGOBOB_BTGROUND_D</friendly>
+		<neutral>PC PC_DARK</neutral>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_ETC_01" base="MONSTER">
+		<friendly>IDLUNA_SIEGE_NPC IDLUNA_SIEGE_CANNON</friendly>
+		<hostile>PC PC_DARK IDLUNA_SIEGE_MONSTER</hostile>
+	</tribe>
+	<tribe name="SHUGOBOB_HI_L" base="USEALL">
+		<friendly>PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="SHUGOBOB_HI_D" base="USEALL">
+		<friendly>PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="IDF6_LF1_PROTECT" base="GENERAL">
+		<aggressive>XDRAKAN_ANU</aggressive>
+		<friendly>PC PC_DARK IDF6_LF1_PROTECT</friendly>
+	</tribe>
+	<tribe name="IDF6_LF1_PROTECT_D" base="GENERAL_DARK">
+		<aggressive>XDRAKAN_ANU</aggressive>
+		<friendly>PC PC_DARK IDF6_LF1_PROTECT</friendly>
+	</tribe>
+	<tribe name="NEPILIM_EARTH" base="USEALL">
+		<aggressive>NEPILIM_SUN IDETERNITY_02_BOSS NEPILIM_SUN_BATTLE</aggressive>
+		<friendly>PC PC_DARK</friendly>
+		<neutral>IDETERNITY_02_BOSS_SUM</neutral>
+	</tribe>
+	<tribe name="NEPILIM_SUN" base="USEALL">
+		<aggressive>NEPILIM_EARTH</aggressive>
+		<neutral>PC PC_DARK</neutral>
+	</tribe>
+	<tribe name="NEPILIM_SUMMON">
+		<aggressive>PC PC_DARK NEPILIM_NORMAL</aggressive>
+		<neutral>NEPILIM_NAMED</neutral>
+	</tribe>
+	<tribe name="NEPILIM_NAMED" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+	</tribe>
+	<tribe name="NEPILIM_NORMAL" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+	</tribe>
+	<tribe name="IDETERNITY_02_POLYMORPH" base="NONE">
+		<aggressive>IDETERNITY_02_POLYMORPH_ENEMY</aggressive>
+		<support>USEALL</support>
+		<neutral>PC PC_DARK</neutral>
+	</tribe>
+	<tribe name="IDETERNITY_02_POLYMORPH_ENEMY" base="MONSTER">
+		<aggressive>IDETERNITY_02_POLYMORPH PC PC_DARK</aggressive>
+	</tribe>
+	<tribe name="IDLUNA_DEF_MONSTER2" base="MONSTER">
+        <aggressive>IDLUNA_DEF_NPC2 IDLUNA_DEF_NPC4 IDLUNA_DEF_NPC5</aggressive>
+        <hostile>PC PC_DARK IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</hostile>
+        <support>IDLUNA_DEF_MONSTER2</support>
+	</tribe>
+	<tribe name="IDLUNA_DEF_MONSTER3" base="MONSTER">
+        <aggressive>IDLUNA_DEF_NPC5</aggressive>
+        <hostile>PC PC_DARK IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</hostile>
+        <support>IDLUNA_DEF_MONSTER3</support>
+	</tribe>
+	<tribe name="IDLUNA_DEF_NPC4" base="USEALL">
+	    <aggressive>IDLUNA_DEF_MONSTER IDLUNA_DEF_MONSTER2 IDLUNA_DEF_MONSTER3 IDLUNA_DEF_MONSTER4</aggressive>
+		<friendly>PC PC_DARK IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</friendly>
+	</tribe>
+	<tribe name="IDLUNA_DEF_MONSTER4" base="MONSTER">
+        <aggressive>IDLUNA_DEF_NPC IDLUNA_DEF_NPC2 IDLUNA_DEF_NPC4 IDLUNA_DEF_NPC5</aggressive>
+        <hostile>PC PC_DARK IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</hostile>
+        <support>IDLUNA_DEF_MONSTER4</support>
+	</tribe>
+	<tribe name="IDETERNITY_02_BOSS" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<friendly>IDETERNITY_02_BOSS_SUM</friendly>
+		<support>IDETERNITY_02_BOSS_SUB_01 IDETERNITY_02_BOSS_SUB_02</support>
+		<neutral>NEPILIM_EARTH</neutral>
+	</tribe>
+	<tribe name="IDETERNITY_02_BOSS_SUM" base="MONSTER">
+		<aggressive>PC PC_DARK NEPILIM_EVENT</aggressive>
+		<neutral>IDETERNITY_02_BOSS IDETERNITY_02_BOSS_SUB_02</neutral>
+	</tribe>
+	<tribe name="IDETERNITY_02_BOSSF" base="NONE">
+		<support>IDETERNITY_02_BOSS</support>
+	</tribe>
+	<tribe name="IDETERNITY_02_BOSS_SUB_01" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<support>IDETERNITY_02_BOSS</support>
+		<neutral>NEPILIM_EARTH</neutral>
+	</tribe>
+	<tribe name="NEPILIM_EVENT" base="USEALL">
+		<aggressive>IDETERNITY_02_BOSS</aggressive>
+		<friendly>PC PC_DARK</friendly>
+		<neutral>IDETERNITY_02_BOSS_SUM</neutral>
+	</tribe>
+	<tribe name="SHUGOBOB_MONSTER" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<friendly>SHUGOBOB_BTGROUND_L SHUGOBOB_BTGROUND_D</friendly>
+	</tribe>
+	<tribe name="NEPILIM_SUN_BATTLE" base="MONSTER">
+		<aggressive>NEPILIM_EARTH</aggressive>
+		<neutral>PC PC_DARK</neutral>
+	</tribe>
+	<tribe name="IDETERNITY_02_BOSS_SUBF" base="MONSTER">
+		<support>IDETERNITY_02_BOSS_SUB_01 IDETERNITY_02_BOSS_SUB_02</support>
+		<neutral>PC PC_DARK IDETERNITY_02_BOSS IDETERNITY_02_BOSS_SUM NEPILIM_EVENT</neutral>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_REWARD" base="MONSTER">
+        <hostile>PC PC_DARK IDLUNA_SIEGE_POLYMORPH_L IDLUNA_SIEGE_POLYMORPH_D</hostile>
+	</tribe>
+	<tribe name="IDETERNITY_02_BOSS_AREA" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<neutral>IDETERNITY_02_BOSS_SUB_02</neutral>
+	</tribe>
+	<tribe name="IDETERNITY_02_BOSS_SUB_02" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<hostile>IDETERNITY_02_BOSS_AREA</hostile>
+		<support>IDETERNITY_02_BOSS</support>
+		<neutral>NEPILIM_EARTH</neutral>
+	</tribe>
+	<tribe name="IDSWEEP_POLYMORPHLD" base="USEALL">
+		<friendly>IDSWEEP_MINE</friendly>
+		<hostile>IDSWEEP_MONSTER IDSWEEP_MONSTER_2 IDSWEEP_NPC IDSWEEP_MONSTER_3</hostile>
+	</tribe>
+	<tribe name="IDETERNITY_02_POLYMORPH_DISPEL" base="USEALL">
+		<support>IDETERNITY_02_POLYMORPH</support>
+	</tribe>
+	<tribe name="IDTRANSFORM_PC" base="GENERAL">
+        <aggressive>IDTRANSFORM_MONSTER IDTRANSFORM_SHADOW IDTRANSFORM_DRAGON_CINEMA</aggressive>
+        <neutral>IDTRANSFORM_DRAGON_CINEMA</neutral>
+        <friendly>GENERAL GENERAL_DARK PC PC_DARK IDTRANSFORM_TRANS_NPC</friendly>
+	</tribe>
+	<tribe name="IDTRANSFORM_MONSTER" base="MONSTER">
+        <aggressive>IDTRANSFORM_PC GENERAL GENERAL_DARK IDTRANSFORM_DEVA PC PC_DARK</aggressive>
+        <support>IDTRANSFORM_MONSTER</support>
+	</tribe>
+	<tribe name="IDLUNA_DEF_NPC5" base="USEALL">
+        <aggressive>IDLUNA_DEF_MONSTER IDLUNA_DEF_MONSTER2 IDLUNA_DEF_MONSTER3 IDLUNA_DEF_MONSTER4</aggressive>
+        <friendly>PC PC_DARK IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</friendly>
+    </tribe>
+    <tribe name="IDLUNA_DEF_NPC6" base="USEALL">
+        <aggressive>IDLUNA_DEF_MONSTER IDLUNA_DEF_MONSTER2 IDLUNA_DEF_MONSTER3 IDLUNA_DEF_MONSTER4</aggressive>
+        <friendly>PC PC_DARK IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</friendly>
+    </tribe>
+    <tribe name="IDLUNA_DEF_NPC7" base="USEALL">
+        <friendly>PC PC_DARK IDLUNA_DEF_POLYMORPH_L IDLUNA_DEF_POLYMORPH_D</friendly>
+    </tribe>
+	<tribe name="IDTRANSFORM_SHADOW" base="MONSTER">
+        <aggressive>IDTRANSFORM_PC PC PC_DARK</aggressive>
+        <friendly>IDTRANSFORM_SHADOW</friendly>
+	</tribe>
+	<tribe name="IDTRANSFORM_DEVA" base="GENERAL">
+        <aggressive>IDTRANSFORM_MONSTER IDTRANSFORM_DRAGON_CINEMA</aggressive>
+        <friendly>GENERAL GENERAL_DARK PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_ELECTRO" base="USEALL">
+        <aggressive>IDLUNA_SIEGE_BOMB</aggressive>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_BOMB_02" base="MONSTER">
+        <aggressive>PC PC_DARK</aggressive>
+        <hostile>IDLUNA_SIEGE_NPC</hostile>
+	</tribe>
+	<tribe name="IDLUNA_DEF_MONSTER5" base="MONSTER">
+        <support>IDLUNA_DEF_MONSTER5</support>
+	</tribe>
+	<tribe name="IDLUNA_DEF_MONSTER6" base="MONSTER">
+        <aggressive>IDLUNA_DEF_NPC2 IDLUNA_DEF_NPC4</aggressive>
+        <support>IDLUNA_DEF_MONSTER6</support>
+	</tribe>
+	<tribe name="IDTRANSFORM_DRAGON_CINEMA" base="GENERAL">
+        <aggressive>IDTRANSFORM_TRANS_NPC IDTRANSFORM_DEVA</aggressive>
+	</tribe>
+	<tribe name="IDLUNA_SIEGE_GATE" base="MONSTER">
+        <hostile>IDLUNA_SIEGE_NPC PC PC_DARK IDLUNA_SIEGE_POLYMORPH_L IDLUNA_SIEGE_POLYMORPH_D</hostile>
+	</tribe>
+	<tribe name="IDTRANSFORM_TRANS_NPC" base="GENERAL">
+        <aggressive>IDTRANSFORM_DRAGON_CINEMA</aggressive>
+	</tribe>
+	<tribe name="ERESUKIGAL_ENEMY" base="USEALL"/>
+	<tribe name="DREADGION_TANK" base="MONSTER">
+        <aggressive>ERESUKIGAL_ENEMY_WEAPON</aggressive>
+        <neutral>PC PC_DARK</neutral>
+	</tribe>
+	<tribe name="ERESUKIGAL_ENEMY_WEAPON" base="USEALL">
+        <hostile>DREADGION_MODULE DREADGION_MODULE_WEAPON</hostile>
+	</tribe>
+	<tribe name="DREADGION_MODULE" base="MONSTER">
+        <neutral>ERESUKIGAL_ENEMY_WEAPON PC PC_DARK</neutral>
+	</tribe>
+	<tribe name="AB1_U_DRAKAN" base="MONSTER">
+        <aggressive>AB1_U_SHUGO GENERAL GENERAL_DARK PC PC_DARK</aggressive>
+	</tribe>
+	<tribe name="AB1_U_SHUGO">
+        <aggressive>AB1_U_DRAKAN</aggressive>
+        <friendly>PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="ERESUKIGAL_ENEMY_POITION" base="USEALL">
+        <hostile>ERESUKIGAL ERESUKIGAL_KILLER ERESUKIGAL_DREAD</hostile>
+        <friendly>PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="ERESUKIGAL_KILLER" base="MONSTER">
+        <aggressive>ERESUKIGAL_ENEMY_POITION PC PC_DARK GUARD GUARD_DARK</aggressive>
+        <support>ERESUKIGAL ERESUKIGAL_DREAD</support>
+	</tribe>
+	<tribe name="WEAPON_FRIEND" base="NONE">
+        <support>ERESUKIGAL_ENEMY_WEAPON</support>
+	</tribe>
+	<tribe name="ERESUKIGAL_ENEMY_WEAPON_02" base="USEALL">
+        <hostile>ERESUKIGAL DREADGION_MODULE ERESUKIGAL_DREAD</hostile>
+	</tribe>
+	<tribe name="DREADGION_MODULE_WEAPON" base="NONE"/>
+	<tribe name="DREADGION_SUB_NPC" base="NONE"/>
+	<tribe name="ERESUKIGAL_BOMB" base="MONSTER">
+        <none>ERESUKIGAL_ENEMY_WEAPON_02</none>
+	</tribe>
+	<tribe name="EVENT_SOLO_MONSTER" base="MONSTER">
+        <aggressive>PC PC_DARK EVENT_SOLO_TOG EVENT_SOLO_PORGUSS</aggressive>
+        <friendly>GENERAL EVENT_SOLO_POLYMORPH</friendly>
+	</tribe>
+	<tribe name="EVENT_SOLO_TOG" base="MONSTER">
+        <aggressive>EVENT_SOLO_MONSTER</aggressive>
+        <friendly>GENERAL PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="ERESUKIGAL_DREAD" base="MONSTER">
+        <aggressive>PC PC_DARK PET PET_DARK GUARD GUARD_DARK ERESUKIGAL_ENEMY ERESUKIGAL_ENEMY_WEAPON ERESUKIGAL_ENEMY_POITION DREADGION_SUB_NPC</aggressive>
+        <friendly>MONSTER AB1_BOSS</friendly>
+        <none>AB1_AGGRESSIVESINGLEMONSTER AB1_AGGRESSIVESUPPORTMONSTER ERESUKIGAL_ENEMY_WEAPON_02</none>
+	</tribe>
+	<tribe name="EVENT_SOLO_PORGUSS" base="NONE">
+        <friendly>PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="EVENT_SOLO_POLYMORPH" base="NONE">
+        <friendly>EVENT_SOLO_MONSTER PC PC_DARK</friendly>
+        <none>FIELD_OBJECT_ALL</none>
+	</tribe>
+	<tribe name="F6_RAID_TRANSFER" base="GUARD">
+		<friendly>PC_DARK F6_RAID_GUARD_DARK</friendly>
+		<none>MONSTER AGGRESSIVESINGLEMONSTER</none>
+	</tribe>
+	<tribe name="F6_RAID_GUARD" base="GUARD">
+	    <aggressive>PC_DARK F6_RAID_TRANSFER_DARK F6_RAID_GUARD_DARK</aggressive>
+		<friendly>F6_RAID_TRANSFER</friendly>
+		<none>MONSTER AGGRESSIVESINGLEMONSTER</none>
+	</tribe>
+	<tribe name="F6_RAID_GUARD_DARK" base="GUARD_DARK">
+	    <aggressive>PC F6_RAID_TRANSFER F6_RAID_GUARD</aggressive>
+		<friendly>F6_RAID_TRANSFER</friendly>
+		<none>MONSTER AGGRESSIVESINGLEMONSTER</none>
+	</tribe>
+	<tribe name="F6_RAID_TRANSFER_DARK" base="GUARD_DARK">
+		<friendly>PC F6_RAID_GUARD</friendly>
+		<none>MONSTER AGGRESSIVESINGLEMONSTER</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_FALLINGROCK" base="USEALL">
+		<hostile>AGGRESSIVESUPPORTMONSTER PC PC_DARK</hostile>
+	</tribe>
+	<tribe name="RUN_GUARD" base="GUARD">
+		<none>PC_DARK PC</none>
+	</tribe>
+	<tribe name="RUN_GUARD_DARK" base="GUARD_DARK">
+		<none>PC_DARK PC</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_NPC" base="USEALL">
+		<hostile>IDETERNITY_03_DIMENSION</hostile>
+		<friendly>PC_DARK PC</friendly>
+	</tribe>
+	<tribe name="IDAB1_ERE_HERO">
+		<aggressive>IDAB1_ERE_PRISON_DOOR IDAB1_ERE_DDRAKAN XDRAKAN IDAB1_ERE_FINALBOSS_ICE</aggressive>
+		<friendly>PC PC_DARK IDAB1_ERE_POLY_BOMB IDAB1_ERE_POLY_ICE IDAB1_ERE_SMIGOL</friendly>
+		<none>IDAB1_ERE_FINALBOSS</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_PRISON_DOOR" base="MONSTER">
+		<none>PC PC_DARK</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_SHIELD_01" base="MONSTER">
+		<none>IDETERNITY_03_SHIELD_02 IDETERNITY_03_SHIELD_03 IDETERNITY_03_SHIELD_04</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_SHIELD_02" base="MONSTER">
+		<none>IDETERNITY_03_SHIELD_01 IDETERNITY_03_SHIELD_03 IDETERNITY_03_SHIELD_04</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_SHIELD_03" base="MONSTER">
+		<none>IDETERNITY_03_SHIELD_01 IDETERNITY_03_SHIELD_02 IDETERNITY_03_SHIELD_04</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_SHIELD_04" base="MONSTER">
+		<none>IDETERNITY_03_SHIELD_01 IDETERNITY_03_SHIELD_02 IDETERNITY_03_SHIELD_03</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_SMIGOL" base="USEALL">
+		<aggressive>XDRAKAN AGGRESSIVESINGLEMONSTER IDAB1_ERE_FINALBOSS MONSTER IDAB1_ERE_DDRAKAN</aggressive>
+		<friendly>PC PC_DARK IDAB1_ERE_DEVA IDAB1_ERE_HERO</friendly>
+	</tribe>
+	<tribe name="IDETERNITY_WAR_ALB_LI" base="F6_INVASION_DA">
+		<aggressive>IDETERNITY_WAR_PIECE IDETERNITY_WAR_FLAG_LI IDETERNITY_WAR_FLAG_DA</aggressive>
+	</tribe>
+	<tribe name="IDETERNITY_WAR_ALB_DA" base="F6_INVASION_LI">
+		<aggressive>IDETERNITY_WAR_PIECE IDETERNITY_WAR_FLAG_LI IDETERNITY_WAR_FLAG_DA</aggressive>
+	</tribe>
+	<tribe name="IDETERNITY_WAR_PIECE">
+		<friendly>PC PC_DARK GENERAL GENERAL_DARK</friendly>
+		<none>IDETERNITY_WAR_ALB_LI IDETERNITY_WAR_ALB_DA</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_DEVA" base="USEALL">
+		<aggressive>IDAB1_ERE_PRISON_DOOR</aggressive>
+		<friendly>PC PC_DARK IDAB1_ERE_HERO IDAB1_ERE_ESCORT_DEVA</friendly>
+		<none>XDRAKAN IDAB1_ERE_DDRAKAN</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_POLY_SOUL">
+		<aggressive>IDAB1_ERE_DARKSOUL</aggressive>
+		<friendly>IDAB1_ERE_POLY_DISPEL IDAB1_ERE_POLY_SOUL</friendly>
+		<none>PC PC_DARK IDAB1_ERE_FINALBOSS</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_DARKSOUL">
+		<aggressive>IDAB1_ERE_POLY_SOUL</aggressive>
+		<none>IDAB1_ERE_FINALBOSS</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_FINALBOSS" base="MONSTER">
+		<aggressive>PC PC_DARK IDAB1_ERE_POLY_SOUL</aggressive>
+		<friendly>IDAB1_ERE_PRISON_DOOR</friendly>
+		<support>IDAB1_ERE_FINALBOSS</support>
+		<none>IDAB1_ERE_DARKSOUL IDAB1_ERE_POLY_BOMB IDAB1_ERE_POLY_ICE IDAB1_ERE_HERO</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_POLY_BOMB">
+		<aggressive>PC PC_DARK IDAB1_ERE_FINALBOSS</aggressive>
+		<friendly>IDAB1_ERE_HERO</friendly>
+		<none>IDAB1_ERE_DARKSOUL</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_POLY_ICE">
+		<aggressive>IDAB1_ERE_FINALBOSS PC PC_DARK</aggressive>
+		<friendly>IDAB1_ERE_HERO</friendly>
+		<none>IDAB1_ERE_DARKSOUL</none>
+	</tribe>
+	<tribe name="IDETERNITY_MONSTER" base="MONSTER">
+		<aggressive>PC PC_DARK IDLDF4_RE_01_GUARD IDLDF4_RE_01_GUARD_DARK</aggressive>
+	</tribe>
+	<tribe name="IDETERNITY_WAR_FLAG_LI" base="USEALL">
+		<friendly>PC_DARK</friendly>
+		<none>PC</none>
+	</tribe>
+	<tribe name="IDETERNITY_WAR_FLAG_DA" base="USEALL">
+		<friendly>PC</friendly>
+		<none>PC_DARK</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_FINALBOSS_ICE" base="MONSTER">
+		<friendly>IDAB1_ERE_FINALBOSS IDAB1_ERE_PRISON_DOOR</friendly>
+		<none>IDAB1_ERE_DARKSOUL IDAB1_ERE_POLY_SOUL IDAB1_ERE_POLY_BOMB IDAB1_ERE_POLY_ICE</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_DIMENSION" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<hostile>IDETERNITY_03_NPC</hostile>
+	</tribe>
+	<tribe name="IDAB1_ERE_ESCORT_DEVA">
+		<hostile>XDRAKAN</hostile>
+		<friendly>IDAB1_ERE_DEVA</friendly>
+		<support>PC PC_DARK</support>
+	</tribe>
+	<tribe name="IDETERNITY_03_EVENT_LI" base="GENERAL">
+		<none>GENERAL_DARK IDETERNITY_03_EVENT_MON</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_EVENT_DA" base="GENERAL_DARK">
+		<none>GENERAL IDETERNITY_03_EVENT_MON</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_EVENT_MON" base="MONSTER">
+		<hostile>IDETERNITY_03_EVENT_GUARD IDETERNITY_03_EVENT_GUARD_DA</hostile>
+	</tribe>
+	<tribe name="IDETERNITY_03_EVENT_GUARD" base="GENERAL">
+		<aggressive>IDETERNITY_03_EVENT_MON</aggressive>
+	</tribe>
+	<tribe name="IDETERNITY_03_EVENT_GUARD_DA" base="GENERAL_DARK">
+		<aggressive>IDETERNITY_03_EVENT_MON</aggressive>
+	</tribe>
+	<tribe name="IDETERNITY_03_MONSTER" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<none>IDETERNITY_03_GUARD IDETERNITY_03_GUARD_DA</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_GUARD" base="GUARD">
+		<none>IDETERNITY_03_MONSTER</none>
+	</tribe>
+	<tribe name="IDETERNITY_03_GUARD_DA" base="GUARD_DARK">
+		<none>IDETERNITY_03_MONSTER</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_POLY_DISPEL">
+		<friendly>IDAB1_ERE_POLY_SOUL IDAB1_ERE_POLY_DISPEL</friendly>
+		<none>IDAB1_ERE_DARKSOUL IDAB1_ERE_POLY_BOMB IDAB1_ERE_POLY_ICE IDAB1_ERE_HERO IDAB1_ERE_FINALBOSS IDAB1_ERE_FINALBOSS_ICE</none>
+	</tribe>
+	<tribe name="IDAB1_ERE_HEAL_01" base="NPC">
+		<aggressive>XDRAKAN AGGRESSIVESINGLEMONSTER IDAB1_ERE_FINALBOSS MONSTER</aggressive>
+		<friendly>PC PC_DARK IDAB1_ERE_HERO GUARD GUARD_DARK IDAB1_ERE_PRISON_DOOR</friendly>
+	</tribe>
+	<tribe name="IDAB1_ERE_HEAL_02" base="NPC">
+		<aggressive>XDRAKAN AGGRESSIVESINGLEMONSTER IDAB1_ERE_FINALBOSS MONSTER</aggressive>
+		<friendly>PC PC_DARK IDAB1_ERE_HERO GUARD GUARD_DARK IDAB1_ERE_PRISON_DOOR</friendly>
+	</tribe>
+	<tribe name="IDAB1_ERE_HEAL_03" base="NPC">
+		<aggressive>XDRAKAN AGGRESSIVESINGLEMONSTER IDAB1_ERE_FINALBOSS MONSTER</aggressive>
+		<friendly>PC PC_DARK IDAB1_ERE_HERO GUARD GUARD_DARK IDAB1_ERE_PRISON_DOOR</friendly>
+	</tribe>
+	<tribe name="IDAB1_ERE_DDRAKAN">
+		<aggressive>IDAB1_ERE_HERO IDAB1_ERE_DEVA</aggressive>
+		<none>PC PC_DARK IDAB1_ERE_SMIGOL</none>
+	</tribe>
+	<tribe name="IDINFINITY_TARGET" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<none>IDINFINITY IDINFINITY_NAMED</none>
+	</tribe>
+	<tribe name="IDINFINITY" base="MONSTER">
+		<aggressive>PC PC_DARK IDINFINITY_MEAT</aggressive>
+		<support>IDINFINITY</support>
+	</tribe>
+	<tribe name="IDINFINITY_MEAT" base="USEALL" />
+	<tribe name="IDINFINITY_NAMED" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<hostile>IDINFINITY_TARGET</hostile>
+	</tribe>
+	<tribe name="IDINFINITY_TOG" base="MONSTER">
+		<aggressive>IDINFINITY_MEAT</aggressive>
+		<none>PC PC_DARK</none>
+	</tribe>
+	<tribe name="F6_EVENT_HIGH_PO_LI" base="GUARD">
+		<aggressive>F6_EVENT_HIGH_WI_DA</aggressive>
+		<hostile>PC_DARK GUARD_DARK</hostile>
+	</tribe>
+	<tribe name="F6_EVENT_HIGH_PO_DA" base="GUARD_DARK">
+		<aggressive>F6_EVENT_HIGH_WI_LI</aggressive>
+		<hostile>PC GUARD</hostile>
+	</tribe>
+	<tribe name="F6_EVENT_HIGH_WI_LI" base="GUARD">
+		<aggressive>F6_EVENT_HIGH_PO_DA</aggressive>
+		<hostile>PC_DARK GUARD_DARK</hostile>
+	</tribe>
+	<tribe name="F6_EVENT_HIGH_WI_DA" base="GUARD_DARK">
+		<aggressive>F6_EVENT_HIGH_PO_LI</aggressive>
+		<hostile>PC GUARD</hostile>
+	</tribe>
+	<tribe name="AB1_WEAPON_LI" base="GENERAL">
+		<aggressive>GENERAL_DRAGON</aggressive>
+		<none>PC PC_DARK ERESUKIGAL</none>
+	</tribe>
+	<tribe name="AB1_WEAPON_DA" base="GENERAL_DARK">
+		<aggressive>GENERAL_DRAGON</aggressive>
+		<none>PC PC_DARK ERESUKIGAL</none>
+	</tribe>
+	<tribe name="AB1_DRCASTLE_SHIELD">
+		<support>GENERAL_DRAGON</support>
+		<none>PC PC_DARK</none>
+	</tribe>
+	<tribe name="IDEVENT_PC" base="USEALL">
+		<aggressive>IDEVENT_MOB_ALL IDEVENT_MOB_PCBABYMEAT IDEVENT_MOB_PCTANK IDEVENT_MOB_WPBONUS IDEVENT_MOB_PCGUARD IDEVENT_MOB_BOSS</aggressive>
+		<friendly>IDEVENT_PC IDEVENT_PCBABY IDEVENT_PCMEAT IDEVENT_PCTANK IDEVENT_PCGUARD USEALL PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="IDEVENT_PCBABY" base="NONE">
+		<aggressive>IDEVENT_MOB_ALL</aggressive>
+	</tribe>
+	<tribe name="IDEVENT_PCGUARD" base="USEALL">
+		<friendly>IDEVENT_PCGUARD PC PC_DARK</friendly>
+	</tribe>
+	<tribe name="IDEVENT_PCMEAT" base="NONE">
+		<aggressive>IDEVENT_MOB_ALL IDEVENT_MOB_PCBABYMEAT IDEVENT_MOB_PCTANK</aggressive>
+	</tribe>
+	<tribe name="IDEVENT_PCTANK" base="NONE">
+		<aggressive>IDEVENT_MOB_ALL IDEVENT_MOB_PCBABYMEAT IDEVENT_MOB_PCTANK IDEVENT_MOB_BOSS</aggressive>
+	</tribe>
+	<tribe name="IDEVENT_MOB_ALL" base="MONSTER">
+		<aggressive>IDEVENT_PCBABY IDEVENT_PCMEAT</aggressive>
+	</tribe>
+	<tribe name="IDEVENT_MOB_PCBABYMEAT" base="MONSTER">
+		<aggressive>IDEVENT_PCBABY IDEVENT_PCMEAT</aggressive>
+	</tribe>
+	<tribe name="IDEVENT_MOB_PCTANK" base="MONSTER">
+		<aggressive>IDEVENT_PCTANK IDEVENT_PCMEAT</aggressive>
+		<neutral>IDEVENT_PC IDEVENT_MOB_PCGUARD</neutral>
+	</tribe>
+	<tribe name="IDEVENT_MOB_PCGUARD" base="MONSTER">
+		<aggressive>IDEVENT_PC IDEVENT_PCBABY IDEVENT_PCMEAT PC PC_DARK</aggressive>
+	</tribe>
+	<tribe name="IDEVENT_MOB_WPBONUS" base="MONSTER">
+		<aggressive>IDEVENT_PC</aggressive>
+	</tribe>
+	<tribe name="IDEVENT_MOB_BOSS" base="MONSTER">
+		<aggressive>IDEVENT_PC IDEVENT_PCBABY IDEVENT_PCMEAT PC PC_DARK IDEVENT_PCTANK</aggressive>
+	</tribe>
+	<tribe name="IDAB1_HEROES_BOSS" base="MONSTER">
+		<aggressive>PC PC_DARK IDAB1_HEROES_POLYMORPH</aggressive>
+		<friendly>XDRAKAN</friendly>
+	</tribe>
+	<tribe name="IDAB1_HEROES_POLYMORPH" base="MONSTER">
+		<aggressive>PC PC_DARK XDRAKAN</aggressive>
+		<none>IDAB1_HEROES_BOSS</none>
+	</tribe>
+	<tribe name="AB1_WEAPON_LI_NOATK" base="GENERAL">
+		<aggressive>GENERAL_DRAGON</aggressive>
+		<none>PC PC_DARK ERESUKIGAL</none>
+	</tribe>		
+	<tribe name="AB1_WEAPON_DA_NOATK" base="GENERAL_DARK">
+		<aggressive>GENERAL_DRAGON</aggressive>
+		<none>PC PC_DARK ERESUKIGAL</none>
+	</tribe>
+	<tribe name="IDINFINITY_HEAL" base="PC">
+		<aggressive>MONSTER</aggressive>
+		<friendly>USEALL</friendly>
+		<support>PC PC_DARK</support>
+	</tribe>
+	<tribe name="ASIST_D"/>
+    <tribe name="FIELD_OBJECT_DARK"/>
+    <tribe name="FIELD_OBJECT_LIGHT"/>
+	<tribe name="IDETERNITY_01_SUMMON" base="MONSTER">
+		<aggressive>IDETERNITY_01_NAMED</aggressive>
+		<neutral>PC PC_DARK</neutral>
+	</tribe>
+	<tribe name="IDETERNITY_01_SUPPORTMONSTER" base="MONSTER">
+		<aggressive>PC PC_DARK</aggressive>
+		<support>IDETERNITY_01_SUPPORTMONSTER IDETERNITY_01_SINGLEMONSTER</support>
+	</tribe>
+	<tribe name="NONE"/>
+    <tribe name="NPC"/>
+    <tribe name="USEALL"/>
+</tribe_relations>	

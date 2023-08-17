@@ -1,0 +1,80 @@
+/*
+ * This file is part of Encom. **ENCOM FUCK OTHER SVN**
+ *
+ *  Encom is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Lesser Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  Encom is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Lesser Public License for more details.
+ *
+ *  You should have received a copy of the GNU Lesser Public License
+ *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package com.aionemu.gameserver.services.svsservice;
+
+import com.aionemu.gameserver.model.svs.SvsLocation;
+import com.aionemu.gameserver.model.svs.SvsStateType;
+import com.aionemu.gameserver.services.SvsService;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+
+/**
+ * @author Rinzler (Encom)
+ */
+
+public abstract class Panesterra<PL extends SvsLocation>
+{
+	private boolean started;
+	private final PL svsLocation;
+	protected abstract void stopSvs();
+	protected abstract void startSvs();
+	private final AtomicBoolean finished = new AtomicBoolean();
+	
+	public Panesterra(PL svsLocation) {
+		this.svsLocation = svsLocation;
+	}
+	
+	public final void start() {
+		boolean doubleStart = false;
+		synchronized (this) {
+			if (started) {
+				doubleStart = true;
+			} else {
+				started = true;
+			}
+		} if (doubleStart) {
+			return;
+		}
+		startSvs();
+	}
+	
+	public final void stop() {
+		if (finished.compareAndSet(false, true)) {
+			stopSvs();
+		}
+	}
+	
+	protected void spawn(SvsStateType type) {
+		SvsService.getInstance().spawn(getSvsLocation(), type);
+	}
+	
+	protected void despawn() {
+		SvsService.getInstance().despawn(getSvsLocation());
+	}
+	
+	public boolean isFinished() {
+		return finished.get();
+	}
+	
+	public PL getSvsLocation() {
+		return svsLocation;
+	}
+	
+	public int getSvsLocationId() {
+		return svsLocation.getId();
+	}
+}

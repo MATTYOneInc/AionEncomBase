@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Legion Dominion 4.8
+	시그니아
+	Made By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="210070000">
+		<!-- [호노르 영지 마을] -->
+		<legion_dominion_spawn legion_id="1">
+			<legion_dominion_race race="ELYOS">
+				<legion_mod mod="PEACE">
+				</legion_mod>
+				<legion_mod mod="DOMINION">
+				</legion_mod>
+			</legion_dominion_race>
+			<legion_dominion_race race="ASMODIANS">
+				<legion_mod mod="PEACE">
+				</legion_mod>
+				<legion_mod mod="DOMINION">
+				</legion_mod>
+			</legion_dominion_race>
+			<legion_dominion_race race="BALAUR">
+				<legion_mod mod="PEACE">
+				</legion_mod>
+				<legion_mod mod="DOMINION">
+				</legion_mod>
+			</legion_dominion_race>
+		</legion_dominion_spawn>
+		<!-- [안드레이아 영지 마을] -->
+		<legion_dominion_spawn legion_id="2">
+			<legion_dominion_race race="ELYOS">
+				<legion_mod mod="PEACE">
+				</legion_mod>
+				<legion_mod mod="DOMINION">
+				</legion_mod>
+			</legion_dominion_race>
+			<legion_dominion_race race="ASMODIANS">
+				<legion_mod mod="PEACE">
+				</legion_mod>
+				<legion_mod mod="DOMINION">
+				</legion_mod>
+			</legion_dominion_race>
+			<legion_dominion_race race="BALAUR">
+				<legion_mod mod="PEACE">
+				</legion_mod>
+				<legion_mod mod="DOMINION">
+				</legion_mod>
+			</legion_dominion_race>
+		</legion_dominion_spawn>
+		<!-- [에티카 영지 마을] -->
+		<legion_dominion_spawn legion_id="3">
+			<legion_dominion_race race="ELYOS">
+				<legion_mod mod="PEACE">
+				</legion_mod>
+				<legion_mod mod="DOMINION">
+				</legion_mod>
+			</legion_dominion_race>
+			<legion_dominion_race race="ASMODIANS">
+				<legion_mod mod="PEACE">
+				</legion_mod>
+				<legion_mod mod="DOMINION">
+				</legion_mod>
+			</legion_dominion_race>
+			<legion_dominion_race race="BALAUR">
+				<legion_mod mod="PEACE">
+				</legion_mod>
+				<legion_mod mod="DOMINION">
+				</legion_mod>
+			</legion_dominion_race>
+		</legion_dominion_spawn>
+	</spawn_map>
+</spawns>

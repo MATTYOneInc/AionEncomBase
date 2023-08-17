@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+	<zone mapid="300220000" name="THE_CRYSTAL_MEZZANINE" area_type="POLYGON" zone_type="SUB" priority="4" flags="0">
+		<points bottom="400.000000" top="650.000000">
+            <point x="274.769989" y="618.419983"/>
+            <point x="491.112854" y="616.951660"/>
+            <point x="514.603455" y="695.646729"/>
+            <point x="424.235474" y="883.372925"/>
+		</points>
+    </zone>
+	<zone mapid="300220000" name="PAZUZU_SANCTUARY" area_type="POLYGON" zone_type="SUB" priority="2" flags="0">
+	    <points bottom="150.000000" top="650.000000">
+            <point x="613.145264" y="297.138489"/>
+            <point x="699.969543" y="291.615997"/>
+            <point x="736.256104" y="340.139069"/>
+            <point x="657.288025" y="403.468842"/>
+            <point x="619.646545" y="369.400085"/>
+		</points>
+    </zone>
+	<zone mapid="300220000" name="THE_STORM_CAVE" area_type="POLYGON" zone_type="SUB" priority="3" flags="0">
+	    <points bottom="150.000000" top="650.000000">
+            <point x="738.035400" y="336.188141"/>
+            <point x="763.948608" y="405.194427"/>
+            <point x="752.479065" y="459.435913"/>
+            <point x="699.278381" y="476.773773"/>
+            <point x="658.137451" y="496.135956"/>
+            <point x="653.847595" y="403.568787"/>
+		</points>
+    </zone>
+	<zone mapid="300220000" name="SPIRAL_CORRIDOR" area_type="POLYGON" zone_type="SUB" priority="4" flags="0">
+	    <points bottom="150.000000" top="650.000000">
+            <point x="700.035522" y="473.856262"/>
+            <point x="834.363281" y="618.668701"/>
+            <point x="825.107483" y="683.187256"/>
+            <point x="703.950195" y="652.897278"/>
+            <point x="654.254700" y="495.073700"/>
+		</points>
+    </zone>
+	<zone mapid="300220000" name="SPLINTERCORE" area_type="POLYGON" zone_type="SUB" priority="3" flags="0">
+	    <points bottom="150.000000" top="430.000000">
+            <point x="213.627991" y="691.598083"/>
+            <point x="278.625610" y="620.316040"/>
+            <point x="385.544006" y="620.278625"/>
+            <point x="416.548065" y="652.606995"/>
+            <point x="432.334534" y="814.967102"/>
+            <point x="377.721191" y="861.129700"/>
+            <point x="268.083008" y="874.550293"/>
+		</points>
+    </zone>
+	<zone mapid="300220000" name="CHAOS_WAY" area_type="POLYGON" zone_type="SUB" priority="3" flags="0">
+	    <points bottom="150.000000" top="650.000000">
+            <point x="491.671967" y="627.069092"/>
+            <point x="566.443542" y="563.821472"/>
+            <point x="588.524231" y="587.571716"/>
+            <point x="605.139893" y="652.721313"/>
+            <point x="512.440796" y="697.922668"/>
+		</points>
+    </zone>
+	<zone mapid="300220000" name="SPLINTERPATH" area_type="POLYGON" zone_type="SUB" priority="1" flags="0">
+	    <points bottom="150.000000" top="650.000000">
+            <point x="592.625183" y="71.856316"/>
+            <point x="793.816650" y="114.873695"/>
+            <point x="793.811646" y="189.506973"/>
+            <point x="669.737244" y="294.950653"/>
+            <point x="617.314331" y="298.615845"/>
+            <point x="577.072266" y="133.683289"/>
+		</points>
+    </zone>
+	<zone mapid="300220000" name="ABYSSAL_SPLINTER" area_type="POLYGON" zone_type="SUB" priority="9" flags="0">
+	    <points bottom="150.000000" top="650.000000">
+            <point x="120.515701" y="14.491119"/>
+            <point x="991.083984" y="16.177248"/>
+            <point x="987.209534" y="949.638794"/>
+            <point x="120.128189" y="946.985596"/>
+		</points>
+    </zone>
+	<zone mapid="300220000" name="KALUVA_NEST" area_type="POLYGON" zone_type="SUB" priority="2" flags="0">
+	    <points bottom="150.000000" top="450.000000">
+            <point x="560.679626" y="455.946350"/>
+            <point x="648.711365" y="453.975403"/>
+            <point x="714.350891" y="478.554260"/>
+            <point x="756.722351" y="550.443481"/>
+            <point x="723.065857" y="596.824829"/>
+            <point x="639.766296" y="649.132568"/>
+            <point x="536.250244" y="534.558777"/>
+		</points>
+    </zone>
+</zones>

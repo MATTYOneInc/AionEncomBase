@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Norsvold 5.5
+	Make By (Encom)
+ -->
+    <!-- For Luck (Asmodians Only) -->
+	<fountain_rewards id="25667" start_npc_ids="805753"/>
+</quest_scripts>

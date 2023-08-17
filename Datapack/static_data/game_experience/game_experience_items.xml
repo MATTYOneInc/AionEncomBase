@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Game Experience Items 4.8
+	Made By (Encom) & Ranastic & Themoose (15 August 2015)
+ -->
+<game_experience_items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="game_experience_items.xsd">
+    <game_experience_item id="1" reward_item="186000219" account_type="NEWBIE"/>
+    <game_experience_item id="2" reward_item="186000220" account_type="RETURN"/>
+    <game_experience_item id="3" reward_item="186000224" account_type="NEWBIE"/>
+    <game_experience_item id="4" reward_item="186000225" account_type="NEWBIE"/>
+    <game_experience_item id="5" reward_item="186000226" account_type="NEWBIE"/>
+    <game_experience_item id="6" reward_item="186000227" account_type="RETURN"/>
+    <game_experience_item id="7" reward_item="186000228" account_type="RETURN"/>
+    <game_experience_item id="8" reward_item="186000229" account_type="RETURN"/>
+    <game_experience_item id="9" reward_item="186000230" account_type="CASH"/>
+    <game_experience_item id="10" reward_item="186000322" account_type="CASH"/>
+    <game_experience_item id="11" reward_item="186000338" account_type="CASH"/>
+    <game_experience_item id="12" reward_item="186000339" account_type="CASH"/>
+    <game_experience_item id="13" reward_item="186000340" account_type="CASH"/>
+    <game_experience_item id="14" reward_item="186000341" account_type="CASH"/>
+    <game_experience_item id="15" reward_item="186000342" account_type="CASH"/>
+    <game_experience_item id="16" reward_item="186000343" account_type="CASH"/>
+    <game_experience_item id="17" reward_item="186000351" account_type="DIAMOND_01"/>
+    <game_experience_item id="18" reward_item="186000352" account_type="DIAMOND_01"/>
+    <game_experience_item id="19" reward_item="186000353" account_type="DIAMOND_01"/>
+    <game_experience_item id="20" reward_item="186000354" account_type="DIAMOND_01"/>
+    <game_experience_item id="21" reward_item="186000355" account_type="DIAMOND_01"/>
+    <game_experience_item id="22" reward_item="186000356" account_type="DIAMOND_01"/>
+    <game_experience_item id="23" reward_item="186000357" account_type="DIAMOND_01"/>
+    <game_experience_item id="24" reward_item="186000358" account_type="DIAMOND_01"/>
+    <game_experience_item id="25" reward_item="186000359" account_type="DIAMOND_01"/>
+    <game_experience_item id="26" reward_item="186000360" account_type="DIAMOND_01"/>
+    <game_experience_item id="27" reward_item="186000361" account_type="DIAMOND_01"/>
+    <game_experience_item id="28" reward_item="186000362" account_type="DIAMOND_01"/>
+    <game_experience_item id="29" reward_item="186000363" account_type="DIAMOND_01"/>
+    <game_experience_item id="30" reward_item="186000364" account_type="DIAMOND_01"/>
+    <game_experience_item id="31" reward_item="186000365" account_type="DIAMOND_01"/>
+    <game_experience_item id="32" reward_item="186000366" account_type="DIAMOND_01"/>
+    <game_experience_item id="33" reward_item="186000367" account_type="DIAMOND_01"/>
+    <game_experience_item id="34" reward_item="186000368" account_type="DIAMOND_01"/>
+</game_experience_items>

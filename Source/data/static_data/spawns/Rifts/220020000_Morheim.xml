@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Rift モルヘイム 3.9
+	Made By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="220020000">
+		<!-- Rift -->
+		<spawn npc_id="700137" handler="RIFT">
+			<spot x="450.000" y="2350.000" z="439.000" anchor="MORHEIM_AM"/>
+			<spot x="750.000" y="920.0000" z="329.250" anchor="MORHEIM_BM"/>
+			<spot x="250.000" y="500.0000" z="436.250" anchor="MORHEIM_CM"/>
+			<spot x="1650.00" y="1400.000" z="124.000" anchor="MORHEIM_DM"/>
+			<spot x="1624.59" y="1119.290" z="187.130" anchor="MORHEIM_EM"/>
+			<spot x="2400.00" y="2300.000" z="108.000" anchor="MORHEIM_FM"/>
+			<spot x="3020.91" y="883.3438" z="362.875" anchor="MORHEIM_GM"/>
+			<spot x="745.420" y="1872.320" z="364.746" anchor="MORHEIM_AS"/>
+			<spot x="1364.66" y="1334.970" z="238.177" anchor="MORHEIM_BS"/>
+			<spot x="617.477" y="209.0700" z="518.337" anchor="MORHEIM_CS"/>
+			<spot x="1820.14" y="1309.380" z="21.6041" anchor="MORHEIM_DS"/>
+			<spot x="1559.14" y="2757.690" z="358.771" anchor="MORHEIM_ES"/>
+			<spot x="2613.38" y="2235.680" z="95.9590" anchor="MORHEIM_FS"/>
+			<spot x="2930.68" y="879.4900" z="370.009" anchor="MORHEIM_GS"/>
+		</spawn>
+	</spawn_map>
+</spawns>

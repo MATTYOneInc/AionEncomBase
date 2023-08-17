@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Abyss Landing Location 4.9.1
+	Made By (Encom)
+ -->
+<landing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="landing_locations.xsd">
+    <!-- Redemption Landing -->
+	<landing_location id="1" name="Redemption Landing" race="ELYOS"/>
+    <!-- Harbinger's Landing -->
+	<landing_location id="2" name="Harbinger's Landing" race="ASMODIANS"/>
+</landing>

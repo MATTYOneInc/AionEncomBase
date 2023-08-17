@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Specialize 4.7/4.9
+	Make By (Encom)
+ -->
+	<!-- Suspicious Symbols (Elyos Only) -->
+	<item_collecting id="14110" start_npc_ids="203111"/>
+	<!-- Prey For The Lepharists (Elyos Only) -->
+	<monster_hunt id="14111" start_npc_ids="203126">
+		<monster var="0" npc_ids="210688" end_var="9"/>
+		<monster var="1" npc_ids="210316" end_var="1"/>
+	</monster_hunt>
+	<!-- Steal Back The Sacred (Elyos Only) -->
+	<item_collecting id="14113" start_npc_ids="203178"/>
+	<!-- Murky Waters (Elyos Only) -->
+	<monster_hunt id="14124" start_npc_ids="203946">
+		<monster var="0" npc_ids="210968" end_var="3"/>
+		<monster var="1" npc_ids="211065" end_var="3"/>
+	</monster_hunt>
+	<!-- Target Practice With A Queen (Elyos Only) -->
+	<monster_hunt id="14151" start_npc_ids="204583" end_npc_ids="204502">
+		<monster var="0" npc_ids="212120" end_var="1"/>
+	</monster_hunt>
+	<!-- Eternal Flames (Elyos Only) -->
+	<monster_hunt id="14200" start_npc_ids="798206" end_npc_ids="798155">
+		<monster var="0" npc_ids="700390" end_var="3"/>
+	</monster_hunt>
+	<!-- Two Hands Are Better Than None (Elyos Only) -->
+	<report_to id="14202" start_npc_ids="204500" end_npc_ids="798155"/>
+	<!-- A Triumph's A Triumph (Elyos Only) -->
+	<report_to id="14241" start_npc_ids="203996" end_npc_ids="203900"/>
+	<!-- Kralls Bugging Kralls (Elyos Only) -->
+	<monster_hunt id="14242" start_npc_ids="204004">
+		<monster var="0" npc_ids="212064 212065" end_var="9"/>
+	</monster_hunt>
+	<!-- Golden Son, Gone (Elyos Only) -->
+	<report_to id="14243" start_npc_ids="203965" end_npc_ids="790004"/>
+	<!-- Eltnen Job (Elyos Only) -->
+	<report_to id="14244" start_npc_ids="730019" end_npc_ids="800518"/>
+	<!-- Start With The Strongest (Elyos Only) -->
+	<monster_hunt id="14250" start_npc_ids="800413">
+		<monster var="0" npc_ids="213994 213995 214070 214071" end_var="10"/>
+	</monster_hunt>
+	<!-- Because Caves Are Easy (Elyos Only) -->
+	<report_to id="14251" start_npc_ids="204602" end_npc_ids="832824"/>
+	<!-- [Dungeon/Group] Impeding The Beritra Legion (Elyos Only) -->
+	<monster_hunt id="14252" start_npc_ids="805736" end_npc_ids="832824">
+		<monster var="0" npc_ids="213775" end_var="1"/>
+		<monster var="1" npc_ids="213780" end_var="1"/>
+		<monster var="2" npc_ids="237275" end_var="1"/>
+	</monster_hunt>
+	<!-- The Dark Transcendence (Elyos Only) -->
+	<report_to id="14260" start_npc_ids="205253" end_npc_ids="204656"/>
+	<!-- Darkness Unpassed (Elyos Only) -->
+	<report_to id="14261" start_npc_ids="798155" end_npc_ids="204656"/>
+	<!-- [Group] A Bio Weapon Bio (Elyos Only) -->
+	<report_to id="14270" start_npc_ids="204500" end_npc_ids="832824"/>
+	<!-- [Group] Research Party (Elyos Only) -->
+	<report_to id="14271" start_npc_ids="798155" end_npc_ids="798225"/>
+	<!-- [Group] Mother And Son Asunder (Elyos Only) -->
+	<report_to id="14275" start_npc_ids="203901" end_npc_ids="790004"/>
+	<!-- [Group] Impede Kromede (Elyos Only) -->
+	<monster_hunt id="14276" start_npc_ids="790004">
+		<monster var="0" npc_ids="212788 212801 212807 214094 214095 214096" end_var="5"/>
+		<monster var="1" npc_ids="212787 212802 212803 212806" end_var="3"/>
+		<monster var="2" npc_ids="212785 212786 212789 212790 212792 212793 212794" end_var="2"/>
+	</monster_hunt>
+
+	<!-- What's Up, Dock? (Asmodians Only) -->
+	<item_collecting id="24111" start_npc_ids="203606" end_npc_ids="203631" action_item_ids="700010"/>
+	<item_collecting id="24112" start_npc_ids="0"/>
+	<!-- Sword To Secrecy (Asmodians Only) -->
+	<item_collecting id="24113" start_npc_ids="203654"/>
+	<item_collecting id="24120" start_npc_ids="0"/>
+	<item_collecting id="24121" start_npc_ids="0"/>
+	<item_collecting id="24122" start_npc_ids="0"/>
+	<item_collecting id="24123" start_npc_ids="0"/>
+	<!-- Induction To Brusthonin (Asmodians Only) -->
+	<report_to id="24200" start_npc_ids="204702" end_npc_ids="205150"/>
+	<item_collecting id="24201" start_npc_ids="0"/>
+	<item_collecting id="24202" start_npc_ids="0"/>
+	<item_collecting id="24203" start_npc_ids="0"/>
+	<!-- Take Back, Sword! (Asmodians Only) -->
+	<item_collecting id="24231" start_npc_ids="832821"/>
+
+	<!-- Wig Out Over The Sprigg Sprout (Asmodians Only) -->
+	<report_to id="24240" start_npc_ids="204392" end_npc_ids="204379"/>
+	<!-- You Have A Choice... (Asmodians Only) -->
+	<report_to id="24241" start_npc_ids="204379" end_npc_ids="800519"/>
+	<item_collecting id="24242" start_npc_ids="0"/>
+	<!-- Time Has Come (Asmodians Only) -->
+	<report_to id="24250" start_npc_ids="802053" end_npc_ids="832820"/>
+	<!-- [Dungeon/Group] Stopping The Beritra's Legion (Asmodians Only) -->
+	<monster_hunt id="24252" start_npc_ids="805737" end_npc_ids="832820">
+		<monster var="0" npc_ids="213775" end_var="1"/>
+		<monster var="1" npc_ids="213780" end_var="1"/>
+		<monster var="2" npc_ids="237275" end_var="1"/>
+	</monster_hunt>
+	<!-- Invade The Past (Asmodians Only) -->
+	<report_to id="24260" start_npc_ids="205264" end_npc_ids="204837"/>
+	<!-- Back In Time (Asmodians Only) -->
+	<report_to id="24261" start_npc_ids="205155" end_npc_ids="204837"/>
+	<!-- [Group] To Steal A Secret (Asmodians Only) -->
+	<report_to id="24270" start_npc_ids="204702" end_npc_ids="832820"/>
+	<!-- [Group] Retribution Resolution (Asmodians Only) -->
+	<monster_hunt id="24275" start_npc_ids="804606">
+		<monster var="0" npc_ids="212846 214621" end_var="1"/>
+	</monster_hunt>
+</quest_scripts>

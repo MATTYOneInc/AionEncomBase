@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Bomb Ai
+	Made By (Encom)
+ -->
+<ai_templates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ai.xsd">
+	<!-- Trap -->
+	<ai npcId="207504">
+		<bombs>
+			<bomb skillId="17906"/>
+		</bombs>
+	</ai>
+	<!-- Trap -->
+	<ai npcId="280449">
+		<bombs>
+			<bomb skillId="16559"/>
+		</bombs>
+	</ai>
+	<!-- Powerful Trap -->
+	<ai npcId="280450">
+		<bombs>
+			<bomb skillId="16996"/>
+		</bombs>
+	</ai>
+	<!-- Trap -->
+	<ai npcId="280451">
+		<bombs>
+			<bomb skillId="16559"/>
+		</bombs>
+	</ai>
+	<!-- Powerful Trap -->
+	<ai npcId="280452">
+		<bombs>
+			<bomb skillId="16996"/>
+		</bombs>
+	</ai>
+	<!-- Huge Bomb -->
+	<ai npcId="280699">
+		<bombs>
+			<bomb skillId="21866"/>
+		</bombs>
+	</ai>
+	<!-- Flame Bomb -->
+	<ai npcId="281327">
+		<bombs>
+			<bomb skillId="21866"/>
+		</bombs>
+	</ai>
+	<!-- Explosion Trap -->
+	<ai npcId="281545">
+		<bombs>
+			<bomb skillId="21866" cd="1000"/>
+		</bombs>
+	</ai>
+	<!-- Shock Trap -->
+	<ai npcId="281756">
+		<bombs>
+			<bomb skillId="19093" cd="1000"/>
+		</bombs>
+	</ai>
+	<!-- Small Trap -->
+	<ai npcId="281758">
+		<bombs>
+			<bomb skillId="19093" cd="1000"/>
+		</bombs>
+	</ai>
+</ai_templates>

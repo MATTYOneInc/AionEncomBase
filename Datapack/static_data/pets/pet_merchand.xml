@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Pet's Merchand 4.8
+	Made By (Encom)
+ -->
+<merchands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="pet_merchand.xsd">
+	<merchand id="1" rate_price="10"/>
+	<merchand id="2" rate_price="30"/>
+	<merchand id="3" rate_price="15"/>
+	<merchand id="4" rate_price="20"/>
+	<merchand id="5" rate_price="21"/>
+</merchands>

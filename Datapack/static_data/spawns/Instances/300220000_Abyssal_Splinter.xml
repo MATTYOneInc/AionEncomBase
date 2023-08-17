@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Abyssal Splinter
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="300220000">
+		<!-- Fallen Shugo
+		A Shugo who went to Abyssal Splinter searching for treasure,
+		but failed to return safely and ended up imprisoned in The Storm Cave -->
+		<spawn npc_id="207945">
+		    <spot h="6" z="462.76807" y="420.53268" x="671.3511"/>
+		</spawn>
+		<!-- Holy Orkanimum
+		A magical creature in Abyssal Splinter,
+		which possesses powerful Aether energy -->
+		<spawn npc_id="216942">
+		    <spot h="98" z="462.52393" y="243.3596" x="641.2196"/>
+            <spot h="91" z="462.8707" y="282.02493" x="644.4882"/>
+            <spot h="96" z="456.76895" y="217.2893" x="649.891"/>
+		</spawn>
+		<!-- Ametgolem Of Guarding
+		A magical creature found in Abyssal Splinter -->
+		<spawn npc_id="216943">
+		    <spot h="94" z="462.67657" y="249.27328" x="642.24854"/>
+            <spot h="94" z="462.92407" y="247.9408" x="636.8384"/>
+            <spot h="99" z="458.50797" y="221.00389" x="644.63934"/>
+            <spot h="99" z="458.74442" y="224.04446" x="650.4125"/>
+            <spot h="92" z="463.12473" y="286.14285" x="641.03265"/>
+            <spot h="92" z="463.17712" y="286.91537" x="647.18976"/>
+		</spawn>
+		<!-- Enos Grappler
+		A huge magical creature in Abyssal Splinter
+		with great Aether energy -->
+		<spawn npc_id="216944">
+		    <spot h="116" z="427.97363" y="666.4905" x="521.9317"/>
+            <spot h="104" z="424.5322" y="655.19995" x="554.3595"/>
+            <spot h="96" z="420.1649" y="613.53705" x="563.3957"/>
+		</spawn>
+		<!-- Enos Watcher
+		It guards The Storm Cave in Abyssal Splinter -->
+		<spawn npc_id="216945">
+		    <spot h="80" z="465.7128" y="371.128" x="700.64" walker_id="Enos_Watcher"/>
+		</spawn>
+		<!-- Noble Lapilima
+		A creature in Abyssal Splinter with great Aether energy -->
+		<spawn npc_id="216946">
+		    <spot h="118" z="452.2759" y="652.8995" x="790.52057"/>
+            <spot h="5" z="439.22278" y="643.1991" x="739.5379"/>
+		</spawn>
+		<!-- Flash Lapilimo
+		A small magical creature in Abyssal Splinter,
+		which possesses powerful Aether energy -->
+		<spawn npc_id="216947">
+		    <spot h="94" z="454.83865" y="647.49493" x="808.5032"/>
+            <spot h="0" z="446.55313" y="652.591" x="754.86505"/>
+            <spot h="117" z="453.66626" y="649.9677" x="793.92255"/>
+            <spot h="17" z="431.17624" y="622.5502" x="707.43085"/>
+            <spot h="11" z="445.06696" y="646.27856" x="756.9961"/>
+            <spot h="119" z="437.27966" y="640.0288" x="729.6632"/>
+            <spot h="78" z="454.99496" y="633.086" x="811.87494"/>
+            <spot h="7" z="455.34326" y="616.88745" x="796.291"/>
+		</spawn>
+		<!-- Kaluva The Fourth Fragment
+		A gigantic Arachna in the Abyssal Splinter that has a fragment
+		of the Tower of Aion embedded in its tail.
+		It guards its eggs and traps anyone who approaches in a cocoon -->
+		<spawn npc_id="216950">
+		    <spot h="17" z="422.9871" y="545.019" x="618.10767"/>
+		</spawn>
+		<!-- Pazuzu
+		A beautiful spirit in the Abyssal Splinter.
+		Aether seems to have changed its features significantly -->
+		<spawn npc_id="216951">
+		    <spot h="73" z="466.07324" y="331.4126" x="670.0997"/>
+		</spawn>
+		<!-- Noble Lapilima
+		A creature in Abyssal Splinter,
+		with great Aether energy -->
+		<spawn npc_id="216957">
+		    <spot h="79" z="461.78842" y="605.37415" x="761.7432"/>
+            <spot h="76" z="454.32053" y="626.3237" x="805.03046"/>
+		</spawn>
+		<!-- Flash Lapilimo
+		A small magical creature in Abyssal Splinter,
+		which possesses powerful Aether energy -->
+		<spawn npc_id="216958">
+		    <spot h="78" z="428.48944" y="611.79974" x="703.85657"/>
+            <spot h="111" z="453.6902" y="656.0148" x="794.1914"/>
+            <spot h="63" z="454.94968" y="620.2641" x="799.4859"/>
+            <spot h="66" z="458.4873" y="616.9569" x="781.8774"/>
+            <spot h="0" z="449.65417" y="651.8034" x="779.9885"/>
+            <spot h="7" z="441.19986" y="644.73944" x="745.53253"/>
+		</spawn>
+		<!-- Flash Lapilimo
+		A small magical creature in Abyssal Splinter,
+		which possesses powerful Aether energy -->
+		<spawn npc_id="216959">
+		    <spot h="99" z="454.21005" y="650.24567" x="802.3735"/>
+            <spot h="77" z="460.55234" y="611.7898" x="768.3915"/>
+            <spot h="77" z="463.4747" y="592.04926" x="756.62537"/>
+            <spot h="85" z="463.6169" y="595.4809" x="751.20984"/>
+            <spot h="4" z="449.14258" y="646.58527" x="772.29944"/>
+            <spot h="6" z="434.99954" y="635.3522" x="712.1968"/>
+            <spot h="15" z="427.5802" y="599.2473" x="692.98724"/>
+		</spawn>
+		<!-- Enos Protector -->
+		<spawn npc_id="281923">
+		    <spot h="103" z="449.87097" y="187.35692" x="661.27075"/>
+		</spawn>
+		<!-- Dayshade
+		A huge magical creature protecting the Abyssal Splinter.
+		It splits into Rukril and Ebonsoul when threatened -->
+		<spawn npc_id="282010">
+		    <spot h="114" z="432.435" y="690.2454" x="458.32898"/>
+		</spawn>
+		<!-- Kaluva's Spawner -->
+		<spawn npc_id="281902">
+		    <spot x="611.14417" y="539.66949" z="425.00323"/>
+			<spot x="628.40558" y="585.44812" z="425.00323"/>
+			<spot x="663.19116" y="556.46820" z="425.00323"/>
+			<spot x="643.95343" y="524.20172" z="425.00323"/>
+		</spawn>
+		<!-- Drakan Corpse -->
+		<spawn npc_id="282067">
+		    <spot h="37" z="448.82074" y="144.20021" x="658.3771"/>
+            <spot h="58" z="448.59506" y="141.13475" x="655.23883"/>
+            <spot h="24" z="448.3657" y="164.2603" x="663.76776"/>
+            <spot h="17" z="448.2245" y="168.21869" x="655.92944"/>
+            <spot h="45" z="449.03967" y="152.21233" x="668.96655"/>
+            <spot h="45" z="448.45767" y="155.52956" x="672.152"/>
+            <spot h="1" z="448.34085" y="165.9075" x="646.42975"/>
+            <spot h="116" z="448.01443" y="160.63103" x="645.7714"/>
+            <spot h="83" z="447.97116" y="157.186" x="638.1987"/>
+            <spot h="16" z="447.42532" y="144.37418" x="643.2509"/>
+		</spawn>
+		
+		<!-- Ancient Treasure Box
+		A treasure box buried in the Ruins of Roah.
+		It is said to contain a Gilt-patterned Bottle
+		<spawn npc_id="700859">
+		    <spot x="346.96774" y="742.37823" z="366.56598"/>
+		    <spot x="347.35345" y="735.85992" z="420.36267"/>
+		    <spot x="290.21616" y="729.60071" z="256.2561"/>
+		    <spot x="344.2876" y="778.73102" z="399.03088"/>
+		    <spot x="389.82831" y="763.12299" z="274.9248"/>
+		    <spot x="311.64499" y="768.06812" z="344.43069"/>
+		    <spot x="368.29211" y="771.30316" z="348.28937"/>
+		    <spot x="270.47104" y="743.98962" z="320.34607"/>
+		    <spot x="350.45486" y="788.7392" z="322.26309"/>
+		    <spot x="306.50696" y="715.27161" z="369.26849"/>
+		    <spot x="280.99249" y="767.55676" z="290.25909"/>
+		    <spot x="360.12698" y="684.13025" z="391.70737"/>
+		</spawn>
+		Abyssal Treasure Box
+		<spawn npc_id="700860">
+		    <spot x="649.24286" y="361.33755" z="467.89145"/>
+		</spawn>
+		Genesis Treasure Box
+		<spawn npc_id="700934">
+		    <spot x="653.83838" y="360.39508" z="467.8837"/>
+		    <spot x="402.40375" y="655.55237" z="440.42078"/>
+		    <spot x="326.978" y="729.84137" z="198.46796"/>
+		    <spot x="651.53204" y="357.08499" z="467.8837"/>
+		    <spot x="601.29309" y="584.66705" z="424.2829"/>
+		    <spot x="647.00446" y="357.24841" z="467.14117"/>
+		    <spot x="602.95862" y="589.26782" z="424.2829"/>
+		    <spot x="597.21558" y="583.95416" z="424.2829"/>
+		    <spot x="406.74445" y="655.59137" z="440.41269"/>
+		    <spot x="329.84619" y="738.41095" z="198.46796"/>
+		    <spot x="408.10938" y="650.90149" z="440.44122"/>
+		    <spot x="326.5296" y="735.13324" z="198.46796"/>
+		</spawn>
+		Abyssal Treasure Box
+		<spawn npc_id="700935">
+		    <spot x="598.82776" y="588.25946" z="424.29065"/>
+		</spawn>
+		Abyssal Treasure Box
+		<spawn npc_id="700936">
+		    <spot x="403.98306" y="651.58417" z="440.42612"/>
+		</spawn>
+		Abyssal Treasure Box
+		<spawn npc_id="700938">
+		    <spot x="330.89099" y="733.29431" z="198.55286"/>
+		</spawn> -->
+		
+		<!-- Teleporter I -->
+		<spawn npc_id="282038">
+            <spot x="334.31927" y="708.99976" z="197.77257" entity_id="52"/>
+        </spawn>
+		<!-- Teleporter II -->
+		<spawn npc_id="282039">
+            <spot x="302.12454" y="735.80133" z="197.38663" entity_id="53"/>
+        </spawn>
+		<!-- Teleporter III -->
+		<spawn npc_id="281905">
+            <spot x="361.01865" y="742.06659" z="197.38216" entity_id="54"/>
+        </spawn>
+		<!-- Abyssal Splinter Exit -->
+        <spawn npc_id="730317">
+		    <spot x="709.81561" y="160.09514" z="453.43399" entity_id="84"/>
+        </spawn>
+		<!-- Artifact Of Protection -->
+		<spawn npc_id="700856">
+		    <spot x="327.89014" y="770.41431" z="201.64903" entity_id="58"/>
+		</spawn>
+		<!-- Broken Orkanimum -->
+		<spawn npc_id="700862">
+		    <spot x="755.47302" y="567.20331" z="464.65384" entity_id="21"/>
+		</spawn>
+		<!-- Polearm Of Akarios -->
+        <spawn npc_id="700864">
+		    <spot x="422.04611" y="680.90729" z="442.43668" entity_id="3"/>
+		</spawn>
+		<!-- Worn Book -->
+        <spawn npc_id="700865">
+		    <spot x="462.79999" y="735.00574" z="438.70291" entity_id="1"/>
+		</spawn>
+	</spawn_map>
+</spawns>

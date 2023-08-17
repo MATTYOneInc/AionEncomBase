@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Dimensional Vortex 3.7
+	Make By (Encom)
+ -->
+	<!-- Jump In Brusthonin (Elyos Only) -->
+	<report_to_many id="39000" start_npc_ids="800165" end_npc_ids="800500">
+        <npc_infos var="0" npc_id="800501" quest_dialog="1352"/>
+        <npc_infos npc_id="800500" var="1" quest_dialog="2375" close_dialog="1009"/>
+    </report_to_many>
+	<!-- Griffon Aid (Elyos Only) -->
+	<monster_hunt id="39001" start_npc_ids="800500" invasion_world="220050000">
+		<monster var="0" npc_ids="209435 209436 209437 209438 209439" end_var="32"/>
+		<monster var="0" npc_ids="209440 209441 209442 209443 209444" end_var="32"/>
+	</monster_hunt>
+	<!-- Triple Kill (Elyos Only) -->
+	<monster_hunt id="39002" start_npc_ids="800500" invasion_world="220050000">
+		<monster var="0" npc_ids="209476" end_var="1"/>
+		<monster var="1" npc_ids="209477" end_var="1"/>
+		<monster var="2" npc_ids="209478" end_var="1"/>
+	</monster_hunt>
+	<!-- Breakout (Elyos Only) -->
+	<monster_hunt id="39004" start_npc_ids="800504" end_npc_ids="800500" invasion_world="220050000">
+		<monster var="0" npc_ids="701490" end_var="7"/>
+	</monster_hunt>
+	<!-- Artillery Strike (Elyos Only) -->
+	<monster_hunt id="39005" start_npc_ids="0" end_npc_ids="800500" invasion_world="220050000">
+		<monster var="0" npc_ids="209470" end_var="2"/>
+	</monster_hunt>
+	<!-- A Handful Of Problems (Elyos Only) -->
+	<kill_in_world id="39006" end_npc_ids="800500" worlds="220050000" amount="5" invasion_world="220050000"/>
+	<!-- Homeland Defense (Elyos Only) -->
+	<monster_hunt id="39007" start_npc_ids="0" end_npc_ids="800500" invasion_world="210060000">
+		<monster var="0" npc_ids="209430 209431 209432 209433 209434" end_var="15"/>
+	</monster_hunt>
+	<!-- Theobomos Throwdown (Elyos Only) -->
+	<kill_in_world id="39008" end_npc_ids="800500" worlds="210060000" amount="5" invasion_world="210060000"/>
+	<!-- Thrill Of The Hunt (Elyos Only) -->
+	<monster_hunt id="39009" start_npc_ids="0" end_npc_ids="800500" invasion_world="210060000">
+		<monster var="0" npc_ids="800505" end_var="1"/>
+	</monster_hunt>
+	<!-- War 2.0 (Elyos Only) -->
+	<report_to id="39010" start_npc_ids="800501" end_npc_ids="800500"/>
+	
+	
+	<!-- A New Battlefront Opens (Asmodians Only) -->
+	<report_to_many id="49000" start_npc_ids="800170" end_npc_ids="800502">
+		<npc_infos var="0" npc_id="800503" quest_dialog="1352"/>
+	</report_to_many>
+	<!-- Clear A Path To Jamanok Inn (Asmodians Only) -->
+	<monster_hunt id="49001" start_npc_ids="800502" invasion_world="210060000">
+		<monster var="0" npc_ids="209425 209426 209427 209428 209429" end_var="32"/>
+		<monster var="0" npc_ids="209430 209431 209432 209433 209434" end_var="32"/>
+	</monster_hunt>
+	<!-- A Grim Warning To Others (Asmodians Only) -->
+	<monster_hunt id="49002" start_npc_ids="800502" invasion_world="210060000">
+		<monster var="0" npc_ids="209473" end_var="1"/>
+		<monster var="1" npc_ids="209474" end_var="1"/>
+		<monster var="2" npc_ids="209475" end_var="1"/>
+	</monster_hunt>
+	<!-- Document Destruction (Asmodians Only) -->
+	<monster_hunt id="49004" start_npc_ids="800505" end_npc_ids="800502" invasion_world="210060000">
+		<monster var="0" npc_ids="701491" end_var="7"/>
+	</monster_hunt>
+	<!-- Clear The Assault Path (Asmodians Only) -->
+	<monster_hunt id="49005" start_npc_ids="0" end_npc_ids="800502" invasion_world="210060000">
+		<monster var="0" npc_ids="209458" end_var="2"/>
+	</monster_hunt>
+	<!-- Eliminating Elyos Associates (Asmodians Only) -->
+	<kill_in_world id="49006" end_npc_ids="800502" worlds="210060000" amount="5" invasion_world="210060000"/>
+	<!-- Stop The Elyos Infiltration (Asmodians Only) -->
+	<monster_hunt id="49007" start_npc_ids="0" end_npc_ids="800502" invasion_world="220050000">
+		<monster var="0" npc_ids="209440 209441 209442 209443 209444" end_var="15"/>
+	</monster_hunt>
+	<!-- Prevent An Elyos Attack (Asmodians Only) -->
+	<kill_in_world id="49008" end_npc_ids="800502" worlds="220050000" amount="5" invasion_world="220050000"/>
+	<!-- Kill Nevma! (Asmodians Only) -->
+	<monster_hunt id="49009" start_npc_ids="0" end_npc_ids="800502" invasion_world="220050000">
+		<monster var="0" npc_ids="800504" end_var="1"/>
+	</monster_hunt>
+	<!-- Regarding The Dimensional Vortex (Asmodians Only) -->
+	<report_to id="49010" start_npc_ids="800503" end_npc_ids="800502"/>
+</quest_scripts>

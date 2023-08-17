@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Hotspot Location 5.3
+	Made By (Encom) (12 July 2014)
+ -->
+<hotspot_location xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hotspot_location.xsd">
+	<!-- POETA -->
+	<hotspot_template loc_id="13" mapid="210010000" name="Akarios Village" name_id="400499" price="44" race="ELYOS" posX="807.000000" posY="1242.000000" posZ="119.000000" heading="0"/>
+	<hotspot_template loc_id="14" mapid="210010000" name="Daminu Forest" name_id="400193" price="44" race="ELYOS" posX="560.000000" posY="1382.000000" posZ="119.000000" heading="0"/>
+	<hotspot_template loc_id="15" mapid="210010000" name="Melponeh's Campsite" name_id="400500" price="44" race="ELYOS" posX="427.000000" posY="1741.000000" posZ="120.000000" heading="0"/>
+	<!-- ISHALGEN -->
+	<hotspot_template loc_id="16" mapid="220010000" name="Aldelle Village" name_id="400504" price="44" race="ASMODIANS" posX="570.000000" posY="2457.000000" posZ="280.000000" heading="0"/>
+	<hotspot_template loc_id="17" mapid="220010000" name="Sap Farm" name_id="400278" price="44" race="ASMODIANS" posX="859.000000" posY="2217.000000" posZ="266.000000" heading="0"/>
+	<hotspot_template loc_id="18" mapid="220010000" name="Anturoon Crossing" name_id="400505" price="44" race="ASMODIANS" posX="941.000000" posY="1707.000000" posZ="260.000000" heading="0"/>
+	<!-- VERTERON -->
+	<hotspot_template loc_id="19" mapid="210030000" name="Verteron Citadel" name_id="400501" price="387" race="ELYOS" posX="1643.000000" posY="1500.000000" posZ="120.000000" heading="0"/>
+	<hotspot_template loc_id="20" mapid="210030000" name="Tolbas Village" name_id="401640" price="387" race="ELYOS" posX="1291.000000" posY="2208.000000" posZ="142.000000" heading="0"/>
+	<hotspot_template loc_id="21" mapid="210030000" name="Pilgrims Respite" name_id="400502" price="387" race="ELYOS" posX="2061.000000" posY="2413.000000" posZ="274.000000" heading="0"/>
+	<hotspot_template loc_id="22" mapid="210030000" name="Ardus Shrine" name_id="401641" price="387" race="ELYOS" posX="2333.000000" posY="1817.000000" posZ="193.000000" heading="0"/>
+	<hotspot_template loc_id="23" mapid="210030000" name="Verteron Observatory" name_id="400503" price="387" race="ELYOS" posX="2383.000000" posY="789.000000" posZ="103.000000" heading="0"/>
+	<!-- ALTGARD -->
+	<hotspot_template loc_id="24" mapid="220030000" name="Altgard Fortress" name_id="400506" price="387" race="ASMODIANS" posX="1751.000000" posY="1807.000000" posZ="255.000000" heading="0"/>
+	<hotspot_template loc_id="25" mapid="220030000" name="Basfelt Village" name_id="400600" price="387" race="ASMODIANS" posX="1902.000000" posY="698.000000" posZ="261.000000" heading="0"/>
+	<hotspot_template loc_id="26" mapid="220030000" name="Trader's Berth" name_id="400507" price="387" race="ASMODIANS" posX="2679.000000" posY="1025.000000" posZ="312.000000" heading="0"/>
+	<hotspot_template loc_id="27" mapid="220030000" name="Heart Of Impetusium" name_id="401650" price="387" race="ASMODIANS" posX="2643.000000" posY="1658.000000" posZ="325.000000" heading="0"/>
+	<hotspot_template loc_id="28" mapid="220030000" name="Altgard Observatory" name_id="400651" price="387" race="ASMODIANS" posX="1467.000000" posY="2560.000000" posZ="299.000000" heading="0"/>
+	<!-- ELTNEN -->
+	<hotspot_template loc_id="29" mapid="210020000" name="Eltnen Fortress" name_id="400593" price="1934" race="ELYOS" posX="343.000000" posY="2724.000000" posZ="264.000000" heading="0"/>
+	<hotspot_template loc_id="30" mapid="210020000" name="Novan's Crossing" name_id="401642" price="1934" race="ELYOS" posX="948.000000" posY="2216.000000" posZ="253.000000" heading="0"/>
+	<hotspot_template loc_id="31" mapid="210020000" name="Golden Bough Garrison" name_id="400594" price="1934" race="ELYOS" posX="686.000000" posY="432.000000" posZ="332.000000" heading="0"/>
+	<hotspot_template loc_id="32" mapid="210020000" name="Eltnen Observatory" name_id="401643" price="1934" race="ELYOS" posX="1781.000000" posY="885.000000" posZ="422.000000" heading="0"/>
+	<hotspot_template loc_id="33" mapid="210020000" name="Agairon Village" name_id="400595" price="1934" race="ELYOS" posX="1924.000000" posY="2044.000000" posZ="362.000000" heading="0"/>
+	<hotspot_template loc_id="34" mapid="210020000" name="Kuriullu Outpost" name_id="401644" price="1934" race="ELYOS" posX="2412.000000" posY="2725.000000" posZ="362.000000" heading="0"/>
+	<!-- MORHEIM -->
+	<hotspot_template loc_id="35" mapid="220020000" name="Morheim Ice Fortress" name_id="400740" price="1934" race="ASMODIANS" posX="310.000000" posY="2271.000000" posZ="449.000000" heading="0"/>
+	<hotspot_template loc_id="36" mapid="220020000" name="Kellan's Cabin" name_id="401652" price="1934" race="ASMODIANS" posX="1072.000000" posY="2485.000000" posZ="239.000000" heading="0"/>
+	<hotspot_template loc_id="37" mapid="220020000" name="Desert Garrison" name_id="400741" price="1934" race="ASMODIANS" posX="634.000000" posY="901.000000" posZ="361.000000" heading="0"/>
+	<hotspot_template loc_id="38" mapid="220020000" name="Slag Bulwark" name_id="401653" price="1934" race="ASMODIANS" posX="1772.000000" posY="1663.000000" posZ="198.000000" heading="0"/>
+	<hotspot_template loc_id="39" mapid="220020000" name="Alsig Village" name_id="400742" price="1934" race="ASMODIANS" posX="2388.000000" posY="1743.000000" posZ="102.000000" heading="0"/>
+	<hotspot_template loc_id="40" mapid="220020000" name="Halabana Outpost" name_id="401654" price="1934" race="ASMODIANS" posX="2345.000000" posY="2219.000000" posZ="127.000000" heading="0"/>
+	<hotspot_template loc_id="41" mapid="220020000" name="Morheim Observatory" name_id="401655" price="1934" race="ASMODIANS" posX="2795.000000" posY="1122.000000" posZ="172.000000" heading="0"/>
+	<hotspot_template loc_id="42" mapid="220020000" name="Morheim Observatory" name_id="401655" price="1934" race="ASMODIANS" posX="2795.000000" posY="1086.000000" posZ="172.000000" heading="0"/>
+	<hotspot_template loc_id="43" mapid="220020000" name="Chaikata's Hideout" name_id="403723" price="1934" race="ASMODIANS" posX="2297.000000" posY="1514.000000" posZ="121.000000" heading="0"/>
+	<!-- HEIRON -->
+	<hotspot_template loc_id="44" mapid="210040000" name="New Heiron Gate" name_id="400596" price="3504" race="ELYOS" posX="2543.000000" posY="341.000000" posZ="412.000000" heading="0"/>
+	<hotspot_template loc_id="45" mapid="210040000" name="Heiron Observatory" name_id="400597" price="3504" race="ELYOS" posX="1425.000000" posY="1335.000000" posZ="175.000000" heading="0"/>
+	<hotspot_template loc_id="46" mapid="210040000" name="Senea's Campsite" name_id="401647" price="3504" race="ELYOS" posX="970.000000" posY="687.000000" posZ="135.000000" heading="0"/>
+	<hotspot_template loc_id="47" mapid="210040000" name="Arbolu's Haven" name_id="400598" price="3504" race="ELYOS" posX="170.000000" posY="1662.000000" posZ="121.000000" heading="0"/>
+	<hotspot_template loc_id="48" mapid="210040000" name="Changarnerk's Campsite" name_id="401649" price="3504" race="ELYOS" posX="917.000000" posY="2255.000000" posZ="158.000000" heading="0"/>
+	<hotspot_template loc_id="49" mapid="210040000" name="Coast Watchers Post" name_id="403617" price="3504" race="ELYOS" posX="760.000000" posY="2883.000000" posZ="107.000000" heading="0"/>
+	<hotspot_template loc_id="50" mapid="210040000" name="Jeiaparan Village" name_id="400599" price="3504" race="ELYOS" posX="1634.000000" posY="2695.000000" posZ="116.000000" heading="0"/>
+	<hotspot_template loc_id="51" mapid="210040000" name="Kishar Observation Post" name_id="401648" price="3504" race="ELYOS" posX="1998.000000" posY="1392.000000" posZ="118.000000" heading="0"/>
+	<hotspot_template loc_id="52" mapid="210040000" name="Reaper Outpost" name_id="403618" price="3504" race="ELYOS" posX="2765.000000" posY="1886.000000" posZ="154.000000" heading="0"/>
+	<!-- BELUSLAN -->
+	<hotspot_template loc_id="53" mapid="220040000" name="Beluslan Fortress" name_id="400929" price="3504" race="ASMODIANS" posX="399.000000" posY="402.000000" posZ="223.000000" heading="0"/>
+	<hotspot_template loc_id="54" mapid="220040000" name="Kidorun's Campsite" name_id="401658" price="3504" race="ASMODIANS" posX="1245.000000" posY="821.000000" posZ="260.000000" heading="0"/>
+	<hotspot_template loc_id="55" mapid="220040000" name="Red Mane Cavern" name_id="400931" price="3504" race="ASMODIANS" posX="2358.000000" posY="1240.000000" posZ="470.000000" heading="0"/>
+	<hotspot_template loc_id="56" mapid="220040000" name="Camp Kistenian" name_id="401659" price="3504" race="ASMODIANS" posX="1942.000000" posY="510.000000" posZ="413.000000" heading="0"/>
+	<hotspot_template loc_id="57" mapid="220040000" name="Besfer Refugee Camp" name_id="400930" price="3504" race="ASMODIANS" posX="534.000000" posY="1867.000000" posZ="263.000000" heading="0"/>
+	<hotspot_template loc_id="58" mapid="220040000" name="Hoarfrost Shelter" name_id="401660" price="3504" race="ASMODIANS" posX="2430.000000" posY="2062.000000" posZ="580.000000" heading="0"/>
+	<!-- THEOBOMOS -->
+	<hotspot_template loc_id="59" mapid="210060000" name="Meniherk Excavation Camp" name_id="401080" price="6264" race="ELYOS" posX="1398.000000" posY="1560.000000" posZ="31.000000" heading="0"/>
+	<hotspot_template loc_id="60" mapid="210060000" name="Jamanok Inn" name_id="401082" price="6264" race="ELYOS" posX="458.000000" posY="1256.000000" posZ="127.000000" heading="0"/>
+	<hotspot_template loc_id="61" mapid="210060000" name="Hongras Campsite" name_id="403616" price="6264" race="ELYOS" posX="1215.000000" posY="382.000000" posZ="218.000000" heading="0"/>
+	<hotspot_template loc_id="62" mapid="210060000" name="Anangke Excavation Camp" name_id="401645" price="6264" race="ELYOS" posX="2683.000000" posY="845.000000" posZ="139.000000" heading="0"/>
+	<hotspot_template loc_id="63" mapid="210060000" name="Observatory Village" name_id="401081" price="6264" race="ELYOS" posX="2235.000000" posY="2283.000000" posZ="50.000000" heading="0"/>
+	<hotspot_template loc_id="64" mapid="210060000" name="Latheron Coast Base Camp" name_id="403615" price="6264" race="ELYOS" posX="2779.000000" posY="2156.000000" posZ="74.000000" heading="0"/>
+	<hotspot_template loc_id="65" mapid="210060000" name="Josnack's Vigil" name_id="401646" price="6264" race="ELYOS" posX="900.000000" posY="2776.000000" posZ="62.000000" heading="0"/>
+	<!-- BRUSTHONIN -->
+	<hotspot_template loc_id="66" mapid="220050000" name="Settlers Campsite" name_id="401083" price="6264" race="ASMODIANS" posX="2916.000000" posY="2415.000000" posZ="15.000000" heading="0"/>
+	<hotspot_template loc_id="67" mapid="220050000" name="Baltasar Hill Village" name_id="401084" price="6264" race="ASMODIANS" posX="1411.000000" posY="2013.000000" posZ="52.000000" heading="0"/>
+	<hotspot_template loc_id="68" mapid="220050000" name="Edge Of Torment" name_id="401656" price="6264" race="ASMODIANS" posX="1525.000000" posY="374.000000" posZ="231.000000" heading="0"/>
+	<hotspot_template loc_id="69" mapid="220050000" name="BuBu Village" name_id="401085" price="6264" race="ASMODIANS" posX="525.000000" posY="848.000000" posZ="76.000000" heading="0"/>
+	<hotspot_template loc_id="70" mapid="220050000" name="Kamstow's Barracks" name_id="403619" price="6264" race="ASMODIANS" posX="243.000000" posY="2523.000000" posZ="268.000000" heading="0"/>
+	<hotspot_template loc_id="71" mapid="220050000" name="Iollu Overlook" name_id="401657" price="6264" race="ASMODIANS" posX="839.000000" posY="2015.000000" posZ="307.000000" heading="0"/>
+	<!-- SANCTUM -->
+	<hotspot_template loc_id="78" mapid="110010000" name="Elyos Square" name_id="400508" price="1934" race="ELYOS" posX="1460.000000" posY="1448.000000" posZ="573.000000" heading="0"/>
+	<hotspot_template loc_id="79" mapid="110010000" name="Divine Road" name_id="400509" price="1934" race="ELYOS" posX="1930.000000" posY="1517.000000" posZ="590.000000" heading="0"/>
+	<hotspot_template loc_id="80" mapid="110010000" name="Outer Dock" name_id="401542" price="1934" race="ELYOS" posX="1815.000000" posY="2157.000000" posZ="528.000000" heading="0"/>
+	<hotspot_template loc_id="81" mapid="110010000" name="Exalted Path" name_id="400320" price="1934" race="ELYOS" posX="1367.000000" posY="1542.000000" posZ="569.000000" heading="0"/>
+	<!-- PANDAEMONIUM -->
+	<hotspot_template loc_id="82" mapid="120010000" name="Vifrost Bridge" name_id="400606" price="1934" race="ASMODIANS" posX="1602.000000" posY="1413.000000" posZ="193.000000" heading="0"/>
+	<hotspot_template loc_id="83" mapid="120010000" name="Prosperity Road" name_id="400607" price="1934" race="ASMODIANS" posX="1035.000000" posY="1473.000000" posZ="214.000000" heading="0"/>
+    <hotspot_template loc_id="84" mapid="120010000" name="Crandale District" name_id="401553" price="1934" race="ASMODIANS" posX="1178.000000" posY="1170.000000" posZ="208.000000" heading="0"/>
+	<hotspot_template loc_id="85" mapid="120010000" name="Vifrost Bridge" name_id="400606" price="1934" race="ASMODIANS" posX="1602.000000" posY="1389.000000" posZ="193.000000" heading="0"/>
+	<!-- 4.9 -->
+	<hotspot_template loc_id="86" mapid="110010000" name="Path Of Glory" name_id="404675" price="1934" race="ELYOS" posX="1363.000000" posY="1481.000000" posZ="570.000000" heading="0"/>
+	<hotspot_template loc_id="87" mapid="120010000" name="Path Of Gold" name_id="404676" price="1934" race="ASMODIANS" posX="1314.000000" posY="1426.000000" posZ="210.000000" heading="0"/>
+	<!-- 5.1 -->
+    <hotspot_template loc_id="72" mapid="210130000" name="HOTSPOT_LF4_01" name_id="404988" posX="1335.000000" posY="275.000000" posZ="590.000000" heading="0" race="ELYOS" price="1286"/>
+    <hotspot_template loc_id="73" mapid="210130000" name="HOTSPOT_LF4_02" name_id="404989" posX="400.000000" posY="947.000000" posZ="461.000000" heading="270" race="ELYOS" price="1286"/>
+    <hotspot_template loc_id="74" mapid="210130000" name="HOTSPOT_LF4_03" name_id="404990" posX="2722.000000" posY="1428.000000" posZ="385.000000" heading="0" race="ELYOS" price="1286"/>
+	<hotspot_template loc_id="116" mapid="210130000" name="HOTSPOT_LF4_04" name_id="404991" posX="1063.000000" posY="1575.000000" posZ="410.000000" heading="45" race="ELYOS" price="1286"/>
+    <hotspot_template loc_id="118" mapid="210130000" name="HOTSPOT_LF4_05" name_id="404992" posX="1213.000000" posY="983.000000" posZ="465.000000" heading="225" race="ELYOS" price="1286"/>
+	<hotspot_template loc_id="75" mapid="220140000" name="HOTSPOT_DF4_01" name_id="404993" posX="1889.000000" posY="2864.000000" posZ="557.000000" heading="180" race="ASMODIANS" price="1286"/>
+    <hotspot_template loc_id="76" mapid="220140000" name="HOTSPOT_DF4_02" name_id="404994" posX="2497.000000" posY="2138.000000" posZ="465.000000" heading="0" race="ASMODIANS" price="1286"/>
+    <hotspot_template loc_id="77" mapid="220140000" name="HOTSPOT_DF4_03" name_id="404995" posX="796.000000" posY="1686.000000" posZ="362.000000" heading="45" race="ASMODIANS" price="1286"/>
+	<hotspot_template loc_id="117" mapid="220140000" name="HOTSPOT_DF4_04" name_id="404996" posX="1794.000000" posY="1811.000000" posZ="406.000000" heading="225" race="ASMODIANS" price="1286"/>
+	<hotspot_template loc_id="121" mapid="220140000" name="HOTSPOT_DF4_F2P_01" name_id="404997" posX="1410.000000" posY="1975.000000" posZ="352.000000" heading="0" race="ASMODIANS" price="1286"/>
+	<hotspot_template loc_id="88" mapid="220080000" name="Dragon Rest Temple" name_id="404968" price="9321" race="ASMODIANS" posX="452.000000" posY="2255.000000" posZ="223.000000" heading="0"/>
+	<hotspot_template loc_id="89" mapid="220080000" name="Dawnbreak Temple" name_id="404969" price="9321" race="ASMODIANS" posX="2688.000000" posY="1422.000000" posZ="341.000000" heading="0"/>
+	<hotspot_template loc_id="90" mapid="220080000" name="Whirlpool Temple" name_id="404970" price="9321" race="ASMODIANS" posX="1579.000000" posY="151.000000" posZ="187.000000" heading="0"/>
+	<hotspot_template loc_id="91" mapid="210070000" name="Aequis Expedition Headquarters" name_id="404971" price="9321" race="ELYOS" posX="2901.000000" posY="802.000000" posZ="570.000000" heading="0"/>
+	<hotspot_template loc_id="92" mapid="210070000" name="Aequis Advance Post" name_id="404972" price="9321" race="ELYOS" posX="510.000000" posY="1901.000000" posZ="470.000000" heading="0"/>
+	<hotspot_template loc_id="93" mapid="210070000" name="Aequis Outpost" name_id="404973" price="9321" race="ELYOS" posX="2173.000000" posY="2903.000000" posZ="330.000000" heading="0"/>
+	<hotspot_template loc_id="94" mapid="220010000" name="The Forsaken Hollow" name_id="404975" price="44" race="ASMODIANS" posX="385.000000" posY="1889.000000" posZ="328.000000" heading="0"/>
+	<hotspot_template loc_id="95" mapid="210040000" name="Middleton" name_id="404976" price="3504" race="ELYOS" posX="1824.000000" posY="1603.000000" posZ="128.000000" heading="0"/>
+	<hotspot_template loc_id="96" mapid="220040000" name="Frost Spirit Valley" name_id="404977" price="3504" race="ASMODIANS" posX="2565.000000" posY="1351.000000" posZ="385.000000" heading="0"/>
+	<hotspot_template loc_id="97" mapid="220040000" name="South Gate" name_id="404978" price="3504" race="ASMODIANS" posX="2158.000000" posY="2097.000000" posZ="598.000000" heading="0"/>
+	<hotspot_template loc_id="98" mapid="220040000" name="Fang Troll Encampment" name_id="404979" price="3504" race="ASMODIANS" posX="1739.000000" posY="1717.000000" posZ="573.000000" heading="0"/>
+	<hotspot_template loc_id="99" mapid="220080000" name="Arden Village" name_id="404980" price="12800" race="ASMODIANS" posX="1771.000000" posY="2535.000000" posZ="300.000000" heading="0"/>
+	<hotspot_template loc_id="100" mapid="220080000" name="Cet Village" name_id="404981" price="12800" race="ASMODIANS" posX="1509.000000" posY="1725.000000" posZ="334.000000" heading="0"/>
+	<hotspot_template loc_id="101" mapid="220080000" name="Bomire Village" name_id="404982" price="12800" race="ASMODIANS" posX="756.000000" posY="1254.000000" posZ="255.000000" heading="0"/>
+	<hotspot_template loc_id="102" mapid="210070000" name="Henor Territory Village" name_id="404983" price="12800" race="ELYOS" posX="1389.000000" posY="606.000000" posZ="589.000000" heading="0"/>
+	<hotspot_template loc_id="103" mapid="210070000" name="Aedra Territory Village" name_id="404984" price="12800" race="ELYOS" posX="1161.000000" posY="1580.000000" posZ="468.000000" heading="0"/>
+	<hotspot_template loc_id="104" mapid="210070000" name="Erivale Territory Village" name_id="404985" price="12800" race="ELYOS" posX="2395.000000" posY="1500.000000" posZ="443.000000" heading="0"/>
+	<hotspot_template loc_id="105" mapid="220080000" name="Fatebound Legion Outpost" name_id="404987" price="12800" race="ASMODIANS" posX="2389.000000" posY="795.000000" posZ="289.000000" heading="0"/>
+	<hotspot_template loc_id="106" mapid="210070000" name="Aequis Detachment Post" name_id="404986" price="12800" race="ELYOS" posX="1136.000000" posY="2918.000000" posZ="303.000000" heading="0"/>
+	<!-- 5.3 -->
+	<hotspot_template loc_id="107" mapid="302200000" name="Elyos Square" name_id="400508" price="1934" race="ELYOS" posX="1460.000000" posY="1448.000000" posZ="573.000000" heading="0"/>
+	<hotspot_template loc_id="108" mapid="302200000" name="Divine Road" name_id="400509" price="1934" race="ELYOS" posX="1930.000000" posY="1517.000000" posZ="590.000000" heading="0"/>
+	<hotspot_template loc_id="109" mapid="302200000" name="Path Of Glory" name_id="404675" price="1934" race="ELYOS" posX="1582.000000" posY="1621.000000" posZ="563.000000" heading="0"/>
+	<hotspot_template loc_id="110" mapid="302300000" name="Vifrost Bridge" name_id="400606" price="1934" race="ASMODIANS" posX="1602.000000" posY="1413.000000" posZ="193.000000" heading="0"/>
+	<hotspot_template loc_id="111" mapid="302300000" name="Crandale District" name_id="401553" price="1934" race="ASMODIANS" posX="1178.000000" posY="1170.000000" posZ="208.000000" heading="0"/>
+	<hotspot_template loc_id="112" mapid="302300000" name="Path Of Gold" name_id="404676" price="1934" race="ASMODIANS" posX="1314.000000" posY="1426.000000" posZ="210.000000" heading="0"/>
+	<hotspot_template loc_id="113" mapid="302200000" name="엘리시움 대성소" name_id="400331" price="1934" race="ELYOS" posX="1390.000000" posY="1692.000000" posZ="575.000000" heading="0"/>
+	<hotspot_template loc_id="114" mapid="302300000" name="중앙 의사당" name_id="400589" price="1934" race="ASMODIANS" posX="1240.000000" posY="1176.000000" posZ="217.000000" heading="0"/>
+	<hotspot_template loc_id="115" mapid="302300000" name="판데모니움 대신전" name_id="400512" price="1934" race="ASMODIANS" posX="1447.000000" posY="1449.000000" posZ="180.000000" heading="0"/>
+</hotspot_location>

@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+	Npc Template 5.8 [Missing Npcs] 
+	Made By (Encom)
+ -->
+<npc_templates>
+	 <npc_template npc_id="248966" level="71" name="Zombie" name_id="2328957" npc_type="NON_ATTACKABLE" height="1.1" rank="VETERAN" rating="NORMAL" race="UNDEAD" tribe="AGGRESSIVESINGLEMONSTER" type="MONSTER" sensory_range="15" attack_range="2" attack_delay="2000" attack_rate="1000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000" walk_speed="0.794" run_speed="7.6" run_speed_fight="8.0"/>
+        <bound_radius front="1.3" side="1.35" upper="1.1"/>
+    </npc_template>
+	    <npc_template npc_id="248967" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="1.1" rank="VETERAN" rating="NORMAL" race="BEAST" tribe="FUNGY" type="MONSTER" sensory_range="4" attack_range="2" attack_delay="2000" attack_rate="1000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000" walk_speed="0.794" run_speed="7.6" run_speed_fight="5.6"/>
+        <bound_radius front="1.3" side="1.35" upper="1.1"/>
+    </npc_template>
+	    <npc_template npc_id="836021" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="4" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836022" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+	    <npc_template npc_id="836023" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+	 <npc_template npc_id="836024" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836025" level="55" name="run_speede Bomb I" name_id="469833" npc_type="NON_ATTACKABLE" height="2.5" rank="DISCIPLINED" rating="NORMAL" race="BROWNIE" tribe="IDLUNA_DEF_NPC2" type="GENERAL" ai="aggressive" sensory_range="15" attack_range="12" attack_delay="2310" attack_rate="1000" hpgauge_level="3">
+        <stats maxHp="35000" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="2.5" upper="2.5"/>
+        <talk_info distance="1" delay="1"/>
+    </npc_template>
+	    <npc_template npc_id="836199" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+	    <npc_template npc_id="836200" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+	<npc_template npc_id="836201" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836202" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836203" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836204" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836205" level="15" name="Gogoshunerk" name_id="470126" npc_type="NON_ATTACKABLE" height="1.375" title_id="470127" rank="VETERAN" rating="NORMAL" race="BROWNIE" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="2256" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000" walk_speed="1.5" run_speed="4.23" run_speed_fight="4.23"/>
+        <bound_radius front="1.4" side="0.888" upper="1.375"/>
+        <talk_info distance="5" is_dialog="true"/>
+    </npc_template>
+    <npc_template npc_id="836206" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836207" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836208" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836209" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836210" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836211" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836212" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836213" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836214" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836215" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+	<npc_template npc_id="836216" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836217" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836218" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836219" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="15" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836246" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="2" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836247" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="2" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+	    <npc_template npc_id="836248" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="2" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+	    <npc_template npc_id="836249" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="2" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+	 <npc_template npc_id="836347" level="65" name="Regular Treasure Chest" name_id="470298" npc_type="NON_ATTACKABLE" height="0.64" rank="VETERAN" rating="NORMAL" tribe="FIELD_OBJECT_ALL" type="GENERAL" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="26116" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="1.4" side="1.4" upper="0.64"/>
+        <talk_info distance="3" delay="2"/>
+    </npc_template>
+	    <npc_template npc_id="836348" level="65" name="Magnificent Treasure Chest" name_id="470299" npc_type="NON_ATTACKABLE" height="0.64" rank="VETERAN" rating="NORMAL" tribe="FIELD_OBJECT_ALL" type="GENERAL" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="26116" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="1.4" side="1.4" upper="0.64"/>
+        <talk_info distance="3" delay="2"/>
+    </npc_template>
+	    <npc_template npc_id="837090" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="837141" level="55" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" race="ELYOS" tribe="GENERAL" type="GENERAL" sensory_range="10" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="35000" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+        <talk_info distance="15"/>
+    </npc_template>
+    <npc_template npc_id="837142" level="55" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" race="ASMODIANS" tribe="GENERAL_DARK" type="GENERAL" sensory_range="10" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="35000" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+        <talk_info distance="15"/>
+    </npc_template>
+	    <npc_template npc_id="836124" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+    <npc_template npc_id="836125" level="71" name="None" name_id="350000" npc_type="NON_ATTACKABLE" height="2.0" rank="VETERAN" rating="NORMAL" tribe="USEALL" type="GENERAL" sensory_range="20" attack_delay="2000" hpgauge_level="3">
+        <stats maxHp="3" maxXp="10000" main_hand_attack="1000" main_hand_accuracy="1000" pdef="1000" mresist="4000" power="100" evasion="1000" accuracy="1000"/>
+        <bound_radius front="0.5" side="0.7" upper="2.0"/>
+    </npc_template>
+	
+	
+</npc_templates>

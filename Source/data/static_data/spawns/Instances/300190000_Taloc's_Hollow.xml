@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    カスパール内部
+    Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="300190000">
+		<!-- Drudge Sheluk
+		A Sheluk that has dug through Taloc's Roots -->
+		<spawn npc_id="215454">
+	        <spot h="74" z="1169.2616" y="703.9813" x="291.0917" random_walk="3"/>
+            <spot h="48" z="1168.5557" y="544.27264" x="310.52286" random_walk="3"/>
+            <spot h="86" z="1140.3767" y="715.2715" x="173.69246" random_walk="3"/>
+            <spot h="108" z="1129.7582" y="347.04248" x="150.74217" random_walk="3"/>
+            <spot h="65" z="1123.1177" y="466.01138" x="191.60509" random_walk="3"/>
+		</spawn>
+		<!-- Drudge Sheluk
+		A Sheluk that has dug through Taloc's Roots -->
+		<spawn npc_id="215455">
+			<spot h="59" z="1159.9498" y="555.73413" x="268.76077" random_walk="3"/>
+            <spot h="21" z="1140.8429" y="685.48126" x="161.65678" random_walk="3"/>
+            <spot h="61" z="1150.1747" y="542.52814" x="219.1891" random_walk="3"/>
+            <spot h="98" z="1168.4819" y="678.5116" x="243.90562" random_walk="3"/>
+            <spot h="119" z="1124.8218" y="459.25375" x="173.20258" random_walk="3"/>
+		</spawn>
+		<!-- Shishir
+		<Taloc Parasites>
+		A particularly powerful mutant Sheluk inside Taloc.
+		It has powerful corrosive fluid as well as an object of great power -->
+		<spawn npc_id="215456">
+			<spot x="142.716" y="695.6153" z="1140.0204" h="95"/>
+		</spawn>
+		<!-- Ancient Octanus
+		<Taloc Parasites> -->
+		<spawn npc_id="215457">
+			<spot x="203.4562" y="302.2227" z="1107.0774" h="76" random_walk="6"/>
+		</spawn>
+		<!-- Mask Arachna
+		An Arachna that has dug through Taloc's Roots -->
+		<spawn npc_id="215458">
+			<spot h="118" z="1131.2043" y="466.59567" x="154.35596" random_walk="3"/>
+            <spot h="97" z="1173.296" y="733.8286" x="274.4441" random_walk="3"/>
+            <spot h="65" z="1169.4872" y="411.78604" x="292.7614" random_walk="3"/>
+            <spot h="74" z="1124.4098" y="468.1944" x="231.38988" random_walk="3"/>
+		</spawn>
+		<!-- Mask Arachna
+		An Arachna that has dug through Taloc's Roots -->
+		<spawn npc_id="215459">
+			<spot h="63" z="1169.761" y="537.02686" x="339.46393" random_walk="3"/>
+            <spot h="58" z="1144.9382" y="544.14545" x="201.15265" random_walk="3"/>
+            <spot h="102" z="1141.0061" y="672.7169" x="155.43828" random_walk="3"/>
+            <spot h="15" z="1140.6545" y="677.57166" x="133.3166" random_walk="3"/>
+            <spot h="88" z="1161.3046" y="612.08417" x="241.8488" random_walk="3"/>
+            <spot h="107" z="1154.3848" y="576.85474" x="231.64636" random_walk="3"/>
+            <spot h="100" z="1172.6128" y="735.3303" x="241.68771" random_walk="3"/>
+            <spot h="65" z="1167.4647" y="667.32556" x="269.27924" random_walk="3"/>
+		</spawn>
+		<!-- Fang Crynac -->
+		<spawn npc_id="215460">
+			<spot h="106" z="1115.8702" y="330.65518" x="201.16058" random_walk="3"/>
+            <spot h="66" z="1146.9309" y="411.07962" x="176.54271" random_walk="3"/>
+            <spot h="45" z="1156.5934" y="394.80414" x="201.73994" random_walk="3"/>
+            <spot h="62" z="1134.8857" y="477.19363" x="148.58208" random_walk="3"/>
+		</spawn>
+		<!-- Fang Crynac -->
+		<spawn npc_id="215461">
+			<spot h="75" z="1165.918" y="515.0423" x="301.10056" random_walk="3"/>
+            <spot h="104" z="1164.8562" y="628.63965" x="233.57343" random_walk="3"/>
+            <spot h="64" z="1167.3496" y="634.5657" x="259.7461" random_walk="3"/>
+		</spawn>
+		<!-- Emerald Sparkle
+		A Sparkle found in Taloc's Roots -->
+		<spawn npc_id="215462">
+			<spot h="85" z="1230.0319" y="869.9822" x="218.79874" random_walk="3"/>
+            <spot h="76" z="1237.1521" y="900.4571" x="259.3872" random_walk="3"/>
+            <spot h="20" z="1185.905" y="346.6795" x="322.4196" random_walk="3"/>
+		</spawn>
+		<!-- Emerald Sparkle
+		A Sparkle found in Taloc's Roots -->
+		<spawn npc_id="215463">
+			<spot h="96" z="1217.9723" y="829.2823" x="205.70193" random_walk="3"/>
+            <spot h="110" z="1207.6427" y="801.1812" x="217.65509" random_walk="3"/>
+		</spawn>
+		<!-- Parasitic Clodworm
+		A Clodworm surviving upon Taloc's Roots inside Taloc -->
+		<spawn npc_id="215464">
+			<spot h="112" z="1140.6017" y="644.2" x="160.4139" random_walk="3"/>
+            <spot h="87" z="1146.1766" y="620.75055" x="197.96904" random_walk="3"/>
+            <spot h="101" z="1143.465" y="631.20905" x="182.97318" random_walk="3"/>
+            <spot h="56" z="1154.2303" y="544.3944" x="241.70007" random_walk="3"/>
+            <spot h="78" z="1152.4027" y="552.77875" x="234.50784" random_walk="3"/>
+            <spot h="109" z="1108.8427" y="306.72324" x="181.1236" random_walk="3"/>
+            <spot h="93" z="1134.3469" y="459.1161" x="107.72449" random_walk="3"/>
+            <spot h="70" z="1155.1489" y="556.36237" x="250.56512" random_walk="3"/>
+            <spot h="80" z="1153.4537" y="564.3548" x="242.8459" random_walk="3"/>
+            <spot h="16" z="1134.2667" y="440.3677" x="105.23765" random_walk="3"/>
+            <spot h="77" z="1106.8712" y="278.57104" x="190.57617" random_walk="3"/>
+            <spot h="6" z="1139.4104" y="657.0493" x="156.61995" random_walk="3"/>
+		</spawn>
+		<!-- Parasitic Clodworm
+		A Clodworm surviving upon Taloc's Roots inside Taloc -->
+		<spawn npc_id="215465">
+			<spot h="93" z="1140.5059" y="732.05536" x="169.28209"/>
+            <spot h="93" z="1140.2075" y="729.7608" x="164.7631"/>
+            <spot h="53" z="1124.7437" y="444.30292" x="245.11067"/>
+            <spot h="106" z="1125.7701" y="481.58728" x="216.07921"/>
+            <spot h="103" z="1125.8513" y="477.62326" x="210.08426"/>
+            <spot h="59" z="1140.3258" y="690.7881" x="181.2232"/>
+            <spot h="119" z="1138.8534" y="718.4705" x="108.86652"/>
+            <spot h="60" z="1140.4618" y="690.0036" x="182.69154"/>
+            <spot h="59" z="1140.3353" y="700.2626" x="148.45633"/>
+            <spot h="58" z="1124.8683" y="446.5151" x="221.15755"/>
+            <spot h="107" z="1138.9766" y="722.29364" x="113.967445"/>
+            <spot h="35" z="1140.7637" y="705.1456" x="157.95343"/>
+            <spot h="14" z="1138.3027" y="711.4851" x="111.896965"/>
+            <spot h="51" z="1124.8176" y="450.53778" x="245.71307"/>
+            <spot h="118" z="1124.6918" y="447.52094" x="230.0926"/>
+            <spot h="0" z="1139.7509" y="709.262" x="139.76222"/>
+            <spot h="60" z="1124.6165" y="443.96124" x="241.27573"/>
+            <spot h="18" z="1138.9081" y="707.4302" x="119.95797"/>
+            <spot h="69" z="1140.264" y="698.0622" x="179.28809"/>
+            <spot h="56" z="1140.104" y="695.1466" x="177.57335"/>
+            <spot h="24" z="1138.6257" y="713.30273" x="116.72473"/>
+            <spot h="88" z="1125.3683" y="442.61313" x="224.03452"/>
+            <spot h="14" z="1139.3732" y="718.85803" x="134.14394"/>
+            <spot h="61" z="1124.6051" y="455.2751" x="243.38223"/>
+            <spot h="83" z="1140.9382" y="737.02234" x="173.36923"/>
+            <spot h="49" z="1124.2192" y="451.687" x="223.35742"/>
+            <spot h="72" z="1139.8785" y="690.48425" x="175.62424"/>
+            <spot h="12" z="1139.241" y="714.2799" x="136.76099"/>
+            <spot h="105" z="1139.5994" y="706.3011" x="135.31677"/>
+            <spot h="48" z="1124.6573" y="450.6683" x="239.82817"/>
+            <spot h="95" z="1140.8138" y="733.3355" x="173.58562"/>
+            <spot h="43" z="1140.4791" y="704.40643" x="152.76602"/>
+            <spot h="89" z="1141.0114" y="693.8405" x="155.24585"/>
+            <spot h="74" z="1140.6261" y="696.1348" x="151.15707"/>
+            <spot h="56" z="1124.3009" y="453.71658" x="248.59454"/>
+		</spawn>
+		<!-- Predatory Dionae -->
+		<spawn npc_id="215466">
+			<spot h="107" z="1175.5911" y="404.38568" x="311.7652" random_walk="3"/>
+            <spot h="54" z="1165.5479" y="552.3541" x="293.68506" random_walk="3"/>
+            <spot h="98" z="1137.3185" y="421.58002" x="120.804535" random_walk="3"/>
+            <spot h="29" z="1167.6399" y="501.9661" x="290.64774" random_walk="3"/>
+            <spot h="76" z="1155.5118" y="593.81366" x="243.95682" random_walk="3"/>
+            <spot h="74" z="1146.566" y="585.7426" x="167.751" random_walk="3"/>
+            <spot h="14" z="1138.743" y="534.5071" x="145.18086" random_walk="3"/>
+		</spawn>
+		<!-- Kinquid
+		<Taloc Parasites>
+		A creature found in Kinquid's Den at the end of Taloc's Roots -->
+		<spawn npc_id="215467">
+			<spot x="260.69223" y="701.72437" z="1169.504" h="29" random_walk="6"/>
+		</spawn>
+		<!-- Poisonous Sheluk -->
+		<spawn npc_id="215468">
+			<spot h="63" z="1250.6528" y="944.6006" x="392.55435" random_walk="3"/>
+            <spot h="73" z="1263.9537" y="960.8481" x="421.11026" random_walk="3"/>
+            <spot h="84" z="1250.4755" y="961.9716" x="392.0392" random_walk="3"/>
+            <spot h="55" z="1241.7968" y="910.13446" x="336.47064" random_walk="3"/>
+            <spot h="53" z="1268.8214" y="851.83765" x="410.42966" random_walk="3"/>
+		</spawn>
+		<!-- Poisonous Sheluk -->
+		<spawn npc_id="215469">
+			<spot h="97" z="1269.8278" y="906.2311" x="443.90182" random_walk="3"/>
+            <spot h="104" z="1280.989" y="847.59753" x="537.27295" random_walk="3"/>
+            <spot h="7" z="1244.0591" y="944.7788" x="338.19656" random_walk="3"/>
+            <spot h="12" z="1275.1469" y="842.246" x="453.71094" random_walk="3"/>
+		</spawn>
+		<!-- Horned Arachna -->
+		<spawn npc_id="215470">
+			<spot h="112" z="1250.2245" y="942.9319" x="374.85962" random_walk="3"/>
+            <spot h="99" z="1271.872" y="878.3645" x="459.66266" random_walk="3"/>
+            <spot h="97" z="1242.1967" y="926.87384" x="330.6509" random_walk="3"/>
+            <spot h="109" z="1273.8895" y="918.97833" x="444.44336" random_walk="3"/>
+            <spot h="115" z="1250.7397" y="931.06384" x="357.0384" random_walk="3"/>
+		</spawn>
+		<!-- Horned Arachna -->
+		<spawn npc_id="215471">
+			<spot h="110" z="1257.428" y="907.1115" x="375.05972" random_walk="3"/>
+            <spot h="97" z="1251.5658" y="984.6789" x="379.16806" random_walk="3"/>
+            <spot h="116" z="1264.4296" y="861.40765" x="380.70337" random_walk="3"/>
+		</spawn>
+		<!-- Greenleaf Sparkle -->
+		<spawn npc_id="215472">
+			<spot h="84" z="1268.6483" y="908.30396" x="457.70306" random_walk="3"/>
+            <spot h="59" z="1244.8944" y="935.7549" x="350.25897" random_walk="3"/>
+            <spot h="108" z="1266.0212" y="894.70526" x="392.44775" random_walk="3"/>
+            <spot h="51" z="1240.5419" y="900.6745" x="318.07413" random_walk="3"/>
+            <spot h="119" z="1256.3998" y="887.7033" x="364.95975" random_walk="3"/>
+            <spot h="38" z="1256.5065" y="871.4015" x="369.50027" random_walk="3"/>
+		</spawn>
+		<!-- Greenleaf Sparkle -->
+		<spawn npc_id="215473">
+			<spot h="6" z="1270.829" y="839.3971" x="486.4313" random_walk="3"/>
+            <spot h="2" z="1275.006" y="877.9376" x="441.471" random_walk="3"/>
+            <spot h="63" z="1272.6418" y="862.45465" x="470.00186" random_walk="3"/>
+            <spot h="19" z="1271.6711" y="880.4189" x="478.2995" random_walk="3"/>
+            <spot h="115" z="1275.1917" y="860.90063" x="438.3626" random_walk="3"/>
+		</spawn>
+		<!-- Flora Dionae -->
+		<spawn npc_id="215474">
+            <spot h="3" z="1234.8737" y="886.8415" x="239.40132" random_walk="3"/>
+            <spot h="20" z="1263.9663" y="881.24066" x="394.6759" random_walk="3"/>
+            <spot h="58" z="1235.2465" y="899.4281" x="288.1112" random_walk="3"/>
+            <spot h="72" z="1249.8225" y="975.7708" x="393.20016" random_walk="3"/>
+            <spot h="112" z="1225.5039" y="852.2198" x="210.38506" random_walk="3"/>
+            <spot h="102" z="1193.4432" y="783.9324" x="249.00098" random_walk="3"/>
+            <spot h="73" z="1241.014" y="912.0979" x="327.52902" random_walk="3"/>
+		</spawn>
+		<!-- Flora Dionae -->
+		<spawn npc_id="215475">
+			<spot h="15" z="1254.0713" y="866.2201" x="356.55087" random_walk="3"/>
+            <spot h="29" z="1259.2368" y="930.0826" x="399.438" random_walk="3"/>
+            <spot h="53" z="1269.6149" y="894.1717" x="483.24716" random_walk="3"/>
+            <spot h="62" z="1282.223" y="840.4233" x="554.72504" random_walk="3"/>
+            <spot h="47" z="1278.1351" y="825.0333" x="494.36575" random_walk="3"/>
+            <spot h="22" z="1270.634" y="828.52" x="394.98105" random_walk="3"/>
+            <spot h="55" z="1261.5763" y="967.51556" x="441.80002" random_walk="3"/>
+            <spot h="60" z="1246.3318" y="954.48553" x="373.9025" random_walk="3"/>
+		</spawn>
+		<!-- Azure Mosqua -->
+		<spawn npc_id="215476">
+			<spot h="14" z="1270.9966" y="825.08624" x="472.9225" random_walk="3"/>
+            <spot h="51" z="1250.0419" y="918.89386" x="363.4424" random_walk="3"/>
+            <spot h="31" z="1265.037" y="936.8688" x="418.11276" random_walk="3"/>
+		</spawn>
+		<!-- Azure Mosqua -->
+		<spawn npc_id="215477">
+			<spot h="35" z="1265.1691" y="934.8354" x="435.45544" random_walk="3"/>
+            <spot h="73" z="1271.2427" y="851.4013" x="509.67426" random_walk="3"/>
+            <spot h="50" z="1270.941" y="835.3939" x="504.78598" random_walk="3"/>
+            <spot h="70" z="1271.2133" y="867.05176" x="531.7931" random_walk="3"/>
+		</spawn>
+		<!-- Neith
+		<Taloc Parasites>
+		A strong mutant Arachna living inside Taloc.
+		It carries with it a special dagger and a powerful sleep-inducing item -->
+		<spawn npc_id="215478">
+			<spot x="508.5373" y="809.8848" z="1283.3287" h="41" random_walk="6"/>
+		</spawn>
+		<!-- Supraklaw Spotter -->
+		<spawn npc_id="215479">
+			<spot h="35" z="1263.8998" y="987.3181" x="444.59177"/>
+            <spot h="57" z="1272.608" y="859.8188" x="497.02234"/>
+            <spot h="113" z="1274.8113" y="861.18536" x="507.0671"/>
+            <spot h="80" z="1265.0764" y="992.82227" x="453.47562"/>
+            <spot h="119" z="1248.3212" y="894.2991" x="333.2575"/>
+            <spot h="17" z="1262.5669" y="986.2287" x="435.88577"/>
+            <spot h="88" z="1264.133" y="997.8911" x="443.49564"/>
+            <spot h="119" z="1249.1859" y="884.60504" x="330.9935"/>
+            <spot h="98" z="1265.7411" y="983.6358" x="455.71118"/>
+            <spot h="43" z="1250.1288" y="889.57574" x="323.2785"/>
+            <spot h="110" z="1262.3439" y="995.9724" x="431.40897"/>
+            <spot h="50" z="1272.2001" y="873.77234" x="509.7594"/>
+            <spot h="67" z="1265.5151" y="971.1868" x="456.48196"/>
+            <spot h="87" z="1255.8594" y="979.9808" x="421.64832"/>
+		</spawn>
+		<!-- Queen Mosqua
+		<Taloc Parasites>
+		A creature, found in Mosqua's Nest, who is eating into Taloc -->
+		<spawn npc_id="215480">
+			<spot x="676.901" y="831.546" z="1305.88" h="34" random_walk="6"/>
+		</spawn>
+		<!-- Gellmar
+		<Taloc Parasites>
+		A mutant seen at the Swarmspring or the Muculent Grotto inside Taloc.
+		One of the Taloc parasites, it holds an object with great defensive power -->
+		<spawn npc_id="215482">
+			<spot x="245.05054" y="447.3147" z="1124.9097" h="50"/>
+		</spawn>
+		<!-- Komad Elite Watcher
+		A mutant creature living inside Taloc -->
+		<spawn npc_id="215483">
+			<spot h="112" z="1380.3562" y="780.2735" x="622.1192"/>
+            <spot h="3" z="1381.6094" y="832.4772" x="622.29626"/>
+            <spot h="9" z="1380.0021" y="827.3333" x="671.6757"/>
+            <spot h="82" z="1380.3381" y="789.22675" x="648.7418"/>
+            <spot h="2" z="1378.8962" y="817.652" x="684.65936"/>
+            <spot h="115" z="1379.875" y="816.4258" x="617.15564"/>
+            <spot h="8" z="1382.0492" y="843.03784" x="587.8006"/>
+		</spawn>
+		<!-- Komad Elite Watchman
+		A mutant creature living inside Taloc -->
+		<spawn npc_id="215484">
+			<spot h="3" z="1380.4083" y="805.1004" x="584.4765"/>
+            <spot h="93" z="1380.0375" y="857.8414" x="640.73804"/>
+            <spot h="9" z="1380.8883" y="797.031" x="632.06006"/>
+            <spot h="4" z="1380.2258" y="813.1519" x="664.36536"/>
+            <spot h="28" z="1379.7416" y="779.9907" x="668.5493"/>
+		</spawn>
+		<!-- Komad Shaman
+		A mutant creature living inside Taloc -->
+		<spawn npc_id="215485">
+			<spot h="0" z="1382.0" y="841.0605" x="639.4495"/>
+            <spot h="0" z="1384.0" y="840.05383" x="596.07355"/>
+            <spot h="0" z="1382.0" y="822.5724" x="634.47925"/>
+            <spot h="0" z="1383.0" y="789.5593" x="595.05035"/>
+            <spot h="0" z="1382.0" y="810.2235" x="645.14526"/>
+            <spot h="0" z="1382.0" y="857.86774" x="644.30756"/>
+            <spot h="2" z="1378.6239" y="823.584" x="684.1222"/>
+		</spawn>
+		<!-- Komad Shaman
+		A mutant creature living inside Taloc -->
+		<spawn npc_id="215486">
+			<spot h="5" z="1379.8026" y="808.24915" x="591.24713"/>
+            <spot h="6" z="1381.0593" y="824.25543" x="583.1685"/>
+            <spot h="23" z="1379.6907" y="780.6877" x="666.43097"/>
+		</spawn>
+		<!-- Celestius
+		A polluting Komad boss found in the Blightroot inside Taloc -->
+		<spawn npc_id="215488">
+		    <spot x="543.0300" y="834.0800" z="1377.2900" h="00"/>
+		</spawn>
+		<!-- Drudge Sheluk
+		A Sheluk that has dug through Taloc's Roots -->
+		<spawn npc_id="216133">
+			<spot h="2" z="1108.6151" y="293.02188" x="173.20569" random_walk="3"/>
+		</spawn>
+		<!-- Drudge Sheluk
+		A Sheluk that has dug through Taloc's Roots -->
+		<spawn npc_id="216134">
+			<spot h="119" z="1108.3685" y="286.29208" x="177.99474" random_walk="3"/>
+		</spawn>
+		<!-- Mask Arachna
+		An Arachna that has dug through Taloc's Roots -->
+		<spawn npc_id="216135">
+			<spot h="48" z="1107.7167" y="284.76718" x="216.66591" random_walk="3"/>
+		</spawn>
+		<!-- Mask Arachna
+		An Arachna that has dug through Taloc's Roots -->
+		<spawn npc_id="216136">
+			<spot h="84" z="1109.536" y="316.36823" x="218.54099" random_walk="3"/>
+		</spawn>
+		<!-- Emerald Sparkle
+		A Sparkle found in Taloc's Roots -->
+		<spawn npc_id="216137">
+			<spot h="56" z="1108.1005" y="299.96112" x="225.56729" random_walk="3"/>
+            <spot h="98" z="1108.4823" y="311.65387" x="195.15567" random_walk="3"/>
+		</spawn>
+		<!-- Emerald Sparkle
+		A Sparkle found in Taloc's Roots -->
+		<spawn npc_id="216138">
+			<spot h="47" z="1107.7899" y="291.4436" x="219.68002" random_walk="3"/>
+		</spawn>
+		<!-- Sheluk Drone
+		A strong and robust Sheluk who attacks Taloc's Roots -->
+		<spawn npc_id="216139">
+			<spot h="77" z="1174.5858" y="447.8081" x="305.1168" random_walk="3"/>
+            <spot h="83" z="1137.8958" y="476.04306" x="119.29971" random_walk="3"/>
+            <spot h="55" z="1160.4192" y="379.14673" x="234.73024" random_walk="3"/>
+            <spot h="101" z="1173.2775" y="440.3578" x="276.69705" random_walk="3"/>
+		</spawn>
+		<!-- Sheluk Drone
+		A strong and robust Sheluk who attacks Taloc's Roots -->
+		<spawn npc_id="216140">
+			<spot h="70" z="1163.6005" y="412.27716" x="257.88025" random_walk="3"/>
+		</spawn>
+		<!-- Vampiric Arachna
+		An Arachna living in Taloc's Roots.
+		It feeds on the blood of animals and the sap from plants -->
+		<spawn npc_id="216141">
+			<spot h="97" z="1137.7284" y="485.60754" x="104.179214" random_walk="3"/>
+            <spot h="96" z="1160.8461" y="393.3616" x="248.13005" random_walk="3"/>
+            <spot h="35" z="1174.2283" y="477.6712" x="296.3159" random_walk="3"/>
+		</spawn>
+		<!-- Vampiric Arachna
+		An Arachna living in Taloc's Roots.
+		It feeds on the blood of animals and the sap from plants -->
+		<spawn npc_id="216142">
+			<spot h="86" z="1173.0684" y="437.49335" x="291.63843" random_walk="3"/>
+            <spot h="92" z="1140.8367" y="508.0273" x="107.71398" random_walk="3"/>
+		</spawn>
+		<!-- Radiant Sparkle
+		A Sparkle living in Taloc's Roots that shines in the dark -->
+		<spawn npc_id="216143">
+			<spot h="6" z="1160.5836" y="384.94064" x="220.66028" random_walk="3"/>
+            <spot h="63" z="1139.2874" y="550.75464" x="176.74805" random_walk="3"/>
+            <spot h="83" z="1138.7916" y="568.98914" x="154.67249" random_walk="3"/>
+            <spot h="117" z="1161.7401" y="396.56897" x="229.721" random_walk="3"/>
+            <spot h="4" z="1185.9027" y="335.9078" x="291.16052" random_walk="3"/>
+		</spawn>
+		<!-- Radiant Sparkle
+		A Sparkle living in Taloc's Roots that shines in the dark -->
+		<spawn npc_id="216144">
+			<spot h="35" z="1186.116" y="317.63077" x="279.96503" random_walk="3"/>
+            <spot h="25" z="1185.1198" y="346.7185" x="271.1626" random_walk="3"/>
+            <spot h="34" z="1182.9906" y="371.19858" x="332.87225" random_walk="3"/>
+			<spot h="111" z="1186.489" y="354.8973" x="288.3582" random_walk="3"/>
+		</spawn>
+		<!-- Log Crynac -->
+		<spawn npc_id="216145">
+			<spot h="83" z="1140.1821" y="495.0253" x="127.62299" random_walk="3"/>
+            <spot h="77" z="1176.0145" y="463.15042" x="286.86517" random_walk="3"/>
+		</spawn>
+		<!-- Log Crynac -->
+		<spawn npc_id="216146">
+			<spot h="15" z="1163.3516" y="402.70514" x="271.3535" random_walk="3"/>
+            <spot h="51" z="1159.0297" y="378.4341" x="260.18423" random_walk="3"/>
+            <spot h="77" z="1138.4587" y="560.7028" x="162.77576" random_walk="3"/>
+		</spawn>
+		<!-- Klaw Watcher -->
+		<spawn npc_id="216459">
+			<spot h="0" z="1180.0" y="581.0215" x="352.87396" random_walk="3"/>
+            <spot h="0" z="1180.0" y="569.4916" x="391.601" random_walk="3"/>
+            <spot h="0" z="1180.0" y="601.719" x="375.082" random_walk="3"/>
+            <spot h="0" z="1180.0" y="584.1427" x="378.5293" random_walk="3"/>
+            <spot h="80" z="1175.8481" y="570.41046" x="364.61157" random_walk="3"/>
+		</spawn>
+		<!-- Klaw Watcher -->
+		<spawn npc_id="216460">
+			<spot h="0" z="1180.0" y="588.8063" x="400.02448" random_walk="3"/>
+            <spot h="0" z="1180.0" y="605.1668" x="388.95703" random_walk="3"/>
+            <spot h="69" z="1175.016" y="564.7629" x="376.1712" random_walk="3"/>
+		</spawn>
+		<!-- Komad Sentry -->
+		<spawn npc_id="216926">
+			<spot h="119" z="1273.3947" y="859.3107" x="454.21494"/>
+            <spot h="56" z="1272.955" y="844.7511" x="469.6024"/>
+            <spot h="17" z="1282.9071" y="799.40594" x="474.6799"/>
+            <spot h="6" z="1249.075" y="910.3686" x="353.08627"/>
+		</spawn>
+		<!-- Komad Sentry -->
+		<spawn npc_id="216927">
+			<spot h="20" z="1285.0947" y="786.09357" x="480.62274"/>
+            <spot h="39" z="1279.5251" y="819.26166" x="457.50775"/>
+            <spot h="60" z="1264.8519" y="908.3196" x="425.96072"/>
+            <spot h="105" z="1269.1134" y="890.0438" x="428.4931"/>
+		</spawn>
+		<!-- Komad Diviner -->
+		<spawn npc_id="216928">
+			<spot h="8" z="1265.0491" y="911.8041" x="413.9979"/>
+            <spot h="12" z="1275.1855" y="847.3929" x="436.93646"/>
+            <spot h="91" z="1258.7305" y="913.0941" x="385.56918"/>
+		</spawn>
+		<!-- Komad Diviner -->
+		<spawn npc_id="216929">
+			<spot h="11" z="1277.3715" y="827.9468" x="444.9451"/>
+            <spot h="0" z="1268.9626" y="900.3883" x="431.61935"/>
+		</spawn>
+		<!-- Cursed Log Sheluk -->
+		<spawn npc_id="216930">
+			<spot h="34" z="1270.7924" y="807.4727" x="373.645" random_walk="3"/>
+            <spot h="7" z="1273.155" y="807.4674" x="393.22104" random_walk="3"/>
+		</spawn>
+		<!-- Cursed Log Sheluk -->
+		<spawn npc_id="216931">
+			<spot h="10" z="1272.9529" y="790.9495" x="390.06934" random_walk="3"/>
+		</spawn>
+		<!-- Striped Arachna -->
+		<spawn npc_id="216932">
+			<spot h="57" z="1273.5944" y="805.20215" x="408.98917" random_walk="3"/>
+            <spot h="32" z="1270.5519" y="791.5771" x="377.57916" random_walk="3"/>
+		</spawn>
+		<!-- Striped Arachna -->
+		<spawn npc_id="216933">
+			<spot h="36" z="1267.8562" y="821.83325" x="368.29474" random_walk="3"/>
+		</spawn>
+		<!-- Veiled Sparkle -->
+		<spawn npc_id="216934">
+			<spot h="41" z="1273.9784" y="791.75433" x="402.92392" random_walk="3"/>
+            <spot h="11" z="1270.2637" y="839.749" x="390.97726" random_walk="3"/>
+		</spawn>
+		<!-- Veiled Sparkle -->
+		<spawn npc_id="216935">
+			<spot h="35" z="1271.2966" y="798.93524" x="372.89706" random_walk="3"/>
+            <spot h="4" z="1270.7301" y="816.455" x="382.88342" random_walk="3"/>
+		</spawn>
+		<!-- Supraklaw Watcher -->
+		<spawn npc_id="216936">
+			<spot h="50" z="1271.9506" y="869.2251" x="495.92828"/>
+            <spot h="34" z="1271.782" y="873.8333" x="502.7699"/>
+		</spawn>
+		<!-- Komad Elite Legionary -->
+		<spawn npc_id="216937">
+			<spot h="0" z="1382.0" y="819.71655" x="592.3493"/>
+            <spot h="0" z="1382.0" y="792.02136" x="676.09985"/>
+            <spot h="0" z="1383.0" y="788.22974" x="596.9956"/>
+            <spot h="0" z="1382.0" y="856.24786" x="674.42615"/>
+            <spot h="0" z="1382.0" y="852.40216" x="681.0651"/>
+            <spot h="0" z="1382.0" y="856.33014" x="683.9233"/>
+            <spot h="0" z="1382.0" y="822.5298" x="600.6641"/>
+            <spot h="0" z="1382.0" y="851.8523" x="629.18896"/>
+            <spot h="0" z="1382.0" y="851.98175" x="619.4658"/>
+            <spot h="62" z="1378.8854" y="798.25305" x="615.524"/>
+		</spawn>
+		<!-- Komad Elite Legionary -->
+		<spawn npc_id="216938">
+			<spot h="0" z="1382.0" y="796.8142" x="672.341"/>
+            <spot h="0" z="1382.0" y="856.34106" x="626.9739"/>
+            <spot h="0" z="1382.0" y="815.42706" x="595.73395"/>
+            <spot h="0" z="1382.0" y="847.61414" x="625.83923"/>
+            <spot h="0" z="1382.0" y="799.52155" x="680.5386"/>
+            <spot h="0" z="1382.0" y="852.9245" x="676.8263"/>
+            <spot h="106" z="1379.0663" y="802.1316" x="608.7686"/>
+            <spot h="36" z="1379.8645" y="794.234" x="612.65796"/>
+		</spawn>
+		<!-- Komad Shaman
+		A mutant creature living inside Taloc -->
+		<spawn npc_id="216939">
+			<spot h="0" z="1382.0" y="855.897" x="622.44305"/>
+            <spot h="0" z="1382.0" y="824.17145" x="596.0562"/>
+            <spot h="0" z="1382.0" y="817.18616" x="600.5602"/>
+            <spot h="83" z="1378.96" y="802.4375" x="613.84424"/>
+            <spot h="21" z="1379.4834" y="795.4187" x="608.7804"/>
+		</spawn>
+		<!-- Komad Shaman
+		A mutant creature living inside Taloc -->
+		<spawn npc_id="216940">
+			<spot h="0" z="1382.0" y="848.4031" x="621.9739"/>
+            <spot h="0" z="1382.0" y="793.72784" x="680.3881"/>
+            <spot h="0" z="1382.0" y="860.52454" x="676.9739"/>
+            <spot h="0" z="1382.0" y="801.17175" x="675.3291"/>
+            <spot h="101" z="1381.4781" y="849.92596" x="607.62213"/>
+		</spawn>
+		<!-- Spawned Supraklaw -->
+		<spawn npc_id="217132">
+			<spot h="0" z="1308.0" y="866.068" x="679.1104"/>
+            <spot h="0" z="1305.0" y="814.56274" x="673.54974"/>
+            <spot h="109" z="1297.5804" y="863.8352" x="623.56836"/>
+            <spot h="103" z="1298.9642" y="867.3376" x="632.852"/>
+		</spawn>
+		<!-- Spawned Supraklaw -->
+		<spawn npc_id="217133">
+			<spot h="0" z="1308.0" y="871.40393" x="661.36066"/>
+            <spot h="0" z="1302.0" y="817.1544" x="634.01587"/>
+            <spot h="0" z="1308.0" y="872.9377" x="676.9993"/>
+            <spot h="0" z="1302.0" y="806.78265" x="646.02234"/>
+            <spot h="0" z="1308.0" y="880.51" x="653.7951"/>
+            <spot h="0" z="1308.0" y="817.50665" x="680.0421"/>
+            <spot h="0" z="1308.0" y="813.10266" x="683.95807"/>
+            <spot h="0" z="1308.0" y="872.9558" x="656.5204"/>
+            <spot h="0" z="1302.0" y="812.1083" x="646.96796"/>
+            <spot h="0" z="1308.0" y="872.6811" x="681.7044"/>
+            <spot h="0" z="1305.0" y="807.2375" x="671.90784"/>
+            <spot h="0" z="1303.0" y="816.38196" x="643.67487"/>
+            <spot h="93" z="1304.6022" y="875.30743" x="667.3371"/>
+            <spot h="100" z="1298.1383" y="863.4823" x="629.0918"/>
+            <spot h="114" z="1297.816" y="858.4" x="626.1331"/>
+            <spot h="104" z="1299.4727" y="872.29956" x="635.6209"/>
+		</spawn>
+		
+		<!-- Dorkin
+		<Recluse>
+		A Shulack who was expelled from his village for some reason.
+		He is hiding somewhere inside Taloc -->
+		<spawn npc_id="799502">
+			<spot x="436.318" y="767.912" z="1288.42" h="83"/>
+		</spawn>
+		<!-- Taloc's Soul
+		<Soul of Elim>
+		A sample of extremely unstable Aether.
+		You can obtain them from a Celestius, Kinquid, or Queen Mosqua living inside Taloc -->
+		<spawn npc_id="799526">
+			<spot x="199.74" y="235.64" z="1099.18" h="90"/>
+		</spawn>
+		<!-- Hyas
+		<Reian Scholar> -->
+		<spawn npc_id="799527">
+			<spot x="203.517" y="819.265" z="1214.4"/>
+		</spawn>
+		<!-- Tealen
+		<Reian Tribe> -->
+		<spawn npc_id="799528">
+			<spot x="520.0769" y="831.70465" z="1284.2622" h="86"/>
+		</spawn>
+		<!-- Greater Blessed Relics -->
+		<spawn npc_id="831990">
+            <spot x="193.50777" y="230.3859" z="1098.9164" h="53"/>
+        </spawn>
+		<!-- Thorny Vines -->
+		<spawn npc_id="730527">
+			<spot x="164.37347" y="338.67148" z="1125.9337" entity_id="51"/>
+		</spawn>
+		<!-- Taloc's Soil
+		Fertile soil where Taloc's Young Leaf grows -->
+		<spawn npc_id="700634">
+		    <spot x="238.89708" y="460.52948" z="1124.4933" entity_id="18"/>
+			<spot x="267.22464" y="319.54120" z="1186.6373" entity_id="32"/>
+			<spot x="115.56649" y="716.75714" z="1138.6329" entity_id="33"/>
+			<spot x="379.62680" y="607.63831" z="1177.5876" entity_id="36"/>
+			<spot x="374.16504" y="789.96832" z="1270.4418" entity_id="169"/>
+			<spot x="444.25388" y="1000.2786" z="1264.3168" entity_id="170"/>
+		</spawn>
+		<!-- Taloc's Knot
+		A measurement of the Holy Tree Taloc's growth -->
+		<spawn npc_id="700635">
+			<spot x="498.24069" y="896.19092" z="1271.8767" entity_id="94"/>
+		</spawn>
+		<!-- Research Journal
+		A Lepharist research document of records on remodeled Human test subjects kept by Lepharists.
+		It is normally found deep inside the Alquimia Research Center.
+		But some claim to have seen it near the entrance of the research center -->
+		<spawn npc_id="700636">
+			<spot x="546.00000" y="845.0000" z="1377.14590" entity_id="57"/>
+		</spawn>
+		<!-- Contaminated Fragment Of Aion Tower -->
+		<spawn npc_id="700740">
+			<spot x="636.35999" y="769.53003" z="1387.3800" entity_id="93"/>
+		</spawn>
+		<!-- Golden Egg Of Mutant Insect -->
+		<spawn npc_id="700742">
+			<spot x="436.41290" y="765.41827" z="1289.2518" entity_id="91"/>
+		</spawn>
+		<!-- Health Pod -->
+	    <spawn npc_id="700940">
+            <spot x="171.850006" y="564.590027" z="1141.000000" h="00"/>
+		    <spot x="405.835632" y="566.817871" z="1177.049927" h="00"/>
+		    <spot x="289.558990" y="311.041779" z="1187.083130" h="00"/>
+		    <spot x="506.204254" y="883.861755" z="1273.640625" h="00"/>
+		    <spot x="398.351257" y="784.893555" z="1275.311768" h="00"/>
+	    </spawn>
+		<!-- Huge Healing Plant -->
+		<spawn npc_id="700941">
+            <spot x="624.420500" y="815.068300" z="1380.684100" h="12"/>
+        </spawn>
+		<!-- Bug Fluid -->
+		<spawn npc_id="700942">
+			<spot x="190.47649" y="594.39630" z="1152.0172" entity_id="162"/>
+			<spot x="138.76106" y="484.21173" z="1139.8916" entity_id="163"/>
+		</spawn>
+		<!-- Concentrated Sap -->
+		<spawn npc_id="700943">
+			<spot x="597.34955" y="819.51807" z="1382.4539" entity_id="171"/>
+			<spot x="680.21857" y="857.28809" z="1381.3706" entity_id="174"/>
+			<spot x="677.30023" y="796.31812" z="1381.7168" entity_id="175"/>
+		</spawn>
+		<!-- Concentrated Sap -->
+		<spawn npc_id="700958">
+			<spot x="611.47095" y="798.34552" z="1380.3555" entity_id="172"/>
+		</spawn>
+		<!-- Concentrated Sap -->
+		<spawn npc_id="700960">
+			<spot x="624.73199" y="851.96332" z="1381.7305" entity_id="173"/>
+		</spawn>
+		<!-- Writhing Cocoon
+		A cocoon made by insects inside Taloc to capture intruders.
+		The Reian tribesmen Abyla and Engeius are trapped in these cocoons -->
+		<spawn npc_id="730232">
+			<spot x="143.84792" y="394.82858" z="1144.6510" entity_id="54"/>
+		</spawn>
+		<!-- Writhing Cocoon
+		A cocoon made by insects inside Taloc to capture intruders.
+		The Reian tribesmen Abyla and Engeius are trapped in these cocoons -->
+		<spawn npc_id="730233">
+			<spot x="148.25824" y="395.66791" z="1144.1628" entity_id="55"/>
+		</spawn>
+	</spawn_map>
+</spawns>

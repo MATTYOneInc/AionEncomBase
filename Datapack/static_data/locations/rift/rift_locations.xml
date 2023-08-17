@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	마스터 5.0
+	Made By (Encom)
+	http://aion.power.plaync.com/wiki/%EC%8B%9C%EA%B3%B5%EC%9D%98+%EA%B7%A0%EC%97%B4
+ -->
+<rift_locations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="rift_locations.xsd">
+	<!-- ELYOS RIFT -->
+	<!-- エルテネン -->
+	<rift_location id="2120" world="210020000"/>
+	<rift_location id="2121" world="210020000"/>
+	<rift_location id="2122" world="210020000"/>
+	<rift_location id="2123" world="210020000"/>
+	<rift_location id="2124" world="210020000"/>
+	<rift_location id="2125" world="210020000"/>
+	<rift_location id="2126" world="210020000"/>
+	<!-- インタルディカ -->
+	<rift_location id="2140" world="210040000"/>
+	<rift_location id="2141" world="210040000"/>
+	<rift_location id="2142" world="210040000"/>
+	<rift_location id="2143" world="210040000"/>
+	<rift_location id="2144" world="210040000"/>
+	<rift_location id="2145" world="210040000"/>
+	<rift_location id="2146" world="210040000"/>
+	<!-- インギスオン -->
+	<rift_location id="2150" world="210130000"/>
+	<rift_location id="2151" world="210130000"/>
+	<rift_location id="2152" world="210130000"/>
+	<rift_location id="2153" world="210130000"/>
+	<rift_location id="2154" world="210130000"/>
+	<rift_location id="2155" world="210130000"/>
+	<rift_location id="2156" world="210130000"/>
+	<rift_location id="2157" world="210130000"/>
+	<rift_location id="2158" world="210130000"/>
+	<rift_location id="2159" world="210130000"/>
+	<!-- 시그니아 -->
+	<rift_location id="2170" world="210070000"/>
+	<rift_location id="2171" world="210070000"/>
+	<rift_location id="2172" world="210070000"/>
+	<rift_location id="2173" world="210070000"/>
+	<rift_location id="2174" world="210070000"/>
+	<rift_location id="2175" world="210070000"/>
+	<rift_location id="2176" world="210070000"/>
+	<rift_location id="2177" world="210070000"/>
+	<rift_location id="2178" world="210070000"/>
+	<!-- 아스테라 -->
+	<rift_location id="2101" world="210100000"/>
+	<rift_location id="2102" world="210100000"/>
+	<rift_location id="2103" world="210100000"/>
+	<rift_location id="2104" world="210100000"/>
+	<rift_location id="2105" world="210100000"/>
+	<rift_location id="2106" world="210100000"/>
+	<rift_location id="2107" world="210100000"/>
+	
+	<!-- ASMODIANS RIFT -->
+	<!-- モルヘイム -->
+	<rift_location id="2220" world="220020000"/>
+	<rift_location id="2221" world="220020000"/>
+	<rift_location id="2222" world="220020000"/>
+	<rift_location id="2223" world="220020000"/>
+	<rift_location id="2224" world="220020000"/>
+	<rift_location id="2225" world="220020000"/>
+	<rift_location id="2226" world="220020000"/>
+	<!-- ベルスラン -->
+	<rift_location id="2240" world="220040000"/>
+	<rift_location id="2241" world="220040000"/>
+	<rift_location id="2242" world="220040000"/>
+	<rift_location id="2243" world="220040000"/>
+	<rift_location id="2244" world="220040000"/>
+	<rift_location id="2245" world="220040000"/>
+	<rift_location id="2246" world="220040000"/>
+	<!-- ゲルクマルス -->
+	<rift_location id="2270" world="220140000"/>
+	<rift_location id="2271" world="220140000"/>
+	<rift_location id="2272" world="220140000"/>
+	<rift_location id="2273" world="220140000"/>
+	<rift_location id="2274" world="220140000"/>
+	<rift_location id="2275" world="220140000"/>
+	<rift_location id="2276" world="220140000"/>
+	<rift_location id="2277" world="220140000"/>
+	<rift_location id="2278" world="220140000"/>
+	<rift_location id="2279" world="220140000"/>
+	<!-- 엔샤르 -->
+	<rift_location id="2280" world="220080000"/>
+	<rift_location id="2281" world="220080000"/>
+	<rift_location id="2282" world="220080000"/>
+	<rift_location id="2283" world="220080000"/>
+	<rift_location id="2284" world="220080000"/>
+	<rift_location id="2285" world="220080000"/>
+	<rift_location id="2286" world="220080000"/>
+	<rift_location id="2287" world="220080000"/>
+	<rift_location id="2288" world="220080000"/>
+	<!-- 노스폴드 -->
+	<rift_location id="2201" world="220110000"/>
+	<rift_location id="2202" world="220110000"/>
+	<rift_location id="2203" world="220110000"/>
+	<rift_location id="2204" world="220110000"/>
+	<rift_location id="2205" world="220110000"/>
+	<rift_location id="2206" world="220110000"/>
+	<rift_location id="2207" world="220110000"/>
+</rift_locations>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	マルクタン神殿 5.6
+	Spawn By (Encom)
+  -->
+<spawns>
+	<spawn_map map_id="120020000">
+		<!-- Mailbox -->
+	    <spawn npc_id="700079" respawn_time="295">
+            <spot x="1519.42" y="1412.4" z="271.39" h="117"/>
+        </spawn>
+		<!-- Enshar Teleporter
+		This is a Teleport Statue, There are words inscribed on the statue shield.
+		Go forward and prosper. Honor to Empyrean Lord Marchutan. -->
+		<spawn npc_id="731657" respawn_time="295">
+            <spot x="1565.4834" y="1418.5914" z="265.68488" h="69"/>
+        </spawn>
+		<!-- Convent Of Marchutan To Panium -->
+		<spawn npc_id="730269" respawn_time="295">
+			<spot x="1558.9" y="1429.5" z="265.67" entity_id="12"/>
+		</spawn>
+		<!-- Eriu
+		<Stigma Researcher>
+		Azphelumbra.
+		I just can't get enough of Stigma research -->
+		<spawn npc_id="206355" respawn_time="295">
+            <spot x="1507.961792" y="1442.186768" z="272.000000" h="0"/>
+        </spawn>
+		<!-- Garvan
+		<Warrior Preceptor>
+		A Preceptor of Gladiators and Templars in the Convent of Marchutan in Pandaemonium.
+		He advocates leniency in his teachings and disagrees with Traufnir's strict principles -->
+		<spawn npc_id="798701" respawn_time="295">
+			<spot x="1540.13" y="1395.22" z="266.014" h="36"/>
+		</spawn>
+		<!-- Hongerverth
+		<Scout Preceptor>
+		A Preceptor of Rangers and Assassins at Convent of Marchutan in Pandaemonium.
+		Because he lost his son in battle, he repeatedly warns his students not to be too careless -->
+		<spawn npc_id="798702" respawn_time="295">
+			<spot x="1525.96" y="1421.96" z="266.042" h="100"/>
+		</spawn>
+		<!-- Heszti
+		<Mage Preceptor>
+		A Preceptor of Sorcerers and Spiritmasters at Convent of Marchutan in Pandaemonium.
+		She was once Vellun's teacher as well as the chair of the 1st Pandaemonium Research Center.
+		Now retired, she devotes her free time to fostering the younger generation -->
+		<spawn npc_id="798703" respawn_time="295">
+			<spot x="1529.99" y="1397.27" z="269.616" h="20"/>
+		</spawn>
+		<!-- Margel
+		<Priest Preceptor>
+		A Preceptor of Clerics and Chanters at Convent of Marchutan in Pandaemonium.
+		Although quite accomplished, he is not very popular because of his hysterical nature -->
+		<spawn npc_id="798704" respawn_time="295">
+			<spot x="1521.89" y="1412.24" z="269.616"/>
+		</spawn>
+		<!-- Hodorski
+		<Consumable Item Distributor>
+		A Consumable Item Distributor at Convent of Marchutan in Pandaemonium -->
+		<spawn npc_id="798705" respawn_time="295">
+			<spot x="1550.62" y="1362.8" z="271.424" h="40"/>
+		</spawn>
+		<!-- Deltandra
+		<Accessory Distributor>
+		An Accessory Distributor at Convent of Marchutan in Pandaemonium -->
+		<spawn npc_id="798706" respawn_time="295">
+			<spot x="1552.2" y="1363.77" z="271.424" h="40"/>
+		</spawn>
+		<!-- Psyros
+		<Greater Weapon Distributor>
+		A Greater Weapon Distributor at Convent of Marchutan in Pandaemonium -->
+		<spawn npc_id="798707" respawn_time="295">
+			<spot x="1545.67" y="1367.54" z="271.406" h="10"/>
+		</spawn>
+		<!-- Vilnus
+		<Sanctuary Guardsman>
+		A soldier guarding the entrance of Convent of Marchutan in Pandaemonium -->
+		<spawn npc_id="798711" respawn_time="295">
+			<spot x="1561.52" y="1426.49" z="265.685" h="100"/>
+		</spawn>
+		<!-- Bredren
+		<Sanctuary Guardsman>
+		A soldier guarding the entrance of Convent of Marchutan in Pandaemonium -->
+		<spawn npc_id="798712" respawn_time="295">
+			<spot x="1564.04" y="1421.61" z="265.685" h="40"/>
+		</spawn>
+		<!-- Fjoersvith
+		<Great Scholar>
+		A great scholar at Convent of Marchutan in Pandaemonium.
+		Her vast knowledge of subjects is almost as impressive as her personality issues.
+		Nothing interests her but the pursuit of knowledge -->
+		<spawn npc_id="798713" respawn_time="295">
+			<spot x="1528.7205" y="1394.8615" z="271.38977" h="83"/>
+		</spawn>
+		<!-- Agehia
+		<Priest Of Destiny>
+		A Priest of Destiny serving Empyrean Lord Marchutan.
+		She remains in Convent of Marchutan of Pandaemonium to fill in for the absent Empyrean Lord Marchutan.
+		She always lives up to her word -->
+		<spawn npc_id="798800" respawn_time="295">
+			<spot x="1516.26" y="1399.61" z="271.887" h="10"/>
+		</spawn>
+		<!-- Nunor
+		<Stigma Master>
+		A Stigma Master at the Convent of Marchutan -->
+		<spawn npc_id="798801" respawn_time="295">
+			<spot x="1505.37" y="1448.54" z="271.424" h="100"/>
+		</spawn>
+		<!-- Leokev
+		<Weapon Distributor>
+		Strength of muscle and of heart is what brings victory.
+		That is why I build my body and skills every day.
+		I was small and weak as a Human, but you wouldn't know that now, would you ?
+		I've heard Louizze rant about the value of defense, but I think it's she who is short-sighted.
+		Why do you need to survive the enemy if you land the killing blow first?
+		But you haven't come to join in our debate, have you ?
+		These weapons will serve you well in the Abyss -->
+		<spawn npc_id="798802" respawn_time="295">
+			<spot x="1560.4" y="1368.23" z="271.424" h="40"/>
+		</spawn>
+		<!-- Louizze
+		<Armor Distributor>
+		Sometimes Asmodians like Leokev put too much value and trust in offensive capability.
+		Such a shame, and so short sighted.
+		We value life just as much as the Elyos.
+		After all, only those who survive the enemies' blows are able to land blows of their own.
+		Of course if you've been to the Abyss, you likely understand that already.
+		Perhaps your talking to me is proof show me that you do understand -->
+		<spawn npc_id="798803" respawn_time="295">
+			<spot x="1558.86" y="1367.43" z="271.424" h="40"/>
+		</spawn>
+		<!-- Rapidefire Rita
+		<Technist Preceptor>
+		The Preceptor of Snipers and Mechanists found at Convent of Marchutan -->
+        <spawn npc_id="801224" respawn_time="295">
+            <spot x="1551.5428" y="1405.3401" z="266.01382" h="9"/>
+        </spawn>
+		<!-- Hoargo
+		<Muse Preceptor>
+		The Muse Preceptor in the Convent of Marchutan -->
+		<spawn npc_id="801225" respawn_time="295">
+            <spot x="1540.7151" y="1425.4763" z="266.01382" h="10"/>
+        </spawn>
+		<!-- Marchutan
+		<Lord Of Fate>
+		One of the five Empyrean Lords in Asmodae.
+		He is the Fate Lord -->
+		<spawn npc_id="805365" respawn_time="295">
+            <spot x="499.9432" y="500.1672" z="499.72086" h="90"/>
+        </spawn>
+		<!-- Skuldun
+		<Marchutan's Senior Agent>
+        A Senior Agent of Marchutan -->
+		<spawn npc_id="805693" respawn_time="295">
+            <spot x="500.0223" y="476.6978" z="499.59976" h="30"/>
+        </spawn>
+		<!-- Hezolf
+		<Priest>
+		I hope destiny leads the way -->
+		<spawn npc_id="806248" respawn_time="295">
+			<spot x="1518.8" y="1397.08" z="271.724" h="10"/>
+		</spawn>
+		<!-- Kjander
+		<Suspicious Visitor>
+		A Daeva in Marchutan Priory who gives basic instructions to new trainees -->
+		<spawn npc_id="830248" respawn_time="295">
+			<spot x="1519.7655" y="1416.1057" z="271.38977" h="54"/>
+		</spawn>
+	    <!-- Printigel
+		<Augmenting Officer> -->
+	    <spawn npc_id="830767" respawn_time="295">
+            <spot x="1554.1" y="1382.59" z="271.424" h="69"/>
+        </spawn>
+	    <!-- Gartigel
+		<Shield Distributor>
+		I almost pity Daevas who cannot use shields.
+		It is such a valuable part of the defensive arsenal.
+		Then again, I suppose I'm biased
+		I'm a front-line kind of Daeva, so of course a shield is a necessity for me.
+		If you're the front-line type like me, I suggest you take a look at what I have to offer -->
+	    <spawn npc_id="830995" respawn_time="295">
+            <spot x="1543.5" y="1374.32" z="271.424" h="9"/>
+        </spawn>
+		<!-- Sunkistin
+		<Honorable Weapon Distributor>
+		Another honorable soul.
+		The most rewarding part of my job is rewarding deserving Daevas.
+		We have a wide selection of armaments to choose from, so take your time -->
+		<spawn npc_id="832002" respawn_time="295">
+            <spot x="1536.139" y="1385.0286" z="271.38977" h="24"/>
+        </spawn>
+		<!-- Thaedrir
+		<Honorable Armor Distributor>
+		I'm honored to meet you.
+		I hold great respect for the soldiers of an Asmodian victory.
+		It is my pleasure to recognize your efforts.
+		I've provided a wide array of arms as a reward, so please take your time in deciding -->
+        <spawn npc_id="832003" respawn_time="295">
+            <spot x="1538.8657" y="1384.1332" z="271.38977" h="24"/>
+        </spawn>
+	</spawn_map>
+</spawns>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Player Initial Data 5.5
+	Made By (Encom)
+ -->
+<player_initial_data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="player_initial_data.xsd">
+	<asmodian_spawn_location map_id="220010000" x="584.3739" y="2794.313" z="299.22266" heading="67"/>
+	<elyos_spawn_location map_id="210010000" x="1207.764" y="1044.5725" z="140.14894" heading="59"/>
+	<player_data class="WARRIOR">
+		<items>
+			<item id="100000094" count="1"/>
+			<item id="113500001" count="1"/>
+			<item id="110500003" count="1"/>
+			<item id="162000170" count="100"/>
+			<item id="160000001" count="12"/>
+			<item id="169300002" count="20"/>
+			<item id="182400001" count="1000"/>
+		</items>
+	</player_data>
+	<player_data class="MAGE">
+		<items>
+			<item id="100600034" count="1"/>
+			<item id="110100009" count="1"/>
+			<item id="113100005" count="1"/>
+			<item id="162000170" count="100"/>
+			<item id="160000001" count="12"/>
+			<item id="169300002" count="20"/>
+			<item id="182400001" count="1000"/>
+		</items>
+	</player_data>
+	<player_data class="PRIEST">
+		<items>
+			<item id="100100011" count="1"/>
+			<item id="110300292" count="1"/>
+			<item id="113300278" count="1"/>
+			<item id="162000170" count="100"/>
+			<item id="160000001" count="12"/>
+			<item id="169300002" count="20"/>
+			<item id="182400001" count="1000"/>
+		</items>
+	</player_data>
+	<player_data class="SCOUT">
+		<items>
+			<item id="100200112" count="1"/>
+			<item id="110300015" count="1"/>
+			<item id="113300005" count="1"/>
+			<item id="162000170" count="100"/>
+			<item id="160000001" count="12"/>
+			<item id="169300002" count="20"/>
+			<item id="182400001" count="1000"/>
+		</items>
+	</player_data>
+	<player_data class="MUSE">
+		<items>
+		    <item id="110101658" count="1"/>
+			<item id="113101509" count="1"/>
+			<item id="102000194" count="1"/>
+			<item id="162000170" count="100"/>
+			<item id="160000001" count="12"/>
+			<item id="169300002" count="20"/>
+			<item id="182400001" count="1000"/>
+		</items>
+	</player_data>
+	<player_data class="TECHNIST">
+		<items>
+		    <item id="110301667" count="1"/>
+			<item id="113301636" count="1"/>
+			<item id="101800181" count="1"/>
+			<item id="162000170" count="100"/>
+			<item id="160000001" count="12"/>
+			<item id="169300002" count="20"/>
+			<item id="182400001" count="1000"/>
+		</items>
+	</player_data>
+</player_initial_data>

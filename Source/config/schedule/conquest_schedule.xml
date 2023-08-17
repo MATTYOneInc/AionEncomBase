@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Conquest/Offering 4.8
+    The Shugo Emperor's Vault 4.7.5
+	Emperor Trillirunerk's Safe 4.9.1
+	Smoldering Fire Temple 5.1
+	Kumuki Cave 5.3
+	IDEvent_Def 5.6
+	Tiamaranta's Eye 5.8
+	Made By (Encom)
+ -->
+<conquest_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="conquest_schedule.xsd">
+	<!-- [CONQUEST/OFFERING 4.8] -->
+	<!-- [INGGISON] -->
+	<conquest id="1">
+		<offeringTime>0 0 13 ? * MON-SUN *</offeringTime>
+		<offeringTime>0 0 18 ? * MON-SUN *</offeringTime>
+		<offeringTime>0 0 23 ? * MON-SUN *</offeringTime>
+		<offeringTime>0 0 4 ? * MON-SUN *</offeringTime>
+		<offeringTime>0 0 9 ? * MON-SUN *</offeringTime>
+	</conquest>
+	<!-- [GELKMAROS] -->
+	<conquest id="2">
+		<offeringTime>0 0 13 ? * MON-SUN *</offeringTime>
+		<offeringTime>0 0 18 ? * MON-SUN *</offeringTime>
+		<offeringTime>0 0 23 ? * MON-SUN *</offeringTime>
+		<offeringTime>0 0 4 ? * MON-SUN *</offeringTime>
+		<offeringTime>0 0 9 ? * MON-SUN *</offeringTime>
+	</conquest>
+	
+	<!-- [THE SHUGO EMPEROR VAULT 4.7.5 - Sanctum] -->
+	<conquest id="3">
+		<offeringTime>0 0 15 ? * MON *</offeringTime>
+		<offeringTime>0 0 20 ? * MON *</offeringTime>
+		<offeringTime>0 0 1 ? * MON *</offeringTime>
+		<offeringTime>0 0 6 ? * MON *</offeringTime>
+		<offeringTime>0 0 11 ? * MON *</offeringTime>
+	</conquest>
+	<!-- [EMPEROR TRILLIRUNERK SAFE 4.9.1 - Sanctum] -->
+	<conquest id="4">
+		<offeringTime>0 0 17 ? * TUE *</offeringTime>
+		<offeringTime>0 0 22 ? * TUE *</offeringTime>
+		<offeringTime>0 0 3 ? * TUE *</offeringTime>
+		<offeringTime>0 0 8 ? * TUE *</offeringTime>
+		<offeringTime>0 0 13 ? * TUE *</offeringTime>
+	</conquest>
+	<!-- [SMOLDERING FIRE TEMPLE 5.1 - Sanctum] -->
+	<conquest id="5">
+		<offeringTime>0 0 19 ? * WED *</offeringTime>
+		<offeringTime>0 0 0 ? * WED *</offeringTime>
+		<offeringTime>0 0 5 ? * WED *</offeringTime>
+		<offeringTime>0 0 10 ? * WED *</offeringTime>
+		<offeringTime>0 0 15 ? * WED *</offeringTime>
+	</conquest>
+	<!-- [KUMUKI CAVE 5.3 - Sanctum] -->
+	<conquest id="6">
+		<offeringTime>0 0 21 ? * THU *</offeringTime>
+		<offeringTime>0 0 2 ? * THU *</offeringTime>
+		<offeringTime>0 0 7 ? * THU *</offeringTime>
+		<offeringTime>0 0 12 ? * THU *</offeringTime>
+		<offeringTime>0 0 17 ? * THU *</offeringTime>
+	</conquest>
+	<!-- [IDEvent_Def 5.6 - Sanctum] -->
+	<conquest id="11">
+		<offeringTime>0 0 15 ? * FRI,SAT *</offeringTime>
+		<offeringTime>0 0 20 ? * FRI,SAT *</offeringTime>
+		<offeringTime>0 0 1 ? * FRI,SAT *</offeringTime>
+		<offeringTime>0 0 6 ? * FRI,SAT *</offeringTime>
+		<offeringTime>0 0 11 ? * FRI,SAT *</offeringTime>
+	</conquest>
+	<!-- [Tiamaranta's Eye 5.8 - Sanctum] -->
+	<conquest id="13">
+		<offeringTime>0 0 0/4 1/1 * ? *</offeringTime>
+	</conquest>
+	
+	<!-- [THE SHUGO EMPEROR VAULT 4.7.5 - Pandaemonium] -->
+	<conquest id="7">
+		<offeringTime>0 0 15 ? * MON *</offeringTime>
+		<offeringTime>0 0 20 ? * MON *</offeringTime>
+		<offeringTime>0 0 1 ? * MON *</offeringTime>
+		<offeringTime>0 0 6 ? * MON *</offeringTime>
+		<offeringTime>0 0 11 ? * MON *</offeringTime>
+	</conquest>
+	<!-- [EMPEROR TRILLIRUNERK SAFE 4.9.1 - Pandaemonium] -->
+	<conquest id="8">
+		<offeringTime>0 0 17 ? * TUE *</offeringTime>
+		<offeringTime>0 0 22 ? * TUE *</offeringTime>
+		<offeringTime>0 0 3 ? * TUE *</offeringTime>
+		<offeringTime>0 0 8 ? * TUE *</offeringTime>
+		<offeringTime>0 0 13 ? * TUE *</offeringTime>
+	</conquest>
+	<!-- [SMOLDERING FIRE TEMPLE 5.1 - Pandaemonium] -->
+	<conquest id="9">
+		<offeringTime>0 0 19 ? * WED *</offeringTime>
+		<offeringTime>0 0 0 ? * WED *</offeringTime>
+		<offeringTime>0 0 5 ? * WED *</offeringTime>
+		<offeringTime>0 0 10 ? * WED *</offeringTime>
+		<offeringTime>0 0 15 ? * WED *</offeringTime>
+	</conquest>
+	<!-- [KUMUKI CAVE 5.3 - Pandaemonium] -->
+	<conquest id="10">
+		<offeringTime>0 0 21 ? * THU *</offeringTime>
+		<offeringTime>0 0 2 ? * THU *</offeringTime>
+		<offeringTime>0 0 7 ? * THU *</offeringTime>
+		<offeringTime>0 0 12 ? * THU *</offeringTime>
+		<offeringTime>0 0 17 ? * THU *</offeringTime>
+	</conquest>
+	<!-- [IDEvent_Def 5.6 - Pandaemonium] -->
+	<conquest id="12">
+		<offeringTime>0 0 15 ? * FRI,SAT *</offeringTime>
+		<offeringTime>0 0 20 ? * FRI,SAT *</offeringTime>
+		<offeringTime>0 0 1 ? * FRI,SAT *</offeringTime>
+		<offeringTime>0 0 6 ? * FRI,SAT*</offeringTime>
+		<offeringTime>0 0 11 ? * FRI,SAT *</offeringTime>
+	</conquest>
+	<!-- [Tiamaranta's Eye 5.8 - Pandaemonium] -->
+	<conquest id="14">
+		<offeringTime>0 0 0/4 1/1 * ? *</offeringTime>
+	</conquest>
+</conquest_schedule>

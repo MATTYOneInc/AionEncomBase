@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest 바루나 차원 연구소 4.7
+	Make By (Encom)
+ -->
+	<!-- QUEST ELYOS -->
+	<!-- Chaos, Not Cookies (Elyos Only) -->
+	<monster_hunt id="16941" start_npc_ids="206361" end_npc_ids="802350">
+        <monster var="0" npc_ids="233898 234990 234991" end_var="1"/>
+    </monster_hunt>
+	
+	<!-- QUEST ASMODIANS -->
+	<!-- The Belsagos Saga (Asmodians Only) -->
+	<monster_hunt id="26941" start_npc_ids="206362" end_npc_ids="802353">
+        <monster var="0" npc_ids="233898 234990 234991" end_var="1"/>
+    </monster_hunt>
+ </quest_scripts>

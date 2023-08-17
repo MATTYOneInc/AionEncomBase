@@ -1,0 +1,45 @@
+<!--
+Tutorial:
+==========================================================
+
+rule_name="Test" [name you want called your "Global Drop"]
+==========================================================
+
+min_count="1" max_count="1" [much item player can drop]
+==========================================================
+
+base_chance="15" [% chance drop item]
+==========================================================
+
+min_diff="1" max_diff="83"> [player "min & max lvl"]
+==========================================================
+
+<gd_world wd_type="ILUMA"/>
+[Ex: Iluma, don't forget add in "world_maps.xml" (drop_type)
+Ex: <map id="210100000" name="Iluma" drop_type="ILUMA"]
+==========================================================
+
+You can add more "World" one below the other !!!
+<gd_worlds>
+    <gd_world wd_type="HEIRON"/>
+	<gd_world wd_type="BELUSLAN"/>
+	<gd_world wd_type="THEOBOMOS"/>
+	<gd_world wd_type="BRUSTHONIN"/>
+	<gd_world wd_type="INGGISON"/>
+	<gd_world wd_type="GELKMAROS"/>
+</gd_worlds>
+==========================================================
+
+<gd_rating rating="NORMAL"/> [if mobs is: NORMAL or ELITE,
+so, all mobs "NORMAL" on Iluma map can drop this item]
+
+You can add more "Rating" one below the other !!!
+<gd_ratings>
+    <gd_rating rating="NORMAL"/>
+	<gd_rating rating="ELITE"/>
+</gd_ratings>
+==========================================================
+
+<gd_item id="190000083" name="Golden Narki's Egg"/> [ItemId + Item Name]
+==========================================================
+-->

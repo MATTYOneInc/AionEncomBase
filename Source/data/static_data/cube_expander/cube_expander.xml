@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Cube Expander
+	Made By (Encom)
+ -->
+<cube_expander xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cube_expander.xsd">
+	<!-- Baevrunerk (Poeta) -->
+    <cube_npc id="798008">
+        <expand level="1" price="1000"/>
+    </cube_npc>
+    <!-- Bacorerk (Ishalgen) -->
+    <cube_npc id="798037">
+        <expand level="1" price="1000"/>
+    </cube_npc>
+	<!-- Heerunerk (Sanctum) -->
+    <cube_npc id="798011">
+        <expand level="1" price="1000"/>
+		<expand level="2" price="9000"/>
+        <expand level="3" price="18000"/>
+        <expand level="4" price="36000"/>
+		<expand level="5" price="72000"/>
+		<expand level="6" price="144000"/>
+    </cube_npc>
+	<!-- Yiehmonerk (Sanctum) -->
+    <cube_npc id="798012">
+        <expand level="1" price="1000"/>
+		<expand level="2" price="9000"/>
+        <expand level="3" price="18000"/>
+        <expand level="4" price="36000"/>
+		<expand level="5" price="72000"/>
+		<expand level="6" price="144000"/>
+    </cube_npc>
+	<!-- Ondarinerk (Pandaemonium) -->
+    <cube_npc id="798058">
+        <expand level="1" price="1000"/>
+		<expand level="2" price="9000"/>
+        <expand level="3" price="18000"/>
+        <expand level="4" price="36000"/>
+		<expand level="5" price="72000"/>
+		<expand level="6" price="144000"/>
+    </cube_npc>
+	<!-- Nekorunerk (Pandaemonium) -->
+    <cube_npc id="798059">
+        <expand level="1" price="1000"/>
+		<expand level="2" price="9000"/>
+        <expand level="3" price="18000"/>
+        <expand level="4" price="36000"/>
+		<expand level="5" price="72000"/>
+		<expand level="6" price="144000"/>
+    </cube_npc>
+    <!-- Jarumonerk (Tigraki Island) -->
+    <cube_npc id="279022">
+		<expand level="7" price="288000"/>
+		<expand level="8" price="576000"/>
+		<expand level="9" price="1152000"/>
+		<expand level="10" price="2304000"/>
+		<expand level="11" price="4608000"/>
+		<expand level="12" price="9216000"/>
+    </cube_npc>
+	<!-- Shulack Refugee (Rhonnam Refugee Village) -->
+    <cube_npc id="799366">
+		<expand level="7" price="288000"/>
+		<expand level="8" price="576000"/>
+		<expand level="9" price="1152000"/>
+		<expand level="10" price="2304000"/>
+		<expand level="11" price="4608000"/>
+		<expand level="12" price="9216000"/>
+    </cube_npc>
+	<!-- Kongarunerk (Event Cube) -->
+    <cube_npc id="832182">
+		<expand level="7" price="288000"/>
+		<expand level="8" price="576000"/>
+		<expand level="9" price="1152000"/>
+    </cube_npc>
+	
+	<!-- Test Cube Upgrade -->
+	<cube_npc id="203218"/>
+	<!-- Test Cube Upgrade -->
+    <cube_npc id="203219"/>
+</cube_expander>

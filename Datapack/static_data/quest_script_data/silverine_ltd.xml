@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quest_scripts>
+<!--
+    Quest Silverine.Ltd 4.8
+	Make By (Encom)
+-->
+	<!-- Silvers Cross Your Palm handled by script (Elyos Only) -->
+	<!-- [Daily] Gather Glittering Idium (Elyos Only) -->
+	<item_collecting id="39601" start_npc_ids="0" end_npc_ids="800922 800923" action_item_ids="701565"/>
+	<!-- [Daily] A Skurv's Wage (Elyos Only) -->
+	<item_collecting id="39603" start_npc_ids="0" end_npc_ids="800922 800923"/>
+	<!-- [Daily] Pressing A Claim (Elyos Only) -->
+	<monster_hunt id="39604" start_npc_ids="0" end_npc_ids="800922 800923">
+		<monster var="0" npc_ids="230350" end_var="10"/>
+	</monster_hunt>
+	<!-- [Daily] What Wood ? (Elyos Only) -->
+	<item_collecting id="39605" start_npc_ids="0" end_npc_ids="800922 800923" action_item_ids="701566"/>
+	<!-- [Daily] Trade Dispute (Elyos Only) -->
+	<monster_hunt id="39607" start_npc_ids="0" end_npc_ids="800922 800923">
+		<monster var="0" npc_ids="230324 230325" end_var="10"/>
+	</monster_hunt>
+	<!-- [Daily] My Office Is Colder (Elyos Only) -->
+	<item_collecting id="39608" start_npc_ids="0" end_npc_ids="800922 800923" action_item_ids="701567"/>
+	<!-- [Daily] What’s Silverine’s Is Silverine’s (Elyos Only) -->
+	<monster_hunt id="39609" start_npc_ids="0" end_npc_ids="800927 800928">
+		<monster var="0" npc_ids="230452 230453" end_var="10"/>
+		<monster var="0" npc_ids="230476 230477" end_var="10"/>
+	</monster_hunt>
+	<!-- [Daily] Water War Z (Elyos Only) -->
+	<item_collecting id="39610" start_npc_ids="0" end_npc_ids="800927 800928"/>
+	<!-- [Daily] Crocodile Stew (Elyos Only) -->
+	<monster_hunt id="39612" start_npc_ids="0" end_npc_ids="800927 800928">
+		<monster var="0" npc_ids="230593" end_var="10"/>
+	</monster_hunt>
+	<!-- [Daily] Worms In The Pipes (Elyos Only) -->
+	<monster_hunt id="39613" start_npc_ids="0" end_npc_ids="800927 800928">
+		<monster var="0" npc_ids="230559 230560" end_var="10"/>
+	</monster_hunt>
+	<!-- [Daily] The First Step’s A Lulu (Elyos Only) -->
+	<monster_hunt id="39615" start_npc_ids="0" end_npc_ids="800927 800928">
+		<monster var="0" npc_ids="231284 231285 231286" end_var="10"/>
+		<monster var="0" npc_ids="231287 231288 231289" end_var="10"/>
+	</monster_hunt>
+	
+	<!-- Silverine's Silver Lining handled by script (Asmodians Only) -->
+	<!-- [Daily] The Village Idium (Asmodians Only) -->
+	<item_collecting id="49601" start_npc_ids="0" end_npc_ids="800925 800926"/>
+	<!-- [Daily] A Day's Pay (Asmodians Only) -->
+	<item_collecting id="49603" start_npc_ids="0" end_npc_ids="800925 800926"/>
+	<!-- [Daily] Alls Well That Ends An Owl (Asmodians Only) -->
+	<monster_hunt id="49604" start_npc_ids="0" end_npc_ids="800925 800926">
+		<monster var="0" npc_ids="230350" end_var="10"/>
+	</monster_hunt>
+	<!-- [Daily] But They Lock On The Outside (Asmodians Only) -->
+	<item_collecting id="49605" start_npc_ids="0" end_npc_ids="800925 800926" action_item_ids="701566"/>
+	<!-- [Daily] On The Road To Danaria (Asmodians Only) -->
+	<monster_hunt id="49607" start_npc_ids="0" end_npc_ids="800925 800926">
+		<monster var="0" npc_ids="230324 230325" end_var="10"/>
+	</monster_hunt>
+	<!-- [Daily] Corner Office (Asmodians Only) -->
+	<item_collecting id="49608" start_npc_ids="0" end_npc_ids="800925 800926" action_item_ids="701567"/>
+	<!-- [Daily] A Thief’s Due (Asmodians Only) -->
+	<monster_hunt id="49609" start_npc_ids="0" end_npc_ids="800925 800926">
+		<monster var="0" npc_ids="230452 230453" end_var="10"/>
+		<monster var="0" npc_ids="230476 230477" end_var="10"/>
+	</monster_hunt>
+	<!-- [Daily] A Drakan Sword At What Price (Asmodians Only) -->
+	<item_collecting id="49610" start_npc_ids="0" end_npc_ids="800929 800928 800927"/>
+	<!-- [Daily] Hose Down (Asmodians Only) -->
+	<monster_hunt id="49612" start_npc_ids="0" end_npc_ids="800929 800928 800927">
+		<monster var="0" npc_ids="230593" end_var="10"/>
+	</monster_hunt>
+	<!-- [Daily] Cleanup Isle Worm (Asmodians Only) -->
+	<monster_hunt id="49613" start_npc_ids="0" end_npc_ids="800929 800928 800927">
+		<monster var="0" npc_ids="230559 230560" end_var="10"/>
+	</monster_hunt>
+	<!-- [Daily] Among The Luluba (Asmodians Only) -->
+	<monster_hunt id="49615" start_npc_ids="0" end_npc_ids="800929 800928 800927">
+		<monster var="0" npc_ids="231284 231285 231286" end_var="10"/>
+		<monster var="0" npc_ids="231287 231288 231289" end_var="10"/>
+	</monster_hunt>
+</quest_scripts>

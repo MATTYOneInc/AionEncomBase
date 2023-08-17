@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+	<zone mapid="302110000" name="ORKIA_OBSERVATORY_302110000" area_type="POLYGON" zone_type="SUB" priority="16" flags="2">
+        <points bottom="300.000000" top="400.000000">
+            <point x="940.280334" y="366.037415"/>
+            <point x="940.280334" y="614.037415"/>
+            <point x="612.280334" y="610.037415"/>
+            <point x="612.280334" y="362.037415"/>
+		</points>
+    </zone>
+	<zone mapid="302110000" name="ORKIA_RUINS_302110000" area_type="POLYGON" zone_type="SUB" priority="15" flags="2">
+        <points bottom="300.000000" top="400.000000">
+            <point x="616.000000" y="544.000000"/>
+            <point x="616.000000" y="592.000000"/>
+            <point x="628.000000" y="592.000000"/>
+            <point x="628.000000" y="728.000000"/>
+            <point x="464.000000" y="728.000000"/>
+            <point x="464.000000" y="356.000000"/>
+            <point x="616.000000" y="360.000000"/>
+            <point x="616.000000" y="496.000000"/>
+		</points>
+	</zone>
+	<zone mapid="302110000" name="ORKIA_SPIRE_302110000" area_type="POLYGON" zone_type="SUB" priority="14" flags="2">
+        <points bottom="300.000000" top="400.000000">
+            <point x="468.000000" y="496.000000"/>
+            <point x="468.000000" y="532.000000"/>
+            <point x="340.000000" y="608.000000"/>
+            <point x="168.000000" y="608.000000"/>
+            <point x="168.000000" y="416.000000"/>
+            <point x="360.000000" y="416.000000"/>
+		</points>
+	</zone>
+	<zone mapid="302110000" name="DISTORTED_MEMORY_SEAL_302110000" area_type="POLYGON" zone_type="SUB" priority="13" flags="2">
+        <points bottom="300.000000" top="400.000000">
+            <point x="340.000000" y="488.000000"/>
+            <point x="340.000000" y="536.000000"/>
+            <point x="268.000000" y="544.000000"/>
+            <point x="268.000000" y="484.000000"/>
+		</points>
+	</zone>
+</zones>

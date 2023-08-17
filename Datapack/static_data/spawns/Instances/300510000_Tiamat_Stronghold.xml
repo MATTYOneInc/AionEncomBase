@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+	ティアマト城塞
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="300510000">
+		<!-- Research Center Access Controller (Object Normal lvl:3) -->
+		<spawn npc_id="701494">
+			<spot x="1084.2622" y="813.11566" z="498.81616" entity_id="42"/>
+		</spawn>
+		<!-- Reian Hero's Statue (Object Normal lvl:3) -->
+        <spawn npc_id="701497">
+	        <spot x="1092.5439" y="1101.752" z="788.58575" entity_id="168"/>
+        </spawn>
+	    <!-- Elyos Hero's Statue (Object Normal lvl:3) -->
+        <spawn npc_id="701498">
+	        <spot x="1090.1051" y="1036.0138" z="788.97723" entity_id="173"/>
+        </spawn>
+	    <!-- Asmodians Hero's Statue (Object Normal lvl:3) -->
+        <spawn npc_id="701499">
+	        <spot x="1077.5127" y="1036.219" z="788.92944" entity_id="171"/>
+        </spawn>
+	    <!-- Balaur Hero's Statue (Object Normal lvl:3) -->
+        <spawn npc_id="701500">
+	        <spot x="1079.8195" y="1102.7354" z="787.65753" entity_id="170"/>
+        </spawn>
+		<!-- Tahabata Legion's Order (Object Normal lvl:3) -->
+		<spawn npc_id="701511">
+			<spot x="768.8913" y="1047.0931" z="501.36697" entity_id="38"/>
+		</spawn>
+		<!-- Gravity Controller (Object Normal lvl:3) -->
+		<spawn npc_id="701518">
+			<spot x="1030.0444" y="297.35825" z="409.84937" entity_id="40"/>
+		</spawn>
+		<!-- Research Center Acces Controler (Object Normal lvl:3) -->
+		<spawn npc_id="701523">
+			<spot x="1084.2622" y="813.11566" z="498.81616" entity_id="42"/>
+		</spawn>
+	    <!-- Glorious Nexus Gate (Object Normal lvl:3) -->
+        <spawn npc_id="730640">
+	        <spot x="1051.9895" y="1069.9178" z="786.18182" entity_id="14"/>
+        </spawn>
+	    <!-- Tahabata Statue (Object Normal lvl:3) -->
+        <spawn npc_id="730641">
+	        <spot x="1088.1212" y="1070.1891" z="498.44003" entity_id="187"/>
+        </spawn>
+	    <!-- Varshaka Statue (Object Normal lvl:3) -->
+        <spawn npc_id="730668">
+	        <spot x="1090.8253" y="1069.03" z="789.45923" entity_id="12"/>
+        </spawn>
+		<!-- Grave Curse Dagger (Object Normal lvl:3) -->
+		<spawn npc_id="730701">
+			<spot x="1086.7988" y="1104.1593" z="787.27197" entity_id="16"/>
+		</spawn>
+		<!-- Model Terath Dredgion (Object Normal lvl:3) -->
+		<spawn npc_id="730702">
+			<spot x="1064.4677" y="367.37833" z="403.43628" entity_id="46"/>
+		</spawn>
+		<!-- Gravity Lab Entrance (Object Normal lvl:3) -->
+		<spawn npc_id="801532">
+			<spot x="1030.39" y="496.35208" z="442.72791" entity_id="710"/>
+		</spawn>
+		<!-- Gravity Lab Exit (Object Normal lvl:3) -->
+		<spawn npc_id="801533">
+			<spot x="1030.2239" y="496.05991" z="442.72791" entity_id="260"/>
+		</spawn>
+		<!-- Greater Blessed Relics (Object Normal lvl:3) -->
+		<spawn npc_id="831990">
+            <spot x="1581.5719" y="1068.7064" z="492.00992" h="60"/>
+        </spawn>
+	    <!-- Frightening Vasha (NPC Normal lvl:60) -->
+        <spawn npc_id="800368">
+	        <spot x="721.78" y="1319.39" z="398.856" h="0"/>
+        </spawn>
+	    <!-- Warden Surama The Traitor (NPC Normal lvl:60) -->
+        <spawn npc_id="800369">
+	        <spot x="932.6782" y="1319.4209" z="398.8264" h="55"/>
+        </spawn>
+	    <!-- Varshaka (NPC Normal lvl:60) -->
+        <spawn npc_id="800370">
+	        <spot x="1088.8776" y="1065.958" z="786.2352" h="55"/>
+        </spawn>
+	    <!-- Elite Reian Assaulter (NPC Normal lvl:60) -->
+        <spawn npc_id="800373">
+	        <spot x="1555.3" y="1061.43" z="492.16" h="0"/>
+        </spawn>
+	    <!-- Elite Reian Assaulter (NPC Normal lvl:60) -->
+        <spawn npc_id="800374">
+	        <spot x="1114.34" y="1075.91" z="496.862" h="0"/>
+	        <spot x="1043.27" y="1107.75" z="497.339" h="0"/>
+	        <spot x="1115.15" y="1062.03" z="496.862" h="0"/>
+            <spot x="1044.919" y="1027.7513" z="497.34918" h="16"/>
+            <spot x="1578.9784" y="1092.4592" z="492.16028" h="90"/>
+            <spot x="1582.0099" y="1044.271" z="492.16028" h="30"/>
+            <spot x="1602.2616" y="1075.1003" z="492.16028" h="66"/>
+            <spot x="1121.9349" y="1028.0603" z="497.33914" h="44"/>
+            <spot x="1119.7258" y="1113.6401" z="497.3401" h="76"/>
+            <spot x="1602.646" y="1081.3461" z="492.16028" h="60"/>
+        </spawn>
+	    <!-- Elite Reian Assaulter (NPC Normal lvl:60) -->
+        <spawn npc_id="800375">
+	        <spot x="1555.28" y="1075.01" z="492.16" h="0"/>
+        </spawn>
+	    <!-- Elite Reian Assaulter (NPC Normal lvl:60) -->
+        <spawn npc_id="800376">
+	        <spot x="1117.28" y="1073.08" z="496.862" h="0"/>
+            <spot x="1602.1581" y="1061.004" z="492.16028" h="60"/>
+            <spot x="1122.5128" y="1110.9869" z="497.33795" h="74"/>
+            <spot x="1045.9973" y="1110.2405" z="497.3373" h="103"/>
+            <spot x="1582.1465" y="1092.3993" z="492.16028" h="90"/>
+            <spot x="1579.122" y="1044.2526" z="492.16028" h="30"/>
+            <spot x="1601.9077" y="1054.9933" z="492.16028" h="59"/>
+            <spot x="1119.3628" y="1026.422" z="497.33762" h="44"/>
+            <spot x="1042.8391" y="1030.1252" z="497.34753" h="15"/>
+        </spawn>
+	    <!-- Elite Reian Sniper (NPC Normal lvl:60) -->
+        <spawn npc_id="800377">
+	        <spot x="1558.67" y="1075.01" z="492.16" h="0"/>
+        </spawn>
+	    <!-- Elite Reian Sniper (NPC Normal lvl:60) -->
+        <spawn npc_id="800378">
+	        <spot x="1117.9" y="1076.13" z="496.862" h="0"/>
+            <spot x="1040.6849" y="1028.3401" z="497.36316" h="13"/>
+            <spot x="1121.2981" y="1023.5" z="497.35718" h="43"/>
+            <spot x="1582.0022" y="1095.2484" z="492.16028" h="89"/>
+            <spot x="1124.2557" y="1112.988" z="497.35278" h="76"/>
+            <spot x="1604.8512" y="1078.3716" z="492.16028" h="61"/>
+            <spot x="1579.151" y="1042.3214" z="492.16028" h="30"/>
+            <spot x="1601.5493" y="1057.9904" z="492.16028" h="59"/>
+            <spot x="1043.833" y="1112.6909" z="497.35556" h="103"/>
+        </spawn>
+	    <!-- Elite Reian Sniper (NPC Normal lvl:60) -->
+        <spawn npc_id="800379">
+	        <spot x="1558.62" y="1061.29" z="492.16" h="0"/>
+        </spawn>
+	    <!-- Elite Reian Sniper (NPC Normal lvl:60) -->
+        <spawn npc_id="800380">
+	        <spot x="1118.19" y="1064.1" z="496.862" h="0"/>
+            <spot x="1042.9673" y="1025.9667" z="497.36374" h="14"/>
+            <spot x="1604.2283" y="1058.1309" z="492.1603" h="60"/>
+            <spot x="1582.061" y="1042.2681" z="492.16028" h="30"/>
+            <spot x="1041.1687" y="1110.1855" z="497.3569" h="105"/>
+            <spot x="1602.1144" y="1078.4019" z="492.16028" h="60"/>
+            <spot x="1578.9948" y="1095.2563" z="492.16028" h="90"/>
+            <spot x="1123.947" y="1025.6002" z="497.3569" h="43"/>
+            <spot x="1121.3102" y="1115.5636" z="497.354" h="75"/>
+        </spawn>
+		<!-- Ariana (NPC Normal lvl:60) -->
+        <spawn npc_id="800423">
+	        <spot x="1090.7374" y="1075.1566" z="497.3585" h="0"/>
+        </spawn>
+	    <!-- Sorus (NPC Normal lvl:60) -->
+        <spawn npc_id="800424">
+	        <spot x="1581.2323" y="1054.9227" z="492.05896" h="30"/>
+        </spawn>
+		<!-- Ariana (NPC Normal lvl:60) -->
+        <spawn npc_id="800460">
+	        <spot x="1584.7727" y="1055.4722" z="492.02872" h="35"/>
+        </spawn>
+	    <!-- Captain Murugan The Loyal (NPC Normal lvl:60) -->
+        <spawn npc_id="800435">
+	        <spot x="929.47546" y="1316.1481" z="398.8264" h="55"/>
+        </spawn>
+	    <!-- Captain Murugan The Loyal (NPC Normal lvl:60) -->
+        <spawn npc_id="800436">
+	        <spot x="717.541" y="1313.99" z="489.333" h="0"/>
+        </spawn>
+	    <!-- Captain Murugan The Loyal (NPC Normal lvl:60) -->
+        <spawn npc_id="800438">
+	        <spot x="686.653" y="1325.66" z="489.317" h="0"/>
+        </spawn>
+	    <!-- Narkun The Loyal (NPC Normal lvl:60) -->
+        <spawn npc_id="800462">
+	        <spot x="1089.0542" y="1072.1359" z="786.2352" h="59"/>
+        </spawn>
+	    <!-- Elite Reian Fighter (NPC Normal lvl:60) -->
+        <spawn npc_id="800463">
+	        <spot x="1038.82" y="1061.3" z="497.315" h="0"/>
+	        <spot x="1038.62" y="1075.91" z="497.286" h="0"/>
+            <spot x="1093.4882" y="1015.21326" z="497.33627" h="29"/>
+            <spot x="1604.8508" y="1081.3267" z="492.16028" h="60"/>
+            <spot x="1126.6011" y="1027.3726" z="497.35812" h="43"/>
+            <spot x="1119.1532" y="1117.6753" z="497.3559" h="76"/>
+            <spot x="1576.0269" y="1044.397" z="492.16028" h="30"/>
+            <spot x="1093.295" y="1120.8761" z="497.3156" h="89"/>
+            <spot x="1585.0193" y="1042.305" z="492.16028" h="30"/>
+            <spot x="1040.8187" y="1105.7029" z="497.34308" h="104"/>
+            <spot x="1585.0896" y="1044.4475" z="492.16028" h="30"/>
+            <spot x="1124.4398" y="1030.2554" z="497.33823" h="45"/>
+            <spot x="1046.7709" y="1025.5656" z="497.35245" h="15"/>
+            <spot x="1039.0068" y="1107.4062" z="497.3569" h="106"/>
+            <spot x="1116.8807" y="1024.5845" z="497.3373" h="43"/>
+            <spot x="1077.3584" y="1120.8818" z="497.31473" h="90"/>
+            <spot x="1127.9182" y="1058.9158" z="497.276" h="61"/>
+            <spot x="1044.964" y="1023.49347" z="497.3678" h="14"/>
+            <spot x="1584.6852" y="1095.264" z="492.16028" h="90"/>
+            <spot x="1128.0978" y="1079.9618" z="497.2757" h="61"/>
+            <spot x="1584.6893" y="1092.3165" z="492.16028" h="89"/>
+            <spot x="1575.8817" y="1092.8656" z="492.16028" h="89"/>
+            <spot x="1048.5319" y="1112.1178" z="497.337" h="103"/>
+            <spot x="1575.8977" y="1095.2227" z="492.16028" h="89"/>
+            <spot x="1118.9667" y="1021.76483" z="497.35693" h="42"/>
+            <spot x="1126.3444" y="1110.6721" z="497.35028" h="75"/>
+            <spot x="1604.3772" y="1055.0062" z="492.16028" h="60"/>
+            <spot x="1039.0138" y="1030.5304" z="497.36316" h="12"/>
+            <spot x="1124.5927" y="1108.963" z="497.3367" h="77"/>
+            <spot x="1045.9814" y="1114.9819" z="497.3584" h="104"/>
+            <spot x="1117.2577" y="1115.671" z="497.34055" h="78"/>
+            <spot x="1077.9513" y="1015.0338" z="497.33588" h="29"/>
+            <spot x="1041.2827" y="1032.2979" z="497.34708" h="13"/>
+            <spot x="1604.4034" y="1060.9725" z="492.16028" h="60"/>
+            <spot x="1576.3141" y="1042.1978" z="492.16028" h="30"/>
+            <spot x="1605.0874" y="1075.4406" z="492.16028" h="60"/>
+        </spawn>
+	    <!-- Invicible Shabokan (Boss Legendary lvl:60) -->
+	    <spawn npc_id="219352">
+	        <spot x="1216.7716" y="1068.9441" z="491.32993" h="118"/>
+		</spawn>
+		<!-- Brigade General Chantra (Boss Legendary lvl:60) -->
+	    <spawn npc_id="219353">
+	        <spot x="1027.49" y="466.736" z="442.239" h="0"/>
+		</spawn>
+		<!-- Brigade General Terath (Boss Legendary lvl:60) -->
+	    <spawn npc_id="219354">
+	        <spot x="1031.8685" y="300.9032" z="409.08588" h="20"/>
+        </spawn>
+		<!-- Traitor Kumbanda (Boss Legendary lvl:60) -->
+	    <spawn npc_id="219355">
+	        <spot x="880.1549" y="1319.4822" z="394.534" h="60"/>
+		</spawn>
+		<!-- Brigade General Laksyaka (Boss Legendary lvl:60) -->
+	    <spawn npc_id="219356">
+	        <spot x="637.67" y="1319.27" z="487.709" h="0"/>
+        </spawn>
+		<!-- Adjudant Anuhart (Boss Legendary lvl:60) -->
+	    <spawn npc_id="219357">
+	        <spot x="753.685" y="1068.07" z="501.218" h="0"/>
+        </spawn>
+		<!-- Brigade General Tahabata (Boss Legendary lvl:60) -->
+	    <spawn npc_id="219358">
+	        <spot x="677.165" y="1068.07" z="497.752" h="0"/>
+        </spawn>
+		<!-- Professor HewaHewa (Monsters Elite lvl:60) -->
+	    <spawn npc_id="219408">
+	        <spot x="1033.369" y="675.97284" z="441.69833" h="0"/>
+        </spawn>
+		<!-- Protectorate Elite Commander -->
+		<spawn npc_id="219378">
+			<spot x="1080.73" y="960.03" z="495.34256" h="88" walker_id="C6A309D758EF684CC76E46712D6014A5E95BEF67"/>
+			<spot x="1087.53" y="1177.91" z="495.50967" h="35" walker_id="6A2113EE8F93F16F972D126D93784DF8561ABF6F" walker_index="1"/>
+			<spot x="920.58" y="1069.0" z="495.62192" walker_id="8CB3EB6F69C0ADB12B827CE4470BF52627B85B90"/>
+			<spot x="1087.73" y="896.9" z="495.3205" h="31" walker_id="13C74FD18112651C7F64B12E3F4C593F1CDB338B" walker_index="1"/>
+			<spot x="953.23" y="1060.37" z="495.62122" h="60" walker_id="D4D5A15C1F7E2564990C486C4DF59D3C6F87D7D4" walker_index="1"/>
+			<spot x="1083.39" y="1238.39" z="495.4717" h="93" walker_id="43419608916D160DED56AC3758ED92D79C7FF5C4"/>
+		</spawn>
+		<!-- Anuhart Elite Assault Commander -->
+		<spawn npc_id="219403">
+			<spot x="838.19" y="1034.66" z="501.379" walker_id="EB9AC4D7801269C8A2F385CCEA6A4914CD3E55A6"/>
+			<spot x="805.06" y="1102.5" z="501.38034" walker_id="196B555C42F10CC7C98E64C19396856CB0E81FF8" walker_index="1"/>
+			<spot x="771.42" y="1034.66" z="501.379" walker_id="7BDBF511DE233CEEB9AB671A3765D41300511D9C"/>
+		</spawn>
+		<!-- Security Device -->
+		<spawn npc_id="219390">
+			<spot x="884.71118" y="1387.8387" z="399.35382" h="97"/>
+			<spot x="731.85425" y="1313.463" z="399.35382" h="51"/>
+			<spot x="863.89" y="1319.53" z="492.63968" walker_id="5D10E90F804113AE65E9969C750616C8AC3CD17F"/>
+			<spot x="827.91" y="1355.58" z="492.63968" walker_id="1A346AEF694A66103502D9DD893C496278C0F34D"/>
+			<spot x="734.20343" y="1323.9299" z="399.35382" h="67"/>
+			<spot x="895.12238" y="1376.1498" z="399.35382" h="57"/>
+			<spot x="880.78943" y="1255.3888" z="399.35382" h="16"/>
+			<spot x="896.12402" y="1258.5469" z="399.35382" h="54"/>
+			<spot x="827.91" y="1283.87" z="492.63934" walker_id="5F35707F477DA527D426E8EB9DFCF67BA002B466"/>
+		</spawn>
+		<!-- Laksyaka Elite Grenadier -->
+		<spawn npc_id="219394">
+			<spot x="867.05" y="1407.85" z="492.3811" walker_id="9C7F6EE1D470205FA9ABB20B888D5A4BB5DF3572" walker_index="1"/>
+			<spot x="861.22" y="1305.09" z="492.63977" walker_id="837DD8DFDCF8E4B44BD24953A5070B5B8CA9A54A"/>
+			<spot x="787.67" y="1230.15" z="492.37967" walker_id="89A516DED29CB68DCEB808530911C8A2684480FD"/>
+			<spot x="1045.51" y="1350.55" z="496.72662" h="59" walker_id="6307E15FBC67ADC48D6AFC3D5746479F905FBC4E"/>
+			<spot x="1045.4712" y="1350.5201" z="497.74146"/>
+			<spot x="1045.51" y="1288.33" z="496.72662" walker_id="93EFFCDB558F845F4E129FD1936208F1F1E0DC03"/>
+			<spot x="867.05" y="1236.31" z="492.37967" walker_id="FD31B06AEE4E5CEF2DCB553F933A11C81F500ED2" walker_index="1"/>
+			<spot x="861.22113" y="1333.9044" z="494"/>
+			<spot x="861.22" y="1333.9" z="492.6398" h="44" walker_id="D863521356DD9F68D673AA18E4FA60D43072B448"/>
+			<spot x="1067.07" y="1318.99" z="495.59735" walker_id="AB20F46D4899669BD0132021EF7B607244CB5257"/>
+			<spot x="787.67" y="1401.69" z="492.3811" walker_id="8FB053AA410C83D29B222AED173B682A605D3B84"/>
+		</spawn>
+		<!-- Laksyaka Elite Bodyguard -->
+		<spawn npc_id="219393">
+			<spot x="1004.5117" y="1335.1956" z="497" h="90"/>
+			<spot x="761.71002" y="1238.15" z="496"/>
+			<spot x="767.90002" y="1404.48" z="496"/>
+			<spot x="769.92999" y="1436.1" z="496"/>
+			<spot x="894.41998" y="1209.65" z="496"/>
+			<spot x="755.08002" y="1428.54" z="496"/>
+			<spot x="889.71997" y="1234.42" z="496"/>
+			<spot x="1039.1141" y="1335.1956" z="497" h="90"/>
+			<spot x="894.29999" y="1430.91" z="496"/>
+			<spot x="770.90997" y="1203.5601" z="496"/>
+			<spot x="888.25" y="1408.61" z="496"/>
+			<spot x="758.15002" y="1208.84" z="496"/>
+			<spot x="1021.2469" y="1303.8857" z="497" h="31"/>
+			<spot x="1003.4353" y="1303.8857" z="497" h="31"/>
+			<spot x="1037.5924" y="1303.8857" z="497" h="31"/>
+			<spot x="791.0615" y="1310.2749" z="492.6400"/>
+			<spot x="790.9850" y="1328.6709" z="492.6401"/>
+			<spot x="756.3428" y="1325.4285" z="488.1190"/>
+			<spot x="739.4823" y="1310.9149" z="488.1190"/>
+			<spot x="724.2092" y="1328.5363" z="488.1190"/>
+			<spot x="724.1068" y="1309.2491" z="488.1190"/>
+		</spawn>
+		<!-- Anuhart Elite Magician -->
+		<spawn npc_id="219399">
+			<spot x="821.08258" y="1043.7175" z="502.9986" h="31"/>
+			<spot x="787.55231" y="1093.3326" z="502.9986" h="90"/>
+		</spawn>
+		<!-- Anuhart Elite Fleshender -->
+		<spawn npc_id="219401">
+			<spot x="754.20734" y="1043.6986" z="502.9986" h="31"/>
+			<spot x="857.38184" y="1093.389" z="502.9986" h="90"/>
+		</spawn>
+		<!-- Protectorate Senior Researcher -->
+		<spawn npc_id="219383">
+			<spot x="1050.58" y="595.97" z="440.45654" walker_id="4F4917C7EEB77D523E29CC72923282CC82C8E153"/>
+			<spot x="1008.2236" y="625.18719" z="449"/>
+			<spot x="1032.9896" y="571.26886" z="440.44931" h="44"/>
+			<spot x="1018.3054" y="563.67786" z="449"/>
+		</spawn>
+		<!-- Protectorate Senior Researcher -->
+		<spawn npc_id="219409">
+			<spot x="1081.8977" y="681.99408" z="443" h="10"/>
+			<spot x="993.27405" y="598.06226" z="441" h="87"/>
+			<spot x="992.60773" y="593.59802" z="441" h="23"/>
+			<spot x="1020.74" y="584.99" z="439.02438" walker_id="DF09890DD5196E4531268891A162F3B384E1DEB3"/>
+			<spot x="1086.5457" y="682.52734" z="443" h="57"/>
+		</spawn>
+		<!-- Worker Soul -->
+		<spawn npc_id="219379">
+			<spot x="1084.6" y="641.61" z="440.98566" walker_id="1AFA5BCD1B8914D3E9542F4CF3A1679DA5CB1879"/>
+			<spot x="1074.21" y="842.28" z="495.0493" walker_id="C744E810CE6BC052439FAEE215B723507E4EF9B1"/>
+			<spot x="1095.6788" y="771.12439" z="497.39438" h="31"/>
+			<spot x="1074.3159" y="668.15717" z="443"/>
+			<spot x="1091.46" y="662.28" z="440.99817" walker_id="020DE240E0C127E516939DE8521376EF394813FC"/>
+			<spot x="1076.7484" y="771.12439" z="497.39438" h="31"/>
+			<spot x="1094.94" y="783.13" z="495.04932" walker_id="95AAF1E677D89C94858FE1EFD8A7C60C37EFA88E" walker_index="1"/>
+		</spawn>
+		<!-- Terath Elite Commander -->
+		<spawn npc_id="219385">
+			<spot x="1041.2833" y="354.47729" z="404" h="31"/>
+			<spot x="1018.6969" y="354.47729" z="404" h="31"/>
+		</spawn>
+		<!-- Laksyaka Elite Guard -->
+		<spawn npc_id="219391">
+			<spot x="1004.76" y="1319.33" z="495.58142" walker_id="1DEAB87B751CF604902414134A12B6610AB83DA3"/>
+			<spot x="746.15314" y="1233.4435" z="496"/>
+			<spot x="910.23291" y="1404.3674" z="496" h="61"/>
+			<spot x="910.3197" y="1232.9373" z="496" h="61"/>
+			<spot x="747.1557" y="1404.8142" z="496"/>
+		</spawn>
+		<!-- Protectorate Elite Surgeon -->
+		<spawn npc_id="219377">
+			<spot x="1087.53" y="1177.91" z="495.50967" h="35" walker_id="6A2113EE8F93F16F972D126D93784DF8561ABF6F" walker_index="1"/>
+			<spot x="1083.39" y="1238.39" z="495.4717" h="93" walker_id="43419608916D160DED56AC3758ED92D79C7FF5C4"/>
+			<spot x="956.4491" y="1051.3767" z="497.18158" h="31"/>
+			<spot x="1101.7384" y="926.94714" z="497.18158" h="61"/>
+		</spawn>
+		<!-- Cloaker -->
+		<spawn npc_id="219380">
+			<spot x="994.5377" y="615.0870" z="447.5031" h="117"/>
+			<spot x="1004.6700" y="615.9210" z="439.9286" h="103"/>
+			<spot x="1004.9213" y="575.6196" z="439.9287" h="16"/>
+			<spot x="997.8315" y="572.6244" z="447.5032" h="15"/>
+		</spawn>
+		<!-- Anuhart Elite Colonel -->
+		<spawn npc_id="219402">
+			<spot x="821.07654" y="1034.6276" z="503.0658" h="31"/>
+			<spot x="857.38861" y="1102.4738" z="503.0658" h="90"/>
+			<spot x="787.54169" y="1102.4738" z="503.0658" h="90"/>
+			<spot x="787.54169" y="1034.6276" z="503.0658" h="31"/>
+			<spot x="857.38861" y="1034.6276" z="503.0658" h="31"/>
+			<spot x="754.19672" y="1102.4738" z="503.0658" h="90"/>
+			<spot x="821.07654" y="1102.4738" z="503.0658" h="90"/>
+			<spot x="754.19672" y="1034.6276" z="503.0658" h="31"/>
+		</spawn>
+		<!-- Surkana Activator -->
+		<spawn npc_id="219389">
+			<spot x="990.3400" y="389.5465" z="401.1398" h="115"/>
+			<spot x="1069.9181" y="387.9249" z="401.1488" h="60"/>
+		</spawn>
+		<!-- Protectorate Chief Navigator -->
+		<spawn npc_id="219384">
+			<spot x="980.19" y="348.6" z="401.1398" walker_id="4BF6AF1C2BC6B483D5CB42AE0E9BD6CE8698FEBE"/>
+			<spot x="1064.32" y="375.22" z="401.1488" walker_id="8D9008F6B5C2C8BAB03E39950A9F608B326CCD79"/>
+			<spot x="1077.4164" y="351.22168" z="404" h="41"/>
+		</spawn>
+		<!-- Terath Elite Recon Officer -->
+		<spawn npc_id="219387">
+			<spot x="1034.38" y="377.77" z="399.92307" walker_id="805A94948AFBD9FF711DBEAAC608D278A34CBE6B"/>
+			<spot x="1025.08" y="377.77" z="399.92307" walker_id="18B9ED986D75B2E83433B872C33E19823F70C165"/>
+		</spawn>
+		<!-- Terath Elite Fleshmender -->
+		<spawn npc_id="219388">
+			<spot x="1064.9878" y="385.94022" z="404" h="54"/>
+			<spot x="994.65527" y="387.58377" z="404" h="10"/>
+		</spawn>
+		<!-- Surkana Activator -->
+		<spawn npc_id="219382">
+			<spot x="990.1573" y="595.5154" z="447.5031"/>
+			<spot x="1093.1143" y="590.4402" z="440.9857" h="103"/>
+			<spot x="1057.5798" y="782.4714" z="495.0497" h="6"/>
+			<spot x="1113.4641" y="781.3243" z="495.0498" h="46"/>
+		</spawn>
+		<!-- Terath Elite Magician -->
+		<spawn npc_id="219386">
+			<spot x="1064.8649" y="389.17334" z="404" h="74"/>
+			<spot x="995.02582" y="391.0636" z="404" h="110"/>
+		</spawn>
+		<!-- Anuhart Elite Recon Officer -->
+		<spawn npc_id="219400">
+			<spot x="787.55231" y="1043.6986" z="502.9986" h="31"/>
+			<spot x="821.08258" y="1093.5015" z="502.9986" h="90"/>
+		</spawn>
+		<!-- Protectorate Chief Navigator -->
+		<spawn npc_id="219410">
+			<spot x="986.92224" y="366.65558" z="404" h="93"/>
+			<spot x="986.55859" y="362.41745" z="404" h="23"/>
+		</spawn>
+		<!-- Protectorate Senior Researcher -->
+		<spawn npc_id="219412">
+			<spot x="1081.0253" y="809.83398" z="497" h="16"/>
+			<spot x="1017.972" y="606.78101" z="440" h="90"/>
+		</spawn>
+		<!-- Protectorate Assassin Officer -->
+		<spawn npc_id="219381">
+			<spot x="1064.957" y="590.10516" z="442.69217"/>
+			<spot x="1064.957" y="601.59686" z="442.69217"/>
+		</spawn>
+		<!-- Anuhart Elite Commander -->
+		<spawn npc_id="219398">
+			<spot x="857.38184" y="1043.6775" z="502.9986" h="31"/>
+			<spot x="754.20734" y="1093.3326" z="502.9986" h="90"/>
+		</spawn>
+		<!-- Protectorate Elite Scouting Officer -->
+		<spawn npc_id="219376">
+			<spot x="1100.4038" y="1198.5027" z="495.2715" h="60"/>
+			<spot x="929.2145" y="1054.7976" z="495.3840"/>
+			<spot x="929.2145" y="1082.5005" z="495.3840"/>
+			<spot x="1075.9360" y="902.4455" z="495.0851" h="30"/>
+			<spot x="1097.6422" y="902.4455" z="495.0851" h="30"/>
+		</spawn>
+		<!-- Protectorate Elite Officer -->
+		<spawn npc_id="219374">
+			<spot x="1074.1127" y="1232.2438" z="495.2705" h="90"/>
+			<spot x="1095.9150" y="1232.2438" z="495.2704" h="90"/>
+			<spot x="920.58" y="1069.0" z="495.62192" walker_id="8CB3EB6F69C0ADB12B827CE4470BF52627B85B90"/>
+			<spot x="953.23" y="1060.37" z="495.62122" h="60" walker_id="D4D5A15C1F7E2564990C486C4DF59D3C6F87D7D4" walker_index="1"/>
+			<spot x="949.2693" y="1086.1416" z="495.3840" h="90"/>
+			<spot x="1070.2626" y="938.6526" z="495.0851"/>
+		</spawn>
+		<!-- Protectorate Elite Magistrate -->
+		<spawn npc_id="219375">
+			<spot x="1069.0236" y="1209.1133" z="495.2704"/>
+			<spot x="1080.73" y="960.03" z="495.34256" h="88" walker_id="C6A309D758EF684CC76E46712D6014A5E95BEF67"/>
+			<spot x="1087.73" y="896.9" z="495.3205" h="31" walker_id="13C74FD18112651C7F64B12E3F4C593F1CDB338B" walker_index="1"/>
+			<spot x="1070.1682" y="943.9033" z="495.0851"/>
+		</spawn>
+		<!-- Laksyaka Elite Guard Captain -->
+		<spawn npc_id="219392">
+			<spot x="966.234" y="1319.16" z="496.012" h="0"/>
+		</spawn>
+	</spawn_map>
+</spawns>

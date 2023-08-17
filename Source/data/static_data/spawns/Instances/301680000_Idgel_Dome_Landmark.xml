@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+	Idgel Dome Landmark 5.1
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="301680000">
+		<!-- BattleGround_ClodwormR_65_An -->
+        <spawn npc_id="243965">
+	        <spot x="319.97946" y="258.47797" z="85.17249" h="60"/>
+            <spot x="207.28038" y="258.77856" z="85.17249" h="119"/>
+	    </spawn>
+		<!-- BattleGround_MudthornM_65_An -->
+        <spawn npc_id="243966">
+	        <spot x="305.7222" y="312.62772" z="79.86219" h="44"/>
+            <spot x="323.43155" y="320.24994" z="79.86219" h="74"/>
+            <spot x="222.4243" y="207.94353" z="79.9401" h="105"/>
+            <spot x="205.67796" y="197.70412" z="79.86219" h="14"/>
+	    </spawn>
+		
+		<!-- =================================== -->
+		<!-- =================================== -->
+		<!-- Danuar Icone Elyos (Object Normal lvl:3) -->
+		<spawn npc_id="702300">
+			<spot x="270.43423" y="347.55264" z="79.44365" h="106"/>
+		</spawn>
+		<!-- Danuar Icone Asmodians (Object Normal lvl:3) -->
+		<spawn npc_id="702301">
+			<spot x="258.38123" y="170.24136" z="79.430855" h="46"/>
+		</spawn>
+		<!-- Neleus (NPC Normal lvl:66) -->
+        <spawn npc_id="806263">
+	        <spot x="268.77563" y="343.79013" z="79.44365" h="23"/>
+	    </spawn>
+		<!-- Zaiksene (NPC Normal lvl:66) -->
+        <spawn npc_id="806265">
+	        <spot x="254.50739" y="167.65588" z="79.575386" h="18"/>
+	    </spawn>
+		<!-- Fire Core (Object Normal lvl:3) -->
+		<spawn npc_id="702387">
+			<spot x="197.39607" y="190.13951" z="79.913559" entity_id="143"/>
+		</spawn>
+		<!-- Fire Core (Object Normal lvl:3) -->
+		<spawn npc_id="702388">
+			<spot x="331.63974" y="327.95599" z="79.913559" entity_id="14"/>
+		</spawn>
+		<!-- Flame Vent Elyos (Object Normal lvl:3) -->
+		<spawn npc_id="802192" respawn_time="30">
+			<spot x="199.08658" y="191.70087" z="80.602165" h="75"/>
+		</spawn>
+		<!-- Flame Vent Asmodians (Object Normal lvl:3) -->
+		<spawn npc_id="802193" respawn_time="30">
+			<spot x="330.02405" y="326.3248" z="80.602165" h="15"/>
+		</spawn>
+		<!-- IDFortressWar_v01_Flag_Dr -->
+        <spawn npc_id="806278">
+	        <spot x="264.60117" y="259.25366" z="91.929115"/>
+	    </spawn>
+		<!--
+		Idldf5_FORTRESS_War_TreasureBox_A
+        <spawn npc_id="834168">
+	        <spot x="275.86124" y="345.28006" z="81.299202"/>
+	        <spot x="253.59964" y="173.31197" z="81.271751"/>
+	    </spawn>
+		Idldf5_FORTRESS_War_TreasureBox_B
+        <spawn npc_id="834169">
+	        <spot x="274.27087" y="343.50711" z="81.299202"/>
+	        <spot x="255.54253" y="175.07214" z="81.271751"/>
+	    </spawn> -->
+	</spawn_map>
+</spawns>

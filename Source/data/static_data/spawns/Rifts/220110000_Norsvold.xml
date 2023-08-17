@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Rift Norsvold 5.0
+	Made By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="220110000">
+		<!-- Rift -->
+		<spawn npc_id="700137" handler="RIFT">
+			<spot x="2428.8853" y="2623.4246" z="299.25000" anchor="NORSVOLD_AM"/>
+            <spot x="2471.6357" y="1915.4137" z="231.73730" anchor="NORSVOLD_BM"/>
+            <spot x="1371.6611" y="2877.5435" z="189.16000" anchor="NORSVOLD_CM"/>
+            <spot x="380.10266" y="2142.1220" z="262.21826" anchor="NORSVOLD_DM"/>
+            <spot x="794.33350" y="876.08450" z="264.72388" anchor="NORSVOLD_EM"/>
+            <spot x="2095.1682" y="1546.9610" z="248.12500" anchor="NORSVOLD_FM"/>
+            <spot x="2235.3750" y="484.22885" z="280.69992" anchor="NORSVOLD_GM"/>
+			<spot x="1578.6005" y="996.81995" z="259.28528" anchor="NORSVOLD_AS"/>
+		</spawn>
+	</spawn_map>
+</spawns>

@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Norsvold 5.8
+	Made By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="220110000">
+		<!-- 9021 -->
+		<siege_spawn siege_id="9021">
+			<siege_race race="ASMODIANS">
+				<siege_mod mod="PEACE">
+					<!-- DF6_9021_Boss_Da_1 -->
+					<spawn npc_id="885253" respawn_time="295">
+					    <spot h="119" z="297.52972" y="645.61755" x="2273.5203"/>
+					</spawn>
+					<!-- DF6_9021_Da_Guard_Fi_75_An -->
+					<spawn npc_id="885404" respawn_time="295">
+					    <spot h="118" z="295.8632" y="639.811" x="2284.0217"/>
+					    <spot h="0" z="296.29108" y="647.5547" x="2284.8975"/>
+					    <spot h="95" z="296.5" y="640.04156" x="2271.5166"/>
+					    <spot h="35" z="296.5" y="651.72003" x="2268.6594"/>
+					</spawn>
+					<!-- DF6_9021_Da_Guard_As_75_An -->
+					<spawn npc_id="885405" respawn_time="295">
+					    <spot h="24" z="296.5" y="651.35834" x="2272.9116"/>
+					    <spot h="83" z="296.5" y="640.5766" x="2267.5667"/>
+					    <spot h="9" z="297.736" y="635.9168" x="2257.1184"/>
+					</spawn>
+					<!-- DF6_9021_Da_Guard_Wi_75_An -->
+					<spawn npc_id="885406" respawn_time="295">
+					    <spot h="0" z="296.0" y="643.5555" x="2286.4502"/>
+					    <spot h="58" z="296.5" y="646.7237" x="2263.4675"/>
+					    <spot h="102" z="295.2479" y="625.9664" x="2277.3108"/>
+					    <spot h="10" z="297.19162" y="657.0661" x="2284.7625"/>
+					</spawn>
+					<!-- DF6_9021_Da_Guard_Pr_75_An -->
+					<spawn npc_id="885407" respawn_time="295">
+					    <spot h="27" z="297.36234" y="662.3962" x="2275.7974"/>
+					    <spot h="101" z="296.70816" y="622.3577" x="2266.8623"/>
+					</spawn>
+					<!-- DF6_Artifact_90211_Da -->
+					<spawn npc_id="885321" respawn_time="295">
+						<spot x="2270.1079" y="645.99384" z="296.37115" entity_id="3726"/>
+					</spawn>
+					<!-- NPC -->
+					<!-- DF6_Norsk_A -->
+					<spawn npc_id="806804" respawn_time="295">
+					    <spot h="104" z="296.5" y="658.454" x="2270.18"/>
+					</spawn>
+					<!-- DF6_B1_Healer_D -->
+					<spawn npc_id="836238" respawn_time="295">
+					    <spot h="105" z="296.52618" y="657.6453" x="2263.5808"/>
+					</spawn>
+					<!-- DF6_B_V208_D_Seller -->
+					<spawn npc_id="836283" respawn_time="295">
+					    <spot h="107" z="296.5" y="655.8761" x="2262.1487"/>
+					</spawn>
+					<!-- DF6_B_V208_D_ApSeller -->
+					<spawn npc_id="836284" respawn_time="295">
+					    <spot h="109" z="296.50546" y="654.0875" x="2260.939"/>
+					</spawn>
+					<!-- DF6_B_V208_D_Coin_08_Seller -->
+					<spawn npc_id="836285" respawn_time="295">
+					    <spot h="110" z="296.51813" y="652.1748" x="2259.9033"/>
+					</spawn>
+					<!-- DF6_B_V208_D_Treasure_ApBuyer -->
+					<spawn npc_id="836286" respawn_time="295">
+					    <spot h="112" z="296.56046" y="649.9728" x="2259.0327"/>
+					</spawn>
+					<!-- DF6_B1_Artifact_Tel_D -->
+					<spawn npc_id="836221" respawn_time="295">
+						<spot x="2267.3467" y="634.92249" z="296.54083" entity_id="3728"/>
+					</spawn>
+					<!-- QUEST SPOT -->
+					<!-- DF6_9021_Dr_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885487" respawn_time="295">
+					    <spot h="102" z="281.48865" y="793.56146" x="2378.4348"/>
+					</spawn>
+					<!-- DF6_9021_Dr_Q_Guard_As_75_An -->
+					<spawn npc_id="885488" respawn_time="295">
+					    <spot h="103" z="281.3932" y="791.1403" x="2375.565"/>
+					</spawn>
+					<!-- DF6_9021_Dr_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885489" respawn_time="295">
+					    <spot h="103" z="281.76306" y="793.9092" x="2375.6094"/>
+					</spawn>
+					<!-- DF6_9021_Dr_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885490" respawn_time="295">
+					    <spot h="103" z="280.8264" y="790.2787" x="2378.6309"/>
+					</spawn>
+					<!-- DF6_9021_Li_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885455" respawn_time="295">
+					    <spot h="20" z="288.6897" y="555.35266" x="2325.903"/>
+					</spawn>
+					<!-- DF6_9021_Li_Q_Guard_As_75_An -->
+					<spawn npc_id="885456" respawn_time="295">
+					    <spot h="21" z="287.95718" y="553.7153" x="2329.2424"/>
+					</spawn>
+					<!-- DF6_9021_Li_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885457" respawn_time="295">
+					    <spot h="21" z="287.98187" y="556.31116" x="2328.417"/>
+					</spawn>
+					<!-- DF6_9021_Li_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885458" respawn_time="295">
+					    <spot h="21" z="288.68378" y="552.88916" x="2326.8784"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+			<siege_race race="BALAUR">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9021_Boss_Dr_1 -->
+					<spawn npc_id="885258" respawn_time="295">
+					    <spot h="119" z="297.52972" y="645.61755" x="2273.5203"/>
+					</spawn>
+					<!-- DF6_9021_Dr_Guard_Fi_75_An -->
+					<spawn npc_id="885436" respawn_time="295">
+					    <spot h="118" z="295.8632" y="639.811" x="2284.0217"/>
+					    <spot h="0" z="296.29108" y="647.5547" x="2284.8975"/>
+					    <spot h="95" z="296.5" y="640.04156" x="2271.5166"/>
+					    <spot h="35" z="296.5" y="651.72003" x="2268.6594"/>
+					</spawn>
+					<!-- DF6_9021_Dr_Guard_As_75_An -->
+					<spawn npc_id="885437" respawn_time="295">
+					    <spot h="24" z="296.5" y="651.35834" x="2272.9116"/>
+					    <spot h="83" z="296.5" y="640.5766" x="2267.5667"/>
+					    <spot h="9" z="297.736" y="635.9168" x="2257.1184"/>
+					</spawn>
+					<!-- DF6_9021_Dr_Guard_Wi_75_An -->
+					<spawn npc_id="885438" respawn_time="295">
+					    <spot h="0" z="296.0" y="643.5555" x="2286.4502"/>
+					    <spot h="58" z="296.5" y="646.7237" x="2263.4675"/>
+					    <spot h="102" z="295.2479" y="625.9664" x="2277.3108"/>
+					    <spot h="10" z="297.19162" y="657.0661" x="2284.7625"/>
+					</spawn>
+					<!-- DF6_9021_Dr_Guard_Pr_75_An -->
+					<spawn npc_id="885439" respawn_time="295">
+					    <spot h="27" z="297.36234" y="662.3962" x="2275.7974"/>
+					    <spot h="101" z="296.70816" y="622.3577" x="2266.8623"/>
+					</spawn>
+					<!-- DF6_Artifact_90211_Dr -->
+					<spawn npc_id="885322" respawn_time="295">
+						<spot x="2270.1079" y="645.99384" z="296.37115" entity_id="3731"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+			<siege_race race="ELYOS">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9021_Boss_Li_1 -->
+					<spawn npc_id="885248" respawn_time="295">
+					    <spot h="119" z="297.52972" y="645.61755" x="2273.5203"/>
+					</spawn>
+					<!-- DF6_9021_Li_Guard_Fi_75_An -->
+					<spawn npc_id="885372" respawn_time="295">
+					    <spot h="118" z="295.8632" y="639.811" x="2284.0217"/>
+					    <spot h="0" z="296.29108" y="647.5547" x="2284.8975"/>
+					    <spot h="95" z="296.5" y="640.04156" x="2271.5166"/>
+					    <spot h="35" z="296.5" y="651.72003" x="2268.6594"/>
+					</spawn>
+					<!-- DF6_9021_Li_Guard_As_75_An -->
+					<spawn npc_id="885373" respawn_time="295">
+					    <spot h="24" z="296.5" y="651.35834" x="2272.9116"/>
+					    <spot h="83" z="296.5" y="640.5766" x="2267.5667"/>
+					    <spot h="9" z="297.736" y="635.9168" x="2257.1184"/>
+					</spawn>
+					<!-- DF6_9021_Li_Guard_Wi_75_An -->
+					<spawn npc_id="885374" respawn_time="295">
+					    <spot h="0" z="296.0" y="643.5555" x="2286.4502"/>
+					    <spot h="58" z="296.5" y="646.7237" x="2263.4675"/>
+					    <spot h="102" z="295.2479" y="625.9664" x="2277.3108"/>
+					    <spot h="10" z="297.19162" y="657.0661" x="2284.7625"/>
+					</spawn>
+					<!-- DF6_9021_Li_Guard_Pr_75_An -->
+					<spawn npc_id="885375" respawn_time="295">
+					    <spot h="27" z="297.36234" y="662.3962" x="2275.7974"/>
+					    <spot h="101" z="296.70816" y="622.3577" x="2266.8623"/>
+					</spawn>
+					<!-- DF6_Artifact_90211_Li -->
+					<spawn npc_id="885320" respawn_time="295">
+						<spot x="2270.1079" y="645.99384" z="296.37115" entity_id="3739"/>
+					</spawn>
+					<!-- NPC -->
+					<!-- DF6_Samaris_E -->
+					<spawn npc_id="806800" respawn_time="295">
+					    <spot h="104" z="296.5" y="658.454" x="2270.18"/>
+					</spawn>
+					<!-- DF6_B_V208_L_Seller -->
+					<spawn npc_id="836287" respawn_time="295">
+					    <spot h="107" z="296.5" y="655.8761" x="2262.1487"/>
+					</spawn>
+					<!-- DF6_B_V208_L_ApSeller -->
+					<spawn npc_id="836288" respawn_time="295">
+					    <spot h="109" z="296.50546" y="654.0875" x="2260.939"/>
+					</spawn>
+					<!-- DF6_B1_Artifact_Tel_L -->
+					<spawn npc_id="836225" respawn_time="295">
+						<spot x="2267.3467" y="634.92249" z="296.54083" entity_id="3730"/>
+					</spawn>
+					<!-- QUEST SPOT -->
+					<!-- DF6_9021_Dr_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885487" respawn_time="295">
+					    <spot h="102" z="281.48865" y="793.56146" x="2378.4348"/>
+					</spawn>
+					<!-- DF6_9021_Dr_Q_Guard_As_75_An -->
+					<spawn npc_id="885488" respawn_time="295">
+					    <spot h="103" z="281.3932" y="791.1403" x="2375.565"/>
+					</spawn>
+					<!-- DF6_9021_Dr_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885489" respawn_time="295">
+					    <spot h="103" z="281.76306" y="793.9092" x="2375.6094"/>
+					</spawn>
+					<!-- DF6_9021_Dr_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885490" respawn_time="295">
+					    <spot h="103" z="280.8264" y="790.2787" x="2378.6309"/>
+					</spawn>
+					<!-- DF6_9021_Da_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885471" respawn_time="295">
+					    <spot h="20" z="288.6897" y="555.35266" x="2325.903"/>
+					</spawn>
+					<!-- DF6_9021_Da_Q_Guard_As_75_An -->
+					<spawn npc_id="885472" respawn_time="295">
+					    <spot h="21" z="287.95718" y="553.7153" x="2329.2424"/>
+					</spawn>
+					<!-- DF6_9021_Da_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885473" respawn_time="295">
+					    <spot h="21" z="287.98187" y="556.31116" x="2328.417"/>
+					</spawn>
+					<!-- DF6_9021_Da_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885474" respawn_time="295">
+					    <spot h="21" z="288.68378" y="552.88916" x="2326.8784"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+		</siege_spawn>
+		<!-- 9022 -->
+		<siege_spawn siege_id="9022">
+			<siege_race race="ASMODIANS">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9022_Boss_Da_1 -->
+					<spawn npc_id="885268" respawn_time="295">
+					    <spot h="41" z="315.71555" y="2574.4863" x="2534.123"/>
+					</spawn>
+					<!-- DF6_9022_Da_Guard_Fi_75_An -->
+					<spawn npc_id="885408" respawn_time="295">
+					    <spot h="46" z="314.531" y="2583.6995" x="2532.4963"/>
+					    <spot h="43" z="314.62335" y="2578.363" x="2526.337"/>
+					    <spot h="67" z="314.09613" y="2564.1472" x="2519.5383"/>
+					    <spot h="27" z="316.18512" y="2580.9324" x="2562.947"/>
+					    <spot h="51" z="316.7375" y="2562.4548" x="2552.903"/>
+					</spawn>
+					<!-- DF6_9022_Da_Guard_As_75_An -->
+					<spawn npc_id="885409" respawn_time="295">
+					    <spot h="25" z="315.39807" y="2583.3533" x="2555.8613"/>
+					    <spot h="70" z="314.52133" y="2559.4858" x="2522.4277"/>
+					    <spot h="64" z="314.75" y="2570.5825" x="2529.9277"/>
+					    <spot h="7" z="314.75" y="2572.6243" x="2541.8376"/>
+					</spawn>
+					<!-- DF6_9022_Da_Guard_Wi_75_An -->
+					<spawn npc_id="885410" respawn_time="295">
+					    <spot h="70" z="315.21533" y="2554.1929" x="2525.9155"/>
+					    <spot h="44" z="314.55188" y="2583.1516" x="2527.6785"/>
+					    <spot h="101" z="314.75998" y="2565.8403" x="2539.5144"/>
+					</spawn>
+					<!-- DF6_9022_Da_Guard_Pr_75_An -->
+					<spawn npc_id="885411" respawn_time="295">
+					    <spot h="24" z="314.77463" y="2585.2134" x="2548.3938"/>
+					    <spot h="10" z="315.2569" y="2559.5833" x="2536.8599"/>
+					    <spot h="78" z="314.75" y="2566.7205" x="2532.157"/>
+					    <spot h="18" z="314.75" y="2576.1497" x="2539.6946"/>
+					</spawn>
+					<!-- DF6_Artifact_90221_Da -->
+					<spawn npc_id="885324" respawn_time="295">
+						<spot x="2535.9463" y="2571.5120" z="314.55695" entity_id="3781"/>
+					</spawn>
+					<!-- NPC -->
+					<!-- DF6_Permant_A -->
+					<spawn npc_id="806805" respawn_time="295">
+					    <spot h="71" z="314.7442" y="2578.8303" x="2546.7373"/>
+					</spawn>
+					<!-- DF6_D_Healer_D -->
+					<spawn npc_id="836239" respawn_time="295">
+					    <spot h="61" z="314.91382" y="2576.6404" x="2548.3105"/>
+					</spawn>
+					<!-- DF6_D_V209_D_Seller -->
+					<spawn npc_id="836289" respawn_time="295">
+					    <spot h="56" z="314.97528" y="2572.038" x="2547.6047"/>
+					</spawn>
+					<!-- DF6_D_V209_D_ApSeller -->
+					<spawn npc_id="836290" respawn_time="295">
+					    <spot h="52" z="315.02917" y="2570.4146" x="2546.881"/>
+					</spawn>
+					<!-- DF6_D_V209_D_Coin_08_Seller -->
+					<spawn npc_id="836291" respawn_time="295">
+					    <spot h="49" z="315.07898" y="2568.4778" x="2545.7415"/>
+					</spawn>
+					<!-- DF6_D_V209_D_Exceed_Matter_Seller -->
+					<spawn npc_id="836292" respawn_time="295">
+					    <spot h="48" z="314.9939" y="2566.6062" x="2544.5083"/>
+					</spawn>
+					<!-- DF6_D_Artifact_Tel_D -->
+					<spawn npc_id="836222" respawn_time="295">
+						<spot x="2548.7109" y="2574.2239" z="314.96387" entity_id="3735"/>
+					</spawn>
+					<!-- QUEST SPOT -->
+					<!-- DF6_9022_Dr_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885491" respawn_time="295">
+					    <spot h="46" z="318.19263" y="2696.6282" x="2640.3386"/>
+					</spawn>
+					<!-- DF6_9022_Dr_Q_Guard_As_75_An -->
+					<spawn npc_id="885492" respawn_time="295">
+					    <spot h="46" z="317.954" y="2700.368" x="2643.6172"/>
+					</spawn>
+					<!-- DF6_9022_Dr_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885493" respawn_time="295">
+					    <spot h="46" z="317.89417" y="2700.0227" x="2640.3523"/>
+					</spawn>
+					<!-- DF6_9022_Dr_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885494" respawn_time="295">
+					    <spot h="46" z="318.398" y="2697.1052" x="2643.4731"/>
+					</spawn>
+		            <!-- DF6_9022_Li_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885459" respawn_time="295">
+					    <spot h="0" z="300.77405" y="2602.1677" x="2419.4475"/>
+					</spawn>
+					<!-- DF6_9022_Li_Q_Guard_As_75_An -->
+					<spawn npc_id="885460" respawn_time="295">
+					    <spot h="0" z="301.00928" y="2597.8518" x="2419.7578"/>
+					</spawn>
+					<!-- DF6_9022_Li_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885461" respawn_time="295">
+					    <spot h="0" z="300.76193" y="2599.9492" x="2421.8599"/>
+					</spawn>
+					<!-- DF6_9022_Li_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885462" respawn_time="295">
+					    <spot h="0" z="300.91577" y="2599.959" x="2417.3887"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+			<siege_race race="BALAUR">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9022_Boss_Dr_1 -->
+					<spawn npc_id="885273" respawn_time="295">
+					    <spot h="41" z="315.71555" y="2574.4863" x="2534.123"/>
+					</spawn>
+					<!-- DF6_9022_Dr_Guard_Fi_75_An -->
+					<spawn npc_id="885440" respawn_time="295">
+					    <spot h="46" z="314.531" y="2583.6995" x="2532.4963"/>
+					    <spot h="43" z="314.62335" y="2578.363" x="2526.337"/>
+					    <spot h="67" z="314.09613" y="2564.1472" x="2519.5383"/>
+					    <spot h="27" z="316.18512" y="2580.9324" x="2562.947"/>
+					    <spot h="51" z="316.7375" y="2562.4548" x="2552.903"/>
+					</spawn>
+					<!-- DF6_9022_Dr_Guard_As_75_An -->
+					<spawn npc_id="885441" respawn_time="295">
+					    <spot h="25" z="315.39807" y="2583.3533" x="2555.8613"/>
+					    <spot h="70" z="314.52133" y="2559.4858" x="2522.4277"/>
+					    <spot h="64" z="314.75" y="2570.5825" x="2529.9277"/>
+					    <spot h="7" z="314.75" y="2572.6243" x="2541.8376"/>
+					</spawn>
+					<!-- DF6_9022_Dr_Guard_Wi_75_An -->
+					<spawn npc_id="885442" respawn_time="295">
+					    <spot h="70" z="315.21533" y="2554.1929" x="2525.9155"/>
+					    <spot h="44" z="314.55188" y="2583.1516" x="2527.6785"/>
+					    <spot h="101" z="314.75998" y="2565.8403" x="2539.5144"/>
+					</spawn>
+					<!-- DF6_9022_Dr_Guard_Pr_75_An -->
+					<spawn npc_id="885443" respawn_time="295">
+					    <spot h="24" z="314.77463" y="2585.2134" x="2548.3938"/>
+					    <spot h="10" z="315.2569" y="2559.5833" x="2536.8599"/>
+					    <spot h="78" z="314.75" y="2566.7205" x="2532.157"/>
+					    <spot h="18" z="314.75" y="2576.1497" x="2539.6946"/>
+					</spawn>
+					<!-- DF6_Artifact_90221_Dr -->
+					<spawn npc_id="885325" respawn_time="295">
+						<spot x="2535.9463" y="2571.5120" z="314.55695" entity_id="3782"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+			<siege_race race="ELYOS">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9022_Boss_Li_1 -->
+					<spawn npc_id="885263" respawn_time="295">
+					    <spot h="41" z="315.71555" y="2574.4863" x="2534.123"/>
+					</spawn>
+					<!-- DF6_9022_Li_Guard_Fi_75_An -->
+					<spawn npc_id="885376" respawn_time="295">
+					    <spot h="46" z="314.531" y="2583.6995" x="2532.4963"/>
+					    <spot h="43" z="314.62335" y="2578.363" x="2526.337"/>
+					    <spot h="67" z="314.09613" y="2564.1472" x="2519.5383"/>
+					    <spot h="27" z="316.18512" y="2580.9324" x="2562.947"/>
+					    <spot h="51" z="316.7375" y="2562.4548" x="2552.903"/>
+					</spawn>
+					<!-- DF6_9022_Li_Guard_As_75_An -->
+					<spawn npc_id="885377" respawn_time="295">
+					    <spot h="25" z="315.39807" y="2583.3533" x="2555.8613"/>
+					    <spot h="70" z="314.52133" y="2559.4858" x="2522.4277"/>
+					    <spot h="64" z="314.75" y="2570.5825" x="2529.9277"/>
+					    <spot h="7" z="314.75" y="2572.6243" x="2541.8376"/>
+					</spawn>
+					<!-- DF6_9022_Li_Guard_Wi_75_An -->
+					<spawn npc_id="885378" respawn_time="295">
+					    <spot h="70" z="315.21533" y="2554.1929" x="2525.9155"/>
+					    <spot h="44" z="314.55188" y="2583.1516" x="2527.6785"/>
+					    <spot h="101" z="314.75998" y="2565.8403" x="2539.5144"/>
+					</spawn>
+					<!-- DF6_9022_Li_Guard_Pr_75_An -->
+					<spawn npc_id="885379" respawn_time="295">
+					    <spot h="24" z="314.77463" y="2585.2134" x="2548.3938"/>
+					    <spot h="10" z="315.2569" y="2559.5833" x="2536.8599"/>
+					    <spot h="78" z="314.75" y="2566.7205" x="2532.157"/>
+					    <spot h="18" z="314.75" y="2576.1497" x="2539.6946"/>
+					</spawn>
+					<!-- DF6_Artifact_90221_Li -->
+					<spawn npc_id="885323" respawn_time="295">
+						<spot x="2535.9463" y="2571.5120" z="314.55695" entity_id="3784"/>
+					</spawn>
+					<!-- NPC -->
+					<!-- DF6_Riano_E -->
+					<spawn npc_id="806801" respawn_time="295">
+					    <spot h="71" z="314.7442" y="2578.8303" x="2546.7373"/>
+					</spawn>
+					<!-- DF6_D_V209_L_Seller -->
+					<spawn npc_id="836293" respawn_time="295">
+					    <spot h="56" z="314.97528" y="2572.038" x="2547.6047"/>
+					</spawn>
+					<!-- DF6_D_V209_L_ApSeller -->
+					<spawn npc_id="836294" respawn_time="295">
+					    <spot h="52" z="315.02917" y="2570.4146" x="2546.881"/>
+					</spawn>
+					<!-- DF6_D_Artifact_Tel_L -->
+					<spawn npc_id="836226" respawn_time="295">
+						<spot x="2548.7109" y="2574.2239" z="314.96387" entity_id="3745"/>
+					</spawn>
+					<!-- QUEST SPOT -->
+					<!-- DF6_9022_Dr_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885491" respawn_time="295">
+					    <spot h="46" z="318.19263" y="2696.6282" x="2640.3386"/>
+					</spawn>
+					<!-- DF6_9022_Dr_Q_Guard_As_75_An -->
+					<spawn npc_id="885492" respawn_time="295">
+					    <spot h="46" z="317.954" y="2700.368" x="2643.6172"/>
+					</spawn>
+					<!-- DF6_9022_Dr_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885493" respawn_time="295">
+					    <spot h="46" z="317.89417" y="2700.0227" x="2640.3523"/>
+					</spawn>
+					<!-- DF6_9022_Dr_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885494" respawn_time="295">
+					    <spot h="46" z="318.398" y="2697.1052" x="2643.4731"/>
+					</spawn>
+		            <!-- DF6_9022_Da_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885475" respawn_time="295">
+					    <spot h="0" z="300.77405" y="2602.1677" x="2419.4475"/>
+					</spawn>
+					<!-- DF6_9022_Da_Q_Guard_As_75_An -->
+					<spawn npc_id="885476" respawn_time="295">
+					    <spot h="0" z="301.00928" y="2597.8518" x="2419.7578"/>
+					</spawn>
+					<!-- DF6_9022_Da_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885477" respawn_time="295">
+					    <spot h="0" z="300.76193" y="2599.9492" x="2421.8599"/>
+					</spawn>
+					<!-- DF6_9022_Da_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885478" respawn_time="295">
+					    <spot h="0" z="300.91577" y="2599.959" x="2417.3887"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+		</siege_spawn>
+		<!-- 9023 -->
+		<siege_spawn siege_id="9023">
+			<siege_race race="ASMODIANS">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9023_Boss_Da_1 -->
+					<spawn npc_id="885283" respawn_time="295">
+					    <spot h="115" z="253.70255" y="2664.2402" x="266.1529"/>
+					</spawn>
+					<!-- DF6_9023_Da_Guard_Fi_75_An -->
+					<spawn npc_id="885412" respawn_time="295">
+					    <spot h="119" z="252.4803" y="2659.447" x="274.31512"/>
+					    <spot h="119" z="252.43713" y="2666.3694" x="275.00598"/>
+					    <spot h="97" z="252.625" y="2646.9783" x="265.11066"/>
+					    <spot h="92" z="253.503" y="2646.0518" x="249.74496"/>
+					    <spot h="33" z="252.625" y="2671.1665" x="262.3408"/>
+					    <spot h="80" z="252.625" y="2660.3464" x="259.4279"/>
+					    <spot h="99" z="253.39134" y="2689.433" x="279.72385"/>
+					</spawn>
+					<!-- DF6_9023_Da_Guard_As_75_An -->
+					<spawn npc_id="885413" respawn_time="295">
+					    <spot h="92" z="252.625" y="2659.2112" x="263.25308"/>
+					    <spot h="19" z="252.625" y="2670.0579" x="266.55615"/>
+					</spawn>
+					<!-- DF6_9023_Da_Guard_Wi_75_An -->
+					<spawn npc_id="885414" respawn_time="295">
+					    <spot h="92" z="252.61823" y="2644.312" x="254.36623"/>
+					    <spot h="92" z="252.33446" y="2644.918" x="259.40262"/>
+					    <spot h="118" z="252.08673" y="2662.9873" x="276.9225"/>
+					    <spot h="55" z="252.625" y="2667.046" x="256.18478"/>
+					    <spot h="28" z="253.51071" y="2688.1838" x="264.38013"/>
+					</spawn>
+					<!-- DF6_9023_Da_Guard_Pr_75_An -->
+					<spawn npc_id="885415" respawn_time="295">
+					    <spot h="6" z="253.07568" y="2682.6055" x="273.9809"/>
+					    <spot h="114" z="252.625" y="2676.9006" x="261.5596"/>
+					    <spot h="8" z="252.625" y="2658.2292" x="254.02478"/>
+					</spawn>
+					<!-- DF6_Artifact_90231_Da -->
+					<spawn npc_id="885327" respawn_time="295">
+						<spot x="262.87173" y="2665.2192" z="252.54399" entity_id="3762"/>
+					</spawn>
+					<!-- NPC -->
+					<!-- DF6_Ronheim_A -->
+					<spawn npc_id="806803" respawn_time="295">
+					    <spot h="102" z="252.625" y="2674.493" x="256.45267"/>
+					</spawn>
+					<!-- DF6_F1_Healer_D -->
+					<spawn npc_id="836240" respawn_time="295">
+					    <spot h="109" z="252.625" y="2671.9536" x="252.97354"/>
+					</spawn>
+					<!-- DF6_F_V210_D_Seller -->
+					<spawn npc_id="836295" respawn_time="295">
+					    <spot h="113" z="252.625" y="2669.5068" x="251.9217"/>
+					</spawn>
+					<!-- DF6_F_V210_D_ApSeller -->
+					<spawn npc_id="836296" respawn_time="295">
+					    <spot h="117" z="252.625" y="2667.1846" x="251.55763"/>
+					</spawn>
+					<!-- DF6_F_V210_D_Medal_06_Seller -->
+					<spawn npc_id="836297" respawn_time="295">
+					    <spot h="0" z="252.625" y="2664.9905" x="251.56165"/>
+					</spawn>
+					<!-- DF6_F1_Artifact_Tel_D -->
+					<spawn npc_id="836223" respawn_time="295">
+						<spot x="255.39111" y="2654.8738" z="252.62500" entity_id="3747"/>
+					</spawn>
+					<!-- QUEST SPOT -->
+					<!-- DF6_9023_Dr_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885495" respawn_time="295">
+					    <spot h="118" z="229.75" y="2753.2417" x="271.9791"/>
+					</spawn>
+					<!-- DF6_9023_Dr_Q_Guard_As_75_An -->
+					<spawn npc_id="885496" respawn_time="295">
+					    <spot h="118" z="229.75" y="2749.4275" x="271.58994"/>
+					</spawn>
+					<!-- DF6_9023_Dr_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885497" respawn_time="295">
+					    <spot h="118" z="230.42862" y="2751.5098" x="269.85922"/>
+					</spawn>
+					<!-- DF6_9023_Dr_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885498" respawn_time="295">
+					    <spot h="117" z="229.75" y="2750.8645" x="274.1203"/>
+					</spawn>
+					<!-- DF6_9023_Li_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885463" respawn_time="295">
+					    <spot h="60" z="240.07787" y="2555.2493" x="314.00168"/>
+					</spawn>
+					<!-- DF6_9023_Li_Q_Guard_As_75_An -->
+					<spawn npc_id="885464" respawn_time="295">
+					    <spot h="60" z="240.24698" y="2558.0083" x="314.00998"/>
+					</spawn>
+					<!-- DF6_9023_Li_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885465" respawn_time="295">
+					    <spot h="60" z="240.01324" y="2556.5303" x="315.15912"/>
+					</spawn>
+					<!-- DF6_9023_Li_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885466" respawn_time="295">
+					    <spot h="60" z="240.094" y="2556.496" x="312.15643"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+			<siege_race race="BALAUR">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9023_Boss_Dr_1 -->
+					<spawn npc_id="885288" respawn_time="295">
+					    <spot h="115" z="253.70255" y="2664.2402" x="266.1529"/>
+					</spawn>
+					<!-- DF6_9023_Dr_Guard_Fi_75_An -->
+					<spawn npc_id="885444" respawn_time="295">
+					    <spot h="119" z="252.4803" y="2659.447" x="274.31512"/>
+					    <spot h="119" z="252.43713" y="2666.3694" x="275.00598"/>
+					    <spot h="97" z="252.625" y="2646.9783" x="265.11066"/>
+					    <spot h="92" z="253.503" y="2646.0518" x="249.74496"/>
+					    <spot h="33" z="252.625" y="2671.1665" x="262.3408"/>
+					    <spot h="80" z="252.625" y="2660.3464" x="259.4279"/>
+					    <spot h="99" z="253.39134" y="2689.433" x="279.72385"/>
+					</spawn>
+					<!-- DF6_9023_Dr_Guard_As_75_An -->
+					<spawn npc_id="885445" respawn_time="295">
+					    <spot h="92" z="252.625" y="2659.2112" x="263.25308"/>
+					    <spot h="19" z="252.625" y="2670.0579" x="266.55615"/>
+					</spawn>
+					<!-- DF6_9023_Dr_Guard_Wi_75_An -->
+					<spawn npc_id="885446" respawn_time="295">
+					    <spot h="92" z="252.61823" y="2644.312" x="254.36623"/>
+					    <spot h="92" z="252.33446" y="2644.918" x="259.40262"/>
+					    <spot h="118" z="252.08673" y="2662.9873" x="276.9225"/>
+					    <spot h="55" z="252.625" y="2667.046" x="256.18478"/>
+					    <spot h="28" z="253.51071" y="2688.1838" x="264.38013"/>
+					</spawn>
+					<!-- DF6_9023_Dr_Guard_Pr_75_An -->
+					<spawn npc_id="885447" respawn_time="295">
+					    <spot h="6" z="253.07568" y="2682.6055" x="273.9809"/>
+					    <spot h="114" z="252.625" y="2676.9006" x="261.5596"/>
+					    <spot h="8" z="252.625" y="2658.2292" x="254.02478"/>
+					</spawn>
+					<!-- DF6_Artifact_90231_Dr -->
+					<spawn npc_id="885328" respawn_time="295">
+						<spot x="262.87173" y="2665.2192" z="252.54399" entity_id="3763"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+			<siege_race race="ELYOS">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9023_Boss_Li_1 -->
+					<spawn npc_id="885278" respawn_time="295">
+					    <spot h="115" z="253.70255" y="2664.2402" x="266.1529"/>
+					</spawn>
+					<!-- DF6_9023_Li_Guard_Fi_75_An -->
+					<spawn npc_id="885380" respawn_time="295">
+					    <spot h="119" z="252.4803" y="2659.447" x="274.31512"/>
+					    <spot h="119" z="252.43713" y="2666.3694" x="275.00598"/>
+					    <spot h="97" z="252.625" y="2646.9783" x="265.11066"/>
+					    <spot h="92" z="253.503" y="2646.0518" x="249.74496"/>
+					    <spot h="33" z="252.625" y="2671.1665" x="262.3408"/>
+					    <spot h="80" z="252.625" y="2660.3464" x="259.4279"/>
+					    <spot h="99" z="253.39134" y="2689.433" x="279.72385"/>
+					</spawn>
+					<!-- DF6_9023_Li_Guard_As_75_An -->
+					<spawn npc_id="885381" respawn_time="295">
+					    <spot h="92" z="252.625" y="2659.2112" x="263.25308"/>
+					    <spot h="19" z="252.625" y="2670.0579" x="266.55615"/>
+					</spawn>
+					<!-- DF6_9023_Li_Guard_Wi_75_An -->
+					<spawn npc_id="885382" respawn_time="295">
+					    <spot h="92" z="252.61823" y="2644.312" x="254.36623"/>
+					    <spot h="92" z="252.33446" y="2644.918" x="259.40262"/>
+					    <spot h="118" z="252.08673" y="2662.9873" x="276.9225"/>
+					    <spot h="55" z="252.625" y="2667.046" x="256.18478"/>
+					    <spot h="28" z="253.51071" y="2688.1838" x="264.38013"/>
+					</spawn>
+					<!-- DF6_9023_Li_Guard_Pr_75_An -->
+					<spawn npc_id="885383" respawn_time="295">
+					    <spot h="6" z="253.07568" y="2682.6055" x="273.9809"/>
+					    <spot h="114" z="252.625" y="2676.9006" x="261.5596"/>
+					    <spot h="8" z="252.625" y="2658.2292" x="254.02478"/>
+					</spawn>
+					<!-- DF6_Artifact_90231_Li -->
+					<spawn npc_id="885326" respawn_time="295">
+						<spot x="262.87173" y="2665.2192" z="252.54399" entity_id="3765"/>
+					</spawn>
+					<!-- NPC -->
+					<!-- DF6_Bitorio_E -->
+					<spawn npc_id="806799" respawn_time="295">
+					    <spot h="102" z="252.625" y="2674.493" x="256.45267"/>
+					</spawn>
+					<!-- DF6_F_V210_L_Seller -->
+					<spawn npc_id="836298" respawn_time="295">
+					    <spot h="113" z="252.625" y="2669.5068" x="251.9217"/>
+					</spawn>
+					<!-- DF6_F_V210_L_ApSeller -->
+					<spawn npc_id="836299" respawn_time="295">
+					    <spot h="117" z="252.625" y="2667.1846" x="251.55763"/>
+					</spawn>
+					<!-- DF6_F1_Artifact_Tel_L -->
+					<spawn npc_id="836227" respawn_time="295">
+						<spot x="255.39111" y="2654.8738" z="252.62500" entity_id="3753"/>
+					</spawn>
+					<!-- QUEST SPOT -->
+					<!-- DF6_9023_Dr_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885495" respawn_time="295">
+					    <spot h="118" z="229.75" y="2753.2417" x="271.9791"/>
+					</spawn>
+					<!-- DF6_9023_Dr_Q_Guard_As_75_An -->
+					<spawn npc_id="885496" respawn_time="295">
+					    <spot h="118" z="229.75" y="2749.4275" x="271.58994"/>
+					</spawn>
+					<!-- DF6_9023_Dr_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885497" respawn_time="295">
+					    <spot h="118" z="230.42862" y="2751.5098" x="269.85922"/>
+					</spawn>
+					<!-- DF6_9023_Dr_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885498" respawn_time="295">
+					    <spot h="117" z="229.75" y="2750.8645" x="274.1203"/>
+					</spawn>
+					<!-- DF6_9023_Da_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885479" respawn_time="295">
+					    <spot h="60" z="240.07787" y="2555.2493" x="314.00168"/>
+					</spawn>
+					<!-- DF6_9023_Da_Q_Guard_As_75_An -->
+					<spawn npc_id="885480" respawn_time="295">
+					    <spot h="60" z="240.24698" y="2558.0083" x="314.00998"/>
+					</spawn>
+					<!-- DF6_9023_Da_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885481" respawn_time="295">
+					    <spot h="60" z="240.01324" y="2556.5303" x="315.15912"/>
+					</spawn>
+					<!-- DF6_9023_Da_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885482" respawn_time="295">
+					    <spot h="60" z="240.094" y="2556.496" x="312.15643"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+		</siege_spawn>
+		<!-- 9024 -->
+		<siege_spawn siege_id="9024">
+			<siege_race race="ASMODIANS">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9024_Boss_Da_1 -->
+					<spawn npc_id="885298" respawn_time="295">
+					    <spot h="41" z="281.5405" y="798.173" x="972.8562"/>
+					</spawn>
+					<!-- DF6_9024_Da_Guard_Fi_75_An -->
+					<spawn npc_id="885416" respawn_time="295">
+					    <spot h="41" z="280.23627" y="809.3278" x="969.70276"/>
+					    <spot h="41" z="280.26666" y="805.8668" x="964.14136"/>
+					    <spot h="5" z="280.625" y="796.069" x="980.59863"/>
+					    <spot h="78" z="280.625" y="790.7583" x="970.83887"/>
+					</spawn>
+					<!-- DF6_9024_Da_Guard_As_75_An -->
+					<spawn npc_id="885417" respawn_time="295">
+					    <spot h="64" z="280.625" y="794.38324" x="968.7825"/>
+					    <spot h="18" z="280.625" y="799.7487" x="978.51935"/>
+					</spawn>
+					<!-- DF6_9024_Da_Guard_Wi_75_An -->
+					<spawn npc_id="885418" respawn_time="295">
+					    <spot h="27" z="281.15564" y="811.54047" x="984.7048"/>
+					    <spot h="42" z="279.87134" y="809.3026" x="965.84906"/>
+					    <spot h="101" z="280.66144" y="789.4168" x="977.772"/>
+					    <spot h="23" z="281.82797" y="780.1741" x="967.21124"/>
+					    <spot h="33" z="281.9342" y="797.81055" x="952.93353"/>
+					</spawn>
+					<!-- DF6_9024_Da_Guard_Pr_75_An -->
+					<spawn npc_id="885419" respawn_time="295">
+					    <spot h="17" z="283.73245" y="806.8038" x="994.1831"/>
+					    <spot h="40" z="281.48425" y="773.59875" x="982.4728"/>
+					    <spot h="60" z="283.58368" y="785.06934" x="957.453"/>
+					</spawn>
+					<!-- DF6_Artifact_90241_Da -->
+					<spawn npc_id="885330" respawn_time="295">
+						<spot x="974.58429" y="795.16168" z="280.38190" entity_id="3749"/>
+					</spawn>
+					<!-- NPC -->
+					<!-- DF6_Remark_A -->
+					<spawn npc_id="806802" respawn_time="295">
+					    <spot h="19" z="280.818" y="786.58167" x="968.3305"/>
+					</spawn>
+					<!-- DF6_H_Healer_D -->
+					<spawn npc_id="836241" respawn_time="295">
+					    <spot h="37" z="280.93866" y="784.1735" x="977.19214"/>
+					</spawn>
+					<!-- DF6_H_V211_D_Seller -->
+					<spawn npc_id="836300" respawn_time="295">
+					    <spot h="40" z="280.93137" y="785.09814" x="978.7609"/>
+					</spawn>
+					<!-- DF6_H_V211_D_ApSeller -->
+					<spawn npc_id="836301" respawn_time="295">
+					    <spot h="41" z="280.96945" y="786.2444" x="980.45703"/>
+					</spawn>
+					<!-- DF6_H_V211_D_Medal_06_Seller -->
+					<spawn npc_id="836302" respawn_time="295">
+					    <spot h="42" z="281.0" y="787.5032" x="982.05725"/>
+					</spawn>
+					<!-- DF6_H_V211_D_2stenchant_Seller -->
+					<spawn npc_id="836303" respawn_time="295">
+					    <spot h="46" z="280.84708" y="788.86176" x="983.2766"/>
+					</spawn>
+					<!-- DF6_H_Artifact_Tel_D -->
+					<spawn npc_id="836224" respawn_time="295">
+						<spot x="986.04541" y="797.44482" z="281.00851" entity_id="3755"/>
+					</spawn>
+					<!-- QUEST SPOT -->
+					<!-- DF6_9024_Dr_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885499" respawn_time="295">
+					    <spot h="77" z="269.42343" y="973.22504" x="916.03705"/>
+					</spawn>
+					<!-- DF6_9024_Dr_Q_Guard_As_75_An -->
+					<spawn npc_id="885500" respawn_time="295">
+					    <spot h="79" z="269.06445" y="975.46277" x="912.5155"/>
+					</spawn>
+					<!-- DF6_9024_Dr_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885501" respawn_time="295">
+					    <spot h="79" z="269.27213" y="975.96533" x="915.17694"/>
+					</spawn>
+					<!-- DF6_9024_Dr_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885502" respawn_time="295">
+					    <spot h="79" z="269.10767" y="972.61053" x="913.0373"/>
+					</spawn>
+					<!-- DF6_9024_Li_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885467" respawn_time="295">
+					    <spot h="51" z="264.3719" y="714.2122" x="912.0813"/>
+					</spawn>
+					<!-- DF6_9024_Li_Q_Guard_As_75_An -->
+					<spawn npc_id="885468" respawn_time="295">
+					    <spot h="51" z="264.36917" y="718.19183" x="914.09674"/>
+					</spawn>
+					<!-- DF6_9024_Li_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885469" respawn_time="295">
+					    <spot h="51" z="263.95517" y="717.19476" x="911.22406"/>
+					</spawn>
+					<!-- DF6_9024_Li_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885470" respawn_time="295">
+					    <spot h="51" z="264.59814" y="715.1745" x="914.74457"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+			<siege_race race="BALAUR">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9024_Boss_Dr_1 -->
+					<spawn npc_id="885303" respawn_time="295">
+					    <spot h="41" z="281.5405" y="798.173" x="972.8562"/>
+					</spawn>
+					<!-- DF6_9024_Dr_Guard_Fi_75_An -->
+					<spawn npc_id="885448" respawn_time="295">
+					    <spot h="41" z="280.23627" y="809.3278" x="969.70276"/>
+					    <spot h="41" z="280.26666" y="805.8668" x="964.14136"/>
+					    <spot h="5" z="280.625" y="796.069" x="980.59863"/>
+					    <spot h="78" z="280.625" y="790.7583" x="970.83887"/>
+					</spawn>
+					<!-- DF6_9024_Dr_Guard_As_75_An -->
+					<spawn npc_id="885449" respawn_time="295">
+					    <spot h="64" z="280.625" y="794.38324" x="968.7825"/>
+					    <spot h="18" z="280.625" y="799.7487" x="978.51935"/>
+					</spawn>
+					<!-- DF6_9024_Dr_Guard_Wi_75_An -->
+					<spawn npc_id="885450" respawn_time="295">
+					    <spot h="27" z="281.15564" y="811.54047" x="984.7048"/>
+					    <spot h="42" z="279.87134" y="809.3026" x="965.84906"/>
+					    <spot h="101" z="280.66144" y="789.4168" x="977.772"/>
+					    <spot h="23" z="281.82797" y="780.1741" x="967.21124"/>
+					    <spot h="33" z="281.9342" y="797.81055" x="952.93353"/>
+					</spawn>
+					<!-- DF6_9024_Dr_Guard_Pr_75_An -->
+					<spawn npc_id="885451" respawn_time="295">
+					    <spot h="17" z="283.73245" y="806.8038" x="994.1831"/>
+					    <spot h="40" z="281.48425" y="773.59875" x="982.4728"/>
+					    <spot h="60" z="283.58368" y="785.06934" x="957.453"/>
+					</spawn>
+					<!-- DF6_Artifact_90241_Dr -->
+					<spawn npc_id="885331" respawn_time="295">
+						<spot x="974.58429" y="795.16168" z="280.38190" entity_id="3750"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+			<siege_race race="ELYOS">
+				<siege_mod mod="PEACE">
+				    <!-- DF6_9024_Boss_Li_1 -->
+					<spawn npc_id="885293" respawn_time="295">
+					    <spot h="41" z="281.5405" y="798.173" x="972.8562"/>
+					</spawn>
+					<!-- DF6_9024_Li_Guard_Fi_75_An -->
+					<spawn npc_id="885384" respawn_time="295">
+					    <spot h="41" z="280.23627" y="809.3278" x="969.70276"/>
+					    <spot h="41" z="280.26666" y="805.8668" x="964.14136"/>
+					    <spot h="5" z="280.625" y="796.069" x="980.59863"/>
+					    <spot h="78" z="280.625" y="790.7583" x="970.83887"/>
+					</spawn>
+					<!-- DF6_9024_Li_Guard_As_75_An -->
+					<spawn npc_id="885385" respawn_time="295">
+					    <spot h="64" z="280.625" y="794.38324" x="968.7825"/>
+					    <spot h="18" z="280.625" y="799.7487" x="978.51935"/>
+					</spawn>
+					<!-- DF6_9024_Li_Guard_Wi_75_An -->
+					<spawn npc_id="885386" respawn_time="295">
+					    <spot h="27" z="281.15564" y="811.54047" x="984.7048"/>
+					    <spot h="42" z="279.87134" y="809.3026" x="965.84906"/>
+					    <spot h="101" z="280.66144" y="789.4168" x="977.772"/>
+					    <spot h="23" z="281.82797" y="780.1741" x="967.21124"/>
+					    <spot h="33" z="281.9342" y="797.81055" x="952.93353"/>
+					</spawn>
+					<!-- DF6_9024_Li_Guard_Pr_75_An -->
+					<spawn npc_id="885387" respawn_time="295">
+					    <spot h="17" z="283.73245" y="806.8038" x="994.1831"/>
+					    <spot h="40" z="281.48425" y="773.59875" x="982.4728"/>
+					    <spot h="60" z="283.58368" y="785.06934" x="957.453"/>
+					</spawn>
+					<!-- DF6_Artifact_90241_Li -->
+					<spawn npc_id="885329" respawn_time="295">
+						<spot x="974.58429" y="795.16168" z="280.38190" entity_id="3752"/>
+					</spawn>
+					<!-- NPC -->
+					<!-- DF6_Ragunis_E -->
+					<spawn npc_id="806798" respawn_time="295">
+					    <spot h="19" z="280.818" y="786.58167" x="968.3305"/>
+					</spawn>
+					<!-- DF6_H_V211_L_Seller -->
+					<spawn npc_id="836304" respawn_time="295">
+					    <spot h="40" z="280.93137" y="785.09814" x="978.7609"/>
+					</spawn>
+					<!-- DF6_H_V211_L_ApSeller -->
+					<spawn npc_id="836305" respawn_time="295">
+					    <spot h="41" z="280.96945" y="786.2444" x="980.45703"/>
+					</spawn>
+					<!-- DF6_H_Artifact_Tel_L -->
+					<spawn npc_id="836228" respawn_time="295">
+						<spot x="986.04541" y="797.44482" z="281.00851" entity_id="3766"/>
+					</spawn>
+					<!-- QUEST SPOT -->
+					<!-- DF6_9024_Dr_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885499" respawn_time="295">
+					    <spot h="77" z="269.42343" y="973.22504" x="916.03705"/>
+					</spawn>
+					<!-- DF6_9024_Dr_Q_Guard_As_75_An -->
+					<spawn npc_id="885500" respawn_time="295">
+					    <spot h="79" z="269.06445" y="975.46277" x="912.5155"/>
+					</spawn>
+					<!-- DF6_9024_Dr_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885501" respawn_time="295">
+					    <spot h="79" z="269.27213" y="975.96533" x="915.17694"/>
+					</spawn>
+					<!-- DF6_9024_Dr_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885502" respawn_time="295">
+					    <spot h="79" z="269.10767" y="972.61053" x="913.0373"/>
+					</spawn>
+					<!-- DF6_9024_Da_Q_Guard_Fi_75_An -->
+					<spawn npc_id="885483" respawn_time="295">
+					    <spot h="51" z="264.3719" y="714.2122" x="912.0813"/>
+					</spawn>
+					<!-- DF6_9024_Da_Q_Guard_As_75_An -->
+					<spawn npc_id="885484" respawn_time="295">
+					    <spot h="51" z="264.36917" y="718.19183" x="914.09674"/>
+					</spawn>
+					<!-- DF6_9024_Da_Q_Guard_Wi_75_An -->
+					<spawn npc_id="885485" respawn_time="295">
+					    <spot h="51" z="263.95517" y="717.19476" x="911.22406"/>
+					</spawn>
+					<!-- DF6_9024_Da_Q_Guard_Pr_75_An -->
+					<spawn npc_id="885486" respawn_time="295">
+					    <spot h="51" z="264.59814" y="715.1745" x="914.74457"/>
+					</spawn>
+				</siege_mod>
+				<siege_mod mod="SIEGE">
+				</siege_mod>
+			</siege_race>
+		</siege_spawn>
+	</spawn_map>
+</spawns>

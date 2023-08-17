@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../modifiers.xsd"/>
+	<xs:element name="item_upgrades">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item_upgrade" type="ItemUpgrade" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ItemUpgrade">
+		<xs:sequence>
+			<xs:element name="upgrade_result_item" type="UpgradeResultItem" minOccurs="0" maxOccurs="2"/>
+		</xs:sequence>
+		<xs:attribute name="upgrade_base_item" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="UpgradeResultItem">
+		<xs:sequence>
+			<xs:element name="upgrade_materials" type="UpgradeMaterials" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="need_kinah" type="NeedKinah" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="need_abyss_point" type="NeedAbyssPoint" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="item_id" type="xs:int"/>
+		<xs:attribute name="check_enchant_count" type="xs:int"/>
+		<xs:attribute name="check_authorize_count" type="xs:int"/>
+	</xs:complexType>
+	<xs:complexType name="UpgradeMaterials">
+		<xs:sequence>
+			<xs:element name="sub_material_item" type="SubMaterialItem" minOccurs="1" maxOccurs="5"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubMaterialItem">
+		<xs:attribute name="id" type="xs:int"/>
+		<xs:attribute name="count" type="xs:int"/>
+	</xs:complexType>
+	<xs:complexType name="NeedKinah">
+		<xs:attribute name="count" type="xs:int"/>
+	</xs:complexType>
+	<xs:complexType name="NeedAbyssPoint">
+		<xs:attribute name="count" type="xs:int"/>
+	</xs:complexType>
+</xs:schema>

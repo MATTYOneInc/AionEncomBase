@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Idgel Dome Landmark 5.1
+	Make By (Encom)
+ -->
+	<!-- [Instance/Group] Unpredictable Combat (Elyos Only) -->
+	<kill_in_world id="17501" start_npc_ids="806263" end_npc_ids="806262" worlds="301680000" amount="15"/>
+	<!-- [Instance/Group] Unavoidable Battle (Asmodians Only) -->
+	<kill_in_world id="27501" start_npc_ids="806265" end_npc_ids="806264" worlds="301680000" amount="15"/>
+</quest_scripts>

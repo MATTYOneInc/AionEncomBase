@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Dimensional Vortex 3.9
+	Made By (Encom)
+ -->
+<vortex_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vortex_schedule.xsd">
+	<!-- DIMENSIONAL VORTEX -->
+	<!-- エルテネン -->
+	<vortex id="1">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 19 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 3 ? * MON-SUN *</invasionTime>
+	</vortex>
+	<!-- ブルストホーニン -->
+	<vortex id="2">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 19 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 3 ? * MON-SUN *</invasionTime>
+	</vortex>
+</vortex_schedule>

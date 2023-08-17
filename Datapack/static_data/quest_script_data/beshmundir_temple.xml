@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Beshmundir Temple 2.0
+	Make By (Encom)
+ -->
+	<report_to id="30204" start_npc_ids="798926" end_npc_ids="798941"/>
+	<report_to id="30209" start_npc_ids="798941" end_npc_ids="203837"/>
+	<report_to id="30304" start_npc_ids="799225" end_npc_ids="799322"/>
+	<report_to id="30309" start_npc_ids="799322" end_npc_ids="204225"/>
+	
+	<item_collecting id="30205" start_npc_ids="798941" action_item_ids="700745 700746 700747 700748"/>
+	<item_collecting id="30206" start_npc_ids="798941" action_item_ids="700750"/>
+	<item_collecting id="30212" start_npc_ids="798941"/>
+	<item_collecting id="30214" start_npc_ids="798927"/>
+	<item_collecting id="30215" start_npc_ids="798928"/>
+	<item_collecting id="30223" start_npc_ids="799031"/>
+	<item_collecting id="30225" start_npc_ids="216527"/>
+	<item_collecting id="30226" start_npc_ids="798946"/>
+	<item_collecting id="30228" start_npc_ids="798934"/>
+	<item_collecting id="30229" start_npc_ids="798934"/>
+	<item_collecting id="30230" start_npc_ids="798934"/>
+	<item_collecting id="30231" start_npc_ids="798934"/>
+	<item_collecting id="30233" start_npc_ids="798934"/>
+	<item_collecting id="30305" start_npc_ids="799322" action_item_ids="700754 700755 700756 700757"/>
+	<item_collecting id="30306" start_npc_ids="799322" action_item_ids="700750"/>
+	<item_collecting id="30312" start_npc_ids="799322"/>
+	<item_collecting id="30314" start_npc_ids="799226"/>
+	<item_collecting id="30315" start_npc_ids="799226"/>
+	<item_collecting id="30323" start_npc_ids="799335"/>
+	<item_collecting id="30325" start_npc_ids="216527"/>
+	<item_collecting id="30326" start_npc_ids="799244"/>
+	<item_collecting id="30328" start_npc_ids="799321"/>
+	<item_collecting id="30329" start_npc_ids="799321"/>
+	<item_collecting id="30330" start_npc_ids="799321"/>
+	<item_collecting id="30331" start_npc_ids="799321"/>
+	<item_collecting id="30333" start_npc_ids="799321"/>
+	
+	<monster_hunt id="30224" start_npc_ids="799051">
+		<monster var="0" npc_ids="216250" end_var="1"/>
+	</monster_hunt>
+	<monster_hunt id="30232" start_npc_ids="798934">
+		<monster var="0" npc_ids="216168" end_var="1"/>
+	</monster_hunt>
+	<monster_hunt id="30234" start_npc_ids="798979">
+		<monster var="0" npc_ids="216248" end_var="1"/>
+	</monster_hunt>
+	<monster_hunt id="30244" start_npc_ids="798926">
+		<monster var="0" npc_ids="216202 216283" end_var="20"/>
+		<monster var="1" npc_ids="216215 216296" end_var="10"/>
+		<monster var="2" npc_ids="216198 216279" end_var="40"/>
+	</monster_hunt>
+	<monster_hunt id="30245" start_npc_ids="798926">
+		<monster var="0" npc_ids="216228 216229 216230 216231 216232" end_var="12"/>
+	</monster_hunt>
+	<monster_hunt id="30322" start_npc_ids="799278">
+		<monster var="0" npc_ids="216239" end_var="1"/>
+	</monster_hunt>
+	<monster_hunt id="30324" start_npc_ids="799262">
+		<monster var="0" npc_ids="216250" end_var="1"/>
+	</monster_hunt>
+	<monster_hunt id="30332" start_npc_ids="799321">
+		<monster var="0" npc_ids="216168" end_var="1"/>
+	</monster_hunt>
+	<monster_hunt id="30334" start_npc_ids="799278">
+		<monster var="0" npc_ids="216248" end_var="1"/>
+	</monster_hunt>
+	<monster_hunt id="30344" start_npc_ids="799225">
+		<monster var="0" npc_ids="216202 216283" end_var="20"/>
+		<monster var="1" npc_ids="216215 216296" end_var="10"/>
+		<monster var="2" npc_ids="216198 216279" end_var="40"/>
+	</monster_hunt>
+	<monster_hunt id="30345" start_npc_ids="799225">
+		<monster var="0" npc_ids="216228 216229 216230 216231 216232" end_var="12"/>
+	</monster_hunt>
+</quest_scripts>

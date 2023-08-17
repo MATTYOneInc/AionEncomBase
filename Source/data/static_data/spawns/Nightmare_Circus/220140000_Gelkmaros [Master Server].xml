@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Gelkmaros [Master Server]
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="220140000">
+		<nightmare_circus_spawn id="12">
+			<nightmare_circus_type nstate="OPEN">
+			     <!-- Adana
+				<Dream Faerie> -->
+				<spawn npc_id="831546">
+				    <spot x="1877.2618" y="2861.102" z="554.9901" h="10"/>
+				</spawn>
+			</nightmare_circus_type>
+			<nightmare_circus_type nstate="CLOSED">
+			</nightmare_circus_type>
+		</nightmare_circus_spawn>
+    </spawn_map>
+</spawns>

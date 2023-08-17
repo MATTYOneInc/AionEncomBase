@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player_stats_templates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../stats.xsd">
+	<!-- Checked By Encom 28/07/2013 -->
+	<player_stats class="MUSE" level="1">
+		<stats_template maxHp="179" maxMp="375" power="95" health="95" agility="100" accuracy="100" knowledge="115" will="110" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="58" block="58" parry="58" main_hand_attack="14" main_hand_accuracy="188" main_hand_crit_rate="1" magic_accuracy="14" crit_spell="50" strike_resist="90" spell_resist="50"/>
+	</player_stats>
+	<!-- Checked By Encom 28/07/2013 -->
+	<player_stats class="MUSE" level="2">
+		<stats_template maxHp="216" maxMp="480" power="95" health="95" agility="100" accuracy="100" knowledge="115" will="110" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="86" block="86" parry="86" main_hand_attack="14" main_hand_accuracy="206" main_hand_crit_rate="1" magic_accuracy="28" crit_spell="50" strike_resist="90" spell_resist="50"/>
+	</player_stats>
+	<!-- Checked By Encom 28/07/2013 -->
+	<player_stats class="MUSE" level="3">
+		<stats_template maxHp="255" maxMp="585" power="95" health="95" agility="100" accuracy="100" knowledge="115" will="110" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="99" block="99" parry="99" main_hand_attack="14" main_hand_accuracy="214" main_hand_crit_rate="1" magic_accuracy="42" crit_spell="50" strike_resist="90" spell_resist="50"/>
+	</player_stats>
+	<!-- Checked By Encom 28/07/2013 -->
+	<player_stats class="MUSE" level="4">
+		<stats_template maxHp="296" maxMp="690" power="95" health="95" agility="100" accuracy="100" knowledge="115" will="110" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="111" block="111" parry="111" main_hand_attack="14" main_hand_accuracy="222" main_hand_crit_rate="1" magic_accuracy="57" crit_spell="50" strike_resist="90" spell_resist="50"/>
+	</player_stats>
+	<!-- Checked By Encom 28/07/2013 -->
+	<player_stats class="MUSE" level="5">
+		<stats_template maxHp="339" maxMp="795" power="95" health="95" agility="100" accuracy="100" knowledge="115" will="110" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="124" block="124" parry="124" main_hand_attack="14" main_hand_accuracy="230" main_hand_crit_rate="1" magic_accuracy="71" crit_spell="50" strike_resist="90" spell_resist="50"/>
+	</player_stats>
+	<!-- Checked By Encom 28/07/2013 -->
+	<player_stats class="MUSE" level="6">
+		<stats_template maxHp="383" maxMp="900" power="95" health="95" agility="100" accuracy="100" knowledge="115" will="110" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="136" block="136" parry="136" main_hand_attack="14" main_hand_accuracy="238" main_hand_crit_rate="1" magic_accuracy="85" crit_spell="50" strike_resist="90" spell_resist="50"/>
+	</player_stats>
+	<!-- Checked By Encom 28/07/2013 -->
+	<player_stats class="MUSE" level="7">
+		<stats_template maxHp="429" maxMp="1005" power="95" health="95" agility="100" accuracy="100" knowledge="115" will="110" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="148" block="148" parry="148" main_hand_attack="14" main_hand_accuracy="246" main_hand_crit_rate="1" magic_accuracy="99" crit_spell="50" strike_resist="90" spell_resist="50"/>
+	</player_stats>
+	<!-- Checked By Encom 28/07/2013 -->
+	<player_stats class="MUSE" level="8">
+		<stats_template maxHp="478" maxMp="1110" power="95" health="95" agility="100" accuracy="100" knowledge="115" will="110" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="161" block="161" parry="161" main_hand_attack="14" main_hand_accuracy="254" main_hand_crit_rate="1" magic_accuracy="114" crit_spell="50" strike_resist="90" spell_resist="50"/>
+	</player_stats>
+	<!-- Checked By Encom 28/07/2013 -->
+	<player_stats class="MUSE" level="9">
+		<stats_template maxHp="528" maxMp="1215" power="95" health="95" agility="100" accuracy="100" knowledge="115" will="110" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="173" block="173" parry="173" main_hand_attack="14" main_hand_accuracy="262" main_hand_crit_rate="1" magic_accuracy="128" crit_spell="50" strike_resist="90" spell_resist="50"/>
+	</player_stats>
+</player_stats_templates>

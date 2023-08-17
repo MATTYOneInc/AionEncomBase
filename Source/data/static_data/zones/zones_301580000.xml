@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+	<zone mapid="301580000" name="SANCTUARY_DUNGEON_301580000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="94.099998" top="124.099998">
+            <point x="448.000000" y="464.000000"/>
+			<point x="448.000000" y="512.000000"/>
+			<point x="416.000000" y="512.000000"/>
+			<point x="416.000000" y="464.000000"/>
+		</points>
+	</zone>
+</zones>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Ereshkigal/Beritra Invasion 5.3
+	Dredgion Defense
+	Made By (Encom)
+ -->
+<beritra_invasion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beritra_invasion.xsd">
+	<!-- ELYOS INVASION -->
+	<!-- エルテネン -->
+	<beritra_location id="1"/>
+	<beritra_location id="2"/>
+	<beritra_location id="3"/>
+	<!-- ベルテロン -->
+	<beritra_location id="4"/>
+	<beritra_location id="5"/>
+	<beritra_location id="6"/>
+	<!-- インタルディカ -->
+	<beritra_location id="7"/>
+	<beritra_location id="8"/>
+	<beritra_location id="9"/>
+	<!-- インギスオン -->
+	<beritra_location id="10"/>
+	<beritra_location id="11"/>
+	<beritra_location id="12"/>
+	<!-- テオボモス -->
+	<beritra_location id="13"/>
+	<beritra_location id="14"/>
+	<beritra_location id="15"/>
+	<!-- 시그니아 -->
+	<beritra_location id="51"/>
+	<beritra_location id="52"/>
+	<beritra_location id="53"/>
+	
+	<!-- ASMODIANS INVASION -->
+	<!-- モルヘイム -->
+	<beritra_location id="16"/>
+	<beritra_location id="17"/>
+	<!-- アルトガルド -->
+	<beritra_location id="18"/>
+	<beritra_location id="19"/>
+	<beritra_location id="20"/>
+	<!-- ベルスラン -->
+	<beritra_location id="21"/>
+	<beritra_location id="22"/>
+	<beritra_location id="23"/>
+	<!-- ブルストホーニン -->
+	<beritra_location id="24"/>
+	<beritra_location id="25"/>
+	<beritra_location id="26"/>
+	<!-- ゲルクマルス -->
+	<beritra_location id="27"/>
+	<beritra_location id="28"/>
+	<beritra_location id="29"/>
+	<!-- 엔샤르 -->
+	<beritra_location id="54"/>
+	<beritra_location id="55"/>
+	<beritra_location id="56"/>
+	
+	<!-- BOTH RACE INVASION -->
+	<!-- エレシュランタ -->
+	<beritra_location id="30"/>
+	<beritra_location id="31"/>
+	<beritra_location id="32"/>
+	<beritra_location id="33"/>
+	<beritra_location id="34"/>
+	
+	<!-- ERESUKIGAL INVASION 4.9 -->
+	<beritra_location id="35"/>
+	<beritra_location id="36"/>
+	<beritra_location id="37"/>
+	<beritra_location id="38"/>
+	<beritra_location id="39"/>
+	<beritra_location id="40"/>
+	
+	<!-- 分かれたカタラム -->
+	<beritra_location id="44"/>
+	<beritra_location id="45"/>
+	<beritra_location id="46"/>
+	<!-- ゲルハ -->
+	<beritra_location id="47"/>
+	<beritra_location id="48"/>
+	<beritra_location id="49"/>
+	<beritra_location id="50"/>
+	
+	<!-- DREDGION DEFENSE: SANCTUM/PANDAEMONIUM -->
+	<beritra_location id="57"/>
+	<beritra_location id="58"/>
+</beritra_invasion>

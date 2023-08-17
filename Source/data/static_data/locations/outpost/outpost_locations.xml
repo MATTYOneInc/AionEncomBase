@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	"Outpost 5.8"
+	Made By (Encom)
+ -->
+<outpost_locations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="outpost_locations.xsd">
+	<!-- [INGGISON 5.8] -->
+	<outpost_location id="101" world="210130000" name="Base 101"/>
+	<outpost_location id="102" world="210130000" name="Base 102"/>
+	<outpost_location id="103" world="210130000" name="Base 103"/>
+	<outpost_location id="104" world="210130000" name="Base 104"/>
+	<outpost_location id="105" world="210130000" name="Base 105"/>
+	<outpost_location id="106" world="210130000" name="Base 106"/>
+	<outpost_location id="107" world="210130000" name="Base 107"/>
+	
+	<!-- [GELKMAROS 5.8] -->
+	<outpost_location id="201" world="220140000" name="Base 201"/>
+	<outpost_location id="202" world="220140000" name="Base 202"/>
+	<outpost_location id="203" world="220140000" name="Base 203"/>
+	<outpost_location id="204" world="220140000" name="Base 204"/>
+	<outpost_location id="205" world="220140000" name="Base 205"/>
+	<outpost_location id="206" world="220140000" name="Base 206"/>
+	<outpost_location id="207" world="220140000" name="Base 207"/>
+</outpost_locations>

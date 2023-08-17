@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Ereshkigal/Beritra Invasion 5.3
+	Dredgion Defense
+	Made By (Encom)
+ -->
+<beritra_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beritra_schedule.xsd">
+	<!-- ELYOS INVASION -->
+	<!-- エルテネン -->
+	<beritra id="1">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="2">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="3">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<!-- ベルテロン -->
+	<beritra id="4">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="5">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="6">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<!-- インタルディカ -->
+	<beritra id="7">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="8">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="9">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<!-- インギスオン -->
+	<beritra id="10">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="11">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="12">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<!-- テオボモス -->
+	<beritra id="13">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="14">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="15">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	
+	<!-- ASMODIANS INVASION -->
+	<!-- モルヘイム -->
+	<beritra id="16">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="17">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<!-- アルトガルド -->
+	<beritra id="18">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="19">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="20">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<!-- ベルスラン -->
+	<beritra id="21">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="22">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="23">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<!-- ブルストホーニン -->
+	<beritra id="24">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="25">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="26">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<!-- ゲルクマルス -->
+	<beritra id="27">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="28">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="29">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	
+	<!-- RESHANTA INVASION -->
+	<!-- エレシュランタ -->
+	<beritra id="30">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="31">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="32">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="33">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="34">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	
+	<!-- ERESUKIGAL INVASION 4.9 -->
+	<beritra id="35">
+		<invasionTime>0 0 23 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="36">
+		<invasionTime>0 0 23 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="37">
+		<invasionTime>0 0 23 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="38">
+		<invasionTime>0 0 23 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="39">
+		<invasionTime>0 0 23 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="40">
+		<invasionTime>0 0 23 ? * MON-SUN *</invasionTime>
+	</beritra>
+	
+	<!-- KALDOR/LEVINSHOR -->
+	<!-- 分かれたカタラム -->
+	<beritra id="44">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="45">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="46">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<!-- ゲルハ -->
+	<beritra id="47">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="48">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="49">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="50">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	
+	<!-- CYGNEA/ENSHAR -->
+	<!-- 시그니아 -->
+	<beritra id="51">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="52">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="53">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<!-- 엔샤르 -->
+	<beritra id="54">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="55">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	<beritra id="56">
+		<invasionTime>0 0 11 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 17 ? * MON-SUN *</invasionTime>
+		<invasionTime>0 0 21 ? * MON-SUN *</invasionTime>
+	</beritra>
+	
+	<!-- DREDGION DEFENSE: SANCTUM/PANDAEMONIUM -->
+	<!-- Iluma -->
+	<beritra id="57">
+		<invasionTime>0 0 0/4 1/1 * ? *</invasionTime>
+	</beritra>
+	<!-- Norsvold -->
+	<beritra id="58">
+		<invasionTime>0 0 0/4 1/1 * ? *</invasionTime>
+	</beritra>
+</beritra_schedule>

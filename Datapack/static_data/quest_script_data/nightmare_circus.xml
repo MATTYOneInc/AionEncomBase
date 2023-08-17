@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest サーカス団の追加入場スクロール 4.8
+	Make By (Encom)
+ -->
+	<!-- 引き続くルーキーブーキーの陰謀 -->
+	<monster_hunt id="80334" start_npc_ids="831541 831542 831543 831544 831545 831546 831547 831548" end_npc_ids="831541 831542 831543 831544 831545 831546 831547 831548">
+		<monster var="0" npc_ids="233161" end_var="50"/>
+	</monster_hunt>
+	<!-- IU 救出のための作戦 -->
+	<monster_hunt id="80337" start_npc_ids="831550" end_npc_ids="831541 831542 831543 831544 831545 831546 831547 831548">
+		<monster var="0" npc_ids="831572" end_var="1"/>
+		<monster var="1" npc_ids="233161" end_var="1"/>
+	</monster_hunt>
+	<!-- 引き続くルーキーブーキーの陰謀 -->
+	<monster_hunt id="80342" start_npc_ids="831550" end_npc_ids="831541 831542 831543 831544 831545 831546 831547 831548">
+		<monster var="0" npc_ids="233161" end_var="10"/>
+	</monster_hunt>
+	<!-- アリアテ救出のための作戦 -->
+	<monster_hunt id="80343" start_npc_ids="831550" end_npc_ids="831541 831542 831543 831544 831545 831546 831547 831548">
+		<monster var="0" npc_ids="831572" end_var="1"/>
+		<monster var="1" npc_ids="233161" end_var="1"/>
+	</monster_hunt>
+</quest_scripts>

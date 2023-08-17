@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+    Skill Charge
+	Made By (Encom)
+ -->
+<charge_skills xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="charge_skills.xsd">
+	<charge_skill id="1" charge_set_name="EL_CursedBreath1" first="3751" second="3752" third="3753" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="3751" time="1600"/>
+		<charge skill_id="3752" time="1600"/>
+		<charge skill_id="3753" time="5000"/>
+	</charge_skill>
+	<charge_skill id="2" charge_set_name="EL_CursedBreath2" first="3754" second="3755" third="3756" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="3754" time="1600"/>
+		<charge skill_id="3755" time="1600"/>
+		<charge skill_id="3756" time="5000"/>
+	</charge_skill>
+	<charge_skill id="3" charge_set_name="EL_CursedBreath3" first="3757" second="3758" third="3759" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="3757" time="1600"/>
+		<charge skill_id="3758" time="1600"/>
+		<charge skill_id="3759" time="5000"/>
+	</charge_skill>
+	<charge_skill id="4" charge_set_name="EL_CursedBreath4" first="3760" second="3761" third="3762" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="3760" time="1600"/>
+		<charge skill_id="3761" time="1600"/>
+		<charge skill_id="3762" time="5000"/>
+	</charge_skill>
+	<charge_skill id="5" charge_set_name="EL_CursedBreath5" first="3763" second="3764" third="3765" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="3763" time="1600"/>
+		<charge skill_id="3764" time="1600"/>
+		<charge skill_id="3765" time="5000"/>
+	</charge_skill>
+	<charge_skill id="6" charge_set_name="EL_CursedBreath6" first="3766" second="3767" third="3768" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="3766" time="1600"/>
+		<charge skill_id="3767" time="1600"/>
+		<charge skill_id="3768" time="5000"/>
+	</charge_skill>
+	<charge_skill id="7" charge_set_name="EL_CursedBreath7" first="3769" second="3770" third="3771" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="3769" time="1600"/>
+		<charge skill_id="3770" time="1600"/>
+		<charge skill_id="3771" time="5000"/>
+	</charge_skill>
+	<charge_skill id="8" charge_set_name="EL_CursedBreath8" first="3772" second="3773" third="3774" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="3772" time="1600"/>
+		<charge skill_id="3773" time="1600"/>
+		<charge skill_id="3774" time="5000"/>
+	</charge_skill>
+	<charge_skill id="9" charge_set_name="FI_BladeShock1" first="727" second="728" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="727" time="1900"/>
+		<charge skill_id="728" time="7000"/>
+	</charge_skill>
+	<charge_skill id="10" charge_set_name="FI_BladeShock2" first="729" second="730" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="729" time="1900"/>
+		<charge skill_id="730" time="7000"/>
+	</charge_skill>
+	<charge_skill id="11" charge_set_name="FI_BladeShock3" first="731" second="732" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="731" time="1900"/>
+		<charge skill_id="732" time="7000"/>
+	</charge_skill>
+	<charge_skill id="12" charge_set_name="Ar_SongofBattle1" first="4300" second="4301" third="4302" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4300" time="1500"/>
+		<charge skill_id="4301" time="1500"/>
+		<charge skill_id="4302" time="7000"/>
+	</charge_skill>
+	<charge_skill id="13" charge_set_name="Ar_SongofBattle2" first="4303" second="4304" third="4305" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4303" time="1500"/>
+		<charge skill_id="4304" time="1500"/>
+		<charge skill_id="4305" time="7000"/>
+	</charge_skill>
+	<charge_skill id="14" charge_set_name="Ar_SongofBattle3" first="4306" second="4307" third="4308" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4306" time="1500"/>
+		<charge skill_id="4307" time="1500"/>
+		<charge skill_id="4308" time="7000"/>
+	</charge_skill>
+	<charge_skill id="15" charge_set_name="Ar_SongofBattle4" first="4309" second="4310" third="4311" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4309" time="1500"/>
+		<charge skill_id="4310" time="1500"/>
+		<charge skill_id="4311" time="7000"/>
+	</charge_skill>
+	<charge_skill id="16" charge_set_name="Ar_SongofBattle5" first="4312" second="4313" third="4314" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4312" time="1500"/>
+		<charge skill_id="4313" time="1500"/>
+		<charge skill_id="4314" time="7000"/>
+	</charge_skill>
+	<charge_skill id="17" charge_set_name="Ar_SongofBattle6" first="4315" second="4316" third="4317" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4315" time="1500"/>
+		<charge skill_id="4316" time="1500"/>
+		<charge skill_id="4317" time="7000"/>
+	</charge_skill>
+	<charge_skill id="18" charge_set_name="Ar_SongofBattle7" first="4318" second="4319" third="4320" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4318" time="1500"/>
+		<charge skill_id="4319" time="1500"/>
+		<charge skill_id="4320" time="7000"/>
+	</charge_skill>
+	<charge_skill id="19" charge_set_name="Ar_SongofBattle8" first="4321" second="4322" third="4323" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4321" time="1500"/>
+		<charge skill_id="4322" time="1500"/>
+		<charge skill_id="4323" time="7000"/>
+	</charge_skill>
+	<charge_skill id="20" charge_set_name="Ar_SongofBattle9" first="4324" second="4325" third="4326" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4324" time="1500"/>
+		<charge skill_id="4325" time="1500"/>
+		<charge skill_id="4326" time="7000"/>
+	</charge_skill>
+	<charge_skill id="21" charge_set_name="Ar_SongofBattle10" first="4327" second="4328" third="4329" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4327" time="1500"/>
+		<charge skill_id="4328" time="1500"/>
+		<charge skill_id="4329" time="7000"/>
+	</charge_skill>
+	<charge_skill id="22" charge_set_name="Ar_SongofBattle11" first="4330" second="4331" third="4332" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4330" time="1500"/>
+		<charge skill_id="4331" time="1500"/>
+		<charge skill_id="4332" time="7000"/>
+	</charge_skill>
+	<charge_skill id="23" charge_set_name="Ar_SongofBattle12" first="4333" second="4334" third="4335" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4333" time="1500"/>
+		<charge skill_id="4334" time="1500"/>
+		<charge skill_id="4335" time="7000"/>
+	</charge_skill>
+	<charge_skill id="24" charge_set_name="Ba_SongofGravity1" first="4425" second="4426" third="4427" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4425" time="1500"/>
+		<charge skill_id="4426" time="1500"/>
+		<charge skill_id="4427" time="7000"/>
+	</charge_skill>
+	<charge_skill id="25" charge_set_name="Ba_SongofGravity2" first="4428" second="4429" third="4430" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4428" time="1500"/>
+		<charge skill_id="4429" time="1500"/>
+		<charge skill_id="4430" time="7000"/>
+	</charge_skill>
+	<charge_skill id="26" charge_set_name="Ba_Requiem1" first="4471" second="4472" third="4473" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4471" time="1500"/>
+		<charge skill_id="4472" time="1500"/>
+		<charge skill_id="4473" time="7000"/>
+	</charge_skill>
+	<charge_skill id="27" charge_set_name="Ba_IllusionRequiem1" first="4474" second="4475" third="4476" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4474" time="1500"/>
+		<charge skill_id="4475" time="1500"/>
+		<charge skill_id="4476" time="7000"/>
+	</charge_skill>
+	<charge_skill id="28" charge_set_name="Ba_IllusionRequiem2" first="4477" second="4478" third="4479" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4477" time="1500"/>
+		<charge skill_id="4478" time="1500"/>
+		<charge skill_id="4479" time="7000"/>
+	</charge_skill>
+	<charge_skill id="29" charge_set_name="Ba_IllusionRequiem3" first="4480" second="4481" third="4482" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4480" time="1500"/>
+		<charge skill_id="4481" time="1500"/>
+		<charge skill_id="4482" time="7000"/>
+	</charge_skill>
+	<charge_skill id="30" charge_set_name="Ba_SongofMassheal1" first="4503" second="4504" third="4505" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4503" time="1600"/>
+		<charge skill_id="4504" time="1600"/>
+		<charge skill_id="4505" time="7000"/>
+	</charge_skill>
+	<charge_skill id="31" charge_set_name="Ba_SongofMassheal2" first="4506" second="4507" third="4508" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4506" time="1600"/>
+		<charge skill_id="4507" time="1600"/>
+		<charge skill_id="4508" time="7000"/>
+	</charge_skill>
+	<charge_skill id="32" charge_set_name="Ba_SongofMassheal3" first="4509" second="4510" third="4511" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4509" time="1600"/>
+		<charge skill_id="4510" time="1600"/>
+		<charge skill_id="4511" time="7000"/>
+	</charge_skill>
+	<charge_skill id="33" charge_set_name="Ba_SongofMassheal4" first="4512" second="4513" third="4514" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4512" time="1600"/>
+		<charge skill_id="4513" time="1600"/>
+		<charge skill_id="4514" time="7000"/>
+	</charge_skill>
+	<charge_skill id="34" charge_set_name="Ba_SongofMassheal5" first="4515" second="4516" third="4517" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4515" time="1600"/>
+		<charge skill_id="4516" time="1600"/>
+		<charge skill_id="4517" time="7000"/>
+	</charge_skill>
+	<charge_skill id="35" charge_set_name="Ba_SongofMassheal6" first="4518" second="4519" third="4520" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4518" time="1600"/>
+		<charge skill_id="4519" time="1600"/>
+		<charge skill_id="4520" time="7000"/>
+	</charge_skill>
+	<charge_skill id="36" charge_set_name="Ba_SongofMentalicBlaster1" first="4552" second="4553" third="4554" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4552" time="1500"/>
+		<charge skill_id="4553" time="1500"/>
+		<charge skill_id="4554" time="7000"/>
+	</charge_skill>
+	<charge_skill id="37" charge_set_name="Ba_SongofMentalicBlaster2" first="4555" second="4556" third="4557" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4555" time="1500"/>
+		<charge skill_id="4556" time="1500"/>
+		<charge skill_id="4557" time="7000"/>
+	</charge_skill>
+	<charge_skill id="38" charge_set_name="Ba_SongofMentalicBlaster3" first="4558" second="4559" third="4560" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4558" time="1500"/>
+		<charge skill_id="4559" time="1500"/>
+		<charge skill_id="4560" time="7000"/>
+	</charge_skill>
+	<charge_skill id="39" charge_set_name="Ba_SongofMentalicBlaster4" first="4561" second="4562" third="4563" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4561" time="1500"/>
+		<charge skill_id="4562" time="1500"/>
+		<charge skill_id="4563" time="7000"/>
+	</charge_skill>
+	<charge_skill id="40" charge_set_name="PR_HolyLight2" first="3968" second="3969" third="3970" min_charge="900" bonus_type="MAGICAL">
+		<charge skill_id="3968" time="1900"/>
+		<charge skill_id="3969" time="1000"/>
+		<charge skill_id="3970" time="7000"/>
+	</charge_skill>
+	<charge_skill id="41" charge_set_name="PR_HolyLight3" first="3971" second="3972" third="3973" min_charge="900" bonus_type="MAGICAL">
+		<charge skill_id="3971" time="1900"/>
+		<charge skill_id="3972" time="1000"/>
+		<charge skill_id="3973" time="7000"/>
+	</charge_skill>
+	<charge_skill id="42" charge_set_name="PR_HolyLight4" first="3974" second="3975" third="3976" min_charge="900" bonus_type="MAGICAL">
+		<charge skill_id="3974" time="1900"/>
+		<charge skill_id="3975" time="1000"/>
+		<charge skill_id="3976" time="7000"/>
+	</charge_skill>
+	<charge_skill id="43" charge_set_name="PR_HolyLightwave1" first="3977" second="3978" third="3979" min_charge="900" bonus_type="MAGICAL">
+		<charge skill_id="3977" time="1900"/>
+		<charge skill_id="3978" time="1000"/>
+		<charge skill_id="3979" time="7000"/>
+	</charge_skill>
+	<charge_skill id="44" charge_set_name="WI_DeepSleep1" first="1343" second="1344" third="1345" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="1343" time="1000"/>
+		<charge skill_id="1344" time="1000"/>
+		<charge skill_id="1345" time="7000"/>
+	</charge_skill>
+	<charge_skill id="45" charge_set_name="Gu_BindingCannon1" first="1954" second="1955" third="1956" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="1954" time="1500"/>
+		<charge skill_id="1955" time="1400"/>
+		<charge skill_id="1956" time="7000"/>
+	</charge_skill>
+	<charge_skill id="46" charge_set_name="Gu_CondensedBlaster1" first="2015" second="2016" third="2017" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2015" time="1900"/>
+		<charge skill_id="2016" time="1800"/>
+		<charge skill_id="2017" time="7000"/>
+	</charge_skill>
+	<charge_skill id="47" charge_set_name="Gu_CondensedBlaster2" first="2018" second="2019" third="2020" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2018" time="1900"/>
+		<charge skill_id="2019" time="1800"/>
+		<charge skill_id="2020" time="7000"/>
+	</charge_skill>
+	<charge_skill id="48" charge_set_name="Gu_CondensedBlaster3" first="2021" second="2022" third="2023" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2021" time="1900"/>
+		<charge skill_id="2022" time="1800"/>
+		<charge skill_id="2023" time="7000"/>
+	</charge_skill>
+	<charge_skill id="49" charge_set_name="Gu_CondensedBlaster4" first="2024" second="2025" third="2026" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2024" time="1900"/>
+		<charge skill_id="2025" time="1800"/>
+		<charge skill_id="2026" time="7000"/>
+	</charge_skill>
+	<charge_skill id="50" charge_set_name="Gu_CondensedBlaster5" first="2027" second="2028" third="2029" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2027" time="1900"/>
+		<charge skill_id="2028" time="1800"/>
+		<charge skill_id="2029" time="7000"/>
+	</charge_skill>
+	<charge_skill id="51" charge_set_name="Gu_CondensedBlaster6" first="2030" second="2031" third="2032" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2030" time="1900"/>
+		<charge skill_id="2031" time="1800"/>
+		<charge skill_id="2032" time="7000"/>
+	</charge_skill>
+	<charge_skill id="52" charge_set_name="Gu_GateBlowCannon1" first="1924" second="1925" third="1926" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="1924" time="1500"/>
+		<charge skill_id="1925" time="1400"/>
+		<charge skill_id="1926" time="7000"/>
+	</charge_skill>
+	<charge_skill id="53" charge_set_name="Gu_GateBlowCannon2" first="1927" second="1928" third="1929" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="1927" time="1500"/>
+		<charge skill_id="1928" time="1400"/>
+		<charge skill_id="1929" time="7000"/>
+	</charge_skill>
+	<charge_skill id="54" charge_set_name="Gu_GateBlowCannon3" first="1930" second="1931" third="1932" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="1930" time="1500"/>
+		<charge skill_id="1931" time="1400"/>
+		<charge skill_id="1932" time="7000"/>
+	</charge_skill>
+	<charge_skill id="55" charge_set_name="Gu_GateBlowCannon4" first="1933" second="1934" third="1935" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="1933" time="1500"/>
+		<charge skill_id="1934" time="1400"/>
+		<charge skill_id="1935" time="7000"/>
+	</charge_skill>
+	<charge_skill id="56" charge_set_name="Gu_GateBlowCannon5" first="1936" second="1937" third="1938" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="1936" time="1500"/>
+		<charge skill_id="1937" time="1400"/>
+		<charge skill_id="1938" time="7000"/>
+	</charge_skill>
+	<charge_skill id="57" charge_set_name="Gu_GateBlowCannon6" first="1939" second="1940" third="1941" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="1939" time="1500"/>
+		<charge skill_id="1940" time="1400"/>
+		<charge skill_id="1941" time="7000"/>
+	</charge_skill>
+	<charge_skill id="58" charge_set_name="Gu_MentalicCannon1" first="2195" second="2196" third="2197" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2195" time="1500"/>
+		<charge skill_id="2196" time="1400"/>
+		<charge skill_id="2197" time="7000"/>
+	</charge_skill>
+	<charge_skill id="59" charge_set_name="Gu_MentalicCannon2" first="2198" second="2199" third="2200" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2198" time="1500"/>
+		<charge skill_id="2199" time="1400"/>
+		<charge skill_id="2200" time="7000"/>
+	</charge_skill>
+	<charge_skill id="60" charge_set_name="Gu_MentalicCannon3" first="2201" second="2202" third="2203" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2201" time="1500"/>
+		<charge skill_id="2202" time="1400"/>
+		<charge skill_id="2203" time="7000"/>
+	</charge_skill>
+	<charge_skill id="61" charge_set_name="Gu_VassBlaster1" first="2069" second="2070" third="2071" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2069" time="1500"/>
+		<charge skill_id="2070" time="1400"/>
+		<charge skill_id="2071" time="7000"/>
+	</charge_skill>
+	<charge_skill id="62" charge_set_name="Gu_VassBlaster2" first="2072" second="2073" third="2074" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2072" time="1500"/>
+		<charge skill_id="2073" time="1400"/>
+		<charge skill_id="2074" time="7000"/>
+	</charge_skill>
+	<charge_skill id="63" charge_set_name="Gu_VassBlaster3" first="2075" second="2076" third="2077" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2075" time="1500"/>
+		<charge skill_id="2076" time="1400"/>
+		<charge skill_id="2077" time="7000"/>
+	</charge_skill>
+	<charge_skill id="64" charge_set_name="Gu_VassBlaster4" first="2078" second="2079" third="2080" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2078" time="1500"/>
+		<charge skill_id="2079" time="1400"/>
+		<charge skill_id="2080" time="7000"/>
+	</charge_skill>
+	<charge_skill id="65" charge_set_name="Gu_VassBlaster5" first="2081" second="2082" third="2083" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2081" time="1500"/>
+		<charge skill_id="2082" time="1400"/>
+		<charge skill_id="2083" time="7000"/>
+	</charge_skill>
+	<charge_skill id="66" charge_set_name="Gu_VassBlaster6" first="2084" second="2085" third="2086" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2084" time="1500"/>
+		<charge skill_id="2085" time="1400"/>
+		<charge skill_id="2086" time="7000"/>
+	</charge_skill>
+	<charge_skill id="67" charge_set_name="Gu_VassBlaster7" first="2087" second="2088" third="2089" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2087" time="1500"/>
+		<charge skill_id="2088" time="1400"/>
+		<charge skill_id="2089" time="7000"/>
+	</charge_skill>
+	<charge_skill id="68" charge_set_name="Gu_VassBlaster8" first="2090" second="2091" third="2092" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2090" time="1500"/>
+		<charge skill_id="2091" time="1400"/>
+		<charge skill_id="2092" time="7000"/>
+	</charge_skill>
+	<charge_skill id="69" charge_set_name="Gu_ShockCannon1" first="2232" second="2233" third="2234" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2232" time="1500"/>
+		<charge skill_id="2233" time="1400"/>
+		<charge skill_id="2234" time="7000"/>
+	</charge_skill>
+	<charge_skill id="70" charge_set_name="Gu_ShockCannon2" first="2235" second="2236" third="2237" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2235" time="1500"/>
+		<charge skill_id="2236" time="1400"/>
+		<charge skill_id="2237" time="7000"/>
+	</charge_skill>
+	<charge_skill id="71" charge_set_name="Gu_ShockCannon3" first="2238" second="2239" third="2240" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2238" time="1500"/>
+		<charge skill_id="2239" time="1400"/>
+		<charge skill_id="2240" time="7000"/>
+	</charge_skill>
+	<charge_skill id="72" charge_set_name="Gu_ShockCannon4" first="2241" second="2242" third="2243" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2241" time="1500"/>
+		<charge skill_id="2242" time="1400"/>
+		<charge skill_id="2243" time="7000"/>
+	</charge_skill>
+	<charge_skill id="73" charge_set_name="Gu_ShockCannon5" first="2244" second="2245" third="2246" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2244" time="1500"/>
+		<charge skill_id="2245" time="1400"/>
+		<charge skill_id="2246" time="7000"/>
+	</charge_skill>
+	<charge_skill id="74" charge_set_name="Gu_ShockCannon6" first="2247" second="2248" third="2249" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2247" time="1500"/>
+		<charge skill_id="2248" time="1400"/>
+		<charge skill_id="2249" time="7000"/>
+	</charge_skill>
+	<charge_skill id="75" charge_set_name="Gu_ShockCannon7" first="2250" second="2251" third="2252" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2250" time="1500"/>
+		<charge skill_id="2251" time="1400"/>
+		<charge skill_id="2252" time="7000"/>
+	</charge_skill>
+	<charge_skill id="76" charge_set_name="Gu_ShockCannon8" first="2253" second="2254" third="2255" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2253" time="1500"/>
+		<charge skill_id="2254" time="1400"/>
+		<charge skill_id="2255" time="7000"/>
+	</charge_skill>
+	<charge_skill id="77" charge_set_name="Gu_SoulBreakCannon1" first="2274" second="2275" third="2276" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2274" time="1900"/>
+		<charge skill_id="2275" time="1800"/>
+		<charge skill_id="2276" time="7000"/>
+	</charge_skill>
+	<charge_skill id="78" charge_set_name="Gu_SoulBreakCannon2" first="2277" second="2278" third="2279" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2277" time="1900"/>
+		<charge skill_id="2278" time="1800"/>
+		<charge skill_id="2279" time="7000"/>
+	</charge_skill>
+	<charge_skill id="79" charge_set_name="Gu_SoulBreakCannon3" first="2280" second="2281" third="2282" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2280" time="1900"/>
+		<charge skill_id="2281" time="1800"/>
+		<charge skill_id="2282" time="7000"/>
+	</charge_skill>
+	<charge_skill id="80" charge_set_name="Gu_SoulBreakCannon4" first="2283" second="2284" third="2285" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2283" time="1900"/>
+		<charge skill_id="2284" time="1800"/>
+		<charge skill_id="2285" time="7000"/>
+	</charge_skill>
+	<charge_skill id="81" charge_set_name="Gu_SoulBreakCannon5" first="2286" second="2287" third="2288" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2286" time="1900"/>
+		<charge skill_id="2287" time="1800"/>
+		<charge skill_id="2288" time="7000"/>
+	</charge_skill>
+	<charge_skill id="82" charge_set_name="Gu_SoulBreakCannon6" first="2289" second="2290" third="2291" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2289" time="1900"/>
+		<charge skill_id="2290" time="1800"/>
+		<charge skill_id="2291" time="7000"/>
+	</charge_skill>
+	<charge_skill id="83" charge_set_name="Gu_SoulBreakCannon7" first="2292" second="2293" third="2294" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2292" time="1900"/>
+		<charge skill_id="2293" time="1800"/>
+		<charge skill_id="2294" time="7000"/>
+	</charge_skill>
+	<charge_skill id="84" charge_set_name="Gu_SoulBreakCannon8" first="2295" second="2296" third="2297" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2295" time="1900"/>
+		<charge skill_id="2296" time="1800"/>
+		<charge skill_id="2297" time="7000"/>
+	</charge_skill>
+	<charge_skill id="85" charge_set_name="Gu_FlameCannon1" first="2298" second="2299" third="2300" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2298" time="1500"/>
+		<charge skill_id="2299" time="1400"/>
+		<charge skill_id="2300" time="7000"/>
+	</charge_skill>
+	<charge_skill id="86" charge_set_name="Gu_FlameCannon2" first="2301" second="2302" third="2303" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2301" time="1500"/>
+		<charge skill_id="2302" time="1400"/>
+		<charge skill_id="2303" time="7000"/>
+	</charge_skill>
+	<charge_skill id="87" charge_set_name="Gu_FlameCannon3" first="2304" second="2305" third="2306" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2304" time="1500"/>
+		<charge skill_id="2305" time="1400"/>
+		<charge skill_id="2306" time="7000"/>
+	</charge_skill>
+	<charge_skill id="88" charge_set_name="Gu_FlameCannon4" first="2307" second="2308" third="2309" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2307" time="1500"/>
+		<charge skill_id="2308" time="1400"/>
+		<charge skill_id="2309" time="7000"/>
+	</charge_skill>
+	<charge_skill id="89" charge_set_name="Gu_FlameCannon5" first="2310" second="2311" third="2312" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2310" time="1500"/>
+		<charge skill_id="2311" time="1400"/>
+		<charge skill_id="2312" time="7000"/>
+	</charge_skill>
+	<charge_skill id="90" charge_set_name="Gu_FlameCannon6" first="2313" second="2314" third="2315" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2313" time="1500"/>
+		<charge skill_id="2314" time="1400"/>
+		<charge skill_id="2315" time="7000"/>
+	</charge_skill>
+	<charge_skill id="91" charge_set_name="Gu_FlameCannon7" first="2316" second="2317" third="2318" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2316" time="1500"/>
+		<charge skill_id="2317" time="1400"/>
+		<charge skill_id="2318" time="7000"/>
+	</charge_skill>
+	<charge_skill id="92" charge_set_name="Gu_FlameCannon8" first="2319" second="2320" third="2321" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2319" time="1500"/>
+		<charge skill_id="2320" time="1400"/>
+		<charge skill_id="2321" time="7000"/>
+	</charge_skill>
+	<charge_skill id="93" charge_set_name="Gu_FireCannon1" first="2322" second="2323" third="2324" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2322" time="1500"/>
+		<charge skill_id="2323" time="1400"/>
+		<charge skill_id="2324" time="7000"/>
+	</charge_skill>
+	<charge_skill id="94" charge_set_name="Gu_FireCannon2" first="2325" second="2326" third="2327" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2325" time="1500"/>
+		<charge skill_id="2326" time="1400"/>
+		<charge skill_id="2327" time="7000"/>
+	</charge_skill>
+	<charge_skill id="95" charge_set_name="Gu_FireCannon3" first="2328" second="2329" third="2330" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2328" time="1500"/>
+		<charge skill_id="2329" time="1400"/>
+		<charge skill_id="2330" time="7000"/>
+	</charge_skill>
+	<charge_skill id="96" charge_set_name="Gu_FireCannon4" first="2331" second="2332" third="2333" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2331" time="1500"/>
+		<charge skill_id="2332" time="1400"/>
+		<charge skill_id="2333" time="7000"/>
+	</charge_skill>
+	<charge_skill id="97" charge_set_name="Gu_FireCannon5" first="2334" second="2335" third="2336" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2334" time="1500"/>
+		<charge skill_id="2335" time="1400"/>
+		<charge skill_id="2336" time="7000"/>
+	</charge_skill>
+	<charge_skill id="98" charge_set_name="Gu_FireCannon6" first="2337" second="2338" third="2339" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2337" time="1500"/>
+		<charge skill_id="2338" time="1400"/>
+		<charge skill_id="2339" time="7000"/>
+	</charge_skill>
+	<charge_skill id="99" charge_set_name="Gu_FireCannon7" first="2340" second="2341" third="2342" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2340" time="1500"/>
+		<charge skill_id="2341" time="1400"/>
+		<charge skill_id="2342" time="7000"/>
+	</charge_skill>
+	<charge_skill id="100" charge_set_name="Gu_FireCannon8" first="2343" second="2344" third="2345" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2343" time="1500"/>
+		<charge skill_id="2344" time="1400"/>
+		<charge skill_id="2345" time="7000"/>
+	</charge_skill>
+	<charge_skill id="101" charge_set_name="Gu_FireCannon9" first="2346" second="2347" third="2348" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2346" time="1500"/>
+		<charge skill_id="2347" time="1400"/>
+		<charge skill_id="2348" time="7000"/>
+	</charge_skill>
+	<charge_skill id="102" charge_set_name="Gu_WingBlaster1" first="2004" second="2005" third="2006" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2004" time="1500"/>
+		<charge skill_id="2005" time="1400"/>
+		<charge skill_id="2006" time="7000"/>
+	</charge_skill>
+	<charge_skill id="103" charge_set_name="Gu_MentalicBlaster1" first="2204" second="2205" third="2206" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2204" time="1900"/>
+		<charge skill_id="2205" time="1800"/>
+		<charge skill_id="2206" time="7000"/>
+	</charge_skill>
+	<charge_skill id="104" charge_set_name="Gu_MentalicBlaster2" first="2207" second="2208" third="2209" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2207" time="1900"/>
+		<charge skill_id="2208" time="1800"/>
+		<charge skill_id="2209" time="7000"/>
+	</charge_skill>
+	<charge_skill id="105" charge_set_name="GU_SupportFire1" first="2371" second="2372" third="2373" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2371" time="1900"/>
+		<charge skill_id="2372" time="1800"/>
+		<charge skill_id="2373" time="7000"/>
+	</charge_skill>
+	<charge_skill id="106" charge_set_name="GU_SupportFire2" first="2374" second="2375" third="2376" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2374" time="1900"/>
+		<charge skill_id="2375" time="1800"/>
+		<charge skill_id="2376" time="7000"/>
+	</charge_skill>
+	<charge_skill id="107" charge_set_name="GU_SupportFire3" first="2377" second="2378" third="2379" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2377" time="1900"/>
+		<charge skill_id="2378" time="1800"/>
+		<charge skill_id="2379" time="7000"/>
+	</charge_skill>
+	<charge_skill id="108" charge_set_name="RI_ChargedPunch1" first="2606" second="2607" third="2608" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2606" time="1100"/>
+		<charge skill_id="2607" time="1700"/>
+		<charge skill_id="2608" time="5000"/>
+	</charge_skill>
+	<charge_skill id="109" charge_set_name="RI_ChargedPunch2" first="2609" second="2610" third="2611" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2609" time="1100"/>
+		<charge skill_id="2610" time="1700"/>
+		<charge skill_id="2611" time="5000"/>
+	</charge_skill>
+	<charge_skill id="110" charge_set_name="RI_ChargedPunch3" first="2612" second="2613" third="2614" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2612" time="1100"/>
+		<charge skill_id="2613" time="1700"/>
+		<charge skill_id="2614" time="5000"/>
+	</charge_skill>
+	<charge_skill id="111" charge_set_name="RI_ChargedPunch4" first="2615" second="2616" third="2617" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2615" time="1100"/>
+		<charge skill_id="2616" time="1700"/>
+		<charge skill_id="2617" time="5000"/>
+	</charge_skill>
+	<charge_skill id="112" charge_set_name="RI_ChargedPunch5" first="2618" second="2619" third="2620" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2618" time="1100"/>
+		<charge skill_id="2619" time="1700"/>
+		<charge skill_id="2620" time="5000"/>
+	</charge_skill>
+	<charge_skill id="113" charge_set_name="RI_ChargedPunch6" first="2621" second="2622" third="2623" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2621" time="1100"/>
+		<charge skill_id="2622" time="1700"/>
+		<charge skill_id="2623" time="5000"/>
+	</charge_skill>
+	<charge_skill id="114" charge_set_name="RI_ChargedPunch7" first="2624" second="2625" third="2626" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2624" time="1100"/>
+		<charge skill_id="2625" time="1700"/>
+		<charge skill_id="2626" time="5000"/>
+	</charge_skill>
+	<charge_skill id="115" charge_set_name="RI_ChargedPunch8" first="2627" second="2628" third="2629" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2627" time="1100"/>
+		<charge skill_id="2628" time="1700"/>
+		<charge skill_id="2629" time="5000"/>
+	</charge_skill>
+	<charge_skill id="116" charge_set_name="RI_ChargedPunch9" first="2630" second="2631" third="2632" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2630" time="1100"/>
+		<charge skill_id="2631" time="1700"/>
+		<charge skill_id="2632" time="5000"/>
+	</charge_skill>
+	<charge_skill id="117" charge_set_name="RI_ChargedPunch10" first="2633" second="2634" third="2635" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2633" time="1100"/>
+		<charge skill_id="2634" time="1700"/>
+		<charge skill_id="2635" time="5000"/>
+	</charge_skill>
+	<charge_skill id="118" charge_set_name="RI_ChargedPunch11" first="2636" second="2637" third="2638" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2636" time="1100"/>
+		<charge skill_id="2637" time="1700"/>
+		<charge skill_id="2638" time="5000"/>
+	</charge_skill>
+	<charge_skill id="119" charge_set_name="RI_ChargedPunch12" first="2639" second="2640" third="2641" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2639" time="1100"/>
+		<charge skill_id="2640" time="1700"/>
+		<charge skill_id="2641" time="5000"/>
+	</charge_skill>
+	<charge_skill id="120" charge_set_name="RI_EathiumBlast1" first="2666" second="2667" third="2668" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2666" time="1100"/>
+		<charge skill_id="2667" time="1700"/>
+		<charge skill_id="2668" time="5000"/>
+	</charge_skill>
+	<charge_skill id="121" charge_set_name="RI_EathiumBlast2" first="2669" second="2670" third="2671" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2669" time="1100"/>
+		<charge skill_id="2670" time="1700"/>
+		<charge skill_id="2671" time="5000"/>
+	</charge_skill>
+	<charge_skill id="122" charge_set_name="RI_EathiumBlast3" first="2672" second="2673" third="2674" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2672" time="1100"/>
+		<charge skill_id="2673" time="1700"/>
+		<charge skill_id="2674" time="5000"/>
+	</charge_skill>
+	<charge_skill id="123" charge_set_name="RI_EathiumBlast4" first="2675" second="2676" third="2677" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2675" time="1100"/>
+		<charge skill_id="2676" time="1700"/>
+		<charge skill_id="2677" time="5000"/>
+	</charge_skill>
+	<charge_skill id="124" charge_set_name="RI_EathiumBlast5" first="2678" second="2679" third="2680" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2678" time="1100"/>
+		<charge skill_id="2679" time="1700"/>
+		<charge skill_id="2680" time="5000"/>
+	</charge_skill>
+	<charge_skill id="125" charge_set_name="RI_EathiumBlast6" first="2681" second="2682" third="2683" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2681" time="1100"/>
+		<charge skill_id="2682" time="1700"/>
+		<charge skill_id="2683" time="5000"/>
+	</charge_skill>
+	<charge_skill id="126" charge_set_name="RI_EathiumBlast7" first="2684" second="2685" third="2686" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2684" time="1100"/>
+		<charge skill_id="2685" time="1700"/>
+		<charge skill_id="2686" time="5000"/>
+	</charge_skill>
+	<charge_skill id="127" charge_set_name="RI_EathiumBlast8" first="2687" second="2688" third="2689" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2687" time="1100"/>
+		<charge skill_id="2688" time="1700"/>
+		<charge skill_id="2689" time="5000"/>
+	</charge_skill>
+	<charge_skill id="128" charge_set_name="RI_EathiumBeam1" first="2582" second="2583" third="2584" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2582" time="1100"/>
+		<charge skill_id="2583" time="1700"/>
+		<charge skill_id="2584" time="5000"/>
+	</charge_skill>
+	<charge_skill id="129" charge_set_name="RI_EathiumBeam2" first="2585" second="2586" third="2587" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2585" time="1100"/>
+		<charge skill_id="2586" time="1700"/>
+		<charge skill_id="2587" time="5000"/>
+	</charge_skill>
+	<charge_skill id="130" charge_set_name="RI_EathiumBeam3" first="2588" second="2589" third="2590" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2588" time="1100"/>
+		<charge skill_id="2589" time="1700"/>
+		<charge skill_id="2590" time="5000"/>
+	</charge_skill>
+	<charge_skill id="131" charge_set_name="RI_EathiumBeam4" first="2591" second="2592" third="2593" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2591" time="1100"/>
+		<charge skill_id="2592" time="1700"/>
+		<charge skill_id="2593" time="5000"/>
+	</charge_skill>
+	<charge_skill id="132" charge_set_name="RI_EathiumBeam5" first="2594" second="2595" third="2596" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2594" time="1100"/>
+		<charge skill_id="2595" time="1700"/>
+		<charge skill_id="2596" time="5000"/>
+	</charge_skill>
+	<charge_skill id="133" charge_set_name="RI_EathiumBeam6" first="2597" second="2598" third="2599" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2597" time="1100"/>
+		<charge skill_id="2598" time="1700"/>
+		<charge skill_id="2599" time="5000"/>
+	</charge_skill>
+	<charge_skill id="134" charge_set_name="RI_EathiumBeam7" first="2600" second="2601" third="2602" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2600" time="1100"/>
+		<charge skill_id="2601" time="1700"/>
+		<charge skill_id="2602" time="5000"/>
+	</charge_skill>
+	<charge_skill id="135" charge_set_name="RI_EathiumBeam8" first="2603" second="2604" third="2605" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2603" time="1100"/>
+		<charge skill_id="2604" time="1700"/>
+		<charge skill_id="2605" time="5000"/>
+	</charge_skill>
+	<charge_skill id="136" charge_set_name="RI_FlameThrow1" first="2642" second="2643" third="2644" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2642" time="1100"/>
+		<charge skill_id="2643" time="1700"/>
+		<charge skill_id="2644" time="5000"/>
+	</charge_skill>
+	<charge_skill id="137" charge_set_name="RI_FlameThrow2" first="2645" second="2646" third="2647" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2645" time="1100"/>
+		<charge skill_id="2646" time="1700"/>
+		<charge skill_id="2647" time="5000"/>
+	</charge_skill>
+	<charge_skill id="138" charge_set_name="RI_FlameThrow3" first="2648" second="2649" third="2650" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2648" time="1100"/>
+		<charge skill_id="2649" time="1700"/>
+		<charge skill_id="2650" time="5000"/>
+	</charge_skill>
+	<charge_skill id="139" charge_set_name="RI_FlameThrow4" first="2651" second="2652" third="2653" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2651" time="1100"/>
+		<charge skill_id="2652" time="1700"/>
+		<charge skill_id="2653" time="5000"/>
+	</charge_skill>
+	<charge_skill id="140" charge_set_name="RI_FlameThrow5" first="2654" second="2655" third="2656" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2654" time="1100"/>
+		<charge skill_id="2655" time="1700"/>
+		<charge skill_id="2656" time="5000"/>
+	</charge_skill>
+	<charge_skill id="141" charge_set_name="RI_FlameThrow6" first="2657" second="2658" third="2659" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2657" time="1100"/>
+		<charge skill_id="2658" time="1700"/>
+		<charge skill_id="2659" time="5000"/>
+	</charge_skill>
+	<charge_skill id="142" charge_set_name="RI_FlameThrow7" first="2660" second="2661" third="2662" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2660" time="1100"/>
+		<charge skill_id="2661" time="1700"/>
+		<charge skill_id="2662" time="5000"/>
+	</charge_skill>
+	<charge_skill id="143" charge_set_name="RI_FlameThrow8" first="2663" second="2664" third="2665" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2663" time="1100"/>
+		<charge skill_id="2664" time="1700"/>
+		<charge skill_id="2665" time="5000"/>
+	</charge_skill>
+	<charge_skill id="144" charge_set_name="RI_EathiumReactive1" first="2464" second="2465" third="2466" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2464" time="1100"/>
+		<charge skill_id="2465" time="1700"/>
+		<charge skill_id="2466" time="5000"/>
+	</charge_skill>
+	<charge_skill id="145" charge_set_name="RI_EathiumReactive2" first="2467" second="2468" third="2469" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2467" time="1100"/>
+		<charge skill_id="2468" time="1700"/>
+		<charge skill_id="2469" time="5000"/>
+	</charge_skill>
+	<charge_skill id="146" charge_set_name="RI_EathiumReactive3" first="2470" second="2471" third="2472" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2470" time="1100"/>
+		<charge skill_id="2471" time="1700"/>
+		<charge skill_id="2472" time="5000"/>
+	</charge_skill>
+	<charge_skill id="147" charge_set_name="RI_EathiumReactive4" first="2473" second="2474" third="2475" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2473" time="1100"/>
+		<charge skill_id="2474" time="1700"/>
+		<charge skill_id="2475" time="5000"/>
+	</charge_skill>
+	<charge_skill id="148" charge_set_name="RI_EathiumReactive5" first="2476" second="2477" third="2478" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2476" time="1100"/>
+		<charge skill_id="2477" time="1700"/>
+		<charge skill_id="2478" time="5000"/>
+	</charge_skill>
+	<charge_skill id="149" charge_set_name="RI_EathiumReactive6" first="2479" second="2480" third="2481" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2479" time="1100"/>
+		<charge skill_id="2480" time="1700"/>
+		<charge skill_id="2481" time="5000"/>
+	</charge_skill>
+	<charge_skill id="150" charge_set_name="RI_EathiumReactive7" first="2482" second="2483" third="2484" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2482" time="1100"/>
+		<charge skill_id="2483" time="1700"/>
+		<charge skill_id="2484" time="5000"/>
+	</charge_skill>
+	<charge_skill id="151" charge_set_name="RI_EathiumReactive8" first="2485" second="2486" third="2487" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2485" time="1100"/>
+		<charge skill_id="2486" time="1700"/>
+		<charge skill_id="2487" time="5000"/>
+	</charge_skill>
+	<charge_skill id="152" charge_set_name="RI_OverloadExplosion1" first="2852" second="2853" third="2854" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2852" time="1900"/>
+		<charge skill_id="2853" time="1800"/>
+		<charge skill_id="2854" time="7000"/>
+	</charge_skill>
+	<charge_skill id="153" charge_set_name="RI_OverloadExplosion2" first="2855" second="2856" third="2857" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2855" time="1900"/>
+		<charge skill_id="2856" time="1800"/>
+		<charge skill_id="2857" time="7000"/>
+	</charge_skill>
+	<charge_skill id="154" charge_set_name="RI_OverloadExplosion3" first="2858" second="2859" third="2860" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="2858" time="1900"/>
+		<charge skill_id="2859" time="1800"/>
+		<charge skill_id="2860" time="7000"/>
+	</charge_skill>
+	<charge_skill id="155" charge_set_name="PO_Tank_Kamar_Shot_Set" first="21439" second="21452" third="21453" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="21439" time="1000"/>
+		<charge skill_id="21452" time="1500"/>
+		<charge skill_id="21453" time="3000"/>
+	</charge_skill>
+	<charge_skill id="156" charge_set_name="CH_HarshThrust1" first="4615" second="4616" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4615" time="1200"/>
+		<charge skill_id="4616" time="7000"/>
+	</charge_skill>
+	<charge_skill id="157" charge_set_name="CH_HarshThrust2" first="4617" second="4618" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4617" time="1200"/>
+		<charge skill_id="4618" time="7000"/>
+	</charge_skill>
+	<charge_skill id="158" charge_set_name="CH_HarshThrust3" first="4619" second="4620" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4619" time="1200"/>
+		<charge skill_id="4620" time="7000"/>
+	</charge_skill>
+	<charge_skill id="159" charge_set_name="CH_HarshThrust4" first="4621" second="4622" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4621" time="1200"/>
+		<charge skill_id="4622" time="7000"/>
+	</charge_skill>
+	<charge_skill id="160" charge_set_name="CH_HarshThrust5" first="4623" second="4624" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4623" time="1200"/>
+		<charge skill_id="4624" time="7000"/>
+	</charge_skill>
+	<charge_skill id="161" charge_set_name="CH_HarshThrust6" first="4625" second="4626" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4625" time="1200"/>
+		<charge skill_id="4626" time="7000"/>
+	</charge_skill>
+	<charge_skill id="162" charge_set_name="CH_HarshThrust7" first="4627" second="4628" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4627" time="1200"/>
+		<charge skill_id="4628" time="7000"/>
+	</charge_skill>
+	<charge_skill id="163" charge_set_name="CH_HarshThrust8" first="4629" second="4630" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4629" time="1200"/>
+		<charge skill_id="4630" time="7000"/>
+	</charge_skill>
+	<charge_skill id="164" charge_set_name="WI_FlameLance1" first="4666" second="4667" min_charge="400" bonus_type="MAGICAL">
+		<charge skill_id="4666" time="1400"/>
+		<charge skill_id="4667" time="5000"/>
+	</charge_skill>
+	<charge_skill id="165" charge_set_name="PR_HolyLight1" first="4689" second="4690" third="4691" min_charge="900" bonus_type="MAGICAL">
+		<charge skill_id="4689" time="1900"/>
+		<charge skill_id="4690" time="1000"/>
+		<charge skill_id="4691" time="7000"/>
+	</charge_skill>
+	<charge_skill id="166" charge_set_name="HDE_RockHardFist1" first="4764" second="4765" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4764" time="1000"/>
+		<charge skill_id="4765" time="5000"/>
+	</charge_skill>
+	<charge_skill id="167" charge_set_name="EV_HolyLightwave1" first="4780" second="4781" third="4782" min_charge="900" bonus_type="MAGICAL">
+		<charge skill_id="4780" time="1400"/>
+		<charge skill_id="4781" time="1000"/>
+		<charge skill_id="4782" time="7000"/>
+	</charge_skill>
+	<charge_skill id="168" charge_set_name="EV_ChargedPunch1" first="4797" second="4798" third="4799" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4797" time="1100"/>
+		<charge skill_id="4798" time="1700"/>
+		<charge skill_id="4799" time="5000"/>
+	</charge_skill>
+	<charge_skill id="169" charge_set_name="IDTransform_HDE_RockHardFist1" first="4820" second="4821" min_charge="400" bonus_type="PHYSICAL">
+		<charge skill_id="4820" time="1000"/>
+		<charge skill_id="4821" time="5000"/>
+	</charge_skill>
+</charge_skills>

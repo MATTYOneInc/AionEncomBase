@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Agent Fight 4.7
+	Tiamaranta's Eye 5.8
+	Made By (Encom)
+ -->
+<agent_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="agent_schedule.xsd">
+	<!-- [AGENT FIGHT LEVINSHOR 4.7] -->
+	<!-- [EMPOWERED MASTARIUS & EMPOWERED VEILLE] -->
+	<agent id="1">
+		<fightTime>0 0 10 ? * MON-SUN *</fightTime>
+		<fightTime>0 0 12 ? * MON-SAT *</fightTime>
+		<fightTime>0 0 18 ? * MON-SUN *</fightTime>
+		<fightTime>0 0 0 ? * MON-SUN *</fightTime>
+		<fightTime>0 0 8 ? * MON-SUN *</fightTime>
+	</agent>
+	
+	<!-- 레이드 몬스터 수나야카
+	레이드 몬스터 수나야카 편집
+	요일별 정해진 시간이 되면, 사령관 실에 수나야카가 등장한다.
+	수나야카는 대규모 인원이 모여서 공략해야 하는 몬스터로, 공략 성공 시 신규 늘어나는 무기와 신규 머리장식 등 좋은 보상을 획득할 수 있다
+	http://aion.power.plaync.com/wiki/%ED%8B%B0%EC%95%84%EB%A7%88%EB%9E%80%ED%83%80%EC%9D%98+%EB%88%88 -->
+	<!-- [GOVERNOR SUNAYAKA] -->
+	<agent id="2">
+		<fightTime>0 0 22 ? * MON-FRI *</fightTime>
+		<fightTime>0 0 0 ? * SAT-SUN *</fightTime>
+	</agent>
+	<agent id="4">
+		<fightTime>0 0 22 ? * MON-FRI *</fightTime>
+		<fightTime>0 0 0 ? * SAT-SUN *</fightTime>
+	</agent>
+	<!-- [BERSERKER SUNAYAKA] -->
+	<agent id="3">
+		<fightTime>0 0 20 ? * MON-FRI *</fightTime>
+	</agent>
+	<agent id="5">
+		<fightTime>0 0 20 ? * MON-FRI *</fightTime>
+	</agent>
+</agent_schedule>

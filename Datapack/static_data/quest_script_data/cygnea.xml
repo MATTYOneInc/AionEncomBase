@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Cygnea 4.8/4.9
+	Make By (Encom)
+ -->
+    <!-- Cygnea Fountain Of Luck (Elyos Only) -->
+	<fountain_rewards id="15205" start_npc_ids="701429 804788"/>
+	<!-- [Daily/Repeat] Sending A Message (Elyos Only) -->
+	<kill_in_world id="15204" start_npc_ids="804704" end_npc_ids="804704" worlds="210070000" amount="5"/>
+	<!-- [Daily] Help In Henor (Elyos Only) -->
+	<kill_in_world id="15220" start_npc_ids="804876" end_npc_ids="804876" worlds="210070000" amount="2"/>
+	<!-- [Daily] Aedra Altercation (Elyos Only) -->
+	<kill_in_world id="15221" start_npc_ids="804706" end_npc_ids="804706" worlds="210070000" amount="2"/>
+	<!-- [Daily] Erivale Expunge (Elyos Only) -->
+	<kill_in_world id="15222" start_npc_ids="804707" end_npc_ids="804707" worlds="210070000" amount="2"/>
+	<!-- [Spy/Daily] Enter Enshar (Elyos Only) -->
+	<kill_in_world id="15223" start_npc_ids="804699" end_npc_ids="804699" worlds="220080000" amount="2"/>
+	<!-- [Spy/Daily] Set For Cet (Elyos Only) -->
+	<kill_in_world id="15224" start_npc_ids="804699" end_npc_ids="804699" worlds="220080000" amount="2"/>
+	<!-- [Spy/Daily] Down To The Bomire Wire (Elyos Only) -->
+	<kill_in_world id="15225" start_npc_ids="804699" end_npc_ids="804699" worlds="220080000" amount="2"/>
+	<!-- [Urgent Order] Protect The Black Fin Canyon Base (Elyos Only) -->
+	<kill_in_world id="15235" start_npc_ids="804699" end_npc_ids="804699" worlds="220080000" amount="2"/>
+	<!-- [Urgent Order] Protect The Frostshard Cavern Base (Elyos Only) -->
+	<kill_in_world id="15236" start_npc_ids="804699" end_npc_ids="804699" worlds="210070000" amount="2"/>
+	<!-- [Urgent Order] Protect The Wiltfog Briar Base (Elyos Only) -->
+	<kill_in_world id="15237" start_npc_ids="804699" end_npc_ids="804699" worlds="210070000" amount="2"/>
+</quest_scripts>

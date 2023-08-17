@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player_stats_templates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../stats.xsd">
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="9">
+		<stats_template maxHp="782" maxMp="790" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="173" block="173" parry="173" main_hand_attack="21" main_hand_accuracy="262" main_hand_crit_rate="2" magic_accuracy="128" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="10">
+		<stats_template maxHp="856" maxMp="860" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="186" block="186" parry="186" main_hand_attack="21" main_hand_accuracy="270" main_hand_crit_rate="2" magic_accuracy="142" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="11">
+		<stats_template maxHp="933" maxMp="930" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="198" block="198" parry="198" main_hand_attack="21" main_hand_accuracy="278" main_hand_crit_rate="2" magic_accuracy="156" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="12">
+		<stats_template maxHp="1013" maxMp="1000" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="210" block="210" parry="210" main_hand_attack="21" main_hand_accuracy="286" main_hand_crit_rate="2" magic_accuracy="171" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="13">
+		<stats_template maxHp="1096" maxMp="1070" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="223" block="223" parry="223" main_hand_attack="21" main_hand_accuracy="294" main_hand_crit_rate="2" magic_accuracy="185" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="14">
+		<stats_template maxHp="1181" maxMp="1140" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="235" block="235" parry="235" main_hand_attack="21" main_hand_accuracy="302" main_hand_crit_rate="2" magic_accuracy="199" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="15">
+		<stats_template maxHp="1269" maxMp="1211" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="248" block="248" parry="248" main_hand_attack="21" main_hand_accuracy="310" main_hand_crit_rate="2" magic_accuracy="213" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="16">
+		<stats_template maxHp="1359" maxMp="1281" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="260" block="260" parry="260" main_hand_attack="21" main_hand_accuracy="318" main_hand_crit_rate="2" magic_accuracy="228" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="17">
+		<stats_template maxHp="1452" maxMp="1351" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="272" block="272" parry="272" main_hand_attack="21" main_hand_accuracy="326" main_hand_crit_rate="2" magic_accuracy="242" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="18">
+		<stats_template maxHp="1548" maxMp="1421" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="285" block="285" parry="285" main_hand_attack="21" main_hand_accuracy="334" main_hand_crit_rate="2" magic_accuracy="256" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="19">
+		<stats_template maxHp="1646" maxMp="1491" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="297" block="297" parry="297" main_hand_attack="21" main_hand_accuracy="342" main_hand_crit_rate="2" magic_accuracy="270" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="20">
+		<stats_template maxHp="1748" maxMp="1562" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="310" block="310" parry="310" main_hand_attack="21" main_hand_accuracy="350" main_hand_crit_rate="2" magic_accuracy="285" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="21">
+		<stats_template maxHp="1851" maxMp="1632" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="322" block="322" parry="402" main_hand_attack="21" main_hand_accuracy="358" main_hand_crit_rate="2" magic_accuracy="299" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="22">
+		<stats_template maxHp="1957" maxMp="1702" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="334" block="334" parry="414" main_hand_attack="21" main_hand_accuracy="366" main_hand_crit_rate="2" magic_accuracy="313" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="23">
+		<stats_template maxHp="2066" maxMp="1772" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="347" block="347" parry="427" main_hand_attack="21" main_hand_accuracy="374" main_hand_crit_rate="2" magic_accuracy="327" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="24">
+		<stats_template maxHp="2178" maxMp="1842" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="359" block="359" parry="439" main_hand_attack="21" main_hand_accuracy="382" main_hand_crit_rate="2" magic_accuracy="342" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="25">
+		<stats_template maxHp="2292" maxMp="1913" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="372" block="372" parry="452" main_hand_attack="21" main_hand_accuracy="390" main_hand_crit_rate="2" magic_accuracy="356" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="26">
+		<stats_template maxHp="2409" maxMp="1983" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="384" block="384" parry="464" main_hand_attack="21" main_hand_accuracy="398" main_hand_crit_rate="2" magic_accuracy="370" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="27">
+		<stats_template maxHp="2529" maxMp="2053" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="396" block="396" parry="476" main_hand_attack="21" main_hand_accuracy="406" main_hand_crit_rate="2" magic_accuracy="385" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="28">
+		<stats_template maxHp="2651" maxMp="2123" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="409" block="559" parry="489" main_hand_attack="21" main_hand_accuracy="414" main_hand_crit_rate="2" magic_accuracy="399" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="29">
+		<stats_template maxHp="2776" maxMp="2144" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="421" block="571" parry="501" main_hand_attack="21" main_hand_accuracy="422" main_hand_crit_rate="2" magic_accuracy="413" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="30">
+		<stats_template maxHp="2903" maxMp="2264" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="434" block="584" parry="514" main_hand_attack="21" main_hand_accuracy="430" main_hand_crit_rate="2" magic_accuracy="427" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="31">
+		<stats_template maxHp="3033" maxMp="2334" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="446" block="596" parry="526" main_hand_attack="21" main_hand_accuracy="438" main_hand_crit_rate="2" magic_accuracy="442" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="32">
+		<stats_template maxHp="3166" maxMp="2405" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="458" block="608" parry="538" main_hand_attack="21" main_hand_accuracy="446" main_hand_crit_rate="2" magic_accuracy="456" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="33">
+		<stats_template maxHp="3302" maxMp="2475" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="471" block="621" parry="551" main_hand_attack="21" main_hand_accuracy="454" main_hand_crit_rate="2" magic_accuracy="470" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="34">
+		<stats_template maxHp="3440" maxMp="2545" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="483" block="633" parry="563" main_hand_attack="21" main_hand_accuracy="462" main_hand_crit_rate="2" magic_accuracy="485" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="35">
+		<stats_template maxHp="3580" maxMp="2616" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="496" block="646" parry="576" main_hand_attack="21" main_hand_accuracy="470" main_hand_crit_rate="2" magic_accuracy="499" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="36">
+		<stats_template maxHp="3724" maxMp="2686" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="508" block="658" parry="588" main_hand_attack="21" main_hand_accuracy="478" main_hand_crit_rate="2" magic_accuracy="513" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="37">
+		<stats_template maxHp="3870" maxMp="2756" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="520" block="670" parry="600" main_hand_attack="21" main_hand_accuracy="486" main_hand_crit_rate="2" magic_accuracy="527" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="38">
+		<stats_template maxHp="4018" maxMp="2827" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="533" block="683" parry="613" main_hand_attack="21" main_hand_accuracy="494" main_hand_crit_rate="2" magic_accuracy="542" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="39">
+		<stats_template maxHp="4170" maxMp="2897" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="545" block="695" parry="625" main_hand_attack="21" main_hand_accuracy="502" main_hand_crit_rate="2" magic_accuracy="555" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="40">
+		<stats_template maxHp="4324" maxMp="2968" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="558" block="708" parry="638" main_hand_attack="21" main_hand_accuracy="510" main_hand_crit_rate="2" magic_accuracy="570" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="41">
+		<stats_template maxHp="4480" maxMp="3038" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="570" block="720" parry="650" main_hand_attack="21" main_hand_accuracy="518" main_hand_crit_rate="2" magic_accuracy="584" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="42">
+		<stats_template maxHp="4639" maxMp="3108" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="582" block="732" parry="662" main_hand_attack="21" main_hand_accuracy="526" main_hand_crit_rate="2" magic_accuracy="598" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="43">
+		<stats_template maxHp="4801" maxMp="3179" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="595" block="745" parry="675" main_hand_attack="21" main_hand_accuracy="534" main_hand_crit_rate="2" magic_accuracy="612" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="44">
+		<stats_template maxHp="4966" maxMp="3249" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="607" block="757" parry="687" main_hand_attack="21" main_hand_accuracy="542" main_hand_crit_rate="2" magic_accuracy="627" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="45">
+		<stats_template maxHp="5133" maxMp="3320" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="620" block="770" parry="700" main_hand_attack="21" main_hand_accuracy="550" main_hand_crit_rate="2" magic_accuracy="642" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="46">
+		<stats_template maxHp="5303" maxMp="3390" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="632" block="782" parry="712" main_hand_attack="21" main_hand_accuracy="558" main_hand_crit_rate="2" magic_accuracy="655" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="47">
+		<stats_template maxHp="6296" maxMp="3461" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="644" block="794" parry="724" main_hand_attack="21" main_hand_accuracy="566" main_hand_crit_rate="2" magic_accuracy="669" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="48">
+		<stats_template maxHp="6702" maxMp="3531" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="657" block="807" parry="737" main_hand_attack="21" main_hand_accuracy="574" main_hand_crit_rate="2" magic_accuracy="684" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="49">
+		<stats_template maxHp="6909" maxMp="3602" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="669" block="819" parry="749" main_hand_attack="21" main_hand_accuracy="582" main_hand_crit_rate="2" magic_accuracy="698" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="50">
+		<stats_template maxHp="6909" maxMp="3672" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="682" block="832" parry="762" main_hand_attack="21" main_hand_accuracy="590" main_hand_crit_rate="2" magic_accuracy="712" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="51">
+		<stats_template maxHp="7119" maxMp="3743" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="694" block="844" parry="774" main_hand_attack="21" main_hand_accuracy="598" main_hand_crit_rate="2" magic_accuracy="728" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="52">
+		<stats_template maxHp="7333" maxMp="3813" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="706" block="856" parry="786" main_hand_attack="21" main_hand_accuracy="606" main_hand_crit_rate="2" magic_accuracy="741" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="53">
+		<stats_template maxHp="7549" maxMp="3884" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="719" block="869" parry="799" main_hand_attack="21" main_hand_accuracy="614" main_hand_crit_rate="2" magic_accuracy="755" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="54">
+		<stats_template maxHp="7769" maxMp="3954" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="731" block="881" parry="811" main_hand_attack="21" main_hand_accuracy="622" main_hand_crit_rate="2" magic_accuracy="769" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="55">
+		<stats_template maxHp="6950" maxMp="4025" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="744" block="894" parry="824" main_hand_attack="21" main_hand_accuracy="690" main_hand_crit_rate="2" magic_accuracy="783" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="56">
+		<stats_template maxHp="8217" maxMp="4037" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="756" block="756" parry="756" main_hand_attack="56" main_hand_accuracy="638" main_hand_crit_rate="2" magic_accuracy="799" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="57">
+		<stats_template maxHp="8446" maxMp="4166" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="768" block="918" parry="848" main_hand_attack="56" main_hand_accuracy="702" main_hand_crit_rate="2" magic_accuracy="812" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="58">
+		<stats_template maxHp="8677" maxMp="4236" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="781" block="931" parry="861" main_hand_attack="56" main_hand_accuracy="714" main_hand_crit_rate="2" magic_accuracy="826" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="59">
+		<stats_template maxHp="8913" maxMp="4307" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="793" block="943" parry="873" main_hand_attack="56" main_hand_accuracy="722" main_hand_crit_rate="2" magic_accuracy="840" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="60">
+		<stats_template maxHp="9151" maxMp="4336" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="806" block="956" parry="886" main_hand_attack="56" main_hand_accuracy="730" main_hand_crit_rate="2" magic_accuracy="855" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="61">
+		<stats_template maxHp="9392" maxMp="4448" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="818" block="968" parry="898" main_hand_attack="56" main_hand_accuracy="738" main_hand_crit_rate="2" magic_accuracy="869" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="62">
+		<stats_template maxHp="9635" maxMp="4519" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="830" block="980" parry="910" main_hand_attack="56" main_hand_accuracy="746" main_hand_crit_rate="2" magic_accuracy="883" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="63">
+		<stats_template maxHp="9883" maxMp="4589" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="843" block="993" parry="923" main_hand_attack="56" main_hand_accuracy="754" main_hand_crit_rate="2" magic_accuracy="9897" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="64">
+		<stats_template maxHp="10132" maxMp="4660" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="855" block="1005" parry="935" main_hand_attack="56" main_hand_accuracy="762" main_hand_crit_rate="2" magic_accuracy="912" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="65">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="848" block="1018" parry="948" main_hand_attack="56" main_hand_accuracy="770" main_hand_crit_rate="2" magic_accuracy="926" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="66">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="115" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="880" block="1030" parry="960" main_hand_attack="56" main_hand_accuracy="778" main_hand_crit_rate="2" magic_accuracy="940" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="67">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="892" block="1042" parry="972" main_hand_attack="56" main_hand_accuracy="786" main_hand_crit_rate="2" magic_accuracy="954" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="68">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="905" block="1055" parry="985" main_hand_attack="56" main_hand_accuracy="794" main_hand_crit_rate="2" magic_accuracy="969" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="69">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="917" block="1067" parry="997" main_hand_attack="56" main_hand_accuracy="802" main_hand_crit_rate="2" magic_accuracy="983" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="70">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="942" block="1092" parry="1022" main_hand_attack="56" main_hand_accuracy="818" main_hand_crit_rate="2" magic_accuracy="1011" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="71">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="942" block="1092" parry="1022" main_hand_attack="56" main_hand_accuracy="818" main_hand_crit_rate="2" magic_accuracy="1011" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="72">
+		<stats_template maxHp="9556" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="954" block="1104" parry="1034" main_hand_attack="56" main_hand_accuracy="826" main_hand_crit_rate="2" magic_accuracy="1026" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="73">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="967" block="1117" parry="1047" main_hand_attack="56" main_hand_accuracy="834" main_hand_crit_rate="2" magic_accuracy="1040" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="74">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="979" block="1129" parry="1059" main_hand_attack="56" main_hand_accuracy="842" main_hand_crit_rate="2" magic_accuracy="1054" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="75">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="992" block="1142" parry="1072" main_hand_attack="56" main_hand_accuracy="850" main_hand_crit_rate="2" magic_accuracy="1068" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="76">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1005" block="1155" parry="1085" main_hand_attack="56" main_hand_accuracy="858" main_hand_crit_rate="2" magic_accuracy="1082" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="77">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1018" block="1168" parry="1098" main_hand_attack="56" main_hand_accuracy="866" main_hand_crit_rate="2" magic_accuracy="1096" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="78">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1031" block="1181" parry="1111" main_hand_attack="56" main_hand_accuracy="874" main_hand_crit_rate="2" magic_accuracy="1110" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="79">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1044" block="1194" parry="1124" main_hand_attack="56" main_hand_accuracy="882" main_hand_crit_rate="2" magic_accuracy="1124" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="80">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1057" block="1207" parry="1137" main_hand_attack="56" main_hand_accuracy="890" main_hand_crit_rate="2" magic_accuracy="1138" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="81">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1070" block="1220" parry="1150" main_hand_attack="56" main_hand_accuracy="898" main_hand_crit_rate="2" magic_accuracy="1152" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="82">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1083" block="1233" parry="1163" main_hand_attack="56" main_hand_accuracy="906" main_hand_crit_rate="2" magic_accuracy="1166" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+	<!-- Revisited by Encom 02.03.2017 -->
+	<player_stats class="TEMPLAR" level="83">
+		<stats_template maxHp="10385" maxMp="4731" power="115" health="100" agility="100" accuracy="100" knowledge="90" will="105" walk_speed="1.5" run_speed="6" fly_speed="9" attack_speed="1.5" evasion="1096" block="1246" parry="1176" main_hand_attack="56" main_hand_accuracy="914" main_hand_crit_rate="2" magic_accuracy="1180" crit_spell="50" strike_resist="90" spell_resist="0"/>
+	</player_stats>
+</player_stats_templates>

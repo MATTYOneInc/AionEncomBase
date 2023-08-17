@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+    <zone mapid="301340000" name="LINKGATE_FOUNDRY_301340000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="211.936935" top="611.936935">
+      		<point x="50.600651" y="53.261581"/>
+			<point x="442.482544" y="59.518661"/>
+			<point x="442.948700" y="450.661865"/>
+			<point x="53.621685" y="450.779175"/>
+        </points>
+    </zone>
+    <zone mapid="301340000" name="CENTRAL_LABORATORY_301340000" area_type="POLYGON" zone_type="SUB" priority="15" flags="0">
+        <points bottom="212.036896" top="612.036896">
+      		<point x="208.917603" y="242.328629"/>
+			<point x="224.415314" y="225.150452"/>
+			<point x="245.701324" y="219.175430"/>
+			<point x="268.107666" y="226.084045"/>
+			<point x="282.485046" y="244.755981"/>
+			<point x="283.605377" y="270.523254"/>
+			<point x="272.962372" y="288.448334"/>
+			<point x="254.850571" y="298.531189"/>
+			<point x="232.630966" y="300.398376"/>
+			<point x="221.427795" y="292.929596"/>
+			<point x="207.050400" y="278.178772"/>
+			<point x="203.316010" y="260.066986"/>
+			<point x="205.369934" y="250.357574"/>
+        </points>
+    </zone>
+</zones>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	도전의 광장 4.8
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="301500000">
+		<!-- -->
+		<spawn npc_id="833284">
+			<spot x="231.14" y="264.39999" z="95.290001" entity_id="14"/>
+		</spawn>
+		<!-- Legion Territory Manager
+		<Spectator Helper>
+		<spawn npc_id="833488" respawn_time="295">
+			<spot x="165.91524" y="264.50375" z="97.454155" h="0"/>
+		</spawn>
+		Legion Territory Manager
+		<Spectator Helper>
+		<spawn npc_id="833489" respawn_time="295">
+			<spot x="165.91524" y="264.50375" z="97.454155" h="0"/>
+		</spawn> -->
+	</spawn_map>
+</spawns>

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+	<zone mapid="301550000" name="DEFENSE_LINE_2_301550000" area_type="POLYGON" zone_type="SUB" priority="10" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="1220.000000" y="876.000000"/>
+            <point x="1274.000000" y="876.000000"/>
+            <point x="1274.000000" y="925.000000"/>
+            <point x="1220.000000" y="927.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="CORRUPT_LIBRARY_301550000" area_type="POLYGON" zone_type="SUB" priority="20" flags="0">
+        <points bottom="740.099915" top="1040.099854">
+            <point x="584.211609" y="1440.235962"/>
+            <point x="465.750061" y="1499.750000"/>
+            <point x="410.135132" y="1515.530884"/>
+            <point x="353.276978" y="1381.112915"/>
+            <point x="434.999969" y="1345.749756"/>
+            <point x="482.069092" y="1290.128418"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="WALKING_PATH_301550000" area_type="POLYGON" zone_type="SUB" priority="17" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="1055.750000" y="810.000000"/>
+            <point x="960.750000" y="811.000000"/>
+            <point x="959.750000" y="736.000000"/>
+            <point x="1055.750000" y="734.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="HOLLOW_TEMPLE_301550000" area_type="POLYGON" zone_type="SUB" priority="19" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="1270.633911" y="696.495667"/>
+            <point x="1218.633911" y="696.495667"/>
+            <point x="1216.633911" y="634.495667"/>
+            <point x="1270.633911" y="634.495667"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="CONQUEROR_SANCTUARY_1_301550000" area_type="POLYGON" zone_type="SUB" priority="19" flags="0">
+        <points bottom="432.099976" top="662.099976">
+            <point x="1348.000000" y="876.000000"/>
+            <point x="1064.000000" y="874.000000"/>
+            <point x="1056.000000" y="672.000000"/>
+            <point x="1346.000000" y="670.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="DIVINE_WATERFALL_301550000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="1012.458008" top="1032.458008">
+            <point x="1028.869385" y="790.052124"/>
+            <point x="1000.000000" y="790.000000"/>
+            <point x="1000.000000" y="796.000000"/>
+            <point x="974.869385" y="794.052124"/>
+            <point x="974.869385" y="756.052124"/>
+            <point x="1000.000000" y="754.000000"/>
+            <point x="1000.000000" y="760.000000"/>
+            <point x="1028.869385" y="760.052124"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="PATH_OF_TRUTH_301550000" area_type="POLYGON" zone_type="SUB" priority="18" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="1221.117798" y="710.000000"/>
+            <point x="1165.117798" y="710.000000"/>
+            <point x="1165.117798" y="740.000000"/>
+            <point x="1119.117798" y="740.000000"/>
+            <point x="1081.117798" y="740.000000"/>
+            <point x="1081.117798" y="752.000000"/>
+            <point x="1049.117798" y="746.000000"/>
+            <point x="1048.000000" y="742.000000"/>
+            <point x="1026.000000" y="744.000000"/>
+            <point x="1019.117798" y="572.000000"/>
+            <point x="1263.117798" y="566.000000"/>
+            <point x="1264.000000" y="638.000000"/>
+            <point x="1218.000000" y="640.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="CORE_OF_KNOWLEDGE_301550000" area_type="POLYGON" zone_type="SUB" priority="20" flags="0">
+        <points bottom="100.000000" top="850.000000">
+            <point x="916.000000" y="830.000000"/>
+            <point x="852.000000" y="972.000000"/>
+            <point x="668.250000" y="1027.750000"/>
+            <point x="398.000000" y="910.000000"/>
+            <point x="284.000000" y="458.000000"/>
+            <point x="312.000000" y="350.000000"/>
+            <point x="612.000000" y="218.000000"/>
+            <point x="916.000000" y="506.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="GARDEN_TEMPLE_301550000" area_type="POLYGON" zone_type="SUB" priority="15" flags="0">
+        <points bottom="990.099976" top="1090.099976">
+            <point x="700.750000" y="1106.000000"/>
+            <point x="791.750000" y="1156.250000"/>
+            <point x="758.500000" y="1207.500000"/>
+            <point x="672.250000" y="1155.250000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="DEFENSE_LINE_1_301550000" area_type="POLYGON" zone_type="SUB" priority="10" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="1364.000000" y="652.000000"/>
+            <point x="1418.000000" y="652.000000"/>
+            <point x="1418.000000" y="701.000000"/>
+            <point x="1364.000000" y="703.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="ADVANCE_UNIT_REFUGE_301550000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="1001.349976" top="1051.349976">
+            <point x="1464.000000" y="756.000000"/>
+            <point x="1492.000000" y="756.000000"/>
+            <point x="1492.000000" y="792.000000"/>
+            <point x="1464.000000" y="790.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="CENTRAL_ENTRANCE_301550000" area_type="POLYGON" zone_type="SUB" priority="14" flags="0">
+        <points bottom="578.099976" top="678.099976">
+            <point x="769.000000" y="874.000000"/>
+            <point x="745.000000" y="865.250000"/>
+            <point x="753.000000" y="840.750000"/>
+            <point x="774.500000" y="844.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="VID_SECRET_LIBRARY_1_301550000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="938.849976" top="1088.849976">
+            <point x="486.250000" y="1318.250000"/>
+            <point x="424.750000" y="1354.000000"/>
+            <point x="392.750000" y="1309.000000"/>
+            <point x="457.250000" y="1264.500000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="ALB_GARDEN_301550000" area_type="POLYGON" zone_type="SUB" priority="20" flags="0">
+        <points bottom="990.099976" top="1090.099976">
+            <point x="952.000000" y="726.000061"/>
+            <point x="928.000000" y="1076.000000"/>
+            <point x="739.596191" y="1262.996582"/>
+            <point x="642.162842" y="1187.734619"/>
+            <point x="734.000000" y="974.000122"/>
+            <point x="792.566467" y="736.738037"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="ADVANCE_UNIT_ASSEMBLY_AREA_301550000" area_type="POLYGON" zone_type="SUB" priority="13" flags="0">
+        <points bottom="556.099976" top="656.099976">
+            <point x="611.750000" y="689.000000"/>
+            <point x="638.500000" y="686.500000"/>
+            <point x="643.250000" y="721.000000"/>
+            <point x="615.250000" y="725.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="CONQUEROR_SANCTUARY_2_301550000" area_type="POLYGON" zone_type="SUB" priority="21" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="1400.000000" y="838.000000"/>
+            <point x="1142.000000" y="830.000000"/>
+            <point x="1138.000000" y="690.000000"/>
+            <point x="1396.000000" y="688.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="PATH_OF_DARKNESS_301550000" area_type="POLYGON" zone_type="SUB" priority="21" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="1309.418823" y="944.000000"/>
+            <point x="1047.418823" y="942.000000"/>
+            <point x="1051.418823" y="750.000000"/>
+            <point x="1113.418823" y="748.000000"/>
+            <point x="1112.339355" y="825.978394"/>
+            <point x="1218.330078" y="823.875122"/>
+            <point x="1303.597046" y="823.556702"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="TAINTED_LIBRARY_301550000" area_type="POLYGON" zone_type="SUB" priority="21" flags="0">
+        <points bottom="740.099915" top="1040.099854">
+            <point x="765.211548" y="1272.485962"/>
+            <point x="581.250305" y="1438.750122"/>
+            <point x="482.050110" y="1296.429443"/>
+            <point x="622.332764" y="1155.297974"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="VILE_LIBRARY_301550000" area_type="POLYGON" zone_type="SUB" priority="21" flags="0">
+        <points bottom="740.099915" top="1040.099854">
+            <point x="436.711609" y="1532.485962"/>
+            <point x="152.204407" y="1532.543823"/>
+            <point x="147.857147" y="1408.399170"/>
+            <point x="326.390930" y="1394.568848"/>
+            <point x="389.004211" y="1357.302124"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="DEFENSE_LINE_3_301550000" area_type="POLYGON" zone_type="SUB" priority="10" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="1126.000000" y="878.000000"/>
+            <point x="1180.000000" y="878.000000"/>
+            <point x="1180.000000" y="927.000000"/>
+            <point x="1126.000000" y="929.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="VID_SECRET_LIBRARY_2_301550000" area_type="POLYGON" zone_type="SUB" priority="17" flags="0">
+        <points bottom="712.099976" top="912.099976">
+            <point x="318.504608" y="1326.077759"/>
+            <point x="140.504608" y="1326.077759"/>
+            <point x="140.504608" y="1142.077759"/>
+            <point x="320.504608" y="1142.077759"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="LIBRARY_GAP_301550000" area_type="POLYGON" zone_type="SUB" priority="14" flags="0">
+        <points bottom="815.849976" top="915.849976">
+            <point x="559.500000" y="1410.000000"/>
+            <point x="584.500000" y="1441.250000"/>
+            <point x="552.750000" y="1456.000000"/>
+            <point x="532.250000" y="1431.250000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="MEMORIAL_PATH_301550000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="544.599976" top="644.599976">
+            <point x="626.750000" y="834.750000"/>
+            <point x="579.500000" y="830.750000"/>
+            <point x="562.500000" y="797.750000"/>
+            <point x="633.000000" y="648.250000"/>
+            <point x="728.250000" y="671.750000"/>
+            <point x="709.000000" y="750.000000"/>
+            <point x="731.500000" y="771.250000"/>
+            <point x="728.500000" y="782.750000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="MYSTERIOUS_WATERFALL_301550000" area_type="POLYGON" zone_type="SUB" priority="19" flags="0">
+        <points bottom="526.099976" top="566.099976">
+            <point x="776.000000" y="804.000000"/>
+            <point x="758.000000" y="808.000000"/>
+            <point x="728.000000" y="786.000000"/>
+            <point x="712.000000" y="766.000000"/>
+            <point x="702.000000" y="734.000000"/>
+            <point x="714.000000" y="666.000000"/>
+            <point x="916.000000" y="726.000000"/>
+            <point x="914.000000" y="822.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="SERENE_PLAZA_301550000" area_type="POLYGON" zone_type="SUB" priority="20" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="1514.646729" y="894.623962"/>
+            <point x="1327.257202" y="898.000000"/>
+            <point x="1323.257202" y="652.000000"/>
+            <point x="1512.435547" y="649.723145"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="CONTAMINATED_PATH_301550000" area_type="POLYGON" zone_type="SUB" priority="17" flags="0">
+        <points bottom="980.849976" top="1080.849976">
+            <point x="853.500000" y="839.500000"/>
+            <point x="922.500000" y="838.250000"/>
+            <point x="920.500000" y="982.000000"/>
+            <point x="881.000000" y="974.250000"/>
+            <point x="872.750000" y="983.250000"/>
+            <point x="832.250000" y="1007.250000"/>
+            <point x="820.750000" y="985.500000"/>
+            <point x="859.000000" y="937.250000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="SPRING_OF_KNOWLEDGE_301550000" area_type="POLYGON" zone_type="SUB" priority="18" flags="0">
+        <points bottom="484.099976" top="784.099976">
+            <point x="560.000000" y="502.000000"/>
+            <point x="636.000000" y="500.000000"/>
+            <point x="636.000000" y="580.000000"/>
+            <point x="562.000000" y="578.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="SYLFAEN_GARDEN_ENTRANCE_301550000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="838.000000" y="737.500000"/>
+            <point x="952.000000" y="736.000000"/>
+            <point x="952.000000" y="838.000000"/>
+            <point x="841.500000" y="839.250000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="SEALED_LIGHT_301550000" area_type="POLYGON" zone_type="SUB" priority="15" flags="0">
+        <points bottom="990.099976" top="1090.099976">
+            <point x="791.250000" y="747.000000"/>
+            <point x="845.750000" y="747.750000"/>
+            <point x="847.250000" y="797.750000"/>
+            <point x="789.750000" y="797.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="CONQUEROR_SANCTUARY_3_301550000" area_type="POLYGON" zone_type="SUB" priority="19" flags="0">
+        <points bottom="919.599976" top="1149.599976">
+            <point x="1178.250000" y="810.750000"/>
+            <point x="1127.750000" y="810.250000"/>
+            <point x="1124.000000" y="746.250000"/>
+            <point x="1177.250000" y="742.250000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="STORM_CLIFF_301550000" area_type="POLYGON" zone_type="SUB" priority="14" flags="0">
+        <points bottom="945.099976" top="1045.099976">
+            <point x="425.250000" y="1363.500000"/>
+            <point x="312.750000" y="1407.750000"/>
+            <point x="159.750000" y="1435.000000"/>
+            <point x="157.133911" y="1531.540039"/>
+            <point x="141.169525" y="1531.575684"/>
+            <point x="134.750000" y="1523.250000"/>
+            <point x="66.750000" y="1509.250000"/>
+            <point x="72.000000" y="1464.750000"/>
+            <point x="134.500000" y="1436.250000"/>
+            <point x="134.750000" y="1402.500000"/>
+            <point x="412.250000" y="1338.500000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="DEFENSE_LINE_4_301550000" area_type="POLYGON" zone_type="SUB" priority="10" flags="0">
+        <points bottom="962.099976" top="1062.099976">
+            <point x="1124.000000" y="635.000000"/>
+            <point x="1178.000000" y="635.000000"/>
+            <point x="1178.000000" y="684.000000"/>
+            <point x="1124.000000" y="686.000000"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="IDETERNITY_02_FLYING_ZONE_301550000" area_type="POLYGON" zone_type="FLY" flags="12">
+        <points bottom="822.349060" top="995.349060">
+            <point x="163.473175" y="1435.795654"/>
+            <point x="293.614624" y="1420.871582"/>
+            <point x="355.537140" y="1400.176758"/>
+            <point x="437.847412" y="1344.188721"/>
+            <point x="486.343262" y="1307.731323"/>
+            <point x="575.458923" y="1406.232788"/>
+            <point x="577.951660" y="1432.993408"/>
+            <point x="547.661865" y="1448.592163"/>
+            <point x="531.915955" y="1455.846069"/>
+            <point x="516.958923" y="1490.232788"/>
+            <point x="485.458923" y="1493.232788"/>
+            <point x="464.728455" y="1492.597046"/>
+            <point x="412.817810" y="1520.816650"/>
+            <point x="342.478027" y="1532.387451"/>
+            <point x="164.013916" y="1532.587158"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="IDETERNITY_02_FLYING_ZONE_SHAPE_MAIN_301550000" area_type="POLYGON" zone_type="FLY" flags="12">
+        <points bottom="509.179779" top="545.179810">
+            <point x="584.043152" y="527.518066"/>
+            <point x="591.771118" y="520.985168"/>
+            <point x="602.891602" y="518.571472"/>
+            <point x="615.145325" y="525.537231"/>
+            <point x="620.536133" y="537.418091"/>
+            <point x="619.000000" y="547.000000"/>
+            <point x="614.000000" y="553.000000"/>
+            <point x="609.022278" y="556.894165"/>
+            <point x="601.152161" y="558.917419"/>
+            <point x="592.403687" y="558.057983"/>
+            <point x="587.000000" y="554.000000"/>
+            <point x="583.184570" y="548.764526"/>
+            <point x="578.910522" y="540.138977"/>
+        </points>
+	</zone>
+	<zone mapid="301550000" name="IDETERNITY_02_FLYING_ZONE_SHAPE_FLY_AREA_1_301550000" area_type="POLYGON" zone_type="FLY" flags="12">
+        <points bottom="822.349060" top="995.349060">
+            <point x="163.473175" y="1435.795654"/>
+            <point x="293.614624" y="1420.871582"/>
+            <point x="355.537140" y="1400.176758"/>
+            <point x="437.847412" y="1344.188721"/>
+            <point x="486.343262" y="1307.731323"/>
+            <point x="575.458923" y="1406.232788"/>
+            <point x="577.951660" y="1432.993408"/>
+            <point x="547.661865" y="1448.592163"/>
+            <point x="531.915955" y="1455.846069"/>
+            <point x="516.958923" y="1490.232788"/>
+            <point x="485.458923" y="1493.232788"/>
+            <point x="464.728455" y="1492.597046"/>
+            <point x="412.817810" y="1520.816650"/>
+            <point x="342.478027" y="1532.387451"/>
+            <point x="164.013916" y="1532.587158"/>
+        </points>
+    </zone>
+    <zone mapid="301550000" name="IDETERNITY_02_FLYING_ZONE_SHAPE_FLY_AREA_3_301550000" area_type="POLYGON" zone_type="FLY" flags="12">
+        <points bottom="819.194336" top="939.194336">
+            <point x="470.543518" y="1308.611328"/>
+            <point x="607.627258" y="1175.696045"/>
+            <point x="741.260559" y="1300.875610"/>
+            <point x="592.864563" y="1441.153076"/>
+        </points>
+	</zone>
+</zones>

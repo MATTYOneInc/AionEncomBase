@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Dredgion Defense
+	Iluma
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="210100000">
+		<beritra_spawn id="57">
+			<beritra_type bstate="INVASION">
+				<!-- Dredgion Defense: Sanctum -->
+				<spawn npc_id="730647">
+				    <spot x="1414.1166" y="1281.5042" z="336.43802" h="68"/>
+				</spawn>
+			</beritra_type>
+			<beritra_type bstate="PEACE">
+			</beritra_type>
+		</beritra_spawn>
+    </spawn_map>
+</spawns>

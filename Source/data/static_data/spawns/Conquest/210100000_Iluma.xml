@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Kumuki Cave 5.3
+	IDEvent_Def 5.6
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="210100000">
+		<!-- [Kumuki Cave 5.3] -->
+		<conquest_spawn id="6">
+			<conquest_type ostate="CONQUEST">
+			    <!-- Gretel The Mischievous -->
+			    <spawn npc_id="835094">
+				    <spot h="63" z="1445.5768" y="1255.7781" x="336.67746"/>
+				</spawn>
+			    <!-- Porglet -->
+				<spawn npc_id="835118">
+				    <spot h="58" z="1445.139" y="1258.4401" x="336.67746"/>
+				</spawn>
+				<!-- Carriage To The Kumuki Cave -->
+				<spawn npc_id="835114">
+				    <spot x="1445.1127" y="1258.2678" z="336.67746" h="60"/>
+				</spawn>
+			</conquest_type>
+			<conquest_type ostate="PEACE">
+			</conquest_type>
+		</conquest_spawn>
+		<!-- [IDEvent_Def 5.6] -->
+		<conquest_spawn id="11">
+			<conquest_type ostate="CONQUEST">
+				<!-- IDEVENT_Def_LC1_Entrance_L -->
+				<spawn npc_id="836130">
+				    <spot x="1409.921" y="1332.403" z="336.78766" h="100"/>
+				</spawn>
+				<!-- IDEvent_Def_In_NPC -->
+				<spawn npc_id="836141">
+				    <spot x="1408.55" y="1334.7845" z="336.7591" h="101"/>
+				</spawn>
+			</conquest_type>
+			<conquest_type ostate="PEACE">
+			</conquest_type>
+		</conquest_spawn>
+		<!-- [Tiamaranta's Eye 5.8] -->
+		<conquest_spawn id="13">
+			<conquest_type ostate="CONQUEST">
+				<!-- TDown_M_Start_L -->
+				<spawn npc_id="836443">
+				    <spot x="1444.3643" y="1308.0887" z="335.0" h="17"/>
+				</spawn>
+			</conquest_type>
+			<conquest_type ostate="PEACE">
+			</conquest_type>
+		</conquest_spawn>
+    </spawn_map>
+</spawns>

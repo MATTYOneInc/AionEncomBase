@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Idian Depths 4.8
+	시그니아 4.8
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="210070000">
+		<idian_depths_spawn id="1">
+			<idian_depths_type istate="OPEN">
+				<!-- Idian Depths Corridor
+				<Perennial Mooswood> -->
+				<spawn npc_id="731631">
+				    <spot x="1852.106" y="2486.3252" z="318.34143" h="41"/>
+				</spawn>
+			</idian_depths_type>
+			<idian_depths_type istate="CLOSED">
+			</idian_depths_type>
+		</idian_depths_spawn>
+    </spawn_map>
+</spawns>

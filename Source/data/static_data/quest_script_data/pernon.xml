@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quest_scripts>
+<!--
+    Quest Pernon 3.0
+	Make By (Encom)
+ -->
+	<!-- 28800 [Housing] Give My Regards To Pernon handled by script (Asmodians Only) -->
+	<!-- 28802 [Housing] Be It Ever So Humble handled by script (Asmodians Only) -->
+	<!-- 28805 Something Old, Something New handled by script (Asmodians Only) -->
+	<!-- 28806 Wilting Flowers, Falling Tears handled by script (Asmodians Only) -->
+	<!-- 28807 Blessings Of A Green Thumb handled by script (Asmodians Only) -->
+	<!-- 28808 Open, Says Me! handled by script (Asmodians Only) -->
+	<!-- 28809 First Class Or Coach? handled by script (Asmodians Only) -->
+	<!-- 28821 [Daily] Your Butler's Gift handled by script (Asmodians Only) -->
+	<!-- 28826 [Daily] Free To A Good Home... handled by script (Asmodians Only) -->
+	<!-- 28828 [Housing] The Many Facets Of Friendship handled by script (Asmodians Only) -->
+	<!-- 28830 [Housing] Interior Decorator handled by script (Asmodians Only) -->
+	<!-- 28832 [Housing] Taking The Tour handled by script (Asmodians Only) -->
+	<!-- 28837 [Daily] Sprout Of Joy handled by script (Asmodians Only) -->
+	<!-- 28847 A Home That's Your Own handled by script (Asmodians Only) -->
+	
+	<!-- [Housing] Moving Up In The World (Asmodians Only) -->
+	<report_to id="28801" start_npc_ids="830085" end_npc_ids="830102"/>
+	<!-- Going Twice... (Asmodians Only) -->
+	<report_to id="28810" start_npc_ids="830118" end_npc_ids="830154"/>
+	<!-- Precious In Pink (Asmodians Only) -->
+	<item_collecting id="28812" start_npc_ids="830525"/>
+	<!-- Homage To An Unsung Hero (Asmodians Only) -->
+	<item_collecting id="28813" start_npc_ids="830525"/>
+	<!-- Fit for a Sprigg (Asmodians Only) -->
+	<item_collecting id="28814" start_npc_ids="830525"/>
+	<!-- Immortal Guru... Sort Of (Asmodians Only) -->
+	<item_collecting id="28815" start_npc_ids="830525"/>
+	<!-- Turn, Turn, Turn (Asmodians Only) -->
+	<item_collecting id="28816" start_npc_ids="830436"/>
+	<!-- Crystal Visions (Asmodians Only) -->
+	<item_collecting id="28817" start_npc_ids="830436"/>
+	<!-- [Daily] Gentlemen Prefer Pearls (Asmodians Only) -->
+	<item_collecting id="28818" start_npc_ids="830391"/>
+	<!-- [Daily] Much More Than Ore (Asmodians Only) -->
+	<item_collecting id="28819" start_npc_ids="830430"/>
+	<!-- [Daily] How Does Your Garden Grow ? (Asmodians Only) -->
+	<item_collecting id="28820" start_npc_ids="830436"/>
+	<!-- Spring Light Box (Asmodians Only) -->
+	<item_collecting id="28822" start_npc_ids="830526"/>
+	<!-- Summer Light Box (Asmodians Only) -->
+	<item_collecting id="28823" start_npc_ids="830526"/>
+	<!-- Autumn Light Box (Asmodians Only) -->
+	<item_collecting id="28824" start_npc_ids="830526"/>
+	<!-- Winter Light Box (Asmodians Only) -->
+	<item_collecting id="28825" start_npc_ids="830526"/>
+	<!-- [Housing] Homeward Bound (Asmodians Only) -->
+	<report_to id="28827" start_npc_ids="830153" end_npc_ids="810022 810023 810024 810025 810026"/>
+	<!-- [Housing] The Big Empty (Asmodians Only) -->
+	<report_to id="28829" start_npc_ids="810022 810023 810024 810025 810026" end_npc_ids="830585"/>
+	<!-- [Daily] Sprout, Sprout, Let It All Out (Asmodians Only) -->
+	<item_order id="28833" start_item_id="182213209" end_npc_id="830656"/>
+	<!-- [Daily] 'Til the Soil... (Asmodians Only) -->
+	<item_collecting id="28834" start_npc_ids="830656"/>
+	<!-- [Daily] Sprout It Out (Asmodians Only) -->
+	<item_order id="28835" start_item_id="182213210" end_npc_id="830656"/>
+	<!-- [Daily] Soiled Quest (Asmodians Only) -->
+	<item_collecting id="28836" start_npc_ids="830656"/>
+	<!-- [Daily] The Soil Under Your Claws (Asmodians Only) -->
+	<item_collecting id="28838" start_npc_ids="830656"/>
+	<!-- Turn, Turn, Turn I (Asmodians Only) -->
+	<item_collecting id="28840" start_npc_ids="830436"/>
+	<!-- Turn, Turn, Turn II (Asmodians Only) -->
+	<item_collecting id="28841" start_npc_ids="830436"/>
+	<!-- Turn, Turn, Turn III (Asmodians Only) -->
+	<item_collecting id="28842" start_npc_ids="830436"/>
+	<!-- No One Under 21 Allowed (Asmodians Only) -->
+	<report_to id="28843" start_npc_ids="830532" end_npc_ids="830211"/>
+	<!-- [Daily] A Little Alchemy Practice (Asmodians Only) -->
+	<item_collecting id="28844" start_npc_ids="830394"/>
+	<!-- A Child's Direction (Asmodians Only) -->
+	<report_to id="28846" start_npc_ids="830466" end_npc_ids="798457"/>
+	<!-- [Weekly] A Room For The Guestbloom (Asmodians Only) -->
+	<item_collecting id="28848" start_npc_ids="830532"/>
+	<!-- [Relic Bundle Reward] Ancient Goblet (Asmodians Only) -->
+	<relic_rewards id="28849" start_npc_ids="831383" relic_var1="186000058" relic_var2="186000057" relic_var3="186000056" relic_var4="186000055" relic_count="10"/>
+	<!-- [Relic Bundle Reward] Ancient Crown (Asmodians Only) -->
+	<relic_rewards id="28850" start_npc_ids="831235 831253 831414 801360" relic_var1="186000054" relic_var2="186000053" relic_var3="186000052" relic_var4="186000051" relic_count="10"/>
+</quest_scripts>

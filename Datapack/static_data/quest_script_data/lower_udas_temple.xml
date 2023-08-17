@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Lower Udas Temple 2.0
+	Make By (Encom)
+ -->
+	<item_collecting id="30109" start_npc_ids="799333"/>
+	
+	<item_order start_item_id="182209153" talk_npc_id1="799030" end_npc_id="799029" id="30007"/>
+	<item_order start_item_id="182209183" talk_npc_id1="799030" end_npc_id="799029" id="30107"/>
+	
+	<monster_hunt id="30113" start_npc_ids="799337">
+		<monster var="0" end_var="1" npc_ids="215786"/>
+		<monster var="1" end_var="1" npc_ids="215784"/>
+		<monster var="2" end_var="10" npc_ids="215820"/>
+	</monster_hunt>
+	<monster_hunt id="30114" start_npc_ids="799337">
+		<monster var="0" end_var="1" npc_ids="216156"/>
+	</monster_hunt>
+	<monster_hunt id="30133" start_npc_ids="799335">
+		<monster var="0" end_var="10" npc_ids="215848 215849"/>
+	</monster_hunt>
+</quest_scripts>

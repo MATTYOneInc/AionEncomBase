@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	[S.V.S Panesterra]
+	エリュシオン 4.7
+	Made By (Encom)
+ -->
+<svs_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="svs_schedule.xsd">
+	<!-- [SVS SANCTUM] -->
+	<!-- エリュシオン -->
+	<svs id="1">
+		<svsTime>0 0 6 ? * MON-SUN *</svsTime>
+	</svs>
+	<!-- [SVS KAISINEL ACADEMY] -->
+	<!-- ンペル訓練所へ移動します -->
+	<svs id="2">
+		<svsTime>0 0 6 ? * MON-SUN *</svsTime>
+	</svs>
+	<!-- [SVS PANDAEMONIUM] -->
+	<!-- パンデモニウム -->
+	<svs id="3">
+		<svsTime>0 0 6 ? * MON-SUN *</svsTime>
+	</svs>
+	<!-- [SVS MARCHUTAN PRIORY] -->
+	<!-- 使うとマルクタン -->
+	<svs id="4">
+		<svsTime>0 0 6 ? * MON-SUN *</svsTime>
+	</svs>
+	<!-- [SVS TRANSIDIUM ANNEX] -->
+	<svs id="5">
+		<svsTime>0 0 6 ? * MON-SUN *</svsTime>
+	</svs>
+</svs_schedule>

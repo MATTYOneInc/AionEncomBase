@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Harbinger Landing 4.9
+	Make By (Encom)
+ -->
+	<!-- Thawing The Abyss (Asmodians Only) -->
+	<item_collecting id="25478" start_npc_ids="805816 805818 805820" end_npc_ids="805816 805818 805820" start_dialog_id="4762" start_dialog_id2="1011" action_item_ids="702955"/>
+	<!-- Shattering The Cold (Asmodians Only) -->
+	<item_collecting id="25479" start_npc_ids="805817 805819 805821" end_npc_ids="805817 805819 805821" start_dialog_id="4762" start_dialog_id2="1011" action_item_ids="702956"/>
+</quest_scripts>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Magma Spirit Stats 4.8/5.0
+	Made By Rinzler & The Moose (Encom)
+	Checked By Encom 14/08/2016
+ -->
+<summon_stats_templates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../stats.xsd">
+	<!-- ********************* -->
+	<!-- MAGMA SPIRIT LEVEL: 1 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_dark="833366" level="50">
+        <stats_template maxHp="20000" pdefense="1600" mresist="1750" main_hand_attack="2700" run_speed="12.0" main_hand_accuracy="1650" main_hand_crit_rate="50" magic_accuracy="1150" evasion="1250" mcrit="9" parry="0"/>
+    </summon_stats>
+    <summon_stats npc_id_dark="833366" level="51">
+        <stats_template maxHp="20200" pdefense="1650" mresist="1800" main_hand_attack="2750" run_speed="12.0" main_hand_accuracy="1700" main_hand_crit_rate="50" magic_accuracy="1200" evasion="1300" mcrit="9" parry="0"/>
+    </summon_stats>
+    <summon_stats npc_id_dark="833366" level="52">
+        <stats_template maxHp="20400" pdefense="1700" mresist="1850" main_hand_attack="2800" run_speed="12.0" main_hand_accuracy="1750" main_hand_crit_rate="50" magic_accuracy="1250" evasion="1350" mcrit="9" parry="0"/>
+    </summon_stats>
+    <summon_stats npc_id_dark="833366" level="53">
+        <stats_template maxHp="20600" pdefense="1750" mresist="1900" main_hand_attack="2850" run_speed="12.0" main_hand_accuracy="1800" main_hand_crit_rate="50" magic_accuracy="1300" evasion="1400" mcrit="9" parry="0"/>
+    </summon_stats>
+    <summon_stats npc_id_dark="833366" level="54">
+        <stats_template maxHp="20800" pdefense="1850" mresist="1950" main_hand_attack="2900" run_speed="12.0" main_hand_accuracy="1850" main_hand_crit_rate="50" magic_accuracy="1350" evasion="1450" mcrit="9" parry="0"/>
+    </summon_stats>
+	
+	<!-- ********************* -->
+	<!-- MAGMA SPIRIT LEVEL: 2 -->
+	<!-- ********************* -->
+    <summon_stats npc_id_dark="833368" level="55">
+        <stats_template maxHp="21000" pdefense="1900" mresist="2000" main_hand_attack="2950" run_speed="12.0" main_hand_accuracy="1900" main_hand_crit_rate="50" magic_accuracy="1400" evasion="1500" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833368" level="56">
+        <stats_template maxHp="21200" pdefense="1950" mresist="2050" main_hand_attack="3000" run_speed="12.0" main_hand_accuracy="1950" main_hand_crit_rate="50" magic_accuracy="1450" evasion="1550" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833368" level="57">
+        <stats_template maxHp="21400" pdefense="2000" mresist="2100" main_hand_attack="3050" run_speed="12.0" main_hand_accuracy="2000" main_hand_crit_rate="50" magic_accuracy="1500" evasion="1600" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833368" level="58">
+        <stats_template maxHp="21600" pdefense="2050" mresist="2150" main_hand_attack="3100" run_speed="12.0" main_hand_accuracy="2050" main_hand_crit_rate="50" magic_accuracy="1550" evasion="1650" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833368" level="59">
+        <stats_template maxHp="21800" pdefense="2100" mresist="2200" main_hand_attack="3150" run_speed="12.0" main_hand_accuracy="2100" main_hand_crit_rate="50" magic_accuracy="1600" evasion="1700" mcrit="9" parry="0"/>
+    </summon_stats>
+	
+	<!-- ********************* -->
+	<!-- MAGMA SPIRIT LEVEL: 3 -->
+	<!-- ********************* -->
+    <summon_stats npc_id_dark="833370" level="60">
+        <stats_template maxHp="22000" pdefense="2150" mresist="2250" main_hand_attack="3200" run_speed="12.0" main_hand_accuracy="2150" main_hand_crit_rate="50" magic_accuracy="1650" evasion="1750" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833370" level="61">
+        <stats_template maxHp="22200" pdefense="2200" mresist="2300" main_hand_attack="3250" run_speed="12.0" main_hand_accuracy="2200" main_hand_crit_rate="50" magic_accuracy="1700" evasion="1800" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833370" level="62">
+        <stats_template maxHp="22400" pdefense="2250" mresist="2350" main_hand_attack="3300" run_speed="12.0" main_hand_accuracy="2250" main_hand_crit_rate="50" magic_accuracy="1750" evasion="1850" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833370" level="63">
+        <stats_template maxHp="22600" pdefense="2300" mresist="2400" main_hand_attack="3350" run_speed="12.0" main_hand_accuracy="2300" main_hand_crit_rate="50" magic_accuracy="1800" evasion="1900" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833370" level="64">
+        <stats_template maxHp="22800" pdefense="2350" mresist="2450" main_hand_attack="3400" run_speed="12.0" main_hand_accuracy="2350" main_hand_crit_rate="50" magic_accuracy="1850" evasion="1950" mcrit="9" parry="0"/>
+    </summon_stats>
+	
+	<!-- ********************* -->
+	<!-- MAGMA SPIRIT LEVEL: 4 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_dark="833262" level="65">
+        <stats_template maxHp="23000" pdefense="2400" mresist="2500" main_hand_attack="3450" run_speed="12.0" main_hand_accuracy="2400" main_hand_crit_rate="50" magic_accuracy="1900" evasion="2000" mcrit="9" parry="0"/>
+    </summon_stats>
+	
+	<!-- ********************** -->
+	<!-- When a Spiritualist reached a new level after
+	have accessed the rank of ArchDaeva,
+	level and statistics invoked his spirit are also adjusted. -->
+	<!-- ********************** -->
+	<summon_stats npc_id_dark="833262" level="66">
+        <stats_template maxHp="23200" pdefense="2450" mresist="2550" main_hand_attack="3500" run_speed="12.0" main_hand_accuracy="2450" main_hand_crit_rate="50" magic_accuracy="1950" evasion="2050" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="67">
+        <stats_template maxHp="23400" pdefense="2500" mresist="2600" main_hand_attack="3550" run_speed="12.0" main_hand_accuracy="2500" main_hand_crit_rate="50" magic_accuracy="2000" evasion="2100" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="68">
+        <stats_template maxHp="23600" pdefense="2550" mresist="2650" main_hand_attack="3600" run_speed="12.0" main_hand_accuracy="2550" main_hand_crit_rate="50" magic_accuracy="2050" evasion="2150" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="69">
+        <stats_template maxHp="23800" pdefense="2600" mresist="2700" main_hand_attack="3650" run_speed="12.0" main_hand_accuracy="2600" main_hand_crit_rate="50" magic_accuracy="2100" evasion="2200" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="70">
+        <stats_template maxHp="24000" pdefense="2650" mresist="2750" main_hand_attack="3700" run_speed="12.0" main_hand_accuracy="2650" main_hand_crit_rate="50" magic_accuracy="2150" evasion="2250" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="71">
+        <stats_template maxHp="24200" pdefense="2700" mresist="2800" main_hand_attack="3750" run_speed="12.0" main_hand_accuracy="2700" main_hand_crit_rate="50" magic_accuracy="2200" evasion="2300" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="72">
+        <stats_template maxHp="24400" pdefense="2750" mresist="2850" main_hand_attack="3800" run_speed="12.0" main_hand_accuracy="2750" main_hand_crit_rate="50" magic_accuracy="2250" evasion="2350" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="73">
+        <stats_template maxHp="24600" pdefense="2800" mresist="2900" main_hand_attack="3850" run_speed="12.0" main_hand_accuracy="2800" main_hand_crit_rate="50" magic_accuracy="2300" evasion="2400" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="74">
+        <stats_template maxHp="24800" pdefense="2850" mresist="2950" main_hand_attack="3900" run_speed="12.0" main_hand_accuracy="2850" main_hand_crit_rate="50" magic_accuracy="2350" evasion="2450" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="75">
+        <stats_template maxHp="25000" pdefense="2900" mresist="2750" main_hand_attack="3950" run_speed="12.0" main_hand_accuracy="2900" main_hand_crit_rate="50" magic_accuracy="2400" evasion="2500" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="76">
+        <stats_template maxHp="25200" pdefense="2950" mresist="2800" main_hand_attack="4000" run_speed="12.0" main_hand_accuracy="2950" main_hand_crit_rate="50" magic_accuracy="2450" evasion="2550" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="77">
+        <stats_template maxHp="25400" pdefense="3000" mresist="2850" main_hand_attack="4050" run_speed="12.0" main_hand_accuracy="3000" main_hand_crit_rate="50" magic_accuracy="2500" evasion="2600" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="78">
+        <stats_template maxHp="25600" pdefense="3050" mresist="2900" main_hand_attack="4100" run_speed="12.0" main_hand_accuracy="3050" main_hand_crit_rate="50" magic_accuracy="2550" evasion="2650" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="79">
+        <stats_template maxHp="25800" pdefense="3100" mresist="2950" main_hand_attack="4150" run_speed="12.0" main_hand_accuracy="3100" main_hand_crit_rate="50" magic_accuracy="2600" evasion="2700" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="80">
+        <stats_template maxHp="26000" pdefense="3150" mresist="3000" main_hand_attack="4200" run_speed="12.0" main_hand_accuracy="3150" main_hand_crit_rate="50" magic_accuracy="2650" evasion="2750" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="81">
+        <stats_template maxHp="26200" pdefense="3200" mresist="3050" main_hand_attack="4250" run_speed="12.0" main_hand_accuracy="3200" main_hand_crit_rate="50" magic_accuracy="2700" evasion="2800" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="82">
+        <stats_template maxHp="26400" pdefense="3250" mresist="3110" main_hand_attack="4300" run_speed="12.0" main_hand_accuracy="3250" main_hand_crit_rate="50" magic_accuracy="2750" evasion="2850" mcrit="9" parry="0"/>
+    </summon_stats>
+	<summon_stats npc_id_dark="833262" level="83">
+        <stats_template maxHp="26600" pdefense="3300" mresist="3150" main_hand_attack="4350" run_speed="12.0" main_hand_accuracy="3300" main_hand_crit_rate="50" magic_accuracy="2800" evasion="2900" mcrit="9" parry="0"/>
+    </summon_stats>
+</summon_stats_templates>

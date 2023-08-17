@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Silentera Canyon [Master Server]
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="600110000">
+		<!-- Defender Sentinel
+		<Inggison Guardian> -->
+		<spawn npc_id="209051" respawn_time="60">
+            <spot h="117" z="327.15436" y="414.29468" x="494.77997"/>
+            <spot h="85" z="327.26398" y="420.5908" x="504.3036"/>
+            <spot h="101" z="329.8945" y="458.80176" x="472.09024" walker_id="Defender_Sentinel_1"/>
+			<spot h="20" z="327.07553" y="379.11942" x="478.02637" walker_id="Defender_Sentinel_2"/>
+			<spot h="20" z="327.15466" y="371.0945" x="492.16055" walker_id="Defender_Sentinel_3"/>
+			<spot h="30" z="319.3533" y="461.33115" x="667.58527" walker_id="Defender_Sentinel_7"/>
+			<spot h="0" z="317.26205" y="423.73376" x="692.88666" walker_id="Defender_Sentinel_8"/>
+		</spawn>
+		<!-- Defender Sentinel
+		<Inggison Guardian> -->
+		<spawn npc_id="209056" respawn_time="60">
+			<spot h="0" z="332.75305" y="465.67584" x="588.66425"/>
+            <spot h="0" z="332.31265" y="487.505" x="585.09753"/>
+            <spot h="3" z="317.05408" y="254.06033" x="419.31595"/>
+            <spot h="7" z="317.6351" y="247.14886" x="421.24304"/>
+            <spot h="98" z="325.4405" y="367.508" x="528.03204"/>
+            <spot h="0" z="332.48642" y="479.00677" x="587.16754"/>
+            <spot h="94" z="325.40332" y="372.96255" x="538.43445"/>
+		</spawn>
+		<!-- Defender Sentinel
+		<Gelkmaros Archon> -->
+		<spawn npc_id="209251" respawn_time="60">
+			<spot h="10" z="332.71454" y="1132.1051" x="491.6426"/>
+            <spot h="36" z="332.4986" y="1126.437" x="502.3641"/>
+			<spot h="22" z="335.7383" y="1078.6556" x="472.48074" walker_id="Defender_Sentinel_4"/>
+			<spot h="60" z="332.41736" y="1129.611" x="538.3387" walker_id="Defender_Sentinel_5"/>
+			<spot h="60" z="332.50504" y="1146.6022" x="538.3681" walker_id="Defender_Sentinel_6"/>
+			<spot h="16" z="319.27673" y="1094.1837" x="677.71075" walker_id="Defender_Sentinel_9"/>
+			<spot h="119" z="319.12744" y="1107.922" x="702.75995" walker_id="Defender_Sentinel_10"/>
+		</spawn>
+		<!-- Defender Sentinel
+		<Gelkmaros Archon> -->
+		<spawn npc_id="209256" respawn_time="60">
+			<spot h="0" z="331.0133" y="1078.367" x="583.9702"/>
+            <spot h="1" z="331.4334" y="1065.8506" x="584.4763"/>
+            <spot h="117" z="305.9334" y="1292.0667" x="417.06534"/>
+            <spot h="119" z="306.0518" y="1284.8488" x="417.36844"/>
+            <spot h="1" z="331.87067" y="1053.0426" x="586.64984"/>
+            <spot h="26" z="330.48743" y="1178.5963" x="521.5876"/>
+            <spot h="19" z="329.9801" y="1185.546" x="511.16495"/>
+		</spawn>
+		<!-- Ranx Bodyguard
+		<Laksyaka Legion> -->
+		<spawn npc_id="216353" respawn_time="60">
+			<spot h="52" z="312.8755" y="753.8773" x="1380.2435"/>
+            <spot h="30" z="302.8411" y="748.05597" x="1253.5331"/>
+            <spot h="30" z="304.4061" y="748.09515" x="1283.6531"/>
+            <spot h="90" z="304.4061" y="786.6716" x="1283.5385"/>
+            <spot h="90" z="302.84378" y="786.9437" x="1252.9492"/>
+		</spawn>
+		<!-- Silentera Guard
+		<Dragonbound> -->
+		<spawn npc_id="216354" respawn_time="60">
+			<spot h="10" z="325.10718" y="1023.9985" x="796.25653"/>
+            <spot h="15" z="315.29953" y="1088.6049" x="944.56305"/>
+		</spawn>
+		<!-- Silentera Elite Fighter
+		<Dragonbound> -->
+		<spawn npc_id="216355" respawn_time="60">
+			<spot h="83" z="316.41812" y="1106.897" x="895.38367"/>
+		</spawn>
+		<!-- Silentera Patroller
+		<Dragonbound> -->
+		<spawn npc_id="216357" respawn_time="60">
+			<spot h="19" z="324.67557" y="1028.4211" x="758.87427"/>
+		</spawn>
+		<!-- Silentera Elite Mage
+		<Dragonbound> -->
+		<spawn npc_id="216358" respawn_time="60">
+			<spot h="15" z="315.3408" y="1089.4158" x="943.3816"/>
+            <spot h="6" z="316.2148" y="438.47522" x="874.89575"/>
+		</spawn>
+		<!-- Silentera Elite Summoner
+		<Dragonbound> -->
+		<spawn npc_id="216359" respawn_time="60">
+			<spot h="72" z="316.36237" y="1105.6478" x="896.2745"/>
+		</spawn>
+		<!-- Silentera Warpriest
+		<Dragonbound> -->
+		<spawn npc_id="216360" respawn_time="60">
+			<spot h="72" z="316.40036" y="1105.5717" x="894.5694"/>
+		</spawn>
+		<!-- Silentera Elite Friar
+		<Dragonbound> -->
+		<spawn npc_id="216361" respawn_time="60">
+			<spot h="15" z="314.6487" y="1088.7561" x="984.0433"/>
+		</spawn>
+		<!-- Silentera Elite Laborer
+		<Dragonbound> -->
+		<spawn npc_id="216362" respawn_time="60">
+			<spot h="112" z="299.8999" y="730.12354" x="1181.6014"/>
+            <spot h="54" z="301.041" y="894.32794" x="1195.268"/>
+            <spot h="23" z="299.84882" y="674.4637" x="1217.7906"/>
+            <spot h="70" z="301.346" y="659.1825" x="1141.0938"/>
+            <spot h="116" z="302.39578" y="642.43915" x="1148.8251"/>
+            <spot h="54" z="300.12927" y="804.78235" x="1100.2784"/>
+            <spot h="103" z="298.7675" y="861.57983" x="1206.1399"/>
+            <spot h="5" z="312.67773" y="576.1501" x="1148.1987"/>
+            <spot h="111" z="300.8626" y="663.18866" x="1103.0096"/>
+            <spot h="55" z="309.15762" y="600.9176" x="1111.8956"/>
+            <spot h="114" z="301.10922" y="900.6795" x="1163.5728"/>
+            <spot h="49" z="301.96484" y="878.4984" x="1080.8541"/>
+            <spot h="88" z="298.89185" y="649.7302" x="1184.9961"/>
+            <spot h="59" z="307.876" y="829.21014" x="1057.1968"/>
+            <spot h="17" z="305.5045" y="915.41895" x="1215.3094"/>
+            <spot h="60" z="299.6872" y="837.1212" x="1228.4966"/>
+            <spot h="19" z="297.29105" y="842.43066" x="1195.0565"/>
+            <spot h="62" z="306.2823" y="932.2729" x="1108.3708"/>
+            <spot h="38" z="299.33826" y="708.9075" x="1091.0417"/>
+            <spot h="14" z="301.12875" y="886.1488" x="1167.9557"/>
+            <spot h="89" z="298.6368" y="693.883" x="1232.0311"/>
+            <spot h="117" z="304.66443" y="623.0149" x="1155.6757"/>
+            <spot h="18" z="305.76843" y="1013.9883" x="1138.5825"/>
+            <spot h="69" z="312.61862" y="528.60077" x="1108.5004"/>
+            <spot h="17" z="303.36365" y="631.9187" x="1211.9904"/>
+            <spot h="111" z="303.875" y="619.9437" x="1211.9581"/>
+            <spot h="75" z="299.9106" y="672.2723" x="1247.158"/>
+            <spot h="81" z="300.32092" y="726.2106" x="1099.5515"/>
+            <spot h="58" z="307.80603" y="704.24884" x="1059.9249"/>
+		</spawn>
+		<!-- Brown Arachna
+		One of the poisonous insects found across the Silentera Canyon -->
+		<spawn npc_id="216365" respawn_time="60">
+			<spot h="110" z="304.7094" y="1407.8716" x="332.92587"/>
+            <spot h="65" z="305.97626" y="149.5688" x="355.62"/>
+            <spot h="44" z="293.88177" y="1254.6306" x="325.04318"/>
+            <spot h="59" z="292.2285" y="1322.9551" x="327.2186"/>
+            <spot h="23" z="293.88696" y="188.48045" x="309.32806"/>
+            <spot h="119" z="294.3186" y="220.35638" x="299.49286"/>
+            <spot h="60" z="316.67773" y="130.47249" x="444.28363"/>
+            <spot h="52" z="304.89594" y="1267.4794" x="472.64682"/>
+            <spot h="46" z="310.39322" y="112.897316" x="374.57285"/>
+            <spot h="118" z="284.6392" y="1289.1096" x="327.1176"/>
+            <spot h="118" z="292.95093" y="1322.6073" x="301.27234"/>
+            <spot h="57" z="283.375" y="1274.6178" x="381.39526"/>
+            <spot h="11" z="295.77206" y="273.58423" x="330.8235"/>
+		</spawn>
+		<!-- Blackclaw Scolopen
+		One of the poisonous insects found across the Silentera Canyon -->
+		<spawn npc_id="216366" respawn_time="60">
+			<spot h="100" z="317.17166" y="1285.7827" x="792.72235"/>
+            <spot h="95" z="317.57132" y="431.64032" x="758.2203"/>
+            <spot h="104" z="320.9157" y="256.45682" x="739.81647"/>
+            <spot h="66" z="311.13916" y="273.2527" x="797.5301"/>
+            <spot h="82" z="327.49707" y="1341.3177" x="836.52637"/>
+            <spot h="92" z="312.1991" y="1232.5228" x="799.8603"/>
+            <spot h="89" z="311.36102" y="1190.0492" x="799.727"/>
+            <spot h="76" z="320.6048" y="1312.2991" x="825.6961"/>
+            <spot h="20" z="311.3337" y="307.6826" x="800.7046"/>
+            <spot h="39" z="320.75818" y="224.7159" x="813.5625"/>
+            <spot h="47" z="327.0828" y="202.34892" x="836.87427"/>
+		</spawn>
+		<!-- Jotun Juggernaut
+		A Jotun in the Lower Udas Temple -->
+		<spawn npc_id="216367" respawn_time="60">
+			<spot h="63" z="297.15384" y="719.9938" x="943.9637"/>
+            <spot h="54" z="292.71603" y="768.6162" x="781.16797"/>
+            <spot h="104" z="292.78796" y="781.4675" x="625.9067"/>
+            <spot h="16" z="292.794" y="751.3323" x="624.3511"/>
+            <spot h="35" z="296.3658" y="888.3957" x="626.0893"/>
+            <spot h="90" z="304.44827" y="398.70615" x="367.0575"/>
+            <spot h="60" z="296.41022" y="820.4952" x="890.2542"/>
+            <spot h="31" z="305.05057" y="1126.8096" x="364.4986"/>
+            <spot h="31" z="292.7217" y="704.3111" x="713.83826"/>
+            <spot h="90" z="292.7246" y="827.3666" x="713.2541"/>
+		</spawn>
+		<!-- Jotun Creator
+		A Jotun in the Lower Udas Temple -->
+		<spawn npc_id="216368" respawn_time="60">
+			<spot h="4" z="304.74384" y="573.88525" x="578.83826"/>
+            <spot h="61" z="292.50327" y="766.76373" x="730.80457"/>
+            <spot h="78" z="314.48657" y="989.2639" x="415.26227"/>
+            <spot h="36" z="310.60593" y="532.5991" x="499.706"/>
+            <spot h="1" z="292.5043" y="766.34204" x="697.9375"/>
+            <spot h="118" z="306.625" y="975.6347" x="619.8275"/>
+		</spawn>
+		<!-- Jumping Kalgolem -->
+		<spawn npc_id="216370" respawn_time="60">
+			<spot h="51" z="304.95575" y="929.5056" x="645.95154"/>
+            <spot h="105" z="305.14807" y="508.93576" x="353.2718"/>
+            <spot h="118" z="313.9274" y="1158.5911" x="757.90826"/>
+            <spot h="106" z="311.39062" y="555.7858" x="433.6149"/>
+            <spot h="83" z="297.1443" y="921.3747" x="798.1029"/>
+            <spot h="10" z="296.87775" y="807.1784" x="835.56714"/>
+            <spot h="46" z="297.93842" y="871.03577" x="800.98553"/>
+            <spot h="38" z="314.232" y="986.5712" x="449.99704"/>
+            <spot h="108" z="310.96783" y="533.4914" x="555.6208"/>
+            <spot h="43" z="313.64404" y="994.86163" x="538.4169"/>
+            <spot h="12" z="313.07172" y="1006.1063" x="492.906"/>
+            <spot h="44" z="297.15384" y="709.6596" x="927.40906"/>
+            <spot h="44" z="312.006" y="502.89673" x="598.7863"/>
+            <spot h="36" z="304.59622" y="605.1151" x="791.844"/>
+            <spot h="49" z="313.25992" y="1131.0532" x="782.9337"/>
+            <spot h="63" z="312.88022" y="1021.2575" x="580.54425"/>
+            <spot h="40" z="305.80414" y="1015.8227" x="359.5071"/>
+            <spot h="72" z="296.84818" y="726.478" x="900.0502"/>
+            <spot h="58" z="297.2529" y="601.0371" x="857.08453"/>
+		</spawn>
+		<!-- Silentera Mugolem -->
+		<spawn npc_id="216371" respawn_time="60">
+			<spot h="69" z="322.57822" y="996.8737" x="881.6549"/>
+            <spot h="15" z="324.4079" y="1069.9501" x="752.19006"/>
+            <spot h="23" z="325.07846" y="1058.2012" x="879.11115"/>
+            <spot h="83" z="325.03326" y="1022.0098" x="863.4115"/>
+            <spot h="102" z="322.4885" y="994.0916" x="833.07904"/>
+            <spot h="47" z="325.07846" y="1032.3757" x="897.6344"/>
+            <spot h="1" z="325.03326" y="1038.0967" x="828.1858"/>
+		</spawn>
+		<!-- Laksyaka Bloodboss
+		<Laksyaka Legion> -->
+		<spawn npc_id="216372" respawn_time="60">
+			<spot h="90" z="300.81207" y="779.5244" x="1187.8922"/>
+            <spot h="30" z="300.81207" y="755.342" x="1188.1146"/>
+            <spot h="90" z="301.2258" y="698.5172" x="1120.724"/>
+            <spot h="90" z="301.2255" y="698.24805" x="1153.3336"/>
+            <spot h="90" z="312.8755" y="781.0503" x="1346.9166"/>
+            <spot h="60" z="304.4061" y="748.3282" x="1296.8832"/>
+            <spot h="30" z="301.22568" y="836.4637" x="1153.9045"/>
+            <spot h="30" z="301.22543" y="836.6895" x="1121.1884"/>
+			<spot h="60" z="304.4061" y="786.81683" x="1297.6124"/>
+		</spawn>
+		<!-- Laksyaka High Magus
+		<Laksyaka Legion> -->
+		<spawn npc_id="216373" respawn_time="60">
+			<spot h="29" z="312.8755" y="753.8193" x="1347.1289"/>
+            <spot h="60" z="301.32193" y="782.4064" x="1112.8042"/>
+            <spot h="0" z="301.36304" y="767.1655" x="1160.998"/>
+		</spawn>
+		<!-- Laksyaka Head Marksman
+		<Laksyaka Legion> -->
+		<spawn npc_id="216375" respawn_time="60">
+			<spot h="90" z="302.85416" y="706.2507" x="1287.6909"/>
+            <spot h="59" z="304.3182" y="767.45856" x="1274.6166"/>
+            <spot h="30" z="302.85416" y="828.6698" x="1291.6581"/>
+            <spot h="69" z="300.41556" y="740.3623" x="1232.405"/>
+            <spot h="60" z="304.3182" y="774.75354" x="1279.6442"/>
+            <spot h="60" z="304.3182" y="760.4088" x="1279.9393"/>
+            <spot h="48" z="301.4357" y="658.94867" x="1218.0767"/>
+            <spot h="77" z="301.4358" y="876.4192" x="1215.9446"/>
+            <spot h="60" z="300.39774" y="795.2054" x="1232.0028"/>
+		</spawn>
+		<!-- Laksyaka Chief Medic
+		<Laksyaka Legion> -->
+		<spawn npc_id="216376" respawn_time="60">
+			<spot h="0" z="301.36227" y="774.702" x="1163.8354"/>
+            <spot h="90" z="312.8755" y="781.12317" x="1379.8123"/>
+            <spot h="60" z="301.3219" y="752.68536" x="1112.662"/>
+            <spot h="119" z="301.36234" y="759.964" x="1163.5054"/>
+		</spawn>
+		<!-- Longtailed Crynac -->
+		<spawn npc_id="216377" respawn_time="60">
+			<spot h="104" z="301.0" y="878.8539" x="957.25024"/>
+            <spot h="15" z="303.8056" y="654.1607" x="944.2569"/>
+            <spot h="11" z="303.40848" y="645.4647" x="969.6038"/>
+            <spot h="95" z="300.7218" y="875.55365" x="939.5285"/>
+            <spot h="83" z="302.77386" y="677.29645" x="1002.9838"/>
+            <spot h="118" z="300.80545" y="874.66016" x="1009.3913"/>
+		</spawn>
+		<!-- Silentera Harbinger
+		<Dragonbound> -->
+		<spawn npc_id="216378" respawn_time="60">
+			<spot h="112" z="314.79257" y="1109.1796" x="979.88324"/>
+		</spawn>
+		<!-- Silentera Warmonger
+		<Dragonbound> -->
+		<spawn npc_id="216379" respawn_time="60">
+			<spot h="108" z="310.3836" y="1107.9755" x="1052.2789"/>
+		</spawn>
+		<!-- Silentera Elite Ambusher
+		<Dragonbound> -->
+		<spawn npc_id="216380" respawn_time="60">
+			<spot h="39" z="310.84607" y="415.8195" x="1125.2354"/>
+		</spawn>
+		<!-- Silentera Elite Sentinel
+		<Dragonbound> -->
+		<spawn npc_id="216381" respawn_time="60">
+			<spot h="48" z="316.4978" y="421.87955" x="1037.9404"/>
+		</spawn>
+		<!-- Silentera Elite Sorcerer
+		<Dragonbound> -->
+		<spawn npc_id="216382" respawn_time="60">
+			<spot h="78" z="321.56232" y="508.01974" x="827.5224"/>
+		</spawn>
+		<!-- Silentera Fencer
+		<Dragonbound> -->
+		<spawn npc_id="216386" respawn_time="60">
+			<spot h="90" z="310.84775" y="486.68085" x="1119.891"/>
+		</spawn>
+		<!-- Silentera Elite Assaulter
+		<Dragonbound> -->
+		<spawn npc_id="216387" respawn_time="60">
+			<spot h="46" z="321.85745" y="483.07327" x="900.2706"/>
+		</spawn>
+		<!-- Silentera Vaegir
+		<Dragonbound> -->
+		<spawn npc_id="216388" respawn_time="60">
+			<spot h="0" z="324.1726" y="491.5089" x="740.3788"/>
+		</spawn>
+		<!-- Silentera Elite Dark Sorcerer
+		<Dragonbound> -->
+		<spawn npc_id="216390" respawn_time="60">
+			<spot h="13" z="305.98486" y="1077.4377" x="1108.4213"/>
+		</spawn>
+		<!-- Silentera Elite Healer
+		<Dragonbound> -->
+		<spawn npc_id="216392" respawn_time="60">
+			<spot h="118" z="316.2148" y="440.02893" x="875.0024"/>
+            <spot h="46" z="316.69757" y="418.868" x="939.7962"/>
+		</spawn>
+		<!-- Silentera Elite Chanter
+		<Dragonbound> -->
+		<spawn npc_id="216393" respawn_time="60">
+			<spot h="60" z="321.56232" y="496.24704" x="902.2031"/>
+            <spot h="106" z="324.1726" y="509.48764" x="740.5506"/>
+		</spawn>
+		<!-- Silentera Elite Defender
+		<Dragonbound> -->
+		<spawn npc_id="216394" respawn_time="60">
+			<spot h="43" z="306.09186" y="1078.6116" x="1132.8625"/>
+		</spawn>
+		<!-- Silentera Elite Bodyguard
+		<Dragonbound> -->
+		<spawn npc_id="216395" respawn_time="60">
+			<spot h="44" z="316.6798" y="419.8797" x="940.926"/>
+		</spawn>
+		<!-- Silentera Elite Assassin
+		<Dragonbound> -->
+		<spawn npc_id="216396" respawn_time="60">
+			<spot h="118" z="316.2148" y="438.9227" x="876.5848"/>
+            <spot h="8" z="310.84778" y="441.8462" x="1102.9401"/>
+		</spawn>
+		<!-- Silentera Elite Sniper
+		<Dragonbound> -->
+		<spawn npc_id="216397" respawn_time="60">
+			<spot h="25" z="321.56232" y="483.31323" x="854.7434"/>
+            <spot h="78" z="316.7096" y="441.5881" x="996.2133"/>
+		</spawn>
+		<!-- Silentera Solaster
+		<Dragonbound> -->
+		<spawn npc_id="216399" respawn_time="60">
+			<spot h="106" z="324.1726" y="508.12692" x="739.39465"/>
+		</spawn>
+		<!-- Silentera Anchorite
+		<Dragonbound> -->
+		<spawn npc_id="216401" respawn_time="60">
+			<spot h="40" z="321.38196" y="530.56573" x="865.0955"/>
+            <spot h="108" z="323.98938" y="507.26965" x="775.0066"/>
+		</spawn>
+		<!-- Baby Stinging Sheluk -->
+		<spawn npc_id="216403" respawn_time="60">
+			<spot h="51" z="311.2683" y="296.85352" x="554.27606"/>
+            <spot h="97" z="307.7672" y="1289.2007" x="639.7278"/>
+            <spot h="54" z="311.10242" y="329.45752" x="826.0112"/>
+            <spot h="41" z="314.18436" y="240.38867" x="660.4749"/>
+            <spot h="38" z="313.28378" y="255.22849" x="645.8703"/>
+            <spot h="58" z="312.39676" y="301.39398" x="577.1741"/>
+		</spawn>
+		<!-- Babybrown Arachna -->
+		<spawn npc_id="216404" respawn_time="60">
+			<spot h="7" z="294.8952" y="222.99278" x="298.53394"/>
+            <spot h="27" z="294.17105" y="189.10873" x="306.34854"/>
+            <spot h="13" z="296.02972" y="275.77502" x="328.7622"/>
+            <spot h="67" z="305.90256" y="146.44092" x="356.94308"/>
+            <spot h="47" z="310.14172" y="110.08502" x="372.21872"/>
+            <spot h="62" z="316.67773" y="127.32326" x="444.78055"/>
+            <spot h="108" z="304.54962" y="1410.7937" x="334.39664"/>
+            <spot h="62" z="292.42993" y="1319.7303" x="327.39066"/>
+            <spot h="118" z="292.61218" y="1319.1792" x="300.61578"/>
+            <spot h="119" z="285.45425" y="1292.2216" x="326.85855"/>
+            <spot h="43" z="294.39398" y="1256.7275" x="327.91528"/>
+            <spot h="59" z="283.375" y="1277.7756" x="382.1033"/>
+			<spot h="54" z="304.46832" y="1270.6677" x="473.74817"/>
+		</spawn>
+		<!-- Baby Blackclaw Scolopen -->
+		<spawn npc_id="216405" respawn_time="60">
+			<spot h="102" z="320.95358" y="254.4346" x="737.1775"/>
+            <spot h="105" z="316.61475" y="1283.0269" x="791.2986"/>
+            <spot h="86" z="321.19516" y="1310.993" x="828.0205"/>
+            <spot h="83" z="327.64865" y="1342.8195" x="833.92004"/>
+            <spot h="98" z="312.40558" y="1230.9293" x="797.6519"/>
+            <spot h="89" z="311.3325" y="1190.5245" x="796.68005"/>
+            <spot h="56" z="327.44775" y="199.37192" x="836.0047"/>
+            <spot h="46" z="321.05533" y="222.55911" x="811.43756"/>
+            <spot h="76" z="311.13916" y="275.15253" x="795.5801"/>
+            <spot h="27" z="311.41037" y="307.2928" x="803.5558"/>
+            <spot h="98" z="317.0857" y="429.7903" x="755.5363"/>
+		</spawn>
+		<!-- F4_Raid_Drakan_Boss_55_Ah -->
+		<spawn npc_id="247717" respawn_time="1800">
+            <spot h="60" z="304.3182" y="767.5517" x="1290.3983"/>
+		</spawn>
+		<!-- F4_Raid_Nepilim_Boss_55_Ah -->
+        <spawn npc_id="247718" respawn_time="1800">
+            <spot x="679.3107" y="767.20746" z="289.70215" h="61" walker_id="underpass_m_npcpathunderpass_m_raid01"/>
+		</spawn>
+		
+		<!-- Perry
+		<Wisplight Legionary> -->
+		<spawn npc_id="799033" respawn_time="60">
+			<spot x="482.177" y="427.394" z="327.943" h="25"/>
+		</spawn>
+		<!-- Icorunerk
+		<Coin Collector>
+		A Shugo in Silentera Canyon. She is known to collect rare coins -->
+		<spawn npc_id="799087" respawn_time="60">
+			<spot h="115" z="299.70352" y="331.12317" x="537.57825"/>
+		</spawn>
+		<!-- Rueur
+		<Fatebound Legionary> -->
+		<spawn npc_id="799338" respawn_time="60">
+			<spot x="496.798" y="1109.360" z="333.306" h="70"/>
+		</spawn>
+		<!-- Lania
+		<Wisplight Centurion>
+		A Wisplight centurion dispatched to the Silentera Canyon.
+		An extremely level-headed person who believes a mission must be carried out at all costs once received -->
+		<spawn npc_id="799381" respawn_time="60">
+			<spot x="477.275" y="362.739" z="327.510" h="21"/>
+		</spawn>
+		<!-- Elatos
+		<Wisplight Adjutant>
+        The Wisplight Adjutant dispatched to Silentera Canyon -->
+		<spawn npc_id="799382" respawn_time="60">
+			<spot x="481.835" y="362.631" z="327.510" h="21"/>
+		</spawn>
+		<!-- Vergelan
+		<Fatebound Centurion>
+        A Fatebound centurion dispatched to the Silentera Canyon.
+		Normally indifferent and reserved, he is surprisingly warm-hearted -->
+		<spawn npc_id="799383" respawn_time="60">
+			<spot x="558.392" y="1137.315" z="332.857" h="60"/>
+		</spawn>
+		<!-- Arne
+		<Fatebound Adjutant> -->
+		<spawn npc_id="799384" respawn_time="60">
+			<spot x="555.605" y="1143.927" z="332.857" h="60"/>
+		</spawn>
+		<!-- Wisplight Legionary -->
+		<spawn npc_id="799385" respawn_time="60">
+			<spot x="481.934" y="374.597" z="327.383" h="81"/>
+		</spawn>
+		<!-- Wisplight Legionary -->
+		<spawn npc_id="799386" respawn_time="60">
+			<spot x="485.866" y="372.372" z="327.383" h="81"/>
+		</spawn>
+		<!-- Wisplight Legionary -->
+		<spawn npc_id="799387" respawn_time="60">
+			<spot x="480.798" y="372.557" z="327.383" h="81"/>
+		</spawn>
+		<!-- Wisplight Legionary -->
+		<spawn npc_id="799388" respawn_time="60">
+			<spot x="484.748" y="370.465" z="327.383" h="81"/>
+		</spawn>
+		<!-- Wisplight Legionary -->
+		<spawn npc_id="799389" respawn_time="60">
+			<spot x="482.727" y="371.483" z="327.383" h="81"/>
+		</spawn>
+		<!-- Wisplight Legionary -->
+		<spawn npc_id="799390" respawn_time="60">
+			<spot x="479.708" y="370.681" z="327.383" h="81"/>
+			<spot x="481.668" y="369.606" z="327.383" h="81"/>
+		</spawn>
+		<!-- Wisplight Legionary -->
+		<spawn npc_id="799391" respawn_time="60">
+			<spot x="483.934" y="373.527" z="327.383" h="81"/>
+		</spawn>
+		<!-- Wisplight Legionary -->
+		<spawn npc_id="799392" respawn_time="60">
+			<spot x="483.669" y="368.579" z="327.383" h="81"/>
+		</spawn>
+		<!-- Fatebound Legionary -->
+		<spawn npc_id="799393" respawn_time="60">
+			<spot x="543.136" y="1139.983" z="332.730"/>
+			<spot x="547.497" y="1137.269" z="332.730"/>
+		</spawn>
+		<!-- Fatebound Legionary -->
+		<spawn npc_id="799394" respawn_time="60">
+			<spot x="547.554" y="1140.024" z="332.730"/>
+		</spawn>
+		<!-- Fatebound Legionary -->
+		<spawn npc_id="799395" respawn_time="60">
+			<spot x="547.583" y="1134.629" z="332.777"/>
+		</spawn>
+		<!-- Fatebound Legionary -->
+		<spawn npc_id="799396" respawn_time="60">
+			<spot x="545.266" y="1134.616" z="332.777"/>
+		</spawn>
+		<!-- Fatebound Legionary -->
+		<spawn npc_id="799397" respawn_time="60">
+			<spot x="545.181" y="1137.257" z="332.730"/>
+		</spawn>
+		<!-- Fatebound Legionary -->
+		<spawn npc_id="799398" respawn_time="60">
+			<spot x="545.237" y="1140.011" z="332.730"/>
+		</spawn>
+		<!-- Fatebound Legionary -->
+		<spawn npc_id="799399" respawn_time="60">
+			<spot x="543.165" y="1134.588" z="332.797"/>
+		</spawn>
+		<!-- Fatebound Legionary -->
+		<spawn npc_id="799400" respawn_time="60">
+			<spot x="543.079" y="1137.229" z="332.730"/>
+		</spawn>
+		<!-- Raffinerk
+		<Coin Collector>
+		A Shugo in Silentera Canyon. She is known to collect rare coins -->
+		<spawn npc_id="799426" respawn_time="60">
+			<spot h="72" z="313.43073" y="1274.7565" x="509.06744"/>
+		</spawn>
+		<!-- Armanerk
+		<Black Cloud Traders Merchant> -->
+		<spawn npc_id="799507" respawn_time="60">
+			<temporary_spawn spawn_time="20.*.*" despawn_time="4.*.*"/>
+			<spot h="67" z="335.65186" y="184.61906" x="882.9051"/>
+		</spawn>
+		<!-- Pradaaknerk
+		<Black Cloud Traders Merchant> -->
+		<spawn npc_id="799510" respawn_time="60">
+			<temporary_spawn spawn_time="20.*.*" despawn_time="4.*.*"/>
+			<spot h="57" z="333.93707" y="1345.9512" x="868.9651"/>
+		</spawn>
+		<!-- Radiel -->
+		<spawn npc_id="835729" respawn_time="60">
+		    <spot h="108" z="299.61633" y="772.70905" x="522.9917"/>
+		</spawn>
+		
+		<!-- Jotun Relics
+		Ancient Jotun relics scattered around Silentera Canyon.
+		They may be imbued with Petralith power -->
+		<spawn npc_id="700568" respawn_time="60">
+			<spot x="421.560" y="1004.115" z="313.399" entity_id="58"/>
+			<spot x="466.605" y="1003.629" z="313.399" entity_id="64"/>
+			<spot x="421.175" y="1029.617" z="313.399" entity_id="99"/>
+			<spot x="553.920" y="1034.236" z="313.261" entity_id="106"/>
+			<spot x="383.728" y="1083.029" z="305.522" entity_id="114"/>
+			<spot x="377.887" y="1113.411" z="305.352" entity_id="113"/>
+			<spot x="354.513" y="1202.990" z="297.767" entity_id="95"/>
+			<spot x="592.136" y="1028.023" z="317.152" entity_id="115"/>
+			<spot x="598.083" y="1012.069" z="317.513" entity_id="54"/>
+			<spot x="609.510" y="986.1860" z="310.761" entity_id="71"/>
+			<spot x="579.132" y="1012.302" z="312.880" entity_id="93"/>
+			<spot x="1103.035" y="898.952" z="302.089" entity_id="75"/>
+			<spot x="1195.540" y="890.015" z="301.096" entity_id="86"/>
+			<spot x="1106.527" y="838.401" z="301.722" entity_id="76"/>
+			<spot x="1162.771" y="819.678" z="301.363" entity_id="80"/>
+			<spot x="1186.277" y="819.842" z="296.688" entity_id="91"/>
+			<spot x="1229.005" y="828.164" z="297.342" entity_id="78"/>
+			<spot x="1288.423" y="880.606" z="301.958" entity_id="111"/>
+			<spot x="1281.105" y="670.524" z="301.956" entity_id="90"/>
+			<spot x="1215.161" y="663.566" z="301.434" entity_id="89"/>
+			<spot x="1183.813" y="651.686" z="298.434" entity_id="81"/>
+			<spot x="1091.860" y="660.625" z="299.443" entity_id="104"/>
+			<spot x="1066.079" y="687.178" z="302.488" entity_id="88"/>
+			<spot x="1135.139" y="610.481" z="303.244" entity_id="82"/>
+			<spot x="1114.733" y="576.930" z="311.134" entity_id="84"/>
+			<spot x="978.958" y="674.966" z="302.774" entity_id="87"/>
+			<spot x="787.940" y="760.926" z="292.747" entity_id="55"/>
+			<spot x="759.833" y="708.164" z="293.424" entity_id="61"/>
+			<spot x="843.373" y="810.896" z="296.665" entity_id="96"/>
+			<spot x="735.084" y="736.185" z="289.514" entity_id="79"/>
+			<spot x="748.813" y="796.088" z="289.514" entity_id="85"/>
+			<spot x="672.719" y="708.321" z="293.069" entity_id="110"/>
+			<spot x="681.760" y="740.272" z="289.514" entity_id="60"/>
+			<spot x="658.227" y="755.071" z="292.918" entity_id="68"/>
+			<spot x="687.649" y="824.222" z="293.145" entity_id="97"/>
+			<spot x="701.073" y="837.053" z="292.785" entity_id="69"/>
+			<spot x="678.842" y="852.050" z="293.069" entity_id="56"/>
+			<spot x="640.008" y="726.074" z="293.069" entity_id="62"/>
+			<spot x="601.487" y="693.732" z="293.069" entity_id="67"/>
+			<spot x="598.326" y="690.696" z="293.069" entity_id="63"/>
+			<spot x="615.457" y="815.020" z="293.069" entity_id="98"/>
+			<spot x="582.333" y="777.405" z="299.841" entity_id="53"/>
+			<spot x="600.571" y="848.742" z="293.069" entity_id="70"/>
+			<spot x="594.905" y="848.838" z="293.069" entity_id="101"/>
+			<spot x="638.468" y="881.609" z="296.366" entity_id="108"/>
+			<spot x="606.663" y="885.972" z="296.366" entity_id="109"/>
+			<spot x="645.285" y="953.946" z="304.956" entity_id="72"/>
+			<spot x="568.465" y="970.834" z="306.104" entity_id="116"/>
+			<spot x="354.793" y="1072.45" z="305.352" entity_id="59"/>
+			<spot x="353.681" y="1152.84" z="306.331" entity_id="102"/>
+			<spot x="630.243" y="644.724" z="296.457" entity_id="74"/>
+			<spot x="612.159" y="594.264" z="301.478" entity_id="65"/>
+			<spot x="564.056" y="497.824" z="310.228" entity_id="105"/>
+			<spot x="591.871" y="510.017" z="310.696" entity_id="107"/>
+			<spot x="489.638" y="528.865" z="311.370" entity_id="66"/>
+			<spot x="388.100" y="423.459" z="304.761" entity_id="100"/>
+			<spot x="386.919" y="453.092" z="304.761" entity_id="49"/>
+			<spot x="419.477" y="546.928" z="313.498" entity_id="112"/>
+			<spot x="398.394" y="502.243" z="305.038" entity_id="103"/>
+			<spot x="399.238" y="525.374" z="305.038" entity_id="92"/>
+			<spot x="386.984" y="515.534" z="305.038" entity_id="51"/>
+			<spot x="357.101" y="499.755" z="305.038" entity_id="77"/>
+			<spot x="352.078" y="394.615" z="304.448" entity_id="57"/>
+			<spot x="374.790" y="376.375" z="303.999" entity_id="50"/>
+			<spot x="1113.365" y="510.850" z="310.634" entity_id="83"/>
+		</spawn>
+		<!-- Statue Dirvisia
+		A woman who was cursed into becoming a statue while she fought the Balaur in the Silentera Canyon.
+		You can release her from this curse by using the Stone of Restoration on her -->
+		<spawn npc_id="700569" respawn_time="60">
+			<spot x="556.0000" y="308.0000" z="310.32809" entity_id="148"/>
+		</spawn>
+		<!-- Statue Sinigalla
+		A woman who was cursed into becoming a statue while she fought the Balaur in the Silentera Canyon.
+		You can release her from this curse by using the Medicine of Restoration on her -->
+		<spawn npc_id="700570" respawn_time="60">
+			<spot x="546.75189" y="1233.693" z="304.29892" entity_id="149"/>
+		</spawn>
+		<!-- Beshmundir's Walk
+		The entrance leading to the Beshmundir Temple located inside the Silentera Canyon -->
+		<spawn npc_id="730231" respawn_time="60">
+			<spot x="1420.1163" y="767.10107" z="321.79669" entity_id="33"/>
+		</spawn>
+		<!-- Angrief Pass -->
+		<spawn npc_id="730257" respawn_time="60">
+			<spot x="489.34744" y="105.05547" z="330.84946" entity_id="121"/>
+		</spawn>
+		<!-- Hanarkand Pass -->
+		<spawn npc_id="730258" respawn_time="60">
+			<spot x="920.27399" y="149.07558" z="351.05179" entity_id="122"/>
+		</spawn>
+		<!-- Primeval Pass -->
+		<spawn npc_id="730259" respawn_time="60">
+			<spot x="981.41815" y="555.54639" z="315.89032" entity_id="127"/>
+		</spawn>
+		<!-- Mitrakand Pass -->
+		<spawn npc_id="730261" respawn_time="60">
+			<spot x="493.67514" y="1440.7992" z="333.54776" entity_id="124"/>
+		</spawn>
+		<!-- Vorgaltem Pass -->
+		<spawn npc_id="730262" respawn_time="60">
+			<spot x="931.40747" y="1405.1694" z="344.72668" entity_id="123"/>
+		</spawn>
+		<!-- Earthfang Pass -->
+		<spawn npc_id="730263" respawn_time="60">
+			<spot x="1020.2103" y="970.32404" z="314.95966" entity_id="118"/>
+		</spawn>
+		<!-- Inggison Gateway -->
+		<spawn npc_id="730270" respawn_time="60">
+			<spot x="466.39011" y="465.98611" z="329.17526" entity_id="48"/>
+		</spawn>
+		<!-- Gelkmaros Gateway -->
+		<spawn npc_id="730271" respawn_time="60">
+			<spot x="471.48593" y="1076.6548" z="334.25821" entity_id="47"/>
+		</spawn>
+		<!-- The Hexway
+		This large gate leads to The Hexway. It's tightly closed and won't budge -->
+		<spawn npc_id="730731" respawn_time="60">
+		    <temporary_spawn spawn_time="7.*.*" despawn_time="20.*.*"/>
+			<spot x="520.67932" y="767.20148" z="299.42154" entity_id="651"/>
+		</spawn>
+	</spawn_map>
+</spawns>

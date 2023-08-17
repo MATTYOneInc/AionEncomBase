@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Dynamic Rift
+	ベルスラン
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="220040000">
+		<dynamic_rift_spawn id="3">
+			<dynamic_rift_type dstate="OPEN">
+				<!-- Draupnir Cave [Hidden Zone] -->
+				<spawn npc_id="805297">
+				    <spot x="1421.9556" y="2697.68192" z="605.80072" entity_id="152"/>
+				</spawn>
+				<!-- Draupnir Cave -->
+				<spawn npc_id="700564">
+				    <spot x="1605.7931" y="2732.2451" z="705.12402" entity_id="311"/>
+				</spawn>
+				<!-- Draupnir Cave [Fang Troll Encampment] -->
+				<spawn npc_id="730055">
+				    <spot x="1732.374" y="1722.948" z="572.625" entity_id="313"/>
+				</spawn>
+				<!-- Draupnir Cave [Southgate] -->
+				<spawn npc_id="731687">
+				    <spot x="2156.4097" y="2094.3052" z="598.11554" entity_id="23"/>
+				</spawn>
+				<!-- Draupnir Cave [Hoarfrost Shelter] -->
+				<spawn npc_id="731688">
+				    <spot x="2417.6475" y="2068.8772" z="579.4452" h="107"/>
+				</spawn>
+			</dynamic_rift_type>
+			<dynamic_rift_type dstate="CLOSED">
+			</dynamic_rift_type>
+		</dynamic_rift_spawn>
+		<dynamic_rift_spawn id="4">
+			<dynamic_rift_type dstate="OPEN">
+				<!-- Indratu Fortress -->
+				<spawn npc_id="700360">
+				    <spot x="1479.0189" y="1939.6741" z="586.21967" entity_id="813"/>
+				</spawn>
+			</dynamic_rift_type>
+			<dynamic_rift_type dstate="CLOSED">
+			</dynamic_rift_type>
+		</dynamic_rift_spawn>
+    </spawn_map>
+</spawns>

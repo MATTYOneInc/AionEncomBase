@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Instance Rift 4.9/5.0
+	Made By (Encom)
+ -->
+<instance_rift xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="instance_rift.xsd">
+	<!-- ISLE OF ROOTS STOREROOM -->
+	<instance_location id="1"/>
+	<!-- GRAVE OF STEEL STOREROOM -->
+	<instance_location id="2"/>
+	<!-- TWILIGHT BATTELFIELD STOREROOM -->
+	<instance_location id="3"/>
+	<!-- CARPUS ISLE STOREROOM -->
+	<instance_location id="4"/>
+	<!-- HAMATE ISLE STOREROOM -->
+	<instance_location id="5"/>
+	<!-- ADMA'S FALL [Iluma] -->
+	<instance_location id="6"/>
+	<!-- THEOBOMOS TEST CHAMBER [Iluma] -->
+	<instance_location id="7"/>
+	<!-- ADMA'S FALL [Norsvold] -->
+	<instance_location id="8"/>
+	<!-- THEOBOMOS TEST CHAMBER [Norsvold] -->
+	<instance_location id="9"/>
+</instance_rift>

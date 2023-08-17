@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Water Spirit Stats 4.8/5.0
+	Made By Rinzler & The Moose (Encom)
+	Checked By Encom 14/08/2016
+ -->
+<summon_stats_templates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../stats.xsd">
+	<!-- ********************* -->
+	<!-- WATER SPIRIT LEVEL: 1 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_light="833305" npc_id_dark="833306" level="19">
+		<stats_template maxHp="5500" pdefense="650" mresist="350" main_hand_attack="90" run_speed="9.6" main_hand_accuracy="750" main_hand_crit_rate="50" magic_accuracy="350" mcrit="18" parry="0" evasion="550"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833305" npc_id_dark="833306" level="20">
+		<stats_template maxHp="5600" pdefense="660" mresist="360" main_hand_attack="100" run_speed="9.6" main_hand_accuracy="760" main_hand_crit_rate="50" magic_accuracy="360" mcrit="18" parry="0" evasion="560"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833305" npc_id_dark="833306" level="21">
+		<stats_template maxHp="5700" pdefense="670" mresist="370" main_hand_attack="110" run_speed="9.6" main_hand_accuracy="770" main_hand_crit_rate="50" magic_accuracy="370" mcrit="18" parry="0" evasion="570"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833305" npc_id_dark="833306" level="22">
+		<stats_template maxHp="5800" pdefense="680" mresist="380" main_hand_attack="120" run_speed="9.6" main_hand_accuracy="780" main_hand_crit_rate="50" magic_accuracy="380" mcrit="18" parry="0" evasion="580"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833305" npc_id_dark="833306" level="23">
+		<stats_template maxHp="5900" pdefense="690" mresist="390" main_hand_attack="130" run_speed="9.6" main_hand_accuracy="790" main_hand_crit_rate="50" magic_accuracy="390" mcrit="18" parry="0" evasion="590"/>
+	</summon_stats>
+	
+	<!-- ********************* -->
+	<!-- WATER SPIRIT LEVEL: 2 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_light="833307" npc_id_dark="833308" level="24">
+		<stats_template maxHp="6500" pdefense="750" mresist="450" main_hand_attack="150" run_speed="9.6" main_hand_accuracy="850" main_hand_crit_rate="50" magic_accuracy="450" mcrit="18" parry="0" evasion="650"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833307" npc_id_dark="833308" level="25">
+		<stats_template maxHp="6600" pdefense="760" mresist="460" main_hand_attack="160" run_speed="9.6" main_hand_accuracy="860" main_hand_crit_rate="50" magic_accuracy="460" mcrit="18" parry="0" evasion="660"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833307" npc_id_dark="833308" level="26">
+		<stats_template maxHp="6700" pdefense="770" mresist="470" main_hand_attack="170" run_speed="9.6" main_hand_accuracy="870" main_hand_crit_rate="50" magic_accuracy="470" mcrit="18" parry="0" evasion="670"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833307" npc_id_dark="833308" level="27">
+		<stats_template maxHp="6800" pdefense="780" mresist="480" main_hand_attack="180" run_speed="9.6" main_hand_accuracy="880" main_hand_crit_rate="50" magic_accuracy="480" mcrit="18" parry="0" evasion="680"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833307" npc_id_dark="833308" level="28">
+		<stats_template maxHp="6900" pdefense="790" mresist="490" main_hand_attack="190" run_speed="9.6" main_hand_accuracy="890" main_hand_crit_rate="50" magic_accuracy="490" mcrit="18" parry="0" evasion="690"/>
+	</summon_stats>
+	
+	<!-- ********************* -->
+	<!-- WATER SPIRIT LEVEL: 3 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_light="833309" npc_id_dark="833310" level="29">
+		<stats_template maxHp="7500" pdefense="850" mresist="550" main_hand_attack="250" run_speed="9.6" main_hand_accuracy="950" main_hand_crit_rate="50" magic_accuracy="550" mcrit="18" parry="0" evasion="750"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833309" npc_id_dark="833310" level="30">
+		<stats_template maxHp="7600" pdefense="860" mresist="560" main_hand_attack="260" run_speed="9.6" main_hand_accuracy="960" main_hand_crit_rate="50" magic_accuracy="560" mcrit="18" parry="0" evasion="760"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833309" npc_id_dark="833310" level="31">
+		<stats_template maxHp="7700" pdefense="870" mresist="570" main_hand_attack="270" run_speed="9.6" main_hand_accuracy="970" main_hand_crit_rate="50" magic_accuracy="570" mcrit="18" parry="0" evasion="770"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833309" npc_id_dark="833310" level="32">
+		<stats_template maxHp="7800" pdefense="880" mresist="580" main_hand_attack="280" run_speed="9.6" main_hand_accuracy="980" main_hand_crit_rate="50" magic_accuracy="580" mcrit="18" parry="0" evasion="780"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833309" npc_id_dark="833310" level="33">
+		<stats_template maxHp="7900" pdefense="890" mresist="590" main_hand_attack="290" run_speed="9.6" main_hand_accuracy="990" main_hand_crit_rate="50" magic_accuracy="590" mcrit="18" parry="0" evasion="790"/>
+	</summon_stats>
+	
+	<!-- ********************* -->
+	<!-- WATER SPIRIT LEVEL: 4 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_light="833311" npc_id_dark="833312" level="34">
+		<stats_template maxHp="8500" pdefense="950" mresist="650" main_hand_attack="350" run_speed="9.6" main_hand_accuracy="1050" main_hand_crit_rate="50" magic_accuracy="650" mcrit="18" parry="0" evasion="850"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833311" npc_id_dark="833312" level="35">
+		<stats_template maxHp="8600" pdefense="960" mresist="660" main_hand_attack="360" run_speed="9.6" main_hand_accuracy="1060" main_hand_crit_rate="50" magic_accuracy="660" mcrit="18" parry="0" evasion="860"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833311" npc_id_dark="833312" level="36">
+		<stats_template maxHp="8700" pdefense="970" mresist="670" main_hand_attack="370" run_speed="9.6" main_hand_accuracy="1070" main_hand_crit_rate="50" magic_accuracy="670" mcrit="18" parry="0" evasion="870"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833311" npc_id_dark="833312" level="37">
+		<stats_template maxHp="8800" pdefense="980" mresist="680" main_hand_attack="380" run_speed="9.6" main_hand_accuracy="1080" main_hand_crit_rate="50" magic_accuracy="680" mcrit="18" parry="0" evasion="880"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833311" npc_id_dark="833312" level="38">
+		<stats_template maxHp="8900" pdefense="990" mresist="690" main_hand_attack="390" run_speed="9.6" main_hand_accuracy="1090" main_hand_crit_rate="50" magic_accuracy="690" mcrit="18" parry="0" evasion="890"/>
+	</summon_stats>
+	
+	<!-- ********************* -->
+	<!-- WATER SPIRIT LEVEL: 5 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_light="833313" npc_id_dark="833314" level="39">
+		<stats_template maxHp="9500" pdefense="1050" mresist="750" main_hand_attack="450" run_speed="9.6" main_hand_accuracy="1150" main_hand_crit_rate="50" magic_accuracy="750" mcrit="18" parry="0" evasion="950"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833313" npc_id_dark="833314" level="40">
+		<stats_template maxHp="9600" pdefense="1060" mresist="760" main_hand_attack="460" run_speed="9.6" main_hand_accuracy="1160" main_hand_crit_rate="50" magic_accuracy="760" mcrit="18" parry="0" evasion="960"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833313" npc_id_dark="833314" level="41">
+		<stats_template maxHp="9700" pdefense="1070" mresist="770" main_hand_attack="470" run_speed="9.6" main_hand_accuracy="1170" main_hand_crit_rate="50" magic_accuracy="770" mcrit="18" parry="0" evasion="970"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833313" npc_id_dark="833314" level="42">
+		<stats_template maxHp="9800" pdefense="1080" mresist="780" main_hand_attack="480" run_speed="9.6" main_hand_accuracy="1180" main_hand_crit_rate="50" magic_accuracy="780" mcrit="18" parry="0" evasion="980"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833313" npc_id_dark="833314" level="43">
+		<stats_template maxHp="9900" pdefense="1090" mresist="790" main_hand_attack="490" run_speed="9.6" main_hand_accuracy="1190" main_hand_crit_rate="50" magic_accuracy="790" mcrit="18" parry="0" evasion="990"/>
+	</summon_stats>
+	
+	<!-- ********************* -->
+	<!-- WATER SPIRIT LEVEL: 6 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_light="833315" npc_id_dark="833316" level="44">
+		<stats_template maxHp="10500" pdefense="1150" mresist="850" main_hand_attack="550" run_speed="9.6" main_hand_accuracy="1250" main_hand_crit_rate="50" magic_accuracy="850" mcrit="18" parry="0" evasion="1050"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833315" npc_id_dark="833316" level="45">
+		<stats_template maxHp="10600" pdefense="1160" mresist="860" main_hand_attack="560" run_speed="9.6" main_hand_accuracy="1260" main_hand_crit_rate="50" magic_accuracy="860" mcrit="18" parry="0" evasion="1060"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833315" npc_id_dark="833316" level="46">
+		<stats_template maxHp="10700" pdefense="1170" mresist="870" main_hand_attack="570" run_speed="9.6" main_hand_accuracy="1270" main_hand_crit_rate="50" magic_accuracy="870" mcrit="18" parry="0" evasion="1070"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833315" npc_id_dark="833316" level="47">
+		<stats_template maxHp="10800" pdefense="1180" mresist="880" main_hand_attack="580" run_speed="9.6" main_hand_accuracy="1280" main_hand_crit_rate="50" magic_accuracy="880" mcrit="18" parry="0" evasion="1080"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833315" npc_id_dark="833316" level="48">
+		<stats_template maxHp="10900" pdefense="1190" mresist="890" main_hand_attack="590" run_speed="9.6" main_hand_accuracy="1290" main_hand_crit_rate="50" magic_accuracy="890" mcrit="18" parry="0" evasion="1090"/>
+	</summon_stats>
+	
+	<!-- ********************* -->
+	<!-- WATER SPIRIT LEVEL: 7 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_light="833317" npc_id_dark="833318" level="49">
+	    <stats_template maxHp="11500" pdefense="1250" mresist="950" main_hand_attack="650" run_speed="9.6" main_hand_accuracy="1350" main_hand_crit_rate="50" magic_accuracy="950" mcrit="18" parry="0" evasion="1150"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833317" npc_id_dark="833318" level="50">
+	    <stats_template maxHp="11600" pdefense="1260" mresist="960" main_hand_attack="660" run_speed="9.6" main_hand_accuracy="1360" main_hand_crit_rate="50" magic_accuracy="960" mcrit="18" parry="0" evasion="1160"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833317" npc_id_dark="833318" level="51">
+	    <stats_template maxHp="11700" pdefense="1270" mresist="970" main_hand_attack="670" run_speed="9.6" main_hand_accuracy="1370" main_hand_crit_rate="50" magic_accuracy="970" mcrit="18" parry="0" evasion="1170"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833317" npc_id_dark="833318" level="52">
+	    <stats_template maxHp="11800" pdefense="1280" mresist="980" main_hand_attack="680" run_speed="9.6" main_hand_accuracy="1380" main_hand_crit_rate="50" magic_accuracy="980" mcrit="18" parry="0" evasion="1180"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833317" npc_id_dark="833318" level="53">
+		<stats_template maxHp="11900" pdefense="1290" mresist="990" main_hand_attack="690" run_speed="9.6" main_hand_accuracy="1390" main_hand_crit_rate="50" magic_accuracy="990" mcrit="18" parry="0" evasion="1190"/>
+	</summon_stats>
+	
+	<!-- ********************* -->
+	<!-- WATER SPIRIT LEVEL: 8 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_light="833319" npc_id_dark="833320" level="54">
+		<stats_template maxHp="12500" pdefense="1350" mresist="1050" main_hand_attack="750" run_speed="9.6" main_hand_accuracy="1450" main_hand_crit_rate="50" magic_accuracy="1050" mcrit="18" parry="0" evasion="1250"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833319" npc_id_dark="833320" level="55">
+		<stats_template maxHp="12600" pdefense="1360" mresist="1060" main_hand_attack="760" run_speed="9.6" main_hand_accuracy="1460" main_hand_crit_rate="50" magic_accuracy="1060" mcrit="18" parry="0" evasion="1260"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833319" npc_id_dark="833320" level="56">
+		<stats_template maxHp="12700" pdefense="1370" mresist="1070" main_hand_attack="770" run_speed="9.6" main_hand_accuracy="1470" main_hand_crit_rate="50" magic_accuracy="1070" mcrit="18" parry="0" evasion="1270"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833319" npc_id_dark="833320" level="57">
+		<stats_template maxHp="12800" pdefense="1380" mresist="1080" main_hand_attack="780" run_speed="9.6" main_hand_accuracy="1480" main_hand_crit_rate="50" magic_accuracy="1080" mcrit="18" parry="0" evasion="1280"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833319" npc_id_dark="833320" level="58">
+		<stats_template maxHp="12900" pdefense="1390" mresist="1090" main_hand_attack="790" run_speed="9.6" main_hand_accuracy="1490" main_hand_crit_rate="50" magic_accuracy="1090" mcrit="18" parry="0" evasion="1270"/>
+	</summon_stats>
+	
+	<!-- ********************* -->
+	<!-- WATER SPIRIT LEVEL: 9 -->
+	<!-- ********************* -->
+	<summon_stats npc_id_light="833321" npc_id_dark="833322" level="59">
+		<stats_template maxHp="13500" pdefense="1450" mresist="1150" main_hand_attack="850" run_speed="9.6" main_hand_accuracy="1550" main_hand_crit_rate="50" magic_accuracy="1150" mcrit="18" parry="0" evasion="1350"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833321" npc_id_dark="833322" level="60">
+		<stats_template maxHp="13600" pdefense="1460" mresist="1160" main_hand_attack="860" run_speed="9.6" main_hand_accuracy="1560" main_hand_crit_rate="50" magic_accuracy="1160" mcrit="18" parry="0" evasion="1360"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833321" npc_id_dark="833322" level="61">
+		<stats_template maxHp="13700" pdefense="1470" mresist="1170" main_hand_attack="870" run_speed="9.6" main_hand_accuracy="1570" main_hand_crit_rate="50" magic_accuracy="1170" mcrit="18" parry="0" evasion="1370"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833321" npc_id_dark="833322" level="62">
+		<stats_template maxHp="13800" pdefense="1480" mresist="1180" main_hand_attack="880" run_speed="9.6" main_hand_accuracy="1580" main_hand_crit_rate="50" magic_accuracy="1180" mcrit="18" parry="0" evasion="1380"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833321" npc_id_dark="833322" level="63">
+		<stats_template maxHp="13900" pdefense="1490" mresist="1190" main_hand_attack="890" run_speed="9.6" main_hand_accuracy="1590" main_hand_crit_rate="50" magic_accuracy="1190" mcrit="18" parry="0" evasion="1390"/>
+	</summon_stats>
+	
+	<!-- ********************** -->
+	<!-- WATER SPIRIT LEVEL: 10 -->
+	<!-- ********************** -->
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="64">
+		<stats_template maxHp="14500" pdefense="1550" mresist="1250" main_hand_attack="950" run_speed="9.6" main_hand_accuracy="1650" main_hand_crit_rate="50" magic_accuracy="1250" mcrit="18" parry="0" evasion="1450"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="65">
+		<stats_template maxHp="14600" pdefense="1560" mresist="1260" main_hand_attack="960" run_speed="9.6" main_hand_accuracy="1660" main_hand_crit_rate="50" magic_accuracy="1260" mcrit="18" parry="0" evasion="1460"/>
+	</summon_stats>
+	
+	<!-- ********************** -->
+	<!-- When a Spiritualist reached a new level after
+	have accessed the rank of ArchDaeva,
+	level and statistics invoked his spirit are also adjusted. -->
+	<!-- ********************** -->
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="66">
+		<stats_template maxHp="14700" pdefense="1570" mresist="1270" main_hand_attack="970" run_speed="9.6" main_hand_accuracy="1670" main_hand_crit_rate="50" magic_accuracy="1270" mcrit="18" parry="0" evasion="1470"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="67">
+		<stats_template maxHp="14800" pdefense="1580" mresist="1280" main_hand_attack="980" run_speed="9.6" main_hand_accuracy="1680" main_hand_crit_rate="50" magic_accuracy="1280" mcrit="18" parry="0" evasion="1480"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="68">
+		<stats_template maxHp="14900" pdefense="1590" mresist="1290" main_hand_attack="990" run_speed="9.6" main_hand_accuracy="1690" main_hand_crit_rate="50" magic_accuracy="1290" mcrit="18" parry="0" evasion="1490"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="69">
+		<stats_template maxHp="15500" pdefense="1650" mresist="1350" main_hand_attack="1050" run_speed="9.6" main_hand_accuracy="1750" main_hand_crit_rate="50" magic_accuracy="1350" mcrit="18" parry="0" evasion="1550"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="70">
+		<stats_template maxHp="15600" pdefense="1660" mresist="1360" main_hand_attack="1060" run_speed="9.6" main_hand_accuracy="1760" main_hand_crit_rate="50" magic_accuracy="1360" mcrit="18" parry="0" evasion="1560"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="71">
+		<stats_template maxHp="15700" pdefense="1670" mresist="1370" main_hand_attack="1070" run_speed="9.6" main_hand_accuracy="1770" main_hand_crit_rate="50" magic_accuracy="1370" mcrit="18" parry="0" evasion="1570"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="72">
+		<stats_template maxHp="15800" pdefense="1680" mresist="1380" main_hand_attack="1080" run_speed="9.6" main_hand_accuracy="1780" main_hand_crit_rate="50" magic_accuracy="1380" mcrit="18" parry="0" evasion="1580"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="73">
+		<stats_template maxHp="15900" pdefense="1690" mresist="1390" main_hand_attack="1090" run_speed="9.6" main_hand_accuracy="1790" main_hand_crit_rate="50" magic_accuracy="1390" mcrit="18" parry="0" evasion="1590"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="74">
+		<stats_template maxHp="16500" pdefense="1750" mresist="1450" main_hand_attack="1150" run_speed="9.6" main_hand_accuracy="1850" main_hand_crit_rate="50" magic_accuracy="1450" mcrit="18" parry="0" evasion="1650"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="75">
+		<stats_template maxHp="16600" pdefense="1760" mresist="1460" main_hand_attack="1160" run_speed="9.6" main_hand_accuracy="1860" main_hand_crit_rate="50" magic_accuracy="1460" mcrit="18" parry="0" evasion="1660"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="76">
+		<stats_template maxHp="16700" pdefense="1770" mresist="1470" main_hand_attack="1170" run_speed="9.6" main_hand_accuracy="1870" main_hand_crit_rate="50" magic_accuracy="1470" mcrit="18" parry="0" evasion="1670"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="77">
+		<stats_template maxHp="16800" pdefense="1780" mresist="1480" main_hand_attack="1180" run_speed="9.6" main_hand_accuracy="1880" main_hand_crit_rate="50" magic_accuracy="1480" mcrit="18" parry="0" evasion="1680"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="78">
+		<stats_template maxHp="16900" pdefense="1790" mresist="1490" main_hand_attack="1190" run_speed="9.6" main_hand_accuracy="1890" main_hand_crit_rate="50" magic_accuracy="1490" mcrit="18" parry="0" evasion="1690"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="79">
+		<stats_template maxHp="17500" pdefense="1850" mresist="1550" main_hand_attack="1250" run_speed="9.6" main_hand_accuracy="1950" main_hand_crit_rate="50" magic_accuracy="1550" mcrit="18" parry="0" evasion="1750"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="80">
+		<stats_template maxHp="17600" pdefense="1860" mresist="1560" main_hand_attack="1260" run_speed="9.6" main_hand_accuracy="1960" main_hand_crit_rate="50" magic_accuracy="1560" mcrit="18" parry="0" evasion="1760"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="81">
+		<stats_template maxHp="17700" pdefense="1870" mresist="1570" main_hand_attack="1270" run_speed="9.6" main_hand_accuracy="1970" main_hand_crit_rate="50" magic_accuracy="1570" mcrit="18" parry="0" evasion="1770"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="82">
+		<stats_template maxHp="17800" pdefense="1880" mresist="1580" main_hand_attack="1280" run_speed="9.6" main_hand_accuracy="1980" main_hand_crit_rate="50" magic_accuracy="1580" mcrit="18" parry="0" evasion="1780"/>
+	</summon_stats>
+	<summon_stats npc_id_light="833255" npc_id_dark="833256" level="83">
+		<stats_template maxHp="17900" pdefense="1890" mresist="1590" main_hand_attack="1290" run_speed="9.6" main_hand_accuracy="1990" main_hand_crit_rate="50" magic_accuracy="1590" mcrit="18" parry="0" evasion="1790"/>
+	</summon_stats>
+</summon_stats_templates>

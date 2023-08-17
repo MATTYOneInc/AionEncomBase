@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Legion Dominion 4.8 (19 Novembre 2014)
+	Made By (Encom)
+ -->
+<dominion_locations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dominion_locations.xsd">
+	<!-- [시그니아 4.8] -->
+	<dominion_location id="1" world="210070000" name="호노르 영지 마을"/>
+	<dominion_location id="2" world="210070000" name="안드레이아 영지 마을"/>
+	<dominion_location id="3" world="210070000" name="에티카 영지 마을"/>
+	<!-- [엔샤르 4.8] -->
+	<dominion_location id="4" world="220080000" name="아문트 영지 마을"/>
+	<dominion_location id="5" world="220080000" name="세타스 영지 마을"/>
+	<dominion_location id="6" world="220080000" name="벨리아드 영지 마을"/>
+</dominion_locations>

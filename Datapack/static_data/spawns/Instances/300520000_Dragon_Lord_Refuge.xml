@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+	龍帝の安息所
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="300520000">
+		<!-- Siel's Relic (Object Normal lvl:3) -->
+		<spawn npc_id="701502">
+			<spot x="456.1200" y="514.52002" z="437.35321" entity_id="96"/>
+		</spawn>
+		<!-- Internal Passage Out 1 (Object Normal lvl:3) -->
+		<spawn npc_id="730633">
+			<spot x="216.92004" y="195.3886" z="246.44954" entity_id="93"/>
+		</spawn>
+		<!-- Internal Passage Out 2 (Object Normal lvl:3) -->
+		<spawn npc_id="730634">
+			<spot x="782.8139" y="194.79366" z="246.54323" entity_id="92"/>
+		</spawn>
+		<!-- Internal Passage Out 3 (Object Normal lvl:3) -->
+		<spawn npc_id="730635">
+			<spot x="217.55214" y="832.35382" z="250.0000" entity_id="90"/>
+		</spawn>
+		<!-- Internal Passage Out 4 (Object Normal lvl:3) -->
+		<spawn npc_id="730636">
+		    <spot x="778.85364" y="832.67804" z="246.07117" entity_id="95"/>
+		</spawn>
+		<!-- Tiamat Aetheric Field (Object Normal lvl:3) -->
+		<spawn npc_id="730694">
+			<spot x="436.85999" y="514.52002" z="417.47" entity_id="14"/>
+		</spawn>
+		<!-- Wavering Surkana (Object Normal lvl:3) -->
+		<spawn npc_id="730699">
+			<spot x="503.91858" y="514.51959" z="416.87329" entity_id="9"/>
+			<spot x="503.91858" y="514.51959" z="416.87296" entity_id="47"/>
+		</spawn>
+		<!-- Greater Blessed Relics (Object Normal lvl:3) -->
+		<spawn npc_id="831990">
+            <spot x="510.3906" y="516.59485" z="240.26653" h="61"/>
+        </spawn>
+	</spawn_map>
+</spawns>

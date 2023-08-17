@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+    <zone mapid="300230000" name="ANGERRS_BEDROOM_300230000" area_type="POLYGON" zone_type="SUB" priority="5" flags="0">
+        <points bottom="213.000000" top="233.000000">
+            <point x="491.720001" y="563.250000"/>
+            <point x="492.772064" y="605.071472"/>
+            <point x="502.961151" y="605.268372"/>
+            <point x="503.328400" y="609.444519"/>
+            <point x="504.117249" y="612.116028"/>
+            <point x="507.543060" y="615.083862"/>
+            <point x="510.333679" y="615.829041"/>
+            <point x="512.880371" y="616.001770"/>
+            <point x="515.789063" y="615.758850"/>
+            <point x="518.255371" y="614.907959"/>
+            <point x="521.277222" y="612.230774"/>
+            <point x="522.441040" y="608.747192"/>
+            <point x="522.698975" y="605.516968"/>
+            <point x="532.770142" y="605.365479"/>
+            <point x="532.630859" y="563.548401"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="BANQUET_HALL_300230000" area_type="POLYGON" zone_type="SUB" priority="5" flags="0">
+        <points bottom="212.112534" top="232.112534">
+            <point x="492.677551" y="746.391907"/>
+            <point x="493.576324" y="790.016907"/>
+            <point x="528.133728" y="791.613098"/>
+            <point x="528.188599" y="746.523987"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="DUNGEON_HALL_300230000" area_type="POLYGON" zone_type="SUB" priority="8" flags="0">
+        <points bottom="195.661850" top="215.661850">
+            <point x="694.216614" y="511.262665"/>
+            <point x="694.147400" y="553.788635"/>
+            <point x="747.700806" y="554.677429"/>
+            <point x="747.128235" y="510.841461"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="FORBIDDEN_BOOKS_REPOSITORY_300230000" area_type="POLYGON" zone_type="SUB" priority="5" flags="0">
+        <points bottom="223.074493" top="243.074493">
+            <point x="547.404175" y="801.810120"/>
+            <point x="547.851257" y="842.816162"/>
+            <point x="591.818420" y="842.485474"/>
+            <point x="591.148254" y="801.917969"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="GRAND_CAVERN_300230000" area_type="POLYGON" zone_type="SUB" priority="14" flags="0">
+        <points bottom="134.295944" top="234.295944">
+            <point x="410.128479" y="263.795044"/>
+            <point x="393.349548" y="275.316528"/>
+            <point x="330.479034" y="220.899475"/>
+            <point x="208.349380" y="225.248352"/>
+            <point x="214.312286" y="270.706940"/>
+            <point x="455.484344" y="411.387482"/>
+            <point x="510.210266" y="414.814514"/>
+            <point x="599.168457" y="253.322327"/>
+            <point x="546.046387" y="194.955292"/>
+            <point x="469.171753" y="210.497208"/>
+            <point x="455.699951" y="246.811844"/>
+            <point x="439.831635" y="234.673767"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="GREAT_HALL_300230000" area_type="POLYGON" zone_type="SUB" priority="5" flags="0">
+        <points bottom="213.000000" top="233.000000">
+            <point x="486.459991" y="675.890015"/>
+            <point x="486.979889" y="726.238220"/>
+            <point x="537.671753" y="725.852173"/>
+            <point x="537.847351" y="675.120605"/>
+            <point x="525.191284" y="675.037292"/>
+            <point x="522.973694" y="672.412903"/>
+            <point x="521.466614" y="668.520691"/>
+            <point x="518.399414" y="665.806763"/>
+            <point x="514.692566" y="664.365173"/>
+            <point x="512.667480" y="664.132263"/>
+            <point x="510.487885" y="664.304810"/>
+            <point x="508.497559" y="665.300415"/>
+            <point x="506.934357" y="665.941040"/>
+            <point x="503.959259" y="668.658997"/>
+            <point x="502.248444" y="671.480774"/>
+            <point x="501.973145" y="675.729309"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="IDCROMEDE_ITEMUSEAREA" area_type="POLYGON" zone_type="ITEM_USE" flags="0">
+        <points bottom="10.0" top="310.0">
+            <point x="154.65" y="124.47"/>
+            <point x="768.3424" y="125.21929"/>
+            <point x="768.3424" y="890.7383"/>
+            <point x="155.23431" y="890.7383"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="KALIGA_DUNGEONS_300230000" area_type="POLYGON" zone_type="SUB" priority="9" flags="0">
+        <points bottom="185.345139" top="235.345139">
+            <point x="622.172791" y="591.561829"/>
+            <point x="622.744324" y="727.505432"/>
+            <point x="790.331726" y="730.243103"/>
+            <point x="791.027039" y="473.223236"/>
+            <point x="660.474121" y="480.330933"/>
+            <point x="634.429443" y="571.488770"/>
+            <point x="634.244202" y="591.472595"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="KALIGA_GARDENS_300230000" area_type="POLYGON" zone_type="SUB" priority="6" flags="0">
+        <points bottom="199.953400" top="214.953400">
+            <point x="472.112915" y="608.799072"/>
+            <point x="471.372131" y="672.593079"/>
+            <point x="543.309326" y="672.383911"/>
+            <point x="543.434692" y="608.401611"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="KALIGA_LIBRARY_300230000" area_type="POLYGON" zone_type="SUB" priority="6" flags="0">
+        <points bottom="214.662384" top="234.662384">
+            <point x="548.737305" y="747.794006"/>
+            <point x="548.798645" y="803.718689"/>
+            <point x="599.157593" y="803.195190"/>
+            <point x="598.596313" y="745.329773"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="KALIGA_MANOR_300230000" area_type="POLYGON" zone_type="SUB" priority="10" flags="0">
+        <points bottom="185.345139" top="235.345139">
+            <point x="451.199615" y="612.302124"/>
+            <point x="453.260468" y="864.724792"/>
+            <point x="700.244141" y="861.672485"/>
+            <point x="703.672424" y="736.578430"/>
+            <point x="620.512085" y="735.045288"/>
+            <point x="619.804749" y="593.123962"/>
+            <point x="635.586670" y="592.938660"/>
+            <point x="635.502747" y="572.077576"/>
+            <point x="468.964600" y="552.225464"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="KALIGA_TREASURY_300230000" area_type="POLYGON" zone_type="SUB" priority="5" flags="0">
+        <points bottom="213.555893" top="243.555893">
+            <point x="590.280457" y="748.450134"/>
+            <point x="588.527283" y="770.653931"/>
+            <point x="588.568298" y="782.929077"/>
+            <point x="591.990051" y="799.604309"/>
+            <point x="689.824951" y="802.252930"/>
+            <point x="689.945801" y="749.430542"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="MANOR_ENTRANCE_300230000" area_type="POLYGON" zone_type="SUB" priority="7" flags="0">
+        <points bottom="200.149155" top="230.149155">
+            <point x="536.521423" y="615.839294"/>
+            <point x="537.020752" y="666.043579"/>
+            <point x="549.791199" y="665.345215"/>
+            <point x="568.480835" y="665.532349"/>
+            <point x="568.433105" y="670.466064"/>
+            <point x="596.610413" y="673.388977"/>
+            <point x="615.380859" y="669.847473"/>
+            <point x="616.990967" y="611.795349"/>
+            <point x="569.055908" y="611.891541"/>
+            <point x="569.033264" y="615.517700"/>
+            <point x="548.789368" y="615.580994"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="SECRET_RECEPTION_300230000" area_type="POLYGON" zone_type="SUB" priority="6" flags="0">
+        <points bottom="206.437302" top="226.437302">
+            <point x="587.003906" y="669.827271"/>
+            <point x="572.495789" y="686.278198"/>
+            <point x="572.844238" y="722.437439"/>
+            <point x="611.928040" y="722.640930"/>
+            <point x="606.559814" y="669.874634"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="TEMPLE_VAULT_300230000" area_type="POLYGON" zone_type="SUB" priority="15" flags="0">
+        <points bottom="136.572815" top="236.572815">
+            <point x="325.875458" y="172.971634"/>
+            <point x="335.340454" y="211.309509"/>
+            <point x="369.589874" y="222.041977"/>
+            <point x="401.622650" y="190.124863"/>
+            <point x="394.251129" y="154.692673"/>
+            <point x="354.313293" y="143.727936"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="TORTURE_CHAMBER_300230000" area_type="POLYGON" zone_type="SUB" priority="8" flags="0">
+        <points bottom="192.398087" top="212.398087">
+            <point x="712.404663" y="611.294067"/>
+            <point x="712.746155" y="647.143005"/>
+            <point x="765.622620" y="647.137024"/>
+            <point x="765.427429" y="610.871399"/>
+        </points>
+    </zone>
+    <zone mapid="300230000" name="VAULT_GATE_300230000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="134.295944" top="234.295944">
+            <point x="370.003296" y="220.867111"/>
+            <point x="411.221497" y="263.403015"/>
+            <point x="439.195404" y="236.064758"/>
+            <point x="399.368225" y="191.407623"/>
+        </points>
+    </zone>
+</zones>

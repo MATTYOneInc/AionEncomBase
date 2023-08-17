@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+    Skill Enchant 5.8
+    Made By (Encom)
+ -->
+<item_skill_enhances xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="item_skill_enhances.xsd">
+    <item_skill_enhance id="1" player_class="ALL" skill_id="784 826 830"/>
+    <item_skill_enhance id="2" player_class="ALL" skill_id="784"/>
+    <item_skill_enhance id="3" player_class="ALL" skill_id="1282"/>
+    <item_skill_enhance id="4" player_class="ALL" skill_id="1282"/>
+    <item_skill_enhance id="5" player_class="ALL" skill_id="1282"/>
+    <item_skill_enhance id="6" player_class="GLADIATOR" skill_id="508"/>
+    <item_skill_enhance id="7" player_class="GLADIATOR" skill_id="682"/>
+    <item_skill_enhance id="8" player_class="GLADIATOR" skill_id="721"/>
+    <item_skill_enhance id="9" player_class="GLADIATOR" skill_id="554"/>
+    <item_skill_enhance id="10" player_class="GLADIATOR" skill_id="545"/>
+    <item_skill_enhance id="11" player_class="TEMPLAR" skill_id="3031"/>
+    <item_skill_enhance id="12" player_class="TEMPLAR" skill_id="3106"/>
+    <item_skill_enhance id="13" player_class="TEMPLAR" skill_id="2967"/>
+    <item_skill_enhance id="14" player_class="TEMPLAR" skill_id="3162"/>
+    <item_skill_enhance id="15" player_class="TEMPLAR" skill_id="3069"/>
+    <item_skill_enhance id="16" player_class="ASSASSIN" skill_id="3356"/>
+    <item_skill_enhance id="17" player_class="ASSASSIN" skill_id="3404"/>
+    <item_skill_enhance id="18" player_class="ASSASSIN" skill_id="3455"/>
+    <item_skill_enhance id="19" player_class="ASSASSIN" skill_id="3300"/>
+    <item_skill_enhance id="20" player_class="ASSASSIN" skill_id="3406"/>
+    <item_skill_enhance id="21" player_class="RANGER" skill_id="848"/>
+    <item_skill_enhance id="22" player_class="RANGER" skill_id="1086"/>
+    <item_skill_enhance id="23" player_class="RANGER" skill_id="1054"/>
+    <item_skill_enhance id="24" player_class="RANGER" skill_id="1090"/>
+    <item_skill_enhance id="25" player_class="RANGER" skill_id="1120"/>
+    <item_skill_enhance id="26" player_class="CLERIC" skill_id="3867"/>
+    <item_skill_enhance id="27" player_class="CLERIC" skill_id="4098"/>
+    <item_skill_enhance id="28" player_class="CLERIC" skill_id="3939"/>
+    <item_skill_enhance id="29" player_class="CLERIC" skill_id="3912"/>
+    <item_skill_enhance id="30" player_class="CLERIC" skill_id="3918"/>
+    <item_skill_enhance id="31" player_class="CHANTER" skill_id="1562"/>
+    <item_skill_enhance id="32" player_class="CHANTER" skill_id="1735"/>
+    <item_skill_enhance id="33" player_class="CHANTER" skill_id="1715"/>
+    <item_skill_enhance id="34" player_class="CHANTER" skill_id="1557"/>
+    <item_skill_enhance id="35" player_class="CHANTER" skill_id="1798"/>
+    <item_skill_enhance id="36" player_class="SORCERER" skill_id="1506"/>
+    <item_skill_enhance id="37" player_class="SORCERER" skill_id="1192"/>
+    <item_skill_enhance id="38" player_class="SORCERER" skill_id="1421"/>
+    <item_skill_enhance id="39" player_class="SORCERER" skill_id="1384"/>
+    <item_skill_enhance id="40" player_class="SORCERER" skill_id="1543"/>
+    <item_skill_enhance id="41" player_class="SPIRIT_MASTER" skill_id="3643"/>
+    <item_skill_enhance id="42" player_class="SPIRIT_MASTER" skill_id="3852"/>
+    <item_skill_enhance id="43" player_class="SPIRIT_MASTER" skill_id="3630"/>
+    <item_skill_enhance id="44" player_class="SPIRIT_MASTER" skill_id="3839"/>
+    <item_skill_enhance id="45" player_class="SPIRIT_MASTER" skill_id="3838"/>
+    <item_skill_enhance id="46" player_class="GUNSLINGER" skill_id="1995"/>
+    <item_skill_enhance id="47" player_class="GUNSLINGER" skill_id="2350"/>
+    <item_skill_enhance id="48" player_class="GUNSLINGER" skill_id="2041"/>
+    <item_skill_enhance id="49" player_class="GUNSLINGER" skill_id="2204"/>
+    <item_skill_enhance id="50" player_class="GUNSLINGER" skill_id="2264"/>
+    <item_skill_enhance id="51" player_class="SONGWEAVER" skill_id="4400"/>
+    <item_skill_enhance id="52" player_class="SONGWEAVER" skill_id="4368"/>
+    <item_skill_enhance id="53" player_class="SONGWEAVER" skill_id="4392"/>
+    <item_skill_enhance id="54" player_class="SONGWEAVER" skill_id="4396"/>
+    <item_skill_enhance id="55" player_class="SONGWEAVER" skill_id="4297"/>
+    <item_skill_enhance id="56" player_class="AETHERTECH" skill_id="2568"/>
+    <item_skill_enhance id="57" player_class="AETHERTECH" skill_id="2756"/>
+    <item_skill_enhance id="58" player_class="AETHERTECH" skill_id="4647"/>
+    <item_skill_enhance id="59" player_class="AETHERTECH" skill_id="2717"/>
+    <item_skill_enhance id="60" player_class="AETHERTECH" skill_id="2726"/>
+    <item_skill_enhance id="61" player_class="TEMPLAR" skill_id="3140 3084 2864 2877 3055 3113 3065"/>
+	<item_skill_enhance id="62" player_class="TEMPLAR" skill_id="3140 3084 2864 2877 3055 3113 3065"/>
+    <item_skill_enhance id="63" player_class="CHANTER" skill_id="1768 1769 1700 1580 1858 4012 4685"/>
+    <item_skill_enhance id="64" player_class="ASSASSIN" skill_id="3223 3365 3427 3435 3348 3182 3417"/>
+	<item_skill_enhance id="64" player_class="RANGER" skill_id="1102 826 1135 1010 838 1118 1075"/>
+	<item_skill_enhance id="65" player_class="SORCERER" skill_id="1396 1259 1526 1250 1385 1533"/>
+	<item_skill_enhance id="65" player_class="SPIRIT_MASTER" skill_id="1155 3740 3603 3614 1447 3742 3834"/>
+	<item_skill_enhance id="65" player_class="SONGWEAVER" skill_id="4408 4264 4253 4300 4221 4234 4552"/>
+	<item_skill_enhance id="66" player_class="ASSASSIN" skill_id="3223 3365 3427 3435 3348 3182 3417"/>
+	<item_skill_enhance id="67" player_class="ASSASSIN" skill_id="3223 3365 3427 3435 3348 3182 3417"/>
+	<item_skill_enhance id="67" player_class="GLADIATOR" skill_id="739 720 2864 707 2877 710"/>
+	<item_skill_enhance id="67" player_class="TEMPLAR" skill_id="3140 3084 2864 2877 3055 3113 3065"/>
+	<item_skill_enhance id="68" player_class="CHANTER" skill_id="4012"/>
+	<item_skill_enhance id="68" player_class="CLERIC" skill_id="4083 4046 4073 4061 4195 4176"/>
+    <item_skill_enhance id="69" player_class="TEMPLAR" skill_id="3140 2864 2877 3055 3065"/>
+    <item_skill_enhance id="70" player_class="GLADIATOR" skill_id="670 739 720 2864 707 2877 710"/>
+	<item_skill_enhance id="71" player_class="CHANTER" skill_id="1768 1769 1700 1580 1858 4012 4685"/>
+	<item_skill_enhance id="72" player_class="RANGER" skill_id="1102 826 1135 1010 838 1118 1075"/>
+    <item_skill_enhance id="73" player_class="SORCERER" skill_id="1396 1259 1526 1250 1385 1533"/>
+	<item_skill_enhance id="73" player_class="SPIRIT_MASTER" skill_id="1155 3740 3603 3614 1447 3742 3834"/>
+    <item_skill_enhance id="74" player_class="SORCERER" skill_id="1396 1259 1526 1250 1385 1533"/>
+	<item_skill_enhance id="74" player_class="SPIRIT_MASTER" skill_id="1155 3740 3603 3614 1447 3742 3834"/>
+    <item_skill_enhance id="75" player_class="SONGWEAVER" skill_id="4408 4264 4253 4300 4221 4234 4552"/>
+    <item_skill_enhance id="76" player_class="GUNSLINGER" skill_id="2125 1957 1911 2219"/>
+    <item_skill_enhance id="77" player_class="GUNSLINGER" skill_id="2322 2210 1992"/>
+    <item_skill_enhance id="78" player_class="AETHERTECH" skill_id="2819 2779 2741 2833 2426 2498 2415"/>
+    <item_skill_enhance id="79" player_class="GLADIATOR" skill_id="601"/>
+	<item_skill_enhance id="79" player_class="TEMPLAR" skill_id="3116"/>
+	<item_skill_enhance id="79" player_class="ASSASSIN" skill_id="3271"/>
+	<item_skill_enhance id="79" player_class="RANGER" skill_id="881"/>
+	<item_skill_enhance id="79" player_class="CHANTER" skill_id="1639"/>
+    <item_skill_enhance id="80" player_class="TEMPLAR" skill_id="2890 3131"/>
+	<item_skill_enhance id="80" player_class="ASSASSIN" skill_id="3478 3196"/>
+	<item_skill_enhance id="80" player_class="RANGER" skill_id="939 784"/>
+	<item_skill_enhance id="80" player_class="CHANTER" skill_id="1891 1703"/>
+	<item_skill_enhance id="80" player_class="GLADIATOR" skill_id="644"/>
+    <item_skill_enhance id="81" player_class="GLADIATOR" skill_id="769 707"/>
+	<item_skill_enhance id="81" player_class="TEMPLAR" skill_id="3066 2877"/>
+	<item_skill_enhance id="81" player_class="ASSASSIN" skill_id="3340 3348"/>
+	<item_skill_enhance id="81" player_class="RANGER" skill_id="994 1102"/>
+	<item_skill_enhance id="81" player_class="CHANTER" skill_id="1596 1858"/>
+    <item_skill_enhance id="82" player_class="GLADIATOR" skill_id="635"/>
+	<item_skill_enhance id="82" player_class="TEMPLAR" skill_id="3130"/>
+	<item_skill_enhance id="82" player_class="ASSASSIN" skill_id="3470"/>
+	<item_skill_enhance id="82" player_class="RANGER" skill_id="830"/>
+	<item_skill_enhance id="82" player_class="CHANTER" skill_id="1602"/>
+    <item_skill_enhance id="83" player_class="CLERIC" skill_id="4037"/>
+	<item_skill_enhance id="83" player_class="SORCERER" skill_id="1217"/>
+	<item_skill_enhance id="83" player_class="SPIRIT_MASTER" skill_id="3593"/>
+	<item_skill_enhance id="83" player_class="GUNSLINGER" skill_id="2349"/>
+	<item_skill_enhance id="83" player_class="SONGWEAVER" skill_id="4457"/>
+	<item_skill_enhance id="83" player_class="AETHERTECH" skill_id="2606"/>
+    <item_skill_enhance id="84" player_class="CLERIC" skill_id="4170 1838"/>
+	<item_skill_enhance id="84" player_class="SORCERER" skill_id="4659 1271"/>
+	<item_skill_enhance id="84" player_class="SPIRIT_MASTER" skill_id="4661 3776"/>
+	<item_skill_enhance id="84" player_class="GUNSLINGER" skill_id="2210 1992"/>
+	<item_skill_enhance id="84" player_class="SONGWEAVER" skill_id="4336 4246"/>
+	<item_skill_enhance id="84" player_class="AETHERTECH" skill_id="2807 2543"/>
+    <item_skill_enhance id="85" player_class="CLERIC" skill_id="4213 4046"/>
+	<item_skill_enhance id="85" player_class="SORCERER" skill_id="1258 1259"/>
+	<item_skill_enhance id="85" player_class="SPIRIT_MASTER" skill_id="3835 3740"/>
+	<item_skill_enhance id="85" player_class="GUNSLINGER" skill_id="2107 1957"/>
+	<item_skill_enhance id="85" player_class="SONGWEAVER" skill_id="4522 4408"/>
+	<item_skill_enhance id="85" player_class="AETHERTECH" skill_id="2806 2741"/>
+    <item_skill_enhance id="86" player_class="CLERIC" skill_id="3951"/>
+	<item_skill_enhance id="86" player_class="SORCERER" skill_id="1494"/>
+	<item_skill_enhance id="86" player_class="SPIRIT_MASTER" skill_id="3582"/>
+	<item_skill_enhance id="86" player_class="GUNSLINGER" skill_id="2008"/>
+	<item_skill_enhance id="86" player_class="SONGWEAVER" skill_id="4471"/>
+	<item_skill_enhance id="86" player_class="AETHERTECH" skill_id="2566"/>
+    <item_skill_enhance id="87" player_class="CLERIC" skill_id="4012 4083 4046 4073 4061 4195 4176"/>
+    <item_skill_enhance id="88" player_class="GLADIATOR" skill_id="670 739 720 707 710"/>
+	<item_skill_enhance id="88" player_class="TEMPLAR" skill_id="2864 2877"/>
+    <item_skill_enhance id="89" player_class="CLERIC" skill_id="4012 4083 4046 4073 4061 4195 4176"/>
+    <item_skill_enhance id="90" player_class="CLERIC" skill_id="4012 4083 4046 4073 4061 4195 4176"/>
+	<item_skill_enhance id="90" player_class="AETHERTECH" skill_id="2819 2779 2741 2833 2426 2498 2415"/>
+    <item_skill_enhance id="91" player_class="GUNSLINGER" skill_id="2350 2125 2219 1957 2142 1911 2132"/>
+    <item_skill_enhance id="92" player_class="GLADIATOR" skill_id="2890 601 644 769 635"/>
+	<item_skill_enhance id="92" player_class="TEMPLAR" skill_id="2890 3116 3131 3066 3130"/>
+	<item_skill_enhance id="92" player_class="ASSASSIN" skill_id="3271 3478 3196 3340 3470"/>
+	<item_skill_enhance id="92" player_class="RANGER" skill_id="881 939 784 994 830"/>
+	<item_skill_enhance id="92" player_class="CHANTER" skill_id="1639 1891 1703 1596 1602"/>
+	<item_skill_enhance id="93" player_class="CLERIC" skill_id="4037 4170 1838 4213 3951"/>
+	<item_skill_enhance id="93" player_class="SORCERER" skill_id="1217 4659 1271 1258 1494"/>
+	<item_skill_enhance id="93" player_class="GUNSLINGER" skill_id="2349 2107 2142 2008 2132"/>
+	<item_skill_enhance id="93" player_class="SONGWEAVER" skill_id="4457 4336 4246 4522 4471"/>
+	<item_skill_enhance id="93" player_class="AETHERTECH" skill_id="2606 2807 2543 2806 2566"/>
+	<item_skill_enhance id="93" player_class="SPIRIT_MASTER" skill_id="3593 4661 3776 3835 3582"/>
+	<item_skill_enhance id="94" player_class="GLADIATOR" skill_id="601 2890 644 769 635"/>
+	<item_skill_enhance id="94" player_class="TEMPLAR" skill_id="3116 2890 3131 3066 3130"/>
+	<item_skill_enhance id="94" player_class="ASSASSIN" skill_id="3271 3478 3196 3340 3470"/>
+	<item_skill_enhance id="94" player_class="RANGER" skill_id="881 939 784 994 830"/>
+	<item_skill_enhance id="94" player_class="CHANTER" skill_id="1639 1891 1703 1596 1602"/>
+	<item_skill_enhance id="94" player_class="CLERIC" skill_id="4037 4170 1838 4213 3951"/>
+	<item_skill_enhance id="94" player_class="SORCERER" skill_id="1217 4659 1271 1258 1494"/>
+	<item_skill_enhance id="94" player_class="GUNSLINGER" skill_id="2349 2107 2142 2008 2132"/>
+	<item_skill_enhance id="94" player_class="SONGWEAVER" skill_id="4457 4336 4246 4522 4471"/>
+	<item_skill_enhance id="94" player_class="AETHERTECH" skill_id="2606 2807 2543 2806 2566"/>
+	<item_skill_enhance id="94" player_class="SPIRIT_MASTER" skill_id="3593 4661 3776 3835 3582"/>
+	<item_skill_enhance id="95" player_class="GLADIATOR" skill_id="601 2890 644 769 635"/>
+	<item_skill_enhance id="95" player_class="TEMPLAR" skill_id="3116 2890 3131 3066 3130"/>
+	<item_skill_enhance id="95" player_class="ASSASSIN" skill_id="3271 3478 3196 3340 3470"/>
+	<item_skill_enhance id="95" player_class="RANGER" skill_id="881 939 784 994 830"/>
+	<item_skill_enhance id="95" player_class="CHANTER" skill_id="1639 1891 1703 1596 1602"/>
+    <item_skill_enhance id="96" player_class="CLERIC" skill_id="4037 4170 1838 4213 3951"/>
+	<item_skill_enhance id="96" player_class="SORCERER" skill_id="1217 4659 1271 1258 1494"/>
+	<item_skill_enhance id="96" player_class="GUNSLINGER" skill_id="2349 2107 2142 2008 2132"/>
+	<item_skill_enhance id="96" player_class="SONGWEAVER" skill_id="4457 4336 4246 4522 4471"/>
+	<item_skill_enhance id="96" player_class="AETHERTECH" skill_id="2606 2807 2543 2806 2566"/>
+	<item_skill_enhance id="96" player_class="SPIRIT_MASTER" skill_id="3593 4661 3776 3835 3582"/>
+	<item_skill_enhance id="97" player_class="GLADIATOR" skill_id="601 2890 644 769 635"/>
+	<item_skill_enhance id="97" player_class="TEMPLAR" skill_id="3116 2890 3131 3066 3130"/>
+	<item_skill_enhance id="97" player_class="ASSASSIN" skill_id="3271 3478 3196 3340 3470"/>
+	<item_skill_enhance id="97" player_class="RANGER" skill_id="881 939 784 994 830"/>
+	<item_skill_enhance id="97" player_class="CHANTER" skill_id="1639 1891 1703 1596 1602"/>
+	<item_skill_enhance id="97" player_class="CLERIC" skill_id="4037 4170 1838 4213 3951"/>
+	<item_skill_enhance id="97" player_class="SORCERER" skill_id="1217 4659 1271 1258 1494"/>
+	<item_skill_enhance id="97" player_class="GUNSLINGER" skill_id="2349 2107 2142 2008 2132"/>
+	<item_skill_enhance id="97" player_class="SONGWEAVER" skill_id="4457 4336 4246 4522 4471"/>
+	<item_skill_enhance id="97" player_class="AETHERTECH" skill_id="2606 2807 2543 2806 2566"/>
+	<item_skill_enhance id="97" player_class="SPIRIT_MASTER" skill_id="3593 4661 3776 3835 3582"/>
+	<item_skill_enhance id="98" player_class="GLADIATOR" skill_id="601 2890 644 769 635"/>
+	<item_skill_enhance id="98" player_class="TEMPLAR" skill_id="3116 2890 3131 3066 3130"/>
+	<item_skill_enhance id="98" player_class="ASSASSIN" skill_id="3271 3478 3196 3340 3470"/>
+	<item_skill_enhance id="98" player_class="RANGER" skill_id="881 939 784 994 830"/>
+	<item_skill_enhance id="98" player_class="CHANTER" skill_id="1639 1891 1703 1596 1602"/>
+	<item_skill_enhance id="99" player_class="CLERIC" skill_id="4037 4170 1838 4213 3951"/>
+	<item_skill_enhance id="99" player_class="SORCERER" skill_id="1217 4659 1271 1258 1494"/>
+	<item_skill_enhance id="99" player_class="GUNSLINGER" skill_id="2349 2107 2142 2008 2132"/>
+	<item_skill_enhance id="99" player_class="SONGWEAVER" skill_id="4457 4336 4246 4522 4471"/>
+	<item_skill_enhance id="99" player_class="AETHERTECH" skill_id="2606 2807 2543 2806 2566"/>
+	<item_skill_enhance id="99" player_class="SPIRIT_MASTER" skill_id="3593 4661 3776 3835 3582"/>
+	<item_skill_enhance id="100" player_class="GLADIATOR" skill_id="601 2890 644 769 635"/>
+	<item_skill_enhance id="100" player_class="TEMPLAR" skill_id="3116 2890 3131 3066 3130"/>
+	<item_skill_enhance id="100" player_class="ASSASSIN" skill_id="3271 3478 3196 3340 3470"/>
+	<item_skill_enhance id="100" player_class="RANGER" skill_id="881 939 784 994 830"/>
+	<item_skill_enhance id="100" player_class="CHANTER" skill_id="1639 1891 1703 1596 1602"/>
+	<item_skill_enhance id="100" player_class="CLERIC" skill_id="4037 4170 1838 4213 3951"/>
+	<item_skill_enhance id="100" player_class="SORCERER" skill_id="1217 4659 1271 1258 1494"/>
+	<item_skill_enhance id="100" player_class="GUNSLINGER" skill_id="2349 2107 2142 2008 2132"/>
+	<item_skill_enhance id="100" player_class="SONGWEAVER" skill_id="4457 4336 4246 4522 4471"/>
+	<item_skill_enhance id="100" player_class="AETHERTECH" skill_id="2606 2807 2543 2806 2566"/>
+	<item_skill_enhance id="100" player_class="SPIRIT_MASTER" skill_id="3593 4661 3776 3835 3582"/>
+	<item_skill_enhance id="101" player_class="GLADIATOR" skill_id="601 2890 644 769 635"/>
+	<item_skill_enhance id="101" player_class="TEMPLAR" skill_id="3116 2890 3131 3066 3130"/>
+	<item_skill_enhance id="101" player_class="ASSASSIN" skill_id="3271 3478 3196 3340 3470"/>
+	<item_skill_enhance id="101" player_class="RANGER" skill_id="881 939 784 994 830"/>
+	<item_skill_enhance id="101" player_class="CHANTER" skill_id="1639 1891 1703 1596 1602"/>
+	<item_skill_enhance id="102" player_class="CLERIC" skill_id="4037 4170 1838 4213 3951"/>
+	<item_skill_enhance id="102" player_class="SORCERER" skill_id="1217 4659 1271 1258 1494"/>
+	<item_skill_enhance id="102" player_class="GUNSLINGER" skill_id="2349 2107 2142 2008 2132"/>
+	<item_skill_enhance id="102" player_class="SONGWEAVER" skill_id="4457 4336 4246 4522 4471"/>
+	<item_skill_enhance id="102" player_class="AETHERTECH" skill_id="2606 2807 2543 2806 2566"/>
+	<item_skill_enhance id="102" player_class="SPIRIT_MASTER" skill_id="3593 4661 3776 3835 3582"/>
+	<item_skill_enhance id="103" player_class="GLADIATOR" skill_id="601 2890 644 769 635"/>
+	<item_skill_enhance id="103" player_class="TEMPLAR" skill_id="3116 2890 3131 3066 3130"/>
+	<item_skill_enhance id="103" player_class="ASSASSIN" skill_id="3271 3478 3196 3340 3470"/>
+	<item_skill_enhance id="103" player_class="RANGER" skill_id="881 939 784 994 830"/>
+	<item_skill_enhance id="103" player_class="CHANTER" skill_id="1639 1891 1703 1596 1602"/>
+	<item_skill_enhance id="103" player_class="CLERIC" skill_id="4037 4170 1838 4213 3951"/>
+	<item_skill_enhance id="103" player_class="SORCERER" skill_id="1217 4659 1271 1258 1494"/>
+	<item_skill_enhance id="103" player_class="GUNSLINGER" skill_id="2349 2107 2142 2008 2132"/>
+	<item_skill_enhance id="103" player_class="SONGWEAVER" skill_id="4457 4336 4246 4522 4471"/>
+	<item_skill_enhance id="103" player_class="AETHERTECH" skill_id="2606 2807 2543 2806 2566"/>
+	<item_skill_enhance id="103" player_class="SPIRIT_MASTER" skill_id="3593 4661 3776 3835 3582"/>
+	<item_skill_enhance id="104" player_class="GLADIATOR" skill_id="601 2890 644 769 635"/>
+	<item_skill_enhance id="104" player_class="TEMPLAR" skill_id="3116 2890 3131 3066 3130"/>
+	<item_skill_enhance id="105" player_class="CHANTER" skill_id="1639 1891 1703 1596 1602"/>
+	<item_skill_enhance id="105" player_class="CLERIC" skill_id="4037 4170 1838 4213 3951"/>
+	<item_skill_enhance id="105" player_class="AETHERTECH" skill_id="2606 2807 2543 2806 2566"/>
+	<item_skill_enhance id="106" player_class="ASSASSIN" skill_id="3271 3478 3196 3340 3470"/>
+	<item_skill_enhance id="106" player_class="RANGER" skill_id="881 939 784 994 830"/>
+	<item_skill_enhance id="106" player_class="GUNSLINGER" skill_id="2349 2107 2142 2008 2132"/>
+	<item_skill_enhance id="107" player_class="SORCERER" skill_id="1217 4659 1271 1258 1494"/>
+	<item_skill_enhance id="107" player_class="SONGWEAVER" skill_id="4457 4336 4246 4522 4471"/>
+	<item_skill_enhance id="107" player_class="SPIRIT_MASTER" skill_id="3593 4661 3776 3835 3582"/>
+	<item_skill_enhance id="108" player_class="GLADIATOR" skill_id="663 624 572 604 590 519 531"/>
+	<item_skill_enhance id="108" player_class="TEMPLAR" skill_id="3072 3169 3038 3085 3125 3019 3071"/>
+	<item_skill_enhance id="108" player_class="ASSASSIN" skill_id="3385 3482 3283 3415 3500 3467 3512"/>
+	<item_skill_enhance id="108" player_class="RANGER" skill_id="890 848 1022 950 4679 1054 1066"/>
+	<item_skill_enhance id="108" player_class="CHANTER" skill_id="1677 1587 1814 1778 1838 1627 1875"/>
+	<item_skill_enhance id="109" player_class="CLERIC" skill_id="1814 4150 4025 4095 4102 4128 4054"/>
+	<item_skill_enhance id="109" player_class="SORCERER" skill_id="1226 1179 1204 1394 1510 1391 1184"/>
+	<item_skill_enhance id="109" player_class="GUNSLINGER" skill_id="2171 1912 2186 2055 2180 2004 2093"/>
+	<item_skill_enhance id="109" player_class="SONGWEAVER" skill_id="4281 4425 4403 4273 4431 4567 4339"/>
+	<item_skill_enhance id="109" player_class="AETHERTECH" skill_id="2690 2553 2399 2763 2536 2401 2530"/>
+	<item_skill_enhance id="109" player_class="SPIRIT_MASTER" skill_id="3790 3838 3643 3630 3839 3852 1155"/>
+	<item_skill_enhance id="110" player_class="GLADIATOR" skill_id="663 624 572 604 590 519 531"/>
+	<item_skill_enhance id="110" player_class="TEMPLAR" skill_id="3072 3169 3038 3085 3125 3019 3071"/>
+	<item_skill_enhance id="110" player_class="ASSASSIN" skill_id="3385 3482 3283 3415 3500 3467 3512"/>
+	<item_skill_enhance id="110" player_class="RANGER" skill_id="890 848 1022 950 4679 1054 1066"/>
+	<item_skill_enhance id="110" player_class="CHANTER" skill_id="1677 1587 1814 1778 1838 1627 1875"/>
+	<item_skill_enhance id="111" player_class="CLERIC" skill_id="1814 4150 4025 4095 4102 4128 4054"/>
+	<item_skill_enhance id="111" player_class="SORCERER" skill_id="1226 1179 1204 1394 1510 1391 1184"/>
+	<item_skill_enhance id="111" player_class="GUNSLINGER" skill_id="2171 1912 2186 2055 2180 2004 2093"/>
+	<item_skill_enhance id="111" player_class="SONGWEAVER" skill_id="4281 4425 4403 4273 4431 4567 4339"/>
+	<item_skill_enhance id="111" player_class="AETHERTECH" skill_id="2690 2553 2399 2763 2536 2401 2530"/>
+	<item_skill_enhance id="111" player_class="SPIRIT_MASTER" skill_id="3790 3838 3643 3630 3839 3852 1155"/>
+	<item_skill_enhance id="112" player_class="GLADIATOR" skill_id="663 624 572 604 590 519 531"/>
+	<item_skill_enhance id="112" player_class="TEMPLAR" skill_id="3072 3169 3038 3085 3125 3019 3071"/>
+	<item_skill_enhance id="112" player_class="ASSASSIN" skill_id="3385 3482 3283 3415 3500 3467 3512"/>
+	<item_skill_enhance id="112" player_class="RANGER" skill_id="890 848 1022 950 4679 1054 1066"/>
+	<item_skill_enhance id="112" player_class="CHANTER" skill_id="1677 1587 1814 1778 1838 1627 1875"/>
+	<item_skill_enhance id="113" player_class="CLERIC" skill_id="1814 4150 4025 4095 4102 4128 4054"/>
+	<item_skill_enhance id="113" player_class="SORCERER" skill_id="1226 1179 1204 1394 1510 1391 1184"/>
+	<item_skill_enhance id="113" player_class="GUNSLINGER" skill_id="2171 1912 2186 2055 2180 2004 2093"/>
+	<item_skill_enhance id="113" player_class="SONGWEAVER" skill_id="4281 4425 4403 4273 4431 4567 4339"/>
+	<item_skill_enhance id="113" player_class="AETHERTECH" skill_id="2690 2553 2399 2763 2536 2401 2530"/>
+	<item_skill_enhance id="113" player_class="SPIRIT_MASTER" skill_id="3790 3838 3643 3630 3839 3852 1155"/>
+	<item_skill_enhance id="114" player_class="GLADIATOR" skill_id="663 624 572 604 590 519 531"/>
+	<item_skill_enhance id="114" player_class="TEMPLAR" skill_id="3072 3169 3038 3085 3125 3019 3071"/>
+	<item_skill_enhance id="114" player_class="ASSASSIN" skill_id="3385 3482 3283 3415 3500 3467 3512"/>
+	<item_skill_enhance id="114" player_class="RANGER" skill_id="890 848 1022 950 4679 1054 1066"/>
+	<item_skill_enhance id="114" player_class="CHANTER" skill_id="1677 1587 1814 1778 1838 1627 1875"/>
+	<item_skill_enhance id="115" player_class="CLERIC" skill_id="1814 4150 4025 4095 4102 4128 4054"/>
+	<item_skill_enhance id="115" player_class="SORCERER" skill_id="1226 1179 1204 1394 1510 1391 1184"/>
+	<item_skill_enhance id="115" player_class="GUNSLINGER" skill_id="2171 1912 2186 2055 2180 2004 2093"/>
+	<item_skill_enhance id="115" player_class="SONGWEAVER" skill_id="4281 4425 4403 4273 4431 4567 4339"/>
+	<item_skill_enhance id="115" player_class="AETHERTECH" skill_id="2690 2553 2399 2763 2536 2401 2530"/>
+	<item_skill_enhance id="115" player_class="SPIRIT_MASTER" skill_id="3790 3838 3643 3630 3839 3852 1155"/>
+	<item_skill_enhance id="116" player_class="GLADIATOR" skill_id="2890"/>
+	<item_skill_enhance id="116" player_class="TEMPLAR" skill_id="2890"/>
+    <item_skill_enhance id="117" player_class="TEMPLAR" skill_id="3116"/>
+    <item_skill_enhance id="118" player_class="ASSASSIN" skill_id="3271"/>
+    <item_skill_enhance id="119" player_class="CLERIC" skill_id="4037"/>
+    <item_skill_enhance id="120" player_class="CHANTER" skill_id="1639"/>
+    <item_skill_enhance id="121" player_class="ASSASSIN" skill_id="3271"/>
+    <item_skill_enhance id="122" player_class="SORCERER" skill_id="1217"/>
+    <item_skill_enhance id="123" player_class="SPIRIT_MASTER" skill_id="3593"/>
+    <item_skill_enhance id="124" player_class="SORCERER" skill_id="1217"/>
+    <item_skill_enhance id="125" player_class="SPIRIT_MASTER" skill_id="3593"/>
+    <item_skill_enhance id="126" player_class="TEMPLAR" skill_id="3116"/>
+    <item_skill_enhance id="127" player_class="GLADIATOR" skill_id="601"/>
+    <item_skill_enhance id="128" player_class="CLERIC" skill_id="4037"/>
+    <item_skill_enhance id="129" player_class="CHANTER" skill_id="1639"/>
+    <item_skill_enhance id="130" player_class="RANGER" skill_id="881"/>
+    <item_skill_enhance id="131" player_class="GUNSLINGER" skill_id="2349"/>
+    <item_skill_enhance id="132" player_class="GUNSLINGER" skill_id="2107"/>
+    <item_skill_enhance id="133" player_class="SONGWEAVER" skill_id="4457"/>
+    <item_skill_enhance id="134" player_class="AETHERTECH" skill_id="2606"/>
+    <item_skill_enhance id="135" player_class="GLADIATOR" skill_id="644"/>
+    <item_skill_enhance id="136" player_class="TEMPLAR" skill_id="4721"/>
+    <item_skill_enhance id="137" player_class="ASSASSIN" skill_id="4774"/>
+    <item_skill_enhance id="138" player_class="CLERIC" skill_id="4779"/>
+    <item_skill_enhance id="139" player_class="CHANTER" skill_id="4730"/>
+    <item_skill_enhance id="140" player_class="ASSASSIN" skill_id="4774"/>
+    <item_skill_enhance id="141" player_class="SORCERER" skill_id="4726"/>
+    <item_skill_enhance id="142" player_class="SPIRIT_MASTER" skill_id="4784"/>
+    <item_skill_enhance id="143" player_class="SORCERER" skill_id="4726"/>
+    <item_skill_enhance id="144" player_class="SPIRIT_MASTER" skill_id="4784"/>
+    <item_skill_enhance id="145" player_class="TEMPLAR" skill_id="4721"/>
+    <item_skill_enhance id="146" player_class="GLADIATOR" skill_id="4716"/>
+    <item_skill_enhance id="147" player_class="CLERIC" skill_id="4779"/>
+    <item_skill_enhance id="148" player_class="CHANTER" skill_id="4730"/>
+    <item_skill_enhance id="149" player_class="RANGER" skill_id="4723"/>
+    <item_skill_enhance id="150" player_class="GUNSLINGER" skill_id="2132"/>
+    <item_skill_enhance id="151" player_class="GUNSLINGER" skill_id="4786"/>
+    <item_skill_enhance id="152" player_class="SONGWEAVER" skill_id="4790"/>
+    <item_skill_enhance id="153" player_class="AETHERTECH" skill_id="4795"/>
+    <item_skill_enhance id="154" player_class="SORCERER" skill_id="4659"/>
+    <item_skill_enhance id="155" player_class="SORCERER" skill_id="1271"/>
+    <item_skill_enhance id="156" player_class="SORCERER" skill_id="1258"/>
+    <item_skill_enhance id="157" player_class="SORCERER" skill_id="1494"/>
+    <item_skill_enhance id="158" player_class="SORCERER" skill_id="1396"/>
+    <item_skill_enhance id="159" player_class="SORCERER" skill_id="1259"/>
+    <item_skill_enhance id="160" player_class="SPIRIT_MASTER" skill_id="4661"/>
+    <item_skill_enhance id="161" player_class="SPIRIT_MASTER" skill_id="3776"/>
+    <item_skill_enhance id="162" player_class="SPIRIT_MASTER" skill_id="3835"/>
+    <item_skill_enhance id="163" player_class="SPIRIT_MASTER" skill_id="3582"/>
+    <item_skill_enhance id="164" player_class="SPIRIT_MASTER" skill_id="3740"/>
+    <item_skill_enhance id="165" player_class="SPIRIT_MASTER" skill_id="3614"/>
+    <item_skill_enhance id="166" player_class="SONGWEAVER" skill_id="4336"/>
+    <item_skill_enhance id="167" player_class="SONGWEAVER" skill_id="4246"/>
+    <item_skill_enhance id="168" player_class="SONGWEAVER" skill_id="4522"/>
+    <item_skill_enhance id="169" player_class="SONGWEAVER" skill_id="4471"/>
+    <item_skill_enhance id="170" player_class="SONGWEAVER" skill_id="4408"/>
+    <item_skill_enhance id="171" player_class="SONGWEAVER" skill_id="4264"/>
+    <item_skill_enhance id="172" player_class="ASSASSIN" skill_id="3478"/>
+    <item_skill_enhance id="173" player_class="ASSASSIN" skill_id="3196"/>
+    <item_skill_enhance id="174" player_class="ASSASSIN" skill_id="3340"/>
+    <item_skill_enhance id="175" player_class="ASSASSIN" skill_id="3470"/>
+    <item_skill_enhance id="176" player_class="ASSASSIN" skill_id="3223"/>
+    <item_skill_enhance id="177" player_class="ASSASSIN" skill_id="3365"/>
+    <item_skill_enhance id="178" player_class="RANGER" skill_id="939"/>
+    <item_skill_enhance id="179" player_class="RANGER" skill_id="784"/>
+    <item_skill_enhance id="180" player_class="RANGER" skill_id="994"/>
+    <item_skill_enhance id="181" player_class="RANGER" skill_id="830"/>
+    <item_skill_enhance id="182" player_class="RANGER" skill_id="1102"/>
+    <item_skill_enhance id="183" player_class="RANGER" skill_id="826"/>
+    <item_skill_enhance id="184" player_class="GUNSLINGER" skill_id="2142"/>
+    <item_skill_enhance id="185" player_class="GUNSLINGER" skill_id="2008"/>
+    <item_skill_enhance id="186" player_class="GUNSLINGER" skill_id="2125"/>
+    <item_skill_enhance id="187" player_class="GUNSLINGER" skill_id="2322"/>
+    <item_skill_enhance id="188" player_class="GUNSLINGER" skill_id="2219"/>
+    <item_skill_enhance id="189" player_class="GUNSLINGER" skill_id="1992"/>
+    <item_skill_enhance id="190" player_class="CLERIC" skill_id="4170"/>
+    <item_skill_enhance id="191" player_class="CLERIC" skill_id="1838"/>
+    <item_skill_enhance id="192" player_class="CLERIC" skill_id="4213"/>
+    <item_skill_enhance id="193" player_class="CLERIC" skill_id="3951"/>
+    <item_skill_enhance id="194" player_class="CLERIC" skill_id="4012"/>
+    <item_skill_enhance id="195" player_class="CLERIC" skill_id="4083"/>
+    <item_skill_enhance id="196" player_class="CHANTER" skill_id="1891"/>
+    <item_skill_enhance id="197" player_class="CHANTER" skill_id="1703"/>
+    <item_skill_enhance id="198" player_class="CHANTER" skill_id="1596"/>
+    <item_skill_enhance id="199" player_class="CHANTER" skill_id="1602"/>
+    <item_skill_enhance id="200" player_class="CHANTER" skill_id="1768"/>
+    <item_skill_enhance id="201" player_class="CHANTER" skill_id="1769"/>
+    <item_skill_enhance id="202" player_class="AETHERTECH" skill_id="2807"/>
+    <item_skill_enhance id="203" player_class="AETHERTECH" skill_id="2543"/>
+    <item_skill_enhance id="204" player_class="AETHERTECH" skill_id="2806"/>
+    <item_skill_enhance id="205" player_class="AETHERTECH" skill_id="2566"/>
+    <item_skill_enhance id="206" player_class="AETHERTECH" skill_id="2819"/>
+    <item_skill_enhance id="207" player_class="AETHERTECH" skill_id="2779"/>
+    <item_skill_enhance id="208" player_class="GLADIATOR" skill_id="720"/>
+    <item_skill_enhance id="209" player_class="GLADIATOR" skill_id="2864"/>
+    <item_skill_enhance id="210" player_class="GLADIATOR" skill_id="769"/>
+    <item_skill_enhance id="211" player_class="GLADIATOR" skill_id="635"/>
+    <item_skill_enhance id="212" player_class="GLADIATOR" skill_id="670"/>
+    <item_skill_enhance id="213" player_class="GLADIATOR" skill_id="739"/>
+    <item_skill_enhance id="214" player_class="GLADIATOR" skill_id="2890"/>
+	<item_skill_enhance id="214" player_class="TEMPLAR" skill_id="2890"/>
+    <item_skill_enhance id="215" player_class="TEMPLAR" skill_id="3131"/>
+    <item_skill_enhance id="216" player_class="TEMPLAR" skill_id="3066"/>
+    <item_skill_enhance id="217" player_class="TEMPLAR" skill_id="3130"/>
+    <item_skill_enhance id="218" player_class="TEMPLAR" skill_id="3140"/>
+    <item_skill_enhance id="219" player_class="TEMPLAR" skill_id="2864"/>
+    <item_skill_enhance id="220" player_class="TEMPLAR" skill_id="3084"/>
+    <item_skill_enhance id="221" player_class="CLERIC" skill_id="4176"/>
+    <item_skill_enhance id="222" player_class="SORCERER" skill_id="4659"/>
+    <item_skill_enhance id="223" player_class="SORCERER" skill_id="1271"/>
+    <item_skill_enhance id="224" player_class="SORCERER" skill_id="1258"/>
+    <item_skill_enhance id="225" player_class="SORCERER" skill_id="1494"/>
+    <item_skill_enhance id="226" player_class="SORCERER" skill_id="1396"/>
+    <item_skill_enhance id="227" player_class="SORCERER" skill_id="1259"/>
+    <item_skill_enhance id="228" player_class="SPIRIT_MASTER" skill_id="4661"/>
+    <item_skill_enhance id="229" player_class="SPIRIT_MASTER" skill_id="3776"/>
+    <item_skill_enhance id="230" player_class="SPIRIT_MASTER" skill_id="3835"/>
+    <item_skill_enhance id="231" player_class="SPIRIT_MASTER" skill_id="3582"/>
+    <item_skill_enhance id="232" player_class="SPIRIT_MASTER" skill_id="3740"/>
+    <item_skill_enhance id="233" player_class="SPIRIT_MASTER" skill_id="3614"/>
+    <item_skill_enhance id="234" player_class="SONGWEAVER" skill_id="4336"/>
+    <item_skill_enhance id="235" player_class="SONGWEAVER" skill_id="4246"/>
+    <item_skill_enhance id="236" player_class="SONGWEAVER" skill_id="4522"/>
+    <item_skill_enhance id="237" player_class="SONGWEAVER" skill_id="4471"/>
+    <item_skill_enhance id="238" player_class="SONGWEAVER" skill_id="4408"/>
+    <item_skill_enhance id="239" player_class="SONGWEAVER" skill_id="4264"/>
+    <item_skill_enhance id="240" player_class="ASSASSIN" skill_id="3478"/>
+    <item_skill_enhance id="241" player_class="ASSASSIN" skill_id="3196"/>
+    <item_skill_enhance id="242" player_class="ASSASSIN" skill_id="3340"/>
+    <item_skill_enhance id="243" player_class="ASSASSIN" skill_id="3470"/>
+    <item_skill_enhance id="244" player_class="ASSASSIN" skill_id="3223"/>
+    <item_skill_enhance id="245" player_class="ASSASSIN" skill_id="3365"/>
+    <item_skill_enhance id="246" player_class="RANGER" skill_id="939"/>
+    <item_skill_enhance id="247" player_class="RANGER" skill_id="784"/>
+    <item_skill_enhance id="248" player_class="RANGER" skill_id="994"/>
+    <item_skill_enhance id="249" player_class="RANGER" skill_id="830"/>
+    <item_skill_enhance id="250" player_class="RANGER" skill_id="1102"/>
+    <item_skill_enhance id="251" player_class="RANGER" skill_id="826"/>
+    <item_skill_enhance id="252" player_class="GUNSLINGER" skill_id="2142"/>
+    <item_skill_enhance id="253" player_class="GUNSLINGER" skill_id="2008"/>
+    <item_skill_enhance id="254" player_class="GUNSLINGER" skill_id="2125"/>
+    <item_skill_enhance id="255" player_class="GUNSLINGER" skill_id="2322"/>
+    <item_skill_enhance id="256" player_class="GUNSLINGER" skill_id="2219"/>
+    <item_skill_enhance id="257" player_class="GUNSLINGER" skill_id="1992"/>
+    <item_skill_enhance id="258" player_class="CLERIC" skill_id="4170"/>
+    <item_skill_enhance id="259" player_class="CLERIC" skill_id="1838"/>
+    <item_skill_enhance id="260" player_class="CLERIC" skill_id="4213"/>
+    <item_skill_enhance id="261" player_class="CLERIC" skill_id="3951"/>
+    <item_skill_enhance id="262" player_class="CLERIC" skill_id="4012"/>
+    <item_skill_enhance id="263" player_class="CLERIC" skill_id="4083"/>
+    <item_skill_enhance id="264" player_class="CHANTER" skill_id="1891"/>
+    <item_skill_enhance id="265" player_class="CHANTER" skill_id="1703"/>
+    <item_skill_enhance id="266" player_class="CHANTER" skill_id="1596"/>
+    <item_skill_enhance id="267" player_class="CHANTER" skill_id="1602"/>
+    <item_skill_enhance id="268" player_class="CHANTER" skill_id="1768"/>
+    <item_skill_enhance id="269" player_class="CHANTER" skill_id="1769"/>
+    <item_skill_enhance id="270" player_class="AETHERTECH" skill_id="2807"/>
+    <item_skill_enhance id="271" player_class="AETHERTECH" skill_id="2543"/>
+    <item_skill_enhance id="272" player_class="AETHERTECH" skill_id="2806"/>
+    <item_skill_enhance id="273" player_class="AETHERTECH" skill_id="2566"/>
+    <item_skill_enhance id="274" player_class="AETHERTECH" skill_id="2819"/>
+    <item_skill_enhance id="275" player_class="AETHERTECH" skill_id="2779"/>
+    <item_skill_enhance id="276" player_class="GLADIATOR" skill_id="720"/>
+    <item_skill_enhance id="277" player_class="GLADIATOR" skill_id="2864"/>
+    <item_skill_enhance id="278" player_class="GLADIATOR" skill_id="769"/>
+    <item_skill_enhance id="279" player_class="GLADIATOR" skill_id="635"/>
+    <item_skill_enhance id="280" player_class="GLADIATOR" skill_id="670"/>
+    <item_skill_enhance id="281" player_class="GLADIATOR" skill_id="739"/>
+    <item_skill_enhance id="282" player_class="GLADIATOR" skill_id="2890"/>
+	<item_skill_enhance id="282" player_class="TEMPLAR" skill_id="2890"/>
+    <item_skill_enhance id="283" player_class="TEMPLAR" skill_id="3131"/>
+    <item_skill_enhance id="284" player_class="TEMPLAR" skill_id="3066"/>
+    <item_skill_enhance id="285" player_class="TEMPLAR" skill_id="3130"/>
+    <item_skill_enhance id="286" player_class="TEMPLAR" skill_id="3140"/>
+    <item_skill_enhance id="287" player_class="TEMPLAR" skill_id="2864"/>
+    <item_skill_enhance id="288" player_class="TEMPLAR" skill_id="3084"/>
+    <item_skill_enhance id="289" player_class="CLERIC" skill_id="4176"/>
+	<!-- 5.8 -->
+	<item_skill_enhance id="290" player_class="GLADIATOR" skill_id="644"/>
+	<item_skill_enhance id="291" player_class="TEMPLAR" skill_id="4721"/>
+	<item_skill_enhance id="292" player_class="ASSASSIN" skill_id="4774"/>
+	<item_skill_enhance id="293" player_class="CLERIC" skill_id="4779"/>
+	<item_skill_enhance id="294" player_class="CHANTER" skill_id="4730"/>
+	<item_skill_enhance id="295" player_class="ASSASSIN" skill_id="4774"/>
+	<item_skill_enhance id="296" player_class="SORCERER" skill_id="4726"/>
+	<item_skill_enhance id="297" player_class="SPIRIT_MASTER" skill_id="4784"/>
+	<item_skill_enhance id="298" player_class="SORCERER" skill_id="4726"/>
+	<item_skill_enhance id="299" player_class="SPIRIT_MASTER" skill_id="4784"/>
+	<item_skill_enhance id="300" player_class="TEMPLAR" skill_id="4721"/>
+	<item_skill_enhance id="301" player_class="GLADIATOR" skill_id="4716"/>
+	<item_skill_enhance id="302" player_class="CLERIC" skill_id="4779"/>
+	<item_skill_enhance id="303" player_class="CHANTER" skill_id="4730"/>
+	<item_skill_enhance id="304" player_class="RANGER" skill_id="4723"/>
+	<item_skill_enhance id="305" player_class="GUNSLINGER" skill_id="2132"/>
+	<item_skill_enhance id="306" player_class="GUNSLINGER" skill_id="4786"/>
+	<item_skill_enhance id="307" player_class="SONGWEAVER" skill_id="4790"/>
+	<item_skill_enhance id="308" player_class="AETHERTECH" skill_id="4795"/>
+	<item_skill_enhance id="309" player_class="SORCERER" skill_id="1387"/>
+	<item_skill_enhance id="310" player_class="SORCERER" skill_id="1271"/>
+	<item_skill_enhance id="311" player_class="SORCERER" skill_id="1258"/>
+	<item_skill_enhance id="312" player_class="SORCERER" skill_id="1494"/>
+	<item_skill_enhance id="313" player_class="SORCERER" skill_id="1396"/>
+	<item_skill_enhance id="314" player_class="SORCERER" skill_id="1259"/>
+	<item_skill_enhance id="315" player_class="SPIRIT_MASTER" skill_id="3640"/>
+	<item_skill_enhance id="316" player_class="SPIRIT_MASTER" skill_id="3776"/>
+	<item_skill_enhance id="317" player_class="SPIRIT_MASTER" skill_id="3835"/>
+	<item_skill_enhance id="318" player_class="SPIRIT_MASTER" skill_id="3582"/>
+	<item_skill_enhance id="319" player_class="SPIRIT_MASTER" skill_id="3740"/>
+	<item_skill_enhance id="320" player_class="SPIRIT_MASTER" skill_id="3614"/>
+	<item_skill_enhance id="321" player_class="SONGWEAVER" skill_id="4336"/>
+	<item_skill_enhance id="322" player_class="SONGWEAVER" skill_id="4246"/>
+	<item_skill_enhance id="323" player_class="SONGWEAVER" skill_id="4522"/>
+	<item_skill_enhance id="324" player_class="SONGWEAVER" skill_id="4471"/>
+	<item_skill_enhance id="325" player_class="SONGWEAVER" skill_id="4408"/>
+	<item_skill_enhance id="326" player_class="SONGWEAVER" skill_id="4264"/>
+	<item_skill_enhance id="327" player_class="ASSASSIN" skill_id="3478"/>
+	<item_skill_enhance id="328" player_class="ASSASSIN" skill_id="3196"/>
+	<item_skill_enhance id="329" player_class="ASSASSIN" skill_id="3340"/>
+	<item_skill_enhance id="330" player_class="ASSASSIN" skill_id="3470"/>
+	<item_skill_enhance id="331" player_class="ASSASSIN" skill_id="3223"/>
+	<item_skill_enhance id="332" player_class="ASSASSIN" skill_id="3365"/>
+	<item_skill_enhance id="333" player_class="RANGER" skill_id="939"/>
+	<item_skill_enhance id="334" player_class="RANGER" skill_id="784"/>
+	<item_skill_enhance id="335" player_class="RANGER" skill_id="994"/>
+	<item_skill_enhance id="336" player_class="RANGER" skill_id="830"/>
+	<item_skill_enhance id="337" player_class="RANGER" skill_id="1102"/>
+	<item_skill_enhance id="338" player_class="RANGER" skill_id="826"/>
+	<item_skill_enhance id="339" player_class="GUNSLINGER" skill_id="2142"/>
+	<item_skill_enhance id="340" player_class="GUNSLINGER" skill_id="2008"/>
+	<item_skill_enhance id="341" player_class="GUNSLINGER" skill_id="2125"/>
+	<item_skill_enhance id="342" player_class="GUNSLINGER" skill_id="2322"/>
+	<item_skill_enhance id="343" player_class="GUNSLINGER" skill_id="2219"/>
+	<item_skill_enhance id="344" player_class="GUNSLINGER" skill_id="1992"/>
+	<item_skill_enhance id="345" player_class="CLERIC" skill_id="4170"/>
+	<item_skill_enhance id="346" player_class="CLERIC" skill_id="1838"/>
+	<item_skill_enhance id="347" player_class="CLERIC" skill_id="4213"/>
+	<item_skill_enhance id="348" player_class="CLERIC" skill_id="3951"/>
+	<item_skill_enhance id="349" player_class="CLERIC" skill_id="4012"/>
+	<item_skill_enhance id="350" player_class="CLERIC" skill_id="4083"/>
+	<item_skill_enhance id="351" player_class="CHANTER" skill_id="1891"/>
+	<item_skill_enhance id="352" player_class="CHANTER" skill_id="1703"/>
+	<item_skill_enhance id="353" player_class="CHANTER" skill_id="1596"/>
+	<item_skill_enhance id="354" player_class="CHANTER" skill_id="1602"/>
+	<item_skill_enhance id="355" player_class="CHANTER" skill_id="1768"/>
+	<item_skill_enhance id="356" player_class="CHANTER" skill_id="1769"/>
+	<item_skill_enhance id="357" player_class="AETHERTECH" skill_id="2807"/>
+	<item_skill_enhance id="358" player_class="AETHERTECH" skill_id="2543"/>
+	<item_skill_enhance id="359" player_class="AETHERTECH" skill_id="2806"/>
+	<item_skill_enhance id="360" player_class="AETHERTECH" skill_id="2566"/>
+	<item_skill_enhance id="361" player_class="AETHERTECH" skill_id="2819"/>
+	<item_skill_enhance id="362" player_class="AETHERTECH" skill_id="2779"/>
+	<item_skill_enhance id="363" player_class="GLADIATOR" skill_id="720"/>
+	<item_skill_enhance id="364" player_class="GLADIATOR" skill_id="2864"/>
+	<item_skill_enhance id="365" player_class="GLADIATOR" skill_id="769"/>
+	<item_skill_enhance id="366" player_class="GLADIATOR" skill_id="635"/>
+	<item_skill_enhance id="367" player_class="GLADIATOR" skill_id="670"/>
+	<item_skill_enhance id="368" player_class="GLADIATOR" skill_id="739"/>
+	<item_skill_enhance id="369" player_class="GLADIATOR" skill_id="2890"/>
+	<item_skill_enhance id="369" player_class="TEMPLAR" skill_id="2890"/>
+	<item_skill_enhance id="370" player_class="TEMPLAR" skill_id="3131"/>
+    <item_skill_enhance id="371" player_class="TEMPLAR" skill_id="3066"/>
+    <item_skill_enhance id="372" player_class="TEMPLAR" skill_id="3130"/>
+    <item_skill_enhance id="373" player_class="TEMPLAR" skill_id="3140"/>
+    <item_skill_enhance id="374" player_class="TEMPLAR" skill_id="2864"/>
+    <item_skill_enhance id="375" player_class="TEMPLAR" skill_id="3084"/>
+    <item_skill_enhance id="376" player_class="CLERIC" skill_id="4176"/>
+</item_skill_enhances>

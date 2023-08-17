@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+    <zone mapid="110020000" name="CLOISTER_OF_KAISINEL_110020000" area_type="POLYGON" zone_type="SUB" priority="16" flags="54">
+        <points bottom="1000.000000" top="1500.000000">
+            <point x="2095.429932" y="1631.290039"/>
+			<point x="2166.754639" y="1499.339600"/>
+			<point x="2257.693604" y="1545.700562"/>
+			<point x="2181.911133" y="1679.434204"/>
+        </points>
+    </zone>
+	<zone mapid="110020000" name="LIGHT_EMPYREAN_SHELTER_110020000" area_type="POLYGON" zone_type="SUB" priority="16" flags="54">
+        <points bottom="458.942780" top="558.942749">
+            <point x="371.851135" y="374.877106"/>
+            <point x="622.191528" y="377.257568"/>
+            <point x="617.871948" y="620.184509"/>
+            <point x="381.809082" y="615.201660"/>
+        </points>
+    </zone>
+</zones>

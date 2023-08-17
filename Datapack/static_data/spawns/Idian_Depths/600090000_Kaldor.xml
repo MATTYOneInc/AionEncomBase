@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Idian Depths 4.8
+	分かれたカタラム 4.8
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="600090000">
+		<idian_depths_spawn id="3">
+			<idian_depths_type istate="OPEN">
+				<!-- Idian Depths Corridor
+				<Felspire Timberland> -->
+				<spawn npc_id="731641">
+				    <spot x="1091.6495" y="1042.6045" z="154.55144" h="102"/>
+				</spawn>
+				<!-- Idian Depths Corridor
+				<Path Of Reverance> -->
+				<spawn npc_id="731642">
+				    <spot x="533.7611" y="838.78174" z="84.0" h="49"/>
+				</spawn>
+			</idian_depths_type>
+			<idian_depths_type istate="CLOSED">
+			</idian_depths_type>
+		</idian_depths_spawn>
+    </spawn_map>
+</spawns>

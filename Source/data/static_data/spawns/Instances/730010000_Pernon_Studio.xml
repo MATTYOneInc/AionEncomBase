@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	페르논 Studio
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="730010000">
+		<!-- Studio Exit (Object Normal lvl:3) -->
+		<spawn npc_id="830558">
+			<spot x="133.59409" y="349.0886" z="267.8835" entity_id="8"/>
+		</spawn>
+		<!-- Studio Exit (Object Normal lvl:3) -->
+		<spawn npc_id="830559">
+			<spot x="119.12719" y="346.609" z="267.8835" entity_id="7"/>
+		</spawn>
+	</spawn_map>
+</spawns>

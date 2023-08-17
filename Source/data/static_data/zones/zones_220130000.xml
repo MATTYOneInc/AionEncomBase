@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+    <zone mapid="220130000" name="ALQUIMIA_CULVERT_2_220130000" area_type="POLYGON" zone_type="SUB" priority="16" flags="4">
+        <points bottom="5.343835" top="605.3438">
+            <point x="1804.734985" y="1339.820435"/>
+            <point x="1807.885986" y="1116.705933"/>
+            <point x="2041.801880" y="1116.023682"/>
+            <point x="2039.585327" y="1335.350708"/>
+        </points>
+    </zone>
+    <zone mapid="220130000" name="CASUS_RUINS_1_220130000" area_type="POLYGON" zone_type="SUB" priority="16" flags="4">
+        <points bottom="0.1" top="600.1">
+            <point x="1812.030884" y="849.725098"/>
+            <point x="1815.214233" y="1075.948242"/>
+            <point x="2033.375610" y="1067.801514"/>
+            <point x="2036.423096" y="857.783081"/>
+        </points>
+    </zone>
+    <zone mapid="220130000" name="COLLAPSED_WIND_TOWER_4_220130000" area_type="POLYGON" zone_type="SUB" priority="16" flags="4">
+        <points bottom="5.143829" top="605.1438">
+            <point x="1164.397095" y="1150.553833"/>
+            <point x="10.707520" y="1123.268555"/>
+            <point x="59.647095" y="1996.689209"/>
+            <point x="1174.352173" y="2035.075439"/>
+        </points>
+    </zone>
+    <zone mapid="220130000" name="DECAYED_GARDEN_2_220130000" area_type="POLYGON" zone_type="SUB" priority="16" flags="4">
+        <points bottom="-13.471315" top="586.5287">
+            <point x="499.496521" y="427.614624"/>
+            <point x="944.440369" y="426.906311"/>
+            <point x="953.851196" y="109.407867"/>
+            <point x="492.500000" y="113.500000"/>
+        </points>
+    </zone>
+    <zone mapid="220130000" name="IDARENA_PVP01_FLYINGZONE_1_220130000" area_type="POLYGON" zone_type="FLY" flags="12">
+        <points bottom="133.1" top="283.1">
+            <point x="626.000000" y="1728.000000"/>
+            <point x="626.000000" y="1834.000000"/>
+            <point x="730.000000" y="1834.000000"/>
+            <point x="730.000000" y="1728.000000"/>
+        </points>
+    </zone>
+    <zone mapid="220130000" name="MUMU_FARM_1_220130000" area_type="POLYGON" zone_type="SUB" priority="16" flags="4">
+        <points bottom="5.243799" top="605.2438">
+            <point x="1263.528687" y="1331.905029"/>
+            <point x="1765.262573" y="1329.402832"/>
+            <point x="1777.423096" y="743.468445"/>
+            <point x="1279.018311" y="748.090271"/>
+        </points>
+    </zone>
+    <zone mapid="220130000" name="PLAZA_OF_STRUGGLE_3_220130000" area_type="POLYGON" zone_type="SUB" priority="16" flags="4">
+        <points bottom="1.872734" top="1001.87274">
+            <point x="2034.712891" y="1453.159912"/>
+            <point x="2027.994629" y="2047.040405"/>
+            <point x="1287.741333" y="2049.522217"/>
+            <point x="1262.167114" y="1460.894897"/>
+        </points>
+    </zone>
+</zones>

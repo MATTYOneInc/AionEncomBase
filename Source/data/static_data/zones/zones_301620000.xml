@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+	<zone mapid="301620000" name="DRAKENSEER_LAIR_301620000" area_type="POLYGON" zone_type="SUB" priority="16" flags="0">
+        <points bottom="232.884888" top="382.884888">
+            <point x="24.000000" y="40.000000"/>
+            <point x="24.000000" y="456.000000"/>
+            <point x="468.000000" y="456.000000"/>
+            <point x="468.000000" y="40.000000"/>
+        </points>
+    </zone>
+</zones>

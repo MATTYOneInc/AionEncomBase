@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+	Weather Set Table
+	Made By (Encom)
+ -->
+<weather>
+    <!-- Poeta -->
+	<map id="210010000" zone_count="2" weather_count="7">
+	    <table zone_id="1" att_ranking="2" code="1" name="Rain"/>
+		<table zone_id="1" att_ranking="1" code="2" name="Rain_Before" before="true"/>
+		<table zone_id="1" att_ranking="1" code="3" name="Rain_After" after="true"/>
+		<table zone_id="1" att_ranking="2" code="4" name="Rain2"/>
+		<table zone_id="1" att_ranking="1" code="5" name="Rain2_Before" before="true"/>
+		<table zone_id="1" att_ranking="1" code="6" name="Rain2_After" after="true"/>
+        <table zone_id="1" att_ranking="0" code="7" name="Snow"/>
+    </map>
+	<!-- Eltnen -->
+    <map id="210020000" zone_count="2" weather_count="5">
+		<table zone_id="1" att_ranking="2" code="1" name="Rain"/>
+		<table zone_id="1" att_ranking="2" code="2" name="Rain_After" after="true"/>
+        <table zone_id="1" att_ranking="2" code="3" name="Rain_Before" before="true"/>
+        <table zone_id="2" att_ranking="2" code="4" name="Sand_Rain"/>
+        <table zone_id="2" att_ranking="2" code="5" name="Sand_Rain_Before" before="true"/>
+    </map>
+	<!-- Verteron -->
+    <map id="210030000" zone_count="1" weather_count="6">
+        <table zone_id="1" att_ranking="1" code="1" name="Rain_After" after="true"/>
+		<table zone_id="1" att_ranking="1" code="2" name="Rain_Before" before="true"/>
+        <table zone_id="1" att_ranking="1" code="3" name="Rain2_After" after="true"/>
+        <table zone_id="1" att_ranking="1" code="4" name="Rain2_Before" before="true"/>
+        <table zone_id="1" att_ranking="2" code="5" name="Rain"/>
+		<table zone_id="1" att_ranking="2" code="6" name="Rain2"/>
+    </map>
+	<!-- Heiron -->
+    <map id="210040000" zone_count="0" weather_count="3">
+		<table zone_id="0" att_ranking="2" code="1" name="Rain"/>
+		<table zone_id="0" att_ranking="1" code="2" name="Rain_After" after="true"/>
+        <table zone_id="0" att_ranking="1" code="3" name="Rain_Before" before="true"/>
+    </map>
+	<!-- Inggison [Master Server] -->
+    <map id="210130000" zone_count="2" weather_count="6">
+		<table zone_id="1" att_ranking="1" code="1" name="Rain_After" after="true"/>
+		<table zone_id="1" att_ranking="1" code="2" name="Rain_Before" before="true"/>
+		<table zone_id="1" att_ranking="2" code="3" name="Rain"/>
+		<table zone_id="2" att_ranking="2" code="4" name="Rain2"/>
+		<table zone_id="2" att_ranking="1" code="5" name="Rain2_After" after="true"/>
+        <table zone_id="2" att_ranking="1" code="6" name="Rain2_Before" before="true"/>
+    </map>
+	<!-- Theobomos -->
+    <map id="210060000" zone_count="1" weather_count="2">
+		<table zone_id="1" att_ranking="2" code="1" name="Sand_Rain"/>
+        <table zone_id="1" att_ranking="2" code="2" name="Sand_Rain_Before" before="true"/>
+    </map>
+	<!-- Iluma -->
+    <map id="210100000" zone_count="1" weather_count="1">
+		<table zone_id="1" att_ranking="2" code="1" name="Rain"/>
+    </map>
+	<!-- Ishalgen -->
+    <map id="220010000" zone_count="1" weather_count="2">
+        <table zone_id="1" att_ranking="0" code="1" name="Myst"/>
+        <table zone_id="1" att_ranking="0" code="2" name="Snow"/>
+    </map>
+	<!-- Morheim -->
+    <map id="220020000" zone_count="2" weather_count="5">
+		<table zone_id="1" att_ranking="2" code="1" name="Rain"/>
+		<table zone_id="1" att_ranking="1" code="2" name="Rain_After" after="true"/>
+        <table zone_id="1" att_ranking="1" code="3" name="Rain_Before" before="true"/>
+		<table zone_id="2" att_ranking="2" code="4" name="Snow"/>
+		<table zone_id="2" att_ranking="1" code="5" name="Snow_Before" before="true"/>
+    </map>
+	<!-- Altgard -->
+    <map id="220030000" zone_count="2" weather_count="3">
+		<table zone_id="2" att_ranking="0" code="1" name="Altgard_Snow_Before" before="true"/>
+        <table zone_id="2" att_ranking="0" code="2" name="Altgard_Snow"/>
+        <table zone_id="2" att_ranking="0" code="3" name="Myst"/>
+    </map>
+	<!-- Beluslan -->
+    <map id="220040000" zone_count="4" weather_count="12">
+		<table zone_id="1" att_ranking="2" code="1" name="Snow_A_WZ01"/>
+        <table zone_id="1" att_ranking="2" code="2" name="Snow_C_WZ01"/>
+        <table zone_id="1" att_ranking="2" code="3" name="Snow_A_WZ01_After" after="true"/>
+		<table zone_id="1" att_ranking="2" code="4" name="Snow_A_WZ01_Before" before="true"/>
+		<table zone_id="2" att_ranking="2" code="5" name="Snow_A_WZ02"/>
+		<table zone_id="2" att_ranking="2" code="6" name="Snow_B_WZ02"/>
+        <table zone_id="2" att_ranking="2" code="7" name="Snow_A_WZ02_Before" before="true"/>
+		<table zone_id="2" att_ranking="2" code="8" name="Snow_B_WZ02_Before" before="true"/>
+        <table zone_id="2" att_ranking="2" code="9" name="Snow_A_WZ02_After" after="true"/>
+		<table zone_id="2" att_ranking="2" code="10" name="Snow_B_WZ02_After" after="true"/>
+		<table zone_id="3" att_ranking="0" code="11" name="Snow_B_WZ03"/>
+        <table zone_id="4" att_ranking="0" code="12" name="Snow_B_WZ04"/>
+    </map>
+	<!-- Brusthonin -->
+    <map id="220050000" zone_count="1" weather_count="3">
+        <table zone_id="1" att_ranking="1" code="1" name="Rain_Before" before="true"/>
+        <table zone_id="1" att_ranking="1" code="2" name="Rain_After" after="true"/>
+		<table zone_id="1" att_ranking="2" code="3" name="Rain"/>
+    </map>
+	<!-- Gelkmaros [Master Server] -->
+    <map id="220140000" zone_count="2" weather_count="5">
+		<table zone_id="1" att_ranking="2" code="1" name="Rain"/>
+		<table zone_id="1" att_ranking="2" code="2" name="Rain_After" after="true"/>
+		<table zone_id="1" att_ranking="2" code="3" name="Rain_Before" before="true"/>
+		<table zone_id="2" att_ranking="2" code="4" name="Sand_Rain"/>
+        <table zone_id="2" att_ranking="2" code="5" name="Sand_Rain_Before" before="true"/>
+    </map>
+	<!-- Levinshor -->
+    <map id="600100000" zone_count="1" weather_count="3">
+		<table zone_id="1" att_ranking="2" code="1" name="Rain2"/>
+        <table zone_id="1" att_ranking="1" code="2" name="Rain2_Before" before="true"/>
+        <table zone_id="1" att_ranking="1" code="3" name="Rain2_After" after="true"/>
+    </map>
+    <map id="600050000" zone_count="2" weather_count="6">
+        <table zone_id="1" att_ranking="2" code="1" name="Rain"/>
+        <table zone_id="1" att_ranking="1" code="2" name="Rain" before="true"/>
+        <table zone_id="1" att_ranking="1" code="3" name="Rain" after="true"/>
+        <table zone_id="2" att_ranking="2" code="6" name="Snow"/>
+        <table zone_id="2" att_ranking="1" code="4" name="Snow" before="true"/>
+        <table zone_id="2" att_ranking="0" code="4" name="Snow" after="true"/>
+        <table zone_id="2" att_ranking="1" code="5" name="Snow" before="true"/>
+        <table zone_id="2" att_ranking="0" code="5" name="Snow" after="true"/>
+    </map>
+	<!-- Oriel -->
+    <map id="700010000" zone_count="2" weather_count="12">
+		<table zone_id="1" att_ranking="2" code="1" name="Rain"/>
+        <table zone_id="1" att_ranking="1" code="2" name="Rain_Before" before="true"/>
+        <table zone_id="1" att_ranking="1" code="3" name="Rain_After" after="true"/>
+        <table zone_id="1" att_ranking="2" code="4" name="Snow"/>
+		<table zone_id="1" att_ranking="1" code="5" name="Snow_Before" before="true"/>
+		<table zone_id="1" att_ranking="1" code="6" name="Snow_After" after="true"/>
+        <table zone_id="2" att_ranking="1" code="7" name="Snow_Beach"/>
+		<table zone_id="2" att_ranking="2" code="8" name="Rain_Beach"/>
+        <table zone_id="2" att_ranking="1" code="9" name="Snow_Before2" before="true"/>
+		<table zone_id="2" att_ranking="1" code="10" name="Snow_After2" after="true"/>
+        <table zone_id="2" att_ranking="1" code="11" name="Rain_Beach_Before" before="true"/>
+        <table zone_id="2" att_ranking="1" code="12" name="Rain_Beach_After" after="true"/>
+    </map>
+	<!-- Pernon -->
+    <map id="710010000" zone_count="2" weather_count="12">
+		<table zone_id="1" att_ranking="2" code="1" name="Rain"/>
+        <table zone_id="1" att_ranking="1" code="2" name="Rain_Before" before="true"/>
+        <table zone_id="1" att_ranking="1" code="3" name="Rain_After" after="true"/>
+        <table zone_id="1" att_ranking="2" code="4" name="Snow"/>
+		<table zone_id="1" att_ranking="1" code="5" name="Snow_Before" before="true"/>
+		<table zone_id="1" att_ranking="1" code="6" name="Snow_After" after="true"/>
+        <table zone_id="2" att_ranking="1" code="7" name="Snow_Beach"/>
+        <table zone_id="2" att_ranking="1" code="8" name="Snow_Before2" before="true"/>
+		<table zone_id="2" att_ranking="1" code="9" name="Snow_After2" after="true"/>
+        <table zone_id="2" att_ranking="2" code="10" name="Rain_Beach"/>
+        <table zone_id="2" att_ranking="1" code="11" name="Rain_Beach_Before" before="true"/>
+        <table zone_id="2" att_ranking="1" code="12" name="Rain_Beach_After" after="true"/>
+    </map>
+	<!-- Oriel Studio -->
+    <map id="720010000" zone_count="1" weather_count="6">
+        <table zone_id="1" att_ranking="2" code="1" name="Rain"/>
+        <table zone_id="1" att_ranking="1" code="2" name="Rain_Before" before="true"/>
+        <table zone_id="1" att_ranking="1" code="3" name="Rain_After" after="true"/>
+        <table zone_id="1" att_ranking="2" code="4" name="Snow"/>
+        <table zone_id="1" att_ranking="1" code="5" name="Snow_Before" before="true"/>
+		<table zone_id="1" att_ranking="1" code="6" name="Snow_After" after="true"/>
+    </map>
+	<!-- Pernon Studio -->
+    <map id="730010000" zone_count="1" weather_count="6">
+        <table zone_id="1" att_ranking="2" code="1" name="Rain"/>
+        <table zone_id="1" att_ranking="1" code="2" name="Rain_Before" before="true"/>
+        <table zone_id="1" att_ranking="1" code="3" name="Rain_After" after="true"/>
+        <table zone_id="1" att_ranking="2" code="4" name="Snow"/>
+        <table zone_id="1" att_ranking="1" code="5" name="Snow_Before" before="true"/>
+	    <table zone_id="1" att_ranking="1" code="6" name="Snow_After" after="true"/>
+    </map>
+	
+	<!-- Instances -->
+	<!-- Empyrean Crucible -->
+	<map id="300300000" zone_count="1" weather_count="4">
+        <table zone_id="1" att_ranking="2" code="1" name="TZ_07"/>
+        <table zone_id="1" att_ranking="2" code="2" name="TZ_07_Default"/>
+        <table zone_id="1" att_ranking="2" code="3" name="TZ_07_Named"/>
+        <table zone_id="1" att_ranking="2" code="4" name="TZ_07_dark"/>
+    </map>
+	<!-- Arena Of Harmony -->
+    <map id="300450000" zone_count="1" weather_count="1">
+        <table zone_id="1" att_ranking="1" code="1" name="Rain"/>
+    </map>
+	<!-- Sealed Danuar Mysticarium -->
+    <map id="300480000" zone_count="1" weather_count="1">
+        <table zone_id="1" att_ranking="2" code="1" name="Snow_A_WZ02"/>
+    </map>
+	<!-- Harmony Training Grounds -->
+    <map id="300570000" zone_count="1" weather_count="1">
+        <table zone_id="1" att_ranking="1" code="1" name="Rain"/>
+    </map>
+	<!-- Unity Training Grounds -->
+    <map id="301100000" zone_count="1" weather_count="1">
+        <table zone_id="1" att_ranking="1" code="1" name="Rain"/>
+    </map>
+	<!-- Indratu Fortress -->
+    <map id="310090000" zone_count="1" weather_count="1">
+        <table zone_id="1" att_ranking="2" code="1" name="Indratoo"/>
+    </map>
+	<!-- Shadow Court Dungeon -->
+    <map id="320120000" zone_count="1" weather_count="1">
+        <table zone_id="1" att_ranking="0" code="1" name="Fog"/>
+    </map>
+</weather>

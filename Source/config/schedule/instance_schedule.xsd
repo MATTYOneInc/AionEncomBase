@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="instance" type="instance"/>
+	<xs:element name="instance_schedule" type="instanceSchedule"/>
+	<xs:complexType name="instanceSchedule">
+		<xs:sequence>
+			<xs:element ref="instance" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instance">
+		<xs:sequence>
+			<xs:element name="instanceTime" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:int" use="required"/>
+	</xs:complexType>
+</xs:schema>

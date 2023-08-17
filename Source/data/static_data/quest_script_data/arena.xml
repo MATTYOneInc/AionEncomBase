@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Arena 2.7/3.9/4.3/5.1
+	Make By (Encom)
+ -->
+	<!-- 18213 The Chilling Truth (Elyos Only) handled by script -->
+	<!-- A Coliseum Contestant (Elyos Only) -->
+	<report_to_many id="18210" start_npc_ids="205315" end_npc_ids="205985" start_dialog_id="1011">
+		<npc_infos npc_id="205985" var="0" quest_dialog="2375" close_dialog="1009"/>
+	</report_to_many>
+	<!-- First Blood (Elyos Only) -->
+	<kill_in_world id="18212" start_npc_ids="205985" end_npc_ids="205985" worlds="300350000 300360000 300420000 300430000 300450000 300550000 300570000 301100000" amount="1"/>
+	<!-- Train Falling From The Dark (Elyos Only) -->
+	<kill_in_world id="18218" start_npc_ids="205985" end_npc_ids="205985" worlds="300350000 300360000 300420000 300430000 300450000 300550000 300570000 301100000" amount="5"/>
+	<!-- Arena Of Glory Challenge 1 (Elyos Only) -->
+	<item_collecting id="18219" start_npc_ids="205985"/>
+	<!-- Arena Of Glory Challenge 2 (Elyos Only) -->
+	<item_collecting id="18220" start_npc_ids="205985"/>
+	<!-- Arena Of Glory Challenge 3 (Elyos Only) -->
+	<item_collecting id="18221" start_npc_ids="205985"/>
+	<!-- Arena Of Glory Challenge 4 (Elyos Only) -->
+	<item_collecting id="18222" start_npc_ids="205985"/>
+	<!-- Arena Of Glory Challenge 5 (Elyos Only) -->
+	<item_collecting id="18223" start_npc_ids="205985"/>
+	<!-- Fight Another Day (Elyos Only) -->
+	<kill_in_world id="18224" start_npc_ids="205985" end_npc_ids="205985" worlds="300350000 300360000 300420000 300430000 300450000 300550000 300570000 301100000" amount="5"/>
+	<!-- Ongoing Training (Elyos Only) -->
+	<kill_in_world id="18226" start_npc_ids="205985" end_npc_ids="205985" worlds="300350000 300360000 300420000 300430000 300450000 300550000 300570000 301100000" amount="5"/>
+	<!-- Ongoing Efforts (Elyos Only) -->
+	<kill_in_world id="18227" start_npc_ids="205985" end_npc_ids="205985" worlds="300350000 300360000 300420000 300430000 300450000 300550000 300570000 301100000" amount="5"/>
+	
+	<!-- 28213 The Coliseum's Secret (Asmodian Only) handled by script -->
+	<!-- The Crucible Coliseum (Asmodian Only) -->
+	<report_to_many id="28210" start_npc_ids="205323" end_npc_ids="205986" start_dialog_id="1011">
+		<npc_infos var="0" npc_id="205986" quest_dialog="2375" close_dialog="1009"/>
+	</report_to_many>
+	<!-- A Test Of Blood (Asmodian Only) -->
+	<kill_in_world id="28212" start_npc_ids="205986" end_npc_ids="205986" worlds="300350000 300360000 300420000 300430000 300450000 300550000 300570000 301100000" amount="1"/>
+	<!-- Five Defeated In One Session (Asmodian Only) -->
+	<kill_in_world id="28218" start_npc_ids="205986" end_npc_ids="205986" worlds="300350000 300360000 300420000 300430000 300450000 300550000 300570000 301100000" amount="5"/>
+	<!-- Entering The Arena Of Glory (Asmodian Only) -->
+	<item_collecting id="28219" start_npc_ids="205986"/>
+	<!-- Back For More (Asmodian Only) -->
+	<item_collecting id="28220" start_npc_ids="205986"/>
+	<!-- Making An Impression (Asmodian Only) -->
+	<item_collecting id="28221" start_npc_ids="205986"/>
+	<!-- Making A Bigger Impression (Asmodian Only) -->
+	<item_collecting id="28222" start_npc_ids="205986"/>
+	<!-- The Final Test (Asmodian Only) -->
+	<item_collecting id="28223" start_npc_ids="205986"/>
+	<!-- After The Warm-Up (Asmodian Only) -->
+	<kill_in_world id="28224" start_npc_ids="205986" end_npc_ids="205986" worlds="300350000 300360000 300420000 300430000 300450000 300550000 300570000 301100000" amount="5"/>
+	<!-- Coliseum Training (Asmodian Only) -->
+	<kill_in_world id="28226" start_npc_ids="205986" end_npc_ids="205986" worlds="300350000 300360000 300420000 300430000 300450000 300550000 300570000 301100000" amount="5"/>
+	<!-- Coliseum Efforts (Asmodian Only) -->
+	<kill_in_world id="28227" start_npc_ids="205986" end_npc_ids="205986" worlds="300350000 300360000 300420000 300430000 300450000 300550000 300570000 301100000" amount="5"/>
+</quest_scripts>

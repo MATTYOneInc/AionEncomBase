@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="vortex" type="vortex"/>
+	<xs:element name="vortex_schedule" type="vortexSchedule"/>
+	<xs:complexType name="vortexSchedule">
+		<xs:sequence>
+			<xs:element ref="vortex" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="vortex">
+		<xs:sequence>
+			<xs:element name="invasionTime" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:int" use="required"/>
+	</xs:complexType>
+</xs:schema>

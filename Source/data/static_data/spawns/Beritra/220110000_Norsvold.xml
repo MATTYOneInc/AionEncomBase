@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Dredgion Defense
+	Norsvold
+	Spawn By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="220110000">
+		<beritra_spawn id="58">
+			<beritra_type bstate="INVASION">
+				<!-- Dredgion Defense: Pandaemonium -->
+				<spawn npc_id="730646">
+				    <spot x="1821.3296" y="2015.1086" z="199.19728" h="61"/>
+				</spawn>
+			</beritra_type>
+			<beritra_type bstate="PEACE">
+			</beritra_type>
+		</beritra_spawn>
+    </spawn_map>
+</spawns>

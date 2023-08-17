@@ -1,0 +1,1945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Base 아타나토스 영지 4.7
+	Made By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="400050000">
+		<!-- [ATASIN POST] -->
+		<base_spawn id="31">
+			<simple_race race="ELYOS">
+				<!-- Elyos Flag -->
+				<spawn npc_id="803378">
+					<spot x="165.90549" y="196.31587" z="1532.1101" h="3"/>
+				</spawn>
+				<!-- Memoria Temple Flag -->
+				<spawn npc_id="803642">
+				    <spot x="572.8287" y="572.7892" z="1545.3778" h="14"/>
+				</spawn>
+				<!-- Atasin Warcaptain -->
+				<spawn npc_id="277588" handler="CHIEF">
+				    <spot x="164.18071" y="195.96909" z="1491.0844" h="4"/>
+				</spawn>
+				<!-- Atasin Master Healer -->
+				<spawn npc_id="277628">
+					<spot x="212.68292" y="179.82774" z="1489.4727" h="36"/>
+					<spot x="219.83582" y="223.00371" z="1489.222" h="96"/>
+				</spawn>
+				<!-- Atasin Infantry -->
+				<spawn npc_id="277648">
+				    <spot x="207.41098" y="198.20966" z="1489.1371" h="17"/>
+					<spot x="205.43799" y="206.55658" z="1489.0908" h="113"/>
+					<spot x="230.51906" y="199.41173" z="1489.4991" h="2"/>
+					<spot x="229.90942" y="210.99138" z="1489.4061" h="5"/>
+					<spot x="192.6586" y="167.74931" z="1490.4395" h="17" walker_id="gab1_03_npcpathv01_guard_path01"/>
+					<spot x="169.79214" y="197.18356" z="1490.8482" h="3" walker_id="gab1_03_npcpathv01_guard_path05"/>
+				</spawn>
+				<!-- Atasin Patrol -->
+				<spawn npc_id="277668">
+				    <spot x="184.47812" y="224.95724" z="1489.6029" h="119"/>
+					<spot x="186.60231" y="168.57191" z="1490.1619" h="12"/>
+					<spot x="168.41312" y="242.51581" z="1498.5398" h="22"/>
+					<spot x="134.14534" y="217.14482" z="1499.4436" h="36"/>
+					<spot x="147.64282" y="170.86894" z="1497.4889" h="95"/>
+					<spot x="236.40025" y="234.76466" z="1481.7688" h="101" walker_id="gab1_03_npcpathv01_guard_path02"/>
+				</spawn>
+				<!-- Atasin Slayer -->
+				<spawn npc_id="277688">
+				    <spot x="182.12706" y="209.42912" z="1490.234" h="113"/>
+					<spot x="184.90707" y="189.74092" z="1490.2423" h="14"/>
+					<spot x="200.1481" y="180.21861" z="1489.5592" h="23"/>
+					<spot x="198.6743" y="223.45915" z="1489.2955" h="107"/>
+					<spot x="197.23819" y="156.85477" z="1489.9387" h="109"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Atasin Scout Infantry -->
+				<spawn npc_id="277709">
+				    <spot x="191.9989" y="103.87663" z="1540.252" h="61"/>
+					<spot x="211.4051" y="114.44603" z="1540.2711" h="23"/>
+					<spot x="219.76273" y="103.335236" z="1540.7681" h="22"/>
+					<spot x="216.21811" y="109.28468" z="1540.4805" h="14"/>
+					<spot x="215.97456" y="124.10964" z="1539.9489" h="97" walker_id="gab1_03_npcpathv01_guard_path03"/>
+			    </spawn>
+				<!-- Atasin Scout Patrol -->
+				<spawn npc_id="277733">
+				    <spot x="213.48618" y="93.73093" z="1540.2416" h="38"/>
+					<spot x="202.18248" y="97.01555" z="1539.7891" h="11"/>
+				</spawn>
+				<!-- Atasin Scout Slayer -->
+				<spawn npc_id="277757">
+				    <spot x="199.20906" y="110.498146" z="1540.311" h="0"/>
+					<spot x="213.01282" y="83.45842" z="1540.3676" h="31"/>
+				</spawn>
+				<!-- CAMP 2 -->
+				<!-- Atasin Scout Infantry -->
+				<spawn npc_id="277709">
+                    <spot x="145.68301" y="265.09814" z="1539.7493" h="0"/>
+                    <spot x="141.4801" y="274.9078" z="1540.1061" h="7"/>
+                    <spot x="134.2896" y="294.59247" z="1540.2618" h="38"/>
+                    <spot x="125.10154" y="291.60928" z="1540.3307" h="34"/>
+			    </spawn>
+				<!-- Atasin Scout Patrol -->
+				<spawn npc_id="277733">
+					<spot x="107.496" y="280.23993" z="1540.2328" h="62"/>
+					<spot x="133.47733" y="256.31046" z="1540.2684" h="28"/>
+					<spot x="147.59448" y="268.57312" z="1539.7047" h="64" walker_id="gab1_03_npcpathv01_guard_path04"/>
+				</spawn>
+				<!-- Atasin Scout Slayer -->
+				<spawn npc_id="277757">
+					<spot x="114.494026" y="264.11237" z="1540.0599" h="15"/>
+					<spot x="126.75287" y="272.75238" z="1540.0872" h="13"/>
+				</spawn>
+				<!-- Atasin General Goods Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804364">
+				    <spot x="198.0" y="213.0" z="1489.2996" h="31"/>
+				</spawn>
+				<!-- Atasin Supplements Distributor (Npc Normal lvl:65) -->
+				<spawn npc_id="804365">
+				    <spot x="203.94403" y="227.63846" z="1489.0487" h="87"/>
+				</spawn>
+				<!-- Atasin Special Buyer (Npc Normal lvl:65) -->
+				<spawn npc_id="804366">
+				    <spot x="213.83359" y="223.3562" z="1489.059" h="79"/>
+				</spawn>
+				<!-- Atasin Warehouse Manager (Npc Normal lvl:65) -->
+				<spawn npc_id="804367">
+				    <spot x="217.44814" y="182.66394" z="1489.6755" h="47"/>
+				</spawn>
+				<!-- 아타나토스 영지 (Object Normal lvl:3) -->
+				<spawn npc_id="731498">
+				    <spot x="211.74939" y="172.74777" z="1489.5762" h="54"/>
+				</spawn>
+				<!-- Atasin Espionaut <Atanatos Occupier> -->
+				<spawn npc_id="802508">
+				    <spot x="199.23863" y="194.21202" z="1489.7437" h="105"/>
+				</spawn>
+				<!-- Atasin Commander <Atanatos Occupier> -->
+				<spawn npc_id="802509">
+				    <spot x="196.84163" y="192.08067" z="1489.8156" h="105"/>
+				</spawn>
+				<!-- Atasin Security <Atanatos Occupier> -->
+				<spawn npc_id="802510">
+				    <spot x="194.11061" y="189.48894" z="1489.829" h="107"/>
+				</spawn>
+				<!-- Atasin Emissary <Atanatos Occupier> -->
+				<spawn npc_id="802511">
+				    <spot x="192.54132" y="186.5128" z="1489.829" h="111"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Asmodian Flag -->
+				<spawn npc_id="803377">
+					<spot x="165.90549" y="196.31587" z="1532.1101" h="3"/>
+				</spawn>
+				<!-- Memoria Temple Flag -->
+				<spawn npc_id="803641">
+				    <spot x="572.8287" y="572.7892" z="1545.3778" h="14"/>
+				</spawn>
+				<!-- Atasin Warcaptain -->
+				<spawn npc_id="277589" handler="CHIEF">
+				    <spot x="164.18071" y="195.96909" z="1491.0844" h="4"/>
+				</spawn>
+				<!-- Atasin Master Healer -->
+				<spawn npc_id="277629">
+					<spot x="212.68292" y="179.82774" z="1489.4727" h="36"/>
+					<spot x="219.83582" y="223.00371" z="1489.222" h="96"/>
+				</spawn>
+				<!-- Atasin Infantry -->
+				<spawn npc_id="277649">
+				    <spot x="207.41098" y="198.20966" z="1489.1371" h="17"/>
+					<spot x="205.43799" y="206.55658" z="1489.0908" h="113"/>
+					<spot x="230.51906" y="199.41173" z="1489.4991" h="2"/>
+					<spot x="229.90942" y="210.99138" z="1489.4061" h="5"/>
+					<spot x="192.6586" y="167.74931" z="1490.4395" h="17" walker_id="gab1_03_npcpathv01_guard_path01"/>
+					<spot x="169.79214" y="197.18356" z="1490.8482" h="3" walker_id="gab1_03_npcpathv01_guard_path05"/>
+				</spawn>
+				<!-- Atasin Patrol -->
+				<spawn npc_id="277669">
+				    <spot x="184.47812" y="224.95724" z="1489.6029" h="119"/>
+					<spot x="186.60231" y="168.57191" z="1490.1619" h="12"/>
+					<spot x="168.41312" y="242.51581" z="1498.5398" h="22"/>
+					<spot x="134.14534" y="217.14482" z="1499.4436" h="36"/>
+					<spot x="147.64282" y="170.86894" z="1497.4889" h="95"/>
+					<spot x="236.40025" y="234.76466" z="1481.7688" h="101" walker_id="gab1_03_npcpathv01_guard_path02"/>
+				</spawn>
+				<!-- Atasin Slayer -->
+				<spawn npc_id="277689">
+				    <spot x="182.12706" y="209.42912" z="1490.234" h="113"/>
+					<spot x="184.90707" y="189.74092" z="1490.2423" h="14"/>
+					<spot x="200.1481" y="180.21861" z="1489.5592" h="23"/>
+					<spot x="198.6743" y="223.45915" z="1489.2955" h="107"/>
+					<spot x="197.23819" y="156.85477" z="1489.9387" h="109"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Atasin Scout Infantry -->
+				<spawn npc_id="277708">
+				    <spot x="191.9989" y="103.87663" z="1540.252" h="61"/>
+					<spot x="211.4051" y="114.44603" z="1540.2711" h="23"/>
+					<spot x="219.76273" y="103.335236" z="1540.7681" h="22"/>
+					<spot x="216.21811" y="109.28468" z="1540.4805" h="14"/>
+					<spot x="215.97456" y="124.10964" z="1539.9489" h="97" walker_id="gab1_03_npcpathv01_guard_path03"/>
+			    </spawn>
+				<!-- Atasin Scout Patrol -->
+				<spawn npc_id="277732">
+				    <spot x="213.48618" y="93.73093" z="1540.2416" h="38"/>
+					<spot x="202.18248" y="97.01555" z="1539.7891" h="11"/>
+				</spawn>
+				<!-- Atasin Scout Slayer -->
+				<spawn npc_id="277756">
+				    <spot x="199.20906" y="110.498146" z="1540.311" h="0"/>
+					<spot x="213.01282" y="83.45842" z="1540.3676" h="31"/>
+				</spawn>
+				<!-- CAMP 2 -->
+				<!-- Atasin Scout Infantry -->
+				<spawn npc_id="277708">
+                    <spot x="145.68301" y="265.09814" z="1539.7493" h="0"/>
+                    <spot x="141.4801" y="274.9078" z="1540.1061" h="7"/>
+                    <spot x="134.2896" y="294.59247" z="1540.2618" h="38"/>
+                    <spot x="125.10154" y="291.60928" z="1540.3307" h="34"/>
+			    </spawn>
+				<!-- Atasin Scout Patrol -->
+				<spawn npc_id="277732">
+					<spot x="107.496" y="280.23993" z="1540.2328" h="62"/>
+					<spot x="133.47733" y="256.31046" z="1540.2684" h="28"/>
+					<spot x="147.59448" y="268.57312" z="1539.7047" h="64" walker_id="gab1_03_npcpathv01_guard_path04"/>
+				</spawn>
+				<!-- Atasin Scout Slayer -->
+				<spawn npc_id="277756">
+					<spot x="114.494026" y="264.11237" z="1540.0599" h="15"/>
+					<spot x="126.75287" y="272.75238" z="1540.0872" h="13"/>
+				</spawn>
+				<!-- Atasin General Goods Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804364">
+				    <spot x="198.0" y="213.0" z="1489.2996" h="31"/>
+				</spawn>
+				<!-- Atasin Supplements Distributor (Npc Normal lvl:65) -->
+				<spawn npc_id="804365">
+				    <spot x="203.94403" y="227.63846" z="1489.0487" h="87"/>
+				</spawn>
+				<!-- Atasin Special Buyer (Npc Normal lvl:65) -->
+				<spawn npc_id="804366">
+				    <spot x="213.83359" y="223.3562" z="1489.059" h="79"/>
+				</spawn>
+				<!-- Atasin Warehouse Manager (Npc Normal lvl:65) -->
+				<spawn npc_id="804367">
+				    <spot x="217.44814" y="182.66394" z="1489.6755" h="47"/>
+				</spawn>
+				<!-- 아타나토스 영지 (Object Normal lvl:3) -->
+				<spawn npc_id="731498">
+				    <spot x="211.74939" y="172.74777" z="1489.5762" h="54"/>
+				</spawn>
+				<!-- Atasin Espionaut <Atanatos Occupier> -->
+				<spawn npc_id="802508">
+				    <spot x="199.23863" y="194.21202" z="1489.7437" h="105"/>
+				</spawn>
+				<!-- Atasin Commander <Atanatos Occupier> -->
+				<spawn npc_id="802509">
+				    <spot x="196.84163" y="192.08067" z="1489.8156" h="105"/>
+				</spawn>
+				<!-- Atasin Security <Atanatos Occupier> -->
+				<spawn npc_id="802510">
+				    <spot x="194.11061" y="189.48894" z="1489.829" h="107"/>
+				</spawn>
+				<!-- Atasin Emissary <Atanatos Occupier> -->
+				<spawn npc_id="802511">
+				    <spot x="192.54132" y="186.5128" z="1489.829" h="111"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Balaur Flag -->
+				<spawn npc_id="803376">
+					<spot x="165.90549" y="196.31587" z="1532.1101" h="3"/>
+				</spawn>
+				<!-- Memoria Temple Flag -->
+				<spawn npc_id="803640">
+				    <spot x="572.8287" y="572.7892" z="1545.3778" h="14"/>
+				</spawn>
+				<!-- Atasin Dreadcaptain -->
+				<spawn npc_id="277590" handler="CHIEF">
+				    <spot x="164.18071" y="195.96909" z="1491.0844" h="4"/>
+				</spawn>
+				<!-- Atasin Hidestitcher -->
+				<spawn npc_id="277630">
+					<spot x="212.68292" y="179.82774" z="1489.4727" h="36"/>
+					<spot x="213.99576" y="223.6573" z="1489.0648" h="100"/>
+				</spawn>
+				<!-- Atasin Grunt -->
+				<spawn npc_id="277650">
+				    <spot x="207.41098" y="198.20966" z="1489.1371" h="17"/>
+					<spot x="205.43799" y="206.55658" z="1489.0908" h="113"/>
+					<spot x="230.51906" y="199.41173" z="1489.4991" h="2"/>
+					<spot x="229.90942" y="210.99138" z="1489.4061" h="5"/>
+					<spot x="192.6586" y="167.74931" z="1490.4395" h="17" walker_id="gab1_03_npcpathv01_guard_path01"/>
+					<spot x="169.79214" y="197.18356" z="1490.8482" h="3" walker_id="gab1_03_npcpathv01_guard_path05"/>
+				</spawn>
+				<!-- Atasin Lookout -->
+				<spawn npc_id="277670">
+				    <spot x="184.47812" y="224.95724" z="1489.6029" h="119"/>
+					<spot x="186.60231" y="168.57191" z="1490.1619" h="12"/>
+					<spot x="168.41312" y="242.51581" z="1498.5398" h="22"/>
+					<spot x="134.14534" y="217.14482" z="1499.4436" h="36"/>
+					<spot x="147.64282" y="170.86894" z="1497.4889" h="95"/>
+					<spot x="236.40025" y="234.76466" z="1481.7688" h="101" walker_id="gab1_03_npcpathv01_guard_path02"/>
+				</spawn>
+				<!-- Atasin Cutthroat -->
+				<spawn npc_id="277690">
+				    <spot x="182.12706" y="209.42912" z="1490.234" h="113"/>
+					<spot x="184.90707" y="189.74092" z="1490.2423" h="14"/>
+					<spot x="200.1481" y="180.21861" z="1489.5592" h="23"/>
+					<spot x="198.6743" y="223.45915" z="1489.2955" h="107"/>
+					<spot x="197.23819" y="156.85477" z="1489.9387" h="109"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Atasin Recon Grunt -->
+				<spawn npc_id="277712">
+				    <spot x="191.9989" y="103.87663" z="1540.252" h="61"/>
+					<spot x="211.4051" y="114.44603" z="1540.2711" h="23"/>
+					<spot x="219.76273" y="103.335236" z="1540.7681" h="22"/>
+					<spot x="216.21811" y="109.28468" z="1540.4805" h="14"/>
+					<spot x="215.97456" y="124.10964" z="1539.9489" h="97" walker_id="gab1_03_npcpathv01_guard_path03"/>
+			    </spawn>
+				<!-- Atasin Recon Lookout -->
+				<spawn npc_id="277736">
+				    <spot x="213.48618" y="93.73093" z="1540.2416" h="38"/>
+					<spot x="202.18248" y="97.01555" z="1539.7891" h="11"/>
+				</spawn>
+				<!-- Atasin Recon Cutthroat -->
+				<spawn npc_id="277760">
+				    <spot x="199.20906" y="110.498146" z="1540.311" h="0"/>
+					<spot x="213.01282" y="83.45842" z="1540.3676" h="31"/>
+				</spawn>
+				<!-- CAMP 2 -->
+				<!-- Atasin Recon Contender -->
+				<spawn npc_id="277713">
+                    <spot x="145.68301" y="265.09814" z="1539.7493" h="0"/>
+                    <spot x="141.4801" y="274.9078" z="1540.1061" h="7"/>
+                    <spot x="134.2896" y="294.59247" z="1540.2618" h="38"/>
+                    <spot x="125.10154" y="291.60928" z="1540.3307" h="34"/>
+			    </spawn>
+				<!-- Atasin Recon Searcher -->
+				<spawn npc_id="277737">
+					<spot x="107.496" y="280.23993" z="1540.2328" h="62"/>
+					<spot x="133.47733" y="256.31046" z="1540.2684" h="28"/>
+					<spot x="147.59448" y="268.57312" z="1539.7047" h="64" walker_id="gab1_03_npcpathv01_guard_path04"/>
+				</spawn>
+				<!-- Atasin Recon Scoundrel -->
+				<spawn npc_id="277761">
+					<spot x="114.494026" y="264.11237" z="1540.0599" h="15"/>
+					<spot x="126.75287" y="272.75238" z="1540.0872" h="13"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [ATAIR POST] -->
+		<base_spawn id="32">
+			<simple_race race="ELYOS">
+				<!-- Elyos Flag -->
+				<spawn npc_id="803400">
+				    <spot x="198.67645" y="1881.7091" z="1532.1097" h="93"/>
+				</spawn>
+				<!-- Sybilline Temple Flag -->
+				<spawn npc_id="803664">
+				    <spot x="571.0" y="1476.0" z="1545.3778" h="115"/>
+				</spawn>
+				<!-- Atair Warcaptain -->
+				<spawn npc_id="880144" handler="CHIEF">
+				    <spot x="198.2275" y="1884.1561" z="1491.0851" h="95"/>
+				</spawn>
+				<!-- Atair Defender -->
+				<spawn npc_id="880204">
+				    <spot x="201.19867" y="1841.6342" z="1489.1226" h="110"/>
+					<spot x="208.99121" y="1842.8177" z="1489.0992" h="84"/>
+					<spot x="201.66023" y="1817.0599" z="1489.502" h="92"/>
+					<spot x="213.54324" y="1818.3918" z="1489.4363" h="93"/>
+					<spot x="167.94041" y="1856.2198" z="1490.7644" h="108" walker_id="gab1_03_npcpathv02_guard_path01"/>
+					<spot x="199.59506" y="1877.9474" z="1490.8457" h="94" walker_id="gab1_03_npcpathv02_guard_path05"/>
+				</spawn>
+				<!-- Atair Master Healer -->
+				<spawn npc_id="880264">
+				    <spot x="182.10504" y="1835.185" z="1489.4601" h="8"/>
+					<spot x="228.10095" y="1834.923" z="1488.9672" h="73"/>
+				</spawn>
+				<!-- Atair Patrol -->
+				<spawn npc_id="880384">
+				    <spot x="226.77907" y="1862.4539" z="1489.6495" h="86"/>
+					<spot x="241.85725" y="1877.37" z="1498.7341" h="105"/>
+					<spot x="220.60323" y="1911.614" z="1500.0677" h="29"/>
+					<spot x="173.66187" y="1900.1906" z="1497.5079" h="65"/>
+					<spot x="170.57802" y="1862.8125" z="1490.1794" h="104"/>
+					<spot x="237.46373" y="1811.441" z="1481.7507" h="72" walker_id="gab1_03_npcpathv02_guard_path02"/>
+				</spawn>
+				<!-- Atair Slayer -->
+				<spawn npc_id="880444">
+				    <spot x="212.08429" y="1865.7297" z="1490.2395" h="79"/>
+					<spot x="192.03937" y="1863.1624" z="1490.2477" h="108"/>
+					<spot x="159.30786" y="1852.2499" z="1489.8977" h="75"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Atair Scout Infantry -->
+				<spawn npc_id="880511">
+				    <spot x="97.57948" y="1856.344" z="1540.246" h="114"/>
+					<spot x="88.3014" y="1847.9456" z="1540.7866" h="100"/>
+					<spot x="93.9549" y="1850.5831" z="1540.5715" h="106"/>
+					<spot x="106.03331" y="1851.8624" z="1540.0339" h="75" walker_id="gab1_03_npcpathv02_guard_path03"/>
+                </spawn>
+				<!-- Atair Scout Patrol -->
+				<spawn npc_id="880595">
+				    <spot x="75.03484" y="1859.2607" z="1540.2053" h="1"/>
+					<spot x="87.252754" y="1875.4418" z="1540.2777" h="27"/>
+					<spot x="98.85731" y="1868.8499" z="1540.6077" h="3"/>
+                </spawn>
+				<!-- CAMP 2 -->
+				<!-- Atair Scout Infantry -->
+				<spawn npc_id="880511">
+				    <spot x="293.5407" y="1919.9971" z="1540.3375" h="4"/>
+					<spot x="297.60693" y="1909.6366" z="1540.2463" h="4"/>
+					<spot x="267.1013" y="1899.8823" z="1539.8801" h="91"/>
+					<spot x="277.08545" y="1903.8741" z="1540.1456" h="92"/>
+					<spot x="279.0151" y="1937.1001" z="1540.2065" h="29"/>
+					<spot x="286.0256" y="1936.9838" z="1540.0776" h="30"/>
+                </spawn>
+				<!-- Atair Scout Patrol -->
+				<spawn npc_id="880595">
+				    <spot x="258.54425" y="1916.3546" z="1540.6581" h="117"/>
+					<spot x="266.35034" y="1930.2489" z="1540.0565" h="110"/>
+					<spot x="270.7668" y="1897.1423" z="1539.7018" h="31" walker_id="gab1_03_npcpathv02_guard_path04"/>
+                </spawn>
+				<!-- Atair General Goods Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804368">
+				    <spot x="217.21692" y="1846.4541" z="1489.1974" h="111"/>
+				</spawn>
+				<!-- Atair Crafting Materials Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804369">
+				    <spot x="230.04059" y="1842.1478" z="1489.0217" h="54"/>
+				</spawn>
+				<!-- Atair Supplements Distributor (Npc Normal lvl:65) -->
+				<spawn npc_id="804370">
+				    <spot x="223.34315" y="1834.4463" z="1489.0671" h="47"/>
+				</spawn>
+				<!-- Atair Warehouse Manager (Npc Normal lvl:65) -->
+				<spawn npc_id="804371">
+				    <spot x="186.81653" y="1829.7838" z="1489.4977" h="10"/>
+				</spawn>
+				<!-- 아타나토스 영지 (Object Normal lvl:3) -->
+				<spawn npc_id="731499">
+				    <spot x="175.0213" y="1837.5612" z="1489.6487" h="0"/>
+				</spawn>
+				<!-- Atair Espionaut <Atanatos Occupier> -->
+				<spawn npc_id="802512">
+				    <spot x="196.63745" y="1848.5444" z="1489.746" h="75"/>
+				</spawn>
+				<!-- Atair Commander <Atanatos Occupier> -->
+				<spawn npc_id="802513">
+				    <spot x="194.5596" y="1851.0032" z="1489.8177" h="75"/>
+				</spawn>
+				<!-- Atair Security <Atanatos Occupier> -->
+				<spawn npc_id="802514">
+				    <spot x="191.87004" y="1853.6067" z="1489.8306" h="77"/>
+				</spawn>
+				<!-- Atair Emissary <Atanatos Occupier> -->
+				<spawn npc_id="802515">
+				    <spot x="188.57832" y="1855.5433" z="1489.8306" h="82"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Asmodian Flag -->
+				<spawn npc_id="803399">
+				    <spot x="198.67645" y="1881.7091" z="1532.1097" h="93"/>
+				</spawn>
+				<!-- Sybilline Temple Flag -->
+				<spawn npc_id="803663">
+				    <spot x="571.0" y="1476.0" z="1545.3778" h="115"/>
+				</spawn>
+				<!-- Atair Warcaptain -->
+				<spawn npc_id="880145" handler="CHIEF">
+				    <spot x="198.2275" y="1884.1561" z="1491.0851" h="95"/>
+				</spawn>
+				<!-- Atair Defender -->
+				<spawn npc_id="880205">
+				    <spot x="201.19867" y="1841.6342" z="1489.1226" h="110"/>
+					<spot x="208.99121" y="1842.8177" z="1489.0992" h="84"/>
+					<spot x="201.66023" y="1817.0599" z="1489.502" h="92"/>
+					<spot x="213.54324" y="1818.3918" z="1489.4363" h="93"/>
+					<spot x="167.94041" y="1856.2198" z="1490.7644" h="108" walker_id="gab1_03_npcpathv02_guard_path01"/>
+					<spot x="199.59506" y="1877.9474" z="1490.8457" h="94" walker_id="gab1_03_npcpathv02_guard_path05"/>
+				</spawn>
+				<!-- Atair Master Healer -->
+				<spawn npc_id="880265">
+				    <spot x="182.10504" y="1835.185" z="1489.4601" h="8"/>
+					<spot x="228.10095" y="1834.923" z="1488.9672" h="73"/>
+				</spawn>
+				<!-- Atair Patrol -->
+				<spawn npc_id="880385">
+				    <spot x="226.77907" y="1862.4539" z="1489.6495" h="86"/>
+					<spot x="241.85725" y="1877.37" z="1498.7341" h="105"/>
+					<spot x="220.60323" y="1911.614" z="1500.0677" h="29"/>
+					<spot x="173.66187" y="1900.1906" z="1497.5079" h="65"/>
+					<spot x="170.57802" y="1862.8125" z="1490.1794" h="104"/>
+					<spot x="237.46373" y="1811.441" z="1481.7507" h="72" walker_id="gab1_03_npcpathv02_guard_path02"/>
+				</spawn>
+				<!-- Atair Slayer -->
+				<spawn npc_id="880445">
+				    <spot x="212.08429" y="1865.7297" z="1490.2395" h="79"/>
+					<spot x="192.03937" y="1863.1624" z="1490.2477" h="108"/>
+					<spot x="159.30786" y="1852.2499" z="1489.8977" h="75"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Atair Scout Infantry -->
+				<spawn npc_id="880510">
+				    <spot x="97.57948" y="1856.344" z="1540.246" h="114"/>
+					<spot x="88.3014" y="1847.9456" z="1540.7866" h="100"/>
+					<spot x="93.9549" y="1850.5831" z="1540.5715" h="106"/>
+					<spot x="106.03331" y="1851.8624" z="1540.0339" h="75" walker_id="gab1_03_npcpathv02_guard_path03"/>
+                </spawn>
+				<!-- Atair Scout Patrol -->
+				<spawn npc_id="880594">
+				    <spot x="75.03484" y="1859.2607" z="1540.2053" h="1"/>
+					<spot x="87.252754" y="1875.4418" z="1540.2777" h="27"/>
+					<spot x="98.85731" y="1868.8499" z="1540.6077" h="3"/>
+                </spawn>
+				<!-- CAMP 2 -->
+				<!-- Atair Scout Infantry -->
+				<spawn npc_id="880510">
+				    <spot x="293.5407" y="1919.9971" z="1540.3375" h="4"/>
+					<spot x="297.60693" y="1909.6366" z="1540.2463" h="4"/>
+					<spot x="267.1013" y="1899.8823" z="1539.8801" h="91"/>
+					<spot x="277.08545" y="1903.8741" z="1540.1456" h="92"/>
+					<spot x="279.0151" y="1937.1001" z="1540.2065" h="29"/>
+					<spot x="286.0256" y="1936.9838" z="1540.0776" h="30"/>
+                </spawn>
+				<!-- Atair Scout Patrol -->
+				<spawn npc_id="880594">
+				    <spot x="258.54425" y="1916.3546" z="1540.6581" h="117"/>
+					<spot x="266.35034" y="1930.2489" z="1540.0565" h="110"/>
+					<spot x="270.7668" y="1897.1423" z="1539.7018" h="31" walker_id="gab1_03_npcpathv02_guard_path04"/>
+                </spawn>
+				<!-- Atair General Goods Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804368">
+				    <spot x="217.21692" y="1846.4541" z="1489.1974" h="111"/>
+				</spawn>
+				<!-- Atair Crafting Materials Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804369">
+				    <spot x="230.04059" y="1842.1478" z="1489.0217" h="54"/>
+				</spawn>
+				<!-- Atair Supplements Distributor (Npc Normal lvl:65) -->
+				<spawn npc_id="804370">
+				    <spot x="223.34315" y="1834.4463" z="1489.0671" h="47"/>
+				</spawn>
+				<!-- Atair Warehouse Manager (Npc Normal lvl:65) -->
+				<spawn npc_id="804371">
+				    <spot x="186.81653" y="1829.7838" z="1489.4977" h="10"/>
+				</spawn>
+				<!-- 아타나토스 영지 (Object Normal lvl:3) -->
+				<spawn npc_id="731499">
+				    <spot x="175.0213" y="1837.5612" z="1489.6487" h="0"/>
+				</spawn>
+				<!-- Atair Espionaut <Atanatos Occupier> -->
+				<spawn npc_id="802512">
+				    <spot x="196.63745" y="1848.5444" z="1489.746" h="75"/>
+				</spawn>
+				<!-- Atair Commander <Atanatos Occupier> -->
+				<spawn npc_id="802513">
+				    <spot x="194.5596" y="1851.0032" z="1489.8177" h="75"/>
+				</spawn>
+				<!-- Atair Security <Atanatos Occupier> -->
+				<spawn npc_id="802514">
+				    <spot x="191.87004" y="1853.6067" z="1489.8306" h="77"/>
+				</spawn>
+				<!-- Atair Emissary <Atanatos Occupier> -->
+				<spawn npc_id="802515">
+				    <spot x="188.57832" y="1855.5433" z="1489.8306" h="82"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Balaur Flag -->
+				<spawn npc_id="803398">
+				    <spot x="198.67645" y="1881.7091" z="1532.1097" h="93"/>
+				</spawn>
+				<!-- Sybilline Temple Flag -->
+				<spawn npc_id="803662">
+				    <spot x="571.0" y="1476.0" z="1545.3778" h="115"/>
+				</spawn>
+				<!-- Atair Dreadcaptain -->
+				<spawn npc_id="880146" handler="CHIEF">
+				    <spot x="198.2275" y="1884.1561" z="1491.0851" h="95"/>
+				</spawn>
+				<!-- Atair Hidestitcher -->
+				<spawn npc_id="880266">
+				    <spot x="182.10504" y="1835.185" z="1489.4601" h="8"/>
+					<spot x="228.10095" y="1834.923" z="1488.9672" h="73"/>
+				</spawn>
+				<!-- Atair Grunt -->
+				<spawn npc_id="880326">
+				    <spot x="201.19867" y="1841.6342" z="1489.1226" h="110"/>
+					<spot x="208.99121" y="1842.8177" z="1489.0992" h="84"/>
+					<spot x="201.66023" y="1817.0599" z="1489.502" h="92"/>
+					<spot x="213.54324" y="1818.3918" z="1489.4363" h="93"/>
+					<spot x="167.94041" y="1856.2198" z="1490.7644" h="108" walker_id="gab1_03_npcpathv02_guard_path01"/>
+					<spot x="199.59506" y="1877.9474" z="1490.8457" h="94" walker_id="gab1_03_npcpathv02_guard_path05"/>
+				</spawn>
+				<!-- Atair Lookout -->
+				<spawn npc_id="880386">
+				    <spot x="226.77907" y="1862.4539" z="1489.6495" h="86"/>
+					<spot x="241.85725" y="1877.37" z="1498.7341" h="105"/>
+					<spot x="220.60323" y="1911.614" z="1500.0677" h="29"/>
+					<spot x="173.66187" y="1900.1906" z="1497.5079" h="65"/>
+					<spot x="170.57802" y="1862.8125" z="1490.1794" h="104"/>
+					<spot x="237.46373" y="1811.441" z="1481.7507" h="72" walker_id="gab1_03_npcpathv02_guard_path02"/>
+				</spawn>
+				<!-- Atair Cutthroat -->
+				<spawn npc_id="880446">
+				    <spot x="212.08429" y="1865.7297" z="1490.2395" h="79"/>
+					<spot x="192.03937" y="1863.1624" z="1490.2477" h="108"/>
+					<spot x="159.30786" y="1852.2499" z="1489.8977" h="75"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Atair Recon Grunt -->
+				<spawn npc_id="880514">
+				    <spot x="97.57948" y="1856.344" z="1540.246" h="114"/>
+					<spot x="88.3014" y="1847.9456" z="1540.7866" h="100"/>
+					<spot x="93.9549" y="1850.5831" z="1540.5715" h="106"/>
+					<spot x="106.03331" y="1851.8624" z="1540.0339" h="75" walker_id="gab1_03_npcpathv02_guard_path03"/>
+                </spawn>
+				<!-- Atair Recon Lookout -->
+				<spawn npc_id="880598">
+				    <spot x="75.03484" y="1859.2607" z="1540.2053" h="1"/>
+					<spot x="87.252754" y="1875.4418" z="1540.2777" h="27"/>
+					<spot x="98.85731" y="1868.8499" z="1540.6077" h="3"/>
+                </spawn>
+				<!-- CAMP 2 -->
+				<!-- Atair Recon Contender -->
+				<spawn npc_id="880515">
+				    <spot x="293.5407" y="1919.9971" z="1540.3375" h="4"/>
+					<spot x="297.60693" y="1909.6366" z="1540.2463" h="4"/>
+					<spot x="267.1013" y="1899.8823" z="1539.8801" h="91"/>
+					<spot x="277.08545" y="1903.8741" z="1540.1456" h="92"/>
+					<spot x="279.0151" y="1937.1001" z="1540.2065" h="29"/>
+					<spot x="286.0256" y="1936.9838" z="1540.0776" h="30"/>
+                </spawn>
+				<!-- Atair Recon Searcher -->
+				<spawn npc_id="880599">
+				    <spot x="258.54425" y="1916.3546" z="1540.6581" h="117"/>
+					<spot x="266.35034" y="1930.2489" z="1540.0565" h="110"/>
+					<spot x="270.7668" y="1897.1423" z="1539.7018" h="31" walker_id="gab1_03_npcpathv02_guard_path04"/>
+                </spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [ATANGAL POST] -->
+		<base_spawn id="33">
+			<simple_race race="ELYOS">
+				<!-- Elyos Flag -->
+				<spawn npc_id="803422">
+				    <spot x="1888.5461" y="1846.9274" z="1532.1122" h="62"/>
+				</spawn>
+				<!-- Austerity Temple Flag -->
+				<spawn npc_id="803686">
+				    <spot x="1475.0" y="1475.0" z="1545.3778" h="115"/>
+				</spawn>
+				<!-- Atangal Warcaptain -->
+				<spawn npc_id="880164" handler="CHIEF">
+				    <spot x="1889.7548" y="1847.154" z="1491.0796" h="64"/>
+				</spawn>
+				<!-- Atangal Defender -->
+				<spawn npc_id="880224">
+				    <spot x="1822.107" y="1844.1561" z="1489.5107" h="61"/>
+				    <spot x="1822.3354" y="1831.6415" z="1489.2657" h="67"/>
+					<spot x="1862.0228" y="1877.6797" z="1490.8262" h="79" walker_id="gab1_03_npcpathv03_guard_path01"/>
+				</spawn>
+				<!-- Atangal Master Healer -->
+				<spawn npc_id="880284">
+				    <spot x="1840.1688" y="1811.7173" z="1488.7283" h="20"/>
+				    <spot x="1840.4916" y="1863.5743" z="1489.4452" h="102"/>
+				</spawn>
+				<!-- Atangal Infantry -->
+				<spawn npc_id="880344">
+				    <spot x="1848.3828" y="1836.4797" z="1489.1042" h="45"/>
+				    <spot x="1846.994" y="1844.6566" z="1489.1296" h="69"/>
+				    <spot x="1868.2109" y="1846.2777" z="1490.3174" h="67"/>
+				    <spot x="1869.3247" y="1838.8328" z="1490.3873" h="68"/>
+				    <spot x="1823.1852" y="1838.6531" z="1489.6761" h="63"/>
+					<spot x="1882.9639" y="1845.6096" z="1490.8456" h="64" walker_id="gab1_03_npcpathv03_guard_path05"/>
+				</spawn>
+				<!-- Atangal Patrol -->
+				<spawn npc_id="880404">
+				    <spot x="1869.9473" y="1816.8328" z="1489.4376" h="60"/>
+				    <spot x="1869.4655" y="1876.2499" z="1490.357" h="79"/>
+					<spot x="1817.0803" y="1807.9049" z="1481.7198" h="41" walker_id="gab1_03_npcpathv03_guard_path02"/>
+				</spawn>
+				<!-- Atangal Slayer -->
+				<spawn npc_id="880464">
+				    <spot x="1887.2606" y="1809.3772" z="1499.0963" h="81"/>
+				    <spot x="1913.1022" y="1832.3037" z="1499.243" h="7"/>
+				    <spot x="1912.4178" y="1852.0513" z="1492.435" h="1"/>
+				    <spot x="1850.9419" y="1885.9816" z="1490.0657" h="65"/>
+				    <spot x="1855.1653" y="1874.78" z="1490.2308" h="93"/>
+				    <spot x="1880.0464" y="1829.2378" z="1490.6904" h="56"/>
+				    <spot x="1871.9829" y="1858.735" z="1490.293" h="73"/>
+				    <spot x="1814.5355" y="1867.5903" z="1482.8201" h="79"/>
+				    <spot x="1811.3689" y="1823.6238" z="1482.386" h="78"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Atangal Scout Infantry -->
+				<spawn npc_id="880539">
+				    <spot x="1836.8076" y="1933.5559" z="1540.2542" h="80"/>
+					<spot x="1828.2432" y="1943.334" z="1540.7661" h="70"/>
+					<spot x="1856.3857" y="1943.8707" z="1540.2659" h="0"/>
+					<spot x="1832.7443" y="1924.768" z="1540.0372" h="46" walker_id="gab1_03_npcpathv03_guard_path03"/>
+				</spawn>
+				<!-- Atangal Scout Patrol -->
+				<spawn npc_id="880623">
+				    <spot x="1834.9772" y="1954.0135" z="1540.2354" h="92"/>
+					<spot x="1850.2382" y="1937.3152" z="1540.254" h="52"/>
+				</spawn>
+				<!-- Atangal Scout Slayer -->
+				<spawn npc_id="880707">
+				    <spot x="1844.329" y="1952.1354" z="1539.9171" h="81"/>
+				</spawn>
+				<!-- CAMP 2 -->
+				<!-- Atangal Scout Infantry -->
+				<spawn npc_id="880539">
+				    <spot x="1904.611" y="1778.323" z="1539.8596" h="63"/>
+					<spot x="1908.6592" y="1767.6588" z="1540.121" h="66"/>
+					<spot x="1924.7756" y="1751.4966" z="1540.3406" h="95"/>
+					<spot x="1915.0645" y="1747.9244" z="1540.2533" h="97"/>
+					<spot x="1942.6052" y="1766.0879" z="1540.2026" h="3"/>
+					<spot x="1942.8021" y="1759.1266" z="1540.067" h="3"/>
+				</spawn>
+				<!-- Atangal Scout Patrol -->
+				<spawn npc_id="880623">
+				    <spot x="1925.5103" y="1785.9746" z="1540.8239" h="90"/>
+					<spot x="1902.0917" y="1774.3904" z="1539.7144" h="2" walker_id="gab1_03_npcpathv03_guard_path04"/>
+				</spawn>
+				<!-- Atangal Scout Slayer -->
+				<spawn npc_id="880707">
+				    <spot x="1935.6024" y="1778.7794" z="1540.0554" h="73"/>
+					<spot x="1927.3497" y="1763.8369" z="1540.3229" h="4"/>
+				</spawn>
+				<!-- Atangal General Goods Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804372">
+				    <spot x="1851.9414" y="1829.2319" z="1489.2097" h="85"/>
+				</spawn>
+				<!-- Atangal Supplements Distributor (Npc Normal lvl:65) -->
+				<spawn npc_id="804373">
+				    <spot x="1847.4681" y="1814.8563" z="1489.0287" h="24"/>
+				</spawn>
+				<!-- Atangal Special Buyer (Npc Normal lvl:65) -->
+				<spawn npc_id="804374">
+				    <spot x="1838.5742" y="1819.8818" z="1489.1051" h="18"/>
+				</spawn>
+				<!-- Atangal Warehouse Manager (Npc Normal lvl:65) -->
+				<spawn npc_id="804375">
+				    <spot x="1834.8011" y="1856.3414" z="1489.4858" h="98"/>
+				</spawn>
+				<!-- 아타나토스 영지 (Object Normal lvl:3) -->
+				<spawn npc_id="731500">
+				    <spot x="1843.2013" y="1870.6731" z="1489.6737" h="100"/>
+				</spawn>
+				<!-- Atangal Espionaut <Atanatos Occupier> -->
+				<spawn npc_id="802516">
+				    <spot x="1853.6577" y="1848.8672" z="1489.7452" h="46"/>
+				</spawn>
+				<!-- Atangal Commander <Atanatos Occupier> -->
+				<spawn npc_id="802517">
+				    <spot x="1856.301" y="1850.8528" z="1489.8176" h="46"/>
+				</spawn>
+				<!-- Atangal Security <Atanatos Occupier> -->
+				<spawn npc_id="802518">
+				    <spot x="1858.6381" y="1853.1948" z="1489.8306" h="48"/>
+				</spawn>
+				<!-- Atangal Emissary <Atanatos Occupier> -->
+				<spawn npc_id="802519">
+				    <spot x="1860.5856" y="1856.0159" z="1489.8306" h="51"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Asmodian Flag -->
+				<spawn npc_id="803421">
+				    <spot x="1888.5461" y="1846.9274" z="1532.1122" h="62"/>
+				</spawn>
+				<!-- Austerity Temple Flag -->
+				<spawn npc_id="803685">
+				    <spot x="1475.0" y="1475.0" z="1545.3778" h="115"/>
+				</spawn>
+				<!-- Atangal Warcaptain -->
+				<spawn npc_id="880165" handler="CHIEF">
+				    <spot x="1889.7548" y="1847.154" z="1491.0796" h="64"/>
+				</spawn>
+				<!-- Atangal Defender -->
+				<spawn npc_id="880225">
+				    <spot x="1822.107" y="1844.1561" z="1489.5107" h="61"/>
+				    <spot x="1822.3354" y="1831.6415" z="1489.2657" h="67"/>
+					<spot x="1862.0228" y="1877.6797" z="1490.8262" h="79" walker_id="gab1_03_npcpathv03_guard_path01"/>
+				</spawn>
+				<!-- Atangal Master Healer -->
+				<spawn npc_id="880285">
+				    <spot x="1840.1688" y="1811.7173" z="1488.7283" h="20"/>
+				    <spot x="1840.4916" y="1863.5743" z="1489.4452" h="102"/>
+				</spawn>
+				<!-- Atangal Infantry -->
+				<spawn npc_id="880345">
+				    <spot x="1848.3828" y="1836.4797" z="1489.1042" h="45"/>
+				    <spot x="1846.994" y="1844.6566" z="1489.1296" h="69"/>
+				    <spot x="1868.2109" y="1846.2777" z="1490.3174" h="67"/>
+				    <spot x="1869.3247" y="1838.8328" z="1490.3873" h="68"/>
+				    <spot x="1823.1852" y="1838.6531" z="1489.6761" h="63"/>
+					<spot x="1882.9639" y="1845.6096" z="1490.8456" h="64" walker_id="gab1_03_npcpathv03_guard_path05"/>
+				</spawn>
+				<!-- Atangal Patrol -->
+				<spawn npc_id="880405">
+				    <spot x="1869.9473" y="1816.8328" z="1489.4376" h="60"/>
+				    <spot x="1869.4655" y="1876.2499" z="1490.357" h="79"/>
+					<spot x="1817.0803" y="1807.9049" z="1481.7198" h="41" walker_id="gab1_03_npcpathv03_guard_path02"/>
+				</spawn>
+				<!-- Atangal Slayer -->
+				<spawn npc_id="880465">
+				    <spot x="1887.2606" y="1809.3772" z="1499.0963" h="81"/>
+				    <spot x="1913.1022" y="1832.3037" z="1499.243" h="7"/>
+				    <spot x="1912.4178" y="1852.0513" z="1492.435" h="1"/>
+				    <spot x="1850.9419" y="1885.9816" z="1490.0657" h="65"/>
+				    <spot x="1855.1653" y="1874.78" z="1490.2308" h="93"/>
+				    <spot x="1880.0464" y="1829.2378" z="1490.6904" h="56"/>
+				    <spot x="1871.9829" y="1858.735" z="1490.293" h="73"/>
+				    <spot x="1814.5355" y="1867.5903" z="1482.8201" h="79"/>
+				    <spot x="1811.3689" y="1823.6238" z="1482.386" h="78"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Atangal Scout Infantry -->
+				<spawn npc_id="880538">
+				    <spot x="1836.8076" y="1933.5559" z="1540.2542" h="80"/>
+					<spot x="1828.2432" y="1943.334" z="1540.7661" h="70"/>
+					<spot x="1856.3857" y="1943.8707" z="1540.2659" h="0"/>
+					<spot x="1832.7443" y="1924.768" z="1540.0372" h="46" walker_id="gab1_03_npcpathv03_guard_path03"/>
+				</spawn>
+				<!-- Atangal Scout Patrol -->
+				<spawn npc_id="880622">
+				    <spot x="1834.9772" y="1954.0135" z="1540.2354" h="92"/>
+					<spot x="1850.2382" y="1937.3152" z="1540.254" h="52"/>
+				</spawn>
+				<!-- Atangal Scout Slayer -->
+				<spawn npc_id="880706">
+				    <spot x="1844.329" y="1952.1354" z="1539.9171" h="81"/>
+				</spawn>
+				<!-- CAMP 2 -->
+				<!-- Atangal Scout Infantry -->
+				<spawn npc_id="880538">
+				    <spot x="1904.611" y="1778.323" z="1539.8596" h="63"/>
+					<spot x="1908.6592" y="1767.6588" z="1540.121" h="66"/>
+					<spot x="1924.7756" y="1751.4966" z="1540.3406" h="95"/>
+					<spot x="1915.0645" y="1747.9244" z="1540.2533" h="97"/>
+					<spot x="1942.6052" y="1766.0879" z="1540.2026" h="3"/>
+					<spot x="1942.8021" y="1759.1266" z="1540.067" h="3"/>
+				</spawn>
+				<!-- Atangal Scout Patrol -->
+				<spawn npc_id="880622">
+				    <spot x="1925.5103" y="1785.9746" z="1540.8239" h="90"/>
+					<spot x="1902.0917" y="1774.3904" z="1539.7144" h="2" walker_id="gab1_03_npcpathv03_guard_path04"/>
+				</spawn>
+				<!-- Atangal Scout Slayer -->
+				<spawn npc_id="880706">
+				    <spot x="1935.6024" y="1778.7794" z="1540.0554" h="73"/>
+					<spot x="1927.3497" y="1763.8369" z="1540.3229" h="4"/>
+				</spawn>
+				<!-- Atangal General Goods Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804372">
+				    <spot x="1851.9414" y="1829.2319" z="1489.2097" h="85"/>
+				</spawn>
+				<!-- Atangal Supplements Distributor (Npc Normal lvl:65) -->
+				<spawn npc_id="804373">
+				    <spot x="1847.4681" y="1814.8563" z="1489.0287" h="24"/>
+				</spawn>
+				<!-- Atangal Special Buyer (Npc Normal lvl:65) -->
+				<spawn npc_id="804374">
+				    <spot x="1838.5742" y="1819.8818" z="1489.1051" h="18"/>
+				</spawn>
+				<!-- Atangal Warehouse Manager (Npc Normal lvl:65) -->
+				<spawn npc_id="804375">
+				    <spot x="1834.8011" y="1856.3414" z="1489.4858" h="98"/>
+				</spawn>
+				<!-- 아타나토스 영지 (Object Normal lvl:3) -->
+				<spawn npc_id="731500">
+				    <spot x="1843.2013" y="1870.6731" z="1489.6737" h="100"/>
+				</spawn>
+				<!-- Atangal Espionaut <Atanatos Occupier> -->
+				<spawn npc_id="802516">
+				    <spot x="1853.6577" y="1848.8672" z="1489.7452" h="46"/>
+				</spawn>
+				<!-- Atangal Commander <Atanatos Occupier> -->
+				<spawn npc_id="802517">
+				    <spot x="1856.301" y="1850.8528" z="1489.8176" h="46"/>
+				</spawn>
+				<!-- Atangal Security <Atanatos Occupier> -->
+				<spawn npc_id="802518">
+				    <spot x="1858.6381" y="1853.1948" z="1489.8306" h="48"/>
+				</spawn>
+				<!-- Atangal Emissary <Atanatos Occupier> -->
+				<spawn npc_id="802519">
+				    <spot x="1860.5856" y="1856.0159" z="1489.8306" h="51"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Balaur Flag -->
+				<spawn npc_id="803420">
+				    <spot x="1888.5461" y="1846.9274" z="1532.1122" h="62"/>
+				</spawn>
+				<!-- Austerity Temple Flag -->
+				<spawn npc_id="803684">
+				    <spot x="1475.0" y="1475.0" z="1545.3778" h="115"/>
+				</spawn>
+				<!-- Atangal Dreadcaptain -->
+				<spawn npc_id="880166" handler="CHIEF">
+				    <spot x="1889.7548" y="1847.154" z="1491.0796" h="64"/>
+				</spawn>
+				<!-- Atangal Keeper -->
+				<spawn npc_id="880226">
+				    <spot x="1822.107" y="1844.1561" z="1489.5107" h="61"/>
+				    <spot x="1822.3354" y="1831.6415" z="1489.2657" h="67"/>
+					<spot x="1862.0228" y="1877.6797" z="1490.8262" h="79" walker_id="gab1_03_npcpathv03_guard_path01"/>
+				</spawn>
+				<!-- Atangal Hidestitcher -->
+				<spawn npc_id="880286">
+				    <spot x="1840.1688" y="1811.7173" z="1488.7283" h="20"/>
+				    <spot x="1840.4916" y="1863.5743" z="1489.4452" h="102"/>
+				</spawn>
+				<!-- Atangal Grunt -->
+				<spawn npc_id="880346">
+				    <spot x="1848.3828" y="1836.4797" z="1489.1042" h="45"/>
+				    <spot x="1846.994" y="1844.6566" z="1489.1296" h="69"/>
+				    <spot x="1868.2109" y="1846.2777" z="1490.3174" h="67"/>
+				    <spot x="1869.3247" y="1838.8328" z="1490.3873" h="68"/>
+				    <spot x="1823.1852" y="1838.6531" z="1489.6761" h="63"/>
+					<spot x="1882.9639" y="1845.6096" z="1490.8456" h="64" walker_id="gab1_03_npcpathv03_guard_path05"/>
+				</spawn>
+				<!-- Atangal Lookout -->
+				<spawn npc_id="880406">
+				    <spot x="1869.9473" y="1816.8328" z="1489.4376" h="60"/>
+				    <spot x="1869.4655" y="1876.2499" z="1490.357" h="79"/>
+					<spot x="1817.0803" y="1807.9049" z="1481.7198" h="41" walker_id="gab1_03_npcpathv03_guard_path02"/>
+				</spawn>
+				<!-- Atangal Cutthroat -->
+				<spawn npc_id="880466">
+				    <spot x="1887.2606" y="1809.3772" z="1499.0963" h="81"/>
+				    <spot x="1913.1022" y="1832.3037" z="1499.243" h="7"/>
+				    <spot x="1912.4178" y="1852.0513" z="1492.435" h="1"/>
+				    <spot x="1850.9419" y="1885.9816" z="1490.0657" h="65"/>
+				    <spot x="1855.1653" y="1874.78" z="1490.2308" h="93"/>
+				    <spot x="1880.0464" y="1829.2378" z="1490.6904" h="56"/>
+				    <spot x="1871.9829" y="1858.735" z="1490.293" h="73"/>
+				    <spot x="1814.5355" y="1867.5903" z="1482.8201" h="79"/>
+				    <spot x="1811.3689" y="1823.6238" z="1482.386" h="78"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Atangal Recon Grunt -->
+				<spawn npc_id="880542">
+				    <spot x="1836.8076" y="1933.5559" z="1540.2542" h="80"/>
+					<spot x="1828.2432" y="1943.334" z="1540.7661" h="70"/>
+					<spot x="1856.3857" y="1943.8707" z="1540.2659" h="0"/>
+					<spot x="1832.7443" y="1924.768" z="1540.0372" h="46" walker_id="gab1_03_npcpathv03_guard_path03"/>
+				</spawn>
+				<!-- Atangal Recon Lookout -->
+				<spawn npc_id="880626">
+				    <spot x="1834.9772" y="1954.0135" z="1540.2354" h="92"/>
+					<spot x="1850.2382" y="1937.3152" z="1540.254" h="52"/>
+				</spawn>
+				<!-- Atangal Recon Cutthroat -->
+				<spawn npc_id="880710">
+				    <spot x="1844.329" y="1952.1354" z="1539.9171" h="81"/>
+				</spawn>
+				<!-- CAMP 2 -->
+				<!-- Atangal Recon Contender -->
+				<spawn npc_id="880543">
+				    <spot x="1904.611" y="1778.323" z="1539.8596" h="63"/>
+					<spot x="1908.6592" y="1767.6588" z="1540.121" h="66"/>
+					<spot x="1924.7756" y="1751.4966" z="1540.3406" h="95"/>
+					<spot x="1915.0645" y="1747.9244" z="1540.2533" h="97"/>
+					<spot x="1942.6052" y="1766.0879" z="1540.2026" h="3"/>
+					<spot x="1942.8021" y="1759.1266" z="1540.067" h="3"/>
+				</spawn>
+				<!-- Atangal Recon Searcher -->
+				<spawn npc_id="880627">
+				    <spot x="1925.5103" y="1785.9746" z="1540.8239" h="90"/>
+					<spot x="1902.0917" y="1774.3904" z="1539.7144" h="2" walker_id="gab1_03_npcpathv03_guard_path04"/>
+				</spawn>
+				<!-- Atangal Recon Scoundrel -->
+				<spawn npc_id="880711">
+				    <spot x="1935.6024" y="1778.7794" z="1540.0554" h="73"/>
+					<spot x="1927.3497" y="1763.8369" z="1540.3229" h="4"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [ATAJ POST] -->
+		<base_spawn id="34">
+			<simple_race race="ELYOS">
+				<!-- Elyos Flag -->
+				<spawn npc_id="803444">
+				    <spot x="1853.8202" y="160.89095" z="1532.1158" h="33"/>
+				</spawn>
+				<!-- Serenity Temple Flag -->
+				<spawn npc_id="803708">
+				    <spot x="1475.0" y="571.0" z="1545.3778" h="115"/>
+				</spawn>
+				<!-- Ataj Warcaptain -->
+				<spawn npc_id="880184" handler="CHIEF">
+				    <spot x="1854.2219" y="159.1715" z="1491.0875" h="33"/>
+				</spawn>
+				<!-- Ataj Defender -->
+				<spawn npc_id="880244">
+				    <spot x="1838.9934" y="225.16234" z="1489.387" h="36"/>
+				    <spot x="1851.085" y="226.21075" z="1489.4883" h="32"/>
+					<spot x="1884.881" y="186.58492" z="1490.8009" h="49" walker_id="gab1_03_npcpathv04_guard_path01"/>
+				</spawn>
+				<!-- Ataj Master Healer -->
+				<spawn npc_id="880304">
+				    <spot x="1871.0151" y="207.92429" z="1489.4619" h="79"/>
+				    <spot x="1818.7112" y="208.32352" z="1488.7332" h="108"/>
+				</spawn>
+				<!-- Ataj Infantry -->
+				<spawn npc_id="880364">
+				    <spot x="1845.8942" y="224.2484" z="1489.7129" h="36"/>
+				    <spot x="1851.8662" y="201.19406" z="1489.1329" h="45"/>
+				    <spot x="1843.468" y="199.9089" z="1489.1066" h="24"/>
+				    <spot x="1845.9419" y="179.12294" z="1490.378" h="37"/>
+				    <spot x="1853.3214" y="180.06378" z="1490.2969" h="38"/>
+					<spot x="1852.9478" y="164.73007" z="1490.8492" h="34" walker_id="gab1_03_npcpathv04_guard_path05"/>
+				</spawn>
+				<!-- Ataj Patrol -->
+				<spawn npc_id="880424">
+				    <spot x="1826.3651" y="181.10294" z="1489.6843" h="37"/>
+				    <spot x="1884.4312" y="181.12146" z="1490.6123" h="43"/>
+					<spot x="1815.6289" y="232.23744" z="1481.8309" h="12" walker_id="gab1_03_npcpathv04_guard_path02"/>
+				</spawn>
+				<!-- Ataj Slayer -->
+				<spawn npc_id="880484">
+				    <spot x="1873.2499" y="231.05719" z="1483.4917" h="42"/>
+				    <spot x="1824.6578" y="236.62016" z="1481.9025" h="54"/>
+				    <spot x="1881.7926" y="194.87564" z="1490.1636" h="58"/>
+				    <spot x="1892.26" y="199.66774" z="1490.0757" h="27"/>
+				    <spot x="1867.8014" y="174.24767" z="1490.5363" h="44"/>
+				    <spot x="1834.6398" y="169.66087" z="1490.5842" h="21"/>
+				    <spot x="1815.2446" y="160.79207" z="1499.007" h="57"/>
+				    <spot x="1832.5092" y="142.17194" z="1498.7942" h="29"/>
+				    <spot x="1850.5934" y="132.75981" z="1499.267" h="97"/>
+				    <spot x="1877.1255" y="144.53236" z="1497.4274" h="29"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Ataj Scout Infantry -->
+				<spawn npc_id="880567">
+				    <spot x="1941.1106" y="214.59947" z="1540.8069" h="44"/>
+					<spot x="1931.6348" y="206.68848" z="1540.2123" h="54"/>
+					<spot x="1941.6884" y="187.63222" z="1540.2764" h="90"/>
+				</spawn>
+				<!-- Ataj Scout Patrol -->
+				<spawn npc_id="880651">
+				    <spot x="1952.2352" y="208.6162" z="1540.2733" h="58"/>
+					<spot x="1934.8014" y="193.15353" z="1540.2439" h="22"/>
+					<spot x="1936.1375" y="219.87604" z="1540.2599" h="88" walker_id="gab1_03_npcpathv04_guard_path03"/>
+				</spawn>
+				<!-- Ataj Scout Slayer -->
+				<spawn npc_id="880735">
+				    <spot x="1948.736" y="197.856" z="1539.8152" h="49"/>
+				</spawn>
+				<!-- CAMP 2 -->
+				<!-- Ataj Scout Infantry -->
+				<spawn npc_id="880567">
+					<spot x="1759.1163" y="119.95055" z="1540.324" h="60"/>
+					<spot x="1755.2161" y="129.6799" z="1540.2573" h="68"/>
+					<spot x="1785.8541" y="140.28192" z="1539.8923" h="33"/>
+					<spot x="1775.1045" y="136.5802" z="1540.0857" h="34"/>
+				</spawn>
+				<!-- Ataj Scout Patrol -->
+				<spawn npc_id="880651">
+					<spot x="1792.653" y="127.27381" z="1540.3026" h="53"/>
+					<spot x="1770.0992" y="103.02342" z="1540.2421" h="90"/>
+					<spot x="1781.7625" y="142.43335" z="1539.7318" h="91" walker_id="gab1_03_npcpathv04_guard_path04"/>
+				</spawn>
+				<!-- Ataj Scout Slayer -->
+				<spawn npc_id="880735">
+					<spot x="1786.9392" y="108.516464" z="1540.0378" h="49"/>
+					<spot x="1770.9603" y="117.090546" z="1540.3184" h="31"/>
+				</spawn>
+				<!-- Ataj General Goods Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804376">
+				    <spot x="1835.0925" y="194.97168" z="1489.2312" h="54"/>
+				</spawn>
+				<!-- Ataj Crafting Materials Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804377">
+				    <spot x="1822.8407" y="201.03099" z="1489.0198" h="116"/>
+				</spawn>
+				<!-- Ataj Supplements Distributor (Npc Normal lvl:65) -->
+				<spawn npc_id="804378">
+				    <spot x="1828.2324" y="209.31584" z="1489.1038" h="107"/>
+				</spawn>
+				<!-- Ataj Warehouse Manager (Npc Normal lvl:65) -->
+				<spawn npc_id="804379">
+				    <spot x="1864.7202" y="212.50052" z="1489.4688" h="71"/>
+				</spawn>
+				<!-- 아타나토스 영지 (Object Normal lvl:3) -->
+				<spawn npc_id="731501">
+				    <spot x="1878.7119" y="203.98674" z="1489.7676" h="69"/>
+				</spawn>
+				<!-- Ataj Espionaut <Atanatos Occupier> -->
+				<spawn npc_id="802520">
+				    <spot x="1856.1405" y="194.59404" z="1489.7496" h="15"/>
+				</spawn>
+				<!-- Ataj Commander <Atanatos Occupier> -->
+				<spawn npc_id="802521">
+				    <spot x="1858.1288" y="191.93663" z="1489.8223" h="15"/>
+				</spawn>
+				<!-- Ataj Security <Atanatos Occupier> -->
+				<spawn npc_id="802522">
+				    <spot x="1860.3551" y="189.7451" z="1489.8339" h="15"/>
+				</spawn>
+				<!-- Ataj Emissary <Atanatos Occupier> -->
+				<spawn npc_id="802523">
+				    <spot x="1863.9027" y="187.41917" z="1489.8339" h="21"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Asmodian Flag -->
+				<spawn npc_id="803443">
+				    <spot x="1853.8202" y="160.89095" z="1532.1158" h="33"/>
+				</spawn>
+				<!-- Serenity Temple Flag -->
+				<spawn npc_id="803707">
+				    <spot x="1475.0" y="571.0" z="1545.3778" h="115"/>
+				</spawn>
+				<!-- Ataj Warcaptain -->
+				<spawn npc_id="880185" handler="CHIEF">
+				    <spot x="1854.2219" y="159.1715" z="1491.0875" h="33"/>
+				</spawn>
+				<!-- Ataj Defender -->
+				<spawn npc_id="880245">
+				    <spot x="1838.9934" y="225.16234" z="1489.387" h="36"/>
+				    <spot x="1851.085" y="226.21075" z="1489.4883" h="32"/>
+					<spot x="1884.881" y="186.58492" z="1490.8009" h="49" walker_id="gab1_03_npcpathv04_guard_path01"/>
+				</spawn>
+				<!-- Ataj Master Healer -->
+				<spawn npc_id="880305">
+				    <spot x="1871.0151" y="207.92429" z="1489.4619" h="79"/>
+				    <spot x="1818.7112" y="208.32352" z="1488.7332" h="108"/>
+				</spawn>
+				<!-- Ataj Infantry -->
+				<spawn npc_id="880365">
+				    <spot x="1845.8942" y="224.2484" z="1489.7129" h="36"/>
+				    <spot x="1851.8662" y="201.19406" z="1489.1329" h="45"/>
+				    <spot x="1843.468" y="199.9089" z="1489.1066" h="24"/>
+				    <spot x="1845.9419" y="179.12294" z="1490.378" h="37"/>
+				    <spot x="1853.3214" y="180.06378" z="1490.2969" h="38"/>
+					<spot x="1852.9478" y="164.73007" z="1490.8492" h="34" walker_id="gab1_03_npcpathv04_guard_path05"/>
+				</spawn>
+				<!-- Ataj Patrol -->
+				<spawn npc_id="880425">
+				    <spot x="1826.3651" y="181.10294" z="1489.6843" h="37"/>
+				    <spot x="1884.4312" y="181.12146" z="1490.6123" h="43"/>
+					<spot x="1815.6289" y="232.23744" z="1481.8309" h="12" walker_id="gab1_03_npcpathv04_guard_path02"/>
+				</spawn>
+				<!-- Ataj Slayer -->
+				<spawn npc_id="880485">
+				    <spot x="1873.2499" y="231.05719" z="1483.4917" h="42"/>
+				    <spot x="1824.6578" y="236.62016" z="1481.9025" h="54"/>
+				    <spot x="1881.7926" y="194.87564" z="1490.1636" h="58"/>
+				    <spot x="1892.26" y="199.66774" z="1490.0757" h="27"/>
+				    <spot x="1867.8014" y="174.24767" z="1490.5363" h="44"/>
+				    <spot x="1834.6398" y="169.66087" z="1490.5842" h="21"/>
+				    <spot x="1815.2446" y="160.79207" z="1499.007" h="57"/>
+				    <spot x="1832.5092" y="142.17194" z="1498.7942" h="29"/>
+				    <spot x="1850.5934" y="132.75981" z="1499.267" h="97"/>
+				    <spot x="1877.1255" y="144.53236" z="1497.4274" h="29"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Ataj Scout Infantry -->
+				<spawn npc_id="880566">
+				    <spot x="1941.1106" y="214.59947" z="1540.8069" h="44"/>
+					<spot x="1931.6348" y="206.68848" z="1540.2123" h="54"/>
+					<spot x="1941.6884" y="187.63222" z="1540.2764" h="90"/>
+				</spawn>
+				<!-- Ataj Scout Patrol -->
+				<spawn npc_id="880650">
+				    <spot x="1952.2352" y="208.6162" z="1540.2733" h="58"/>
+					<spot x="1934.8014" y="193.15353" z="1540.2439" h="22"/>
+					<spot x="1936.1375" y="219.87604" z="1540.2599" h="88" walker_id="gab1_03_npcpathv04_guard_path03"/>
+				</spawn>
+				<!-- Ataj Scout Slayer -->
+				<spawn npc_id="880734">
+				    <spot x="1948.736" y="197.856" z="1539.8152" h="49"/>
+				</spawn>
+				<!-- CAMP 2 -->
+				<!-- Ataj Scout Infantry -->
+				<spawn npc_id="880566">
+					<spot x="1759.1163" y="119.95055" z="1540.324" h="60"/>
+					<spot x="1755.2161" y="129.6799" z="1540.2573" h="68"/>
+					<spot x="1785.8541" y="140.28192" z="1539.8923" h="33"/>
+					<spot x="1775.1045" y="136.5802" z="1540.0857" h="34"/>
+				</spawn>
+				<!-- Ataj Scout Patrol -->
+				<spawn npc_id="880650">
+					<spot x="1792.653" y="127.27381" z="1540.3026" h="53"/>
+					<spot x="1770.0992" y="103.02342" z="1540.2421" h="90"/>
+					<spot x="1781.7625" y="142.43335" z="1539.7318" h="91" walker_id="gab1_03_npcpathv04_guard_path04"/>
+				</spawn>
+				<!-- Ataj Scout Slayer -->
+				<spawn npc_id="880734">
+					<spot x="1786.9392" y="108.516464" z="1540.0378" h="49"/>
+					<spot x="1770.9603" y="117.090546" z="1540.3184" h="31"/>
+				</spawn>
+				<!-- Ataj General Goods Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804376">
+				    <spot x="1835.0925" y="194.97168" z="1489.2312" h="54"/>
+				</spawn>
+				<!-- Ataj Crafting Materials Merchant (Npc Normal lvl:65) -->
+				<spawn npc_id="804377">
+				    <spot x="1822.8407" y="201.03099" z="1489.0198" h="116"/>
+				</spawn>
+				<!-- Ataj Supplements Distributor (Npc Normal lvl:65) -->
+				<spawn npc_id="804378">
+				    <spot x="1828.2324" y="209.31584" z="1489.1038" h="107"/>
+				</spawn>
+				<!-- Ataj Warehouse Manager (Npc Normal lvl:65) -->
+				<spawn npc_id="804379">
+				    <spot x="1864.7202" y="212.50052" z="1489.4688" h="71"/>
+				</spawn>
+				<!-- 아타나토스 영지 (Object Normal lvl:3) -->
+				<spawn npc_id="731501">
+				    <spot x="1878.7119" y="203.98674" z="1489.7676" h="69"/>
+				</spawn>
+				<!-- Ataj Espionaut <Atanatos Occupier> -->
+				<spawn npc_id="802520">
+				    <spot x="1856.1405" y="194.59404" z="1489.7496" h="15"/>
+				</spawn>
+				<!-- Ataj Commander <Atanatos Occupier> -->
+				<spawn npc_id="802521">
+				    <spot x="1858.1288" y="191.93663" z="1489.8223" h="15"/>
+				</spawn>
+				<!-- Ataj Security <Atanatos Occupier> -->
+				<spawn npc_id="802522">
+				    <spot x="1860.3551" y="189.7451" z="1489.8339" h="15"/>
+				</spawn>
+				<!-- Ataj Emissary <Atanatos Occupier> -->
+				<spawn npc_id="802523">
+				    <spot x="1863.9027" y="187.41917" z="1489.8339" h="21"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Balaur Flag -->
+				<spawn npc_id="803442">
+				    <spot x="1853.8202" y="160.89095" z="1532.1158" h="33"/>
+				</spawn>
+				<!-- Serenity Temple Flag -->
+				<spawn npc_id="803706">
+				    <spot x="1475.0" y="571.0" z="1545.3778" h="115"/>
+				</spawn>
+				<!-- Ataj Dreadcaptain -->
+				<spawn npc_id="880186" handler="CHIEF">
+				    <spot x="1854.2219" y="159.1715" z="1491.0875" h="33"/>
+				</spawn>
+				<!-- Ataj Keeper -->
+				<spawn npc_id="880246">
+				    <spot x="1838.9934" y="225.16234" z="1489.387" h="36"/>
+				    <spot x="1851.085" y="226.21075" z="1489.4883" h="32"/>
+					<spot x="1884.881" y="186.58492" z="1490.8009" h="49" walker_id="gab1_03_npcpathv04_guard_path01"/>
+				</spawn>
+				<!-- Ataj Hidestitcher -->
+				<spawn npc_id="880306">
+				    <spot x="1871.0151" y="207.92429" z="1489.4619" h="79"/>
+				    <spot x="1818.7112" y="208.32352" z="1488.7332" h="108"/>
+				</spawn>
+				<!-- Ataj Grunt -->
+				<spawn npc_id="880366">
+				    <spot x="1845.8942" y="224.2484" z="1489.7129" h="36"/>
+				    <spot x="1851.8662" y="201.19406" z="1489.1329" h="45"/>
+				    <spot x="1843.468" y="199.9089" z="1489.1066" h="24"/>
+				    <spot x="1845.9419" y="179.12294" z="1490.378" h="37"/>
+				    <spot x="1853.3214" y="180.06378" z="1490.2969" h="38"/>
+					<spot x="1852.9478" y="164.73007" z="1490.8492" h="34" walker_id="gab1_03_npcpathv04_guard_path05"/>
+				</spawn>
+				<!-- Ataj Lookout -->
+				<spawn npc_id="880426">
+				    <spot x="1826.3651" y="181.10294" z="1489.6843" h="37"/>
+				    <spot x="1884.4312" y="181.12146" z="1490.6123" h="43"/>
+					<spot x="1815.6289" y="232.23744" z="1481.8309" h="12" walker_id="gab1_03_npcpathv04_guard_path02"/>
+				</spawn>
+				<!-- Ataj Cutthroat -->
+				<spawn npc_id="880486">
+				    <spot x="1873.2499" y="231.05719" z="1483.4917" h="42"/>
+				    <spot x="1824.6578" y="236.62016" z="1481.9025" h="54"/>
+				    <spot x="1881.7926" y="194.87564" z="1490.1636" h="58"/>
+				    <spot x="1892.26" y="199.66774" z="1490.0757" h="27"/>
+				    <spot x="1867.8014" y="174.24767" z="1490.5363" h="44"/>
+				    <spot x="1834.6398" y="169.66087" z="1490.5842" h="21"/>
+				    <spot x="1815.2446" y="160.79207" z="1499.007" h="57"/>
+				    <spot x="1832.5092" y="142.17194" z="1498.7942" h="29"/>
+				    <spot x="1850.5934" y="132.75981" z="1499.267" h="97"/>
+				    <spot x="1877.1255" y="144.53236" z="1497.4274" h="29"/>
+				</spawn>
+				<!-- CAMP 1 -->
+				<!-- Ataj Recon Grunt -->
+				<spawn npc_id="880570">
+				    <spot x="1941.1106" y="214.59947" z="1540.8069" h="44"/>
+					<spot x="1931.6348" y="206.68848" z="1540.2123" h="54"/>
+					<spot x="1941.6884" y="187.63222" z="1540.2764" h="90"/>
+				</spawn>
+				<!-- Ataj Recon Lookout -->
+				<spawn npc_id="880654">
+				    <spot x="1952.2352" y="208.6162" z="1540.2733" h="58"/>
+					<spot x="1934.8014" y="193.15353" z="1540.2439" h="22"/>
+					<spot x="1936.1375" y="219.87604" z="1540.2599" h="88" walker_id="gab1_03_npcpathv04_guard_path03"/>
+				</spawn>
+				<!-- Ataj Recon Cutthroat -->
+				<spawn npc_id="880738">
+				    <spot x="1948.736" y="197.856" z="1539.8152" h="49"/>
+				</spawn>
+				<!-- CAMP 2 -->
+				<!-- Ataj Recon Contender -->
+				<spawn npc_id="880571">
+					<spot x="1759.1163" y="119.95055" z="1540.324" h="60"/>
+					<spot x="1755.2161" y="129.6799" z="1540.2573" h="68"/>
+					<spot x="1785.8541" y="140.28192" z="1539.8923" h="33"/>
+					<spot x="1775.1045" y="136.5802" z="1540.0857" h="34"/>
+				</spawn>
+				<!-- Ataj Recon Searcher -->
+				<spawn npc_id="880655">
+					<spot x="1792.653" y="127.27381" z="1540.3026" h="53"/>
+					<spot x="1770.0992" y="103.02342" z="1540.2421" h="90"/>
+					<spot x="1781.7625" y="142.43335" z="1539.7318" h="91" walker_id="gab1_03_npcpathv04_guard_path04"/>
+				</spawn>
+				<!-- Ataj Recon Scoundrel -->
+				<spawn npc_id="880739">
+					<spot x="1786.9392" y="108.516464" z="1540.0378" h="49"/>
+					<spot x="1770.9603" y="117.090546" z="1540.3184" h="31"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		
+		<!-- [ARTIFACT PANESTERRA] -->
+		<!-- [MIRAGE DANCE 1] -->
+		<base_spawn id="1017">
+			<simple_race race="ELYOS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802850">
+				    <spot x="720.0" y="900.0" z="1536.6903" h="26"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231703" handler="CHIEF">
+				    <spot x="723.4253" y="897.04083" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277849">
+				    <spot x="720.4498" y="906.62646" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277854">
+				    <spot x="727.0267" y="899.9424" z="1534.3214" h="0"/>
+					<spot x="714.0552" y="900.2098" z="1534.3214" h="61"/>
+				</spawn>
+				<spawn npc_id="277859">
+				    <spot x="720.1739" y="893.6669" z="1534.3214" h="90"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730997">
+				    <spot x="720.32947" y="900.03815" z="1534.3059" entity_id="379"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+			    <spawn npc_id="731045">
+			       <spot x="720.32947" y="900.03815" z="1534.3059" entity_id="295"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802855">
+				    <spot x="720.0" y="900.0" z="1536.6903" h="26"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231738" handler="CHIEF">
+				    <spot x="723.4253" y="897.04083" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277850">
+				    <spot x="720.4498" y="906.62646" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277855">
+				    <spot x="727.0267" y="899.9424" z="1534.3214" h="0"/>
+					<spot x="714.0552" y="900.2098" z="1534.3214" h="61"/>
+				</spawn>
+				<spawn npc_id="277860">
+				    <spot x="720.1739" y="893.6669" z="1534.3214" h="90"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730997">
+				    <spot x="720.32947" y="900.03815" z="1534.3059" entity_id="379"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+			    <spawn npc_id="731045">
+			       <spot x="720.32947" y="900.03815" z="1534.3059" entity_id="295"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802780">
+				    <spot x="720.0" y="900.0" z="1536.6903" h="26"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231773" handler="CHIEF">
+				    <spot x="723.4253" y="897.04083" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277870">
+				    <spot x="720.4498" y="906.62646" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277871">
+				    <spot x="727.0267" y="899.9424" z="1534.3214" h="0"/>
+					<spot x="714.0552" y="900.2098" z="1534.3214" h="61"/>
+				</spawn>
+				<spawn npc_id="277872">
+				    <spot x="720.1739" y="893.6669" z="1534.3214" h="90"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [CHAOS WIND 1] -->
+		<base_spawn id="1018">
+			<simple_race race="ELYOS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802784">
+				    <spot x="626.3518" y="811.00525" z="1496.9423" h="27"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231704" handler="CHIEF">
+				    <spot x="624.2006" y="808.83984" z="1494.4459" h="76"/>
+				</spawn>
+				<spawn npc_id="277849">
+				    <spot x="619.8881" y="811.1058" z="1494.3813" h="61"/>
+				</spawn>
+				<spawn npc_id="277854">
+				    <spot x="626.43665" y="804.52386" z="1494.3813" h="90"/>
+					<spot x="626.54974" y="817.5496" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277859">
+				    <spot x="632.9712" y="810.86414" z="1494.3813" h="119"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730998">
+				    <spot x="626.45789" y="811.02307" z="1494.3342" entity_id="304"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731046">
+				    <spot x="626.45789" y="811.02307" z="1494.3342" entity_id="256"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802783">
+				    <spot x="626.3518" y="811.00525" z="1496.9423" h="27"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231739" handler="CHIEF">
+				    <spot x="624.2006" y="808.83984" z="1494.4459" h="76"/>
+				</spawn>
+				<spawn npc_id="277850">
+				    <spot x="619.8881" y="811.1058" z="1494.3813" h="61"/>
+				</spawn>
+				<spawn npc_id="277855">
+				    <spot x="626.43665" y="804.52386" z="1494.3813" h="90"/>
+					<spot x="626.54974" y="817.5496" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277860">
+				    <spot x="632.9712" y="810.86414" z="1494.3813" h="119"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730998">
+				    <spot x="626.45789" y="811.02307" z="1494.3342" entity_id="304"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731046">
+				    <spot x="626.45789" y="811.02307" z="1494.3342" entity_id="256"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802802">
+				    <spot x="626.3518" y="811.00525" z="1496.9423" h="27"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231774" handler="CHIEF">
+				    <spot x="624.2006" y="808.83984" z="1494.4459" h="76"/>
+				</spawn>
+				<spawn npc_id="277870">
+				    <spot x="619.8881" y="811.1058" z="1494.3813" h="61"/>
+				</spawn>
+				<spawn npc_id="277871">
+				    <spot x="626.43665" y="804.52386" z="1494.3813" h="90"/>
+					<spot x="626.54974" y="817.5496" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277872">
+				    <spot x="632.9712" y="810.86414" z="1494.3813" h="119"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [MIRAGE DANCE 2] -->
+		<base_spawn id="1019">
+			<simple_race race="ELYOS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802850">
+				    <spot x="900.0" y="1327.0" z="1536.2924" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231705" handler="CHIEF">
+				    <spot x="903.0564" y="1324.5441" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277849">
+				    <spot x="906.25903" y="1327.6511" z="1534.3214" h="119"/>
+				</spawn>
+				<spawn npc_id="277854">
+				    <spot x="899.81323" y="1321.2631" z="1534.3214" h="90"/>
+					<spot x="900.0808" y="1334.2085" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277859">
+				    <spot x="893.4338" y="1327.6826" z="1534.3214" h="60"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730999">
+				    <spot x="899.93542" y="1327.7159" z="1534.2380" entity_id="262"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731047">
+				    <spot x="899.93542" y="1327.7159" z="1534.2380" entity_id="258"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802855">
+				    <spot x="900.0" y="1327.0" z="1536.2924" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231740" handler="CHIEF">
+				    <spot x="903.0564" y="1324.5441" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277850">
+				    <spot x="906.25903" y="1327.6511" z="1534.3214" h="119"/>
+				</spawn>
+				<spawn npc_id="277855">
+				    <spot x="899.81323" y="1321.2631" z="1534.3214" h="90"/>
+					<spot x="900.0808" y="1334.2085" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277860">
+				    <spot x="893.4338" y="1327.6826" z="1534.3214" h="60"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730999">
+				    <spot x="899.93542" y="1327.7159" z="1534.2380" entity_id="262"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731047">
+				    <spot x="899.93542" y="1327.7159" z="1534.2380" entity_id="258"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802824">
+				    <spot x="900.0" y="1327.0" z="1536.2924" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231775" handler="CHIEF">
+				    <spot x="903.0564" y="1324.5441" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277870">
+				    <spot x="906.25903" y="1327.6511" z="1534.3214" h="119"/>
+				</spawn>
+				<spawn npc_id="277871">
+				    <spot x="899.81323" y="1321.2631" z="1534.3214" h="90"/>
+					<spot x="900.0808" y="1334.2085" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277872">
+				    <spot x="893.4338" y="1327.6826" z="1534.3214" h="60"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [CHAOS WIND 2] -->
+		<base_spawn id="1020">
+			<simple_race race="ELYOS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802784">
+				    <spot x="810.7581" y="1421.6667" z="1496.8818" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231706" handler="CHIEF">
+				    <spot x="813.7088" y="1418.7449" z="1494.2988" h="105"/>
+				</spawn>
+				<spawn npc_id="277849">
+				    <spot x="817.4623" y="1421.4708" z="1494.3813" h="1"/>
+				</spawn>
+				<spawn npc_id="277854">
+				    <spot x="810.8208" y="1415.1836" z="1494.3813" h="90"/>
+					<spot x="811.0537" y="1428.0686" z="1494.3813" h="29"/>
+				</spawn>
+				<spawn npc_id="277859">
+				    <spot x="804.3281" y="1421.7443" z="1494.3813" h="60"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="731000">
+				    <spot x="810.91504" y="1421.6427" z="1494.3374" entity_id="268"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731048">
+				    <spot x="810.91504" y="1421.6427" z="1494.3374" entity_id="299"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802783">
+				    <spot x="810.7581" y="1421.6667" z="1496.8818" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231741" handler="CHIEF">
+				    <spot x="813.7088" y="1418.7449" z="1494.2988" h="105"/>
+				</spawn>
+				<spawn npc_id="277850">
+				    <spot x="817.4623" y="1421.4708" z="1494.3813" h="1"/>
+				</spawn>
+				<spawn npc_id="277855">
+				    <spot x="810.8208" y="1415.1836" z="1494.3813" h="90"/>
+					<spot x="811.0537" y="1428.0686" z="1494.3813" h="29"/>
+				</spawn>
+				<spawn npc_id="277860">
+				    <spot x="804.3281" y="1421.7443" z="1494.3813" h="60"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="731000">
+				    <spot x="810.91504" y="1421.6427" z="1494.3374" entity_id="268"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731048">
+				    <spot x="810.91504" y="1421.6427" z="1494.3374" entity_id="299"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802846">
+				    <spot x="810.7581" y="1421.6667" z="1496.8818" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231776" handler="CHIEF">
+				    <spot x="813.7088" y="1418.7449" z="1494.2988" h="105"/>
+				</spawn>
+				<spawn npc_id="277870">
+				    <spot x="817.4623" y="1421.4708" z="1494.3813" h="1"/>
+				</spawn>
+				<spawn npc_id="277871">
+				    <spot x="810.8208" y="1415.1836" z="1494.3813" h="90"/>
+					<spot x="811.0537" y="1428.0686" z="1494.3813" h="29"/>
+				</spawn>
+				<spawn npc_id="277872">
+				    <spot x="804.3281" y="1421.7443" z="1494.3813" h="60"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [MIRAGE DANCE 3] -->
+		<base_spawn id="1021">
+			<simple_race race="ELYOS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802850">
+				    <spot x="1327.912" y="1147.9362" z="1536.709" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231707" handler="CHIEF">
+				    <spot x="1325.4058" y="1145.9232" z="1534.385" h="75"/>
+				</spawn>
+				<spawn npc_id="277849">
+				    <spot x="1321.2067" y="1148.1732" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277854">
+				    <spot x="1327.7427" y="1141.6853" z="1534.3214" h="90"/>
+					<spot x="1327.7677" y="1154.5577" z="1534.3214" h="31"/>
+				</spawn>
+				<spawn npc_id="277859">
+				    <spot x="1334.283" y="1148.0591" z="1534.3214" h="0"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="731001">
+				    <spot x="1327.7090" y="1148.0685" z="1534.2960" entity_id="264"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731049">
+				    <spot x="1327.7090" y="1148.0685" z="1534.2960" entity_id="305"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802855">
+				    <spot x="1327.912" y="1147.9362" z="1536.709" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231742" handler="CHIEF">
+				    <spot x="1325.4058" y="1145.9232" z="1534.385" h="75"/>
+				</spawn>
+				<spawn npc_id="277850">
+				    <spot x="1321.2067" y="1148.1732" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277855">
+				    <spot x="1327.7427" y="1141.6853" z="1534.3214" h="90"/>
+					<spot x="1327.7677" y="1154.5577" z="1534.3214" h="31"/>
+				</spawn>
+				<spawn npc_id="277860">
+				    <spot x="1334.283" y="1148.0591" z="1534.3214" h="0"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="731001">
+				    <spot x="1327.7090" y="1148.0685" z="1534.2960" entity_id="264"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731049">
+				    <spot x="1327.7090" y="1148.0685" z="1534.2960" entity_id="305"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802868">
+				    <spot x="1327.912" y="1147.9362" z="1536.709" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231777" handler="CHIEF">
+				    <spot x="1325.4058" y="1145.9232" z="1534.385" h="75"/>
+				</spawn>
+				<spawn npc_id="277870">
+				    <spot x="1321.2067" y="1148.1732" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277871">
+				    <spot x="1327.7427" y="1141.6853" z="1534.3214" h="90"/>
+					<spot x="1327.7677" y="1154.5577" z="1534.3214" h="31"/>
+				</spawn>
+				<spawn npc_id="277872">
+				    <spot x="1334.283" y="1148.0591" z="1534.3214" h="0"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [CHAOS WIND 3] -->
+		<base_spawn id="1022">
+			<simple_race race="ELYOS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802784">
+				    <spot x="1421.4105" y="1236.0215" z="1496.3591" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231708" handler="CHIEF">
+				    <spot x="1419.0533" y="1239.2249" z="1494.4298" h="46"/>
+				</spawn>
+				<spawn npc_id="277849">
+				    <spot x="1421.3939" y="1243.2358" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277854">
+				    <spot x="1414.9099" y="1236.7533" z="1494.3813" h="60"/>
+					<spot x="1427.8448" y="1236.739" z="1494.3813" h="0"/>
+				</spawn>
+				<spawn npc_id="277859">
+				    <spot x="1421.3351" y="1230.1788" z="1494.3813" h="91"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="731002">
+				    <spot x="1421.3873" y="1236.7760" z="1494.3125" entity_id="317"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731050">
+				    <spot x="1421.3873" y="1236.7760" z="1494.3125" entity_id="502"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802783">
+				    <spot x="1421.4105" y="1236.0215" z="1496.3591" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231743" handler="CHIEF">
+				    <spot x="1419.0533" y="1239.2249" z="1494.4298" h="46"/>
+				</spawn>
+				<spawn npc_id="277850">
+				    <spot x="1421.3939" y="1243.2358" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277855">
+				    <spot x="1414.9099" y="1236.7533" z="1494.3813" h="60"/>
+					<spot x="1427.8448" y="1236.739" z="1494.3813" h="0"/>
+				</spawn>
+				<spawn npc_id="277860">
+				    <spot x="1421.3351" y="1230.1788" z="1494.3813" h="91"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="731002">
+				    <spot x="1421.3873" y="1236.7760" z="1494.3125" entity_id="317"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731050">
+				    <spot x="1421.3873" y="1236.7760" z="1494.3125" entity_id="502"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802890">
+				    <spot x="1421.4105" y="1236.0215" z="1496.3591" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231778" handler="CHIEF">
+				    <spot x="1419.0533" y="1239.2249" z="1494.4298" h="46"/>
+				</spawn>
+				<spawn npc_id="277870">
+				    <spot x="1421.3939" y="1243.2358" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277871">
+				    <spot x="1414.9099" y="1236.7533" z="1494.3813" h="60"/>
+					<spot x="1427.8448" y="1236.739" z="1494.3813" h="0"/>
+				</spawn>
+				<spawn npc_id="277872">
+				    <spot x="1421.3351" y="1230.1788" z="1494.3813" h="91"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [MIRAGE DANCE 4] -->
+		<base_spawn id="1023">
+			<simple_race race="ELYOS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802850">
+				    <spot x="1147.7817" y="720.041" z="1536.5757" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231709" handler="CHIEF">
+				    <spot x="1149.8599" y="718.2065" z="1534.3934" h="107"/>
+				</spawn>
+				<spawn npc_id="277849">
+				    <spot x="1147.6941" y="713.85175" z="1534.3214" h="91"/>
+				</spawn>
+				<spawn npc_id="277854">
+				    <spot x="1154.2517" y="720.3186" z="1534.3214" h="1"/>
+					<spot x="1141.4475" y="720.5961" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277859">
+				    <spot x="1147.9321" y="726.8844" z="1534.3214" h="29"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="731003">
+				    <spot x="1147.8297" y="720.44104" z="1534.2417" entity_id="303"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731051">
+				    <spot x="1147.8297" y="720.44104" z="1534.2417" entity_id="307"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802855">
+				    <spot x="1147.7817" y="720.041" z="1536.5757" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231744" handler="CHIEF">
+				    <spot x="1149.8599" y="718.2065" z="1534.3934" h="107"/>
+				</spawn>
+				<spawn npc_id="277850">
+				    <spot x="1147.6941" y="713.85175" z="1534.3214" h="91"/>
+				</spawn>
+				<spawn npc_id="277855">
+				    <spot x="1154.2517" y="720.3186" z="1534.3214" h="1"/>
+					<spot x="1141.4475" y="720.5961" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277860">
+				    <spot x="1147.9321" y="726.8844" z="1534.3214" h="29"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="731003">
+				    <spot x="1147.8297" y="720.44104" z="1534.2417" entity_id="303"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731051">
+				    <spot x="1147.8297" y="720.44104" z="1534.2417" entity_id="307"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802912">
+				    <spot x="1147.7817" y="720.041" z="1536.5757" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231779" handler="CHIEF">
+				    <spot x="1149.8599" y="718.2065" z="1534.3934" h="107"/>
+				</spawn>
+				<spawn npc_id="277870">
+				    <spot x="1147.6941" y="713.85175" z="1534.3214" h="91"/>
+				</spawn>
+				<spawn npc_id="277871">
+				    <spot x="1154.2517" y="720.3186" z="1534.3214" h="1"/>
+					<spot x="1141.4475" y="720.5961" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277872">
+				    <spot x="1147.9321" y="726.8844" z="1534.3214" h="29"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [CHAOS WIND 4] -->
+		<base_spawn id="1024">
+			<simple_race race="ELYOS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802784">
+				    <spot x="1237.0" y="626.0" z="1496.5538" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231710" handler="CHIEF">
+				    <spot x="1239.2587" y="628.69147" z="1494.4447" h="16"/>
+				</spawn>
+				<spawn npc_id="277849">
+				    <spot x="1237.0182" y="632.99854" z="1494.3818" h="30"/>
+				</spawn>
+				<spawn npc_id="277854">
+				    <spot x="1243.3743" y="626.3215" z="1494.3818" h="0"/>
+					<spot x="1230.2618" y="626.41785" z="1494.3818" h="59"/>
+				</spawn>
+				<spawn npc_id="277859">
+				    <spot x="1236.805" y="619.9137" z="1494.3818" h="90"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="731004">
+				    <spot x="1236.9609" y="626.51794" z="1494.3477" entity_id="500"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731052">
+				    <spot x="1236.9609" y="626.51794" z="1494.3477" entity_id="296"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802783">
+				    <spot x="1237.0" y="626.0" z="1496.5538" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231745" handler="CHIEF">
+				    <spot x="1239.2587" y="628.69147" z="1494.4447" h="16"/>
+				</spawn>
+				<spawn npc_id="277850">
+				    <spot x="1237.0182" y="632.99854" z="1494.3818" h="30"/>
+				</spawn>
+				<spawn npc_id="277855">
+				    <spot x="1243.3743" y="626.3215" z="1494.3818" h="0"/>
+					<spot x="1230.2618" y="626.41785" z="1494.3818" h="59"/>
+				</spawn>
+				<spawn npc_id="277860">
+				    <spot x="1236.805" y="619.9137" z="1494.3818" h="90"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="731004">
+				    <spot x="1236.9609" y="626.51794" z="1494.3477" entity_id="500"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731052">
+				    <spot x="1236.9609" y="626.51794" z="1494.3477" entity_id="296"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802934">
+				    <spot x="1237.0" y="626.0" z="1496.5538" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231780" handler="CHIEF">
+				    <spot x="1239.2587" y="628.69147" z="1494.4447" h="16"/>
+				</spawn>
+				<spawn npc_id="277870">
+				    <spot x="1237.0182" y="632.99854" z="1494.3818" h="30"/>
+				</spawn>
+				<spawn npc_id="277871">
+				    <spot x="1243.3743" y="626.3215" z="1494.3818" h="0"/>
+					<spot x="1230.2618" y="626.41785" z="1494.3818" h="59"/>
+				</spawn>
+				<spawn npc_id="277872">
+				    <spot x="1236.805" y="619.9137" z="1494.3818" h="90"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+	</spawn_map>
+</spawns>

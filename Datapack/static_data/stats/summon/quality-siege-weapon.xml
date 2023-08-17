@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Quality Siege Weapon 4.8
+	Made By Rinzler & The Moose (Encom)
+	Checked By Encom 11/04/2015
+ -->
+<summon_stats_templates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../stats.xsd">
+	<!-- ******************** -->
+	<!-- QUALITY SIEGE WEAPON -->
+	<!-- ******************** -->
+	<summon_stats npc_id_light="201056" npc_id_dark="201057" level="56">
+		<stats_template maxHp="550000" pdefense="1950" mresist="2050" main_hand_attack="3000" run_speed="8.0" main_hand_accuracy="1950" main_hand_crit_rate="41" magic_accuracy="1450" evasion="1550" mcrit="41" parry="0"/>
+	</summon_stats>
+	<summon_stats npc_id_light="201058" npc_id_dark="201059" level="60">
+		<stats_template maxHp="650000" pdefense="2150" mresist="2250" main_hand_attack="3500" run_speed="8.0" main_hand_accuracy="2150" main_hand_crit_rate="41" magic_accuracy="1650" evasion="1750" mcrit="41" parry="0"/>
+	</summon_stats>
+</summon_stats_templates>

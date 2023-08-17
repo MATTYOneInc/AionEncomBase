@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Serial Killer 4.8 (16 Décember 2014)
+	Made By (Encom)
+ -->
+<serial_killers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="serial_killer.xsd">
+	<rank_restriction rank_num="1">
+		<penalty_attr stat="PVP_ATTACK_RATIO" func="ADD" value="10"/>
+	</rank_restriction>
+	<rank_restriction rank_num="2">
+		<penalty_attr stat="PVP_ATTACK_RATIO" func="ADD" value="20"/>
+	</rank_restriction>
+	<rank_restriction rank_num="3">
+		<penalty_attr stat="PVP_ATTACK_RATIO" func="ADD" value="30"/>
+	</rank_restriction>
+</serial_killers>

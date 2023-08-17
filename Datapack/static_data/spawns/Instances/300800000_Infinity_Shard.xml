@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	カタラマイズ
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="300800000">
+		<!-- Hyperion (Boss Legendary) -->
+		<spawn npc_id="231073">
+			<spot x="128.75" y="137.86" z="113.95"/>
+		</spawn>
+		<!-- Agent Kabalash -->
+		<spawn npc_id="231075">
+			<spot x="135.09" y="114.61" z="130.39" h="10"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Sniper -->
+		<spawn npc_id="231076">
+			<spot x="133.31" y="116.45" z="130.39" h="10"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Sniper -->
+		<spawn npc_id="231077">
+			<spot x="135.85" y="112.08" z="130.39" h="13"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Assassin -->
+		<spawn npc_id="231079">
+			<spot x="149.95" y="128.60" z="114.50" h="61"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Sniper -->
+		<spawn npc_id="231080">
+			<spot x="147.30" y="131.29" z="114.50" h="61"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Medic -->
+		<spawn npc_id="231081">
+			<spot x="153.50" y="129.64" z="114.50" h="61"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Assassin -->
+		<spawn npc_id="231083">
+			<spot x="108.49" y="145.45" z="114.03" h="16"/>
+            <spot x="114.12855" y="154.01147" z="126.6723" h="94"/>
+            <spot x="146.32094" y="123.357025" z="126.644264" h="67"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Assaulter -->
+		<spawn npc_id="231084">
+			<spot x="103.78" y="144.25" z="114.03" h="16"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Medic -->
+		<spawn npc_id="231085">
+			<spot x="110.77" y="142.66" z="114.03" h="20"/>
+			<spot x="106.97135" y="133.35056" z="124.67736" h="97" walker_id="Hyperion_Defense_Elite_2"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Magus -->
+		<spawn npc_id="231087">
+			<spot x="124.16" y="162.37" z="129.50" h="71"/>
+			<spot x="109.69791" y="148.10576" z="112.8431" h="20" walker_id="Hyperion_Defense_Elite_1"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Sniper -->
+		<spawn npc_id="231088">
+			<spot x="123.08" y="163.91" z="129.5" h="71"/>
+            <spot x="107.5329" y="143.58759" z="125.69311" h="111"/>
+            <spot x="150.84091" y="133.52611" z="125.69311" h="51"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Sniper -->
+		<spawn npc_id="231089">
+			<spot x="124.96" y="160.60" z="129.50" h="71"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Fighter -->
+		<spawn npc_id="231090">
+			<spot x="109.69791" y="148.10576" z="112.8431" h="20" walker_id="Hyperion_Defense_Elite_1"/>
+		</spawn>
+		<!-- Hyperion Defense Elite Gunner -->
+		<spawn npc_id="231091">
+			<spot x="106.97135" y="133.35056" z="124.67736" h="97" walker_id="Hyperion_Defense_Elite_2"/>
+		</spawn>
+		<!-- Greater Blessed Relics (Object Normal lvl:3) -->
+		<spawn npc_id="831990">
+            <spot x="120.73726" y="117.29873" z="131.8584" h="10"/>
+        </spawn>
+		<!-- Ide Forcefield Generator -->
+		<spawn npc_id="231074">
+			<spot x="131.1161" y="112.20678" z="128.9285" entity_id="29"/>
+		</spawn>
+		<!-- Ide Forcefield Generator -->
+		<spawn npc_id="231078">
+			<spot x="152.0999" y="136.23021" z="112.0556" entity_id="31"/>
+		</spawn>
+		<!-- Ide Forcefield Generator -->
+		<spawn npc_id="231082">
+			<spot x="106.40" y="139.75" z="114.08" entity_id="30"/>
+		</spawn>
+		<!-- Ide Forcefield Generator -->
+		<spawn npc_id="231086">
+			<spot x="127.53" y="163.42" z="130.95" entity_id="28"/>
+		</spawn>
+	</spawn_map>
+</spawns>

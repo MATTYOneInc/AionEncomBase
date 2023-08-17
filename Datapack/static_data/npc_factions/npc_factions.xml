@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Npc Faction 4.8
+	Made By (Encom)
+ -->
+<npc_factions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_factions.xsd">
+	<npc_faction id="1" name="The Jeridises" npcid="203231" nameId="1300527" category="MENTOR" minlevel="5" race="ELYOS"/>
+	<npc_faction id="2" name="Alabaster Order" npcid="799803" nameId="2258001" category="DAILY" minlevel="30" race="ELYOS"/>
+	<npc_faction id="3" name="Radiant Ops" npcid="799828" nameId="2258003" category="DAILY" minlevel="40" race="ELYOS"/>
+	<npc_faction id="4" name="Fortuneers" npcid="799840" nameId="2258005" category="DAILY" minlevel="50" race="ELYOS"/>
+	<npc_faction id="5" name="Field Wardens" npcid="799845" nameId="2258007" category="DAILY" minlevel="30" race="ASMODIANS"/>
+	<npc_faction id="6" name="Blood Crusade" npcid="799868" nameId="2258009" category="DAILY" minlevel="40" race="ASMODIANS"/>
+	<npc_faction id="7" name="Charlirunerk's Daemons" npcid="799886" nameId="2258011" category="DAILY" minlevel="50" race="ASMODIANS"/>
+	<npc_faction id="14" name="Dark Cloudy Merchants" npcid="205631" nameId="2258025" category="SHUGO" minlevel="55" race="NPC"/>
+	<npc_faction id="15" name="Silverine Ltd" npcid="800939" nameId="2258027" category="DAILY" minlevel="60" race="ELYOS"/>
+	<npc_faction id="16" name="Silverine Ltd" npcid="800942" nameId="2258029" category="DAILY" minlevel="60" race="ASMODIANS"/>
+	<npc_faction id="17" name="Merry And Green" npcid="800945" nameId="2258031" category="DAILY" minlevel="60" race="ELYOS"/>
+    <npc_faction id="18" name="Merry And Green" npcid="800948" nameId="2258033" category="DAILY" minlevel="60" race="ASMODIANS"/>
+</npc_factions>

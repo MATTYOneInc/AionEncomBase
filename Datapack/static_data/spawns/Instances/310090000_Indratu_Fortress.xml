@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	インドラト要塞
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="310090000">
+		<!-- Indratu Dragonblade
+		<Indratu Legion> -->
+		<spawn npc_id="214105">
+		    <spot h="36" z="995.89087" y="614.276" x="417.2629"/>
+            <spot h="36" z="995.57306" y="613.4127" x="415.05566"/>
+            <spot h="67" z="1017.6261" y="632.205" x="648.6912"/>
+            <spot h="71" z="1017.7253" y="634.1229" x="647.41187"/>
+            <spot h="2" z="1007.4512" y="394.80594" x="552.0765" random_walk="6"/>
+            <spot h="6" z="987.3322" y="471.2398" x="339.8946"/>
+            <spot h="6" z="987.6102" y="468.76163" x="340.73328"/>
+            <spot h="61" z="1007.7949" y="639.4982" x="482.4678"/>
+            <spot h="61" z="1007.6811" y="641.865" x="482.28348"/>
+            <spot h="32" z="1006.83936" y="393.76688" x="543.3813" random_walk="6"/>
+            <spot h="63" z="1006.7066" y="423.7634" x="557.9687" random_walk="6"/>
+		</spawn>
+		<!-- Indratu Dragonblade
+		<Indratu Legion> -->
+		<spawn npc_id="214106">
+		    <spot h="64" z="1013.97076" y="505.5478" x="672.38605"/>
+            <spot h="52" z="1012.2416" y="605.87726" x="529.4315" random_walk="3"/>
+            <spot h="53" z="995.8755" y="506.7122" x="406.6016" random_walk="3"/>
+            <spot h="34" z="983.7435" y="504.6382" x="318.5953"/>
+		</spawn>
+		<!-- Indratu Infiltrator
+		<Indratu Legion> -->
+		<spawn npc_id="214107">
+		    <spot h="62" z="1013.88324" y="379.95413" x="602.1386" random_walk="6"/>
+            <spot h="50" z="1012.38556" y="387.55063" x="602.07965" random_walk="6"/>
+            <spot h="8" z="1008.5171" y="391.34503" x="505.7056" random_walk="6"/>
+            <spot h="41" z="986.36255" y="548.2426" x="354.34094"/>
+            <spot h="42" z="987.13556" y="549.38116" x="355.74518"/>
+            <spot h="1" z="1008.07056" y="385.49142" x="506.62802" random_walk="6"/>
+		</spawn>
+		<!-- Indratu Infiltrator
+		<Indratu Legion> -->
+		<spawn npc_id="214108">
+		    <spot h="72" z="1018.1215" y="697.5442" x="570.21796"/>
+            <spot h="72" z="1018.34296" y="695.80743" x="571.53705"/>
+            <spot h="79" z="1019.6802" y="723.8284" x="558.318"/>
+            <spot h="79" z="1019.601" y="724.9252" x="556.56836"/>
+            <spot h="88" z="1019.32135" y="670.599" x="607.7101"/>
+            <spot h="88" z="1019.3243" y="670.5258" x="609.47107"/>
+		</spawn>
+		<!-- Indratu Breeder
+		<Indratu Legion> -->
+		<spawn npc_id="214109">
+		    <spot h="16" z="1012.4701" y="531.85266" x="613.19336"/>
+            <spot h="36" z="1023.1189" y="368.81445" x="633.4512"/>
+		</spawn>
+		<!-- Indratu Wardrake
+		<Indratu Legion> -->
+		<spawn npc_id="214111">
+		    <spot x="376.27789" y="624.27637" z="995.41772" random_walk="6"/>
+		    <spot x="583.3761" y="668.50061" z="1024.4596" random_walk="6"/>
+		    <spot x="490.16254" y="388.0654" z="1010.9826" random_walk="6"/>
+		    <spot x="328.36401" y="442.7894" z="995.42847" random_walk="6"/>
+		    <spot x="692.17444" y="396.6369" z="1038.7115" random_walk="6"/>
+		    <spot x="344.88211" y="624.67297" z="998.7016" random_walk="6"/>
+		    <spot x="610.34906" y="604.12061" z="1024.3936" random_walk="6"/>
+		    <spot x="277.04163" y="517.52808" z="988.25885" random_walk="6"/>
+		    <spot x="643.70282" y="549.95343" z="1024.3936" random_walk="6"/>
+		    <spot x="444.57751" y="651.89984" z="1006.6437" random_walk="6"/>
+		    <spot x="648.59314" y="406.72412" z="1025.6505" random_walk="6"/>
+		    <spot x="606.53503" y="621.91687" z="1024.3936" random_walk="6"/>
+		    <spot x="652.58185" y="502.83197" z="1024.3936" random_walk="6"/>
+		    <spot x="423.24603" y="427.69717" z="1008.5741" random_walk="6"/>
+		    <spot x="653.65521" y="478.81091" z="1017.7173" random_walk="6"/>
+		    <spot x="362.03714" y="456.77417" z="1008.5741" random_walk="6"/>
+		    <spot x="512.70972" y="719.16888" z="1017.3111" random_walk="6"/>
+		    <spot x="641.40759" y="565.00989" z="1024.3936" random_walk="6"/>
+		    <spot x="467.47223" y="694.11029" z="1020.8287" random_walk="6"/>
+		    <spot x="527.74225" y="393.87106" z="1010.9826" random_walk="6"/>
+		    <spot x="300.68732" y="592.70557" z="985.08722" random_walk="6"/>
+		    <spot x="322.87595" y="537.15668" z="995.41772" random_walk="6"/>
+		    <spot x="347.72556" y="590.21918" z="993.28448" random_walk="6"/>
+		    <spot x="503.12836" y="701.86292" z="1020.1094" random_walk="6"/>
+		    <spot x="245.28885" y="509.07361" z="995.41772" random_walk="6"/>
+		    <spot x="432.37149" y="395.88351" z="1021.0667" random_walk="6"/>
+		    <spot x="373.28204" y="589.9223" z="999.63055" random_walk="6"/>
+		    <spot x="294.17142" y="604.49841" z="985.08722" random_walk="6"/>
+		    <spot x="640.71814" y="526.9743" z="1019.1951" random_walk="6"/>
+		    <spot x="265.91318" y="490.47794" z="995.41772" random_walk="6"/>
+		    <spot x="596.53235" y="693.5144" z="1024.3936" random_walk="6"/>
+		    <spot x="660.00854" y="334.46826" z="1039.0262" random_walk="6"/>
+		    <spot x="464.20206" y="629.22833" z="1012.5274" random_walk="6"/>
+		    <spot x="302.49106" y="525.25903" z="987.20294" random_walk="6"/>
+		    <spot x="467.13193" y="395.22278" z="1020.8469" random_walk="6"/>
+		    <spot x="631.4173" y="589.78345" z="1024.3936" random_walk="6"/>
+		    <spot x="313.57809" y="573.67181" z="995.41772" random_walk="6"/>
+		    <spot x="712.03137" y="358.6705" z="1044.7739" random_walk="6"/>
+		    <spot x="312.84467" y="455.62781" z="997.18738" random_walk="6"/>
+		    <spot x="636.42493" y="423.32956" z="1018.6527" random_walk="6"/>
+		    <spot x="621.92719" y="616.98096" z="1024.3936" random_walk="6"/>
+		    <spot x="643.63599" y="393.64572" z="1025.6505" random_walk="6"/>
+		    <spot x="533.3053" y="716.20258" z="1017.3111" random_walk="6"/>
+		    <spot x="617.7688" y="386.50159" z="1028.8557" random_walk="6"/>
+		    <spot x="395.91046" y="437.58264" z="1011.0356" random_walk="6"/>
+		    <spot x="578.86536" y="398.23569" z="1013.4352" random_walk="6"/>
+		    <spot x="287.55179" y="495.38043" z="995.41772" random_walk="6"/>
+		    <spot x="627.12585" y="319.36417" z="1034.7178" random_walk="6"/>
+		</spawn>
+		<!-- Indratu Bloodblade
+		<Indratu Legion> -->
+		<spawn npc_id="214112">
+		    <spot h="60" z="1016.41284" y="584.12836" x="675.02466"/>
+            <spot h="60" z="1016.375" y="581.5245" x="675.2541"/>
+            <spot h="71" z="1014.83954" y="516.8758" x="528.84644"/>
+            <spot h="5" z="1014.8405" y="500.83426" x="492.78262"/>
+            <spot h="118" z="1014.8395" y="543.8232" x="474.81125"/>
+            <spot h="104" z="980.5768" y="604.3906" x="320.05704"/>
+            <spot h="101" z="980.95526" y="605.8152" x="321.65527"/>
+            <spot h="65" z="1014.8395" y="558.9559" x="508.0661"/>
+		</spawn>
+		<!-- Indratu Bloodblade
+		<Indratu Legion> -->
+		<spawn npc_id="214113">
+		    <spot h="77" z="1009.75476" y="415.08273" x="444.03033"/>
+		</spawn>
+		<!-- Indratu Warder
+		<Indratu Legion> -->
+		<spawn npc_id="214114">
+		    <spot h="9" z="1008.14355" y="414.39417" x="521.11847" random_walk="2"/>
+		</spawn>
+		<!-- Indratu Stormblade
+		<Indratu Legion> -->
+		<spawn npc_id="214115">
+            <spot h="104" z="1014.52246" y="509.14005" x="496.8698"/>
+            <spot h="90" z="1014.5216" y="517.89105" x="519.80676"/>
+            <spot h="98" z="1014.4492" y="500.978" x="515.11884"/>
+            <spot h="49" z="1014.5208" y="551.0146" x="504.31583"/>
+            <spot h="29" z="1014.5199" y="541.8398" x="484.1189"/>
+            <spot h="119" z="1013.30286" y="539.1465" x="575.04034" random_walk="3"/>
+            <spot h="103" z="1002.5457" y="684.3312" x="444.8811" random_walk="6"/>
+            <spot h="3" z="1001.1995" y="638.3251" x="443.6644" random_walk="6"/>
+            <spot h="94" z="1000.6223" y="680.15674" x="421.47943"/>
+            <spot h="95" z="1000.2247" y="679.5836" x="419.75018"/>
+		</spawn>
+		<!-- Indratu Stormblade
+		<Indratu Legion> -->
+		<spawn npc_id="214116">
+		    <spot h="54" z="1027.5527" y="522.5457" x="532.0558"/>
+            <spot h="103" z="1012.2388" y="460.5781" x="528.088"/>
+            <spot h="91" z="1012.0875" y="464.75015" x="537.5593"/>
+            <spot h="117" z="1026.9739" y="538.871" x="472.1001"/>
+            <spot h="20" z="1011.90234" y="593.65436" x="465.47568"/>
+            <spot h="54" z="1011.9705" y="598.68787" x="475.27747"/>
+            <spot h="88" z="1026.974" y="558.31964" x="513.3381"/>
+            <spot h="25" z="1027.5544" y="499.46582" x="488.4789"/>
+		</spawn>
+		<!-- Indratu Terrorblade
+		<Indratu Legion> -->
+		<spawn npc_id="214117">
+		    <spot h="7" z="981.57635" y="541.77277" x="290.95963" random_walk="6"/>
+            <spot h="68" z="1018.2842" y="488.3161" x="609.6243" random_walk="3"/>
+            <spot h="87" z="1006.6429" y="716.5506" x="480.05667" random_walk="6"/>
+		</spawn>
+		<!-- Indratu Battle Mage
+		<Indratu Legion> -->
+		<spawn npc_id="214118">
+		    <spot h="26" z="1014.3469" y="376.97736" x="445.61072"/>
+            <spot h="26" z="1014.303" y="377.44504" x="443.15558"/>
+            <spot h="57" z="1025.1633" y="372.86853" x="659.8491" random_walk="6"/>
+            <spot h="117" z="1013.3436" y="658.81244" x="550.27313" random_walk="6"/>
+            <spot h="42" z="1000.25867" y="551.0126" x="418.90387" random_walk="6"/>
+            <spot h="10" z="994.58984" y="435.21448" x="374.6031" random_walk="6"/>
+            <spot h="24" z="999.2946" y="469.34598" x="385.52148" random_walk="3"/>
+            <spot h="34" z="1013.73065" y="585.9582" x="629.89667" random_walk="6"/>
+            <spot h="85" z="1012.15234" y="458.3779" x="633.4025" random_walk="6"/>
+		</spawn>
+		<!-- Indratu Battle Mage
+		<Indratu Legion> -->
+		<spawn npc_id="214119">
+		    <spot h="117" z="1010.7033" y="455.0717" x="473.42438" random_walk="6"/>
+            <spot h="67" z="1007.04083" y="488.15842" x="440.8136" random_walk="6"/>
+            <spot h="34" z="1027.335" y="356.48026" x="650.1462" random_walk="6"/>
+		</spawn>
+		<!-- Indratu Warlock
+		<Indratu Legion> -->
+		<spawn npc_id="214120">
+		    <spot h="53" z="1014.441" y="560.5242" x="492.2284"/>
+            <spot h="23" z="1014.4529" y="555.99615" x="482.5335"/>
+		</spawn>
+		<!-- Indratu Deathpriest
+		<Indratu Legion> -->
+		<spawn npc_id="214121">
+		    <spot h="62" z="1011.26263" y="682.9412" x="524.48596" random_walk="6"/>
+		</spawn>
+		<!-- Indratu Deathpriest
+		<Indratu Legion> -->
+		<spawn npc_id="214122">
+		    <spot h="61" z="1014.5933" y="647.88184" x="510.5629" random_walk="3"/>
+            <spot h="78" z="1009.9703" y="414.09375" x="445.4416"/>
+            <spot h="93" z="1007.6402" y="424.5218" x="537.69037"/>
+		</spawn>
+		<!-- Indratu Excorcist
+		<Indratu Legion> -->
+		<spawn npc_id="214123">
+		    <spot h="59" z="996.6659" y="519.5167" x="471.0052"/>
+            <spot h="59" z="997.33136" y="522.0235" x="471.0872"/>
+            <spot h="99" z="1007.5717" y="532.3079" x="492.1517"/>
+            <spot h="99" z="1007.43805" y="538.59393" x="505.47803"/>
+            <spot h="99" z="1015.85455" y="515.5217" x="507.85306"/>
+		</spawn>
+		<!-- Indratu Elite Praetor
+		<Indratu Legion> -->
+		<spawn npc_id="214124">
+		    <spot h="38" z="1015.81885" y="542.4844" x="495.63416"/>
+            <spot h="89" z="984.85895" y="478.4493" x="491.6991"/>
+            <spot h="59" z="984.9751" y="475.6872" x="494.38318"/>
+            <spot h="30" z="966.4977" y="479.64835" x="522.1655"/>
+		</spawn>
+		<!-- Indratu Elite Praetor
+		<Indratu Legion> -->
+		<spawn npc_id="214125">
+		    <spot h="65" z="996.70197" y="553.72797" x="545.0505"/>
+            <spot h="81" z="996.70197" y="565.3237" x="536.9097"/>
+            <spot h="39" z="1007.6439" y="521.9129" x="505.19308"/>
+		</spawn>
+		<!-- Indratu Aegis
+		<Indratu Legion> -->
+		<spawn npc_id="214126">
+		    <spot h="112" z="967.40295" y="501.05307" x="517.5504"/>
+            <spot h="48" z="992.2676" y="490.67523" x="468.3451"/>
+            <spot h="24" z="981.4334" y="487.02478" x="545.8381"/>
+            <spot h="43" z="991.8129" y="527.3932" x="542.64813"/>
+            <spot h="117" z="968.8898" y="471.7327" x="508.1261"/>
+            <spot h="12" z="1004.2551" y="538.72705" x="475.10254"/>
+            <spot h="9" z="969.23627" y="531.27435" x="504.0459"/>
+            <spot h="17" z="998.22705" y="542.7357" x="523.34955"/>
+            <spot h="113" z="967.40295" y="510.076" x="521.2378"/>
+            <spot h="96" z="969.23627" y="496.57635" x="489.29193"/>
+		</spawn>
+		<!-- Indratu Aegis
+		<Indratu Legion> -->
+		<spawn npc_id="214127">
+		    <spot h="112" z="969.23627" y="507.678" x="505.5991"/>
+            <spot h="113" z="969.23627" y="511.97888" x="507.14844"/>
+            <spot h="41" z="1023.2445" y="367.03754" x="631.0895"/>
+		</spawn>
+		<!-- Indratu Sarvan
+		<Indratu Legion> -->
+		<spawn npc_id="214128">
+		    <spot h="48" z="966.15515" y="485.7268" x="533.35895"/>
+            <spot h="66" z="966.1569" y="511.18713" x="542.82135"/>
+            <spot h="17" z="966.1547" y="482.22614" x="511.1024"/>
+		</spawn>
+		<!-- Indratu Sarvan
+		<Indratu Legion> -->
+		<spawn npc_id="214129">
+		    <spot h="53" z="967.1022" y="499.4535" x="543.32574"/>
+            <spot h="53" z="967.10223" y="493.2883" x="540.8582"/>
+            <spot h="76" z="966.6076" y="523.0213" x="537.37665"/>
+		</spawn>
+		<!-- Indratu Physician
+		<Indratu Legion> -->
+		<spawn npc_id="214130">
+		    <spot h="9" z="969.23627" y="527.37866" x="506.0704"/>
+		</spawn>
+		<!-- Indratu Physician
+		<Indratu Legion> -->
+		<spawn npc_id="214131">
+		    <spot h="98" z="969.23627" y="498.53683" x="494.2255"/>
+		</spawn>
+		<!-- Indratu Guard Tower
+		<Indratu Legion> -->
+        <spawn npc_id="214155">
+            <spot x="512.4389" y="443.51074" z="1012.2885" h="105"/>
+            <spot x="552.12115" y="460.01025" z="1010.4662" h="75"/>
+            <spot x="477.52277" y="617.87854" z="1008.0823" h="56"/>
+            <spot x="441.53018" y="603.10736" z="1003.9219" h="14"/>
+		</spawn>
+		<!-- Praetorius Artair
+		<Indratu Legion> -->
+		<spawn npc_id="214156">
+		    <spot h="99" z="1028.8584" y="528.5219" x="501.0722"/>
+		</spawn>
+		<!-- Staff Captain Lahumu
+		<Indratu Legion> -->
+		<spawn npc_id="214158">
+		    <spot h="52" z="966.9907" y="493.82925" x="548.0471"/>
+		</spawn>
+		<!-- Brigadier Indratu
+		<Indratu Legion>
+		A Balaur so powerful, he commands an entire legion.
+		He commands an Abyss fortress that can be reached through
+		the Heiron Abyss Gate deep in the Nute Warrens -->
+		<spawn npc_id="214159">
+		    <spot h="112" z="968.9094" y="514.9001" x="493.31345"/>
+		</spawn>
+		<!-- Indratu Mender
+		<Indratu Legion> -->
+		<spawn npc_id="214160">
+		    <spot h="87" z="1008.5629" y="418.34988" x="575.94934" random_walk="6"/>
+		</spawn>
+		<!-- Indratu Mender
+		<Indratu Legion> -->
+		<spawn npc_id="214161">
+		    <spot h="19" z="1012.7516" y="530.6599" x="615.2412"/>
+		</spawn>
+		<!-- Adjutant Ursanafi
+		<Indratu Legion> -->
+		<spawn npc_id="214163">
+		    <spot h="72" z="997.0809" y="566.34717" x="550.72546"/>
+		</spawn>
+		<!-- Commander Inshar
+		<Indratu Legion> -->
+		<spawn npc_id="214164">
+		    <spot h="92" z="1005.33105" y="670.3475" x="465.39813" random_walk="6"/>
+		</spawn>
+		
+		<!-- Erebus
+		<Daeva Of Zephyr>
+		A Daeva Of Zephyr infiltrating the Indratu Fortress -->
+		<spawn npc_id="204651">
+			<spot x="571.47500" y="354.72200" z="1013.1900" h="79"/>
+		</spawn>
+		<!-- Major Blessed Relics -->
+		<spawn npc_id="831989">
+            <spot x="557.18760" y="339.38150" z="1015.1280" h="34"/>
+        </spawn>
+		<!-- Indratu Fortress Exit -->
+		<spawn npc_id="700271">
+			<spot x="564.38025" y="324.95798" z="1015.7567" entity_id="28"/>
+		</spawn>
+		<!-- Indratu Fortress Gate -->
+		<spawn npc_id="700372">
+            <spot x="524.15771" y="481.23468" z="1013.5057" entity_id="52"/>
+			<spot x="480.01099" y="575.73517" z="1013.5405" entity_id="53"/>
+		</spawn>
+		<!-- Balaur Artifact
+		An Artifact inside Indratu Fortress -->
+		<spawn npc_id="700515">
+			<spot x="491.68869" y="516.29236" z="968.84601" entity_id="54"/>
+		</spawn>
+	</spawn_map>
+</spawns>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+<!--
+    Quest Daevanion 3.9/4.5
+	Make By (Encom)
+ -->
+	<!-- 1988 A Meeting With A Sage (Elyos Only) handled by script -->
+	<!-- 1989 A Sage's Teachings (Elyos Only) handled by script -->
+	<!-- 1990 A Sage's Gift (Elyos Only) handled by script -->
+	<!-- 1993 Another Beginning (Elyos Only) handled by script -->
+	<!-- 1994 A New Choice (Elyos Only) handled by script -->
+	<!-- 80291 Durable Daevanion Weapon (Elyos Only) handled by script -->
+	
+	<!-- Durable Daevanion Armor (Elyos Only) -->
+	<item_collecting start_npc_ids="831384" id="80290"/>
+	<!-- Out With The Old Armor (Elyos Only) -->
+	<item_collecting start_npc_ids="831384" id="80292"/>
+	<!-- I'd Like This One, Instead! (Elyos Only) -->
+	<item_collecting start_npc_ids="831384" id="80293"/>
+	<!-- The Protection Of The Sage II (Elyos Only) -->
+	<report_to_many id="80310" start_npc_ids="831384" end_npc_ids="831384">
+		<npc_infos var="0" npc_id="831384" quest_dialog="1003" close_dialog="1009"/>
+	</report_to_many>
+	
+	
+	<!-- 2988 The Wise In Disguise (Asmodians Only) handled by script -->
+	<!-- 2989 Ceremony Of The Wise (Asmodians Only) handled by script -->
+	<!-- 2990 Making The Daevanion Weapon (Asmodians Only) handled by script -->
+	<!-- 2993 Another Beginning (Asmodians Only) handled by script -->
+	<!-- 2994 A New Choice (Asmodians Only) handled by script -->
+	<!-- 80295 Durable Daevanion Weapon (Asmodians Only) handled by script -->
+	<!-- Durable Daevanion Armor (Asmodians Only) -->
+	<item_collecting start_npc_ids="831387" id="80294"/>
+	<!-- Out With The Old Armor (Asmodians Only) -->
+	<item_collecting start_npc_ids="831387" id="80296"/>
+	<!-- I'd Like This One, Instead! (Asmodians Only) -->
+	<item_collecting start_npc_ids="831387" id="80297"/>
+	<!-- The Protection Of The Sage II (Asmodians Only) -->
+	<report_to_many id="80311" start_npc_ids="831387" end_npc_ids="831387">
+		<npc_infos var="0" npc_id="831387" quest_dialog="1003" close_dialog="1009"/>
+	</report_to_many>
+</quest_scripts>

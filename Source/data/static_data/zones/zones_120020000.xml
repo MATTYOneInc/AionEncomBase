@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zones>
+    <zone mapid="120020000" name="CONVENT_OF_MARCHUTAN_120020000" area_type="POLYGON" zone_type="SUB" priority="16" flags="54">
+        <points bottom="230.000000" top="330.000000">
+            <point x="1532.729980" y="1339.089966"/>
+			<point x="1477.563721" y="1446.601563"/>
+			<point x="1559.999756" y="1489.856934"/>
+			<point x="1612.971924" y="1381.405029"/>
+        </points>
+    </zone>
+	<zone mapid="120020000" name="DARK_EMPYREAN_SHELTER_120020000" area_type="POLYGON" zone_type="SUB" priority="16" flags="54">
+        <points bottom="459.663330" top="559.663330">
+            <point x="442.530090" y="442.996613"/>
+			<point x="552.855225" y="443.561829"/>
+			<point x="551.114685" y="556.655579"/>
+			<point x="441.955200" y="556.584961"/>
+        </points>
+    </zone>
+</zones>

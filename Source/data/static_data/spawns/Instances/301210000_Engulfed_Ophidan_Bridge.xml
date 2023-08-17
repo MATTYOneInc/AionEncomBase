@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ヨルムンガンドの進撃路
+	Spawn By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="301210000">
+		<!-- Balaur Power Generator -->
+		<spawn npc_id="701945">
+	        <spot x="492.81982" y="536.56732" z="598.24933" entity_id="162"/>
+	        <spot x="524.84589" y="427.63959" z="621.21320" entity_id="160"/>
+	        <spot x="602.73395" y="556.29407" z="591.52533" entity_id="158"/>
+	        <spot x="667.11389" y="474.22995" z="600.48346" entity_id="164"/>
+		</spawn>
+		<!-- Elyos Field Gun (Object Normal lvl:3) -->
+		<spawn npc_id="701947">
+			<spot x="339.84003" y="468.66354" z="595.2064" h="9"/>
+            <spot x="337.18887" y="513.1137" z="595.2064" h="109"/>
+		</spawn>
+		<!-- Asmodians Field Gun (Object Normal lvl:3) -->
+		<spawn npc_id="701948">
+			<spot x="771.9331" y="565.97644" z="577.08014" h="88"/>
+            <spot x="746.5495" y="569.6571" z="577.24384" h="89"/>
+		</spawn>
+		<!-- Elyos Field Gun (Object Normal lvl:3) -->
+		<spawn npc_id="701949">
+			<spot x="316.5503" y="502.77008" z="596.52875" h="0"/>
+            <spot x="317.76346" y="476.9133" z="596.5294" h="1"/>
+		</spawn>
+		<!-- Asmodians Field Gun (Object Normal lvl:3) -->
+		<spawn npc_id="701950">
+			<spot x="735.52246" y="548.4562" z="576.4035" h="100"/>
+            <spot x="773.91504" y="542.0265" z="576.25" h="78"/>
+		</spawn>
+		<!-- Daeva Of Zephyr Rearguard (NPC Normal lvl:65) -->
+		<spawn npc_id="701984">
+	        <spot x="316.89774" y="494.96988" z="596.2939" h="119"/>
+            <spot x="317.85175" y="484.25467" z="596.3323" h="5"/>
+		</spawn>
+		<!-- Archon Of Dusk Rearguard (NPC Normal lvl:65) -->
+		<spawn npc_id="701985">
+	        <spot x="759.99097" y="555.41235" z="577.1164" h="87"/>
+            <spot x="754.0445" y="556.09015" z="577.1496" h="88"/>
+		</spawn>
+		<!-- Daeva Of Zephyr Rearguard (NPC Normal lvl:65) -->
+		<spawn npc_id="701986">
+	        <spot x="329.89984" y="487.55933" z="596.0588" h="111"/>
+            <spot x="329.28595" y="493.1939" z="596.1075" h="10"/>
+		</spawn>
+		<!-- Archon Of Dusk Rearguard (NPC Normal lvl:65) -->
+		<spawn npc_id="701987">
+	        <spot x="755.3768" y="565.8618" z="577.1246" h="87"/>
+            <spot x="762.47504" y="564.5854" z="577.09784" h="87"/>
+		</spawn>
+		<!-- Moireste (NPC Normal lvl:65) -->
+		<spawn npc_id="802025">
+	        <spot x="306.3371" y="488.438" z="598.5838" h="2"/>
+		</spawn>
+		<!-- Asthyn (NPC Normal lvl:65) -->
+		<spawn npc_id="802026">
+	        <spot x="760.0722" y="574.4416" z="578.4367" h="87"/>
+		</spawn>
+		
+		<!-- Beritra Barricade -->
+		<spawn npc_id="233856">
+			<spot x="745.93378" y="470.74503" z="587.52997" entity_id="33"/>
+			<spot x="590.53461" y="421.71255" z="611.59485" entity_id="92"/>
+			<spot x="638.79242" y="430.97174" z="605.80658" entity_id="96"/>
+			<spot x="429.13748" y="495.87567" z="601.07263" entity_id="165"/>
+			<spot x="654.28827" y="525.44110" z="592.97992" entity_id="167"/>
+			<spot x="564.21729" y="557.60565" z="599.08472" entity_id="168"/>
+		</spawn>
+		<!-- Beritra's Sentinel -->
+		<spawn npc_id="233473">
+			<spot x="661.59784" y="519.6957" z="594.3161" h="112"/>
+            <spot x="419.8983" y="495.40906" z="602.66815" h="61"/>
+            <spot x="579.3273" y="420.9964" z="614.9182" h="118"/>
+            <spot x="559.13654" y="553.1223" z="600.67896" h="13"/>
+            <spot x="648.8516" y="434.70456" z="604.2337" h="14"/>
+            <spot x="751.37354" y="477.99728" z="586.0397" h="29"/>
+		</spawn>
+		<!-- =================================== -->
+		<!-- ========= Bridge Watchpost ======== -->
+		<!-- =================================== -->
+		<!-- Defense Post Flag (Object Normal lvl:3) -->
+		<spawn npc_id="802044">
+			<spot x="492.81982" y="536.56732" z="598.24933" h="0"/>
+		</spawn>
+		<!-- Defense Post Magus -->
+		<spawn npc_id="233474">
+			<spot x="484.61765" y="531.6245" z="597.375" h="70"/>
+		</spawn>
+		<!-- Defense Post Combatant -->
+		<spawn npc_id="233475">
+			<spot x="483.3327" y="538.1493" z="597.5" h="58"/>
+		</spawn>
+		<!-- Defense Post Scout -->
+		<spawn npc_id="233476">
+			<spot x="500.20483" y="532.2458" z="597.5" h="116"/>
+		</spawn>
+		<!-- Defense Post Rearguard -->
+		<spawn npc_id="233477">
+			<spot x="498.373" y="543.4837" z="597.5" h="9"/>
+		</spawn>
+		<!-- =================================== -->
+		<!-- ====== Northern Approach Post ===== -->
+		<!-- =================================== -->
+		<!-- Northern Approach Post Flag (Object Normal lvl:3) -->
+		<spawn npc_id="802038">
+			<spot x="524.84589" y="427.63959" z="621.21320" h="0"/>
+		</spawn>
+		<!-- Northern Approach Post Magus -->
+		<spawn npc_id="233478">
+			<spot x="525.0882" y="436.3445" z="620.25" h="27"/>
+		</spawn>
+		<!-- Northern Approach Post Combatant -->
+		<spawn npc_id="233479">
+			<spot x="519.06854" y="434.295" z="620.125" h="45"/>
+		</spawn>
+		<!-- Northern Approach Post Magician -->
+		<spawn npc_id="233480">
+			<spot x="533.65063" y="428.35898" z="620.25" h="5"/>
+		</spawn>
+		<!-- =================================== -->
+		<!-- ====== Southern Approach Post ===== -->
+		<!-- =================================== -->
+		<!-- Southern Approach Post Flag (Object Normal lvl:3) -->
+		<spawn npc_id="802041">
+			<spot x="602.73395" y="556.29407" z="591.52533" h="0"/>
+		</spawn>
+		<!-- Southern Approach Post Combatant -->
+		<spawn npc_id="233481">
+			<spot x="610.57794" y="559.381" z="590.625" h="5"/>
+		</spawn>
+		<!-- Southern Approach Post Scout -->
+		<spawn npc_id="233482">
+			<spot x="593.646" y="556.11426" z="590.5221" h="58"/>
+		</spawn>
+		<!-- Southern Approach Post Assaulter -->
+		<spawn npc_id="233483">
+			<spot x="607.1519" y="548.563" z="590.5" h="103"/>
+		</spawn>
+		<!-- =================================== -->
+		<!-- ===== Chokepoint Defence Post ===== -->
+		<!-- =================================== -->
+		<!-- Guard Post Flag (Object Normal lvl:3) -->
+		<spawn npc_id="802035">
+			<spot x="667.11389" y="474.22995" z="600.48346" h="0"/>
+		</spawn>
+		<!-- Guard Post Magus -->
+		<spawn npc_id="233484">
+			<spot x="674.94977" y="478.36877" z="599.5594" h="8"/>
+		</spawn>
+		<!-- Guard Post Combatant -->
+		<spawn npc_id="233485">
+			<spot x="672.62286" y="467.2902" z="599.53894" h="107"/>
+		</spawn>
+		<!-- Guard Post Scout -->
+		<spawn npc_id="233486">
+			<spot x="660.30194" y="466.5498" z="599.8218" h="77"/>
+		</spawn>
+		<!-- Guard Post Rearguard -->
+		<spawn npc_id="233487">
+			<spot x="663.40594" y="483.60574" z="599.7871" h="37"/>
+		</spawn>
+	</spawn_map>
+</spawns>

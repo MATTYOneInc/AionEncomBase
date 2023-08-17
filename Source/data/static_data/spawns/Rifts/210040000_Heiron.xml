@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Rift インタルディカ 3.9
+	Made By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="210040000">
+		<!-- Rift -->
+		<spawn npc_id="700137" handler="RIFT">
+			<spot x="2662.01" y="434.266" z="398.717" anchor="HEIRON_AM"/>
+			<spot x="1300.27" y="1437.92" z="112.788" anchor="HEIRON_BM"/>
+			<spot x="1103.57" y="656.180" z="132.959" anchor="HEIRON_CM"/>
+			<spot x="649.655" y="1821.23" z="105.332" anchor="HEIRON_DM"/>
+			<spot x="722.995" y="2524.74" z="126.140" anchor="HEIRON_EM"/>
+			<spot x="503.393" y="555.310" z="128.500" anchor="HEIRON_FM"/>
+			<spot x="2742.70" y="2078.44" z="142.533" anchor="HEIRON_GM"/>
+			<spot x="2132.44" y="434.266" z="228.000" anchor="HEIRON_AS"/>
+			<spot x="1955.41" y="1833.32" z="124.302" anchor="HEIRON_BS"/>
+			<spot x="881.969" y="903.924" z="119.970" anchor="HEIRON_CS"/>
+			<spot x="861.482" y="2194.45" z="124.491" anchor="HEIRON_DS"/>
+			<spot x="291.566" y="2658.45" z="103.402" anchor="HEIRON_ES"/>
+			<spot x="362.175" y="514.962" z="133.875" anchor="HEIRON_FS"/>
+			<spot x="1905.49" y="2577.75" z="148.369" anchor="HEIRON_GS"/>
+		</spawn>
+	</spawn_map>
+</spawns>

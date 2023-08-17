@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Base 안트릭샤 각성지 4.7
+	Made By (Encom)
+ -->
+<spawns>
+	<spawn_map map_id="400030000">
+		<!-- [STARTING AREA] -->
+		<!-- [BELUS STARTING AREA] -->
+		<base_spawn id="6">
+			<simple_race race="ELYOS">
+				<!-- Belus Staging Area -->
+				<spawn npc_id="804106">
+					<spot x="284.33505" y="286.93774" z="679.6373" h="16"/>
+				</spawn>
+				<!-- Belus Staging Area -->
+				<spawn npc_id="804107">
+					<spot x="284.33505" y="286.93774" z="679.6373" h="16"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Belus Staging Area -->
+				<spawn npc_id="804106">
+					<spot x="284.33505" y="286.93774" z="679.6373" h="16"/>
+				</spawn>
+				<!-- Belus Staging Area -->
+				<spawn npc_id="804107">
+					<spot x="284.33505" y="286.93774" z="679.6373" h="16"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Belus Staging Area -->
+				<spawn npc_id="804106">
+					<spot x="284.33505" y="286.93774" z="679.6373" h="16"/>
+				</spawn>
+				<!-- Belus Staging Area -->
+				<spawn npc_id="804107">
+					<spot x="284.33505" y="286.93774" z="679.6373" h="16"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [ASPIDA STARTING AREA] -->
+		<base_spawn id="7">
+			<simple_race race="ELYOS">
+				<!-- Aspida Staging Area -->
+				<spawn npc_id="804108">
+					<spot x="284.2117" y="735.9313" z="679.61664" h="105"/>
+				</spawn>
+				<!-- Aspida Staging Area -->
+				<spawn npc_id="804109">
+					<spot x="284.2117" y="735.9313" z="679.61664" h="105"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Aspida Staging Area -->
+				<spawn npc_id="804108">
+					<spot x="284.2117" y="735.9313" z="679.61664" h="105"/>
+				</spawn>
+				<!-- Aspida Staging Area -->
+				<spawn npc_id="804109">
+					<spot x="284.2117" y="735.9313" z="679.61664" h="105"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Aspida Staging Area -->
+				<spawn npc_id="804108">
+					<spot x="284.2117" y="735.9313" z="679.61664" h="105"/>
+				</spawn>
+				<!-- Aspida Staging Area -->
+				<spawn npc_id="804109">
+					<spot x="284.2117" y="735.9313" z="679.61664" h="105"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [ATANATOS STARTING AREA] -->
+		<base_spawn id="8">
+			<simple_race race="ELYOS">
+				<!-- Atanatos Staging Area -->
+				<spawn npc_id="804110">
+					<spot x="729.99634" y="737.3712" z="679.90875" h="75"/>
+				</spawn>
+				<!-- Atanatos Staging Area -->
+				<spawn npc_id="804111">
+					<spot x="729.99634" y="737.3712" z="679.90875" h="75"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Atanatos Staging Area -->
+				<spawn npc_id="804110">
+					<spot x="729.99634" y="737.3712" z="679.90875" h="75"/>
+				</spawn>
+				<!-- Atanatos Staging Area -->
+				<spawn npc_id="804111">
+					<spot x="729.99634" y="737.3712" z="679.90875" h="75"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Atanatos Staging Area -->
+				<spawn npc_id="804110">
+					<spot x="729.99634" y="737.3712" z="679.90875" h="75"/>
+				</spawn>
+				<!-- Atanatos Staging Area -->
+				<spawn npc_id="804111">
+					<spot x="729.99634" y="737.3712" z="679.90875" h="75"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [DISILLON STARTING AREA] -->
+		<base_spawn id="9">
+			<simple_race race="ELYOS">
+				<!-- Disillon Staging Area -->
+				<spawn npc_id="804112">
+					<spot x="732.0809" y="293.1979" z="680.0128" h="44"/>
+				</spawn>
+				<!-- Disillon Staging Area -->
+				<spawn npc_id="804113">
+					<spot x="732.0809" y="293.1979" z="680.0128" h="44"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Disillon Staging Area -->
+				<spawn npc_id="804112">
+					<spot x="732.0809" y="293.1979" z="680.0128" h="44"/>
+				</spawn>
+				<!-- Disillon Staging Area -->
+				<spawn npc_id="804113">
+					<spot x="732.0809" y="293.1979" z="680.0128" h="44"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Disillon Staging Area -->
+				<spawn npc_id="804112">
+					<spot x="732.0809" y="293.1979" z="680.0128" h="44"/>
+				</spawn>
+				<!-- Disillon Staging Area -->
+				<spawn npc_id="804113">
+					<spot x="732.0809" y="293.1979" z="680.0128" h="44"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+	</spawn_map>
+</spawns>

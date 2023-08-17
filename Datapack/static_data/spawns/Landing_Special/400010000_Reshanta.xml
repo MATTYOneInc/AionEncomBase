@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Abyss Landing 5.3
+	[Siege Commander, Spirit Monument, Defeat Monument, Annihilation Monument]
+	Made By (Encom)
+ -->
+<spawns>
+    <spawn_map map_id="400010000">
+		<!-- ############################# -->
+		<!-- ## ELYOS [SPIRIT MONUMENT] ## -->
+		<!-- ############################# -->
+		<landing_special_spawn id="1">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Krotan Guardian Spirit's Monument
+				<20,000 Points> -->
+				<spawn npc_id="883922">
+				    <spot h="2" z="2938.1094" y="205.89395" x="1739.0397"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="2">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Miren Guardian Spirit's Monument
+				<20,000 Points> -->
+				<spawn npc_id="883923">
+				    <spot h="63" z="2938.1038" y="215.76962" x="1805.2012"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="3">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Kysis Guardian Spirit's Monument
+				<20,000 Points> -->
+				<spawn npc_id="883924">
+				    <spot h="33" z="2938.18" y="245.40346" x="1767.0327"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		
+		<!-- ############################# -->
+		<!-- ## ELYOS [SIEGE COMMANDER] ## -->
+		<!-- ############################# -->
+		<landing_special_spawn id="4">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Krotan Commander
+				<15,000 Points> -->
+				<spawn npc_id="883635">
+					<spot h="3" z="2938.254" y="214.58124" x="1796.8647"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="5">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Miren Commander
+				<15,000 Points> -->
+				<spawn npc_id="883665">
+					<spot h="64" z="2938.256" y="207.36108" x="1747.0663"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="6">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Kysis Commander
+				<15,000 Points> -->
+				<spawn npc_id="883666">
+					<spot h="93" z="2938.1106" y="184.72113" x="1775.7256"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		
+		<!-- ################################### -->
+		<!-- ## ELYOS [ANNIHILATION MONUMENT] ## -->
+		<!-- ################################### -->
+		<landing_special_spawn id="7">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Ide Cannon Tumon 1 Annihilation Monument
+				<10,000 Points> -->
+				<spawn npc_id="883925">
+					<spot h="73" z="2938.3467" y="243.89453" x="1813.1991"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="8">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Ide Cannon Tumon 2 Annihilation Monument
+				<10,000 Points> -->
+				<spawn npc_id="883926">
+					<spot h="113" z="2938.3467" y="230.33218" x="1722.9907"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="9">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Artillery Tumon 1 Annihilation Monument
+				<10,000 Points> -->
+				<spawn npc_id="883927">
+					<spot h="52" z="2938.3467" y="191.28247" x="1821.0941"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="10">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Artillery Tumon 2 Annihilation Monument
+				<10,000 Points> -->
+				<spawn npc_id="883928">
+					<spot h="13" z="2938.3467" y="177.8445" x="1730.7114"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="11">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Wurg The Glacier Annihilation Monument
+				<15,000 Points> -->
+				<spawn npc_id="883929">
+					<spot h="52" z="2938.3467" y="197.18973" x="1806.1101"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="12">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Terracrusher Annihilation Monument
+				<15,000 Points> -->
+				<spawn npc_id="883930">
+					<spot h="13" z="2938.3467" y="187.89598" x="1743.1375"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		
+		<!-- ################################# -->
+		<!-- ## ASMODIANS [SPIRIT MONUMENT] ## -->
+		<!-- ################################# -->
+		<landing_special_spawn id="13">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Krotan Guardian Spirit's Monument
+				<20,000 Points> -->
+				<spawn npc_id="883941">
+				    <spot h="95" z="3033.9053" y="2780.1924" x="998.0774"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="14">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Miren Guardian Spirit's Monument
+				<20,000 Points> -->
+				<spawn npc_id="883942">
+				    <spot h="95" z="3033.8286" y="2806.8828" x="957.17487"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="15">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Kysis Guardian Spirit's Monument
+				<20,000 Points> -->
+				<spawn npc_id="883943">
+				    <spot h="64" z="3033.8347" y="2821.7656" x="1022.9476"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		
+		<!-- ################################# -->
+		<!-- ## ASMODIANS [SIEGE COMMANDER] ## -->
+		<!-- ################################# -->
+		<landing_special_spawn id="16">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Krotan Commander
+				<15,000 Points> -->
+				<spawn npc_id="883636">
+					<spot h="65" z="3033.835" y="2808.518" x="964.3976"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="17">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Miren Commander
+				<15,000 Points> -->
+				<spawn npc_id="883667">
+					<spot h="5" z="3033.8362" y="2820.0134" x="1015.99493"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="18">
+			<landing_special_type fstate="ACTIVE">
+				<!-- Kysis Commander
+				<15,000 Points> -->
+				<spawn npc_id="883668">
+					<spot h="34" z="3033.8362" y="2839.9272" x="984.7272"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		
+		<!-- ################################# -->
+		<!-- ## ASMODIANS [DEFEAT MONUMENT] ## -->
+		<!-- ################################# -->
+		<landing_special_spawn id="19">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Ide Cannon Tumon 1 Defeat Monument
+				<10,000 Points> -->
+				<spawn npc_id="883944">
+					<spot h="15" z="3034.072" y="2778.0947" x="951.8226"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="20">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Ide Cannon Tumon 2 Defeat Monument
+				<10,000 Points> -->
+				<spawn npc_id="883945">
+					<spot h="54" z="3034.072" y="2798.6606" x="1040.9861"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="21">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Artillery Tumon 1 Defeat Monument
+				<10,000 Points> -->
+				<spawn npc_id="883946">
+					<spot h="115" z="3034.072" y="2829.9714" x="939.78534"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="22">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Artillery Tumon 2 Defeat Monument
+				<10,000 Points> -->
+				<spawn npc_id="883947">
+					<spot h="75" z="3034.072" y="2850.524" x="1029.0254"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="23">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Wurg The Glacier Defeat Monument
+				<15,000 Points> -->
+				<spawn npc_id="883948">
+					<spot h="115" z="3034.072" y="2825.3113" x="955.03766"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+		<landing_special_spawn id="24">
+			<landing_special_type fstate="ACTIVE">
+			    <!-- Terracrusher Defeat Monument
+				<15,000 Points> -->
+				<spawn npc_id="883949">
+					<spot h="75" z="3034.072" y="2839.71" x="1017.5427"/>
+				</spawn>
+			</landing_special_type>
+			<landing_special_type fstate="NO_ACTIVE">
+			</landing_special_type>
+		</landing_special_spawn>
+    </spawn_map>
+</spawns>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	폭주한 아노하
+	分かれたカタラム 4.7
+	Made By (Encom)
+ -->
+<anoha_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="anoha_schedule.xsd">
+	<!-- [BERSERK ANOHA] -->
+	<anoha id="1">
+		<berserkTime>0 0 11 ? * MON-SUN *</berserkTime>
+		<berserkTime>0 0 15 ? * MON-SUN *</berserkTime>
+		<berserkTime>0 0 19 ? * MON-SUN *</berserkTime>
+		<berserkTime>0 0 9 ? * MON-SUN *</berserkTime>
+	</anoha>
+</anoha_schedule>
