@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
-<!--
-    Quest Iluma 5.5
-	Make By (Encom)
- -->
-    <!-- The Wishing Fountain (Elyos Only) -->
-	<fountain_rewards id="15667" start_npc_ids="805778"/>
-</quest_scripts>

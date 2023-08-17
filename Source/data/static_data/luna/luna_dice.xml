@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!--
-	Daishunerk's Game Of Fate
- -->
-<luna_dice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="luna_dice.xsd">
-    <table id="1">
-        <reward item_id="165060002" count="1"/>
-    </table>
-</luna_dice>

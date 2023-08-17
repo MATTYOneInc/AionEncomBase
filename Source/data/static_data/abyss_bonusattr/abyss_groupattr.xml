@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-	Abyss Group 4.8
-	Made By Ranastic (Encom)
- -->
-<abyss_groupattrs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="abyss_groupattr.xsd">
-	<abyss_groupattr buff_id="1" world="400010000" name="에레슈란타"/>
-	<abyss_groupattr buff_id="2" world="210130000 220140000" name="용계"/>
-</abyss_groupattrs>
