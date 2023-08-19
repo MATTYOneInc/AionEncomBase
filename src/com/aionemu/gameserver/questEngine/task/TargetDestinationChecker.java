@@ -21,7 +21,6 @@ import com.aionemu.gameserver.utils.MathUtil;
 
 final class TargetDestinationChecker extends DestinationChecker {
 
-	private final Creature follower;
 	private final Creature target;
 
 	/**

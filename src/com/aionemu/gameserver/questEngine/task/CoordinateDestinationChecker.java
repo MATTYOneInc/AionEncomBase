@@ -21,7 +21,6 @@ import com.aionemu.gameserver.utils.MathUtil;
 
 final class CoordinateDestinationChecker extends DestinationChecker {
 
-	private final Creature follower;
 	private final float x;
 	private final float y;
 	private final float z;

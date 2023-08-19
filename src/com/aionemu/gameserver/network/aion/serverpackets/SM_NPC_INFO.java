@@ -1,5 +1,5 @@
 /*
- * This file is part of Encom.
+ * This file is part of Encom. **ENCOM FUCK OTHER SVN**
  *
  *  Encom is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser Public License as published by
@@ -33,6 +33,7 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.TownService;
 import org.apache.commons.lang.StringUtils;
+
 import java.util.Map.Entry;
 
 public class SM_NPC_INFO extends AionServerPacket

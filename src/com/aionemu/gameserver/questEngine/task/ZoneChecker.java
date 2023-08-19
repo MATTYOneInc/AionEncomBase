@@ -19,18 +19,33 @@ package com.aionemu.gameserver.questEngine.task;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
-final class ZoneChecker extends DestinationChecker
-{
-	protected Creature follower;
+final class ZoneChecker extends DestinationChecker {
+
 	private final ZoneName zoneName;
-	
+
 	ZoneChecker(Creature follower, ZoneName zoneName) {
 		this.follower = follower;
 		this.zoneName = zoneName;
 	}
-	
+
 	@Override
 	boolean check() {
 		return follower.isInsideZone(zoneName);
+	}
+}
+
+final class ZoneChecker2 extends DestinationChecker {
+
+	private final ZoneName zone1, zone2;
+
+	ZoneChecker2(Creature follower, ZoneName zone1, ZoneName zone2) {
+		this.follower = follower;
+		this.zone1 = zone1;
+		this.zone2 = zone2;
+	}
+
+	@Override
+	boolean check() {
+		return follower.isInsideZone(zone1) || follower.isInsideZone(zone2);
 	}
 }

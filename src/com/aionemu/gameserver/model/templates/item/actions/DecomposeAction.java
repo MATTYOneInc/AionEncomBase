@@ -64,6 +64,7 @@ public class DecomposeAction extends AbstractItemAction
 	public boolean isSelect;
 	
 	private static final Logger log = LoggerFactory.getLogger(DecomposeAction.class);
+	
 	private static Map<Integer, List<ItemTemplate>> manastones;
 	private static Map<Race, int[]> chunkEarth = new HashMap<Race, int[]>();
 	
@@ -105,8 +106,8 @@ public class DecomposeAction extends AbstractItemAction
 	private static int[] scrolls = {164002002, 164002058, 164002010, 164002056, 164002057, 164002003, 164002059, 164002011, 164002004, 164002012, 164002012, 164000122, 164000131, 164000118};
 	private static int[] potion = {162000045, 162000079, 162000016, 162000021, 162000015, 162000027, 162000020, 162000044, 162000043, 162000026, 162000019, 162000014, 162000023, 162000022};
 	
-	@Override
-	public boolean canAct(Player player, Item parentItem, Item targetItem) {
+    @Override
+    public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		int decomposeLevel = parentItem.getItemTemplate().getRequiredLevel(player.getCommonData().getPlayerClass());
 		if (decomposeLevel == -1 || decomposeLevel > player.getLevel()) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_CANNOT_USE_ITEM_TOO_LOW_LEVEL_MUST_BE_THIS_LEVEL(parentItem.getNameId(), parentItem.getItemTemplate().getLevel()));
@@ -124,69 +125,62 @@ public class DecomposeAction extends AbstractItemAction
 				return false;
 			}
 		}
-		return true;
+        if (player.getInventory().isFull()) {
+            PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300447));
+            return false;
+        }
+        return true;
 	}
-	
+
 	@Override
 	public void act(final Player player, final Item parentItem, final Item targetItem) {
-		final List<SelectItem> selectedList = new ArrayList<SelectItem>();
-		player.getController().cancelUseItem();
+		// player.getController().cancelUseItem();
+
 		if (this.isSelect) {
-			final ItemUseObserver observer = new ItemUseObserver() {
-				@Override
-				public void abort() {
-					player.getController().cancelTask(TaskId.ITEM_USE);
-					player.removeItemCoolDown(parentItem.getItemTemplate().getUseLimits().getDelayId());
-					player.getObserveController().removeObserver(this);
-					PacketSendUtility.sendPacket(player, new SM_SELECT_ITEM_ADD(0, 0));
-				}
-			};
-			player.getObserveController().attach(observer);
-			player.getController().addTask(TaskId.ITEM_USE, ThreadPoolManager.getInstance().schedule(new Runnable() {
-				@Override
-				public void run() {
-					SelectItems selectitems = DataManager.DECOMPOSABLE_SELECT_ITEM_DATA.getSelectItem(player.getPlayerClass(), player.getRace(), parentItem.getItemId());
-					if (selectitems == null) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_INVALID_STANCE(parentItem.getNameId()));
-						return;
-					} else {
-						for (SelectItem resultItem : selectitems.getItems()) {
-							if (canAcquireSelect(player, resultItem)) {
-								selectedList.add(resultItem);
-							}
-						}
-						PacketSendUtility.sendPacket(player, new SM_SELECT_ITEM(player, selectedList, parentItem.getObjectId()));
-					}
-				}
-			}, 0));
-		} else {
+			SelectItems selectItems = DataManager.DECOMPOSABLE_SELECT_ITEM_DATA.getSelectItem(player.getPlayerClass(), player.getRace(), parentItem.getItemId());
+			PacketSendUtility.sendPacket(player, new SM_SELECT_ITEM(selectItems, parentItem.getObjectId().intValue()));
+			return;
+		}
+
+		// Extracts all Items of the specified ItemId
 		List<ExtractedItemsCollection> itemsCollections = DataManager.DECOMPOSABLE_ITEMS_DATA.getInfoByItemId(parentItem.getItemId());
+
+		// Filters only Items that are suitable for Player Level
 		Collection<ExtractedItemsCollection> levelSuitableItems = filterItemsByLevel(player, itemsCollections);
+
+		// Select only 1 Item based on Chance Attributes
 		final ExtractedItemsCollection selectedCollection = selectItemByChance(levelSuitableItems);
-		//If player stay "Rest/Sitdown" he can open fast box !!!
+		final ExtractedItemsCollection selectedCollections = selectItemByChance(levelSuitableItems);
+
 		if (player.isInState(CreatureState.RESTING)) {
 			PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 2000, 0, 0));
 		} else {
 			PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 3000, 0, 0));
 		}
+
 		final ItemUseObserver observer = new ItemUseObserver() {
+
 			@Override
 			public void abort() {
 				player.getController().cancelTask(TaskId.ITEM_USE);
 				player.removeItemCoolDown(parentItem.getItemTemplate().getUseLimits().getDelayId());
 				if (parentItem.getItemTemplate().getCategory() == ItemCategory.GATHERABLE) {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_UNCOMPRESS_COMPRESSED_ITEM_CANCELED(parentItem.getItemTemplate().getNameId()));
-				} else if ((targetItem != null) && (targetItem.getItemTemplate().isArmor() || targetItem.getItemTemplate().isWeapon())) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_CANCELED(targetItem.getNameId()));
-				} else {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_CANCELED(new DescriptionId(parentItem.getItemTemplate().getNameId())));
 				}
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 2, 0), true);
+				else if ((targetItem != null) && (targetItem.getItemTemplate().isArmor() || targetItem.getItemTemplate().isWeapon())) {
+					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_CANCELED(targetItem.getNameId()));
+				}
+				else {
+					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_CANCELED(parentItem.getNameId()));
+				}
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), 0, parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 2), true);
 				player.getObserveController().removeObserver(this);
 			}
 		};
+
 		player.getObserveController().attach(observer);
 		player.getController().addTask(TaskId.ITEM_USE, ThreadPoolManager.getInstance().schedule(new Runnable() {
+
 			@Override
 			public void run() {
 				player.getObserveController().removeObserver(observer);
@@ -394,15 +388,19 @@ public class DecomposeAction extends AbstractItemAction
 				if (slotReq > 0 && inventory.getFreeSlots() < slotReq) {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_DECOMPRESS_INVENTORY_IS_FULL);
 					return false;
-				} if (specialSlotreq > 0 && inventory.getSpecialCubeFreeSlots() < specialSlotreq) {
+				} 
+				if (specialSlotreq > 0 && inventory.getSpecialCubeFreeSlots() < specialSlotreq) {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_DECOMPRESS_INVENTORY_IS_FULL);
 					return false;
-				} if (player.getLifeStats().isAlreadyDead() || !player.isSpawned()) {
+				} 
+				if (player.getLifeStats().isAlreadyDead() || !player.isSpawned()) {
 					return false;
-				} if (!player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1)) {
+				} 
+				if (!player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1)) {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_NO_TARGET_ITEM);
 					return false;
-				} if (selectedCollection.getItems().isEmpty() && selectedCollection.getRandomItems().isEmpty()) {
+				} 
+				if (selectedCollection.getItems().isEmpty() && selectedCollection.getRandomItems().isEmpty()) {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_FAILED(parentItem.getNameId()));
 					return false;
 				}
@@ -410,7 +408,7 @@ public class DecomposeAction extends AbstractItemAction
 			}
 		}, 3000));
 	}
-}
+
 	
 	private boolean canAcquireSelect(Player player, SelectItem resultItem) {
 		Race race = resultItem.getRace();
@@ -420,57 +418,58 @@ public class DecomposeAction extends AbstractItemAction
 		return true;
 	}
 
-	private Collection<ExtractedItemsCollection> filterItemsByLevel(Player player, List<ExtractedItemsCollection> itemsCollections) {
-		int playerLevel = player.getLevel();
-		Collection<ExtractedItemsCollection> result = new ArrayList<ExtractedItemsCollection>();
-		for (ExtractedItemsCollection collection : itemsCollections) {
-			if (collection.getMinLevel() > playerLevel) {
-				continue;
-			} if (collection.getMaxLevel() > 0 && collection.getMaxLevel() < playerLevel) {
-				continue;
-			}
-			result.add(collection);
-		}
-		return result;
-	}
-	
-	private ExtractedItemsCollection selectItemByChance(Collection<ExtractedItemsCollection> itemsCollections) {
-		float sumOfChances = calcSumOfChances(itemsCollections);
-		float currentSum = 0f;
-		float rnd = (float) Rnd.get(0, (int) (sumOfChances - 1) * 1000) / 1000;
-		ExtractedItemsCollection selectedCollection = null;
-		for (ExtractedItemsCollection collection : itemsCollections) {
-			currentSum += collection.getChance();
-			if (rnd < currentSum) {
-				selectedCollection = collection;
-				break;
-			}
-		}
-		return selectedCollection;
-	}
-	
-	private int calcMaxCountOfSlots(ExtractedItemsCollection itemsCollections, Player player, boolean special) {
-		int maxCount = 0;
-		for (ResultedItem item : itemsCollections.getItems()) {
-			if (item.getRace().equals(Race.PC_ALL) || player.getRace().equals(item.getRace())) {
-				if (item.getPlayerClass().equals(PlayerClass.ALL) || player.getPlayerClass().equals(item.getPlayerClass())) {
-					ItemTemplate template = DataManager.ITEM_DATA.getItemTemplate(item.getItemId());
-					if (special && template.getExtraInventoryId() > 0) {
-						maxCount++;
-					} else if (template.getExtraInventoryId() < 1) {
-						maxCount++;
-					}
-				}
-			}
-		}
-		return maxCount;
-	}
-	
-	private float calcSumOfChances(Collection<ExtractedItemsCollection> itemsCollections) {
-		float sum = 0;
-		for (ExtractedItemsCollection collection : itemsCollections) {
-			sum += collection.getChance();
-		}
-		return sum;
-	}
+    private Collection<ExtractedItemsCollection> filterItemsByLevel(Player player, List<ExtractedItemsCollection> itemsCollections) {
+        int playerLevel = player.getLevel();
+        Collection<ExtractedItemsCollection> result = new ArrayList<>();
+        for (ExtractedItemsCollection collection : itemsCollections) {
+            if (collection.getMinLevel() > playerLevel) {
+                continue;
+            }
+            if (collection.getMaxLevel() > 0 && collection.getMaxLevel() < playerLevel) {
+                continue;
+            }
+            result.add(collection);
+        }
+        return result;
+    }
+
+    private ExtractedItemsCollection selectItemByChance(Collection<ExtractedItemsCollection> itemsCollections) {
+        float sumOfChances = calcSumOfChances(itemsCollections);
+        float currentSum = 0f;
+        float rnd = (float) Rnd.get(0, (int) (sumOfChances - 1) * 1000) / 1000;
+        ExtractedItemsCollection selectedCollection = null;
+        for (ExtractedItemsCollection collection : itemsCollections) {
+            currentSum += collection.getChance();
+            if (rnd < currentSum) {
+                selectedCollection = collection;
+                break;
+            }
+        }
+        return selectedCollection;
+    }
+
+    private int calcMaxCountOfSlots(ExtractedItemsCollection itemsCollections, Player player, boolean special) {
+        int maxCount = 0;
+        for (ResultedItem item : itemsCollections.getItems()) {
+            if (item.getRace().equals(Race.PC_ALL) || player.getRace().equals(item.getRace())) {
+                if (item.getPlayerClass().equals(PlayerClass.ALL) || player.getPlayerClass().equals(item.getPlayerClass())) {
+                    ItemTemplate template = DataManager.ITEM_DATA.getItemTemplate(item.getItemId());
+                    if (special && template.getExtraInventoryId() > 0) {
+                        maxCount++;
+                    } else if (template.getExtraInventoryId() < 1) {
+                        maxCount++;
+                    }
+                }
+            }
+        }
+        return maxCount;
+    }
+
+    private float calcSumOfChances(Collection<ExtractedItemsCollection> itemsCollections) {
+        float sum = 0;
+        for (ExtractedItemsCollection collection : itemsCollections) {
+            sum += collection.getChance();
+        }
+        return sum;
+    }
 }

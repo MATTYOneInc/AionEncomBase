@@ -16,7 +16,11 @@
  */
 package com.aionemu.gameserver.questEngine.task;
 
+import com.aionemu.gameserver.model.gameobjects.Creature;
+
 abstract class DestinationChecker {
 
-  abstract boolean check();
+	protected Creature follower;
+
+	abstract boolean check();
 }
