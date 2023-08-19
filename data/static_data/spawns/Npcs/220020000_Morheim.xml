@@ -8152,6 +8152,7 @@
 		<!-- Numutata (Monster Normal lvl:39) -->
  	    <spawn npc_id="217136" respawn_time="295">
  	        <spot x="2106.9697" y="722.9941" z="244.50148" h="72"/>
+			<spot x="1952.8685" y="448.1806" z="296.07974" h="114"/>
  	    </spawn>
 		<!-- Ice Claw Altar (Object Normal lvl:3) -->
 	    <spawn npc_id="700241" respawn_time="295">

@@ -2337,27 +2337,27 @@
 	<!-- Fledgling Daeva's Equipment Box -->
 	<decomposable item_id="188057339">
 	    <items>
-		    <item id="188057340" player_class="GLADIATOR" count="1"/>
+		    <item id="188057340" player_class="GLADIATOR" count="2"/>
 			<item id="188057342" player_class="GLADIATOR" count="1"/>
-		    <item id="188057340" player_class="TEMPLAR" count="1"/>
+		    <item id="188057340" player_class="TEMPLAR" count="2"/>
 			<item id="188057341" player_class="TEMPLAR" count="1"/>
-		    <item id="188057340" player_class="ASSASSIN" count="1"/>
+		    <item id="188057340" player_class="ASSASSIN" count="2"/>
 			<item id="188057343" player_class="ASSASSIN" count="1"/>
-		    <item id="188057340" player_class="RANGER" count="1"/>
+		    <item id="188057340" player_class="RANGER" count="2"/>
 			<item id="188057344" player_class="RANGER" count="1"/>
-		    <item id="188057340" player_class="CLERIC" count="1"/>
+		    <item id="188057340" player_class="CLERIC" count="2"/>
 			<item id="188057350" player_class="CLERIC" count="1"/>
-		    <item id="188057340" player_class="CHANTER" count="1"/>
+		    <item id="188057340" player_class="CHANTER" count="2"/>
 			<item id="188057349" player_class="CHANTER" count="1"/>
-		    <item id="188057340" player_class="SORCERER" count="1"/>
+		    <item id="188057340" player_class="SORCERER" count="2"/>
 			<item id="188057346" player_class="SORCERER" count="1"/>
-		    <item id="188057340" player_class="SPIRIT_MASTER" count="1"/>
+		    <item id="188057340" player_class="SPIRIT_MASTER" count="2"/>
 			<item id="188057347" player_class="SPIRIT_MASTER" count="1"/>
-		    <item id="188057340" player_class="GUNSLINGER" count="1"/>
+		    <item id="188057340" player_class="GUNSLINGER" count="2"/>
 			<item id="188057345" player_class="GUNSLINGER" count="1"/>
-		    <item id="188057340" player_class="SONGWEAVER" count="1"/>
+		    <item id="188057340" player_class="SONGWEAVER" count="2"/>
 		    <item id="188057348" player_class="SONGWEAVER" count="1"/>
-		    <item id="188057340" player_class="AETHERTECH" count="1"/>
+		    <item id="188057340" player_class="AETHERTECH" count="2"/>
 		    <item id="188057351" player_class="AETHERTECH" count="1"/>
 		</items>
 	</decomposable>
@@ -2476,27 +2476,27 @@
 	<!-- Elite Fledgling Daeva's Equipment Box -->
 	<decomposable item_id="188057352">
 	    <items>
-		    <item id="188057353" player_class="GLADIATOR" count="1"/>
+		    <item id="188057353" player_class="GLADIATOR" count="2"/>
 			<item id="188057354" player_class="GLADIATOR" count="1"/>
-		    <item id="188057353" player_class="TEMPLAR" count="1"/>
+		    <item id="188057353" player_class="TEMPLAR" count="2"/>
 			<item id="188057355" player_class="TEMPLAR" count="1"/>
-		    <item id="188057353" player_class="ASSASSIN" count="1"/>
+		    <item id="188057353" player_class="ASSASSIN" count="2"/>
 			<item id="188057356" player_class="ASSASSIN" count="1"/>
-		    <item id="188057353" player_class="RANGER" count="1"/>
+		    <item id="188057353" player_class="RANGER" count="2"/>
 			<item id="188057357" player_class="RANGER" count="1"/>
-		    <item id="188057353" player_class="CLERIC" count="1"/>
+		    <item id="188057353" player_class="CLERIC" count="2"/>
 			<item id="188057362" player_class="CLERIC" count="1"/>
-		    <item id="188057353" player_class="CHANTER" count="1"/>
+		    <item id="188057353" player_class="CHANTER" count="2"/>
 			<item id="188057363" player_class="CHANTER" count="1"/>
-		    <item id="188057353" player_class="SORCERER" count="1"/>
+		    <item id="188057353" player_class="SORCERER" count="2"/>
 			<item id="188057359" player_class="SORCERER" count="1"/>
-		    <item id="188057353" player_class="SPIRIT_MASTER" count="1"/>
+		    <item id="188057353" player_class="SPIRIT_MASTER" count="2"/>
 			<item id="188057360" player_class="SPIRIT_MASTER" count="1"/>
-		    <item id="188057353" player_class="GUNSLINGER" count="1"/>
+		    <item id="188057353" player_class="GUNSLINGER" count="2"/>
 			<item id="188057358" player_class="GUNSLINGER" count="1"/>
-		    <item id="188057353" player_class="SONGWEAVER" count="1"/>
+		    <item id="188057353" player_class="SONGWEAVER" count="2"/>
 			<item id="188057361" player_class="SONGWEAVER" count="1"/>
-		    <item id="188057353" player_class="AETHERTECH" count="1"/>
+		    <item id="188057353" player_class="AETHERTECH" count="2"/>
 			<item id="188057364" player_class="AETHERTECH" count="1"/>
 		</items>
 	</decomposable>

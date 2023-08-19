@@ -1472,9 +1472,12 @@
 			<spot x="2243.7" y="1538.23" z="130.338" h="15"/>
 			<spot x="2308.54" y="1587.23" z="129.827" h="62"/>
 			<spot x="2247.33" y="1507.69" z="130.508" h="58"/>
-			<spot x="2277.75" y="1587.64" z="129.375" h="8"/>
-			<spot x="2261.04" y="1521.02" z="133.622" h="41"/>
+		</spawn>
+		<!-- Kishar Healer -->
+		<spawn npc_id="219074" respawn_time="95">
 			<spot x="2354.52" y="1607.05" z="125.3425" h="93" walker_id="5ABD5834DECDB84F11053DDEF7E7D68C50AE7D9B"/>
+			<spot x="2261.04" y="1521.02" z="133.622" h="41"/>
+			<spot x="2277.75" y="1587.64" z="129.375" h="8"/>
 		</spawn>
 		<!-- Rahelio -->
 		<spawn npc_id="204552" respawn_time="295">
@@ -3184,7 +3187,6 @@
 		<!-- Kishar Guard -->
 		<spawn npc_id="219043" respawn_time="295">
 			<spot x="2378.45" y="1505.82" z="130.76688" h="45" walker_id="3A3DAF25BD785C106E915F8CE25823272ECC0021"/>
-			<spot x="2219.18" y="1534.61" z="129.375" h="79" walker_id="A06EE48359C19B4DC71296382BDFB340A94E8E76"/>
 		</spawn>
 		<!-- Kishar Guard -->
 		<spawn npc_id="219045" respawn_time="295">
@@ -4515,7 +4517,6 @@
 		<spawn npc_id="219076" respawn_time="295">
 			<spot x="2391.27" y="1711.44" z="160.13248" h="81" walker_id="681326041086B75B7C835CA63BB39958BD95111D"/>
 			<spot x="2406.84" y="1664.14" z="139.27377" h="41" walker_id="4950256A1D760443B0C9DEA8A5E1BD1FD4CC8905"/>
-			<spot x="2429.3" y="1596.4" z="134.30624" h="57" walker_id="7E0369744210035F30A34A01C8785972390071D8"/>
 		</spawn>
 		<!-- Kishar Seeker -->
 		<spawn npc_id="219071" respawn_time="295">
@@ -5312,8 +5313,9 @@
 			<spot x="2508.95" y="1670.1" z="134" h="76"/>
 		</spawn>
 		<!-- Kishar Assaulter -->
-		<spawn npc_id="219050" respawn_time="295">
+		<spawn npc_id="219050" respawn_time="95">
 			<spot x="2119.26" y="1498.96" z="134.36125" h="10" walker_id="EDEB4EDCA0DDA30983A3451B78BD2DC49198A143"/>
+			<spot x="2429.3" y="1596.4" z="134.30624" h="57" walker_id="7E0369744210035F30A34A01C8785972390071D8"/>
 		</spawn>
 		<!-- Kishar Bladesman -->
 		<spawn npc_id="219096" respawn_time="295">
@@ -5328,8 +5330,9 @@
 			<spot x="2554.79" y="1535.65" z="149.5275" h="73" walker_id="D5E78FDF1DBAFB22151FB53594CAE23929ABE7D0"/>
 		</spawn>
 		<!-- Kishar Fighter -->
-		<spawn npc_id="219051" respawn_time="295">
+		<spawn npc_id="219051" respawn_time="95">
 			<spot x="2595.58" y="1585.32" z="157.625" h="97" walker_id="3BE2ED56A7B7DE1128BA1F3DA99619915FC44690"/>
+			<spot x="2219.18" y="1534.61" z="129.375" h="79" walker_id="A06EE48359C19B4DC71296382BDFB340A94E8E76"/>
 		</spawn>
 		<!-- Kishar Fireshaman -->
 		<spawn npc_id="211177" respawn_time="295">
@@ -7267,6 +7270,13 @@
 		<!-- Heraloene -->
 		<spawn npc_id="790018" respawn_time="295">
 			<spot x="1659.78" y="2724.5" z="117" h="60"/>
+		</spawn>
+		<!-- Priest -->
+		<spawn npc_id="211208" respawn_time="295">
+			<spot x="469.2" y="777.34" z="140.13376" h="94" walker_id="73CD1E73B630D44DCDC31AD924962219A695A121"/>
+			<spot x="367.26" y="562.78" z="134.0" h="5" walker_id="8954EAFBDED2679C08FC9C54B5E5905091A20FEC"/>
+			<spot x="362.6" y="497.47" z="134.0" h="20" walker_id="C953A4BA10F2FF426C92E8662A5A00DC6C33CD22"/>
+			<spot x="695.74" y="875.53" z="131.625" h="47" walker_id="42EB892ADC59F6D49F6FDDCDE87CD87448759DE9"/>
 		</spawn>
 		<!-- Pretor Sentinel -->
 		<spawn npc_id="211919" respawn_time="295">

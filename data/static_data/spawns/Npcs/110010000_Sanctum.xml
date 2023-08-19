@@ -246,6 +246,10 @@
 		<spawn npc_id="799733" respawn_time="295">
 			<spot x="1562.61" y="1448.69" z="572.872" h="103" random_walk="3"/>
 		</spawn>
+		<!-- Laokones -->
+		<spawn npc_id="203731" respawn_time="295">
+			<spot x="1623.7" y="1510.4" z="573.629" h="58"/>
+		</spawn>
 		<!-- Erdos -->
 		<spawn npc_id="203740" respawn_time="295">
 			<spot x="1576.18" y="1546.96" z="572.871" h="60"/>

@@ -950,20 +950,79 @@
 		</spawn>
 		<!-- Contaminated Pluma -->
 		<spawn npc_id="210344" respawn_time="295">
-			<spot x="2163.64" y="2386.87" z="262.515" h="110" random_walk="2"/>
-			<spot x="2187.72" y="2125.25" z="170.339" h="73"/>
-			<spot x="1935.88" y="2717.26" z="290.872" h="6"/>
-			<spot x="2095.36" y="2349.63" z="256.789" h="29" random_walk="2"/>
-			<spot x="1918.35" y="2758.66" z="282.898" h="97"/>
-			<spot x="2179.62" y="2328.24" z="253.351" h="3" random_walk="2"/>
-			<spot x="1973.25" y="2738.19" z="302.578" h="98" random_walk="2"/>
-			<spot x="2179.91" y="2360.53" z="257.261" h="109"/>
-			<spot x="2003.5" y="2697.26" z="296.827" h="89" random_walk="2"/>
-			<spot x="1997.9" y="2752.56" z="289.792" h="111"/>
-			<spot x="1972.96" y="2397.46" z="291.384" h="17"/>
-			<spot x="2015.61" y="2372.94" z="274.145" h="30" random_walk="2"/>
-			<spot x="1981.81" y="2476.91" z="303.327" h="29" random_walk="2"/>
-			<spot x="2122.55" y="2281.58" z="235.41" h="6"/>
+			<!-- 24 Spots -->
+			<spot x="2163.64" y="2386.87" z="262.515" h="110" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2187.72" y="2125.25" z="170.339" h="73">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1935.88" y="2717.26" z="290.872" h="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2095.36" y="2349.63" z="256.789" h="29" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1918.35" y="2758.66" z="282.898" h="97">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2179.62" y="2328.24" z="253.351" h="3" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1973.25" y="2738.19" z="302.578" h="98" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2179.91" y="2360.53" z="257.261" h="109">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2003.5" y="2697.26" z="296.827" h="89" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1997.9" y="2752.56" z="289.792" h="111">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1972.96" y="2397.46" z="291.384" h="17">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2015.61" y="2372.94" z="274.145" h="30" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1981.81" y="2476.91" z="303.327" h="29" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2122.55" y="2281.58" z="235.41" h="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2022.33" y="2449.24" z="278.54" h="100" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2013.06" y="2453.55" z="278.39" h="89">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2012.79" y="2573.6" z="296.33" h="64" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2031.95" y="2587.7" z="299.44" h="52">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="2028.41" y="2620.38" z="297.65" h="58" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1968.27" y="2607.8" z="298.46" h="67" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1958.27" y="2586.73" z="295.45" h="97" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1951.94" y="2615.82" z="296.79" h="18">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1931.67" y="2585.56" z="295.96" h="101" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
+			<spot x="1880.3" y="2581.37" z="302.46" h="108" random_walk="6">
+				<temporary_spawn spawn_time="4.*.*" despawn_time="21.*.*"/>
+			</spot>
 		</spawn>
 		<!-- Miraju Gargoyle -->
 		<spawn npc_id="210347" respawn_time="295">
@@ -1559,9 +1618,13 @@
 			<spot x="2535.81" y="1757.67" z="122.456" h="91"/>
 		</spawn>
 		<!-- Abandoned Cargo -->
-		<spawn npc_id="210085" respawn_time="295">
+		<spawn npc_id="210085" respawn_time="95">
 			<spot x="2254.24" y="662.72" z="99.015" h="4"/>
 			<spot x="2213.66" y="628.93" z="98.8294" h="98"/>
+			<spot x="2230.1816" y="635.358" z="98.78227" h="36"/>
+			<spot x="2236.2017" y="642.2817" z="98.99251" h="49"/>
+			<spot x="2243.0698" y="651.10455" z="99.12934" h="17"/>
+			<spot x="2210.2292" y="637.05444" z="99.6909" h="65"/>
 		</spawn>
 		<!-- Dukaki Watcher -->
 		<spawn npc_id="210091" respawn_time="295">

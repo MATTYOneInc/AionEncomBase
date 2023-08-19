@@ -174,7 +174,7 @@ public class _2002Wheres_Rae extends QuestHandler
 				break;
 				case 700045:
 					if (var == 11 && env.getDialog() == QuestDialog.USE_OBJECT) {
-						SkillEngine.getInstance().getSkill(player, 8343, 1, player).useSkill();
+						SkillEngine.getInstance().applyEffectDirectly(8343, player, player, 0);
 						return true;
 					}
 				break;
@@ -244,28 +244,32 @@ public class _2002Wheres_Rae extends QuestHandler
 		return false;
 	}
 	
-	@Override
-	public boolean onKillEvent(QuestEnv env) {
-		Player player = env.getPlayer();
-		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null)
-			return false;
-		int var = qs.getQuestVarById(0);
-		int targetId = 0;
-		if (env.getVisibleObject() instanceof Npc)
-			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-		if (qs.getStatus() != QuestStatus.START)
-			return false;
-		switch (targetId) {
-			case 210377:
-			case 210378:
-				if (var >= 3 && var < 10) {
-					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
-					updateQuestStatus(env);
-					return true;
-				}
-			break;	
-		}
-		return false;
-	}
+    @Override
+    public boolean onKillEvent(QuestEnv env) {
+        Player player = env.getPlayer();
+        QuestState qs = player.getQuestStateList().getQuestState(questId);
+        if (qs == null) {
+            return false;
+        }
+
+        int var = qs.getQuestVarById(0);
+        int targetId = 0;
+        if (env.getVisibleObject() instanceof Npc) {
+            targetId = ((Npc) env.getVisibleObject()).getNpcId();
+        }
+
+        if (qs.getStatus() != QuestStatus.START) {
+            return false;
+        }
+        switch (targetId) {
+            case 210377:
+            case 210378:
+                if (var >= 3 && var < 10) {
+                    qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+                    updateQuestStatus(env);
+                    return true;
+                }
+        }
+        return false;
+    }
 }
