@@ -325,10 +325,6 @@ public class PlayerRestrictions extends AbstractRestrictions
 			//You cannot trade while you are invisible.
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_EXCHANGE_CANT_EXCHANGE_WHILE_INVISIBLE);
 			return false;
-		} if (level < 10) {
-			//Characters under level 10 who are playing a free trial cannot trade.
-			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_FREE_EXPERIENCE_CHARACTER_CANT_TRADE("10"));
-			return false;
 		}
 		return true;
 	}
