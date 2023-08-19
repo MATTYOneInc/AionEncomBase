@@ -100,7 +100,7 @@ public class GoTo extends AdminCommand
 			goTo(player, WorldMapType.HEIRON.getId(), 1999, 1391, 118);
 		else if (destination.equalsIgnoreCase("Arbolu"))
 			goTo(player, WorldMapType.HEIRON.getId(), 170, 1662, 120);
-		else if  (destination.equalsIgnoreCase("Panium"))
+		else if  (destination.equalsIgnoreCase("Panium") || destination.equalsIgnoreCase("Pandaemonium"))
 			goTo(player, WorldMapType.PANDAEMONIUM.getId(), 1679, 1400, 195);
 		else if (destination.equalsIgnoreCase("Marchutan1"))
 			goTo(player, WorldMapType.MARCHUTAN.getId(), 1557, 1429, 266);
