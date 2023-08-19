@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-	ノフサナ訓練所
-	Spawn By (Encom)
- -->
 <spawns>
 	<spawn_map map_id="300030000">
 		<!-- Nochsana Artifact (Object Normal lvl:3) -->
 		<spawn npc_id="700437">
 			<spot x="312.74411" y="596.14636" z="372.97244" entity_id="32"/>
 		</spawn>
-		<!-- Nochsana Fortress Gate
+		<!-- Nochsana Fortress Gate -->
 		<spawn npc_id="256694">
 			<spot x="346.37997" y="356.94745" z="378.26767" entity_id="23"/>
-		</spawn> -->
+		</spawn> 
 		<!-- Lesser Blessed Relics (Object Normal lvl:3) -->
 		<spawn npc_id="831987">
             <spot x="506.40567" y="667.08496" z="331.8232" h="114"/>
