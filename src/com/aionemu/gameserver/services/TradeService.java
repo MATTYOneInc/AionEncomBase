@@ -455,6 +455,25 @@ public class TradeService
 		return true;
 	}
 	
+    public static void terminatedItemToShop(Player player, int objId) {
+        try {
+            Storage inventory = player.getInventory();
+
+            int itemObjectId = objId;
+
+            Item item = inventory.getItemByObjId(itemObjectId);
+            long count = item.getItemCount();
+
+            if (inventory.decreaseByObjectId(itemObjectId, count)) {
+                long price = (long) ((item.getItemTemplate().getPrice() * 0.2f) * (int) count);
+                inventory.increaseKinah(price);
+            }
+        } catch (NullPointerException e) {
+            log.info("Cannot selll Terminated item, check item objId: " + objId);
+            return;
+        }
+    }
+	
 	public static TradeListData getTradeListData() {
 		return tradeListData;
 	}
