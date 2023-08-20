@@ -30,7 +30,7 @@ public class CM_PRIVATE_STORE_NAME extends AionClientPacket {
 
 	/**
 	 * Constructs new instance of <tt>CM_PRIVATE_STORE </tt> packet
-	 * 
+	 *
 	 * @param opcode
 	 */
 	public CM_PRIVATE_STORE_NAME(int opcode, State state, State... restStates) {

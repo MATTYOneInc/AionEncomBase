@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.LinkedHashMap;
+
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.player.PrivateStore;
@@ -24,15 +26,15 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob;
 
-import java.util.LinkedHashMap;
-
 /**
  * @author Simple
  */
 public class SM_PRIVATE_STORE extends AionServerPacket {
 
 	private Player player;
-	/** Private store Information **/
+	/**
+	 * Private store Information *
+	 */
 	private PrivateStore store;
 
 	public SM_PRIVATE_STORE(PrivateStore store, Player player) {
@@ -55,7 +57,7 @@ public class SM_PRIVATE_STORE extends AionServerPacket {
 				writeD(itemObjId);
 				writeD(item.getItemTemplate().getTemplateId());
 				writeH((int) tradeItem.getCount());
-				writeD((int) price);
+				writeQ((int) price);
 
 				ItemInfoBlob itemInfoBlob = ItemInfoBlob.getFullBlob(player, item);
 				itemInfoBlob.writeMe(getBuf());
