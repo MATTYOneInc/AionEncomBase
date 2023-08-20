@@ -119,7 +119,7 @@ public class AionPacketHandlerFactory {
 		addPacket(new CM_ENCHANTMENT_EXTRACTION(0x01cc, State.IN_GAME)); //5.8
 		addPacket(new CM_REMOVE_ALTERED_STATE(0x00ee, State.IN_GAME)); //5.8
 		addPacket(new CM_REPLACE_ITEM(0x17e, State.IN_GAME)); //5.8
-		addPacket(new CM_SELL_TERMINATED_ITEMS(0x01c0, State.IN_GAME)); //5.8
+		addPacket(new CM_SELL_TERMINATED_ITEMS(0x1C0, State.IN_GAME)); // 5.6 TODO
 		addPacket(new CM_BUY_TRADE_IN_TRADE(0x113, State.IN_GAME)); //5.8
 		addPacket(new CM_PET(0xDD, State.IN_GAME)); //5.8
 		addPacket(new CM_CHARGE_ITEM(0x0115, State.IN_GAME)); //5.8

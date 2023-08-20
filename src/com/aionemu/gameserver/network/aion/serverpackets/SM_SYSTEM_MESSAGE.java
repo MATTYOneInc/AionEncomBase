@@ -1,19 +1,3 @@
-/*
- * This file is part of Encom. **ENCOM FUCK OTHER SVN**
- *
- *  Encom is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Lesser Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Encom is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Lesser Public License for more details.
- *
- *  You should have received a copy of the GNU Lesser Public License
- *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
- */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
 import com.aionemu.gameserver.model.DescriptionId;
@@ -23638,6 +23622,28 @@ public class SM_SYSTEM_MESSAGE extends AionServerPacket
     public static final SM_SYSTEM_MESSAGE STR_FAMILIAR_EVOLVE_MSG_NOEVOLVE = new SM_SYSTEM_MESSAGE(1404349);
     public static final SM_SYSTEM_MESSAGE STR_FAMILIAR_EVOLVE_MSG_EVOLVE_RESULT = new SM_SYSTEM_MESSAGE(1404350);
     public static final SM_SYSTEM_MESSAGE STR_MSG_CANT_ENCHANT_EQUIPED = new SM_SYSTEM_MESSAGE(1403358);
+	
+	
+	 /**
+	 * Кастомные сообщения в Игре - Чтобы сообщения были на разном языке (L10n)
+	 */
+	public static final SM_SYSTEM_MESSAGE STR_MSG_Sunayaka_Spawn_v1 = new SM_SYSTEM_MESSAGE(1404567);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_Sunayaka_DeSpawn_v1 = new SM_SYSTEM_MESSAGE(1404568);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_Welcome_message_v1 = new SM_SYSTEM_MESSAGE(1404569);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_DIFLODOX_Spawn_v1 = new SM_SYSTEM_MESSAGE(1404570);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_DIFLODOX_DeSpawn_v1 = new SM_SYSTEM_MESSAGE(1404571);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_Diflonax_Spawn_v1 = new SM_SYSTEM_MESSAGE(1404572);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_Diflonax_DeSpawn_v1 = new SM_SYSTEM_MESSAGE(1404573);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_Menotios_Spawn_v1 = new SM_SYSTEM_MESSAGE(1404574);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_Menotios_DeSpawn_v1 = new SM_SYSTEM_MESSAGE(1404575);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_TiaOko_Spawn_v1 = new SM_SYSTEM_MESSAGE(1404576);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_TiaOko_DeSpawn_v1 = new SM_SYSTEM_MESSAGE(1404577);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_Haramel_BossSpawn_v1 = new SM_SYSTEM_MESSAGE(1404578);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_Haramel_FinishInstance_v1 = new SM_SYSTEM_MESSAGE(1404579);
+	
+	 /**
+	 * Кастомные сообщения в Игре - Чтобы сообщения были на разном языке (L10n)
+	 */
 
 	private final int code;
 	private final Object[] params;
