@@ -338,6 +338,7 @@ public class GameServer {
     * Custom Events
     */
 	Util.printSection(" *** Custom Events *** ");
+		// FFA
 		if (FFAConfig.FFA_ENABLED) {
 		FFAService.getInstance();
 		}

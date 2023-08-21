@@ -301,13 +301,17 @@ public class InstanceService
 		}
 	}
 	
+	
+
+	
 	public static void onLeaveInstance(Player player) {
 		player.getPosition().getWorldMapInstance().getInstanceHandler().onLeaveInstance(player);
-		for (Item item : player.getInventory().getItems()) {
-			if (item.getItemTemplate().getOwnershipWorld() == player.getWorldId()) {
+			for (Item item : player.getInventory().getItems()) {
+				if (item.getItemTemplate().getOwnershipWorld() == player.getWorldId()) {
 				player.getInventory().decreaseByObjectId(item.getObjectId(), item.getItemCount());
 			}
-		} if (AutoGroupConfig.AUTO_GROUP_ENABLED) {
+		}
+		if (AutoGroupConfig.AUTO_GROUP_ENABLED) {
 			AutoGroupService.getInstance().onLeaveInstance(player);
 		}
 	}

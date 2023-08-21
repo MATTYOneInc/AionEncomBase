@@ -1,19 +1,3 @@
-/**
- * This file is part of Encom.
- *
- *  Encom is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Lesser Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Encom is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Lesser Public License for more details.
- *
- *  You should have received a copy of the GNU Lesser Public License
- *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
- */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
 import com.aionemu.commons.database.dao.DAOManager;
@@ -131,22 +115,22 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		StringBuilder sb = new StringBuilder(nameFormat);
 		if (player.getClientConnection() != null) {
 			// * = Premium & VIP Membership
-			if (MembershipConfig.PREMIUM_TAG_DISPLAY) {
-                switch (player.getClientConnection().getAccount().getMembership()) {
-                    case 1:
-                    	nameFormat = sb.replace(0, sb.length(), MembershipConfig.TAG_PREMIUM).toString();
-                        break;
-                    case 2:
-                    	nameFormat = sb.replace(0, sb.length(), MembershipConfig.TAG_VIP).toString();
-                        break;
-                }
-            }
+			//if (MembershipConfig.PREMIUM_TAG_DISPLAY) {
+           //     switch (player.getClientConnection().getAccount().getMembership()) {
+            //        case 1:
+           //         	nameFormat = sb.replace(0, sb.length(), MembershipConfig.TAG_PREMIUM).toString();
+           //             break;
+           //         case 2:
+           //         	nameFormat = sb.replace(0, sb.length(), MembershipConfig.TAG_VIP).toString();
+           //             break;
+           //     }
+           // }
 			
 			// * = Wedding
-			if (player.isMarried()) {
-				String partnerName = DAOManager.getDAO(PlayerDAO.class).getPlayerNameByObjId(player.getPartnerId());
-	            nameFormat += "\uE020"+ partnerName;
-			}
+			//if (player.isMarried()) {
+			//	String partnerName = DAOManager.getDAO(PlayerDAO.class).getPlayerNameByObjId(player.getPartnerId());
+	        //    nameFormat += "\uE020"+ partnerName;
+			//}
 
 		    /**
 		    * WPvP Related Features
@@ -160,25 +144,25 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		    }
 
 			// * = Server Staff Access Level
-			if (AdminConfig.ADMIN_TAG_ENABLE) {
-                switch (player.getClientConnection().getAccount().getAccessLevel()) {
-                    case 1:
-                    	nameFormat = AdminConfig.ADMIN_TAG_1.replace("%s", sb.toString());
-                        break;
-                    case 2:
-                    	nameFormat = AdminConfig.ADMIN_TAG_2.replace("%s", sb.toString());
-                        break;
-                    case 3:
-                    	nameFormat = AdminConfig.ADMIN_TAG_3.replace("%s", sb.toString());
-                        break;
-                    case 4:
-                    	nameFormat = AdminConfig.ADMIN_TAG_4.replace("%s", sb.toString());
-                        break;
-                    case 5:
-                    	nameFormat = AdminConfig.ADMIN_TAG_5.replace("%s", sb.toString());
-                    	break;
-                }
-			}
+			//if (AdminConfig.ADMIN_TAG_ENABLE) {
+               // switch (player.getClientConnection().getAccount().getAccessLevel()) {
+               //     case 1:
+               //     	nameFormat = AdminConfig.ADMIN_TAG_1.replace("%s", sb.toString());
+              //          break;
+              //      case 2:
+              //      	nameFormat = AdminConfig.ADMIN_TAG_2.replace("%s", sb.toString());
+              //          break;
+              //      case 3:
+              //      	nameFormat = AdminConfig.ADMIN_TAG_3.replace("%s", sb.toString());
+             //           break;
+             //       case 4:
+             //       	nameFormat = AdminConfig.ADMIN_TAG_4.replace("%s", sb.toString());
+             //           break;
+             //       case 5:
+             //       	nameFormat = AdminConfig.ADMIN_TAG_5.replace("%s", sb.toString());
+             //       	break;
+             //   }
+			//}
 		}
 
 		writeS(String.format(nameFormat, DisplayService.getDisplayName(player)));

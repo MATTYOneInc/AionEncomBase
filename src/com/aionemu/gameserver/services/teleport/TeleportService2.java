@@ -20,7 +20,7 @@ import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.configs.network.NetworkConfig;
 import com.aionemu.gameserver.dao.PlayerTransformDAO;
 import com.aionemu.gameserver.dataholders.DataManager;
-import com.aionemu.gameserver.dataholders.PlayerInitialData.LocationData;
+import com.aionemu.gameserver.dataholders.PlayerInitialData;
 import com.aionemu.gameserver.model.EmotionType;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.TeleportAnimation;
@@ -478,57 +478,53 @@ public class TeleportService2 {
 		}
 	}
 
-	public static void sendSetBindPoint(Player player) {
-		int worldId;
-		float x, y, z;
-		if (player.getBindPoint() != null) {
-			BindPointPosition bplist = player.getBindPoint();
-			worldId = bplist.getMapId();
-			x = bplist.getX();
-			y = bplist.getY();
-			z = bplist.getZ();
-		} else {
-			LocationData locationData = DataManager.PLAYER_INITIAL_DATA.getSpawnLocation(player.getRace());
-			worldId = locationData.getMapId();
-			x = locationData.getX();
-			y = locationData.getY();
-			z = locationData.getZ();
-		}
+    public static void sendSetBindPoint(Player player) {
+        int worldId;
+        float x, y, z;
+        if (player.getBindPoint() != null) {
+            BindPointPosition bplist = player.getBindPoint();
+            worldId = bplist.getMapId();
+            x = bplist.getX();
+            y = bplist.getY();
+            z = bplist.getZ();
+        } else {
+            PlayerInitialData.LocationData locationData = DataManager.PLAYER_INITIAL_DATA.getSpawnLocation(player.getRace());
+            worldId = locationData.getMapId();
+            x = locationData.getX();
+            y = locationData.getY();
+            z = locationData.getZ();
+        }
+        PacketSendUtility.sendPacket(player, new SM_BIND_POINT_INFO(worldId, x, y, z, player));
+    }
 
-		PacketSendUtility.sendPacket(player, new SM_BIND_POINT_INFO(worldId, x, y, z, player));
-	}
+    public static void moveToBindLocation(Player player, boolean useTeleport) {
+        float x, y, z;
+        int worldId;
+        byte h = 0;
 
-	public static void moveToBindLocation(Player player, boolean useTeleport) {
-		moveToBindLocation(player, useTeleport, 0);
-	}
+        if (player.getBindPoint() != null) {
+            BindPointPosition bplist = player.getBindPoint();
+            worldId = bplist.getMapId();
+            x = bplist.getX();
+            y = bplist.getY();
+            z = bplist.getZ();
+            h = bplist.getHeading();
+        } else {
+            PlayerInitialData.LocationData locationData = DataManager.PLAYER_INITIAL_DATA.getSpawnLocation(player.getRace());
+            worldId = locationData.getMapId();
+            x = locationData.getX();
+            y = locationData.getY();
+            z = locationData.getZ();
+        }
 
-	public static void moveToBindLocation(Player player, boolean useTeleport, int delay) {
-		byte h = 0;
-		int worldId;
-		float x;
-		float y;
-		float z;
-		if (player.getBindPoint() != null) {
-			BindPointPosition bplist = player.getBindPoint();
-			worldId = bplist.getMapId();
-			x = bplist.getX();
-			y = bplist.getY();
-			z = bplist.getZ();
-			h = bplist.getHeading();
-		} else {
-			LocationData locationData = DataManager.PLAYER_INITIAL_DATA.getSpawnLocation(player.getRace());
-			worldId = locationData.getMapId();
-			x = locationData.getX();
-			y = locationData.getY();
-			z = locationData.getZ();
-		}
-		InstanceService.onLeaveInstance(player);
-		if (useTeleport) {
-			teleportTo(player, worldId, x, y, z, h);
-		} else {
-			World.getInstance().setPosition(player, worldId, 1, x, y, z, h);
-		}
-	}
+        InstanceService.onLeaveInstance(player);
+
+        if (useTeleport) {
+            teleportTo(player, worldId, x, y, z, h);
+        } else {
+            World.getInstance().setPosition(player, worldId, 1, x, y, z, h);
+        }
+    }
 
 	public static void moveToInstanceExit(Player player, int worldId, Race race) {
 		player.getController().cancelCurrentSkill();

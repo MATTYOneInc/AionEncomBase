@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ReturnEffect")
+
 public class ReturnEffect extends EffectTemplate
 {
 	@Override
@@ -34,7 +35,7 @@ public class ReturnEffect extends EffectTemplate
 		if (effect.getEffected().isInInstance()) {
 			InstanceService.onLeaveInstance((Player) effect.getEffector());
 		}
-		TeleportService2.moveToBindLocation((Player) effect.getEffector(), true, 500);
+		TeleportService2.moveToBindLocation((Player) effect.getEffector(), true);
 	}
 	
 	@Override
