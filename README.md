@@ -7,6 +7,7 @@ Site: http://developers.aionasteria.ru/ partition "Feedback"
 
 #Copyright:
 Source Code: Aion-Lightning
+
 Make Issues (RGZ users):
 
 1. Robyson
