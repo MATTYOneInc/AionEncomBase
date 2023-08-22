@@ -1,5 +1,5 @@
 # Aion 5.8 Community Project
-The source code is based on the SVN from the Encom group, which was based on Aion-Lightning.
+The source code is based on an SVN from the Encom group, which was based on Aion-Lightning.
 
 #You can send errors to my site, so we will get your feedback faster!
 
