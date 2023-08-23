@@ -3,13 +3,14 @@
 #You can send errors to my site, so we will get your feedback faster!
 Site: http://developers.aionasteria.ru/ partition "Feedback"
 
+=========================================================================
+
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 * Original Source Code developed by the Aion-Lightning team				      -
 * The Encom team took up the revision of the code						            -
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 * This Source - Community Project of Aion 5.8 Emulator					        -
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-* https://github.com/MATTYOneInc/AionEncomBase							            -
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 * Know Developers:														                          -
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
