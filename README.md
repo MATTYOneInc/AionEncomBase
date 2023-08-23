@@ -29,7 +29,7 @@ Site: http://developers.aionasteria.ru/ partition "Feedback"
 * - Magenik					    - Mark Powell			  - MATTY				              -
 * - Metos					      - Mr. Poke				  - Nemesiss			            -
 * - Nemiroff				    - NewLives				  - Rama				              -
-* - Ranastic				    - Rinzler				    - Robyson			              -
+* - Ranastic				    - Rinzler				    - G-Robson26	              -
 * - Rolandas				    - RotO					    - Sarynth			              -
 * - Simple					    - Sippolo				    - SoulKeeper		            -
 * - Source	 				    - Sweetkr				    - Taran				              -
