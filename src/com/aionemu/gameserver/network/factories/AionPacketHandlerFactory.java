@@ -19,6 +19,7 @@ package com.aionemu.gameserver.network.factories;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.AionPacketHandler;
+import com.aionemu.gameserver.network.aion.clientpackets.CM_GM_COMMAND_SEND;
 import com.aionemu.gameserver.network.aion.clientpackets.*;
 
 public class AionPacketHandlerFactory {
@@ -122,6 +123,7 @@ public class AionPacketHandlerFactory {
 		addPacket(new CM_SELL_TERMINATED_ITEMS(0x1C0, State.IN_GAME)); // 5.6 TODO
 		addPacket(new CM_BUY_TRADE_IN_TRADE(0x113, State.IN_GAME)); //5.8
 		addPacket(new CM_PET(0xDD, State.IN_GAME)); //5.8
+		addPacket(new CM_GM_COMMAND_SEND(225, State.IN_GAME)); //5.8
 		addPacket(new CM_CHARGE_ITEM(0x0115, State.IN_GAME)); //5.8
 		addPacket(new CM_GM_BOOKMARK(0x00e0, State.IN_GAME)); //5.8
 		addPacket(new CM_DELETE_QUEST(0x012b, State.IN_GAME)); //5.8
