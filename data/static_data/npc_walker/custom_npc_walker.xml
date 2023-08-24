@@ -162,7 +162,7 @@
         <routestep step="2" z="212.20023" y="100.910736" x="441.1143" rest_time="7200000"/>
 	</walker_template>
 	
-	<!-- CONTAMINED UNDERPATH 5.1 -->
+	<!-- CONTAMINED UNDERPATH 5.1 REWORK BY MATTY (ADev) -->
 	<walker_template route_id="ContaminedUnderpath1" pool="1">
 		<routestep step="1" z="159.68855" y="272.78586" x="222.59251"/>
         <routestep step="2" z="160.28148" y="226.60503" x="222.94719" rest_time="7200000"/>
@@ -186,6 +186,62 @@
 	<walker_template route_id="ContaminedUnderpath6" pool="1">
 		<routestep step="1" z="159.68855" y="272.8839" x="233.94566"/>
         <routestep step="2" z="160.28148" y="225.80902" x="234.07625" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath7" pool="1">
+		<routestep step="1" z="159.68855" y="272.78586" x="222.59251"/>
+        <routestep step="2" z="160.28148" y="226.60503" x="222.94719" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath8" pool="1">
+		<routestep step="1" z="159.68855" y="272.5278" x="225.25392"/>
+        <routestep step="2" z="160.28148" y="225.91023" x="225.345" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath9" pool="1">
+		<routestep step="1" z="159.68855" y="272.56705" x="227.00642"/>
+        <routestep step="2" z="160.28148" y="225.23596" x="227.29585" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath10" pool="1">
+		<routestep step="1" z="159.68855" y="272.8542" x="228.98677"/>
+        <routestep step="2" z="160.28148" y="224.08946" x="229.23856" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath11" pool="1">
+		<routestep step="1" z="159.68855" y="272.70547" x="231.91983"/>
+        <routestep step="2" z="160.28148" y="224.95782" x="231.85547" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath12" pool="1">
+		<routestep step="1" z="159.68855" y="272.8839" x="233.94566"/>
+        <routestep step="2" z="160.28148" y="225.80902" x="234.07625" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath13" pool="1">
+		<routestep step="1" z="159.68855" y="272.78586" x="222.59251"/>
+        <routestep step="2" z="160.28148" y="226.60503" x="222.94719" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath14" pool="1">
+		<routestep step="1" z="159.68855" y="272.5278" x="225.25392"/>
+        <routestep step="2" z="160.28148" y="225.91023" x="225.345" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath15" pool="1">
+		<routestep step="1" z="159.68855" y="272.56705" x="227.00642"/>
+        <routestep step="2" z="160.28148" y="225.23596" x="227.29585" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath16" pool="1">
+		<routestep step="1" z="159.68855" y="272.8542" x="228.98677"/>
+        <routestep step="2" z="160.28148" y="224.08946" x="229.23856" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath17" pool="1">
+		<routestep step="1" z="159.68855" y="272.70547" x="231.91983"/>
+        <routestep step="2" z="160.28148" y="224.95782" x="231.85547" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath18" pool="1">
+		<routestep step="1" z="159.68855" y="272.8839" x="233.94566"/>
+        <routestep step="2" z="160.28148" y="225.80902" x="234.07625" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath19" pool="1">
+		<routestep step="1" z="159.68855" y="272.78586" x="222.59251"/>
+        <routestep step="2" z="160.28148" y="226.60503" x="222.94719" rest_time="7200000"/>
+	</walker_template>
+	<walker_template route_id="ContaminedUnderpath20" pool="1">
+		<routestep step="1" z="159.68855" y="272.5278" x="225.25392"/>
+        <routestep step="2" z="160.28148" y="225.91023" x="225.345" rest_time="7200000"/>
 	</walker_template>
 	
 	<!-- [EVENT] IDEVENT_Def 5.6 -->

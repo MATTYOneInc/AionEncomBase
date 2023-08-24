@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!--
 	Contaminated Underpath 5.0.5
-	Spawn By (Encom)
+	Rework by MATTY
  -->
 <spawns>
 	<spawn_map map_id="301630000">
@@ -41,12 +41,6 @@
 		</spawn>
 		<!-- Bright Aether Supply Chest -->
 		<spawn npc_id="833866">
-			<spot h="40" z="160.28148" y="201.82552" x="234.09952"/>
-            <spot h="40" z="160.28148" y="202.60715" x="235.51448"/>
-            <spot h="40" z="160.28148" y="203.51102" x="237.00972"/>
-            <spot h="15" z="160.59807" y="201.53378" x="225.50586"/>
-            <spot h="15" z="160.5414" y="202.55928" x="224.31114"/>
-            <spot h="15" z="160.28148" y="203.8794" x="222.88107"/>
 			<spot h="89" z="164.60033" y="177.30127" x="233.315"/>
 		</spawn>
 		<!-- Underground Scout Operative -->

@@ -1,19 +1,3 @@
-/*
- * This file is part of Encom.
- *
- *  Encom is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Lesser Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Encom is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Lesser Public License for more details.
- *
- *  You should have received a copy of the GNU Lesser Public License
- *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
- */
 package instance.luna;
 
 import com.aionemu.gameserver.ai2.AIState;
@@ -54,8 +38,8 @@ import java.util.Set;
 import java.util.concurrent.Future;
 
 /****/
-/** Author (Encom)
-/** Source: https://www.youtube.com/watch?v=pkRzAfyLJ2g
+/** Author: Rinzler (Encom)
+/** Rework: MATTY (ADev Team)
 /****/
 
 @InstanceID(301630000)
@@ -86,10 +70,8 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 	private Future<?> underpathTaskA17;
 	private boolean isInstanceDestroyed;
 	private Map<Integer, StaticDoor> doors;
-	//Preparation Time.
-	private int prepareTimerSeconds = 180000; //...3Min
-	//Duration Instance Time.
-	private int instanceTimerSeconds = 3600000; //...1Hr
+	private int prepareTimerSeconds = 180000; // Красное время. Ожидание начала данжа 3 минуты.
+	private int instanceTimerSeconds = 3600000; // Длительность данжа. 1 час.
 	private ContaminatedUnderpathReward instanceReward;
 	private final FastList<Future<?>> contaminedTask = FastList.newInstance();
 	
@@ -188,9 +170,11 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 			    points = 2500;
 			break;
 			case 245575: //MAAD-S.
-				points = 500000;
+				points = 540000;
+				
 				spawn(703384, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading()); //Infected Bone Mound.
 				spawn(703385, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading()); //Infected Flesh Lump.
+				
 				ThreadPoolManager.getInstance().schedule(new Runnable() {
 					@Override
 					public void run() {
@@ -198,7 +182,7 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 						    @Override
 						    public void visit(Player player) {
 							    stopInstance(player);
-								underpathTaskA17.cancel(true);
+								underpathTaskA11.cancel(true);
 						    }
 					    });
 					}
@@ -227,111 +211,62 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 	}
 	
 	private void startContaminedUnderPath1() {
-		//Experimental Daeva M.
+
 		underpathTaskA1 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 89, 1000, "ContaminedUnderpath1");
-				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 1000);
-		//Experimental Daeva F.
-		underpathTaskA1 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 60000);
-	}
-	private void startContaminedUnderPath2() {
-		//Transfectant Crawler.
-		underpathTaskA2 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245545, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245545, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245545, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245545, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245545, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245545, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 1000);
-		//Experimental Reian.
-		underpathTaskA2 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245547, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245547, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245547, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245547, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245547, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245547, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 60000);
-	}
-	private void startContaminedUnderPath3() {
-		//Experimental Reian.
-		underpathTaskA3 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245548, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245548, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245548, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245548, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245548, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245548, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 1000);
-		//Cursed Brave Warrior.
-		underpathTaskA3 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
 				sp(245549, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
 				sp(245549, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
 				sp(245549, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245549, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245549, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245549, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 60000);
-	}
-	private void startContaminedUnderPath4() {
-		//Crazy Priest.
-		underpathTaskA4 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245550, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245550, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245550, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245550, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245550, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245550, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
 			}
 		}, 1000);
-		//Infected Zaif.
-		underpathTaskA4 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+
+		underpathTaskA1 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-				sp(245551, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245551, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245551, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245551, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245551, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245551, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245549, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath1");
+				sp(245549, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath2");
+				sp(245549, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath3");
 			}
-		}, 60000);
+		}, 30000);
 	}
-	private void startContaminedUnderPath5() {
-		//MAD-74C.
+	private void startContaminedUnderPath2() {
+		underpathTaskA2 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 1000);
+		underpathTaskA2 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 30000);
+	}
+	private void startContaminedUnderPath3() {
 		underpathTaskA5 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
@@ -339,42 +274,149 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 			}
 		}, 1000);
 	}
-	private void startContaminedUnderPath6() {
-		//Gringol The Devourer.
-		underpathTaskA6 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+	
+	private void startContaminedUnderPath4() {
+		underpathTaskA4 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
 				sp(245546, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1000, "ContaminedUnderpath2");
 				sp(245546, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath4");
 				sp(245546, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath6");
+			}
+		}, 1000);
+		underpathTaskA4 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245546, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1000, "ContaminedUnderpath2");
+				sp(245546, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath4");
+				sp(245546, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath6");
+			}
+		}, 30000);
+	}
+	private void startContaminedUnderPath5() {
+		underpathTaskA5 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath13");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath14");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath15");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath16");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath17");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath18");
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath19");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath20");
+			}
+		}, 1000);
+	}
+	private void startContaminedUnderPath6() {
+
+		underpathTaskA6 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245552, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath10");
+				sp(245552, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath11");
+				sp(245552, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath12");
+				sp(245552, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath13");
+				sp(245552, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath14");
+				sp(245552, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath15");
+				sp(245553, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath16");
+				sp(245553, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath17");
+				sp(245553, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath18");
+				sp(245553, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath19");
+				sp(245553, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath20");
 			}
 		}, 1000);
 	}
 	private void startContaminedUnderPath7() {
-		//Gringol The Devourer.
+
 		underpathTaskA7 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-				sp(245546, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1000, "ContaminedUnderpath2");
-				sp(245546, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath4");
-				sp(245546, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath6");
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath13");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath14");
+				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath15");
+				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath16");
+				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath17");
+				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath18");
+				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath19");
+				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath20");
 			}
 		}, 1000);
+		underpathTaskA7 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 30000);
 	}
 	private void startContaminedUnderPath8() {
-		//Transfectant Flyer.
 		underpathTaskA8 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-				sp(245552, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245552, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245552, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245552, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245552, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245552, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(243647, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 1000, "ContaminedUnderpath4");
 			}
 		}, 1000);
-		//Transfectant Flyer.
+		underpathTaskA8 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 30000);
 		underpathTaskA8 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
@@ -385,224 +427,320 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 				sp(245553, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
 				sp(245553, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
 			}
-		}, 60000);
+		}, 30000);
 	}
 	private void startContaminedUnderPath9() {
-		//Infected Saam King.
+
 		underpathTaskA9 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-				sp(245554, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245554, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245554, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245554, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245554, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245554, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
 			}
 		}, 1000);
-		//Transfectant Crawler.
+
 		underpathTaskA9 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-				sp(245555, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245555, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245555, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245555, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245555, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245555, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
 			}
-		}, 60000);
+		}, 30000);
 	}
 	private void startContaminedUnderPath10() {
-		//Experimental Reian.
+
 		underpathTaskA10 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-				sp(245557, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245557, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245557, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245557, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245557, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245557, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
 			}
 		}, 1000);
-		//Experimental Reian.
+
 		underpathTaskA10 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-				sp(245558, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245558, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245558, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245558, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245558, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245558, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
 			}
-		}, 60000);
+		}, 30000);
 	}
 	private void startContaminedUnderPath11() {
-		//Cursed Brave Warrior.
+
 		underpathTaskA11 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245559, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245559, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245559, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245559, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245559, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245559, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 1000);
-		//Crazy Priest.
-		underpathTaskA11 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245560, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245560, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245560, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245560, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245560, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245560, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 60000);
-	}
-	private void startContaminedUnderPath12() {
-		//Infected Zaif.
-		underpathTaskA12 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245561, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245561, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245561, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245561, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245561, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245561, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 1000);
-		//Transfectant Flyer.
-		underpathTaskA12 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245562, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245562, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245562, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245562, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245562, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245562, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 60000);
-	}
-	private void startContaminedUnderPath13() {
-		//Transfectant Flyer.
-		underpathTaskA13 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245563, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245563, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245563, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245563, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245563, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245563, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 1000);
-		//Infected Saam King.
-		underpathTaskA13 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245564, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245564, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245564, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245564, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245564, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245564, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 60000);
-	}
-	private void startContaminedUnderPath14() {
-		//Transfectant Crawler.
-		underpathTaskA14 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245565, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245565, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245565, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245565, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245565, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245565, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 1000);
-		//Experimental Reian.
-		underpathTaskA14 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245567, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245567, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245567, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245567, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245567, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245567, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 60000);
-	}
-	private void startContaminedUnderPath15() {
-		//Experimental Reian.
-		underpathTaskA15 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245568, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245568, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245568, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245568, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245568, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245568, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 1000);
-		//Cursed Brave Warrior.
-		underpathTaskA15 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245569, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245569, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245569, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245569, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245569, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245569, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 60000);
-	}
-	private void startContaminedUnderPath16() {
-		//Crazy Priest.
-		underpathTaskA16 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(245570, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(245570, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(245570, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(245570, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(245570, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(245570, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 1000);
-		//Aetherflame.
-		underpathTaskA16 = ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				sp(246175, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
-				sp(246175, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
-				sp(246175, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
-				sp(246175, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
-				sp(246175, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
-				sp(246175, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
-			}
-		}, 60000);
-	}
-	private void startContaminedUnderPath17() {
-		//MAAD-S.
-		underpathTaskA17 = ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
 				sp(245575, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 1000, "ContaminedUnderpath4");
 			}
 		}, 1000);
+	}
+	private void startContaminedUnderPath12() {
+
+		underpathTaskA12 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 1000);
+
+		underpathTaskA12 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 30000);
+	}
+	private void startContaminedUnderPath13() {
+
+		underpathTaskA13 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 1000);
+
+		underpathTaskA13 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 30000);
+	}
+	private void startContaminedUnderPath14() {
+
+		underpathTaskA14 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 1000);
+
+		underpathTaskA14 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 30000);
+	}
+	private void startContaminedUnderPath15() {
+
+		underpathTaskA15 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 1000);
+
+		underpathTaskA15 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 30000);
+	}
+	private void startContaminedUnderPath16() {
+
+		underpathTaskA16 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 1000);
+
+		underpathTaskA16 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 30000);
+	}
+	private void startContaminedUnderPath17() {
+
+		underpathTaskA17 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 1000);
+
+		underpathTaskA17 = ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				sp(245543, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath1");
+				sp(245543, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath2");
+				sp(245543, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath3");
+				sp(245543, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath4");
+				sp(245543, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath5");
+				sp(245543, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath6");
+				sp(245544, 222.78767f, 276.12140f, 160.4131f, (byte) 90, 1000, "ContaminedUnderpath7");
+				sp(245544, 225.05133f, 275.86157f, 160.3114f, (byte) 89, 1500, "ContaminedUnderpath8");
+				sp(245544, 227.54712f, 275.85287f, 160.3114f, (byte) 89, 2000, "ContaminedUnderpath9");
+				sp(245544, 229.59123f, 275.84586f, 160.3114f, (byte) 89, 2500, "ContaminedUnderpath10");
+				sp(245544, 232.00526f, 275.83752f, 160.3114f, (byte) 89, 3000, "ContaminedUnderpath11");
+				sp(245544, 234.10661f, 275.83023f, 160.3114f, (byte) 89, 3500, "ContaminedUnderpath12");
+			}
+		}, 30000);
 	}
 	
 	private int getTime() {
@@ -643,178 +781,143 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
-				//The player has 3 min to prepare !!! [Timer Red]
 				if ((timerPrepare != null) && (!timerPrepare.isDone() || !timerPrepare.isCancelled())) {
-					//Start the instance time !!! [Timer White]
 					startMainInstanceTimer();
 				}
-				//Start wave !!!
 				startContaminedUnderPath1();
-				sendMsg("[START]: Wave <1/17>");
-				//The Zombies are coming. You have to save Atreia.
 				sendMsgByRace(1403628, Race.PC_ALL, 0);
             }
-        }, 180000)); //...3Min
+			
+        }, 30000)); // 30 Секунд после старта времени первая волна
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath2();
 				underpathTaskA1.cancel(true);
-				sendMsg("[START]: Wave <2/17>");
-				//You’re hearing a sharp yell.
 				sendMsgByRace(1403657, Race.PC_ALL, 0);
             }
-        }, 300000)); //...5Min
+        }, 60000)); // Через 1 минуту вторая волна
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath3();
 				underpathTaskA2.cancel(true);
-				sendMsg("[START]: Wave <3/17>");
-				//You’re hearing lots of footsteps.
 				sendMsgByRace(1403655, Race.PC_ALL, 0);
             }
-        }, 420000)); //...7Min
+        }, 90000)); // 1.5 минуты после старта
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath4();
 				underpathTaskA3.cancel(true);
-				sendMsg("[START]: Wave <4/17>");
-				//A dark energy is spreading.
 				sendMsgByRace(1403662, Race.PC_ALL, 0);
             }
-        }, 540000)); //...9Min
+        }, 120000)); // 2 минуты после старта
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath5();
 				underpathTaskA4.cancel(true);
-				sendMsg("[START]: Wave <5/17>");
-				//You’re hearing heavy breathing.
 				sendMsgByRace(1403656, Race.PC_ALL, 0);
             }
-        }, 660000)); //...11Min
+        }, 150000)); // 2.5 минуты
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath6();
 				underpathTaskA5.cancel(true);
-				sendMsg("[START]: Wave <6/17>");
-				//You hear chattering voices.
 				sendMsgByRace(1403661, Race.PC_ALL, 0);
             }
-        }, 780000)); //...13Min
+        }, 180000)); // 3 минуты
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath7();
 				underpathTaskA6.cancel(true);
-				sendMsg("[START]: Wave <7/17>");
-				//You’re hearing terrible animal screams.
 				sendMsgByRace(1403659, Race.PC_ALL, 0);
             }
-        }, 900000)); //...15Min
+        }, 210000)); //...3.5
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath8();
 				underpathTaskA7.cancel(true);
-				sendMsg("[START]: Wave <8/17>");
-				//You feel a cold sensation.
 				sendMsgByRace(1403660, Race.PC_ALL, 0);
             }
-        }, 1020000)); //...17Min
+        }, 240000)); //4 минуты
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath9();
 				underpathTaskA8.cancel(true);
-				sendMsg("[START]: Wave <9/17>");
-				//You’re hearing a sharp yell.
 				sendMsgByRace(1403657, Race.PC_ALL, 0);
             }
-        }, 1140000)); //...19Min
+        }, 300000)); // 5 минута
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath10();
 				underpathTaskA9.cancel(true);
-				sendMsg("[START]: Wave <10/17>");
-				//You’re hearing lots of footsteps.
 				sendMsgByRace(1403655, Race.PC_ALL, 0);
             }
-        }, 1260000)); //...21Min
+        }, 330000)); //...5.5
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath11();
 				underpathTaskA10.cancel(true);
-				sendMsg("[START]: Wave <11/17>");
-				//You’re hearing heavy breathing.
-				sendMsgByRace(1403656, Race.PC_ALL, 0);
+				//Волна с РБ
+				sendMsgByRace(1403658, Race.PC_ALL, 0);
             }
-        }, 1380000)); //...23Min
+        }, 360000)); // 6 минут
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath12();
 				underpathTaskA11.cancel(true);
-				sendMsg("[START]: Wave <12/17>");
-				//You’re hearing terrible animal screams.
 				sendMsgByRace(1403659, Race.PC_ALL, 0);
             }
-        }, 1500000)); //...25Min
+        }, 420000)); //...7 мин
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath13();
 				underpathTaskA12.cancel(true);
-				sendMsg("[START]: Wave <13/17>");
-				//You feel a cold sensation.
 				sendMsgByRace(1403660, Race.PC_ALL, 0);
             }
-        }, 1620000)); //...27Min
+        }, 480000)); //...8
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath14();
 				underpathTaskA13.cancel(true);
-				sendMsg("[START]: Wave <14/17>");
-				//You hear chattering voices.
 				sendMsgByRace(1403661, Race.PC_ALL, 0);
             }
-        }, 1740000)); //...29Min
+        }, 540000)); //...9
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath15();
 				underpathTaskA14.cancel(true);
-				sendMsg("[START]: Wave <15/17>");
-				//A dark energy is spreading.
 				sendMsgByRace(1403662, Race.PC_ALL, 0);
             }
-        }, 1860000)); //...31Min
+        }, 600000)); //...31Min
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath16();
 				underpathTaskA15.cancel(true);
-				sendMsg("[START]: Wave <16/17>");
-				//You’re hearing lots of footsteps.
 				sendMsgByRace(1403655, Race.PC_ALL, 0);
             }
-        }, 1980000)); //...33Min
+        }, 660000)); //...11 мин
 		contaminedTask.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
             @Override
             public void run() {
 				startContaminedUnderPath17();
 				underpathTaskA16.cancel(true);
-				sendMsg("[START]: Wave <17/17>");
-				//You’re hearing a heavy, coarse voice.
-				sendMsgByRace(1403658, Race.PC_ALL, 0);
+				sendMsgByRace(1403656, Race.PC_ALL, 0);
             }
-        }, 2100000)); //...35Min
+        }, 720000)); //... 12 Минут
     }
 	
 	@Override
@@ -822,12 +925,15 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 		if (doorId == 28) {
 			startInstanceTask();
 			doors.get(28).setOpen(true);
-			//The defense turret platform has appeared.
-			//You can use Bright Aether to transform it for 15 seconds.
 			sendMsgByRace(1403696, Race.PC_ALL, 0);
+			// Остановка таймера при преждивременном открытии двери
+			if ((timerPrepare != null) && (!timerPrepare.isDone() || !timerPrepare.isCancelled())) {
+				//	Запуск основного таймера инстанса
+				startMainInstanceTimer();
+			}
 		}
 	}
-	
+
 	@Override
 	public void onEnterInstance(final Player player) {
 		if (!instanceReward.containPlayer(player.getObjectId())) {
@@ -838,9 +944,17 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 			doReward(player);
 		}
 		startPrepareTimer();
+		
 		final int lunaDetachement = skillRace == Race.ASMODIANS ? 21346 : 21345;
+		//if (player.getRace().equals(Race.ASMODIANS)) {
+		//	SkillEngine.getInstance().applyEffectDirectly(21346, player, player, 0);
+		//} else {
+		//	SkillEngine.getInstance().applyEffectDirectly(21345, player, player, 0);
+		//}
 		SkillEngine.getInstance().applyEffectDirectly(lunaDetachement, player, player, 3000000 * 1);
-		final int lunaHeal = spawnRace == Race.ASMODIANS ? 703477 : 703477;
+		//final int lunaHeal = spawnRace == Race.ASMODIANS ? 703477 : 703477;
+		final int lunaHeal = spawnRace == Race.ASMODIANS ? 834491 : 834491;
+		
 		spawn(lunaHeal, 236.77367f, 212.99107f, 160.28148f, (byte) 60);
 	}
 	
@@ -852,7 +966,7 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 					startMainInstanceTimer();
 				}
 			}, prepareTimerSeconds);
-		}
+		} 
 		instance.doOnAllPlayers(new Visitor<Player>() {
 			@Override
 			public void visit(Player player) {
@@ -876,7 +990,6 @@ public class ContaminatedUnderpathInstance extends GeneralInstanceHandler
 		instanceReward.setRank(checkRank(instanceReward.getPoints()));
 		instanceReward.setInstanceScoreType(InstanceScoreType.END_PROGRESS);
 		doReward(player);
-		sendMsg("[SUCCES]: You survived !!! :) ");
 		sendPacket(0, 0);
 	}
 	
