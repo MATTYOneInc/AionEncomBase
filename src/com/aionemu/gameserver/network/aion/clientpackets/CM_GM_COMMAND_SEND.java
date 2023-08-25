@@ -28,6 +28,10 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
+/**
+ * @Rework dezalmado
+ */
+
 public class CM_GM_COMMAND_SEND extends AionClientPacket {
   private String cmd = "";
   
@@ -78,9 +82,9 @@ public class CM_GM_COMMAND_SEND extends AionClientPacket {
       case LEVELUP:
         elyos = this.admin.getQuestStateList().getQuestState(10521);
         asmo = this.admin.getQuestStateList().getQuestState(20521);
-        if (this.admin.getLevel() >= 65 && this.admin.getRace() == Race.ELYOS && elyos.getStatus() != QuestStatus.COMPLETE) {
+        if (this.admin.getLevel() >= 83 && this.admin.getRace() == Race.ELYOS && elyos.getStatus() != QuestStatus.COMPLETE) {
           PacketSendUtility.sendPacket(this.admin, (AionServerPacket)new SM_SYSTEM_MESSAGE(1403187, new Object[] { Integer.valueOf(66) }));
-        } else if (this.admin.getLevel() >= 65 && this.admin.getRace() == Race.ASMODIANS && asmo.getStatus() != QuestStatus.COMPLETE) {
+        } else if (this.admin.getLevel() >= 83 && this.admin.getRace() == Race.ASMODIANS && asmo.getStatus() != QuestStatus.COMPLETE) {
           PacketSendUtility.sendPacket(this.admin, (AionServerPacket)new SM_SYSTEM_MESSAGE(1403187, new Object[] { Integer.valueOf(66) }));
         } else {
           new CmdLevelUpDown(this.admin, this.params, CmdLevelUpDown.LevelUpDownState.UP);
