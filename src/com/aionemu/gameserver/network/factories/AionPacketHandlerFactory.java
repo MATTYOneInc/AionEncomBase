@@ -125,8 +125,8 @@ public class AionPacketHandlerFactory {
 		addPacket(new CM_PET(0xDD, State.IN_GAME)); //5.8
 
 		// // /////////////////// GM PACKET ////////////////////
-		addPacket(new CM_GM_COMMAND_SEND(0xE0, State.IN_GAME)); // 5.4 EU 0xE1
-		//addPacket(new CM_GM_BOOKMARK(0xE0, State.IN_GAME)); // 5.4 EU
+        addPacket(new CM_GM_COMMAND_SEND(0x0E1, State.IN_GAME)); // 5.8
+        addPacket(new CM_GM_BOOKMARK(0x0E0, State.IN_GAME)); //5.8
 		
 		addPacket(new CM_CHARGE_ITEM(0x0115, State.IN_GAME)); //5.8
 		addPacket(new CM_DELETE_QUEST(0x012b, State.IN_GAME)); //5.8
