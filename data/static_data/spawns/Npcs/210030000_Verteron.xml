@@ -17,7 +17,7 @@
 			<spot x="2260.94" y="1295.25" z="168.39124" h="47"/>
 		</spawn>
 		<!-- Chieftain Kraka -->
-		<spawn npc_id="210187" respawn_time="1800">
+		<spawn npc_id="210187" respawn_time="295">
 			<spot x="2617.03" y="1111.37" z="200.221" h="18"/>
 		</spawn>
 		<!-- Veteran Tursin Scout -->
@@ -703,7 +703,7 @@
 			<spot x="2466.36" y="798.58" z="98.875" h="66" random_walk="2"/>
 		</spawn>
 		<!-- Wind Spirit Shalph -->
-		<spawn npc_id="210298" respawn_time="1800">
+		<spawn npc_id="210298" respawn_time="295">
 			<spot x="2204.75" y="1666.94" z="122.547" h="18" random_walk="2"/>
 		</spawn>
 		<!-- The Source Of Conspiracy -->
@@ -711,35 +711,35 @@
 			<spot x="2531.48" y="1160.78" z="191.523" h="49"/>
 		</spawn>
 		<!-- Scrapper Kuntura -->
-		<spawn npc_id="210311" respawn_time="1800">
+		<spawn npc_id="210311" respawn_time="295">
 			<spot x="2140.56" y="939.847" z="139.5" h="103"/>
 		</spawn>
 		<!-- Blindeye -->
-		<spawn npc_id="210310" respawn_time="1800">
+		<spawn npc_id="210310" respawn_time="295">
 			<spot x="2021.42" y="1024.34" z="140.25" h="16"/>
 		</spawn>
 		<!-- Scrapper Tunkara -->
-		<spawn npc_id="210309" respawn_time="1800">
+		<spawn npc_id="210309" respawn_time="295">
 			<spot x="1855.61" y="757.248" z="143.827" h="31"/>
 		</spawn>
 		<!-- Hakka the Bigmouth -->
-		<spawn npc_id="210308" respawn_time="1800">
+		<spawn npc_id="210308" respawn_time="295">
 			<spot x="1926.23" y="1058.85" z="135.125" h="86"/>
 		</spawn>
 		<!-- Smackstopper Tambaku -->
-		<spawn npc_id="210315" respawn_time="1800">
+		<spawn npc_id="210315" respawn_time="295">
 			<spot x="2418.79" y="1176.97" z="182.289" h="7"/>
 		</spawn>
 		<!-- Scout Takata -->
-		<spawn npc_id="210314" respawn_time="1800">
+		<spawn npc_id="210314" respawn_time="295">
 			<spot x="2214.84" y="1301.32" z="173.5" h="15"/>
 		</spawn>
 		<!-- Aishi -->
-		<spawn npc_id="210313" respawn_time="1800">
+		<spawn npc_id="210313" respawn_time="295">
 			<spot x="2203.04" y="1986.35" z="132.692" h="67"/>
 		</spawn>
 		<!-- Kumbacha the Shaman -->
-		<spawn npc_id="210312" respawn_time="1800">
+		<spawn npc_id="210312" respawn_time="295">
 			<spot x="2071.07" y="1114.8" z="129.128" h="117"/>
 		</spawn>
 		<!-- Mimiti -->
@@ -747,11 +747,11 @@
 			<spot x="907.097" y="2103.94" z="150.625" h="22"/>
 		</spawn>
 		<!-- Poisonous Bubblegut -->
-		<spawn npc_id="210318" respawn_time="1800">
+		<spawn npc_id="210318" respawn_time="295">
 			<spot x="1664.5" y="2750" z="233.45" h="52" walker_id="BOSSPOISONOUSBUBBLEGUTVERTERON0000000000"/>
 		</spawn>
 		<!-- Lightningfoot Tuka -->
-		<spawn npc_id="210317" respawn_time="1800">
+		<spawn npc_id="210317" respawn_time="295">
 			<spot x="1017.81" y="2260.56" z="168.30875" h="15" walker_id="B2490968DBFCD48A28E1FFB68E174A2C538BC92D"/>
 		</spawn>
 		<!-- Cavil -->
@@ -797,7 +797,7 @@
 			<spot x="1698.54" y="2213.92" z="174.226" h="55"/>
 		</spawn>
 		<!-- Lamega -->
-		<spawn npc_id="210334" respawn_time="1800">
+		<spawn npc_id="210334" respawn_time="295">
 			<spot x="2315.62" y="805.345" z="99.375" h="28" random_walk="2"/>
 		</spawn>
 		<!-- Contaminated Malodor -->
@@ -1032,11 +1032,11 @@
 			<spot x="2342.11" y="1800.9" z="204.356" h="89"/>
 		</spawn>
 		<!-- Tursin Smackstopper Chief -->
-		<spawn npc_id="210352" respawn_time="1800">
+		<spawn npc_id="210352" respawn_time="295">
 			<spot x="2608.9" y="1116.44" z="196.21" h="22"/>
 		</spawn>
 		<!-- Tursin Wallarm Shaman -->
-		<spawn npc_id="210353" respawn_time="1800">
+		<spawn npc_id="210353" respawn_time="295">
 			<spot x="2609.78" y="1122.8" z="194.837" h="115"/>
 		</spawn>
 		<!-- Veteran Tursin Healer -->
@@ -1088,7 +1088,7 @@
 			<spot x="1113.82" y="1815.13" z="100.889" h="20"/>
 		</spawn>
 		<!-- High Priest Munuka -->
-		<spawn npc_id="216891" respawn_time="1800">
+		<spawn npc_id="216891" respawn_time="295">
 			<spot x="2245.75" y="966.737" z="146.376" h="56"/>
 		</spawn>
 		<!-- Frillneck Egg (Object Normal lvl:3) -->
@@ -2474,7 +2474,7 @@
 			<spot x="1977.17" y="2632.55" z="301.336" h="5"/>
 		</spawn>
 		<!-- Eninte Ghost -->
-		<spawn npc_id="210743" respawn_time="1800">
+		<spawn npc_id="210743" respawn_time="295">
 			<temporary_spawn spawn_time="20.*.*" despawn_time="8.*.*"/>
 			<spot x="1977.17" y="2632.55" z="301.336" h="18"/>
 		</spawn>
@@ -2751,7 +2751,7 @@
 			<spot x="2305.61" y="1212.33" z="168.192" h="106"/>
 		</spawn>
 		<!-- Ziloota The Seer -->
-		<spawn npc_id="210697" respawn_time="1800">
+		<spawn npc_id="210697" respawn_time="295">
 			<spot x="2303.4" y="1187.8" z="167.875" h="70"/>
 		</spawn>
 		<!-- Crack Krall Tower Wallarm -->
@@ -3002,7 +3002,7 @@
 			<spot x="2388.22" y="787.606" z="102.375" h="42"/>
 		</spawn>
 		<!-- Suspicious Treasure Box (Object Normal lvl:3) -->
-        <spawn npc_id="211823" respawn_time="1800">
+        <spawn npc_id="211823" respawn_time="295">
 			<spot x="1738.9" y="2538" z="155.974" h="44"/>
 			<spot x="1370.13" y="1924.31" z="137.543" h="51"/>
 		</spawn>
