@@ -19,6 +19,7 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
+import com.aionemu.gameserver.model.TeleportAnimation;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -101,31 +102,32 @@ public class _14024A_Kralling_Suspicion extends QuestHandler
                         if (var == 2) {
                             return sendQuestDialog(env, 2034);
                         }
-					} case SELECT_ACTION_2035: {
+                    }
+                    case SELECT_ACTION_2035: {
                         if (var == 2) {
                             return sendQuestDialog(env, 2035);
                         }
-					} case STEP_TO_4: {
-						qs.setStatus(QuestStatus.REWARD);
-                        updateQuestStatus(env);
-						TeleportService2.teleportTo(player, 210020000, 1605.3418f, 1528.9393f, 318.0651f, (byte) 117);
-						return closeDialogWindow(env);
-					} case CHECK_COLLECTED_ITEMS: {
-						return checkQuestItems(env, 2, 3, false, 2120, 2035);
-					} case FINISH_DIALOG: {
-						if (var == 3) {
-							defaultCloseDialog(env, 3, 3);
-						} else if (var == 2) {
-							defaultCloseDialog(env, 2, 2);
-						}
-					}
+                    }
+                    case CHECK_COLLECTED_ITEMS: {
+                        return checkQuestItems(env, 2, 3, false, 2120, 2035);
+                    }
+                    case STEP_TO_4: {
+                      TeleportService2.teleportTo(player, 210020000, 1610f, 1528f, 318f, (byte) 2, TeleportAnimation.BEAM_ANIMATION);
+                        changeQuestStep(env, 3, 3, true);
+                        return true;
+                    }
+                    case FINISH_DIALOG: {
+                        return closeDialogWindow(env);
+                    }
+                    default:
+                        break;
                 }
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 204020) {
-				if (env.getDialog() == QuestDialog.USE_OBJECT) {
-					return sendQuestDialog(env, 2375);
-				}
+                if (env.getDialog() == QuestDialog.USE_OBJECT) {
+                    return sendQuestDialog(env, 2375);
+                }
                 return sendQuestEndDialog(env);
             }
         }
