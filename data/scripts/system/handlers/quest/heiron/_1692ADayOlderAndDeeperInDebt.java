@@ -50,12 +50,10 @@ public class _1692ADayOlderAndDeeperInDebt extends QuestHandler {
 
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-
-		int targetId = 0;
-		if (env.getVisibleObject() instanceof Npc)
-			targetId = ((Npc) env.getVisibleObject()).getNpcId();
+		Player player = env.getPlayer();
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		QuestDialog dialog = env.getDialog();
+		int targetId = env.getTargetId();
 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798386) {
@@ -66,37 +64,24 @@ public class _1692ADayOlderAndDeeperInDebt extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
-		if (qs == null)
-			return false;
-
-		if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 798386: {
-					switch (env.getDialog()) {
-						case START_DIALOG: {
-							long itemCount1 = player.getInventory().getItemCountByItemId(152000104);
-							if (itemCount1 >= 10) {
-								return sendQuestDialog(env, 5);
-							}
-						}
-						case SELECT_NO_REWARD: {
-							removeQuestItem(env, 152000104, 1);
-							removeQuestItem(env, 182400001, 1);
-							qs.setStatus(QuestStatus.COMPLETE);
-							qs.setCompleteCount(1);
-							Rewards rewards = DataManager.QUEST_DATA.getQuestById(questId).getRewards().get(0);
-							int rewardExp = rewards.getExp();
-							int rewardKinah = (int) (player.getRates().getQuestKinahRate() * rewards.getGold());
-							giveQuestItem(env, 182400001, rewardKinah);
-							player.getCommonData().addExp(rewardExp, RewardType.QUEST);
-							PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(questId, QuestStatus.COMPLETE, 2));
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
-							updateQuestStatus(env);
-							return true;
-						}
+		else if (qs.getStatus() == QuestStatus.START) {
+			if (targetId == 798386) {
+				if (dialog == QuestDialog.START_DIALOG) {
+					if(qs.getQuestVarById(0) == 0) {
+						return sendQuestDialog(env, 2375);
 					}
 				}
+				else if (dialog == QuestDialog.CHECK_COLLECTED_ITEMS) {
+					return checkQuestItems(env, 0, 1, true, 5, 2716); 
+				}
+			}
+		}
+		else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (targetId == 798386) {
+				if (dialog == QuestDialog.USE_OBJECT) {
+					return sendQuestDialog(env, 5);
+				}
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;
