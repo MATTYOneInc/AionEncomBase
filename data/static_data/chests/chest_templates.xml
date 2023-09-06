@@ -168,7 +168,10 @@
 	<chest npcid="700948">
         <keyitem id="1" itemid="0" quantity="1"/>
     </chest>
-	
+	<!-- Haorunerk's Bag -->
+    <chest npcid="700522">
+        <keyitem id="1" itemid="0" quantity="1"/>
+    </chest>
 	<!-- CRADLE OF ETERNITY 5.1 CHEST -->
 	<!-- Watcher’s Treasure Chest -->
 	<chest npcid="834088">
