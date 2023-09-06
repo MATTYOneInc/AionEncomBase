@@ -17,9 +17,11 @@
 package quest.steel_rake;
 
 import com.aionemu.gameserver.model.gameobjects.Item;
+import com.aionemu.gameserver.model.TeleportAnimation;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
@@ -29,6 +31,7 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.instance.InstanceService;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.utils.PacketSendUtility;
+import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.WorldMapInstance;
 
 /****/
@@ -62,11 +65,12 @@ public class _3200Price_Of_Goodwill extends QuestHandler
 	public boolean onDialogEvent(final QuestEnv env) {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
+		
 		int targetId = 0;
-		int var = qs.getQuestVarById(0);
-		if (env.getVisibleObject() instanceof Npc) {
-			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-		} if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		if (env.getVisibleObject() instanceof Npc) 
+			targetId = ((Npc) env.getVisibleObject()).getNpcId();	
+		
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204658) { //Roikinerk.
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 4762);
@@ -75,7 +79,11 @@ public class _3200Price_Of_Goodwill extends QuestHandler
 				}
 			}
 			return false;
-		} if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+
+		int var = qs.getQuestVarById(0);
+		
+		if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805832) { //Tramine.
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
@@ -86,7 +94,9 @@ public class _3200Price_Of_Goodwill extends QuestHandler
 				}
 			}
 			return false;
-		} else if (qs.getStatus() == QuestStatus.START) {
+		}
+
+		else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 204658) {//Roikinerk.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -102,7 +112,8 @@ public class _3200Price_Of_Goodwill extends QuestHandler
 						return true;
 					}
 				}
-			} else if (targetId == 798332 && var == 1) { //Haorunerk.
+			}
+			else if (targetId == 798332 && var == 1) { //Haorunerk.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1352);
@@ -116,7 +127,8 @@ public class _3200Price_Of_Goodwill extends QuestHandler
 						return true;
 					}
 				}
-			} else if (targetId == 700522 && var == 2) { //Haorunerk's Bag.
+			}
+			else if (targetId == 700522 && var == 2) { //Haorunerk's Bag.
 				switch (env.getDialog()) {
 				    case USE_OBJECT: {
 						giveQuestItem(env, 182209082, 1);
@@ -124,7 +136,8 @@ public class _3200Price_Of_Goodwill extends QuestHandler
 						return closeDialogWindow(env);
 					}
 				}
-			} else if (targetId == 804601 && var == 3) { //Kurochinerk.
+			}
+			else if (targetId == 804601 && var == 3) { //Kurochinerk.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 2034);
