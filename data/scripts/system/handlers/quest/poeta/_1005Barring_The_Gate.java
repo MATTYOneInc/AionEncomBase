@@ -57,7 +57,7 @@ public class _1005Barring_The_Gate extends QuestHandler
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		int[] poetaQuests = {1100, 1001, 1002, 1003, 1004};
-		return defaultOnLvlUpEvent(env, poetaQuests, true);
+		return defaultOnLvlUpEvent(env, poetaQuests, false);
 	}
 	
 	@Override

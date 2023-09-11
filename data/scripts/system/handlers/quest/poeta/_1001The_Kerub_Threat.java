@@ -66,7 +66,7 @@ public class _1001The_Kerub_Threat extends QuestHandler
 	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 1100, true);
+		return defaultOnLvlUpEvent(env, 1100, false);
 	}
 	
 	@Override
