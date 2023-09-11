@@ -51,7 +51,7 @@ public class _24054Crisis_In_Beluslan extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24053, true);
+        return defaultOnLvlUpEvent(env, 24053, false);
     }
 	
     @Override

@@ -49,7 +49,7 @@ public class _24011Funny_Floating_Fungus extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24010, true);
+        return defaultOnLvlUpEvent(env, 24010, false);
     }
 	
     @Override

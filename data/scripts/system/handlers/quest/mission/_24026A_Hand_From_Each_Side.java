@@ -80,7 +80,7 @@ public class _24026A_Hand_From_Each_Side extends QuestHandler
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
         int[] quests = {24020, 24021, 24022, 24023, 24024, 24025};
-        return defaultOnLvlUpEvent(env, quests, true);
+        return defaultOnLvlUpEvent(env, quests, false);
     }
 	
     @Override

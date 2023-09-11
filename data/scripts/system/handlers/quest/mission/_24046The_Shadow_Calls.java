@@ -57,7 +57,7 @@ public class _24046The_Shadow_Calls extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24045, true);
+        return defaultOnLvlUpEvent(env, 24045, false);
     }
 	
     @Override

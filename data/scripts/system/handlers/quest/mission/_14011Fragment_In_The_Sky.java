@@ -116,6 +116,6 @@ public class _14011Fragment_In_The_Sky extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14010, true);
+        return defaultOnLvlUpEvent(env, 14010, false);
     }
 }

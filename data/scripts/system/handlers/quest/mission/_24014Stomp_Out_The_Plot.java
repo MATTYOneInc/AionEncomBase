@@ -51,7 +51,7 @@ public class _24014Stomp_Out_The_Plot extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24013, true);
+        return defaultOnLvlUpEvent(env, 24013, false);
     }
 	
     @Override

@@ -60,7 +60,7 @@ public class _14014Turning_The_Ide extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14013, true);
+        return defaultOnLvlUpEvent(env, 14013, false);
     }
 	
     @Override

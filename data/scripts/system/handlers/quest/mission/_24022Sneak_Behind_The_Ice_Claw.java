@@ -56,7 +56,7 @@ public class _24022Sneak_Behind_The_Ice_Claw extends QuestHandler {
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24021, true);
+        return defaultOnLvlUpEvent(env, 24021, false);
     }
 	
     @Override

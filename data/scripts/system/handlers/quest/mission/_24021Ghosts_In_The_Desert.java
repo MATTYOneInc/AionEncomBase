@@ -52,7 +52,7 @@ public class _24021Ghosts_In_The_Desert extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24020, true);
+        return defaultOnLvlUpEvent(env, 24020, false);
     }
 	
     @Override

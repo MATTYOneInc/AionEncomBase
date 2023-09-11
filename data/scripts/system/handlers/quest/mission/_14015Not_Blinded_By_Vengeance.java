@@ -46,7 +46,7 @@ public class _14015Not_Blinded_By_Vengeance extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14014, true);
+        return defaultOnLvlUpEvent(env, 14014, false);
     }
 	
     @Override

@@ -49,7 +49,7 @@ public class _14041Abyssal_Abilities extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14040, true);
+        return defaultOnLvlUpEvent(env, 14040, false);
     }
 	
     @Override

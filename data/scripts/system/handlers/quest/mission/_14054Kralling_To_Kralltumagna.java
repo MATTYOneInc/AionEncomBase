@@ -59,7 +59,7 @@ public class _14054Kralling_To_Kralltumagna extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14053, true);
+        return defaultOnLvlUpEvent(env, 14053, false);
     }
 	
     @Override

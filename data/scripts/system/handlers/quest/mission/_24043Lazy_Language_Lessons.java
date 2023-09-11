@@ -160,6 +160,6 @@ public class _24043Lazy_Language_Lessons extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24042, true);
+        return defaultOnLvlUpEvent(env, 24042, false);
     }
 }

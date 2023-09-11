@@ -49,7 +49,7 @@ public class _14013A_Frill_Of_A_Fuss extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14012, true);
+        return defaultOnLvlUpEvent(env, 14012, false);
     }
 	
     @Override

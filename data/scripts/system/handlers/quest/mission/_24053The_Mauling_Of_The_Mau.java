@@ -53,7 +53,7 @@ public class _24053The_Mauling_Of_The_Mau extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24052, true);
+        return defaultOnLvlUpEvent(env, 24052, false);
     }
 	
     @Override

@@ -130,6 +130,6 @@ public class _14044Shards_Of_Memory extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14043, true);
+        return defaultOnLvlUpEvent(env, 14043, false);
     }
 }

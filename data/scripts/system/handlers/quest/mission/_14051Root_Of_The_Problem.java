@@ -51,7 +51,7 @@ public class _14051Root_Of_The_Problem extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14050, true);
+        return defaultOnLvlUpEvent(env, 14050, false);
     }
 	
     @Override

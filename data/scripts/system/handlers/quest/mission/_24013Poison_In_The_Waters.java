@@ -54,7 +54,7 @@ public class _24013Poison_In_The_Waters extends QuestHandler {
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24012, true);
+        return defaultOnLvlUpEvent(env, 24012, false);
     }
 	
     @Override

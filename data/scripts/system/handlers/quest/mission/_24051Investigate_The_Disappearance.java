@@ -58,7 +58,7 @@ public class _24051Investigate_The_Disappearance extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24050, true);
+        return defaultOnLvlUpEvent(env, 24050, false);
     }
 	
     @Override

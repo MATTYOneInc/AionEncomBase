@@ -55,7 +55,7 @@ public class _14043Drawling_Balaur extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14042, true);
+        return defaultOnLvlUpEvent(env, 14042, false);
     }
 	
     @Override

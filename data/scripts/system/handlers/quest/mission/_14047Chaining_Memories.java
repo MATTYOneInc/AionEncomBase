@@ -54,7 +54,7 @@ public class _14047Chaining_Memories extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14046, true);
+        return defaultOnLvlUpEvent(env, 14046, false);
     }
 	
     @Override

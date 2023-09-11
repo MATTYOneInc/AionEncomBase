@@ -48,7 +48,7 @@ public class _24012An_Ominous_Crop extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24011, true);
+        return defaultOnLvlUpEvent(env, 24011, false);
     }
 	
     @Override

@@ -54,7 +54,7 @@ public class _14045Rumors_On_Wings extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14044, true);
+        return defaultOnLvlUpEvent(env, 14044, false);
     }
 	
     @Override

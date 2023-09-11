@@ -82,7 +82,7 @@ public class _14026A_Lone_Defense extends QuestHandler
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
         int[] quests = {14020, 14021, 14022, 14023, 14025};
-        return defaultOnLvlUpEvent(env, quests, true);
+        return defaultOnLvlUpEvent(env, quests, false);
     }
 	
     @Override

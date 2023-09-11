@@ -55,7 +55,7 @@ public class _14025Cooking_Up_Disasters extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14023, true);
+        return defaultOnLvlUpEvent(env, 14023, false);
     }
 	
     @Override

@@ -49,7 +49,7 @@ public class _24041Training_In_The_Abyss extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24040, true);
+        return defaultOnLvlUpEvent(env, 24040, false);
     }
 	
     @Override

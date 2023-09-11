@@ -146,6 +146,6 @@ public class _24044Change_The_Future extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24043, true);
+        return defaultOnLvlUpEvent(env, 24043, false);
     }
 }

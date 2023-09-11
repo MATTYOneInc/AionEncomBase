@@ -55,7 +55,7 @@ public class _24045A_Speedy_Errand extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24044, true);
+        return defaultOnLvlUpEvent(env, 24044, false);
     }
 	
     @Override

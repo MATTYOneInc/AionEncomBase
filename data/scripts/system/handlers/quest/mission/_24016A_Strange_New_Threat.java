@@ -60,7 +60,7 @@ public class _24016A_Strange_New_Threat extends QuestHandler
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		int[] altgardQuests = {24010, 24011, 24012, 24013, 24014, 24015};
-		return defaultOnLvlUpEvent(env, altgardQuests, true);
+		return defaultOnLvlUpEvent(env, altgardQuests, false);
 	}
 	
 	@Override

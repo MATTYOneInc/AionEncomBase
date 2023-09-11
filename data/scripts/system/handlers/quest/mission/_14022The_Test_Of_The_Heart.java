@@ -50,7 +50,7 @@ public class _14022The_Test_Of_The_Heart extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14021, true);
+        return defaultOnLvlUpEvent(env, 14021, false);
     }
 	
     @Override

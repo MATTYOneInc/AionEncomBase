@@ -32,7 +32,7 @@ public class _14023Playing_Around_At_The_Temple extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14022);
+        return defaultOnLvlUpEvent(env, 14022, false);
     }
 	
     @Override

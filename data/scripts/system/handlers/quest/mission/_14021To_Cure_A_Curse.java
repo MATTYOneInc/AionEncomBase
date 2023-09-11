@@ -52,7 +52,7 @@ public class _14021To_Cure_A_Curse extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14020, true);
+        return defaultOnLvlUpEvent(env, 14020, false);
     }
 	
     @Override

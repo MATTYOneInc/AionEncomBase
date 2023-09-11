@@ -59,7 +59,7 @@ public class _14016A_Gate_Agape extends QuestHandler
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		int[] verteronQuests = {14010, 14011, 14012, 14013, 14014, 14015};
-		return defaultOnLvlUpEvent(env, verteronQuests, true);
+		return defaultOnLvlUpEvent(env, verteronQuests, false);
 	}
 	
 	@Override

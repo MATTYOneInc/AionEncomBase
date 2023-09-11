@@ -50,7 +50,7 @@ public class _14053Danger_Cubed extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14052, true);
+        return defaultOnLvlUpEvent(env, 14052, false);
     }
 	
     @Override

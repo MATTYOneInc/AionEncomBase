@@ -55,7 +55,7 @@ public class _14046Piecing_The_Memory extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14045, true);
+        return defaultOnLvlUpEvent(env, 14045, false);
     }
 	
     @Override
