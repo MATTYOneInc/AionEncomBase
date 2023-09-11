@@ -251,7 +251,7 @@
 	</monster_hunt>
 	<!-- [Growth] A Statuesque Monster -->
 	<monster_hunt id="80412" start_npc_ids="831843">
-		<monster var="0" npc_ids="215382" end_var="1"/>
+		<monster var="0" npc_ids="215382 237118" end_var="1"/>
 		<monster var="1" npc_ids="214670" end_var="3"/>
 	</monster_hunt>
 	<!-- [Growth] Unstable Experiments -->
