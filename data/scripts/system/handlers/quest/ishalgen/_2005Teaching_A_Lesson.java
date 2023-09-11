@@ -48,7 +48,7 @@ public class _2005Teaching_A_Lesson extends QuestHandler
 	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 2004, true);
+		return defaultOnLvlUpEvent(env, 2004, false);
 	}
 	
 	@Override

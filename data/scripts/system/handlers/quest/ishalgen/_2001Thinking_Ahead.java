@@ -50,7 +50,7 @@ public class _2001Thinking_Ahead extends QuestHandler
 	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 2100, true);
+		return defaultOnLvlUpEvent(env, 2100, false);
 	}
 	
 	@Override

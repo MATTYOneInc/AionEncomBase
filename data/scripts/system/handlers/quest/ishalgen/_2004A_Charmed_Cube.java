@@ -53,7 +53,7 @@ public class _2004A_Charmed_Cube extends QuestHandler
 	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 2003, true);
+		return defaultOnLvlUpEvent(env, 2003, false);
 	}
 	
 	@Override

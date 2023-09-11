@@ -47,7 +47,7 @@ public class _2006Hit_Them_Where_It_Hurts extends QuestHandler
 	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 2005, true);
+		return defaultOnLvlUpEvent(env, 2005, false);
 	}
 	
 	@Override

@@ -57,7 +57,7 @@ public class _2007Wheres_Rae_This_Time extends QuestHandler
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		int[] ishalgenQuests = {2100, 2001, 2002, 2003, 2004, 2005, 2006};
-		return defaultOnLvlUpEvent(env, ishalgenQuests, true);
+		return defaultOnLvlUpEvent(env, ishalgenQuests, false);
 	}
 	
 	@Override
