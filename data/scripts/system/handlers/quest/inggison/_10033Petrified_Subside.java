@@ -128,7 +128,7 @@ public class _10033Petrified_Subside extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 798970) {
+			if (targetId == 798975) {
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				} else {
