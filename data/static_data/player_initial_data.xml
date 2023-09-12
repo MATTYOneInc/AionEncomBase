@@ -15,15 +15,6 @@
 			<item id="160000001" count="12"/>
 			<item id="169300002" count="20"/>
 			<item id="182400001" count="1000"/>
-			<item id="188057147" count="1"/>
-			<item id="188057147" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057145" count="1"/>
-			<item id="188057148" count="1"/>
-			<item id="187050016" count="1"/>
-			<item id="187050017" count="1"/>
-			<item id="188057149" count="1"/>
 		</items>
 	</player_data>
 	<player_data class="MAGE">
@@ -35,15 +26,6 @@
 			<item id="160000001" count="12"/>
 			<item id="169300002" count="20"/>
 			<item id="182400001" count="1000"/>
-			<item id="188057147" count="1"/>
-			<item id="188057147" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057145" count="1"/>
-			<item id="188057148" count="1"/>
-			<item id="187050016" count="1"/>
-			<item id="187050017" count="1"/>
-			<item id="188057149" count="1"/>
 		</items>
 	</player_data>
 	<player_data class="PRIEST">
@@ -55,15 +37,6 @@
 			<item id="160000001" count="12"/>
 			<item id="169300002" count="20"/>
 			<item id="182400001" count="1000"/>
-			<item id="188057147" count="1"/>
-			<item id="188057147" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057145" count="1"/>
-			<item id="188057148" count="1"/>
-			<item id="187050016" count="1"/>
-			<item id="187050017" count="1"/>
-			<item id="188057149" count="1"/>
 		</items>
 	</player_data>
 	<player_data class="SCOUT">
@@ -75,15 +48,6 @@
 			<item id="160000001" count="12"/>
 			<item id="169300002" count="20"/>
 			<item id="182400001" count="1000"/>
-			<item id="188057147" count="1"/>
-			<item id="188057147" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057145" count="1"/>
-			<item id="188057148" count="1"/>
-			<item id="187050016" count="1"/>
-			<item id="187050017" count="1"/>
-			<item id="188057149" count="1"/>
 		</items>
 	</player_data>
 	<player_data class="MUSE">
@@ -95,15 +59,6 @@
 			<item id="160000001" count="12"/>
 			<item id="169300002" count="20"/>
 			<item id="182400001" count="1000"/>
-			<item id="188057147" count="1"/>
-			<item id="188057147" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057145" count="1"/>
-			<item id="188057148" count="1"/>
-			<item id="187050016" count="1"/>
-			<item id="187050017" count="1"/>
-			<item id="188057149" count="1"/>
 		</items>
 	</player_data>
 	<player_data class="TECHNIST">
@@ -115,15 +70,6 @@
 			<item id="160000001" count="12"/>
 			<item id="169300002" count="20"/>
 			<item id="182400001" count="1000"/>
-			<item id="188057147" count="1"/>
-			<item id="188057147" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057146" count="1"/>
-			<item id="188057145" count="1"/>
-			<item id="188057148" count="1"/>
-			<item id="187050016" count="1"/>
-			<item id="187050017" count="1"/>
-			<item id="188057149" count="1"/>
 		</items>
 	</player_data>
 </player_initial_data>
