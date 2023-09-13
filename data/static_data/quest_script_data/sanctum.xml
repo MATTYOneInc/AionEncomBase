@@ -221,7 +221,7 @@
 	</skill_use>
 	<!-- The Ranger Preceptor's Task -->
 	<skill_use id="3924" start_npc_id="203705">
-		<skill end_var="10" ids="798"/>
+		<skill end_var="10" ids="4610"/>
 	</skill_use>
 	<!-- The Assassin Preceptor's Task -->
 	<skill_use id="3925" start_npc_id="203705">
