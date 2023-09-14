@@ -3012,7 +3012,7 @@
             <spot x="237.80183" y="797.1904" z="441.65073" h="14" random_walk="3"/>
             <spot x="276.23694" y="853.2067" z="436.76617" h="21" random_walk="3"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_Fi_58_Ah -->
+		<!-- LF5_P1_SharkSpecies_Fi_58_Ah - Black Fin Shellshield -->
 		<spawn npc_id="235833" respawn_time="295">
 			<spot x="172.61697" y="883.09015" z="443.78857" h="62"/>
             <spot x="135.11845" y="1026.769" z="460.0" h="57"/>
@@ -3023,7 +3023,7 @@
             <spot x="200.54053" y="790.30396" z="448.626" h="108"/>
             <spot x="95.12438" y="880.4035" z="443.65988" h="114"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_As_58_Ah -->
+		<!-- LF5_P1_SharkSpecies_As_58_Ah - Black Fin Surveyor -->
 		<spawn npc_id="235834" respawn_time="295">
 			<spot x="72.52008" y="909.99976" z="444.65753" h="110"/>
             <spot x="49.774395" y="956.2405" z="454.59586" h="18"/>
@@ -3032,7 +3032,7 @@
             <spot x="53.55094" y="783.6766" z="466.32635" h="16"/>
             <spot x="126.07391" y="930.2982" z="443.98135" h="88"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_As_58_hide_Ah -->
+		<!-- LF5_P1_SharkSpecies_As_58_hide_Ah - Black Fin Surveyor -->
 		<spawn npc_id="235835" respawn_time="295">
 			<spot x="166.9593" y="849.6354" z="443.78717" h="91"/>
             <spot x="150.05185" y="836.23584" z="444.2385" h="107"/>
@@ -3040,7 +3040,7 @@
             <spot x="135.6119" y="957.8973" z="447.39282" h="8"/>
             <spot x="93.09219" y="844.40356" z="443.9748" h="16"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_Pr_58_Ah -->
+		<!-- LF5_P1_SharkSpecies_Pr_58_Ah - Black Fin Mentalist -->
 		<spawn npc_id="235836" respawn_time="295">
 			<spot x="125.588745" y="899.34607" z="443.38553" h="38"/>
             <spot x="148.11214" y="917.3943" z="444.33716" h="15"/>
@@ -3052,7 +3052,7 @@
             <spot x="190.83455" y="963.4451" z="448.22903" h="89"/>
             <spot x="62.32332" y="995.54" z="454.79895" h="102"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_Wi_58_Ah -->
+		<!-- LF5_P1_SharkSpecies_Wi_58_Ah - Black Fin Shaman -->
 		<spawn npc_id="235837" respawn_time="295">
 			<spot x="127.9792" y="1053.6748" z="459.625" h="86"/>
             <spot x="170.18059" y="1034.8121" z="459.71613" h="57"/>
@@ -3060,7 +3060,7 @@
             <spot x="119.479355" y="865.38165" z="443.0712" h="17"/>
             <spot x="138.15349" y="889.7996" z="441.75" h="73"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_Fi_59_Ah -->
+		<!-- LF5_P1_SharkSpecies_Fi_59_Ah - Black Fin Shellshield -->
 		<spawn npc_id="235839" respawn_time="295">
 			<spot x="578.33594" y="703.8731" z="422.65393" h="52"/>
             <spot x="329.2238" y="733.92163" z="409.75" h="11"/>
@@ -3072,7 +3072,7 @@
             <spot x="444.97433" y="816.8634" z="409.97327" h="49"/>
             <spot x="498.3592" y="805.7231" z="409.1077" h="54"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_As_59_Ah -->
+		<!-- LF5_P1_SharkSpecies_As_59_Ah - Black Fin Surveyor -->
 		<spawn npc_id="235840" respawn_time="295">
 			<spot x="562.46497" y="850.5513" z="417.0902" h="68"/>
             <spot x="538.2709" y="737.3528" z="412.47284" h="37"/>
@@ -3082,12 +3082,12 @@
             <spot x="459.84625" y="908.8" z="424.5096" h="0"/>
             <spot x="509.32013" y="788.2152" z="406.75" h="11"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_As_59_hide_Ah -->
+		<!-- LF5_P1_SharkSpecies_As_59_hide_Ah - Black Fin Surveyor -->
 		<spawn npc_id="235841" respawn_time="295">
 			<spot x="482.4911" y="715.6111" z="412.65222" h="23"/>
             <spot x="546.6228" y="807.1004" z="409.375" h="86"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_Pr_59_Ah -->
+		<!-- LF5_P1_SharkSpecies_Pr_59_Ah - Black Fin Mentalist -->
 		<spawn npc_id="235842" respawn_time="295">
 			<spot x="389.82272" y="660.6365" z="406.2335" h="37"/>
             <spot x="311.23257" y="730.06384" z="410.67297" h="5"/>
@@ -3095,7 +3095,7 @@
             <spot x="495.61426" y="912.99603" z="424.68726" h="112"/>
             <spot x="521.2231" y="697.63025" z="418.625" h="1"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_Wi_59_Ah -->
+		<!-- LF5_P1_SharkSpecies_Wi_59_Ah - Black Fin Shaman -->
 		<spawn npc_id="235843" respawn_time="295">
 			<spot x="393.99786" y="662.1055" z="406.38794" h="42"/>
             <spot x="311.76395" y="721.67" z="410.26474" h="15"/>
@@ -3103,7 +3103,7 @@
             <spot x="517.50397" y="830.1815" z="410.85294" h="80"/>
             <spot x="508.61032" y="736.5504" z="411.75375" h="68"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_Fi_60_Ah -->
+		<!-- LF5_P1_SharkSpecies_Fi_60_Ah - Black Fin Shellshield -->
 		<spawn npc_id="235845" respawn_time="295">
 			<spot x="219.93828" y="276.96606" z="436.375" h="9"/>
             <spot x="168.4478" y="273.06232" z="446.01306" h="119"/>
@@ -3111,14 +3111,14 @@
             <spot x="259.9788" y="322.02463" z="435.87653" h="100"/>
             <spot x="268.11133" y="270.13123" z="432.39587" h="37"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_As_60_Ah -->
+		<!-- LF5_P1_SharkSpecies_As_60_Ah - Black Fin Surveyor -->
 		<spawn npc_id="235846" respawn_time="295">
 			<spot x="211.30846" y="296.6235" z="439.83728" h="114"/>
             <spot x="189.04932" y="284.21964" z="442.442" h="101"/>
             <spot x="239.46161" y="253.75194" z="441.7853" h="35"/>
             <spot x="214.50745" y="235.93207" z="445.71814" h="44"/>
 		</spawn>
-		<!-- LF5_P1_SharkSpecies_As_60_hide_Ah -->
+		<!-- LF5_P1_SharkSpecies_As_60_hide_Ah - Black Fin Surveyor -->
 		<spawn npc_id="235847" respawn_time="295">
 			<spot x="289.5554" y="265.5977" z="435.04694" h="51"/>
             <spot x="261.77994" y="344.0541" z="435.98624" h="111"/>
