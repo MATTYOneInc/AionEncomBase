@@ -3818,7 +3818,7 @@
             <spot x="2242.3054" y="1239.0925" z="433.83792" h="34"/>
             <spot x="2197.538" y="1181.8766" z="429.32498" h="60"/>
 		</spawn>
-		<!-- LF5_F_Clodworm_60_An -->
+		<!-- LF5_F_Clodworm_60_An - Greenshell Aphid -->
 		<spawn npc_id="235880" respawn_time="295">
 			<spot x="1747.8517" y="965.1714" z="434.61285" h="14" random_walk="3"/>
             <spot x="1752.3044" y="995.6081" z="433.24454" h="21" random_walk="3"/>
@@ -3841,7 +3841,7 @@
             <spot x="1835.0344" y="1208.6562" z="439.18536" h="8" random_walk="3"/>
             <spot x="1768.7253" y="1172.2277" z="439.375" h="69" random_walk="3"/>
 		</spawn>
-		<!-- LF5_F_Slime_60_An -->
+		<!-- LF5_F_Slime_60_An - Sticky Slime -->
 		<spawn npc_id="235881" respawn_time="295">
 			<spot x="2744.456" y="1539.7675" z="411.9186" h="64" random_walk="3"/>
             <spot x="2745.3347" y="1593.1056" z="406.9447" h="22" random_walk="3"/>
@@ -3858,7 +3858,7 @@
             <spot x="2419.8105" y="1475.5054" z="437.4691" h="69" random_walk="3"/>
             <spot x="2457.001" y="1418.6555" z="439.08417" h="44" random_walk="3"/>
 		</spawn>
-		<!-- LF5_F_RafflesiaSea_60_An -->
+		<!-- LF5_F_RafflesiaSea_60_An - Twilight Temple Templegolem -->
 		<spawn npc_id="235882" respawn_time="295">
 			<spot x="1839.8511" y="1081.3651" z="439.02106" h="37" random_walk="3"/>
             <spot x="1786.34" y="1069.3623" z="444.06653" h="66" random_walk="3"/>
@@ -3927,7 +3927,7 @@
             <spot x="2098.6118" y="1433.3031" z="427.53256" h="78" random_walk="3"/>
             <spot x="2167.725" y="1399.5842" z="433.31506" h="54" random_walk="3"/>
 		</spawn>
-		<!-- LF5_F_NagaWarrior_60_An -->
+		<!-- LF5_F_NagaWarrior_60_An - Twilight Temple Nagarant Fighter -->
 		<spawn npc_id="235883" respawn_time="295">
 			<spot x="2321.8564" y="1394.8219" z="437.71216" h="24" random_walk="3"/>
             <spot x="2303.2498" y="1426.2115" z="437.1382" h="20" random_walk="3"/>
@@ -3935,14 +3935,14 @@
             <spot x="2260.7" y="1408.4418" z="437.875" h="58" random_walk="3"/>
             <spot x="2314.5796" y="1318.9967" z="438.08878" h="56" random_walk="3"/>
 		</spawn>
-		<!-- LF5_F_NagaWarrior_61_An -->
+		<!-- LF5_F_NagaWarrior_61_An - Twilight Temple Nagarant Fighter -->
 		<spawn npc_id="235884" respawn_time="295">
 			<spot x="2595.408" y="1506.1039" z="429.05" h="79" random_walk="3"/>
             <spot x="2557.755" y="1508.6931" z="427.64032" h="88" random_walk="3"/>
             <spot x="2502.8008" y="1508.8832" z="433.3999" h="90" random_walk="3"/>
             <spot x="2523.432" y="1529.0698" z="429.81686" h="87" random_walk="3"/>
 		</spawn>
-		<!-- LF5_F_NagaMage_60_An -->
+		<!-- LF5_F_NagaMage_60_An - Twilight Temple Nagarant Mage -->
 		<spawn npc_id="235885" respawn_time="295">
 			<spot x="2389.889" y="1408.6388" z="437.743" h="6" random_walk="3"/>
             <spot x="2435.957" y="1362.637" z="438.5398" h="0" random_walk="3"/>
@@ -3958,7 +3958,7 @@
             <spot x="2554.2478" y="1471.5848" z="427.74496" h="47" random_walk="3"/>
             <spot x="2524.191" y="1423.2673" z="430.78342" h="14" random_walk="3"/>
 		</spawn>
-		<!-- LF5_F_NagaMage_61_An -->
+		<!-- LF5_F_NagaMage_61_An - Twilight Temple Nagarant Mage -->
 		<spawn npc_id="235886" respawn_time="295">
 			<spot x="2573.067" y="1499.1554" z="427.69168" h="73" random_walk="3"/>
             <spot x="2528.7937" y="1456.1206" z="432.1087" h="80" random_walk="3"/>
@@ -3967,7 +3967,7 @@
             <spot x="2607.9685" y="1459.0419" z="430.18488" h="31" random_walk="3"/>
             <spot x="2641.6045" y="1457.7081" z="430.25" h="23" random_walk="3"/>
 		</spawn>
-		<!-- LF5_F_Sheluk_60_An -->
+		<!-- LF5_F_Sheluk_60_An - Adolescent Stemlash Sheluk -->
 		<spawn npc_id="235887" respawn_time="295">
 			<spot x="1780.062" y="1188.044" z="438.50113" h="14" random_walk="3"/>
             <spot x="1787.8059" y="1227.6626" z="438.0918" h="28" random_walk="3"/>
@@ -4000,7 +4000,7 @@
             <spot x="1835.1229" y="845.31903" z="434.35953" h="118" random_walk="3"/>
             <spot x="1600.6989" y="1225.3859" z="438.9119" h="1" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_LizardmanFighter_61_An -->
+		<!-- LF5_H_LizardmanFighter_61_An - Adolescent Stemlash Sheluk -->
 		<spawn npc_id="235888" respawn_time="295">
 			<spot x="1883.8708" y="2727.9792" z="328.25" h="28" random_walk="3"/>
             <spot x="1820.6348" y="2709.6758" z="331.375" h="59" random_walk="3"/>
@@ -4015,7 +4015,7 @@
             <spot x="1901.4373" y="2664.2163" z="326.44534" h="109" random_walk="3"/>
             <spot x="1890.6743" y="2697.1836" z="328.32397" h="61" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_LizardmanFighter_62_An -->
+		<!-- LF5_H_LizardmanFighter_62_An - Primeval Draconute Warrior -->
 		<spawn npc_id="235889" respawn_time="295">
 			<spot x="1728.8613" y="2635.1106" z="340.07294" h="73" random_walk="3"/>
             <spot x="1759.4979" y="2605.5234" z="335.2218" h="104" random_walk="3"/>
