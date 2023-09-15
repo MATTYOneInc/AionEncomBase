@@ -29,6 +29,7 @@ import com.aionemu.gameserver.model.actions.PlayerMode;
 import com.aionemu.gameserver.model.gameobjects.Minion;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.Pet;
+import com.aionemu.gameserver.model.gameobjects.Minion;
 import com.aionemu.gameserver.model.gameobjects.Summon;
 import com.aionemu.gameserver.model.gameobjects.player.BindPointPosition;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -202,15 +203,22 @@ public class TeleportService2 {
 		if (player.getWorldId() == pos.getMapId()) {
 			player.getPosition().setXYZH(pos.getX(), pos.getY(), pos.getZ(), pos.getHeading());
 			//Pet.
+
 			Pet pet = player.getPet();
 			if (pet != null) {
 				World.getInstance().setPosition(pet, pos.getMapId(), player.getInstanceId(), pos.getX(), pos.getY(), pos.getZ(), pos.getHeading());
 			}
+
 			//Summon.
 			Summon summon = player.getSummon();
 
 			if (summon != null) {
 				World.getInstance().setPosition(summon, pos.getMapId(), player.getInstanceId(), pos.getX(), pos.getY(), pos.getZ(), pos.getHeading());
+			}
+			// Minion
+			Minion minion = player.getMinion();
+			if (minion != null) {
+				World.getInstance().setPosition(minion, pos.getMapId(), player.getInstanceId(), pos.getX(), pos.getY(), pos.getZ(), pos.getHeading());
 			}
 
 			PacketSendUtility.sendPacket(player, new SM_STATS_INFO(player));
@@ -223,10 +231,18 @@ public class TeleportService2 {
 			if (pet != null) {
 				World.getInstance().spawn(pet);
 			}
+
+
 			//Summon.
 			if (summon != null) {
 				World.getInstance().spawn(summon);
 			}
+
+			// Minion
+			if (minion != null) {
+				World.getInstance().spawn(minion);
+			}
+
 			player.updateKnownlist();
 			player.getKnownList().clear();
 			player.getController().updateZone();
@@ -330,20 +346,23 @@ public class TeleportService2 {
 		int currentWorldId = player.getWorldId();
 		boolean isInstance = DataManager.WORLD_MAPS_DATA.getTemplate(worldId).isInstance();
 		World.getInstance().setPosition(player, worldId, instanceId, x, y, z, heading);
+
 		//Pet.
 		Pet pet = player.getPet();
 		if (pet != null) {
 			World.getInstance().setPosition(pet, worldId, instanceId, x, y, z, heading);
 		}
+
 		//Summon.
 		Summon summon = player.getSummon();
 		if (summon != null) {
 			World.getInstance().setPosition(summon, worldId, instanceId, x, y, z, heading);
 		}
-		//Minion.
+
+		// Minion
 		Minion minion = player.getMinion();
 		if (minion != null) {
-			MinionService.getInstance().despawnMinion(player, player.getMinion().getObjectId());
+			World.getInstance().setPosition(minion, worldId, instanceId, x, y, z, heading);
 		}
 
 		player.setPortAnimation(animation.getEndAnimationId());
@@ -363,14 +382,22 @@ public class TeleportService2 {
 			playerTransformation(player);
 			instanceTransformation(player);
 			archdaevaTransformation(player);
+
 			//Pet.
 			if (pet != null) {
 				World.getInstance().spawn(pet);
 			    player.setPortAnimation(4);
 			}
+
 			//Summon.
 			if (summon != null) {
 			    World.getInstance().spawn(summon);
+				player.setPortAnimation(4);
+			}
+
+			// Minion
+			if (minion != null) {
+				World.getInstance().spawn(minion);
 				player.setPortAnimation(4);
 			}
 
