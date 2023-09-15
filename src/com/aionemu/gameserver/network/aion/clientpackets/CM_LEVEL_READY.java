@@ -19,6 +19,7 @@ package com.aionemu.gameserver.network.aion.clientpackets;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Pet;
 import com.aionemu.gameserver.model.gameobjects.Summon;
+import com.aionemu.gameserver.model.gameobjects.Minion;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.items.storage.StorageType;
 import com.aionemu.gameserver.model.outpost.OutpostLocation;
@@ -118,16 +119,22 @@ public class CM_LEVEL_READY extends AionClientPacket
 		TeleportService2.instanceTransformation(activePlayer);
 		//BattleField Union 5.3
 		//BattlefieldUnionService.getInstance().onEnterWorld(activePlayer);
-		//Pet.
+		// Pet
 		Pet pet = activePlayer.getPet();
 		if (pet != null && !pet.isSpawned()) {
 			World.getInstance().spawn(pet);
 		}
-		//Summon.
+		// Summon
 		Summon summon = activePlayer.getSummon();
 		if (summon != null && !summon.isSpawned()) {
 			World.getInstance().spawn(summon);
 		}
+		// Minion
+		Minion minion = activePlayer.getMinion();
+		if (minion != null && !minion.isSpawned()) {
+			World.getInstance().spawn(minion);
+		}
+		
 		activePlayer.setPortAnimation(0x02);
 		PacketSendUtility.sendPacket(activePlayer, new SM_CASH_BUFF(1));
 	}
