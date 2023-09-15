@@ -21,7 +21,6 @@ import com.aionemu.gameserver.configs.main.AutoGroupConfig;
 import com.aionemu.gameserver.configs.main.GSConfig;
 import com.aionemu.gameserver.dao.*;
 import com.aionemu.gameserver.model.account.PlayerAccountData;
-import com.aionemu.gameserver.model.gameobjects.Summon;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.items.storage.StorageType;
 import com.aionemu.gameserver.model.summons.SummonMode;
@@ -114,12 +113,13 @@ public class PlayerLeaveWorldService
 			DuelService.getInstance().loseDuel(player);
 		}
 
-		Summon summon = player.getSummon();
-		if (summon != null) {
-			SummonsService.doMode(SummonMode.RELEASE, summon, UnsummonType.LOGOUT);
+		if (player.getSummon() != null) {
+			SummonsService.doMode(SummonMode.RELEASE, player.getSummon(), UnsummonType.LOGOUT);
 		}
-
-		PetSpawnService.dismissPet(player, true);
+		
+		if (player.getPet() != null) {
+			PetSpawnService.dismissPet(player, true);
+		}
 
 		if (player.getMinion() != null) {
 			MinionService.getInstance().despawnMinion(player, player.getMinion().getObjectId());	
