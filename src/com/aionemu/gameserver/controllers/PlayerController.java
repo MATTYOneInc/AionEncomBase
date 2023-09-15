@@ -10,11 +10,13 @@ import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.TaskId;
 import com.aionemu.gameserver.model.actions.PlayerMode;
 import com.aionemu.gameserver.model.gameobjects.*;
+import com.aionemu.gameserver.model.gameobjects.Minion;
 import com.aionemu.gameserver.model.gameobjects.player.AbyssRank;
 import com.aionemu.gameserver.model.gameobjects.player.BindPointPosition;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.state.CreatureState;
 import com.aionemu.gameserver.model.gameobjects.state.CreatureVisualState;
+import com.aionemu.gameserver.model.gameobjects.player.MinionCommonData;
 import com.aionemu.gameserver.model.house.House;
 import com.aionemu.gameserver.model.skill.PlayerSkillEntry;
 import com.aionemu.gameserver.model.stats.container.PlayerGameStats;
@@ -33,6 +35,7 @@ import com.aionemu.gameserver.model.templates.zone.ZoneClassName;
 import com.aionemu.gameserver.network.aion.serverpackets.*;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ATTACK_STATUS.LOG;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ATTACK_STATUS.TYPE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_MINIONS;
 import com.aionemu.gameserver.questEngine.QuestEngine;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.restrictions.RestrictionsManager;
@@ -50,6 +53,7 @@ import com.aionemu.gameserver.services.player.CreativityPanel.CreativityEssenceS
 import com.aionemu.gameserver.services.summons.SummonsService;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.services.toypet.PetSpawnService;
+import com.aionemu.gameserver.services.toypet.MinionService;
 import com.aionemu.gameserver.skillengine.SkillEngine;
 import com.aionemu.gameserver.skillengine.model.*;
 import com.aionemu.gameserver.skillengine.model.Skill.SkillMethod;
@@ -112,14 +116,21 @@ public class PlayerController extends CreatureController<Player> {
 				LoggerFactory.getLogger(PlayerController.class).debug("Player " + getOwner().getName() + " sees " + object.getName() + " that has Toypet");
 				PacketSendUtility.sendPacket(getOwner(), new SM_PET(3, player.getPet()));
 			}
+			if (player.getMinion() != null) {
+				LoggerFactory.getLogger(PlayerController.class).debug("Player " + getOwner().getName() + " sees " + object.getName() + " that has minion");
+				MinionCommonData commonData = player.getMinionList().getMinion(object.getObjectId());
+				PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(5, commonData));
+			}
 			player.getEffectController().sendEffectIconsTo(getOwner());
-		} else if (object instanceof Kisk) {
+		}
+		else if (object instanceof Kisk) {
 			Kisk kisk = ((Kisk) object);
 			PacketSendUtility.sendPacket(getOwner(), new SM_NPC_INFO(kisk, getOwner()));
 			if (getOwner().getRace() == kisk.getOwnerRace()) {
 				PacketSendUtility.sendPacket(getOwner(), new SM_KISK_UPDATE(kisk));
 			}
-		} else if (object instanceof Npc) {
+		}
+		else if (object instanceof Npc) {
 			Npc npc = ((Npc) object);
 			PacketSendUtility.sendPacket(getOwner(), new SM_NPC_INFO(npc, getOwner()));
 			PacketSendUtility.sendPacket(getOwner(), new SM_EMOTION_NPC(npc, npc.getState(), EmotionType.SELECT_TARGET));
@@ -138,6 +149,10 @@ public class PlayerController extends CreatureController<Player> {
 		} else if (object instanceof Pet) {
 			PacketSendUtility.sendPacket(getOwner(), new SM_PET(3, (Pet) object));
 	    }
+		else if (object instanceof Minion) {
+			MinionCommonData commonData = getOwner().getMinionList().getMinion(object.getObjectId());
+			PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(5, commonData));
+		}
 	}
 	
 	private RobotInfo getRobotInfo(Player player) {
@@ -150,7 +165,12 @@ public class PlayerController extends CreatureController<Player> {
 		super.notSee(object, isOutOfRange);
 		if (object instanceof Pet) {
 			PacketSendUtility.sendPacket(getOwner(), new SM_PET(4, (Pet) object));
-        } else {
+        }
+		else if (object instanceof Minion) {
+			MinionCommonData commonData = getOwner().getMinionList().getMinion(object.getObjectId());
+			PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(6, commonData));
+		}
+		else {
 			PacketSendUtility.sendPacket(getOwner(), new SM_DELETE(object, isOutOfRange ? 0 : 15));
 		}
 	}
@@ -511,23 +531,45 @@ public class PlayerController extends CreatureController<Player> {
 			player.getBattleground().onDie(player, master);
 			return;
 		}
+
+		/**
+		 * Release Summon
+		 */
 		Summon summon = player.getSummon();
 		if (summon != null) {
 			SummonsService.doMode(SummonMode.RELEASE, summon, UnsummonType.UNSPECIFIED);
 		}
+
+		/**
+		 * Release Pet
+		 */
 		Pet pet = player.getPet();
 		if (pet != null) {
 			PetSpawnService.dismissPet(player, true);
 		}
+
+		/**
+		 * Release Minion
+		 */
+		Minion minion = player.getMinion();
+		if (minion != null) {
+			MinionService.getInstance().despawnMinion(player, minion.getObjectId());
+		}
+
 		if (player.isInState(CreatureState.FLYING)) {
 			player.setIsFlyingBeforeDeath(true);
 		}
+
+		// ride
 		player.setPlayerMode(PlayerMode.RIDE, null);
 		player.unsetState(CreatureState.RESTING);
 		player.unsetState(CreatureState.FLOATING_CORPSE);
+
+		// unsetflying
 		player.unsetState(CreatureState.FLYING);
 		player.unsetState(CreatureState.GLIDING);
 		player.setFlyState(0);
+
 		if (player.isInInstance() &&
 		    !FFAService.getInstance().isInArena(player) ||
 			player.getBattleground() == null ||
