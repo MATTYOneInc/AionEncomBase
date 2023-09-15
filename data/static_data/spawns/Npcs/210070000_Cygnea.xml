@@ -4026,7 +4026,7 @@
             <spot x="1756.5417" y="2721.8987" z="333.875" h="90" random_walk="3"/>
             <spot x="1719.0541" y="2759.9968" z="335.05933" h="72" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_Rottentree_61_An -->
+		<!-- LF5_H_Rottentree_61_An - Crystalshard Eremita -->
 		<spawn npc_id="235890" respawn_time="295">
 			<spot x="2579.0" y="1832.0" z="368.1875" h="7" random_walk="3"/>
             <spot x="2558.9429" y="1814.716" z="369.875" h="88" random_walk="3"/>
@@ -4041,7 +4041,7 @@
             <spot x="2529.0903" y="1891.7251" z="362.5107" h="83" random_walk="3"/>
             <spot x="2578.343" y="1893.684" z="366.1645" h="34" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_Rottentree_62_An -->
+		<!-- LF5_H_Rottentree_62_An - Mature Crystalshard Eremita -->
 		<spawn npc_id="235891" respawn_time="295">
 			<spot x="2404.409" y="2013.7239" z="353.7555" h="32" random_walk="3"/>
             <spot x="2431.5237" y="2011.362" z="352.29526" h="30" random_walk="3"/>
@@ -4054,7 +4054,7 @@
             <spot x="2474.2383" y="2066.086" z="353.4851" h="8" random_walk="3"/>
             <spot x="2471.9502" y="1921.3816" z="352.16675" h="104" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_Ettin_61_An -->
+		<!-- LF5_H_Ettin_61_An - Primeval Webbed Ettin -->
 		<spawn npc_id="235892" respawn_time="295">
 			<spot x="2148.9668" y="2517.1396" z="303.31042" h="100" random_walk="3"/>
             <spot x="2131.032" y="2493.3665" z="306.25" h="82" random_walk="3"/>
@@ -4083,7 +4083,7 @@
             <spot x="1810.7578" y="2770.3145" z="324.13464" h="3" random_walk="3"/>
             <spot x="1833.064" y="2832.867" z="313.484" h="108" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_Ettin_62_An -->
+		<!-- LF5_H_Ettin_62_An - Primeval Webbed Ettin -->
 		<spawn npc_id="235893" respawn_time="295">
 			<spot x="1955.0" y="2609.0" z="314.9375" h="24" random_walk="3"/>
             <spot x="1974.7179" y="2615.5698" z="312.02567" h="1" random_walk="3"/>
@@ -4097,7 +4097,7 @@
             <spot x="1940.6052" y="2530.702" z="315.29388" h="63" random_walk="3"/>
             <spot x="1886.0785" y="2503.9636" z="317.99475" h="52" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_Sheluk_61_An -->
+		<!-- LF5_H_Sheluk_61_An - Stemlash Sheluk -->
 		<spawn npc_id="235894" respawn_time="295">
 			<spot x="2380.4539" y="2251.52" z="323.17834" h="38" random_walk="3"/>
             <spot x="2372.541" y="2224.5613" z="330.1378" h="96" random_walk="3"/>
@@ -4116,7 +4116,7 @@
             <spot x="2370.3533" y="2303.8872" z="319.0282" h="36" random_walk="3"/>
             <spot x="2397.6704" y="2274.9944" z="322.83344" h="73" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_Sheluk_62_An -->
+		<!-- LF5_H_Sheluk_62_An - Hungry Stemlash Sheluk -->
 		<spawn npc_id="235895" respawn_time="295">
 			<spot x="2368.367" y="2488.1702" z="304.84143" h="81" random_walk="3"/>
             <spot x="2390.6143" y="2453.029" z="306.41602" h="74" random_walk="3"/>
@@ -4156,7 +4156,7 @@
             <spot x="1956.424" y="2733.555" z="304.87762" h="103" random_walk="3"/>
             <spot x="1888.5924" y="2839.8772" z="306.0" h="2" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_ElemetLi_62_An -->
+		<!-- LF5_H_ElemetLi_62_An - Sunlit Taki -->
 		<spawn npc_id="235896" respawn_time="295">
 			<spot x="2341.5884" y="2791.4812" z="313.5324" h="61" random_walk="3"/>
             <spot x="2331.099" y="2775.4175" z="314.0165" h="86" random_walk="3"/>
@@ -4182,7 +4182,7 @@
             <spot x="2106.3643" y="2656.9592" z="294.97723" h="88" random_walk="3"/>
             <spot x="2280.139" y="2555.8357" z="301.13684" h="117" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_Slime_Snail_61_An -->
+		<!-- LF5_H_Slime_Snail_61_An - Mossflesh Scolime -->
 		<spawn npc_id="235897" respawn_time="295">
 			<spot x="2186.0" y="2650.0" z="291.125" h="75" random_walk="3"/>
             <spot x="2185.1907" y="2621.2705" z="292.8294" h="84" random_walk="3"/>
@@ -4233,7 +4233,7 @@
             <spot x="1931.8026" y="2793.9812" z="306.38617" h="87" random_walk="3"/>
             <spot x="1872.132" y="2815.2644" z="306.86676" h="68" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_Spaky_62_n -->
+		<!-- LF5_H_Spaky_62_n - Pucawing Sparkie -->
 		<spawn npc_id="235898" respawn_time="295">
 			<spot x="2422.1775" y="2096.799" z="345.2278" h="26" random_walk="3"/>
             <spot x="2489.7263" y="2095.5466" z="353.25537" h="70" random_walk="3"/>
@@ -4299,7 +4299,7 @@
             <spot x="2191.5776" y="2636.3938" z="293.38037" h="103" random_walk="3"/>
             <spot x="2370.2654" y="2629.9194" z="309.71832" h="60" random_walk="3"/>
 		</spawn>
-		<!-- LF5_H_Rafflesia_62_An -->
+		<!-- LF5_H_Rafflesia_62_An - Odious Malodor -->
 		<spawn npc_id="235899" respawn_time="295">
 			<spot x="2864.9011" y="2221.3718" z="228.8972" h="101"/>
             <spot x="2857.8013" y="2180.6494" z="228.41559" h="91"/>
