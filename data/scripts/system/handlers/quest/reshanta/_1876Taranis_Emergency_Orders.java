@@ -31,12 +31,13 @@ public class _1876Taranis_Emergency_Orders extends QuestHandler
         super(questId);
     }
 	
-    @Override
-    public void register() {
-		qe.registerQuestNpc(278501).addOnQuestStart(questId); //Governor Michalis.
-        qe.registerQuestNpc(278502).addOnTalkEvent(questId); //Sakmis.
-		qe.registerQuestNpc(278503).addOnTalkEvent(questId); //Calon.
-    }
+	@Override
+	public void register() {
+		qe.registerQuestNpc(278501).addOnQuestStart(questId); // Mechalis
+		qe.registerQuestNpc(278502).addOnTalkEvent(questId); // Sakmis
+		qe.registerQuestNpc(278503).addOnTalkEvent(questId); // Calon
+		qe.registerQuestNpc(278501).addOnTalkEvent(questId); // Mechalis
+	}
 	
     @Override
 	public boolean onDialogEvent(QuestEnv env) {
