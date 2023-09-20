@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.ai2.handler;
 
+import java.util.List;
 import com.aionemu.gameserver.ai2.AIState;
 import com.aionemu.gameserver.ai2.AISubState;
 import com.aionemu.gameserver.ai2.NpcAI2;
-import com.aionemu.gameserver.model.*;
 import com.aionemu.gameserver.model.house.House;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.Creature;
@@ -29,10 +29,8 @@ import com.aionemu.gameserver.questEngine.QuestEngine;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.*;
+import com.aionemu.gameserver.services.TownService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-
-import java.util.*;
 
 public class TalkEventHandler
 {
@@ -43,7 +41,8 @@ public class TalkEventHandler
 			List<Integer> relatedQuests = QuestEngine.getInstance().getQuestNpc(npcAI.getOwner().getNpcId()).getOnTalkEvent();
 			if (QuestEngine.getInstance().onDialog(new QuestEnv(npcAI.getOwner(), player, 0, -1))) {
 				return;
-			} for (int questId: relatedQuests) {
+			}
+			for (int questId: relatedQuests) {
                 if (player.getQuestStateList().hasQuest(questId)) {
 					final QuestState qs = player.getQuestStateList().getQuestState(questId);
 					if (qs == null || qs.getStatus() != QuestStatus.REWARD) {
@@ -52,7 +51,11 @@ public class TalkEventHandler
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(npcAI.getOwner().getObjectId(), 5, questId));
 					return;
 				}
-            } switch (npcAI.getOwner().getObjectTemplate().getTemplateId()) {
+            }
+			switch (npcAI.getOwner().getObjectTemplate().getTitleId()) {
+				case 462877: //Village Trade Broker.
+				case 462878: //Village Guestbloom.
+				//case 462881: //Village Quest Board.
 				//Oriel.
 				case 730677:
 				case 831198:
@@ -94,7 +97,7 @@ public class TalkEventHandler
 						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(npcAI.getOwner().getObjectId(), 10));
 						return;
 					}
-					default:
+				    default:
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(npcAI.getOwner().getObjectId(), 10));
 				break;
 			}
