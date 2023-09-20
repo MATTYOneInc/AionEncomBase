@@ -42,42 +42,47 @@ public class _11003Maintaining_The_Illusion extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
+
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
+
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 798933) { //Phailos.
-				if (env.getDialog() == QuestDialog.START_DIALOG) {
+			if (targetId == 798933) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
-				} else {
+				else
 					return sendQuestStartDialog(env);
-				}
 			}
-		} else if (qs != null && qs.getStatus() == QuestStatus.START) {
+		}
+
+		else if (qs != null && qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
-				case 798942: { //Harknes.
+				case 798942: {
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							long seafoamEnergy = player.getInventory().getItemCountByItemId(182206701);
-							long excuraEnergy = player.getInventory().getItemCountByItemId(182206702);
-							if (seafoamEnergy > 6 && excuraEnergy > 4) {
+							long itemCount1 = player.getInventory().getItemCountByItemId(182206701);
+							long itemCount2 = player.getInventory().getItemCountByItemId(182206702);
+							if (itemCount1 >= 6 && itemCount2 >= 4) {
+								removeQuestItem(env, 182206701, 6);
+								removeQuestItem(env, 182206702, 4);
 								qs.setStatus(QuestStatus.REWARD);
 								updateQuestStatus(env);
 								return sendQuestDialog(env, 2375);
-							} else {
-								return sendQuestDialog(env, 2716);
 							}
+							else
+								return sendQuestDialog(env, 2716);
 						}
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 798942) { //Harknes.
-				if (env.getDialogId() == 39) {
+		}
+		else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (targetId == 798942) {
+				if (env.getDialogId() == 39)
 					return sendQuestDialog(env, 5);
-				} else {
+				else
 					return sendQuestEndDialog(env);
-				}
 			}
 		}
 		return false;
