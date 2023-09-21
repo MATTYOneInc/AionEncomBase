@@ -24,10 +24,10 @@
                 </spawn_map>
             </spawns>
         </event>
-        <event name="Museum Inventory" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+        <event name="Museum Inventory" start="2020-01-01T00:00:00+00:00" end="2020-12-31T00:00:00+00:00">
             <inventory_drop startlevel="10" interval="60" maxCountOfDay="10" cleanTime="9">186000139</inventory_drop>
         </event>
-        <event name="Museum" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+        <event name="Museum" start="2020-01-01T00:00:00+00:00" end="2020-12-31T00:00:00+00:00">
             <spawns>
                 <!-- Sanctum -->
                 <spawn_map map_id="110010000">
@@ -61,7 +61,7 @@
                 </spawn_map>	
             </spawns>
 		</event>
-		<event name="Doppelgangers" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Doppelgangers" start="2020-01-01T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
 			<spawns>
 				<!-- Poeta -->
 				<spawn_map map_id="210010000">
@@ -609,7 +609,7 @@
                 </spawn_map>
 			</spawns>
 		</event>
-		<event name="Event Growth" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Event Growth" start="2020-01-01T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
 			<quests>
 				<maintainable>80212;80213;80214;80215;80216;80217;80218;80219;80220;80221;80222;80223;80224;80225;80226;80227;80228;80229</maintainable>
 			</quests>
@@ -827,7 +827,7 @@
  		        </spawn_map>
 			</spawns>
 		</event>
-		<event name="October Fest" start="2020-10-01T00:00:00+00:00" end="2020-10-30T00:00:00+00:00">
+		<event name="October Fest" start="2021-10-01T00:00:00+00:00" end="2021-10-30T00:00:00+00:00">
 			<quests>
 				<maintainable>80284;80285</maintainable>
 			</quests>
@@ -1662,7 +1662,7 @@
 				</spawn_map>
 			</spawns>
 		</event>
-		<event name="Code Red: Atreia" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Code Red: Atreia" start="2020-01-01T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
 			<quests>
 				<maintainable>80324;80325;80326;80327</maintainable>
 			</quests>
@@ -2250,10 +2250,10 @@
 				</spawn_map>
 			</spawns>
         </event>
-        <event name="Dafarunerk Inventory" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
-            <inventory_drop startlevel="10" interval="60">186000317</inventory_drop>
+        <event name="Dafarunerk Inventory" start="2020-01-01T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
+            <inventory_drop startlevel="10" interval="30">186000317</inventory_drop>
         </event>
-        <event name="Dafarunerk Event" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+        <event name="Dafarunerk Event" start="2020-01-01T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
             <spawns>
                 <!-- Sanctum -->
                 <spawn_map map_id="110010000">
@@ -2345,7 +2345,7 @@
 				</spawn_map>
 			</spawns>
 		</event>
-		<event name="Shop Event" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Shop Event" start="2020-01-01T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
             <quests>
                 <maintainable>80617;80618;80619;80620;80643;80644</maintainable>
             </quests>
@@ -2377,31 +2377,19 @@
 					</spawn>
 				</spawn_map>
 				<spawn_map map_id="210010000">
-                    <!-- Lanne
-					<Teenage Daeva> -->
-					<spawn npc_id="832886">
-					    <temporary_spawn spawn_time="8.*.*" despawn_time="20.*.*"/>
-					    <spot x="840.354" y="1242.73" z="119.112" h="77"/>
-					</spawn>
 					<!-- Lanne
 					<Teenage Daeva> -->
-					<spawn npc_id="832890">
+					<spawn npc_id="832886">
 					    <temporary_spawn spawn_time="20.*.*" despawn_time="8.*.*"/>
 						<spot x="832.32666" y="1221.012" z="118.77042" h="21"/>
 					</spawn>
 				</spawn_map>
 				<spawn_map map_id="220010000">
-                    <!-- Jelta
-					<Teenage Daeva> -->
-					<spawn npc_id="832887">
-					    <temporary_spawn spawn_time="8.*.*" despawn_time="20.*.*"/>
-						<spot h="33" z="280.041" y="2438.72" x="578.623"/>
-					</spawn>
 					<!-- Jelta
 					<Teenage Daeva> -->
 					<spawn npc_id="832891">
 					    <temporary_spawn spawn_time="20.*.*" despawn_time="8.*.*"/>
-						<spot h="115" z="279.875" y="2449.3948" x="569.39087"/>
+						<spot x="578.623" y="2438.720" z="280.041" h="33"/>
 					</spawn>
 				</spawn_map>
             </spawns>
@@ -3204,10 +3192,10 @@
 				</spawn_map>
 			</spawns>
 		</event>
-		<event name="Prestige Pack Inventory" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Prestige Pack Inventory" start="2020-01-01T00:00:00+00:00" end="2020-12-31T00:00:00+00:00">
 			<inventory_drop startlevel="10" interval="20" maxCountOfDay="20" cleanTime="9">186000344</inventory_drop>
 		</event>
-		<event name="Prestige Pack Event" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Prestige Pack Event" start="2020-01-01T00:00:00+00:00" end="2020-12-31T00:00:00+00:00">
 			<quests>
 				<maintainable>80834;80835;80836;80837</maintainable>
 			</quests>
@@ -3256,7 +3244,7 @@
 				</spawn_map>
 			</spawns>
 		</event>
-		<event name="Luna Event" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Luna Event" start="2020-01-01T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
 			<quests>
 				<maintainable>80868;80870;80871;80872;80874;80875;80876;80877;80878;80881</maintainable>
 			</quests>
@@ -3308,7 +3296,7 @@
 			</spawns>
 		</event>
 		<!-- http://aion.power.plaync.com/wiki/%EB%B4%84%EA%B8%B0%EC%9A%B4%EC%97%90+%EC%8C%8D%EB%A3%A1%EC%9D%B4+%EB%82%98%EB%A5%B4%EC%83%A4 -->
-		<event name="Wings With Stars Event" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Wings With Stars Event" start="2020-01-01T00:00:00+00:00" end="2020-12-31T00:00:00+00:00">
 			<spawns>
 				<!-- Sanctum -->
 				<spawn_map map_id="110010000">
@@ -3362,7 +3350,7 @@
 				</spawn_map>
 			</spawns>
 		</event>
-		<event name="Homeward Bound Event" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Homeward Bound Event" start="2020-01-01T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
             <quests>
                 <maintainable>80787;80788;80789;80790;80791;80792;80793;80794</maintainable>
             </quests>
@@ -3654,7 +3642,7 @@
 				</spawn_map>
 			</spawns>
 		</event>
-		<event name="IDEvent S3 Event" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="IDEvent S3 Event" start="2020-01-01T00:00:00+00:00" end="2020-12-31T00:00:00+00:00">
 			<quests>
 				<maintainable>50073;50074</maintainable>
 			</quests>
@@ -3704,7 +3692,7 @@
 				</spawn_map>
 			</spawns>
 		</event>
-		<event name="Shugo Ranger Event" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Shugo Ranger Event" start="2020-01-01T00:00:00+00:00" end="2020-12-31T00:00:00+00:00">
 			<quests>
 				<maintainable>50076;50077;50078;50079;50080;50081</maintainable>
 			</quests>
@@ -3742,7 +3730,7 @@
 			</spawns>
 		</event>
 		<!-- [Event Custom] -->
-		<event name="Buff Event" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Buff Event" start="2020-01-01T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
 			<spawns>
 				<!-- Sanctum -->
 				<spawn_map map_id="110010000">
@@ -3859,7 +3847,7 @@
 				</spawn_map>
 			</spawns>
 		</event>
-		<event name="Archdaeva Growth Event" start="2020-12-28T00:00:00+00:00" end="2020-12-31T00:00:00+00:00">
+		<event name="Archdaeva Growth Event" start="2020-12-28T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
 			<event_drops>
 			    <!-- [Event] Seed Of Growth -->
 				<event_drop item_id="186000464" count="1" chance="5" minDiff="66" maxDiff="83"/>
@@ -4086,7 +4074,7 @@
 			</spawns>
 		</event>
 		<!-- https://aionpowerbook.com/powerbook/Dark_Dragon_King%27s_Weapons#Dark_Dragon -->
-		<event name="Dark Dragon King Weapons" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+		<event name="Dark Dragon King Weapons" start="2020-01-01T00:00:00+00:00" end="2050-12-31T00:00:00+00:00">
 			<spawns>
 				<!-- Iluma -->
 				<spawn_map map_id="210100000">
@@ -4138,10 +4126,10 @@
 			    </spawn_map>
 		    </spawns>
 		</event>
-        <event name="Golden Feather Inventory" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+        <event name="Golden Feather Inventory" start="2020-01-01T00:00:00+00:00" end="2020-12-31T00:00:00+00:00">
             <inventory_drop startlevel="10" interval="60">186000319</inventory_drop>
         </event>
-        <event name="Golden Feather Event" start="2020-01-01T00:00:00+00:00" end="2022-12-31T00:00:00+00:00">
+        <event name="Golden Feather Event" start="2020-01-01T00:00:00+00:00" end="2020-12-31T00:00:00+00:00">
             <spawns>
                 <!-- Sanctum -->
                 <spawn_map map_id="110010000">
