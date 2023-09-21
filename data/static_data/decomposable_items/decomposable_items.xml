@@ -2339,26 +2339,125 @@
 	    <items>
 		    <item id="188057340" player_class="GLADIATOR" count="2"/>
 			<item id="188057342" player_class="GLADIATOR" count="1"/>
+
+			<item id="188057147" player_class="GLADIATOR" count="1"/>
+			<item id="188057147" player_class="GLADIATOR" count="1"/>
+			<item id="188057146" player_class="GLADIATOR" count="1"/>
+			<item id="188057146" player_class="GLADIATOR" count="1"/>
+			<item id="188057145" player_class="GLADIATOR" count="1"/>
+			<item id="188057148" player_class="GLADIATOR" count="1"/>
+			<item id="187050017" player_class="GLADIATOR" count="1"/>
+			<item id="188057149" player_class="GLADIATOR" count="1"/>
 		    <item id="188057340" player_class="TEMPLAR" count="2"/>
 			<item id="188057341" player_class="TEMPLAR" count="1"/>
+
+			<item id="188057147" player_class="TEMPLAR" count="1"/>
+			<item id="188057147" player_class="TEMPLAR" count="1"/>
+			<item id="188057146" player_class="TEMPLAR" count="1"/>
+			<item id="188057146" player_class="TEMPLAR" count="1"/>
+			<item id="188057145" player_class="TEMPLAR" count="1"/>
+			<item id="188057148" player_class="TEMPLAR" count="1"/>
+			<item id="187050017" player_class="TEMPLAR" count="1"/>
+			<item id="188057149" player_class="TEMPLAR" count="1"/>
 		    <item id="188057340" player_class="ASSASSIN" count="2"/>
 			<item id="188057343" player_class="ASSASSIN" count="1"/>
+
+			<item id="188057147" player_class="ASSASSIN" count="1"/>
+			<item id="188057147" player_class="ASSASSIN" count="1"/>
+			<item id="188057146" player_class="ASSASSIN" count="1"/>
+			<item id="188057146" player_class="ASSASSIN" count="1"/>
+			<item id="188057145" player_class="ASSASSIN" count="1"/>
+			<item id="188057148" player_class="ASSASSIN" count="1"/>
+			<item id="187050017" player_class="ASSASSIN" count="1"/>
+			<item id="188057149" player_class="ASSASSIN" count="1"/>
 		    <item id="188057340" player_class="RANGER" count="2"/>
 			<item id="188057344" player_class="RANGER" count="1"/>
+
+			<item id="188057147" player_class="RANGER" count="1"/>
+			<item id="188057147" player_class="RANGER" count="1"/>
+			<item id="188057146" player_class="RANGER" count="1"/>
+			<item id="188057146" player_class="RANGER" count="1"/>
+			<item id="188057145" player_class="RANGER" count="1"/>
+			<item id="188057148" player_class="RANGER" count="1"/>
+			<item id="187050017" player_class="RANGER" count="1"/>
+			<item id="188057149" player_class="RANGER" count="1"/>
 		    <item id="188057340" player_class="CLERIC" count="2"/>
 			<item id="188057350" player_class="CLERIC" count="1"/>
+
+			<item id="188057147" player_class="CLERIC" count="1"/>
+			<item id="188057147" player_class="CLERIC" count="1"/>
+			<item id="188057146" player_class="CLERIC" count="1"/>
+			<item id="188057146" player_class="CLERIC" count="1"/>
+			<item id="188057145" player_class="CLERIC" count="1"/>
+			<item id="188057148" player_class="CLERIC" count="1"/>
+			<item id="187050017" player_class="CLERIC" count="1"/>
+			<item id="188057149" player_class="CLERIC" count="1"/>
 		    <item id="188057340" player_class="CHANTER" count="2"/>
 			<item id="188057349" player_class="CHANTER" count="1"/>
+
+			<item id="188057147" player_class="CHANTER" count="1"/>
+			<item id="188057147" player_class="CHANTER" count="1"/>
+			<item id="188057146" player_class="CHANTER" count="1"/>
+			<item id="188057146" player_class="CHANTER" count="1"/>
+			<item id="188057145" player_class="CHANTER" count="1"/>
+			<item id="188057148" player_class="CHANTER" count="1"/>
+			<item id="187050017" player_class="CHANTER" count="1"/>
+			<item id="188057149" player_class="CHANTER" count="1"/>
 		    <item id="188057340" player_class="SORCERER" count="2"/>
 			<item id="188057346" player_class="SORCERER" count="1"/>
+
+			<item id="188057147" player_class="SORCERER" count="1"/>
+			<item id="188057147" player_class="SORCERER" count="1"/>
+			<item id="188057146" player_class="SORCERER" count="1"/>
+			<item id="188057146" player_class="SORCERER" count="1"/>
+			<item id="188057145" player_class="SORCERER" count="1"/>
+			<item id="188057148" player_class="SORCERER" count="1"/>
+			<item id="187050017" player_class="SORCERER" count="1"/>
+			<item id="188057149" player_class="SORCERER" count="1"/>
 		    <item id="188057340" player_class="SPIRIT_MASTER" count="2"/>
 			<item id="188057347" player_class="SPIRIT_MASTER" count="1"/>
+
+			<item id="188057147" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188057147" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188057146" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188057146" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188057145" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188057148" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="187050017" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="188057149" player_class="SPIRIT_MASTER" count="1"/>
 		    <item id="188057340" player_class="GUNSLINGER" count="2"/>
 			<item id="188057345" player_class="GUNSLINGER" count="1"/>
+
+			<item id="188057147" player_class="GUNSLINGER" count="1"/>
+			<item id="188057147" player_class="GUNSLINGER" count="1"/>
+			<item id="188057146" player_class="GUNSLINGER" count="1"/>
+			<item id="188057146" player_class="GUNSLINGER" count="1"/>
+			<item id="188057145" player_class="GUNSLINGER" count="1"/>
+			<item id="188057148" player_class="GUNSLINGER" count="1"/>
+			<item id="187050017" player_class="GUNSLINGER" count="1"/>
+			<item id="188057149" player_class="GUNSLINGER" count="1"/>
 		    <item id="188057340" player_class="SONGWEAVER" count="2"/>
 		    <item id="188057348" player_class="SONGWEAVER" count="1"/>
+
+			<item id="188057147" player_class="SONGWEAVER" count="1"/>
+			<item id="188057147" player_class="SONGWEAVER" count="1"/>
+			<item id="188057146" player_class="SONGWEAVER" count="1"/>
+			<item id="188057146" player_class="SONGWEAVER" count="1"/>
+			<item id="188057145" player_class="SONGWEAVER" count="1"/>
+			<item id="188057148" player_class="SONGWEAVER" count="1"/>
+			<item id="187050017" player_class="SONGWEAVER" count="1"/>
+			<item id="188057149" player_class="SONGWEAVER" count="1"/>
 		    <item id="188057340" player_class="AETHERTECH" count="2"/>
 		    <item id="188057351" player_class="AETHERTECH" count="1"/>
+
+			<item id="188057147" player_class="AETHERTECH" count="1"/>
+			<item id="188057147" player_class="AETHERTECH" count="1"/>
+			<item id="188057146" player_class="AETHERTECH" count="1"/>
+			<item id="188057146" player_class="AETHERTECH" count="1"/>
+			<item id="188057145" player_class="AETHERTECH" count="1"/>
+			<item id="188057148" player_class="AETHERTECH" count="1"/>
+			<item id="187050017" player_class="AETHERTECH" count="1"/>
+			<item id="188057149" player_class="AETHERTECH" count="1"/>
 		</items>
 	</decomposable>
 	
