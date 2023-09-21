@@ -8318,6 +8318,10 @@
 		<spawn npc_id="296444" respawn_time="1800">
 			<spot x="2517.5613" y="825.46075" z="415.83273" h="19"/>
 		</spawn>
+		<!-- Lord Agios ||| LF4_Gateway_Li_Guard_Boss_Q03 -->
+		<spawn npc_id="296489" respawn_time="295">
+			<spot x="1742.5145" y="1318.3401" z="386.17456" h="3"/>
+		</spawn>
 		<!-- Lord Skyrose (NPC Legendary lvl:55) -->
 		<spawn npc_id="296488" respawn_time="1800">
 			<spot x="546.5225" y="719.1763" z="484.049" h="17"/>
