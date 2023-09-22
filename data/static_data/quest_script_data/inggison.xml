@@ -28,7 +28,7 @@
 	<!-- 훼손된 기동쇠 (Elyos Only) -->
 	<report_to id="30040" start_npc_ids="798903" end_npc_ids="799032"/>
 	<item_collecting id="11004" start_npc_ids="798933" action_item_ids="700609"/>
-	<item_collecting id="11011" start_npc_ids="799071"/>
+	<item_collecting id="11011" start_npc_ids="799071" action_item_ids="700908"/>
 	<item_collecting id="11022" start_npc_ids="798914"/>
 	<item_collecting id="11024" start_npc_ids="799049"/>
 	<item_collecting id="11025" start_npc_ids="798950"/>
