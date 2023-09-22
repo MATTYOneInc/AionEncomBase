@@ -221,12 +221,6 @@
 		<monster var="0" end_var="5" npc_ids="216593"/>
 		<monster var="1" end_var="5" npc_ids="216594"/>
 	</monster_hunt>
-	<monster_hunt id="11227" start_npc_ids="799076">
-		<monster var="0" npc_ids="217071" end_var="1"/>
-		<monster var="1" npc_ids="217070" end_var="1"/>
-		<monster var="2" npc_ids="217069" end_var="1"/>
-		<monster var="3" npc_ids="217068" end_var="1"/>
-	</monster_hunt>
 	
 	<!-- Quest 4.7 -->
 	<!-- The Exterminator (Elyos Only) -->
