@@ -1,19 +1,20 @@
 /*
- * This file is part of Encom. **ENCOM FUCK OTHER SVN**
+ * This file is part of aion-emu <aion-emu.com>.
  *
- *  Encom is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Lesser Public License as published by
+ *  aion-emu is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  Encom is distributed in the hope that it will be useful,
+ *  aion-emu is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Lesser Public License for more details.
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU Lesser Public License
- *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
+ *  You should have received a copy of the GNU General Public License
+ *  along with aion-emu. If not, see <http://www.gnu.org/licenses/>.
  */
+// Credits To Magenik and to the Cinus
 package com.aionemu.gameserver.network.aion.serverpackets;
 
 import com.aionemu.gameserver.model.NpcType;
@@ -109,6 +110,14 @@ public class SM_NPC_INFO extends AionServerPacket
         writeC(0x00);
         writeD(0x00);
 		writeD(creatorId);
+		if (con.getActivePlayer().isGM()) {
+            Player gm = con.getActivePlayer();
+            if ((gm != null) && (masterName.isEmpty())) {
+                String n = "?" + "?";
+                masterName = "ID: " + npcId + " LvL: " + _npc.getLevel();
+            }
+        }
+
 		writeS(masterName);
 		int maxHp = _npc.getLifeStats().getMaxHp();
 		int currHp = _npc.getLifeStats().getCurrentHp();
