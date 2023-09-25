@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <spawns>
     <spawn_map map_id="210020000">
-        <spawn custom="true" respawn_time="295" npc_id="831031" difficult_id="0">
-            <spot h="34" z="263.4721" y="2726.4385" x="332.5566"/>
-        </spawn>
         <spawn custom="true" respawn_time="295" npc_id="211665" difficult_id="0">
             <spot h="60" z="282.00815" y="2298.0093" x="2056.479"/>
             <spot h="20" z="284.16364" y="2345.2004" x="2093.4832"/>

@@ -52,9 +52,6 @@
         <spawn custom="true" respawn_time="295" npc_id="799724" difficult_id="0">
             <spot h="34" z="335.5113" y="1283.7596" x="1471.8223"/>
         </spawn>
-        <spawn custom="true" respawn_time="295" npc_id="831031" difficult_id="0">
-            <spot h="97" z="336.6771" y="1290.0377" x="1411.464"/>
-        </spawn>
         <spawn custom="true" respawn_time="295" npc_id="810053" difficult_id="0">
             <spot h="102" z="336.6771" y="1289.3256" x="1410.1234"/>
         </spawn>
