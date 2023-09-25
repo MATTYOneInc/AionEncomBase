@@ -2,7 +2,6 @@
 
 - You can send errors to my site, so we will get your feedback faster!
 - Site: http://developers.aionasteria.ru/ partition "Feedback"
-- Last Build: http://developers.aionasteria.ru/lastRevs.php
 
 - Original Source Code developed by the Aion-Lightning team	
 - The Encom team took up the revision of the code
