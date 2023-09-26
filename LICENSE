@@ -2,6 +2,11 @@ MIT License
 
 Copyright (c) 2023 Aion Community Development
 
+These files are part of the server file emulator for the Aion game.
+EMULATOR IS NOT OFFICIAL.
+We do not affect and do not claim authorship of the game Aion (NCSOFT) 
+And all localizers (NA, EU, RU and so on)
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -19,3 +24,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Additionally:
+Developers, contrary to the established license, PROHIBIT ANY COMMERCIAL USE. 
+Namely, the sale of a whole assembly, code elements.
+
+Each piece of code has its own author, which is specified in the code file. 
+Any monetization of someone else's code will be considered a violation of 
+intellectual property rights.
+
