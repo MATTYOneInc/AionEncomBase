@@ -38,9 +38,8 @@ public class _19639Trees_And_Threes extends QuestHandler
 		qe.registerQuestNpc(799022).addOnQuestStart(questId);
 		qe.registerQuestNpc(799022).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799022).addOnTalkEvent(questId);
-		for (int mob: mobs) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(215524).addOnKillEvent(questId);
+		qe.registerQuestNpc(215526).addOnKillEvent(questId);
 	}
 	
 	@Override
