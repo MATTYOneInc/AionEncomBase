@@ -148,23 +148,28 @@ public class _1005Barring_The_Gate extends QuestHandler
 				}
 			} else if (targetId == 700081) {
 				if (var == 5) {
-					destroy(6, env);
+                    qs.setQuestVarById(0, var + 1);
+					updateQuestStatus(env);
 					return false;
 				}
 			} else if (targetId == 700082) {
 				if (var == 6) {
-					destroy(7, env);
+                    qs.setQuestVarById(0, var + 1);
+					updateQuestStatus(env);
 					return false;
 				}
 			} else if (targetId == 700083) {
-				if (var == 7) {
-					destroy(8, env);
-					return false;
+                if (var == 7) {
+                    qs.setQuestVarById(0, var + 1);
+					updateQuestStatus(env);
+                    return false;
 				}
 			} else if (targetId == 700080) {
-				if (var == 8) {
-					destroy(-1, env);
-					return false;
+                if (var == 8) {
+                    playQuestMovie(env, 21);
+                    qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+                    return false;
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
@@ -175,30 +180,5 @@ public class _1005Barring_The_Gate extends QuestHandler
 			}
 		}
 		return false;
-	}
-	
-	private void destroy(final int var, final QuestEnv env) {
-		final int targetObjectId = env.getVisibleObject().getObjectId();
-		final Player player = env.getPlayer();
-		PacketSendUtility.sendPacket(player, new SM_USE_OBJECT(player.getObjectId(), targetObjectId, 3000, 1));
-		PacketSendUtility.broadcastPacket(player, new SM_EMOTION(player, EmotionType.NEUTRALMODE2, 0, targetObjectId), true);
-		ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				if (player.getTarget() == null || player.getTarget().getObjectId() != targetObjectId)
-					return;
-				PacketSendUtility.sendPacket(player, new SM_USE_OBJECT(player.getObjectId(), targetObjectId, 3000, 0));
-				PacketSendUtility.broadcastPacket(player, new SM_EMOTION(player, EmotionType.START_LOOT, 0, targetObjectId), true);
-				sendEmotion(env, player, EmotionId.STAND, true);
-				QuestState qs = player.getQuestStateList().getQuestState(questId);
-				if (var != -1) {
-					qs.setQuestVarById(0, var);
-				} else {
-					playQuestMovie(env, 21);
-					qs.setStatus(QuestStatus.REWARD);
-				}
-				updateQuestStatus(env);
-			}
-		}, 3000);
 	}
 }

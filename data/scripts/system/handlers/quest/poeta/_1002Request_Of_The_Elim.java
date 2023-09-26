@@ -90,6 +90,8 @@ public class _1002Request_Of_The_Elim extends QuestHandler
 								return sendQuestDialog(env, 1693);
 							} else if (var == 6) {
 								return sendQuestDialog(env, 2034);
+							} else if (var == 12) {
+								return sendQuestDialog(env, 2120);
 							}
 						} case SELECT_ACTION_1353: {
 							if (var == 1) {
