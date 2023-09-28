@@ -6,14 +6,14 @@
 - Original Source Code developed by the Aion-Lightning team	
 - The Encom team took up the revision of the code
 - This Source - Community Project of Aion 5.8 Emulator
-- Know Developers:
+- Known Developers:
 
-- AEJTester; ATracer; Aion Gates; AionChs Master; Alcapwnd; Antivirus; Antraxx; Aquanox; Avol;
-- Ben; Bio; CoolyT; Divinity; Dr.Nism; Falke_34; FrozenKiller; Ghostfur; GiGatR00n; Gregg Patton;
-- Hilgert; Ian Phillips; IceReaper; Imaginary; Joshua Slack; KID; KKnD; Kamui; Kirill Vainer;
-- KorLightning; Layane; Lightning; LokiReborn; Luno; Luzien; Lyahim; M@xx; Magenik; Mark Powell;
-- MATTY; Metos; Mr. Poke; Nemesiss; Nemiroff; NewLives; Rama; Ranastic; Rinzler; G-Robson26; Rolandas;
-- RotO; Sarynth; Simple; Sippolo; SoulKeeper; Source; Sweetkr; Taran; Undertrey; VladimirZ; Wakizashi;
-- Wnkrz; Xav; Xitanium; alexa026; antness; cura; dezalmado; kecimis; kosyachok; lhw; lhwKaipo; lord_rex;
-- nrg; orfeo087; orz; rhys2002; sphinx; srx47; vlog; xTz; xavier; yecgaaj; zdead; Angry Catster; cinus;
-- kortana; Magenik; sunbsn;
+ - AEJTester, AionChsMaster, AionGates, Alcapwnd, alexa026, AngryCatster, Antivirus, antness, 
+ - Antraxx, Aquanox, ATracer, Avol, Ben, Bio, cinus, CoolyT, cura, dezalmado, Divinity, Dr.Nism, 
+ - Falke_34, FrozenKiller, G-Robson26, Ghostfur, GiGatR00n, GreggPatton, Hilgert, IanPhillips, 
+ - IceReaper, Imaginary, JoshuaSlack, Kamui, kecimis, KID, KirillVainer, KKnD, KorLightning, 
+ - kortana, kosyachok, Layane, lhw, lhwKaipo, Lightning, LokiReborn, lord_rex, Luno, Luzien, 
+ - Lyahim, M@xx, Magenik, MarkPowell, MATTY, Metos, Mr.Poke, Nemesiss, Nemiroff, NewLives, nrg, 
+ - orfeo087, orz, Rama, Ranastic, rhys2002, Rinzler, Rolandas, RotO, Sarynth, Simple, Sippolo, 
+ - SoulKeeper, Source, sphinx, srx47, sunbsn, Sweetkr, Taran, Undertrey, VladimirZ, vlog, 
+ - Wakizashi, Wnkrz, Xav, xavier, Xitanium, xTz, yecgaaj, zdead
