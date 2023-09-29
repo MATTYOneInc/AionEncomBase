@@ -2,6 +2,7 @@
 
 - You can send errors to my site, so we will get your feedback faster!
 - Site: http://developers.aionasteria.ru/ partition "Feedback"
+- Client: http://cdn.aionasteria.ru/uploads/client/Live/AionLive.torrent
 
 - Original Source Code developed by the Aion-Lightning team	
 - The Encom team took up the revision of the code
