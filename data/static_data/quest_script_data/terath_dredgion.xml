@@ -76,10 +76,12 @@
 	<monster_hunt id="80604" start_npc_ids="831831">
 		<monster var="0" npc_ids="219240 219241 219242 219244 219245" end_var="9"/>
 		<monster var="0" npc_ids="219246 219247 219248 219249 219251" end_var="9"/>
-		<monster var="0" npc_ids="219252 219253" end_var="9"/>
+		<monster var="0" npc_ids="219252 219253 219256 219259 219267" end_var="9"/>
+		<monster var="0" npc_ids="219261 219271" end_var="9"/>
 		<monster var="1" npc_ids="219240 219241 219242 219244 219245" end_var="9"/>
 		<monster var="1" npc_ids="219246 219247 219248 219249 219251" end_var="9"/>
-		<monster var="1" npc_ids="219252 219253" end_var="9"/>
+		<monster var="1" npc_ids="219252 219253 219257 219258 219268" end_var="9"/>
+		<monster var="1" npc_ids="219260 219262" end_var="9"/>
 		<monster var="2" npc_ids="219255" end_var="1"/>
 		<monster var="3" npc_ids="219286" end_var="1"/>
 	</monster_hunt>
