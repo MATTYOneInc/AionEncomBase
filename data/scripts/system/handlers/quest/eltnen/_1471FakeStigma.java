@@ -42,8 +42,9 @@ public class _1471FakeStigma extends QuestHandler {
 		qe.registerQuestNpc(203991).addOnQuestStart(questId); // Dionera
 		qe.registerQuestNpc(203991).addOnTalkEvent(questId); // Dionera
 		qe.registerQuestNpc(203703).addOnTalkEvent(questId); // Likesan
-		qe.registerQuestNpc(798048).addOnTalkEvent(questId);// Kierunerk
+		qe.registerQuestNpc(798321).addOnTalkEvent(questId);// Kierunerk
 		qe.registerQuestNpc(798024).addOnTalkEvent(questId); // Chicorinerk
+
 	}
 
 	@Override
@@ -53,15 +54,17 @@ public class _1471FakeStigma extends QuestHandler {
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (targetId == 203991) // Dionera
-		{
+		
+		
 			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-				if (env.getDialog() == QuestDialog.START_DIALOG)
+				if (targetId == 203991) {  // Dionera
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
-				else
+				}
+				else {
 					return sendQuestStartDialog(env);
+				}
 			}
-
 		}
 		else if (targetId == 203703) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
@@ -106,7 +109,7 @@ public class _1471FakeStigma extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (targetId == 798048) {
+		else if (targetId == 798321) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2034);
@@ -123,4 +126,5 @@ public class _1471FakeStigma extends QuestHandler {
 
 		return false;
 	}
+	
 }
