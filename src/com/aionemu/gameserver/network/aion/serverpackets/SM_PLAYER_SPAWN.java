@@ -56,6 +56,8 @@ public class SM_PLAYER_SPAWN extends AionServerPacket
 		writeC(player.getHeading());
 		writeD(0);
 		writeD(0);
+
+		/*
 		//[PK MOD AREA]
 		if ((player.getWorldId() == 210020000 || player.getWorldId() == 210040000 ||
 		    player.getWorldId() == 210050000 || player.getWorldId() == 210060000 ||
@@ -70,6 +72,8 @@ public class SM_PLAYER_SPAWN extends AionServerPacket
 			//This game area is a free PK area. Abide by the rules and you will have a great gaming experience.
 			PacketSendUtility.sendPacket(player, new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_MSGBOX_AKS_ENTER_PK_SERVER, 0, 0));
 		}
+		*/
+
 		//[LIVE_Party_Match_Boost 20+]
 		if ((player.getWorldId() == 300200000 || player.getWorldId() == 320100000 ||
 		    player.getWorldId() == 320050000 || player.getWorldId() == 300030000)) {
