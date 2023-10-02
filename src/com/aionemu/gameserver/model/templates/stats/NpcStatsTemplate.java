@@ -1,5 +1,5 @@
 /*
-
+ * This file is part of Encom. **ENCOM FUCK OTHER SVN**
  *
  *  Encom is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser Public License as published by
@@ -47,7 +47,7 @@ public class NpcStatsTemplate extends StatsTemplate
 	private int power;
 	
 	@XmlAttribute(name = "maxXp")
-	private int maxXp;
+	private long maxXp;
 	
 	public float getRunSpeedFight() {
 		return runSpeedFight;
@@ -57,7 +57,7 @@ public class NpcStatsTemplate extends StatsTemplate
 		return pdef;
 	}
 	
-	public float getMdef() {
+	public int getMdef() {
 		return mdef;
 	}
 	
@@ -81,7 +81,7 @@ public class NpcStatsTemplate extends StatsTemplate
 		this.power = power;
 	}
 	
-	public int getMaxXp() {
+	public long getMaxXp() {
 		return maxXp;
 	}
 }

@@ -625,10 +625,14 @@ public class AttackUtil {
 			status = AttackStatus.OFFHAND_NORMALHIT;
 		}
 
-		if (!cannotMiss) { // Parry can only be done with weapon, also weapon can have humanoid mobs, but for now there isnt implementation of monster category
+		if (!cannotMiss) { // Parry can only be done with weapon, blocking - with a shield. These limitations don't apply to npc. Retail npc don't need a shield or weapon to block/parry
 			if (attacked instanceof Player && ((Player) attacked).getEquipment().isShieldEquipped() && StatFunctions.calculatePhysicalBlockRate(attacker, attacked)) {
 				status = AttackStatus.BLOCK;
+			} else if (attacked instanceof Npc && StatFunctions.calculatePhysicalBlockRate(attacker, attacked)) {
+				status = AttackStatus.BLOCK;	
 			} else if (attacked instanceof Player && ((Player) attacked).getEquipment().getMainHandWeaponType() != null && StatFunctions.calculatePhysicalParryRate(attacker, attacked)) {
+				status = AttackStatus.PARRY;
+			} else if (attacked instanceof Npc && StatFunctions.calculatePhysicalParryRate(attacker, attacked)) {
 				status = AttackStatus.PARRY;
 			} else if (!isSkill && StatFunctions.calculatePhysicalDodgeRate(attacker, attacked, accMod)) {
 				status = AttackStatus.DODGE;

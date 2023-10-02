@@ -54,7 +54,7 @@ public class StatFunctions {
 	public static long calculateSoloExperienceReward(Player player, Creature target) {
 		int playerLevel = player.getCommonData().getLevel();
 		int targetLevel = target.getLevel();
-		int baseXP = ((Npc) target).getObjectTemplate().getStatsTemplate().getMaxXp();
+		long baseXP = ((Npc) target).getObjectTemplate().getStatsTemplate().getMaxXp();
 		int xpPercentage = XPRewardEnum.xpRewardFrom(targetLevel - playerLevel);
 		return (int) Math.floor(baseXP * xpPercentage / 100d);
 	}
@@ -65,7 +65,7 @@ public class StatFunctions {
 	 */
 	public static long calculateGroupExperienceReward(int maxLevelInRange, Creature target) {
 		int targetLevel = target.getLevel();
-		int baseXP = ((Npc) target).getObjectTemplate().getStatsTemplate().getMaxXp();
+		long baseXP = ((Npc) target).getObjectTemplate().getStatsTemplate().getMaxXp();
 		int xpPercentage = XPRewardEnum.xpRewardFrom(targetLevel - maxLevelInRange);
 		return (int) Math.floor(baseXP * xpPercentage / 100d);
 	}
@@ -471,7 +471,10 @@ public class StatFunctions {
 			float elementalDef = getMovementModifier(target, SkillElement.getResistanceForElement(element), target.getGameStats().getMagicalDefenseFor(element));
 			resultDamage = Math.round(resultDamage * (1 - elementalDef / 1300f));
 		}
-
+		
+		float mDef = target.getGameStats().getMDef().getBonus() + getMovementModifier(target, StatEnum.MAGICAL_DEFEND, target.getGameStats().getMDef().getBase());
+		resultDamage -= (mDef * 0.10f);
+		
 		if (resultDamage <= 0) {
 			resultDamage = 1;
 		}
@@ -483,18 +486,15 @@ public class StatFunctions {
 		CreatureGameStats<?> tgs = target.getGameStats();
 		int magicBoost = useMagicBoost ? sgs.getMBoost().getCurrent() : 0;
 		int mBResist = tgs.getMBResist().getCurrent();
-		int MDef = tgs.getMDef().getCurrent();
 		int knowledge = useKnowledge ? sgs.getKnowledge().getCurrent() : 100;
 		if ((magicBoost - mBResist) > 3200) {
 			magicBoost = 3201;
 		} else {
 			magicBoost = magicBoost - mBResist;
 		}
-		if ((magicBoost - MDef) < 1) {
-			magicBoost = 1;
-		} else {
-			magicBoost -= MDef;
-		}
+		if (magicBoost < 0) {
+			magicBoost = 0;
+		}			
 		float damages = baseDamages * (knowledge / 100f + magicBoost / 1000f);
 
 		damages = sgs.getStat(StatEnum.BOOST_SPELL_ATTACK, (int) damages).getCurrent();
@@ -513,6 +513,10 @@ public class StatFunctions {
 		// if (!noReduce && element != SkillElement.NONE) {
 		// damages -= target.getGameStats().getMDef().getCurrent();
 		// }
+		
+		float mDef = target.getGameStats().getMDef().getBonus() + getMovementModifier(target, StatEnum.MAGICAL_DEFEND, target.getGameStats().getMDef().getBase());
+		damages -= (mDef * 0.10f);		
+		
 		if (damages <= 0) {
 			damages = 1;
 		}

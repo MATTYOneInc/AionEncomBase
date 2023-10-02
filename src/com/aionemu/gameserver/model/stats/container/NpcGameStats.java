@@ -1,5 +1,5 @@
 /*
-
+ * This file is part of Encom. **ENCOM FUCK OTHER SVN**
  *
  *  Encom is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser Public License as published by
@@ -142,7 +142,7 @@ public class NpcGameStats extends CreatureGameStats<Npc> {
 
 	@Override
 	public Stat2 getAttackRange() {
-		return getStat(StatEnum.ATTACK_RANGE, owner.getObjectTemplate().getAttackRange() * 1500);
+		return getStat(StatEnum.ATTACK_RANGE, owner.getObjectTemplate().getAttackRange() * 1000);
 	}
 
 	@Override
@@ -152,15 +152,12 @@ public class NpcGameStats extends CreatureGameStats<Npc> {
 
 	@Override
 	public Stat2 getMDef() {
-		return getStat(StatEnum.MAGICAL_DEFEND, 0);
+		return getStat(StatEnum.MAGICAL_DEFEND, owner.getObjectTemplate().getStatsTemplate().getMdef());
 	}
 
 	@Override
 	public Stat2 getMResist() {
-		if (mRes == 0){
-			mRes = Math.round(owner.getLevel()*17.5f+75);
-		}
-		return getStat(StatEnum.MAGICAL_RESIST, mRes);
+		return getStat(StatEnum.MAGICAL_RESIST, owner.getObjectTemplate().getStatsTemplate().getMresist());
 	}
 
 	@Override
@@ -201,19 +198,17 @@ public class NpcGameStats extends CreatureGameStats<Npc> {
 
 	@Override
 	public Stat2 getEvasion() {
-		if (pAccuracy == 0)
-			calcStats();
-		return getStat(StatEnum.EVASION, pAccuracy);
+		return getStat(StatEnum.EVASION, owner.getObjectTemplate().getStatsTemplate().getEvasion());
 	}
 
 	@Override
 	public Stat2 getParry() {
-		return getStat(StatEnum.PARRY, 100);
+		return getStat(StatEnum.PARRY, owner.getObjectTemplate().getStatsTemplate().getParry());
 	}
 
 	@Override
 	public Stat2 getBlock() {
-		return getStat(StatEnum.BLOCK, 0);
+		return getStat(StatEnum.BLOCK, owner.getObjectTemplate().getStatsTemplate().getBlock());
 	}
 
 	@Override
@@ -223,14 +218,12 @@ public class NpcGameStats extends CreatureGameStats<Npc> {
 
 	@Override
 	public Stat2 getMainHandPCritical() {
-		return getStat(StatEnum.PHYSICAL_CRITICAL, 10);
+		return getStat(StatEnum.PHYSICAL_CRITICAL, owner.getObjectTemplate().getStatsTemplate().getMainHandCritRate());
 	}
 
 	@Override
 	public Stat2 getMainHandPAccuracy() {
-		if (pAccuracy == 0)
-			calcStats();
-		return getStat(StatEnum.PHYSICAL_ACCURACY, pAccuracy);
+		return getStat(StatEnum.PHYSICAL_ACCURACY, owner.getObjectTemplate().getStatsTemplate().getMainHandAccuracy());
 	}
 
 	@Override
@@ -271,7 +264,7 @@ public class NpcGameStats extends CreatureGameStats<Npc> {
 	@Override
 	public Stat2 getHpRegenRate() {
 		NpcStatsTemplate nst = owner.getObjectTemplate().getStatsTemplate();
-		return getStat(StatEnum.REGEN_HP, nst.getMaxHp() / 4);
+		return getStat(StatEnum.REGEN_HP, nst.getMaxHp() / 2);
 	}
 
 	@Override

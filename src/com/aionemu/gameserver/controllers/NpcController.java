@@ -258,20 +258,11 @@ public class NpcController extends CreatureController<Npc>
 						case 302100000: //Fissure Of Oblivion.
 						case 302110000: //[Opportunity] Fissure Of Oblivion.
 						case 302400000: //Crucible Spire.
-							player.getCommonData().addExp(Rnd.get(480000, 550000), RewardType.HUNTING, this.getOwner().getObjectTemplate().getNameId());
-						break;
 						case 210100000: //Iluma.
 						case 220110000: //Norsvold.
-							AbyssPointsService.addAp(player, getOwner(), Rnd.get(60, 100));
-							player.getCommonData().addExp(Rnd.get(480000, 550000), RewardType.HUNTING, this.getOwner().getObjectTemplate().getNameId());
-						break;
 						case 600040000: //Tiamaranta's Eye.
-							player.getCommonData().addExp(Rnd.get(480000, 550000), RewardType.HUNTING, this.getOwner().getObjectTemplate().getNameId());
-						break;
 						case 600090000: //Kaldor.
 						case 600100000: //Levinshor.
-							player.getCommonData().addExp(Rnd.get(50000, 100000), RewardType.HUNTING, this.getOwner().getObjectTemplate().getNameId());
-						break;
 						default:
 							player.getCommonData().addExp(rewardXp, RewardType.HUNTING, this.getOwner().getObjectTemplate().getNameId());
 						break;
