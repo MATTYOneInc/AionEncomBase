@@ -114,7 +114,7 @@ public class SM_NPC_INFO extends AionServerPacket
             Player gm = con.getActivePlayer();
             if ((gm != null) && (masterName.isEmpty())) {
                 String n = "?" + "?";
-                masterName = "ID: " + npcId + " LvL: " + _npc.getLevel();
+                masterName = "ID: " + npcId;
             }
         }
 
