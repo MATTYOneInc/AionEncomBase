@@ -27,9 +27,10 @@
 		<xs:attribute name="name" type="xs:string" default=""/>
 		<xs:attribute name="height" type="xs:float" default="0"/>
 		<xs:attribute name="ammo_speed" type="xs:int"/>
-		<xs:attribute name="npc_type" type="npcType" use="required"/>
+		<xs:attribute name="npc_type" type="npcType" default="ATTACKABLE" use="optional"/>
 		<xs:attribute name="rating" type="NpcRating"/>
 		<xs:attribute name="rank" type="NpcRank"/>
+		<xs:attribute name="name_desc" type="xs:string" default="" use="optional"/>
 		<xs:attribute name="sensory_range" type="xs:int" default="0"/>
 		<xs:attribute name="tribe" type="TribeClass"/>
 		<xs:attribute name="type" type="NpcTemplateType"/>
@@ -39,7 +40,7 @@
 		<xs:attribute name="hpgauge_level" type="xs:int"/>
 		<xs:attribute name="attack_range" type="xs:int"/>
 		<xs:attribute name="attack_rate" type="xs:int"/>
-		<xs:attribute name="attack_delay" type="xs:int" default="1800"/>
+		<xs:attribute name="attack_delay" type="xs:int" default="2100"/>
 		<xs:attribute name="state" type="xs:int"/>
 		<xs:attribute name="floatcorpse" type="xs:boolean" default="false"/>
 		<xs:attribute name="stare_range" type="xs:int" default="10"/>
@@ -50,12 +51,13 @@
 			<xs:extension base="statsTemplate">
 				<xs:sequence/>
 				<xs:attribute name="run_speed_fight" type="xs:float"/>
-				<xs:attribute name="maxXp" type="xs:int"/>
+				<xs:attribute name="maxXp" type="xs:long"/>
 				<xs:attribute name="accuracy" type="xs:int"/>
 				<xs:attribute name="power" type="xs:int"/>
 				<xs:attribute name="mresist" type="xs:int"/>
 				<xs:attribute name="mcrit" type="xs:int"/>
 				<xs:attribute name="pdef" type="xs:int"/>
+				<xs:attribute name="mdef" type="xs:int"/>	
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
