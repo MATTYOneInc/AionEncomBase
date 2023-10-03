@@ -162,8 +162,7 @@ public class NpcGameStats extends CreatureGameStats<Npc> {
 
 	@Override
 	public Stat2 getMBResist() {
-		int base = 0;
-		return getStat(StatEnum.MAGIC_SKILL_BOOST_RESIST, base);
+		return getStat(StatEnum.MAGIC_SKILL_BOOST_RESIST, owner.getObjectTemplate().getStatsTemplate().getMBResist());
 	}
 
 	@Override
@@ -243,7 +242,7 @@ public class NpcGameStats extends CreatureGameStats<Npc> {
 
 	@Override
 	public Stat2 getMBoost() {
-		return getStat(StatEnum.BOOST_MAGICAL_SKILL, 100);
+		return getStat(StatEnum.BOOST_MAGICAL_SKILL, owner.getObjectTemplate().getStatsTemplate().getMBoost()); // dmg npc from spells
 	}
 
 	@Override
@@ -258,13 +257,13 @@ public class NpcGameStats extends CreatureGameStats<Npc> {
 
 	@Override
 	public Stat2 getMCritical() {
-		return getStat(StatEnum.MAGICAL_CRITICAL, 50);
+		return getStat(StatEnum.MAGICAL_CRITICAL, owner.getObjectTemplate().getStatsTemplate().getMCritical());
 	}
 
 	@Override
 	public Stat2 getHpRegenRate() {
-		NpcStatsTemplate nst = owner.getObjectTemplate().getStatsTemplate();
-		return getStat(StatEnum.REGEN_HP, nst.getMaxHp() / 2);
+		//NpcStatsTemplate nst = owner.getObjectTemplate().getStatsTemplate();
+		return getStat(StatEnum.REGEN_HP, owner.getObjectTemplate().getStatsTemplate().getHpRegenRate());
 	}
 
 	@Override

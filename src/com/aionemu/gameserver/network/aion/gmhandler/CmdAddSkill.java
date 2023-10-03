@@ -48,7 +48,7 @@ public class CmdAddSkill extends AbstractGMHandler {
             return;
         }
         for (SkillTemplate template : DataManager.SKILL_DATA.getSkillData().valueCollection()) {
-            if (template.getName() != null && template.getName().equalsIgnoreCase(params)) {
+            if (template.getNamedesc() != null && template.getNamedesc().equalsIgnoreCase(params)) {
                 PacketSendUtility.sendMessage(admin, "You added Skill " + template.getName() + "to " + t.getName());
                 PacketSendUtility.sendMessage(t, "Admin has add Skill " + template.getName() + "to you.");
                 t.getSkillList().addSkill(t, template.getSkillId(), 1);

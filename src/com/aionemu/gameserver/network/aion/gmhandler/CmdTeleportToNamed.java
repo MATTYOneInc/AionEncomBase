@@ -43,7 +43,7 @@ public class CmdTeleportToNamed extends AbstractGMHandler {
             String npcDesc = params;
 
             for (NpcTemplate template : DataManager.NPC_DATA.getNpcData().valueCollection()) {
-                if (template.getName() != null && template.getName().equalsIgnoreCase(npcDesc)) {
+                if (template.getNamedesc() != null && template.getNamedesc().equalsIgnoreCase(npcDesc)) {
                     TeleportService2.teleportToNpc(admin, template.getTemplateId());
                     message = "Teleporting to Npc: " + template.getTemplateId();
                     PacketSendUtility.sendMessage(admin, message);

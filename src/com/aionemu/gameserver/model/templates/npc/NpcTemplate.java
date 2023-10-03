@@ -89,6 +89,8 @@ public class NpcTemplate extends VisibleObjectTemplate
 	private AbyssNpcType abyssNpcType;
 	@XmlElement(name = "talk_info")
 	private TalkInfo talkInfo;
+	@XmlAttribute(name = "name_desc")
+	private String namedesc;
 	@XmlTransient
 	private NpcDrop npcDrop;
 	//Massive Looting 4.7
@@ -262,6 +264,10 @@ public class NpcTemplate extends VisibleObjectTemplate
 	
 	public Boolean getMistSpawnCondition() {
 		return onMist;
+	}
+	
+	public String getNamedesc() {
+		return namedesc;
 	}
 	
 	public MassiveLooting getMassiveLooting() {

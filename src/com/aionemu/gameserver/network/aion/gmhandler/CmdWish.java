@@ -19,6 +19,7 @@ package com.aionemu.gameserver.network.aion.gmhandler;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.services.item.ItemService;
@@ -37,11 +38,12 @@ public final class CmdWish extends AbstractGMHandler {
     }
 
     public void run() {
-        if (params.length() == 0){
+        String[] p = params.split(" ");
+		if (p.length != 2){
 
             String npcName = params;
-            TIntObjectHashMap<NpcTemplate> npcTemp = DataManager.NPC_DATA.getNpcData();
-
+			TIntObjectHashMap<NpcTemplate> npcTemp = DataManager.NPC_DATA.getNpcData();
+			
             float x = admin.getX();
             float y = admin.getY();
             float z = admin.getZ();
@@ -49,16 +51,16 @@ public final class CmdWish extends AbstractGMHandler {
             int worldId = admin.getWorldId();
 
             for (NpcTemplate nTemp : npcTemp.valueCollection()){
-                if (nTemp.getName().equalsIgnoreCase(npcName)){
+                if (nTemp.getNamedesc() != null && nTemp.getNamedesc().equalsIgnoreCase(npcName)){
                     SpawnTemplate spawn = SpawnEngine.addNewSpawn(worldId, nTemp.getTemplateId(), x, y, z, heading, 0);
                     VisibleObject visibleObject = SpawnEngine.spawnObject(spawn, admin.getInstanceId());
-                    String objectName = visibleObject.getObjectTemplate().getName();
-                    PacketSendUtility.sendMessage(admin, objectName + " spawned (ID:"+nTemp.getTemplateId()+ ")");
+                    PacketSendUtility.sendMessage(admin, " spawned (ID:"+nTemp.getTemplateId()+ ")");
                 }
             }
-
-        } else {
+			return;
+        }
             //WORKING PERFECTLY
+			TIntObjectHashMap<ItemTemplate> itemTemp = DataManager.ITEM_DATA.getItemData();
             String[] itemN = params.split(" ");
 
             String itemName = itemN[0];
@@ -66,10 +68,11 @@ public final class CmdWish extends AbstractGMHandler {
             if (itemcount == 0){
                 itemcount = 1;
             }
-
-            if (itemName.equalsIgnoreCase(DataManager.ITEM_DATA.getItemDescr(itemName))){
-                ItemService.addItem(admin, DataManager.ITEM_DATA.giveItemIdOf(itemName), itemcount);
+			
+			for (ItemTemplate it : itemTemp.valueCollection()){
+				if (it.getNamedesc() != null && it.getNamedesc().equalsIgnoreCase(itemName)){
+					ItemService.addItem(admin, it.getTemplateId(), itemcount);
+				}
             }
-        }
     }
 }

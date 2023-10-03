@@ -146,6 +146,7 @@ public class StatCapUtil
 			case PHYSICAL_ACCURACY:
 			case PHYSICAL_CRITICAL:
 			case BOOST_MAGICAL_SKILL:
+			case PHYSICAL_DEFENSE:
             case BOOST_DURATION_BUFF:
 			case MAGIC_SKILL_BOOST_RESIST:
                 value = Integer.MAX_VALUE;

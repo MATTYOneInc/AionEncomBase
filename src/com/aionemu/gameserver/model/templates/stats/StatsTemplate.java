@@ -27,6 +27,8 @@ public abstract class StatsTemplate
 {
 	@XmlAttribute(name = "maxHp")
 	private int maxHp;
+	@XmlAttribute(name = "hp_regen")
+	private int hpregen;
 	@XmlAttribute(name = "maxMp")
 	private int maxMp;
 	@XmlAttribute(name = "walk_speed")
@@ -43,6 +45,8 @@ public abstract class StatsTemplate
 	private int block;
 	@XmlAttribute(name = "parry")
 	private int parry;
+	@XmlAttribute(name = "mboost")
+	private int mboost;
 	@XmlAttribute(name = "main_hand_attack")
 	private int mainHandAttack;
 	@XmlAttribute(name = "main_hand_accuracy")
@@ -57,6 +61,8 @@ public abstract class StatsTemplate
 	private int strikeResist;
 	@XmlAttribute(name = "spell_resist")
 	private int spellResist;
+	@XmlAttribute(name = "mboost_resist")
+	private int mboostresist;
 	
 	/* ======================================= */
 	public int getMaxHp() {
@@ -65,6 +71,9 @@ public abstract class StatsTemplate
 	
 	public void setMaxHp(int maxHp) {
 		this.maxHp = maxHp;
+	}
+	public int getHpRegenRate() {
+		return hpregen;
 	}
 	
 	public int getMaxMp() {
@@ -113,6 +122,10 @@ public abstract class StatsTemplate
 		return parry;
 	}
 	
+	public int getMBoost() {
+		return mboost;
+	}
+	
 	public void setParry(int parry) {
 		this.parry = parry;
 	}
@@ -153,5 +166,8 @@ public abstract class StatsTemplate
 	
 	public int getMCritical() {
 		return critSpell;
+	}
+	public int getMBResist() {
+		return mboostresist;
 	}
 }

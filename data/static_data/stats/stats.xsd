@@ -56,6 +56,7 @@
 	</xs:complexType>
 	<xs:complexType name="statsTemplate" abstract="true">
 		<xs:attribute name="maxHp" type="xs:int" use="required"/>
+		<xs:attribute name="hp_regen" type="xs:int"/>
 		<xs:attribute name="maxMp" type="xs:int"/>
 		<xs:attribute name="walk_speed" type="xs:float"/>
 		<xs:attribute name="run_speed" type="xs:float"/>
@@ -64,6 +65,7 @@
 		<xs:attribute name="evasion" type="xs:int"/>
 		<xs:attribute name="block" type="xs:int"/>
 		<xs:attribute name="parry" type="xs:int"/>
+		<xs:attribute name="mboost" type="xs:int"/>		
 		<xs:attribute name="main_hand_attack" type="xs:int"/>
 		<xs:attribute name="main_hand_accuracy" type="xs:int"/>
 		<xs:attribute name="main_hand_crit_rate" type="xs:int"/>
@@ -71,5 +73,6 @@
 		<xs:attribute name="crit_spell" type="xs:int"/>
 		<xs:attribute name="strike_resist" type="xs:int"/>
 		<xs:attribute name="spell_resist" type="xs:int"/>
+		<xs:attribute name="mboost_resist" type="xs:int"/>		
 	</xs:complexType>
 </xs:schema>

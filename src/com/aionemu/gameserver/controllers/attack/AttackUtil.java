@@ -75,9 +75,7 @@ public class AttackUtil {
 			if (mainHandWeapon != null) {
 				mainHandHits = Rnd.get(1, mainHandWeapon.getItemTemplate().getWeaponStats().getHitCount());
 			}
-		} else {
-			mainHandHits = Rnd.get(1, 3);
-		}
+		} 
 		splitPhysicalDamage(attacker, attacked, mainHandHits, damage, mainHandStatus, attackList);
 		return mainHandStatus;
 	}
@@ -98,7 +96,6 @@ public class AttackUtil {
 	 */
 	private static final List<AttackResult> splitPhysicalDamage(final Creature attacker, final Creature attacked, int hitCount, int damage, AttackStatus status, List<AttackResult> attackList) {
 		WeaponType weaponType;
-
 		switch (AttackStatus.getBaseStatus(status)) {
 			case BLOCK:
 				int reduce = damage - attacked.getGameStats().getPositiveReverseStat(StatEnum.DAMAGE_REDUCE, damage);
@@ -112,12 +109,18 @@ public class AttackUtil {
 					}
 				}
 				damage -= reduce;
+				if (damage < 1) {
+					damage = 1;
+				}
 				break;
 			case DODGE:
 				damage = 0;
 				break;
 			case PARRY:
 				damage *= 0.6;
+				if (damage < 1) {
+					damage = 1;
+				}
 				break;
 			default:
 				break;
@@ -133,13 +136,14 @@ public class AttackUtil {
 				damage = (int) calculateWeaponCritical(attacked, damage, null, StatEnum.PHYSICAL_CRITICAL_DAMAGE_REDUCE);
 			}
 		}
-
-		if (damage < 1) {
-			damage = 0;
-		}
-
-		int firstHit = (int) (damage * (1f - (0.1f * (hitCount - 1))));
+		
+		if (damage == 1 || damage == 2) {
+			attackList.add(new AttackResult(1, status, HitType.PHHIT));
+			return attackList;
+		}	
+		int firstHit = (int)(damage * (1f - (0.1f * (hitCount - 1))));		
 		int otherHits = Math.round(damage * 0.1f);
+	
 		for (int i = 0; i < hitCount; i++) {
 			int dmg = (i == 0 ? firstHit : otherHits);
 			attackList.add(new AttackResult(dmg, status, HitType.PHHIT));
@@ -239,11 +243,11 @@ public class AttackUtil {
 		 * monster type while others can affect multiple types. - There are four monster types in total: Warrior, Assassin, Mage, and Special.
 		 */
 		if (effector.getEffectController().hasAbnormalEffect(22987) && effector.getEffectController().hasAbnormalEffect(22988) && effector.getEffectController().hasAbnormalEffect(22989) && effector.getEffectController().hasAbnormalEffect(22990)) {
-			damage = StatFunctions.calculatePhysicalAttackDamage(effect.getEffector(), effect.getEffected(), true) * 2 / 100;
+			damage = StatFunctions.calculatePhysicalAttackDamageNoDef(effect.getEffector(), effect.getEffected(), true) * 2 / 100;
 		}
 		if (effector.getAttackType() == ItemAttackType.PHYSICAL) {
 			baseAttack = effector.getGameStats().getMainHandPAttack().getBase();
-			damage = StatFunctions.calculatePhysicalAttackDamage(effector, effected, true);
+			damage = StatFunctions.calculatePhysicalAttackDamageNoDef(effector, effected, true);
 		} else {
 			if (isMainHand) {
 				baseAttack = effector.getGameStats().getMainHandMAttack().getBase();
@@ -374,9 +378,12 @@ public class AttackUtil {
 		if (shared && !effect.getSkill().getEffectedList().isEmpty()) {
 			damage /= effect.getSkill().getEffectedList().size();
 		}
-
+		
+		float pDef = effected.getGameStats().getPDef().getBonus() + StatFunctions.getMovementModifier(effected, StatEnum.PHYSICAL_DEFENSE, effected.getGameStats().getPDef().getBase());
+		damage -= (pDef * 0.10f);			
+		
 		if (damage < 0) {
-			damage = 0;
+			damage = 1;
 		}
 
 		calculateEffectResult(effect, effected, damage, status, HitType.PHHIT, ignoreShield);

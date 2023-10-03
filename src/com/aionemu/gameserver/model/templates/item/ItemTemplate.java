@@ -53,6 +53,9 @@ public class ItemTemplate extends VisibleObjectTemplate
 	@XmlElement(name = "actions", required = false)
 	protected ItemActions actions;
 
+	@XmlAttribute(name = "name_desc")
+    private String namedesc;
+
 	@XmlAttribute(name = "mask")
 	private int mask;
 
@@ -773,5 +776,9 @@ public class ItemTemplate extends VisibleObjectTemplate
 
     public String getDescr(){
         return descr;
+    }
+	
+	public String getNamedesc() {
+        return namedesc;
     }
 }

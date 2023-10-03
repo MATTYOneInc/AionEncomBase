@@ -170,4 +170,8 @@ public class ItemData extends ReloadableData {
         }
         return 0;
     }
+
+	public TIntObjectHashMap<ItemTemplate> getItemData() {
+        return items;
+    }
 }

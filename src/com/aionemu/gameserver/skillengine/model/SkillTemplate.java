@@ -51,6 +51,8 @@ public class SkillTemplate {
 	protected Motion motion;
 	@XmlAttribute(name = "skill_id", required = true)
 	protected int skillId;
+	@XmlAttribute(name = "name_desc")
+	protected String namedesc;
 	@XmlAttribute(required = true)
 	protected String name;
 	@XmlAttribute(required = true)
@@ -454,6 +456,10 @@ public class SkillTemplate {
 	public int getConflictId() {
 		return conflictId;
 	}
+	
+	public String getNamedesc() {
+        return namedesc;
+    }
 
 	public boolean isNoRemoveAtDie() {
 		return noRemoveAtDie;

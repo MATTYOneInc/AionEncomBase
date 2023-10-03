@@ -147,6 +147,7 @@
 		<xs:attribute name="level" type="xs:int"/>
 		<xs:attribute name="id" type="itemId" use="required"/>
 		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute name="name_desc" type="xs:string"/>
 		<xs:attribute name="robot_id" type="xs:int" use="optional"/>
 		<xs:attribute name="abyss_point" type="xs:int"/>
 		<xs:attribute name="max_authorize" type="xs:int"/>

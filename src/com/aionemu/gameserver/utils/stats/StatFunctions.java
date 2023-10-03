@@ -418,6 +418,90 @@ public class StatFunctions {
 		return Math.round(resultDamage);
 	}
 
+	public static int calculatePhysicalAttackDamageNoDef(Creature attacker, Creature target, boolean isMainHand) {
+		Stat2 pAttack;
+		if (isMainHand) {
+			pAttack = attacker.getGameStats().getMainHandPAttack();
+		} else {
+			pAttack = ((Player) attacker).getGameStats().getOffHandPAttack();
+		}
+		float resultDamage = pAttack.getCurrent();
+		float baseDamage = pAttack.getBase();
+		if (attacker instanceof Player) {
+			Equipment equipment = ((Player) attacker).getEquipment();
+			Item weapon;
+			if (isMainHand) {
+				weapon = equipment.getMainHandWeapon();
+			} else {
+				weapon = equipment.getOffHandWeapon();
+			}
+
+			if (weapon != null) {
+				WeaponStats weaponStat = weapon.getItemTemplate().getWeaponStats();
+				if (weaponStat == null) {
+					return 0;
+				}
+				int totalMin = weaponStat.getMinDamage();
+				int totalMax = weaponStat.getMaxDamage();
+				if (totalMax - totalMin < 1) {
+					log.warn("Weapon stat MIN_MAX_DAMAGE resulted average zero in main-hand calculation");
+					log.warn("Weapon ID: " + String.valueOf(equipment.getMainHandWeapon().getItemTemplate().getTemplateId()));
+					log.warn("MIN_DAMAGE = " + String.valueOf(totalMin));
+					log.warn("MAX_DAMAGE = " + String.valueOf(totalMax));
+				}
+				float power = attacker.getGameStats().getPower().getCurrent() * 0.01f;
+				int diff = Math.round((totalMax - totalMin) * power / 2);
+				resultDamage = pAttack.getBonus() + baseDamage;
+				// adjust with value from WeaponDualEffect
+				// it makes lower cap of damage lower, so damage is more random on offhand
+				int negativeDiff = diff;
+				if (!isMainHand) {
+					negativeDiff = (int) Math.round((200 - ((Player) attacker).getDualEffectValue()) * 0.01 * diff);
+				}
+				resultDamage += Rnd.get(-negativeDiff, diff);
+				// add powerShard damage
+				if (attacker.isInState(CreatureState.POWERSHARD)) {
+					Item firstShard;
+					Item secondShard = null;
+					if (isMainHand) {
+						firstShard = equipment.getMainHandPowerShard();
+						if (weapon.getItemTemplate().isTwoHandWeapon()) {
+							secondShard = equipment.getOffHandPowerShard();
+						}
+					} else {
+						firstShard = equipment.getOffHandPowerShard();
+					}
+
+					if (firstShard != null) {
+						equipment.usePowerShard(firstShard, 1);
+						resultDamage += firstShard.getItemTemplate().getWeaponBoost();
+					}
+
+					if (secondShard != null) {
+						equipment.usePowerShard(secondShard, 1);
+						resultDamage += secondShard.getItemTemplate().getWeaponBoost();
+					}
+				}
+			} else {// if hand attack
+				int totalMin = 16;
+				int totalMax = 20;
+
+				float power = attacker.getGameStats().getPower().getCurrent() * 0.01f;
+				int diff = Math.round((totalMax - totalMin) * power / 2);
+				resultDamage = pAttack.getBonus() + baseDamage;
+				resultDamage += Rnd.get(-diff, diff);
+			}
+		} else {
+			int rnd = (int) (resultDamage * 0.25);
+			resultDamage += Rnd.get(-rnd, rnd);
+		}
+
+		if (resultDamage <= 0) {
+			resultDamage = 1;
+		}
+		return Math.round(resultDamage);
+	}
+
 	public static int calculateMagicalAttackDamage(Creature attacker, Creature target, SkillElement element, boolean isMainHand) {
 		Preconditions.checkNotNull(element, "Skill element should be NONE instead of null");
 		Stat2 mAttack;
