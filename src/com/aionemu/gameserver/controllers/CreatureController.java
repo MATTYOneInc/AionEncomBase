@@ -1,5 +1,4 @@
 /*
-
  *
  *  Encom is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser Public License as published by
@@ -151,27 +150,21 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 	 *
 	 * @param lastAttacker
 	 */
-	public void onDie(Creature lastAttacker) {
+	public void onDie(Creature lastAttacker) 
+	{
         this.getOwner().getMoveController().abortMove();
         this.getOwner().setCasting(null);
         this.getOwner().getEffectController().removeAllEffects();
-        if (getOwner() instanceof Player) {
-            if (((Player) getOwner()).getIsFlyingBeforeDeath()) {
+
+        if (getOwner() instanceof Player && ((Player) getOwner()).getIsFlyingBeforeDeath()) {
                 getOwner().unsetState(CreatureState.ACTIVE);
                 getOwner().setState(CreatureState.FLOATING_CORPSE);
             } else {
                 this.getOwner().setState(CreatureState.DEAD);
             }
-        } else {
-            if (getOwner() instanceof Npc) {
-                if (((Npc) getOwner()).getObjectTemplate().isFloatCorpse()) {
-                    getOwner().setState(CreatureState.FLOATING_CORPSE);
-                }
-            }
-            this.getOwner().setState(CreatureState.DEAD);
-        }
-        this.getOwner().getObserveController().notifyDeathObservers(lastAttacker);
-    }
+			this.getOwner().getObserveController().notifyDeathObservers(lastAttacker);
+			
+	} 
 
 	/**
 	 * Perform tasks when Creature was attacked //TODO may be pass only Skill
