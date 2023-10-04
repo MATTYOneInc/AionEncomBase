@@ -11,5 +11,8 @@
             <spot entity_id="2392" h="0" z="329.59494" y="1729.1151" x="915.10657"/>
             <spot h="26" z="331.125" y="1711.7587" x="924.56683"/>
         </spawn>
+        <spawn custom="true" respawn_time="295" npc_id="702725" difficult_id="0">
+            <spot h="103" z="589.4215" y="281.17572" x="1329.6571"/>
+        </spawn>
     </spawn_map>
 </spawns>
