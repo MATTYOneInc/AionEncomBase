@@ -24,9 +24,10 @@ import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
-/****/
-/** Author Ghostfur & Unknown (Aion-Unique)
-/****/
+/**
+* Author Ghostfur & Unknown (Aion-Unique)
+* Rework: MATTY (ADev.Team)
+*/
 
 public class _24016A_Strange_New_Threat extends QuestHandler
 {
@@ -60,55 +61,63 @@ public class _24016A_Strange_New_Threat extends QuestHandler
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		int[] altgardQuests = {24010, 24011, 24012, 24013, 24014, 24015};
-		return defaultOnLvlUpEvent(env, altgardQuests, false);
+		return defaultOnLvlUpEvent(env, altgardQuests, true);
 	}
 	
-	@Override
-	public boolean onDialogEvent(QuestEnv env) {
-		Player player = env.getPlayer();
-		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
-		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null)
-			return false;
-		int var = qs.getQuestVarById(0);
-		if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 203557: //Suthran.
-					if (env.getDialog() == QuestDialog.START_DIALOG && var == 0) {
-						return sendQuestDialog(env, 1011);
-					} else if (env.getDialog() == QuestDialog.STEP_TO_1) {
-						TeleportService2.teleportTo(player, 220030000, 2453.1934f, 2555.148f, 316.267f, (byte) 0, TeleportAnimation.BEAM_ANIMATION);
-						changeQuestStep(env, 0, 1, false);
-						return closeDialogWindow(env);
-					} else if (env.getDialogId() == 1013) {
-						playQuestMovie(env, 66);
-						return sendQuestDialog(env, 1013);
-					}
-				break;
-				case 700184: //Abyss Gate.
+    @Override
+    public boolean onDialogEvent(QuestEnv env) {
+        Player player = env.getPlayer();
+        int targetId = env.getTargetId();
+        QuestState qs = player.getQuestStateList().getQuestState(questId);
+        if (qs == null) {
+            return false;
+        }
+        int var = qs.getQuestVarById(0);
+
+        if (qs.getStatus() == QuestStatus.START) {
+            switch (targetId) {
+                case 203557: { // Suthran
+                    if (env.getDialog() == QuestDialog.START_DIALOG && var == 0) {
+                        return sendQuestDialog(env, 1011);
+                    } else if (env.getDialog() == QuestDialog.STEP_TO_1) {
+                        TeleportService2.teleportTo(player, 220030000, 2453.1934f, 2555.148f, 316.267f, (byte) 0, TeleportAnimation.BEAM_ANIMATION);
+                        changeQuestStep(env, 0, 1, false); // 1
+                        return closeDialogWindow(env);
+                    } else if (env.getDialogId() == 1013) {
+                        playQuestMovie(env, 66);
+                        return sendQuestDialog(env, 1013);
+                    }
+                    break;
+                }
+                case 700140: { // Gate Guardian Stone
+                    if (var == 2) {
+                        if (env.getDialog() == QuestDialog.USE_OBJECT) {
+                            QuestService.addNewSpawn(320030000, player.getInstanceId(), 233876, (float) 260.12, (float) 234.93,
+                                    (float) 216.00, (byte) 90);
+                            return useQuestObject(env, 2, 3, false, false); // 3
+                        }
+                    } else if (var == 4) {
+                        if (env.getDialog() == QuestDialog.USE_OBJECT) {
+                            return playQuestMovie(env, 154);
+                        }
+                    }
+                }
+                case 700184: { // Abbys Gate
 					playQuestMovie(env, 154);
 					return useQuestObject(env, 4, 4, true, false);
-				case 700140: //Abyss Gate Guardian Stone.
-					if (dialog == QuestDialog.USE_OBJECT) {
-						QuestService.addNewSpawn(320030000, player.getInstanceId(), 233876, (float) 251.91177, (float) 262.239, (float) 228.30093, (byte) 89);
-						return useQuestObject(env, 2, 3, false, false);
-					}
-					Npc npc = (Npc) env.getVisibleObject();
-                    npc.getController().onDelete();
-				break;
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 203557) { //Suthran.
-				if (env.getDialog() == QuestDialog.USE_OBJECT) {
-					return sendQuestDialog(env, 1352);
-				} else {
-					return sendQuestEndDialog(env);
-				}
-			}
-		}
-		return false;
-	}
+                }
+            }
+        } else if (qs.getStatus() == QuestStatus.REWARD) {
+            if (targetId == 203557) { // Suthran
+                if (env.getDialog() == QuestDialog.USE_OBJECT) {
+                    return sendQuestDialog(env, 1352);
+                } else {
+                    return sendQuestEndDialog(env);
+                }
+            }
+        }
+        return false;
+    }
 	
 	@Override
 	public boolean onDieEvent(QuestEnv env) {
