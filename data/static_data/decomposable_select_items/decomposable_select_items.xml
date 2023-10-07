@@ -18951,17 +18951,19 @@
 	<!-- 審判官のユニーク武器の箱 (Judge's Fabled Weapon Chest) -->
 	<decomposable_select_item item_id="188052826">
 	    <items>
-			<item id="101300737"/>
-			<item id="100900765"/>
-			<item id="100200903"/>
-			<item id="101700810"/>
-			<item id="100100768"/>
-			<item id="101500793"/>
-			<item id="100600843"/>
-			<item id="100500788"/>
-			<item id="101900670"/>
-			<item id="102000704"/>
-			<item id="102100254"/>
+			<item id="101900290"/>
+			<item id="102100761"/>
+			<item id="101800872"/>
+			<item id="100200298"/>
+			<item id="100900197"/>
+			<item id="100500204"/>
+			<item id="101700216"/>
+			<item id="101300194"/>
+			<item id="101500205"/>
+			<item id="102000301"/>
+			<item id="100000275"/>
+			<item id="100600219"/>
+			<item id="100100191"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188052827"/>

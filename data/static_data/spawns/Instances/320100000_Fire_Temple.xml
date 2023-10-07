@@ -26,7 +26,6 @@
 			<spot x="216.825" y="390.132" z="145.046" h="76"/>
 			<spot x="189.554" y="384.877" z="144.571" h="43"/>
 			<spot x="153.506" y="391.564" z="143.83" h="100"/>
-			<spot x="164.559" y="430.133" z="140.21" h="60"/>
 		</spawn>
 		<!-- Sacred Chalice -->
 		<spawn npc_id="700237">
@@ -241,8 +240,6 @@
 			<spot x="155.901" y="359.04" z="145.053" h="97"/>
 			<spot x="224.06" y="259.22" z="120.864784" h="17" walker_id="E9F39CE8A1592D739ADD98C1FF0E0361E4647BAB"/>
 			<spot x="152.53" y="363.53" z="145.09843" h="84" walker_id="187B5FB382CCD714857CBB9EB179132D50E46984"/>
-			<spot x="158.34" y="431.77" z="139.85712" h="91" walker_id="59DCFF1EA4F9CBCD9870E7F80D0A5CC59767BB0D"/>
-			<spot x="153.432" y="429.233" z="139.772" h="6"/>
 			<spot x="194.59" y="349.74" z="144.3777" h="91" walker_id="4E89CECCDFD4E133ED5DD61C81631D7FAF5706EB"/>
 		</spawn>
 		<!-- Lurking Bloodfist -->
@@ -274,10 +271,10 @@
 			<spot x="298.673" y="233.982" z="118.414" h="83"/>
 			<spot x="265.344" y="214.906" z="118.59" h="90"/>
 		</spawn>
-		<!-- Silver Blade Rotan -->
+		<!-- Silver Blade Rotan --> 
 		<spawn npc_id="212844">
-			<spot x="283.314" y="211.062" z="119.561" h="95"/>
-		</spawn>
+			<spot x="216.51399" y="263.90427" z="120.869865" h="36" walker_id="silverbladerotanfiretemplemove"/>
+		</spawn> 
 		<!-- Temple Caryatid -->
 		<spawn npc_id="212808">
 			<spot x="394.932" y="112.774" z="116.11" h="75"/>
@@ -290,7 +287,6 @@
 		<!-- Aetheric Mugolem -->
 		<spawn npc_id="212802">
 			<spot x="252.955" y="200.75" z="119.588" h="83"/>
-			<spot x="286.364" y="202.152" z="118.999" h="60"/>
 		</spawn>
 		<!-- Aetheric Mugolem -->
 		<spawn npc_id="212803">
@@ -336,11 +332,9 @@
 			<spot x="358.954" y="134.625" z="118.204" h="70"/>
 			<spot x="352.379" y="124.245" z="116.849" h="15"/>
 			<spot x="410.45154" y="100.33962" z="116.10972" h="50" walker_id="CROUCHINGGARGOYLEFIRETEMPLE0000000000001"/>
-			<spot x="410.45154" y="100.33962" z="116.10972" h="50" walker_id="CROUCHINGGARGOYLEFIRETEMPLE0000000000001"/>
 			<spot x="396.674" y="223.19" z="120.072" h="60"/>
 			<spot x="380.654" y="219.013" z="116.94" h="40"/>
 			<spot x="266.682" y="99.0784" z="128.143" h="15"/>
-			<spot x="362.281" y="129.779" z="116.477" h="67" walker_id="CROUCHINGGARGOYLEFIRETEMPLE0000000000000"/>
 			<spot x="282.417" y="129.766" z="128.656"/>
 			<spot x="426.727" y="105.618" z="117.194" h="50"/>
 			<spot x="402.062" y="72.6587" z="117.194" h="23"/>
