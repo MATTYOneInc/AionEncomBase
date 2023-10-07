@@ -17,10 +17,25 @@
 
 package com.aionemu.gameserver;
 
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.GridLayout;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Collection;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,8 +54,84 @@ import com.aionemu.gameserver.world.World;
 public class ServerCommandProcessor extends Thread {
 	private static final Logger log = LoggerFactory.getLogger(ServerCommandProcessor.class);
 
+	
 	@Override
 	public void run() {
+		
+
+		
+        Frame f = new Frame("Ya-admin panel");
+        f.setBackground( Color.black);
+        //final TextField tf = new TextField();
+        //tf.setBounds(50, 50, 150, 20);
+        Button shutdown = new Button("Shutdown");
+        shutdown.setBounds(20, 40, 60, 30);
+        
+        Button online = new Button("Online");
+        online.setBounds(80, 40, 60, 30);
+        
+        Button who = new Button("Who");
+        who.setBounds(140, 40, 60, 30);
+
+        f.add(shutdown);
+        f.add(online);
+        f.add(who);
+
+        ActionListener al_shutdown = new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+				System.exit(0); 
+
+            }
+        };
+
+        ActionListener al_online = new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+				int playerCount = DAOManager.getDAO(PlayerDAO.class).getOnlinePlayerCount();
+				if (playerCount == 1) {
+					log.info("There is " + (playerCount) + " player online!");
+				} else {
+					log.info("There is " + (playerCount) + " players online!");
+				}
+
+            }
+        };
+        
+        ActionListener al_who = new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+				Collection<Player> players = World.getInstance().getAllPlayers();
+				if(players.isEmpty()) {
+					log.info("There is no players online!");
+					return;
+				}
+				for (Player player : players) {
+					log.info("Char: " + player.getName() + " - Race: " + player.getCommonData().getRace().name()
+							+ " - Acc: " + player.getAcountName());
+				}
+            }
+        };
+        
+        shutdown.addActionListener(al_shutdown);
+        online.addActionListener(al_online);
+        who.addActionListener(al_who);
+        //f.add(tf);
+        f.setSize(400, 200);
+        f.setLayout(null);
+        f.setVisible(true);
+        // close frame
+        f.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent e) {
+            	log.info("Ya-admin panel: you want to close me? push shutdown button");
+            }
+        });
+    
+        
+        
 
 		// commands are only accepted from stdin when <enter> is hit. Otherwise we will
 		// waste no time reading char by char.
@@ -79,4 +170,5 @@ public class ServerCommandProcessor extends Thread {
 			System.exit(0); // exit using shutdown handlers.
 		}
 	}
+	
 }
