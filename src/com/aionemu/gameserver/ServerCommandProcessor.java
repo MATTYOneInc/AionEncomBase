@@ -17,33 +17,29 @@
 
 package com.aionemu.gameserver;
 
-import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Frame;
-import java.awt.GridLayout;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Collection;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.PlayerDAO;
+import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_QUIT_RESPONSE;
+import com.aionemu.gameserver.services.PunishmentService;
+import com.aionemu.gameserver.services.item.ItemService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * @author PenguinJoe
@@ -54,121 +50,232 @@ import com.aionemu.gameserver.world.World;
 public class ServerCommandProcessor extends Thread {
 	private static final Logger log = LoggerFactory.getLogger(ServerCommandProcessor.class);
 
-	
+	Frame f = new Frame("Ya-admin panel 5.8");
+
+	final TextField playerNameFieled = new TextField();
+	final TextField itemID = new TextField();
+	final TextField messageAnnounce = new TextField();
+
 	@Override
 	public void run() {
+
+		f.setBackground(Color.black);
+        //posHoriz/pos Vert/size/sizeUpDown
+		Button shutdown = new Button("Shutdown");
+		shutdown.setBounds(20, 40, 60, 20);
+
+		Button online = new Button("Online");
+		online.setBounds(80, 40, 60, 20);
+
+		Button who = new Button("Who");
+		who.setBounds(140, 40, 60, 20);
+
+		Button add = new Button("AddItem");
+		add.setBounds(20, 80, 60, 20);
+
+		Button kick = new Button("Kick");
+		kick.setBounds(80, 80, 60, 20);
 		
-
+		Button sPrison = new Button("SPrison");
+		sPrison.setBounds(140, 80, 60, 20);
 		
-        Frame f = new Frame("Ya-admin panel");
-        f.setBackground( Color.black);
-        //final TextField tf = new TextField();
-        //tf.setBounds(50, 50, 150, 20);
-        Button shutdown = new Button("Shutdown");
-        shutdown.setBounds(20, 40, 60, 30);
-        
-        Button online = new Button("Online");
-        online.setBounds(80, 40, 60, 30);
-        
-        Button who = new Button("Who");
-        who.setBounds(140, 40, 60, 30);
+		Button rPrison = new Button("RPrison");
+		rPrison.setBounds(200, 80, 60, 20);
+		
+		playerNameFieled.setBounds(270, 80, 100, 20);
+		playerNameFieled.setText("Player Name");
 
-        f.add(shutdown);
-        f.add(online);
-        f.add(who);
+		itemID.setBounds(380, 80, 100, 20);
+		itemID.setText("Iteam ID");
+		
+		Button announce = new Button("Announce");
+		announce.setBounds(20, 120, 60, 20);
+		
+		messageAnnounce.setBounds(90, 120, 230, 20);
+		messageAnnounce.setText("Announce message");
 
-        ActionListener al_shutdown = new ActionListener() {
+		f.add(playerNameFieled);
+		f.add(itemID);
+		f.add(messageAnnounce);
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-				System.exit(0); 
+		f.add(shutdown);
+		f.add(online);
+		f.add(who);
+		f.add(add);
+		f.add(kick);
+		f.add(announce);
+		f.add(sPrison);
+		f.add(rPrison);
 
-            }
-        };
+		shutdown.addActionListener(al_shutdown);
+		online.addActionListener(al_online);
+		who.addActionListener(al_who);
+		add.addActionListener(al_add);
+		kick.addActionListener(al_kick);
+		announce.addActionListener(al_announce);
+		sPrison.addActionListener(al_sendPrison);	
+		rPrison.addActionListener(al_rescuePrison);
 
-        ActionListener al_online = new ActionListener() {
+		f.setSize(600, 400);
+		f.setLayout(null);
+		f.setVisible(true);
+		// close frame
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-				int playerCount = DAOManager.getDAO(PlayerDAO.class).getOnlinePlayerCount();
-				if (playerCount == 1) {
-					log.info("There is " + (playerCount) + " player online!");
+		f.addWindowListener(new java.awt.event.WindowAdapter() {
+			public void windowClosing(java.awt.event.WindowEvent e) {
+				log.info("Ya-admin panel: you want to close me? push shutdown button");
+			}
+		});
+
+	}
+
+	ActionListener al_shutdown = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.exit(0);
+
+		}
+	};
+
+	ActionListener al_online = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int playerCount = DAOManager.getDAO(PlayerDAO.class).getOnlinePlayerCount();
+			if (playerCount == 1) {
+				log.info("There is " + (playerCount) + " player online!");
+			} else {
+				log.info("There is " + (playerCount) + " players online!");
+			}
+
+		}
+	};
+
+	ActionListener al_who = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			Collection<Player> players = World.getInstance().getAllPlayers();
+			if (players.isEmpty()) {
+				log.info("There is no players online!");
+				return;
+			}
+			for (Player player : players) {
+				log.info("Char: " + player.getName() + " - Race: " + player.getCommonData().getRace().name()
+						+ " - Acc: " + player.getAcountName());
+			}
+		}
+	};
+
+	ActionListener al_add = new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int i = Integer.parseInt(itemID.getText());
+			int itemId = i;
+			long itemCount = 1;
+
+			Player receiver;
+			String playerName = playerNameFieled.getText();
+
+			receiver = World.getInstance().findPlayer(playerName);
+
+			if (itemID.getText() != null) {
+				if (i != 0) {
+					if (DataManager.ITEM_DATA.getItemTemplate(itemId) == null) {
+						log.info("ADDcommad: Item id is incorrect: " + itemId);
+						return;
+					}
+					ItemService.addItem(receiver, itemId, itemCount);
+					log.info("ADDcommad: Success give[item:" + itemId + "] to player " + playerName + " in " + itemCount
+							+ " pcs");
 				} else {
-					log.info("There is " + (playerCount) + " players online!");
+					log.info("ADDcommad: IteamID = null");
 				}
+			} else {
+				log.info("ADDcommad: Player: " + playerName + " is not online");
+			}
 
-            }
-        };
-        
-        ActionListener al_who = new ActionListener() {
+		}
+	};
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-				Collection<Player> players = World.getInstance().getAllPlayers();
-				if(players.isEmpty()) {
-					log.info("There is no players online!");
+	ActionListener al_kick = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if (playerNameFieled.getText() != null && "All".equalsIgnoreCase(playerNameFieled.getText())) {
+				for (final Player player : World.getInstance().getAllPlayers()) {
+					if (!player.isGM()) {
+						player.getClientConnection().close(new SM_QUIT_RESPONSE(), false);
+						log.info("KICKcommad: Kicked player: " + player.getName());
+					}
+				}
+			} else {
+				Player player = World.getInstance().findPlayer(playerNameFieled.getText());
+				if (player == null) {
+					log.info("KICKcommad: The specified player is not online.");
 					return;
 				}
-				for (Player player : players) {
-					log.info("Char: " + player.getName() + " - Race: " + player.getCommonData().getRace().name()
-							+ " - Acc: " + player.getAcountName());
-				}
-            }
-        };
-        
-        shutdown.addActionListener(al_shutdown);
-        online.addActionListener(al_online);
-        who.addActionListener(al_who);
-        //f.add(tf);
-        f.setSize(400, 200);
-        f.setLayout(null);
-        f.setVisible(true);
-        // close frame
-        f.addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent e) {
-            	log.info("Ya-admin panel: you want to close me? push shutdown button");
-            }
-        });
-    
-        
-        
-
-		// commands are only accepted from stdin when <enter> is hit. Otherwise we will
-		// waste no time reading char by char.
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String command = null;
-		log.info("Server command processor thread started");
-		try {
-			while ((command = br.readLine()) != null) {
-				// 
-				if (command.equalsIgnoreCase("online")) {
-					int playerCount = DAOManager.getDAO(PlayerDAO.class).getOnlinePlayerCount();
-					if (playerCount == 1) {
-						log.info("There is " + (playerCount) + " player online !");
-					} else {
-						log.info("There is " + (playerCount) + " players online !");
-					}
-				}
-
-				// 
-				if (command.equalsIgnoreCase("who")) {
-
-					Collection<Player> players = World.getInstance().getAllPlayers();
-					for (Player player : players) {
-						log.info("Char: " + player.getName() + " - Race: " + player.getCommonData().getRace().name()
-								+ " - Acc: " + player.getAcountName());
-					}
-				}
-				// 
-				if (command.equalsIgnoreCase("shutdown") || command.equalsIgnoreCase("quit")
-						|| command.equalsIgnoreCase("exit"))
-					System.exit(0); // this will run finalizers and shutdown hooks for a clean shutdown.
+				player.getClientConnection().close(new SM_QUIT_RESPONSE(), false);
+				log.info("KICKcommad: Kicked player : " + player.getName());
 			}
-		} catch (IOException e) {
-			// an IOException here indicates the console (or other launcher) is closing. The
-			// server needs to shut down too.
-			System.exit(0); // exit using shutdown handlers.
 		}
-	}
+	};
 	
+	ActionListener al_announce = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if (playerNameFieled.getText() != null || messageAnnounce.getText() != "Announce message") {
+		        Iterator<Player> iter = World.getInstance().getPlayersIterator();
+
+		        while (iter.hasNext()) {
+		            PacketSendUtility.sendBrightYellowMessageOnCenter(iter.next(), messageAnnounce.getText());
+		        }
+			}
+		}
+	};
+	
+	ActionListener al_sendPrison = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if (playerNameFieled.getText() != null) {
+		        try {
+		            Player playerToPrison = World.getInstance().findPlayer(playerNameFieled.getText());
+		            int delay = 30;
+		            String reason = "Ban from Admin";
+
+		            if (playerToPrison != null) {
+		                PunishmentService.setIsInPrison(playerToPrison, true, delay, reason);
+		                log.info("SPRISONcommad: Admin " + playerToPrison.getName() + " send to prison till " + delay + " min reason - " + reason + ".");
+		            }
+		        } catch (Exception eo) {
+
+		        }
+			}
+		}
+	};
+	
+	ActionListener al_rescuePrison = new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if (playerNameFieled.getText() != null) {
+		        try {
+		        	Player playerFromPrison = World.getInstance().findPlayer(playerNameFieled.getText());
+
+		            if (playerFromPrison != null) {
+		                PunishmentService.setIsInPrison(playerFromPrison, false, 0, "");
+		                log.info("SPRISONcommad: Admin " + playerFromPrison.getName() + " rescue you from prison.");
+		            }
+		        } catch (NoSuchElementException nsee) {
+		        } catch (Exception ee) {
+		        }
+			}
+		}
+	};	
+	
+	
+
 }
