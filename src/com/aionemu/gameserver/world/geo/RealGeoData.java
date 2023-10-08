@@ -1,18 +1,10 @@
 /*
-
- *
- *  Encom is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Lesser Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Encom is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Lesser Public License for more details.
- *
- *  You should have received a copy of the GNU Lesser Public License
- *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
+ * Decompiled with CFR 0.150.
+ * 
+ * Could not load the following classes:
+ *  gnu.trove.map.hash.TIntObjectHashMap
+ *  org.slf4j.Logger
+ *  org.slf4j.LoggerFactory
  */
 package com.aionemu.gameserver.world.geo;
 
@@ -22,41 +14,34 @@ import com.aionemu.gameserver.geoEngine.models.GeoMap;
 import com.aionemu.gameserver.geoEngine.scene.Spatial;
 import com.aionemu.gameserver.model.templates.world.WorldMapTemplate;
 import com.aionemu.gameserver.utils.Util;
+import com.aionemu.gameserver.world.geo.DummyGeoData;
+import com.aionemu.gameserver.world.geo.GeoData;
 import gnu.trove.map.hash.TIntObjectHashMap;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+public class RealGeoData
+implements GeoData {
+    private static final Logger log = LoggerFactory.getLogger(RealGeoData.class);
+    private TIntObjectHashMap<GeoMap> geoMaps = new TIntObjectHashMap();
 
-/**
- * @author ATracer
- */
-public class RealGeoData implements GeoData {
+    @Override
+    public void loadGeoMaps() {
+        Map<String, Spatial> models = this.loadMeshes();
+        this.loadWorldMaps(models);
+        models.clear();
+        models = null;
+        log.info("\u5730\u7406\u6570\u636e: " + this.geoMaps.size() + " \u8f7d\u5165GEO\u5730\u56fe!");
+    }
 
-	private static final Logger log = LoggerFactory.getLogger(RealGeoData.class);
-
-	private TIntObjectHashMap<GeoMap> geoMaps = new TIntObjectHashMap<GeoMap>();
-
-	@Override
-	public void loadGeoMaps() {
-		Map<String, Spatial> models = loadMeshes();
-		loadWorldMaps(models);
-		models.clear();
-		models = null;
-	}
-
-	/**
-	 * @param models
-	 */
-	protected void loadWorldMaps(Map<String, Spatial> models) {
-		log.info("Loading geo maps..");
-		Util.printProgressBarHeader(DataManager.WORLD_MAPS_DATA.size());
-		List<Integer> mapsWithErrors = new ArrayList<Integer>();
-
-		for (WorldMapTemplate map : DataManager.WORLD_MAPS_DATA) {
+    protected void loadWorldMaps(Map<String, Spatial> models) {
+        log.info("\u8f7d\u5165GEO\u5730\u56fe..");
+        Util.printProgressBarHeader(DataManager.WORLD_MAPS_DATA.size());
+        ArrayList<Integer> mapsWithErrors = new ArrayList<Integer>();
+        for (WorldMapTemplate map : DataManager.WORLD_MAPS_DATA) {
 			GeoMap geoMap = new GeoMap(Integer.toString(map.getMapId()), map.getWorldSize());
 			try {
 				if (GeoWorldLoader.loadWorld(map.getMapId(), models, geoMap)) {
@@ -69,30 +54,29 @@ public class RealGeoData implements GeoData {
 			}
 			Util.printCurrentProgress();
 		}
-		Util.printEndProgress();
+        Util.printEndProgress();
+        if (mapsWithErrors.size() > 0) {
+            log.warn("\u4e00\u4e9b\u5730\u56fe\u672a\u6b63\u786e\u52a0\u8f7d\u5e76\u6062\u590d\u4e3a\u865a\u62df\u5b9e\u73b0: ");
+            log.warn(((Object)mapsWithErrors).toString());
+        }
+    }
 
-		if (mapsWithErrors.size() > 0) {
-		}
-	}
+    protected Map<String, Spatial> loadMeshes() {
+        log.info("\u8f7d\u5165\u7f51\u683c..");
+        Map<String, Spatial> models = null;
+        try {
+            models = GeoWorldLoader.loadMeshs("data/geo/meshs.geo");
+        }
+        catch (IOException e) {
+            throw new IllegalStateException("Problem loading meshes", e);
+        }
+        return models;
+    }
 
-	/**
-	 * @return
-	 */
-	protected Map<String, Spatial> loadMeshes() {
-		log.info("Loading meshes..");
-		Map<String, Spatial> models = null;
-		try {
-			models = GeoWorldLoader.loadMeshs("data/geo/meshs.geo");
-		}
-		catch (IOException e) {
-			throw new IllegalStateException("Problem loading meshes", e);
-		}
-		return models;
-	}
-
-	@Override
-	public GeoMap getMap(int worldId) {
-		GeoMap geoMap = geoMaps.get(worldId);
-		return geoMap != null ? geoMap : DummyGeoData.DUMMY_MAP;
-	}
+    @Override
+    public GeoMap getMap(int worldId) {
+        GeoMap geoMap = (GeoMap)this.geoMaps.get(worldId);
+        return geoMap != null ? geoMap : DummyGeoData.DUMMY_MAP;
+    }
 }
+

@@ -1,18 +1,10 @@
 /*
-
- *
- *  Encom is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Lesser Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Encom is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Lesser Public License for more details.
- *
- *  You should have received a copy of the GNU Lesser Public License
- *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
+ * Decompiled with CFR 0.150.
+ * 
+ * Could not load the following classes:
+ *  javolution.util.FastList
+ *  org.slf4j.Logger
+ *  org.slf4j.LoggerFactory
  */
 package com.aionemu.gameserver.world.geo;
 
@@ -21,114 +13,159 @@ import com.aionemu.gameserver.geoEngine.collision.CollisionResults;
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.utils.MathUtil;
+import com.aionemu.gameserver.world.geo.DummyGeoData;
+import com.aionemu.gameserver.world.geo.GeoData;
+import com.aionemu.gameserver.world.geo.GeoType;
+import com.aionemu.gameserver.world.geo.RealGeoData;
+import javolution.util.FastList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @author ATracer
- */
 public class GeoService {
-
     private static final Logger log = LoggerFactory.getLogger(GeoService.class);
+    private static final FastList<Integer> npcsExclude = new FastList();
     private GeoData geoData;
 
-    /**
-     * Initialize geodata based on configuration, load necessary structures
-     */
+    public static FastList<Integer> getNpcsExclude() {
+        return npcsExclude;
+    }
+
+    public static final GeoService getInstance() {
+        return SingletonHolder.instance;
+    }
+
     public void initializeGeo() {
-        switch (getConfiguredGeoType()) {
-            case GEO_MESHES:
-                geoData = new RealGeoData();
-            break;
-            case NO_GEO:
-                geoData = new DummyGeoData();
-            break;
+        switch (this.getConfiguredGeoType()) {
+            case GEO_MESHES: {
+                this.geoData = new RealGeoData();
+                break;
+            }
+            case NO_GEO: {
+                this.geoData = new DummyGeoData();
+            }
         }
-        log.info("Configured Geo type: " + getConfiguredGeoType());
-        geoData.loadGeoMaps();
+        log.info("\u8f7d\u5165\u5bfb\u8def\u5f15\u64ce");
+        this.geoData.loadGeoMaps();
     }
 
     public void setDoorState(int worldId, int instanceId, String name, boolean isOpened) {
         if (GeoDataConfig.GEO_ENABLE) {
-            geoData.getMap(worldId).setDoorState(instanceId, name, isOpened);
+            this.geoData.getMap(worldId).setDoorState(instanceId, name, isOpened);
         }
     }
 
-    /**
-     * @param object
-     * @return
-     */
     public float getZAfterMoveBehind(int worldId, float x, float y, float z, int instanceId) {
         if (GeoDataConfig.GEO_ENABLE) {
-            return getZ(worldId, x, y, z, 0, instanceId);
+            return this.getZ(worldId, x, y, z, 0.0f, instanceId);
         }
-        return getZ(worldId, x, y, z, 0.5f, instanceId);
+        return this.getZ(worldId, x, y, z, 0.5f, instanceId);
     }
 
-    /**
-     * @param object
-     * @return
-     */
     public float getZ(VisibleObject object) {
-        return geoData.getMap(object.getWorldId()).getZ(object.getX(), object.getY(), object.getZ(), object.getInstanceId());
-    }
-
-    /**
-     * @param worldId
-     * @param x
-     * @param y
-     * @param z
-     * @param defaultUp
-     * @return
-     */
-    public float getZ(int worldId, float x, float y, float z, float defaultUp, int instanceId) {
-        float newZ = geoData.getMap(worldId).getZ(x, y, z, instanceId);
-        if (!GeoDataConfig.GEO_ENABLE) {
-            newZ += defaultUp;
-        }/*
-        else {
-			newZ += 0.5f;			
-		}*/
+        float newZ = this.geoData.getMap(object.getWorldId()).getZ(object.getX(), object.getY(), object.getZ(), object.getInstanceId());
+        if (GeoDataConfig.GEO_ENABLE) {
+            newZ += 0.001f;
+        }
         return newZ;
     }
 
-    /**
-     * @param worldId
-     * @param x
-     * @param y
-     * @return
-     */
+    public float getZ(int worldId, float x, float y, float z, float defaultUp, int instanceId) {
+        float newZ = this.geoData.getMap(worldId).getZ(x, y, z, instanceId);
+        if (GeoDataConfig.GEO_ENABLE && defaultUp != 100.0f) {
+            newZ += 0.001f;
+        }
+        return newZ;
+    }
+
+    public float getZW(int worldId, float x, float y, float z, float defaultUp, int instanceId) {
+        float newZ = this.geoData.getMap(worldId).getZW(x, y, z, instanceId);
+        if (GeoDataConfig.GEO_ENABLE && defaultUp != 100.0f) {
+            newZ += 0.001f;
+        }
+        return newZ;
+    }
+
     public float getZ(int worldId, float x, float y) {
-        return geoData.getMap(worldId).getZ(x, y);
+        float newZ = this.geoData.getMap(worldId).getZ(x, y);
+        if (GeoDataConfig.GEO_ENABLE) {
+            newZ += 0.001f;
+        }
+        return newZ;
+    }
+
+    public float getZW(int worldId, float x, float y) {
+        float newZ = this.geoData.getMap(worldId).getZW(x, y);
+        if (GeoDataConfig.GEO_ENABLE) {
+            newZ += 0.001f;
+        }
+        return newZ;
     }
 
     public String getDoorName(int worldId, String meshFile, float x, float y, float z) {
-        return geoData.getMap(worldId).getDoorName(worldId, meshFile, x, y, z);
+        return this.geoData.getMap(worldId).getDoorName(worldId, meshFile, x, y, z);
     }
 
     public CollisionResults getCollisions(VisibleObject object, float x, float y, float z, boolean changeDirection, byte intentions) {
-        return geoData.getMap(object.getWorldId()).getCollisions(object.getX(), object.getY(), object.getZ(), x, y, z, changeDirection, false, object.getInstanceId(), intentions);
+        return this.geoData.getMap(object.getWorldId()).getCollisions(object.getX(), object.getY(), object.getZ() - 0.6f, x, y, z, changeDirection, true, object.getInstanceId(), intentions);
     }
 
-    /**
-     * @param object
-     * @param target
-     * @return
-     */
     public boolean canSee(VisibleObject object, VisibleObject target) {
         if (!GeoDataConfig.CANSEE_ENABLE) {
             return true;
         }
-        float limit = (float) (MathUtil.getDistance(object, target) - target.getObjectTemplate().getBoundRadius().getCollision());
-        if (limit <= 0) {
+        if (object.getWorldId() == 301110000 || object.getWorldId() == 301360000) {
             return true;
-		}
-        return geoData.getMap(object.getWorldId()).canSee(object.getX(), object.getY(), object.getZ() + object.getObjectTemplate().getBoundRadius().getUpper() / 2, target.getX(), target.getY(), target.getZ() + target.getObjectTemplate().getBoundRadius().getUpper() / 2, limit, object.getInstanceId());
+        }
+        float limit = (float)(MathUtil.getDistance(object, target) - (double)target.getObjectTemplate().getBoundRadius().getCollision());
+        if (limit <= 0.0f) {
+            return true;
+        }
+        float upperTarget = target.getObjectTemplate().getBoundRadius().getUpper() / 2.0f;
+        if ((double)upperTarget > 2.2) {
+            upperTarget = 2.2f;
+        }
+        float objectUp = object.getObjectTemplate().getBoundRadius().getUpper() / 2.0f;
+        if (object instanceof Player) {
+            objectUp = 1.5f;
+        } else if (target instanceof Player) {
+            upperTarget = 1.5f;
+        }
+        return this.geoData.getMap(object.getWorldId()).canSee(object.getX(), object.getY(), object.getZ() + objectUp, target.getX(), target.getY(), target.getZ() + upperTarget, limit, object.getInstanceId());
+    }
+
+    public boolean canPass(VisibleObject object, VisibleObject target) {
+        float limit = (float)(MathUtil.getDistance(object, target) - (double)target.getObjectTemplate().getBoundRadius().getCollision());
+        if (limit <= 0.0f) {
+            return true;
+        }
+        float upperTarget = target.getObjectTemplate().getBoundRadius().getUpper() / 2.0f;
+        if ((double)upperTarget > 2.2) {
+            upperTarget = 2.2f;
+        }
+        float objectUp = object.getObjectTemplate().getBoundRadius().getUpper() / 2.0f;
+        if (object instanceof Player) {
+            objectUp = 1.5f;
+        } else if (target instanceof Player) {
+            upperTarget = 1.5f;
+        }
+        return this.geoData.getMap(object.getWorldId()).canPass(object.getX(), object.getY(), object.getZ() + objectUp, target.getX(), target.getY(), target.getZ() + upperTarget, limit, object.getInstanceId());
     }
 
     public boolean canSee(int worldId, float x, float y, float z, float x1, float y1, float z1, float limit, int instanceId) {
-        return geoData.getMap(worldId).canSee(x, y, z, x1, y1, z1, limit, instanceId);
+        if (worldId == 301110000 || worldId == 301360000) {
+            return true;
+        }
+        return this.geoData.getMap(worldId).canSee(x, y, z, x1, y1, z1, limit, instanceId);
+    }
+
+    public boolean canPass(int worldId, float x, float y, float z, float x1, float y1, float z1, float limit, int instanceId) {
+        return this.geoData.getMap(worldId).canPass(x, y, z, x1, y1, z1, limit, instanceId);
+    }
+
+    public boolean canPassWalker(int worldId, float x, float y, float z, float x1, float y1, float z1, float limit, int instanceId) {
+        return this.geoData.getMap(worldId).canPassWalker(x, y, z, x1, y1, z1, limit, instanceId);
     }
 
     public boolean isGeoOn() {
@@ -136,7 +173,7 @@ public class GeoService {
     }
 
     public Vector3f getClosestCollision(Creature object, float x, float y, float z, boolean changeDirection, byte intentions) {
-        return geoData.getMap(object.getWorldId()).getClosestCollision(object.getX(), object.getY(), object.getZ(), x, y, z, changeDirection, object.isInFlyingState(), object.getInstanceId(), intentions);
+        return this.geoData.getMap(object.getWorldId()).getClosestCollision(object.getX(), object.getY(), object.getZ() - 0.6f, x, y, z, changeDirection, object.isInFlyingState(), object.getInstanceId(), intentions);
     }
 
     public GeoType getConfiguredGeoType() {
@@ -146,13 +183,11 @@ public class GeoService {
         return GeoType.NO_GEO;
     }
 
-    public static final GeoService getInstance() {
-        return SingletonHolder.instance;
-    }
-
-    @SuppressWarnings("synthetic-access")
     private static final class SingletonHolder {
-
         protected static final GeoService instance = new GeoService();
+
+        private SingletonHolder() {
+        }
     }
 }
+

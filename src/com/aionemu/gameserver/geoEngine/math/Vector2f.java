@@ -1,691 +1,349 @@
 /*
-
- *
- *  Encom is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Lesser Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Encom is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Lesser Public License for more details.
- *
- *  You should have received a copy of the GNU Lesser Public License
- *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
+ * Decompiled with CFR 0.150.
  */
 package com.aionemu.gameserver.geoEngine.math;
 
+import com.aionemu.gameserver.geoEngine.math.FastMath;
+import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.util.logging.Logger;
 
-/**
- * <code>Vector2f</code> defines a Vector for a two float value vector.
- *
- * @author Mark Powell
- * @author Joshua Slack
- */
-public final class Vector2f implements Cloneable {
+public final class Vector2f
+implements Cloneable {
+    private static final Logger logger = Logger.getLogger(Vector2f.class.getName());
+    public static final Vector2f ZERO = new Vector2f(0.0f, 0.0f);
+    public static final Vector2f UNIT_XY = new Vector2f(1.0f, 1.0f);
+    public float x;
+    public float y;
 
-	private static final Logger logger = Logger.getLogger(Vector2f.class.getName());
-	public static final Vector2f ZERO = new Vector2f(0f, 0f);
-	public static final Vector2f UNIT_XY = new Vector2f(1f, 1f);
-	/**
-	 * the x value of the vector.
-	 */
-	public float x;
-	/**
-	 * the y value of the vector.
-	 */
-	public float y;
+    public Vector2f(float x, float y) {
+        this.x = x;
+        this.y = y;
+    }
 
-	/**
-	 * Creates a Vector2f with the given initial x and y values.
-	 *
-	 * @param x
-	 *            The x value of this Vector2f.
-	 * @param y
-	 *            The y value of this Vector2f.
-	 */
-	public Vector2f(float x, float y) {
-		this.x = x;
-		this.y = y;
-	}
+    public Vector2f() {
+        this.y = 0.0f;
+        this.x = 0.0f;
+    }
 
-	/**
-	 * Creates a Vector2f with x and y set to 0. Equivalent to Vector2f(0,0).
-	 */
-	public Vector2f() {
-		x = y = 0;
-	}
+    public Vector2f(Vector2f vector2f) {
+        this.x = vector2f.x;
+        this.y = vector2f.y;
+    }
 
-	/**
-	 * Creates a new Vector2f that contains the passed vector's information
-	 *
-	 * @param vector2f
-	 *            The vector to copy
-	 */
-	public Vector2f(Vector2f vector2f) {
-		this.x = vector2f.x;
-		this.y = vector2f.y;
-	}
+    public Vector2f set(float x, float y) {
+        this.x = x;
+        this.y = y;
+        return this;
+    }
 
-	/**
-	 * set the x and y values of the vector
-	 *
-	 * @param x
-	 *            the x value of the vector.
-	 * @param y
-	 *            the y value of the vector.
-	 * @return this vector
-	 */
-	public Vector2f set(float x, float y) {
-		this.x = x;
-		this.y = y;
-		return this;
-	}
+    public Vector2f set(Vector2f vec) {
+        this.x = vec.x;
+        this.y = vec.y;
+        return this;
+    }
 
-	/**
-	 * set the x and y values of the vector from another vector
-	 *
-	 * @param vec
-	 *            the vector to copy from
-	 * @return this vector
-	 */
-	public Vector2f set(Vector2f vec) {
-		this.x = vec.x;
-		this.y = vec.y;
-		return this;
-	}
+    public Vector2f add(Vector2f vec) {
+        if (null == vec) {
+            logger.warning("Provided vector is null, null returned.");
+            return null;
+        }
+        return new Vector2f(this.x + vec.x, this.y + vec.y);
+    }
 
-	/**
-	 * <code>add</code> adds a provided vector to this vector creating a resultant vector which is returned. If the provided vector is null, null is returned.
-	 *
-	 * @param vec
-	 *            the vector to add to this.
-	 * @return the resultant vector.
-	 */
-	public Vector2f add(Vector2f vec) {
-		if (null == vec) {
-			logger.warning("Provided vector is null, null returned.");
-			return null;
-		}
-		return new Vector2f(x + vec.x, y + vec.y);
-	}
+    public Vector2f addLocal(Vector2f vec) {
+        if (null == vec) {
+            logger.warning("Provided vector is null, null returned.");
+            return null;
+        }
+        this.x += vec.x;
+        this.y += vec.y;
+        return this;
+    }
 
-	/**
-	 * <code>addLocal</code> adds a provided vector to this vector internally, and returns a handle to this vector for easy chaining of calls. If the provided vector is null, null is returned.
-	 *
-	 * @param vec
-	 *            the vector to add to this vector.
-	 * @return this
-	 */
-	public Vector2f addLocal(Vector2f vec) {
-		if (null == vec) {
-			logger.warning("Provided vector is null, null returned.");
-			return null;
-		}
-		x += vec.x;
-		y += vec.y;
-		return this;
-	}
+    public Vector2f addLocal(float addX, float addY) {
+        this.x += addX;
+        this.y += addY;
+        return this;
+    }
 
-	/**
-	 * <code>addLocal</code> adds the provided values to this vector internally, and returns a handle to this vector for easy chaining of calls.
-	 *
-	 * @param addX
-	 *            value to add to x
-	 * @param addY
-	 *            value to add to y
-	 * @return this
-	 */
-	public Vector2f addLocal(float addX, float addY) {
-		x += addX;
-		y += addY;
-		return this;
-	}
+    public Vector2f add(Vector2f vec, Vector2f result) {
+        if (null == vec) {
+            logger.warning("Provided vector is null, null returned.");
+            return null;
+        }
+        if (result == null) {
+            result = new Vector2f();
+        }
+        result.x = this.x + vec.x;
+        result.y = this.y + vec.y;
+        return result;
+    }
 
-	/**
-	 * <code>add</code> adds this vector by <code>vec</code> and stores the result in <code>result</code>.
-	 *
-	 * @param vec
-	 *            The vector to add.
-	 * @param result
-	 *            The vector to store the result in.
-	 * @return The result vector, after adding.
-	 */
-	public Vector2f add(Vector2f vec, Vector2f result) {
-		if (null == vec) {
-			logger.warning("Provided vector is null, null returned.");
-			return null;
-		}
-		if (result == null) {
-			result = new Vector2f();
-		}
-		result.x = x + vec.x;
-		result.y = y + vec.y;
-		return result;
-	}
+    public float dot(Vector2f vec) {
+        if (null == vec) {
+            logger.warning("Provided vector is null, 0 returned.");
+            return 0.0f;
+        }
+        return this.x * vec.x + this.y * vec.y;
+    }
 
-	/**
-	 * <code>dot</code> calculates the dot product of this vector with a provided vector. If the provided vector is null, 0 is returned.
-	 *
-	 * @param vec
-	 *            the vector to dot with this vector.
-	 * @return the resultant dot product of this vector and a given vector.
-	 */
-	public float dot(Vector2f vec) {
-		if (null == vec) {
-			logger.warning("Provided vector is null, 0 returned.");
-			return 0;
-		}
-		return x * vec.x + y * vec.y;
-	}
+    public Vector3f cross(Vector2f v) {
+        return new Vector3f(0.0f, 0.0f, this.determinant(v));
+    }
 
-	/**
-	 * <code>cross</code> calculates the cross product of this vector with a parameter vector v.
-	 *
-	 * @param v
-	 *            the vector to take the cross product of with this.
-	 * @return the cross product vector.
-	 */
-	public Vector3f cross(Vector2f v) {
-		return new Vector3f(0, 0, determinant(v));
-	}
+    public float determinant(Vector2f v) {
+        return this.x * v.y - this.y * v.x;
+    }
 
-	public float determinant(Vector2f v) {
-		return (x * v.y) - (y * v.x);
-	}
+    public Vector2f interpolate(Vector2f finalVec, float changeAmnt) {
+        this.x = (1.0f - changeAmnt) * this.x + changeAmnt * finalVec.x;
+        this.y = (1.0f - changeAmnt) * this.y + changeAmnt * finalVec.y;
+        return this;
+    }
 
-	/**
-	 * Sets this vector to the interpolation by changeAmnt from this to the finalVec this=(1-changeAmnt)*this + changeAmnt * finalVec
-	 *
-	 * @param finalVec
-	 *            The final vector to interpolate towards
-	 * @param changeAmnt
-	 *            An amount between 0.0 - 1.0 representing a percentage change from this towards finalVec
-	 */
-	public Vector2f interpolate(Vector2f finalVec, float changeAmnt) {
-		this.x = (1 - changeAmnt) * this.x + changeAmnt * finalVec.x;
-		this.y = (1 - changeAmnt) * this.y + changeAmnt * finalVec.y;
-		return this;
-	}
+    public Vector2f interpolate(Vector2f beginVec, Vector2f finalVec, float changeAmnt) {
+        this.x = (1.0f - changeAmnt) * beginVec.x + changeAmnt * finalVec.x;
+        this.y = (1.0f - changeAmnt) * beginVec.y + changeAmnt * finalVec.y;
+        return this;
+    }
 
-	/**
-	 * Sets this vector to the interpolation by changeAmnt from beginVec to finalVec this=(1-changeAmnt)*beginVec + changeAmnt * finalVec
-	 *
-	 * @param beginVec
-	 *            The begining vector (delta=0)
-	 * @param finalVec
-	 *            The final vector to interpolate towards (delta=1)
-	 * @param changeAmnt
-	 *            An amount between 0.0 - 1.0 representing a precentage change from beginVec towards finalVec
-	 */
-	public Vector2f interpolate(Vector2f beginVec, Vector2f finalVec, float changeAmnt) {
-		this.x = (1 - changeAmnt) * beginVec.x + changeAmnt * finalVec.x;
-		this.y = (1 - changeAmnt) * beginVec.y + changeAmnt * finalVec.y;
-		return this;
-	}
+    public static boolean isValidVector(Vector2f vector) {
+        if (vector == null) {
+            return false;
+        }
+        if (Float.isNaN(vector.x) || Float.isNaN(vector.y)) {
+            return false;
+        }
+        return !Float.isInfinite(vector.x) && !Float.isInfinite(vector.y);
+    }
 
-	/**
-	 * Check a vector... if it is null or its floats are NaN or infinite, return false. Else return true.
-	 *
-	 * @param vector
-	 *            the vector to check
-	 * @return true or false as stated above.
-	 */
-	public static boolean isValidVector(Vector2f vector) {
-		if (vector == null) {
-			return false;
-		}
-		if (Float.isNaN(vector.x) || Float.isNaN(vector.y)) {
-			return false;
-		}
-		if (Float.isInfinite(vector.x) || Float.isInfinite(vector.y)) {
-			return false;
-		}
-		return true;
-	}
+    public float length() {
+        return FastMath.sqrt(this.lengthSquared());
+    }
 
-	/**
-	 * <code>length</code> calculates the magnitude of this vector.
-	 *
-	 * @return the length or magnitude of the vector.
-	 */
-	public float length() {
-		return FastMath.sqrt(lengthSquared());
-	}
+    public float lengthSquared() {
+        return this.x * this.x + this.y * this.y;
+    }
 
-	/**
-	 * <code>lengthSquared</code> calculates the squared value of the magnitude of the vector.
-	 *
-	 * @return the magnitude squared of the vector.
-	 */
-	public float lengthSquared() {
-		return x * x + y * y;
-	}
+    public float distanceSquared(Vector2f v) {
+        double dx = this.x - v.x;
+        double dy = this.y - v.y;
+        return (float)(dx * dx + dy * dy);
+    }
 
-	/**
-	 * <code>distanceSquared</code> calculates the distance squared between this vector and vector v.
-	 *
-	 * @param v
-	 *            the second vector to determine the distance squared.
-	 * @return the distance squared between the two vectors.
-	 */
-	public float distanceSquared(Vector2f v) {
-		double dx = x - v.x;
-		double dy = y - v.y;
-		return (float) (dx * dx + dy * dy);
-	}
+    public float distanceSquared(float otherX, float otherY) {
+        double dx = this.x - otherX;
+        double dy = this.y - otherY;
+        return (float)(dx * dx + dy * dy);
+    }
 
-	/**
-	 * <code>distanceSquared</code> calculates the distance squared between this vector and vector v.
-	 *
-	 * @param v
-	 *            the second vector to determine the distance squared.
-	 * @return the distance squared between the two vectors.
-	 */
-	public float distanceSquared(float otherX, float otherY) {
-		double dx = x - otherX;
-		double dy = y - otherY;
-		return (float) (dx * dx + dy * dy);
-	}
+    public float distance(Vector2f v) {
+        return FastMath.sqrt(this.distanceSquared(v));
+    }
 
-	/**
-	 * <code>distance</code> calculates the distance between this vector and vector v.
-	 *
-	 * @param v
-	 *            the second vector to determine the distance.
-	 * @return the distance between the two vectors.
-	 */
-	public float distance(Vector2f v) {
-		return FastMath.sqrt(distanceSquared(v));
-	}
+    public Vector2f mult(float scalar) {
+        return new Vector2f(this.x * scalar, this.y * scalar);
+    }
 
-	/**
-	 * <code>mult</code> multiplies this vector by a scalar. The resultant vector is returned.
-	 *
-	 * @param scalar
-	 *            the value to multiply this vector by.
-	 * @return the new vector.
-	 */
-	public Vector2f mult(float scalar) {
-		return new Vector2f(x * scalar, y * scalar);
-	}
+    public Vector2f multLocal(float scalar) {
+        this.x *= scalar;
+        this.y *= scalar;
+        return this;
+    }
 
-	/**
-	 * <code>multLocal</code> multiplies this vector by a scalar internally, and returns a handle to this vector for easy chaining of calls.
-	 *
-	 * @param scalar
-	 *            the value to multiply this vector by.
-	 * @return this
-	 */
-	public Vector2f multLocal(float scalar) {
-		x *= scalar;
-		y *= scalar;
-		return this;
-	}
+    public Vector2f multLocal(Vector2f vec) {
+        if (null == vec) {
+            logger.warning("Provided vector is null, null returned.");
+            return null;
+        }
+        this.x *= vec.x;
+        this.y *= vec.y;
+        return this;
+    }
 
-	/**
-	 * <code>multLocal</code> multiplies a provided vector to this vector internally, and returns a handle to this vector for easy chaining of calls. If the provided vector is null, null is returned.
-	 *
-	 * @param vec
-	 *            the vector to mult to this vector.
-	 * @return this
-	 */
-	public Vector2f multLocal(Vector2f vec) {
-		if (null == vec) {
-			logger.warning("Provided vector is null, null returned.");
-			return null;
-		}
-		x *= vec.x;
-		y *= vec.y;
-		return this;
-	}
+    public Vector2f mult(float scalar, Vector2f product) {
+        if (null == product) {
+            product = new Vector2f();
+        }
+        product.x = this.x * scalar;
+        product.y = this.y * scalar;
+        return product;
+    }
 
-	/**
-	 * Multiplies this Vector2f's x and y by the scalar and stores the result in product. The result is returned for chaining. Similar to product=this*scalar;
-	 *
-	 * @param scalar
-	 *            The scalar to multiply by.
-	 * @param product
-	 *            The vector2f to store the result in.
-	 * @return product, after multiplication.
-	 */
-	public Vector2f mult(float scalar, Vector2f product) {
-		if (null == product) {
-			product = new Vector2f();
-		}
+    public Vector2f divide(float scalar) {
+        return new Vector2f(this.x / scalar, this.y / scalar);
+    }
 
-		product.x = x * scalar;
-		product.y = y * scalar;
-		return product;
-	}
+    public Vector2f divideLocal(float scalar) {
+        this.x /= scalar;
+        this.y /= scalar;
+        return this;
+    }
 
-	/**
-	 * <code>divide</code> divides the values of this vector by a scalar and returns the result. The values of this vector remain untouched.
-	 *
-	 * @param scalar
-	 *            the value to divide this vectors attributes by.
-	 * @return the result <code>Vector</code>.
-	 */
-	public Vector2f divide(float scalar) {
-		return new Vector2f(x / scalar, y / scalar);
-	}
+    public Vector2f negate() {
+        return new Vector2f(-this.x, -this.y);
+    }
 
-	/**
-	 * <code>divideLocal</code> divides this vector by a scalar internally, and returns a handle to this vector for easy chaining of calls. Dividing by zero will result in an exception.
-	 *
-	 * @param scalar
-	 *            the value to divides this vector by.
-	 * @return this
-	 */
-	public Vector2f divideLocal(float scalar) {
-		x /= scalar;
-		y /= scalar;
-		return this;
-	}
+    public Vector2f negateLocal() {
+        this.x = -this.x;
+        this.y = -this.y;
+        return this;
+    }
 
-	/**
-	 * <code>negate</code> returns the negative of this vector. All values are negated and set to a new vector.
-	 *
-	 * @return the negated vector.
-	 */
-	public Vector2f negate() {
-		return new Vector2f(-x, -y);
-	}
+    public Vector2f subtract(Vector2f vec) {
+        return this.subtract(vec, null);
+    }
 
-	/**
-	 * <code>negateLocal</code> negates the internal values of this vector.
-	 *
-	 * @return this.
-	 */
-	public Vector2f negateLocal() {
-		x = -x;
-		y = -y;
-		return this;
-	}
+    public Vector2f subtract(Vector2f vec, Vector2f store) {
+        if (store == null) {
+            store = new Vector2f();
+        }
+        store.x = this.x - vec.x;
+        store.y = this.y - vec.y;
+        return store;
+    }
 
-	/**
-	 * <code>subtract</code> subtracts the values of a given vector from those of this vector creating a new vector object. If the provided vector is null, an exception is thrown.
-	 *
-	 * @param vec
-	 *            the vector to subtract from this vector.
-	 * @return the result vector.
-	 */
-	public Vector2f subtract(Vector2f vec) {
-		return subtract(vec, null);
-	}
+    public Vector2f subtract(float valX, float valY) {
+        return new Vector2f(this.x - valX, this.y - valY);
+    }
 
-	/**
-	 * <code>subtract</code> subtracts the values of a given vector from those of this vector storing the result in the given vector object. If the provided vector is null, an exception is thrown.
-	 *
-	 * @param vec
-	 *            the vector to subtract from this vector.
-	 * @param store
-	 *            the vector to store the result in. It is safe for this to be the same as vec. If null, a new vector is created.
-	 * @return the result vector.
-	 */
-	public Vector2f subtract(Vector2f vec, Vector2f store) {
-		if (store == null) {
-			store = new Vector2f();
-		}
-		store.x = x - vec.x;
-		store.y = y - vec.y;
-		return store;
-	}
+    public Vector2f subtractLocal(Vector2f vec) {
+        if (null == vec) {
+            logger.warning("Provided vector is null, null returned.");
+            return null;
+        }
+        this.x -= vec.x;
+        this.y -= vec.y;
+        return this;
+    }
 
-	/**
-	 * <code>subtract</code> subtracts the given x,y values from those of this vector creating a new vector object.
-	 *
-	 * @param valX
-	 *            value to subtract from x
-	 * @param valY
-	 *            value to subtract from y
-	 * @return this
-	 */
-	public Vector2f subtract(float valX, float valY) {
-		return new Vector2f(x - valX, y - valY);
-	}
+    public Vector2f subtractLocal(float valX, float valY) {
+        this.x -= valX;
+        this.y -= valY;
+        return this;
+    }
 
-	/**
-	 * <code>subtractLocal</code> subtracts a provided vector to this vector internally, and returns a handle to this vector for easy chaining of calls. If the provided vector is null, null is
-	 * returned.
-	 *
-	 * @param vec
-	 *            the vector to subtract
-	 * @return this
-	 */
-	public Vector2f subtractLocal(Vector2f vec) {
-		if (null == vec) {
-			logger.warning("Provided vector is null, null returned.");
-			return null;
-		}
-		x -= vec.x;
-		y -= vec.y;
-		return this;
-	}
+    public Vector2f normalize() {
+        float length = this.length();
+        if (length != 0.0f) {
+            return this.divide(length);
+        }
+        return this.divide(1.0f);
+    }
 
-	/**
-	 * <code>subtractLocal</code> subtracts the provided values from this vector internally, and returns a handle to this vector for easy chaining of calls.
-	 *
-	 * @param valX
-	 *            value to subtract from x
-	 * @param valY
-	 *            value to subtract from y
-	 * @return this
-	 */
-	public Vector2f subtractLocal(float valX, float valY) {
-		x -= valX;
-		y -= valY;
-		return this;
-	}
+    public Vector2f normalizeLocal() {
+        float length = this.length();
+        if (length != 0.0f) {
+            return this.divideLocal(length);
+        }
+        return this.divideLocal(1.0f);
+    }
 
-	/**
-	 * <code>normalize</code> returns the unit vector of this vector.
-	 *
-	 * @return unit vector of this vector.
-	 */
-	public Vector2f normalize() {
-		float length = length();
-		if (length != 0) {
-			return divide(length);
-		}
-		return divide(1);
-	}
+    public float smallestAngleBetween(Vector2f otherVector) {
+        float dotProduct = this.dot(otherVector);
+        float angle = FastMath.acos(dotProduct);
+        return angle;
+    }
 
-	/**
-	 * <code>normalizeLocal</code> makes this vector into a unit vector of itself.
-	 *
-	 * @return this.
-	 */
-	public Vector2f normalizeLocal() {
-		float length = length();
-		if (length != 0) {
-			return divideLocal(length);
-		}
+    public float angleBetween(Vector2f otherVector) {
+        float angle = FastMath.atan2(otherVector.y, otherVector.x) - FastMath.atan2(this.y, this.x);
+        return angle;
+    }
 
-		return divideLocal(1);
-	}
+    public float getX() {
+        return this.x;
+    }
 
-	/**
-	 * <code>smallestAngleBetween</code> returns (in radians) the minimum angle between two vectors. It is assumed that both this vector and the given vector are unit vectors (iow, normalized).
-	 *
-	 * @param otherVector
-	 *            a unit vector to find the angle against
-	 * @return the angle in radians.
-	 */
-	public float smallestAngleBetween(Vector2f otherVector) {
-		float dotProduct = dot(otherVector);
-		float angle = FastMath.acos(dotProduct);
-		return angle;
-	}
+    public Vector2f setX(float x) {
+        this.x = x;
+        return this;
+    }
 
-	/**
-	 * <code>angleBetween</code> returns (in radians) the angle required to rotate a ray represented by this vector to lie colinear to a ray described by the given vector. It is assumed that both this
-	 * vector and the given vector are unit vectors (iow, normalized).
-	 *
-	 * @param otherVector
-	 *            the "destination" unit vector
-	 * @return the angle in radians.
-	 */
-	public float angleBetween(Vector2f otherVector) {
-		float angle = FastMath.atan2(otherVector.y, otherVector.x) - FastMath.atan2(y, x);
-		return angle;
-	}
+    public float getY() {
+        return this.y;
+    }
 
-	public float getX() {
-		return x;
-	}
+    public Vector2f setY(float y) {
+        this.y = y;
+        return this;
+    }
 
-	public Vector2f setX(float x) {
-		this.x = x;
-		return this;
-	}
+    public float getAngle() {
+        return -FastMath.atan2(this.y, this.x);
+    }
 
-	public float getY() {
-		return y;
-	}
+    public Vector2f zero() {
+        this.y = 0.0f;
+        this.x = 0.0f;
+        return this;
+    }
 
-	public Vector2f setY(float y) {
-		this.y = y;
-		return this;
-	}
+    public int hashCode() {
+        int hash = 37;
+        hash += 37 * hash + Float.floatToIntBits(this.x);
+        hash += 37 * hash + Float.floatToIntBits(this.y);
+        return hash;
+    }
 
-	/**
-	 * <code>getAngle</code> returns (in radians) the angle represented by this Vector2f as expressed by a conversion from rectangular coordinates ( <code>x</code>,&nbsp; <code>y</code>) to polar
-	 * coordinates (r,&nbsp;<i>theta</i>).
-	 *
-	 * @return the angle in radians. [-pi, pi)
-	 */
-	public float getAngle() {
-		return -FastMath.atan2(y, x);
-	}
+    public Vector2f clone() {
+        try {
+            return (Vector2f)super.clone();
+        }
+        catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 
-	/**
-	 * <code>zero</code> resets this vector's data to zero internally.
-	 */
-	public Vector2f zero() {
-		x = y = 0;
-		return this;
-	}
+    public float[] toArray(float[] floats) {
+        if (floats == null) {
+            floats = new float[]{this.x, this.y};
+        }
+        return floats;
+    }
 
-	/**
-	 * <code>hashCode</code> returns a unique code for this vector object based on it's values. If two vectors are logically equivalent, they will return the same hash code value.
-	 *
-	 * @return the hash code value of this vector.
-	 */
-	@Override
-	public int hashCode() {
-		int hash = 37;
-		hash += 37 * hash + Float.floatToIntBits(x);
-		hash += 37 * hash + Float.floatToIntBits(y);
-		return hash;
-	}
+    public boolean equals(Object o) {
+        if (!(o instanceof Vector2f)) {
+            return false;
+        }
+        if (this == o) {
+            return true;
+        }
+        Vector2f comp = (Vector2f)o;
+        if (Float.compare(this.x, comp.x) != 0) {
+            return false;
+        }
+        return Float.compare(this.y, comp.y) == 0;
+    }
 
-	@Override
-	public Vector2f clone() {
-		try {
-			return (Vector2f) super.clone();
-		}
-		catch (CloneNotSupportedException e) {
-			throw new AssertionError(); // can not happen
-		}
-	}
+    public String toString() {
+        return "(" + this.x + ", " + this.y + ")";
+    }
 
-	/**
-	 * Saves this Vector2f into the given float[] object.
-	 *
-	 * @param floats
-	 *            The float[] to take this Vector2f. If null, a new float[2] is created.
-	 * @return The array, with X, Y float values in that order
-	 */
-	public float[] toArray(float[] floats) {
-		if (floats == null) {
-			floats = new float[2];
-		}
-		floats[0] = x;
-		floats[1] = y;
-		return floats;
-	}
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        this.x = in.readFloat();
+        this.y = in.readFloat();
+    }
 
-	/**
-	 * are these two vectors the same? they are is they both have the same x and y values.
-	 *
-	 * @param o
-	 *            the object to compare for equality
-	 * @return true if they are equal
-	 */
-	@Override
-	public boolean equals(Object o) {
-		if (!(o instanceof Vector2f)) {
-			return false;
-		}
+    public void writeExternal(ObjectOutput out) throws IOException {
+        out.writeFloat(this.x);
+        out.writeFloat(this.y);
+    }
 
-		if (this == o) {
-			return true;
-		}
+    public Class<? extends Vector2f> getClassTag() {
+        return this.getClass();
+    }
 
-		Vector2f comp = (Vector2f) o;
-		if (Float.compare(x, comp.x) != 0) {
-			return false;
-		}
-		if (Float.compare(y, comp.y) != 0) {
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * <code>toString</code> returns the string representation of this vector object. The format of the string is such: com.jme.math.Vector2f [X=XX.XXXX, Y=YY.YYYY]
-	 *
-	 * @return the string representation of this vector.
-	 */
-	@Override
-	public String toString() {
-		return "(" + x + ", " + y + ")";
-	}
-
-	/**
-	 * Used with serialization. Not to be called manually.
-	 *
-	 * @param in
-	 *            ObjectInput
-	 * @throws IOException
-	 * @throws ClassNotFoundException
-	 * @see java.io.Externalizable
-	 */
-	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-		x = in.readFloat();
-		y = in.readFloat();
-	}
-
-	/**
-	 * Used with serialization. Not to be called manually.
-	 *
-	 * @param out
-	 *            ObjectOutput
-	 * @throws IOException
-	 * @see java.io.Externalizable
-	 */
-	public void writeExternal(ObjectOutput out) throws IOException {
-		out.writeFloat(x);
-		out.writeFloat(y);
-	}
-
-	public Class<? extends Vector2f> getClassTag() {
-		return this.getClass();
-	}
-
-	public void rotateAroundOrigin(float angle, boolean cw) {
-		if (cw) {
-			angle = -angle;
-		}
-		float newX = FastMath.cos(angle) * x - FastMath.sin(angle) * y;
-		float newY = FastMath.sin(angle) * x + FastMath.cos(angle) * y;
-		x = newX;
-		y = newY;
-	}
+    public void rotateAroundOrigin(float angle, boolean cw) {
+        if (cw) {
+            angle = -angle;
+        }
+        float newX = FastMath.cos(angle) * this.x - FastMath.sin(angle) * this.y;
+        float newY = FastMath.sin(angle) * this.x + FastMath.cos(angle) * this.y;
+        this.x = newX;
+        this.y = newY;
+    }
 }
+
