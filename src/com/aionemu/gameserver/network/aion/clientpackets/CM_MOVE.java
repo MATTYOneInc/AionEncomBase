@@ -22,6 +22,7 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_MOVE;
+import com.aionemu.gameserver.services.antihack.AntiHackService;
 import com.aionemu.gameserver.taskmanager.tasks.TeamMoveUpdater;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
@@ -132,6 +133,11 @@ public class CM_MOVE extends AionClientPacket
 			m.vehicleY = vehicleY;
 			m.vehicleZ = vehicleZ;
 		}
+		
+		if (!AntiHackService.canMove(player, x, y, z, speed, type)) {
+			return;
+		}
+		
 		World.getInstance().updatePosition(player, x, y, z, heading);
 		m.updateLastMove();
 		if (player.isInGroup2() || player.isInAlliance2()) {
