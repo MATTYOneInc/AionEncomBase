@@ -89,7 +89,13 @@ public class GeoWorldLoader {
 			for (int c = 0; c < modelCount; c++) {
 				Mesh m = new Mesh();
 
-				int vectorCount = (geo.getShort()) * 3;
+				int vectorCount;
+				if (GeoDataConfig.GEO_MONONO2_IN_USE) {
+					vectorCount = (geo.getInt()) * 3;
+				} else {
+					vectorCount = (geo.getShort()) * 3;
+				}
+
 				ByteBuffer floatBuffer = ByteBuffer.allocateDirect(vectorCount * 4);
 				FloatBuffer vertices = floatBuffer.asFloatBuffer();
 				for (int x = 0; x < vectorCount; x++) {
@@ -114,14 +120,14 @@ public class GeoWorldLoader {
 				m.setBuffer(VertexBuffer.Type.Index, 3, indexes);
 				m.createCollisionData();
 
-				if ((intentions & CollisionIntention.DOOR.getId()) != 0 && (intentions & CollisionIntention.PHYSICAL.getId()) != 0) {
+				if ((intentions & CollisionIntention.DOOR.getId()) != 0
+						&& (intentions & CollisionIntention.PHYSICAL.getId()) != 0) {
 					if (!GeoDataConfig.GEO_DOORS_ENABLE) {
 						continue;
 					}
 					geom = new DoorGeometry(name, m);
 					// what if doors have few models ?
-				}
-				else {
+				} else {
 					MaterialTemplate mtl = DataManager.MATERIAL_DATA.getTemplate(m.getMaterialId());
 					geom = new Geometry(null, m);
 					if (mtl != null || m.getMaterialId() == 11) {
@@ -130,8 +136,7 @@ public class GeoWorldLoader {
 					if (modelCount == 1) {
 						geom.setName(name);
 						singleChildMaterialId = geom.getMaterialId();
-					}
-					else {
+					} else {
 						geom.setName(("child" + c + "_" + name).intern());
 					}
 					node.attachChild(geom);
@@ -156,16 +161,43 @@ public class GeoWorldLoader {
 		roChannel = new RandomAccessFile(geoFile, "r").getChannel();
 		geo = roChannel.map(FileChannel.MapMode.READ_ONLY, 0, (int) roChannel.size()).load();
 		geo.order(ByteOrder.LITTLE_ENDIAN);
-		if (geo.get() == 0) {
-			map.setTerrainData(new short[] { geo.getShort() });
-		}
-		else {
-			int size = geo.getInt();
-			short[] terrainData = new short[size];
-			for (int i = 0; i < size; i++) {
-				terrainData[i] = geo.getShort();
+
+		if (GeoDataConfig.GEO_MONONO2_IN_USE) {
+			if (geo.get() == 0) {
+				// no terrain
+				map.setTerrainData(new short[] { geo.getShort() });
+				/* int cutoutSize = */ geo.getInt();
+			} else {
+				int size = geo.getInt();
+				short[] terrainData = new short[size];
+				for (int i = 0; i < size; i++) {
+					terrainData[i] = geo.getShort();
+				}
+				map.setTerrainData(terrainData);
+
+				// read list of terrain indexes to remove.
+				int cutoutSize = geo.getInt();
+				if (cutoutSize > 0) {
+					int[] cutoutData = new int[cutoutSize];
+					for (int i = 0; i < cutoutSize; i++) {
+						cutoutData[i] = geo.getInt();
+					}
+					map.setTerrainCutouts(cutoutData);
+				}
 			}
-			map.setTerrainData(terrainData);
+
+		} else {
+
+			if (geo.get() == 0) {
+				map.setTerrainData(new short[] { geo.getShort() });
+			} else {
+				int size = geo.getInt();
+				short[] terrainData = new short[size];
+				for (int i = 0; i < size; i++) {
+					terrainData[i] = geo.getShort();
+				}
+				map.setTerrainData(terrainData);
+			}
 		}
 
 		while (geo.hasRemaining()) {
@@ -178,7 +210,15 @@ public class GeoWorldLoader {
 			for (int i = 0; i < 9; i++) {
 				matrix[i] = geo.getFloat();
 			}
-			float scale = geo.getFloat();
+
+			float scale;
+			if (GeoDataConfig.GEO_MONONO2_IN_USE) {
+				scale = geo.getFloat();
+				geo.get(); // TODO : use the data: EventType eventType = EventType.fromByte(geo.get());
+			} else {
+				scale = geo.getFloat();
+			}
+
 			Matrix3f matrix3f = new Matrix3f();
 			matrix3f.set(matrix);
 			Spatial node = models.get(name.toLowerCase().intern());
@@ -188,20 +228,18 @@ public class GeoWorldLoader {
 					if (node instanceof DoorGeometry) {
 						try {
 							nodeClone = node.clone();
-						}
-						catch (CloneNotSupportedException e) {
+						} catch (CloneNotSupportedException e) {
 							e.printStackTrace();
 						}
 						createDoors(nodeClone, worldId, matrix3f, loc, scale);
 						map.attachChild(nodeClone);
-					}
-					else {
+					} else {
 						nodeClone = attachChild(map, node, matrix3f, loc, scale);
-						List<Spatial> children = ((Node) node).descendantMatches("child\\d+_" + name.replace("\\", "\\\\"));
+						List<Spatial> children = ((Node) node)
+								.descendantMatches("child\\d+_" + name.replace("\\", "\\\\"));
 						if (children.size() == 0) {
 							createZone(nodeClone, worldId, 0);
-						}
-						else {
+						} else {
 							for (int c = 0; c < children.size(); c++) {
 								Spatial child = children.get(c);
 								nodeClone = attachChild(map, child, matrix3f, loc, scale);
@@ -210,8 +248,7 @@ public class GeoWorldLoader {
 						}
 					}
 				}
-			}
-			catch (Throwable t) {
+			} catch (Throwable t) {
 				System.out.println(t);
 			}
 		}
@@ -224,8 +261,7 @@ public class GeoWorldLoader {
 		Spatial nodeClone = node;
 		try {
 			nodeClone = node.clone();
-		}
-		catch (CloneNotSupportedException e) {
+		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
 		nodeClone.setTransform(matrix, location, scale);
@@ -250,8 +286,7 @@ public class GeoWorldLoader {
 				zoneName += "_" + regionId;
 				node.setName(zoneName);
 				ZoneService.getInstance().createMaterialZoneTemplate(node, worldId, node.getMaterialId(), true);
-			}
-			else {
+			} else {
 				node.setName(zoneName);
 				ZoneService.getInstance().createMaterialZoneTemplate(node, regionId, worldId, node.getMaterialId());
 			}
@@ -264,12 +299,15 @@ public class GeoWorldLoader {
 		BoundingVolume bv = node.getWorldBound();
 		int regionId = getVectorHash(bv.getCenter().x, bv.getCenter().y, bv.getCenter().z);
 		int index = node.getName().lastIndexOf('\\');
-		String doorName = worldId + "_" + "DOOR" + "_" + regionId + "_" + node.getName().substring(index + 1).toUpperCase();
+		String doorName = worldId + "_" + "DOOR" + "_" + regionId + "_"
+				+ node.getName().substring(index + 1).toUpperCase();
 		node.setName(doorName);
 	}
 
 	/**
-	 * Hash formula from paper http://www.beosil.com/download/CollisionDetectionHashing_VMV03.pdf Hash table size 50000, the higher value, more precision
+	 * Hash formula from paper
+	 * http://www.beosil.com/download/CollisionDetectionHashing_VMV03.pdf Hash table
+	 * size 50000, the higher value, more precision
 	 */
 	private static int getVectorHash(float x, float y, float z) {
 		long xIntBits = Float.floatToIntBits(x);

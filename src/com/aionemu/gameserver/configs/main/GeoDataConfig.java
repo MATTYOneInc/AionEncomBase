@@ -79,4 +79,10 @@ public class GeoDataConfig {
 	 */
 	@Property(key = "gameserver.geodata.objectfactory.enabled", defaultValue = "true")
 	public static boolean GEO_OBJECT_FACTORY_ENABLE;
+	
+	/**
+	 * If you use monon2 geo data for your server
+	 */
+	@Property(key = "gameserver.geodata.monon2.in.use", defaultValue = "fasle")
+	public static boolean GEO_MONONO2_IN_USE;
 }

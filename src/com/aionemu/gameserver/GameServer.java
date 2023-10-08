@@ -166,7 +166,8 @@ public class GameServer {
 		initalizeLoggger();
 		initUtilityServicesAndConfig();
 		if (GSConfig.SERVER_YAADMINPANEL_SWITCH_ON) {
-			(new ServerCommandProcessor()).start();
+			//(new ServerCommandProcessor()).start();
+			(new ServerCommandProcessor()).startAdminPanel();
 		}
 		DataManager.getInstance();
 	Util.printSection(" *** IDFactory *** ");

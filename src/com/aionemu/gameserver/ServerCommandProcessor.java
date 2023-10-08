@@ -47,7 +47,7 @@ import java.util.NoSuchElementException;
  *      commands from the console - either OS shell or a java-based launcher
  */
 
-public class ServerCommandProcessor extends Thread {
+public class ServerCommandProcessor {
 	private static final Logger log = LoggerFactory.getLogger(ServerCommandProcessor.class);
 
 	Frame f = new Frame("Ya-admin panel 5.8");
@@ -55,10 +55,8 @@ public class ServerCommandProcessor extends Thread {
 	final TextField playerNameFieled = new TextField();
 	final TextField itemID = new TextField();
 	final TextField messageAnnounce = new TextField();
-
-	@Override
-	public void run() {
-
+	
+	public void startAdminPanel(){
 		f.setBackground(Color.black);
         //posHoriz/pos Vert/size/sizeUpDown
 		Button shutdown = new Button("Shutdown");
@@ -126,7 +124,6 @@ public class ServerCommandProcessor extends Thread {
 				log.info("Ya-admin panel: you want to close me? push shutdown button");
 			}
 		});
-
 	}
 
 	ActionListener al_shutdown = new ActionListener() {
