@@ -81,8 +81,10 @@ public class StatFunctions {
 		NpcRating npcRating = ((Npc) target).getObjectTemplate().getRating();
 		int baseDP = targetLevel * calculateRatingMultipler(npcRating);
 		int xpPercentage = XPRewardEnum.xpRewardFrom(targetLevel - playerLevel);
-		return (int) Math.floor(baseDP * xpPercentage / 100);
+		float rate = player.getRates().getDpNpcRate();
+		return (int) Math.floor(baseDP * xpPercentage * rate / 100);
 	}
+	
 	/**
 	 * @param player
 	 * @param target
