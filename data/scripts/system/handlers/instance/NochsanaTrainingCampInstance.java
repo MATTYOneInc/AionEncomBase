@@ -39,17 +39,20 @@ import javolution.util.FastMap;
 
 import java.util.Set;
 
-/****/
-/** Author (Encom)
-/****/
+/**
+* Author (Encom)
+* Rework MATTY (ADev.Team)
+**/
 
 @InstanceID(300030000)
 public class NochsanaTrainingCampInstance extends GeneralInstanceHandler
 {
+/**
 	@Override
     public void onEnterInstance(Player player) {
 		HTMLService.showHTML(player, HTMLCache.getInstance().getHTML("instances/nochsanaTrainingCamp.xhtml"));
     }
+**/
 	
 	@Override
     public void onDropRegistered(Npc npc) {
@@ -74,7 +77,7 @@ public class NochsanaTrainingCampInstance extends GeneralInstanceHandler
 		switch (npc.getObjectTemplate().getTemplateId()) {
 			case 256689: //Nochsana Guard.
 				despawnNpc(npc);
-				sendMsg("<Nochsana General> appear");
+				sendMsg("<Nochsana General> appear"); // Появился Лорд Насана
 				spawn(256693, 331.097f, 269.36f, 384.553f, (byte) 25); //Nochsana General.
 			break;
 			case 256693: //Nochsana General.

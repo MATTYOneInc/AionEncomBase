@@ -68,7 +68,6 @@
             <spot x="344.832" y="327.749" z="380.046" h="33"/>
             <spot x="343.86" y="320.733" z="380.096" h="26"/>
             <spot x="287.444" y="310.481" z="398.338" h="116"/>
-            <spot x="384.9" y="451.8" z="361.73126" h="22" walker_id="C6AFA1D6D5E4A6EF66FEDBCCE81C6F29C7D4633E" walker_index="4"/>
             <spot x="300.18" y="306.04" z="397.2218" h="117" walker_id="129A4CBB0913A25C8EEF5714DEE35ABF98FA74A3"/>
             <spot x="298.8" y="344.77" z="379.725" h="15" walker_id="137AA3A4FFF2593D5D5C7706F69EDCA828FFC80A"/>
             <spot x="381.03" y="340.7" z="378.25" h="39" walker_id="C831E468E37C37C72993E5D4ED082DF643A1A82D"/>
@@ -89,10 +88,6 @@
             <spot x="428.18" y="495.503" z="360.628" h="81"/>
             <spot x="452.499" y="511.824" z="356.094" h="76"/>
             <spot x="475.549" y="605.715" z="329.967"/>
-            <spot x="384.9" y="451.8" z="361.73126" h="14" walker_id="C6AFA1D6D5E4A6EF66FEDBCCE81C6F29C7D4633E" walker_index="0"/>
-            <spot x="384.9" y="451.8" z="361.73126" h="23" walker_id="C6AFA1D6D5E4A6EF66FEDBCCE81C6F29C7D4633E" walker_index="1"/>
-            <spot x="384.9" y="451.8" z="361.73126" h="23" walker_id="C6AFA1D6D5E4A6EF66FEDBCCE81C6F29C7D4633E" walker_index="2"/>
-            <spot x="384.9" y="451.8" z="361.73126" h="22" walker_id="C6AFA1D6D5E4A6EF66FEDBCCE81C6F29C7D4633E" walker_index="3"/>
 		</spawn>
 		<!-- Nochsana Recondo -->
 		<spawn npc_id="256681">
@@ -205,20 +200,6 @@
 			<spot x="307.008" y="326.36" z="393.093" entity_id="18"/>
 			<spot x="326.061" y="345.991" z="393.11" entity_id="7"/>
 			<spot x="301.255" y="282.445" z="392.862" entity_id="5"/>
-		</spawn>
-		<!-- Treasure Chest (Object Normal lvl:3) -->
-	    <spawn npc_id="214804">
-		    <spot entity_id="24" x="392.07605" y="309.37234" z="378.25476"/>
-		    <spot entity_id="27" x="303.5807" y="288.85614" z="380.09625"/>
-		    <spot entity_id="30" x="287.1647" y="292.30658" z="397.798"/>
-		    <spot entity_id="29" x="373.7306" y="322.95703" z="380.4146"/>
-		    <spot entity_id="20" x="335.76715" y="351.32294" z="392.41586"/>
-		    <spot entity_id="4" x="314.85944" y="303.75156" z="380.09625"/>
-		    <spot entity_id="12" x="307.38608" y="343.63208" z="380.523"/>
-		    <spot entity_id="5" x="301.28244" y="282.6137" z="392.87323"/>
-		    <spot entity_id="8" x="369.02985" y="338.9051" z="393.1098"/>
-		    <spot entity_id="11" x="367.5456" y="280.65286" z="380.09625"/>
-		    <spot entity_id="13" x="335.66263" y="305.57278" z="403.3898"/>
 		</spawn>
 	</spawn_map>
 </spawns>
