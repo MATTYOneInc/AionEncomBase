@@ -2,6 +2,7 @@
 <!--
     エレシュランタ 5.8
 	Spawn By (Encom)
+	Reworked by G-Robson26
  -->
 <spawns>
 	<spawn_map map_id="400010000">
@@ -664,9 +665,9 @@
         <spawn npc_id="278504" respawn_time="60">
             <spot h="109" z="1545.6868" y="531.6832" x="2372.695"/>
         </spawn>
-		<!-- Izelda
+		<!-- Tellus
 		<Teleporter> -->
-        <spawn npc_id="278505" respawn_time="60">
+        <spawn npc_id="278506" respawn_time="60">
             <spot h="104" z="1528.2529" y="672.70807" x="2250.9846"/>
         </spawn>
 		<!-- Denegos
