@@ -58,6 +58,9 @@ public class GSConfig
 	public static int CHARACTER_REENTRY_TIME;
 	@Property(key = "gameserver.master.server.enable", defaultValue = "false")
 	public static boolean MASTER_SERVER;
+	
+	@Property(key = "gameserver.yaadminpanel.server.enable", defaultValue = "false")
+	public static boolean SERVER_YAADMINPANEL_SWITCH_ON;
 
 	/**
 	 * Memory Optimization Configs

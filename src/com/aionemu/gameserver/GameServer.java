@@ -165,7 +165,9 @@ public class GameServer {
 	final CountDownLatch progressLatch = new CountDownLatch(parallelEngines.length);
 		initalizeLoggger();
 		initUtilityServicesAndConfig();
-		(new ServerCommandProcessor()).start();
+		if (GSConfig.SERVER_YAADMINPANEL_SWITCH_ON) {
+			(new ServerCommandProcessor()).start();
+		}
 		DataManager.getInstance();
 	Util.printSection(" *** IDFactory *** ");
 		IDFactory.getInstance();
