@@ -29,6 +29,7 @@ import com.aionemu.gameserver.world.geo.GeoService;
 
 /**
  * @author ATracer
+ * Rework: Angry Catster
  */
 public class SimpleAttackManager {
 
@@ -80,7 +81,7 @@ public class SimpleAttackManager {
 			float distance = npc.getDistanceToTarget();
 			AI2Logger.info((AbstractAI) npc.getAi2(), "isTargetInAttackRange: " + distance);
 		}
-		if (npc.getTarget() == null || !(npc.getTarget() instanceof Creature))
+		if (!GeoService.getInstance().canSee(npc, npc.getTarget()) || npc.getTarget() == null || !(npc.getTarget() instanceof Creature))
 			return false;
 		return MathUtil.isInAttackRange(npc, (Creature) npc.getTarget(), npc.getGameStats().getAttackRange().getCurrent() / 1000f);
 		//return distance <= npc.getController().getAttackDistanceToTarget() + NpcMoveController.MOVE_CHECK_OFFSET;
@@ -99,12 +100,7 @@ public class SimpleAttackManager {
 		Npc npc = npcAI.getOwner();
 		Creature target = (Creature) npc.getTarget();
 		if (target != null && !target.getLifeStats().isAlreadyDead()) {
-			if (!npc.canSee(target) || !GeoService.getInstance().canSee(npc, target)) { //delete check geo when the Path Finding
-				npc.getController().cancelCurrentSkill();
-				npcAI.onGeneralEvent(AIEventType.TARGET_GIVEUP);
-				return;
-			}
-			if (isTargetInAttackRange(npc)) {
+			if (isTargetInAttackRange(npc) && npc.canSee(target)) {
 				npc.getController().attackTarget(target, 0);
 				npcAI.onGeneralEvent(AIEventType.ATTACK_COMPLETE);
 				return;
