@@ -7,8 +7,7 @@
     <!-- ELYOS QUEST -->
     <!-- Dreams Of The Dungeon (Elyos Only) -->
 	<monster_hunt start_npc_ids="205230" id="18605">
-        <monster var="0" npc_ids="216971" end_var="8"/>
-		<monster var="1" npc_ids="217026 217027" end_var="8"/>
+        <monster var="0" npc_ids="216971 217026 217027" end_var="8"/>
     </monster_hunt>
 	<!-- To Dream, To Die (Elyos Only) -->
 	<monster_hunt start_npc_ids="205231" id="18606">
