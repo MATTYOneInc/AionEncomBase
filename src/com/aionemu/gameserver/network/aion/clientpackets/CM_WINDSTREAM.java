@@ -71,6 +71,9 @@ public class CM_WINDSTREAM extends AionClientPacket
                     return;
                 } if (player.isInState(CreatureState.GLIDING) || player.isInState(CreatureState.FLYING)) {
                     player.setPlayerMode(PlayerMode.WINDSTREAM, new WindstreamPath(teleportId, distance));
+					if(player.isGM()) {
+					    PacketSendUtility.sendMessage(player, "You enter teleportId: "+ teleportId + ", distance: " + distance);
+					}
                     player.unsetState(CreatureState.ACTIVE);
                     player.unsetState(CreatureState.GLIDING);
                     player.setState(CreatureState.FLYING);
