@@ -355,6 +355,19 @@ public class ItemEquipmentListener {
 			}
 		}
 	}
+	
+	public static void removeStoneStats1(Item item, ManaStone stone, CreatureGameStats<?> cgs) {
+		if (stone == null || item == null) {
+			return;
+		}
+
+		List<StatFunction> modifiers = stone.getModifiers();
+		if (modifiers == null) {
+			return;
+		}
+
+		cgs.endEffect(stone);
+	}
 
 	/**
 	 * @param item

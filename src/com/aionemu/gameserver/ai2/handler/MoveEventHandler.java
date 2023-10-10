@@ -17,9 +17,6 @@
 package com.aionemu.gameserver.ai2.handler;
 
 import com.aionemu.gameserver.ai2.NpcAI2;
-import com.aionemu.gameserver.ai2.event.AIEventType;
-import com.aionemu.gameserver.utils.MathUtil;
-import com.aionemu.gameserver.world.geo.GeoService;
 
 /**
  * @author ATracer

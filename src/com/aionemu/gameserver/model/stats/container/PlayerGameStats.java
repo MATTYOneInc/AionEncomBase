@@ -91,21 +91,27 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 	public Stat2 getStrikeResist() {
 		return getStat(StatEnum.PHYSICAL_CRITICAL_RESIST, 0);
 	}
+
 	public Stat2 getStrikeFort() {
 		return getStat(StatEnum.PHYSICAL_CRITICAL_DAMAGE_REDUCE, 0);
 	}
+
 	public Stat2 getSpellResist() {
 		return getStat(StatEnum.MAGICAL_CRITICAL_RESIST, 0);
 	}
+
 	public Stat2 getSpellFort() {
 		return getStat(StatEnum.MAGICAL_CRITICAL_DAMAGE_REDUCE, 0);
 	}
+
 	public Stat2 getMaxDp() {
 		return getStat(StatEnum.MAXDP, 4000);
 	}
+
 	public Stat2 getFlyTime() {
 		return getStat(StatEnum.FLY_TIME, CustomConfig.BASE_FLYTIME);
 	}
+
 	public Stat2 getAllSpeed() {
 		return getStat(StatEnum.ALLSPEED, 7500);
 	}
@@ -130,11 +136,11 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 	public Stat2 getBCastingTime() {
 		int base = 0;
 		int casterClass = owner.getPlayerClass().getClassId();
-		if (casterClass == 7 || //Sorcerer.
-		    casterClass == 8 || //Spirit-Master.
-			casterClass == 16) { //Songweaver.
-            base = 800;
-        }
+		if (casterClass == 7 || // Sorcerer.
+				casterClass == 8 || // Spirit-Master.
+				casterClass == 16) { // Songweaver.
+			base = 800;
+		}
 		return getStat(StatEnum.BOOST_CASTING_TIME, base);
 	}
 
@@ -144,10 +150,10 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 		int sorcerer1 = owner.getPlayerClass().getClassId();
 		int spiritMaster1 = owner.getPlayerClass().getClassId();
 		if (sorcerer1 == 7) {
-            base = 25;
-        } else if (spiritMaster1 == 8 && owner.getLevel() >= 56) {
-            base = 100;
-        }
+			base = 25;
+		} else if (spiritMaster1 == 8 && owner.getLevel() >= 56) {
+			base = 100;
+		}
 		return getStat(StatEnum.CONCENTRATION, base);
 	}
 
@@ -156,8 +162,8 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 		int base = 0;
 		int aethertech2 = owner.getPlayerClass().getClassId();
 		if (aethertech2 == 13) {
-            base = 200;
-        }
+			base = 200;
+		}
 		return getStat(StatEnum.ROOT_RESISTANCE, base);
 	}
 
@@ -166,8 +172,8 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 		int base = 0;
 		int aethertech3 = owner.getPlayerClass().getClassId();
 		if (aethertech3 == 13) {
-            base = 200;
-        }
+			base = 200;
+		}
 		return getStat(StatEnum.SNARE_RESISTANCE, base);
 	}
 
@@ -176,8 +182,8 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 		int base = 0;
 		int aethertech4 = owner.getPlayerClass().getClassId();
 		if (aethertech4 == 13) {
-            base = 200;
-        }
+			base = 200;
+		}
 		return getStat(StatEnum.BIND_RESISTANCE, base);
 	}
 
@@ -186,8 +192,8 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 		int base = 0;
 		int aethertech5 = owner.getPlayerClass().getClassId();
 		if (aethertech5 == 13) {
-            base = -200;
-        }
+			base = -200;
+		}
 		return getStat(StatEnum.FEAR_RESISTANCE, base);
 	}
 
@@ -196,47 +202,49 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 		int base = 0;
 		int aethertech6 = owner.getPlayerClass().getClassId();
 		if (aethertech6 == 13) {
-            base = -200;
-        }
+			base = -200;
+		}
 		return getStat(StatEnum.SLEEP_RESISTANCE, base);
 	}
 
 	@Override
 	public Stat2 getPDef() {
 		int base = 0;
-        int gunslinger = owner.getPlayerClass().getClassId();
+		int gunslinger = owner.getPlayerClass().getClassId();
 		int aethertech = owner.getPlayerClass().getClassId();
-        if (gunslinger == 14) {
-            base = 100;
-        } else if (aethertech == 13) {
-            base = 350;
-        }
+		if (gunslinger == 14) {
+			base = 100;
+		} else if (aethertech == 13) {
+			base = 350;
+		}
 		return getStat(StatEnum.PHYSICAL_DEFENSE, base);
 	}
 
 	@Override
 	public Stat2 getMResist() {
 		int base = 0;
-        int assassin = owner.getPlayerClass().getClassId();
-        if (assassin == 4 && owner.getLevel() >= 37) {
-            base = 30;
-        }
+		int assassin = owner.getPlayerClass().getClassId();
+		if (assassin == 4 && owner.getLevel() >= 37) {
+			base = 30;
+		}
 		return getStat(StatEnum.MAGICAL_RESIST, base);
 	}
 
 	@Override
 	public Stat2 getMBResist() {
 		int base = 0;
-        int cleric = owner.getPlayerClass().getClassId();
+		int cleric = owner.getPlayerClass().getClassId();
 		int sorcerer2 = owner.getPlayerClass().getClassId();
 		int spiritMaster2 = owner.getPlayerClass().getClassId();
 		if (cleric == 10 && owner.getLevel() >= 60) {
-            base = 140;
-        } if (sorcerer2 == 7 && owner.getLevel() >= 60) {
-            base = 180;
-        } if (spiritMaster2 == 8 && owner.getLevel() >= 60) {
-            base = 180;
-        }
+			base = 140;
+		}
+		if (sorcerer2 == 7 && owner.getLevel() >= 60) {
+			base = 180;
+		}
+		if (spiritMaster2 == 8 && owner.getLevel() >= 60) {
+			base = 180;
+		}
 		return getStat(StatEnum.MAGIC_SKILL_BOOST_RESIST, base);
 	}
 
@@ -277,28 +285,41 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 		Item offHandWeapon = equipment.getOffHandWeapon();
 		if (mainHandWeapon != null) {
 			base = mainHandWeapon.getItemTemplate().getWeaponStats().getAttackRange();
-			if (!mainHandWeapon.getItemTemplate().isTwoHandWeapon() && mainHandWeapon != null && offHandWeapon != null && offHandWeapon.getItemTemplate().getArmorType() != ArmorType.SHIELD) {
-				if (mainHandWeapon.getItemTemplate().getWeaponStats().getAttackRange() != offHandWeapon.getItemTemplate().getWeaponStats().getAttackRange()) {
-					if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H && offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H) {
+			if (!mainHandWeapon.getItemTemplate().isTwoHandWeapon() && mainHandWeapon != null && offHandWeapon != null
+					&& offHandWeapon.getItemTemplate().getArmorType() != ArmorType.SHIELD) {
+				if (mainHandWeapon.getItemTemplate().getWeaponStats().getAttackRange() != offHandWeapon
+						.getItemTemplate().getWeaponStats().getAttackRange()) {
+					if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H
+							&& offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H) {
 						base = 1500;
-					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H && offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.SWORD_1H) {
+					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H
+							&& offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.SWORD_1H) {
 						base = 1500;
-					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.SWORD_1H && offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H) {
+					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.SWORD_1H
+							&& offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H) {
 						base = 1500;
-					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H && offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H) {
+					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H
+							&& offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H) {
 						base = 1500;
-					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H && offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H) {
+					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H
+							&& offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.DAGGER_1H) {
 						base = 1500;
-					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H && offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.SWORD_1H) {
+					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H
+							&& offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.SWORD_1H) {
 						base = 1500;
-					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H && offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H) {
+					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H
+							&& offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H) {
 						base = 1500;
-					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.SWORD_1H && offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H) {
+					} else if (mainHandWeapon.getItemTemplate().getWeaponType() == WeaponType.SWORD_1H
+							&& offHandWeapon.getItemTemplate().getWeaponType() == WeaponType.MACE_1H) {
 						base = 1500;
 					} else {
-						if (mainHandWeapon != null && offHandWeapon != null && offHandWeapon.getItemTemplate().getArmorType() != ArmorType.SHIELD) {
+						if (mainHandWeapon != null && offHandWeapon != null
+								&& offHandWeapon.getItemTemplate().getArmorType() != ArmorType.SHIELD) {
 							base = mainHandWeapon.getItemTemplate().getWeaponStats().getAttackRange();
-							log.info("[Error] PlayerGameStats] mainHandWeapon ["+mainHandWeapon.getItemTemplate().getItemType()+"] offHandWeapon ["+offHandWeapon.getItemTemplate().getItemType()+"]");
+							log.info("[Error] PlayerGameStats] mainHandWeapon ["
+									+ mainHandWeapon.getItemTemplate().getItemType() + "] offHandWeapon ["
+									+ offHandWeapon.getItemTemplate().getItemType() + "]");
 						}
 					}
 				}
@@ -407,8 +428,11 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 		Item mainHandWeapon = equipment.getMainHandWeapon();
 		if (mainHandWeapon != null) {
 			base = mainHandWeapon.getItemTemplate().getWeaponStats().getPhysicalCritical();
+
+			// TODO dead code!!!
 		} else if (mainHandWeapon != null && mainHandWeapon.hasFusionedItem()) {
-			base = mainHandWeapon.getItemTemplate().getWeaponStats().getPhysicalCritical() + mainHandWeapon.getFusionedItemTemplate().getWeaponStats().getPhysicalCritical();
+			base = mainHandWeapon.getItemTemplate().getWeaponStats().getPhysicalCritical()
+					+ mainHandWeapon.getFusionedItemTemplate().getWeaponStats().getPhysicalCritical();
 		}
 		return getStat(StatEnum.PHYSICAL_CRITICAL, base);
 	}
@@ -439,7 +463,8 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 		Equipment equipment = owner.getEquipment();
 		Item offHandWeapon = equipment.getOffHandWeapon();
 		if (offHandWeapon != null && offHandWeapon.getItemTemplate().isWeapon()) {
-			PlayerStatsTemplate pst = DataManager.PLAYER_STATS_DATA.getTemplate(owner.getPlayerClass(), owner.getLevel());
+			PlayerStatsTemplate pst = DataManager.PLAYER_STATS_DATA.getTemplate(owner.getPlayerClass(),
+					owner.getLevel());
 			int base = pst.getMainHandAccuracy();
 			base += offHandWeapon.getItemTemplate().getWeaponStats().getPhysicalAccuracy();
 			return getStat(StatEnum.PHYSICAL_ACCURACY, base);
@@ -448,20 +473,20 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 	}
 
 	@Override
-    public Stat2 getMAttack() {
-        int base;
-        Equipment equipment = owner.getEquipment();
-        Item mainHandWeapon = equipment.getMainHandWeapon();
-        if (mainHandWeapon != null) {
-            if (!mainHandWeapon.getItemTemplate().getAttackType().isMagical()) {
-                return new AdditionStat(StatEnum.MAGICAL_ATTACK, 0, owner);
-            }
-            base = mainHandWeapon.getItemTemplate().getWeaponStats().getMeanDamage();
-        } else {
-            base = Rnd.get(16, 20);
-        }
-        return getStat(StatEnum.MAGICAL_ATTACK, base);
-    }
+	public Stat2 getMAttack() {
+		int base;
+		Equipment equipment = owner.getEquipment();
+		Item mainHandWeapon = equipment.getMainHandWeapon();
+		if (mainHandWeapon != null) {
+			if (!mainHandWeapon.getItemTemplate().getAttackType().isMagical()) {
+				return new AdditionStat(StatEnum.MAGICAL_ATTACK, 0, owner);
+			}
+			base = mainHandWeapon.getItemTemplate().getWeaponStats().getMeanDamage();
+		} else {
+			base = Rnd.get(16, 20);
+		}
+		return getStat(StatEnum.MAGICAL_ATTACK, base);
+	}
 
 	@Override
 	public Stat2 getMainHandMAttack() {

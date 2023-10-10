@@ -180,9 +180,11 @@ public class CM_PET extends AionClientPacket {
                 if (player.getMinion() != null) {
                     MinionService.getInstance().despawnMinion(player, 0);
                 }
+				PetService.getInstance().switchOffBuff(player);
 				PetSpawnService.summonPet(player, petId, true);
 				break;
 			case DISMISS:
+			    PetService.getInstance().switchOffBuff(player);
 				PetSpawnService.dismissPet(player, true);
 				break;
 			case FOOD:

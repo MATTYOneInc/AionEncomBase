@@ -150,25 +150,24 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 	 *
 	 * @param lastAttacker
 	 */
-	public void onDie(Creature lastAttacker) 
-	{
-        this.getOwner().getMoveController().abortMove();
-        this.getOwner().setCasting(null);
-        this.getOwner().getEffectController().removeAllEffects();
+	public void onDie(Creature lastAttacker) {
+		this.getOwner().getMoveController().abortMove();
+		this.getOwner().setCasting(null);
+		this.getOwner().getEffectController().removeAllEffects();
 
-        if (getOwner() instanceof Player && ((Player) getOwner()).getIsFlyingBeforeDeath()) {
-                getOwner().unsetState(CreatureState.ACTIVE);
-                getOwner().setState(CreatureState.FLOATING_CORPSE);
-            } else {
-                this.getOwner().setState(CreatureState.DEAD);
-            }
-			this.getOwner().getObserveController().notifyDeathObservers(lastAttacker);
-			
-	} 
+		if (getOwner() instanceof Player && ((Player) getOwner()).getIsFlyingBeforeDeath()) {
+			getOwner().unsetState(CreatureState.ACTIVE);
+			getOwner().setState(CreatureState.FLOATING_CORPSE);
+		} else {
+			this.getOwner().setState(CreatureState.DEAD);
+		}
+		this.getOwner().getObserveController().notifyDeathObservers(lastAttacker);
+
+	}
 
 	/**
-	 * Perform tasks when Creature was attacked //TODO may be pass only Skill
-	 * object - but need to add properties in it
+	 * Perform tasks when Creature was attacked //TODO may be pass only Skill object
+	 * - but need to add properties in it
 	 */
 	public void onAttack(final Creature attacker, int skillId, TYPE type, int damage, boolean notifyAttack, LOG log) {
 		if (damage != 0 && !((getOwner() instanceof Npc) && ((Npc) getOwner()).isBoss())) {
@@ -176,13 +175,11 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 			if (skill != null && log != LOG.BLEED && log != LOG.SPELLATK && log != LOG.POISON) {
 				if (skill.getSkillMethod() == SkillMethod.ITEM) {
 					cancelCurrentSkill();
-				}
-				else {
+				} else {
 					int cancelRate = skill.getSkillTemplate().getCancelRate();
 					if (cancelRate == 100000) {
 						cancelCurrentSkill();
-					}
-					else if (cancelRate > 0) {
+					} else if (cancelRate > 0) {
 						int conc = getOwner().getGameStats().getStat(StatEnum.CONCENTRATION, 0).getCurrent();
 						float maxHp = getOwner().getGameStats().getMaxHp().getCurrent();
 
@@ -195,14 +192,15 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 			}
 		}
 
-		// Do NOT notify attacked observers if the damage is 0 and shield is up (means the attack has been absorbed)
+		// Do NOT notify attacked observers if the damage is 0 and shield is up (means
+		// the attack has been absorbed)
 		if (damage == 0 && getOwner().getEffectController().isUnderShield()) {
 			notifyAttack = false;
 		}
 		if (notifyAttack) {
 			getOwner().getObserveController().notifyAttackedObservers(attacker);
 		}
-		
+
 		// Reduce the damage to exactly what is required to ensure death.
 		// - Important that we don't include 7k worth of damage when the
 		// creature only has 100 hp remaining. (For AggroList dmg count.)
@@ -212,19 +210,16 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 		getOwner().getAggroList().addDamage(attacker, damage);
 		getOwner().getLifeStats().reduceHp(damage, attacker);
 
-		
 		if (getOwner() instanceof Npc) {
 			AI2 ai = getOwner().getAi2();
 			if (ai.poll(AIQuestion.CAN_SHOUT)) {
 				if (attacker instanceof Player) {
 					ShoutEventHandler.onHelp((NpcAI2) ai, attacker);
-				}
-				else {
+				} else {
 					ShoutEventHandler.onEnemyAttack((NpcAI2) ai, attacker);
 				}
 			}
-		}
-		else if (getOwner() instanceof Player && attacker instanceof Npc) {
+		} else if (getOwner() instanceof Player && attacker instanceof Npc) {
 			AI2 ai = attacker.getAi2();
 			if (ai.poll(AIQuestion.CAN_SHOUT)) {
 				ShoutEventHandler.onAttack((NpcAI2) ai, getOwner());
@@ -258,14 +253,16 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 	 */
 	public void onRestore(HealType hopType, int value) {
 		switch (hopType) {
-			case HP:
-				getOwner().getLifeStats().increaseHp(TYPE.HP, value);
-				break;
-			case MP:
-				getOwner().getLifeStats().increaseMp(TYPE.MP, value);
-				break;
-			case FP:
-				getOwner().getLifeStats().increaseFp(TYPE.FP, value);
+		case HP:
+			getOwner().getLifeStats().increaseHp(TYPE.HP, value);
+			break;
+		case MP:
+			getOwner().getLifeStats().increaseMp(TYPE.MP, value);
+			break;
+		case FP:
+			getOwner().getLifeStats().increaseFp(TYPE.FP, value);
+			break;
+		default:
 			break;
 		}
 	}
@@ -293,12 +290,12 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 	}
 
 	public int getSimpleAttackType() {
-    	return this.SimpleAttackType;
-    }
+		return this.SimpleAttackType;
+	}
 
-    public void setSimpleAttackType(int attackType) {
-    	this.SimpleAttackType = attackType;
-    }
+	public void setSimpleAttackType(int attackType) {
+		this.SimpleAttackType = attackType;
+	}
 
 	/**
 	 * @param target
@@ -309,7 +306,8 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 		/**
 		 * Check all prerequisites
 		 */
-		if (target == null || !getOwner().canAttack() || getOwner().getLifeStats().isAlreadyDead() || !getOwner().isSpawned()) {
+		if (target == null || !getOwner().canAttack() || getOwner().getLifeStats().isAlreadyDead()
+				|| !getOwner().isSpawned()) {
 			return;
 		}
 
@@ -319,17 +317,17 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 		int attackType = 0;
 		List<AttackResult> attackResult;
 		if (getOwner() instanceof Homing) {
-			attackResult = AttackUtil.calculateHomingAttackResult(getOwner(), target, getOwner().getAttackType().getMagicalElement());
+			attackResult = AttackUtil.calculateHomingAttackResult(getOwner(), target,
+					getOwner().getAttackType().getMagicalElement());
 			attackType = 1;
-		}
-		else {
+		} else {
 			if (getOwner().getAttackType() == ItemAttackType.PHYSICAL) {
 				attackResult = AttackUtil.calculatePhysicalAttackResult(getOwner(), target);
-			}
-		    else {
-		  	    attackResult = AttackUtil.calculateMagicalAttackResult(getOwner(), target, getOwner().getAttackType().getMagicalElement());
+			} else {
+				attackResult = AttackUtil.calculateMagicalAttackResult(getOwner(), target,
+						getOwner().getAttackType().getMagicalElement());
 				attackType = 1;
-		    }
+			}
 		}
 		int damage = 0;
 		for (AttackResult result : attackResult) {
@@ -338,7 +336,8 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 			}
 			damage += result.getDamage();
 		}
-		PacketSendUtility.broadcastPacketAndReceive(getOwner(), new SM_ATTACK(getOwner(), target, getOwner().getGameStats() .getAttackCounter(), time, attackType, attackResult));
+		PacketSendUtility.broadcastPacketAndReceive(getOwner(), new SM_ATTACK(getOwner(), target,
+				getOwner().getGameStats().getAttackCounter(), time, attackType, attackResult));
 
 		getOwner().getGameStats().increaseAttackCounter();
 		if (addAttackObservers) {
@@ -348,8 +347,7 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 
 		if (time == 0) {
 			target.getController().onAttack(getOwner(), damage, true);
-		}
-		else {
+		} else {
 			ThreadPoolManager.getInstance().schedule(new DelayedOnAttack(target, creature, damage), time);
 		}
 	}
@@ -466,8 +464,7 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 			if (skill != null) {
 				return skill.useSkill();
 			}
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			log.error("Exception during skill use: " + skillId, ex);
 		}
 		return false;
@@ -511,7 +508,8 @@ public abstract class CreatureController<T extends Creature> extends VisibleObje
 		castingSkill.cancelCast();
 		creature.removeSkillCoolDown(castingSkill.getSkillTemplate().getDelayId());
 		creature.setCasting(null);
-		PacketSendUtility.broadcastPacketAndReceive(creature, new SM_SKILL_CANCEL(creature, castingSkill.getSkillTemplate().getSkillId()));
+		PacketSendUtility.broadcastPacketAndReceive(creature,
+				new SM_SKILL_CANCEL(creature, castingSkill.getSkillTemplate().getSkillId()));
 		if (getOwner().getAi2() instanceof NpcAI2) {
 			NpcAI2 npcAI = (NpcAI2) getOwner().getAi2();
 			npcAI.setSubStateIfNot(AISubState.NONE);

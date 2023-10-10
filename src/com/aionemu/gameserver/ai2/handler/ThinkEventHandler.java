@@ -63,6 +63,8 @@ public class ThinkEventHandler {
 				case IDLE:
 					thinkIdle(npcAI);
 					break;
+			default:
+				break;
 			}
 		}
 		finally {

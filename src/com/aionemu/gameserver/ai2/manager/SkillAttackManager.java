@@ -82,6 +82,8 @@ public class SkillAttackManager {
 						}
 					}
 					break;
+			default:
+				break;
 			}
 			boolean success = npcAI.getOwner().getController().useSkill(skillId, skillLevel);
 			if (!success) {

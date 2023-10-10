@@ -16,12 +16,28 @@
  */
 package com.aionemu.gameserver.model.gameobjects;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.configs.main.MembershipConfig;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.DescriptionId;
 import com.aionemu.gameserver.model.IExpirable;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.items.*;
+import com.aionemu.gameserver.model.items.ChargeInfo;
+import com.aionemu.gameserver.model.items.GodStone;
+import com.aionemu.gameserver.model.items.IdianStone;
+import com.aionemu.gameserver.model.items.ItemMask;
+import com.aionemu.gameserver.model.items.ManaStone;
+import com.aionemu.gameserver.model.items.RandomBonusResult;
+import com.aionemu.gameserver.model.items.RandomStats;
 import com.aionemu.gameserver.model.items.storage.IStorage;
 import com.aionemu.gameserver.model.items.storage.ItemStorage;
 import com.aionemu.gameserver.model.items.storage.StorageType;
@@ -35,11 +51,6 @@ import com.aionemu.gameserver.model.templates.item.actions.ItemActions;
 import com.aionemu.gameserver.model.templates.item.bonuses.StatBonusType;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.*;
 
 /**
  * @author ATracer, Wakizashi, xTz
@@ -85,7 +96,6 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	private int SkinSkill = 0;
 	private boolean luna_reskin = false;
 	private int ReductionLevel = 0;
-	private boolean isSeal = false;
 	private int unSeal = 0;
 	private boolean canEnhance;
 	private int enhanceSkillId;
@@ -839,6 +849,8 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 				case ACCOUNT_WAREHOUSE:
 				case REGULAR_WAREHOUSE:
 					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400406, new DescriptionId(getNameId())));
+					break;
+				default:
 					break;
 				}
 			}

@@ -16,6 +16,12 @@
  */
 package com.aionemu.gameserver.services.toypet;
 
+import java.util.Collection;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.PlayerPetsDAO;
 import com.aionemu.gameserver.dataholders.DataManager;
@@ -29,7 +35,13 @@ import com.aionemu.gameserver.model.team2.common.legacy.LootRuleType;
 import com.aionemu.gameserver.model.templates.item.ItemUseLimits;
 import com.aionemu.gameserver.model.templates.item.actions.AbstractItemAction;
 import com.aionemu.gameserver.model.templates.item.actions.ItemActions;
-import com.aionemu.gameserver.model.templates.pet.*;
+import com.aionemu.gameserver.model.templates.pet.FoodType;
+import com.aionemu.gameserver.model.templates.pet.PetBonusAttr;
+import com.aionemu.gameserver.model.templates.pet.PetFeedResult;
+import com.aionemu.gameserver.model.templates.pet.PetFlavour;
+import com.aionemu.gameserver.model.templates.pet.PetFunction;
+import com.aionemu.gameserver.model.templates.pet.PetFunctionType;
+import com.aionemu.gameserver.model.templates.pet.PetTemplate;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_PET;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
@@ -38,26 +50,22 @@ import com.aionemu.gameserver.services.item.ItemPacketService.ItemUpdateType;
 import com.aionemu.gameserver.services.item.ItemService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-import java.util.Collection;
-import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class PetService {
 
 	Logger log = LoggerFactory.getLogger(PetService.class);
-	
+
 	private PetBuff PetBuff;
 	private boolean autoSeel = false;
 	private boolean autoBuff = false;
-	
+
 	public static final PetService getInstance() {
 		return SingletonHolder.instance;
 	}
-	
+
 	private PetService() {
 	}
-	
+
 	public void renamePet(Player player, String name) {
 		Pet pet = player.getPet();
 		if (pet != null) {
@@ -66,14 +74,14 @@ public class PetService {
 			PacketSendUtility.broadcastPacket(player, new SM_PET(10, pet), true);
 		}
 	}
-	
+
 	public void onPlayerLogin(Player player) {
 		Collection<PetCommonData> playerPets = player.getPetList().getPets();
 		if (playerPets != null && playerPets.size() > 0) {
 			PacketSendUtility.sendPacket(player, new SM_PET(0, playerPets));
 		}
 	}
-	
+
 	public void removeObject(int objectId, int count, int action, Player player) {
 		Item item = player.getInventory().getItemByObjId(objectId);
 		if (item == null || player.getPet() == null || count > item.getItemCount()) {
@@ -82,10 +90,11 @@ public class PetService {
 		Pet pet = player.getPet();
 		pet.getCommonData().setCancelFeed(false);
 		PacketSendUtility.sendPacket(player, new SM_PET(1, action, item.getObjectId(), count, pet));
-		PacketSendUtility.sendPacket(player, new SM_EMOTION(player, EmotionType.START_FEEDING, 0, player.getObjectId()));
+		PacketSendUtility.sendPacket(player,
+				new SM_EMOTION(player, EmotionType.START_FEEDING, 0, player.getObjectId()));
 		schedule(pet, player, item, count, action);
 	}
-	
+
 	private void schedule(final Pet pet, final Player player, final Item item, final int count, final int action) {
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
@@ -96,7 +105,7 @@ public class PetService {
 			}
 		}, 2500);
 	}
-	
+
 	private void checkFeeding(Pet pet, Player player, Item item, int count, int action) {
 		PetCommonData commonData = pet.getCommonData();
 		PetFeedProgress progress = commonData.getFeedProgress();
@@ -110,7 +119,8 @@ public class PetService {
 			}
 			if (foodType != null) {
 				player.getInventory().decreaseItemCount(item, 1, ItemUpdateType.DEC_PET_FOOD);
-				reward = flavour.processFeedResult(progress, foodType, item.getItemTemplate().getLevel(), player.getCommonData().getLevel());
+				reward = flavour.processFeedResult(progress, foodType, item.getItemTemplate().getLevel(),
+						player.getCommonData().getLevel());
 				if (progress.getHungryLevel() == PetHungryLevel.FULL && reward != null) {
 					PacketSendUtility.sendPacket(player, new SM_PET(2, action, item.getObjectId(), 0, pet));
 				} else {
@@ -118,14 +128,17 @@ public class PetService {
 				}
 			} else {
 				PacketSendUtility.sendPacket(player, new SM_PET(5, action, 0, 0, pet));
-				PacketSendUtility.sendPacket(player, new SM_EMOTION(player, EmotionType.END_FEEDING, 0, player.getObjectId()));
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_TOYPET_FEED_FOOD_NOT_LOVEFLAVOR(pet.getName(), item.getItemTemplate().getNameId()));
+				PacketSendUtility.sendPacket(player,
+						new SM_EMOTION(player, EmotionType.END_FEEDING, 0, player.getObjectId()));
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+						.STR_MSG_TOYPET_FEED_FOOD_NOT_LOVEFLAVOR(pet.getName(), item.getItemTemplate().getNameId()));
 				return;
 			}
 			if (progress.getHungryLevel() == PetHungryLevel.FULL && reward != null) {
 				PacketSendUtility.sendPacket(player, new SM_PET(6, action, reward.getItem(), 0, pet));
 				PacketSendUtility.sendPacket(player, new SM_PET(5, action, 0, 0, pet));
-				PacketSendUtility.sendPacket(player, new SM_EMOTION(player, EmotionType.END_FEEDING, 0, player.getObjectId()));
+				PacketSendUtility.sendPacket(player,
+						new SM_EMOTION(player, EmotionType.END_FEEDING, 0, player.getObjectId()));
 				PacketSendUtility.sendPacket(player, new SM_PET(7, action, 0, 0, pet));
 				ItemService.addItem(player, reward.getItem(), 1);
 				commonData.setReFoodTime(flavour.getCooldDown() * 60000);
@@ -136,11 +149,12 @@ public class PetService {
 				schedule(pet, player, item, count, action);
 			} else {
 				PacketSendUtility.sendPacket(player, new SM_PET(5, action, 0, 0, pet));
-				PacketSendUtility.sendPacket(player, new SM_EMOTION(player, EmotionType.END_FEEDING, 0, player.getObjectId()));
+				PacketSendUtility.sendPacket(player,
+						new SM_EMOTION(player, EmotionType.END_FEEDING, 0, player.getObjectId()));
 			}
 		}
 	}
-	
+
 	public void relocateDoping(Player player, int targetSlot, int destinationSlot) {
 		Pet pet = player.getPet();
 		if (pet == null || pet.getCommonData().getDopingBag() == null) {
@@ -160,7 +174,7 @@ public class PetService {
 			PacketSendUtility.sendPacket(player, new SM_PET(0, targetItem, destinationSlot));
 		}
 	}
-	
+
 	public void useDoping(final Player player, int action, int itemId, int slot) {
 		Pet pet = player.getPet();
 		if (pet == null || pet.getCommonData().getDopingBag() == null) {
@@ -222,7 +236,7 @@ public class PetService {
 			PacketSendUtility.sendPacket(player, new SM_PET(1, false));
 		}
 	}
-	
+
 	public void activateLoot(final Player player, final boolean activate) {
 		if (player.getPet() == null) {
 			return;
@@ -240,16 +254,18 @@ public class PetService {
 		player.getPet().getCommonData().setIsLooting(activate);
 		PacketSendUtility.sendPacket(player, new SM_PET(activate));
 	}
-	
+
 	public void activateBuff(final Player player, final boolean activate) {
 		if (player.getPet() == null) {
 			return;
 		}
 		Pet pet = player.getPet();
 		PetTemplate petTemp = DataManager.PET_DATA.getPetTemplate(pet.getPetId());
-		PetBonusAttr petBuff = DataManager.PET_BUFF_DATA.getPetBonusattr(petTemp.getPetFunction(PetFunctionType.CHEER).getId());
-		
-		if (activate && player.getInventory().getItemCountByItemId(182007162) < petBuff.getFoodCount()) {// Aether Cherry
+		PetBonusAttr petBuff = DataManager.PET_BUFF_DATA
+				.getPetBonusattr(petTemp.getPetFunction(PetFunctionType.CHEER).getId());
+
+		if (activate && player.getInventory().getItemCountByItemId(182007162) < petBuff.getFoodCount()) {// Aether
+																											// Cherry
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_BUFF_PET_USE_STOP_MESSAGE_03);
 			return;
 		}
@@ -263,18 +279,15 @@ public class PetService {
 			PetBuff.endEffect(player);
 		}
 	}
-	
+
 	public void activeAutoSell(final Player player, final boolean activate) {
-        Pet pet = player.getPet();
-        PetTemplate petTemp = DataManager.PET_DATA.getPetTemplate(pet.getPetId());
-        PetMerchandEntry merchand = DataManager.PET_MERCHAND_DATA.getMerchandTemplate(petTemp.getPetFunction(PetFunctionType.MERCHAND).getId());
-        if (player.getPet() == null) {
-            return;
+		if (player.getPet() == null) {
+			return;
 		}
 		if (activate) {
 			player.getPet().getCommonData().setIsSelling(activate);
-        }
-    }
+		}
+	}
 
 	public void onPlayerLogout(Player player) {
 		if (autoBuff) {
@@ -284,7 +297,19 @@ public class PetService {
 			activeAutoSell(player, false);
 		}
 	}
-	
+
+	public void switchOffBuff(final Player player) {
+		Pet pet = player.getPet();
+		if (pet != null) {
+			if (player.getPet().getPetTemplate().getPetFunction(PetFunctionType.CHEER) != null) {
+				if (autoBuff) {
+					autoBuff = false;
+					PetBuff.endEffect(player);
+				}
+			}
+		}
+	}
+
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final PetService instance = new PetService();

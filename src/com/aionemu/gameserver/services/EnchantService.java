@@ -246,6 +246,8 @@ public class EnchantService
 						success = 50;
 					}
 				break;
+			default:
+				break;
 			}
 			success += addSuccessRate;
 			player.subtractSupplements(supplementUseCount, supplementTemplate.getTemplateId());
@@ -360,6 +362,8 @@ public class EnchantService
 					    currentEnchant += 1;
 				    }
 				break;
+			default:
+				break;
 			}
 		} else {
 			if (targetItem.isAmplified()) {
@@ -414,7 +418,8 @@ public class EnchantService
 			if (critLevel != 0) {
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ENCHANT_ITEM_SUCCEED_NEW(new DescriptionId(targetItem.getNameId()), critLevel));
 			} else {
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ENCHANT_ITEM_SUCCEED_NEW(new DescriptionId(targetItem.getNameId()), addLevel));
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_MSG_ENCHANT_ITEM_SUCCEED_NEW(new DescriptionId(targetItem.getNameId()), addLevel));
 			} if (targetItem.isAmplified() && targetItem.getEnchantLevel() == targetItem.getItemTemplate().getMaxEnchantLevel()) {
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CAN_EXCEED_ENCHANT_LEVEL(new DescriptionId(targetItem.getNameId())));
 			}
@@ -728,6 +733,8 @@ public class EnchantService
 				case MYTHIC:
 				    addSuccessRate *= 60;
 				break;
+			default:
+				break;
 			} if (isManastoneOnly) {
 				supplementUseCount = 1;
 			} else if (stoneCount > 0) {
@@ -908,6 +915,8 @@ public class EnchantService
 				    case POLEARM_2H:
 				    	modifiers.add(new StatEnchantFunction(item, StatEnum.PHYSICAL_ATTACK, 0));
 				    break;
+				default:
+					break;
 				}
 			} else if (item.getItemTemplate().isArmor()) {
 				if (item.getItemTemplate().getArmorType() == ArmorType.SHIELD) {
@@ -1035,6 +1044,8 @@ public class EnchantService
 						case BRACELET:
 							modifiers.add(new StatEnchantFunction(item, StatEnum.PVP_ATTACK_RATIO,0));
 							modifiers.add(new StatEnchantFunction(item, StatEnum.PVP_DEFEND_RATIO,0));
+						break;
+					default:
 						break;
 					}
 				}

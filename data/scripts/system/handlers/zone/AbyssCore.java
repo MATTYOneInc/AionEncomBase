@@ -29,6 +29,7 @@ import com.aionemu.gameserver.world.zone.handler.ZoneNameAnnotation;
 import javolution.util.FastMap;
 
 import java.io.IOException;
+import java.nio.BufferUnderflowException;
 
 @ZoneNameAnnotation("CORE_400010000")
 public class AbyssCore implements ZoneHandler
@@ -41,11 +42,16 @@ public class AbyssCore implements ZoneHandler
 		try {
 			this.geometry = (Node) GeoWorldLoader.loadMeshs("data/geo/models/na_ab_lmark_col_01a.mesh").values().toArray()[0];
 			this.geometry.setTransform(new Matrix3f(1.15f, 0, 0, 0, 1.15f, 0, 0, 0, 1.15f), new Vector3f(1526.6611f, 1563.0392f, 2332.4578f), 1f);
+			
+			geometry.updateModelBound();
 		}
 		catch (IOException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
-		geometry.updateModelBound();
+		catch (BufferUnderflowException ei){
+			
+		}
+
 	}
 	
 	@Override

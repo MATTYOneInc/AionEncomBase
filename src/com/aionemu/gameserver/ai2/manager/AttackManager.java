@@ -81,6 +81,8 @@ public class AttackManager {
 			case FINISH_ATTACK:
 				npcAI.think();
 				break;
+		default:
+			break;
 		}
 	}
 

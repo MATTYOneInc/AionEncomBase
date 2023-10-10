@@ -34,11 +34,11 @@ implements GeoData {
         this.loadWorldMaps(models);
         models.clear();
         models = null;
-        log.info("\u5730\u7406\u6570\u636e: " + this.geoMaps.size() + " \u8f7d\u5165GEO\u5730\u56fe!");
+        log.info("Geodata: " + this.geoMaps.size() + " geo maps loaded!");
     }
 
     protected void loadWorldMaps(Map<String, Spatial> models) {
-        log.info("\u8f7d\u5165GEO\u5730\u56fe..");
+        log.info("Loading geo maps..");
         Util.printProgressBarHeader(DataManager.WORLD_MAPS_DATA.size());
         ArrayList<Integer> mapsWithErrors = new ArrayList<Integer>();
         for (WorldMapTemplate map : DataManager.WORLD_MAPS_DATA) {
@@ -56,13 +56,13 @@ implements GeoData {
 		}
         Util.printEndProgress();
         if (mapsWithErrors.size() > 0) {
-            log.warn("\u4e00\u4e9b\u5730\u56fe\u672a\u6b63\u786e\u52a0\u8f7d\u5e76\u6062\u590d\u4e3a\u865a\u62df\u5b9e\u73b0: ");
+            log.warn("Some maps were not loaded correctly and reverted to dummy implementation: ");
             log.warn(((Object)mapsWithErrors).toString());
         }
     }
 
     protected Map<String, Spatial> loadMeshes() {
-        log.info("\u8f7d\u5165\u7f51\u683c..");
+        log.info("Loading meshes..");
         Map<String, Spatial> models = null;
         try {
             models = GeoWorldLoader.loadMeshs("data/geo/meshs.geo");
