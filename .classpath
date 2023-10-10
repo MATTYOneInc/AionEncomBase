@@ -29,7 +29,7 @@
 	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.33.jar"/>
 	<classpathentry kind="lib" path="libs/netty-3.2.7.Final.jar"/>
 	<classpathentry kind="lib" path="libs/objenesis-1.2.jar"/>
-	<classpathentry kind="lib" path="libs/quartz-2.1.7.jar"/>
+	<classpathentry kind="lib" path="libs/quartz-2.3.2.jar"/>
 	<classpathentry kind="lib" path="libs/slf4j-api-1.6.4.jar"/>
 	<classpathentry kind="lib" path="libs/socket775-1.0.jar"/>
 	<classpathentry kind="lib" path="libs/trove-3.0.0.jar"/>
