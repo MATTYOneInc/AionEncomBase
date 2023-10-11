@@ -13,28 +13,31 @@
  *  You should have received a copy of the GNU Lesser Public License
  *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package com.aionemu.gameserver.skillengine.periodicaction;
 
-import javax.xml.bind.annotation.*;
-import java.util.List;
+import javax.xml.bind.annotation.XmlAttribute;
+
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.skillengine.model.Effect;
 
  /**
  * @Rework MATTY (ADev.Team)
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PeriodicActions", propOrder = "periodicActions")
-public class PeriodicActions {
 
-	@XmlElements({ @XmlElement(name = "hpuse", type = HpUsePeriodicAction.class), @XmlElement(name = "mpuse", type = MpUsePeriodicAction.class), @XmlElement(name = "dpuse", type = DpUsePeriodicAction.class) })
-	protected List<PeriodicAction> periodicActions;
-	@XmlAttribute(name = "checktime")
-	protected int checktime;
-
-	public List<PeriodicAction> getPeriodicActions() {
-		return periodicActions;
-	}
-
-	public int getChecktime() {
-		return checktime;
+public class DpUsePeriodicAction extends PeriodicAction
+{
+	@XmlAttribute(name = "value")
+	protected int value;
+	
+	@Override
+	public void act(final Effect effect) {
+		final Player effector = (Player) effect.getEffector();
+		int currentDp = effector.getCommonData().getDp();
+		if (currentDp <= 0 || currentDp < value) {
+			effect.endEffect();
+			return;
+		}
+		effector.getCommonData().setDp(currentDp - value);
 	}
 }
