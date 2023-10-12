@@ -16,5 +16,14 @@
             <spot h="67" z="584.9453" y="2460.9006" x="2002.375"/>
             <spot h="67" z="596.2135" y="2562.228" x="1999.4161"/>
         </spawn>
+        <spawn custom="true" respawn_time="295" npc_id="216896" difficult_id="0">
+            <spot h="104" z="601.253" y="2491.2795" x="2248.5984"/>
+        </spawn>
+        <spawn custom="true" respawn_time="295" npc_id="216895" difficult_id="0">
+            <spot h="8" z="593.4058" y="2357.7068" x="2223.9001"/>
+        </spawn>
+        <spawn custom="true" respawn_time="295" npc_id="216894" difficult_id="0">
+            <spot h="106" z="578.2151" y="2415.2957" x="2358.927"/>
+        </spawn>
     </spawn_map>
 </spawns>
