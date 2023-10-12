@@ -262,6 +262,7 @@
 		<xs:sequence minOccurs="0" maxOccurs="unbounded">
 			<xs:element name="hpuse" type="HpUsePeriodicAction" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="mpuse" type="MpUsePeriodicAction" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="dpuse" type="DpUsePeriodicAction" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 		<xs:attribute name="checktime" type="xs:int"/>
 	</xs:complexType>
@@ -369,6 +370,14 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="MpUsePeriodicAction">
+		<xs:complexContent>
+			<xs:extension base="PeriodicAction">
+				<xs:attribute name="value" type="xs:int" use="required"/>
+				<xs:attribute name="delta" type="xs:int" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DpUsePeriodicAction">
 		<xs:complexContent>
 			<xs:extension base="PeriodicAction">
 				<xs:attribute name="value" type="xs:int" use="required"/>

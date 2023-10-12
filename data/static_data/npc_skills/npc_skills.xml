@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!--
-	Npc Skills
-	Made By (Encom)
+	NPC Skill Template 5.8 [KOR 442] | Parsed By Encom
+	Rework: MATTY (ADev.Team)
  -->
 <npc_skill_templates>
     <npcskills npcid="203175">
@@ -32352,7 +32352,7 @@
         <npcskill probability="100" skilllevel="1" skillid="17584"/>
     </npcskills>
     <npcskills npcid="749034">
-        <npcskill probability="100" skilllevel="1" skillid="17503"/>
+        <npcskill probability="100" skilllevel="1" skillid="21999"/>
     </npcskills>
     <npcskills npcid="749035">
         <npcskill probability="100" skilllevel="1" skillid="19132"/>
@@ -32406,7 +32406,7 @@
         <npcskill probability="100" skilllevel="1" skillid="17511"/>
     </npcskills>
     <npcskills npcid="749072">
-        <npcskill probability="100" skilllevel="1" skillid="17512"/>
+        <npcskill probability="100" skilllevel="1" skillid="21966"/>
     </npcskills>
     <npcskills npcid="749073">
         <npcskill probability="100" skilllevel="1" skillid="17513"/>
@@ -32463,7 +32463,7 @@
         <npcskill probability="100" skilllevel="1" skillid="17587"/>
     </npcskills>
     <npcskills npcid="749093">
-        <npcskill probability="100" skilllevel="1" skillid="17587"/>
+        <npcskill probability="100" skilllevel="1" skillid="21966"/>
     </npcskills>
 	<npcskills npcid="749094">
         <npcskill probability="100" skilllevel="1" skillid="17588"/>
@@ -32855,7 +32855,7 @@
         <npcskill probability="100" skilllevel="1" skillid="21043"/>
     </npcskills>
     <npcskills npcid="749278">
-        <npcskill probability="100" skilllevel="1" skillid="21044"/>
+        <npcskill probability="100" skilllevel="1" skillid="21975"/>
     </npcskills>
     <npcskills npcid="749279">
         <npcskill probability="100" skilllevel="1" skillid="21044"/>
@@ -33535,23 +33535,23 @@
     </npcskills>
 	<!-- Staggering Trap [Elyos] -->
 	<npcskills npcid="833185">
-        <npcskill probability="100" skilllevel="1" skillid="22003"/>
+        <npcskill probability="100" skilllevel="1" skillid="22657"/>
     </npcskills>
 	<npcskills npcid="833456">
-        <npcskill probability="100" skilllevel="2" skillid="22004"/>
+        <npcskill probability="100" skilllevel="2" skillid="22657"/>
     </npcskills>
 	<npcskills npcid="833458">
-        <npcskill probability="100" skilllevel="3" skillid="22005"/>
+        <npcskill probability="100" skilllevel="3" skillid="22657"/>
     </npcskills>
 	<!-- Shock Trap [Asmodians] -->
 	<npcskills npcid="833186">
-        <npcskill probability="100" skilllevel="1" skillid="22003"/>
+        <npcskill probability="100" skilllevel="1" skillid="22656"/>
     </npcskills>
 	<npcskills npcid="833457">
-        <npcskill probability="100" skilllevel="2" skillid="22004"/>
+        <npcskill probability="100" skilllevel="2" skillid="22656"/>
     </npcskills>
 	<npcskills npcid="833459">
-        <npcskill probability="100" skilllevel="3" skillid="22005"/>
+        <npcskill probability="100" skilllevel="3" skillid="22656"/>
     </npcskills>
 	<!-- Trap Of Clairvoyance [Asmodians] -->
 	<npcskills npcid="833187">
@@ -33625,11 +33625,11 @@
     </npcskills>
 	<!-- Nightmare Trap [Elyos] -->
 	<npcskills npcid="834239">
-        <npcskill probability="100" skilllevel="1" skillid="22000"/>
+        <npcskill probability="100" skilllevel="1" skillid="18274"/>
     </npcskills>
 	<!-- Nightmare Trap [Asmodians] -->
 	<npcskills npcid="834240">
-        <npcskill probability="100" skilllevel="1" skillid="22000"/>
+        <npcskill probability="100" skilllevel="1" skillid="18274"/>
     </npcskills>
 	<!-- Scrapped Mechanisms [Elyos] -->
 	<npcskills npcid="749300">
