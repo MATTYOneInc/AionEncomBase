@@ -40,7 +40,7 @@ public class _24054Crisis_In_Beluslan extends QuestHandler
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-        qe.registerQuestNpc(700290).addOnKillEvent(questId); //Field Suppressor.
+        qe.registerQuestNpc(702041).addOnKillEvent(questId); //Baranath Silencer
         qe.registerQuestNpc(233865).addOnKillEvent(questId); //Officer Bakuram.
     }
 	
@@ -61,8 +61,8 @@ public class _24054Crisis_In_Beluslan extends QuestHandler
         if (qs != null && qs.getStatus() == QuestStatus.START) {
             int targetId = env.getTargetId();
             switch (targetId) {
-                case 700290: { //Field Suppressor.
-                    return defaultOnKillEvent(env, 700290, 2, 5);
+                case 702041: { //Baranath Silencer
+                    return defaultOnKillEvent(env, 702041, 2, 5);
                 } case 233865: { //Officer Bakuram.
                     return defaultOnKillEvent(env, 233865, 5, 6);
                 }
