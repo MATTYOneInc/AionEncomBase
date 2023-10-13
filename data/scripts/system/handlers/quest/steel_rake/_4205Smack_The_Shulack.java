@@ -26,7 +26,7 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _4205Smack_The_Shulack extends QuestHandler
 {
 	private final static int questId = 4205;
-	private final static int[] Petrahulk_Sentinel = {215049, 219024};
+	private final static int[] Steel_Rake_Watcher = {218972, 218974, 218975, 218976, 218979};
 	
 	public _4205Smack_The_Shulack() {
 		super(questId);
@@ -43,7 +43,7 @@ public class _4205Smack_The_Shulack extends QuestHandler
 		qe.registerQuestNpc(205233).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204792).addOnTalkEvent(questId);
 		qe.registerQuestNpc(805842).addOnTalkEvent(questId);
-		for (int mob: Petrahulk_Sentinel) {
+		for (int mob: Steel_Rake_Watcher) {
             qe.registerQuestNpc(mob).addOnKillEvent(questId);
         }
 	}
@@ -91,21 +91,7 @@ public class _4205Smack_The_Shulack extends QuestHandler
 	
 	@Override
     public boolean onKillEvent(QuestEnv env) {
-        final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs != null && qs.getStatus() == QuestStatus.START) {
-            int var = qs.getQuestVarById(0);
-            if (var == 0) {
-                int var1 = qs.getQuestVarById(1);
-                if (var1 >= 0 && var1 < 14) {
-                    return defaultOnKillEvent(env, Petrahulk_Sentinel, var1, var1 + 1, 1);
-                } else if (var1 == 14) {
-					qs.setQuestVar(15);
-					updateQuestStatus(env);
-                    return true;
-                }
-            }
-        }
-        return false;
+	int targetId = env.getTargetId();	
+    return defaultOnKillEvent(env, Steel_Rake_Watcher, 0, 15);    
     }
 }
