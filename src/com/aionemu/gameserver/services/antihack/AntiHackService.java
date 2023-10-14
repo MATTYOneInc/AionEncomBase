@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.services.antihack;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.configs.main.SecurityConfig;
 import com.aionemu.gameserver.controllers.movement.MovementMask;
 import com.aionemu.gameserver.controllers.movement.PlayerMoveController;
@@ -32,11 +35,13 @@ import com.aionemu.gameserver.utils.audit.AuditLogger;
 import com.aionemu.gameserver.world.World;
 
 public class AntiHackService {
+	private static final Logger log = LoggerFactory.getLogger(AntiHackService.class);
 
 	public static boolean canMove(Player player, float x, float y, float z, float speed, byte type) {
+
 		AionServerPacket forcedMove = new SM_FORCED_MOVE(player, player.getObjectId(), x, y, z);
 		AionServerPacket normalMove = new SM_MOVE(player);
-		if (player.getAccessLevel() > 3) {
+		if (player.getAccessLevel() > 1) {
 			return true;
 		}
 		if (SecurityConfig.ABNORMAL) {
@@ -52,8 +57,17 @@ public class AntiHackService {
 				player.abnormalHackCounter = 0;
 			}
 		}
+
 		if (SecurityConfig.SPEEDHACK) {
 			if (type != 0) {
+				if (speed > 16000 && player.isFlying()) {
+					log.info("Fly speed is more than 16 debug player: " + player.getName());
+				} else {
+					if (speed > 12000) {
+						log.info("Run speed is more than 12 debug player: " + player.getName());
+					}
+				}
+
 				if (type == -64 || type == -128) {
 					PlayerMoveController m = player.getMoveController();
 					double vector2D = MathUtil.getDistance(x, y, m.getTargetX2(), m.getTargetY2());

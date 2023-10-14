@@ -99,7 +99,7 @@ public class SM_NPC_INFO extends AionServerPacket {
 		writeD(npcId);
 		// fix
 		writeC(npcTypeId);
-		if (_npc.getLifeStats().isAlreadyDead() && _npc.getState() == 47) {
+		if (_npc.getLifeStats().isAlreadyDead()) {
 			_npc.setState(39);
 		}
 		writeH(_npc.getState());
@@ -113,7 +113,6 @@ public class SM_NPC_INFO extends AionServerPacket {
 		if (con.getActivePlayer().isGM()) {
 			Player gm = con.getActivePlayer();
 			if ((gm != null) && (masterName.isEmpty())) {
-				String n = "?" + "?";
 				masterName = "ID: " + npcId;
 			}
 		}
