@@ -4577,22 +4577,22 @@
 	<!-- ArchDaeva Skills 5.0 -->
 	<skill skillId="4709" autoLearn="true" name="Improved Combat Proficiency" minLevel="66" skillLevel="1" race="PC_ALL" classId="ALL"/>
 	<!-- News Skills 4.8 -->
-	<skill skillId="1" autoLearn="true" name="Transformation: White Tiger I" minLevel="10" skillLevel="1" race="ELYOS" classId="RANGER"/>
-	<skill skillId="2" autoLearn="true" name="Transformation: White Tiger II" minLevel="22" skillLevel="1" race="ELYOS" classId="RANGER"/>
-	<skill skillId="3" autoLearn="true" name="Transformation: White Tiger III" minLevel="34" skillLevel="1" race="ELYOS" classId="RANGER"/>
-	<skill skillId="4" autoLearn="true" name="Transformation: White Tiger IV" minLevel="45" skillLevel="1" race="ELYOS" classId="RANGER"/>
-	<skill skillId="5" autoLearn="true" name="Transformation: White Tiger I" minLevel="10" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
-	<skill skillId="6" autoLearn="true" name="Transformation: White Tiger II" minLevel="22" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
-	<skill skillId="7" autoLearn="true" name="Transformation: White Tiger III" minLevel="34" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
-	<skill skillId="8" autoLearn="true" name="Transformation: White Tiger IV" minLevel="45" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
-	<skill skillId="9" autoLearn="true" name="Transformation: Krall I" minLevel="10" skillLevel="1" race="ELYOS" classId="RANGER"/>
-	<skill skillId="10" autoLearn="true" name="Transformation: Krall II" minLevel="22" skillLevel="1" race="ELYOS" classId="RANGER"/>
-	<skill skillId="11" autoLearn="true" name="Transformation: Krall III" minLevel="34" skillLevel="1" race="ELYOS" classId="RANGER"/>
-	<skill skillId="12" autoLearn="true" name="Transformation: Krall IV" minLevel="45" skillLevel="1" race="ELYOS" classId="RANGER"/>
-	<skill skillId="13" autoLearn="true" name="Transformation: Krall I" minLevel="10" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
-	<skill skillId="14" autoLearn="true" name="Transformation: Krall II" minLevel="22" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
-	<skill skillId="15" autoLearn="true" name="Transformation: Krall III" minLevel="34" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
-	<skill skillId="16" autoLearn="true" name="Transformation: Krall IV" minLevel="45" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
+	<skill skillId="1" autoLearn="false" name="Transformation: White Tiger I" minLevel="10" skillLevel="1" race="ELYOS" classId="RANGER"/>
+	<skill skillId="2" autoLearn="false" name="Transformation: White Tiger II" minLevel="22" skillLevel="1" race="ELYOS" classId="RANGER"/>
+	<skill skillId="3" autoLearn="false" name="Transformation: White Tiger III" minLevel="34" skillLevel="1" race="ELYOS" classId="RANGER"/>
+	<skill skillId="4" autoLearn="false" name="Transformation: White Tiger IV" minLevel="45" skillLevel="1" race="ELYOS" classId="RANGER"/>
+	<skill skillId="5" autoLearn="false" name="Transformation: White Tiger I" minLevel="10" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
+	<skill skillId="6" autoLearn="false" name="Transformation: White Tiger II" minLevel="22" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
+	<skill skillId="7" autoLearn="false" name="Transformation: White Tiger III" minLevel="34" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
+	<skill skillId="8" autoLearn="false" name="Transformation: White Tiger IV" minLevel="45" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
+	<skill skillId="9" autoLearn="false" name="Transformation: Krall I" minLevel="10" skillLevel="1" race="ELYOS" classId="RANGER"/>
+	<skill skillId="10" autoLearn="false" name="Transformation: Krall II" minLevel="22" skillLevel="1" race="ELYOS" classId="RANGER"/>
+	<skill skillId="11" autoLearn="false" name="Transformation: Krall III" minLevel="34" skillLevel="1" race="ELYOS" classId="RANGER"/>
+	<skill skillId="12" autoLearn="false" name="Transformation: Krall IV" minLevel="45" skillLevel="1" race="ELYOS" classId="RANGER"/>
+	<skill skillId="13" autoLearn="false" name="Transformation: Krall I" minLevel="10" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
+	<skill skillId="14" autoLearn="false" name="Transformation: Krall II" minLevel="22" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
+	<skill skillId="15" autoLearn="false" name="Transformation: Krall III" minLevel="34" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
+	<skill skillId="16" autoLearn="false" name="Transformation: Krall IV" minLevel="45" skillLevel="1" race="ASMODIANS" classId="RANGER"/>
 	<skill skillId="17" autoLearn="true" name="Sleep: Scarecrow" minLevel="10" skillLevel="1" race="PC_ALL" classId="SORCERER"/>
 	<skill skillId="18" autoLearn="true" name="Sleep: Frightcorn" minLevel="10" skillLevel="1" race="PC_ALL" classId="SORCERER"/>
 	<skill skillId="136" autoLearn="true" name="Increase Max Hp I" minLevel="10" skillLevel="1" race="PC_ALL" classId="ALL"/>
