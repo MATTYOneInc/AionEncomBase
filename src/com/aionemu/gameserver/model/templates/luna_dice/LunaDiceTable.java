@@ -27,19 +27,18 @@ import javax.xml.bind.annotation.XmlType;
  */
 
 @XmlType(name = "LunaDiceTable")
-public class LunaDiceTable
-{
-    @XmlAttribute(name = "id")
-    private int id;
-	
-    @XmlElement(name = "reward")
-    private List<LunaDiceItem> lunaDiceTabItem;
-	
-    public int getId() {
-        return id;
-    }
-	
-    public List<LunaDiceItem> getLunaDiceTabItems() {
-        return lunaDiceTabItem;
-    }
+public class LunaDiceTable {
+	@XmlAttribute(name = "id")
+	private int id;
+
+	@XmlElement(name = "reward")
+	private List<LunaDiceItem> lunaDiceTabItem;
+
+	public int getId() {
+		return id;
+	}
+
+	public List<LunaDiceItem> getLunaDiceTabItems() {
+		return lunaDiceTabItem;
+	}
 }

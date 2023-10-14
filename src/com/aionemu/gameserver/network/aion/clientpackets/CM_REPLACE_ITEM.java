@@ -23,7 +23,8 @@ import com.aionemu.gameserver.services.item.ItemMoveService;
 
 /**
  * @author kosyachok
- * @developer_note_dont_remove Duoc goi bang cach doi item trong thung do va tui do
+ * @developer_note_dont_remove Duoc goi bang cach doi item trong thung do va tui
+ *                             do
  */
 public class CM_REPLACE_ITEM extends AionClientPacket {
 
@@ -47,6 +48,7 @@ public class CM_REPLACE_ITEM extends AionClientPacket {
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
-		ItemMoveService.switchItemsInStorages(player, sourceStorageType, sourceItemObjId, replaceStorageType, replaceItemObjId);
+		ItemMoveService.switchItemsInStorages(player, sourceStorageType, sourceItemObjId, replaceStorageType,
+				replaceItemObjId);
 	}
 }

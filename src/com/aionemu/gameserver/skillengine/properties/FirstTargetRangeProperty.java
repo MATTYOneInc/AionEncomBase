@@ -70,7 +70,7 @@ public class FirstTargetRangeProperty {
 
 		// TODO check for all targets too
 		// Summon Group Member exception
-		if (skill.getSkillTemplate().getSkillId() != 3777) { //4.8
+		if (skill.getSkillTemplate().getSkillId() != 3777) { // 4.8
 			if (!GeoService.getInstance().canSee(effector, firstTarget)) {
 				if (effector instanceof Player) {
 					PacketSendUtility.sendPacket((Player) effector, SM_SYSTEM_MESSAGE.STR_SKILL_OBSTACLE);

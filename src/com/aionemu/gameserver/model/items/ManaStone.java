@@ -23,10 +23,9 @@ import com.aionemu.gameserver.model.gameobjects.PersistentState;
 import com.aionemu.gameserver.model.stats.calc.functions.StatFunction;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 
-public class ManaStone extends ItemStone
-{
+public class ManaStone extends ItemStone {
 	private List<StatFunction> modifiers;
-	
+
 	public ManaStone(int itemObjId, int itemId, int slot, PersistentState persistentState) {
 		super(itemObjId, itemId, slot, persistentState);
 		ItemTemplate stoneTemplate = DataManager.ITEM_DATA.getItemTemplate(itemId);
@@ -34,21 +33,21 @@ public class ManaStone extends ItemStone
 			this.modifiers = stoneTemplate.getModifiers();
 		}
 	}
-	
+
 	public List<StatFunction> getModifiers() {
 		return modifiers;
 	}
-	
+
 	public StatFunction getFirstModifier() {
 		return (modifiers != null && modifiers.size() > 0) ? modifiers.get(0) : null;
 	}
-	
+
 	public boolean isBasic() {
-        return !isAncient();
-    }
-	
-    public boolean isAncient() {
-        return getItemId() >= 167020006 && //Ancient Manastone: HP +105
-		getItemId() <= 167020112; //[Event] Ancient Manastone: Healing Boost +5
-    }
+		return !isAncient();
+	}
+
+	public boolean isAncient() {
+		return getItemId() >= 167020006 && // Ancient Manastone: HP +105
+				getItemId() <= 167020112; // [Event] Ancient Manastone: Healing Boost +5
+	}
 }

@@ -30,48 +30,47 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class DynamicRiftLocation
-{
+public class DynamicRiftLocation {
 	protected int id;
 	protected boolean isActive;
 	protected DynamicRiftTemplate template;
 	protected DynamicRift<DynamicRiftLocation> activeDynamicRift;
 	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
 	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
+
 	public DynamicRiftLocation() {
 	}
-	
+
 	public DynamicRiftLocation(DynamicRiftTemplate template) {
 		this.template = template;
 		this.id = template.getId();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveDynamicRift(DynamicRift<DynamicRiftLocation> dynamicRift) {
 		isActive = dynamicRift != null;
 		this.activeDynamicRift = dynamicRift;
 	}
-	
+
 	public DynamicRift<DynamicRiftLocation> getActiveDynamicRift() {
 		return activeDynamicRift;
 	}
-	
+
 	public final DynamicRiftTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}

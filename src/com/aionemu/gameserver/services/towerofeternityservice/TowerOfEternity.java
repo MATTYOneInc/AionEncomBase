@@ -26,55 +26,58 @@ import com.aionemu.gameserver.services.TowerOfEternityService;
  * Created by Wnkrz on 22/08/2017.
  */
 
-public abstract class TowerOfEternity <TE extends TowerOfEternityLocation>
-{
-    private boolean started;
-    private final TE towerOfEternityLocation;
-    protected abstract void stopTowerOfEternity();
-    protected abstract void startTowerOfEternity();
-    private final AtomicBoolean closed = new AtomicBoolean();
-	
-    public TowerOfEternity(TE towerOfEternityLocation) {
-        this.towerOfEternityLocation = towerOfEternityLocation;
-    }
-	
-    public final void start() {
-        boolean doubleStart = false;
-        synchronized (this) {
-            if (started) {
-                doubleStart = true;
-            } else {
-                started = true;
-            }
-        } if (doubleStart) {
-            return;
-        }
-        startTowerOfEternity();
-    }
-	
-    public final void stop() {
-        if (closed.compareAndSet(false, true)) {
-            stopTowerOfEternity();
-        }
-    }
-	
-    protected void spawn(TowerOfEternityStateType type) {
-        TowerOfEternityService.getInstance().spawn(getTowerOfEternityLocation(), type);
-    }
-	
-    protected void despawn() {
-        TowerOfEternityService.getInstance().despawn(getTowerOfEternityLocation());
-    }
-	
-    public boolean isClosed() {
-        return closed.get();
-    }
-	
-    public TE getTowerOfEternityLocation() {
-        return towerOfEternityLocation;
-    }
-	
-    public int getTowerOfEternityLocationId() {
-        return towerOfEternityLocation.getId();
-    }
+public abstract class TowerOfEternity<TE extends TowerOfEternityLocation> {
+	private boolean started;
+	private final TE towerOfEternityLocation;
+
+	protected abstract void stopTowerOfEternity();
+
+	protected abstract void startTowerOfEternity();
+
+	private final AtomicBoolean closed = new AtomicBoolean();
+
+	public TowerOfEternity(TE towerOfEternityLocation) {
+		this.towerOfEternityLocation = towerOfEternityLocation;
+	}
+
+	public final void start() {
+		boolean doubleStart = false;
+		synchronized (this) {
+			if (started) {
+				doubleStart = true;
+			} else {
+				started = true;
+			}
+		}
+		if (doubleStart) {
+			return;
+		}
+		startTowerOfEternity();
+	}
+
+	public final void stop() {
+		if (closed.compareAndSet(false, true)) {
+			stopTowerOfEternity();
+		}
+	}
+
+	protected void spawn(TowerOfEternityStateType type) {
+		TowerOfEternityService.getInstance().spawn(getTowerOfEternityLocation(), type);
+	}
+
+	protected void despawn() {
+		TowerOfEternityService.getInstance().despawn(getTowerOfEternityLocation());
+	}
+
+	public boolean isClosed() {
+		return closed.get();
+	}
+
+	public TE getTowerOfEternityLocation() {
+		return towerOfEternityLocation;
+	}
+
+	public int getTowerOfEternityLocationId() {
+		return towerOfEternityLocation.getId();
+	}
 }

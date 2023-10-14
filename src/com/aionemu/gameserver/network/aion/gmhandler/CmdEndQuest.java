@@ -33,45 +33,45 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 public class CmdEndQuest extends AbstractGMHandler {
 
-    public CmdEndQuest(Player admin, String params) {
-        super(admin, params);
-        run();
-    }
+	public CmdEndQuest(Player admin, String params) {
+		super(admin, params);
+		run();
+	}
 
-    private void run() {
-        Player t = target != null ? target : admin;
-        
-        if (admin.getClientConnection().getAccount().getAccessLevel() <= PanelConfig.ENDQUEST_PANEL_LEVEL) {
-        	PacketSendUtility.sendMessage(admin, "You haven't access this panel commands");
-        	return;
-        }
+	private void run() {
+		Player t = target != null ? target : admin;
 
-        Integer questID = Integer.parseInt(params);
-        if (questID <= 0) {
-            return;
-        }
+		if (admin.getClientConnection().getAccount().getAccessLevel() <= PanelConfig.ENDQUEST_PANEL_LEVEL) {
+			PacketSendUtility.sendMessage(admin, "You haven't access this panel commands");
+			return;
+		}
 
-        DataManager.getInstance();
-        QuestTemplate qt = DataManager.QUEST_DATA.getQuestById(questID);
-        if (qt == null) {
-            PacketSendUtility.sendMessage(admin, "Quest with ID: " + questID + " was not found");
-            return;
-        }
+		Integer questID = Integer.parseInt(params);
+		if (questID <= 0) {
+			return;
+		}
 
-        QuestStateList list = t.getQuestStateList();
-        if (list == null || list.getQuestState(questID) == null) {
-            PacketSendUtility.sendMessage(admin, "Quest not founded for target " + t.getName());
-            return;
-        }
-        if (list.getQuestState(questID).getStatus() == QuestStatus.COMPLETE) {
-            PacketSendUtility.sendMessage(admin, "Quest allready finished");
-            return;
-        }
-        list.getQuestState(questID).setStatus(QuestStatus.REWARD);
-        t.getController().updateNearbyQuests();
-        QuestEnv env = new QuestEnv(null, t, questID, 0);
-        QuestService.finishQuest(env);
-        PacketSendUtility.sendPacket(t, new SM_QUEST_COMPLETED_LIST(t.getQuestStateList().getAllFinishedQuests()));
-        t.getController().updateNearbyQuests();
-    }
+		DataManager.getInstance();
+		QuestTemplate qt = DataManager.QUEST_DATA.getQuestById(questID);
+		if (qt == null) {
+			PacketSendUtility.sendMessage(admin, "Quest with ID: " + questID + " was not found");
+			return;
+		}
+
+		QuestStateList list = t.getQuestStateList();
+		if (list == null || list.getQuestState(questID) == null) {
+			PacketSendUtility.sendMessage(admin, "Quest not founded for target " + t.getName());
+			return;
+		}
+		if (list.getQuestState(questID).getStatus() == QuestStatus.COMPLETE) {
+			PacketSendUtility.sendMessage(admin, "Quest allready finished");
+			return;
+		}
+		list.getQuestState(questID).setStatus(QuestStatus.REWARD);
+		t.getController().updateNearbyQuests();
+		QuestEnv env = new QuestEnv(null, t, questID, 0);
+		QuestService.finishQuest(env);
+		PacketSendUtility.sendPacket(t, new SM_QUEST_COMPLETED_LIST(t.getQuestStateList().getAllFinishedQuests()));
+		t.getController().updateNearbyQuests();
+	}
 }

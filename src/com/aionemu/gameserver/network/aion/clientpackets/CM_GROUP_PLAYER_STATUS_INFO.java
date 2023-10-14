@@ -24,8 +24,8 @@ import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 
 /**
- * Developer's note please dont remove
- * Duoc goi ra khi trong group va su dung assign group leader khi doi tuong dang offline
+ * Developer's note please dont remove Duoc goi ra khi trong group va su dung
+ * assign group leader khi doi tuong dang offline
  * 
  * @author Lyahim, ATracer, Simple, xTz
  */
@@ -54,14 +54,14 @@ public class CM_GROUP_PLAYER_STATUS_INFO extends AionClientPacket {
 		Player activePlayer = getConnection().getActivePlayer();
 		TeamCommand command = TeamCommand.getCommand(commandCode);
 		switch (command) {
-			case GROUP_SET_LFG:
-				activePlayer.setLookingForGroup(playerObjId == 2);
-				break;
-			case ALLIANCE_CHANGE_GROUP:
-				PlayerAllianceService.changeMemberGroup(activePlayer, playerObjId, secondObjectId, allianceGroupId);
-				break;
-			default:
-				PlayerTeamCommandService.executeCommand(activePlayer, command, playerObjId);
+		case GROUP_SET_LFG:
+			activePlayer.setLookingForGroup(playerObjId == 2);
+			break;
+		case ALLIANCE_CHANGE_GROUP:
+			PlayerAllianceService.changeMemberGroup(activePlayer, playerObjId, secondObjectId, allianceGroupId);
+			break;
+		default:
+			PlayerTeamCommandService.executeCommand(activePlayer, command, playerObjId);
 		}
 	}
 }

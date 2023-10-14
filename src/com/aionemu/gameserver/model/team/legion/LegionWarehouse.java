@@ -54,6 +54,7 @@ public class LegionWarehouse extends Storage {
 	public void increaseKinah(long amount, ItemUpdateType updateType) {
 		throw new UnsupportedOperationException("LWH should be used behind proxy");
 	}
+
 	@Override
 	public boolean tryDecreaseKinah(long amount) {
 		throw new UnsupportedOperationException("LWH should be used behind proxy");

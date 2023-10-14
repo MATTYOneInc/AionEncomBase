@@ -24,13 +24,15 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 /** Rework Ace
  */
 /****/
-public abstract class F2pDAO implements DAO
-{
+public abstract class F2pDAO implements DAO {
 	public abstract void loadF2pInfo(Player player);
+
 	public abstract boolean storeF2p(int playerId, int time);
+
 	public abstract boolean updateF2p(int playerId, int time);
+
 	public abstract boolean deleteF2p(int playerId);
-	
+
 	public String getClassName() {
 		return F2pDAO.class.getName();
 	}

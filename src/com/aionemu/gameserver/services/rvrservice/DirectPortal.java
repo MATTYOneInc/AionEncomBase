@@ -23,19 +23,18 @@ import com.aionemu.gameserver.model.rvr.RvrStateType;
  * @author Rinzler (Encom)
  */
 
-public class DirectPortal extends Rvrlf3df3<RvrLocation>
-{
+public class DirectPortal extends Rvrlf3df3<RvrLocation> {
 	public DirectPortal(RvrLocation rvr) {
 		super(rvr);
 	}
-	
+
 	@Override
 	public void startRvr() {
 		getRvrLocation().setActiveRvr(this);
 		despawn();
 		spawn(RvrStateType.RVR);
 	}
-	
+
 	@Override
 	public void stopRvr() {
 		getRvrLocation().setActiveRvr(null);

@@ -32,25 +32,24 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "landing")
-public class LandingData
-{
-    @XmlElement(name = "landing_location")
-    private List<LandingTemplate> landingTemplates;
-	
-    @XmlTransient
-    private FastMap<Integer, LandingLocation> landing = new FastMap<Integer, LandingLocation>();
-	
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        for (LandingTemplate template : landingTemplates) {
-            landing.put(template.getId(), new LandingLocation(template));
-        }
-    }
-	
-    public int size() {
-        return landing.size();
-    }
-	
-    public FastMap<Integer, LandingLocation> getLandingLocations() {
-        return landing;
-    }
+public class LandingData {
+	@XmlElement(name = "landing_location")
+	private List<LandingTemplate> landingTemplates;
+
+	@XmlTransient
+	private FastMap<Integer, LandingLocation> landing = new FastMap<Integer, LandingLocation>();
+
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		for (LandingTemplate template : landingTemplates) {
+			landing.put(template.getId(), new LandingLocation(template));
+		}
+	}
+
+	public int size() {
+		return landing.size();
+	}
+
+	public FastMap<Integer, LandingLocation> getLandingLocations() {
+		return landing;
+	}
 }

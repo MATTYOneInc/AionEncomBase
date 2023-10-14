@@ -30,6 +30,8 @@ public abstract class PlayerThievesListDAO implements DAO {
 	}
 
 	public abstract ThievesStatusList loadThieves(int playerId);
+
 	public abstract boolean saveNewThieves(ThievesStatusList thieves);
+
 	public abstract void storeThieves(ThievesStatusList thieves);
 }

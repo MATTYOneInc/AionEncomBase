@@ -27,33 +27,32 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Outpost")
-public class OutpostTemplate
-{
-    @XmlAttribute(name = "id")
-    protected int id;
-	
-    @XmlAttribute(name = "world")
-    protected int world;
-	
-    @XmlAttribute(name = "name")
-    protected String nameId;
-	
+public class OutpostTemplate {
+	@XmlAttribute(name = "id")
+	protected int id;
+
+	@XmlAttribute(name = "world")
+	protected int world;
+
+	@XmlAttribute(name = "name")
+	protected String nameId;
+
 	@XmlAttribute(name = "artifact_id")
-    protected int artifactId;
-	
-    public int getId() {
-        return this.id;
-    }
-	
-    public int getWorldId() {
-        return this.world;
-    }
-	
-    public String getName() {
-        return nameId;
-    }
-	
+	protected int artifactId;
+
+	public int getId() {
+		return this.id;
+	}
+
+	public int getWorldId() {
+		return this.world;
+	}
+
+	public String getName() {
+		return nameId;
+	}
+
 	public int getArtifactId() {
 		return artifactId;
-    }
+	}
 }

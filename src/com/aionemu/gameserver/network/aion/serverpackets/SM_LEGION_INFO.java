@@ -51,9 +51,9 @@ public class SM_LEGION_INFO extends AionServerPacket {
 		writeH(legion.getVolunteerPermission());
 		writeQ(legion.getContributionPoints());
 		writeB(new byte[24]);
-        writeS(legion.getLegionDescription());
-        writeC(legion.getLegionJoinType());
-        writeH(legion.getMinLevel());
+		writeS(legion.getLegionDescription());
+		writeC(legion.getLegionJoinType());
+		writeH(legion.getMinLevel());
 		/** Get Announcements List From DB By Legion **/
 		Map<Timestamp, String> announcementList = legion.getAnnouncementList().descendingMap();
 

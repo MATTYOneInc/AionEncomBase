@@ -64,17 +64,17 @@ public class IPConfig {
 			parser.parse(new File(CONFIG_FILE), new DefaultHandler() {
 
 				@Override
-				public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+				public void startElement(String uri, String localName, String qName, Attributes attributes)
+						throws SAXException {
 
 					if (qName.equals("ipconfig")) {
 						try {
 							defaultAddress = InetAddress.getByName(attributes.getValue("default")).getAddress();
+						} catch (UnknownHostException e) {
+							throw new RuntimeException(
+									"Failed to resolve DSN for address: " + attributes.getValue("default"), e);
 						}
-						catch (UnknownHostException e) {
-							throw new RuntimeException("Failed to resolve DSN for address: " + attributes.getValue("default"), e);
-						}
-					}
-					else if (qName.equals("iprange")) {
+					} else if (qName.equals("iprange")) {
 						String min = attributes.getValue("min");
 						String max = attributes.getValue("max");
 						String address = attributes.getValue("address");
@@ -83,8 +83,7 @@ public class IPConfig {
 					}
 				}
 			});
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			log.error("Critical error while parsing ipConfig", e);
 			throw new Error("Can't load ipConfig", e);
 		}

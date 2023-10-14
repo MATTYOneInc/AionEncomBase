@@ -29,7 +29,8 @@ import com.aionemu.gameserver.model.templates.pet.PetTemplate;
 import gnu.trove.map.hash.TIntObjectHashMap;
 
 /**
- * This is a container holding and serving all {@link PetTemplate} instances.<br>
+ * This is a container holding and serving all {@link PetTemplate}
+ * instances.<br>
  * 
  * @author IlBuono
  */
@@ -58,8 +59,7 @@ public class PetData {
 	/**
 	 * /** Returns an {@link PetTemplate} object with given id.
 	 * 
-	 * @param id
-	 *          id of Pet
+	 * @param id id of Pet
 	 * @return PetTemplate object containing data about Pet with that id.
 	 */
 	public PetTemplate getPetTemplate(int id) {

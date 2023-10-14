@@ -86,8 +86,7 @@ public class KnownList {
 		try {
 			forgetObjects();
 			findVisibleObjects();
-		}
-		finally {
+		} finally {
 			lock.unlock();
 		}
 	}
@@ -154,8 +153,7 @@ public class KnownList {
 				}
 				owner.getController().see(object);
 			}
-		}
-		else if (visualObjects.put(object.getObjectId(), object) == null) {
+		} else if (visualObjects.put(object.getObjectId(), object) == null) {
 			owner.getController().see(object);
 		}
 	}
@@ -209,20 +207,21 @@ public class KnownList {
 		for (int i = 0; i < regions.length; i++) {
 			MapRegion r = regions[i];
 			FastMap<Integer, VisibleObject> objects = r.getObjects();
-			for (FastMap.Entry<Integer, VisibleObject> e = objects.head(), mapEnd = objects.tail(); (e = e.getNext()) != mapEnd;) {
+			for (FastMap.Entry<Integer, VisibleObject> e = objects.head(),
+					mapEnd = objects.tail(); (e = e.getNext()) != mapEnd;) {
 				VisibleObject newObject = e.getValue();
 				if (newObject == owner || newObject == null) {
 					continue;
-                }
+				}
 				if (!isAwareOf(newObject)) {
 					continue;
 				}
 				if (knownObjects.containsKey(newObject.getObjectId())) {
 					continue;
-                }
+				}
 				if (!checkObjectInRange(newObject) && !newObject.getKnownList().checkReversedObjectInRange(owner)) {
 					continue;
-                }
+				}
 				/**
 				 * New object is not known.
 				 */
@@ -234,8 +233,7 @@ public class KnownList {
 	}
 
 	/**
-	 * Whether knownlist owner aware of found object (should be kept in
-	 * knownlist)
+	 * Whether knownlist owner aware of found object (should be kept in knownlist)
 	 *
 	 * @param newObject
 	 * @return
@@ -248,13 +246,13 @@ public class KnownList {
 		// check if Z distance is greater than maxZvisibleDistance
 		if (Math.abs(owner.getZ() - newObject.getZ()) > owner.getMaxZVisibleDistance()) {
 			return false;
-        }
+		}
 		return MathUtil.isInRange(owner, newObject, owner.getVisibilityDistance());
 	}
 
 	/**
-	 * Check can be overriden if new object has different known range and that
-	 * value should be used
+	 * Check can be overriden if new object has different known range and that value
+	 * should be used
 	 *
 	 * @param newObject
 	 * @return
@@ -270,7 +268,8 @@ public class KnownList {
 	public int doOnAllNpcs(Visitor<Npc> visitor, int iterationLimit) {
 		int counter = 0;
 		try {
-			for (FastMap.Entry<Integer, VisibleObject> e = knownObjects.head(), mapEnd = knownObjects.tail(); (e = e.getNext()) != mapEnd;) {
+			for (FastMap.Entry<Integer, VisibleObject> e = knownObjects.head(),
+					mapEnd = knownObjects.tail(); (e = e.getNext()) != mapEnd;) {
 				VisibleObject newObject = e.getValue();
 				if (newObject instanceof Npc) {
 					if ((++counter) == iterationLimit) {
@@ -279,8 +278,7 @@ public class KnownList {
 					visitor.visit((Npc) newObject);
 				}
 			}
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			log.error("Exception when running visitor on all npcs" + ex);
 		}
 		return counter;
@@ -293,7 +291,8 @@ public class KnownList {
 	public int doOnAllNpcsWithOwner(VisitorWithOwner<Npc, VisibleObject> visitor, int iterationLimit) {
 		int counter = 0;
 		try {
-			for (FastMap.Entry<Integer, VisibleObject> e = knownObjects.head(), mapEnd = knownObjects.tail(); (e = e.getNext()) != mapEnd;) {
+			for (FastMap.Entry<Integer, VisibleObject> e = knownObjects.head(),
+					mapEnd = knownObjects.tail(); (e = e.getNext()) != mapEnd;) {
 				VisibleObject newObject = e.getValue();
 				if (newObject instanceof Npc) {
 					if ((++counter) == iterationLimit) {
@@ -302,8 +301,7 @@ public class KnownList {
 					visitor.visit((Npc) newObject, owner);
 				}
 			}
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			log.error("Exception when running visitor on all npcs" + ex);
 		}
 		return counter;
@@ -314,28 +312,28 @@ public class KnownList {
 			return;
 		}
 		try {
-			for (FastMap.Entry<Integer, Player> e = knownPlayers.head(), mapEnd = knownPlayers.tail(); (e = e.getNext()) != mapEnd;) {
+			for (FastMap.Entry<Integer, Player> e = knownPlayers.head(),
+					mapEnd = knownPlayers.tail(); (e = e.getNext()) != mapEnd;) {
 				Player player = e.getValue();
 				if (player != null) {
 					visitor.visit(player);
 				}
 			}
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			log.error("Exception when running visitor on all players" + ex);
 		}
 	}
 
 	public void doOnAllObjects(Visitor<VisibleObject> visitor) {
 		try {
-			for (FastMap.Entry<Integer, VisibleObject> e = knownObjects.head(), mapEnd = knownObjects.tail(); (e = e.getNext()) != mapEnd;) {
+			for (FastMap.Entry<Integer, VisibleObject> e = knownObjects.head(),
+					mapEnd = knownObjects.tail(); (e = e.getNext()) != mapEnd;) {
 				VisibleObject newObject = e.getValue();
 				if (newObject != null) {
 					visitor.visit(newObject);
 				}
 			}
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			log.error("Exception when running visitor on all objects" + ex);
 		}
 	}

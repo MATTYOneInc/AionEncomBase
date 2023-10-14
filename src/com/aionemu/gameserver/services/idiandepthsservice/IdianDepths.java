@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.IdianDepthsService;
  * @author Rinzler (Encom)
  */
 
-public abstract class IdianDepths<IL extends IdianDepthsLocation>
-{
+public abstract class IdianDepths<IL extends IdianDepthsLocation> {
 	private boolean started;
 	private final IL idianDepthsLocation;
+
 	protected abstract void stopIdianDepths();
+
 	protected abstract void startIdianDepths();
+
 	private final AtomicBoolean closed = new AtomicBoolean();
-	
+
 	public IdianDepths(IL idianDepthsLocation) {
 		this.idianDepthsLocation = idianDepthsLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class IdianDepths<IL extends IdianDepthsLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startIdianDepths();
 	}
-	
+
 	public final void stop() {
 		if (closed.compareAndSet(false, true)) {
 			stopIdianDepths();
 		}
 	}
-	
+
 	protected void spawn(IdianDepthsStateType type) {
 		IdianDepthsService.getInstance().spawn(getIdianDepthsLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		IdianDepthsService.getInstance().despawn(getIdianDepthsLocation());
 	}
-	
+
 	public boolean isClosed() {
 		return closed.get();
 	}
-	
+
 	public IL getIdianDepthsLocation() {
 		return idianDepthsLocation;
 	}
-	
+
 	public int getIdianDepthsLocationId() {
 		return idianDepthsLocation.getId();
 	}

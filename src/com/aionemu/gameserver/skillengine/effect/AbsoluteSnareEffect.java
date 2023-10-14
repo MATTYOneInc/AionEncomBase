@@ -27,5 +27,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AbsoluteSnareEffect")
 public class AbsoluteSnareEffect extends BuffEffect {
-	
+
 }

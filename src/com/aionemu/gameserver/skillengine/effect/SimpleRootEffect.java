@@ -35,22 +35,21 @@ import com.aionemu.gameserver.world.geo.GeoService;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SimpleRootEffect")
-public class SimpleRootEffect extends EffectTemplate
-{
+public class SimpleRootEffect extends EffectTemplate {
 	@Override
 	public void applyEffect(Effect effect) {
 		effect.addToEffectedController();
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
-        if (effect.getEffected().getEffectController().hasAbnormalEffect(8224) ||
-		    effect.getEffected().getEffectController().hasAbnormalEffect(8678)) {
-            return;
-        }
+		if (effect.getEffected().getEffectController().hasAbnormalEffect(8224)
+				|| effect.getEffected().getEffectController().hasAbnormalEffect(8678)) {
+			return;
+		}
 		super.calculate(effect, StatEnum.STAGGER_RESISTANCE, null);
 	}
-	
+
 	@Override
 	public void startEffect(final Effect effect) {
 		final Creature effected = effect.getEffected();
@@ -65,14 +64,16 @@ public class SimpleRootEffect extends EffectTemplate
 		float y1 = (float) (Math.sin(radian) * 0.7f);
 		float z = effected.getZ();
 		byte intentions = (byte) (CollisionIntention.PHYSICAL.getId() | CollisionIntention.DOOR.getId());
-		Vector3f closestCollision = GeoService.getInstance().getClosestCollision(effected, effector.getX() + x1, effector.getY() + y1, effected.getZ() - 0.4f, false, intentions);
+		Vector3f closestCollision = GeoService.getInstance().getClosestCollision(effected, effector.getX() + x1,
+				effector.getY() + y1, effected.getZ() - 0.4f, false, intentions);
 		x1 = closestCollision.x;
 		y1 = closestCollision.y;
 		z = closestCollision.z;
 		World.getInstance().updatePosition(effected, x1, y1, z, heading, false);
-		PacketSendUtility.broadcastPacketAndReceive(effected, new SM_FORCED_MOVE(effect.getEffector(), effected.getObjectId(), x1, y1, z));
+		PacketSendUtility.broadcastPacketAndReceive(effected,
+				new SM_FORCED_MOVE(effect.getEffector(), effected.getObjectId(), x1, y1, z));
 	}
-	
+
 	@Override
 	public void endEffect(Effect effect) {
 		effect.getEffected().getEffectController().unsetAbnormal(AbnormalState.KNOCKBACK.getId());

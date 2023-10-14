@@ -93,7 +93,8 @@ public class TradeList {
 		requiredKinah = 0;
 
 		for (TradeItem tradeItem : tradeItems) {
-			requiredKinah += PricesService.getKinahForBuy(tradeItem.getItemTemplate().getPrice(), player.getRace()) * tradeItem.getCount() * modifier / 100;
+			requiredKinah += PricesService.getKinahForBuy(tradeItem.getItemTemplate().getPrice(), player.getRace())
+					* tradeItem.getCount() * modifier / 100;
 		}
 		return availableKinah >= requiredKinah;
 	}
@@ -109,9 +110,10 @@ public class TradeList {
 
 		for (TradeItem tradeItem : tradeItems) {
 			Acquisition aquisition = tradeItem.getItemTemplate().getAcquisition();
-			if (aquisition == null || aquisition.getType() != AcquisitionType.ABYSS && aquisition.getType() != AcquisitionType.AP) {
+			if (aquisition == null
+					|| aquisition.getType() != AcquisitionType.ABYSS && aquisition.getType() != AcquisitionType.AP) {
 				continue;
-            }
+			}
 			requiredAp += aquisition.getRequiredAp() * tradeItem.getCount();
 
 			int abysItemId = aquisition.getItemId();
@@ -124,8 +126,7 @@ public class TradeList {
 			}
 			if (alreadyAddedCount == 0) {
 				requiredItems.put(abysItemId, (long) aquisition.getItemCount());
-			}
-			else {
+			} else {
 				requiredItems.put(abysItemId, alreadyAddedCount + aquisition.getItemCount() * tradeItem.getCount());
 			}
 		}
@@ -153,9 +154,10 @@ public class TradeList {
 
 		for (TradeItem tradeItem : tradeItems) {
 			Acquisition aquisition = tradeItem.getItemTemplate().getAcquisition();
-			if (aquisition == null || aquisition.getType() != AcquisitionType.REWARD && aquisition.getType() != AcquisitionType.COUPON) {
+			if (aquisition == null || aquisition.getType() != AcquisitionType.REWARD
+					&& aquisition.getType() != AcquisitionType.COUPON) {
 				continue;
-            }
+			}
 			int itemId = aquisition.getItemId();
 			long alreadyAddedCount = 0;
 			if (requiredItems.containsKey(itemId)) {
@@ -163,8 +165,7 @@ public class TradeList {
 			}
 			if (alreadyAddedCount == 0) {
 				requiredItems.put(itemId, aquisition.getItemCount() * tradeItem.getCount());
-			}
-			else {
+			} else {
 				requiredItems.put(itemId, alreadyAddedCount + aquisition.getItemCount() * tradeItem.getCount());
 			}
 		}

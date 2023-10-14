@@ -25,7 +25,7 @@ public class AttackerCriticalStatus {
 	private int count;
 	private int value;
 	private boolean isPercent;
-	
+
 	public AttackerCriticalStatus(boolean result) {
 		this.result = result;
 	}
@@ -42,7 +42,7 @@ public class AttackerCriticalStatus {
 	public int getCount() {
 		return count;
 	}
-	
+
 	/**
 	 * @param count the count to set
 	 */

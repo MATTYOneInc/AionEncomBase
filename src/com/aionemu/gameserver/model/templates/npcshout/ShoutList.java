@@ -33,7 +33,8 @@ import javax.xml.bind.annotation.XmlType;
  * <p>
  * Java class for ShoutList complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within this class.
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="ShoutList">
@@ -55,19 +56,20 @@ public class ShoutList {
 
 	@XmlElement(name = "shout", required = true)
 	protected List<NpcShout> npcShouts;
-	
+
 	@XmlAttribute(name = "npc_ids", required = true)
 	protected List<Integer> npcIds;
-	
+
 	@XmlAttribute(name = "restrict_world")
 	protected Integer restrictWorld;
 
 	/**
 	 * Gets the value of the npcShouts property.
 	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to
-	 * the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE> method for
-	 * the npcShouts property.
+	 * This accessor method returns a reference to the live list, not a snapshot.
+	 * Therefore any modification you make to the returned list will be present
+	 * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
+	 * for the npcShouts property.
 	 * <p>
 	 * For example, to add a new item, do as follows:
 	 * 
@@ -87,9 +89,10 @@ public class ShoutList {
 	/**
 	 * Gets the value of the npcIds property.
 	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to
-	 * the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE> method for
-	 * the npcIds property.
+	 * This accessor method returns a reference to the live list, not a snapshot.
+	 * Therefore any modification you make to the returned list will be present
+	 * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
+	 * for the npcIds property.
 	 * <p>
 	 * For example, to add a new item, do as follows:
 	 * 
@@ -117,10 +120,10 @@ public class ShoutList {
 		}
 		return restrictWorld;
 	}
-	
-    public void makeNull() {
-        this.npcIds = null;
-        this.npcShouts = null;
-        this.restrictWorld = null;
-    }
+
+	public void makeNull() {
+		this.npcIds = null;
+		this.npcShouts = null;
+		this.restrictWorld = null;
+	}
 }

@@ -24,12 +24,11 @@ import com.aionemu.gameserver.model.conquest.ConquestStateType;
  * @author Rinzler (Encom)
  */
 
-public class Offering extends ConquestOffering<ConquestLocation>
-{
+public class Offering extends ConquestOffering<ConquestLocation> {
 	public Offering(ConquestLocation conquest) {
 		super(conquest);
 	}
-	
+
 	@Override
 	public void startConquest() {
 		getConquestLocation().setActiveConquest(this);
@@ -37,7 +36,7 @@ public class Offering extends ConquestOffering<ConquestLocation>
 		spawn(ConquestStateType.CONQUEST);
 		initConquestBoss();
 	}
-	
+
 	@Override
 	public void stopConquest() {
 		getConquestLocation().setActiveConquest(null);

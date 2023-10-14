@@ -20,8 +20,7 @@ import java.util.regex.Pattern;
 
 import com.aionemu.commons.configuration.Property;
 
-public class NameConfig
-{
+public class NameConfig {
 	@Property(key = "gameserver.name.allow.custom", defaultValue = "false")
 	public static boolean ALLOW_CUSTOM_NAMES;
 	@Property(key = "gameserver.name.characterpattern", defaultValue = "[a-zA-Z]{2,16}")

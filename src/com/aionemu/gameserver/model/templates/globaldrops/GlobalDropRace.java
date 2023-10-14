@@ -28,11 +28,10 @@ import com.aionemu.gameserver.model.Race;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GlobalDropRace")
-public class GlobalDropRace
-{
+public class GlobalDropRace {
 	@XmlAttribute(name = "race", required = true)
 	protected Race race;
-	
+
 	public Race getRace() {
 		return race;
 	}

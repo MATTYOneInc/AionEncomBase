@@ -32,7 +32,7 @@ public class CM_LS_PING extends LsClientPacket {
 
 	@Override
 	protected void readImpl() {
-		//trigger
+		// trigger
 	}
 
 	@Override
@@ -40,8 +40,7 @@ public class CM_LS_PING extends LsClientPacket {
 		int pid = -1;
 		try {
 			pid = Integer.parseInt(ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 		}
 
 		LoginServer.getInstance().sendPacket(new SM_LS_PONG(pid));

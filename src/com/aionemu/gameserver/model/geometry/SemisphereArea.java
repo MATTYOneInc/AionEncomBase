@@ -28,7 +28,7 @@ public class SemisphereArea extends SphereArea {
 	public SemisphereArea(ZoneName zoneName, int worldId, float x, float y, float z, float r) {
 		super(zoneName, worldId, x, y, z, r);
 	}
-	
+
 	@Override
 	public boolean isInside3D(Point3D point) {
 		return this.z < point.getZ() && MathUtil.isIn3dRange(x, y, z, point.getX(), point.getY(), point.getZ(), r);
@@ -53,7 +53,7 @@ public class SemisphereArea extends SphereArea {
 	public float getMaxZ() {
 		return z + r;
 	}
-	
+
 	@Override
 	public double getDistance3D(Point3D point) {
 		return getDistance3D(point.getX(), point.getY(), point.getZ());
@@ -67,7 +67,7 @@ public class SemisphereArea extends SphereArea {
 		}
 		return distance > 0 ? distance : 0;
 	}
-	
+
 	@Override
 	public boolean intersectsRectangle(RectangleArea area) {
 		if ((area.getMaxZ() >= z || z <= area.getMinZ()) && area.getDistance3D(x, y, z) <= r) {

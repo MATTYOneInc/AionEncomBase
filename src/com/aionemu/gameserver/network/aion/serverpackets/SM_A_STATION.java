@@ -25,30 +25,29 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
  * @author Ranastic
  */
 
-public class SM_A_STATION extends AionServerPacket
-{
-    private boolean isFirst = false;
-    private int currentServer = 0;
-    private int newServerId = 0;
-	
-    public SM_A_STATION(int currentServer, int newServerId, boolean first) {
-        this.currentServer = currentServer;
-        this.newServerId = newServerId;
-        this.isFirst = first;
-    }
-	
-    @Override
-    protected void writeImpl(AionConnection con) {
-        Player player = con.getActivePlayer();
-        writeD(newServerId);
-        writeD(currentServer);
-        writeD(player.getObjectId());
-        if (isFirst) {
-            writeD(NetworkConfig.GAMESERVER_ID);
-        } else {
-            writeD(newServerId);
-        }
-        writeD(0);
-        writeD(0);
-    }
+public class SM_A_STATION extends AionServerPacket {
+	private boolean isFirst = false;
+	private int currentServer = 0;
+	private int newServerId = 0;
+
+	public SM_A_STATION(int currentServer, int newServerId, boolean first) {
+		this.currentServer = currentServer;
+		this.newServerId = newServerId;
+		this.isFirst = first;
+	}
+
+	@Override
+	protected void writeImpl(AionConnection con) {
+		Player player = con.getActivePlayer();
+		writeD(newServerId);
+		writeD(currentServer);
+		writeD(player.getObjectId());
+		if (isFirst) {
+			writeD(NetworkConfig.GAMESERVER_ID);
+		} else {
+			writeD(newServerId);
+		}
+		writeD(0);
+		writeD(0);
+	}
 }

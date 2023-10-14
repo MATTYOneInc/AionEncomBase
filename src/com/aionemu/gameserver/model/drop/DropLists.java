@@ -65,24 +65,29 @@ public class DropLists {
 				if (npc.getTemplateId() < min || npc.getTemplateId() > max) {
 					continue;
 				}
-				if (npc.getRace() == Race.ASMODIANS || npc.getRace() == Race.ELYOS || npc.getRace() == Race.PC_LIGHT_CASTLE_DOOR
-					|| npc.getRace() == Race.PC_DARK_CASTLE_DOOR || npc.getRace() == Race.DRAGON_CASTLE_DOOR) {
+				if (npc.getRace() == Race.ASMODIANS || npc.getRace() == Race.ELYOS
+						|| npc.getRace() == Race.PC_LIGHT_CASTLE_DOOR || npc.getRace() == Race.PC_DARK_CASTLE_DOOR
+						|| npc.getRace() == Race.DRAGON_CASTLE_DOOR) {
 					continue;
 				}
 				if (npc.getAi().equals("skillarea") || npc.getAi().equals("trap") || npc.getAi().equals("homing")
-					|| npc.getAi().equals("servant") || npc.getAi().equals("dummy") || npc.getAi().equals("siege_weapon")
-					|| npc.getAi().equals("general") || npc.getAi().equals("noaction") || npc.getAi().equals("siege_gaterepair")
-					|| npc.getAi().equals("siege_mine") || npc.getAi().equals("fortressgate") || npc.getAi().equals("spring")
-					|| npc.getAi().equals("artifact") || npc.getAi().equals("quest_use_item") || npc.getAi().equals("useitem")
-					|| npc.getAi().equals("resurrect") || npc.getAi().equals("portal") || npc.getAi().equals("portal_dialog")
-					|| npc.getAi().equals("kisk") || npc.getAi().equals("marbatacontroller") || npc.getAi().equals("surkana")
-					|| npc.getAi().equals("onedmgperhit") || npc.getAi().equals("feedingmantutu") || npc.getAi().equals("artifact_protector")) {
+						|| npc.getAi().equals("servant") || npc.getAi().equals("dummy")
+						|| npc.getAi().equals("siege_weapon") || npc.getAi().equals("general")
+						|| npc.getAi().equals("noaction") || npc.getAi().equals("siege_gaterepair")
+						|| npc.getAi().equals("siege_mine") || npc.getAi().equals("fortressgate")
+						|| npc.getAi().equals("spring") || npc.getAi().equals("artifact")
+						|| npc.getAi().equals("quest_use_item") || npc.getAi().equals("useitem")
+						|| npc.getAi().equals("resurrect") || npc.getAi().equals("portal")
+						|| npc.getAi().equals("portal_dialog") || npc.getAi().equals("kisk")
+						|| npc.getAi().equals("marbatacontroller") || npc.getAi().equals("surkana")
+						|| npc.getAi().equals("onedmgperhit") || npc.getAi().equals("feedingmantutu")
+						|| npc.getAi().equals("artifact_protector")) {
 					continue;
 				}
 				if (npc.getTribe() == TribeClass.FIELD_OBJECT_ALL && !npc.getAi().equals("chest")) {
 					continue;
 				}
-				
+
 				NpcDrop npcDrop = npc.getNpcDrop();
 				if (npcDrop == null) {
 					continue;
@@ -140,11 +145,9 @@ public class DropLists {
 			StreamResult xmlResult = new StreamResult(out);
 			transFormer.transform(domSource, xmlResult);
 			System.out.println(file.getAbsolutePath());
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 		}
 	}
 }

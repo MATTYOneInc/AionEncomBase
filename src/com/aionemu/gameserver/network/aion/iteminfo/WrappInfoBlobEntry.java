@@ -24,12 +24,11 @@ import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
  * @author Ranastic
  */
 
-public class WrappInfoBlobEntry extends ItemBlobEntry
-{
+public class WrappInfoBlobEntry extends ItemBlobEntry {
 	WrappInfoBlobEntry() {
 		super(ItemBlobType.WRAPP_INFO);
 	}
-	
+
 	@Override
 	public void writeThisBlob(ByteBuffer buf) {
 		if (ownerItem.getItemTemplate().getWrappableCount() > 0 && ownerItem.isPacked()) {
@@ -40,7 +39,7 @@ public class WrappInfoBlobEntry extends ItemBlobEntry
 			writeC(buf, 0);
 		}
 	}
-	
+
 	@Override
 	public int getSize() {
 		return 1;

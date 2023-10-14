@@ -31,8 +31,7 @@ import com.aionemu.gameserver.services.item.CoalescenceService;
  * @author Ranastic
  */
 
-public class CM_COALESCENCE extends AionClientPacket
-{
+public class CM_COALESCENCE extends AionClientPacket {
 	private Logger log = LoggerFactory.getLogger(CM_COALESCENCE.class);
 	private int mainItemObjId;
 	private int materialCount;
@@ -41,27 +40,28 @@ public class CM_COALESCENCE extends AionClientPacket
 	private int upgradedItemObjectId;
 	private int Items;
 	private List<Integer> ItemsList = new ArrayList();
-	
+
 	public CM_COALESCENCE(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
-		materialItemObjId  = new ArrayList<Integer>();
+		materialItemObjId = new ArrayList<Integer>();
 		mainItemObjId = readD();
 		materialCount = readH();
-		for (int i=0;i<materialCount;i++) {
+		for (int i = 0; i < materialCount; i++) {
 			materialItemObjId.add(readD());
 		}
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
 		if (player == null || !player.isSpawned()) {
 			return;
-		} if (player.getController().isInShutdownProgress()) {
+		}
+		if (player.getController().isInShutdownProgress()) {
 			return;
 		}
 		CoalescenceService.getInstance().letsCoalescence(player, mainItemObjId, materialItemObjId);

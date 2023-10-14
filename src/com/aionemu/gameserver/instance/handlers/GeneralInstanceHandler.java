@@ -72,7 +72,7 @@ public class GeneralInstanceHandler implements InstanceHandler {
 
 	@Override
 	public void onOpenDoor(Player player, int door) {
- 	}
+	}
 
 	@Override
 	public void onEnterZone(Player player, ZoneInstance zone) {

@@ -87,8 +87,10 @@ public class GuideHtmlData {
 
 	public GuideTemplate[] getTemplatesFor(PlayerClass playerClass, Race race, int level) {
 		List<GuideTemplate> guideTemplate = new ArrayList<GuideTemplate>();
-		List<GuideTemplate> classRaceSpecificTemplates = templates.get(makeHash(playerClass.ordinal(), race.ordinal(), level));
-		List<GuideTemplate> classSpecificTemplates = templates.get(makeHash(playerClass.ordinal(), Race.PC_ALL.ordinal(), level));
+		List<GuideTemplate> classRaceSpecificTemplates = templates
+				.get(makeHash(playerClass.ordinal(), race.ordinal(), level));
+		List<GuideTemplate> classSpecificTemplates = templates
+				.get(makeHash(playerClass.ordinal(), Race.PC_ALL.ordinal(), level));
 		List<GuideTemplate> raceSpecificTemplates = templates.get(makeHash(CLASS_ALL, race.ordinal(), level));
 		List<GuideTemplate> generalTemplates = templates.get(makeHash(CLASS_ALL, Race.PC_ALL.ordinal(), level));
 
@@ -103,7 +105,7 @@ public class GuideHtmlData {
 		}
 		if (generalTemplates != null) {
 			guideTemplate.addAll(generalTemplates);
-        }
+		}
 		return guideTemplate.toArray(new GuideTemplate[guideTemplate.size()]);
 	}
 

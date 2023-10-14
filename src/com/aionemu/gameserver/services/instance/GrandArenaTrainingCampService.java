@@ -34,101 +34,104 @@ import com.aionemu.gameserver.world.World;
 import javolution.util.FastList;
 
 /****/
-/** Author Rinzler (Encom)
- /****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class GrandArenaTrainingCampService
-{
-    private static final Logger log = LoggerFactory.getLogger(GrandArenaTrainingCampService.class);
-    private boolean registerAvailable;
-    private final FastList<Integer> playersWithCooldown = FastList.newInstance();
-    public static final byte minLevel = 66, capLevel = 76;
-    public static final int maskId = 127;
+public class GrandArenaTrainingCampService {
+	private static final Logger log = LoggerFactory.getLogger(GrandArenaTrainingCampService.class);
+	private boolean registerAvailable;
+	private final FastList<Integer> playersWithCooldown = FastList.newInstance();
+	public static final byte minLevel = 66, capLevel = 76;
+	public static final int maskId = 127;
 
-    public void initGrandArenaTrainingCamp() {
-        if (AutoGroupConfig.GRAND_ARENA_TRAINING_CAMP_ENABLED) {
-            log.info("Grand Arena Training Camp 5.6");
-            //IDTM_LobbyP01 SAT-SUN "6PM-0AM"
-            CronService.getInstance().schedule(new Runnable() {
-                @Override
-                public void run() {
-                    startGrandArenaTrainingCampRegistration();
-                }
-            }, AutoGroupConfig.GRAND_ARENA_TRAINING_CAMP_SCHEDULE_EVENING);
-        }
-    }
+	public void initGrandArenaTrainingCamp() {
+		if (AutoGroupConfig.GRAND_ARENA_TRAINING_CAMP_ENABLED) {
+			log.info("Grand Arena Training Camp 5.6");
+			// IDTM_LobbyP01 SAT-SUN "6PM-0AM"
+			CronService.getInstance().schedule(new Runnable() {
+				@Override
+				public void run() {
+					startGrandArenaTrainingCampRegistration();
+				}
+			}, AutoGroupConfig.GRAND_ARENA_TRAINING_CAMP_SCHEDULE_EVENING);
+		}
+	}
 
-    private void startUregisterGrandArenaTrainingCampTask() {
-        ThreadPoolManager.getInstance().schedule(new Runnable() {
-            @Override
-            public void run() {
-                registerAvailable = false;
-                playersWithCooldown.clear();
-                AutoGroupService.getInstance().unRegisterInstance(maskId);
-                Iterator<Player> iter = World.getInstance().getPlayersIterator();
-                while (iter.hasNext()) {
-                    Player player = iter.next();
-                    if (player.getLevel() > minLevel) {
-                        int instanceMaskId = getInstanceMaskId(player);
-                        if (instanceMaskId > 0) {
-                            PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon, true));
-                        }
-                    }
-                }
-            }
-        }, AutoGroupConfig.GRAND_ARENA_TRAINING_CAMP_TIMER * 60 * 1000);
-    }
+	private void startUregisterGrandArenaTrainingCampTask() {
+		ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				registerAvailable = false;
+				playersWithCooldown.clear();
+				AutoGroupService.getInstance().unRegisterInstance(maskId);
+				Iterator<Player> iter = World.getInstance().getPlayersIterator();
+				while (iter.hasNext()) {
+					Player player = iter.next();
+					if (player.getLevel() > minLevel) {
+						int instanceMaskId = getInstanceMaskId(player);
+						if (instanceMaskId > 0) {
+							PacketSendUtility.sendPacket(player,
+									new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon, true));
+						}
+					}
+				}
+			}
+		}, AutoGroupConfig.GRAND_ARENA_TRAINING_CAMP_TIMER * 60 * 1000);
+	}
 
-    private void startGrandArenaTrainingCampRegistration() {
-        this.registerAvailable = true;
-        startUregisterGrandArenaTrainingCampTask();
-        Iterator<Player> iter = World.getInstance().getPlayersIterator();
-        while (iter.hasNext()) {
-            Player player = iter.next();
-            if (player.getLevel() > minLevel && player.getLevel() < capLevel) {
-                int instanceMaskId = getInstanceMaskId(player);
-                if (instanceMaskId > 0) {
-                    PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-                    //황금의 템페르 훈련소 파티전에 참가할 수 있습니다.
-                    PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INSTANCE_OPEN_IDTM_Lobbyp_01);
-                }
-            }
-        }
-    }
+	private void startGrandArenaTrainingCampRegistration() {
+		this.registerAvailable = true;
+		startUregisterGrandArenaTrainingCampTask();
+		Iterator<Player> iter = World.getInstance().getPlayersIterator();
+		while (iter.hasNext()) {
+			Player player = iter.next();
+			if (player.getLevel() > minLevel && player.getLevel() < capLevel) {
+				int instanceMaskId = getInstanceMaskId(player);
+				if (instanceMaskId > 0) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					// 황금의 템페르 훈련소 파티전에 참가할 수 있습니다.
+					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INSTANCE_OPEN_IDTM_Lobbyp_01);
+				}
+			}
+		}
+	}
 
-    public boolean isGrandArenaTrainingCampAvailable() {
-        return this.registerAvailable;
-    }
+	public boolean isGrandArenaTrainingCampAvailable() {
+		return this.registerAvailable;
+	}
 
-    public byte getInstanceMaskId(Player player) {
-        int level = player.getLevel();
-        if (level < minLevel || level >= capLevel) {
-            return 0;
-        }
-        return maskId;
-    }
+	public byte getInstanceMaskId(Player player) {
+		int level = player.getLevel();
+		if (level < minLevel || level >= capLevel) {
+			return 0;
+		}
+		return maskId;
+	}
 
-    public void addCoolDown(Player player) {
-        this.playersWithCooldown.add(player.getObjectId());
-    }
+	public void addCoolDown(Player player) {
+		this.playersWithCooldown.add(player.getObjectId());
+	}
 
-    public boolean hasCoolDown(Player player) {
-        return this.playersWithCooldown.contains(player.getObjectId());
-    }
+	public boolean hasCoolDown(Player player) {
+		return this.playersWithCooldown.contains(player.getObjectId());
+	}
 
-    public void showWindow(Player player, byte instanceMaskId) {
-        if (getInstanceMaskId(player) != instanceMaskId) {
-            return;
-        } if (!this.playersWithCooldown.contains(player.getObjectId())) {
-            PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId));
-        }
-    }
+	public void showWindow(Player player, byte instanceMaskId) {
+		if (getInstanceMaskId(player) != instanceMaskId) {
+			return;
+		}
+		if (!this.playersWithCooldown.contains(player.getObjectId())) {
+			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId));
+		}
+	}
 
-    private static class SingletonHolder {
-        protected static final GrandArenaTrainingCampService instance = new GrandArenaTrainingCampService();
-    }
+	private static class SingletonHolder {
+		protected static final GrandArenaTrainingCampService instance = new GrandArenaTrainingCampService();
+	}
 
-    public static GrandArenaTrainingCampService getInstance() {
-        return SingletonHolder.instance;
-    }
+	public static GrandArenaTrainingCampService getInstance() {
+		return SingletonHolder.instance;
+	}
 }

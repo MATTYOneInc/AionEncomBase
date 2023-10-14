@@ -28,105 +28,105 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
  * Created by wanke on 12/02/2017.
  */
 
-public abstract class Event implements Runnable
-{
-    public static final int MAX_PRIORITY = 10;
-    public static final int MIN_PRIORITY = 0;
-    public static final int DEFAULT_PRIORITY = 5;
-    private int priority = DEFAULT_PRIORITY;
-    private boolean finished = false;
-	
-    public final void run() {
-        execute();
-    }
-	
-    abstract protected void execute();
-	
-    public final void reset() {
-        finished = false;
-        onReset();
-    }
-	
-    abstract protected void onReset();
-	
-    protected void finish() {
-        finished = true;
-    }
-	
-    public abstract boolean cancel(boolean mayInterruptIfRunning);
-	
-    public int getCooldown() {
-        return 30 * 1000;
-    }
+public abstract class Event implements Runnable {
+	public static final int MAX_PRIORITY = 10;
+	public static final int MIN_PRIORITY = 0;
+	public static final int DEFAULT_PRIORITY = 5;
+	private int priority = DEFAULT_PRIORITY;
+	private boolean finished = false;
 
-    public int getPriority() {
-        return priority;
-    }
+	public final void run() {
+		execute();
+	}
 
-    public void setPriority(int priority) {
-        if (priority > MAX_PRIORITY) {
-            priority = MAX_PRIORITY;
-        } if (priority < MIN_PRIORITY) {
-            priority = MIN_PRIORITY;
-        }
-        this.priority = priority;
-    }
-	
-    public boolean isFinished() {
-        return finished;
-    }
-	
-    protected void announce(Player pl, String msg) {
-        announce(pl, msg, 0);
-    }
-	
-    protected void announce(Collection<Player> players, String msg) {
-        for (Player pl : players) {
-            announce(pl, msg, 0);
-        }
-    }
-	
-    protected void announce(final Player pl, final String msg, int delay) {
-        if (delay > 0) {
-            ThreadPoolManager.getInstance().schedule(new Runnable() {
-                @Override
-                public void run() {
-                    PacketSendUtility.sendSys3Message(pl, "Event", msg);
-                }
-            }, delay);
-        } else {
-            PacketSendUtility.sendSys3Message(pl, "Event", msg);
-        }
-    }
-	
-    protected void announceAll(String msg) {
-        announceAll(msg, 0);
-    }
-	
-    protected void announceAll(final String msg, int delay) {
-        if (delay > 0) {
-            ThreadPoolManager.getInstance().schedule(new Runnable() {
-                @Override
-                public void run() {
-                    World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-                        @Override
-                        public void visit(Player pl) {
-                            if (pl.getBattleground() == null) {
-                                PacketSendUtility.sendSys3Message(pl, "Event", msg);
-                            }
-                        }
-                    });
-                }
-            }, delay);
-        } else {
-            World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-                @Override
-                public void visit(Player pl) {
-                    if (pl.getBattleground() == null) {
-                        PacketSendUtility.sendSys3Message(pl, "Event", msg);
-                    }
-                }
-            });
-        }
-    }
+	abstract protected void execute();
+
+	public final void reset() {
+		finished = false;
+		onReset();
+	}
+
+	abstract protected void onReset();
+
+	protected void finish() {
+		finished = true;
+	}
+
+	public abstract boolean cancel(boolean mayInterruptIfRunning);
+
+	public int getCooldown() {
+		return 30 * 1000;
+	}
+
+	public int getPriority() {
+		return priority;
+	}
+
+	public void setPriority(int priority) {
+		if (priority > MAX_PRIORITY) {
+			priority = MAX_PRIORITY;
+		}
+		if (priority < MIN_PRIORITY) {
+			priority = MIN_PRIORITY;
+		}
+		this.priority = priority;
+	}
+
+	public boolean isFinished() {
+		return finished;
+	}
+
+	protected void announce(Player pl, String msg) {
+		announce(pl, msg, 0);
+	}
+
+	protected void announce(Collection<Player> players, String msg) {
+		for (Player pl : players) {
+			announce(pl, msg, 0);
+		}
+	}
+
+	protected void announce(final Player pl, final String msg, int delay) {
+		if (delay > 0) {
+			ThreadPoolManager.getInstance().schedule(new Runnable() {
+				@Override
+				public void run() {
+					PacketSendUtility.sendSys3Message(pl, "Event", msg);
+				}
+			}, delay);
+		} else {
+			PacketSendUtility.sendSys3Message(pl, "Event", msg);
+		}
+	}
+
+	protected void announceAll(String msg) {
+		announceAll(msg, 0);
+	}
+
+	protected void announceAll(final String msg, int delay) {
+		if (delay > 0) {
+			ThreadPoolManager.getInstance().schedule(new Runnable() {
+				@Override
+				public void run() {
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player pl) {
+							if (pl.getBattleground() == null) {
+								PacketSendUtility.sendSys3Message(pl, "Event", msg);
+							}
+						}
+					});
+				}
+			}, delay);
+		} else {
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player pl) {
+					if (pl.getBattleground() == null) {
+						PacketSendUtility.sendSys3Message(pl, "Event", msg);
+					}
+				}
+			});
+		}
+	}
 }

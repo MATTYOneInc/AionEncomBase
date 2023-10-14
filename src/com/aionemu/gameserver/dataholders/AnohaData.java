@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "anoha")
-public class AnohaData
-{
+public class AnohaData {
 	@XmlElement(name = "anoha_location")
 	private List<AnohaTemplate> anohaTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, AnohaLocation> anoha = new FastMap<Integer, AnohaLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (AnohaTemplate template : anohaTemplates) {
 			anoha.put(template.getId(), new AnohaLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return anoha.size();
 	}
-	
+
 	public FastMap<Integer, AnohaLocation> getAnohaLocations() {
 		return anoha;
 	}

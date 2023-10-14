@@ -74,7 +74,7 @@ public class ExchangeService {
 	public void registerExchange(Player player1, Player player2) {
 		if (!validateParticipants(player1, player2)) {
 			return;
-        }
+		}
 		player1.setTrading(true);
 		player2.setTrading(true);
 
@@ -130,10 +130,10 @@ public class ExchangeService {
 		Exchange currentExchange = getCurrentExchange(activePlayer);
 		if (currentExchange == null || currentExchange.isLocked()) {
 			return;
-        }
+		}
 		if (itemCount < 1) {
 			return;
-        }
+		}
 		// count total amount in inventory
 		long availableCount = activePlayer.getInventory().getKinah();
 
@@ -159,7 +159,7 @@ public class ExchangeService {
 		Item item = activePlayer.getInventory().getItemByObjId(itemObjId);
 		if (item == null) {
 			return;
-        }
+		}
 		Player partner = getCurrentParter(activePlayer);
 		if (partner == null) {
 			return;
@@ -168,31 +168,32 @@ public class ExchangeService {
 			if (!item.isTradeable(activePlayer)) {
 				return;
 			}
-			if (!item.isTradeable(activePlayer) && (item.getWrappableCount() <= item.getItemTemplate().getWrappableCount() && !item.isPacked())) {
+			if (!item.isTradeable(activePlayer)
+					&& (item.getWrappableCount() <= item.getItemTemplate().getWrappableCount() && !item.isPacked())) {
 				return;
 			}
 		}
 
 		if (itemCount < 1) {
 			return;
-        }
+		}
 		if (itemCount > item.getItemCount()) {
 			return;
-        }
+		}
 		Exchange currentExchange = getCurrentExchange(activePlayer);
 
 		if (currentExchange == null) {
 			return;
-        }
+		}
 		if (currentExchange.isLocked()) {
 			return;
-        }
+		}
 		if (currentExchange.isExchangeListFull()) {
 			return;
 		}
-		if(!AdminService.getInstance().canOperate(activePlayer, partner, item, "trade")) {
+		if (!AdminService.getInstance().canOperate(activePlayer, partner, item, "trade")) {
 			return;
-        }
+		}
 		ExchangeItem exchangeItem = currentExchange.getItems().get(item.getObjectId());
 
 		long actuallAddCount = 0;
@@ -201,8 +202,7 @@ public class ExchangeService {
 			Item newItem = null;
 			if (itemCount < item.getItemCount()) {
 				newItem = ItemFactory.newItem(item.getItemId(), itemCount);
-			}
-			else {
+			} else {
 				newItem = item;
 			}
 			exchangeItem = new ExchangeItem(itemObjId, itemCount, newItem);
@@ -215,7 +215,7 @@ public class ExchangeService {
 			// happens with exploits
 			if (item.getItemCount() == exchangeItem.getItemCount()) {
 				return;
-            }
+			}
 			long possibleToAdd = item.getItemCount() - exchangeItem.getItemCount();
 			actuallAddCount = itemCount > possibleToAdd ? possibleToAdd : itemCount;
 			exchangeItem.addCount(actuallAddCount);
@@ -256,7 +256,7 @@ public class ExchangeService {
 	public void confirmExchange(Player activePlayer) {
 		if (activePlayer == null || !activePlayer.isOnline()) {
 			return;
-        }
+		}
 		Exchange currentExchange = getCurrentExchange(activePlayer);
 
 		// TODO: Why is exchange null =/
@@ -290,7 +290,8 @@ public class ExchangeService {
 
 		cleanupExchanges(activePlayer, currentPartner);
 
-		if (!removeItemsFromInventory(activePlayer, exchange1) || !removeItemsFromInventory(currentPartner, exchange2)) {
+		if (!removeItemsFromInventory(activePlayer, exchange1)
+				|| !removeItemsFromInventory(currentPartner, exchange2)) {
 			AuditLogger.info(activePlayer, "Exchange kinah exploit partner: " + currentPartner.getName());
 			return;
 		}
@@ -301,7 +302,8 @@ public class ExchangeService {
 		putItemToInventory(currentPartner, exchange1, exchange2);
 		putItemToInventory(activePlayer, exchange2, exchange1);
 
-		saveManager.add(new ExchangeOpSaveTask(exchange1.getActiveplayer().getObjectId(), exchange2.getActiveplayer().getObjectId(), exchange1.getItemsToUpdate(), exchange2.getItemsToUpdate()));
+		saveManager.add(new ExchangeOpSaveTask(exchange1.getActiveplayer().getObjectId(),
+				exchange2.getActiveplayer().getObjectId(), exchange1.getItemsToUpdate(), exchange2.getItemsToUpdate()));
 	}
 
 	/**
@@ -330,23 +332,23 @@ public class ExchangeService {
 		for (ExchangeItem exchangeItem : exchange.getItems().values()) {
 			Item item = exchangeItem.getItem();
 			Item itemInInventory = inventory.getItemByObjId(exchangeItem.getItemObjId());
-			if(itemInInventory == null) {
+			if (itemInInventory == null) {
 				AuditLogger.info(player, "Try to trade unexisting item.");
 				return false;
 			}
-			
+
 			long itemCount = exchangeItem.getItemCount();
 
 			if (itemCount < itemInInventory.getItemCount()) {
 				inventory.decreaseItemCount(itemInInventory, itemCount);
 				exchange.addItemToUpdate(itemInInventory);
-			}
-			else {
-				//remove from source inventory only
+			} else {
+				// remove from source inventory only
 				inventory.remove(itemInInventory);
 				exchangeItem.setItem(itemInInventory);
-				// release when only part stack was added in the beginning -> full stack in the end
-				if (item.getObjectId() != exchangeItem.getItemObjId()){
+				// release when only part stack was added in the beginning -> full stack in the
+				// end
+				if (item.getObjectId() != exchangeItem.getItemObjId()) {
 					ItemService.releaseItemId(item);
 				}
 				PacketSendUtility.sendPacket(player, new SM_DELETE_ITEM(itemInInventory.getObjectId()));
@@ -420,7 +422,8 @@ public class ExchangeService {
 	}
 
 	/**
-	 * This class is used for storing all items in one shot after any exchange operation
+	 * This class is used for storing all items in one shot after any exchange
+	 * operation
 	 */
 	public static final class ExchangeOpSaveTask implements Runnable {
 

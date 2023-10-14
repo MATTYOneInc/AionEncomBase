@@ -48,20 +48,20 @@ import com.aionemu.gameserver.world.zone.ZoneInstance;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RideAction")
-public class RideAction extends AbstractItemAction
-{
+public class RideAction extends AbstractItemAction {
 	@XmlAttribute(name = "npc_id")
 	protected int npcId;
-	
+
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		if (parentItem == null) {
 			return false;
-		} if (CustomConfig.ENABLE_RIDE_RESTRICTION) {
+		}
+		if (CustomConfig.ENABLE_RIDE_RESTRICTION) {
 			for (ZoneInstance zone : player.getPosition().getMapRegion().getZones(player)) {
 				if (!zone.canRide()) {
-					//You cannot ride here.
-					//You are forced to dismount.
+					// You cannot ride here.
+					// You are forced to dismount.
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_NORIDE_AREA_STOP);
 					return false;
 				}
@@ -69,7 +69,7 @@ public class RideAction extends AbstractItemAction
 		}
 		return true;
 	}
-	
+
 	@Override
 	public void act(final Player player, final Item parentItem, Item targetItem) {
 		player.getController().cancelUseItem();
@@ -77,14 +77,17 @@ public class RideAction extends AbstractItemAction
 			player.unsetPlayerMode(PlayerMode.RIDE);
 			return;
 		}
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemId(), 3000, 0, 0), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+				parentItem.getObjectId(), parentItem.getItemId(), 3000, 0, 0), true);
 		final ItemUseObserver observer = new ItemUseObserver() {
 			@Override
 			public void abort() {
 				player.getController().cancelTask(TaskId.ITEM_USE);
 				player.removeItemCoolDown(parentItem.getItemTemplate().getUseLimits().getDelayId());
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_CANCELED(new DescriptionId(parentItem.getItemTemplate().getNameId())));
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 2, 0), true);
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+						.STR_ITEM_CANCELED(new DescriptionId(parentItem.getItemTemplate().getNameId())));
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+						parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 2, 0), true);
 				player.getObserveController().removeObserver(this);
 			}
 		};
@@ -97,10 +100,13 @@ public class RideAction extends AbstractItemAction
 				player.getObserveController().removeObserver(observer);
 				ItemTemplate itemTemplate = parentItem.getItemTemplate();
 				player.setPlayerMode(PlayerMode.RIDE, getRideInfo());
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(itemTemplate.getNameId())));
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(itemTemplate.getNameId())));
 				PacketSendUtility.broadcastPacket(player, new SM_EMOTION(player, EmotionType.START_EMOTE2, 0, 0), true);
-				PacketSendUtility.broadcastPacket(player, new SM_EMOTION(player, EmotionType.RIDE, 0, getRideInfo().getNpcId()), true);
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemId(), 0, 1, 1), true);
+				PacketSendUtility.broadcastPacket(player,
+						new SM_EMOTION(player, EmotionType.RIDE, 0, getRideInfo().getNpcId()), true);
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+						parentItem.getObjectId(), parentItem.getItemId(), 0, 1, 1), true);
 				player.getController().cancelTask(TaskId.ITEM_USE);
 			}
 		}, 3000));
@@ -135,7 +141,7 @@ public class RideAction extends AbstractItemAction
 		player.getObserveController().addObserver(dotAttackedObserver);
 		player.setRideObservers(dotAttackedObserver);
 	}
-	
+
 	public RideInfo getRideInfo() {
 		return DataManager.RIDE_DATA.getRideInfo(npcId);
 	}

@@ -28,23 +28,22 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_HOUSE_EDIT;
 import com.aionemu.gameserver.questEngine.QuestEngine;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 
-public class CM_HOUSE_DECORATE extends AionClientPacket
-{
+public class CM_HOUSE_DECORATE extends AionClientPacket {
 	int objectId;
 	int templateId;
 	int lineNr;
-	
+
 	public CM_HOUSE_DECORATE(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		objectId = readD();
 		templateId = readD();
 		lineNr = readH();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();

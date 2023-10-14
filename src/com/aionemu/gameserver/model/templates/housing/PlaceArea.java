@@ -26,9 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum PlaceArea {
 
-	ALL,
-	INTERIOR,
-	EXTERIOR;
+	ALL, INTERIOR, EXTERIOR;
 
 	public String value() {
 		return name();

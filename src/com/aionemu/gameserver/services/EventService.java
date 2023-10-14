@@ -78,7 +78,8 @@ public class EventService {
 	/**
 	 * This method is called just after player logged in to the game.<br>
 	 * <br>
-	 * <b><font color='red'>NOTICE: </font>This method must not be called from anywhere else.</b>
+	 * <b><font color='red'>NOTICE: </font>This method must not be called from
+	 * anywhere else.</b>
 	 */
 	public void onPlayerLogin(Player player) {
 		List<Integer> activeStartQuests = new ArrayList<Integer>();
@@ -107,7 +108,7 @@ public class EventService {
 	}
 
 	void StartOrMaintainQuests(Player player, ListIterator<Integer> questList,
-		TIntObjectHashMap<List<EventTemplate>> templateMap, boolean start) {
+			TIntObjectHashMap<List<EventTemplate>> templateMap, boolean start) {
 		while (questList.hasNext()) {
 			int questId = questList.next();
 			QuestState qs = player.getQuestStateList().getQuestState(questId);
@@ -152,10 +153,9 @@ public class EventService {
 						DateTime completed = null;
 						if (qs.getCompleteTime() == null) {
 							completed = new DateTime(0);
-						}
-						else {
+						} else {
 							completed = new DateTime(qs.getCompleteTime().getTime());
-                        }
+						}
 						if (templateMap.containsKey(questId)) {
 							for (EventTemplate et : templateMap.get(questId)) {
 								// recurring event, reset it
@@ -173,13 +173,12 @@ public class EventService {
 					}
 					// re-register quests
 					if (status == QuestStatus.COMPLETE) {
-						PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(questId, status, qs.getQuestVars().getQuestVars()));
-					}
-					else {
+						PacketSendUtility.sendPacket(player,
+								new SM_QUEST_ACTION(questId, status, qs.getQuestVars().getQuestVars()));
+					} else {
 						QuestService.startEventQuest(cookie, status);
 					}
-				}
-				else if (start) {
+				} else if (start) {
 					QuestService.startEventQuest(cookie, status);
 				}
 			}
@@ -193,7 +192,7 @@ public class EventService {
 	public void start() {
 		if (isStarted) {
 			checkTask.cancel(false);
-        }
+		}
 		isStarted = true;
 
 		checkTask = ThreadPoolManager.getInstance().scheduleAtFixedRate(new Runnable() {

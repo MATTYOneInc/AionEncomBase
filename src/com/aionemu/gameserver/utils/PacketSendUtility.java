@@ -28,47 +28,59 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
 import com.aionemu.gameserver.world.zone.SiegeZoneInstance;
 
-public class PacketSendUtility
-{
+public class PacketSendUtility {
 	public static void sendMessage(Player player, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, null, msg, ChatType.GOLDEN_YELLOW));
 	}
+
 	public static void sendWhiteMessage(Player player, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, null, msg, ChatType.WHITE));
 	}
+
 	public static void sendWhiteMessageOnCenter(Player player, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, null, msg, ChatType.WHITE_CENTER));
 	}
+
 	public static void sendYellowMessage(Player player, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, null, msg, ChatType.YELLOW));
 	}
+
 	public static void sendYellowMessageOnCenter(Player player, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, null, msg, ChatType.YELLOW_CENTER));
 	}
+
 	public static void sendBrightYellowMessage(Player player, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, null, msg, ChatType.BRIGHT_YELLOW));
 	}
+
 	public static void sendBrightYellowMessageOnCenter(Player player, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, null, msg, ChatType.BRIGHT_YELLOW_CENTER));
 	}
+
 	public static void sendSys1Message(Player player, String sender, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, sender, msg, ChatType.GROUP_LEADER));
 	}
+
 	public static void sendSys2Message(Player player, String sender, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, null, msg, ChatType.WHITE));
 	}
+
 	public static void sendSys3Message(Player player, String sender, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, sender, msg, ChatType.COMMAND));
 	}
+
 	public static void sendSys4Message(Player player, String sender, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, sender, msg, ChatType.LEGION));
 	}
+
 	public static void sendSys5Message(Player player, String sender, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, sender, msg, ChatType.COALITION));
 	}
+
 	public static void sendSys6Message(Player player, String sender, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, sender, msg, ChatType.LEAGUE));
 	}
+
 	public static void sendWarnMessageOnCenter(Player player, String msg) {
 		sendPacket(player, new SM_MESSAGE(0, null, msg, ChatType.LEAGUE_ALERT));
 	}
@@ -153,7 +165,8 @@ public class PacketSendUtility
 		});
 	}
 
-	public static void broadcastPacket(Player player, final AionServerPacket packet, boolean toSelf, final ObjectFilter<Player> filter) {
+	public static void broadcastPacket(Player player, final AionServerPacket packet, boolean toSelf,
+			final ObjectFilter<Player> filter) {
 		if (toSelf) {
 			sendPacket(player, packet);
 		}
@@ -167,7 +180,8 @@ public class PacketSendUtility
 		});
 	}
 
-	public static void broadcastPacket(final VisibleObject visibleObject, final AionServerPacket packet, final int distance) {
+	public static void broadcastPacket(final VisibleObject visibleObject, final AionServerPacket packet,
+			final int distance) {
 		visibleObject.getKnownList().doOnAllPlayers(new Visitor<Player>() {
 			@Override
 			public void visit(Player p) {

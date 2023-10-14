@@ -32,11 +32,11 @@ public class ComponentElement {
 	protected int itemid;
 	@XmlAttribute
 	protected int quantity;
-	
+
 	public Integer getItemid() {
 		return itemid;
 	}
-	
+
 	public Integer getQuantity() {
 		return quantity;
 	}

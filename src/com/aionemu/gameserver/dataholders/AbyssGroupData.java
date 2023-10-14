@@ -35,28 +35,27 @@ import gnu.trove.map.hash.TIntObjectHashMap;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"abyssGroupattr"})
+@XmlType(name = "", propOrder = { "abyssGroupattr" })
 @XmlRootElement(name = "abyss_groupattrs")
-public class AbyssGroupData
-{
+public class AbyssGroupData {
 	@XmlElement(name = "abyss_groupattr")
 	protected List<AbyssGroupAttr> abyssGroupattr;
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<AbyssGroupAttr> templates = new TIntObjectHashMap<AbyssGroupAttr>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
-		for (AbyssGroupAttr template: abyssGroupattr) {
+		for (AbyssGroupAttr template : abyssGroupattr) {
 			templates.put(template.getBuffId(), template);
 		}
 		abyssGroupattr.clear();
 		abyssGroupattr = null;
 	}
-	
+
 	public int size() {
 		return templates.size();
 	}
-	
+
 	public AbyssGroupAttr getInstanceBonusattr(int buffId) {
 		return templates.get(buffId);
 	}

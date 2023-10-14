@@ -27,12 +27,11 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Component")
-public class Component
-{
+public class Component {
 	@XmlElement(name = "component")
 	protected ArrayList<ComponentElement> component;
-	
+
 	public Collection<ComponentElement> getComponents() {
-		return component != null ? component : Collections.<ComponentElement> emptyList();
+		return component != null ? component : Collections.<ComponentElement>emptyList();
 	}
 }

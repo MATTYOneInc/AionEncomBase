@@ -24,7 +24,8 @@ import com.aionemu.gameserver.geoEngine.math.Plane;
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
 
 /**
- * This class includes some utility methods for computing intersection between bounding volumes and triangles.
+ * This class includes some utility methods for computing intersection between
+ * bounding volumes and triangles.
  *
  * @author Kirill
  */
@@ -46,7 +47,8 @@ public class Intersection {
 		}
 	}
 
-	// private boolean axisTest(float a, float b, float fa, float fb, Vector3f v0, Vector3f v1, )
+	// private boolean axisTest(float a, float b, float fa, float fb, Vector3f v0,
+	// Vector3f v1, )
 	// private boolean axisTestX01(float a, float b, float fa, float fb,
 	// Vector3f center, Vector3f ext,
 	// Vector3f v1, Vector3f v2, Vector3f v3){

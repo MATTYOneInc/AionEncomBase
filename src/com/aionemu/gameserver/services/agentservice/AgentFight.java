@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.AgentService;
  * @author Rinzler (Encom)
  */
 
-public abstract class AgentFight<AL extends AgentLocation>
-{
+public abstract class AgentFight<AL extends AgentLocation> {
 	private boolean started;
 	private final AL agentLocation;
+
 	protected abstract void stopAgentFight();
+
 	protected abstract void startAgentFight();
+
 	private final AtomicBoolean finished = new AtomicBoolean();
-	
+
 	public AgentFight(AL agentLocation) {
 		this.agentLocation = agentLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class AgentFight<AL extends AgentLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startAgentFight();
 	}
-	
+
 	public final void stop() {
 		if (finished.compareAndSet(false, true)) {
 			stopAgentFight();
 		}
 	}
-	
+
 	protected void spawn(AgentStateType type) {
 		AgentService.getInstance().spawn(getAgentLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		AgentService.getInstance().despawn(getAgentLocation());
 	}
-	
+
 	public boolean isFinished() {
 		return finished.get();
 	}
-	
+
 	public AL getAgentLocation() {
 		return agentLocation;
 	}
-	
+
 	public int getAgentLocationId() {
 		return agentLocation.getId();
 	}

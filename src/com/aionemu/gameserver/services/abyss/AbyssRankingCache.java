@@ -37,13 +37,12 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 
 import javolution.util.FastMap;
 
-public class AbyssRankingCache
-{
+public class AbyssRankingCache {
 	private static final Logger log = LoggerFactory.getLogger(AbyssRankingCache.class);
 	private int lastUpdate;
 	private final FastMap<Race, List<SM_ABYSS_RANKING_PLAYERS>> players = new FastMap<Race, List<SM_ABYSS_RANKING_PLAYERS>>();
 	private final FastMap<Race, SM_ABYSS_RANKING_LEGIONS> legions = new FastMap<Race, SM_ABYSS_RANKING_LEGIONS>();
-	
+
 	public void reloadRankings() {
 		log.info("Updating abyss ranking cache");
 		this.lastUpdate = (int) (System.currentTimeMillis() / 1000);
@@ -58,7 +57,7 @@ public class AbyssRankingCache
 			}
 		});
 	}
-	
+
 	private void renewLegionRanking() {
 		Map<Integer, Integer> newLegionRankingCache = new HashMap<Integer, Integer>();
 		ArrayList<AbyssRankingResult> elyosRanking = getDAO().getAbyssRankingLegions(Race.ELYOS);
@@ -74,14 +73,14 @@ public class AbyssRankingCache
 		}
 		LegionService.getInstance().performRankingUpdate(newLegionRankingCache);
 	}
-	
+
 	private void renewPlayerRanking(Race race) {
 		List<SM_ABYSS_RANKING_PLAYERS> newlyCalculated;
-        newlyCalculated = generatePacketsForRace(race);
-        players.remove(race);
-        players.put(race, newlyCalculated);
+		newlyCalculated = generatePacketsForRace(race);
+		players.remove(race);
+		players.put(race, newlyCalculated);
 	}
-	
+
 	private List<SM_ABYSS_RANKING_PLAYERS> generatePacketsForRace(Race race) {
 		ArrayList<AbyssRankingResult> list = getDAO().getAbyssRankingPlayers(race);
 		int page = 1;
@@ -90,33 +89,34 @@ public class AbyssRankingCache
 			if (list.size() > i + 44) {
 				playerPackets.add(new SM_ABYSS_RANKING_PLAYERS(lastUpdate, list.subList(i, i + 44), race, page, false));
 			} else {
-				playerPackets.add(new SM_ABYSS_RANKING_PLAYERS(lastUpdate, list.subList(i, list.size()), race, page, true));
+				playerPackets
+						.add(new SM_ABYSS_RANKING_PLAYERS(lastUpdate, list.subList(i, list.size()), race, page, true));
 			}
 			page++;
 		}
 		return playerPackets;
 	}
-	
+
 	public List<SM_ABYSS_RANKING_PLAYERS> getPlayers(Race race) {
 		return players.get(race);
 	}
-	
+
 	public SM_ABYSS_RANKING_LEGIONS getLegions(Race race) {
 		return legions.get(race);
 	}
-	
+
 	public int getLastUpdate() {
 		return lastUpdate;
 	}
-	
+
 	private AbyssRankDAO getDAO() {
 		return DAOManager.getDAO(AbyssRankDAO.class);
 	}
-	
+
 	public static final AbyssRankingCache getInstance() {
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder {
 		protected static final AbyssRankingCache INSTANCE = new AbyssRankingCache();
 	}

@@ -42,7 +42,7 @@ public class SM_QUIT_RESPONSE extends AionServerPacket {
 	protected void writeImpl(AionConnection con) {
 		writeD(edit_mode ? 2 : 1);// 1 normal, 2 plastic surgery/gender switch
 		writeC(0x00);// unk
-		writeC(0xFF);//why sometime 0x2e?
+		writeC(0xFF);// why sometime 0x2e?
 		writeC(0xFF);
 		writeC(0xFF);
 		writeC(0xFF);

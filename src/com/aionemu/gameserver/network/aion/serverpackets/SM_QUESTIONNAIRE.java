@@ -20,8 +20,8 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 /**
- * Sends Survey HTML data to the client. This packet can be splitted over max 255 packets The max length of the HTML may
- * therefore be 255 * 65525 byte
+ * Sends Survey HTML data to the client. This packet can be splitted over max
+ * 255 packets The max length of the HTML may therefore be 255 * 65525 byte
  * 
  * @author lhw and Kaipo
  */

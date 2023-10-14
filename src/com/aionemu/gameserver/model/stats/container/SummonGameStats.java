@@ -67,9 +67,9 @@ public class SummonGameStats extends CreatureGameStats<Summon> {
 	}
 
 	@Override
-    public Stat2 getAllSpeed() {
-        return getStat(StatEnum.ALLSPEED, 7500);
-    }
+	public Stat2 getAllSpeed() {
+		return getStat(StatEnum.ALLSPEED, 7500);
+	}
 
 	@Override
 	public Stat2 getStat(StatEnum statEnum, int base) {
@@ -77,30 +77,30 @@ public class SummonGameStats extends CreatureGameStats<Summon> {
 		if (owner.getMaster() == null)
 			return stat;
 		switch (statEnum) {
-			case MAXHP:
-				stat.setBonusRate(0.5f);
-				return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
-			case BOOST_MAGICAL_SKILL:
-			case MAGIC_SKILL_BOOST_RESIST:
-				stat.setBonusRate(0.8f);
-				return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
-			case PHYSICAL_ATTACK:
-				stat.setBonusRate(0.3f);
-				return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
-			case PHYSICAL_DEFENSE:
-			case EVASION:
-			case MAGICAL_ACCURACY:
-			case MAGICAL_RESIST:
-				stat.setBonusRate(0.5f);
-				return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
-			case PHYSICAL_ACCURACY:
-				stat.setBonusRate(0.5f);
-				owner.getMaster().getGameStats().getItemStatBoost(StatEnum.MAIN_HAND_ACCURACY, stat);
-				return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
-			case PHYSICAL_CRITICAL:
-				stat.setBonusRate(0.5f);
-				owner.getMaster().getGameStats().getItemStatBoost(StatEnum.MAIN_HAND_CRITICAL, stat);
-				return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
+		case MAXHP:
+			stat.setBonusRate(0.5f);
+			return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
+		case BOOST_MAGICAL_SKILL:
+		case MAGIC_SKILL_BOOST_RESIST:
+			stat.setBonusRate(0.8f);
+			return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
+		case PHYSICAL_ATTACK:
+			stat.setBonusRate(0.3f);
+			return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
+		case PHYSICAL_DEFENSE:
+		case EVASION:
+		case MAGICAL_ACCURACY:
+		case MAGICAL_RESIST:
+			stat.setBonusRate(0.5f);
+			return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
+		case PHYSICAL_ACCURACY:
+			stat.setBonusRate(0.5f);
+			owner.getMaster().getGameStats().getItemStatBoost(StatEnum.MAIN_HAND_ACCURACY, stat);
+			return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
+		case PHYSICAL_CRITICAL:
+			stat.setBonusRate(0.5f);
+			owner.getMaster().getGameStats().getItemStatBoost(StatEnum.MAIN_HAND_CRITICAL, stat);
+			return owner.getMaster().getGameStats().getItemStatBoost(statEnum, stat);
 
 		}
 		return stat;
@@ -110,68 +110,81 @@ public class SummonGameStats extends CreatureGameStats<Summon> {
 	public Stat2 getMaxHp() {
 		return getStat(StatEnum.MAXHP, statsTemplate.getMaxHp());
 	}
+
 	@Override
 	public Stat2 getMaxMp() {
 		return getStat(StatEnum.MAXHP, statsTemplate.getMaxMp());
 	}
+
 	@Override
-    public Stat2 getStrikeResist() {
-        return getStat(StatEnum.PHYSICAL_CRITICAL_RESIST, 0);
-    }
+	public Stat2 getStrikeResist() {
+		return getStat(StatEnum.PHYSICAL_CRITICAL_RESIST, 0);
+	}
+
 	@Override
-    public Stat2 getStrikeFort() {
-        return getStat(StatEnum.PHYSICAL_CRITICAL_DAMAGE_REDUCE, 0);
-    }
+	public Stat2 getStrikeFort() {
+		return getStat(StatEnum.PHYSICAL_CRITICAL_DAMAGE_REDUCE, 0);
+	}
+
 	@Override
-    public Stat2 getSpellResist() {
-        return getStat(StatEnum.MAGICAL_CRITICAL_RESIST, 0);
-    }
+	public Stat2 getSpellResist() {
+		return getStat(StatEnum.MAGICAL_CRITICAL_RESIST, 0);
+	}
+
 	@Override
-    public Stat2 getSpellFort() {
-        return getStat(StatEnum.MAGICAL_CRITICAL_DAMAGE_REDUCE, 0);
-    }
+	public Stat2 getSpellFort() {
+		return getStat(StatEnum.MAGICAL_CRITICAL_DAMAGE_REDUCE, 0);
+	}
+
 	@Override
-    public Stat2 getBCastingTime() {
-        return getStat(StatEnum.BOOST_CASTING_TIME, 1000);
-    }
+	public Stat2 getBCastingTime() {
+		return getStat(StatEnum.BOOST_CASTING_TIME, 1000);
+	}
+
 	@Override
 	public Stat2 getConcentration() {
-        return getStat(StatEnum.CONCENTRATION, 0);
-    }
+		return getStat(StatEnum.CONCENTRATION, 0);
+	}
+
 	@Override
 	public Stat2 getRootResistance() {
-        return getStat(StatEnum.ROOT_RESISTANCE, 0);
-    }
+		return getStat(StatEnum.ROOT_RESISTANCE, 0);
+	}
+
 	@Override
 	public Stat2 getSnareResistance() {
-        return getStat(StatEnum.SNARE_RESISTANCE, 0);
-    }
+		return getStat(StatEnum.SNARE_RESISTANCE, 0);
+	}
+
 	@Override
 	public Stat2 getBindResistance() {
-        return getStat(StatEnum.BIND_RESISTANCE, 0);
-    }
+		return getStat(StatEnum.BIND_RESISTANCE, 0);
+	}
+
 	@Override
 	public Stat2 getFearResistance() {
-        return getStat(StatEnum.FEAR_RESISTANCE, 0);
-    }
+		return getStat(StatEnum.FEAR_RESISTANCE, 0);
+	}
+
 	@Override
 	public Stat2 getSleepResistance() {
-        return getStat(StatEnum.SLEEP_RESISTANCE, 0);
-    }
+		return getStat(StatEnum.SLEEP_RESISTANCE, 0);
+	}
+
 	@Override
 	public Stat2 getAttackSpeed() {
 		return getStat(StatEnum.ATTACK_SPEED, owner.getObjectTemplate().getAttackDelay());
 	}
 
 	@Override
-    public Stat2 getMovementSpeed() {
-        int bonusSpeed = 0;
-        Player master = owner.getMaster();
-        if (master != null && (master.isInFlyingState() || master.isInState(CreatureState.GLIDING))) {
-            bonusSpeed += 3000;
-        }
-        return getStat(StatEnum.SPEED, Math.round(statsTemplate.getRunSpeed() * 1000) + bonusSpeed);
-    }
+	public Stat2 getMovementSpeed() {
+		int bonusSpeed = 0;
+		Player master = owner.getMaster();
+		if (master != null && (master.isInFlyingState() || master.isInState(CreatureState.GLIDING))) {
+			bonusSpeed += 3000;
+		}
+		return getStat(StatEnum.SPEED, Math.round(statsTemplate.getRunSpeed() * 1000) + bonusSpeed);
+	}
 
 	@Override
 	public Stat2 getAttackRange() {
@@ -183,7 +196,7 @@ public class SummonGameStats extends CreatureGameStats<Summon> {
 		return getStat(StatEnum.PHYSICAL_DEFENSE, statsTemplate.getPdefense());
 	}
 
-    @Override
+	@Override
 	public Stat2 getMDef() {
 		return getStat(StatEnum.MAGICAL_DEFEND, 0);
 	}
@@ -193,7 +206,7 @@ public class SummonGameStats extends CreatureGameStats<Summon> {
 		return getStat(StatEnum.MAGICAL_RESIST, statsTemplate.getMresist());
 	}
 
-    @Override
+	@Override
 	public Stat2 getMBResist() {
 		int base = 0;
 		return getStat(StatEnum.MAGIC_SKILL_BOOST_RESIST, base);
@@ -263,20 +276,20 @@ public class SummonGameStats extends CreatureGameStats<Summon> {
 	public Stat2 getMAttack() {
 		return getStat(StatEnum.MAGICAL_ATTACK, 100);
 	}
-	
+
 	@Override
 	public Stat2 getMainHandMAttack() {
 		return getStat(StatEnum.MAGICAL_ATTACK, 100);
 	}
 
 	@Override
-	public Stat2 getOffHandMAttack(){
-		return getStat(StatEnum.MAGICAL_ATTACK,0);
+	public Stat2 getOffHandMAttack() {
+		return getStat(StatEnum.MAGICAL_ATTACK, 0);
 	}
 
 	@Override
 	public Stat2 getMBoost() {
-        return getStat(StatEnum.BOOST_MAGICAL_SKILL, 0);
+		return getStat(StatEnum.BOOST_MAGICAL_SKILL, 0);
 	}
 
 	@Override

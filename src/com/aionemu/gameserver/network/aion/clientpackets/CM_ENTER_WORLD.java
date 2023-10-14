@@ -22,7 +22,8 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.services.player.PlayerEnterWorldService;
 
 /**
- * In this packets aion client is asking if given char [by oid] may login into game [ie start playing].
+ * In this packets aion client is asking if given char [by oid] may login into
+ * game [ie start playing].
  * 
  * @author -Nemesiss-, Avol
  */

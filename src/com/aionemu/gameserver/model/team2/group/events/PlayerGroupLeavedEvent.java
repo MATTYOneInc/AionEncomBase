@@ -34,77 +34,79 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
  */
 public class PlayerGroupLeavedEvent extends PlayerLeavedEvent<PlayerGroupMember, PlayerGroup> {
 
-    public PlayerGroupLeavedEvent(PlayerGroup alliance, Player player) {
-        super(alliance, player);
-    }
+	public PlayerGroupLeavedEvent(PlayerGroup alliance, Player player) {
+		super(alliance, player);
+	}
 
-    public PlayerGroupLeavedEvent(PlayerGroup team, Player player, PlayerLeavedEvent.LeaveReson reason, String banPersonName) {
-        super(team, player, reason, banPersonName);
-    }
+	public PlayerGroupLeavedEvent(PlayerGroup team, Player player, PlayerLeavedEvent.LeaveReson reason,
+			String banPersonName) {
+		super(team, player, reason, banPersonName);
+	}
 
-    public PlayerGroupLeavedEvent(PlayerGroup alliance, Player player, PlayerLeavedEvent.LeaveReson reason) {
-        super(alliance, player, reason);
-    }
+	public PlayerGroupLeavedEvent(PlayerGroup alliance, Player player, PlayerLeavedEvent.LeaveReson reason) {
+		super(alliance, player, reason);
+	}
 
-    @Override
-    public void handleEvent() {
-        team.removeMember(leavedPlayer.getObjectId());
+	@Override
+	public void handleEvent() {
+		team.removeMember(leavedPlayer.getObjectId());
 
-        if (leavedPlayer.isMentor()) {
-            team.onEvent(new PlayerGroupStopMentoringEvent(team, leavedPlayer));
-        }
-        team.apply(this);
+		if (leavedPlayer.isMentor()) {
+			team.onEvent(new PlayerGroupStopMentoringEvent(team, leavedPlayer));
+		}
+		team.apply(this);
 
-        PacketSendUtility.sendPacket(leavedPlayer, new SM_LEAVE_GROUP_MEMBER());
-        switch (reason) {
-            case BAN:
-            case LEAVE:
-                // PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_PARTY_SECEDE); // client side?
-                if (team.onlineMembers() <= 1) {
-                    PlayerGroupService.disband(team);
-                } else {
-                    if (leavedPlayer.equals(team.getLeader().getObject())) {
-                        team.onEvent(new ChangeGroupLeaderEvent(team));
-                    }
-                }
-                if (reason == LeaveReson.BAN) {
-                    PacketSendUtility.sendPacket(leavedPlayer, SM_SYSTEM_MESSAGE.STR_PARTY_YOU_ARE_BANISHED);
-                }
-                break;
-            case DISBAND:
-                PacketSendUtility.sendPacket(leavedPlayer, SM_SYSTEM_MESSAGE.STR_PARTY_IS_DISPERSED);
-                break;
-        }
+		PacketSendUtility.sendPacket(leavedPlayer, new SM_LEAVE_GROUP_MEMBER());
+		switch (reason) {
+		case BAN:
+		case LEAVE:
+			// PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_PARTY_SECEDE); //
+			// client side?
+			if (team.onlineMembers() <= 1) {
+				PlayerGroupService.disband(team);
+			} else {
+				if (leavedPlayer.equals(team.getLeader().getObject())) {
+					team.onEvent(new ChangeGroupLeaderEvent(team));
+				}
+			}
+			if (reason == LeaveReson.BAN) {
+				PacketSendUtility.sendPacket(leavedPlayer, SM_SYSTEM_MESSAGE.STR_PARTY_YOU_ARE_BANISHED);
+			}
+			break;
+		case DISBAND:
+			PacketSendUtility.sendPacket(leavedPlayer, SM_SYSTEM_MESSAGE.STR_PARTY_IS_DISPERSED);
+			break;
+		}
 
-        if (leavedPlayer.isInInstance()) {
-            ThreadPoolManager.getInstance().schedule(new Runnable() {
-                @Override
-                public void run() {
-                    if (!leavedPlayer.isInGroup2()) {
-                        if (leavedPlayer.getPosition().getWorldMapInstance().getRegisteredGroup() != null) {
-                            InstanceService.moveToExitPoint(leavedPlayer);
-                        }
-                    }
-                }
-            }, 10000);
-        }
-    }
+		if (leavedPlayer.isInInstance()) {
+			ThreadPoolManager.getInstance().schedule(new Runnable() {
+				@Override
+				public void run() {
+					if (!leavedPlayer.isInGroup2()) {
+						if (leavedPlayer.getPosition().getWorldMapInstance().getRegisteredGroup() != null) {
+							InstanceService.moveToExitPoint(leavedPlayer);
+						}
+					}
+				}
+			}, 10000);
+		}
+	}
 
-    @Override
-    public boolean apply(PlayerGroupMember member) {
-        Player player = member.getObject();
-        PacketSendUtility.sendPacket(player, new SM_GROUP_MEMBER_INFO(team, leavedPlayer, GroupEvent.LEAVE));
+	@Override
+	public boolean apply(PlayerGroupMember member) {
+		Player player = member.getObject();
+		PacketSendUtility.sendPacket(player, new SM_GROUP_MEMBER_INFO(team, leavedPlayer, GroupEvent.LEAVE));
 
-        switch (reason) {
-            case LEAVE:
-            case DISBAND:
-                PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_PARTY_HE_LEAVE_PARTY(leavedPlayer.getName()));
-                break;
-            case BAN:
-                // TODO find out empty strings (Retail has +2 empty strings
-                PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_PARTY_HE_IS_BANISHED(leavedPlayer.getName()));
-                break;
-        }
-        return true;
-    }
+		switch (reason) {
+		case LEAVE:
+		case DISBAND:
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_PARTY_HE_LEAVE_PARTY(leavedPlayer.getName()));
+			break;
+		case BAN:
+			// TODO find out empty strings (Retail has +2 empty strings
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_PARTY_HE_IS_BANISHED(leavedPlayer.getName()));
+			break;
+		}
+		return true;
+	}
 }

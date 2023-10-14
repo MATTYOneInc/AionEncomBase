@@ -24,14 +24,16 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlType;
 
- /**
+/**
  * @Rework MATTY (ADev.Team)
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PeriodicActions", propOrder = "periodicActions")
 public class PeriodicActions {
 
-	@XmlElements({ @XmlElement(name = "hpuse", type = HpUsePeriodicAction.class), @XmlElement(name = "mpuse", type = MpUsePeriodicAction.class), @XmlElement(name = "dpuse", type = DpUsePeriodicAction.class) })
+	@XmlElements({ @XmlElement(name = "hpuse", type = HpUsePeriodicAction.class),
+			@XmlElement(name = "mpuse", type = MpUsePeriodicAction.class),
+			@XmlElement(name = "dpuse", type = DpUsePeriodicAction.class) })
 	protected List<PeriodicAction> periodicActions;
 	@XmlAttribute(name = "checktime")
 	protected int checktime;

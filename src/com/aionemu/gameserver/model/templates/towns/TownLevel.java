@@ -42,7 +42,7 @@ public class TownLevel {
 	public int getLevel() {
 		return level;
 	}
-	
+
 	/**
 	 * @return the spawn
 	 */

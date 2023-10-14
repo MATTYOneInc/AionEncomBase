@@ -129,8 +129,7 @@ public class DropRegistrationService {
 				if (!list.isEmpty()) {
 					currentDrop.getDropGroup().addAll(list);
 				}
-			}
-			else {
+			} else {
 				npcTemplate.setNpcDrop(drop);
 			}
 		}
@@ -153,7 +152,8 @@ public class DropRegistrationService {
 		int dropChance = 100;
 		int npcLevel = npc.getLevel();
 		boolean isChest = npc.getAi2().getName().equals("chest");
-		if (!DropConfig.DISABLE_DROP_REDUCTION && ((isChest && npcLevel != 1 || !isChest)) && !noReductionMaps.contains(npc.getWorldId())) {
+		if (!DropConfig.DISABLE_DROP_REDUCTION && ((isChest && npcLevel != 1 || !isChest))
+				&& !noReductionMaps.contains(npc.getWorldId())) {
 			dropChance = DropRewardEnum.dropRewardFrom(npcLevel - heighestLevel); // reduce chance depending on level
 		}
 
@@ -168,34 +168,35 @@ public class DropRegistrationService {
 			LootGroupRules lootGrouRules = player.getLootGroupRules();
 
 			switch (lootGrouRules.getLootRule()) {
-				case ROUNDROBIN:
-					int size = groupMembers.size();
-					if (size > lootGrouRules.getNrRoundRobin()) {
-						lootGrouRules.setNrRoundRobin(lootGrouRules.getNrRoundRobin() + 1);
-					} else {
-						lootGrouRules.setNrRoundRobin(1);
-                    }
-					int i = 0;
-					for (Player p : groupMembers) {
-						i++;
-						if (i == lootGrouRules.getNrRoundRobin()) {
-							winningPlayers.add(p);
-							winnerObj = p.getObjectId();
-							setItemsToWinner(droppedItems, winnerObj);
-							genesis = p;
-							break;
-						}
+			case ROUNDROBIN:
+				int size = groupMembers.size();
+				if (size > lootGrouRules.getNrRoundRobin()) {
+					lootGrouRules.setNrRoundRobin(lootGrouRules.getNrRoundRobin() + 1);
+				} else {
+					lootGrouRules.setNrRoundRobin(1);
+				}
+				int i = 0;
+				for (Player p : groupMembers) {
+					i++;
+					if (i == lootGrouRules.getNrRoundRobin()) {
+						winningPlayers.add(p);
+						winnerObj = p.getObjectId();
+						setItemsToWinner(droppedItems, winnerObj);
+						genesis = p;
+						break;
 					}
+				}
 				break;
-				case FREEFORALL:
-					winningPlayers = groupMembers;
+			case FREEFORALL:
+				winningPlayers = groupMembers;
 				break;
-				case LEADER:
-					Player leader = player.isInGroup2() ? player.getPlayerGroup2().getLeaderObject() : player.getPlayerAlliance2().getLeaderObject();
-					winningPlayers.add(leader);
-					winnerObj = leader.getObjectId();
-					setItemsToWinner(droppedItems, winnerObj);
-					genesis = leader;
+			case LEADER:
+				Player leader = player.isInGroup2() ? player.getPlayerGroup2().getLeaderObject()
+						: player.getPlayerAlliance2().getLeaderObject();
+				winningPlayers.add(leader);
+				winnerObj = leader.getObjectId();
+				setItemsToWinner(droppedItems, winnerObj);
+				genesis = leader;
 				break;
 			}
 
@@ -208,8 +209,7 @@ public class DropRegistrationService {
 			dropNpc.setPlayersObjectId(dropMembers);
 			dropNpc.setInRangePlayers(groupMembers);
 			dropNpc.setGroupSize(groupMembers.size());
-		}
-		else {
+		} else {
 			List<Integer> singlePlayer = new ArrayList<Integer>();
 			singlePlayer.add(player.getObjectId());
 			dropPlayers.add(player);
@@ -220,7 +220,9 @@ public class DropRegistrationService {
 		boostDropRate += genesis.getGameStats().getStat(StatEnum.DR_BOOST, 100).getCurrent() / 100f;
 		boostDropRate += genesis.getCommonData().getCurrentReposteEnergy() > 0 ? 0.05f : 0;
 		boostDropRate += genesis.getCommonData().getCurrentSalvationPercent() > 0 ? 0.05f : 0;
-		boostDropRate += genesis.getActiveHouse() != null ? genesis.getActiveHouse().getHouseType().equals(HouseType.PALACE) ? 0.05f : 0 : 0;
+		boostDropRate += genesis.getActiveHouse() != null
+				? genesis.getActiveHouse().getHouseType().equals(HouseType.PALACE) ? 0.05f : 0
+				: 0;
 		boostDropRate += genesis.getGameStats().getStat(StatEnum.BOOST_DROP_RATE, 100).getCurrent() / 100f - 1;
 		boostDropRate += genesis.getGameStats().getStat(StatEnum.DR_BOOST, 100).getCurrent() / 100f - 1;
 		float dropRate = genesis.getRates().getDropRate() * boostDropRate * dropChance / 100f;
@@ -244,7 +246,8 @@ public class DropRegistrationService {
 						if (diff < eventDrop.getMinDiff()) {
 							continue;
 						}
-					} if (maxDiff != 0) {
+					}
+					if (maxDiff != 0) {
 						if (diff > eventDrop.getMaxDiff()) {
 							continue;
 						}
@@ -254,15 +257,17 @@ public class DropRegistrationService {
 					if (Rnd.get() * 100 > percent) {
 						continue;
 					}
-					droppedItems.add(regDropItem(index++, winnerObj, npcObjId, eventDrop.getItemId(), eventDrop.getCount()));
+					droppedItems.add(
+							regDropItem(index++, winnerObj, npcObjId, eventDrop.getItemId(), eventDrop.getCount()));
 				}
 			}
-		} if (DropConfig.ENABLE_GLOBAL_DROPS) {
+		}
+		if (DropConfig.ENABLE_GLOBAL_DROPS) {
 			boolean isNpcChest = npc.getAi2().getName().equals("chest");
-			boolean stepCheck= false;
+			boolean stepCheck = false;
 			if ((!isNpcChest && npc.getLevel() > 1 && npc.getAbyssNpcType() == AbyssNpcType.NONE) || isNpcChest) {
 				GlobalDropData globalDrops = DataManager.GLOBAL_DROP_DATA;
-				List<GlobalRule> globalrules =  globalDrops.getAllRules();
+				List<GlobalRule> globalrules = globalDrops.getAllRules();
 				for (GlobalRule rule : globalrules) {
 					if (rule.getGlobalRuleItems() == null) {
 						continue;
@@ -270,81 +275,100 @@ public class DropRegistrationService {
 					boostDropRate += genesis.getGameStats().getStat(StatEnum.DR_BOOST, 100).getCurrent() / 100f;
 					boostDropRate += genesis.getCommonData().getCurrentReposteEnergy() > 0 ? 0.05f : 0;
 					boostDropRate += genesis.getCommonData().getCurrentSalvationPercent() > 0 ? 0.05f : 0;
-					boostDropRate += genesis.getActiveHouse() != null ? genesis.getActiveHouse().getHouseType().equals(HouseType.PALACE) ? 0.05f : 0 : 0;
-					boostDropRate += genesis.getGameStats().getStat(StatEnum.BOOST_DROP_RATE, 100).getCurrent() / 100f - 1;
+					boostDropRate += genesis.getActiveHouse() != null
+							? genesis.getActiveHouse().getHouseType().equals(HouseType.PALACE) ? 0.05f : 0
+							: 0;
+					boostDropRate += genesis.getGameStats().getStat(StatEnum.BOOST_DROP_RATE, 100).getCurrent() / 100f
+							- 1;
 					boostDropRate += genesis.getGameStats().getStat(StatEnum.DR_BOOST, 100).getCurrent() / 100f - 1;
 					float gDropRate = genesis.getRates().getGlobalDropRate() * boostDropRate * dropChance / 100f;
 					float percent = rule.getChance() * gDropRate;
 					if (Rnd.get() * 100 > percent) {
 						continue;
-					} if (!DropConfig.DISABLE_DROP_REDUCTION && ((isChest && npc.getLevel() != 1 || !isChest)) && !noReductionMaps.contains(npc.getWorldId())) {
+					}
+					if (!DropConfig.DISABLE_DROP_REDUCTION && ((isChest && npc.getLevel() != 1 || !isChest))
+							&& !noReductionMaps.contains(npc.getWorldId())) {
 						if ((player.getLevel() - npc.getLevel()) >= 1 && !rule.getNoReduction()) {
 							continue;
 						}
-					} if (rule.getRestrictionRace() != null) {
+					}
+					if (rule.getRestrictionRace() != null) {
 						if (player.getRace() == Race.ASMODIANS && rule.getRestrictionRace().equals("ELYOS")) {
 							continue;
-						} if (player.getRace() == Race.ELYOS && rule.getRestrictionRace().equals("ASMODIANS")) {
+						}
+						if (player.getRace() == Race.ELYOS && rule.getRestrictionRace().equals("ASMODIANS")) {
 							continue;
 						}
-					} if (rule.getGlobalRuleMaps() != null) {
-						stepCheck= false;
+					}
+					if (rule.getGlobalRuleMaps() != null) {
+						stepCheck = false;
 						for (GlobalDropMap gdMap : rule.getGlobalRuleMaps().getGlobalDropMaps()) {
 							if (gdMap.getMapId() == npc.getPosition().getMapId()) {
 								stepCheck = true;
 								break;
 							}
-						} if (!stepCheck) {
+						}
+						if (!stepCheck) {
 							continue;
 						}
-					} if (rule.getGlobalRuleWorlds() != null) {
-						stepCheck= false;
+					}
+					if (rule.getGlobalRuleWorlds() != null) {
+						stepCheck = false;
 						for (GlobalDropWorld gdWorld : rule.getGlobalRuleWorlds().getGlobalDropWorlds()) {
 							if (gdWorld.getWorldDropType().equals(npc.getWorldDropType())) {
 								stepCheck = true;
 								break;
 							}
-						} if (!stepCheck) {
+						}
+						if (!stepCheck) {
 							continue;
 						}
-					} if (rule.getGlobalRuleRatings() != null) {
-						stepCheck= false;
+					}
+					if (rule.getGlobalRuleRatings() != null) {
+						stepCheck = false;
 						for (GlobalDropRating gdRating : rule.getGlobalRuleRatings().getGlobalDropRatings()) {
 							if (gdRating.getRating().equals(npc.getRating())) {
 								stepCheck = true;
 								break;
 							}
-						} if (!stepCheck) {
+						}
+						if (!stepCheck) {
 							continue;
 						}
-					} if (rule.getGlobalRuleRaces() != null) {
-						stepCheck= false;
+					}
+					if (rule.getGlobalRuleRaces() != null) {
+						stepCheck = false;
 						for (GlobalDropRace gdRace : rule.getGlobalRuleRaces().getGlobalDropRaces()) {
 							if (gdRace.getRace().equals(npc.getRace())) {
 								stepCheck = true;
 								break;
 							}
-						} if (!stepCheck) {
+						}
+						if (!stepCheck) {
 							continue;
 						}
-					} if (rule.getGlobalRuleTribes() != null) {
-						stepCheck= false;
+					}
+					if (rule.getGlobalRuleTribes() != null) {
+						stepCheck = false;
 						for (GlobalDropTribe gdTribe : rule.getGlobalRuleTribes().getGlobalDropTribes()) {
 							if (gdTribe.getTribe().equals(npc.getTribe())) {
 								stepCheck = true;
 								break;
 							}
-						} if (!stepCheck) {
+						}
+						if (!stepCheck) {
 							continue;
 						}
-					} if (rule.getGlobalRuleZones() != null) {
-						stepCheck= false;
+					}
+					if (rule.getGlobalRuleZones() != null) {
+						stepCheck = false;
 						for (GlobalDropZone gdZone : rule.getGlobalRuleZones().getGlobalDropZones()) {
 							if (npc.isInsideZone(ZoneName.get(gdZone.getZone()))) {
 								stepCheck = true;
 								break;
 							}
-						} if (!stepCheck) {
+						}
+						if (!stepCheck) {
 							continue;
 						}
 					}
@@ -354,26 +378,37 @@ public class DropRegistrationService {
 						if (diff >= rule.getMinDiff() && diff <= rule.getMaxDiff()) {
 							alloweditems.add(globalItem.getId());
 						}
-					} if (alloweditems.size() == 0) {
+					}
+					if (alloweditems.size() == 0) {
 						continue;
 					}
-					int rndItemId = alloweditems.size() > 1 ? alloweditems.get(Rnd.get(0, alloweditems.size() - 1)) : alloweditems.get(0);
+					int rndItemId = alloweditems.size() > 1 ? alloweditems.get(Rnd.get(0, alloweditems.size() - 1))
+							: alloweditems.get(0);
 					long count = 1;
 					if (rndItemId == 182400001) {
-						count = rule.getMaxCount() > 1 ? Rnd.get((int)(rule.getMinCount() * npc.getLevel() * getRatingModifier(npc)),(int) (rule.getMaxCount() * npc.getLevel() * getRatingModifier(npc) * npc.getHpGauge())) : (int) (rule.getMinCount() * npc.getLevel() * getRatingModifier(npc) * npc.getHpGauge());
+						count = rule.getMaxCount() > 1
+								? Rnd.get((int) (rule.getMinCount() * npc.getLevel() * getRatingModifier(npc)),
+										(int) (rule.getMaxCount() * npc.getLevel() * getRatingModifier(npc)
+												* npc.getHpGauge()))
+								: (int) (rule.getMinCount() * npc.getLevel() * getRatingModifier(npc)
+										* npc.getHpGauge());
 					} else {
-						count = rule.getMaxCount() > 1 ? Rnd.get((int)rule.getMinCount(), (int) rule.getMaxCount()) : rule.getMinCount();
+						count = rule.getMaxCount() > 1 ? Rnd.get((int) rule.getMinCount(), (int) rule.getMaxCount())
+								: rule.getMinCount();
 					}
 					droppedItems.add(regDropItem(index++, winnerObj, npcObjId, rndItemId, count));
 				}
 			}
-		} if (npc.getPosition().isInstanceMap()) {
+		}
+		if (npc.getPosition().isInstanceMap()) {
 			npc.getPosition().getWorldMapInstance().getInstanceHandler().onDropRegistered(npc);
 		}
 		npc.getAi2().onGeneralEvent(AIEventType.DROP_REGISTERED);
 		for (Player p : dropPlayers) {
 			PacketSendUtility.sendPacket(p, new SM_LOOT_STATUS(npcObjId, 0));
-		} if (player.getPet() != null && player.getPet().getPetTemplate().getPetFunction(PetFunctionType.LOOT) != null && player.getPet().getCommonData().isLooting()) {
+		}
+		if (player.getPet() != null && player.getPet().getPetTemplate().getPetFunction(PetFunctionType.LOOT) != null
+				&& player.getPet().getCommonData().isLooting()) {
 			PacketSendUtility.sendPacket(player, new SM_PET(true, npcObjId));
 			Set<DropItem> drops = getCurrentDropMap().get(npcObjId);
 			if (drops == null || drops.size() == 0) {
@@ -388,7 +423,8 @@ public class DropRegistrationService {
 			if (drops == null || drops.size() == 0) {
 				return;
 			}
-		} if (player.getMinion() != null && player.getMinion().getCommonData().isLooting()) {
+		}
+		if (player.getMinion() != null && player.getMinion().getCommonData().isLooting()) {
 			PacketSendUtility.sendPacket(player, new SM_MINIONS(8, 1, npcObjId, true));
 			Set<DropItem> drops = getCurrentDropMap().get(npcObjId);
 			if (drops == null || drops.size() == 0) {
@@ -406,7 +442,7 @@ public class DropRegistrationService {
 		}
 		DropService.getInstance().scheduleFreeForAll(npcObjId);
 	}
-	
+
 	public void setItemsToWinner(Set<DropItem> droppedItems, Integer obj) {
 		for (DropItem dropItem : droppedItems) {
 			if (!dropItem.getDropTemplate().isEachMember()) {

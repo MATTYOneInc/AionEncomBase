@@ -17,51 +17,57 @@
 package com.aionemu.gameserver.model.instance.playerreward;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class SealedArgentManorPlayerReward extends InstancePlayerReward
-{
+public class SealedArgentManorPlayerReward extends InstancePlayerReward {
 	private int scoreAP;
 	private int argentManorBox;
 	private int lesserArgentManorBox;
 	private int greaterArgentManorBox;
 	private boolean isRewarded = false;
-	
+
 	public SealedArgentManorPlayerReward(Integer object) {
 		super(object);
 	}
-	
+
 	public boolean isRewarded() {
 		return isRewarded;
 	}
+
 	public void setRewarded() {
 		isRewarded = true;
 	}
-	
+
 	public int getScoreAP() {
 		return scoreAP;
 	}
+
 	public void setScoreAP(int ap) {
 		this.scoreAP = ap;
 	}
-	
+
 	public int getArgentManorBox() {
 		return argentManorBox;
 	}
+
 	public int getLesserArgentManorBox() {
 		return lesserArgentManorBox;
 	}
+
 	public int getGreaterArgentManorBox() {
 		return greaterArgentManorBox;
 	}
-	
+
 	public void setArgentManorBox(int argentManorBox) {
 		this.argentManorBox = argentManorBox;
 	}
+
 	public void setLesserArgentManorBox(int lesserArgentManorBox) {
 		this.lesserArgentManorBox = lesserArgentManorBox;
 	}
+
 	public void setGreaterArgentManorBox(int greaterArgentManorBox) {
 		this.greaterArgentManorBox = greaterArgentManorBox;
 	}

@@ -18,8 +18,7 @@ package com.aionemu.gameserver.configs.administration;
 
 import com.aionemu.commons.configuration.Property;
 
-public class CommandsConfig
-{
+public class CommandsConfig {
 	@Property(key = "add", defaultValue = "3")
 	public static int ADD;
 	@Property(key = "adddrop", defaultValue = "3")
@@ -60,8 +59,8 @@ public class CommandsConfig
 	public static int CONFIGURE;
 	@Property(key = "cooldown", defaultValue = "3")
 	public static int COOLDOWN;
-    @Property(key="damage", defaultValue="3")
-    public static int DAMAGE;
+	@Property(key = "damage", defaultValue = "3")
+	public static int DAMAGE;
 	@Property(key = "delete", defaultValue = "3")
 	public static int DELETE;
 	@Property(key = "delskill", defaultValue = "3")
@@ -108,12 +107,12 @@ public class CommandsConfig
 	public static int KINAH;
 	@Property(key = "legion", defaultValue = "3")
 	public static int LEGION;
-    @Property(key="map", defaultValue="3")
-    public static int MAP;
-    @Property(key="marrydel", defaultValue="3")
-    public static int MARRYDEL;
-	@Property(key="message", defaultValue="3")
-    public static int MESSAGE;
+	@Property(key = "map", defaultValue = "3")
+	public static int MAP;
+	@Property(key = "marrydel", defaultValue = "3")
+	public static int MARRYDEL;
+	@Property(key = "message", defaultValue = "3")
+	public static int MESSAGE;
 	@Property(key = "morph", defaultValue = "3")
 	public static int MORPH;
 	@Property(key = "motion", defaultValue = "3")
@@ -176,8 +175,8 @@ public class CommandsConfig
 	public static int RPRISON;
 	@Property(key = "say", defaultValue = "3")
 	public static int SAY;
-    @Property(key="see", defaultValue="3")
-    public static int SEE;
+	@Property(key = "see", defaultValue = "3")
+	public static int SEE;
 	@Property(key = "send", defaultValue = "3")
 	public static int SEND;
 	@Property(key = "set", defaultValue = "3")
@@ -266,24 +265,24 @@ public class CommandsConfig
 	public static int LANDING;
 	@Property(key = "autogroup", defaultValue = "3")
 	public static int AUTO_GROUP;
-	
-	//Player Command
+
+	// Player Command
 	@Property(key = "faction", defaultValue = "0")
 	public static int FACTION;
-	@Property(key="gmlist", defaultValue = "0")
-    public static int GMLIST;
+	@Property(key = "gmlist", defaultValue = "0")
+	public static int GMLIST;
 	@Property(key = "noexp", defaultValue = "0")
 	public static int NOEXP;
 	@Property(key = "view", defaultValue = "0")
-    public static int VIEW;
+	public static int VIEW;
 	@Property(key = "remodel", defaultValue = "0")
-    public static int REMODEL;
-    @Property(key="skills", defaultValue = "0")
-    public static int SKILLS;
-	@Property(key="repair", defaultValue = "0")
-    public static int REPAIR;
-	
-	//PVP Command
+	public static int REMODEL;
+	@Property(key = "skills", defaultValue = "0")
+	public static int SKILLS;
+	@Property(key = "repair", defaultValue = "0")
+	public static int REPAIR;
+
+	// PVP Command
 	@Property(key = "ffa", defaultValue = "0")
 	public static int FFA;
 	@Property(key = "vs", defaultValue = "0")

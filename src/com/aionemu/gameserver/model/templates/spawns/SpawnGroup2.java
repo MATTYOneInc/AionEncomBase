@@ -71,10 +71,9 @@ import com.aionemu.gameserver.model.vortex.VortexStateType;
 import com.aionemu.gameserver.model.zorshivdredgion.ZorshivDredgionStateType;
 import com.aionemu.gameserver.spawnengine.SpawnHandlerType;
 
-public class SpawnGroup2 extends AbstractLockManager
-{
+public class SpawnGroup2 extends AbstractLockManager {
 	private static final Logger log = LoggerFactory.getLogger(SpawnGroup2.class);
-	
+
 	private int worldId;
 	private int npcId;
 	private int pool;
@@ -84,7 +83,7 @@ public class SpawnGroup2 extends AbstractLockManager
 	private SpawnHandlerType handlerType;
 	private List<SpawnTemplate> spots = new ArrayList<SpawnTemplate>();
 	private HashMap<Integer, HashMap<SpawnTemplate, Boolean>> poolUsedTemplates;
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -96,7 +95,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, Race race) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -107,7 +106,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, Race race, int miss) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -118,7 +117,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int siegeId, SiegeRace race, SiegeModType mod) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -130,8 +129,9 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
-	public SpawnGroup2(int worldId, Spawn spawn, int legionDominionId, LegionDominionRace race, LegionDominionModType mod) {
+
+	public SpawnGroup2(int worldId, Spawn spawn, int legionDominionId, LegionDominionRace race,
+			LegionDominionModType mod) {
 		this.worldId = worldId;
 		initializing(spawn);
 		for (SpawnSpotTemplate template : spawn.getSpawnSpotTemplates()) {
@@ -142,7 +142,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -152,7 +152,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, VortexStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -163,7 +163,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, BeritraStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -174,7 +174,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, AgentStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -185,7 +185,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, AnohaStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -196,7 +196,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, ConquestStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -207,7 +207,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, SvsStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -218,7 +218,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, RvrStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -229,7 +229,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, IuStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -240,7 +240,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, DynamicRiftStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -251,7 +251,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, InstanceRiftStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -262,7 +262,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, NightmareCircusStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -284,7 +284,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, ZorshivDredgionStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -295,7 +295,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, MoltenusStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -304,20 +304,20 @@ public class SpawnGroup2 extends AbstractLockManager
 			spawnTemplate.setId(id);
 			spawnTemplate.setMStateType(type);
 			spots.add(spawnTemplate);
-        }
-    }
-	
-    public SpawnGroup2(int worldId, Spawn spawn, int landingId, LandingStateType state) {
-        this.worldId = worldId;
-        initializing(spawn);
-        for (SpawnSpotTemplate template : spawn.getSpawnSpotTemplates()) {
-            LandingSpawnTemplate spawnTemplate = new LandingSpawnTemplate(this, template);
-            spawnTemplate.setId(landingId);
-            spawnTemplate.setEStateType(state);
-            spots.add(spawnTemplate);
-        }
-    }
-	
+		}
+	}
+
+	public SpawnGroup2(int worldId, Spawn spawn, int landingId, LandingStateType state) {
+		this.worldId = worldId;
+		initializing(spawn);
+		for (SpawnSpotTemplate template : spawn.getSpawnSpotTemplates()) {
+			LandingSpawnTemplate spawnTemplate = new LandingSpawnTemplate(this, template);
+			spawnTemplate.setId(landingId);
+			spawnTemplate.setEStateType(state);
+			spots.add(spawnTemplate);
+		}
+	}
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, LandingSpecialStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -328,7 +328,7 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, Spawn spawn, int id, TowerOfEternityStateType type) {
 		this.worldId = worldId;
 		initializing(spawn);
@@ -339,10 +339,10 @@ public class SpawnGroup2 extends AbstractLockManager
 			spots.add(spawnTemplate);
 		}
 	}
-	
-    private void initializing(Spawn spawn) {
-        temporarySpawn = spawn.getTemporarySpawn();
-        respawnTime = spawn.getRespawnTime();
+
+	private void initializing(Spawn spawn) {
+		temporarySpawn = spawn.getTemporarySpawn();
+		respawnTime = spawn.getRespawnTime();
 		pool = spawn.getPool();
 		npcId = spawn.getNpcId();
 		handlerType = spawn.getSpawnHandlerType();
@@ -351,56 +351,56 @@ public class SpawnGroup2 extends AbstractLockManager
 			poolUsedTemplates = new HashMap<Integer, HashMap<SpawnTemplate, Boolean>>();
 		}
 	}
-	
+
 	public SpawnGroup2(int worldId, int npcId) {
 		this.worldId = worldId;
 		this.npcId = npcId;
 	}
-	
+
 	public List<SpawnTemplate> getSpawnTemplates() {
 		return spots;
 	}
-	
+
 	public void addSpawnTemplate(SpawnTemplate spawnTemplate) {
 		spots.add(spawnTemplate);
 	}
-	
+
 	public int getWorldId() {
 		return worldId;
 	}
-	
+
 	public int getNpcId() {
 		return npcId;
 	}
-	
+
 	public TemporarySpawn geTemporarySpawn() {
 		return temporarySpawn;
 	}
-	
+
 	public int getPool() {
 		return pool;
 	}
-	
+
 	public boolean hasPool() {
 		return pool > 0;
 	}
-	
+
 	public int getRespawnTime() {
 		return respawnTime;
 	}
-	
+
 	public void setRespawnTime(int respawnTime) {
 		this.respawnTime = respawnTime;
 	}
-	
+
 	public boolean isTemporarySpawn() {
 		return temporarySpawn != null;
 	}
-	
+
 	public SpawnHandlerType getHandlerType() {
 		return handlerType;
 	}
-	
+
 	public SpawnTemplate getRndTemplate(int instanceId) {
 		final List<SpawnTemplate> allTemplates = spots;
 		List<SpawnTemplate> templates = new ArrayList<SpawnTemplate>();
@@ -410,19 +410,19 @@ public class SpawnGroup2 extends AbstractLockManager
 				if (!isTemplateUsed(instanceId, template)) {
 					templates.add(template);
 				}
-			} if (templates.size() == 0) {
+			}
+			if (templates.size() == 0) {
 				log.warn("Pool size more then spots, npcId: " + npcId + ", worldId: " + worldId);
 				return null;
 			}
-		}
-		finally {
+		} finally {
 			super.readUnlock();
 		}
 		SpawnTemplate spawnTemplate = templates.get(Rnd.get(0, templates.size() - 1));
 		setTemplateUse(instanceId, spawnTemplate, true);
 		return spawnTemplate;
 	}
-	
+
 	public void setTemplateUse(int instanceId, SpawnTemplate template, boolean isUsed) {
 		super.writeLock();
 		try {
@@ -432,12 +432,11 @@ public class SpawnGroup2 extends AbstractLockManager
 				poolUsedTemplates.put(instanceId, states);
 			}
 			states.put(template, isUsed);
-		}
-		finally {
+		} finally {
 			super.writeUnlock();
 		}
 	}
-	
+
 	public boolean isTemplateUsed(int instanceId, SpawnTemplate template) {
 		super.readLock();
 		try {
@@ -448,12 +447,11 @@ public class SpawnGroup2 extends AbstractLockManager
 			if (state == null)
 				return false;
 			return state;
-		}
-		finally {
+		} finally {
 			super.readUnlock();
 		}
 	}
-	
+
 	public void resetTemplates(int instanceId) {
 		HashMap<SpawnTemplate, Boolean> states = poolUsedTemplates.get(instanceId);
 		if (states == null)
@@ -463,13 +461,12 @@ public class SpawnGroup2 extends AbstractLockManager
 			for (SpawnTemplate template : states.keySet()) {
 				states.put(template, false);
 			}
-		}
-		finally {
+		} finally {
 			super.writeUnlock();
 		}
 	}
-	
+
 	public byte getDifficultId() {
-        return difficultId;
-    }
+		return difficultId;
+	}
 }

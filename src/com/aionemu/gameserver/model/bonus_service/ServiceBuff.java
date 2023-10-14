@@ -38,20 +38,20 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  * @author Ranastic (Encom)
  */
 
-public class ServiceBuff implements StatOwner
-{
+public class ServiceBuff implements StatOwner {
 	private static final Logger log = LoggerFactory.getLogger(ServiceBuff.class);
 	private List<IStatFunction> functions = new ArrayList<IStatFunction>();
 	private BonusServiceAttr serviceBonusAttr;
-	
+
 	public ServiceBuff(int buffId) {
 		serviceBonusAttr = DataManager.SERVICE_BUFF_DATA.getInstanceBonusattr(buffId);
 	}
-	
+
 	public void applyEffect(Player player, int buffId) {
 		if (serviceBonusAttr == null) {
 			return;
-		} for (BonusPenaltyAttr bonusPenaltyAttr: serviceBonusAttr.getPenaltyAttr()) {
+		}
+		for (BonusPenaltyAttr bonusPenaltyAttr : serviceBonusAttr.getPenaltyAttr()) {
 			if (bonusPenaltyAttr.getFunc().equals(Func.PERCENT)) {
 				functions.add(new StatRateFunction(bonusPenaltyAttr.getStat(), bonusPenaltyAttr.getValue(), true));
 			} else {
@@ -62,7 +62,7 @@ public class ServiceBuff implements StatOwner
 		player.getGameStats().addEffect(this, functions);
 		PacketSendUtility.sendPacket(player, new SM_ICON_INFO(buffId, true));
 	}
-	
+
 	public void endEffect(Player player, int buffId) {
 		functions.clear();
 		player.setBonus(false);

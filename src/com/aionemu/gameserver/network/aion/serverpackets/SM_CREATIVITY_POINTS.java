@@ -58,31 +58,33 @@ public class SM_CREATIVITY_POINTS extends AionServerPacket {
 		this.size = size;
 		this.onLogin = onLogin;
 	}
-    private int CpByExp(int level){
-        switch (level){
-            case 66:
-                return 1+1;
-            case 67:
-                return 10+10;
-            case 68:
-                return 19+15;
-            case 69:
-                return 30+20;
-            case 70:
-                return 42+25;
-            case 71:
-                return 55+30;
-            case 72:
-                return 70+35;
-            case 73:
-                return 87+40;
-            case 74:
-                return 107+45;
-            case 75:
-                return 130+155;
-        }
-        return 285;
-    }
+
+	private int CpByExp(int level) {
+		switch (level) {
+		case 66:
+			return 1 + 1;
+		case 67:
+			return 10 + 10;
+		case 68:
+			return 19 + 15;
+		case 69:
+			return 30 + 20;
+		case 70:
+			return 42 + 25;
+		case 71:
+			return 55 + 30;
+		case 72:
+			return 70 + 35;
+		case 73:
+			return 87 + 40;
+		case 74:
+			return 107 + 45;
+		case 75:
+			return 130 + 155;
+		}
+		return 285;
+	}
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		Player activePlayer = con.getActivePlayer();
@@ -118,16 +120,18 @@ public class SM_CREATIVITY_POINTS extends AionServerPacket {
 					activePlayer.setCPSlot6(ce.getPoint());
 					Will.getInstance().onChange(activePlayer, ce.getPoint());
 				}
-				/*if (ce.getSlot() >= 15 && ce.getSlot() <= 372 && ce.getPoint() != 0) { // Reduce Server Send Packet. its handled on login
-					CreativitySkillService.getInstance().enchantSkill(activePlayer, ce.getSlot(), ce.getPoint());
-				}
-				CreativityTransfoService.getInstance().enchantTransfo(activePlayer, ce.getSlot(), ce.getPoint());
-				if (ce.getSlot() >= 373 && ce.getSlot() <= 400) {
-					CreativitySkillService.getInstance().loginDaevaSkill(activePlayer, ce.getSlot(), ce.getPoint());
-				}*/
+				/*
+				 * if (ce.getSlot() >= 15 && ce.getSlot() <= 372 && ce.getPoint() != 0) { //
+				 * Reduce Server Send Packet. its handled on login
+				 * CreativitySkillService.getInstance().enchantSkill(activePlayer, ce.getSlot(),
+				 * ce.getPoint()); }
+				 * CreativityTransfoService.getInstance().enchantTransfo(activePlayer,
+				 * ce.getSlot(), ce.getPoint()); if (ce.getSlot() >= 373 && ce.getSlot() <= 400)
+				 * { CreativitySkillService.getInstance().loginDaevaSkill(activePlayer,
+				 * ce.getSlot(), ce.getPoint()); }
+				 */
 			}
-		}
-		else {
+		} else {
 			for (PlayerCPEntry ce : activePlayer.getCP().getAllCP()) {
 				if (ce.getSlot() == 1) {
 					activePlayer.setCPSlot1(ce.getPoint());

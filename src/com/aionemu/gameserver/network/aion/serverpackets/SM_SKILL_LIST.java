@@ -22,8 +22,7 @@ import com.aionemu.gameserver.model.skill.PlayerSkillEntry;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_SKILL_LIST extends AionServerPacket
-{
+public class SM_SKILL_LIST extends AionServerPacket {
 	private PlayerSkillEntry[] skillList;
 	private int messageId;
 	private int skillNameId;
@@ -32,13 +31,13 @@ public class SM_SKILL_LIST extends AionServerPacket
 	boolean isNew = false;
 	private Player player;
 	private int state;
-	
+
 	public SM_SKILL_LIST(Player player, PlayerSkillEntry[] basicSkills) {
 		this.player = player;
 		this.skillList = player.getSkillList().getBasicSkills();
 		this.messageId = 0;
 	}
-	
+
 	public SM_SKILL_LIST(Player player, PlayerSkillEntry[] linkedSkills, int state) {
 		this.player = player;
 		this.skillList = player.getSkillList().getLinkedSkills();
@@ -46,12 +45,12 @@ public class SM_SKILL_LIST extends AionServerPacket
 		this.messageId = 0;
 		this.isNew = true;
 	}
-	
+
 	public SM_SKILL_LIST(Player player, PlayerSkillEntry stigmaSkill) {
 		this.skillList = new PlayerSkillEntry[] { stigmaSkill };
 		this.messageId = 0;
 	}
-	
+
 	public SM_SKILL_LIST(PlayerSkillEntry skillListEntry, int messageId, boolean isNew) {
 		this.skillList = new PlayerSkillEntry[] { skillListEntry };
 		this.messageId = messageId;
@@ -59,16 +58,17 @@ public class SM_SKILL_LIST extends AionServerPacket
 		this.skillLvl = String.valueOf(skillListEntry.getSkillLevel());
 		this.isNew = isNew;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		final int size = skillList.length;
 		writeH(size);
 		if (isNew) {
-            writeC(0);
+			writeC(0);
 		} else {
-            writeC(1);
-		} if (size > 0) {
+			writeC(1);
+		}
+		if (size > 0) {
 			for (PlayerSkillEntry entry : skillList) {
 				writeH(entry.getSkillId());
 				writeH(entry.getSkillLevel());
@@ -79,7 +79,8 @@ public class SM_SKILL_LIST extends AionServerPacket
 					writeD((int) (System.currentTimeMillis() / 1000));
 				} else {
 					writeD(0);
-				} if (entry.isStigma()) {
+				}
+				if (entry.isStigma()) {
 					writeC(1);
 				} else if (entry.isLinked()) {
 					writeC(3);

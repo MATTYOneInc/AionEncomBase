@@ -32,16 +32,16 @@ public class RouteStep {
 
 	@XmlAttribute(name = "rest_time", required = true)
 	private Integer time = 0;
-	
+
 	@XmlAttribute(name = "z", required = true)
 	private float locZ;
-	
+
 	@XmlAttribute(name = "y", required = true)
 	private float locY;
-	
+
 	@XmlAttribute(name = "x", required = true)
 	private float locX;
-	
+
 	@XmlAttribute(name = "step", required = true)
 	private int routeStep;
 
@@ -53,7 +53,7 @@ public class RouteStep {
 			time = null;
 		}
 	}
-	
+
 	void afterMarshal(Marshaller marshaller) {
 		if (time == null) {
 			time = 0;

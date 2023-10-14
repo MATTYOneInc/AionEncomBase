@@ -42,10 +42,12 @@ public class SpellAtkDrainInstantEffect extends DamageEffect {
 	public void applyEffect(Effect effect) {
 		super.applyEffect(effect);
 		if (hp_percent != 0) {
-			effect.getEffector().getLifeStats().increaseHp(TYPE.HP, effect.getReserved1() * hp_percent / 100, effect.getSkillId(), LOG.SPELLATKDRAININSTANT);
+			effect.getEffector().getLifeStats().increaseHp(TYPE.HP, effect.getReserved1() * hp_percent / 100,
+					effect.getSkillId(), LOG.SPELLATKDRAININSTANT);
 		}
 		if (mp_percent != 0) {
-			effect.getEffector().getLifeStats().increaseMp(TYPE.ABSORBED_MP, effect.getReserved1() * mp_percent / 100, effect.getSkillId(), LOG.SPELLATKDRAININSTANT);
+			effect.getEffector().getLifeStats().increaseMp(TYPE.ABSORBED_MP, effect.getReserved1() * mp_percent / 100,
+					effect.getSkillId(), LOG.SPELLATKDRAININSTANT);
 		}
 	}
 

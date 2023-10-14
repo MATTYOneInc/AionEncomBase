@@ -30,27 +30,26 @@ import javax.xml.bind.annotation.XmlType;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "F2pBonusAttr", propOrder = {"bonusAttr"})
-public class F2pBonusAttr
-{
-    @XmlElement(name = "bonus_attr")
-    protected List<F2pPenalityAttr> bonusAttr;
+@XmlType(name = "F2pBonusAttr", propOrder = { "bonusAttr" })
+public class F2pBonusAttr {
+	@XmlElement(name = "bonus_attr")
+	protected List<F2pPenalityAttr> bonusAttr;
 
-    @XmlAttribute(name = "buff_id", required = true)
-    protected int buffId;
+	@XmlAttribute(name = "buff_id", required = true)
+	protected int buffId;
 
-    public List<F2pPenalityAttr> getPenaltyAttr() {
-        if (bonusAttr == null) {
-            bonusAttr = new ArrayList<F2pPenalityAttr>();
-        }
-        return bonusAttr;
-    }
+	public List<F2pPenalityAttr> getPenaltyAttr() {
+		if (bonusAttr == null) {
+			bonusAttr = new ArrayList<F2pPenalityAttr>();
+		}
+		return bonusAttr;
+	}
 
-    public int getBuffId() {
-        return buffId;
-    }
+	public int getBuffId() {
+		return buffId;
+	}
 
-    public void setBuffId(int value) {
-        buffId = value;
-    }
+	public void setBuffId(int value) {
+		buffId = value;
+	}
 }

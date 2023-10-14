@@ -31,37 +31,37 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ExpandInventoryAction")
-public class ExpandInventoryAction extends AbstractItemAction
-{
+public class ExpandInventoryAction extends AbstractItemAction {
 	@XmlAttribute(name = "level")
 	private int level;
-	
+
 	@XmlAttribute(name = "storage")
 	private StorageType storage;
-	
+
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		switch (storage) {
-			case CUBE:
-				return CubeExpandService.canExpandByTicket(player, level);
-			case WAREHOUSE:
-				return WarehouseService.canExpand(player);
+		case CUBE:
+			return CubeExpandService.canExpandByTicket(player, level);
+		case WAREHOUSE:
+			return WarehouseService.canExpand(player);
 		}
 		return false;
 	}
-	
+
 	@Override
 	public void act(Player player, Item parentItem, Item targetItem) {
 		if (!player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1))
-		return;
+			return;
 		ItemTemplate itemTemplate = parentItem.getItemTemplate();
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+				parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
 		switch (storage) {
-			case CUBE:
-				CubeExpandService.expand(player, false);
+		case CUBE:
+			CubeExpandService.expand(player, false);
 			break;
-			case WAREHOUSE:
-				WarehouseService.expand(player);
+		case WAREHOUSE:
+			WarehouseService.expand(player);
 			break;
 		}
 	}

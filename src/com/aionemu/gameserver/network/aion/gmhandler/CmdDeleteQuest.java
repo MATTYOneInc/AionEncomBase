@@ -35,52 +35,52 @@ import com.aionemu.gameserver.world.World;
  */
 public class CmdDeleteQuest extends AbstractGMHandler {
 
-    public CmdDeleteQuest(Player admin, String params) {
-        super(admin, params);
-        run();
-    }
+	public CmdDeleteQuest(Player admin, String params) {
+		super(admin, params);
+		run();
+	}
 
-    private void run() {
-        Player t = admin;
-        
-        if (admin.getClientConnection().getAccount().getAccessLevel() <= PanelConfig.DELQUEST_PANEL_LEVEL) {
-        	PacketSendUtility.sendMessage(admin, "You haven't access this panel commands");
-        	return;
-        }
+	private void run() {
+		Player t = admin;
 
-        if (admin.getTarget() != null && admin.getTarget() instanceof Player)
-            t = World.getInstance().findPlayer(Util.convertName(admin.getTarget().getName()));
+		if (admin.getClientConnection().getAccount().getAccessLevel() <= PanelConfig.DELQUEST_PANEL_LEVEL) {
+			PacketSendUtility.sendMessage(admin, "You haven't access this panel commands");
+			return;
+		}
 
-        Integer questID = Integer.parseInt(params);
-        if (questID <= 0) {
-            return;
-        }
+		if (admin.getTarget() != null && admin.getTarget() instanceof Player)
+			t = World.getInstance().findPlayer(Util.convertName(admin.getTarget().getName()));
 
-        @SuppressWarnings("static-access")
-        QuestTemplate qt = DataManager.getInstance().QUEST_DATA.getQuestById(questID);
-        if (qt == null) {
-            PacketSendUtility.sendMessage(admin, "Quest with ID: " + questID + " was not found");
-            return;
-        }
+		Integer questID = Integer.parseInt(params);
+		if (questID <= 0) {
+			return;
+		}
 
-        QuestStateList list = t.getQuestStateList();
-        if (list == null || list.getQuestState(questID) == null) {
-            PacketSendUtility.sendMessage(admin, "Quest not deleted for target " + t.getName());
-            return;
-        }
+		@SuppressWarnings("static-access")
+		QuestTemplate qt = DataManager.getInstance().QUEST_DATA.getQuestById(questID);
+		if (qt == null) {
+			PacketSendUtility.sendMessage(admin, "Quest with ID: " + questID + " was not found");
+			return;
+		}
 
-        QuestState qs = list.getQuestState(questID);
-        qs.setQuestVar(0);
-        qs.setCompleteCount(0);
-        if (qt.getCategory() == QuestCategory.MISSION) {
-            qs.setStatus(QuestStatus.START);
-        } else {
-            qs.setStatus(null);
-        }
-        if (qs.getPersistentState() != PersistentState.NEW) {
-            qs.setPersistentState(PersistentState.DELETED);
-        }
-        PacketSendUtility.sendPacket(t, new SM_QUEST_COMPLETED_LIST(t.getQuestStateList().getAllFinishedQuests()));
-        t.getController().updateNearbyQuests();
-    }
+		QuestStateList list = t.getQuestStateList();
+		if (list == null || list.getQuestState(questID) == null) {
+			PacketSendUtility.sendMessage(admin, "Quest not deleted for target " + t.getName());
+			return;
+		}
+
+		QuestState qs = list.getQuestState(questID);
+		qs.setQuestVar(0);
+		qs.setCompleteCount(0);
+		if (qt.getCategory() == QuestCategory.MISSION) {
+			qs.setStatus(QuestStatus.START);
+		} else {
+			qs.setStatus(null);
+		}
+		if (qs.getPersistentState() != PersistentState.NEW) {
+			qs.setPersistentState(PersistentState.DELETED);
+		}
+		PacketSendUtility.sendPacket(t, new SM_QUEST_COMPLETED_LIST(t.getQuestStateList().getAllFinishedQuests()));
+		t.getController().updateNearbyQuests();
+	}
 }

@@ -32,36 +32,36 @@ import com.aionemu.gameserver.skillengine.change.Func;
 @XmlType(name = "F2pPenalityAttr")
 public class F2pPenalityAttr {
 
-    @XmlAttribute(required = true)
-    protected StatEnum stat;
+	@XmlAttribute(required = true)
+	protected StatEnum stat;
 
-    @XmlAttribute(required = true)
-    protected Func func;
+	@XmlAttribute(required = true)
+	protected Func func;
 
-    @XmlAttribute(required = true)
-    protected int value;
+	@XmlAttribute(required = true)
+	protected int value;
 
-    public StatEnum getStat() {
-        return stat;
-    }
+	public StatEnum getStat() {
+		return stat;
+	}
 
-    public void setStat(StatEnum value) {
-        stat = value;
-    }
+	public void setStat(StatEnum value) {
+		stat = value;
+	}
 
-    public Func getFunc() {
-        return func;
-    }
+	public Func getFunc() {
+		return func;
+	}
 
-    public void setFunc(Func value) {
-        func = value;
-    }
+	public void setFunc(Func value) {
+		func = value;
+	}
 
-    public int getValue() {
-        return value;
-    }
+	public int getValue() {
+		return value;
+	}
 
-    public void setValue(int value) {
-        this.value = value;
-    }
+	public void setValue(int value) {
+		this.value = value;
+	}
 }

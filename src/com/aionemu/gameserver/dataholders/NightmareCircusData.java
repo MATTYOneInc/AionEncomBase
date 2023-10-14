@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "nightmare_circus")
-public class NightmareCircusData
-{
+public class NightmareCircusData {
 	@XmlElement(name = "nightmare_location")
 	private List<NightmareCircusTemplate> nightmareCircusTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, NightmareCircusLocation> nightmareCircus = new FastMap<Integer, NightmareCircusLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (NightmareCircusTemplate template : nightmareCircusTemplates) {
 			nightmareCircus.put(template.getId(), new NightmareCircusLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return nightmareCircus.size();
 	}
-	
+
 	public FastMap<Integer, NightmareCircusLocation> getNightmareCircusLocations() {
 		return nightmareCircus;
 	}

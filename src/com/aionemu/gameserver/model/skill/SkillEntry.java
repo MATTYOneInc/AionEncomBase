@@ -49,19 +49,19 @@ public abstract class SkillEntry {
 	public final int getSkillLevel() {
 		return skillLevel;
 	}
-	
+
 	public final int getSkinId() {
 		return skinId;
 	}
-	
+
 	public final Timestamp getSkinActiveTime() {
 		return activeSkinTime;
 	}
-	
+
 	public void setSkinActiveTime(Timestamp activeSkinTime) {
 		this.activeSkinTime = activeSkinTime;
 	}
-	
+
 	public final int getSkinExpireTime() {
 		return expireTime;
 	}
@@ -81,16 +81,16 @@ public abstract class SkillEntry {
 	public void setSkinId(int skinId) {
 		this.skinId = skinId;
 	}
-	
+
 	public void setSkinExpireTime(int expireTime) {
 		this.expireTime = expireTime;
 	}
 
-	public boolean isActivated(){
+	public boolean isActivated() {
 		return isActivated;
 	}
 
-	public void setActivated(boolean activated){
+	public void setActivated(boolean activated) {
 		this.isActivated = activated;
 	}
 }

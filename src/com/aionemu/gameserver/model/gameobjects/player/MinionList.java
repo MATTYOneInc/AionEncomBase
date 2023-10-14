@@ -48,13 +48,13 @@ public class MinionList {
 	public Collection<MinionCommonData> getMinions() {
 		return (Collection<MinionCommonData>) minions.values();
 	}
-	
+
 	public void updateMinionsList() {
 		minions.clear();
 		for (MinionCommonData minionCommonData : DAOManager.getDAO(PlayerMinionsDAO.class).getPlayerMinions(player)) {
-				minions.put(minionCommonData.getObjectId(), minionCommonData);
+			minions.put(minionCommonData.getObjectId(), minionCommonData);
 		}
-		if(minions !=null) {
+		if (minions != null) {
 			PacketSendUtility.sendPacket(player, new SM_MINIONS(0, player.getMinionList().getMinions()));
 		}
 		return;
@@ -78,7 +78,7 @@ public class MinionList {
 
 	public void deleteMinion(int minionObjId) {
 		if (hasMinion(minionObjId)) {
-            DAOManager.getDAO(PlayerMinionsDAO.class).removePlayerMinion(player, minionObjId);
+			DAOManager.getDAO(PlayerMinionsDAO.class).removePlayerMinion(player, minionObjId);
 			minions.remove(minionObjId);
 		}
 	}

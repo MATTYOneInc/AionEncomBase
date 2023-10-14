@@ -52,29 +52,29 @@ public class PcInventoryCondition extends QuestCondition {
 
 	/*
 	 * (non-Javadoc)
-	 * @see
-	 * com.aionemu.gameserver.questEngine.handlers.template.xmlQuest.condition.QuestCondition#doCheck(com.aionemu.gameserver
-	 * .questEngine.model.QuestEnv)
+	 * 
+	 * @see com.aionemu.gameserver.questEngine.handlers.template.xmlQuest.condition.
+	 * QuestCondition#doCheck(com.aionemu.gameserver .questEngine.model.QuestEnv)
 	 */
 	@Override
 	public boolean doCheck(QuestEnv env) {
 		Player player = env.getPlayer();
 		long itemCount = player.getInventory().getItemCountByItemId(itemId);
 		switch (getOp()) {
-			case EQUAL:
-				return itemCount == count;
-			case GREATER:
-				return itemCount > count;
-			case GREATER_EQUAL:
-				return itemCount >= count;
-			case LESSER:
-				return itemCount < count;
-			case LESSER_EQUAL:
-				return itemCount <= count;
-			case NOT_EQUAL:
-				return itemCount != count;
-			default:
-				return false;
+		case EQUAL:
+			return itemCount == count;
+		case GREATER:
+			return itemCount > count;
+		case GREATER_EQUAL:
+			return itemCount >= count;
+		case LESSER:
+			return itemCount < count;
+		case LESSER_EQUAL:
+			return itemCount <= count;
+		case NOT_EQUAL:
+			return itemCount != count;
+		default:
+			return false;
 		}
 	}
 }

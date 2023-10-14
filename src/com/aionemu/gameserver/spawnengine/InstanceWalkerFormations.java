@@ -61,8 +61,8 @@ public class InstanceWalkerFormations {
 	}
 
 	/**
-	 * Organizes spawns in all processed walker groups. Must be called only when spawning all npcs for the instance of
-	 * world.
+	 * Organizes spawns in all processed walker groups. Must be called only when
+	 * spawning all npcs for the instance of world.
 	 */
 	protected void organizeAndSpawn() {
 		for (List<ClusteredNpc> candidates : groupedSpawnObjects.values()) {
@@ -80,8 +80,7 @@ public class InstanceWalkerFormations {
 				for (ClusteredNpc snpc : candidates) {
 					snpc.spawn(snpc.getNpc().getSpawn().getZ());
 				}
-			}
-			else {
+			} else {
 				WalkerGroup wg = new WalkerGroup(npcs);
 				if (candidates.get(0).getWalkTemplate().getPool() != candidates.size()) {
 					log.warn("Incorrect pool for route: " + candidates.get(0).getWalkTemplate().getRouteId());

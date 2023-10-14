@@ -60,7 +60,7 @@ public class NpcShoutsService {
 
 			if (!shoutsCache.hasAnyShout(worldId, npcId, ShoutEventType.IDLE)) {
 				continue;
-            }
+			}
 			final List<NpcShout> shouts = shoutsCache.getNpcShouts(worldId, npcId, ShoutEventType.IDLE, null, 0);
 			if (shouts.size() == 0) {
 				continue;
@@ -84,7 +84,8 @@ public class NpcShoutsService {
 						}
 						int randomShout = Rnd.get(shouts.size());
 						NpcShout shout = shouts.get(randomShout);
-						if (shout.getPattern() != null && !((AITemplate)npc2.getAi2()).onPatternShout(ShoutEventType.IDLE, shout.getPattern(), 0)) {
+						if (shout.getPattern() != null && !((AITemplate) npc2.getAi2())
+								.onPatternShout(ShoutEventType.IDLE, shout.getPattern(), 0)) {
 							return;
 						}
 						Iterator<Player> iter = npc2.getKnownList().getKnownPlayers().values().iterator();
@@ -112,51 +113,43 @@ public class NpcShoutsService {
 					if (delaySeconds == -1) {
 						shout(owner, target, shout, nextDelay);
 						nextDelay += 5;
-					}
-					else {
+					} else {
 						shout(owner, target, shout, delaySeconds);
 						delaySeconds = -1;
 					}
 				}
-			}
-			else {
+			} else {
 				int randomShout = Rnd.get(shouts.size());
 				shout(owner, target, shouts.get(randomShout), delaySeconds);
 			}
-		}
-		else if (shouts.size() == 1)
+		} else if (shouts.size() == 1)
 			shout(owner, target, shouts.get(0), delaySeconds);
 	}
 
 	public void shout(Npc owner, Creature target, NpcShout shout, int delaySeconds) {
 		if (owner == null || shout == null) {
 			return;
-        }
+		}
 		Object param = shout.getParam();
 
 		if (target instanceof Player) {
 			Player player = (Player) target;
 			if ("username".equals(param)) {
 				param = player.getName();
-			}
-			else if ("userclass".equals(param)) {
+			} else if ("userclass".equals(param)) {
 				param = (240000 + player.getCommonData().getPlayerClass().getClassId()) * 2 + 1;
-			}
-			else if ("usernation".equals(param)) {
+			} else if ("usernation".equals(param)) {
 				log.warn("Shout with param 'usernation' is not supported");
 				return;
-			}
-			else if ("usergender".equals(param)) {
+			} else if ("usergender".equals(param)) {
 				param = (902012 + player.getCommonData().getGender().getGenderId()) * 2 + 1;
-			}
-			else if ("mainslotitem".equals(param)) {
+			} else if ("mainslotitem".equals(param)) {
 				Item weapon = player.getEquipment().getMainHandWeapon();
 				if (weapon == null) {
 					return;
 				}
 				param = weapon.getItemTemplate().getNameId();
-			}
-			else if ("quest".equals(shout.getPattern())) {
+			} else if ("quest".equals(shout.getPattern())) {
 				delaySeconds = 0;
 			}
 		}
@@ -192,7 +185,8 @@ public class NpcShoutsService {
 		sendMsg(null, instance, msg, 0, false, 25, delay);
 	}
 
-	public void sendMsg(final Npc npc, final WorldMapInstance instance, final int msg, final int Obj, final boolean isShout, final int color, int delay) {
+	public void sendMsg(final Npc npc, final WorldMapInstance instance, final int msg, final int Obj,
+			final boolean isShout, final int color, int delay) {
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
@@ -207,7 +201,7 @@ public class NpcShoutsService {
 					instance.doOnAllPlayers(new Visitor<Player>() {
 						@Override
 						public void visit(Player player) {
-							PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(isShout, msg, Obj, color));	
+							PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(isShout, msg, Obj, color));
 						}
 
 					});

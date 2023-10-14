@@ -37,7 +37,9 @@ import com.aionemu.gameserver.model.Race;
 @XmlType(name = "MailTemplate")
 public class MailTemplate {
 
-	@XmlElements({ @XmlElement(name = "sender", type = Sender.class), @XmlElement(name = "title", type = Title.class), @XmlElement(name = "header", type = Header.class), @XmlElement(name = "body", type = Body.class), @XmlElement(name = "tail", type = Tail.class) })
+	@XmlElements({ @XmlElement(name = "sender", type = Sender.class), @XmlElement(name = "title", type = Title.class),
+			@XmlElement(name = "header", type = Header.class), @XmlElement(name = "body", type = Body.class),
+			@XmlElement(name = "tail", type = Tail.class) })
 	private List<MailPart> mailParts;
 
 	@XmlAttribute(name = "name", required = true)
@@ -96,14 +98,12 @@ public class MailTemplate {
 		String message = headerStr;
 		if (StringUtils.isEmpty(message)) {
 			message = bodyStr;
-		}
-		else if (!StringUtils.isEmpty(bodyStr)) {
+		} else if (!StringUtils.isEmpty(bodyStr)) {
 			message = message + "," + bodyStr;
 		}
 		if (StringUtils.isEmpty(message)) {
 			message = tailStr;
-		}
-		else if (!StringUtils.isEmpty(tailStr)) {
+		} else if (!StringUtils.isEmpty(tailStr)) {
 			message = message + "," + tailStr;
 		}
 		return message;

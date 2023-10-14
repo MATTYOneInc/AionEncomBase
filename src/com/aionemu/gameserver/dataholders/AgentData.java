@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "agent_fight")
-public class AgentData
-{
+public class AgentData {
 	@XmlElement(name = "agent_location")
 	private List<AgentTemplate> agentTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, AgentLocation> agent = new FastMap<Integer, AgentLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (AgentTemplate template : agentTemplates) {
 			agent.put(template.getId(), new AgentLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return agent.size();
 	}
-	
+
 	public FastMap<Integer, AgentLocation> getAgentLocations() {
 		return agent;
 	}

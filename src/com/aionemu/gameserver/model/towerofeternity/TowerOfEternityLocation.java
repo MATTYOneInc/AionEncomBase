@@ -30,53 +30,52 @@ import javolution.util.FastMap;
  * Created by Wnkrz on 22/08/2017.
  */
 
-public class TowerOfEternityLocation
-{
-    protected int id;
-    protected boolean isActive;
-    protected TowerOfEternityTemplate template;
-    protected TowerOfEternity<TowerOfEternityLocation> activeTowerOfEternity;
-    protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
-    private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
-    public TowerOfEternityLocation() {
-    }
-	
-    public TowerOfEternityLocation(TowerOfEternityTemplate template) {
-        this.template = template;
-        this.id = template.getId();
-    }
-	
-    public boolean isActive() {
-        return isActive;
-    }
-	
-    public void setActiveTowerOfEternity(TowerOfEternity<TowerOfEternityLocation> towerOfEternity) {
-        isActive = towerOfEternity != null;
-        this.activeTowerOfEternity = towerOfEternity;
-    }
-	
-    public int getWorldId() {
-        return template.getWorldId();
-    }
-	
-    public TowerOfEternity<TowerOfEternityLocation> getActiveTowerOfEternity() {
-        return activeTowerOfEternity;
-    }
-	
-    public final TowerOfEternityTemplate getTemplate() {
-        return template;
-    }
-	
-    public int getId() {
-        return id;
-    }
-	
-    public List<VisibleObject> getSpawned() {
-        return spawned;
-    }
-	
-    public FastMap<Integer, Player> getPlayers() {
-        return players;
-    }
+public class TowerOfEternityLocation {
+	protected int id;
+	protected boolean isActive;
+	protected TowerOfEternityTemplate template;
+	protected TowerOfEternity<TowerOfEternityLocation> activeTowerOfEternity;
+	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
+	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
+
+	public TowerOfEternityLocation() {
+	}
+
+	public TowerOfEternityLocation(TowerOfEternityTemplate template) {
+		this.template = template;
+		this.id = template.getId();
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActiveTowerOfEternity(TowerOfEternity<TowerOfEternityLocation> towerOfEternity) {
+		isActive = towerOfEternity != null;
+		this.activeTowerOfEternity = towerOfEternity;
+	}
+
+	public int getWorldId() {
+		return template.getWorldId();
+	}
+
+	public TowerOfEternity<TowerOfEternityLocation> getActiveTowerOfEternity() {
+		return activeTowerOfEternity;
+	}
+
+	public final TowerOfEternityTemplate getTemplate() {
+		return template;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public List<VisibleObject> getSpawned() {
+		return spawned;
+	}
+
+	public FastMap<Integer, Player> getPlayers() {
+		return players;
+	}
 }

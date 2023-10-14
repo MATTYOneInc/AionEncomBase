@@ -28,34 +28,33 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  * Ranastic
  */
 
-public class CM_EVERGALE_CANYON extends AionClientPacket 
-{
+public class CM_EVERGALE_CANYON extends AionClientPacket {
 	Logger log = LoggerFactory.getLogger(CM_EVERGALE_CANYON.class);
 
 	public int action;
-	
+
 	public CM_EVERGALE_CANYON(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		action = readH();
-		switch (action){
-			case 0:
-				readD();
-				readD();
-				readD();
-				readD();
+		switch (action) {
+		case 0:
+			readD();
+			readD();
+			readD();
+			readD();
 			break;
 		}
 	}
-	
+
 	@Override
 	protected void runImpl() {
-		switch (action){
-			case 0 :
-				PacketSendUtility.sendPacket(getConnection().getActivePlayer(), new SM_EVERGALE_CANYON(0));
+		switch (action) {
+		case 0:
+			PacketSendUtility.sendPacket(getConnection().getActivePlayer(), new SM_EVERGALE_CANYON(0));
 			break;
 		}
 	}

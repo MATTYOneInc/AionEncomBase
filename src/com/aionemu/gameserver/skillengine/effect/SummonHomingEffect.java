@@ -48,7 +48,7 @@ public class SummonHomingEffect extends SummonEffect {
 	protected int attackCount;
 	@XmlAttribute(name = "skill_id", required = false)
 	protected int skillId;
-	
+
 	@Override
 	public void applyEffect(Effect effect) {
 		Creature effector = effect.getEffector();
@@ -61,7 +61,8 @@ public class SummonHomingEffect extends SummonEffect {
 
 		for (int i = 0; i < npcCount; i++) {
 			SpawnTemplate spawn = SpawnEngine.addNewSingleTimeSpawn(worldId, npcId, x, y, z, heading);
-			final Homing homing = VisibleObjectSpawner.spawnHoming(spawn, instanceId, effector, attackCount, effect.getSkillId(), effect.getSkillLevel());
+			final Homing homing = VisibleObjectSpawner.spawnHoming(spawn, instanceId, effector, attackCount,
+					effect.getSkillId(), effect.getSkillLevel());
 
 			if (attackCount > 0) {
 				ActionObserver observer = new ActionObserver(ObserverType.ATTACK) {

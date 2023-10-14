@@ -23,8 +23,7 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.HousingService;
 
-public class SM_FRIEND_LIST extends AionServerPacket
-{
+public class SM_FRIEND_LIST extends AionServerPacket {
 	@Override
 	protected void writeImpl(AionConnection con) {
 		FriendList list = con.getActivePlayer().getFriendList();

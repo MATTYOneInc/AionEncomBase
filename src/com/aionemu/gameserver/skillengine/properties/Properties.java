@@ -196,8 +196,7 @@ public class Properties {
 	}
 
 	public enum CastState {
-		CAST_START(true),
-		CAST_END(false);
+		CAST_START(true), CAST_END(false);
 
 		private final boolean isCastStart;
 

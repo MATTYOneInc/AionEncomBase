@@ -26,11 +26,11 @@ public class CM_GG extends AionClientPacket {
 
 	private int size;
 	byte[] data;
-	
+
 	public CM_GG(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		size = readD();
@@ -40,6 +40,6 @@ public class CM_GG extends AionClientPacket {
 	@Override
 	protected void runImpl() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

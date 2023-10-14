@@ -28,18 +28,17 @@ import com.aionemu.gameserver.services.AbyssLandingService;
  * @author Ranastic & Lightning (Encom)
  */
 
-public class CM_ABYSS_LANDING extends AionClientPacket
-{
+public class CM_ABYSS_LANDING extends AionClientPacket {
 	private static Logger log = LoggerFactory.getLogger(CM_ABYSS_LANDING.class);
-	
+
 	public CM_ABYSS_LANDING(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();

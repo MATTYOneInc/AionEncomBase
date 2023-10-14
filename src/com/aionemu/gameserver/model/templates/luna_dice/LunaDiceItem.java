@@ -24,19 +24,18 @@ import javax.xml.bind.annotation.XmlType;
  */
 
 @XmlType(name = "LunaDiceItem")
-public class LunaDiceItem
-{
-    @XmlAttribute(name = "item_id")
-    protected int item_id;
-	
-    @XmlAttribute(name = "count")
-    protected int count;
-	
-    public final int getItemId() {
-        return item_id;
-    }
-	
-    public final int getCount() {
-        return count;
-    }
+public class LunaDiceItem {
+	@XmlAttribute(name = "item_id")
+	protected int item_id;
+
+	@XmlAttribute(name = "count")
+	protected int count;
+
+	public final int getItemId() {
+		return item_id;
+	}
+
+	public final int getCount() {
+		return count;
+	}
 }

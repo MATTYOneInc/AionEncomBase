@@ -88,7 +88,9 @@ public class PrivateStoreService {
 					}
 
 					// Log the trade
-					log.info("[PRIVATE STORE] > [Seller: " + seller.getName() + "] sold [Item: " + item.getItemId() + "][Amount: " + item.getItemCount() + "] to [Buyer: " + buyer.getName() + "] for [Price: " + price + "]");
+					log.info("[PRIVATE STORE] > [Seller: " + seller.getName() + "] sold [Item: " + item.getItemId()
+							+ "][Amount: " + item.getItemCount() + "] to [Buyer: " + buyer.getName() + "] for [Price: "
+							+ price + "]");
 				}
 			}
 			// Decrease kinah for buyer and Increase kinah for seller
@@ -113,27 +115,33 @@ public class PrivateStoreService {
 		if (name != null) {
 			activePlayer.getStore().setStoreMessage(name);
 			if (CustomConfig.SPEAKING_BETWEEN_FACTIONS) {
-				PacketSendUtility.broadcastPacket(playerActive, new SM_PRIVATE_STORE_NAME(playerActive.getObjectId(), name), true);
-			}
-			else {
-				PacketSendUtility.broadcastPacket(playerActive, new SM_PRIVATE_STORE_NAME(playerActive.getObjectId(), name), true, new ObjectFilter<Player>() {
+				PacketSendUtility.broadcastPacket(playerActive,
+						new SM_PRIVATE_STORE_NAME(playerActive.getObjectId(), name), true);
+			} else {
+				PacketSendUtility.broadcastPacket(playerActive,
+						new SM_PRIVATE_STORE_NAME(playerActive.getObjectId(), name), true, new ObjectFilter<Player>() {
 
-					@Override
-					public boolean acceptObject(Player object) {
-						return ((senderRace == object.getRace().getRaceId() && !object.getBlockList().contains(playerActive.getObjectId())) || object.isGM());
-					}
-				});
-				PacketSendUtility.broadcastPacket(playerActive, new SM_PRIVATE_STORE_NAME(playerActive.getObjectId(), ""), false, new ObjectFilter<Player>() {
+							@Override
+							public boolean acceptObject(Player object) {
+								return ((senderRace == object.getRace().getRaceId()
+										&& !object.getBlockList().contains(playerActive.getObjectId()))
+										|| object.isGM());
+							}
+						});
+				PacketSendUtility.broadcastPacket(playerActive,
+						new SM_PRIVATE_STORE_NAME(playerActive.getObjectId(), ""), false, new ObjectFilter<Player>() {
 
-					@Override
-					public boolean acceptObject(Player object) {
-						return senderRace != object.getRace().getRaceId() && !object.getBlockList().contains(playerActive.getObjectId()) && !object.isGM();
-					}
-				});
+							@Override
+							public boolean acceptObject(Player object) {
+								return senderRace != object.getRace().getRaceId()
+										&& !object.getBlockList().contains(playerActive.getObjectId())
+										&& !object.isGM();
+							}
+						});
 			}
-		}
-		else {
-			PacketSendUtility.broadcastPacket(playerActive, new SM_PRIVATE_STORE_NAME(playerActive.getObjectId(), ""), true);
+		} else {
+			PacketSendUtility.broadcastPacket(playerActive, new SM_PRIVATE_STORE_NAME(playerActive.getObjectId(), ""),
+					true);
 		}
 	}
 
@@ -196,7 +204,8 @@ public class PrivateStoreService {
 		}
 		activePlayer.setStore(new PrivateStore(activePlayer));
 		activePlayer.setState(CreatureState.PRIVATE_SHOP);
-		PacketSendUtility.broadcastPacket(activePlayer, new SM_EMOTION(activePlayer, EmotionType.OPEN_PRIVATESHOP, 0, 0), true);
+		PacketSendUtility.broadcastPacket(activePlayer,
+				new SM_EMOTION(activePlayer, EmotionType.OPEN_PRIVATESHOP, 0, 0), true);
 	}
 
 	/**
@@ -207,7 +216,8 @@ public class PrivateStoreService {
 	public static void closePrivateStore(Player activePlayer) {
 		activePlayer.setStore(null);
 		activePlayer.unsetState(CreatureState.PRIVATE_SHOP);
-		PacketSendUtility.broadcastPacket(activePlayer, new SM_EMOTION(activePlayer, EmotionType.CLOSE_PRIVATESHOP, 0, 0), true);
+		PacketSendUtility.broadcastPacket(activePlayer,
+				new SM_EMOTION(activePlayer, EmotionType.CLOSE_PRIVATESHOP, 0, 0), true);
 	}
 
 	/**
@@ -295,7 +305,8 @@ public class PrivateStoreService {
 	 * @param player2
 	 */
 	private static boolean validateParticipants(Player itemOwner, Player newOwner) {
-		return itemOwner != null && newOwner != null && itemOwner.isOnline() && newOwner.isOnline() && itemOwner.getRace().equals(newOwner.getRace());
+		return itemOwner != null && newOwner != null && itemOwner.isOnline() && newOwner.isOnline()
+				&& itemOwner.getRace().equals(newOwner.getRace());
 	}
 
 	/**

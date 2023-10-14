@@ -45,8 +45,7 @@ public class AccountTime {
 	/**
 	 * get daily accumulated online time in millis
 	 * 
-	 * @param accumulatedOnlineTime
-	 *          time in millis
+	 * @param accumulatedOnlineTime time in millis
 	 */
 	public void setAccumulatedOnlineTime(long accumulatedOnlineTime) {
 		this.accumulatedOnlineTime = accumulatedOnlineTime;
@@ -64,8 +63,7 @@ public class AccountTime {
 	/**
 	 * get daily accumulated rest (offline) time since first login
 	 * 
-	 * @param accumulatedRestTime
-	 *          time in millis
+	 * @param accumulatedRestTime time in millis
 	 */
 	public void setAccumulatedRestTime(long accumulatedRestTime) {
 		this.accumulatedRestTime = accumulatedRestTime;
@@ -115,8 +113,7 @@ public class AccountTime {
 	 * Converts milliseconds to hours.<br>
 	 * For instance if millis = 1 hr 32 min, 1 hour will be returned
 	 * 
-	 * @param millis
-	 *          milliseconds
+	 * @param millis milliseconds
 	 * @return hours
 	 */
 	private static int toHours(long millis) {
@@ -127,8 +124,7 @@ public class AccountTime {
 	 * Converts milliseconds to minutes.<br>
 	 * For instance if millis = 1 hr 32 min, 32 min will be returned
 	 * 
-	 * @param millis
-	 *          milliseconds
+	 * @param millis milliseconds
 	 * @return minutes
 	 */
 	private static int toMinutes(long millis) {

@@ -32,21 +32,20 @@ import com.aionemu.gameserver.services.ExchangeService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 
-public class CM_EXCHANGE_REQUEST extends AionClientPacket
-{
+public class CM_EXCHANGE_REQUEST extends AionClientPacket {
 	public Integer targetObjectId;
-	
+
 	private static final Logger log = LoggerFactory.getLogger(CM_EXCHANGE_REQUEST.class);
-	
+
 	public CM_EXCHANGE_REQUEST(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		targetObjectId = readD();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		final Player activePlayer = getConnection().getActivePlayer();
@@ -54,24 +53,32 @@ public class CM_EXCHANGE_REQUEST extends AionClientPacket
 		if (targetPlayer == null) {
 			log.warn("CM_EXCHANGE_REQUEST null target from {} to {}", activePlayer.getObjectId(), targetObjectId);
 			return;
-		} if (!activePlayer.equals(targetPlayer)) {
+		}
+		if (!activePlayer.equals(targetPlayer)) {
 			if (activePlayer.getKnownList().getObject(targetPlayer.getObjectId()) == null) {
-				log.info("[AUDIT] Player " + activePlayer.getName() + " tried trade with player (" + targetPlayer.getName() + ") not from knownlist.");
+				log.info("[AUDIT] Player " + activePlayer.getName() + " tried trade with player ("
+						+ targetPlayer.getName() + ") not from knownlist.");
 				return;
-			} if (!activePlayer.getRace().equals(targetPlayer.getRace())) {
-				log.info("[AUDIT] Player " + activePlayer.getName() + " tried trade with player (" + targetPlayer.getName() + ") another race.");
+			}
+			if (!activePlayer.getRace().equals(targetPlayer.getRace())) {
+				log.info("[AUDIT] Player " + activePlayer.getName() + " tried trade with player ("
+						+ targetPlayer.getName() + ") another race.");
 				return;
-			} if (targetPlayer != null) {
+			}
+			if (targetPlayer != null) {
 				if (targetPlayer.getPlayerSettings().isInDeniedStatus(DeniedStatus.TRADE)) {
 					sendPacket(SM_SYSTEM_MESSAGE.STR_MSG_REJECTED_TRADE(targetPlayer.getName()));
 					return;
-				} if (targetPlayer.getInventory().isFull()) {
-					//You cannot trade with the target as the target is carrying too many items.
+				}
+				if (targetPlayer.getInventory().isFull()) {
+					// You cannot trade with the target as the target is carrying too many items.
 					PacketSendUtility.sendPacket(activePlayer, SM_SYSTEM_MESSAGE.STR_PARTNER_TOO_HEAVY_TO_EXCHANGE);
 					return;
-				} if (activePlayer.getInventory().isFull()) {
-					//You cannot trade with the target as you are carrying too many items.
-					PacketSendUtility.sendPacket(activePlayer, SM_SYSTEM_MESSAGE.STR_EXCHANGE_CANT_EXCHANGE_HEAVY_TO_ADD_EXCHANGE_ITEM);
+				}
+				if (activePlayer.getInventory().isFull()) {
+					// You cannot trade with the target as you are carrying too many items.
+					PacketSendUtility.sendPacket(activePlayer,
+							SM_SYSTEM_MESSAGE.STR_EXCHANGE_CANT_EXCHANGE_HEAVY_TO_ADD_EXCHANGE_ITEM);
 					return;
 				}
 				sendPacket(SM_SYSTEM_MESSAGE.STR_EXCHANGE_ASKED_EXCHANGE_TO_HIM(targetPlayer.getName()));
@@ -80,14 +87,18 @@ public class CM_EXCHANGE_REQUEST extends AionClientPacket
 					public void acceptRequest(Creature requester, Player responder) {
 						ExchangeService.getInstance().registerExchange(activePlayer, targetPlayer);
 					}
+
 					@Override
 					public void denyRequest(Creature requester, Player responder) {
-						PacketSendUtility.sendPacket(activePlayer, new SM_SYSTEM_MESSAGE(SystemMessageId.EXCHANGE_HE_REJECTED_EXCHANGE, targetPlayer.getName()));
+						PacketSendUtility.sendPacket(activePlayer, new SM_SYSTEM_MESSAGE(
+								SystemMessageId.EXCHANGE_HE_REJECTED_EXCHANGE, targetPlayer.getName()));
 					}
 				};
-				boolean requested = targetPlayer.getResponseRequester().putRequest(SM_QUESTION_WINDOW.STR_EXCHANGE_DO_YOU_ACCEPT_EXCHANGE, responseHandler);
+				boolean requested = targetPlayer.getResponseRequester()
+						.putRequest(SM_QUESTION_WINDOW.STR_EXCHANGE_DO_YOU_ACCEPT_EXCHANGE, responseHandler);
 				if (requested) {
-					PacketSendUtility.sendPacket(targetPlayer, new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_EXCHANGE_DO_YOU_ACCEPT_EXCHANGE, 0, 0, activePlayer.getName()));
+					PacketSendUtility.sendPacket(targetPlayer, new SM_QUESTION_WINDOW(
+							SM_QUESTION_WINDOW.STR_EXCHANGE_DO_YOU_ACCEPT_EXCHANGE, 0, 0, activePlayer.getName()));
 				}
 			}
 		}

@@ -46,7 +46,8 @@ public class CM_LEGION_MODIFY_EMBLEM extends AionClientPacket {
 	protected void readImpl() {
 		legionId = readD();
 		emblemId = readC();
-		emblemType = (readC() == LegionEmblemType.DEFAULT.getValue()) ? LegionEmblemType.DEFAULT : LegionEmblemType.CUSTOM;
+		emblemType = (readC() == LegionEmblemType.DEFAULT.getValue()) ? LegionEmblemType.DEFAULT
+				: LegionEmblemType.CUSTOM;
 		readC(); // 0xFF (Fixed)
 		red = readC();
 		green = readC();
@@ -57,6 +58,8 @@ public class CM_LEGION_MODIFY_EMBLEM extends AionClientPacket {
 	protected void runImpl() {
 		Player activePlayer = getConnection().getActivePlayer();
 
-		if (activePlayer.isLegionMember()) LegionService.getInstance().storeLegionEmblem(activePlayer, legionId, emblemId, red, green, blue, emblemType);
+		if (activePlayer.isLegionMember())
+			LegionService.getInstance().storeLegionEmblem(activePlayer, legionId, emblemId, red, green, blue,
+					emblemType);
 	}
 }

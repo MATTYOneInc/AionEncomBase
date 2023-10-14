@@ -27,14 +27,13 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SignetBurstEffect")
-public class SignetBurstEffect extends DamageEffect
-{
-    @XmlAttribute
+public class SignetBurstEffect extends DamageEffect {
+	@XmlAttribute
 	protected int signetlvl;
-	
+
 	@XmlAttribute
 	protected String signet;
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		Effect signetEffect = effect.getEffected().getEffectController().getAnormalEffect(signet);
@@ -49,7 +48,8 @@ public class SignetBurstEffect extends DamageEffect
 		if (signetEffect == null) {
 			valueWithDelta *= 0.05f;
 			effect.setLaunchSubEffect(false);
-			AttackUtil.calculateMagicalSkillResult(effect, valueWithDelta, null, getElement(), true, true, false, getMode(), this.critProbMod2, critAddDmg, shared, false);
+			AttackUtil.calculateMagicalSkillResult(effect, valueWithDelta, null, getElement(), true, true, false,
+					getMode(), this.critProbMod2, critAddDmg, shared, false);
 		} else {
 			int level = signetEffect.getSkillLevel();
 			if (level < 3) {
@@ -57,44 +57,45 @@ public class SignetBurstEffect extends DamageEffect
 			}
 			effect.setSignetBurstedCount(level);
 			switch (level) {
-				case 1:
-					valueWithDelta *= 0.2f;
+			case 1:
+				valueWithDelta *= 0.2f;
 				break;
-				case 2:
-					valueWithDelta *= 0.5f;
+			case 2:
+				valueWithDelta *= 0.5f;
 				break;
-				case 3:
-					valueWithDelta *= 1.0f;
+			case 3:
+				valueWithDelta *= 1.0f;
 				break;
-				case 4:
-					valueWithDelta *= 1.2f;
+			case 4:
+				valueWithDelta *= 1.2f;
 				break;
-				case 5:
-					valueWithDelta *= 1.5f;
+			case 5:
+				valueWithDelta *= 1.5f;
 				break;
 			}
 			int accmod = 0;
 			int mAccurancy = effect.getEffector().getGameStats().getMAccuracy().getCurrent();
 			switch (level) {
-				case 1:
-					accmod = (int) (-10.8f * mAccurancy);
+			case 1:
+				accmod = (int) (-10.8f * mAccurancy);
 				break;
-				case 2:
-					accmod = (int) (-10.5f * mAccurancy);
+			case 2:
+				accmod = (int) (-10.5f * mAccurancy);
 				break;
-				case 3:
-					accmod = 0;
+			case 3:
+				accmod = 0;
 				break;
-				case 4:
-					accmod = (int) (13.5f * mAccurancy);
+			case 4:
+				accmod = (int) (13.5f * mAccurancy);
 				break;
-				case 5:
-					accmod = (int) (18.5f * mAccurancy);
+			case 5:
+				accmod = (int) (18.5f * mAccurancy);
 				break;
 			}
 			effect.setAccModBoost(accmod);
 			effect.setLaunchSubEffect(true);
-			AttackUtil.calculateMagicalSkillResult(effect, valueWithDelta, null, getElement(), true, true, false, getMode(), this.critProbMod2, critAddDmg, shared, false);
+			AttackUtil.calculateMagicalSkillResult(effect, valueWithDelta, null, getElement(), true, true, false,
+					getMode(), this.critProbMod2, critAddDmg, shared, false);
 			if (signetEffect != null) {
 				signetEffect.endEffect();
 			}

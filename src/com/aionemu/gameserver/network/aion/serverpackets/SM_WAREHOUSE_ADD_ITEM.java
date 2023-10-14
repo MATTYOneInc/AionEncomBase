@@ -46,19 +46,19 @@ public class SM_WAREHOUSE_ADD_ITEM extends AionServerPacket {
 	}
 
 	public SM_WAREHOUSE_ADD_ITEM(Item item, int warehouseType, Player player, ItemAddType addType) {
-        this(item, warehouseType, player);
-        this.addType = addType;
-    }
+		this(item, warehouseType, player);
+		this.addType = addType;
+	}
 
 	@Override
-    protected void writeImpl(AionConnection con) {
-        writeC(warehouseType);
-        writeH(addType.getMask());
-        writeH(items.size());
-        for (Item item : items) {
-            writeItemInfo(item);
+	protected void writeImpl(AionConnection con) {
+		writeC(warehouseType);
+		writeH(addType.getMask());
+		writeH(items.size());
+		for (Item item : items) {
+			writeItemInfo(item);
 		}
-    }
+	}
 
 	private void writeItemInfo(Item item) {
 		ItemTemplate itemTemplate = item.getItemTemplate();

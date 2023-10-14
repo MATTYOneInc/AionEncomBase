@@ -20,59 +20,60 @@ import com.aionemu.gameserver.configs.administration.AdminConfig;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 public enum GmSpecialSkills {
-	AccessLevel1(1, AdminConfig.ADMIN_TAG_1, "\uE042 Support\uE043", new int[]{240, 241, 282}),
-    AccessLevel2(2, AdminConfig.ADMIN_TAG_1, "\uE042 Jr-GM\uE043", new int[]{240, 241, 282}),
-    AccessLevel3(3, AdminConfig.ADMIN_TAG_1, "\uE042 GM\uE043", new int[]{240, 241, 282}),
-    AccessLevel4(4, AdminConfig.ADMIN_TAG_1, "\uE042 Head-GM\uE043", new int[]{240, 241, 282}),
-    AccessLevel5(5, AdminConfig.ADMIN_TAG_1, "\uE050 Admin\uE050", new int[]{240, 241, 282});
+	AccessLevel1(1, AdminConfig.ADMIN_TAG_1, "\uE042 Support\uE043", new int[] { 240, 241, 282 }),
+	AccessLevel2(2, AdminConfig.ADMIN_TAG_1, "\uE042 Jr-GM\uE043", new int[] { 240, 241, 282 }),
+	AccessLevel3(3, AdminConfig.ADMIN_TAG_1, "\uE042 GM\uE043", new int[] { 240, 241, 282 }),
+	AccessLevel4(4, AdminConfig.ADMIN_TAG_1, "\uE042 Head-GM\uE043", new int[] { 240, 241, 282 }),
+	AccessLevel5(5, AdminConfig.ADMIN_TAG_1, "\uE050 Admin\uE050", new int[] { 240, 241, 282 });
 
-    private final int level;
-    private final String nameLevel;
-    private String status;
-    private int[] skills;
+	private final int level;
+	private final String nameLevel;
+	private String status;
+	private int[] skills;
 
-    GmSpecialSkills(int id, String name, String status, int[] skills) {
-        this.level = id;
-        this.nameLevel = name;
-        this.status = status;
-        this.skills = skills;
-    }
+	GmSpecialSkills(int id, String name, String status, int[] skills) {
+		this.level = id;
+		this.nameLevel = name;
+		this.status = status;
+		this.skills = skills;
+	}
 
-    public String getName() {
-        return nameLevel;
-    }
+	public String getName() {
+		return nameLevel;
+	}
 
-    public int getLevel() {
-        return level;
-    }
+	public int getLevel() {
+		return level;
+	}
 
-    public String getStatusName() {
-        return status;
-    }
+	public String getStatusName() {
+		return status;
+	}
 
-    public int[] getSkills() {
-        return skills;
-    }
+	public int[] getSkills() {
+		return skills;
+	}
 
-    public static GmSpecialSkills getAlType(int level) {
-        for (GmSpecialSkills al : GmSpecialSkills.values()) {
-            if (level == al.getLevel()) {
-                return al;
-            }
-        }
-        return null;
-    }
+	public static GmSpecialSkills getAlType(int level) {
+		for (GmSpecialSkills al : GmSpecialSkills.values()) {
+			if (level == al.getLevel()) {
+				return al;
+			}
+		}
+		return null;
+	}
 
-    public static String getAlName(int level) {
-        for (GmSpecialSkills al : GmSpecialSkills.values()) {
-            if (level == al.getLevel()) {
-                return al.getName();
-            }
-        }
-        return "%s";
-    }
+	public static String getAlName(int level) {
+		for (GmSpecialSkills al : GmSpecialSkills.values()) {
+			if (level == al.getLevel()) {
+				return al.getName();
+			}
+		}
+		return "%s";
+	}
 
-    public static String getStatusName(Player player) {
-        return player.getAccessLevel() > 0 ? GmSpecialSkills.getAlType(player.getAccessLevel()).getStatusName() : player.getLegion().getLegionName();
-    }
+	public static String getStatusName(Player player) {
+		return player.getAccessLevel() > 0 ? GmSpecialSkills.getAlType(player.getAccessLevel()).getStatusName()
+				: player.getLegion().getLegionName();
+	}
 }

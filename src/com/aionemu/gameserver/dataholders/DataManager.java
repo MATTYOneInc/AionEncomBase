@@ -23,8 +23,7 @@ import com.aionemu.gameserver.dataholders.loadingutils.XmlDataLoader;
 import com.aionemu.gameserver.model.templates.mail.Mails;
 import com.aionemu.gameserver.utils.Util;
 
-public final class DataManager
-{
+public final class DataManager {
 	static Logger log = LoggerFactory.getLogger(DataManager.class);
 	public static NpcData NPC_DATA;
 	public static NpcDropData NPC_DROP_DATA;

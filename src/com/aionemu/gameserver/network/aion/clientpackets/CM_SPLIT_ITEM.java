@@ -53,6 +53,7 @@ public class CM_SPLIT_ITEM extends AionClientPacket {
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
-		ItemSplitService.splitItem(player, sourceItemObjId, destinationItemObjId, itemAmount, slotNum, sourceStorageType, destinationStorageType);
+		ItemSplitService.splitItem(player, sourceItemObjId, destinationItemObjId, itemAmount, slotNum,
+				sourceStorageType, destinationStorageType);
 	}
 }

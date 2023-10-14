@@ -16,34 +16,20 @@
  */
 package com.aionemu.gameserver.utils.stats.enums;
 
-public enum AGILITY
-{
-	WARRIOR(100),
-	GLADIATOR(100),
-	TEMPLAR(110),
-	SCOUT(100),
-	ASSASSIN(100),
-	RANGER(100),
-	MAGE(95),
-	SORCERER(100),
-	SPIRIT_MASTER(100),
-	PRIEST(100),
-	CLERIC(90),
-	CHANTER(90),
-	//News Class 4.3
-	TECHNIST(110),
-	GUNSLINGER(105),
-	MUSE(100),
-	SONGWEAVER(100),
-	//News Class 4.5
+public enum AGILITY {
+	WARRIOR(100), GLADIATOR(100), TEMPLAR(110), SCOUT(100), ASSASSIN(100), RANGER(100), MAGE(95), SORCERER(100),
+	SPIRIT_MASTER(100), PRIEST(100), CLERIC(90), CHANTER(90),
+	// News Class 4.3
+	TECHNIST(110), GUNSLINGER(105), MUSE(100), SONGWEAVER(100),
+	// News Class 4.5
 	AETHERTECH(110);
-	
+
 	private int value;
-	
+
 	private AGILITY(int value) {
 		this.value = value;
 	}
-	
+
 	public int getValue() {
 		return value;
 	}

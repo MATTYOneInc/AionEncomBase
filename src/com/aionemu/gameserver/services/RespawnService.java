@@ -46,15 +46,13 @@ public class RespawnService {
 		int decayInterval;
 		Set<DropItem> drop = DropRegistrationService.getInstance().getCurrentDropMap().get(npc.getObjectId());
 
-		if(drop == null) {
+		if (drop == null) {
 			decayInterval = IMMEDIATE_DECAY;
-		}
-		else if(drop.isEmpty()) {
+		} else if (drop.isEmpty()) {
 			decayInterval = WITHOUT_DROP_DECAY;
-		}
-		else {
+		} else {
 			decayInterval = WITH_DROP_DECAY;
-        }
+		}
 		return scheduleDecayTask(npc, decayInterval);
 	}
 
@@ -77,9 +75,10 @@ public class RespawnService {
 	 * @param instanceId
 	 */
 	private static final VisibleObject respawn(SpawnTemplate spawnTemplate, final int instanceId) {
-		if (spawnTemplate.isTemporarySpawn() && !spawnTemplate.getTemporarySpawn().canSpawn() && !spawnTemplate.getTemporarySpawn().isInSpawnTime()) {
+		if (spawnTemplate.isTemporarySpawn() && !spawnTemplate.getTemporarySpawn().canSpawn()
+				&& !spawnTemplate.getTemporarySpawn().isInSpawnTime()) {
 			return null;
-        }
+		}
 		int worldId = spawnTemplate.getWorldId();
 		boolean instanceExists = InstanceService.isInstanceExist(worldId, instanceId);
 		if (spawnTemplate.isNoRespawn() || !instanceExists) {

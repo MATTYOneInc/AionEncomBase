@@ -41,15 +41,13 @@ public class SM_GATHERABLE_INFO extends AionServerPacket {
 		writeD(visibleObject.getObjectId());
 		writeD(visibleObject.getSpawn().getEntityId());
 		writeD(visibleObject.getObjectTemplate().getTemplateId());
-		if (visibleObject instanceof StaticDoor){
-			if (((StaticDoor)visibleObject).isOpen()){
+		if (visibleObject instanceof StaticDoor) {
+			if (((StaticDoor) visibleObject).isOpen()) {
 				writeH(0x09);
-			}
-			else {
+			} else {
 				writeH(0x0A);
 			}
-		}
-		else {
+		} else {
 			writeH(1);
 		}
 		writeC(visibleObject.getSpawn().getHeading());

@@ -36,17 +36,16 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CompositionAction")
-public class CompositionAction extends AbstractItemAction
-{
+public class CompositionAction extends AbstractItemAction {
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		return false;
 	}
-	
+
 	@Override
 	public void act(Player player, Item parentItem, Item targetItem) {
 	}
-	
+
 	public boolean canAct(Player player, Item tools, Item first, Item second) {
 		if (!tools.getItemTemplate().isCombinationItem())
 			return false;
@@ -60,15 +59,17 @@ public class CompositionAction extends AbstractItemAction
 			return false;
 		return true;
 	}
-	
+
 	public void act(final Player player, final Item tools, final Item first, final Item second) {
-		PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), tools.getObjectId(), tools.getItemTemplate().getTemplateId(), 3000, 0, 0));
+		PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), tools.getObjectId(),
+				tools.getItemTemplate().getTemplateId(), 3000, 0, 0));
 		player.getController().cancelTask(TaskId.ITEM_USE);
 		final ItemUseObserver observer = new ItemUseObserver() {
 			@Override
 			public void abort() {
 				player.getController().cancelTask(TaskId.ITEM_USE);
-				PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), tools.getObjectId(), tools.getItemTemplate().getTemplateId(), 0, 2, 0));
+				PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+						tools.getObjectId(), tools.getItemTemplate().getTemplateId(), 0, 2, 0));
 				player.getObserveController().removeObserver(this);
 			}
 		};
@@ -81,13 +82,17 @@ public class CompositionAction extends AbstractItemAction
 				boolean result1 = player.getInventory().decreaseByObjectId(first.getObjectId(), 1);
 				boolean result2 = player.getInventory().decreaseByObjectId(second.getObjectId(), 1);
 				if (result && result1 && result2) {
-					ItemService.addItem(player, getItemId(calcLevel(first.getItemTemplate().getLevel(), second.getItemTemplate().getLevel())), 1);
+					ItemService.addItem(player,
+							getItemId(
+									calcLevel(first.getItemTemplate().getLevel(), second.getItemTemplate().getLevel())),
+							1);
 				}
-				PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), tools.getObjectId(), tools.getItemTemplate().getTemplateId(), 0, 1, 0));
+				PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+						tools.getObjectId(), tools.getItemTemplate().getTemplateId(), 0, 1, 0));
 			}
 		}, 3000));
 	}
-	
+
 	private int calcLevel(int first, int second) {
 		int value = ((first + second) / 2);
 		if (value < 11) {
@@ -99,7 +104,7 @@ public class CompositionAction extends AbstractItemAction
 		}
 		return value;
 	}
-	
+
 	public int getItemId(int value) {
 		return 166000000 + value;
 	}

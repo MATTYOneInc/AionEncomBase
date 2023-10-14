@@ -28,19 +28,18 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 import gnu.trove.map.hash.TIntObjectHashMap;
 import javolution.util.FastList;
 
-public class SM_IN_GAME_SHOP_LIST extends AionServerPacket
-{
+public class SM_IN_GAME_SHOP_LIST extends AionServerPacket {
 	private Player player;
 	private int nrList;
 	private int salesRanking;
 	private TIntObjectHashMap<FastList<IGItem>> allItems = new TIntObjectHashMap<FastList<IGItem>>();
-	
+
 	public SM_IN_GAME_SHOP_LIST(Player player, int nrList, int salesRanking) {
 		this.player = player;
 		this.nrList = nrList;
 		this.salesRanking = salesRanking;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		byte category = player.inGameShop.getCategory();

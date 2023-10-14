@@ -62,10 +62,12 @@ public class CM_SELECT_ITEM extends AionClientPacket {
 		if (item == null) {
 			return;
 		}
-		sendPacket(new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(), player.getObjectId().intValue(), this.uniqueItemId, item.getItemId(), 0, 1, 1));
+		sendPacket(new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(), player.getObjectId().intValue(),
+				this.uniqueItemId, item.getItemId(), 0, 1, 1));
 		boolean delete = player.getInventory().decreaseByObjectId(this.uniqueItemId, 1L);
 		if (delete) {
-			SelectItems selectitem = DataManager.DECOMPOSABLE_SELECT_ITEM_DATA.getSelectItem(player.getPlayerClass(), player.getRace(), item.getItemId());
+			SelectItems selectitem = DataManager.DECOMPOSABLE_SELECT_ITEM_DATA.getSelectItem(player.getPlayerClass(),
+					player.getRace(), item.getItemId());
 			SelectItem st = selectitem.getItems().get(this.index);
 			ItemService.addItem(player, st.getSelectItemId(), st.getCount());
 			sendPacket(new SM_SELECT_ITEM_ADD(this.uniqueItemId, 0));

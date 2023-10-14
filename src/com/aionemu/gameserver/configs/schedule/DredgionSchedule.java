@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "dredgion_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DredgionSchedule
-{
+public class DredgionSchedule {
 	@XmlElement(name = "dredgion", required = true)
 	private List<Dredgion> dredgionsList;
-	
+
 	public List<Dredgion> getDredgionsList() {
 		return dredgionsList;
 	}
-	
+
 	public void setZorshivsList(List<Dredgion> dredgionList) {
 		this.dredgionsList = dredgionList;
 	}
-	
+
 	public static DredgionSchedule load() {
 		DredgionSchedule ds;
 		try {
@@ -58,28 +57,28 @@ public class DredgionSchedule
 		}
 		return ds;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "dredgion")
 	public static class Dredgion {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "zorshivTime", required = true)
 		private List<String> zorshivTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getZorshivTimes() {
 			return zorshivTimes;
 		}
-		
+
 		public void setZorshivTimes(List<String> zorshivTimes) {
 			this.zorshivTimes = zorshivTimes;
 		}

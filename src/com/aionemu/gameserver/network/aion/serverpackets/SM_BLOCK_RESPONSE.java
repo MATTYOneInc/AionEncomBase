@@ -53,10 +53,9 @@ public class SM_BLOCK_RESPONSE extends AionServerPacket {
 	/**
 	 * Constructs a new block request response packet
 	 * 
-	 * @param code
-	 *          Message code to use - see class constants
-	 * @param playerName
-	 *          Parameters inserted into message. Usually the target player's name
+	 * @param code       Message code to use - see class constants
+	 * @param playerName Parameters inserted into message. Usually the target
+	 *                   player's name
 	 */
 	public SM_BLOCK_RESPONSE(int code, String playerName) {
 		this.code = code;

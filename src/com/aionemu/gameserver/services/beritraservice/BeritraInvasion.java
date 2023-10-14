@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.BeritraService;
  * @author Rinzler (Encom)
  */
 
-public abstract class BeritraInvasion<BL extends BeritraLocation>
-{
+public abstract class BeritraInvasion<BL extends BeritraLocation> {
 	private boolean started;
 	private final BL beritraLocation;
+
 	protected abstract void stopBeritraInvasion();
+
 	protected abstract void startBeritraInvasion();
+
 	private final AtomicBoolean finished = new AtomicBoolean();
-	
+
 	public BeritraInvasion(BL beritraLocation) {
 		this.beritraLocation = beritraLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class BeritraInvasion<BL extends BeritraLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startBeritraInvasion();
 	}
-	
+
 	public final void stop() {
 		if (finished.compareAndSet(false, true)) {
 			stopBeritraInvasion();
 		}
 	}
-	
+
 	protected void spawn(BeritraStateType type) {
 		BeritraService.getInstance().spawn(getBeritraLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		BeritraService.getInstance().despawn(getBeritraLocation());
 	}
-	
+
 	public boolean isFinished() {
 		return finished.get();
 	}
-	
+
 	public BL getBeritraLocation() {
 		return beritraLocation;
 	}
-	
+
 	public int getBeritraLocationId() {
 		return beritraLocation.getId();
 	}

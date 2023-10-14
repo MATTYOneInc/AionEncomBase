@@ -31,12 +31,12 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 
 	private final Player player;
 	private boolean enemy;
-	
+
 	public SM_PLAYER_INFO(Player player, boolean enemy) {
 		this.player = player;
 		this.enemy = enemy;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 
@@ -51,9 +51,11 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		final int raceId;
 		int bgIndex = 0;
 
-		if (player.getAdminNeutral() > 1 || activePlayer.getAdminNeutral() > 1 || player.isInPvEMode() || activePlayer.isInPvEMode()) {
+		if (player.getAdminNeutral() > 1 || activePlayer.getAdminNeutral() > 1 || player.isInPvEMode()
+				|| activePlayer.isInPvEMode()) {
 			raceId = activePlayer.getRace().getRaceId();
-		} else if (FFAService.getInstance().isInArena(activePlayer) && activePlayer.isFFA() || activePlayer.isInPkMode() || activePlayer.isBandit()) {
+		} else if (FFAService.getInstance().isInArena(activePlayer) && activePlayer.isFFA() || activePlayer.isInPkMode()
+				|| activePlayer.isBandit()) {
 			if (player.getRace() == activePlayer.getRace() && player != activePlayer) {
 				raceId = (player.getRace().getRaceId() == 0 ? 1 : 0);
 			} else if (player != activePlayer) {
@@ -67,8 +69,10 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 			raceId = player.getRace().getRaceId();
 		}
 
-		if (!player.isSpectating() && player.getBattleground() != null && (player.isInGroup2() || player.isInAlliance2())) {
-			bgIndex = (player.isInGroup2()) ? player.getPlayerGroup2().getBgIndex() : player.getPlayerAlliance2().getBgIndex();
+		if (!player.isSpectating() && player.getBattleground() != null
+				&& (player.isInGroup2() || player.isInAlliance2())) {
+			bgIndex = (player.isInGroup2()) ? player.getPlayerGroup2().getBgIndex()
+					: player.getPlayerAlliance2().getBgIndex();
 		} else {
 			bgIndex = player.getBgIndex();
 		}
@@ -84,10 +88,11 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		 * A3 female asmodian A2 male asmodian A1 female elyos A0 male elyos
 		 */
 		writeD(pcd.getTemplateId());
-		writeD(player.getRobotId());//4.5 protocol changed
+		writeD(player.getRobotId());// 4.5 protocol changed
 
 		/**
-		 * Transformed state - send transformed model id Regular state - send player model id (from common data)
+		 * Transformed state - send transformed model id Regular state - send player
+		 * model id (from common data)
 		 */
 		int model = player.getTransformModel().getModelId();
 
@@ -96,7 +101,7 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		writeB(new byte[19]);
 		writeD(player.getTransformModel().getType().getId());
 
-		if  (player.isInPkMode() || activePlayer.isInPkMode()) {
+		if (player.isInPkMode() || activePlayer.isInPkMode()) {
 			writeC(0x00);
 		} else {
 			writeC(enemy ? 0x00 : 0x26);
@@ -117,63 +122,62 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		if (player.getClientConnection() != null) {
 			// * = Premium & VIP Membership
 			if (MembershipConfig.PREMIUM_TAG_DISPLAY) {
-                switch (player.getClientConnection().getAccount().getMembership()) {
-                    case 1:
-                    	nameFormat = sb.replace(0, sb.length(), MembershipConfig.TAG_PREMIUM).toString();
-                        break;
-                    case 2:
-                    	nameFormat = sb.replace(0, sb.length(), MembershipConfig.TAG_VIP).toString();
-                        break;
-                }
-            }
-			
+				switch (player.getClientConnection().getAccount().getMembership()) {
+				case 1:
+					nameFormat = sb.replace(0, sb.length(), MembershipConfig.TAG_PREMIUM).toString();
+					break;
+				case 2:
+					nameFormat = sb.replace(0, sb.length(), MembershipConfig.TAG_VIP).toString();
+					break;
+				}
+			}
+
 			// * = Wedding
 			if (player.isMarried()) {
 				String partnerName = DAOManager.getDAO(PlayerDAO.class).getPlayerNameByObjId(player.getPartnerId());
-	            nameFormat += "\uE020"+ partnerName;
+				nameFormat += "\uE020" + partnerName;
 			}
 
-		    /**
-		    * WPvP Related Features
-		    */
-		    if (player.isInPvEMode()){
-			    nameFormat = sb.insert(0, CustomConfig.TAG_PVE.substring(0, 2)).toString();
-		    }
+			/**
+			 * WPvP Related Features
+			 */
+			if (player.isInPvEMode()) {
+				nameFormat = sb.insert(0, CustomConfig.TAG_PVE.substring(0, 2)).toString();
+			}
 
-		    if (player.isInPkMode()) {
-			    nameFormat = sb.insert(0, CustomConfig.TAG_PK.substring(0, 2)).toString();
-		    }
+			if (player.isInPkMode()) {
+				nameFormat = sb.insert(0, CustomConfig.TAG_PK.substring(0, 2)).toString();
+			}
 
 			// * = Server Staff Access Level
 			if (AdminConfig.ADMIN_TAG_ENABLE) {
-                switch (player.getClientConnection().getAccount().getAccessLevel()) {
-                    case 1:
-                    	nameFormat = AdminConfig.ADMIN_TAG_1.replace("%s", sb.toString());
-                        break;
-                    case 2:
-                    	nameFormat = AdminConfig.ADMIN_TAG_2.replace("%s", sb.toString());
-                        break;
-                    case 3:
-                    	nameFormat = AdminConfig.ADMIN_TAG_3.replace("%s", sb.toString());
-                        break;
-                    case 4:
-                    	nameFormat = AdminConfig.ADMIN_TAG_4.replace("%s", sb.toString());
-                        break;
-                    case 5:
-                    	nameFormat = AdminConfig.ADMIN_TAG_5.replace("%s", sb.toString());
-                    	break;
-                }
+				switch (player.getClientConnection().getAccount().getAccessLevel()) {
+				case 1:
+					nameFormat = AdminConfig.ADMIN_TAG_1.replace("%s", sb.toString());
+					break;
+				case 2:
+					nameFormat = AdminConfig.ADMIN_TAG_2.replace("%s", sb.toString());
+					break;
+				case 3:
+					nameFormat = AdminConfig.ADMIN_TAG_3.replace("%s", sb.toString());
+					break;
+				case 4:
+					nameFormat = AdminConfig.ADMIN_TAG_4.replace("%s", sb.toString());
+					break;
+				case 5:
+					nameFormat = AdminConfig.ADMIN_TAG_5.replace("%s", sb.toString());
+					break;
+				}
 			}
 		}
 
 		writeS(String.format(nameFormat, DisplayService.getDisplayName(player)));
 		writeH(pcd.getTitleId());
-		writeH(player.getCommonData().isHaveMentorFlag()? 1 : 0);
+		writeH(player.getCommonData().isHaveMentorFlag() ? 1 : 0);
 		writeH(player.getCastingSkillId());
 
-		if (player.isLegionMember() && !player.isBandit() ||
-		    player.isLegionMember() && !player.isFFA() ||
-		    player.isLegionMember() && player.getBattleground() == null) {
+		if (player.isLegionMember() && !player.isBandit() || player.isLegionMember() && !player.isFFA()
+				|| player.isLegionMember() && player.getBattleground() == null) {
 			writeD(player.getLegion().getLegionId());
 			writeC(player.getLegion().getLegionEmblem().getEmblemId());
 			writeC(player.getLegion().getLegionEmblem().getEmblemType().getValue());
@@ -182,8 +186,10 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 			writeC(player.getLegion().getLegionEmblem().getColor_g());
 			writeC(player.getLegion().getLegionEmblem().getColor_b());
 			writeS(player.getLegion().getLegionName());
-		} else if (!player.isSpectating() && player.getBattleground() != null && (player.isInGroup2() || player.isInAlliance2())) {
-			bgIndex = (player.isInGroup2()) ? player.getPlayerGroup2().getBgIndex() : player.getPlayerAlliance2().getBgIndex();
+		} else if (!player.isSpectating() && player.getBattleground() != null
+				&& (player.isInGroup2() || player.isInAlliance2())) {
+			bgIndex = (player.isInGroup2()) ? player.getPlayerGroup2().getBgIndex()
+					: player.getPlayerAlliance2().getBgIndex();
 			LegionEmblem emblem = LadderService.getInstance().getCapeEmblemByIndex(bgIndex);
 			writeD(bgIndex + 1);
 			writeC(emblem.getEmblemId());
@@ -193,11 +199,9 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 			writeC(player.isLegionMember() ? player.getLegion().getLegionEmblem().getColor_g() : 0);
 			writeC(player.isLegionMember() ? player.getLegion().getLegionEmblem().getColor_b() : 0);
 			writeS(LadderService.getInstance().getNameByIndex(bgIndex));
-		} else if (!player.isSpectating() &&
-		    player.getBattleground() != null &&
-			player.getBattleground().is1v1() &&
-			(player.getBattleground() instanceof DeathmatchBg ||
-			player.getBattleground() instanceof SoloSurvivorBg)) {
+		} else if (!player.isSpectating() && player.getBattleground() != null && player.getBattleground().is1v1()
+				&& (player.getBattleground() instanceof DeathmatchBg
+						|| player.getBattleground() instanceof SoloSurvivorBg)) {
 			writeD(bgIndex + 1);
 			LegionEmblem emblem = LadderService.getInstance().getCapeEmblemByIndex(player.getBgIndex());
 			writeC(emblem.getEmblemId());
@@ -225,7 +229,7 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		writeC(100 * currHp / maxHp);// %hp
 		writeH(pcd.getDp());// current dp
 		writeC(0x00);// unk (0x00)
-		
+
 		/**
 		 * Start Item Appearance
 		 */
@@ -330,7 +334,7 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		Stat2 attackSpeed = player.getGameStats().getAttackSpeed();
 		writeH(attackSpeed.getBase());
 		writeH(attackSpeed.getCurrent());
-		writeC(player.getPortAnimation());//port animation
+		writeC(player.getPortAnimation());// port animation
 		writeS(player.hasStore() ? player.getStore().getStoreMessage() : "");// private store message
 
 		/**
@@ -348,7 +352,8 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		writeH(player.getLevel()); // [level]
 		writeH(player.getPlayerSettings().getDisplay()); // unk - 0x04
 		writeH(player.getPlayerSettings().getDeny()); // unk - 0x00
-		writeH((player.isFFA() || player.getBattleground() != null || player.isBandit()) ? 0 : player.getAbyssRank().getRank().getId()); // abyss rank
+		writeH((player.isFFA() || player.getBattleground() != null || player.isBandit()) ? 0
+				: player.getAbyssRank().getRank().getId()); // abyss rank
 		writeH(0x00); // unk - 0x01
 		writeD(player.getTarget() == null ? 0 : player.getTarget().getObjectId());
 		writeC(0); // suspect id
@@ -360,12 +365,12 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		 * System By Ranastic
 		 */
 		writeD(player.getPlayersBonusId());
-		writeD(10); //Player Buff.
-		writeD(0); //New Buff Icons.
-		writeC(raceId == 0 ? 3 : 5); //Language: Asmodians 3/Elyos 5
-		writeC(player.getConquerorInfo().getRank()); //Conqueror 4.8
-		writeC(player.getProtectorInfo().getRank()); //Protector 4.8
-		writeC(6); //Vip Rank Icon.
-		writeD(1); //unk 5.5
+		writeD(10); // Player Buff.
+		writeD(0); // New Buff Icons.
+		writeC(raceId == 0 ? 3 : 5); // Language: Asmodians 3/Elyos 5
+		writeC(player.getConquerorInfo().getRank()); // Conqueror 4.8
+		writeC(player.getProtectorInfo().getRank()); // Protector 4.8
+		writeC(6); // Vip Rank Icon.
+		writeD(1); // unk 5.5
 	}
 }

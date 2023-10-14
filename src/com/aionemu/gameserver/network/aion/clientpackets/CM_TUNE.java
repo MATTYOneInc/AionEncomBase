@@ -38,21 +38,20 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
  * @author Ranastic
  */
 
-public class CM_TUNE extends AionClientPacket
-{
+public class CM_TUNE extends AionClientPacket {
 	private int tuningScrollId;
 	private static int itemObjectId;
-	
+
 	public CM_TUNE(int opcode, AionConnection.State state, AionConnection.State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		itemObjectId = readD();
 		tuningScrollId = readD();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		final Player player = getConnection().getActivePlayer();
@@ -62,7 +61,8 @@ public class CM_TUNE extends AionClientPacket
 		final Item item = inventory.getItemByObjId(itemObjectId);
 		if (item == null) {
 			return;
-		} if (tuningScrollId != 0) {
+		}
+		if (tuningScrollId != 0) {
 			final Item tuningItem = inventory.getItemByObjId(tuningScrollId);
 			if (tuningItem == null) {
 				return;
@@ -72,36 +72,42 @@ public class CM_TUNE extends AionClientPacket
 				action.act(player, tuningItem, item);
 			}
 			return;
-		} if (item.getOptionalSocket() != -1) {
-            return;
-        }
+		}
+		if (item.getOptionalSocket() != -1) {
+			return;
+		}
 		final int itemId = item.getItemId();
 		final ItemTemplate template = item.getItemTemplate();
 		final int nameId = template.getNameId();
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), item.getObjectId(), itemId, 5000, 0, 0), true);
+		PacketSendUtility.broadcastPacket(player,
+				new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), item.getObjectId(), itemId, 5000, 0, 0), true);
 		final ItemUseObserver observer = new ItemUseObserver() {
 			@Override
-            public void abort() {
-                player.getController().cancelTask(TaskId.ITEM_USE);
-                player.removeItemCoolDown(template.getUseLimits().getDelayId());
+			public void abort() {
+				player.getController().cancelTask(TaskId.ITEM_USE);
+				player.removeItemCoolDown(template.getUseLimits().getDelayId());
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_CANCELED(new DescriptionId(nameId)));
-                PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjectId, itemId, 0, 2, 0), true);
-                player.getObserveController().removeObserver(this);
-            }
+				PacketSendUtility.broadcastPacket(player,
+						new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjectId, itemId, 0, 2, 0), true);
+				player.getObserveController().removeObserver(this);
+			}
 		};
 		player.getObserveController().attach(observer);
 		player.getController().addTask(TaskId.ITEM_USE, ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
 				if (item.getOptionalSocket() != -1) {
-                    return;
-                }
+					return;
+				}
 				player.getObserveController().removeObserver(observer);
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjectId, itemId, 0, 1, 1), true);
+				PacketSendUtility.broadcastPacket(player,
+						new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjectId, itemId, 0, 1, 1), true);
 				item.setOptionalSocket(Rnd.get(0, item.getItemTemplate().getOptionSlotBonus()));
-				/*if (item.getItemTemplate().getMaxEnchantBonus() > 0) {
-					item.setEnchantBonus(Rnd.get(0, item.getItemTemplate().getMaxEnchantBonus()));
-				}*/
+				/*
+				 * if (item.getItemTemplate().getMaxEnchantBonus() > 0) {
+				 * item.setEnchantBonus(Rnd.get(0,
+				 * item.getItemTemplate().getMaxEnchantBonus())); }
+				 */
 				item.setRndBonus();
 				item.setPersistentState(PersistentState.UPDATE_REQUIRED);
 				PacketSendUtility.sendPacket(player, new SM_INVENTORY_UPDATE_ITEM(player, item));

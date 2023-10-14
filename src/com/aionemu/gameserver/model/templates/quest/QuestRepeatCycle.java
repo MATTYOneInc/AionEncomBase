@@ -21,23 +21,15 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlType(name = "QuestRepeatCycle")
 @XmlEnum
-public enum QuestRepeatCycle
-{
-	ALL(0),
-	MON(1),
-	TUE(2),
-	WED(3),
-	THU(4),
-	FRI(5),
-	SAT(6),
-	SUN(7);
-	
+public enum QuestRepeatCycle {
+	ALL(0), MON(1), TUE(2), WED(3), THU(4), FRI(5), SAT(6), SUN(7);
+
 	private int weekDay;
-	
+
 	private QuestRepeatCycle(int weekDay) {
 		this.weekDay = weekDay;
 	}
-	
+
 	public int getDay() {
 		return weekDay;
 	}

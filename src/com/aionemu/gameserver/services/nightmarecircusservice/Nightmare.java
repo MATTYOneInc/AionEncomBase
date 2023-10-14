@@ -23,19 +23,18 @@ import com.aionemu.gameserver.model.nightmarecircus.NightmareCircusStateType;
  * @author Rinzler (Encom)
  */
 
-public class Nightmare extends CircusInstance<NightmareCircusLocation>
-{
+public class Nightmare extends CircusInstance<NightmareCircusLocation> {
 	public Nightmare(NightmareCircusLocation nightmareCircus) {
 		super(nightmareCircus);
 	}
-	
+
 	@Override
 	public void startNightmareCircus() {
 		getNightmareCircusLocation().setActiveNightmareCircus(this);
 		despawn();
 		spawn(NightmareCircusStateType.OPEN);
 	}
-	
+
 	@Override
 	public void stopNightmareCircus() {
 		getNightmareCircusLocation().setActiveNightmareCircus(null);

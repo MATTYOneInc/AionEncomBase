@@ -29,7 +29,7 @@ import com.aionemu.gameserver.world.zone.ZoneService;
 /**
  * @author MrPoke
  */
-public class ZoneHandlerClassListener implements ClassListener{
+public class ZoneHandlerClassListener implements ClassListener {
 
 	private static final Logger log = LoggerFactory.getLogger(InstanceHandlerClassListener.class);
 
@@ -43,7 +43,7 @@ public class ZoneHandlerClassListener implements ClassListener{
 
 			if (!isValidClass(c)) {
 				continue;
-            }
+			}
 			if (ClassUtils.isSubclass(c, ZoneHandler.class)) {
 				Class<? extends ZoneHandler> tmp = (Class<? extends ZoneHandler>) c;
 				if (tmp != null) {
@@ -67,10 +67,10 @@ public class ZoneHandlerClassListener implements ClassListener{
 
 		if (Modifier.isAbstract(modifiers) || Modifier.isInterface(modifiers)) {
 			return false;
-        }
+		}
 		if (!Modifier.isPublic(modifiers)) {
 			return false;
-        }
+		}
 		return true;
 	}
 }

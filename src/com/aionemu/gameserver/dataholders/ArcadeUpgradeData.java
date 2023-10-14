@@ -34,28 +34,27 @@ import gnu.trove.map.hash.TIntObjectHashMap;
  */
 @XmlRootElement(name = "arcadelist")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ArcadeUpgradeData
-{
-    @XmlElement(name = "tab")
-    private List<ArcadeTab> arcadeTabTemplate;
-    private TIntObjectHashMap<List<ArcadeTabItem>> arcadeItemList = new TIntObjectHashMap<>();
-	
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        arcadeItemList.clear();
-        for (ArcadeTab template : arcadeTabTemplate) {
-            arcadeItemList.put(template.getId(), template.getArcadeTabItems());
+public class ArcadeUpgradeData {
+	@XmlElement(name = "tab")
+	private List<ArcadeTab> arcadeTabTemplate;
+	private TIntObjectHashMap<List<ArcadeTabItem>> arcadeItemList = new TIntObjectHashMap<>();
+
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		arcadeItemList.clear();
+		for (ArcadeTab template : arcadeTabTemplate) {
+			arcadeItemList.put(template.getId(), template.getArcadeTabItems());
 		}
-    }
-	
-    public int size() {
-        return arcadeItemList.size();
-    }
-	
-    public List<ArcadeTabItem> getArcadeTabById(int id) {
-        return arcadeItemList.get(id);
-    }
-	
-    public List<ArcadeTab> getArcadeTabs() {
-        return arcadeTabTemplate;
-    }
+	}
+
+	public int size() {
+		return arcadeItemList.size();
+	}
+
+	public List<ArcadeTabItem> getArcadeTabById(int id) {
+		return arcadeItemList.get(id);
+	}
+
+	public List<ArcadeTab> getArcadeTabs() {
+		return arcadeTabTemplate;
+	}
 }

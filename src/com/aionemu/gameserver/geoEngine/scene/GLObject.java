@@ -17,20 +17,25 @@
 package com.aionemu.gameserver.geoEngine.scene;
 
 /**
- * Describes a GL object. An encapsulation of a certain object on the native side of the graphics library. This class is used to track
+ * Describes a GL object. An encapsulation of a certain object on the native
+ * side of the graphics library. This class is used to track
  */
 public abstract class GLObject implements Cloneable {
 
 	/**
-	 * The ID of the object, usually depends on its type. Typically returned from calls like glGenTextures, glGenBuffers, etc.
+	 * The ID of the object, usually depends on its type. Typically returned from
+	 * calls like glGenTextures, glGenBuffers, etc.
 	 */
 	protected int id = -1;
 	/**
-	 * A reference to a "handle". By hard referencing a certain object, it's possible to find when a certain GLObject is no longer used, and to delete its instance from the graphics library.
+	 * A reference to a "handle". By hard referencing a certain object, it's
+	 * possible to find when a certain GLObject is no longer used, and to delete its
+	 * instance from the graphics library.
 	 */
 	protected Object handleRef = null;
 	/**
-	 * True if the data represented by this GLObject has been changed and needs to be updated before used.
+	 * True if the data represented by this GLObject has been changed and needs to
+	 * be updated before used.
 	 */
 	protected boolean updateNeeded = true;
 	/**
@@ -45,11 +50,13 @@ public abstract class GLObject implements Cloneable {
 		 */
 		VertexBuffer,
 		/**
-		 * ShaderSource is a shader source code that controls the output of a certain rendering pipeline, like vertex position or fragment color.
+		 * ShaderSource is a shader source code that controls the output of a certain
+		 * rendering pipeline, like vertex position or fragment color.
 		 */
 		ShaderSource,
 		/**
-		 * A Shader is an aggregation of ShaderSources, collectively they cooperate to control the vertex and fragment processor.
+		 * A Shader is an aggregation of ShaderSources, collectively they cooperate to
+		 * control the vertex and fragment processor.
 		 */
 		Shader,
 	}
@@ -60,7 +67,8 @@ public abstract class GLObject implements Cloneable {
 	}
 
 	/**
-	 * Protected constructor that doesn't allocate handle ref. This is used in subclasses for the createDestructableClone().
+	 * Protected constructor that doesn't allocate handle ref. This is used in
+	 * subclasses for the createDestructableClone().
 	 */
 	protected GLObject(Type type, int id) {
 		this.type = type;
@@ -68,10 +76,10 @@ public abstract class GLObject implements Cloneable {
 	}
 
 	/**
-	 * Sets the ID of the GLObject. This method is used in Renderer and must not be called by the user.
+	 * Sets the ID of the GLObject. This method is used in Renderer and must not be
+	 * called by the user.
 	 *
-	 * @param id
-	 *            The ID to set
+	 * @param id The ID to set
 	 */
 	public void setId(int id) {
 		if (this.id != -1) {
@@ -109,7 +117,8 @@ public abstract class GLObject implements Cloneable {
 	}
 
 	/**
-	 * This should create a deep clone. For a shallow clone, use createDestructableClone().
+	 * This should create a deep clone. For a shallow clone, use
+	 * createDestructableClone().
 	 *
 	 * @return
 	 */
@@ -121,8 +130,7 @@ public abstract class GLObject implements Cloneable {
 			obj.id = -1;
 			obj.updateNeeded = true;
 			return obj;
-		}
-		catch (CloneNotSupportedException ex) {
+		} catch (CloneNotSupportedException ex) {
 			throw new AssertionError();
 		}
 	}
@@ -138,12 +146,14 @@ public abstract class GLObject implements Cloneable {
 	// Specialized calls to be used by object manager only.
 
 	/**
-	 * Called when the GL context is restarted to reset all IDs. Prevents "white textures" on display restart.
+	 * Called when the GL context is restarted to reset all IDs. Prevents "white
+	 * textures" on display restart.
 	 */
 	public abstract void resetObject();
 
 	/**
-	 * Creates a shallow clone of this GL Object. The deleteObject method should be functional for this object.
+	 * Creates a shallow clone of this GL Object. The deleteObject method should be
+	 * functional for this object.
 	 */
 	public abstract GLObject createDestructableClone();
 }

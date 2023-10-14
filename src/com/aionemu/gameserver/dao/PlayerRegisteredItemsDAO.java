@@ -23,12 +23,12 @@ public abstract class PlayerRegisteredItemsDAO implements IDFactoryAwareDAO {
 	public String getClassName() {
 		return PlayerRegisteredItemsDAO.class.getName();
 	}
-	
+
 	public abstract void loadRegistry(int playerId);
 
 	public abstract boolean store(HouseRegistry registry, int playerId);
 
 	public abstract boolean deletePlayerItems(int playerId);
-	
+
 	public abstract void resetRegistry(int playerId);
 }

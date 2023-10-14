@@ -32,8 +32,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  * @author -Nemesiss-
  */
 public abstract class AionServerPacket extends BaseServerPacket {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(AionServerPacket.class);
+
 	/**
 	 * Constructs new server packet
 	 */
@@ -51,7 +52,7 @@ public abstract class AionServerPacket extends BaseServerPacket {
 	private final void writeOP(int value) {
 		/** obfuscate packet id */
 		int op = Crypt.encodeOpcodec(value);
-		buf.putShort((short)(op));
+		buf.putShort((short) (op));
 		/** put static server packet code */
 		buf.put(Crypt.staticServerPacketCode);
 		/** for checksum? */
@@ -69,9 +70,11 @@ public abstract class AionServerPacket extends BaseServerPacket {
 	 * @param buf
 	 */
 	public final void write(AionConnection con, ByteBuffer buffer) {
-		if (con.getState().equals(AionConnection.State.IN_GAME) && con.getActivePlayer().getPlayerAccount().getAccessLevel() == 5 && NetworkConfig.DISPLAY_PACKETS) {
+		if (con.getState().equals(AionConnection.State.IN_GAME)
+				&& con.getActivePlayer().getPlayerAccount().getAccessLevel() == 5 && NetworkConfig.DISPLAY_PACKETS) {
 			if (!this.getPacketName().equals("SM_MESSAGE")) {
-				PacketSendUtility.sendMessage(con.getActivePlayer(), "0x" + Integer.toHexString(this.getOpcode()).toUpperCase() + " : " + this.getPacketName());
+				PacketSendUtility.sendMessage(con.getActivePlayer(),
+						"0x" + Integer.toHexString(this.getOpcode()).toUpperCase() + " : " + this.getPacketName());
 			}
 		}
 		this.setBuf(buffer);
@@ -94,11 +97,11 @@ public abstract class AionServerPacket extends BaseServerPacket {
 	protected void writeImpl(AionConnection con) {
 
 	}
-	
+
 	public final ByteBuffer getBuf() {
 		return this.buf;
 	}
-	
+
 	/**
 	 * Write String to buffer
 	 * 
@@ -113,7 +116,7 @@ public abstract class AionServerPacket extends BaseServerPacket {
 			for (int i = 0; i < len; i++) {
 				buf.putChar(text.charAt(i));
 			}
-			buf.put(new byte[size-(len*2)]);
+			buf.put(new byte[size - (len * 2)]);
 		}
 	}
 

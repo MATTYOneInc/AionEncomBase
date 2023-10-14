@@ -32,8 +32,7 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.services.ClassChangeService;
 import com.aionemu.gameserver.services.QuestService;
 
-public class CM_DIALOG_SELECT extends AionClientPacket
-{
+public class CM_DIALOG_SELECT extends AionClientPacket {
 	private int targetObjectId;
 	private int dialogId;
 	private int extendedRewardIndex;
@@ -41,14 +40,14 @@ public class CM_DIALOG_SELECT extends AionClientPacket
 	private int lastPage;
 	private int questId;
 	private int unk;
-	
+
 	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(CM_DIALOG_SELECT.class);
-	
+
 	public CM_DIALOG_SELECT(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		targetObjectId = readD();
@@ -59,7 +58,7 @@ public class CM_DIALOG_SELECT extends AionClientPacket
 		questId = readD();
 		readH();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		final Player player = getConnection().getActivePlayer();
@@ -67,13 +66,16 @@ public class CM_DIALOG_SELECT extends AionClientPacket
 		QuestEnv env = new QuestEnv(null, player, questId, 0);
 		if (player.isInPlayerMode(PlayerMode.RIDE)) {
 			player.unsetPlayerMode(PlayerMode.RIDE);
-		} if (player.isTrading()) {
+		}
+		if (player.isTrading()) {
 			return;
-		} if (targetObjectId == 0 || targetObjectId == player.getObjectId()) {
+		}
+		if (targetObjectId == 0 || targetObjectId == player.getObjectId()) {
 			if (questTemplate != null && !questTemplate.isCannotShare() && (dialogId == 1002 || dialogId == 20000)) {
 				QuestService.startQuest(env);
 				return;
-			} if (QuestEngine.getInstance().onDialog(new QuestEnv(null, player, questId, dialogId))) {
+			}
+			if (QuestEngine.getInstance().onDialog(new QuestEnv(null, player, questId, dialogId))) {
 				return;
 			}
 			ClassChangeService.changeClassToSelection(player, dialogId);

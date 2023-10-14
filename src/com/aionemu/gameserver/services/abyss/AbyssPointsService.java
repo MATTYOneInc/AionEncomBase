@@ -30,25 +30,25 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
 
-public class AbyssPointsService
-{
+public class AbyssPointsService {
 	@GlobalCallback(AddAPGlobalCallback.class)
 	public static void addAp(Player player, VisibleObject obj, int value) {
 		addAp(player, value);
 	}
-	
+
 	@GlobalCallback(AddGPGlobalCallback.class)
 	public static void addGp(Player player, VisibleObject obj, int value) {
 		addGp(player, value);
 	}
-	
+
 	public static void addAp(Player player, int value) {
 		if (player == null) {
 			return;
-		} if (value > 0) {
+		}
+		if (value > 0) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_COMBAT_MY_ABYSS_POINT_GAIN(value));
 		} else {
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300965, value *-1));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300965, value * -1));
 		}
 		setAp(player, value);
 		if (player.isLegionMember() && value > 0) {
@@ -56,38 +56,41 @@ public class AbyssPointsService
 			PacketSendUtility.broadcastPacketToLegion(player.getLegion(), new SM_LEGION_EDIT(0x03, player.getLegion()));
 		}
 	}
-	
+
 	public static void addGp(Player player, int value) {
 		if (player == null) {
 			return;
-		} if (value > 0) {
+		}
+		if (value > 0) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_GLORY_POINT_GAIN(value));
 		} else {
-		   PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402219, value *-1));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402219, value * -1));
 		}
 		setGp(player, value);
 	}
-	
+
 	public static void addAGp(Player player, int ap, int gp) {
 		if (player == null) {
 			return;
-		} if (ap > 0) {
+		}
+		if (ap > 0) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_COMBAT_MY_ABYSS_POINT_GAIN(ap));
 		} else {
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300965, ap *-1));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300965, ap * -1));
 		}
 		setAp(player, ap);
 		if (player.isLegionMember() && ap > 0) {
 			player.getLegion().addContributionPoints(ap);
 			PacketSendUtility.broadcastPacketToLegion(player.getLegion(), new SM_LEGION_EDIT(0x03, player.getLegion()));
-		} if (gp > 0) {
+		}
+		if (gp > 0) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_GLORY_POINT_GAIN(gp));
 		} else {
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402219, gp *-1));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402219, gp * -1));
 		}
 		setGp(player, gp);
 	}
-	
+
 	public static void setAp(Player player, int value) {
 		if (player == null) {
 			return;
@@ -99,7 +102,7 @@ public class AbyssPointsService
 		checkRankChanged(player, oldAbyssRank, newAbyssRank);
 		PacketSendUtility.sendPacket(player, new SM_ABYSS_RANK(player.getAbyssRank()));
 	}
-	
+
 	public static void setGp(Player player, int value) {
 		if (player == null) {
 			return;
@@ -108,7 +111,7 @@ public class AbyssPointsService
 		rank.addGp(value);
 		PacketSendUtility.sendPacket(player, new SM_ABYSS_RANK(player.getAbyssRank()));
 	}
-	
+
 	public static void checkRankChanged(Player player, AbyssRankEnum oldAbyssRank, AbyssRankEnum newAbyssRank) {
 		if (oldAbyssRank == newAbyssRank) {
 			return;
@@ -118,7 +121,7 @@ public class AbyssPointsService
 		PacketSendUtility.sendPacket(player, new SM_ABYSS_RANK(player.getAbyssRank()));
 		player.getEquipment().checkRankLimitItems();
 	}
-	
+
 	public static void checkRankGpChanged(Player player, AbyssRankEnum oldGloryRank, AbyssRankEnum newGloryRank) {
 		if (oldGloryRank == newGloryRank) {
 			return;
@@ -129,11 +132,12 @@ public class AbyssPointsService
 		player.getEquipment().checkRankLimitItems();
 		AbyssSkillService.updateSkills(player);
 	}
-	
-	public static void AbyssRankCheck (Player player) {
+
+	public static void AbyssRankCheck(Player player) {
 		if (player == null) {
 			return;
-		} if (player.getAbyssRank().getGp() < AbyssRankEnum.STAR1_OFFICER.getGpRequired()) {
+		}
+		if (player.getAbyssRank().getGp() < AbyssRankEnum.STAR1_OFFICER.getGpRequired()) {
 			if (player.getAbyssRank().getAp() < 1200) {
 				player.getAbyssRank().setRank(AbyssRankEnum.GRADE9_SOLDIER);
 			} else if (player.getAbyssRank().getAp() >= 1200 && player.getAbyssRank().getAp() < 4220) {
@@ -158,16 +162,17 @@ public class AbyssPointsService
 			PacketSendUtility.sendPacket(player, new SM_ABYSS_RANK(player.getAbyssRank()));
 		}
 	}
-	
-   /**
-	* <Abyss Point>
-	*/
+
+	/**
+	 * <Abyss Point>
+	 */
 	@SuppressWarnings("rawtypes")
 	public abstract static class AddAPGlobalCallback implements Callback {
 		@Override
 		public CallbackResult beforeCall(Object obj, Object[] args) {
 			return CallbackResult.newContinue();
 		}
+
 		@Override
 		public CallbackResult afterCall(Object obj, Object[] args, Object methodResult) {
 			Player player = (Player) args[0];
@@ -180,22 +185,25 @@ public class AbyssPointsService
 			}
 			return CallbackResult.newContinue();
 		}
+
 		@Override
 		public Class<? extends Callback> getBaseClass() {
 			return AddAPGlobalCallback.class;
 		}
+
 		public abstract void onAbyssPointsAdded(Player player, int abyssPoints);
 	}
-	
-   /**
-	* <Glory Point>
-	*/
+
+	/**
+	 * <Glory Point>
+	 */
 	@SuppressWarnings("rawtypes")
 	public abstract static class AddGPGlobalCallback implements Callback {
 		@Override
 		public CallbackResult beforeCall(Object obj, Object[] args) {
 			return CallbackResult.newContinue();
 		}
+
 		@Override
 		public CallbackResult afterCall(Object obj, Object[] args, Object methodResult) {
 			Player player = (Player) args[0];
@@ -208,10 +216,12 @@ public class AbyssPointsService
 			}
 			return CallbackResult.newContinue();
 		}
+
 		@Override
 		public Class<? extends Callback> getBaseClass() {
 			return AddGPGlobalCallback.class;
 		}
+
 		public abstract void onGloryPointsAdded(Player player, int gloryPoints);
 	}
 }

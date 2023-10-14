@@ -109,8 +109,7 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
-public class PlayerService
-{
+public class PlayerService {
 	private static final CacheMap<Integer, Player> playerCache = CacheMapFactory.createSoftCacheMap("Player", "player");
 
 	public static boolean isFreeName(String name) {
@@ -123,9 +122,9 @@ public class PlayerService
 
 	public static boolean storeNewPlayer(Player player, String accountName, int accountId) {
 		return DAOManager.getDAO(PlayerDAO.class).saveNewPlayer(player.getCommonData(), accountId, accountName)
-		&& DAOManager.getDAO(PlayerAppearanceDAO.class).store(player)
-		&& DAOManager.getDAO(PlayerSkillListDAO.class).storeSkills(player)
-		&& DAOManager.getDAO(InventoryDAO.class).store(player);
+				&& DAOManager.getDAO(PlayerAppearanceDAO.class).store(player)
+				&& DAOManager.getDAO(PlayerSkillListDAO.class).storeSkills(player)
+				&& DAOManager.getDAO(InventoryDAO.class).store(player);
 	}
 
 	public static void storePlayer(Player player) {
@@ -140,8 +139,10 @@ public class PlayerService
 		DAOManager.getDAO(InventoryDAO.class).store(player);
 		for (House house : player.getHouses()) {
 			DAOManager.getDAO(HousesDAO.class).storeHouse(house);
-			if (house.getRegistry() != null && house.getRegistry().getPersistentState() == PersistentState.UPDATE_REQUIRED) {
-				DAOManager.getDAO(PlayerRegisteredItemsDAO.class).store(house.getRegistry(), player.getCommonData().getPlayerObjId());
+			if (house.getRegistry() != null
+					&& house.getRegistry().getPersistentState() == PersistentState.UPDATE_REQUIRED) {
+				DAOManager.getDAO(PlayerRegisteredItemsDAO.class).store(house.getRegistry(),
+						player.getCommonData().getPlayerObjId());
 			}
 		}
 		DAOManager.getDAO(ItemStoneListDAO.class).save(player);
@@ -205,7 +206,8 @@ public class PlayerService
 		player.setStorage(inventory, StorageType.CUBE);
 
 		for (int petBagId = StorageType.PET_BAG_MIN; petBagId <= StorageType.PET_BAG_MAX; petBagId++) {
-			Storage petBag = DAOManager.getDAO(InventoryDAO.class).loadStorage(playerObjId, StorageType.getStorageTypeById(petBagId));
+			Storage petBag = DAOManager.getDAO(InventoryDAO.class).loadStorage(playerObjId,
+					StorageType.getStorageTypeById(petBagId));
 			ItemService.loadItemStones(petBag.getItems());
 			player.setStorage(petBag, StorageType.getStorageTypeById(petBagId));
 		}
@@ -213,13 +215,15 @@ public class PlayerService
 		for (int houseWhId = StorageType.HOUSE_WH_MIN; houseWhId <= StorageType.HOUSE_WH_MAX; houseWhId++) {
 			StorageType whType = StorageType.getStorageTypeById(houseWhId);
 			if (whType != null) {
-				Storage cabinet = DAOManager.getDAO(InventoryDAO.class).loadStorage(playerObjId, StorageType.getStorageTypeById(houseWhId));
+				Storage cabinet = DAOManager.getDAO(InventoryDAO.class).loadStorage(playerObjId,
+						StorageType.getStorageTypeById(houseWhId));
 				ItemService.loadItemStones(cabinet.getItems());
 				player.setStorage(cabinet, StorageType.getStorageTypeById(houseWhId));
 			}
 		}
 
-		Storage warehouse = DAOManager.getDAO(InventoryDAO.class).loadStorage(playerObjId, StorageType.REGULAR_WAREHOUSE);
+		Storage warehouse = DAOManager.getDAO(InventoryDAO.class).loadStorage(playerObjId,
+				StorageType.REGULAR_WAREHOUSE);
 		ItemService.loadItemStones(warehouse.getItems());
 
 		player.setStorage(warehouse, StorageType.REGULAR_WAREHOUSE);
@@ -255,15 +259,18 @@ public class PlayerService
 		return player;
 	}
 
-	public static Player newPlayer(PlayerCommonData playerCommonData, PlayerAppearance playerAppearance, Account account) {
+	public static Player newPlayer(PlayerCommonData playerCommonData, PlayerAppearance playerAppearance,
+			Account account) {
 		PlayerInitialData playerInitialData = DataManager.PLAYER_INITIAL_DATA;
 		LocationData ld = playerInitialData.getSpawnLocation(playerCommonData.getRace());
-		WorldPosition position = World.getInstance().createPosition(ld.getMapId(), ld.getX(), ld.getY(), ld.getZ(), ld.getHeading(), 0);
+		WorldPosition position = World.getInstance().createPosition(ld.getMapId(), ld.getX(), ld.getY(), ld.getZ(),
+				ld.getHeading(), 0);
 		playerCommonData.setPosition(position);
 		Player newPlayer = new Player(new PlayerController(), playerCommonData, playerAppearance, account);
 		newPlayer.setSkillList(new PlayerSkillList());
 		SkillLearnService.addNewSkills(newPlayer);
-		PlayerCreationData playerCreationData = playerInitialData.getPlayerCreationData(playerCommonData.getPlayerClass());
+		PlayerCreationData playerCreationData = playerInitialData
+				.getPlayerCreationData(playerCommonData.getPlayerClass());
 		Storage playerInventory = new PlayerStorage(StorageType.CUBE);
 		Storage regularWarehouse = new PlayerStorage(StorageType.REGULAR_WAREHOUSE);
 		Storage accountWarehouse = new PlayerStorage(StorageType.ACCOUNT_WAREHOUSE);
@@ -277,7 +284,8 @@ public class PlayerService
 					continue;
 				}
 				ItemTemplate itemTemplate = item.getItemTemplate();
-				if ((itemTemplate.isArmor() || itemTemplate.isWeapon()) && !(equipment.isSlotEquipped(itemTemplate.getItemSlot()))) {
+				if ((itemTemplate.isArmor() || itemTemplate.isWeapon())
+						&& !(equipment.isSlotEquipped(itemTemplate.getItemSlot()))) {
 					item.setEquipped(true);
 					ItemSlot itemSlot = ItemSlot.getSlotFor(itemTemplate.getItemSlot());
 					item.setEquipmentSlot(itemSlot.getSlotIdMask());
@@ -343,7 +351,8 @@ public class PlayerService
 	}
 
 	private static void storeDeletionTime(PlayerAccountData accData) {
-		DAOManager.getDAO(PlayerDAO.class).updateDeletionTime(accData.getPlayerCommonData().getPlayerObjId(), accData.getDeletionDate());
+		DAOManager.getDAO(PlayerDAO.class).updateDeletionTime(accData.getPlayerCommonData().getPlayerObjId(),
+				accData.getDeletionDate());
 	}
 
 	public static void storeCreationTime(int objectId, Timestamp creationDate) {

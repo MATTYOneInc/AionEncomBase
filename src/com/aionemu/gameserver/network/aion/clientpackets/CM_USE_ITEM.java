@@ -37,15 +37,14 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.restrictions.RestrictionsManager;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class CM_USE_ITEM extends AionClientPacket
-{
+public class CM_USE_ITEM extends AionClientPacket {
 	public int uniqueItemId;
 	public int type, targetItemId, syncId, returnId;
-	
+
 	public CM_USE_ITEM(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		uniqueItemId = readD();
@@ -53,12 +52,12 @@ public class CM_USE_ITEM extends AionClientPacket
 		if (type == 2) {
 			targetItemId = readD();
 		} else if (type == 5) {
-        	syncId = readD();
-        } else if (type == 6) {
-            returnId = readD();
-        }
+			syncId = readD();
+		} else if (type == 6) {
+			returnId = readD();
+		}
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
@@ -70,7 +69,8 @@ public class CM_USE_ITEM extends AionClientPacket
 				player.getController().cancelUseItem();
 				return;
 			}
-		} if (player.isProtectionActive()) {
+		}
+		if (player.isProtectionActive()) {
 			player.getController().stopProtectionActiveTask();
 		}
 		Item item = player.getInventory().getItemByObjId(uniqueItemId);
@@ -78,20 +78,25 @@ public class CM_USE_ITEM extends AionClientPacket
 		HouseObject<?> targetHouseObject = null;
 		if (item == null) {
 			return;
-		} if (targetItem == null) {
-            targetItem = player.getEquipment().getEquippedItemByObjId(targetItemId);
-        } if (targetItem == null && player.getHouseRegistry() != null) {
-            targetHouseObject = player.getHouseRegistry().getObjectByObjId(targetItemId);
-        } if (item.getItemTemplate().getTemplateId() == 165000001 && targetItem.getItemTemplate().canExtract()) {
+		}
+		if (targetItem == null) {
+			targetItem = player.getEquipment().getEquippedItemByObjId(targetItemId);
+		}
+		if (targetItem == null && player.getHouseRegistry() != null) {
+			targetHouseObject = player.getHouseRegistry().getObjectByObjId(targetItemId);
+		}
+		if (item.getItemTemplate().getTemplateId() == 165000001 && targetItem.getItemTemplate().canExtract()) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_COLOR_ERROR);
 			return;
 		}
-		//check use item multicast delay exploit cast (spam)
+		// check use item multicast delay exploit cast (spam)
 		if (player.isCasting()) {
 			player.getController().cancelCurrentSkill();
-		} if (!RestrictionsManager.canUseItem(player, item)) {
+		}
+		if (!RestrictionsManager.canUseItem(player, item)) {
 			return;
-		} if (item.getItemTemplate().getRace() != Race.PC_ALL && item.getItemTemplate().getRace() != player.getRace()) {
+		}
+		if (item.getItemTemplate().getRace() != Race.PC_ALL && item.getItemTemplate().getRace() != player.getRace()) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_CANNOT_USE_ITEM_INVALID_RACE);
 			return;
 		}
@@ -99,8 +104,10 @@ public class CM_USE_ITEM extends AionClientPacket
 		if (requiredLevel == -1) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_CANNOT_USE_ITEM_INVALID_CLASS);
 			return;
-		} if (requiredLevel > player.getLevel()) {
-			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_CANNOT_USE_ITEM_TOO_LOW_LEVEL_MUST_BE_THIS_LEVEL(item.getNameId(), requiredLevel));
+		}
+		if (requiredLevel > player.getLevel()) {
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+					.STR_CANNOT_USE_ITEM_TOO_LOW_LEVEL_MUST_BE_THIS_LEVEL(item.getNameId(), requiredLevel));
 			return;
 		}
 		HandlerResult result = QuestEngine.getInstance().onItemUseEvent(new QuestEnv(null, player, 0, 0), item);
@@ -111,44 +118,48 @@ public class CM_USE_ITEM extends AionClientPacket
 		ArrayList<AbstractItemAction> actions = new ArrayList<AbstractItemAction>();
 		if (itemActions == null) {
 			return;
-		} for (AbstractItemAction itemAction : itemActions.getItemActions()) {
-			//check if the item can be used before placing it on the cooldown list.
+		}
+		for (AbstractItemAction itemAction : itemActions.getItemActions()) {
+			// check if the item can be used before placing it on the cooldown list.
 			if (targetHouseObject != null && itemAction instanceof HouseDyeAction) {
 				HouseDyeAction action = (HouseDyeAction) itemAction;
 				if (action != null && action.canAct(player, item, targetHouseObject)) {
-                    actions.add(itemAction);
-                }
+					actions.add(itemAction);
+				}
 			} else if (itemAction.canAct(player, item, targetItem)) {
-                actions.add(itemAction);
-            }
-		} if (actions.size() == 0) {
-            PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_IS_NOT_USABLE);
-            return;
-        }
+				actions.add(itemAction);
+			}
+		}
+		if (actions.size() == 0) {
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_IS_NOT_USABLE);
+			return;
+		}
 		// Store Item CD in server Player variable.
-		// Prevents potion spamming, and relogging to use kisks/aether jelly/long CD items.
+		// Prevents potion spamming, and relogging to use kisks/aether jelly/long CD
+		// items.
 		if (player.isItemUseDisabled(item.getItemTemplate().getUseLimits())) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_CANT_USE_UNTIL_DELAY_TIME);
 			return;
 		}
 		int useDelay = player.getItemCooldown(item.getItemTemplate());
 		if (useDelay > 0) {
-			player.addItemCoolDown(item.getItemTemplate().getUseLimits().getDelayId(), System.currentTimeMillis() + useDelay, useDelay / 1000);
+			player.addItemCoolDown(item.getItemTemplate().getUseLimits().getDelayId(),
+					System.currentTimeMillis() + useDelay, useDelay / 1000);
 		}
-		//notify item use observer
+		// notify item use observer
 		player.getObserveController().notifyItemuseObservers(item);
 		for (AbstractItemAction itemAction : actions) {
 			if (targetHouseObject != null && itemAction instanceof HouseDyeAction) {
 				HouseDyeAction action = (HouseDyeAction) itemAction;
 				action.act(player, item, targetHouseObject);
 			} else if (type == 5) {
-            	if (itemAction instanceof InstanceTimeClear) {
-            		InstanceTimeClear action = (InstanceTimeClear) itemAction;
-            		int SelectedSyncId = syncId;
-            		action.act(player, item, SelectedSyncId);
-            	}
-            } else if (type == 6) {
-				if (itemAction instanceof MultiReturnAction){
+				if (itemAction instanceof InstanceTimeClear) {
+					InstanceTimeClear action = (InstanceTimeClear) itemAction;
+					int SelectedSyncId = syncId;
+					action.act(player, item, SelectedSyncId);
+				}
+			} else if (type == 6) {
+				if (itemAction instanceof MultiReturnAction) {
 					MultiReturnAction action = (MultiReturnAction) itemAction;
 					int SelectedMapIndex = returnId;
 					action.act(player, item, SelectedMapIndex);

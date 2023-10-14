@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "dynamic_rift")
-public class DynamicRiftData
-{
+public class DynamicRiftData {
 	@XmlElement(name = "dynamic_location")
 	private List<DynamicRiftTemplate> dynamicRiftTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, DynamicRiftLocation> dynamicRift = new FastMap<Integer, DynamicRiftLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (DynamicRiftTemplate template : dynamicRiftTemplates) {
 			dynamicRift.put(template.getId(), new DynamicRiftLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return dynamicRift.size();
 	}
-	
+
 	public FastMap<Integer, DynamicRiftLocation> getDynamicRiftLocations() {
 		return dynamicRift;
 	}

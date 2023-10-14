@@ -41,8 +41,7 @@ public class TradeItem {
 	}
 
 	/**
-	 * @param itemTemplate
-	 *          the itemTemplate to set
+	 * @param itemTemplate the itemTemplate to set
 	 */
 	public void setItemTemplate(ItemTemplate itemTemplate) {
 		this.itemTemplate = itemTemplate;
@@ -66,7 +65,7 @@ public class TradeItem {
 	 * This method will decrease the current count
 	 */
 	public void decreaseCount(long decreaseCount) {
-		//TODO probably <= count ?
+		// TODO probably <= count ?
 		if (decreaseCount < count) {
 			this.count = count - decreaseCount;
 		}

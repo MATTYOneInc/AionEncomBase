@@ -20,33 +20,33 @@ import java.util.Map;
 
 import com.aionemu.gameserver.model.conquest.ConquestLocation;
 import com.aionemu.gameserver.services.ConquestService;
+
 /**
  * @author Rinzler (Encom)
  */
 
-public class ConquestStartRunnable implements Runnable
-{
+public class ConquestStartRunnable implements Runnable {
 	private final int id;
-	
+
 	public ConquestStartRunnable(int id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public void run() {
-		//Shugo Emperor's Vault 4.7.5 is now open !!!
+		// Shugo Emperor's Vault 4.7.5 is now open !!!
 		ConquestService.getInstance().emperorVaultMsg(id);
-		//Emperor Trillirunerk's Safe 4.9.1 is now open !!!
+		// Emperor Trillirunerk's Safe 4.9.1 is now open !!!
 		ConquestService.getInstance().trillirunerkSafeMsg(id);
-		//Smoldering Fire Temple 5.1 is now open !!!
+		// Smoldering Fire Temple 5.1 is now open !!!
 		ConquestService.getInstance().smolderingFireTempleMsg(id);
-		//Kumuki Cave 5.3 is now open !!!
+		// Kumuki Cave 5.3 is now open !!!
 		ConquestService.getInstance().kumukiCaveMsg(id);
-		//IDEventDefMsg 5.6 is now open !!!
+		// IDEventDefMsg 5.6 is now open !!!
 		ConquestService.getInstance().IDEventDefMsg(id);
-		//Tiamaranta's Eye is now open !!!
+		// Tiamaranta's Eye is now open !!!
 		ConquestService.getInstance().tiamarantaMsg(id);
-		//Conquest/Offering a rare monster appeared !!!
+		// Conquest/Offering a rare monster appeared !!!
 		ConquestService.getInstance().conquestOfferingMsg(id);
 		Map<Integer, ConquestLocation> locations = ConquestService.getInstance().getConquestLocations();
 		for (final ConquestLocation loc : locations.values()) {

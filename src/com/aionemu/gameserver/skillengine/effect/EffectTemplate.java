@@ -273,101 +273,104 @@ public abstract class EffectTemplate {
 	}
 
 	/**
-	 * 1) check conditions 2) check preeffect 3) check effectresistrate 4) check noresist 5) decide if its magical or
-	 * physical effect 6) physical - check cannotmiss 7) check magic resist / dodge 8) addsuccess exceptions: buffbind
-	 * buffsilence buffsleep buffstun randommoveloc recallinstant returneffect returnpoint shieldeffect signeteffect
-	 * summoneffect xpboosteffect
+	 * 1) check conditions 2) check preeffect 3) check effectresistrate 4) check
+	 * noresist 5) decide if its magical or physical effect 6) physical - check
+	 * cannotmiss 7) check magic resist / dodge 8) addsuccess exceptions: buffbind
+	 * buffsilence buffsleep buffstun randommoveloc recallinstant returneffect
+	 * returnpoint shieldeffect signeteffect summoneffect xpboosteffect
 	 * 
 	 * @param effect
 	 * @param statEnum
 	 * @param spellStatus
 	 */
 	public boolean calculate(Effect effect, StatEnum statEnum, SpellStatus spellStatus) {
-        if (effect.getSkillTemplate().isPassive()) {
-            this.addSuccessEffect(effect, spellStatus);
-            return true;
-        }
-
-        if (statEnum != null && isAlteredState(statEnum) && isImuneToAbnormal(effect, statEnum)) {
-            return false;
-        }
-
-        if (effect.getIsForcedEffect()) {
-            this.addSuccessEffect(effect, spellStatus);
-            return true;
-        }
-
-        if (!effectConditionsCheck(effect)) {
-            return false;
+		if (effect.getSkillTemplate().isPassive()) {
+			this.addSuccessEffect(effect, spellStatus);
+			return true;
 		}
 
-        if (this.getPosition() > 1) {
-            FastList<Integer> positions = getPreEffects();
-            for (int pos : positions) {
-                if (!effect.isInSuccessEffects(pos)) {
-                    return false;
+		if (statEnum != null && isAlteredState(statEnum) && isImuneToAbnormal(effect, statEnum)) {
+			return false;
+		}
+
+		if (effect.getIsForcedEffect()) {
+			this.addSuccessEffect(effect, spellStatus);
+			return true;
+		}
+
+		if (!effectConditionsCheck(effect)) {
+			return false;
+		}
+
+		if (this.getPosition() > 1) {
+			FastList<Integer> positions = getPreEffects();
+			for (int pos : positions) {
+				if (!effect.isInSuccessEffects(pos)) {
+					return false;
 				}
-            }
-
-            if (Rnd.get(0, 100) > this.getPreEffectProb()) {
-                return false;
 			}
-        }
 
-        if (!this.calculateEffectResistRate(effect, statEnum)) {
-            if (!effect.isDamageEffect()) {
-                effect.clearSucessEffects();
+			if (Rnd.get(0, 100) > this.getPreEffectProb()) {
+				return false;
 			}
-            effect.setAttackStatus(AttackStatus.BUF);
-            return false;
-        }
-
-        SkillType skillType = effect.getSkillType();
-        if (isMagicalEffectTemp()) {
-            skillType = SkillType.MAGICAL;
 		}
 
-        boolean cannotMiss = false;
-        if (this instanceof SkillAttackInstantEffect)
-            cannotMiss = ((SkillAttackInstantEffect) this).isCannotmiss();
-        if (!noResist && !cannotMiss) {
-            int boostResist = 0;
-            switch (effect.getSkillTemplate().getSubType()) {
-                case DEBUFF:
-                    boostResist = effect.getEffector().getGameStats().getStat(StatEnum.BOOST_RESIST_DEBUFF, 0).getCurrent();
-                    break;
+		if (!this.calculateEffectResistRate(effect, statEnum)) {
+			if (!effect.isDamageEffect()) {
+				effect.clearSucessEffects();
+			}
+			effect.setAttackStatus(AttackStatus.BUF);
+			return false;
+		}
+
+		SkillType skillType = effect.getSkillType();
+		if (isMagicalEffectTemp()) {
+			skillType = SkillType.MAGICAL;
+		}
+
+		boolean cannotMiss = false;
+		if (this instanceof SkillAttackInstantEffect)
+			cannotMiss = ((SkillAttackInstantEffect) this).isCannotmiss();
+		if (!noResist && !cannotMiss) {
+			int boostResist = 0;
+			switch (effect.getSkillTemplate().getSubType()) {
+			case DEBUFF:
+				boostResist = effect.getEffector().getGameStats().getStat(StatEnum.BOOST_RESIST_DEBUFF, 0).getCurrent();
+				break;
 			default:
 				break;
-            }
+			}
 
-            int accMod = accMod2 + accMod1 * effect.getSkillLevel() + effect.getAccModBoost() + boostResist;
-            switch (skillType) {
-                case PHYSICAL:
-                    switch (effect.getEffector().getAttackType()) {
-                        case PHYSICAL:
-                            if (StatFunctions.calculatePhysicalDodgeRate(effect.getEffector(), effect.getEffected(), accMod)) {
-                                return false;
-							}
-                            break;
-                        default:
-                            if (Rnd.get(0, 1000) < StatFunctions.calculateMagicalResistRate(effect.getEffector(), effect.getEffected(), accMod)) {
-                                return false;
-							}
-                        break;
-                    }
-                    break;
-                case MAGICAL:
-                    if (Rnd.get(0, 1000) < StatFunctions.calculateMagicalResistRate(effect.getEffector(), effect.getEffected(), accMod)) {
-                        return false;
+			int accMod = accMod2 + accMod1 * effect.getSkillLevel() + effect.getAccModBoost() + boostResist;
+			switch (skillType) {
+			case PHYSICAL:
+				switch (effect.getEffector().getAttackType()) {
+				case PHYSICAL:
+					if (StatFunctions.calculatePhysicalDodgeRate(effect.getEffector(), effect.getEffected(), accMod)) {
+						return false;
 					}
+					break;
+				default:
+					if (Rnd.get(0, 1000) < StatFunctions.calculateMagicalResistRate(effect.getEffector(),
+							effect.getEffected(), accMod)) {
+						return false;
+					}
+					break;
+				}
+				break;
+			case MAGICAL:
+				if (Rnd.get(0, 1000) < StatFunctions.calculateMagicalResistRate(effect.getEffector(),
+						effect.getEffected(), accMod)) {
+					return false;
+				}
 			default:
 				break;
-            }
-        }
+			}
+		}
 
-        this.addSuccessEffect(effect, spellStatus);
-        return true;
-    }
+		this.addSuccessEffect(effect, spellStatus);
+		return true;
+	}
 
 	private void addSuccessEffect(Effect effect, SpellStatus spellStatus) {
 		effect.addSucessEffect(this);
@@ -455,7 +458,8 @@ public abstract class EffectTemplate {
 	}
 
 	/**
-	 * Hate will be added to result value only if particular effect template has success result
+	 * Hate will be added to result value only if particular effect template has
+	 * success result
 	 * 
 	 * @param effect
 	 */
@@ -471,14 +475,14 @@ public abstract class EffectTemplate {
 		int currentHate = effect.getEffectHate();
 		if (hopType != null) {
 			switch (hopType) {
-				case DAMAGE:
-					currentHate += effect.getReserved1();
-					break;
-				case SKILLLV:
-					int skillLvl = effect.getSkillLevel();
-					currentHate += hopB + hopA * skillLvl; // Agro-value of the effect
-				default:
-					break;
+			case DAMAGE:
+				currentHate += effect.getReserved1();
+				break;
+			case SKILLLV:
+				int skillLvl = effect.getSkillLevel();
+				currentHate += hopB + hopA * skillLvl; // Agro-value of the effect
+			default:
+				break;
 			}
 		}
 		if (currentHate == 0) {
@@ -526,7 +530,8 @@ public abstract class EffectTemplate {
 	 */
 	public boolean calculateEffectResistRate(Effect effect, StatEnum statEnum) {
 
-		if (effect.getEffected() == null || effect.getEffected().getGameStats() == null || effect.getEffector() == null || effect.getEffector().getGameStats() == null) {
+		if (effect.getEffected() == null || effect.getEffected().getGameStats() == null || effect.getEffector() == null
+				|| effect.getEffector().getGameStats() == null) {
 			return false;
 		}
 		Creature effected = effect.getEffected();
@@ -538,7 +543,8 @@ public abstract class EffectTemplate {
 		int effectPower = 1000;
 
 		if (isAlteredState(statEnum)) {
-			effectPower -= effect.getEffected().getGameStats().getStat(StatEnum.ABNORMAL_RESISTANCE_ALL, 0).getCurrent();
+			effectPower -= effect.getEffected().getGameStats().getStat(StatEnum.ABNORMAL_RESISTANCE_ALL, 0)
+					.getCurrent();
 		}
 
 		// effect resistance
@@ -555,8 +561,7 @@ public abstract class EffectTemplate {
 			int differ = (effected.getLevel() - effector.getLevel());
 			if (differ > 2 && differ < 8) {
 				effectPower -= Math.round((effectPower * (differ - 2) / 15f));
-			}
-			else if (differ >= 8) {
+			} else if (differ >= 8) {
 				effectPower *= 0.1f;
 			}
 		}
@@ -571,133 +576,131 @@ public abstract class EffectTemplate {
 	}
 
 	private boolean isImuneToAbnormal(Effect effect, StatEnum statEnum) {
-        Creature effected = effect.getEffected();
-        if (effected != effect.getEffector()) {
-            if (effected instanceof Npc) {
-                Npc npc = (Npc) effected;
-                if (npc.isBoss() || npc.hasEntity() || npc instanceof Kisk || npc.getAi2().ask(AIQuestion.CAN_RESIST_ABNORMAL).isPositive()) {
-                    return true;
+		Creature effected = effect.getEffected();
+		if (effected != effect.getEffector()) {
+			if (effected instanceof Npc) {
+				Npc npc = (Npc) effected;
+				if (npc.isBoss() || npc.hasEntity() || npc instanceof Kisk
+						|| npc.getAi2().ask(AIQuestion.CAN_RESIST_ABNORMAL).isPositive()) {
+					return true;
 				}
-                if (npc.getObjectTemplate().getStatsTemplate().getRunSpeed() == 0) {
-                    if (statEnum == StatEnum.PULLED_RESISTANCE || statEnum == StatEnum.STAGGER_RESISTANCE || statEnum == StatEnum.STUMBLE_RESISTANCE) {
-                        return true;
+				if (npc.getObjectTemplate().getStatsTemplate().getRunSpeed() == 0) {
+					if (statEnum == StatEnum.PULLED_RESISTANCE || statEnum == StatEnum.STAGGER_RESISTANCE
+							|| statEnum == StatEnum.STUMBLE_RESISTANCE) {
+						return true;
 					}
-                }
-            }
-            if (effected.getTransformModel().getType() == TransformType.AVATAR) {
-                if (statEnum == StatEnum.SLOW_RESISTANCE) {
-                    return true;
 				}
-            }
-            int resist = effected.getGameStats().getStat(StatEnum.ABNORMAL_RESISTANCE_ALL, 0).getCurrent();
-            return Rnd.get(1000) < resist;
-        }
-        return false;
-    }
+			}
+			if (effected.getTransformModel().getType() == TransformType.AVATAR) {
+				if (statEnum == StatEnum.SLOW_RESISTANCE) {
+					return true;
+				}
+			}
+			int resist = effected.getGameStats().getStat(StatEnum.ABNORMAL_RESISTANCE_ALL, 0).getCurrent();
+			return Rnd.get(1000) < resist;
+		}
+		return false;
+	}
 
 	private boolean isAlteredState(StatEnum stat) {
 		switch (stat) {
-			case BIND_RESISTANCE:
-            case BLIND_RESISTANCE:
-            case CHARM_RESISTANCE:
-            case CONFUSE_RESISTANCE:
-            case CURSE_RESISTANCE:
-            case DEFORM_RESISTANCE:
-            case FEAR_RESISTANCE:
-            case OPENAREIAL_RESISTANCE:
-            case PARALYZE_RESISTANCE:
-            case PULLED_RESISTANCE:
-            case ROOT_RESISTANCE:
-            case SILENCE_RESISTANCE:
-            case SLEEP_RESISTANCE:
-            case SLOW_RESISTANCE:
-            case SNARE_RESISTANCE:
-            case SPIN_RESISTANCE:
-            case STAGGER_RESISTANCE:
-            case STUMBLE_RESISTANCE:
-            case STUN_RESISTANCE:
-				return true;
+		case BIND_RESISTANCE:
+		case BLIND_RESISTANCE:
+		case CHARM_RESISTANCE:
+		case CONFUSE_RESISTANCE:
+		case CURSE_RESISTANCE:
+		case DEFORM_RESISTANCE:
+		case FEAR_RESISTANCE:
+		case OPENAREIAL_RESISTANCE:
+		case PARALYZE_RESISTANCE:
+		case PULLED_RESISTANCE:
+		case ROOT_RESISTANCE:
+		case SILENCE_RESISTANCE:
+		case SLEEP_RESISTANCE:
+		case SLOW_RESISTANCE:
+		case SNARE_RESISTANCE:
+		case SPIN_RESISTANCE:
+		case STAGGER_RESISTANCE:
+		case STUMBLE_RESISTANCE:
+		case STUN_RESISTANCE:
+			return true;
 		}
 		return false;
 	}
 
 	private StatEnum getPenetrationStat(StatEnum statEnum) {
-        switch (statEnum) {
-            case BLEED_RESISTANCE:
-                return StatEnum.BLEED_RESISTANCE_PENETRATION;
-            case BLIND_RESISTANCE:
-                return StatEnum.BLIND_RESISTANCE_PENETRATION;
-            case CHARM_RESISTANCE:
-                return StatEnum.CHARM_RESISTANCE_PENETRATION;
-            case CONFUSE_RESISTANCE:
-                return StatEnum.CONFUSE_RESISTANCE_PENETRATION;
-            case CURSE_RESISTANCE:
-                return StatEnum.CURSE_RESISTANCE_PENETRATION;
-            case DISEASE_RESISTANCE:
-                return StatEnum.DISEASE_RESISTANCE_PENETRATION;
-            case FEAR_RESISTANCE:
-                return StatEnum.FEAR_RESISTANCE_PENETRATION;
-            case OPENAREIAL_RESISTANCE:
-                return StatEnum.OPENAREIAL_RESISTANCE_PENETRATION;
-            case PARALYZE_RESISTANCE:
-                return StatEnum.PARALYZE_RESISTANCE_PENETRATION;
-            case PERIFICATION_RESISTANCE:
-                return StatEnum.PERIFICATION_RESISTANCE_PENETRATION;
-            case POISON_RESISTANCE:
-                return StatEnum.POISON_RESISTANCE_PENETRATION;
-            case ROOT_RESISTANCE:
-                return StatEnum.ROOT_RESISTANCE_PENETRATION;
-            case SILENCE_RESISTANCE:
-                return StatEnum.SILENCE_RESISTANCE_PENETRATION;
-            case SLEEP_RESISTANCE:
-                return StatEnum.SLEEP_RESISTANCE_PENETRATION;
-            case SLOW_RESISTANCE:
-                return StatEnum.SLOW_RESISTANCE_PENETRATION;
-            case SNARE_RESISTANCE:
-                return StatEnum.SNARE_RESISTANCE_PENETRATION;
-            case SPIN_RESISTANCE:
-                return StatEnum.SPIN_RESISTANCE_PENETRATION;
-            case STAGGER_RESISTANCE:
-                return StatEnum.STAGGER_RESISTANCE_PENETRATION;
-            case STUMBLE_RESISTANCE:
-                return StatEnum.STUMBLE_RESISTANCE_PENETRATION;
-            case STUN_RESISTANCE:
-                return StatEnum.STUN_RESISTANCE_PENETRATION;
-            default:
-                return null;
-        }
-    }
+		switch (statEnum) {
+		case BLEED_RESISTANCE:
+			return StatEnum.BLEED_RESISTANCE_PENETRATION;
+		case BLIND_RESISTANCE:
+			return StatEnum.BLIND_RESISTANCE_PENETRATION;
+		case CHARM_RESISTANCE:
+			return StatEnum.CHARM_RESISTANCE_PENETRATION;
+		case CONFUSE_RESISTANCE:
+			return StatEnum.CONFUSE_RESISTANCE_PENETRATION;
+		case CURSE_RESISTANCE:
+			return StatEnum.CURSE_RESISTANCE_PENETRATION;
+		case DISEASE_RESISTANCE:
+			return StatEnum.DISEASE_RESISTANCE_PENETRATION;
+		case FEAR_RESISTANCE:
+			return StatEnum.FEAR_RESISTANCE_PENETRATION;
+		case OPENAREIAL_RESISTANCE:
+			return StatEnum.OPENAREIAL_RESISTANCE_PENETRATION;
+		case PARALYZE_RESISTANCE:
+			return StatEnum.PARALYZE_RESISTANCE_PENETRATION;
+		case PERIFICATION_RESISTANCE:
+			return StatEnum.PERIFICATION_RESISTANCE_PENETRATION;
+		case POISON_RESISTANCE:
+			return StatEnum.POISON_RESISTANCE_PENETRATION;
+		case ROOT_RESISTANCE:
+			return StatEnum.ROOT_RESISTANCE_PENETRATION;
+		case SILENCE_RESISTANCE:
+			return StatEnum.SILENCE_RESISTANCE_PENETRATION;
+		case SLEEP_RESISTANCE:
+			return StatEnum.SLEEP_RESISTANCE_PENETRATION;
+		case SLOW_RESISTANCE:
+			return StatEnum.SLOW_RESISTANCE_PENETRATION;
+		case SNARE_RESISTANCE:
+			return StatEnum.SNARE_RESISTANCE_PENETRATION;
+		case SPIN_RESISTANCE:
+			return StatEnum.SPIN_RESISTANCE_PENETRATION;
+		case STAGGER_RESISTANCE:
+			return StatEnum.STAGGER_RESISTANCE_PENETRATION;
+		case STUMBLE_RESISTANCE:
+			return StatEnum.STUMBLE_RESISTANCE_PENETRATION;
+		case STUN_RESISTANCE:
+			return StatEnum.STUN_RESISTANCE_PENETRATION;
+		default:
+			return null;
+		}
+	}
 
 	/**
-	 * certain effects are magical even when used in physical skills it includes stuns from chanter/sin/ranger etc these
-	 * effects(effecttemplates) are dependent on magical accuracy and magical resist
+	 * certain effects are magical even when used in physical skills it includes
+	 * stuns from chanter/sin/ranger etc these effects(effecttemplates) are
+	 * dependent on magical accuracy and magical resist
 	 * 
 	 * @return
 	 */
 	private boolean isMagicalEffectTemp() {
-        if (this instanceof SilenceEffect
-            || this instanceof SleepEffect
-            || this instanceof RootEffect
-            || this instanceof SnareEffect
-            || this instanceof StunEffect
-            || this instanceof PoisonEffect
-            || this instanceof BindEffect
-            || this instanceof BleedEffect
-            || this instanceof BlindEffect
-            || this instanceof DeboostHealEffect
-            || this instanceof ParalyzeEffect
-            || this instanceof SlowEffect)
-            return true;
-        return false;
-    }
+		if (this instanceof SilenceEffect || this instanceof SleepEffect || this instanceof RootEffect
+				|| this instanceof SnareEffect || this instanceof StunEffect || this instanceof PoisonEffect
+				|| this instanceof BindEffect || this instanceof BleedEffect || this instanceof BlindEffect
+				|| this instanceof DeboostHealEffect || this instanceof ParalyzeEffect || this instanceof SlowEffect)
+			return true;
+		return false;
+	}
 
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		EffectType temp = null;
 		try {
-			temp = EffectType.valueOf(this.getClass().getName().replaceAll("com.aionemu.gameserver.skillengine.effect.", "").replaceAll("Effect", "").toUpperCase());
-		}
-		catch (Exception e) {
-			log.info("missing effectype for " + this.getClass().getName().replaceAll("com.aionemu.gameserver.skillengine.effect.", "").replaceAll("Effect", "").toUpperCase());
+			temp = EffectType
+					.valueOf(this.getClass().getName().replaceAll("com.aionemu.gameserver.skillengine.effect.", "")
+							.replaceAll("Effect", "").toUpperCase());
+		} catch (Exception e) {
+			log.info("missing effectype for "
+					+ this.getClass().getName().replaceAll("com.aionemu.gameserver.skillengine.effect.", "")
+							.replaceAll("Effect", "").toUpperCase());
 		}
 		this.effectType = temp;
 	}

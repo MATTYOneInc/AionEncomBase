@@ -45,24 +45,23 @@ public class CM_GROUP_DISTRIBUTION extends AionClientPacket {
 	protected void runImpl() {
 		if (amount < 2) {
 			return;
-        }
+		}
 		Player player = getConnection().getActivePlayer();
 
 		if (!RestrictionsManager.canTrade(player)) {
 			return;
-        }
+		}
 		switch (partyType) {
-			case 1:
-				if (player.isInAlliance2()) {
-					PlayerAllianceService.distributeKinahInGroup(player, amount);
-				}
-				else {
-					PlayerGroupService.distributeKinah(player, amount);
-				}
-				break;
-			case 2:
-				PlayerAllianceService.distributeKinah(player, amount);
-				break;
+		case 1:
+			if (player.isInAlliance2()) {
+				PlayerAllianceService.distributeKinahInGroup(player, amount);
+			} else {
+				PlayerGroupService.distributeKinah(player, amount);
+			}
+			break;
+		case 2:
+			PlayerAllianceService.distributeKinah(player, amount);
+			break;
 		}
 	}
 }

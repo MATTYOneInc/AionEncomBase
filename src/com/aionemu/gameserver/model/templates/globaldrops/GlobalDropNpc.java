@@ -26,11 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GlobalDropNpc")
-public class GlobalDropNpc
-{
+public class GlobalDropNpc {
 	@XmlAttribute(name = "npc_id", required = true)
 	protected int npcId;
-	
+
 	public int getNpcId() {
 		return npcId;
 	}

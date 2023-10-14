@@ -28,12 +28,11 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 import javolution.util.FastMap;
 
-public class KiskService
-{
+public class KiskService {
 	private static final KiskService instance = new KiskService();
 	private final Map<Integer, Kisk> boundButOfflinePlayer = new FastMap<Integer, Kisk>().shared();
 	private final Map<Integer, Kisk> ownerPlayer = new FastMap<Integer, Kisk>().shared();
-	
+
 	public void removeKisk(Kisk kisk) {
 		for (int memberId : kisk.getCurrentMemberIds()) {
 			boundButOfflinePlayer.remove(memberId);
@@ -52,7 +51,7 @@ public class KiskService
 			}
 		}
 	}
-	
+
 	public void onBind(Kisk kisk, Player player) {
 		if (player.getKisk() != null) {
 			player.getKisk().removePlayer(player);
@@ -60,9 +59,10 @@ public class KiskService
 		kisk.addPlayer(player);
 		TeleportService2.sendSetBindPoint(player);
 		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_BINDSTONE_REGISTER);
-		PacketSendUtility.broadcastPacket(player, new SM_LEVEL_UPDATE(player.getObjectId(), 2, player.getCommonData().getLevel()), true);
+		PacketSendUtility.broadcastPacket(player,
+				new SM_LEVEL_UPDATE(player.getObjectId(), 2, player.getCommonData().getLevel()), true);
 	}
-	
+
 	public void onLogin(Player player) {
 		Kisk kisk = this.boundButOfflinePlayer.get(player.getObjectId());
 		if (kisk != null) {
@@ -70,22 +70,22 @@ public class KiskService
 			this.boundButOfflinePlayer.remove(player.getObjectId());
 		}
 	}
-	
+
 	public void onLogout(Player player) {
 		Kisk kisk = player.getKisk();
 		if (kisk != null) {
 			this.boundButOfflinePlayer.put(player.getObjectId(), kisk);
 		}
 	}
-	
+
 	public void regKisk(Kisk kisk, Integer objOwnerId) {
 		ownerPlayer.put(objOwnerId, kisk);
 	}
-	
+
 	public boolean haveKisk(Integer objOwnerId) {
 		return ownerPlayer.containsKey(objOwnerId);
 	}
-	
+
 	public static KiskService getInstance() {
 		return instance;
 	}

@@ -24,26 +24,26 @@ import javax.xml.bind.annotation.XmlType;
 import com.aionemu.gameserver.model.templates.RobotBound;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name="RobotInfo", propOrder={"robotbound"})
-public class RobotInfo
-{
-    protected RobotBound robotbound;
-	
-    @XmlAttribute
-    protected Integer type;
-	
-    @XmlAttribute(required = true)
-    protected int id;
-	
+@XmlType(name = "RobotInfo", propOrder = { "robotbound" })
+public class RobotInfo {
+	protected RobotBound robotbound;
+
+	@XmlAttribute
+	protected Integer type;
+
+	@XmlAttribute(required = true)
+	protected int id;
+
 	public int getRobotId() {
-        return id;
-    }
-	
-    public RobotBound getRobotBound() {
-        return robotbound;
-    }
+		return id;
+	}
+
+	public RobotBound getRobotBound() {
+		return robotbound;
+	}
 }

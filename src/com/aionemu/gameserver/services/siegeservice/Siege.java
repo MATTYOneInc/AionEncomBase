@@ -38,8 +38,7 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SIEGE_LOCATION_STATE
 import com.aionemu.gameserver.services.SiegeService;
 import com.aionemu.gameserver.world.World;
 
-public abstract class Siege<SL extends SiegeLocation>
-{
+public abstract class Siege<SL extends SiegeLocation> {
 	private static final Logger log = LoggerFactory.getLogger(Siege.class);
 	private final SiegeBossDeathListener siegeBossDeathListener = new SiegeBossDeathListener(this);
 	private final SiegeBossDoAddDamageListener siegeBossDoAddDamageListener = new SiegeBossDoAddDamageListener(this);
@@ -50,11 +49,11 @@ public abstract class Siege<SL extends SiegeLocation>
 	private SiegeNpc boss, flag;
 	private Date startTime;
 	private boolean started;
-	
+
 	public Siege(SL siegeLocation) {
 		this.siegeLocation = siegeLocation;
 	}
-	
+
 	public final void startSiege() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -64,7 +63,8 @@ public abstract class Siege<SL extends SiegeLocation>
 				startTime = new Date();
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			log.error("Attempt to start siege of SiegeLocation#" + siegeLocation.getLocationId() + " for 2 times");
 			return;
 		}
@@ -73,11 +73,11 @@ public abstract class Siege<SL extends SiegeLocation>
 			BalaurAssaultService.getInstance().onSiegeStart(this);
 		}
 	}
-	
+
 	public final void startSiege(int locationId) {
 		SiegeService.getInstance().startSiege(locationId);
 	}
-	
+
 	public final void stopSiege() {
 		if (finished.compareAndSet(false, true)) {
 			onSiegeFinish();
@@ -88,71 +88,74 @@ public abstract class Siege<SL extends SiegeLocation>
 			log.error("Attempt to stop siege of SiegeLocation#" + siegeLocation.getLocationId() + " for 2 times");
 		}
 	}
-	
+
 	public SL getSiegeLocation() {
 		return siegeLocation;
 	}
-	
+
 	public int getSiegeLocationId() {
 		return siegeLocation.getLocationId();
 	}
-	
+
 	public boolean isBossKilled() {
 		return bossKilled;
 	}
-	
+
 	public void setBossKilled(boolean bossKilled) {
 		this.bossKilled = bossKilled;
 	}
-	
+
 	public SiegeNpc getBoss() {
 		return boss;
 	}
-	
+
 	public void setBoss(SiegeNpc boss) {
 		this.boss = boss;
 	}
-	
+
 	public SiegeBossDoAddDamageListener getSiegeBossDoAddDamageListener() {
 		return siegeBossDoAddDamageListener;
 	}
-	
+
 	public SiegeBossDeathListener getSiegeBossDeathListener() {
 		return siegeBossDeathListener;
 	}
-	
+
 	public SiegeCounter getSiegeCounter() {
 		return siegeCounter;
 	}
-	
+
 	protected abstract void onSiegeStart();
+
 	protected abstract void onSiegeFinish();
-	
+
 	public void addBossDamage(Creature attacker, int damage) {
 		if (isFinished()) {
 			return;
-		} if (attacker == null) {
+		}
+		if (attacker == null) {
 			return;
 		}
 		attacker = attacker.getMaster();
 		getSiegeCounter().addDamage(attacker, damage);
 	}
-	
+
 	public abstract boolean isEndless();
+
 	public abstract void addAbyssPoints(Player player, int abysPoints);
-	
+
 	public boolean isStarted() {
 		return started;
 	}
-	
+
 	public boolean isFinished() {
 		return finished.get();
 	}
-	
+
 	public Date getStartTime() {
 		return startTime;
 	}
-	
+
 	protected void registerSiegeBossListeners() {
 		EnhancedObject eo = (EnhancedObject) getBoss().getAggroList();
 		eo.addCallback(getSiegeBossDoAddDamageListener());
@@ -160,7 +163,7 @@ public abstract class Siege<SL extends SiegeLocation>
 		eo = (EnhancedObject) ai;
 		eo.addCallback(getSiegeBossDeathListener());
 	}
-	
+
 	protected void unregisterSiegeBossListeners() {
 		EnhancedObject eo = (EnhancedObject) getBoss().getAggroList();
 		eo.removeCallback(getSiegeBossDoAddDamageListener());
@@ -168,7 +171,7 @@ public abstract class Siege<SL extends SiegeLocation>
 		eo = (EnhancedObject) ai;
 		eo.removeCallback(getSiegeBossDeathListener());
 	}
-	
+
 	protected void initSiegeBoss() {
 		SiegeNpc boss = null;
 		Collection<SiegeNpc> npcs = World.getInstance().getLocalSiegeNpcs(getSiegeLocationId());
@@ -179,29 +182,30 @@ public abstract class Siege<SL extends SiegeLocation>
 				}
 				boss = npc;
 			}
-		} if (boss == null) {
+		}
+		if (boss == null) {
 			throw new SiegeException("Siege Boss not found for siege " + getSiegeLocationId());
 		}
 		setBoss(boss);
 		registerSiegeBossListeners();
 	}
-	
+
 	protected void spawnNpcs(int locationId, SiegeRace race, SiegeModType type) {
 		SiegeService.getInstance().spawnNpcs(locationId, race, type);
 	}
-	
+
 	protected void deSpawnNpcs(int locationId) {
 		SiegeService.getInstance().deSpawnNpcs(locationId);
 	}
-	
+
 	protected void broadcastState(SiegeLocation location) {
 		SiegeService.getInstance().broadcast(new SM_SIEGE_LOCATION_STATE(location), null);
 	}
-	
+
 	protected void broadcastUpdate(SiegeLocation location) {
 		SiegeService.getInstance().broadcastUpdate(location);
 	}
-	
+
 	protected void broadcastUpdate(SiegeLocation location, int nameId) {
 		SiegeService.getInstance().broadcastUpdate(location, new DescriptionId(nameId));
 	}

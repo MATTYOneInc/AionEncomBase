@@ -51,81 +51,81 @@ public class SM_GATHER_UPDATE extends AionServerPacket {
 		writeD(itemId);
 
 		switch (action) {
-			case 0: {
-				writeQ(3);
-				writeD(success);
-				writeD(failure);
-				writeD(0);
-				writeD(1200); // timer??
-				writeD(1330011); // ??text??skill??
-				writeH(0x24); // 0x24
-				writeD(this.nameId);
-				writeH(0); // 0x24
-				break;
-			}
-			case 1: {
-				writeQ(3);
-				writeD(success);
-				writeD(failure);
-				writeD(700); // unk timer??
-				writeD(1200); // unk timer??
-				writeD(0); // unk timer??writeD(700);
-				writeH(0);
-				break;
-			}
-			case 2: {
-				writeQ(3);
-				writeD(success);
-				writeD(failure);
-				writeD(700);// unk timer??
-				writeD(1200); // unk timer??
-				writeD(0); // unk timer??writeD(700);
-				writeH(0);
-				break;
-			}
-			case 3: {
-				writeQ(3);
-				writeD(success);
-				writeD(failure);
-				writeD(700);// unk timer??
-				writeD(1200); // unk timer??
-				writeD(0); // unk timer??writeD(700);
-				writeH(0);
-				break;
-			}
-			case 5: // you have stopped gathering
-			{
-				writeQ(3);
-				writeD(0);
-				writeD(0);
-				writeD(700);// unk timer??
-				writeD(1200); // unk timer??
-				writeD(1330080); // unk timer??writeD(700);
-				writeH(0);
-				break;
-			}
-			case 6: {
-				writeQ(3);
-				writeD(success);
-				writeD(failure);
-				writeD(700); // unk timer??
-				writeD(1200); // unk timer??
-				writeD(0); // unk timer??writeD(700);
-				writeH(0);
-				break;
-			}
-			case 7: {
-				writeQ(3);
-				writeD(success);
-				writeD(failure);
-				writeD(0);
-				writeD(1200); // timer??
-				writeD(1330079); // ??text??skill??
-				writeH(0x24); // 0x24
-				writeD(nameId);
-				writeH(0); // 0x24
-				break;
-			}
+		case 0: {
+			writeQ(3);
+			writeD(success);
+			writeD(failure);
+			writeD(0);
+			writeD(1200); // timer??
+			writeD(1330011); // ??text??skill??
+			writeH(0x24); // 0x24
+			writeD(this.nameId);
+			writeH(0); // 0x24
+			break;
+		}
+		case 1: {
+			writeQ(3);
+			writeD(success);
+			writeD(failure);
+			writeD(700); // unk timer??
+			writeD(1200); // unk timer??
+			writeD(0); // unk timer??writeD(700);
+			writeH(0);
+			break;
+		}
+		case 2: {
+			writeQ(3);
+			writeD(success);
+			writeD(failure);
+			writeD(700);// unk timer??
+			writeD(1200); // unk timer??
+			writeD(0); // unk timer??writeD(700);
+			writeH(0);
+			break;
+		}
+		case 3: {
+			writeQ(3);
+			writeD(success);
+			writeD(failure);
+			writeD(700);// unk timer??
+			writeD(1200); // unk timer??
+			writeD(0); // unk timer??writeD(700);
+			writeH(0);
+			break;
+		}
+		case 5: // you have stopped gathering
+		{
+			writeQ(3);
+			writeD(0);
+			writeD(0);
+			writeD(700);// unk timer??
+			writeD(1200); // unk timer??
+			writeD(1330080); // unk timer??writeD(700);
+			writeH(0);
+			break;
+		}
+		case 6: {
+			writeQ(3);
+			writeD(success);
+			writeD(failure);
+			writeD(700); // unk timer??
+			writeD(1200); // unk timer??
+			writeD(0); // unk timer??writeD(700);
+			writeH(0);
+			break;
+		}
+		case 7: {
+			writeQ(3);
+			writeD(success);
+			writeD(failure);
+			writeD(0);
+			writeD(1200); // timer??
+			writeD(1330079); // ??text??skill??
+			writeH(0x24); // 0x24
+			writeD(nameId);
+			writeH(0); // 0x24
+			break;
+		}
 		}
 	}
 }

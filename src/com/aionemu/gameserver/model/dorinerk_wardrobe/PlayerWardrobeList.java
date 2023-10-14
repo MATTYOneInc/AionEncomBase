@@ -32,33 +32,33 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 public final class PlayerWardrobeList implements WardrobeList<Player> {
 
 	private final Map<Integer, PlayerWardrobeEntry> entry;
-	
+
 	public PlayerWardrobeList() {
 		this.entry = new HashMap<Integer, PlayerWardrobeEntry>(0);
 	}
-	
+
 	public PlayerWardrobeList(List<PlayerWardrobeEntry> entries) {
 		this();
 		for (PlayerWardrobeEntry e : entries) {
 			entry.put(e.getItemId(), e);
 		}
 	}
-	
+
 	public PlayerWardrobeEntry[] getAllWardrobe() {
 		List<PlayerWardrobeEntry> allWardrobe = new ArrayList<PlayerWardrobeEntry>();
 		allWardrobe.addAll(entry.values());
 		return allWardrobe.toArray(new PlayerWardrobeEntry[allWardrobe.size()]);
 	}
-	
+
 	public PlayerWardrobeEntry[] getBasicWardrobe() {
 		return entry.values().toArray(new PlayerWardrobeEntry[entry.size()]);
 	}
-	
+
 	@Override
 	public boolean addItem(Player player, int itemId, int slot, int reskin_count) {
 		return addItem(player, itemId, slot, reskin_count, PersistentState.NEW);
 	}
-	
+
 	private synchronized boolean addItem(Player player, int itemId, int slot, int reskin_count, PersistentState state) {
 		entry.put(itemId, new PlayerWardrobeEntry(itemId, slot, reskin_count, state));
 		DAOManager.getDAO(PlayerWardrobeDAO.class).store(player.getObjectId(), itemId, slot, reskin_count);

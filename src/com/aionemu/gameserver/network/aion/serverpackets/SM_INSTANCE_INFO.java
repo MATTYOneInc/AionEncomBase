@@ -26,8 +26,7 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 import javolution.util.FastMap;
 
-public class SM_INSTANCE_INFO extends AionServerPacket
-{
+public class SM_INSTANCE_INFO extends AionServerPacket {
 	private Player player;
 	private boolean isAnswer;
 	private int cooldownId;
@@ -47,7 +46,9 @@ public class SM_INSTANCE_INFO extends AionServerPacket
 		this.isAnswer = false;
 		this.playerTeam = null;
 		this.worldId = instanceId;
-		this.cooldownId = DataManager.INSTANCE_COOLTIME_DATA.getInstanceCooltimeByWorldId(instanceId) != null ? DataManager.INSTANCE_COOLTIME_DATA.getInstanceCooltimeByWorldId(instanceId).getId() : 0;
+		this.cooldownId = DataManager.INSTANCE_COOLTIME_DATA.getInstanceCooltimeByWorldId(instanceId) != null
+				? DataManager.INSTANCE_COOLTIME_DATA.getInstanceCooltimeByWorldId(instanceId).getId()
+				: 0;
 	}
 
 	@Override
@@ -61,16 +62,21 @@ public class SM_INSTANCE_INFO extends AionServerPacket
 			writeD(player.getObjectId());
 			writeH(DataManager.INSTANCE_COOLTIME_DATA.size());
 			PortalCooldownList cooldownList = player.getPortalCooldownList();
-			for (FastMap.Entry<Integer, InstanceCooltime> e = DataManager.INSTANCE_COOLTIME_DATA.getAllInstances().head(), end = DataManager.INSTANCE_COOLTIME_DATA.getAllInstances().tail(); (e = e.getNext()) != end; ) {
+			for (FastMap.Entry<Integer, InstanceCooltime> e = DataManager.INSTANCE_COOLTIME_DATA.getAllInstances()
+					.head(),
+					end = DataManager.INSTANCE_COOLTIME_DATA.getAllInstances().tail(); (e = e.getNext()) != end;) {
 				writeD(e.getValue().getId());
 				writeD(0x00);
 				if (cooldownList.getPortalCooldown(e.getValue().getWorldId()) == 0) {
 					writeD(0x00);
 				} else {
-					writeD((int) (cooldownList.getPortalCooldown(e.getValue().getWorldId()) - System.currentTimeMillis()) / 1000);
+					writeD((int) (cooldownList.getPortalCooldown(e.getValue().getWorldId())
+							- System.currentTimeMillis()) / 1000);
 				}
 				writeD(DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCountByWorldId(e.getKey()));
-				writeD(cooldownList.getPortalCooldownItem(e.getValue().getWorldId()) != null ? cooldownList.getPortalCooldownItem(e.getValue().getWorldId()).getEntryCount() * -1 : 0);
+				writeD(cooldownList.getPortalCooldownItem(e.getValue().getWorldId()) != null
+						? cooldownList.getPortalCooldownItem(e.getValue().getWorldId()).getEntryCount() * -1
+						: 0);
 				writeD(0x00);
 				writeD(0x00);
 				writeD(0x01);
@@ -85,7 +91,9 @@ public class SM_INSTANCE_INFO extends AionServerPacket
 			long time = player.getPortalCooldownList().getPortalCooldown(worldId);
 			writeD((time == 0 ? 0 : ((int) (time - System.currentTimeMillis()) / 1000)));
 			writeD(DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCountByWorldId(worldId));
-			writeD(player.getPortalCooldownList().getPortalCooldownItem(worldId) != null ? player.getPortalCooldownList().getPortalCooldownItem(worldId).getEntryCount() * -1 : 0);
+			writeD(player.getPortalCooldownList().getPortalCooldownItem(worldId) != null
+					? player.getPortalCooldownList().getPortalCooldownItem(worldId).getEntryCount() * -1
+					: 0);
 			writeD(0x00);
 			writeD(0x00);
 			writeD(0x01);

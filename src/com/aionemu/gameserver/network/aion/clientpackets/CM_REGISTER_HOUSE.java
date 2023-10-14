@@ -29,21 +29,20 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.HousingBidService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class CM_REGISTER_HOUSE extends AionClientPacket
-{
+public class CM_REGISTER_HOUSE extends AionClientPacket {
 	long bidKinah;
 	long unk1;
-	
+
 	public CM_REGISTER_HOUSE(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		bidKinah = readQ();
 		unk1 = readQ();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		if (!HousingConfig.ENABLE_HOUSE_AUCTIONS) {
@@ -73,7 +72,8 @@ public class CM_REGISTER_HOUSE extends AionClientPacket
 		}
 		player.getInventory().decreaseKinah(fee);
 		HousingBidService.getInstance().addHouseToAuction(house, bidKinah);
-		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_HOUSING_AUCTION_MY_HOUSE(house.getAddress().getId()));
+		PacketSendUtility.sendPacket(player,
+				SM_SYSTEM_MESSAGE.STR_MSG_HOUSING_AUCTION_MY_HOUSE(house.getAddress().getId()));
 		((HouseController) house.getController()).updateAppearance();
 		PacketSendUtility.sendPacket(player, new SM_HOUSE_OWNER_INFO(player, house));
 	}

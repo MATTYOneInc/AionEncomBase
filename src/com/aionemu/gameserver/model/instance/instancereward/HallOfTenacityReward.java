@@ -48,10 +48,10 @@ public class HallOfTenacityReward extends InstanceReward<HallOfTenacityPlayerRew
 	protected WorldMapInstance instance;
 	private long instanceTime;
 	private final byte buffId;
-    private Point3D myBattlePosition;
-    private Point3D opponentBattlePosition;
-    private int bonusTime;
-    private GenerealInstancePosition instancePosition;
+	private Point3D myBattlePosition;
+	private Point3D opponentBattlePosition;
+	private int bonusTime;
+	private GenerealInstancePosition instancePosition;
 
 	public HallOfTenacityReward(Integer mapId, int instanceId, WorldMapInstance instance) {
 		super(mapId, instanceId);
@@ -61,75 +61,76 @@ public class HallOfTenacityReward extends InstanceReward<HallOfTenacityPlayerRew
 		instancePosition = new HallOfTenacityInstancePosition();
 		instancePosition.initsialize(mapId, instanceId);
 	}
-	
+
 	public int AbyssReward(boolean isWin) {
-    	int Win = 3163;
-    	int Loss = 1031;
-    	return isWin ? Win : Loss;
-    }
-	
+		int Win = 3163;
+		int Loss = 1031;
+		return isWin ? Win : Loss;
+	}
+
 	public int GloryReward(boolean isWin) {
-    	int Win = 150;
-    	int Loss = 30;
-    	return isWin ? Win : Loss;
-    }
-	
+		int Win = 150;
+		int Loss = 30;
+		return isWin ? Win : Loss;
+	}
+
 	public int ExpReward(boolean isWin) {
-    	int Win = 10000;
-    	int Loss = 5000;
-    	return isWin ? Win : Loss;
-    }
+		int Win = 10000;
+		int Loss = 5000;
+		return isWin ? Win : Loss;
+	}
 
 	public void setStartPositions() {
-        Point3D my = new Point3D(256.12454f, 292.78516f, 74.00548f); //Zone A
-        Point3D opponent = new Point3D(256.00023f, 219.35153f, 73.99652f); //Zone B
-        myBattlePosition = my;
-        opponentBattlePosition = opponent;
-    }
-	
+		Point3D my = new Point3D(256.12454f, 292.78516f, 74.00548f); // Zone A
+		Point3D opponent = new Point3D(256.00023f, 219.35153f, 73.99652f); // Zone B
+		myBattlePosition = my;
+		opponentBattlePosition = opponent;
+	}
+
 	public void portToArena(Player player) {
-        if (player.getHOTVSId() == 0) {
-            TeleportService2.teleportTo(player, 302310000, instanceId, myBattlePosition.getX(), myBattlePosition.getY(), myBattlePosition.getZ());//TODO you and opponent pos
-        } else if (player.getHOTVSId() == 1) {
-            TeleportService2.teleportTo(player, 302310000, instanceId, opponentBattlePosition.getX(), opponentBattlePosition.getY(), opponentBattlePosition.getZ());//TODO you and opponent pos
-        }
-    }
-	
+		if (player.getHOTVSId() == 0) {
+			TeleportService2.teleportTo(player, 302310000, instanceId, myBattlePosition.getX(), myBattlePosition.getY(),
+					myBattlePosition.getZ());// TODO you and opponent pos
+		} else if (player.getHOTVSId() == 1) {
+			TeleportService2.teleportTo(player, 302310000, instanceId, opponentBattlePosition.getX(),
+					opponentBattlePosition.getY(), opponentBattlePosition.getZ());// TODO you and opponent pos
+		}
+	}
+
 	public void portToHall(Player player) {
 		regPlayerReward(player.getObjectId());
 		HallOfTenacityPlayerReward playerReward = getPlayerReward(player.getObjectId());
 		playerReward.setPosition(1);
-        if (player.getRace() == Race.ASMODIANS) {
-        	playerReward.setZone(0);
-        }
-        else if (player.getRace() == Race.ELYOS) {
-        	playerReward.setZone(1);
-        }
-        instancePosition.port(player, playerReward.getZone(), playerReward.getPosition());
-    }
-	
+		if (player.getRace() == Race.ASMODIANS) {
+			playerReward.setZone(0);
+		} else if (player.getRace() == Race.ELYOS) {
+			playerReward.setZone(1);
+		}
+		instancePosition.port(player, playerReward.getZone(), playerReward.getPosition());
+	}
+
 	@Override
-    public void clear() {
-        super.clear();
-    }
-	
+	public void clear() {
+		super.clear();
+	}
+
 	public void regPlayerReward(Integer object) {
 		if (!containPlayer(object)) {
 			addPlayerReward(new HallOfTenacityPlayerReward(object, bonusTime, buffId));
 		}
 	}
-	
-    @Override
-    public void addPlayerReward(HallOfTenacityPlayerReward reward) {
-        super.addPlayerReward(reward);
-    }
-    
-    @Override
-    public HallOfTenacityPlayerReward getPlayerReward(Integer object) {
-        return (HallOfTenacityPlayerReward) super.getPlayerReward(object);
-    }
-    
-    public FastList<Player> getPlayersInside() {
+
+	@Override
+	public void addPlayerReward(HallOfTenacityPlayerReward reward) {
+		super.addPlayerReward(reward);
+	}
+
+	@Override
+	public HallOfTenacityPlayerReward getPlayerReward(Integer object) {
+		return (HallOfTenacityPlayerReward) super.getPlayerReward(object);
+	}
+
+	public FastList<Player> getPlayersInside() {
 		FastList<Player> players = new FastList<Player>();
 		for (Player playerInside : instance.getPlayersInside()) {
 			if (containPlayer(playerInside.getObjectId())) {
@@ -138,17 +139,18 @@ public class HallOfTenacityReward extends InstanceReward<HallOfTenacityPlayerRew
 		}
 		return players;
 	}
-    
-    public void sendPacket(final int type, final Integer object) {
-        instance.doOnAllPlayers(new Visitor<Player>() {
-            @Override
-            public void visit(Player player) {
-                PacketSendUtility.sendPacket(player, new SM_INSTANCE_SCORE(type, getTime(), getInstanceReward(), object));
-            }
-        });
-    }
-    
-    public void sendPacket() {
+
+	public void sendPacket(final int type, final Integer object) {
+		instance.doOnAllPlayers(new Visitor<Player>() {
+			@Override
+			public void visit(Player player) {
+				PacketSendUtility.sendPacket(player,
+						new SM_INSTANCE_SCORE(type, getTime(), getInstanceReward(), object));
+			}
+		});
+	}
+
+	public void sendPacket() {
 		final List<Player> players = instance.getPlayersInside();
 		instance.doOnAllPlayers(new Visitor<Player>() {
 			@Override
@@ -157,96 +159,96 @@ public class HallOfTenacityReward extends InstanceReward<HallOfTenacityPlayerRew
 			}
 		});
 	}
-	
-    public int getTime() {
-        long result = System.currentTimeMillis() - instanceTime;
-        if (result < 90000) {
-            return (int) (90000 - result);
-        } else if (result < 1800000) { //30-Mins
-            return (int) (1800000 - (result - 90000));
-        }
-        return 0;
-    }
-	
+
+	public int getTime() {
+		long result = System.currentTimeMillis() - instanceTime;
+		if (result < 90000) {
+			return (int) (90000 - result);
+		} else if (result < 1800000) { // 30-Mins
+			return (int) (1800000 - (result - 90000));
+		}
+		return 0;
+	}
+
 	public byte getBuffId() {
 		return buffId;
 	}
-	
-    public void setInstanceStartTime() {
-        this.instanceTime = System.currentTimeMillis();
-    }
 
-	//TODO VSId
+	public void setInstanceStartTime() {
+		this.instanceTime = System.currentTimeMillis();
+	}
+
+	// TODO VSId
 	public void setCoupleSlotForBattle32() {
 		int size = 15;// 32/2=16 (packet first slot count from 0 to 15)
 		ArrayList<Integer> containRandomPlayerCoupleSlots = new ArrayList<Integer>();
-        ArrayList<Integer> totalCoupleSlots = new ArrayList<Integer>(size);
-        
-        ArrayList<Player> totalPlayer = new ArrayList<Player>(getPlayersInside());
-        ArrayList<Player> matchLeft = new ArrayList<Player>();
-        ArrayList<Player> matchRight = new ArrayList<Player>();
-        
-        //do shuffle players
-        Collections.shuffle(totalPlayer);
-        
-        //sort all players into left or right match
-        for (Player entry : totalPlayer) {
-            if (matchLeft.size() > matchRight.size())
-            	matchRight.add(entry);
-            else
-            	matchLeft.add(entry);
-        }
-        
-        //sort couple slot
-        for(int i = 0; i <= size; i++) {
-        	totalCoupleSlots.add(i);
-        }
-        
-        //do random player couple slot
-        Random rand = new Random();
-        while(totalCoupleSlots.size() > 0) {
-            int index = rand.nextInt(totalCoupleSlots.size());
-            containRandomPlayerCoupleSlots.add(totalCoupleSlots.remove(index));
-        }
-        
-        //left matching
-        Iterator<Player> iterLeft = matchLeft.iterator();
-        while (iterLeft.hasNext()) {
-        	Player player1 = iterLeft.next();
-        	Player player2 = iterLeft.hasNext() ? iterLeft.next() : player1;
-        	
-        	int rnds = rand.nextInt(containRandomPlayerCoupleSlots.size());
-    		int coupleId = containRandomPlayerCoupleSlots.remove(rnds);
+		ArrayList<Integer> totalCoupleSlots = new ArrayList<Integer>(size);
 
-        	player1.setHOTCoupleId(coupleId);
-    		player2.setHOTCoupleId(coupleId);
-    		
-    		player1.setHOTVSId(0);
-    		player2.setHOTVSId(1);
-    		
-    		player1.setHOTMyOpponentObjId(player2.getObjectId());
-    		player2.setHOTMyOpponentObjId(player1.getObjectId());
-    		log.info("LEFT player1:"+player1.getName()+" player2:"+player2.getName());
-        }
-        
-        //right matching
-        Iterator<Player> iterRight = matchRight.iterator();
-        while (iterRight.hasNext()) {
-        	Player player1 = iterRight.next();
-        	Player player2 = iterRight.hasNext() ? iterRight.next() : player1;
-        	
-        	int rnds = rand.nextInt(containRandomPlayerCoupleSlots.size());
-    		int coupleId = containRandomPlayerCoupleSlots.remove(rnds);
+		ArrayList<Player> totalPlayer = new ArrayList<Player>(getPlayersInside());
+		ArrayList<Player> matchLeft = new ArrayList<Player>();
+		ArrayList<Player> matchRight = new ArrayList<Player>();
 
-        	player1.setHOTCoupleId(coupleId);
-    		player2.setHOTCoupleId(coupleId);
-    		
-    		player1.setHOTVSId(0);
-    		player2.setHOTVSId(1);
-    		
-    		player1.setHOTMyOpponentObjId(player2.getObjectId());
-    		player2.setHOTMyOpponentObjId(player1.getObjectId());
-    		log.info("RIGHT player1:"+player1.getName()+" player2:"+player2.getName());
-        }
+		// do shuffle players
+		Collections.shuffle(totalPlayer);
+
+		// sort all players into left or right match
+		for (Player entry : totalPlayer) {
+			if (matchLeft.size() > matchRight.size())
+				matchRight.add(entry);
+			else
+				matchLeft.add(entry);
+		}
+
+		// sort couple slot
+		for (int i = 0; i <= size; i++) {
+			totalCoupleSlots.add(i);
+		}
+
+		// do random player couple slot
+		Random rand = new Random();
+		while (totalCoupleSlots.size() > 0) {
+			int index = rand.nextInt(totalCoupleSlots.size());
+			containRandomPlayerCoupleSlots.add(totalCoupleSlots.remove(index));
+		}
+
+		// left matching
+		Iterator<Player> iterLeft = matchLeft.iterator();
+		while (iterLeft.hasNext()) {
+			Player player1 = iterLeft.next();
+			Player player2 = iterLeft.hasNext() ? iterLeft.next() : player1;
+
+			int rnds = rand.nextInt(containRandomPlayerCoupleSlots.size());
+			int coupleId = containRandomPlayerCoupleSlots.remove(rnds);
+
+			player1.setHOTCoupleId(coupleId);
+			player2.setHOTCoupleId(coupleId);
+
+			player1.setHOTVSId(0);
+			player2.setHOTVSId(1);
+
+			player1.setHOTMyOpponentObjId(player2.getObjectId());
+			player2.setHOTMyOpponentObjId(player1.getObjectId());
+			log.info("LEFT player1:" + player1.getName() + " player2:" + player2.getName());
+		}
+
+		// right matching
+		Iterator<Player> iterRight = matchRight.iterator();
+		while (iterRight.hasNext()) {
+			Player player1 = iterRight.next();
+			Player player2 = iterRight.hasNext() ? iterRight.next() : player1;
+
+			int rnds = rand.nextInt(containRandomPlayerCoupleSlots.size());
+			int coupleId = containRandomPlayerCoupleSlots.remove(rnds);
+
+			player1.setHOTCoupleId(coupleId);
+			player2.setHOTCoupleId(coupleId);
+
+			player1.setHOTVSId(0);
+			player2.setHOTVSId(1);
+
+			player1.setHOTMyOpponentObjId(player2.getObjectId());
+			player2.setHOTMyOpponentObjId(player1.getObjectId());
+			log.info("RIGHT player1:" + player1.getName() + " player2:" + player2.getName());
+		}
 	}
 }

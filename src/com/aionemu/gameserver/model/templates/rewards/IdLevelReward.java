@@ -28,9 +28,12 @@ import com.aionemu.gameserver.model.templates.itemgroups.ItemRaceEntry;
  */
 
 /**
- * <p>Java class for IdLevelReward complex type.
+ * <p>
+ * Java class for IdLevelReward complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="IdLevelReward">

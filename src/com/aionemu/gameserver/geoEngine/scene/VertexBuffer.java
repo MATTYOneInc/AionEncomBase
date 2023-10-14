@@ -61,7 +61,8 @@ public class VertexBuffer extends GLObject implements Cloneable {
 		 */
 		Binormal,
 		/**
-		 * Specifies the source data for various vertex buffers when interleaving is used.
+		 * Specifies the source data for various vertex buffers when interleaving is
+		 * used.
 		 */
 		InterleavedData,
 		/**
@@ -96,8 +97,9 @@ public class VertexBuffer extends GLObject implements Cloneable {
 	}
 
 	/**
-	 * The usage of the VertexBuffer, specifies how often the buffer is used. This can determine if a vertex buffer is placed in VRAM or held in video memory, but no garantees are made- it's only a
-	 * hint.
+	 * The usage of the VertexBuffer, specifies how often the buffer is used. This
+	 * can determine if a vertex buffer is placed in VRAM or held in video memory,
+	 * but no garantees are made- it's only a hint.
 	 */
 	public static enum Usage {
 
@@ -122,16 +124,9 @@ public class VertexBuffer extends GLObject implements Cloneable {
 	public static enum Format {
 		// Floating point formats
 
-		Half(2),
-		Float(4),
-		Double(8),
+		Half(2), Float(4), Double(8),
 		// Integer formats
-		Byte(1),
-		UnsignedByte(1),
-		Short(2),
-		UnsignedShort(2),
-		Int(4),
-		UnsignedInt(4);
+		Byte(1), UnsignedByte(1), Short(2), UnsignedShort(2), Int(4), UnsignedInt(4);
 
 		private int componentSize = 0;
 
@@ -215,7 +210,8 @@ public class VertexBuffer extends GLObject implements Cloneable {
 
 	public void setUsage(Usage usage) {
 		// if (id != -1)
-		// throw new UnsupportedOperationException("Data has already been sent. Cannot set usage.");
+		// throw new UnsupportedOperationException("Data has already been sent. Cannot
+		// set usage.");
 
 		this.usage = usage;
 	}
@@ -317,40 +313,40 @@ public class VertexBuffer extends GLObject implements Cloneable {
 		int total = components * numElements;
 		data.clear();
 		switch (format) {
-			case Byte:
-			case UnsignedByte:
-			case Half:
-				ByteBuffer bbuf = (ByteBuffer) data;
-				bbuf.limit(total);
-				ByteBuffer bnewBuf = BufferUtils.createByteBuffer(total);
-				bnewBuf.put(bbuf);
-				data = bnewBuf;
-				break;
-			case Short:
-			case UnsignedShort:
-				ShortBuffer sbuf = (ShortBuffer) data;
-				sbuf.limit(total);
-				ShortBuffer snewBuf = BufferUtils.createShortBuffer(total);
-				snewBuf.put(sbuf);
-				data = snewBuf;
-				break;
-			case Int:
-			case UnsignedInt:
-				IntBuffer ibuf = (IntBuffer) data;
-				ibuf.limit(total);
-				IntBuffer inewBuf = BufferUtils.createIntBuffer(total);
-				inewBuf.put(ibuf);
-				data = inewBuf;
-				break;
-			case Float:
-				FloatBuffer fbuf = (FloatBuffer) data;
-				fbuf.limit(total);
-				FloatBuffer fnewBuf = BufferUtils.createFloatBuffer(total);
-				fnewBuf.put(fbuf);
-				data = fnewBuf;
-				break;
-			default:
-				throw new UnsupportedOperationException("Unrecognized buffer format: " + format);
+		case Byte:
+		case UnsignedByte:
+		case Half:
+			ByteBuffer bbuf = (ByteBuffer) data;
+			bbuf.limit(total);
+			ByteBuffer bnewBuf = BufferUtils.createByteBuffer(total);
+			bnewBuf.put(bbuf);
+			data = bnewBuf;
+			break;
+		case Short:
+		case UnsignedShort:
+			ShortBuffer sbuf = (ShortBuffer) data;
+			sbuf.limit(total);
+			ShortBuffer snewBuf = BufferUtils.createShortBuffer(total);
+			snewBuf.put(sbuf);
+			data = snewBuf;
+			break;
+		case Int:
+		case UnsignedInt:
+			IntBuffer ibuf = (IntBuffer) data;
+			ibuf.limit(total);
+			IntBuffer inewBuf = BufferUtils.createIntBuffer(total);
+			inewBuf.put(ibuf);
+			data = inewBuf;
+			break;
+		case Float:
+			FloatBuffer fbuf = (FloatBuffer) data;
+			fbuf.limit(total);
+			FloatBuffer fnewBuf = BufferUtils.createFloatBuffer(total);
+			fnewBuf.put(fbuf);
+			data = fnewBuf;
+			break;
+		default:
+			throw new UnsupportedOperationException("Unrecognized buffer format: " + format);
 		}
 		data.clear();
 		setUpdateNeeded();
@@ -375,40 +371,40 @@ public class VertexBuffer extends GLObject implements Cloneable {
 		outVb.data.clear();
 
 		switch (format) {
-			case Byte:
-			case UnsignedByte:
-			case Half:
-				ByteBuffer bin = (ByteBuffer) data;
-				ByteBuffer bout = (ByteBuffer) outVb.data;
-				bin.position(inPos).limit(inPos + elementSz);
-				bout.position(outPos).limit(outPos + elementSz);
-				bout.put(bin);
-				break;
-			case Short:
-			case UnsignedShort:
-				ShortBuffer sin = (ShortBuffer) data;
-				ShortBuffer sout = (ShortBuffer) outVb.data;
-				sin.position(inPos).limit(inPos + elementSz);
-				sout.position(outPos).limit(outPos + elementSz);
-				sout.put(sin);
-				break;
-			case Int:
-			case UnsignedInt:
-				IntBuffer iin = (IntBuffer) data;
-				IntBuffer iout = (IntBuffer) outVb.data;
-				iin.position(inPos).limit(inPos + elementSz);
-				iout.position(outPos).limit(outPos + elementSz);
-				iout.put(iin);
-				break;
-			case Float:
-				FloatBuffer fin = (FloatBuffer) data;
-				FloatBuffer fout = (FloatBuffer) outVb.data;
-				fin.position(inPos).limit(inPos + elementSz);
-				fout.position(outPos).limit(outPos + elementSz);
-				fout.put(fin);
-				break;
-			default:
-				throw new UnsupportedOperationException("Unrecognized buffer format: " + format);
+		case Byte:
+		case UnsignedByte:
+		case Half:
+			ByteBuffer bin = (ByteBuffer) data;
+			ByteBuffer bout = (ByteBuffer) outVb.data;
+			bin.position(inPos).limit(inPos + elementSz);
+			bout.position(outPos).limit(outPos + elementSz);
+			bout.put(bin);
+			break;
+		case Short:
+		case UnsignedShort:
+			ShortBuffer sin = (ShortBuffer) data;
+			ShortBuffer sout = (ShortBuffer) outVb.data;
+			sin.position(inPos).limit(inPos + elementSz);
+			sout.position(outPos).limit(outPos + elementSz);
+			sout.put(sin);
+			break;
+		case Int:
+		case UnsignedInt:
+			IntBuffer iin = (IntBuffer) data;
+			IntBuffer iout = (IntBuffer) outVb.data;
+			iin.position(inPos).limit(inPos + elementSz);
+			iout.position(outPos).limit(outPos + elementSz);
+			iout.put(iin);
+			break;
+		case Float:
+			FloatBuffer fin = (FloatBuffer) data;
+			FloatBuffer fout = (FloatBuffer) outVb.data;
+			fin.position(inPos).limit(inPos + elementSz);
+			fout.position(outPos).limit(outPos + elementSz);
+			fout.put(fin);
+			break;
+		default:
+			throw new UnsupportedOperationException("Unrecognized buffer format: " + format);
 		}
 
 		data.clear();
@@ -423,23 +419,23 @@ public class VertexBuffer extends GLObject implements Cloneable {
 		int total = numElements * components;
 
 		switch (format) {
-			case Byte:
-			case UnsignedByte:
-				return BufferUtils.createByteBuffer(total);
-			case Half:
-				return BufferUtils.createByteBuffer(total * 2);
-			case Short:
-			case UnsignedShort:
-				return BufferUtils.createShortBuffer(total);
-			case Int:
-			case UnsignedInt:
-				return BufferUtils.createIntBuffer(total);
-			case Float:
-				return BufferUtils.createFloatBuffer(total);
-			case Double:
-				return BufferUtils.createDoubleBuffer(total);
-			default:
-				throw new UnsupportedOperationException("Unrecoginized buffer format: " + format);
+		case Byte:
+		case UnsignedByte:
+			return BufferUtils.createByteBuffer(total);
+		case Half:
+			return BufferUtils.createByteBuffer(total * 2);
+		case Short:
+		case UnsignedShort:
+			return BufferUtils.createShortBuffer(total);
+		case Int:
+		case UnsignedInt:
+			return BufferUtils.createIntBuffer(total);
+		case Float:
+			return BufferUtils.createFloatBuffer(total);
+		case Double:
+			return BufferUtils.createDoubleBuffer(total);
+		default:
+			throw new UnsupportedOperationException("Unrecoginized buffer format: " + format);
 		}
 	}
 
@@ -476,7 +472,8 @@ public class VertexBuffer extends GLObject implements Cloneable {
 		if (data != null) {
 			dataTxt = ", elements=" + data.capacity();
 		}
-		return getClass().getSimpleName() + "[fmt=" + format.name() + ", type=" + bufType.name() + ", usage=" + usage.name() + dataTxt + "]";
+		return getClass().getSimpleName() + "[fmt=" + format.name() + ", type=" + bufType.name() + ", usage="
+				+ usage.name() + dataTxt + "]";
 	}
 
 	@Override

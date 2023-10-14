@@ -40,15 +40,13 @@ public abstract class AionClientPacket extends BaseClientPacket<AionConnection> 
 	private final Set<State> validStates;
 
 	/**
-	 * Constructs new client packet instance. ByBuffer and ClientConnection should be later set manually, after using this
-	 * constructor.
+	 * Constructs new client packet instance. ByBuffer and ClientConnection should
+	 * be later set manually, after using this constructor.
 	 * 
-	 * @param opcode
-	 *          packet id
-	 * @param state
-	 *          connection valid state
-	 * @param restStates
-	 *          rest of connection valid state (optional - if there are more than one)
+	 * @param opcode     packet id
+	 * @param state      connection valid state
+	 * @param restStates rest of connection valid state (optional - if there are
+	 *                   more than one)
 	 */
 	protected AionClientPacket(int opcode, State state, State... restStates) {
 		super(opcode);
@@ -63,22 +61,21 @@ public abstract class AionClientPacket extends BaseClientPacket<AionConnection> 
 
 		try {
 			// run only if packet is still valid (connection state didn't changed)
-			if(isValid()) {
+			if (isValid()) {
 				runImpl();
 			}
-		}
-		catch (Throwable e) {
+		} catch (Throwable e) {
 			String name = getConnection().getAccount().getName();
 			if (name == null) {
 				name = getConnection().getIP();
 			}
-			//log.error("Error handling client (" + name + ") message :" + this, e);
+			// log.error("Error handling client (" + name + ") message :" + this, e);
 		}
 	}
 
 	/**
-	 * Send new AionServerPacket to connection that is owner of this packet. This method is equvalent to:
-	 * getConnection().sendPacket(msg);
+	 * Send new AionServerPacket to connection that is owner of this packet. This
+	 * method is equvalent to: getConnection().sendPacket(msg);
 	 * 
 	 * @param msg
 	 */
@@ -94,18 +91,16 @@ public abstract class AionClientPacket extends BaseClientPacket<AionConnection> 
 	public AionClientPacket clonePacket() {
 		try {
 			return (AionClientPacket) super.clone();
-		}
-		catch (CloneNotSupportedException e) {
+		} catch (CloneNotSupportedException e) {
 			return null;
 		}
 	}
-	
+
 	protected final String readS(int size) {
 		String string = readS();
 		if (string != null) {
 			readB(size - (string.length() * 2 + 2));
-		}
-		else {
+		} else {
 			readB(size);
 		}
 		return string;
@@ -120,7 +115,7 @@ public abstract class AionClientPacket extends BaseClientPacket<AionConnection> 
 		State state = getConnection().getState();
 		boolean valid = validStates.contains(state);
 
-		if(!valid) {
+		if (!valid) {
 			log.info(this + " wont be processed cuz its valid state don't match current connection state: " + state);
 		}
 		return valid;

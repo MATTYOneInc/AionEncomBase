@@ -28,8 +28,10 @@ public abstract class PlayerVarsDAO implements DAO {
 	public String getClassName() {
 		return PlayerVarsDAO.class.getName();
 	}
-	
+
 	public abstract Map<String, Object> load(final int playerId);
+
 	public abstract boolean set(final int playerId, final String key, final Object value);
+
 	public abstract boolean remove(final int playerId, final String key);
 }

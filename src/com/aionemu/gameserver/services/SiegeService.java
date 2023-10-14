@@ -79,8 +79,7 @@ import com.google.common.collect.Maps;
 
 import javolution.util.FastMap;
 
-public class SiegeService
-{
+public class SiegeService {
 	private static final Logger log = LoggerFactory.getLogger("SIEGE_LOG");
 
 	private static final String SIEGE_LOCATION_STATUS_BROADCAST_SCHEDULE = "0 0 * ? * *";
@@ -90,11 +89,11 @@ public class SiegeService
 	private Map<Integer, ArtifactLocation> artifacts;
 	private Map<Integer, FortressLocation> fortresses;
 	private Map<Integer, SiegeLocation> locations;
-	
+
 	public static SiegeService getInstance() {
 		return instance;
 	}
-	
+
 	public void initSiegeLocations() {
 		if (SiegeConfig.SIEGE_ENABLED) {
 			if (siegeSchedule != null) {
@@ -113,7 +112,7 @@ public class SiegeService
 			log.info("[SiegeService] Sieges are disabled in config.");
 		}
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public void initSieges() {
 		if (!SiegeConfig.SIEGE_ENABLED) {
@@ -123,9 +122,11 @@ public class SiegeService
 
 		for (Integer i : getSiegeLocations().keySet()) {
 			deSpawnNpcs(i);
-		} for (FortressLocation f : getFortresses().values()) {
+		}
+		for (FortressLocation f : getFortresses().values()) {
 			spawnNpcs(f.getLocationId(), f.getRace(), SiegeModType.PEACE);
-		} for (ArtifactLocation a : getStandaloneArtifacts().values()) {
+		}
+		for (ArtifactLocation a : getStandaloneArtifacts().values()) {
 			spawnNpcs(a.getLocationId(), a.getRace(), SiegeModType.PEACE);
 		}
 		siegeSchedule = SiegeSchedule.load();
@@ -133,7 +134,8 @@ public class SiegeService
 			for (String siegeTime : f.getSiegeTimes()) {
 				CronService.getInstance().schedule(new SiegeStartRunnable(f.getId()), siegeTime);
 			}
-		} for (ArtifactLocation artifact : artifacts.values()) {
+		}
+		for (ArtifactLocation artifact : artifacts.values()) {
 			if (artifact.isStandAlone()) {
 				log.debug("Starting siege of artifact #" + artifact.getLocationId());
 				startSiege(artifact.getLocationId());
@@ -143,7 +145,7 @@ public class SiegeService
 		}
 		updateFortressNextState();
 		CronService.getInstance().schedule(new Runnable() {
-		    @Override
+			@Override
 			public void run() {
 				updateFortressNextState();
 				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
@@ -160,7 +162,7 @@ public class SiegeService
 			}
 		}, SIEGE_LOCATION_STATUS_BROADCAST_SCHEDULE);
 	}
-	
+
 	public void checkSiegeStart(int locationId) {
 		if (SiegeConfig.SIEGE_AUTO_RACE && SiegeAutoRace.isAutoSiege(locationId)) {
 			SiegeAutoRace.AutoSiegeRace(locationId);
@@ -168,7 +170,7 @@ public class SiegeService
 			startSiege(locationId);
 		}
 	}
-	
+
 	public void startSiege(final int siegeLocationId) {
 		Siege<?> siege;
 		synchronized (this) {
@@ -189,7 +191,7 @@ public class SiegeService
 			}
 		}, siege.getSiegeLocation().getSiegeDuration() * 1000);
 	}
-	
+
 	public void stopSiege(int siegeLocationId) {
 		log.debug("Stopping siege of siege location: " + siegeLocationId);
 		if (!isSiegeInProgress(siegeLocationId)) {
@@ -199,12 +201,13 @@ public class SiegeService
 		Siege<?> siege;
 		synchronized (this) {
 			siege = activeSieges.remove(siegeLocationId);
-		} if (siege == null || siege.isFinished()) {
+		}
+		if (siege == null || siege.isFinished()) {
 			return;
 		}
 		siege.stopSiege();
 	}
-	
+
 	protected void updateFortressNextState() {
 		Calendar currentHourPlus1 = Calendar.getInstance();
 		currentHourPlus1.set(Calendar.MINUTE, 0);
@@ -249,28 +252,32 @@ public class SiegeService
 			siegeCalendar.add(Calendar.SECOND, getRemainingSiegeTimeInSeconds(fortress.getLocationId()));
 			if (SiegeConfig.SIEGE_AUTO_RACE && SiegeAutoRace.isAutoSiege(fortress.getLocationId())) {
 				siegeStartHour.add(Calendar.HOUR, 1);
-			} if (currentHourPlus1.getTimeInMillis() == siegeStartHour.getTimeInMillis() || siegeCalendar.getTimeInMillis() > currentHourPlus1.getTimeInMillis()) {
+			}
+			if (currentHourPlus1.getTimeInMillis() == siegeStartHour.getTimeInMillis()
+					|| siegeCalendar.getTimeInMillis() > currentHourPlus1.getTimeInMillis()) {
 				fortress.setNextState(1);
 			} else {
 				fortress.setNextState(0);
 			}
 		}
 	}
-	
+
 	public int getSecondsBeforeHourEnd() {
 		Calendar c = Calendar.getInstance();
 		int minutesAsSeconds = c.get(Calendar.MINUTE) * 60;
 		int seconds = c.get(Calendar.SECOND);
 		return 3600 - (minutesAsSeconds + seconds);
 	}
-	
+
 	public int getRemainingSiegeTimeInSeconds(int siegeLocationId) {
 		Siege<?> siege = getSiege(siegeLocationId);
 		if (siege == null || siege.isFinished()) {
 			return 0;
-		} if (!siege.isStarted()) {
+		}
+		if (!siege.isStarted()) {
 			return siege.getSiegeLocation().getSiegeDuration();
-		} if (siege.getSiegeLocation().getSiegeDuration() == -1) {
+		}
+		if (siege.getSiegeLocation().getSiegeDuration() == -1) {
 			return -1;
 		}
 		Calendar calendar = Calendar.getInstance();
@@ -278,35 +285,35 @@ public class SiegeService
 		int result = (int) ((calendar.getTimeInMillis() - System.currentTimeMillis()) / 1000);
 		return result > 0 ? result : 0;
 	}
-	
+
 	public Siege<?> getSiege(SiegeLocation loc) {
 		return activeSieges.get(loc.getLocationId());
 	}
-	
+
 	public Siege<?> getSiege(Integer siegeLocationId) {
 		return activeSieges.get(siegeLocationId);
 	}
-	
+
 	public boolean isSiegeInProgress(int fortressId) {
 		return activeSieges.containsKey(fortressId);
 	}
-	
+
 	public Map<Integer, FortressLocation> getFortresses() {
 		return fortresses;
 	}
-	
+
 	public FortressLocation getFortress(int fortressId) {
 		return fortresses.get(fortressId);
 	}
-	
+
 	public Map<Integer, ArtifactLocation> getArtifacts() {
 		return artifacts;
 	}
-	
+
 	public ArtifactLocation getArtifact(int id) {
 		return getArtifacts().get(id);
 	}
-	
+
 	public Map<Integer, ArtifactLocation> getStandaloneArtifacts() {
 		return Maps.filterValues(artifacts, new Predicate<ArtifactLocation>() {
 			@Override
@@ -315,7 +322,7 @@ public class SiegeService
 			}
 		});
 	}
-	
+
 	public Map<Integer, ArtifactLocation> getFortressArtifacts() {
 		return Maps.filterValues(artifacts, new Predicate<ArtifactLocation>() {
 			@Override
@@ -324,15 +331,15 @@ public class SiegeService
 			}
 		});
 	}
-	
+
 	public Map<Integer, SiegeLocation> getSiegeLocations() {
 		return locations;
 	}
-	
+
 	public SiegeLocation getSiegeLocation(int locationId) {
 		return locations.get(locationId);
 	}
-	
+
 	public Map<Integer, SiegeLocation> getSiegeLocations(int worldId) {
 		Map<Integer, SiegeLocation> mapLocations = new FastMap<Integer, SiegeLocation>();
 		for (SiegeLocation location : getSiegeLocations().values()) {
@@ -342,16 +349,17 @@ public class SiegeService
 		}
 		return mapLocations;
 	}
-	
+
 	protected Siege<?> newSiege(int siegeLocationId) {
 		if (fortresses.containsKey(siegeLocationId)) {
 			return new FortressSiege(fortresses.get(siegeLocationId));
-		} if (artifacts.containsKey(siegeLocationId)) {
+		}
+		if (artifacts.containsKey(siegeLocationId)) {
 			return new ArtifactSiege(artifacts.get(siegeLocationId));
 		}
 		throw new SiegeException("Unknown siege handler for siege location: " + siegeLocationId);
 	}
-	
+
 	public void cleanLegionId(int legionId) {
 		for (SiegeLocation loc : this.getSiegeLocations().values()) {
 			if (loc.getLegionId() == legionId) {
@@ -360,7 +368,7 @@ public class SiegeService
 			}
 		}
 	}
-	
+
 	public void spawnNpcs(int siegeLocationId, SiegeRace race, SiegeModType type) {
 		List<SpawnGroup2> siegeSpawns = DataManager.SPAWNS_DATA2.getSiegeSpawnsByLocId(siegeLocationId);
 		for (SpawnGroup2 group : siegeSpawns) {
@@ -372,55 +380,60 @@ public class SiegeService
 			}
 		}
 	}
-	
+
 	public void deSpawnNpcs(int siegeLocationId) {
 		Collection<SiegeNpc> siegeNpcs = World.getInstance().getLocalSiegeNpcs(siegeLocationId);
 		for (SiegeNpc npc : siegeNpcs) {
 			npc.getController().onDelete();
 		}
 	}
-	
+
 	public boolean isSiegeNpcInActiveSiege(Npc npc) {
 		if ((npc instanceof SiegeNpc)) {
 			FortressLocation fort = getFortress(((SiegeNpc) npc).getSiegeId());
 			if (fort != null) {
 				if (fort.isVulnerable()) {
 					return true;
-				} if (fort.getNextState() == 1) {
+				}
+				if (fort.getNextState() == 1) {
 					return npc.getSpawn().getRespawnTime() >= getSecondsBeforeHourEnd();
 				}
 			}
 		}
 		return false;
 	}
-	
+
 	public void broadcastUpdate() {
 		broadcast(new SM_SIEGE_LOCATION_INFO(), null);
 	}
-	
+
 	public void broadcastUpdate(SiegeLocation loc) {
 		Influence.getInstance().recalculateInfluence();
 		broadcast(new SM_SIEGE_LOCATION_INFO(loc), new SM_INFLUENCE_RATIO());
 	}
-	
+
 	public void broadcast(final AionServerPacket pkt1, final AionServerPacket pkt2) {
 		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 			public void visit(Player player) {
 				if (pkt1 != null) {
 					PacketSendUtility.sendPacket(player, pkt1);
-				} if (pkt2 != null) {
+				}
+				if (pkt2 != null) {
 					PacketSendUtility.sendPacket(player, pkt2);
 				}
 			}
 		});
 	}
-	
+
 	public void broadcastUpdate(SiegeLocation loc, DescriptionId nameId) {
 		SM_SIEGE_LOCATION_INFO pkt = new SM_SIEGE_LOCATION_INFO(loc);
-		SM_SYSTEM_MESSAGE info = loc.getLegionId() == 0 ? new SM_SYSTEM_MESSAGE(1404542, loc.getRace().getDescriptionId(), nameId) : new SM_SYSTEM_MESSAGE(1301038, LegionService.getInstance().getLegion(loc.getLegionId()).getLegionName(), nameId);
+		SM_SYSTEM_MESSAGE info = loc.getLegionId() == 0
+				? new SM_SYSTEM_MESSAGE(1404542, loc.getRace().getDescriptionId(), nameId)
+				: new SM_SYSTEM_MESSAGE(1301038,
+						LegionService.getInstance().getLegion(loc.getLegionId()).getLegionName(), nameId);
 		broadcast(pkt, info, loc.getRace());
 	}
-	
+
 	private void broadcast(final AionServerPacket pkt, final AionServerPacket info, final SiegeRace race) {
 		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 			public void visit(Player player) {
@@ -431,26 +444,26 @@ public class SiegeService
 			}
 		});
 	}
-	
+
 	private void broadcast(final SM_RIFT_ANNOUNCE rift, final SM_SYSTEM_MESSAGE info) {
 		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 			public void visit(Player player) {
 				PacketSendUtility.sendPacket(player, rift);
-				if (info != null && player.getWorldType().equals(WorldType.BALAUREA) ||
-				    info != null && player.getWorldType().equals(WorldType.PANESTERRA)) {
+				if (info != null && player.getWorldType().equals(WorldType.BALAUREA)
+						|| info != null && player.getWorldType().equals(WorldType.PANESTERRA)) {
 					PacketSendUtility.sendPacket(player, info);
 				}
 			}
 		});
 	}
-	
+
 	public void onPlayerLogin(Player player) {
 		if (SiegeConfig.SIEGE_ENABLED) {
 			PacketSendUtility.sendPacket(player, new SM_INFLUENCE_RATIO());
 			PacketSendUtility.sendPacket(player, new SM_SIEGE_LOCATION_INFO());
 		}
 	}
-	
+
 	public void onEnterSiegeWorld(Player player) {
 		FastMap<Integer, SiegeLocation> worldLocations = new FastMap<Integer, SiegeLocation>();
 		FastMap<Integer, ArtifactLocation> worldArtifacts = new FastMap<Integer, ArtifactLocation>();
@@ -458,7 +471,8 @@ public class SiegeService
 			if (location.getWorldId() == player.getWorldId()) {
 				worldLocations.put(location.getLocationId(), location);
 			}
-		} for (ArtifactLocation artifact : getArtifacts().values()) {
+		}
+		for (ArtifactLocation artifact : getArtifacts().values()) {
 			if (artifact.getWorldId() == player.getWorldId()) {
 				worldArtifacts.put(artifact.getLocationId(), artifact);
 			}
@@ -466,50 +480,50 @@ public class SiegeService
 		PacketSendUtility.sendPacket(player, new SM_SHIELD_EFFECT(worldLocations.values()));
 		PacketSendUtility.sendPacket(player, new SM_ABYSS_ARTIFACT_INFO3(worldArtifacts.values()));
 	}
-	
+
 	public void onWeatherChanged(WeatherEntry entry) {
-    }
-	
+	}
+
 	public int getFortressId(int locId) {
 		switch (locId) {
-			case 49:
-            case 61:
-				return 1011;
-			case 36:
-			case 54:
-				return 1131;
-			case 37:
-			case 55:
-				return 1132;
-			case 39:
-			case 56:
-				return 1141;
-			case 45:
-			case 57:
-			case 72:
-			case 75:
-				return 1221;
-			case 46:
-			case 58:
-			case 73:
-			case 76:
-				return 1231;
-			case 47:
-			case 59:
-			case 74:
-			case 77:
-				return 1241;
-			//4.7
-			case 102:
-				return 7011;
-			case 103:
-				return 10111;
-			case 104:
-				return 10211;	
-			case 105:
-				return 10311;
-			case 106:
-				return 10411;
+		case 49:
+		case 61:
+			return 1011;
+		case 36:
+		case 54:
+			return 1131;
+		case 37:
+		case 55:
+			return 1132;
+		case 39:
+		case 56:
+			return 1141;
+		case 45:
+		case 57:
+		case 72:
+		case 75:
+			return 1221;
+		case 46:
+		case 58:
+		case 73:
+		case 76:
+			return 1231;
+		case 47:
+		case 59:
+		case 74:
+		case 77:
+			return 1241;
+		// 4.7
+		case 102:
+			return 7011;
+		case 103:
+			return 10111;
+		case 104:
+			return 10211;
+		case 105:
+			return 10311;
+		case 106:
+			return 10411;
 		}
 		return 0;
 	}

@@ -48,8 +48,7 @@ import com.aionemu.gameserver.utils.stats.XPLossEnum;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldPosition;
 
-public class PlayerCommonData extends VisibleObjectTemplate
-{
+public class PlayerCommonData extends VisibleObjectTemplate {
 	static Logger log = LoggerFactory.getLogger(PlayerCommonData.class);
 	private final int playerObjId;
 	private Race race;
@@ -96,26 +95,26 @@ public class PlayerCommonData extends VisibleObjectTemplate
 	private int consumeCount = 0;
 	private int wardrobeSlot;
 	private PlayerUpgradeArcade upgradeArcade;
-	//Aura Of Growth 5.0
+	// Aura Of Growth 5.0
 	private long auraOfGrowth;
 	private long auraOfGrowthMax;
-	//Berdin's Star 5.1
+	// Berdin's Star 5.1
 	private long berdinStar;
-	private long berdinStarMax = 1125000000; //5.6
+	private long berdinStarMax = 1125000000; // 5.6
 	private boolean BerdinStarBoost = false;
-	//Abyss Favor 5.3
+	// Abyss Favor 5.3
 	private long abyssFavor;
 	private long abyssFavorMax = 1000000;
 	private boolean AbyssFavorBoost = false;
-	//Tower Of Challenge 5.6
+	// Tower Of Challenge 5.6
 	private int floor;
-	//Shugo Sweep 5.1
+	// Shugo Sweep 5.1
 	private int goldenDice;
 	private int resetBoard;
-	//Atreian Passport Creation Date
+	// Atreian Passport Creation Date
 	private Timestamp creationDate;
 	private int minionSkillPoints;
-    private Timestamp minionFunctionTime;
+	private Timestamp minionFunctionTime;
 
 	public PlayerCommonData(int objId) {
 		this.playerObjId = objId;
@@ -153,12 +152,12 @@ public class PlayerCommonData extends VisibleObjectTemplate
 	}
 
 	/**
-	 * @param AdvancedStigmaSlotSize
-	 *            the AdvancedStigmaSlotSize to set
+	 * @param AdvancedStigmaSlotSize the AdvancedStigmaSlotSize to set
 	 */
 	public void setAdvancedStigmaSlotSize(int AdvancedStigmaSlotSize) {
 		this.AdvancedStigmaSlotSize = AdvancedStigmaSlotSize;
 	}
+
 	public long getExpShown() {
 		return this.exp - DataManager.PLAYER_EXPERIENCE_TABLE.getStartExpForLevel(this.level);
 	}
@@ -167,7 +166,8 @@ public class PlayerCommonData extends VisibleObjectTemplate
 		if (this.level == DataManager.PLAYER_EXPERIENCE_TABLE.getMaxLevel()) {
 			return 0;
 		}
-		return DataManager.PLAYER_EXPERIENCE_TABLE.getStartExpForLevel(this.level + 1) - DataManager.PLAYER_EXPERIENCE_TABLE.getStartExpForLevel(this.level);
+		return DataManager.PLAYER_EXPERIENCE_TABLE.getStartExpForLevel(this.level + 1)
+				- DataManager.PLAYER_EXPERIENCE_TABLE.getStartExpForLevel(this.level);
 	}
 
 	/**
@@ -196,7 +196,10 @@ public class PlayerCommonData extends VisibleObjectTemplate
 			expRecoverable = Math.round(getExpNeed() * 0.25D);
 		}
 		if (this.getPlayer() != null) {
-			PacketSendUtility.sendPacket(getPlayer(), new SM_STATUPDATE_EXP(getExpShown(), getExpRecoverable(), getExpNeed(), this.getCurrentReposteEnergy(), this.getMaxReposteEnergy(), this.getBerdinStar(), this.getAuraOfGrowth()));
+			PacketSendUtility.sendPacket(getPlayer(),
+					new SM_STATUPDATE_EXP(getExpShown(), getExpRecoverable(), getExpNeed(),
+							this.getCurrentReposteEnergy(), this.getMaxReposteEnergy(), this.getBerdinStar(),
+							this.getAuraOfGrowth()));
 		}
 	}
 
@@ -254,7 +257,7 @@ public class PlayerCommonData extends VisibleObjectTemplate
 		long berdinStarBoost = 0;
 		if ((isReadyForBerdinStar()) && (getBerdinStar() > 0)) {
 			berdinStar = reward;
-			addBerdinStar(1575000); //0.14%
+			addBerdinStar(1575000); // 0.14%
 			if (BerdinStarBoost) {
 				berdinStarBoost = (long) (reward / 100.0 * 50.0);
 			}
@@ -263,7 +266,7 @@ public class PlayerCommonData extends VisibleObjectTemplate
 		long abyssFavorBoost = 0;
 		if ((isReadyForAbyssFavor()) && (getAbyssFavor() > 0)) {
 			abyssFavor = reward;
-			addAbyssFavor(1500); //0.15%
+			addAbyssFavor(1500); // 0.15%
 			if (AbyssFavorBoost) {
 				abyssFavorBoost = (long) (reward / 100.0 * 50.0);
 			}
@@ -271,12 +274,11 @@ public class PlayerCommonData extends VisibleObjectTemplate
 		long auraOfGrowth = 0;
 		if ((isReadyForAuraOfGrowth()) && (getAuraOfGrowth() > 0)) {
 			auraOfGrowth = (long) (reward / 100.0 * 60.0);
-		} if ((getPlayer() != null) && (rewardType != null)) {
-			if ((rewardType == RewardType.HUNTING) ||
-					(rewardType == RewardType.GROUP_HUNTING) ||
-					(rewardType == RewardType.CRAFTING) ||
-					(rewardType == RewardType.GATHERING) ||
-					(rewardType == RewardType.MONSTER_BOOK)) {
+		}
+		if ((getPlayer() != null) && (rewardType != null)) {
+			if ((rewardType == RewardType.HUNTING) || (rewardType == RewardType.GROUP_HUNTING)
+					|| (rewardType == RewardType.CRAFTING) || (rewardType == RewardType.GATHERING)
+					|| (rewardType == RewardType.MONSTER_BOOK)) {
 				reward += repose + berdinStar + berdinStarBoost + auraOfGrowth + abyssFavor + abyssFavorBoost;
 			} else {
 				reward += repose;
@@ -285,50 +287,65 @@ public class PlayerCommonData extends VisibleObjectTemplate
 		setExp(exp + reward, false);
 		if ((getPlayer() != null) && (rewardType != null)) {
 			switch (rewardType) {
-				case HUNTING:
-				case GROUP_HUNTING:
-				case CRAFTING:
-				case GATHERING:
-				case MONSTER_BOOK:
-					if (npcNameId == 0) {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP2(reward));
-					} else {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(npcNameId * 2 + 1), reward));
-						if (repose > 0) {
-							PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(2805577), repose));
-						} if (auraOfGrowth > 0) {
-							PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(2806377), auraOfGrowth));
-						} if (berdinStar > 0) {
-							PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(2806671), berdinStar));
-						} if (abyssFavor > 0) {
-							PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(2808053), abyssFavor));
-						}
+			case HUNTING:
+			case GROUP_HUNTING:
+			case CRAFTING:
+			case GATHERING:
+			case MONSTER_BOOK:
+				if (npcNameId == 0) {
+					PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP2(reward));
+				} else {
+					PacketSendUtility.sendPacket(getPlayer(),
+							SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(npcNameId * 2 + 1), reward));
+					if (repose > 0) {
+						PacketSendUtility.sendPacket(getPlayer(),
+								SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(2805577), repose));
 					}
-					break;
-				case QUEST:
-					if (npcNameId == 0) {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP2(reward));
-					} else if ((repose > 0) && (salvation > 0)) {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_VITAL_MAKEUP_BONUS_DESC(new DescriptionId(npcNameId * 2 + 1), reward, repose, salvation));
-					} else if ((repose > 0) && (salvation == 0)) {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_VITAL_BONUS_DESC(new DescriptionId(npcNameId * 2 + 1), reward, repose));
-					} else if ((repose == 0) && (salvation > 0)) {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_MAKEUP_BONUS_DESC(new DescriptionId(npcNameId * 2 + 1), reward, salvation));
-					} else {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(npcNameId * 2 + 1), reward));
+					if (auraOfGrowth > 0) {
+						PacketSendUtility.sendPacket(getPlayer(),
+								SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(2806377), auraOfGrowth));
 					}
-					break;
-				case PVP_KILL:
-					if ((repose > 0) && (salvation > 0)) {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_VITAL_MAKEUP_BONUS(name, reward, repose, salvation));
-					} else if ((repose > 0) && (salvation == 0)) {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_VITAL_BONUS(name, reward, repose));
-					} else if ((repose == 0) && (salvation > 0)) {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_MAKEUP_BONUS(name, reward, salvation));
-					} else {
-						PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP(name, reward));
+					if (berdinStar > 0) {
+						PacketSendUtility.sendPacket(getPlayer(),
+								SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(2806671), berdinStar));
 					}
-					break;
+					if (abyssFavor > 0) {
+						PacketSendUtility.sendPacket(getPlayer(),
+								SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(2808053), abyssFavor));
+					}
+				}
+				break;
+			case QUEST:
+				if (npcNameId == 0) {
+					PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP2(reward));
+				} else if ((repose > 0) && (salvation > 0)) {
+					PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP_VITAL_MAKEUP_BONUS_DESC(
+							new DescriptionId(npcNameId * 2 + 1), reward, repose, salvation));
+				} else if ((repose > 0) && (salvation == 0)) {
+					PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE
+							.STR_GET_EXP_VITAL_BONUS_DESC(new DescriptionId(npcNameId * 2 + 1), reward, repose));
+				} else if ((repose == 0) && (salvation > 0)) {
+					PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE
+							.STR_GET_EXP_MAKEUP_BONUS_DESC(new DescriptionId(npcNameId * 2 + 1), reward, salvation));
+				} else {
+					PacketSendUtility.sendPacket(getPlayer(),
+							SM_SYSTEM_MESSAGE.STR_GET_EXP_DESC(new DescriptionId(npcNameId * 2 + 1), reward));
+				}
+				break;
+			case PVP_KILL:
+				if ((repose > 0) && (salvation > 0)) {
+					PacketSendUtility.sendPacket(getPlayer(),
+							SM_SYSTEM_MESSAGE.STR_GET_EXP_VITAL_MAKEUP_BONUS(name, reward, repose, salvation));
+				} else if ((repose > 0) && (salvation == 0)) {
+					PacketSendUtility.sendPacket(getPlayer(),
+							SM_SYSTEM_MESSAGE.STR_GET_EXP_VITAL_BONUS(name, reward, repose));
+				} else if ((repose == 0) && (salvation > 0)) {
+					PacketSendUtility.sendPacket(getPlayer(),
+							SM_SYSTEM_MESSAGE.STR_GET_EXP_MAKEUP_BONUS(name, reward, salvation));
+				} else {
+					PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP(name, reward));
+				}
+				break;
 			}
 			if (this.isArchDaeva()) {
 				CreativityEssenceService.getInstance().pointPerExp(this.getPlayer());
@@ -361,7 +378,7 @@ public class PlayerCommonData extends VisibleObjectTemplate
 			reposteCurrent = 0;
 			reposteMax = 0;
 		} else {
-			reposteMax = (long) (getExpNeed() * 0.25f); //Retail 99%
+			reposteMax = (long) (getExpNeed() * 0.25f); // Retail 99%
 		}
 	}
 
@@ -383,21 +400,24 @@ public class PlayerCommonData extends VisibleObjectTemplate
 		if (getPlayerClass() != null && getPlayerClass().isStartingClass()) {
 			maxLevel = 10;
 			if (this.getLevel() == 9 && this.getExp() >= 126069) {
-				//You can become a Daeva through the class change mission.
-				//Once you complete the mission, you will reach level 10, regardless of your EXP.
+				// You can become a Daeva through the class change mission.
+				// Once you complete the mission, you will reach level 10, regardless of your
+				// EXP.
 				PacketSendUtility.sendPacket(this.getPlayer(), SM_SYSTEM_MESSAGE.STR_MSG_CAN_QUEST_DEVA);
 			}
 		} else if (this.getLevel() == 65 && !this.isArchDaeva()) {
 			boolean isCompleteQuest = false;
 			if (this.getPlayer().getRace() == Race.ELYOS) {
-				isCompleteQuest = this.getPlayer().isCompleteQuest(10520); //Covert Communiques.
+				isCompleteQuest = this.getPlayer().isCompleteQuest(10520); // Covert Communiques.
 			} else {
-				isCompleteQuest = this.getPlayer().isCompleteQuest(20520); //Lost Destiny.
-			} if (!isCompleteQuest) {
+				isCompleteQuest = this.getPlayer().isCompleteQuest(20520); // Lost Destiny.
+			}
+			if (!isCompleteQuest) {
 				maxExp = 2066885620;
 				if (this.getExp() >= 2066885620) {
-					//You can become an Archdaeva through the class change mission.
-					//Once you complete the mission, you will reach level 66, regardless of your EXP.
+					// You can become an Archdaeva through the class change mission.
+					// Once you complete the mission, you will reach level 66, regardless of your
+					// EXP.
 					PacketSendUtility.sendPacket(this.getPlayer(), SM_SYSTEM_MESSAGE.STR_MSG_CAN_QUEST_HIGHDEVA);
 				}
 			}
@@ -409,8 +429,8 @@ public class PlayerCommonData extends VisibleObjectTemplate
 		this.exp = exp;
 		boolean up = false;
 		while ((this.level + 1) < maxLevel
-				&& (up = exp >= DataManager.PLAYER_EXPERIENCE_TABLE.getStartExpForLevel(this.level + 1)) || (this.level - 1) >= 0
-				&& exp < DataManager.PLAYER_EXPERIENCE_TABLE.getStartExpForLevel(this.level)) {
+				&& (up = exp >= DataManager.PLAYER_EXPERIENCE_TABLE.getStartExpForLevel(this.level + 1))
+				|| (this.level - 1) >= 0 && exp < DataManager.PLAYER_EXPERIENCE_TABLE.getStartExpForLevel(this.level)) {
 			if (up) {
 				this.level++;
 			} else {
@@ -421,10 +441,12 @@ public class PlayerCommonData extends VisibleObjectTemplate
 
 		if (this.getPlayer() != null) {
 			if (up && GSConfig.ENABLE_RATIO_LIMITATION) {
-				if (this.level >= GSConfig.RATIO_MIN_REQUIRED_LEVEL && getPlayer().getPlayerAccount().getNumberOf(getRace()) == 1) {
+				if (this.level >= GSConfig.RATIO_MIN_REQUIRED_LEVEL
+						&& getPlayer().getPlayerAccount().getNumberOf(getRace()) == 1) {
 					GameServer.updateRatio(getRace(), 1);
 				}
-				if (this.level >= GSConfig.RATIO_MIN_REQUIRED_LEVEL && getPlayer().getPlayerAccount().getNumberOf(getRace()) == 1) {
+				if (this.level >= GSConfig.RATIO_MIN_REQUIRED_LEVEL
+						&& getPlayer().getPlayerAccount().getNumberOf(getRace()) == 1) {
 					GameServer.updateRatio(getRace(), -1);
 				}
 			}
@@ -433,7 +455,10 @@ public class PlayerCommonData extends VisibleObjectTemplate
 				updateMaxReposte();
 				updateMaxAuraOfGrowth();
 			}
-			PacketSendUtility.sendPacket(this.getPlayer(), new SM_STATUPDATE_EXP(getExpShown(), getExpRecoverable(), getExpNeed(), this.getCurrentReposteEnergy(), this.getMaxReposteEnergy(), this.getBerdinStar(), this.getAuraOfGrowth()));
+			PacketSendUtility.sendPacket(this.getPlayer(),
+					new SM_STATUPDATE_EXP(getExpShown(), getExpRecoverable(), getExpNeed(),
+							this.getCurrentReposteEnergy(), this.getMaxReposteEnergy(), this.getBerdinStar(),
+							this.getAuraOfGrowth()));
 		}
 	}
 
@@ -541,7 +566,7 @@ public class PlayerCommonData extends VisibleObjectTemplate
 		}
 	}
 
-	//ArchDaeva Update
+	// ArchDaeva Update
 	public void setArchDaeva() {
 		this.setArchDaeva(true);
 		if (this.getLevel() < 66) {
@@ -588,7 +613,8 @@ public class PlayerCommonData extends VisibleObjectTemplate
 	}
 
 	/**
-	 * Gets the cooresponding Player for this common data. Returns null if the player is not online
+	 * Gets the cooresponding Player for this common data. Returns null if the
+	 * player is not online
 	 *
 	 * @return Player or null
 	 */
@@ -612,7 +638,7 @@ public class PlayerCommonData extends VisibleObjectTemplate
 		if (getPlayer() != null) {
 			if (playerClass.isStartingClass()) {
 				return;
-            }
+			}
 			int maxDp = getPlayer().getGameStats().getMaxDp().getCurrent();
 			this.dp = dp > maxDp ? maxDp : dp;
 
@@ -682,6 +708,7 @@ public class PlayerCommonData extends VisibleObjectTemplate
 
 	/**
 	 * Value returned here means % of exp bonus.
+	 * 
 	 * @return
 	 */
 	public byte getCurrentSalvationPercent() {
@@ -898,38 +925,38 @@ public class PlayerCommonData extends VisibleObjectTemplate
 	public long getAuraOfGrowthPoints() {
 		long percent = 0;
 		switch (level) {
-			case 66:
-				percent = 770000;
-				break;
-			case 67:
-				percent = 840000;
-				break;
-			case 68:
-				percent = 910000;
-				break;
-			case 69:
-				percent = 980000;
-				break;
-			case 70:
-				percent = 1060000;
-				break;
-			case 71:
-				percent = 1270000;
-				break;
-			case 72:
-				percent = 1380000;
-				break;
-			case 73:
-				percent = 1490000;
-				break;
-			case 74:
-				percent = 1600000;
-				break;
-			case 75:
-				percent = 1750000;
-				break;
-			default:
-				percent = 0;
+		case 66:
+			percent = 770000;
+			break;
+		case 67:
+			percent = 840000;
+			break;
+		case 68:
+			percent = 910000;
+			break;
+		case 69:
+			percent = 980000;
+			break;
+		case 70:
+			percent = 1060000;
+			break;
+		case 71:
+			percent = 1270000;
+			break;
+		case 72:
+			percent = 1380000;
+			break;
+		case 73:
+			percent = 1490000;
+			break;
+		case 74:
+			percent = 1600000;
+			break;
+		case 75:
+			percent = 1750000;
+			break;
+		default:
+			percent = 0;
 			break;
 		}
 		return percent;
@@ -973,10 +1000,12 @@ public class PlayerCommonData extends VisibleObjectTemplate
 			int percent = (int) ((float) berdinStar * 100.0 / (float) getMaxBerdinStar());
 			if ((!BerdinStarBoost) && (percent > 50)) {
 				BerdinStarBoost = true;
-				PacketSendUtility.sendPacket(this.getPlayer(), new SM_SYSTEM_MESSAGE(1403399, new Object[] {Integer.valueOf(50)}));
+				PacketSendUtility.sendPacket(this.getPlayer(),
+						new SM_SYSTEM_MESSAGE(1403399, new Object[] { Integer.valueOf(50) }));
 			} else if ((BerdinStarBoost) && (percent < 50)) {
 				BerdinStarBoost = false;
-				PacketSendUtility.sendPacket(this.getPlayer(), new SM_SYSTEM_MESSAGE(1403400, new Object[] {Integer.valueOf(50)}));
+				PacketSendUtility.sendPacket(this.getPlayer(),
+						new SM_SYSTEM_MESSAGE(1403400, new Object[] { Integer.valueOf(50) }));
 			} else if (berdinStar <= 0) {
 				PacketSendUtility.sendPacket(this.getPlayer(), new SM_SYSTEM_MESSAGE(1403401, new Object[0]));
 			}
@@ -1022,11 +1051,13 @@ public class PlayerCommonData extends VisibleObjectTemplate
 			if ((!AbyssFavorBoost) && (percent > 50)) {
 				AbyssFavorBoost = true;
 				PacketSendUtility.sendPacket(this.getPlayer(), new SM_ABYSS_FAVOR());
-				PacketSendUtility.sendPacket(this.getPlayer(), new SM_SYSTEM_MESSAGE(1404029, new Object[] {Integer.valueOf(50)}));
+				PacketSendUtility.sendPacket(this.getPlayer(),
+						new SM_SYSTEM_MESSAGE(1404029, new Object[] { Integer.valueOf(50) }));
 			} else if ((AbyssFavorBoost) && (percent < 50)) {
 				AbyssFavorBoost = false;
 				PacketSendUtility.sendPacket(this.getPlayer(), new SM_ABYSS_FAVOR());
-				PacketSendUtility.sendPacket(this.getPlayer(), new SM_SYSTEM_MESSAGE(1404030, new Object[] {Integer.valueOf(50)}));
+				PacketSendUtility.sendPacket(this.getPlayer(),
+						new SM_SYSTEM_MESSAGE(1404030, new Object[] { Integer.valueOf(50) }));
 			} else if (abyssFavor <= 0) {
 				PacketSendUtility.sendPacket(this.getPlayer(), new SM_ABYSS_FAVOR());
 				PacketSendUtility.sendPacket(this.getPlayer(), new SM_SYSTEM_MESSAGE(1404031, new Object[0]));
@@ -1079,19 +1110,19 @@ public class PlayerCommonData extends VisibleObjectTemplate
 	/**
 	 * @Minions
 	 */
-    public int getMinionSkillPoints() {
-        return minionSkillPoints;
-    }
-    
-    public void setMinionSkillPoints(int minionSkillPoints) {
-        this.minionSkillPoints = minionSkillPoints;
-    }
-    
-    public Timestamp getMinionFunctionTime() {
-        return minionFunctionTime;
-    }
-    
-    public void setMinionFunctionTime(Timestamp minionFunctionTime) {
-        this.minionFunctionTime = minionFunctionTime;
-    }
+	public int getMinionSkillPoints() {
+		return minionSkillPoints;
+	}
+
+	public void setMinionSkillPoints(int minionSkillPoints) {
+		this.minionSkillPoints = minionSkillPoints;
+	}
+
+	public Timestamp getMinionFunctionTime() {
+		return minionFunctionTime;
+	}
+
+	public void setMinionFunctionTime(Timestamp minionFunctionTime) {
+		this.minionFunctionTime = minionFunctionTime;
+	}
 }

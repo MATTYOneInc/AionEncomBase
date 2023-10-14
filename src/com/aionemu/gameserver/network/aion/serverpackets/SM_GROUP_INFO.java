@@ -57,7 +57,7 @@ public class SM_GROUP_INFO extends AionServerPacket {
 		writeC(0);
 		writeD(type.getType());
 		writeD(type.getSubType());
-		writeH(0); //unk
+		writeH(0); // unk
 		writeH(0); // message id
 		writeS(StringUtils.EMPTY); // name
 	}

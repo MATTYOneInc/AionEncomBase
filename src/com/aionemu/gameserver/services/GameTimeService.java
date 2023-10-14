@@ -28,15 +28,15 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.utils.gametime.GameTimeManager;
 import com.aionemu.gameserver.world.World;
 
-public class GameTimeService
-{
+public class GameTimeService {
 	private static Logger log = LoggerFactory.getLogger(GameTimeService.class);
-	
+
 	public static final GameTimeService getInstance() {
 		return SingletonHolder.instance;
 	}
+
 	private final static int GAMETIME_UPDATE = 3 * 60000;
-	
+
 	private GameTimeService() {
 		ThreadPoolManager.getInstance().scheduleAtFixedRate(new Runnable() {
 			@Override
@@ -51,7 +51,7 @@ public class GameTimeService
 		}, GAMETIME_UPDATE, GAMETIME_UPDATE);
 		log.info("GameTimeService started. Update interval:" + GAMETIME_UPDATE);
 	}
-	
+
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final GameTimeService instance = new GameTimeService();

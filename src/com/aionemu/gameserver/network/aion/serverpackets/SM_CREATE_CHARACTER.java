@@ -60,10 +60,9 @@ public class SM_CREATE_CHARACTER extends PlayerInfo {
 	/**
 	 * Constructs new <tt>SM_CREATE_CHARACTER </tt> packet
 	 * 
-	 * @param accPlData
-	 *          playerAccountData of player that was created
-	 * @param responseCode
-	 *          response code (invalid nickname, nickname is already taken, ok)
+	 * @param accPlData    playerAccountData of player that was created
+	 * @param responseCode response code (invalid nickname, nickname is already
+	 *                     taken, ok)
 	 */
 
 	public SM_CREATE_CHARACTER(PlayerAccountData accPlData, int responseCode) {
@@ -82,9 +81,9 @@ public class SM_CREATE_CHARACTER extends PlayerInfo {
 			writePlayerInfo(player); // if everything is fine, all the character's data should be sent
 			writeB(new byte[32]);
 			writeB(new byte[88]); // unk 4.5.0.19
-		}
-		else {
-			writeB(new byte[448+/*4.5.0.19 unk*/88]); // if something is wrong, only return code should be sent in the packet
+		} else {
+			writeB(new byte[448 + /* 4.5.0.19 unk */88]); // if something is wrong, only return code should be sent in
+															// the packet
 		}
 	}
 }

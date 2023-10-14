@@ -54,23 +54,24 @@ public class DatabaseCleaningService {
 		int periodInDays = CleaningConfig.CLEANING_PERIOD;
 
 		if (periodInDays > SECURITY_MINIMUM_PERIOD) {
-			delegateToThreads(CleaningConfig.CLEANING_THREADS, dao.getPlayersToDelete(periodInDays, CleaningConfig.CLEANING_LIMIT));
+			delegateToThreads(CleaningConfig.CLEANING_THREADS,
+					dao.getPlayersToDelete(periodInDays, CleaningConfig.CLEANING_LIMIT));
 			monitoringProcess();
-		}
-		else {
-			log.warn("The configured days for database cleaning is to low. For security reasons the service will only execute with periods over 30 days!");
+		} else {
+			log.warn(
+					"The configured days for database cleaning is to low. For security reasons the service will only execute with periods over 30 days!");
 		}
 	}
 
 	private void monitoringProcess() {
 		while (!allWorkersReady())
-		try {
-			Thread.sleep(WORKER_CHECK_TIME);
-			log.info("DatabaseCleaningService: Until now " + currentlyDeletedChars() + " chars deleted in " + (System.currentTimeMillis() - startTime) / 1000L + " seconds!");
-		}
-		catch (InterruptedException ex) {
-			log.error("DatabaseCleaningService: Got Interrupted!");
-		}
+			try {
+				Thread.sleep(WORKER_CHECK_TIME);
+				log.info("DatabaseCleaningService: Until now " + currentlyDeletedChars() + " chars deleted in "
+						+ (System.currentTimeMillis() - startTime) / 1000L + " seconds!");
+			} catch (InterruptedException ex) {
+				log.error("DatabaseCleaningService: Got Interrupted!");
+			}
 	}
 
 	private boolean allWorkersReady() {

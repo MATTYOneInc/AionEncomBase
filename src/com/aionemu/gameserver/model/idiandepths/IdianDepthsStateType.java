@@ -20,8 +20,6 @@ package com.aionemu.gameserver.model.idiandepths;
  * @author Rinzler (Encom)
  */
 
-public enum IdianDepthsStateType
-{
-	OPEN,
-	CLOSED;
+public enum IdianDepthsStateType {
+	OPEN, CLOSED;
 }

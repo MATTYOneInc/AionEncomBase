@@ -95,8 +95,7 @@ public abstract class PacketWriteHelper {
 	protected final void writeS(ByteBuffer buf, String text) {
 		if (text == null) {
 			buf.putChar('\000');
-		}
-		else {
+		} else {
 			final int len = text.length();
 			for (int i = 0; i < len; i++) {
 				buf.putChar(text.charAt(i));
@@ -121,8 +120,7 @@ public abstract class PacketWriteHelper {
 	 * @param buf
 	 * @param bytes
 	 */
-	protected final void skip(ByteBuffer buf, int bytes)
-	{
+	protected final void skip(ByteBuffer buf, int bytes) {
 		buf.put(new byte[bytes]);
 	}
 }

@@ -46,7 +46,7 @@ public class ShutdownConfig {
 	 */
 	@Property(key = "gameserver.shutdown.safereboot", defaultValue = "true")
 	public static boolean SAFE_REBOOT;
-	
+
 	/**
 	 * Despawn all npcs in shoutdown mode
 	 */

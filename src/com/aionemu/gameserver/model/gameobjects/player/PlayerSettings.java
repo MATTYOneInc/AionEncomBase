@@ -51,8 +51,7 @@ public class PlayerSettings {
 	}
 
 	/**
-	 * @param persistentState
-	 *          the persistentState to set
+	 * @param persistentState the persistentState to set
 	 */
 	public void setPersistentState(PersistentState persistentState) {
 		this.persistentState = persistentState;
@@ -66,8 +65,7 @@ public class PlayerSettings {
 	}
 
 	/**
-	 * @param uiSettings
-	 *          the uiSettings to set
+	 * @param uiSettings the uiSettings to set
 	 */
 	public void setUiSettings(byte[] uiSettings) {
 		this.uiSettings = uiSettings;
@@ -82,14 +80,13 @@ public class PlayerSettings {
 	}
 
 	/**
-	 * @param shortcuts
-	 *          the shortcuts to set
+	 * @param shortcuts the shortcuts to set
 	 */
 	public void setShortcuts(byte[] shortcuts) {
 		this.shortcuts = shortcuts;
 		persistentState = PersistentState.UPDATE_REQUIRED;
 	}
-	
+
 	/**
 	 * @return the houseBuddies
 	 */
@@ -98,8 +95,7 @@ public class PlayerSettings {
 	}
 
 	/**
-	 * @param houseBuddies
-	 *          the houseBuddies to set
+	 * @param houseBuddies the houseBuddies to set
 	 */
 	public void setHouseBuddies(byte[] houseBuddies) {
 		this.houseBuddies = houseBuddies;
@@ -114,8 +110,7 @@ public class PlayerSettings {
 	}
 
 	/**
-	 * @param display
-	 *          the display to set
+	 * @param display the display to set
 	 */
 	public void setDisplay(int display) {
 		this.display = display;
@@ -130,8 +125,7 @@ public class PlayerSettings {
 	}
 
 	/**
-	 * @param deny
-	 *          the deny to set
+	 * @param deny the deny to set
 	 */
 	public void setDeny(int deny) {
 		this.deny = deny;
@@ -143,7 +137,7 @@ public class PlayerSettings {
 
 		if (isDeniedStatus == deny.getId()) {
 			return true;
-        }
+		}
 		return false;
 	}
 }

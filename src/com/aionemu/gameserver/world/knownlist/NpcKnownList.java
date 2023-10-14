@@ -33,8 +33,7 @@ public class NpcKnownList extends CreatureAwareKnownList {
 		MapRegion activeRegion = owner.getActiveRegion();
 		if (activeRegion != null && activeRegion.isMapRegionActive()) {
 			super.doUpdate();
-		}
-		else {
+		} else {
 			clear();
 		}
 	}

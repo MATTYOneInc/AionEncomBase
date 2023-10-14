@@ -23,19 +23,18 @@ import com.aionemu.gameserver.model.moltenus.MoltenusStateType;
  * @author Rinzler (Encom)
  */
 
-public class Boss extends MoltenusFight<MoltenusLocation>
-{
+public class Boss extends MoltenusFight<MoltenusLocation> {
 	public Boss(MoltenusLocation moltenus) {
 		super(moltenus);
 	}
-	
+
 	@Override
 	public void startMoltenus() {
 		getMoltenusLocation().setActiveMoltenus(this);
 		despawn();
 		spawn(MoltenusStateType.FIGHT);
 	}
-	
+
 	@Override
 	public void stopMoltenus() {
 		getMoltenusLocation().setActiveMoltenus(null);

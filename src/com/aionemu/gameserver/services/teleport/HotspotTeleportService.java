@@ -38,70 +38,75 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 public class HotspotTeleportService {
 
 	private static final Logger log = LoggerFactory.getLogger(HotspotTeleportService.class);
-	
+
 	public static HotspotTeleportService getInstance() {
-        return SingletonHolder.instance;
-    }
-	
+		return SingletonHolder.instance;
+	}
+
 	private HotspotTeleportService() {
-        int hotspotList = DataManager.HOTSPOT_LOCATION_DATA.size();
-        log.info(hotspotList + " <Hotspot Location 5.8> loaded.");
-    }
-	
+		int hotspotList = DataManager.HOTSPOT_LOCATION_DATA.size();
+		log.info(hotspotList + " <Hotspot Location 5.8> loaded.");
+	}
+
 	public void doTeleport(final Player player, final int teleportId, final int price) {
 		final int worldId = DataManager.HOTSPOT_LOCATION_DATA.getHotspotlocationTemplate(teleportId).getMapId();
 		final float getX = DataManager.HOTSPOT_LOCATION_DATA.getHotspotlocationTemplate(teleportId).getX();
 		final float getY = DataManager.HOTSPOT_LOCATION_DATA.getHotspotlocationTemplate(teleportId).getY();
 		final float getZ = DataManager.HOTSPOT_LOCATION_DATA.getHotspotlocationTemplate(teleportId).getZ();
-		//KR - Update December 16th 2015
-		//- Base teleportation cooldown has been reduced from 10min to 1min.
-		final int cooldown = 60; //1 Minute = 60 Seconds
-		player.getController().addTask(TaskId.HOTSPOT_TELEPORT, ThreadPoolManager.getInstance().schedule(new Runnable() {
-            @Override
-            public void run() {
-            	PacketSendUtility.broadcastPacketAndReceive(player, new SM_HOTSPOT_TELEPORT(3, player.getObjectId(), teleportId));
-            	player.getController().addTask(TaskId.HOTSPOT_TELEPORT, ThreadPoolManager.getInstance().schedule(new Runnable() {
-                    @Override
-                    public void run() {
-                    	TeleportService2.teleportTo(player, worldId, getX, getY, getZ);
-						player.getInventory().decreaseKinah(price);
-						PacketSendUtility.sendPacket(player, new SM_HOTSPOT_TELEPORT(player, 3, teleportId, cooldown));
-                    }
-            	}, 1000));
-            	ActionObserver attackedObserver = new ActionObserver(ObserverType.ATTACKED) {
-                    @Override
-                    public void attacked(Creature creature) {
-                    	player.getController().cancelTask(TaskId.HOTSPOT_TELEPORT);
-                    }
-                };
-                player.getObserveController().addObserver(attackedObserver);
-                player.setHotTeleObservers(attackedObserver);
-                ActionObserver rideObserver = new ActionObserver(ObserverType.ABNORMALSETTED) {
-                    @Override
-                    public void abnormalsetted(AbnormalState state) {
-                        if (state.getId() > 0) {
-                        	PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402444));
-                        	player.getController().cancelTask(TaskId.HOTSPOT_TELEPORT);
-                        }
-                    }
-                };
-                player.getObserveController().addObserver(rideObserver);
-                player.setHotTeleObservers(rideObserver);
-                ActionObserver dotAttackedObserver = new ActionObserver(ObserverType.DOT_ATTACKED) {
-                    @Override
-                    public void dotattacked(Creature creature, Effect dotEffect) {
-                    	player.getController().cancelTask(TaskId.HOTSPOT_TELEPORT);
-                    }
-                };
-                player.getObserveController().addObserver(dotAttackedObserver);
-                player.setHotTeleObservers(dotAttackedObserver);
-            }
-		}, 10000));
-		PacketSendUtility.broadcastPacketAndReceive(player, new SM_HOTSPOT_TELEPORT(1, player.getObjectId(), teleportId));
+		// KR - Update December 16th 2015
+		// - Base teleportation cooldown has been reduced from 10min to 1min.
+		final int cooldown = 60; // 1 Minute = 60 Seconds
+		player.getController().addTask(TaskId.HOTSPOT_TELEPORT,
+				ThreadPoolManager.getInstance().schedule(new Runnable() {
+					@Override
+					public void run() {
+						PacketSendUtility.broadcastPacketAndReceive(player,
+								new SM_HOTSPOT_TELEPORT(3, player.getObjectId(), teleportId));
+						player.getController().addTask(TaskId.HOTSPOT_TELEPORT,
+								ThreadPoolManager.getInstance().schedule(new Runnable() {
+									@Override
+									public void run() {
+										TeleportService2.teleportTo(player, worldId, getX, getY, getZ);
+										player.getInventory().decreaseKinah(price);
+										PacketSendUtility.sendPacket(player,
+												new SM_HOTSPOT_TELEPORT(player, 3, teleportId, cooldown));
+									}
+								}, 1000));
+						ActionObserver attackedObserver = new ActionObserver(ObserverType.ATTACKED) {
+							@Override
+							public void attacked(Creature creature) {
+								player.getController().cancelTask(TaskId.HOTSPOT_TELEPORT);
+							}
+						};
+						player.getObserveController().addObserver(attackedObserver);
+						player.setHotTeleObservers(attackedObserver);
+						ActionObserver rideObserver = new ActionObserver(ObserverType.ABNORMALSETTED) {
+							@Override
+							public void abnormalsetted(AbnormalState state) {
+								if (state.getId() > 0) {
+									PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402444));
+									player.getController().cancelTask(TaskId.HOTSPOT_TELEPORT);
+								}
+							}
+						};
+						player.getObserveController().addObserver(rideObserver);
+						player.setHotTeleObservers(rideObserver);
+						ActionObserver dotAttackedObserver = new ActionObserver(ObserverType.DOT_ATTACKED) {
+							@Override
+							public void dotattacked(Creature creature, Effect dotEffect) {
+								player.getController().cancelTask(TaskId.HOTSPOT_TELEPORT);
+							}
+						};
+						player.getObserveController().addObserver(dotAttackedObserver);
+						player.setHotTeleObservers(dotAttackedObserver);
+					}
+				}, 10000));
+		PacketSendUtility.broadcastPacketAndReceive(player,
+				new SM_HOTSPOT_TELEPORT(1, player.getObjectId(), teleportId));
 	}
-	
+
 	@SuppressWarnings("synthetic-access")
-    private static class SingletonHolder {
-        protected static final HotspotTeleportService instance = new HotspotTeleportService();
-    }
+	private static class SingletonHolder {
+		protected static final HotspotTeleportService instance = new HotspotTeleportService();
+	}
 }

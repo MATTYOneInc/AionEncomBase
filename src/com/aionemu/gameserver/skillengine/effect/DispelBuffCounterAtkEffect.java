@@ -29,8 +29,7 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DispelBuffCounterAtkEffect")
-public class DispelBuffCounterAtkEffect extends DamageEffect
-{
+public class DispelBuffCounterAtkEffect extends DamageEffect {
 	@XmlAttribute
 	protected int dpower;
 	@XmlAttribute
@@ -43,13 +42,13 @@ public class DispelBuffCounterAtkEffect extends DamageEffect
 	protected int dispelLevel;
 	private int i;
 	private int finalPower;
-	
+
 	@Override
 	public void applyEffect(Effect effect) {
 		super.applyEffect(effect);
 		effect.getEffected().getEffectController().dispelBuffCounterAtkEffect(i, dispelLevel, finalPower);
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		if (!super.calculate(effect, null, null)) {
@@ -63,12 +62,12 @@ public class DispelBuffCounterAtkEffect extends DamageEffect
 		int newValue = 0;
 		if (i == 1) {
 			newValue = hitvalue;
-		}
-		else if (i > 1) {
+		} else if (i > 1) {
 			newValue = hitvalue + ((hitvalue / 2) * (i - 1));
 		}
 		int valueWithDelta = newValue + hitdelta * effect.getSkillLevel();
 		ActionModifier modifier = getActionModifiers(effect);
-		AttackUtil.calculateMagicalSkillResult(effect, valueWithDelta, modifier, getElement(), true, true, false, Func.ADD, 0, 0, shared, true);
+		AttackUtil.calculateMagicalSkillResult(effect, valueWithDelta, modifier, getElement(), true, true, false,
+				Func.ADD, 0, 0, shared, true);
 	}
 }

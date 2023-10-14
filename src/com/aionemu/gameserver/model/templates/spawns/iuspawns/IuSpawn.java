@@ -33,36 +33,35 @@ import com.aionemu.gameserver.model.templates.spawns.Spawn;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "IuSpawn")
-public class IuSpawn
-{
+public class IuSpawn {
 	@XmlAttribute(name = "id")
 	private int id;
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	@XmlElement(name = "iu_type")
 	private List<IuSpawn.IuStateTemplate> IuStateTemplate;
-	
+
 	public List<IuStateTemplate> getSiegeModTemplates() {
 		return IuStateTemplate;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlType(name = "IuStateTemplate")
 	public static class IuStateTemplate {
-	
+
 		@XmlElement(name = "spawn")
 		private List<Spawn> spawns;
-		
+
 		@XmlAttribute(name = "iustate")
 		private IuStateType iuType;
-		
+
 		public List<Spawn> getSpawns() {
 			return spawns;
 		}
-		
+
 		public IuStateType getIuType() {
 			return iuType;
 		}

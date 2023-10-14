@@ -28,11 +28,10 @@ import com.aionemu.gameserver.model.TribeClass;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GlobalDropTribe")
-public class GlobalDropTribe
-{
+public class GlobalDropTribe {
 	@XmlAttribute(name = "tribe", required = true)
 	protected TribeClass tribe;
-	
+
 	public TribeClass getTribe() {
 		return tribe;
 	}

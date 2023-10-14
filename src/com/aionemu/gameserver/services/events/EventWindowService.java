@@ -58,13 +58,15 @@ public class EventWindowService {
 	public void initialize() {
 		if (allEvents.size() != 0) {
 			for (EventsWindow eventsWindow : allEvents.values()) {
-				log.info("[EventWindowService] Start " + eventsWindow.getPeriodStart() + " End " + eventsWindow.getPeriodEnd());
+				log.info("[EventWindowService] Start " + eventsWindow.getPeriodStart() + " End "
+						+ eventsWindow.getPeriodEnd());
 			}
 		}
 	}
 
 	/**
 	 * get events window start and end time
+	 * 
 	 * @return
 	 */
 	public Map<Integer, EventsWindow> getActiveEvents(Player player) {
@@ -77,7 +79,8 @@ public class EventWindowService {
 			}
 			if (player.getLevel() >= eventsWindow.getMinLevel() && player.getLevel() <= eventsWindow.getMaxLevel()) {
 				activeEventsForPlayer.put(eventsWindow.getId(), eventsWindow);
-				log.info("[EventWindowService] Start " + eventsWindow.getPeriodStart() + " End " + eventsWindow.getPeriodEnd());
+				log.info("[EventWindowService] Start " + eventsWindow.getPeriodStart() + " End "
+						+ eventsWindow.getPeriodEnd());
 			}
 		}
 		return activeEventsForPlayer;
@@ -101,11 +104,14 @@ public class EventWindowService {
 			}
 			sendActiveEventsForPlayer.put(eventsWindow.getId(), eventsWindow);
 			if (!playerEventsWindowDAO.getEventsWindow(accountId).contains(eventsWindow.getId())) {
-				playerEventsWindowDAO.insert(accountId, eventsWindow.getId(), new Timestamp(System.currentTimeMillis()));
+				playerEventsWindowDAO.insert(accountId, eventsWindow.getId(),
+						new Timestamp(System.currentTimeMillis()));
 			} else {
-				playerEventsWindowDAO.store(accountId, eventsWindow.getId(), new Timestamp(System.currentTimeMillis()), elapsed); // Temp for updating TiemStamp
+				playerEventsWindowDAO.store(accountId, eventsWindow.getId(), new Timestamp(System.currentTimeMillis()),
+						elapsed); // Temp for updating TiemStamp
 			}
-			log.info("Start counting id " + eventsWindow.getId() + " time " + eventsWindow.getRemainingTime() + " minute(s)");
+			log.info("Start counting id " + eventsWindow.getId() + " time " + eventsWindow.getRemainingTime()
+					+ " minute(s)");
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
 
 				@Override
@@ -115,12 +121,16 @@ public class EventWindowService {
 							sendActiveEventsForPlayer.remove(eventsWindow.getId());
 							return;
 						}
-						playerEventsWindowDAO.setRewardRecivedCount(accountId, eventsWindow.getId(), (recivedCount + 1)); // It also Set elapsed to 0 and updates TimeStamp (MySQL5PlayerEventsWindowDAO)
+						playerEventsWindowDAO.setRewardRecivedCount(accountId, eventsWindow.getId(),
+								(recivedCount + 1)); // It also Set elapsed to 0 and updates TimeStamp
+														// (MySQL5PlayerEventsWindowDAO)
 						ItemTemplate itemTemplate = DataManager.ITEM_DATA.getItemTemplate(eventsWindow.getItemId());
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_GET_HCOIN_07(itemTemplate.getNameId()));
+						PacketSendUtility.sendPacket(player,
+								SM_SYSTEM_MESSAGE.STR_MSG_GET_HCOIN_07(itemTemplate.getNameId()));
 						ItemService.addItem(player, eventsWindow.getItemId(), eventsWindow.getCount());
 						restartTimer(player, eventsWindow.getId());
-						PacketSendUtility.sendPacket(player, new SM_EVENT_WINDOW_ITEMS(sendActiveEventsForPlayer.values()));
+						PacketSendUtility.sendPacket(player,
+								new SM_EVENT_WINDOW_ITEMS(sendActiveEventsForPlayer.values()));
 					}
 				}
 			}, (eventsWindow.getRemainingTime() - elapsed) * 60000);
@@ -146,9 +156,11 @@ public class EventWindowService {
 								sendActiveEventsForPlayer.remove(eventsWindow.getId());
 								return;
 							}
-							playerEventsWindowDAO.setRewardRecivedCount(accountId, eventsWindow.getId(), (recivedCount + 1));
+							playerEventsWindowDAO.setRewardRecivedCount(accountId, eventsWindow.getId(),
+									(recivedCount + 1));
 							ItemTemplate itemTemplate = DataManager.ITEM_DATA.getItemTemplate(eventsWindow.getItemId());
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_GET_HCOIN_07(itemTemplate.getNameId()));
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_MSG_GET_HCOIN_07(itemTemplate.getNameId()));
 							ItemService.addItem(player, eventsWindow.getItemId(), eventsWindow.getCount());
 							restartTimer(player, eventId);
 						}

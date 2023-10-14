@@ -54,37 +54,39 @@ public class CM_CREATIVITY_POINTS extends AionClientPacket {
 		activePlayer = getConnection().getActivePlayer();
 		type = readC();
 		switch (type) {
-			case 0: // Apply
-				plusSize = readH();
-				for (int i = 0; i < plusSize; i++) {
-					id = readD();
-					point = readH();
-                    PanelCp pcp = DataManager.PANEL_CP_DATA.getPanelCpId(id);
+		case 0: // Apply
+			plusSize = readH();
+			for (int i = 0; i < plusSize; i++) {
+				id = readD();
+				point = readH();
+				PanelCp pcp = DataManager.PANEL_CP_DATA.getPanelCpId(id);
 
-                    if (pcp.getPanelCpType() == PanelCpType.STAT_UP){
-                        if (point <= 255) {
-                            CreativityStatsService.getInstance().onEssenceApply(activePlayer, type, plusSize, id, point);
-                        }
-                        else if (point > 255) {
-                            PacketSendUtility.sendBrightYellowMessageOnCenter(activePlayer, "Essence bug detected... Please reset points or relog for solv this issue!");
-                        }
-                    }else if(pcp.getPanelCpType() == PanelCpType.LEARN_SKILL){
-                        CreativitySkillService.getInstance().learnSkill(activePlayer, id, point);
-                    }else if (pcp.getPanelCpType() == PanelCpType.ENCHANT_SKILL){
-                    	if(point > pcp.getCountMax()){
-							log.warn("Allocated essence bug on enchant skill, allowed max point: " + pcp.getCountMax() + " Player Point: " + point + "Essence ID: " + id + " Player Name: " + activePlayer.getName());
-                    		return;
-						}
-                        CreativitySkillService.getInstance().enchantSkill(activePlayer, id, point);
-                    }
+				if (pcp.getPanelCpType() == PanelCpType.STAT_UP) {
+					if (point <= 255) {
+						CreativityStatsService.getInstance().onEssenceApply(activePlayer, type, plusSize, id, point);
+					} else if (point > 255) {
+						PacketSendUtility.sendBrightYellowMessageOnCenter(activePlayer,
+								"Essence bug detected... Please reset points or relog for solv this issue!");
+					}
+				} else if (pcp.getPanelCpType() == PanelCpType.LEARN_SKILL) {
+					CreativitySkillService.getInstance().learnSkill(activePlayer, id, point);
+				} else if (pcp.getPanelCpType() == PanelCpType.ENCHANT_SKILL) {
+					if (point > pcp.getCountMax()) {
+						log.warn("Allocated essence bug on enchant skill, allowed max point: " + pcp.getCountMax()
+								+ " Player Point: " + point + "Essence ID: " + id + " Player Name: "
+								+ activePlayer.getName());
+						return;
+					}
+					CreativitySkillService.getInstance().enchantSkill(activePlayer, id, point);
 				}
-				PacketSendUtility.sendPacket(activePlayer, new SM_STATS_INFO(activePlayer));
-				break;
-			case 1: // Reset
-				plusSize = readH();
-				break;
-			default:
-				break;
+			}
+			PacketSendUtility.sendPacket(activePlayer, new SM_STATS_INFO(activePlayer));
+			break;
+		case 1: // Reset
+			plusSize = readH();
+			break;
+		default:
+			break;
 		}
 	}
 

@@ -33,36 +33,38 @@ import com.google.common.base.Predicate;
  */
 public class PlayerConnectedEvent extends AlwaysTrueTeamEvent implements Predicate<PlayerAllianceMember> {
 
-    private final PlayerAlliance alliance;
-    private final Player connected;
-    private PlayerAllianceMember connectedMember;
+	private final PlayerAlliance alliance;
+	private final Player connected;
+	private PlayerAllianceMember connectedMember;
 
-    public PlayerConnectedEvent(PlayerAlliance alliance, Player player) {
-        this.alliance = alliance;
-        this.connected = player;
-    }
+	public PlayerConnectedEvent(PlayerAlliance alliance, Player player) {
+		this.alliance = alliance;
+		this.connected = player;
+	}
 
-    @Override
-    public void handleEvent() {
-        alliance.removeMember(connected.getObjectId());
-        connectedMember = new PlayerAllianceMember(connected);
-        alliance.addMember(connectedMember);
+	@Override
+	public void handleEvent() {
+		alliance.removeMember(connected.getObjectId());
+		connectedMember = new PlayerAllianceMember(connected);
+		alliance.addMember(connectedMember);
 
-        PacketSendUtility.sendPacket(connected, new SM_ALLIANCE_INFO(alliance));
-        PacketSendUtility.sendPacket(connected, new SM_ALLIANCE_MEMBER_INFO(connectedMember, PlayerAllianceEvent.RECONNECT));
-        PacketSendUtility.sendPacket(connected, new SM_SHOW_BRAND(0, 0));
+		PacketSendUtility.sendPacket(connected, new SM_ALLIANCE_INFO(alliance));
+		PacketSendUtility.sendPacket(connected,
+				new SM_ALLIANCE_MEMBER_INFO(connectedMember, PlayerAllianceEvent.RECONNECT));
+		PacketSendUtility.sendPacket(connected, new SM_SHOW_BRAND(0, 0));
 
-        alliance.apply(this);
-    }
+		alliance.apply(this);
+	}
 
-    @Override
-    public boolean apply(PlayerAllianceMember member) {
-        Player player = member.getObject();
-        if (!connected.getObjectId().equals(player.getObjectId())) {
-            PacketSendUtility.sendPacket(player, new SM_ALLIANCE_MEMBER_INFO(connectedMember, PlayerAllianceEvent.RECONNECT));
-            PacketSendUtility.sendPacket(player, new SM_INSTANCE_INFO(connected, false, alliance));
-            PacketSendUtility.sendPacket(connected, new SM_ALLIANCE_MEMBER_INFO(member, PlayerAllianceEvent.RECONNECT));
-        }
-        return true;
-    }
+	@Override
+	public boolean apply(PlayerAllianceMember member) {
+		Player player = member.getObject();
+		if (!connected.getObjectId().equals(player.getObjectId())) {
+			PacketSendUtility.sendPacket(player,
+					new SM_ALLIANCE_MEMBER_INFO(connectedMember, PlayerAllianceEvent.RECONNECT));
+			PacketSendUtility.sendPacket(player, new SM_INSTANCE_INFO(connected, false, alliance));
+			PacketSendUtility.sendPacket(connected, new SM_ALLIANCE_MEMBER_INFO(member, PlayerAllianceEvent.RECONNECT));
+		}
+		return true;
+	}
 }

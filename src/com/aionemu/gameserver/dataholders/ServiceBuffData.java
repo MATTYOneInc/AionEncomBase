@@ -35,28 +35,27 @@ import gnu.trove.map.hash.TIntObjectHashMap;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"serviceBonusattr"})
+@XmlType(name = "", propOrder = { "serviceBonusattr" })
 @XmlRootElement(name = "service_bonusattrs")
-public class ServiceBuffData
-{
+public class ServiceBuffData {
 	@XmlElement(name = "service_bonusattr")
 	protected List<BonusServiceAttr> serviceBonusattr;
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<BonusServiceAttr> templates = new TIntObjectHashMap<BonusServiceAttr>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
-		for (BonusServiceAttr template: serviceBonusattr) {
+		for (BonusServiceAttr template : serviceBonusattr) {
 			templates.put(template.getBuffId(), template);
 		}
 		serviceBonusattr.clear();
 		serviceBonusattr = null;
 	}
-	
+
 	public int size() {
 		return templates.size();
 	}
-	
+
 	public BonusServiceAttr getInstanceBonusattr(int buffId) {
 		return templates.get(buffId);
 	}

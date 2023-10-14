@@ -30,42 +30,42 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
  * @author Ranastic
  */
 
-public final class PlayerABList implements ABList<Player>
-{
+public final class PlayerABList implements ABList<Player> {
 	private final Map<Integer, PlayerABEntry> entry;
-	
+
 	public PlayerABList() {
 		this.entry = new HashMap<Integer, PlayerABEntry>(0);
 	}
-	
+
 	public PlayerABList(List<PlayerABEntry> entries) {
 		this();
 		for (PlayerABEntry e : entries) {
 			entry.put(e.getId(), e);
 		}
 	}
-	
+
 	public PlayerABEntry[] getAllAB() {
 		List<PlayerABEntry> allCp = new ArrayList<PlayerABEntry>();
 		allCp.addAll(entry.values());
 		return allCp.toArray(new PlayerABEntry[allCp.size()]);
 	}
-	
+
 	public PlayerABEntry[] getBasicAB() {
 		return entry.values().toArray(new PlayerABEntry[entry.size()]);
 	}
-	
+
 	@Override
 	public boolean add(Player player, int id, int killCount, int level, int claimReward) {
 		return add(player, id, killCount, level, claimReward, PersistentState.NEW);
 	}
-	
-	private synchronized boolean add(Player player, int id, int killCount, int level, int claimReward, PersistentState state) {
+
+	private synchronized boolean add(Player player, int id, int killCount, int level, int claimReward,
+			PersistentState state) {
 		entry.put(id, new PlayerABEntry(id, killCount, level, claimReward, state));
 		DAOManager.getDAO(PlayerABDAO.class).store(player.getObjectId(), id, killCount, level, claimReward);
 		return true;
 	}
-	
+
 	@Override
 	public synchronized boolean remove(Player player, int id) {
 		PlayerABEntry entries = entry.get(id);
@@ -76,7 +76,7 @@ public final class PlayerABList implements ABList<Player>
 		}
 		return entry != null;
 	}
-	
+
 	@Override
 	public int size() {
 		return entry.size();

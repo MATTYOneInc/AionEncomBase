@@ -57,49 +57,50 @@ public class CM_FIND_GROUP extends AionClientPacket {
 		action = readC();
 
 		switch (action) {
-			case 0x00: // recruit list
-				break;
-			case 0x01: // offer delete
-				playerObjId = readD();
-				unk = readD(); // unk(65557)
-				break;
-			case 0x02: // send offer
-				playerObjId = readD();
-				message = readS();
-				groupType = readC();
-				break;
-			case 0x03: // recruit update
-				playerObjId = readD();
-				unk = readD(); // unk(65557)
-				message = readS();
-				groupType = readC();
-				break;
-			case 0x04: // apply list
-				break;
-			case 0x05: // post delete
-				playerObjId = readD();
-				break;
-			case 0x06: // apply create
-				playerObjId = readD();
-				message = readS();
-				groupType = readC();
-				classId = readC();
-				level = readC();
-				break;
-			case 0x07: // apply update
-				// TODO need packet check
-				break;
-			case 0x08: //register InstanceGroup
-				instanceId = readD();
-				groupType = readC();//need to be tested
-				message = readS();//text
-				minMembers = readC();//minMembers chosen by writer
-				break;
-			case 0x0A:
-				break;
-			default:
-				//log.error("Unknown find group packet? 0x" + Integer.toHexString(action).toUpperCase());
-				break;
+		case 0x00: // recruit list
+			break;
+		case 0x01: // offer delete
+			playerObjId = readD();
+			unk = readD(); // unk(65557)
+			break;
+		case 0x02: // send offer
+			playerObjId = readD();
+			message = readS();
+			groupType = readC();
+			break;
+		case 0x03: // recruit update
+			playerObjId = readD();
+			unk = readD(); // unk(65557)
+			message = readS();
+			groupType = readC();
+			break;
+		case 0x04: // apply list
+			break;
+		case 0x05: // post delete
+			playerObjId = readD();
+			break;
+		case 0x06: // apply create
+			playerObjId = readD();
+			message = readS();
+			groupType = readC();
+			classId = readC();
+			level = readC();
+			break;
+		case 0x07: // apply update
+			// TODO need packet check
+			break;
+		case 0x08: // register InstanceGroup
+			instanceId = readD();
+			groupType = readC();// need to be tested
+			message = readS();// text
+			minMembers = readC();// minMembers chosen by writer
+			break;
+		case 0x0A:
+			break;
+		default:
+			// log.error("Unknown find group packet? 0x" +
+			// Integer.toHexString(action).toUpperCase());
+			break;
 		}
 	}
 
@@ -107,30 +108,31 @@ public class CM_FIND_GROUP extends AionClientPacket {
 	protected void runImpl() {
 		final Player player = this.getConnection().getActivePlayer();
 		switch (action) {
-			case 0x00:
-			case 0x04:
-				FindGroupService.getInstance().sendFindGroups(player, action);
-				break;
-			case 0x01:
-			case 0x05:
-				FindGroupService.getInstance().removeFindGroup(player.getRace(), action - 1, playerObjId);
-				break;
-			case 0x02:
-			case 0x06:
-				FindGroupService.getInstance().addFindGroupList(player, action, message, groupType);
-				break;
-			case 0x03:
-				FindGroupService.getInstance().updateFindGroupList(player, message, playerObjId);
-				break;
-			case 0x08:
-				FindGroupService.getInstance().registerInstanceGroup(player, 0x0E, instanceId, message, minMembers, groupType);
-				break;
-			case 0x0A:
-				FindGroupService.getInstance().sendFindGroups(player, action);
-				break;
-			default:
-				PacketSendUtility.sendPacket(player, new SM_FIND_GROUP(action, playerObjId, unk));
-				break;
+		case 0x00:
+		case 0x04:
+			FindGroupService.getInstance().sendFindGroups(player, action);
+			break;
+		case 0x01:
+		case 0x05:
+			FindGroupService.getInstance().removeFindGroup(player.getRace(), action - 1, playerObjId);
+			break;
+		case 0x02:
+		case 0x06:
+			FindGroupService.getInstance().addFindGroupList(player, action, message, groupType);
+			break;
+		case 0x03:
+			FindGroupService.getInstance().updateFindGroupList(player, message, playerObjId);
+			break;
+		case 0x08:
+			FindGroupService.getInstance().registerInstanceGroup(player, 0x0E, instanceId, message, minMembers,
+					groupType);
+			break;
+		case 0x0A:
+			FindGroupService.getInstance().sendFindGroups(player, action);
+			break;
+		default:
+			PacketSendUtility.sendPacket(player, new SM_FIND_GROUP(action, playerObjId, unk));
+			break;
 		}
 	}
 }

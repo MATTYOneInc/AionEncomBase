@@ -34,49 +34,50 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RideRobotEffect")
-public class RideRobotEffect extends EffectTemplate
-{
+public class RideRobotEffect extends EffectTemplate {
 	@Override
 	public void applyEffect(final Effect effect) {
 		effect.addToEffectedController();
 		Creature effected = effect.getEffected();
-		Player player = (Player)effected;
+		Player player = (Player) effected;
 		player.setUseRobot(true);
-		PacketSendUtility.broadcastPacketAndReceive(player, new SM_USE_ROBOT(player, getRobotInfo(player).getRobotId()));
+		PacketSendUtility.broadcastPacketAndReceive(player,
+				new SM_USE_ROBOT(player, getRobotInfo(player).getRobotId()));
 		player.setRobotId(getRobotInfo(player).getRobotId());
 		ActionObserver observer = new ActionObserver(ObserverType.UNEQUIP) {
-            @Override
-            public void unequip(Item item, Player owner) {
-                if (item.getEquipmentType() == EquipType.WEAPON) {
-                    effect.endEffect();
-                }
-            }
-        };
-        player.getObserveController().addObserver(observer);
-        effect.setActionObserver(observer, position);
+			@Override
+			public void unequip(Item item, Player owner) {
+				if (item.getEquipmentType() == EquipType.WEAPON) {
+					effect.endEffect();
+				}
+			}
+		};
+		player.getObserveController().addObserver(observer);
+		effect.setActionObserver(observer, position);
 	}
-	
+
 	@Override
 	public void endEffect(Effect effect) {
 		super.endEffect(effect);
 		Creature effected = effect.getEffected();
-		Player player = (Player)effected;
+		Player player = (Player) effected;
 		if (player.isUseRobot()) {
 			PacketSendUtility.broadcastPacket(player, new SM_USE_ROBOT(player, 0), true);
 			player.setUseRobot(false);
 			player.setRobotId(0);
 		}
 		ActionObserver observer = effect.getActionObserver(position);
-        if (observer != null) {
-            effect.getEffected().getObserveController().removeObserver(observer);
-        }
+		if (observer != null) {
+			effect.getEffected().getObserveController().removeObserver(observer);
+		}
 	}
-	
+
 	public RobotInfo getRobotInfo(Player player) {
 		ItemTemplate template = player.getEquipment().getMainHandWeapon().getItemSkinTemplate();
 		return DataManager.ROBOT_DATA.getRobotInfo(template.getRobotId());

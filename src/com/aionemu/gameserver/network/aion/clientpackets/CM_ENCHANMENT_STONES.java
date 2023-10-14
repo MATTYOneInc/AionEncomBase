@@ -32,10 +32,9 @@ import com.aionemu.gameserver.services.item.ItemSocketService;
 import com.aionemu.gameserver.services.trade.PricesService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class CM_ENCHANMENT_STONES extends AionClientPacket
-{
+public class CM_ENCHANMENT_STONES extends AionClientPacket {
 	Logger log = LoggerFactory.getLogger(CM_ENCHANMENT_STONES.class);
-	
+
 	private int npcObjId;
 	private int slotNum;
 	private int actionType;
@@ -48,93 +47,92 @@ public class CM_ENCHANMENT_STONES extends AionClientPacket
 	@SuppressWarnings("unused")
 	private int unk;
 	private int toppedItemObjId;
-	
+
 	public CM_ENCHANMENT_STONES(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		actionType = readC();
 		targetFusedSlot = readC();
 		targetItemUniqueId = readD();
 		switch (actionType) {
-		    case 1:
-		    case 2:
-			    stoneUniqueId = readD();
-			    supplementUniqueId = readD();
+		case 1:
+		case 2:
+			stoneUniqueId = readD();
+			supplementUniqueId = readD();
 			break;
-		    case 3:
-			   slotNum = readC();
-			   readC();
-			   readH();
-			   npcObjId = readD();
+		case 3:
+			slotNum = readC();
+			readC();
+			readH();
+			npcObjId = readD();
 			break;
-		    case 4:
-			    stoneUniqueId = readD();
-			    unk = readD();
+		case 4:
+			stoneUniqueId = readD();
+			unk = readD();
 			break;
-		    case 8:
-			    toppedItemObjId = readD();
-			    stoneUniqueId = readD();
+		case 8:
+			toppedItemObjId = readD();
+			stoneUniqueId = readD();
 			break;
-		    default:
-				log.error("Unknown enchantment type? 0x" + Integer.toHexString(actionType/* !!!!! */).toUpperCase());
+		default:
+			log.error("Unknown enchantment type? 0x" + Integer.toHexString(actionType/* !!!!! */).toUpperCase());
 			break;
 		}
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
 		VisibleObject obj = player.getKnownList().getObject(npcObjId);
 		switch (actionType) {
-		    case 1: //Enchant Stone.
-		    case 2: //Add Manastone.
-			    EnchantItemAction action = new EnchantItemAction();
-				EnchantStigmaAction action2 = new EnchantStigmaAction();
-			    Item manastone = player.getInventory().getItemByObjId(stoneUniqueId);
-			    Item stigmaStone = player.getInventory().getItemByObjId(stoneUniqueId);
-			    Item targetItem = player.getEquipment().getEquippedItemByObjId(targetItemUniqueId);
-				Item targetStone = player.getInventory().getItemByObjId(targetItemUniqueId);
-			    if (targetItem == null) {
-				    targetItem = player.getInventory().getItemByObjId(targetItemUniqueId);
-			    }
-				//Enchant Stigma.
-				if (stigmaStone.getItemTemplate().isStigma() ||
-				    stigmaStone.getItemTemplate().isEnchantmentStigmaStone()) {
-					action2.act(player, stigmaStone, targetItem);
-				} else {
-					//Enchant Stone.
-					if (action.canAct(player, manastone, targetItem)) {
-						Item supplement = player.getInventory().getFirstItemByItemId(supplementUniqueId);
-						if (supplement != null) {
-							if (supplement.getItemId() / 100000 != 1661) {
-								return;
-							}
+		case 1: // Enchant Stone.
+		case 2: // Add Manastone.
+			EnchantItemAction action = new EnchantItemAction();
+			EnchantStigmaAction action2 = new EnchantStigmaAction();
+			Item manastone = player.getInventory().getItemByObjId(stoneUniqueId);
+			Item stigmaStone = player.getInventory().getItemByObjId(stoneUniqueId);
+			Item targetItem = player.getEquipment().getEquippedItemByObjId(targetItemUniqueId);
+			Item targetStone = player.getInventory().getItemByObjId(targetItemUniqueId);
+			if (targetItem == null) {
+				targetItem = player.getInventory().getItemByObjId(targetItemUniqueId);
+			}
+			// Enchant Stigma.
+			if (stigmaStone.getItemTemplate().isStigma() || stigmaStone.getItemTemplate().isEnchantmentStigmaStone()) {
+				action2.act(player, stigmaStone, targetItem);
+			} else {
+				// Enchant Stone.
+				if (action.canAct(player, manastone, targetItem)) {
+					Item supplement = player.getInventory().getFirstItemByItemId(supplementUniqueId);
+					if (supplement != null) {
+						if (supplement.getItemId() / 100000 != 1661) {
+							return;
 						}
-						action.act(player, manastone, targetItem, supplement, targetFusedSlot);
 					}
+					action.act(player, manastone, targetItem, supplement, targetFusedSlot);
 				}
-		    break;
-		    case 3: //Remove Manastone.
-			    long price = PricesService.getPriceForService(17161, player.getRace());
-			    if (player.getInventory().getKinah() > price) {
-				    PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_KINA(price));
-				    player.getInventory().decreaseKinah(price);
-				    if (targetFusedSlot == 1) {
-					    ItemSocketService.removeManastone(player, targetItemUniqueId, slotNum);
-				    } else {
-					    ItemSocketService.removeFusionstone(player, targetItemUniqueId, slotNum);
-				    }
-			    }
-		    break;
-		    case 4: //Godstone Socket.
-				ItemSocketService.socketGodstone(player, targetItemUniqueId, stoneUniqueId);
-		    break;
-		    case 8: //Amplification.
-			    ItemSocketService.amplification(player, targetItemUniqueId, toppedItemObjId, stoneUniqueId);
-		    break;
+			}
+			break;
+		case 3: // Remove Manastone.
+			long price = PricesService.getPriceForService(17161, player.getRace());
+			if (player.getInventory().getKinah() > price) {
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_KINA(price));
+				player.getInventory().decreaseKinah(price);
+				if (targetFusedSlot == 1) {
+					ItemSocketService.removeManastone(player, targetItemUniqueId, slotNum);
+				} else {
+					ItemSocketService.removeFusionstone(player, targetItemUniqueId, slotNum);
+				}
+			}
+			break;
+		case 4: // Godstone Socket.
+			ItemSocketService.socketGodstone(player, targetItemUniqueId, stoneUniqueId);
+			break;
+		case 8: // Amplification.
+			ItemSocketService.amplification(player, targetItemUniqueId, toppedItemObjId, stoneUniqueId);
+			break;
 		}
 	}
 }

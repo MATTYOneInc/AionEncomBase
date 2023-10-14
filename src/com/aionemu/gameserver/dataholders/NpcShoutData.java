@@ -43,7 +43,8 @@ import javolution.util.FastMap;
  * <p>
  * Java class for anonymous complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within this class.
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -89,8 +90,7 @@ public class NpcShoutData {
 					List<NpcShout> shouts = new ArrayList<NpcShout>(shoutList.getNpcShouts());
 					if (worldShouts.get(npcId) == null) {
 						worldShouts.put(npcId, shouts);
-					}
-					else {
+					} else {
 						worldShouts.get(npcId).addAll(shouts);
 					}
 					shoutList.getNpcIds().remove(j);
@@ -110,7 +110,8 @@ public class NpcShoutData {
 	}
 
 	/**
-	 * Get global npc shouts plus world specific shouts. Make sure to clean it after the use.
+	 * Get global npc shouts plus world specific shouts. Make sure to clean it after
+	 * the use.
 	 * 
 	 * @return null if not found
 	 */
@@ -134,7 +135,8 @@ public class NpcShoutData {
 	}
 
 	/**
-	 * Lightweight check for shouts, doesn't use memory as {@link #getNpcShouts(int worldId, int npcId)})
+	 * Lightweight check for shouts, doesn't use memory as
+	 * {@link #getNpcShouts(int worldId, int npcId)})
 	 */
 	public boolean hasAnyShout(int worldId, int npcId) {
 		FastMap<Integer, List<NpcShout>> worldShouts = shoutsByWorldNpcs.get(0);
@@ -149,13 +151,14 @@ public class NpcShoutData {
 	}
 
 	/**
-	 * Lightweight check for shouts, doesn't use memory as {@link #getNpcShouts(int worldId, int npcId, ShoutEventType type, String pattern, int skillNo)})
+	 * Lightweight check for shouts, doesn't use memory as
+	 * {@link #getNpcShouts(int worldId, int npcId, ShoutEventType type, String pattern, int skillNo)})
 	 */
 	public boolean hasAnyShout(int worldId, int npcId, ShoutEventType type) {
 		List<NpcShout> shouts = getNpcShouts(worldId, npcId);
 		if (shouts == null) {
 			return false;
-        }
+		}
 		for (NpcShout s : shouts) {
 			if (s.getWhen() == type) {
 				return true;
@@ -167,22 +170,17 @@ public class NpcShoutData {
 	/**
 	 * Gets shouts for npc
 	 * 
-	 * @param worldId
-	 *          - npc World Id
-	 * @param npcId
-	 *          - npc Id
-	 * @param type
-	 *          - shout event type
-	 * @param pattern
-	 *          - specific pattern; if null, returns all
-	 * @param skillNo
-	 *          - specific skill number; if 0, returns all
+	 * @param worldId - npc World Id
+	 * @param npcId   - npc Id
+	 * @param type    - shout event type
+	 * @param pattern - specific pattern; if null, returns all
+	 * @param skillNo - specific skill number; if 0, returns all
 	 */
 	public List<NpcShout> getNpcShouts(int worldId, int npcId, ShoutEventType type, String pattern, int skillNo) {
 		List<NpcShout> shouts = getNpcShouts(worldId, npcId);
 		if (shouts == null) {
 			return null;
-        }
+		}
 		List<NpcShout> result = new ArrayList<NpcShout>();
 		for (NpcShout s : shouts) {
 			if (s.getWhen() == type) {

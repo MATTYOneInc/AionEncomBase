@@ -23,8 +23,7 @@ import org.slf4j.LoggerFactory;
 
 import com.aionemu.commons.configuration.Property;
 
-public class LegionConfig
-{
+public class LegionConfig {
 	protected static final Logger log = LoggerFactory.getLogger(LegionConfig.class);
 	@Property(key = "gameserver.legion.pattern", defaultValue = "[a-zA-Z ]{2,32}")
 	public static Pattern LEGION_NAME_PATTERN;
@@ -53,11 +52,11 @@ public class LegionConfig
 	@Property(key = "gameserver.legion.level5.required.kinah", defaultValue = "6000000")
 	public static int LEGION_LEVEL5_REQUIRED_KINAH;
 	@Property(key = "gameserver.legion.level6.required.kinah", defaultValue = "50000000")
-    public static int LEGION_LEVEL6_REQUIRED_KINAH;
+	public static int LEGION_LEVEL6_REQUIRED_KINAH;
 	@Property(key = "gameserver.legion.level7.required.kinah", defaultValue = "75000000")
-    public static int LEGION_LEVEL7_REQUIRED_KINAH;
+	public static int LEGION_LEVEL7_REQUIRED_KINAH;
 	@Property(key = "gameserver.legion.level8.required.kinah", defaultValue = "100000000")
-    public static int LEGION_LEVEL8_REQUIRED_KINAH;
+	public static int LEGION_LEVEL8_REQUIRED_KINAH;
 	@Property(key = "gameserver.legion.level2.required.members", defaultValue = "10")
 	public static int LEGION_LEVEL2_REQUIRED_MEMBERS;
 	@Property(key = "gameserver.legion.level3.required.members", defaultValue = "20")
@@ -67,11 +66,11 @@ public class LegionConfig
 	@Property(key = "gameserver.legion.level5.required.members", defaultValue = "40")
 	public static int LEGION_LEVEL5_REQUIRED_MEMBERS;
 	@Property(key = "gameserver.legion.level6.required.members", defaultValue = "50")
-    public static int LEGION_LEVEL6_REQUIRED_MEMBERS;
+	public static int LEGION_LEVEL6_REQUIRED_MEMBERS;
 	@Property(key = "gameserver.legion.level7.required.members", defaultValue = "60")
-    public static int LEGION_LEVEL7_REQUIRED_MEMBERS;
+	public static int LEGION_LEVEL7_REQUIRED_MEMBERS;
 	@Property(key = "gameserver.legion.level8.required.members", defaultValue = "70")
-    public static int LEGION_LEVEL8_REQUIRED_MEMBERS;
+	public static int LEGION_LEVEL8_REQUIRED_MEMBERS;
 	@Property(key = "gameserver.legion.level2.required.contribution", defaultValue = "0")
 	public static int LEGION_LEVEL2_REQUIRED_CONTRIBUTION;
 	@Property(key = "gameserver.legion.level3.required.contribution", defaultValue = "20000")
@@ -81,11 +80,11 @@ public class LegionConfig
 	@Property(key = "gameserver.legion.level5.required.contribution", defaultValue = "500000")
 	public static int LEGION_LEVEL5_REQUIRED_CONTRIBUTION;
 	@Property(key = "gameserver.legion.level6.required.contribution", defaultValue = "25000000")
-    public static int LEGION_LEVEL6_REQUIRED_CONTRIBUTION;
-    @Property(key = "gameserver.legion.level7.required.contribution", defaultValue = "12500000")
-    public static int LEGION_LEVEL7_REQUIRED_CONTRIBUTION;
-    @Property(key = "gameserver.legion.level8.required.contribution", defaultValue = "62500000")
-    public static int LEGION_LEVEL8_REQUIRED_CONTRIBUTION;
+	public static int LEGION_LEVEL6_REQUIRED_CONTRIBUTION;
+	@Property(key = "gameserver.legion.level7.required.contribution", defaultValue = "12500000")
+	public static int LEGION_LEVEL7_REQUIRED_CONTRIBUTION;
+	@Property(key = "gameserver.legion.level8.required.contribution", defaultValue = "62500000")
+	public static int LEGION_LEVEL8_REQUIRED_CONTRIBUTION;
 	@Property(key = "gameserver.legion.level1.max.members", defaultValue = "30")
 	public static int LEGION_LEVEL1_MAX_MEMBERS;
 	@Property(key = "gameserver.legion.level2.max.members", defaultValue = "60")
@@ -97,11 +96,11 @@ public class LegionConfig
 	@Property(key = "gameserver.legion.level5.max.members", defaultValue = "150")
 	public static int LEGION_LEVEL5_MAX_MEMBERS;
 	@Property(key = "gameserver.legion.level6.max.members", defaultValue = "180")
-    public static int LEGION_LEVEL6_MAX_MEMBERS;
-    @Property(key = "gameserver.legion.level7.max.members", defaultValue = "210")
-    public static int LEGION_LEVEL7_MAX_MEMBERS;
-    @Property(key = "gameserver.legion.level8.max.members", defaultValue = "240")
-    public static int LEGION_LEVEL8_MAX_MEMBERS;
+	public static int LEGION_LEVEL6_MAX_MEMBERS;
+	@Property(key = "gameserver.legion.level7.max.members", defaultValue = "210")
+	public static int LEGION_LEVEL7_MAX_MEMBERS;
+	@Property(key = "gameserver.legion.level8.max.members", defaultValue = "240")
+	public static int LEGION_LEVEL8_MAX_MEMBERS;
 	@Property(key = "gameserver.legion.warehouse", defaultValue = "true")
 	public static boolean LEGION_WAREHOUSE;
 	@Property(key = "gameserver.legion.invite.other.faction", defaultValue = "false")

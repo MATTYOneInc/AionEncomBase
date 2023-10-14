@@ -50,8 +50,7 @@ public class LegionMember {
 	}
 
 	/**
-	 * @param legion
-	 *          the legion to set
+	 * @param legion the legion to set
 	 */
 	public void setLegion(Legion legion) {
 		this.legion = legion;
@@ -65,8 +64,7 @@ public class LegionMember {
 	}
 
 	/**
-	 * @param rank
-	 *          the rank to set
+	 * @param rank the rank to set
 	 */
 	public void setRank(LegionRank rank) {
 		this.rank = rank;
@@ -84,8 +82,7 @@ public class LegionMember {
 	}
 
 	/**
-	 * @param nickname
-	 *          the nickname to set
+	 * @param nickname the nickname to set
 	 */
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
@@ -99,8 +96,7 @@ public class LegionMember {
 	}
 
 	/**
-	 * @param selfIntro
-	 *          the selfIntro to set
+	 * @param selfIntro the selfIntro to set
 	 */
 	public void setSelfIntro(String selfIntro) {
 		this.selfIntro = selfIntro;
@@ -119,14 +115,14 @@ public class LegionMember {
 	public int getChallengeScore() {
 		return challengeScore;
 	}
-	
+
 	/**
 	 * @param challengeScore the challengeScore to set
 	 */
 	public void setChallengeScore(int challengeScore) {
 		this.challengeScore = challengeScore;
 	}
-	
+
 	/**
 	 * @param amount
 	 */
@@ -135,8 +131,7 @@ public class LegionMember {
 	}
 
 	/**
-	 * @param objectId
-	 *          the objectId to set
+	 * @param objectId the objectId to set
 	 */
 	public void setObjectId(int objectId) {
 		this.objectId = objectId;
@@ -151,22 +146,21 @@ public class LegionMember {
 
 	public boolean hasRights(LegionPermissionsMask permissions) {
 		int legionarPermission = 0;
-		switch (this.getRank())
-		{
-			case BRIGADE_GENERAL:
-				return true;
-			case DEPUTY:
-				legionarPermission = legion.getDeputyPermission();
-				break;
-			case CENTURION:
-				legionarPermission = legion.getCenturionPermission();
-				break;
-			case LEGIONARY:
-				legionarPermission = legion.getLegionaryPermission();
-				break;
-			case VOLUNTEER:
-				legionarPermission = legion.getVolunteerPermission();
-				break;
+		switch (this.getRank()) {
+		case BRIGADE_GENERAL:
+			return true;
+		case DEPUTY:
+			legionarPermission = legion.getDeputyPermission();
+			break;
+		case CENTURION:
+			legionarPermission = legion.getCenturionPermission();
+			break;
+		case LEGIONARY:
+			legionarPermission = legion.getLegionaryPermission();
+			break;
+		case VOLUNTEER:
+			legionarPermission = legion.getVolunteerPermission();
+			break;
 		}
 		return permissions.can(legionarPermission);
 	}

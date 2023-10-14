@@ -45,7 +45,7 @@ public class KillList {
 
 		if (killTimes == null) {
 			return 0;
-        }
+		}
 
 		long now = System.currentTimeMillis();
 		int killCount = 0;

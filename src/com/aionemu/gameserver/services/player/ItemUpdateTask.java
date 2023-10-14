@@ -30,23 +30,22 @@ import com.aionemu.gameserver.world.World;
  */
 class ItemUpdateTask implements Runnable {
 
-    private static final Logger log = LoggerFactory.getLogger(ItemUpdateTask.class);
-    private final int playerId;
+	private static final Logger log = LoggerFactory.getLogger(ItemUpdateTask.class);
+	private final int playerId;
 
-    ItemUpdateTask(int playerId) {
-        this.playerId = playerId;
-    }
+	ItemUpdateTask(int playerId) {
+		this.playerId = playerId;
+	}
 
-    @Override
-    public void run() {
-        Player player = World.getInstance().findPlayer(playerId);
-        if (player != null)
-        try {
-            DAOManager.getDAO(InventoryDAO.class).store(player);
-            DAOManager.getDAO(ItemStoneListDAO.class).save(player);
-        }
-        catch (Exception ex) {
-            log.error("Exception during periodic saving of player items " + player.getName(), ex);
-        }
-    }
+	@Override
+	public void run() {
+		Player player = World.getInstance().findPlayer(playerId);
+		if (player != null)
+			try {
+				DAOManager.getDAO(InventoryDAO.class).store(player);
+				DAOManager.getDAO(ItemStoneListDAO.class).save(player);
+			} catch (Exception ex) {
+				log.error("Exception during periodic saving of player items " + player.getName(), ex);
+			}
+	}
 }

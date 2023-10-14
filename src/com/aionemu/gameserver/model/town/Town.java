@@ -37,8 +37,7 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
 
-public class Town
-{
+public class Town {
 	private int id;
 	private int nameId;
 	private int level;
@@ -47,7 +46,7 @@ public class Town
 	private Race race;
 	private PersistentState persistentState;
 	private List<Npc> spawnedNpcs;
-	
+
 	public Town(int id, int level, int points, Race race, Timestamp levelUpDate) {
 		this.id = id;
 		this.level = level;
@@ -58,51 +57,51 @@ public class Town
 		this.spawnedNpcs = new ArrayList<Npc>();
 		spawnNewObjects();
 	}
-	
+
 	public Town(int id, Race race) {
 		this(id, 1, 0, race, new Timestamp(60000));
 		this.persistentState = PersistentState.NEW;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public int getNameId() {
-        return nameId;
-    }
-	
+		return nameId;
+	}
+
 	public int getLevel() {
 		return level;
 	}
-	
+
 	public int getPoints() {
 		return points;
 	}
-	
+
 	public synchronized void increasePoints(int amount) {
 		switch (this.level) {
-			case 1:
-				if (this.points + amount >= 1000)
-					increaseLevel();
+		case 1:
+			if (this.points + amount >= 1000)
+				increaseLevel();
 			break;
-			case 2:
-				if (this.points + amount >= 2000)
-					increaseLevel();
+		case 2:
+			if (this.points + amount >= 2000)
+				increaseLevel();
 			break;
-			case 3:
-				if (this.points + amount >= 3000)
-					increaseLevel();
+		case 3:
+			if (this.points + amount >= 3000)
+				increaseLevel();
 			break;
-			case 4:
-				if (this.points + amount >= 4000)
-					increaseLevel();
+		case 4:
+			if (this.points + amount >= 4000)
+				increaseLevel();
 			break;
 		}
 		this.points += amount;
 		setPersistentState(PersistentState.UPDATE_REQUIRED);
 	}
-	
+
 	private void increaseLevel() {
 		this.level++;
 		this.levelUpDate.setTime(System.currentTimeMillis());
@@ -110,7 +109,7 @@ public class Town
 		despawnOldObjects();
 		spawnNewObjects();
 	}
-	
+
 	private void broadcastUpdate() {
 		Map<Integer, Town> data = new HashMap<Integer, Town>(1);
 		data.put(this.id, this);
@@ -124,13 +123,14 @@ public class Town
 			}
 		});
 	}
-	
+
 	private void spawnNewObjects() {
 		List<Spawn> newSpawns = DataManager.TOWN_SPAWNS_DATA.getSpawns(this.id, this.level);
 		int worldId = DataManager.TOWN_SPAWNS_DATA.getWorldIdForTown(this.id);
 		for (Spawn spawn : newSpawns) {
 			for (SpawnSpotTemplate sst : spawn.getSpawnSpotTemplates()) {
-				SpawnTemplate spawnTemplate = SpawnEngine.addNewSpawn(worldId, spawn.getNpcId(), sst.getX(), sst.getY(), sst.getZ(), sst.getHeading(), spawn.getRespawnTime());
+				SpawnTemplate spawnTemplate = SpawnEngine.addNewSpawn(worldId, spawn.getNpcId(), sst.getX(), sst.getY(),
+						sst.getZ(), sst.getHeading(), spawn.getRespawnTime());
 				spawnTemplate.setEntityId(sst.getEntityId());
 				spawnTemplate.setRandomWalk(0);
 				VisibleObject object = SpawnEngine.spawnObject(spawnTemplate, 1);
@@ -141,30 +141,29 @@ public class Town
 			}
 		}
 	}
-	
+
 	private void despawnOldObjects() {
 		for (Npc npc : spawnedNpcs)
-		npc.getController().delete();
+			npc.getController().delete();
 		spawnedNpcs.clear();
 	}
-	
+
 	public Race getRace() {
 		return this.race;
 	}
-	
+
 	public Timestamp getLevelUpDate() {
 		return levelUpDate;
 	}
-	
+
 	public PersistentState getPersistentState() {
 		return persistentState;
 	}
-	
+
 	public void setPersistentState(PersistentState state) {
 		if (this.persistentState == PersistentState.NEW && state == PersistentState.UPDATE_REQUIRED) {
 			return;
-		}
-		else {
+		} else {
 			this.persistentState = state;
 		}
 	}

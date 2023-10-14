@@ -27,19 +27,18 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
  * @author Ranastic (Encom)
  */
 
-public class CM_ARCHDAEVA_CREATIVITY_RESET extends AionClientPacket
-{
+public class CM_ARCHDAEVA_CREATIVITY_RESET extends AionClientPacket {
 	private static final Logger log = LoggerFactory.getLogger(CM_ARCHDAEVA_CREATIVITY_RESET.class);
-	
+
 	public CM_ARCHDAEVA_CREATIVITY_RESET(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
-		//empty byte
+		// empty byte
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = this.getConnection().getActivePlayer();

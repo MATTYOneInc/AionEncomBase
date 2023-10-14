@@ -27,8 +27,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum AreaType {
 
-	POLYGON,
-	CYLINDER,
-	SPHERE,
-	SEMISPHERE;
+	POLYGON, CYLINDER, SPHERE, SEMISPHERE;
 }

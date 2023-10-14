@@ -72,78 +72,89 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DecomposeAction")
-public class DecomposeAction extends AbstractItemAction
-{
-	@XmlAttribute(name="select")
+public class DecomposeAction extends AbstractItemAction {
+	@XmlAttribute(name = "select")
 	public boolean isSelect;
-	
+
 	private static final Logger log = LoggerFactory.getLogger(DecomposeAction.class);
-	
+
 	private static Map<Integer, List<ItemTemplate>> manastones;
 	private static Map<Race, int[]> chunkEarth = new HashMap<Race, int[]>();
-	
+
 	static {
-		chunkEarth.put(Race.ASMODIANS, new int[]{152000051, 152000052, 152000053, 152000451, 152000453, 152000551, 152000651, 152000751,
-		152000752, 152000753, 152000851, 152000852, 152000853, 152001051, 152001052, 152000201, 152000102, 152000054, 152000055,
-		152000455, 152000457, 152000552, 152000652, 152000754, 152000755, 152000854, 152000855, 152000102, 152000202, 152000056,
-		152000057, 152000459, 152000461, 152000553, 152000653, 152000756, 152000757, 152000856, 152000857, 152000104, 152000204,
-		152000058, 152000059, 152000463, 152000465, 152000554, 152000654, 152000758, 152000759, 152000760, 152000858, 152001053,
-		152000107, 152000207, 152003004, 152003005, 152003006, 152000061, 152000062, 152000063, 152000468, 152000470, 152000556,
-		152000656, 152000657, 152000762, 152000763, 152000860, 152000861, 152000862, 152001055, 152001056, 152000113, 152000117,
-		152000214, 152000606, 152000713, 152000811});
-		
-		chunkEarth.put(Race.ELYOS, new int[]{152000001, 152000002, 152000003, 152000401, 152000403, 152000501, 152000601, 152000701,
-		152000702, 152000703, 152000801, 152000802, 152000803, 152001001, 152001002, 152000101, 152000201, 152000004, 152000005,
-		152000405, 152000407, 152000502, 152000602, 152000704, 152000705, 152000804, 152000805, 152000102, 152000202, 152000006,
-		152000007, 152000409, 152000411, 152000503, 152000603, 152000706, 152000707, 152000806, 152000807, 152000104, 152000204,
-		152000008, 152000009, 152000413, 152000415, 152000504, 152000604, 152000708, 152000709, 152000710, 152000808, 152001003,
-		152000107, 152000207, 152003004, 152003005, 152003006, 152000010, 152000011, 152000012, 152000417, 152000419, 152000505,
-		152000605, 152000607, 152000711, 152000712, 152000809, 152000810, 152000812, 152001004, 152001005, 152000113, 152000117,
-		152000214, 152000606, 152000713, 152000811});
+		chunkEarth.put(Race.ASMODIANS, new int[] { 152000051, 152000052, 152000053, 152000451, 152000453, 152000551,
+				152000651, 152000751, 152000752, 152000753, 152000851, 152000852, 152000853, 152001051, 152001052,
+				152000201, 152000102, 152000054, 152000055, 152000455, 152000457, 152000552, 152000652, 152000754,
+				152000755, 152000854, 152000855, 152000102, 152000202, 152000056, 152000057, 152000459, 152000461,
+				152000553, 152000653, 152000756, 152000757, 152000856, 152000857, 152000104, 152000204, 152000058,
+				152000059, 152000463, 152000465, 152000554, 152000654, 152000758, 152000759, 152000760, 152000858,
+				152001053, 152000107, 152000207, 152003004, 152003005, 152003006, 152000061, 152000062, 152000063,
+				152000468, 152000470, 152000556, 152000656, 152000657, 152000762, 152000763, 152000860, 152000861,
+				152000862, 152001055, 152001056, 152000113, 152000117, 152000214, 152000606, 152000713, 152000811 });
+
+		chunkEarth.put(Race.ELYOS, new int[] { 152000001, 152000002, 152000003, 152000401, 152000403, 152000501,
+				152000601, 152000701, 152000702, 152000703, 152000801, 152000802, 152000803, 152001001, 152001002,
+				152000101, 152000201, 152000004, 152000005, 152000405, 152000407, 152000502, 152000602, 152000704,
+				152000705, 152000804, 152000805, 152000102, 152000202, 152000006, 152000007, 152000409, 152000411,
+				152000503, 152000603, 152000706, 152000707, 152000806, 152000807, 152000104, 152000204, 152000008,
+				152000009, 152000413, 152000415, 152000504, 152000604, 152000708, 152000709, 152000710, 152000808,
+				152001003, 152000107, 152000207, 152003004, 152003005, 152003006, 152000010, 152000011, 152000012,
+				152000417, 152000419, 152000505, 152000605, 152000607, 152000711, 152000712, 152000809, 152000810,
+				152000812, 152001004, 152001005, 152000113, 152000117, 152000214, 152000606, 152000713, 152000811 });
 	}
-	
+
 	private static Map<Race, int[]> chunkSand = new HashMap<Race, int[]>();
 	static {
-		chunkSand.put(Race.ASMODIANS, new int[]{152000452, 152000454, 152000301, 152000302, 152000303, 152000456, 152000458, 152000103,
-		152000203, 152000304, 152000305, 152000306, 152000460, 152000462, 152000105, 152000205, 152000307, 152000309, 152000311,
-		152000464, 152000466, 152000108, 152000208, 152000313, 152000315, 152000317, 152000469, 152000471, 152000114, 152000215,
-		152000320, 152000322, 152000324});
-		
-		chunkSand.put(Race.ELYOS, new int[]{152000402, 152000404, 152000301, 152000302, 152000303, 152000406, 152000408, 152000103,
-		152000203, 152000304, 152000305, 152000306, 152000410, 152000412, 152000105, 152000205, 152000307, 152000309, 152000311,
-		152000414, 152000416, 152000108, 152000208, 152000313, 152000315, 152000317, 152000418, 152000420, 152000114, 152000215,
-		152000320, 152000322, 152000324});
+		chunkSand.put(Race.ASMODIANS, new int[] { 152000452, 152000454, 152000301, 152000302, 152000303, 152000456,
+				152000458, 152000103, 152000203, 152000304, 152000305, 152000306, 152000460, 152000462, 152000105,
+				152000205, 152000307, 152000309, 152000311, 152000464, 152000466, 152000108, 152000208, 152000313,
+				152000315, 152000317, 152000469, 152000471, 152000114, 152000215, 152000320, 152000322, 152000324 });
+
+		chunkSand.put(Race.ELYOS, new int[] { 152000402, 152000404, 152000301, 152000302, 152000303, 152000406,
+				152000408, 152000103, 152000203, 152000304, 152000305, 152000306, 152000410, 152000412, 152000105,
+				152000205, 152000307, 152000309, 152000311, 152000414, 152000416, 152000108, 152000208, 152000313,
+				152000315, 152000317, 152000418, 152000420, 152000114, 152000215, 152000320, 152000322, 152000324 });
 	}
-	
-	private static int[] chunkRock = {152000106, 152000206, 152000308, 152000310, 152000312, 152000109, 152000209, 152000314, 152000316, 152000318, 152000115, 152000216, 152000219, 152000321, 152000323, 152000325};
-	private static int[] chunkGemstone = {152000112, 152000213, 152000116, 152000212, 152000217, 152000326, 152000327, 152000328};
-	private static int[] scrolls = {164002002, 164002058, 164002010, 164002056, 164002057, 164002003, 164002059, 164002011, 164002004, 164002012, 164002012, 164000122, 164000131, 164000118};
-	private static int[] potion = {162000045, 162000079, 162000016, 162000021, 162000015, 162000027, 162000020, 162000044, 162000043, 162000026, 162000019, 162000014, 162000023, 162000022};
-	
-    @Override
-    public boolean canAct(Player player, Item parentItem, Item targetItem) {
+
+	private static int[] chunkRock = { 152000106, 152000206, 152000308, 152000310, 152000312, 152000109, 152000209,
+			152000314, 152000316, 152000318, 152000115, 152000216, 152000219, 152000321, 152000323, 152000325 };
+	private static int[] chunkGemstone = { 152000112, 152000213, 152000116, 152000212, 152000217, 152000326, 152000327,
+			152000328 };
+	private static int[] scrolls = { 164002002, 164002058, 164002010, 164002056, 164002057, 164002003, 164002059,
+			164002011, 164002004, 164002012, 164002012, 164000122, 164000131, 164000118 };
+	private static int[] potion = { 162000045, 162000079, 162000016, 162000021, 162000015, 162000027, 162000020,
+			162000044, 162000043, 162000026, 162000019, 162000014, 162000023, 162000022 };
+
+	@Override
+	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		int decomposeLevel = parentItem.getItemTemplate().getRequiredLevel(player.getCommonData().getPlayerClass());
 		if (decomposeLevel == -1 || decomposeLevel > player.getLevel()) {
-			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_CANNOT_USE_ITEM_TOO_LOW_LEVEL_MUST_BE_THIS_LEVEL(parentItem.getNameId(), parentItem.getItemTemplate().getLevel()));
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_CANNOT_USE_ITEM_TOO_LOW_LEVEL_MUST_BE_THIS_LEVEL(
+					parentItem.getNameId(), parentItem.getItemTemplate().getLevel()));
 			return false;
-		} if (this.isSelect) {
-			SelectItems selectitem = DataManager.DECOMPOSABLE_SELECT_ITEM_DATA.getSelectItem(player.getPlayerClass(), player.getRace(), parentItem.getItemId());
+		}
+		if (this.isSelect) {
+			SelectItems selectitem = DataManager.DECOMPOSABLE_SELECT_ITEM_DATA.getSelectItem(player.getPlayerClass(),
+					player.getRace(), parentItem.getItemId());
 			if (selectitem == null) {
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_INVALID_STANCE(parentItem.getNameId()));
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_INVALID_STANCE(parentItem.getNameId()));
 				return false;
 			}
 		} else {
-			List<ExtractedItemsCollection> itemsCollections = DataManager.DECOMPOSABLE_ITEMS_DATA.getInfoByItemId(parentItem.getItemId());
+			List<ExtractedItemsCollection> itemsCollections = DataManager.DECOMPOSABLE_ITEMS_DATA
+					.getInfoByItemId(parentItem.getItemId());
 			if ((itemsCollections == null) || (itemsCollections.isEmpty())) {
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_INVALID_STANCE(parentItem.getNameId()));
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_INVALID_STANCE(parentItem.getNameId()));
 				return false;
 			}
 		}
-        if (player.getInventory().isFull()) {
-            PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300447));
-            return false;
-        }
-        return true;
+		if (player.getInventory().isFull()) {
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300447));
+			return false;
+		}
+		return true;
 	}
 
 	@Override
@@ -151,13 +162,15 @@ public class DecomposeAction extends AbstractItemAction
 		// player.getController().cancelUseItem();
 
 		if (this.isSelect) {
-			SelectItems selectItems = DataManager.DECOMPOSABLE_SELECT_ITEM_DATA.getSelectItem(player.getPlayerClass(), player.getRace(), parentItem.getItemId());
+			SelectItems selectItems = DataManager.DECOMPOSABLE_SELECT_ITEM_DATA.getSelectItem(player.getPlayerClass(),
+					player.getRace(), parentItem.getItemId());
 			PacketSendUtility.sendPacket(player, new SM_SELECT_ITEM(selectItems, parentItem.getObjectId().intValue()));
 			return;
 		}
 
 		// Extracts all Items of the specified ItemId
-		List<ExtractedItemsCollection> itemsCollections = DataManager.DECOMPOSABLE_ITEMS_DATA.getInfoByItemId(parentItem.getItemId());
+		List<ExtractedItemsCollection> itemsCollections = DataManager.DECOMPOSABLE_ITEMS_DATA
+				.getInfoByItemId(parentItem.getItemId());
 
 		// Filters only Items that are suitable for Player Level
 		Collection<ExtractedItemsCollection> levelSuitableItems = filterItemsByLevel(player, itemsCollections);
@@ -167,9 +180,11 @@ public class DecomposeAction extends AbstractItemAction
 		final ExtractedItemsCollection selectedCollections = selectItemByChance(levelSuitableItems);
 
 		if (player.isInState(CreatureState.RESTING)) {
-			PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 2000, 0, 0));
+			PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+					parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 2000, 0, 0));
 		} else {
-			PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 3000, 0, 0));
+			PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+					parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 3000, 0, 0));
 		}
 
 		final ItemUseObserver observer = new ItemUseObserver() {
@@ -179,15 +194,18 @@ public class DecomposeAction extends AbstractItemAction
 				player.getController().cancelTask(TaskId.ITEM_USE);
 				player.removeItemCoolDown(parentItem.getItemTemplate().getUseLimits().getDelayId());
 				if (parentItem.getItemTemplate().getCategory() == ItemCategory.GATHERABLE) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_UNCOMPRESS_COMPRESSED_ITEM_CANCELED(parentItem.getItemTemplate().getNameId()));
+					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+							.STR_UNCOMPRESS_COMPRESSED_ITEM_CANCELED(parentItem.getItemTemplate().getNameId()));
+				} else if ((targetItem != null)
+						&& (targetItem.getItemTemplate().isArmor() || targetItem.getItemTemplate().isWeapon())) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_CANCELED(targetItem.getNameId()));
+				} else {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_CANCELED(parentItem.getNameId()));
 				}
-				else if ((targetItem != null) && (targetItem.getItemTemplate().isArmor() || targetItem.getItemTemplate().isWeapon())) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_CANCELED(targetItem.getNameId()));
-				}
-				else {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_CANCELED(parentItem.getNameId()));
-				}
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), 0, parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 2), true);
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), 0,
+						parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 2), true);
 				player.getObserveController().removeObserver(this);
 			}
 		};
@@ -207,27 +225,37 @@ public class DecomposeAction extends AbstractItemAction
 							}
 						}
 						if (parentItem.getItemTemplate().getCategory() == ItemCategory.GATHERABLE) {
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_UNCOMPRESS_COMPRESSED_ITEM_SUCCEEDED(parentItem.getNameId()));
-						} else if ((targetItem != null) && (targetItem.getItemTemplate().isArmor() || targetItem.getItemTemplate().isWeapon())) {
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_SUCCEED(targetItem.getNameId()));
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_UNCOMPRESS_COMPRESSED_ITEM_SUCCEEDED(parentItem.getNameId()));
+						} else if ((targetItem != null) && (targetItem.getItemTemplate().isArmor()
+								|| targetItem.getItemTemplate().isWeapon())) {
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_SUCCEED(targetItem.getNameId()));
 						} else {
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(parentItem.getNameId())));
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(parentItem.getNameId())));
 						}
-					} if (selectedCollection.getItemSet().size() > 0) {
+					}
+					if (selectedCollection.getItemSet().size() > 0) {
 						for (ResultedItemSet resultItemSet : selectedCollection.getItemSet()) {
 							if (canAcquireSet(player, resultItemSet)) {
-								ItemSetTemplate itemSet = DataManager.ITEM_SET_DATA.getItemSetTemplate(resultItemSet.itemId);
+								ItemSetTemplate itemSet = DataManager.ITEM_SET_DATA
+										.getItemSetTemplate(resultItemSet.itemId);
 								for (ItemPart setPart : itemSet.getItempart()) {
 									ItemService.addItem(player, setPart.getItemid(), 1);
 								}
 							}
 						}
 						if (parentItem.getItemTemplate().getCategory() == ItemCategory.GATHERABLE) {
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_UNCOMPRESS_COMPRESSED_ITEM_SUCCEEDED(parentItem.getNameId()));
-						} else if ((targetItem != null) && (targetItem.getItemTemplate().isArmor() || targetItem.getItemTemplate().isWeapon())) {
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_SUCCEED(targetItem.getNameId()));
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_UNCOMPRESS_COMPRESSED_ITEM_SUCCEEDED(parentItem.getNameId()));
+						} else if ((targetItem != null) && (targetItem.getItemTemplate().isArmor()
+								|| targetItem.getItemTemplate().isWeapon())) {
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_SUCCEED(targetItem.getNameId()));
 						} else {
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(parentItem.getNameId())));
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(parentItem.getNameId())));
 						}
 					} else if (selectedCollection.getRandomItems().size() > 0) {
 						for (RandomItem randomItem : selectedCollection.getRandomItems()) {
@@ -239,11 +267,12 @@ public class DecomposeAction extends AbstractItemAction
 								switch (randomItem.getType()) {
 								case ENCHANTMENT: {
 									do {
-										randomId = 166010001 + itemLvl + Rnd.get(2); //빛나는 강화석 5.6
+										randomId = 166010001 + itemLvl + Rnd.get(2); // 빛나는 강화석 5.6
 										i++;
 										if (i > 2) {
 											randomId = 0;
-											log.warn("DecomposeAction random item id not found. " + parentItem.getItemId());
+											log.warn("DecomposeAction random item id not found. "
+													+ parentItem.getItemId());
 											break;
 										}
 									} while (!ItemService.checkRandomTemplate(randomId));
@@ -274,23 +303,30 @@ public class DecomposeAction extends AbstractItemAction
 									if (manastones == null) {
 										manastones = DataManager.ITEM_DATA.getManastones();
 									}
-									List<ItemTemplate> stones = manastones.get(randomType.equals(RandomType.MANASTONE) ? itemLvl : randomType.getLevel());
+									List<ItemTemplate> stones = manastones.get(
+											randomType.equals(RandomType.MANASTONE) ? itemLvl : randomType.getLevel());
 									if (stones == null) {
-										log.warn("DecomposeAction random item id not found. " + parentItem.getItemTemplate().getTemplateId());
+										log.warn("DecomposeAction random item id not found. "
+												+ parentItem.getItemTemplate().getTemplateId());
 										return;
-									} if (!randomType.equals(RandomType.MANASTONE)) {
+									}
+									if (!randomType.equals(RandomType.MANASTONE)) {
 										ItemQuality itemQuality = ItemQuality.COMMON;
 										if (randomType.name().contains("RARE")) {
 											itemQuality = ItemQuality.RARE;
 										} else if (randomType.name().contains("LEGEND")) {
 											itemQuality = ItemQuality.LEGEND;
 										}
-										List<ItemTemplate> selectedStones = select(stones, having(on(ItemTemplate.class).getItemQuality(), equalTo(itemQuality)));
+										List<ItemTemplate> selectedStones = select(stones,
+												having(on(ItemTemplate.class).getItemQuality(), equalTo(itemQuality)));
 										randomId = selectedStones.get(Rnd.get(selectedStones.size())).getTemplateId();
 									} else {
-										List<ItemTemplate> selectedStones = select(stones, having(on(ItemTemplate.class).getItemQuality(), not(equalTo(ItemQuality.LEGEND))));
+										List<ItemTemplate> selectedStones = select(stones,
+												having(on(ItemTemplate.class).getItemQuality(),
+														not(equalTo(ItemQuality.LEGEND))));
 										randomId = selectedStones.get(Rnd.get(selectedStones.size())).getTemplateId();
-									} if (!ItemService.checkRandomTemplate(randomId)) {
+									}
+									if (!ItemService.checkRandomTemplate(randomId)) {
 										log.warn("DecomposeAction random item id not found. " + randomId);
 										return;
 									}
@@ -351,23 +387,26 @@ public class DecomposeAction extends AbstractItemAction
 										i++;
 										if (i > 50) {
 											randomId = 0;
-											log.warn("DecomposeAction random item id not found. " + parentItem.getItemId());
+											log.warn("DecomposeAction random item id not found. "
+													+ parentItem.getItemId());
 											break;
 										}
 									} while (!ItemService.checkRandomTemplate(randomId));
 									break;
 								}
-								} if (randomId != 0 && randomId != 167000524) {
+								}
+								if (randomId != 0 && randomId != 167000524) {
 									ItemService.addItem(player, randomId, randomItem.getResultCount());
 								}
 							}
 						}
 					}
 				}
-				PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemId(), 0, validAction ? 1 : 2, 384));
+				PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+						parentItem.getObjectId(), parentItem.getItemId(), 0, validAction ? 1 : 2, 384));
 				player.getController().cancelTask(TaskId.ITEM_USE);
 			}
-			
+
 			private boolean canAcquire(Player player, ResultedItem resultItem) {
 				Race race = resultItem.getRace();
 				if (race != Race.PC_ALL && !race.equals(player.getRace())) {
@@ -402,20 +441,21 @@ public class DecomposeAction extends AbstractItemAction
 				if (slotReq > 0 && inventory.getFreeSlots() < slotReq) {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_DECOMPRESS_INVENTORY_IS_FULL);
 					return false;
-				} 
+				}
 				if (specialSlotreq > 0 && inventory.getSpecialCubeFreeSlots() < specialSlotreq) {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_DECOMPRESS_INVENTORY_IS_FULL);
 					return false;
-				} 
+				}
 				if (player.getLifeStats().isAlreadyDead() || !player.isSpawned()) {
 					return false;
-				} 
+				}
 				if (!player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1)) {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_NO_TARGET_ITEM);
 					return false;
-				} 
+				}
 				if (selectedCollection.getItems().isEmpty() && selectedCollection.getRandomItems().isEmpty()) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_FAILED(parentItem.getNameId()));
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_DECOMPOSE_ITEM_FAILED(parentItem.getNameId()));
 					return false;
 				}
 				return true;
@@ -423,67 +463,68 @@ public class DecomposeAction extends AbstractItemAction
 		}, 3000));
 	}
 
-	
 	private boolean canAcquireSelect(Player player, SelectItem resultItem) {
 		Race race = resultItem.getRace();
-		if ((race != Race.PC_ALL || race==null) && !race.equals(player.getRace())) {
+		if ((race != Race.PC_ALL || race == null) && !race.equals(player.getRace())) {
 			return false;
 		}
 		return true;
 	}
 
-    private Collection<ExtractedItemsCollection> filterItemsByLevel(Player player, List<ExtractedItemsCollection> itemsCollections) {
-        int playerLevel = player.getLevel();
-        Collection<ExtractedItemsCollection> result = new ArrayList<>();
-        for (ExtractedItemsCollection collection : itemsCollections) {
-            if (collection.getMinLevel() > playerLevel) {
-                continue;
-            }
-            if (collection.getMaxLevel() > 0 && collection.getMaxLevel() < playerLevel) {
-                continue;
-            }
-            result.add(collection);
-        }
-        return result;
-    }
+	private Collection<ExtractedItemsCollection> filterItemsByLevel(Player player,
+			List<ExtractedItemsCollection> itemsCollections) {
+		int playerLevel = player.getLevel();
+		Collection<ExtractedItemsCollection> result = new ArrayList<>();
+		for (ExtractedItemsCollection collection : itemsCollections) {
+			if (collection.getMinLevel() > playerLevel) {
+				continue;
+			}
+			if (collection.getMaxLevel() > 0 && collection.getMaxLevel() < playerLevel) {
+				continue;
+			}
+			result.add(collection);
+		}
+		return result;
+	}
 
-    private ExtractedItemsCollection selectItemByChance(Collection<ExtractedItemsCollection> itemsCollections) {
-        float sumOfChances = calcSumOfChances(itemsCollections);
-        float currentSum = 0f;
-        float rnd = (float) Rnd.get(0, (int) (sumOfChances - 1) * 1000) / 1000;
-        ExtractedItemsCollection selectedCollection = null;
-        for (ExtractedItemsCollection collection : itemsCollections) {
-            currentSum += collection.getChance();
-            if (rnd < currentSum) {
-                selectedCollection = collection;
-                break;
-            }
-        }
-        return selectedCollection;
-    }
+	private ExtractedItemsCollection selectItemByChance(Collection<ExtractedItemsCollection> itemsCollections) {
+		float sumOfChances = calcSumOfChances(itemsCollections);
+		float currentSum = 0f;
+		float rnd = (float) Rnd.get(0, (int) (sumOfChances - 1) * 1000) / 1000;
+		ExtractedItemsCollection selectedCollection = null;
+		for (ExtractedItemsCollection collection : itemsCollections) {
+			currentSum += collection.getChance();
+			if (rnd < currentSum) {
+				selectedCollection = collection;
+				break;
+			}
+		}
+		return selectedCollection;
+	}
 
-    private int calcMaxCountOfSlots(ExtractedItemsCollection itemsCollections, Player player, boolean special) {
-        int maxCount = 0;
-        for (ResultedItem item : itemsCollections.getItems()) {
-            if (item.getRace().equals(Race.PC_ALL) || player.getRace().equals(item.getRace())) {
-                if (item.getPlayerClass().equals(PlayerClass.ALL) || player.getPlayerClass().equals(item.getPlayerClass())) {
-                    ItemTemplate template = DataManager.ITEM_DATA.getItemTemplate(item.getItemId());
-                    if (special && template.getExtraInventoryId() > 0) {
-                        maxCount++;
-                    } else if (template.getExtraInventoryId() < 1) {
-                        maxCount++;
-                    }
-                }
-            }
-        }
-        return maxCount;
-    }
+	private int calcMaxCountOfSlots(ExtractedItemsCollection itemsCollections, Player player, boolean special) {
+		int maxCount = 0;
+		for (ResultedItem item : itemsCollections.getItems()) {
+			if (item.getRace().equals(Race.PC_ALL) || player.getRace().equals(item.getRace())) {
+				if (item.getPlayerClass().equals(PlayerClass.ALL)
+						|| player.getPlayerClass().equals(item.getPlayerClass())) {
+					ItemTemplate template = DataManager.ITEM_DATA.getItemTemplate(item.getItemId());
+					if (special && template.getExtraInventoryId() > 0) {
+						maxCount++;
+					} else if (template.getExtraInventoryId() < 1) {
+						maxCount++;
+					}
+				}
+			}
+		}
+		return maxCount;
+	}
 
-    private float calcSumOfChances(Collection<ExtractedItemsCollection> itemsCollections) {
-        float sum = 0;
-        for (ExtractedItemsCollection collection : itemsCollections) {
-            sum += collection.getChance();
-        }
-        return sum;
-    }
+	private float calcSumOfChances(Collection<ExtractedItemsCollection> itemsCollections) {
+		float sum = 0;
+		for (ExtractedItemsCollection collection : itemsCollections) {
+			sum += collection.getChance();
+		}
+		return sum;
+	}
 }

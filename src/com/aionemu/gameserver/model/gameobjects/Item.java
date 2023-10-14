@@ -100,7 +100,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	private boolean canEnhance;
 	private int enhanceSkillId;
 	private int enhanceEnchantLevel;
-	
+
 	public Item(int objId, ItemTemplate itemTemplate) {
 		super(objId);
 		this.itemTemplate = itemTemplate;
@@ -111,29 +111,27 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 		int optionSlotBonus = itemTemplate.getOptionSlotBonus();
 		if (optionSlotBonus != 0) {
 			optionalSocket = -1;
-		} if (this.itemTemplate.getSkinSkill() != 0) {
+		}
+		if (this.itemTemplate.getSkinSkill() != 0) {
 			SkinSkill = itemTemplate.getSkinSkill();
 		}
 		this.persistentState = PersistentState.NEW;
 		updateChargeInfo(0);
 	}
-	
+
 	public Item(int objId, ItemTemplate itemTemplate, long itemCount, boolean isEquipped, long equipmentSlot) {
 		this(objId, itemTemplate);
 		this.itemCount = itemCount;
 		this.isEquipped = isEquipped;
 		this.equipmentSlot = equipmentSlot;
 	}
-	
-	public Item(int objId, int itemId, long itemCount, int itemColor,
-		int colorExpires, String itemCreator, int expireTime,
-		int activationCount, boolean isEquipped, boolean isSoulBound,
-		long equipmentSlot, int itemLocation, int enchant,
-		int enchantBonus, int itemSkin, int fusionedItem,
-		int optionalSocket, int optionalFusionSocket, int charge,
-		int randomBonus, int rndCount, int wrappableCount,
-		boolean isPacked, int authorize, boolean amplification,
-		int amplificationSkill, int SkinSkill, boolean lunaReskin, int reuctionLevel, int unSeal, boolean isEnhance, int enhanceSkillId, int enhanceEnchantLevel) {
+
+	public Item(int objId, int itemId, long itemCount, int itemColor, int colorExpires, String itemCreator,
+			int expireTime, int activationCount, boolean isEquipped, boolean isSoulBound, long equipmentSlot,
+			int itemLocation, int enchant, int enchantBonus, int itemSkin, int fusionedItem, int optionalSocket,
+			int optionalFusionSocket, int charge, int randomBonus, int rndCount, int wrappableCount, boolean isPacked,
+			int authorize, boolean amplification, int amplificationSkill, int SkinSkill, boolean lunaReskin,
+			int reuctionLevel, int unSeal, boolean isEnhance, int enhanceSkillId, int enhanceEnchantLevel) {
 		super(objId);
 		this.itemTemplate = DataManager.ITEM_DATA.getItemTemplate(itemId);
 		this.itemCount = itemCount;
@@ -163,10 +161,10 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 		this.luna_reskin = lunaReskin;
 		if (itemTemplate.getRandomBonusId() != 0 && bonusNumber > 0) {
 			randomStats = new RandomStats(itemTemplate.getRandomBonusId(), bonusNumber);
-		} if (fusionedItemTemplate != null) {
-			if (!itemTemplate.isCanFuse() || !itemTemplate.isTwoHandWeapon() ||
-			    !fusionedItemTemplate.isCanFuse() ||
-				!fusionedItemTemplate.isTwoHandWeapon()) {
+		}
+		if (fusionedItemTemplate != null) {
+			if (!itemTemplate.isCanFuse() || !itemTemplate.isTwoHandWeapon() || !fusionedItemTemplate.isCanFuse()
+					|| !fusionedItemTemplate.isTwoHandWeapon()) {
 				this.fusionedItemTemplate = null;
 				this.optionalFusionSocket = 0;
 			}
@@ -181,7 +179,8 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	public final boolean setRndBonus() {
 		int setId = itemTemplate.getRandomBonusId();
 		if (setId > 0) {
-			RandomBonusResult bonus = DataManager.ITEM_RANDOM_BONUSES.getRandomModifiers(StatBonusType.INVENTORY, setId);
+			RandomBonusResult bonus = DataManager.ITEM_RANDOM_BONUSES.getRandomModifiers(StatBonusType.INVENTORY,
+					setId);
 			if (bonus != null) {
 				bonusNumber = bonus.getTemplateNumber();
 				randomStats = new RandomStats(itemTemplate.getRandomBonusId(), bonusNumber);
@@ -196,18 +195,18 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 		if (conditioningInfo == null && chargeLevel > 0) {
 			this.conditioningInfo = new ChargeInfo(charge, this);
 		}
-		//when break fusioned item and second item has conditioned info - set to null
-		if(conditioningInfo != null && chargeLevel == 0){
+		// when break fusioned item and second item has conditioned info - set to null
+		if (conditioningInfo != null && chargeLevel == 0) {
 			this.conditioningInfo = null;
 		}
 	}
 
 	public boolean hasRetuning() {
-        if (getOptionalSocket() == -1) {
-            return true;
-        }
-        return false;
-    }
+		if (getOptionalSocket() == -1) {
+			return true;
+		}
+		return false;
+	}
 
 	@Override
 	public String getName() {
@@ -227,8 +226,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * @param itemCreator
-	 *          the itemCreator to set
+	 * @param itemCreator the itemCreator to set
 	 */
 	public void setItemCreator(String itemCreator) {
 		this.itemCreator = itemCreator;
@@ -237,7 +235,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	public String getItemName() {
 		return itemTemplate.getName();
 	}
-	
+
 	public String getSkillGroup() {
 		return itemTemplate.getSkillGroup();
 	}
@@ -265,7 +263,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	public void setOptionalFusionSocket(int optionalFusionSocket) {
 		this.optionalFusionSocket = optionalFusionSocket;
 	}
-	
+
 	public int getEnchantBonus() {
 		return enchant_bonus;
 	}
@@ -313,7 +311,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	 */
 	public int getItemColor() {
 		DyeAction dyeAction = getDyeAction();
-		return dyeAction!= null ? dyeAction.getColor(): itemColor;
+		return dyeAction != null ? dyeAction.getColor() : itemColor;
 	}
 
 	private DyeAction getDyeAction() {
@@ -332,8 +330,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * @param itemColor
-	 *          the itemColor to set
+	 * @param itemColor the itemColor to set
 	 */
 	public void setItemColor(int itemColor) {
 		this.itemColor = itemColor;
@@ -357,7 +354,8 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * @return the itemCount Number of this item in stack. Should be not more than template maxstackcount ?
+	 * @return the itemCount Number of this item in stack. Should be not more than
+	 *         template maxstackcount ?
 	 */
 	public long getItemCount() {
 		return itemCount;
@@ -368,8 +366,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * @param itemCount
-	 *          the itemCount to set
+	 * @param itemCount the itemCount to set
 	 */
 	public void setItemCount(long itemCount) {
 		this.itemCount = itemCount;
@@ -377,12 +374,12 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * This method should be called ONLY from Storage class In all other ways it is not guaranteed to be udpated in a
-	 * regular update service It is allowed to use this method for newly created items which are not yet in any storage
+	 * This method should be called ONLY from Storage class In all other ways it is
+	 * not guaranteed to be udpated in a regular update service It is allowed to use
+	 * this method for newly created items which are not yet in any storage
 	 * 
 	 * @param count
-	 * @param left
-	 *          count
+	 * @param left  count
 	 */
 	public long increaseItemCount(long count) {
 		if (count <= 0) {
@@ -398,12 +395,12 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * This method should be called ONLY from Storage class In all other ways it is not guaranteed to be udpated in a
-	 * regular update service It is allowed to use this method for newly created items which are not yet in any storage
+	 * This method should be called ONLY from Storage class In all other ways it is
+	 * not guaranteed to be udpated in a regular update service It is allowed to use
+	 * this method for newly created items which are not yet in any storage
 	 * 
 	 * @param count
-	 * @param left
-	 *          count
+	 * @param left  count
 	 */
 	public long decreaseItemCount(long count) {
 		if (count <= 0) {
@@ -413,8 +410,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 		this.itemCount -= removeCount;
 		if (itemCount == 0 && !this.itemTemplate.isKinah()) {
 			setPersistentState(PersistentState.DELETED);
-		}
-		else {
+		} else {
 			setPersistentState(PersistentState.UPDATE_REQUIRED);
 		}
 		return count - removeCount;
@@ -428,8 +424,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * @param isEquipped
-	 *          the isEquipped to set
+	 * @param isEquipped the isEquipped to set
 	 */
 	public void setEquipped(boolean isEquipped) {
 		this.isEquipped = isEquipped;
@@ -437,8 +432,8 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * @return the equipmentSlot Equipment slot can be of 2 types - one is the ItemSlot enum type if equipped, second - is
-	 *         position in cube
+	 * @return the equipmentSlot Equipment slot can be of 2 types - one is the
+	 *         ItemSlot enum type if equipped, second - is position in cube
 	 */
 	public long getEquipmentSlot() {
 		return equipmentSlot;
@@ -449,8 +444,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * @param equipmentSlot
-	 *          the equipmentSlot to set
+	 * @param equipmentSlot the equipmentSlot to set
 	 */
 	public void setEquipmentSlot(long equipmentSlot) {
 		this.equipmentSlot = equipmentSlot;
@@ -463,11 +457,11 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	 * @return the itemStones
 	 */
 	public Set<ManaStone> getItemStones() {
-        if (manaStones == null) {
-            this.manaStones = itemStonesCollection();
-        }
-        return manaStones;
-    }
+		if (manaStones == null) {
+			this.manaStones = itemStonesCollection();
+		}
+		return manaStones;
+	}
 
 	/**
 	 * This method should be used to lazy initialize empty manastone list
@@ -475,37 +469,37 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	 * @return the itemStones
 	 */
 	public Set<ManaStone> getFusionStones() {
-        if (fusionStones == null) {
-            this.fusionStones = itemStonesCollection();
-        }
-        return fusionStones;
-    }
+		if (fusionStones == null) {
+			this.fusionStones = itemStonesCollection();
+		}
+		return fusionStones;
+	}
 
 	public int getFusionStonesSize() {
-        if (fusionStones == null) {
-            return 0;
-        }
-        return fusionStones.size();
-    }
+		if (fusionStones == null) {
+			return 0;
+		}
+		return fusionStones.size();
+	}
 
 	public int getItemStonesSize() {
-        if (manaStones == null) {
-            return 0;
-        }
-        return manaStones.size();
-    }
+		if (manaStones == null) {
+			return 0;
+		}
+		return manaStones.size();
+	}
 
 	private Set<ManaStone> itemStonesCollection() {
-        return new TreeSet<ManaStone>(new Comparator<ManaStone>() {
-            @Override
-            public int compare(ManaStone o1, ManaStone o2) {
-                if (o1.getSlot() == o2.getSlot()) {
-                    return 0;
-                }
-                return o1.getSlot() > o2.getSlot() ? 1 : -1;
-            }
-        });
-    }
+		return new TreeSet<ManaStone>(new Comparator<ManaStone>() {
+			@Override
+			public int compare(ManaStone o1, ManaStone o2) {
+				if (o1.getSlot() == o2.getSlot()) {
+					return 0;
+				}
+				return o1.getSlot() > o2.getSlot() ? 1 : -1;
+			}
+		});
+	}
 
 	/**
 	 * Check manastones without initialization
@@ -565,8 +559,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * @param enchantLevel
-	 *          the echantLevel to set
+	 * @param enchantLevel the echantLevel to set
 	 */
 	public void setEnchantLevel(int enchantLevel) {
 		this.enchantLevel = enchantLevel;
@@ -581,19 +574,18 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * Possible changes: NEW -> UPDATED NEW -> UPDATE_REQURIED UPDATE_REQUIRED -> DELETED UPDATE_REQUIRED -> UPDATED
-	 * UPDATED -> DELETED UPDATED -> UPDATE_REQUIRED
+	 * Possible changes: NEW -> UPDATED NEW -> UPDATE_REQURIED UPDATE_REQUIRED ->
+	 * DELETED UPDATE_REQUIRED -> UPDATED UPDATED -> DELETED UPDATED ->
+	 * UPDATE_REQUIRED
 	 * 
-	 * @param persistentState
-	 *          the persistentState to set
+	 * @param persistentState the persistentState to set
 	 */
 	public void setPersistentState(PersistentState persistentState) {
 		switch (persistentState) {
 		case DELETED:
 			if (this.persistentState == PersistentState.NEW) {
 				this.persistentState = PersistentState.NOACTION;
-			}
-			else {
+			} else {
 				this.persistentState = PersistentState.DELETED;
 			}
 			break;
@@ -626,8 +618,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	private boolean isSoulBound(Player player) {
 		if (player.havePermission(MembershipConfig.DISABLE_SOULBIND)) {
 			return false;
-		}
-		else {
+		} else {
 			return isSoulBound;
 		}
 	}
@@ -646,7 +637,10 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 
 	@Override
 	public String toString() {
-		return "Item [itemId=" + itemTemplate.getTemplateId() + " equipmentSlot=" + equipmentSlot + ", godStone=" + godStone + ", isEquipped=" + isEquipped + ", itemColor=" + itemColor + ", itemCount=" + itemCount + ", itemLocation=" + itemLocation + ", itemTemplate=" + itemTemplate + ", manaStones=" + manaStones + ", persistentState=" + persistentState + "]";
+		return "Item [itemId=" + itemTemplate.getTemplateId() + " equipmentSlot=" + equipmentSlot + ", godStone="
+				+ godStone + ", isEquipped=" + isEquipped + ", itemColor=" + itemColor + ", itemCount=" + itemCount
+				+ ", itemLocation=" + itemLocation + ", itemTemplate=" + itemTemplate + ", manaStones=" + manaStones
+				+ ", persistentState=" + persistentState + "]";
 	}
 
 	public int getItemId() {
@@ -675,26 +669,27 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	public int getSockets(boolean isFusionItem) {
-        int numSockets;
-        if (itemTemplate.isWeapon() || itemTemplate.isArmor()) {
-            if (isFusionItem) {
-                ItemTemplate fusedTemp = getFusionedItemTemplate();
-                if (fusedTemp == null) {
-                    log.error("Item {} with itemId {} has empty fusioned item ", getObjectId(), getItemId());
-                    return 0;
-                }
-                numSockets = fusedTemp.getManastoneSlots();
-                numSockets += hasOptionalFusionSocket() ? getOptionalFusionSocket() : 0;
-            } else {
-                numSockets = getItemTemplate().getManastoneSlots();
-                numSockets += hasOptionalSocket() ? getOptionalSocket() : 0;
-            } if (numSockets < 6) {
-                return numSockets;
-            }
-            return 6;
-        }
-        return 0;
-    }
+		int numSockets;
+		if (itemTemplate.isWeapon() || itemTemplate.isArmor()) {
+			if (isFusionItem) {
+				ItemTemplate fusedTemp = getFusionedItemTemplate();
+				if (fusedTemp == null) {
+					log.error("Item {} with itemId {} has empty fusioned item ", getObjectId(), getItemId());
+					return 0;
+				}
+				numSockets = fusedTemp.getManastoneSlots();
+				numSockets += hasOptionalFusionSocket() ? getOptionalFusionSocket() : 0;
+			} else {
+				numSockets = getItemTemplate().getManastoneSlots();
+				numSockets += hasOptionalSocket() ? getOptionalSocket() : 0;
+			}
+			if (numSockets < 6) {
+				return numSockets;
+			}
+			return 6;
+		}
+		return 0;
+	}
 
 	/**
 	 * @return the mask
@@ -731,8 +726,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	/**
 	 * Compares two items on their object and item ids
 	 * 
-	 * @param Item
-	 *          object
+	 * @param Item object
 	 * @return true, if this item is equal to the object item
 	 * @author vlog
 	 */
@@ -775,11 +769,11 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	public boolean canSocketGodstone() {
 		return (getItemMask() & ItemMask.CAN_PROC_ENCHANT) == ItemMask.CAN_PROC_ENCHANT;
 	}
-	
+
 	public boolean canAmplification() {
 		return (getItemMask() & ItemMask.CAN_AMPLIFICATION) == ItemMask.CAN_AMPLIFICATION;
 	}
-	
+
 	public boolean isArchDaevaItem() {
 		return (getItemMask() & ItemMask.ITEM_ARCHDAEVA) == ItemMask.ITEM_ARCHDAEVA;
 	}
@@ -792,11 +786,11 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 		return expireTime;
 	}
 
-    public void setExpireTime(int expireTime) {
-    	this.expireTime = expireTime;
-    }    
-    
-    public int getExpireTimeRemaining() {
+	public void setExpireTime(int expireTime) {
+		this.expireTime = expireTime;
+	}
+
+	public int getExpireTimeRemaining() {
 		if (expireTime == 0) {
 			return 0;
 		}
@@ -818,8 +812,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * @param temporaryExchangeTime
-	 *          The temporaryExchangeTime to set.
+	 * @param temporaryExchangeTime The temporaryExchangeTime to set.
 	 */
 	public void setTemporaryExchangeTime(int temporaryExchangeTime) {
 		this.temporaryExchangeTime = temporaryExchangeTime;
@@ -844,11 +837,13 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 				storage.decreaseByObjectId(getObjectId(), getItemCount());
 				switch (i) {
 				case CUBE:
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400034, new DescriptionId(getNameId())));
+					PacketSendUtility.sendPacket(player,
+							new SM_SYSTEM_MESSAGE(1400034, new DescriptionId(getNameId())));
 					break;
 				case ACCOUNT_WAREHOUSE:
 				case REGULAR_WAREHOUSE:
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400406, new DescriptionId(getNameId())));
+					PacketSendUtility.sendPacket(player,
+							new SM_SYSTEM_MESSAGE(1400406, new DescriptionId(getNameId())));
 					break;
 				default:
 					break;
@@ -997,14 +992,13 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	}
 
 	/**
-	 * @param isPacked
-	 * the isPacked to set
+	 * @param isPacked the isPacked to set
 	 */
 	public void setPacked(boolean isPacked) {
 		this.isPacked = isPacked;
 		setPersistentState(PersistentState.UPDATE_REQUIRED);
 	}
-	
+
 	public void setAmplification(boolean amplification) {
 		this.amplification = amplification;
 	}
@@ -1020,7 +1014,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	public int getAmplificationSkill() {
 		return amplificationSkill;
 	}
-	
+
 	public void setItemSkinSkill(int skill) {
 		this.SkinSkill = skill;
 	}
@@ -1028,11 +1022,11 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 	public int getItemSkinSkill() {
 		return SkinSkill;
 	}
-	
+
 	public void setLunaReskin(boolean luna_reskin) {
 		this.luna_reskin = luna_reskin;
 	}
-	
+
 	public boolean isLunaReskin() {
 		return luna_reskin;
 	}
@@ -1054,7 +1048,7 @@ public class Item extends AionObject implements IExpirable, StatOwner {
 		}
 	}
 
-	public int getUnSeal(){
+	public int getUnSeal() {
 		return unSeal;
 	}
 

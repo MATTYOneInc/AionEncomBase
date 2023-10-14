@@ -17,11 +17,11 @@
 package com.aionemu.gameserver.model.instance.playerreward;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class EternalBastionPlayerReward extends InstancePlayerReward
-{
+public class EternalBastionPlayerReward extends InstancePlayerReward {
 	private int scoreAP;
 	private int ceramium;
 	private int highGradeMaterialBox;
@@ -30,59 +30,72 @@ public class EternalBastionPlayerReward extends InstancePlayerReward
 	private int highGradeMaterialSupportBundle;
 	private int highestGradeMaterialSupportBundle;
 	private boolean isRewarded = false;
-	
+
 	public EternalBastionPlayerReward(Integer object) {
 		super(object);
 	}
-	
+
 	public boolean isRewarded() {
 		return isRewarded;
 	}
+
 	public void setRewarded() {
 		isRewarded = true;
 	}
-	
+
 	public int getScoreAP() {
 		return scoreAP;
 	}
+
 	public void setScoreAP(int ap) {
 		this.scoreAP = ap;
 	}
+
 	public int getCeramium() {
 		return ceramium;
 	}
+
 	public int getHighGradeMaterialBox() {
-        return highGradeMaterialBox;
-    }
+		return highGradeMaterialBox;
+	}
+
 	public int getHighestGradeMaterialBox() {
-        return highestGradeMaterialBox;
-    }
+		return highestGradeMaterialBox;
+	}
+
 	public int getLowGradeMaterialSupportBundle() {
-        return lowGradeMaterialSupportBundle;
-    }
+		return lowGradeMaterialSupportBundle;
+	}
+
 	public int getHighGradeMaterialSupportBundle() {
-        return highGradeMaterialSupportBundle;
-    }
-    public int getHighestGradeMaterialSupportBundle() {
-        return highestGradeMaterialSupportBundle;
-    }
-	
+		return highGradeMaterialSupportBundle;
+	}
+
+	public int getHighestGradeMaterialSupportBundle() {
+		return highestGradeMaterialSupportBundle;
+	}
+
 	public void setCeramium(int ceramium) {
 		this.ceramium = ceramium;
 	}
+
 	public void setHighGradeMaterialBox(int highGradeMaterialBox) {
-        this.highGradeMaterialBox = highGradeMaterialBox;
-    }
-    public void setHighestGradeMaterialBox(int highestGradeMaterialBox) {
-        this.highestGradeMaterialBox = highestGradeMaterialBox;
-    }
+		this.highGradeMaterialBox = highGradeMaterialBox;
+	}
+
+	public void setHighestGradeMaterialBox(int highestGradeMaterialBox) {
+		this.highestGradeMaterialBox = highestGradeMaterialBox;
+	}
+
 	public void setLowGradeMaterialSupportBundle(int lowGradeMaterialSupportBundle) {
-        this.lowGradeMaterialSupportBundle = lowGradeMaterialSupportBundle;
-    }
-    public void setHighGradeMaterialSupportBundle(int highGradeMaterialSupportBundle) {
-        this.highGradeMaterialSupportBundle = highGradeMaterialSupportBundle;
-    }
+		this.lowGradeMaterialSupportBundle = lowGradeMaterialSupportBundle;
+	}
+
+	public void setHighGradeMaterialSupportBundle(int highGradeMaterialSupportBundle) {
+		this.highGradeMaterialSupportBundle = highGradeMaterialSupportBundle;
+	}
+
 	public void setHighestGradeMaterialSupportBundle(int highestGradeMaterialSupportBundle) {
-        this.highestGradeMaterialSupportBundle = highestGradeMaterialSupportBundle;
-    }
+		this.highestGradeMaterialSupportBundle = highestGradeMaterialSupportBundle;
+	}
 }

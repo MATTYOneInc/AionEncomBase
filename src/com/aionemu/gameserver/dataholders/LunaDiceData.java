@@ -37,26 +37,26 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LunaDiceData {
 
-    @XmlElement(name = "table")
-    private List<LunaDiceTable> lunaDiceTabTemplate;
-    private TIntObjectHashMap<List<LunaDiceItem>> diceItemList = new TIntObjectHashMap<>();
+	@XmlElement(name = "table")
+	private List<LunaDiceTable> lunaDiceTabTemplate;
+	private TIntObjectHashMap<List<LunaDiceItem>> diceItemList = new TIntObjectHashMap<>();
 
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        diceItemList.clear();
-        for (LunaDiceTable template : lunaDiceTabTemplate) {
-            diceItemList.put(template.getId(), template.getLunaDiceTabItems());
-        }
-    }
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		diceItemList.clear();
+		for (LunaDiceTable template : lunaDiceTabTemplate) {
+			diceItemList.put(template.getId(), template.getLunaDiceTabItems());
+		}
+	}
 
-    public int size() {
-        return diceItemList.size();
-    }
+	public int size() {
+		return diceItemList.size();
+	}
 
-    public List<LunaDiceItem> getLunaDiceTabById(int id) {
-        return diceItemList.get(id);
-    }
+	public List<LunaDiceItem> getLunaDiceTabById(int id) {
+		return diceItemList.get(id);
+	}
 
-    public List<LunaDiceTable> getLunaDiceTabs() {
-        return lunaDiceTabTemplate;
-    }
+	public List<LunaDiceTable> getLunaDiceTabs() {
+		return lunaDiceTabTemplate;
+	}
 }

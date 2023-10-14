@@ -30,30 +30,29 @@ import com.aionemu.gameserver.services.EventService;
 /**
  * @author Rinzler (Encom)
  */
-public class BGService
-{
-    Logger log = LoggerFactory.getLogger(EventService.class);
-    private static final int DELAY = 60 * 100;
-    private List<ScheduledFuture<?>> futures = new ArrayList<ScheduledFuture<?>>();
-	
-    private BGService() {
-        register(DELAY);
-        log.info("[BGService] is initialized...");
-    }
-	
-    public void register(int delay) {
-        if (futures.isEmpty()) {
-            BattlegroundEvent bgEvent = new BattlegroundEvent();
-            bgEvent.setPriority(1);
-            futures.add(EventScheduler.getInstance().scheduleAtFixedRate(bgEvent, delay, 6 * 60 * 1000));
-        }
-    }
-	
-    private static class SingletonHolder {
-        protected static final BGService instance = new BGService();
-    }
-	
-    public static final BGService getInstance() {
-        return SingletonHolder.instance;
-    }
+public class BGService {
+	Logger log = LoggerFactory.getLogger(EventService.class);
+	private static final int DELAY = 60 * 100;
+	private List<ScheduledFuture<?>> futures = new ArrayList<ScheduledFuture<?>>();
+
+	private BGService() {
+		register(DELAY);
+		log.info("[BGService] is initialized...");
+	}
+
+	public void register(int delay) {
+		if (futures.isEmpty()) {
+			BattlegroundEvent bgEvent = new BattlegroundEvent();
+			bgEvent.setPriority(1);
+			futures.add(EventScheduler.getInstance().scheduleAtFixedRate(bgEvent, delay, 6 * 60 * 1000));
+		}
+	}
+
+	private static class SingletonHolder {
+		protected static final BGService instance = new BGService();
+	}
+
+	public static final BGService getInstance() {
+		return SingletonHolder.instance;
+	}
 }

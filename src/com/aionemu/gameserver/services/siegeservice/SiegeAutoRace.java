@@ -36,11 +36,10 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
 
-public class SiegeAutoRace
-{
+public class SiegeAutoRace {
 	private static final Logger log = LoggerFactory.getLogger("SIEGE_LOG");
 	private static String[] siegeIds = SiegeConfig.SIEGE_AUTO_LOCID.split(";");
-	
+
 	public static void AutoSiegeRace(final int locid) {
 		final SiegeLocation loc = SiegeService.getInstance().getSiegeLocation(locid);
 		if (!loc.getRace().equals(SiegeRace.ASMODIANS) || !loc.getRace().equals(SiegeRace.ELYOS)) {
@@ -52,22 +51,25 @@ public class SiegeAutoRace
 			SiegeService.getInstance().deSpawnNpcs(locid);
 			final int oldOwnerRaceId = loc.getRace().getRaceId();
 			final int legionId = loc.getLegionId();
-			final String legionName = legionId != 0 ? LegionService.getInstance().getLegion(legionId).getLegionName() : "";
+			final String legionName = legionId != 0 ? LegionService.getInstance().getLegion(legionId).getLegionName()
+					: "";
 			final DescriptionId NameId = new DescriptionId(loc.getTemplate().getNameId());
 			if (ElyosAutoSiege(locid)) {
 				loc.setRace(SiegeRace.ELYOS);
-			} if (AsmoAutoSiege(locid)) {
+			}
+			if (AsmoAutoSiege(locid)) {
 				loc.setRace(SiegeRace.ASMODIANS);
 			}
 			loc.setLegionId(0);
 			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 				public void visit(Player player) {
 					if (legionId != 0 && player.getRace().getRaceId() == oldOwnerRaceId) {
-						//%0 has conquered %1.
+						// %0 has conquered %1.
 						PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1301038, legionName, NameId));
 					}
-					//%0 succeeded in conquering %1.
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1404542, loc.getRace().getDescriptionId(), NameId));
+					// %0 succeeded in conquering %1.
+					PacketSendUtility.sendPacket(player,
+							new SM_SYSTEM_MESSAGE(1404542, loc.getRace().getDescriptionId(), NameId));
 					PacketSendUtility.sendPacket(player, new SM_SIEGE_LOCATION_INFO(loc));
 				}
 			});
@@ -80,22 +82,22 @@ public class SiegeAutoRace
 		}
 		SiegeService.getInstance().broadcastUpdate(loc);
 	}
-	
+
 	public static boolean isAutoSiege(int locId) {
 		return ElyosAutoSiege(locId) || AsmoAutoSiege(locId);
 	}
-	
+
 	public static boolean ElyosAutoSiege(int locId) {
-		for (String id: siegeIds[0].split(",")) {
+		for (String id : siegeIds[0].split(",")) {
 			if (locId == Integer.parseInt(id)) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	public static boolean AsmoAutoSiege(int locId) {
-		for (String id: siegeIds[1].split(",")) {
+		for (String id : siegeIds[1].split(",")) {
 			if (locId == Integer.parseInt(id)) {
 				return true;
 			}

@@ -23,8 +23,7 @@ import com.aionemu.gameserver.skillengine.model.Skill;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.WorldMapType;
 
-public class PrisonRestrictions extends AbstractRestrictions
-{
+public class PrisonRestrictions extends AbstractRestrictions {
 	@Override
 	public boolean isRestricted(Player player, Class<? extends Restrictions> callingRestriction) {
 		if (isInPrison(player)) {
@@ -33,7 +32,7 @@ public class PrisonRestrictions extends AbstractRestrictions
 		}
 		return false;
 	}
-	
+
 	@Override
 	public boolean canAttack(Player player, VisibleObject target) {
 		if (isInPrison(player)) {
@@ -42,7 +41,7 @@ public class PrisonRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canUseSkill(Player player, Skill skill) {
 		if (isInPrison(player)) {
@@ -51,12 +50,12 @@ public class PrisonRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canAffectBySkill(Player player, VisibleObject target, Skill skill) {
 		return true;
 	}
-	
+
 	@Override
 	public boolean canChat(Player player) {
 		if (isInPrison(player)) {
@@ -65,7 +64,7 @@ public class PrisonRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canInviteToGroup(Player player, Player target) {
 		if (isInPrison(player)) {
@@ -74,7 +73,7 @@ public class PrisonRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canInviteToAlliance(Player player, Player target) {
 		if (isInPrison(player)) {
@@ -83,7 +82,7 @@ public class PrisonRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canInviteToLeague(Player player, Player target) {
 		if (isInPrison(player)) {
@@ -92,7 +91,7 @@ public class PrisonRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canChangeEquip(Player player) {
 		if (isInPrison(player)) {
@@ -101,7 +100,7 @@ public class PrisonRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canUseItem(Player player, Item item) {
 		if (isInPrison(player)) {
@@ -110,10 +109,9 @@ public class PrisonRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	private boolean isInPrison(Player player) {
-		return player.isInPrison() ||
-		player.getWorldId() == WorldMapType.DE_PRISON.getId() ||
-		player.getWorldId() == WorldMapType.DF_PRISON.getId();
+		return player.isInPrison() || player.getWorldId() == WorldMapType.DE_PRISON.getId()
+				|| player.getWorldId() == WorldMapType.DF_PRISON.getId();
 	}
 }

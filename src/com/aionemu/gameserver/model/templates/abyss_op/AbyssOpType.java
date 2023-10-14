@@ -23,15 +23,6 @@ import javax.xml.bind.annotation.XmlEnum;
  */
 
 @XmlEnum
-public enum AbyssOpType
-{
-	BASE,
-	OBJECT,
-	ARTIFACT,
-	FORTRESS,
-	WORLD_RAID,
-	INIT_OBJECT,
-	RAID_OBJECT,
-	FORTRESS_RAID,
-	OWNERSHIP_OBJECT;
+public enum AbyssOpType {
+	BASE, OBJECT, ARTIFACT, FORTRESS, WORLD_RAID, INIT_OBJECT, RAID_OBJECT, FORTRESS_RAID, OWNERSHIP_OBJECT;
 }

@@ -48,6 +48,7 @@ public class ItemRaceEntry {
 
 	public boolean checkRace(Race playerRace) {
 		ItemTemplate template = DataManager.ITEM_DATA.getItemTemplate(id);
-		return (template.getRace() == Race.PC_ALL && (race == null || race == playerRace)) || (template.getRace() != Race.PC_ALL && template.getRace() == playerRace);
+		return (template.getRace() == Race.PC_ALL && (race == null || race == playerRace))
+				|| (template.getRace() != Race.PC_ALL && template.getRace() == playerRace);
 	}
 }

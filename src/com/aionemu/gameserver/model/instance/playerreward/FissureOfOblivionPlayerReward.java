@@ -17,28 +17,30 @@
 package com.aionemu.gameserver.model.instance.playerreward;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class FissureOfOblivionPlayerReward extends InstancePlayerReward
-{
+public class FissureOfOblivionPlayerReward extends InstancePlayerReward {
 	private int frozenMarbleOfMemory;
 	private boolean isRewarded = false;
-	
+
 	public FissureOfOblivionPlayerReward(Integer object) {
 		super(object);
 	}
-	
+
 	public boolean isRewarded() {
 		return isRewarded;
 	}
+
 	public void setRewarded() {
 		isRewarded = true;
 	}
-	
+
 	public int getFrozenMarbleOfMemory() {
 		return frozenMarbleOfMemory;
 	}
+
 	public void setFrozenMarbleOfMemory(int frozenMarbleOfMemory) {
 		this.frozenMarbleOfMemory = frozenMarbleOfMemory;
 	}

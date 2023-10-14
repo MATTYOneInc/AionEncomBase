@@ -33,14 +33,12 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 @XmlRootElement(name = "npc_drop")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "npcDrop", propOrder = {
-    "dropGroup"
-})
+@XmlType(name = "npcDrop", propOrder = { "dropGroup" })
 public class NpcDrop implements DropCalculator {
 
-    @XmlElement(name = "drop_group")
+	@XmlElement(name = "drop_group")
 	protected List<DropGroup> dropGroup;
-    @XmlAttribute(name = "npc_id", required = true)
+	@XmlAttribute(name = "npc_id", required = true)
 	protected int npcId;
 
 	public List<DropGroup> getDropGroup() {
@@ -58,7 +56,8 @@ public class NpcDrop implements DropCalculator {
 	}
 
 	@Override
-	public int dropCalculator(Set<DropItem> result, int index, float dropModifier, Race race, Collection<Player> groupMembers) {
+	public int dropCalculator(Set<DropItem> result, int index, float dropModifier, Race race,
+			Collection<Player> groupMembers) {
 		if (dropGroup == null || dropGroup.isEmpty()) {
 			return index;
 		}

@@ -35,23 +35,23 @@ import com.aionemu.gameserver.model.templates.stats.ModifiersTemplate;
 import gnu.trove.map.hash.TIntObjectHashMap;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"randomBonuses"})
+@XmlType(name = "", propOrder = { "randomBonuses" })
 @XmlRootElement(name = "random_bonuses")
-public class ItemRandomBonusData
-{
+public class ItemRandomBonusData {
 	@XmlElement(name = "random_bonus", required = true)
 	protected List<RandomBonus> randomBonuses;
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<RandomBonus> inventoryRandomBonusData = new TIntObjectHashMap<RandomBonus>();
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<RandomBonus> polishRandomBonusData = new TIntObjectHashMap<RandomBonus>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (RandomBonus bonus : randomBonuses) {
 			getBonusMap(bonus.getBonusType()).put(bonus.getId(), bonus);
@@ -59,14 +59,14 @@ public class ItemRandomBonusData
 		randomBonuses.clear();
 		randomBonuses = null;
 	}
-	
+
 	private TIntObjectHashMap<RandomBonus> getBonusMap(StatBonusType bonusType) {
-		if (bonusType == StatBonusType.INVENTORY){
+		if (bonusType == StatBonusType.INVENTORY) {
 			return inventoryRandomBonusData;
 		}
 		return polishRandomBonusData;
 	}
-	
+
 	public RandomBonusResult getRandomModifiers(StatBonusType bonusType, int rndOptionSet) {
 		RandomBonus bonus = getBonusMap(bonusType).get(rndOptionSet);
 		if (bonus == null) {
@@ -88,7 +88,7 @@ public class ItemRandomBonusData
 		}
 		return template == null ? null : new RandomBonusResult(template, number);
 	}
-	
+
 	public ModifiersTemplate getTemplate(StatBonusType bonusType, int rndOptionSet, int number) {
 		RandomBonus bonus = getBonusMap(bonusType).get(rndOptionSet);
 		if (bonus == null) {
@@ -96,7 +96,7 @@ public class ItemRandomBonusData
 		}
 		return bonus.getModifiers().get(number - 1);
 	}
-	
+
 	public int size() {
 		return inventoryRandomBonusData.size() + polishRandomBonusData.size();
 	}

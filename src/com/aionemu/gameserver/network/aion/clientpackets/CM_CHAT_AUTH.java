@@ -24,12 +24,11 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_CHAT_INIT;
 import com.aionemu.gameserver.network.chatserver.ChatServer;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class CM_CHAT_AUTH extends AionClientPacket
-{
+public class CM_CHAT_AUTH extends AionClientPacket {
 	public CM_CHAT_AUTH(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		@SuppressWarnings("unused")
@@ -37,7 +36,7 @@ public class CM_CHAT_AUTH extends AionClientPacket
 		@SuppressWarnings("unused")
 		byte[] macAddress = readB(6);
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();

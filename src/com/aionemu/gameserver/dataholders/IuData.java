@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "iu")
-public class IuData
-{
+public class IuData {
 	@XmlElement(name = "iu_location")
 	private List<IuTemplate> iuTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, IuLocation> iu = new FastMap<Integer, IuLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (IuTemplate template : iuTemplates) {
 			iu.put(template.getId(), new IuLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return iu.size();
 	}
-	
+
 	public FastMap<Integer, IuLocation> getIuLocations() {
 		return iu;
 	}

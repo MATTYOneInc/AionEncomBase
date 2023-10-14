@@ -26,20 +26,19 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_QUEST_ACTION;
 import com.aionemu.gameserver.services.QuestService;
 
-public class CM_DELETE_QUEST extends AionClientPacket
-{
+public class CM_DELETE_QUEST extends AionClientPacket {
 	static QuestsData questsData = DataManager.QUEST_DATA;
 	public int questId;
-	
+
 	public CM_DELETE_QUEST(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		questId = readH();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
@@ -47,7 +46,8 @@ public class CM_DELETE_QUEST extends AionClientPacket
 		if (qt != null && qt.isTimer()) {
 			player.getController().cancelTask(TaskId.QUEST_TIMER);
 			sendPacket(new SM_QUEST_ACTION(questId, 0));
-		} if (!QuestService.abandonQuest(player, questId)) {
+		}
+		if (!QuestService.abandonQuest(player, questId)) {
 			return;
 		}
 		player.getController().updateZone();

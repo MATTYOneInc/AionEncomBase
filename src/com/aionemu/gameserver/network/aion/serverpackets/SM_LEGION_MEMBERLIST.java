@@ -25,19 +25,18 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.HousingService;
 
-public class SM_LEGION_MEMBERLIST extends AionServerPacket
-{
+public class SM_LEGION_MEMBERLIST extends AionServerPacket {
 	private static final int OFFLINE = 0x00, ONLINE = 0x01;
 	private boolean isFirst;
 	private boolean result;
 	private List<LegionMemberEx> legionMembers;
-	
+
 	public SM_LEGION_MEMBERLIST(List<LegionMemberEx> legionMembers, boolean result, boolean isFirst) {
 		this.legionMembers = legionMembers;
 		this.result = result;
 		this.isFirst = isFirst;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		int size = legionMembers.size();

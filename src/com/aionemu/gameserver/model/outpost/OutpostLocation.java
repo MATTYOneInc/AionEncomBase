@@ -23,39 +23,38 @@ import com.aionemu.gameserver.model.templates.outpost.OutpostTemplate;
  * Created by Wnkrz on 27/08/2017.
  */
 
-public class OutpostLocation
-{
-    protected OutpostTemplate template;
-    protected Race race = Race.NPC;
-	
-    public OutpostLocation() {
-    }
-	
-    public OutpostLocation(OutpostTemplate template) {
-        this.template = template;
-    }
-	
-    public int getId() {
-        return template.getId();
-    }
-	
-    public int getWorldId() {
-        return template.getWorldId();
-    }
-	
-    public String getName() {
-        return template.getName();
-    }
-	
-    public Race getRace() {
-        return race;
-    }
-	
-    public void setRace(Race race) {
-        this.race = race;
-    }
-	
+public class OutpostLocation {
+	protected OutpostTemplate template;
+	protected Race race = Race.NPC;
+
+	public OutpostLocation() {
+	}
+
+	public OutpostLocation(OutpostTemplate template) {
+		this.template = template;
+	}
+
+	public int getId() {
+		return template.getId();
+	}
+
+	public int getWorldId() {
+		return template.getWorldId();
+	}
+
+	public String getName() {
+		return template.getName();
+	}
+
+	public Race getRace() {
+		return race;
+	}
+
+	public void setRace(Race race) {
+		this.race = race;
+	}
+
 	public int getArtifactId() {
-        return template.getArtifactId();
-    }
+		return template.getArtifactId();
+	}
 }

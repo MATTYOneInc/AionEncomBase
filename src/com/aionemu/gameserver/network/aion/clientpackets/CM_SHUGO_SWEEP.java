@@ -44,15 +44,15 @@ public class CM_SHUGO_SWEEP extends AionClientPacket {
 			return;
 		}
 		switch (action) {
-			case 0: // Reset
-				ShugoSweepService.getInstance().resetBoard(player);
-				break;
-			case 1: // Launch Dice
-				if (player.getPlayerShugoSweep().getFreeDice() != 0 || player.getCommonData().getGoldenDice() != 0) {
-					ShugoSweepService.getInstance().launchDice(player);
-				} else {
-					return;
-				}
+		case 0: // Reset
+			ShugoSweepService.getInstance().resetBoard(player);
+			break;
+		case 1: // Launch Dice
+			if (player.getPlayerShugoSweep().getFreeDice() != 0 || player.getCommonData().getGoldenDice() != 0) {
+				ShugoSweepService.getInstance().launchDice(player);
+			} else {
+				return;
+			}
 			break;
 		}
 	}

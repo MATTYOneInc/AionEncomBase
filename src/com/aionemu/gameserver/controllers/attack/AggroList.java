@@ -52,8 +52,8 @@ public class AggroList {
 	}
 
 	/**
-	 * Only add damage from enemies. (Verify this includes summons, traps, pets,
-	 * and excludes fall damage.)
+	 * Only add damage from enemies. (Verify this includes summons, traps, pets, and
+	 * excludes fall damage.)
 	 *
 	 * @param attacker
 	 * @param damage
@@ -62,12 +62,12 @@ public class AggroList {
 	public void addDamage(Creature attacker, int damage) {
 		if (!isAware(attacker)) {
 			return;
-        }
+		}
 		AggroInfo ai = getAggroInfo(attacker);
 		ai.addDamage(damage);
 		/**
-		 * For now we add hate equal to each damage received Additionally there
-		 * will be broadcast of extra hate
+		 * For now we add hate equal to each damage received Additionally there will be
+		 * broadcast of extra hate
 		 */
 		ai.addHate(damage);
 		// TODO move out to controller
@@ -95,12 +95,12 @@ public class AggroList {
 		AggroInfo ai = getAggroInfo(creature);
 		ai.addHate(hate);
 		// TODO move out to controller
-		if(creature instanceof Player && owner instanceof Npc ) {
-		    for (Player player: owner.getKnownList().getKnownPlayers().values()) {
-			    if (MathUtil.isIn3dRange(owner, player, 50)) {
-				    QuestEngine.getInstance().onAddAggroList(new QuestEnv(owner, player, 0, 0));
-			    }
-		    }
+		if (creature instanceof Player && owner instanceof Npc) {
+			for (Player player : owner.getKnownList().getKnownPlayers().values()) {
+				if (MathUtil.isIn3dRange(owner, player, 50)) {
+					QuestEngine.getInstance().onAddAggroList(new QuestEnv(owner, player, 0, 0));
+				}
+			}
 		}
 		owner.getAi2().onCreatureEvent(AIEventType.ATTACK, creature);
 	}
@@ -114,7 +114,7 @@ public class AggroList {
 		for (AggroInfo ai : getFinalDamageList(true)) {
 			if (ai.getAttacker() == null || owner.equals(ai.getAttacker())) {
 				continue;
-            }
+			}
 			if (ai.getDamage() > maxDamage) {
 				mostDamage = ai.getAttacker();
 				maxDamage = ai.getDamage();
@@ -139,7 +139,7 @@ public class AggroList {
 	public Player getMostPlayerDamage() {
 		if (aggroList.isEmpty()) {
 			return null;
-        }
+		}
 		Player mostDamage = null;
 		int maxDamage = 0;
 
@@ -159,7 +159,7 @@ public class AggroList {
 	public Player getMostPlayerDamageOfMembers(Collection<Player> team, int highestLevel) {
 		if (aggroList.isEmpty()) {
 			return null;
-        }
+		}
 		Player mostDamage = null;
 		int maxDamage = 0;
 
@@ -195,21 +195,22 @@ public class AggroList {
 	public Creature getMostHated() {
 		if (aggroList.isEmpty()) {
 			return null;
-        }
+		}
 		Creature mostHated = null;
 		int maxHate = 0;
 
-		for (FastMap.Entry<Integer, AggroInfo> e = aggroList.head(), mapEnd = aggroList.tail(); (e = e.getNext()) != mapEnd;) {
+		for (FastMap.Entry<Integer, AggroInfo> e = aggroList.head(),
+				mapEnd = aggroList.tail(); (e = e.getNext()) != mapEnd;) {
 			AggroInfo ai = e.getValue();
 			if (ai == null) {
 				continue;
-            }
+			}
 			// aggroList will never contain anything but creatures
 			Creature attacker = (Creature) ai.getAttacker();
 
 			if (attacker.getLifeStats().isAlreadyDead()) {
 				ai.setHate(0);
-            }
+			}
 			if (ai.getHate() > maxHate) {
 				mostHated = attacker;
 				maxHate = ai.getHate();
@@ -225,7 +226,7 @@ public class AggroList {
 	public boolean isMostHated(Creature creature) {
 		if (creature == null || creature.getLifeStats().isAlreadyDead()) {
 			return false;
-        }
+		}
 		Creature mostHated = getMostHated();
 		return mostHated != null && mostHated.equals(creature);
 	}
@@ -306,8 +307,8 @@ public class AggroList {
 	}
 
 	/**
-	 * Used to get a list of AggroInfo with npc and player/group/alliance
-	 * damages combined.
+	 * Used to get a list of AggroInfo with npc and player/group/alliance damages
+	 * combined.
 	 *
 	 * @return finalDamageList
 	 */
@@ -352,7 +353,8 @@ public class AggroList {
 	}
 
 	protected boolean isAware(Creature creature) {
-		return creature != null && !creature.getObjectId().equals(owner.getObjectId()) && (creature.isEnemy(owner) || DataManager.TRIBE_RELATIONS_DATA.isHostileRelation(owner.getTribe(), creature.getTribe()));
+		return creature != null && !creature.getObjectId().equals(owner.getObjectId()) && (creature.isEnemy(owner)
+				|| DataManager.TRIBE_RELATIONS_DATA.isHostileRelation(owner.getTribe(), creature.getTribe()));
 	}
 
 	public static abstract class AddDamageValueCallback implements Callback<AggroList> {
@@ -378,6 +380,7 @@ public class AggroList {
 		public final Class<? extends Callback> getBaseClass() {
 			return AddDamageValueCallback.class;
 		}
+
 		public abstract void onDamageAdded(Creature creature, int damage);
 	}
 }

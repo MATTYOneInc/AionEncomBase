@@ -42,7 +42,7 @@ public class CrazyDaevaService {
 	private static final Logger log = LoggerFactory.getLogger(CrazyDaevaService.class);
 	int crazyCount = 0;
 
-	//calculate time
+	// calculate time
 	public void startTimer() {
 		String[] times = EventsConfig.CRAZY_TIMES.split("\\|");
 		for (String cron : times) {
@@ -52,18 +52,19 @@ public class CrazyDaevaService {
 					checkStart();
 				}
 			}, cron);
-			log.info("Scheduled Crazy Daeva: based on cron expression: " + cron + " Duration: " + EventsConfig.CRAZY_ENDTIME + " in minutes");
+			log.info("Scheduled Crazy Daeva: based on cron expression: " + cron + " Duration: "
+					+ EventsConfig.CRAZY_ENDTIME + " in minutes");
 		}
 	}
 
-	//check time start
+	// check time start
 	public void checkStart() {
 		startChoose();
 		clearCrazy();
 		log.info("Crazy Daeva start choose random player and calculate end time.");
 	}
 
-	//start choose rnd
+	// start choose rnd
 	public void startChoose() {
 		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 			@Override
@@ -74,19 +75,20 @@ public class CrazyDaevaService {
 				if (player.getRndCrazy() >= EventsConfig.CRAZY_LOWEST_RND && player.getLevel() >= 55) {
 					crazyCount++;
 					if (crazyCount == 1) {
-						TeleportService2.teleportTo(player, player.getWorldId(), player.getInstanceId(), player.getX(), player.getY(), player.getZ(), player.getHeading(), TeleportAnimation.BEAM_ANIMATION);
-						PacketSendUtility.sendYellowMessageOnCenter(player, "CRAZY DAEVA "+ player.getName() +"");
-						log.info("System choose "+ player.getName() +".");
+						TeleportService2.teleportTo(player, player.getWorldId(), player.getInstanceId(), player.getX(),
+								player.getY(), player.getZ(), player.getHeading(), TeleportAnimation.BEAM_ANIMATION);
+						PacketSendUtility.sendYellowMessageOnCenter(player, "CRAZY DAEVA " + player.getName() + "");
+						log.info("System choose " + player.getName() + ".");
 						player.setInCrazy(true);
 						PvpService.getInstance().doReward(player);
 					}
 				}
-				log.info("Player "+ player.getName() +" got random "+ rnd +"");
+				log.info("Player " + player.getName() + " got random " + rnd + "");
 			}
 		});
 	}
 
-	//increase kill count
+	// increase kill count
 	public void increaseRawKillCount(Player winner) {
 		int currentCrazyKillCount = winner.getCrazyKillCount();
 		winner.setCrazyKillCount(currentCrazyKillCount + 1);
@@ -101,15 +103,15 @@ public class CrazyDaevaService {
 		if (newCrazyKillCount >= 20 && newCrazyKillCount <= 30) {
 			updateCrazyLevel(winner, 3);
 		}
-		log.info("Killed "+ newCrazyKillCount +" player.");
+		log.info("Killed " + newCrazyKillCount + " player.");
 	}
 
-	//update kill level
+	// update kill level
 	private void updateCrazyLevel(Player winner, int level) {
 		winner.setCrazyLevel(level);
 	}
 
-	//when die
+	// when die
 	public void crazyOnDie(Player victim, Creature killer, boolean isPvPDeath) {
 		if (victim.isInCrazy()) {
 			victim.setCrazyLevel(0);
@@ -117,16 +119,17 @@ public class CrazyDaevaService {
 		}
 	}
 
-	//killer reward + announce
+	// killer reward + announce
 	private void sendEndSpreeMessage(final Player victim, Creature killer, boolean isPvPDeath) {
 		if (killer instanceof Player) {
 			if (killer.getRace().getRaceId() != victim.getRace().getRaceId()) {
-				final String spreeEnder = isPvPDeath ? ((Player)killer).getName() : "Killer";
-				AbyssPointsService.addAp((Player)killer, 5000);
+				final String spreeEnder = isPvPDeath ? ((Player) killer).getName() : "Killer";
+				AbyssPointsService.addAp((Player) killer, 5000);
 				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 					@Override
 					public void visit(final Player player) {
-						PacketSendUtility.sendYellowMessageOnCenter(player, "Crazier "+ victim.getName() +" has slain by "+ spreeEnder +"!");
+						PacketSendUtility.sendYellowMessageOnCenter(player,
+								"Crazier " + victim.getName() + " has slain by " + spreeEnder + "!");
 					}
 				});
 				log.info("Crazier " + victim.getName() + " was killed by " + spreeEnder + "");
@@ -134,7 +137,7 @@ public class CrazyDaevaService {
 		}
 	}
 
-	//end event clear all and reward
+	// end event clear all and reward
 	public void clearCrazy() {
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 
@@ -144,18 +147,23 @@ public class CrazyDaevaService {
 					@Override
 					public void visit(final Player player) {
 						if (player.isInCrazy()) {
-							TeleportService2.teleportTo(player, player.getWorldId(), player.getInstanceId(), player.getX(), player.getY(), player.getZ(), player.getHeading(), TeleportAnimation.BEAM_ANIMATION);
+							TeleportService2.teleportTo(player, player.getWorldId(), player.getInstanceId(),
+									player.getX(), player.getY(), player.getZ(), player.getHeading(),
+									TeleportAnimation.BEAM_ANIMATION);
 							if (player.getCrazyLevel() == 1) {
 								AbyssPointsService.addAp(player, 5000);
-								log.info("Crazy Daeva "+ player.getName() +" killed "+ player.getCrazyKillCount() +" and get reward 5000 AP.");
+								log.info("Crazy Daeva " + player.getName() + " killed " + player.getCrazyKillCount()
+										+ " and get reward 5000 AP.");
 							}
 							if (player.getCrazyLevel() == 2) {
 								AbyssPointsService.addAp(player, 10000);
-								log.info("Crazy Daeva "+ player.getName() +" killed "+ player.getCrazyKillCount() +" and get reward 10000 AP.");
+								log.info("Crazy Daeva " + player.getName() + " killed " + player.getCrazyKillCount()
+										+ " and get reward 10000 AP.");
 							}
 							if (player.getCrazyLevel() == 3) {
 								AbyssPointsService.addAp(player, 15000);
-								log.info("Crazy Daeva "+ player.getName() +" killed "+ player.getCrazyKillCount() +" and get reward 15000 AP.");
+								log.info("Crazy Daeva " + player.getName() + " killed " + player.getCrazyKillCount()
+										+ " and get reward 15000 AP.");
 							}
 							player.setCrazyKillCount(0);
 							player.setCrazyLevel(0);
@@ -165,13 +173,13 @@ public class CrazyDaevaService {
 						player.setInCrazy(false);
 						player.setRndCrazy(0);
 						player.getLifeStats().increaseHp(TYPE.HP, player.getLifeStats().getMaxHp() + 5000);
-						
+
 						PacketSendUtility.sendYellowMessageOnCenter(player, "Crazy Daeva event has stopped!");
 					}
-				});	
+				});
 				log.info("Crazy Daeva cleared.");
 			}
-		}, EventsConfig.CRAZY_ENDTIME * 60 * 1000); //time stop
+		}, EventsConfig.CRAZY_ENDTIME * 60 * 1000); // time stop
 	}
 
 	public static final CrazyDaevaService getInstance() {

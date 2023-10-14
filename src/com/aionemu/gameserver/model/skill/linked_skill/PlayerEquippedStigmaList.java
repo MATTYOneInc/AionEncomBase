@@ -34,30 +34,30 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 /**
  * @author Ranastic
  */
-public final class PlayerEquippedStigmaList implements StigmaList<Player>{
-	
+public final class PlayerEquippedStigmaList implements StigmaList<Player> {
+
 	private static final Logger log = LoggerFactory.getLogger(PlayerEquippedStigmaList.class);
 	private Map<Integer, EquippedStigmasEntry> itemList;
 	private List<EquippedStigmasEntry> deletedItems;
-	
+
 	public PlayerEquippedStigmaList() {
 		this.itemList = new HashMap<Integer, EquippedStigmasEntry>(0);
 		this.deletedItems = new ArrayList<EquippedStigmasEntry>(0);
 	}
-	
+
 	public PlayerEquippedStigmaList(List<EquippedStigmasEntry> items) {
 		this();
 		for (EquippedStigmasEntry entry : items) {
 			itemList.put(entry.getItemId(), entry);
 		}
 	}
-	
+
 	public EquippedStigmasEntry[] getAllItems() {
 		List<EquippedStigmasEntry> allItems = new ArrayList<EquippedStigmasEntry>();
 		allItems.addAll(itemList.values());
 		return allItems.toArray(new EquippedStigmasEntry[allItems.size()]);
 	}
-	
+
 	public List<Integer> getAllItemsAsInteger() {
 		HashSet<Integer> equippedIds = new HashSet<Integer>();
 		for (EquippedStigmasEntry i : itemList.values()) {
@@ -65,7 +65,7 @@ public final class PlayerEquippedStigmaList implements StigmaList<Player>{
 		}
 		return Arrays.asList(equippedIds.toArray(new Integer[0]));
 	}
-	
+
 	public EquippedStigmasEntry[] getDeletedItems() {
 		return deletedItems.toArray(new EquippedStigmasEntry[deletedItems.size()]);
 	}
@@ -80,7 +80,7 @@ public final class PlayerEquippedStigmaList implements StigmaList<Player>{
 		DAOManager.getDAO(PlayerStigmasEquippedDAO.class).storeItems(player);
 		return true;
 	}
-	
+
 	@Override
 	public boolean remove(Player player, int itemId) {
 		EquippedStigmasEntry entry = itemList.get(itemId);

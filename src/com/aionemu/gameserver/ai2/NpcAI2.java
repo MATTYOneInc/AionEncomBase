@@ -45,7 +45,7 @@ import com.aionemu.gameserver.world.knownlist.KnownList;
  */
 @AIName("npc")
 public class NpcAI2 extends AITemplate {
-	
+
 	@Override
 	public Npc getOwner() {
 		return (Npc) super.getOwner();
@@ -82,7 +82,7 @@ public class NpcAI2 extends AITemplate {
 	protected AggroList getAggroList() {
 		return getOwner().getAggroList();
 	}
-	
+
 	protected NpcSkillList getSkillList() {
 		return getOwner().getSkillList();
 	}
@@ -105,7 +105,7 @@ public class NpcAI2 extends AITemplate {
 	protected int getCreatorId() {
 		return getOwner().getCreatorId();
 	}
-	
+
 	protected boolean isInRange(VisibleObject object, int range) {
 		return MathUtil.isIn3dRange(getOwner(), object, range);
 	}
@@ -163,16 +163,16 @@ public class NpcAI2 extends AITemplate {
 	@Override
 	protected AIAnswer pollInstance(AIQuestion question) {
 		switch (question) {
-			case SHOULD_DECAY:
-				return NpcAIPolls.shouldDecay(this);
-			case SHOULD_RESPAWN:
-				return NpcAIPolls.shouldRespawn(this);
-			case SHOULD_REWARD:
-				return AIAnswers.POSITIVE;
-			case CAN_SHOUT:
-				return isMayShout() ? AIAnswers.POSITIVE : AIAnswers.NEGATIVE;
-			default:
-				return null;
+		case SHOULD_DECAY:
+			return NpcAIPolls.shouldDecay(this);
+		case SHOULD_RESPAWN:
+			return NpcAIPolls.shouldRespawn(this);
+		case SHOULD_REWARD:
+			return AIAnswers.POSITIVE;
+		case CAN_SHOUT:
+			return isMayShout() ? AIAnswers.POSITIVE : AIAnswers.NEGATIVE;
+		default:
+			return null;
 		}
 	}
 

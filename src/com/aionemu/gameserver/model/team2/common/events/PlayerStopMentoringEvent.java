@@ -27,35 +27,36 @@ import com.google.common.base.Predicate;
 /**
  * @author ATracer
  */
-public abstract class PlayerStopMentoringEvent<T extends TemporaryPlayerTeam<? extends TeamMember<Player>>> extends AlwaysTrueTeamEvent implements Predicate<Player> {
+public abstract class PlayerStopMentoringEvent<T extends TemporaryPlayerTeam<? extends TeamMember<Player>>>
+		extends AlwaysTrueTeamEvent implements Predicate<Player> {
 
-    protected final T team;
-    protected final Player player;
+	protected final T team;
+	protected final Player player;
 
-    public PlayerStopMentoringEvent(T team, Player player) {
-        this.team = team;
-        this.player = player;
-    }
+	public PlayerStopMentoringEvent(T team, Player player) {
+		this.team = team;
+		this.player = player;
+	}
 
-    @Override
-    public void handleEvent() {
-        player.setMentor(false);
-        PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_MENTOR_END);
-        team.applyOnMembers(this);
-        PacketSendUtility.broadcastPacketAndReceive(player, new SM_ABYSS_RANK_UPDATE(2, player));
-    }
+	@Override
+	public void handleEvent() {
+		player.setMentor(false);
+		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_MENTOR_END);
+		team.applyOnMembers(this);
+		PacketSendUtility.broadcastPacketAndReceive(player, new SM_ABYSS_RANK_UPDATE(2, player));
+	}
 
-    @Override
-    public boolean apply(Player member) {
-        if (!player.equals(member)) {
-            PacketSendUtility.sendPacket(member, SM_SYSTEM_MESSAGE.STR_MSG_MENTOR_END_PARTYMSG(player.getName()));
-        }
-        sendGroupPacketOnMentorEnd(member);
-        return true;
-    }
+	@Override
+	public boolean apply(Player member) {
+		if (!player.equals(member)) {
+			PacketSendUtility.sendPacket(member, SM_SYSTEM_MESSAGE.STR_MSG_MENTOR_END_PARTYMSG(player.getName()));
+		}
+		sendGroupPacketOnMentorEnd(member);
+		return true;
+	}
 
-    /**
-     * @param member
-     */
-    protected abstract void sendGroupPacketOnMentorEnd(Player member);
+	/**
+	 * @param member
+	 */
+	protected abstract void sendGroupPacketOnMentorEnd(Player member);
 }

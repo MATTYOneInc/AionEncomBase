@@ -32,8 +32,7 @@ public abstract class LegionMemberDAO implements IDFactoryAwareDAO {
 	/**
 	 * Returns true if name is used, false in other case
 	 * 
-	 * @param name
-	 *          name to check
+	 * @param name name to check
 	 * @return true if name is used, false in other case
 	 */
 	public abstract boolean isIdUsed(int playerObjId);
@@ -90,8 +89,7 @@ public abstract class LegionMemberDAO implements IDFactoryAwareDAO {
 	/**
 	 * Removes legion member and all related data (Done by CASCADE DELETION)
 	 * 
-	 * @param playerId
-	 *          legion member to delete
+	 * @param playerId legion member to delete
 	 */
 	public abstract void deleteLegionMember(int playerObjId);
 

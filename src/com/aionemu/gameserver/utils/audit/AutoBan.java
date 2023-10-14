@@ -30,31 +30,31 @@ public class AutoBan {
 
 	protected static void punishment(Player player, String message) {
 
-		String reason = "AUTO " +message;
+		String reason = "AUTO " + message;
 		String address = player.getClientConnection().getMacAddress();
 		String accountIp = player.getClientConnection().getIP();
 		int accountId = player.getClientConnection().getAccount().getId();
 		int playerId = player.getObjectId();
 		int time = PunishmentConfig.PUNISHMENT_TIME;
 		int minInDay = 1440;
-		int dayCount = (int)(Math.floor((double)(time/minInDay)));
+		int dayCount = (int) (Math.floor((double) (time / minInDay)));
 
 		switch (PunishmentConfig.PUNISHMENT_TYPE) {
-			case 1:
-				player.getClientConnection().close(new SM_QUIT_RESPONSE(), false);
+		case 1:
+			player.getClientConnection().close(new SM_QUIT_RESPONSE(), false);
 			break;
-			case 2:
-				PunishmentService.banChar(playerId, dayCount, reason);
+		case 2:
+			PunishmentService.banChar(playerId, dayCount, reason);
 			break;
-			case 3:
-				LoginServer.getInstance().sendBanPacket((byte)1, accountId, accountIp, time, 0);
+		case 3:
+			LoginServer.getInstance().sendBanPacket((byte) 1, accountId, accountIp, time, 0);
 			break;
-			case 4:
-				LoginServer.getInstance().sendBanPacket((byte)2, accountId, accountIp, time, 0);
+		case 4:
+			LoginServer.getInstance().sendBanPacket((byte) 2, accountId, accountIp, time, 0);
 			break;
-			case 5:
-				player.getClientConnection().closeNow();
-				BannedMacManager.getInstance().banAddress(address, System.currentTimeMillis() + time * 60000, reason);
+		case 5:
+			player.getClientConnection().closeNow();
+			BannedMacManager.getInstance().banAddress(address, System.currentTimeMillis() + time * 60000, reason);
 			break;
 		}
 	}

@@ -24,18 +24,17 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.ChallengeTaskService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class CM_CHALLENGE_LIST extends AionClientPacket
-{
+public class CM_CHALLENGE_LIST extends AionClientPacket {
 	public CM_CHALLENGE_LIST(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	int action;
 	int taskOwner;
 	int ownerType;
 	int playerId;
 	int dateSince;
-	
+
 	@Override
 	protected void readImpl() {
 		action = readC();
@@ -44,7 +43,7 @@ public class CM_CHALLENGE_LIST extends AionClientPacket
 		playerId = readD();
 		dateSince = readD();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();

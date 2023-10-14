@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.NightmareCircusService;
  * @author Rinzler (Encom)
  */
 
-public abstract class CircusInstance<CL extends NightmareCircusLocation>
-{
+public abstract class CircusInstance<CL extends NightmareCircusLocation> {
 	private boolean started;
 	private final CL nightmareCircusLocation;
+
 	protected abstract void stopNightmareCircus();
+
 	protected abstract void startNightmareCircus();
+
 	private final AtomicBoolean closed = new AtomicBoolean();
-	
+
 	public CircusInstance(CL nightmareCircusLocation) {
 		this.nightmareCircusLocation = nightmareCircusLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class CircusInstance<CL extends NightmareCircusLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startNightmareCircus();
 	}
-	
+
 	public final void stop() {
 		if (closed.compareAndSet(false, true)) {
 			stopNightmareCircus();
 		}
 	}
-	
+
 	protected void spawn(NightmareCircusStateType type) {
 		NightmareCircusService.getInstance().spawn(getNightmareCircusLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		NightmareCircusService.getInstance().despawn(getNightmareCircusLocation());
 	}
-	
+
 	public boolean isClosed() {
 		return closed.get();
 	}
-	
+
 	public CL getNightmareCircusLocation() {
 		return nightmareCircusLocation;
 	}
-	
+
 	public int getNightmareCircusLocationId() {
 		return nightmareCircusLocation.getId();
 	}

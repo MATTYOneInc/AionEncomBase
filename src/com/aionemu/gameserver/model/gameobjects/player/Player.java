@@ -223,7 +223,7 @@ public class Player extends Creature {
 	private long nextSkillUse;
 	private long nextSummonSkillUse;
 	private ChainSkills chainSkills;
-	private Map<AttackStatus, Long>	lastCounterSkill = new HashMap<AttackStatus, Long>();
+	private Map<AttackStatus, Long> lastCounterSkill = new HashMap<AttackStatus, Long>();
 	private int dualEffectValue = 0;
 	private int rawKillcount = 0;
 	private int spreeLevel = 0;
@@ -310,7 +310,7 @@ public class Player extends Creature {
 	private Map<Integer, MaxCountOfDay> maxCountEvent;
 	private int LunaDiceGame;
 	private int LunaDiceGameTry = 0;
-	//Pvp System:
+	// Pvp System:
 	private boolean lawless = false;
 	private boolean bandit = false;
 	private Battleground battleground = null;
@@ -349,6 +349,7 @@ public class Player extends Creature {
 	// This variables are for the custom RP and GM system
 	private boolean isGmMode = false;
 	private long creationDay;
+
 	public long getCreationDate() {
 		Timestamp creationDate = playerCommonData.getCreationDate();
 		if (creationDate == null) {
@@ -372,7 +373,8 @@ public class Player extends Creature {
 		this.absStatsHolder = new AbsoluteStatOwner(this, 0);
 	}
 
-	public Player(PlayerController controller, PlayerCommonData plCommonData, PlayerAppearance appereance, Account account) {
+	public Player(PlayerController controller, PlayerCommonData plCommonData, PlayerAppearance appereance,
+			Account account) {
 		super(plCommonData.getPlayerObjId(), controller, null, plCommonData, plCommonData.getPosition());
 		this.playerCommonData = plCommonData;
 		this.playerAppearance = appereance;
@@ -440,7 +442,8 @@ public class Player extends Creature {
 	/**
 	 * Only use for the Size admin command
 	 * 
-	 * @return PlayerAppearance : The saved player's appearance, to rollback his appearance
+	 * @return PlayerAppearance : The saved player's appearance, to rollback his
+	 *         appearance
 	 */
 	public PlayerAppearance getSavedPlayerAppearance() {
 		return savedPlayerAppearance;
@@ -449,8 +452,8 @@ public class Player extends Creature {
 	/**
 	 * Only use for the Size admin command
 	 * 
-	 * @param playerAppearance
-	 *          PlayerAppearance : The saved player's appearance, to rollback his appearance
+	 * @param playerAppearance PlayerAppearance : The saved player's appearance, to
+	 *                         rollback his appearance
 	 */
 	public void setSavedPlayerAppearance(PlayerAppearance savedPlayerAppearance) {
 		this.savedPlayerAppearance = savedPlayerAppearance;
@@ -506,14 +509,13 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param toyPet
-	 *          the toyPet to set
+	 * @param toyPet the toyPet to set
 	 */
 	public void setToyPet(Pet toyPet) {
 		this.toyPet = toyPet;
 	}
 
- 	/**
+	/**
 	 * @return the minions
 	 */
 	public Minion getMinion() {
@@ -716,8 +718,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param store
-	 *          the store that needs to be set
+	 * @param store the store that needs to be set
 	 */
 	public void setStore(PrivateStore store) {
 		this.store = store;
@@ -731,8 +732,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param questStateList
-	 *          the QuestStateList to set
+	 * @param questStateList the QuestStateList to set
 	 */
 	public void setQuestStateList(QuestStateList questStateList) {
 		this.questStateList = questStateList;
@@ -746,8 +746,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param playerStatsTemplate
-	 *          the playerStatsTemplate to set
+	 * @param playerStatsTemplate the playerStatsTemplate to set
 	 */
 	public void setPlayerStatsTemplate(PlayerStatsTemplate playerStatsTemplate) {
 		this.playerStatsTemplate = playerStatsTemplate;
@@ -762,8 +761,8 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param inventory
-	 *          the inventory to set Inventory should be set right after player object is created
+	 * @param inventory the inventory to set Inventory should be set right after
+	 *                  player object is created
 	 */
 	public void setStorage(Storage storage, StorageType storageType) {
 		if (storageType == StorageType.CUBE) {
@@ -922,8 +921,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param playerSettings
-	 *          the playerSettings to set
+	 * @param playerSettings the playerSettings to set
 	 */
 	public void setPlayerSettings(PlayerSettings playerSettings) {
 		this.playerSettings = playerSettings;
@@ -966,8 +964,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param abyssRank
-	 *          the abyssRank to set
+	 * @param abyssRank the abyssRank to set
 	 */
 	public void setAbyssRank(AbyssRank abyssRank) {
 		this.abyssRank = abyssRank;
@@ -995,8 +992,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param legionMember
-	 *          the legionMember to set
+	 * @param legionMember the legionMember to set
 	 */
 	public void setLegionMember(LegionMember legionMember) {
 		this.legionMember = legionMember;
@@ -1057,6 +1053,7 @@ public class Player extends Creature {
 
 	/**
 	 * Membership of this player
+	 * 
 	 * @return
 	 */
 	public byte getMembership() {
@@ -1086,8 +1083,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param rates
-	 *          the rates to set
+	 * @param rates the rates to set
 	 */
 	public void setRates(Rates rates) {
 		this.rates = rates;
@@ -1126,8 +1122,7 @@ public class Player extends Creature {
 		this.flyState = flyState;
 		if (flyState == 1) {
 			setFlyingMode(true);
-		}
-		else if (flyState == 0) {
+		} else if (flyState == 0) {
 			setFlyingMode(false);
 		}
 	}
@@ -1140,8 +1135,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param isTrading
-	 *          the isTrading to set
+	 * @param isTrading the isTrading to set
 	 */
 	public void setTrading(boolean isTrading) {
 		this.isTrading = isTrading;
@@ -1163,8 +1157,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param prisonTimer
-	 *          the prisonTimer to set
+	 * @param prisonTimer the prisonTimer to set
 	 */
 	public void setPrisonTimer(long prisonTimer) {
 		if (prisonTimer < 0) {
@@ -1188,8 +1181,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param start
-	 *          : The time in ms of start prison
+	 * @param start : The time in ms of start prison
 	 */
 	public void setStartPrison(long start) {
 		this.startPrison = start;
@@ -1214,8 +1206,7 @@ public class Player extends Creature {
 	/**
 	 * Sets invul on player
 	 * 
-	 * @param invul
-	 *          - boolean
+	 * @param invul - boolean
 	 **/
 	public void setInvul(boolean invul) {
 		this.invul = invul;
@@ -1237,8 +1228,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param flyController
-	 *          the flyController to set
+	 * @param flyController the flyController to set
 	 */
 	public void setFlyController(FlyController flyController) {
 		this.flyController = flyController;
@@ -1295,8 +1285,7 @@ public class Player extends Creature {
 		this.flyLocationId = path;
 		if (path != null) {
 			this.flyStartTime = System.currentTimeMillis();
-		}
-		else {
+		} else {
 			this.flyStartTime = 0;
 		}
 	}
@@ -1368,10 +1357,12 @@ public class Player extends Creature {
 	public boolean isAggroIconTo(Player player) {
 		if (getAdminEnmity() > 1 || player.getAdminEnmity() > 1) {
 			return true;
-		} if (player.isBandit() || this.isBandit()) {
+		}
+		if (player.isBandit() || this.isBandit()) {
 			return true;
 		}
-		return !player.getRace().equals(getRace()) || player.getBattleground() != null || FFAService.getInstance().isInArena(player) && player.isFFA() || player.isBandit();
+		return !player.getRace().equals(getRace()) || player.getBattleground() != null
+				|| FFAService.getInstance().isInArena(player) && player.isFFA() || player.isBandit();
 	}
 
 	private boolean canPvP(Player enemy) {
@@ -1383,33 +1374,34 @@ public class Player extends Creature {
 				return (this.isInPvPZone() && enemy.isInPvPZone());
 			}
 		} else {
-			if (worldId != 210020000 && //Elten.
-				worldId != 210040000 && //Heiron.
-				worldId != 210060000 && //Theobomos.
-				worldId != 210070000 && //Cygnea.
-				worldId != 210100000 && //Iluma.
-				worldId != 210130000 && //Inggison [Master Server].
-				worldId != 220020000 && //Morheim.
-				worldId != 220040000 && //Beluslan.
-				worldId != 220050000 && //Brusthonin.
-				worldId != 220080000 && //Enshar.
-				worldId != 220110000 && //Norsvold.
-				worldId != 220140000 && //Gelkmaros [Master Server].
-				//\\//\\//\\//\\//\\//
-				worldId != 400010000 && //Reshanta.
-				//\\//Panesterra//\\//
-				worldId != 400020000 && //Belus.
-				worldId != 400040000 && //Aspida.
-				worldId != 400050000 && //Atanatos.
-				worldId != 400060000 && //Disillon.
-				//\\//\\//\\//\\//\\//
-				worldId != 600040000 && //Tiamaranta's Eye.
-				worldId != 600041000 && //Tiamaranta's Eye [Master Server].
-				worldId != 600050000 && //Katalam.
-				worldId != 600090000 && //Kaldor.
-				worldId != 600100000 && //Levinshor.
-				worldId != 600110000) { //Silentera Canyon.
-				return (this.isInsideZoneType(ZoneType.PVP) && enemy.isInsideZoneType(ZoneType.PVP) && !isInSameTeam(enemy));
+			if (worldId != 210020000 && // Elten.
+					worldId != 210040000 && // Heiron.
+					worldId != 210060000 && // Theobomos.
+					worldId != 210070000 && // Cygnea.
+					worldId != 210100000 && // Iluma.
+					worldId != 210130000 && // Inggison [Master Server].
+					worldId != 220020000 && // Morheim.
+					worldId != 220040000 && // Beluslan.
+					worldId != 220050000 && // Brusthonin.
+					worldId != 220080000 && // Enshar.
+					worldId != 220110000 && // Norsvold.
+					worldId != 220140000 && // Gelkmaros [Master Server].
+					// \\//\\//\\//\\//\\//
+					worldId != 400010000 && // Reshanta.
+					// \\//Panesterra//\\//
+					worldId != 400020000 && // Belus.
+					worldId != 400040000 && // Aspida.
+					worldId != 400050000 && // Atanatos.
+					worldId != 400060000 && // Disillon.
+					// \\//\\//\\//\\//\\//
+					worldId != 600040000 && // Tiamaranta's Eye.
+					worldId != 600041000 && // Tiamaranta's Eye [Master Server].
+					worldId != 600050000 && // Katalam.
+					worldId != 600090000 && // Kaldor.
+					worldId != 600100000 && // Levinshor.
+					worldId != 600110000) { // Silentera Canyon.
+				return (this.isInsideZoneType(ZoneType.PVP) && enemy.isInsideZoneType(ZoneType.PVP)
+						&& !isInSameTeam(enemy));
 			}
 		}
 		return false;
@@ -1417,7 +1409,7 @@ public class Player extends Creature {
 
 	private boolean isInDisablePvPZone() {
 		List<ZoneInstance> zones = this.getPosition().getMapRegion().getZones(this);
-		for (ZoneInstance zone: zones) {
+		for (ZoneInstance zone : zones) {
 			if (!zone.isPvpAllowed()) {
 				return true;
 			}
@@ -1427,7 +1419,7 @@ public class Player extends Creature {
 
 	private boolean isInPvPZone() {
 		List<ZoneInstance> zones = this.getPosition().getMapRegion().getZones(this);
-		for (ZoneInstance zone: zones) {
+		for (ZoneInstance zone : zones) {
 			if (!zone.isPvpAllowed()) {
 				return true;
 			}
@@ -1449,9 +1441,12 @@ public class Player extends Creature {
 	public boolean canSee(Creature creature) {
 		if (creature.isInVisualState(CreatureVisualState.BLINKING)) {
 			return true;
-		} if (((creature instanceof Player)) && (isInSameTeam((Player) creature))) {
+		}
+		if (((creature instanceof Player)) && (isInSameTeam((Player) creature))) {
 			return true;
-		} if (((creature instanceof Trap)) && (((Creature) ((Trap) creature).getCreator()).getObjectId() == getObjectId())) {
+		}
+		if (((creature instanceof Trap))
+				&& (((Creature) ((Trap) creature).getCreator()).getObjectId() == getObjectId())) {
 			return true;
 		}
 		return creature.getVisualState() <= getSeeState();
@@ -1468,7 +1463,9 @@ public class Player extends Creature {
 
 	@Override
 	public boolean isAggroFrom(Npc npc) {
-		return (isAggroIconTo(npc) && (npc.getTribe().isGuard() || npc.getObjectTemplate().getAbyssNpcType() != AbyssNpcType.NONE || npc.getLevel() + 1 > getLevel() || (npc.isInInstance() && InstanceService.isAggro(npc.getWorldId()))));
+		return (isAggroIconTo(npc) && (npc.getTribe().isGuard()
+				|| npc.getObjectTemplate().getAbyssNpcType() != AbyssNpcType.NONE || npc.getLevel() + 1 > getLevel()
+				|| (npc.isInInstance() && InstanceService.isAggro(npc.getWorldId()))));
 	}
 
 	/**
@@ -1493,13 +1490,14 @@ public class Player extends Creature {
 		}
 		if (npc.getObjectTemplate().getNpcType().equals(NpcType.PEACE)) {
 			return false;
-        }
+		}
 		if (npc.getObjectTemplate().getNpcType().equals(NpcType.INVULNERABLE)) {
 			return false;
-        }
-		if (npc.getObjectTemplate().getNpcType() == NpcType.NON_ATTACKABLE && (npc.getWorldId() == 310010000 || npc.getWorldId() == 320010000)) {
+		}
+		if (npc.getObjectTemplate().getNpcType() == NpcType.NON_ATTACKABLE
+				&& (npc.getWorldId() == 310010000 || npc.getWorldId() == 320010000)) {
 			return false;
-        }
+		}
 		switch (getTribe()) {
 		case PC:
 			if (race == Race.ASMODIANS || tribe == null || tribe.isDarkGuard()) {
@@ -1544,8 +1542,8 @@ public class Player extends Creature {
 			if (race == Race.TELEPORTER && tribe == TribeClass.GENERAL)
 				return false;
 			// Elyos Shield generators
-			if ((race == Race.CONSTRUCT || race == Race.BARRIER) &&
-					(tribe == TribeClass.GENERAL || tribe == TribeClass.F4GUARD_LIGHT))
+			if ((race == Race.CONSTRUCT || race == Race.BARRIER)
+					&& (tribe == TribeClass.GENERAL || tribe == TribeClass.F4GUARD_LIGHT))
 				return false;
 			break;
 		case ASMODIANS:
@@ -1559,7 +1557,8 @@ public class Player extends Creature {
 			if (race == Race.TELEPORTER && tribe == TribeClass.GENERAL_DARK)
 				return false;
 			// Elyos Shield generators
-			if ((race == Race.CONSTRUCT || race == Race.BARRIER) && (tribe == TribeClass.GENERAL_DARK || tribe == TribeClass.F4GUARD_DARK)) {
+			if ((race == Race.CONSTRUCT || race == Race.BARRIER)
+					&& (tribe == TribeClass.GENERAL_DARK || tribe == TribeClass.F4GUARD_DARK)) {
 				return false;
 			}
 			break;
@@ -1575,8 +1574,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param summon
-	 *          the summon to set
+	 * @param summon the summon to set
 	 */
 	public void setSummon(Summon summon) {
 		this.summon = summon;
@@ -1664,8 +1662,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param isGagged
-	 *          the isGagged to set
+	 * @param isGagged the isGagged to set
 	 */
 	public void setGagged(boolean isGagged) {
 		this.isGagged = isGagged;
@@ -1796,6 +1793,7 @@ public class Player extends Creature {
 	public Protector getProtectorInfo() {
 		return protectorList;
 	}
+
 	public void setProtectorInfo(Protector protector) {
 		protectorList = protector;
 	}
@@ -1803,6 +1801,7 @@ public class Player extends Creature {
 	public Conqueror getConquerorInfo() {
 		return conquerorList;
 	}
+
 	public void setConquerorInfo(Conqueror conqueror) {
 		conquerorList = conqueror;
 	}
@@ -1835,7 +1834,7 @@ public class Player extends Creature {
 
 		if (qs == null) {
 			return false;
-        }
+		}
 		return qs.getStatus() == QuestStatus.COMPLETE;
 	}
 
@@ -1867,29 +1866,29 @@ public class Player extends Creature {
 
 	public void setLastCounterSkill(AttackStatus status) {
 		long time = System.currentTimeMillis();
-		//Dodge
-		if (AttackStatus.getBaseStatus(status) == AttackStatus.DODGE &&
-		    PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.WARRIOR ||
-		    PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.SCOUT ||
-			PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.TECHNIST) {
+		// Dodge
+		if (AttackStatus.getBaseStatus(status) == AttackStatus.DODGE
+				&& PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.WARRIOR
+				|| PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.SCOUT
+				|| PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.TECHNIST) {
 			this.lastCounterSkill.put(AttackStatus.DODGE, time);
 		}
-		//Parry
-		else if (AttackStatus.getBaseStatus(status) == AttackStatus.PARRY &&
-		    PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.WARRIOR ||
-			PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.PRIEST ||
-			PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.TECHNIST) {
+		// Parry
+		else if (AttackStatus.getBaseStatus(status) == AttackStatus.PARRY
+				&& PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.WARRIOR
+				|| PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.PRIEST
+				|| PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.TECHNIST) {
 			this.lastCounterSkill.put(AttackStatus.PARRY, time);
 		}
-		//Block
-		else if (AttackStatus.getBaseStatus(status) == AttackStatus.BLOCK &&
-		    PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.WARRIOR) {
+		// Block
+		else if (AttackStatus.getBaseStatus(status) == AttackStatus.BLOCK
+				&& PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.WARRIOR) {
 			this.lastCounterSkill.put(AttackStatus.BLOCK, time);
 		}
-		//Resist
-		else if (AttackStatus.getBaseStatus(status) == AttackStatus.RESIST &&
-			PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.WARRIOR ||
-			PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.TECHNIST) {
+		// Resist
+		else if (AttackStatus.getBaseStatus(status) == AttackStatus.RESIST
+				&& PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.WARRIOR
+				|| PlayerClass.getStartingClassFor(getPlayerClass()) == PlayerClass.TECHNIST) {
 			this.lastCounterSkill.put(AttackStatus.RESIST, time);
 		}
 	}
@@ -1897,7 +1896,7 @@ public class Player extends Creature {
 	public long getLastCounterSkill(AttackStatus status) {
 		if (this.lastCounterSkill.get(status) == null) {
 			return 0;
-        }
+		}
 		return this.lastCounterSkill.get(status);
 	}
 
@@ -1907,7 +1906,6 @@ public class Player extends Creature {
 	public int getDualEffectValue() {
 		return dualEffectValue;
 	}
-
 
 	/**
 	 * @param dualEffectValue the dualEffectValue to set
@@ -1924,16 +1922,14 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param the
-	 *          Resurrection Positional State to set
+	 * @param the Resurrection Positional State to set
 	 */
 	public void setResPosState(boolean value) {
 		this.isInResurrectPosState = value;
 	}
 
 	/**
-	 * @param the
-	 *          Resurrection Positional X value to set
+	 * @param the Resurrection Positional X value to set
 	 */
 	public void setResPosX(float value) {
 		this.resPosX = value;
@@ -1947,8 +1943,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param the
-	 *          Resurrection Positional Y value to set
+	 * @param the Resurrection Positional Y value to set
 	 */
 	public void setResPosY(float value) {
 		this.resPosY = value;
@@ -1962,8 +1957,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param the
-	 *          Resurrection Positional Z value to set
+	 * @param the Resurrection Positional Z value to set
 	 */
 	public void setResPosZ(float value) {
 		this.resPosZ = value;
@@ -1979,13 +1973,13 @@ public class Player extends Creature {
 	public boolean isInSiegeWorld() {
 		switch (getWorldId()) {
 		case 400010000:
-		case 400020000: //4.7
-		case 400040000: //4.7
-		case 400050000: //4.7
-		case 400060000: //4.7
-		case 600090000: //4.7
-		case 210100000: //5.8
-		case 220110000: //5.8
+		case 400020000: // 4.7
+		case 400040000: // 4.7
+		case 400050000: // 4.7
+		case 400060000: // 4.7
+		case 600090000: // 4.7
+		case 210100000: // 5.8
+		case 220110000: // 5.8
 			return true;
 		}
 		return false;
@@ -1999,8 +1993,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param the
-	 *          status of NoFpConsum Effect
+	 * @param the status of NoFpConsum Effect
 	 */
 	public void setUnderNoFPConsum(boolean value) {
 		this.underNoFPConsum = value;
@@ -2043,8 +2036,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param emotions
-	 *          The emotions to set.
+	 * @param emotions The emotions to set.
 	 */
 	public void setEmotions(EmotionList emotions) {
 		this.emotions = emotions;
@@ -2136,8 +2128,7 @@ public class Player extends Creature {
 	public byte isPlayer() {
 		if (this.isGM()) {
 			return 2;
-		}
-		else {
+		} else {
 			return 1;
 		}
 	}
@@ -2150,8 +2141,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param motions
-	 *          the motions to set
+	 * @param motions the motions to set
 	 */
 	public void setMotions(MotionList motions) {
 		this.motions = motions;
@@ -2173,8 +2163,7 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param npcFactions
-	 *          the npcFactions to set
+	 * @param npcFactions the npcFactions to set
 	 */
 	public void setNpcFactions(NpcFactions npcFactions) {
 		this.npcFactions = npcFactions;
@@ -2188,16 +2177,14 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * @param flyReuseTime
-	 *          the flyReuseTime to set
+	 * @param flyReuseTime the flyReuseTime to set
 	 */
 	public void setFlyReuseTime(long flyReuseTime) {
 		this.flyReuseTime = flyReuseTime;
 	}
 
 	/**
-	 * @param the
-	 *          flying mode flag to set
+	 * @param the flying mode flag to set
 	 */
 	public void setFlyingMode(boolean value) {
 		this.isFlying = value;
@@ -2211,7 +2198,8 @@ public class Player extends Creature {
 	}
 
 	/**
-	 * Stone Use Order determined by highest inventory slot. :( If player has two types, wrong one might be used.
+	 * Stone Use Order determined by highest inventory slot. :( If player has two
+	 * types, wrong one might be used.
 	 * 
 	 * @param player
 	 * @return selfRezItem
@@ -2222,11 +2210,13 @@ public class Player extends Creature {
 		item = getReviveStone(161001004);
 		item = getReviveStone(161001005);
 		if (item == null) {
-			item = getReviveStone(161000003); //Reviving Elemental Stone.
-		} if (item == null) {
-			item = getReviveStone(161000004); //Tombstone Of Revival.
-		} if (item == null) {
-			item = getReviveStone(161000005); //Reviving Elemental Stone.
+			item = getReviveStone(161000003); // Reviving Elemental Stone.
+		}
+		if (item == null) {
+			item = getReviveStone(161000004); // Tombstone Of Revival.
+		}
+		if (item == null) {
+			item = getReviveStone(161000005); // Reviving Elemental Stone.
 		}
 		return item;
 	}
@@ -2347,7 +2337,7 @@ public class Player extends Creature {
 
 	public void setVar(String key, Object value, boolean sql) {
 		vars.put(key, value);
-		if(sql) {
+		if (sql) {
 			daoVars.set(this.getObjectId(), key, value);
 		}
 	}
@@ -2358,7 +2348,7 @@ public class Player extends Creature {
 
 	public int getVarInt(String key) {
 		Object o = this.vars.get(key);
-		if(o != null) {
+		if (o != null) {
 			return Integer.parseInt(o.toString());
 		}
 		return 0;
@@ -2366,7 +2356,7 @@ public class Player extends Creature {
 
 	public String getVarStr(String key) {
 		Object o = this.vars.get(key);
-		if(o != null) {
+		if (o != null) {
 			return o.toString();
 		}
 		return null;
@@ -2397,8 +2387,7 @@ public class Player extends Creature {
 	public void setLastMessageTime() {
 		if ((System.currentTimeMillis() - lastMsgTime) / 1000 < SecurityConfig.FLOOD_DELAY) {
 			floodMsgCount++;
-		}
-		else {
+		} else {
 			floodMsgCount = 0;
 		}
 		lastMsgTime = System.currentTimeMillis();
@@ -2461,7 +2450,8 @@ public class Player extends Creature {
 		ChainCondition cond = template.getChainCondition();
 		if (cond != null && cond.getSelfCount() > 0) {
 			int chainCount = getChainSkills().getChainCount(this, template, cond.getCategory());
-			if (chainCount > 0 && chainCount < cond.getSelfCount() && getChainSkills().chainSkillEnabled(cond.getCategory(), cond.getTime())) {
+			if (chainCount > 0 && chainCount < cond.getSelfCount()
+					&& getChainSkills().chainSkillEnabled(cond.getCategory(), cond.getTime())) {
 				return false;
 			}
 		}
@@ -2603,7 +2593,8 @@ public class Player extends Creature {
 		String accountTag = "%s";
 		if (accountName.equalsIgnoreCase("Aion")) {
 			accountTag = MembershipConfig.PLAYER_TAG_30;
-		} if (accountName.equalsIgnoreCase("5.8")) {
+		}
+		if (accountName.equalsIgnoreCase("5.8")) {
 			accountTag = MembershipConfig.PLAYER_TAG_34;
 		}
 		return accountTag;
@@ -2661,7 +2652,7 @@ public class Player extends Creature {
 		abyssId = id;
 	}
 
-	public boolean isUseRobot(){
+	public boolean isUseRobot() {
 		return robot;
 	}
 
@@ -2772,11 +2763,11 @@ public class Player extends Creature {
 	public void setCP(PlayerCPList cp) {
 		this.cp = cp;
 	}
-	
+
 	public PlayerABList getAtreianBestiary() {
 		return ab;
 	}
-	
+
 	public void setAtreianBestiary(PlayerABList ab) {
 		this.ab = ab;
 	}
@@ -2784,7 +2775,7 @@ public class Player extends Creature {
 	public PlayerEventWindowList getEventWindow() {
 		return ew;
 	}
-	
+
 	public void setEventWindow(PlayerEventWindowList ew) {
 		this.ew = ew;
 	}
@@ -2903,36 +2894,47 @@ public class Player extends Creature {
 	public int getCPSlot1() {
 		return cp_slot1;
 	}
+
 	public void setCPSlot1(int point) {
 		this.cp_slot1 = point;
 	}
+
 	public int getCPSlot2() {
 		return cp_slot2;
 	}
+
 	public void setCPSlot2(int point) {
 		this.cp_slot2 = point;
 	}
+
 	public int getCPSlot3() {
 		return cp_slot3;
 	}
+
 	public void setCPSlot3(int point) {
 		this.cp_slot3 = point;
 	}
+
 	public int getCPSlot4() {
 		return cp_slot4;
 	}
+
 	public void setCPSlot4(int point) {
 		this.cp_slot4 = point;
 	}
+
 	public int getCPSlot5() {
 		return cp_slot5;
 	}
+
 	public void setCPSlot5(int point) {
 		this.cp_slot5 = point;
 	}
+
 	public int getCPSlot6() {
 		return cp_slot6;
 	}
+
 	public void setCPSlot6(int point) {
 		this.cp_slot6 = point;
 	}
@@ -2984,7 +2986,8 @@ public class Player extends Creature {
 	}
 
 	public void setLunaAccount(long luna) {
-		if (LoginServer.getInstance().sendPacket(new SM_ACCOUNT_TOLL_INFO(this.getClientConnection().getAccount().getToll(), luna, this.getAcountName()))) {
+		if (LoginServer.getInstance().sendPacket(new SM_ACCOUNT_TOLL_INFO(
+				this.getClientConnection().getAccount().getToll(), luna, this.getAcountName()))) {
 			this.getClientConnection().getAccount().setLuna(luna);
 		} else {
 			PacketSendUtility.sendMessage(this, "ls communication error.");
@@ -3006,7 +3009,8 @@ public class Player extends Creature {
 	public void addItemMaxCountOfDay(int itemId, int thisCount) {
 		if (maxCountEvent == null) {
 			maxCountEvent = new FastMap<Integer, MaxCountOfDay>().shared();
-		} if (maxCountEvent.get(itemId) != null) {
+		}
+		if (maxCountEvent.get(itemId) != null) {
 			maxCountEvent.get(itemId).setThisCount(thisCount);
 		} else {
 			maxCountEvent.put(itemId, new MaxCountOfDay(thisCount));
@@ -3039,9 +3043,9 @@ public class Player extends Creature {
 	}
 
 	/**************
-	* PVP System *
-	**************/
-	public boolean isBandit(){
+	 * PVP System *
+	 **************/
+	public boolean isBandit() {
 		return this.bandit;
 	}
 
@@ -3050,7 +3054,8 @@ public class Player extends Creature {
 		if (bandit) {
 			if (isInGroup2()) {
 				PlayerGroupService.removePlayer(this);
-			} if (isInAlliance2()) {
+			}
+			if (isInAlliance2()) {
 				PlayerAllianceService.removePlayer(this);
 			}
 		}
@@ -3083,9 +3088,11 @@ public class Player extends Creature {
 	public WorldPosition getPrevPos() {
 		if (getPosition() == null || !getPosition().isSpawned()) {
 			return null;
-		} if (prevPos == null || prevPos.getMapId() != getPosition().getMapId()) {
+		}
+		if (prevPos == null || prevPos.getMapId() != getPosition().getMapId()) {
 			prevPos = new WorldPosition(getPosition().getMapId());
-			prevPos.setXYZH(getPosition().getX(), getPosition().getY(), getPosition().getZ(), getPosition().getHeading());
+			prevPos.setXYZH(getPosition().getX(), getPosition().getY(), getPosition().getZ(),
+					getPosition().getHeading());
 		}
 		return prevPos;
 	}
@@ -3131,7 +3138,8 @@ public class Player extends Creature {
 		if (lawless) {
 			if (isInGroup2()) {
 				PlayerGroupService.removePlayer(this);
-			} if (isInAlliance2()) {
+			}
+			if (isInAlliance2()) {
 				PlayerAllianceService.removePlayer(this);
 			}
 		}
@@ -3156,11 +3164,11 @@ public class Player extends Creature {
 	public void sendMessage(String string) {
 		PacketSendUtility.sendMessage(this, string);
 	}
-	
+
 	public void setFloor(int floor) {
 		getCommonData().setFloor(floor);
 	}
-	
+
 	public int getFloor() {
 		return getCommonData().getFloor();
 	}
@@ -3168,28 +3176,28 @@ public class Player extends Creature {
 	public void setHOTCoupleId(int id) {
 		hallOfTenacityCoupleId = id;
 	}
-	
+
 	public int getHOTCoupleId() {
 		return hallOfTenacityCoupleId;
 	}
-	
+
 	public void setHOTVSId(int id) {
 		hallOfTenacityVSId = id;
 	}
-	
+
 	public int getHOTVSId() {
 		return hallOfTenacityVSId;
 	}
-	
+
 	public void setHOTMyOpponentObjId(int id) {
 		hallOfTenacityOpponentId = id;
 	}
-	
+
 	public int getHOTMyOpponentObjId() {
 		return hallOfTenacityOpponentId;
 	}
 
-	//competiton event part
+	// competiton event part
 	private GoldArenaRank arenaGoldrank;
 	private TowerOfChallengeRank towerRank;
 	private Arena6V6Ranking arena6v6Rank;
@@ -3198,6 +3206,7 @@ public class Player extends Creature {
 	public GoldArenaRank getArenaGoldRank() {
 		return arenaGoldrank;
 	}
+
 	public void setArenaGoldRank(GoldArenaRank gar) {
 		this.arenaGoldrank = gar;
 	}
@@ -3205,6 +3214,7 @@ public class Player extends Creature {
 	public TowerOfChallengeRank getTowerRank() {
 		return towerRank;
 	}
+
 	public void setTowerRank(TowerOfChallengeRank tr) {
 		this.towerRank = tr;
 	}
@@ -3212,6 +3222,7 @@ public class Player extends Creature {
 	public Arena6V6Ranking get6v6Rank() {
 		return arena6v6Rank;
 	}
+
 	public void set6v6Rank(Arena6V6Ranking ar) {
 		this.arena6v6Rank = ar;
 	}
@@ -3219,6 +3230,7 @@ public class Player extends Creature {
 	public ArenaOfTenacityRank getTenacityRank() {
 		return tenacityRank;
 	}
+
 	public void setTenacityRank(ArenaOfTenacityRank tr) {
 		this.tenacityRank = tr;
 	}
@@ -3364,12 +3376,15 @@ public class Player extends Creature {
 	public long getThievesTimer() {
 		return 0;
 	}
+
 	public ThievesStatusList getThieves() {
 		return null;
 	}
+
 	public void setStopThieves(long l) {
 
 	}
+
 	public void setThievesTimer(int delay) {
 
 	}
@@ -3377,13 +3392,18 @@ public class Player extends Creature {
 	public int getMinionSkillPoints() {
 		return this.getCommonData().getMinionSkillPoints();
 	}
-	
+
 	public void setMinionSkillPoints(int minionSkillPoints) {
 		this.getCommonData().setMinionSkillPoints(minionSkillPoints);
 	}
 
 	public boolean isMagicalTypeClass() {
-		if (playerCommonData.getPlayerClass() == PlayerClass.MUSE || playerCommonData.getPlayerClass() == PlayerClass.SONGWEAVER || playerCommonData.getPlayerClass() == PlayerClass.CLERIC || playerCommonData.getPlayerClass() == PlayerClass.SORCERER || playerCommonData.getPlayerClass() == PlayerClass.SPIRIT_MASTER || playerCommonData.getPlayerClass() == PlayerClass.AETHERTECH) {
+		if (playerCommonData.getPlayerClass() == PlayerClass.MUSE
+				|| playerCommonData.getPlayerClass() == PlayerClass.SONGWEAVER
+				|| playerCommonData.getPlayerClass() == PlayerClass.CLERIC
+				|| playerCommonData.getPlayerClass() == PlayerClass.SORCERER
+				|| playerCommonData.getPlayerClass() == PlayerClass.SPIRIT_MASTER
+				|| playerCommonData.getPlayerClass() == PlayerClass.AETHERTECH) {
 			return true;
 		}
 		return false;

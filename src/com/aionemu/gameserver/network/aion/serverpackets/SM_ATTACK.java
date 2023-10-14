@@ -24,8 +24,7 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_ATTACK extends AionServerPacket
-{
+public class SM_ATTACK extends AionServerPacket {
 	private int attackno;
 	private int time;
 	private int type;
@@ -33,8 +32,9 @@ public class SM_ATTACK extends AionServerPacket
 	private List<AttackResult> attackList;
 	private Creature attacker;
 	private Creature target;
-	
-	public SM_ATTACK(Creature attacker, Creature target, int attackno, int time, int type, List<AttackResult> attackList) {
+
+	public SM_ATTACK(Creature attacker, Creature target, int attackno, int time, int type,
+			List<AttackResult> attackList) {
 		this.attacker = attacker;
 		this.target = target;
 		this.attackno = attackno;
@@ -43,7 +43,7 @@ public class SM_ATTACK extends AionServerPacket
 		this.attackList = attackList;
 		this.SimpleAttackType = attacker.getController().getSimpleAttackType();
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeD(attacker.getObjectId());
@@ -61,40 +61,41 @@ public class SM_ATTACK extends AionServerPacket
 		writeC((int) (100f * attackerCurrHp / attackerMaxHp)); // attacker %hp
 
 		switch (attackList.get(0).getAttackStatus().getId()) { // Counter skills
-			case 196: // case CRITICAL_BLOCK 4.5
-			case 4: // case BLOCK
-            case 5:
-            case 213:
-				writeH(32);
+		case 196: // case CRITICAL_BLOCK 4.5
+		case 4: // case BLOCK
+		case 5:
+		case 213:
+			writeH(32);
 			break;
-			case 194: // case CRITICAL_PARRY 4.5
-			case 2: // case PARRY
-            case 3:
-            case 211:
-				writeH(64);
+		case 194: // case CRITICAL_PARRY 4.5
+		case 2: // case PARRY
+		case 3:
+		case 211:
+			writeH(64);
 			break;
-			case 192: // case CRITICAL_DODGE 4.5
-			case 0: // case DODGE
-            case 1:
-            case 209:
-				writeH(128);
+		case 192: // case CRITICAL_DODGE 4.5
+		case 0: // case DODGE
+		case 1:
+		case 209:
+			writeH(128);
 			break;
-			case 198: // case CRITICAL_RESIST 4.5
-			case 6: // case RESIST
-            case 7:
-            case 215:
-				writeH(256); // need more info becuz sometimes 0
+		case 198: // case CRITICAL_RESIST 4.5
+		case 6: // case RESIST
+		case 7:
+		case 215:
+			writeH(256); // need more info becuz sometimes 0
 			break;
-			default:
-				writeH(0);
-				break;
+		default:
+			writeH(0);
+			break;
 		}
-		// setting counter skill from packet to have the best synchronization of time with client
+		// setting counter skill from packet to have the best synchronization of time
+		// with client
 		if (target instanceof Player) {
-            if (attackList.get(0).getAttackStatus().isCounterSkill()) {
-                ((Player) target).setLastCounterSkill(attackList.get(0).getAttackStatus());
-            }
-        }
+			if (attackList.get(0).getAttackStatus().isCounterSkill()) {
+				((Player) target).setLastCounterSkill(attackList.get(0).getAttackStatus());
+			}
+		}
 		writeH(0);
 		writeC(attackList.size());
 		for (AttackResult attack : attackList) {
@@ -104,27 +105,28 @@ public class SM_ATTACK extends AionServerPacket
 			writeC(shieldType);
 
 			/**
-			 * shield Type: 1: reflector 2: normal shield 8: protect effect (ex. skillId: 417 Bodyguard) TODO find out 4
+			 * shield Type: 1: reflector 2: normal shield 8: protect effect (ex. skillId:
+			 * 417 Bodyguard) TODO find out 4
 			 */
 			switch (shieldType) {
-				case 0:
-				case 2:
+			case 0:
+			case 2:
 				break;
-				case 8:
-				case 10:
-				    writeD(attack.getShieldMp());
-					writeD(attack.getProtectorId());
-					writeD(attack.getProtectedDamage());
-					writeD(attack.getProtectedSkillId());
+			case 8:
+			case 10:
+				writeD(attack.getShieldMp());
+				writeD(attack.getProtectorId());
+				writeD(attack.getProtectedDamage());
+				writeD(attack.getProtectedSkillId());
 				break;
-				default:
-					writeD(attack.getProtectorId());
-					writeD(attack.getProtectedDamage());
-					writeD(attack.getProtectedSkillId());
-					writeD(attack.getReflectedDamage()); 
-					writeD(attack.getReflectedSkillId());
-					writeD(0);
-					writeD(0);
+			default:
+				writeD(attack.getProtectorId());
+				writeD(attack.getProtectedDamage());
+				writeD(attack.getProtectedSkillId());
+				writeD(attack.getReflectedDamage());
+				writeD(attack.getReflectedSkillId());
+				writeD(0);
+				writeD(0);
 				break;
 			}
 		}

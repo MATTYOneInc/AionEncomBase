@@ -31,42 +31,42 @@ import com.aionemu.gameserver.services.item.ItemService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ExtractExpAction")
-public class ExtractExpAction extends AbstractItemAction
-{
+public class ExtractExpAction extends AbstractItemAction {
 	@XmlAttribute(name = "expextractionrate")
-    protected Integer expextractionrate;
-	
+	protected Integer expextractionrate;
+
 	@XmlAttribute(name = "reward")
-    protected Integer reward;
-    
-    public ExtractExpAction() {
-    }
-	
-    public ExtractExpAction(Integer expextractionrate) {
-        this.expextractionrate = expextractionrate;
-    }
-	
-    public Integer getRate() {
-        return expextractionrate;
-    }
-	
-    public void setRate(Integer expextractionrate) {
-        this.expextractionrate = expextractionrate;
-    }
-    
-    public Integer getReward() {
-        return reward;
-    }
-	
-    public void setReward(Integer reward) {
-        this.reward = reward;
-    }
-	
+	protected Integer reward;
+
+	public ExtractExpAction() {
+	}
+
+	public ExtractExpAction(Integer expextractionrate) {
+		this.expextractionrate = expextractionrate;
+	}
+
+	public Integer getRate() {
+		return expextractionrate;
+	}
+
+	public void setRate(Integer expextractionrate) {
+		this.expextractionrate = expextractionrate;
+	}
+
+	public Integer getReward() {
+		return reward;
+	}
+
+	public void setReward(Integer reward) {
+		this.reward = reward;
+	}
+
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		if (parentItem == null) {
@@ -75,13 +75,15 @@ public class ExtractExpAction extends AbstractItemAction
 		}
 		return true;
 	}
-	
-    @Override
+
+	@Override
 	public void act(final Player player, final Item parentItem, final Item targetItem) {
 		ItemTemplate itemTemplate = parentItem.getItemTemplate();
 		ItemService.addItem(player, getReward(), 1);
-		player.getCommonData().addExp((long) - ((player.getCommonData().getExpNeed() * getRate()) / 100f), RewardType.HUNTING);
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
+		player.getCommonData().addExp((long) -((player.getCommonData().getExpNeed() * getRate()) / 100f),
+				RewardType.HUNTING);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+				parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
 		player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1);
-    }
+	}
 }

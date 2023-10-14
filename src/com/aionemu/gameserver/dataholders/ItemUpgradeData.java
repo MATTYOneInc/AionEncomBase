@@ -37,20 +37,19 @@ import javolution.util.FastMap;
 /**
  * @author Ranastic (Encom)
  */
- 
+
 @XmlRootElement(name = "item_upgrades")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ItemUpgradeData
-{
+public class ItemUpgradeData {
 	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(GameServer.class);
-	
+
 	@XmlElement(name = "item_upgrade")
 	protected List<ItemUpgradeTemplate> itemUpgradeTemplates;
-	
+
 	private TIntObjectHashMap<ItemUpgradeTemplate> itemUpgradeSets;
 	private FastMap<Integer, FastMap<Integer, UpgradeResultItem>> upgradeResultItemMap;
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		itemUpgradeSets = new TIntObjectHashMap<ItemUpgradeTemplate>();
 		upgradeResultItemMap = new FastMap<Integer, FastMap<Integer, UpgradeResultItem>>();
@@ -65,11 +64,11 @@ public class ItemUpgradeData
 		}
 		itemUpgradeTemplates = null;
 	}
-	
+
 	public ItemUpgradeTemplate getItemUpgradeTemplate(int itemSetId) {
 		return itemUpgradeSets.get(itemSetId);
 	}
-	
+
 	public FastMap<Integer, UpgradeResultItem> getResultItemMap(int baseItemId) {
 		if (upgradeResultItemMap.containsKey(baseItemId)) {
 			if (!upgradeResultItemMap.get(baseItemId).isEmpty()) {
@@ -81,7 +80,7 @@ public class ItemUpgradeData
 			return null;
 		}
 	}
-	
+
 	public int size() {
 		return itemUpgradeSets.size();
 	}

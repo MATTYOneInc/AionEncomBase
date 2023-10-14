@@ -21,19 +21,19 @@ package com.aionemu.gameserver.model.shugo_sweep;
  */
 public class SweepEntry {
 
-    private int id;
-    private boolean isReward;
+	private int id;
+	private boolean isReward;
 
-    public SweepEntry(int id, boolean isReward) {
-        this.id = id;
-        this.isReward = isReward;
-    }
+	public SweepEntry(int id, boolean isReward) {
+		this.id = id;
+		this.isReward = isReward;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public boolean isReward() {
-        return isReward;
-    }
+	public boolean isReward() {
+		return isReward;
+	}
 }

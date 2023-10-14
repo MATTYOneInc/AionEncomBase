@@ -62,7 +62,8 @@ public class LifeStatsRestoreService {
 	 * @return
 	 */
 	public Future<?> scheduleFpReduceTask(final PlayerLifeStats lifeStats, Integer costFp) {
-		return ThreadPoolManager.getInstance().scheduleAtFixedRate(new FpReduceTask(lifeStats, costFp), 2000, DEFAULT_FPREDUCE_DELAY);
+		return ThreadPoolManager.getInstance().scheduleAtFixedRate(new FpReduceTask(lifeStats, costFp), 2000,
+				DEFAULT_FPREDUCE_DELAY);
 	}
 
 	/**
@@ -70,7 +71,8 @@ public class LifeStatsRestoreService {
 	 * @return
 	 */
 	public Future<?> scheduleFpRestoreTask(PlayerLifeStats lifeStats) {
-		return ThreadPoolManager.getInstance().scheduleAtFixedRate(new FpRestoreTask(lifeStats), 2000, DEFAULT_FPRESTORE_DELAY);
+		return ThreadPoolManager.getInstance().scheduleAtFixedRate(new FpRestoreTask(lifeStats), 2000,
+				DEFAULT_FPRESTORE_DELAY);
 	}
 
 	public static LifeStatsRestoreService getInstance() {
@@ -88,11 +90,11 @@ public class LifeStatsRestoreService {
 		@Override
 		public void run() {
 			boolean inWorld = World.getInstance().isInWorld(lifeStats.getOwner());
-			if (!inWorld || lifeStats.isAlreadyDead() || lifeStats.isFullyRestoredHp() || lifeStats.getOwner().getAi2().getState().equals(AIState.FIGHT)) {
+			if (!inWorld || lifeStats.isAlreadyDead() || lifeStats.isFullyRestoredHp()
+					|| lifeStats.getOwner().getAi2().getState().equals(AIState.FIGHT)) {
 				lifeStats.cancelRestoreTask();
 				lifeStats = null;
-			}
-			else {
+			} else {
 				lifeStats.restoreHp();
 			}
 		}
@@ -112,8 +114,7 @@ public class LifeStatsRestoreService {
 			if (!inWorld || lifeStats.isAlreadyDead() || lifeStats.isFullyRestoredHpMp()) {
 				lifeStats.cancelRestoreTask();
 				lifeStats = null;
-			}
-			else {
+			} else {
 				lifeStats.restoreHp();
 				lifeStats.restoreMp();
 			}
@@ -124,7 +125,7 @@ public class LifeStatsRestoreService {
 
 		private PlayerLifeStats lifeStats;
 		private Integer costFp;
-		
+
 		private FpReduceTask(PlayerLifeStats lifeStats, final Integer costFp) {
 			this.lifeStats = lifeStats;
 			this.costFp = costFp;
@@ -133,7 +134,7 @@ public class LifeStatsRestoreService {
 		@Override
 		public void run() {
 			boolean inWorld = World.getInstance().isInWorld(lifeStats.getOwner());
-			if (!inWorld || lifeStats.isAlreadyDead()){
+			if (!inWorld || lifeStats.isAlreadyDead()) {
 				lifeStats.cancelFpReduce();
 				lifeStats = null;
 				return;
@@ -142,13 +143,12 @@ public class LifeStatsRestoreService {
 			if (lifeStats.getCurrentFp() == 0) {
 				if (lifeStats.getOwner().getFlyState() > 0) {
 					lifeStats.getOwner().getFlyController().endFly(true);
-				}
-				else {
+				} else {
 					lifeStats.triggerFpRestore();
 				}
-			}
-			else {
-				int reduceFp = lifeStats.getOwner().getFlyState() == 2 && lifeStats.getOwner().isInsideZoneType(ZoneType.FLY) ? 1 : 2;
+			} else {
+				int reduceFp = lifeStats.getOwner().getFlyState() == 2
+						&& lifeStats.getOwner().isInsideZoneType(ZoneType.FLY) ? 1 : 2;
 				if (costFp != null) {
 					reduceFp = costFp.intValue();
 				}
@@ -172,8 +172,7 @@ public class LifeStatsRestoreService {
 			if (lifeStats.isAlreadyDead() || lifeStats.isFlyTimeFullyRestored()) {
 				lifeStats.cancelFpRestore();
 				lifeStats = null;
-			}
-			else {
+			} else {
 				lifeStats.restoreFp();
 			}
 		}

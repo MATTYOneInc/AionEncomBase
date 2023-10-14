@@ -28,23 +28,22 @@ import com.aionemu.gameserver.questEngine.handlers.template.ReportTo;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ReportToData")
-public class ReportToData extends XMLQuest
-{
+public class ReportToData extends XMLQuest {
 	@XmlAttribute(name = "start_npc_ids")
 	protected List<Integer> startNpcIds;
-	
+
 	@XmlAttribute(name = "end_npc_ids")
 	protected List<Integer> endNpcIds;
-	
+
 	@XmlAttribute(name = "start_dialog_id")
-    protected int startDialogId;
-	
-    @XmlAttribute(name = "start_dialog_id2")
-    protected int startDialogId2;
-	
+	protected int startDialogId;
+
+	@XmlAttribute(name = "start_dialog_id2")
+	protected int startDialogId2;
+
 	@XmlAttribute(name = "item_id", required = true)
 	protected int itemId;
-	
+
 	@Override
 	public void register(QuestEngine questEngine) {
 		ReportTo template = new ReportTo(id, startNpcIds, endNpcIds, startDialogId, startDialogId2, itemId);

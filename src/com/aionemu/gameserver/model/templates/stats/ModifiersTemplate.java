@@ -34,16 +34,16 @@ import com.aionemu.gameserver.model.stats.calc.functions.StatFunction;
 @XmlRootElement(name = "modifiers")
 public class ModifiersTemplate {
 
-	@XmlElements({ 
-		@XmlElement(name = "sub", type = com.aionemu.gameserver.model.stats.calc.functions.StatSubFunction.class),
-		@XmlElement(name = "add", type = com.aionemu.gameserver.model.stats.calc.functions.StatAddFunction.class),
-		@XmlElement(name = "rate", type = com.aionemu.gameserver.model.stats.calc.functions.StatRateFunction.class),
-		@XmlElement(name = "set", type = com.aionemu.gameserver.model.stats.calc.functions.StatSetFunction.class) })
+	@XmlElements({
+			@XmlElement(name = "sub", type = com.aionemu.gameserver.model.stats.calc.functions.StatSubFunction.class),
+			@XmlElement(name = "add", type = com.aionemu.gameserver.model.stats.calc.functions.StatAddFunction.class),
+			@XmlElement(name = "rate", type = com.aionemu.gameserver.model.stats.calc.functions.StatRateFunction.class),
+			@XmlElement(name = "set", type = com.aionemu.gameserver.model.stats.calc.functions.StatSetFunction.class) })
 	private List<StatFunction> modifiers;
 
 	@XmlAttribute
 	private float chance = 100;
-	
+
 	@XmlAttribute
 	private int level;
 
@@ -54,7 +54,7 @@ public class ModifiersTemplate {
 	public float getChance() {
 		return chance;
 	}
-	
+
 	public float getLevel() {
 		return level;
 	}

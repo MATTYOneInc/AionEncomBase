@@ -17,49 +17,49 @@
 package com.aionemu.gameserver.model.instance.instancereward;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @SuppressWarnings("rawtypes")
-public class DarkPoetaReward extends InstanceReward
-{
+public class DarkPoetaReward extends InstanceReward {
 	private int points;
 	private int rank = 7;
 	private int npcKills;
 	private int gatherCollections;
-	
+
 	public DarkPoetaReward(Integer mapId, int instanceId) {
 		super(mapId, instanceId);
 	}
-	
+
 	public void addPoints(int points) {
 		this.points += points;
 	}
-	
+
 	public int getPoints() {
 		return points;
 	}
-	
+
 	public void addNpcKill() {
 		npcKills++;
 	}
-	
+
 	public int getNpcKills() {
 		return npcKills;
 	}
-	
+
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
-	
+
 	public int getRank() {
 		return rank;
 	}
-	
+
 	public void addGatherCollection() {
 		gatherCollections++;
 	}
-	
+
 	public int getGatherCollections() {
 		return gatherCollections;
 	}

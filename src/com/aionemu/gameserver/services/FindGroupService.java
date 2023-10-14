@@ -68,88 +68,89 @@ public class FindGroupService {
 		AionObject object = null;
 		if (player.isInTeam()) {
 			object = player.getCurrentTeam();
-		}
-		else {
+		} else {
 			object = player;
 		}
 
 		FindGroup findGroup = new FindGroup(object, message, groupType);
 		int objectId = object.getObjectId();
 		switch (player.getRace()) {
-			case ELYOS:
-				switch (action) {
-					case 0x02:
-						elyosRecruitFindGroups.put(objectId, findGroup);
-						PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400392));
-						break;
-					case 0x06:
-						elyosApplyFindGroups.put(objectId, findGroup);
-						PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400393));
-						break;
-				}
+		case ELYOS:
+			switch (action) {
+			case 0x02:
+				elyosRecruitFindGroups.put(objectId, findGroup);
+				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400392));
 				break;
-			case ASMODIANS:
-				switch (action) {
-					case 0x02:
-						asmodianRecruitFindGroups.put(objectId, findGroup);
-						PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400392));
-						break;
-					case 0x06:
-						asmodianApplyFindGroups.put(objectId, findGroup);
-						PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400393));
-						break;
-				}
+			case 0x06:
+				elyosApplyFindGroups.put(objectId, findGroup);
+				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400393));
 				break;
+			}
+			break;
+		case ASMODIANS:
+			switch (action) {
+			case 0x02:
+				asmodianRecruitFindGroups.put(objectId, findGroup);
+				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400392));
+				break;
+			case 0x06:
+				asmodianApplyFindGroups.put(objectId, findGroup);
+				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400393));
+				break;
+			}
+			break;
 		}
 
 		Collection<FindGroup> findGroupList = new ArrayList<FindGroup>();
 		findGroupList.add(findGroup);
 
-		PacketSendUtility.sendPacket(player, new SM_FIND_GROUP(action, ((int) (System.currentTimeMillis() / 1000)), findGroupList));
+		PacketSendUtility.sendPacket(player,
+				new SM_FIND_GROUP(action, ((int) (System.currentTimeMillis() / 1000)), findGroupList));
 	}
 
 	public void updateFindGroupList(Player player, String message, int objectId) {
 		FindGroup findGroup = null;
 
 		switch (player.getRace()) {
-			case ELYOS:
-				findGroup = elyosRecruitFindGroups.get(objectId);
-				findGroup.setMessage(message);
-				break;
-			case ASMODIANS:
-				findGroup = asmodianRecruitFindGroups.get(objectId);
-				findGroup.setMessage(message);
-				break;
+		case ELYOS:
+			findGroup = elyosRecruitFindGroups.get(objectId);
+			findGroup.setMessage(message);
+			break;
+		case ASMODIANS:
+			findGroup = asmodianRecruitFindGroups.get(objectId);
+			findGroup.setMessage(message);
+			break;
 		}
 	}
 
 	public Collection<FindGroup> getFindGroups(Race race, int action) {
 		switch (race) {
-			case ELYOS:
-				switch (action) {
-					case 0x00:
-						return elyosRecruitFindGroups.values();
-					case 0x04:
-						return elyosApplyFindGroups.values();
-					case 0xA:
-						return Collections.EMPTY_LIST;
-				}
-				break;
-			case ASMODIANS:
-				switch (action) {
-					case 0x00:
-						return asmodianRecruitFindGroups.values();
-					case 0x04:
-						return asmodianApplyFindGroups.values();
-					case 0xA:
-						return Collections.EMPTY_LIST;
-				}
-				break;
+		case ELYOS:
+			switch (action) {
+			case 0x00:
+				return elyosRecruitFindGroups.values();
+			case 0x04:
+				return elyosApplyFindGroups.values();
+			case 0xA:
+				return Collections.EMPTY_LIST;
+			}
+			break;
+		case ASMODIANS:
+			switch (action) {
+			case 0x00:
+				return asmodianRecruitFindGroups.values();
+			case 0x04:
+				return asmodianApplyFindGroups.values();
+			case 0xA:
+				return Collections.EMPTY_LIST;
+			}
+			break;
 		}
 		return null;
 	}
 
-	public void registerInstanceGroup(Player player, int action, int instanceId, String message,int minMembers, int groupType) {
+	public void registerInstanceGroup(Player player, int action, int instanceId, String message, int minMembers,
+			int groupType) {
 		AutoGroupType agt = AutoGroupType.getAGTByMaskId(instanceId);
 		if (agt != null) {
 			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceId, 1, 0, player.getName()));
@@ -157,42 +158,43 @@ public class FindGroupService {
 	}
 
 	public void sendFindGroups(Player player, int action) {
-		PacketSendUtility.sendPacket(player, new SM_FIND_GROUP(action, (int) (System.currentTimeMillis() / 1000), getFindGroups(player.getRace(), action)));
+		PacketSendUtility.sendPacket(player, new SM_FIND_GROUP(action, (int) (System.currentTimeMillis() / 1000),
+				getFindGroups(player.getRace(), action)));
 	}
 
 	public FindGroup removeFindGroup(final Race race, int action, int playerObjId) {
 		FindGroup findGroup = null;
 		switch (race) {
-			case ELYOS:
-				switch (action) {
-					case 0x00:
-						findGroup = elyosRecruitFindGroups.remove(playerObjId);
-						break;
-					case 0x04:
-						findGroup = elyosApplyFindGroups.remove(playerObjId);
-						break;
-				}
+		case ELYOS:
+			switch (action) {
+			case 0x00:
+				findGroup = elyosRecruitFindGroups.remove(playerObjId);
 				break;
-			case ASMODIANS:
-				switch (action) {
-					case 0x00:
-						findGroup = asmodianRecruitFindGroups.remove(playerObjId);
-						break;
-					case 0x04:
-						findGroup = asmodianApplyFindGroups.remove(playerObjId);
-						break;
-				}
+			case 0x04:
+				findGroup = elyosApplyFindGroups.remove(playerObjId);
+				break;
+			}
+			break;
+		case ASMODIANS:
+			switch (action) {
+			case 0x00:
+				findGroup = asmodianRecruitFindGroups.remove(playerObjId);
+				break;
+			case 0x04:
+				findGroup = asmodianApplyFindGroups.remove(playerObjId);
+				break;
+			}
 			break;
 		}
 		if (findGroup != null)
 			PacketSendUtility.broadcastFilteredPacket(new SM_FIND_GROUP(action + 1, playerObjId, findGroup.getUnk()),
-				new ObjectFilter<Player>() {
+					new ObjectFilter<Player>() {
 
-					@Override
-					public boolean acceptObject(Player object) {
-						return race == object.getRace();
-					}
-				});
+						@Override
+						public boolean acceptObject(Player object) {
+							return race == object.getRace();
+						}
+					});
 		return findGroup;
 	}
 
@@ -257,12 +259,15 @@ public class FindGroupService {
 
 		@Override
 		public void onAfterGroupCreate(Player player) {
-			FindGroup inviterFindGroup = FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x00, player.getObjectId());
+			FindGroup inviterFindGroup = FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x00,
+					player.getObjectId());
 			if (inviterFindGroup == null) {
-				inviterFindGroup = FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x04, player.getObjectId());
+				inviterFindGroup = FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x04,
+						player.getObjectId());
 			}
 			if (inviterFindGroup != null) {
-				FindGroupService.getInstance().addFindGroupList(player, 0x02, inviterFindGroup.getMessage(), inviterFindGroup.getGroupType());
+				FindGroupService.getInstance().addFindGroupList(player, 0x02, inviterFindGroup.getMessage(),
+						inviterFindGroup.getGroupType());
 			}
 		}
 	}
@@ -287,12 +292,15 @@ public class FindGroupService {
 
 		@Override
 		public void onAfterAllianceCreate(Player player) {
-			FindGroup inviterFindGroup = FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x00, player.getObjectId());
+			FindGroup inviterFindGroup = FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x00,
+					player.getObjectId());
 			if (inviterFindGroup == null) {
-				inviterFindGroup = FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x04, player.getObjectId());
+				inviterFindGroup = FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x04,
+						player.getObjectId());
 			}
 			if (inviterFindGroup != null) {
-				FindGroupService.getInstance().addFindGroupList(player, 0x02, inviterFindGroup.getMessage(), inviterFindGroup.getGroupType());
+				FindGroupService.getInstance().addFindGroupList(player, 0x02, inviterFindGroup.getMessage(),
+						inviterFindGroup.getGroupType());
 			}
 		}
 	}

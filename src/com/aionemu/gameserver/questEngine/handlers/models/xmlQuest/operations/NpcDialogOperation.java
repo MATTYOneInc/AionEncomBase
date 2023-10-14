@@ -41,9 +41,9 @@ public class NpcDialogOperation extends QuestOperation {
 
 	/*
 	 * (non-Javadoc)
-	 * @see
-	 * com.aionemu.gameserver.questEngine.handlers.models.xmlQuest.operations.QuestOperation#doOperate(com.aionemu.gameserver
-	 * .questEngine.model.QuestEnv)
+	 * 
+	 * @see com.aionemu.gameserver.questEngine.handlers.models.xmlQuest.operations.
+	 * QuestOperation#doOperate(com.aionemu.gameserver .questEngine.model.QuestEnv)
 	 */
 	@Override
 	public void doOperate(QuestEnv env) {
@@ -55,8 +55,7 @@ public class NpcDialogOperation extends QuestOperation {
 		}
 		if (qId == 0) {
 			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(obj.getObjectId(), id));
-		}
-		else {
+		} else {
 			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(obj.getObjectId(), id, qId));
 		}
 	}

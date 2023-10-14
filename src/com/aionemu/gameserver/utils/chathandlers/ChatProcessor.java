@@ -59,8 +59,7 @@ public class ChatProcessor implements GameEngine {
 		try {
 			log.info("Chat processor load started");
 			init(sm, this);
-		}
-		finally {
+		} finally {
 			if (progressLatch != null) {
 				progressLatch.countDown();
 			}
@@ -87,7 +86,9 @@ public class ChatProcessor implements GameEngine {
 		acl.addClassListener(new ChatCommandsLoader(processor));
 		scriptManager.setGlobalClassListener(acl);
 
-		final File[] files = new File[] { new File("./data/scripts/system/adminhandlers.xml"), new File("./data/scripts/system/playerhandlers.xml"), new File("./data/scripts/system/weddinghandlers.xml") };
+		final File[] files = new File[] { new File("./data/scripts/system/adminhandlers.xml"),
+				new File("./data/scripts/system/playerhandlers.xml"),
+				new File("./data/scripts/system/weddinghandlers.xml") };
 		final CountDownLatch loadLatch = new CountDownLatch(files.length);
 
 		for (int i = 0; i < files.length; i++) {
@@ -98,11 +99,9 @@ public class ChatProcessor implements GameEngine {
 				public void run() {
 					try {
 						scriptManager.load(files[index]);
-					}
-					catch (Exception e) {
+					} catch (Exception e) {
 						loadException = e;
-					}
-					finally {
+					} finally {
 						loadLatch.countDown();
 					}
 				}
@@ -111,8 +110,7 @@ public class ChatProcessor implements GameEngine {
 
 		try {
 			loadLatch.await();
-		}
-		catch (InterruptedException e1) {
+		} catch (InterruptedException e1) {
 		}
 		if (loadException != null) {
 			throw new GameServerError("Can't initialize chat handlers.", loadException);
@@ -142,8 +140,7 @@ public class ChatProcessor implements GameEngine {
 		try {
 			tmpSM = new ScriptManager();
 			adminCP = new ChatProcessor(tmpSM);
-		}
-		catch (Throwable e) {
+		} catch (Throwable e) {
 			commands = backupCommands;
 			throw new GameServerError("Can't reload chat handlers.", e);
 		}
@@ -166,8 +163,7 @@ public class ChatProcessor implements GameEngine {
 				String str = (String) key;
 				accessLevel.put(str, Byte.valueOf(props.getProperty(str).trim()));
 			}
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			log.error("Can't read commands.properties", e);
 		}
 	}
@@ -176,14 +172,12 @@ public class ChatProcessor implements GameEngine {
 		if (text.split(" ").length == 0)
 			return false;
 		if ((text.startsWith("//") && getCommand(text.substring(2)) instanceof AdminCommand)
-			|| (text.startsWith("..") && getCommand(text.substring(2)) instanceof WeddingCommand)) {
+				|| (text.startsWith("..") && getCommand(text.substring(2)) instanceof WeddingCommand)) {
 			return (getCommand(text.substring(2))).process(player, text.substring(2));
-		}
-		else if (text.startsWith(".")
-			&& (getCommand(text.substring(1)) instanceof PlayerCommand || (CustomConfig.ENABLE_ADMIN_DOT_COMMANDS && getCommand(text.substring(1)) instanceof AdminCommand))) {
+		} else if (text.startsWith(".") && (getCommand(text.substring(1)) instanceof PlayerCommand
+				|| (CustomConfig.ENABLE_ADMIN_DOT_COMMANDS && getCommand(text.substring(1)) instanceof AdminCommand))) {
 			return (getCommand(text.substring(1))).process(player, text.substring(1));
-		}
-		else {
+		} else {
 			return false;
 		}
 	}

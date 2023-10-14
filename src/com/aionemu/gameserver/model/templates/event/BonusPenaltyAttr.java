@@ -30,38 +30,37 @@ import com.aionemu.gameserver.skillengine.change.Func;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BonusPenaltyAttr")
-public class BonusPenaltyAttr
-{
-    @XmlAttribute(required = true)
-    protected StatEnum stat;
-	
-    @XmlAttribute(required = true)
-    protected Func func;
-	
-    @XmlAttribute(required = true)
-    protected int value;
-	
-    public StatEnum getStat() {
-        return stat;
-    }
-	
-    public void setStat(StatEnum value) {
-        stat = value;
-    }
-	
-    public Func getFunc() {
-        return func;
-    }
-	
-    public void setFunc(Func value) {
-        func = value;
-    }
-	
-    public int getValue() {
-        return value;
-    }
-	
-    public void setValue(int value) {
-        this.value = value;
-    }
+public class BonusPenaltyAttr {
+	@XmlAttribute(required = true)
+	protected StatEnum stat;
+
+	@XmlAttribute(required = true)
+	protected Func func;
+
+	@XmlAttribute(required = true)
+	protected int value;
+
+	public StatEnum getStat() {
+		return stat;
+	}
+
+	public void setStat(StatEnum value) {
+		stat = value;
+	}
+
+	public Func getFunc() {
+		return func;
+	}
+
+	public void setFunc(Func value) {
+		func = value;
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
 }

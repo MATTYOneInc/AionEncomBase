@@ -40,7 +40,7 @@ public class RecipeData {
 	protected List<RecipeTemplate> list;
 	private TIntObjectHashMap<RecipeTemplate> recipeData;
 	private FastList<RecipeTemplate> elyos, asmos, any;
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		recipeData = new TIntObjectHashMap<RecipeTemplate>();
 		elyos = FastList.newInstance();
@@ -51,42 +51,42 @@ public class RecipeData {
 			if (it.getAutoLearn() == 0) {
 				continue;
 			}
-			switch(it.getRace()) {
-				case ASMODIANS:
-					asmos.add(it);
-					break;
-				case ELYOS:
-					elyos.add(it);
-					break;
-				case PC_ALL:
-					any.add(it);
-					break;
+			switch (it.getRace()) {
+			case ASMODIANS:
+				asmos.add(it);
+				break;
+			case ELYOS:
+				elyos.add(it);
+				break;
+			case PC_ALL:
+				any.add(it);
+				break;
 			}
 		}
 		list = null;
 	}
-	
+
 	public FastList<RecipeTemplate> getAutolearnRecipes(Race race, int skillId, int maxLevel) {
 		FastList<RecipeTemplate> list = FastList.newInstance();
-		switch(race) {
-			case ASMODIANS:
-				for(RecipeTemplate recipe : asmos)
-					if(recipe.getSkillid() == skillId && recipe.getSkillpoint() <= maxLevel) {
-						list.add(recipe);
-					}
-				break;
-			case ELYOS:
-				for(RecipeTemplate recipe : elyos)
-					if(recipe.getSkillid() == skillId && recipe.getSkillpoint() <= maxLevel) {
-						list.add(recipe);
-					}
-				break;
+		switch (race) {
+		case ASMODIANS:
+			for (RecipeTemplate recipe : asmos)
+				if (recipe.getSkillid() == skillId && recipe.getSkillpoint() <= maxLevel) {
+					list.add(recipe);
+				}
+			break;
+		case ELYOS:
+			for (RecipeTemplate recipe : elyos)
+				if (recipe.getSkillid() == skillId && recipe.getSkillpoint() <= maxLevel) {
+					list.add(recipe);
+				}
+			break;
 		}
-		
-		for(RecipeTemplate recipe : any)
-			if(recipe.getSkillid() == skillId && recipe.getSkillpoint() <= maxLevel) {
+
+		for (RecipeTemplate recipe : any)
+			if (recipe.getSkillid() == skillId && recipe.getSkillpoint() <= maxLevel) {
 				list.add(recipe);
-		    }
+			}
 		return list;
 	}
 

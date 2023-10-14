@@ -49,8 +49,7 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class IdianDepthsService
-{
+public class IdianDepthsService {
 	private Map<Integer, IdianDepthsLocation> idianDepths;
 	private static final int duration = CustomConfig.IDIAN_DEPTHS_DURATION;
 	private final Map<Integer, IdianDepths<?>> activeIdianDepths = new FastMap<Integer, IdianDepths<?>>().shared();
@@ -59,7 +58,7 @@ public class IdianDepthsService
 	public void initIdianDepthsLocations() {
 		if (CustomConfig.IDIAN_DEPTHS_ENABLED) {
 			idianDepths = DataManager.IDIAN_DEPTHS_DATA.getIdianDepthsLocations();
-			for (IdianDepthsLocation loc: getIdianDepthsLocations().values()) {
+			for (IdianDepthsLocation loc : getIdianDepthsLocations().values()) {
 				spawn(loc, IdianDepthsStateType.CLOSED);
 			}
 			log.info("[IdianDepthsService] Loaded " + idianDepths.size() + " locations.");
@@ -67,14 +66,14 @@ public class IdianDepthsService
 			CronService.getInstance().schedule(new Runnable() {
 				@Override
 				public void run() {
-					for (IdianDepthsLocation loc: getIdianDepthsLocations().values()) {
-				        startIdianDepths(loc.getId());
+					for (IdianDepthsLocation loc : getIdianDepthsLocations().values()) {
+						startIdianDepths(loc.getId());
 					}
 					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					    @Override
-					    public void visit(Player player) {
-						    PacketSendUtility.sendSys3Message(player, "\uE0AA", "<Idian Depths> open !!!");
-					    }
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys3Message(player, "\uE0AA", "<Idian Depths> open !!!");
+						}
 					});
 				}
 			}, CustomConfig.IDIAN_DEPTHS_SCHEDULE);
@@ -89,7 +88,7 @@ public class IdianDepthsService
 			log.info("[IdianDepthsService] is initialized...");
 		}
 	}
-	
+
 	public void startIdianDepths(final int id) {
 		final IdianDepths<?> idian;
 		synchronized (this) {
@@ -107,7 +106,7 @@ public class IdianDepthsService
 			}
 		}, duration * 3600 * 1000);
 	}
-	
+
 	public void stopIdianDepths(int id) {
 		if (!isIdianDepthsInProgress(id)) {
 			return;
@@ -115,12 +114,13 @@ public class IdianDepthsService
 		IdianDepths<?> idian;
 		synchronized (this) {
 			idian = activeIdianDepths.remove(id);
-		} if (idian == null || idian.isClosed()) {
+		}
+		if (idian == null || idian.isClosed()) {
 			return;
 		}
 		idian.stop();
 	}
-	
+
 	public void spawn(IdianDepthsLocation loc, IdianDepthsStateType istate) {
 		if (istate.equals(IdianDepthsStateType.OPEN)) {
 		}
@@ -134,45 +134,46 @@ public class IdianDepthsService
 			}
 		}
 	}
-	
+
 	public void despawn(IdianDepthsLocation loc) {
 		if (loc.getSpawned() == null) {
-        	return;
-		} for (VisibleObject obj: loc.getSpawned()) {
-            Npc spawned = (Npc) obj;
-            spawned.setDespawnDelayed(true);
-            if (spawned.getAggroList().getList().isEmpty()) {
-                spawned.getController().cancelTask(TaskId.RESPAWN);
-                obj.getController().onDelete();
-            }
-        }
-        loc.getSpawned().clear();
+			return;
+		}
+		for (VisibleObject obj : loc.getSpawned()) {
+			Npc spawned = (Npc) obj;
+			spawned.setDespawnDelayed(true);
+			if (spawned.getAggroList().getList().isEmpty()) {
+				spawned.getController().cancelTask(TaskId.RESPAWN);
+				obj.getController().onDelete();
+			}
+		}
+		loc.getSpawned().clear();
 	}
-	
+
 	public boolean isIdianDepthsInProgress(int id) {
 		return activeIdianDepths.containsKey(id);
 	}
-	
+
 	public Map<Integer, IdianDepths<?>> getActiveIdianDepths() {
 		return activeIdianDepths;
 	}
-	
+
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public IdianDepthsLocation getIdianDepthsLocation(int id) {
 		return idianDepths.get(id);
 	}
-	
+
 	public Map<Integer, IdianDepthsLocation> getIdianDepthsLocations() {
 		return idianDepths;
 	}
-	
+
 	public static IdianDepthsService getInstance() {
 		return IdianDepthsServiceHolder.INSTANCE;
 	}
-	
+
 	private static class IdianDepthsServiceHolder {
 		private static final IdianDepthsService INSTANCE = new IdianDepthsService();
 	}

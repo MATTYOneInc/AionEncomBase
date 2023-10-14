@@ -22,18 +22,18 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.taskmanager.tasks.ExpireTimerTask;
 
 /****/
-/** Author Ranastic (Encom)
-/****/
+/**
+ * Author Ranastic (Encom) /
+ ****/
 
-public class F2p
-{
+public class F2p {
 	private Player owner;
 	private F2pAccount f2pAccount;
-	
+
 	public F2p(Player owner) {
 		this.owner = owner;
 	}
-	
+
 	public void add(F2pAccount f2pacc, boolean isNew) {
 		f2pAccount = f2pacc;
 		f2pacc.setActive(true);
@@ -55,11 +55,11 @@ public class F2p
 			DAOManager.getDAO(F2pDAO.class).storeF2p(owner.getObjectId().intValue(), f2pacc.getExpireTime());
 		}
 	}
-	
+
 	public F2pAccount getF2pAccount() {
 		return f2pAccount;
 	}
-	
+
 	public boolean remove() {
 		if (f2pAccount != null) {
 			f2pAccount.setActive(false);

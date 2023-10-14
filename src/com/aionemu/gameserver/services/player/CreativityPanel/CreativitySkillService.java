@@ -31,28 +31,27 @@ public class CreativitySkillService {
 			player.getSkillList().addSkill(player, pcp.getSkillId(), 1);
 			player.getCP().removePoint(player, id);
 		} else {
-		    if (pcp.getSkillId() <= 0){
-                player.getSkillList().addSkill(player, pcp.getLearnSkill(), point + 1);
-            }else{
-                player.getSkillList().addSkill(player, pcp.getSkillId(), point + 1);
-            }
+			if (pcp.getSkillId() <= 0) {
+				player.getSkillList().addSkill(player, pcp.getLearnSkill(), point + 1);
+			} else {
+				player.getSkillList().addSkill(player, pcp.getSkillId(), point + 1);
+			}
 
 			player.getCP().addPoint(player, id, point);
 		}
-        PacketSendUtility.sendPacket(player, new SM_CREATIVITY_POINTS_APPLY(0,1, id, point));
+		PacketSendUtility.sendPacket(player, new SM_CREATIVITY_POINTS_APPLY(0, 1, id, point));
 	}
 
 	public void learnSkill(Player player, int id, int point) { // TODO
 		PanelCp pcp = DataManager.PANEL_CP_DATA.getPanelCpId(id);
-        if (point >= 1) {
-            player.getSkillList().addSkill(player, pcp.getLearnSkill(), point + 1);
-            player.getCP().addPoint(player, id, point);
-        }
-        else if (point == 0) {
+		if (point >= 1) {
+			player.getSkillList().addSkill(player, pcp.getLearnSkill(), point + 1);
+			player.getCP().addPoint(player, id, point);
+		} else if (point == 0) {
 			SkillLearnService.removeSkill(player, pcp.getLearnSkill());
-            player.getCP().removePoint(player, id);
-        }
-        PacketSendUtility.sendPacket(player, new SM_CREATIVITY_POINTS_APPLY(1, 1, id, point));
+			player.getCP().removePoint(player, id);
+		}
+		PacketSendUtility.sendPacket(player, new SM_CREATIVITY_POINTS_APPLY(1, 1, id, point));
 	}
 
 	public void loginDaevaSkill(Player player, int id, int point) {
@@ -60,12 +59,11 @@ public class CreativitySkillService {
 		if (point >= 1) {
 			player.getSkillList().addSkill(player, pcp.getSkillId(), point + 1);
 			player.getCP().addPoint(player, id, point);
-		}
-		else if (point == 0) {
+		} else if (point == 0) {
 			player.getSkillList().addSkill(player, pcp.getSkillId(), 1);
 			player.getCP().removePoint(player, id);
 		}
-        PacketSendUtility.sendPacket(player, new SM_CREATIVITY_POINTS_APPLY(id, point));
+		PacketSendUtility.sendPacket(player, new SM_CREATIVITY_POINTS_APPLY(id, point));
 	}
 
 	public static CreativitySkillService getInstance() {

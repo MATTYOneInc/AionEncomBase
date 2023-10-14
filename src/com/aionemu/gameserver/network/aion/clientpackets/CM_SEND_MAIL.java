@@ -26,8 +26,7 @@ import com.aionemu.gameserver.services.mail.MailService;
  * @author Aion Gates, xTz
  */
 
-public class CM_SEND_MAIL extends AionClientPacket
-{
+public class CM_SEND_MAIL extends AionClientPacket {
 	private String recipientName;
 	private String title;
 	private String message;
@@ -35,11 +34,11 @@ public class CM_SEND_MAIL extends AionClientPacket
 	private int itemCount;
 	private int kinahCount;
 	private int idLetterType;
-	
+
 	public CM_SEND_MAIL(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		recipientName = readS();
@@ -52,12 +51,13 @@ public class CM_SEND_MAIL extends AionClientPacket
 		readD();
 		idLetterType = readC();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
 		if (!player.isTrading() && kinahCount < 1000000000 && kinahCount > -1 && itemCount > -2) {
-			MailService.getInstance().sendMail(player, recipientName, title, message, itemObjId, itemCount, kinahCount, 0, LetterType.getLetterTypeById(idLetterType));
+			MailService.getInstance().sendMail(player, recipientName, title, message, itemObjId, itemCount, kinahCount,
+					0, LetterType.getLetterTypeById(idLetterType));
 		}
 	}
 }

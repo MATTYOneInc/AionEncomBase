@@ -40,7 +40,8 @@ public class EncryptionKeyPair {
 	/**
 	 * Static xor key
 	 */
-	private final static byte[] staticKey = "nKO/WctQ0AVLbpzfBkS6NevDYT8ourG5CRlmdjyJ72aswx4EPq1UgZhFMXH?3iI9".getBytes();
+	private final static byte[] staticKey = "nKO/WctQ0AVLbpzfBkS6NevDYT8ourG5CRlmdjyJ72aswx4EPq1UgZhFMXH?3iI9"
+			.getBytes();
 
 	/**
 	 * Second byte of client packet must be equal to this
@@ -65,14 +66,15 @@ public class EncryptionKeyPair {
 	/**
 	 * Initializes client/server encryption keys based on baseKey
 	 * 
-	 * @param baseKey
-	 *          random integer
+	 * @param baseKey random integer
 	 */
 	public EncryptionKeyPair(int baseKey) {
 		this.baseKey = baseKey;
 		this.keys = new byte[2][];
-		
-		this.keys[SERVER] = new byte[] { (byte) (baseKey & 0xff), (byte) ((baseKey >> 8) & 0xff),(byte) ((baseKey >> 16) & 0xff), (byte) ((baseKey >> 24) & 0xff), (byte) 0xa1, (byte) 0x6c, (byte) 0x54,(byte) 0x87 };
+
+		this.keys[SERVER] = new byte[] { (byte) (baseKey & 0xff), (byte) ((baseKey >> 8) & 0xff),
+				(byte) ((baseKey >> 16) & 0xff), (byte) ((baseKey >> 24) & 0xff), (byte) 0xa1, (byte) 0x6c, (byte) 0x54,
+				(byte) 0x87 };
 		this.keys[CLIENT] = new byte[this.keys[SERVER].length];
 		System.arraycopy(this.keys[SERVER], 0, this.keys[CLIENT], 0, this.keys[SERVER].length);
 		this.lastUpdate = System.currentTimeMillis();
@@ -106,14 +108,16 @@ public class EncryptionKeyPair {
 	}
 
 	/**
-	 * Check if packet was correctly decoded, also check if packet was correctly coded by aion client
+	 * Check if packet was correctly decoded, also check if packet was correctly
+	 * coded by aion client
 	 */
 	private final boolean validateClientPacket(ByteBuffer buf) {
 		return buf.getShort(0) == ~buf.getShort(3) && buf.get(2) == staticClientPacketCode;
 	}
 
 	/**
-	 * Decrypt client packet from this ByteBuffer If decryption is successful, update client key
+	 * Decrypt client packet from this ByteBuffer If decryption is successful,
+	 * update client key
 	 * 
 	 * @return true if decryption was successful
 	 */
@@ -140,9 +144,9 @@ public class EncryptionKeyPair {
 
 		/** oldKey value as long */
 		long oldKey = (((long) clientPacketKey[0] & 0xff) << 0) | (((long) clientPacketKey[1] & 0xff) << 8)
-			| (((long) clientPacketKey[2] & 0xff) << 16) | (((long) clientPacketKey[3] & 0xff) << 24)
-			| (((long) clientPacketKey[4] & 0xff) << 32) | (((long) clientPacketKey[5] & 0xff) << 40)
-			| (((long) clientPacketKey[6] & 0xff) << 48) | (((long) clientPacketKey[7] & 0xff) << 56);
+				| (((long) clientPacketKey[2] & 0xff) << 16) | (((long) clientPacketKey[3] & 0xff) << 24)
+				| (((long) clientPacketKey[4] & 0xff) << 32) | (((long) clientPacketKey[5] & 0xff) << 40)
+				| (((long) clientPacketKey[6] & 0xff) << 48) | (((long) clientPacketKey[7] & 0xff) << 56);
 
 		/** change key */
 		oldKey += size;
@@ -186,7 +190,10 @@ public class EncryptionKeyPair {
 		}
 
 		/** oldKey value as long */
-		long oldKey = (((long) serverPacketKey[0] & 0xff) << 0) | (((long) serverPacketKey[1] & 0xff) << 8) | (((long) serverPacketKey[2] & 0xff) << 16) | (((long) serverPacketKey[3] & 0xff) << 24) | (((long) serverPacketKey[4] & 0xff) << 32) | (((long) serverPacketKey[5] & 0xff) << 40) | (((long) serverPacketKey[6] & 0xff) << 48) | (((long) serverPacketKey[7] & 0xff) << 56);
+		long oldKey = (((long) serverPacketKey[0] & 0xff) << 0) | (((long) serverPacketKey[1] & 0xff) << 8)
+				| (((long) serverPacketKey[2] & 0xff) << 16) | (((long) serverPacketKey[3] & 0xff) << 24)
+				| (((long) serverPacketKey[4] & 0xff) << 32) | (((long) serverPacketKey[5] & 0xff) << 40)
+				| (((long) serverPacketKey[6] & 0xff) << 48) | (((long) serverPacketKey[7] & 0xff) << 56);
 
 		/** change key */
 		oldKey += size;

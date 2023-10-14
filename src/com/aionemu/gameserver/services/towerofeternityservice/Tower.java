@@ -23,23 +23,22 @@ import com.aionemu.gameserver.model.towerofeternity.TowerOfEternityStateType;
  * Created by Wnkrz on 22/08/2017.
  */
 
-public class Tower extends TowerOfEternity<TowerOfEternityLocation>
-{
-    public Tower(TowerOfEternityLocation towerOfEternity) {
-        super(towerOfEternity);
-    }
-	
-    @Override
-    protected void startTowerOfEternity() {
-        getTowerOfEternityLocation().setActiveTowerOfEternity(this);
-        despawn();
-        spawn(TowerOfEternityStateType.OPEN);
-    }
-	
-    @Override
-    protected void stopTowerOfEternity() {
-        getTowerOfEternityLocation().setActiveTowerOfEternity(null);
-        despawn();
-        spawn(TowerOfEternityStateType.CLOSED);
-    }
+public class Tower extends TowerOfEternity<TowerOfEternityLocation> {
+	public Tower(TowerOfEternityLocation towerOfEternity) {
+		super(towerOfEternity);
+	}
+
+	@Override
+	protected void startTowerOfEternity() {
+		getTowerOfEternityLocation().setActiveTowerOfEternity(this);
+		despawn();
+		spawn(TowerOfEternityStateType.OPEN);
+	}
+
+	@Override
+	protected void stopTowerOfEternity() {
+		getTowerOfEternityLocation().setActiveTowerOfEternity(null);
+		despawn();
+		spawn(TowerOfEternityStateType.CLOSED);
+	}
 }

@@ -23,15 +23,14 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
  * @author Ranastic
  */
 
-public class SM_BUTLER_SALUTE extends AionServerPacket
-{
+public class SM_BUTLER_SALUTE extends AionServerPacket {
 	private int playerObjId;
 	private int isInside;
 	private int unk1;
 	private int unk2;
 	private int unk3;
 	private int unk4;
-	
+
 	public SM_BUTLER_SALUTE(int unk1, int unk2, int unk3, int unk4, int playerObjId, int isInside) {
 		this.unk1 = unk1;
 		this.unk2 = unk2;
@@ -40,7 +39,7 @@ public class SM_BUTLER_SALUTE extends AionServerPacket
 		this.playerObjId = playerObjId;
 		this.isInside = isInside;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeD(unk1);

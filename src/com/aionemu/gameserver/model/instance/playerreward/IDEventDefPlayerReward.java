@@ -17,51 +17,57 @@
 package com.aionemu.gameserver.model.instance.playerreward;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class IDEventDefPlayerReward extends InstancePlayerReward
-{
+public class IDEventDefPlayerReward extends InstancePlayerReward {
 	private int scoreAP;
 	private boolean isRewarded = false;
 	private int wrapCashIDEventDefLiveSRank;
 	private int wrapCashIDEventDefLiveARank;
 	private int wrapCashIDEventDefLiveBRank;
-	
+
 	public IDEventDefPlayerReward(Integer object) {
 		super(object);
 	}
-	
+
 	public boolean isRewarded() {
 		return isRewarded;
 	}
+
 	public void setRewarded() {
 		isRewarded = true;
 	}
-	
+
 	public int getScoreAP() {
 		return scoreAP;
 	}
+
 	public void setScoreAP(int ap) {
 		this.scoreAP = ap;
 	}
-	
+
 	public int getWrapCashIDEventDefLiveSRank() {
 		return wrapCashIDEventDefLiveSRank;
 	}
+
 	public int getWrapCashIDEventDefLiveARank() {
 		return wrapCashIDEventDefLiveARank;
 	}
+
 	public int getWrapCashIDEventDefLiveBRank() {
 		return wrapCashIDEventDefLiveBRank;
 	}
-	
+
 	public void setWrapCashIDEventDefLiveSRank(int wrapCashIDEventDefLiveSRank) {
 		this.wrapCashIDEventDefLiveSRank = wrapCashIDEventDefLiveSRank;
 	}
+
 	public void setWrapCashIDEventDefLiveARank(int wrapCashIDEventDefLiveARank) {
 		this.wrapCashIDEventDefLiveARank = wrapCashIDEventDefLiveARank;
 	}
+
 	public void setWrapCashIDEventDefLiveBRank(int wrapCashIDEventDefLiveBRank) {
 		this.wrapCashIDEventDefLiveBRank = wrapCashIDEventDefLiveBRank;
 	}

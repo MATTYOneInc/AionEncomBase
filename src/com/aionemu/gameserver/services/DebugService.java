@@ -27,7 +27,7 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
 
 /**
- * @author ATracer 
+ * @author ATracer
  */
 public class DebugService {
 
@@ -63,7 +63,9 @@ public class DebugService {
 			 */
 			AionConnection connection = player.getClientConnection();
 			if (connection == null) {
-				log.warn(String.format("[DEBUG SERVICE] Player without connection: " + "detected: ObjId %d, Name %s, Spawned %s", player.getObjectId(), player.getName(), player.isSpawned()));
+				log.warn(String.format(
+						"[DEBUG SERVICE] Player without connection: " + "detected: ObjId %d, Name %s, Spawned %s",
+						player.getObjectId(), player.getName(), player.isSpawned()));
 				continue;
 			}
 
@@ -73,7 +75,10 @@ public class DebugService {
 			long lastPingTimeMS = connection.getLastPingTimeMS();
 			long pingInterval = System.currentTimeMillis() - lastPingTimeMS;
 			if (lastPingTimeMS > 0 && pingInterval > 300000) {
-				log.warn(String.format("[DEBUG SERVICE] Player with large ping interval: " + "ObjId %d, Name %s, Spawned %s, PingMS %d", player.getObjectId(), player.getName(), player.isSpawned(), pingInterval));
+				log.warn(String.format(
+						"[DEBUG SERVICE] Player with large ping interval: "
+								+ "ObjId %d, Name %s, Spawned %s, PingMS %d",
+						player.getObjectId(), player.getName(), player.isSpawned(), pingInterval));
 			}
 		}
 	}

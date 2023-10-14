@@ -26,18 +26,17 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ParalyzeEffect")
-public class ParalyzeEffect extends EffectTemplate
-{
+public class ParalyzeEffect extends EffectTemplate {
 	@Override
 	public void applyEffect(Effect effect) {
 		effect.addToEffectedController();
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		super.calculate(effect, StatEnum.PARALYZE_RESISTANCE, null);
 	}
-	
+
 	@Override
 	public void startEffect(Effect effect) {
 		final Creature effected = effect.getEffected();
@@ -46,7 +45,7 @@ public class ParalyzeEffect extends EffectTemplate
 		effect.setAbnormal(AbnormalState.PARALYZE.getId());
 		effect.getEffected().getEffectController().setAbnormal(AbnormalState.PARALYZE.getId());
 	}
-	
+
 	@Override
 	public void endEffect(Effect effect) {
 		effect.getEffected().getEffectController().unsetAbnormal(AbnormalState.PARALYZE.getId());

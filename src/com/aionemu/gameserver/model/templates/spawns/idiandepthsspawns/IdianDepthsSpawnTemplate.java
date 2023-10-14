@@ -25,39 +25,39 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * @author Rinzler (Encom)
  */
 
-public class IdianDepthsSpawnTemplate extends SpawnTemplate
-{
+public class IdianDepthsSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private IdianDepthsStateType idianDepthsType;
-	
+
 	public IdianDepthsSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public IdianDepthsSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public IdianDepthsSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public IdianDepthsStateType getIStateType() {
 		return idianDepthsType;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void setIStateType(IdianDepthsStateType idianDepthsType) {
 		this.idianDepthsType = idianDepthsType;
 	}
-	
+
 	public final boolean isIdianDepthsOpen() {
 		return idianDepthsType.equals(IdianDepthsStateType.OPEN);
 	}
-	
+
 	public final boolean isIdianDepthsClosed() {
 		return idianDepthsType.equals(IdianDepthsStateType.CLOSED);
 	}

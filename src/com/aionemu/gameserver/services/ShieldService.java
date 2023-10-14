@@ -37,25 +37,24 @@ import com.aionemu.gameserver.world.zone.ZoneInstance;
 
 import javolution.util.FastMap;
 
-public class ShieldService
-{
+public class ShieldService {
 	Logger log = LoggerFactory.getLogger(ShieldService.class);
-	
+
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final ShieldService instance = new ShieldService();
 	}
-	
+
 	private final FastMap<Integer, Shield> sphereShields = new FastMap<Integer, Shield>();
 	private final FastMap<Integer, List<SiegeShield>> registeredShields = new FastMap<Integer, List<SiegeShield>>(0);
-	
+
 	public static final ShieldService getInstance() {
 		return SingletonHolder.instance;
 	}
-	
+
 	private ShieldService() {
 	}
-	
+
 	public void load(int mapId) {
 		for (ShieldTemplate template : DataManager.SHIELD_DATA.getShieldTemplates()) {
 			if (template.getMap() != mapId) {
@@ -65,24 +64,25 @@ public class ShieldService
 			sphereShields.put(f.getId(), f);
 		}
 	}
-	
+
 	public void spawnAll() {
 		for (Shield shield : sphereShields.values()) {
 			shield.spawn();
-			log.debug("Added " + shield.getName() + " at m=" + shield.getWorldId() + ",x=" + shield.getX() + ",y=" + shield.getY() + ",z=" + shield.getZ());
+			log.debug("Added " + shield.getName() + " at m=" + shield.getWorldId() + ",x=" + shield.getX() + ",y="
+					+ shield.getY() + ",z=" + shield.getZ());
 		}
 		for (List<SiegeShield> otherShields : registeredShields.values()) {
 			for (SiegeShield shield : otherShields)
-			log.debug("Not bound shield " + shield.getGeometry().getName());
+				log.debug("Not bound shield " + shield.getGeometry().getName());
 		}
 	}
-	
+
 	public ActionObserver createShieldObserver(int locationId, Creature observed) {
 		if (sphereShields.containsKey(locationId))
 			return new ShieldObserver(sphereShields.get(locationId), observed);
 		return null;
 	}
-	
+
 	public ActionObserver createShieldObserver(SiegeShield geoShield, Creature observed) {
 		ActionObserver observer = null;
 		if (GeoDataConfig.GEO_SHIELDS_ENABLE) {
@@ -91,7 +91,7 @@ public class ShieldService
 		}
 		return observer;
 	}
-	
+
 	public void registerShield(int worldId, SiegeShield shield) {
 		List<SiegeShield> mapShields = registeredShields.get(worldId);
 		if (mapShields == null) {
@@ -100,7 +100,7 @@ public class ShieldService
 		}
 		mapShields.add(shield);
 	}
-	
+
 	public void attachShield(SiegeLocation location) {
 		List<SiegeShield> mapShields = registeredShields.get(location.getTemplate().getWorldId());
 		if (mapShields == null)
@@ -119,7 +119,8 @@ public class ShieldService
 				}
 				shield.setSiegeLocationId(location.getLocationId());
 			}
-		} if (shields.size() == 0) {
+		}
+		if (shields.size() == 0) {
 			log.warn("Could not find a shield for locId: " + location.getLocationId());
 		} else {
 			location.setShields(shields);

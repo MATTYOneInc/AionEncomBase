@@ -70,7 +70,7 @@ public class AnnouncementService {
 			for (Future<?> delay : delays) {
 				delay.cancel(false);
 			}
-        }
+		}
 		// Clear all announcements
 		announcements.clear();
 
@@ -91,25 +91,33 @@ public class AnnouncementService {
 				public void run() {
 					final Iterator<Player> iter = World.getInstance().getPlayersIterator();
 					while (iter.hasNext()) {
-					Player player = iter.next();
+						Player player = iter.next();
 
-					if (announce.getFaction().equalsIgnoreCase("ALL"))
-						if (announce.getChatType() == ChatType.SHOUT || announce.getChatType() == ChatType.GROUP_LEADER) {
-							PacketSendUtility.sendPacket(player, new SM_MESSAGE(1, "Announcement", announce.getAnnounce(), announce.getChatType()));
-						}
-						else {
-							PacketSendUtility.sendPacket(player, new SM_MESSAGE(1, "Announcement", "Announcement: " + announce.getAnnounce(), announce.getChatType()));
-						}
-					else if (announce.getFactionEnum() == player.getRace()) {
-						if (announce.getChatType() == ChatType.SHOUT || announce.getChatType() == ChatType.GROUP_LEADER) {
-							PacketSendUtility.sendPacket(player, new SM_MESSAGE(1,
-								(announce.getFaction().equalsIgnoreCase("ELYOS") ? "Elyos" : "Asmodian") + " Announcement", announce.getAnnounce(), announce.getChatType()));
+						if (announce.getFaction().equalsIgnoreCase("ALL"))
+							if (announce.getChatType() == ChatType.SHOUT
+									|| announce.getChatType() == ChatType.GROUP_LEADER) {
+								PacketSendUtility.sendPacket(player, new SM_MESSAGE(1, "Announcement",
+										announce.getAnnounce(), announce.getChatType()));
+							} else {
+								PacketSendUtility.sendPacket(player, new SM_MESSAGE(1, "Announcement",
+										"Announcement: " + announce.getAnnounce(), announce.getChatType()));
 							}
-						}
-					else {
-						PacketSendUtility.sendPacket(player, new SM_MESSAGE(1,
-							(announce.getFaction().equalsIgnoreCase("ELYOS") ? "Elyos" : "Asmodian") + " Announcement",
-							(announce.getFaction().equalsIgnoreCase("ELYOS") ? "Elyos" : "Asmodian") + " Announcement: " + announce.getAnnounce(), announce.getChatType()));
+						else if (announce.getFactionEnum() == player.getRace()) {
+							if (announce.getChatType() == ChatType.SHOUT
+									|| announce.getChatType() == ChatType.GROUP_LEADER) {
+								PacketSendUtility.sendPacket(player,
+										new SM_MESSAGE(1,
+												(announce.getFaction().equalsIgnoreCase("ELYOS") ? "Elyos" : "Asmodian")
+														+ " Announcement",
+												announce.getAnnounce(), announce.getChatType()));
+							}
+						} else {
+							PacketSendUtility.sendPacket(player, new SM_MESSAGE(1,
+									(announce.getFaction().equalsIgnoreCase("ELYOS") ? "Elyos" : "Asmodian")
+											+ " Announcement",
+									(announce.getFaction().equalsIgnoreCase("ELYOS") ? "Elyos" : "Asmodian")
+											+ " Announcement: " + announce.getAnnounce(),
+									announce.getChatType()));
 						}
 					}
 				}

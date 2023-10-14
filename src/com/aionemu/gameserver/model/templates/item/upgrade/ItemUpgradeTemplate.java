@@ -32,20 +32,19 @@ import com.aionemu.gameserver.model.stats.calc.StatOwner;
 
 @XmlRootElement(name = "ItemUpgrade")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ItemUpgradeTemplate implements StatOwner
-{
+public class ItemUpgradeTemplate implements StatOwner {
 	protected List<UpgradeResultItem> upgrade_result_item;
-	
+
 	@XmlAttribute(name = "upgrade_base_item")
 	private int upgrade_base_item_id;
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 	}
-	
+
 	public List<UpgradeResultItem> getUpgrade_result_item() {
 		return upgrade_result_item;
 	}
-	
+
 	public int getUpgrade_base_item_id() {
 		return upgrade_base_item_id;
 	}

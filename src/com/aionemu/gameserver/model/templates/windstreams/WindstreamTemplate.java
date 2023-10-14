@@ -28,8 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "WindFlight")
-public class WindstreamTemplate
-{
+public class WindstreamTemplate {
 	@XmlElement(required = true)
 	protected StreamLocations locations;
 	@XmlAttribute

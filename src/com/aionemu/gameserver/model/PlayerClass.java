@@ -21,28 +21,12 @@ import javax.xml.bind.annotation.XmlEnum;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 @XmlEnum
-public enum PlayerClass
-{
-	WARRIOR(0, true),
-	GLADIATOR(1),
-	TEMPLAR(2),
-	SCOUT(3, true),
-	ASSASSIN(4),
-	RANGER(5),
-	MAGE(6, true),
-	SORCERER(7),
-	SPIRIT_MASTER(8),
-	PRIEST(9, true),
-	CLERIC(10),
-	CHANTER(11),
+public enum PlayerClass {
+	WARRIOR(0, true), GLADIATOR(1), TEMPLAR(2), SCOUT(3, true), ASSASSIN(4), RANGER(5), MAGE(6, true), SORCERER(7),
+	SPIRIT_MASTER(8), PRIEST(9, true), CLERIC(10), CHANTER(11),
 
-	//News Class 4.3/4.5
-	TECHNIST(12, true),
-	AETHERTECH(13),
-	GUNSLINGER(14),
-	MUSE(15, true),
-	SONGWEAVER(16),
-	ALL(17);
+	// News Class 4.3/4.5
+	TECHNIST(12, true), AETHERTECH(13), GUNSLINGER(14), MUSE(15, true), SONGWEAVER(16), ALL(17);
 
 	private byte classId;
 	private int idMask;
@@ -89,7 +73,7 @@ public enum PlayerClass
 		case SORCERER:
 		case SPIRIT_MASTER:
 			return MAGE;
-			//News Class 4.3/4.5
+		// News Class 4.3/4.5
 		case SONGWEAVER:
 			return MUSE;
 		case AETHERTECH:
@@ -108,7 +92,7 @@ public enum PlayerClass
 	}
 
 	public static PlayerClass getPlayerClassByString(String fieldName) {
-		for (PlayerClass pc: values()) {
+		for (PlayerClass pc : values()) {
 			if (pc.toString().equals(fieldName)) {
 				return pc;
 			}
@@ -122,7 +106,7 @@ public enum PlayerClass
 
 	public String getClassType(Player player) {
 		String type = null;
-		switch(player.getPlayerClass()) {
+		switch (player.getPlayerClass()) {
 		case TEMPLAR:
 		case ASSASSIN:
 		case RANGER:
@@ -138,7 +122,8 @@ public enum PlayerClass
 		case AETHERTECH:
 			type = "MAGICAL";
 			break;
-		default: break;
+		default:
+			break;
 		}
 		return type;
 	}

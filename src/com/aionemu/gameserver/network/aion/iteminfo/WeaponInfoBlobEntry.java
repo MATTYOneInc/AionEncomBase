@@ -23,12 +23,13 @@ import com.aionemu.gameserver.model.items.ItemSlot;
 import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
 
 /**
- * This blob is sent for weapons. It keeps info about slots that weapon can be equipped to.
+ * This blob is sent for weapons. It keeps info about slots that weapon can be
+ * equipped to.
  * 
  * @author -Nemesiss-
  * @modified Rolandas
  */
-public class WeaponInfoBlobEntry extends ItemBlobEntry{
+public class WeaponInfoBlobEntry extends ItemBlobEntry {
 
 	WeaponInfoBlobEntry() {
 		super(ItemBlobType.SLOTS_WEAPON);
@@ -47,8 +48,7 @@ public class WeaponInfoBlobEntry extends ItemBlobEntry{
 		if (item.getItemTemplate().isTwoHandWeapon()) {
 			writeQ(buf, slots[0].getSlotIdMask() | slots[1].getSlotIdMask());
 			writeQ(buf, 0);
-		}
-		else {
+		} else {
 			writeQ(buf, slots[0].getSlotIdMask());
 			writeQ(buf, slots[1].getSlotIdMask());
 		}

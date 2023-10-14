@@ -61,15 +61,12 @@ public class CM_BAN_RESPONSE extends LsClientPacket {
 			if (result) {
 				if (time < 0) {
 					message = "Account ID " + accountId + " was successfully unbanned";
-				}
-				else if (time == 0) {
+				} else if (time == 0) {
 					message = "Account ID " + accountId + " was successfully banned";
-				}
-				else {
+				} else {
 					message = "Account ID " + accountId + " was successfully banned for " + time + " minutes";
 				}
-			}
-			else {
+			} else {
 				message = "Error occurred while banning player's account";
 			}
 			PacketSendUtility.sendMessage(admin, message);
@@ -78,15 +75,12 @@ public class CM_BAN_RESPONSE extends LsClientPacket {
 			if (result) {
 				if (time < 0) {
 					message = "IP mask " + ip + " was successfully removed from block list";
-				}
-				else if (time == 0) {
+				} else if (time == 0) {
 					message = "IP mask " + ip + " was successfully added to block list";
-				}
-				else {
+				} else {
 					message = "IP mask " + ip + " was successfully added to block list for " + time + " minutes";
 				}
-			}
-			else {
+			} else {
 				message = "Error occurred while adding IP mask " + ip;
 			}
 			PacketSendUtility.sendMessage(admin, message);

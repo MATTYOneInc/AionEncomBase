@@ -148,8 +148,7 @@ public class BIHTree implements CollisionData {
 			if (v1.get(axis) > split) {
 				swapTriangles(pivot, j);
 				--j;
-			}
-			else {
+			} else {
 				++pivot;
 			}
 		}
@@ -167,8 +166,7 @@ public class BIHTree implements CollisionData {
 
 		if (doMin) {
 			min.set(axis, value);
-		}
-		else {
+		} else {
 			max.set(axis, value);
 		}
 
@@ -178,8 +176,7 @@ public class BIHTree implements CollisionData {
 	private float getMinMax(BoundingBox bbox, boolean doMin, int axis) {
 		if (doMin) {
 			return bbox.getMin(null).get(axis);
-		}
-		else {
+		} else {
 			return bbox.getMax(null).get(axis);
 		}
 	}
@@ -276,16 +273,13 @@ public class BIHTree implements CollisionData {
 		if (exteriorExt.x > exteriorExt.y) {
 			if (exteriorExt.x > exteriorExt.z) {
 				axis = 0;
-			}
-			else {
+			} else {
 				axis = 2;
 			}
-		}
-		else {
+		} else {
 			if (exteriorExt.y > exteriorExt.z) {
 				axis = 1;
-			}
-			else {
+			} else {
 				axis = 2;
 			}
 		}
@@ -300,20 +294,19 @@ public class BIHTree implements CollisionData {
 			pivot = (r + l) / 2;
 		}
 
-		// If one of the partitions is empty, continue with recursion: same level but different bbox
+		// If one of the partitions is empty, continue with recursion: same level but
+		// different bbox
 		if (pivot < l) {
 			// Only right
 			BoundingBox rbbox = new BoundingBox(currentBox);
 			setMinMax(rbbox, true, axis, split);
 			return createNode(l, r, rbbox, depth + 1);
-		}
-		else if (pivot > r) {
+		} else if (pivot > r) {
 			// Only left
 			BoundingBox lbbox = new BoundingBox(currentBox);
 			setMinMax(lbbox, false, axis, split);
 			return createNode(l, r, lbbox, depth + 1);
-		}
-		else {
+		} else {
 			// Build the node
 			BIHNode node = new BIHNode(axis);
 
@@ -373,7 +366,8 @@ public class BIHTree implements CollisionData {
 
 	private int collideWithRay(Ray r, Matrix4f worldMatrix, BoundingVolume worldBound, CollisionResults results) {
 
-		CollisionResults boundResults = new CollisionResults(results.getIntentions(), results.isOnlyFirst(), results.getInstanceId());
+		CollisionResults boundResults = new CollisionResults(results.getIntentions(), results.isOnlyFirst(),
+				results.getInstanceId());
 		worldBound.collideWith(r, boundResults);
 		if (boundResults.size() > 0) {
 			float tMin = boundResults.getClosestCollision().getDistance();
@@ -381,8 +375,7 @@ public class BIHTree implements CollisionData {
 
 			if (tMax <= 0) {
 				tMax = Float.POSITIVE_INFINITY;
-			}
-			else if (tMin == tMax) {
+			} else if (tMin == tMax) {
 				tMin = 0;
 			}
 
@@ -403,8 +396,7 @@ public class BIHTree implements CollisionData {
 		BoundingBox bbox;
 		if (bv instanceof BoundingBox) {
 			bbox = new BoundingBox((BoundingBox) bv);
-		}
-		else {
+		} else {
 			throw new UnsupportedCollisionException();
 		}
 
@@ -413,17 +405,16 @@ public class BIHTree implements CollisionData {
 	}
 
 	@Override
-	public int collideWith(Collidable other, Matrix4f worldMatrix, BoundingVolume worldBound, CollisionResults results) {
+	public int collideWith(Collidable other, Matrix4f worldMatrix, BoundingVolume worldBound,
+			CollisionResults results) {
 
 		if (other instanceof Ray) {
 			Ray ray = (Ray) other;
 			return collideWithRay(ray, worldMatrix, worldBound, results);
-		}
-		else if (other instanceof BoundingVolume) {
+		} else if (other instanceof BoundingVolume) {
 			BoundingVolume bv = (BoundingVolume) other;
 			return collideWithBoundingVolume(bv, worldMatrix, results);
-		}
-		else {
+		} else {
 			throw new UnsupportedCollisionException();
 		}
 	}

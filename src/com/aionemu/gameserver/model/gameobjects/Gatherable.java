@@ -27,7 +27,8 @@ import com.aionemu.gameserver.world.WorldPosition;
  */
 public class Gatherable extends VisibleObject {
 
-	public Gatherable(SpawnTemplate spawnTemplate, VisibleObjectTemplate objectTemplate, int objId, GatherableController controller) {
+	public Gatherable(SpawnTemplate spawnTemplate, VisibleObjectTemplate objectTemplate, int objId,
+			GatherableController controller) {
 		super(objId, controller, spawnTemplate, objectTemplate, new WorldPosition(spawnTemplate.getWorldId()));
 		controller.setOwner(this);
 	}

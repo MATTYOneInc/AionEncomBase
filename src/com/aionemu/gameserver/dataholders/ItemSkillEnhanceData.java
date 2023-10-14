@@ -33,33 +33,32 @@ import com.aionemu.gameserver.model.templates.item.ItemSkillEnhance;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name="item_skill_enhances")
-public class ItemSkillEnhanceData
-{
-    @XmlElement(name = "item_skill_enhance", required = true)
-    protected List<ItemSkillEnhance> skillEnhances;
-	
-    @XmlTransient
-    protected List<ItemSkillEnhance> enhanceSkillList = new ArrayList<ItemSkillEnhance>();
-	
-    public ItemSkillEnhance getSkillEnhance(int id) {
-        for (ItemSkillEnhance enhance : enhanceSkillList) {
-            if (enhance.getId() == id) {
-                return enhance;
-            }
-        }
-        return null;
-    }
-	
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        for (ItemSkillEnhance enhance : skillEnhances) {
-            enhanceSkillList.add(enhance);
-        }
-        skillEnhances.clear();
-        skillEnhances = null;
-    }
-	
-    public int size() {
-        return enhanceSkillList.size();
-    }
+@XmlRootElement(name = "item_skill_enhances")
+public class ItemSkillEnhanceData {
+	@XmlElement(name = "item_skill_enhance", required = true)
+	protected List<ItemSkillEnhance> skillEnhances;
+
+	@XmlTransient
+	protected List<ItemSkillEnhance> enhanceSkillList = new ArrayList<ItemSkillEnhance>();
+
+	public ItemSkillEnhance getSkillEnhance(int id) {
+		for (ItemSkillEnhance enhance : enhanceSkillList) {
+			if (enhance.getId() == id) {
+				return enhance;
+			}
+		}
+		return null;
+	}
+
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		for (ItemSkillEnhance enhance : skillEnhances) {
+			enhanceSkillList.add(enhance);
+		}
+		skillEnhances.clear();
+		skillEnhances = null;
+	}
+
+	public int size() {
+		return enhanceSkillList.size();
+	}
 }

@@ -96,8 +96,7 @@ public class Legion {
 	}
 
 	/**
-	 * @param legionId
-	 *          the legionId to set
+	 * @param legionId the legionId to set
 	 */
 	public void setLegionId(int legionId) {
 		this.legionId = legionId;
@@ -111,8 +110,7 @@ public class Legion {
 	}
 
 	/**
-	 * @param legionName
-	 *          the legionName to set
+	 * @param legionName the legionName to set
 	 */
 	public void setLegionName(String legionName) {
 		this.legionName = legionName;
@@ -126,8 +124,7 @@ public class Legion {
 	}
 
 	/**
-	 * @param legionMembers
-	 *          the legionMembers to set
+	 * @param legionMembers the legionMembers to set
 	 */
 	public void setLegionMembers(ArrayList<Integer> legionMembers) {
 		this.legionMembers = legionMembers;
@@ -184,7 +181,8 @@ public class Legion {
 	 * @param centurionPermission2
 	 * @return true or false
 	 */
-	public boolean setLegionPermissions(short deputyPermission,	short centurionPermission,	short legionaryPermission,	short volunteerPermission) {
+	public boolean setLegionPermissions(short deputyPermission, short centurionPermission, short legionaryPermission,
+			short volunteerPermission) {
 		this.deputyPermission = deputyPermission;
 		this.centurionPermission = centurionPermission;
 		this.legionaryPermission = legionaryPermission;
@@ -235,8 +233,7 @@ public class Legion {
 	}
 
 	/**
-	 * @param legionRank
-	 *          the legionRank to set
+	 * @param legionRank the legionRank to set
 	 */
 	public void setLegionRank(int legionRank) {
 		this.legionRank = legionRank;
@@ -250,8 +247,7 @@ public class Legion {
 	}
 
 	/**
-	 * @param contributionPoints
-	 *          the contributionPoints to set
+	 * @param contributionPoints the contributionPoints to set
 	 */
 	public void addContributionPoints(long contributionPoints) {
 		this.contributionPoints += contributionPoints;
@@ -279,20 +275,20 @@ public class Legion {
 	public boolean hasRequiredMembers() {
 		int memberSize = getLegionMembers().size();
 		switch (getLegionLevel()) {
-			case 1:
-				return memberSize >= LegionConfig.LEGION_LEVEL2_REQUIRED_MEMBERS;
-			case 2:
-				return memberSize >= LegionConfig.LEGION_LEVEL3_REQUIRED_MEMBERS;
-			case 3:
-				return memberSize >= LegionConfig.LEGION_LEVEL4_REQUIRED_MEMBERS;
-			case 4:
-				return memberSize >= LegionConfig.LEGION_LEVEL5_REQUIRED_MEMBERS;
-			case 5:
-				return memberSize >= LegionConfig.LEGION_LEVEL6_REQUIRED_MEMBERS;
-			case 6:
-				return memberSize >= LegionConfig.LEGION_LEVEL7_REQUIRED_MEMBERS;
-			case 7:
-				return memberSize >= LegionConfig.LEGION_LEVEL8_REQUIRED_MEMBERS;
+		case 1:
+			return memberSize >= LegionConfig.LEGION_LEVEL2_REQUIRED_MEMBERS;
+		case 2:
+			return memberSize >= LegionConfig.LEGION_LEVEL3_REQUIRED_MEMBERS;
+		case 3:
+			return memberSize >= LegionConfig.LEGION_LEVEL4_REQUIRED_MEMBERS;
+		case 4:
+			return memberSize >= LegionConfig.LEGION_LEVEL5_REQUIRED_MEMBERS;
+		case 5:
+			return memberSize >= LegionConfig.LEGION_LEVEL6_REQUIRED_MEMBERS;
+		case 6:
+			return memberSize >= LegionConfig.LEGION_LEVEL7_REQUIRED_MEMBERS;
+		case 7:
+			return memberSize >= LegionConfig.LEGION_LEVEL8_REQUIRED_MEMBERS;
 		}
 		return false;
 	}
@@ -304,20 +300,20 @@ public class Legion {
 	 */
 	public int getKinahPrice() {
 		switch (getLegionLevel()) {
-			case 1:
-				return LegionConfig.LEGION_LEVEL2_REQUIRED_KINAH;
-			case 2:
-				return LegionConfig.LEGION_LEVEL3_REQUIRED_KINAH;
-			case 3:
-				return LegionConfig.LEGION_LEVEL4_REQUIRED_KINAH;
-			case 4:
-				return LegionConfig.LEGION_LEVEL5_REQUIRED_KINAH;
-			case 5:
-				return LegionConfig.LEGION_LEVEL6_REQUIRED_KINAH;
-			case 6:
-				return LegionConfig.LEGION_LEVEL7_REQUIRED_KINAH;
-			case 7:
-				return LegionConfig.LEGION_LEVEL8_REQUIRED_KINAH;
+		case 1:
+			return LegionConfig.LEGION_LEVEL2_REQUIRED_KINAH;
+		case 2:
+			return LegionConfig.LEGION_LEVEL3_REQUIRED_KINAH;
+		case 3:
+			return LegionConfig.LEGION_LEVEL4_REQUIRED_KINAH;
+		case 4:
+			return LegionConfig.LEGION_LEVEL5_REQUIRED_KINAH;
+		case 5:
+			return LegionConfig.LEGION_LEVEL6_REQUIRED_KINAH;
+		case 6:
+			return LegionConfig.LEGION_LEVEL7_REQUIRED_KINAH;
+		case 7:
+			return LegionConfig.LEGION_LEVEL8_REQUIRED_KINAH;
 		}
 		return 0;
 	}
@@ -329,20 +325,20 @@ public class Legion {
 	 */
 	public int getContributionPrice() {
 		switch (getLegionLevel()) {
-			case 1:
-				return LegionConfig.LEGION_LEVEL2_REQUIRED_CONTRIBUTION;
-			case 2:
-				return LegionConfig.LEGION_LEVEL3_REQUIRED_CONTRIBUTION;
-			case 3:
-				return LegionConfig.LEGION_LEVEL4_REQUIRED_CONTRIBUTION;
-			case 4:
-				return LegionConfig.LEGION_LEVEL5_REQUIRED_CONTRIBUTION;
-			case 5:
-				return LegionConfig.LEGION_LEVEL6_REQUIRED_CONTRIBUTION;
-			case 6:
-				return LegionConfig.LEGION_LEVEL7_REQUIRED_CONTRIBUTION;
-			case 7:
-				return LegionConfig.LEGION_LEVEL8_REQUIRED_CONTRIBUTION;
+		case 1:
+			return LegionConfig.LEGION_LEVEL2_REQUIRED_CONTRIBUTION;
+		case 2:
+			return LegionConfig.LEGION_LEVEL3_REQUIRED_CONTRIBUTION;
+		case 3:
+			return LegionConfig.LEGION_LEVEL4_REQUIRED_CONTRIBUTION;
+		case 4:
+			return LegionConfig.LEGION_LEVEL5_REQUIRED_CONTRIBUTION;
+		case 5:
+			return LegionConfig.LEGION_LEVEL6_REQUIRED_CONTRIBUTION;
+		case 6:
+			return LegionConfig.LEGION_LEVEL7_REQUIRED_CONTRIBUTION;
+		case 7:
+			return LegionConfig.LEGION_LEVEL8_REQUIRED_CONTRIBUTION;
 		}
 		return 0;
 	}
@@ -355,29 +351,28 @@ public class Legion {
 	private boolean canAddMember() {
 		int memberSize = getLegionMembers().size();
 		switch (getLegionLevel()) {
-			case 1:
-				return memberSize < LegionConfig.LEGION_LEVEL1_MAX_MEMBERS;
-			case 2:
-				return memberSize < LegionConfig.LEGION_LEVEL2_MAX_MEMBERS;
-			case 3:
-				return memberSize < LegionConfig.LEGION_LEVEL3_MAX_MEMBERS;
-			case 4:
-				return memberSize < LegionConfig.LEGION_LEVEL4_MAX_MEMBERS;
-			case 5:
-				return memberSize < LegionConfig.LEGION_LEVEL5_MAX_MEMBERS;
-			case 6:
-				return memberSize < LegionConfig.LEGION_LEVEL6_MAX_MEMBERS;
-			case 7:
-				return memberSize < LegionConfig.LEGION_LEVEL7_MAX_MEMBERS;
-			case 8:
-				return memberSize < LegionConfig.LEGION_LEVEL8_MAX_MEMBERS;
+		case 1:
+			return memberSize < LegionConfig.LEGION_LEVEL1_MAX_MEMBERS;
+		case 2:
+			return memberSize < LegionConfig.LEGION_LEVEL2_MAX_MEMBERS;
+		case 3:
+			return memberSize < LegionConfig.LEGION_LEVEL3_MAX_MEMBERS;
+		case 4:
+			return memberSize < LegionConfig.LEGION_LEVEL4_MAX_MEMBERS;
+		case 5:
+			return memberSize < LegionConfig.LEGION_LEVEL5_MAX_MEMBERS;
+		case 6:
+			return memberSize < LegionConfig.LEGION_LEVEL6_MAX_MEMBERS;
+		case 7:
+			return memberSize < LegionConfig.LEGION_LEVEL7_MAX_MEMBERS;
+		case 8:
+			return memberSize < LegionConfig.LEGION_LEVEL8_MAX_MEMBERS;
 		}
 		return false;
 	}
 
 	/**
-	 * @param announcementList
-	 *          the announcementList to set
+	 * @param announcementList the announcementList to set
 	 */
 	public void setAnnouncementList(TreeMap<Timestamp, String> announcementList) {
 		this.announcementList = announcementList;
@@ -415,8 +410,7 @@ public class Legion {
 	}
 
 	/**
-	 * @param disbandTime
-	 *          the disbandTime to set
+	 * @param disbandTime the disbandTime to set
 	 */
 	public void setDisbandTime(int disbandTime) {
 		this.disbandTime = disbandTime;
@@ -447,8 +441,7 @@ public class Legion {
 	}
 
 	/**
-	 * @param legionEmblem
-	 *          the legionEmblem to set
+	 * @param legionEmblem the legionEmblem to set
 	 */
 	public void setLegionEmblem(LegionEmblem legionEmblem) {
 		this.legionEmblem = legionEmblem;
@@ -462,8 +455,7 @@ public class Legion {
 	}
 
 	/**
-	 * @param legionWarehouse
-	 *          the legionWarehouse to set
+	 * @param legionWarehouse the legionWarehouse to set
 	 */
 	public void setLegionWarehouse(LegionWarehouse legionWarehouse) {
 		this.legionWarehouse = legionWarehouse;
@@ -483,22 +475,22 @@ public class Legion {
 	 */
 	public int getWarehouseSlots() {
 		switch (getLegionLevel()) {
-			case 1:
-				return LegionConfig.LWH_LEVEL1_SLOTS;
-			case 2:
-				return LegionConfig.LWH_LEVEL2_SLOTS;
-			case 3:
-				return LegionConfig.LWH_LEVEL3_SLOTS;
-			case 4:
-				return LegionConfig.LWH_LEVEL4_SLOTS;
-			case 5:
-				return LegionConfig.LWH_LEVEL5_SLOTS;
-			case 6:
-				return LegionConfig.LWH_LEVEL6_SLOTS;
-			case 7:
-				return LegionConfig.LWH_LEVEL7_SLOTS;
-			case 8:
-				return LegionConfig.LWH_LEVEL8_SLOTS;
+		case 1:
+			return LegionConfig.LWH_LEVEL1_SLOTS;
+		case 2:
+			return LegionConfig.LWH_LEVEL2_SLOTS;
+		case 3:
+			return LegionConfig.LWH_LEVEL3_SLOTS;
+		case 4:
+			return LegionConfig.LWH_LEVEL4_SLOTS;
+		case 5:
+			return LegionConfig.LWH_LEVEL5_SLOTS;
+		case 6:
+			return LegionConfig.LWH_LEVEL6_SLOTS;
+		case 7:
+			return LegionConfig.LWH_LEVEL7_SLOTS;
+		case 8:
+			return LegionConfig.LWH_LEVEL8_SLOTS;
 		}
 		return LegionConfig.LWH_LEVEL1_SLOTS;
 	}
@@ -530,21 +522,22 @@ public class Legion {
 
 	public void addBonus() {
 		ArrayList<Player> members = getOnlineLegionMembers();
-		//레기온 창고란 같은 레기온원들 끼리 공동으로 사용하는 창고의 개념이다.
-		//즉, 다른 레기온원이 이곳에 물건을 넣으면, 자신 외에 다른 권한을 가진 레기온원이 꺼내서 사용할 수 있다는 것.
-		//아직 영혼 각인하지 않은 무기, 방어구라든지 각종 소비 아이템, 심지어 키나까지도 레기온원들 끼리 공동으로 사용할 수 있게 해주는 아주 편리한 시스템이다.
-		//레기온 창고는 레기온을 설립하면 바로 이용이 가능하며, 레기온 창고의 이용 방식은 일반 창고와 동일하다.
-		//레기온의 레벨이 올라갈 수록 레기온 창고의 슬롯 수를 늘릴 수 있다.
+		// 레기온 창고란 같은 레기온원들 끼리 공동으로 사용하는 창고의 개념이다.
+		// 즉, 다른 레기온원이 이곳에 물건을 넣으면, 자신 외에 다른 권한을 가진 레기온원이 꺼내서 사용할 수 있다는 것.
+		// 아직 영혼 각인하지 않은 무기, 방어구라든지 각종 소비 아이템, 심지어 키나까지도 레기온원들 끼리 공동으로 사용할 수 있게 해주는 아주
+		// 편리한 시스템이다.
+		// 레기온 창고는 레기온을 설립하면 바로 이용이 가능하며, 레기온 창고의 이용 방식은 일반 창고와 동일하다.
+		// 레기온의 레벨이 올라갈 수록 레기온 창고의 슬롯 수를 늘릴 수 있다.
 		if (members.size() >= 2 && members.size() <= 9) {
 			if (hasBonus.compareAndSet(false, true)) {
-				for (Player member: members) {
+				for (Player member : members) {
 					serviceBuff = new ServiceBuff(1);
 					serviceBuff.applyEffect(member, 1);
 				}
 			}
 		} else if (members.size() >= 10 && members.size() <= 240) {
 			if (hasBonus.compareAndSet(false, true)) {
-				for (Player member: members) {
+				for (Player member : members) {
 					serviceBuff = new ServiceBuff(6);
 					serviceBuff.applyEffect(member, 6);
 					serviceBuff.endEffect(member, 1);
@@ -557,14 +550,14 @@ public class Legion {
 		ArrayList<Player> members = getOnlineLegionMembers();
 		if (members.size() < 2) {
 			if (hasBonus.compareAndSet(true, false)) {
-				for (Player member: members) {
+				for (Player member : members) {
 					serviceBuff = new ServiceBuff(1);
 					serviceBuff.endEffect(member, 1);
 				}
 			}
 		} else if (members.size() < 10) {
 			if (hasBonus.compareAndSet(true, false)) {
-				for (Player member: members) {
+				for (Player member : members) {
 					serviceBuff = new ServiceBuff(6);
 					serviceBuff.endEffect(member, 6);
 					serviceBuff.applyEffect(member, 1);
@@ -579,8 +572,10 @@ public class Legion {
 
 	@Override
 	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
 
 		Legion legion = (Legion) o;
 		return legionId == legion.legionId;

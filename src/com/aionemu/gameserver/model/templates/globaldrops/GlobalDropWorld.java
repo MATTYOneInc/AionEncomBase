@@ -25,11 +25,10 @@ import com.aionemu.gameserver.world.WorldDropType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GlobalDropWorld")
-public class GlobalDropWorld
-{
+public class GlobalDropWorld {
 	@XmlAttribute(name = "wd_type", required = true)
 	protected WorldDropType wdType;
-	
+
 	public WorldDropType getWorldDropType() {
 		return wdType;
 	}

@@ -49,7 +49,8 @@ public final class CmdWishId extends AbstractGMHandler {
 			} else {
 				long count = ItemService.addItem(t, itemId, qty);
 				if (count == 0) {
-					PacketSendUtility.sendMessage(admin, "You successfully gave " + qty + " x [item:" + itemId + "] to " + t.getName() + ".");
+					PacketSendUtility.sendMessage(admin,
+							"You successfully gave " + qty + " x [item:" + itemId + "] to " + t.getName() + ".");
 				} else {
 					PacketSendUtility.sendMessage(admin, "Item couldn't be added");
 				}

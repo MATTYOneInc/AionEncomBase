@@ -27,43 +27,42 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "UpgradeResultItem")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class UpgradeResultItem
-{
+public class UpgradeResultItem {
 	@XmlAttribute(name = "item_id")
 	private int item_id;
-	
+
 	@XmlAttribute(name = "check_enchant_count")
 	private int check_enchant_count;
-	
+
 	@XmlAttribute(name = "check_authorize_count")
 	private int check_authorize_count;
-	
+
 	private UpgradeMaterials upgrade_materials;
-	
+
 	private NeedAbyssPoint need_abyss_point;
-	
+
 	private NeedKinah need_kinah;
-	
+
 	public int getCheck_enchant_count() {
 		return check_enchant_count;
 	}
-	
+
 	public int getCheck_authorize_count() {
 		return check_authorize_count;
 	}
-	
+
 	public int getItem_id() {
 		return item_id;
 	}
-	
+
 	public UpgradeMaterials getUpgrade_materials() {
 		return upgrade_materials;
 	}
-	
+
 	public NeedAbyssPoint getNeed_abyss_point() {
 		return need_abyss_point;
 	}
-	
+
 	public NeedKinah getNeed_kinah() {
 		return need_kinah;
 	}

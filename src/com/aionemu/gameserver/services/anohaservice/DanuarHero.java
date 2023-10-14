@@ -23,19 +23,18 @@ import com.aionemu.gameserver.model.anoha.AnohaStateType;
  * @author Rinzler (Encom)
  */
 
-public class DanuarHero extends BerserkAnoha<AnohaLocation>
-{
+public class DanuarHero extends BerserkAnoha<AnohaLocation> {
 	public DanuarHero(AnohaLocation anoha) {
 		super(anoha);
 	}
-	
+
 	@Override
 	public void startAnoha() {
 		getAnohaLocation().setActiveAnoha(this);
 		despawn();
 		spawn(AnohaStateType.FIGHT);
 	}
-	
+
 	@Override
 	public void stopAnoha() {
 		getAnohaLocation().setActiveAnoha(null);

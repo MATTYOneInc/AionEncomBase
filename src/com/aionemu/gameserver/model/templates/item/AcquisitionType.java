@@ -22,10 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "acquisitionType")
 @XmlEnum
 public enum AcquisitionType {
-	AP(0),
-	ABYSS(1),
-	REWARD(2),
-	COUPON(2);
+	AP(0), ABYSS(1), REWARD(2), COUPON(2);
 
 	private int id;
 

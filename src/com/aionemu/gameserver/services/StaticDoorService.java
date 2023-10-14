@@ -26,45 +26,48 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.instance.InstanceService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class StaticDoorService
-{
+public class StaticDoorService {
 	private static final Logger log = LoggerFactory.getLogger(StaticDoorService.class);
-	
+
 	public static StaticDoorService getInstance() {
 		return SingletonHolder.instance;
 	}
-	
+
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final StaticDoorService instance = new StaticDoorService();
 	}
-	
+
 	public void openStaticDoor(final Player player, int doorId) {
 		if (player.getAccessLevel() >= 3) {
 			PacketSendUtility.sendMessage(player, "Door Id: " + doorId);
 		}
 		StaticDoor door = player.getPosition().getWorldMapInstance().getDoors().get(doorId);
 		if (door == null) {
-			log.warn("Not spawned door worldId: "+ player.getWorldId()+" doorId: "+doorId);
+			log.warn("Not spawned door worldId: " + player.getWorldId() + " doorId: " + doorId);
 			return;
 		}
 		int keyId = door.getObjectTemplate().getKeyId();
 		if (player.getAccessLevel() >= 3) {
 			PacketSendUtility.sendMessage(player, "Key Id: " + keyId);
-		} if (checkStaticDoorKey(player, doorId, keyId)) {
+		}
+		if (checkStaticDoorKey(player, doorId, keyId)) {
 			door.setOpen(true);
 		}
 		InstanceService.onOpenDoor(player, doorId);
 	}
-	
+
 	public boolean checkStaticDoorKey(Player player, int doorId, int keyId) {
 		if (player.getAccessLevel() >= AdminConfig.DOORS_OPEN) {
 			return true;
-		} if (keyId == 0) {
+		}
+		if (keyId == 0) {
 			return true;
-		} if (keyId == 1) {
+		}
+		if (keyId == 1) {
 			return false;
-		} if (!player.getInventory().decreaseByItemId(keyId, 1)) {
+		}
+		if (!player.getInventory().decreaseByItemId(keyId, 1)) {
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(false, 1300723, player.getObjectId(), 2));
 			return false;
 		}

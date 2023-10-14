@@ -79,8 +79,7 @@ public class Announcement {
 	public int getId() {
 		if (id != 0) {
 			return id;
-		}
-		else {
+		} else {
 			return -1;
 		}
 	}
@@ -104,15 +103,15 @@ public class Announcement {
 	}
 
 	/**
-	 * Return the announcement's faction in Race enum mode : - Race.ELYOS - Race.ASMODIANS
+	 * Return the announcement's faction in Race enum mode : - Race.ELYOS -
+	 * Race.ASMODIANS
 	 * 
 	 * @return Race - Announcement's faction
 	 */
 	public Race getFactionEnum() {
 		if (faction.equalsIgnoreCase("ELYOS")) {
 			return Race.ELYOS;
-		}
-		else if (faction.equalsIgnoreCase("ASMODIANS")) {
+		} else if (faction.equalsIgnoreCase("ASMODIANS")) {
 			return Race.ASMODIANS;
 		}
 		return null;
@@ -135,20 +134,15 @@ public class Announcement {
 	public ChatType getChatType() {
 		if (chatType.equalsIgnoreCase("System")) {
 			return ChatType.YELLOW;
-		}
-		else if (chatType.equalsIgnoreCase("White")) {
+		} else if (chatType.equalsIgnoreCase("White")) {
 			return ChatType.WHITE_CENTER;
-		}
-		else if (chatType.equalsIgnoreCase("Yellow")) {
+		} else if (chatType.equalsIgnoreCase("Yellow")) {
 			return ChatType.YELLOW_CENTER;
-		}
-		else if (chatType.equalsIgnoreCase("Shout")) {
+		} else if (chatType.equalsIgnoreCase("Shout")) {
 			return ChatType.SHOUT;
-		}
-		else if (chatType.equalsIgnoreCase("Orange")) {
+		} else if (chatType.equalsIgnoreCase("Orange")) {
 			return ChatType.GROUP_LEADER;
-		}
-		else {
+		} else {
 			return ChatType.BRIGHT_YELLOW_CENTER;
 		}
 	}

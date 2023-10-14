@@ -41,10 +41,10 @@ public class SelfFlyingCondition extends Condition {
 			return false;
 		}
 		switch (restriction) {
-			case FLY:
-				return env.getEffector().isFlying();
-			case GROUND:
-				return !env.getEffector().isFlying();
+		case FLY:
+			return env.getEffector().isFlying();
+		case GROUND:
+			return !env.getEffector().isFlying();
 		}
 		return true;
 	}
@@ -55,10 +55,10 @@ public class SelfFlyingCondition extends Condition {
 			return false;
 		}
 		switch (restriction) {
-			case FLY:
-				return effect.getEffector().isFlying();
-			case GROUND:
-				return !effect.getEffector().isFlying();
+		case FLY:
+			return effect.getEffector().isFlying();
+		case GROUND:
+			return !effect.getEffector().isFlying();
 		}
 		return true;
 	}

@@ -38,9 +38,11 @@ public class AtreianBestiaryData {
 
 	@XmlElement(name = "monster_book", type = AtreianBestiaryTemplate.class)
 	private List<AtreianBestiaryTemplate> templates;
-	
-	private final Map<Integer, AtreianBestiaryTemplate> idsHolder = new FastMap<Integer, AtreianBestiaryTemplate>().shared();
-	private final Map<Integer, AtreianBestiaryTemplate> npcIdsHolder = new FastMap<Integer, AtreianBestiaryTemplate>().shared();
+
+	private final Map<Integer, AtreianBestiaryTemplate> idsHolder = new FastMap<Integer, AtreianBestiaryTemplate>()
+			.shared();
+	private final Map<Integer, AtreianBestiaryTemplate> npcIdsHolder = new FastMap<Integer, AtreianBestiaryTemplate>()
+			.shared();
 
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (AtreianBestiaryTemplate template : templates) {
@@ -48,7 +50,7 @@ public class AtreianBestiaryData {
 			if (!template.getNpcIds().isEmpty()) {
 				for (int npcId : template.getNpcIds()) {
 					npcIdsHolder.put(npcId, template);
-    			}
+				}
 			}
 		}
 		templates.clear();
@@ -62,7 +64,7 @@ public class AtreianBestiaryData {
 	public AtreianBestiaryTemplate getAtreianBestiaryTemplate(int id) {
 		return idsHolder.get(id);
 	}
-	
+
 	public int sizeByNpcId() {
 		return npcIdsHolder.size();
 	}

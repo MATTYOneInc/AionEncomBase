@@ -57,12 +57,12 @@ public class World {
 	private final TIntObjectHashMap<Collection<OutpostNpc>> localOutpostNpcs = new TIntObjectHashMap<Collection<OutpostNpc>>();
 	private final FastMap<Integer, Npc> allNpcs;
 	private final TIntObjectHashMap<WorldMap> worldMaps;
-	
+
 	/**
 	 * Constructor.
 	 */
 	private World() {
-	    Util.printSection(" *** World *** ");
+		Util.printSection(" *** World *** ");
 		allPlayers = new PlayerContainer();
 		allObjects = new FastMap<Integer, VisibleObject>().shared();
 		allNpcs = new FastMap<Integer, Npc>().shared();
@@ -72,11 +72,11 @@ public class World {
 		}
 		log.info("World: " + worldMaps.size() + " worlds map created.");
 	}
-	
+
 	public static World getInstance() {
 		return SingletonHolder.instance;
 	}
-	
+
 	/**
 	 * Store object in the world.
 	 */
@@ -84,7 +84,7 @@ public class World {
 		if (object.getPosition() == null) {
 			log.warn("Not putting object with null position!!! " + object.getObjectTemplate().getTemplateId());
 			return;
-		} 
+		}
 		if (allObjects.put(object.getObjectId(), object) != null) {
 			throw new DuplicateAionObjectException();
 		}
@@ -138,7 +138,7 @@ public class World {
 			allNpcs.put(object.getObjectId(), (Npc) object);
 		}
 	}
-	
+
 	/**
 	 * Remove Object from the world.<br>
 	 * If the given object is Npc then it also releases it's objId from IDFactory.
@@ -171,61 +171,61 @@ public class World {
 			allPlayers.remove((Player) object);
 		}
 	}
-	
+
 	/**
 	 * Returns Players iterator.
 	 */
 	public Iterator<Player> getPlayersIterator() {
 		return allPlayers.iterator();
 	}
-	
+
 	public Collection<SiegeNpc> getLocalSiegeNpcs(int locationId) {
 		Collection<SiegeNpc> result = localSiegeNpcs.get(locationId);
-		return result != null ? result : Collections.<SiegeNpc> emptySet();
+		return result != null ? result : Collections.<SiegeNpc>emptySet();
 	}
-	
+
 	public Collection<BaseNpc> getLocalBaseNpcs(int locationId) {
 		Collection<BaseNpc> result = localBaseNpcs.get(locationId);
-		return result != null ? result : Collections.<BaseNpc> emptySet();
+		return result != null ? result : Collections.<BaseNpc>emptySet();
 	}
-	
+
 	public Collection<OutpostNpc> getLocalOutpostNpcs(int locationId) {
 		Collection<OutpostNpc> result = localOutpostNpcs.get(locationId);
-		return result != null ? result : Collections.<OutpostNpc> emptySet();
+		return result != null ? result : Collections.<OutpostNpc>emptySet();
 	}
-	
+
 	public Collection<Npc> getNpcs() {
 		return allNpcs.values();
 	}
-	
+
 	/**
 	 * Finds player by player name.
 	 */
 	public Player findPlayer(String name) {
 		return allPlayers.get(name);
 	}
-	
+
 	/**
 	 * Finds player by player objectId.
 	 */
 	public Player findPlayer(int objectId) {
 		return allPlayers.get(objectId);
 	}
-	
+
 	/**
 	 * Finds VisibleObject by objectId.
 	 */
 	public VisibleObject findVisibleObject(int objectId) {
 		return allObjects.get(objectId);
 	}
-	
+
 	/**
 	 * Check whether object is in world
 	 */
 	public boolean isInWorld(VisibleObject object) {
 		return allObjects.containsKey(object.getObjectId());
 	}
-	
+
 	/**
 	 * Return World Map by id
 	 */
@@ -236,9 +236,11 @@ public class World {
 		}
 		return map;
 	}
-	
+
 	/**
-	 * Update position of VisibleObject [used when object is moving on one map instance]. Check if active map region changed and do all needed updates.
+	 * Update position of VisibleObject [used when object is moving on one map
+	 * instance]. Check if active map region changed and do all needed updates.
+	 * 
 	 * @param object
 	 * @param newX
 	 * @param newY
@@ -248,7 +250,7 @@ public class World {
 	public void updatePosition(VisibleObject object, float newX, float newY, float newZ, byte newHeading) {
 		this.updatePosition(object, newX, newY, newZ, newHeading, true);
 	}
-	
+
 	/**
 	 * @param object
 	 * @param newX
@@ -256,18 +258,21 @@ public class World {
 	 * @param newZ
 	 * @param newHeading
 	 */
-	public void updatePosition(VisibleObject object, float newX, float newY, float newZ, byte newHeading, boolean updateKnownList) {
+	public void updatePosition(VisibleObject object, float newX, float newY, float newZ, byte newHeading,
+			boolean updateKnownList) {
 		if (!object.isSpawned()) {
 			return;
 		}
 		MapRegion oldRegion = object.getActiveRegion();
 		if (oldRegion == null) {
-			log.warn(String.format("CHECKPOINT: oldRegion is null, map - %d, object coordinates - %f %f %f", object.getWorldId(), object.getX(), object.getY(), object.getZ()));
+			log.warn(String.format("CHECKPOINT: oldRegion is null, map - %d, object coordinates - %f %f %f",
+					object.getWorldId(), object.getX(), object.getY(), object.getZ()));
 			return;
 		}
 		MapRegion newRegion = oldRegion.getParent().getRegion(newX, newY, newZ);
 		if (newRegion == null) {
-			log.warn(String.format("CHECKPOINT: newRegion is null, map - %d, object coordinates - %f %f %f", object.getWorldId(), newX, newY, newZ), new Throwable());
+			log.warn(String.format("CHECKPOINT: newRegion is null, map - %d, object coordinates - %f %f %f",
+					object.getWorldId(), newX, newY, newZ), new Throwable());
 			if (object instanceof Creature) {
 				((Creature) object).getMoveController().abortMove();
 			}
@@ -284,7 +289,8 @@ public class World {
 					z = bplist.getZ();
 					h = bplist.getHeading();
 				} else {
-					LocationData locationData = DataManager.PLAYER_INITIAL_DATA.getSpawnLocation(player.getCommonData().getRace());
+					LocationData locationData = DataManager.PLAYER_INITIAL_DATA
+							.getSpawnLocation(player.getCommonData().getRace());
 					worldId = locationData.getMapId();
 					x = locationData.getX();
 					y = locationData.getY();
@@ -308,9 +314,11 @@ public class World {
 			object.updateKnownlist();
 		}
 	}
-	
+
 	/**
-	 * Set position of VisibleObject without spawning [object will be invisible]. If object is spawned it will be despawned first.
+	 * Set position of VisibleObject without spawning [object will be invisible]. If
+	 * object is spawned it will be despawned first.
+	 * 
 	 * @param object
 	 * @param mapId
 	 * @param x
@@ -325,7 +333,7 @@ public class World {
 		}
 		this.setPosition(object, mapId, instanceId, x, y, z, heading);
 	}
-	
+
 	/**
 	 * @param object
 	 * @param mapId
@@ -348,9 +356,11 @@ public class World {
 		MapRegion region = instanceMap.getRegion(object);
 		object.getPosition().setMapRegion(region);
 	}
-	
+
 	/**
-	 * Creates and return {@link WorldPosition} object, representing position with given parameters.
+	 * Creates and return {@link WorldPosition} object, representing position with
+	 * given parameters.
+	 * 
 	 * @param mapId
 	 * @param x
 	 * @param y
@@ -366,7 +376,7 @@ public class World {
 		position.setMapRegion(getWorldMap(mapId).getWorldMapInstanceById(instanceId).getRegion(x, y, z));
 		return position;
 	}
-	
+
 	public void preSpawn(VisibleObject object) {
 		((Player) object).setState(CreatureState.ACTIVE);
 		object.getPosition().setIsSpawned(true);
@@ -374,9 +384,10 @@ public class World {
 		object.getActiveRegion().add(object);
 		object.getController().onAfterSpawn();
 	}
-	
+
 	/**
-	 * Spawn VisibleObject at current position [use setPosition ]. Object will be visible by others and will see other objects.
+	 * Spawn VisibleObject at current position [use setPosition ]. Object will be
+	 * visible by others and will see other objects.
 	 */
 	public void spawn(VisibleObject object) {
 		if (object.getPosition().isSpawned()) {
@@ -389,14 +400,15 @@ public class World {
 		object.getController().onAfterSpawn();
 		object.updateKnownlist();
 	}
-	
+
 	/**
-	 * Despawn VisibleObject, object will become invisible and object position will become invalid. All others objects
+	 * Despawn VisibleObject, object will become invisible and object position will
+	 * become invalid. All others objects
 	 */
 	public void despawn(VisibleObject object) {
 		despawn(object, true);
 	}
-	
+
 	public void despawn(VisibleObject object, boolean clearKnownlist) {
 		MapRegion oldMapRegion = object.getActiveRegion();
 		if (object.getActiveRegion() != null) {
@@ -413,27 +425,28 @@ public class World {
 			object.clearKnownlist();
 		}
 	}
-	
+
 	/**
 	 * @return
 	 */
 	public Collection<Player> getAllPlayers() {
 		return allPlayers.getAllPlayers();
 	}
-	
+
 	/**
 	 * @param visitor
 	 */
 	public void doOnAllPlayers(Visitor<Player> visitor) {
 		allPlayers.doOnAllPlayers(visitor);
 	}
-	
+
 	/**
 	 * @param visitor
 	 */
 	public void doOnAllObjects(Visitor<VisibleObject> visitor) {
 		try {
-			for (FastMap.Entry<Integer, VisibleObject> e = allObjects.head(), mapEnd = allObjects.tail(); (e = e.getNext()) != mapEnd;) {
+			for (FastMap.Entry<Integer, VisibleObject> e = allObjects.head(),
+					mapEnd = allObjects.tail(); (e = e.getNext()) != mapEnd;) {
 				VisibleObject object = e.getValue();
 				if (object != null) {
 					visitor.visit(object);
@@ -443,7 +456,7 @@ public class World {
 			log.error("Exception when running visitor on all objects", ex);
 		}
 	}
-	
+
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final World instance = new World();

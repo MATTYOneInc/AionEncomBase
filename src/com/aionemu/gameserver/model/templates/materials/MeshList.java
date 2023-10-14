@@ -48,7 +48,7 @@ public class MeshList {
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		if (meshMaterials == null) {
 			return;
-        }
+		}
 		for (MeshMaterial meshMaterial : meshMaterials) {
 			materialIdsByPath.put(meshMaterial.path, meshMaterial.materialId);
 			pathZones.put(meshMaterial.path.hashCode(), meshMaterial.getZoneName());
@@ -65,8 +65,7 @@ public class MeshList {
 	/**
 	 * Find material ID for the specific mesh
 	 * 
-	 * @param meshPath
-	 *          Mesh geo path
+	 * @param meshPath Mesh geo path
 	 * @return 0 if not found
 	 */
 	public int getMeshMaterialId(String meshPath) {

@@ -23,57 +23,57 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
  */
 public class PlayerTeamMember implements TeamMember<Player> {
 
-    final Player player;
-    private long lastOnlineTime;
+	final Player player;
+	private long lastOnlineTime;
 
-    public PlayerTeamMember(Player player) {
-        this.player = player;
-    }
+	public PlayerTeamMember(Player player) {
+		this.player = player;
+	}
 
-    @Override
-    public Integer getObjectId() {
-        return player.getObjectId();
-    }
+	@Override
+	public Integer getObjectId() {
+		return player.getObjectId();
+	}
 
-    @Override
-    public String getName() {
-        return player.getName();
-    }
+	@Override
+	public String getName() {
+		return player.getName();
+	}
 
-    @Override
-    public Player getObject() {
-        return player;
-    }
+	@Override
+	public Player getObject() {
+		return player;
+	}
 
-    public long getLastOnlineTime() {
-        return lastOnlineTime;
-    }
+	public long getLastOnlineTime() {
+		return lastOnlineTime;
+	}
 
-    public void updateLastOnlineTime() {
-        lastOnlineTime = System.currentTimeMillis();
-    }
+	public void updateLastOnlineTime() {
+		lastOnlineTime = System.currentTimeMillis();
+	}
 
-    public boolean isOnline() {
-        return player.isOnline();
-    }
+	public boolean isOnline() {
+		return player.isOnline();
+	}
 
-    public float getX() {
-        return player.getX();
-    }
+	public float getX() {
+		return player.getX();
+	}
 
-    public float getY() {
-        return player.getY();
-    }
+	public float getY() {
+		return player.getY();
+	}
 
-    public float getZ() {
-        return player.getZ();
-    }
+	public float getZ() {
+		return player.getZ();
+	}
 
-    public byte getHeading() {
-        return player.getHeading();
-    }
+	public byte getHeading() {
+		return player.getHeading();
+	}
 
-    public byte getLevel() {
-        return player.getLevel();
-    }
+	public byte getLevel() {
+		return player.getLevel();
+	}
 }

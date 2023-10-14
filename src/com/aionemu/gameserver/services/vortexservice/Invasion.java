@@ -33,16 +33,15 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 import javolution.util.FastMap;
 
-public class Invasion extends DimensionalVortex<VortexLocation>
-{
+public class Invasion extends DimensionalVortex<VortexLocation> {
 	PlayerAlliance invAlliance, defAlliance;
 	protected FastMap<Integer, Player> invaders = new FastMap<Integer, Player>();
 	protected FastMap<Integer, Player> defenders = new FastMap<Integer, Player>();
-	
+
 	public Invasion(VortexLocation vortex) {
 		super(vortex);
 	}
-	
+
 	@Override
 	public void startInvasion() {
 		getVortexLocation().setActiveVortex(this);
@@ -51,7 +50,7 @@ public class Invasion extends DimensionalVortex<VortexLocation>
 		initRiftGenerator();
 		updateAlliance();
 	}
-	
+
 	@Override
 	public void stopInvasion() {
 		getVortexLocation().setActiveVortex(null);
@@ -67,7 +66,7 @@ public class Invasion extends DimensionalVortex<VortexLocation>
 		despawn();
 		spawn(VortexStateType.PEACE);
 	}
-	
+
 	@Override
 	public void addPlayer(Player player, boolean isInvader) {
 		FastMap<Integer, Player> list = isInvader ? invaders : defenders;
@@ -83,7 +82,8 @@ public class Invasion extends DimensionalVortex<VortexLocation>
 					PlayerAllianceService.removePlayer(firstOne);
 				}
 				first = firstOne;
-			} if (first.getObjectId() != player.getObjectId()) {
+			}
+			if (first.getObjectId() != player.getObjectId()) {
 				if (isInvader) {
 					invAlliance = PlayerAllianceService.createAlliance(first, player, TeamType.ALLIANCE_OFFENCE);
 				} else {
@@ -95,7 +95,7 @@ public class Invasion extends DimensionalVortex<VortexLocation>
 		}
 		list.putEntry(player.getObjectId(), player);
 	}
-	
+
 	@Override
 	public void kickPlayer(Player player, boolean isInvader) {
 		FastMap<Integer, Player> list = isInvader ? invaders : defenders;
@@ -113,19 +113,21 @@ public class Invasion extends DimensionalVortex<VortexLocation>
 					defAlliance = null;
 				}
 			}
-		} if (isInvader && player.isOnline() && player.getWorldId() == getVortexLocation().getInvasionWorldId()) {
+		}
+		if (isInvader && player.isOnline() && player.getWorldId() == getVortexLocation().getInvasionWorldId()) {
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1401474));
 			TeleportService2.teleportTo(player, getVortexLocation().getHomePoint());
 		}
 		getVortexLocation().getVortexController().getPassedPlayers().remove(player.getObjectId());
 		getVortexLocation().getVortexController().syncPassed(true);
 	}
-	
+
 	@Override
 	public void updateDefenders(Player defender) {
 		if (defenders.containsKey(defender.getObjectId())) {
 			return;
-		} if (defAlliance == null || !defAlliance.isFull()) {
+		}
+		if (defAlliance == null || !defAlliance.isFull()) {
 			RequestResponseHandler responseHandler = new RequestResponseHandler(defender) {
 				@Override
 				public void acceptRequest(Creature requester, Player responder) {
@@ -133,13 +135,15 @@ public class Invasion extends DimensionalVortex<VortexLocation>
 						PlayerGroupService.removePlayer(responder);
 					} else if (responder.isInAlliance2()) {
 						PlayerAllianceService.removePlayer(responder);
-					} if (defAlliance == null || !defAlliance.isFull()) {
+					}
+					if (defAlliance == null || !defAlliance.isFull()) {
 						addPlayer(responder, false);
 					}
 				}
+
 				@Override
 				public void denyRequest(Creature requester, Player responder) {
-				    onDeny(responder);
+					onDeny(responder);
 				}
 			};
 			boolean requested = defender.getResponseRequester().putRequest(904306, responseHandler);
@@ -148,11 +152,11 @@ public class Invasion extends DimensionalVortex<VortexLocation>
 			}
 		}
 	}
-	
+
 	private boolean onDeny(Player player) {
 		return true;
 	}
-	
+
 	@Override
 	public void updateInvaders(Player invader) {
 		if (invaders.containsKey(invader.getObjectId())) {
@@ -160,7 +164,7 @@ public class Invasion extends DimensionalVortex<VortexLocation>
 		}
 		addPlayer(invader, true);
 	}
-	
+
 	private void updateAlliance() {
 		for (Player player : getVortexLocation().getPlayers().values()) {
 			if (player.getRace().equals(getVortexLocation().getDefendersRace())) {
@@ -168,12 +172,12 @@ public class Invasion extends DimensionalVortex<VortexLocation>
 			}
 		}
 	}
-	
+
 	@Override
 	public FastMap<Integer, Player> getInvaders() {
 		return invaders;
 	}
-	
+
 	@Override
 	public FastMap<Integer, Player> getDefenders() {
 		return defenders;

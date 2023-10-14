@@ -53,8 +53,7 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class AgentService
-{
+public class AgentService {
 	private AgentSchedule agentSchedule;
 	private Map<Integer, AgentLocation> agent;
 	private static final int duration = CustomConfig.AGENT_DURATION;
@@ -64,28 +63,28 @@ public class AgentService
 	public void initAgentLocations() {
 		if (CustomConfig.AGENT_ENABLED) {
 			agent = DataManager.AGENT_DATA.getAgentLocations();
-			for (AgentLocation loc: getAgentLocations().values()) {
+			for (AgentLocation loc : getAgentLocations().values()) {
 				spawn(loc, AgentStateType.PEACE);
 			}
-		log.info("[AgentService] Loaded " + agent.size() + " locations.");
+			log.info("[AgentService] Loaded " + agent.size() + " locations.");
 		} else {
 			log.info("[AgentService] Agent Fight is disabled in config...");
 			agent = Collections.emptyMap();
 		}
 	}
-	
+
 	public void initAgent() {
 		if (CustomConfig.AGENT_ENABLED) {
 			log.info("[AgentService] is initialized...");
-		    agentSchedule = AgentSchedule.load();
-		    for (Agent agent: agentSchedule.getAgentsList()) {
-			    for (String fightTime: agent.getFightTimes()) {
-				    CronService.getInstance().schedule(new AgentStartRunnable(agent.getId()), fightTime);
-			    }
+			agentSchedule = AgentSchedule.load();
+			for (Agent agent : agentSchedule.getAgentsList()) {
+				for (String fightTime : agent.getFightTimes()) {
+					CronService.getInstance().schedule(new AgentStartRunnable(agent.getId()), fightTime);
+				}
 			}
 		}
 	}
-	
+
 	public void startAgentFight(final int id) {
 		final AgentFight<?> fight;
 		synchronized (this) {
@@ -104,7 +103,7 @@ public class AgentService
 			}
 		}, duration * 3600 * 1000);
 	}
-	
+
 	public void stopAgentFight(int id) {
 		if (!isFightInProgress(id)) {
 			return;
@@ -112,12 +111,13 @@ public class AgentService
 		AgentFight<?> fight;
 		synchronized (this) {
 			fight = activeFights.remove(id);
-		} if (fight == null || fight.isFinished()) {
+		}
+		if (fight == null || fight.isFinished()) {
 			return;
 		}
 		fight.stop();
 	}
-	
+
 	public void spawn(AgentLocation loc, AgentStateType astate) {
 		if (astate.equals(AgentStateType.FIGHT)) {
 		}
@@ -131,132 +131,141 @@ public class AgentService
 			}
 		}
 	}
-	
-   /**
-	* The Empyrean Lord's Agent Countdown.
-	*/
+
+	/**
+	 * The Empyrean Lord's Agent Countdown.
+	 */
 	public boolean empyreanLordCountdownMsg(int id) {
-        switch (id) {
-            case 1:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						//The Empyrean Lord's Agent will end the battle in 30 minutes.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_GODELITE_TimeAttack_Start, 5400000);
-						//The Empyrean Lord's Agent has disappeared.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_GODELITE_TimeAttack_Fail, 7200000);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
-	
+		switch (id) {
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					// The Empyrean Lord's Agent will end the battle in 30 minutes.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_GODELITE_TimeAttack_Start,
+							5400000);
+					// The Empyrean Lord's Agent has disappeared.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_GODELITE_TimeAttack_Fail,
+							7200000);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean agentBattleMsg1(int id) {
-        switch (id) {
-            case 1:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						//The Agent battle will start in 10 minutes.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_GodElite_time_01, 0);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
+		switch (id) {
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					// The Agent battle will start in 10 minutes.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_GodElite_time_01, 0);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean agentBattleMsg2(int id) {
-        switch (id) {
-            case 1:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						//The Agent battle will start in 5 minutes.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_GodElite_time_02, 0);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
-	
+		switch (id) {
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					// The Agent battle will start in 5 minutes.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_GodElite_time_02, 0);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean governorSunayakaMsg(int id) {
-        switch (id) {
-            case 2:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						//Tiamat's Incarnation has appeared.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_TIAMATAVATAR_WAKEUP, 0);
-						//Tiamat is getting stronger and stronger.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_TIAMATDOWN_USERKICK_MESSAGE, 10000);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
+		switch (id) {
+		case 2:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					// Tiamat's Incarnation has appeared.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_TIAMATAVATAR_WAKEUP, 0);
+					// Tiamat is getting stronger and stronger.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_TIAMATDOWN_USERKICK_MESSAGE, 10000);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean berserkerSunayakaMsg(int id) {
-        switch (id) {
-            case 3:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						//Tiamat's Incarnation has appeared.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_TIAMATAVATAR_WAKEUP, 0);
-						//Tiamat is getting stronger and stronger.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_TIAMATDOWN_USERKICK_MESSAGE, 10000);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
-	
+		switch (id) {
+		case 3:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					// Tiamat's Incarnation has appeared.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_TIAMATAVATAR_WAKEUP, 0);
+					// Tiamat is getting stronger and stronger.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_TIAMATDOWN_USERKICK_MESSAGE, 10000);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public void despawn(AgentLocation loc) {
 		if (loc.getSpawned() == null) {
-        	return;
-		} for (VisibleObject obj: loc.getSpawned()) {
-            Npc spawned = (Npc) obj;
-            spawned.setDespawnDelayed(true);
-            if (spawned.getAggroList().getList().isEmpty()) {
-                spawned.getController().cancelTask(TaskId.RESPAWN);
-                obj.getController().onDelete();
-            }
-        }
-        loc.getSpawned().clear();
+			return;
+		}
+		for (VisibleObject obj : loc.getSpawned()) {
+			Npc spawned = (Npc) obj;
+			spawned.setDespawnDelayed(true);
+			if (spawned.getAggroList().getList().isEmpty()) {
+				spawned.getController().cancelTask(TaskId.RESPAWN);
+				obj.getController().onDelete();
+			}
+		}
+		loc.getSpawned().clear();
 	}
-	
+
 	public boolean isFightInProgress(int id) {
 		return activeFights.containsKey(id);
 	}
-	
+
 	public Map<Integer, AgentFight<?>> getActiveFights() {
 		return activeFights;
 	}
-	
+
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public AgentLocation getAgentLocation(int id) {
 		return agent.get(id);
 	}
-	
+
 	public Map<Integer, AgentLocation> getAgentLocations() {
 		return agent;
 	}
-	
+
 	public static AgentService getInstance() {
 		return AgentServiceHolder.INSTANCE;
 	}
-	
+
 	private static class AgentServiceHolder {
 		private static final AgentService INSTANCE = new AgentService();
 	}

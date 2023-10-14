@@ -26,26 +26,26 @@ import com.aionemu.gameserver.utils.MathUtil;
  */
 public abstract class DialogObserver extends ActionObserver {
 
-    private Player responder;
-    private Creature requester;
-    private int maxDistance;
+	private Player responder;
+	private Creature requester;
+	private int maxDistance;
 
-    public DialogObserver(Creature requester, Player responder, int maxDistance) {
-        super(ObserverType.MOVE);
-        this.responder = responder;
-        this.requester = requester;
-        this.maxDistance = maxDistance;
-    }
+	public DialogObserver(Creature requester, Player responder, int maxDistance) {
+		super(ObserverType.MOVE);
+		this.responder = responder;
+		this.requester = requester;
+		this.maxDistance = maxDistance;
+	}
 
-    @Override
-    public void moved() {
-        if(!MathUtil.isIn3dRange(responder, requester, maxDistance)) {
-            tooFar(requester, responder);
+	@Override
+	public void moved() {
+		if (!MathUtil.isIn3dRange(responder, requester, maxDistance)) {
+			tooFar(requester, responder);
 		}
-    }
-  
-    /**
-    * Is called when player is too far away from dialog serving object
-    */
-    public abstract void tooFar(Creature requester, Player responder);
+	}
+
+	/**
+	 * Is called when player is too far away from dialog serving object
+	 */
+	public abstract void tooFar(Creature requester, Player responder);
 }

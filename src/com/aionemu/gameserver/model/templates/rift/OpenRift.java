@@ -22,24 +22,24 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OpenRift")
-public class OpenRift
-{
-    @XmlAttribute(name = "schedule")
-    protected String schedule;
-	
+public class OpenRift {
+	@XmlAttribute(name = "schedule")
+	protected String schedule;
+
 	@XmlAttribute(name = "spawn")
-    protected boolean guards;
-	
-    public String getSchedule() {
-        return schedule;
-    }
-	
+	protected boolean guards;
+
+	public String getSchedule() {
+		return schedule;
+	}
+
 	public boolean spawnGuards() {
-        return guards;
-    }
+		return guards;
+	}
 }

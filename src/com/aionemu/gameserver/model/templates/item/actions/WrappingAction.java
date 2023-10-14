@@ -38,35 +38,39 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name= "WrappingAction")
-public class WrappingAction extends AbstractItemAction
-{
+@XmlType(name = "WrappingAction")
+public class WrappingAction extends AbstractItemAction {
 	@XmlAttribute
 	UseTarget target;
-	
-    @Override
+
+	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		if (target.equals(UseTarget.WEAPON) && !targetItem.getItemTemplate().isWeapon()) {
 			return false;
-		} if (target.equals(UseTarget.ARMOR) && !targetItem.getItemTemplate().isArmor()) {
+		}
+		if (target.equals(UseTarget.ARMOR) && !targetItem.getItemTemplate().isArmor()) {
 			return false;
 		}
-		return targetItem.getWrappableCount() < targetItem.getItemTemplate().getWrappableCount() && !targetItem.isEquipped();
+		return targetItem.getWrappableCount() < targetItem.getItemTemplate().getWrappableCount()
+				&& !targetItem.isEquipped();
 	}
-	
-    @Override
+
+	@Override
 	public void act(final Player player, final Item parentItem, final Item targetItem) {
 		final int parentItemId = parentItem.getItemId();
 		final int parntObjectId = parentItem.getObjectId();
 		final int nameId = parentItem.getNameId();
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItemId, 3000, 0, 0), true);
+		PacketSendUtility.broadcastPacket(player,
+				new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItemId, 3000, 0, 0),
+				true);
 		final ItemUseObserver observer = new ItemUseObserver() {
 			@Override
 			public void abort() {
 				player.getController().cancelTask(TaskId.ITEM_USE);
 				player.removeItemCoolDown(parentItem.getItemTemplate().getUseLimits().getDelayId());
-                PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402015, new DescriptionId(nameId)));
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 2, 0), true);
+				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402015, new DescriptionId(nameId)));
+				PacketSendUtility.broadcastPacket(player,
+						new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 2, 0), true);
 				player.getObserveController().removeObserver(this);
 			}
 		};
@@ -75,23 +79,28 @@ public class WrappingAction extends AbstractItemAction
 			@Override
 			public void run() {
 				player.getObserveController().removeObserver(observer);
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 1, 1), true);
+				PacketSendUtility.broadcastPacket(player,
+						new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 1, 1), true);
 				if (!player.getInventory().decreaseByObjectId(parntObjectId, 1)) {
 					return;
 				}
 				int wrappableCount = targetItem.getWrappableCount();
 				if (wrappableCount >= targetItem.getItemTemplate().getWrappableCount()) {
 					return;
-				} if (targetItem.isEquipped()) {
+				}
+				if (targetItem.isEquipped()) {
 					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402020));
 					return;
-				} if (targetItem.isTradeable(player)) {
+				}
+				if (targetItem.isTradeable(player)) {
 					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402022));
 					return;
-				} if (targetItem.getItemTemplate().getItemQuality() != targetItem.getItemTemplate().getItemQuality()) {
+				}
+				if (targetItem.getItemTemplate().getItemQuality() != targetItem.getItemTemplate().getItemQuality()) {
 					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402018, new DescriptionId(nameId)));
 					return;
-				} if (targetItem.getWrappableCount() > targetItem.getItemTemplate().getWrappableCount()) {
+				}
+				if (targetItem.getWrappableCount() > targetItem.getItemTemplate().getWrappableCount()) {
 					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402015, new DescriptionId(nameId)));
 					return;
 				}
@@ -99,7 +108,7 @@ public class WrappingAction extends AbstractItemAction
 				targetItem.setWrappableCount(++wrappableCount);
 				targetItem.setPersistentState(PersistentState.UPDATE_REQUIRED);
 				PacketSendUtility.sendPacket(player, new SM_INVENTORY_UPDATE_ITEM(player, targetItem));
-                PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402031, new DescriptionId(nameId)));
+				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402031, new DescriptionId(nameId)));
 			}
 		}, 3000));
 	}

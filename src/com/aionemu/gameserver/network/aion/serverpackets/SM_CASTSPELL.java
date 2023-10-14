@@ -38,7 +38,8 @@ public class SM_CASTSPELL extends AionServerPacket {
 	private float z;
 	private int skinId;
 
-	public SM_CASTSPELL(int attackerObjectId, int spellId, int level, int targetType, int targetObjectId, int duration, int skinId) {
+	public SM_CASTSPELL(int attackerObjectId, int spellId, int level, int targetType, int targetObjectId, int duration,
+			int skinId) {
 		this.attackerObjectId = attackerObjectId;
 		this.spellId = spellId;
 		this.level = level;
@@ -48,8 +49,9 @@ public class SM_CASTSPELL extends AionServerPacket {
 		this.skinId = skinId;
 	}
 
-	public SM_CASTSPELL(int attackerObjectId, int spellId, int level, int targetType, float x, float y, float z, int duration, int skinId) {
-		this(attackerObjectId, spellId, level, targetType, 0, duration,  skinId);
+	public SM_CASTSPELL(int attackerObjectId, int spellId, int level, int targetType, float x, float y, float z,
+			int duration, int skinId) {
+		this(attackerObjectId, spellId, level, targetType, 0, duration, skinId);
 		this.x = x;
 		this.y = y;
 		this.z = z;
@@ -63,41 +65,40 @@ public class SM_CASTSPELL extends AionServerPacket {
 		writeD(attackerObjectId);
 		writeH(spellId);
 		writeC(level);
-		
+
 		writeC(targetType);
 		switch (targetType) {
-			case 0:
-			case 3:
-			case 4:
-				writeD(targetObjectId);
-				break;
-			case 1:
-				writeF(x);
-				writeF(y);
-				writeF(z);
-				break;
-			case 2:
-				writeF(x);
-				writeF(y);
-				writeF(z);
-				writeD(0);//unk1
-				writeD(0);//unk2
-				writeD(0);//unk3
-				writeD(0);//unk4
-				writeD(0);//unk5
-				writeD(0);//unk6
-				writeD(0);//unk7
-				writeD(0);//unk8
+		case 0:
+		case 3:
+		case 4:
+			writeD(targetObjectId);
+			break;
+		case 1:
+			writeF(x);
+			writeF(y);
+			writeF(z);
+			break;
+		case 2:
+			writeF(x);
+			writeF(y);
+			writeF(z);
+			writeD(0);// unk1
+			writeD(0);// unk2
+			writeD(0);// unk3
+			writeD(0);// unk4
+			writeD(0);// unk5
+			writeD(0);// unk6
+			writeD(0);// unk7
+			writeD(0);// unk8
 		}
-		writeH(duration);//unk
-		writeC(0x00);//unk
+		writeH(duration);// unk
+		writeC(0x00);// unk
 		writeF((float) 0.8);
-		//SkinID Skill Animation
+		// SkinID Skill Animation
 		writeH(skinId);
 		if (duration > 0) {
-			writeC(0x01);//unk
-		}
-		else {
+			writeC(0x01);// unk
+		} else {
 			writeC(0x00);
 		}
 	}

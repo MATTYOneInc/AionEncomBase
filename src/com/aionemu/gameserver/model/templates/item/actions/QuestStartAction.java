@@ -51,9 +51,9 @@ public class QuestStartAction extends AbstractItemAction {
 		}
 		if (qs.getStatus() != QuestStatus.COMPLETE) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_QUEST_ACQUIRE_ERROR_WORKING_QUEST);
-		}
-		else if (!qs.canRepeat()) {
-			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_QUEST_ACQUIRE_ERROR_NONE_REPEATABLE(DataManager.QUEST_DATA.getQuestById(questid).getName()));
+		} else if (!qs.canRepeat()) {
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+					.STR_QUEST_ACQUIRE_ERROR_NONE_REPEATABLE(DataManager.QUEST_DATA.getQuestById(questid).getName()));
 		}
 		return false;
 	}

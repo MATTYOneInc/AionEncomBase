@@ -51,6 +51,7 @@ public class Percentage {
 	public int getSkillId() {
 		return skillId;
 	}
+
 	public boolean isIndividual() {
 		return isIndividual;
 	}

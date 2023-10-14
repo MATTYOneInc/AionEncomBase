@@ -23,19 +23,18 @@ import com.aionemu.gameserver.model.iu.IuStateType;
  * @author Rinzler (Encom)
  */
 
-public class CircusBound extends Iu<IuLocation>
-{
+public class CircusBound extends Iu<IuLocation> {
 	public CircusBound(IuLocation iu) {
 		super(iu);
 	}
-	
+
 	@Override
 	public void startConcert() {
 		getIuLocation().setActiveIu(this);
 		despawn();
 		spawn(IuStateType.OPEN);
 	}
-	
+
 	@Override
 	public void stopConcert() {
 		getIuLocation().setActiveIu(null);

@@ -44,7 +44,8 @@ import com.aionemu.gameserver.skillengine.properties.Properties;
  * @author ATracer modified by Wakizashi
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "skillTemplate", propOrder = { "properties", "startconditions", "useconditions", "useequipmentconditions", "effects", "actions", "periodicActions", "motion" })
+@XmlType(name = "skillTemplate", propOrder = { "properties", "startconditions", "useconditions",
+		"useequipmentconditions", "effects", "actions", "periodicActions", "motion" })
 public class SkillTemplate {
 	protected Properties properties;
 	protected Conditions startconditions;
@@ -90,7 +91,7 @@ public class SkillTemplate {
 	@XmlAttribute(required = true)
 	protected int duration;
 	@XmlAttribute(name = "toggle_timer")
-    protected int toggleTimer;
+	protected int toggleTimer;
 	@XmlAttribute(name = "cooldown")
 	protected int cooldown;
 	@XmlAttribute(name = "penalty_skill_id")
@@ -112,7 +113,7 @@ public class SkillTemplate {
 	@XmlAttribute(name = "avatar")
 	protected boolean isDeityAvatar;
 	@XmlAttribute(name = "ground")
-	protected boolean isGroundSkill;//TODO remove!
+	protected boolean isGroundSkill;// TODO remove!
 	@XmlAttribute(name = "unpottable")
 	protected boolean isUndispellableByPotions;
 	@XmlAttribute(name = "ammospeed")
@@ -129,7 +130,7 @@ public class SkillTemplate {
 	protected StigmaType stigmaType = StigmaType.NONE;
 	@XmlTransient
 	protected HashMap<Integer, Integer> effectIds = null;
-	@XmlAttribute(name="skill_group")
+	@XmlAttribute(name = "skill_group")
 	private String skill_group;
 
 	/**
@@ -303,11 +304,11 @@ public class SkillTemplate {
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public int getToggleTimer() {
-        return toggleTimer;
-    }
-	
+		return toggleTimer;
+	}
+
 	public StigmaType getStigmaType() {
 		return stigmaType;
 	}
@@ -330,7 +331,7 @@ public class SkillTemplate {
 	public boolean isProvoked() {
 		return activationAttribute == ActivationAttribute.PROVOKED;
 	}
-	
+
 	public boolean isMaintain() {
 		return activationAttribute == ActivationAttribute.MAINTAIN;
 	}
@@ -344,7 +345,8 @@ public class SkillTemplate {
 	 * @return EffectTemplate
 	 */
 	public EffectTemplate getEffectTemplate(int position) {
-		return effects != null && effects.getEffects().size() >= position ? effects.getEffects().get(position - 1) : null;
+		return effects != null && effects.getEffects().size() >= position ? effects.getEffects().get(position - 1)
+				: null;
 
 	}
 
@@ -396,7 +398,7 @@ public class SkillTemplate {
 	public boolean isStance() {
 		return stance;
 	}
-	
+
 	/**
 	 * @return skillSetException
 	 */
@@ -428,29 +430,30 @@ public class SkillTemplate {
 	}
 
 	public boolean hasHealEffect() {
-        return getEffects() != null && (getEffects().isEffectTypePresent(EffectType.HEAL) || getEffects().isEffectTypePresent(EffectType.HEALINSTANT));
-    }
+		return getEffects() != null && (getEffects().isEffectTypePresent(EffectType.HEAL)
+				|| getEffects().isEffectTypePresent(EffectType.HEALINSTANT));
+	}
 
-    public boolean hasRandomMoveEffect() {
-        return getEffects() != null && (getEffects().isEffectTypePresent(EffectType.RANDOMMOVELOC));
-    }
+	public boolean hasRandomMoveEffect() {
+		return getEffects() != null && (getEffects().isEffectTypePresent(EffectType.RANDOMMOVELOC));
+	}
 
 	public int getDelayId() {
 		return (delayId > 0) ? delayId : skillId;
 	}
-	
+
 	public boolean isDeityAvatar() {
 		return isDeityAvatar;
 	}
-	
+
 	public boolean isGroundSkill() {
 		return isGroundSkill;
 	}
-	
+
 	public AttackStatus getCounterSkill() {
 		return counterSkill;
 	}
-	
+
 	public boolean isUndispellableByPotions() {
 		return isUndispellableByPotions;
 	}
@@ -462,10 +465,10 @@ public class SkillTemplate {
 	public int getConflictId() {
 		return conflictId;
 	}
-	
+
 	public String getNamedesc() {
-        return namedesc;
-    }
+		return namedesc;
+	}
 
 	public boolean isNoRemoveAtDie() {
 		return noRemoveAtDie;
@@ -478,14 +481,14 @@ public class SkillTemplate {
 	public int getEffectsDuration(int skillLevel) {
 		int duration = 0;
 		Iterator<EffectTemplate> itr = getEffects().getEffects().iterator();
-		while(itr.hasNext() && duration == 0) {
+		while (itr.hasNext() && duration == 0) {
 			EffectTemplate et = itr.next();
 			int effectDuration = et.getDuration2() + et.getDuration1() * skillLevel;
 			if (et.getRandomTime() > 0) {
 				effectDuration -= Rnd.get(et.getRandomTime());
 			}
 			duration = duration > effectDuration ? duration : effectDuration;
-		}	
+		}
 		return duration;
 	}
 
@@ -493,10 +496,10 @@ public class SkillTemplate {
 		if (startconditions != null) {
 			for (Condition cond : startconditions.getConditions()) {
 				if (cond instanceof ChainCondition) {
-					return (ChainCondition)cond;
+					return (ChainCondition) cond;
 				}
 			}
-		}		
+		}
 		return null;
 	}
 
@@ -522,9 +525,9 @@ public class SkillTemplate {
 	 */
 	public HpCondition getHpCondition() {
 		if (startconditions != null) {
-		    for (Condition cond : startconditions.getConditions()) {
-			    if (cond instanceof HpCondition) {
-				    return (HpCondition) cond;
+			for (Condition cond : startconditions.getConditions()) {
+				if (cond instanceof HpCondition) {
+					return (HpCondition) cond;
 				}
 			}
 		}

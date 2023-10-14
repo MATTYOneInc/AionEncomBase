@@ -21,7 +21,7 @@ package com.aionemu.gameserver.model.team2;
  */
 public interface TeamEvent {
 
-    void handleEvent();
+	void handleEvent();
 
-    boolean checkCondition();
+	boolean checkCondition();
 }

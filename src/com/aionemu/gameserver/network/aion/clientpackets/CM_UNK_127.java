@@ -25,17 +25,17 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_UNK_98;
  */
 public class CM_UNK_127 extends AionClientPacket {
 
-    public CM_UNK_127(int opcode, State state, State... restStates) {
-        super(opcode, state, restStates);
-    }
+	public CM_UNK_127(int opcode, State state, State... restStates) {
+		super(opcode, state, restStates);
+	}
 
-    @Override
-    protected void readImpl() {
-        // empty
-    }
+	@Override
+	protected void readImpl() {
+		// empty
+	}
 
-    @Override
-    protected void runImpl() {
-        sendPacket(new SM_UNK_98());
-    }
+	@Override
+	protected void runImpl() {
+		sendPacket(new SM_UNK_98());
+	}
 }

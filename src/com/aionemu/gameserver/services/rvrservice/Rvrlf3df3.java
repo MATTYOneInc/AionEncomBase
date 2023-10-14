@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.RvrService;
  * @author Rinzler (Encom)
  */
 
-public abstract class Rvrlf3df3 <RL extends RvrLocation>
-{
+public abstract class Rvrlf3df3<RL extends RvrLocation> {
 	private boolean started;
 	private final RL rvrLocation;
+
 	protected abstract void stopRvr();
+
 	protected abstract void startRvr();
+
 	private final AtomicBoolean finished = new AtomicBoolean();
-	
+
 	public Rvrlf3df3(RL rvrLocation) {
 		this.rvrLocation = rvrLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class Rvrlf3df3 <RL extends RvrLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startRvr();
 	}
-	
+
 	public final void stop() {
 		if (finished.compareAndSet(false, true)) {
 			stopRvr();
 		}
 	}
-	
+
 	protected void spawn(RvrStateType type) {
 		RvrService.getInstance().spawn(getRvrLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		RvrService.getInstance().despawn(getRvrLocation());
 	}
-	
+
 	public boolean isFinished() {
 		return finished.get();
 	}
-	
+
 	public RL getRvrLocation() {
 		return rvrLocation;
 	}
-	
+
 	public int getRvrLocationId() {
 		return rvrLocation.getId();
 	}

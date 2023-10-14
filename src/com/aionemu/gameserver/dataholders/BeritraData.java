@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "beritra_invasion")
-public class BeritraData
-{
+public class BeritraData {
 	@XmlElement(name = "beritra_location")
 	private List<BeritraTemplate> beritraTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, BeritraLocation> beritra = new FastMap<Integer, BeritraLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (BeritraTemplate template : beritraTemplates) {
 			beritra.put(template.getId(), new BeritraLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return beritra.size();
 	}
-	
+
 	public FastMap<Integer, BeritraLocation> getBeritraLocations() {
 		return beritra;
 	}

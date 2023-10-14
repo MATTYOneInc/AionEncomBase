@@ -34,25 +34,24 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = { "housingObjects" })
 @XmlRootElement(name = "housing_objects")
-public class HousingObjectData
-{
-	@XmlElements({ 
-		@XmlElement(name = "postbox", type = com.aionemu.gameserver.model.templates.housing.HousingPostbox.class),
-		@XmlElement(name = "use_item", type = com.aionemu.gameserver.model.templates.housing.HousingUseableItem.class),
-		@XmlElement(name = "move_item", type = com.aionemu.gameserver.model.templates.housing.HousingMoveableItem.class),
-		@XmlElement(name = "chair", type = com.aionemu.gameserver.model.templates.housing.HousingChair.class),
-		@XmlElement(name = "picture", type = com.aionemu.gameserver.model.templates.housing.HousingPicture.class),
-		@XmlElement(name = "passive", type = com.aionemu.gameserver.model.templates.housing.HousingPassiveItem.class),
-		@XmlElement(name = "npc", type = com.aionemu.gameserver.model.templates.housing.HousingNpc.class),
-		@XmlElement(name = "storage", type = com.aionemu.gameserver.model.templates.housing.HousingStorage.class),
-		@XmlElement(name = "jukebox", type = com.aionemu.gameserver.model.templates.housing.HousingJukeBox.class),
-		@XmlElement(name = "moviejukebox", type = com.aionemu.gameserver.model.templates.housing.HousingMovieJukeBox.class),
-		@XmlElement(name = "emblem", type = com.aionemu.gameserver.model.templates.housing.HousingEmblem.class) })
+public class HousingObjectData {
+	@XmlElements({
+			@XmlElement(name = "postbox", type = com.aionemu.gameserver.model.templates.housing.HousingPostbox.class),
+			@XmlElement(name = "use_item", type = com.aionemu.gameserver.model.templates.housing.HousingUseableItem.class),
+			@XmlElement(name = "move_item", type = com.aionemu.gameserver.model.templates.housing.HousingMoveableItem.class),
+			@XmlElement(name = "chair", type = com.aionemu.gameserver.model.templates.housing.HousingChair.class),
+			@XmlElement(name = "picture", type = com.aionemu.gameserver.model.templates.housing.HousingPicture.class),
+			@XmlElement(name = "passive", type = com.aionemu.gameserver.model.templates.housing.HousingPassiveItem.class),
+			@XmlElement(name = "npc", type = com.aionemu.gameserver.model.templates.housing.HousingNpc.class),
+			@XmlElement(name = "storage", type = com.aionemu.gameserver.model.templates.housing.HousingStorage.class),
+			@XmlElement(name = "jukebox", type = com.aionemu.gameserver.model.templates.housing.HousingJukeBox.class),
+			@XmlElement(name = "moviejukebox", type = com.aionemu.gameserver.model.templates.housing.HousingMovieJukeBox.class),
+			@XmlElement(name = "emblem", type = com.aionemu.gameserver.model.templates.housing.HousingEmblem.class) })
 	protected List<PlaceableHouseObject> housingObjects;
-	
+
 	@XmlTransient
 	protected TIntObjectHashMap<PlaceableHouseObject> objectTemplatesById = new TIntObjectHashMap<PlaceableHouseObject>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		if (housingObjects == null) {
 			return;
@@ -63,11 +62,11 @@ public class HousingObjectData
 		housingObjects.clear();
 		housingObjects = null;
 	}
-	
+
 	public int size() {
 		return objectTemplatesById.size();
 	}
-	
+
 	public PlaceableHouseObject getTemplateById(int templateId) {
 		return objectTemplatesById.get(templateId);
 	}

@@ -35,10 +35,10 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 public class BlindEffect extends EffectTemplate {
 
 	@Override
-    public void applyEffect(Effect effect) {
-        effect.getEffected().getEffectController().removeHideEffects();
-        effect.addToEffectedController();
-    }
+	public void applyEffect(Effect effect) {
+		effect.getEffected().getEffectController().removeHideEffects();
+		effect.addToEffectedController();
+	}
 
 	@Override
 	public void calculate(Effect effect) {

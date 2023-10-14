@@ -51,18 +51,18 @@ import javolution.util.FastMap;
 /**
  * @author Rinzler (Encom)
  */
-public class ConquestService
-{
+public class ConquestService {
 	private ConquestSchedule conquestSchedule;
 	private Map<Integer, ConquestLocation> conquest;
 	private static final int duration = CustomConfig.CONQUEST_DURATION;
-	private final Map<Integer, ConquestOffering<?>> activeConquest = new FastMap<Integer, ConquestOffering<?>>().shared();
+	private final Map<Integer, ConquestOffering<?>> activeConquest = new FastMap<Integer, ConquestOffering<?>>()
+			.shared();
 	private static final Logger log = LoggerFactory.getLogger(ZorshivDredgionService.class);
 
 	public void initConquestLocations() {
 		if (CustomConfig.CONQUEST_ENABLED) {
 			conquest = DataManager.CONQUEST_DATA.getConquestLocations();
-			for (ConquestLocation loc: getConquestLocations().values()) {
+			for (ConquestLocation loc : getConquestLocations().values()) {
 				spawn(loc, ConquestStateType.PEACE);
 			}
 			log.info("[ConquestService] Loaded " + conquest.size() + " locations.");
@@ -71,19 +71,19 @@ public class ConquestService
 			conquest = Collections.emptyMap();
 		}
 	}
-	
+
 	public void initOffering() {
 		if (CustomConfig.CONQUEST_ENABLED) {
 			log.info("[ConquestService] is initialized...");
-		    conquestSchedule = ConquestSchedule.load();
-		    for (Conquest conquest: conquestSchedule.getConquestsList()) {
-			    for (String offeringTime: conquest.getOfferingTimes()) {
-				    CronService.getInstance().schedule(new ConquestStartRunnable(conquest.getId()), offeringTime);
-			    }
+			conquestSchedule = ConquestSchedule.load();
+			for (Conquest conquest : conquestSchedule.getConquestsList()) {
+				for (String offeringTime : conquest.getOfferingTimes()) {
+					CronService.getInstance().schedule(new ConquestStartRunnable(conquest.getId()), offeringTime);
+				}
 			}
 		}
 	}
-	
+
 	public void startConquest(final int id) {
 		final ConquestOffering<?> offering;
 		synchronized (this) {
@@ -101,7 +101,7 @@ public class ConquestService
 			}
 		}, duration * 3600 * 1000);
 	}
-	
+
 	public void stopConquest(int id) {
 		if (!isConquestInProgress(id)) {
 			return;
@@ -109,12 +109,13 @@ public class ConquestService
 		ConquestOffering<?> offering;
 		synchronized (this) {
 			offering = activeConquest.remove(id);
-		} if (offering == null || offering.isFinished()) {
+		}
+		if (offering == null || offering.isFinished()) {
 			return;
 		}
 		offering.stop();
 	}
-	
+
 	public void spawn(ConquestLocation loc, ConquestStateType ostate) {
 		if (ostate.equals(ConquestStateType.CONQUEST)) {
 		}
@@ -131,141 +132,149 @@ public class ConquestService
 
 	public boolean conquestOfferingMsg(int id) {
 		switch (id) {
-			case 1:
-				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE00D", "The <Conquest/Offering> a rare monster appeared !!!");
-					}
-				});
-				return true;
-			default:
-				return false;
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE00D",
+							"The <Conquest/Offering> a rare monster appeared !!!");
+				}
+			});
+			return true;
+		default:
+			return false;
 		}
 	}
+
 	public boolean emperorVaultMsg(int id) {
 		switch (id) {
-			case 3:
-				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE0BD", "Shugo Emperor's Vault is now open !!!");
-					}
-				});
-				return true;
-			default:
-				return false;
+		case 3:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE0BD", "Shugo Emperor's Vault is now open !!!");
+				}
+			});
+			return true;
+		default:
+			return false;
 		}
 	}
+
 	public boolean trillirunerkSafeMsg(int id) {
 		switch (id) {
-			case 4:
-				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE11C", "Emperor Trillirunerk's Safe is now open !!!");
-					}
-				});
-				return true;
-			default:
-				return false;
+		case 4:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE11C", "Emperor Trillirunerk's Safe is now open !!!");
+				}
+			});
+			return true;
+		default:
+			return false;
 		}
 	}
+
 	public boolean smolderingFireTempleMsg(int id) {
 		switch (id) {
-			case 5:
-				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE114", "Smoldering Fire Temple is now open !!!");
-					}
-				});
-				return true;
-			default:
-				return false;
+		case 5:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE114", "Smoldering Fire Temple is now open !!!");
+				}
+			});
+			return true;
+		default:
+			return false;
 		}
 	}
+
 	public boolean kumukiCaveMsg(int id) {
 		switch (id) {
-			case 6:
-				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE054", "Kumuki Cave is now open !!!");
-					}
-				});
-				return true;
-			default:
-				return false;
+		case 6:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE054", "Kumuki Cave is now open !!!");
+				}
+			});
+			return true;
+		default:
+			return false;
 		}
 	}
+
 	public boolean IDEventDefMsg(int id) {
 		switch (id) {
-			case 11:
-				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE079", "IDEvent Def UnderPath is now open !!!");
-					}
-				});
-				return true;
-			default:
-				return false;
+		case 11:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE079", "IDEvent Def UnderPath is now open !!!");
+				}
+			});
+			return true;
+		default:
+			return false;
 		}
 	}
+
 	public boolean tiamarantaMsg(int id) {
 		switch (id) {
-			case 13:
-				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE04C", "Tiamaranta's Eye is now open !!!");
-					}
-				});
-				return true;
-			default:
-				return false;
+		case 13:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE04C", "Tiamaranta's Eye is now open !!!");
+				}
+			});
+			return true;
+		default:
+			return false;
 		}
 	}
-	
+
 	public void despawn(ConquestLocation loc) {
 		if (loc.getSpawned() == null) {
-        	return;
-		} for (VisibleObject obj: loc.getSpawned()) {
-            Npc spawned = (Npc) obj;
-            spawned.setDespawnDelayed(true);
-            if (spawned.getAggroList().getList().isEmpty()) {
-                spawned.getController().cancelTask(TaskId.RESPAWN);
-                obj.getController().onDelete();
-            }
-        }
-        loc.getSpawned().clear();
+			return;
+		}
+		for (VisibleObject obj : loc.getSpawned()) {
+			Npc spawned = (Npc) obj;
+			spawned.setDespawnDelayed(true);
+			if (spawned.getAggroList().getList().isEmpty()) {
+				spawned.getController().cancelTask(TaskId.RESPAWN);
+				obj.getController().onDelete();
+			}
+		}
+		loc.getSpawned().clear();
 	}
-	
+
 	public boolean isConquestInProgress(int id) {
 		return activeConquest.containsKey(id);
 	}
-	
+
 	public Map<Integer, ConquestOffering<?>> getActiveConquest() {
 		return activeConquest;
 	}
-	
+
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public ConquestLocation getConquestLocation(int id) {
 		return conquest.get(id);
 	}
-	
+
 	public Map<Integer, ConquestLocation> getConquestLocations() {
 		return conquest;
 	}
-	
+
 	public static ConquestService getInstance() {
 		return ConquestServiceHolder.INSTANCE;
 	}
-	
+
 	private static class ConquestServiceHolder {
 		private static final ConquestService INSTANCE = new ConquestService();
 	}

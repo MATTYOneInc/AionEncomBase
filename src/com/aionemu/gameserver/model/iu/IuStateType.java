@@ -20,8 +20,6 @@ package com.aionemu.gameserver.model.iu;
  * @author Rinzler (Encom)
  */
 
-public enum IuStateType
-{
-	OPEN,
-	CLOSED;
+public enum IuStateType {
+	OPEN, CLOSED;
 }

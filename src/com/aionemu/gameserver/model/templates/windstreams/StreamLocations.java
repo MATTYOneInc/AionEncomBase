@@ -31,13 +31,13 @@ import javolution.util.FastList;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "StreamLocations")
-public class StreamLocations
-{
+public class StreamLocations {
 	@XmlElement(required = true)
-	protected List<Location2D>	location;
+	protected List<Location2D> location;
+
 	public List<Location2D> getLocation() {
-	
-		if(location == null) {
+
+		if (location == null) {
 			location = FastList.newInstance();
 		}
 		return this.location;

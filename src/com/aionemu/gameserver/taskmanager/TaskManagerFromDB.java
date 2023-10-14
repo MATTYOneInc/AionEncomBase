@@ -86,11 +86,9 @@ public class TaskManagerFromDB {
 				try {
 					// Create new instance of the task
 					currentTask = tmpClass.newInstance();
-				}
-				catch (InstantiationException e) {
+				} catch (InstantiationException e) {
 					log.error(e.getMessage(), e);
-				}
-				catch (IllegalAccessException e) {
+				} catch (IllegalAccessException e) {
 					log.error(e.getMessage(), e);
 				}
 
@@ -105,11 +103,9 @@ public class TaskManagerFromDB {
 
 				if (task.getType().equals("FIXED_IN_TIME")) {
 					runFixedInTimeTask(currentTask, task);
-				}
-				else
+				} else
 					log.error("Unknow task's type for " + task.getType());
-			}
-			else
+			} else
 				log.error("Unknow task's name with ID : " + task.getName());
 		}
 	}
@@ -134,7 +130,7 @@ public class TaskManagerFromDB {
 
 		if (delay < 0) {
 			delay += 1 * 24 * 60 * 60 * 1000;
-        }
+		}
 		ThreadPoolManager.getInstance().scheduleAtFixedRate(handler, delay, 1 * 24 * 60 * 60 * 1000);
 	}
 

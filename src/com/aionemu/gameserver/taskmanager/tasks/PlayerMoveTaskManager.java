@@ -42,7 +42,8 @@ public class PlayerMoveTaskManager extends AbstractPeriodicTaskManager {
 
 	@Override
 	public void run() {
-		for (FastMap.Entry<Integer, Creature> e = movingPlayers.head(), mapEnd = movingPlayers.tail(); (e = e.getNext()) != mapEnd;) {
+		for (FastMap.Entry<Integer, Creature> e = movingPlayers.head(),
+				mapEnd = movingPlayers.tail(); (e = e.getNext()) != mapEnd;) {
 			Creature player = e.getValue();
 			player.getMoveController().moveToDestination();
 		}

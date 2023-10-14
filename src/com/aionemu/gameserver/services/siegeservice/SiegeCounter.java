@@ -27,16 +27,15 @@ import com.aionemu.gameserver.model.siege.SiegeRace;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
-public class SiegeCounter
-{
+public class SiegeCounter {
 	private final Map<SiegeRace, SiegeRaceCounter> siegeRaceCounters = Maps.newHashMap();
-	
+
 	public SiegeCounter() {
 		siegeRaceCounters.put(SiegeRace.ELYOS, new SiegeRaceCounter(SiegeRace.ELYOS));
 		siegeRaceCounters.put(SiegeRace.ASMODIANS, new SiegeRaceCounter(SiegeRace.ASMODIANS));
 		siegeRaceCounters.put(SiegeRace.BALAUR, new SiegeRaceCounter(SiegeRace.BALAUR));
 	}
-	
+
 	public void addDamage(Creature creature, int damage) {
 		SiegeRace siegeRace;
 		if (creature instanceof Player) {
@@ -48,20 +47,20 @@ public class SiegeCounter
 		}
 		siegeRaceCounters.get(siegeRace).addPoints(creature, damage);
 	}
-	
+
 	public void addAbyssPoints(Player player, int ap) {
 		SiegeRace sr = SiegeRace.getByRace(player.getRace());
 		siegeRaceCounters.get(sr).addAbyssPoints(player, ap);
 	}
-	
+
 	public SiegeRaceCounter getRaceCounter(SiegeRace race) {
 		return siegeRaceCounters.get(race);
 	}
-	
+
 	public void addRaceDamage(SiegeRace race, int damage) {
 		getRaceCounter(race).addTotalDamage(damage);
 	}
-	
+
 	public SiegeRaceCounter getWinnerRaceCounter() {
 		List<SiegeRaceCounter> list = Lists.newArrayList(siegeRaceCounters.values());
 		Collections.sort(list);

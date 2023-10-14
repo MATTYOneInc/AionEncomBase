@@ -18,37 +18,36 @@ package com.aionemu.gameserver.services.protectors;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 
-public class Protector
-{
+public class Protector {
 	public int victims;
 	private Player owner;
 	private int guardType;
 	private int guardRank;
-	
+
 	public Protector(Player owner) {
 		this.owner = owner;
 	}
-	
+
 	public void refreshOwner(Player player) {
 		owner = player;
 	}
-	
+
 	public Player getOwner() {
 		return owner;
 	}
-	
+
 	public void setRank(int rank) {
 		guardRank = rank;
 	}
-	
+
 	public int getRank() {
 		return guardRank;
 	}
-	
+
 	public void setType(int type) {
 		guardType = type;
 	}
-	
+
 	public int getType() {
 		return guardType;
 	}

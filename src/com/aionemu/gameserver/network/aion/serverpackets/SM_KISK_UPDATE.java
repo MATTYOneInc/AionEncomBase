@@ -20,8 +20,7 @@ import com.aionemu.gameserver.model.gameobjects.Kisk;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_KISK_UPDATE extends AionServerPacket
-{
+public class SM_KISK_UPDATE extends AionServerPacket {
 	private int objId;
 	private int creatorid;
 	private int useMask;
@@ -30,7 +29,7 @@ public class SM_KISK_UPDATE extends AionServerPacket
 	private int remainingRessurects;
 	private int maxRessurects;
 	private int remainingLifetime;
-	
+
 	public SM_KISK_UPDATE(Kisk kisk) {
 		this.objId = kisk.getObjectId();
 		this.creatorid = kisk.getCreatorId();
@@ -41,7 +40,7 @@ public class SM_KISK_UPDATE extends AionServerPacket
 		this.maxRessurects = kisk.getMaxRessurects();
 		this.remainingLifetime = kisk.getRemainingLifetime();
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeD(objId);

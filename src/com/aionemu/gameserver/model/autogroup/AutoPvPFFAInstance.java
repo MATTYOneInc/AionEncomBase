@@ -22,8 +22,7 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_AUTO_GROUP;
 import com.aionemu.gameserver.services.AutoGroupService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class AutoPvPFFAInstance extends AutoInstance
-{
+public class AutoPvPFFAInstance extends AutoInstance {
 	@Override
 	public AGQuestion addPlayer(Player player, SearchInstance searchInstance) {
 		super.writeLock();
@@ -32,30 +31,30 @@ public class AutoPvPFFAInstance extends AutoInstance
 				return AGQuestion.FAILED;
 			}
 			players.put(player.getObjectId(), new AGPlayer(player));
-			return instance != null ? AGQuestion.ADDED : (players.size() == agt.getPlayerSize() ? AGQuestion.READY : AGQuestion.ADDED);
-		}
-		finally {
+			return instance != null ? AGQuestion.ADDED
+					: (players.size() == agt.getPlayerSize() ? AGQuestion.READY : AGQuestion.ADDED);
+		} finally {
 			super.writeUnlock();
 		}
 	}
-	
+
 	@Override
 	public void onPressEnter(Player player) {
 		super.onPressEnter(player);
 		if (agt.isGloryArena()) {
 			if (!decrease(player, 186000185, 4)) {
-			    players.remove(player.getObjectId());
-			    PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 5));
-			    if (players.isEmpty()) {
-				    AutoGroupService.getInstance().unRegisterInstance(instance.getInstanceId());
-			    }
-			    return;
+				players.remove(player.getObjectId());
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 5));
+				if (players.isEmpty()) {
+					AutoGroupService.getInstance().unRegisterInstance(instance.getInstanceId());
+				}
+				return;
 			}
 		}
 		((PvPArenaReward) instance.getInstanceHandler().getInstanceReward()).portToPosition(player);
 		instance.register(player.getObjectId());
 	}
-	
+
 	@Override
 	public void onLeaveInstance(Player player) {
 		super.unregister(player);

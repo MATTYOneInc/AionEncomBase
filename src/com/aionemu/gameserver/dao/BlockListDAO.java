@@ -38,21 +38,18 @@ public abstract class BlockListDAO implements DAO {
 	/**
 	 * Adds the given object id to the list of blocked players for the given player
 	 * 
-	 * @param playerObjId
-	 *          ID of player to edit the blocklist of
-	 * @param objIdToBlock
-	 *          ID of player to add to the blocklist
+	 * @param playerObjId  ID of player to edit the blocklist of
+	 * @param objIdToBlock ID of player to add to the blocklist
 	 * @return Success
 	 */
 	public abstract boolean addBlockedUser(int playerObjId, int objIdToBlock, String reason);
 
 	/**
-	 * Deletes the given object id from the list of blocked players for the given player
+	 * Deletes the given object id from the list of blocked players for the given
+	 * player
 	 * 
-	 * @param playerObjId
-	 *          ID of player to edit the blocklist of
-	 * @param objIdToDelete
-	 *          ID of player to remove from the blocklist
+	 * @param playerObjId   ID of player to edit the blocklist of
+	 * @param objIdToDelete ID of player to remove from the blocklist
 	 * @return Success
 	 */
 	public abstract boolean delBlockedUser(int playerObjId, int objIdToDelete);
@@ -60,12 +57,9 @@ public abstract class BlockListDAO implements DAO {
 	/**
 	 * Sets the reason for blocking a player
 	 * 
-	 * @param playerObjId
-	 *          Object ID of the player whos list is being edited
-	 * @param blockedObjId
-	 *          Object ID of the player whos reason is being edited
-	 * @param reason
-	 *          The reason to be set
+	 * @param playerObjId  Object ID of the player whos list is being edited
+	 * @param blockedObjId Object ID of the player whos reason is being edited
+	 * @param reason       The reason to be set
 	 * @return true or false
 	 */
 	public abstract boolean setReason(int playerObjId, int blockedObjId, String reason);

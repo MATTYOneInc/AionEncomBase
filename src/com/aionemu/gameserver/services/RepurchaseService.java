@@ -36,10 +36,10 @@ public class RepurchaseService {
 
 	private Multimap<Integer, Item> repurchaseItems;
 
-  public RepurchaseService()
-  {
-    repurchaseItems = ArrayListMultimap.create();
-  }
+	public RepurchaseService() {
+		repurchaseItems = ArrayListMultimap.create();
+	}
+
 	/**
 	 * Save items for repurchase for this player
 	 */
@@ -60,7 +60,7 @@ public class RepurchaseService {
 
 	public Collection<Item> getRepurchaseItems(int playerObjectId) {
 		Collection<Item> items = repurchaseItems.get(playerObjectId);
-		return items != null ? items : Collections.<Item> emptyList();
+		return items != null ? items : Collections.<Item>emptyList();
 	}
 
 	public Item getRepurchaseItem(Player player, int itemObjectId) {
@@ -85,13 +85,13 @@ public class RepurchaseService {
 				if (inventory.tryDecreaseKinah(repurchaseItem.getRepurchasePrice())) {
 					ItemService.addItem(player, repurchaseItem);
 					removeRepurchaseItem(player, repurchaseItem);
+				} else {
+					AuditLogger.info(player, "Player try repurchase item: " + repurchaseItem.getItemId() + " count: "
+							+ repurchaseItem.getItemCount() + " whithout kinah");
 				}
-				else {
-					AuditLogger.info(player, "Player try repurchase item: " + repurchaseItem.getItemId() + " count: " + repurchaseItem.getItemCount() + " whithout kinah");
-				}
-			}
-			else {
-				AuditLogger.info(player, "Player might be abusing CM_BUY_ITEM try dupe item: " + repurchaseItem.getItemId() + " count: " + repurchaseItem.getItemCount());
+			} else {
+				AuditLogger.info(player, "Player might be abusing CM_BUY_ITEM try dupe item: "
+						+ repurchaseItem.getItemId() + " count: " + repurchaseItem.getItemCount());
 			}
 		}
 	}

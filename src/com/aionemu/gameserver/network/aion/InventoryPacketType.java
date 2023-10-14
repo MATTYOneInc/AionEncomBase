@@ -21,11 +21,8 @@ package com.aionemu.gameserver.network.aion;
  */
 public enum InventoryPacketType {
 
-	WAREHOUSE(false, false, false),
-	INVENTORY(true, false, false),
-	MAIL_REPURCHASE(false, true, false),
-	PRIVATE_STORE(false, false, true),
-	WEAPON_SWITCH(true, false, false, true);
+	WAREHOUSE(false, false, false), INVENTORY(true, false, false), MAIL_REPURCHASE(false, true, false),
+	PRIVATE_STORE(false, false, true), WEAPON_SWITCH(true, false, false, true);
 
 	private boolean isInventory;
 	private boolean isMailOrRepurchase;

@@ -35,8 +35,7 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  * @author Ranastic
  */
 
-public class AtreianBestiaryService
-{
+public class AtreianBestiaryService {
 	private Logger log = LoggerFactory.getLogger(AtreianBestiaryService.class);
 
 	public void onLogin(Player player) {
@@ -50,18 +49,22 @@ public class AtreianBestiaryService
 		}
 		for (int tmpNpcId : template.getNpcIds()) {
 			if (npcId == tmpNpcId) {
-				int killCount = DAOManager.getDAO(PlayerABDAO.class).getKillCountById(player.getObjectId(), template.getId());
-				byte currentLvl = (byte) DAOManager.getDAO(PlayerABDAO.class).getLevelById(player.getObjectId(), template.getId());
+				int killCount = DAOManager.getDAO(PlayerABDAO.class).getKillCountById(player.getObjectId(),
+						template.getId());
+				byte currentLvl = (byte) DAOManager.getDAO(PlayerABDAO.class).getLevelById(player.getObjectId(),
+						template.getId());
 				killCount++;
 				int claimReward = 0;
 				for (AtreianBestiaryAchievementTemplate at : template.getAtreianBestiaryAchievementTemplate()) {
 					if (at == null) {
 						return;
-					} if (killCount == at.getKillCondition()) {
+					}
+					if (killCount == at.getKillCondition()) {
 						claimReward = (currentLvl + 1);
 					}
 				}
-				PacketSendUtility.sendPacket(player, new SM_ATREIAN_BESTIARY(template.getId(), killCount, currentLvl, claimReward));
+				PacketSendUtility.sendPacket(player,
+						new SM_ATREIAN_BESTIARY(template.getId(), killCount, currentLvl, claimReward));
 				player.getAtreianBestiary().add(player, template.getId(), killCount, currentLvl, claimReward);
 			}
 		}

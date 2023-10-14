@@ -38,7 +38,7 @@ public class SM_ABYSS_ARTIFACT_INFO extends AionServerPacket {
 		FastList<SiegeLocation> validLocations = new FastList<SiegeLocation>();
 		for (SiegeLocation loc : locations) {
 			if (((loc.getType() == SiegeType.ARTIFACT) || (loc.getType() == SiegeType.FORTRESS))
-				&& (loc.getLocationId() >= 1011) && (loc.getLocationId() <= 10412))
+					&& (loc.getLocationId() >= 1011) && (loc.getLocationId() <= 10412))
 				validLocations.add(loc);
 		}
 		writeH(validLocations.size());

@@ -34,16 +34,14 @@ public final class CompressUtil {
 				int count = decompressor.inflate(buffer);
 				if (count > 0) {
 					bos.write(buffer, 0, count);
-				}
-				else {
+				} else {
 					if ((count == 0) && (decompressor.finished())) {
 						break;
 					}
 					throw new RuntimeException("Bad zip data, size: " + bytes.length);
 				}
 			}
-		}
-		finally {
+		} finally {
 			decompressor.end();
 		}
 
@@ -65,8 +63,7 @@ public final class CompressUtil {
 				int count = compressor.deflate(buffer);
 				bos.write(buffer, 0, count);
 			}
-		}
-		finally {
+		} finally {
 			compressor.finish();
 		}
 

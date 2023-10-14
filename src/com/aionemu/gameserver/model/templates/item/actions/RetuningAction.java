@@ -40,44 +40,49 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name= "RetuningAction")
-public class RetuningAction extends AbstractItemAction
-{
+@XmlType(name = "RetuningAction")
+public class RetuningAction extends AbstractItemAction {
 	@XmlAttribute
 	UseTarget target;
-	
-    @Override
+
+	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		if (target.equals(UseTarget.WEAPON) && !targetItem.getItemTemplate().isWeapon()) {
 			return false;
-		} if (target.equals(UseTarget.ARMOR) && !targetItem.getItemTemplate().isArmor()) {
+		}
+		if (target.equals(UseTarget.ARMOR) && !targetItem.getItemTemplate().isArmor()) {
 			return false;
 		}
-		return targetItem.getRandomCount() < targetItem.getItemTemplate().getRandomBonusCount() && !targetItem.isEquipped();
+		return targetItem.getRandomCount() < targetItem.getItemTemplate().getRandomBonusCount()
+				&& !targetItem.isEquipped();
 	}
-	
-    @Override
+
+	@Override
 	public void act(final Player player, final Item parentItem, final Item targetItem) {
 		final int parentItemId = parentItem.getItemId();
-        final int parntObjectId = parentItem.getObjectId();
-        final int nameId = parentItem.getNameId();
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItemId, 3000, 0, 0), true);
+		final int parntObjectId = parentItem.getObjectId();
+		final int nameId = parentItem.getNameId();
+		PacketSendUtility.broadcastPacket(player,
+				new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItemId, 3000, 0, 0),
+				true);
 		final ItemUseObserver observer = new ItemUseObserver() {
-            @Override
-            public void abort() {
-                player.getController().cancelTask(TaskId.ITEM_USE);
-                player.removeItemCoolDown(parentItem.getItemTemplate().getUseLimits().getDelayId());
+			@Override
+			public void abort() {
+				player.getController().cancelTask(TaskId.ITEM_USE);
+				player.removeItemCoolDown(parentItem.getItemTemplate().getUseLimits().getDelayId());
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_CANCELED(new DescriptionId(nameId)));
-                PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 2, 0), true);
-                player.getObserveController().removeObserver(this);
-            }
-        };
+				PacketSendUtility.broadcastPacket(player,
+						new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 2, 0), true);
+				player.getObserveController().removeObserver(this);
+			}
+		};
 		player.getObserveController().attach(observer);
 		player.getController().addTask(TaskId.ITEM_USE, ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
 				player.getObserveController().removeObserver(observer);
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 1, 1), true);
+				PacketSendUtility.broadcastPacket(player,
+						new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 1, 1), true);
 				if (!player.getInventory().decreaseByObjectId(parntObjectId, 1)) {
 					return;
 				}
@@ -91,7 +96,8 @@ public class RetuningAction extends AbstractItemAction
 				targetItem.setOptionalSocket(Rnd.get(0, targetItem.getItemTemplate().getOptionSlotBonus()));
 				targetItem.setRndBonus();
 				targetItem.setPersistentState(PersistentState.UPDATE_REQUIRED);
-				PacketSendUtility.sendPacket(player, new SM_TUNE_RESULT(player, targetItem.getObjectId(), parentItemId, targetItem.getItemId()));
+				PacketSendUtility.sendPacket(player,
+						new SM_TUNE_RESULT(player, targetItem.getObjectId(), parentItemId, targetItem.getItemId()));
 				PacketSendUtility.sendPacket(player, new SM_INVENTORY_UPDATE_ITEM(player, targetItem));
 				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1401639, new DescriptionId(nameId)));
 			}

@@ -165,8 +165,12 @@ public class InGameShopEn {
 		if (AdvCustomConfig.GAMESHOP_LIMIT) {
 			if (item.getCategory() == AdvCustomConfig.GAMESHOP_CATEGORY) {
 				if (lastUsage.containsKey(player.getObjectId())) {
-					if ((System.currentTimeMillis() - lastUsage.get(player.getObjectId())) < AdvCustomConfig.GAMESHOP_LIMIT_TIME * 60 * 1000) {
-						PacketSendUtility.sendMessage(player, "?????????????,??????????:" + (int) ((AdvCustomConfig.GAMESHOP_LIMIT_TIME * 60 * 1000 - (System.currentTimeMillis() - lastUsage.get(player.getObjectId()))) / 1000) + " ?");
+					if ((System.currentTimeMillis()
+							- lastUsage.get(player.getObjectId())) < AdvCustomConfig.GAMESHOP_LIMIT_TIME * 60 * 1000) {
+						PacketSendUtility.sendMessage(player,
+								"?????????????,??????????:" + (int) ((AdvCustomConfig.GAMESHOP_LIMIT_TIME * 60 * 1000
+										- (System.currentTimeMillis() - lastUsage.get(player.getObjectId()))) / 1000)
+										+ " ?");
 						return;
 					}
 				}
@@ -202,7 +206,8 @@ public class InGameShopEn {
 
 		PlayerCommonData recipientCommonData = DAOManager.getDAO(PlayerDAO.class).loadPlayerCommonDataByName(receiver);
 		if (recipientCommonData.getMailboxLetters() >= 100) {
-			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MAIL_MSG_RECIPIENT_MAILBOX_FULL(recipientCommonData.getName()));
+			PacketSendUtility.sendPacket(player,
+					SM_SYSTEM_MESSAGE.STR_MAIL_MSG_RECIPIENT_MAILBOX_FULL(recipientCommonData.getName()));
 			return;
 		}
 
@@ -211,7 +216,7 @@ public class InGameShopEn {
 				PacketSendUtility.sendPacket(player, new SM_MAIL_SERVICE(MailMessage.MAIL_IS_ONE_RACE_ONLY));
 				return;
 			}
-        }
+		}
 		IGItem item = getIGItem(itemObjId);
 		lastRequestId++;
 		IGRequest request = new IGRequest(lastRequestId, player.getObjectId(), receiver, message, itemObjId);
@@ -229,8 +234,7 @@ public class InGameShopEn {
 			if (LoginServer.getInstance().sendPacket(new SM_PREMIUM_CONTROL(request, cnt * -1))) {
 				activeRequests.add(request);
 			}
-		}
-		else {
+		} else {
 			PacketSendUtility.sendMessage(player, "You can't add toll if ingameshop is disabled!");
 		}
 	}
@@ -242,32 +246,33 @@ public class InGameShopEn {
 				if (player != null) {
 					if (result == 1) {
 						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INGAMESHOP_ERROR);
-					}
-					else if (result == 2) {
+					} else if (result == 2) {
 						IGItem item = getIGItem(request.itemObjId);
 						if (item == null) {
 							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INGAMESHOP_ERROR);
-							log.error("player " + player.getName() + " requested " + request.itemObjId + " that was not exists in list.");
+							log.error("player " + player.getName() + " requested " + request.itemObjId
+									+ " that was not exists in list.");
 							return;
 						}
 						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_INGAMESHOP_NOT_ENOUGH_CASH("Toll"));
 						PacketSendUtility.sendPacket(player, new SM_TOLL_INFO(toll));
-					}
-					else if (result == 3) {
+					} else if (result == 3) {
 						IGItem item = getIGItem(request.itemObjId);
 						if (item == null) {
 							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INGAMESHOP_ERROR);
-							log.error("player " + player.getName() + " requested " + request.itemObjId + " that was not exists in list.");
+							log.error("player " + player.getName() + " requested " + request.itemObjId
+									+ " that was not exists in list.");
 							return;
 						}
 
 						if (request.gift) {
-							SystemMailService.getInstance().sendMail(player.getName(), request.receiver, "In Game Shop", request.message, item.getItemId(), item.getItemCount(), 0L, 0L, LetterType.BLACKCLOUD);
+							SystemMailService.getInstance().sendMail(player.getName(), request.receiver, "In Game Shop",
+									request.message, item.getItemId(), item.getItemCount(), 0L, 0L,
+									LetterType.BLACKCLOUD);
 							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INGAMESHOP_GIFT_SUCCESS);
 							player.getClientConnection().getAccount().setToll(toll);
 							player.getClientConnection().getAccount().setLuna(luna);
-						}
-						else {
+						} else {
 							ItemService.addItem(player, item.getItemId(), item.getItemCount());
 							player.getClientConnection().getAccount().setToll(toll);
 							player.getClientConnection().getAccount().setLuna(luna);
@@ -276,8 +281,7 @@ public class InGameShopEn {
 						item.increaseSales();
 						dao.increaseSales(item.getObjectId(), item.getSalesRanking());
 						PacketSendUtility.sendPacket(player, new SM_TOLL_INFO(toll));
-					}
-					else if (result == 4) {
+					} else if (result == 4) {
 						player.getClientConnection().getAccount().setToll(toll);
 						PacketSendUtility.sendPacket(player, new SM_TOLL_INFO(toll));
 					}

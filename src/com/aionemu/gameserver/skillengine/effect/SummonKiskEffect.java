@@ -35,12 +35,11 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SummonKiskEffect")
-public class SummonKiskEffect extends SummonEffect
-{
-    @Override
-    public void applyEffect(final Effect effect) {
+public class SummonKiskEffect extends SummonEffect {
+	@Override
+	public void applyEffect(final Effect effect) {
 		Creature effected = effect.getEffected();
-		Player player = (Player)effected;
+		Player player = (Player) effected;
 		float x = player.getX();
 		float y = player.getY();
 		float z = player.getZ();
@@ -64,5 +63,5 @@ public class SummonKiskEffect extends SummonEffect
 		} else {
 			KiskService.getInstance().onBind(kisk, player);
 		}
-    }
+	}
 }

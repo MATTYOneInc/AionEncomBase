@@ -56,19 +56,21 @@ public class TargetCondition extends Condition {
 		if (skill.getSkillTemplate().getProperties().getTargetType().equals(TargetRangeAttribute.AREA)) {
 			return true;
 		}
-		if ((skill.getSkillTemplate().getProperties().getFirstTarget() != FirstTargetAttribute.TARGET) && (skill.getSkillTemplate().getProperties().getFirstTarget() != FirstTargetAttribute.TARGETORME)) {
+		if ((skill.getSkillTemplate().getProperties().getFirstTarget() != FirstTargetAttribute.TARGET)
+				&& (skill.getSkillTemplate().getProperties().getFirstTarget() != FirstTargetAttribute.TARGETORME)) {
 			return true;
 		}
-		if ((skill.getSkillTemplate().getProperties().getFirstTarget() == FirstTargetAttribute.TARGETORME) && (skill.getEffector() == skill.getFirstTarget())) {
+		if ((skill.getSkillTemplate().getProperties().getFirstTarget() == FirstTargetAttribute.TARGETORME)
+				&& (skill.getEffector() == skill.getFirstTarget())) {
 			return true;
 		}
 		boolean result = false;
 		switch (value) {
-			case NPC:
-				result = skill.getFirstTarget() instanceof Npc;
-				break;
-			case PC:
-				result = skill.getFirstTarget() instanceof Player;
+		case NPC:
+			result = skill.getFirstTarget() instanceof Npc;
+			break;
+		case PC:
+			result = skill.getFirstTarget() instanceof Player;
 		}
 
 		if ((!result) && ((skill.getEffector() instanceof Player))) {

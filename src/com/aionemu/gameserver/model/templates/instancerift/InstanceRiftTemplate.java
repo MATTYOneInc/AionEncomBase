@@ -27,11 +27,10 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "instance_rift")
-public class InstanceRiftTemplate
-{
+public class InstanceRiftTemplate {
 	@XmlAttribute(name = "id")
 	protected int id;
-	
+
 	public int getId() {
 		return this.id;
 	}

@@ -28,10 +28,9 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
-public abstract class AbstractQuestHandler
-{
+public abstract class AbstractQuestHandler {
 	public abstract void register();
-	
+
 	public boolean onDialogEvent(QuestEnv questEnv) {
 		return false;
 	}
@@ -115,11 +114,11 @@ public abstract class AbstractQuestHandler
 	public boolean onKillRankedEvent(QuestEnv env) {
 		return false;
 	}
-	
+
 	public boolean onEnterWindStreamEvent(QuestEnv questEnv, int worldId) {
 		return false;
 	}
-	
+
 	public boolean rideAction(QuestEnv questEnv, int rideItemId) {
 		return false;
 	}
@@ -153,31 +152,31 @@ public abstract class AbstractQuestHandler
 	public boolean onDredgionRewardEvent(QuestEnv env) {
 		return false;
 	}
-	
+
 	public boolean onKamarRewardEvent(QuestEnv env) {
 		return false;
 	}
-	
+
 	public boolean onOphidanRewardEvent(QuestEnv env) {
 		return false;
 	}
-	
+
 	public boolean onBastionRewardEvent(QuestEnv env) {
 		return false;
 	}
-	
+
 	public HandlerResult onBonusApplyEvent(QuestEnv env, BonusType bonusType, List<QuestItems> rewardItems) {
 		return HandlerResult.UNKNOWN;
 	}
-	
+
 	public boolean onProtectEndEvent(QuestEnv env) {
 		return false;
 	}
-	
+
 	public boolean onProtectFailEvent(QuestEnv env) {
 		return false;
 	}
-	
+
 	public boolean onCreativityPointEvent(QuestEnv questEnv) {
 		return false;
 	}

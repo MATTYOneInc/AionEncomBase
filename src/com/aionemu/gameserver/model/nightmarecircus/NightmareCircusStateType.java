@@ -20,8 +20,6 @@ package com.aionemu.gameserver.model.nightmarecircus;
  * @author Rinzler (Encom)
  */
 
-public enum NightmareCircusStateType
-{
-	OPEN,
-	CLOSED;
+public enum NightmareCircusStateType {
+	OPEN, CLOSED;
 }

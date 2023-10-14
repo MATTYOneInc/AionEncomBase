@@ -35,24 +35,28 @@ public class SkillAttackManager {
 
 	public static void performAttack(NpcAI2 npcAI, int delay) {
 		if (npcAI.getOwner().getObjectTemplate().getAttackRange() == 0) {
-			if (npcAI.getOwner().getTarget() != null && !MathUtil.isInRange(npcAI.getOwner(), npcAI.getOwner().getTarget(), npcAI.getOwner().getAggroRange())) {
+			if (npcAI.getOwner().getTarget() != null && !MathUtil.isInRange(npcAI.getOwner(),
+					npcAI.getOwner().getTarget(), npcAI.getOwner().getAggroRange())) {
 				npcAI.onGeneralEvent(AIEventType.TARGET_TOOFAR);
 				npcAI.getOwner().getController().abortCast();
 				return;
 			}
-		} if (npcAI.setSubStateIfNot(AISubState.CAST)) {
+		}
+		if (npcAI.setSubStateIfNot(AISubState.CAST)) {
 			if (delay > 0) {
-				ThreadPoolManager.getInstance().schedule(new SkillAction(npcAI), delay + DataManager.SKILL_DATA.getSkillTemplate(npcAI.getSkillId()).getDuration());
+				ThreadPoolManager.getInstance().schedule(new SkillAction(npcAI),
+						delay + DataManager.SKILL_DATA.getSkillTemplate(npcAI.getSkillId()).getDuration());
 			} else {
 				skillAction(npcAI);
 			}
 		}
 	}
-	
+
 	protected static void skillAction(NpcAI2 npcAI) {
 		Creature target = (Creature) npcAI.getOwner().getTarget();
 		if (npcAI.getOwner().getObjectTemplate().getAttackRange() == 0) {
-			if (npcAI.getOwner().getTarget() != null && !MathUtil.isInRange(npcAI.getOwner(), npcAI.getOwner().getTarget(), npcAI.getOwner().getAggroRange())) {
+			if (npcAI.getOwner().getTarget() != null && !MathUtil.isInRange(npcAI.getOwner(),
+					npcAI.getOwner().getTarget(), npcAI.getOwner().getAggroRange())) {
 				npcAI.onGeneralEvent(AIEventType.TARGET_TOOFAR);
 				npcAI.getOwner().getController().abortCast();
 				return;
@@ -67,21 +71,21 @@ public class SkillAttackManager {
 				AI2Logger.info(npcAI, "Using skill " + skillId + " level: " + skillLevel + " duration: " + duration);
 			}
 			switch (template.getSubType()) {
-				case BUFF:
-					switch (template.getProperties().getFirstTarget()) {
-						case ME:
-							if (npcAI.getOwner().getEffectController().isAbnormalPresentBySkillId(skillId)) {
-								afterUseSkill(npcAI);
-								return;
-							}
-						break;
-						default:
-						if (target.getEffectController().isAbnormalPresentBySkillId(skillId)) {
-							afterUseSkill(npcAI);
-							return;
-						}
+			case BUFF:
+				switch (template.getProperties().getFirstTarget()) {
+				case ME:
+					if (npcAI.getOwner().getEffectController().isAbnormalPresentBySkillId(skillId)) {
+						afterUseSkill(npcAI);
+						return;
 					}
 					break;
+				default:
+					if (target.getEffectController().isAbnormalPresentBySkillId(skillId)) {
+						afterUseSkill(npcAI);
+						return;
+					}
+				}
+				break;
 			default:
 				break;
 			}
@@ -95,12 +99,12 @@ public class SkillAttackManager {
 		}
 
 	}
-	
+
 	public static void afterUseSkill(NpcAI2 npcAI) {
 		npcAI.setSubStateIfNot(AISubState.NONE);
 		npcAI.onGeneralEvent(AIEventType.ATTACK_COMPLETE);
 	}
-	
+
 	public static NpcSkillEntry chooseNextSkill(NpcAI2 npcAI) {
 		if (npcAI.isInSubState(AISubState.CAST)) {
 			return null;
@@ -114,12 +118,15 @@ public class SkillAttackManager {
 			NpcSkillEntry npcSkill = skillList.getRandomSkill();
 			if (npcSkill != null) {
 				int currentHpPercent = owner.getLifeStats().getHpPercentage();
-				if (npcSkill.isReady(currentHpPercent, System.currentTimeMillis() - owner.getGameStats().getFightStartingTime())) {
+				if (npcSkill.isReady(currentHpPercent,
+						System.currentTimeMillis() - owner.getGameStats().getFightStartingTime())) {
 					SkillTemplate template = npcSkill.getSkillTemplate();
-					if ((template.getType() == SkillType.MAGICAL && owner.getEffectController().isAbnormalSet(AbnormalState.SILENCE))
-					|| (template.getType() == SkillType.PHYSICAL && owner.getEffectController().isAbnormalSet(AbnormalState.BIND))
-					|| (owner.getEffectController().isUnderFear()))
-					return null;
+					if ((template.getType() == SkillType.MAGICAL
+							&& owner.getEffectController().isAbnormalSet(AbnormalState.SILENCE))
+							|| (template.getType() == SkillType.PHYSICAL
+									&& owner.getEffectController().isAbnormalSet(AbnormalState.BIND))
+							|| (owner.getEffectController().isUnderFear()))
+						return null;
 					npcSkill.setLastTimeUsed();
 					return npcSkill;
 				}
@@ -127,13 +134,14 @@ public class SkillAttackManager {
 		}
 		return null;
 	}
-	
+
 	private final static class SkillAction implements Runnable {
 		private NpcAI2 npcAI;
+
 		SkillAction(NpcAI2 npcAI) {
 			this.npcAI = npcAI;
 		}
-		
+
 		@Override
 		public void run() {
 			skillAction(npcAI);

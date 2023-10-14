@@ -31,20 +31,20 @@ import com.aionemu.gameserver.model.templates.robot.RobotInfo;
 import gnu.trove.map.hash.TIntObjectHashMap;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"robots"})
+@XmlType(name = "", propOrder = { "robots" })
 @XmlRootElement(name = "robots")
-public class RobotData
-{
+public class RobotData {
 	@XmlElement(name = "robot_info")
 	private List<RobotInfo> robots;
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<RobotInfo> robotInfos;
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		robotInfos = new TIntObjectHashMap<RobotInfo>();
 		for (RobotInfo info : robots) {
@@ -53,11 +53,11 @@ public class RobotData
 		robots.clear();
 		robots = null;
 	}
-	
+
 	public RobotInfo getRobotInfo(int npcId) {
 		return (RobotInfo) robotInfos.get(npcId);
 	}
-	
+
 	public int size() {
 		return robotInfos.size();
 	}

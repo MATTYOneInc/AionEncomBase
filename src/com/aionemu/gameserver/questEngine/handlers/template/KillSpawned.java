@@ -36,15 +36,15 @@ import com.aionemu.gameserver.services.QuestService;
 import gnu.trove.list.array.TIntArrayList;
 import javolution.util.FastMap;
 
-public class KillSpawned extends QuestHandler
-{
+public class KillSpawned extends QuestHandler {
 	private final int questId;
 	private final Set<Integer> startNpcs = new HashSet<Integer>();
 	private final Set<Integer> endNpcs = new HashSet<Integer>();
 	private final FastMap<List<Integer>, SpawnedMonster> spawnedMonsters;
 	private TIntArrayList spawnerObjects;
-	
-	public KillSpawned(int questId, List<Integer> startNpcIds, List<Integer> endNpcIds, FastMap<List<Integer>, SpawnedMonster> spawnedMonsters) {
+
+	public KillSpawned(int questId, List<Integer> startNpcIds, List<Integer> endNpcIds,
+			FastMap<List<Integer>, SpawnedMonster> spawnedMonsters) {
 		super(questId);
 		this.questId = questId;
 		this.startNpcs.addAll(startNpcIds);
@@ -61,7 +61,7 @@ public class KillSpawned extends QuestHandler
 			spawnerObjects.add(m.getSpawnerObject());
 		}
 	}
-	
+
 	@Override
 	public void register() {
 		Iterator<Integer> iterator = startNpcs.iterator();
@@ -69,7 +69,8 @@ public class KillSpawned extends QuestHandler
 			int startNpc = iterator.next();
 			qe.registerQuestNpc(startNpc).addOnQuestStart(getQuestId());
 			qe.registerQuestNpc(startNpc).addOnTalkEvent(getQuestId());
-		} for (List<Integer> spawnedMonsterIds : spawnedMonsters.keySet()) {
+		}
+		for (List<Integer> spawnedMonsterIds : spawnedMonsters.keySet()) {
 			iterator = spawnedMonsterIds.iterator();
 			while (iterator.hasNext()) {
 				int spawnedMonsterId = iterator.next();
@@ -85,7 +86,7 @@ public class KillSpawned extends QuestHandler
 			qe.registerQuestNpc(spawnerObjects.get(i)).addOnTalkEvent(questId);
 		}
 	}
-	
+
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
@@ -104,21 +105,25 @@ public class KillSpawned extends QuestHandler
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					int monsterId = 0;
 					for (SpawnedMonster m : spawnedMonsters.values()) {
-						if(m.getSpawnerObject() == targetId) {
+						if (m.getSpawnerObject() == targetId) {
 							monsterId = m.getNpcIds().get(0);
 							break;
 						}
 					}
-					SpawnSearchResult searchResult = DataManager.SPAWNS_DATA2.getFirstSpawnByNpcId(player.getWorldId(), targetId);
-					QuestService.addNewSpawn(player.getWorldId(), player.getInstanceId(), monsterId, searchResult.getSpot().getX(), searchResult.getSpot().getY(), searchResult.getSpot().getZ(), searchResult.getSpot().getHeading());
+					SpawnSearchResult searchResult = DataManager.SPAWNS_DATA2.getFirstSpawnByNpcId(player.getWorldId(),
+							targetId);
+					QuestService.addNewSpawn(player.getWorldId(), player.getInstanceId(), monsterId,
+							searchResult.getSpot().getX(), searchResult.getSpot().getY(), searchResult.getSpot().getZ(),
+							searchResult.getSpot().getHeading());
 					return true;
 				}
 			} else {
-				for (Monster mi: spawnedMonsters.values()) {
+				for (Monster mi : spawnedMonsters.values()) {
 					if (mi.getEndVar() > qs.getQuestVarById(mi.getVar())) {
-					    return false;
+						return false;
 					}
-				} if (endNpcs.contains(targetId)) {
+				}
+				if (endNpcs.contains(targetId)) {
 					if (env.getDialog() == QuestDialog.START_DIALOG) {
 						return sendQuestDialog(env, 10002);
 					} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
@@ -133,7 +138,7 @@ public class KillSpawned extends QuestHandler
 		}
 		return false;
 	}
-	
+
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
 		Player player = env.getPlayer();
@@ -143,7 +148,7 @@ public class KillSpawned extends QuestHandler
 				if (m.getNpcIds().contains(env.getTargetId())) {
 					if (qs.getQuestVarById(m.getVar()) < m.getEndVar()) {
 						qs.setQuestVarById(m.getVar(), qs.getQuestVarById(m.getVar()) + 1);
-						for (Monster mi: spawnedMonsters.values()) {
+						for (Monster mi : spawnedMonsters.values()) {
 							if (qs.getQuestVarById(mi.getVar()) < mi.getEndVar()) {
 								updateQuestStatus(env);
 								return true;

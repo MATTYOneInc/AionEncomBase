@@ -34,31 +34,30 @@ import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "drop")
-public class Drop implements DropCalculator
-{
+public class Drop implements DropCalculator {
 	@XmlAttribute(name = "item_id", required = true)
 	protected int itemId;
-	
+
 	@XmlAttribute(name = "min_amount", required = true)
 	protected int minAmount;
-	
+
 	@XmlAttribute(name = "max_amount", required = true)
 	protected int maxAmount;
-	
+
 	@XmlAttribute(required = true)
 	protected float chance;
-	
+
 	@XmlAttribute(name = "no_reduce")
 	protected Boolean noReduce = false;
-	
+
 	@XmlAttribute(name = "eachmember")
 	protected boolean eachMember = false;
-	
+
 	private ItemTemplate template;
-	
+
 	public Drop() {
 	}
-	
+
 	public Drop(int itemId, int minAmount, int maxAmount, float chance, boolean noReduce, boolean eachMember) {
 		this.itemId = itemId;
 		this.minAmount = minAmount;
@@ -68,42 +67,44 @@ public class Drop implements DropCalculator
 		this.eachMember = eachMember;
 		template = DataManager.ITEM_DATA.getItemTemplate(itemId);
 	}
-	
+
 	public ItemTemplate getItemTemplate() {
 		return template == null ? DataManager.ITEM_DATA.getItemTemplate(itemId) : template;
 	}
-	
+
 	public int getItemId() {
 		return itemId;
 	}
-	
-    public int getMinAmount() {
-        return minAmount;
-    }
-	
-    public int getMaxAmount() {
-        return maxAmount;
-    }
-	
-    public float getChance() {
-        return chance;
-    }
-	
+
+	public int getMinAmount() {
+		return minAmount;
+	}
+
+	public int getMaxAmount() {
+		return maxAmount;
+	}
+
+	public float getChance() {
+		return chance;
+	}
+
 	public boolean isNoReduction() {
 		return noReduce;
 	}
-	
+
 	public Boolean isEachMember() {
 		return eachMember;
 	}
-	
+
 	@Override
-	public int dropCalculator(Set<DropItem> result, int index, float dropModifier, Race race, Collection<Player> groupMembers) {
+	public int dropCalculator(Set<DropItem> result, int index, float dropModifier, Race race,
+			Collection<Player> groupMembers) {
 		float percent = chance;
 		if (!noReduce) {
 			percent *= dropModifier;
 			percent = percent - RateConfig.DROP_RATE_REDUCE;
-		} if (Rnd.get() * 100 < percent) {
+		}
+		if (Rnd.get() * 100 < percent) {
 			if (eachMember && (groupMembers != null) && (!groupMembers.isEmpty())) {
 				for (Player player : groupMembers) {
 					DropItem dropitem = new DropItem(this);
@@ -123,19 +124,20 @@ public class Drop implements DropCalculator
 		}
 		return index;
 	}
-	
-    public static Drop load(ByteBuffer buffer) {
-        Drop drop = new Drop();
-        drop.itemId = buffer.getInt();
-        drop.chance = buffer.getFloat();
-        drop.minAmount = buffer.getInt();
-        drop.maxAmount = buffer.getInt();
-        drop.noReduce = buffer.get() == 1 ? true : false;
-        drop.eachMember = buffer.get() == 1 ? true : false;
-        return drop;
-    }
-	
-    public String toString() {
-        return "Drop [itemId=" + itemId + ", minAmount=" + minAmount + ", maxAmount=" + maxAmount + ", chance=" + chance + ", noReduce=" + noReduce + ", eachMember=" + eachMember + "]";
-    }
+
+	public static Drop load(ByteBuffer buffer) {
+		Drop drop = new Drop();
+		drop.itemId = buffer.getInt();
+		drop.chance = buffer.getFloat();
+		drop.minAmount = buffer.getInt();
+		drop.maxAmount = buffer.getInt();
+		drop.noReduce = buffer.get() == 1 ? true : false;
+		drop.eachMember = buffer.get() == 1 ? true : false;
+		return drop;
+	}
+
+	public String toString() {
+		return "Drop [itemId=" + itemId + ", minAmount=" + minAmount + ", maxAmount=" + maxAmount + ", chance=" + chance
+				+ ", noReduce=" + noReduce + ", eachMember=" + eachMember + "]";
+	}
 }

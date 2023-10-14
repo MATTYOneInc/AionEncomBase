@@ -85,7 +85,8 @@ public class Portal2Data {
 		PortalDialog portal = portalDialogs.get(npcId);
 		if (portal != null) {
 			for (PortalPath path : portal.getPortalPath()) {
-				if (path.getDialog() == dialogId && (race.equals(path.getRace()) || path.getRace().equals(Race.PC_ALL))) {
+				if (path.getDialog() == dialogId
+						&& (race.equals(path.getRace()) || path.getRace().equals(Race.PC_ALL))) {
 					return path;
 				}
 			}

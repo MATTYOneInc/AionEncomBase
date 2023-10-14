@@ -34,11 +34,11 @@ public interface MoveController {
 	void startMovingToDestination();
 
 	void abortMove();
-	
+
 	byte getMovementMask();
-	
+
 	boolean isInMove();
-	
+
 	void setInMove(boolean value);
 
 	void skillMovement();

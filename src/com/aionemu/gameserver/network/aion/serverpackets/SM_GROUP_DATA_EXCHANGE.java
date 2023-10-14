@@ -19,8 +19,7 @@ package com.aionemu.gameserver.network.aion.serverpackets;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_GROUP_DATA_EXCHANGE extends AionServerPacket
-{
+public class SM_GROUP_DATA_EXCHANGE extends AionServerPacket {
 	private byte[] byteData;
 	private int action;
 	private int unk2;
@@ -42,7 +41,7 @@ public class SM_GROUP_DATA_EXCHANGE extends AionServerPacket
 
 		if (action != 1) {
 			writeC(unk2); // unk
-        }
+		}
 		writeD(byteData.length);
 		writeB(byteData);
 	}

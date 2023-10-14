@@ -27,13 +27,12 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlType(name = "panel_cp")
 @XmlAccessorType(XmlAccessType.NONE)
-public class PanelCp
-{
+public class PanelCp {
 	@XmlAttribute
 	protected int id;
 	@XmlAttribute
 	protected String name;
-	@XmlAttribute(name="panelType", required = true)
+	@XmlAttribute(name = "panelType", required = true)
 	private PanelCpType panelCpType;
 	@XmlAttribute
 	protected int learnSkill;
@@ -57,46 +56,59 @@ public class PanelCp
 	protected int preEnchantCount;
 	@XmlAttribute
 	protected int minLevel;
-	
+
 	public int getId() {
-        return this.id;
-    }
+		return this.id;
+	}
+
 	public String getName() {
 		return name;
 	}
+
 	public PanelCpType getPanelCpType() {
 		return panelCpType;
 	}
+
 	public int getLearnSkill() {
 		return learnSkill;
 	}
+
 	public int getAdditionalSkill() {
 		return additionalSkill;
 	}
+
 	public int getStatsId() {
 		return statsId;
 	}
+
 	public int getSkillId() {
 		return skillId;
 	}
+
 	public int getStatValue() {
 		return statValue;
 	}
+
 	public int getCost() {
 		return cost;
 	}
+
 	public int getCountMax() {
 		return countMax;
 	}
+
 	public int getCostAdj() {
 		return costAdj;
 	}
+
 	public int getPreCondId() {
 		return preCondId;
 	}
+
 	public int getPreEnchantCount() {
 		return preEnchantCount;
 	}
+
 	public int getMinLevel() {
 		return minLevel;
 	}

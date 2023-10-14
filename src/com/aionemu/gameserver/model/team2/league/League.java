@@ -37,96 +37,95 @@ import com.google.common.collect.Lists;
 /**
  * @author ATracer
  */
-public class League extends GeneralTeam<PlayerAlliance, LeagueMember>
-{
-    private LootGroupRules lootGroupRules = new LootGroupRules();
-    private static final LeagueMemberComparator MEMBER_COMPARATOR = new LeagueMemberComparator();
-	
-    public League(LeagueMember leader) {
-        super(IDFactory.getInstance().nextId());
-        initializeTeam(leader);
-    }
-	
-    protected final void initializeTeam(LeagueMember leader) {
-        setLeader(leader);
-    }
-	
-    @Override
-    public Collection<PlayerAlliance> getOnlineMembers() {
-        return getMembers();
-    }
-	
-    @Override
-    public void addMember(LeagueMember member) {
-        super.addMember(member);
-        member.getObject().setLeague(this);
-    }
-	
-    @Override
-    public void removeMember(LeagueMember member) {
-        super.removeMember(member);
-        member.getObject().setLeague(null);
-    }
-	
-    @Override
-    public void sendPacket(AionServerPacket packet) {
-        for (PlayerAlliance alliance : getMembers()) {
-            alliance.sendPacket(packet);
-        }
-    }
-	
-    @Override
-    public void sendPacket(AionServerPacket packet, Predicate<PlayerAlliance> predicate) {
-        for (PlayerAlliance alliance : getMembers()) {
-            if (predicate.apply(alliance)) {
-                alliance.sendPacket(packet, Predicates.<Player>alwaysTrue());
-            }
-        }
-    }
-	
-    @Override
-    public int onlineMembers() {
-        return getMembers().size();
-    }
-	
-    @Override
-    public Race getRace() {
-        return getLeaderObject().getRace();
-    }
-	
-    @Override
-    public boolean isFull() {
-        return size() == 8;
-    }
-	
-    public LootGroupRules getLootGroupRules() {
-        return lootGroupRules;
-    }
-	
-    public void setLootGroupRules(LootGroupRules lootGroupRules) {
-        this.lootGroupRules = lootGroupRules;
-    }
-	
-    public Collection<LeagueMember> getSortedMembers() {
-        ArrayList<LeagueMember> newArrayList = Lists.newArrayList(members.values());
-        Collections.sort(newArrayList, MEMBER_COMPARATOR);
-        return newArrayList;
-    }
-	
-    public Player getPlayerMember(Integer playerObjId) {
-        for (PlayerAlliance member : getMembers()) {
-            PlayerAllianceMember playerMember = member.getMember(playerObjId);
-            if (playerMember != null) {
-                return playerMember.getObject();
-            }
-        }
-        return null;
-    }
-	
-    static class LeagueMemberComparator implements Comparator<LeagueMember> {
-        @Override
-        public int compare(LeagueMember o1, LeagueMember o2) {
-            return o1.getLeaguePosition() > o2.getLeaguePosition() ? 1 : -1;
-        }
-    }
+public class League extends GeneralTeam<PlayerAlliance, LeagueMember> {
+	private LootGroupRules lootGroupRules = new LootGroupRules();
+	private static final LeagueMemberComparator MEMBER_COMPARATOR = new LeagueMemberComparator();
+
+	public League(LeagueMember leader) {
+		super(IDFactory.getInstance().nextId());
+		initializeTeam(leader);
+	}
+
+	protected final void initializeTeam(LeagueMember leader) {
+		setLeader(leader);
+	}
+
+	@Override
+	public Collection<PlayerAlliance> getOnlineMembers() {
+		return getMembers();
+	}
+
+	@Override
+	public void addMember(LeagueMember member) {
+		super.addMember(member);
+		member.getObject().setLeague(this);
+	}
+
+	@Override
+	public void removeMember(LeagueMember member) {
+		super.removeMember(member);
+		member.getObject().setLeague(null);
+	}
+
+	@Override
+	public void sendPacket(AionServerPacket packet) {
+		for (PlayerAlliance alliance : getMembers()) {
+			alliance.sendPacket(packet);
+		}
+	}
+
+	@Override
+	public void sendPacket(AionServerPacket packet, Predicate<PlayerAlliance> predicate) {
+		for (PlayerAlliance alliance : getMembers()) {
+			if (predicate.apply(alliance)) {
+				alliance.sendPacket(packet, Predicates.<Player>alwaysTrue());
+			}
+		}
+	}
+
+	@Override
+	public int onlineMembers() {
+		return getMembers().size();
+	}
+
+	@Override
+	public Race getRace() {
+		return getLeaderObject().getRace();
+	}
+
+	@Override
+	public boolean isFull() {
+		return size() == 8;
+	}
+
+	public LootGroupRules getLootGroupRules() {
+		return lootGroupRules;
+	}
+
+	public void setLootGroupRules(LootGroupRules lootGroupRules) {
+		this.lootGroupRules = lootGroupRules;
+	}
+
+	public Collection<LeagueMember> getSortedMembers() {
+		ArrayList<LeagueMember> newArrayList = Lists.newArrayList(members.values());
+		Collections.sort(newArrayList, MEMBER_COMPARATOR);
+		return newArrayList;
+	}
+
+	public Player getPlayerMember(Integer playerObjId) {
+		for (PlayerAlliance member : getMembers()) {
+			PlayerAllianceMember playerMember = member.getMember(playerObjId);
+			if (playerMember != null) {
+				return playerMember.getObject();
+			}
+		}
+		return null;
+	}
+
+	static class LeagueMemberComparator implements Comparator<LeagueMember> {
+		@Override
+		public int compare(LeagueMember o1, LeagueMember o2) {
+			return o1.getLeaguePosition() > o2.getLeaguePosition() ? 1 : -1;
+		}
+	}
 }

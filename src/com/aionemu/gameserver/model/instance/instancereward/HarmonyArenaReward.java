@@ -34,13 +34,13 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 
 import javolution.util.FastList;
 
-public class HarmonyArenaReward extends PvPArenaReward
-{
+public class HarmonyArenaReward extends PvPArenaReward {
 	private FastList<HarmonyGroupReward> groups = new FastList<HarmonyGroupReward>();
+
 	public HarmonyArenaReward(Integer mapId, int instanceId, WorldMapInstance instance) {
 		super(mapId, instanceId, instance);
 	}
-	
+
 	public HarmonyGroupReward getHarmonyGroupReward(Integer object) {
 		for (InstancePlayerReward reward : groups) {
 			HarmonyGroupReward harmonyReward = (HarmonyGroupReward) reward;
@@ -50,7 +50,7 @@ public class HarmonyArenaReward extends PvPArenaReward
 		}
 		return null;
 	}
-	
+
 	public FastList<HarmonyGroupReward> getHarmonyGroupInside() {
 		FastList<HarmonyGroupReward> harmonyGroups = new FastList<HarmonyGroupReward>();
 		for (HarmonyGroupReward group : groups) {
@@ -63,7 +63,7 @@ public class HarmonyArenaReward extends PvPArenaReward
 		}
 		return harmonyGroups;
 	}
-	
+
 	public FastList<Player> getPlayersInside(HarmonyGroupReward group) {
 		FastList<Player> players = new FastList<Player>();
 		for (Player playerInside : instance.getPlayersInside()) {
@@ -73,24 +73,25 @@ public class HarmonyArenaReward extends PvPArenaReward
 		}
 		return players;
 	}
-	
+
 	public void addHarmonyGroup(HarmonyGroupReward reward) {
 		groups.add(reward);
 	}
-	
+
 	public FastList<HarmonyGroupReward> getGroups() {
 		return groups;
 	}
-	
+
 	public void sendPacket(final int type, final Integer object) {
 		instance.doOnAllPlayers(new Visitor<Player>() {
 			@Override
 			public void visit(Player player) {
-				PacketSendUtility.sendPacket(player, new SM_INSTANCE_SCORE(type, getTime(), getInstanceReward(), object));
+				PacketSendUtility.sendPacket(player,
+						new SM_INSTANCE_SCORE(type, getTime(), getInstanceReward(), object));
 			}
 		});
 	}
-	
+
 	@Override
 	public int getRank(int points) {
 		int rank = -1;
@@ -101,7 +102,7 @@ public class HarmonyArenaReward extends PvPArenaReward
 		}
 		return rank;
 	}
-	
+
 	public List<HarmonyGroupReward> sortGroupPoints() {
 		return sort(groups, on(HarmonyGroupReward.class).getPoints(), new Comparator<Integer>() {
 			@Override
@@ -110,12 +111,12 @@ public class HarmonyArenaReward extends PvPArenaReward
 			}
 		});
 	}
-	
+
 	@Override
 	public int getTotalPoints() {
 		return sum(groups, on(HarmonyGroupReward.class).getPoints());
 	}
-	
+
 	@Override
 	public void clear() {
 		groups.clear();

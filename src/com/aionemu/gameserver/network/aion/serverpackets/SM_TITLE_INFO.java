@@ -69,7 +69,7 @@ public class SM_TITLE_INFO extends AionServerPacket {
 		this.action = 4;
 		this.titleId = flag ? 1 : 0;
 	}
-	
+
 	public SM_TITLE_INFO(Player player, boolean flag) {
 		this.action = 5;
 		this.playerObjId = player.getObjectId();
@@ -77,9 +77,9 @@ public class SM_TITLE_INFO extends AionServerPacket {
 	}
 
 	public SM_TITLE_INFO(int action, int bonusTitleId) {
-        this.action = action;
-        this.bonusTitleId = bonusTitleId;
-    }
+		this.action = action;
+		this.bonusTitleId = bonusTitleId;
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -88,32 +88,32 @@ public class SM_TITLE_INFO extends AionServerPacket {
 	protected void writeImpl(AionConnection con) {
 		writeC(action);
 		switch (action) {
-			case 0:
-				writeC(0x00);
-				writeC(0x01);//5.0
-				writeH(titleList.size());
-				for (Title title : titleList.getTitles()) {
-					writeD(title.getId());
-					writeD(title.getRemainingTime());
-				}
-				break;
-			case 1: // self set
-				writeH(titleId);
-				break;
-			case 3: // broad set
-				writeD(playerObjId);
-				writeH(titleId);
-				break;
-			case 4: // Mentor flag self
-				writeH(titleId);
-				break;
-			case 5: // broad set mentor fleg
-				writeD(playerObjId);
-				writeH(titleId);
-				break;
-			case 6: // bonus title
-                writeH(bonusTitleId);
-                break;
+		case 0:
+			writeC(0x00);
+			writeC(0x01);// 5.0
+			writeH(titleList.size());
+			for (Title title : titleList.getTitles()) {
+				writeD(title.getId());
+				writeD(title.getRemainingTime());
+			}
+			break;
+		case 1: // self set
+			writeH(titleId);
+			break;
+		case 3: // broad set
+			writeD(playerObjId);
+			writeH(titleId);
+			break;
+		case 4: // Mentor flag self
+			writeH(titleId);
+			break;
+		case 5: // broad set mentor fleg
+			writeD(playerObjId);
+			writeH(titleId);
+			break;
+		case 6: // bonus title
+			writeH(bonusTitleId);
+			break;
 		}
 	}
 }

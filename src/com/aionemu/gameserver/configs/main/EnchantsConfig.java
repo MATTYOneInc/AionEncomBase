@@ -18,8 +18,7 @@ package com.aionemu.gameserver.configs.main;
 
 import com.aionemu.commons.configuration.Property;
 
-public class EnchantsConfig
-{
+public class EnchantsConfig {
 	@Property(key = "gameserver.socket.manastone", defaultValue = "50")
 	public static float SOCKET_MANASTONE;
 	@Property(key = "gameserver.enchant.item", defaultValue = "50")

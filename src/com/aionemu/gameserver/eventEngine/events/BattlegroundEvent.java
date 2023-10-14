@@ -26,43 +26,42 @@ import com.aionemu.gameserver.services.events.LadderService;
  * Created by wanke on 12/02/2017.
  */
 
-public class BattlegroundEvent extends Event
-{
-    private List<Integer> battlegrounds = new ArrayList<Integer>();
-	
-    @Override
-    public void execute() {
-        LadderService.getInstance().createNormalBgs(this);
-    }
-	
-    public int getBgCount() {
-        return battlegrounds.size();
-    }
-	
-    public void onCreate(Integer bgId) {
-        if (!battlegrounds.contains(bgId)) {
-            battlegrounds.add(bgId);
-        }
-    }
-	
-    public void onEnd(Integer bgId) {
-        battlegrounds.remove(bgId);
-        if (battlegrounds.isEmpty()) {
-            this.onEnd();
-        }
-    }
-	
-    public void onEnd() {
-        super.finish();
-    }
-	
-    @Override
-    protected void onReset() {
-        battlegrounds.clear();
-    }
-	
-    @Override
-    public boolean cancel(boolean mayInterruptIfRunning) {
-        return false;
-    }
+public class BattlegroundEvent extends Event {
+	private List<Integer> battlegrounds = new ArrayList<Integer>();
+
+	@Override
+	public void execute() {
+		LadderService.getInstance().createNormalBgs(this);
+	}
+
+	public int getBgCount() {
+		return battlegrounds.size();
+	}
+
+	public void onCreate(Integer bgId) {
+		if (!battlegrounds.contains(bgId)) {
+			battlegrounds.add(bgId);
+		}
+	}
+
+	public void onEnd(Integer bgId) {
+		battlegrounds.remove(bgId);
+		if (battlegrounds.isEmpty()) {
+			this.onEnd();
+		}
+	}
+
+	public void onEnd() {
+		super.finish();
+	}
+
+	@Override
+	protected void onReset() {
+		battlegrounds.clear();
+	}
+
+	@Override
+	public boolean cancel(boolean mayInterruptIfRunning) {
+		return false;
+	}
 }

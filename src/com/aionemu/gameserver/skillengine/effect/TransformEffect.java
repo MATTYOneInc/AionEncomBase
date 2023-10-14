@@ -58,7 +58,7 @@ public abstract class TransformEffect extends EffectTemplate {
 
 		if (state != null) {
 			effected.getEffectController().unsetAbnormal(state.getId());
-        }
+		}
 		if (effected instanceof Player) {
 			int newModel = 0;
 			TransformType transformType = TransformType.PC;
@@ -77,11 +77,9 @@ public abstract class TransformEffect extends EffectTemplate {
 			effected.getTransformModel().setTransformType(transformType);
 			effected.getTransformModel().setItemId(0);
 			DAOManager.getDAO(PlayerTransformDAO.class).deletePlTransfo(effected.getObjectId());
-		}
-		else if (effected instanceof Summon) {
+		} else if (effected instanceof Summon) {
 			effected.getTransformModel().setModelId(0);
-		}
-		else if (effected instanceof Npc) {
+		} else if (effected instanceof Npc) {
 			effected.getTransformModel().setModelId(effected.getObjectTemplate().getTemplateId());
 		}
 		effected.getTransformModel().setPanelId(0);

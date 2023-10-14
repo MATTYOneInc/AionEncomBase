@@ -30,11 +30,16 @@ public abstract class PlayerABDAO implements DAO {
 	public String getClassName() {
 		return PlayerABDAO.class.getName();
 	}
-	
+
 	public abstract PlayerABList load(Player paramPlayer);
+
 	public abstract boolean store(int playerObjId, int id, int kill_count, int level, int levelUpable);
+
 	public abstract boolean delete(int playerObjId, int slot);
+
 	public abstract int getKillCountById(int playerObjId, int id);
+
 	public abstract int getLevelById(int playerObjId, int id);
+
 	public abstract int getClaimRewardById(int playerObjId, int id);
 }

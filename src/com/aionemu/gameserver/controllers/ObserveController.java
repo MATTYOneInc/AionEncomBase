@@ -55,7 +55,8 @@ public class ObserveController {
 	protected Collection<AttackCalcObserver> attackCalcObservers = new FastList<AttackCalcObserver>(0).shared();
 
 	/**
-	 * Once used observer add to observerController. If observer notify will be removed.
+	 * Once used observer add to observerController. If observer notify will be
+	 * removed.
 	 * 
 	 * @param observer
 	 */
@@ -64,8 +65,7 @@ public class ObserveController {
 		lock.lock();
 		try {
 			onceUsedObservers.add(observer);
-		}
-		finally {
+		} finally {
 			lock.unlock();
 		}
 	}
@@ -92,8 +92,7 @@ public class ObserveController {
 		lock.lock();
 		try {
 			onceUsedObservers.remove(observer);
-		}
-		finally {
+		} finally {
 			lock.unlock();
 		}
 	}
@@ -125,8 +124,7 @@ public class ObserveController {
 					}
 				}
 			}
-		}
-		finally {
+		} finally {
 			lock.unlock();
 		}
 
@@ -146,42 +144,42 @@ public class ObserveController {
 
 	private void notifyAction(ObserverType type, ActionObserver observer, Object... object) {
 		switch (type) {
-			case ATTACK:
-				observer.attack((Creature) object[0]);
-				break;
-			case ATTACKED:
-				observer.attacked((Creature) object[0]);
-				break;
-			case DEATH:
-				observer.died((Creature) object[0]);
-				break;
-			case EQUIP:
-				observer.equip((Item) object[0], (Player) object[1]);
-				break;
-			case UNEQUIP:
-				observer.unequip((Item) object[0], (Player) object[1]);
-				break;
-			case MOVE:
-				observer.moved();
-				break;
-			case SKILLUSE:
-				observer.skilluse((Skill) object[0]);
-				break;
-			case DOT_ATTACKED:
-				observer.dotattacked((Creature) object[0], (Effect) object[1]);
-				break;
-			case ITEMUSE:
-				observer.itemused((Item) object[0]);
-				break;
-			case NPCDIALOGREQUEST:
-				observer.npcdialogrequested((Npc) object[0]);
-				break;
-			case ABNORMALSETTED:
-				observer.abnormalsetted((AbnormalState) object[0]);
-				break;
-			case SUMMONRELEASE:
-				observer.summonrelease();
-				break;
+		case ATTACK:
+			observer.attack((Creature) object[0]);
+			break;
+		case ATTACKED:
+			observer.attacked((Creature) object[0]);
+			break;
+		case DEATH:
+			observer.died((Creature) object[0]);
+			break;
+		case EQUIP:
+			observer.equip((Item) object[0], (Player) object[1]);
+			break;
+		case UNEQUIP:
+			observer.unequip((Item) object[0], (Player) object[1]);
+			break;
+		case MOVE:
+			observer.moved();
+			break;
+		case SKILLUSE:
+			observer.skilluse((Skill) object[0]);
+			break;
+		case DOT_ATTACKED:
+			observer.dotattacked((Creature) object[0], (Effect) object[1]);
+			break;
+		case ITEMUSE:
+			observer.itemused((Item) object[0]);
+			break;
+		case NPCDIALOGREQUEST:
+			observer.npcdialogrequested((Npc) object[0]);
+			break;
+		case ABNORMALSETTED:
+			observer.abnormalsetted((AbnormalState) object[0]);
+			break;
+		case SUMMONRELEASE:
+			observer.summonrelease();
+			break;
 		default:
 			break;
 		}
@@ -203,7 +201,8 @@ public class ObserveController {
 
 	/**
 	 * notify that creature attacking
-	 * @param damage 
+	 * 
+	 * @param damage
 	 */
 	public void notifyAttackObservers(Creature creature) {
 		notifyObservers(ObserverType.ATTACK, creature);
@@ -245,14 +244,14 @@ public class ObserveController {
 	public void notifyItemUnEquip(Item item, Player owner) {
 		notifyObservers(ObserverType.UNEQUIP, item, owner);
 	}
-	
+
 	/**
 	 * notify that player used an item
 	 */
 	public void notifyItemuseObservers(Item item) {
 		notifyObservers(ObserverType.ITEMUSE, item);
 	}
-	
+
 	/**
 	 * notify that player requested dialog with npc
 	 */
@@ -348,8 +347,7 @@ public class ObserveController {
 		lock.lock();
 		try {
 			onceUsedObservers.clear();
-		}
-		finally {
+		} finally {
 			lock.unlock();
 		}
 		observers.clear();

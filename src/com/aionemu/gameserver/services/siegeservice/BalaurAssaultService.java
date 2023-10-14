@@ -45,8 +45,7 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
-public class BalaurAssaultService
-{
+public class BalaurAssaultService {
 	private static final BalaurAssaultService instance = new BalaurAssaultService();
 	private Logger log = LoggerFactory.getLogger("SIEGE_LOG");
 	private final Map<Integer, FortressAssault> fortressAssaults = new FastMap<Integer, FortressAssault>().shared();
@@ -60,113 +59,129 @@ public class BalaurAssaultService
 		if (siege instanceof FortressSiege) {
 			if (!calculateFortressAssault(((FortressSiege) siege).getSiegeLocation())) {
 				return;
-			} switch (rvrId) {
-				case 1011:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <DIVINE FORTRESS> !");
-						}
-					});
+			}
+			switch (rvrId) {
+			case 1011:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <DIVINE FORTRESS> !");
+					}
+				});
 				break;
-				case 1131:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <SIEL'S WESTERN FORTRESS> !");
-						}
-					});
+			case 1131:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <SIEL'S WESTERN FORTRESS> !");
+					}
+				});
 				break;
-				case 1132:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <SIEL'S EASTERN FORTRESS> !");
-						}
-					});
+			case 1132:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <SIEL'S EASTERN FORTRESS> !");
+					}
+				});
 				break;
-				case 1141:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <SULFUR FORTRESS> !");
-						}
-					});
-			    break;
-				case 1221:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <KROTAN REFUGE> !");
-						}
-					});
+			case 1141:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <SULFUR FORTRESS> !");
+					}
+				});
 				break;
-				case 1231:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <KYSIS FORTRESS> !");
-						}
-					});
+			case 1221:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <KROTAN REFUGE> !");
+					}
+				});
 				break;
-				case 1241:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <MIREN FORTRESS> !");
-						}
-					});
+			case 1231:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <KYSIS FORTRESS> !");
+					}
+				});
 				break;
-				case 7011:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <WEALHTHEOW'S KEEP> !");
-						}
-					});
+			case 1241:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <MIREN FORTRESS> !");
+					}
+				});
 				break;
-				case 10111:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <ARCADIAN FORTRESS> !");
-						}
-					});
+			case 7011:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <WEALHTHEOW'S KEEP> !");
+					}
+				});
 				break;
-				case 10211:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <UMBRAL FORTRESS> !");
-						}
-					});
+			case 10111:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <ARCADIAN FORTRESS> !");
+					}
+				});
 				break;
-				case 10311:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <ETERNUM FORTRESS> !");
-						}
-					});
+			case 10211:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <UMBRAL FORTRESS> !");
+					}
+				});
 				break;
-				case 10411:
-					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player player) {
-							PacketSendUtility.sendSys4Message(player, "\uE005", "[RVR/SIEGE]: the Balaur launch an assault on <SKYCLASH FORTRESS> !");
-						}
-					});
+			case 10311:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <ETERNUM FORTRESS> !");
+					}
+				});
+				break;
+			case 10411:
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendSys4Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur launch an assault on <SKYCLASH FORTRESS> !");
+					}
+				});
 				break;
 			}
 			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 				@Override
 				public void visit(Player player) {
-					//The Balaur have destroyed the Castle Gate.
-					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_DRAGON_DOOR_BROKEN, 600000);
-					//The Balaur have destroyed the Gate Guardian Stone.
-					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_DRAGON_REPAIR_BROKEN, 1500000);
-					//The Balaur have destroyed the Aetheric Field Activation Stone.
-					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_DRAGON_SHIELD_BROKEN, 2100000);
+					// The Balaur have destroyed the Castle Gate.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_DRAGON_DOOR_BROKEN,
+							600000);
+					// The Balaur have destroyed the Gate Guardian Stone.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_FIELDABYSS_DRAGON_REPAIR_BROKEN, 1500000);
+					// The Balaur have destroyed the Aetheric Field Activation Stone.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_FIELDABYSS_DRAGON_SHIELD_BROKEN, 2100000);
 				}
 			});
 		} else if (siege instanceof ArtifactSiege) {
@@ -181,131 +196,147 @@ public class BalaurAssaultService
 			log.info("[RVR/SIEGE] Balaur Assault scheduled on Siege ID: " + siege.getSiegeLocationId() + "!");
 		}
 	}
-	
+
 	public void onSiegeFinish(Siege<?> siege) {
 		int locId = siege.getSiegeLocationId();
 		if (fortressAssaults.containsKey(locId)) {
 			Boolean bossIsKilled = siege.isBossKilled();
 			fortressAssaults.get(locId).finishAssault(bossIsKilled);
 			if (bossIsKilled && siege.getSiegeLocation().getRace().equals(SiegeRace.BALAUR)) {
-				log.info("[RVR/SIEGE] > [FORTRESS:" + siege.getSiegeLocationId() + "] has been captured by Balaur Assault!");
+				log.info("[RVR/SIEGE] > [FORTRESS:" + siege.getSiegeLocationId()
+						+ "] has been captured by Balaur Assault!");
 				switch (locId) {
-					case 1011:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <DIVINE FORTRESS> has been captured by Balaur Assault!");
-							}
-						});
+				case 1011:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <DIVINE FORTRESS> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 1131:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <SIEL'S WESTERN FORTRESS> has been captured by Balaur Assault!");
-							}
-						});
+				case 1131:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <SIEL'S WESTERN FORTRESS> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 1132:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <SIEL'S EASTERN FORTRESS> has been captured by Balaur Assault!");
-							}
-						});
+				case 1132:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <SIEL'S EASTERN FORTRESS> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 1141:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <SULFUR FORTRESS> has been captured by Balaur Assault!");
-							}
-						});
+				case 1141:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <SULFUR FORTRESS> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 1221:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <KROTAN REFUGE> has been captured by Balaur Assault!");
-							}
-						});
+				case 1221:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <KROTAN REFUGE> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 1231:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <KYSIS FORTRESS> has been captured by Balaur Assault!");
-							}
-						});
+				case 1231:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <KYSIS FORTRESS> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 1241:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <MIREN FORTRESS> has been captured by Balaur Assault!");
-							}
-						});
+				case 1241:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <MIREN FORTRESS> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 7011:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <WEALHTHEOW'S KEEP> has been captured by Balaur Assault!");
-							}
-						});
+				case 7011:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <WEALHTHEOW'S KEEP> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 10111:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <ARCADIAN FORTRESS> has been captured by Balaur Assault!");
-							}
-						});
+				case 10111:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <ARCADIAN FORTRESS> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 10211:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <UMBRAL FORTRESS> has been captured by Balaur Assault!");
-							}
-						});
+				case 10211:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <UMBRAL FORTRESS> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 10311:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <ETERNUM FORTRESS> has been captured by Balaur Assault!");
-							}
-						});
+				case 10311:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <ETERNUM FORTRESS> has been captured by Balaur Assault!");
+						}
+					});
 					break;
-					case 10411:
-						World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-							@Override
-							public void visit(Player player) {
-								PacketSendUtility.sendSys5Message(player, "\uE005", "[RVR/SIEGE]: <SKYCLASH FORTRESS> has been captured by Balaur Assault!");
-							}
-						});
+				case 10411:
+					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendSys5Message(player, "\uE005",
+									"[RVR/SIEGE]: <SKYCLASH FORTRESS> has been captured by Balaur Assault!");
+						}
+					});
 					break;
 				}
 			} else {
-				log.info("[RVR/SIEGE] > [FORTRESS:" + siege.getSiegeLocationId() + "] Balaur Assault finished without capture!");
+				log.info("[RVR/SIEGE] > [FORTRESS:" + siege.getSiegeLocationId()
+						+ "] Balaur Assault finished without capture!");
 				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 					@Override
 					public void visit(Player player) {
-						PacketSendUtility.sendSys6Message(player, "\uE005", "[RVR/SIEGE]: the Balaur failed to capture fortress");
+						PacketSendUtility.sendSys6Message(player, "\uE005",
+								"[RVR/SIEGE]: the Balaur failed to capture fortress");
 					}
 				});
 			}
 			fortressAssaults.remove(locId);
 		}
 	}
-	
+
 	private boolean calculateFortressAssault(FortressLocation fortress) {
 		boolean isBalaurea = fortress.getWorldId() != 400010000;
 		int locationId = fortress.getLocationId();
 		if (fortressAssaults.containsKey(locationId)) {
 			return false;
-		} if (!calcFortressInfluence(isBalaurea, fortress)) {
+		}
+		if (!calcFortressInfluence(isBalaurea, fortress)) {
 			return false;
 		}
 		int count = 0;
@@ -313,16 +344,17 @@ public class BalaurAssaultService
 			if (fa.getWorldId() == fortress.getWorldId()) {
 				count++;
 			}
-		} if (count >= (isBalaurea ? 1 : 2)) {
+		}
+		if (count >= (isBalaurea ? 1 : 2)) {
 			return false;
 		}
 		return true;
 	}
-	
+
 	private boolean calculateArtifactAssault(ArtifactLocation artifact) {
 		return false;
 	}
-	
+
 	public void startAssault(Player player, int location, int delay) {
 		if (fortressAssaults.containsKey(location)) {
 			PacketSendUtility.sendMessage(player, "Assault on " + location + " was already started");
@@ -330,7 +362,7 @@ public class BalaurAssaultService
 		}
 		newAssault(SiegeService.getInstance().getSiege(location), delay);
 	}
-	
+
 	private void newAssault(Siege<?> siege, int delay) {
 		if (siege instanceof FortressSiege) {
 			FortressAssault assault = new FortressAssault((FortressSiege) siege);
@@ -341,7 +373,7 @@ public class BalaurAssaultService
 			assault.startAssault(delay);
 		}
 	}
-	
+
 	private boolean calcFortressInfluence(boolean isBalaurea, FortressLocation fortress) {
 		SiegeRace locationRace = fortress.getRace();
 		if (locationRace.equals(SiegeRace.BALAUR) || !fortress.isVulnerable()) {
@@ -351,30 +383,33 @@ public class BalaurAssaultService
 		float influence;
 		if (isBalaurea) {
 			for (FortressLocation fl : SiegeService.getInstance().getFortresses().values()) {
-				if (fl.getWorldId() != 400010000 && !fortressAssaults.containsKey(fl.getLocationId()) && fl.getRace().equals(locationRace)) {
+				if (fl.getWorldId() != 400010000 && !fortressAssaults.containsKey(fl.getLocationId())
+						&& fl.getRace().equals(locationRace)) {
 					ownedForts++;
 				}
 			}
 			influence = ownedForts >= 2 ? 0.25f : 0.1f;
 		} else {
-			influence = locationRace.equals(SiegeRace.ASMODIANS) ? Influence.getInstance().getGlobalAsmodiansInfluence() : Influence.getInstance().getGlobalElyosInfluence();
+			influence = locationRace.equals(SiegeRace.ASMODIANS) ? Influence.getInstance().getGlobalAsmodiansInfluence()
+					: Influence.getInstance().getGlobalElyosInfluence();
 		}
 		return Rnd.get() < influence * SiegeConfig.BALAUR_ASSAULT_RATE;
 	}
-	
+
 	public void spawnDredgion(int spawnId) {
 		AssembledNpcTemplate template = DataManager.ASSEMBLED_NPC_DATA.getAssembledNpcTemplate(spawnId);
 		FastList<AssembledNpcPart> assembledParts = new FastList<AssembledNpcPart>();
 		for (AssembledNpcTemplate.AssembledNpcPartTemplate npcPart : template.getAssembledNpcPartTemplates()) {
 			assembledParts.add(new AssembledNpcPart(IDFactory.getInstance().nextId(), npcPart));
 		}
-		AssembledNpc npc = new AssembledNpc(template.getRouteId(), template.getMapId(), template.getLiveTime(), assembledParts);
+		AssembledNpc npc = new AssembledNpc(template.getRouteId(), template.getMapId(), template.getLiveTime(),
+				assembledParts);
 		Iterator<Player> iter = World.getInstance().getPlayersIterator();
 		Player findedPlayer;
 		while (iter.hasNext()) {
 			findedPlayer = iter.next();
 			PacketSendUtility.sendPacket(findedPlayer, new SM_NPC_ASSEMBLER(npc));
-			//A dredgion has appeared.
+			// A dredgion has appeared.
 			PacketSendUtility.sendPacket(findedPlayer, SM_SYSTEM_MESSAGE.STR_ABYSS_CARRIER_SPAWN);
 		}
 	}

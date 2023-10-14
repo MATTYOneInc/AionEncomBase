@@ -52,12 +52,12 @@ public class LoginServer {
 
 	/**
 	 * Logger for this class.
-	 */ 
+	 */
 	private static final Logger log = LoggerFactory.getLogger(LoginServer.class);
 
 	/**
-	 * Map<accountId,Connection> for waiting request. This request is send to LoginServer and GameServer is waiting for
-	 * response.
+	 * Map<accountId,Connection> for waiting request. This request is send to
+	 * LoginServer and GameServer is waiting for response.
 	 */
 	private Map<Integer, AionConnection> loginRequests = new HashMap<Integer, AionConnection>();
 
@@ -87,8 +87,8 @@ public class LoginServer {
 	}
 
 	/**
-	 * Connect to LoginServer and return object representing this connection. This method is blocking and may block till
-	 * connect successful.
+	 * Connect to LoginServer and return object representing this connection. This
+	 * method is blocking and may block till connect successful.
 	 * 
 	 * @return LoginServerConnection
 	 */
@@ -118,15 +118,15 @@ public class LoginServer {
 				 * 10s sleep
 				 */
 				Thread.sleep(10 * 1000);
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 			}
 		}
 	}
 
 	/**
-	 * This method is called when we lost connection to LoginServer. We will disconnects all aionClients waiting for
-	 * LoginServer response and also try reconnect to LoginServer.
+	 * This method is called when we lost connection to LoginServer. We will
+	 * disconnects all aionClients waiting for LoginServer response and also try
+	 * reconnect to LoginServer.
 	 */
 	public void loginServerDown() {
 		log.warn("Connection with LoginServer lost...");
@@ -134,8 +134,8 @@ public class LoginServer {
 		loginServer = null;
 		synchronized (this) {
 			/**
-			 * We lost connection for LoginServer so client pending authentication should be disconnected [cuz authentication
-			 * will never ends]
+			 * We lost connection for LoginServer so client pending authentication should be
+			 * disconnected [cuz authentication will never ends]
 			 */
 			for (AionConnection client : loginRequests.values()) {
 				// TODO! somme error packet!
@@ -159,8 +159,9 @@ public class LoginServer {
 	}
 
 	/**
-	 * Notify that client is disconnected - we must clear waiting request to LoginServer if any to prevent leaks. Also
-	 * notify LoginServer that this account is no longer on GameServer side.
+	 * Notify that client is disconnected - we must clear waiting request to
+	 * LoginServer if any to prevent leaks. Also notify LoginServer that this
+	 * account is no longer on GameServer side.
 	 * 
 	 * @param client
 	 */
@@ -183,8 +184,8 @@ public class LoginServer {
 	}
 
 	/**
-	 * Starts authentication procedure of this client - LoginServer will sends response with information about account
-	 * name if authentication is ok.
+	 * Starts authentication procedure of this client - LoginServer will sends
+	 * response with information about account name if authentication is ok.
 	 * 
 	 * @param accountId
 	 * @param client
@@ -192,9 +193,11 @@ public class LoginServer {
 	 * @param playOk1
 	 * @param playOk2
 	 */
-	public void requestAuthenticationOfClient(int accountId, AionConnection client, int loginOk, int playOk1, int playOk2) {
+	public void requestAuthenticationOfClient(int accountId, AionConnection client, int loginOk, int playOk1,
+			int playOk2) {
 		/**
-		 * There are no connection to LoginServer. We should disconnect this client since authentication is not possible.
+		 * There are no connection to LoginServer. We should disconnect this client
+		 * since authentication is not possible.
 		 */
 		if (loginServer == null || loginServer.getState() != State.AUTHED) {
 			log.warn("LS !!! " + (loginServer == null ? "NULL" : loginServer.getState()));
@@ -213,23 +216,24 @@ public class LoginServer {
 	}
 
 	/**
-	 * This method is called by CM_ACCOUNT_AUTH_RESPONSE LoginServer packets to notify GameServer about results of client
-	 * authentication.
+	 * This method is called by CM_ACCOUNT_AUTH_RESPONSE LoginServer packets to
+	 * notify GameServer about results of client authentication.
 	 * 
 	 * @param accountId
 	 * @param accountName
 	 * @param result
 	 * @param accountTime
 	 */
-	public void accountAuthenticationResponse(int accountId, String accountName, boolean result, AccountTime accountTime,
-		byte accessLevel, byte membership, long toll, long luna) {
+	public void accountAuthenticationResponse(int accountId, String accountName, boolean result,
+			AccountTime accountTime, byte accessLevel, byte membership, long toll, long luna) {
 		AionConnection client = loginRequests.remove(accountId);
 
 		if (client == null) {
 			return;
-        }
+		}
 
-		Account account = AccountService.getAccount(accountId, accountName, accountTime, accessLevel, membership, toll, luna);
+		Account account = AccountService.getAccount(accountId, accountName, accountTime, accessLevel, membership, toll,
+				luna);
 
 		if (!validateAccount(account)) {
 			log.info("Illegal account auth detected: " + accountId);
@@ -254,22 +258,24 @@ public class LoginServer {
 	 * @return
 	 */
 	private boolean validateAccount(Account account) {
-		for(PlayerAccountData accountData : account)
-		if (accountData.getPlayerCommonData().isOnline()) {
-			log.warn("[AUDIT] Possible dupe hack account: " + account.getId());
-			return false;
-		}
+		for (PlayerAccountData accountData : account)
+			if (accountData.getPlayerCommonData().isOnline()) {
+				log.warn("[AUDIT] Possible dupe hack account: " + account.getId());
+				return false;
+			}
 		return true;
 	}
 
 	/**
-	 * Starts reconnection to LoginServer procedure. LoginServer in response will send reconnection key.
+	 * Starts reconnection to LoginServer procedure. LoginServer in response will
+	 * send reconnection key.
 	 * 
 	 * @param client
 	 */
 	public void requestAuthReconnection(AionConnection client) {
 		/**
-		 * There are no connection to LoginServer. We should disconnect this client since authentication is not possible.
+		 * There are no connection to LoginServer. We should disconnect this client
+		 * since authentication is not possible.
 		 */
 		if (loginServer == null || loginServer.getState() != State.AUTHED) {
 			// TODO! somme error packet!
@@ -287,8 +293,8 @@ public class LoginServer {
 	}
 
 	/**
-	 * This method is called by CM_ACCOUNT_RECONNECT_KEY LoginServer packets to give GameServer reconnection key for
-	 * client that was requesting reconnection.
+	 * This method is called by CM_ACCOUNT_RECONNECT_KEY LoginServer packets to give
+	 * GameServer reconnection key for client that was requesting reconnection.
 	 * 
 	 * @param accountId
 	 * @param reconnectKey
@@ -304,8 +310,8 @@ public class LoginServer {
 	}
 
 	/**
-	 * This method is called by CM_REQUEST_KICK_ACCOUNT LoginServer packets to request GameServer to disconnect client
-	 * with given account id.
+	 * This method is called by CM_REQUEST_KICK_ACCOUNT LoginServer packets to
+	 * request GameServer to disconnect client with given account id.
 	 * 
 	 * @param accountId
 	 */
@@ -339,8 +345,8 @@ public class LoginServer {
 	}
 
 	/**
-	 * Returns unmodifiable map with accounts that are logged in to current GS Map Key: Account ID Map Value:
-	 * AionConnectionObject
+	 * Returns unmodifiable map with accounts that are logged in to current GS Map
+	 * Key: Account ID Map Value: AionConnectionObject
 	 * 
 	 * @return unmodifiable map wwith accounts
 	 */
@@ -373,7 +379,7 @@ public class LoginServer {
 			loginServer.sendPacket(new SM_LS_CONTROL(accountName, playerName, adminName, param, type));
 		}
 	}
-	
+
 	public void accountUpdate(int accountId, byte param, int type) {
 		synchronized (this) {
 			AionConnection client = loggedInAccounts.get(accountId);

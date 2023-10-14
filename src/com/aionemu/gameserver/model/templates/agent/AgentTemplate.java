@@ -27,11 +27,10 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Agent")
-public class AgentTemplate
-{
+public class AgentTemplate {
 	@XmlAttribute(name = "id")
 	protected int id;
-	
+
 	public int getId() {
 		return this.id;
 	}

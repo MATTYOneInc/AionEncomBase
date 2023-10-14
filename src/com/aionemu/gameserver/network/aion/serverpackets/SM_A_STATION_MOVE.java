@@ -23,23 +23,22 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
  * @author Ranastic
  */
 
-public class SM_A_STATION_MOVE extends AionServerPacket
-{
-    private int currentServerId;
-    private int newServerId;
-    private int mapId;
-	
-    public SM_A_STATION_MOVE(int currentServer, int newServerId, int mapId) {
-        this.currentServerId = currentServer;
-        this.newServerId = newServerId;
-        this.mapId = mapId;
-    }
-	
-    @Override
-    protected void writeImpl(AionConnection con) {
-        writeD(newServerId);
-        writeD(currentServerId);
-        writeC(0);
-        writeD(mapId);
-    }
+public class SM_A_STATION_MOVE extends AionServerPacket {
+	private int currentServerId;
+	private int newServerId;
+	private int mapId;
+
+	public SM_A_STATION_MOVE(int currentServer, int newServerId, int mapId) {
+		this.currentServerId = currentServer;
+		this.newServerId = newServerId;
+		this.mapId = mapId;
+	}
+
+	@Override
+	protected void writeImpl(AionConnection con) {
+		writeD(newServerId);
+		writeD(currentServerId);
+		writeC(0);
+		writeD(mapId);
+	}
 }

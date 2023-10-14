@@ -53,24 +53,25 @@ import com.aionemu.gameserver.world.zone.ZoneInstance;
 import javolution.util.FastList;
 
 /****/
-/** Reworked by G-Robson26
- /****/
- 
-public class InstanceService
-{
+/**
+ * Reworked by G-Robson26 /
+ ****/
+
+public class InstanceService {
 	private static final Logger log = LoggerFactory.getLogger(InstanceService.class);
 	private static final FastList<Integer> instanceAggro = new FastList<Integer>();
 	private static final FastList<Integer> instanceCoolDownFilter = new FastList<Integer>();
 	private static final int SOLO_INSTANCES_DESTROY_DELAY = 2 * 60 * 1000;
-	
+
 	public static void load() {
 		for (String s : CustomConfig.INSTANCES_MOB_AGGRO.split(",")) {
 			instanceAggro.add(Integer.parseInt(s));
-		} for (String s : CustomConfig.INSTANCES_COOL_DOWN_FILTER.split(",")) {
+		}
+		for (String s : CustomConfig.INSTANCES_COOL_DOWN_FILTER.split(",")) {
 			instanceCoolDownFilter.add(Integer.parseInt(s));
 		}
 	}
-	
+
 	public synchronized static WorldMapInstance getNextAvailableInstance(int worldId, int ownerId) {
 		WorldMap map = World.getInstance().getWorldMap(worldId);
 		if (!map.isInstanceType()) {
@@ -78,7 +79,8 @@ public class InstanceService
 		}
 		int nextInstanceId = map.getNextInstanceId();
 		log.info("<Instance In Progress>" + worldId + " id:" + nextInstanceId + " owner:" + ownerId);
-		WorldMapInstance worldMapInstance = WorldMapInstanceFactory.createWorldMapInstance(map, nextInstanceId, ownerId);
+		WorldMapInstance worldMapInstance = WorldMapInstanceFactory.createWorldMapInstance(map, nextInstanceId,
+				ownerId);
 		map.addInstance(nextInstanceId, worldMapInstance);
 		SpawnEngine.spawnInstance(worldId, worldMapInstance.getInstanceId(), (byte) 0, ownerId);
 		InstanceEngine.getInstance().onInstanceCreate(worldMapInstance);
@@ -87,11 +89,11 @@ public class InstanceService
 		}
 		return worldMapInstance;
 	}
-	
+
 	public synchronized static WorldMapInstance getNextAvailableInstance(int worldId) {
 		return getNextAvailableInstance(worldId, 0);
 	}
-	
+
 	public static void destroyInstance(WorldMapInstance instance) {
 		if (instance.getEmptyInstanceTask() != null) {
 			instance.getEmptyInstanceTask().cancel(false);
@@ -123,25 +125,25 @@ public class InstanceService
 			}
 		}
 	}
-	
+
 	public static void registerPlayerWithInstance(WorldMapInstance instance, Player player) {
 		Integer obj = player.getObjectId();
 		instance.register(obj);
 		instance.setSoloPlayerObj(obj);
 	}
-	
+
 	public static void registerGroupWithInstance(WorldMapInstance instance, PlayerGroup group) {
 		instance.registerGroup(group);
 	}
-	
+
 	public static void registerAllianceWithInstance(WorldMapInstance instance, PlayerAlliance group) {
 		instance.registerGroup(group);
 	}
-	
+
 	public static void registerLeagueWithInstance(WorldMapInstance instance, League group) {
 		instance.registerGroup(group);
 	}
-	
+
 	public static WorldMapInstance getRegisteredInstance(int worldId, int objectId) {
 		Iterator<WorldMapInstance> iterator = World.getInstance().getWorldMap(worldId).iterator();
 		while (iterator.hasNext()) {
@@ -152,7 +154,7 @@ public class InstanceService
 		}
 		return null;
 	}
-	
+
 	public static WorldMapInstance getPersonalInstance(int worldId, int ownerId) {
 		if (ownerId == 0) {
 			return null;
@@ -166,130 +168,137 @@ public class InstanceService
 		}
 		return null;
 	}
-	
+
 	public static WorldMapInstance getBeginnerInstance(int worldId, int registeredId) {
-        WorldMapInstance instance = getRegisteredInstance(worldId, registeredId);
-        if (instance == null) {
-            return null;
-        }
-        return instance.isBeginnerInstance() ? instance : null;
-    }
-	
+		WorldMapInstance instance = getRegisteredInstance(worldId, registeredId);
+		if (instance == null) {
+			return null;
+		}
+		return instance.isBeginnerInstance() ? instance : null;
+	}
+
 	private static int getLastRegisteredId(Player player) {
-        int lookupId;
-        boolean isPersonal = WorldMapType.getWorld(player.getWorldId()).isPersonal();
-        if (player.isInGroup2()) {
-            lookupId = player.getPlayerGroup2().getTeamId();
-        } else if (player.isInAlliance2()) {
-            lookupId = player.getPlayerAlliance2().getTeamId();
-            if (player.isInLeague()) {
-                lookupId = player.getPlayerAlliance2().getLeague().getObjectId();
-            }
-        } else if (isPersonal && player.getCommonData().getWorldOwnerId() != 0) {
-            lookupId = player.getCommonData().getWorldOwnerId();
-        } else {
-            lookupId = player.getObjectId();
-        }
-        return lookupId;
-    }
-	
+		int lookupId;
+		boolean isPersonal = WorldMapType.getWorld(player.getWorldId()).isPersonal();
+		if (player.isInGroup2()) {
+			lookupId = player.getPlayerGroup2().getTeamId();
+		} else if (player.isInAlliance2()) {
+			lookupId = player.getPlayerAlliance2().getTeamId();
+			if (player.isInLeague()) {
+				lookupId = player.getPlayerAlliance2().getLeague().getObjectId();
+			}
+		} else if (isPersonal && player.getCommonData().getWorldOwnerId() != 0) {
+			lookupId = player.getCommonData().getWorldOwnerId();
+		} else {
+			lookupId = player.getObjectId();
+		}
+		return lookupId;
+	}
+
 	public static void onPlayerLogin(Player player) {
-        int worldId = player.getWorldId();
-        int lookupId = getLastRegisteredId(player);
-        WorldMapInstance beginnerInstance = getBeginnerInstance(worldId, lookupId);
-        if (beginnerInstance != null) {
-            World.getInstance().setPosition(player, worldId, beginnerInstance.getInstanceId(), player.getX(), player.getY(), player.getZ(), player.getHeading());
-        }
-        WorldMapTemplate worldTemplate = DataManager.WORLD_MAPS_DATA.getTemplate(worldId);
-        if (worldTemplate.isInstance()) {
-            boolean isPersonal = WorldMapType.getWorld(player.getWorldId()).isPersonal();
-            WorldMapInstance registeredInstance = isPersonal ? getPersonalInstance(worldId, lookupId) : getRegisteredInstance(worldId, lookupId);
-            if (isPersonal) {
-                if (registeredInstance == null) {
-                    registeredInstance = getNextAvailableInstance(player.getWorldId(), lookupId);
-                } if (!registeredInstance.isRegistered(player.getObjectId())) {
-                    registerPlayerWithInstance(registeredInstance, player);
-                }
-            } if (registeredInstance != null) {
-                World.getInstance().setPosition(player, worldId, registeredInstance.getInstanceId(), player.getX(), player.getY(), player.getZ(), player.getHeading());
-                player.getPosition().getWorldMapInstance().getInstanceHandler().onPlayerLogin(player);
-                return;
-            }
-            moveToExitPoint(player);
-        }
-    }
-	
+		int worldId = player.getWorldId();
+		int lookupId = getLastRegisteredId(player);
+		WorldMapInstance beginnerInstance = getBeginnerInstance(worldId, lookupId);
+		if (beginnerInstance != null) {
+			World.getInstance().setPosition(player, worldId, beginnerInstance.getInstanceId(), player.getX(),
+					player.getY(), player.getZ(), player.getHeading());
+		}
+		WorldMapTemplate worldTemplate = DataManager.WORLD_MAPS_DATA.getTemplate(worldId);
+		if (worldTemplate.isInstance()) {
+			boolean isPersonal = WorldMapType.getWorld(player.getWorldId()).isPersonal();
+			WorldMapInstance registeredInstance = isPersonal ? getPersonalInstance(worldId, lookupId)
+					: getRegisteredInstance(worldId, lookupId);
+			if (isPersonal) {
+				if (registeredInstance == null) {
+					registeredInstance = getNextAvailableInstance(player.getWorldId(), lookupId);
+				}
+				if (!registeredInstance.isRegistered(player.getObjectId())) {
+					registerPlayerWithInstance(registeredInstance, player);
+				}
+			}
+			if (registeredInstance != null) {
+				World.getInstance().setPosition(player, worldId, registeredInstance.getInstanceId(), player.getX(),
+						player.getY(), player.getZ(), player.getHeading());
+				player.getPosition().getWorldMapInstance().getInstanceHandler().onPlayerLogin(player);
+				return;
+			}
+			moveToExitPoint(player);
+		}
+	}
+
 	public static void moveToExitPoint(Player player) {
 		TeleportService2.moveToInstanceExit(player, player.getWorldId(), player.getRace());
 	}
-	
+
 	public static boolean isInstanceExist(int worldId, int instanceId) {
 		return World.getInstance().getWorldMap(worldId).getWorldMapInstanceById(instanceId) != null;
 	}
-	
+
 	private static void startInstanceChecker(WorldMapInstance worldMapInstance) {
 		int delay = 150000;
 		int period = 60000;
-		worldMapInstance.setEmptyInstanceTask(ThreadPoolManager.getInstance().scheduleAtFixedRate(new EmptyInstanceCheckerTask(worldMapInstance), delay, period));
+		worldMapInstance.setEmptyInstanceTask(ThreadPoolManager.getInstance()
+				.scheduleAtFixedRate(new EmptyInstanceCheckerTask(worldMapInstance), delay, period));
 	}
-	
+
 	private static class EmptyInstanceCheckerTask implements Runnable {
-        private WorldMapInstance worldMapInstance;
-        private long soloInstanceDestroyTime;
-		
-        private EmptyInstanceCheckerTask(WorldMapInstance worldMapInstance) {
-            this.worldMapInstance = worldMapInstance;
-            this.soloInstanceDestroyTime = System.currentTimeMillis() + SOLO_INSTANCES_DESTROY_DELAY;
-        }
-		
-        private boolean canDestroySoloInstance() {
-            return System.currentTimeMillis() > this.soloInstanceDestroyTime;
-        }
-		
-        private void updateSoloInstanceDestroyTime() {
-            this.soloInstanceDestroyTime = System.currentTimeMillis() + SOLO_INSTANCES_DESTROY_DELAY;
-        }
-		
-        @Override
-        public void run() {
-            int instanceId = worldMapInstance.getInstanceId();
-            int worldId = worldMapInstance.getMapId();
-            WorldMap map = World.getInstance().getWorldMap(worldId);
-            PlayerGroup registeredGroup = worldMapInstance.getRegisteredGroup();
-            if (registeredGroup == null) {
-                if (worldMapInstance.playersCount() > 0) {
-                    updateSoloInstanceDestroyTime();
-                    return;
-                } if (worldMapInstance.playersCount() == 0) {
-                    if (canDestroySoloInstance()) {
-                        map.removeWorldMapInstance(instanceId);
-                        destroyInstance(worldMapInstance);
-                        return;
-                    } else {
-                        return;
-                    }
-                }
-                Iterator<Player> playerIterator = worldMapInstance.playerIterator();
-                int mapId = worldMapInstance.getMapId();
-                while (playerIterator.hasNext()) {
-                    Player player = playerIterator.next();
-                    if (player.isOnline() && player.getWorldId() == mapId) {
-                        return;
-                    }
-                }
-                map.removeWorldMapInstance(instanceId);
-                destroyInstance(worldMapInstance);
-            } else if (registeredGroup.size() == 0) {
-                map.removeWorldMapInstance(instanceId);
-                destroyInstance(worldMapInstance);
-            }
-        }
-    }
-	
+		private WorldMapInstance worldMapInstance;
+		private long soloInstanceDestroyTime;
+
+		private EmptyInstanceCheckerTask(WorldMapInstance worldMapInstance) {
+			this.worldMapInstance = worldMapInstance;
+			this.soloInstanceDestroyTime = System.currentTimeMillis() + SOLO_INSTANCES_DESTROY_DELAY;
+		}
+
+		private boolean canDestroySoloInstance() {
+			return System.currentTimeMillis() > this.soloInstanceDestroyTime;
+		}
+
+		private void updateSoloInstanceDestroyTime() {
+			this.soloInstanceDestroyTime = System.currentTimeMillis() + SOLO_INSTANCES_DESTROY_DELAY;
+		}
+
+		@Override
+		public void run() {
+			int instanceId = worldMapInstance.getInstanceId();
+			int worldId = worldMapInstance.getMapId();
+			WorldMap map = World.getInstance().getWorldMap(worldId);
+			PlayerGroup registeredGroup = worldMapInstance.getRegisteredGroup();
+			if (registeredGroup == null) {
+				if (worldMapInstance.playersCount() > 0) {
+					updateSoloInstanceDestroyTime();
+					return;
+				}
+				if (worldMapInstance.playersCount() == 0) {
+					if (canDestroySoloInstance()) {
+						map.removeWorldMapInstance(instanceId);
+						destroyInstance(worldMapInstance);
+						return;
+					} else {
+						return;
+					}
+				}
+				Iterator<Player> playerIterator = worldMapInstance.playerIterator();
+				int mapId = worldMapInstance.getMapId();
+				while (playerIterator.hasNext()) {
+					Player player = playerIterator.next();
+					if (player.isOnline() && player.getWorldId() == mapId) {
+						return;
+					}
+				}
+				map.removeWorldMapInstance(instanceId);
+				destroyInstance(worldMapInstance);
+			} else if (registeredGroup.size() == 0) {
+				map.removeWorldMapInstance(instanceId);
+				destroyInstance(worldMapInstance);
+			}
+		}
+	}
+
 	public static void onLogOut(Player player) {
 		player.getPosition().getWorldMapInstance().getInstanceHandler().onPlayerLogOut(player);
 	}
-	
+
 	public static void onEnterInstance(Player player) {
 		player.getController().updateZone();
 		player.getController().updateNearbyQuests();
@@ -298,19 +307,17 @@ public class InstanceService
 		for (Item item : player.getInventory().getItems()) {
 			if (item.getItemTemplate().getOwnershipWorld() == 0) {
 				continue;
-			} if (item.getItemTemplate().getOwnershipWorld() != player.getWorldId()) {
+			}
+			if (item.getItemTemplate().getOwnershipWorld() != player.getWorldId()) {
 				player.getInventory().decreaseByObjectId(item.getObjectId(), item.getItemCount());
 			}
 		}
 	}
-	
-	
 
-	
 	public static void onLeaveInstance(Player player) {
 		player.getPosition().getWorldMapInstance().getInstanceHandler().onLeaveInstance(player);
-			for (Item item : player.getInventory().getItems()) {
-				if (item.getItemTemplate().getOwnershipWorld() == player.getWorldId()) {
+		for (Item item : player.getInventory().getItems()) {
+			if (item.getItemTemplate().getOwnershipWorld() == player.getWorldId()) {
 				player.getInventory().decreaseByObjectId(item.getObjectId(), item.getItemCount());
 			}
 		}
@@ -318,31 +325,32 @@ public class InstanceService
 			AutoGroupService.getInstance().onLeaveInstance(player);
 		}
 	}
-	
+
 	public static void onEnterZone(Player player, ZoneInstance zone) {
 		player.getPosition().getWorldMapInstance().getInstanceHandler().onEnterZone(player, zone);
 	}
-	
+
 	public static void onOpenDoor(Player player, int door) {
 		player.getPosition().getWorldMapInstance().getInstanceHandler().onOpenDoor(player, door);
 	}
-	
+
 	public static void onLeaveZone(Player player, ZoneInstance zone) {
 		player.getPosition().getWorldMapInstance().getInstanceHandler().onLeaveZone(player, zone);
 	}
-	
+
 	public static boolean isAggro(int mapId) {
 		return instanceAggro.contains(mapId);
 	}
-	
+
 	public static int getInstanceRate(Player player, int mapId) {
-		int instanceCooldownRate = player.havePermission(MembershipConfig.INSTANCES_COOLDOWN) && !instanceCoolDownFilter.contains(mapId) ? CustomConfig.INSTANCES_RATE : 1;
+		int instanceCooldownRate = player.havePermission(MembershipConfig.INSTANCES_COOLDOWN)
+				&& !instanceCoolDownFilter.contains(mapId) ? CustomConfig.INSTANCES_RATE : 1;
 		if (instanceCoolDownFilter.contains(mapId)) {
 			instanceCooldownRate = 1;
 		}
 		return instanceCooldownRate;
 	}
-	
+
 	public synchronized static WorldMapInstance getNextBgInstance(int worldId) {
 		WorldMap map = World.getInstance().getWorldMap(worldId);
 		int nextInstanceId = map.getNextInstanceId();

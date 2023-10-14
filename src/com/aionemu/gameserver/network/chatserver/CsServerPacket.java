@@ -20,21 +20,20 @@ import java.nio.ByteBuffer;
 
 import com.aionemu.commons.network.packet.BaseServerPacket;
 
-public abstract class CsServerPacket extends BaseServerPacket
-{
-    protected CsServerPacket(int opcode) {
-        super(opcode);
-    }
-	
-    public final void write(ChatServerConnection con, ByteBuffer buffer) {
-        setBuf(buffer);
-        buf.putShort((short) 0);
-        buf.put((byte) getOpcode());
-        writeImpl(con);
-        buf.flip();
-        buf.putShort((short) buf.limit());
-        buf.position(0);
-    }
-	
-    protected abstract void writeImpl(ChatServerConnection con);
+public abstract class CsServerPacket extends BaseServerPacket {
+	protected CsServerPacket(int opcode) {
+		super(opcode);
+	}
+
+	public final void write(ChatServerConnection con, ByteBuffer buffer) {
+		setBuf(buffer);
+		buf.putShort((short) 0);
+		buf.put((byte) getOpcode());
+		writeImpl(con);
+		buf.flip();
+		buf.putShort((short) buf.limit());
+		buf.position(0);
+	}
+
+	protected abstract void writeImpl(ChatServerConnection con);
 }

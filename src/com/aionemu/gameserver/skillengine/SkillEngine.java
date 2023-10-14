@@ -55,7 +55,7 @@ public class SkillEngine {
 		}
 		return getSkillFor(player, template, firstTarget);
 	}
-	
+
 	/**
 	 * This method is used for skills that were learned by player
 	 * 
@@ -98,9 +98,9 @@ public class SkillEngine {
 	public Skill getSkill(Creature creature, int skillId, int skillLevel, VisibleObject firstTarget) {
 		return getSkill(creature, skillId, skillLevel, firstTarget, null);
 	}
-	
+
 	public Skill getSkill(Creature creature, int skillId, int skillLevel, VisibleObject firstTarget,
-		ItemTemplate itemTemplate) {
+			ItemTemplate itemTemplate) {
 		SkillTemplate template = DataManager.SKILL_DATA.getSkillTemplate(skillId);
 		if (template == null) {
 			return null;
@@ -111,11 +111,11 @@ public class SkillEngine {
 		}
 		return new Skill(template, creature, skillLevel, target, itemTemplate);
 	}
-	
+
 	public static SkillEngine getInstance() {
 		return skillEngine;
 	}
-	
+
 	public void applyEffectDirectly(int skillId, Creature effector, Creature effected, int duration) {
 		SkillTemplate st = DataManager.SKILL_DATA.getSkillTemplate(skillId);
 		if (st == null) {

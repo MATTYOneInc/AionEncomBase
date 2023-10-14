@@ -21,29 +21,28 @@ import com.aionemu.gameserver.dao.AbyssSpecialLandingDAO;
 import com.aionemu.gameserver.model.landing_special.LandingSpecialLocation;
 import com.aionemu.gameserver.model.landing_special.LandingSpecialStateType;
 
-public class SPLanding  extends SpecialLanding<LandingSpecialLocation>
-{
-    public SPLanding(LandingSpecialLocation landing) {
-        super(landing);
-    }
-	
-    @Override
-    public void startLanding() {
-        getSpecialLandingLocation().setActiveLanding(this);
-        if (!getSpecialLandingLocation().getSpawned().isEmpty()) {
-            despawn();
-        }
-        spawn(LandingSpecialStateType.ACTIVE);
-    }
-	
+public class SPLanding extends SpecialLanding<LandingSpecialLocation> {
+	public SPLanding(LandingSpecialLocation landing) {
+		super(landing);
+	}
+
+	@Override
+	public void startLanding() {
+		getSpecialLandingLocation().setActiveLanding(this);
+		if (!getSpecialLandingLocation().getSpawned().isEmpty()) {
+			despawn();
+		}
+		spawn(LandingSpecialStateType.ACTIVE);
+	}
+
 	public void saveLanding() {
-        DAOManager.getDAO(AbyssSpecialLandingDAO.class).updateLocation(getSpecialLandingLocation());
-    }
-	
-    @Override
-    public void stopLanding() {
-        getSpecialLandingLocation().setActiveLanding(null);
-        despawn();
-        spawn(LandingSpecialStateType.NO_ACTIVE);
-    }
+		DAOManager.getDAO(AbyssSpecialLandingDAO.class).updateLocation(getSpecialLandingLocation());
+	}
+
+	@Override
+	public void stopLanding() {
+		getSpecialLandingLocation().setActiveLanding(null);
+		despawn();
+		spawn(LandingSpecialStateType.NO_ACTIVE);
+	}
 }

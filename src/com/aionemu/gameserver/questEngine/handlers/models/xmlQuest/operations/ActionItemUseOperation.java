@@ -42,8 +42,10 @@ public class ActionItemUseOperation extends QuestOperation {
 
 	/*
 	 * (non-Javadoc)
-	 * @seecom.aionemu.gameserver.questEngine.handlers.models.xmlQuest.operations.QuestOperation#doOperate(com.aionemu.
-	 * gameserver.services.QuestService, com.aionemu.gameserver.questEngine.model.QuestEnv)
+	 * 
+	 * @seecom.aionemu.gameserver.questEngine.handlers.models.xmlQuest.operations.
+	 * QuestOperation#doOperate(com.aionemu. gameserver.services.QuestService,
+	 * com.aionemu.gameserver.questEngine.model.QuestEnv)
 	 */
 	@Override
 	public void doOperate(final QuestEnv env) {
@@ -51,19 +53,20 @@ public class ActionItemUseOperation extends QuestOperation {
 		final Npc npc;
 		if (env.getVisibleObject() instanceof Npc) {
 			npc = (Npc) env.getVisibleObject();
-		}
-		else {
+		} else {
 			return;
 		}
 		final int defaultUseTime = 3000;
-		PacketSendUtility.sendPacket(player, new SM_USE_OBJECT(player.getObjectId(), npc.getObjectId(), defaultUseTime, 1));
+		PacketSendUtility.sendPacket(player,
+				new SM_USE_OBJECT(player.getObjectId(), npc.getObjectId(), defaultUseTime, 1));
 		PacketSendUtility.broadcastPacket(player,
-			new SM_EMOTION(player, EmotionType.START_QUESTLOOT, 0, npc.getObjectId()), true);
+				new SM_EMOTION(player, EmotionType.START_QUESTLOOT, 0, npc.getObjectId()), true);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 
 			@Override
 			public void run() {
-				PacketSendUtility.sendPacket(player, new SM_USE_OBJECT(player.getObjectId(), npc.getObjectId(), defaultUseTime, 0));
+				PacketSendUtility.sendPacket(player,
+						new SM_USE_OBJECT(player.getObjectId(), npc.getObjectId(), defaultUseTime, 0));
 				finish.operate(env);
 			}
 		}, defaultUseTime);

@@ -26,20 +26,19 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_FRIEND_STATUS;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class CM_FRIEND_STATUS extends AionClientPacket
-{
+public class CM_FRIEND_STATUS extends AionClientPacket {
 	private final Logger log = LoggerFactory.getLogger(CM_FRIEND_STATUS.class);
 	private byte status;
-	
+
 	public CM_FRIEND_STATUS(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		status = (byte) readC();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player activePlayer = getConnection().getActivePlayer();

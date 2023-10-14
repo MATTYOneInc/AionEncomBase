@@ -34,38 +34,39 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  */
 public class CmdAddQuest extends AbstractGMHandler {
 
-    public CmdAddQuest(Player admin, String params){
-        super(admin, params);
-        run();
-    }
+	public CmdAddQuest(Player admin, String params) {
+		super(admin, params);
+		run();
+	}
 
-    public void run(){
-        try{
-            int id = Integer.parseInt(params);
-            QuestEnv env = new QuestEnv(admin, target, id, 0);
+	public void run() {
+		try {
+			int id = Integer.parseInt(params);
+			QuestEnv env = new QuestEnv(admin, target, id, 0);
 
-            if (QuestService.startQuest(env)) {
-                PacketSendUtility.sendMessage(admin, "Quest started.");
-            } else {
-                QuestTemplate template = DataManager.QUEST_DATA.getQuestById(id);
-                List<XMLStartCondition> preconditions = template.getXMLStartConditions();
-                if (preconditions != null && preconditions.size() > 0) {
-                    for (XMLStartCondition condition : preconditions) {
-                        List<FinishedQuestCond> finisheds = condition.getFinishedPreconditions();
-                        if (finisheds != null && finisheds.size() > 0) {
-                            for (FinishedQuestCond fcondition : finisheds) {
-                                QuestState qs1 = admin.getQuestStateList().getQuestState(fcondition.getQuestId());
-                                if (qs1 == null || qs1.getStatus() != QuestStatus.COMPLETE) {
-                                    PacketSendUtility.sendMessage(admin, "You have to finish " + fcondition.getQuestId() + " first!");
-                                }
-                            }
-                        }
-                    }
-                }
-                PacketSendUtility.sendMessage(admin, "Quest not started. Some preconditions failed");
-            }
-        }catch (NumberFormatException e){
-            PacketSendUtility.sendMessage(admin, "Quest Id Not Found!");
-        }
-    }
+			if (QuestService.startQuest(env)) {
+				PacketSendUtility.sendMessage(admin, "Quest started.");
+			} else {
+				QuestTemplate template = DataManager.QUEST_DATA.getQuestById(id);
+				List<XMLStartCondition> preconditions = template.getXMLStartConditions();
+				if (preconditions != null && preconditions.size() > 0) {
+					for (XMLStartCondition condition : preconditions) {
+						List<FinishedQuestCond> finisheds = condition.getFinishedPreconditions();
+						if (finisheds != null && finisheds.size() > 0) {
+							for (FinishedQuestCond fcondition : finisheds) {
+								QuestState qs1 = admin.getQuestStateList().getQuestState(fcondition.getQuestId());
+								if (qs1 == null || qs1.getStatus() != QuestStatus.COMPLETE) {
+									PacketSendUtility.sendMessage(admin,
+											"You have to finish " + fcondition.getQuestId() + " first!");
+								}
+							}
+						}
+					}
+				}
+				PacketSendUtility.sendMessage(admin, "Quest not started. Some preconditions failed");
+			}
+		} catch (NumberFormatException e) {
+			PacketSendUtility.sendMessage(admin, "Quest Id Not Found!");
+		}
+	}
 }

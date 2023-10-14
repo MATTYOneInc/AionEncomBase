@@ -22,38 +22,38 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class MessagerAddition
-{
+public class MessagerAddition {
 	protected void DEEPINSIDE() {
 	}
-	
+
 	public static void announce(Player player, String msg) {
 		PacketSendUtility.sendBrightYellowMessageOnCenter(player, msg);
 	}
-	
+
 	public static void message(Player player, String msg) {
 		PacketSendUtility.sendMessage(player, msg);
 	}
-	
-	public static void whiteMsg(Player player , String msg) {
+
+	public static void whiteMsg(Player player, String msg) {
 		PacketSendUtility.sendWhiteMessage(player, msg);
 	}
-	
+
 	public static void whiteMsgOnCtr(Player player, String msg) {
 		PacketSendUtility.sendWhiteMessageOnCenter(player, msg);
 	}
-	
+
 	public static void yellowMsg(Player player, String msg) {
 		PacketSendUtility.sendYellowMessage(player, msg);
 	}
-	
+
 	public static void yellowMsgOnCtr(Player player, String msg) {
 		PacketSendUtility.sendYellowMessageOnCenter(player, msg);
 	}
-	
+
 	public static void announceAll(final String msg, int delay) {
 		if (delay > 0) {
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -78,7 +78,7 @@ public class MessagerAddition
 			});
 		}
 	}
-	
+
 	public static void messageToAll(final String msg, int delay) {
 		if (delay > 0) {
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -103,7 +103,7 @@ public class MessagerAddition
 			});
 		}
 	}
-	
+
 	public static void whiteMsgToAll(final String msg, int delay) {
 		if (delay > 0) {
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -128,7 +128,7 @@ public class MessagerAddition
 			});
 		}
 	}
-	
+
 	public static void whiteAnnounceToAll(final String msg, int delay) {
 		if (delay > 0) {
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -153,7 +153,7 @@ public class MessagerAddition
 			});
 		}
 	}
-	
+
 	public static void yellowMsgToAll(final String msg, int delay) {
 		if (delay > 0) {
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -178,7 +178,7 @@ public class MessagerAddition
 			});
 		}
 	}
-	
+
 	public static void yellowAnnounceToAll(final String msg, int delay) {
 		if (delay > 0) {
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -203,22 +203,22 @@ public class MessagerAddition
 			});
 		}
 	}
-	
+
 	public static void global(final String msg) {
 		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 			@Override
 			public void visit(Player sender) {
-				PacketSendUtility.sendBrightYellowMessageOnCenter(sender, "[Global]:"+ msg);
+				PacketSendUtility.sendBrightYellowMessageOnCenter(sender, "[Global]:" + msg);
 				return;
 			}
 		});
 	}
-	
+
 	public static void attention(final String msg) {
 		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 			@Override
 			public void visit(Player sender) {
-				PacketSendUtility.sendBrightYellowMessageOnCenter(sender, "[Attention]:"+ msg);
+				PacketSendUtility.sendBrightYellowMessageOnCenter(sender, "[Attention]:" + msg);
 				return;
 			}
 		});

@@ -24,18 +24,17 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
  * @author Ranastic
  */
 
-public class SM_CONDITION_VARIABLE extends AionServerPacket
-{
+public class SM_CONDITION_VARIABLE extends AionServerPacket {
 	private int instanceId;
 	private int value;
 	private String variable;
-	
+
 	public SM_CONDITION_VARIABLE(Player player, String variable, int value) {
-        this.instanceId = player.getInstanceId();
-        this.variable = variable;
-        this.value = value;
-    }
-	
+		this.instanceId = player.getInstanceId();
+		this.variable = variable;
+		this.value = value;
+	}
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeD(instanceId);

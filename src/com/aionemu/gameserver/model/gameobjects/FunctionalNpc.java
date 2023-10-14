@@ -21,20 +21,20 @@ import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class FunctionalNpc extends SummonedObject<Creature>
-{
+public class FunctionalNpc extends SummonedObject<Creature> {
 	public FunctionalNpc(int objId, NpcController controller, SpawnTemplate spawnTemplate, NpcTemplate objectTemplate) {
 		super(objId, controller, spawnTemplate, objectTemplate, (byte) 1);
 	}
-	
+
 	@Override
 	public boolean isEnemy(Creature creature) {
 		return getCreator().isEnemy(creature);
 	}
-	
+
 	@Override
 	public NpcObjectType getNpcObjectType() {
 		return NpcObjectType.NORMAL;

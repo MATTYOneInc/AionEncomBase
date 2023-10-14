@@ -28,14 +28,13 @@ import com.aionemu.gameserver.questEngine.handlers.template.FountainRewards;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FountainRewardsData")
-public class FountainRewardsData extends XMLQuest
-{
+public class FountainRewardsData extends XMLQuest {
 	@XmlAttribute(name = "start_npc_ids", required = true)
 	protected List<Integer> startNpcIds;
-	
+
 	@Override
-    public void register(QuestEngine questEngine) {
-        FountainRewards template = new FountainRewards(id, startNpcIds);
-        questEngine.addQuestHandler(template);
-    }
+	public void register(QuestEngine questEngine) {
+		FountainRewards template = new FountainRewards(id, startNpcIds);
+		questEngine.addQuestHandler(template);
+	}
 }

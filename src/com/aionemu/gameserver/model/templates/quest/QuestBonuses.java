@@ -32,7 +32,8 @@ import com.aionemu.gameserver.model.templates.rewards.BonusType;
  * <p>
  * Java class for QuestBonuses complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within this class.
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="QuestBonuses">

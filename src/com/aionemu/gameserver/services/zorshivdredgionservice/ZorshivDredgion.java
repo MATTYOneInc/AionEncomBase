@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.ZorshivDredgionService;
  * @author Rinzler (Encom)
  */
 
-public abstract class ZorshivDredgion<ZL extends ZorshivDredgionLocation>
-{
+public abstract class ZorshivDredgion<ZL extends ZorshivDredgionLocation> {
 	private boolean started;
 	private final ZL zorshivDredgionLocation;
+
 	protected abstract void stopZorshivDredgion();
+
 	protected abstract void startZorshivDredgion();
+
 	private final AtomicBoolean peace = new AtomicBoolean();
-	
+
 	public ZorshivDredgion(ZL zorshivDredgionLocation) {
 		this.zorshivDredgionLocation = zorshivDredgionLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class ZorshivDredgion<ZL extends ZorshivDredgionLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startZorshivDredgion();
 	}
-	
+
 	public final void stop() {
 		if (peace.compareAndSet(false, true)) {
 			stopZorshivDredgion();
 		}
 	}
-	
+
 	protected void spawn(ZorshivDredgionStateType type) {
 		ZorshivDredgionService.getInstance().spawn(getZorshivDredgionLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		ZorshivDredgionService.getInstance().despawn(getZorshivDredgionLocation());
 	}
-	
+
 	public boolean isPeace() {
 		return peace.get();
 	}
-	
+
 	public ZL getZorshivDredgionLocation() {
 		return zorshivDredgionLocation;
 	}
-	
+
 	public int getZorshivDredgionLocationId() {
 		return zorshivDredgionLocation.getId();
 	}

@@ -42,7 +42,7 @@ import com.aionemu.gameserver.utils.captcha.CAPTCHAUtil;
  * Thieves Guild Service 5.0.6
  */
 public class ThievesGuildService {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(ThievesGuildService.class);
 
 	public void onEnterWorld(Player player) {
@@ -51,13 +51,13 @@ public class ThievesGuildService {
 		}
 		try {
 			ThievesStatusList thieves = DAOManager.getDAO(PlayerThievesListDAO.class).loadThieves(player.getObjectId());
-			if(thieves == null) {
-				player.setThieves(new ThievesStatusList(player.getObjectId(), 0, 0, 0l, 0, "Нет", 0, new Timestamp(System.currentTimeMillis())));
+			if (thieves == null) {
+				player.setThieves(new ThievesStatusList(player.getObjectId(), 0, 0, 0l, 0, "Нет", 0,
+						new Timestamp(System.currentTimeMillis())));
 				DAOManager.getDAO(PlayerThievesListDAO.class).saveNewThieves(player.getThieves());
 			}
 			log.info("ThievesGuildService loadThievesStatus try [Player = " + player.getThieves().getPlayerId() + "]");
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			log.error("Error in ThievesGuildService.onEnterWorld [Player = " + player.getName() + "]", ex);
 		}
 	}
@@ -65,7 +65,7 @@ public class ThievesGuildService {
 	public void thieves(Player player) {
 		if (!CustomConfig.THIEVES_ENABLE)
 			return;
-		
+
 		for (Player target : player.getKnownList().getKnownPlayers().values()) {
 			if (!PlayerActions.isAlreadyDead(target) && MathUtil.isIn3dRange(target, player, 2)) {
 				if (!player.isThieves()) {
@@ -77,7 +77,7 @@ public class ThievesGuildService {
 			}
 		}
 	}
-	
+
 	public void createRevenge(Player player, Player target) {
 		if (!CustomConfig.THIEVES_ENABLE) {
 			return;
@@ -87,15 +87,16 @@ public class ThievesGuildService {
 		}
 		target.setThieves(DAOManager.getDAO(PlayerThievesListDAO.class).loadThieves(target.getObjectId()));
 		ThievesStatusList thieves = target.getThieves();
-		if (thieves.getRevengeName().equals(player.getName()) && !PlayerActions.isAlreadyDead(target) && MathUtil.isIn3dRange(target, player, 2)) {
+		if (thieves.getRevengeName().equals(player.getName()) && !PlayerActions.isAlreadyDead(target)
+				&& MathUtil.isIn3dRange(target, player, 2)) {
 			player.setThievesDuel(true);
 			thievesMessage(player, "Thief " + target.getName() + " in the reach zone. The duel begins.", 0);
 			thievesMessage(target, "Sacrifice " + player.getName() + " in the zone of revenge. The duel begins.", 0);
-			//DuelService.getInstance().startDuel(player, target);
+			// DuelService.getInstance().startDuel(player, target);
 		}
 		log.info("Aion-Unique Console: ThievesGuildService createRevenge [Player = " + player.getName() + "]");
 	}
-	
+
 	public void revenge(Player player, Player target) {
 		if (!CustomConfig.THIEVES_ENABLE) {
 			return;
@@ -110,11 +111,12 @@ public class ThievesGuildService {
 		Timestamp nextTime = thievesTarget.getRevengeDate();
 		Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 		int revengeCount = thievesPlayer.getRevengeCount();
-		long kinahResult = (target.getInventory().getKinah() / thievesPlayer.getRankId()) + thievesTarget.getLastThievesKinah();
-		if (!player.getName().equals(thievesTarget.getRevengeName()) && currentTime.after(nextTime) && !currentTime.equals(nextTime)) {
+		long kinahResult = (target.getInventory().getKinah() / thievesPlayer.getRankId())
+				+ thievesTarget.getLastThievesKinah();
+		if (!player.getName().equals(thievesTarget.getRevengeName()) && currentTime.after(nextTime)
+				&& !currentTime.equals(nextTime)) {
 			return;
-		}
-		else {
+		} else {
 			player.getInventory().increaseKinah(kinahResult);
 			target.getInventory().decreaseKinah(kinahResult);
 			thievesPlayer.setRevengeCount(revengeCount + 1);
@@ -126,46 +128,41 @@ public class ThievesGuildService {
 		DAOManager.getDAO(PlayerThievesListDAO.class).storeThieves(thievesPlayer);
 		DAOManager.getDAO(PlayerThievesListDAO.class).storeThieves(thievesTarget);
 		log.info("Aion-Unique Console: ThievesGuildService revenge [Player = " + player.getName() + "]");
-	}   
-	/* TODO
-	private void thievesIn(Player player) {
-		player.setThieves(DAOManager.getDAO(PlayerThievesListDAO.class).loadThieves(player.getObjectId()));
-		ThievesStatusList thieves = player.getThieves();
-		if (thieves.getRankId() >= 3) {
-
-			for (Legion legion : LegionService.getInstance().getCachedLegions()) {
-				if (legion.getLegionName() == "ThievesGuild" && !player.getLegion().getLegionName().equals(legion.getLegionName())) {
-					LegionService.getInstance().directAddPlayer(legion, player);
-					log.info("Aion-Unique Console: ThievesGuildService thievesIn [Player = " + player.getName() + "]");
-				}
-			}
-		}
 	}
-	*/
+	/*
+	 * TODO private void thievesIn(Player player) {
+	 * player.setThieves(DAOManager.getDAO(PlayerThievesListDAO.class).loadThieves(
+	 * player.getObjectId())); ThievesStatusList thieves = player.getThieves(); if
+	 * (thieves.getRankId() >= 3) {
+	 * 
+	 * for (Legion legion : LegionService.getInstance().getCachedLegions()) { if
+	 * (legion.getLegionName() == "ThievesGuild" &&
+	 * !player.getLegion().getLegionName().equals(legion.getLegionName())) {
+	 * LegionService.getInstance().directAddPlayer(legion, player);
+	 * log.info("Aion-Unique Console: ThievesGuildService thievesIn [Player = " +
+	 * player.getName() + "]"); } } } }
+	 */
 
-	/* TODO
-	private void thievesLegionCreate(Player player) {
-		for (Legion legion : LegionService.getInstance().getCachedLegions()) {
-			if (!legion.getLegionName().contains("ThievesGuild")) {
-				LegionService.getInstance().createLegion(player, "ThievesGuild");
-				log.info("Aion-Unique Console: ThievesGuildService thievesLegionCreate done");
-			}
-		}
-	}
-	*/
+	/*
+	 * TODO private void thievesLegionCreate(Player player) { for (Legion legion :
+	 * LegionService.getInstance().getCachedLegions()) { if
+	 * (!legion.getLegionName().contains("ThievesGuild")) {
+	 * LegionService.getInstance().createLegion(player, "ThievesGuild");
+	 * log.info("Aion-Unique Console: ThievesGuildService thievesLegionCreate done"
+	 * ); } } }
+	 */
 
 	public void captchaCheck(Player player, int captchaCount, boolean state, long delay) {
 		captchaCheck(player, null, captchaCount, state, delay);
 	}
-	
+
 	public void captchaCheck(Player player, Player target, int captchaCount, boolean state, long delay) {
 		stopThievesTask(player, false);
-		
+
 		if (state) {
 			if (captchaCount < 3) {
 				PacketSendUtility.sendPacket(player, new SM_CAPTCHA(captchaCount + 1, player.getCaptchaImage()));
-			}
-			else {
+			} else {
 				player.setCaptchaWord(null);
 				player.setCaptchaImage(null);
 			}
@@ -173,8 +170,7 @@ public class ThievesGuildService {
 			player.setStopThieves(System.currentTimeMillis());
 			scheduleThievesTask(player, delay);
 			log.info("Aion-Unique Console: ThievesGuildService captchaCheck state [Player = " + player.getName() + "]");
-		}
-		else {
+		} else {
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400269));
 			player.setCaptchaWord(null);
 			player.setCaptchaImage(null);
@@ -187,69 +183,72 @@ public class ThievesGuildService {
 			Timestamp nextTime = thieves.getRevengeDate();
 			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 			int thievesCount = thieves.getThievesCount();
-			if (target != null && target.getName().equals(thieves.getRevengeName()) && currentTime.after(nextTime) && !currentTime.equals(nextTime)) {
+			if (target != null && target.getName().equals(thieves.getRevengeName()) && currentTime.after(nextTime)
+					&& !currentTime.equals(nextTime)) {
 				long kinah = 0;
 				switch (ThievesType.getThievesType(thieves.getRankId())) {
-					case SILVER:
-						kinah = 1000 * thieves.getRankId();
-						break;
-					case GOLD:
-						kinah = 2000 * thieves.getRankId();
-						break;
-					case PLATINUM:
-						kinah = 3000 * thieves.getRankId();
-						break;
-					case MITHRIL:
-						kinah = 4000 * thieves.getRankId();
-						break;
-					case SERAMIUM:
-						kinah = 5000 * thieves.getRankId();
-						break;
-					default:
-						kinah = 600;
-						break;
+				case SILVER:
+					kinah = 1000 * thieves.getRankId();
+					break;
+				case GOLD:
+					kinah = 2000 * thieves.getRankId();
+					break;
+				case PLATINUM:
+					kinah = 3000 * thieves.getRankId();
+					break;
+				case MITHRIL:
+					kinah = 4000 * thieves.getRankId();
+					break;
+				case SERAMIUM:
+					kinah = 5000 * thieves.getRankId();
+					break;
+				default:
+					kinah = 600;
+					break;
 				}
 				int rank = 0;
 				switch (thieves.getThievesCount()) {
-					case 10:
-						rank = 1;
-						thievesMessage(player, "Thief", 1);
-						break;
-					case 50:
-						rank = 2;
-						thievesMessage(player, "Pickpocket", 1);
-						break;
-					case 100:
-						rank = 3;
-						thievesMessage(player, "Voryaga", 1);
-						//thievesLegionCreate(player); TODO
-						//thievesIn(player); TODO
-						break;
-					case 150:
-						rank = 4;
-						thievesMessage(player, "Sleek Hands", 1);
-						break;
-					case 200:
-						rank = 5;
-						thievesMessage(player, "Fast hands", 1);
-						break;
-					case 300:
-						rank = 6;
-						thievesMessage(player, "Elusive", 1);
-						break;
+				case 10:
+					rank = 1;
+					thievesMessage(player, "Thief", 1);
+					break;
+				case 50:
+					rank = 2;
+					thievesMessage(player, "Pickpocket", 1);
+					break;
+				case 100:
+					rank = 3;
+					thievesMessage(player, "Voryaga", 1);
+					// thievesLegionCreate(player); TODO
+					// thievesIn(player); TODO
+					break;
+				case 150:
+					rank = 4;
+					thievesMessage(player, "Sleek Hands", 1);
+					break;
+				case 200:
+					rank = 5;
+					thievesMessage(player, "Fast hands", 1);
+					break;
+				case 300:
+					rank = 6;
+					thievesMessage(player, "Elusive", 1);
+					break;
 				}
 				thieves.setRankId(rank);
 				thieves.setThievesCount(thievesCount + 1);
 				thieves.setRevengeName(target.getName());
-				//thieves.setRevengeDate(DateTimeService.getInstance().countNextRepeatTimeDay(1)); //TODO
+				// thieves.setRevengeDate(DateTimeService.getInstance().countNextRepeatTimeDay(1));
+				// //TODO
 				thieves.setLastThievesKinah(kinah);
 				player.getInventory().increaseKinah(kinah);
 				target.getInventory().decreaseKinah(kinah);
 				DAOManager.getDAO(PlayerThievesListDAO.class).storeThieves(thieves);
 				thievesMessage(player, "You are robbed " + target.getName(), 0);
 				thievesMessage(player, "Be careful! Revenge can be swift from " + target.getName(), 0);
-				thievesMessage(player,  target.getName() + " Has the ability to attack you at any time ", 0);
-				thievesMessage(player,  "if " + target.getName() + " you will be killed. He will get stolen from% and you will lose this %", 0);
+				thievesMessage(player, target.getName() + " Has the ability to attack you at any time ", 0);
+				thievesMessage(player, "if " + target.getName()
+						+ " you will be killed. He will get stolen from% and you will lose this %", 0);
 				log.info("Aion-Unique Console: ThievesGuildService captchaCheck [Player = " + player.getName() + "]");
 			}
 		}
@@ -258,15 +257,16 @@ public class ThievesGuildService {
 	private void thievesMessage(Player player, String msg, int type) {
 		String typeMsg = "";
 		switch (type) {
-			case 1:
-				typeMsg = "Received a new rank of theft: ";
-				break;
-			default:
-				break;
+		case 1:
+			typeMsg = "Received a new rank of theft: ";
+			break;
+		default:
+			break;
 		}
-		PacketSendUtility.sendMessage(player, "[color:Guild;0 255 0][color:in;0 255 0][color:moat;0 255 0]: " + typeMsg + msg + ".");
+		PacketSendUtility.sendMessage(player,
+				"[color:Guild;0 255 0][color:in;0 255 0][color:moat;0 255 0]: " + typeMsg + msg + ".");
 	}
-	
+
 	private void stopThievesTask(Player player, boolean state) {
 		Future<?> thievesTask = player.getController().getTask(TaskId.THIEVES);
 		if (thievesTask != null) {
@@ -279,10 +279,10 @@ public class ThievesGuildService {
 			player.getController().cancelTask(TaskId.THIEVES);
 		}
 	}
-	
+
 	private void scheduleThievesTask(final Player player, long thievesTimer) {
 		player.setThievesTimer((int) thievesTimer);
-		
+
 		player.getController().addTask(TaskId.THIEVES, ThreadPoolManager.getInstance().schedule(new Runnable() {
 
 			@Override
@@ -291,7 +291,7 @@ public class ThievesGuildService {
 			}
 		}, thievesTimer));
 	}
-	
+
 	public static ThievesGuildService getInstance() {
 		return SingletonHolder.instance;
 	}

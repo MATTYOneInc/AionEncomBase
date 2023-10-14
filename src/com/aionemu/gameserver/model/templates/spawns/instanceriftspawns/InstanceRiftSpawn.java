@@ -33,36 +33,35 @@ import com.aionemu.gameserver.model.templates.spawns.Spawn;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "InstanceRiftSpawn")
-public class InstanceRiftSpawn
-{
+public class InstanceRiftSpawn {
 	@XmlAttribute(name = "id")
 	private int id;
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	@XmlElement(name = "instance_rift_type")
 	private List<InstanceRiftSpawn.InstanceRiftStateTemplate> InstanceRiftStateTemplate;
-	
+
 	public List<InstanceRiftStateTemplate> getSiegeModTemplates() {
 		return InstanceRiftStateTemplate;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlType(name = "InstanceRiftStateTemplate")
 	public static class InstanceRiftStateTemplate {
-	
+
 		@XmlElement(name = "spawn")
 		private List<Spawn> spawns;
-		
+
 		@XmlAttribute(name = "estate")
 		private InstanceRiftStateType instanceRiftType;
-		
+
 		public List<Spawn> getSpawns() {
 			return spawns;
 		}
-		
+
 		public InstanceRiftStateType getInstanceRiftType() {
 			return instanceRiftType;
 		}

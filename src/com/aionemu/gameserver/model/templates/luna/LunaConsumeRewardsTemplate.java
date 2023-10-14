@@ -26,8 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "luna_consume_reward")
 @XmlAccessorType(XmlAccessType.NONE)
-public class LunaConsumeRewardsTemplate
-{
+public class LunaConsumeRewardsTemplate {
 	@XmlAttribute
 	protected int id;
 	@XmlAttribute
@@ -40,22 +39,27 @@ public class LunaConsumeRewardsTemplate
 	protected int create_1;
 	@XmlAttribute
 	protected int num_1;
-	
+
 	public int getId() {
-        return this.id;
-    }
+		return this.id;
+	}
+
 	public String getName() {
 		return name;
 	}
+
 	public int getSumCount() {
 		return luna_sum_count;
 	}
+
 	public int getGachaCost() {
 		return gacha_cost;
 	}
+
 	public int getCreateItemId() {
 		return create_1;
 	}
+
 	public int getCreateItemCount() {
 		return num_1;
 	}

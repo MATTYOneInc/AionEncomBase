@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "dominion_locations")
-public class LegionDominionData
-{
+public class LegionDominionData {
 	@XmlElement(name = "dominion_location")
 	private List<LegionDominionTemplate> legionDominionTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, LegionDominionLocation> legionDominion = new FastMap<Integer, LegionDominionLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (LegionDominionTemplate template : legionDominionTemplates) {
 			legionDominion.put(template.getLegionDominionId(), new LegionDominionLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return legionDominion.size();
 	}
-	
+
 	public FastMap<Integer, LegionDominionLocation> getLegionDominionLocations() {
 		return legionDominion;
 	}

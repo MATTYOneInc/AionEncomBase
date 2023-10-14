@@ -25,39 +25,39 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * @author Rinzler (Encom)
  */
 
-public class AgentSpawnTemplate extends SpawnTemplate
-{
+public class AgentSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private AgentStateType agentType;
-	
+
 	public AgentSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public AgentSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public AgentSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public AgentStateType getAStateType() {
 		return agentType;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void setAStateType(AgentStateType agentType) {
 		this.agentType = agentType;
 	}
-	
+
 	public final boolean isAgentFight() {
 		return agentType.equals(AgentStateType.FIGHT);
 	}
-	
+
 	public final boolean isAgentPeace() {
 		return agentType.equals(AgentStateType.PEACE);
 	}

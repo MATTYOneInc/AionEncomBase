@@ -23,38 +23,37 @@ import com.aionemu.gameserver.model.templates.ingameshop.IGSubCategory;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_IN_GAME_SHOP_CATEGORY_LIST extends AionServerPacket
-{
+public class SM_IN_GAME_SHOP_CATEGORY_LIST extends AionServerPacket {
 	private int type;
 	private int categoryId;
 	private InGameShopProperty ing;
-	
+
 	public SM_IN_GAME_SHOP_CATEGORY_LIST(int type, int category) {
 		this.type = type;
 		categoryId = category;
 		ing = InGameShopEn.getInstance().getIGSProperty();
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeD(type);
 		switch (type) {
-			case 0:
-				writeH(ing.size());
-				for (IGCategory category : ing.getCategories()) {
-					writeD(category.getId());
-					writeS(category.getName());
-				}
+		case 0:
+			writeH(ing.size());
+			for (IGCategory category : ing.getCategories()) {
+				writeD(category.getId());
+				writeS(category.getName());
+			}
 			break;
-			case 2:
-				if (categoryId < ing.size()) {
-					IGCategory iGCategory = ing.getCategories().get(categoryId);
-					writeH(iGCategory.getSubCategories().size());
-					for (IGSubCategory subCategory : iGCategory.getSubCategories()) {
-						writeD(subCategory.getId());
-						writeS(subCategory.getName());
-					}
+		case 2:
+			if (categoryId < ing.size()) {
+				IGCategory iGCategory = ing.getCategories().get(categoryId);
+				writeH(iGCategory.getSubCategories().size());
+				for (IGSubCategory subCategory : iGCategory.getSubCategories()) {
+					writeD(subCategory.getId());
+					writeS(subCategory.getName());
 				}
+			}
 			break;
 		}
 	}

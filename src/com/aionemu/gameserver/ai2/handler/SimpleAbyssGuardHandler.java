@@ -25,16 +25,15 @@ import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.utils.MathUtil;
 import com.aionemu.gameserver.world.geo.GeoService;
 
-public class SimpleAbyssGuardHandler
-{
+public class SimpleAbyssGuardHandler {
 	public static void onCreatureMoved(NpcAI2 npcAI, Creature creature) {
 		checkAggro(npcAI, creature);
 	}
-	
+
 	public static void onCreatureSee(NpcAI2 npcAI, Creature creature) {
 		checkAggro(npcAI, creature);
 	}
-	
+
 	protected static void checkAggro(NpcAI2 ai, Creature creature) {
 		if (!(creature instanceof Npc)) {
 			CreatureEventHandler.checkAggro(ai, creature);
@@ -54,10 +53,11 @@ public class SimpleAbyssGuardHandler
 		if (!owner.getActiveRegion().isMapRegionActive()) {
 			return;
 		}
-		if (!ai.isInState(AIState.FIGHT) && (MathUtil.isIn3dRange(owner, creature, owner.getObjectTemplate().getAggroRange()))) {
+		if (!ai.isInState(AIState.FIGHT)
+				&& (MathUtil.isIn3dRange(owner, creature, owner.getObjectTemplate().getAggroRange()))) {
 			if (GeoService.getInstance().canSee(owner, creature)) {
 				if (!ai.isInState(AIState.RETURNING))
-				ai.getOwner().getMoveController().storeStep();
+					ai.getOwner().getMoveController().storeStep();
 				ai.onCreatureEvent(AIEventType.CREATURE_AGGRO, creature);
 			}
 		}

@@ -27,11 +27,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "NeedKinah")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class NeedKinah
-{
+public class NeedKinah {
 	@XmlAttribute(name = "count")
 	private int count;
-	
+
 	public int getCount() {
 		return count;
 	}

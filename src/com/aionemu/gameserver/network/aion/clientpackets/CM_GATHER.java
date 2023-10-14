@@ -48,8 +48,7 @@ public class CM_GATHER extends AionClientPacket {
 		if (target != null && target.getPosition().isSpawned() && target instanceof Gatherable) {
 			if (isStartGather) {
 				((Gatherable) target).getController().onStartUse(player);
-			}
-			else {
+			} else {
 				((Gatherable) target).getController().finishGathering(player);
 			}
 		}

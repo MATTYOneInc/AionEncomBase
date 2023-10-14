@@ -28,15 +28,15 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-public class ReportTo extends QuestHandler
-{
+public class ReportTo extends QuestHandler {
 	private final Set<Integer> startNpcs = new HashSet<Integer>();
 	private final Set<Integer> endNpcs = new HashSet<Integer>();
 	private final int itemId;
 	private final int startDialogId;
-    private final int startDialogId2;
-	
-	public ReportTo(int questId, List<Integer> startNpcIds, List<Integer> endNpcIds, int startDialogId, int startDialogId2, int itemId) {
+	private final int startDialogId2;
+
+	public ReportTo(int questId, List<Integer> startNpcIds, List<Integer> endNpcIds, int startDialogId,
+			int startDialogId2, int itemId) {
 		super(questId);
 		startNpcs.addAll(startNpcIds);
 		startNpcs.remove(0);
@@ -45,10 +45,10 @@ public class ReportTo extends QuestHandler
 			endNpcs.remove(0);
 		}
 		this.startDialogId = startDialogId;
-        this.startDialogId2 = startDialogId2;
+		this.startDialogId2 = startDialogId2;
 		this.itemId = itemId;
 	}
-	
+
 	@Override
 	public void register() {
 		Iterator<Integer> iterator = startNpcs.iterator();
@@ -63,7 +63,7 @@ public class ReportTo extends QuestHandler
 			qe.registerQuestNpc(endNpc).addOnTalkEvent(getQuestId());
 		}
 	}
-	
+
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
@@ -73,25 +73,27 @@ public class ReportTo extends QuestHandler
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if ((startNpcs.isEmpty()) || (startNpcs.contains(targetId))) {
 				switch (dialog) {
-					case START_DIALOG: {
-						if (startDialogId != 0) {
-							return sendQuestDialog(env, startDialogId);	
-						} else {
-							return sendQuestDialog(env, 1011);
-						}
-					} case ACCEPT_QUEST:
-					case ACCEPT_QUEST_SIMPLE: {
-						if (itemId != 0) {
-							if (giveQuestItem(env, itemId, 1)) {
-								return sendQuestStartDialog(env);
-							}
-							return false;
-						} else {
+				case START_DIALOG: {
+					if (startDialogId != 0) {
+						return sendQuestDialog(env, startDialogId);
+					} else {
+						return sendQuestDialog(env, 1011);
+					}
+				}
+				case ACCEPT_QUEST:
+				case ACCEPT_QUEST_SIMPLE: {
+					if (itemId != 0) {
+						if (giveQuestItem(env, itemId, 1)) {
 							return sendQuestStartDialog(env);
 						}
-					} default: {
+						return false;
+					} else {
 						return sendQuestStartDialog(env);
 					}
+				}
+				default: {
+					return sendQuestStartDialog(env);
+				}
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
@@ -101,24 +103,25 @@ public class ReportTo extends QuestHandler
 				}
 			} else if (endNpcs.contains(targetId)) {
 				switch (dialog) {
-					case START_DIALOG: {
-						if (startDialogId2 != 0) {
-                			return sendQuestDialog(env, startDialogId2);	
-                		} else {
-                			return sendQuestDialog(env, 2375);
-                		}
-					} case SELECT_REWARD: {
-						if (itemId != 0) {
-							if (player.getInventory().getItemCountByItemId(itemId) < 1) {
-								return sendQuestSelectionDialog(env);
-							}
-						}
-						removeQuestItem(env, itemId, 1);
-						qs.setQuestVar(1);
-						qs.setStatus(QuestStatus.REWARD);
-						updateQuestStatus(env);
-						return sendQuestEndDialog(env);
+				case START_DIALOG: {
+					if (startDialogId2 != 0) {
+						return sendQuestDialog(env, startDialogId2);
+					} else {
+						return sendQuestDialog(env, 2375);
 					}
+				}
+				case SELECT_REWARD: {
+					if (itemId != 0) {
+						if (player.getInventory().getItemCountByItemId(itemId) < 1) {
+							return sendQuestSelectionDialog(env);
+						}
+					}
+					removeQuestItem(env, itemId, 1);
+					qs.setQuestVar(1);
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					return sendQuestEndDialog(env);
+				}
 				}
 			}
 		} else if ((qs.getStatus() == QuestStatus.REWARD) && (endNpcs.contains(targetId))) {

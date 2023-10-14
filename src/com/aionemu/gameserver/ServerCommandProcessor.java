@@ -54,10 +54,10 @@ public class ServerCommandProcessor {
 	final TextField playerNameFieled = new TextField();
 	final TextField itemID = new TextField();
 	final TextField messageAnnounce = new TextField();
-	
-	public void startAdminPanel(){
+
+	public void startAdminPanel() {
 		f.setBackground(Color.black);
-        //posHoriz/pos Vert/size/sizeUpDown
+		// posHoriz/pos Vert/size/sizeUpDown
 		Button shutdown = new Button("Shutdown");
 		shutdown.setBounds(20, 40, 60, 20);
 
@@ -72,22 +72,22 @@ public class ServerCommandProcessor {
 
 		Button kick = new Button("Kick");
 		kick.setBounds(80, 80, 60, 20);
-		
+
 		Button sPrison = new Button("SPrison");
 		sPrison.setBounds(140, 80, 60, 20);
-		
+
 		Button rPrison = new Button("RPrison");
 		rPrison.setBounds(200, 80, 60, 20);
-		
+
 		playerNameFieled.setBounds(270, 80, 100, 20);
 		playerNameFieled.setText("Player Name");
 
 		itemID.setBounds(380, 80, 100, 20);
 		itemID.setText("Iteam ID");
-		
+
 		Button announce = new Button("Announce");
 		announce.setBounds(20, 120, 60, 20);
-		
+
 		messageAnnounce.setBounds(90, 120, 230, 20);
 		messageAnnounce.setText("Announce message");
 
@@ -110,7 +110,7 @@ public class ServerCommandProcessor {
 		add.addActionListener(al_add);
 		kick.addActionListener(al_kick);
 		announce.addActionListener(al_announce);
-		sPrison.addActionListener(al_sendPrison);	
+		sPrison.addActionListener(al_sendPrison);
 		rPrison.addActionListener(al_rescuePrison);
 
 		f.setSize(600, 400);
@@ -217,61 +217,60 @@ public class ServerCommandProcessor {
 			}
 		}
 	};
-	
+
 	ActionListener al_announce = new ActionListener() {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (playerNameFieled.getText() != null || messageAnnounce.getText() != "Announce message") {
-		        Iterator<Player> iter = World.getInstance().getPlayersIterator();
+				Iterator<Player> iter = World.getInstance().getPlayersIterator();
 
-		        while (iter.hasNext()) {
-		            PacketSendUtility.sendBrightYellowMessageOnCenter(iter.next(), messageAnnounce.getText());
-		        }
+				while (iter.hasNext()) {
+					PacketSendUtility.sendBrightYellowMessageOnCenter(iter.next(), messageAnnounce.getText());
+				}
 			}
 		}
 	};
-	
+
 	ActionListener al_sendPrison = new ActionListener() {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (playerNameFieled.getText() != null) {
-		        try {
-		            Player playerToPrison = World.getInstance().findPlayer(playerNameFieled.getText());
-		            int delay = 30;
-		            String reason = "Ban from Admin";
+				try {
+					Player playerToPrison = World.getInstance().findPlayer(playerNameFieled.getText());
+					int delay = 30;
+					String reason = "Ban from Admin";
 
-		            if (playerToPrison != null) {
-		                PunishmentService.setIsInPrison(playerToPrison, true, delay, reason);
-		                log.info("SPRISONcommad: Admin " + playerToPrison.getName() + " send to prison till " + delay + " min reason - " + reason + ".");
-		            }
-		        } catch (Exception eo) {
+					if (playerToPrison != null) {
+						PunishmentService.setIsInPrison(playerToPrison, true, delay, reason);
+						log.info("SPRISONcommad: Admin " + playerToPrison.getName() + " send to prison till " + delay
+								+ " min reason - " + reason + ".");
+					}
+				} catch (Exception eo) {
 
-		        }
+				}
 			}
 		}
 	};
-	
+
 	ActionListener al_rescuePrison = new ActionListener() {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (playerNameFieled.getText() != null) {
-		        try {
-		        	Player playerFromPrison = World.getInstance().findPlayer(playerNameFieled.getText());
+				try {
+					Player playerFromPrison = World.getInstance().findPlayer(playerNameFieled.getText());
 
-		            if (playerFromPrison != null) {
-		                PunishmentService.setIsInPrison(playerFromPrison, false, 0, "");
-		                log.info("SPRISONcommad: Admin " + playerFromPrison.getName() + " rescue you from prison.");
-		            }
-		        } catch (NoSuchElementException nsee) {
-		        } catch (Exception ee) {
-		        }
+					if (playerFromPrison != null) {
+						PunishmentService.setIsInPrison(playerFromPrison, false, 0, "");
+						log.info("SPRISONcommad: Admin " + playerFromPrison.getName() + " rescue you from prison.");
+					}
+				} catch (NoSuchElementException nsee) {
+				} catch (Exception ee) {
+				}
 			}
 		}
-	};	
-	
-	
+	};
 
 }

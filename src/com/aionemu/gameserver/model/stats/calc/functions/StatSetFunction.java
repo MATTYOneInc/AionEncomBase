@@ -35,8 +35,7 @@ public class StatSetFunction extends StatFunction {
 	public void apply(Stat2 stat) {
 		if (isBonus()) {
 			stat.setBonus(getValue());
-		}
-		else {
+		} else {
 			stat.setBase(getValue());
 		}
 	}

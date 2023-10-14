@@ -22,16 +22,16 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
- 
+/**
+ * Author Rinzler (Encom) /
+ ****/
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LunaTeleportPrice")
-public class LunaTeleportPrice
-{
+public class LunaTeleportPrice {
 	@XmlAttribute(name = "itemid")
 	protected int itemId;
-	
+
 	public int getItemId() {
 		return itemId;
 	}

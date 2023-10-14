@@ -66,7 +66,8 @@ public class ShieldEffect extends EffectTemplate {
 		int valueWithDelta = value + delta * skillLvl;
 		int hitValueWithDelta = hitvalue + hitdelta * skillLvl;
 
-		AttackShieldObserver asObserver = new AttackShieldObserver(hitValueWithDelta, valueWithDelta, percent, effect, hitType, getType(), hitTypeProb);
+		AttackShieldObserver asObserver = new AttackShieldObserver(hitValueWithDelta, valueWithDelta, percent, effect,
+				hitType, getType(), hitTypeProb);
 
 		effect.getEffected().getObserveController().addAttackCalcObserver(asObserver);
 		effect.setAttackShieldObserver(asObserver, position);

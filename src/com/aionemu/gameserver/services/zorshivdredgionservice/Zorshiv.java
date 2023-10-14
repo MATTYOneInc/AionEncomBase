@@ -23,19 +23,18 @@ import com.aionemu.gameserver.model.zorshivdredgion.ZorshivDredgionStateType;
  * @author Rinzler (Encom)
  */
 
-public class Zorshiv extends ZorshivDredgion<ZorshivDredgionLocation>
-{
+public class Zorshiv extends ZorshivDredgion<ZorshivDredgionLocation> {
 	public Zorshiv(ZorshivDredgionLocation zorshivDredgion) {
 		super(zorshivDredgion);
 	}
-	
+
 	@Override
 	public void startZorshivDredgion() {
 		getZorshivDredgionLocation().setActiveZorshivDredgion(this);
 		despawn();
 		spawn(ZorshivDredgionStateType.LANDING);
 	}
-	
+
 	@Override
 	public void stopZorshivDredgion() {
 		getZorshivDredgionLocation().setActiveZorshivDredgion(null);

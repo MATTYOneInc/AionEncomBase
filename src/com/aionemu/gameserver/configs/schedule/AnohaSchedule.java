@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "anoha_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class AnohaSchedule
-{
+public class AnohaSchedule {
 	@XmlElement(name = "anoha", required = true)
 	private List<Anoha> anohasList;
-	
+
 	public List<Anoha> getAnohasList() {
 		return anohasList;
 	}
-	
+
 	public void setBerserksList(List<Anoha> anohaList) {
 		this.anohasList = anohaList;
 	}
-	
+
 	public static AnohaSchedule load() {
 		AnohaSchedule as;
 		try {
@@ -58,28 +57,28 @@ public class AnohaSchedule
 		}
 		return as;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "anoha")
 	public static class Anoha {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "berserkTime", required = true)
 		private List<String> berserkTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getBerserkTimes() {
 			return berserkTimes;
 		}
-		
+
 		public void setBerserkTimes(List<String> berserkTimes) {
 			this.berserkTimes = berserkTimes;
 		}

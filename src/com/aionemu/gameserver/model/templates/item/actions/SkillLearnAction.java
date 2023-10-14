@@ -72,9 +72,11 @@ public class SkillLearnAction extends AbstractItemAction {
 	public void act(Player player, Item parentItem, Item targetItem) {
 		// item animation and message
 		ItemTemplate itemTemplate = parentItem.getItemTemplate();
-		// PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.USE_ITEM(itemTemplate.getDescription()));
+		// PacketSendUtility.sendPacket(player,
+		// SM_SYSTEM_MESSAGE.USE_ITEM(itemTemplate.getDescription()));
 		player.getController().cancelUseItem();
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+				parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
 
 		// add skill
 		SkillLearnService.learnSkillBook(player, skillid);

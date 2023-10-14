@@ -29,39 +29,40 @@ import com.google.common.base.Predicate;
  */
 public class ChangeGroupLeaderEvent extends ChangeLeaderEvent<PlayerGroup> {
 
-    public ChangeGroupLeaderEvent(PlayerGroup team, Player eventPlayer) {
-        super(team, eventPlayer);
-    }
+	public ChangeGroupLeaderEvent(PlayerGroup team, Player eventPlayer) {
+		super(team, eventPlayer);
+	}
 
-    public ChangeGroupLeaderEvent(PlayerGroup team) {
-        super(team, null);
-    }
+	public ChangeGroupLeaderEvent(PlayerGroup team) {
+		super(team, null);
+	}
 
-    @Override
-    public void handleEvent() {
-        Player oldLeader = team.getLeaderObject();
-        if (eventPlayer == null) {
-            team.applyOnMembers(this);
-        } else {
-            changeLeaderTo(eventPlayer);
-        }
-        checkLeaderChanged(oldLeader);
-    }
+	@Override
+	public void handleEvent() {
+		Player oldLeader = team.getLeaderObject();
+		if (eventPlayer == null) {
+			team.applyOnMembers(this);
+		} else {
+			changeLeaderTo(eventPlayer);
+		}
+		checkLeaderChanged(oldLeader);
+	}
 
-    @Override
-    protected void changeLeaderTo(final Player player) {
-        team.changeLeader(team.getMember(player.getObjectId()));
-        team.applyOnMembers(new Predicate<Player>() {
-            @Override
-            public boolean apply(Player member) {
-                PacketSendUtility.sendPacket(member, new SM_GROUP_INFO(team));
-                if (!player.equals(member)) {
-                    PacketSendUtility.sendPacket(member, SM_SYSTEM_MESSAGE.STR_PARTY_HE_IS_NEW_LEADER(player.getName()));
-                } else {
-                    PacketSendUtility.sendPacket(member, SM_SYSTEM_MESSAGE.STR_PARTY_YOU_BECOME_NEW_LEADER);
-                }
-                return true;
-            }
-        });
-    }
+	@Override
+	protected void changeLeaderTo(final Player player) {
+		team.changeLeader(team.getMember(player.getObjectId()));
+		team.applyOnMembers(new Predicate<Player>() {
+			@Override
+			public boolean apply(Player member) {
+				PacketSendUtility.sendPacket(member, new SM_GROUP_INFO(team));
+				if (!player.equals(member)) {
+					PacketSendUtility.sendPacket(member,
+							SM_SYSTEM_MESSAGE.STR_PARTY_HE_IS_NEW_LEADER(player.getName()));
+				} else {
+					PacketSendUtility.sendPacket(member, SM_SYSTEM_MESSAGE.STR_PARTY_YOU_BECOME_NEW_LEADER);
+				}
+				return true;
+			}
+		});
+	}
 }

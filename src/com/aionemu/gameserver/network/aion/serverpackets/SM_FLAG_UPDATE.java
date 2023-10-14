@@ -26,15 +26,15 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 public class SM_FLAG_UPDATE extends AionServerPacket {
 
-    Npc npc;
+	Npc npc;
 
-    public SM_FLAG_UPDATE(Npc npc){
-        this.npc = npc;
-    }
+	public SM_FLAG_UPDATE(Npc npc) {
+		this.npc = npc;
+	}
 
-    @Override
-    protected void writeImpl(AionConnection con) {
-        writeD(npc.getNpcId());
-        writeD(npc.getObjectId());
-    }
+	@Override
+	protected void writeImpl(AionConnection con) {
+		writeD(npc.getNpcId());
+		writeD(npc.getObjectId());
+	}
 }

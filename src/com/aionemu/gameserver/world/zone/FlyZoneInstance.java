@@ -37,8 +37,7 @@ public class FlyZoneInstance extends ZoneInstance {
 		if (super.onEnter(creature)) {
 			creature.setInsideZoneType(ZoneType.FLY);
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
@@ -53,8 +52,7 @@ public class FlyZoneInstance extends ZoneInstance {
 				}
 			}
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}

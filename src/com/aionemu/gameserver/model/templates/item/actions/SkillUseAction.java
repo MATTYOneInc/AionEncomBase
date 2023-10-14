@@ -74,21 +74,24 @@ public class SkillUseAction extends AbstractItemAction {
 
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
-		Skill skill = SkillEngine.getInstance().getSkill(player, skillid, level, player.getTarget(), parentItem.getItemTemplate());
+		Skill skill = SkillEngine.getInstance().getSkill(player, skillid, level, player.getTarget(),
+				parentItem.getItemTemplate());
 		if (skill == null) {
 			return false;
 		}
 		int nameId = parentItem.getItemTemplate().getNameId();
 		byte levelRestrict = parentItem.getItemTemplate().getMaxLevelRestrict(player);
 		if (levelRestrict != 0) {
-			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_CANNOT_USE_ITEM_TOO_LOW_LEVEL_MUST_BE_THIS_LEVEL(levelRestrict, nameId));
+			PacketSendUtility.sendPacket(player,
+					SM_SYSTEM_MESSAGE.STR_CANNOT_USE_ITEM_TOO_LOW_LEVEL_MUST_BE_THIS_LEVEL(levelRestrict, nameId));
 			return false;
 		}
 		// Cant use transform items while already transformed
 		if (player.isTransformed()) {
 			for (EffectTemplate template : skill.getSkillTemplate().getEffects().getEffects()) {
 				if (template instanceof TransformEffect) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_CANT_USE_ITEM(new DescriptionId(nameId)));
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_CANT_USE_ITEM(new DescriptionId(nameId)));
 					return false;
 				}
 			}
@@ -101,9 +104,9 @@ public class SkillUseAction extends AbstractItemAction {
 				}
 			}
 		}
-		if(skill.getSkillId() == 11072){ //add Golden Star Energy
+		if (skill.getSkillId() == 11072) { // add Golden Star Energy
 			PlayerCommonData pcd = player.getCommonData();
-			if(pcd.getBerdinStar() == pcd.getMaxBerdinStar()){
+			if (pcd.getBerdinStar() == pcd.getMaxBerdinStar()) {
 				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402615));
 				return false;
 			}
@@ -113,7 +116,8 @@ public class SkillUseAction extends AbstractItemAction {
 
 	@Override
 	public void act(final Player player, final Item parentItem, Item targetItem) {
-		final Skill skill = SkillEngine.getInstance().getSkill(player, skillid, level, player.getTarget(), parentItem.getItemTemplate());
+		final Skill skill = SkillEngine.getInstance().getSkill(player, skillid, level, player.getTarget(),
+				parentItem.getItemTemplate());
 		if (skill != null) {
 			if (skill.getSkillId() == 8198) {
 				RequestResponseHandler responseHandler = new RequestResponseHandler(player) {
@@ -128,14 +132,15 @@ public class SkillUseAction extends AbstractItemAction {
 							}
 						};
 						player.getObserveController().attach(moveObserver);
-						player.getController().addTask(TaskId.ITEM_USE, ThreadPoolManager.getInstance().schedule(new Runnable() {
+						player.getController().addTask(TaskId.ITEM_USE,
+								ThreadPoolManager.getInstance().schedule(new Runnable() {
 
-							@Override
-							public void run() {
-								player.getObserveController().removeObserver(moveObserver);
-								sendTeleportBack(player);
-							}
-						}, 6000));
+									@Override
+									public void run() {
+										player.getObserveController().removeObserver(moveObserver);
+										sendTeleportBack(player);
+									}
+								}, 6000));
 
 						skill.setItemObjectId(parentItem.getObjectId());
 						skill.useSkill();
@@ -151,19 +156,24 @@ public class SkillUseAction extends AbstractItemAction {
 					}
 				};
 
-				if (player.getRace() == Race.ELYOS && player.getWorldId() == 110010000 || player.getRace() == Race.ASMODIANS && player.getWorldId() == 120010000) {
+				if (player.getRace() == Race.ELYOS && player.getWorldId() == 110010000
+						|| player.getRace() == Race.ASMODIANS && player.getWorldId() == 120010000) {
 					teleportBack = true;
-					player.getResponseRequester().putRequest(SM_QUESTION_WINDOW.STR_ASK_ROUND_RETURN_ITEM_DO_YOU_ACCEPT_MOVE, responseHandler);
-					PacketSendUtility.sendPacket(player, new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_ASK_ROUND_RETURN_ITEM_DO_YOU_ACCEPT_MOVE, parentItem.getObjectId(), 0, new DescriptionId(parentItem.getNameId())));
-				}
-				else {
+					player.getResponseRequester().putRequest(
+							SM_QUESTION_WINDOW.STR_ASK_ROUND_RETURN_ITEM_DO_YOU_ACCEPT_MOVE, responseHandler);
+					PacketSendUtility.sendPacket(player,
+							new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_ASK_ROUND_RETURN_ITEM_DO_YOU_ACCEPT_MOVE,
+									parentItem.getObjectId(), 0, new DescriptionId(parentItem.getNameId())));
+				} else {
 					teleportBack = false;
-					player.getResponseRequester().putRequest(SM_QUESTION_WINDOW.STR_ASK_ROUND_RETURN_ITEM_ACCEPT_MOVE_DONT_RETURN, responseHandler);
-					PacketSendUtility.sendPacket(player, new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_ASK_ROUND_RETURN_ITEM_ACCEPT_MOVE_DONT_RETURN, parentItem.getObjectId(), 0, new DescriptionId(parentItem.getNameId())));
+					player.getResponseRequester().putRequest(
+							SM_QUESTION_WINDOW.STR_ASK_ROUND_RETURN_ITEM_ACCEPT_MOVE_DONT_RETURN, responseHandler);
+					PacketSendUtility.sendPacket(player,
+							new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_ASK_ROUND_RETURN_ITEM_ACCEPT_MOVE_DONT_RETURN,
+									parentItem.getObjectId(), 0, new DescriptionId(parentItem.getNameId())));
 				}
 
-			}
-			else {
+			} else {
 				player.getController().cancelUseItem();
 				player.setUsingItem(parentItem);
 				skill.setItemObjectId(parentItem.getObjectId());
@@ -174,7 +184,8 @@ public class SkillUseAction extends AbstractItemAction {
 
 	private void sendTeleportBack(Player player) {
 		if (teleportBack) {
-			player.setBattleReturnCoords(player.getWorldId(), new float[] { player.getX(), player.getY(), player.getZ() });
+			player.setBattleReturnCoords(player.getWorldId(),
+					new float[] { player.getX(), player.getY(), player.getZ() });
 			PacketSendUtility.sendPacket(player, new SM_TELEPORT_BACK());
 			teleportBack = false;
 		}

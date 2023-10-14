@@ -33,38 +33,37 @@ import com.aionemu.gameserver.model.towerofeternity.TowerOfEternityStateType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TowerOfEternitySpawn")
-public class TowerOfEternitySpawn
-{
-    @XmlAttribute(name = "id")
-    private int id;
-	
-    public int getId() {
-        return id;
-    }
-	
-    @XmlElement(name = "tower_of_eternity_type")
-    private List<TowerOfEternitySpawn.TowerOfEternityStateTemplate> TowerOfEternityStateTemplate;
-	
-    public List<TowerOfEternityStateTemplate> getSiegeModTemplates() {
-        return TowerOfEternityStateTemplate;
-    }
-	
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "TowerOfEternityStateTemplate")
-    public static class TowerOfEternityStateTemplate {
-		
-        @XmlElement(name = "spawn")
-        private List<Spawn> spawns;
-		
-        @XmlAttribute(name = "tstate")
-        private TowerOfEternityStateType towerOfEternityType;
-		
-        public List<Spawn> getSpawns() {
-            return spawns;
-        }
-		
-        public TowerOfEternityStateType getTowerOfEternityType() {
-            return towerOfEternityType;
-        }
-    }
+public class TowerOfEternitySpawn {
+	@XmlAttribute(name = "id")
+	private int id;
+
+	public int getId() {
+		return id;
+	}
+
+	@XmlElement(name = "tower_of_eternity_type")
+	private List<TowerOfEternitySpawn.TowerOfEternityStateTemplate> TowerOfEternityStateTemplate;
+
+	public List<TowerOfEternityStateTemplate> getSiegeModTemplates() {
+		return TowerOfEternityStateTemplate;
+	}
+
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "TowerOfEternityStateTemplate")
+	public static class TowerOfEternityStateTemplate {
+
+		@XmlElement(name = "spawn")
+		private List<Spawn> spawns;
+
+		@XmlAttribute(name = "tstate")
+		private TowerOfEternityStateType towerOfEternityType;
+
+		public List<Spawn> getSpawns() {
+			return spawns;
+		}
+
+		public TowerOfEternityStateType getTowerOfEternityType() {
+			return towerOfEternityType;
+		}
+	}
 }

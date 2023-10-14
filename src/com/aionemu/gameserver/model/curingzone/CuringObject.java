@@ -31,7 +31,8 @@ public class CuringObject extends VisibleObject {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public CuringObject(CuringTemplate template, int instanceId) {
 		super(IDFactory.getInstance().nextId(), new VisibleObjectController() {
-		}, null, null, World.getInstance().createPosition(template.getMapId(), template.getX(), template.getY(), template.getZ(), (byte) 0, instanceId));
+		}, null, null, World.getInstance().createPosition(template.getMapId(), template.getX(), template.getY(),
+				template.getZ(), (byte) 0, instanceId));
 
 		this.template = template;
 		range = template.getRange();

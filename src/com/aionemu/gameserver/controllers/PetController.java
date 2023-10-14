@@ -52,12 +52,12 @@ public class PetController extends VisibleObjectController<Pet> {
 		public void run() {
 			if (startTime == 0) {
 				startTime = System.currentTimeMillis();
-            }
+			}
 			try {
 				Pet pet = player.getPet();
 				if (pet == null) {
 					throw new IllegalStateException("Pet is null");
-                }
+				}
 				int currentPoints = 0;
 				boolean saved = false;
 
@@ -76,16 +76,15 @@ public class PetController extends VisibleObjectController<Pet> {
 
 				if (currentPoints < 9000) {
 					PacketSendUtility.sendPacket(player, new SM_PET(pet, 4, 0));
-				}
-				else {
+				} else {
 					PacketSendUtility.sendPacket(player, new SM_PET(pet, 3, 0));
-					// Save if it reaches 100% after player snuggles the pet, not by the scheduler itself
+					// Save if it reaches 100% after player snuggles the pet, not by the scheduler
+					// itself
 					if (!saved) {
 						DAOManager.getDAO(PlayerPetsDAO.class).savePetMoodData(pet.getCommonData());
 					}
 				}
-			}
-			catch (Exception ex) {
+			} catch (Exception ex) {
 				player.getController().cancelTask(TaskId.PET_UPDATE);
 			}
 		}

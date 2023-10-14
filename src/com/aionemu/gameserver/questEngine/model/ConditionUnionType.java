@@ -24,8 +24,7 @@ import javax.xml.bind.annotation.XmlEnum;
 @XmlEnum
 public enum ConditionUnionType {
 
-	AND,
-	OR;
+	AND, OR;
 
 	public String value() {
 		return name();

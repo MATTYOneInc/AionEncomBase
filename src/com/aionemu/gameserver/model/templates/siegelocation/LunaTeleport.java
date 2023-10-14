@@ -24,71 +24,71 @@ import javax.xml.bind.annotation.XmlType;
 import com.aionemu.gameserver.model.Race;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LunaTeleport")
-public class LunaTeleport
-{
+public class LunaTeleport {
 	@XmlAttribute(name = "world_id")
 	protected int worldId;
-	
+
 	@XmlAttribute(name = "race")
 	protected Race race = Race.PC_ALL;
-	
+
 	@XmlAttribute(name = "x")
 	protected float x;
-	
+
 	@XmlAttribute(name = "y")
 	protected float y;
-	
+
 	@XmlAttribute(name = "z")
 	protected float z;
-	
+
 	@XmlAttribute(name = "h")
 	protected byte h;
-	
+
 	public int getWorldId() {
 		return worldId;
 	}
-	
+
 	public void setWorldId(int value) {
 		worldId = value;
 	}
-	
+
 	public Race getRace() {
 		return race;
 	}
-	
+
 	public float getX() {
 		return x;
 	}
-	
+
 	public void setX(float value) {
 		x = value;
 	}
-	
+
 	public float getY() {
 		return y;
 	}
-	
+
 	public void setY(float value) {
 		y = value;
 	}
-	
+
 	public float getZ() {
 		return z;
 	}
-	
+
 	public void setZ(float value) {
 		z = value;
 	}
-	
+
 	public byte getH() {
 		return h;
 	}
-	
+
 	public void setH(byte value) {
 		h = value;
 	}

@@ -53,6 +53,7 @@ public class CM_LEGION_UPLOAD_INFO extends AionClientPacket {
 	protected void runImpl() {
 		final Player activePlayer = getConnection().getActivePlayer();
 
-		LegionService.getInstance().uploadEmblemInfo(activePlayer, totalSize, red, green, blue, LegionEmblemType.CUSTOM);
+		LegionService.getInstance().uploadEmblemInfo(activePlayer, totalSize, red, green, blue,
+				LegionEmblemType.CUSTOM);
 	}
 }

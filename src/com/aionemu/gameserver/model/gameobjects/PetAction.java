@@ -22,16 +22,8 @@ import gnu.trove.map.hash.TIntObjectHashMap;
  * @author ATracer
  */
 public enum PetAction {
-	ADOPT(1),
-	SURRENDER(2),
-	SPAWN(3),
-	DISMISS(4),
-	TALK_WITH_MERCHANT(6),
-	TALK_WITH_MINDER(7),
-	FOOD(9),
-	RENAME(10),
-	MOOD(12),
-	UNKNOWN(255);
+	ADOPT(1), SURRENDER(2), SPAWN(3), DISMISS(4), TALK_WITH_MERCHANT(6), TALK_WITH_MINDER(7), FOOD(9), RENAME(10),
+	MOOD(12), UNKNOWN(255);
 
 	private static TIntObjectHashMap<PetAction> petActions;
 

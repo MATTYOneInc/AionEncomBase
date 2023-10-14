@@ -21,8 +21,7 @@ package com.aionemu.gameserver.model;
  *
  * @author SoulKeeper, Imaginary
  */
-public enum ChatType
-{
+public enum ChatType {
 	NORMAL(0x00), // Normal chat (White)
 	SHOUT(0x03), // Shout chat (Orange)
 	WHISPER(0x04), // Whisper chat (Green)
@@ -36,23 +35,15 @@ public enum ChatType
 	COMMAND(0x1A), // Command chat (Yellow)
 	COALITION(0x1B), // Command chat (Blue)
 	COALITION_ALERT(0x1C), // Coalition chat (Orange)
-	ANNOUNCE(0x37), //Announce.
+	ANNOUNCE(0x37), // Announce.
 
-	CH1(0x0E),
-	CH2(0x0F),
-	CH3(0x10),
-	CH4(0x11),
-	CH5(0x12),
-	CH6(0x13),
-	CH7(0x14),
-	CH8(0x15),
-	CH9(0x16),
-	CH10(0x17),
+	CH1(0x0E), CH2(0x0F), CH3(0x10), CH4(0x11), CH5(0x12), CH6(0x13), CH7(0x14), CH8(0x15), CH9(0x16), CH10(0x17),
 
 	/**
 	 * Global chat types
 	 */
-	GOLDEN_YELLOW(0x20, true), // Same with 0x21 System message (Dark Yellow), most commonly used, no "center" equivalent.
+	GOLDEN_YELLOW(0x20, true), // Same with 0x21 System message (Dark Yellow), most commonly used, no "center"
+								// equivalent.
 
 	YELLOW(0x22, true), // System message (Yellow), visible in "All" chat thumbnail only !
 	WHITE(0x23, true), // System message (White), visible in "All" chat thumbnail only !
@@ -65,8 +56,7 @@ public enum ChatType
 	private boolean sysMsg;
 
 	/**
-	 * Constructor
-	 *    client chat type integer representation
+	 * Constructor client chat type integer representation
 	 */
 	private ChatType(int intValue) {
 		this(intValue, false);
@@ -84,11 +74,9 @@ public enum ChatType
 	/**
 	 * Returns ChatType by it's integer representation
 	 *
-	 * @param integerValue
-	 *          integer value of chat type
+	 * @param integerValue integer value of chat type
 	 * @return ChatType
-	 * @throws IllegalArgumentException
-	 *           if can't find suitable chat type
+	 * @throws IllegalArgumentException if can't find suitable chat type
 	 */
 	public static ChatType getChatTypeByInt(int integerValue) throws IllegalArgumentException {
 		for (ChatType ct : ChatType.values()) {

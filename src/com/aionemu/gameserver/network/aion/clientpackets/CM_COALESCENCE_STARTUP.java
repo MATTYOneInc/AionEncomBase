@@ -25,18 +25,17 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /**
  * @author Ranastic
  */
-public class CM_COALESCENCE_STARTUP extends AionClientPacket
-{
+public class CM_COALESCENCE_STARTUP extends AionClientPacket {
 
 	public CM_COALESCENCE_STARTUP(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
-		//null
+		// null
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();

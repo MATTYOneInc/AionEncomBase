@@ -31,8 +31,7 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.Util;
 import com.aionemu.gameserver.world.World;
 
-public class CM_PLAYER_SEARCH extends AionClientPacket
-{
+public class CM_PLAYER_SEARCH extends AionClientPacket {
 	public static final int MAX_RESULTS = 104;
 	private String name;
 	private int region;
@@ -40,11 +39,11 @@ public class CM_PLAYER_SEARCH extends AionClientPacket
 	private int minLevel;
 	private int maxLevel;
 	private int lfgOnly;
-	
+
 	public CM_PLAYER_SEARCH(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		name = readS(52);
@@ -58,17 +57,18 @@ public class CM_PLAYER_SEARCH extends AionClientPacket
 		lfgOnly = readC();
 		readC();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player activePlayer = getConnection().getActivePlayer();
 		Iterator<Player> it = World.getInstance().getPlayersIterator();
 		List<Player> matches = new ArrayList<Player>(MAX_RESULTS);
 		if (activePlayer.getLevel() < 10) {
-			//Characters under level 10 cannot use the search function.
+			// Characters under level 10 cannot use the search function.
 			PacketSendUtility.sendPacket(activePlayer, SM_SYSTEM_MESSAGE.STR_CANT_WHO_LEVEL("10"));
 			return;
-		} while (it.hasNext() && matches.size() < MAX_RESULTS) {
+		}
+		while (it.hasNext() && matches.size() < MAX_RESULTS) {
 			Player player = it.next();
 			if (!player.isSpawned()) {
 				continue;
@@ -90,8 +90,8 @@ public class CM_PLAYER_SEARCH extends AionClientPacket
 				continue;
 			} else if ((player.getRace() != activePlayer.getRace()) && (CustomConfig.FACTIONS_SEARCH_MODE == false)) {
 				continue;
-            } else if (player.getName() == activePlayer.getName()) {
-                continue;
+			} else if (player.getName() == activePlayer.getName()) {
+				continue;
 			} else {
 				matches.add(player);
 			}

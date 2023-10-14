@@ -26,7 +26,7 @@ public class AttackResult {
 	private int damage;
 
 	private AttackStatus attackStatus;
-	
+
 	private HitType hitType = HitType.EVERYHIT;
 
 	/**
@@ -39,7 +39,7 @@ public class AttackResult {
 	private int protectedDamage = 0;
 	private int protectorId = 0;
 	private int shieldMp = 0;
-	
+
 	private boolean launchSubEffect = true;
 
 	public AttackResult(int damage, AttackStatus attackStatus) {
@@ -60,8 +60,7 @@ public class AttackResult {
 	}
 
 	/**
-	 * @param damage
-	 *          the damage to set
+	 * @param damage the damage to set
 	 */
 	public void setDamage(int damage) {
 		this.damage = damage;
@@ -82,18 +81,17 @@ public class AttackResult {
 	}
 
 	/**
-	 * @param type
-	 *          the Damage Type to set
+	 * @param type the Damage Type to set
 	 */
 	public void setDamageType(HitType type) {
 		this.hitType = type;
 	}
-	
+
 	/**
 	 * shield effects related
 	 * 
 	 */
-	
+
 	/**
 	 * @return the shieldType
 	 */
@@ -102,8 +100,7 @@ public class AttackResult {
 	}
 
 	/**
-	 * @param shieldType
-	 *          the shieldType to set
+	 * @param shieldType the shieldType to set
 	 */
 	public void setShieldType(int shieldType) {
 		this.shieldType |= shieldType;
@@ -124,7 +121,7 @@ public class AttackResult {
 	public void setReflectedSkillId(int skillId) {
 		this.reflectedSkillId = skillId;
 	}
-	
+
 	public int getProtectedSkillId() {
 		return this.protectedSkillId;
 	}
@@ -132,7 +129,7 @@ public class AttackResult {
 	public void setProtectedSkillId(int skillId) {
 		this.protectedSkillId = skillId;
 	}
-	
+
 	public int getProtectedDamage() {
 		return this.protectedDamage;
 	}
@@ -140,7 +137,7 @@ public class AttackResult {
 	public void setProtectedDamage(int protectedDamage) {
 		this.protectedDamage = protectedDamage;
 	}
-	
+
 	public int getProtectorId() {
 		return this.protectorId;
 	}
@@ -148,20 +145,20 @@ public class AttackResult {
 	public void setProtectorId(int protectorId) {
 		this.protectorId = protectorId;
 	}
-	
+
 	public boolean isLaunchSubEffect() {
 		return launchSubEffect;
 	}
-	
+
 	public void setLaunchSubEffect(boolean launchSubEffect) {
 		this.launchSubEffect = launchSubEffect;
 	}
-	
+
 	public int getShieldMp() {
-        return this.shieldMp;
-    }
-	
+		return this.shieldMp;
+	}
+
 	public void setShieldMp(int shieldMp) {
-        this.shieldMp = shieldMp;
-    }
+		this.shieldMp = shieldMp;
+	}
 }

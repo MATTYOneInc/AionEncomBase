@@ -48,19 +48,14 @@ public class Mesh {
 	// TODO: Document this enum
 	public enum Mode {
 
-		Points,
-		Lines,
-		LineLoop,
-		LineStrip,
-		Triangles,
-		TriangleStrip,
-		TriangleFan,
-		Hybrid
+		Points, Lines, LineLoop, LineStrip, Triangles, TriangleStrip, TriangleFan, Hybrid
 	}
 
-	// private static final int BUFFERS_SIZE = VertexBuffer.Type.BoneIndex.ordinal() + 1;
+	// private static final int BUFFERS_SIZE = VertexBuffer.Type.BoneIndex.ordinal()
+	// + 1;
 	/**
-	 * The bounding volume that contains the mesh entirely. By default a BoundingBox (AABB).
+	 * The bounding volume that contains the mesh entirely. By default a BoundingBox
+	 * (AABB).
 	 */
 	private BoundingVolume meshBound = new BoundingBox();
 	private CollisionData collisionTree = null;
@@ -153,7 +148,8 @@ public class Mesh {
 		for (int i = 0; i < vbs.size(); i++) {
 			VertexBuffer vb = vbs.get(i);
 			// if (vb.getFormat() != Format.Float){
-			// throw new UnsupportedOperationException("Cannot interleave vertex buffer.\n" +
+			// throw new UnsupportedOperationException("Cannot interleave vertex buffer.\n"
+			// +
 			// "Contains not-float data.");
 			// }
 			stride += vb.componentsLength;
@@ -169,36 +165,36 @@ public class Mesh {
 			for (int i = 0; i < vbs.size(); i++) {
 				VertexBuffer vb = vbs.get(i);
 				switch (vb.getFormat()) {
-					case Float:
-						FloatBuffer fb = (FloatBuffer) vb.getData();
-						for (int comp = 0; comp < vb.components; comp++) {
-							dataBuf.putFloat(fb.get());
-						}
-						break;
-					case Byte:
-					case UnsignedByte:
-						ByteBuffer bb = (ByteBuffer) vb.getData();
-						for (int comp = 0; comp < vb.components; comp++) {
-							dataBuf.put(bb.get());
-						}
-						break;
-					case Half:
-					case Short:
-					case UnsignedShort:
-						ShortBuffer sb = (ShortBuffer) vb.getData();
-						for (int comp = 0; comp < vb.components; comp++) {
-							dataBuf.putShort(sb.get());
-						}
-						break;
-					case Int:
-					case UnsignedInt:
-						IntBuffer ib = (IntBuffer) vb.getData();
-						for (int comp = 0; comp < vb.components; comp++) {
-							dataBuf.putInt(ib.get());
-						}
-						break;
-					default:
-						break;
+				case Float:
+					FloatBuffer fb = (FloatBuffer) vb.getData();
+					for (int comp = 0; comp < vb.components; comp++) {
+						dataBuf.putFloat(fb.get());
+					}
+					break;
+				case Byte:
+				case UnsignedByte:
+					ByteBuffer bb = (ByteBuffer) vb.getData();
+					for (int comp = 0; comp < vb.components; comp++) {
+						dataBuf.put(bb.get());
+					}
+					break;
+				case Half:
+				case Short:
+				case UnsignedShort:
+					ShortBuffer sb = (ShortBuffer) vb.getData();
+					for (int comp = 0; comp < vb.components; comp++) {
+						dataBuf.putShort(sb.get());
+					}
+					break;
+				case Int:
+				case UnsignedInt:
+					IntBuffer ib = (IntBuffer) vb.getData();
+					for (int comp = 0; comp < vb.components; comp++) {
+						dataBuf.putInt(ib.get());
+					}
+					break;
+				default:
+					break;
 				}
 			}
 		}
@@ -216,21 +212,21 @@ public class Mesh {
 
 	private int computeNumElements(int bufSize) {
 		switch (mode) {
-			case Triangles:
-				return bufSize / 3;
-			case TriangleFan:
-			case TriangleStrip:
-				return bufSize - 2;
-			case Points:
-				return bufSize;
-			case Lines:
-				return bufSize / 2;
-			case LineLoop:
-				return bufSize;
-			case LineStrip:
-				return bufSize - 1;
-			default:
-				throw new UnsupportedOperationException();
+		case Triangles:
+			return bufSize / 3;
+		case TriangleFan:
+		case TriangleStrip:
+			return bufSize - 2;
+		case Points:
+			return bufSize;
+		case Lines:
+			return bufSize / 2;
+		case LineLoop:
+			return bufSize;
+		case LineStrip:
+			return bufSize - 1;
+		default:
+			throw new UnsupportedOperationException();
 		}
 	}
 
@@ -246,8 +242,7 @@ public class Mesh {
 		}
 		if (ib != null) {
 			elementCount = computeNumElements(ib.getData().capacity());
-		}
-		else {
+		} else {
 			elementCount = computeNumElements(vertCount);
 		}
 	}
@@ -336,7 +331,8 @@ public class Mesh {
 		collisionTree = tree;
 	}
 
-	public int collideWith(Collidable other, Matrix4f worldMatrix, BoundingVolume worldBound, CollisionResults results) {
+	public int collideWith(Collidable other, Matrix4f worldMatrix, BoundingVolume worldBound,
+			CollisionResults results) {
 
 		if (collisionTree == null) {
 			createCollisionData();
@@ -355,8 +351,7 @@ public class Mesh {
 			vb.setupData(Usage.Dynamic, components, Format.Float, buf);
 			// buffers.put(type, vb);
 			buffers.put(type.ordinal(), vb);
-		}
-		else {
+		} else {
 			vb.setupData(Usage.Dynamic, components, Format.Float, buf);
 		}
 		updateCounts();
@@ -449,14 +444,11 @@ public class Mesh {
 		Buffer buf = vb.getData();
 		if (buf instanceof ByteBuffer) {
 			return new IndexByteBuffer((ByteBuffer) buf);
-		}
-		else if (buf instanceof ShortBuffer) {
+		} else if (buf instanceof ShortBuffer) {
 			return new IndexShortBuffer((ShortBuffer) buf);
-		}
-		else if (buf instanceof IntBuffer) {
+		} else if (buf instanceof IntBuffer) {
 			return new IndexIntBuffer((IntBuffer) buf);
-		}
-		else {
+		} else {
 			throw new UnsupportedOperationException("Index buffer type unsupported: " + buf.getClass());
 		}
 	}

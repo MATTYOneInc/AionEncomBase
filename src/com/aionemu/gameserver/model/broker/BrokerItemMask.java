@@ -25,8 +25,7 @@ import com.aionemu.gameserver.model.broker.filter.BrokerPlayerClassExtraFilter;
 import com.aionemu.gameserver.model.broker.filter.BrokerRecipeFilter;
 import com.aionemu.gameserver.model.gameobjects.Item;
 
-public enum BrokerItemMask
-{
+public enum BrokerItemMask {
 	/**
 	 * Weapons Section + Sub Categories
 	 */
@@ -45,7 +44,7 @@ public enum BrokerItemMask
 	WEAPON_HARP(1020, new BrokerContainsFilter(1020), BrokerItemMask.WEAPON, false),
 	WEAPON_KEYBLADE(1021, new BrokerContainsFilter(1021), BrokerItemMask.WEAPON, false),
 	WEAPON_KEYHAMMER(1022, new BrokerContainsFilter(1022), BrokerItemMask.WEAPON, false),
-	
+
 	/**
 	 * Armor Section + Sub Categories
 	 */
@@ -82,7 +81,7 @@ public enum BrokerItemMask
 	ARMOR_PLATE_SHOES(1146, new BrokerContainsFilter(1146), BrokerItemMask.ARMOR_PLATE, false),
 	ARMOR_SHIELD(1150, new BrokerContainsFilter(1150), BrokerItemMask.ARMOR, false),
 	ARMOR_WINGS(1870, new BrokerContainsFilter(1870), BrokerItemMask.ARMOR, false),
-	
+
 	/**
 	 * Accessory Section + Sub Categories
 	 */
@@ -94,44 +93,66 @@ public enum BrokerItemMask
 	ACCESSORY_HEADGEAR(7030, new BrokerMinMaxFilter(1250, 1270), BrokerItemMask.ACCESSORY, false),
 	ACCESSORY_PLUME(1871, new BrokerContainsFilter(1871), BrokerItemMask.ACCESSORY, false),
 	ACCESSORY_BRACELET(1872, new BrokerContainsFilter(1872), BrokerItemMask.ACCESSORY, false),
-	
+
 	/**
 	 * Skill related Section + Sub Categories
 	 */
 	SKILL_RELATED(9040, new BrokerContainsFilter(1400, 1695), null, true),
 	SKILL_RELATED_STIGMA(1400, new BrokerContainsFilter(1400), BrokerItemMask.SKILL_RELATED, true),
-	SKILL_RELATED_STIGMA_GLADIATOR(6010, new BrokerPlayerClassExtraFilter(1400, PlayerClass.GLADIATOR), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	SKILL_RELATED_STIGMA_TEMPLAR(6011, new BrokerPlayerClassExtraFilter(1400, PlayerClass.TEMPLAR), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	SKILL_RELATED_STIGMA_ASSASSIN(6012, new BrokerPlayerClassExtraFilter(1400, PlayerClass.ASSASSIN), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	SKILL_RELATED_STIGMA_RANGER(6013, new BrokerPlayerClassExtraFilter(1400, PlayerClass.RANGER), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	SKILL_RELATED_STIGMA_SORCERER(6014, new BrokerPlayerClassExtraFilter(1400, PlayerClass.SORCERER), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	SKILL_RELATED_STIGMA_SPIRITMASTER(6015, new BrokerPlayerClassExtraFilter(1400, PlayerClass.SPIRIT_MASTER), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	SKILL_RELATED_STIGMA_CLERIC(6016, new BrokerPlayerClassExtraFilter(1400, PlayerClass.CLERIC), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	SKILL_RELATED_STIGMA_CHANTER(6017, new BrokerPlayerClassExtraFilter(1400, PlayerClass.CHANTER), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	SKILL_RELATED_STIGMA_GUNSLINGER(6018, new BrokerPlayerClassExtraFilter(1400, PlayerClass.GUNSLINGER), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	SKILL_RELATED_STIGMA_SONGWEAVER(6019, new BrokerPlayerClassExtraFilter(1400, PlayerClass.SONGWEAVER), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	SKILL_RELATED_STIGMA_AETHERTECH(6020, new BrokerPlayerClassExtraFilter(1400, PlayerClass.AETHERTECH), BrokerItemMask.SKILL_RELATED_STIGMA, false),
-	
+	SKILL_RELATED_STIGMA_GLADIATOR(6010, new BrokerPlayerClassExtraFilter(1400, PlayerClass.GLADIATOR),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+	SKILL_RELATED_STIGMA_TEMPLAR(6011, new BrokerPlayerClassExtraFilter(1400, PlayerClass.TEMPLAR),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+	SKILL_RELATED_STIGMA_ASSASSIN(6012, new BrokerPlayerClassExtraFilter(1400, PlayerClass.ASSASSIN),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+	SKILL_RELATED_STIGMA_RANGER(6013, new BrokerPlayerClassExtraFilter(1400, PlayerClass.RANGER),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+	SKILL_RELATED_STIGMA_SORCERER(6014, new BrokerPlayerClassExtraFilter(1400, PlayerClass.SORCERER),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+	SKILL_RELATED_STIGMA_SPIRITMASTER(6015, new BrokerPlayerClassExtraFilter(1400, PlayerClass.SPIRIT_MASTER),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+	SKILL_RELATED_STIGMA_CLERIC(6016, new BrokerPlayerClassExtraFilter(1400, PlayerClass.CLERIC),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+	SKILL_RELATED_STIGMA_CHANTER(6017, new BrokerPlayerClassExtraFilter(1400, PlayerClass.CHANTER),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+	SKILL_RELATED_STIGMA_GUNSLINGER(6018, new BrokerPlayerClassExtraFilter(1400, PlayerClass.GUNSLINGER),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+	SKILL_RELATED_STIGMA_SONGWEAVER(6019, new BrokerPlayerClassExtraFilter(1400, PlayerClass.SONGWEAVER),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+	SKILL_RELATED_STIGMA_AETHERTECH(6020, new BrokerPlayerClassExtraFilter(1400, PlayerClass.AETHERTECH),
+			BrokerItemMask.SKILL_RELATED_STIGMA, false),
+
 	SKILL_RELATED_SKILL_MANUAL(1695, new BrokerContainsFilter(1695), BrokerItemMask.SKILL_RELATED, true),
-	SKILL_RELATED_SKILL_MANUAL_GLADIATOR(6020, new BrokerPlayerClassExtraFilter(1695, PlayerClass.GLADIATOR), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	SKILL_RELATED_SKILL_MANUAL_TEMPLAR(6021, new BrokerPlayerClassExtraFilter(1695, PlayerClass.TEMPLAR), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	SKILL_RELATED_SKILL_MANUAL_ASSASSIN(6022, new BrokerPlayerClassExtraFilter(1695, PlayerClass.ASSASSIN), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	SKILL_RELATED_SKILL_MANUAL_RANGER(6023, new BrokerPlayerClassExtraFilter(1695, PlayerClass.RANGER), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	SKILL_RELATED_SKILL_MANUAL_SORCERER(6024, new BrokerPlayerClassExtraFilter(1695, PlayerClass.SORCERER), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	SKILL_RELATED_SKILL_MANUAL_SPIRITMASTER(6025, new BrokerPlayerClassExtraFilter(1695, PlayerClass.SPIRIT_MASTER), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	SKILL_RELATED_SKILL_MANUAL_CLERIC(6026, new BrokerPlayerClassExtraFilter(1695, PlayerClass.CLERIC), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	SKILL_RELATED_SKILL_MANUAL_CHANTER(6027, new BrokerPlayerClassExtraFilter(1695, PlayerClass.CHANTER), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	SKILL_RELATED_SKILL_MANUAL_GUNSLINGER(6028, new BrokerPlayerClassExtraFilter(1695, PlayerClass.GUNSLINGER), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	SKILL_RELATED_SKILL_MANUAL_SONGWEAVER(6029, new BrokerPlayerClassExtraFilter(1695, PlayerClass.SONGWEAVER), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	SKILL_RELATED_SKILL_MANUAL_AETHERTECH(6030, new BrokerPlayerClassExtraFilter(1695, PlayerClass.AETHERTECH), BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
-	
+	SKILL_RELATED_SKILL_MANUAL_GLADIATOR(6020, new BrokerPlayerClassExtraFilter(1695, PlayerClass.GLADIATOR),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+	SKILL_RELATED_SKILL_MANUAL_TEMPLAR(6021, new BrokerPlayerClassExtraFilter(1695, PlayerClass.TEMPLAR),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+	SKILL_RELATED_SKILL_MANUAL_ASSASSIN(6022, new BrokerPlayerClassExtraFilter(1695, PlayerClass.ASSASSIN),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+	SKILL_RELATED_SKILL_MANUAL_RANGER(6023, new BrokerPlayerClassExtraFilter(1695, PlayerClass.RANGER),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+	SKILL_RELATED_SKILL_MANUAL_SORCERER(6024, new BrokerPlayerClassExtraFilter(1695, PlayerClass.SORCERER),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+	SKILL_RELATED_SKILL_MANUAL_SPIRITMASTER(6025, new BrokerPlayerClassExtraFilter(1695, PlayerClass.SPIRIT_MASTER),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+	SKILL_RELATED_SKILL_MANUAL_CLERIC(6026, new BrokerPlayerClassExtraFilter(1695, PlayerClass.CLERIC),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+	SKILL_RELATED_SKILL_MANUAL_CHANTER(6027, new BrokerPlayerClassExtraFilter(1695, PlayerClass.CHANTER),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+	SKILL_RELATED_SKILL_MANUAL_GUNSLINGER(6028, new BrokerPlayerClassExtraFilter(1695, PlayerClass.GUNSLINGER),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+	SKILL_RELATED_SKILL_MANUAL_SONGWEAVER(6029, new BrokerPlayerClassExtraFilter(1695, PlayerClass.SONGWEAVER),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+	SKILL_RELATED_SKILL_MANUAL_AETHERTECH(6030, new BrokerPlayerClassExtraFilter(1695, PlayerClass.AETHERTECH),
+			BrokerItemMask.SKILL_RELATED_SKILL_MANUAL, false),
+
 	/**
 	 * Housing + Sub Categories
 	 */
 	HOME_DECOR(9070, new BrokerContainsFilter(1710, 1711), null, true),
 	HOME_DECOR_OUT_DOOR(1710, new BrokerContainsFilter(1710), BrokerItemMask.HOME_DECOR, false),
 	HOME_DECOR_IN_DOOR(1711, new BrokerContainsFilter(1711), BrokerItemMask.HOME_DECOR, false),
-	
+
 	FURNITURE(9080, new BrokerContainsFilter(1700, 1701, 1702, 1703, 1704), null, true),
 	FURNITURE_OUT_DOOR(1703, new BrokerContainsFilter(1703), BrokerItemMask.FURNITURE, false),
 	FURNITURE_IN_DOOR(8070, new BrokerContainsFilter(1700, 1701, 1702), BrokerItemMask.FURNITURE, true),
@@ -139,7 +160,7 @@ public enum BrokerItemMask
 	FURNITURE_IN_DOOR_FREE_STANDING(1701, new BrokerContainsFilter(1701), BrokerItemMask.FURNITURE_IN_DOOR, false),
 	FURNITURE_IN_DOOR_RUGS(1702, new BrokerContainsFilter(1702), BrokerItemMask.FURNITURE_IN_DOOR, false),
 	FURNITURE_IN_DOOR_OUT_DOOR(1704, new BrokerContainsFilter(1704), BrokerItemMask.FURNITURE, false),
-	
+
 	/**
 	 * Craft Section + Sub Categories
 	 */
@@ -156,53 +177,60 @@ public enum BrokerItemMask
 	CRAFT_DESIGN_ALCHEMY(6044, new BrokerRecipeFilter(40007, 1522), BrokerItemMask.CRAFT_DESIGN, false),
 	CRAFT_DESIGN_COOKING(6045, new BrokerRecipeFilter(40001, 1522), BrokerItemMask.CRAFT_DESIGN, false),
 	CRAFT_DESIGN_CONSTRUCTION(6046, new BrokerRecipeFilter(40010, 1522), BrokerItemMask.CRAFT_DESIGN, false),
-	
+
 	/**
 	 * Consumables Section + Sub Categories
 	 */
-	CONSUMABLES(9060, new BrokerContainsFilter(1410, 1600, 1620, 1640, 1650, 1660, 16603, 1661, 1665, 1670, 1680, 1690, 16912, 1692, 1693, 1694, 1696, 1873, 1900), null, true),
-    CONSUMABLES_FOOD(1600, new BrokerContainsFilter(1600), BrokerItemMask.CONSUMABLES, false),
-    CONSUMABLES_POTION(1620, new BrokerContainsFilter(1620), BrokerItemMask.CONSUMABLES, false),
-    CONSUMABLES_SCROLL(7060, new BrokerContainsFilter(1640), BrokerItemMask.CONSUMABLES, false),
-    CONSUMABLES_MODIFY(8060, new BrokerContainsFilter(1650, 1660, 1665, 1670, 16603, 1680, 1692, 16912, 1873), BrokerItemMask.CONSUMABLES, true),
-    CONSUMABLES_MODIFY_ENCHANTMENT_STONE(1660, new BrokerContainsFilter(1660), BrokerItemMask.CONSUMABLES_MODIFY, false),
-    CONSUMABLES_MODIFY_MANASTONE(1670, new BrokerContainsFilter(1670), BrokerItemMask.CONSUMABLES_MODIFY, false),
+	CONSUMABLES(9060,
+			new BrokerContainsFilter(1410, 1600, 1620, 1640, 1650, 1660, 16603, 1661, 1665, 1670, 1680, 1690, 16912,
+					1692, 1693, 1694, 1696, 1873, 1900),
+			null, true),
+	CONSUMABLES_FOOD(1600, new BrokerContainsFilter(1600), BrokerItemMask.CONSUMABLES, false),
+	CONSUMABLES_POTION(1620, new BrokerContainsFilter(1620), BrokerItemMask.CONSUMABLES, false),
+	CONSUMABLES_SCROLL(7060, new BrokerContainsFilter(1640), BrokerItemMask.CONSUMABLES, false),
+	CONSUMABLES_MODIFY(8060, new BrokerContainsFilter(1650, 1660, 1665, 1670, 16603, 1680, 1692, 16912, 1873),
+			BrokerItemMask.CONSUMABLES, true),
+	CONSUMABLES_MODIFY_ENCHANTMENT_STONE(1660, new BrokerContainsFilter(1660), BrokerItemMask.CONSUMABLES_MODIFY,
+			false),
+	CONSUMABLES_MODIFY_MANASTONE(1670, new BrokerContainsFilter(1670), BrokerItemMask.CONSUMABLES_MODIFY, false),
 	CONSUMABLES_MODIFY_TEMPERING(7064, new BrokerContainsExtraFilter(16603), BrokerItemMask.CONSUMABLES_MODIFY, false),
-    CONSUMABLES_MODIFY_GODSTONE(1680, new BrokerContainsFilter(1680), BrokerItemMask.CONSUMABLES_MODIFY, false),
-    CONSUMABLES_MODIFY_DYE(7061, new BrokerContainsFilter(1692), BrokerItemMask.CONSUMABLES_MODIFY, false),
-    CONSUMABLES_MODIFY_PAINT(7065, new BrokerContainsExtraFilter(16912), BrokerItemMask.CONSUMABLES_MODIFY, false),
-	CONSUMABLES_MODIFY_AMPLIFICATION_STONE(7066, new BrokerContainsFilter(1665), BrokerItemMask.CONSUMABLES_MODIFY, false),
+	CONSUMABLES_MODIFY_GODSTONE(1680, new BrokerContainsFilter(1680), BrokerItemMask.CONSUMABLES_MODIFY, false),
+	CONSUMABLES_MODIFY_DYE(7061, new BrokerContainsFilter(1692), BrokerItemMask.CONSUMABLES_MODIFY, false),
+	CONSUMABLES_MODIFY_PAINT(7065, new BrokerContainsExtraFilter(16912), BrokerItemMask.CONSUMABLES_MODIFY, false),
+	CONSUMABLES_MODIFY_AMPLIFICATION_STONE(7066, new BrokerContainsFilter(1665), BrokerItemMask.CONSUMABLES_MODIFY,
+			false),
 	CONSUMABLES_MODIFY_REDUCTION_STONE(1650, new BrokerContainsFilter(1650), BrokerItemMask.CONSUMABLES_MODIFY, false),
 	CONSUMABLES_MODIFY_ESSENCE_CORE(1873, new BrokerContainsFilter(1873), BrokerItemMask.CONSUMABLES_MODIFY, false),
-	CONSUMABLES_MODIFY_OTHER(7063, new BrokerContainsFilter(1661), BrokerItemMask.CONSUMABLES_MODIFY, false), 
-    CONSUMABLES_OTHER(7062, new BrokerContainsFilter(1410, 1690, 1693, 1694, 1696, 1900), BrokerItemMask.CONSUMABLES, false),
-	
+	CONSUMABLES_MODIFY_OTHER(7063, new BrokerContainsFilter(1661), BrokerItemMask.CONSUMABLES_MODIFY, false),
+	CONSUMABLES_OTHER(7062, new BrokerContainsFilter(1410, 1690, 1693, 1694, 1696, 1900), BrokerItemMask.CONSUMABLES,
+			false),
+
 	/**
 	 * Other Section
 	 */
 	OTHER(7070, new BrokerContainsFilter(1850, 1860, 1880, 1881, 1887), null, false),
 	UNKNOWN(1, new BrokerContainsFilter(0), null, false);
-	
+
 	private int typeId;
 	private BrokerFilter filter;
 	private BrokerItemMask parent;
 	private boolean childrenExist;
-	
+
 	private BrokerItemMask(int typeId, BrokerFilter filter, BrokerItemMask parent, boolean childrenExist) {
 		this.typeId = typeId;
 		this.filter = filter;
 		this.parent = parent;
 		this.childrenExist = childrenExist;
 	}
-	
+
 	public int getId() {
 		return typeId;
 	}
-	
+
 	public boolean isMatches(Item item) {
 		return filter.accept(item.getItemTemplate());
 	}
-	
+
 	public boolean isChildrenMask(int maskId) {
 		for (BrokerItemMask p = parent; p != null; p = p.parent) {
 			if (p.typeId == maskId) {
@@ -211,7 +239,7 @@ public enum BrokerItemMask
 		}
 		return false;
 	}
-	
+
 	public static BrokerItemMask getBrokerMaskById(int id) {
 		for (BrokerItemMask mt : values()) {
 			if (mt.typeId == id) {
@@ -220,7 +248,7 @@ public enum BrokerItemMask
 		}
 		return UNKNOWN;
 	}
-	
+
 	public boolean hasChildren() {
 		return childrenExist;
 	}

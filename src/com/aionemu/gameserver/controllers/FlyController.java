@@ -62,8 +62,7 @@ public class FlyController {
 
 			if (player.isInState(CreatureState.FLYING)) {
 				player.setFlyState(1);
-			}
-			else {
+			} else {
 				player.setFlyState(0);
 				player.getLifeStats().triggerFpRestore();
 				if (removeWings) {
@@ -77,8 +76,9 @@ public class FlyController {
 	}
 
 	/**
-	 * Ends flying 1) by CM_EMOTION (pageDown or fly button press) 2) from server side during teleportation (abyss gates
-	 * should not break flying) 3) when FP is decreased to 0
+	 * Ends flying 1) by CM_EMOTION (pageDown or fly button press) 2) from server
+	 * side during teleportation (abyss gates should not break flying) 3) when FP is
+	 * decreased to 0
 	 */
 	public void endFly(boolean forceEndFly) {
 		if (player.isInState(CreatureState.FLYING) || player.isInState(CreatureState.GLIDING)) {
@@ -101,11 +101,13 @@ public class FlyController {
 	}
 
 	/**
-	 * This method is called to start flying (called by CM_EMOTION when pageUp or pressed fly button)
+	 * This method is called to start flying (called by CM_EMOTION when pageUp or
+	 * pressed fly button)
 	 */
 	public void startFly() {
 		if (player.getFlyReuseTime() > System.currentTimeMillis()) {
-			AuditLogger.info(player, "No Flight Cooldown Hack. Reuse time: " + ((player.getFlyReuseTime() - System.currentTimeMillis()) / 1000));
+			AuditLogger.info(player, "No Flight Cooldown Hack. Reuse time: "
+					+ ((player.getFlyReuseTime() - System.currentTimeMillis()) / 1000));
 			return;
 		}
 		player.setFlyReuseTime(System.currentTimeMillis() + FLY_REUSE_TIME);
@@ -121,8 +123,9 @@ public class FlyController {
 	}
 
 	/**
-	 * Switching to glide mode (called by CM_MOVE with VALIDATE_GLIDE movement type) 1) from standing state 2) from flying
-	 * state If from stand to glide - start fp reduce + emotions/stats if from fly to glide - only emotions/stats
+	 * Switching to glide mode (called by CM_MOVE with VALIDATE_GLIDE movement type)
+	 * 1) from standing state 2) from flying state If from stand to glide - start fp
+	 * reduce + emotions/stats if from fly to glide - only emotions/stats
 	 */
 	public boolean switchToGliding() {
 		if (!player.isInState(CreatureState.GLIDING) && player.canPerformMove()) {

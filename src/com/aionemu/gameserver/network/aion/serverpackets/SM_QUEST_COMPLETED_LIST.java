@@ -22,24 +22,23 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 
 import javolution.util.FastList;
 
-public class SM_QUEST_COMPLETED_LIST extends AionServerPacket
-{
+public class SM_QUEST_COMPLETED_LIST extends AionServerPacket {
 	private FastList<QuestState> questState;
-	
+
 	public SM_QUEST_COMPLETED_LIST(FastList<QuestState> questState) {
 		this.questState = questState;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeH(0x01);
 		writeH(-questState.size() & 0xFFFF);
-		for (QuestState qs: questState) {
+		for (QuestState qs : questState) {
 			writeD(qs.getQuestId());
 			writeC(qs.getCompleteCount());
 			writeC(0x01);
-			writeH(0x01);//unk 5.3
-			writeD(0x01);//unk 5.3
+			writeH(0x01);// unk 5.3
+			writeD(0x01);// unk 5.3
 		}
 		FastList.recycle(questState);
 		questState = null;

@@ -39,7 +39,8 @@ public class SpellAttackEffect extends AbstractOverTimeEffect {
 		Creature effector = effect.getEffector();
 		int valueWithDelta = value + delta * effect.getSkillLevel();
 		int critAddDmg = critAddDmg2 + critAddDmg1 * effect.getSkillLevel();
-		int damage = AttackUtil.calculateMagicalOverTimeSkillResult(effect, valueWithDelta, element, position, true, critProbMod2, critAddDmg);
+		int damage = AttackUtil.calculateMagicalOverTimeSkillResult(effect, valueWithDelta, element, position, true,
+				critProbMod2, critAddDmg);
 		effected.getController().onAttack(effector, effect.getSkillId(), TYPE.DAMAGE, damage, false, LOG.SPELLATK);
 		effected.getObserveController().notifyDotAttackedObservers(effector, effect);
 	}

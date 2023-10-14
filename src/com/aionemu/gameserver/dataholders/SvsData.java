@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "svs")
-public class SvsData
-{
+public class SvsData {
 	@XmlElement(name = "svs_location")
 	private List<SvsTemplate> svsTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, SvsLocation> svs = new FastMap<Integer, SvsLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (SvsTemplate template : svsTemplates) {
 			svs.put(template.getId(), new SvsLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return svs.size();
 	}
-	
+
 	public FastMap<Integer, SvsLocation> getSvsLocations() {
 		return svs;
 	}

@@ -44,7 +44,8 @@ public class CM_CUSTOM_SETTINGS extends AionClientPacket {
 		 */
 		display = readH();
 		/**
-		 * 1 : view detail player 2 : trade 4 : party/force 8 : legion 16 : friend 32 : dual(pvp)
+		 * 1 : view detail player 2 : trade 4 : party/force 8 : legion 16 : friend 32 :
+		 * dual(pvp)
 		 */
 		deny = readH();
 	}

@@ -54,55 +54,55 @@ public class SM_LEGION_EDIT extends AionServerPacket {
 	protected void writeImpl(AionConnection con) {
 		writeC(type);
 		switch (type) {
-			/** Change Legion Level **/
-			case 0x00:
-				writeC(legion.getLegionLevel());
-				break;
-			/** Change Legion Rank **/
-			case 0x01:
-				writeD(legion.getLegionRank());
-				break;
-			/** Change Legion Permissions **/
-			case 0x02:
-				writeH(legion.getDeputyPermission());
-				writeH(legion.getCenturionPermission());
-				writeH(legion.getLegionaryPermission());
-				writeH(legion.getVolunteerPermission());
-				break;
-			/** Change Legion Contributions **/
-			case 0x03:
-				writeQ(legion.getContributionPoints()); // get Contributions
-				break;
-			case 0x04:
-				writeQ(legion.getLegionWarehouse().getKinah());
-				break;
-			/** Change Legion Announcement **/
-			case 0x05:
-				writeS(announcement);
-				writeD(unixTime);
-				break;
-			/** Disband Legion **/
-			case 0x06:
-				writeD(unixTime);
-				break;
-			/** Recover Legion **/
-			case 0x07:
-				break;
-			/** Refresh Legion Announcement? **/
-			case 0x08:
-				break;
-			/** Stonespear Reach **/		
-			case 0x10:
-			    break;
-			case 0x0C:
-                writeS(legion.getLegionDescription());
-                break;
-            case 0x0D:
-            	writeC(legion.getLegionJoinType());
-            	break;
-            case 0x0E:
-            	writeH(legion.getMinLevel());
-            	break;
+		/** Change Legion Level **/
+		case 0x00:
+			writeC(legion.getLegionLevel());
+			break;
+		/** Change Legion Rank **/
+		case 0x01:
+			writeD(legion.getLegionRank());
+			break;
+		/** Change Legion Permissions **/
+		case 0x02:
+			writeH(legion.getDeputyPermission());
+			writeH(legion.getCenturionPermission());
+			writeH(legion.getLegionaryPermission());
+			writeH(legion.getVolunteerPermission());
+			break;
+		/** Change Legion Contributions **/
+		case 0x03:
+			writeQ(legion.getContributionPoints()); // get Contributions
+			break;
+		case 0x04:
+			writeQ(legion.getLegionWarehouse().getKinah());
+			break;
+		/** Change Legion Announcement **/
+		case 0x05:
+			writeS(announcement);
+			writeD(unixTime);
+			break;
+		/** Disband Legion **/
+		case 0x06:
+			writeD(unixTime);
+			break;
+		/** Recover Legion **/
+		case 0x07:
+			break;
+		/** Refresh Legion Announcement? **/
+		case 0x08:
+			break;
+		/** Stonespear Reach **/
+		case 0x10:
+			break;
+		case 0x0C:
+			writeS(legion.getLegionDescription());
+			break;
+		case 0x0D:
+			writeC(legion.getLegionJoinType());
+			break;
+		case 0x0E:
+			writeH(legion.getMinLevel());
+			break;
 		}
 	}
 }

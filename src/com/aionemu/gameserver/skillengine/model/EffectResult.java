@@ -21,11 +21,9 @@ package com.aionemu.gameserver.skillengine.model;
  *
  */
 public enum EffectResult {
-	
-	NORMAL(0),
-	ABSORBED(1),
-	CONFLICT(2);
-	
+
+	NORMAL(0), ABSORBED(1), CONFLICT(2);
+
 	private int id;
 
 	private EffectResult(int id) {

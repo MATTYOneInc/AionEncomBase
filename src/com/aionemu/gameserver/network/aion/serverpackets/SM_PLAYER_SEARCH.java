@@ -26,24 +26,24 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_PLAYER_SEARCH extends AionServerPacket
-{
+public class SM_PLAYER_SEARCH extends AionServerPacket {
 	private static final Logger log = LoggerFactory.getLogger(SM_PLAYER_SEARCH.class);
 
 	private List<Player> players;
 	private int region;
-	
+
 	public SM_PLAYER_SEARCH(List<Player> players, int region) {
 		this.players = new ArrayList<Player>(players);
 		this.region = region;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeH(players.size());
 		for (Player player : players) {
 			if (player.getActiveRegion() == null) {
-			   //log.warn("CHECKPOINT: null active region for " + player.getObjectId() + "-" + player.getX() + "-" + player.getY() + "-" + player.getZ());
+				// log.warn("CHECKPOINT: null active region for " + player.getObjectId() + "-" +
+				// player.getX() + "-" + player.getY() + "-" + player.getZ());
 			}
 			writeD(player.getActiveRegion() == null ? region : player.getActiveRegion().getMapId());
 			writeF(player.getPosition().getX());
@@ -54,11 +54,9 @@ public class SM_PLAYER_SEARCH extends AionServerPacket
 			writeC(player.getLevel());
 			if (player.isInGroup2()) {
 				writeC(3);
-			}
-			else if (player.isLookingForGroup()) {
+			} else if (player.isLookingForGroup()) {
 				writeC(2);
-			}
-			else {
+			} else {
 				writeC(0);
 			}
 			writeS(player.getName(), 56);

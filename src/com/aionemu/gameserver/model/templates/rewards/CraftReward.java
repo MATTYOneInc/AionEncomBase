@@ -33,7 +33,8 @@ import com.aionemu.gameserver.model.templates.itemgroups.ItemRaceEntry;
  * <p>
  * Java class for CraftReward complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within this class.
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="CraftReward">

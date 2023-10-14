@@ -23,23 +23,23 @@ import com.aionemu.gameserver.services.LegionService;
 
 public class CM_LEGION_JOIN_CANCEL extends AionClientPacket {
 
-    private int legionId;
-	
-    public CM_LEGION_JOIN_CANCEL(int opcode, State state, State... restStates) {
-        super(opcode, state, restStates);
-    }
-	
-    @Override
-    protected void readImpl() {
-        legionId = readD();
-    }
-	
-    @Override
-    protected void runImpl() {
-        Player player = getConnection().getActivePlayer();
-        if (player == null) {
-        	return;
+	private int legionId;
+
+	public CM_LEGION_JOIN_CANCEL(int opcode, State state, State... restStates) {
+		super(opcode, state, restStates);
+	}
+
+	@Override
+	protected void readImpl() {
+		legionId = readD();
+	}
+
+	@Override
+	protected void runImpl() {
+		Player player = getConnection().getActivePlayer();
+		if (player == null) {
+			return;
 		}
-        LegionService.getInstance().handleJoinRequestCancel(player, legionId);
-    }
+		LegionService.getInstance().handleJoinRequestCancel(player, legionId);
+	}
 }

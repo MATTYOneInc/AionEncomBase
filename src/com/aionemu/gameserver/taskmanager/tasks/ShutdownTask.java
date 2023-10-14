@@ -62,7 +62,8 @@ public class ShutdownTask extends TaskFromDBHandler {
 
 			@Override
 			public void visit(Player player) {
-				PacketSendUtility.sendBrightYellowMessageOnCenter(player, "Automatic Task: The server will shutdown in " + warnCountDown + " seconds ! Please find a peace place and disconnect your character.");
+				PacketSendUtility.sendBrightYellowMessageOnCenter(player, "Automatic Task: The server will shutdown in "
+						+ warnCountDown + " seconds ! Please find a peace place and disconnect your character.");
 			}
 		});
 

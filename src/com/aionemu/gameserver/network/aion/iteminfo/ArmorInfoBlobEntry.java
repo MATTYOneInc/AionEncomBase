@@ -23,7 +23,8 @@ import com.aionemu.gameserver.model.items.ItemSlot;
 import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
 
 /**
- * This blob is sent for armors. It keeps info about slots that armor can be equipped to.
+ * This blob is sent for armors. It keeps info about slots that armor can be
+ * equipped to.
  * 
  * @author -Nemesiss-
  * @modified Rolandas

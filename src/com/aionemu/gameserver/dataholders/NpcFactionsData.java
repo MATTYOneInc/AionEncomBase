@@ -37,9 +37,9 @@ public class NpcFactionsData {
 
 	@XmlElement(name = "npc_faction", required = true)
 	protected List<NpcFactionTemplate> npcFactionsData;
-	private TIntObjectHashMap<NpcFactionTemplate> factionsById =  new TIntObjectHashMap<NpcFactionTemplate>();
-	private TIntObjectHashMap<NpcFactionTemplate> factionsByNpcId =  new TIntObjectHashMap<NpcFactionTemplate>();
-	
+	private TIntObjectHashMap<NpcFactionTemplate> factionsById = new TIntObjectHashMap<NpcFactionTemplate>();
+	private TIntObjectHashMap<NpcFactionTemplate> factionsByNpcId = new TIntObjectHashMap<NpcFactionTemplate>();
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		factionsById.clear();
 		for (NpcFactionTemplate template : npcFactionsData) {

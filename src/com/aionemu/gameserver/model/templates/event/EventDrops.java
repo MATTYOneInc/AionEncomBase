@@ -28,13 +28,13 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "EventDrops")
 public class EventDrops {
 
-    @XmlElement(name = "event_drop")
-    protected List<EventDrop> eventDrops;
+	@XmlElement(name = "event_drop")
+	protected List<EventDrop> eventDrops;
 
-    public List<EventDrop> getEventDrops() {
-        if (eventDrops == null) {
-            eventDrops = new ArrayList<EventDrop>();
-        }
-        return this.eventDrops;
-    }
+	public List<EventDrop> getEventDrops() {
+		if (eventDrops == null) {
+			eventDrops = new ArrayList<EventDrop>();
+		}
+		return this.eventDrops;
+	}
 }

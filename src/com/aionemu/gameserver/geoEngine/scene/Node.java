@@ -31,8 +31,10 @@ import com.aionemu.gameserver.geoEngine.math.Ray;
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
 
 /**
- * <code>Node</code> defines an internal node of a scene graph. The internal node maintains a collection of children and handles merging said children into a single bound to allow for very fast
- * culling of multiple nodes. Node allows for any number of children to be attached.
+ * <code>Node</code> defines an internal node of a scene graph. The internal
+ * node maintains a collection of children and handles merging said children
+ * into a single bound to allow for very fast culling of multiple nodes. Node
+ * allows for any number of children to be attached.
  *
  * @author Mark Powell
  * @author Gregg Patton
@@ -54,10 +56,11 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * Constructor instantiates a new <code>Node</code> with a default empty list for containing children.
+	 * Constructor instantiates a new <code>Node</code> with a default empty list
+	 * for containing children.
 	 *
-	 * @param name
-	 *            the name of the scene element. This is required for identification and comparision purposes.
+	 * @param name the name of the scene element. This is required for
+	 *             identification and comparision purposes.
 	 */
 	public Node(String name) {
 		super(name);
@@ -74,7 +77,8 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * <code>getTriangleCount</code> returns the number of triangles contained in all sub-branches of this node that contain geometry.
+	 * <code>getTriangleCount</code> returns the number of triangles contained in
+	 * all sub-branches of this node that contain geometry.
 	 *
 	 * @return the triangle count of this branch.
 	 */
@@ -90,7 +94,8 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * <code>getVertexCount</code> returns the number of vertices contained in all sub-branches of this node that contain geometry.
+	 * <code>getVertexCount</code> returns the number of vertices contained in all
+	 * sub-branches of this node that contain geometry.
 	 *
 	 * @return the vertex count of this branch.
 	 */
@@ -107,14 +112,13 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * <code>attachChild</code> attaches a child to this node. This node becomes the child's parent. The current number of children maintained is returned. <br>
+	 * <code>attachChild</code> attaches a child to this node. This node becomes the
+	 * child's parent. The current number of children maintained is returned. <br>
 	 * If the child already had a parent it is detached from that former parent.
 	 *
-	 * @param child
-	 *            the child to attach to this node.
+	 * @param child the child to attach to this node.
 	 * @return the number of children maintained by this node.
-	 * @throws NullPointerException
-	 *             If child is null.
+	 * @throws NullPointerException If child is null.
 	 */
 	public int attachChild(Spatial child) {
 		if (child == null) {
@@ -132,14 +136,14 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * <code>attachChildAt</code> attaches a child to this node at an index. This node becomes the child's parent. The current number of children maintained is returned. <br>
+	 * <code>attachChildAt</code> attaches a child to this node at an index. This
+	 * node becomes the child's parent. The current number of children maintained is
+	 * returned. <br>
 	 * If the child already had a parent it is detached from that former parent.
 	 *
-	 * @param child
-	 *            the child to attach to this node.
+	 * @param child the child to attach to this node.
 	 * @return the number of children maintained by this node.
-	 * @throws NullPointerException
-	 *             if child is null.
+	 * @throws NullPointerException if child is null.
 	 */
 	public int attachChildAt(Spatial child, int index) {
 		if (child == null) {
@@ -157,10 +161,10 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * <code>detachChild</code> removes a given child from the node's list. This child will no longe be maintained.
+	 * <code>detachChild</code> removes a given child from the node's list. This
+	 * child will no longe be maintained.
 	 *
-	 * @param child
-	 *            the child to remove.
+	 * @param child the child to remove.
 	 * @return the index the child was at. -1 if the child was not in the list.
 	 */
 	public int detachChild(Spatial child) {
@@ -179,10 +183,11 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * <code>detachChild</code> removes a given child from the node's list. This child will no longe be maintained. Only the first child with a matching name is removed.
+	 * <code>detachChild</code> removes a given child from the node's list. This
+	 * child will no longe be maintained. Only the first child with a matching name
+	 * is removed.
 	 *
-	 * @param childName
-	 *            the child to remove.
+	 * @param childName the child to remove.
 	 * @return the index the child was at. -1 if the child was not in the list.
 	 */
 	public int detachChildNamed(String childName) {
@@ -201,10 +206,10 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * <code>detachChildAt</code> removes a child at a given index. That child is returned for saving purposes.
+	 * <code>detachChildAt</code> removes a child at a given index. That child is
+	 * returned for saving purposes.
 	 *
-	 * @param index
-	 *            the index of the child to be removed.
+	 * @param index the index of the child to be removed.
 	 * @return the child at the supplied index.
 	 */
 	public Spatial detachChildAt(int index) {
@@ -246,8 +251,7 @@ public class Node extends Spatial implements Cloneable {
 	/**
 	 * <code>getChild</code> returns a child at a given index.
 	 *
-	 * @param i
-	 *            the index to retrieve the child from.
+	 * @param i the index to retrieve the child from.
 	 * @return the child at a specified index.
 	 */
 	public Spatial getChild(int i) {
@@ -255,10 +259,10 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * <code>getChild</code> returns the first child found with exactly the given name (case sensitive.)
+	 * <code>getChild</code> returns the first child found with exactly the given
+	 * name (case sensitive.)
 	 *
-	 * @param name
-	 *            the name of the child to retrieve. If null, we'll return null.
+	 * @param name the name of the child to retrieve. If null, we'll return null.
 	 * @return the child if found, or null.
 	 */
 	public Spatial getChild(String name) {
@@ -270,8 +274,7 @@ public class Node extends Spatial implements Cloneable {
 			Spatial child = children.get(x);
 			if (name.equals(child.getName())) {
 				return child;
-			}
-			else if (child instanceof Node) {
+			} else if (child instanceof Node) {
 				Spatial out = ((Node) child).getChild(name);
 				if (out != null) {
 					return out;
@@ -282,10 +285,10 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * determines if the provided Spatial is contained in the children list of this node.
+	 * determines if the provided Spatial is contained in the children list of this
+	 * node.
 	 *
-	 * @param spat
-	 *            the child object to look for.
+	 * @param spat the child object to look for.
 	 * @return true if the object is contained, false otherwise.
 	 */
 	public boolean hasChild(Spatial spat) {
@@ -338,10 +341,12 @@ public class Node extends Spatial implements Cloneable {
 				// not used materialIds do not have collision intention for materials set
 				// not all material meshes have physical collisions set
 				// TODO: implement event mesh collisions
-				if ((child.getIntentions() & results.getIntentions()) == 0 || (child.getIntentions() & CollisionIntention.EVENT.getId()) != 0) {
+				if ((child.getIntentions() & results.getIntentions()) == 0
+						|| (child.getIntentions() & CollisionIntention.EVENT.getId()) != 0) {
 					continue;
 				}
-				if ((results.getIntentions() & CollisionIntention.MATERIAL.getId()) != 0 && child.getMaterialId() <= 0) {
+				if ((results.getIntentions() & CollisionIntention.MATERIAL.getId()) != 0
+						&& child.getMaterialId() <= 0) {
 					continue;
 				}
 			}
@@ -354,11 +359,14 @@ public class Node extends Spatial implements Cloneable {
 	}
 
 	/**
-	 * Returns flat list of Spatials implementing the specified class AND with name matching the specified pattern.
+	 * Returns flat list of Spatials implementing the specified class AND with name
+	 * matching the specified pattern.
 	 * </P>
 	 * <p/>
-	 * Note that we are <i>matching</i> the pattern, therefore the pattern must match the entire pattern (i.e. it behaves as if it is sandwiched between "^" and "$"). You can set regex modes, like
-	 * case insensitivity, by using the (?X) or (?X:Y) constructs.
+	 * Note that we are <i>matching</i> the pattern, therefore the pattern must
+	 * match the entire pattern (i.e. it behaves as if it is sandwiched between "^"
+	 * and "$"). You can set regex modes, like case insensitivity, by using the (?X)
+	 * or (?X:Y) constructs.
 	 * </P>
 	 * <p/>
 	 * By design, it is always safe to code loops like: <CODE><PRE>
@@ -366,15 +374,18 @@ public class Node extends Spatial implements Cloneable {
 	 * </PRE></CODE>
 	 * </P>
 	 * <p/>
-	 * "Descendants" does not include self, per the definition of the word. To test for descendants AND self, you must do a <code>node.matches(aClass, aRegex)</code> +
+	 * "Descendants" does not include self, per the definition of the word. To test
+	 * for descendants AND self, you must do a
+	 * <code>node.matches(aClass, aRegex)</code> +
 	 * <code>node.descendantMatches(aClass, aRegex)</code>.
 	 * <p/>
 	 *
-	 * @param spatialSubclass
-	 *            Subclass which matching Spatials must implement. Null causes all Spatials to qualify.
-	 * @param nameRegex
-	 *            Regular expression to match Spatial name against. Null causes all Names to qualify.
-	 * @return Non-null, but possibly 0-element, list of matching Spatials (also Instances extending Spatials).
+	 * @param spatialSubclass Subclass which matching Spatials must implement. Null
+	 *                        causes all Spatials to qualify.
+	 * @param nameRegex       Regular expression to match Spatial name against. Null
+	 *                        causes all Names to qualify.
+	 * @return Non-null, but possibly 0-element, list of matching Spatials (also
+	 *         Instances extending Spatials).
 	 * @see java.util.regex.Pattern
 	 * @see Spatial#matches(Class<? extends Spatial>, String)
 	 */
@@ -433,8 +444,7 @@ public class Node extends Spatial implements Cloneable {
 				if (resultBound != null) {
 					// merge current world bound with child world bound
 					resultBound.mergeLocal(child.getWorldBound());
-				}
-				else {
+				} else {
 					// set world bound to first non-null child world bound
 					if (child.getWorldBound() != null) {
 						resultBound = child.getWorldBound().clone(this.worldBound);
@@ -447,7 +457,10 @@ public class Node extends Spatial implements Cloneable {
 
 	/*
 	 * (non-Javadoc)
-	 * @see aionjHungary.geoEngine.scene.Spatial#setTransform(aionjHungary.geoEngine.math.Matrix3f, aionjHungary.geoEngine.math.Vector3f)
+	 * 
+	 * @see
+	 * aionjHungary.geoEngine.scene.Spatial#setTransform(aionjHungary.geoEngine.math
+	 * .Matrix3f, aionjHungary.geoEngine.math.Vector3f)
 	 */
 	@Override
 	public void setTransform(Matrix3f rotation, Vector3f loc, float scale) {
@@ -466,11 +479,9 @@ public class Node extends Spatial implements Cloneable {
 			if (spatial instanceof Geometry) {
 				Geometry geom = new Geometry(spatial.getName(), ((Geometry) spatial).getMesh());
 				node.attachChild(geom);
-			}
-			else if (spatial instanceof Node) {
+			} else if (spatial instanceof Node) {
 				node.attachChild(((Node) (spatial)).clone());
-			}
-			else {
+			} else {
 				new UnsupportedDataTypeException();
 			}
 		}

@@ -35,7 +35,7 @@ public class SiegeWeaponMoveController extends SummonMoveController {
 	public SiegeWeaponMoveController(Summon owner) {
 		super(owner);
 	}
-	
+
 	@Override
 	public void moveToDestination() {
 		if (!owner.canPerformMove() || (owner.getAi2().getSubState() == AISubState.CAST)) {
@@ -44,8 +44,7 @@ public class SiegeWeaponMoveController extends SummonMoveController {
 			}
 			updateLastMove();
 			return;
-		}
-		else if (started.compareAndSet(false, true)) {
+		} else if (started.compareAndSet(false, true)) {
 			movementMask = -32;
 			PacketSendUtility.broadcastPacket(owner, new SM_MOVE(owner));
 		}

@@ -45,139 +45,140 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ItemData extends ReloadableData {
 
-    @XmlElement(name = "item_template")
-    private List<ItemTemplate> its;
-    
-    @XmlTransient
-    private TIntObjectHashMap<ItemTemplate> items;
-    
-    @XmlTransient
-    private TIntObjectHashMap<ItemTemplate> petEggs = new TIntObjectHashMap<ItemTemplate>();
-    
-    @XmlTransient
-    Map<Integer, List<ItemTemplate>> manastones = new HashMap<Integer, List<ItemTemplate>>();
-    
-    @XmlTransient
-    Map<Integer, ItemTemplate> allItems;
+	@XmlElement(name = "item_template")
+	private List<ItemTemplate> its;
 
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        items = new TIntObjectHashMap<ItemTemplate>();
-        allItems = new HashMap<Integer, ItemTemplate>();
-        for (ItemTemplate it : its) {
-            items.put(it.getTemplateId(), it);
-            allItems.put(it.getTemplateId(), it);
-            //if (it.getCategory().equals(ItemCategory.MANASTONE)) {
-			//	int level = it.getLevel();
-			//	if (!manastones.containsKey(level)) {
-			//		manastones.put(level, new ArrayList<ItemTemplate>());
-			//	}
-			//	manastones.get(level).add(it);
+	@XmlTransient
+	private TIntObjectHashMap<ItemTemplate> items;
+
+	@XmlTransient
+	private TIntObjectHashMap<ItemTemplate> petEggs = new TIntObjectHashMap<ItemTemplate>();
+
+	@XmlTransient
+	Map<Integer, List<ItemTemplate>> manastones = new HashMap<Integer, List<ItemTemplate>>();
+
+	@XmlTransient
+	Map<Integer, ItemTemplate> allItems;
+
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		items = new TIntObjectHashMap<ItemTemplate>();
+		allItems = new HashMap<Integer, ItemTemplate>();
+		for (ItemTemplate it : its) {
+			items.put(it.getTemplateId(), it);
+			allItems.put(it.getTemplateId(), it);
+			// if (it.getCategory().equals(ItemCategory.MANASTONE)) {
+			// int level = it.getLevel();
+			// if (!manastones.containsKey(level)) {
+			// manastones.put(level, new ArrayList<ItemTemplate>());
 			// }
-            if (it.getActions() == null) {
-                continue;
-            }
-        }
-        its = null;
-    }
+			// manastones.get(level).add(it);
+			// }
+			if (it.getActions() == null) {
+				continue;
+			}
+		}
+		its = null;
+	}
 
-    public void cleanup() {
-        for (ItemCleanupTemplate ict : DataManager.ITEM_CLEAN_UP.getList()) {
-            ItemTemplate template = items.get(ict.getId());
-            applyCleanup(template, ict.resultTrade(), ItemMask.TRADEABLE);
-            applyCleanup(template, ict.resultSell(), ItemMask.SELLABLE);
-            applyCleanup(template, ict.resultWH(), ItemMask.STORABLE_IN_WH);
-            applyCleanup(template, ict.resultAccountWH(), ItemMask.STORABLE_IN_AWH);
-            applyCleanup(template, ict.resultLegionWH(), ItemMask.STORABLE_IN_LWH);
-        }
-    }
+	public void cleanup() {
+		for (ItemCleanupTemplate ict : DataManager.ITEM_CLEAN_UP.getList()) {
+			ItemTemplate template = items.get(ict.getId());
+			applyCleanup(template, ict.resultTrade(), ItemMask.TRADEABLE);
+			applyCleanup(template, ict.resultSell(), ItemMask.SELLABLE);
+			applyCleanup(template, ict.resultWH(), ItemMask.STORABLE_IN_WH);
+			applyCleanup(template, ict.resultAccountWH(), ItemMask.STORABLE_IN_AWH);
+			applyCleanup(template, ict.resultLegionWH(), ItemMask.STORABLE_IN_LWH);
+		}
+	}
 
-    private void applyCleanup(ItemTemplate item, byte result, int mask) {
-        if (result != -1) {
-            switch (result) {
-                case 1:
-                    item.modifyMask(true, mask);
-                    break;
-                case 0:
-                    item.modifyMask(false, mask);
-                    break;
-            }
-        }
-    }
+	private void applyCleanup(ItemTemplate item, byte result, int mask) {
+		if (result != -1) {
+			switch (result) {
+			case 1:
+				item.modifyMask(true, mask);
+				break;
+			case 0:
+				item.modifyMask(false, mask);
+				break;
+			}
+		}
+	}
 
-    public ItemTemplate getItemTemplate(int itemId) {
-        return items.get(itemId);
-    }
-    
-    public Map<Integer, ItemTemplate> getAllItems() {
-    	return allItems;
-    }
+	public ItemTemplate getItemTemplate(int itemId) {
+		return items.get(itemId);
+	}
 
-    /**
-     * @return items.size()
-     */
-    public int size() {
-        return items.size();
-    }
+	public Map<Integer, ItemTemplate> getAllItems() {
+		return allItems;
+	}
 
-    public Map<Integer, List<ItemTemplate>> getManastones() {
-        return manastones;
-    }
+	/**
+	 * @return items.size()
+	 */
+	public int size() {
+		return items.size();
+	}
 
-    public ItemTemplate getPetEggTemplate(int petId) {
-        return petEggs.get(petId);
-    }
+	public Map<Integer, List<ItemTemplate>> getManastones() {
+		return manastones;
+	}
 
-    @Override
-    public void reload(Player admin) {
-        try {
-            JAXBContext jc = JAXBContext.newInstance(StaticData.class);
-            Unmarshaller un = jc.createUnmarshaller();
-            un.setSchema(getSchema("./data/static_data/static_data.xsd"));
-            List<ItemTemplate> newTemplates = new ArrayList<ItemTemplate>();
-            ItemData data = (ItemData) un.unmarshal(new File("./data/static_data/items/item_templates.xml"));
-            if (data != null && data.getData() != null) {
-                newTemplates.addAll(data.getData());
-            }
-            DataManager.ITEM_DATA.setData(newTemplates);
-        } catch (Exception e) {
-            PacketSendUtility.sendMessage(admin, "Item templates reload failed!");
-            log.error("Item templates reload failed!", e);
-        } finally {
-            PacketSendUtility.sendMessage(admin, "Item templates reload Success! Total loaded: " + DataManager.ITEM_DATA.size());
-        }
-    }
+	public ItemTemplate getPetEggTemplate(int petId) {
+		return petEggs.get(petId);
+	}
 
-    @Override
-    protected List<ItemTemplate> getData() {
-        return its;
-    }
+	@Override
+	public void reload(Player admin) {
+		try {
+			JAXBContext jc = JAXBContext.newInstance(StaticData.class);
+			Unmarshaller un = jc.createUnmarshaller();
+			un.setSchema(getSchema("./data/static_data/static_data.xsd"));
+			List<ItemTemplate> newTemplates = new ArrayList<ItemTemplate>();
+			ItemData data = (ItemData) un.unmarshal(new File("./data/static_data/items/item_templates.xml"));
+			if (data != null && data.getData() != null) {
+				newTemplates.addAll(data.getData());
+			}
+			DataManager.ITEM_DATA.setData(newTemplates);
+		} catch (Exception e) {
+			PacketSendUtility.sendMessage(admin, "Item templates reload failed!");
+			log.error("Item templates reload failed!", e);
+		} finally {
+			PacketSendUtility.sendMessage(admin,
+					"Item templates reload Success! Total loaded: " + DataManager.ITEM_DATA.size());
+		}
+	}
 
-    @SuppressWarnings("unchecked")
-    @Override
-    protected void setData(List<?> data) {
-        this.its = (List<ItemTemplate>) data;
-        this.afterUnmarshal(null, null);
-    }
+	@Override
+	protected List<ItemTemplate> getData() {
+		return its;
+	}
 
-    public String getItemDescr(String descr) {
-        for (ItemTemplate it : items.valueCollection()) {
-            if (descr.equalsIgnoreCase(it.getDescr())) {
-                return it.getDescr();
-            }
-        }
-        return "";
-    }
+	@SuppressWarnings("unchecked")
+	@Override
+	protected void setData(List<?> data) {
+		this.its = (List<ItemTemplate>) data;
+		this.afterUnmarshal(null, null);
+	}
 
-    public int giveItemIdOf(String descr) {
-        for (ItemTemplate it : items.valueCollection()) {
-            if (descr.equalsIgnoreCase(it.getDescr())) {
-                return it.getTemplateId();
-            }
-        }
-        return 0;
-    }
+	public String getItemDescr(String descr) {
+		for (ItemTemplate it : items.valueCollection()) {
+			if (descr.equalsIgnoreCase(it.getDescr())) {
+				return it.getDescr();
+			}
+		}
+		return "";
+	}
+
+	public int giveItemIdOf(String descr) {
+		for (ItemTemplate it : items.valueCollection()) {
+			if (descr.equalsIgnoreCase(it.getDescr())) {
+				return it.getTemplateId();
+			}
+		}
+		return 0;
+	}
 
 	public TIntObjectHashMap<ItemTemplate> getItemData() {
-        return items;
-    }
+		return items;
+	}
 }

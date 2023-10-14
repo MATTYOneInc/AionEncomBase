@@ -21,7 +21,8 @@ import com.aionemu.gameserver.geoEngine.math.Vector3f;
 public interface MotionAllowedListener {
 
 	/**
-	 * Check if motion allowed. Modify position and velocity vectors appropriately if not allowed..
+	 * Check if motion allowed. Modify position and velocity vectors appropriately
+	 * if not allowed..
 	 *
 	 * @param position
 	 * @param velocity

@@ -88,7 +88,8 @@ public abstract class PlayableMoveController<T extends Creature> extends Creatur
 		float y = owner.getY();
 		float z = owner.getZ();
 
-		float currentSpeed = StatFunctions.getMovementModifier(owner, StatEnum.SPEED, owner.getGameStats().getMovementSpeedFloat());
+		float currentSpeed = StatFunctions.getMovementModifier(owner, StatEnum.SPEED,
+				owner.getGameStats().getMovementSpeedFloat());
 		float futureDistPassed = currentSpeed * (System.currentTimeMillis() - lastMoveUpdate) / 1000f;
 		float dist = (float) MathUtil.getDistance(x, y, z, targetDestX, targetDestY, targetDestZ);
 
@@ -106,8 +107,8 @@ public abstract class PlayableMoveController<T extends Creature> extends Creatur
 		float newZ = (targetDestZ - z) * distFraction + z;
 
 		/*
-		 * if ((movementMask & MovementMask.MOUSE) == 0) { targetDestX = newX + vectorX; targetDestY = newY + vectorY;
-		 * targetDestZ = newZ + vectorZ; }
+		 * if ((movementMask & MovementMask.MOUSE) == 0) { targetDestX = newX + vectorX;
+		 * targetDestY = newY + vectorY; targetDestZ = newZ + vectorZ; }
 		 */
 
 		World.getInstance().updatePosition(owner, newX, newY, newZ, heading, false);

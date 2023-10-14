@@ -40,54 +40,62 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "IdianAction")
-public class IdianAction extends AbstractItemAction
-{
+public class IdianAction extends AbstractItemAction {
 	@XmlAttribute(name = "setId")
 	protected int polishSetId;
-	
+
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		int idianKinah = 68647;
 		if (parentItem == null || targetItem == null) {
-			//The item cannot be found.
+			// The item cannot be found.
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_COLOR_ERROR);
 			return false;
-		} if (parentItem.getItemTemplate().getLevel() > targetItem.getItemTemplate().getLevel()) {
-			//You cannot socket Idian to the selected item. The Idian's level is too high.
-	        PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_POLISH_WRONG_LEVEL);
+		}
+		if (parentItem.getItemTemplate().getLevel() > targetItem.getItemTemplate().getLevel()) {
+			// You cannot socket Idian to the selected item. The Idian's level is too high.
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_POLISH_WRONG_LEVEL);
 			return false;
-		} if (targetItem.hasRetuning()) {
-			//You need to tune your equipment before socketing Idian.
-	        PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_POLISH_NEED_IDENTIFY);
-	        return false;
-        } if (player.getInventory().getKinah() < idianKinah) {
+		}
+		if (targetItem.hasRetuning()) {
+			// You need to tune your equipment before socketing Idian.
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_POLISH_NEED_IDENTIFY);
+			return false;
+		}
+		if (player.getInventory().getKinah() < idianKinah) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_MONEY);
 			return false;
-		} if (player.getInventory().getKinah() >= idianKinah) {
+		}
+		if (player.getInventory().getKinah() >= idianKinah) {
 			player.getInventory().decreaseKinah(idianKinah);
 		}
-		return !player.isAttackMode() && targetItem.getItemTemplate().isWeapon() && targetItem.getItemTemplate().isCanIdian();
+		return !player.isAttackMode() && targetItem.getItemTemplate().isWeapon()
+				&& targetItem.getItemTemplate().isCanIdian();
 	}
-	
+
 	@Override
 	public void act(final Player player, final Item parentItem, final Item targetItem) {
 		final int parentItemId = parentItem.getItemId();
 		final int parntObjectId = parentItem.getObjectId();
 		final int parentNameId = parentItem.getNameId();
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItemId, 3000, 0, 0), true);
+		PacketSendUtility.broadcastPacket(player,
+				new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItemId, 3000, 0, 0),
+				true);
 		final ItemUseObserver observer = new ItemUseObserver() {
 			@Override
 			public void abort() {
 				player.getController().cancelTask(TaskId.ITEM_USE);
 				player.removeItemCoolDown(parentItem.getItemTemplate().getUseLimits().getDelayId());
-				//Canceled %0 Idian socketing.
+				// Canceled %0 Idian socketing.
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_POLISH_CANCELED(targetItem.getNameId()));
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 2, 0), true);
+				PacketSendUtility.broadcastPacket(player,
+						new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 2, 0), true);
 				player.getObserveController().removeObserver(this);
 			}
 		};
@@ -96,25 +104,30 @@ public class IdianAction extends AbstractItemAction
 			@Override
 			public void run() {
 				player.getObserveController().removeObserver(observer);
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 1, 1), true);
+				PacketSendUtility.broadcastPacket(player,
+						new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parntObjectId, parentItemId, 0, 1, 1), true);
 				if (!player.getInventory().decreaseByObjectId(parntObjectId, 1)) {
 					return;
 				}
-				RandomBonusResult bonus = DataManager.ITEM_RANDOM_BONUSES.getRandomModifiers(StatBonusType.POLISH, polishSetId);
+				RandomBonusResult bonus = DataManager.ITEM_RANDOM_BONUSES.getRandomModifiers(StatBonusType.POLISH,
+						polishSetId);
 				if (bonus == null) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ENCHANT_ITEM_FAILED(new DescriptionId(parentNameId)));
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_ENCHANT_ITEM_FAILED(new DescriptionId(parentNameId)));
 					return;
 				}
-				//%0's Idian is fully charged.
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_POLISH_SUCCEED(targetItem.getItemTemplate().getNameId()));
+				// %0's Idian is fully charged.
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_MSG_POLISH_SUCCEED(targetItem.getItemTemplate().getNameId()));
 				IdianStone idianStone = targetItem.getIdianStone();
-				if (idianStone!= null) {
+				if (idianStone != null) {
 					idianStone.onUnEquip(player);
 					targetItem.setIdianStone(null);
 					idianStone.setPersistentState(PersistentState.DELETED);
 					DAOManager.getDAO(ItemStoneListDAO.class).storeIdianStones(idianStone);
 				}
-				idianStone = new IdianStone(parentItemId, PersistentState.NEW, targetItem, bonus.getTemplateNumber(), 1000000);
+				idianStone = new IdianStone(parentItemId, PersistentState.NEW, targetItem, bonus.getTemplateNumber(),
+						1000000);
 				targetItem.setIdianStone(idianStone);
 				if (targetItem.isEquipped()) {
 					idianStone.onEquip(player);
@@ -123,7 +136,7 @@ public class IdianAction extends AbstractItemAction
 			}
 		}, 3000));
 	}
-	
+
 	public int getPolishSetId() {
 		return polishSetId;
 	}

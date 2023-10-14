@@ -23,19 +23,18 @@ import com.aionemu.gameserver.model.idiandepths.IdianDepthsStateType;
  * @author Rinzler (Encom)
  */
 
-public class Idian extends IdianDepths<IdianDepthsLocation>
-{
+public class Idian extends IdianDepths<IdianDepthsLocation> {
 	public Idian(IdianDepthsLocation idianDepths) {
 		super(idianDepths);
 	}
-	
+
 	@Override
 	public void startIdianDepths() {
 		getIdianDepthsLocation().setActiveIdianDepths(this);
 		despawn();
 		spawn(IdianDepthsStateType.OPEN);
 	}
-	
+
 	@Override
 	public void stopIdianDepths() {
 		getIdianDepthsLocation().setActiveIdianDepths(null);

@@ -63,11 +63,9 @@ public final class PlayerSkillList implements SkillList<Player> {
 		for (PlayerSkillEntry entry : skills) {
 			if (entry.isStigma()) {
 				stigmaSkills.put(entry.getSkillId(), entry);
-			}
-			else if (entry.isLinked()) {
+			} else if (entry.isLinked()) {
 				linkedSkills.put(entry.getSkillId(), entry);
-			}
-			else {
+			} else {
 				basicSkills.put(entry.getSkillId(), entry);
 			}
 		}
@@ -83,7 +81,7 @@ public final class PlayerSkillList implements SkillList<Player> {
 		allSkills.addAll(linkedSkills.values());
 		return allSkills.toArray(new PlayerSkillEntry[allSkills.size()]);
 	}
-	
+
 	public List<Integer> getAllSkills2() {
 		HashSet<Integer> allSkills = new HashSet<Integer>();
 		for (PlayerSkillEntry i : basicSkills.values()) {
@@ -105,7 +103,7 @@ public final class PlayerSkillList implements SkillList<Player> {
 	public PlayerSkillEntry[] getStigmaSkills() {
 		return stigmaSkills.values().toArray(new PlayerSkillEntry[stigmaSkills.size()]);
 	}
-	
+
 	public PlayerSkillEntry[] getLinkedSkills() {
 		return linkedSkills.values().toArray(new PlayerSkillEntry[linkedSkills.size()]);
 	}
@@ -120,7 +118,7 @@ public final class PlayerSkillList implements SkillList<Player> {
 		}
 		return stigmaSkills.get(skillId);
 	}
-	
+
 	public PlayerSkillEntry getLinkedSkillEntry(int skillId) {
 		return linkedSkills.get(skillId);
 	}
@@ -134,7 +132,8 @@ public final class PlayerSkillList implements SkillList<Player> {
 		return addSkillAct(player, skillId, skillLevel, true, false, PersistentState.NOACTION, true);
 	}
 
-	private synchronized boolean addSkillAct(Player player, int skillId, int skillLevel, boolean isStigma, boolean isLinked, PersistentState state, boolean isGMSkill) {
+	private synchronized boolean addSkillAct(Player player, int skillId, int skillLevel, boolean isStigma,
+			boolean isLinked, PersistentState state, boolean isGMSkill) {
 		PlayerSkillEntry existingSkill = isStigma ? stigmaSkills.get(skillId) : basicSkills.get(skillId);
 
 		boolean isNew = false;
@@ -143,18 +142,19 @@ public final class PlayerSkillList implements SkillList<Player> {
 			// return false;
 			// }
 			existingSkill.setSkillLvl(skillLevel);
-		}
-		else {
+		} else {
 			if (isStigma) {
-				stigmaSkills.put(skillId, new PlayerSkillEntry(skillId, true, false, skillLevel, 0, null, 0, false, state));
-			}
-			else if (isLinked) {
-				basicSkills.put(skillId, new PlayerSkillEntry(skillId, false, true, skillLevel, 0, null, 0, false, state));
-				linkedSkills.put(skillId, new PlayerSkillEntry(skillId, false, true, skillLevel, 0, null, 0, false, state));
+				stigmaSkills.put(skillId,
+						new PlayerSkillEntry(skillId, true, false, skillLevel, 0, null, 0, false, state));
+			} else if (isLinked) {
+				basicSkills.put(skillId,
+						new PlayerSkillEntry(skillId, false, true, skillLevel, 0, null, 0, false, state));
+				linkedSkills.put(skillId,
+						new PlayerSkillEntry(skillId, false, true, skillLevel, 0, null, 0, false, state));
 				isNew = true;
-			}
-			else {
-				basicSkills.put(skillId, new PlayerSkillEntry(skillId, false, false, skillLevel, 0, null, 0, false, state));
+			} else {
+				basicSkills.put(skillId,
+						new PlayerSkillEntry(skillId, false, false, skillLevel, 0, null, 0, false, state));
 				isNew = true;
 			}
 		}
@@ -170,7 +170,8 @@ public final class PlayerSkillList implements SkillList<Player> {
 	public boolean addLinkedSkill(Player player, int skillId) {
 		player.setLinkedSkill(skillId);
 		SkillTemplate linked = DataManager.SKILL_DATA.getSkillTemplate(skillId);
-		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_STIGMA_GET_LINKED_SKILL(new DescriptionId(DataManager.SKILL_DATA.getSkillTemplate(linked.getSkillId()).getNameId()), 1));
+		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_STIGMA_GET_LINKED_SKILL(
+				new DescriptionId(DataManager.SKILL_DATA.getSkillTemplate(linked.getSkillId()).getNameId()), 1));
 		return addSkill(player, skillId, 1, false, true, PersistentState.NOACTION);
 	}
 
@@ -191,16 +192,18 @@ public final class PlayerSkillList implements SkillList<Player> {
 	}
 
 	public void addLinkedStigmaSkill(Player player, int skillId, int skillLvl) {
-		PlayerSkillEntry skill = new PlayerSkillEntry(skillId, false, true, skillLvl, 0, null, 0, false, PersistentState.NOACTION);
+		PlayerSkillEntry skill = new PlayerSkillEntry(skillId, false, true, skillLvl, 0, null, 0, false,
+				PersistentState.NOACTION);
 		this.stigmaSkills.put(skillId, skill);
 		PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(player, skill));
-		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_STIGMA_GET_LINKED_SKILL(new DescriptionId(DataManager.SKILL_DATA.getSkillTemplate(skill.getSkillId()).getNameId()), skillLvl));
+		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_STIGMA_GET_LINKED_SKILL(
+				new DescriptionId(DataManager.SKILL_DATA.getSkillTemplate(skill.getSkillId()).getNameId()), skillLvl));
 	}
-
 
 	public void addStigmaSkill(Player player, List<StigmaSkill> skills, boolean equipedByNpc) {
 		for (StigmaSkill sSkill : skills) {
-			PlayerSkillEntry skill = new PlayerSkillEntry(sSkill.getSkillId(), true, false, sSkill.getSkillLvl(), 0, null, 0, false, PersistentState.NOACTION);
+			PlayerSkillEntry skill = new PlayerSkillEntry(sSkill.getSkillId(), true, false, sSkill.getSkillLvl(), 0,
+					null, 0, false, PersistentState.NOACTION);
 			this.stigmaSkills.put(sSkill.getSkillId(), skill);
 			if (equipedByNpc) {
 				PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(skill, 1300401, false));
@@ -209,31 +212,34 @@ public final class PlayerSkillList implements SkillList<Player> {
 	}
 
 	public void addStigmaSkill(Player player, int skillId, int skillLevel, boolean withMsg, boolean equipedByNpc) {
-		PlayerSkillEntry skill = new PlayerSkillEntry(skillId, true, false, skillLevel , 0, null, 0, false, PersistentState.NOACTION);
+		PlayerSkillEntry skill = new PlayerSkillEntry(skillId, true, false, skillLevel, 0, null, 0, false,
+				PersistentState.NOACTION);
 		this.stigmaSkills.put(skillId, skill);
 		if (equipedByNpc) {
 			PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(skill, withMsg ? 1300401 : 0, false));
 		}
 	}
 
-	private synchronized boolean addSkill(Player player, int skillId, int skillLevel, boolean isStigma, boolean isLinked, PersistentState state) {
+	private synchronized boolean addSkill(Player player, int skillId, int skillLevel, boolean isStigma,
+			boolean isLinked, PersistentState state) {
 		PlayerSkillEntry existingSkill = isStigma ? stigmaSkills.get(skillId) : basicSkills.get(skillId);
 
 		boolean isNew = false;
 		if (existingSkill != null) {
 			existingSkill.setSkillLvl(skillLevel);
-		}
-		else {
+		} else {
 			if (isStigma) {
-				stigmaSkills.put(skillId, new PlayerSkillEntry(skillId, true, false, skillLevel, 0, null, 0, false, state));
-			}
-			else if (isLinked) {
-				basicSkills.put(skillId, new PlayerSkillEntry(skillId, false, true, skillLevel, 0, null, 0, false, state));
-				linkedSkills.put(skillId, new PlayerSkillEntry(skillId, false, true, skillLevel, 0, null, 0, false, state));
+				stigmaSkills.put(skillId,
+						new PlayerSkillEntry(skillId, true, false, skillLevel, 0, null, 0, false, state));
+			} else if (isLinked) {
+				basicSkills.put(skillId,
+						new PlayerSkillEntry(skillId, false, true, skillLevel, 0, null, 0, false, state));
+				linkedSkills.put(skillId,
+						new PlayerSkillEntry(skillId, false, true, skillLevel, 0, null, 0, false, state));
 				isNew = true;
-			}
-			else {
-				basicSkills.put(skillId, new PlayerSkillEntry(skillId, false, false, skillLevel, 0, null, 0, false, state));
+			} else {
+				basicSkills.put(skillId,
+						new PlayerSkillEntry(skillId, false, false, skillLevel, 0, null, 0, false, state));
 				isNew = true;
 			}
 		}
@@ -247,23 +253,23 @@ public final class PlayerSkillList implements SkillList<Player> {
 
 	public boolean isCraftSkill(int skilId) {
 		switch (skilId) {
-			case 30001:
-			case 30002:
-			case 30003:
-			case 40001:
-			case 40002:
-			case 40003:
-			case 40004:
-			case 40005:
-			case 40006:
-			case 40007:
-			case 40008:
-			case 40009:
-			case 40010:
-			case 40011:
-				return true;
-			default:
-				return false;
+		case 30001:
+		case 30002:
+		case 30003:
+		case 40001:
+		case 40002:
+		case 40003:
+		case 40004:
+		case 40005:
+		case 40006:
+		case 40007:
+		case 40008:
+		case 40009:
+		case 40010:
+		case 40011:
+			return true;
+		default:
+			return false;
 		}
 	}
 
@@ -318,7 +324,8 @@ public final class PlayerSkillList implements SkillList<Player> {
 
 	@Override
 	public boolean isSkillPresent(int skillId) {
-		return basicSkills.containsKey(skillId) || stigmaSkills.containsKey(skillId) || linkedSkills.containsKey(skillId);
+		return basicSkills.containsKey(skillId) || stigmaSkills.containsKey(skillId)
+				|| linkedSkills.containsKey(skillId);
 	}
 
 	@Override
@@ -362,11 +369,13 @@ public final class PlayerSkillList implements SkillList<Player> {
 		switch (skillId) {
 		case 30001:
 		case 30002:
-			PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(player.getSkillList().getSkillEntry(skillId), 1330005, false));
-		break;
+			PacketSendUtility.sendPacket(player,
+					new SM_SKILL_LIST(player.getSkillList().getSkillEntry(skillId), 1330005, false));
+			break;
 		case 30003:
-			PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(player.getSkillList().getSkillEntry(skillId), 1330005, false));
-		break;
+			PacketSendUtility.sendPacket(player,
+					new SM_SKILL_LIST(player.getSkillList().getSkillEntry(skillId), 1330005, false));
+			break;
 		case 40001:
 		case 40002:
 		case 40003:
@@ -377,10 +386,12 @@ public final class PlayerSkillList implements SkillList<Player> {
 		case 40008:
 		case 40009:
 		case 40010:
-			PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(player.getSkillList().getSkillEntry(skillId), 1330061, false));
-		break;
+			PacketSendUtility.sendPacket(player,
+					new SM_SKILL_LIST(player.getSkillList().getSkillEntry(skillId), 1330061, false));
+			break;
 		default:
-			PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(player.getSkillList().getSkillEntry(skillId), 1300050, isNew));
+			PacketSendUtility.sendPacket(player,
+					new SM_SKILL_LIST(player.getSkillList().getSkillEntry(skillId), 1300050, isNew));
 		}
 	}
 

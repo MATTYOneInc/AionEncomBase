@@ -23,9 +23,7 @@ import com.aionemu.gameserver.model.Race;
  * @author Sarynth
  */
 public enum SiegeRace {
-	ELYOS(0, 1800481),
-	ASMODIANS(1, 1800483),
-	BALAUR(2, 1800485);
+	ELYOS(0, 1800481), ASMODIANS(1, 1800483), BALAUR(2, 1800485);
 
 	private int raceId;
 	private DescriptionId descriptionId;
@@ -39,14 +37,14 @@ public enum SiegeRace {
 		return this.raceId;
 	}
 
-	public static SiegeRace getByRace(Race race){
-		switch (race){
-			case ASMODIANS:
-				return SiegeRace.ASMODIANS;
-			case ELYOS:
-				return SiegeRace.ELYOS;
-			default:
-				return SiegeRace.BALAUR;
+	public static SiegeRace getByRace(Race race) {
+		switch (race) {
+		case ASMODIANS:
+			return SiegeRace.ASMODIANS;
+		case ELYOS:
+			return SiegeRace.ELYOS;
+		default:
+			return SiegeRace.BALAUR;
 		}
 	}
 

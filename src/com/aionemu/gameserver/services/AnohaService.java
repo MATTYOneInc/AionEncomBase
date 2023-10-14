@@ -57,22 +57,21 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class AnohaService
-{
+public class AnohaService {
 	private AnohaSchedule anohaSchedule;
 	private Map<Integer, AnohaLocation> anoha;
 	private static final int duration = CustomConfig.ANOHA_DURATION;
 	private static final Logger log = LoggerFactory.getLogger(AnohaService.class);
 
-	//Berserk Anoha 4.7
+	// Berserk Anoha 4.7
 	private FastMap<Integer, VisibleObject> adventSwordEffect = new FastMap<Integer, VisibleObject>();
 
 	private final Map<Integer, BerserkAnoha<?>> activeAnoha = new FastMap<Integer, BerserkAnoha<?>>().shared();
-	
+
 	public void initAnohaLocations() {
 		if (CustomConfig.ANOHA_ENABLED) {
 			anoha = DataManager.ANOHA_DATA.getAnohaLocations();
-			for (AnohaLocation loc: getAnohaLocations().values()) {
+			for (AnohaLocation loc : getAnohaLocations().values()) {
 				spawn(loc, AnohaStateType.PEACE);
 			}
 			log.info("[AnohaService] Loaded " + anoha.size() + " locations.");
@@ -81,19 +80,19 @@ public class AnohaService
 			anoha = Collections.emptyMap();
 		}
 	}
-	
+
 	public void initAnoha() {
 		if (CustomConfig.ANOHA_ENABLED) {
 			log.info("[AnohaService] is initialized...");
-		    anohaSchedule = AnohaSchedule.load();
-		    for (Anoha anoha: anohaSchedule.getAnohasList()) {
-			    for (String berserkTime: anoha.getBerserkTimes()) {
-				    CronService.getInstance().schedule(new AnohaStartRunnable(anoha.getId()), berserkTime);
-			    }
+			anohaSchedule = AnohaSchedule.load();
+			for (Anoha anoha : anohaSchedule.getAnohasList()) {
+				for (String berserkTime : anoha.getBerserkTimes()) {
+					CronService.getInstance().schedule(new AnohaStartRunnable(anoha.getId()), berserkTime);
+				}
 			}
 		}
 	}
-	
+
 	public void startAnoha(final int id) {
 		final BerserkAnoha<?> danuarhero;
 		synchronized (this) {
@@ -111,7 +110,7 @@ public class AnohaService
 			}
 		}, duration * 3600 * 1000);
 	}
-	
+
 	public void stopAnoha(int id) {
 		if (!isAnohaInProgress(id)) {
 			return;
@@ -119,12 +118,13 @@ public class AnohaService
 		BerserkAnoha<?> danuarhero;
 		synchronized (this) {
 			danuarhero = activeAnoha.remove(id);
-		} if (danuarhero == null || danuarhero.isFinished()) {
+		}
+		if (danuarhero == null || danuarhero.isFinished()) {
 			return;
 		}
 		danuarhero.stop();
 	}
-	
+
 	public void spawn(AnohaLocation loc, AnohaStateType cstate) {
 		if (cstate.equals(AnohaStateType.FIGHT)) {
 		}
@@ -138,133 +138,141 @@ public class AnohaService
 			}
 		}
 	}
-	
+
 	public boolean adventSwordEffectSP(int id) {
-        switch (id) {
-            case 1:
-                adventSwordEffect.put(702644, SpawnEngine.spawnObject(SpawnEngine.addNewSingleTimeSpawn(600090000, 702644, 791.27985f, 489.02353f, 142.90796f, (byte) 30), 1));
-			    return true;
-            default:
-                return false;
-        }
-    }
-	
+		switch (id) {
+		case 1:
+			adventSwordEffect.put(702644, SpawnEngine.spawnObject(
+					SpawnEngine.addNewSingleTimeSpawn(600090000, 702644, 791.27985f, 489.02353f, 142.90796f, (byte) 30),
+					1));
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean berserkAnohaMsg1(int id) {
-        switch (id) {
-            case 1:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						//Berserk Anoha will return to Kaldor in 30 minutes.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Named_Spawn_System, 0);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
+		switch (id) {
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					// Berserk Anoha will return to Kaldor in 30 minutes.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Named_Spawn_System, 0);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean wealhtheowGuardianMsg1(int id) {
-        switch (id) {
-            case 1:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						//Enraged Wealhtheow Guardian will appear in 5 minutes.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Anoha_01, 0);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
+		switch (id) {
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					// Enraged Wealhtheow Guardian will appear in 5 minutes.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Anoha_01, 0);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean wealhtheowGuardianMsg2(int id) {
-        switch (id) {
-            case 1:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						//Enraged Wealhtheow Guardian will appear in 3 minutes.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Anoha_02, 0);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
+		switch (id) {
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					// Enraged Wealhtheow Guardian will appear in 3 minutes.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Anoha_02, 0);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean wealhtheowGuardianMsg3(int id) {
-        switch (id) {
-            case 1:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						//Enraged Wealhtheow Guardian will appear in 1 minute.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Anoha_03, 0);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
-	
+		switch (id) {
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					// Enraged Wealhtheow Guardian will appear in 1 minute.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Anoha_03, 0);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public void sendRequest(final Player player) {
-        String message = "Berserk Anoha has appeared. Do you want to fight ?";
-        RequestResponseHandler responseHandler = new RequestResponseHandler(player) {
-            @Override
-            public void acceptRequest(Creature requester, Player responder) {
+		String message = "Berserk Anoha has appeared. Do you want to fight ?";
+		RequestResponseHandler responseHandler = new RequestResponseHandler(player) {
+			@Override
+			public void acceptRequest(Creature requester, Player responder) {
 				TeleportService2.teleportTo(responder, 600090000, 813.6149f, 503.42126f, 143.75f, (byte) 72);
-            }
-            @Override
-            public void denyRequest(Creature requester, Player responder) {
-            }
-        };
-        boolean requested = player.getResponseRequester().putRequest(902247, responseHandler);
-        if (requested) {
-            PacketSendUtility.sendPacket(player, new SM_QUESTION_WINDOW(902247, 0, 0, message));
-        }
-    }
-	
+			}
+
+			@Override
+			public void denyRequest(Creature requester, Player responder) {
+			}
+		};
+		boolean requested = player.getResponseRequester().putRequest(902247, responseHandler);
+		if (requested) {
+			PacketSendUtility.sendPacket(player, new SM_QUESTION_WINDOW(902247, 0, 0, message));
+		}
+	}
+
 	public void despawn(AnohaLocation loc) {
 		if (loc.getSpawned() == null) {
-        	return;
-		} for (VisibleObject obj: loc.getSpawned()) {
-            Npc spawned = (Npc) obj;
-            spawned.setDespawnDelayed(true);
-            if (spawned.getAggroList().getList().isEmpty()) {
-                spawned.getController().cancelTask(TaskId.RESPAWN);
-                obj.getController().onDelete();
-            }
-        }
-        loc.getSpawned().clear();
+			return;
+		}
+		for (VisibleObject obj : loc.getSpawned()) {
+			Npc spawned = (Npc) obj;
+			spawned.setDespawnDelayed(true);
+			if (spawned.getAggroList().getList().isEmpty()) {
+				spawned.getController().cancelTask(TaskId.RESPAWN);
+				obj.getController().onDelete();
+			}
+		}
+		loc.getSpawned().clear();
 	}
-	
+
 	public boolean isAnohaInProgress(int id) {
 		return activeAnoha.containsKey(id);
 	}
-	
+
 	public Map<Integer, BerserkAnoha<?>> getActiveAnoha() {
 		return activeAnoha;
 	}
-	
+
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public AnohaLocation getAnohaLocation(int id) {
 		return anoha.get(id);
 	}
-	
+
 	public Map<Integer, AnohaLocation> getAnohaLocations() {
 		return anoha;
 	}
-	
+
 	public static AnohaService getInstance() {
 		return AnohaServiceHolder.INSTANCE;
 	}
-	
+
 	private static class AnohaServiceHolder {
 		private static final AnohaService INSTANCE = new AnohaService();
 	}

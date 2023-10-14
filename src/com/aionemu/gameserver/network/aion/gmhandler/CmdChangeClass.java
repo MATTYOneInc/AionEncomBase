@@ -26,12 +26,12 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  */
 public class CmdChangeClass extends AbstractGMHandler {
 
-    public CmdChangeClass(Player admin, String params) {
-        super(admin, params);
-        run();
-    }
+	public CmdChangeClass(Player admin, String params) {
+		super(admin, params);
+		run();
+	}
 
-    public void run() {
+	public void run() {
 		// Only for admins !
 		byte classId;
 		String ClassChoose = params;
@@ -41,120 +41,104 @@ public class CmdChangeClass extends AbstractGMHandler {
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("fighter")) {
+		} else if (ClassChoose.equalsIgnoreCase("fighter")) {
 			classId = 1;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("knight")) {
+		} else if (ClassChoose.equalsIgnoreCase("knight")) {
 			classId = 2;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("scout")) {
+		} else if (ClassChoose.equalsIgnoreCase("scout")) {
 			classId = 3;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("assassin")) {
+		} else if (ClassChoose.equalsIgnoreCase("assassin")) {
 			classId = 4;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("ranger")) {
+		} else if (ClassChoose.equalsIgnoreCase("ranger")) {
 			classId = 5;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("mage")) {
+		} else if (ClassChoose.equalsIgnoreCase("mage")) {
 			classId = 6;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("wizard")) {
+		} else if (ClassChoose.equalsIgnoreCase("wizard")) {
 			classId = 7;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("elementalist")) {
+		} else if (ClassChoose.equalsIgnoreCase("elementalist")) {
 			classId = 8;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("cleric")) {
+		} else if (ClassChoose.equalsIgnoreCase("cleric")) {
 			classId = 9;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("priest")) {
+		} else if (ClassChoose.equalsIgnoreCase("priest")) {
 			classId = 10;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("chanter")) {
+		} else if (ClassChoose.equalsIgnoreCase("chanter")) {
 			classId = 11;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("engineer")) {
+		} else if (ClassChoose.equalsIgnoreCase("engineer")) {
 			classId = 12;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("rider")) {
+		} else if (ClassChoose.equalsIgnoreCase("rider")) {
 			classId = 13;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("gunner")) {
+		} else if (ClassChoose.equalsIgnoreCase("gunner")) {
 			classId = 14;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("artist")) {
+		} else if (ClassChoose.equalsIgnoreCase("artist")) {
 			classId = 15;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
-		}
-		else if (ClassChoose.equalsIgnoreCase("bard")) {
+		} else if (ClassChoose.equalsIgnoreCase("bard")) {
 			classId = 16;
 			PlayerClass playerClass = PlayerClass.getPlayerClassById(classId);
 			admin.getCommonData().setPlayerClass(playerClass);
 			admin.getController().upgradePlayer();
 			PacketSendUtility.sendMessage(admin, "You have successfuly switched class");
 		} else {
-            PacketSendUtility.sendMessage(admin, "Invalid class switch chosen!");
+			PacketSendUtility.sendMessage(admin, "Invalid class switch chosen!");
 		}
-    }
+	}
 }

@@ -42,8 +42,7 @@ public abstract class Executor<T extends AionObject> {
 					}
 				}
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			log.warn(e.getMessage(), e);
 		}
 	}
@@ -51,8 +50,7 @@ public abstract class Executor<T extends AionObject> {
 	public final void execute(final Collection<T> objects, boolean now) {
 		if (now) {
 			runImpl(objects);
-		}
-		else {
+		} else {
 			ThreadPoolManager.getInstance().execute(new Runnable() {
 
 				@Override

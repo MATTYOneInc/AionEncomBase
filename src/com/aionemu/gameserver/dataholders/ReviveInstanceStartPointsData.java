@@ -35,31 +35,30 @@ import gnu.trove.map.hash.TIntObjectHashMap;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"InstanceStartPoints"})
+@XmlType(name = "", propOrder = { "InstanceStartPoints" })
 @XmlRootElement(name = "instance_revive_start_points")
-public class ReviveInstanceStartPointsData
-{
-    @XmlElement(name = "instance_revive_start_point")
-    protected List<InstanceReviveStartPoints> InstanceStartPoints;
-	
-    @XmlTransient
-    private TIntObjectHashMap<InstanceReviveStartPoints> custom = new TIntObjectHashMap<InstanceReviveStartPoints>();
-	
-    public InstanceReviveStartPoints getReviveStartPoint(int worldId) {
-        return custom.get(worldId);
-    }
-	
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        for (InstanceReviveStartPoints it : InstanceStartPoints) {
-            getCustomMap().put(it.getReviveWorld(), it);
-        }
-    }
-	
-    private TIntObjectHashMap<InstanceReviveStartPoints> getCustomMap() {
-        return custom;
-    }
-	
-    public int size() {
-        return custom.size();
-    }
+public class ReviveInstanceStartPointsData {
+	@XmlElement(name = "instance_revive_start_point")
+	protected List<InstanceReviveStartPoints> InstanceStartPoints;
+
+	@XmlTransient
+	private TIntObjectHashMap<InstanceReviveStartPoints> custom = new TIntObjectHashMap<InstanceReviveStartPoints>();
+
+	public InstanceReviveStartPoints getReviveStartPoint(int worldId) {
+		return custom.get(worldId);
+	}
+
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		for (InstanceReviveStartPoints it : InstanceStartPoints) {
+			getCustomMap().put(it.getReviveWorld(), it);
+		}
+	}
+
+	private TIntObjectHashMap<InstanceReviveStartPoints> getCustomMap() {
+		return custom;
+	}
+
+	public int size() {
+		return custom.size();
+	}
 }

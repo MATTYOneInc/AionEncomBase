@@ -40,15 +40,14 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldMapInstance;
 import com.aionemu.gameserver.world.knownlist.Visitor;
 
-public class InstanceEngine implements GameEngine
-{
+public class InstanceEngine implements GameEngine {
 	private static final Logger log = LoggerFactory.getLogger(InstanceEngine.class);
 	private static ScriptManager scriptManager = new ScriptManager();
 	public static final File INSTANCE_DESCRIPTOR_FILE = new File("./data/scripts/system/instancehandlers.xml");
 	public static final InstanceHandler DUMMY_INSTANCE_HANDLER = new GeneralInstanceHandler();
-	
+
 	private Map<Integer, Class<? extends InstanceHandler>> handlers = new HashMap<Integer, Class<? extends InstanceHandler>>();
-	
+
 	@Override
 	public void load(CountDownLatch progressLatch) {
 		log.info("Instance engine load started");
@@ -69,7 +68,7 @@ public class InstanceEngine implements GameEngine
 			}
 		}
 	}
-	
+
 	@Override
 	public void shutdown() {
 		log.info("Instance engine shutdown started");
@@ -78,47 +77,49 @@ public class InstanceEngine implements GameEngine
 		handlers.clear();
 		log.info("Instance engine shutdown complete");
 	}
-	
+
 	public InstanceHandler getNewInstanceHandler(int worldId) {
 		Class<? extends InstanceHandler> instanceClass = handlers.get(worldId);
 		InstanceHandler instanceHandler = null;
 		if (instanceClass != null) {
 			try {
 				instanceHandler = instanceClass.newInstance();
-			}
-			catch (Exception ex) {
+			} catch (Exception ex) {
 				log.warn("Can't instantiate instance handler " + worldId, ex);
 			}
-		} if (instanceHandler == null) {
+		}
+		if (instanceHandler == null) {
 			instanceHandler = DUMMY_INSTANCE_HANDLER;
 		}
 		return instanceHandler;
 	}
-	
+
 	final void addInstanceHandlerClass(Class<? extends InstanceHandler> handler) {
 		InstanceID idAnnotation = handler.getAnnotation(InstanceID.class);
 		if (idAnnotation != null) {
 			handlers.put(idAnnotation.value(), handler);
 		}
 	}
-	
+
 	public void onInstanceCreate(final WorldMapInstance instance) {
-		final InstanceCooltime clt = DataManager.INSTANCE_COOLTIME_DATA.getInstanceCooltimeByWorldId(instance.getMapId());
+		final InstanceCooltime clt = DataManager.INSTANCE_COOLTIME_DATA
+				.getInstanceCooltimeByWorldId(instance.getMapId());
 		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 			@Override
 			public void visit(Player player) {
 				if (player.isOnline()) {
-					//PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400360, clt.getMaxMemberDark(), instance.getName()));
+					// PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400360,
+					// clt.getMaxMemberDark(), instance.getName()));
 				}
 			}
 		});
 		instance.getInstanceHandler().onInstanceCreate(instance);
 	}
-	
+
 	public static final InstanceEngine getInstance() {
 		return SingletonHolder.instance;
 	}
-	
+
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final InstanceEngine instance = new InstanceEngine();

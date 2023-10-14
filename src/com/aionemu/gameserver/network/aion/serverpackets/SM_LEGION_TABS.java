@@ -51,12 +51,12 @@ public class SM_LEGION_TABS extends AionServerPacket {
 		 */
 		if (size < (page * 8)) {
 			return;
-        }
+		}
 		// TODO: Formula's could use a refactor
 		int hisSize = size - (page * 8);
-		if(size > (page + 1) * 8) {
+		if (size > (page + 1) * 8) {
 			hisSize = 8;
-        }
+		}
 		writeD(size);
 		writeD(page); // current page
 		writeD(hisSize);

@@ -41,10 +41,10 @@ public class FireworksUseAction extends AbstractItemAction {
 	public void act(Player player, Item parentItem, Item targetItem) {
 		if (parentItem.getActivationCount() > 1) {
 			parentItem.setActivationCount(parentItem.getActivationCount() - 1);
-		}
-		else {
+		} else {
 			player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1);
-        }
-		PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 1, 0));
+		}
+		PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(),
+				parentItem.getItemTemplate().getTemplateId(), 0, 1, 0));
 	}
 }

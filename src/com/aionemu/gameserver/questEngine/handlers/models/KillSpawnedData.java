@@ -30,11 +30,10 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "KillSpawnedData")
-public class KillSpawnedData extends MonsterHuntData
-{
+public class KillSpawnedData extends MonsterHuntData {
 	@XmlElement(name = "spawned_monster", required = true)
 	protected List<SpawnedMonster> spawnedMonster;
-	
+
 	@Override
 	public void register(QuestEngine questEngine) {
 		FastMap<List<Integer>, SpawnedMonster> spawnedMonsters = new FastMap<List<Integer>, SpawnedMonster>();

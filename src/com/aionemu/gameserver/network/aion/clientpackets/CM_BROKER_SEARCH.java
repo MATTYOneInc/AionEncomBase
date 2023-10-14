@@ -27,57 +27,59 @@ import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.services.BrokerService;
 
-public class CM_BROKER_SEARCH extends AionClientPacket
-{
+public class CM_BROKER_SEARCH extends AionClientPacket {
 	Logger log = LoggerFactory.getLogger(CM_BROKER_SEARCH.class);
-	
-    @SuppressWarnings("unused")
-    private int brokerId;
-    private int sortType;
-    private int page;
-    private int mask;
-    private int itemCount;
-    private List<Integer> itemList;
-    
-    private int unk1;
-    private int unk2;
-    private int unk3;
-    private int minLvl;
-    private int maxLvl;
-    private int minUnk;
-    private int maxUnk;
-    private int unk4;
-	
-    public CM_BROKER_SEARCH(int opcode, State state, State... restStates) {
-        super(opcode, state, restStates);
-    }
-	
-    @Override
-    protected void readImpl() {
-        this.brokerId = readD();
-        this.sortType = readC();
-        this.page = readH();
-        unk1 = readC();
-        unk2 = readH();
-        this.mask = readH();
-        unk3 = readD();
-        minLvl = readH();
-        maxLvl = readH();
-        minUnk = readC();
-        maxUnk = readC();
-        unk4 = readH();
-        
-        this.itemCount = readH();
-        this.itemList = new ArrayList<Integer>();
-        for (int index = 0; index < this.itemCount; index++) {
-            this.itemList.add(readD());
-        }
-    }
-	
-    @Override
-    protected void runImpl() {
-        Player player = getConnection().getActivePlayer();
-        BrokerService.getInstance().showRequestedItems(player, mask, sortType, page, itemList);
-        //log.info("CM_BROKER_SEARCH brokerId:"+brokerId+" sortType:"+sortType+" page:"+page+" unk1:"+unk1+" unk2:"+unk2+" mask:"+mask+" unk3:"+unk3+" minLvl:"+minLvl+" maxLvl:"+maxLvl+" minUnk:"+minUnk+" maxUnk:"+maxUnk+" unk4:"+unk4+" itemCount:"+itemCount+"");
-    }
+
+	@SuppressWarnings("unused")
+	private int brokerId;
+	private int sortType;
+	private int page;
+	private int mask;
+	private int itemCount;
+	private List<Integer> itemList;
+
+	private int unk1;
+	private int unk2;
+	private int unk3;
+	private int minLvl;
+	private int maxLvl;
+	private int minUnk;
+	private int maxUnk;
+	private int unk4;
+
+	public CM_BROKER_SEARCH(int opcode, State state, State... restStates) {
+		super(opcode, state, restStates);
+	}
+
+	@Override
+	protected void readImpl() {
+		this.brokerId = readD();
+		this.sortType = readC();
+		this.page = readH();
+		unk1 = readC();
+		unk2 = readH();
+		this.mask = readH();
+		unk3 = readD();
+		minLvl = readH();
+		maxLvl = readH();
+		minUnk = readC();
+		maxUnk = readC();
+		unk4 = readH();
+
+		this.itemCount = readH();
+		this.itemList = new ArrayList<Integer>();
+		for (int index = 0; index < this.itemCount; index++) {
+			this.itemList.add(readD());
+		}
+	}
+
+	@Override
+	protected void runImpl() {
+		Player player = getConnection().getActivePlayer();
+		BrokerService.getInstance().showRequestedItems(player, mask, sortType, page, itemList);
+		// log.info("CM_BROKER_SEARCH brokerId:"+brokerId+" sortType:"+sortType+"
+		// page:"+page+" unk1:"+unk1+" unk2:"+unk2+" mask:"+mask+" unk3:"+unk3+"
+		// minLvl:"+minLvl+" maxLvl:"+maxLvl+" minUnk:"+minUnk+" maxUnk:"+maxUnk+"
+		// unk4:"+unk4+" itemCount:"+itemCount+"");
+	}
 }

@@ -35,7 +35,7 @@ public class SkillUse extends QuestHandler {
 	private final int startNpc;
 	private final int endNpc;
 	private final FastMap<List<Integer>, QuestSkillData> qsd;
-	
+
 	public SkillUse(int questId, int startNpc, int endNpc, FastMap<List<Integer>, QuestSkillData> qsd) {
 		super(questId);
 		this.questId = questId;
@@ -47,14 +47,15 @@ public class SkillUse extends QuestHandler {
 		}
 		this.qsd = qsd;
 	}
-	
+
 	@Override
 	public void register() {
 		qe.registerQuestNpc(startNpc).addOnQuestStart(questId);
 		qe.registerQuestNpc(startNpc).addOnTalkEvent(questId);
 		if (endNpc != startNpc) {
 			qe.registerQuestNpc(endNpc).addOnTalkEvent(questId);
-		} for (List<Integer> skillIds : qsd.keySet()) {
+		}
+		for (List<Integer> skillIds : qsd.keySet()) {
 			Iterator<Integer> iterator = skillIds.iterator();
 			while (iterator.hasNext()) {
 				int SkillId = iterator.next();
@@ -62,7 +63,7 @@ public class SkillUse extends QuestHandler {
 			}
 		}
 	}
-	
+
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
@@ -94,7 +95,7 @@ public class SkillUse extends QuestHandler {
 		}
 		return false;
 	}
-	
+
 	@Override
 	public boolean onUseSkillEvent(QuestEnv env, int skillId) {
 		Player player = env.getPlayer();
@@ -110,8 +111,7 @@ public class SkillUse extends QuestHandler {
 						total += currentVar << ((varId - qd.getVarNum()) * 6);
 						endVar >>= 6;
 						varId++;
-					}
-					while (endVar > 0);
+					} while (endVar > 0);
 					total += 1;
 					if (total <= qd.getEndVar()) {
 						for (int varsUsed = qd.getVarNum(); varsUsed < varId; varsUsed++) {

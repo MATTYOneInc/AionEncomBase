@@ -26,7 +26,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum FlyingRestriction {
 
-	ALL,
-	FLY,
-	GROUND;
+	ALL, FLY, GROUND;
 }

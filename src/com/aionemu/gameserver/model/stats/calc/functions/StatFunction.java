@@ -66,7 +66,7 @@ public class StatFunction implements IStatFunction {
 		}
 		return result;
 	}
-	
+
 	public String getClassType() {
 		return classType;
 	}
@@ -107,37 +107,39 @@ public class StatFunction implements IStatFunction {
 
 	@Override
 	public String toString() {
-		return this.getClass().getName() + " [stat=" + stat + ", bonus=" + bonus + ", value=" + value + ", priority=" + getPriority() + "]";
+		return this.getClass().getName() + " [stat=" + stat + ", bonus=" + bonus + ", value=" + value + ", priority="
+				+ getPriority() + "]";
 	}
 
 	public StatFunction withConditions(Conditions conditions) {
 		this.conditions = conditions;
 		return this;
 	}
-	
+
 	public boolean hasConditions() {
 		return conditions != null;
 	}
-	
+
 	/**
-	 * Creates a final list of modifiers combining bonuses with random bonuses 
-	 * @param modifiers - can be null if do not exist
+	 * Creates a final list of modifiers combining bonuses with random bonuses
+	 * 
+	 * @param modifiers  - can be null if do not exist
 	 * @param rndBonuses - can be null if do not exist
 	 * @return a list of modifiers, empty if none
 	 */
 	public static List<StatFunction> mergeRandomBonuses(List<StatFunction> modifiers, List<StatFunction> rndBonuses) {
 		if (modifiers == null) {
 			modifiers = new ArrayList<StatFunction>();
-        }
+		}
 		if (rndBonuses == null) {
 			return modifiers;
-        }
+		}
 		List<StatFunction> allModifiers = new ArrayList<StatFunction>();
 		EnumSet<StatEnum> rndNames = EnumSet.noneOf(StatEnum.class);
 
 		for (IStatFunction func : rndBonuses) {
 			rndNames.add(func.getName());
-        }
+		}
 		// add values to original stats
 		for (StatFunction modifier : modifiers) {
 			if (!rndNames.contains(modifier.getName()) || !modifier.isBonus() || modifier.hasConditions()) {
@@ -160,13 +162,11 @@ public class StatFunction implements IStatFunction {
 				if (finalValue != 0) {
 					allModifiers.add(new StatAddFunction(modifier.getName(), finalValue, true));
 				}
-			}
-			else if (modifier instanceof StatRateFunction) {
+			} else if (modifier instanceof StatRateFunction) {
 				if (finalValue != 0) {
 					allModifiers.add(new StatRateFunction(modifier.getName(), finalValue, true));
 				}
-			}
-			else {
+			} else {
 				allModifiers.add(modifier);
 			}
 		}

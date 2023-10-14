@@ -50,8 +50,7 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 
 import javolution.util.FastMap;
 
-public abstract class Creature extends VisibleObject
-{
+public abstract class Creature extends VisibleObject {
 	private static final Logger log = LoggerFactory.getLogger(Creature.class);
 	protected AI2 ai2;
 	private boolean isDespawnDelayed = false;
@@ -84,15 +83,15 @@ public abstract class Creature extends VisibleObject
 	 * @param position
 	 */
 	public Creature(int objId, CreatureController<? extends Creature> controller, SpawnTemplate spawnTemplate,
-		VisibleObjectTemplate objectTemplate, WorldPosition position) {
+			VisibleObjectTemplate objectTemplate, WorldPosition position) {
 		super(objId, controller, spawnTemplate, objectTemplate, position);
 		this.observeController = new ObserveController();
 		this.setTransformModel(new TransformModel(this));
-    if (spawnTemplate != null && spawnTemplate.getModel() != null) {
-    	if (spawnTemplate.getModel().getTribe() != null) {
-    		getTransformModel().setTribe(spawnTemplate.getModel().getTribe(), true);
+		if (spawnTemplate != null && spawnTemplate.getModel() != null) {
+			if (spawnTemplate.getModel().getTribe() != null) {
+				getTransformModel().setTribe(spawnTemplate.getModel().getTribe(), true);
+			}
 		}
-    }
 		this.aggroList = createAggroList();
 	}
 
@@ -122,8 +121,7 @@ public abstract class Creature extends VisibleObject
 	}
 
 	/**
-	 * @param lifeStats
-	 *          the lifeStats to set
+	 * @param lifeStats the lifeStats to set
 	 */
 	public void setLifeStats(CreatureLifeStats<? extends Creature> lifeStats) {
 		this.lifeStats = lifeStats;
@@ -137,8 +135,7 @@ public abstract class Creature extends VisibleObject
 	}
 
 	/**
-	 * @param gameStats
-	 *          the gameStats to set
+	 * @param gameStats the gameStats to set
 	 */
 	public void setGameStats(CreatureGameStats<? extends Creature> gameStats) {
 		this.gameStats = gameStats;
@@ -154,8 +151,7 @@ public abstract class Creature extends VisibleObject
 	}
 
 	/**
-	 * @param effectController
-	 *          the effectController to set
+	 * @param effectController the effectController to set
 	 */
 	public void setEffectController(EffectController effectController) {
 		this.effectController = effectController;
@@ -176,7 +172,7 @@ public abstract class Creature extends VisibleObject
 	public void setDespawnDelayed(boolean delayed) {
 		isDespawnDelayed = delayed;
 	}
-	
+
 	public boolean isFlag() {
 		return false;
 	}
@@ -291,7 +287,8 @@ public abstract class Creature extends VisibleObject
 	 * @return
 	 */
 	public boolean canAttack() {
-		return !(getEffectController().isAbnormalState(AbnormalState.CANT_ATTACK_STATE) || isCasting() || isInState(CreatureState.RESTING) || isInState(CreatureState.PRIVATE_SHOP));
+		return !(getEffectController().isAbnormalState(AbnormalState.CANT_ATTACK_STATE) || isCasting()
+				|| isInState(CreatureState.RESTING) || isInState(CreatureState.PRIVATE_SHOP));
 	}
 
 	/**
@@ -302,16 +299,14 @@ public abstract class Creature extends VisibleObject
 	}
 
 	/**
-	 * @param state
-	 *          the state to set
+	 * @param state the state to set
 	 */
 	public void setState(CreatureState state) {
 		this.state |= state.getId();
 	}
 
 	/**
-	 * @param state
-	 *          taken usually from templates
+	 * @param state taken usually from templates
 	 */
 	public void setState(int state) {
 		this.state = state;
@@ -326,7 +321,7 @@ public abstract class Creature extends VisibleObject
 
 		if (isState == state.getId()) {
 			return true;
-        }
+		}
 		return false;
 	}
 
@@ -338,8 +333,7 @@ public abstract class Creature extends VisibleObject
 	}
 
 	/**
-	 * @param visualState
-	 *          the visualState to set
+	 * @param visualState the visualState to set
 	 */
 	public void setVisualState(CreatureVisualState visualState) {
 		this.visualState |= visualState.getId();
@@ -354,7 +348,7 @@ public abstract class Creature extends VisibleObject
 
 		if (isVisualState == visualState.getId()) {
 			return true;
-        }
+		}
 		return false;
 	}
 
@@ -366,8 +360,7 @@ public abstract class Creature extends VisibleObject
 	}
 
 	/**
-	 * @param seeState
-	 *          the seeState to set
+	 * @param seeState the seeState to set
 	 */
 	public void setSeeState(CreatureSeeState seeState) {
 		this.seeState |= seeState.getId();
@@ -382,7 +375,7 @@ public abstract class Creature extends VisibleObject
 
 		if (isSeeState == seeState.getId()) {
 			return true;
-        }
+		}
 		return false;
 	}
 
@@ -394,8 +387,7 @@ public abstract class Creature extends VisibleObject
 	}
 
 	/**
-	 * @param transformModel
-	 *          the transformedModel to set
+	 * @param transformModel the transformedModel to set
 	 */
 	public final void setTransformModel(TransformModel model) {
 		this.transformModel = model;
@@ -547,7 +539,7 @@ public abstract class Creature extends VisibleObject
 	public boolean canSee(Creature creature) {
 		if (creature == null) {
 			return false;
-        }
+		}
 		return creature.getVisualState() <= getSeeState();
 	}
 
@@ -597,7 +589,7 @@ public abstract class Creature extends VisibleObject
 
 		if (skillCoolDowns == null) {
 			return false;
-        }
+		}
 		int delayId = template.getDelayId();
 		Long coolDown = skillCoolDowns.get(delayId);
 		if (coolDown == null) {
@@ -610,10 +602,12 @@ public abstract class Creature extends VisibleObject
 		}
 
 		/*
-		 * Some shared cooldown skills have indipendent and different cooldown they must not be blocked
+		 * Some shared cooldown skills have indipendent and different cooldown they must
+		 * not be blocked
 		 */
 		if (skillCoolDownsBase != null && skillCoolDownsBase.get(delayId) != null) {
-			if ((template.getDuration() + template.getCooldown() * 100 + skillCoolDownsBase.get(delayId)) < System.currentTimeMillis()) {
+			if ((template.getDuration() + template.getCooldown() * 100 + skillCoolDownsBase.get(delayId)) < System
+					.currentTimeMillis()) {
 				return false;
 			}
 		}
@@ -627,7 +621,7 @@ public abstract class Creature extends VisibleObject
 	public long getSkillCoolDown(int delayId) {
 		if (skillCoolDowns == null || !skillCoolDowns.containsKey(delayId)) {
 			return 0;
-        }
+		}
 		return skillCoolDowns.get(delayId);
 	}
 
@@ -668,7 +662,8 @@ public abstract class Creature extends VisibleObject
 	}
 
 	/**
-	 * This function saves the currentMillis of skill that generated the cooldown of an entire cooldownGroup
+	 * This function saves the currentMillis of skill that generated the cooldown of
+	 * an entire cooldownGroup
 	 * 
 	 * @param delayId
 	 * @param baseTime
@@ -732,7 +727,8 @@ public abstract class Creature extends VisibleObject
 	 * Creature is flying (FLY or GLIDE states)
 	 */
 	public boolean isFlying() {
-		return (isInState(CreatureState.FLYING) && !isInState(CreatureState.RESTING)) || isInState(CreatureState.GLIDING);
+		return (isInState(CreatureState.FLYING) && !isInState(CreatureState.RESTING))
+				|| isInState(CreatureState.GLIDING);
 	}
 
 	public boolean isInFlyingState() {
@@ -742,33 +738,35 @@ public abstract class Creature extends VisibleObject
 	public byte isPlayer() {
 		return 0;
 	}
-	
+
 	public boolean isPhysClass(Creature creature) {
 		if (creature instanceof Player) {
 			switch (((Player) creature).getPlayerClass()) {
-				case GLADIATOR:
-				case TEMPLAR:
-				case ASSASSIN:
-				case RANGER:
-				case CLERIC:
-				case CHANTER:
+			case GLADIATOR:
+			case TEMPLAR:
+			case ASSASSIN:
+			case RANGER:
+			case CLERIC:
+			case CHANTER:
 				return true;
-				default: return false;
+			default:
+				return false;
 			}
 		}
 		return false;
 	}
-	
+
 	public boolean isMagicClass(Creature creature) {
 		if (creature instanceof Player) {
 			switch (((Player) creature).getPlayerClass()) {
-				case SORCERER:
-				case SPIRIT_MASTER:
-				case AETHERTECH:
-				case GUNSLINGER:
-				case SONGWEAVER:
+			case SORCERER:
+			case SPIRIT_MASTER:
+			case AETHERTECH:
+			case GUNSLINGER:
+			case SONGWEAVER:
 				return true;
-				default: return false;
+			default:
+				return false;
 			}
 		}
 		return false;
@@ -823,10 +821,10 @@ public abstract class Creature extends VisibleObject
 	}
 
 	public int getPulledMulti() {
-        return PulledMulti;
-    }
+		return PulledMulti;
+	}
 
-    public void setPulledMulti(int pulledMulti) {
-        PulledMulti = pulledMulti;
-    }
+	public void setPulledMulti(int pulledMulti) {
+		PulledMulti = pulledMulti;
+	}
 }

@@ -26,8 +26,7 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 /**
  * @author ATracer
  */
-public class Servant extends SummonedObject<Creature>
-{
+public class Servant extends SummonedObject<Creature> {
 	private NpcObjectType objectType;
 
 	/**
@@ -38,7 +37,7 @@ public class Servant extends SummonedObject<Creature>
 	 * @param level
 	 */
 	public Servant(int objId, NpcController controller, SpawnTemplate spawnTemplate, NpcTemplate objectTemplate,
-		byte level) {
+			byte level) {
 		super(objId, controller, spawnTemplate, objectTemplate, level);
 	}
 
@@ -62,7 +61,7 @@ public class Servant extends SummonedObject<Creature>
 	}
 
 	@Override
-    public String getMasterName() {
+	public String getMasterName() {
 		return StringUtils.EMPTY;
 	}
 }

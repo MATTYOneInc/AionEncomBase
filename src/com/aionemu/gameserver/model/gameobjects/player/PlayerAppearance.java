@@ -20,8 +20,7 @@ package com.aionemu.gameserver.model.gameobjects.player;
  * @author SoulKeeper, srx47, alexa026
  */
 
-public class PlayerAppearance implements Cloneable
-{
+public class PlayerAppearance implements Cloneable {
 	/**
 	 * Player's face
 	 */
@@ -29,23 +28,23 @@ public class PlayerAppearance implements Cloneable
 	private int hair;
 	private int deco;
 	private int tattoo;
-	private int faceContour; //2.5
-	private int expression; //2.5
-	private int pupilShape; //5.0
-	private int removeMane; //5.0
-	private int rightEyeRGB; //5.0
-	private int eyeLashshape; //5.0
-	private int jawLine; //2.5
+	private int faceContour; // 2.5
+	private int expression; // 2.5
+	private int pupilShape; // 5.0
+	private int removeMane; // 5.0
+	private int rightEyeRGB; // 5.0
+	private int eyeLashshape; // 5.0
+	private int jawLine; // 2.5
 	private int skinRGB;
 	private int hairRGB;
 	private int lipRGB;
 	private int eyeRGB;
 	private int faceShape;
-	private int pupilSize; //5.0
-	private int upperTorso; //5.0
-	private int foreArmThickness; //5.0
-	private int handSpan; //5.0
-	private int calfThickness; //5.0
+	private int pupilSize; // 5.0
+	private int upperTorso; // 5.0
+	private int foreArmThickness; // 5.0
+	private int handSpan; // 5.0
+	private int calfThickness; // 5.0
 	private int forehead;
 	private int eyeHeight;
 	private int eyeSpace;
@@ -87,7 +86,7 @@ public class PlayerAppearance implements Cloneable
 	private int facialRate;
 	private int voice;
 	private float height;
-	
+
 	/**
 	 * Returns character face
 	 *
@@ -1165,8 +1164,7 @@ public class PlayerAppearance implements Cloneable
 
 		try {
 			newObject = super.clone();
-		}
-		catch (CloneNotSupportedException e) {
+		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
 		return newObject;

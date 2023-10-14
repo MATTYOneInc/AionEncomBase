@@ -23,8 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "stats_template")
-public abstract class StatsTemplate
-{
+public abstract class StatsTemplate {
 	@XmlAttribute(name = "maxHp")
 	private int maxHp;
 	@XmlAttribute(name = "hp_regen")
@@ -63,110 +62,112 @@ public abstract class StatsTemplate
 	private int spellResist;
 	@XmlAttribute(name = "mboost_resist")
 	private int mboostresist;
-	
+
 	/* ======================================= */
 	public int getMaxHp() {
 		return maxHp;
 	}
-	
+
 	public void setMaxHp(int maxHp) {
 		this.maxHp = maxHp;
 	}
+
 	public int getHpRegenRate() {
 		return hpregen;
 	}
-	
+
 	public int getMaxMp() {
 		return maxMp;
 	}
-	
+
 	public void setMaxMp(int maxMp) {
 		this.maxMp = maxMp;
 	}
-	
+
 	/* ======================================= */
 	public float getWalkSpeed() {
 		return walkSpeed;
 	}
-	
+
 	public float getRunSpeed() {
 		return runSpeed;
 	}
-	
+
 	public float getFlySpeed() {
 		return flySpeed;
 	}
-	
+
 	public float getAttackSpeed() {
 		return attackSpeed;
 	}
-	
+
 	/* ======================================= */
 	public int getEvasion() {
 		return evasion;
 	}
-	
+
 	public void setEvasion(int evasion) {
 		this.evasion = evasion;
 	}
-	
+
 	public int getBlock() {
 		return block;
 	}
-	
+
 	public void setBlock(int block) {
 		this.block = block;
 	}
-	
+
 	public int getParry() {
 		return parry;
 	}
-	
+
 	public int getMBoost() {
 		return mboost;
 	}
-	
+
 	public void setParry(int parry) {
 		this.parry = parry;
 	}
-	
+
 	public int getStrikeResist() {
 		return strikeResist;
 	}
-	
+
 	public void setStrikeResist(int resist) {
 		this.strikeResist = resist;
 	}
-	
+
 	public int getSpellResist() {
 		return spellResist;
 	}
-	
+
 	public void setSpellResist(int resist) {
 		this.spellResist = resist;
 	}
-	
+
 	/* ======================================= */
 	public int getMainHandAttack() {
 		return mainHandAttack;
 	}
-	
+
 	public int getMainHandAccuracy() {
 		return mainHandAccuracy;
 	}
-	
+
 	public int getMainHandCritRate() {
 		return mainHandCritRate;
 	}
-	
+
 	/* ======================================= */
 	public int getMagicAccuracy() {
 		return magicAccuracy;
 	}
-	
+
 	public int getMCritical() {
 		return critSpell;
 	}
+
 	public int getMBResist() {
 		return mboostresist;
 	}

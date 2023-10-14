@@ -37,32 +37,31 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlRootElement(name = "game_experience_items")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class GameExperienceData
-{
-	@XmlElement(name="game_experience_item")
+public class GameExperienceData {
+	@XmlElement(name = "game_experience_item")
 	private List<GameExperience> glist;
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<GameExperience> experienceData = new TIntObjectHashMap<GameExperience>();
-	
+
 	@XmlTransient
 	private Map<Integer, GameExperience> experienceDataMap = new HashMap<Integer, GameExperience>(1);
-	
+
 	void afterUnmarshal(Unmarshaller paramUnmarshaller, Object paramObject) {
-		for (GameExperience gameExperience: glist) {
+		for (GameExperience gameExperience : glist) {
 			experienceData.put(gameExperience.getId(), gameExperience);
 			experienceDataMap.put(gameExperience.getId(), gameExperience);
 		}
 	}
-	
+
 	public int size() {
 		return experienceData.size();
 	}
-	
+
 	public GameExperience getGameExperienceId(int id) {
 		return experienceData.get(id);
 	}
-	
+
 	public Map<Integer, GameExperience> getAll() {
 		return experienceDataMap;
 	}

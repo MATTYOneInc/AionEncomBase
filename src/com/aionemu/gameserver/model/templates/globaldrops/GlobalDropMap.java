@@ -26,11 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GlobalDropMap")
-public class GlobalDropMap
-{
+public class GlobalDropMap {
 	@XmlAttribute(name = "map_id", required = true)
 	protected int mapId;
-	
+
 	public int getMapId() {
 		return mapId;
 	}

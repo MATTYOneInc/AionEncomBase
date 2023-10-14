@@ -37,49 +37,59 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /****/
-/** Author Ranastic (Encom)
-/****/
+/**
+ * Author Ranastic (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name= "TemperingAction")
-public class TemperingAction extends AbstractItemAction
-{
+@XmlType(name = "TemperingAction")
+public class TemperingAction extends AbstractItemAction {
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		if (targetItem.getItemTemplate().getMaxAuthorize() == 0) {
 			return false;
-		} if (targetItem.getItemTemplate().isAccessory() && targetItem.getAuthorize() >= 15) {
-			//%0 cannot be tempered anymore.
-			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ITEM_AUTHORIZE_CANT_MORE_AUTHORIZE(new DescriptionId(targetItem.getNameId())));
-            return false;
-        } if (targetItem.getItemTemplate().isPlume() && targetItem.getAuthorize() >= 18) {
-			//%0 cannot be tempered anymore.
-			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ITEM_AUTHORIZE_CANT_MORE_AUTHORIZE(new DescriptionId(targetItem.getNameId())));
-		    return false;
-		} if (targetItem.getItemTemplate().isBracelet() && targetItem.getAuthorize() >= 10) {
-			//%0 cannot be tempered anymore.
-			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ITEM_AUTHORIZE_CANT_MORE_AUTHORIZE(new DescriptionId(targetItem.getNameId())));
+		}
+		if (targetItem.getItemTemplate().isAccessory() && targetItem.getAuthorize() >= 15) {
+			// %0 cannot be tempered anymore.
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+					.STR_MSG_ITEM_AUTHORIZE_CANT_MORE_AUTHORIZE(new DescriptionId(targetItem.getNameId())));
+			return false;
+		}
+		if (targetItem.getItemTemplate().isPlume() && targetItem.getAuthorize() >= 18) {
+			// %0 cannot be tempered anymore.
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+					.STR_MSG_ITEM_AUTHORIZE_CANT_MORE_AUTHORIZE(new DescriptionId(targetItem.getNameId())));
+			return false;
+		}
+		if (targetItem.getItemTemplate().isBracelet() && targetItem.getAuthorize() >= 10) {
+			// %0 cannot be tempered anymore.
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+					.STR_MSG_ITEM_AUTHORIZE_CANT_MORE_AUTHORIZE(new DescriptionId(targetItem.getNameId())));
 			return false;
 		}
 		return targetItem.getAuthorize() < targetItem.getItemTemplate().getMaxAuthorize();
 	}
-	
+
 	@Override
 	public void act(final Player player, final Item parentItem, final Item targetItem) {
 		if (player.isAuthorizeBoost()) {
-			PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 1500, 0, 0));
+			PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+					parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 1500, 0, 0));
 		} else {
-			PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 3000, 0, 0));
+			PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+					parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 3000, 0, 0));
 		}
 		final ItemUseObserver observer = new ItemUseObserver() {
 			@Override
 			public void abort() {
 				player.getController().cancelTask(TaskId.ITEM_USE);
 				player.getObserveController().removeObserver(this);
-				PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(), parentItem.getObjectId().intValue(), parentItem.getItemTemplate().getTemplateId(), 0, 3, 0));
+				PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(),
+						parentItem.getObjectId().intValue(), parentItem.getItemTemplate().getTemplateId(), 0, 3, 0));
 				ItemPacketService.updateItemAfterInfoChange(player, targetItem);
-				//You have canceled the tempering of %0.
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ITEM_AUTHORIZE_CANCEL(targetItem.getNameId()));
+				// You have canceled the tempering of %0.
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_MSG_ITEM_AUTHORIZE_CANCEL(targetItem.getNameId()));
 			}
 		};
 		player.getObserveController().attach(observer);
@@ -89,31 +99,40 @@ public class TemperingAction extends AbstractItemAction
 			public void run() {
 				if (player.getInventory().decreaseByItemId(parentItem.getItemId(), 1)) {
 					if (!isTemperingSuccess) {
-						PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(), player.getObjectId().intValue(), parentItem.getObjectId().intValue(), parentItem.getItemId(), 0, 2, 0));
+						PacketSendUtility.broadcastPacketAndReceive(player,
+								new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(),
+										player.getObjectId().intValue(), parentItem.getObjectId().intValue(),
+										parentItem.getItemId(), 0, 2, 0));
 						if (targetItem.getItemTemplate().isBracelet()) {
 							targetItem.setAuthorize(0);
 						} else if (targetItem.getItemTemplate().isPlume()) {
 							targetItem.setAuthorize(targetItem.getAuthorize());
 						}
-						//New Tempering 5.8
+						// New Tempering 5.8
 						else if (parentItem.getItemId() == 166032001 && parentItem.getItemId() == 166032002) {
-							targetItem.setAuthorize(targetItem.getAuthorize() -1);
-							//You failed to temper %0.
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ITEM_AUTHORIZE_FAILED_NO_PENALTY(targetItem.getNameId()));
+							targetItem.setAuthorize(targetItem.getAuthorize() - 1);
+							// You failed to temper %0.
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_MSG_ITEM_AUTHORIZE_FAILED_NO_PENALTY(targetItem.getNameId()));
 							return;
 						} else {
 							targetItem.setAuthorize(0);
 						}
-						//Tempering of %0 has failed and the temperance level has decreased to 0.
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ITEM_AUTHORIZE_FAILED(targetItem.getNameId()));
+						// Tempering of %0 has failed and the temperance level has decreased to 0.
+						PacketSendUtility.sendPacket(player,
+								SM_SYSTEM_MESSAGE.STR_MSG_ITEM_AUTHORIZE_FAILED(targetItem.getNameId()));
 					} else {
-						PacketSendUtility.broadcastPacketAndReceive(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(), player.getObjectId().intValue(), parentItem.getObjectId().intValue(), parentItem.getItemId(), 0, 1, 0));
+						PacketSendUtility.broadcastPacketAndReceive(player,
+								new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(),
+										player.getObjectId().intValue(), parentItem.getObjectId().intValue(),
+										parentItem.getItemId(), 0, 1, 0));
 						targetItem.setAuthorize(targetItem.getAuthorize() + 1);
 						if (targetItem.getItemTemplate().isBracelet()) {
 							checkTempering(player, targetItem);
 						}
-						//You have successfully tempered %0. +%num1 temperance level achieved.
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ITEM_AUTHORIZE_SUCCEEDED(targetItem.getNameId(), targetItem.getAuthorize()));
+						// You have successfully tempered %0. +%num1 temperance level achieved.
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+								.STR_MSG_ITEM_AUTHORIZE_SUCCEEDED(targetItem.getNameId(), targetItem.getAuthorize()));
 					}
 					PacketSendUtility.sendPacket(player, new SM_INVENTORY_UPDATE_ITEM(player, targetItem));
 					player.getObserveController().removeObserver(observer);
@@ -130,8 +149,8 @@ public class TemperingAction extends AbstractItemAction
 			}
 		}, 3000));
 	}
-	
-	public void checkTempering(Player player, Item item){
+
+	public void checkTempering(Player player, Item item) {
 		if (item.getAuthorize() >= 5 && item.getAuthorize() <= 7) {
 			item.setOptionalSocket(1);
 		} else if (item.getAuthorize() >= 7 && item.getAuthorize() <= 10) {
@@ -145,7 +164,7 @@ public class TemperingAction extends AbstractItemAction
 			item.setOptionalSocket(0);
 		}
 	}
-	
+
 	public boolean isTemperingSuccess(Player player, Item item) {
 		if (item.getItemTemplate().isBracelet()) {
 			if (Rnd.get(1, 100) < EnchantsConfig.ENCHANT_BRACELET) {
@@ -154,12 +173,13 @@ public class TemperingAction extends AbstractItemAction
 				return false;
 			}
 		} else if (item.getItemTemplate().isPlume()) {
-			if(Rnd.get(1, 100) < EnchantsConfig.ENCHANT_PLUME) {
+			if (Rnd.get(1, 100) < EnchantsConfig.ENCHANT_PLUME) {
 				return true;
 			} else {
 				return false;
 			}
-		} else if (item.getItemTemplate().isAccessory() && !item.getItemTemplate().isPlume() || !item.getItemTemplate().isBracelet()) {
+		} else if (item.getItemTemplate().isAccessory() && !item.getItemTemplate().isPlume()
+				|| !item.getItemTemplate().isBracelet()) {
 			if (Rnd.get(1, 100) < EnchantsConfig.ENCHANT_ACCESSORY) {
 				return true;
 			} else {

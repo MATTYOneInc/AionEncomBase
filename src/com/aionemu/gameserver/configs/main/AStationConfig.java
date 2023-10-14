@@ -22,12 +22,11 @@ import com.aionemu.commons.configuration.Property;
  * @author Ranastic
  */
 
-public class AStationConfig
-{
+public class AStationConfig {
 	@Property(key = "a.station.server.id", defaultValue = "2")
-    public static int A_STATION_SERVER_ID;
-    @Property(key = "a.station.max.level", defaultValue = "83")
-    public static int A_STATION_MAX_LEVEL;
-    @Property(key = "a.station.enable", defaultValue = "true")
-    public static boolean A_STATION_ENABLE;
+	public static int A_STATION_SERVER_ID;
+	@Property(key = "a.station.max.level", defaultValue = "83")
+	public static int A_STATION_MAX_LEVEL;
+	@Property(key = "a.station.enable", defaultValue = "true")
+	public static boolean A_STATION_ENABLE;
 }

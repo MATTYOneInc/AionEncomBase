@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "agent_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class AgentSchedule
-{
+public class AgentSchedule {
 	@XmlElement(name = "agent", required = true)
 	private List<Agent> agentsList;
-	
+
 	public List<Agent> getAgentsList() {
 		return agentsList;
 	}
-	
+
 	public void setFightsList(List<Agent> agentList) {
 		this.agentsList = agentList;
 	}
-	
+
 	public static AgentSchedule load() {
 		AgentSchedule as;
 		try {
@@ -58,28 +57,28 @@ public class AgentSchedule
 		}
 		return as;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "agent")
 	public static class Agent {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "fightTime", required = true)
 		private List<String> fightTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getFightTimes() {
 			return fightTimes;
 		}
-		
+
 		public void setFightTimes(List<String> fightTimes) {
 			this.fightTimes = fightTimes;
 		}

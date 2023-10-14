@@ -28,16 +28,16 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  */
 public class PlayerGroupStopMentoringEvent extends PlayerStopMentoringEvent<PlayerGroup> {
 
-    /**
-     * @param group
-     * @param player
-     */
-    public PlayerGroupStopMentoringEvent(PlayerGroup group, Player player) {
-        super(group, player);
-    }
+	/**
+	 * @param group
+	 * @param player
+	 */
+	public PlayerGroupStopMentoringEvent(PlayerGroup group, Player player) {
+		super(group, player);
+	}
 
-    @Override
-    protected void sendGroupPacketOnMentorEnd(Player member) {
-        PacketSendUtility.sendPacket(member, new SM_GROUP_MEMBER_INFO(team, player, GroupEvent.MOVEMENT));
-    }
+	@Override
+	protected void sendGroupPacketOnMentorEnd(Player member) {
+		PacketSendUtility.sendPacket(member, new SM_GROUP_MEMBER_INFO(team, player, GroupEvent.MOVEMENT));
+	}
 }

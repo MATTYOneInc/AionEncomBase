@@ -38,14 +38,14 @@ import javolution.util.FastMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SkinSkillData {
 
-	@XmlElement(name="skin_skill")
+	@XmlElement(name = "skin_skill")
 	private List<SkinSkillTemplate> tlist;
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<SkinSkillTemplate> skinSkillData = new TIntObjectHashMap<SkinSkillTemplate>();
-	
+
 	private final Map<String, SkinSkillTemplate> string = new FastMap<String, SkinSkillTemplate>().shared();
-	
+
 	void afterUnmarshal(Unmarshaller paramUnmarshaller, Object paramObject) {
 		for (SkinSkillTemplate skinSkill : tlist) {
 			skinSkillData.put(skinSkill.getId(), skinSkill);
@@ -60,7 +60,7 @@ public class SkinSkillData {
 	public SkinSkillTemplate getSkinSkillById(int id) {
 		return skinSkillData.get(id);
 	}
-	
+
 	public SkinSkillTemplate getSkinSkillByGroupName(String name) {
 		return string.get(name);
 	}

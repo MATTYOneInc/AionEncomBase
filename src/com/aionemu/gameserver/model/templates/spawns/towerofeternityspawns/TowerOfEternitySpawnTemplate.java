@@ -25,40 +25,40 @@ import com.aionemu.gameserver.model.towerofeternity.TowerOfEternityStateType;
  * Created by Wnkrz on 23/08/2017.
  */
 
-public class TowerOfEternitySpawnTemplate extends SpawnTemplate
-{
-    private int id;
-    private TowerOfEternityStateType towerOfEternityType;
-	
-    public TowerOfEternitySpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
-        super(spawnGroup, spot);
-    }
-	
-    public TowerOfEternitySpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
-        super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
-    }
-	
-    public int getId() {
-        return id;
-    }
-	
-    public TowerOfEternityStateType getTStateType() {
-        return towerOfEternityType;
-    }
-	
-    public void setId(int id) {
-        this.id = id;
-    }
-	
-    public void setTStateType(TowerOfEternityStateType towerOfEternityType) {
-        this.towerOfEternityType = towerOfEternityType;
-    }
-	
-    public final boolean isTowerOfEternityOpen() {
-        return towerOfEternityType.equals(TowerOfEternityStateType.OPEN);
-    }
-	
-    public final boolean isTowerOfEternityClosed() {
-        return towerOfEternityType.equals(TowerOfEternityStateType.CLOSED);
-    }
+public class TowerOfEternitySpawnTemplate extends SpawnTemplate {
+	private int id;
+	private TowerOfEternityStateType towerOfEternityType;
+
+	public TowerOfEternitySpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
+		super(spawnGroup, spot);
+	}
+
+	public TowerOfEternitySpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
+		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public TowerOfEternityStateType getTStateType() {
+		return towerOfEternityType;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setTStateType(TowerOfEternityStateType towerOfEternityType) {
+		this.towerOfEternityType = towerOfEternityType;
+	}
+
+	public final boolean isTowerOfEternityOpen() {
+		return towerOfEternityType.equals(TowerOfEternityStateType.OPEN);
+	}
+
+	public final boolean isTowerOfEternityClosed() {
+		return towerOfEternityType.equals(TowerOfEternityStateType.CLOSED);
+	}
 }

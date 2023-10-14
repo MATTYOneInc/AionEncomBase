@@ -27,24 +27,23 @@ import com.aionemu.gameserver.services.AbyssLandingService;
  * @author Ranastic & Lightning (Encom)
  */
 
-public class SM_ABYSS_LANDING extends AionServerPacket
-{
+public class SM_ABYSS_LANDING extends AionServerPacket {
 	private Map<Integer, LandingLocation> locations;
-	
+
 	public SM_ABYSS_LANDING() {
 		locations = AbyssLandingService.getLandingLocations();
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
-		for (LandingLocation loc: locations.values()) {
-			writeD(loc.getQuestPoints()); //Quest Completion.
-			writeD(loc.getSiegePoints()); //Fortress Occupation.
-			writeD(loc.getArtifactPoints()); //Artifact Occupation.
-			writeD(loc.getBasePoints()); //Base Occupation.
-			writeD(loc.getFacilityPoints()); //Facility Control.
-			writeD(loc.getMonumentsPoints()); //Monument Control.
-			writeD(loc.getCommanderPoints()); //Commander Defense.
+		for (LandingLocation loc : locations.values()) {
+			writeD(loc.getQuestPoints()); // Quest Completion.
+			writeD(loc.getSiegePoints()); // Fortress Occupation.
+			writeD(loc.getArtifactPoints()); // Artifact Occupation.
+			writeD(loc.getBasePoints()); // Base Occupation.
+			writeD(loc.getFacilityPoints()); // Facility Control.
+			writeD(loc.getMonumentsPoints()); // Monument Control.
+			writeD(loc.getCommanderPoints()); // Commander Defense.
 		}
 	}
 }

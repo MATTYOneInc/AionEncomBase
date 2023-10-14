@@ -34,36 +34,35 @@ import com.google.common.collect.Maps;
 
 import javolution.util.FastMap;
 
-public class SiegeRaceCounter implements Comparable<SiegeRaceCounter>
-{
+public class SiegeRaceCounter implements Comparable<SiegeRaceCounter> {
 	private final AtomicLong totalDamage = new AtomicLong();
 	private final Map<Integer, AtomicLong> playerDamageCounter = new FastMap<Integer, AtomicLong>().shared();
 	private final Map<Integer, AtomicLong> playerAPCounter = new FastMap<Integer, AtomicLong>().shared();
 	private final SiegeRace siegeRace;
-	
+
 	public SiegeRaceCounter(SiegeRace siegeRace) {
 		this.siegeRace = siegeRace;
 	}
-	
+
 	public void addPoints(Creature creature, int damage) {
 		addTotalDamage(damage);
 		if (creature instanceof Player) {
 			addPlayerDamage((Player) creature, damage);
 		}
 	}
-	
+
 	public void addTotalDamage(int damage) {
 		totalDamage.addAndGet(damage);
 	}
-	
+
 	public void addPlayerDamage(Player player, int damage) {
 		addToCounter(player.getObjectId(), damage, playerDamageCounter);
 	}
-	
+
 	public void addAbyssPoints(Player player, int abyssPoints) {
 		addToCounter(player.getObjectId(), abyssPoints, playerAPCounter);
 	}
-	
+
 	protected <K> void addToCounter(K key, int value, Map<K, AtomicLong> counterMap) {
 		AtomicLong counter = counterMap.get(key);
 		if (counter == null) {
@@ -78,19 +77,19 @@ public class SiegeRaceCounter implements Comparable<SiegeRaceCounter>
 		}
 		counter.addAndGet(value);
 	}
-	
+
 	public long getTotalDamage() {
 		return totalDamage.get();
 	}
-	
+
 	public Map<Integer, Long> getPlayerDamageCounter() {
 		return getOrderedCounterMap(playerDamageCounter);
 	}
-	
+
 	public Map<Integer, Long> getPlayerAbyssPoints() {
 		return getOrderedCounterMap(playerAPCounter);
 	}
-	
+
 	protected <K> Map<K, Long> getOrderedCounterMap(Map<K, AtomicLong> unorderedMap) {
 		if (GenericValidator.isBlankOrNull(unorderedMap)) {
 			return Collections.emptyMap();
@@ -110,16 +109,16 @@ public class SiegeRaceCounter implements Comparable<SiegeRaceCounter>
 		}
 		return result;
 	}
-	
+
 	@Override
 	public int compareTo(SiegeRaceCounter o) {
 		return new Long(o.getTotalDamage()).compareTo(getTotalDamage());
 	}
-	
+
 	public SiegeRace getSiegeRace() {
 		return siegeRace;
 	}
-	
+
 	public Integer getWinnerLegionId() {
 		Map<Player, AtomicLong> teamDamageMap = new HashMap<Player, AtomicLong>();
 		for (Integer id : playerDamageCounter.keySet()) {

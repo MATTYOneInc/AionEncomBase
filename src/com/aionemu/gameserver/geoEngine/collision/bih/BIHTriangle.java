@@ -60,57 +60,50 @@ public final class BIHTriangle {
 	public float getExtreme(int axis, boolean left) {
 		float v1, v2, v3;
 		switch (axis) {
-			case 0:
-				v1 = pointa.x;
-				v2 = pointb.x;
-				v3 = pointc.x;
-				break;
-			case 1:
-				v1 = pointa.y;
-				v2 = pointb.y;
-				v3 = pointc.y;
-				break;
-			case 2:
-				v1 = pointa.z;
-				v2 = pointb.z;
-				v3 = pointc.z;
-				break;
-			default:
-				assert false;
-				return 0;
+		case 0:
+			v1 = pointa.x;
+			v2 = pointb.x;
+			v3 = pointc.x;
+			break;
+		case 1:
+			v1 = pointa.y;
+			v2 = pointb.y;
+			v3 = pointc.y;
+			break;
+		case 2:
+			v1 = pointa.z;
+			v2 = pointb.z;
+			v3 = pointc.z;
+			break;
+		default:
+			assert false;
+			return 0;
 		}
 		if (left) {
 			if (v1 < v2) {
 				if (v1 < v3) {
 					return v1;
-				}
-				else {
+				} else {
 					return v3;
 				}
-			}
-			else {
+			} else {
 				if (v2 < v3) {
 					return v2;
-				}
-				else {
+				} else {
 					return v3;
 				}
 			}
-		}
-		else {
+		} else {
 			if (v1 > v2) {
 				if (v1 > v3) {
 					return v1;
-				}
-				else {
+				} else {
 					return v3;
 				}
-			}
-			else {
+			} else {
 				if (v2 > v3) {
 					return v2;
-				}
-				else {
+				} else {
 					return v3;
 				}
 			}

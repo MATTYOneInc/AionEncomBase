@@ -23,13 +23,13 @@ import javax.xml.bind.annotation.XmlType;
 import com.aionemu.gameserver.skillengine.model.Effect;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AuthorizeBoostEffect")
-public class AuthorizeBoostEffect extends BuffEffect
-{
+public class AuthorizeBoostEffect extends BuffEffect {
 	@Override
 	public void calculate(Effect effect) {
 		effect.setAuthorizeBoost(true);

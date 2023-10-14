@@ -51,10 +51,10 @@ public class GarbageCollector extends Thread {
 	@Override
 	public void run() {
 		if (GSConfig.ENABLE_MEMORY_GC) {
-			GameServer.log.info("[GarbageCollector] Garbage Collector is scheduled to start in " + String.valueOf((g_Period / 1000) / 60) + " minutes.");
+			GameServer.log.info("[GarbageCollector] Garbage Collector is scheduled to start in "
+					+ String.valueOf((g_Period / 1000) / 60) + " minutes.");
 			StartMemoryOptimization();
-		}
-		else {
+		} else {
 			GameServer.log.info("[GarbageCollector] Garbage Collector is turned off by administrator.");
 		}
 	}
@@ -72,13 +72,13 @@ public class GarbageCollector extends Thread {
 					g_Period = g_Period * 60 * 1000;
 
 					if (GSConfig.ENABLE_MEMORY_GC) {
-						log.info("[GarbageCollector] Garbage Collector is optimizing memory to free unused heap memory.");
+						log.info(
+								"[GarbageCollector] Garbage Collector is optimizing memory to free unused heap memory.");
 						System.gc();
 						System.runFinalization();
 						log.info("[GarbageCollector] Garbage Collector has finished optimizing memory.");
 					}
-				}
-				catch (Exception e) {
+				} catch (Exception e) {
 					log.error("[GarbageCollector] Error on optimizing memory: " + e.getMessage());
 				}
 			}

@@ -23,9 +23,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum HitType {
 
-	EVERYHIT,
-	NMLATK,
-	BACKATK,
-	MAHIT,
-	PHHIT;
+	EVERYHIT, NMLATK, BACKATK, MAHIT, PHHIT;
 }

@@ -40,8 +40,7 @@ import javolution.util.FastMap;
  * @author Rinzler
  */
 
-public class BaseService
-{
+public class BaseService {
 	private static final Logger log = LoggerFactory.getLogger(BaseService.class);
 	private final Map<Integer, Base<?>> active = new FastMap<Integer, Base<?>>().shared();
 	private Map<Integer, BaseLocation> bases;
@@ -51,33 +50,33 @@ public class BaseService
 		DAOManager.getDAO(BaseDAO.class).loadBaseLocations(bases);
 		log.info("[BaseService] Loaded " + bases.size() + " bases locations.");
 	}
-	
+
 	public void initBases() {
 		log.info("[BaseService] is initialized...");
 		for (BaseLocation base : getBaseLocations().values()) {
 			start(base.getId());
 		}
 	}
-	
+
 	public void initBaseReset() {
 		Race race = null;
 		log.info("[BaseService] initializing <Base Reset>...");
 		String weekly = "0 0 9 ? * WED *";
 		CronService.getInstance().schedule(new Runnable() {
 			public void run() {
-				//Elten.
+				// Elten.
 				capture(45, Race.NPC);
 				capture(46, Race.NPC);
-				//Heiron.
+				// Heiron.
 				capture(47, Race.NPC);
 				capture(48, Race.NPC);
-				//Morheim.
+				// Morheim.
 				capture(49, Race.NPC);
 				capture(50, Race.NPC);
-				//Beluslan.
+				// Beluslan.
 				capture(51, Race.NPC);
 				capture(52, Race.NPC);
-				//Reshanta.
+				// Reshanta.
 				capture(53, Race.NPC);
 				capture(54, Race.NPC);
 				capture(55, Race.NPC);
@@ -90,7 +89,7 @@ public class BaseService
 				capture(62, Race.NPC);
 				capture(63, Race.NPC);
 				capture(64, Race.NPC);
-				//Katalam.
+				// Katalam.
 				capture(71, Race.NPC);
 				capture(72, Race.NPC);
 				capture(73, Race.NPC);
@@ -100,7 +99,7 @@ public class BaseService
 				capture(77, Race.NPC);
 				capture(78, Race.NPC);
 				capture(79, Race.NPC);
-				//Levinshor.
+				// Levinshor.
 				capture(90, Race.NPC);
 				capture(91, Race.NPC);
 				capture(92, Race.NPC);
@@ -114,21 +113,21 @@ public class BaseService
 				capture(100, Race.NPC);
 				capture(101, Race.NPC);
 				capture(102, Race.NPC);
-				//Kaldor.
+				// Kaldor.
 				capture(103, Race.NPC);
 				capture(104, Race.NPC);
 			}
 		}, weekly);
 	}
-	
+
 	public Map<Integer, BaseLocation> getBaseLocations() {
 		return bases;
 	}
-	
+
 	public BaseLocation getBaseLocation(int id) {
 		return bases.get(id);
 	}
-	
+
 	public void start(final int id) {
 		final Base<?> base;
 		synchronized (this) {
@@ -140,7 +139,7 @@ public class BaseService
 		}
 		base.start();
 	}
-	
+
 	public void stop(int id) {
 		if (!isActive(id)) {
 			log.info("Trying to stop not active base:" + id);
@@ -149,14 +148,15 @@ public class BaseService
 		Base<?> base;
 		synchronized (this) {
 			base = active.remove(id);
-		} if (base == null || base.isFinished()) {
+		}
+		if (base == null || base.isFinished()) {
 			log.info("Trying to stop null or finished base:" + id);
 			return;
 		}
 		base.stop();
 		start(id);
 	}
-	
+
 	public void capture(int id, Race race) {
 		if (!isActive(id)) {
 			log.info("Detecting not active base capture.");
@@ -167,49 +167,50 @@ public class BaseService
 		broadcastUpdate(getBaseLocation(id));
 		getDAO().updateLocation(getBaseLocation(getBaseLocation(id).getId()));
 	}
-	
+
 	public boolean isActive(int id) {
 		return active.containsKey(id);
 	}
-	
+
 	public Base<?> getActiveBase(int id) {
 		return active.get(id);
 	}
-	
+
 	public void onEnterBaseWorld(Player player) {
 		for (BaseLocation baseLocation : getBaseLocations().values()) {
 			if (baseLocation.getWorldId() == player.getWorldId() && isActive(baseLocation.getId())) {
 				Base<?> base = getActiveBase(baseLocation.getId());
 				PacketSendUtility.sendPacket(player, new SM_FLAG_INFO(1, base.getFlag()));
 				player.getController().updateZone();
-			    player.getController().updateNearbyQuests();
+				player.getController().updateNearbyQuests();
 			}
 		}
 	}
-	
+
 	public void broadcastUpdate(final BaseLocation baseLocation) {
-		World.getInstance().getWorldMap(baseLocation.getWorldId()).getMainWorldMapInstance().doOnAllPlayers(new Visitor<Player>() {
-			@Override
-			public void visit(Player player) {
-				if (isActive(baseLocation.getId())) {
-					Base<?> base = getActiveBase(baseLocation.getId());
-					PacketSendUtility.sendPacket(player, new SM_FLAG_INFO(1, base.getFlag()));
-					player.getController().updateZone();
-			        player.getController().updateNearbyQuests();
-				}
-			}
-		});
+		World.getInstance().getWorldMap(baseLocation.getWorldId()).getMainWorldMapInstance()
+				.doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						if (isActive(baseLocation.getId())) {
+							Base<?> base = getActiveBase(baseLocation.getId());
+							PacketSendUtility.sendPacket(player, new SM_FLAG_INFO(1, base.getFlag()));
+							player.getController().updateZone();
+							player.getController().updateNearbyQuests();
+						}
+					}
+				});
 	}
-	
+
 	public static BaseService getInstance() {
 		return BaseServiceHolder.INSTANCE;
 	}
-	
+
 	private static class BaseServiceHolder {
 		private static final BaseService INSTANCE = new BaseService();
 	}
-	
+
 	private BaseDAO getDAO() {
-        return DAOManager.getDAO(BaseDAO.class);
-    }
+		return DAOManager.getDAO(BaseDAO.class);
+	}
 }

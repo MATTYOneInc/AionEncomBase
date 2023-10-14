@@ -26,8 +26,7 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.services.craft.CraftService;
 import com.aionemu.gameserver.utils.MathUtil;
 
-public class CM_CRAFT extends AionClientPacket
-{
+public class CM_CRAFT extends AionClientPacket {
 	private static final Logger log = LoggerFactory.getLogger(CM_CRAFT.class);
 	private int itemID;
 	private long itemCount;
@@ -37,11 +36,11 @@ public class CM_CRAFT extends AionClientPacket
 	private int targetObjId;
 	private int materialsCount;
 	private int craftType;
-	
+
 	public CM_CRAFT(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		Player player = getConnection().getActivePlayer();
@@ -52,25 +51,27 @@ public class CM_CRAFT extends AionClientPacket
 		materialsCount = readH();
 		craftType = readC();
 		if (craftType == 0) {
-			for(int i = 0 ; i < materialsCount ; i++) {
+			for (int i = 0; i < materialsCount; i++) {
 				itemID = readD();
 				itemCount = readQ();
 				CraftService.checkComponents(player, recipeId, itemID, materialsCount);
 			}
 		}
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
 		if (player == null || !player.isSpawned()) {
 			return;
-		} if (player.getController().isInShutdownProgress()) {
+		}
+		if (player.getController().isInShutdownProgress()) {
 			return;
-		} if (unk != 129) {
+		}
+		if (unk != 129) {
 			VisibleObject staticObject = player.getKnownList().getKnownObjects().get(targetObjId);
-			if (staticObject == null || !MathUtil.isIn3dRange(player, staticObject, 10) ||
-			    staticObject.getObjectTemplate().getTemplateId() != targetTemplateId) {
+			if (staticObject == null || !MathUtil.isIn3dRange(player, staticObject, 10)
+					|| staticObject.getObjectTemplate().getTemplateId() != targetTemplateId) {
 				return;
 			}
 		}

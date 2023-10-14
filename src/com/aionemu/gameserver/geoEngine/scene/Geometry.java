@@ -41,8 +41,7 @@ public class Geometry extends Spatial {
 	/**
 	 * Create a geometry node without any mesh data.
 	 *
-	 * @param name
-	 *            The name of this geometry
+	 * @param name The name of this geometry
 	 */
 	public Geometry(String name) {
 		super(name);
@@ -51,10 +50,8 @@ public class Geometry extends Spatial {
 	/**
 	 * Create a geometry node with mesh data.
 	 *
-	 * @param name
-	 *            The name of this geometry
-	 * @param mesh
-	 *            The mesh data for this geometry
+	 * @param name The name of this geometry
+	 * @param mesh The mesh data for this geometry
 	 */
 	public Geometry(String name, Mesh mesh) {
 		this(name);
@@ -92,7 +89,8 @@ public class Geometry extends Spatial {
 	}
 
 	/**
-	 * Updates the bounding volume of the mesh. Should be called when the mesh has been modified.
+	 * Updates the bounding volume of the mesh. Should be called when the mesh has
+	 * been modified.
 	 */
 	@Override
 	public void updateModelBound() {

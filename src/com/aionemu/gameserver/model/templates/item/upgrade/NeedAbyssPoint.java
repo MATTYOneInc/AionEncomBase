@@ -27,11 +27,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "NeedAbyssPoint")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class NeedAbyssPoint
-{
+public class NeedAbyssPoint {
 	@XmlAttribute(name = "count")
 	private int count;
-	
+
 	public int getCount() {
 		return count;
 	}

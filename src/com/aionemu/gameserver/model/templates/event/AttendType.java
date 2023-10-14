@@ -23,18 +23,15 @@ import javax.xml.bind.annotation.XmlEnum;
  */
 
 @XmlEnum
-public enum AttendType
-{
-	PC_BASIC(0),
-	BASIC(1),
-	ANNIVERSARY(2);
-	
+public enum AttendType {
+	PC_BASIC(0), BASIC(1), ANNIVERSARY(2);
+
 	private int id;
-	
+
 	private AttendType(int id) {
 		this.id = id;
 	}
-	
+
 	public int getId() {
 		return id;
 	}

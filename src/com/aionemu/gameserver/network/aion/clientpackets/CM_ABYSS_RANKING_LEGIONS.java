@@ -37,6 +37,7 @@ public class CM_ABYSS_RANKING_LEGIONS extends AionClientPacket {
 	private int raceId;
 
 	private static final Logger log = LoggerFactory.getLogger(CM_ABYSS_RANKING_LEGIONS.class);
+
 	public CM_ABYSS_RANKING_LEGIONS(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
@@ -48,13 +49,13 @@ public class CM_ABYSS_RANKING_LEGIONS extends AionClientPacket {
 	protected void readImpl() {
 		raceId = readC();
 		switch (raceId) {
-			case 0:
-				queriedRace = Race.ELYOS;
-				updateType = AbyssRankUpdateType.LEGION_ELYOS;
-				break;
-			case 1:
-				queriedRace = Race.ASMODIANS;
-				updateType = AbyssRankUpdateType.LEGION_ASMODIANS;
+		case 0:
+			queriedRace = Race.ELYOS;
+			updateType = AbyssRankUpdateType.LEGION_ELYOS;
+			break;
+		case 1:
+			queriedRace = Race.ASMODIANS;
+			updateType = AbyssRankUpdateType.LEGION_ASMODIANS;
 			break;
 		}
 	}
@@ -67,16 +68,14 @@ public class CM_ABYSS_RANKING_LEGIONS extends AionClientPacket {
 		// calculate rankings and send packet
 		if (queriedRace != null) {
 			Player player = this.getConnection().getActivePlayer();
-			if (player.isAbyssRankListUpdated(updateType)){
+			if (player.isAbyssRankListUpdated(updateType)) {
 				sendPacket(new SM_ABYSS_RANKING_LEGIONS(AbyssRankingCache.getInstance().getLastUpdate(), queriedRace));
-			}
-			else {
+			} else {
 				SM_ABYSS_RANKING_LEGIONS results = AbyssRankingCache.getInstance().getLegions(queriedRace);
 				sendPacket(results);
 				player.setAbyssRankListUpdated(updateType);
 			}
-		}
-		else {
+		} else {
 			log.warn("Received invalid raceId: " + raceId);
 		}
 	}

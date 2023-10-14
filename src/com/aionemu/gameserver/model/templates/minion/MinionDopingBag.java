@@ -17,15 +17,14 @@
 package com.aionemu.gameserver.model.templates.minion;
 
 import java.util.Arrays;
+
 /**
- * @author jacjozs
- * this copy Pet_Bag
+ * @author jacjozs this copy Pet_Bag
  */
-public class MinionDopingBag
-{
+public class MinionDopingBag {
 	private int[] itemBag = null;
 	private boolean isDirty = false;
-    
+
 	public void setFoodItem(int itemId) {
 		setItem(itemId, 0);
 	}
@@ -51,17 +50,15 @@ public class MinionDopingBag
 	/**
 	 * Adds or removes item to the bag
 	 *
-	 * @param itemId
-	 *            - item Id, or 0 to remove
-	 * @param slot
-	 *            - slot number; 0 for food, 1 for drink, the rest are for scrolls
+	 * @param itemId - item Id, or 0 to remove
+	 * @param slot   - slot number; 0 for food, 1 for drink, the rest are for
+	 *               scrolls
 	 */
 	public void setItem(int itemId, int slot) {
 		if (itemBag == null) {
 			itemBag = new int[slot + 1];
 			isDirty = true;
-		}
-		else if (slot > itemBag.length - 1) {
+		} else if (slot > itemBag.length - 1) {
 			itemBag = Arrays.copyOf(itemBag, slot + 1);
 			isDirty = true;
 		}

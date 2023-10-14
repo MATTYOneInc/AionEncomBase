@@ -38,12 +38,12 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class EventsWindowData {
 
-	@XmlElement(name="event_window")
+	@XmlElement(name = "event_window")
 	private List<EventsWindow> events_window;
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<EventsWindow> eventData = new TIntObjectHashMap<EventsWindow>();
-	
+
 	@XmlTransient
 	private Map<Integer, EventsWindow> eventDataMap = new HashMap<Integer, EventsWindow>(1);
 

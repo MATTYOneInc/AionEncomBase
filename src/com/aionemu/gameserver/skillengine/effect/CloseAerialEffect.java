@@ -25,19 +25,18 @@ import com.aionemu.gameserver.skillengine.model.SpellStatus;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CloseAerialEffect")
-public class CloseAerialEffect extends EffectTemplate
-{
+public class CloseAerialEffect extends EffectTemplate {
 	@Override
 	public void applyEffect(Effect effect) {
 		effect.getEffected().getEffectController().removeEffect(8224);
 		effect.getEffected().getEffectController().removeEffect(8678);
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		if (!effect.getEffected().getEffectController().isAbnormalSet(AbnormalState.OPENAERIAL)) {
-            return;
-        }
+			return;
+		}
 		super.calculate(effect, null, SpellStatus.CLOSEAERIAL);
 	}
 }

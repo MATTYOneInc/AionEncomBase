@@ -29,18 +29,17 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  * @author Ranastic
  */
 
-public class CM_HOTSPOT_TELEPORT extends AionClientPacket
-{
+public class CM_HOTSPOT_TELEPORT extends AionClientPacket {
 	private int action;
 	private int teleportId;
 	private int price;
 	@SuppressWarnings("unused")
 	private int unk;
-	
+
 	public CM_HOTSPOT_TELEPORT(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		action = readC();
@@ -51,18 +50,19 @@ public class CM_HOTSPOT_TELEPORT extends AionClientPacket
 		} else if (action == 2) {
 		}
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		final Player player = getConnection().getActivePlayer();
 		if (player.getInventory().getKinah() < price) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_HOTSPOT_NOT_ENOUGH_COST);
 			return;
-		} if (action == 1) {
+		}
+		if (action == 1) {
 			HotspotTeleportService.getInstance().doTeleport(player, teleportId, price);
 		} else if (action == 2) {
-        	player.getController().cancelTask(TaskId.HOTSPOT_TELEPORT);
-        	PacketSendUtility.broadcastPacketAndReceive(player, new SM_HOTSPOT_TELEPORT(2, player.getObjectId()));
+			player.getController().cancelTask(TaskId.HOTSPOT_TELEPORT);
+			PacketSendUtility.broadcastPacketAndReceive(player, new SM_HOTSPOT_TELEPORT(2, player.getObjectId()));
 		}
 	}
 }

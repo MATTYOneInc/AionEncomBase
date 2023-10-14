@@ -30,48 +30,47 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class NightmareCircusLocation
-{
+public class NightmareCircusLocation {
 	protected int id;
 	protected boolean isActive;
 	protected NightmareCircusTemplate template;
 	protected CircusInstance<NightmareCircusLocation> activeNightmareCircus;
 	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
 	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
+
 	public NightmareCircusLocation() {
 	}
-	
+
 	public NightmareCircusLocation(NightmareCircusTemplate template) {
 		this.template = template;
 		this.id = template.getId();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveNightmareCircus(CircusInstance<NightmareCircusLocation> nightmareCircus) {
 		isActive = nightmareCircus != null;
 		this.activeNightmareCircus = nightmareCircus;
 	}
-	
+
 	public CircusInstance<NightmareCircusLocation> getActiveNightmareCircus() {
 		return activeNightmareCircus;
 	}
-	
+
 	public final NightmareCircusTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}

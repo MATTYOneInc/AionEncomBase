@@ -33,23 +33,22 @@ public class PlayerCPEntry extends CPEntry {
 
 	public void setPersistentState(PersistentState persistentState) {
 		switch (persistentState) {
-			case DELETED:
-				if (this.persistentState == PersistentState.NEW) {
-					this.persistentState = PersistentState.NOACTION;
-				}
-				else {
-					this.persistentState = PersistentState.DELETED;
-				}
-				break;
-			case UPDATE_REQUIRED:
-				if (this.persistentState != PersistentState.NEW) {
-					this.persistentState = PersistentState.UPDATE_REQUIRED;
-				}
-				break;
-			case NOACTION:
-				break;
-			default:
-				this.persistentState = persistentState;
+		case DELETED:
+			if (this.persistentState == PersistentState.NEW) {
+				this.persistentState = PersistentState.NOACTION;
+			} else {
+				this.persistentState = PersistentState.DELETED;
+			}
+			break;
+		case UPDATE_REQUIRED:
+			if (this.persistentState != PersistentState.NEW) {
+				this.persistentState = PersistentState.UPDATE_REQUIRED;
+			}
+			break;
+		case NOACTION:
+			break;
+		default:
+			this.persistentState = persistentState;
 		}
 	}
 }

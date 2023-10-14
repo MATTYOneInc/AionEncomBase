@@ -17,12 +17,11 @@
 package com.aionemu.gameserver.model.actions;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 public enum PlayerMode {
 
-	RIDE,
-	IN_ROLL,
-	WINDSTREAM;
+	RIDE, IN_ROLL, WINDSTREAM;
 }

@@ -69,16 +69,14 @@ public class PrivateStore {
 	}
 
 	/**
-	 * @param itemId
-	 *            return tradeItem
+	 * @param itemId return tradeItem
 	 */
 	public TradePSItem getTradeItemByObjId(int itemObjId) {
 		return items.get(itemObjId);
 	}
 
 	/**
-	 * @param storeMessage
-	 *            the storeMessage to set
+	 * @param storeMessage the storeMessage to set
 	 */
 	public void setStoreMessage(String storeMessage) {
 		this.storeMessage = storeMessage;

@@ -62,9 +62,9 @@ public class GatherableData {
 	/**
 	 * /** Returns an {@link GatherableTemplate} object with given id.
 	 * 
-	 * @param id
-	 *          id of GatherableTemplate
-	 * @return GatherableTemplate object containing data about Gatherable with that id.
+	 * @param id id of GatherableTemplate
+	 * @return GatherableTemplate object containing data about Gatherable with that
+	 *         id.
 	 */
 	public GatherableTemplate getGatherableTemplate(int id) {
 		return gatherableData.get(id);

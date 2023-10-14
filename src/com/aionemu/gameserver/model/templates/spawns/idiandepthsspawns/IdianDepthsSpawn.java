@@ -33,36 +33,35 @@ import com.aionemu.gameserver.model.templates.spawns.Spawn;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "IdianDepthsSpawn")
-public class IdianDepthsSpawn
-{
+public class IdianDepthsSpawn {
 	@XmlAttribute(name = "id")
 	private int id;
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	@XmlElement(name = "idian_depths_type")
 	private List<IdianDepthsSpawn.IdianDepthsStateTemplate> IdianDepthsStateTemplate;
-	
+
 	public List<IdianDepthsStateTemplate> getSiegeModTemplates() {
 		return IdianDepthsStateTemplate;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlType(name = "IdianDepthsStateTemplate")
 	public static class IdianDepthsStateTemplate {
-	
+
 		@XmlElement(name = "spawn")
 		private List<Spawn> spawns;
-		
+
 		@XmlAttribute(name = "istate")
 		private IdianDepthsStateType idianDepthsType;
-		
+
 		public List<Spawn> getSpawns() {
 			return spawns;
 		}
-		
+
 		public IdianDepthsStateType getIdianDepthsType() {
 			return idianDepthsType;
 		}

@@ -35,36 +35,35 @@ import com.aionemu.gameserver.model.templates.revive_start_points.WorldReviveSta
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"WorldStartPoints"})
+@XmlType(name = "", propOrder = { "WorldStartPoints" })
 @XmlRootElement(name = "revive_world_start_points")
-public class ReviveWorldStartPointsData
-{
-    @XmlElement(name = "revive_world_start_point")
-    protected List<WorldReviveStartPoints> WorldStartPoints;
-	
-    @XmlTransient
-    protected List<WorldReviveStartPoints> StartPointsList = new ArrayList<WorldReviveStartPoints>();
-	
-    void afterUnmarshal(Unmarshaller unmarshaller, Object parent) {
-        for (WorldReviveStartPoints exit : WorldStartPoints) {
-            StartPointsList.add(exit);
-        }
-        WorldStartPoints.clear();
-        WorldStartPoints = null;
-    }
-	
-    public WorldReviveStartPoints getReviveStartPoint(int worldId, Race race, int playerLevel) {
-        for (WorldReviveStartPoints revive : StartPointsList) {
-            if (revive.getReviveWorld() == worldId && (race.equals(revive.getRace()) ||
-			    revive.getRace().equals(Race.PC_ALL)) && playerLevel >=
-				revive.getMinlevel() && playerLevel <= revive.getMaxlevel()) {
-                return revive;
-            }
-        }
-        return null;
-    }
-	
-    public int size() {
-        return StartPointsList.size();
-    }
+public class ReviveWorldStartPointsData {
+	@XmlElement(name = "revive_world_start_point")
+	protected List<WorldReviveStartPoints> WorldStartPoints;
+
+	@XmlTransient
+	protected List<WorldReviveStartPoints> StartPointsList = new ArrayList<WorldReviveStartPoints>();
+
+	void afterUnmarshal(Unmarshaller unmarshaller, Object parent) {
+		for (WorldReviveStartPoints exit : WorldStartPoints) {
+			StartPointsList.add(exit);
+		}
+		WorldStartPoints.clear();
+		WorldStartPoints = null;
+	}
+
+	public WorldReviveStartPoints getReviveStartPoint(int worldId, Race race, int playerLevel) {
+		for (WorldReviveStartPoints revive : StartPointsList) {
+			if (revive.getReviveWorld() == worldId
+					&& (race.equals(revive.getRace()) || revive.getRace().equals(Race.PC_ALL))
+					&& playerLevel >= revive.getMinlevel() && playerLevel <= revive.getMaxlevel()) {
+				return revive;
+			}
+		}
+		return null;
+	}
+
+	public int size() {
+		return StartPointsList.size();
+	}
 }

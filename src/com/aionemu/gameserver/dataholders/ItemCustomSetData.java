@@ -30,30 +30,29 @@ import com.aionemu.gameserver.model.templates.item.ItemCustomSetTeamplate;
 import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name="item_custom_sets")
-public class ItemCustomSetData
-{
-    @XmlElement(name = "item_custom_set", required = true)
-    protected List<ItemCustomSetTeamplate> customTemplates;
-	
-    @XmlTransient
-    private TIntObjectHashMap<ItemCustomSetTeamplate> custom = new TIntObjectHashMap<ItemCustomSetTeamplate>();
-	
-    public ItemCustomSetTeamplate getCustomTemplate(int id) {
-        return custom.get(id);
-    }
-	
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        for (ItemCustomSetTeamplate it : customTemplates) {
-            getCustomMap().put(it.getId(), it);
-        }
-    }
-	
-    private TIntObjectHashMap<ItemCustomSetTeamplate> getCustomMap() {
-        return custom;
-    }
-	
-    public int size() {
-        return custom.size();
-    }
+@XmlRootElement(name = "item_custom_sets")
+public class ItemCustomSetData {
+	@XmlElement(name = "item_custom_set", required = true)
+	protected List<ItemCustomSetTeamplate> customTemplates;
+
+	@XmlTransient
+	private TIntObjectHashMap<ItemCustomSetTeamplate> custom = new TIntObjectHashMap<ItemCustomSetTeamplate>();
+
+	public ItemCustomSetTeamplate getCustomTemplate(int id) {
+		return custom.get(id);
+	}
+
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		for (ItemCustomSetTeamplate it : customTemplates) {
+			getCustomMap().put(it.getId(), it);
+		}
+	}
+
+	private TIntObjectHashMap<ItemCustomSetTeamplate> getCustomMap() {
+		return custom;
+	}
+
+	public int size() {
+		return custom.size();
+	}
 }

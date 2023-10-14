@@ -38,38 +38,38 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LunaConsumeRewardsData {
 
-	@XmlElement(name="luna_consume_reward")
+	@XmlElement(name = "luna_consume_reward")
 	private List<LunaConsumeRewardsTemplate> lunaList;
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<LunaConsumeRewardsTemplate> lunaData = new TIntObjectHashMap<LunaConsumeRewardsTemplate>();
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<LunaConsumeRewardsTemplate> lunaConsumeCountData = new TIntObjectHashMap<LunaConsumeRewardsTemplate>();
-	
+
 	@XmlTransient
 	private Map<Integer, LunaConsumeRewardsTemplate> lunaDataMap = new HashMap<Integer, LunaConsumeRewardsTemplate>(1);
-	
+
 	void afterUnmarshal(Unmarshaller paramUnmarshaller, Object paramObject) {
-		for (LunaConsumeRewardsTemplate lunaConsume: lunaList) {
+		for (LunaConsumeRewardsTemplate lunaConsume : lunaList) {
 			lunaData.put(lunaConsume.getId(), lunaConsume);
 			lunaConsumeCountData.put(lunaConsume.getSumCount(), lunaConsume);
 			lunaDataMap.put(lunaConsume.getId(), lunaConsume);
 		}
 	}
-	
+
 	public int size() {
 		return lunaData.size();
 	}
-	
+
 	public LunaConsumeRewardsTemplate getLunaConsumeRewardsId(int id) {
 		return lunaData.get(id);
 	}
-	
+
 	public LunaConsumeRewardsTemplate getLunaConsumeRewardsBypoint(int point) {
 		return lunaConsumeCountData.get(point);
 	}
-	
+
 	public Map<Integer, LunaConsumeRewardsTemplate> getAll() {
 		return lunaDataMap;
 	}

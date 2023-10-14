@@ -32,21 +32,20 @@ import com.aionemu.gameserver.utils.MathUtil;
 /**
  * 0000: CB 06 00 00 04 00 00 00 00 00
  */
-public class CM_TELEPORT_SELECT extends AionClientPacket
-{
+public class CM_TELEPORT_SELECT extends AionClientPacket {
 	public int targetObjectId;
 	public int locId;
-	
+
 	public CM_TELEPORT_SELECT(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		targetObjectId = readD();
 		locId = readD();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
@@ -55,7 +54,7 @@ public class CM_TELEPORT_SELECT extends AionClientPacket
 		}
 		AionObject obj = player.getKnownList().getObject(targetObjectId);
 		if (obj != null && obj instanceof Npc) {
-			Npc npc = (Npc)obj;
+			Npc npc = (Npc) obj;
 			int npcId = npc.getNpcId();
 			if (!MathUtil.isInRange(npc, player, npc.getObjectTemplate().getTalkDistance() + 2)) {
 				return;
@@ -64,10 +63,12 @@ public class CM_TELEPORT_SELECT extends AionClientPacket
 			if (teleport != null) {
 				TeleportService2.teleport(teleport, locId, player, npc, TeleportAnimation.JUMP_ANIMATION);
 			} else {
-				LoggerFactory.getLogger(CM_TELEPORT_SELECT.class).warn("teleportation id "+locId+" was not found on npc "+npcId);
+				LoggerFactory.getLogger(CM_TELEPORT_SELECT.class)
+						.warn("teleportation id " + locId + " was not found on npc " + npcId);
 			}
 		} else {
-			LoggerFactory.getLogger(CM_TELEPORT_SELECT.class).debug("player "+player.getName()+" requested npc "+targetObjectId+" for teleportation "+locId+", but he doesnt have such npc in knownlist");
+			LoggerFactory.getLogger(CM_TELEPORT_SELECT.class).debug("player " + player.getName() + " requested npc "
+					+ targetObjectId + " for teleportation " + locId + ", but he doesnt have such npc in knownlist");
 		}
 	}
 }

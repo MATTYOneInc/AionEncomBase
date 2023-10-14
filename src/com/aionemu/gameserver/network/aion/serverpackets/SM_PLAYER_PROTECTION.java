@@ -25,13 +25,13 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 public class SM_PLAYER_PROTECTION extends AionServerPacket {
 
-    private int time;
+	private int time;
 
-    public SM_PLAYER_PROTECTION(int time){
-        this.time = time;
-    }
+	public SM_PLAYER_PROTECTION(int time) {
+		this.time = time;
+	}
 
-    protected void writeImpl(AionConnection con){
-        writeD(time);
-    }
+	protected void writeImpl(AionConnection con) {
+		writeD(time);
+	}
 }

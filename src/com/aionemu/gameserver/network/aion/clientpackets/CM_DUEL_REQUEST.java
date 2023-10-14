@@ -62,7 +62,7 @@ public class CM_DUEL_REQUEST extends AionClientPacket {
 		}
 		if (target == null) {
 			return;
-        }
+		}
 		if (target instanceof Player && !((Player) target).equals(activePlayer)) {
 			DuelService duelService = DuelService.getInstance();
 
@@ -82,8 +82,7 @@ public class CM_DUEL_REQUEST extends AionClientPacket {
 			}
 			duelService.onDuelRequest(activePlayer, targetPlayer);
 			duelService.confirmDuelWith(activePlayer, targetPlayer);
-		}
-		else {
+		} else {
 			sendPacket(SM_SYSTEM_MESSAGE.STR_DUEL_PARTNER_INVALID(target.getName()));
 		}
 	}

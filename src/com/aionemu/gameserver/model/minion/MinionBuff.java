@@ -37,9 +37,11 @@ public class MinionBuff implements StatOwner {
 		}
 		mt = DataManager.MINION_DATA.getMinionTemplate(minionId);
 		for (StatFunction statFunction : mt.getModifiers()) {
-        // if (player.getPlayerClass().getClassType(player).equals(statFunction.getClassType())) {
+			// if
+			// (player.getPlayerClass().getClassType(player).equals(statFunction.getClassType()))
+			// {
 			functions.add(new StatAddFunction(statFunction.getName(), statFunction.getValue(), true));
-        // }
+			// }
 		}
 		player.getGameStats().addEffect(this, functions);
 	}

@@ -52,9 +52,11 @@ public class PlayerEventWindowList implements EventWindowList<Player> {
 	/**
 	 * add player event window list
 	 */
-	private synchronized boolean add(Player player, int remaining, Timestamp timestamp, int Time, PersistentState persistentState) {
+	private synchronized boolean add(Player player, int remaining, Timestamp timestamp, int Time,
+			PersistentState persistentState) {
 		entry.put(remaining, new PlayerEventWindowEntry(remaining, timestamp, Time, persistentState));
-		DAOManager.getDAO(PlayerEventsWindowDAO.class).store(player.getPlayerAccount().getId(), remaining, timestamp, Time);
+		DAOManager.getDAO(PlayerEventsWindowDAO.class).store(player.getPlayerAccount().getId(), remaining, timestamp,
+				Time);
 		return true;
 	}
 

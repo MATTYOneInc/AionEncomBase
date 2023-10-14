@@ -21,9 +21,9 @@ package com.aionemu.gameserver.model.team2;
  */
 public interface TeamMember<M> {
 
-    Integer getObjectId();
+	Integer getObjectId();
 
-    String getName();
+	String getName();
 
-    M getObject();
+	M getObject();
 }

@@ -49,7 +49,6 @@ public interface IStorage {
 	 */
 	Item getKinahItem();
 
-
 	/**
 	 * @return
 	 */
@@ -65,7 +64,6 @@ public interface IStorage {
 	 * @param updateType
 	 */
 	void increaseKinah(long amount, ItemUpdateType updateType);
-
 
 	/**
 	 * @param amount
@@ -83,7 +81,6 @@ public interface IStorage {
 	 * @param updateType
 	 */
 	void decreaseKinah(long amount, ItemUpdateType updateType);
-
 
 	/**
 	 * @param item
@@ -119,7 +116,7 @@ public interface IStorage {
 	 * Add operation should be used for new items incoming into storage from outside
 	 */
 	Item add(Item item);
-	
+
 	/**
 	 * Put operation is used in some operations like unequip
 	 */

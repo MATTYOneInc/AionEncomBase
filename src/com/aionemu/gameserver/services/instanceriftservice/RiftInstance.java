@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.InstanceRiftService;
  * @author Rinzler (Encom)
  */
 
-public abstract class RiftInstance<RL extends InstanceRiftLocation>
-{
+public abstract class RiftInstance<RL extends InstanceRiftLocation> {
 	private boolean started;
 	private final RL instanceRiftLocation;
+
 	protected abstract void stopInstanceRift();
+
 	protected abstract void startInstanceRift();
+
 	private final AtomicBoolean closed = new AtomicBoolean();
-	
+
 	public RiftInstance(RL instanceRiftLocation) {
 		this.instanceRiftLocation = instanceRiftLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class RiftInstance<RL extends InstanceRiftLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startInstanceRift();
 	}
-	
+
 	public final void stop() {
 		if (closed.compareAndSet(false, true)) {
 			stopInstanceRift();
 		}
 	}
-	
+
 	protected void spawn(InstanceRiftStateType type) {
 		InstanceRiftService.getInstance().spawn(getInstanceRiftLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		InstanceRiftService.getInstance().despawn(getInstanceRiftLocation());
 	}
-	
+
 	public boolean isClosed() {
 		return closed.get();
 	}
-	
+
 	public RL getInstanceRiftLocation() {
 		return instanceRiftLocation;
 	}
-	
+
 	public int getInstanceRiftLocationId() {
 		return instanceRiftLocation.getId();
 	}

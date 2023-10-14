@@ -60,7 +60,9 @@ public class AionConnection extends AConnection {
 	private static final Logger log = LoggerFactory.getLogger(AionConnection.class);
 
 	private static final PacketProcessor<AionConnection> packetProcessor = new PacketProcessor<AionConnection>(
-		NetworkConfig.PACKET_PROCESSOR_MIN_THREADS, NetworkConfig.PACKET_PROCESSOR_MAX_THREADS, NetworkConfig.PACKET_PROCESSOR_THREAD_SPAWN_THRESHOLD, NetworkConfig.PACKET_PROCESSOR_THREAD_KILL_THRESHOLD, new ExecuteWrapper());
+			NetworkConfig.PACKET_PROCESSOR_MIN_THREADS, NetworkConfig.PACKET_PROCESSOR_MAX_THREADS,
+			NetworkConfig.PACKET_PROCESSOR_THREAD_SPAWN_THRESHOLD, NetworkConfig.PACKET_PROCESSOR_THREAD_KILL_THRESHOLD,
+			new ExecuteWrapper());
 
 	/**
 	 * Possible states of AionConnection
@@ -89,7 +91,7 @@ public class AionConnection extends AConnection {
 	 * Current state of this connection
 	 */
 	private volatile State state;
-	
+
 	/**
 	 * AionClient is authenticating by passing to GameServer id of account.
 	 */
@@ -110,15 +112,16 @@ public class AionConnection extends AConnection {
 	private long lastPingTimeMS;
 
 	private int nbInvalidPackets = 0;
-	// TODO! why there is no any comments what is this doing? i have no clue what is it for [Nemesiss]
+	// TODO! why there is no any comments what is this doing? i have no clue what is
+	// it for [Nemesiss]
 	private final static int MAX_INVALID_PACKETS = 3;
 
 	private String macAddress;
 
 	/** Ping checker - for detecting hanged up connections **/
 	private PingChecker pingChecker;
-	
-	/**  packet flood filter  **/
+
+	/** packet flood filter **/
 	private int[] pff;
 	private long[] pffRequests;
 
@@ -130,7 +133,7 @@ public class AionConnection extends AConnection {
 	 * @throws IOException
 	 */
 	public AionConnection(SocketChannel sc, Dispatcher d) throws IOException {
-		super(sc, d, 8192*2, 8192*2);
+		super(sc, d, 8192 * 2, 8192 * 2);
 		AionPacketHandlerFactory aionPacketHandlerFactory = AionPacketHandlerFactory.getInstance();
 		this.aionPacketHandler = aionPacketHandlerFactory.getPacketHandler();
 
@@ -141,7 +144,7 @@ public class AionConnection extends AConnection {
 
 		pingChecker = new PingChecker();
 		pingChecker.start();
-		
+
 		if (SecurityConfig.PFF_ENABLE) {
 			pff = PacketFloodFilter.getInstance().getPackets();
 			pffRequests = new long[pff.length];
@@ -154,29 +157,34 @@ public class AionConnection extends AConnection {
 		sendPacket(new SM_KEY());
 	}
 
-
 	/**
-	 * Enable crypt key - generate random key that will be used to encrypt second server packet [first one is unencrypted]
-	 * and decrypt client packets. This method is called from SM_KEY server packet, that packet sends key to aion client.
+	 * Enable crypt key - generate random key that will be used to encrypt second
+	 * server packet [first one is unencrypted] and decrypt client packets. This
+	 * method is called from SM_KEY server packet, that packet sends key to aion
+	 * client.
 	 * 
-	 * @return "false key" that should by used by aion client to encrypt/decrypt packets.
+	 * @return "false key" that should by used by aion client to encrypt/decrypt
+	 *         packets.
 	 */
 	public final int enableCryptKey() {
 		return crypt.enableKey();
 	}
 
 	/**
-	 * Called by Dispatcher. ByteBuffer data contains one packet that should be processed.
+	 * Called by Dispatcher. ByteBuffer data contains one packet that should be
+	 * processed.
 	 * 
 	 * @param data
-	 * @return True if data was processed correctly, False if some error occurred and connection should be closed NOW.
+	 * @return True if data was processed correctly, False if some error occurred
+	 *         and connection should be closed NOW.
 	 */
 	@Override
 	protected final boolean processData(ByteBuffer data) {
 		try {
 			if (!crypt.decrypt(data)) {
 				nbInvalidPackets++;
-				log.info("[" + nbInvalidPackets + "/" + MAX_INVALID_PACKETS + "] Decrypt fail, client packet passed...");
+				log.info(
+						"[" + nbInvalidPackets + "/" + MAX_INVALID_PACKETS + "] Decrypt fail, client packet passed...");
 				if (nbInvalidPackets >= MAX_INVALID_PACKETS) {
 					log.warn("Decrypt fail!");
 					return false;
@@ -188,8 +196,8 @@ public class AionConnection extends AConnection {
 			return false;
 		}
 
-		if (data.remaining() < 5) {//op + static code + op == 5 bytes
-			log.error("Received fake packet from: "+this);
+		if (data.remaining() < 5) {// op + static code + op == 5 bytes
+			log.error("Received fake packet from: " + this);
 			return false;
 		}
 
@@ -201,23 +209,23 @@ public class AionConnection extends AConnection {
 		if (pck != null) {
 			if (SecurityConfig.PFF_ENABLE) {
 				int opcode = pck.getOpcode();
-				if(pff.length > opcode) {		
-					if(pff[opcode] > 0) {
+				if (pff.length > opcode) {
+					if (pff[opcode] > 0) {
 						long last = this.pffRequests[opcode];
-						if(last == 0) {
+						if (last == 0) {
 							this.pffRequests[opcode] = System.currentTimeMillis();
 						} else {
 							long diff = System.currentTimeMillis() - last;
-							if(diff < pff[opcode]) {
-								log.warn(this+" has flooding "+pck.getClass().getSimpleName()+" "+diff);
+							if (diff < pff[opcode]) {
+								log.warn(this + " has flooding " + pck.getClass().getSimpleName() + " " + diff);
 								switch (SecurityConfig.PFF_LEVEL) {
-									case 1: //disconnect
-										return false;
-									case 2:
-										break;
+								case 1: // disconnect
+									return false;
+								case 2:
+									break;
 								}
-							}
-							else this.pffRequests[opcode] = System.currentTimeMillis();
+							} else
+								this.pffRequests[opcode] = System.currentTimeMillis();
 						}
 					}
 				}
@@ -225,7 +233,7 @@ public class AionConnection extends AConnection {
 
 			PacketLoggerService.getInstance().logPacketCM(pck.getPacketName());
 
-			if(pck.read()) {
+			if (pck.read()) {
 				packetProcessor.executePacket(pck);
 			}
 		}
@@ -233,10 +241,12 @@ public class AionConnection extends AConnection {
 	}
 
 	/**
-	 * This method will be called by Dispatcher, and will be repeated till return false.
+	 * This method will be called by Dispatcher, and will be repeated till return
+	 * false.
 	 * 
 	 * @param data
-	 * @return True if data was written to buffer, False indicating that there are not any more data to write.
+	 * @return True if data was written to buffer, False indicating that there are
+	 *         not any more data to write.
 	 */
 	@Override
 	protected final boolean writeData(ByteBuffer data) {
@@ -250,8 +260,7 @@ public class AionConnection extends AConnection {
 			try {
 				packet.write(this, data);
 				return true;
-			}
-			finally {
+			} finally {
 				RunnableStatsManager.handleStats(packet.getClass(), "runImpl()", System.nanoTime() - begin);
 			}
 		}
@@ -260,7 +269,8 @@ public class AionConnection extends AConnection {
 	/**
 	 * This method is called by Dispatcher when connection is ready to be closed.
 	 * 
-	 * @return time in ms after witch onDisconnect() method will be called. Always return 0.
+	 * @return time in ms after witch onDisconnect() method will be called. Always
+	 *         return 0.
 	 */
 	@Override
 	protected final long getDisconnectionDelay() {
@@ -309,8 +319,7 @@ public class AionConnection extends AConnection {
 	/**
 	 * Sends AionServerPacket to this client.
 	 * 
-	 * @param bp
-	 *          AionServerPacket to be sent.
+	 * @param bp AionServerPacket to be sent.
 	 */
 	public final void sendPacket(AionServerPacket bp) {
 		synchronized (guard) {
@@ -326,14 +335,13 @@ public class AionConnection extends AConnection {
 	}
 
 	/**
-	 * Its guaranteed that closePacket will be sent before closing connection, but all past and future packets wont.
-	 * Connection will be closed [by Dispatcher Thread], and onDisconnect() method will be called to clear all other
-	 * things. forced means that server shouldn't wait with removing this connection.
+	 * Its guaranteed that closePacket will be sent before closing connection, but
+	 * all past and future packets wont. Connection will be closed [by Dispatcher
+	 * Thread], and onDisconnect() method will be called to clear all other things.
+	 * forced means that server shouldn't wait with removing this connection.
 	 * 
-	 * @param closePacket
-	 *          Packet that will be send before closing.
-	 * @param forced
-	 *          have no effect in this implementation.
+	 * @param closePacket Packet that will be send before closing.
+	 * @param forced      have no effect in this implementation.
 	 */
 	public final void close(AionServerPacket closePacket, boolean forced) {
 		synchronized (guard) {
@@ -360,8 +368,7 @@ public class AionConnection extends AConnection {
 	/**
 	 * Sets the state of this connection
 	 * 
-	 * @param state
-	 *          state of this connection
+	 * @param state state of this connection
 	 */
 	public void setState(State state) {
 		this.state = state;
@@ -379,8 +386,7 @@ public class AionConnection extends AConnection {
 	/**
 	 * Sets account object associated with this connection
 	 * 
-	 * @param account
-	 *          account object associated with this connection
+	 * @param account account object associated with this connection
 	 */
 	public void setAccount(Account account) {
 		Preconditions.checkArgument(account != null, "Account can't be null");
@@ -423,8 +429,7 @@ public class AionConnection extends AConnection {
 	}
 
 	/**
-	 * @param lastPingTimeMS
-	 *          the lastPingTimeMS to set
+	 * @param lastPingTimeMS the lastPingTimeMS to set
 	 */
 	public void setLastPingTimeMS(long lastPingTimeMS) {
 		this.lastPingTimeMS = lastPingTimeMS;
@@ -446,7 +451,9 @@ public class AionConnection extends AConnection {
 	public String toString() {
 		Player player = activePlayer.get();
 		if (player != null) {
-			return "AionConnection [state=" + state + ", account=" + account + ", getObjectId()=" + player.getObjectId() + ", lastPlayerName=" + lastPlayerName + ", macAddress=" + macAddress + ", getIP()=" + getIP() + "]";
+			return "AionConnection [state=" + state + ", account=" + account + ", getObjectId()=" + player.getObjectId()
+					+ ", lastPlayerName=" + lastPlayerName + ", macAddress=" + macAddress + ", getIP()=" + getIP()
+					+ "]";
 		}
 		return "";
 	}

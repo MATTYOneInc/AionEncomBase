@@ -65,32 +65,32 @@ public class BonusService {
 
 	public BonusItemGroup[] getGroupsByType(BonusType type) {
 		switch (type) {
-			case BOSS:
-				return itemGroups.getBossGroups();
-			case ENCHANT:
-				return itemGroups.getEnchantGroups();
-			case FOOD:
-				return itemGroups.getFoodGroups();
-			case GATHER:
-				return (BonusItemGroup[]) ArrayUtils.addAll(itemGroups.getOreGroups(), itemGroups.getGatherGroups());
-			case MANASTONE:
-				return itemGroups.getManastoneGroups();
-			case MEDICINE:
-				return itemGroups.getMedicineGroups();
-			case TASK:
-				return itemGroups.getCraftGroups();
-			case ISLAND:
-			case LUNAR:
-			case RIFT:
-			case VOLATILE_RIFT:
-			case REDEEM:
-			case MOVIE:
-			case MAGICAL:
-			case WINTER:
-				return null;
-			default:
-				log.warn("Bonus of type " + type + " is not implemented");
-				return null;
+		case BOSS:
+			return itemGroups.getBossGroups();
+		case ENCHANT:
+			return itemGroups.getEnchantGroups();
+		case FOOD:
+			return itemGroups.getFoodGroups();
+		case GATHER:
+			return (BonusItemGroup[]) ArrayUtils.addAll(itemGroups.getOreGroups(), itemGroups.getGatherGroups());
+		case MANASTONE:
+			return itemGroups.getManastoneGroups();
+		case MEDICINE:
+			return itemGroups.getMedicineGroups();
+		case TASK:
+			return itemGroups.getCraftGroups();
+		case ISLAND:
+		case LUNAR:
+		case RIFT:
+		case VOLATILE_RIFT:
+		case REDEEM:
+		case MOVIE:
+		case MAGICAL:
+		case WINTER:
+			return null;
+		default:
+			log.warn("Bonus of type " + type + " is not implemented");
+			return null;
 		}
 	}
 
@@ -114,8 +114,7 @@ public class BonusService {
 				if (Rnd.get(0, percent) <= chance) {
 					chosenGroup = gr;
 					break;
-				}
-				else {
+				} else {
 					percent -= chance;
 				}
 			}
@@ -143,24 +142,24 @@ public class BonusService {
 		}
 
 		switch (bonus.getType()) {
-			case TASK:
-				return getCraftBonus(player, questTemplate);
-			case MANASTONE:
-				return getManastoneBonus(player, bonus);
-			case MEDAL:
-				return getMedalBonus(player, questTemplate);
-			case ISLAND:
-			case LUNAR:
-			case RIFT:
-			case VOLATILE_RIFT:
-			case REDEEM:
-			case MOVIE:
-			case MAGICAL:
-			case WINTER:
-				return null;
-			default:
-				log.warn("Bonus of type " + bonus.getType() + " is not implemented");
-				return null;
+		case TASK:
+			return getCraftBonus(player, questTemplate);
+		case MANASTONE:
+			return getManastoneBonus(player, bonus);
+		case MEDAL:
+			return getMedalBonus(player, questTemplate);
+		case ISLAND:
+		case LUNAR:
+		case RIFT:
+		case VOLATILE_RIFT:
+		case REDEEM:
+		case MOVIE:
+		case MAGICAL:
+		case WINTER:
+			return null;
+		default:
+			log.warn("Bonus of type " + bonus.getType() + " is not implemented");
+			return null;
 		}
 	}
 
@@ -206,7 +205,7 @@ public class BonusService {
 		ItemRaceEntry reward = finalList.get(itemIndex);
 		if ((reward instanceof CraftItem)) {
 			itemCount = Rnd.get(3, 5);
-        }
+		}
 		return new QuestItems(reward.getId(), itemCount);
 	}
 

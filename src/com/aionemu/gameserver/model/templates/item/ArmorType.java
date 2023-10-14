@@ -25,31 +25,22 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlType(name = "armor_type")
 @XmlEnum
-public enum ArmorType
-{
-	//Armor Type 4.8
-	NO_ARMOR(new int[] {}),
-	CHAIN(new int[] {42, 49}),
-	CLOTHES(new int[] {40}),
-	LEATHER(new int[] {41, 48}),
-	PLATE(new int[] {54}),
-	ROBE(new int[] {103, 106}),
-	SHARD(new int[] {}),
-	SHIELD(new int[] {43, 50}),
-	WING(new int[] {}),
-	PLUME(new int[] {}),
-	BRACELET(new int[] {});
-	
+public enum ArmorType {
+	// Armor Type 4.8
+	NO_ARMOR(new int[] {}), CHAIN(new int[] { 42, 49 }), CLOTHES(new int[] { 40 }), LEATHER(new int[] { 41, 48 }),
+	PLATE(new int[] { 54 }), ROBE(new int[] { 103, 106 }), SHARD(new int[] {}), SHIELD(new int[] { 43, 50 }),
+	WING(new int[] {}), PLUME(new int[] {}), BRACELET(new int[] {});
+
 	private int[] requiredSkills;
-	
+
 	private ArmorType(int[] requiredSkills) {
 		this.requiredSkills = requiredSkills;
 	}
-	
+
 	public int[] getRequiredSkills() {
 		return requiredSkills;
 	}
-	
+
 	public int getMask() {
 		return 1 << this.ordinal();
 	}

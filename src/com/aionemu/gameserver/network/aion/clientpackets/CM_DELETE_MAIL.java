@@ -36,8 +36,8 @@ public class CM_DELETE_MAIL extends AionClientPacket {
 	protected void readImpl() {
 		int count = readC();
 		mailObjId = new int[count];
-		for (int i = 0; i< count; i++) {
-			readC(); //unk
+		for (int i = 0; i < count; i++) {
+			readC(); // unk
 			mailObjId[i] = readD();
 		}
 	}

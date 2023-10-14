@@ -58,8 +58,7 @@ public class Mailbox {
 	public void putLetterToMailbox(Letter letter) {
 		if (haveFreeSlots()) {
 			mails.put(letter.getObjectId(), letter);
-		}
-		else {
+		} else {
 			reserveMail.put(letter.getObjectId(), letter);
 		}
 	}
@@ -79,7 +78,7 @@ public class Mailbox {
 				}
 				if (o1.getTimeStamp().getTime() < o2.getTimeStamp().getTime()) {
 					return -1;
-                }
+				}
 				return o1.getObjectId() > o2.getObjectId() ? 1 : -1;
 			}
 		});
@@ -91,10 +90,10 @@ public class Mailbox {
 	}
 
 	/**
-	 * Get system letters which senders start with the string specified and were received since the last player login
+	 * Get system letters which senders start with the string specified and were
+	 * received since the last player login
 	 * 
-	 * @param substring
-	 *          must start with special characters: % or $$
+	 * @param substring must start with special characters: % or $$
 	 * @return new list of letters
 	 */
 	public List<Letter> getNewSystemLetters(String substring) {
@@ -198,8 +197,7 @@ public class Mailbox {
 				if (haveFreeSlots()) {
 					mails.put(letter.getObjectId(), letter);
 					reserveMail.remove(letter.getObjectId());
-				}
-				else
+				} else
 					break;
 			}
 			MailService.getInstance().refreshMail(getOwner());

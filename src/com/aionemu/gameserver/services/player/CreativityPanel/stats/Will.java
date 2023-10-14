@@ -38,8 +38,7 @@ public class Will implements StatOwner {
 			will.add(new StatAddFunction(StatEnum.MAGICAL_CRITICAL_RESIST, (int) (2.25f * point), true));
 			will.add(new StatAddFunction(StatEnum.REGEN_MP, (int) (0.2f * point), true));
 			player.getGameStats().addEffect(this, will);
-		}
-		else if (point == 0) {
+		} else if (point == 0) {
 			will.clear();
 			will.add(new StatAddFunction(StatEnum.MAXMP, (int) (24.5f * point), false));
 			will.add(new StatAddFunction(StatEnum.MAGICAL_RESIST, (int) (3.35f * point), false));

@@ -27,7 +27,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum BonusChargeType {
 
-	NONE,
-	PHYSICAL,
-	MAGICAL;
+	NONE, PHYSICAL, MAGICAL;
 }

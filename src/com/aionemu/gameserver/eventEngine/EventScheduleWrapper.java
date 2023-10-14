@@ -24,42 +24,42 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
  * Created by wanke on 12/02/2017.
  */
 
-class EventScheduleWrapper implements Runnable
-{
-    private static final int RECHECK_DELAY = 2;
-    private final Event event;
-    private boolean first = true;
-    private ScheduledFuture<?> last_future;
-	
-    public EventScheduleWrapper(Event event) {
-        this.event = event;
-    }
-	
-    @Override
-    public void run() {
-        if (last_future != null) {
-            if (!last_future.isDone()) {
-                return;
-            }
-        } if (!check()) {
-            Runnable runnable = new Runnable() {
-                @Override
-                public void run() {
-                    check();
-                }
-            };
-            last_future = ThreadPoolManager.getInstance().schedule(runnable, RECHECK_DELAY * 60 * 1000);
-        }
-    }
-	
-    private boolean check() {
-        if (event.isFinished() || first) {
-            first = false;
-            EventScheduler.getInstance().schedule(event, 10);
-            return true;
-        } else {
-            event.cancel(true);
-            return false;
-        }
-    }
+class EventScheduleWrapper implements Runnable {
+	private static final int RECHECK_DELAY = 2;
+	private final Event event;
+	private boolean first = true;
+	private ScheduledFuture<?> last_future;
+
+	public EventScheduleWrapper(Event event) {
+		this.event = event;
+	}
+
+	@Override
+	public void run() {
+		if (last_future != null) {
+			if (!last_future.isDone()) {
+				return;
+			}
+		}
+		if (!check()) {
+			Runnable runnable = new Runnable() {
+				@Override
+				public void run() {
+					check();
+				}
+			};
+			last_future = ThreadPoolManager.getInstance().schedule(runnable, RECHECK_DELAY * 60 * 1000);
+		}
+	}
+
+	private boolean check() {
+		if (event.isFinished() || first) {
+			first = false;
+			EventScheduler.getInstance().schedule(event, 10);
+			return true;
+		} else {
+			event.cancel(true);
+			return false;
+		}
+	}
 }

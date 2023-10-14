@@ -33,7 +33,8 @@ import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
- * Here will be placed some common AI2 actions. These methods have access to AI2's owner
+ * Here will be placed some common AI2 actions. These methods have access to
+ * AI2's owner
  * 
  * @author ATracer
  */
@@ -76,7 +77,7 @@ public class AI2Actions {
 		effect.initialize();
 		effect.applyEffect();
 	}
-	
+
 	public static void applyEffectSelf(AbstractAI ai2, int skillId) {
 		SkillTemplate st = DataManager.SKILL_DATA.getSkillTemplate(skillId);
 		Effect effect = new Effect(ai2.getOwner(), ai2.getOwner(), st, 1, st.getEffectsDuration(skillId));
@@ -93,9 +94,10 @@ public class AI2Actions {
 	}
 
 	public static void handleUseItemFinish(AbstractAI ai2, Player player) {
-		ai2.getPosition().getWorldMapInstance().getInstanceHandler().handleUseItemFinish(player, ((Npc) ai2.getOwner()));
+		ai2.getPosition().getWorldMapInstance().getInstanceHandler().handleUseItemFinish(player,
+				((Npc) ai2.getOwner()));
 	}
-	
+
 	public static void fireIndividualEvent(AbstractAI ai2, Npc target) {
 		target.getAi2().onIndividualNpcEvent(ai2.getOwner());
 	}
@@ -118,7 +120,7 @@ public class AI2Actions {
 		return new SelectDialogResult(result, env);
 	}
 
-	public static final class SelectDialogResult{
+	public static final class SelectDialogResult {
 		private final boolean success;
 		private final QuestEnv env;
 
@@ -126,41 +128,45 @@ public class AI2Actions {
 			this.success = success;
 			this.env = env;
 		}
+
 		public boolean isSuccess() {
 			return success;
 		}
+
 		public QuestEnv getEnv() {
 			return env;
 		}
 	}
 
 	/**
-	 * Add RequestResponseHandler to player with senderId equal to objectId of AI owner
+	 * Add RequestResponseHandler to player with senderId equal to objectId of AI
+	 * owner
 	 */
 	public static void addRequest(AbstractAI ai2, Player player, int requestId, AI2Request request,
-		Object... requestParams) {
+			Object... requestParams) {
 		addRequest(ai2, player, requestId, ai2.getObjectId(), request, requestParams);
 	}
 
 	/**
 	 * Add RequestResponseHandler to player, which cancels request on movement
 	 */
-	public static void addRequest(AbstractAI ai2, Player player, int requestId, int senderId, int range, final AI2Request request,
-		Object... requestParams) {
+	public static void addRequest(AbstractAI ai2, Player player, int requestId, int senderId, int range,
+			final AI2Request request, Object... requestParams) {
 
-		boolean requested = player.getResponseRequester().putRequest(requestId, new RequestResponseHandler(ai2.getOwner()) {
+		boolean requested = player.getResponseRequester().putRequest(requestId,
+				new RequestResponseHandler(ai2.getOwner()) {
 
-			@Override
-			public void denyRequest(Creature requester, Player responder) {
-				request.denyRequest(requester, responder);
-			}
+					@Override
+					public void denyRequest(Creature requester, Player responder) {
+						request.denyRequest(requester, responder);
+					}
 
-			@Override
-			public void acceptRequest(Creature requester, Player responder) {
-				request.acceptRequest(requester, responder);
-			}
-		});
-		
+					@Override
+					public void acceptRequest(Creature requester, Player responder) {
+						request.acceptRequest(requester, responder);
+					}
+				});
+
 		if (requested) {
 			if (range > 0) {
 				player.getObserveController().addObserver(new DialogObserver(ai2.getOwner(), player, range) {
@@ -174,10 +180,11 @@ public class AI2Actions {
 		}
 	}
 
-    /**
-     * Add RequestResponseHandler to player
-     */
-    public static void addRequest(AbstractAI ai2, Player player, int requestId, int senderId, final AI2Request request, Object... requestParams) {
-        addRequest(ai2, player, requestId, senderId, 0, request, requestParams);
-    }
+	/**
+	 * Add RequestResponseHandler to player
+	 */
+	public static void addRequest(AbstractAI ai2, Player player, int requestId, int senderId, final AI2Request request,
+			Object... requestParams) {
+		addRequest(ai2, player, requestId, senderId, 0, request, requestParams);
+	}
 }

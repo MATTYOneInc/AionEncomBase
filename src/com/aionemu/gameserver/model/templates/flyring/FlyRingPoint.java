@@ -25,29 +25,31 @@ import com.aionemu.gameserver.model.utils3d.Point3D;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FlyRingPoint")
-public class FlyRingPoint
-{
+public class FlyRingPoint {
 	@XmlAttribute(name = "x")
 	private float x;
-	
+
 	@XmlAttribute(name = "y")
 	private float y;
-	
+
 	@XmlAttribute(name = "z")
 	private float z;
-	
+
 	public float getX() {
 		return x;
 	}
+
 	public float getY() {
 		return y;
 	}
+
 	public float getZ() {
 		return z;
 	}
+
 	public FlyRingPoint() {
 	}
-	
+
 	public FlyRingPoint(Point3D p) {
 		x = (float) p.x;
 		y = (float) p.y;

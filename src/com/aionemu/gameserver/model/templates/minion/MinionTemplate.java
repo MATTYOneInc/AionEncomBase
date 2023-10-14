@@ -44,11 +44,11 @@ public class MinionTemplate {
 	@XmlAttribute(name = "nameid")
 	private int name_id;
 
-    @XmlAttribute(name = "grade")
-    private String grade;
+	@XmlAttribute(name = "grade")
+	private String grade;
 
-    @XmlAttribute(name = "level")
-    private int level;
+	@XmlAttribute(name = "level")
+	private int level;
 
 	@XmlAttribute(name = "growthPoints")
 	private int growthPoints;
@@ -59,20 +59,20 @@ public class MinionTemplate {
 	@XmlAttribute(name = "growthCost")
 	private int growthCost;
 
-    @XmlElement(name = "modifiers", required = false)
-    private ModifiersTemplate modifiers;
+	@XmlElement(name = "modifiers", required = false)
+	private ModifiersTemplate modifiers;
 
-    @XmlElement(name = "actions")
-    private MinionActions actions;
+	@XmlElement(name = "actions")
+	private MinionActions actions;
 
-    @XmlElement(name = "minionstats")
-    private MinionStatsTemplate statsTemplate;
+	@XmlElement(name = "minionstats")
+	private MinionStatsTemplate statsTemplate;
 
-    @XmlElement(name = "bound")
-    private BoundRadius bound;
+	@XmlElement(name = "bound")
+	private BoundRadius bound;
 
-    @XmlElement(name = "evolved")
-    private MinionEvolved evolved;
+	@XmlElement(name = "evolved")
+	private MinionEvolved evolved;
 
 	public int getId() {
 		return id;
@@ -82,13 +82,13 @@ public class MinionTemplate {
 		return name;
 	}
 
-    public String getGrade() {
-        return this.grade;
-    }
+	public String getGrade() {
+		return this.grade;
+	}
 
-    public int getLevel() {
-        return this.level;
-    }
+	public int getLevel() {
+		return this.level;
+	}
 
 	public int getGrowthPt() {
 		return growthPoints;
@@ -102,26 +102,26 @@ public class MinionTemplate {
 		return growthCost;
 	}
 
-    public List<StatFunction> getModifiers() {
-        if (this.modifiers != null) {
-            return this.modifiers.getModifiers();
-        }
-        return null;
-    }
+	public List<StatFunction> getModifiers() {
+		if (this.modifiers != null) {
+			return this.modifiers.getModifiers();
+		}
+		return null;
+	}
 
-    public MinionActions getAction() {
-        return this.actions;
-    }
+	public MinionActions getAction() {
+		return this.actions;
+	}
 
-    public MinionStatsTemplate getStatsTemplate() {
-        return this.statsTemplate;
-    }
+	public MinionStatsTemplate getStatsTemplate() {
+		return this.statsTemplate;
+	}
 
-    public BoundRadius getBoundRadius() {
-        return this.bound;
-    }
+	public BoundRadius getBoundRadius() {
+		return this.bound;
+	}
 
-    public MinionEvolved getEvolved() {
-        return this.evolved;
-    }
+	public MinionEvolved getEvolved() {
+		return this.evolved;
+	}
 }

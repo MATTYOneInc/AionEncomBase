@@ -26,17 +26,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"reward"})
+@XmlType(name = "", propOrder = { "reward" })
 @XmlRootElement(name = "rewards")
-public class Rewards
-{
-    @XmlElement(required = true)
-    protected List<Reward> reward;
-	
-    public List<Reward> getReward() {
-        if (reward == null) {
-            reward = new ArrayList<Reward>();
-        }
-        return this.reward;
-    }
+public class Rewards {
+	@XmlElement(required = true)
+	protected List<Reward> reward;
+
+	public List<Reward> getReward() {
+		if (reward == null) {
+			reward = new ArrayList<Reward>();
+		}
+		return this.reward;
+	}
 }

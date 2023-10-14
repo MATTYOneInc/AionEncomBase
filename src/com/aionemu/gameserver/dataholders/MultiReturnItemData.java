@@ -30,38 +30,38 @@ import com.aionemu.gameserver.model.templates.teleport.MultiReturnLocationList;
 import gnu.trove.map.hash.TIntObjectHashMap;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlRootElement(name = "multi_returns")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class MultiReturnItemData
-{
+public class MultiReturnItemData {
 	@XmlElement(name = "item")
 	private List<MultiReturn> ItemList;
-	
+
 	private TIntObjectHashMap<List<MultiReturnLocationList>> ItemLocationList = new TIntObjectHashMap<>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		ItemLocationList.clear();
-		for (MultiReturn template: ItemList) {
+		for (MultiReturn template : ItemList) {
 			ItemLocationList.put(template.getId(), template.getMultiReturnList());
 		}
 	}
-	
+
 	public int size() {
 		return ItemLocationList.size();
 	}
-	
+
 	public MultiReturn getMultiReturnById(int id) {
-		for (MultiReturn template: ItemList) {
+		for (MultiReturn template : ItemList) {
 			if (template.getId() == id) {
 				return template;
 			}
 		}
 		return null;
 	}
-	
+
 	public List<MultiReturn> getMultiReturns() {
 		return ItemList;
 	}

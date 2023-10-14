@@ -18,8 +18,7 @@ package com.aionemu.gameserver.configs.main;
 
 import com.aionemu.commons.configuration.Property;
 
-public class CustomConfig
-{
+public class CustomConfig {
 	/**
 	 * Login Server GM INFO
 	 */
@@ -109,16 +108,16 @@ public class CustomConfig
 	public static boolean LIMITS_ENABLED;
 	@Property(key = "gameserver.limits.update", defaultValue = "0 0 0 ? * *")
 	public static String LIMITS_UPDATE;
-    @Property(key = "gameserver.limits.rate", defaultValue="1")
-    public static int LIMITS_RATE;
-    @Property(key = "gameserver.chat.text.length", defaultValue="150")
-    public static int MAX_CHAT_TEXT_LENGHT;
-    @Property(key = "gameserver.abyssxform.afterlogout", defaultValue="false")
-    public static boolean ABYSSXFORM_LOGOUT;
-    @Property(key = "gameserver.instance.duel.enable", defaultValue="true")
-    public static boolean INSTANCE_DUEL_ENABLE;
-    @Property(key =" gameserver.ride.restriction.enable", defaultValue="true")
-    public static boolean ENABLE_RIDE_RESTRICTION;
+	@Property(key = "gameserver.limits.rate", defaultValue = "1")
+	public static int LIMITS_RATE;
+	@Property(key = "gameserver.chat.text.length", defaultValue = "150")
+	public static int MAX_CHAT_TEXT_LENGHT;
+	@Property(key = "gameserver.abyssxform.afterlogout", defaultValue = "false")
+	public static boolean ABYSSXFORM_LOGOUT;
+	@Property(key = "gameserver.instance.duel.enable", defaultValue = "true")
+	public static boolean INSTANCE_DUEL_ENABLE;
+	@Property(key = " gameserver.ride.restriction.enable", defaultValue = "true")
+	public static boolean ENABLE_RIDE_RESTRICTION;
 	@Property(key = "gameserver.challenge.tasks.enabled", defaultValue = "false")
 	public static boolean CHALLENGE_TASKS_ENABLED;
 	@Property(key = "gameserver.commands.admin.dot.enable", defaultValue = "false")
@@ -128,11 +127,11 @@ public class CustomConfig
 	@Property(key = "gameserver.rift.duration", defaultValue = "1")
 	public static int RIFT_DURATION;
 	@Property(key = "gameserver.rift.appear.chance", defaultValue = "50")
-    public static int RIFT_APPEAR_CHANCE;
+	public static int RIFT_APPEAR_CHANCE;
 	@Property(key = "gameserver.auto.kinah.enabled", defaultValue = "false")
 	public static boolean AUTO_KINAH_ENABLED;
 
-	//Exp Progressive.
+	// Exp Progressive.
 	@Property(key = "gameserver.enable.exp.progressive.ap.player", defaultValue = "false")
 	public static boolean ENABLE_EXP_PROGRESSIVE_AP_PLAYER;
 	@Property(key = "gameserver.enable.exp.progressive.ap.npc", defaultValue = "false")
@@ -146,13 +145,13 @@ public class CustomConfig
 	@Property(key = "gameserver.enable.exp.progressive.book", defaultValue = "false")
 	public static boolean ENABLE_EXP_PROGRESSIVE_BOOK;
 
-	//Vortex 3.9
+	// Vortex 3.9
 	@Property(key = "gameserver.vortex.enable", defaultValue = "true")
 	public static boolean VORTEX_ENABLED;
 	@Property(key = "gameserver.vortex.duration", defaultValue = "2")
 	public static int VORTEX_DURATION;
 
-	//Dispute Land 3.0
+	// Dispute Land 3.0
 	@Property(key = "gameserver.dispute.land.enable", defaultValue = "true")
 	public static boolean DISPUTE_LAND_ENABLED;
 	@Property(key = "gameserver.dispute.land.schedule", defaultValue = "0 0 2 ? * *")
@@ -160,44 +159,44 @@ public class CustomConfig
 	@Property(key = "gameserver.dispute.land.duration", defaultValue = "2")
 	public static int DISPUTE_LAND_DURATION;
 
-	//Beritra Invasion 4.7
+	// Beritra Invasion 4.7
 	@Property(key = "gameserver.beritra.enable", defaultValue = "true")
 	public static boolean BERITRA_ENABLED;
 	@Property(key = "gameserver.beritra.duration", defaultValue = "2")
 	public static int BERITRA_DURATION;
 
-	//Agent Fight 4.7
+	// Agent Fight 4.7
 	@Property(key = "gameserver.agent.enable", defaultValue = "true")
 	public static boolean AGENT_ENABLED;
 	@Property(key = "gameserver.agent.duration", defaultValue = "2")
 	public static int AGENT_DURATION;
 
-	//Berserk Anoha 4.7
+	// Berserk Anoha 4.7
 	@Property(key = "gameserver.anoha.enable", defaultValue = "true")
 	public static boolean ANOHA_ENABLED;
 	@Property(key = "gameserver.anoha.duration", defaultValue = "1")
 	public static int ANOHA_DURATION;
 
-	//Panesterra 4.7
+	// Panesterra 4.7
 	@Property(key = "gameserver.svs.enable", defaultValue = "true")
 	public static boolean SVS_ENABLED;
 	@Property(key = "gameserver.svs.duration", defaultValue = "1")
 	public static int SVS_DURATION;
 
-	//R.v.R 4.9
+	// R.v.R 4.9
 	@Property(key = "gameserver.rvr.enable", defaultValue = "true")
 	public static boolean RVR_ENABLED;
 	@Property(key = "gameserver.rvr.duration", defaultValue = "1")
 	public static int RVR_DURATION;
 
-	//Moltenus
+	// Moltenus
 	@Property(key = "gameserver.moltenus.enable", defaultValue = "true")
 	public static boolean MOLTENUS_ENABLED;
 	@Property(key = "gameserver.moltenus.duration", defaultValue = "1")
 	public static int MOLTENUS_DURATION;
 
-	//Dynamic Rift
-	//Shugo Merchant League
+	// Dynamic Rift
+	// Shugo Merchant League
 	@Property(key = "gameserver.dynamic.rift.enable", defaultValue = "false")
 	public static boolean DYNAMIC_RIFT_ENABLED;
 	@Property(key = "gameserver.dynamic.rift.dragon.schedule", defaultValue = "0 0 2 ? * *")
@@ -209,7 +208,7 @@ public class CustomConfig
 	@Property(key = "gameserver.dynamic.rift.duration", defaultValue = "1")
 	public static int DYNAMIC_RIFT_DURATION;
 
-	//Tower Of Eternity
+	// Tower Of Eternity
 	@Property(key = "gameserver.tower.of.eternity.enable", defaultValue = "true")
 	public static boolean TOWER_OF_ETERNITY_ENABLED;
 	@Property(key = "gameserver.tower.of.eternity.schedule", defaultValue = "0 0 1 ? * *")
@@ -217,13 +216,13 @@ public class CustomConfig
 	@Property(key = "gameserver.tower.of.eternity.duration", defaultValue = "1")
 	public static int TOWER_OF_ETERNITY_DURATION;
 
-	//Zorshiv Dredgion 2.1
+	// Zorshiv Dredgion 2.1
 	@Property(key = "gameserver.zorshiv.dredgion.enable", defaultValue = "true")
 	public static boolean ZORSHIV_DREDGION_ENABLED;
 	@Property(key = "gameserver.zorshiv.dredgion.duration", defaultValue = "1")
 	public static int ZORSHIV_DREDGION_DURATION;
 
-	//Live Party Concert Hall 4.3/4.8
+	// Live Party Concert Hall 4.3/4.8
 	@Property(key = "gameserver.iu.enable", defaultValue = "false")
 	public static boolean IU_ENABLED;
 	@Property(key = "gameserver.iu.schedule", defaultValue = "0 0 2 ? * *")
@@ -231,46 +230,47 @@ public class CustomConfig
 	@Property(key = "gameserver.iu.duration", defaultValue = "1")
 	public static int IU_DURATION;
 
-	//Nightmare Circus 4.3
+	// Nightmare Circus 4.3
 	@Property(key = "gameserver.nightmare.circus.enable", defaultValue = "false")
 	public static boolean NIGHTMARE_CIRCUS_ENABLE;
 	@Property(key = "gameserver.nightmare.circus.duration", defaultValue = "1")
 	public static int NIGHTMARE_CIRCUS_DURATION;
 
-	//Conquest/Offering 4.8
+	// Conquest/Offering 4.8
 	@Property(key = "gameserver.conquest.enable", defaultValue = "true")
 	public static boolean CONQUEST_ENABLED;
 	@Property(key = "gameserver.conquest.duration", defaultValue = "1")
 	public static int CONQUEST_DURATION;
 
-	//Idian Depths 4.8
-	//Source JAP: http://acb.blog69.fc2.com/blog-entry-1021.html?no=1024
+	// Idian Depths 4.8
+	// Source JAP: http://acb.blog69.fc2.com/blog-entry-1021.html?no=1024
 	@Property(key = "gameserver.idian.depths.enable", defaultValue = "true")
 	public static boolean IDIAN_DEPTHS_ENABLED;
 	@Property(key = "gameserver.idian.depths.schedule", defaultValue = "0 0 6 ? * *")
-    public static String IDIAN_DEPTHS_SCHEDULE;
+	public static String IDIAN_DEPTHS_SCHEDULE;
 	@Property(key = "gameserver.idian.depths.duration", defaultValue = "1")
 	public static int IDIAN_DEPTHS_DURATION;
 
-	//Instance Rift 4.9
-	//Source KOR: http://aion.power.plaync.com/wiki/%EA%B0%95%EC%B2%A0%EC%9D%98+%EB%AC%B4%EB%8D%A4+%EB%B9%84%EB%B0%80%EC%B0%BD%EA%B3%A0
+	// Instance Rift 4.9
+	// Source KOR:
+	// http://aion.power.plaync.com/wiki/%EA%B0%95%EC%B2%A0%EC%9D%98+%EB%AC%B4%EB%8D%A4+%EB%B9%84%EB%B0%80%EC%B0%BD%EA%B3%A0
 	@Property(key = "gameserver.instance.rift.enable", defaultValue = "true")
 	public static boolean INSTANCE_RIFT_ENABLED;
 	@Property(key = "gameserver.instance.rift.duration", defaultValue = "24")
 	public static int INSTANCE_RIFT_DURATION;
 
-    /**
-	* On official server "KOR/JAP/NA" every time a player disconnect from
-	* server, after reconnect is he always teleport to "Bind Point"
-	*/
+	/**
+	 * On official server "KOR/JAP/NA" every time a player disconnect from server,
+	 * after reconnect is he always teleport to "Bind Point"
+	 */
 	@Property(key = "gameserver.reconnect.to.bind.point", defaultValue = "true")
 	public static boolean ENABLE_RECONNECT_TO_BIND_POINT;
 
-	//Base Rewards
+	// Base Rewards
 	@Property(key = "gameserver.base.rewards.enable", defaultValue = "true")
 	public static boolean ENABLE_BASE_REWARDS;
 
-	//Protector/Conqueror 4.8
+	// Protector/Conqueror 4.8
 	@Property(key = "gameserver.protector.conqueror.enable", defaultValue = "true")
 	public static boolean PROTECTOR_CONQUEROR_ENABLE;
 	@Property(key = "gameserver.protector.conqueror.handled.worlds", defaultValue = "")
@@ -286,21 +286,21 @@ public class CustomConfig
 	@Property(key = "gameserver.protector.conqueror.2nd.rank.kills", defaultValue = "10")
 	public static int PROTECTOR_CONQUEROR_2ND_RANK_KILLS;
 
-	//Illusion Godstones.
+	// Illusion Godstones.
 	@Property(key = "gameserver.break.illusion.godstones", defaultValue = "1.0")
 	public static float ILLUSION_GODSTONE_BREAK_RATE;
 
-	//Energy Of Respose.
+	// Energy Of Respose.
 	@Property(key = "gameserver.energy.of.repose.enable", defaultValue = "true")
 	public static boolean ENERGY_OF_REPOSE_ENABLE;
 
-	//Luna Shop.
+	// Luna Shop.
 	@Property(key = "gameserver.enable.luna.cap", defaultValue = "false")
 	public static boolean ENABLE_LUNA_CAP;
 	@Property(key = "gameserver.luna.cap.value", defaultValue = "9999999")
 	public static long LUNA_CAP_VALUE;
 
-	//Custom Pve/Pk Tags
+	// Custom Pve/Pk Tags
 	@Property(key = "gameserver.pk.tag", defaultValue = "\u2620 %s")
 	public static String TAG_PK;
 	@Property(key = "gameserver.pve.tag", defaultValue = "\u26E8 %s")

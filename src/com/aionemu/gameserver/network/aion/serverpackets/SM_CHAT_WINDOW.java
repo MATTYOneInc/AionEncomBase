@@ -24,16 +24,15 @@ import com.aionemu.gameserver.model.team2.group.PlayerGroup;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_CHAT_WINDOW extends AionServerPacket
-{
+public class SM_CHAT_WINDOW extends AionServerPacket {
 	private Player target;
 	private boolean isGroup;
-	
+
 	public SM_CHAT_WINDOW(Player target, boolean isGroup) {
 		this.target = target;
 		this.isGroup = isGroup;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		if (target == null) {

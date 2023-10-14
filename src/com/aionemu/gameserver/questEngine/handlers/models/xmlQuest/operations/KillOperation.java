@@ -32,8 +32,10 @@ public class KillOperation extends QuestOperation {
 
 	/*
 	 * (non-Javadoc)
-	 * @seecom.aionemu.gameserver.questEngine.handlers.models.xmlQuest.operations.QuestOperation#doOperate(com.aionemu.
-	 * gameserver.services.QuestService, com.aionemu.gameserver.questEngine.model.QuestEnv)
+	 * 
+	 * @seecom.aionemu.gameserver.questEngine.handlers.models.xmlQuest.operations.
+	 * QuestOperation#doOperate(com.aionemu. gameserver.services.QuestService,
+	 * com.aionemu.gameserver.questEngine.model.QuestEnv)
 	 */
 	@Override
 	public void doOperate(QuestEnv env) {

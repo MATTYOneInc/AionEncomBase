@@ -30,34 +30,32 @@ public class SM_TARGET_SELECTED extends AionServerPacket {
 	private int maxHp;
 	private int currentHp;
 	private int maxMp;
-    private int currentMp;
+	private int currentMp;
 	private int targetObjId;
 
 	public SM_TARGET_SELECTED(Player player) {
 		if (player != null) {
 			if (player.getTarget() instanceof Player) {
-	            Player pl = (Player) player.getTarget();
-	            this.level = pl.getLevel();
-	            this.maxHp = pl.getLifeStats().getMaxHp();
-	            this.currentHp = pl.getLifeStats().getCurrentHp();
-	            this.maxMp = pl.getLifeStats().getMaxMp();
-	            this.currentMp = pl.getLifeStats().getCurrentMp();
-	        }
-			else if (player.getTarget() instanceof Creature) {
+				Player pl = (Player) player.getTarget();
+				this.level = pl.getLevel();
+				this.maxHp = pl.getLifeStats().getMaxHp();
+				this.currentHp = pl.getLifeStats().getCurrentHp();
+				this.maxMp = pl.getLifeStats().getMaxMp();
+				this.currentMp = pl.getLifeStats().getCurrentMp();
+			} else if (player.getTarget() instanceof Creature) {
 				Creature creature = (Creature) player.getTarget();
 				this.level = creature.getLevel();
 				this.maxHp = creature.getLifeStats().getMaxHp();
 				this.currentHp = creature.getLifeStats().getCurrentHp();
 				this.maxMp = creature.getLifeStats().getMaxMp();
-	            this.currentMp = creature.getLifeStats().getCurrentMp();
-			}
-			else {
+				this.currentMp = creature.getLifeStats().getCurrentMp();
+			} else {
 				// TODO: check various gather on retail
 				this.level = 0;
 				this.maxHp = 0;
 				this.currentHp = 0;
 				this.maxMp = 0;
-	            this.currentMp = 0;
+				this.currentMp = 0;
 			}
 
 			if (player.getTarget() != null) {
@@ -76,6 +74,6 @@ public class SM_TARGET_SELECTED extends AionServerPacket {
 		writeD(maxHp);
 		writeD(currentHp);
 		writeD(maxMp);
-        writeD(currentMp);
+		writeD(currentMp);
 	}
 }

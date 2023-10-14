@@ -41,12 +41,11 @@ import com.aionemu.gameserver.world.World;
 
 import javolution.util.FastList;
 
-public class MaintenanceTask extends AbstractCronTask
-{
+public class MaintenanceTask extends AbstractCronTask {
 	private static final Logger log = LoggerFactory.getLogger(MaintenanceTask.class);
 	private static final FastList<House> maintainedHouses;
 	private static MaintenanceTask instance;
-	
+
 	static {
 		maintainedHouses = FastList.newInstance();
 		try {
@@ -54,15 +53,15 @@ public class MaintenanceTask extends AbstractCronTask
 		} catch (ParseException pe) {
 		}
 	}
-	
+
 	public static final MaintenanceTask getInstance() {
 		return instance;
 	}
-	
+
 	private MaintenanceTask(String maintainTime) throws ParseException {
 		super(maintainTime);
 	}
-	
+
 	@Override
 	protected long getRunDelay() {
 		int left = (int) (getRunTime() - System.currentTimeMillis() / 1000);
@@ -71,31 +70,31 @@ public class MaintenanceTask extends AbstractCronTask
 		}
 		return left * 1000;
 	}
-	
+
 	@Override
 	protected String getServerTimeVariable() {
 		return "houseMaintainTime";
 	}
-	
-    protected boolean canRunOnInit() {
-      return false;
-    }
-	
+
+	protected boolean canRunOnInit() {
+		return false;
+	}
+
 	public boolean isMaintainTime() {
 		return (getRunTime() - System.currentTimeMillis() / 1000) <= 0;
 	}
-	
+
 	@Override
 	protected void preInit() {
 		log.info("Initializing House maintenance task...");
 	}
-	
-    @Override
-    protected void preRun() {
-        updateMaintainedHouses();
-        log.info("Executing House maintenance. Maintained Houses: " + maintainedHouses.size());
-    }
-	
+
+	@Override
+	protected void preRun() {
+		updateMaintainedHouses();
+		log.info("Executing House maintenance. Maintained Houses: " + maintainedHouses.size());
+	}
+
 	private void updateMaintainedHouses() {
 		maintainedHouses.clear();
 		if (!HousingConfig.ENABLE_HOUSE_PAY) {
@@ -106,9 +105,11 @@ public class MaintenanceTask extends AbstractCronTask
 		for (House house : houses) {
 			if (house.getStatus() == HouseStatus.INACTIVE) {
 				continue;
-			} if (house.getOwnerId() == 0) {
+			}
+			if (house.getOwnerId() == 0) {
 				continue;
-			} if (house.isFeePaid()) {
+			}
+			if (house.isFeePaid()) {
 				if (house.getNextPay() == null || house.getNextPay().before(now)) {
 					house.setFeePaid(false);
 					if (house.getNextPay() == null) {
@@ -122,7 +123,7 @@ public class MaintenanceTask extends AbstractCronTask
 			maintainedHouses.add(house);
 		}
 	}
-	
+
 	@Override
 	protected void executeTask() {
 		if (!HousingConfig.ENABLE_HOUSE_PAY) {
@@ -144,10 +145,12 @@ public class MaintenanceTask extends AbstractCronTask
 				pcd = DAOManager.getDAO(PlayerDAO.class).loadPlayerCommonData(house.getOwnerId());
 			} else {
 				pcd = player.getCommonData();
-			} if (pcd == null) {
+			}
+			if (pcd == null) {
 				putHouseToAuction(house, null);
 				continue;
-			} if (payTime <= beforePreviousRun.getMillis()) {
+			}
+			if (payTime <= beforePreviousRun.getMillis()) {
 				DateTime plusDay = beforePreviousRun.minusDays(1);
 				if (payTime <= plusDay.getMillis()) {
 					impoundTime = now.getMillis();
@@ -162,7 +165,8 @@ public class MaintenanceTask extends AbstractCronTask
 				warnCount = 1;
 			} else {
 				continue;
-			} if (pcd.isOnline()) {
+			}
+			if (pcd.isOnline()) {
 				if (warnCount == 3) {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_HOUSING_SEQUESTRATE);
 				} else {
@@ -172,18 +176,20 @@ public class MaintenanceTask extends AbstractCronTask
 			MailFormatter.sendHouseMaintenanceMail(house, warnCount, impoundTime);
 		}
 	}
-	
+
 	private void putHouseToAuction(House house, PlayerCommonData playerCommonData) {
 		house.revokeOwner();
 		HousingBidService.getInstance().addHouseToAuction(house);
 		house.save();
 		if (playerCommonData == null) {
 			return;
-		} if (playerCommonData.isOnline()) {
+		}
+		if (playerCommonData.isOnline()) {
 			Player player = playerCommonData.getPlayer();
 			player.getHouses().remove(house);
 			player.setHouseRegistry(null);
-			PacketSendUtility.sendPacket(player, new SM_HOUSE_ACQUIRE(player.getObjectId(), house.getAddress().getId(), false));
+			PacketSendUtility.sendPacket(player,
+					new SM_HOUSE_ACQUIRE(player.getObjectId(), house.getAddress().getId(), false));
 			PacketSendUtility.sendPacket(player, new SM_HOUSE_OWNER_INFO(player, null));
 		}
 	}

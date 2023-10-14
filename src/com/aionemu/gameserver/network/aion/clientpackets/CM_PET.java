@@ -90,71 +90,64 @@ public class CM_PET extends AionClientPacket {
 		actionId = readH();
 		action = PetAction.getActionById(actionId);
 		switch (action) {
-			case ADOPT:
-				eggObjId = readD();
-				petId = readD();
-				unk2 = readC();
-				unk3 = readD();
-				decorationId = readD();
-				unk5 = readD();
-				unk6 = readD();
-				petName = readS();
-				break;
-			case SURRENDER:
-			case SPAWN:
-			case DISMISS:
-				petId = readD();
-				break;
-			case FOOD:
-				actionType = readD();
-				if (actionType == 3) {
-					activateLoot = readD();
+		case ADOPT:
+			eggObjId = readD();
+			petId = readD();
+			unk2 = readC();
+			unk3 = readD();
+			decorationId = readD();
+			unk5 = readD();
+			unk6 = readD();
+			petName = readS();
+			break;
+		case SURRENDER:
+		case SPAWN:
+		case DISMISS:
+			petId = readD();
+			break;
+		case FOOD:
+			actionType = readD();
+			if (actionType == 3) {
+				activateLoot = readD();
+			} else if (actionType == 2) {
+				dopingAction = readD();
+				if (dopingAction == 0) { // add item
+					dopingItemId = readD();
+					dopingSlot1 = readD();
+				} else if (dopingAction == 1) { // remove item
+					dopingSlot1 = readD();
+					dopingItemId = readD();
+				} else if (dopingAction == 2) { // move item
+					dopingSlot1 = readD();
+					dopingSlot2 = readD();
+				} else if (dopingAction == 3) { // use doping
+					dopingItemId = readD();
+					dopingSlot1 = readD();
 				}
-				else if (actionType == 2) {
-					dopingAction = readD();
-					if (dopingAction == 0) { // add item
-						dopingItemId = readD();
-						dopingSlot1 = readD();
-					}
-					else if (dopingAction == 1) { // remove item
-						dopingSlot1 = readD();
-						dopingItemId = readD();
-					}
-					else if (dopingAction == 2) { // move item
-						dopingSlot1 = readD();
-						dopingSlot2 = readD();
-					}
-					else if (dopingAction == 3) { // use doping
-						dopingItemId = readD();
-						dopingSlot1 = readD();
-					}
-				}
-				else if (actionType == 4) {
-					activateAutoSell = readD();
-					unkMerchand2 = readD();
-					unkMerchand3 = readD();
-				}
-				else if (actionType == 5) {
-					activateCheering = readD();
-					unkCheer2 = readD();
-					unkCheer3 = readD();
-				}
-				else {
-					objectId = readD();
-					count = readD();
-					unk2 = readD();
-				}
-				break;
-			case RENAME:
-				petId = readD();
-				petName = readS();
-				break;
-			case MOOD:
-				subType = readD();
-				emotionId = readD();
-				break;
-			default:
-				break;
+			} else if (actionType == 4) {
+				activateAutoSell = readD();
+				unkMerchand2 = readD();
+				unkMerchand3 = readD();
+			} else if (actionType == 5) {
+				activateCheering = readD();
+				unkCheer2 = readD();
+				unkCheer3 = readD();
+			} else {
+				objectId = readD();
+				count = readD();
+				unk2 = readD();
+			}
+			break;
+		case RENAME:
+			petId = readD();
+			petName = readS();
+			break;
+		case MOOD:
+			subType = readD();
+			emotionId = readD();
+			break;
+		default:
+			break;
 		}
 	}
 
@@ -166,86 +159,77 @@ public class CM_PET extends AionClientPacket {
 		}
 		Pet pet = player.getPet();
 		switch (action) {
-			case ADOPT:
-				if (NameRestrictionService.isForbiddenWord(petName)) {
-					PacketSendUtility.sendMessage(player, "You are trying to use a forbidden name. Choose another one!");
+		case ADOPT:
+			if (NameRestrictionService.isForbiddenWord(petName)) {
+				PacketSendUtility.sendMessage(player, "You are trying to use a forbidden name. Choose another one!");
+			} else {
+				PetAdoptionService.adoptPet(player, eggObjId, petId, petName, decorationId);
+			}
+			break;
+		case SURRENDER:
+			PetAdoptionService.surrenderPet(player, petId);
+			break;
+		case SPAWN:
+			if (player.getMinion() != null) {
+				MinionService.getInstance().despawnMinion(player, 0);
+			}
+			PetService.getInstance().switchOffBuff(player);
+			PetSpawnService.summonPet(player, petId, true);
+			break;
+		case DISMISS:
+			PetService.getInstance().switchOffBuff(player);
+			PetSpawnService.dismissPet(player, true);
+			break;
+		case FOOD:
+			if (actionType == 2) {
+				// Pet doping
+				if (dopingAction == 2) {
+					PetService.getInstance().relocateDoping(player, dopingSlot1, dopingSlot2);
+				} else {
+					PetService.getInstance().useDoping(player, dopingAction, dopingItemId, dopingSlot1);
 				}
-				else {
-					PetAdoptionService.adoptPet(player, eggObjId, petId, petName, decorationId);
+			} else if (actionType == 3) {
+				// Pet looting
+				PetService.getInstance().activateLoot(player, activateLoot != 0);
+			} else if (actionType == 4) {
+				if (activateAutoSell == 1) {
+					PetService.getInstance().activeAutoSell(player, true);
+				} else if (activateAutoSell == 0) {
+					PetService.getInstance().activeAutoSell(player, false);
 				}
-				break;
-			case SURRENDER:
-				PetAdoptionService.surrenderPet(player, petId);
-				break;
-			case SPAWN:
-                if (player.getMinion() != null) {
-                    MinionService.getInstance().despawnMinion(player, 0);
-                }
-				PetService.getInstance().switchOffBuff(player);
-				PetSpawnService.summonPet(player, petId, true);
-				break;
-			case DISMISS:
-			    PetService.getInstance().switchOffBuff(player);
-				PetSpawnService.dismissPet(player, true);
-				break;
-			case FOOD:
-				if (actionType == 2) {
-					// Pet doping
-					if (dopingAction == 2) {
-						PetService.getInstance().relocateDoping(player, dopingSlot1, dopingSlot2);
-					}
-					else {
-						PetService.getInstance().useDoping(player, dopingAction, dopingItemId, dopingSlot1);
-					}
+			} else if (actionType == 5) {
+				if (activateCheering == 1) {
+					PetService.getInstance().activateBuff(player, true);
+				} else if (activateCheering == 0) {
+					PetService.getInstance().activateBuff(player, false);
 				}
-				else if (actionType == 3) {
-					// Pet looting
-					PetService.getInstance().activateLoot(player, activateLoot != 0);
+			} else if (pet != null) {
+				if (objectId == 0) {
+					pet.getCommonData().setCancelFeed(true);
+					PacketSendUtility.sendPacket(player, new SM_PET(4, actionId, 0, 0, player.getPet()));
+					PacketSendUtility.sendPacket(player,
+							new SM_EMOTION(player, EmotionType.END_FEEDING, 0, player.getObjectId()));
+				} else if (!pet.getCommonData().isFeedingTime()) {
+					PacketSendUtility.sendPacket(player, new SM_PET(8, actionId, objectId, count, player.getPet()));
+				} else {
+					PetService.getInstance().removeObject(objectId, count, actionId, player);
 				}
-				else if (actionType == 4) {
-					if (activateAutoSell == 1) {
-						PetService.getInstance().activeAutoSell(player, true);
-					}
-					else if (activateAutoSell == 0) {
-						PetService.getInstance().activeAutoSell(player, false);
-					}
-				}
-				else if (actionType == 5) {
-					if (activateCheering == 1) {
-						PetService.getInstance().activateBuff(player, true);
-					}
-					else if (activateCheering == 0) {
-						PetService.getInstance().activateBuff(player, false);
-					}
-				}
-				else if (pet != null) {
-					if (objectId == 0) {
-						pet.getCommonData().setCancelFeed(true);
-						PacketSendUtility.sendPacket(player, new SM_PET(4, actionId, 0, 0, player.getPet()));
-						PacketSendUtility.sendPacket(player, new SM_EMOTION(player, EmotionType.END_FEEDING, 0, player.getObjectId()));
-					}
-					else if (!pet.getCommonData().isFeedingTime()) {
-						PacketSendUtility.sendPacket(player, new SM_PET(8, actionId, objectId, count, player.getPet()));
-					}
-					else {
-						PetService.getInstance().removeObject(objectId, count, actionId, player);
-					}
-				}
-				break;
-			case RENAME:
-				if (NameRestrictionService.isForbiddenWord(petName)) {
-					PacketSendUtility.sendMessage(player, "You are trying to use a forbidden name. Choose another one!");
-				}
-				else {
-					PetService.getInstance().renamePet(player, petName);
-				}
-				break;
-			case MOOD:
-				if (pet != null && (subType == 0 && pet.getCommonData().getMoodRemainingTime() == 0 || (subType == 3 && pet.getCommonData().getGiftRemainingTime() == 0) || emotionId != 0)) {
-					PetMoodService.checkMood(pet, subType, emotionId);
-				}
-			default:
-				break;
+			}
+			break;
+		case RENAME:
+			if (NameRestrictionService.isForbiddenWord(petName)) {
+				PacketSendUtility.sendMessage(player, "You are trying to use a forbidden name. Choose another one!");
+			} else {
+				PetService.getInstance().renamePet(player, petName);
+			}
+			break;
+		case MOOD:
+			if (pet != null && (subType == 0 && pet.getCommonData().getMoodRemainingTime() == 0
+					|| (subType == 3 && pet.getCommonData().getGiftRemainingTime() == 0) || emotionId != 0)) {
+				PetMoodService.checkMood(pet, subType, emotionId);
+			}
+		default:
+			break;
 		}
 	}
 }

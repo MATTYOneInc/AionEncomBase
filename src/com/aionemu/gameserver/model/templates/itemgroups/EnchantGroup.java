@@ -35,7 +35,8 @@ import com.aionemu.gameserver.model.templates.rewards.IdLevelReward;
  * <p>
  * Java class for EnchantGroup complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within this class.
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="EnchantGroup">
@@ -51,8 +52,7 @@ import com.aionemu.gameserver.model.templates.rewards.IdLevelReward;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EnchantGroup")
-public class EnchantGroup extends BonusItemGroup
-{
+public class EnchantGroup extends BonusItemGroup {
 
 	@XmlElement(name = "item")
 	protected List<IdLevelReward> items;
@@ -60,9 +60,10 @@ public class EnchantGroup extends BonusItemGroup
 	/**
 	 * Gets the value of the item property.
 	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to
-	 * the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE> method for
-	 * the item property.
+	 * This accessor method returns a reference to the live list, not a snapshot.
+	 * Therefore any modification you make to the returned list will be present
+	 * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
+	 * for the item property.
 	 * <p>
 	 * For example, to add a new item, do as follows:
 	 * 
@@ -70,7 +71,8 @@ public class EnchantGroup extends BonusItemGroup
 	 * getItems().add(newItem);
 	 * </pre>
 	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link IdLevelReward }
+	 * Objects of the following type(s) are allowed in the list {@link IdLevelReward
+	 * }
 	 */
 	public List<IdLevelReward> getItems() {
 		if (items == null) {
@@ -79,7 +81,9 @@ public class EnchantGroup extends BonusItemGroup
 		return this.items;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.aionemu.gameserver.model.templates.itemgroups.ItemGroup#getRewards()
 	 */
 	@Override

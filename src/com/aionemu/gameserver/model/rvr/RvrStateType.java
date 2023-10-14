@@ -20,8 +20,6 @@ package com.aionemu.gameserver.model.rvr;
  * @author Rinzler (Encom)
  */
 
-public enum RvrStateType
-{
-	RVR,
-	PEACE;
+public enum RvrStateType {
+	RVR, PEACE;
 }

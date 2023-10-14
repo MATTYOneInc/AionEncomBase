@@ -29,11 +29,10 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GlobalDropItems")
-public class GlobalDropItems
-{
+public class GlobalDropItems {
 	@XmlElement(name = "gd_item")
 	protected List<GlobalDropItem> gdItems;
-	
+
 	public List<GlobalDropItem> getGlobalDropItems() {
 		if (gdItems == null) {
 			gdItems = new ArrayList<GlobalDropItem>();

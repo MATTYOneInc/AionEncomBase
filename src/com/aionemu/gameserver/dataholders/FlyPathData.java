@@ -50,6 +50,6 @@ public class FlyPathData {
 	}
 
 	public FlyPathEntry getPathTemplate(byte i) {
-		return loctlistData.get((short)i);
+		return loctlistData.get((short) i);
 	}
 }

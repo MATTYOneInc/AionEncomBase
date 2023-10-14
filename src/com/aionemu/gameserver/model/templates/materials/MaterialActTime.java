@@ -26,8 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum MaterialActTime {
 
-	DAY,
-	NIGHT;
+	DAY, NIGHT;
 
 	public String value() {
 		return name();

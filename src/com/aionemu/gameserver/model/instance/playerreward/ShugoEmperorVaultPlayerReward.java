@@ -17,35 +17,39 @@
 package com.aionemu.gameserver.model.instance.playerreward;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class ShugoEmperorVaultPlayerReward extends InstancePlayerReward
-{
+public class ShugoEmperorVaultPlayerReward extends InstancePlayerReward {
 	private int scoreAP;
 	private int rustedVaultKey;
 	private boolean isRewarded = false;
-	
+
 	public ShugoEmperorVaultPlayerReward(Integer object) {
 		super(object);
 	}
-	
+
 	public boolean isRewarded() {
 		return isRewarded;
 	}
+
 	public void setRewarded() {
 		isRewarded = true;
 	}
-	
+
 	public int getScoreAP() {
 		return scoreAP;
 	}
+
 	public void setScoreAP(int ap) {
 		this.scoreAP = ap;
 	}
+
 	public int getRustedVaultKey() {
 		return rustedVaultKey;
 	}
+
 	public void setRustedVaultKey(int rustedVaultKey) {
 		this.rustedVaultKey = rustedVaultKey;
 	}

@@ -17,11 +17,7 @@
 package com.aionemu.gameserver.model.summons;
 
 public enum SummonMode {
-	ATTACK(0),
-	GUARD(1),
-	REST(2),
-	RELEASE(3),
-	UNK(5);
+	ATTACK(0), GUARD(1), REST(2), RELEASE(3), UNK(5);
 
 	private int id;
 

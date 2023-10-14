@@ -24,8 +24,7 @@ import com.aionemu.gameserver.spawnengine.SpawnHandlerType;
 
 import javolution.util.FastList;
 
-public class SpawnTemplate
-{
+public class SpawnTemplate {
 	private float x;
 	private float y;
 	private float z;
@@ -61,7 +60,7 @@ public class SpawnTemplate
 	private TemporarySpawn temporarySpawn;
 	private VisibleObject visibleObject;
 	private FastList<VisibleObject> visibleObjects;
-	
+
 	public SpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		this.spawnGroup = spawnGroup;
 		x = spot.getX();
@@ -93,8 +92,9 @@ public class SpawnTemplate
 		opstate = spot.getOPState();
 		temporarySpawn = spot.getTemporarySpawn();
 	}
-	
-	public SpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public SpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId,
+			int entityId, int fly) {
 		this.spawnGroup = spawnGroup;
 		this.x = x;
 		this.y = y;
@@ -106,239 +106,239 @@ public class SpawnTemplate
 		this.fly = fly;
 		addTemplate();
 	}
-	
+
 	private void addTemplate() {
 		spawnGroup.addSpawnTemplate(this);
 	}
-	
+
 	public float getX() {
 		return x;
 	}
-	
+
 	public void setX(float x) {
 		this.x = x;
 	}
-	
+
 	public float getY() {
 		return y;
 	}
-	
+
 	public void setY(float y) {
 		this.y = y;
 	}
-	
+
 	public float getZ() {
 		return z;
 	}
-	
+
 	public void setZ(float z) {
 		this.z = z;
 	}
-	
+
 	public byte getHeading() {
 		return h;
 	}
-	
+
 	public int getEntityId() {
 		return entityId;
 	}
-	
+
 	public void setEntityId(int entityId) {
 		this.entityId = entityId;
 	}
-	
+
 	public int getRandomWalk() {
 		return randomWalk;
 	}
-	
+
 	public void setRandomWalk(int randomWalk) {
 		this.randomWalk = randomWalk;
 	}
-	
+
 	public int getFly() {
 		return fly;
 	}
-	
+
 	public boolean canFly() {
 		return fly > 0;
 	}
-	
+
 	public void setUse(boolean use) {
 		isUsed = use;
 	}
-	
+
 	public boolean isUsed() {
 		return isUsed;
 	}
-	
+
 	public int getNpcId() {
 		return spawnGroup.getNpcId();
 	}
-	
+
 	public int getWorldId() {
 		return spawnGroup.getWorldId();
 	}
-	
+
 	public SpawnTemplate changeTemplate(int instanceId) {
 		return spawnGroup.getRndTemplate(instanceId);
 	}
-	
+
 	public int getRespawnTime() {
 		return spawnGroup.getRespawnTime();
 	}
-	
+
 	public void setRespawnTime(int respawnTime) {
 		spawnGroup.setRespawnTime(respawnTime);
 	}
-	
+
 	public TemporarySpawn getTemporarySpawn() {
 		return temporarySpawn != null ? temporarySpawn : spawnGroup.geTemporarySpawn();
 	}
-	
+
 	public SpawnHandlerType getHandlerType() {
 		return spawnGroup.getHandlerType();
 	}
-	
+
 	public String getAnchor() {
 		return anchor;
 	}
-	
+
 	public boolean hasRandomWalk() {
 		return randomWalk != 0;
 	}
-	
+
 	public boolean isNoRespawn() {
 		return spawnGroup.getRespawnTime() == 0;
 	}
-	
+
 	public boolean hasPool() {
 		return spawnGroup.hasPool();
 	}
-	
+
 	public String getWalkerId() {
 		return walkerId;
 	}
-	
+
 	public void setWalkerId(String walkerId) {
 		this.walkerId = walkerId;
 	}
-	
+
 	public int getWalkerIndex() {
 		return walkerIdx;
 	}
-	
+
 	public boolean isTemporarySpawn() {
 		return spawnGroup.isTemporarySpawn();
 	}
-	
+
 	public boolean isEventSpawn() {
 		return eventTemplate != null;
 	}
-	
+
 	public EventTemplate getEventTemplate() {
 		return eventTemplate;
 	}
-	
+
 	public void setEventTemplate(EventTemplate eventTemplate) {
 		this.eventTemplate = eventTemplate;
 	}
-	
+
 	public SpawnModel getModel() {
 		return model;
 	}
-	
+
 	public int getState() {
 		return state;
 	}
-	
+
 	public int getAState() {
 		return astate;
 	}
-	
+
 	public int getBState() {
 		return bstate;
 	}
-	
+
 	public int getCState() {
 		return cstate;
 	}
-	
+
 	public int getDState() {
 		return dstate;
 	}
-	
+
 	public int getEState() {
 		return estate;
 	}
-	
+
 	public int getIState() {
 		return istate;
 	}
-	
+
 	public int getMState() {
 		return mstate;
 	}
-	
+
 	public int getNState() {
 		return nstate;
 	}
-	
+
 	public int getOState() {
 		return ostate;
 	}
-	
+
 	public int getPState() {
 		return pstate;
 	}
-	
+
 	public int getRState() {
 		return rstate;
 	}
-	
+
 	public int getTState() {
 		return tstate;
 	}
-	
+
 	public int getZState() {
 		return zstate;
 	}
-	
+
 	public int getIUState() {
 		return iustate;
 	}
-	
+
 	public int getOPState() {
 		return opstate;
 	}
-	
+
 	public int getCreatorId() {
 		return creatorId;
 	}
-	
+
 	public void setCreatorId(int creatorId) {
 		this.creatorId = creatorId;
 	}
-	
+
 	public String getMasterName() {
 		return masterName;
 	}
-	
+
 	public void setMasterName(String masterName) {
 		this.masterName = masterName;
 	}
-	
+
 	public VisibleObject getVisibleObject() {
 		return visibleObject;
 	}
-	
+
 	public void setVisibleObject(VisibleObject visibleObject) {
 		this.visibleObject = visibleObject;
 	}
-	
+
 	public FastList<VisibleObject> getVisibleObjects() {
 		return this.visibleObjects;
 	}
-	
+
 	public void addVisibleObject(VisibleObject visibleObject) {
 		if (this.visibleObjects == null) {
 			this.visibleObjects = new FastList();

@@ -31,18 +31,19 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ProcAtkInstantEffect")
-public class ProcAtkInstantEffect extends DamageEffect
-{
+public class ProcAtkInstantEffect extends DamageEffect {
 	@Override
-    public void applyEffect(Effect effect) {
-        if (effect.getEffected() != effect.getEffector() && effect.getEffector() instanceof Player) {
-            PacketSendUtility.sendPacket((Player) effect.getEffector(), new SM_SYSTEM_MESSAGE(1301062, new DescriptionId(effect.getSkillTemplate().getNameId())));
-        }
-        effect.getEffected().getController().onAttack(effect.getEffector(), effect.getSkillId(), TYPE.DAMAGE, effect.getReserved1(), false, LOG.PROCATKINSTANT);
-    }
-	
-    @Override
-    public void calculate(Effect effect) {
-        super.calculate(effect, DamageType.MAGICAL);
-    }
+	public void applyEffect(Effect effect) {
+		if (effect.getEffected() != effect.getEffector() && effect.getEffector() instanceof Player) {
+			PacketSendUtility.sendPacket((Player) effect.getEffector(),
+					new SM_SYSTEM_MESSAGE(1301062, new DescriptionId(effect.getSkillTemplate().getNameId())));
+		}
+		effect.getEffected().getController().onAttack(effect.getEffector(), effect.getSkillId(), TYPE.DAMAGE,
+				effect.getReserved1(), false, LOG.PROCATKINSTANT);
+	}
+
+	@Override
+	public void calculate(Effect effect) {
+		super.calculate(effect, DamageType.MAGICAL);
+	}
 }

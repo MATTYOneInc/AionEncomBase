@@ -22,7 +22,8 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_MAY_LOGIN_INTO_GAME;
 
 /**
- * In this packets aion client is asking if may login into game [ie start playing].
+ * In this packets aion client is asking if may login into game [ie start
+ * playing].
  * 
  * @author -Nemesiss-
  */

@@ -49,7 +49,7 @@ public class GroupConfig {
 	 */
 	@Property(key = "gameserver.playeralliance.inviteotherfaction", defaultValue = "false")
 	public static boolean ALLIANCE_INVITEOTHERFACTION;
-	
+
 	@Property(key = "gameserver.team2.enable", defaultValue = "false")
 	public static boolean TEAM2_ENABLE;
 }

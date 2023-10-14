@@ -55,13 +55,13 @@ public class MinionController extends VisibleObjectController<Minion> {
 				}
 
 				int currentPoints = 0;
-				//boolean saved = false;
+				// boolean saved = false;
 
 				if (currentPoints < 9000) {
-					//PacketSendUtility.sendPacket(player, new SM_MINIONS(minion, 4, 0));
+					// PacketSendUtility.sendPacket(player, new SM_MINIONS(minion, 4, 0));
 				}
 			} catch (Exception ex) {
-				//player.getController().cancelTask(TaskId.MINION_UPDATE);
+				// player.getController().cancelTask(TaskId.MINION_UPDATE);
 			}
 		}
 	}

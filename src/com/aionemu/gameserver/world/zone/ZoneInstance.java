@@ -62,7 +62,8 @@ public class ZoneInstance implements Comparable<ZoneInstance> {
 	}
 
 	public boolean revalidate(Creature creature) {
-		return (mapId == creature.getWorldId() && template.getArea().isInside3D(creature.getX(), creature.getY(), creature.getZ()));
+		return (mapId == creature.getWorldId()
+				&& template.getArea().isInside3D(creature.getX(), creature.getY(), creature.getZ()));
 	}
 
 	public synchronized boolean onEnter(Creature creature) {
@@ -128,42 +129,48 @@ public class ZoneInstance implements Comparable<ZoneInstance> {
 	}
 
 	public boolean canFly() {
-		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.FLY)) {
+		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0
+				|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.FLY)) {
 			return World.getInstance().getWorldMap(mapId).isPossibleFly();
 		}
 		return (template.getZoneTemplate().getFlags() & ZoneAttributes.FLY.getId()) != 0;
 	}
 
 	public boolean canGlide() {
-		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.GLIDE)) {
+		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0
+				|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.GLIDE)) {
 			return World.getInstance().getWorldMap(mapId).canGlide();
 		}
 		return (template.getZoneTemplate().getFlags() & ZoneAttributes.GLIDE.getId()) != 0;
 	}
 
 	public boolean canPutKisk() {
-		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.BIND)) {
+		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0
+				|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.BIND)) {
 			return World.getInstance().getWorldMap(mapId).canPutKisk();
 		}
 		return (template.getZoneTemplate().getFlags() & ZoneAttributes.BIND.getId()) != 0;
 	}
 
 	public boolean canRecall() {
-		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.RECALL)) {
+		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0
+				|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.RECALL)) {
 			return World.getInstance().getWorldMap(mapId).canRecall();
 		}
 		return (template.getZoneTemplate().getFlags() & ZoneAttributes.RECALL.getId()) != 0;
 	}
 
 	public boolean canRide() {
-		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.RIDE)) {
+		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0
+				|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.RIDE)) {
 			return World.getInstance().getWorldMap(mapId).canRide();
 		}
 		return (template.getZoneTemplate().getFlags() & ZoneAttributes.RIDE.getId()) != 0;
 	}
 
 	public boolean canFlyRide() {
-		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.FLY_RIDE)) {
+		if (template.getZoneTemplate().getFlags() == -1 || template.getZoneTemplate().getFlags() == 0
+				|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.FLY_RIDE)) {
 			return World.getInstance().getWorldMap(mapId).canFlyRide();
 		}
 		return (template.getZoneTemplate().getFlags() & ZoneAttributes.FLY_RIDE.getId()) != 0;
@@ -177,14 +184,16 @@ public class ZoneInstance implements Comparable<ZoneInstance> {
 	}
 
 	public boolean isSameRaceDuelsAllowed() {
-		if (template.getZoneTemplate().getZoneType() != ZoneClassName.DUEL || template.getZoneTemplate().getFlags() == 0 || World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.DUEL_SAME_RACE_ENABLED)) {
+		if (template.getZoneTemplate().getZoneType() != ZoneClassName.DUEL || template.getZoneTemplate().getFlags() == 0
+				|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.DUEL_SAME_RACE_ENABLED)) {
 			return World.getInstance().getWorldMap(mapId).isSameRaceDuelsAllowed();
 		}
 		return (template.getZoneTemplate().getFlags() & ZoneAttributes.DUEL_SAME_RACE_ENABLED.getId()) != 0;
 	}
 
 	public boolean isOtherRaceDuelsAllowed() {
-		if (template.getZoneTemplate().getZoneType() != ZoneClassName.DUEL || template.getZoneTemplate().getFlags() == 0 || World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.DUEL_OTHER_RACE_ENABLED)) {
+		if (template.getZoneTemplate().getZoneType() != ZoneClassName.DUEL || template.getZoneTemplate().getFlags() == 0
+				|| World.getInstance().getWorldMap(mapId).hasOverridenOption(ZoneAttributes.DUEL_OTHER_RACE_ENABLED)) {
 			return World.getInstance().getWorldMap(mapId).isOtherRaceDuelsAllowed();
 		}
 		return (template.getZoneTemplate().getFlags() & ZoneAttributes.DUEL_OTHER_RACE_ENABLED.getId()) != 0;

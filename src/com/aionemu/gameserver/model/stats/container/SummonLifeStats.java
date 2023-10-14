@@ -71,8 +71,7 @@ public class SummonLifeStats extends CreatureLifeStats<Summon> {
 			if (lifeRestoreTask == null && !alreadyDead) {
 				this.lifeRestoreTask = LifeStatsRestoreService.getInstance().scheduleHpRestoreTask(this);
 			}
-		}
-		finally {
+		} finally {
 			restoreLock.unlock();
 		}
 	}

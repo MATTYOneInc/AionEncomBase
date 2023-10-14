@@ -24,8 +24,7 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 /**
- * @author Falke_34, FrozenKiller
- * Reworked by G-Robson26
+ * @author Falke_34, FrozenKiller Reworked by G-Robson26
  */
 public class SM_MINIONS extends AionServerPacket {
 	private int action;
@@ -78,7 +77,7 @@ public class SM_MINIONS extends AionServerPacket {
 		this.timeLeft = timeLeft;
 	}
 
-	public SM_MINIONS(int action, int subSwitch, int lootNpcId ,boolean isloot) { // TODO
+	public SM_MINIONS(int action, int subSwitch, int lootNpcId, boolean isloot) { // TODO
 		this.action = action;
 		this.subSwitch = subSwitch;
 		this.isloot = isloot;
@@ -86,234 +85,232 @@ public class SM_MINIONS extends AionServerPacket {
 	}
 
 	public SM_MINIONS(int action, int subSwitch, int minionObjectId, int ItemId, int slot, int slot2) {
-        this.action = action;
-        switch (subSwitch) {
-            case 0: {
-                this.subSwitch = 0;
-                this.minionObjectId = minionObjectId;
-                this.ItemId = ItemId;
-                this.slot = slot;
-                break;
-            }
-            case 2: {
-                this.subSwitch = 512;
-                this.minionObjectId = minionObjectId;
-                this.slot = slot;
-                this.slot2 = slot2;
-                break;
-            }
-            case 1: {
-                this.subSwitch = 256;
-                this.minionObjectId = minionObjectId;
-                this.slot = slot;
-                break;
-            }
-            case 3: {
-                this.subSwitch = 768;
-                this.minionObjectId = minionObjectId;
-                this.ItemId = ItemId;
-                this.slot = slot;
-                break;
-            }
-            case 4: {
-            	this.subSwitch = 1;
-            }
-        }
-    }
+		this.action = action;
+		switch (subSwitch) {
+		case 0: {
+			this.subSwitch = 0;
+			this.minionObjectId = minionObjectId;
+			this.ItemId = ItemId;
+			this.slot = slot;
+			break;
+		}
+		case 2: {
+			this.subSwitch = 512;
+			this.minionObjectId = minionObjectId;
+			this.slot = slot;
+			this.slot2 = slot2;
+			break;
+		}
+		case 1: {
+			this.subSwitch = 256;
+			this.minionObjectId = minionObjectId;
+			this.slot = slot;
+			break;
+		}
+		case 3: {
+			this.subSwitch = 768;
+			this.minionObjectId = minionObjectId;
+			this.ItemId = ItemId;
+			this.slot = slot;
+			break;
+		}
+		case 4: {
+			this.subSwitch = 1;
+		}
+		}
+	}
 
-	public SM_MINIONS(int action, boolean isMaterial , MinionCommonData commonData) {
-        this.action = action;
-        this.isMaterial = isMaterial;
-        this.commonData = commonData;
-    }
+	public SM_MINIONS(int action, boolean isMaterial, MinionCommonData commonData) {
+		this.action = action;
+		this.isMaterial = isMaterial;
+		this.commonData = commonData;
+	}
 
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeH(action);
 		switch (action) {
-			case 0: {
-				writeC(0);
-                if (minions == null) {
-                    writeH(0);
-                    break;
-                }
-				writeH(minions.size());
-				for (MinionCommonData commonData : minions) {
-					writeD(commonData.getObjectId());
-					writeD(commonData.getMinionId());
-					writeD(0); 
-					writeD(commonData.getMasterObjectId());
-					writeD(commonData.getMinionId());
-					writeS(commonData.getName());
-					writeD(commonData.getBirthday());
-					writeD(0);
-					writeD(commonData.getMinionGrowthPoint());
-					writeC(commonData.isLock() ? 1 : 0);
-					//if (commonData.getDopingBag() == null) {
-                    writeB(new byte[24]);
-                    /*} else {
-                    	int[] scrollBag = commonData.getDopingBag().getScrollsUsed();
-    					writeD(commonData.getDopingBag().getFoodItem());
-    					writeD(commonData.getDopingBag().getDrinkItem());
-    					if (scrollBag != null) {
-    						writeD(scrollBag[0]);
-                            writeD((scrollBag.length > 1) ? scrollBag[1] : 0);
-                            writeD((scrollBag.length > 2) ? scrollBag[2] : 0);
-                            writeD((scrollBag.length > 3) ? scrollBag[3] : 0);
-    					} else {
-        					writeB(new byte[16]);
-    					}
-                    }*/
-					writeC(0); 
-				}
+		case 0: {
+			writeC(0);
+			if (minions == null) {
+				writeH(0);
 				break;
 			}
-			case 1: {
-                if (commonData == null) {
-                    return;
-                }
-				writeD(addType);//3 nem siker combination, 2 siker combination, 1 levelup, 0 new minion (effect)
-				writeD(0);
-				writeH(0);
+			writeH(minions.size());
+			for (MinionCommonData commonData : minions) {
 				writeD(commonData.getObjectId());
 				writeD(commonData.getMinionId());
-				writeD(0); 
+				writeD(0);
 				writeD(commonData.getMasterObjectId());
 				writeD(commonData.getMinionId());
 				writeS(commonData.getName());
 				writeD(commonData.getBirthday());
-				writeB(new byte[34]);
-				break;
-			}
-			case 2: {//delete
-				if (commonData == null) {
-                    return;
-                }
-                writeH(isMaterial ? 1 : 0);
-                writeD(commonData.getObjectId());
-                break;
-            }
-			case 3: {//rename
-                if (commonData == null) {
-                    return;
-                }
-				writeD(commonData.getObjectId());
-				writeS(commonData.getName());
-				break;
-			}
-			case 4: {//lock
-                if (commonData == null) {
-                    return;
-                }
-				writeD(commonData.getObjectId());
-                writeC(commonData.isLock() ? 1 : 0);
-                break;
-			}
-			case 5: {// spawn
-                if (commonData == null) {
-                    return;
-                }
-				writeS(commonData.getName());
-				writeD(commonData.getObjectId());
-				writeD(commonData.getMinionId());
-				writeD(commonData.getMasterObjectId());
-				break;
-			}
-			case 6: {// despawn
-                if (commonData == null) {
-                    return;
-                }
-				writeD(commonData.getObjectId());
-               // if (player != null && player.getLifeStats().isAlreadyDead()) {
-               // writeC(0);
-               // break;
-               // }
-				writeC(21);
-				break;
-			}
-			case 7: {//growthUp alpha
-                if (commonData == null) {
-                    return;
-                }
-				writeD(commonData.getObjectId());
+				writeD(0);
 				writeD(commonData.getMinionGrowthPoint());
+				writeC(commonData.isLock() ? 1 : 0);
+				// if (commonData.getDopingBag() == null) {
+				writeB(new byte[24]);
+				/*
+				 * } else { int[] scrollBag = commonData.getDopingBag().getScrollsUsed();
+				 * writeD(commonData.getDopingBag().getFoodItem());
+				 * writeD(commonData.getDopingBag().getDrinkItem()); if (scrollBag != null) {
+				 * writeD(scrollBag[0]); writeD((scrollBag.length > 1) ? scrollBag[1] : 0);
+				 * writeD((scrollBag.length > 2) ? scrollBag[2] : 0); writeD((scrollBag.length >
+				 * 3) ? scrollBag[3] : 0); } else { writeB(new byte[16]); } }
+				 */
+				writeC(0);
+			}
+			break;
+		}
+		case 1: {
+			if (commonData == null) {
+				return;
+			}
+			writeD(addType);// 3 nem siker combination, 2 siker combination, 1 levelup, 0 new minion
+							// (effect)
+			writeD(0);
+			writeH(0);
+			writeD(commonData.getObjectId());
+			writeD(commonData.getMinionId());
+			writeD(0);
+			writeD(commonData.getMasterObjectId());
+			writeD(commonData.getMinionId());
+			writeS(commonData.getName());
+			writeD(commonData.getBirthday());
+			writeB(new byte[34]);
+			break;
+		}
+		case 2: {// delete
+			if (commonData == null) {
+				return;
+			}
+			writeH(isMaterial ? 1 : 0);
+			writeD(commonData.getObjectId());
+			break;
+		}
+		case 3: {// rename
+			if (commonData == null) {
+				return;
+			}
+			writeD(commonData.getObjectId());
+			writeS(commonData.getName());
+			break;
+		}
+		case 4: {// lock
+			if (commonData == null) {
+				return;
+			}
+			writeD(commonData.getObjectId());
+			writeC(commonData.isLock() ? 1 : 0);
+			break;
+		}
+		case 5: {// spawn
+			if (commonData == null) {
+				return;
+			}
+			writeS(commonData.getName());
+			writeD(commonData.getObjectId());
+			writeD(commonData.getMinionId());
+			writeD(commonData.getMasterObjectId());
+			break;
+		}
+		case 6: {// despawn
+			if (commonData == null) {
+				return;
+			}
+			writeD(commonData.getObjectId());
+			// if (player != null && player.getLifeStats().isAlreadyDead()) {
+			// writeC(0);
+			// break;
+			// }
+			writeC(21);
+			break;
+		}
+		case 7: {// growthUp alpha
+			if (commonData == null) {
+				return;
+			}
+			writeD(commonData.getObjectId());
+			writeD(commonData.getMinionGrowthPoint());
+			break;
+		}
+		case 8: {
+			writeH(subSwitch);
+			System.out.println("SM subSwitch: " + subSwitch);
+			switch (subSwitch) {
+			case 0: { // Add item
+				writeD(minionObjectId);
+				writeD(ItemId);
+				writeD(slot);
+				System.out.println("SM minion minionObjectId: " + minionObjectId + " ItemId: " + ItemId + " slot: "
+						+ slot + " slot2: " + slot2);
 				break;
 			}
-			case 8: {
-				writeH(subSwitch);
-				System.out.println("SM subSwitch: "+subSwitch);
-				switch (subSwitch) {
-	                case 0: { //Add item
-	                    writeD(minionObjectId);
-	                    writeD(ItemId);
-	                    writeD(slot);
-	                    System.out.println("SM minion minionObjectId: "+minionObjectId+" ItemId: "+ItemId+" slot: "+slot+" slot2: "+slot2);
-	                    break;
-	                }
-	                case 1: {//Auto Loot
-						if (lootNpcId != 0) {
-							writeC(isloot ? 1 : 2); // 0x02 display looted msg.
-							writeD(lootNpcId);
-						}
-						else {
-							writeC(isloot ? 1 : 0);
-						}
-	                	break;
-	                }
-	                case 256: {
-	                    writeD(minionObjectId);
-	                    writeD(slot);
-	                    System.out.println("SM minion minionObjectId: "+minionObjectId+" ItemId: "+ItemId+" slot: "+slot+" slot2: "+slot2);
-	                    break;
-	                }
-	                case 512: {
-	                    writeD(minionObjectId);
-	                    writeD(slot);
-	                    writeD(slot2);
-	                    System.out.println("SM minion minionObjectId: "+minionObjectId+" ItemId: "+ItemId+" slot: "+slot+" slot2: "+slot2);
-	                    break;
-	                }
-	                case 768: {//BUFF
-	                    writeD(minionObjectId);
-	                    writeD(ItemId);
-	                    //writeD(slot);
-	                    break;
-	                }
+			case 1: {// Auto Loot
+				if (lootNpcId != 0) {
+					writeC(isloot ? 1 : 2); // 0x02 display looted msg.
+					writeD(lootNpcId);
+				} else {
+					writeC(isloot ? 1 : 0);
 				}
 				break;
 			}
-			case 9: {// Aktivate Miol funktion Warn TODO
-				writeD((int)timeLeft);
-				writeD(1);
+			case 256: {
+				writeD(minionObjectId);
+				writeD(slot);
+				System.out.println("SM minion minionObjectId: " + minionObjectId + " ItemId: " + ItemId + " slot: "
+						+ slot + " slot2: " + slot2);
 				break;
 			}
-			case 10: // Deaktivate Miol funktion Warn
-				writeC(0);
-				break;
-			case 11: {
-				writeD(minionSkillPoints); // Minion SkillPoints
-				writeH(autoCharge ? 1 : 0); // Auto Recharge ?
-				break;
-			}
-			case 12: { //Miol funktion Warn AutoCharge (1 = ON  0 = OFF)
-				writeD(0);
+			case 512: {
+				writeD(minionObjectId);
+				writeD(slot);
+				writeD(slot2);
+				System.out.println("SM minion minionObjectId: " + minionObjectId + " ItemId: " + ItemId + " slot: "
+						+ slot + " slot2: " + slot2);
 				break;
 			}
-			case 13: { //Test!
-                writeD(319480);
-                writeD(319480);
-                writeD(319480);
-                writeD(319480);
-                writeD(319480);
-                writeD(319480);
-                writeD(319480);
-                writeD(319480);
-                writeD(319480);
-                writeD(319480);
-                writeD(319480);
-                writeD(319480);
-                break;
-            }
+			case 768: {// BUFF
+				writeD(minionObjectId);
+				writeD(ItemId);
+				// writeD(slot);
+				break;
+			}
+			}
+			break;
+		}
+		case 9: {// Aktivate Miol funktion Warn TODO
+			writeD((int) timeLeft);
+			writeD(1);
+			break;
+		}
+		case 10: // Deaktivate Miol funktion Warn
+			writeC(0);
+			break;
+		case 11: {
+			writeD(minionSkillPoints); // Minion SkillPoints
+			writeH(autoCharge ? 1 : 0); // Auto Recharge ?
+			break;
+		}
+		case 12: { // Miol funktion Warn AutoCharge (1 = ON 0 = OFF)
+			writeD(0);
+			break;
+		}
+		case 13: { // Test!
+			writeD(319480);
+			writeD(319480);
+			writeD(319480);
+			writeD(319480);
+			writeD(319480);
+			writeD(319480);
+			writeD(319480);
+			writeD(319480);
+			writeD(319480);
+			writeD(319480);
+			writeD(319480);
+			writeD(319480);
+			break;
+		}
 		}
 	}
 }

@@ -69,8 +69,7 @@ public class StatFunctionProxy implements IStatFunction, Comparable<IStatFunctio
 			if (other.owner != null) {
 				return false;
 			}
-		}
-		else if (!owner.equals(other.owner)) {
+		} else if (!owner.equals(other.owner)) {
 			return false;
 		}
 		return true;
@@ -115,7 +114,7 @@ public class StatFunctionProxy implements IStatFunction, Comparable<IStatFunctio
 	public void apply(Stat2 stat) {
 		proxiedFunction.apply(stat);
 	}
-	
+
 	@Override
 	public boolean hasConditions() {
 		return proxiedFunction.hasConditions();
@@ -123,6 +122,7 @@ public class StatFunctionProxy implements IStatFunction, Comparable<IStatFunctio
 
 	@Override
 	public String toString() {
-		return "Proxy [name=" + proxiedFunction.getName() + ", bonus=" + isBonus() + ", value=" + getValue() + ", priority=" + getPriority() + ", owner=" + owner + "]";
+		return "Proxy [name=" + proxiedFunction.getName() + ", bonus=" + isBonus() + ", value=" + getValue()
+				+ ", priority=" + getPriority() + ", owner=" + owner + "]";
 	}
 }

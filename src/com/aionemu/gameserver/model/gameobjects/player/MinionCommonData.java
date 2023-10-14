@@ -43,20 +43,20 @@ public class MinionCommonData extends VisibleObjectTemplate implements IExpirabl
 	private int minionSkillPoints;
 	private Timestamp minionFunctionTime;
 
-	public MinionCommonData(int minionId, int masterObjectId, String name, String minionGrade, int minionLevel, int miniongrowthpoint) {
+	public MinionCommonData(int minionId, int masterObjectId, String name, String minionGrade, int minionLevel,
+			int miniongrowthpoint) {
 		switch (this.minionObjId) {
-			case 0: {
-				this.minionObjId = IDFactory.getInstance().nextId();
-				break;
-			}
-			default:
-				do {
-					if (DAOManager.getDAO(PlayerMinionsDAO.class).PlayerMinions(masterObjectId, minionObjId)) {
-						this.minionObjId = IDFactory.getInstance().nextId();
-					}
+		case 0: {
+			this.minionObjId = IDFactory.getInstance().nextId();
+			break;
+		}
+		default:
+			do {
+				if (DAOManager.getDAO(PlayerMinionsDAO.class).PlayerMinions(masterObjectId, minionObjId)) {
+					this.minionObjId = IDFactory.getInstance().nextId();
 				}
-				while (DAOManager.getDAO(PlayerMinionsDAO.class).PlayerMinions(masterObjectId, minionObjId));
-				break;
+			} while (DAOManager.getDAO(PlayerMinionsDAO.class).PlayerMinions(masterObjectId, minionObjId));
+			break;
 		}
 		this.minionId = minionId;
 		this.masterObjectId = masterObjectId;
@@ -197,8 +197,7 @@ public class MinionCommonData extends VisibleObjectTemplate implements IExpirabl
 	}
 
 	/**
-	 * @param despawnTime
-	 *            the despawnTime to set
+	 * @param despawnTime the despawnTime to set
 	 */
 	public void setDespawnTime(Timestamp despawnTime) {
 		this.despawnTime = despawnTime;
@@ -212,8 +211,7 @@ public class MinionCommonData extends VisibleObjectTemplate implements IExpirabl
 	}
 
 	/**
-	 * @param minionSkillPoints
-	 *            the minionSkillPoints to set
+	 * @param minionSkillPoints the minionSkillPoints to set
 	 */
 	public void setMinionSkillPoints(int minionSkillPoints) {
 		this.minionSkillPoints = minionSkillPoints;
@@ -227,8 +225,7 @@ public class MinionCommonData extends VisibleObjectTemplate implements IExpirabl
 	}
 
 	/**
-	 * @param minionFunctionTime
-	 *            the minionFunctionTime to set
+	 * @param minionFunctionTime the minionFunctionTime to set
 	 */
 	public void setMinionFunctionTime(Timestamp minionFunctionTime) {
 		this.minionFunctionTime = minionFunctionTime;

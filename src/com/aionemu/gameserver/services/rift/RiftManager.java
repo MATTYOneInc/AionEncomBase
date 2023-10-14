@@ -37,14 +37,14 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.NpcKnownList;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class RiftManager
-{
+public class RiftManager {
 	private static List<Npc> rifts = new ArrayList<Npc>();
 	private static Map<String, SpawnTemplate> riftGroups = new HashMap<String, SpawnTemplate>();
-	
+
 	public static void addRiftSpawnTemplate(SpawnGroup2 spawn) {
 		if (spawn.hasPool()) {
 			SpawnTemplate template = spawn.getSpawnTemplates().get(0);
@@ -55,17 +55,17 @@ public class RiftManager
 			}
 		}
 	}
-	
+
 	public void spawnRift(RiftLocation loc) {
 		RiftEnum rift = RiftEnum.getRift(loc.getId());
 		spawnRift(rift, null, loc);
 	}
-	
+
 	public void spawnVortex(VortexLocation loc) {
 		RiftEnum rift = RiftEnum.getVortex(loc.getDefendersRace());
 		spawnRift(rift, loc, null);
 	}
-	
+
 	private void spawnRift(RiftEnum rift, VortexLocation vl, RiftLocation rl) {
 		SpawnTemplate masterTemplate = riftGroups.get(rift.getMaster());
 		SpawnTemplate slaveTemplate = riftGroups.get(rift.getSlave());
@@ -74,12 +74,12 @@ public class RiftManager
 		}
 		int instanceCount = World.getInstance().getWorldMap(masterTemplate.getWorldId()).getInstanceCount();
 		if (slaveTemplate.hasPool()) {
-            slaveTemplate = slaveTemplate.changeTemplate(1);
-        }
+			slaveTemplate = slaveTemplate.changeTemplate(1);
+		}
 		for (int i = 1; i <= instanceCount; i++) {
 			boolean spawn = Rnd.chance(CustomConfig.RIFT_APPEAR_CHANCE);
 			if (!spawn && !rift.isVortex()) {
-            	continue;
+				continue;
 			}
 			Npc slave = spawnInstance(i, slaveTemplate, new RVController(null, rift));
 			Npc master = spawnInstance(i, masterTemplate, new RVController(slave, rift));
@@ -93,7 +93,7 @@ public class RiftManager
 			}
 		}
 	}
-	
+
 	private Npc spawnInstance(int instance, SpawnTemplate template, RVController controller) {
 		NpcTemplate masterObjectTemplate = DataManager.NPC_DATA.getNpcTemplate(template.getNpcId());
 		Npc npc = new Npc(IDFactory.getInstance().nextId(), controller, template, masterObjectTemplate);
@@ -101,20 +101,21 @@ public class RiftManager
 		npc.setEffectController(new EffectController(npc));
 		World world = World.getInstance();
 		world.storeObject(npc);
-		world.setPosition(npc, template.getWorldId(), instance, template.getX(), template.getY(), template.getZ(), template.getHeading());
+		world.setPosition(npc, template.getWorldId(), instance, template.getX(), template.getY(), template.getZ(),
+				template.getHeading());
 		world.spawn(npc);
 		rifts.add(npc);
 		return npc;
 	}
-	
+
 	public static List<Npc> getSpawned() {
 		return rifts;
 	}
-	
+
 	public static RiftManager getInstance() {
 		return RiftManagerHolder.INSTANCE;
 	}
-	
+
 	private static class RiftManagerHolder {
 		private static final RiftManager INSTANCE = new RiftManager();
 	}

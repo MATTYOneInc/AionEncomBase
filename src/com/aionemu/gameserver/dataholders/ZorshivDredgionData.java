@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "zorshiv_dredgion")
-public class ZorshivDredgionData
-{
+public class ZorshivDredgionData {
 	@XmlElement(name = "zorshiv_location")
 	private List<ZorshivDredgionTemplate> zorshivDredgionTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, ZorshivDredgionLocation> zorshivDredgion = new FastMap<Integer, ZorshivDredgionLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (ZorshivDredgionTemplate template : zorshivDredgionTemplates) {
 			zorshivDredgion.put(template.getId(), new ZorshivDredgionLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return zorshivDredgion.size();
 	}
-	
+
 	public FastMap<Integer, ZorshivDredgionLocation> getZorshivDredgionLocations() {
 		return zorshivDredgion;
 	}

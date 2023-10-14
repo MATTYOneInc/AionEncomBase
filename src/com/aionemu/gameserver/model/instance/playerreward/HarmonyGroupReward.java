@@ -21,21 +21,20 @@ import java.util.List;
 import com.aionemu.gameserver.model.autogroup.AGPlayer;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
 
-public class HarmonyGroupReward extends PvPArenaPlayerReward
-{
+public class HarmonyGroupReward extends PvPArenaPlayerReward {
 	private int id;
 	private List<AGPlayer> players;
-	
+
 	public HarmonyGroupReward(Integer object, int timeBonus, byte buffId, List<AGPlayer> players) {
 		super(object, timeBonus, buffId);
 		this.players = players;
 		id = IDFactory.getInstance().nextId();
 	}
-	
+
 	public List<AGPlayer> getAGPlayers() {
 		return players;
 	}
-	
+
 	public boolean containPlayer(Integer object) {
 		for (AGPlayer agp : players) {
 			if (agp.getObjectId().equals(object)) {
@@ -44,7 +43,7 @@ public class HarmonyGroupReward extends PvPArenaPlayerReward
 		}
 		return false;
 	}
-	
+
 	public AGPlayer getAGPlayer(Integer object) {
 		for (AGPlayer agp : players) {
 			if (agp.getObjectId().equals(object)) {
@@ -53,8 +52,8 @@ public class HarmonyGroupReward extends PvPArenaPlayerReward
 		}
 		return null;
 	}
-	
+
 	public int getId() {
-        return id;
-    }
+		return id;
+	}
 }

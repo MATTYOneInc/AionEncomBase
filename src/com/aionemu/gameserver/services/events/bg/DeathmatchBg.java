@@ -32,17 +32,16 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 /**
  * @Author Rinzler (Encom)
  */
-public class DeathmatchBg extends Battleground
-{
-    public DeathmatchBg() {
-        super.name = "[DeathMatch]";
-        super.description = "You must kill a maximum player to win's.";
-        super.minSize = 3;
-        super.maxSize = 12;
-        super.teamCount = 1;
-        super.matchLength = 260;
-		
-		//Nochsana Training Camp.
+public class DeathmatchBg extends Battleground {
+	public DeathmatchBg() {
+		super.name = "[DeathMatch]";
+		super.description = "You must kill a maximum player to win's.";
+		super.minSize = 3;
+		super.maxSize = 12;
+		super.teamCount = 1;
+		super.matchLength = 260;
+
+		// Nochsana Training Camp.
 		BattlegroundMap map1 = new BattlegroundMap(300030000);
 		map1.addSpawn(new SpawnPosition(331f, 272f, 384f));
 		map1.addSpawn(new SpawnPosition(314f, 325f, 380f));
@@ -51,8 +50,8 @@ public class DeathmatchBg extends Battleground
 		map1.addSpawn(new SpawnPosition(356f, 271f, 392f));
 		map1.addSpawn(new SpawnPosition(343f, 339f, 379f));
 		map1.setKillZ(350f);
-        super.maps.add(map1);
-		//Dark Poeta.
+		super.maps.add(map1);
+		// Dark Poeta.
 		BattlegroundMap map2 = new BattlegroundMap(300040000);
 		map2.addSpawn(new SpawnPosition(1193f, 1255f, 139f));
 		map2.addSpawn(new SpawnPosition(1166f, 1215f, 144f));
@@ -61,8 +60,8 @@ public class DeathmatchBg extends Battleground
 		map2.addSpawn(new SpawnPosition(1183f, 1232f, 143f));
 		map2.addSpawn(new SpawnPosition(1177f, 1261f, 139f));
 		map2.setKillZ(110f);
-        super.maps.add(map2);
-		//Carpus Isle Storeroom.
+		super.maps.add(map2);
+		// Carpus Isle Storeroom.
 		BattlegroundMap map3 = new BattlegroundMap(300050000);
 		map3.addSpawn(new SpawnPosition(484f, 566f, 201f));
 		map3.addSpawn(new SpawnPosition(524f, 591f, 199f));
@@ -71,8 +70,8 @@ public class DeathmatchBg extends Battleground
 		map3.addSpawn(new SpawnPosition(514f, 564f, 197f));
 		map3.addSpawn(new SpawnPosition(530f, 563f, 197f));
 		map3.setKillZ(170f);
-        super.maps.add(map3);
-		//Sulfur Tree Nest.
+		super.maps.add(map3);
+		// Sulfur Tree Nest.
 		BattlegroundMap map4 = new BattlegroundMap(300060000);
 		map4.addSpawn(new SpawnPosition(476f, 418f, 163f));
 		map4.addSpawn(new SpawnPosition(435f, 440f, 162f));
@@ -81,8 +80,8 @@ public class DeathmatchBg extends Battleground
 		map4.addSpawn(new SpawnPosition(485f, 460f, 162f));
 		map4.addSpawn(new SpawnPosition(453f, 472f, 163f));
 		map4.setKillZ(140f);
-        super.maps.add(map4);
-		//Hamate Isle Storeroom.
+		super.maps.add(map4);
+		// Hamate Isle Storeroom.
 		BattlegroundMap map5 = new BattlegroundMap(300070000);
 		map5.addSpawn(new SpawnPosition(504f, 423f, 91f));
 		map5.addSpawn(new SpawnPosition(503f, 460f, 86f));
@@ -91,8 +90,8 @@ public class DeathmatchBg extends Battleground
 		map5.addSpawn(new SpawnPosition(504f, 503f, 88f));
 		map5.addSpawn(new SpawnPosition(503f, 479f, 87f));
 		map5.setKillZ(70f);
-        super.maps.add(map5);
-		//Left Wing Chamber.
+		super.maps.add(map5);
+		// Left Wing Chamber.
 		BattlegroundMap map6 = new BattlegroundMap(300080000);
 		map6.addSpawn(new SpawnPosition(488f, 512f, 352f));
 		map6.addSpawn(new SpawnPosition(495f, 548f, 354f));
@@ -101,8 +100,8 @@ public class DeathmatchBg extends Battleground
 		map6.addSpawn(new SpawnPosition(495f, 623f, 354f));
 		map6.addSpawn(new SpawnPosition(451f, 618f, 352f));
 		map6.setKillZ(320f);
-        super.maps.add(map6);
-		//Right Wing Chamber.
+		super.maps.add(map6);
+		// Right Wing Chamber.
 		BattlegroundMap map7 = new BattlegroundMap(300090000);
 		map7.addSpawn(new SpawnPosition(293f, 248f, 102f));
 		map7.addSpawn(new SpawnPosition(295f, 189f, 102f));
@@ -111,8 +110,8 @@ public class DeathmatchBg extends Battleground
 		map7.addSpawn(new SpawnPosition(255f, 228f, 102f));
 		map7.addSpawn(new SpawnPosition(270f, 201f, 102f));
 		map7.setKillZ(80f);
-        super.maps.add(map7);
-		//Steel Rake.
+		super.maps.add(map7);
+		// Steel Rake.
 		BattlegroundMap map8 = new BattlegroundMap(300100000);
 		map8.addSpawn(new SpawnPosition(568f, 489f, 1023f));
 		map8.addSpawn(new SpawnPosition(568f, 528f, 1023f));
@@ -121,8 +120,8 @@ public class DeathmatchBg extends Battleground
 		map8.addSpawn(new SpawnPosition(592f, 489f, 1023f));
 		map8.addSpawn(new SpawnPosition(592f, 528f, 1023f));
 		map8.setKillZ(990f);
-        super.maps.add(map8);
-		//Baranath Dredgion.
+		super.maps.add(map8);
+		// Baranath Dredgion.
 		BattlegroundMap map9 = new BattlegroundMap(300110000);
 		map9.addSpawn(new SpawnPosition(485f, 857f, 417f));
 		map9.addSpawn(new SpawnPosition(485f, 877f, 405f));
@@ -131,8 +130,8 @@ public class DeathmatchBg extends Battleground
 		map9.addSpawn(new SpawnPosition(485f, 909f, 405f));
 		map9.addSpawn(new SpawnPosition(485f, 814f, 416f));
 		map9.setKillZ(380f);
-        super.maps.add(map9);
-		//Grave Of Steel Storeroom.
+		super.maps.add(map9);
+		// Grave Of Steel Storeroom.
 		BattlegroundMap map10 = new BattlegroundMap(300120000);
 		map10.addSpawn(new SpawnPosition(496f, 826f, 199f));
 		map10.addSpawn(new SpawnPosition(492f, 851f, 199f));
@@ -141,8 +140,8 @@ public class DeathmatchBg extends Battleground
 		map10.addSpawn(new SpawnPosition(552f, 873f, 199f));
 		map10.addSpawn(new SpawnPosition(564f, 851f, 199f));
 		map10.setKillZ(170f);
-        super.maps.add(map10);
-		//Twilight Battlefield Storeroom.
+		super.maps.add(map10);
+		// Twilight Battlefield Storeroom.
 		BattlegroundMap map11 = new BattlegroundMap(300130000);
 		map11.addSpawn(new SpawnPosition(496f, 826f, 199f));
 		map11.addSpawn(new SpawnPosition(492f, 851f, 199f));
@@ -151,8 +150,8 @@ public class DeathmatchBg extends Battleground
 		map11.addSpawn(new SpawnPosition(552f, 873f, 199f));
 		map11.addSpawn(new SpawnPosition(564f, 851f, 199f));
 		map11.setKillZ(170f);
-        super.maps.add(map11);
-		//Isle Of Roots Storeroom.
+		super.maps.add(map11);
+		// Isle Of Roots Storeroom.
 		BattlegroundMap map12 = new BattlegroundMap(300140000);
 		map12.addSpawn(new SpawnPosition(496f, 826f, 199f));
 		map12.addSpawn(new SpawnPosition(492f, 851f, 199f));
@@ -161,8 +160,8 @@ public class DeathmatchBg extends Battleground
 		map12.addSpawn(new SpawnPosition(552f, 873f, 199f));
 		map12.addSpawn(new SpawnPosition(564f, 851f, 199f));
 		map12.setKillZ(170f);
-        super.maps.add(map12);
-		//Udas Temple.
+		super.maps.add(map12);
+		// Udas Temple.
 		BattlegroundMap map13 = new BattlegroundMap(300150000);
 		map13.addSpawn(new SpawnPosition(655f, 506f, 136f));
 		map13.addSpawn(new SpawnPosition(617f, 501f, 136f));
@@ -171,8 +170,8 @@ public class DeathmatchBg extends Battleground
 		map13.addSpawn(new SpawnPosition(636f, 435f, 137f));
 		map13.addSpawn(new SpawnPosition(636f, 518f, 131f));
 		map13.setKillZ(110f);
-        super.maps.add(map13);
-		//Lower Udas Temple.
+		super.maps.add(map13);
+		// Lower Udas Temple.
 		BattlegroundMap map14 = new BattlegroundMap(300160000);
 		map14.addSpawn(new SpawnPosition(571f, 1297f, 187f));
 		map14.addSpawn(new SpawnPosition(566f, 1242f, 188f));
@@ -181,8 +180,8 @@ public class DeathmatchBg extends Battleground
 		map14.addSpawn(new SpawnPosition(658f, 1297f, 186f));
 		map14.addSpawn(new SpawnPosition(640f, 1215f, 186f));
 		map14.setKillZ(150f);
-        super.maps.add(map14);
-		//Beshmundir Temple.
+		super.maps.add(map14);
+		// Beshmundir Temple.
 		BattlegroundMap map15 = new BattlegroundMap(300170000);
 		map15.addSpawn(new SpawnPosition(1505f, 1463f, 304f));
 		map15.addSpawn(new SpawnPosition(1441f, 1378f, 305f));
@@ -191,8 +190,8 @@ public class DeathmatchBg extends Battleground
 		map15.addSpawn(new SpawnPosition(1533f, 1433f, 300f));
 		map15.addSpawn(new SpawnPosition(1468f, 1483f, 300f));
 		map15.setKillZ(280f);
-        super.maps.add(map15);
-		//Taloc's Hollow.
+		super.maps.add(map15);
+		// Taloc's Hollow.
 		BattlegroundMap map16 = new BattlegroundMap(300190000);
 		map16.addSpawn(new SpawnPosition(392f, 897f, 1266f));
 		map16.addSpawn(new SpawnPosition(442f, 919f, 1274f));
@@ -201,8 +200,8 @@ public class DeathmatchBg extends Battleground
 		map16.addSpawn(new SpawnPosition(429f, 934f, 1266f));
 		map16.addSpawn(new SpawnPosition(382f, 842f, 1271f));
 		map16.setKillZ(1190f);
-        super.maps.add(map16);
-		//Haramel.
+		super.maps.add(map16);
+		// Haramel.
 		BattlegroundMap map17 = new BattlegroundMap(300200000);
 		map17.addSpawn(new SpawnPosition(387f, 315f, 88f));
 		map17.addSpawn(new SpawnPosition(376f, 285f, 89f));
@@ -211,8 +210,8 @@ public class DeathmatchBg extends Battleground
 		map17.addSpawn(new SpawnPosition(356f, 367f, 90f));
 		map17.addSpawn(new SpawnPosition(327f, 380f, 89f));
 		map17.setKillZ(50f);
-        super.maps.add(map17);
-		//Chantra Dredgion.
+		super.maps.add(map17);
+		// Chantra Dredgion.
 		BattlegroundMap map18 = new BattlegroundMap(300210000);
 		map18.addSpawn(new SpawnPosition(458f, 493f, 397f));
 		map18.addSpawn(new SpawnPosition(514f, 493f, 397f));
@@ -221,8 +220,8 @@ public class DeathmatchBg extends Battleground
 		map18.addSpawn(new SpawnPosition(483f, 496f, 397f));
 		map18.addSpawn(new SpawnPosition(484f, 420f, 398f));
 		map18.setKillZ(370f);
-        super.maps.add(map18);
-		//Kromede Trial.
+		super.maps.add(map18);
+		// Kromede Trial.
 		BattlegroundMap map19 = new BattlegroundMap(300230000);
 		map19.addSpawn(new SpawnPosition(528f, 640f, 201f));
 		map19.addSpawn(new SpawnPosition(493f, 640f, 201f));
@@ -231,8 +230,8 @@ public class DeathmatchBg extends Battleground
 		map19.addSpawn(new SpawnPosition(557f, 640f, 206f));
 		map19.addSpawn(new SpawnPosition(531f, 612f, 201f));
 		map19.setKillZ(180f);
-        super.maps.add(map19);
-		//Aturam Sky Fortress.
+		super.maps.add(map19);
+		// Aturam Sky Fortress.
 		BattlegroundMap map20 = new BattlegroundMap(300240000);
 		map20.addSpawn(new SpawnPosition(523f, 485f, 649f));
 		map20.addSpawn(new SpawnPosition(576f, 463f, 647f));
@@ -241,8 +240,8 @@ public class DeathmatchBg extends Battleground
 		map20.addSpawn(new SpawnPosition(456f, 424f, 652f));
 		map20.addSpawn(new SpawnPosition(466f, 466f, 647f));
 		map20.setKillZ(620f);
-        super.maps.add(map20);
-		//Esoterrace.
+		super.maps.add(map20);
+		// Esoterrace.
 		BattlegroundMap map21 = new BattlegroundMap(300250000);
 		map21.addSpawn(new SpawnPosition(1254f, 624f, 296f));
 		map21.addSpawn(new SpawnPosition(1217f, 620f, 295f));
@@ -251,8 +250,8 @@ public class DeathmatchBg extends Battleground
 		map21.addSpawn(new SpawnPosition(1286f, 675f, 296f));
 		map21.addSpawn(new SpawnPosition(1294f, 623f, 297f));
 		map21.setKillZ(270f);
-        super.maps.add(map21);
-		//Rentus Base.
+		super.maps.add(map21);
+		// Rentus Base.
 		BattlegroundMap map22 = new BattlegroundMap(300280000);
 		map22.addSpawn(new SpawnPosition(148f, 363f, 257f));
 		map22.addSpawn(new SpawnPosition(194f, 349f, 257f));
@@ -261,8 +260,8 @@ public class DeathmatchBg extends Battleground
 		map22.addSpawn(new SpawnPosition(159f, 306f, 251f));
 		map22.addSpawn(new SpawnPosition(170f, 348f, 252f));
 		map22.setKillZ(220f);
-        super.maps.add(map22);
-		//Terath Dredgion.
+		super.maps.add(map22);
+		// Terath Dredgion.
 		BattlegroundMap map23 = new BattlegroundMap(300440000);
 		map23.addSpawn(new SpawnPosition(443f, 321f, 403f));
 		map23.addSpawn(new SpawnPosition(484f, 342f, 403f));
@@ -271,8 +270,8 @@ public class DeathmatchBg extends Battleground
 		map23.addSpawn(new SpawnPosition(485f, 314f, 403f));
 		map23.addSpawn(new SpawnPosition(424f, 300f, 409f));
 		map23.setKillZ(380f);
-        super.maps.add(map23);
-		//Tiamat Stronghold.
+		super.maps.add(map23);
+		// Tiamat Stronghold.
 		BattlegroundMap map24 = new BattlegroundMap(300510000);
 		map24.addSpawn(new SpawnPosition(1112f, 1095f, 790f));
 		map24.addSpawn(new SpawnPosition(1109f, 1039f, 790f));
@@ -281,8 +280,8 @@ public class DeathmatchBg extends Battleground
 		map24.addSpawn(new SpawnPosition(1079f, 1096f, 786f));
 		map24.addSpawn(new SpawnPosition(1088f, 1068f, 786f));
 		map24.setKillZ(760f);
-        super.maps.add(map24);
-		//Dragon Lord's Refuge.
+		super.maps.add(map24);
+		// Dragon Lord's Refuge.
 		BattlegroundMap map25 = new BattlegroundMap(300520000);
 		map25.addSpawn(new SpawnPosition(460f, 514f, 417f));
 		map25.addSpawn(new SpawnPosition(477f, 478f, 417f));
@@ -291,8 +290,8 @@ public class DeathmatchBg extends Battleground
 		map25.addSpawn(new SpawnPosition(530f, 550f, 417f));
 		map25.addSpawn(new SpawnPosition(476f, 549f, 417f));
 		map25.setKillZ(390f);
-        super.maps.add(map25);
-		//Eternal Bastion.
+		super.maps.add(map25);
+		// Eternal Bastion.
 		BattlegroundMap map26 = new BattlegroundMap(300540000);
 		map26.addSpawn(new SpawnPosition(740f, 255f, 253f));
 		map26.addSpawn(new SpawnPosition(778f, 288f, 253f));
@@ -301,8 +300,8 @@ public class DeathmatchBg extends Battleground
 		map26.addSpawn(new SpawnPosition(698f, 287f, 253f));
 		map26.addSpawn(new SpawnPosition(766f, 266f, 233f));
 		map26.setKillZ(220f);
-        super.maps.add(map26);
-		//Ophidan Bridge.
+		super.maps.add(map26);
+		// Ophidan Bridge.
 		BattlegroundMap map27 = new BattlegroundMap(300590000);
 		map27.addSpawn(new SpawnPosition(368f, 491f, 605f));
 		map27.addSpawn(new SpawnPosition(301f, 486f, 608f));
@@ -311,8 +310,8 @@ public class DeathmatchBg extends Battleground
 		map27.addSpawn(new SpawnPosition(349f, 490f, 606f));
 		map27.addSpawn(new SpawnPosition(329f, 489f, 607f));
 		map27.setKillZ(580f);
-        super.maps.add(map27);
-		//Raksang Ruins.
+		super.maps.add(map27);
+		// Raksang Ruins.
 		BattlegroundMap map28 = new BattlegroundMap(300610000);
 		map28.addSpawn(new SpawnPosition(617f, 646f, 523f));
 		map28.addSpawn(new SpawnPosition(590f, 659f, 522f));
@@ -321,8 +320,8 @@ public class DeathmatchBg extends Battleground
 		map28.addSpawn(new SpawnPosition(577f, 704f, 522f));
 		map28.addSpawn(new SpawnPosition(632f, 735f, 522f));
 		map28.setKillZ(470f);
-        super.maps.add(map28);
-		//Occupied Rentus Base.
+		super.maps.add(map28);
+		// Occupied Rentus Base.
 		BattlegroundMap map29 = new BattlegroundMap(300620000);
 		map29.addSpawn(new SpawnPosition(148f, 363f, 257f));
 		map29.addSpawn(new SpawnPosition(194f, 349f, 257f));
@@ -331,8 +330,8 @@ public class DeathmatchBg extends Battleground
 		map29.addSpawn(new SpawnPosition(159f, 306f, 251f));
 		map29.addSpawn(new SpawnPosition(170f, 348f, 252f));
 		map29.setKillZ(220f);
-        super.maps.add(map29);
-		//Anguished Dragon Lord's Refuge.
+		super.maps.add(map29);
+		// Anguished Dragon Lord's Refuge.
 		BattlegroundMap map30 = new BattlegroundMap(300630000);
 		map30.addSpawn(new SpawnPosition(223f, 186f, 246f));
 		map30.addSpawn(new SpawnPosition(212f, 156f, 246f));
@@ -341,8 +340,8 @@ public class DeathmatchBg extends Battleground
 		map30.addSpawn(new SpawnPosition(212f, 200f, 246f));
 		map30.addSpawn(new SpawnPosition(196f, 175f, 246f));
 		map30.setKillZ(220f);
-        super.maps.add(map30);
-		//The Hexway.
+		super.maps.add(map30);
+		// The Hexway.
 		BattlegroundMap map31 = new BattlegroundMap(300700000);
 		map31.addSpawn(new SpawnPosition(488f, 512f, 352f));
 		map31.addSpawn(new SpawnPosition(495f, 548f, 354f));
@@ -351,8 +350,8 @@ public class DeathmatchBg extends Battleground
 		map31.addSpawn(new SpawnPosition(495f, 623f, 354f));
 		map31.addSpawn(new SpawnPosition(451f, 618f, 352f));
 		map31.setKillZ(320f);
-        super.maps.add(map31);
-		//Infinity Shard.
+		super.maps.add(map31);
+		// Infinity Shard.
 		BattlegroundMap map32 = new BattlegroundMap(300800000);
 		map32.addSpawn(new SpawnPosition(118f, 116f, 131f));
 		map32.addSpawn(new SpawnPosition(107f, 143f, 125f));
@@ -361,8 +360,8 @@ public class DeathmatchBg extends Battleground
 		map32.addSpawn(new SpawnPosition(145f, 122f, 126f));
 		map32.addSpawn(new SpawnPosition(108f, 140f, 112f));
 		map32.setKillZ(90f);
-        super.maps.add(map32);
-		//Danuar Reliquary.
+		super.maps.add(map32);
+		// Danuar Reliquary.
 		BattlegroundMap map33 = new BattlegroundMap(301110000);
 		map33.addSpawn(new SpawnPosition(269f, 232f, 241f));
 		map33.addSpawn(new SpawnPosition(235f, 263f, 241f));
@@ -371,8 +370,8 @@ public class DeathmatchBg extends Battleground
 		map33.addSpawn(new SpawnPosition(241f, 237f, 241f));
 		map33.addSpawn(new SpawnPosition(256f, 257f, 241f));
 		map33.setKillZ(220f);
-        super.maps.add(map33);
-		//Kamar Battlefield.
+		super.maps.add(map33);
+		// Kamar Battlefield.
 		BattlegroundMap map34 = new BattlegroundMap(301120000);
 		map34.addSpawn(new SpawnPosition(1344f, 1528f, 595f));
 		map34.addSpawn(new SpawnPosition(1313f, 1510f, 597f));
@@ -381,8 +380,8 @@ public class DeathmatchBg extends Battleground
 		map34.addSpawn(new SpawnPosition(1370f, 1460f, 599f));
 		map34.addSpawn(new SpawnPosition(1396f, 1423f, 600f));
 		map34.setKillZ(570f);
-        super.maps.add(map34);
-		//Sauro Supply Base.
+		super.maps.add(map34);
+		// Sauro Supply Base.
 		BattlegroundMap map35 = new BattlegroundMap(301130000);
 		map35.addSpawn(new SpawnPosition(578f, 503f, 202f));
 		map35.addSpawn(new SpawnPosition(611f, 496f, 202f));
@@ -391,8 +390,8 @@ public class DeathmatchBg extends Battleground
 		map35.addSpawn(new SpawnPosition(586f, 466f, 191f));
 		map35.addSpawn(new SpawnPosition(591f, 503f, 191f));
 		map35.setKillZ(160f);
-        super.maps.add(map35);
-		//Seized Danuar Sanctuary.
+		super.maps.add(map35);
+		// Seized Danuar Sanctuary.
 		BattlegroundMap map36 = new BattlegroundMap(301140000);
 		map36.addSpawn(new SpawnPosition(1056f, 645f, 280f));
 		map36.addSpawn(new SpawnPosition(1037f, 681f, 282f));
@@ -401,18 +400,18 @@ public class DeathmatchBg extends Battleground
 		map36.addSpawn(new SpawnPosition(1056f, 693f, 282f));
 		map36.addSpawn(new SpawnPosition(1056f, 670f, 282f));
 		map36.setKillZ(260f);
-        super.maps.add(map36);
-		//Nightmare Circus.
-		//BattlegroundMap map37 = new BattlegroundMap(301160000);
-		//map37.addSpawn(new SpawnPosition(479f, 566f, 202f));
-		//map37.addSpawn(new SpawnPosition(524f, 592f, 200f));
-		//map37.addSpawn(new SpawnPosition(521f, 534f, 199f));
-		//map37.addSpawn(new SpawnPosition(557f, 567f, 199f));
-		//map37.addSpawn(new SpawnPosition(531f, 558f, 198f));
-		//map37.addSpawn(new SpawnPosition(515f, 565f, 198f));
-		//map37.setKillZ(170f);
-        //super.maps.add(map37);
-		//Engulfed Ophidan Bridge.
+		super.maps.add(map36);
+		// Nightmare Circus.
+		// BattlegroundMap map37 = new BattlegroundMap(301160000);
+		// map37.addSpawn(new SpawnPosition(479f, 566f, 202f));
+		// map37.addSpawn(new SpawnPosition(524f, 592f, 200f));
+		// map37.addSpawn(new SpawnPosition(521f, 534f, 199f));
+		// map37.addSpawn(new SpawnPosition(557f, 567f, 199f));
+		// map37.addSpawn(new SpawnPosition(531f, 558f, 198f));
+		// map37.addSpawn(new SpawnPosition(515f, 565f, 198f));
+		// map37.setKillZ(170f);
+		// super.maps.add(map37);
+		// Engulfed Ophidan Bridge.
 		BattlegroundMap map38 = new BattlegroundMap(301210000);
 		map38.addSpawn(new SpawnPosition(499f, 523f, 597f));
 		map38.addSpawn(new SpawnPosition(527f, 541f, 604f));
@@ -421,8 +420,8 @@ public class DeathmatchBg extends Battleground
 		map38.addSpawn(new SpawnPosition(474f, 490f, 597f));
 		map38.addSpawn(new SpawnPosition(448f, 537f, 599f));
 		map38.setKillZ(560f);
-        super.maps.add(map38);
-		//Iron Wall Warfront.
+		super.maps.add(map38);
+		// Iron Wall Warfront.
 		BattlegroundMap map39 = new BattlegroundMap(301220000);
 		map39.addSpawn(new SpawnPosition(491f, 765f, 200f));
 		map39.addSpawn(new SpawnPosition(552f, 744f, 197f));
@@ -431,8 +430,8 @@ public class DeathmatchBg extends Battleground
 		map39.addSpawn(new SpawnPosition(599f, 823f, 187f));
 		map39.addSpawn(new SpawnPosition(612f, 776f, 185f));
 		map39.setKillZ(160f);
-        super.maps.add(map39);
-		//Illuminary Obelisk.
+		super.maps.add(map39);
+		// Illuminary Obelisk.
 		BattlegroundMap map40 = new BattlegroundMap(301230000);
 		map40.addSpawn(new SpawnPosition(255f, 317f, 325f));
 		map40.addSpawn(new SpawnPosition(255f, 192f, 325f));
@@ -441,8 +440,8 @@ public class DeathmatchBg extends Battleground
 		map40.addSpawn(new SpawnPosition(255f, 286f, 321f));
 		map40.addSpawn(new SpawnPosition(247f, 263f, 318f));
 		map40.setKillZ(290f);
-        super.maps.add(map40);
-		//Linkgate Foundry.
+		super.maps.add(map40);
+		// Linkgate Foundry.
 		BattlegroundMap map41 = new BattlegroundMap(301270000);
 		map41.addSpawn(new SpawnPosition(228f, 258f, 312f));
 		map41.addSpawn(new SpawnPosition(261f, 260f, 312f));
@@ -451,8 +450,8 @@ public class DeathmatchBg extends Battleground
 		map41.addSpawn(new SpawnPosition(244f, 259f, 312f));
 		map41.addSpawn(new SpawnPosition(232f, 245f, 312f));
 		map41.setKillZ(290f);
-        super.maps.add(map41);
-		//Idgel Dome.
+		super.maps.add(map41);
+		// Idgel Dome.
 		BattlegroundMap map42 = new BattlegroundMap(301310000);
 		map42.addSpawn(new SpawnPosition(252f, 246f, 92f));
 		map42.addSpawn(new SpawnPosition(276f, 272f, 92f));
@@ -461,8 +460,8 @@ public class DeathmatchBg extends Battleground
 		map42.addSpawn(new SpawnPosition(248f, 289f, 89f));
 		map42.addSpawn(new SpawnPosition(277f, 225f, 89f));
 		map42.setKillZ(70f);
-        super.maps.add(map42);
-		//Danuar Sanctuary.
+		super.maps.add(map42);
+		// Danuar Sanctuary.
 		BattlegroundMap map43 = new BattlegroundMap(301380000);
 		map43.addSpawn(new SpawnPosition(921f, 870f, 278f));
 		map43.addSpawn(new SpawnPosition(887f, 857f, 279f));
@@ -471,8 +470,8 @@ public class DeathmatchBg extends Battleground
 		map43.addSpawn(new SpawnPosition(891f, 843f, 292f));
 		map43.addSpawn(new SpawnPosition(923f, 850f, 292f));
 		map43.setKillZ(250f);
-        super.maps.add(map43);
-		//Drakenspire Depths.
+		super.maps.add(map43);
+		// Drakenspire Depths.
 		BattlegroundMap map44 = new BattlegroundMap(301390000);
 		map44.addSpawn(new SpawnPosition(208f, 542f, 1754f));
 		map44.addSpawn(new SpawnPosition(176f, 579f, 1760f));
@@ -481,18 +480,18 @@ public class DeathmatchBg extends Battleground
 		map44.addSpawn(new SpawnPosition(177f, 458f, 1759f));
 		map44.addSpawn(new SpawnPosition(208f, 496f, 1754f));
 		map44.setKillZ(1730f);
-        super.maps.add(map44);
-		//The Shugo Emperor's Vault.
-		//BattlegroundMap map45 = new BattlegroundMap(301400000);
-		//map45.addSpawn(new SpawnPosition(343f, 727f, 398f));
-		//map45.addSpawn(new SpawnPosition(393f, 781f, 398f));
-		//map45.addSpawn(new SpawnPosition(430f, 740f, 398f));
-		//map45.addSpawn(new SpawnPosition(389f, 690f, 398f));
-		//map45.addSpawn(new SpawnPosition(361f, 756f, 398f));
-		//map45.addSpawn(new SpawnPosition(423f, 697f, 398f));
-		//map45.setKillZ(370f);
-        //super.maps.add(map45);
-		//Stonespear Reach.
+		super.maps.add(map44);
+		// The Shugo Emperor's Vault.
+		// BattlegroundMap map45 = new BattlegroundMap(301400000);
+		// map45.addSpawn(new SpawnPosition(343f, 727f, 398f));
+		// map45.addSpawn(new SpawnPosition(393f, 781f, 398f));
+		// map45.addSpawn(new SpawnPosition(430f, 740f, 398f));
+		// map45.addSpawn(new SpawnPosition(389f, 690f, 398f));
+		// map45.addSpawn(new SpawnPosition(361f, 756f, 398f));
+		// map45.addSpawn(new SpawnPosition(423f, 697f, 398f));
+		// map45.setKillZ(370f);
+		// super.maps.add(map45);
+		// Stonespear Reach.
 		BattlegroundMap map46 = new BattlegroundMap(301500000);
 		map46.addSpawn(new SpawnPosition(211f, 263f, 96f));
 		map46.addSpawn(new SpawnPosition(251f, 264f, 96f));
@@ -501,8 +500,8 @@ public class DeathmatchBg extends Battleground
 		map46.addSpawn(new SpawnPosition(231f, 264f, 95f));
 		map46.addSpawn(new SpawnPosition(216f, 247f, 96f));
 		map46.setKillZ(70f);
-        super.maps.add(map46);
-		//Sealed Argent Manor.
+		super.maps.add(map46);
+		// Sealed Argent Manor.
 		BattlegroundMap map47 = new BattlegroundMap(301510000);
 		map47.addSpawn(new SpawnPosition(1005f, 1088f, 69f));
 		map47.addSpawn(new SpawnPosition(988f, 1064f, 69f));
@@ -511,8 +510,8 @@ public class DeathmatchBg extends Battleground
 		map47.addSpawn(new SpawnPosition(988f, 1113f, 69f));
 		map47.addSpawn(new SpawnPosition(979f, 1089f, 70f));
 		map47.setKillZ(50f);
-        super.maps.add(map47);
-		//Archives Of Eternity.
+		super.maps.add(map47);
+		// Archives Of Eternity.
 		BattlegroundMap map48 = new BattlegroundMap(301540000);
 		map48.addSpawn(new SpawnPosition(234f, 512f, 468f));
 		map48.addSpawn(new SpawnPosition(280f, 512f, 468f));
@@ -521,8 +520,8 @@ public class DeathmatchBg extends Battleground
 		map48.addSpawn(new SpawnPosition(256f, 512f, 468f));
 		map48.addSpawn(new SpawnPosition(236f, 493f, 468f));
 		map48.setKillZ(440f);
-        super.maps.add(map48);
-		//Cradle Of Eternity.
+		super.maps.add(map48);
+		// Cradle Of Eternity.
 		BattlegroundMap map49 = new BattlegroundMap(301550000);
 		map49.addSpawn(new SpawnPosition(464f, 1398f, 827f));
 		map49.addSpawn(new SpawnPosition(474f, 1418f, 827f));
@@ -531,8 +530,8 @@ public class DeathmatchBg extends Battleground
 		map49.addSpawn(new SpawnPosition(449f, 1374f, 823f));
 		map49.addSpawn(new SpawnPosition(491f, 1445f, 823f));
 		map49.setKillZ(795f);
-        super.maps.add(map49);
-		//Cradle Of Eternity [Memorial Path]
+		super.maps.add(map49);
+		// Cradle Of Eternity [Memorial Path]
 		BattlegroundMap map50 = new BattlegroundMap(301550000);
 		map50.addSpawn(new SpawnPosition(602f, 806f, 565f));
 		map50.addSpawn(new SpawnPosition(626f, 768f, 561f));
@@ -541,8 +540,8 @@ public class DeathmatchBg extends Battleground
 		map50.addSpawn(new SpawnPosition(685f, 721f, 548f));
 		map50.addSpawn(new SpawnPosition(709f, 772f, 547f));
 		map50.setKillZ(530f);
-        super.maps.add(map50);
-		//Theobomos Test Chamber.
+		super.maps.add(map50);
+		// Theobomos Test Chamber.
 		BattlegroundMap map51 = new BattlegroundMap(301610000);
 		map51.addSpawn(new SpawnPosition(228f, 256f, 203f));
 		map51.addSpawn(new SpawnPosition(240f, 226f, 203f));
@@ -551,8 +550,8 @@ public class DeathmatchBg extends Battleground
 		map51.addSpawn(new SpawnPosition(193f, 257f, 203f));
 		map51.addSpawn(new SpawnPosition(211f, 274f, 202f));
 		map51.setKillZ(190f);
-        super.maps.add(map51);
-		//Theobomos Test Chamber [Elemental Athanor]
+		super.maps.add(map51);
+		// Theobomos Test Chamber [Elemental Athanor]
 		BattlegroundMap map52 = new BattlegroundMap(301610000);
 		map52.addSpawn(new SpawnPosition(258f, 119f, 196f));
 		map52.addSpawn(new SpawnPosition(310f, 120f, 195f));
@@ -561,8 +560,8 @@ public class DeathmatchBg extends Battleground
 		map52.addSpawn(new SpawnPosition(285f, 119f, 196f));
 		map52.addSpawn(new SpawnPosition(261f, 136f, 196f));
 		map52.setKillZ(170f);
-        super.maps.add(map52);
-		//Drakenseer's Lair.
+		super.maps.add(map52);
+		// Drakenseer's Lair.
 		BattlegroundMap map53 = new BattlegroundMap(301620000);
 		map53.addSpawn(new SpawnPosition(276f, 342f, 336f));
 		map53.addSpawn(new SpawnPosition(328f, 309f, 318f));
@@ -571,28 +570,28 @@ public class DeathmatchBg extends Battleground
 		map53.addSpawn(new SpawnPosition(266f, 197f, 319f));
 		map53.addSpawn(new SpawnPosition(237f, 292f, 318f));
 		map53.setKillZ(295f);
-        super.maps.add(map53);
-		//Contaminated Underpath.
-		//BattlegroundMap map54 = new BattlegroundMap(301630000);
-		//map54.addSpawn(new SpawnPosition(229f, 184f, 164f));
-		//map54.addSpawn(new SpawnPosition(229f, 208f, 160f));
-		//map54.addSpawn(new SpawnPosition(229f, 226f, 160f));
-		//map54.addSpawn(new SpawnPosition(229f, 253f, 159f));
-		//map54.addSpawn(new SpawnPosition(229f, 276f, 160f));
-		//map54.addSpawn(new SpawnPosition(227f, 300f, 160f));
-		//map54.setKillZ(140f);
-        //super.maps.add(map54);
-		//Secret Munitions Factory.
-		//BattlegroundMap map55 = new BattlegroundMap(301640000);
-		//map55.addSpawn(new SpawnPosition(323f, 259f, 192f));
-		//map55.addSpawn(new SpawnPosition(208f, 258f, 191f));
-		//map55.addSpawn(new SpawnPosition(271f, 276f, 191f));
-		//map55.addSpawn(new SpawnPosition(272f, 243f, 191f));
-		//map55.addSpawn(new SpawnPosition(354f, 266f, 195f));
-		//map55.addSpawn(new SpawnPosition(244f, 258f, 191f));
-		//map55.setKillZ(170f);
-        //super.maps.add(map55);
-		//Fallen Poeta.
+		super.maps.add(map53);
+		// Contaminated Underpath.
+		// BattlegroundMap map54 = new BattlegroundMap(301630000);
+		// map54.addSpawn(new SpawnPosition(229f, 184f, 164f));
+		// map54.addSpawn(new SpawnPosition(229f, 208f, 160f));
+		// map54.addSpawn(new SpawnPosition(229f, 226f, 160f));
+		// map54.addSpawn(new SpawnPosition(229f, 253f, 159f));
+		// map54.addSpawn(new SpawnPosition(229f, 276f, 160f));
+		// map54.addSpawn(new SpawnPosition(227f, 300f, 160f));
+		// map54.setKillZ(140f);
+		// super.maps.add(map54);
+		// Secret Munitions Factory.
+		// BattlegroundMap map55 = new BattlegroundMap(301640000);
+		// map55.addSpawn(new SpawnPosition(323f, 259f, 192f));
+		// map55.addSpawn(new SpawnPosition(208f, 258f, 191f));
+		// map55.addSpawn(new SpawnPosition(271f, 276f, 191f));
+		// map55.addSpawn(new SpawnPosition(272f, 243f, 191f));
+		// map55.addSpawn(new SpawnPosition(354f, 266f, 195f));
+		// map55.addSpawn(new SpawnPosition(244f, 258f, 191f));
+		// map55.setKillZ(170f);
+		// super.maps.add(map55);
+		// Fallen Poeta.
 		BattlegroundMap map56 = new BattlegroundMap(301660000);
 		map56.addSpawn(new SpawnPosition(216f, 348f, 130f));
 		map56.addSpawn(new SpawnPosition(235f, 382f, 124f));
@@ -601,8 +600,8 @@ public class DeathmatchBg extends Battleground
 		map56.addSpawn(new SpawnPosition(221f, 400f, 118f));
 		map56.addSpawn(new SpawnPosition(193f, 393f, 119f));
 		map56.setKillZ(100f);
-        super.maps.add(map56);
-		//Ophidan Warpath.
+		super.maps.add(map56);
+		// Ophidan Warpath.
 		BattlegroundMap map57 = new BattlegroundMap(301670000);
 		map57.addSpawn(new SpawnPosition(697f, 466f, 599f));
 		map57.addSpawn(new SpawnPosition(676f, 495f, 599f));
@@ -611,8 +610,8 @@ public class DeathmatchBg extends Battleground
 		map57.addSpawn(new SpawnPosition(599f, 395f, 609f));
 		map57.addSpawn(new SpawnPosition(620f, 423f, 607f));
 		map57.setKillZ(580f);
-        super.maps.add(map57);
-		//Aether Mine.
+		super.maps.add(map57);
+		// Aether Mine.
 		BattlegroundMap map58 = new BattlegroundMap(301690000);
 		map58.addSpawn(new SpawnPosition(174f, 155f, 230f));
 		map58.addSpawn(new SpawnPosition(214f, 174f, 230f));
@@ -621,18 +620,18 @@ public class DeathmatchBg extends Battleground
 		map58.addSpawn(new SpawnPosition(315f, 227f, 250f));
 		map58.addSpawn(new SpawnPosition(326f, 263f, 258f));
 		map58.setKillZ(200f);
-        super.maps.add(map58);
-		//Old Fire Temple.
-		//BattlegroundMap map59 = new BattlegroundMap(302000000);
-		//map59.addSpawn(new SpawnPosition(370f, 250f, 117f));
-		//map59.addSpawn(new SpawnPosition(355f, 280f, 110f));
-		//map59.addSpawn(new SpawnPosition(394f, 289f, 110f));
-		//map59.addSpawn(new SpawnPosition(396f, 269f, 110f));
-		//map59.addSpawn(new SpawnPosition(400f, 249f, 110f));
-		//map59.addSpawn(new SpawnPosition(384f, 239f, 110f));
-		//map59.setKillZ(80f);
-        //super.maps.add(map59);
-		//Fissure Of Oblivion.
+		super.maps.add(map58);
+		// Old Fire Temple.
+		// BattlegroundMap map59 = new BattlegroundMap(302000000);
+		// map59.addSpawn(new SpawnPosition(370f, 250f, 117f));
+		// map59.addSpawn(new SpawnPosition(355f, 280f, 110f));
+		// map59.addSpawn(new SpawnPosition(394f, 289f, 110f));
+		// map59.addSpawn(new SpawnPosition(396f, 269f, 110f));
+		// map59.addSpawn(new SpawnPosition(400f, 249f, 110f));
+		// map59.addSpawn(new SpawnPosition(384f, 239f, 110f));
+		// map59.setKillZ(80f);
+		// super.maps.add(map59);
+		// Fissure Of Oblivion.
 		BattlegroundMap map60 = new BattlegroundMap(302100000);
 		map60.addSpawn(new SpawnPosition(326f, 512f, 352f));
 		map60.addSpawn(new SpawnPosition(278f, 513f, 351f));
@@ -641,8 +640,8 @@ public class DeathmatchBg extends Battleground
 		map60.addSpawn(new SpawnPosition(290f, 527f, 350f));
 		map60.addSpawn(new SpawnPosition(312f, 499f, 350f));
 		map60.setKillZ(330f);
-        super.maps.add(map60);
-		//Karamatis A.
+		super.maps.add(map60);
+		// Karamatis A.
 		BattlegroundMap map61 = new BattlegroundMap(310010000);
 		map61.addSpawn(new SpawnPosition(220f, 250f, 206f));
 		map61.addSpawn(new SpawnPosition(229f, 288f, 206f));
@@ -651,8 +650,8 @@ public class DeathmatchBg extends Battleground
 		map61.addSpawn(new SpawnPosition(305f, 271f, 205f));
 		map61.addSpawn(new SpawnPosition(277f, 301f, 206f));
 		map61.setKillZ(190f);
-        super.maps.add(map61);
-		//Aerdina.
+		super.maps.add(map61);
+		// Aerdina.
 		BattlegroundMap map62 = new BattlegroundMap(310030000);
 		map62.addSpawn(new SpawnPosition(273f, 173f, 204f));
 		map62.addSpawn(new SpawnPosition(252f, 261f, 228f));
@@ -661,8 +660,8 @@ public class DeathmatchBg extends Battleground
 		map62.addSpawn(new SpawnPosition(261f, 228f, 213f));
 		map62.addSpawn(new SpawnPosition(229f, 245f, 224f));
 		map62.setKillZ(190f);
-        super.maps.add(map62);
-		//Aetherogenetics Lab.
+		super.maps.add(map62);
+		// Aetherogenetics Lab.
 		BattlegroundMap map63 = new BattlegroundMap(310050000);
 		map63.addSpawn(new SpawnPosition(215f, 343f, 126f));
 		map63.addSpawn(new SpawnPosition(225f, 343f, 126f));
@@ -671,8 +670,8 @@ public class DeathmatchBg extends Battleground
 		map63.addSpawn(new SpawnPosition(225f, 303f, 126f));
 		map63.addSpawn(new SpawnPosition(215f, 303f, 126f));
 		map63.setKillZ(100f);
-        super.maps.add(map63);
-		//Sanctum Underground Arena.
+		super.maps.add(map63);
+		// Sanctum Underground Arena.
 		BattlegroundMap map64 = new BattlegroundMap(310080000);
 		map64.addSpawn(new SpawnPosition(275f, 181f, 162f));
 		map64.addSpawn(new SpawnPosition(275f, 242f, 158f));
@@ -681,8 +680,8 @@ public class DeathmatchBg extends Battleground
 		map64.addSpawn(new SpawnPosition(304f, 240f, 158f));
 		map64.addSpawn(new SpawnPosition(260f, 215f, 158f));
 		map64.setKillZ(130f);
-        super.maps.add(map64);
-		//Indratu Fortress.
+		super.maps.add(map64);
+		// Indratu Fortress.
 		BattlegroundMap map65 = new BattlegroundMap(310090000);
 		map65.addSpawn(new SpawnPosition(604f, 466f, 1019f));
 		map65.addSpawn(new SpawnPosition(617f, 516f, 1019f));
@@ -691,8 +690,8 @@ public class DeathmatchBg extends Battleground
 		map65.addSpawn(new SpawnPosition(552f, 479f, 1011f));
 		map65.addSpawn(new SpawnPosition(615f, 562f, 1018f));
 		map65.setKillZ(990f);
-        super.maps.add(map65);
-		//Azoturan Fortress.
+		super.maps.add(map65);
+		// Azoturan Fortress.
 		BattlegroundMap map66 = new BattlegroundMap(310100000);
 		map66.addSpawn(new SpawnPosition(462f, 442f, 993f));
 		map66.addSpawn(new SpawnPosition(417f, 402f, 1004f));
@@ -701,8 +700,8 @@ public class DeathmatchBg extends Battleground
 		map66.addSpawn(new SpawnPosition(413f, 426f, 991f));
 		map66.addSpawn(new SpawnPosition(443f, 419f, 991f));
 		map66.setKillZ(970f);
-        super.maps.add(map66);
-		//Sky Temple Interior.
+		super.maps.add(map66);
+		// Sky Temple Interior.
 		BattlegroundMap map67 = new BattlegroundMap(320050000);
 		map67.addSpawn(new SpawnPosition(376f, 417f, 374f));
 		map67.addSpawn(new SpawnPosition(462f, 399f, 375f));
@@ -711,18 +710,18 @@ public class DeathmatchBg extends Battleground
 		map67.addSpawn(new SpawnPosition(412f, 456f, 375f));
 		map67.addSpawn(new SpawnPosition(443f, 448f, 375f));
 		map67.setKillZ(350f);
-        super.maps.add(map67);
-		//Space Of Destiny.
-		//BattlegroundMap map68 = new BattlegroundMap(320070000);
-		//map68.addSpawn(new SpawnPosition(210f, 250f, 125f));
-        //map68.addSpawn(new SpawnPosition(271f, 246f, 125f));
-        //map68.addSpawn(new SpawnPosition(233f, 204f, 125f));
-        //map68.addSpawn(new SpawnPosition(246f, 248f, 125f));
-        //map68.addSpawn(new SpawnPosition(256f, 285f, 125f));
-        //map68.addSpawn(new SpawnPosition(221f, 272f, 125f));
-		//map68.setKillZ(110f);
-        //super.maps.add(map68);
-		//Fire Temple.
+		super.maps.add(map67);
+		// Space Of Destiny.
+		// BattlegroundMap map68 = new BattlegroundMap(320070000);
+		// map68.addSpawn(new SpawnPosition(210f, 250f, 125f));
+		// map68.addSpawn(new SpawnPosition(271f, 246f, 125f));
+		// map68.addSpawn(new SpawnPosition(233f, 204f, 125f));
+		// map68.addSpawn(new SpawnPosition(246f, 248f, 125f));
+		// map68.addSpawn(new SpawnPosition(256f, 285f, 125f));
+		// map68.addSpawn(new SpawnPosition(221f, 272f, 125f));
+		// map68.setKillZ(110f);
+		// super.maps.add(map68);
+		// Fire Temple.
 		BattlegroundMap map69 = new BattlegroundMap(320100000);
 		map69.addSpawn(new SpawnPosition(414f, 97f, 117f));
 		map69.addSpawn(new SpawnPosition(392f, 88f, 117f));
@@ -731,18 +730,18 @@ public class DeathmatchBg extends Battleground
 		map69.addSpawn(new SpawnPosition(377f, 99f, 117f));
 		map69.addSpawn(new SpawnPosition(361f, 126f, 116f));
 		map69.setKillZ(95f);
-        super.maps.add(map69);
-		//Alquimia Research Center.
+		super.maps.add(map69);
+		// Alquimia Research Center.
 		BattlegroundMap map70 = new BattlegroundMap(320110000);
 		map70.addSpawn(new SpawnPosition(286f, 501f, 211f));
-        map70.addSpawn(new SpawnPosition(292f, 521f, 209f));
-        map70.addSpawn(new SpawnPosition(292f, 481f, 209f));
-        map70.addSpawn(new SpawnPosition(365f, 483f, 211f));
-        map70.addSpawn(new SpawnPosition(365f, 521f, 209f));
-        map70.addSpawn(new SpawnPosition(329f, 501f, 209f));
+		map70.addSpawn(new SpawnPosition(292f, 521f, 209f));
+		map70.addSpawn(new SpawnPosition(292f, 481f, 209f));
+		map70.addSpawn(new SpawnPosition(365f, 483f, 211f));
+		map70.addSpawn(new SpawnPosition(365f, 521f, 209f));
+		map70.addSpawn(new SpawnPosition(329f, 501f, 209f));
 		map70.setKillZ(200f);
-        super.maps.add(map70);
-		//Padmarashka's Cave.
+		super.maps.add(map70);
+		// Padmarashka's Cave.
 		BattlegroundMap map71 = new BattlegroundMap(320150000);
 		map71.addSpawn(new SpawnPosition(576f, 279f, 66f));
 		map71.addSpawn(new SpawnPosition(605f, 235f, 66f));
@@ -751,8 +750,8 @@ public class DeathmatchBg extends Battleground
 		map71.addSpawn(new SpawnPosition(524f, 239f, 66f));
 		map71.addSpawn(new SpawnPosition(535f, 279f, 66f));
 		map71.setKillZ(50f);
-        super.maps.add(map71);
-		//Transidium Annex.
+		super.maps.add(map71);
+		// Transidium Annex.
 		BattlegroundMap map72 = new BattlegroundMap(400030000);
 		map72.addSpawn(new SpawnPosition(481f, 500f, 674f));
 		map72.addSpawn(new SpawnPosition(480f, 524f, 674f));
@@ -763,160 +762,168 @@ public class DeathmatchBg extends Battleground
 		map72.addSpawn(new SpawnPosition(521f, 483f, 674f));
 		map72.addSpawn(new SpawnPosition(497f, 483f, 674f));
 		map72.setKillZ(650f);
-        super.maps.add(map72);
-		//Live Party Concert Hall.
-		//BattlegroundMap map73 = new BattlegroundMap(600080000);
-		//map73.addSpawn(new SpawnPosition(1543f, 1529f, 565f));
-		//map73.addSpawn(new SpawnPosition(1543f, 1493f, 565f));
-		//map73.addSpawn(new SpawnPosition(1521f, 1492f, 565f));
-		//map73.addSpawn(new SpawnPosition(1521f, 1530f, 565f));
-		//map73.addSpawn(new SpawnPosition(1509f, 1511f, 565f));
-		//map73.addSpawn(new SpawnPosition(1503f, 1541f, 566f));
-		//map73.setKillZ(540f);
-        //super.maps.add(map73);
-    }
-	
-    public void createMatch(List<Integer> players) {
-        super.handleQueueSolo(players);
-        if (super.getPlayers().isEmpty()) {
-            return;
+		super.maps.add(map72);
+		// Live Party Concert Hall.
+		// BattlegroundMap map73 = new BattlegroundMap(600080000);
+		// map73.addSpawn(new SpawnPosition(1543f, 1529f, 565f));
+		// map73.addSpawn(new SpawnPosition(1543f, 1493f, 565f));
+		// map73.addSpawn(new SpawnPosition(1521f, 1492f, 565f));
+		// map73.addSpawn(new SpawnPosition(1521f, 1530f, 565f));
+		// map73.addSpawn(new SpawnPosition(1509f, 1511f, 565f));
+		// map73.addSpawn(new SpawnPosition(1503f, 1541f, 566f));
+		// map73.setKillZ(540f);
+		// super.maps.add(map73);
+	}
+
+	public void createMatch(List<Integer> players) {
+		super.handleQueueSolo(players);
+		if (super.getPlayers().isEmpty()) {
+			return;
 		}
-        startMatch();
-    }
-	
-    public void startMatch() {
-        super.createInstance();
-        openStaticDoors();
-        List<SpawnPosition> spawns = new ArrayList<SpawnPosition>(getSpawnPositions());
-        synchronized (super.getPlayers()) {
-            for (Player pl : super.getPlayers()) {
-                super.preparePlayer(pl, 25000);
-                SpawnPosition pos = spawns.remove(Rnd.get(spawns.size()));
-                if (pos != null) {
-                    performTeleport(pl, pos.getX(), pos.getY(), pos.getZ());
+		startMatch();
+	}
+
+	public void startMatch() {
+		super.createInstance();
+		openStaticDoors();
+		List<SpawnPosition> spawns = new ArrayList<SpawnPosition>(getSpawnPositions());
+		synchronized (super.getPlayers()) {
+			for (Player pl : super.getPlayers()) {
+				super.preparePlayer(pl, 25000);
+				SpawnPosition pos = spawns.remove(Rnd.get(spawns.size()));
+				if (pos != null) {
+					performTeleport(pl, pos.getX(), pos.getY(), pos.getZ());
 				} else {
-                    spawnPlayer(pl, false);
+					spawnPlayer(pl, false);
 				}
-            }
-        }
-        super.setExpireTask(ThreadPoolManager.getInstance().schedule(new Runnable() {
-            @Override
-            public void run() {
-                endDeathmatch();
-            }
-        }, getMatchLength() * 1000));
-        super.startBackgroundTask();
-    }
-	
-    @Override
-    public boolean createTournament(List<List<Player>> players) {
-        if (!super.createPlayers(players)) {
-            return false;
-		}
-        this.matchLength = 400;
-        startMatch();
-        return true;
-    }
-	
-    public void onDie(final Player player, Creature lastAttacker) {
-        super.onDieDefault(player, lastAttacker);
-        if (player.getKillStreak() > 1) {
-            for (Player pl : super.getPlayers()) {
-                scheduleAnnouncement(pl, player.getName() + "'s killing ended", 0);
 			}
-            super.specAnnounce(player.getName() + "'s killing ended!");
-        }
-        player.setKillStreak(0);
-        if (lastAttacker instanceof Player && ((Player) lastAttacker).getObjectId() != player.getObjectId()) {
-            Player killer = (Player) lastAttacker;
-            killer.setKillStreak(killer.getKillStreak() + 1);
-            if (killer.getKillStreak() > 1) {
-                for (Player pl : super.getPlayers()) {
-                    scheduleAnnouncement(pl, killer.getName() + " is on a series of murders: " + killer.getKillStreak() + "!", 0);
-				}
-                super.specAnnounce(killer.getName() + " is on a series of murders: " + killer.getKillStreak() + "!");
-            }
-            killer.getLifeStats().increaseHp(SM_ATTACK_STATUS.TYPE.HP, 1000 + 200 * killer.getKillStreak());
-            killer.getLifeStats().increaseMp(SM_ATTACK_STATUS.TYPE.MP, 1000 + 200 * killer.getKillStreak());
-        }
-        ThreadPoolManager.getInstance().schedule(new Runnable() {
-            @Override
-            public void run() {
-                if (player.getBattleground() != null && player.getBattleground() instanceof DeathmatchBg) {
-                    spawnPlayer(player, true);
-				}
-            }
-        }, 6000);
-    }
-	
-    public void onLeave(Player player, boolean isLogout, boolean isAfk) {
-        super.onLeaveDefault(player, isLogout, isAfk);
-        if (super.getPlayers().size() <= 1) {
-            endDeathmatch();
 		}
-    }
-	
-    private void spawnPlayer(Player player, boolean isRespawn) {
-        if (player.getLifeStats().isAlreadyDead()) {
-            PlayerReviveService.eventRevive(player);
+		super.setExpireTask(ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				endDeathmatch();
+			}
+		}, getMatchLength() * 1000));
+		super.startBackgroundTask();
+	}
+
+	@Override
+	public boolean createTournament(List<List<Player>> players) {
+		if (!super.createPlayers(players)) {
+			return false;
 		}
-        SpawnPosition spawnPos = getSpawnPositions().get(Rnd.get(getSpawnPositions().size()));
-        if (spawnPos != null) {
-            if (isRespawn) {
-                TeleportService2.teleportTo(player, getMapId(), super.getInstanceId(), spawnPos.getX(), spawnPos.getY(), spawnPos.getZ());
+		this.matchLength = 400;
+		startMatch();
+		return true;
+	}
+
+	public void onDie(final Player player, Creature lastAttacker) {
+		super.onDieDefault(player, lastAttacker);
+		if (player.getKillStreak() > 1) {
+			for (Player pl : super.getPlayers()) {
+				scheduleAnnouncement(pl, player.getName() + "'s killing ended", 0);
+			}
+			super.specAnnounce(player.getName() + "'s killing ended!");
+		}
+		player.setKillStreak(0);
+		if (lastAttacker instanceof Player && ((Player) lastAttacker).getObjectId() != player.getObjectId()) {
+			Player killer = (Player) lastAttacker;
+			killer.setKillStreak(killer.getKillStreak() + 1);
+			if (killer.getKillStreak() > 1) {
+				for (Player pl : super.getPlayers()) {
+					scheduleAnnouncement(pl,
+							killer.getName() + " is on a series of murders: " + killer.getKillStreak() + "!", 0);
+				}
+				super.specAnnounce(killer.getName() + " is on a series of murders: " + killer.getKillStreak() + "!");
+			}
+			killer.getLifeStats().increaseHp(SM_ATTACK_STATUS.TYPE.HP, 1000 + 200 * killer.getKillStreak());
+			killer.getLifeStats().increaseMp(SM_ATTACK_STATUS.TYPE.MP, 1000 + 200 * killer.getKillStreak());
+		}
+		ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				if (player.getBattleground() != null && player.getBattleground() instanceof DeathmatchBg) {
+					spawnPlayer(player, true);
+				}
+			}
+		}, 6000);
+	}
+
+	public void onLeave(Player player, boolean isLogout, boolean isAfk) {
+		super.onLeaveDefault(player, isLogout, isAfk);
+		if (super.getPlayers().size() <= 1) {
+			endDeathmatch();
+		}
+	}
+
+	private void spawnPlayer(Player player, boolean isRespawn) {
+		if (player.getLifeStats().isAlreadyDead()) {
+			PlayerReviveService.eventRevive(player);
+		}
+		SpawnPosition spawnPos = getSpawnPositions().get(Rnd.get(getSpawnPositions().size()));
+		if (spawnPos != null) {
+			if (isRespawn) {
+				TeleportService2.teleportTo(player, getMapId(), super.getInstanceId(), spawnPos.getX(), spawnPos.getY(),
+						spawnPos.getZ());
 			} else {
-                performTeleport(player, spawnPos.getX(), spawnPos.getY(), spawnPos.getZ());
+				performTeleport(player, spawnPos.getX(), spawnPos.getY(), spawnPos.getZ());
 			}
-        }
-    }
-	
-    private void endDeathmatch() {
-        super.onEndFirstDefault();
-        Player winner = null;
-        for (Player pl : super.getPlayers()) {
-            if (winner == null || winner.getTotalKills() < pl.getTotalKills()) {
-                winner = pl;
+		}
+	}
+
+	private void endDeathmatch() {
+		super.onEndFirstDefault();
+		Player winner = null;
+		for (Player pl : super.getPlayers()) {
+			if (winner == null || winner.getTotalKills() < pl.getTotalKills()) {
+				winner = pl;
 			}
-        } if (winner != null) {
-            for (Player pl : super.getPlayers()) {
-                super.scheduleAnnouncement(pl, winner.getName() + " win's the <Deathmatch> with " + winner.getTotalKills() + " kill's in total!", 0);
-                if (pl.getObjectId() == winner.getObjectId()) {
-                    super.playerWinMatch(pl, super.K_VALUE / 2);
+		}
+		if (winner != null) {
+			for (Player pl : super.getPlayers()) {
+				super.scheduleAnnouncement(pl, winner.getName() + " win's the <Deathmatch> with "
+						+ winner.getTotalKills() + " kill's in total!", 0);
+				if (pl.getObjectId() == winner.getObjectId()) {
+					super.playerWinMatch(pl, super.K_VALUE / 2);
 					byte level = pl.getLevel();
-					//Reward Player if "WINNER"
+					// Reward Player if "WINNER"
 					if (level >= 10 && level <= 50) {
-						ItemService.addItem(pl, 186000030, 5); //Gold Medal.
-						ItemService.addItem(pl, 186000031, 5); //Silver Medal.
-						ItemService.addItem(pl, 166030005, 2); //Tempering Solution.
-						ItemService.addItem(pl, 166020000, 2); //Omega Enchantment Stone.
-						ItemService.addItem(pl, 188100335, 100); //Enchantment Stone Dust.
-						ItemService.addItem(pl, 188710113, 1); //No Limits Pack "1 Day"
+						ItemService.addItem(pl, 186000030, 5); // Gold Medal.
+						ItemService.addItem(pl, 186000031, 5); // Silver Medal.
+						ItemService.addItem(pl, 166030005, 2); // Tempering Solution.
+						ItemService.addItem(pl, 166020000, 2); // Omega Enchantment Stone.
+						ItemService.addItem(pl, 188100335, 100); // Enchantment Stone Dust.
+						ItemService.addItem(pl, 188710113, 1); // No Limits Pack "1 Day"
 						AbyssPointsService.addAp(pl, 1000);
 						AbyssPointsService.addGp(pl, 5);
-					} if (level >= 51 && level <= 65) {
-						ItemService.addItem(pl, 186000096, 5); //Platinum Medal.
-						ItemService.addItem(pl, 186000147, 5); //Mithril Medal.
-						ItemService.addItem(pl, 186000223, 5); //Honorable Mithril Medal.
-						ItemService.addItem(pl, 166030005, 2); //Tempering Solution.
-						ItemService.addItem(pl, 166020000, 2); //Omega Enchantment Stone.
-						ItemService.addItem(pl, 188100335, 200); //Enchantment Stone Dust.
-						ItemService.addItem(pl, 188710113, 1); //No Limits Pack "1 Day"
+					}
+					if (level >= 51 && level <= 65) {
+						ItemService.addItem(pl, 186000096, 5); // Platinum Medal.
+						ItemService.addItem(pl, 186000147, 5); // Mithril Medal.
+						ItemService.addItem(pl, 186000223, 5); // Honorable Mithril Medal.
+						ItemService.addItem(pl, 166030005, 2); // Tempering Solution.
+						ItemService.addItem(pl, 166020000, 2); // Omega Enchantment Stone.
+						ItemService.addItem(pl, 188100335, 200); // Enchantment Stone Dust.
+						ItemService.addItem(pl, 188710113, 1); // No Limits Pack "1 Day"
 						AbyssPointsService.addAp(pl, 3000);
 						AbyssPointsService.addGp(pl, 10);
-					} if (level >= 66 && level <= 83) {
-						ItemService.addItem(pl, 166030005, 1); //Tempering Solution.
-						ItemService.addItem(pl, 166020000, 1); //Omega Enchantment Stone.
+					}
+					if (level >= 66 && level <= 83) {
+						ItemService.addItem(pl, 166030005, 1); // Tempering Solution.
+						ItemService.addItem(pl, 166020000, 1); // Omega Enchantment Stone.
 						AbyssPointsService.addAp(pl, 5000);
 						AbyssPointsService.addGp(pl, 25);
 					}
 				} else {
-                    super.getLadderDAO().addRating(pl, -super.K_VALUE / 20);
+					super.getLadderDAO().addRating(pl, -super.K_VALUE / 20);
 				}
-            }
-            super.specAnnounce(winner.getName() + " win's the <Deathmatch> with " + winner.getTotalKills() + " kill's in total!");
-        } for (final Player pl: super.getPlayers()) {
-            super.scheduleAnnouncement(pl, "You have received rewards for your efforts in this battleground!", 3000);
-        }
-        super.onEndDefault();
-    }
+			}
+			super.specAnnounce(
+					winner.getName() + " win's the <Deathmatch> with " + winner.getTotalKills() + " kill's in total!");
+		}
+		for (final Player pl : super.getPlayers()) {
+			super.scheduleAnnouncement(pl, "You have received rewards for your efforts in this battleground!", 3000);
+		}
+		super.onEndDefault();
+	}
 }

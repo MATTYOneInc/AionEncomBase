@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "rvr_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class RvrSchedule
-{
+public class RvrSchedule {
 	@XmlElement(name = "rvr", required = true)
 	private List<Rvr> rvrsList;
-	
+
 	public List<Rvr> getRvrsList() {
 		return rvrsList;
 	}
-	
+
 	public void setRvrsList(List<Rvr> rvrList) {
 		this.rvrsList = rvrList;
 	}
-	
+
 	public static RvrSchedule load() {
 		RvrSchedule rs;
 		try {
@@ -58,28 +57,28 @@ public class RvrSchedule
 		}
 		return rs;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "rvr")
 	public static class Rvr {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "rvrTime", required = true)
 		private List<String> rvrTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getRvrTimes() {
 			return rvrTimes;
 		}
-		
+
 		public void setRvrTimes(List<String> rvrTimes) {
 			this.rvrTimes = rvrTimes;
 		}

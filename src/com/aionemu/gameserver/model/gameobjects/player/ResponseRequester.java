@@ -37,10 +37,10 @@ public class ResponseRequester {
 	}
 
 	/**
-	 * Adds this handler to this messageID, returns false if there already exists one
+	 * Adds this handler to this messageID, returns false if there already exists
+	 * one
 	 * 
-	 * @param messageId
-	 *          ID of the request message
+	 * @param messageId ID of the request message
 	 * @return true or false
 	 */
 	public synchronized boolean putRequest(int messageId, RequestResponseHandler handler) {
@@ -70,7 +70,8 @@ public class ResponseRequester {
 	}
 
 	/**
-	 * Automatically responds 0 to all requests, passing the given player as the responder
+	 * Automatically responds 0 to all requests, passing the given player as the
+	 * responder
 	 */
 	public synchronized void denyAll() {
 		for (RequestResponseHandler handler : map.values()) {

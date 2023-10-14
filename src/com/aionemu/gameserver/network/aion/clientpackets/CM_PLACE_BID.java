@@ -22,21 +22,20 @@ import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.services.HousingBidService;
 
-public class CM_PLACE_BID extends AionClientPacket
-{
+public class CM_PLACE_BID extends AionClientPacket {
 	int listIndex = 0;
 	long bidOffer = 0;
-	
+
 	public CM_PLACE_BID(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		listIndex = readD();
 		bidOffer = readQ();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		if (HousingConfig.ENABLE_HOUSE_AUCTIONS) {

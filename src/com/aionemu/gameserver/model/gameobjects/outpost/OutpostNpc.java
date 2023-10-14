@@ -26,30 +26,30 @@ import com.aionemu.gameserver.model.templates.spawns.outpostspawns.OutpostSpawnT
  * Created by Wnkrz on 27/08/2017.
  */
 
-public class OutpostNpc extends Npc
-{
-    private int outpostId;
-	
-    public OutpostNpc(int objId, NpcController controller, OutpostSpawnTemplate spawnTemplate, NpcTemplate objectTemplate) {
-        super(objId, controller, spawnTemplate, objectTemplate);
-        this.outpostId = spawnTemplate.getId();
-    }
-	
-    public int getOutpostId() {
-        return outpostId;
-    }
-	
-    @Override
-    public OutpostSpawnTemplate getSpawn() {
-        return (OutpostSpawnTemplate) super.getSpawn();
-    }
-	
-    @Override
-    public boolean isEnemyFrom(Creature creature) {
-        if (creature instanceof OutpostNpc) {
-            return true;
-        } else {
-            return super.isEnemyFrom(creature);
-        }
-    }
+public class OutpostNpc extends Npc {
+	private int outpostId;
+
+	public OutpostNpc(int objId, NpcController controller, OutpostSpawnTemplate spawnTemplate,
+			NpcTemplate objectTemplate) {
+		super(objId, controller, spawnTemplate, objectTemplate);
+		this.outpostId = spawnTemplate.getId();
+	}
+
+	public int getOutpostId() {
+		return outpostId;
+	}
+
+	@Override
+	public OutpostSpawnTemplate getSpawn() {
+		return (OutpostSpawnTemplate) super.getSpawn();
+	}
+
+	@Override
+	public boolean isEnemyFrom(Creature creature) {
+		if (creature instanceof OutpostNpc) {
+			return true;
+		} else {
+			return super.isEnemyFrom(creature);
+		}
+	}
 }

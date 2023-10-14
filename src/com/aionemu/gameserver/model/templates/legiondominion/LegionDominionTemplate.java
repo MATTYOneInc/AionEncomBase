@@ -27,25 +27,24 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "dominion_locations")
-public class LegionDominionTemplate
-{
+public class LegionDominionTemplate {
 	@XmlAttribute(name = "id")
 	protected int id;
-	
+
 	@XmlAttribute(name = "world")
 	protected int world;
-	
+
 	@XmlAttribute(name = "name")
 	protected String nameId;
-	
+
 	public int getLegionDominionId() {
 		return this.id;
 	}
-	
+
 	public int getWorldId() {
 		return this.world;
 	}
-	
+
 	public String getName() {
 		return nameId;
 	}

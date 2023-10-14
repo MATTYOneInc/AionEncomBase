@@ -34,7 +34,7 @@ public class SummonMoveController extends PlayableMoveController<Summon> {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	@Override
 	public void skillMovement() {
 		this.movementMask = MovementMask.IMMEDIATE;

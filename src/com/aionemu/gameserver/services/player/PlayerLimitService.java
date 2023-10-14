@@ -35,7 +35,7 @@ public class PlayerLimitService {
 	public static boolean updateSellLimit(Player player, long reward) {
 		if (!CustomConfig.LIMITS_ENABLED) {
 			return true;
-        }
+		}
 		int accoutnId = player.getPlayerAccount().getId();
 		Long limit = sellLimit.get(accoutnId);
 		if (limit == null) {
@@ -46,8 +46,7 @@ public class PlayerLimitService {
 		if (limit < reward) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_DAY_CANNOT_SELL_NPC(limit));
 			return false;
-		}
-		else {
+		} else {
 			limit -= reward;
 			sellLimit.putEntry(accoutnId, limit);
 			return true;

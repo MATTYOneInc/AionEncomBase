@@ -20,7 +20,8 @@ import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.templates.walker.WalkerTemplate;
 
 /**
- * Stores for the spawn needed information, used for forming walker groups and spawning NPCs
+ * Stores for the spawn needed information, used for forming walker groups and
+ * spawning NPCs
  * 
  * @author vlog
  * @modified Rolandas
@@ -63,21 +64,21 @@ public class ClusteredNpc {
 	}
 
 	public boolean hasSamePosition(ClusteredNpc other) {
-    if (this == other)
-      return true;
+		if (this == other)
+			return true;
 		if (other == null) {
 			return false;
 		}
 		return this.x == other.x && this.y == other.y;
 	}
-	
-  public int getPositionHash() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + Float.floatToIntBits(x);
-    result = prime * result + Float.floatToIntBits(y);
-    return result;
-  }
+
+	public int getPositionHash() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Float.floatToIntBits(x);
+		result = prime * result + Float.floatToIntBits(y);
+		return result;
+	}
 
 	/**
 	 * @return the x
@@ -85,7 +86,7 @@ public class ClusteredNpc {
 	public float getX() {
 		return x;
 	}
-	
+
 	public float getXDelta() {
 		return walkTemplate.getRouteStep(1).getX() - x;
 	}
@@ -104,7 +105,7 @@ public class ClusteredNpc {
 	public float getY() {
 		return y;
 	}
-	
+
 	public float getYDelta() {
 		return walkTemplate.getRouteStep(1).getY() - y;
 	}
@@ -123,7 +124,7 @@ public class ClusteredNpc {
 	public WalkerTemplate getWalkTemplate() {
 		return walkTemplate;
 	}
-	
+
 	public int getWalkerIndex() {
 		return walkerIdx;
 	}

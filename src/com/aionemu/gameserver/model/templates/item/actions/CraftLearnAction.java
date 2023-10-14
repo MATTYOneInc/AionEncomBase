@@ -42,9 +42,11 @@ public class CraftLearnAction extends AbstractItemAction {
 	public void act(Player player, Item parentItem, Item targetItem) {
 		player.getController().cancelUseItem();
 		if (player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1)) {
-			if(RecipeService.addRecipe(player, recipeid, false)) {
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(parentItem.getItemTemplate().getNameId())));
-				PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId()));
+			if (RecipeService.addRecipe(player, recipeid, false)) {
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(parentItem.getItemTemplate().getNameId())));
+				PacketSendUtility.sendPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+						parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId()));
 			}
 		}
 	}

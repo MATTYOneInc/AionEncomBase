@@ -23,7 +23,7 @@ import com.aionemu.gameserver.model.stats.container.StatEnum;
 /**
  * @author ATracer
  */
-public interface IStatFunction extends Comparable<IStatFunction>{
+public interface IStatFunction extends Comparable<IStatFunction> {
 
 	StatEnum getName();
 
@@ -36,8 +36,8 @@ public interface IStatFunction extends Comparable<IStatFunction>{
 	boolean validate(Stat2 stat, IStatFunction statFunction);
 
 	void apply(Stat2 stat);
-	
+
 	StatOwner getOwner();
-	
+
 	boolean hasConditions();
 }

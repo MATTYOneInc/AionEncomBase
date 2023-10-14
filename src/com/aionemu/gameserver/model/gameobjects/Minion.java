@@ -33,7 +33,8 @@ public class Minion extends VisibleObject {
 	private MoveController moveController;
 	private final MinionTemplate minionTemplate;
 
-	public Minion(MinionTemplate minionTemplate, MinionController controller, MinionCommonData commonData, Player master) {
+	public Minion(MinionTemplate minionTemplate, MinionController controller, MinionCommonData commonData,
+			Player master) {
 		super(commonData.getObjectId(), controller, null, commonData, new WorldPosition(master.getWorldId()));
 		controller.setOwner(this);
 		this.master = master;

@@ -23,10 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum TargetSpeciesAttribute {
 
-	NONE,
-	ALL,
-	PC,
-	NPC;
+	NONE, ALL, PC, NPC;
 
 	public String value() {
 		return name();

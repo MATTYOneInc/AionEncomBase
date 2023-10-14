@@ -32,12 +32,11 @@ import com.aionemu.gameserver.world.zone.handler.ZoneHandler;
 
 import javolution.util.FastMap;
 
-public class SiegeLocation implements ZoneHandler
-{
+public class SiegeLocation implements ZoneHandler {
 	private static final Logger log = LoggerFactory.getLogger(SiegeLocation.class);
 	public static final int STATE_INVULNERABLE = 0;
 	public static final int STATE_VULNERABLE = 1;
-	
+
 	protected SiegeLocationTemplate template;
 	protected int locationId;
 	protected SiegeType type;
@@ -59,10 +58,10 @@ public class SiegeLocation implements ZoneHandler
 	protected int buffIdA;
 	protected int buffIdE;
 	protected int outpostId;
-	
+
 	public SiegeLocation() {
 	}
-	
+
 	public SiegeLocation(SiegeLocationTemplate template) {
 		this.template = template;
 		this.locationId = template.getId();
@@ -72,35 +71,35 @@ public class SiegeLocation implements ZoneHandler
 		this.zone = new ArrayList<SiegeZoneInstance>();
 		this.influenceValue = template.getInfluenceValue();
 	}
-	
+
 	public SiegeLocationTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getLocationId() {
 		return this.locationId;
 	}
-	
+
 	public int getWorldId() {
 		return this.worldId;
 	}
-	
+
 	public SiegeType getType() {
 		return this.type;
 	}
-	
+
 	public int getSiegeDuration() {
 		return siegeDuration;
 	}
-	
+
 	public SiegeRace getRace() {
 		return this.siegeRace;
 	}
-	
+
 	public void setRace(SiegeRace siegeRace) {
 		this.siegeRace = siegeRace;
 	}
-	
+
 	public int getLegionId() {
 		return this.legionId;
 	}
@@ -108,23 +107,23 @@ public class SiegeLocation implements ZoneHandler
 	public void setLegionId(int legionId) {
 		this.legionId = legionId;
 	}
-	
+
 	public int getNextState() {
 		return nextState;
 	}
-	
+
 	public void setNextState(int nextState) {
 		this.nextState = nextState;
 	}
-	
+
 	public boolean isVulnerable() {
 		return this.vulnerable;
 	}
-	
+
 	public boolean isUnderShield() {
 		return this.isUnderShield;
 	}
-	
+
 	public void setUnderShield(boolean value) {
 		this.isUnderShield = value;
 		if (shields != null) {
@@ -133,7 +132,7 @@ public class SiegeLocation implements ZoneHandler
 			}
 		}
 	}
-	
+
 	public void setShields(List<SiegeShield> shields) {
 		this.shields = shields;
 		log.debug("Attached shields for locId: " + locationId);
@@ -141,32 +140,32 @@ public class SiegeLocation implements ZoneHandler
 			log.debug(shield.toString());
 		}
 	}
-	
+
 	public boolean isCanTeleport(Player player) {
 		return canTeleport;
 	}
-	
+
 	public void setCanTeleport(boolean canTeleport) {
 		this.canTeleport = canTeleport;
 	}
-	
+
 	public void setVulnerable(boolean value) {
 		this.vulnerable = value;
 	}
-	
+
 	public int getInfluenceValue() {
 		return influenceValue;
 	}
-	
+
 	public List<SiegeZoneInstance> getZone() {
 		return zone;
 	}
-	
+
 	public void addZone(SiegeZoneInstance zone) {
 		this.zone.add(zone);
 		zone.addHandler(this);
 	}
-	
+
 	public boolean isInsideLocation(Creature creature) {
 		if (zone.isEmpty()) {
 			return false;
@@ -178,17 +177,17 @@ public class SiegeLocation implements ZoneHandler
 		}
 		return false;
 	}
-	
+
 	public boolean isInActiveSiegeZone(Player player) {
 		if (isVulnerable() && isInsideLocation(player)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	public void clearLocation() {
 	}
-	
+
 	@Override
 	public void onEnterZone(Creature creature, ZoneInstance zone) {
 		if (!creatures.containsKey(creature.getObjectId())) {
@@ -198,7 +197,7 @@ public class SiegeLocation implements ZoneHandler
 			}
 		}
 	}
-	
+
 	@Override
 	public void onLeaveZone(Creature creature, ZoneInstance zone) {
 		if (!this.isInsideLocation(creature)) {
@@ -206,10 +205,11 @@ public class SiegeLocation implements ZoneHandler
 			players.remove(creature.getObjectId());
 		}
 	}
-	
+
 	public void doOnAllPlayers(Visitor<Player> visitor) {
 		try {
-			for (FastMap.Entry<Integer, Player> e = players.head(), mapEnd = players.tail(); (e = e.getNext()) != mapEnd;) {
+			for (FastMap.Entry<Integer, Player> e = players.head(),
+					mapEnd = players.tail(); (e = e.getNext()) != mapEnd;) {
 				Player player = e.getValue();
 				if (player != null) {
 					visitor.visit(player);
@@ -219,27 +219,27 @@ public class SiegeLocation implements ZoneHandler
 			log.error("Exception when running visitor on all players" + ex);
 		}
 	}
-	
+
 	public FastMap<Integer, Creature> getCreatures() {
 		return creatures;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}
-	
+
 	public int getBuffId() {
 		return buffId = template.getBuffId();
 	}
-	
+
 	public int getBuffIdA() {
 		return buffIdA = template.getBuffIdA();
 	}
-	
+
 	public int getBuffIdE() {
 		return buffIdE = template.getBuffIdE();
 	}
-	
+
 	public int getOutpostId() {
 		return outpostId = template.getOutpostId();
 	}

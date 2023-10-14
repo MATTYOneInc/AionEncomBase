@@ -25,28 +25,26 @@ import com.aionemu.gameserver.taskmanager.AbstractPeriodicTaskManager;
 
 import javolution.util.FastMap;
 
-public class ExpireTimerTask extends AbstractPeriodicTaskManager
-{
+public class ExpireTimerTask extends AbstractPeriodicTaskManager {
 	private FastMap<IExpirable, Player> expirables = new FastMap<IExpirable, Player>();
-	
+
 	public ExpireTimerTask() {
 		super(1000);
 	}
-	
+
 	public static ExpireTimerTask getInstance() {
 		return SingletonHolder._instance;
 	}
-	
+
 	public void addTask(IExpirable expirable, Player player) {
 		writeLock();
 		try {
 			expirables.put(expirable, player);
-		}
-		finally {
+		} finally {
 			writeUnlock();
 		}
 	}
-	
+
 	public void removePlayer(Player player) {
 		writeLock();
 		try {
@@ -55,18 +53,17 @@ public class ExpireTimerTask extends AbstractPeriodicTaskManager
 					expirables.remove(entry.getKey());
 				}
 			}
-		}
-		finally {
+		} finally {
 			writeUnlock();
 		}
 	}
-	
+
 	@Override
 	public void run() {
 		writeLock();
 		try {
 			int timeNow = (int) (System.currentTimeMillis() / 1000);
-			for (Iterator<Map.Entry<IExpirable, Player>> i = expirables.entrySet().iterator(); i.hasNext(); ) {
+			for (Iterator<Map.Entry<IExpirable, Player>> i = expirables.entrySet().iterator(); i.hasNext();) {
 				Map.Entry<IExpirable, Player> entry = i.next();
 				IExpirable expirable = entry.getKey();
 				Player player = entry.getValue();
@@ -77,21 +74,20 @@ public class ExpireTimerTask extends AbstractPeriodicTaskManager
 					continue;
 				}
 				switch (min) {
-					case 1800:
-					case 900:
-					case 600:
-					case 300:
-					case 60:
-						expirable.expireMessage(player, min / 60);
+				case 1800:
+				case 900:
+				case 600:
+				case 300:
+				case 60:
+					expirable.expireMessage(player, min / 60);
 					break;
 				}
 			}
-		}
-		finally {
+		} finally {
 			writeUnlock();
 		}
 	}
-	
+
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final ExpireTimerTask _instance = new ExpireTimerTask();

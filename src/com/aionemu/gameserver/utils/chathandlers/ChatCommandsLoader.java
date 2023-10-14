@@ -44,11 +44,9 @@ public class ChatCommandsLoader implements ClassListener {
 			if (tmp != null) {
 				try {
 					processor.registerCommand((ChatCommand) tmp.newInstance());
-				}
-				catch (InstantiationException e) {
+				} catch (InstantiationException e) {
 					e.printStackTrace();
-				}
-				catch (IllegalAccessException e) {
+				} catch (IllegalAccessException e) {
 					e.printStackTrace();
 				}
 			}
@@ -66,12 +64,12 @@ public class ChatCommandsLoader implements ClassListener {
 
 		if (Modifier.isAbstract(modifiers) || Modifier.isInterface(modifiers)) {
 			return false;
-        }
+		}
 		if (!Modifier.isPublic(modifiers)) {
 			return false;
-        }
+		}
 		if (!ClassUtils.isSubclass(clazz, AdminCommand.class) && !ClassUtils.isSubclass(clazz, PlayerCommand.class)
-			&& !ClassUtils.isSubclass(clazz, WeddingCommand.class)) {
+				&& !ClassUtils.isSubclass(clazz, WeddingCommand.class)) {
 			return false;
 		}
 		return true;

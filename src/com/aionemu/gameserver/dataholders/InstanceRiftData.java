@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "instance_rift")
-public class InstanceRiftData
-{
+public class InstanceRiftData {
 	@XmlElement(name = "instance_location")
 	private List<InstanceRiftTemplate> instanceRiftTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, InstanceRiftLocation> instanceRift = new FastMap<Integer, InstanceRiftLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (InstanceRiftTemplate template : instanceRiftTemplates) {
 			instanceRift.put(template.getId(), new InstanceRiftLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return instanceRift.size();
 	}
-	
+
 	public FastMap<Integer, InstanceRiftLocation> getInstanceRiftLocations() {
 		return instanceRift;
 	}

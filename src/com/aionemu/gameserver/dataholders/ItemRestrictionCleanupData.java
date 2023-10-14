@@ -37,7 +37,7 @@ public class ItemRestrictionCleanupData {
 	public int size() {
 		return bplist.size();
 	}
-	
+
 	public List<ItemCleanupTemplate> getList() {
 		return this.bplist;
 	}

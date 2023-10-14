@@ -54,7 +54,8 @@ public class HTMLService {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<reward_items multi_count='").append(template.getRewardCount()).append("'>\n");
 		for (SurveyTemplate survey : template.getSurveys()) {
-			sb.append("<item_id count='").append(survey.getCount()).append("'>").append(survey.getItemId()).append("</item_id>\n");
+			sb.append("<item_id count='").append(survey.getCount()).append("'>").append(survey.getItemId())
+					.append("</item_id>\n");
 		}
 		sb.append("</reward_items>\n");
 		context = context.replace("%reward%", sb);
@@ -93,8 +94,7 @@ public class HTMLService {
 					}
 					String sub = html.substring(from, to);
 					player.getClientConnection().sendPacket(new SM_QUESTIONNAIRE(messageId, i, packet_count, sub));
-				}
-				catch (Exception e) {
+				} catch (Exception e) {
 					log.error("htmlservice.sendData", e);
 				}
 			}
@@ -103,7 +103,8 @@ public class HTMLService {
 
 	public static void sendGuideHtml(Player player) {
 		if (player.getLevel() > 1) {
-			GuideTemplate[] surveyTemplate = DataManager.GUIDE_HTML_DATA.getTemplatesFor(player.getPlayerClass(), player.getRace(), player.getLevel());
+			GuideTemplate[] surveyTemplate = DataManager.GUIDE_HTML_DATA.getTemplatesFor(player.getPlayerClass(),
+					player.getRace(), player.getLevel());
 
 			for (GuideTemplate template : surveyTemplate) {
 				if (!template.isActivated()) {
@@ -128,8 +129,7 @@ public class HTMLService {
 				if (template.isActivated()) {
 					sendData(player, guide.getGuideId(), getHTMLTemplate(template));
 				}
-			}
-			else {
+			} else {
 				log.warn("Null guide template for title: {}", guide.getTitle());
 			}
 		}
@@ -161,10 +161,9 @@ public class HTMLService {
 				return;
 			}
 			List<SurveyTemplate> templates = null;
-			if(template.getSurveys().size() != template.getRewardCount()) {
+			if (template.getSurveys().size() != template.getRewardCount()) {
 				templates = getSurveyTemplates(template.getSurveys(), items);
-			}
-			else {
+			} else {
 				templates = template.getSurveys();
 			}
 			if (templates.isEmpty()) {
@@ -173,7 +172,8 @@ public class HTMLService {
 			for (SurveyTemplate item : templates) {
 				ItemService.addItem(player, item.getItemId(), item.getCount());
 				if (LoggingConfig.LOG_ITEM) {
-					log.info(String.format("[ITEM] Item Guide ID/Count - %d/%d to player %s.", item.getItemId(), item.getCount(), player.getName()));
+					log.info(String.format("[ITEM] Item Guide ID/Count - %d/%d to player %s.", item.getItemId(),
+							item.getCount(), player.getName()));
 				}
 			}
 			DAOManager.getDAO(GuideDAO.class).deleteGuide(guide.getGuideId());
@@ -184,7 +184,7 @@ public class HTMLService {
 	private static List<SurveyTemplate> getSurveyTemplates(List<SurveyTemplate> surveys, List<Integer> items) {
 		List<SurveyTemplate> templates = new ArrayList<SurveyTemplate>();
 		for (SurveyTemplate survey : surveys) {
-			if(items.contains(survey.getItemId())) {
+			if (items.contains(survey.getItemId())) {
 				templates.add(survey);
 			}
 		}
@@ -192,11 +192,11 @@ public class HTMLService {
 	}
 
 	public static void sendGuideHtml(Player player, String title) {
-        GuideTemplate template = DataManager.GUIDE_HTML_DATA.getTemplateByTitle(title);
-        if (template != null) {
-            int id = IDFactory.getInstance().nextId();
-            DAOManager.getDAO(GuideDAO.class).saveGuide(id, player, title);
-            sendData(player, id, getHTMLTemplate(template));
-        }
+		GuideTemplate template = DataManager.GUIDE_HTML_DATA.getTemplateByTitle(title);
+		if (template != null) {
+			int id = IDFactory.getInstance().nextId();
+			DAOManager.getDAO(GuideDAO.class).saveGuide(id, player, title);
+			sendData(player, id, getHTMLTemplate(template));
+		}
 	}
 }

@@ -23,11 +23,6 @@ package com.aionemu.gameserver.model.templates.quest;
 import javax.xml.bind.annotation.XmlEnum;
 
 @XmlEnum
-public enum QuestTargetType
-{
-	NONE,
-	AREA,
-	FORCE,
-	UNION,
-	BATTLEGROUP
+public enum QuestTargetType {
+	NONE, AREA, FORCE, UNION, BATTLEGROUP
 }

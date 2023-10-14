@@ -22,60 +22,60 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SpringTemplate")
-public class SpringTemplate
-{
+public class SpringTemplate {
 	@XmlAttribute(name = "map_id")
 	protected int mapId;
-	
+
 	@XmlAttribute(name = "x")
 	protected float x;
-	
+
 	@XmlAttribute(name = "y")
 	protected float y;
-	
+
 	@XmlAttribute(name = "z")
 	protected float z;
-	
+
 	@XmlAttribute(name = "range")
 	protected float range;
-	
+
 	public int getMapId() {
 		return mapId;
 	}
-	
+
 	public void setMapId(int value) {
 		mapId = value;
 	}
-	
+
 	public float getX() {
 		return x;
 	}
-	
+
 	public void setX(float value) {
 		x = value;
 	}
-	
+
 	public float getY() {
 		return y;
 	}
-	
+
 	public void setY(float value) {
 		y = value;
 	}
-	
+
 	public float getZ() {
 		return z;
 	}
-	
+
 	public void setZ(float value) {
 		z = value;
 	}
-	
+
 	public float getRange() {
 		return range;
 	}

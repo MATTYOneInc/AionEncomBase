@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "rift_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class RiftSchedule
-{
+public class RiftSchedule {
 	@XmlElement(name = "rift", required = true)
 	private List<Rift> riftsList;
-	
+
 	public List<Rift> getRiftsList() {
 		return riftsList;
 	}
-	
+
 	public void setRiftsList(List<Rift> riftList) {
 		this.riftsList = riftList;
 	}
-	
+
 	public static RiftSchedule load() {
 		RiftSchedule rs;
 		try {
@@ -58,24 +57,24 @@ public class RiftSchedule
 		}
 		return rs;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "rift")
 	public static class Rift {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "openTime", required = true)
 		private List<String> openTimes;
-		
+
 		public int getWorldId() {
 			return id;
 		}
-		
+
 		public List<String> getOpenTime() {
 			return openTimes;
 		}
-		
+
 		public void setOpenTimes(List<String> openTimes) {
 			this.openTimes = openTimes;
 		}

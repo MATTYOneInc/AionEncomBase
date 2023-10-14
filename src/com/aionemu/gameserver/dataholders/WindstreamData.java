@@ -35,16 +35,16 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "windstreams")
-public class WindstreamData
-{
-	@XmlElement(name="windstream")
+public class WindstreamData {
+	@XmlElement(name = "windstream")
 
 	private List<WindstreamTemplate> wts;
 	private TIntObjectHashMap<WindstreamTemplate> windstreams;
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
-	
+
 		windstreams = new TIntObjectHashMap<WindstreamTemplate>();
-		for(WindstreamTemplate wt: wts) {
+		for (WindstreamTemplate wt : wts) {
 			windstreams.put(wt.getMapid(), wt);
 		}
 		wts = null;

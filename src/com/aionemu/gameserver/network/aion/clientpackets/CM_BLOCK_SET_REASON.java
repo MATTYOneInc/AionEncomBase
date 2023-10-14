@@ -24,8 +24,9 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.SocialService;
 
 /**
- * Developer's note please dont remove
- * Duoc goi khi block mot ai do va set memo cho nguoi do
+ * Developer's note please dont remove Duoc goi khi block mot ai do va set memo
+ * cho nguoi do
+ * 
  * @author Ben
  */
 public class CM_BLOCK_SET_REASON extends AionClientPacket {
@@ -57,8 +58,7 @@ public class CM_BLOCK_SET_REASON extends AionClientPacket {
 
 		if (target == null) {
 			sendPacket(SM_SYSTEM_MESSAGE.STR_BLOCKLIST_NOT_IN_LIST);
-		}
-		else {
+		} else {
 			SocialService.setBlockedReason(activePlayer, target, reason);
 		}
 	}

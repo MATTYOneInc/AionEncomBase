@@ -33,14 +33,13 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DyeAction")
-public class DyeAction extends AbstractItemAction implements HouseDyeAction
-{
+public class DyeAction extends AbstractItemAction implements HouseDyeAction {
 	@XmlAttribute(name = "color")
 	protected String color;
-	
+
 	@XmlAttribute
 	private Integer minutes;
-	
+
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		if (targetItem == null) {
@@ -49,7 +48,7 @@ public class DyeAction extends AbstractItemAction implements HouseDyeAction
 		}
 		return true;
 	}
-	
+
 	private int getColorBGRA() {
 		if (color.equals("no")) {
 			return 0;
@@ -58,7 +57,7 @@ public class DyeAction extends AbstractItemAction implements HouseDyeAction
 			return 0xFF | ((rgb & 0xFF) << 24) | ((rgb & 0xFF00) << 8) | ((rgb & 0xFF0000) >>> 8);
 		}
 	}
-	
+
 	@Override
 	public void act(Player player, Item parentItem, Item targetItem) {
 		if (!player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1)) {
@@ -71,9 +70,11 @@ public class DyeAction extends AbstractItemAction implements HouseDyeAction
 			} else {
 				targetItem.setItemColor(parentItem.getItemTemplate().getTemplateId());
 				if (minutes != null)
-				targetItem.setColorExpireTime((int) (System.currentTimeMillis() / 1000 + minutes * 60));
-			} if (player.getEquipment().getEquippedItemByObjId(targetItem.getObjectId()) != null) {
-				PacketSendUtility.broadcastPacket(player, new SM_UPDATE_PLAYER_APPEARANCE(player.getObjectId(), player.getEquipment().getEquippedForApparence()), true);
+					targetItem.setColorExpireTime((int) (System.currentTimeMillis() / 1000 + minutes * 60));
+			}
+			if (player.getEquipment().getEquippedItemByObjId(targetItem.getObjectId()) != null) {
+				PacketSendUtility.broadcastPacket(player, new SM_UPDATE_PLAYER_APPEARANCE(player.getObjectId(),
+						player.getEquipment().getEquippedForApparence()), true);
 				player.getEquipment().setPersistentState(PersistentState.UPDATE_REQUIRED);
 			} else {
 				player.getInventory().setPersistentState(PersistentState.UPDATE_REQUIRED);
@@ -81,16 +82,17 @@ public class DyeAction extends AbstractItemAction implements HouseDyeAction
 			ItemPacketService.updateItemAfterInfoChange(player, targetItem);
 		}
 	}
-	
+
 	public int getColor() {
 		return getColorBGRA();
 	}
-	
+
 	public boolean canAct(Player player, Item parentItem, HouseObject<?> targetHouseObject) {
 		if (targetHouseObject == null) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_COLOR_ERROR);
 			return false;
-		} if (color.equals("no") && targetHouseObject.getColor() == null) {
+		}
+		if (color.equals("no") && targetHouseObject.getColor() == null) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ITEM_PAINT_ERROR_CANNOTREMOVE);
 			return false;
 		}
@@ -100,7 +102,7 @@ public class DyeAction extends AbstractItemAction implements HouseDyeAction
 		}
 		return canPaint;
 	}
-	
+
 	public void act(Player player, Item parentItem, HouseObject<?> targetHouseObject) {
 		if (!player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1)) {
 			return;

@@ -23,19 +23,15 @@ import javax.xml.bind.annotation.XmlEnum;
  */
 
 @XmlEnum
-public enum AccountType
-{
-	NEWBIE(0),  
-	RETURN(1),  
-	CASH(2),
-	DIAMOND_01(3);
-	
+public enum AccountType {
+	NEWBIE(0), RETURN(1), CASH(2), DIAMOND_01(3);
+
 	private int id;
-	
+
 	private AccountType(int id) {
 		this.id = id;
 	}
-	
+
 	public int getId() {
 		return id;
 	}

@@ -23,28 +23,27 @@ import javolution.util.FastList;
 
 /**
  * @author Rinzler
- */ 
+ */
 
-public class SM_DISPUTE_LAND extends AionServerPacket
-{
+public class SM_DISPUTE_LAND extends AionServerPacket {
 	boolean active;
 	FastList<Integer> worlds;
-    
+
 	public SM_DISPUTE_LAND(FastList<Integer> worlds, boolean active) {
-        this.worlds = worlds;
-        this.active = active;
-    }
-	
+		this.worlds = worlds;
+		this.active = active;
+	}
+
 	@Override
-    protected void writeImpl(AionConnection con) {
-        writeH(worlds.size());
-        for (int world: worlds) {
-            writeD(active ? 0x02 : 0x01);
-            writeD(world);
-            writeQ(0x00);
-            writeQ(0x00);
-            writeQ(0x00);
-            writeQ(0x00);
-        }
-    }
+	protected void writeImpl(AionConnection con) {
+		writeH(worlds.size());
+		for (int world : worlds) {
+			writeD(active ? 0x02 : 0x01);
+			writeD(world);
+			writeQ(0x00);
+			writeQ(0x00);
+			writeQ(0x00);
+			writeQ(0x00);
+		}
+	}
 }

@@ -35,8 +35,7 @@ public class SM_ACCOUNT_RECONNECT_KEY extends LsServerPacket {
 	/**
 	 * Constructs new instance of <tt>SM_ACCOUNT_RECONNECT_KEY </tt> packet.
 	 * 
-	 * @param accountId
-	 *            account identifier.
+	 * @param accountId account identifier.
 	 */
 	public SM_ACCOUNT_RECONNECT_KEY(int accountId) {
 		super(0x02);

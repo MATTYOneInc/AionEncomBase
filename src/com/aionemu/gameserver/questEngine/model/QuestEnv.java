@@ -55,8 +55,7 @@ public class QuestEnv {
 	}
 
 	/**
-	 * @param visibleObject
-	 *          the visibleObject to set
+	 * @param visibleObject the visibleObject to set
 	 */
 	public void setVisibleObject(VisibleObject visibleObject) {
 		this.visibleObject = visibleObject;
@@ -70,8 +69,7 @@ public class QuestEnv {
 	}
 
 	/**
-	 * @param player
-	 *          the player to set
+	 * @param player the player to set
 	 */
 	public void setPlayer(Player player) {
 		this.player = player;
@@ -85,8 +83,7 @@ public class QuestEnv {
 	}
 
 	/**
-	 * @param questId
-	 *          the questId to set
+	 * @param questId the questId to set
 	 */
 	public void setQuestId(Integer questId) {
 		this.questId = questId;
@@ -108,8 +105,7 @@ public class QuestEnv {
 	}
 
 	/**
-	 * @param dialogId
-	 *          the dialogId to set
+	 * @param dialogId the dialogId to set
 	 */
 	public void setDialogId(Integer dialogId) {
 		this.dialogId = dialogId;
@@ -118,14 +114,11 @@ public class QuestEnv {
 	public int getTargetId() {
 		if (visibleObject == null) {
 			return 0;
-		}
-		else if (visibleObject instanceof Npc) {
+		} else if (visibleObject instanceof Npc) {
 			return ((Npc) visibleObject).getNpcId();
-		}
-		else if (visibleObject instanceof Gatherable) {
+		} else if (visibleObject instanceof Gatherable) {
 			return ((Gatherable) visibleObject).getObjectTemplate().getTemplateId();
-		}
-		else if (visibleObject instanceof StaticObject) {
+		} else if (visibleObject instanceof StaticObject) {
 			return ((StaticObject) visibleObject).getObjectTemplate().getTemplateId();
 		}
 		return 0;

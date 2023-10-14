@@ -31,7 +31,8 @@ public class SM_ATREIAN_PASSPORT extends AionServerPacket {
 	private int lastStampRecived;
 	private boolean hasCollected;
 
-	public SM_ATREIAN_PASSPORT(int passportId, int countCollected, int lastStampRecived, boolean hasCollected, int month, int year) {
+	public SM_ATREIAN_PASSPORT(int passportId, int countCollected, int lastStampRecived, boolean hasCollected,
+			int month, int year) {
 		this.month = month;
 		this.year = year;
 		this.passportId = passportId;
@@ -45,14 +46,14 @@ public class SM_ATREIAN_PASSPORT extends AionServerPacket {
 		writeH(year);
 		writeH(month);
 		writeH(8);// can be variable
-		//TODO
+		// TODO
 		writeH(2); // TODO PassportCount
-		//TODO
+		// TODO
 		writeD(passportId);
 		writeD(lastStampRecived);
 		writeD(countCollected);
 		writeC(hasCollected ? 0 : 1);
-		//TODO Aniversity (9 0 0 1 = Get Aniversity)
+		// TODO Aniversity (9 0 0 1 = Get Aniversity)
 		writeD(9);
 		writeD(0);
 		writeD(0);

@@ -51,7 +51,7 @@ public class AdminConfig {
 	@Property(key = "gameserver.administration.whisper.gm.connection", defaultValue = "false")
 	public static boolean WHISPER_GM_CONNECTION;
 	@Property(key = "gameserver.administration.gm.mode.connection", defaultValue = "false")
-    public static boolean GM_MODE_CONNECTION;
+	public static boolean GM_MODE_CONNECTION;
 	@Property(key = "gameserver.administration.quest.dialog.log", defaultValue = "false")
 	public static boolean QUEST_DIALOG_LOG;
 	/**
@@ -61,18 +61,18 @@ public class AdminConfig {
 	public static int COMMAND_SPECIAL_SKILL;
 	@Property(key = "gameserver.administration.trade.item.restriction", defaultValue = "false")
 	public static boolean ENABLE_TRADEITEM_RESTRICTION;
-	@Property(key = "gameserver.admin.tag.enable", defaultValue="true")
-    public static boolean ADMIN_TAG_ENABLE;
-    @Property(key = "gameserver.admin.tag.1", defaultValue="<Support> %s")
-    public static String ADMIN_TAG_1;
-    @Property(key = "gameserver.admin.tag.2", defaultValue="<Jr-GM> %s")
-    public static String ADMIN_TAG_2;
-    @Property(key = "gameserver.admin.tag.3", defaultValue="<GM> %s")
-    public static String ADMIN_TAG_3;
-    @Property(key = "gameserver.admin.tag.4", defaultValue="<Head-GM> %s")
-    public static String ADMIN_TAG_4;
-    @Property(key = "gameserver.admin.tag.5", defaultValue="<Admin> %s")
-    public static String ADMIN_TAG_5;
+	@Property(key = "gameserver.admin.tag.enable", defaultValue = "true")
+	public static boolean ADMIN_TAG_ENABLE;
+	@Property(key = "gameserver.admin.tag.1", defaultValue = "<Support> %s")
+	public static String ADMIN_TAG_1;
+	@Property(key = "gameserver.admin.tag.2", defaultValue = "<Jr-GM> %s")
+	public static String ADMIN_TAG_2;
+	@Property(key = "gameserver.admin.tag.3", defaultValue = "<GM> %s")
+	public static String ADMIN_TAG_3;
+	@Property(key = "gameserver.admin.tag.4", defaultValue = "<Head-GM> %s")
+	public static String ADMIN_TAG_4;
+	@Property(key = "gameserver.admin.tag.5", defaultValue = "<Admin> %s")
+	public static String ADMIN_TAG_5;
 	@Property(key = "gameserver.admin.announce.levels", defaultValue = "*")
 	public static String ANNOUNCE_LEVEL_LIST;
 }

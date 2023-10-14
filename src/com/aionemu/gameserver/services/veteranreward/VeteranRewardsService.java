@@ -60,14 +60,14 @@ public class VeteranRewardsService {
 
 		private boolean isAllowed(Race race) {
 			switch (this) {
-				case ELYOS:
-					return race == Race.ELYOS;
-				case ASMO:
-					return race == Race.ASMODIANS;
-				case ALL:
-					return race == Race.ELYOS || race == Race.ASMODIANS;
-				default:
-					return false;
+			case ELYOS:
+				return race == Race.ELYOS;
+			case ASMO:
+				return race == Race.ASMODIANS;
+			case ALL:
+				return race == Race.ELYOS || race == Race.ASMODIANS;
+			default:
+				return false;
 			}
 		}
 	}
@@ -91,7 +91,8 @@ public class VeteranRewardsService {
 				Init_VeteranRewards();
 			}
 		}, VETERAN_REWARDS_LOOP_STATUS_BROADCAST_SCHEDULE);
-		log.info("Broadcasting Veteran Rewards status based on expression: " + VETERAN_REWARDS_LOOP_STATUS_BROADCAST_SCHEDULE);
+		log.info("Broadcasting Veteran Rewards status based on expression: "
+				+ VETERAN_REWARDS_LOOP_STATUS_BROADCAST_SCHEDULE);
 	}
 
 	private void Init_VeteranRewards() {
@@ -115,11 +116,14 @@ public class VeteranRewardsService {
 		}
 
 		for (final VeteranRewards veteran_reward : veteran_rewards) {
-			VerifyVeteranReward(veteran_reward.getId(), veteran_reward.getPlayer(), veteran_reward.getType(), veteran_reward.getItem(), veteran_reward.getCount(), veteran_reward.getKinah(), veteran_reward.getSender(), veteran_reward.getTitle(), veteran_reward.getMessage());
+			VerifyVeteranReward(veteran_reward.getId(), veteran_reward.getPlayer(), veteran_reward.getType(),
+					veteran_reward.getItem(), veteran_reward.getCount(), veteran_reward.getKinah(),
+					veteran_reward.getSender(), veteran_reward.getTitle(), veteran_reward.getMessage());
 		}
 	}
 
-	private void VerifyVeteranReward(int id, String Player, int typeID, int itemID, int countID, int kinahID, String sender, String title, String message) {
+	private void VerifyVeteranReward(int id, String Player, int typeID, int itemID, int countID, int kinahID,
+			String sender, String title, String message) {
 		String recipient = null;
 		recipient = Util.convertName(Player);
 
@@ -152,8 +156,8 @@ public class VeteranRewardsService {
 		}
 	}
 
-	public void VerifyVeteranReward(int id, String Player, int typeID, int itemID, int countID, int kinahID, String sender, String title, String message,
-			RecipientType recipientType) {
+	public void VerifyVeteranReward(int id, String Player, int typeID, int itemID, int countID, int kinahID,
+			String sender, String title, String message, RecipientType recipientType) {
 		String recipient = null;
 
 		recipient = Util.convertName(Player);
@@ -191,14 +195,16 @@ public class VeteranRewardsService {
 		getDAO().delVeteranReward(rewardId);
 	}
 
-	private void SendVeteranRewardMail(String sender, String recipientName, String title, String message, int attachedItemObjId, int attachedItemCount,
-			int attachedKinahCount, int mailtype) {
+	private void SendVeteranRewardMail(String sender, String recipientName, String title, String message,
+			int attachedItemObjId, int attachedItemCount, int attachedKinahCount, int mailtype) {
 		if (attachedItemObjId != 0) {
 			ItemTemplate itemTemplate = DataManager.ITEM_DATA.getItemTemplate(attachedItemObjId);
 			if (itemTemplate == null) {
 				if (VeteranRewardConfig.VETERANREWARDS_ENABLED_ERROR_LOG) {
-					// log.error("[SenderName: " + sender + "] [RecipientName: " + recipientName + "] RETURN ITEM ID:" + itemTemplate + " ITEM COUNT "
-					// + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " ITEM TEMPLATE IS MISSING ");
+					// log.error("[SenderName: " + sender + "] [RecipientName: " + recipientName +
+					// "] RETURN ITEM ID:" + itemTemplate + " ITEM COUNT "
+					// + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " ITEM TEMPLATE
+					// IS MISSING ");
 				}
 				return;
 			}
@@ -210,16 +216,20 @@ public class VeteranRewardsService {
 
 		if (recipientName.length() > 16) {
 			if (VeteranRewardConfig.VETERANREWARDS_ENABLED_ERROR_LOG) {
-				// log.error("[SenderName: " + sender + "] [RecipientName: " + recipientName + "] ITEM RETURN" + attachedItemObjId + " ITEM COUNT "
-				// + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " RECIPIENT NAME LENGTH > 16 ");
+				// log.error("[SenderName: " + sender + "] [RecipientName: " + recipientName +
+				// "] ITEM RETURN" + attachedItemObjId + " ITEM COUNT "
+				// + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " RECIPIENT NAME
+				// LENGTH > 16 ");
 			}
 			return;
 		}
 
 		if (sender.length() > 16) {
 			if (VeteranRewardConfig.VETERANREWARDS_ENABLED_ERROR_LOG) {
-				// log.error("[SenderName: " + sender + "] [RecipientName: " + recipientName + "] ITEM RETURN" + attachedItemObjId + " ITEM COUNT "
-				// + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " SENDER NAME LENGTH > 16 ");
+				// log.error("[SenderName: " + sender + "] [RecipientName: " + recipientName +
+				// "] ITEM RETURN" + attachedItemObjId + " ITEM COUNT "
+				// + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " SENDER NAME
+				// LENGTH > 16 ");
 			}
 			return;
 		}
@@ -232,7 +242,8 @@ public class VeteranRewardsService {
 			message = message.substring(0, 1000);
 		}
 
-		PlayerCommonData recipientCommonData = (DAOManager.getDAO(PlayerDAO.class)).loadPlayerCommonDataByName(recipientName);
+		PlayerCommonData recipientCommonData = (DAOManager.getDAO(PlayerDAO.class))
+				.loadPlayerCommonDataByName(recipientName);
 
 		if (recipientCommonData == null) {
 			if (VeteranRewardConfig.VETERANREWARDS_ENABLED_ERROR_LOG) {
@@ -246,16 +257,20 @@ public class VeteranRewardsService {
 		if (recipientCommonData.isOnline()) {
 			if (!onlineRecipient.getMailbox().haveFreeSlots()) {
 				if (VeteranRewardConfig.VETERANREWARDS_ENABLED_ERROR_LOG) {
-					// log.error("[SenderName: " + sender + "] [RecipientName: " + onlineRecipient.getName() + "] ITEM RETURN" + attachedItemObjId
-					// + " ITEM COUNT " + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " MAILBOX FULL ");
+					// log.error("[SenderName: " + sender + "] [RecipientName: " +
+					// onlineRecipient.getName() + "] ITEM RETURN" + attachedItemObjId
+					// + " ITEM COUNT " + attachedItemCount + " KINAH COUNT " + attachedKinahCount +
+					// " MAILBOX FULL ");
 				}
 				return;
 			}
 		} else {
 			if (recipientCommonData.getMailboxLetters() >= 100) {
 				if (VeteranRewardConfig.VETERANREWARDS_ENABLED_ERROR_LOG) {
-					// log.error("[SenderName: " + sender + "] [RecipientName: " + recipientName + "] ITEM RETURN " + attachedItemObjId + " ITEM COUNT "
-					// + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " MAILBOX FULL ");
+					// log.error("[SenderName: " + sender + "] [RecipientName: " + recipientName +
+					// "] ITEM RETURN " + attachedItemObjId + " ITEM COUNT "
+					// + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " MAILBOX FULL
+					// ");
 				}
 				return;
 			}
@@ -281,7 +296,7 @@ public class VeteranRewardsService {
 
 		if (attachedKinahCount > 0) {
 			finalAttachedKinahCount = attachedKinahCount;
-		}		
+		}
 
 		LetterType type;
 		if (mailtype == 1) {
@@ -295,7 +310,9 @@ public class VeteranRewardsService {
 		String finalSender = sender;
 
 		Timestamp time = new Timestamp(Calendar.getInstance().getTimeInMillis());
-		Letter newLetter = new Letter(IDFactory.getInstance().nextId(), recipientCommonData.getPlayerObjId(), attachedItem, finalAttachedKinahCount, finalAttachedApCount, title, message, finalSender, time, true, type);
+		Letter newLetter = new Letter(IDFactory.getInstance().nextId(), recipientCommonData.getPlayerObjId(),
+				attachedItem, finalAttachedKinahCount, finalAttachedApCount, title, message, finalSender, time, true,
+				type);
 
 		if (!DAOManager.getDAO(MailDAO.class).storeLetter(time, newLetter)) {
 			return;
@@ -314,8 +331,10 @@ public class VeteranRewardsService {
 			recipientMailbox.isMailListUpdateRequired = true;
 
 			if (recipientMailbox.mailBoxState != 0) {
-				boolean isPostman = (recipientMailbox.mailBoxState & PlayerMailboxState.EXPRESS) == PlayerMailboxState.EXPRESS;
-				PacketSendUtility.sendPacket(onlineRecipient, new SM_MAIL_SERVICE(onlineRecipient, recipientMailbox.getLetters(), isPostman));
+				boolean isPostman = (recipientMailbox.mailBoxState
+						& PlayerMailboxState.EXPRESS) == PlayerMailboxState.EXPRESS;
+				PacketSendUtility.sendPacket(onlineRecipient,
+						new SM_MAIL_SERVICE(onlineRecipient, recipientMailbox.getLetters(), isPostman));
 			}
 			PacketSendUtility.sendPacket(onlineRecipient, SM_SYSTEM_MESSAGE.STR_POSTMAN_NOTIFY);
 		}
@@ -326,7 +345,8 @@ public class VeteranRewardsService {
 		}
 
 		if (VeteranRewardConfig.VETERANREWARDS_ENABLED_INFO_LOG) {
-			// log.info(String.format("Player: " + recipientName + " / " + "Item: " + attachedItemObjId + " / " + "Item Count: " + attachedItemCount + " / "
+			// log.info(String.format("Player: " + recipientName + " / " + "Item: " +
+			// attachedItemObjId + " / " + "Item Count: " + attachedItemCount + " / "
 			// + "Kinah: " + attachedKinahCount + " / " + "Status: successfully."));
 		}
 	}

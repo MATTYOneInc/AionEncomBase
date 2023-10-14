@@ -30,13 +30,13 @@ public class SM_0x126 extends AionServerPacket {
 
 	private int unk;
 	private static final Logger log = LoggerFactory.getLogger(SM_0x126.class);
-	
+
 	public SM_0x126(int unk) {
 		this.unk = unk;
 	}
-	
+
 	@Override
-    protected void writeImpl(AionConnection con) {
+	protected void writeImpl(AionConnection con) {
 		writeH(unk);
 		writeD(0);
 	}

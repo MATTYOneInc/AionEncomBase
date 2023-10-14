@@ -37,14 +37,14 @@ public class SM_WAREHOUSE_INFO extends AionServerPacket {
 	private int expandLvl;
 	private Player player;
 
-	public SM_WAREHOUSE_INFO(Collection<Item> items, int warehouseType, int expandLvl, boolean firstPacket, Player player) {
+	public SM_WAREHOUSE_INFO(Collection<Item> items, int warehouseType, int expandLvl, boolean firstPacket,
+			Player player) {
 		this.warehouseType = warehouseType;
 		this.expandLvl = expandLvl;
 		this.firstPacket = firstPacket;
 		if (items == null) {
 			this.itemList = Collections.emptyList();
-		}
-		else {
+		} else {
 			this.itemList = items;
 		}
 		this.player = player;

@@ -29,6 +29,6 @@ public class PunishmentConfig {
 	public static int PUNISHMENT_TYPE;
 	@Property(key = "gameserver.punishment.time", defaultValue = "1440")
 	public static int PUNISHMENT_TIME;
-    @Property(key="gameserver.punishment.reduceap", defaultValue="0")
-    public static int PUNISHMENT_REDUCEAP;
+	@Property(key = "gameserver.punishment.reduceap", defaultValue = "0")
+	public static int PUNISHMENT_REDUCEAP;
 }

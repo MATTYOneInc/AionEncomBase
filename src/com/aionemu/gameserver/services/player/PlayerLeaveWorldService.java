@@ -66,8 +66,7 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.utils.audit.GMService;
 
-public class PlayerLeaveWorldService
-{
+public class PlayerLeaveWorldService {
 	private static final Logger log = LoggerFactory.getLogger(PlayerLeaveWorldService.class);
 
 	public static final void startLeaveWorldDelay(final Player player, int delay) {
@@ -81,7 +80,9 @@ public class PlayerLeaveWorldService
 	}
 
 	public static final void startLeaveWorld(Player player) {
-		log.info("Player Logged Out: " + player.getName() + " Account: " + (player.getClientConnection() != null ? player.getClientConnection().getAccount().getName() : "Disconnected"));
+		log.info("Player Logged Out: " + player.getName() + " Account: "
+				+ (player.getClientConnection() != null ? player.getClientConnection().getAccount().getName()
+						: "Disconnected"));
 		FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x00, player.getObjectId());
 		FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x04, player.getObjectId());
 		player.onLoggedOut();
@@ -112,7 +113,7 @@ public class PlayerLeaveWorldService
 		DAOManager.getDAO(HouseObjectCooldownsDAO.class).storeHouseObjectCooldowns(player);
 		DAOManager.getDAO(PlayerLifeStatsDAO.class).updatePlayerLifeStat(player);
 		DAOManager.getDAO(EventItemsDAO.class).storeItems(player);
-		//SHUGO SWEEP
+		// SHUGO SWEEP
 		ShugoSweepService.getInstance().onLogout(player);
 		PlayerGroupService.onPlayerLogout(player);
 		PlayerAllianceService.onPlayerLogout(player);
@@ -132,13 +133,13 @@ public class PlayerLeaveWorldService
 		if (player.getSummon() != null) {
 			SummonsService.doMode(SummonMode.RELEASE, player.getSummon(), UnsummonType.LOGOUT);
 		}
-		
+
 		if (player.getPet() != null) {
 			PetSpawnService.dismissPet(player, true);
 		}
 
 		if (player.getMinion() != null) {
-			MinionService.getInstance().despawnMinion(player, player.getMinion().getObjectId());	
+			MinionService.getInstance().despawnMinion(player, player.getMinion().getObjectId());
 		}
 
 		if (player.getPostman() != null) {
@@ -152,7 +153,7 @@ public class PlayerLeaveWorldService
 		}
 		QuestEngine.getInstance().onLogOut(new QuestEnv(null, player, 0, 0));
 		player.getController().delete();
-		//Reset Floor "Crucible Spire 5.6"
+		// Reset Floor "Crucible Spire 5.6"
 		player.getCommonData().setFloor(0);
 		player.getCommonData().setOnline(false);
 		player.getCommonData().setLastOnline(new Timestamp(System.currentTimeMillis()));
@@ -170,7 +171,7 @@ public class PlayerLeaveWorldService
 		player.getInventory().setOwner(null);
 		player.getWarehouse().setOwner(null);
 		player.getStorage(StorageType.ACCOUNT_WAREHOUSE.getId()).setOwner(null);
-		//****//
+		// ****//
 		PacketSendUtility.broadcastPacket(player, new SM_DELETE(player, 2), 50);
 		PlayerAccountData pad = player.getPlayerAccount().getPlayerAccountData(player.getObjectId());
 		pad.setEquipment(player.getEquipment().getEquippedItems());

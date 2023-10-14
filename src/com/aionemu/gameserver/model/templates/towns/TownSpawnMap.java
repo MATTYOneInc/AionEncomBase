@@ -35,10 +35,10 @@ public class TownSpawnMap {
 
 	@XmlAttribute(name = "map_id")
 	private int mapId;
-	@XmlElement(name ="town_spawn")
+	@XmlElement(name = "town_spawn")
 	private List<TownSpawn> townSpawns;
 	private TIntObjectHashMap<TownSpawn> townSpawnsData = new TIntObjectHashMap<TownSpawn>();
-	
+
 	/**
 	 * @param u
 	 * @param parent
@@ -52,18 +52,18 @@ public class TownSpawnMap {
 		townSpawns.clear();
 		townSpawns = null;
 	}
-	
+
 	/**
 	 * @return the mapId
 	 */
 	public int getMapId() {
 		return mapId;
 	}
-	
+
 	public TownSpawn getTownSpawn(int townId) {
 		return townSpawnsData.get(townId);
 	}
-	
+
 	public Collection<TownSpawn> getTownSpawns() {
 		return townSpawnsData.valueCollection();
 	}

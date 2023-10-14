@@ -67,6 +67,7 @@ public class GatherableTemplate extends VisibleObjectTemplate {
 	protected int checkType;
 	@XmlAttribute
 	protected int eraseValue;
+
 	/**
 	 * Gets the value of the materials property.
 	 * 
@@ -75,11 +76,11 @@ public class GatherableTemplate extends VisibleObjectTemplate {
 	public Materials getMaterials() {
 		return materials;
 	}
-	
+
 	public ExMaterials getExtraMaterials() {
 		return exmaterials;
 	}
-	
+
 	/**
 	 * Gets the value of the id property.
 	 */
@@ -172,15 +173,15 @@ public class GatherableTemplate extends VisibleObjectTemplate {
 	public int getCaptchaRate() {
 		return captcha;
 	}
-	
+
 	public int getLevelLimit() {
 		return lvlLimit;
 	}
-	
+
 	public int getRequiredItemId() {
 		return reqItem;
 	}
-	
+
 	public int getRequiredItemNameId() {
 		return reqItemNameId * 2 + 1;
 	}
@@ -188,7 +189,7 @@ public class GatherableTemplate extends VisibleObjectTemplate {
 	public int getCheckType() {
 		return checkType;
 	}
-	
+
 	public int getEraseValue() {
 		return eraseValue;
 	}

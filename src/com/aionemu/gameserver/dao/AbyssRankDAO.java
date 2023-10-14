@@ -49,11 +49,11 @@ public abstract class AbyssRankDAO implements DAO {
 
 	public abstract Map<Integer, Integer> loadPlayersAp(Race race, final int lowerApLimit, final int maxOfflineDays);
 
-    public abstract Map<Integer, Integer> loadPlayersGp(Race race, final int lowerGpLimit, final int maxOfflineDays);
+	public abstract Map<Integer, Integer> loadPlayersGp(Race race, final int lowerGpLimit, final int maxOfflineDays);
 
 	public abstract void updateAbyssRank(int playerId, AbyssRankEnum rankEnum);
 
 	public abstract void updateRankList();
-	
+
 	public abstract void removePlayer(List<Player> listP);
 }

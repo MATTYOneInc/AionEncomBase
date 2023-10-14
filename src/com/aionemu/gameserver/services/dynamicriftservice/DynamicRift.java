@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.DynamicRiftService;
  * @author Rinzler (Encom)
  */
 
-public abstract class DynamicRift<DL extends DynamicRiftLocation>
-{
+public abstract class DynamicRift<DL extends DynamicRiftLocation> {
 	private boolean started;
 	private final DL dynamicRiftLocation;
+
 	protected abstract void stopDynamicRift();
+
 	protected abstract void startDynamicRift();
+
 	private final AtomicBoolean closed = new AtomicBoolean();
-	
+
 	public DynamicRift(DL dynamicRiftLocation) {
 		this.dynamicRiftLocation = dynamicRiftLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class DynamicRift<DL extends DynamicRiftLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startDynamicRift();
 	}
-	
+
 	public final void stop() {
 		if (closed.compareAndSet(false, true)) {
 			stopDynamicRift();
 		}
 	}
-	
+
 	protected void spawn(DynamicRiftStateType type) {
 		DynamicRiftService.getInstance().spawn(getDynamicRiftLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		DynamicRiftService.getInstance().despawn(getDynamicRiftLocation());
 	}
-	
+
 	public boolean isClosed() {
 		return closed.get();
 	}
-	
+
 	public DL getDynamicRiftLocation() {
 		return dynamicRiftLocation;
 	}
-	
+
 	public int getDynamicRiftLocationId() {
 		return dynamicRiftLocation.getId();
 	}

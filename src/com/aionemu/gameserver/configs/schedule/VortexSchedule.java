@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "vortex_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class VortexSchedule
-{
+public class VortexSchedule {
 	@XmlElement(name = "vortex", required = true)
 	private List<Vortex> vortexsList;
-	
+
 	public List<Vortex> getVortexsList() {
 		return vortexsList;
 	}
-	
+
 	public void setInvasionsList(List<Vortex> vortexList) {
 		this.vortexsList = vortexList;
 	}
-	
+
 	public static VortexSchedule load() {
 		VortexSchedule vs;
 		try {
@@ -58,28 +57,28 @@ public class VortexSchedule
 		}
 		return vs;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "vortex")
 	public static class Vortex {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "invasionTime", required = true)
 		private List<String> invasionTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getInvasionTimes() {
 			return invasionTimes;
 		}
-		
+
 		public void setInvasionTimes(List<String> invasionTimes) {
 			this.invasionTimes = invasionTimes;
 		}

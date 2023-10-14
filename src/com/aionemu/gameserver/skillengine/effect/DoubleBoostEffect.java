@@ -35,39 +35,42 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.geo.GeoService;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DoubleBoostEffect")
-public class DoubleBoostEffect extends EffectTemplate
-{
-    @XmlAttribute(name = "distance")
-    private float distance;
+public class DoubleBoostEffect extends EffectTemplate {
+	@XmlAttribute(name = "distance")
+	private float distance;
 	@XmlAttribute(name = "direction")
 	private float direction;
-	
-    @Override
-    public void applyEffect(Effect effect) {
-        final Player effector = (Player) effect.getEffector();
+
+	@Override
+	public void applyEffect(Effect effect) {
+		final Player effector = (Player) effect.getEffector();
 		PacketSendUtility.sendPacket(effector, new SM_TARGET_UPDATE(effector));
 		Skill skill = effect.getSkill();
-        World.getInstance().updatePosition(effector, skill.getX(), skill.getY(), skill.getZ(), skill.getH());
-    }
-	
-    @Override
-    public void calculate(Effect effect) {
-        effect.addSucessEffect(this);
-        effect.setDashStatus(DashStatus.DASH);
-        final Player effector = (Player) effect.getEffector();
-        double radian = Math.toRadians(MathUtil.convertHeadingToDegree(effector.getHeading()));
-        float x1 = (float) (Math.cos(Math.PI * direction + radian) * distance);
-        float y1 = (float) (Math.sin(Math.PI * direction + radian) * distance);
+		World.getInstance().updatePosition(effector, skill.getX(), skill.getY(), skill.getZ(), skill.getH());
+	}
+
+	@Override
+	public void calculate(Effect effect) {
+		effect.addSucessEffect(this);
+		effect.setDashStatus(DashStatus.DASH);
+		final Player effector = (Player) effect.getEffector();
+		double radian = Math.toRadians(MathUtil.convertHeadingToDegree(effector.getHeading()));
+		float x1 = (float) (Math.cos(Math.PI * direction + radian) * distance);
+		float y1 = (float) (Math.sin(Math.PI * direction + radian) * distance);
 		effector.getEffectController().updatePlayerEffectIcons();
 		PacketSendUtility.broadcastPacketAndReceive(effector, new SM_TRANSFORM(effector, true));
-		PacketSendUtility.broadcastPacketAndReceive(effector, new SM_TRANSFORM(effector, effector.getTransformedModelId(), true, effector.getTransformedItemId()));
+		PacketSendUtility.broadcastPacketAndReceive(effector,
+				new SM_TRANSFORM(effector, effector.getTransformedModelId(), true, effector.getTransformedItemId()));
 		byte intentions = (byte) (CollisionIntention.PHYSICAL.getId() | CollisionIntention.DOOR.getId());
-		Vector3f closestCollision = GeoService.getInstance().getClosestCollision(effector, effector.getX() + x1, effector.getY() + y1, effector.getZ(), false, intentions);
-		effect.getSkill().setTargetPosition(closestCollision.getX(), closestCollision.getY(), closestCollision.getZ(), effector.getHeading());
-    }
+		Vector3f closestCollision = GeoService.getInstance().getClosestCollision(effector, effector.getX() + x1,
+				effector.getY() + y1, effector.getZ(), false, intentions);
+		effect.getSkill().setTargetPosition(closestCollision.getX(), closestCollision.getY(), closestCollision.getZ(),
+				effector.getHeading());
+	}
 }

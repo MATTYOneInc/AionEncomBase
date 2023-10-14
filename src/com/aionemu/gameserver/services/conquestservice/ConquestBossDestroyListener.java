@@ -24,18 +24,17 @@ import com.aionemu.gameserver.ai2.eventcallback.OnDieEventCallback;
  */
 
 @SuppressWarnings("rawtypes")
-public class ConquestBossDestroyListener extends OnDieEventCallback
-{
+public class ConquestBossDestroyListener extends OnDieEventCallback {
 	private final ConquestOffering<?> conquestOffering;
-	
+
 	public ConquestBossDestroyListener(ConquestOffering conquestOffering) {
 		this.conquestOffering = conquestOffering;
 	}
-	
+
 	@Override
 	public void onBeforeDie(AbstractAI obj) {
 	}
-	
+
 	@Override
 	public void onAfterDie(AbstractAI obj) {
 	}

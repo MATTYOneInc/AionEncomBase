@@ -95,88 +95,92 @@ public class GeoMap extends Node {
 		// "; distance: " + distance);
 		return foundDoor.getName();
 	}
-	
-    public boolean canPassWalker(float x, float y, float z, float targetX, float targetY, float targetZ, float limit, int instanceId) {
-        float x2 = x - targetX;
-        float y2 = y - targetY;
-        float distance = (float)Math.sqrt(x2 * x2 + y2 * y2);
-        if (distance > 50.0f) {
-            return false;
-        }
-        Vector3f pos = new Vector3f(x, y, z);
-        Vector3f dir = new Vector3f(targetX, targetY, targetZ);
-        dir.subtractLocal(pos).normalizeLocal();
-        Ray r = new Ray(pos, dir);
-        r.setLimit(limit);
-        CollisionResults results = new CollisionResults(CollisionIntention.PHYSICAL.getId(), true, instanceId);
-        int collisions = this.collideWith(r, results);
-        return results.size() == 0 && collisions == 0;
-    }
-	
-    public boolean canPass(float x, float y, float z, float targetX, float targetY, float targetZ, float limit, int instanceId) {
-        float x2 = x - targetX;
-        float y2 = y - targetY;
-        float distance = (float)Math.sqrt(x2 * x2 + y2 * y2);
-        if (distance > 65.0f) {
-            return false;
-        }
-        Vector3f pos = new Vector3f(x, y, z);
-        Vector3f dir = new Vector3f(targetX, targetY, targetZ);
-        dir.subtractLocal(pos).normalizeLocal();
-        Ray r = new Ray(pos, dir);
-        r.setLimit(limit);
-        CollisionResults results = new CollisionResults(CollisionIntention.PHYSICAL.getId(), false, instanceId);
-        int collisions = this.collideWith(r, results);
-        return results.size() == 0 && collisions == 0;
-    }
-	
-    public float getZW(float x, float y) {
-        CollisionResults results = new CollisionResults(CollisionIntention.PHYSICAL.getId(), true, 1);
-        Vector3f pos = new Vector3f(x, y, 4000.0f);
-        Vector3f dir = new Vector3f(x, y, 0.0f);
-        Float limit = Float.valueOf(pos.distance(dir));
-        dir.subtractLocal(pos).normalizeLocal();
-        Ray r = new Ray(pos, dir);
-        r.setLimit(limit.floatValue());
-        this.collideWith(r, results);
-        Vector3f terrain = null;
-        terrain = this.terrainData.length == 1 ? new Vector3f(x, y, (float)this.terrainData[0] / 32.0f) : this.terraionCollision(x, y, r);
-        if (terrain != null) {
-            CollisionResult result = new CollisionResult(terrain, Math.max(0.0f, Math.max(4000.0f - terrain.z, terrain.z)));
-            results.addCollision(result);
-        }
-        if (results.size() == 0) {
-            return 0.0f;
-        }
-        return results.getClosestCollision().getContactPoint().z;
-    }
-    
-    public float getZW(float x, float y, float z, int instanceId) {
-        CollisionResults results = new CollisionResults(CollisionIntention.PHYSICAL.getId(), true, instanceId);
-        Vector3f pos = new Vector3f(x, y, z + 2.0f);
-        Vector3f dir = new Vector3f(x, y, z - 100.0f);
-        Float limit = Float.valueOf(pos.distance(dir));
-        dir.subtractLocal(pos).normalizeLocal();
-        Ray r = new Ray(pos, dir);
-        r.setLimit(limit.floatValue());
-        this.collideWith(r, results);
-        Vector3f terrain = null;
-        if (this.terrainData.length == 1) {
-            if (this.terrainData[0] != 0) {
-                terrain = new Vector3f(x, y, (float)this.terrainData[0] / 32.0f);
-            }
-        } else {
-            terrain = this.terraionCollision(x, y, r);
-        }
-        if (terrain != null && terrain.z > 0.0f && terrain.z < z + 2.0f) {
-            CollisionResult result = new CollisionResult(terrain, Math.abs(z - terrain.z + 2.0f));
-            results.addCollision(result);
-        }
-        if (results.size() == 0) {
-            return z;
-        }
-        return results.getClosestCollision().getContactPoint().z;
-    }
+
+	public boolean canPassWalker(float x, float y, float z, float targetX, float targetY, float targetZ, float limit,
+			int instanceId) {
+		float x2 = x - targetX;
+		float y2 = y - targetY;
+		float distance = (float) Math.sqrt(x2 * x2 + y2 * y2);
+		if (distance > 50.0f) {
+			return false;
+		}
+		Vector3f pos = new Vector3f(x, y, z);
+		Vector3f dir = new Vector3f(targetX, targetY, targetZ);
+		dir.subtractLocal(pos).normalizeLocal();
+		Ray r = new Ray(pos, dir);
+		r.setLimit(limit);
+		CollisionResults results = new CollisionResults(CollisionIntention.PHYSICAL.getId(), true, instanceId);
+		int collisions = this.collideWith(r, results);
+		return results.size() == 0 && collisions == 0;
+	}
+
+	public boolean canPass(float x, float y, float z, float targetX, float targetY, float targetZ, float limit,
+			int instanceId) {
+		float x2 = x - targetX;
+		float y2 = y - targetY;
+		float distance = (float) Math.sqrt(x2 * x2 + y2 * y2);
+		if (distance > 65.0f) {
+			return false;
+		}
+		Vector3f pos = new Vector3f(x, y, z);
+		Vector3f dir = new Vector3f(targetX, targetY, targetZ);
+		dir.subtractLocal(pos).normalizeLocal();
+		Ray r = new Ray(pos, dir);
+		r.setLimit(limit);
+		CollisionResults results = new CollisionResults(CollisionIntention.PHYSICAL.getId(), false, instanceId);
+		int collisions = this.collideWith(r, results);
+		return results.size() == 0 && collisions == 0;
+	}
+
+	public float getZW(float x, float y) {
+		CollisionResults results = new CollisionResults(CollisionIntention.PHYSICAL.getId(), true, 1);
+		Vector3f pos = new Vector3f(x, y, 4000.0f);
+		Vector3f dir = new Vector3f(x, y, 0.0f);
+		Float limit = Float.valueOf(pos.distance(dir));
+		dir.subtractLocal(pos).normalizeLocal();
+		Ray r = new Ray(pos, dir);
+		r.setLimit(limit.floatValue());
+		this.collideWith(r, results);
+		Vector3f terrain = null;
+		terrain = this.terrainData.length == 1 ? new Vector3f(x, y, (float) this.terrainData[0] / 32.0f)
+				: this.terraionCollision(x, y, r);
+		if (terrain != null) {
+			CollisionResult result = new CollisionResult(terrain,
+					Math.max(0.0f, Math.max(4000.0f - terrain.z, terrain.z)));
+			results.addCollision(result);
+		}
+		if (results.size() == 0) {
+			return 0.0f;
+		}
+		return results.getClosestCollision().getContactPoint().z;
+	}
+
+	public float getZW(float x, float y, float z, int instanceId) {
+		CollisionResults results = new CollisionResults(CollisionIntention.PHYSICAL.getId(), true, instanceId);
+		Vector3f pos = new Vector3f(x, y, z + 2.0f);
+		Vector3f dir = new Vector3f(x, y, z - 100.0f);
+		Float limit = Float.valueOf(pos.distance(dir));
+		dir.subtractLocal(pos).normalizeLocal();
+		Ray r = new Ray(pos, dir);
+		r.setLimit(limit.floatValue());
+		this.collideWith(r, results);
+		Vector3f terrain = null;
+		if (this.terrainData.length == 1) {
+			if (this.terrainData[0] != 0) {
+				terrain = new Vector3f(x, y, (float) this.terrainData[0] / 32.0f);
+			}
+		} else {
+			terrain = this.terraionCollision(x, y, r);
+		}
+		if (terrain != null && terrain.z > 0.0f && terrain.z < z + 2.0f) {
+			CollisionResult result = new CollisionResult(terrain, Math.abs(z - terrain.z + 2.0f));
+			results.addCollision(result);
+		}
+		if (results.size() == 0) {
+			return z;
+		}
+		return results.getClosestCollision().getContactPoint().z;
+	}
 
 	public void setDoorState(int instanceId, String name, boolean isOpened) {
 		DoorGeometry door = doors.get(name);
@@ -420,7 +424,7 @@ public class GeoMap extends Node {
 					// check if the terrain quad is removed.
 					if (terrainCutoutData != null) {
 						if (Arrays.binarySearch(terrainCutoutData, index) >= 0) {
-							//return true; //TODO
+							// return true; //TODO
 						}
 					}
 				} else {

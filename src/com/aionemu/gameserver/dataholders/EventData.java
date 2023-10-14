@@ -39,7 +39,8 @@ import gnu.trove.map.hash.THashMap;
  * <p>
  * Java class for EventData complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within this class.
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="EventData">
@@ -85,7 +86,7 @@ public class EventData {
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		if (active == null || events == null) {
 			return;
-        }
+		}
 		counter = 0;
 		allEvents.clear();
 		activeEvents.clear();

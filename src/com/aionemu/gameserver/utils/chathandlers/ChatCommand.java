@@ -31,7 +31,7 @@ public abstract class ChatCommand {
 	private Byte level;
 	static final String[] EMPTY_PARAMS = new String[] {};
 	static final Logger log = LoggerFactory.getLogger(ChatCommand.class);
-	
+
 	public ChatCommand(String alias) {
 		this.alias = alias;
 	}
@@ -40,9 +40,8 @@ public abstract class ChatCommand {
 		try {
 			execute(player, params);
 			return true;
-		}
-		catch (Exception e) {
-			log.error("",e);
+		} catch (Exception e) {
+			log.error("", e);
 			onFail(player, e.getMessage());
 			return false;
 		}

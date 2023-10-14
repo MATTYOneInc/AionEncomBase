@@ -99,11 +99,9 @@ public final class ZoneService implements GameEngine {
 		if (zoneClass != null) {
 			try {
 				zoneHandler = zoneClass.newInstance();
-			}
-			catch (IllegalAccessException ex) {
+			} catch (IllegalAccessException ex) {
 				log.warn("Can't instantiate zone handler " + zoneName, ex);
-			}
-			catch (Exception ex) {
+			} catch (Exception ex) {
 				log.warn("Can't instantiate zone handler " + zoneName, ex);
 			}
 		}
@@ -127,8 +125,7 @@ public final class ZoneService implements GameEngine {
 						throw new RuntimeException();
 					}
 					handlers.put(zoneName, handler);
-				}
-				catch (Exception e) {
+				} catch (Exception e) {
 					log.warn("Missing ZoneName: " + idAnnotation.value());
 				}
 			}
@@ -153,14 +150,11 @@ public final class ZoneService implements GameEngine {
 		try {
 			scriptManager.load(ZONE_DESCRIPTOR_FILE);
 			log.info("Loaded " + handlers.size() + " zone handlers.");
-		}
-		catch (IllegalStateException e) {
+		} catch (IllegalStateException e) {
 			log.warn("Can't initialize instance handlers.", e.getMessage());
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			throw new GameServerError("Can't initialize instance handlers.", e);
-		}
-		finally {
+		} finally {
 			if (progressLatch != null) {
 				progressLatch.countDown();
 			}
@@ -184,7 +178,8 @@ public final class ZoneService implements GameEngine {
 		Map<ZoneName, ZoneInstance> zones = new HashMap<ZoneName, ZoneInstance>();
 		int worldSize = DataManager.WORLD_MAPS_DATA.getTemplate(mapId).getWorldSize();
 		WorldZoneTemplate zone = new WorldZoneTemplate(worldSize, mapId);
-		PolyArea fullArea = new PolyArea(zone.getName(), mapId, zone.getPoints().getPoint(), zone.getPoints().getBottom(), zone.getPoints().getTop());
+		PolyArea fullArea = new PolyArea(zone.getName(), mapId, zone.getPoints().getPoint(),
+				zone.getPoints().getBottom(), zone.getPoints().getTop());
 		ZoneInstance fullMap = new ZoneInstance(mapId, new ZoneInfo(fullArea, zone));
 		fullMap.addHandler(getNewZoneHandler(zone.getName()));
 		zones.put(zone.getName(), fullMap);
@@ -198,42 +193,41 @@ public final class ZoneService implements GameEngine {
 		for (ZoneInfo area : areas) {
 			ZoneInstance instance = null;
 			switch (area.getZoneTemplate().getZoneType()) {
-				case FLY:
-					instance = new FlyZoneInstance(mapId, area);
-					break;
-				case FORT:
-					instance = new SiegeZoneInstance(mapId, area);
-					SiegeLocation siege = DataManager.SIEGE_LOCATION_DATA.getSiegeLocations().get(area.getZoneTemplate().getSiegeId().get(0));
-					if (siege != null) {
-						siege.addZone((SiegeZoneInstance) instance);
-						if (GeoDataConfig.GEO_SHIELDS_ENABLE) {
-							ShieldService.getInstance().attachShield(siege);
-						}
+			case FLY:
+				instance = new FlyZoneInstance(mapId, area);
+				break;
+			case FORT:
+				instance = new SiegeZoneInstance(mapId, area);
+				SiegeLocation siege = DataManager.SIEGE_LOCATION_DATA.getSiegeLocations()
+						.get(area.getZoneTemplate().getSiegeId().get(0));
+				if (siege != null) {
+					siege.addZone((SiegeZoneInstance) instance);
+					if (GeoDataConfig.GEO_SHIELDS_ENABLE) {
+						ShieldService.getInstance().attachShield(siege);
 					}
-					break;
-				case ARTIFACT:
-					instance = new SiegeZoneInstance(mapId, area);
-					for (int artifactId : area.getZoneTemplate().getSiegeId()) {
-						SiegeLocation artifact = DataManager.SIEGE_LOCATION_DATA.getArtifacts().get(artifactId);
-						if (artifact == null) {
-							log.warn("Missing siege location data for zone " + area.getZoneTemplate().getName().name());
-						}
-						else {
-							artifact.addZone((SiegeZoneInstance) instance);
-						}
+				}
+				break;
+			case ARTIFACT:
+				instance = new SiegeZoneInstance(mapId, area);
+				for (int artifactId : area.getZoneTemplate().getSiegeId()) {
+					SiegeLocation artifact = DataManager.SIEGE_LOCATION_DATA.getArtifacts().get(artifactId);
+					if (artifact == null) {
+						log.warn("Missing siege location data for zone " + area.getZoneTemplate().getName().name());
+					} else {
+						artifact.addZone((SiegeZoneInstance) instance);
 					}
-					break;
-				case PVP:
-					instance = new PvPZoneInstance(mapId, area);
-					break;
-				default:
-					InvasionZoneInstance invasionZone = getIZI(area);
-					if (invasionZone != null) {
-						instance = invasionZone;
-					}
-					else {
-						instance = new ZoneInstance(mapId, area);
-				    }
+				}
+				break;
+			case PVP:
+				instance = new PvPZoneInstance(mapId, area);
+				break;
+			default:
+				InvasionZoneInstance invasionZone = getIZI(area);
+				if (invasionZone != null) {
+					instance = invasionZone;
+				} else {
+					instance = new ZoneInstance(mapId, area);
+				}
 			}
 			instance.addHandler(getNewZoneHandler(area.getZoneTemplate().getName()));
 			zones.put(area.getZoneTemplate().getName(), instance);
@@ -249,8 +243,7 @@ public final class ZoneService implements GameEngine {
 				|| area.getZoneTemplate().getName().name().equals("BALTASAR_HILL_VILLAGE_220050000")
 				|| area.getZoneTemplate().getName().name().equals("BRUSTHONIN_MITHRIL_MINE_220050000")) {
 			return validateZone(area);
-		}
-		else if (area.getZoneTemplate().getName().name().equals("JAMANOK_INN_210060000")
+		} else if (area.getZoneTemplate().getName().name().equals("JAMANOK_INN_210060000")
 				|| area.getZoneTemplate().getName().name().equals("THE_STALKING_GROUNDS_210060000")
 				|| area.getZoneTemplate().getName().name().equals("BLACK_ROCK_HOT_SPRING_210060000")
 				|| area.getZoneTemplate().getName().name().equals("FREGIONS_FLAME_210060000")) {
@@ -281,8 +274,7 @@ public final class ZoneService implements GameEngine {
 		ZoneName zoneName = null;
 		if (failOnMissing) {
 			zoneName = ZoneName.get(geometry.getName() + "_" + worldId);
-		}
-		else {
+		} else {
 			zoneName = ZoneName.createOrGet(geometry.getName() + "_" + worldId);
 		}
 
@@ -299,8 +291,7 @@ public final class ZoneService implements GameEngine {
 				} else {
 					return;
 				}
-			}
-			else {
+			} else {
 				MaterialTemplate template = DataManager.MATERIAL_DATA.getTemplate(materialId);
 				if (template == null) {
 					return;
@@ -327,13 +318,17 @@ public final class ZoneService implements GameEngine {
 			// maybe add to zone data if needed search ?
 			Area zoneInfoArea = null;
 			if (zoneTemplate.getSphere() != null) {
-				zoneInfoArea = new SphereArea(zoneName, worldId, zoneTemplate.getSphere().getX(), zoneTemplate.getSphere().getY(), zoneTemplate.getSphere().getZ(), zoneTemplate.getSphere().getR());
-			}
-			else if (zoneTemplate.getCylinder() != null) {
-				zoneInfoArea = new CylinderArea(zoneName, worldId, zoneTemplate.getCylinder().getX(), zoneTemplate.getCylinder().getY(), zoneTemplate.getCylinder().getR(), zoneTemplate.getCylinder().getBottom(), zoneTemplate.getCylinder().getTop());
-			}
-			else if (zoneTemplate.getSemisphere() != null) {
-				zoneInfoArea = new SemisphereArea(zoneName, worldId, zoneTemplate.getSemisphere().getX(), zoneTemplate.getSemisphere().getY(), zoneTemplate.getSemisphere().getZ(), zoneTemplate.getSemisphere().getR());
+				zoneInfoArea = new SphereArea(zoneName, worldId, zoneTemplate.getSphere().getX(),
+						zoneTemplate.getSphere().getY(), zoneTemplate.getSphere().getZ(),
+						zoneTemplate.getSphere().getR());
+			} else if (zoneTemplate.getCylinder() != null) {
+				zoneInfoArea = new CylinderArea(zoneName, worldId, zoneTemplate.getCylinder().getX(),
+						zoneTemplate.getCylinder().getY(), zoneTemplate.getCylinder().getR(),
+						zoneTemplate.getCylinder().getBottom(), zoneTemplate.getCylinder().getTop());
+			} else if (zoneTemplate.getSemisphere() != null) {
+				zoneInfoArea = new SemisphereArea(zoneName, worldId, zoneTemplate.getSemisphere().getX(),
+						zoneTemplate.getSemisphere().getY(), zoneTemplate.getSemisphere().getZ(),
+						zoneTemplate.getSemisphere().getR());
 			}
 			if (zoneInfoArea != null) {
 				zoneInfo = new ZoneInfo(zoneInfoArea, zoneTemplate);
@@ -343,11 +338,12 @@ public final class ZoneService implements GameEngine {
 	}
 
 	/**
-	 * Method for dynamic zone template creation for geometries; could be saved later in XML
+	 * Method for dynamic zone template creation for geometries; could be saved
+	 * later in XML
 	 * 
 	 * @param geometry
-	 * @param regionId
-	 *          - generated by RegionUtil from Bounding Volume center coordinates
+	 * @param regionId   - generated by RegionUtil from Bounding Volume center
+	 *                   coordinates
 	 * @param worldId
 	 * @param materialId
 	 */

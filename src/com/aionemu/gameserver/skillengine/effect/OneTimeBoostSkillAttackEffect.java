@@ -27,83 +27,88 @@ import com.aionemu.gameserver.skillengine.model.SkillType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OneTimeBoostSkillAttackEffect")
-public class OneTimeBoostSkillAttackEffect extends BuffEffect
-{
+public class OneTimeBoostSkillAttackEffect extends BuffEffect {
 	@XmlAttribute
 	private int count;
-	
+
 	@XmlAttribute
 	private SkillType type;
-	
+
 	@Override
 	public void startEffect(final Effect effect) {
 		super.startEffect(effect);
 		final int stopCount = count;
-        final float percent = 1.0f + value / 100.0f;
+		final float percent = 1.0f + value / 100.0f;
 		AttackCalcObserver observer = null;
 		switch (type) {
-			case MAGICAL:
-                observer = new AttackCalcObserver() {
-                    private int count = 0;
-                    @Override
-					public float getBaseMagicalDamageMultiplier() {
-						if (count++ < stopCount) {
-                            return percent;
-                        } else {
-                            effect.getEffected().getEffectController().removeEffect(effect.getSkillId());
-                        }
-                        return 1.0f;
-                    }
-                };
-            break;
-			case PHYSICAL:
-                observer = new AttackCalcObserver() {
-                    private int count = 0;
-					@Override
-                    public float getBasePhysicalDamageMultiplier(boolean isSkill) {
-                        if (!isSkill) {
-                            return 1f;
-                        } if (count++ < stopCount) {
-                            if (count == stopCount) {
-                                effect.getEffected().getEffectController().removeEffect(effect.getSkillId());
-                            }
-                            return percent;
-                        }
-                        return 1.0f;
-                    }
-                };
-            break;
-			case ALL:
-                observer = new AttackCalcObserver() {
-                    private int count = 0;
-                    @Override
-					public float getBaseMagicalDamageMultiplier() {
-						if (count++ < stopCount) {
-                            return percent;
-                        } else {
-                            effect.getEffected().getEffectController().removeEffect(effect.getSkillId());
-                        }
-                        return 1.0f;
-                    }
-					@Override
-                    public float getBasePhysicalDamageMultiplier(boolean isSkill) {
-                        if (!isSkill) {
-                            return 1f;
-                        } if (count++ < stopCount) {
-                            if (count == stopCount) {
-                                effect.getEffected().getEffectController().removeEffect(effect.getSkillId());
-                            }
-                            return percent;
-                        }
-                        return 1.0f;
-                    }
-                };
-            break;
+		case MAGICAL:
+			observer = new AttackCalcObserver() {
+				private int count = 0;
+
+				@Override
+				public float getBaseMagicalDamageMultiplier() {
+					if (count++ < stopCount) {
+						return percent;
+					} else {
+						effect.getEffected().getEffectController().removeEffect(effect.getSkillId());
+					}
+					return 1.0f;
+				}
+			};
+			break;
+		case PHYSICAL:
+			observer = new AttackCalcObserver() {
+				private int count = 0;
+
+				@Override
+				public float getBasePhysicalDamageMultiplier(boolean isSkill) {
+					if (!isSkill) {
+						return 1f;
+					}
+					if (count++ < stopCount) {
+						if (count == stopCount) {
+							effect.getEffected().getEffectController().removeEffect(effect.getSkillId());
+						}
+						return percent;
+					}
+					return 1.0f;
+				}
+			};
+			break;
+		case ALL:
+			observer = new AttackCalcObserver() {
+				private int count = 0;
+
+				@Override
+				public float getBaseMagicalDamageMultiplier() {
+					if (count++ < stopCount) {
+						return percent;
+					} else {
+						effect.getEffected().getEffectController().removeEffect(effect.getSkillId());
+					}
+					return 1.0f;
+				}
+
+				@Override
+				public float getBasePhysicalDamageMultiplier(boolean isSkill) {
+					if (!isSkill) {
+						return 1f;
+					}
+					if (count++ < stopCount) {
+						if (count == stopCount) {
+							effect.getEffected().getEffectController().removeEffect(effect.getSkillId());
+						}
+						return percent;
+					}
+					return 1.0f;
+				}
+			};
+			break;
 		}
 		effect.getEffected().getObserveController().addAttackCalcObserver(observer);
 		effect.setAttackStatusObserver(observer, position);
 	}
-	
+
 	@Override
 	public void endEffect(Effect effect) {
 		super.endEffect(effect);

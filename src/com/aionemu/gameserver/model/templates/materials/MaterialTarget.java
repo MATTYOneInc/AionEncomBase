@@ -31,10 +31,7 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 @XmlEnum
 public enum MaterialTarget {
 
-	ALL,
-	NPC,
-	PLAYER,
-	PLAYER_WITH_PET;
+	ALL, NPC, PLAYER, PLAYER_WITH_PET;
 
 	public String value() {
 		return name();

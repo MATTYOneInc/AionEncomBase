@@ -38,7 +38,7 @@ public class ListSplitter<T> {
 		if (collection != null && collection.size() > 0) {
 			this.splitCount = splitCount;
 			length = collection.size();
-			this.objects = collection.toArray((T[]) new Object[length]); 
+			this.objects = collection.toArray((T[]) new Object[length]);
 			componentType = objects.getClass().getComponentType();
 		}
 	}

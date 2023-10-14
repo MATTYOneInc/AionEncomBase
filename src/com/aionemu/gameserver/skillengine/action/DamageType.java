@@ -26,8 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum DamageType {
 
-	PHYSICAL,
-	MAGICAL;
+	PHYSICAL, MAGICAL;
 
 	public String value() {
 		return name();

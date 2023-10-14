@@ -25,19 +25,19 @@ import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
  */
 public class PremiumOptionInfoBlobEntry extends ItemBlobEntry {
 
-    public PremiumOptionInfoBlobEntry() {
-        super(ItemBlobType.PREMIUM_OPTION);
-    }
+	public PremiumOptionInfoBlobEntry() {
+		super(ItemBlobType.PREMIUM_OPTION);
+	}
 
-    @Override
-    public void writeThisBlob(ByteBuffer buf) {
-    	writeC(buf, ownerItem.getBonusNumber());
-	    writeC(buf, ownerItem.getRandomCount());
-	    writeC(buf, 0);
-    }
+	@Override
+	public void writeThisBlob(ByteBuffer buf) {
+		writeC(buf, ownerItem.getBonusNumber());
+		writeC(buf, ownerItem.getRandomCount());
+		writeC(buf, 0);
+	}
 
-    @Override
-    public int getSize() {
-        return 3;
-    }
+	@Override
+	public int getSize() {
+		return 3;
+	}
 }

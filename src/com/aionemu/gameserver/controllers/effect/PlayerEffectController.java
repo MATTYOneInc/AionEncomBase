@@ -45,7 +45,7 @@ public class PlayerEffectController extends EffectController {
 	public void addEffect(Effect effect) {
 		if (checkDuelCondition(effect) && !effect.getIsForcedEffect()) {
 			return;
-        }
+		}
 		super.addEffect(effect);
 		updatePlayerIconsAndGroup(effect);
 	}
@@ -72,12 +72,12 @@ public class PlayerEffectController extends EffectController {
 			}
 		}
 	}
-	
+
 	@Override
 	public void updatePlayerEffectIcons() {
 		getOwner().addPacketBroadcastMask(BroadcastMode.UPDATE_PLAYER_EFFECT_ICONS);
 	}
-	
+
 	@Override
 	public void updatePlayerEffectIconsImpl() {
 		Collection<Effect> effects = getAbnormalEffectsToShow();
@@ -113,12 +113,11 @@ public class PlayerEffectController extends EffectController {
 			return;
 		}
 		if (CustomConfig.ABYSSXFORM_LOGOUT && template.isDeityAvatar()) {
-			
+
 			if (System.currentTimeMillis() >= endTime) {
 				return;
-			}
-			else {
-				remainingTime = (int)(endTime - System.currentTimeMillis());
+			} else {
+				remainingTime = (int) (endTime - System.currentTimeMillis());
 			}
 		}
 		Effect effect = new Effect(getOwner(), getOwner(), template, skillLvl, remainingTime);
@@ -127,8 +126,9 @@ public class PlayerEffectController extends EffectController {
 		effect.startEffect(true);
 
 		if (effect.getSkillTemplate().getTargetSlot() != SkillTargetSlot.NOSHOW) {
-			PacketSendUtility.sendPacket(getOwner(), new SM_ABNORMAL_STATE(Collections.singletonList(effect), abnormals));
-        }
+			PacketSendUtility.sendPacket(getOwner(),
+					new SM_ABNORMAL_STATE(Collections.singletonList(effect), abnormals));
+		}
 	}
 
 	@Override

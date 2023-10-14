@@ -25,39 +25,39 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * @author Rinzler (Encom)
  */
 
-public class DynamicRiftSpawnTemplate extends SpawnTemplate
-{
+public class DynamicRiftSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private DynamicRiftStateType dynamicRiftType;
-	
+
 	public DynamicRiftSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public DynamicRiftSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public DynamicRiftSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public DynamicRiftStateType getDStateType() {
 		return dynamicRiftType;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void setDStateType(DynamicRiftStateType dynamicRiftType) {
 		this.dynamicRiftType = dynamicRiftType;
 	}
-	
+
 	public final boolean isDynamicRiftOpen() {
 		return dynamicRiftType.equals(DynamicRiftStateType.OPEN);
 	}
-	
+
 	public final boolean isDynamicRiftClosed() {
 		return dynamicRiftType.equals(DynamicRiftStateType.CLOSED);
 	}

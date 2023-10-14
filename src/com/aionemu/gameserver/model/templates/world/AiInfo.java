@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AiInfo")
 public class AiInfo {
-	
+
 	public static final AiInfo DEFAULT = new AiInfo();
 
 	@XmlAttribute(name = "chase_target")

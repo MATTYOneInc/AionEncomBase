@@ -149,7 +149,8 @@ public abstract class PlayerInfo extends AionServerPacket {
 			long slot = item.getEquipmentSlot();
 			if (slot == 393216 || slot == 131072 || slot == 262144) {
 				continue;
-			} if (itemTemplate.isArmor() || itemTemplate.isWeapon()) {
+			}
+			if (itemTemplate.isArmor() || itemTemplate.isWeapon()) {
 				if (itemTemplate.getItemSlot() <= ItemSlot.PANTS.getSlotIdMask()) {
 					writeC(slot == 2 || slot == 64 || slot == 256 ? 2 : 1);
 					writeD(item.getItemSkinTemplate().getTemplateId());
@@ -162,7 +163,7 @@ public abstract class PlayerInfo extends AionServerPacket {
 		}
 		byte[] stupidNc = new byte[208 - itemsDataSize];
 		writeB(stupidNc);
-		writeB(new byte[92]);//NA 5.0.2.7 protocol
+		writeB(new byte[92]);// NA 5.0.2.7 protocol
 		writeD(accPlData.getDeletionTimeInSeconds());
 	}
 }

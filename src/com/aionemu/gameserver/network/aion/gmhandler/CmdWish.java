@@ -33,47 +33,47 @@ import gnu.trove.map.hash.TIntObjectHashMap;
  */
 public final class CmdWish extends AbstractGMHandler {
 
-    public CmdWish(Player admin, String params) {
-        super(admin, params);
-        run();
-    }
+	public CmdWish(Player admin, String params) {
+		super(admin, params);
+		run();
+	}
 
-    public void run() {
-        String[] p = params.split(" ");
-		if (p.length != 2){
+	public void run() {
+		String[] p = params.split(" ");
+		if (p.length != 2) {
 
-            String npcName = params;
+			String npcName = params;
 			TIntObjectHashMap<NpcTemplate> npcTemp = DataManager.NPC_DATA.getNpcData();
-			
-            float x = admin.getX();
-            float y = admin.getY();
-            float z = admin.getZ();
-            byte heading = admin.getHeading();
-            int worldId = admin.getWorldId();
 
-            for (NpcTemplate nTemp : npcTemp.valueCollection()){
-                if (nTemp.getNamedesc() != null && nTemp.getNamedesc().equalsIgnoreCase(npcName)){
-                    SpawnTemplate spawn = SpawnEngine.addNewSpawn(worldId, nTemp.getTemplateId(), x, y, z, heading, 0);
-                    VisibleObject visibleObject = SpawnEngine.spawnObject(spawn, admin.getInstanceId());
-                    PacketSendUtility.sendMessage(admin, " spawned (ID:"+nTemp.getTemplateId()+ ")");
-                }
-            }
-			return;
-        }
-            //WORKING PERFECTLY
-			TIntObjectHashMap<ItemTemplate> itemTemp = DataManager.ITEM_DATA.getItemData();
-            String[] itemN = params.split(" ");
+			float x = admin.getX();
+			float y = admin.getY();
+			float z = admin.getZ();
+			byte heading = admin.getHeading();
+			int worldId = admin.getWorldId();
 
-            String itemName = itemN[0];
-            Integer itemcount = Integer.parseInt(itemN[1]);
-            if (itemcount == 0){
-                itemcount = 1;
-            }
-			
-			for (ItemTemplate it : itemTemp.valueCollection()){
-				if (it.getNamedesc() != null && it.getNamedesc().equalsIgnoreCase(itemName)){
-					ItemService.addItem(admin, it.getTemplateId(), itemcount);
+			for (NpcTemplate nTemp : npcTemp.valueCollection()) {
+				if (nTemp.getNamedesc() != null && nTemp.getNamedesc().equalsIgnoreCase(npcName)) {
+					SpawnTemplate spawn = SpawnEngine.addNewSpawn(worldId, nTemp.getTemplateId(), x, y, z, heading, 0);
+					VisibleObject visibleObject = SpawnEngine.spawnObject(spawn, admin.getInstanceId());
+					PacketSendUtility.sendMessage(admin, " spawned (ID:" + nTemp.getTemplateId() + ")");
 				}
-            }
-    }
+			}
+			return;
+		}
+		// WORKING PERFECTLY
+		TIntObjectHashMap<ItemTemplate> itemTemp = DataManager.ITEM_DATA.getItemData();
+		String[] itemN = params.split(" ");
+
+		String itemName = itemN[0];
+		Integer itemcount = Integer.parseInt(itemN[1]);
+		if (itemcount == 0) {
+			itemcount = 1;
+		}
+
+		for (ItemTemplate it : itemTemp.valueCollection()) {
+			if (it.getNamedesc() != null && it.getNamedesc().equalsIgnoreCase(itemName)) {
+				ItemService.addItem(admin, it.getTemplateId(), itemcount);
+			}
+		}
+	}
 }

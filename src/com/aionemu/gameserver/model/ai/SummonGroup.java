@@ -80,7 +80,7 @@ public class SummonGroup {
 	public int getMaxCount() {
 		return maxCount;
 	}
-        
+
 	public float getDistance() {
 		return distance;
 	}

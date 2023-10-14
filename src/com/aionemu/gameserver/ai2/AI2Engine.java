@@ -67,11 +67,9 @@ public class AI2Engine implements GameEngine {
 			scriptManager.load(INSTANCE_DESCRIPTOR_FILE);
 			log.info("Loaded " + aiMap.size() + " AI2.");
 			validateScripts();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			throw new GameServerError("Can't initialize ai handlers.", e);
-		}
-		finally {
+		} finally {
 			if (progressLatch != null) {
 				progressLatch.countDown();
 			}
@@ -103,8 +101,7 @@ public class AI2Engine implements GameEngine {
 			if (AIConfig.ONCREATE_DEBUG) {
 				aiInstance.setLogging(true);
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			log.error("[AI2] AI factory error: " + name, e);
 		}
 		return aiInstance;
@@ -117,11 +114,12 @@ public class AI2Engine implements GameEngine {
 	public void setupAI(AiNames aiName, Npc owner) {
 		setupAI(aiName.getName(), owner);
 	}
-	
+
 	private void validateScripts() {
-		Collection<String> npcAINames = selectDistinct(with(DataManager.NPC_DATA.getNpcData().valueCollection()).extract(on(NpcTemplate.class).getAi()));
+		Collection<String> npcAINames = selectDistinct(
+				with(DataManager.NPC_DATA.getNpcData().valueCollection()).extract(on(NpcTemplate.class).getAi()));
 		npcAINames.removeAll(aiMap.keySet());
-		if(npcAINames.size() > 0){
+		if (npcAINames.size() > 0) {
 			log.warn("Bad AI names: " + join(npcAINames));
 		}
 	}

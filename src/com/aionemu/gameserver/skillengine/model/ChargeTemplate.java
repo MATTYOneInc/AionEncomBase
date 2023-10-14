@@ -30,22 +30,22 @@ import javax.xml.bind.annotation.XmlType;
 public class ChargeTemplate {
 
 	@XmlAttribute(name = "skill_id")
-    private int skill_id;
-    
+	private int skill_id;
+
 	@XmlAttribute(name = "time")
-    private int time;
-	
-    /**
-     * @return the Id
-     */
-    public int getSkillId() {
-        return skill_id;
-    }
-    
-    /**
-     * @return the Time
-     */
-    public int getTime() {
-        return time;
-    }
+	private int time;
+
+	/**
+	 * @return the Id
+	 */
+	public int getSkillId() {
+		return skill_id;
+	}
+
+	/**
+	 * @return the Time
+	 */
+	public int getTime() {
+		return time;
+	}
 }

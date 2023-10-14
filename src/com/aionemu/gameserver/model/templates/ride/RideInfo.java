@@ -24,69 +24,69 @@ import javax.xml.bind.annotation.XmlType;
 import com.aionemu.gameserver.model.templates.RideBound;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name="RideInfo", propOrder={"ridebound"})
-public class RideInfo
-{
-    protected RideBound ridebound;
-	
-    @XmlAttribute(name="cost_fp")
-    protected Integer costFp;
-	
-    @XmlAttribute(name="start_fp")
-    protected int startFp;
-	
-    @XmlAttribute(name="sprint_speed")
-    protected float sprintSpeed;
-	
-    @XmlAttribute(name="fly_speed")
-    protected float flySpeed;
-	
-    @XmlAttribute(name="move_speed")
-    protected float moveSpeed;
-	
-    @XmlAttribute
-    protected Integer type;
-	
-    @XmlAttribute(required=true)
-    protected int id;
-	
-    public RideBound getRideBound() {
-        return ridebound;
-    }
-	
-    public Integer getCostFp() {
-        return costFp;
-    }
-	
-    public int getStartFp() {
-        return startFp;
-    }
-	
-    public float getSprintSpeed() {
-        return sprintSpeed;
-    }
-	
-    public float getFlySpeed() {
-        return flySpeed;
-    }
-	
-    public float getMoveSpeed() {
-        return moveSpeed;
-    }
-	
-    public Integer getType() {
-        return type;
-    }
-	
-    public int getNpcId() {
-        return id;
-    }
-	
-    public boolean canSprint() {
-        return sprintSpeed != 0.0f;
-    }
+@XmlType(name = "RideInfo", propOrder = { "ridebound" })
+public class RideInfo {
+	protected RideBound ridebound;
+
+	@XmlAttribute(name = "cost_fp")
+	protected Integer costFp;
+
+	@XmlAttribute(name = "start_fp")
+	protected int startFp;
+
+	@XmlAttribute(name = "sprint_speed")
+	protected float sprintSpeed;
+
+	@XmlAttribute(name = "fly_speed")
+	protected float flySpeed;
+
+	@XmlAttribute(name = "move_speed")
+	protected float moveSpeed;
+
+	@XmlAttribute
+	protected Integer type;
+
+	@XmlAttribute(required = true)
+	protected int id;
+
+	public RideBound getRideBound() {
+		return ridebound;
+	}
+
+	public Integer getCostFp() {
+		return costFp;
+	}
+
+	public int getStartFp() {
+		return startFp;
+	}
+
+	public float getSprintSpeed() {
+		return sprintSpeed;
+	}
+
+	public float getFlySpeed() {
+		return flySpeed;
+	}
+
+	public float getMoveSpeed() {
+		return moveSpeed;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public int getNpcId() {
+		return id;
+	}
+
+	public boolean canSprint() {
+		return sprintSpeed != 0.0f;
+	}
 }

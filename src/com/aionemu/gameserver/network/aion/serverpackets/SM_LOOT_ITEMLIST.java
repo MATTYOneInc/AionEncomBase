@@ -30,11 +30,10 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 import javolution.util.FastList;
 
-public class SM_LOOT_ITEMLIST extends AionServerPacket
-{
+public class SM_LOOT_ITEMLIST extends AionServerPacket {
 	private int targetObjectId;
 	private FastList<DropItem> dropItems;
-	
+
 	public SM_LOOT_ITEMLIST(int targetObjectId, Set<DropItem> setItems, Player player) {
 		this.targetObjectId = targetObjectId;
 		this.dropItems = new FastList<DropItem>();
@@ -48,7 +47,7 @@ public class SM_LOOT_ITEMLIST extends AionServerPacket
 			}
 		}
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeD(targetObjectId);
@@ -56,8 +55,8 @@ public class SM_LOOT_ITEMLIST extends AionServerPacket
 		for (DropItem dropItem : dropItems) {
 			Drop drop = dropItem.getDropTemplate();
 			writeC(dropItem.getIndex());
-			writeH(0);//unk 5.3
-			writeC(0);//unk 5.3
+			writeH(0);// unk 5.3
+			writeC(0);// unk 5.3
 			writeD(drop.getItemId());
 			writeD((int) dropItem.getCount());
 			writeC(dropItem.getOptionalSocket());

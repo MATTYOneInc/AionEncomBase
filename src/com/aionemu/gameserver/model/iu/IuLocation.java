@@ -30,48 +30,47 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class IuLocation
-{
+public class IuLocation {
 	protected int id;
 	protected boolean isActive;
 	protected IuTemplate template;
 	protected Iu<IuLocation> activeIu;
 	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
 	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
+
 	public IuLocation() {
 	}
-	
+
 	public IuLocation(IuTemplate template) {
 		this.template = template;
 		this.id = template.getId();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveIu(Iu<IuLocation> iu) {
 		isActive = iu != null;
 		this.activeIu = iu;
 	}
-	
+
 	public Iu<IuLocation> getActiveIu() {
 		return activeIu;
 	}
-	
+
 	public final IuTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}

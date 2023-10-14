@@ -33,18 +33,19 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class CubeExpandService
-{
+public class CubeExpandService {
 	private static final Logger log = LoggerFactory.getLogger(CubeExpandService.class);
 	private static final int MIN_EXPAND = 0;
 	private static final int MAX_EXPAND = 15;
-	
+
 	public static void expandCube(final Player player, Npc npc) {
-		final CubeExpandTemplate expandTemplate = DataManager.CUBEEXPANDER_DATA.getCubeExpandListTemplate(npc.getNpcId());
+		final CubeExpandTemplate expandTemplate = DataManager.CUBEEXPANDER_DATA
+				.getCubeExpandListTemplate(npc.getNpcId());
 		if (expandTemplate == null) {
 			log.error("Cube Expand Template could not be found for Npc ID: " + npc.getObjectId());
 			return;
-		} if (npcCanExpandLevel(expandTemplate, player.getNpcExpands() + 1) && canExpand(player)) {
+		}
+		if (npcCanExpandLevel(expandTemplate, player.getNpcExpands() + 1) && canExpand(player)) {
 			if (player.getNpcExpands() >= 15) {
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_EXTEND_INVENTORY_CANT_EXTEND_MORE);
 				return;
@@ -60,18 +61,21 @@ public class CubeExpandService
 					expand(responder, true);
 					player.getInventory().decreaseKinah(price);
 				}
+
 				@Override
 				public void denyRequest(Creature requester, Player responder) {
 				}
 			};
-			boolean result = player.getResponseRequester().putRequest(SM_QUESTION_WINDOW.STR_WAREHOUSE_EXPAND_WARNING, responseHandler);
+			boolean result = player.getResponseRequester().putRequest(SM_QUESTION_WINDOW.STR_WAREHOUSE_EXPAND_WARNING,
+					responseHandler);
 			if (result) {
-				PacketSendUtility.sendPacket(player, new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_WAREHOUSE_EXPAND_WARNING, 0,0, String.valueOf(price)));
+				PacketSendUtility.sendPacket(player, new SM_QUESTION_WINDOW(
+						SM_QUESTION_WINDOW.STR_WAREHOUSE_EXPAND_WARNING, 0, 0, String.valueOf(price)));
 			}
 		} else
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300430));
 	}
-	
+
 	public static void expand(Player player, boolean isNpcExpand) {
 		if (!canExpand(player)) {
 			return;
@@ -84,42 +88,42 @@ public class CubeExpandService
 		}
 		PacketSendUtility.sendPacket(player, SM_CUBE_UPDATE.cubeSize(StorageType.CUBE, player));
 	}
-	
+
 	public static boolean canExpand(Player player) {
-	    return validateNewSize(player.getNpcExpands() + player.getQuestExpands() + 1);
-    }
-	
+		return validateNewSize(player.getNpcExpands() + player.getQuestExpands() + 1);
+	}
+
 	public static boolean canExpandByTicket(Player player, int ticketLevel) {
-	    if (!canExpand(player))
-		return false;
-	    int ticketExpands = player.getQuestExpands() - getCompletedCubeQuests(player);
-	    return ticketExpands < ticketLevel;
-    }
-	
+		if (!canExpand(player))
+			return false;
+		int ticketExpands = player.getQuestExpands() - getCompletedCubeQuests(player);
+		return ticketExpands < ticketLevel;
+	}
+
 	private static boolean validateNewSize(int level) {
 		if (level < MIN_EXPAND || level > MAX_EXPAND)
 			return false;
 		return true;
 	}
-	
+
 	private static boolean npcCanExpandLevel(CubeExpandTemplate clist, int level) {
 		if (!clist.contains(level)) {
 			return false;
 		}
 		return true;
 	}
-	
+
 	private static int getCompletedCubeQuests(Player player) {
-	    int result = 0;
-	    QuestStateList qs = player.getQuestStateList();
-	    int[] questIds = {1800, 1947, 2833, 2937, 1797};
-	    for (int q: questIds) {
-		    if (qs.getQuestState(q) != null && qs.getQuestState(q).getStatus().equals(QuestStatus.COMPLETE))
-			result++;
-	    }
-	    return result > 2 ? 2 : result;
-    }
-	
+		int result = 0;
+		QuestStateList qs = player.getQuestStateList();
+		int[] questIds = { 1800, 1947, 2833, 2937, 1797 };
+		for (int q : questIds) {
+			if (qs.getQuestState(q) != null && qs.getQuestState(q).getStatus().equals(QuestStatus.COMPLETE))
+				result++;
+		}
+		return result > 2 ? 2 : result;
+	}
+
 	private static int getPriceByLevel(CubeExpandTemplate clist, int level) {
 		return clist.get(level).getPrice();
 	}

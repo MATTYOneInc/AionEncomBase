@@ -24,19 +24,18 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 
-public class CM_CHAT_PLAYER_INFO extends AionClientPacket
-{
+public class CM_CHAT_PLAYER_INFO extends AionClientPacket {
 	private String playerName;
-	
+
 	public CM_CHAT_PLAYER_INFO(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		playerName = readS();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();

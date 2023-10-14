@@ -35,7 +35,7 @@ public abstract class SiegeDAO implements DAO {
 
 	public abstract boolean updateSiegeLocation(SiegeLocation paramSiegeLocation);
 
-    public void updateLocation(final SiegeLocation siegeLocation) {
-        updateSiegeLocation(siegeLocation);
-    }
+	public void updateLocation(final SiegeLocation siegeLocation) {
+		updateSiegeLocation(siegeLocation);
+	}
 }

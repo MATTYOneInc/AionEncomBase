@@ -35,7 +35,8 @@ import com.aionemu.gameserver.model.templates.rewards.IdReward;
  * <p>
  * Java class for BossGroup complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within this class.
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="BossGroup">
@@ -51,18 +52,18 @@ import com.aionemu.gameserver.model.templates.rewards.IdReward;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BossGroup")
-public class BossGroup extends BonusItemGroup
-{
+public class BossGroup extends BonusItemGroup {
 
 	@XmlElement(name = "item")
-    protected List<ItemRaceEntry> items;
+	protected List<ItemRaceEntry> items;
 
 	/**
 	 * Gets the value of the item property.
 	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to
-	 * the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE> method for
-	 * the item property.
+	 * This accessor method returns a reference to the live list, not a snapshot.
+	 * Therefore any modification you make to the returned list will be present
+	 * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
+	 * for the item property.
 	 * <p>
 	 * For example, to add a new item, do as follows:
 	 * 
@@ -72,7 +73,7 @@ public class BossGroup extends BonusItemGroup
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list {@link IdReward }
 	 */
-    public List<ItemRaceEntry> getItems() {
+	public List<ItemRaceEntry> getItems() {
 
 		if (items == null) {
 			items = new ArrayList<ItemRaceEntry>();
@@ -80,7 +81,9 @@ public class BossGroup extends BonusItemGroup
 		return this.items;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.aionemu.gameserver.model.templates.itemgroups.ItemGroup#getRewards()
 	 */
 	@Override

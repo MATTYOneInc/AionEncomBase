@@ -53,7 +53,7 @@ public class HousePartsData {
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		if (houseParts == null) {
 			return;
-        }
+		}
 		for (HousePart part : houseParts) {
 			partsById.put(part.getId(), part);
 			Iterator<String> iterator = part.getTags().iterator();

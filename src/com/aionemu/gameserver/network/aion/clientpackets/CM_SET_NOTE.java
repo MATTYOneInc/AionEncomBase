@@ -62,7 +62,8 @@ public class CM_SET_NOTE extends AionClientPacket {
 				Player frienPlayer = friend.getPlayer();
 				if (friend.isOnline() && frienPlayer != null) // If the player is online
 				{
-					friend.getPlayer().getClientConnection().sendPacket(new SM_FRIEND_LIST()); // Send him a new friend list
+					friend.getPlayer().getClientConnection().sendPacket(new SM_FRIEND_LIST()); // Send him a new friend
+																								// list
 
 				}
 			}

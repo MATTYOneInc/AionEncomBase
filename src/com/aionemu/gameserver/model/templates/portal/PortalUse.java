@@ -33,16 +33,16 @@ import com.aionemu.gameserver.model.Race;
 @XmlType(name = "PortalUse")
 public class PortalUse {
 
-    @XmlElement(name = "portal_path")
-    protected List<PortalPath> portalPath;
-    @XmlAttribute(name = "npc_id")
-    protected int npcId;
-    @XmlAttribute(name = "siege_id")
-    protected int siegeId;
+	@XmlElement(name = "portal_path")
+	protected List<PortalPath> portalPath;
+	@XmlAttribute(name = "npc_id")
+	protected int npcId;
+	@XmlAttribute(name = "siege_id")
+	protected int siegeId;
 
-    public List<PortalPath> getPortalPaths() {
-        return portalPath;
-    }
+	public List<PortalPath> getPortalPaths() {
+		return portalPath;
+	}
 
 	public PortalPath getPortalPath(Race race) {
 		if (portalPath != null) {
@@ -55,19 +55,19 @@ public class PortalUse {
 		return null;
 	}
 
-    public int getNpcId() {
-        return npcId;
-    }
+	public int getNpcId() {
+		return npcId;
+	}
 
-    public void setNpcId(int value) {
-        this.npcId = value;
-    }
+	public void setNpcId(int value) {
+		this.npcId = value;
+	}
 
-    public int getSiegeId() {
-        return siegeId;
-    }
+	public int getSiegeId() {
+		return siegeId;
+	}
 
-    public void setSiegeId(int value) {
-        this.siegeId = value;
-    }
+	public void setSiegeId(int value) {
+		this.siegeId = value;
+	}
 }

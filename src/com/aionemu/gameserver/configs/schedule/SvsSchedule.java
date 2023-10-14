@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "svs_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SvsSchedule
-{
+public class SvsSchedule {
 	@XmlElement(name = "svs", required = true)
 	private List<Svs> svssList;
-	
+
 	public List<Svs> getSvssList() {
 		return svssList;
 	}
-	
+
 	public void setSvssList(List<Svs> svsList) {
 		this.svssList = svsList;
 	}
-	
+
 	public static SvsSchedule load() {
 		SvsSchedule ss;
 		try {
@@ -58,28 +57,28 @@ public class SvsSchedule
 		}
 		return ss;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "svs")
 	public static class Svs {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "svsTime", required = true)
 		private List<String> svsTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getSvsTimes() {
 			return svsTimes;
 		}
-		
+
 		public void setSvsTimes(List<String> svsTimes) {
 			this.svsTimes = svsTimes;
 		}

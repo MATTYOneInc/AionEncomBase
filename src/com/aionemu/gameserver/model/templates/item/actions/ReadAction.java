@@ -32,7 +32,7 @@ public class ReadAction extends AbstractItemAction {
 
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
-		//TODO: get quest
+		// TODO: get quest
 		return true;
 	}
 
@@ -40,12 +40,14 @@ public class ReadAction extends AbstractItemAction {
 	public void act(final Player player, Item parentItem, Item targetItem) {
 		final int itemObjId = parentItem.getObjectId();
 		final int id = parentItem.getItemTemplate().getTemplateId();
-		
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 50, 0, 0), true);
-		ThreadPoolManager.getInstance().schedule(new Runnable(){
+
+		PacketSendUtility.broadcastPacket(player,
+				new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 50, 0, 0), true);
+		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
+				PacketSendUtility.broadcastPacket(player,
+						new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
 			}
 		}, 50);
 	}

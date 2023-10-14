@@ -37,32 +37,31 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlRootElement(name = "abyss_ops")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class AbyssOpData
-{
-	@XmlElement(name="abyss_op")
+public class AbyssOpData {
+	@XmlElement(name = "abyss_op")
 	private List<AbyssOp> aolist;
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<AbyssOp> opData = new TIntObjectHashMap<AbyssOp>();
-	
+
 	@XmlTransient
 	private Map<Integer, AbyssOp> opDataMap = new HashMap<Integer, AbyssOp>(1);
-	
+
 	void afterUnmarshal(Unmarshaller paramUnmarshaller, Object paramObject) {
-		for (AbyssOp abyssOp: aolist) {
+		for (AbyssOp abyssOp : aolist) {
 			opData.put(abyssOp.getId(), abyssOp);
 			opDataMap.put(abyssOp.getId(), abyssOp);
 		}
 	}
-	
+
 	public int size() {
 		return opData.size();
 	}
-	
+
 	public AbyssOp getAbyssOpId(int id) {
 		return opData.get(id);
 	}
-	
+
 	public Map<Integer, AbyssOp> getAll() {
 		return opDataMap;
 	}

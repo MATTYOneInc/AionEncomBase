@@ -44,51 +44,66 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
 import com.aionemu.gameserver.world.World;
 
-public class SystemMailService
-{
+public class SystemMailService {
 	private static final Logger log = LoggerFactory.getLogger("SYSMAIL_LOG");
-	
+
 	public static final SystemMailService getInstance() {
 		return SingletonHolder.instance;
 	}
-	
+
 	private SystemMailService() {
 		log.info("SystemMailService: Initialized.");
 	}
-	
-	public boolean sendMail(String sender, String recipientName, String title, String message, int attachedItemObjId, long attachedItemCount, long attachedKinahCount, long attachedAPCount, LetterType letterType) {
+
+	public boolean sendMail(String sender, String recipientName, String title, String message, int attachedItemObjId,
+			long attachedItemCount, long attachedKinahCount, long attachedAPCount, LetterType letterType) {
 		if (attachedItemObjId != 0) {
 			ItemTemplate itemTemplate = DataManager.ITEM_DATA.getItemTemplate(attachedItemObjId);
 			if (itemTemplate == null) {
-				//log.info("[SYSMAILSERVICE] > [SenderName: " + sender + "] [RecipientName: " + recipientName + "] RETURN ITEM ID:" + itemTemplate
-				//+ " ITEM COUNT " + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " ITEM TEMPLATE IS MISSING ");
+				// log.info("[SYSMAILSERVICE] > [SenderName: " + sender + "] [RecipientName: " +
+				// recipientName + "] RETURN ITEM ID:" + itemTemplate
+				// + " ITEM COUNT " + attachedItemCount + " KINAH COUNT " + attachedKinahCount +
+				// " ITEM TEMPLATE IS MISSING ");
 				return false;
 			}
-		} if (attachedItemCount == 0 && attachedItemObjId != 0) {
+		}
+		if (attachedItemCount == 0 && attachedItemObjId != 0) {
 			return false;
-		} if (recipientName.length() > 16) {
-			//log.info("[SYSMAILSERVICE] > [SenderName: " + sender + "] [RecipientName: " + recipientName + "] ITEM RETURN" + attachedItemObjId
-			//+ " ITEM COUNT " + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " RECIPIENT NAME LENGTH > 16 ");
+		}
+		if (recipientName.length() > 16) {
+			// log.info("[SYSMAILSERVICE] > [SenderName: " + sender + "] [RecipientName: " +
+			// recipientName + "] ITEM RETURN" + attachedItemObjId
+			// + " ITEM COUNT " + attachedItemCount + " KINAH COUNT " + attachedKinahCount +
+			// " RECIPIENT NAME LENGTH > 16 ");
 			return false;
-		} if (!sender.startsWith("$$") && sender.length() > 50) {
-			//log.info("[SYSMAILSERVICE] > [SenderName: " + sender + "] [RecipientName: " + recipientName + "] ITEM RETURN" + attachedItemObjId
-			//+ " ITEM COUNT " + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " SENDER NAME LENGTH > 16 ");
+		}
+		if (!sender.startsWith("$$") && sender.length() > 50) {
+			// log.info("[SYSMAILSERVICE] > [SenderName: " + sender + "] [RecipientName: " +
+			// recipientName + "] ITEM RETURN" + attachedItemObjId
+			// + " ITEM COUNT " + attachedItemCount + " KINAH COUNT " + attachedKinahCount +
+			// " SENDER NAME LENGTH > 16 ");
 			return false;
-		} if (title.length() > 20) {
+		}
+		if (title.length() > 20) {
 			title = title.substring(0, 20);
-		} if (message.length() > 1000) {
+		}
+		if (message.length() > 1000) {
 			message = message.substring(0, 1000);
 		}
-		PlayerCommonData recipientCommonData = DAOManager.getDAO(PlayerDAO.class).loadPlayerCommonDataByName(recipientName);
+		PlayerCommonData recipientCommonData = DAOManager.getDAO(PlayerDAO.class)
+				.loadPlayerCommonDataByName(recipientName);
 		if (recipientCommonData == null) {
-			//log.info("[SYSMAILSERVICE] > [RecipientName: " + recipientName + "] NO SUCH CHARACTER NAME.");
+			// log.info("[SYSMAILSERVICE] > [RecipientName: " + recipientName + "] NO SUCH
+			// CHARACTER NAME.");
 			return false;
 		}
 		Player recipient = World.getInstance().findPlayer(recipientCommonData.getPlayerObjId());
 		if (recipient != null) {
 			if (recipient.getMailbox() != null && !(recipient.getMailbox().size() < 200)) {
-				//log.info("[SYSMAILSERVICE] > [SenderName: " + sender + "] [RecipientName: " + recipientCommonData.getName() + "] ITEM RETURN"
-				//+ attachedItemObjId + " ITEM COUNT " + attachedItemCount + " KINAH COUNT " + attachedKinahCount + " MAILBOX FULL ");
+				// log.info("[SYSMAILSERVICE] > [SenderName: " + sender + "] [RecipientName: " +
+				// recipientCommonData.getName() + "] ITEM RETURN"
+				// + attachedItemObjId + " ITEM COUNT " + attachedItemCount + " KINAH COUNT " +
+				// attachedKinahCount + " MAILBOX FULL ");
 				return false;
 			}
 		} else if (recipientCommonData.getMailboxLetters() > 199) {
@@ -107,40 +122,51 @@ public class SystemMailService
 				senderItem.setItemLocation(StorageType.MAILBOX.getId());
 				attachedItem = senderItem;
 			}
-		} if (attachedKinahCount > 0) {
+		}
+		if (attachedKinahCount > 0) {
 			finalAttachedKinahCount = attachedKinahCount;
-		} if (attachedAPCount > 0) {
+		}
+		if (attachedAPCount > 0) {
 			finalAttachedApCount = attachedAPCount;
 		}
 		String finalSender = sender;
 		Timestamp time = new Timestamp(Calendar.getInstance().getTimeInMillis());
-		Letter newLetter = new Letter(IDFactory.getInstance().nextId(), recipientCommonData.getPlayerObjId(), attachedItem, finalAttachedKinahCount, finalAttachedApCount, title, message, finalSender, time, true, letterType);
+		Letter newLetter = new Letter(IDFactory.getInstance().nextId(), recipientCommonData.getPlayerObjId(),
+				attachedItem, finalAttachedKinahCount, finalAttachedApCount, title, message, finalSender, time, true,
+				letterType);
 		if (!DAOManager.getDAO(MailDAO.class).storeLetter(time, newLetter)) {
 			return false;
-		} if (attachedItem != null) {
+		}
+		if (attachedItem != null) {
 			if (!DAOManager.getDAO(InventoryDAO.class).store(attachedItem, recipientCommonData.getPlayerObjId())) {
 				return false;
 			}
-		} if (recipient != null) {
+		}
+		if (recipient != null) {
 			Mailbox recipientMailbox = recipient.getMailbox();
 			recipientMailbox.putLetterToMailbox(newLetter);
 			PacketSendUtility.sendPacket(recipient, new SM_MAIL_SERVICE(recipient.getMailbox()));
 			recipientMailbox.isMailListUpdateRequired = true;
 			if (recipientMailbox.mailBoxState != 0) {
-				boolean isPostman = (recipientMailbox.mailBoxState & PlayerMailboxState.EXPRESS) == PlayerMailboxState.EXPRESS;
-				PacketSendUtility.sendPacket(recipient, new SM_MAIL_SERVICE(recipient, recipientMailbox.getLetters(), isPostman));
-			} if (letterType == LetterType.EXPRESS) {
-				//Express mail has arrived.
+				boolean isPostman = (recipientMailbox.mailBoxState
+						& PlayerMailboxState.EXPRESS) == PlayerMailboxState.EXPRESS;
+				PacketSendUtility.sendPacket(recipient,
+						new SM_MAIL_SERVICE(recipient, recipientMailbox.getLetters(), isPostman));
+			}
+			if (letterType == LetterType.EXPRESS) {
+				// Express mail has arrived.
 				PacketSendUtility.sendPacket(recipient, SM_SYSTEM_MESSAGE.STR_POSTMAN_NOTIFY);
 			}
-		} if (!recipientCommonData.isOnline()) {
+		}
+		if (!recipientCommonData.isOnline()) {
 			recipientCommonData.setMailboxLetters(recipientCommonData.getMailboxLetters() + 1);
 			DAOManager.getDAO(MailDAO.class).updateOfflineMailCounter(recipientCommonData);
 		}
 		return true;
 	}
-	
-	public boolean sendSystemMail(String sender, String sysTitle, String sysMessage, String recipientName, Item item, long attachedKinahCount, long attachedApCount, LetterType type) {
+
+	public boolean sendSystemMail(String sender, String sysTitle, String sysMessage, String recipientName, Item item,
+			long attachedKinahCount, long attachedApCount, LetterType type) {
 		String title = sysTitle;
 		String message = sysMessage;
 		Item attachedItem = item;
@@ -150,7 +176,8 @@ public class SystemMailService
 			attachedItemObjId = attachedItem.getItemId();
 			attachedItemCount = attachedItem.getItemCount();
 		}
-		PlayerCommonData recipientCommonData = DAOManager.getDAO(PlayerDAO.class).loadPlayerCommonDataByName(recipientName);
+		PlayerCommonData recipientCommonData = DAOManager.getDAO(PlayerDAO.class)
+				.loadPlayerCommonDataByName(recipientName);
 		if (recipientCommonData == null) {
 			return false;
 		}
@@ -165,41 +192,49 @@ public class SystemMailService
 		Player onlineRecipient = null;
 		if (recipientCommonData.getMailboxLetters() >= 100) {
 			return false;
-		} if (recipientCommonData.isOnline()) {
+		}
+		if (recipientCommonData.isOnline()) {
 			onlineRecipient = World.getInstance().findPlayer(recipientCommonData.getPlayerObjId());
 		}
 		attachedItem.setEquipped(false);
 		attachedItem.setEquipmentSlot(0);
 		attachedItem.setItemLocation(StorageType.MAILBOX.getId());
 		Timestamp time = new Timestamp(System.currentTimeMillis());
-		Letter newLetter = new Letter(IDFactory.getInstance().nextId(), recipientCommonData.getPlayerObjId(), attachedItem, attachedKinahCount, attachedApCount, title, message, sender, time, true, type);
+		Letter newLetter = new Letter(IDFactory.getInstance().nextId(), recipientCommonData.getPlayerObjId(),
+				attachedItem, attachedKinahCount, attachedApCount, title, message, sender, time, true, type);
 		if (!DAOManager.getDAO(MailDAO.class).storeLetter(time, newLetter)) {
 			return false;
-		} if (attachedItem != null) {
+		}
+		if (attachedItem != null) {
 			if (!DAOManager.getDAO(InventoryDAO.class).store(attachedItem, recipientCommonData.getPlayerObjId())) {
 				return false;
 			}
-		} if (onlineRecipient != null) {
+		}
+		if (onlineRecipient != null) {
 			Mailbox recipientMailbox = onlineRecipient.getMailbox();
 			recipientMailbox.putLetterToMailbox(newLetter);
-			PacketSendUtility.sendPacket(onlineRecipient, new SM_MAIL_SERVICE(onlineRecipient, onlineRecipient.getMailbox().getLetters()));
+			PacketSendUtility.sendPacket(onlineRecipient,
+					new SM_MAIL_SERVICE(onlineRecipient, onlineRecipient.getMailbox().getLetters()));
 			PacketSendUtility.sendPacket(onlineRecipient, new SM_MAIL_SERVICE(onlineRecipient.getMailbox()));
-			//Express mail has arrived.
+			// Express mail has arrived.
 			if (type == LetterType.EXPRESS || type == LetterType.BLACKCLOUD) {
 				PacketSendUtility.sendPacket(recipient, SM_SYSTEM_MESSAGE.STR_POSTMAN_NOTIFY);
 			}
-		} if (!recipientCommonData.isOnline()) {
+		}
+		if (!recipientCommonData.isOnline()) {
 			recipientCommonData.setMailboxLetters(recipientCommonData.getMailboxLetters() + 1);
 			DAOManager.getDAO(MailDAO.class).updateOfflineMailCounter(recipientCommonData);
 		}
 		return true;
 	}
-	
+
 	public static void sendTemplateRewardMail(final int templateId, final PlayerCommonData playerData) {
 		final MailRewardTemplate reward = DataManager.MAIL_REWARD.getMailReward(templateId);
-		SystemMailService.getInstance().sendMail(reward.getSender(), playerData.getName(), reward.getTitle(), reward.getBody() + "\\n\\n" + reward.getTail(), reward.getItemId(), reward.getItemCount(), reward.getKinahCount(), reward.getApCount(), LetterType.NORMAL);
+		SystemMailService.getInstance().sendMail(reward.getSender(), playerData.getName(), reward.getTitle(),
+				reward.getBody() + "\\n\\n" + reward.getTail(), reward.getItemId(), reward.getItemCount(),
+				reward.getKinahCount(), reward.getApCount(), LetterType.NORMAL);
 	}
-	
+
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final SystemMailService instance = new SystemMailService();

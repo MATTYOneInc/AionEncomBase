@@ -28,32 +28,32 @@ import com.aionemu.gameserver.questEngine.handlers.template.ItemCollecting;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ItemCollectingData")
-public class ItemCollectingData extends XMLQuest
-{
+public class ItemCollectingData extends XMLQuest {
 	@XmlAttribute(name = "start_npc_ids", required = true)
 	protected List<Integer> startNpcIds;
-	
+
 	@XmlAttribute(name = "action_item_ids")
 	protected List<Integer> actionItemIds;
-	
+
 	@XmlAttribute(name = "end_npc_ids")
 	protected List<Integer> endNpcIds;
-	
+
 	@XmlAttribute(name = "next_npc_id", required = true)
 	protected int nextNpcId;
-	
+
 	@XmlAttribute(name = "start_dialog_id")
 	protected int startDialogId;
-	
+
 	@XmlAttribute(name = "start_dialog_id2")
 	protected int startDialogId2;
-	
+
 	@XmlAttribute(name = "item_id")
 	protected int itemId;
-	
+
 	@Override
 	public void register(QuestEngine questEngine) {
-		ItemCollecting template = new ItemCollecting(id, startNpcIds, nextNpcId, actionItemIds, endNpcIds, questMovie, startDialogId, startDialogId2, itemId);
+		ItemCollecting template = new ItemCollecting(id, startNpcIds, nextNpcId, actionItemIds, endNpcIds, questMovie,
+				startDialogId, startDialogId2, itemId);
 		questEngine.addQuestHandler(template);
 	}
 }

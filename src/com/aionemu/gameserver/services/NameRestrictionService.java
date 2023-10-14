@@ -33,7 +33,7 @@ public class NameRestrictionService {
 	}
 
 	private static boolean isForbiddenByClient(String name) {
-        if (!NameConfig.NAME_FORBIDDEN_ENABLE || NameConfig.NAME_FORBIDDEN_CLIENT.equals("")) {
+		if (!NameConfig.NAME_FORBIDDEN_ENABLE || NameConfig.NAME_FORBIDDEN_CLIENT.equals("")) {
 			return false;
 		}
 		if ((forbiddenByClient == null) || (forbiddenByClient.length == 0)) {

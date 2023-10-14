@@ -35,8 +35,7 @@ public class SM_NICKNAME_CHECK_RESPONSE extends AionServerPacket {
 	/**
 	 * Constructs new <tt>SM_NICKNAME_CHECK_RESPONSE</tt> packet
 	 * 
-	 * @param value
-	 *          Response value
+	 * @param value Response value
 	 */
 	public SM_NICKNAME_CHECK_RESPONSE(int value) {
 		this.value = value;

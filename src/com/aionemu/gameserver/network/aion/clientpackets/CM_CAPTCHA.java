@@ -55,13 +55,13 @@ public class CM_CAPTCHA extends AionClientPacket {
 		type = readC();
 
 		switch (type) {
-			case 0x02:
-				count = readC();
-				word = readS();
-				break;
-			default:
-				log.warn("Unknown CAPTCHA packet type? 0x" + Integer.toHexString(type).toUpperCase());
-				break;
+		case 0x02:
+			count = readC();
+			word = readS();
+			break;
+		default:
+			log.warn("Unknown CAPTCHA packet type? 0x" + Integer.toHexString(type).toUpperCase());
+			break;
 		}
 	}
 
@@ -79,16 +79,15 @@ public class CM_CAPTCHA extends AionClientPacket {
 
 				// fp bonus (like retail)
 				player.getLifeStats().increaseFp(TYPE.FP, SecurityConfig.CAPTCHA_BONUS_FP_TIME);
-			}
-			else {
-				int banTime = SecurityConfig.CAPTCHA_EXTRACTION_BAN_TIME + SecurityConfig.CAPTCHA_EXTRACTION_BAN_ADD_TIME * count;
+			} else {
+				int banTime = SecurityConfig.CAPTCHA_EXTRACTION_BAN_TIME
+						+ SecurityConfig.CAPTCHA_EXTRACTION_BAN_ADD_TIME * count;
 
 				if (count < 3) {
 					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400271, 3 - count));
 					PacketSendUtility.sendPacket(player, new SM_CAPTCHA(false, banTime));
 					PunishmentService.setIsNotGatherable(player, count, true, banTime * 1000L);
-				}
-				else {
+				} else {
 					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400272));
 					PunishmentService.setIsNotGatherable(player, count, true, banTime * 1000L);
 				}

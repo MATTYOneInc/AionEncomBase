@@ -21,8 +21,7 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.skillengine.model.Skill;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class ShutdownRestrictions extends AbstractRestrictions
-{
+public class ShutdownRestrictions extends AbstractRestrictions {
 	@Override
 	public boolean isRestricted(Player player, Class<? extends Restrictions> callingRestriction) {
 		if (isInShutdownProgress(player)) {
@@ -31,7 +30,7 @@ public class ShutdownRestrictions extends AbstractRestrictions
 		}
 		return false;
 	}
-	
+
 	@Override
 	public boolean canAttack(Player player, VisibleObject target) {
 		if (isInShutdownProgress(player)) {
@@ -40,12 +39,12 @@ public class ShutdownRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
-    public boolean canAffectBySkill(Player player, VisibleObject target, Skill skill) {
+	public boolean canAffectBySkill(Player player, VisibleObject target, Skill skill) {
 		return true;
 	}
-	
+
 	@Override
 	public boolean canUseSkill(Player player, Skill skill) {
 		if (isInShutdownProgress(player)) {
@@ -54,7 +53,7 @@ public class ShutdownRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canChat(Player player) {
 		if (isInShutdownProgress(player)) {
@@ -63,7 +62,7 @@ public class ShutdownRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canInviteToGroup(Player player, Player target) {
 		if (isInShutdownProgress(player)) {
@@ -72,7 +71,7 @@ public class ShutdownRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canInviteToAlliance(Player player, Player target) {
 		if (isInShutdownProgress(player)) {
@@ -81,7 +80,7 @@ public class ShutdownRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canInviteToLeague(Player player, Player target) {
 		if (isInShutdownProgress(player)) {
@@ -90,7 +89,7 @@ public class ShutdownRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	@Override
 	public boolean canChangeEquip(Player player) {
 		if (isInShutdownProgress(player)) {
@@ -99,7 +98,7 @@ public class ShutdownRestrictions extends AbstractRestrictions
 		}
 		return true;
 	}
-	
+
 	private boolean isInShutdownProgress(Player player) {
 		return player.getController().isInShutdownProgress();
 	}

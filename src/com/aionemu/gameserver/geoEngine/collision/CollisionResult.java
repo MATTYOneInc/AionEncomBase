@@ -49,11 +49,9 @@ public class CollisionResult implements Comparable<CollisionResult> {
 	public int compareTo(CollisionResult other) {
 		if (distance < other.distance) {
 			return -1;
-		}
-		else if (distance > other.distance) {
+		} else if (distance > other.distance) {
 			return 1;
-		}
-		else {
+		} else {
 			return 0;
 		}
 	}

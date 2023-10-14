@@ -28,16 +28,15 @@ import javax.xml.bind.annotation.XmlType;
 import com.aionemu.gameserver.model.templates.stats.ModifiersTemplate;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RandomBonus", propOrder = {"modifiers"})
-public class RandomBonus
-{
+@XmlType(name = "RandomBonus", propOrder = { "modifiers" })
+public class RandomBonus {
 	@XmlElement(required = true)
 	protected List<ModifiersTemplate> modifiers;
 
 	@XmlAttribute(required = true)
 	protected int id;
 
-	@XmlAttribute(name="type", required = true)
+	@XmlAttribute(name = "type", required = true)
 	private StatBonusType bonusType;
 
 	public List<ModifiersTemplate> getModifiers() {

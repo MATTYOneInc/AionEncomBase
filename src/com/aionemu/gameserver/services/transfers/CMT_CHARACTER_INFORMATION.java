@@ -70,13 +70,16 @@ import javolution.util.FastList;
 public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 
 	protected CMT_CHARACTER_INFORMATION(int opcode, State state, State... restStates) {
-		super (opcode, state, restStates);
+		super(opcode, state, restStates);
 	}
 
 	@Override
-	protected void readImpl() { }
+	protected void readImpl() {
+	}
+
 	@Override
-	protected void runImpl() { }
+	protected void runImpl() {
+	}
 
 	public Player readInfo(String name, int targetAccount, String accountName, List<Integer> rsList, Logger textLog) {
 
@@ -152,16 +155,16 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 		Player player = PlayerService.newPlayer(playerCommonData, playerAppearance, account);
 		player.getPosition().setXYZH(readF(), readF(), readF(), readSC());
 		player.getPosition().setMapId(readD());
-		
+
 		if (!PlayerService.storeNewPlayer(player, accountName, targetAccount)) {
-			textLog.info("failed to store new player to "+accountName);
+			textLog.info("failed to store new player to " + accountName);
 			IDFactory.getInstance().releaseId(playerCommonData.getPlayerObjId());
 			return null;
 		}
 
 		int cnt = readD();
 		FastList<String> itemOut = FastList.newInstance();
-		for (int a = 0; a < cnt; a++) { //inventory
+		for (int a = 0; a < cnt; a++) { // inventory
 			int objIdOld = readD();
 			int itemId = readD();
 			long itemCnt = readQ();
@@ -185,10 +188,10 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 				manastones.add(new int[] { readD(), readD() });
 			}
 			len = readD();
-			for(int b = 0; b < len; b++) {
+			for (int b = 0; b < len; b++) {
 				fusions.add(new int[] { readD(), readD() });
 			}
-			
+
 			int godstone = 0;
 			if (readC() == 1) {
 				godstone = readD();
@@ -203,20 +206,24 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 			boolean isEnhance = readC() == 1;
 			int enhanceSkillId = readD();
 			int enhanceSkillEnchant = readD();
-			
+
 			if (PlayerTransferConfig.ALLOW_INV) {
 				ItemTemplate template = DataManager.ITEM_DATA.getItemTemplate(itemId);
 				if (template == null) {
-					textLog.info("(cube"+targetAccount+")item with id "+itemId+" was not found in dp");
+					textLog.info("(cube" + targetAccount + ")item with id " + itemId + " was not found in dp");
 					continue;
 				}
-				
+
 				if (template.isStigma() && !PlayerTransferConfig.ALLOW_STIGMA) {
 					continue;
 				}
 
 				int newId = IDFactory.getInstance().nextId();
-				Item item = new Item(newId, itemId, itemCnt, itemColor, colorExpires, itemCreator, itemExpireTime, itemActivationCnt, itemEquipped, itemSoulBound, equipSlot, location, enchant, skinId, fusionId, optSocket, optFusion, charge, bonusNum, randomNum, wrappingNum, newId, itemPacked, 0, itemPacked, newId, 0, itemPacked, requireLevel, unSeal, isEnhance, enhanceSkillId, enhanceSkillEnchant);
+				Item item = new Item(newId, itemId, itemCnt, itemColor, colorExpires, itemCreator, itemExpireTime,
+						itemActivationCnt, itemEquipped, itemSoulBound, equipSlot, location, enchant, skinId, fusionId,
+						optSocket, optFusion, charge, bonusNum, randomNum, wrappingNum, newId, itemPacked, 0,
+						itemPacked, newId, 0, itemPacked, requireLevel, unSeal, isEnhance, enhanceSkillId,
+						enhanceSkillEnchant);
 				if (manastones.size() > 0) {
 					for (int[] stone : manastones) {
 						ItemSocketService.addManaStone(item, stone[0], stone[1]);
@@ -230,16 +237,21 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 				if (godstone != 0) {
 					item.addGodStone(godstone);
 				}
-				
-				String itemTxt = "(cube)#itemId="+itemId+"; objectIdChange["+objIdOld+"->"+newId+"] "+item.getItemCount()+";"+item.getItemColor()+";"+item.getItemCreator()+";"+item.getExpireTime()+";"+item.getActivationCount()+";"+item.getEnchantLevel()+";"+item.getItemSkinTemplate().getTemplateId()+";"+item.getFusionedItemTemplate()+";"+item.getOptionalSocket()+";"+item.getOptionalFusionSocket()+";"+item.getChargePoints();
+
+				String itemTxt = "(cube)#itemId=" + itemId + "; objectIdChange[" + objIdOld + "->" + newId + "] "
+						+ item.getItemCount() + ";" + item.getItemColor() + ";" + item.getItemCreator() + ";"
+						+ item.getExpireTime() + ";" + item.getActivationCount() + ";" + item.getEnchantLevel() + ";"
+						+ item.getItemSkinTemplate().getTemplateId() + ";" + item.getFusionedItemTemplate() + ";"
+						+ item.getOptionalSocket() + ";" + item.getOptionalFusionSocket() + ";"
+						+ item.getChargePoints();
 				itemOut.add(itemTxt);
 				item.setPersistentState(PersistentState.NEW);
 				player.getInventory().add(item);
 			}
 		}
-		
+
 		cnt = readD();
-		for (int a = 0; a < cnt; a++) { //warehouse
+		for (int a = 0; a < cnt; a++) { // warehouse
 			int objIdOld = readD();
 			int itemId = readD();
 			long itemCnt = readQ();
@@ -266,7 +278,7 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 			for (int b = 0; b < len; b++) {
 				fusions.add(new int[] { readD(), readD() });
 			}
-			
+
 			int godstone = 0;
 			if (readC() == 1) {
 				godstone = readD();
@@ -285,16 +297,20 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 			if (PlayerTransferConfig.ALLOW_WAREHOUSE) {
 				ItemTemplate template = DataManager.ITEM_DATA.getItemTemplate(itemId);
 				if (template == null) {
-					textLog.info("(warehouse"+targetAccount+")item with id "+itemId+" was not found in dp");
+					textLog.info("(warehouse" + targetAccount + ")item with id " + itemId + " was not found in dp");
 					continue;
 				}
-				
+
 				if (template.isStigma() && !PlayerTransferConfig.ALLOW_STIGMA) {
 					continue;
 				}
 
 				int newId = IDFactory.getInstance().nextId();
-				Item item = new Item(newId, itemId, itemCnt, itemColor, 0, itemCreator, itemExpireTime, itemActivationCnt, itemEquipped, itemSoulBound, equipSlot, location, enchant, skinId, fusionId, optSocket, optFusion, charge, bonusNum, randomNum, wrappingNum, newId, itemPacked, 0, itemPacked, newId, 0, itemPacked, requireLevel, unSeal, isEnhance, enhanceSkillId, enhanceSkillEnchant);
+				Item item = new Item(newId, itemId, itemCnt, itemColor, 0, itemCreator, itemExpireTime,
+						itemActivationCnt, itemEquipped, itemSoulBound, equipSlot, location, enchant, skinId, fusionId,
+						optSocket, optFusion, charge, bonusNum, randomNum, wrappingNum, newId, itemPacked, 0,
+						itemPacked, newId, 0, itemPacked, requireLevel, unSeal, isEnhance, enhanceSkillId,
+						enhanceSkillEnchant);
 				if (manastones.size() > 0) {
 					for (int[] stone : manastones) {
 						ItemSocketService.addManaStone(item, stone[0], stone[1]);
@@ -308,68 +324,73 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 				if (godstone != 0) {
 					item.addGodStone(godstone);
 				}
-				String itemTxt = "(warehouse)#itemId="+itemId+"; objectIdChange["+objIdOld+"->"+newId+"] "+item.getItemCount()+";"+item.getItemColor()+";"+item.getItemCreator()+";"+item.getExpireTime()+";"+item.getActivationCount()+";"+item.getEnchantLevel()+";"+item.getItemSkinTemplate().getTemplateId()+";"+item.getFusionedItemTemplate()+";"+item.getOptionalSocket()+";"+item.getOptionalFusionSocket()+";"+item.getChargePoints();
+				String itemTxt = "(warehouse)#itemId=" + itemId + "; objectIdChange[" + objIdOld + "->" + newId + "] "
+						+ item.getItemCount() + ";" + item.getItemColor() + ";" + item.getItemCreator() + ";"
+						+ item.getExpireTime() + ";" + item.getActivationCount() + ";" + item.getEnchantLevel() + ";"
+						+ item.getItemSkinTemplate().getTemplateId() + ";" + item.getFusionedItemTemplate() + ";"
+						+ item.getOptionalSocket() + ";" + item.getOptionalFusionSocket() + ";"
+						+ item.getChargePoints();
 				itemOut.add(itemTxt);
 				item.setPersistentState(PersistentState.NEW);
 				player.getWarehouse().add(item);
 			}
 		}
 		DAOManager.getDAO(InventoryDAO.class).store(player);
-		
+
 		for (String s : itemOut) {
 			textLog.info(s);
 		}
 		FastList.recycle(itemOut);
 		cnt = readD();
-		textLog.info("EmotionList:"+cnt);
+		textLog.info("EmotionList:" + cnt);
 		player.setEmotions(new EmotionList(player));
-		for (int a = 0; a < cnt; a++) { //emotes
+		for (int a = 0; a < cnt; a++) { // emotes
 			if (PlayerTransferConfig.ALLOW_EMOTIONS) {
 				player.getEmotions().add(readD(), readD(), true);
-			}
-			else {
+			} else {
 				readQ();
 			}
 		}
 		cnt = readD();
-		textLog.info("MotionList:"+cnt);
+		textLog.info("MotionList:" + cnt);
 		player.setMotions(new MotionList(player));
-		for (int i = 0; i < cnt; i++) { //motions
+		for (int i = 0; i < cnt; i++) { // motions
 			if (PlayerTransferConfig.ALLOW_MOTIONS) {
 				player.getMotions().add(new Motion(readD(), readD(), readC() == 1), true);
-			}
-			else {
+			} else {
 				readB(9);
 			}
 		}
 		cnt = readD();
-		textLog.info("MacroList:"+cnt);
+		textLog.info("MacroList:" + cnt);
 		player.setMacroList(new MacroList());
-		for (int a = 0; a < cnt; a++) { //macros
+		for (int a = 0; a < cnt; a++) { // macros
 			if (PlayerTransferConfig.ALLOW_MACRO) {
 				PlayerService.addMacro(player, readD(), readS());
-			}
-			else {
-				readD(); readS();
+			} else {
+				readD();
+				readS();
 			}
 		}
 		cnt = readD();
-		textLog.info("NpcFactions:"+cnt);
+		textLog.info("NpcFactions:" + cnt);
 		player.setNpcFactions(new NpcFactions(player));
-		for (int a = 0; a < cnt; a++) { //npc factions
+		for (int a = 0; a < cnt; a++) { // npc factions
 			if (PlayerTransferConfig.ALLOW_NPCFACTIONS) {
-				player.getNpcFactions().addNpcFaction(new NpcFaction(readD(), readD(), readD() == 1, ENpcFactionQuestState.valueOf(readS()), readD()));
-			}
-			else {
-				readB(12); readS(); readD();
+				player.getNpcFactions().addNpcFaction(new NpcFaction(readD(), readD(), readD() == 1,
+						ENpcFactionQuestState.valueOf(readS()), readD()));
+			} else {
+				readB(12);
+				readS();
+				readD();
 			}
 		}
 		if (cnt > 0 && PlayerTransferConfig.ALLOW_NPCFACTIONS) {
 			DAOManager.getDAO(PlayerNpcFactionsDAO.class).storeNpcFactions(player);
 		}
 		cnt = readD();
-		textLog.info("Pets:"+cnt);
-		for (int i = 0; i < cnt; i++) { //pets
+		textLog.info("Pets:" + cnt);
+		for (int i = 0; i < cnt; i++) { // pets
 			if (PlayerTransferConfig.ALLOW_PETS) {
 				int petId = readD();
 				int decorationId = readD();
@@ -378,30 +399,29 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 					bday = System.currentTimeMillis();
 				}
 				player.getPetList().addPet(player, petId, decorationId, bday, readS(), 0);
-			}
-			else {
-				readB(16); readS();
+			} else {
+				readB(16);
+				readS();
 			}
 		}
 		cnt = readD();
-		textLog.info("RecipeList:"+cnt);
+		textLog.info("RecipeList:" + cnt);
 		player.setRecipeList(new RecipeList());
-		for (int a = 0; a < cnt; a++) { //recipes
+		for (int a = 0; a < cnt; a++) { // recipes
 			if (PlayerTransferConfig.ALLOW_RECIPES) {
 				player.getRecipeList().addRecipe(player.getObjectId(), readD());
-			}
-			else {
+			} else {
 				readD();
 			}
 		}
 		cnt = readD();
-		textLog.info("PlayerSkillList:"+cnt);
+		textLog.info("PlayerSkillList:" + cnt);
 		player.setSkillList(new PlayerSkillList());
 		boolean rsCheck = rsList.size() > 0;
-		for (int a = 0; a < cnt; a++) { //skills
+		for (int a = 0; a < cnt; a++) { // skills
 			int skillId = readD();
 			int skillLvl = readD();
-			
+
 			if (rsCheck && rsList.contains(skillId)) {
 				continue;
 			}
@@ -410,19 +430,17 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 				if (temp.isPassive()) {
 					player.getSkillList().addSkill(player, skillId, skillLvl);
 				}
-			}
-			else {
+			} else {
 				player.getSkillList().addSkill(player, skillId, skillLvl);
 			}
 		}
 		cnt = readD();
-		textLog.info("TitleList:"+cnt);
+		textLog.info("TitleList:" + cnt);
 		player.setTitleList(new TitleList());
-		for (int a = 0; a < cnt; a++) { //titles
+		for (int a = 0; a < cnt; a++) { // titles
 			if (PlayerTransferConfig.ALLOW_TITLES) {
 				player.getTitleList().addEntry(readD(), readD());
-			}
-			else {
+			} else {
 				readB(8);
 			}
 		}
@@ -432,37 +450,42 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
 			}
 		}
 		String[] pos = null;
-		switch(player.getRace()) {
-			case ELYOS:
-				pos = PlayerTransferConfig.BIND_ELYOS.split(" ");
+		switch (player.getRace()) {
+		case ELYOS:
+			pos = PlayerTransferConfig.BIND_ELYOS.split(" ");
 			break;
-			case ASMODIANS:
-				pos = PlayerTransferConfig.BIND_ASMO.split(" ");
+		case ASMODIANS:
+			pos = PlayerTransferConfig.BIND_ASMO.split(" ");
 			break;
 		}
-		
-		player.setBindPoint(new BindPointPosition(Integer.parseInt(pos[0]), Float.parseFloat(pos[1]), Float.parseFloat(pos[2]), Float.parseFloat(pos[3]), Byte.parseByte(pos[4])));
+
+		player.setBindPoint(new BindPointPosition(Integer.parseInt(pos[0]), Float.parseFloat(pos[1]),
+				Float.parseFloat(pos[2]), Float.parseFloat(pos[3]), Byte.parseByte(pos[4])));
 		DAOManager.getDAO(PlayerBindPointDAO.class).store(player);
-		
+
 		int uilen = readD(), shortlen = readD();
 		byte[] ui = readB(uilen), sc = readB(shortlen);
-		player.setPlayerSettings(new PlayerSettings(uilen > 0 ? ui : null, shortlen > 0 ? sc : null, null, readD(), readD()));
-		player.setAbyssRank(new AbyssRank(0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0));
-		
+		player.setPlayerSettings(
+				new PlayerSettings(uilen > 0 ? ui : null, shortlen > 0 ? sc : null, null, readD(), readD()));
+		player.setAbyssRank(new AbyssRank(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0));
+
 		cnt = readD();
-		textLog.info("QuestStateList:"+cnt);
+		textLog.info("QuestStateList:" + cnt);
 		player.setQuestStateList(new QuestStateList());
-		for (int a = 0; a < cnt; a++) { //quests
+		for (int a = 0; a < cnt; a++) { // quests
 			int questId = readD();
 			if (PlayerTransferConfig.ALLOW_QUESTS) {
-				player.getQuestStateList().addQuest(questId, new QuestState(questId, QuestStatus.valueOf(readS()), readD(), readD(), null, readD(), null)); //TODO null timestamp
-			}
-			else {
-				readS(); readB(12);
+				player.getQuestStateList().addQuest(questId,
+						new QuestState(questId, QuestStatus.valueOf(readS()), readD(), readD(), null, readD(), null)); // TODO
+																														// null
+																														// timestamp
+			} else {
+				readS();
+				readB(12);
 			}
 		}
 		PlayerService.storePlayer(player);
-		textLog.info("finished in "+(System.currentTimeMillis()-st)+" ms");
+		textLog.info("finished in " + (System.currentTimeMillis() - st) + " ms");
 		return player;
 	}
 }

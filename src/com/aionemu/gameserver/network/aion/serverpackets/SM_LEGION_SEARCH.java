@@ -23,17 +23,16 @@ import com.aionemu.gameserver.services.LegionService;
 
 import javolution.util.FastList;
 
-public class SM_LEGION_SEARCH extends AionServerPacket
-{
-    private FastList<Legion> legions;
-	
+public class SM_LEGION_SEARCH extends AionServerPacket {
+	private FastList<Legion> legions;
+
 	public SM_LEGION_SEARCH(FastList<Legion> legions) {
-    	this.legions = legions;
-    }
-	
+		this.legions = legions;
+	}
+
 	@Override
-    protected void writeImpl(AionConnection con) {
-    	writeH(-legions.size());
+	protected void writeImpl(AionConnection con) {
+		writeH(-legions.size());
 		for (Legion legion : legions) {
 			writeD(legion.getLegionId());
 			writeS(legion.getLegionName());
@@ -43,6 +42,6 @@ public class SM_LEGION_SEARCH extends AionServerPacket
 			writeS(legion.getLegionDescription());
 			writeC(legion.getLegionJoinType());
 			writeH(legion.getMinLevel());
-    	}
-    }
+		}
+	}
 }

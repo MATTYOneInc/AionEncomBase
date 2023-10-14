@@ -22,8 +22,7 @@ import com.aionemu.gameserver.model.autogroup.AutoGroupType;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_AUTO_GROUP extends AionServerPacket
-{
+public class SM_AUTO_GROUP extends AionServerPacket {
 	private byte windowId;
 	private int instanceMaskId;
 	private int mapId;
@@ -33,7 +32,7 @@ public class SM_AUTO_GROUP extends AionServerPacket
 	private boolean close;
 	String name = StringUtils.EMPTY;
 	public static final byte wnd_EntryIcon = 6;
-	
+
 	public SM_AUTO_GROUP(int instanceMaskId) {
 		this.isBG = false;
 		AutoGroupType agt = AutoGroupType.getAGTByMaskId(instanceMaskId);
@@ -42,20 +41,20 @@ public class SM_AUTO_GROUP extends AionServerPacket
 		this.titleId = agt.getTitleId();
 		this.mapId = agt.getInstanceMapId();
 	}
-	
+
 	public SM_AUTO_GROUP(int instanceMaskId, Number windowId) {
 		this(instanceMaskId);
 		this.windowId = windowId.byteValue();
 		this.isBG = false;
 	}
-	
+
 	public SM_AUTO_GROUP(int instanceMaskId, Number windowId, boolean close) {
 		this(instanceMaskId);
 		this.windowId = windowId.byteValue();
 		this.close = close;
 		this.isBG = false;
 	}
-	
+
 	public SM_AUTO_GROUP(int instanceMaskId, Number windowId, int waitTime, String name) {
 		this(instanceMaskId);
 		this.windowId = windowId.byteValue();
@@ -63,14 +62,14 @@ public class SM_AUTO_GROUP extends AionServerPacket
 		this.name = name;
 		this.isBG = false;
 	}
-	
-	//For BG System
+
+	// For BG System
 	private boolean isBG;
 	private int option = 0;
 	private int extraOption = 0;
 	private int worldId = 0;
 	private int specialOption = 0;
-	
+
 	public SM_AUTO_GROUP(int worldId, boolean show) {
 		this.isBG = true;
 		this.option = 6;
@@ -78,7 +77,7 @@ public class SM_AUTO_GROUP extends AionServerPacket
 		this.worldId = worldId;
 		this.specialOption = show ? 1 : 0;
 	}
-	
+
 	public SM_AUTO_GROUP(int worldId, boolean teamChoice, int messageId) {
 		this.isBG = true;
 		this.option = 0;
@@ -86,7 +85,7 @@ public class SM_AUTO_GROUP extends AionServerPacket
 		this.worldId = worldId;
 		this.messageId = messageId;
 	}
-	
+
 	public SM_AUTO_GROUP(int option, int worldId, int specialOption) {
 		this.isBG = true;
 		this.option = option;
@@ -94,7 +93,7 @@ public class SM_AUTO_GROUP extends AionServerPacket
 		this.worldId = worldId;
 		this.specialOption = specialOption;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		if (!isBG) {
@@ -102,50 +101,50 @@ public class SM_AUTO_GROUP extends AionServerPacket
 			writeC(this.windowId);
 			writeD(this.mapId);
 			switch (this.windowId) {
-				case 0: //Request Entry
-					writeD(this.messageId);
-					writeD(this.titleId);
-					writeD(0);
+			case 0: // Request Entry
+				writeD(this.messageId);
+				writeD(this.titleId);
+				writeD(0);
 				break;
-				case 1: //Waiting Window
-					writeD(0);
-					writeD(0);
-					writeD(this.waitTime);
+			case 1: // Waiting Window
+				writeD(0);
+				writeD(0);
+				writeD(this.waitTime);
 				break;
-				case 2: //Cancel Looking
-					writeD(0);
-					writeD(0);
-					writeD(0);
+			case 2: // Cancel Looking
+				writeD(0);
+				writeD(0);
+				writeD(0);
 				break;
-				case 3: //Pass Window
-					writeD(0);
-					writeD(0);
-					writeD(this.waitTime);
+			case 3: // Pass Window
+				writeD(0);
+				writeD(0);
+				writeD(this.waitTime);
 				break;
-				case 4: //Enter Window
-					writeD(0);
-					writeD(0);
-					writeD(0);
+			case 4: // Enter Window
+				writeD(0);
+				writeD(0);
+				writeD(0);
 				break;
-				case 5: //After You Click Enter
-					writeD(0);
-					writeD(0);
-					writeD(0);
+			case 5: // After You Click Enter
+				writeD(0);
+				writeD(0);
+				writeD(0);
 				break;
-				case wnd_EntryIcon:
-					writeD(this.messageId);
-					writeD(this.titleId);
-					writeD(this.close ? 0 : 1);
+			case wnd_EntryIcon:
+				writeD(this.messageId);
+				writeD(this.titleId);
+				writeD(this.close ? 0 : 1);
 				break;
-				case 7: //Failed Window
-					writeD(this.messageId);
-					writeD(this.titleId);
-					writeD(0);
+			case 7: // Failed Window
+				writeD(this.messageId);
+				writeD(this.titleId);
+				writeD(0);
 				break;
-				case 8:
-					writeD(0);
-					writeD(0);
-					writeD(this.waitTime);
+			case 8:
+				writeD(0);
+				writeD(0);
+				writeD(this.waitTime);
 				break;
 			}
 			writeC(0);

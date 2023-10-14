@@ -29,11 +29,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "UpgradeMaterials")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class UpgradeMaterials
-{
+public class UpgradeMaterials {
 	@XmlElement(required = true)
 	protected List<SubMaterialItem> sub_material_item;
-	
+
 	public List<SubMaterialItem> getSubMaterialItem() {
 		return sub_material_item;
 	}

@@ -50,15 +50,15 @@ public class AtreianPassport {
 	@XmlAttribute(name = "attend_type", required = true)
 	private AttendType attendType;
 
-	@XmlAttribute(name="attend_num")
+	@XmlAttribute(name = "attend_num")
 	private int attendNum;
 
-	@XmlAttribute(name="period_start", required=true)
-	@XmlSchemaType(name="dateTime")
+	@XmlAttribute(name = "period_start", required = true)
+	@XmlSchemaType(name = "dateTime")
 	protected XMLGregorianCalendar pStart;
 
-	@XmlAttribute(name="period_end", required=true)
-	@XmlSchemaType(name="dateTime")
+	@XmlAttribute(name = "period_end", required = true)
+	@XmlSchemaType(name = "dateTime")
 	protected XMLGregorianCalendar pEnd;
 
 	protected List<AtreianPassportRewards> atreian_passport_reward;

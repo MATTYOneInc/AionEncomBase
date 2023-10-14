@@ -21,8 +21,7 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.SiegeService;
 
-public class SM_INFLUENCE_RATIO extends AionServerPacket
-{
+public class SM_INFLUENCE_RATIO extends AionServerPacket {
 	@Override
 	protected void writeImpl(AionConnection con) {
 		Influence inf = Influence.getInstance();
@@ -31,12 +30,12 @@ public class SM_INFLUENCE_RATIO extends AionServerPacket
 		writeF(inf.getGlobalAsmodiansInfluence());
 		writeF(inf.getGlobalBalaursInfluence());
 		writeH(2);
-		//========[ABYSS]========
+		// ========[ABYSS]========
 		writeD(400010000);
 		writeF(inf.getAbyssElyosInfluence());
 		writeF(inf.getAbyssAsmodiansInfluence());
 		writeF(inf.getAbyssBalaursInfluence());
-		//======[KALDOR]=========
+		// ======[KALDOR]=========
 		writeD(600090000);
 		writeF(inf.getKaldorElyosInfluence());
 		writeF(inf.getKaldorAsmodiansInfluence());

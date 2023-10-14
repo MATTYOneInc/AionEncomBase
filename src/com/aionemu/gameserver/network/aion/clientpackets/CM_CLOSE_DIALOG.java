@@ -28,37 +28,38 @@ import com.aionemu.gameserver.services.DialogService;
 import com.aionemu.gameserver.services.player.PlayerMailboxState;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
-public class CM_CLOSE_DIALOG extends AionClientPacket
-{
+public class CM_CLOSE_DIALOG extends AionClientPacket {
 	private int targetObjectId;
-	
+
 	public CM_CLOSE_DIALOG(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		targetObjectId = readD();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
 		final VisibleObject obj = player.getKnownList().getObject(targetObjectId);
 		final AionConnection client = getConnection();
-		if(obj == null) {
+		if (obj == null) {
 			return;
-		} if (obj instanceof Npc) {
-			Npc npc = (Npc)obj;
+		}
+		if (obj instanceof Npc) {
+			Npc npc = (Npc) obj;
 			npc.getAi2().onCreatureEvent(AIEventType.DIALOG_FINISH, player);
 			DialogService.onCloseDialog(npc, player);
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
 				@Override
 				public void run() {
-					client.sendPacket(new SM_HEADING_UPDATE(targetObjectId, (byte)obj.getHeading()));
+					client.sendPacket(new SM_HEADING_UPDATE(targetObjectId, (byte) obj.getHeading()));
 				}
 			}, 1200);
-		} if (player.getMailbox().mailBoxState != 0) {
+		}
+		if (player.getMailbox().mailBoxState != 0) {
 			player.getMailbox().mailBoxState = PlayerMailboxState.CLOSED;
 		}
 	}

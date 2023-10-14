@@ -33,8 +33,7 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SummonGroupGateEffect")
-public class SummonGroupGateEffect extends SummonEffect
-{
+public class SummonGroupGateEffect extends SummonEffect {
 	@Override
 	public void applyEffect(Effect effect) {
 		Creature effector = effect.getEffector();

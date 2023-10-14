@@ -39,98 +39,100 @@ import com.aionemu.gameserver.spawnengine.SpawnEngine;
 
 import javolution.util.FastMap;
 
-public class AbyssLandingSpecialService
-{
-    private static Logger log = LoggerFactory.getLogger(AbyssLandingService.class);
-    private static Map<Integer, LandingSpecialLocation> abyssSpecialLanding;
-    private final Map<Integer, SpecialLanding<?>> activeSpecialLanding = new FastMap<Integer, SpecialLanding<?>>().shared();
-	
-    public void initLandingSpecialLocations() {
-        abyssSpecialLanding = DataManager.LANDING_SPECIAL_LOCATION_DATA.getLandingSpecialLocations();
-        DAOManager.getDAO(AbyssSpecialLandingDAO.class).loadLandingSpecialLocations(abyssSpecialLanding);
-        for (LandingSpecialLocation loc: getLandingSpecialLocations().values()) {
-        	if (loc.getType().equals(LandingSpecialStateType.ACTIVE)) {
-        		spawn(loc, LandingSpecialStateType.ACTIVE);
-        	}
-        	log.info("[Abyss Landing Monument] ID: " + loc.getId() + " - STATUS: " + loc.getType());
-        }
-        log.info("[Abyss Landing Monument] Loaded " + abyssSpecialLanding.size() + " Locations");
-    }
-	
-    public void startLanding(final int id) {
-        final SpecialLanding<?> land;
-        synchronized (this) {
-            if (activeSpecialLanding.containsKey(id)) {
-                return;
-            }
-            land = new SPLanding(abyssSpecialLanding.get(id));
-            activeSpecialLanding.put(id, land);
-        }
-        land.start();
-    }
-	
-    public void stopLanding(int id) {
-        if (!activeSpecialLanding.containsKey(id)) {
-            return;
-        }
-        SpecialLanding<?> landing;
-        synchronized (this) {
-            landing = activeSpecialLanding.remove(id);
-        } if (landing == null) {
-            return;
-        }
-        landing.stop();
-    }
-	
-    public static void spawn(LandingSpecialLocation loc, LandingSpecialStateType fstate) {
-        if (fstate.equals(LandingSpecialStateType.ACTIVE)) {
-        	List<SpawnGroup2> locSpawns = DataManager.SPAWNS_DATA2.getLandingSpecialSpawnsByLocId(loc.getId());
-            for (SpawnGroup2 group: locSpawns) {
-                for (SpawnTemplate st: group.getSpawnTemplates()) {
-                    LandingSpecialSpawnTemplate landingtTemplate = (LandingSpecialSpawnTemplate) st;
-                    if (landingtTemplate.getFStateType().equals(fstate)) {
-                        loc.getSpawned().add(SpawnEngine.spawnObject(landingtTemplate, 1));
-                    }
-                }
-            }
-        }
-    }
-	
-    public static void onSave(LandingSpecialLocation loc) {
-        getDAO().updateLocation(loc);
-    }
-	
-    public static void despawn(LandingSpecialLocation loc) {
-        if (loc.getSpawned() == null) {
-        	return;
-		} for (VisibleObject obj: loc.getSpawned()) {
-            Npc spawned = (Npc) obj;
-            spawned.setDespawnDelayed(true);
-            if (spawned.getAggroList().getList().isEmpty()) {
-                spawned.getController().cancelTask(TaskId.RESPAWN);
-                obj.getController().onDelete();
-            }
-        }
-        loc.getSpawned().clear();
-    }
-	
-    public static AbyssLandingSpecialService getInstance() {
-        return AbyssLandingSpecialService.SingletonHolder.instance;
-    }
-	
-    private static class SingletonHolder {
-        protected static final AbyssLandingSpecialService instance = new AbyssLandingSpecialService();
-    }
-	
-    public LandingSpecialLocation getLandingSpecialLocation(int id) {
-        return abyssSpecialLanding.get(id);
-    }
-	
-    public static Map<Integer, LandingSpecialLocation> getLandingSpecialLocations() {
-        return abyssSpecialLanding;
-    }
-	
-    public static AbyssSpecialLandingDAO getDAO() {
-        return DAOManager.getDAO(AbyssSpecialLandingDAO.class);
-    }
+public class AbyssLandingSpecialService {
+	private static Logger log = LoggerFactory.getLogger(AbyssLandingService.class);
+	private static Map<Integer, LandingSpecialLocation> abyssSpecialLanding;
+	private final Map<Integer, SpecialLanding<?>> activeSpecialLanding = new FastMap<Integer, SpecialLanding<?>>()
+			.shared();
+
+	public void initLandingSpecialLocations() {
+		abyssSpecialLanding = DataManager.LANDING_SPECIAL_LOCATION_DATA.getLandingSpecialLocations();
+		DAOManager.getDAO(AbyssSpecialLandingDAO.class).loadLandingSpecialLocations(abyssSpecialLanding);
+		for (LandingSpecialLocation loc : getLandingSpecialLocations().values()) {
+			if (loc.getType().equals(LandingSpecialStateType.ACTIVE)) {
+				spawn(loc, LandingSpecialStateType.ACTIVE);
+			}
+			log.info("[Abyss Landing Monument] ID: " + loc.getId() + " - STATUS: " + loc.getType());
+		}
+		log.info("[Abyss Landing Monument] Loaded " + abyssSpecialLanding.size() + " Locations");
+	}
+
+	public void startLanding(final int id) {
+		final SpecialLanding<?> land;
+		synchronized (this) {
+			if (activeSpecialLanding.containsKey(id)) {
+				return;
+			}
+			land = new SPLanding(abyssSpecialLanding.get(id));
+			activeSpecialLanding.put(id, land);
+		}
+		land.start();
+	}
+
+	public void stopLanding(int id) {
+		if (!activeSpecialLanding.containsKey(id)) {
+			return;
+		}
+		SpecialLanding<?> landing;
+		synchronized (this) {
+			landing = activeSpecialLanding.remove(id);
+		}
+		if (landing == null) {
+			return;
+		}
+		landing.stop();
+	}
+
+	public static void spawn(LandingSpecialLocation loc, LandingSpecialStateType fstate) {
+		if (fstate.equals(LandingSpecialStateType.ACTIVE)) {
+			List<SpawnGroup2> locSpawns = DataManager.SPAWNS_DATA2.getLandingSpecialSpawnsByLocId(loc.getId());
+			for (SpawnGroup2 group : locSpawns) {
+				for (SpawnTemplate st : group.getSpawnTemplates()) {
+					LandingSpecialSpawnTemplate landingtTemplate = (LandingSpecialSpawnTemplate) st;
+					if (landingtTemplate.getFStateType().equals(fstate)) {
+						loc.getSpawned().add(SpawnEngine.spawnObject(landingtTemplate, 1));
+					}
+				}
+			}
+		}
+	}
+
+	public static void onSave(LandingSpecialLocation loc) {
+		getDAO().updateLocation(loc);
+	}
+
+	public static void despawn(LandingSpecialLocation loc) {
+		if (loc.getSpawned() == null) {
+			return;
+		}
+		for (VisibleObject obj : loc.getSpawned()) {
+			Npc spawned = (Npc) obj;
+			spawned.setDespawnDelayed(true);
+			if (spawned.getAggroList().getList().isEmpty()) {
+				spawned.getController().cancelTask(TaskId.RESPAWN);
+				obj.getController().onDelete();
+			}
+		}
+		loc.getSpawned().clear();
+	}
+
+	public static AbyssLandingSpecialService getInstance() {
+		return AbyssLandingSpecialService.SingletonHolder.instance;
+	}
+
+	private static class SingletonHolder {
+		protected static final AbyssLandingSpecialService instance = new AbyssLandingSpecialService();
+	}
+
+	public LandingSpecialLocation getLandingSpecialLocation(int id) {
+		return abyssSpecialLanding.get(id);
+	}
+
+	public static Map<Integer, LandingSpecialLocation> getLandingSpecialLocations() {
+		return abyssSpecialLanding;
+	}
+
+	public static AbyssSpecialLandingDAO getDAO() {
+		return DAOManager.getDAO(AbyssSpecialLandingDAO.class);
+	}
 }

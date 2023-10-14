@@ -61,7 +61,7 @@ public class LegionMemberContainer {
 	 */
 	public void addMemberEx(LegionMemberEx legionMember) {
 		if (legionMemberExById.containsKey(legionMember.getObjectId())
-			|| legionMemberExByName.containsKey(legionMember.getName()))
+				|| legionMemberExByName.containsKey(legionMember.getName()))
 			throw new DuplicateAionObjectException();
 		legionMemberExById.put(legionMember.getObjectId(), legionMember);
 		legionMemberExByName.put(legionMember.getName(), legionMember);

@@ -27,42 +27,42 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  */
 public class CM_TUNE_RESULT extends AionClientPacket {
 
-    private int itemObjectId;
-    private int unk;
-    private int accept;
+	private int itemObjectId;
+	private int unk;
+	private int accept;
 
-    public CM_TUNE_RESULT(int opcode, State state, State... restStates) {
-        super(opcode, state, restStates);
-    }
+	public CM_TUNE_RESULT(int opcode, State state, State... restStates) {
+		super(opcode, state, restStates);
+	}
 
-    @Override
-    protected void readImpl() {
-        itemObjectId = readD();
-        unk = readC();
+	@Override
+	protected void readImpl() {
+		itemObjectId = readD();
+		unk = readC();
 
-        switch (unk) {
-            case 0: {
-                accept = 0;
-                break;
-            }
-            case 1: {
-                accept = 1;
-                break;
+		switch (unk) {
+		case 0: {
+			accept = 0;
+			break;
+		}
+		case 1: {
+			accept = 1;
+			break;
 
-            }
-            default:
-                break;
-        }
-    }
+		}
+		default:
+			break;
+		}
+	}
 
-    @Override
-    protected void runImpl() {
-        Player player = getConnection().getActivePlayer();
-        if (accept > 0) {
-            PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ITEM_REIDENTIFY_APPLY_YES(player.getInventory().getItemByObjId(itemObjectId).getItemName()));
-        }
-        else {
-            PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1401911));
-        }
-    }
+	@Override
+	protected void runImpl() {
+		Player player = getConnection().getActivePlayer();
+		if (accept > 0) {
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_ITEM_REIDENTIFY_APPLY_YES(
+					player.getInventory().getItemByObjId(itemObjectId).getItemName()));
+		} else {
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1401911));
+		}
+	}
 }

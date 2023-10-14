@@ -27,18 +27,17 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "zorshiv_dredgion")
-public class ZorshivDredgionTemplate
-{
+public class ZorshivDredgionTemplate {
 	@XmlAttribute(name = "id")
 	protected int id;
-	
+
 	@XmlAttribute(name = "name")
 	protected String nameId;
-	
+
 	public int getId() {
 		return this.id;
 	}
-	
+
 	public String getName() {
 		return nameId;
 	}

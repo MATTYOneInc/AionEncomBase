@@ -35,7 +35,8 @@ import com.aionemu.gameserver.model.templates.rewards.CraftRecipe;
  * <p>
  * Java class for CraftRecipeGroup complex type.
  * <p>
- * The following schema fragment specifies the expected content contained within this class.
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="CraftRecipeGroup">
@@ -59,9 +60,10 @@ public class CraftRecipeGroup extends CraftGroup {
 	/**
 	 * Gets the value of the item property.
 	 * <p>
-	 * This accessor method returns a reference to the live list, not a snapshot. Therefore any modification you make to
-	 * the returned list will be present inside the JAXB object. This is why there is not a <CODE>set</CODE> method for
-	 * the item property.
+	 * This accessor method returns a reference to the live list, not a snapshot.
+	 * Therefore any modification you make to the returned list will be present
+	 * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
+	 * for the item property.
 	 * <p>
 	 * For example, to add a new item, do as follows:
 	 * 
@@ -80,6 +82,7 @@ public class CraftRecipeGroup extends CraftGroup {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see com.aionemu.gameserver.model.templates.itemgroups.ItemGroup#getRewards()
 	 */
 	@Override

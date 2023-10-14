@@ -26,19 +26,18 @@ import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
  * @author Ranastic (Encom)
  */
 
-public class PlumeInfoBlobEntry extends ItemBlobEntry
-{
+public class PlumeInfoBlobEntry extends ItemBlobEntry {
 	PlumeInfoBlobEntry() {
 		super(ItemBlobType.PLUME_INFO);
 	}
-	
+
 	@Override
 	public void writeThisBlob(ByteBuffer buf) {
 		Item item = ownerItem;
 		writeQ(buf, ItemSlot.getSlotFor(item.getItemTemplate().getItemSlot()).getSlotIdMask());
 		writeQ(buf, ItemSlot.getSlotFor(item.getItemTemplate().getItemSlot()).getSlotIdMask());
 	}
-	
+
 	@Override
 	public int getSize() {
 		return 16;

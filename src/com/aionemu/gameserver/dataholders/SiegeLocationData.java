@@ -34,53 +34,52 @@ import javolution.util.FastMap;
 
 @XmlRootElement(name = "siege_locations")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SiegeLocationData
-{
+public class SiegeLocationData {
 	@XmlElement(name = "siege_location")
 	private List<SiegeLocationTemplate> siegeLocationTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, ArtifactLocation> artifactLocations = new FastMap<Integer, ArtifactLocation>();
 	@XmlTransient
 	private FastMap<Integer, FortressLocation> fortressLocations = new FastMap<Integer, FortressLocation>();
 	@XmlTransient
 	private FastMap<Integer, SiegeLocation> siegeLocations = new FastMap<Integer, SiegeLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		artifactLocations.clear();
 		fortressLocations.clear();
 		siegeLocations.clear();
 		for (SiegeLocationTemplate template : siegeLocationTemplates) {
 			switch (template.getType()) {
-				case FORTRESS:
-					FortressLocation fortress = new FortressLocation(template);
-					fortressLocations.put(template.getId(), fortress);
-					siegeLocations.put(template.getId(), fortress);
-					artifactLocations.put(template.getId(), new ArtifactLocation(template));
+			case FORTRESS:
+				FortressLocation fortress = new FortressLocation(template);
+				fortressLocations.put(template.getId(), fortress);
+				siegeLocations.put(template.getId(), fortress);
+				artifactLocations.put(template.getId(), new ArtifactLocation(template));
 				break;
-				case ARTIFACT:
-					ArtifactLocation artifact = new ArtifactLocation(template);
-					artifactLocations.put(template.getId(), artifact);
-					siegeLocations.put(template.getId(), artifact);
+			case ARTIFACT:
+				ArtifactLocation artifact = new ArtifactLocation(template);
+				artifactLocations.put(template.getId(), artifact);
+				siegeLocations.put(template.getId(), artifact);
 				break;
-				default:
+			default:
 				break;
 			}
 		}
 	}
-	
+
 	public int size() {
 		return siegeLocations.size();
 	}
-	
+
 	public FastMap<Integer, ArtifactLocation> getArtifacts() {
 		return artifactLocations;
 	}
-	
+
 	public FastMap<Integer, FortressLocation> getFortress() {
 		return fortressLocations;
 	}
-	
+
 	public FastMap<Integer, SiegeLocation> getSiegeLocations() {
 		return siegeLocations;
 	}

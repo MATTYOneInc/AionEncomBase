@@ -64,11 +64,12 @@ public class MagicCounterAtkEffect extends EffectTemplate {
 					@Override
 					public void run() {
 
-						if (skill.getSkillTemplate().getType() == SkillType.MAGICAL && skill.getSkillTemplate().getSubType() == SkillSubType.ATTACK) {
+						if (skill.getSkillTemplate().getType() == SkillType.MAGICAL
+								&& skill.getSkillTemplate().getSubType() == SkillSubType.ATTACK) {
 							if ((int) (cls.getMaxHp() / 100f * value) <= maxdmg) {
-								effected.getController().onAttack(effector, effect.getSkillId(), TYPE.DAMAGE, (int) (cls.getMaxHp() / 100f * value), true, LOG.REGULAR);
-							}
-							else {
+								effected.getController().onAttack(effector, effect.getSkillId(), TYPE.DAMAGE,
+										(int) (cls.getMaxHp() / 100f * value), true, LOG.REGULAR);
+							} else {
 								effected.getController().onAttack(effector, maxdmg, true);
 							}
 						}

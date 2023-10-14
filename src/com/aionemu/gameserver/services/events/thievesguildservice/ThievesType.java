@@ -20,14 +20,9 @@ package com.aionemu.gameserver.services.events.thievesguildservice;
  * @author Rinzler (Encom)
  */
 public enum ThievesType {
-	
+
 	NONE(0), // Нет
-	BRONZE(1),
-	SILVER(2),
-	GOLD(3),
-	PLATINUM(4),
-	MITHRIL(5),
-	SERAMIUM(6);
+	BRONZE(1), SILVER(2), GOLD(3), PLATINUM(4), MITHRIL(5), SERAMIUM(6);
 
 	private int id;
 
@@ -38,7 +33,7 @@ public enum ThievesType {
 	public int getId() {
 		return id;
 	}
-	
+
 	public static ThievesType getThievesType(int id) {
 		for (ThievesType type : values()) {
 			if (id == type.getId()) {

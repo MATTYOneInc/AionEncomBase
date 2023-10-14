@@ -24,18 +24,18 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 import javolution.util.FastList;
 
-public class LookingForParty extends AbstractLockManager
-{
+public class LookingForParty extends AbstractLockManager {
 	private List<SearchInstance> searchInstances = new ArrayList<SearchInstance>();
 	private Player player;
 	private long startEnterTime;
 	private long penaltyTime;
-	
+
 	public LookingForParty(Player player, int instanceMaskId, EntryRequestType ert) {
 		this.player = player;
-		searchInstances.add(new SearchInstance(instanceMaskId, ert, ert.isGroupEntry() ? player.getPlayerGroup2().getOnlineMembers() : null));
+		searchInstances.add(new SearchInstance(instanceMaskId, ert,
+				ert.isGroupEntry() ? player.getPlayerGroup2().getOnlineMembers() : null));
 	}
-	
+
 	public int unregisterInstance(int instanceMaskId) {
 		super.writeLock();
 		try {
@@ -46,12 +46,11 @@ public class LookingForParty extends AbstractLockManager
 				}
 			}
 			return searchInstances.size();
-		}
-		finally {
+		} finally {
 			super.writeUnlock();
 		}
 	}
-	
+
 	public List<SearchInstance> getSearchInstances() {
 		FastList<SearchInstance> tempList = FastList.newInstance();
 		for (SearchInstance si : searchInstances) {
@@ -59,17 +58,17 @@ public class LookingForParty extends AbstractLockManager
 		}
 		return tempList;
 	}
-	
+
 	public void addInstanceMaskId(int instanceMaskId, EntryRequestType ert) {
 		super.writeLock();
 		try {
-			searchInstances.add(new SearchInstance(instanceMaskId, ert, ert.isGroupEntry() ? player.getPlayerGroup2().getOnlineMembers() : null));
-		}
-		finally {
+			searchInstances.add(new SearchInstance(instanceMaskId, ert,
+					ert.isGroupEntry() ? player.getPlayerGroup2().getOnlineMembers() : null));
+		} finally {
 			super.writeUnlock();
 		}
 	}
-	
+
 	public SearchInstance getSearchInstance(int instanceMaskId) {
 		super.readLock();
 		try {
@@ -79,12 +78,11 @@ public class LookingForParty extends AbstractLockManager
 				}
 			}
 			return null;
-		}
-		finally {
+		} finally {
 			super.readUnlock();
 		}
 	}
-	
+
 	public boolean isRegistredInstance(int instanceMaskId) {
 		for (SearchInstance si : searchInstances) {
 			if (si.getInstanceMaskId() == instanceMaskId) {
@@ -93,27 +91,27 @@ public class LookingForParty extends AbstractLockManager
 		}
 		return false;
 	}
-	
+
 	public Player getPlayer() {
 		return player;
 	}
-	
+
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
-	
+
 	public void setPenaltyTime() {
 		penaltyTime = System.currentTimeMillis();
 	}
-	
+
 	public boolean hasPenalty() {
 		return System.currentTimeMillis() - penaltyTime <= 10000;
 	}
-	
+
 	public void setStartEnterTime() {
 		startEnterTime = System.currentTimeMillis();
 	}
-	
+
 	public boolean isOnStartEnterTask() {
 		return System.currentTimeMillis() - startEnterTime <= 120000;
 	}

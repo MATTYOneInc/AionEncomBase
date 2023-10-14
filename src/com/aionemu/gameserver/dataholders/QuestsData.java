@@ -58,8 +58,7 @@ public class QuestsData {
 				List<QuestTemplate> factionQuests = new ArrayList<QuestTemplate>();
 				factionQuests.add(quest);
 				sortedByFactionId.put(npcFactionId, factionQuests);
-			}
-			else {
+			} else {
 				sortedByFactionId.get(npcFactionId).add(quest);
 			}
 		}
@@ -73,7 +72,7 @@ public class QuestsData {
 		List<QuestTemplate> factionQuests = sortedByFactionId.get(npcFactionId);
 		List<QuestTemplate> quests = new ArrayList<QuestTemplate>();
 		QuestEnv questEnv = new QuestEnv(null, player, 0, 0);
-		for (QuestTemplate questTemplate : factionQuests){
+		for (QuestTemplate questTemplate : factionQuests) {
 			if (!QuestEngine.getInstance().isHaveHandler(questTemplate.getId())) {
 				continue;
 			}
@@ -100,8 +99,7 @@ public class QuestsData {
 	}
 
 	/**
-	 * @param questsData
-	 *          the questsData to set
+	 * @param questsData the questsData to set
 	 */
 	public void setQuestsData(List<QuestTemplate> questsData) {
 		this.questsData = questsData;

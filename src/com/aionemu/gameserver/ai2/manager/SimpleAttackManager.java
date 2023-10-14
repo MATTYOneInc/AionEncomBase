@@ -28,8 +28,7 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.geo.GeoService;
 
 /**
- * @author ATracer
- * Rework: Angry Catster
+ * @author ATracer Rework: Angry Catster
  */
 public class SimpleAttackManager {
 
@@ -59,8 +58,7 @@ public class SimpleAttackManager {
 		npcAI.getOwner().getGameStats().setNextAttackTime(System.currentTimeMillis() + delay);
 		if (delay > 0) {
 			ThreadPoolManager.getInstance().schedule(new SimpleAttackAction(npcAI), delay);
-		}
-		else {
+		} else {
 			attackAction(npcAI);
 		}
 	}
@@ -81,10 +79,13 @@ public class SimpleAttackManager {
 			float distance = npc.getDistanceToTarget();
 			AI2Logger.info((AbstractAI) npc.getAi2(), "isTargetInAttackRange: " + distance);
 		}
-		if (!GeoService.getInstance().canSee(npc, npc.getTarget()) || npc.getTarget() == null || !(npc.getTarget() instanceof Creature))
+		if (!GeoService.getInstance().canSee(npc, npc.getTarget()) || npc.getTarget() == null
+				|| !(npc.getTarget() instanceof Creature))
 			return false;
-		return MathUtil.isInAttackRange(npc, (Creature) npc.getTarget(), npc.getGameStats().getAttackRange().getCurrent() / 1000f);
-		//return distance <= npc.getController().getAttackDistanceToTarget() + NpcMoveController.MOVE_CHECK_OFFSET;
+		return MathUtil.isInAttackRange(npc, (Creature) npc.getTarget(),
+				npc.getGameStats().getAttackRange().getCurrent() / 1000f);
+		// return distance <= npc.getController().getAttackDistanceToTarget() +
+		// NpcMoveController.MOVE_CHECK_OFFSET;
 	}
 
 	/**
@@ -106,8 +107,7 @@ public class SimpleAttackManager {
 				return;
 			}
 			npcAI.onGeneralEvent(AIEventType.TARGET_TOOFAR);
-		}
-		else {
+		} else {
 			npcAI.onGeneralEvent(AIEventType.TARGET_GIVEUP);
 		}
 	}
@@ -139,8 +139,7 @@ public class SimpleAttackManager {
 		public void run() {
 			if (!npcAI.getOwner().getGameStats().isNextAttackScheduled()) {
 				attackAction(npcAI);
-			}
-			else {
+			} else {
 				if (npcAI.isLogging()) {
 					AI2Logger.info(npcAI, "Scheduled checked attacked confirmed");
 				}

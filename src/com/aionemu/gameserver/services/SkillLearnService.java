@@ -32,10 +32,9 @@ import com.aionemu.gameserver.skillengine.model.SkillLearnTemplate;
 import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class SkillLearnService
-{
+public class SkillLearnService {
 	private static final Logger log = LoggerFactory.getLogger(SkillLearnService.class);
-	
+
 	public static void addNewSkills(Player player) {
 		int level = player.getCommonData().getLevel();
 		PlayerClass playerClass = player.getCommonData().getPlayerClass();
@@ -43,72 +42,82 @@ public class SkillLearnService
 		PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(player, player.getSkillList().getBasicSkills()));
 		addSkills(player, level, playerClass, playerRace);
 	}
-	
+
 	public static void addMissingSkills(Player player) {
 		int level = player.getCommonData().getLevel();
 		PlayerClass playerClass = player.getCommonData().getPlayerClass();
 		Race playerRace = player.getRace();
 		for (int i = 0; i <= level; i++) {
 			addSkills(player, i, playerClass, playerRace);
-		} if (!playerClass.isStartingClass()) {
+		}
+		if (!playerClass.isStartingClass()) {
 			PlayerClass startinClass = PlayerClass.getStartingClassFor(playerClass);
 			for (int i = 1; i < 10; i++) {
 				addSkills(player, i, startinClass, playerRace);
 			}
 			PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(player, player.getSkillList().getBasicSkills()));
-			for (PlayerSkillEntry stigmaSkill: player.getSkillList().getStigmaSkills()) {
+			for (PlayerSkillEntry stigmaSkill : player.getSkillList().getStigmaSkills()) {
 				PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(player, stigmaSkill));
 			}
 		}
 	}
-	
+
 	public static void addMissingSkills4P(Player player) {
 		int level = player.getCommonData().getLevel();
 		PlayerClass playerClass = player.getCommonData().getPlayerClass();
 		Race playerRace = player.getRace();
 		for (int i = 0; i <= level; i++) {
 			addSkills(player, i, playerClass, playerRace);
-		} if (!playerClass.isStartingClass()) {
+		}
+		if (!playerClass.isStartingClass()) {
 			PlayerClass startinClass = PlayerClass.getStartingClassFor(playerClass);
 			for (int i = 1; i < 10; i++) {
 				addSkills(player, i, startinClass, playerRace);
 			}
 			PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(player, player.getSkillList().getBasicSkills()));
-			for (PlayerSkillEntry stigmaSkill: player.getSkillList().getStigmaSkills()) {
+			for (PlayerSkillEntry stigmaSkill : player.getSkillList().getStigmaSkills()) {
 				PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(player, stigmaSkill));
 			}
 		}
 	}
-	
+
 	public static void addSkills(Player player, int level, PlayerClass playerClass, Race playerRace) {
-		SkillLearnTemplate[] skillTemplates = DataManager.SKILL_TREE_DATA.getTemplatesFor(playerClass, level, playerRace);
+		SkillLearnTemplate[] skillTemplates = DataManager.SKILL_TREE_DATA.getTemplatesFor(playerClass, level,
+				playerRace);
 		PlayerSkillList playerSkillList = player.getSkillList();
 		for (SkillLearnTemplate template : skillTemplates) {
 			if (!checkLearnIsPossible(player, playerSkillList, template)) {
 				continue;
-			} if (template.isStigma()) {
+			}
+			if (template.isStigma()) {
 				playerSkillList.addStigmaSkill(player, template.getSkillId(), template.getSkillLevel());
-			} if (playerSkillList.isCraftSkill(template.getSkillId()) && player.getSkillList().isSkillPresent(template.getSkillId())) {
+			}
+			if (playerSkillList.isCraftSkill(template.getSkillId())
+					&& player.getSkillList().isSkillPresent(template.getSkillId())) {
 				continue;
 			} else {
 				playerSkillList.addSkill(player, template.getSkillId(), template.getSkillLevel());
 			}
 		}
 	}
-	
-	private static boolean checkLearnIsPossible(Player player, PlayerSkillList playerSkillList, SkillLearnTemplate template) {
+
+	private static boolean checkLearnIsPossible(Player player, PlayerSkillList playerSkillList,
+			SkillLearnTemplate template) {
 		if (playerSkillList.isSkillPresent(template.getSkillId())) {
 			return true;
-		} if (!template.isStigma()) {
+		}
+		if (!template.isStigma()) {
 			return true;
-		} if ((player.havePermission(MembershipConfig.STIGMA_AUTOLEARN) && template.isStigma())) {
+		}
+		if ((player.havePermission(MembershipConfig.STIGMA_AUTOLEARN) && template.isStigma())) {
 			return true;
-		} if (template.isAutoLearn()) {
+		}
+		if (template.isAutoLearn()) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	public static void learnSkillBook(Player player, int skillId) {
 		SkillLearnTemplate[] skillTemplates = null;
 		int maxLevel = 0;
@@ -134,28 +143,32 @@ public class SkillLearnService
 			Integer skillLevel = player.getSkillList().getSkillLevel(skillId);
 			if (skillLevel == null) {
 				skillLevel = 1;
-			} if (player.getEffectController().hasAbnormalEffect(skillId)) {
+			}
+			if (player.getEffectController().hasAbnormalEffect(skillId)) {
 				player.getEffectController().removeEffect(skillId);
 			}
-			PacketSendUtility.sendPacket(player, new SM_SKILL_REMOVE(skillId, skillLevel, player.getSkillList().getSkillEntry(skillId).isStigma(), false));
+			PacketSendUtility.sendPacket(player, new SM_SKILL_REMOVE(skillId, skillLevel,
+					player.getSkillList().getSkillEntry(skillId).isStigma(), false));
 			player.getSkillList().removeSkill(skillId);
 		}
 	}
-	
+
 	public static void removeLinkedSkill(Player player, int skillId) {
 		if (player.getSkillList().isSkillPresent(skillId)) {
 			Integer skillLevel = player.getSkillList().getSkillLevel(skillId);
 			if (skillLevel == null) {
 				skillLevel = 1;
-			} if (player.getEffectController().hasAbnormalEffect(skillId)) {
+			}
+			if (player.getEffectController().hasAbnormalEffect(skillId)) {
 				player.getEffectController().removeEffect(skillId);
 			}
-			PacketSendUtility.sendPacket(player, new SM_SKILL_REMOVE(skillId, skillLevel, false, player.getSkillList().getSkillEntry(skillId).isLinked()));
+			PacketSendUtility.sendPacket(player, new SM_SKILL_REMOVE(skillId, skillLevel, false,
+					player.getSkillList().getSkillEntry(skillId).isLinked()));
 			player.getSkillList().removeSkill(skillId);
 			player.setLinkedSkill(0);
 		}
 	}
-	
+
 	public static int getSkillLearnLevel(int skillId, int playerLevel, int wantedSkillLevel) {
 		SkillLearnTemplate[] skillTemplates = DataManager.SKILL_TREE_DATA.getTemplatesForSkill(skillId);
 		int learnFinishes = 0;
@@ -164,7 +177,8 @@ public class SkillLearnService
 			if (maxLevel < template.getSkillLevel()) {
 				maxLevel = template.getSkillLevel();
 			}
-		} if (maxLevel == 0) {
+		}
+		if (maxLevel == 0) {
 			return wantedSkillLevel;
 		}
 		learnFinishes = playerLevel + maxLevel;
@@ -173,7 +187,7 @@ public class SkillLearnService
 		}
 		return Math.max(wantedSkillLevel, Math.min(playerLevel - (learnFinishes - maxLevel) + 1, maxLevel));
 	}
-	
+
 	public static int getSkillMinLevel(int skillId, int playerLevel, int wantedSkillLevel) {
 		SkillLearnTemplate[] skillTemplates = DataManager.SKILL_TREE_DATA.getTemplatesForSkill(skillId);
 		SkillLearnTemplate foundTemplate = null;
@@ -181,7 +195,8 @@ public class SkillLearnService
 			if (template.getSkillLevel() <= wantedSkillLevel && template.getMinLevel() <= playerLevel) {
 				foundTemplate = template;
 			}
-		} if (foundTemplate == null) {
+		}
+		if (foundTemplate == null) {
 			return playerLevel;
 		}
 		return foundTemplate.getMinLevel();

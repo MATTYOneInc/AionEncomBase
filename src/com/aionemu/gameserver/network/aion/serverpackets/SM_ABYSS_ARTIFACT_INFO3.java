@@ -24,26 +24,25 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.SiegeService;
 
-public class SM_ABYSS_ARTIFACT_INFO3 extends AionServerPacket
-{
+public class SM_ABYSS_ARTIFACT_INFO3 extends AionServerPacket {
 	private boolean teleportStatus;
 	private Collection<ArtifactLocation> locations;
-	
+
 	public SM_ABYSS_ARTIFACT_INFO3(Collection<ArtifactLocation> collection) {
-        this.locations = collection;
-    }
-	
-    public SM_ABYSS_ARTIFACT_INFO3(int loc) {
-        locations = new ArrayList<ArtifactLocation>();
-        locations.add(SiegeService.getInstance().getArtifact(loc));
-    }
-	
-    public SM_ABYSS_ARTIFACT_INFO3(int locationId, boolean teleportStatus) {
-        locations = new ArrayList<ArtifactLocation>();
-        locations.add(SiegeService.getInstance().getArtifact(locationId));
-        this.teleportStatus = teleportStatus;
-    }
-	
+		this.locations = collection;
+	}
+
+	public SM_ABYSS_ARTIFACT_INFO3(int loc) {
+		locations = new ArrayList<ArtifactLocation>();
+		locations.add(SiegeService.getInstance().getArtifact(loc));
+	}
+
+	public SM_ABYSS_ARTIFACT_INFO3(int locationId, boolean teleportStatus) {
+		locations = new ArrayList<ArtifactLocation>();
+		locations.add(SiegeService.getInstance().getArtifact(locationId));
+		this.teleportStatus = teleportStatus;
+	}
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeH(locations.size());

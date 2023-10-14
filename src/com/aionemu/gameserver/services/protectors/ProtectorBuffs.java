@@ -31,12 +31,11 @@ import com.aionemu.gameserver.model.templates.serial_guard.GuardTypePenaltyAttr;
 import com.aionemu.gameserver.model.templates.serial_guard.GuardTypeRestriction;
 import com.aionemu.gameserver.skillengine.change.Func;
 
-public class ProtectorBuffs implements StatOwner
-{
+public class ProtectorBuffs implements StatOwner {
 	private GuardRankRestriction guardRankRestriction;
 	private GuardTypeRestriction guardTypeRestriction;
 	private List<IStatFunction> functions = new ArrayList<IStatFunction>();
-	
+
 	public void applyRankEffect(Player player, int rank) {
 		if (rank == 0) {
 			return;
@@ -44,16 +43,19 @@ public class ProtectorBuffs implements StatOwner
 		guardRankRestriction = DataManager.SERIAL_GUARD_DATA.getGuardRankRestriction(rank);
 		if (hasDebuff()) {
 			endEffect(player);
-		} for (GuardRankPenaltyAttr guardrankPenaltyAttr : guardRankRestriction.getGuardPenaltyAttr()) {
+		}
+		for (GuardRankPenaltyAttr guardrankPenaltyAttr : guardRankRestriction.getGuardPenaltyAttr()) {
 			if (guardrankPenaltyAttr.getFunc().equals(Func.PERCENT)) {
-				functions.add(new StatRateFunction(guardrankPenaltyAttr.getStat(), guardrankPenaltyAttr.getValue(), true));
+				functions.add(
+						new StatRateFunction(guardrankPenaltyAttr.getStat(), guardrankPenaltyAttr.getValue(), true));
 			} else {
-				functions.add(new StatAddFunction(guardrankPenaltyAttr.getStat(), guardrankPenaltyAttr.getValue(), true));
+				functions.add(
+						new StatAddFunction(guardrankPenaltyAttr.getStat(), guardrankPenaltyAttr.getValue(), true));
 			}
 		}
 		player.getGameStats().addEffect(this, functions);
 	}
-	
+
 	public void applyTypeEffect(Player player, int type) {
 		if (type == 0) {
 			return;
@@ -61,20 +63,23 @@ public class ProtectorBuffs implements StatOwner
 		guardTypeRestriction = DataManager.SERIAL_GUARD_DATA.getGuardTypeRestriction(type);
 		if (hasDebuff()) {
 			endEffect(player);
-		} for (GuardTypePenaltyAttr guardtypePenaltyAttr : guardTypeRestriction.getGuardPenaltyAttr()) {
+		}
+		for (GuardTypePenaltyAttr guardtypePenaltyAttr : guardTypeRestriction.getGuardPenaltyAttr()) {
 			if (guardtypePenaltyAttr.getFunc().equals(Func.PERCENT)) {
-				functions.add(new StatRateFunction(guardtypePenaltyAttr.getStat(), guardtypePenaltyAttr.getValue(), true));
+				functions.add(
+						new StatRateFunction(guardtypePenaltyAttr.getStat(), guardtypePenaltyAttr.getValue(), true));
 			} else {
-				functions.add(new StatAddFunction(guardtypePenaltyAttr.getStat(), guardtypePenaltyAttr.getValue(), true));
+				functions.add(
+						new StatAddFunction(guardtypePenaltyAttr.getStat(), guardtypePenaltyAttr.getValue(), true));
 			}
 		}
 		player.getGameStats().addEffect(this, functions);
 	}
-	
+
 	public boolean hasDebuff() {
 		return !functions.isEmpty();
 	}
-	
+
 	public void endEffect(Player player) {
 		functions.clear();
 		player.getGameStats().endEffect(this);

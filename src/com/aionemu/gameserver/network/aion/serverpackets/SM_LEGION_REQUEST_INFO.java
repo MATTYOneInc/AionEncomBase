@@ -21,17 +21,17 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 public class SM_LEGION_REQUEST_INFO extends AionServerPacket {
 
-    private int legionId;
-    private String legionName;
-	
+	private int legionId;
+	private String legionName;
+
 	public SM_LEGION_REQUEST_INFO(int legionId, String legionName) {
-    	this.legionId = legionId;
-    	this.legionName = legionName;
-    }
-	
+		this.legionId = legionId;
+		this.legionName = legionName;
+	}
+
 	@Override
-    protected void writeImpl(AionConnection con) {
-    	writeD(legionId);
-    	writeS(legionName);
-    }
+	protected void writeImpl(AionConnection con) {
+		writeD(legionId);
+		writeS(legionName);
+	}
 }

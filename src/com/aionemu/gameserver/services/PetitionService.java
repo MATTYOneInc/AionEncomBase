@@ -68,9 +68,9 @@ public class PetitionService {
 			}
 		}
 		for (Petition p : petitions) {
-			if(registeredPetitions.containsKey(p.getPetitionId())) {
+			if (registeredPetitions.containsKey(p.getPetitionId())) {
 				registeredPetitions.remove(p.getPetitionId());
-            }
+			}
 		}
 		DAOManager.getDAO(PetitionDAO.class).deletePetition(playerObjId);
 		if (playerObjId > 0 && World.getInstance().findPlayer(playerObjId) != null) {
@@ -92,7 +92,7 @@ public class PetitionService {
 	}
 
 	public synchronized Petition registerPetition(Player sender, int typeId, String title, String contentText,
-		String additionalData) {
+			String additionalData) {
 		int id = DAOManager.getDAO(PetitionDAO.class).getNextAvailableId();
 		Petition ptt = new Petition(id, sender.getObjectId(), typeId, title, contentText, additionalData, 0);
 		DAOManager.getDAO(PetitionDAO.class).insertPetition(ptt);
@@ -115,7 +115,8 @@ public class PetitionService {
 		while (players.hasNext()) {
 			Player p = players.next();
 			if (p.getAccessLevel() > 0) {
-				PacketSendUtility.sendBrightYellowMessageOnCenter(p, "New Support Petition from: " + sender.getName() + " (#" + petitionId + ")");
+				PacketSendUtility.sendBrightYellowMessageOnCenter(p,
+						"New Support Petition from: " + sender.getName() + " (#" + petitionId + ")");
 			}
 		}
 	}

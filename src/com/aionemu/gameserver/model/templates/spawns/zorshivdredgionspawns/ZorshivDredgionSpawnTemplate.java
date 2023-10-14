@@ -25,39 +25,39 @@ import com.aionemu.gameserver.model.zorshivdredgion.ZorshivDredgionStateType;
  * @author Rinzler (Encom)
  */
 
-public class ZorshivDredgionSpawnTemplate extends SpawnTemplate
-{
+public class ZorshivDredgionSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private ZorshivDredgionStateType zorshivDredgionType;
-	
+
 	public ZorshivDredgionSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public ZorshivDredgionSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public ZorshivDredgionSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public ZorshivDredgionStateType getZStateType() {
 		return zorshivDredgionType;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void setZStateType(ZorshivDredgionStateType zorshivDredgionType) {
 		this.zorshivDredgionType = zorshivDredgionType;
 	}
-	
+
 	public final boolean isLanding() {
 		return zorshivDredgionType.equals(ZorshivDredgionStateType.LANDING);
 	}
-	
+
 	public final boolean isPeace() {
 		return zorshivDredgionType.equals(ZorshivDredgionStateType.PEACE);
 	}

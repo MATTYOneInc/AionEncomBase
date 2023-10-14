@@ -31,30 +31,29 @@ import com.aionemu.gameserver.model.PlayerClass;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name="ItemSkillEnhance")
-public class ItemSkillEnhance
-{
-    @XmlAttribute(name="id")
-    protected int id;
-	
-    @XmlAttribute(name="skill_id")
-    protected List<Integer> skillId;
-	
-    @XmlAttribute(name="player_class")
-    private PlayerClass classId = PlayerClass.ALL;
-	
-    public int getId() {
-        return this.id;
-    }
-	
-    public List<Integer> getSkillId() {
-        if (skillId == null) {
-            skillId = new ArrayList<Integer>();
-        }
-        return skillId;
-    }
-	
-    public PlayerClass getClassId() {
-        return classId;
-    }
+@XmlRootElement(name = "ItemSkillEnhance")
+public class ItemSkillEnhance {
+	@XmlAttribute(name = "id")
+	protected int id;
+
+	@XmlAttribute(name = "skill_id")
+	protected List<Integer> skillId;
+
+	@XmlAttribute(name = "player_class")
+	private PlayerClass classId = PlayerClass.ALL;
+
+	public int getId() {
+		return this.id;
+	}
+
+	public List<Integer> getSkillId() {
+		if (skillId == null) {
+			skillId = new ArrayList<Integer>();
+		}
+		return skillId;
+	}
+
+	public PlayerClass getClassId() {
+		return classId;
+	}
 }

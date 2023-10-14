@@ -30,48 +30,47 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class AgentLocation
-{
+public class AgentLocation {
 	protected int id;
 	protected boolean isActive;
 	protected AgentTemplate template;
 	protected AgentFight<AgentLocation> activeAgent;
 	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
 	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
+
 	public AgentLocation() {
 	}
-	
+
 	public AgentLocation(AgentTemplate template) {
 		this.template = template;
 		this.id = template.getId();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveAgent(AgentFight<AgentLocation> agent) {
 		isActive = agent != null;
 		this.activeAgent = agent;
 	}
-	
+
 	public AgentFight<AgentLocation> getActiveAgent() {
 		return activeAgent;
 	}
-	
+
 	public final AgentTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}

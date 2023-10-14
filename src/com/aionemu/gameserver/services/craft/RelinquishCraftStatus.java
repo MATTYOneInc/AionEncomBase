@@ -43,18 +43,19 @@ public class RelinquishCraftStatus {
 	private static final int masterPrice = 3497448;
 	private static final int systemMessageId = 1300388;
 	private static final int skillMessageId = 1401127;
-	
+
 	public static final RelinquishCraftStatus getInstance() {
 		return SingletonHolder.instance;
 	}
-	
+
 	public static void relinquishExpertStatus(Player player, Npc npc) {
 		CraftLearnTemplate craftLearnTemplate = CraftSkillUpdateService.npcBySkill.get(npc.getNpcId());
 		final int skillId = craftLearnTemplate.getSkillId();
 		PlayerSkillEntry skill = player.getSkillList().getSkillEntry(skillId);
 		if (!canRelinquishCraftStatus(player, skill, craftLearnTemplate, expertMinValue, expertMaxValue)) {
 			return;
-		} if (!successDecreaseKinah(player, expertPrice)) {
+		}
+		if (!successDecreaseKinah(player, expertPrice)) {
 			return;
 		}
 		skill.setSkillLvl(expertMinValue);
@@ -62,14 +63,15 @@ public class RelinquishCraftStatus {
 		removeRecipesAbove(player, skillId, expertMinValue);
 		deleteCraftStatusQuests(skillId, player, true);
 	}
-	
+
 	public static void relinquishMasterStatus(Player player, Npc npc) {
 		CraftLearnTemplate craftLearnTemplate = CraftSkillUpdateService.npcBySkill.get(npc.getNpcId());
 		final int skillId = craftLearnTemplate.getSkillId();
 		PlayerSkillEntry skill = player.getSkillList().getSkillEntry(skillId);
 		if (!canRelinquishCraftStatus(player, skill, craftLearnTemplate, masterMinValue, masterMaxValue)) {
 			return;
-		} if (!successDecreaseKinah(player, masterPrice)) {
+		}
+		if (!successDecreaseKinah(player, masterPrice)) {
 			return;
 		}
 		skill.setSkillLvl(masterMinValue);
@@ -77,16 +79,18 @@ public class RelinquishCraftStatus {
 		removeRecipesAbove(player, skillId, masterMinValue);
 		deleteCraftStatusQuests(skillId, player, false);
 	}
-	
-	private static boolean canRelinquishCraftStatus(Player player, PlayerSkillEntry skill, CraftLearnTemplate craftLearnTemplate, int minValue, int maxValue) {
+
+	private static boolean canRelinquishCraftStatus(Player player, PlayerSkillEntry skill,
+			CraftLearnTemplate craftLearnTemplate, int minValue, int maxValue) {
 		if (craftLearnTemplate == null || !craftLearnTemplate.isCraftSkill()) {
 			return false;
-		} if (skill == null || skill.getSkillLevel() < minValue || skill.getSkillLevel() > maxValue) {
+		}
+		if (skill == null || skill.getSkillLevel() < minValue || skill.getSkillLevel() > maxValue) {
 			return false;
 		}
 		return true;
 	}
-	
+
 	private static boolean successDecreaseKinah(Player player, int basePrice) {
 		if (!player.getInventory().tryDecreaseKinah(PricesService.getPriceForService(basePrice, player.getRace()))) {
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(systemMessageId));
@@ -94,7 +98,7 @@ public class RelinquishCraftStatus {
 		}
 		return true;
 	}
-	
+
 	public static void removeRecipesAbove(Player player, int skillId, int level) {
 		for (RecipeTemplate recipe : DataManager.RECIPE_DATA.getRecipeTemplates().valueCollection()) {
 			if (recipe.getSkillid() != skillId || recipe.getSkillpoint() < level) {
@@ -103,7 +107,7 @@ public class RelinquishCraftStatus {
 			player.getRecipeList().deleteRecipe(player, recipe.getId());
 		}
 	}
-	
+
 	public static void deleteCraftStatusQuests(int skillId, Player player, boolean isExpert) {
 		for (int questId : MasterQuestsList.getSkillsIds(skillId, player.getRace())) {
 			final QuestState qs = player.getQuestStateList().getQuestState(questId);
@@ -113,7 +117,8 @@ public class RelinquishCraftStatus {
 				qs.setStatus(null);
 				qs.setPersistentState(PersistentState.DELETED);
 			}
-		} if (isExpert) {
+		}
+		if (isExpert) {
 			for (int questId : ExpertQuestsList.getSkillsIds(skillId, player.getRace())) {
 				final QuestState qs = player.getQuestStateList().getQuestState(questId);
 				if (qs != null) {
@@ -124,11 +129,12 @@ public class RelinquishCraftStatus {
 				}
 			}
 		}
-		PacketSendUtility.sendPacket(player, new SM_QUEST_COMPLETED_LIST(player.getQuestStateList().getAllFinishedQuests()));
+		PacketSendUtility.sendPacket(player,
+				new SM_QUEST_COMPLETED_LIST(player.getQuestStateList().getAllFinishedQuests()));
 		player.getController().updateZone();
 		player.getController().updateNearbyQuests();
 	}
-	
+
 	public static void removeExcessCraftStatus(Player player, boolean isExpert) {
 		int minValue = isExpert ? expertMinValue : masterMinValue;
 		int maxValue = isExpert ? expertMaxValue : masterMaxValue;
@@ -137,13 +143,15 @@ public class RelinquishCraftStatus {
 		int maxCraftStatus = isExpert ? CraftConfig.MAX_EXPERT_CRAFTING_SKILLS : CraftConfig.MAX_MASTER_CRAFTING_SKILLS;
 		int countCraftStatus;
 		for (PlayerSkillEntry skill : player.getSkillList().getBasicSkills()) {
-			countCraftStatus = isExpert ? CraftSkillUpdateService.getTotalMasterCraftingSkills(player) + 
-			CraftSkillUpdateService.getTotalExpertCraftingSkills(player) : 
-			CraftSkillUpdateService.getTotalMasterCraftingSkills(player);
+			countCraftStatus = isExpert
+					? CraftSkillUpdateService.getTotalMasterCraftingSkills(player)
+							+ CraftSkillUpdateService.getTotalExpertCraftingSkills(player)
+					: CraftSkillUpdateService.getTotalMasterCraftingSkills(player);
 			if (countCraftStatus > maxCraftStatus) {
 				skillId = skill.getSkillId();
 				skillLevel = skill.getSkillLevel();
-				if (CraftSkillUpdateService.isCraftingSkill(skillId) && skillLevel > minValue && skillLevel <= maxValue) {
+				if (CraftSkillUpdateService.isCraftingSkill(skillId) && skillLevel > minValue
+						&& skillLevel <= maxValue) {
 					skill.setSkillLvl(minValue);
 					PacketSendUtility.sendPacket(player, new SM_SKILL_LIST(skill, skillMessageId, false));
 					removeRecipesAbove(player, skillId, minValue);
@@ -152,31 +160,32 @@ public class RelinquishCraftStatus {
 				continue;
 			}
 			break;
-		} if (!isExpert) {
+		}
+		if (!isExpert) {
 			removeExcessCraftStatus(player, true);
 		}
 	}
-	
+
 	public static int getExpertMinValue() {
 		return expertMinValue;
 	}
-	
+
 	public static int getExpertMaxValue() {
 		return expertMaxValue;
 	}
-	
+
 	public static int getMasterMinValue() {
 		return masterMinValue;
 	}
-	
+
 	public static int getMasterMaxValue() {
 		return masterMaxValue;
 	}
-	
+
 	public static int getSkillMessageId() {
 		return skillMessageId;
 	}
-	
+
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final RelinquishCraftStatus instance = new RelinquishCraftStatus();

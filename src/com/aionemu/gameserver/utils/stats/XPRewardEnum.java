@@ -22,22 +22,9 @@ import java.util.NoSuchElementException;
  * @author ATracer
  */
 public enum XPRewardEnum {
-	MINUS_11(-11, 0),
-	MINUS_10(-10, 1),
-	MINUS_9(-9, 10),
-	MINUS_8(-8, 20),
-	MINUS_7(-7, 30),
-	MINUS_6(-6, 40),
-	MINUS_5(-5, 50),
-	MINUS_4(-4, 70),
-	MINUS_3(-3, 90),
-	MINUS_2(-2, 100),
-	MINUS_1(-1, 100),
-	ZERO(0, 100),
-	PLUS_1(1, 105),
-	PLUS_2(2, 110),
-	PLUS_3(3, 115),
-	PLUS_4(4, 120);
+	MINUS_11(-11, 0), MINUS_10(-10, 1), MINUS_9(-9, 10), MINUS_8(-8, 20), MINUS_7(-7, 30), MINUS_6(-6, 40),
+	MINUS_5(-5, 50), MINUS_4(-4, 70), MINUS_3(-3, 90), MINUS_2(-2, 100), MINUS_1(-1, 100), ZERO(0, 100), PLUS_1(1, 105),
+	PLUS_2(2, 110), PLUS_3(3, 115), PLUS_4(4, 120);
 
 	private int xpRewardPercent;
 
@@ -53,8 +40,7 @@ public enum XPRewardEnum {
 	}
 
 	/**
-	 * @param levelDifference
-	 *          between two objects
+	 * @param levelDifference between two objects
 	 * @return XP reward percentage
 	 */
 	public static int xpRewardFrom(int levelDifference) {

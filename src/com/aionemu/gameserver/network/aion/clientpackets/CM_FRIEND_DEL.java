@@ -26,20 +26,19 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.SocialService;
 
-public class CM_FRIEND_DEL extends AionClientPacket
-{
+public class CM_FRIEND_DEL extends AionClientPacket {
 	private String targetName;
 	private static Logger log = LoggerFactory.getLogger(CM_FRIEND_DEL.class);
-	
+
 	public CM_FRIEND_DEL(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		targetName = readS();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player activePlayer = getConnection().getActivePlayer();

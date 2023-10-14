@@ -20,8 +20,6 @@ package com.aionemu.gameserver.model.agent;
  * @author Rinzler (Encom)
  */
 
-public enum AgentStateType
-{
-	FIGHT,
-	PEACE;
+public enum AgentStateType {
+	FIGHT, PEACE;
 }

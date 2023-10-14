@@ -22,12 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "MailPartType")
 @XmlEnum
 public enum MailPartType {
-	CUSTOM,
-	SENDER,
-	TITLE,
-	HEADER,
-	BODY,
-	TAIL;
+	CUSTOM, SENDER, TITLE, HEADER, BODY, TAIL;
 
 	public String value() {
 		return name();

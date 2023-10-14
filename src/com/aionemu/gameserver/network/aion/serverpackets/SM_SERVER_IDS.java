@@ -27,11 +27,11 @@ import com.aionemu.gameserver.services.transfers.AStation;
 public class SM_SERVER_IDS extends AionServerPacket {
 
 	private AStation settings;
-	
+
 	public SM_SERVER_IDS(AStation settings) {
 		this.settings = settings;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeH(settings.getServerId());

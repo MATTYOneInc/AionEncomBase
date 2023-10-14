@@ -30,8 +30,7 @@ public abstract class LsServerPacket extends BaseServerPacket {
 	/**
 	 * constructs new server packet with specified opcode.
 	 * 
-	 * @param opcode
-	 *          packet id
+	 * @param opcode packet id
 	 */
 	protected LsServerPacket(int opcode) {
 		super(opcode);
@@ -46,7 +45,7 @@ public abstract class LsServerPacket extends BaseServerPacket {
 	public final void write(LoginServerConnection con, ByteBuffer buffer) {
 		setBuf(buffer);
 		buf.putShort((short) 0);
-		buf.put((byte)this.getOpcode());
+		buf.put((byte) this.getOpcode());
 		writeImpl(con);
 		buf.flip();
 		buf.putShort((short) buf.limit());

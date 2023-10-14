@@ -65,7 +65,8 @@ public class FollowEventHandler {
 	public static boolean isInRange(AbstractAI ai, VisibleObject object) {
 		if (object == null) {
 			return false;
-		} if (object.isInInstance()) {
+		}
+		if (object.isInInstance()) {
 			return MathUtil.isIn3dRange(ai.getOwner(), object, 9999);
 		} else if (ai.getOwner().getLifeStats().getHpPercentage() < 100) {
 			return MathUtil.isIn3dRange(ai.getOwner(), object, 30);

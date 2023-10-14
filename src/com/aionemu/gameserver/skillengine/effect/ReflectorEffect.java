@@ -26,16 +26,16 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ReflectorEffect")
-public class ReflectorEffect extends ShieldEffect
-{
+public class ReflectorEffect extends ShieldEffect {
 	@Override
 	public void startEffect(final Effect effect) {
 		int hit = hitvalue + hitdelta * effect.getSkillLevel();
-		AttackShieldObserver asObserver = new AttackShieldObserver(hit, value, percent, false, effect, hitType, this.getType(), this.hitTypeProb, minradius, radius, null, 0, 0);
+		AttackShieldObserver asObserver = new AttackShieldObserver(hit, value, percent, false, effect, hitType,
+				this.getType(), this.hitTypeProb, minradius, radius, null, 0, 0);
 		effect.getEffected().getObserveController().addAttackCalcObserver(asObserver);
 		effect.setAttackShieldObserver(asObserver, position);
 	}
-	
+
 	@Override
 	public void endEffect(Effect effect) {
 		AttackCalcObserver acObserver = effect.getAttackShieldObserver(position);
@@ -43,7 +43,7 @@ public class ReflectorEffect extends ShieldEffect
 			effect.getEffected().getObserveController().removeAttackCalcObserver(acObserver);
 		}
 	}
-	
+
 	@Override
 	public int getType() {
 		return 1;

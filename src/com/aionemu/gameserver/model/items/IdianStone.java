@@ -60,17 +60,18 @@ public class IdianStone extends ItemStone {
 	}
 
 	public void onEquip(final Player player) {
-	    if (item.getEquipmentSlot() == ItemSlot.MAIN_HAND.getSlotIdMask() || item.getItemTemplate().isTwoHandWeapon()) {
-		    if (polishCharge > 0) {
-			    actionListener = new ActionObserver(ObserverType.ALL) {
-				    @Override
-				    public void attacked(Creature creature) {
-					    decreasePolishCharge(player, true);
-				    }
-				    @Override
+		if (item.getEquipmentSlot() == ItemSlot.MAIN_HAND.getSlotIdMask() || item.getItemTemplate().isTwoHandWeapon()) {
+			if (polishCharge > 0) {
+				actionListener = new ActionObserver(ObserverType.ALL) {
+					@Override
+					public void attacked(Creature creature) {
+						decreasePolishCharge(player, true);
+					}
+
+					@Override
 					public void attack(Creature creature) {
-					    decreasePolishCharge(player, false);
-				    }
+						decreasePolishCharge(player, false);
+					}
 				};
 				player.getObserveController().addObserver(actionListener);
 				rndBonusEffect.applyEffect(player);
@@ -81,7 +82,7 @@ public class IdianStone extends ItemStone {
 	private synchronized void decreasePolishCharge(Player player, boolean isAttacked) {
 		decreasePolishCharge(player, isAttacked, 0);
 	}
-	
+
 	public synchronized void decreasePolishCharge(Player player, int skillValue) {
 		decreasePolishCharge(player, false, skillValue);
 	}
@@ -92,13 +93,12 @@ public class IdianStone extends ItemStone {
 			return;
 		}
 		if (skillValue == 0)
-		result = isAttacked ? burnDefend : burnAttack;
+			result = isAttacked ? burnDefend : burnAttack;
 		else
 			result = skillValue;
 		if (polishCharge - result < 0) {
 			polishCharge = 0;
-		}
-		else {
+		} else {
 			polishCharge -= result;
 		}
 		if (polishCharge == 0) {

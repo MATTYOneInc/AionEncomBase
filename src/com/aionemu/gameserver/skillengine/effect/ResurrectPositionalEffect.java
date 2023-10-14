@@ -48,7 +48,8 @@ public class ResurrectPositionalEffect extends ResurrectEffect {
 
 	@Override
 	public void calculate(Effect effect) {
-		if ((effect.getEffector() instanceof Player) && (effect.getEffected() instanceof Player) && (effect.getEffected().getLifeStats().isAlreadyDead())) {
+		if ((effect.getEffector() instanceof Player) && (effect.getEffected() instanceof Player)
+				&& (effect.getEffected().getLifeStats().isAlreadyDead())) {
 			super.calculate(effect, null, null);
 		}
 	}

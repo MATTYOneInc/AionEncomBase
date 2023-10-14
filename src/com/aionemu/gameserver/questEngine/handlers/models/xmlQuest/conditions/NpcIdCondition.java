@@ -37,9 +37,9 @@ public class NpcIdCondition extends QuestCondition {
 
 	/*
 	 * (non-Javadoc)
-	 * @see
-	 * com.aionemu.gameserver.questEngine.handlers.template.xmlQuest.condition.QuestCondition#doCheck(com.aionemu.gameserver
-	 * .questEngine.model.QuestEnv)
+	 * 
+	 * @see com.aionemu.gameserver.questEngine.handlers.template.xmlQuest.condition.
+	 * QuestCondition#doCheck(com.aionemu.gameserver .questEngine.model.QuestEnv)
 	 */
 	@Override
 	public boolean doCheck(QuestEnv env) {
@@ -49,20 +49,20 @@ public class NpcIdCondition extends QuestCondition {
 			id = ((Npc) visibleObject).getNpcId();
 		}
 		switch (getOp()) {
-			case EQUAL:
-				return id == values;
-			case GREATER:
-				return id > values;
-			case GREATER_EQUAL:
-				return id >= values;
-			case LESSER:
-				return id < values;
-			case LESSER_EQUAL:
-				return id <= values;
-			case NOT_EQUAL:
-				return id != values;
-			default:
-				return false;
+		case EQUAL:
+			return id == values;
+		case GREATER:
+			return id > values;
+		case GREATER_EQUAL:
+			return id >= values;
+		case LESSER:
+			return id < values;
+		case LESSER_EQUAL:
+			return id <= values;
+		case NOT_EQUAL:
+			return id != values;
+		default:
+			return false;
 		}
 	}
 }

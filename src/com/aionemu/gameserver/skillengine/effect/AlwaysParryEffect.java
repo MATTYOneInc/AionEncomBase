@@ -46,13 +46,11 @@ public class AlwaysParryEffect extends EffectTemplate {
 				if (status == AttackStatus.PARRY) {
 					if (value <= 1) {
 						effect.endEffect();
-					}
-					else {
+					} else {
 						value--;
 					}
 					return true;
-				}
-				else {
+				} else {
 					return false;
 				}
 			}

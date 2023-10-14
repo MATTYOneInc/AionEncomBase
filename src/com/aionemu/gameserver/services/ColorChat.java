@@ -20,8 +20,7 @@ package com.aionemu.gameserver.services;
  * @author KorLightning (Encom)
  */
 
-public class ColorChat
-{
+public class ColorChat {
 	/**
 	 * @param message
 	 * @param color
@@ -48,9 +47,11 @@ public class ColorChat
 			}
 			sb.append(String.valueOf(ch));
 			index++;
-		} if (start % 2 == 1) {
+		}
+		if (start % 2 == 1) {
 			sb.append(";" + color + "]");
-		} if (sb.lastIndexOf("[color:") > sb.lastIndexOf(";" + color + "]")) {
+		}
+		if (sb.lastIndexOf("[color:") > sb.lastIndexOf(";" + color + "]")) {
 			sb.append(";" + color + "]");
 		}
 		return sb.toString();

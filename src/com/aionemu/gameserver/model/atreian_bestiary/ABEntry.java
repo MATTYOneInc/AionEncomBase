@@ -20,32 +20,31 @@ package com.aionemu.gameserver.model.atreian_bestiary;
  * @author Ranastic
  */
 
-public class ABEntry
-{
+public class ABEntry {
 	private int id;
 	private int killCount;
 	private int level;
 	private int claimReward;
-	
+
 	public ABEntry(int id, int killCount, int level, int claimReward) {
 		this.id = id;
 		this.killCount = killCount;
 		this.level = level;
 		this.claimReward = claimReward;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public int getKillCount() {
 		return killCount;
 	}
-	
+
 	public int getLevel() {
 		return level;
 	}
-	
+
 	public int claimRewardLevel() {
 		return claimReward;
 	}

@@ -52,8 +52,7 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class InstanceRiftService
-{
+public class InstanceRiftService {
 	private InstanceSchedule instanceSchedule;
 	private Map<Integer, InstanceRiftLocation> instanceRift;
 	private static final int duration = CustomConfig.INSTANCE_RIFT_DURATION;
@@ -63,7 +62,7 @@ public class InstanceRiftService
 	public void initInstanceLocations() {
 		if (CustomConfig.INSTANCE_RIFT_ENABLED) {
 			instanceRift = DataManager.INSTANCE_RIFT_DATA.getInstanceRiftLocations();
-			for (InstanceRiftLocation loc: getInstanceRiftLocations().values()) {
+			for (InstanceRiftLocation loc : getInstanceRiftLocations().values()) {
 				spawn(loc, InstanceRiftStateType.CLOSED);
 			}
 			log.info("[InstanceRiftService] Loaded " + instanceRift.size() + " locations.");
@@ -72,19 +71,19 @@ public class InstanceRiftService
 			instanceRift = Collections.emptyMap();
 		}
 	}
-	
+
 	public void initInstance() {
 		if (CustomConfig.INSTANCE_RIFT_ENABLED) {
 			log.info("[InstanceRiftService] is initialized...");
-		    instanceSchedule = InstanceSchedule.load();
-		    for (Instance instance: instanceSchedule.getInstancesList()) {
-			    for (String instanceTime: instance.getInstanceTimes()) {
-				    CronService.getInstance().schedule(new InstanceStartRunnable(instance.getId()), instanceTime);
-			    }
+			instanceSchedule = InstanceSchedule.load();
+			for (Instance instance : instanceSchedule.getInstancesList()) {
+				for (String instanceTime : instance.getInstanceTimes()) {
+					CronService.getInstance().schedule(new InstanceStartRunnable(instance.getId()), instanceTime);
+				}
 			}
 		}
 	}
-	
+
 	public void startInstanceRift(final int id) {
 		final RiftInstance<?> rift;
 		synchronized (this) {
@@ -103,7 +102,7 @@ public class InstanceRiftService
 			}
 		}, duration * 3600 * 1000);
 	}
-	
+
 	public void stopInstanceRift(int id) {
 		if (!isInstanceRiftInProgress(id)) {
 			return;
@@ -111,12 +110,13 @@ public class InstanceRiftService
 		RiftInstance<?> rift;
 		synchronized (this) {
 			rift = activeInstanceRift.remove(id);
-		} if (rift == null || rift.isClosed()) {
+		}
+		if (rift == null || rift.isClosed()) {
 			return;
 		}
 		rift.stop();
 	}
-	
+
 	public void spawn(InstanceRiftLocation loc, InstanceRiftStateType estate) {
 		if (estate.equals(InstanceRiftStateType.OPEN)) {
 		}
@@ -130,60 +130,61 @@ public class InstanceRiftService
 			}
 		}
 	}
-	
+
 	public boolean instanceRiftMsg(int id) {
-        switch (id) {
-            case 1:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE04C", "<Instance Rift> is now open !!!");
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
-	
+		switch (id) {
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE04C", "<Instance Rift> is now open !!!");
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public void despawn(InstanceRiftLocation loc) {
 		if (loc.getSpawned() == null) {
-        	return;
-		} for (VisibleObject obj: loc.getSpawned()) {
-            Npc spawned = (Npc) obj;
-            spawned.setDespawnDelayed(true);
-            if (spawned.getAggroList().getList().isEmpty()) {
-                spawned.getController().cancelTask(TaskId.RESPAWN);
-                obj.getController().onDelete();
-            }
-        }
-        loc.getSpawned().clear();
+			return;
+		}
+		for (VisibleObject obj : loc.getSpawned()) {
+			Npc spawned = (Npc) obj;
+			spawned.setDespawnDelayed(true);
+			if (spawned.getAggroList().getList().isEmpty()) {
+				spawned.getController().cancelTask(TaskId.RESPAWN);
+				obj.getController().onDelete();
+			}
+		}
+		loc.getSpawned().clear();
 	}
-	
+
 	public boolean isInstanceRiftInProgress(int id) {
 		return activeInstanceRift.containsKey(id);
 	}
-	
+
 	public Map<Integer, RiftInstance<?>> getActiveInstanceRift() {
 		return activeInstanceRift;
 	}
-	
+
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public InstanceRiftLocation getInstanceRiftLocation(int id) {
 		return instanceRift.get(id);
 	}
-	
+
 	public Map<Integer, InstanceRiftLocation> getInstanceRiftLocations() {
 		return instanceRift;
 	}
-	
+
 	public static InstanceRiftService getInstance() {
 		return InstanceRiftServiceHolder.INSTANCE;
 	}
-	
+
 	private static class InstanceRiftServiceHolder {
 		private static final InstanceRiftService INSTANCE = new InstanceRiftService();
 	}

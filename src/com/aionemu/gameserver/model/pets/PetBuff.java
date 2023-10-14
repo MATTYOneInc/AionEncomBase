@@ -38,8 +38,7 @@ import com.aionemu.gameserver.skillengine.change.Func;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
-public class PetBuff implements StatOwner
-{
+public class PetBuff implements StatOwner {
 	private List<IStatFunction> functions = new ArrayList<IStatFunction>();
 	private PetBonusAttr petBonusAttr;
 	private long startTime;
@@ -61,19 +60,20 @@ public class PetBuff implements StatOwner
 			StatEnum stat = petPenaltyAttr.getStat();
 			int statToModified = player.getGameStats().getStat(stat, 0).getBase();
 			int value = petPenaltyAttr.getValue();
-			int valueModified = petPenaltyAttr.getFunc().equals(Func.PERCENT) ? (statToModified * value / 100) : (value);
+			int valueModified = petPenaltyAttr.getFunc().equals(Func.PERCENT) ? (statToModified * value / 100)
+					: (value);
 			functions.add(new StatAddFunction(stat, valueModified, true));
 		}
 		player.getGameStats().addEffect(this, functions);
 		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_BUFF_PET_USE_START_MESSAGE);
-		PacketSendUtility.sendPacket(player, new SM_PET(true, 0, 0));//start cheering
+		PacketSendUtility.sendPacket(player, new SM_PET(true, 0, 0));// start cheering
 	}
 
 	private void loopEffect(Player player, int time) {
 		if (time != 0) {
 			task = ThreadPoolManager.getInstance().schedule(new PetBuffTask(player), time);
 		}
-		PacketSendUtility.sendPacket(player, new SM_PET(true, 0, 0));//start cheering
+		PacketSendUtility.sendPacket(player, new SM_PET(true, 0, 0));// start cheering
 	}
 
 	public void endEffect(Player player) {
@@ -84,7 +84,7 @@ public class PetBuff implements StatOwner
 		}
 		player.getGameStats().endEffect(this);
 		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_BUFF_PET_USE_STOP_MESSAGE);
-		PacketSendUtility.sendPacket(player, new SM_PET(false, 0, 0));//stop cheering
+		PacketSendUtility.sendPacket(player, new SM_PET(false, 0, 0));// stop cheering
 		PacketSendUtility.sendPacket(player, new SM_STATS_INFO(player));
 	}
 
@@ -94,7 +94,7 @@ public class PetBuff implements StatOwner
 
 	private class PetBuffTask implements Runnable {
 		private Player player;
-		
+
 		public PetBuffTask(Player player) {
 			this.player = player;
 		}
@@ -103,13 +103,13 @@ public class PetBuff implements StatOwner
 		public void run() {
 			Pet pet = player.getPet();
 			PetTemplate petTemp = DataManager.PET_DATA.getPetTemplate(pet.getPetId());
-			PetBonusAttr petBuff = DataManager.PET_BUFF_DATA.getPetBonusattr(petTemp.getPetFunction(PetFunctionType.CHEER).getId());
-			
+			PetBonusAttr petBuff = DataManager.PET_BUFF_DATA
+					.getPetBonusattr(petTemp.getPetFunction(PetFunctionType.CHEER).getId());
+
 			if (task != null && player.getInventory().getItemCountByItemId(182007162) >= petBuff.getFoodCount()) {
 				player.getInventory().decreaseByItemId(182007162, petBuff.getFoodCount());
 				loopEffect(player, 300000);
-			}
-			else {
+			} else {
 				endEffect(player);
 			}
 		}

@@ -49,17 +49,17 @@ public class SM_CHARACTER_SELECT extends AionServerPacket {
 		writeC(type);
 
 		switch (type) {
-			case 0:
-				break;
-			case 1:
-				break;
-			case 2:
-				writeH(messageType); // 0: newpasskey complete, 2: passkey edit complete, 3: passkey input
-				writeC(unk);
-				writeC(wrongCount > 0 ? 1 : 0); // 0: right passkey, 1: wrong passkey
-				writeD(wrongCount); // wrong passkey input count
-				writeD(SecurityConfig.PASSKEY_WRONG_MAXCOUNT);
-				// server default value: 5)
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			writeH(messageType); // 0: newpasskey complete, 2: passkey edit complete, 3: passkey input
+			writeC(unk);
+			writeC(wrongCount > 0 ? 1 : 0); // 0: right passkey, 1: wrong passkey
+			writeD(wrongCount); // wrong passkey input count
+			writeD(SecurityConfig.PASSKEY_WRONG_MAXCOUNT);
+			// server default value: 5)
 			break;
 		}
 	}

@@ -27,7 +27,8 @@ public class VeteranRewards {
 	private String Title;
 	private String Message;
 
-	public VeteranRewards(String Player, int type, int item, int count, int kinah, String Sender, String Title, String Message) {
+	public VeteranRewards(String Player, int type, int item, int count, int kinah, String Sender, String Title,
+			String Message) {
 		this.Player = Player;
 		this.type = type;
 		this.item = item;
@@ -38,7 +39,8 @@ public class VeteranRewards {
 		this.Message = Message;
 	}
 
-	public VeteranRewards(int id, String Player, int type, int item, int count, int kinah, String Sender, String Title, String Message) {
+	public VeteranRewards(int id, String Player, int type, int item, int count, int kinah, String Sender, String Title,
+			String Message) {
 		this.id = id;
 		this.Player = Player;
 		this.type = type;
@@ -53,8 +55,7 @@ public class VeteranRewards {
 	public int getId() {
 		if (id != 0) {
 			return id;
-		}
-		else {
+		} else {
 			return -1;
 		}
 	}

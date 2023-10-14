@@ -36,7 +36,7 @@ public class SM_TRADELIST extends AionServerPacket {
 	private int npcId;
 	private TradeListTemplate tlist;
 	private int buyPriceModifier;
-	
+
 	public SM_TRADELIST(Player player, Npc npc, TradeListTemplate tlist, int buyPriceModifier) {
 		playerObj = player.getObjectId();
 		this.npcObj = npc.getObjectId();
@@ -44,22 +44,23 @@ public class SM_TRADELIST extends AionServerPacket {
 		this.tlist = tlist;
 		this.buyPriceModifier = buyPriceModifier;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		if ((tlist != null) && (tlist.getNpcId() != 0) && (tlist.getCount() != 0)) {
 			writeD(npcObj);
 			writeC(tlist.getTradeNpcType().index());
 			writeD(buyPriceModifier);
-			writeD(0x64); //4.7
-			writeC(1); //4.7
-			writeC(1); //4.7
+			writeD(0x64); // 4.7
+			writeC(1); // 4.7
+			writeC(1); // 4.7
 			writeH(tlist.getCount());
 			for (TradeTab tradeTabl : tlist.getTradeTablist()) {
 				writeD(tradeTabl.getId());
 				Player activePlayer = con.getActivePlayer();
 				if (activePlayer.isGM()) {
-					//PacketSendUtility.sendMessage(activePlayer, "<Tradelist Id> + " + tradeTabl.getId());
+					// PacketSendUtility.sendMessage(activePlayer, "<Tradelist Id> + " +
+					// tradeTabl.getId());
 				}
 			}
 			int i = 0;
@@ -72,7 +73,8 @@ public class SM_TRADELIST extends AionServerPacket {
 			if (limitedTradeNpc != null) {
 				for (LimitedItem limitedItem : limitedTradeNpc.getLimitedItems()) {
 					writeD(limitedItem.getItemId());
-					writeH(limitedItem.getBuyCount().get(playerObj) == null ? 0 : limitedItem.getBuyCount().get(playerObj));
+					writeH(limitedItem.getBuyCount().get(playerObj) == null ? 0
+							: limitedItem.getBuyCount().get(playerObj));
 					writeH(limitedItem.getSellLimit());
 				}
 			}

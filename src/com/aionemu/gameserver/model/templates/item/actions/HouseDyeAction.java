@@ -20,8 +20,8 @@ import com.aionemu.gameserver.model.gameobjects.HouseObject;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 
-public interface HouseDyeAction
-{
+public interface HouseDyeAction {
 	boolean canAct(Player player, Item parentItem, HouseObject<?> targetHouseObject);
+
 	void act(Player player, Item parentItem, HouseObject<?> targetHouseObject);
 }

@@ -23,14 +23,13 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 import javolution.util.FastList;
 
-public class SM_HOUSE_OBJECTS extends AionServerPacket
-{
+public class SM_HOUSE_OBJECTS extends AionServerPacket {
 	Player player;
-	
+
 	public SM_HOUSE_OBJECTS(Player player) {
 		this.player = player;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		FastList<HouseObject<?>> objects = player.getHouseRegistry().getSpawnedObjects();

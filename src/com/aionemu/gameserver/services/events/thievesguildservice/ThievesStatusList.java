@@ -22,7 +22,7 @@ import java.sql.Timestamp;
  * @author Rinzler (Encom)
  */
 public class ThievesStatusList {
-	
+
 	private int playerId;
 	private int rankId;
 	private int thievesCount;
@@ -31,11 +31,12 @@ public class ThievesStatusList {
 	private String revengeName;
 	private int revengeCount;
 	private Timestamp revengeDate;
-	
+
 	public ThievesStatusList() {
 	}
 
-	public ThievesStatusList(int playerId, int rankId, int thievesCount, Long lastThievesKinah, int prisonCount, String revengeName, int revengeCount, Timestamp revengeDate) {
+	public ThievesStatusList(int playerId, int rankId, int thievesCount, Long lastThievesKinah, int prisonCount,
+			String revengeName, int revengeCount, Timestamp revengeDate) {
 		this.playerId = playerId;
 		this.rankId = rankId;
 		this.thievesCount = thievesCount;

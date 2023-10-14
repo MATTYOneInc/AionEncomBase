@@ -33,66 +33,66 @@ import javax.xml.bind.annotation.XmlType;
 public class ChargeSkillTemplate {
 
 	@XmlAttribute(name = "id")
-    private int id;
-	
+	private int id;
+
 	@XmlAttribute(name = "charge_set_name")
-    private String charge_set_name;
-    
+	private String charge_set_name;
+
 	@XmlAttribute(name = "first")
-    private int first;
-    
+	private int first;
+
 	@XmlAttribute(name = "second")
-    private int second;
-    
+	private int second;
+
 	@XmlAttribute(name = "third")
-    private int third;
-    
+	private int third;
+
 	@XmlAttribute(name = "min_charge")
-    private int min_charge;
-	
-    @XmlElement(name = "charge")
-    private List<ChargeTemplate> charges;
-	
+	private int min_charge;
+
+	@XmlElement(name = "charge")
+	private List<ChargeTemplate> charges;
+
 	@XmlAttribute(name = "bonus_type", required = true)
 	protected BonusChargeType type = BonusChargeType.NONE;
-    
+
 	public int getId() {
-        return id;
-    }
-	
+		return id;
+	}
+
 	public String getChargeSetName() {
 		return charge_set_name;
 	}
-	
-    public int getFirstId() {
-        return first;
-    }
-    
-    public int getSecondId() {
-        return second;
-    }
-    
-    public int getThirdId() {
-        return third;
-    }
-    
-    /**
-     * @return the MinCharge
-     */
-    public int getMinCharge() {
-        return min_charge;
-    }
-    
-    /**
-     * @return the Charges
-     */
-    public List<ChargeTemplate> getCharges() {
-        return charges;
-    }
-	
+
+	public int getFirstId() {
+		return first;
+	}
+
+	public int getSecondId() {
+		return second;
+	}
+
+	public int getThirdId() {
+		return third;
+	}
+
 	/**
-     * @return the BonusChargeType
-     */
+	 * @return the MinCharge
+	 */
+	public int getMinCharge() {
+		return min_charge;
+	}
+
+	/**
+	 * @return the Charges
+	 */
+	public List<ChargeTemplate> getCharges() {
+		return charges;
+	}
+
+	/**
+	 * @return the BonusChargeType
+	 */
 	public BonusChargeType getBonusChargeType() {
 		return type;
 	}

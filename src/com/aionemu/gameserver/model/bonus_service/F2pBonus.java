@@ -36,31 +36,32 @@ import com.aionemu.gameserver.skillengine.change.Func;
  * Created by wanke on 12/02/2017.
  */
 
-public class F2pBonus implements StatOwner
-{
-    private static final Logger log = LoggerFactory.getLogger(F2pBonus.class);
-    private List<IStatFunction> functions = new ArrayList<IStatFunction>();
-    private F2pBonusAttr f2pBonusattr;
-	
-    public F2pBonus(int buffId) {
-        f2pBonusattr = DataManager.F2P_BONUS_DATA.getInstanceBonusattr(buffId);
-    }
-	
-    public void applyEffect(Player player, int buffId) {
-        if (f2pBonusattr == null) {
-            return;
-        } for (F2pPenalityAttr f2pBonusPenaltyAttr: f2pBonusattr.getPenaltyAttr()) {
-            if (f2pBonusPenaltyAttr.getFunc().equals(Func.PERCENT)) {
-                functions.add(new StatRateFunction(f2pBonusPenaltyAttr.getStat(), f2pBonusPenaltyAttr.getValue(), true));
-            } else {
-                functions.add(new StatAddFunction(f2pBonusPenaltyAttr.getStat(), f2pBonusPenaltyAttr.getValue(), true));
-            }
-        }
-        player.getGameStats().addEffect(this, functions);
-    }
-	
-    public void endEffect(Player player, int buffId) {
-        functions.clear();
-        player.getGameStats().endEffect(this);
-    }
+public class F2pBonus implements StatOwner {
+	private static final Logger log = LoggerFactory.getLogger(F2pBonus.class);
+	private List<IStatFunction> functions = new ArrayList<IStatFunction>();
+	private F2pBonusAttr f2pBonusattr;
+
+	public F2pBonus(int buffId) {
+		f2pBonusattr = DataManager.F2P_BONUS_DATA.getInstanceBonusattr(buffId);
+	}
+
+	public void applyEffect(Player player, int buffId) {
+		if (f2pBonusattr == null) {
+			return;
+		}
+		for (F2pPenalityAttr f2pBonusPenaltyAttr : f2pBonusattr.getPenaltyAttr()) {
+			if (f2pBonusPenaltyAttr.getFunc().equals(Func.PERCENT)) {
+				functions
+						.add(new StatRateFunction(f2pBonusPenaltyAttr.getStat(), f2pBonusPenaltyAttr.getValue(), true));
+			} else {
+				functions.add(new StatAddFunction(f2pBonusPenaltyAttr.getStat(), f2pBonusPenaltyAttr.getValue(), true));
+			}
+		}
+		player.getGameStats().addEffect(this, functions);
+	}
+
+	public void endEffect(Player player, int buffId) {
+		functions.clear();
+		player.getGameStats().endEffect(this);
+	}
 }

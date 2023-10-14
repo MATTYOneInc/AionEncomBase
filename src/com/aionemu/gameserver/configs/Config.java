@@ -71,10 +71,9 @@ import com.aionemu.gameserver.configs.main.WorldConfig;
 import com.aionemu.gameserver.configs.network.IPConfig;
 import com.aionemu.gameserver.configs.network.NetworkConfig;
 
-public class Config
-{
+public class Config {
 	protected static final Logger log = LoggerFactory.getLogger(Config.class);
-	
+
 	public static void load() {
 		try {
 			Properties myProps = null;
@@ -145,7 +144,7 @@ public class Config
 		}
 		IPConfig.load();
 	}
-	
+
 	public static void reload() {
 		try {
 			Properties myProps = null;

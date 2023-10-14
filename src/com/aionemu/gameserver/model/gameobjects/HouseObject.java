@@ -53,7 +53,8 @@ public abstract class HouseObject<T extends PlaceableHouseObject> extends Visibl
 	private PersistentState persistentState = PersistentState.NEW;
 
 	public HouseObject(House owner, int objId, int templateId) {
-		super(objId, new PlaceableObjectController<T>(), null, DataManager.HOUSING_OBJECT_DATA.getTemplateById(templateId), null);
+		super(objId, new PlaceableObjectController<T>(), null,
+				DataManager.HOUSING_OBJECT_DATA.getTemplateById(templateId), null);
 		this.ownerHouse = owner;
 		getController().setOwner(this);
 		setKnownlist(new PlayerAwareKnownList(this));
@@ -68,8 +69,7 @@ public abstract class HouseObject<T extends PlaceableHouseObject> extends Visibl
 		case DELETED:
 			if (this.persistentState == PersistentState.NEW) {
 				this.persistentState = PersistentState.NOACTION;
-			}
-			else if (this.persistentState != PersistentState.DELETED) {
+			} else if (this.persistentState != PersistentState.DELETED) {
 				this.persistentState = PersistentState.DELETED;
 				ownerHouse.getRegistry().setPersistentState(PersistentState.UPDATE_REQUIRED);
 			}
@@ -142,7 +142,7 @@ public abstract class HouseObject<T extends PlaceableHouseObject> extends Visibl
 			setPersistentState(PersistentState.UPDATE_REQUIRED);
 			if (position != null) {
 				position.setXYZH(x, null, null, null);
-			
+
 			}
 		}
 	}

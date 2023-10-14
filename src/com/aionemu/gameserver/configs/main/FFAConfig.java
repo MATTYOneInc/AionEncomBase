@@ -23,7 +23,7 @@ import com.aionemu.commons.configuration.Property;
  */
 public class FFAConfig {
 
-	//FFA Event
+	// FFA Event
 	@Property(key = "gameserver.pvp.mod.ffa.enabled", defaultValue = "true")
 	public static boolean FFA_ENABLED;
 	@Property(key = "gameserver.pvp.mod.ffa.spree.toll.quantity", defaultValue = "10")
@@ -31,7 +31,7 @@ public class FFAConfig {
 	@Property(key = "gameserver.pvp.mod.ffa.spree.reward.item", defaultValue = "166030005")
 	public static int FFA_SPREE_REWARD_ITEM;
 
-	//FFA Spree
+	// FFA Spree
 	@Property(key = "gameserver.pvp.mod.ffa.spree1", defaultValue = " <is now on a Killing Spree> !")
 	public static String FFA_SPREE_1;
 	@Property(key = "gameserver.pvp.mod.ffa.spree2", defaultValue = " <is now on Rampage> !")

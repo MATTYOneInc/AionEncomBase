@@ -26,43 +26,43 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
  * @author Rinzler (Encom)
  */
 
-public class DredgionStartRunnable implements Runnable
-{
+public class DredgionStartRunnable implements Runnable {
 	private final int id;
-	
+
 	public DredgionStartRunnable(int id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public void run() {
-		//Invasion Portal.
+		// Invasion Portal.
 		ZorshivDredgionService.getInstance().adventPortalSP(id);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-			    //Invasion Lazer.
+				// Invasion Lazer.
 				ZorshivDredgionService.getInstance().adventDirectingSP(id);
 			}
 		}, 180000);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-				//Invasion Black Sky.
+				// Invasion Black Sky.
 				ZorshivDredgionService.getInstance().adventControlSP(id);
 			}
 		}, 300000);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-			    Map<Integer, ZorshivDredgionLocation> locations = ZorshivDredgionService.getInstance().getZorshivDredgionLocations();
+				Map<Integer, ZorshivDredgionLocation> locations = ZorshivDredgionService.getInstance()
+						.getZorshivDredgionLocations();
 				for (ZorshivDredgionLocation loc : locations.values()) {
 					if (loc.getId() == id) {
-						//Invasion Light Blue.
+						// Invasion Light Blue.
 						ZorshivDredgionService.getInstance().adventEffectSP(id);
-						//The Balaur Dredgion has appeared at levinshor.
+						// The Balaur Dredgion has appeared at levinshor.
 						ZorshivDredgionService.getInstance().levinshorMsg(id);
-						//The Balaur Dredgion has appeared at inggison.
+						// The Balaur Dredgion has appeared at inggison.
 						ZorshivDredgionService.getInstance().inggisonMsg(id);
 						ZorshivDredgionService.getInstance().startZorshivDredgion(loc.getId());
 					}

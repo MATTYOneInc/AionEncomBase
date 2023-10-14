@@ -25,19 +25,18 @@ import com.aionemu.gameserver.services.player.AtreianBestiaryService;
  * @author Ranastic
  */
 
-public class CM_ATREIAN_BESTIARY_LVLUP extends AionClientPacket
-{
+public class CM_ATREIAN_BESTIARY_LVLUP extends AionClientPacket {
 	private int id;
-	
+
 	public CM_ATREIAN_BESTIARY_LVLUP(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		id = readD();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();

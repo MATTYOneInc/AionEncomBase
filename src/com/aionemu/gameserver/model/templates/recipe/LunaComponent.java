@@ -26,17 +26,17 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LunaComponent")
-public class LunaComponent
-{
+public class LunaComponent {
 	@XmlElement(name = "luna_component")
 	protected ArrayList<LunaComponentElement> luna_component;
-	
+
 	public Collection<LunaComponentElement> getComponents() {
-		return luna_component != null ? luna_component : Collections.<LunaComponentElement> emptyList();
+		return luna_component != null ? luna_component : Collections.<LunaComponentElement>emptyList();
 	}
 }

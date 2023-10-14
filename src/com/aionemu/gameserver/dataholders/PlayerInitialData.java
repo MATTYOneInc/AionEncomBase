@@ -73,12 +73,12 @@ public class PlayerInitialData {
 
 	public LocationData getSpawnLocation(Race race) {
 		switch (race) {
-			case ASMODIANS:
-				return asmodianSpawnLocation;
-			case ELYOS:
-				return elyosSpawnLocation;
-			default:
-				throw new IllegalArgumentException();
+		case ASMODIANS:
+			return asmodianSpawnLocation;
+		case ELYOS:
+			return elyosSpawnLocation;
+		default:
+			throw new IllegalArgumentException();
 		}
 	}
 

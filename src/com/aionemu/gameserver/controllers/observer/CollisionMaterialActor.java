@@ -42,16 +42,15 @@ import com.aionemu.gameserver.utils.gametime.GameTime;
 import com.aionemu.gameserver.utils.gametime.GameTimeManager;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
 
-public class CollisionMaterialActor extends AbstractCollisionObserver implements IActor
-{
+public class CollisionMaterialActor extends AbstractCollisionObserver implements IActor {
 	private MaterialTemplate actionTemplate;
 	private AtomicReference<MaterialSkill> currentSkill = new AtomicReference<MaterialSkill>();
-	
+
 	public CollisionMaterialActor(Creature creature, Spatial geometry, MaterialTemplate actionTemplate) {
 		super(creature, geometry, CollisionIntention.MATERIAL.getId());
 		this.actionTemplate = actionTemplate;
 	}
-	
+
 	private MaterialSkill getSkillForTarget(Creature creature) {
 		if (creature instanceof Player) {
 			Player player = (Player) creature;
@@ -85,7 +84,7 @@ public class CollisionMaterialActor extends AbstractCollisionObserver implements
 				break;
 			}
 		}
-		
+
 		boolean dependsOnWeather = geometry.getName().indexOf("WEATHER") != -1;
 		if (dependsOnWeather && weatherCode > 0) {
 			return null;
@@ -103,10 +102,10 @@ public class CollisionMaterialActor extends AbstractCollisionObserver implements
 			}
 		} else {
 			return foundSkill;
-        }
+		}
 		return null;
 	}
-	
+
 	@Override
 	public void onMoved(CollisionResults collisionResults) {
 		if (collisionResults.size() == 0) {
@@ -118,7 +117,7 @@ public class CollisionMaterialActor extends AbstractCollisionObserver implements
 			act();
 		}
 	}
-	
+
 	@Override
 	public void act() {
 		final MaterialSkill actSkill = getSkillForTarget(creature);
@@ -136,7 +135,8 @@ public class CollisionMaterialActor extends AbstractCollisionObserver implements
 						if (GeoDataConfig.GEO_MATERIALS_SHOWDETAILS && creature instanceof Player) {
 							Player player = (Player) creature;
 						}
-						Skill skill = SkillEngine.getInstance().getSkill(creature, actSkill.getId(), actSkill.getSkillLevel(), creature);
+						Skill skill = SkillEngine.getInstance().getSkill(creature, actSkill.getId(),
+								actSkill.getSkillLevel(), creature);
 						skill.getEffectedList().add(creature);
 						skill.useWithoutPropSkill();
 					}
@@ -145,7 +145,7 @@ public class CollisionMaterialActor extends AbstractCollisionObserver implements
 			creature.getController().addTask(TaskId.MATERIAL_ACTION, task);
 		}
 	}
-	
+
 	@Override
 	public void abort() {
 		Future<?> existingTask = creature.getController().getTask(TaskId.MATERIAL_ACTION);
@@ -154,12 +154,12 @@ public class CollisionMaterialActor extends AbstractCollisionObserver implements
 		}
 		currentSkill.set(null);
 	}
-	
+
 	@Override
 	public void died(Creature creature) {
 		abort();
 	}
-	
+
 	@Override
 	public void setEnabled(boolean enable) {
 	};

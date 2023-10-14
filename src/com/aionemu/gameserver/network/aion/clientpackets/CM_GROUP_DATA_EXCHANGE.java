@@ -24,8 +24,7 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_GROUP_DATA_EXCHANGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class CM_GROUP_DATA_EXCHANGE extends AionClientPacket
-{
+public class CM_GROUP_DATA_EXCHANGE extends AionClientPacket {
 
 	private int groupType;
 	private int action;
@@ -42,13 +41,13 @@ public class CM_GROUP_DATA_EXCHANGE extends AionClientPacket
 		action = readC();
 
 		switch (action) {
-			case 1:
-				dataSize = readD();
-				break;
-			default:
-				groupType = readC();
-				unk2 = readC();
-				dataSize = readD();
+		case 1:
+			dataSize = readD();
+			break;
+		default:
+			groupType = readC();
+			unk2 = readC();
+			dataSize = readD();
 			break;
 		}
 		if (dataSize > 0 && dataSize <= 5086) {
@@ -70,20 +69,20 @@ public class CM_GROUP_DATA_EXCHANGE extends AionClientPacket
 
 		Collection<Player> players = null;
 		switch (groupType) {
-			case 0:
-				if (player.isInGroup2()) {
-					players = player.getPlayerGroup2().getOnlineMembers();
-				}
-				break;
-			case 1:
-				if (player.isInAlliance2()) {
-					players = player.getPlayerAllianceGroup2().getOnlineMembers();
-				}
-				break;
-			case 2:
-				if (player.isInLeague()) {
-					players = player.getPlayerAllianceGroup2().getOnlineMembers();
-				}
+		case 0:
+			if (player.isInGroup2()) {
+				players = player.getPlayerGroup2().getOnlineMembers();
+			}
+			break;
+		case 1:
+			if (player.isInAlliance2()) {
+				players = player.getPlayerAllianceGroup2().getOnlineMembers();
+			}
+			break;
+		case 2:
+			if (player.isInLeague()) {
+				players = player.getPlayerAllianceGroup2().getOnlineMembers();
+			}
 			break;
 		}
 

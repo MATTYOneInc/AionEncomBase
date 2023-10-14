@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "moltenus")
-public class MoltenusData
-{
+public class MoltenusData {
 	@XmlElement(name = "moltenus_location")
 	private List<MoltenusTemplate> moltenusTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, MoltenusLocation> moltenus = new FastMap<Integer, MoltenusLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (MoltenusTemplate template : moltenusTemplates) {
 			moltenus.put(template.getId(), new MoltenusLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return moltenus.size();
 	}
-	
+
 	public FastMap<Integer, MoltenusLocation> getMoltenusLocations() {
 		return moltenus;
 	}

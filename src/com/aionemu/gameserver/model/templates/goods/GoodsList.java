@@ -50,7 +50,7 @@ public class GoodsList {
 		itemIdList = new ArrayList<Integer>();
 		if (items == null) {
 			return;
-        }
+		}
 		for (Item item : items) {
 			itemIdList.add(item.getId());
 		}
@@ -89,7 +89,8 @@ public class GoodsList {
 	 * <p>
 	 * Java class for anonymous complex type.
 	 * <p>
-	 * The following schema fragment specifies the expected content contained within this class.
+	 * The following schema fragment specifies the expected content contained within
+	 * this class.
 	 * 
 	 * <pre>
 	 * &lt;complexType>

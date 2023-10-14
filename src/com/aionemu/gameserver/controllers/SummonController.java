@@ -41,8 +41,7 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /**
  * @author ATracer
- * @author RotO (Attack-speed hack protection)
- * modified by Sippolo
+ * @author RotO (Attack-speed hack protection) modified by Sippolo
  */
 public class SummonController extends CreatureController<Summon> {
 
@@ -67,7 +66,7 @@ public class SummonController extends CreatureController<Summon> {
 	public void release(final UnsummonType unsummonType) {
 		SummonsService.release(getOwner(), unsummonType, isAttacked);
 	}
-	
+
 	@Override
 	public Summon getOwner() {
 		return (Summon) super.getOwner();
@@ -148,9 +147,11 @@ public class SummonController extends CreatureController<Summon> {
 		SummonsService.release(getOwner(), UnsummonType.UNSPECIFIED, isAttacked);
 		Summon owner = getOwner();
 		final Player master = getOwner().getMaster();
-		PacketSendUtility.broadcastPacket(owner, new SM_EMOTION(owner, EmotionType.DIE, 0, lastAttacker.equals(owner) ? 0 : lastAttacker.getObjectId()));
+		PacketSendUtility.broadcastPacket(owner,
+				new SM_EMOTION(owner, EmotionType.DIE, 0, lastAttacker.equals(owner) ? 0 : lastAttacker.getObjectId()));
 
-		if (!master.equals(lastAttacker) && !owner.equals(lastAttacker) && !master.getLifeStats().isAlreadyDead() && !lastAttacker.getLifeStats().isAlreadyDead()) {
+		if (!master.equals(lastAttacker) && !owner.equals(lastAttacker) && !master.getLifeStats().isAlreadyDead()
+				&& !lastAttacker.getLifeStats().isAlreadyDead()) {
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
 
 				@Override
@@ -163,7 +164,8 @@ public class SummonController extends CreatureController<Summon> {
 
 	public void useSkill(int skillId, Creature target) {
 		Creature creature = getOwner();
-		boolean petHasSkill = DataManager.PET_SKILL_DATA.petHasSkill(getOwner().getObjectTemplate().getTemplateId(), skillId);
+		boolean petHasSkill = DataManager.PET_SKILL_DATA.petHasSkill(getOwner().getObjectTemplate().getTemplateId(),
+				skillId);
 		if (!petHasSkill) {
 			// hackers!)
 			return;
@@ -186,7 +188,9 @@ public class SummonController extends CreatureController<Summon> {
 
 	/**
 	 * Handle automatic release if Ultra Skill demands it
-	 * @param is the skill commanded by summoner, after which pet is automatically dismissed
+	 * 
+	 * @param is the skill commanded by summoner, after which pet is automatically
+	 *           dismissed
 	 */
 	public void setReleaseAfterSkill(int skillId) {
 		this.releaseAfterSkill = skillId;
@@ -199,7 +203,7 @@ public class SummonController extends CreatureController<Summon> {
 		getOwner().getObserveController().notifyMoveObservers();
 		PlayerMoveTaskManager.getInstance().addPlayer(getOwner());
 	}
-	
+
 	@Override
 	public void onStopMove() {
 		super.onStopMove();

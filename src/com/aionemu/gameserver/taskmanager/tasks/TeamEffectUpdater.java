@@ -23,20 +23,19 @@ import com.aionemu.gameserver.model.team2.common.legacy.PlayerAllianceEvent;
 import com.aionemu.gameserver.model.team2.group.PlayerGroupService;
 import com.aionemu.gameserver.taskmanager.AbstractIterativePeriodicTaskManager;
 
-public final class TeamEffectUpdater extends AbstractIterativePeriodicTaskManager<Player>
-{
+public final class TeamEffectUpdater extends AbstractIterativePeriodicTaskManager<Player> {
 	private static final class SingletonHolder {
 		private static final TeamEffectUpdater INSTANCE = new TeamEffectUpdater();
 	}
-	
+
 	public static TeamEffectUpdater getInstance() {
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	public TeamEffectUpdater() {
 		super(500);
 	}
-	
+
 	@Override
 	protected void callTask(Player player) {
 		if (player.isOnline()) {
@@ -50,7 +49,7 @@ public final class TeamEffectUpdater extends AbstractIterativePeriodicTaskManage
 		}
 		this.stopTask(player);
 	}
-	
+
 	@Override
 	protected String getCalledMethodName() {
 		return "teamEffectUpdate()";

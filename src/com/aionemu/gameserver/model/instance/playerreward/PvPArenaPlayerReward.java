@@ -19,16 +19,15 @@ package com.aionemu.gameserver.model.instance.playerreward;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.instance.InstanceBuff;
 
-public class PvPArenaPlayerReward extends InstancePlayerReward
-{
+public class PvPArenaPlayerReward extends InstancePlayerReward {
 	private int position;
 	private int timeBonus;
 	private float timeBonusModifier;
-	//<Abyss Points>
+	// <Abyss Points>
 	private int basicAP;
 	private int rankingAP;
 	private int scoreAP;
-	//<Glory Points>
+	// <Glory Points>
 	private int basicGP;
 	private int rankingGP;
 	private int scoreGP;
@@ -50,7 +49,7 @@ public class PvPArenaPlayerReward extends InstancePlayerReward
 	private long logoutTime;
 	private boolean isRewarded = false;
 	private InstanceBuff boostMorale;
-	
+
 	public PvPArenaPlayerReward(Integer object, int timeBonus, byte buffId) {
 		super(object);
 		super.addPoints(13000);
@@ -58,226 +57,226 @@ public class PvPArenaPlayerReward extends InstancePlayerReward
 		timeBonusModifier = ((float) this.timeBonus / (float) 660000);
 		boostMorale = new InstanceBuff(buffId);
 	}
-	
+
 	public int getPosition() {
 		return position;
 	}
-	
+
 	public void setPosition(int position) {
 		this.position = position;
 	}
-	
+
 	public int getTimeBonus() {
 		return timeBonus > 0 ? timeBonus : 0;
 	}
-	
+
 	public void updateLogOutTime() {
 		logoutTime = System.currentTimeMillis();
 	}
-	
+
 	public void updateBonusTime() {
 		int offlineTime = (int) (System.currentTimeMillis() - logoutTime);
 		timeBonus -= offlineTime * timeBonusModifier;
 	}
-	
+
 	public boolean isRewarded() {
 		return isRewarded;
 	}
-	
+
 	public void setRewarded() {
 		isRewarded = true;
 	}
-	
-	//<Abyss Points>
+
+	// <Abyss Points>
 	public int getBasicAP() {
 		return basicAP;
 	}
-	
+
 	public int getRankingAP() {
 		return rankingAP;
 	}
-	
+
 	public int getScoreAP() {
 		return scoreAP;
 	}
-	
+
 	public void setBasicAP(int ap) {
 		this.basicAP = ap;
 	}
-	
+
 	public void setRankingAP(int ap) {
 		this.rankingAP = ap;
 	}
-	
+
 	public void setScoreAP(int ap) {
 		this.scoreAP = ap;
 	}
-	
-	//<Glory Points>
+
+	// <Glory Points>
 	public int getBasicGP() {
 		return basicGP;
 	}
-	
+
 	public int getRankingGP() {
 		return rankingGP;
 	}
-	
+
 	public int getScoreGP() {
 		return scoreGP;
 	}
-	
+
 	public void setBasicGP(int gp) {
 		this.basicGP = gp;
 	}
-	
+
 	public void setRankingGP(int gp) {
 		this.rankingGP = gp;
 	}
-	
+
 	public void setScoreGP(int gp) {
 		this.scoreGP = gp;
 	}
-	
+
 	public float getParticipation() {
 		return (float) getTimeBonus() / timeBonus;
 	}
-	
+
 	public int getBasicCrucible() {
 		return basicCrucible;
 	}
-	
+
 	public int getRankingCrucible() {
 		return rankingCrucible;
 	}
-	
+
 	public int getScoreCrucible() {
 		return scoreCrucible;
 	}
-	
+
 	public void setBasicCrucible(int basicCrucible) {
 		this.basicCrucible = basicCrucible;
 	}
-	
+
 	public void setRankingCrucible(int rankingCrucible) {
 		this.rankingCrucible = rankingCrucible;
 	}
-	
+
 	public void setScoreCrucible(int scoreCrucible) {
 		this.scoreCrucible = scoreCrucible;
 	}
-	
+
 	public void setBasicCourage(int basicCourage) {
 		this.basicCourage = basicCourage;
 	}
-	
+
 	public void setRankingCourage(int rankingCourage) {
 		this.rankingCourage = rankingCourage;
 	}
-	
+
 	public void setScoreCourage(int scoreCourage) {
 		this.scoreCourage = scoreCourage;
 	}
-	
+
 	public int getBasicCourage() {
 		return basicCourage;
 	}
-	
+
 	public int getRankingCourage() {
 		return rankingCourage;
 	}
-	
+
 	public int getScoreCourage() {
 		return scoreCourage;
 	}
-	
+
 	public int getOpportunity() {
 		return opportunity;
 	}
-	
+
 	public void setOpportunity(int opportunity) {
 		this.opportunity = opportunity;
 	}
-	
+
 	public int getGloryTicket() {
 		return gloryTicket;
 	}
-	
+
 	public void setGloryTicket(int gloryTicket) {
 		this.gloryTicket = gloryTicket;
 	}
-	
+
 	public int getMithrilMedal() {
 		return mithrilMedal;
 	}
-	
+
 	public void setMithrilMedal(int mithrilMedal) {
 		this.mithrilMedal = mithrilMedal;
 	}
-	
+
 	public int getPlatinumMedal() {
 		return platinumMedal;
 	}
-	
+
 	public void setPlatinumMedal(int platinumMedal) {
 		this.platinumMedal = platinumMedal;
 	}
-	
+
 	public int getGloriousInsignia() {
 		return gloriousInsignia;
 	}
-	
+
 	public void setGloriousInsignia(int gloriousInsignia) {
 		this.gloriousInsignia = gloriousInsignia;
 	}
-	
+
 	public int getLifeSerum() {
 		return lifeSerum;
 	}
-	
+
 	public void setLifeSerum(int lifeSerum) {
 		this.lifeSerum = lifeSerum;
 	}
-	
+
 	public void setBasicInfinity(int basicInfinity) {
 		this.basicInfinity = basicInfinity;
 	}
-	
+
 	public void setRankingInfinity(int rankingInfinity) {
 		this.rankingInfinity = rankingInfinity;
 	}
-	
+
 	public void setScoreInfinity(int scoreInfinity) {
 		this.scoreInfinity = scoreInfinity;
 	}
-	
+
 	public int getBasicInfinity() {
 		return basicInfinity;
 	}
-	
+
 	public int getRankingInfinity() {
 		return rankingInfinity;
 	}
-	
+
 	public int getScoreInfinity() {
 		return scoreInfinity;
 	}
-	
+
 	public int getScorePoints() {
 		return timeBonus + getPoints();
 	}
-	
+
 	public boolean hasBoostMorale() {
 		return boostMorale.hasInstanceBuff();
 	}
-	
+
 	public void applyBoostMoraleEffect(Player player) {
 		boostMorale.applyEffect(player, 20000);
 	}
-	
+
 	public void endBoostMoraleEffect(Player player) {
 		boostMorale.endEffect(player);
 	}
-	
+
 	public int getRemaningTime() {
 		int time = boostMorale.getRemaningTime();
 		if (time >= 0 && time < 20) {

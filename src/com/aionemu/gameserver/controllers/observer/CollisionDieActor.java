@@ -26,19 +26,18 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 /**
  * @author Rolandas
  */
-public class CollisionDieActor extends AbstractCollisionObserver implements IActor
-{
+public class CollisionDieActor extends AbstractCollisionObserver implements IActor {
 	private boolean isEnabled = true;
-	
+
 	public CollisionDieActor(Creature creature, Spatial geometry) {
 		super(creature, geometry, CollisionIntention.MATERIAL.getId());
 	}
-	
+
 	@Override
 	public void setEnabled(boolean enable) {
 		isEnabled = enable;
 	}
-	
+
 	@Override
 	public void onMoved(CollisionResults collisionResults) {
 		if (isEnabled && collisionResults.size() != 0) {
@@ -48,14 +47,14 @@ public class CollisionDieActor extends AbstractCollisionObserver implements IAct
 			act();
 		}
 	}
-	
+
 	@Override
 	public void act() {
 		if (isEnabled) {
 			creature.getController().die();
 		}
 	}
-	
+
 	@Override
 	public void abort() {
 	}

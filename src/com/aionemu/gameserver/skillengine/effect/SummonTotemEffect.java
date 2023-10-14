@@ -35,49 +35,49 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SummonTotemEffect")
-public class SummonTotemEffect extends SummonServantEffect
-{
-    @Override
-    public void applyEffect(Effect effect) {
-        Creature effector = effect.getEffector();
-        switch (effect.getSkillId()) {
-            case 657:
-			case 658:
-			case 659:
-			case 660:
-			case 661:
-			case 662:
-                if (effect.getEffector().getTarget() == null) {
-                    effect.getEffector().setTarget(effect.getEffector());
-                }
-                double radian = Math.toRadians(MathUtil.convertHeadingToDegree((byte) effect.getEffector().getHeading()));
-                float x = effect.getX();
-                float y = effect.getY();
-                float z = effect.getZ();
-                if (x == 0 && y == 0) {
-                    Creature effected = effect.getEffected();
-                    x = effected.getX() + (float) (Math.cos(radian) * 2);
-                    y = effected.getY() + (float) (Math.sin(radian) * 2);
-                    z = effected.getZ();
-                }
-                byte heading = effector.getHeading();
-                int worldId = effector.getWorldId();
-                int instanceId = effector.getInstanceId();
-                SpawnTemplate spawn = SpawnEngine.addNewSingleTimeSpawn(worldId, npcId, x, y, z, heading);
-                final Servant servant = VisibleObjectSpawner.spawnServant(spawn, instanceId, effector, effect.getSkillId(), effect.getSkillLevel(), NpcObjectType.SKILLAREA);
-                Future<?> task = ThreadPoolManager.getInstance().schedule(new Runnable() {
-                    @Override
-                    public void run() {
-                        servant.getController().delete();
-                    }
-                }, time * 1000);
-                servant.getController().addTask(TaskId.DESPAWN, task);
-            return;
-            default:
-                float x1 = effector.getX();
-                float y1 = effector.getY();
-                float z1 = effector.getZ();
-            spawnServant(effect, time, NpcObjectType.TOTEM, x1, y1, z1);
-        }
-    }
+public class SummonTotemEffect extends SummonServantEffect {
+	@Override
+	public void applyEffect(Effect effect) {
+		Creature effector = effect.getEffector();
+		switch (effect.getSkillId()) {
+		case 657:
+		case 658:
+		case 659:
+		case 660:
+		case 661:
+		case 662:
+			if (effect.getEffector().getTarget() == null) {
+				effect.getEffector().setTarget(effect.getEffector());
+			}
+			double radian = Math.toRadians(MathUtil.convertHeadingToDegree((byte) effect.getEffector().getHeading()));
+			float x = effect.getX();
+			float y = effect.getY();
+			float z = effect.getZ();
+			if (x == 0 && y == 0) {
+				Creature effected = effect.getEffected();
+				x = effected.getX() + (float) (Math.cos(radian) * 2);
+				y = effected.getY() + (float) (Math.sin(radian) * 2);
+				z = effected.getZ();
+			}
+			byte heading = effector.getHeading();
+			int worldId = effector.getWorldId();
+			int instanceId = effector.getInstanceId();
+			SpawnTemplate spawn = SpawnEngine.addNewSingleTimeSpawn(worldId, npcId, x, y, z, heading);
+			final Servant servant = VisibleObjectSpawner.spawnServant(spawn, instanceId, effector, effect.getSkillId(),
+					effect.getSkillLevel(), NpcObjectType.SKILLAREA);
+			Future<?> task = ThreadPoolManager.getInstance().schedule(new Runnable() {
+				@Override
+				public void run() {
+					servant.getController().delete();
+				}
+			}, time * 1000);
+			servant.getController().addTask(TaskId.DESPAWN, task);
+			return;
+		default:
+			float x1 = effector.getX();
+			float y1 = effector.getY();
+			float z1 = effector.getZ();
+			spawnServant(effect, time, NpcObjectType.TOTEM, x1, y1, z1);
+		}
+	}
 }

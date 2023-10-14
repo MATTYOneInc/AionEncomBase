@@ -38,9 +38,9 @@ public class QuestVarCondition extends QuestCondition {
 
 	/*
 	 * (non-Javadoc)
-	 * @see
-	 * com.aionemu.gameserver.questEngine.handlers.template.xmlQuest.condition.QuestCondition#doCheck(com.aionemu.gameserver
-	 * .questEngine.model.QuestEnv)
+	 * 
+	 * @see com.aionemu.gameserver.questEngine.handlers.template.xmlQuest.condition.
+	 * QuestCondition#doCheck(com.aionemu.gameserver .questEngine.model.QuestEnv)
 	 */
 	@Override
 	public boolean doCheck(QuestEnv env) {
@@ -50,20 +50,20 @@ public class QuestVarCondition extends QuestCondition {
 		}
 		int var = qs.getQuestVars().getVarById(varId);
 		switch (getOp()) {
-			case EQUAL:
-				return var == value;
-			case GREATER:
-				return var > value;
-			case GREATER_EQUAL:
-				return var >= value;
-			case LESSER:
-				return var < value;
-			case LESSER_EQUAL:
-				return var <= value;
-			case NOT_EQUAL:
-				return var != value;
-			default:
-				return false;
+		case EQUAL:
+			return var == value;
+		case GREATER:
+			return var > value;
+		case GREATER_EQUAL:
+			return var >= value;
+		case LESSER:
+			return var < value;
+		case LESSER_EQUAL:
+			return var <= value;
+		case NOT_EQUAL:
+			return var != value;
+		default:
+			return false;
 		}
 	}
 }

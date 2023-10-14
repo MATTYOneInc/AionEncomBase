@@ -8,7 +8,7 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 public class SM_SELL_ITEM extends AionServerPacket {
 
 	private int targetObjectId;
-    private int sellPercentage;
+	private int sellPercentage;
 	private TradeListTemplate tradeListTemplate;
 	@SuppressWarnings("unused")
 	private byte action = 0x01;
@@ -29,7 +29,8 @@ public class SM_SELL_ITEM extends AionServerPacket {
 
 	@Override
 	protected void writeImpl(AionConnection con) {
-		if ((this.tradeListTemplate != null) && (this.tradeListTemplate.getNpcId() != 0) && (this.tradeListTemplate.getCount() != 0)) {
+		if ((this.tradeListTemplate != null) && (this.tradeListTemplate.getNpcId() != 0)
+				&& (this.tradeListTemplate.getCount() != 0)) {
 			writeD(this.targetObjectId);
 			writeC(this.tradeListTemplate.getTradeNpcType().index());
 			writeD(this.sellPercentage);
@@ -37,8 +38,7 @@ public class SM_SELL_ITEM extends AionServerPacket {
 			writeH(this.tradeListTemplate.getCount());
 			for (TradeListTemplate.TradeTab tradeTabl : this.tradeListTemplate.getTradeTablist())
 				writeD(tradeTabl.getId());
-		}
-		else {
+		} else {
 			writeD(this.targetObjectId);
 			writeD(5121);
 			writeD(65792);

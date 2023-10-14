@@ -34,23 +34,22 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlRootElement(name = "hotspot_location")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class HotspotLocationData
-{
+public class HotspotLocationData {
 	@XmlElement(name = "hotspot_template")
 	private List<HotspotlocationTemplate> hslist;
-	
+
 	private TIntObjectHashMap<HotspotlocationTemplate> lochslistData = new TIntObjectHashMap<HotspotlocationTemplate>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
-		for (HotspotlocationTemplate loc: hslist) {
+		for (HotspotlocationTemplate loc : hslist) {
 			lochslistData.put(loc.getLocId(), loc);
 		}
 	}
-	
+
 	public int size() {
 		return lochslistData.size();
 	}
-	
+
 	public HotspotlocationTemplate getHotspotlocationTemplate(int id) {
 		return lochslistData.get(id);
 	}

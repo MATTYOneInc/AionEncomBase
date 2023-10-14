@@ -45,10 +45,10 @@ public class HouseBuildingData {
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		if (buildings == null) {
 			return;
-        }
+		}
 		for (Building building : buildings) {
 			buildingById.put(building.getId(), building);
-        }
+		}
 		buildings.clear();
 		buildings = null;
 	}
@@ -56,7 +56,7 @@ public class HouseBuildingData {
 	public Building getBuilding(int buildingId) {
 		return buildingById.get(buildingId);
 	}
-	
+
 	public int size() {
 		return buildingById.size();
 	}

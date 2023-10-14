@@ -32,8 +32,7 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SummonFunctionalNpcEffect")
-public class SummonFunctionalNpcEffect extends SummonEffect
-{
+public class SummonFunctionalNpcEffect extends SummonEffect {
 	@XmlAttribute(name = "owner")
 	private SummonOwner owner;
 
@@ -45,7 +44,7 @@ public class SummonFunctionalNpcEffect extends SummonEffect
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-				if(functionalNpc != null && functionalNpc.isSpawned()) {
+				if (functionalNpc != null && functionalNpc.isSpawned()) {
 					functionalNpc.getController().onDelete();
 				}
 			}

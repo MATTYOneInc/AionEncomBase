@@ -28,8 +28,7 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ReturnPointEffect")
-public class ReturnPointEffect extends EffectTemplate
-{
+public class ReturnPointEffect extends EffectTemplate {
 	@Override
 	public void applyEffect(Effect effect) {
 		if (effect.getEffected().isInInstance()) {
@@ -40,7 +39,7 @@ public class ReturnPointEffect extends EffectTemplate
 		String pointAlias = itemTemplate.getReturnAlias();
 		TeleportService2.useTeleportScroll((Player) effect.getEffector(), pointAlias, worldId);
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		ItemTemplate itemTemplate = effect.getItemTemplate();

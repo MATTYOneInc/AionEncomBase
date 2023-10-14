@@ -25,39 +25,39 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * @author Rinzler (Encom)
  */
 
-public class ConquestSpawnTemplate extends SpawnTemplate
-{
+public class ConquestSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private ConquestStateType conquestType;
-	
+
 	public ConquestSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public ConquestSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public ConquestSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public ConquestStateType getOStateType() {
 		return conquestType;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void setOStateType(ConquestStateType conquestType) {
 		this.conquestType = conquestType;
 	}
-	
+
 	public final boolean isConquest() {
 		return conquestType.equals(ConquestStateType.CONQUEST);
 	}
-	
+
 	public final boolean isConquestPeace() {
 		return conquestType.equals(ConquestStateType.PEACE);
 	}

@@ -26,8 +26,7 @@ import com.aionemu.gameserver.model.templates.mail.Mails;
 
 @XmlRootElement(name = "ae_static_data")
 @XmlAccessorType(XmlAccessType.NONE)
-public class StaticData
-{
+public class StaticData {
 	@XmlElement(name = "world_maps")
 	public WorldMapsData worldMapsData;
 	@XmlElement(name = "npc_trade_list")
@@ -167,7 +166,7 @@ public class StaticData
 	@XmlElement(name = "assembly_items")
 	public AssemblyItemsData assemblyItemData;
 	@XmlElement(name = "multi_returns")
-    public MultiReturnItemData multiReturnItemData;
+	public MultiReturnItemData multiReturnItemData;
 	@XmlElement(name = "lboxes")
 	public HouseScriptData houseScriptData;
 	@XmlElement(name = "mails")
@@ -177,7 +176,7 @@ public class StaticData
 	@XmlElement(name = "town_spawns_data")
 	public TownSpawnsData townSpawnsData;
 	@XmlElement(name = "charge_skills")
-    public ChargeSkillData chargeSkillData;
+	public ChargeSkillData chargeSkillData;
 	@XmlElement(name = "spring_objects")
 	public SpringObjectsData springObjectsData;
 	@XmlElement(name = "robots")
@@ -235,34 +234,34 @@ public class StaticData
 	@XmlElement(name = "players_service_bonusattrs")
 	public PlayersBonusData playersBonusData;
 	@XmlElement(name = "enchant_templates")
-   	public ItemEnchantData itemEnchantData;
+	public ItemEnchantData itemEnchantData;
 	@XmlElement(name = "hotspot_location")
 	public HotspotLocationData hotspotLocationData;
 	@XmlElement(name = "item_upgrades")
-  	public ItemUpgradeData itemUpgradeData;
+	public ItemUpgradeData itemUpgradeData;
 	@XmlElement(name = "atreian_passports")
 	public AtreianPassportData atreianPassportData;
 	@XmlElement(name = "game_experience_items")
-    public GameExperienceData gameExperienceData;
+	public GameExperienceData gameExperienceData;
 	@XmlElement(name = "abyss_ops")
-    public AbyssOpData abyssOpData;
+	public AbyssOpData abyssOpData;
 	@XmlElement(name = "panel_cps")
-    public PanelCpData panelCpData;
-	@XmlElement(name="decomposable_select_items")
-    public DecomposableSelectItemsData decomposableSelectItemsData;
+	public PanelCpData panelCpData;
+	@XmlElement(name = "decomposable_select_items")
+	public DecomposableSelectItemsData decomposableSelectItemsData;
 	@XmlElement(name = "pet_bonusattrs")
 	public PetBuffData petBuffData;
 	@XmlElement(name = "landing")
 	public LandingData landingLocationData;
-	@XmlElement(name="landing_special")
+	@XmlElement(name = "landing_special")
 	public LandingSpecialData landingSpecialLocationData;
-	@XmlElement(name="luna_consume_rewards")
+	@XmlElement(name = "luna_consume_rewards")
 	public LunaConsumeRewardsData lunaConsumeRewardsData;
-	@XmlElement(name="item_custom_sets")
+	@XmlElement(name = "item_custom_sets")
 	public ItemCustomSetData itemCustomSet;
-	@XmlElement(name="minions")
+	@XmlElement(name = "minions")
 	public MinionData minionData;
-	@XmlElement(name="f2p_bonus")
+	@XmlElement(name = "f2p_bonus")
 	public F2PBonusData f2pBonus;
 	@XmlElement(name = "arcadelist")
 	public ArcadeUpgradeData arcadeUpgradeData;
@@ -294,9 +293,9 @@ public class StaticData
 	public TowerRewardData towerReward;
 	@XmlElement(name = "shugo_sweeps")
 	public ShugoSweepRewardData shugoSweepsRewardData;
-	@XmlElement(name="skill_skins")
+	@XmlElement(name = "skill_skins")
 	public SkillSkinData skillSkinData;
-	
+
 	@SuppressWarnings("unused")
 	private void afterUnmarshal(Unmarshaller unmarshaller, Object parent) {
 		DataManager.log.info("Loaded " + worldMapsData.size() + " Map");

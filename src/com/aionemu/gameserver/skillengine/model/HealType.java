@@ -26,8 +26,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum HealType {
 
-	HP,
-	MP,
-	DP,
-	FP;
+	HP, MP, DP, FP;
 }

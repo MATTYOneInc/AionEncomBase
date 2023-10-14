@@ -23,8 +23,7 @@ import com.aionemu.gameserver.model.PlayerClass;
 import com.aionemu.gameserver.model.gameobjects.player.FriendList.Status;
 import com.aionemu.gameserver.world.WorldPosition;
 
-public class Friend
-{
+public class Friend {
 	private static final Logger log = LoggerFactory.getLogger(Friend.class);
 	private PlayerCommonData pcd;
 	private String friendNote = "";

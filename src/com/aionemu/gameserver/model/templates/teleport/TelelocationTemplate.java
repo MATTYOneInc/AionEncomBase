@@ -44,7 +44,7 @@ public class TelelocationTemplate {
 
 	@XmlAttribute(name = "name_id", required = true)
 	private int nameId;
-	
+
 	@XmlAttribute(name = "posX")
 	private float x = 0;
 

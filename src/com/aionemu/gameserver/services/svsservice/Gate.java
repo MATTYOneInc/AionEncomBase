@@ -23,19 +23,18 @@ import com.aionemu.gameserver.model.svs.SvsStateType;
  * @author Rinzler (Encom)
  */
 
-public class Gate extends Panesterra<SvsLocation>
-{
+public class Gate extends Panesterra<SvsLocation> {
 	public Gate(SvsLocation svs) {
 		super(svs);
 	}
-	
+
 	@Override
 	public void startSvs() {
 		getSvsLocation().setActiveSvs(this);
 		despawn();
 		spawn(SvsStateType.SVS);
 	}
-	
+
 	@Override
 	public void stopSvs() {
 		getSvsLocation().setActiveSvs(null);

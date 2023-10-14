@@ -29,23 +29,23 @@ import com.google.common.base.Predicate;
  */
 public class ChangeAllianceLootRulesEvent extends AlwaysTrueTeamEvent implements Predicate<Player> {
 
-    private final PlayerAlliance alliance;
-    private final LootGroupRules lootGroupRules;
+	private final PlayerAlliance alliance;
+	private final LootGroupRules lootGroupRules;
 
-    public ChangeAllianceLootRulesEvent(PlayerAlliance alliance, LootGroupRules lootGroupRules) {
-        this.alliance = alliance;
-        this.lootGroupRules = lootGroupRules;
-    }
+	public ChangeAllianceLootRulesEvent(PlayerAlliance alliance, LootGroupRules lootGroupRules) {
+		this.alliance = alliance;
+		this.lootGroupRules = lootGroupRules;
+	}
 
-    @Override
-    public void handleEvent() {
-        alliance.setLootGroupRules(lootGroupRules);
-        alliance.applyOnMembers(this);
-    }
+	@Override
+	public void handleEvent() {
+		alliance.setLootGroupRules(lootGroupRules);
+		alliance.applyOnMembers(this);
+	}
 
-    @Override
-    public boolean apply(Player member) {
-        PacketSendUtility.sendPacket(member, new SM_ALLIANCE_INFO(alliance));
-        return true;
-    }
+	@Override
+	public boolean apply(Player member) {
+		PacketSendUtility.sendPacket(member, new SM_ALLIANCE_INFO(alliance));
+		return true;
+	}
 }

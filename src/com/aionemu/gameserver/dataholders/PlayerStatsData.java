@@ -35,15 +35,14 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlRootElement(name = "player_stats_templates")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class PlayerStatsData
-{
+public class PlayerStatsData {
 	@XmlElement(name = "player_stats", required = true)
 	private List<PlayerStatsType> templatesList = new ArrayList<PlayerStatsType>();
-	
+
 	private final TIntObjectHashMap<PlayerStatsTemplate> playerTemplates = new TIntObjectHashMap<PlayerStatsTemplate>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
-		for (PlayerStatsType pt: templatesList) {
+		for (PlayerStatsType pt : templatesList) {
 			int code = makeHash(pt.getRequiredPlayerClass(), pt.getRequiredLevel());
 			PlayerStatsTemplate template = pt.getTemplate();
 			template.setMaxMp(Math.round(template.getMaxMp() * 100f / template.getWill()));
@@ -58,7 +57,8 @@ public class PlayerStatsData
 			playerTemplates.put(code, pt.getTemplate());
 		}
 		playerTemplates.put(makeHash(PlayerClass.WARRIOR, 0), new CalculatedPlayerStatsTemplate(PlayerClass.WARRIOR));
-		playerTemplates.put(makeHash(PlayerClass.GLADIATOR, 0), new CalculatedPlayerStatsTemplate(PlayerClass.GLADIATOR));
+		playerTemplates.put(makeHash(PlayerClass.GLADIATOR, 0),
+				new CalculatedPlayerStatsTemplate(PlayerClass.GLADIATOR));
 		playerTemplates.put(makeHash(PlayerClass.TEMPLAR, 0), new CalculatedPlayerStatsTemplate(PlayerClass.TEMPLAR));
 		playerTemplates.put(makeHash(PlayerClass.SCOUT, 0), new CalculatedPlayerStatsTemplate(PlayerClass.SCOUT));
 		playerTemplates.put(makeHash(PlayerClass.ASSASSIN, 0), new CalculatedPlayerStatsTemplate(PlayerClass.ASSASSIN));
@@ -68,19 +68,23 @@ public class PlayerStatsData
 		playerTemplates.put(makeHash(PlayerClass.CLERIC, 0), new CalculatedPlayerStatsTemplate(PlayerClass.CLERIC));
 		playerTemplates.put(makeHash(PlayerClass.MAGE, 0), new CalculatedPlayerStatsTemplate(PlayerClass.MAGE));
 		playerTemplates.put(makeHash(PlayerClass.SORCERER, 0), new CalculatedPlayerStatsTemplate(PlayerClass.SORCERER));
-		playerTemplates.put(makeHash(PlayerClass.SPIRIT_MASTER, 0), new CalculatedPlayerStatsTemplate(PlayerClass.SPIRIT_MASTER));
-		
-		//News Class 4.3
+		playerTemplates.put(makeHash(PlayerClass.SPIRIT_MASTER, 0),
+				new CalculatedPlayerStatsTemplate(PlayerClass.SPIRIT_MASTER));
+
+		// News Class 4.3
 		playerTemplates.put(makeHash(PlayerClass.MUSE, 0), new CalculatedPlayerStatsTemplate(PlayerClass.MUSE));
-		playerTemplates.put(makeHash(PlayerClass.SONGWEAVER, 0), new CalculatedPlayerStatsTemplate(PlayerClass.SONGWEAVER));
+		playerTemplates.put(makeHash(PlayerClass.SONGWEAVER, 0),
+				new CalculatedPlayerStatsTemplate(PlayerClass.SONGWEAVER));
 		playerTemplates.put(makeHash(PlayerClass.TECHNIST, 0), new CalculatedPlayerStatsTemplate(PlayerClass.TECHNIST));
-		playerTemplates.put(makeHash(PlayerClass.GUNSLINGER, 0), new CalculatedPlayerStatsTemplate(PlayerClass.GUNSLINGER));
-		//News Class 4.5
-		playerTemplates.put(makeHash(PlayerClass.AETHERTECH, 0), new CalculatedPlayerStatsTemplate(PlayerClass.AETHERTECH));
+		playerTemplates.put(makeHash(PlayerClass.GUNSLINGER, 0),
+				new CalculatedPlayerStatsTemplate(PlayerClass.GUNSLINGER));
+		// News Class 4.5
+		playerTemplates.put(makeHash(PlayerClass.AETHERTECH, 0),
+				new CalculatedPlayerStatsTemplate(PlayerClass.AETHERTECH));
 		templatesList.clear();
 		templatesList = null;
 	}
-	
+
 	public PlayerStatsTemplate getTemplate(Player player) {
 		PlayerStatsTemplate template = getTemplate(player.getCommonData().getPlayerClass(), player.getLevel());
 		if (template == null) {
@@ -88,7 +92,7 @@ public class PlayerStatsData
 		}
 		return template;
 	}
-	
+
 	public PlayerStatsTemplate getTemplate(PlayerClass playerClass, int level) {
 		PlayerStatsTemplate template = playerTemplates.get(makeHash(playerClass, level));
 		if (template == null) {
@@ -96,36 +100,36 @@ public class PlayerStatsData
 		}
 		return template;
 	}
-	
+
 	public int size() {
 		return playerTemplates.size();
 	}
-	
+
 	@XmlRootElement(name = "playerStatsTemplateType")
 	private static class PlayerStatsType {
 		@XmlAttribute(name = "class", required = true)
 		private PlayerClass requiredPlayerClass;
-		
+
 		@XmlAttribute(name = "level", required = true)
 		private int requiredLevel;
-		
+
 		@XmlElement(name = "stats_template")
 		private PlayerStatsTemplate template;
-		
+
 		public PlayerClass getRequiredPlayerClass() {
 			return requiredPlayerClass;
 		}
-		
+
 		public int getRequiredLevel() {
 			return requiredLevel;
 		}
-		
+
 		public PlayerStatsTemplate getTemplate() {
 			return template;
 		}
 	}
-	
-	//In 4.5 (11)
+
+	// In 4.5 (11)
 	private static int makeHash(PlayerClass playerClass, int level) {
 		return level << 11 | playerClass.ordinal();
 	}

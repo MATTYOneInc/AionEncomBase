@@ -93,7 +93,7 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 	public void synchronizeWithMaxStats() {
 		if (isAlreadyDead()) {
 			return;
-        }
+		}
 		super.synchronizeWithMaxStats();
 		int maxFp = getMaxFp();
 		if (currentFp != maxFp) {
@@ -107,7 +107,7 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 
 		if (getMaxFp() < currentFp) {
 			currentFp = getMaxFp();
-        }
+		}
 		if (!owner.isFlying() && !owner.isInSprintMode()) {
 			triggerFpRestore();
 		}
@@ -159,6 +159,7 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 	public int increaseFp(TYPE type, int value) {
 		return this.increaseFp(type, value, 0, LOG.REGULAR);
 	}
+
 	public int increaseFp(TYPE type, int value, int skillId, LOG log) {
 		fpLock.lock();
 
@@ -174,8 +175,7 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 				onIncreaseFp(type, newFp - currentFp, skillId, log);
 				this.currentFp = newFp;
 			}
-		}
-		finally {
+		} finally {
 			fpLock.unlock();
 		}
 		return currentFp;
@@ -195,10 +195,9 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 
 			if (newFp < 0) {
 				newFp = 0;
-            }
+			}
 			this.currentFp = newFp;
-		}
-		finally {
+		} finally {
 			fpLock.unlock();
 		}
 
@@ -214,10 +213,9 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 
 			if (newFp < 0) {
 				newFp = 0;
-            }
+			}
 			this.currentFp = newFp;
-		}
-		finally {
+		} finally {
 			fpLock.unlock();
 		}
 
@@ -240,7 +238,7 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 	public void sendFpPacketUpdateImpl() {
 		if (owner == null) {
 			return;
-        }
+		}
 		PacketSendUtility.sendPacket(owner, new SM_FLY_TIME(currentFp, getMaxFp()));
 	}
 
@@ -252,11 +250,11 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 		increaseFp(TYPE.AUTO_HEAL_FP, 1);
 	}
 
-    public void specialrestoreFp() {
-        if (owner.getGameStats().getStat(StatEnum.REGEN_FP, 0).getCurrent() != 0) {
-            increaseFp(TYPE.AUTO_HEAL_FP, owner.getGameStats().getStat(StatEnum.REGEN_FP, 0).getCurrent() / 3);
+	public void specialrestoreFp() {
+		if (owner.getGameStats().getStat(StatEnum.REGEN_FP, 0).getCurrent() != 0) {
+			increaseFp(TYPE.AUTO_HEAL_FP, owner.getGameStats().getStat(StatEnum.REGEN_FP, 0).getCurrent() / 3);
 		}
-    }
+	}
 
 	public void triggerFpRestore() {
 		cancelFpReduce();
@@ -266,8 +264,7 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 			if (flyRestoreTask == null && !alreadyDead && !isFlyTimeFullyRestored()) {
 				this.flyRestoreTask = LifeStatsRestoreService.getInstance().scheduleFpRestoreTask(this);
 			}
-		}
-		finally {
+		} finally {
 			restoreLock.unlock();
 		}
 	}
@@ -279,8 +276,7 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 				flyRestoreTask.cancel(false);
 				this.flyRestoreTask = null;
 			}
-		}
-		finally {
+		} finally {
 			restoreLock.unlock();
 		}
 	}
@@ -298,11 +294,10 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 		restoreLock.lock();
 		try {
 			if (flyReduceTask == null && !alreadyDead && owner.getAccessLevel() < AdminConfig.GM_FLIGHT_UNLIMITED
-				&& !owner.isUnderNoFPConsum()) {
+					&& !owner.isUnderNoFPConsum()) {
 				this.flyReduceTask = LifeStatsRestoreService.getInstance().scheduleFpReduceTask(this, costFp);
 			}
-		}
-		finally {
+		} finally {
 			restoreLock.unlock();
 		}
 	}
@@ -314,8 +309,7 @@ public class PlayerLifeStats extends CreatureLifeStats<Player> {
 				flyReduceTask.cancel(false);
 				this.flyReduceTask = null;
 			}
-		}
-		finally {
+		} finally {
 			restoreLock.unlock();
 		}
 	}

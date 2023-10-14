@@ -29,35 +29,35 @@ import com.aionemu.gameserver.skillengine.change.Func;
 public class PetPenaltyAttr {
 
 	@XmlAttribute(required = true)
-    protected StatEnum stat;
-	
-    @XmlAttribute(required = true)
-    protected Func func;
-	
-    @XmlAttribute(required = true)
-    protected int value;
-	
-    public StatEnum getStat() {
-        return stat;
-    }
-	
-    public void setStat(StatEnum value) {
-        this.stat = value;
-    }
-	
-    public Func getFunc() {
-        return func;
-    }
-	
-    public void setFunc(Func value) {
-        this.func = value;
-    }
-	
-    public int getValue() {
-        return value;
-    }
-	
-    public void setValue(int value) {
-        this.value = value;
-    }
+	protected StatEnum stat;
+
+	@XmlAttribute(required = true)
+	protected Func func;
+
+	@XmlAttribute(required = true)
+	protected int value;
+
+	public StatEnum getStat() {
+		return stat;
+	}
+
+	public void setStat(StatEnum value) {
+		this.stat = value;
+	}
+
+	public Func getFunc() {
+		return func;
+	}
+
+	public void setFunc(Func value) {
+		this.func = value;
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
 }

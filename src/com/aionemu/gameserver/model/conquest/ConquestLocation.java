@@ -30,48 +30,47 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class ConquestLocation
-{
+public class ConquestLocation {
 	protected int id;
 	protected boolean isActive;
 	protected ConquestTemplate template;
 	protected ConquestOffering<ConquestLocation> activeConquest;
 	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
 	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
+
 	public ConquestLocation() {
 	}
-	
+
 	public ConquestLocation(ConquestTemplate template) {
 		this.template = template;
 		this.id = template.getId();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveConquest(ConquestOffering<ConquestLocation> conquest) {
 		isActive = conquest != null;
 		this.activeConquest = conquest;
 	}
-	
+
 	public ConquestOffering<ConquestLocation> getActiveConquest() {
 		return activeConquest;
 	}
-	
+
 	public final ConquestTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}

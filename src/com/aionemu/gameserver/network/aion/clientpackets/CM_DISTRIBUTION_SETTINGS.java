@@ -55,18 +55,18 @@ public class CM_DISTRIBUTION_SETTINGS extends AionClientPacket {
 		unk1 = readD();
 		lootrul = readD();
 		switch (lootrul) {
-			case 0:
-				lootrules = LootRuleType.FREEFORALL;
-				break;
-			case 1:
-				lootrules = LootRuleType.ROUNDROBIN;
-				break;
-			case 2:
-				lootrules = LootRuleType.LEADER;
-				break;
-			default:
-				lootrules = LootRuleType.FREEFORALL;
-				break;
+		case 0:
+			lootrules = LootRuleType.FREEFORALL;
+			break;
+		case 1:
+			lootrules = LootRuleType.ROUNDROBIN;
+			break;
+		case 2:
+			lootrules = LootRuleType.LEADER;
+			break;
+		default:
+			lootrules = LootRuleType.FREEFORALL;
+			break;
 		}
 		misc = readD();
 		common_item_above = readD();
@@ -78,18 +78,18 @@ public class CM_DISTRIBUTION_SETTINGS extends AionClientPacket {
 		unk2 = readD();
 
 		switch (autodistr) {
-			case 0:
-				autodistribution = LootDistribution.NORMAL;
-				break;
-			case 2:
-				autodistribution = LootDistribution.ROLL_DICE;
-				break;
-			case 3:
-				autodistribution = LootDistribution.BID;
-				break;
-			default:
-				autodistribution = LootDistribution.NORMAL;
-				break;
+		case 0:
+			autodistribution = LootDistribution.NORMAL;
+			break;
+		case 2:
+			autodistribution = LootDistribution.ROLL_DICE;
+			break;
+		case 3:
+			autodistribution = LootDistribution.BID;
+			break;
+		default:
+			autodistribution = LootDistribution.NORMAL;
+			break;
 		}
 	}
 
@@ -99,11 +99,15 @@ public class CM_DISTRIBUTION_SETTINGS extends AionClientPacket {
 
 		PlayerGroup group = leader.getPlayerGroup2();
 		if (group != null) {
-			PlayerGroupService.changeGroupRules(group, new LootGroupRules(lootrules, autodistribution, common_item_above, superior_item_above, heroic_item_above, fabled_item_above, ethernal_item_above, misc));
+			PlayerGroupService.changeGroupRules(group,
+					new LootGroupRules(lootrules, autodistribution, common_item_above, superior_item_above,
+							heroic_item_above, fabled_item_above, ethernal_item_above, misc));
 		}
 		com.aionemu.gameserver.model.team2.alliance.PlayerAlliance alliance = leader.getPlayerAlliance2();
 		if (alliance != null) {
-			PlayerAllianceService.changeGroupRules(alliance, new LootGroupRules(lootrules, autodistribution, common_item_above, superior_item_above, heroic_item_above, fabled_item_above, ethernal_item_above, misc));
+			PlayerAllianceService.changeGroupRules(alliance,
+					new LootGroupRules(lootrules, autodistribution, common_item_above, superior_item_above,
+							heroic_item_above, fabled_item_above, ethernal_item_above, misc));
 		}
 	}
 }

@@ -23,19 +23,18 @@ import com.aionemu.gameserver.model.dynamicrift.DynamicRiftStateType;
  * @author Rinzler (Encom)
  */
 
-public class Portal extends DynamicRift<DynamicRiftLocation>
-{
+public class Portal extends DynamicRift<DynamicRiftLocation> {
 	public Portal(DynamicRiftLocation dynamicRift) {
 		super(dynamicRift);
 	}
-	
+
 	@Override
 	public void startDynamicRift() {
 		getDynamicRiftLocation().setActiveDynamicRift(this);
 		despawn();
 		spawn(DynamicRiftStateType.OPEN);
 	}
-	
+
 	@Override
 	public void stopDynamicRift() {
 		getDynamicRiftLocation().setActiveDynamicRift(null);

@@ -17,8 +17,9 @@
 package com.aionemu.gameserver.world.exceptions;
 
 /**
- * This exception will be thrown when object without set position will be spawned or despawned. This exception
- * indicating error when coder forget to set position but is spawning or despawning object.
+ * This exception will be thrown when object without set position will be
+ * spawned or despawned. This exception indicating error when coder forget to
+ * set position but is spawning or despawning object.
  * 
  * @author -Nemesiss-
  */
@@ -33,10 +34,10 @@ public class NotSetPositionException extends RuntimeException {
 	}
 
 	/**
-	 * Constructs an <code>NotSetPositionException</code> with the specified detail message.
+	 * Constructs an <code>NotSetPositionException</code> with the specified detail
+	 * message.
 	 * 
-	 * @param s
-	 *          the detail message.
+	 * @param s the detail message.
 	 */
 	public NotSetPositionException(String s) {
 		super(s);
@@ -45,10 +46,8 @@ public class NotSetPositionException extends RuntimeException {
 	/**
 	 * Creates new error
 	 * 
-	 * @param message
-	 *          exception description
-	 * @param cause
-	 *          reason of this exception
+	 * @param message exception description
+	 * @param cause   reason of this exception
 	 */
 	public NotSetPositionException(String message, Throwable cause) {
 		super(message, cause);
@@ -57,8 +56,7 @@ public class NotSetPositionException extends RuntimeException {
 	/**
 	 * Creates new error
 	 * 
-	 * @param cause
-	 *          reason of this exception
+	 * @param cause reason of this exception
 	 */
 	public NotSetPositionException(Throwable cause) {
 		super(cause);

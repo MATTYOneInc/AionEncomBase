@@ -26,9 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum PlaceLocation {
 
-	FLOOR,
-	STACK,
-	WALL;
+	FLOOR, STACK, WALL;
 
 	public String value() {
 		return name();

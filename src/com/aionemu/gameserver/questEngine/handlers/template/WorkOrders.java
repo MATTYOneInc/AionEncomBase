@@ -37,15 +37,14 @@ import com.aionemu.gameserver.services.RecipeService;
 import com.aionemu.gameserver.services.item.ItemService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class WorkOrders extends QuestHandler
-{
+public class WorkOrders extends QuestHandler {
 	private final WorkOrdersData workOrdersData;
-	
+
 	public WorkOrders(WorkOrdersData workOrdersData) {
 		super(workOrdersData.getId());
 		this.workOrdersData = workOrdersData;
 	}
-	
+
 	@Override
 	public void register() {
 		Iterator<Integer> iterator = workOrdersData.getStartNpcIds().iterator();
@@ -55,7 +54,7 @@ public class WorkOrders extends QuestHandler
 			qe.registerQuestNpc(startNpc).addOnTalkEvent(workOrdersData.getId());
 		}
 	}
-	
+
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
@@ -64,26 +63,29 @@ public class WorkOrders extends QuestHandler
 			QuestState qs = player.getQuestStateList().getQuestState(workOrdersData.getId());
 			if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 				switch (env.getDialog()) {
-					case START_DIALOG: {
-						return sendQuestDialog(env, 4);
-					} case ACCEPT_QUEST: {
-						if (RecipeService.validateNewRecipe(player, workOrdersData.getRecipeId()) != null) {
-							if (QuestService.startQuest(env)) {
-								if (ItemService.addQuestItems(player, workOrdersData.getGiveComponent())) {
-									RecipeService.addRecipe(player, workOrdersData.getRecipeId(), false);
-									PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
-								}
-								return true;
+				case START_DIALOG: {
+					return sendQuestDialog(env, 4);
+				}
+				case ACCEPT_QUEST: {
+					if (RecipeService.validateNewRecipe(player, workOrdersData.getRecipeId()) != null) {
+						if (QuestService.startQuest(env)) {
+							if (ItemService.addQuestItems(player, workOrdersData.getGiveComponent())) {
+								RecipeService.addRecipe(player, workOrdersData.getRecipeId(), false);
+								PacketSendUtility.sendPacket(player,
+										new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
 							}
+							return true;
 						}
 					}
+				}
 				}
 			} else if (qs.getStatus() == QuestStatus.START) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					int var = qs.getQuestVarById(0);
 					if (QuestService.collectItemCheck(env, false)) {
 						changeQuestStep(env, var, var, true);
-						QuestWorkItems qwi = DataManager.QUEST_DATA.getQuestById(workOrdersData.getId()).getQuestWorkItems();
+						QuestWorkItems qwi = DataManager.QUEST_DATA.getQuestById(workOrdersData.getId())
+								.getQuestWorkItems();
 						if (qwi != null) {
 							long count = 0;
 							for (QuestItems qi : qwi.getQuestWorkItem()) {

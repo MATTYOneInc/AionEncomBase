@@ -35,26 +35,25 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlRootElement(name = "merchands")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class PetMerchandData
-{
+public class PetMerchandData {
 	@XmlElement(name = "merchand")
 	private List<PetMerchandEntry> list;
-	
+
 	@XmlTransient
 	private TIntObjectHashMap<PetMerchandEntry> merchandsById = new TIntObjectHashMap<PetMerchandEntry>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
-		for (PetMerchandEntry merch: list) {
+		for (PetMerchandEntry merch : list) {
 			merchandsById.put(merch.getId(), merch);
 		}
 		list.clear();
 		list = null;
 	}
-	
+
 	public int size() {
 		return merchandsById.size();
 	}
-	
+
 	public PetMerchandEntry getMerchandTemplate(int id) {
 		return merchandsById.get(id);
 	}

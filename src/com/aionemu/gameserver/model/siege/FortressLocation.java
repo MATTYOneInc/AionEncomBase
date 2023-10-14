@@ -36,7 +36,7 @@ public class FortressLocation extends SiegeLocation {
 	protected List<SiegeReward> siegeRewards;
 	protected List<SiegeLegionReward> siegeLegionRewards;
 	protected boolean isUnderShield;
-    protected boolean isUnderAssault;
+	protected boolean isUnderAssault;
 	protected boolean isCanTeleport;
 
 	public FortressLocation() {
@@ -60,8 +60,8 @@ public class FortressLocation extends SiegeLocation {
 	 * @return isEnemy
 	 */
 	public boolean isEnemy(Creature creature) {
-    return creature.getRace().getRaceId() != getRace().getRaceId();
-    }
+		return creature.getRace().getRaceId() != getRace().getRaceId();
+	}
 
 	/**
 	 * @return isUnderShield
@@ -84,8 +84,8 @@ public class FortressLocation extends SiegeLocation {
 	 */
 	@Override
 	public boolean isCanTeleport(Player player) {
-	    if (player == null)
-      return isCanTeleport;
+		if (player == null)
+			return isCanTeleport;
 		return isCanTeleport && player.getRace().getRaceId() == getRace().getRaceId();
 	}
 
@@ -105,11 +105,11 @@ public class FortressLocation extends SiegeLocation {
 	}
 
 	public void onEnterZone(Creature creature, ZoneInstance zone) {
-    super.onEnterZone(creature, zone);
-    if (isVulnerable())
-      creature.setInsideZoneType(ZoneType.SIEGE);
-    }
-  
+		super.onEnterZone(creature, zone);
+		if (isVulnerable())
+			creature.setInsideZoneType(ZoneType.SIEGE);
+	}
+
 	@Override
 	public void onLeaveZone(Creature creature, ZoneInstance zone) {
 		super.onLeaveZone(creature, zone);
@@ -118,11 +118,11 @@ public class FortressLocation extends SiegeLocation {
 	}
 
 	public void clearLocation() {
-		for (Creature creature: getCreatures().values()) {
+		for (Creature creature : getCreatures().values()) {
 			if ((isEnemy(creature)) && ((creature instanceof Kisk))) {
-				Kisk kisk = (Kisk)creature;
+				Kisk kisk = (Kisk) creature;
 				kisk.getController().die();
 			}
 		}
-    }
+	}
 }

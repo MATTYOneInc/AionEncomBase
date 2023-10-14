@@ -77,7 +77,7 @@ public abstract class Stat2 {
 	}
 
 	public abstract void addToBonus(int bonus);
-	
+
 	public abstract float calculatePercent(int delta);
 
 	public final Creature getOwner() {

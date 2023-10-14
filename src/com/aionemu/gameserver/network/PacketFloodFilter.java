@@ -30,13 +30,13 @@ import com.aionemu.gameserver.configs.main.SecurityConfig;
 public class PacketFloodFilter {
 
 	private static PacketFloodFilter pff = new PacketFloodFilter();
-	
+
 	private final Logger log = LoggerFactory.getLogger(PacketFloodFilter.class);
-	
+
 	public static PacketFloodFilter getInstance() {
 		return pff;
 	}
-	
+
 	private int[] packets;
 	private short maxClientRequest = 0x2ff;
 
@@ -46,7 +46,7 @@ public class PacketFloodFilter {
 			packets = new int[maxClientRequest];
 			try {
 				java.util.Properties props = PropertiesUtils.load("config/administration/pff.properties");
-				for(Object key : props.keySet()){
+				for (Object key : props.keySet()) {
 					String str = (String) key;
 					packets[Integer.decode(str)] = Integer.valueOf(props.getProperty(str).trim());
 					cnt++;
@@ -54,12 +54,12 @@ public class PacketFloodFilter {
 			} catch (IOException e) {
 				log.error("Can't read pff.properties", e);
 			}
-			log.info("PacketFloodFilter initialized with "+cnt+" packets.");
+			log.info("PacketFloodFilter initialized with " + cnt + " packets.");
 		} else {
 			log.info("PacketFloodFilter disabled.");
 		}
 	}
-	
+
 	public final int[] getPackets() {
 		return this.packets;
 	}

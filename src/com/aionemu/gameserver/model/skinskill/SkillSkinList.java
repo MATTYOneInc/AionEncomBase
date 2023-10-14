@@ -71,20 +71,23 @@ public class SkillSkinList {
 			throw new IllegalArgumentException("Invalid skin id " + skinId);
 		}
 		if (owner != null) {
-			SkillSkin skillSkin = new SkillSkin(sst, skinId, expireTime, 1); //expireTime = System.currentTimeMillis() / 1000 + minutes * 60 (Calculated in SkillAnimationAction)
+			SkillSkin skillSkin = new SkillSkin(sst, skinId, expireTime, 1); // expireTime = System.currentTimeMillis()
+																				// / 1000 + minutes * 60 (Calculated in
+																				// SkillAnimationAction)
 			if (!skillskins.containsKey(skinId)) {
 				skillskins.put(skinId, skillSkin);
 				if (time != 0) {
 					ExpireTimerTask.getInstance().addTask(skillSkin, owner);
 				}
 				DAOManager.getDAO(PlayerSkillSkinListDAO.class).storeSkillSkins(owner, skillSkin);
-			}
-			else {
+			} else {
 				PacketSendUtility.sendPacket(owner, SM_SYSTEM_MESSAGE.STR_MSG_COSTUME_SKILL_ALREADY_HAS_COSTUME);
 				return false;
 			}
 			PacketSendUtility.sendPacket(owner, SM_SYSTEM_MESSAGE.STR_MSG_GET_ITEM(sst.getName()));
-			PacketSendUtility.sendPacket(owner, new SM_SKILL_ANIMATION(skinId, time)); // time = templateTime * 60 (Calculated in SkillAnimationAction)
+			PacketSendUtility.sendPacket(owner, new SM_SKILL_ANIMATION(skinId, time)); // time = templateTime * 60
+																						// (Calculated in
+																						// SkillAnimationAction)
 			return true;
 		}
 		return false;
@@ -131,7 +134,9 @@ public class SkillSkinList {
 		}
 		for (SkillSkin skillSkin : getOwner().getSkillSkinList().getSkillSkins()) {
 			if (DataManager.SKILL_DATA.getSkillTemplate(skillId).getSkillGroup() != null) {
-				if (skillSkin.getTemplate().getSkillGroup().equalsIgnoreCase(DataManager.SKILL_DATA.getSkillTemplate(skillId).getSkillGroup())&& skillSkin.getIsActive() == 1) {
+				if (skillSkin.getTemplate().getSkillGroup()
+						.equalsIgnoreCase(DataManager.SKILL_DATA.getSkillTemplate(skillId).getSkillGroup())
+						&& skillSkin.getIsActive() == 1) {
 					skinId = skillSkin.getId();
 				}
 			}

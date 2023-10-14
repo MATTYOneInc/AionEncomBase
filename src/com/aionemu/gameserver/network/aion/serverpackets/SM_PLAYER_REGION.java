@@ -25,18 +25,18 @@ import com.aionemu.gameserver.world.zone.ZoneName;
  */
 public class SM_PLAYER_REGION extends AionServerPacket {
 
-    private final ZoneName subZone;
+	private final ZoneName subZone;
 
-    public SM_PLAYER_REGION(ZoneName subZone) {
-        this.subZone = subZone;
-    }
+	public SM_PLAYER_REGION(ZoneName subZone) {
+		this.subZone = subZone;
+	}
 
-    @Override
-    protected void writeImpl(AionConnection con) {
-        writeD(con.getActivePlayer().getObjectId());
-        writeC(0);
-        writeC(0);
-        writeC(0);
-        writeD(subZone.name().hashCode());
-    }
+	@Override
+	protected void writeImpl(AionConnection con) {
+		writeD(con.getActivePlayer().getObjectId());
+		writeC(0);
+		writeC(0);
+		writeC(0);
+		writeD(subZone.name().hashCode());
+	}
 }

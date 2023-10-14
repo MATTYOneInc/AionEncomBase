@@ -52,18 +52,18 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class NightmareCircusService
-{
+public class NightmareCircusService {
 	private CircusSchedule circusSchedule;
 	private Map<Integer, NightmareCircusLocation> nightmareCircus;
 	private static final int duration = CustomConfig.NIGHTMARE_CIRCUS_DURATION;
-	private final Map<Integer, CircusInstance<?>> activeNightmareCircus = new FastMap<Integer, CircusInstance<?>>().shared();
+	private final Map<Integer, CircusInstance<?>> activeNightmareCircus = new FastMap<Integer, CircusInstance<?>>()
+			.shared();
 	private static Logger log = LoggerFactory.getLogger(NightmareCircusService.class);
 
 	public void initCircusLocations() {
 		if (CustomConfig.NIGHTMARE_CIRCUS_ENABLE) {
 			nightmareCircus = DataManager.NIGHTMARE_CIRCUS_DATA.getNightmareCircusLocations();
-			for (NightmareCircusLocation loc: getNightmareCircusLocations().values()) {
+			for (NightmareCircusLocation loc : getNightmareCircusLocations().values()) {
 				spawn(loc, NightmareCircusStateType.CLOSED);
 			}
 			log.info("[NightmareCircusService] Loaded " + nightmareCircus.size() + " locations.");
@@ -72,19 +72,19 @@ public class NightmareCircusService
 			nightmareCircus = Collections.emptyMap();
 		}
 	}
-	
+
 	public void initCircus() {
 		if (CustomConfig.NIGHTMARE_CIRCUS_ENABLE) {
 			log.info("[NightmareCircusService] is initialized...");
-		    circusSchedule = CircusSchedule.load();
-		    for (Circus circus: circusSchedule.getCircussList()) {
-			    for (String circusTime: circus.getCircusTimes()) {
-				    CronService.getInstance().schedule(new CircusStartRunnable(circus.getId()), circusTime);
-			    }
+			circusSchedule = CircusSchedule.load();
+			for (Circus circus : circusSchedule.getCircussList()) {
+				for (String circusTime : circus.getCircusTimes()) {
+					CronService.getInstance().schedule(new CircusStartRunnable(circus.getId()), circusTime);
+				}
 			}
 		}
 	}
-	
+
 	public void startNightmareCircus(final int id) {
 		final CircusInstance<?> nightmare;
 		synchronized (this) {
@@ -103,7 +103,7 @@ public class NightmareCircusService
 			}
 		}, duration * 3600 * 1000);
 	}
-	
+
 	public void stopNightmareCircus(int id) {
 		if (!isNightmareCircusInProgress(id)) {
 			return;
@@ -111,12 +111,13 @@ public class NightmareCircusService
 		CircusInstance<?> nightmare;
 		synchronized (this) {
 			nightmare = activeNightmareCircus.remove(id);
-		} if (nightmare == null || nightmare.isClosed()) {
+		}
+		if (nightmare == null || nightmare.isClosed()) {
 			return;
 		}
 		nightmare.stop();
 	}
-	
+
 	public void spawn(NightmareCircusLocation loc, NightmareCircusStateType nstate) {
 		if (nstate.equals(NightmareCircusStateType.OPEN)) {
 		}
@@ -130,60 +131,61 @@ public class NightmareCircusService
 			}
 		}
 	}
-	
+
 	public boolean dreamFaerieMsg(int id) {
-        switch (id) {
-            case 1:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE09B", "<Nightmare Circus> is now open !!!");
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
-	
+		switch (id) {
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE09B", "<Nightmare Circus> is now open !!!");
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public void despawn(NightmareCircusLocation loc) {
 		if (loc.getSpawned() == null) {
-        	return;
-		} for (VisibleObject obj: loc.getSpawned()) {
-            Npc spawned = (Npc) obj;
-            spawned.setDespawnDelayed(true);
-            if (spawned.getAggroList().getList().isEmpty()) {
-                spawned.getController().cancelTask(TaskId.RESPAWN);
-                obj.getController().onDelete();
-            }
-        }
-        loc.getSpawned().clear();
+			return;
+		}
+		for (VisibleObject obj : loc.getSpawned()) {
+			Npc spawned = (Npc) obj;
+			spawned.setDespawnDelayed(true);
+			if (spawned.getAggroList().getList().isEmpty()) {
+				spawned.getController().cancelTask(TaskId.RESPAWN);
+				obj.getController().onDelete();
+			}
+		}
+		loc.getSpawned().clear();
 	}
-	
+
 	public boolean isNightmareCircusInProgress(int id) {
 		return activeNightmareCircus.containsKey(id);
 	}
-	
+
 	public Map<Integer, CircusInstance<?>> getActiveNightmareCircus() {
 		return activeNightmareCircus;
 	}
-	
+
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public NightmareCircusLocation getNightmareCircusLocation(int id) {
 		return nightmareCircus.get(id);
 	}
-	
+
 	public Map<Integer, NightmareCircusLocation> getNightmareCircusLocations() {
 		return nightmareCircus;
 	}
-	
+
 	public static NightmareCircusService getInstance() {
 		return NightmareCircusServiceHolder.INSTANCE;
 	}
-	
+
 	private static class NightmareCircusServiceHolder {
 		private static final NightmareCircusService INSTANCE = new NightmareCircusService();
 	}

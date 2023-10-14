@@ -32,7 +32,7 @@ public class SM_PLAY_MOVIE extends AionServerPacket {
 
 	public SM_PLAY_MOVIE(int type, int movieId) {
 		this.type = type;
-		this.movieId = movieId;	
+		this.movieId = movieId;
 	}
 
 	public SM_PLAY_MOVIE(int type, int id, int movieId, int restrictionId) {

@@ -27,25 +27,24 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DoorRepair")
-public class DoorRepair
-{
+public class DoorRepair {
 	@XmlAttribute(name = "itemid")
 	protected int itemId;
-	
+
 	@XmlAttribute(name = "repair_fee")
 	protected int repairFee;
-	
+
 	@XmlAttribute(name = "repair_cooltime")
 	protected int repairCooltime;
-	
+
 	public int getItemId() {
 		return itemId;
 	}
-	
+
 	public int getRepairFee() {
 		return repairFee;
 	}
-	
+
 	public long getRepairCooltime() {
 		return (long) (repairCooltime * 1000);
 	}

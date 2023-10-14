@@ -25,39 +25,39 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * @author Rinzler (Encom)
  */
 
-public class RvrSpawnTemplate extends SpawnTemplate
-{
+public class RvrSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private RvrStateType rvrType;
-	
+
 	public RvrSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public RvrSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public RvrSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public RvrStateType getRStateType() {
 		return rvrType;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void setRStateType(RvrStateType rvrType) {
 		this.rvrType = rvrType;
 	}
-	
+
 	public final boolean isRvr() {
 		return rvrType.equals(RvrStateType.RVR);
 	}
-	
+
 	public final boolean isRvrPeace() {
 		return rvrType.equals(RvrStateType.PEACE);
 	}

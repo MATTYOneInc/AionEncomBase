@@ -75,10 +75,9 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
 
-public class NpcController extends CreatureController<Npc>
-{
+public class NpcController extends CreatureController<Npc> {
 	private static final Logger log = LoggerFactory.getLogger(NpcController.class);
-	
+
 	@Override
 	public void notSee(VisibleObject object, boolean isOutOfRange) {
 		super.notSee(object, isOutOfRange);
@@ -87,7 +86,7 @@ public class NpcController extends CreatureController<Npc>
 			getOwner().getAggroList().remove((Creature) object);
 		}
 	}
-	
+
 	@Override
 	public void see(VisibleObject object) {
 		super.see(object);
@@ -148,13 +147,14 @@ public class NpcController extends CreatureController<Npc>
 		final int npcNameId = owner.getObjectTemplate().getNameId();
 		NpcRank npcRank = owner.getObjectTemplate().getRank();
 		if (npcRank == NpcRank.EXPERT && !player.isInInstance()) {
-		    World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-			    @Override
-                public void visit(Player players) {
-				    //"Player Name" has killed "Named Monster"
-				    PacketSendUtility.sendPacket(players, new SM_SYSTEM_MESSAGE(1400021, player.getName(), new DescriptionId(npcNameId * 2 + 1)));
-			    }
-		    });
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player players) {
+					// "Player Name" has killed "Named Monster"
+					PacketSendUtility.sendPacket(players,
+							new SM_SYSTEM_MESSAGE(1400021, player.getName(), new DescriptionId(npcNameId * 2 + 1)));
+				}
+			});
 		}
 	}
 
@@ -165,7 +165,8 @@ public class NpcController extends CreatureController<Npc>
 			owner.getSpawn().setUse(false);
 		}
 
-		PacketSendUtility.broadcastPacket(owner, new SM_EMOTION(owner, EmotionType.DIE, 0, owner.equals(lastAttacker) ? 0 : lastAttacker.getObjectId()));
+		PacketSendUtility.broadcastPacket(owner,
+				new SM_EMOTION(owner, EmotionType.DIE, 0, owner.equals(lastAttacker) ? 0 : lastAttacker.getObjectId()));
 
 		try {
 			if (owner.getAi2().poll(AIQuestion.SHOULD_REWARD)) {
@@ -173,12 +174,12 @@ public class NpcController extends CreatureController<Npc>
 			}
 			owner.getPosition().getWorldMapInstance().getInstanceHandler().onDie(owner);
 			owner.getAi2().onGeneralEvent(AIEventType.DIED);
-		}
-		finally { // always make sure npc is schedulled to respawn
+		} finally { // always make sure npc is schedulled to respawn
 			if (owner.getAi2().poll(AIQuestion.SHOULD_DECAY)) {
 				addTask(TaskId.DECAY, RespawnService.scheduleDecayTask(owner));
 			}
-			if (owner.getAi2().poll(AIQuestion.SHOULD_RESPAWN) && !owner.isDeleteDelayed() && !SiegeService.getInstance().isSiegeNpcInActiveSiege(owner)) {
+			if (owner.getAi2().poll(AIQuestion.SHOULD_RESPAWN) && !owner.isDeleteDelayed()
+					&& !SiegeService.getInstance().isSiegeNpcInActiveSiege(owner)) {
 				Future<?> respawnTask = scheduleRespawn();
 				if (respawnTask != null) {
 					addTask(TaskId.RESPAWN, respawnTask);
@@ -226,7 +227,8 @@ public class NpcController extends CreatureController<Npc>
 						for (String worldIds : CustomConfig.TOLL_PVE_WORLDID.split(",")) {
 							if (player.getWorldId() == Integer.parseInt(worldIds)) {
 								InGameShopEn.getInstance().addToll(player, CustomConfig.TOLL_PVE_QUANTITY);
-								PacketSendUtility.sendMessage(player, "You have received " + CustomConfig.TOLL_PVE_QUANTITY+ " tolls from PvE!" );
+								PacketSendUtility.sendMessage(player,
+										"You have received " + CustomConfig.TOLL_PVE_QUANTITY + " tolls from PvE!");
 							}
 						}
 
@@ -243,9 +245,11 @@ public class NpcController extends CreatureController<Npc>
 				continue;
 			}
 			if (attacker instanceof TemporaryPlayerTeam<?>) {
-				PlayerTeamDistributionService.doReward((TemporaryPlayerTeam<?>) attacker, percentage, getOwner(), winner);
+				PlayerTeamDistributionService.doReward((TemporaryPlayerTeam<?>) attacker, percentage, getOwner(),
+						winner);
 			} else if (attacker instanceof Player && ((Player) attacker).isInGroup2()) {
-				PlayerTeamDistributionService.doReward(((Player) attacker).getPlayerGroup2(), percentage, getOwner(), winner);
+				PlayerTeamDistributionService.doReward(((Player) attacker).getPlayerGroup2(), percentage, getOwner(),
+						winner);
 			} else if (attacker instanceof Player) {
 				Player player = (Player) attacker;
 				if (!player.getLifeStats().isAlreadyDead()) {
@@ -256,21 +260,22 @@ public class NpcController extends CreatureController<Npc>
 					rewardDp *= percentage;
 					rewardAp *= percentage;
 					QuestEngine.getInstance().onKill(new QuestEnv(getOwner(), player, 0, 0));
-					//When a player defeat a "Boss" all ppls on server see!!!
+					// When a player defeat a "Boss" all ppls on server see!!!
 					defeatNamedMsg(player);
-					//Reward XP Solo (New system, Exp Retail NA)
+					// Reward XP Solo (New system, Exp Retail NA)
 					switch (player.getWorldId()) {
-						case 301720000: //Mirash Sanctuary.
-						case 302100000: //Fissure Of Oblivion.
-						case 302110000: //[Opportunity] Fissure Of Oblivion.
-						case 302400000: //Crucible Spire.
-						case 210100000: //Iluma.
-						case 220110000: //Norsvold.
-						case 600040000: //Tiamaranta's Eye.
-						case 600090000: //Kaldor.
-						case 600100000: //Levinshor.
-						default:
-							player.getCommonData().addExp(rewardXp, RewardType.HUNTING, this.getOwner().getObjectTemplate().getNameId());
+					case 301720000: // Mirash Sanctuary.
+					case 302100000: // Fissure Of Oblivion.
+					case 302110000: // [Opportunity] Fissure Of Oblivion.
+					case 302400000: // Crucible Spire.
+					case 210100000: // Iluma.
+					case 220110000: // Norsvold.
+					case 600040000: // Tiamaranta's Eye.
+					case 600090000: // Kaldor.
+					case 600100000: // Levinshor.
+					default:
+						player.getCommonData().addExp(rewardXp, RewardType.HUNTING,
+								this.getOwner().getObjectTemplate().getNameId());
 						break;
 					}
 					player.getCommonData().addDp(rewardDp);
@@ -278,7 +283,7 @@ public class NpcController extends CreatureController<Npc>
 						int calculatedAp = StatFunctions.calculatePvEApGained(player, getOwner());
 						rewardAp *= calculatedAp;
 						if (rewardAp >= 1) {
-							player.getCommonData().addAbyssFavor(1500); //0.15% Abyss Favor Energy.
+							player.getCommonData().addAbyssFavor(1500); // 0.15% Abyss Favor Energy.
 							AbyssPointsService.addAp(player, getOwner(), (int) rewardAp);
 							PacketSendUtility.sendPacket(player, new SM_STATS_INFO(player));
 						}
@@ -286,103 +291,103 @@ public class NpcController extends CreatureController<Npc>
 					if (attacker.equals(winner)) {
 						DropRegistrationService.getInstance().registerDrop(getOwner(), player, player.getLevel(), null);
 					}
-					//Auto Drop Kinah.
-     				if (CustomConfig.AUTO_KINAH_ENABLED) {
+					// Auto Drop Kinah.
+					if (CustomConfig.AUTO_KINAH_ENABLED) {
 						switch (player.getWorldId()) {
-							case 210010000: //Poeta.
-							case 220010000: //Ishalgen.
-							    if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 500) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 210010000: // Poeta.
+						case 220010000: // Ishalgen.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 500) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							case 210030000: //Verteron.
-							case 220030000: //Altgard.
-							    if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 1500) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 210030000: // Verteron.
+						case 220030000: // Altgard.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 1500) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							case 210020000: //Eltnen.
-							case 220020000: //Morheim.
-						        if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 2000) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 210020000: // Eltnen.
+						case 220020000: // Morheim.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 2000) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							case 210040000: //Heiron.
-							case 220040000: //Beluslan.
-						        if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 2500) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 210040000: // Heiron.
+						case 220040000: // Beluslan.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 2500) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							case 210060000: //Theobomos.
-							case 220050000: //Brushtonin.
-						        if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 3000) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 210060000: // Theobomos.
+						case 220050000: // Brushtonin.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 3000) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							case 210050000: //Inggison.
-							case 220070000: //Gelkmaros.
-						        if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 3500) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 210050000: // Inggison.
+						case 220070000: // Gelkmaros.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 3500) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							case 210070000: //Cygnea.
-							case 220080000: //Enshar.
-						        if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 4000) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 210070000: // Cygnea.
+						case 220080000: // Enshar.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 4000) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							case 400010000: //Reshanta.
-							case 400020000: //Belus.
-							case 400040000: //Aspida.
-							case 400050000: //Atanatos.
-							case 400060000: //Disillon.
-							    if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 4500) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 400010000: // Reshanta.
+						case 400020000: // Belus.
+						case 400040000: // Aspida.
+						case 400050000: // Atanatos.
+						case 400060000: // Disillon.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 4500) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							case 600090000: //Kaldor.
-							case 600100000: //Levinshor.
-						        if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 5000) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 600090000: // Kaldor.
+						case 600100000: // Levinshor.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 5000) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							case 210100000: //Iluma.
-							case 220110000: //Norsvold.
-							case 600040000: //Tiamaranta's Eye.
-						        if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 5500) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 210100000: // Iluma.
+						case 220110000: // Norsvold.
+						case 600040000: // Tiamaranta's Eye.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 5500) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							case 210090000: //Idian Depths E.
-							case 220100000: //Idian Depths A.
-						        if (player.getLevel() < getOwner().getLevel() + 5) {
-									kinahCount = Rnd.get(100, 6000) * player.getLevel();
-								} else if (player.getLevel() > getOwner().getLevel() + 5) {
-									kinahCount = 1000;
-								}
+						case 210090000: // Idian Depths E.
+						case 220100000: // Idian Depths A.
+							if (player.getLevel() < getOwner().getLevel() + 5) {
+								kinahCount = Rnd.get(100, 6000) * player.getLevel();
+							} else if (player.getLevel() > getOwner().getLevel() + 5) {
+								kinahCount = 1000;
+							}
 							break;
-							default:
-							    kinahCount = 0;
+						default:
+							kinahCount = 0;
 							break;
 						}
 						if (player.isInInstance() && player.getLevel() < getOwner().getLevel() + 5) {
@@ -391,31 +396,31 @@ public class NpcController extends CreatureController<Npc>
 							kinahCount = 1000;
 						}
 						player.getInventory().increaseKinah(kinahCount);
-     				}
-					//Reward InGameShop.
+					}
+					// Reward InGameShop.
 					switch (player.getWorldId()) {
-					    //Idian Depths.
-						case 210090000:
-						case 220100000:
-			                InGameShopEn.getInstance().addToll(player, (long) (0 * player.getRates().getTollRewardRate()));
-			                PacketSendUtility.sendSys1Message(player, "\uE083", "Kamu Jangan Ngepet ya");
+					// Idian Depths.
+					case 210090000:
+					case 220100000:
+						InGameShopEn.getInstance().addToll(player, (long) (0 * player.getRates().getTollRewardRate()));
+						PacketSendUtility.sendSys1Message(player, "\uE083", "Kamu Jangan Ngepet ya");
 						break;
 					}
-					//Berdin's Star.
+					// Berdin's Star.
 					if (getOwner().getLevel() >= 10) {
-						player.getCommonData().addBerdinStar(1575000); //0.14%
+						player.getCommonData().addBerdinStar(1575000); // 0.14%
 						PacketSendUtility.sendPacket(player, new SM_STATS_INFO(player));
 					}
-					//Aura Of Growth.
+					// Aura Of Growth.
 					if (getOwner().getLevel() >= 66) {
 						if (Rnd.get(1, 100) < RateConfig.AURA_OF_GROWTH) {
 							GrowthEnergy.getInstance().addGrowthEnergy(player);
 							PacketSendUtility.sendPacket(player, new SM_STATS_INFO(player));
 						}
 					}
-					//Atreian Bestiary.
+					// Atreian Bestiary.
 					if (getOwner().getLevel() >= 66) {
-					    AtreianBestiaryService.getInstance().onKill(player, getOwner().getNpcId());
+						AtreianBestiaryService.getInstance().onKill(player, getOwner().getNpcId());
 					}
 				}
 			}
@@ -438,9 +443,16 @@ public class NpcController extends CreatureController<Npc>
 	}
 
 	@Override
-	public void onDialogSelect(int dialogId, final Player player, int questId, int extendedRewardIndex, int unk) {//TODO unk need to be figure out
+	public void onDialogSelect(int dialogId, final Player player, int questId, int extendedRewardIndex, int unk) {// TODO
+																													// unk
+																													// need
+																													// to
+																													// be
+																													// figure
+																													// out
 		QuestEnv env = new QuestEnv(getOwner(), player, questId, dialogId);
-		if (!MathUtil.isInRange(getOwner(), player, getOwner().getObjectTemplate().getTalkDistance() + 2) && !QuestEngine.getInstance().onDialog(env)) {
+		if (!MathUtil.isInRange(getOwner(), player, getOwner().getObjectTemplate().getTalkDistance() + 2)
+				&& !QuestEngine.getInstance().onDialog(env)) {
 			return;
 		}
 		if (!getOwner().getAi2().onDialogSelect(player, dialogId, questId, extendedRewardIndex)) {
@@ -497,22 +509,25 @@ public class NpcController extends CreatureController<Npc>
 			log.error("No name found for a Zone in the map " + zoneInstance.getAreaTemplate().getWorldId());
 		}
 	}
-	
+
 	private void rewardSiegeNpc() {
 		int totalDamage = getOwner().getAggroList().getTotalDamage();
-		for (AggroInfo aggro: getOwner().getAggroList().getFinalDamageList(true)) {
+		for (AggroInfo aggro : getOwner().getAggroList().getFinalDamageList(true)) {
 			float percentage = aggro.getDamage() / totalDamage;
 			List<Player> players = new ArrayList<Player>();
 			if (aggro.getAttacker() instanceof Player) {
 				Player player = (Player) aggro.getAttacker();
-				if (MathUtil.isIn3dRange(player, getOwner(), GroupConfig.GROUP_MAX_DISTANCE) && !player.getLifeStats().isAlreadyDead()) {
-					int apPlayerReward = Math.round(StatFunctions.calculatePvEApGained(player, getOwner()) * percentage);
+				if (MathUtil.isIn3dRange(player, getOwner(), GroupConfig.GROUP_MAX_DISTANCE)
+						&& !player.getLifeStats().isAlreadyDead()) {
+					int apPlayerReward = Math
+							.round(StatFunctions.calculatePvEApGained(player, getOwner()) * percentage);
 					AbyssPointsService.addAp(player, getOwner(), apPlayerReward);
 				}
 			} else if (aggro.getAttacker() instanceof PlayerGroup) {
 				PlayerGroup group = (PlayerGroup) aggro.getAttacker();
-				for (Player member: group.getMembers()) {
-					if (MathUtil.isIn3dRange(member, getOwner(), GroupConfig.GROUP_MAX_DISTANCE) && !member.getLifeStats().isAlreadyDead()) {
+				for (Player member : group.getMembers()) {
+					if (MathUtil.isIn3dRange(member, getOwner(), GroupConfig.GROUP_MAX_DISTANCE)
+							&& !member.getLifeStats().isAlreadyDead()) {
 						players.add(member);
 					}
 				}
@@ -521,7 +536,7 @@ public class NpcController extends CreatureController<Npc>
 						int baseApReward = StatFunctions.calculatePvEApGained(member, getOwner());
 						int apRewardPerMember = Math.round(baseApReward * percentage / players.size());
 						if (apRewardPerMember > 0) {
-							member.getCommonData().addAbyssFavor(1500); //0.15% Abyss Favor Energy.
+							member.getCommonData().addAbyssFavor(1500); // 0.15% Abyss Favor Energy.
 							PacketSendUtility.sendPacket(member, new SM_STATS_INFO(member));
 							AbyssPointsService.addAp(member, getOwner(), apRewardPerMember);
 						}
@@ -530,8 +545,9 @@ public class NpcController extends CreatureController<Npc>
 			} else if ((aggro.getAttacker() instanceof PlayerAlliance)) {
 				PlayerAlliance alliance = (PlayerAlliance) aggro.getAttacker();
 				players = new ArrayList<Player>();
-				for (Player member: alliance.getMembers()) {
-					if (MathUtil.isIn3dRange(member, getOwner(), GroupConfig.GROUP_MAX_DISTANCE) && !member.getLifeStats().isAlreadyDead()) {
+				for (Player member : alliance.getMembers()) {
+					if (MathUtil.isIn3dRange(member, getOwner(), GroupConfig.GROUP_MAX_DISTANCE)
+							&& !member.getLifeStats().isAlreadyDead()) {
 						players.add(member);
 					}
 				}
@@ -540,7 +556,7 @@ public class NpcController extends CreatureController<Npc>
 						int baseApReward = StatFunctions.calculatePvEApGained(member, getOwner());
 						int apRewardPerMember = Math.round(baseApReward * percentage / players.size());
 						if (apRewardPerMember > 0) {
-							member.getCommonData().addAbyssFavor(1500); //0.15% Abyss Favor Energy.
+							member.getCommonData().addAbyssFavor(1500); // 0.15% Abyss Favor Energy.
 							PacketSendUtility.sendPacket(member, new SM_STATS_INFO(member));
 							AbyssPointsService.addAp(member, getOwner(), apRewardPerMember);
 						}
@@ -549,7 +565,7 @@ public class NpcController extends CreatureController<Npc>
 			}
 		}
 	}
-	
+
 	/**
 	 * Schedule respawn of npc In instances - no npc respawn
 	 */

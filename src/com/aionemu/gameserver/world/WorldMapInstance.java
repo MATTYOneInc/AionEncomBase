@@ -58,6 +58,7 @@ import javolution.util.FastMap;
 
 /**
  * World map instance object.
+ * 
  * @author -Nemesiss-
  */
 public abstract class WorldMapInstance {
@@ -103,12 +104,12 @@ public abstract class WorldMapInstance {
 	private final FastList<Integer> questIds = new FastList<Integer>();
 
 	private InstanceHandler instanceHandler;
-	
+
 	private Map<ZoneName, ZoneInstance> zones = new HashMap<ZoneName, ZoneInstance>();
 
 	// TODO: Merge this with owner
 	private Integer soloPlayer;
-	
+
 	private PlayerAlliance registredAlliance;
 	private League registredLeague;
 
@@ -141,13 +142,14 @@ public abstract class WorldMapInstance {
 	public WorldMap getParent() {
 		return parent;
 	}
-	
+
 	public WorldMapTemplate getTemplate() {
 		return parent.getTemplate();
 	}
 
 	/**
-	 * Returns MapRegion that contains coordinates of VisibleObject. If the region doesn't exist, it's created.
+	 * Returns MapRegion that contains coordinates of VisibleObject. If the region
+	 * doesn't exist, it's created.
 	 * 
 	 * @param object
 	 * @return a MapRegion
@@ -157,7 +159,8 @@ public abstract class WorldMapInstance {
 	}
 
 	/**
-	 * Returns MapRegion that contains given x,y coordinates. If the region doesn't exist, it's created.
+	 * Returns MapRegion that contains given x,y coordinates. If the region doesn't
+	 * exist, it's created.
 	 * 
 	 * @param x
 	 * @param y
@@ -172,11 +175,11 @@ public abstract class WorldMapInstance {
 	 * @return newly created map region
 	 */
 	protected abstract MapRegion createMapRegion(int regionId);
-	
+
 	protected abstract void initMapRegions();
-	
+
 	public abstract boolean isPersonal();
-	
+
 	public abstract int getOwnerId();
 
 	/**
@@ -193,7 +196,9 @@ public abstract class WorldMapInstance {
 	 */
 	public void addObject(VisibleObject object) {
 		if (worldMapObjects.put(object.getObjectId(), object) != null) {
-			throw new DuplicateAionObjectException("Object with templateId " + String.valueOf(object.getObjectTemplate().getTemplateId()) + " already spawned in the instance " + String.valueOf(this.getMapId()) + " " + String.valueOf(this.getInstanceId()));
+			throw new DuplicateAionObjectException("Object with templateId "
+					+ String.valueOf(object.getObjectTemplate().getTemplateId()) + " already spawned in the instance "
+					+ String.valueOf(this.getMapId()) + " " + String.valueOf(this.getInstanceId()));
 		}
 		if (object instanceof Npc) {
 			QuestNpc data = QuestEngine.getInstance().getQuestNpc(((Npc) object).getNpcId());
@@ -205,9 +210,9 @@ public abstract class WorldMapInstance {
 				}
 			}
 		}
-		if (object instanceof Player){
+		if (object instanceof Player) {
 			if (this.getParent().isPossibleFly()) {
-				((Player)object).setInsideZoneType(ZoneType.FLY);
+				((Player) object).setInsideZoneType(ZoneType.FLY);
 			}
 			worldMapPlayers.put(object.getObjectId(), (Player) object);
 		}
@@ -218,9 +223,9 @@ public abstract class WorldMapInstance {
 	 */
 	public void removeObject(AionObject object) {
 		worldMapObjects.remove(object.getObjectId());
-		if (object instanceof Player){
+		if (object instanceof Player) {
 			if (this.getParent().isPossibleFly()) {
-				((Player)object).unsetInsideZoneType(ZoneType.FLY);
+				((Player) object).unsetInsideZoneType(ZoneType.FLY);
 			}
 			worldMapPlayers.remove(object.getObjectId());
 		}
@@ -289,8 +294,8 @@ public abstract class WorldMapInstance {
 	/**
 	 * @return List<doors>
 	 */
-	public Map<Integer,StaticDoor> getDoors() {
-		Map<Integer,StaticDoor> doors = new HashMap<Integer,StaticDoor>();
+	public Map<Integer, StaticDoor> getDoors() {
+		Map<Integer, StaticDoor> doors = new HashMap<Integer, StaticDoor>();
 		for (Iterator<VisibleObject> iter = objectIterator(); iter.hasNext();) {
 			VisibleObject obj = iter.next();
 			if (obj instanceof StaticDoor) {
@@ -305,18 +310,18 @@ public abstract class WorldMapInstance {
 	 * @return List<트랩>
 	 */
 	public List<Trap> getTraps(Creature p) {
-        List<Trap> traps = new ArrayList<Trap>();
-        for (Iterator<VisibleObject> iter = objectIterator(); iter.hasNext();) {
-            VisibleObject obj = iter.next();
-            if (obj instanceof Trap) {
-                Trap t = (Trap)obj;
-                if (t.getCreatorId() == p.getObjectId()) {
-                    traps.add(t);
+		List<Trap> traps = new ArrayList<Trap>();
+		for (Iterator<VisibleObject> iter = objectIterator(); iter.hasNext();) {
+			VisibleObject obj = iter.next();
+			if (obj instanceof Trap) {
+				Trap t = (Trap) obj;
+				if (t.getCreatorId() == p.getObjectId()) {
+					traps.add(t);
 				}
-            }
-        }
-        return traps;
-    }
+			}
+		}
+		return traps;
+	}
 
 	/**
 	 * @return the instanceIndex
@@ -324,20 +329,20 @@ public abstract class WorldMapInstance {
 	public int getInstanceId() {
 		return instanceId;
 	}
-	
+
 	public final boolean isBeginnerInstance() {
-        if (parent == null) {
-            return false;
-        }
+		if (parent == null) {
+			return false;
+		}
 		if (parent.getTemplate().isInstance()) {
-            return false;
-        }
-        int twinCount = parent.getTemplate().getTwinCount();
-        if (twinCount == 0) {
-            twinCount = 1;
-        }
-        return getInstanceId() > twinCount;
-    }
+			return false;
+		}
+		int twinCount = parent.getTemplate().getTwinCount();
+		if (twinCount == 0) {
+			twinCount = 1;
+		}
+		return getInstanceId() > twinCount;
+	}
 
 	/**
 	 * Check player is in instance
@@ -409,8 +414,7 @@ public abstract class WorldMapInstance {
 	}
 
 	/**
-	 * @param emptyInstanceTask
-	 *          the emptyInstanceTask to set
+	 * @param emptyInstanceTask the emptyInstanceTask to set
 	 */
 	public void setEmptyInstanceTask(Future<?> emptyInstanceTask) {
 		this.emptyInstanceTask = emptyInstanceTask;
@@ -479,7 +483,7 @@ public abstract class WorldMapInstance {
 		}
 		return regionZones.toArray(new ZoneInstance[regionZones.size()]);
 	}
-	
+
 	/**
 	 * @param player
 	 * @param zoneName
@@ -503,7 +507,7 @@ public abstract class WorldMapInstance {
 		return mapRegion.isInsideZone(zoneName, pos.getX(), pos.getY(), pos.getZ());
 	}
 
-	public void  setSoloPlayerObj(Integer obj) {
+	public void setSoloPlayerObj(Integer obj) {
 		soloPlayer = obj;
 	}
 

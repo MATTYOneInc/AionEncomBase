@@ -33,23 +33,22 @@ import com.aionemu.gameserver.services.SiegeService;
 
 import javolution.util.FastMap;
 
-public class SM_SIEGE_LOCATION_INFO extends AionServerPacket
-{
+public class SM_SIEGE_LOCATION_INFO extends AionServerPacket {
 	private int infoType;
 	private Map<Integer, SiegeLocation> locations;
 	private static final Logger log = LoggerFactory.getLogger(SM_SIEGE_LOCATION_INFO.class);
-	
+
 	public SM_SIEGE_LOCATION_INFO() {
 		this.infoType = 0;
 		locations = SiegeService.getInstance().getSiegeLocations();
 	}
-	
+
 	public SM_SIEGE_LOCATION_INFO(SiegeLocation loc) {
 		this.infoType = 1;
 		locations = new FastMap<Integer, SiegeLocation>();
 		locations.put(loc.getLocationId(), loc);
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		Player player = con.getActivePlayer();
@@ -71,7 +70,8 @@ public class SM_SIEGE_LOCATION_INFO extends AionServerPacket
 				} else {
 					emblem = LegionService.getInstance().getLegion(legionId).getLegionEmblem();
 				}
-			} if (emblem.getEmblemType() == LegionEmblemType.DEFAULT) {
+			}
+			if (emblem.getEmblemType() == LegionEmblemType.DEFAULT) {
 				writeD(emblem.getEmblemId());
 				writeC(255);
 				writeC(emblem.getColor_r());
@@ -86,7 +86,7 @@ public class SM_SIEGE_LOCATION_INFO extends AionServerPacket
 			}
 			writeC(loc.getRace().getRaceId());
 			writeC(loc.isVulnerable() ? 2 : 0);
-			writeC(loc.isCanTeleport(player)? 1 : 0);
+			writeC(loc.isCanTeleport(player) ? 1 : 0);
 			writeC(loc.getNextState());
 			writeH(0);
 			writeH(1);
@@ -94,8 +94,8 @@ public class SM_SIEGE_LOCATION_INFO extends AionServerPacket
 			writeD(0x9);
 			writeD(10000);
 			writeD(0x00);
-			
-			//5.3 unk protocol
+
+			// 5.3 unk protocol
 			writeH(0x00);
 			writeD(22597);
 			writeD(0x00);

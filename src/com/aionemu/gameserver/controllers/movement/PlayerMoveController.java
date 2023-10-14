@@ -20,15 +20,14 @@ import com.aionemu.gameserver.configs.main.FallDamageConfig;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.utils.stats.StatFunctions;
 
-public class PlayerMoveController extends PlayableMoveController<Player>
-{
+public class PlayerMoveController extends PlayableMoveController<Player> {
 	private float fallDistance;
 	private float lastFallZ;
-	
+
 	public PlayerMoveController(Player owner) {
 		super(owner);
 	}
-	
+
 	public void updateFalling(float newZ) {
 		if (lastFallZ != 0) {
 			fallDistance += lastFallZ - newZ;
@@ -39,7 +38,7 @@ public class PlayerMoveController extends PlayableMoveController<Player>
 		lastFallZ = newZ;
 		owner.getObserveController().notifyMoveObservers();
 	}
-	
+
 	public void stopFalling() {
 		if (lastFallZ != 0) {
 			if (!owner.isFlying()) {
@@ -50,7 +49,7 @@ public class PlayerMoveController extends PlayableMoveController<Player>
 			owner.getObserveController().notifyMoveObservers();
 		}
 	}
-	
+
 	@Override
 	public void skillMovement() {
 		this.movementMask = MovementMask.IMMEDIATE;

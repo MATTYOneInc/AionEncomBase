@@ -22,8 +22,7 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.world.World;
 
-public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket
-{
+public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket {
 	private int playerObjId;
 	private int targetObjId;
 	private int itemObjId;
@@ -31,7 +30,7 @@ public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket
 	private int time;
 	private int end;
 	private int unk;
-	
+
 	public SM_ITEM_USAGE_ANIMATION(int playerObjId, int itemObjId, int itemId) {
 		this.playerObjId = playerObjId;
 		this.targetObjId = playerObjId;
@@ -41,7 +40,7 @@ public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket
 		this.end = 1;
 		this.unk = 1;
 	}
-	
+
 	public SM_ITEM_USAGE_ANIMATION(int playerObjId, int itemObjId, int itemId, int time, int end) {
 		this.playerObjId = playerObjId;
 		this.targetObjId = playerObjId;
@@ -50,7 +49,7 @@ public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket
 		this.time = time;
 		this.end = end;
 	}
-	
+
 	public SM_ITEM_USAGE_ANIMATION(int playerObjId, int itemObjId, int itemId, int time, int end, int unk) {
 		this.playerObjId = playerObjId;
 		this.targetObjId = playerObjId;
@@ -60,8 +59,9 @@ public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket
 		this.end = end;
 		this.unk = unk;
 	}
-	
-	public SM_ITEM_USAGE_ANIMATION(int playerObjId, int targetObjId, int itemObjId, int itemId, int time, int end, int unk) {
+
+	public SM_ITEM_USAGE_ANIMATION(int playerObjId, int targetObjId, int itemObjId, int itemId, int time, int end,
+			int unk) {
 		this.playerObjId = playerObjId;
 		this.targetObjId = targetObjId;
 		this.itemObjId = itemObjId;
@@ -70,7 +70,7 @@ public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket
 		this.end = end;
 		this.unk = unk;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		if (time > 0) {

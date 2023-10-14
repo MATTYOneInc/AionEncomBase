@@ -37,30 +37,32 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 @XmlType(name = "SkillCooltimeResetEffect")
 public class SkillCooltimeResetEffect extends EffectTemplate {
 
-    @XmlAttribute(name = "first_cd", required = true)
-    protected int firstCd;
-    @XmlAttribute(name = "second_cd", required = true)
-    protected int secondCd;
-	
-    @Override
-    public void applyEffect(Effect effect) {
-        Creature effected = effect.getEffected();
-        HashMap<Integer, Long> resetSkillCoolDowns = new HashMap<>();
-        for (int i = firstCd; i <= secondCd; i++) {
-            long delay = effected.getSkillCoolDown(i) - System.currentTimeMillis();
-            if (delay <= 0) {
-                continue;
-            } if (delta > 0) {
-                delay -= delay * (delta / 100);
-            } else {
-                delay -= value;
-            }
-            effected.setSkillCoolDown(i, delay + System.currentTimeMillis());
-            resetSkillCoolDowns.put(i, delay + System.currentTimeMillis());
-        } if (effected instanceof Player) {
-            if (resetSkillCoolDowns.size() > 0) {
-                PacketSendUtility.sendPacket((Player) effected, new SM_SKILL_COOLDOWN(resetSkillCoolDowns));
-            }
-        }
-    }
+	@XmlAttribute(name = "first_cd", required = true)
+	protected int firstCd;
+	@XmlAttribute(name = "second_cd", required = true)
+	protected int secondCd;
+
+	@Override
+	public void applyEffect(Effect effect) {
+		Creature effected = effect.getEffected();
+		HashMap<Integer, Long> resetSkillCoolDowns = new HashMap<>();
+		for (int i = firstCd; i <= secondCd; i++) {
+			long delay = effected.getSkillCoolDown(i) - System.currentTimeMillis();
+			if (delay <= 0) {
+				continue;
+			}
+			if (delta > 0) {
+				delay -= delay * (delta / 100);
+			} else {
+				delay -= value;
+			}
+			effected.setSkillCoolDown(i, delay + System.currentTimeMillis());
+			resetSkillCoolDowns.put(i, delay + System.currentTimeMillis());
+		}
+		if (effected instanceof Player) {
+			if (resetSkillCoolDowns.size() > 0) {
+				PacketSendUtility.sendPacket((Player) effected, new SM_SKILL_COOLDOWN(resetSkillCoolDowns));
+			}
+		}
+	}
 }

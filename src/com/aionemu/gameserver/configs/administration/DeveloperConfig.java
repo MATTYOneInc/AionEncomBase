@@ -18,8 +18,7 @@ package com.aionemu.gameserver.configs.administration;
 
 import com.aionemu.commons.configuration.Property;
 
-public class DeveloperConfig
-{
+public class DeveloperConfig {
 	/**
 	 * if false - not spawns will be loaded
 	 */
@@ -51,18 +50,23 @@ public class DeveloperConfig
 	@Property(key = "gameserver.developer.show.packetbytes.inchat.enable", defaultValue = "false")
 	public static boolean SHOW_PACKET_BYTES_INCHAT;
 	/**
-	 * How many Packet Bytes should be shown in Chat Window? Default: 200-Hexed bytes
+	 * How many Packet Bytes should be shown in Chat Window? Default: 200-Hexed
+	 * bytes
 	 */
 	@Property(key = "gameserver.developer.show.packetbytes.inchat.total", defaultValue = "200")
 	public static int TOTAL_PACKET_BYTES_INCHAT;
 	/**
-	 * Filters which Packets should be shown in Chat Windows? Default: * e.g. SM_MOVE, CM_CASTSPELL, CM_ATTACK
+	 * Filters which Packets should be shown in Chat Windows? Default: * e.g.
+	 * SM_MOVE, CM_CASTSPELL, CM_ATTACK
 	 */
 	@Property(key = "gameserver.developer.filter.packets.inchat", defaultValue = "*")
 	public static String FILTERED_PACKETS_INCHAT;
 	/**
-	 * if Player Access Level is meet, display Packets-Name or Hex-Bytes in Chat Window Tip: Player Access-Level higher than or equal to 3 is recommended 10 - Server-Owner 9 - Server-CoOwner 8 -
-	 * Server-Admin 7 - Server-CoAdmin 6 - Developer 5 - Admin 4 - Head-GM 3 - Senior-GM 2 - Junior-GM 1 - Supporter 0 - Players
+	 * if Player Access Level is meet, display Packets-Name or Hex-Bytes in Chat
+	 * Window Tip: Player Access-Level higher than or equal to 3 is recommended 10 -
+	 * Server-Owner 9 - Server-CoOwner 8 - Server-Admin 7 - Server-CoAdmin 6 -
+	 * Developer 5 - Admin 4 - Head-GM 3 - Senior-GM 2 - Junior-GM 1 - Supporter 0 -
+	 * Players
 	 */
 	@Property(key = "gameserver.developer.show.packets.inchat.accesslevel", defaultValue = "6")
 	public static int SHOW_PACKETS_INCHAT_ACCESSLEVEL;

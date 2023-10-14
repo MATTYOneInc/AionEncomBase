@@ -51,7 +51,8 @@ public class InstanceExitData {
 
 	public InstanceExit getInstanceExit(int worldId, Race race) {
 		for (InstanceExit exit : instanceExits) {
-			if (exit.getInstanceId() == worldId && (race.equals(exit.getRace()) || exit.getRace().equals(Race.PC_ALL))) {
+			if (exit.getInstanceId() == worldId
+					&& (race.equals(exit.getRace()) || exit.getRace().equals(Race.PC_ALL))) {
 				return exit;
 			}
 		}

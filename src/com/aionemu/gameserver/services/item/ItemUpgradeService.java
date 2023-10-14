@@ -37,41 +37,48 @@ import javolution.util.FastMap;
  * @author Ranastic (Encom)
  */
 
-public class ItemUpgradeService
-{
+public class ItemUpgradeService {
 	private static final Logger log = LoggerFactory.getLogger(ItemUpgradeService.class);
-	
+
 	public static boolean checkItemUpgrade(Player player, Item baseItem, int resultItemId) {
-		ItemUpgradeTemplate itemUpgardeTemplate = DataManager.ITEM_UPGRADE_DATA.getItemUpgradeTemplate(baseItem.getItemId());
+		ItemUpgradeTemplate itemUpgardeTemplate = DataManager.ITEM_UPGRADE_DATA
+				.getItemUpgradeTemplate(baseItem.getItemId());
 		if (itemUpgardeTemplate == null) {
 			log.warn(resultItemId + " item's itemupgrade template is null");
 			return false;
 		}
-		FastMap<Integer, UpgradeResultItem> resultItemMap = DataManager.ITEM_UPGRADE_DATA.getResultItemMap(baseItem.getItemId());
+		FastMap<Integer, UpgradeResultItem> resultItemMap = DataManager.ITEM_UPGRADE_DATA
+				.getResultItemMap(baseItem.getItemId());
 		if (!resultItemMap.containsKey(resultItemId)) {
-			AuditLogger.info(player, resultItemId + " item's baseItem and resultItem is not matched (possible client modify)");
+			AuditLogger.info(player,
+					resultItemId + " item's baseItem and resultItem is not matched (possible client modify)");
 			return false;
 		}
 		UpgradeResultItem resultItem = resultItemMap.get(resultItemId);
 		if (resultItem.getCheck_enchant_count() > 0) {
 			if (baseItem.getEnchantLevel() < resultItem.getCheck_enchant_count()) {
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_REGISTER_ITEM_MSG_UPGRADE_CANNOT(new DescriptionId(baseItem.getNameId())));
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+						.STR_REGISTER_ITEM_MSG_UPGRADE_CANNOT(new DescriptionId(baseItem.getNameId())));
 				return false;
 			}
-		} if (resultItem.getCheck_authorize_count() > 0) {
+		}
+		if (resultItem.getCheck_authorize_count() > 0) {
 			if (baseItem.getAuthorize() < resultItem.getCheck_authorize_count()) {
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_REGISTER_ITEM_MSG_UPGRADE_CANNOT_02(new DescriptionId(baseItem.getNameId())));
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+						.STR_REGISTER_ITEM_MSG_UPGRADE_CANNOT_02(new DescriptionId(baseItem.getNameId())));
 				return false;
 			}
-		} if (resultItem.getNeed_abyss_point() != null) {
+		}
+		if (resultItem.getNeed_abyss_point() != null) {
 			if (player.getAbyssRank().getAp() < resultItem.getNeed_abyss_point().getCount()) {
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_REGISTER_ITEM_MSG_UPGRADE_CANNOT_NEED_AP);
 				return false;
 			}
-		} if (resultItem.getNeed_kinah() == null) {
+		}
+		if (resultItem.getNeed_kinah() == null) {
 			for (SubMaterialItem sub : resultItem.getUpgrade_materials().getSubMaterialItem()) {
 				if (player.getInventory().getItemCountByItemId(sub.getId()) < sub.getCount()) {
-					//SubMaterial is not enough
+					// SubMaterial is not enough
 					return false;
 				}
 			}
@@ -83,11 +90,12 @@ public class ItemUpgradeService
 		}
 		return true;
 	}
-	
+
 	public static boolean decreaseMaterial(Player player, Item baseItem, int resultItemId) {
-		FastMap<Integer, UpgradeResultItem> resultItemMap = DataManager.ITEM_UPGRADE_DATA.getResultItemMap(baseItem.getItemId());
+		FastMap<Integer, UpgradeResultItem> resultItemMap = DataManager.ITEM_UPGRADE_DATA
+				.getResultItemMap(baseItem.getItemId());
 		UpgradeResultItem resultItem = resultItemMap.get(resultItemId);
-		if (resultItem.getNeed_kinah() == null){
+		if (resultItem.getNeed_kinah() == null) {
 			for (SubMaterialItem item : resultItem.getUpgrade_materials().getSubMaterialItem()) {
 				if (!player.getInventory().decreaseByItemId(item.getId(), item.getCount())) {
 					AuditLogger.info(player, "try item upgrade without sub material");
@@ -96,12 +104,15 @@ public class ItemUpgradeService
 			}
 		} else {
 			player.getInventory().decreaseKinah(-resultItem.getNeed_kinah().getCount());
-		} if (resultItem.getNeed_abyss_point() != null) {
+		}
+		if (resultItem.getNeed_abyss_point() != null) {
 			AbyssPointsService.setAp(player, -resultItem.getNeed_abyss_point().getCount());
 		}
-		/*if (resultItem.getNeed_kinah() != null) {
-			player.getInventory().decreaseKinah(-resultItem.getNeed_kinah().getCount());
-		}*/
+		/*
+		 * if (resultItem.getNeed_kinah() != null) {
+		 * player.getInventory().decreaseKinah(-resultItem.getNeed_kinah().getCount());
+		 * }
+		 */
 		player.getInventory().decreaseByObjectId(baseItem.getObjectId(), 1);
 		return true;
 	}

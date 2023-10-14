@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "circus_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class CircusSchedule
-{
+public class CircusSchedule {
 	@XmlElement(name = "circus", required = true)
 	private List<Circus> circussList;
-	
+
 	public List<Circus> getCircussList() {
 		return circussList;
 	}
-	
+
 	public void setCircussList(List<Circus> circusList) {
 		this.circussList = circusList;
 	}
-	
+
 	public static CircusSchedule load() {
 		CircusSchedule cs;
 		try {
@@ -58,28 +57,28 @@ public class CircusSchedule
 		}
 		return cs;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "circus")
 	public static class Circus {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "circusTime", required = true)
 		private List<String> circusTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getCircusTimes() {
 			return circusTimes;
 		}
-		
+
 		public void setCircusTimes(List<String> circusTimes) {
 			this.circusTimes = circusTimes;
 		}

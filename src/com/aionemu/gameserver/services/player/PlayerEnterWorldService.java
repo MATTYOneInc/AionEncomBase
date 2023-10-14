@@ -149,7 +149,7 @@ import javolution.util.FastList;
 public final class PlayerEnterWorldService {
 
 	private static final Logger log = LoggerFactory.getLogger("GAMECONNECTION_LOG");
-	//private static final String serverIntro = "";
+	// private static final String serverIntro = "";
 	private static final String serverInfo;
 	private static final String alInfo;
 	private static final Set<Integer> pendingEnterWorld = new HashSet<Integer>();
@@ -164,7 +164,8 @@ public final class PlayerEnterWorldService {
 		infoBuffer = "";
 		if (GSConfig.SERVER_MOTD_DISPLAYREV) {
 			alBuffer += "----------------------------\n";
-			alBuffer += "Server Revision: " + String.format(" ", new Object[] { new Version(GameServer.class).getRevision() }) + "\n";
+			alBuffer += "Server Revision: "
+					+ String.format(" ", new Object[] { new Version(GameServer.class).getRevision() }) + "\n";
 		}
 		serverInfo = infoBuffer;
 		alInfo = alBuffer;
@@ -200,7 +201,8 @@ public final class PlayerEnterWorldService {
 	private static final void showPasskey(final int objectId, final AionConnection client) {
 		client.getAccount().getCharacterPasskey().setConnectType(ConnectType.ENTER);
 		client.getAccount().getCharacterPasskey().setObjectId(objectId);
-		boolean isExistPasskey = DAOManager.getDAO(PlayerPasskeyDAO.class).existCheckPlayerPasskey(client.getAccount().getId());
+		boolean isExistPasskey = DAOManager.getDAO(PlayerPasskeyDAO.class)
+				.existCheckPlayerPasskey(client.getAccount().getId());
 		if (!isExistPasskey) {
 			client.sendPacket(new SM_CHARACTER_SELECT(0));
 		} else {
@@ -232,11 +234,9 @@ public final class PlayerEnterWorldService {
 						return;
 					}
 					enterWorld(client, objectId);
-				}
-				catch (Throwable ex) {
+				} catch (Throwable ex) {
 					log.error("Error during enter world " + objectId, ex);
-				}
-				finally {
+				} finally {
 					synchronized (pendingEnterWorld) {
 						pendingEnterWorld.remove(objectId);
 					}
@@ -254,7 +254,8 @@ public final class PlayerEnterWorldService {
 		final Player player = PlayerService.getPlayer(objectId, account);
 		if (player != null && client.setActivePlayer(player)) {
 			player.setClientConnection(client);
-			log.info("[MAC_AUDIT] Player " + player.getName() + " (account " + account.getName() + ") has entered world with " + client.getMacAddress() + " MAC.");
+			log.info("[MAC_AUDIT] Player " + player.getName() + " (account " + account.getName()
+					+ ") has entered world with " + client.getMacAddress() + " MAC.");
 			World.getInstance().storeObject(player);
 			StigmaService.onPlayerLogin(player);
 			if (playerAccData.getPlayerCommonData().getLastOnline() != null) {
@@ -262,20 +263,23 @@ public final class PlayerEnterWorldService {
 				PlayerCommonData pcd = player.getCommonData();
 				long secondsOffline = (System.currentTimeMillis() / 1000) - lastOnline / 1000;
 				if (pcd.isReadyForSalvationPoints()) {
-					//The level of Energy of Salvation will now be maintained up to 1 hour after disconnect.
+					// The level of Energy of Salvation will now be maintained up to 1 hour after
+					// disconnect.
 					if (secondsOffline > 60 * 60) {
 						player.getCommonData().resetSalvationPoints();
 					}
 				}
 				if (pcd.isReadyForBerdinStar()) {
-					//The level of "Berdin's Star" will now be maintained up to 4 hour after disconnect.
+					// The level of "Berdin's Star" will now be maintained up to 4 hour after
+					// disconnect.
 					if (secondsOffline > 240 * 60) {
 						pcd.checkBerdinStarPercent();
 						player.getCommonData().setBerdinStar(0);
 					}
 				}
 				if (pcd.isReadyForAbyssFavor()) {
-					//The level of "Abyss Favor" will now be maintained up to 1 hour after disconnect.
+					// The level of "Abyss Favor" will now be maintained up to 1 hour after
+					// disconnect.
 					if (secondsOffline > 60 * 60) {
 						pcd.checkAbyssFavorPercent();
 						player.getCommonData().setAbyssFavor(0);
@@ -295,20 +299,20 @@ public final class PlayerEnterWorldService {
 						long addResposeEnergy = (long) (hours / 24.0 * maxRespose);
 						if (player.getHouseOwnerId() / 10000 * 10000 == player.getWorldId()) {
 							switch (player.getActiveHouse().getHouseType()) {
-								case STUDIO:
-									addResposeEnergy = (long) ((float) addResposeEnergy * 1.05);
-									break;
-								case MANSION:
-									addResposeEnergy = (long) ((float) addResposeEnergy * 1.08);
-									break;
-								case ESTATE:
-									addResposeEnergy = (long) ((float) addResposeEnergy * 1.15);
-									break;
-								case PALACE:
-									addResposeEnergy = (long) ((float) addResposeEnergy * 1.50);
-									break;
-								default:
-									addResposeEnergy = (long) ((float) addResposeEnergy * 1.1);
+							case STUDIO:
+								addResposeEnergy = (long) ((float) addResposeEnergy * 1.05);
+								break;
+							case MANSION:
+								addResposeEnergy = (long) ((float) addResposeEnergy * 1.08);
+								break;
+							case ESTATE:
+								addResposeEnergy = (long) ((float) addResposeEnergy * 1.15);
+								break;
+							case PALACE:
+								addResposeEnergy = (long) ((float) addResposeEnergy * 1.50);
+								break;
+							default:
+								addResposeEnergy = (long) ((float) addResposeEnergy * 1.1);
 							}
 						}
 						pcd.addReposteEnergy(addResposeEnergy > maxRespose ? maxRespose : addResposeEnergy);
@@ -399,25 +403,25 @@ public final class PlayerEnterWorldService {
 			client.sendPacket(new SM_YOUTUBE_VIDEO());
 
 			/**
-			* If a user logs out in any hostile territory, they will be transported back to the last 
-			* registered Obelisk.
-			*/
+			 * If a user logs out in any hostile territory, they will be transported back to
+			 * the last registered Obelisk.
+			 */
 			if (CustomConfig.ENABLE_RECONNECT_TO_BIND_POINT) {
 				TeleportService2.moveToBindLocation(player, true);
 			}
-		    /**
-			* http://static.ncsoft.com/aion/store/PatchNotes/AION_Patch_Notes_071316.pdf
-			* If a user logs out in hostile territory in Iluma/Norsvold, they will be transported back to the last 
-			* registered Obelisk.
-			*/
+			/**
+			 * http://static.ncsoft.com/aion/store/PatchNotes/AION_Patch_Notes_071316.pdf If
+			 * a user logs out in hostile territory in Iluma/Norsvold, they will be
+			 * transported back to the last registered Obelisk.
+			 */
 			TeleportService2.onLogOutOppositeMap(player);
-			//TeleportService2.sendSetBindPoint(player);
+			// TeleportService2.sendSetBindPoint(player);
 			World.getInstance().preSpawn(player);
 			VortexService.getInstance().validateLoginZone(player);
 			client.sendPacket(new SM_PLAYER_SPAWN(player));
 			client.sendPacket(new SM_GAME_TIME());
 			ProtectorConquerorService.getInstance().onProtectorConquerorLogin(player);
-			//Legion Request 4.9.1
+			// Legion Request 4.9.1
 			if (player.isLegionMember()) {
 				LegionService.getInstance().onLogin(player);
 				if (player.getLegionMember().isBrigadeGeneral() && !player.getLegion().getJoinRequestMap().isEmpty()) {
@@ -438,121 +442,139 @@ public final class PlayerEnterWorldService {
 			// TODO: Send Rift Announce Here
 			client.sendPacket(new SM_PRICES());
 
-			//DisputeLand
+			// DisputeLand
 			DisputeLandService.getInstance().onLogin(player);
 
-			//Event Window
+			// Event Window
 			EventWindowService.getInstance().onLogin(player);
 
-			//Abyss Rank
+			// Abyss Rank
 			client.sendPacket(new SM_ABYSS_RANK(player.getAbyssRank()));
 
-			//Intro message
-			//PacketSendUtility.sendWhiteMessage(player, serverName);
-			//PacketSendUtility.sendYellowMessage(player, serverIntro);
-			//PacketSendUtility.sendBrightYellowMessage(player, serverInfo);
-			//PacketSendUtility.sendWhiteMessage(player, alInfo);
-			//"\uE026" //Timer.
-			//"\uE027" //Speaker.
+			// Intro message
+			// PacketSendUtility.sendWhiteMessage(player, serverName);
+			// PacketSendUtility.sendYellowMessage(player, serverIntro);
+			// PacketSendUtility.sendBrightYellowMessage(player, serverInfo);
+			// PacketSendUtility.sendWhiteMessage(player, alInfo);
+			// "\uE026" //Timer.
+			// "\uE027" //Speaker.
 			player.setRates(Rates.getRatesFor(client.getAccount().getMembership()));
 			if (CustomConfig.PREMIUM_NOTIFY) {
 				showPremiumAccountInfo(client, account);
 			}
 
 			if (player.getAccessLevel() == 0) {
-                for (int al : GmSpecialSkills.getAlType(GmSpecialSkills.AccessLevel5.getLevel()).getSkills()) {
-                    if (player.getSkillList().isSkillPresent(al)) {
-                        SkillLearnService.removeSkill(player, al);
+				for (int al : GmSpecialSkills.getAlType(GmSpecialSkills.AccessLevel5.getLevel()).getSkills()) {
+					if (player.getSkillList().isSkillPresent(al)) {
+						SkillLearnService.removeSkill(player, al);
 					}
-                }
-            }
+				}
+			}
 
 			if (player.isGM()) {
-				if (AdminConfig.INVULNERABLE_GM_CONNECTION || AdminConfig.INVISIBLE_GM_CONNECTION || AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Neutral")
-					|| AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Enemy") || AdminConfig.VISION_GM_CONNECTION || AdminConfig.WHISPER_GM_CONNECTION) {
+				if (AdminConfig.INVULNERABLE_GM_CONNECTION || AdminConfig.INVISIBLE_GM_CONNECTION
+						|| AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Neutral")
+						|| AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Enemy")
+						|| AdminConfig.VISION_GM_CONNECTION || AdminConfig.WHISPER_GM_CONNECTION) {
 					PacketSendUtility.sendMessage(player, "=============================");
 					if (AdminConfig.INVULNERABLE_GM_CONNECTION) {
 						player.setInvul(true);
 						PacketSendUtility.sendMessage(player, ">> Connection in Invulnerable mode <<");
-					} if (AdminConfig.INVISIBLE_GM_CONNECTION) {
+					}
+					if (AdminConfig.INVISIBLE_GM_CONNECTION) {
 						player.getEffectController().setAbnormal(AbnormalState.HIDE.getId());
 						player.setVisualState(CreatureVisualState.HIDE3);
 						PacketSendUtility.broadcastPacket(player, new SM_PLAYER_STATE(player), true);
 						PacketSendUtility.sendMessage(player, ">> Connection in Invisible mode <<");
-					} if (AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Neutral")) {
+					}
+					if (AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Neutral")) {
 						player.setAdminNeutral(3);
 						player.setAdminEnmity(0);
 						PacketSendUtility.sendMessage(player, ">> Connection in Neutral mode <<");
-					} if (AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Enemy")) {
+					}
+					if (AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Enemy")) {
 						player.setAdminNeutral(0);
 						player.setAdminEnmity(3);
 						PacketSendUtility.sendMessage(player, ">> Connection in Enemy mode <<");
-					} if (AdminConfig.VISION_GM_CONNECTION) {
+					}
+					if (AdminConfig.VISION_GM_CONNECTION) {
 						player.setSeeState(CreatureSeeState.SEARCH10);
 						PacketSendUtility.broadcastPacket(player, new SM_PLAYER_STATE(player), true);
 						PacketSendUtility.sendMessage(player, ">> Connection in Vision mode <<");
-					} if (AdminConfig.WHISPER_GM_CONNECTION) {
+					}
+					if (AdminConfig.WHISPER_GM_CONNECTION) {
 						player.setUnWispable();
 						PacketSendUtility.sendMessage(player, ">> Accepting Whisper : OFF <<");
-					} if (AdminConfig.GM_MODE_CONNECTION) {
+					}
+					if (AdminConfig.GM_MODE_CONNECTION) {
 						player.setGmMode(true);
-                        PacketSendUtility.sendMessage(player, ">> GM Mode : Enable <<");
-                    }
+						PacketSendUtility.sendMessage(player, ">> GM Mode : Enable <<");
+					}
 					PacketSendUtility.sendMessage(player, "=============================");
 				}
-				
+
 				if (player.getAccessLevel() >= AdminConfig.GM_SPECIAL_SKILLS) {
 					for (int al : GmSpecialSkills.getAlType(player.getAccessLevel()).getSkills()) {
-                        player.getSkillList().addGMSkill(player, al, 1);
-    				}
+						player.getSkillList().addGMSkill(player, al, 1);
+					}
 				}
 			}
 
 			PacketSendUtility.sendPacket(player, new SM_EVERGALE_CANYON(2));
 
-			//Service Security Buff.
+			// Service Security Buff.
 			if (player.getMembership() >= 0) {
 				serviceBuff = new ServiceBuff(2);
 				serviceBuff.applyEffect(player, 2);
-				//SkillEngine.getInstance().applyEffectDirectly(323, player, player, 0); //Homerun Energy.
-				//SkillEngine.getInstance().applyEffectDirectly(4714, player, player, 0); //[Event] Stigma Preservation.
-				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0); //[Event] Accessory Ascension Benefits.
+				// SkillEngine.getInstance().applyEffectDirectly(323, player, player, 0);
+				// //Homerun Energy.
+				// SkillEngine.getInstance().applyEffectDirectly(4714, player, player, 0);
+				// //[Event] Stigma Preservation.
+				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0); // [Event] Accessory Ascension
+																						// Benefits.
 			}
-			//Service Security Buff.
+			// Service Security Buff.
 			if (player.getMembership() >= 1) {
 				serviceBuff = new ServiceBuff(220599);
 				serviceBuff.applyEffect(player, 220599);
-				//SkillEngine.getInstance().applyEffectDirectly(323, player, player, 0); //Homerun Energy.
-				//SkillEngine.getInstance().applyEffectDirectly(4714, player, player, 0); //[Event] Stigma Preservation.
-				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0); //[Event] Accessory Ascension Benefits.
+				// SkillEngine.getInstance().applyEffectDirectly(323, player, player, 0);
+				// //Homerun Energy.
+				// SkillEngine.getInstance().applyEffectDirectly(4714, player, player, 0);
+				// //[Event] Stigma Preservation.
+				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0); // [Event] Accessory Ascension
+																						// Benefits.
 			}
-			//Service Security Buff.
+			// Service Security Buff.
 			if (player.getMembership() >= 2) {
 				serviceBuff = new ServiceBuff(230599);
 				serviceBuff.applyEffect(player, 230599);
-				//SkillEngine.getInstance().applyEffectDirectly(323, player, player, 0); //Homerun Energy.
-				//SkillEngine.getInstance().applyEffectDirectly(4714, player, player, 0); //[Event] Stigma Preservation.
-				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0); //[Event] Accessory Ascension Benefits.
+				// SkillEngine.getInstance().applyEffectDirectly(323, player, player, 0);
+				// //Homerun Energy.
+				// SkillEngine.getInstance().applyEffectDirectly(4714, player, player, 0);
+				// //[Event] Stigma Preservation.
+				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0); // [Event] Accessory Ascension
+																						// Benefits.
 			}
-			//PC Cafe Login Benefits.
-			if (player.getClientConnection().getAccount().getMembership() == 2 && player.getLevel() >= 66 && player.getLevel() <= 83) {
+			// PC Cafe Login Benefits.
+			if (player.getClientConnection().getAccount().getMembership() == 2 && player.getLevel() >= 66
+					&& player.getLevel() <= 83) {
 				serviceBuff = new ServiceBuff(4);
 				serviceBuff.applyEffect(player, 4);
 				PacketSendUtility.sendBrightYellowMessageOnCenter(player, "Your account vip ! You get extra service!");
 			}
-			//Ascension Boost.
+			// Ascension Boost.
 			if (player.getLevel() >= 1 && player.getLevel() <= 34) {
 				playersBonus = new PlayersBonus(2);
 				playersBonus.applyEffect(player, 2);
 				player.setPlayersBonusId(2);
 			}
-			//Veteran Boost.
+			// Veteran Boost.
 			else if (player.getLevel() >= 35 && player.getLevel() <= 65) {
 				playersBonus = new PlayersBonus(3);
 				playersBonus.applyEffect(player, 3);
 				player.setPlayersBonusId(3);
 			}
-			//Eminence Of The Beaver.
+			// Eminence Of The Beaver.
 			else if (player.getLevel() >= 66 && player.getLevel() <= 83) {
 				playersBonus = new PlayersBonus(10);
 				playersBonus.applyEffect(player, 10);
@@ -561,7 +583,7 @@ public final class PlayerEnterWorldService {
 				playersBonus = new PlayersBonus(1);
 				playersBonus.endEffect(player, 1);
 			}
-			//Abyss Logon 4.9
+			// Abyss Logon 4.9
 			if (player.getRace() == Race.ELYOS) {
 				abyssLightLogon(player);
 			} else if (player.getRace() == Race.ASMODIANS) {
@@ -572,20 +594,25 @@ public final class PlayerEnterWorldService {
 			if (CustomConfig.LOGIN_SERVER_INFO) {
 				LoginServerInfo(player); // Show LoginServerinfo + Chat
 			}
-			//GloryPointLoseMsg(player);
+			// GloryPointLoseMsg(player);
 			F2pService.getInstance().onEnterWorld(player);
-			//Aura Of Growth.
-			//Players can gain additional XP from hunting, gathering or crafting by obtaining Growth Aura.
-			//Growth Aura can be obtained from hunting monsters, acquiring essence, and through login and quest rewards.
-			//For more information on Growth Aura, check the Character XP Status Bar Tool Tip.
+			// Aura Of Growth.
+			// Players can gain additional XP from hunting, gathering or crafting by
+			// obtaining Growth Aura.
+			// Growth Aura can be obtained from hunting monsters, acquiring essence, and
+			// through login and quest rewards.
+			// For more information on Growth Aura, check the Character XP Status Bar Tool
+			// Tip.
 			PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_CHARGE_EXP_POINT, 60000);
-			//"Auto PowerShard ON"
+			// "Auto PowerShard ON"
 			if (player.getEquipment().isPowerShardEquipped() && CustomConfig.ENABLE_AUTO_POWERSHARD) {
-				PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_WEAPON_BOOST_BOOST_MODE_STARTED, 7000);
+				PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_WEAPON_BOOST_BOOST_MODE_STARTED,
+						7000);
 				player.setState(CreatureState.POWERSHARD);
-				PacketSendUtility.playerSendPacketTime(player, new SM_EMOTION(player, EmotionType.POWERSHARD_ON, 0, 0), 7000);
+				PacketSendUtility.playerSendPacketTime(player, new SM_EMOTION(player, EmotionType.POWERSHARD_ON, 0, 0),
+						7000);
 			}
-			//Alliance Packet after SetBindPoint.
+			// Alliance Packet after SetBindPoint.
 			PlayerAllianceService.onPlayerLogin(player);
 			if (player.isInPrison()) {
 				PunishmentService.updatePrisonStatus(player);
@@ -603,14 +630,14 @@ public final class PlayerEnterWorldService {
 			HousingService.getInstance().onPlayerLogin(player);
 			BrokerService.getInstance().onPlayerLogin(player);
 			sendMacroList(client, player);
-			client.sendPacket(new SM_FRIEND_STATUS((byte)1));
+			client.sendPacket(new SM_FRIEND_STATUS((byte) 1));
 			client.sendPacket(new SM_RECIPE_LIST(player.getRecipeList().getRecipeList()));
 			PetitionService.getInstance().onPlayerLogin(player);
 			if (AutoGroupConfig.AUTO_GROUP_ENABLED) {
 				AutoGroupService.getInstance().onPlayerLogin(player);
 			}
 			ClassChangeService.showClassChangeDialog(player);
-			//GMService.getInstance().onPlayerLogin(player); TODO Make Config File!!
+			// GMService.getInstance().onPlayerLogin(player); TODO Make Config File!!
 			player.getLifeStats().updateCurrentStats();
 			player.getEquipment().checkRankLimitItems();
 			if (HTMLConfig.ENABLE_HTML_WELCOME) {
@@ -619,7 +646,8 @@ public final class PlayerEnterWorldService {
 			player.getNpcFactions().sendDailyQuest();
 			if (HTMLConfig.ENABLE_GUIDES) {
 				HTMLService.onPlayerLogin(player);
-			} for (StorageType st : StorageType.values()) {
+			}
+			for (StorageType st : StorageType.values()) {
 				if (st == StorageType.LEGION_WAREHOUSE) {
 					continue;
 				}
@@ -631,23 +659,28 @@ public final class PlayerEnterWorldService {
 						}
 					}
 				}
-			} for (Item item : player.getEquipment().getEquippedItems()) {
+			}
+			for (Item item : player.getEquipment().getEquippedItems()) {
 				if (item.getExpireTime() > 0) {
 					ExpireTimerTask.getInstance().addTask(item, player);
 				}
-			} for (Motion motion : player.getMotions().getMotions().values()) {
+			}
+			for (Motion motion : player.getMotions().getMotions().values()) {
 				if (motion.getExpireTime() != 0) {
 					ExpireTimerTask.getInstance().addTask(motion, player);
 				}
-			} for (Emotion emotion : player.getEmotions().getEmotions()) {
+			}
+			for (Emotion emotion : player.getEmotions().getEmotions()) {
 				if (emotion.getExpireTime() != 0) {
 					ExpireTimerTask.getInstance().addTask(emotion, player);
 				}
-			} for (Title title : player.getTitleList().getTitles()) {
+			}
+			for (Title title : player.getTitleList().getTitles()) {
 				if (title.getExpireTime() != 0) {
 					ExpireTimerTask.getInstance().addTask(title, player);
 				}
-			} for (SkillSkin skillSkin : player.getSkillSkinList().getSkillSkins()) {
+			}
+			for (SkillSkin skillSkin : player.getSkillSkinList().getSkillSkins()) {
 				if (skillSkin.getExpireTime() != 0) {
 					ExpireTimerTask.getInstance().addTask(skillSkin, player);
 				}
@@ -661,8 +694,12 @@ public final class PlayerEnterWorldService {
 					}
 				}
 			}
-			player.getController().addTask(TaskId.PLAYER_UPDATE, ThreadPoolManager.getInstance().scheduleAtFixedRate(new GeneralUpdateTask(player.getObjectId()), PeriodicSaveConfig.PLAYER_GENERAL * 1000, PeriodicSaveConfig.PLAYER_GENERAL * 1000));
-			player.getController().addTask(TaskId.INVENTORY_UPDATE, ThreadPoolManager.getInstance().scheduleAtFixedRate(new ItemUpdateTask(player.getObjectId()), PeriodicSaveConfig.PLAYER_ITEMS * 1000, PeriodicSaveConfig.PLAYER_ITEMS * 1000));
+			player.getController().addTask(TaskId.PLAYER_UPDATE,
+					ThreadPoolManager.getInstance().scheduleAtFixedRate(new GeneralUpdateTask(player.getObjectId()),
+							PeriodicSaveConfig.PLAYER_GENERAL * 1000, PeriodicSaveConfig.PLAYER_GENERAL * 1000));
+			player.getController().addTask(TaskId.INVENTORY_UPDATE,
+					ThreadPoolManager.getInstance().scheduleAtFixedRate(new ItemUpdateTask(player.getObjectId()),
+							PeriodicSaveConfig.PLAYER_ITEMS * 1000, PeriodicSaveConfig.PLAYER_ITEMS * 1000));
 			SurveyService.getInstance().showAvailable(player);
 			if (EventsConfig.ENABLE_EVENT_SERVICE) {
 				EventService.getInstance().onPlayerLogin(player);
@@ -693,18 +730,19 @@ public final class PlayerEnterWorldService {
 			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 				@Override
 				public void visit(Player players) {
-					//Elyos Governor "Player Name" has graced Atreia.
+					// Elyos Governor "Player Name" has graced Atreia.
 					PacketSendUtility.sendPacket(players, new SM_SYSTEM_MESSAGE(1403134, player.getName()));
 				}
 			});
 		}
 	}
+
 	public static final void abyssDarkLogon(final Player player) {
 		if (player.getAbyssRank().getRank().getId() == AbyssRankEnum.SUPREME_COMMANDER.getId()) {
 			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 				@Override
 				public void visit(Player players) {
-					//Asmodian Governor "Player Name" has graced Atreia.
+					// Asmodian Governor "Player Name" has graced Atreia.
 					PacketSendUtility.sendPacket(players, new SM_SYSTEM_MESSAGE(1403135, player.getName()));
 				}
 			});
@@ -742,7 +780,8 @@ public final class PlayerEnterWorldService {
 	}
 
 	private static void playerLoggedIn(Player player) {
-		log.info("Player logged in: " + player.getName() + " Account: " + player.getClientConnection().getAccount().getName());
+		log.info("Player logged in: " + player.getName() + " Account: "
+				+ player.getClientConnection().getAccount().getName());
 		player.getCommonData().setOnline(true);
 		DAOManager.getDAO(PlayerDAO.class).onlinePlayer(player, true);
 		player.onLoggedIn();
@@ -754,12 +793,12 @@ public final class PlayerEnterWorldService {
 		if (membership > 0) {
 			String accountType = "";
 			switch (account.getMembership()) {
-			    case 1:
-				    accountType = "PREMIUM";
-			    break;
-			    case 2:
-				    accountType = "VIP";
-			    break;
+			case 1:
+				accountType = "PREMIUM";
+				break;
+			case 2:
+				accountType = "VIP";
+				break;
 			}
 			client.sendPacket(new SM_MESSAGE(0, null, "Your account is " + accountType, ChatType.YELLOW));
 		}
@@ -775,18 +814,29 @@ public final class PlayerEnterWorldService {
 		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "============================"));
 		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0] Welcome to Aion 5.8"));
 		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "============================"));
-		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0] Aion Account Information"));
-		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:Toll Points：;0 1 0] " + player.getClientConnection().getAccount().getToll()));
-		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:Luna Points：;0 1 0] " + player.getLunaAccount()));
+		PacketSendUtility.sendPacket(player,
+				new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0] Aion Account Information"));
+		PacketSendUtility.sendPacket(player,
+				new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:Toll Points：;0 1 0] "
+						+ player.getClientConnection().getAccount().getToll()));
+		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
+				"[color:Info：;0 1 0][color:Luna Points：;0 1 0] " + player.getLunaAccount()));
 		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "============================"));
-		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:Player Name：;0 1 0] " + player.getName()));
+		PacketSendUtility.sendPacket(player,
+				new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:Player Name：;0 1 0] " + player.getName()));
 		if (player.getAccessLevel() > 0) {
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Attack Ratio：;0 1 0] " + pvpAttackRatio * 0.01f + "%"));
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Defense Ratio：;0 1 0] " + pvpDefenseRatio * 0.01f + "%"));
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Physc Attack Ratio：;0 1 0] " + pvpAttackPhyscRatio * 0.1f + "%"));
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Magic Attack Ratio：;0 1 0] " + pvpAttackMagicRatio * 0.1f + "%"));
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Physc Defend Ratio：;0 1 0] " + pvpDefensePhyscRatio * 0.1f + "%"));
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Magic Defend Ratio：;0 1 0] " + pvpDefenseMagicRatio * 0.1f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
+					"[color:Info：;0 1 0][color:PvP Attack Ratio：;0 1 0] " + pvpAttackRatio * 0.01f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
+					"[color:Info：;0 1 0][color:PvP Defense Ratio：;0 1 0] " + pvpDefenseRatio * 0.01f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
+					"[color:Info：;0 1 0][color:PvP Physc Attack Ratio：;0 1 0] " + pvpAttackPhyscRatio * 0.1f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
+					"[color:Info：;0 1 0][color:PvP Magic Attack Ratio：;0 1 0] " + pvpAttackMagicRatio * 0.1f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
+					"[color:Info：;0 1 0][color:PvP Physc Defend Ratio：;0 1 0] " + pvpDefensePhyscRatio * 0.1f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
+					"[color:Info：;0 1 0][color:PvP Magic Defend Ratio：;0 1 0] " + pvpDefenseMagicRatio * 0.1f + "%"));
 		}
 	}
 }

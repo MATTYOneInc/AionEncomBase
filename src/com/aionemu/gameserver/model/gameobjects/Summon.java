@@ -56,15 +56,18 @@ public class Summon extends Creature {
 	 * @param position
 	 * @param level
 	 */
-	public Summon(int objId, CreatureController<? extends Creature> controller, SpawnTemplate spawnTemplate, NpcTemplate objectTemplate, byte level, int time) {
+	public Summon(int objId, CreatureController<? extends Creature> controller, SpawnTemplate spawnTemplate,
+			NpcTemplate objectTemplate, byte level, int time) {
 		super(objId, controller, spawnTemplate, objectTemplate, new WorldPosition(spawnTemplate.getWorldId()));
 		controller.setOwner(this);
 		String ai = objectTemplate.getAi();
 		AI2Engine.getInstance().setupAI(ai, this);
-		moveController = (ai.equals("siege_weapon") ? new SiegeWeaponMoveController(this) : new SummonMoveController(this));
+		moveController = (ai.equals("siege_weapon") ? new SiegeWeaponMoveController(this)
+				: new SummonMoveController(this));
 		this.level = level;
 		liveTime = time;
-		SummonStatsTemplate statsTemplate = DataManager.SUMMON_STATS_DATA.getSummonTemplate(objectTemplate.getTemplateId(), level);
+		SummonStatsTemplate statsTemplate = DataManager.SUMMON_STATS_DATA
+				.getSummonTemplate(objectTemplate.getTemplateId(), level);
 		setGameStats(new SummonGameStats(this, statsTemplate));
 		setLifeStats(new SummonLifeStats(this));
 	}
@@ -85,8 +88,7 @@ public class Summon extends Creature {
 	}
 
 	/**
-	 * @param master
-	 *          the master to set
+	 * @param master the master to set
 	 */
 	public void setMaster(Player master) {
 		this.master = master;
@@ -139,8 +141,7 @@ public class Summon extends Creature {
 	}
 
 	/**
-	 * @param mode
-	 *          the mode to set
+	 * @param mode the mode to set
 	 */
 	public void setMode(SummonMode mode) {
 		this.mode = mode;
@@ -173,20 +174,20 @@ public class Summon extends Creature {
 	public final boolean isAggroFrom(Npc npc) {
 		if (getMaster() == null) {
 			return false;
-        }
+		}
 		return getMaster().isAggroFrom(npc);
 	}
-	
+
 	@Override
 	public SummonMoveController getMoveController() {
 		return (SummonMoveController) super.getMoveController();
 	}
-	
+
 	@Override
 	public Creature getActingCreature() {
 		return getMaster() == null ? this : getMaster();
 	}
-	
+
 	@Override
 	public Race getRace() {
 		return getMaster() != null ? getMaster().getRace() : Race.NONE;
@@ -198,7 +199,7 @@ public class Summon extends Creature {
 	public int getLiveTime() {
 		return liveTime;
 	}
-	
+
 	/**
 	 * @param liveTime in sec.
 	 */

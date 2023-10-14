@@ -27,25 +27,24 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Base")
-public class BaseTemplate
-{
+public class BaseTemplate {
 	@XmlAttribute(name = "id")
 	protected int id;
-	
+
 	@XmlAttribute(name = "world")
 	protected int world;
-	
+
 	@XmlAttribute(name = "name")
 	protected String nameId;
-	
+
 	public int getId() {
 		return this.id;
 	}
-	
+
 	public int getWorldId() {
 		return this.world;
 	}
-	
+
 	public String getName() {
 		return nameId;
 	}

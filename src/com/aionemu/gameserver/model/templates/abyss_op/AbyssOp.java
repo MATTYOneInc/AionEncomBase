@@ -29,53 +29,52 @@ import com.aionemu.gameserver.model.Race;
 
 @XmlType(name = "abyss_op")
 @XmlAccessorType(XmlAccessType.NONE)
-public class AbyssOp
-{
-	@XmlAttribute(name="id", required = true)
+public class AbyssOp {
+	@XmlAttribute(name = "id", required = true)
 	private int id;
-	
+
 	@XmlAttribute(name = "npc_id", required = true)
 	private int npcId;
-	
-	@XmlAttribute(name="type", required = true)
+
+	@XmlAttribute(name = "type", required = true)
 	private AbyssOpType abyssOpType;
-	
-	@XmlAttribute(name="siege_id", required=true)
+
+	@XmlAttribute(name = "siege_id", required = true)
 	private int siegeId;
-	
+
 	@XmlAttribute(name = "race")
 	protected Race race = Race.PC_ALL;
-	
-	@XmlAttribute(name="group_id", required=true)
+
+	@XmlAttribute(name = "group_id", required = true)
 	private int groupId;
-	
-	@XmlAttribute(name="points", required=true)
+
+	@XmlAttribute(name = "points", required = true)
 	private int points;
-	
+
 	public int getId() {
-        return this.id;
-    }
-	
+		return this.id;
+	}
+
 	public AbyssOpType getAbyssOpType() {
 		return abyssOpType;
 	}
-	
+
 	public Race getRace() {
 		return race;
 	}
-	
+
 	public int getSiegeId() {
 		return siegeId;
 	}
-	
+
 	public int getGroupId() {
 		return groupId;
 	}
-	
+
 	public int getPoints() {
 		return points;
 	}
-	
+
 	public int getNpcId() {
 		return npcId;
 	}

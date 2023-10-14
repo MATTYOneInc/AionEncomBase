@@ -37,7 +37,7 @@ public class ZoneLevelService {
 
 		if (player.getLifeStats().isAlreadyDead()) {
 			return;
-        }
+		}
 		if (z < world.getWorldMap(player.getWorldId()).getDeathLevel()) {
 			player.getController().die();
 			return;
@@ -47,8 +47,7 @@ public class ZoneLevelService {
 		float playerheight = player.getPlayerAppearance().getHeight() * 1.6f;
 		if (z < world.getWorldMap(player.getWorldId()).getWaterLevel() - playerheight) {
 			startDrowning(player);
-		}
-		else {
+		} else {
 			stopDrowning(player);
 		}
 	}
@@ -83,22 +82,22 @@ public class ZoneLevelService {
 	 * @param player
 	 */
 	private static void scheduleDrowningTask(final Player player) {
-		player.getController().addTask(TaskId.DROWN, ThreadPoolManager.getInstance().scheduleAtFixedRate(new Runnable() {
+		player.getController().addTask(TaskId.DROWN,
+				ThreadPoolManager.getInstance().scheduleAtFixedRate(new Runnable() {
 
-			@Override
-			public void run() {
-				int value = Math.round(player.getLifeStats().getMaxHp() / 10);
-				// TODO retail emotion, attack_status packets sending
-				if (!player.getLifeStats().isAlreadyDead()) {
-					if (!player.isInvul()) {
-						player.getLifeStats().reduceHp(value, player);
-						player.getLifeStats().sendHpPacketUpdate();
+					@Override
+					public void run() {
+						int value = Math.round(player.getLifeStats().getMaxHp() / 10);
+						// TODO retail emotion, attack_status packets sending
+						if (!player.getLifeStats().isAlreadyDead()) {
+							if (!player.isInvul()) {
+								player.getLifeStats().reduceHp(value, player);
+								player.getLifeStats().sendHpPacketUpdate();
+							}
+						} else {
+							stopDrowning(player);
+						}
 					}
-				}
-				else {
-					stopDrowning(player);
-				}
-			}
-		}, 0, DROWN_PERIOD));
+				}, 0, DROWN_PERIOD));
 	}
 }

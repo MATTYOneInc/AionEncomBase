@@ -64,35 +64,35 @@ public class DispelEffect extends EffectTemplate {
 		}
 
 		switch (dispeltype) {
-			case EFFECTID:
-				for (Integer effectId : effectids) {
-					effect.getEffected().getEffectController().removeEffectByEffectId(effectId);
+		case EFFECTID:
+			for (Integer effectId : effectids) {
+				effect.getEffected().getEffectController().removeEffectByEffectId(effectId);
+			}
+			break;
+		case EFFECTIDRANGE:
+			for (int i = effectids.get(0); i <= effectids.get(1); i++) {
+				effect.getEffected().getEffectController().removeEffectByEffectId(i);
+			}
+			break;
+		case EFFECTTYPE:
+			for (String type : effecttype) {
+				EffectType temp = null;
+				try {
+					temp = EffectType.valueOf(type);
+				} catch (Exception e) {
+					log.error("wrong effecttype in dispeleffect " + type);
 				}
-				break;
-			case EFFECTIDRANGE:
-				for (int i = effectids.get(0); i <= effectids.get(1); i++) {
-					effect.getEffected().getEffectController().removeEffectByEffectId(i);
+				if (temp != null) {
+					effect.getEffected().getEffectController().removeEffectByEffectType(temp);
 				}
-				break;
-			case EFFECTTYPE:
-				for (String type : effecttype) {
-					EffectType temp = null;
-					try {
-						temp = EffectType.valueOf(type);
-					}
-					catch (Exception e) {
-						log.error("wrong effecttype in dispeleffect " + type);
-					}
-					if (temp != null) {
-						effect.getEffected().getEffectController().removeEffectByEffectType(temp);
-					}
-				}
-				break;
-			case SLOTTYPE:
-				for (String type : slottype) {
-					effect.getEffected().getEffectController().removeAbnormalEffectsByTargetSlot(SkillTargetSlot.valueOf(type));
-				}
-				break;
+			}
+			break;
+		case SLOTTYPE:
+			for (String type : slottype) {
+				effect.getEffected().getEffectController()
+						.removeAbnormalEffectsByTargetSlot(SkillTargetSlot.valueOf(type));
+			}
+			break;
 		}
 	}
 }

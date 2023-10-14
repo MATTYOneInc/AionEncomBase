@@ -29,32 +29,32 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  */
 public class CmdStartQuest extends AbstractGMHandler {
 
-    public CmdStartQuest(Player admin, String params) {
-        super(admin, params);
-        run();
-    }
+	public CmdStartQuest(Player admin, String params) {
+		super(admin, params);
+		run();
+	}
 
-    private void run() {
-        Player t = target != null ? target : admin;
-        
-        if (admin.getClientConnection().getAccount().getAccessLevel() <= PanelConfig.STARTQUEST_PANEL_LEVEL) {
-        	PacketSendUtility.sendMessage(admin, "You haven't access this panel commands");
-        	return;
-        }
+	private void run() {
+		Player t = target != null ? target : admin;
 
-        Integer questID = Integer.parseInt(params);
-        if (questID <= 0) {
-            return;
-        }
+		if (admin.getClientConnection().getAccount().getAccessLevel() <= PanelConfig.STARTQUEST_PANEL_LEVEL) {
+			PacketSendUtility.sendMessage(admin, "You haven't access this panel commands");
+			return;
+		}
 
-        @SuppressWarnings("static-access")
-        QuestTemplate qt = DataManager.getInstance().QUEST_DATA.getQuestById(questID);
-        if (qt == null) {
-            PacketSendUtility.sendMessage(admin, "Quest with ID: " + questID + "was not founded");
-            return;
-        }
+		Integer questID = Integer.parseInt(params);
+		if (questID <= 0) {
+			return;
+		}
 
-        QuestEnv env = new QuestEnv(null, t, questID, 0);
-        QuestService.startQuest(env);
-    }
+		@SuppressWarnings("static-access")
+		QuestTemplate qt = DataManager.getInstance().QUEST_DATA.getQuestById(questID);
+		if (qt == null) {
+			PacketSendUtility.sendMessage(admin, "Quest with ID: " + questID + "was not founded");
+			return;
+		}
+
+		QuestEnv env = new QuestEnv(null, t, questID, 0);
+		QuestService.startQuest(env);
+	}
 }

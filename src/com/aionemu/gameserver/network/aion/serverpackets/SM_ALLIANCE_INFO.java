@@ -92,7 +92,7 @@ public class SM_ALLIANCE_INFO extends AionServerPacket {
 		writeD(messageId); // System message ID
 		writeS(messageId != 0 ? message : StringUtils.EMPTY); // System message
 		if (alliance.isInLeague()) {
-			//TODO LootRules !!
+			// TODO LootRules !!
 			lootRules = alliance.getLeague().getLootGroupRules();
 			writeH(alliance.getLeague().size());
 			writeD(lootRules.getLootRule().getId()); // loot rule type - 0 freeforall, 1 roundrobin, 2 leader
@@ -112,7 +112,8 @@ public class SM_ALLIANCE_INFO extends AionServerPacket {
 				writeD(leagueMember.getObjectId());
 				writeD(leagueMember.getObject().size());
 				writeS(leagueMember.getObject().getLeaderObject().getName());
-				writeD(leagueMember.getObject().getLeaderObject().getWorldId()); // TODO Looks like some ObjId and not mapId
+				writeD(leagueMember.getObject().getLeaderObject().getWorldId()); // TODO Looks like some ObjId and not
+																					// mapId
 				writeD(leagueMember.getObject().getObjectId());
 			}
 		}

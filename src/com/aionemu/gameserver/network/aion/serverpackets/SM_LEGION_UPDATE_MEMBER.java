@@ -67,8 +67,7 @@ public class SM_LEGION_UPDATE_MEMBER extends AionServerPacket {
 			writeD(NetworkConfig.GAMESERVER_ID);
 			writeD(msgId);
 			writeS(text);
-		}
-		else if (LM != null) {
+		} else if (LM != null) {
 			writeD(LM.getObjectId());
 			writeC(LM.getRank().getRankId());
 			writeC(LM.getPlayerClass().getClassId());

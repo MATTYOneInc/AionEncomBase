@@ -32,26 +32,25 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlRootElement(name = "summon_stats_templates")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SummonStatsData
-{
+public class SummonStatsData {
 	@XmlElement(name = "summon_stats", required = true)
 	private List<SummonStatsType> summonTemplatesList = new ArrayList<SummonStatsType>();
-	
+
 	private final TIntObjectHashMap<SummonStatsTemplate> summonTemplates = new TIntObjectHashMap<SummonStatsTemplate>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
-		for (SummonStatsType st: summonTemplatesList) {
+		for (SummonStatsType st : summonTemplatesList) {
 			int summonDark = makeHash(st.getNpcIdDark(), st.getRequiredLevel());
 			summonTemplates.put(summonDark, st.getTemplate());
 			int summonLight = makeHash(st.getNpcIdLight(), st.getRequiredLevel());
 			summonTemplates.put(summonLight, st.getTemplate());
 		}
 	}
-	
+
 	public SummonStatsTemplate getSummonTemplate(int npcId, int level) {
 		SummonStatsTemplate template = summonTemplates.get(makeHash(npcId, level));
 		if (template == null) {
-			//Water Spirit 4.8
+			// Water Spirit 4.8
 			template = summonTemplates.get(makeHash(833305, 19));
 			template = summonTemplates.get(makeHash(833306, 19));
 			template = summonTemplates.get(makeHash(833307, 24));
@@ -72,7 +71,7 @@ public class SummonStatsData
 			template = summonTemplates.get(makeHash(833322, 59));
 			template = summonTemplates.get(makeHash(833255, 64));
 			template = summonTemplates.get(makeHash(833256, 64));
-			//Fire Spirit 4.8
+			// Fire Spirit 4.8
 			template = summonTemplates.get(makeHash(833343, 10));
 			template = summonTemplates.get(makeHash(833344, 10));
 			template = summonTemplates.get(makeHash(833345, 15));
@@ -97,7 +96,7 @@ public class SummonStatsData
 			template = summonTemplates.get(makeHash(833364, 60));
 			template = summonTemplates.get(makeHash(833259, 65));
 			template = summonTemplates.get(makeHash(833260, 65));
-			//Earth Spirit 4.8
+			// Earth Spirit 4.8
 			template = summonTemplates.get(makeHash(833287, 16));
 			template = summonTemplates.get(makeHash(833288, 16));
 			template = summonTemplates.get(makeHash(833289, 21));
@@ -118,7 +117,7 @@ public class SummonStatsData
 			template = summonTemplates.get(makeHash(833304, 56));
 			template = summonTemplates.get(makeHash(833253, 61));
 			template = summonTemplates.get(makeHash(833254, 61));
-			//Wind Spirit 4.8
+			// Wind Spirit 4.8
 			template = summonTemplates.get(makeHash(833323, 13));
 			template = summonTemplates.get(makeHash(833324, 13));
 			template = summonTemplates.get(makeHash(833325, 18));
@@ -141,20 +140,20 @@ public class SummonStatsData
 			template = summonTemplates.get(makeHash(833342, 58));
 			template = summonTemplates.get(makeHash(833257, 63));
 			template = summonTemplates.get(makeHash(833258, 63));
-			//Magma Spirit 4.8
+			// Magma Spirit 4.8
 			template = summonTemplates.get(makeHash(833366, 50));
 			template = summonTemplates.get(makeHash(833368, 55));
 			template = summonTemplates.get(makeHash(833370, 60));
 			template = summonTemplates.get(makeHash(833262, 65));
-			//Tempest Spirit 4.8
+			// Tempest Spirit 4.8
 			template = summonTemplates.get(makeHash(833365, 50));
 			template = summonTemplates.get(makeHash(833367, 55));
 			template = summonTemplates.get(makeHash(833369, 60));
 			template = summonTemplates.get(makeHash(833261, 65));
-			//Siege Weapon
+			// Siege Weapon
 			template = summonTemplates.get(makeHash(201054, 40));
 			template = summonTemplates.get(makeHash(201055, 40));
-			//Quality Siege Weapon
+			// Quality Siege Weapon
 			template = summonTemplates.get(makeHash(201056, 56));
 			template = summonTemplates.get(makeHash(201057, 56));
 			template = summonTemplates.get(makeHash(201058, 60));
@@ -162,42 +161,42 @@ public class SummonStatsData
 		}
 		return template;
 	}
-	
+
 	public int size() {
 		return summonTemplates.size();
 	}
-	
+
 	@XmlRootElement(name = "summonStatsTemplateType")
 	private static class SummonStatsType {
 		@XmlAttribute(name = "npc_id_dark", required = true)
 		private int npcIdDark;
-		
+
 		@XmlAttribute(name = "npc_id_light", required = true)
 		private int npcIdLight;
-		
+
 		@XmlAttribute(name = "level", required = true)
 		private int requiredLevel;
-		
+
 		@XmlElement(name = "stats_template")
 		private SummonStatsTemplate template;
-		
+
 		public int getNpcIdDark() {
 			return npcIdDark;
 		}
-		
+
 		public int getNpcIdLight() {
 			return npcIdLight;
 		}
-		
+
 		public int getRequiredLevel() {
 			return requiredLevel;
 		}
-		
+
 		public SummonStatsTemplate getTemplate() {
 			return template;
 		}
 	}
-	
+
 	private static int makeHash(int npcId, int level) {
 		return npcId << 10 | level;
 	}

@@ -18,8 +18,7 @@ package com.aionemu.gameserver.configs.main;
 
 import com.aionemu.commons.configuration.Property;
 
-public class HTMLConfig
-{
+public class HTMLConfig {
 	@Property(key = "gameserver.html.welcome.enable", defaultValue = "false")
 	public static boolean ENABLE_HTML_WELCOME;
 	@Property(key = "gameserver.html.guides.enable", defaultValue = "true")

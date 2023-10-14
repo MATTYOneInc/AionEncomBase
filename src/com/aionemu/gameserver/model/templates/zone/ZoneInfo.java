@@ -22,7 +22,7 @@ import com.aionemu.gameserver.model.geometry.Area;
  * @author MrPoke
  *
  */
-public class ZoneInfo{
+public class ZoneInfo {
 	private Area area;
 	private ZoneTemplate zoneTemplate;
 

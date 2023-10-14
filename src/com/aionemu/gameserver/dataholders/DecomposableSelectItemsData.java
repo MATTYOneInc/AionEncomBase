@@ -32,53 +32,57 @@ import com.aionemu.gameserver.model.templates.decomposable.DecomposableSelectIte
 import com.aionemu.gameserver.model.templates.decomposable.SelectItem;
 import com.aionemu.gameserver.model.templates.decomposable.SelectItems;
 
-@XmlRootElement(name="decomposable_select_items")
+@XmlRootElement(name = "decomposable_select_items")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DecomposableSelectItemsData
-{
-	@XmlElement(name="decomposable_select_item", required=true)
+public class DecomposableSelectItemsData {
+	@XmlElement(name = "decomposable_select_item", required = true)
 	protected List<DecomposableSelectItem> selectItems;
-	
-	@SuppressWarnings({"unchecked", "rawtypes"})
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private HashMap<Integer, HashMap<PlayerClass, SelectItems>> selectItemData = new HashMap();
-	
-	@SuppressWarnings({"unchecked", "rawtypes"})
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (Iterator i$ = this.selectItems.iterator(); i$.hasNext();) {
 			DecomposableSelectItem item;
-			item = (DecomposableSelectItem)i$.next();
+			item = (DecomposableSelectItem) i$.next();
 			if (item.getItems() != null) {
 				if (!this.selectItemData.containsKey(Integer.valueOf(item.getItemId()))) {
 					this.selectItemData.put(Integer.valueOf(item.getItemId()), new HashMap());
-				} for (SelectItems its : item.getItems()) {
-					((HashMap)this.selectItemData.get(Integer.valueOf(item.getItemId()))).put(its.getPlayerClass(), its);
+				}
+				for (SelectItems its : item.getItems()) {
+					((HashMap) this.selectItemData.get(Integer.valueOf(item.getItemId()))).put(its.getPlayerClass(),
+							its);
 				}
 			}
 		}
 		this.selectItems.clear();
 		this.selectItems = null;
 	}
-	
-	public SelectItems getSelectItem(PlayerClass playerClass, Race race, int itemid){
+
+	public SelectItems getSelectItem(PlayerClass playerClass, Race race, int itemid) {
 		if (this.selectItemData.containsKey(Integer.valueOf(itemid))) {
 			SelectItems selectedItems;
 			Iterator j;
 			SelectItem select;
-			if (((HashMap)this.selectItemData.get(Integer.valueOf(itemid))).containsKey(playerClass)){
+			if (((HashMap) this.selectItemData.get(Integer.valueOf(itemid))).containsKey(playerClass)) {
 				selectedItems = new SelectItems();
-				j = ((SelectItems)((HashMap)this.selectItemData.get(Integer.valueOf(itemid))).get(playerClass)).getItems().iterator();
-				while (j.hasNext()){
-					select = (SelectItem)j.next();
+				j = ((SelectItems) ((HashMap) this.selectItemData.get(Integer.valueOf(itemid))).get(playerClass))
+						.getItems().iterator();
+				while (j.hasNext()) {
+					select = (SelectItem) j.next();
 					if ((select.getRace() == Race.PC_ALL) || (select.getRace() == race)) {
 						selectedItems.addItem(select);
 					}
 				}
 				return selectedItems;
-			} if (((HashMap)this.selectItemData.get(Integer.valueOf(itemid))).containsKey(PlayerClass.ALL)){
+			}
+			if (((HashMap) this.selectItemData.get(Integer.valueOf(itemid))).containsKey(PlayerClass.ALL)) {
 				selectedItems = new SelectItems();
-				j = ((SelectItems)((HashMap)this.selectItemData.get(Integer.valueOf(itemid))).get(PlayerClass.ALL)).getItems().iterator();
-				while (j.hasNext()){
-					select = (SelectItem)j.next();
+				j = ((SelectItems) ((HashMap) this.selectItemData.get(Integer.valueOf(itemid))).get(PlayerClass.ALL))
+						.getItems().iterator();
+				while (j.hasNext()) {
+					select = (SelectItem) j.next();
 					if ((select.getRace() == Race.PC_ALL) || (select.getRace() == race)) {
 						selectedItems.addItem(select);
 					}
@@ -89,7 +93,7 @@ public class DecomposableSelectItemsData
 		}
 		return null;
 	}
-	
+
 	public int size() {
 		return selectItemData.size();
 	}

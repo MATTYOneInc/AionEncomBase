@@ -44,8 +44,7 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 
 import javolution.util.FastList;
 
-public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward>
-{
+public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward> {
 	private Map<Integer, Boolean> positions = new HashMap<Integer, Boolean>();
 	private FastList<Integer> zones = new FastList<Integer>();
 	private int round = 1;
@@ -56,14 +55,14 @@ public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward>
 	private final byte buffId;
 	protected WorldMapInstance instance;
 	private GenerealInstancePosition instancePosition;
-	
+
 	public PvPArenaReward(Integer mapId, int instanceId, WorldMapInstance instance) {
 		super(mapId, instanceId);
 		this.instance = instance;
 		boolean isSolo = isSoloArena();
 		capPoints = isSolo ? 14400 : 50000;
 		bonusTime = isSolo ? 8100 : 12000;
-		Collections.addAll(zones, isSolo ? new Integer[]{1, 2, 3, 4} : new Integer[]{1, 2, 3, 4, 5, 6});
+		Collections.addAll(zones, isSolo ? new Integer[] { 1, 2, 3, 4 } : new Integer[] { 1, 2, 3, 4, 5, 6 });
 		int positionSize;
 		if (isSolo) {
 			positionSize = 4;
@@ -88,25 +87,25 @@ public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward>
 		}
 		setRndZone();
 	}
-	
+
 	public final boolean isSoloArena() {
 		return mapId == 300360000 || mapId == 300430000;
 	}
-	
+
 	public final boolean isGlory() {
 		return mapId == 300550000;
 	}
-	
+
 	public int getCapPoints() {
 		return capPoints;
 	}
-	
+
 	public final void setRndZone() {
 		int index = Rnd.get(zones.size());
 		zone = zones.get(index);
 		zones.remove(index);
 	}
-	
+
 	private List<Integer> getFreePositions() {
 		List<Integer> p = new ArrayList<Integer>();
 		for (Integer key : positions.keySet()) {
@@ -116,7 +115,7 @@ public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward>
 		}
 		return p;
 	}
-	
+
 	public synchronized void setRndPosition(Integer object) {
 		PvPArenaPlayerReward reward = getPlayerReward(object);
 		int position = reward.getPosition();
@@ -127,35 +126,35 @@ public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward>
 		clearPosition(key, Boolean.TRUE);
 		reward.setPosition(key);
 	}
-	
+
 	public synchronized void clearPosition(int position, Boolean result) {
 		positions.put(position, result);
 	}
-	
+
 	public int getRound() {
 		return round;
 	}
-	
+
 	public void setRound(int round) {
 		this.round = round;
 	}
-	
+
 	public void regPlayerReward(Integer object) {
 		if (!containPlayer(object)) {
 			addPlayerReward(new PvPArenaPlayerReward(object, bonusTime, buffId));
 		}
 	}
-	
+
 	@Override
 	public void addPlayerReward(PvPArenaPlayerReward reward) {
 		super.addPlayerReward(reward);
 	}
-	
+
 	@Override
 	public PvPArenaPlayerReward getPlayerReward(Integer object) {
 		return (PvPArenaPlayerReward) super.getPlayerReward(object);
 	}
-	
+
 	public void portToPosition(Player player) {
 		Integer object = player.getObjectId();
 		regPlayerReward(object);
@@ -164,7 +163,7 @@ public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward>
 		playerReward.applyBoostMoraleEffect(player);
 		instancePosition.port(player, zone, playerReward.getPosition());
 	}
-	
+
 	public List<PvPArenaPlayerReward> sortPoints() {
 		return sort(getInstanceRewards(), on(PvPArenaPlayerReward.class).getScorePoints(), new Comparator<Integer>() {
 			@Override
@@ -173,7 +172,7 @@ public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward>
 			}
 		});
 	}
-	
+
 	public boolean canRewardOpportunityToken(PvPArenaPlayerReward rewardedPlayer) {
 		if (rewardedPlayer != null) {
 			int rank = getRank(rewardedPlayer.getScorePoints());
@@ -181,7 +180,7 @@ public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward>
 		}
 		return false;
 	}
-	
+
 	public int getRank(int points) {
 		int rank = -1;
 		for (PvPArenaPlayerReward reward : sortPoints()) {
@@ -191,69 +190,69 @@ public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward>
 		}
 		return rank;
 	}
-	
+
 	public boolean hasCapPoints() {
-		if (isSoloArena() && (maxFrom(getInstanceRewards()).getPoints() - minFrom(getInstanceRewards()).getPoints() >= 1500))
+		if (isSoloArena()
+				&& (maxFrom(getInstanceRewards()).getPoints() - minFrom(getInstanceRewards()).getPoints() >= 1500))
 			return true;
 		return maxFrom(getInstanceRewards()).getPoints() >= capPoints;
 	}
-	
+
 	public int getTotalPoints() {
 		return sum(getInstanceRewards(), on(PvPArenaPlayerReward.class).getScorePoints());
 	}
-	
+
 	public boolean canRewarded() {
-		return mapId == 300350000 || mapId == 300360000 ||
-		mapId == 300420000 || mapId == 300430000 ||
-		mapId == 300450000 || mapId == 300550000 ||
-		mapId == 300570000 || mapId == 301100000;
+		return mapId == 300350000 || mapId == 300360000 || mapId == 300420000 || mapId == 300430000
+				|| mapId == 300450000 || mapId == 300550000 || mapId == 300570000 || mapId == 301100000;
 	}
-	
+
 	public int getNpcBonusSkill(int npcId) {
 		switch (npcId) {
-			case 701175:
-			case 701176:
-			case 701177:
-			case 701178:
-				return 0x4E5732;
-			case 701189:
-			case 701190:
-			case 701191:
-			case 701192:
-				return 0x4FDB3C;
-			case 701317:
-				return 0x4f8532;
-			case 701318:
-				return 0x4f8537;
-			case 701319:
-				return 0x4f853C;
-			case 701220:
-				return 0x4E5537;
-			case 207118:
-			case 207119:
-				return 0x50C101;
-			case 207100:
-				return 0x50BE01;
-			default:
-				return 0;
+		case 701175:
+		case 701176:
+		case 701177:
+		case 701178:
+			return 0x4E5732;
+		case 701189:
+		case 701190:
+		case 701191:
+		case 701192:
+			return 0x4FDB3C;
+		case 701317:
+			return 0x4f8532;
+		case 701318:
+			return 0x4f8537;
+		case 701319:
+			return 0x4f853C;
+		case 701220:
+			return 0x4E5537;
+		case 207118:
+		case 207119:
+			return 0x50C101;
+		case 207100:
+			return 0x50BE01;
+		default:
+			return 0;
 		}
 	}
-	
+
 	public int getTime() {
 		long result = System.currentTimeMillis() - instanceTime;
 		if (isRewarded()) {
 			return 0;
-		} if (result < 120000) {
+		}
+		if (result < 120000) {
 			return (int) (120000 - result);
 		} else {
 			return (int) (180000 * getRound() - (result - 120000));
 		}
 	}
-	
+
 	public void setInstanceStartTime() {
 		this.instanceTime = System.currentTimeMillis();
 	}
-	
+
 	public void sendPacket() {
 		final List<Player> players = instance.getPlayersInside();
 		instance.doOnAllPlayers(new Visitor<Player>() {
@@ -263,11 +262,11 @@ public class PvPArenaReward extends InstanceReward<PvPArenaPlayerReward>
 			}
 		});
 	}
-	
+
 	public byte getBuffId() {
 		return buffId;
 	}
-	
+
 	@Override
 	public void clear() {
 		super.clear();

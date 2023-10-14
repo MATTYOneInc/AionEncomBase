@@ -38,7 +38,9 @@ public abstract class InventoryDAO implements IDFactoryAwareDAO {
 	 * @return IStorage
 	 */
 	public abstract Storage loadStorage(int playerId, StorageType storageType);
+
 	public abstract List<Item> loadStorageDirect(int playerId, StorageType storageType);
+
 	/**
 	 * @param player
 	 * @return Equipment
@@ -55,7 +57,7 @@ public abstract class InventoryDAO implements IDFactoryAwareDAO {
 
 	public abstract boolean store(Item item, Player player);
 
-	public boolean store(Item item, int playerId){
+	public boolean store(Item item, int playerId) {
 		return store(Collections.singletonList(item), playerId);
 	}
 
@@ -64,7 +66,7 @@ public abstract class InventoryDAO implements IDFactoryAwareDAO {
 	/**
 	 * @param item
 	 */
-	public boolean store(Item item, Integer playerId, Integer accountId, Integer legionId){
+	public boolean store(Item item, Integer playerId, Integer accountId, Integer legionId) {
 		FastList<Item> temp = FastList.newInstance();
 		temp.add(item);
 		return store(temp, playerId, accountId, legionId);
@@ -76,7 +78,7 @@ public abstract class InventoryDAO implements IDFactoryAwareDAO {
 	 * @param playerId
 	 */
 	public abstract boolean deletePlayerItems(int playerId);
-	
+
 	public abstract void deleteAccountWH(int accountId);
 
 	@Override

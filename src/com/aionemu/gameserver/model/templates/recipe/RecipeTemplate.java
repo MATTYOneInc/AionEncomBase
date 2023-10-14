@@ -28,8 +28,7 @@ import com.aionemu.gameserver.model.Race;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RecipeTemplate")
-public class RecipeTemplate
-{
+public class RecipeTemplate {
 	protected List<ComboProduct> comboproduct;
 	@XmlAttribute(name = "max_production_count")
 	protected Integer maxProductionCount;
@@ -63,7 +62,7 @@ public class RecipeTemplate
 	protected int id;
 	@XmlElement(name = "component_panel")
 	private List<Component> component_panel;
-	
+
 	public List<Component> getComponent() {
 		return component_panel;
 	}
@@ -74,74 +73,74 @@ public class RecipeTemplate
 		}
 		return comboproduct.get(num - 1).getItemid();
 	}
-	
+
 	public Integer getComboProductSize() {
 		if (comboproduct == null) {
 			return 0;
 		}
 		return comboproduct.size();
 	}
-	
+
 	public Integer getQuantity() {
 		return quantity;
 	}
-	
+
 	public Integer getProductid() {
 		return productid;
 	}
-	
+
 	public int getAutoLearn() {
 		return autolearn;
 	}
-	
+
 	public Integer getDp() {
 		return dp;
 	}
-	
+
 	public Integer getSkillpoint() {
 		return skillpoint;
 	}
-	
+
 	public Race getRace() {
 		return race;
 	}
-	
+
 	public Integer getSkillid() {
 		return skillid;
 	}
-	
+
 	public Integer getItemid() {
 		return itemid;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public int getNameid() {
 		return nameid;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
-	
+
 	public Integer getMaxProductionCount() {
 		return maxProductionCount;
 	}
-	
+
 	public Integer getCraftDelayTime() {
 		return craftDelayTime;
 	}
-	
+
 	public Integer getCraftDelayId() {
 		return craftDelayId;
 	}
-	
+
 	public boolean isArchDaeva() {
 		return archdaeva;
 	}
-	
+
 	public void setArchDaeva(boolean value) {
 		archdaeva = value;
 	}

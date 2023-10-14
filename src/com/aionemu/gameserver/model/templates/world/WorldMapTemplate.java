@@ -33,8 +33,7 @@ import com.aionemu.gameserver.world.zone.ZoneAttributes;
 
 @XmlRootElement(name = "map")
 @XmlAccessorType(XmlAccessType.NONE)
-public class WorldMapTemplate
-{
+public class WorldMapTemplate {
 	@XmlAttribute(name = "name")
 	protected String name = "";
 
@@ -43,7 +42,7 @@ public class WorldMapTemplate
 
 	@XmlAttribute(name = "twin_count")
 	protected int twinCount;
-	
+
 	@XmlAttribute(name = "beginner_twin_count")
 	protected int beginnerTwinCount;
 
@@ -76,7 +75,7 @@ public class WorldMapTemplate
 
 	@XmlAttribute(name = "flags")
 	protected List<ZoneAttributes> flagValues;
-	
+
 	@XmlAttribute(name = "drop_type")
 	protected WorldDropType dropWorldType = WorldDropType.NONE;
 

@@ -50,15 +50,16 @@ public class SM_INVENTORY_INFO extends AionServerPacket {
 	/**
 	 * @param items
 	 */
-	public SM_INVENTORY_INFO(boolean isFirstPacket, List<Item> items, int npcExpandsSize, int questExpandsSize, Player player) {
-        // this should prevent client crashes but need to discover when item is null
-        items.removeAll(Collections.singletonList(null));
-        this.isFirstPacket = isFirstPacket;
-        this.items = items;
-        this.npcExpandsSize = npcExpandsSize;
-        this.questExpandsSize = questExpandsSize;
-        this.player = player;
-    }
+	public SM_INVENTORY_INFO(boolean isFirstPacket, List<Item> items, int npcExpandsSize, int questExpandsSize,
+			Player player) {
+		// this should prevent client crashes but need to discover when item is null
+		items.removeAll(Collections.singletonList(null));
+		this.isFirstPacket = isFirstPacket;
+		this.items = items;
+		this.npcExpandsSize = npcExpandsSize;
+		this.questExpandsSize = questExpandsSize;
+		this.player = player;
+	}
 
 	/**
 	 * @param isEmpty
@@ -90,8 +91,7 @@ public class SM_INVENTORY_INFO extends AionServerPacket {
 		}
 	}
 
-	private void writeItemInfo(Item item)
-	{
+	private void writeItemInfo(Item item) {
 		ItemTemplate itemTemplate = item.getItemTemplate();
 
 		writeD(item.getObjectId());
@@ -100,9 +100,9 @@ public class SM_INVENTORY_INFO extends AionServerPacket {
 
 		ItemInfoBlob itemInfoBlob = ItemInfoBlob.getFullBlob(player, item);
 		itemInfoBlob.writeMe(getBuf());
-		
+
 		writeH((int) (item.getEquipmentSlot() & 0xFFFF));
 		// probably a right to equip the item, related to passive skill learn
-        writeC(itemTemplate.isCloth() ? 1 : 0);
+		writeC(itemTemplate.isCloth() ? 1 : 0);
 	}
 }

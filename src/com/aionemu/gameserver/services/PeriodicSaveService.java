@@ -49,7 +49,8 @@ public class PeriodicSaveService {
 
 		int DELAY_LEGION_ITEM = PeriodicSaveConfig.LEGION_ITEMS * 1000;
 
-		legionWhUpdateTask = ThreadPoolManager.getInstance().scheduleAtFixedRate(new LegionWhUpdateTask(), DELAY_LEGION_ITEM, DELAY_LEGION_ITEM);
+		legionWhUpdateTask = ThreadPoolManager.getInstance().scheduleAtFixedRate(new LegionWhUpdateTask(),
+				DELAY_LEGION_ITEM, DELAY_LEGION_ITEM);
 	}
 
 	private class LegionWhUpdateTask implements Runnable {
@@ -74,8 +75,7 @@ public class PeriodicSaveService {
 					 * 2. save item stones
 					 */
 					DAOManager.getDAO(ItemStoneListDAO.class).save(allItems);
-				}
-				catch (Exception ex) {
+				} catch (Exception ex) {
 					log.error("Exception during periodic saving of legion WH", ex);
 				}
 				legionWhUpdated++;

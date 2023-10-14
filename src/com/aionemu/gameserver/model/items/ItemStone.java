@@ -33,10 +33,7 @@ public class ItemStone implements StatOwner {
 	private PersistentState persistentState;
 
 	public static enum ItemStoneType {
-		MANASTONE,
-		GODSTONE,
-		FUSIONSTONE,
-		IDIANSTONE;
+		MANASTONE, GODSTONE, FUSIONSTONE, IDIANSTONE;
 	}
 
 	/**
@@ -74,8 +71,7 @@ public class ItemStone implements StatOwner {
 	}
 
 	/**
-	 * @param slot
-	 *          the slot to set
+	 * @param slot the slot to set
 	 */
 	public void setSlot(int slot) {
 		this.slot = slot;
@@ -94,20 +90,19 @@ public class ItemStone implements StatOwner {
 	 */
 	public void setPersistentState(PersistentState persistentState) {
 		switch (persistentState) {
-			case DELETED:
-				if (this.persistentState == PersistentState.NEW) {
-					this.persistentState = PersistentState.NOACTION;
-				}
-				else {
-					this.persistentState = PersistentState.DELETED;
-				}
+		case DELETED:
+			if (this.persistentState == PersistentState.NEW) {
+				this.persistentState = PersistentState.NOACTION;
+			} else {
+				this.persistentState = PersistentState.DELETED;
+			}
+			break;
+		case UPDATE_REQUIRED:
+			if (this.persistentState == PersistentState.NEW) {
 				break;
-			case UPDATE_REQUIRED:
-				if (this.persistentState == PersistentState.NEW) {
-					break;
-				}
-			default:
-				this.persistentState = persistentState;
+			}
+		default:
+			this.persistentState = persistentState;
 		}
 	}
 }

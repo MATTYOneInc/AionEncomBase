@@ -26,43 +26,44 @@ import com.aionemu.commons.services.CronService;
 import com.aionemu.gameserver.dao.ServerVariablesDAO;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
-public abstract class AbstractCronTask implements Runnable
-{
+public abstract class AbstractCronTask implements Runnable {
 	private String cronExpressionString;
 	private CronExpression runExpression;
 	private int runTime;
 	private long period;
-	
+
 	public final int getRunTime() {
 		return runTime;
 	}
-	
+
 	abstract protected long getRunDelay();
+
 	protected void preInit() {
 	}
-	
+
 	protected void postInit() {
 	}
-	
+
 	public final String getCronExpressionString() {
 		return cronExpressionString;
 	}
-	
+
 	abstract protected String getServerTimeVariable();
-	
+
 	public long getPeriod() {
 		return period;
 	}
-	
+
 	protected void preRun() {
 	}
-	
+
 	abstract protected void executeTask();
+
 	abstract protected boolean canRunOnInit();
-	
+
 	protected void postRun() {
 	}
-	
+
 	public AbstractCronTask(String cronExpression) throws ParseException {
 		if (cronExpression == null)
 			throw new NullPointerException("cronExpressionString");
@@ -78,34 +79,33 @@ public abstract class AbstractCronTask implements Runnable
 		if (getRunDelay() == 0) {
 			if (canRunOnInit()) {
 				ThreadPoolManager.getInstance().schedule(this, 0);
-			}
-			else {
+			} else {
 				saveNextRunTime();
 			}
 		}
 		scheduleNextRun();
 	}
-	
+
 	private void scheduleNextRun() {
 		CronService.getInstance().schedule(this, cronExpressionString, true);
 	}
-	
+
 	private void saveNextRunTime() {
 		Date nextDate = runExpression.getTimeAfter(new Date());
 		ServerVariablesDAO dao = DAOManager.getDAO(ServerVariablesDAO.class);
 		runTime = (int) (nextDate.getTime() / 1000);
 		dao.store(getServerTimeVariable(), runTime);
 	}
-	
+
 	@Override
 	public final void run() {
-        if (getRunDelay() > 0) {
-            ThreadPoolManager.getInstance().schedule(this, getRunDelay());
-        } else {
-		    preRun();
-		    executeTask();
-		    saveNextRunTime();
-		    postRun();
-        }
+		if (getRunDelay() > 0) {
+			ThreadPoolManager.getInstance().schedule(this, getRunDelay());
+		} else {
+			preRun();
+			executeTask();
+			saveNextRunTime();
+			postRun();
+		}
 	}
 }

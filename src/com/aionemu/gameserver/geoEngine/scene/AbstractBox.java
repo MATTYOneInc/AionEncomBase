@@ -21,12 +21,16 @@ import com.aionemu.gameserver.geoEngine.math.Vector3f;
 /**
  * An eight sided box.
  * <p/>
- * A {@code Box} is defined by a minimal point and a maximal point. The eight vertices that make the box are then computed, they are computed in such a way as to generate an axis-aligned box.
+ * A {@code Box} is defined by a minimal point and a maximal point. The eight
+ * vertices that make the box are then computed, they are computed in such a way
+ * as to generate an axis-aligned box.
  * <p/>
- * This class does not control how the geometry data is generated, see {@link Box} for that.
+ * This class does not control how the geometry data is generated, see
+ * {@link Box} for that.
  *
  * @author <a href="mailto:ianp@ianp.org">Ian Phillips</a>
- * @version $Revision: 4131 $, $Date: 2009-03-19 16:15:28 -0400 (Thu, 19 Mar 2009) $
+ * @version $Revision: 4131 $, $Date: 2009-03-19 16:15:28 -0400 (Thu, 19 Mar
+ *          2009) $
  */
 public abstract class AbstractBox extends Mesh {
 
@@ -43,8 +47,16 @@ public abstract class AbstractBox extends Mesh {
 	 * @return a newly created array of vertex vectors.
 	 */
 	protected final Vector3f[] computeVertices() {
-		Vector3f[] axes = { Vector3f.UNIT_X.mult(xExtent), Vector3f.UNIT_Y.mult(yExtent), Vector3f.UNIT_Z.mult(zExtent) };
-		return new Vector3f[] { center.subtract(axes[0]).subtractLocal(axes[1]).subtractLocal(axes[2]), center.add(axes[0]).subtractLocal(axes[1]).subtractLocal(axes[2]), center.add(axes[0]).addLocal(axes[1]).subtractLocal(axes[2]), center.subtract(axes[0]).addLocal(axes[1]).subtractLocal(axes[2]), center.add(axes[0]).subtractLocal(axes[1]).addLocal(axes[2]), center.subtract(axes[0]).subtractLocal(axes[1]).addLocal(axes[2]), center.add(axes[0]).addLocal(axes[1]).addLocal(axes[2]), center.subtract(axes[0]).addLocal(axes[1]).addLocal(axes[2]) };
+		Vector3f[] axes = { Vector3f.UNIT_X.mult(xExtent), Vector3f.UNIT_Y.mult(yExtent),
+				Vector3f.UNIT_Z.mult(zExtent) };
+		return new Vector3f[] { center.subtract(axes[0]).subtractLocal(axes[1]).subtractLocal(axes[2]),
+				center.add(axes[0]).subtractLocal(axes[1]).subtractLocal(axes[2]),
+				center.add(axes[0]).addLocal(axes[1]).subtractLocal(axes[2]),
+				center.subtract(axes[0]).addLocal(axes[1]).subtractLocal(axes[2]),
+				center.add(axes[0]).subtractLocal(axes[1]).addLocal(axes[2]),
+				center.subtract(axes[0]).subtractLocal(axes[1]).addLocal(axes[2]),
+				center.add(axes[0]).addLocal(axes[1]).addLocal(axes[2]),
+				center.subtract(axes[0]).addLocal(axes[1]).addLocal(axes[2]) };
 	}
 
 	/**
@@ -95,7 +107,8 @@ public abstract class AbstractBox extends Mesh {
 	/**
 	 * Rebuilds the box after a property has been directly altered.
 	 * <p/>
-	 * For example, if you call {@code getXExtent().x = 5.0f} then you will need to call this method afterwards in order to update the box.
+	 * For example, if you call {@code getXExtent().x = 5.0f} then you will need to
+	 * call this method afterwards in order to update the box.
 	 */
 	public final void updateGeometry() {
 		duUpdateGeometryVertices();
@@ -106,16 +119,13 @@ public abstract class AbstractBox extends Mesh {
 	/**
 	 * Rebuilds this box based on a new set of parameters.
 	 * <p/>
-	 * Note that the actual sides will be twice the given extent values because the box extends in both directions from the center for each extent.
+	 * Note that the actual sides will be twice the given extent values because the
+	 * box extends in both directions from the center for each extent.
 	 *
-	 * @param center
-	 *            the center of the box.
-	 * @param x
-	 *            the x extent of the box, in each directions.
-	 * @param y
-	 *            the y extent of the box, in each directions.
-	 * @param z
-	 *            the z extent of the box, in each directions.
+	 * @param center the center of the box.
+	 * @param x      the x extent of the box, in each directions.
+	 * @param y      the y extent of the box, in each directions.
+	 * @param z      the z extent of the box, in each directions.
 	 */
 	public final void updateGeometry(Vector3f center, float x, float y, float z) {
 		if (center != null) {
@@ -130,12 +140,11 @@ public abstract class AbstractBox extends Mesh {
 	/**
 	 * Rebuilds this box based on a new set of parameters.
 	 * <p/>
-	 * The box is updated so that the two opposite corners are {@code minPoint} and {@code maxPoint}, the other corners are created from those two positions.
+	 * The box is updated so that the two opposite corners are {@code minPoint} and
+	 * {@code maxPoint}, the other corners are created from those two positions.
 	 *
-	 * @param minPoint
-	 *            the new minimum point of the box.
-	 * @param maxPoint
-	 *            the new maximum point of the box.
+	 * @param minPoint the new minimum point of the box.
+	 * @param maxPoint the new maximum point of the box.
 	 */
 	public final void updateGeometry(Vector3f minPoint, Vector3f maxPoint) {
 		center.set(maxPoint).addLocal(minPoint).multLocal(0.5f);

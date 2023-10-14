@@ -22,9 +22,10 @@ import com.aionemu.gameserver.model.gameobjects.Creature;
  * @author Ranastic
  */
 
-public interface ABList<T extends Creature>
-{
+public interface ABList<T extends Creature> {
 	boolean add(T creature, int id, int killCount, int level, int claimReward);
+
 	boolean remove(T creature, int id);
+
 	int size();
 }

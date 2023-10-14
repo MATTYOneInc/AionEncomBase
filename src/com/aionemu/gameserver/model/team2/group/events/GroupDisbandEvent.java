@@ -27,23 +27,23 @@ import com.google.common.base.Predicate;
  */
 public class GroupDisbandEvent extends AlwaysTrueTeamEvent implements Predicate<Player> {
 
-    private final PlayerGroup group;
+	private final PlayerGroup group;
 
-    /**
-     * @param group
-     */
-    public GroupDisbandEvent(PlayerGroup group) {
-        this.group = group;
-    }
+	/**
+	 * @param group
+	 */
+	public GroupDisbandEvent(PlayerGroup group) {
+		this.group = group;
+	}
 
-    @Override
-    public void handleEvent() {
-        group.applyOnMembers(this);
-    }
+	@Override
+	public void handleEvent() {
+		group.applyOnMembers(this);
+	}
 
-    @Override
-    public boolean apply(Player player) {
-        group.onEvent(new PlayerGroupLeavedEvent(group, player, LeaveReson.DISBAND));
-        return true;
-    }
+	@Override
+	public boolean apply(Player player) {
+		group.onEvent(new PlayerGroupLeavedEvent(group, player, LeaveReson.DISBAND));
+		return true;
+	}
 }

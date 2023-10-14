@@ -21,16 +21,15 @@ package com.aionemu.gameserver.model.team2.common.legacy;
  */
 public enum LootDistribution {
 
-    NORMAL(0),
-    ROLL_DICE(2),
-    BID(3);
-    private int id;
+	NORMAL(0), ROLL_DICE(2), BID(3);
 
-    LootDistribution(int id) {
-        this.id = id;
-    }
+	private int id;
 
-    public int getId() {
-        return this.id;
-    }
+	LootDistribution(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
+		return this.id;
+	}
 }

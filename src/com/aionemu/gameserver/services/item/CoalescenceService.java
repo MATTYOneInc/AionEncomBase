@@ -45,37 +45,42 @@ import com.aionemu.gameserver.utils.audit.AuditLogger;
  * @author Ranastic
  */
 
-public class CoalescenceService
-{
+public class CoalescenceService {
 	private Logger log = LoggerFactory.getLogger(CoalescenceService.class);
-	
-	public void letsCoalescence(final Player player, int core_item_object_id, final List<Integer> material_item_object_id_collection) {
+
+	public void letsCoalescence(final Player player, int core_item_object_id,
+			final List<Integer> material_item_object_id_collection) {
 		final Item core_item = player.getInventory().getItemByObjId(core_item_object_id);
 		if (core_item.getEnchantLevel() == 25) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_ENCHANT_ITEM);
 			return;
-		} if (material_item_object_id_collection.size() == 0) {
-			AuditLogger.info(player.getName(), player.getObjectId(), "Possible hack Coalescence. His material equals 0");
+		}
+		if (material_item_object_id_collection.size() == 0) {
+			AuditLogger.info(player.getName(), player.getObjectId(),
+					"Possible hack Coalescence. His material equals 0");
 			return;
 		}
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), core_item.getObjectId(), core_item.getItemId(), 4000, 23, 68), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+				core_item.getObjectId(), core_item.getItemId(), 4000, 23, 68), true);
 		final ItemUseObserver observer = new ItemUseObserver() {
-            @Override
-            public void abort() {
-                player.getController().cancelTask(TaskId.ITEM_USE);
-                player.removeItemCoolDown(core_item.getItemTemplate().getUseLimits().getDelayId());
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_CANCELED(new DescriptionId(core_item.getItemTemplate().getNameId())));
-                PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), core_item.getObjectId(), core_item.getItemId(), 0, 2, 0), true);
-                player.getObserveController().removeObserver(this);
-            }
-        };
+			@Override
+			public void abort() {
+				player.getController().cancelTask(TaskId.ITEM_USE);
+				player.removeItemCoolDown(core_item.getItemTemplate().getUseLimits().getDelayId());
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+						.STR_ITEM_CANCELED(new DescriptionId(core_item.getItemTemplate().getNameId())));
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+						core_item.getObjectId(), core_item.getItemId(), 0, 2, 0), true);
+				player.getObserveController().removeObserver(this);
+			}
+		};
 		player.getObserveController().attach(observer);
 		player.getController().addTask(TaskId.ITEM_USE, ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
 				player.getObserveController().removeObserver(observer);
 				player.getInventory().delete(core_item, ItemDeleteType.COALESCENCE);
-				for (int i=0;i<material_item_object_id_collection.size();i++) {
+				for (int i = 0; i < material_item_object_id_collection.size(); i++) {
 					final Item mats = player.getInventory().getItemByObjId(material_item_object_id_collection.get(i));
 					player.getInventory().delete(mats, ItemDeleteType.COALESCENCE);
 				}
@@ -84,8 +89,14 @@ public class CoalescenceService
 				int bonus_item_id_taken = 0;
 				int bonus_item_count = 0;
 				Map<Integer, ItemTemplate> item_templates = DataManager.ITEM_DATA.getAllItems();
-				for (ItemTemplate item_template : item_templates.values()) { 
-					if (item_template.isArchdaeva() && item_template.getEquipmentType() == core_item.getEquipmentType() && (item_template.getLevel() >= 66 && item_template.getLevel() <= 74) && !item_template.getName().contains("n_m3_") && !item_template.getName().contains("npc_") && !item_template.getName().contains("Pvp_") && !item_template.getName().contains("dagger_") && !item_template.getName().contains("polearm_d_") && !item_template.getName().contains("polearm_a_") && !item_template.getName().contains("polearm_")) {
+				for (ItemTemplate item_template : item_templates.values()) {
+					if (item_template.isArchdaeva() && item_template.getEquipmentType() == core_item.getEquipmentType()
+							&& (item_template.getLevel() >= 66 && item_template.getLevel() <= 74)
+							&& !item_template.getName().contains("n_m3_") && !item_template.getName().contains("npc_")
+							&& !item_template.getName().contains("Pvp_") && !item_template.getName().contains("dagger_")
+							&& !item_template.getName().contains("polearm_d_")
+							&& !item_template.getName().contains("polearm_a_")
+							&& !item_template.getName().contains("polearm_")) {
 						ids_collections.add(item_template.getTemplateId());
 					}
 				}
@@ -95,7 +106,7 @@ public class CoalescenceService
 					return;
 				}
 				ItemService.addItem(player, item_id_taken, 1);
-				//player.getInventory().decreaseKinah(amount);//TODO
+				// player.getInventory().decreaseKinah(amount);//TODO
 				float success = 15;
 				if (material_item_object_id_collection.size() == 1) {
 					success += 5;
@@ -109,7 +120,8 @@ public class CoalescenceService
 					success += 25;
 				} else if (material_item_object_id_collection.size() == 6) {
 					success += 30;
-				} if (success >= 95) {
+				}
+				if (success >= 95) {
 					success = 95;
 				}
 				boolean result_of_random = false;
@@ -117,25 +129,26 @@ public class CoalescenceService
 				if (random <= success) {
 					result_of_random = true;
 					Random rand = new Random();
-					int[] bonus_item_id_collection = new int[] { 
-					    166100009, 166100010, 166100011
-					};
+					int[] bonus_item_id_collection = new int[] { 166100009, 166100010, 166100011 };
 					bonus_item_id_taken = bonus_item_id_collection[rand.nextInt(bonus_item_id_collection.length)];
 					bonus_item_count = Rnd.get(1, 200);
 					ItemService.addItem(player, bonus_item_id_taken, bonus_item_count);
-					//TODO message for bonus
+					// TODO message for bonus
 				}
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), core_item.getObjectId(), core_item.getItemId(), 0, 24, 0), true);
-				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403620, new DescriptionId(core_item.getItemTemplate().getNameId())));
-				PacketSendUtility.sendPacket(player, new SM_COALESCENCE_RESULT(core_item.getItemId(), core_item.getObjectId(), bonus_item_id_taken, bonus_item_count, result_of_random));
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+						core_item.getObjectId(), core_item.getItemId(), 0, 24, 0), true);
+				PacketSendUtility.sendPacket(player,
+						new SM_SYSTEM_MESSAGE(1403620, new DescriptionId(core_item.getItemTemplate().getNameId())));
+				PacketSendUtility.sendPacket(player, new SM_COALESCENCE_RESULT(core_item.getItemId(),
+						core_item.getObjectId(), bonus_item_id_taken, bonus_item_count, result_of_random));
 			}
 		}, 4000));
 	}
-	
+
 	public static CoalescenceService getInstance() {
 		return NewSingletonHolder.INSTANCE;
 	}
-	
+
 	private static class NewSingletonHolder {
 		private static final CoalescenceService INSTANCE = new CoalescenceService();
 	}

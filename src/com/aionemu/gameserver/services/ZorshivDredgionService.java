@@ -52,24 +52,24 @@ import javolution.util.FastMap;
 /**
  * @author Rinzler (Encom)
  */
-public class ZorshivDredgionService
-{
+public class ZorshivDredgionService {
 	private DredgionSchedule dredgionSchedule;
 	private Map<Integer, ZorshivDredgionLocation> zorshivDredgion;
 	private static final int duration = CustomConfig.ZORSHIV_DREDGION_DURATION;
-	private final Map<Integer, ZorshivDredgion<?>> activeZorshivDredgion = new FastMap<Integer, ZorshivDredgion<?>>().shared();
+	private final Map<Integer, ZorshivDredgion<?>> activeZorshivDredgion = new FastMap<Integer, ZorshivDredgion<?>>()
+			.shared();
 	private static final Logger log = LoggerFactory.getLogger(ZorshivDredgionService.class);
 
-	//Inggison Invasion
+	// Inggison Invasion
 	private FastMap<Integer, VisibleObject> adventPortal = new FastMap<Integer, VisibleObject>();
 	private FastMap<Integer, VisibleObject> adventEffect = new FastMap<Integer, VisibleObject>();
 	private FastMap<Integer, VisibleObject> adventControl = new FastMap<Integer, VisibleObject>();
 	private FastMap<Integer, VisibleObject> adventDirecting = new FastMap<Integer, VisibleObject>();
-	
+
 	public void initZorshivDredgionLocations() {
 		if (CustomConfig.ZORSHIV_DREDGION_ENABLED) {
 			zorshivDredgion = DataManager.ZORSHIV_DREDGION_DATA.getZorshivDredgionLocations();
-			for (ZorshivDredgionLocation loc: getZorshivDredgionLocations().values()) {
+			for (ZorshivDredgionLocation loc : getZorshivDredgionLocations().values()) {
 				spawn(loc, ZorshivDredgionStateType.PEACE);
 			}
 			log.info("[ZorshivDredgionService] Loaded " + zorshivDredgion.size() + " locations.");
@@ -78,19 +78,19 @@ public class ZorshivDredgionService
 			zorshivDredgion = Collections.emptyMap();
 		}
 	}
-	
+
 	public void initZorshivDredgion() {
 		if (CustomConfig.ZORSHIV_DREDGION_ENABLED) {
 			log.info("[ZorshivDredgionService] is initialized...");
 			dredgionSchedule = DredgionSchedule.load();
-		    for (Dredgion dredgion: dredgionSchedule.getDredgionsList()) {
-			    for (String zorshivTime: dredgion.getZorshivTimes()) {
-				    CronService.getInstance().schedule(new DredgionStartRunnable(dredgion.getId()), zorshivTime);
-			    }
+			for (Dredgion dredgion : dredgionSchedule.getDredgionsList()) {
+				for (String zorshivTime : dredgion.getZorshivTimes()) {
+					CronService.getInstance().schedule(new DredgionStartRunnable(dredgion.getId()), zorshivTime);
+				}
 			}
 		}
 	}
-	
+
 	public void startZorshivDredgion(final int id) {
 		final ZorshivDredgion<?> zorshiv;
 		synchronized (this) {
@@ -108,7 +108,7 @@ public class ZorshivDredgionService
 			}
 		}, duration * 3600 * 1000);
 	}
-	
+
 	public void stopZorshivDredgion(int id) {
 		if (!isZorshivDredgionInProgress(id)) {
 			return;
@@ -116,12 +116,13 @@ public class ZorshivDredgionService
 		ZorshivDredgion<?> zorshiv;
 		synchronized (this) {
 			zorshiv = activeZorshivDredgion.remove(id);
-		} if (zorshiv == null || zorshiv.isPeace()) {
+		}
+		if (zorshiv == null || zorshiv.isPeace()) {
 			return;
 		}
 		zorshiv.stop();
 	}
-	
+
 	public void spawn(ZorshivDredgionLocation loc, ZorshivDredgionStateType zstate) {
 		if (zstate.equals(ZorshivDredgionStateType.LANDING)) {
 		}
@@ -135,127 +136,148 @@ public class ZorshivDredgionService
 			}
 		}
 	}
-	
-   /**
-	* Dredgion Invasion Msg.
-	*/
+
+	/**
+	 * Dredgion Invasion Msg.
+	 */
 	public boolean levinshorMsg(int id) {
-        switch (id) {
-            case 1:
-			case 2:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE050", "The <Zorshiv Dredgion> to lands at levinshor !!!");
-						//The Balaur Dredgion has appeared.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_SPAWN, 120000);
-						//The Dredgion has dropped Balaur Troopers.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_DROP_DRAGON, 300000);
-						//The Balaur Dredgion has disappeared.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_DESPAWN, 3600000);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
+		switch (id) {
+		case 1:
+		case 2:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE050",
+							"The <Zorshiv Dredgion> to lands at levinshor !!!");
+					// The Balaur Dredgion has appeared.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_SPAWN,
+							120000);
+					// The Dredgion has dropped Balaur Troopers.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_DROP_DRAGON,
+							300000);
+					// The Balaur Dredgion has disappeared.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_DESPAWN,
+							3600000);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean inggisonMsg(int id) {
-        switch (id) {
-            case 3:
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendSys3Message(player, "\uE050", "The <Zorshiv Dredgion> to lands at inggison !!!");
-						//The Balaur Dredgion has appeared.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_SPAWN, 120000);
-						//The Dredgion has dropped Balaur Troopers.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_DROP_DRAGON, 300000);
-						//The Balaur Dredgion has disappeared.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_DESPAWN, 3600000);
-					}
-				});
-			    return true;
-            default:
-                return false;
-        }
-    }
-	
+		switch (id) {
+		case 3:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					PacketSendUtility.sendSys3Message(player, "\uE050",
+							"The <Zorshiv Dredgion> to lands at inggison !!!");
+					// The Balaur Dredgion has appeared.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_SPAWN,
+							120000);
+					// The Dredgion has dropped Balaur Troopers.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_DROP_DRAGON,
+							300000);
+					// The Balaur Dredgion has disappeared.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_CARRIER_DESPAWN,
+							3600000);
+				}
+			});
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean adventControlSP(int id) {
-        switch (id) {
-            case 3:
-                adventControl.put(702529, SpawnEngine.spawnObject(SpawnEngine.addNewSingleTimeSpawn(210130000, 702529, 1439.8473f, 407.9271f, 552.26624f, (byte) 78), 1));
-			    return true;
-            default:
-                return false;
-        }
-    }
+		switch (id) {
+		case 3:
+			adventControl.put(702529, SpawnEngine.spawnObject(
+					SpawnEngine.addNewSingleTimeSpawn(210130000, 702529, 1439.8473f, 407.9271f, 552.26624f, (byte) 78),
+					1));
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public boolean adventEffectSP(int id) {
-        switch (id) {
-            case 3:
-                adventEffect.put(702549, SpawnEngine.spawnObject(SpawnEngine.addNewSingleTimeSpawn(210130000, 702549, 1439.8473f, 407.9271f, 552.26624f, (byte) 78), 1));
-			    return true;
-            default:
-                return false;
-        }
+		switch (id) {
+		case 3:
+			adventEffect.put(702549, SpawnEngine.spawnObject(
+					SpawnEngine.addNewSingleTimeSpawn(210130000, 702549, 1439.8473f, 407.9271f, 552.26624f, (byte) 78),
+					1));
+			return true;
+		default:
+			return false;
+		}
 	}
+
 	public boolean adventPortalSP(int id) {
-        switch (id) {
-            case 3:
-                adventPortal.put(702550, SpawnEngine.spawnObject(SpawnEngine.addNewSingleTimeSpawn(210130000, 702550, 1439.8473f, 407.9271f, 552.26624f, (byte) 78), 1));
-			    return true;
-            default:
-                return false;
-        }
-    }
-	public boolean adventDirectingSP(int id) {
-        switch (id) {
-            case 3:
-                adventDirecting.put(855231, SpawnEngine.spawnObject(SpawnEngine.addNewSingleTimeSpawn(210130000, 855231, 1439.8473f, 407.9271f, 552.26624f, (byte) 78), 1));
-			    return true;
-            default:
-                return false;
-        }
+		switch (id) {
+		case 3:
+			adventPortal.put(702550, SpawnEngine.spawnObject(
+					SpawnEngine.addNewSingleTimeSpawn(210130000, 702550, 1439.8473f, 407.9271f, 552.26624f, (byte) 78),
+					1));
+			return true;
+		default:
+			return false;
+		}
 	}
-	
+
+	public boolean adventDirectingSP(int id) {
+		switch (id) {
+		case 3:
+			adventDirecting.put(855231, SpawnEngine.spawnObject(
+					SpawnEngine.addNewSingleTimeSpawn(210130000, 855231, 1439.8473f, 407.9271f, 552.26624f, (byte) 78),
+					1));
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public void despawn(ZorshivDredgionLocation loc) {
 		if (loc.getSpawned() == null) {
-        	return;
-		} for (VisibleObject obj: loc.getSpawned()) {
-            Npc spawned = (Npc) obj;
-            spawned.setDespawnDelayed(true);
-            if (spawned.getAggroList().getList().isEmpty()) {
-                spawned.getController().cancelTask(TaskId.RESPAWN);
-                obj.getController().onDelete();
-            }
-        }
-        loc.getSpawned().clear();
+			return;
+		}
+		for (VisibleObject obj : loc.getSpawned()) {
+			Npc spawned = (Npc) obj;
+			spawned.setDespawnDelayed(true);
+			if (spawned.getAggroList().getList().isEmpty()) {
+				spawned.getController().cancelTask(TaskId.RESPAWN);
+				obj.getController().onDelete();
+			}
+		}
+		loc.getSpawned().clear();
 	}
-	
+
 	public boolean isZorshivDredgionInProgress(int id) {
 		return activeZorshivDredgion.containsKey(id);
 	}
-	
+
 	public Map<Integer, ZorshivDredgion<?>> getActiveZorshivDredgion() {
 		return activeZorshivDredgion;
 	}
-	
+
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public ZorshivDredgionLocation getZorshivDredgionLocation(int id) {
 		return zorshivDredgion.get(id);
 	}
-	
+
 	public Map<Integer, ZorshivDredgionLocation> getZorshivDredgionLocations() {
 		return zorshivDredgion;
 	}
-	
+
 	public static ZorshivDredgionService getInstance() {
 		return ZorshivDredgionServiceHolder.INSTANCE;
 	}
-	
+
 	private static class ZorshivDredgionServiceHolder {
 		private static final ZorshivDredgionService INSTANCE = new ZorshivDredgionService();
 	}

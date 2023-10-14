@@ -25,34 +25,33 @@ import com.aionemu.gameserver.model.team2.group.PlayerGroupService;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class PlayerGroupInvite extends RequestResponseHandler
-{
-    private final Player inviter;
-    private final Player invited;
-	
-    public PlayerGroupInvite(Player inviter, Player invited) {
-        super(inviter);
-        this.inviter = inviter;
-        this.invited = invited;
-    }
-	
-    @Override
-    public void acceptRequest(Creature requester, Player responder) {
-        if (PlayerGroupService.canInvite(inviter, invited)) {
-            //You have invited %0 to join your group.
+public class PlayerGroupInvite extends RequestResponseHandler {
+	private final Player inviter;
+	private final Player invited;
+
+	public PlayerGroupInvite(Player inviter, Player invited) {
+		super(inviter);
+		this.inviter = inviter;
+		this.invited = invited;
+	}
+
+	@Override
+	public void acceptRequest(Creature requester, Player responder) {
+		if (PlayerGroupService.canInvite(inviter, invited)) {
+			// You have invited %0 to join your group.
 			PacketSendUtility.sendPacket(inviter, SM_SYSTEM_MESSAGE.STR_PARTY_INVITED_HIM(invited.getName()));
-            PlayerGroup group = inviter.getPlayerGroup2();
-            if (group != null) {
-                PlayerGroupService.addPlayer(group, invited);
-            } else {
-                PlayerGroupService.createGroup(inviter, invited, TeamType.GROUP);
-            }
-        }
-    }
-	
-    @Override
-    public void denyRequest(Creature requester, Player responder) {
-        //%0 has declined your invitation.
+			PlayerGroup group = inviter.getPlayerGroup2();
+			if (group != null) {
+				PlayerGroupService.addPlayer(group, invited);
+			} else {
+				PlayerGroupService.createGroup(inviter, invited, TeamType.GROUP);
+			}
+		}
+	}
+
+	@Override
+	public void denyRequest(Creature requester, Player responder) {
+		// %0 has declined your invitation.
 		PacketSendUtility.sendPacket(inviter, SM_SYSTEM_MESSAGE.STR_PARTY_HE_REJECT_INVITATION(responder.getName()));
-    }
+	}
 }

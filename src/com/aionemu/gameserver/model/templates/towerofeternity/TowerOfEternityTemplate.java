@@ -29,19 +29,18 @@ import com.aionemu.gameserver.model.towerofeternity.TowerOfEternityLocation;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Tower")
-public class TowerOfEternityTemplate extends TowerOfEternityLocation
-{
-    @XmlAttribute(name = "id")
-    protected int id;
-	
-    @XmlAttribute(name = "world")
-    protected int world;
-	
-    public int getId() {
-        return this.id;
-    }
-	
-    public int getWorldId() {
-        return this.world;
-    }
+public class TowerOfEternityTemplate extends TowerOfEternityLocation {
+	@XmlAttribute(name = "id")
+	protected int id;
+
+	@XmlAttribute(name = "world")
+	protected int world;
+
+	public int getId() {
+		return this.id;
+	}
+
+	public int getWorldId() {
+		return this.world;
+	}
 }

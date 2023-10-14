@@ -46,7 +46,8 @@ public class ChestData {
 	private THashMap<String, ChestTemplate> namedChests = new THashMap<String, ChestTemplate>();
 
 	/**
-	 * - Inititialize all maps for subsequent use - Don't nullify initial chest list as it will be used during reload
+	 * - Inititialize all maps for subsequent use - Don't nullify initial chest list
+	 * as it will be used during reload
 	 * 
 	 * @param u
 	 * @param parent
@@ -84,8 +85,7 @@ public class ChestData {
 	}
 
 	/**
-	 * @param chests
-	 *          the chests to set
+	 * @param chests the chests to set
 	 */
 	public void setChests(List<ChestTemplate> chests) {
 		this.chests = chests;

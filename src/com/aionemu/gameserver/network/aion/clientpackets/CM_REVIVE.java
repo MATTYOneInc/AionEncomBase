@@ -29,16 +29,16 @@ import com.aionemu.gameserver.services.player.PlayerReviveService;
 public class CM_REVIVE extends AionClientPacket {
 
 	private int reviveId;
-	
+
 	public CM_REVIVE(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		reviveId = readC();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player activePlayer = getConnection().getActivePlayer();
@@ -47,30 +47,30 @@ public class CM_REVIVE extends AionClientPacket {
 		}
 		ReviveType reviveType = ReviveType.getReviveTypeById(reviveId, activePlayer);
 		switch (reviveType) {
-			case BIND_REVIVE:
-			case VORTEX_REVIVE:
-				PlayerReviveService.bindRevive(activePlayer);
+		case BIND_REVIVE:
+		case VORTEX_REVIVE:
+			PlayerReviveService.bindRevive(activePlayer);
 			break;
-			case REBIRTH_REVIVE:
-				PlayerReviveService.rebirthRevive(activePlayer);
+		case REBIRTH_REVIVE:
+			PlayerReviveService.rebirthRevive(activePlayer);
 			break;
-			case ITEM_SELF_REVIVE:
-				PlayerReviveService.itemSelfRevive(activePlayer);
+		case ITEM_SELF_REVIVE:
+			PlayerReviveService.itemSelfRevive(activePlayer);
 			break;
-			case SKILL_REVIVE:
-				PlayerReviveService.skillRevive(activePlayer);
+		case SKILL_REVIVE:
+			PlayerReviveService.skillRevive(activePlayer);
 			break;
-			case KISK_REVIVE:
-				PlayerReviveService.kiskRevive(activePlayer);
+		case KISK_REVIVE:
+			PlayerReviveService.kiskRevive(activePlayer);
 			break;
-			case INSTANCE_REVIVE:
-				PlayerReviveService.instanceRevive(activePlayer);
+		case INSTANCE_REVIVE:
+			PlayerReviveService.instanceRevive(activePlayer);
 			break;
-			case START_POINT_REVIVE:
-				PlayerReviveService.startPositionRevive(activePlayer);
+		case START_POINT_REVIVE:
+			PlayerReviveService.startPositionRevive(activePlayer);
 			break;
-			default:
-				break;
+		default:
+			break;
 		}
 	}
 }

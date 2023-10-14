@@ -89,17 +89,16 @@ public class BindPointPosition {
 	}
 
 	/**
-	 * @param persistentState
-	 *          the persistentState to set
+	 * @param persistentState the persistentState to set
 	 */
 	public void setPersistentState(PersistentState persistentState) {
 		switch (persistentState) {
-			case UPDATE_REQUIRED:
-				if (this.persistentState == PersistentState.NEW) {
-					break;
-				}
-			default:
-				this.persistentState = persistentState;
+		case UPDATE_REQUIRED:
+			if (this.persistentState == PersistentState.NEW) {
+				break;
+			}
+		default:
+			this.persistentState = persistentState;
 		}
 	}
 }

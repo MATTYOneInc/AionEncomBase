@@ -35,36 +35,36 @@ import com.google.common.base.Predicate;
  */
 public class PlayerConnectedEvent extends AlwaysTrueTeamEvent implements Predicate<Player> {
 
-    private static final Logger log = LoggerFactory.getLogger(PlayerConnectedEvent.class);
-    private final PlayerGroup group;
-    private final Player player;
+	private static final Logger log = LoggerFactory.getLogger(PlayerConnectedEvent.class);
+	private final PlayerGroup group;
+	private final Player player;
 
-    public PlayerConnectedEvent(PlayerGroup group, Player player) {
-        this.group = group;
-        this.player = player;
-    }
+	public PlayerConnectedEvent(PlayerGroup group, Player player) {
+		this.group = group;
+		this.player = player;
+	}
 
-    @Override
-    public void handleEvent() {
-        group.removeMember(player.getObjectId());
-        group.addMember(new PlayerGroupMember(player));
-        // TODO this probably should never happen
-        if (player.sameObjectId(group.getLeader().getObjectId())) {
-            log.warn("[TEAM2] leader connected {}", group.size());
-            group.changeLeader(new PlayerGroupMember(player));
-        }
-        PacketSendUtility.sendPacket(player, new SM_GROUP_INFO(group));
-        PacketSendUtility.sendPacket(player, new SM_GROUP_MEMBER_INFO(group, player, GroupEvent.JOIN));
-        group.applyOnMembers(this);
-    }
+	@Override
+	public void handleEvent() {
+		group.removeMember(player.getObjectId());
+		group.addMember(new PlayerGroupMember(player));
+		// TODO this probably should never happen
+		if (player.sameObjectId(group.getLeader().getObjectId())) {
+			log.warn("[TEAM2] leader connected {}", group.size());
+			group.changeLeader(new PlayerGroupMember(player));
+		}
+		PacketSendUtility.sendPacket(player, new SM_GROUP_INFO(group));
+		PacketSendUtility.sendPacket(player, new SM_GROUP_MEMBER_INFO(group, player, GroupEvent.JOIN));
+		group.applyOnMembers(this);
+	}
 
-    @Override
-    public boolean apply(Player member) {
-        if (!player.equals(member)) {
-            PacketSendUtility.sendPacket(member, new SM_GROUP_MEMBER_INFO(group, player, GroupEvent.ENTER));
-            PacketSendUtility.sendPacket(member, new SM_INSTANCE_INFO(player, false, group));
-            PacketSendUtility.sendPacket(player, new SM_GROUP_MEMBER_INFO(group, member, GroupEvent.ENTER));
-        }
-        return true;
-    }
+	@Override
+	public boolean apply(Player member) {
+		if (!player.equals(member)) {
+			PacketSendUtility.sendPacket(member, new SM_GROUP_MEMBER_INFO(group, player, GroupEvent.ENTER));
+			PacketSendUtility.sendPacket(member, new SM_INSTANCE_INFO(player, false, group));
+			PacketSendUtility.sendPacket(player, new SM_GROUP_MEMBER_INFO(group, member, GroupEvent.ENTER));
+		}
+		return true;
+	}
 }

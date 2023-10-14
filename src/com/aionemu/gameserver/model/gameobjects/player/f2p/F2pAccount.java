@@ -21,47 +21,47 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
-/** Author Ranastic (Encom)
-/****/
+/**
+ * Author Ranastic (Encom) /
+ ****/
 
-public class F2pAccount implements IExpirable
-{
+public class F2pAccount implements IExpirable {
 	private int deleteTime = 0;
 	private boolean active = false;
-	
+
 	public F2pAccount(int deletionTime) {
 		deleteTime = deletionTime;
 	}
-	
+
 	public int getRemainingTime() {
 		if (deleteTime == 0) {
 			return 0;
 		}
-		return deleteTime - (int)(System.currentTimeMillis() / 1000L);
+		return deleteTime - (int) (System.currentTimeMillis() / 1000L);
 	}
-	
+
 	public int getExpireTime() {
 		return deleteTime;
 	}
-	
+
 	public boolean getActive() {
 		return active;
 	}
-	
+
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
+
 	public void expireEnd(Player player) {
 		setActive(false);
 		player.getF2p().remove();
 		PacketSendUtility.sendBrightYellowMessageOnCenter(player, "<F2p Pack> is expired!!!");
 	}
-	
+
 	public boolean canExpireNow() {
 		return true;
 	}
-	
+
 	public void expireMessage(Player player, int time) {
 		PacketSendUtility.sendBrightYellowMessageOnCenter(player, "<F2p Pack> end!!!");
 	}

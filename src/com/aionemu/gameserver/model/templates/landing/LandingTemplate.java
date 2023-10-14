@@ -25,26 +25,25 @@ import com.aionemu.gameserver.model.Race;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "landing")
-public class LandingTemplate
-{
-    @XmlAttribute(name = "id")
-    protected int id;
-	
-    @XmlAttribute(name = "name")
-    protected String nameId;
-	
-    @XmlAttribute(name = "race")
-    protected Race race;
-	
-    public int getId() {
-        return this.id;
-    }
-	
-    public String getName() {
-        return nameId;
-    }
-	
-    public Race getRace() {
-        return race;
-    }
+public class LandingTemplate {
+	@XmlAttribute(name = "id")
+	protected int id;
+
+	@XmlAttribute(name = "name")
+	protected String nameId;
+
+	@XmlAttribute(name = "race")
+	protected Race race;
+
+	public int getId() {
+		return this.id;
+	}
+
+	public String getName() {
+		return nameId;
+	}
+
+	public Race getRace() {
+		return race;
+	}
 }

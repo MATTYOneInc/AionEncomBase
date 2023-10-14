@@ -26,11 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GlobalDropZone")
-public class GlobalDropZone
-{
+public class GlobalDropZone {
 	@XmlAttribute(name = "zone", required = true)
 	protected String zone;
-	
+
 	public String getZone() {
 		return zone;
 	}

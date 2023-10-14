@@ -31,19 +31,18 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
  * @author Rinzler (Encom)
  */
 
-public class AnohaStartRunnable implements Runnable
-{
+public class AnohaStartRunnable implements Runnable {
 	private final int id;
-	
+
 	public AnohaStartRunnable(int id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public void run() {
-		//Berserk Anoha Sword Effect.
+		// Berserk Anoha Sword Effect.
 		AnohaService.getInstance().adventSwordEffectSP(id);
-		//Berserk Anoha will return to Kaldor in 30 minutes.
+		// Berserk Anoha will return to Kaldor in 30 minutes.
 		AnohaService.getInstance().berserkAnohaMsg1(id);
 		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 			@Override
@@ -54,28 +53,28 @@ public class AnohaStartRunnable implements Runnable
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-			    //Enraged Wealhtheow Guardian will appear in 5 minutes.
+				// Enraged Wealhtheow Guardian will appear in 5 minutes.
 				AnohaService.getInstance().wealhtheowGuardianMsg1(id);
 			}
 		}, 1500000);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-			    //Enraged Wealhtheow Guardian will appear in 3 minutes.
+				// Enraged Wealhtheow Guardian will appear in 3 minutes.
 				AnohaService.getInstance().wealhtheowGuardianMsg2(id);
 			}
 		}, 1620000);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-			    //Enraged Wealhtheow Guardian will appear in 1 minute.
+				// Enraged Wealhtheow Guardian will appear in 1 minute.
 				AnohaService.getInstance().wealhtheowGuardianMsg3(id);
 			}
 		}, 1740000);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-			    Map<Integer, AnohaLocation> locations = AnohaService.getInstance().getAnohaLocations();
+				Map<Integer, AnohaLocation> locations = AnohaService.getInstance().getAnohaLocations();
 				for (final AnohaLocation loc : locations.values()) {
 					if (loc.getId() == id) {
 						AnohaService.getInstance().startAnoha(loc.getId());
@@ -84,7 +83,7 @@ public class AnohaStartRunnable implements Runnable
 				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 					@Override
 					public void visit(Player player) {
-						//Summon Berserk Anoha.
+						// Summon Berserk Anoha.
 						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_Anoha_Spawn);
 					}
 				});

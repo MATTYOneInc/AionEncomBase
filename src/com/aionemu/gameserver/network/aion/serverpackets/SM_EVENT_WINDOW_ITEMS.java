@@ -47,10 +47,13 @@ public class SM_EVENT_WINDOW_ITEMS extends AionServerPacket {
 			int dbRecivedCount = playerEventsWindowDAO.getRewardRecivedCount(playerAccountId, eventsWindow.getId());
 			int elapsed = playerEventsWindowDAO.getElapsed(playerAccountId, eventsWindow.getId());
 			int displayTime = (eventsWindow.getRemainingTime() - elapsed);
-			log.info("event id " + eventsWindow.getId() + " remain " + eventsWindow.getRemainingTime() + " start-time " + new Timestamp(eventsWindow.getPeriodStart().getMillis()).getTime() / 1000 + " end-time " + new Timestamp(eventsWindow.getPeriodEnd().getMillis()).getTime() / 1000 + " total size " + active_events_packet.size());
+			log.info("event id " + eventsWindow.getId() + " remain " + eventsWindow.getRemainingTime() + " start-time "
+					+ new Timestamp(eventsWindow.getPeriodStart().getMillis()).getTime() / 1000 + " end-time "
+					+ new Timestamp(eventsWindow.getPeriodEnd().getMillis()).getTime() / 1000 + " total size "
+					+ active_events_packet.size());
 			writeD(eventsWindow.getId()); // Id
 			writeD(dbRecivedCount); // reward recived count
-			writeD(displayTime * 60); //Displayed Remaining Time
+			writeD(displayTime * 60); // Displayed Remaining Time
 			writeD(0); // Do not Change !!!
 			writeD(eventsWindow.getMaxCountOfDay());// This is Max Count of Day
 			writeD((int) (System.currentTimeMillis() / 1000)); // PlayerLoginTime
@@ -62,14 +65,14 @@ public class SM_EVENT_WINDOW_ITEMS extends AionServerPacket {
 			writeC(21); // Do not Change !!!
 			writeC(0); // Do not Change !!!
 			writeD(displayTime * 60); // Remaining Time
-			writeD(eventsWindow.getItemId());  // ItemId
+			writeD(eventsWindow.getItemId()); // ItemId
 			writeQ(eventsWindow.getCount()); // ItemCount
 			writeD(eventsWindow.getMaxCountOfDay()); // This is Max Count of Day
 			writeD((int) (eventsWindow.getPeriodStart().getMillis() / 1000)); // Period Start TimeStamp
 			writeD(0);
 			writeD((int) (eventsWindow.getPeriodEnd().getMillis() / 1000)); // Period End TimeSTamp
 			writeD(0);
-			writeD(0);//Does something
+			writeD(0);// Does something
 			writeD(0); // If player has this Item already in inventory it's ItemId
 			writeD(1090157056); // Do not Change !!!
 			writeD(eventsWindow.getMinLevel()); // StartLevel

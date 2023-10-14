@@ -23,37 +23,37 @@ import java.util.List;
 import com.aionemu.commons.utils.Rnd;
 
 /****/
-/** Author Ranastic (Encom)
-/****/
+/**
+ * Author Ranastic (Encom) /
+ ****/
 
-public class RndSelector<E>
-{
+public class RndSelector<E> {
 	private class RndNode<T> implements Comparable<RndNode<T>> {
 		private final T value;
 		private final int weight;
-		
+
 		public RndNode(T value, int weight) {
 			this.value = value;
 			this.weight = weight;
 		}
-		
+
 		@Override
 		public int compareTo(RndNode<T> o) {
 			return this.weight - weight;
 		}
 	}
-	
+
 	private int totalWeight = 0;
 	private final List<RndNode<E>> nodes;
-	
+
 	public RndSelector() {
 		nodes = new ArrayList<RndNode<E>>();
 	}
-	
+
 	public RndSelector(int initialCapacity) {
 		nodes = new ArrayList<RndNode<E>>(initialCapacity);
 	}
-	
+
 	public void add(E value, int weight) {
 		if (value == null || weight <= 0) {
 			return;
@@ -61,7 +61,7 @@ public class RndSelector<E>
 		totalWeight += weight;
 		nodes.add(new RndNode<E>(value, weight));
 	}
-	
+
 	public E chance(int maxWeight) {
 		if (maxWeight <= 0) {
 			return null;
@@ -76,15 +76,15 @@ public class RndSelector<E>
 		}
 		return null;
 	}
-	
+
 	public E chance() {
 		return chance(100);
 	}
-	
+
 	public E select() {
 		return chance(totalWeight);
 	}
-	
+
 	public void clear() {
 		totalWeight = 0;
 		nodes.clear();

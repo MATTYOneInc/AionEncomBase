@@ -25,39 +25,39 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * @author Rinzler (Encom)
  */
 
-public class NightmareCircusSpawnTemplate extends SpawnTemplate
-{
+public class NightmareCircusSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private NightmareCircusStateType nightmareCircusType;
-	
+
 	public NightmareCircusSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public NightmareCircusSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public NightmareCircusSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public NightmareCircusStateType getNStateType() {
 		return nightmareCircusType;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void setNStateType(NightmareCircusStateType nightmareCircusType) {
 		this.nightmareCircusType = nightmareCircusType;
 	}
-	
+
 	public final boolean isCircusOpen() {
 		return nightmareCircusType.equals(NightmareCircusStateType.OPEN);
 	}
-	
+
 	public final boolean isCircusClosed() {
 		return nightmareCircusType.equals(NightmareCircusStateType.CLOSED);
 	}

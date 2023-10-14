@@ -26,21 +26,20 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
  * @author Ranastic (Encom)
  */
 
-public class CM_INTRUDER_SCAN extends AionClientPacket
-{
+public class CM_INTRUDER_SCAN extends AionClientPacket {
 	private int value;
-	
+
 	Logger log = LoggerFactory.getLogger(CM_INTRUDER_SCAN.class);
-	
+
 	public CM_INTRUDER_SCAN(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		this.value = readC();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 	}

@@ -33,36 +33,35 @@ import com.aionemu.gameserver.model.zorshivdredgion.ZorshivDredgionStateType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ZorshivDredgionSpawn")
-public class ZorshivDredgionSpawn
-{
+public class ZorshivDredgionSpawn {
 	@XmlAttribute(name = "id")
 	private int id;
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	@XmlElement(name = "zorshiv_dredgion_type")
 	private List<ZorshivDredgionSpawn.ZorshivDredgionStateTemplate> ZorshivDredgionStateTemplate;
-	
+
 	public List<ZorshivDredgionStateTemplate> getSiegeModTemplates() {
 		return ZorshivDredgionStateTemplate;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlType(name = "ZorshivDredgionStateTemplate")
 	public static class ZorshivDredgionStateTemplate {
-	
+
 		@XmlElement(name = "spawn")
 		private List<Spawn> spawns;
-		
+
 		@XmlAttribute(name = "zstate")
 		private ZorshivDredgionStateType zorshivDredgionType;
-		
+
 		public List<Spawn> getSpawns() {
 			return spawns;
 		}
-		
+
 		public ZorshivDredgionStateType getZorshivDredgionType() {
 			return zorshivDredgionType;
 		}

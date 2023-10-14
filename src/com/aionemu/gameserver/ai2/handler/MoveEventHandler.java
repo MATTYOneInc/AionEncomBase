@@ -19,8 +19,7 @@ package com.aionemu.gameserver.ai2.handler;
 import com.aionemu.gameserver.ai2.NpcAI2;
 
 /**
- * @author ATracer
- * Rework: Angry Catster
+ * @author ATracer Rework: Angry Catster
  */
 public class MoveEventHandler {
 

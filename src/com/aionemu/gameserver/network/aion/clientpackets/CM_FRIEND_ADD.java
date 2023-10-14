@@ -60,31 +60,25 @@ public class CM_FRIEND_ADD extends AionClientPacket {
 		final Player targetPlayer = World.getInstance().findPlayer(targetName);
 
 		if (targetName.equalsIgnoreCase(activePlayer.getName())) {
-			// Adding self to friend list not allowed - Its blocked by the client by default, so no need to send an error
+			// Adding self to friend list not allowed - Its blocked by the client by
+			// default, so no need to send an error
 		}
 		// if offline
 		else if (targetPlayer == null) {
 			sendPacket(new SM_FRIEND_RESPONSE(targetName, SM_FRIEND_RESPONSE.TARGET_OFFLINE));
-		}
-		else if (activePlayer.getFriendList().getFriend(targetPlayer.getObjectId()) != null) {
+		} else if (activePlayer.getFriendList().getFriend(targetPlayer.getObjectId()) != null) {
 			sendPacket(new SM_FRIEND_RESPONSE(targetPlayer.getName(), SM_FRIEND_RESPONSE.TARGET_ALREADY_FRIEND));
-		}
-		else if (activePlayer.getFriendList().isFull()) {
+		} else if (activePlayer.getFriendList().isFull()) {
 			sendPacket(SM_SYSTEM_MESSAGE.STR_BUDDYLIST_LIST_FULL);
-		}
-		else if (activePlayer.getCommonData().getRace() != targetPlayer.getCommonData().getRace()) {
+		} else if (activePlayer.getCommonData().getRace() != targetPlayer.getCommonData().getRace()) {
 			sendPacket(new SM_FRIEND_RESPONSE(targetPlayer.getName(), SM_FRIEND_RESPONSE.TARGET_NOT_FOUND));
-		}
-		else if (targetPlayer.getFriendList().isFull()) {
+		} else if (targetPlayer.getFriendList().isFull()) {
 			sendPacket(new SM_FRIEND_RESPONSE(targetPlayer.getName(), SM_FRIEND_RESPONSE.TARGET_LIST_FULL));
-		}
-		else if (activePlayer.getBlockList().contains(targetPlayer.getObjectId())) {
+		} else if (activePlayer.getBlockList().contains(targetPlayer.getObjectId())) {
 			sendPacket(new SM_FRIEND_RESPONSE(targetPlayer.getName(), SM_FRIEND_RESPONSE.TARGET_BLOCKED));
-		}
-		else if (targetPlayer.getBlockList().contains(activePlayer.getObjectId())) {
+		} else if (targetPlayer.getBlockList().contains(activePlayer.getObjectId())) {
 			sendPacket(SM_SYSTEM_MESSAGE.STR_YOU_EXCLUDED(targetName));
-		}
-		else // Send request
+		} else // Send request
 		{
 			RequestResponseHandler responseHandler = new RequestResponseHandler(activePlayer) {
 
@@ -92,11 +86,9 @@ public class CM_FRIEND_ADD extends AionClientPacket {
 				public void acceptRequest(Creature requester, Player responder) {
 					if (!targetPlayer.getCommonData().isOnline()) {
 						sendPacket(new SM_FRIEND_RESPONSE(targetName, SM_FRIEND_RESPONSE.TARGET_OFFLINE));
-					}
-					else if (activePlayer.getFriendList().isFull() || responder.getFriendList().isFull()) {
+					} else if (activePlayer.getFriendList().isFull() || responder.getFriendList().isFull()) {
 						return;
-					}
-					else {
+					} else {
 						SocialService.makeFriends((Player) requester, responder);
 					}
 
@@ -109,19 +101,20 @@ public class CM_FRIEND_ADD extends AionClientPacket {
 				}
 			};
 
-			boolean requested = targetPlayer.getResponseRequester().putRequest(
-				SM_QUESTION_WINDOW.STR_BUDDYLIST_ADD_BUDDY_REQUEST, responseHandler);
+			boolean requested = targetPlayer.getResponseRequester()
+					.putRequest(SM_QUESTION_WINDOW.STR_BUDDYLIST_ADD_BUDDY_REQUEST, responseHandler);
 			// If the player is busy and could not be asked
 			if (!requested) {
 				sendPacket(SM_SYSTEM_MESSAGE.STR_BUDDYLIST_BUSY);
-			}
-			else {
+			} else {
 				if (targetPlayer.getPlayerSettings().isInDeniedStatus(DeniedStatus.FRIEND)) {
 					sendPacket(SM_SYSTEM_MESSAGE.STR_MSG_REJECTED_FRIEND(targetPlayer.getName()));
 					return;
 				}
 				// Send question packet to buddy
-				targetPlayer.getClientConnection().sendPacket(new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_BUDDYLIST_ADD_BUDDY_REQUEST, activePlayer.getObjectId(), 0, activePlayer.getName()));
+				targetPlayer.getClientConnection()
+						.sendPacket(new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_BUDDYLIST_ADD_BUDDY_REQUEST,
+								activePlayer.getObjectId(), 0, activePlayer.getName()));
 			}
 		}
 	}

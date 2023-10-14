@@ -51,12 +51,13 @@ public class CuringZoneService {
 			public void run() {
 				for (final CuringObject obj : curingObjects)
 					obj.getKnownList().doOnAllPlayers(new Visitor<Player>() {
-					public void visit(Player player) {
-						if ((MathUtil.isIn3dRange(obj, player, obj.getRange())) && (!player.getEffectController().hasAbnormalEffect(8751))) {
-							SkillEngine.getInstance().getSkill(player, 8751, 1, player).useNoAnimationSkill();
+						public void visit(Player player) {
+							if ((MathUtil.isIn3dRange(obj, player, obj.getRange()))
+									&& (!player.getEffectController().hasAbnormalEffect(8751))) {
+								SkillEngine.getInstance().getSkill(player, 8751, 1, player).useNoAnimationSkill();
+							}
 						}
-					}
-				});
+					});
 			}
 		}, 1000, 1000);
 	}

@@ -20,18 +20,18 @@ import java.util.Map;
 
 import com.aionemu.gameserver.model.instancerift.InstanceRiftLocation;
 import com.aionemu.gameserver.services.InstanceRiftService;
+
 /**
  * @author Rinzler (Encom)
  */
 
-public class InstanceStartRunnable implements Runnable
-{
+public class InstanceStartRunnable implements Runnable {
 	private final int id;
-	
+
 	public InstanceStartRunnable(int id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public void run() {
 		Map<Integer, InstanceRiftLocation> locations = InstanceRiftService.getInstance().getInstanceRiftLocations();

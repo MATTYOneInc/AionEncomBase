@@ -38,8 +38,7 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.TownService;
 
-public class SM_NPC_INFO extends AionServerPacket
-{
+public class SM_NPC_INFO extends AionServerPacket {
 	private Creature _npc;
 	private NpcTemplate npcTemplate;
 	private int npcId;
@@ -48,17 +47,17 @@ public class SM_NPC_INFO extends AionServerPacket
 	@SuppressWarnings("unused")
 	private float speed = 0.3f;
 	private int npcTypeId;
-	
+
 	public SM_NPC_INFO(Npc npc, Player player) {
 		this._npc = npc;
 		npcTemplate = npc.getObjectTemplate();
 		npcTypeId = npc.getNpcType().getId();
 		if (npc.isPeace()) {
-			if (npc.getRace().equals(player.getRace())
-				|| (player.getRace().equals(Race.ELYOS) && (npc.getTribe().equals(TribeClass.FIELD_OBJECT_LIGHT)
-				|| npc.getTribe().equals(TribeClass.GENERAL))
-				|| player.getRace() .equals(Race.ASMODIANS) && (npc.getTribe().equals(TribeClass.FIELD_OBJECT_DARK)
-				|| npc.getTribe().equals(TribeClass.GENERAL_DARK)))) {
+			if (npc.getRace().equals(player.getRace()) || (player.getRace().equals(Race.ELYOS)
+					&& (npc.getTribe().equals(TribeClass.FIELD_OBJECT_LIGHT)
+							|| npc.getTribe().equals(TribeClass.GENERAL))
+					|| player.getRace().equals(Race.ASMODIANS) && (npc.getTribe().equals(TribeClass.FIELD_OBJECT_DARK)
+							|| npc.getTribe().equals(TribeClass.GENERAL_DARK)))) {
 				npcTypeId = NpcType.NON_ATTACKABLE.getId();
 			}
 		} else if (npc.isFriendTo(player)) {
@@ -74,7 +73,7 @@ public class SM_NPC_INFO extends AionServerPacket
 		creatorId = npc.getCreatorId();
 		masterName = npc.getMasterName();
 	}
-	
+
 	public SM_NPC_INFO(Summon summon) {
 		this._npc = summon;
 		npcTemplate = summon.getObjectTemplate();
@@ -89,35 +88,35 @@ public class SM_NPC_INFO extends AionServerPacket
 			masterName = "LOST";
 		}
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
-        writeF(_npc.getX());
-        writeF(_npc.getY());
-        writeF(_npc.getZ());
-        writeD(_npc.getObjectId());
-        writeD(npcId);
-        writeD(npcId);
-        //fix
-        writeC(npcTypeId);
-        if (_npc.getLifeStats().isAlreadyDead() && _npc.getState() == 47) {
-            _npc.setState(39);
-        }
-        writeH(_npc.getState());
-        writeC(_npc.getHeading());
-        writeD(npcTemplate.getNameId());
-        writeD(npcTemplate.getTitleId());
-        writeH(0x00);
-        writeC(0x00);
-        writeD(0x00);
+		writeF(_npc.getX());
+		writeF(_npc.getY());
+		writeF(_npc.getZ());
+		writeD(_npc.getObjectId());
+		writeD(npcId);
+		writeD(npcId);
+		// fix
+		writeC(npcTypeId);
+		if (_npc.getLifeStats().isAlreadyDead() && _npc.getState() == 47) {
+			_npc.setState(39);
+		}
+		writeH(_npc.getState());
+		writeC(_npc.getHeading());
+		writeD(npcTemplate.getNameId());
+		writeD(npcTemplate.getTitleId());
+		writeH(0x00);
+		writeC(0x00);
+		writeD(0x00);
 		writeD(creatorId);
 		if (con.getActivePlayer().isGM()) {
-            Player gm = con.getActivePlayer();
-            if ((gm != null) && (masterName.isEmpty())) {
-                String n = "?" + "?";
-                masterName = "ID: " + npcId;
-            }
-        }
+			Player gm = con.getActivePlayer();
+			if ((gm != null) && (masterName.isEmpty())) {
+				String n = "?" + "?";
+				masterName = "ID: " + npcId;
+			}
+		}
 
 		writeS(masterName);
 		int maxHp = _npc.getLifeStats().getMaxHp();

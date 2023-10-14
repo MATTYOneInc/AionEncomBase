@@ -30,48 +30,47 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class MoltenusLocation
-{
+public class MoltenusLocation {
 	protected int id;
 	protected boolean isActive;
 	protected MoltenusTemplate template;
 	protected MoltenusFight<MoltenusLocation> activeMoltenus;
 	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
 	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
+
 	public MoltenusLocation() {
 	}
-	
+
 	public MoltenusLocation(MoltenusTemplate template) {
 		this.template = template;
 		this.id = template.getId();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveMoltenus(MoltenusFight<MoltenusLocation> moltenus) {
 		isActive = moltenus != null;
 		this.activeMoltenus = moltenus;
 	}
-	
+
 	public MoltenusFight<MoltenusLocation> getActiveMoltenus() {
 		return activeMoltenus;
 	}
-	
+
 	public final MoltenusTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}

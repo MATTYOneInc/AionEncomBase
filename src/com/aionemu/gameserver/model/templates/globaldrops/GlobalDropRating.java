@@ -28,11 +28,10 @@ import com.aionemu.gameserver.model.templates.npc.NpcRating;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GlobalDropRating")
-public class GlobalDropRating
-{
+public class GlobalDropRating {
 	@XmlAttribute(name = "rating", required = true)
 	protected NpcRating rating;
-	
+
 	public NpcRating getRating() {
 		return rating;
 	}

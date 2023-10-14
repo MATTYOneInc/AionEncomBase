@@ -30,48 +30,47 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class IdianDepthsLocation
-{
+public class IdianDepthsLocation {
 	protected int id;
 	protected boolean isActive;
 	protected IdianDepthsTemplate template;
 	protected IdianDepths<IdianDepthsLocation> activeIdianDepths;
 	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
 	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
+
 	public IdianDepthsLocation() {
 	}
-	
+
 	public IdianDepthsLocation(IdianDepthsTemplate template) {
 		this.template = template;
 		this.id = template.getId();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveIdianDepths(IdianDepths<IdianDepthsLocation> idianDepths) {
 		isActive = idianDepths != null;
 		this.activeIdianDepths = idianDepths;
 	}
-	
+
 	public IdianDepths<IdianDepthsLocation> getActiveIdianDepths() {
 		return activeIdianDepths;
 	}
-	
+
 	public final IdianDepthsTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}

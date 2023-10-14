@@ -48,6 +48,6 @@ public class AssembledNpc {
 	}
 
 	public long getTimeOnMap() {
-		return  System.currentTimeMillis() - spawnTime;
+		return System.currentTimeMillis() - spawnTime;
 	}
 }

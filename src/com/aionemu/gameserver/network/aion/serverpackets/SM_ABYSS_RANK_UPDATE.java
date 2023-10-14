@@ -38,21 +38,20 @@ public class SM_ABYSS_RANK_UPDATE extends AionServerPacket {
 	protected void writeImpl(AionConnection con) {
 		writeC(action);
 		writeD(player.getObjectId());
-		switch(action){
-			case 0:
-				writeD(player.getAbyssRank().getRank().getId());
-				break;
-			case 1:
-					writeD(1263375);
-				break;
-			case 2:
-				if (player.isMentor()) {
-					writeD(1);
-				}
-				else {
-					writeD(0);
-				}
-				break;
+		switch (action) {
+		case 0:
+			writeD(player.getAbyssRank().getRank().getId());
+			break;
+		case 1:
+			writeD(1263375);
+			break;
+		case 2:
+			if (player.isMentor()) {
+				writeD(1);
+			} else {
+				writeD(0);
+			}
+			break;
 		}
 	}
 }

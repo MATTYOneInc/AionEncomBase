@@ -25,31 +25,31 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * @author Rinzler
  */
 
-public class BaseSpawnTemplate extends SpawnTemplate
-{
+public class BaseSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private Race baseRace;
-	
+
 	public BaseSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public BaseSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public BaseSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public Race getBaseRace() {
 		return baseRace;
 	}
-	
+
 	public void setBaseRace(Race baseRace) {
 		this.baseRace = baseRace;
 	}

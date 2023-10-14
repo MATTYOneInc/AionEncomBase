@@ -23,18 +23,20 @@ import java.util.EnumSet;
  */
 public enum CollisionIntention {
 
-	NONE(0),
-	PHYSICAL(1 << 0), // Physical collision
+	NONE(0), PHYSICAL(1 << 0), // Physical collision
 	MATERIAL(1 << 1), // Mesh materials with skills
 	SKILL(1 << 2), // Skill obstacles
 	WALK(1 << 3), // Walk/NoWalk obstacles
 	DOOR(1 << 4), // Doors which have a state opened/closed
 	EVENT(1 << 5), // Appear on event only
 	MOVEABLE(1 << 6), // Ships, shugo boxes
-	// This is used for nodes only, means they allow to enumerate their child geometries
-	// Nodes which do not specify it won't let their children enumerated for collisions,
+	// This is used for nodes only, means they allow to enumerate their child
+	// geometries
+	// Nodes which do not specify it won't let their children enumerated for
+	// collisions,
 	// to speed up processing
-	ALL(PHYSICAL.getId() | MATERIAL.getId() | SKILL.getId() | WALK.getId() | DOOR.getId() | EVENT.getId() | MOVEABLE.getId());
+	ALL(PHYSICAL.getId() | MATERIAL.getId() | SKILL.getId() | WALK.getId() | DOOR.getId() | EVENT.getId()
+			| MOVEABLE.getId());
 
 	private byte id;
 

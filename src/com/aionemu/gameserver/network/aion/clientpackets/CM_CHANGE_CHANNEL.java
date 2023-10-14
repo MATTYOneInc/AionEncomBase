@@ -22,8 +22,9 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 
 /**
- * Developer's note please dont remove
- * Duoc goi ra khi o trong instance va su dung tinh nang "change channel"
+ * Developer's note please dont remove Duoc goi ra khi o trong instance va su
+ * dung tinh nang "change channel"
+ * 
  * @author ATracer
  */
 public class CM_CHANGE_CHANNEL extends AionClientPacket {

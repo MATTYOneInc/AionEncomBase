@@ -40,21 +40,22 @@ public class StaticObjectSpawnManager {
 		VisibleObjectTemplate objectTemplate = DataManager.ITEM_DATA.getItemTemplate(spawn.getNpcId());
 		if (objectTemplate == null) {
 			return;
-        }
+		}
 		if (spawn.hasPool()) {
 			spawn.resetTemplates(instanceIndex);
 			for (int i = 0; i < spawn.getPool(); i++) {
 				SpawnTemplate template = spawn.getRndTemplate(instanceIndex);
 				int objectId = IDFactory.getInstance().nextId();
-				StaticObject staticObject = new StaticObject(objectId, new StaticObjectController(), template, objectTemplate);
+				StaticObject staticObject = new StaticObject(objectId, new StaticObjectController(), template,
+						objectTemplate);
 				staticObject.setKnownlist(new PlayerAwareKnownList(staticObject));
 				bringIntoWorld(staticObject, template, instanceIndex);
 			}
-		}
-		else {
+		} else {
 			for (SpawnTemplate template : spawn.getSpawnTemplates()) {
 				int objectId = IDFactory.getInstance().nextId();
-				StaticObject staticObject = new StaticObject(objectId, new StaticObjectController(), template, objectTemplate);
+				StaticObject staticObject = new StaticObject(objectId, new StaticObjectController(), template,
+						objectTemplate);
 				staticObject.setKnownlist(new PlayerAwareKnownList(staticObject));
 				bringIntoWorld(staticObject, template, instanceIndex);
 			}
@@ -69,7 +70,8 @@ public class StaticObjectSpawnManager {
 	private static void bringIntoWorld(VisibleObject visibleObject, SpawnTemplate spawn, int instanceIndex) {
 		World world = World.getInstance();
 		world.storeObject(visibleObject);
-		world.setPosition(visibleObject, spawn.getWorldId(), instanceIndex, spawn.getX(), spawn.getY(), spawn.getZ(), spawn.getHeading());
+		world.setPosition(visibleObject, spawn.getWorldId(), instanceIndex, spawn.getX(), spawn.getY(), spawn.getZ(),
+				spawn.getHeading());
 		world.spawn(visibleObject);
 	}
 }

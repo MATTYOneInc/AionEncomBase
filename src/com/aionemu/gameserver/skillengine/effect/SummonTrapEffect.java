@@ -36,8 +36,7 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SummonTrapEffect")
-public class SummonTrapEffect extends SummonEffect
-{
+public class SummonTrapEffect extends SummonEffect {
 	@Override
 	public void applyEffect(Effect effect) {
 		Creature effector = effect.getEffector();
@@ -57,13 +56,13 @@ public class SummonTrapEffect extends SummonEffect
 		byte heading = effector.getHeading();
 		int worldId = effector.getWorldId();
 		int instanceId = effector.getInstanceId();
-		if (npcId == 749300 || npcId == 749301 || //Scrapped Mechanisms.
-		    npcId == 833699 || npcId == 833700 || //Highdeva_Fire_NPC.
-			npcId == 246363) { //IDEvent_Solo_Paralyze_NPC.
-            x = effector.getX();
-            y = effector.getY();
-            z = effector.getZ();
-        }
+		if (npcId == 749300 || npcId == 749301 || // Scrapped Mechanisms.
+				npcId == 833699 || npcId == 833700 || // Highdeva_Fire_NPC.
+				npcId == 246363) { // IDEvent_Solo_Paralyze_NPC.
+			x = effector.getX();
+			y = effector.getY();
+			z = effector.getZ();
+		}
 		maxTraps(effector);
 		SpawnTemplate spawn = SpawnEngine.addNewSingleTimeSpawn(worldId, npcId, x, y, z, heading);
 		final Trap trap = VisibleObjectSpawner.spawnTrap(spawn, instanceId, effector);
@@ -75,14 +74,14 @@ public class SummonTrapEffect extends SummonEffect
 		}, time * 1000);
 		trap.getController().addTask(TaskId.DESPAWN, task);
 	}
-	
+
 	private void maxTraps(Creature effector) {
-        List<Trap> traps = effector.getPosition().getWorldMapInstance().getTraps(effector);
-        if (traps.size() >= 2) {
-            Iterator<Trap> trapIter = traps.iterator();
-            Trap t = trapIter.next();
-            t.getController().cancelTask(TaskId.DESPAWN);
-            t.getController().onDelete();
-        }
-    }
+		List<Trap> traps = effector.getPosition().getWorldMapInstance().getTraps(effector);
+		if (traps.size() >= 2) {
+			Iterator<Trap> trapIter = traps.iterator();
+			Trap t = trapIter.next();
+			t.getController().cancelTask(TaskId.DESPAWN);
+			t.getController().onDelete();
+		}
+	}
 }

@@ -36,24 +36,24 @@ public class TitleList {
 
 	private final FastMap<Integer, Title> titles;
 	private Player owner;
-	
+
 	public TitleList() {
 		this.titles = new FastMap<Integer, Title>();
 		this.owner = null;
 	}
-	
+
 	public void setOwner(Player owner) {
 		this.owner = owner;
 	}
-	
+
 	public Player getOwner() {
 		return owner;
 	}
-	
+
 	public boolean contains(int titleId) {
 		return titles.containsKey(titleId);
 	}
-	
+
 	public void addEntry(int titleId, int remaining) {
 		TitleTemplate tt = DataManager.TITLE_DATA.getTitleTemplate(titleId);
 		if (tt == null) {
@@ -61,12 +61,13 @@ public class TitleList {
 		}
 		titles.put(titleId, new Title(tt, titleId, remaining));
 	}
-	
+
 	public boolean addTitle(int titleId, boolean questReward, int time) {
 		TitleTemplate tt = DataManager.TITLE_DATA.getTitleTemplate(titleId);
 		if (tt == null) {
 			throw new IllegalArgumentException("Invalid title id " + titleId);
-		} if (owner != null) {
+		}
+		if (owner != null) {
 			if (owner.getRace() != tt.getRace() && tt.getRace() != Race.PC_ALL) {
 				PacketSendUtility.sendMessage(owner, "This title is not available for your race.");
 				return false;
@@ -80,7 +81,8 @@ public class TitleList {
 			} else {
 				PacketSendUtility.sendPacket(owner, SM_SYSTEM_MESSAGE.STR_TOOLTIP_LEARNED_TITLE);
 				return false;
-			} if (questReward) {
+			}
+			if (questReward) {
 				PacketSendUtility.sendPacket(owner, SM_SYSTEM_MESSAGE.STR_QUEST_GET_REWARD_TITLE(tt.getNameId()));
 			} else {
 				PacketSendUtility.sendPacket(owner, SM_SYSTEM_MESSAGE.STR_MSG_GET_CASH_TITLE(tt.getNameId()));
@@ -90,43 +92,46 @@ public class TitleList {
 		}
 		return false;
 	}
-	
+
 	public void setDisplayTitle(int titleId) {
-        PacketSendUtility.sendPacket(owner, new SM_TITLE_INFO(titleId));
-        PacketSendUtility.broadcastPacketAndReceive(owner, new SM_TITLE_INFO(owner, titleId));
-        owner.getCommonData().setTitleId(titleId);
-    }
-	
+		PacketSendUtility.sendPacket(owner, new SM_TITLE_INFO(titleId));
+		PacketSendUtility.broadcastPacketAndReceive(owner, new SM_TITLE_INFO(owner, titleId));
+		owner.getCommonData().setTitleId(titleId);
+	}
+
 	public void setBonusTitle(int bonusTitleId) {
-        PacketSendUtility.sendPacket(owner, new SM_TITLE_INFO(6, bonusTitleId));
-        if (owner.getCommonData().getBonusTitleId() > 0) {
-		    if(owner.getGameStats() != null) {
-                TitleChangeListener.onBonusTitleChange(owner.getGameStats(), owner.getCommonData().getBonusTitleId(), false);
+		PacketSendUtility.sendPacket(owner, new SM_TITLE_INFO(6, bonusTitleId));
+		if (owner.getCommonData().getBonusTitleId() > 0) {
+			if (owner.getGameStats() != null) {
+				TitleChangeListener.onBonusTitleChange(owner.getGameStats(), owner.getCommonData().getBonusTitleId(),
+						false);
 			}
-        }
-        owner.getCommonData().setBonusTitleId(bonusTitleId);
-        if (bonusTitleId > 0 && owner.getGameStats() != null) {
-            TitleChangeListener.onBonusTitleChange(owner.getGameStats(), bonusTitleId, true);
-        }
-    }
-	
+		}
+		owner.getCommonData().setBonusTitleId(bonusTitleId);
+		if (bonusTitleId > 0 && owner.getGameStats() != null) {
+			TitleChangeListener.onBonusTitleChange(owner.getGameStats(), bonusTitleId, true);
+		}
+	}
+
 	public void removeTitle(int titleId) {
 		if (!titles.containsKey(titleId)) {
 			return;
-		} if (owner.getCommonData().getTitleId() == titleId) {
+		}
+		if (owner.getCommonData().getTitleId() == titleId) {
 			setDisplayTitle(-1);
-		} if (owner.getCommonData().getBonusTitleId() == titleId) {
-            setBonusTitle(-1);
-        }
+		}
+		if (owner.getCommonData().getBonusTitleId() == titleId) {
+			setBonusTitle(-1);
+		}
 		titles.remove(titleId);
 		PacketSendUtility.sendPacket(owner, new SM_TITLE_INFO(owner));
 		DAOManager.getDAO(PlayerTitleListDAO.class).removeTitle(owner.getObjectId(), titleId);
 	}
-	
+
 	public int size() {
 		return titles.size();
 	}
-	
+
 	public Collection<Title> getTitles() {
 		return titles.values();
 	}

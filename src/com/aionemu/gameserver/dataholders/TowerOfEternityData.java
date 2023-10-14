@@ -36,25 +36,24 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "tower_of_eternity")
-public class TowerOfEternityData
-{
-    @XmlElement(name = "tower_location")
-    private List<TowerOfEternityTemplate> towerOfEternityTemplates;
-	
-    @XmlTransient
-    private FastMap<Integer, TowerOfEternityLocation> towerOfEternity = new FastMap<Integer, TowerOfEternityLocation>();
-	
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        for (TowerOfEternityTemplate template : towerOfEternityTemplates) {
-            towerOfEternity.put(template.getId(), new TowerOfEternityLocation(template));
-        }
-    }
-	
-    public int size() {
-        return towerOfEternity.size();
-    }
-	
-    public FastMap<Integer, TowerOfEternityLocation> getTowerOfEternityLocations() {
-        return towerOfEternity;
-    }
+public class TowerOfEternityData {
+	@XmlElement(name = "tower_location")
+	private List<TowerOfEternityTemplate> towerOfEternityTemplates;
+
+	@XmlTransient
+	private FastMap<Integer, TowerOfEternityLocation> towerOfEternity = new FastMap<Integer, TowerOfEternityLocation>();
+
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		for (TowerOfEternityTemplate template : towerOfEternityTemplates) {
+			towerOfEternity.put(template.getId(), new TowerOfEternityLocation(template));
+		}
+	}
+
+	public int size() {
+		return towerOfEternity.size();
+	}
+
+	public FastMap<Integer, TowerOfEternityLocation> getTowerOfEternityLocations() {
+		return towerOfEternity;
+	}
 }

@@ -25,18 +25,17 @@ import com.aionemu.gameserver.model.TribeClass;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SpawnModel")
-public class SpawnModel
-{
+public class SpawnModel {
 	@XmlAttribute(name = "tribe")
 	private TribeClass tribe;
-	
+
 	@XmlAttribute(name = "ai")
 	private String ai;
-	
+
 	public TribeClass getTribe() {
 		return tribe;
 	}
-	
+
 	public String getAi() {
 		return ai;
 	}

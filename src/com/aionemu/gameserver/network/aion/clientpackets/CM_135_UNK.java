@@ -23,17 +23,16 @@ import com.aionemu.gameserver.network.aion.AionConnection;
  * Created by wanke on 14/02/2017.
  */
 
-public class CM_135_UNK extends AionClientPacket
-{
-    public CM_135_UNK(int opcode, AionConnection.State state, AionConnection.State... restStates) {
-        super(opcode, state, restStates);
-    }
-	
-    @Override
-    protected void readImpl() {
-    }
-	
-    @Override
-    protected void runImpl() {
-    }
+public class CM_135_UNK extends AionClientPacket {
+	public CM_135_UNK(int opcode, AionConnection.State state, AionConnection.State... restStates) {
+		super(opcode, state, restStates);
+	}
+
+	@Override
+	protected void readImpl() {
+	}
+
+	@Override
+	protected void runImpl() {
+	}
 }

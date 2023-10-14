@@ -20,8 +20,6 @@ package com.aionemu.gameserver.model.conquest;
  * @author Rinzler (Encom)
  */
 
-public enum ConquestStateType
-{
-	CONQUEST,
-	PEACE;
+public enum ConquestStateType {
+	CONQUEST, PEACE;
 }

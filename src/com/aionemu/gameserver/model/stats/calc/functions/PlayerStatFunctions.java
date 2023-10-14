@@ -22,10 +22,9 @@ import java.util.List;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.stats.container.StatEnum;
 
-public class PlayerStatFunctions
-{
+public class PlayerStatFunctions {
 	private static final List<IStatFunction> FUNCTIONS = new ArrayList<IStatFunction>();
-	
+
 	static {
 		FUNCTIONS.add(new AttackSpeedFunction());
 		FUNCTIONS.add(new PhysicalAttackFunction());
@@ -44,12 +43,12 @@ public class PlayerStatFunctions
 		FUNCTIONS.add(new AgilityModifierFunction(StatEnum.PARRY, 0.25f));
 		FUNCTIONS.add(new AgilityModifierFunction(StatEnum.EVASION, 0.3f));
 	}
-	
+
 	public static final List<IStatFunction> getFunctions() {
 		return FUNCTIONS;
 	}
-	
+
 	public static final void addPredefinedStatFunctions(Player player) {
-        player.getGameStats().addEffectOnly(null, FUNCTIONS);
-    }
+		player.getGameStats().addEffectOnly(null, FUNCTIONS);
+	}
 }

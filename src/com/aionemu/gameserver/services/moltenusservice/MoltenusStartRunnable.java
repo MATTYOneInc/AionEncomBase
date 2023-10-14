@@ -26,27 +26,26 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
  * @author Rinzler (Encom)
  */
 
-public class MoltenusStartRunnable implements Runnable
-{
+public class MoltenusStartRunnable implements Runnable {
 	private final int id;
-	
+
 	public MoltenusStartRunnable(int id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public void run() {
-		//Enraged Sulfur Guardian will appear in 10 minutes.
+		// Enraged Sulfur Guardian will appear in 10 minutes.
 		MoltenusService.getInstance().sulfurFortressMsg(id);
-		//Enraged Western Guardian will appear in 10 minutes.
+		// Enraged Western Guardian will appear in 10 minutes.
 		MoltenusService.getInstance().westernFortressMsg(id);
-		//Enraged Eastern Guardian will appear in 10 minutes.
+		// Enraged Eastern Guardian will appear in 10 minutes.
 		MoltenusService.getInstance().easternFortressMsg(id);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-			    Map<Integer, MoltenusLocation> locations = MoltenusService.getInstance().getMoltenusLocations();
-				for (final MoltenusLocation loc: locations.values()) {
+				Map<Integer, MoltenusLocation> locations = MoltenusService.getInstance().getMoltenusLocations();
+				for (final MoltenusLocation loc : locations.values()) {
 					if (loc.getId() == id) {
 						MoltenusService.getInstance().startMoltenus(loc.getId());
 					}

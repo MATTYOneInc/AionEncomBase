@@ -47,7 +47,8 @@ public class SilenceEffect extends EffectTemplate {
 		final Creature effected = effect.getEffected();
 		effect.setAbnormal(AbnormalState.SILENCE.getId());
 		effected.getEffectController().setAbnormal(AbnormalState.SILENCE.getId());
-		if (effected.getCastingSkill() != null && effected.getCastingSkill().getSkillTemplate().getType() == SkillType.MAGICAL) {
+		if (effected.getCastingSkill() != null
+				&& effected.getCastingSkill().getSkillTemplate().getType() == SkillType.MAGICAL) {
 			effected.getController().cancelCurrentSkill();
 		}
 	}

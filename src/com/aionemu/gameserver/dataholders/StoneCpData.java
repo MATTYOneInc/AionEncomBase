@@ -36,33 +36,32 @@ import gnu.trove.map.hash.TIntObjectHashMap;
  */
 @XmlRootElement(name = "stones_cp")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class StoneCpData
-{
-    @XmlElement(name="stone_cp")
-    private List<StoneCP> stonelist;
+public class StoneCpData {
+	@XmlElement(name = "stone_cp")
+	private List<StoneCP> stonelist;
 
-    @XmlTransient
-    private TIntObjectHashMap<StoneCP> stoneData = new TIntObjectHashMap<StoneCP>();
+	@XmlTransient
+	private TIntObjectHashMap<StoneCP> stoneData = new TIntObjectHashMap<StoneCP>();
 
-    @XmlTransient
-    private Map<Integer, StoneCP> stoneDataMap = new HashMap<Integer, StoneCP>(1);
+	@XmlTransient
+	private Map<Integer, StoneCP> stoneDataMap = new HashMap<Integer, StoneCP>(1);
 
-    void afterUnmarshal(Unmarshaller paramUnmarshaller, Object paramObject) {
-        for (StoneCP stoneCp: stonelist) {
-            stoneData.put(stoneCp.getId(), stoneCp);
-            stoneDataMap.put(stoneCp.getId(), stoneCp);
-        }
-    }
+	void afterUnmarshal(Unmarshaller paramUnmarshaller, Object paramObject) {
+		for (StoneCP stoneCp : stonelist) {
+			stoneData.put(stoneCp.getId(), stoneCp);
+			stoneDataMap.put(stoneCp.getId(), stoneCp);
+		}
+	}
 
-    public int size() {
-        return stoneData.size();
-    }
+	public int size() {
+		return stoneData.size();
+	}
 
-    public StoneCP getStoneCpId(int id) {
-        return stoneData.get(id);
-    }
+	public StoneCP getStoneCpId(int id) {
+		return stoneData.get(id);
+	}
 
-    public Map<Integer, StoneCP> getAll() {
-        return stoneDataMap;
-    }
+	public Map<Integer, StoneCP> getAll() {
+		return stoneDataMap;
+	}
 }

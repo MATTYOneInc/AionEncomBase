@@ -127,7 +127,7 @@ public class QuestNpc {
 	public List<Integer> getOnLostTargetEvent() {
 		return onLostTargetEvent;
 	}
-	
+
 	public void addOnAddAggroListEvent(int questId) {
 		if (!onAddAggroListEvent.contains(questId)) {
 			onAddAggroListEvent.add(questId);
@@ -138,7 +138,7 @@ public class QuestNpc {
 	public List<Integer> getOnAddAggroListEvent() {
 		return onAddAggroListEvent;
 	}
-	
+
 	public void addOnAtDistanceEvent(int questId) {
 		if (!onAtDistanceEvent.contains(questId)) {
 			onAtDistanceEvent.add(questId);

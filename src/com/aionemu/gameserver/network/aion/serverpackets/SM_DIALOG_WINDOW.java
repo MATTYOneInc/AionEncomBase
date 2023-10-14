@@ -29,23 +29,22 @@ import com.aionemu.gameserver.world.MapRegion;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
 
-public class SM_DIALOG_WINDOW extends AionServerPacket
-{
+public class SM_DIALOG_WINDOW extends AionServerPacket {
 	private int targetObjectId;
 	private int dialogID;
 	private int questId = 0;
-	
+
 	public SM_DIALOG_WINDOW(int targetObjectId, int dlgID) {
 		this.targetObjectId = targetObjectId;
 		this.dialogID = dlgID;
 	}
-	
+
 	public SM_DIALOG_WINDOW(int targetObjectId, int dlgID, int questId) {
 		this.targetObjectId = targetObjectId;
 		this.dialogID = dlgID;
 		this.questId = questId;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		Player player = con.getActivePlayer();
@@ -76,7 +75,7 @@ public class SM_DIALOG_WINDOW extends AionServerPacket
 					if (region == null) {
 					} else {
 						List<ZoneInstance> zones = region.getZones(npc);
-						for (ZoneInstance zone: zones) {
+						for (ZoneInstance zone : zones) {
 							townId = zone.getTownId();
 							if (townId > 0) {
 								break;

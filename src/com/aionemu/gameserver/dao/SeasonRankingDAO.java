@@ -31,17 +31,26 @@ import com.aionemu.gameserver.model.ranking.SeasonRankingResult;
  */
 public abstract class SeasonRankingDAO implements DAO {
 
-    @Override
-    public final String getClassName() {
-        return SeasonRankingDAO.class.getName();
-    }
-    public abstract ArrayList<SeasonRankingResult> getCompetitionRankingPlayers(int tableId);
-    public abstract GoldArenaRank loadGoldArenaRank(int playerId, int tableId);
-    public abstract ArenaOfTenacityRank loadArenaOfTenacityRank(int playerId, int tableId);
-    public abstract TowerOfChallengeRank loadTowerOfChallengeRank(int playerId, int tableId);
-    public abstract Arena6V6Ranking loadArena6v6Rank(int playerId, int tableId);
-    public abstract boolean storeGoldArenaRank(Player player);
-    public abstract boolean storeTowerRank(Player player);
-    public abstract boolean storeTenacityRank(Player player);
-    public abstract boolean store6v6Rank(Player player);
+	@Override
+	public final String getClassName() {
+		return SeasonRankingDAO.class.getName();
+	}
+
+	public abstract ArrayList<SeasonRankingResult> getCompetitionRankingPlayers(int tableId);
+
+	public abstract GoldArenaRank loadGoldArenaRank(int playerId, int tableId);
+
+	public abstract ArenaOfTenacityRank loadArenaOfTenacityRank(int playerId, int tableId);
+
+	public abstract TowerOfChallengeRank loadTowerOfChallengeRank(int playerId, int tableId);
+
+	public abstract Arena6V6Ranking loadArena6v6Rank(int playerId, int tableId);
+
+	public abstract boolean storeGoldArenaRank(Player player);
+
+	public abstract boolean storeTowerRank(Player player);
+
+	public abstract boolean storeTenacityRank(Player player);
+
+	public abstract boolean store6v6Rank(Player player);
 }

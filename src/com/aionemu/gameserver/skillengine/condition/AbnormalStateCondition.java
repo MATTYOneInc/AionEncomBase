@@ -32,8 +32,10 @@ public class AbnormalStateCondition extends Condition {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see
-	 * com.aionemu.gameserver.skillengine.condition.Condition#validate(com.aionemu.gameserver.skillengine.model.Skill)
+	 * com.aionemu.gameserver.skillengine.condition.Condition#validate(com.aionemu.
+	 * gameserver.skillengine.model.Skill)
 	 */
 	@Override
 	public boolean validate(Skill env) {

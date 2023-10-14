@@ -18,8 +18,7 @@ package com.aionemu.gameserver.configs.main;
 
 import com.aionemu.commons.configuration.Property;
 
-public class MembershipConfig
-{
+public class MembershipConfig {
 	@Property(key = "gameserver.instances.title.requirement", defaultValue = "10")
 	public static byte INSTANCES_TITLE_REQ;
 	@Property(key = "gameserver.instances.race.requirement", defaultValue = "10")
@@ -68,10 +67,10 @@ public class MembershipConfig
 	/**
 	 * Title Special Member
 	 */
-	@Property(key = "gameserver.player.tag.30", defaultValue="")
-    public static String PLAYER_TAG_30;
-	@Property(key = "gameserver.player.tag.34", defaultValue="")
-    public static String PLAYER_TAG_34;
+	@Property(key = "gameserver.player.tag.30", defaultValue = "")
+	public static String PLAYER_TAG_30;
+	@Property(key = "gameserver.player.tag.34", defaultValue = "")
+	public static String PLAYER_TAG_34;
 
 	/**
 	 * Membership Tags

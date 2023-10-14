@@ -58,7 +58,7 @@ public class SM_CHARACTER_LIST extends PlayerInfo {
 	 */
 	@Override
 	protected void writeImpl(AionConnection con) {
-		writeC(unkValue);//5.0 unk protocol
+		writeC(unkValue);// 5.0 unk protocol
 		if (unkValue == 0) {
 			writeD(playOk2);
 			writeC(0);
@@ -70,15 +70,15 @@ public class SM_CHARACTER_LIST extends PlayerInfo {
 				PlayerCommonData pcd = playerData.getPlayerCommonData();
 				Player player = PlayerService.getPlayer(pcd.getPlayerObjId(), account);
 				writePlayerInfo(playerData);
-				writeD(player.getPlayerSettings().getDisplay());//display helmet 0 show, 5 dont show
+				writeD(player.getPlayerSettings().getDisplay());// display helmet 0 show, 5 dont show
 				writeD(0);
 				writeD(0);
 				writeD(DAOManager.getDAO(MailDAO.class).haveUnread(pcd.getPlayerObjId()) ? 1 : 0); // mail
-				writeD(0); //unk
-				writeD(0); //unk
+				writeD(0); // unk
+				writeD(0); // unk
 				writeQ(BrokerService.getInstance().getCollectedMoney(pcd)); // collected money from broker
 				writeD(0);
-				writeB(new byte[122 + 24]); //5.1 protocol
+				writeB(new byte[122 + 24]); // 5.1 protocol
 			}
 		}
 	}

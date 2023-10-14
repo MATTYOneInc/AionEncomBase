@@ -25,8 +25,7 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_INVENTORY_UPDATE_ITEM;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class ChargeInfo extends ActionObserver
-{
+public class ChargeInfo extends ActionObserver {
 	public static final int LEVEL2 = 1000000;
 	public static final int LEVEL1 = 500000;
 
@@ -35,7 +34,7 @@ public class ChargeInfo extends ActionObserver
 	private final int defendBurn;
 	private final Item item;
 	private Player player;
-	
+
 	public ChargeInfo(int chargePoints, Item item) {
 		super(ObserverType.ATTACK_DEFEND);
 		this.chargePoints = chargePoints;
@@ -48,15 +47,15 @@ public class ChargeInfo extends ActionObserver
 			defendBurn = 0;
 		}
 	}
-	
+
 	public int getChargePoints() {
 		return this.chargePoints;
 	}
-	
+
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
-	
+
 	public int updateChargePoints(int addPoints) {
 		int newChargePoints = chargePoints + addPoints;
 		if (newChargePoints > LEVEL2) {
@@ -71,7 +70,7 @@ public class ChargeInfo extends ActionObserver
 		this.chargePoints = newChargePoints;
 		return newChargePoints;
 	}
-	
+
 	@Override
 	public void attacked(Creature creature) {
 		updateChargePoints(-defendBurn);
@@ -80,7 +79,7 @@ public class ChargeInfo extends ActionObserver
 			PacketSendUtility.sendPacket(player, new SM_INVENTORY_UPDATE_ITEM(player, item));
 		}
 	}
-	
+
 	@Override
 	public void attack(Creature creature) {
 		updateChargePoints(-attackBurn);

@@ -62,7 +62,8 @@ public class RandomItem {
 		}
 		if ((rndMin > 0) || (rndMax > 0)) {
 			if (rndMax < rndMin) {
-				LoggerFactory.getLogger(RandomItem.class).warn("Wrong rnd result item definition {} {}", rndMin, rndMax);
+				LoggerFactory.getLogger(RandomItem.class).warn("Wrong rnd result item definition {} {}", rndMin,
+						rndMax);
 				return 1;
 			}
 			return Rnd.get(rndMin, rndMax);

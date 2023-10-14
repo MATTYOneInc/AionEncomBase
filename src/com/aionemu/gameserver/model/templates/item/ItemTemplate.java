@@ -45,8 +45,7 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlType(namespace = "", name = "ItemTemplate")
-public class ItemTemplate extends VisibleObjectTemplate
-{
+public class ItemTemplate extends VisibleObjectTemplate {
 	@XmlAttribute(name = "id", required = true)
 	@XmlID
 	private String id;
@@ -55,14 +54,14 @@ public class ItemTemplate extends VisibleObjectTemplate
 	@XmlElement(name = "modifiers", required = false)
 	protected ModifiersTemplate modifiers;
 
-    @XmlAttribute(name = "descr")
-    private String descr;
+	@XmlAttribute(name = "descr")
+	private String descr;
 
 	@XmlElement(name = "actions", required = false)
 	protected ItemActions actions;
 
 	@XmlAttribute(name = "name_desc")
-    private String namedesc;
+	private String namedesc;
 
 	@XmlAttribute(name = "mask")
 	private int mask;
@@ -243,16 +242,16 @@ public class ItemTemplate extends VisibleObjectTemplate
 
 	@XmlAttribute(name = "skill_enchant")
 	private int skill_enchant;
-	
+
 	@XmlAttribute(name = "enchant_base")
 	private int enchant_base = 0;
-	
+
 	@XmlAttribute(name = "item_custom_set")
 	private int itemCustomSet = 0;
-	
+
 	@XmlAttribute(name = "minion_ticket")
 	private boolean minion_ticket;
-	
+
 	@XmlAttribute(name = "is_cash_contract")
 	private boolean is_cash_contract;
 
@@ -265,29 +264,31 @@ public class ItemTemplate extends VisibleObjectTemplate
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		setItemId(Integer.parseInt(id));
 		String[] parts = restrict.split(",");
-		restricts = new int[17]; //4.3/4.5 Restriction.
+		restricts = new int[17]; // 4.3/4.5 Restriction.
 		for (int i = 0; i < parts.length; i++) {
 			restricts[i] = Integer.parseInt(parts[i]);
-		} if (restrictMax != null) {
+		}
+		if (restrictMax != null) {
 			String[] partsMax = restrictMax.split(",");
-			restrictsMax = new byte[17]; //4.3/4.5 Restriction.
+			restrictsMax = new byte[17]; // 4.3/4.5 Restriction.
 			for (int i = 0; i < partsMax.length; i++) {
 				restrictsMax[i] = Byte.parseByte(partsMax[i]);
 			}
-		} if (weaponStats == null) {
+		}
+		if (weaponStats == null) {
 			weaponStats = emptyWeaponStats;
 		}
 	}
-	
+
 	public byte getMaxLevelRestrict(Player player) {
 		if (restrictMax != null) {
-            byte restrictId = player.getPlayerClass().getClassId();
-            byte restrictLevel = restrictsMax[restrictId];
-            return player.getLevel() <= restrictLevel ? 0 : restrictLevel;
-        }
-        return 0;
-    }
-	
+			byte restrictId = player.getPlayerClass().getClassId();
+			byte restrictLevel = restrictsMax[restrictId];
+			return player.getLevel() <= restrictLevel ? 0 : restrictLevel;
+		}
+		return 0;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -323,10 +324,11 @@ public class ItemTemplate extends VisibleObjectTemplate
 	 */
 	public int getRequiredLevel(PlayerClass playerClass) {
 		int requiredLevel = restricts[playerClass.ordinal()];
-		//A player can equip item between 66-83 but have not full stats apply.
+		// A player can equip item between 66-83 but have not full stats apply.
 		if (requiredLevel >= 66 && requiredLevel <= 83) {
 			return 66;
-		} if (requiredLevel == 0) {
+		}
+		if (requiredLevel == 0) {
 			return -1;
 		} else {
 			return requiredLevel;
@@ -381,21 +383,21 @@ public class ItemTemplate extends VisibleObjectTemplate
 	}
 
 	public ArmorType getArmorType() {
-        if (isPlume()) {
-            return ArmorType.PLUME;
-		} if (isBracelet()) {
-            return ArmorType.BRACELET;
+		if (isPlume()) {
+			return ArmorType.PLUME;
 		}
-        return armorType;
-    }
+		if (isBracelet()) {
+			return ArmorType.BRACELET;
+		}
+		return armorType;
+	}
 
 	@Override
 	public int getNameId() {
 		try {
 			int val = Integer.parseInt(description);
 			return val;
-		}
-		catch (NumberFormatException nfe) {
+		} catch (NumberFormatException nfe) {
 			return 0;
 		}
 	}
@@ -407,7 +409,8 @@ public class ItemTemplate extends VisibleObjectTemplate
 			} else {
 				return Long.MAX_VALUE;
 			}
-		} if (isLuna()) {
+		}
+		if (isLuna()) {
 			if (CustomConfig.ENABLE_LUNA_CAP) {
 				return CustomConfig.LUNA_CAP_VALUE;
 			} else {
@@ -466,39 +469,38 @@ public class ItemTemplate extends VisibleObjectTemplate
 	}
 
 	public boolean isStigma() {
-		return itemId >= 140000001 && itemId <= 140001493; //Last Stigma Stone in 4.8
+		return itemId >= 140000001 && itemId <= 140001493; // Last Stigma Stone in 4.8
 	}
-	
+
 	public boolean isCpStones() {
-		return itemId >= 187300002 && itemId <= 187300005; //5.6
+		return itemId >= 187300002 && itemId <= 187300005; // 5.6
 	}
-	
+
 	public boolean isPlume() {
 		return category == ItemCategory.PLUME;
 	}
-	
+
 	public boolean isBracelet() {
 		return category == ItemCategory.BRACELET;
 	}
-	
+
 	public boolean isManaStone() {
-		return category == ItemCategory.MANASTONE ||
-		category == ItemCategory.SPECIAL_MANASTONE ||
-		category == ItemCategory.PRIMARY_MANASTONE;
+		return category == ItemCategory.MANASTONE || category == ItemCategory.SPECIAL_MANASTONE
+				|| category == ItemCategory.PRIMARY_MANASTONE;
 	}
-	
+
 	public boolean isEstima() {
 		return category == ItemCategory.ESTIMA;
 	}
-	
-	public boolean isTemperingSolution(){
+
+	public boolean isTemperingSolution() {
 		return category == ItemCategory.TEMPERING;
 	}
-	
+
 	public boolean isInertStigma() {
 		return name.endsWith("(Inert)");
 	}
-	
+
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
@@ -550,11 +552,11 @@ public class ItemTemplate extends VisibleObjectTemplate
 	public int getSpecialSlots() {
 		return specialSlots;
 	}
-	
+
 	public int getMaxEnchantLevel() {
 		return maxEnchant;
 	}
-	
+
 	public int getMaxEnchantBonus() {
 		return max_enchant_bonus;
 	}
@@ -602,7 +604,6 @@ public class ItemTemplate extends VisibleObjectTemplate
 		return weaponType.getRequiredSlots() == 2;
 	}
 
-
 	public int getTempExchangeTime() {
 		return temExchangeTime;
 	}
@@ -626,8 +627,7 @@ public class ItemTemplate extends VisibleObjectTemplate
 	public void modifyMask(boolean apply, int filter) {
 		if (apply) {
 			mask |= filter;
-		}
-		else {
+		} else {
 			mask &= ~filter;
 		}
 	}
@@ -659,7 +659,7 @@ public class ItemTemplate extends VisibleObjectTemplate
 	public int getRandomBonusCount() {
 		return rnd_count;
 	}
-	
+
 	public int getWrappableCount() {
 		return wrappable_count;
 	}
@@ -667,7 +667,7 @@ public class ItemTemplate extends VisibleObjectTemplate
 	public int getMaxAuthorize() {
 		return maxAuthorize;
 	}
-	
+
 	public int getTemperingTableId() {
 		return temperingTableId;
 	}
@@ -699,77 +699,73 @@ public class ItemTemplate extends VisibleObjectTemplate
 	public Idian getIdianAction() {
 		return idianAction;
 	}
-	
+
 	public boolean isCombinationItem() {
 		return category == ItemCategory.COMBINATION;
 	}
-	
+
 	public boolean isEnchantmentStone() {
 		return category == ItemCategory.ENCHANTMENT;
 	}
-	
-	public boolean isEnchantmentStigmaStone(){
+
+	public boolean isEnchantmentStigmaStone() {
 		return category == ItemCategory.ENCHANTMENT_STIGMA;
 	}
-	
+
 	public boolean isAmplificationStone() {
 		return category == ItemCategory.ENCHANTMENT_AMPLIFICATION;
 	}
-	
+
 	public boolean isCloth() {
 		return armorType != null && equipmentType == EquipType.ARMOR;
 	}
-	
+
 	public boolean isAncientStone() {
-		//Ancient Manastone: HP +105 && //[Stamp] Ancient Manastone: Healing Boost +6
+		// Ancient Manastone: HP +105 && //[Stamp] Ancient Manastone: Healing Boost +6
 		return itemId >= 167020000 && itemId <= 167020112;
 	}
-	
+
 	public boolean isAccessory() {
-		return category == ItemCategory.EARRINGS ||
-		category == ItemCategory.RINGS ||
-		category == ItemCategory.NECKLACE ||
-		category == ItemCategory.PLUME ||
-		category == ItemCategory.BRACELET ||
-		category == ItemCategory.BELT ||
-		category == ItemCategory.HELMET;
+		return category == ItemCategory.EARRINGS || category == ItemCategory.RINGS || category == ItemCategory.NECKLACE
+				|| category == ItemCategory.PLUME || category == ItemCategory.BRACELET || category == ItemCategory.BELT
+				|| category == ItemCategory.HELMET;
 	}
-	
+
 	public boolean isQuestUpdateItem() {
 		return isQuestUpdateItem;
 	}
-	
+
 	public void setQuestUpdateItem(boolean value) {
 		this.isQuestUpdateItem = value;
 	}
-	
+
 	public int getExtraInventoryId() {
 		if (extraInventory == null) {
 			return -1;
 		}
 		return extraInventory.getId();
 	}
-	
+
 	public String getSkillGroup() {
 		return skill_group;
 	}
-	
+
 	public int getSkinSkill() {
 		return skin_skill;
 	}
-	
+
 	public int getSkillEnchant() {
 		return skill_enchant;
 	}
-	
+
 	public int getBaseEnchant() {
 		return enchant_base;
 	}
-	
+
 	public int getItemCustomSet() {
 		return itemCustomSet;
 	}
-	
+
 	public boolean getMinionTicket() {
 		return this.minion_ticket;
 	}
@@ -782,11 +778,11 @@ public class ItemTemplate extends VisibleObjectTemplate
 		return skill_enchant;
 	}
 
-    public String getDescr(){
-        return descr;
-    }
-	
+	public String getDescr() {
+		return descr;
+	}
+
 	public String getNamedesc() {
-        return namedesc;
-    }
+		return namedesc;
+	}
 }

@@ -26,6 +26,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum HopType {
 
-	DAMAGE,
-	SKILLLV;
+	DAMAGE, SKILLLV;
 }

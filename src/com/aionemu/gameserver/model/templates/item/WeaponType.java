@@ -27,41 +27,30 @@ import javax.xml.bind.annotation.XmlType;
 public enum WeaponType
 
 {
-	//Weapon Type 4.8
-	DAGGER_1H(new int[] {66, 45}, 1),
-	MACE_1H(new int[] {39, 46}, 1),
-	SWORD_1H(new int[] {37, 44}, 1),
-	TOOLHOE_1H(new int[] {}, 1),
-	BOOK_2H(new int[] {100}, 2),
-	ORB_2H(new int[] {111}, 2),
-	POLEARM_2H(new int[] {52}, 2),
-	STAFF_2H(new int[] {89}, 2),
-	SWORD_2H(new int[] {51}, 2),
-	TOOLPICK_2H(new int[] {}, 2),
-	TOOLROD_2H(new int[] {}, 2),
-	BOW(new int[] {53}, 2),
-	GUN_1H(new int[] {117, 112}, 1),
-	CANNON_2H(new int[] {113}, 2),
-	HARP_2H(new int[] {124, 114}, 2),
-	KEYBLADE_2H(new int[] {115}, 2),
-	KEYHAMMER_2H(new int[] {}, 2);
-	
+	// Weapon Type 4.8
+	DAGGER_1H(new int[] { 66, 45 }, 1), MACE_1H(new int[] { 39, 46 }, 1), SWORD_1H(new int[] { 37, 44 }, 1),
+	TOOLHOE_1H(new int[] {}, 1), BOOK_2H(new int[] { 100 }, 2), ORB_2H(new int[] { 111 }, 2),
+	POLEARM_2H(new int[] { 52 }, 2), STAFF_2H(new int[] { 89 }, 2), SWORD_2H(new int[] { 51 }, 2),
+	TOOLPICK_2H(new int[] {}, 2), TOOLROD_2H(new int[] {}, 2), BOW(new int[] { 53 }, 2),
+	GUN_1H(new int[] { 117, 112 }, 1), CANNON_2H(new int[] { 113 }, 2), HARP_2H(new int[] { 124, 114 }, 2),
+	KEYBLADE_2H(new int[] { 115 }, 2), KEYHAMMER_2H(new int[] {}, 2);
+
 	private int slots;
 	private int[] requiredSkill;
-	
+
 	private WeaponType(int[] requiredSkills, int slots) {
 		this.requiredSkill = requiredSkills;
 		this.slots = slots;
 	}
-	
+
 	public int[] getRequiredSkills() {
 		return requiredSkill;
 	}
-	
+
 	public int getRequiredSlots() {
 		return slots;
 	}
-	
+
 	public int getMask() {
 		return 1 << this.ordinal();
 	}

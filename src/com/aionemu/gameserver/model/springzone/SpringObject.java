@@ -24,35 +24,36 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.NpcKnownList;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class SpringObject extends VisibleObject
-{
+public class SpringObject extends VisibleObject {
 	private float range;
 	private SpringTemplate template;
-	
-	@SuppressWarnings({"rawtypes", "unchecked"})
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public SpringObject(SpringTemplate template, int instanceId) {
 		super(IDFactory.getInstance().nextId(), new VisibleObjectController() {
-		}, null, null, World.getInstance().createPosition(template.getMapId(), template.getX(), template.getY(), template.getZ(), (byte) 0, instanceId));
+		}, null, null, World.getInstance().createPosition(template.getMapId(), template.getX(), template.getY(),
+				template.getZ(), (byte) 0, instanceId));
 		this.template = template;
 		range = template.getRange();
 		setKnownlist(new NpcKnownList(this));
 	}
-	
+
 	public SpringTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public String getName() {
 		return "";
 	}
-	
+
 	public float getRange() {
 		return range;
 	}
-	
+
 	public void spawn() {
 		World w = World.getInstance();
 		w.storeObject(this);

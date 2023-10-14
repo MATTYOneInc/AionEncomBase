@@ -37,8 +37,7 @@ public class Knowledge implements StatOwner {
 			knowledge.add(new StatAddFunction(StatEnum.MAGICAL_CRITICAL, (int) (2.25f * point), true));
 			knowledge.add(new StatAddFunction(StatEnum.MAGIC_SKILL_BOOST_RESIST, (int) (3.0f * point), true));
 			player.getGameStats().addEffect(this, knowledge);
-		}
-		else if (point == 0) {
+		} else if (point == 0) {
 			knowledge.clear();
 			knowledge.add(new StatAddFunction(StatEnum.BOOST_MAGICAL_SKILL, (int) (6.0f * point), false));
 			knowledge.add(new StatAddFunction(StatEnum.MAGICAL_CRITICAL, (int) (2.25f * point), false));

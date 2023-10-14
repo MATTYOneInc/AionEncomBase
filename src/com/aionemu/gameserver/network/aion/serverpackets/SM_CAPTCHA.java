@@ -56,16 +56,16 @@ public class SM_CAPTCHA extends AionServerPacket {
 		writeC(type);
 
 		switch (type) {
-			case 0x01:
-				writeC(count);
-				writeD(size);
-				writeB(data);
-				break;
-			case 0x03:
-				writeH(isCorrect ? 1 : 0);
+		case 0x01:
+			writeC(count);
+			writeD(size);
+			writeB(data);
+			break;
+		case 0x03:
+			writeH(isCorrect ? 1 : 0);
 
-				// time setting can't be extracted (retail server default value:3000 sec)
-				writeD(banTime);
+			// time setting can't be extracted (retail server default value:3000 sec)
+			writeD(banTime);
 			break;
 		}
 	}

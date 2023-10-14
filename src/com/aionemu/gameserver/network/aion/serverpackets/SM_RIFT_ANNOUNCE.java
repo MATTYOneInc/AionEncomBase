@@ -75,57 +75,57 @@ public class SM_RIFT_ANNOUNCE extends AionServerPacket {
 	@Override
 	protected void writeImpl(AionConnection con) {
 		switch (actionId) {
-			case 0:
-				writeH(0x57);
-				writeC(actionId);
-				for (int value : rifts.values()) {
-					writeD(value);
-				}
+		case 0:
+			writeH(0x57);
+			writeC(actionId);
+			for (int value : rifts.values()) {
+				writeD(value);
+			}
 			break;
-			case 1:
-				writeH(0x09);
-				writeC(actionId);
-				writeD(gelkmaros);
-				writeD(inggison);
+		case 1:
+			writeH(0x09);
+			writeC(actionId);
+			writeD(gelkmaros);
+			writeD(inggison);
 			break;
-			case 2:
-				writeH(0x39);
-				writeC(actionId);
-				writeD(rift.getOwner().getObjectId());
-				writeD(rift.getMaxEntries());
-				writeD(rift.getRemainTime());
-				writeD(rift.getMinLevel());
-				writeD(rift.getMaxLevel());
-				writeF(rift.getOwner().getX());
-				writeF(rift.getOwner().getY());
-				writeF(rift.getOwner().getZ());
-				writeC(rift.isVortex() ? 1 : 0);
-				writeC(rift.isMaster() ? 1 : 0);
-				writeD(rift.getOwner().getWorldId());
-				writeD(rift.getAbyssPoint());
+		case 2:
+			writeH(0x39);
+			writeC(actionId);
+			writeD(rift.getOwner().getObjectId());
+			writeD(rift.getMaxEntries());
+			writeD(rift.getRemainTime());
+			writeD(rift.getMinLevel());
+			writeD(rift.getMaxLevel());
+			writeF(rift.getOwner().getX());
+			writeF(rift.getOwner().getY());
+			writeF(rift.getOwner().getZ());
+			writeC(rift.isVortex() ? 1 : 0);
+			writeC(rift.isMaster() ? 1 : 0);
+			writeD(rift.getOwner().getWorldId());
+			writeD(rift.getAbyssPoint());
 			break;
-			case 3:
-				writeH(0x15);
-                writeC(actionId);
-                writeD(rift.getOwner().getObjectId());
-                writeD(rift.getUsedEntries());
-                writeD(rift.getRemainTime());
-                writeC(rift.isVortex() ? 1 : 0);
-                writeC(rift.isMaster() ? 1 : 0);
-				writeD(rift.getAbyssPoint());
+		case 3:
+			writeH(0x15);
+			writeC(actionId);
+			writeD(rift.getOwner().getObjectId());
+			writeD(rift.getUsedEntries());
+			writeD(rift.getRemainTime());
+			writeC(rift.isVortex() ? 1 : 0);
+			writeC(rift.isMaster() ? 1 : 0);
+			writeD(rift.getAbyssPoint());
 			break;
-			case 4:
-				writeH(0x07);
-				writeC(actionId);
-				writeD(objectId);
-				writeC(rift.isVortex() ? 1 : 0);
-                writeC(rift.isMaster() ? 1 : 0);
+		case 4:
+			writeH(0x07);
+			writeC(actionId);
+			writeD(objectId);
+			writeC(rift.isVortex() ? 1 : 0);
+			writeC(rift.isMaster() ? 1 : 0);
 			break;
-			case 5:
-                writeH(0x05);
-                writeC(actionId);
-                writeD(0x00);
-            break;
+		case 5:
+			writeH(0x05);
+			writeC(actionId);
+			writeD(0x00);
+			break;
 		}
 	}
 }

@@ -43,7 +43,8 @@ public class QuestState {
 
 	private static final Logger log = LoggerFactory.getLogger(QuestState.class);
 
-	public QuestState(int questId, QuestStatus status, int questVars, int completeCount, Timestamp nextRepeatTime, Integer reward, Timestamp completeTime) {
+	public QuestState(int questId, QuestStatus status, int questVars, int completeCount, Timestamp nextRepeatTime,
+			Integer reward, Timestamp completeTime) {
 		this.questId = questId;
 		this.status = status;
 		this.questVars = new QuestVars(questVars);
@@ -132,8 +133,7 @@ public class QuestState {
 	public Integer getReward() {
 		if (reward == null) {
 			log.warn("No reward for the quest " + String.valueOf(questId));
-		}
-		else {
+		} else {
 			return reward;
 		}
 		return 0;
@@ -141,11 +141,14 @@ public class QuestState {
 
 	public boolean canRepeat() {
 		QuestTemplate template = DataManager.QUEST_DATA.getQuestById(questId);
-		if (status != QuestStatus.NONE && (status != QuestStatus.COMPLETE || (completeCount >= template.getMaxRepeatCount() && template.getMaxRepeatCount() != 255))) {
+		if (status != QuestStatus.NONE && (status != QuestStatus.COMPLETE
+				|| (completeCount >= template.getMaxRepeatCount() && template.getMaxRepeatCount() != 255))) {
 			return false;
-		} if (questVars.getQuestVars() != 0) {
+		}
+		if (questVars.getQuestVars() != 0) {
 			return false;
-		} if (template.isTimeBased() && nextRepeatTime != null) {
+		}
+		if (template.isTimeBased() && nextRepeatTime != null) {
 			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 			if (currentTime.before(nextRepeatTime)) {
 				return false;
@@ -162,23 +165,20 @@ public class QuestState {
 	}
 
 	/**
-	 * @param persistentState
-	 *          the pState to set
+	 * @param persistentState the pState to set
 	 */
-	public void setPersistentState(PersistentState persistentState)
-	{
-		switch(persistentState)
-		{
-			case DELETED:
-				if(this.persistentState == PersistentState.NEW) {
-					throw new IllegalArgumentException("Cannot change state to DELETED from NEW");
-				}
-			case UPDATE_REQUIRED:
-				if(this.persistentState == PersistentState.NEW) {
-					break;
-				}
-			default:
-				this.persistentState = persistentState;
+	public void setPersistentState(PersistentState persistentState) {
+		switch (persistentState) {
+		case DELETED:
+			if (this.persistentState == PersistentState.NEW) {
+				throw new IllegalArgumentException("Cannot change state to DELETED from NEW");
+			}
+		case UPDATE_REQUIRED:
+			if (this.persistentState == PersistentState.NEW) {
+				break;
+			}
+		default:
+			this.persistentState = persistentState;
 		}
 	}
 }

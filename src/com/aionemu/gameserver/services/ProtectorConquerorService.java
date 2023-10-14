@@ -39,33 +39,31 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
-public class ProtectorConquerorService
-{
+public class ProtectorConquerorService {
 	private static final Logger log = LoggerFactory.getLogger(ProtectorConquerorService.class);
-	
+
 	private FastMap<Integer, Protector> protectors = new FastMap<Integer, Protector>();
 	private FastMap<Integer, Conqueror> conquerors = new FastMap<Integer, Conqueror>();
-	
+
 	private FastMap<Integer, FastMap<Integer, Player>> worldConqueror = new FastMap<Integer, FastMap<Integer, Player>>();
 	private FastMap<Integer, FastMap<Integer, Player>> worldProtectors = new FastMap<Integer, FastMap<Integer, Player>>();
-	
+
 	private static final FastMap<Integer, WorldType> handledWorlds = new FastMap<Integer, WorldType>();
 	private int refresh = CustomConfig.PROTECTOR_CONQUEROR_REFRESH;
 	private int levelDiff = CustomConfig.PROTECTOR_CONQUEROR_LEVEL_DIFF;
 	private ProtectorBuffs protectorBuff;
 	private ConquerorBuffs conquerorBuff;;
-	
+
 	public enum WorldType {
-		ASMODIANS,
-		ELYOS,
-		USEALL;
+		ASMODIANS, ELYOS, USEALL;
 	}
-	
+
 	public void initSystem() {
 		log.info("[ProtectorConquerorService] is initialized...");
 		if (!CustomConfig.PROTECTOR_CONQUEROR_ENABLE) {
 			return;
-		} for (String world : CustomConfig.PROTECTOR_CONQUEROR_WORLDS.split(",")) {
+		}
+		for (String world : CustomConfig.PROTECTOR_CONQUEROR_WORLDS.split(",")) {
 			if ("".equals(world))
 				break;
 			int worldId = Integer.parseInt(world);
@@ -74,7 +72,8 @@ public class ProtectorConquerorService
 			conquerorBuff = new ConquerorBuffs();
 			WorldType type = worldType > 0 ? worldType > 1 ? WorldType.ASMODIANS : WorldType.ELYOS : WorldType.USEALL;
 			handledWorlds.put(worldId, type);
-		} ThreadPoolManager.getInstance().scheduleAtFixedRate(new Runnable() {
+		}
+		ThreadPoolManager.getInstance().scheduleAtFixedRate(new Runnable() {
 			@Override
 			public void run() {
 				for (Protector info : protectors.values()) {
@@ -83,20 +82,25 @@ public class ProtectorConquerorService
 						int newRank = getRanks(info.victims);
 						if (info.getRank() != newRank) {
 							info.setRank(newRank);
-							PacketSendUtility.sendPacket(info.getOwner(), new SM_CONQUEROR_PROTECTOR(true, info.getRank()));
-						} if (info.victims < 1) {
+							PacketSendUtility.sendPacket(info.getOwner(),
+									new SM_CONQUEROR_PROTECTOR(true, info.getRank()));
+						}
+						if (info.victims < 1) {
 							info.victims = 0;
 							protectors.remove(info.getOwner().getObjectId());
 						}
 					}
-				} for (Conqueror info : conquerors.values()) {
+				}
+				for (Conqueror info : conquerors.values()) {
 					if (info.victims > 0 && !isEnemyWorld(info.getOwner())) {
 						info.victims -= CustomConfig.PROTECTOR_CONQUEROR_DECREASE;
 						int newRank = getRanks(info.victims);
 						if (info.getRank() != newRank) {
 							info.setRank(newRank);
-							PacketSendUtility.sendPacket(info.getOwner(), new SM_CONQUEROR_PROTECTOR(true, info.getRank()));
-						} if (info.victims < 1) {
+							PacketSendUtility.sendPacket(info.getOwner(),
+									new SM_CONQUEROR_PROTECTOR(true, info.getRank()));
+						}
+						if (info.victims < 1) {
 							info.victims = 0;
 							conquerors.remove(info.getOwner().getObjectId());
 						}
@@ -105,7 +109,7 @@ public class ProtectorConquerorService
 			}
 		}, refresh * 60000, refresh * 60000);
 	}
-	
+
 	public FastMap<Integer, Player> getWorldProtector(int worldId) {
 		if (worldProtectors.containsKey(worldId)) {
 			return worldProtectors.get(worldId);
@@ -115,7 +119,7 @@ public class ProtectorConquerorService
 			return protectors;
 		}
 	}
-	
+
 	public FastMap<Integer, Player> getWorldConqueror(int worldId) {
 		if (worldConqueror.containsKey(worldId)) {
 			return worldConqueror.get(worldId);
@@ -125,26 +129,28 @@ public class ProtectorConquerorService
 			return killers;
 		}
 	}
-	
+
 	public void onProtectorConquerorLogin(Player player) {
 		if (!CustomConfig.PROTECTOR_CONQUEROR_ENABLE) {
 			return;
-		} if (protectors.containsKey(player.getObjectId())) {
+		}
+		if (protectors.containsKey(player.getObjectId())) {
 			player.setProtectorInfo(protectors.get(player.getObjectId()));
 			player.getProtectorInfo().refreshOwner(player);
-		} if (conquerors.containsKey(player.getObjectId())) {
+		}
+		if (conquerors.containsKey(player.getObjectId())) {
 			player.setConquerorInfo(conquerors.get(player.getObjectId()));
 			player.getConquerorInfo().refreshOwner(player);
 		}
 	}
-	
+
 	public void onLogout(Player player) {
 		if (!CustomConfig.PROTECTOR_CONQUEROR_ENABLE) {
 			return;
 		}
 		onLeaveMap(player);
 	}
-	
+
 	public void onEnterMap(final Player player) {
 		if (!CustomConfig.PROTECTOR_CONQUEROR_ENABLE) {
 			return;
@@ -154,17 +160,20 @@ public class ProtectorConquerorService
 		Conqueror infoConqueror = player.getConquerorInfo();
 		if (!isHandledWorld(worldId)) {
 			return;
-		} if (!isEnemyWorld(player)) { //Protector.
+		}
+		if (!isEnemyWorld(player)) { // Protector.
 			int objId = player.getObjectId();
 			info.setRank(1);
 			if (info.getRank() >= 1) {
-				//You are now a Protector.
+				// You are now a Protector.
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_GUARD_UP_1LEVEL);
-			} if (info.getRank() >= 2) {
-				//You are now an Indomitable Protector.
+			}
+			if (info.getRank() >= 2) {
+				// You are now an Indomitable Protector.
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_GUARD_UP_2LEVEL);
-			} if (info.getRank() >= 3) {
-				//You are now a Valiant Protector.
+			}
+			if (info.getRank() >= 3) {
+				// You are now a Valiant Protector.
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_GUARD_UP_3LEVEL);
 			}
 			PacketSendUtility.sendPacket(player, new SM_CONQUEROR_PROTECTOR(false, info.getRank()));
@@ -173,25 +182,28 @@ public class ProtectorConquerorService
 				world.putEntry(objId, player);
 			}
 			protectorBuff.applyRankEffect(player, info.getRank());
-			World.getInstance().getWorldMap(worldId).getWorldMapInstanceById(player.getInstanceId()).doOnAllPlayers(new Visitor<Player>() {
-				@Override
-				public void visit(Player victim) {
-					if (!player.getRace().equals(victim.getRace())) {
-						PacketSendUtility.sendPacket(victim, new SM_CONQUEROR_PROTECTOR(world.values()));
-					}
-				}
-			});
-		} else if (isEnemyWorld(player)) { //Conqueror.
+			World.getInstance().getWorldMap(worldId).getWorldMapInstanceById(player.getInstanceId())
+					.doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player victim) {
+							if (!player.getRace().equals(victim.getRace())) {
+								PacketSendUtility.sendPacket(victim, new SM_CONQUEROR_PROTECTOR(world.values()));
+							}
+						}
+					});
+		} else if (isEnemyWorld(player)) { // Conqueror.
 			int objId = player.getObjectId();
 			infoConqueror.setRank(1);
 			if (infoConqueror.getRank() >= 1) {
-				//You are now a Conqueror.
+				// You are now a Conqueror.
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_SLAYER_UP_1LEVEL);
-			} if (infoConqueror.getRank() >= 2) {
-				//You are now an Furious Conqueror.
+			}
+			if (infoConqueror.getRank() >= 2) {
+				// You are now an Furious Conqueror.
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_SLAYER_UP_2LEVEL);
-			} if (infoConqueror.getRank() >= 3) {
-				//You are now a Berserk Conqueror.
+			}
+			if (infoConqueror.getRank() >= 3) {
+				// You are now a Berserk Conqueror.
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_SLAYER_UP_3LEVEL);
 			}
 			PacketSendUtility.sendPacket(player, new SM_CONQUEROR_PROTECTOR(false, infoConqueror.getRank()));
@@ -200,14 +212,15 @@ public class ProtectorConquerorService
 				world.putEntry(objId, player);
 			}
 			conquerorBuff.applyEffect(player, infoConqueror.getRank());
-			World.getInstance().getWorldMap(worldId).getWorldMapInstanceById(player.getInstanceId()).doOnAllPlayers(new Visitor<Player>() {
-				@Override
-				public void visit(Player victim) {
-					if (!player.getRace().equals(victim.getRace())) {
-						PacketSendUtility.sendPacket(victim, new SM_CONQUEROR_PROTECTOR(world.values()));
-					}
-				}
-			});
+			World.getInstance().getWorldMap(worldId).getWorldMapInstanceById(player.getInstanceId())
+					.doOnAllPlayers(new Visitor<Player>() {
+						@Override
+						public void visit(Player victim) {
+							if (!player.getRace().equals(victim.getRace())) {
+								PacketSendUtility.sendPacket(victim, new SM_CONQUEROR_PROTECTOR(world.values()));
+							}
+						}
+					});
 		} else {
 			PacketSendUtility.sendPacket(player, new SM_CONQUEROR_PROTECTOR(getWorldProtector(worldId).values()));
 			PacketSendUtility.sendPacket(player, new SM_CONQUEROR_PROTECTOR(getWorldConqueror(worldId).values()));
@@ -216,12 +229,13 @@ public class ProtectorConquerorService
 		PacketSendUtility.broadcastPacketAndReceive(player, new SM_PLAYER_INFO(player, false));
 		player.updateKnownlist();
 	}
-	
+
 	public void onLeaveMap(Player player) {
 		int worldId = player.getWorldId();
 		if (!isHandledWorld(worldId)) {
 			return;
-		} if (!isEnemyWorld(player)) { //Protector.
+		}
+		if (!isEnemyWorld(player)) { // Protector.
 			Protector info = player.getProtectorInfo();
 			FastList<Player> kill = new FastList<Player>();
 			FastMap<Integer, Player> guards = getWorldProtector(worldId);
@@ -230,13 +244,14 @@ public class ProtectorConquerorService
 			if (info.getRank() > 0) {
 				info.setRank(0);
 				protectorBuff.endEffect(player);
-				for (Player victim: World.getInstance().getWorldMap(worldId).getWorldMapInstanceById(player.getInstanceId()).getPlayersInside()) {
+				for (Player victim : World.getInstance().getWorldMap(worldId)
+						.getWorldMapInstanceById(player.getInstanceId()).getPlayersInside()) {
 					if (!player.getRace().equals(victim.getRace())) {
 						PacketSendUtility.sendPacket(victim, new SM_CONQUEROR_PROTECTOR(kill));
 					}
 				}
 			}
-		} else if (isEnemyWorld(player)) { //Conqueror.
+		} else if (isEnemyWorld(player)) { // Conqueror.
 			Conqueror info = player.getConquerorInfo();
 			FastList<Player> kill = new FastList<Player>();
 			FastMap<Integer, Player> killers = getWorldConqueror(worldId);
@@ -245,7 +260,8 @@ public class ProtectorConquerorService
 			if (info.getRank() > 0) {
 				info.setRank(0);
 				conquerorBuff.endEffect(player);
-				for (Player victim : World.getInstance().getWorldMap(worldId).getWorldMapInstanceById(player.getInstanceId()).getPlayersInside()) {
+				for (Player victim : World.getInstance().getWorldMap(worldId)
+						.getWorldMapInstanceById(player.getInstanceId()).getPlayersInside()) {
 					if (!player.getRace().equals(victim.getRace())) {
 						PacketSendUtility.sendPacket(victim, new SM_CONQUEROR_PROTECTOR(kill));
 					}
@@ -253,83 +269,98 @@ public class ProtectorConquerorService
 			}
 		}
 	}
-	
+
 	public void updateIcons(Player player) {
 		if (!isEnemyWorld(player)) {
-			PacketSendUtility.sendPacket(player, new SM_CONQUEROR_PROTECTOR(getWorldProtector(player.getWorldId()).values()));
+			PacketSendUtility.sendPacket(player,
+					new SM_CONQUEROR_PROTECTOR(getWorldProtector(player.getWorldId()).values()));
 		} else if (isEnemyWorld(player)) {
-			PacketSendUtility.sendPacket(player, new SM_CONQUEROR_PROTECTOR(getWorldConqueror(player.getWorldId()).values()));
+			PacketSendUtility.sendPacket(player,
+					new SM_CONQUEROR_PROTECTOR(getWorldConqueror(player.getWorldId()).values()));
 		}
 	}
-	
+
 	public void updateRanks(final Player killer, Player victim) {
-		if (!isEnemyWorld(killer)) { //Protector.
+		if (!isEnemyWorld(killer)) { // Protector.
 			Protector info = killer.getProtectorInfo();
 			if (killer.getLevel() >= victim.getLevel() + levelDiff) {
 				int rank = getRanks(++info.victims);
 				if (info.getRank() >= 1) {
-				    //You are now a Protector.
-				    PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_GUARD_UP_1LEVEL);
-				} if (info.getRank() >= 2) {
-				    //You are now an Indomitable Protector.
-				    PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_GUARD_UP_2LEVEL);
-				} if (info.getRank() >= 3) {
-				    //You are now a Valiant Protector.
-				    PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_GUARD_UP_3LEVEL);
-				} if (info.getRank() != rank) {
+					// You are now a Protector.
+					PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_GUARD_UP_1LEVEL);
+				}
+				if (info.getRank() >= 2) {
+					// You are now an Indomitable Protector.
+					PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_GUARD_UP_2LEVEL);
+				}
+				if (info.getRank() >= 3) {
+					// You are now a Valiant Protector.
+					PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_GUARD_UP_3LEVEL);
+				}
+				if (info.getRank() != rank) {
 					info.setRank(rank);
 					protectorBuff.applyRankEffect(killer, rank);
 					final FastMap<Integer, Player> guards = getWorldProtector(killer.getWorldId());
 					PacketSendUtility.sendPacket(killer, new SM_CONQUEROR_PROTECTOR(true, info.getRank()));
-					World.getInstance().getWorldMap(killer.getWorldId()).getWorldMapInstanceById(killer.getInstanceId()).doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player observed) {
-							if (!killer.getRace().equals(observed.getRace())) {
-								PacketSendUtility.sendPacket(observed, new SM_CONQUEROR_PROTECTOR(guards.values()));
-							}
-						}
-					});
-				} if (!protectors.containsKey(killer.getObjectId())) {
+					World.getInstance().getWorldMap(killer.getWorldId()).getWorldMapInstanceById(killer.getInstanceId())
+							.doOnAllPlayers(new Visitor<Player>() {
+								@Override
+								public void visit(Player observed) {
+									if (!killer.getRace().equals(observed.getRace())) {
+										PacketSendUtility.sendPacket(observed,
+												new SM_CONQUEROR_PROTECTOR(guards.values()));
+									}
+								}
+							});
+				}
+				if (!protectors.containsKey(killer.getObjectId())) {
 					protectors.put(killer.getObjectId(), info);
 				}
 			}
-		} else if (isEnemyWorld(killer)) { //Conqueror.
+		} else if (isEnemyWorld(killer)) { // Conqueror.
 			Conqueror info = killer.getConquerorInfo();
 			if (killer.getLevel() >= victim.getLevel() + levelDiff) {
 				int rank = getRanks(++info.victims);
 				if (info.getRank() >= 1) {
-				    //You are now a Conqueror.
-				    PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_SLAYER_UP_1LEVEL);
-				} if (info.getRank() >= 2) {
-				    //You are now an Furious Conqueror.
-				    PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_SLAYER_UP_2LEVEL);
-				} if (info.getRank() >= 3) {
-				    //You are now a Berserk Conqueror.
-				    PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_SLAYER_UP_3LEVEL);
-				} if (info.getRank() != rank) {
+					// You are now a Conqueror.
+					PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_SLAYER_UP_1LEVEL);
+				}
+				if (info.getRank() >= 2) {
+					// You are now an Furious Conqueror.
+					PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_SLAYER_UP_2LEVEL);
+				}
+				if (info.getRank() >= 3) {
+					// You are now a Berserk Conqueror.
+					PacketSendUtility.sendPacket(killer, SM_SYSTEM_MESSAGE.STR_MSG_SLAYER_UP_3LEVEL);
+				}
+				if (info.getRank() != rank) {
 					info.setRank(rank);
 					conquerorBuff.applyEffect(killer, rank);
 					final FastMap<Integer, Player> killers = getWorldConqueror(killer.getWorldId());
 					PacketSendUtility.sendPacket(killer, new SM_CONQUEROR_PROTECTOR(true, info.getRank()));
-					World.getInstance().getWorldMap(killer.getWorldId()).getWorldMapInstanceById(killer.getInstanceId()).doOnAllPlayers(new Visitor<Player>() {
-						@Override
-						public void visit(Player observed) {
-							if (!killer.getRace().equals(observed.getRace())) {
-								PacketSendUtility.sendPacket(observed, new SM_CONQUEROR_PROTECTOR(killers.values()));
-							}
-						}
-					});
-				} if (!conquerors.containsKey(killer.getObjectId())) {
+					World.getInstance().getWorldMap(killer.getWorldId()).getWorldMapInstanceById(killer.getInstanceId())
+							.doOnAllPlayers(new Visitor<Player>() {
+								@Override
+								public void visit(Player observed) {
+									if (!killer.getRace().equals(observed.getRace())) {
+										PacketSendUtility.sendPacket(observed,
+												new SM_CONQUEROR_PROTECTOR(killers.values()));
+									}
+								}
+							});
+				}
+				if (!conquerors.containsKey(killer.getObjectId())) {
 					conquerors.put(killer.getObjectId(), info);
 				}
 			}
 		}
 	}
-	
+
 	private int getRanks(int kills) {
-		return kills > CustomConfig.PROTECTOR_CONQUEROR_2ND_RANK_KILLS ? 2 : kills > CustomConfig.PROTECTOR_CONQUEROR_1ST_RANK_KILLS ? 1 : 0;
+		return kills > CustomConfig.PROTECTOR_CONQUEROR_2ND_RANK_KILLS ? 2
+				: kills > CustomConfig.PROTECTOR_CONQUEROR_1ST_RANK_KILLS ? 1 : 0;
 	}
-	
+
 	public void onKillProtectorConqueror(final Player killer, final Player victim) {
 		if (!isEnemyWorld(victim)) {
 			final Protector info = victim.getProtectorInfo();
@@ -337,7 +368,7 @@ public class ProtectorConquerorService
 				@Override
 				public void visit(Player player) {
 					if (killer.getRace().equals(player.getRace()) && MathUtil.isIn3dRange(victim, player, 30)) {
-					    SkillEngine.getInstance().applyEffectDirectly(buffId(killer, info), player, player, 0);
+						SkillEngine.getInstance().applyEffectDirectly(buffId(killer, info), player, player, 0);
 					}
 				}
 			});
@@ -353,11 +384,11 @@ public class ProtectorConquerorService
 			});
 		}
 	}
-	
+
 	public boolean isHandledWorld(int worldId) {
 		return handledWorlds.containsKey(worldId);
 	}
-	
+
 	public boolean isEnemyWorld(Player player) {
 		if (handledWorlds.containsKey(player.getWorldId())) {
 			WorldType homeType = player.getRace().equals(Race.ASMODIANS) ? WorldType.ASMODIANS : WorldType.ELYOS;
@@ -365,25 +396,25 @@ public class ProtectorConquerorService
 		}
 		return false;
 	}
-	
+
 	private int buffId(Player player, Protector info) {
 		if (info.getRank() > 0) {
 			return player.getRace() == Race.ELYOS ? 8610 : 8611;
 		}
 		return 0;
 	}
-	
+
 	private int buffId(Player player, Conqueror info) {
 		if (info.getRank() > 0) {
 			return player.getRace() == Race.ELYOS ? 8610 : 8611;
 		}
 		return 0;
 	}
-	
+
 	public static ProtectorConquerorService getInstance() {
 		return ProtectorConquerorService.SingletonHolder.instance;
 	}
-	
+
 	private static class SingletonHolder {
 		protected static final ProtectorConquerorService instance = new ProtectorConquerorService();
 	}

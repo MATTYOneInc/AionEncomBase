@@ -25,7 +25,7 @@ public class AttackerCriticalStatusObserver extends AttackCalcObserver {
 
 	public AttackerCriticalStatusObserver(AttackStatus status, int count, int value, boolean isPercent) {
 		this.status = status;
-		this.acStatus = new AttackerCriticalStatus(count, value, isPercent); 
+		this.acStatus = new AttackerCriticalStatus(count, value, isPercent);
 	}
 
 	public int getCount() {
@@ -33,6 +33,6 @@ public class AttackerCriticalStatusObserver extends AttackCalcObserver {
 	}
 
 	public void decreaseCount() {
-		acStatus.setCount((acStatus.getCount()-1));
+		acStatus.setCount((acStatus.getCount() - 1));
 	}
 }

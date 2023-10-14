@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.MoltenusService;
  * @author Rinzler (Encom)
  */
 
-public abstract class MoltenusFight<ML extends MoltenusLocation>
-{
+public abstract class MoltenusFight<ML extends MoltenusLocation> {
 	private boolean started;
 	private final ML moltenusLocation;
+
 	protected abstract void stopMoltenus();
+
 	protected abstract void startMoltenus();
+
 	private final AtomicBoolean finished = new AtomicBoolean();
-	
+
 	public MoltenusFight(ML moltenusLocation) {
 		this.moltenusLocation = moltenusLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class MoltenusFight<ML extends MoltenusLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startMoltenus();
 	}
-	
+
 	public final void stop() {
 		if (finished.compareAndSet(false, true)) {
 			stopMoltenus();
 		}
 	}
-	
+
 	protected void spawn(MoltenusStateType type) {
 		MoltenusService.getInstance().spawn(getMoltenusLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		MoltenusService.getInstance().despawn(getMoltenusLocation());
 	}
-	
+
 	public boolean isFinished() {
 		return finished.get();
 	}
-	
+
 	public ML getMoltenusLocation() {
 		return moltenusLocation;
 	}
-	
+
 	public int getMoltenusLocationId() {
 		return moltenusLocation.getId();
 	}

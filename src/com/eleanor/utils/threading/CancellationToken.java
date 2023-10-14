@@ -8,30 +8,29 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CancellationToken {
-    private AtomicBoolean _isCancelled;
-    private BlockingQueue<Runnable> _cancelActions = new SynchronousQueue<Runnable>();
+	private AtomicBoolean _isCancelled;
+	private BlockingQueue<Runnable> _cancelActions = new SynchronousQueue<Runnable>();
 
-    public CancellationToken() {
-        this._isCancelled = new AtomicBoolean(false);
-    }
+	public CancellationToken() {
+		this._isCancelled = new AtomicBoolean(false);
+	}
 
-    public void cancel() throws InterruptedException {
-        if (this._isCancelled.compareAndSet(false, true)) {
-            Runnable run = null;
-            while ((run = (Runnable)this._cancelActions.poll()) != null) {
-                run.run();
-            }
-        }
-    }
+	public void cancel() throws InterruptedException {
+		if (this._isCancelled.compareAndSet(false, true)) {
+			Runnable run = null;
+			while ((run = (Runnable) this._cancelActions.poll()) != null) {
+				run.run();
+			}
+		}
+	}
 
-    public void addAction(Runnable runnable) throws InterruptedException {
-        if (!this._isCancelled.get()) {
-            this._cancelActions.put(runnable);
-        }
-    }
+	public void addAction(Runnable runnable) throws InterruptedException {
+		if (!this._isCancelled.get()) {
+			this._cancelActions.put(runnable);
+		}
+	}
 
-    public boolean isCancelled() {
-        return this._isCancelled.get();
-    }
+	public boolean isCancelled() {
+		return this._isCancelled.get();
+	}
 }
-

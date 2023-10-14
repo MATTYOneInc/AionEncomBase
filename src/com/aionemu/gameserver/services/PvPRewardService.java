@@ -34,41 +34,41 @@ import com.aionemu.gameserver.model.templates.item.ItemTemplate;
  * @author Rinzler (Encom)
  */
 
-public class PvPRewardService
-{
+public class PvPRewardService {
 	private static final Logger log = LoggerFactory.getLogger("PVP_LOG");
-	
+
 	private static final String plate = "188055157,188055160";
 	private static final String chain = "188055157,188055162";
 	private static final String leather = "188055157,188055164";
 	private static final String cloth = "188055157,188055166";
-	
+
 	private static List<Integer> getRewardList(PlayerClass pc) {
 		List<Integer> rewardList = new ArrayList<Integer>();
 		String rewardString = "";
 		switch (pc) {
-			case TEMPLAR:
-			case GLADIATOR:
-				rewardString = plate;
+		case TEMPLAR:
+		case GLADIATOR:
+			rewardString = plate;
 			break;
-			case CLERIC:
-			case CHANTER:
-			case AETHERTECH:
-				rewardString = chain;
+		case CLERIC:
+		case CHANTER:
+		case AETHERTECH:
+			rewardString = chain;
 			break;
-			case RANGER:
-			case ASSASSIN:
-			case GUNSLINGER:
-				rewardString = leather;
+		case RANGER:
+		case ASSASSIN:
+		case GUNSLINGER:
+			rewardString = leather;
 			break;
-			case SORCERER:
-			case SONGWEAVER:
-			case SPIRIT_MASTER:
-				rewardString = cloth;
+		case SORCERER:
+		case SONGWEAVER:
+		case SPIRIT_MASTER:
+			rewardString = cloth;
 			break;
-			default:
+		default:
 			rewardString = null;
-		} if (rewardString != null) {
+		}
+		if (rewardString != null) {
 			String[] parts = rewardString.split(",");
 			for (int i = 0; i < parts.length; i++) {
 				rewardList.add(Integer.valueOf(Integer.parseInt(parts[i])));
@@ -78,15 +78,16 @@ public class PvPRewardService
 		}
 		return rewardList;
 	}
-	
+
 	public static int getRewardId(Player winner, Player victim, boolean isAdvanced) {
 		int itemId = 0;
 		if (victim.getSpreeLevel() > 2) {
 			isAdvanced = true;
-		} if (!isAdvanced) {
+		}
+		if (!isAdvanced) {
 			int lvl = victim.getLevel();
 			if (lvl >= 25 && lvl <= 83) {
-				itemId = 186000469; //페트라 공훈 훈장.
+				itemId = 186000469; // 페트라 공훈 훈장.
 			}
 		} else {
 			List<Integer> abyssItemsList = getAdvancedReward(winner);
@@ -94,7 +95,7 @@ public class PvPRewardService
 		}
 		return itemId;
 	}
-	
+
 	public static float getMedalRewardChance(Player winner, Player victim) {
 		float chance = PvPConfig.MEDAL_REWARD_CHANCE;
 		chance += 1.5F * winner.getRawKillCount();
@@ -112,23 +113,23 @@ public class PvPRewardService
 		}
 		return chance;
 	}
-	
+
 	public static int getRewardQuantity(Player winner, Player victim) {
 		int rewardQuantity = winner.getSpreeLevel() + 1;
 		switch (victim.getSpreeLevel()) {
-			case 1:
-				rewardQuantity += 2;
+		case 1:
+			rewardQuantity += 2;
 			break;
-			case 2:
-				rewardQuantity += 4;
+		case 2:
+			rewardQuantity += 4;
 			break;
-			case 3:
-				rewardQuantity += 6;
+		case 3:
+			rewardQuantity += 6;
 			break;
 		}
 		return rewardQuantity;
 	}
-	
+
 	public static float getTollRewardChance(Player winner, Player victim) {
 		float chance = PvPConfig.TOLL_CHANCE;
 		chance += 1.5F * winner.getRawKillCount();
@@ -146,23 +147,23 @@ public class PvPRewardService
 		}
 		return chance;
 	}
-	
+
 	public static int getTollQuantity(Player winner, Player victim) {
 		int tollQuantity = winner.getSpreeLevel() + 1;
 		switch (victim.getSpreeLevel()) {
-			case 1:
-				tollQuantity += 2;
+		case 1:
+			tollQuantity += 2;
 			break;
-			case 2:
-				tollQuantity += 4;
+		case 2:
+			tollQuantity += 4;
 			break;
-			case 3:
-				tollQuantity += 6;
+		case 3:
+			tollQuantity += 6;
 			break;
 		}
 		return tollQuantity;
 	}
-	
+
 	private static List<Integer> getAdvancedReward(Player winner) {
 		int lvl = winner.getLevel();
 		PlayerClass pc = winner.getPlayerClass();
@@ -172,7 +173,7 @@ public class PvPRewardService
 		}
 		return rewardList;
 	}
-	
+
 	private static List<Integer> getFilteredRewardList(PlayerClass pc, int minLevel, int maxLevel) {
 		List<Integer> filteredRewardList = new ArrayList<Integer>();
 		List<Integer> rewardList = getRewardList(pc);
@@ -180,7 +181,8 @@ public class PvPRewardService
 			int id = i.next();
 			ItemTemplate itemTemp = DataManager.ITEM_DATA.getItemTemplate(id);
 			if (itemTemp == null) {
-				log.warn("[PvP][Reward] Incorrect {Item ID: " + id + "} reward for {PlayerClass: " + pc.toString() + "}");
+				log.warn("[PvP][Reward] Incorrect {Item ID: " + id + "} reward for {PlayerClass: " + pc.toString()
+						+ "}");
 			}
 			int itemLevel = itemTemp.getLevel();
 			if (itemLevel >= minLevel && itemLevel < maxLevel) {

@@ -30,19 +30,18 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_HOUSE_PAY_RENT;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class CM_HOUSE_PAY_RENT extends AionClientPacket
-{
+public class CM_HOUSE_PAY_RENT extends AionClientPacket {
 	int weekCount;
-	
+
 	public CM_HOUSE_PAY_RENT(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		weekCount = readC();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
@@ -54,11 +53,13 @@ public class CM_HOUSE_PAY_RENT extends AionClientPacket
 		long toPay = house.getLand().getMaintenanceFee() * weekCount;
 		if (toPay <= 0) {
 			return;
-		} if (player.getInventory().getKinah() < toPay) {
+		}
+		if (player.getInventory().getKinah() < toPay) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_NOT_ENOUGH_MONEY);
 			return;
 		}
-		long payTime = house.getNextPay() != null ? house.getNextPay().getTime() : (long) MaintenanceTask.getInstance().getRunTime() * 1000;
+		long payTime = house.getNextPay() != null ? house.getNextPay().getTime()
+				: (long) MaintenanceTask.getInstance().getRunTime() * 1000;
 		int counter = weekCount;
 		while ((--counter) >= 0) {
 			payTime += MaintenanceTask.getInstance().getPeriod();

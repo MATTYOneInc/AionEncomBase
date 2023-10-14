@@ -31,32 +31,35 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EmotionLearnAction")
-public class EmotionLearnAction extends AbstractItemAction
-{
+public class EmotionLearnAction extends AbstractItemAction {
 	@XmlAttribute
 	protected int emotionid;
-	
+
 	@XmlAttribute
 	protected Integer minutes;
-	
+
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		if (emotionid == 0 || parentItem == null) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_COLOR_ERROR);
 			return false;
-		} if (player.getEmotions() != null && player.getEmotions().contains(emotionid)) {
+		}
+		if (player.getEmotions() != null && player.getEmotions().contains(emotionid)) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_TOOLTIP_LEARNED_EMOTION);
 			return false;
 		}
 		return true;
 	}
-	
+
 	@Override
 	public void act(final Player player, final Item parentItem, Item targetItem) {
 		ItemTemplate itemTemplate = parentItem.getItemTemplate();
-		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(itemTemplate.getNameId())));
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
-		player.getEmotions().add(emotionid,  minutes == null ? 0 : (int)(System.currentTimeMillis() / 1000) + minutes * 60, true);
+		PacketSendUtility.sendPacket(player,
+				SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(itemTemplate.getNameId())));
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+				parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
+		player.getEmotions().add(emotionid,
+				minutes == null ? 0 : (int) (System.currentTimeMillis() / 1000) + minutes * 60, true);
 		player.getInventory().delete(parentItem);
 	}
 }

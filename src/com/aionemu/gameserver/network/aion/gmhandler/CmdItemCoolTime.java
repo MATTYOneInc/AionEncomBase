@@ -34,48 +34,49 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  */
 public class CmdItemCoolTime extends AbstractGMHandler {
 
-    public CmdItemCoolTime(Player admin) {
-        super(admin, "");
-        run();
-    }
+	public CmdItemCoolTime(Player admin) {
+		super(admin, "");
+		run();
+	}
 
-    private void run() {
-        Player playerT = target != null ? target : admin;
+	private void run() {
+		Player playerT = target != null ? target : admin;
 
-        List<Integer> delayIds = new ArrayList<Integer>();
-        if (playerT.getSkillCoolDowns() != null) {
-            long currentTime = System.currentTimeMillis();
-            for (Entry<Integer, Long> en : playerT.getSkillCoolDowns().entrySet()) {
-                delayIds.add(en.getKey());
-            }
-            for (Integer delayId : delayIds) {
-                playerT.setSkillCoolDown(delayId, currentTime);
-            }
-            delayIds.clear();
-            PacketSendUtility.sendPacket(playerT, new SM_SKILL_COOLDOWN(playerT.getSkillCoolDowns()));
-        }
+		List<Integer> delayIds = new ArrayList<Integer>();
+		if (playerT.getSkillCoolDowns() != null) {
+			long currentTime = System.currentTimeMillis();
+			for (Entry<Integer, Long> en : playerT.getSkillCoolDowns().entrySet()) {
+				delayIds.add(en.getKey());
+			}
+			for (Integer delayId : delayIds) {
+				playerT.setSkillCoolDown(delayId, currentTime);
+			}
+			delayIds.clear();
+			PacketSendUtility.sendPacket(playerT, new SM_SKILL_COOLDOWN(playerT.getSkillCoolDowns()));
+		}
 
-        if (playerT.getItemCoolDowns() != null) {
-            for (Entry<Integer, ItemCooldown> en : playerT.getItemCoolDowns().entrySet()) {
-                delayIds.add(en.getKey());
-            }
-            for (Integer delayId : delayIds) {
-                playerT.addItemCoolDown(delayId, 0, 0);
-            }
-            delayIds.clear();
-            PacketSendUtility.sendPacket(playerT, new SM_ITEM_COOLDOWN(playerT.getItemCoolDowns()));
-        }
+		if (playerT.getItemCoolDowns() != null) {
+			for (Entry<Integer, ItemCooldown> en : playerT.getItemCoolDowns().entrySet()) {
+				delayIds.add(en.getKey());
+			}
+			for (Integer delayId : delayIds) {
+				playerT.addItemCoolDown(delayId, 0, 0);
+			}
+			delayIds.clear();
+			PacketSendUtility.sendPacket(playerT, new SM_ITEM_COOLDOWN(playerT.getItemCoolDowns()));
+		}
 
-        if (playerT.getHouseRegistry() != null && playerT.getHouseObjectCooldownList().getHouseObjectCooldowns().size() > 0) {
-            Iterator<HouseObject<?>> iter = playerT.getHouseRegistry().getObjects().iterator();
-            while (iter.hasNext()) {
-                HouseObject<?> obj = iter.next();
-                if (obj instanceof UseableItemObject) {
-                    if (!playerT.getHouseObjectCooldownList().isCanUseObject(obj.getObjectId())) {
-                        playerT.getHouseObjectCooldownList().addHouseObjectCooldown(obj.getObjectId(), 0);
+		if (playerT.getHouseRegistry() != null
+				&& playerT.getHouseObjectCooldownList().getHouseObjectCooldowns().size() > 0) {
+			Iterator<HouseObject<?>> iter = playerT.getHouseRegistry().getObjects().iterator();
+			while (iter.hasNext()) {
+				HouseObject<?> obj = iter.next();
+				if (obj instanceof UseableItemObject) {
+					if (!playerT.getHouseObjectCooldownList().isCanUseObject(obj.getObjectId())) {
+						playerT.getHouseObjectCooldownList().addHouseObjectCooldown(obj.getObjectId(), 0);
 					}
-                }
-            }
-        }
-    }
+				}
+			}
+		}
+	}
 }

@@ -45,25 +45,27 @@ public class DropGroup implements DropCalculator {
 		return this.drop;
 	}
 
-    public Race getRace() {
-        return race;
-    }
+	public Race getRace() {
+		return race;
+	}
 
-    public Boolean isUseCategory() {
-        return useCategory;
-    }
-		/**
-		 * @return the name
-		 */
-		public String getGroupName() {
-			if (group_name == null) {
-				return "";
-			}
-			return group_name;
+	public Boolean isUseCategory() {
+		return useCategory;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getGroupName() {
+		if (group_name == null) {
+			return "";
 		}
+		return group_name;
+	}
 
 	@Override
-	public int dropCalculator(Set<DropItem> result, int index, float dropModifier, Race race, Collection<Player> groupMembers) {
+	public int dropCalculator(Set<DropItem> result, int index, float dropModifier, Race race,
+			Collection<Player> groupMembers) {
 		if (useCategory) {
 			Drop d = drop.get(Rnd.get(0, drop.size() - 1));
 			return d.dropCalculator(result, index, dropModifier, race, groupMembers);

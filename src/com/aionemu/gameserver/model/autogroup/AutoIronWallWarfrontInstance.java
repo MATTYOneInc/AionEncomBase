@@ -35,8 +35,7 @@ import com.aionemu.gameserver.services.instance.IronWallWarfrontService;
  * @author Rinzler (Encom)
  */
 
-public class AutoIronWallWarfrontInstance extends AutoInstance
-{
+public class AutoIronWallWarfrontInstance extends AutoInstance {
 	@Override
 	public AGQuestion addPlayer(Player player, SearchInstance searchInstance) {
 		super.writeLock();
@@ -61,13 +60,13 @@ public class AutoIronWallWarfrontInstance extends AutoInstance
 				}
 				players.put(player.getObjectId(), new AGPlayer(player));
 			}
-			return instance != null ? AGQuestion.ADDED : (players.size() == agt.getPlayerSize() ? AGQuestion.READY : AGQuestion.ADDED);
-		}
-		finally {
+			return instance != null ? AGQuestion.ADDED
+					: (players.size() == agt.getPlayerSize() ? AGQuestion.READY : AGQuestion.ADDED);
+		} finally {
 			super.writeUnlock();
 		}
 	}
-	
+
 	@Override
 	public void onEnterInstance(Player player) {
 		super.onEnterInstance(player);
@@ -87,24 +86,24 @@ public class AutoIronWallWarfrontInstance extends AutoInstance
 			instance.register(object);
 		}
 	}
-	
+
 	@Override
 	public void onPressEnter(Player player) {
 		super.onPressEnter(player);
 		IronWallWarfrontService.getInstance().addCoolDown(player);
 		((IronWallWarfrontReward) instance.getInstanceHandler().getInstanceReward()).portToPosition(player);
 	}
-	
+
 	@Override
 	public void onLeaveInstance(Player player) {
 		super.unregister(player);
 		PlayerGroupService.removePlayer(player);
 	}
-	
+
 	private List<AGPlayer> getAGPlayersByRace(Race race) {
 		return select(players, having(on(AGPlayer.class).getRace(), equalTo(race)));
 	}
-	
+
 	private List<Player> getPlayersByRace(Race race) {
 		return select(instance.getPlayersInside(), having(on(Player.class).getRace(), equalTo(race)));
 	}

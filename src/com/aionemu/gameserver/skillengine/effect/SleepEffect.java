@@ -27,23 +27,22 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SleepEffect")
-public class SleepEffect extends EffectTemplate
-{
+public class SleepEffect extends EffectTemplate {
 	@Override
 	public void applyEffect(Effect effect) {
 		effect.addToEffectedController();
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		super.calculate(effect, StatEnum.SLEEP_RESISTANCE, null);
 	}
-	
+
 	@Override
 	public void startEffect(final Effect effect) {
 		final Creature effected = effect.getEffected();
 		if (effected.isInState(CreatureState.RESTING)) {
-        	effected.unsetState(CreatureState.RESTING);
+			effected.unsetState(CreatureState.RESTING);
 		}
 		effected.getMoveController().abortMove();
 		effected.getController().cancelCurrentSkill();
@@ -51,7 +50,7 @@ public class SleepEffect extends EffectTemplate
 		effected.getEffectController().setAbnormal(AbnormalState.SLEEP.getId());
 		effect.setCancelOnDmg(true);
 	}
-	
+
 	@Override
 	public void endEffect(Effect effect) {
 		effect.getEffected().getEffectController().unsetAbnormal(AbnormalState.SLEEP.getId());

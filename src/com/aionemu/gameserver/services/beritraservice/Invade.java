@@ -23,19 +23,18 @@ import com.aionemu.gameserver.model.beritra.BeritraStateType;
  * @author Rinzler (Encom)
  */
 
-public class Invade extends BeritraInvasion<BeritraLocation>
-{
+public class Invade extends BeritraInvasion<BeritraLocation> {
 	public Invade(BeritraLocation beritra) {
 		super(beritra);
 	}
-	
+
 	@Override
 	public void startBeritraInvasion() {
 		getBeritraLocation().setActiveBeritra(this);
 		despawn();
 		spawn(BeritraStateType.INVASION);
 	}
-	
+
 	@Override
 	public void stopBeritraInvasion() {
 		getBeritraLocation().setActiveBeritra(null);

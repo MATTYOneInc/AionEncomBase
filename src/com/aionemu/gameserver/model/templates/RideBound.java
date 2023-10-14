@@ -22,24 +22,24 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RideBound")
-public class RideBound extends BoundRadius
-{
+public class RideBound extends BoundRadius {
 	@XmlAttribute
 	private Float altitude;
-	
+
 	public RideBound() {
 	}
-	
+
 	public RideBound(float front, float side, float upper, float altitude) {
 		super(front, side, upper);
 		this.altitude = altitude;
 	}
-	
+
 	public Float getAltitude() {
 		return altitude;
 	}

@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.IuService;
  * @author Rinzler (Encom)
  */
 
-public abstract class Iu<IUL extends IuLocation>
-{
+public abstract class Iu<IUL extends IuLocation> {
 	private boolean started;
 	private final IUL iuLocation;
+
 	protected abstract void stopConcert();
+
 	protected abstract void startConcert();
+
 	private final AtomicBoolean finished = new AtomicBoolean();
-	
+
 	public Iu(IUL iuLocation) {
 		this.iuLocation = iuLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class Iu<IUL extends IuLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startConcert();
 	}
-	
+
 	public final void stop() {
 		if (finished.compareAndSet(false, true)) {
 			stopConcert();
 		}
 	}
-	
+
 	protected void spawn(IuStateType type) {
 		IuService.getInstance().spawn(getIuLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		IuService.getInstance().despawn(getIuLocation());
 	}
-	
+
 	public boolean isFinished() {
 		return finished.get();
 	}
-	
+
 	public IUL getIuLocation() {
 		return iuLocation;
 	}
-	
+
 	public int getIuLocationId() {
 		return iuLocation.getId();
 	}

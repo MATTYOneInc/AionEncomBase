@@ -46,13 +46,11 @@ public class AlwaysBlockEffect extends EffectTemplate {
 				if (status == AttackStatus.BLOCK) {
 					if (value <= 1) {
 						effect.endEffect();
-					}
-					else {
+					} else {
 						value--;
-                    }
+					}
 					return true;
-				}
-				else {
+				} else {
 					return false;
 				}
 			}

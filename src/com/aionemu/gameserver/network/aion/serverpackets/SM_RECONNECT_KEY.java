@@ -20,7 +20,8 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 /**
- * Response for CM_RECONNECT_AUTH with key that will be use for authentication at LoginServer.
+ * Response for CM_RECONNECT_AUTH with key that will be use for authentication
+ * at LoginServer.
  * 
  * @author -Nemesiss-
  */
@@ -34,8 +35,7 @@ public class SM_RECONNECT_KEY extends AionServerPacket {
 	/**
 	 * Constructs new <tt>SM_RECONNECT_KEY</tt> packet
 	 * 
-	 * @param key
-	 *          key for reconnection
+	 * @param key key for reconnection
 	 */
 	public SM_RECONNECT_KEY(int key) {
 		this.key = key;

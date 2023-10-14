@@ -28,12 +28,11 @@ import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_SELECT_ITEM extends AionServerPacket
-{
+public class SM_SELECT_ITEM extends AionServerPacket {
 	private int uniqueItemId;
 	private List<SelectItem> selsetitems;
 	private static final Logger log = LoggerFactory.getLogger(SM_SELECT_ITEM.class);
-	
+
 	public SM_SELECT_ITEM(SelectItems selsetitem, int uniqueItemId) {
 		this.uniqueItemId = uniqueItemId;
 		this.selsetitems = selsetitem.getItems();
@@ -54,14 +53,13 @@ public class SM_SELECT_ITEM extends AionServerPacket
 			writeC(itemTemplate.getMaxEnchantBonus() > 0 ? 255 : 0);
 			if ((itemTemplate.isArmor()) || (itemTemplate.isWeapon())) {
 				writeC(-1);
-			}
-			else {
+			} else {
 				writeC(0);
 			}
-			if ((itemTemplate.isCloth()) || (itemTemplate.getOptionSlotBonus() > 0) || (itemTemplate.getMaxEnchantBonus() > 0)) {
+			if ((itemTemplate.isCloth()) || (itemTemplate.getOptionSlotBonus() > 0)
+					|| (itemTemplate.getMaxEnchantBonus() > 0)) {
 				writeC(1);
-			}
-			else {
+			} else {
 				writeC(0);
 			}
 		}

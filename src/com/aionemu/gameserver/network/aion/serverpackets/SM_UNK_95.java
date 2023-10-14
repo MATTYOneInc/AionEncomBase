@@ -22,10 +22,9 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 /**
  * Created by wanke on 16/02/2017.
  */
-public class SM_UNK_95 extends AionServerPacket
-{
-    @Override
-    protected void writeImpl(AionConnection con) {
-        writeD(0);
-    }
+public class SM_UNK_95 extends AionServerPacket {
+	@Override
+	protected void writeImpl(AionConnection con) {
+		writeD(0);
+	}
 }

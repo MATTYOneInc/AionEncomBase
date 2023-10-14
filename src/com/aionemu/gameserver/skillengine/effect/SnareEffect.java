@@ -28,32 +28,32 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SnareEffect")
-public class SnareEffect extends BuffEffect
-{
+public class SnareEffect extends BuffEffect {
 	@Override
 	public void applyEffect(Effect effect) {
 		effect.addToEffectedController();
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		super.calculate(effect, StatEnum.SNARE_RESISTANCE, null);
 	}
-	
+
 	@Override
 	public void endEffect(Effect effect) {
 		super.endEffect(effect);
 		effect.getEffected().getEffectController().unsetAbnormal(AbnormalState.SNARE.getId());
 	}
-	
+
 	@Override
 	public void startEffect(Effect effect) {
 		super.startEffect(effect);
 		effect.getEffected().getEffectController().setAbnormal(AbnormalState.SNARE.getId());
 		effect.setAbnormal(AbnormalState.SNARE.getId());
-        if (effect.getEffected().isFlying() || effect.getEffected().isInState(CreatureState.GLIDING)) {
-            PacketSendUtility.broadcastPacketAndReceive(effect.getEffected(), new SM_TARGET_IMMOBILIZE(effect.getEffected()));
-            effect.getEffected().getMoveController().abortMove();
-        }
-    }
+		if (effect.getEffected().isFlying() || effect.getEffected().isInState(CreatureState.GLIDING)) {
+			PacketSendUtility.broadcastPacketAndReceive(effect.getEffected(),
+					new SM_TARGET_IMMOBILIZE(effect.getEffected()));
+			effect.getEffected().getMoveController().abortMove();
+		}
+	}
 }

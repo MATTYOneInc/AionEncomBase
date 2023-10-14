@@ -28,18 +28,17 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.skillengine.model.Effect;
 import com.aionemu.gameserver.world.WorldPosition;
 
-public class SM_GROUP_MEMBER_INFO extends AionServerPacket
-{
+public class SM_GROUP_MEMBER_INFO extends AionServerPacket {
 	private int groupId;
 	private Player player;
 	private GroupEvent event;
-	
+
 	public SM_GROUP_MEMBER_INFO(PlayerGroup group, Player player, GroupEvent event) {
 		this.groupId = group.getTeamId();
 		this.player = player;
 		this.event = event;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		PlayerLifeStats pls = player.getLifeStats();
@@ -77,66 +76,66 @@ public class SM_GROUP_MEMBER_INFO extends AionServerPacket
 		writeC(event.getId());
 		writeH(player.isOnline() ? 1 : 0);
 		writeC(player.isMentor() ? 0x01 : 0x00);
-		writeC(0x00);//unk 5.3
+		writeC(0x00);// unk 5.3
 		switch (event) {
-			case MOVEMENT:
-			case DISCONNECTED:
+		case MOVEMENT:
+		case DISCONNECTED:
 			break;
-			case LEAVE:
+		case LEAVE:
 			break;
-			case ENTER_OFFLINE:
-			case JOIN:
-				writeS(pcd.getName());
+		case ENTER_OFFLINE:
+		case JOIN:
+			writeS(pcd.getName());
 			break;
-			case UPDATE:
-                writeS(pcd.getName());
-                writeD(0x00);
-                writeD(0x00);
-                writeC(0x02);//unk 5.5
-                List<Effect> abnormalEffects1 = this.player.getEffectController().getAbnormalEffects();
-                writeH(abnormalEffects1.size());
-                for (Effect effect: abnormalEffects1) {
-                    writeD(effect.getEffectorId());
-                    writeH(effect.getSkillId());
-                    writeC(effect.getSkillLevel());
-                    writeC(effect.getTargetSlot());
-                    writeD(effect.getRemainingTime());
-                    writeH(0x00);//unk 5.3
-                }
-				writeB("3743000037430000374300003743000037430000374300003743000037430000");//32bytes
+		case UPDATE:
+			writeS(pcd.getName());
+			writeD(0x00);
+			writeD(0x00);
+			writeC(0x02);// unk 5.5
+			List<Effect> abnormalEffects1 = this.player.getEffectController().getAbnormalEffects();
+			writeH(abnormalEffects1.size());
+			for (Effect effect : abnormalEffects1) {
+				writeD(effect.getEffectorId());
+				writeH(effect.getSkillId());
+				writeC(effect.getSkillLevel());
+				writeC(effect.getTargetSlot());
+				writeD(effect.getRemainingTime());
+				writeH(0x00);// unk 5.3
+			}
+			writeB("3743000037430000374300003743000037430000374300003743000037430000");// 32bytes
 			break;
-			case UNK_53:
-				writeD(0x00);
-                writeD(0x00);
-                writeC(0x02);//unk 5.5
-                List<Effect> abnormalEffects2 = this.player.getEffectController().getAbnormalEffects();
-                writeH(abnormalEffects2.size());
-                for (Effect effect: abnormalEffects2) {
-                    writeD(effect.getEffectorId());
-                    writeH(effect.getSkillId());
-                    writeC(effect.getSkillLevel());
-                    writeC(effect.getTargetSlot());
-                    writeD(effect.getRemainingTime());
-                    writeH(0x00);//unk 5.3
-                }
-				writeB("1901000011B9000011B9000011B9000011B9000011B9000011B9000000000000");//32bytes
+		case UNK_53:
+			writeD(0x00);
+			writeD(0x00);
+			writeC(0x02);// unk 5.5
+			List<Effect> abnormalEffects2 = this.player.getEffectController().getAbnormalEffects();
+			writeH(abnormalEffects2.size());
+			for (Effect effect : abnormalEffects2) {
+				writeD(effect.getEffectorId());
+				writeH(effect.getSkillId());
+				writeC(effect.getSkillLevel());
+				writeC(effect.getTargetSlot());
+				writeD(effect.getRemainingTime());
+				writeH(0x00);// unk 5.3
+			}
+			writeB("1901000011B9000011B9000011B9000011B9000011B9000011B9000000000000");// 32bytes
 			break;
-			default:
-				writeS(pcd.getName());
-				writeD(0x00);
-				writeD(0x00);
-				writeC(0x02);//unk 5.5
-				List<Effect> abnormalEffects = player.getEffectController().getAbnormalEffects();
-				writeH(abnormalEffects.size());
-				for (Effect effect: abnormalEffects) {
-					writeD(effect.getEffectorId());
-					writeH(effect.getSkillId());
-					writeC(effect.getSkillLevel());
-					writeC(effect.getTargetSlot());
-					writeD(effect.getRemainingTime());
-					writeH(0x00);//unk 5.3
-				}
-				writeB(new byte[32]);
+		default:
+			writeS(pcd.getName());
+			writeD(0x00);
+			writeD(0x00);
+			writeC(0x02);// unk 5.5
+			List<Effect> abnormalEffects = player.getEffectController().getAbnormalEffects();
+			writeH(abnormalEffects.size());
+			for (Effect effect : abnormalEffects) {
+				writeD(effect.getEffectorId());
+				writeH(effect.getSkillId());
+				writeC(effect.getSkillLevel());
+				writeC(effect.getTargetSlot());
+				writeD(effect.getRemainingTime());
+				writeH(0x00);// unk 5.3
+			}
+			writeB(new byte[32]);
 			break;
 		}
 	}

@@ -30,33 +30,32 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlRootElement(name = "npc_trade_list")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class TradeListData
-{
+public class TradeListData {
 	@XmlElement(name = "tradelist_template")
 	private List<TradeListTemplate> tlist;
 
 	@XmlElement(name = "trade_in_list_template")
 	private List<TradeListTemplate> tInlist;
-	
+
 	@XmlElement(name = "purchase_list_template")
 	private List<TradeListTemplate> ptlist;
-	
+
 	/** A map containing all trade list templates */
 	private TIntObjectHashMap<TradeListTemplate> npctlistData = new TIntObjectHashMap<TradeListTemplate>();
-	
+
 	private TIntObjectHashMap<TradeListTemplate> npcTradeInlistData = new TIntObjectHashMap<TradeListTemplate>();
 
 	private TIntObjectHashMap<TradeListTemplate> npcPurchaselistData = new TIntObjectHashMap<TradeListTemplate>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (TradeListTemplate npc : tlist) {
 			npctlistData.put(npc.getNpcId(), npc);
 		}
-		
+
 		for (TradeListTemplate npc : tInlist) {
 			npcTradeInlistData.put(npc.getNpcId(), npc);
 		}
-		
+
 		for (TradeListTemplate npc : ptlist) {
 			npcPurchaselistData.put(npc.getNpcId(), npc);
 		}
@@ -69,8 +68,7 @@ public class TradeListData
 	/**
 	 * Returns an {@link TradeListTemplate} object with given id.
 	 * 
-	 * @param id
-	 *          id of NPC
+	 * @param id id of NPC
 	 * @return TradeListTemplate object containing data about NPC with that id.
 	 */
 	public TradeListTemplate getTradeListTemplate(int id) {
@@ -80,7 +78,7 @@ public class TradeListData
 	public TradeListTemplate getTradeInListTemplate(int id) {
 		return npcTradeInlistData.get(id);
 	}
-	
+
 	public TradeListTemplate getPurchaseListTemplate(int id) {
 		return npcPurchaselistData.get(id);
 	}

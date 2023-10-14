@@ -75,8 +75,7 @@ public class PetTemplate {
 				List<PetFunction> result = new ArrayList<PetFunction>();
 				result.add(PetFunction.CreateEmpty());
 				petFunctions = result;
-			}
-			else {
+			} else {
 				for (PetFunction func : petFunctions) {
 					if (func.getPetFunctionType().isPlayerFunction()) {
 						hasPlayerFuncs = true;
@@ -106,7 +105,7 @@ public class PetTemplate {
 	public boolean ContainsFunction(PetFunctionType type) {
 		if (type.getId() < 0) {
 			return false;
-        
+
 		}
 		for (PetFunction t : getPetFunctions()) {
 			if (t.getPetFunctionType() == type) {

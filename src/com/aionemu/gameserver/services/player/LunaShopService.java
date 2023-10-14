@@ -59,8 +59,9 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 import javolution.util.FastList;
 
 /****/
-/** Reworked by G-Robson26
- /****/
+/**
+ * Reworked by G-Robson26 /
+ ****/
 
 public class LunaShopService {
 
@@ -71,23 +72,23 @@ public class LunaShopService {
 	private boolean reciveBonus = false;
 	private List<Integer> DailyCraft = new ArrayList<Integer>();
 	private List<Integer> SpecialCraft = new ArrayList<Integer>();
-    private List<Integer> armors = new ArrayList<Integer>();
-    private List<Integer> pants = new ArrayList<Integer>();
-    private List<Integer> shoes = new ArrayList<Integer>();
-    private List<Integer> gloves = new ArrayList<Integer>();
-    private List<Integer> shoulders = new ArrayList<Integer>();
-    private List<Integer> weapons = new ArrayList<Integer>();
+	private List<Integer> armors = new ArrayList<Integer>();
+	private List<Integer> pants = new ArrayList<Integer>();
+	private List<Integer> shoes = new ArrayList<Integer>();
+	private List<Integer> gloves = new ArrayList<Integer>();
+	private List<Integer> shoulders = new ArrayList<Integer>();
+	private List<Integer> weapons = new ArrayList<Integer>();
 
 	public void init() {
 		log.info("Luna Reset");
 		String daily = "0 0 9 1/1 * ? *";
-        String weekly = "0 0 9 ? * WED *";
+		String weekly = "0 0 9 ? * WED *";
 		if (DailyCraft.size() == 0) {
 			generateDailyCraft();
 		}
 		if (SpecialCraft.size() == 0) {
 			generateSpecialCraft();
-		} 
+		}
 
 		CronService.getInstance().schedule(new Runnable() {
 			public void run() {
@@ -145,23 +146,23 @@ public class LunaShopService {
 		weapons.add(10001);
 		int rnd = Rnd.get(1, 6);
 		switch (rnd) {
-			case 1 :
-				SpecialCraft.addAll(weapons);
+		case 1:
+			SpecialCraft.addAll(weapons);
 			break;
-			case 2:
-				SpecialCraft.addAll(armors);
+		case 2:
+			SpecialCraft.addAll(armors);
 			break;
-			case 3 :
-				SpecialCraft.addAll(pants);
+		case 3:
+			SpecialCraft.addAll(pants);
 			break;
-			case 4:
-				SpecialCraft.addAll(shoes);
+		case 4:
+			SpecialCraft.addAll(shoes);
 			break;
-			case 5 :
-				SpecialCraft.addAll(gloves);
+		case 5:
+			SpecialCraft.addAll(gloves);
 			break;
-			case 6:
-				SpecialCraft.addAll(shoulders);
+		case 6:
+			SpecialCraft.addAll(shoulders);
 			break;
 		}
 		if (!specialGenerated) {
@@ -195,7 +196,8 @@ public class LunaShopService {
 				PlayerLunaShop pls = new PlayerLunaShop(true, true, true);
 				pls.setPersistentState(PersistentState.UPDATE_REQUIRED);
 				player.setPlayerLunaShop(pls);
-				DAOManager.getDAO(PlayerLunaShopDAO.class).add(player.getObjectId(), pls.isFreeUnderpath(), pls.isFreeFactory(), pls.isFreeChest());
+				DAOManager.getDAO(PlayerLunaShopDAO.class).add(player.getObjectId(), pls.isFreeUnderpath(),
+						pls.isFreeFactory(), pls.isFreeChest());
 			}
 		});
 	}
@@ -222,7 +224,7 @@ public class LunaShopService {
 	public void sendDailyCraft(Player player) {
 		PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(DailyCraft));
 	}
-	
+
 	private void updateDailyCraft() {
 		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 			@Override
@@ -248,10 +250,11 @@ public class LunaShopService {
 			PlayerLunaShop pls = new PlayerLunaShop(true, true, true);
 			pls.setPersistentState(PersistentState.UPDATE_REQUIRED);
 			player.setPlayerLunaShop(pls);
-			DAOManager.getDAO(PlayerLunaShopDAO.class).add(player.getObjectId(), pls.isFreeUnderpath(), pls.isFreeFactory(), pls.isFreeChest());
+			DAOManager.getDAO(PlayerLunaShopDAO.class).add(player.getObjectId(), pls.isFreeUnderpath(),
+					pls.isFreeFactory(), pls.isFreeChest());
 		}
 
-        //PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(6));
+		// PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(6));
 		PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(7));
 		sendSpecialCraft(player);
 		sendDailyCraft(player);
@@ -354,7 +357,8 @@ public class LunaShopService {
 
 	public void dorinerkWardrobeAct(Player player, int applySlot, int itemObjId) {
 		int itemId = player.getInventory().getItemByObjId(itemObjId).getItemId();
-		int itemOnDB = DAOManager.getDAO(PlayerWardrobeDAO.class).getWardrobeItemBySlot(player.getObjectId(), applySlot);
+		int itemOnDB = DAOManager.getDAO(PlayerWardrobeDAO.class).getWardrobeItemBySlot(player.getObjectId(),
+				applySlot);
 		if (itemOnDB != 0) {
 			DAOManager.getDAO(PlayerWardrobeDAO.class).delete(player.getObjectId(), itemOnDB);
 			player.setLunaAccount(player.getLunaAccount() - 10);
@@ -369,12 +373,14 @@ public class LunaShopService {
 
 	public void dorinerkWardrobeModifyAppearance(Player player, int applySlot, int itemObjId) {
 		int itemId = DAOManager.getDAO(PlayerWardrobeDAO.class).getWardrobeItemBySlot(player.getObjectId(), applySlot);
-		int reskinCount = DAOManager.getDAO(PlayerWardrobeDAO.class).getReskinCountBySlot(player.getObjectId(), applySlot);
+		int reskinCount = DAOManager.getDAO(PlayerWardrobeDAO.class).getReskinCountBySlot(player.getObjectId(),
+				applySlot);
 		ItemTemplate it = DataManager.ITEM_DATA.getItemTemplate(itemId);
 		Storage inventory = player.getInventory();
 		Item keepItem = inventory.getItemByObjId(itemObjId);
 		if (reskinCount != 0) {
-			DAOManager.getDAO(PlayerWardrobeDAO.class).setReskinCountBySlot(player.getObjectId(), applySlot, reskinCount + 1);
+			DAOManager.getDAO(PlayerWardrobeDAO.class).setReskinCountBySlot(player.getObjectId(), applySlot,
+					reskinCount + 1);
 			player.setLunaAccount(player.getLunaAccount() - 15);
 			keepItem.setItemSkinTemplate(it);
 			if (!keepItem.getItemTemplate().isItemDyePermitted()) {
@@ -383,7 +389,8 @@ public class LunaShopService {
 			keepItem.setLunaReskin(true);
 			PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(0, player.getLunaAccount()));
 		} else {
-			DAOManager.getDAO(PlayerWardrobeDAO.class).setReskinCountBySlot(player.getObjectId(), applySlot, reskinCount + 1);
+			DAOManager.getDAO(PlayerWardrobeDAO.class).setReskinCountBySlot(player.getObjectId(), applySlot,
+					reskinCount + 1);
 			keepItem.setItemSkinTemplate(it);
 			if (!keepItem.getItemTemplate().isItemDyePermitted()) {
 				keepItem.setItemColor(0);
@@ -391,7 +398,8 @@ public class LunaShopService {
 			keepItem.setLunaReskin(true);
 		}
 		ItemPacketService.updateItemAfterInfoChange(player, keepItem, ItemUpdateType.STATS_CHANGE);
-		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_CHANGE_ITEM_SKIN_SUCCEED(new DescriptionId(keepItem.getItemTemplate().getNameId())));
+		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+				.STR_CHANGE_ITEM_SKIN_SUCCEED(new DescriptionId(keepItem.getItemTemplate().getNameId())));
 		PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP(11, applySlot));
 	}
 
@@ -415,7 +423,8 @@ public class LunaShopService {
 			if (player.getPlayerLunaShop().isFreeUnderpath()) {
 				WorldMapInstance contaminatedUnderpath = InstanceService.getNextAvailableInstance(301630000);
 				InstanceService.registerPlayerWithInstance(contaminatedUnderpath, player);
-				TeleportService2.teleportTo(player, 301630000, contaminatedUnderpath.getInstanceId(), 230f, 169f, 164f, (byte) 60);
+				TeleportService2.teleportTo(player, 301630000, contaminatedUnderpath.getInstanceId(), 230f, 169f, 164f,
+						(byte) 60);
 				player.getPlayerLunaShop().setLunaShopByObjId(player.getObjectId());
 				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(0));
 				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(1, 1, 45));
@@ -424,7 +433,8 @@ public class LunaShopService {
 			} else {
 				WorldMapInstance contaminatedUnderpath = InstanceService.getNextAvailableInstance(301630000);
 				InstanceService.registerPlayerWithInstance(contaminatedUnderpath, player);
-				TeleportService2.teleportTo(player, 301630000, contaminatedUnderpath.getInstanceId(), 230f, 169f, 164f, (byte) 60);
+				TeleportService2.teleportTo(player, 301630000, contaminatedUnderpath.getInstanceId(), 230f, 169f, 164f,
+						(byte) 60);
 				player.setLunaAccount(player.getLunaAccount() - 89);
 				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(0));
 				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(1, 1, 45));
@@ -435,7 +445,8 @@ public class LunaShopService {
 			if (player.getPlayerLunaShop().isFreeFactory()) {
 				WorldMapInstance secretMunitionsFactory = InstanceService.getNextAvailableInstance(301640000);
 				InstanceService.registerPlayerWithInstance(secretMunitionsFactory, player);
-				TeleportService2.teleportTo(player, 301640000, secretMunitionsFactory.getInstanceId(), 400.3279f, 290.5061f, 198.64015f, (byte) 60);
+				TeleportService2.teleportTo(player, 301640000, secretMunitionsFactory.getInstanceId(), 400.3279f,
+						290.5061f, 198.64015f, (byte) 60);
 				player.getPlayerLunaShop().setLunaShopByObjId(player.getObjectId());
 				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(0));
 				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(1, 1, 47));
@@ -444,7 +455,8 @@ public class LunaShopService {
 			} else {
 				WorldMapInstance secretMunitionsFactory = InstanceService.getNextAvailableInstance(301640000);
 				InstanceService.registerPlayerWithInstance(secretMunitionsFactory, player);
-				TeleportService2.teleportTo(player, 301640000, secretMunitionsFactory.getInstanceId(), 400.3279f, 290.5061f, 198.64015f, (byte) 60);
+				TeleportService2.teleportTo(player, 301640000, secretMunitionsFactory.getInstanceId(), 400.3279f,
+						290.5061f, 198.64015f, (byte) 60);
 				player.setLunaAccount(player.getLunaAccount() - 59);
 				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(0));
 				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(1, 1, 47));
@@ -455,14 +467,14 @@ public class LunaShopService {
 
 	public void teleport(Player player, int action, int teleportId) {
 		switch (action) {
-			case 6:
-				PacketSendUtility.sendMessage(player, "teleportId : " + teleportId);
-				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP(6));
-				break;
-			case 7:
-				PacketSendUtility.sendMessage(player, "teleportId : " + teleportId);
-				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP(7));
-			    break;
+		case 6:
+			PacketSendUtility.sendMessage(player, "teleportId : " + teleportId);
+			PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP(6));
+			break;
+		case 7:
+			PacketSendUtility.sendMessage(player, "teleportId : " + teleportId);
+			PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP(7));
+			break;
 		}
 	}
 
@@ -498,45 +510,46 @@ public class LunaShopService {
 			player.setLunaAccount(player.getLunaAccount() - 19);
 			player.setLunaConsumePoint(player.getLunaConsumePoint() + 25);
 			switch (player.getLunaConsumePoint()) {
-				case 25:
-					reciveBonus = true;
-					player.setLunaConsumeCount(1);
-					break;
-				case 50:
-					reciveBonus = true;
-					player.setLunaConsumeCount(2);
-					break;
-				case 100:
-					reciveBonus = true;
-					player.setLunaConsumeCount(3);
-					muniKeysController(player, player.getMuniKeys() + 1);
-					break;
-				case 150:
-					reciveBonus = true;
-					player.setLunaConsumeCount(4);
-					muniKeysController(player, player.getMuniKeys() + 1);
-					break;
-				case 300:
-					reciveBonus = true;
-					player.setLunaConsumeCount(5);
-					muniKeysController(player, player.getMuniKeys() + 2);
-					break;
-				case 500:
-					reciveBonus = true;
-					player.setLunaConsumeCount(6);
-					muniKeysController(player, player.getMuniKeys() + 2);
-					break;
-				case 1000:
-					reciveBonus = true;
-					player.setLunaConsumeCount(7);
-					muniKeysController(player, player.getMuniKeys() + 3);
-					break;
-				default:
-					reciveBonus = false;
-				    break;
+			case 25:
+				reciveBonus = true;
+				player.setLunaConsumeCount(1);
+				break;
+			case 50:
+				reciveBonus = true;
+				player.setLunaConsumeCount(2);
+				break;
+			case 100:
+				reciveBonus = true;
+				player.setLunaConsumeCount(3);
+				muniKeysController(player, player.getMuniKeys() + 1);
+				break;
+			case 150:
+				reciveBonus = true;
+				player.setLunaConsumeCount(4);
+				muniKeysController(player, player.getMuniKeys() + 1);
+				break;
+			case 300:
+				reciveBonus = true;
+				player.setLunaConsumeCount(5);
+				muniKeysController(player, player.getMuniKeys() + 2);
+				break;
+			case 500:
+				reciveBonus = true;
+				player.setLunaConsumeCount(6);
+				muniKeysController(player, player.getMuniKeys() + 2);
+				break;
+			case 1000:
+				reciveBonus = true;
+				player.setLunaConsumeCount(7);
+				muniKeysController(player, player.getMuniKeys() + 3);
+				break;
+			default:
+				reciveBonus = false;
+				break;
 			}
 			if (reciveBonus) {
-				LunaConsumeRewardsTemplate lt = DataManager.LUNA_CONSUME_REWARDS_DATA.getLunaConsumeRewardsId(player.getLunaConsumeCount());
+				LunaConsumeRewardsTemplate lt = DataManager.LUNA_CONSUME_REWARDS_DATA
+						.getLunaConsumeRewardsId(player.getLunaConsumeCount());
 				ItemService.addItem(player, lt.getCreateItemId(), lt.getCreateItemCount());
 			}
 		}
@@ -555,9 +568,11 @@ public class LunaShopService {
 					ItemService.addItem(player, e.getKey(), e.getValue());
 					ItemTemplate t = DataManager.ITEM_DATA.getItemTemplate(e.getKey());
 					if (e.getValue() == 1) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LUNA_REWARD_GOTCHA_ITEM(t.getNameId()));
+						PacketSendUtility.sendPacket(player,
+								SM_SYSTEM_MESSAGE.STR_MSG_LUNA_REWARD_GOTCHA_ITEM(t.getNameId()));
 					} else if (e.getValue() > 1) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LUNA_REWARD_GOTCHA_ITEM_MULTI(e.getValue(), t.getNameId()));
+						PacketSendUtility.sendPacket(player,
+								SM_SYSTEM_MESSAGE.STR_MSG_LUNA_REWARD_GOTCHA_ITEM_MULTI(e.getValue(), t.getNameId()));
 					}
 				}
 				PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP(mt));
@@ -567,8 +582,10 @@ public class LunaShopService {
 		PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(4, player.getMuniKeys()));
 		PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP_LIST(0, player.getLunaAccount()));
 		// As you spend Luna, you can earn keys to open Munirunerks Treasure Chest.
-		// If you do not have any keys, you can spend 3 Luna to open a chest immediately.
-		// The Luna you spend on opening chests will also count towards your Luna Rewards!
+		// If you do not have any keys, you can spend 3 Luna to open a chest
+		// immediately.
+		// The Luna you spend on opening chests will also count towards your Luna
+		// Rewards!
 	}
 
 	public void onLogout(Player player) {
@@ -579,16 +596,16 @@ public class LunaShopService {
 
 	private int wardrobePrice(int WardrobeSlot) { // Done
 		switch (WardrobeSlot) {
-			case 1:
-			case 2:
-			case 3:
-			case 4:
-				return 69;
-			case 5:
-			case 6:
-			case 7:
-			case 8:
-				return 99;
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+			return 69;
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+			return 99;
 		}
 		return 0;
 	}
@@ -631,7 +648,7 @@ public class LunaShopService {
 		System.out.println("Consum: " + player.getLunaConsumePoint());
 	}
 
-	public void diceGameReward(Player player) { //TODO
+	public void diceGameReward(Player player) { // TODO
 		ItemService.addItem(player, 162001014, 4);
 		PacketSendUtility.sendPacket(player, new SM_LUNA_SHOP(16, 162001014, 4));
 		player.setLunaDiceGame(0, true);
@@ -641,28 +658,28 @@ public class LunaShopService {
 
 	public int lunaDicePrice(int diceTry) { // Done
 		switch (diceTry) {
-			case 0:
-				return 20;
-			case 1:
-				return 22;
-			case 2:
-				return 24;
-			case 3:
-				return 26;
-			case 4:
-			case 5:
-				return 30;
-			case 6:
-				return 32;
-			case 7:
-				return 36;
-			case 8:
-			case 9:
-				return 38;
-			case 10:
-				return 40;
-			default:
-				return 40;
+		case 0:
+			return 20;
+		case 1:
+			return 22;
+		case 2:
+			return 24;
+		case 3:
+			return 26;
+		case 4:
+		case 5:
+			return 30;
+		case 6:
+			return 32;
+		case 7:
+			return 36;
+		case 8:
+		case 9:
+			return 38;
+		case 10:
+			return 40;
+		default:
+			return 40;
 		}
 	}
 

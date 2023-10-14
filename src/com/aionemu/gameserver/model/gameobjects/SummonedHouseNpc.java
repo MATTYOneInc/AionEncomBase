@@ -25,7 +25,8 @@ public class SummonedHouseNpc extends SummonedObject<House> {
 
 	String masterName;
 
-	public SummonedHouseNpc(int objId, NpcController controller, SpawnTemplate spawnTemplate, NpcTemplate npcTemplate, House house, String masterName) {
+	public SummonedHouseNpc(int objId, NpcController controller, SpawnTemplate spawnTemplate, NpcTemplate npcTemplate,
+			House house, String masterName) {
 		super(objId, controller, spawnTemplate, npcTemplate, npcTemplate.getLevel());
 		setCreator(house);
 		this.masterName = masterName;

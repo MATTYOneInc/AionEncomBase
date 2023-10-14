@@ -33,36 +33,35 @@ import com.aionemu.gameserver.model.templates.spawns.Spawn;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NightmareCircusSpawn")
-public class NightmareCircusSpawn
-{
+public class NightmareCircusSpawn {
 	@XmlAttribute(name = "id")
 	private int id;
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	@XmlElement(name = "nightmare_circus_type")
 	private List<NightmareCircusSpawn.NightmareCircusStateTemplate> NightmareCircusStateTemplate;
-	
+
 	public List<NightmareCircusStateTemplate> getSiegeModTemplates() {
 		return NightmareCircusStateTemplate;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlType(name = "NightmareCircusStateTemplate")
 	public static class NightmareCircusStateTemplate {
-	
+
 		@XmlElement(name = "spawn")
 		private List<Spawn> spawns;
-		
+
 		@XmlAttribute(name = "nstate")
 		private NightmareCircusStateType nightmareCircusType;
-		
+
 		public List<Spawn> getSpawns() {
 			return spawns;
 		}
-		
+
 		public NightmareCircusStateType getNightmareCircusType() {
 			return nightmareCircusType;
 		}

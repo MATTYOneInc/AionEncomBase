@@ -33,43 +33,42 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ResurrectBaseEffect")
-public class ResurrectBaseEffect extends ResurrectEffect
-{
+public class ResurrectBaseEffect extends ResurrectEffect {
 	@Override
-    public void calculate(Effect effect) {
-        calculate(effect, null, null);
-    }
-	
-    @Override
-    public void applyEffect(Effect effect) {
-        effect.addToEffectedController();
-    }
-	
-    @Override
-    public void startEffect(final Effect effect) {
-        final Creature effected = effect.getEffected();
-        if (effected instanceof Player) {
-            ActionObserver observer = new ActionObserver(ObserverType.DEATH) {
-                @Override
-                public void died(Creature creature) {
-                    Player effected = (Player) effect.getEffected();
-                    if (effected.isInInstance()) {
-                        PlayerReviveService.instanceRevive(effected, skillId);
-                    } else if (effected.getKisk() != null) {
-                        PlayerReviveService.kiskRevive(effected, skillId);
-                    } else {
-                        PlayerReviveService.bindRevive(effected, skillId);
-                    }
-                    PacketSendUtility.broadcastPacket(effected, new SM_EMOTION(effected, EmotionType.RESURRECT), true);
-                    PacketSendUtility.sendPacket(effected, new SM_PLAYER_SPAWN(effected));
-                }
-            };
-            effect.getEffected().getObserveController().attach(observer);
-            effect.setActionObserver(observer, position);
-        }
-    }
-	
-    @Override
-    public void endEffect(Effect effect) {
-    }
+	public void calculate(Effect effect) {
+		calculate(effect, null, null);
+	}
+
+	@Override
+	public void applyEffect(Effect effect) {
+		effect.addToEffectedController();
+	}
+
+	@Override
+	public void startEffect(final Effect effect) {
+		final Creature effected = effect.getEffected();
+		if (effected instanceof Player) {
+			ActionObserver observer = new ActionObserver(ObserverType.DEATH) {
+				@Override
+				public void died(Creature creature) {
+					Player effected = (Player) effect.getEffected();
+					if (effected.isInInstance()) {
+						PlayerReviveService.instanceRevive(effected, skillId);
+					} else if (effected.getKisk() != null) {
+						PlayerReviveService.kiskRevive(effected, skillId);
+					} else {
+						PlayerReviveService.bindRevive(effected, skillId);
+					}
+					PacketSendUtility.broadcastPacket(effected, new SM_EMOTION(effected, EmotionType.RESURRECT), true);
+					PacketSendUtility.sendPacket(effected, new SM_PLAYER_SPAWN(effected));
+				}
+			};
+			effect.getEffected().getObserveController().attach(observer);
+			effect.setActionObserver(observer, position);
+		}
+	}
+
+	@Override
+	public void endEffect(Effect effect) {
+	}
 }

@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "idian_depths")
-public class IdianDepthsData
-{
+public class IdianDepthsData {
 	@XmlElement(name = "idian_location")
 	private List<IdianDepthsTemplate> idianDepthsTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, IdianDepthsLocation> idianDepths = new FastMap<Integer, IdianDepthsLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (IdianDepthsTemplate template : idianDepthsTemplates) {
 			idianDepths.put(template.getId(), new IdianDepthsLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return idianDepths.size();
 	}
-	
+
 	public FastMap<Integer, IdianDepthsLocation> getIdianDepthsLocations() {
 		return idianDepths;
 	}

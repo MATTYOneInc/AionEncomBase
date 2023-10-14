@@ -67,8 +67,7 @@ public class HealCastorOnAttackedEffect extends EffectTemplate {
 							p.getController().onRestore(type, valueWithDelta);
 						}
 					}
-				}
-				else if (player.isInAlliance2()) {
+				} else if (player.isInAlliance2()) {
 					for (Player p : player.getPlayerAllianceGroup2().getMembers()) {
 						if (!p.isOnline()) {
 							continue;
@@ -77,8 +76,7 @@ public class HealCastorOnAttackedEffect extends EffectTemplate {
 							p.getController().onRestore(type, valueWithDelta);
 						}
 					}
-				}
-				else {
+				} else {
 					if (MathUtil.isIn3dRange(effect.getEffected(), player, range)) {
 						player.getController().onRestore(type, valueWithDelta);
 					}

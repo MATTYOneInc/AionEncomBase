@@ -27,8 +27,7 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.MailServicePacket;
 import com.aionemu.gameserver.utils.collections.ListSplitter;
 
-public class SM_MAIL_SERVICE extends MailServicePacket
-{
+public class SM_MAIL_SERVICE extends MailServicePacket {
 	private int serviceId;
 	private Collection<Letter> letters;
 	private int totalCount;
@@ -42,51 +41,51 @@ public class SM_MAIL_SERVICE extends MailServicePacket
 	private int[] letterIds;
 	private int attachmentType;
 	private boolean isExpress;
-	
+
 	public SM_MAIL_SERVICE(Mailbox mailbox) {
 		super(null);
 		this.serviceId = 0;
 	}
-	
+
 	public SM_MAIL_SERVICE(MailMessage mailMessage) {
 		super(null);
 		this.serviceId = 1;
 		this.mailMessage = mailMessage.getId();
 	}
-	
+
 	public SM_MAIL_SERVICE(Player player, Collection<Letter> letters) {
 		super(player);
 		this.serviceId = 2;
 		this.letters = letters;
 	}
-	
+
 	public SM_MAIL_SERVICE(Player player, Collection<Letter> letters, boolean isExpress) {
 		super(player);
 		this.serviceId = 2;
 		this.letters = letters;
 		this.isExpress = isExpress;
 	}
-	
+
 	public SM_MAIL_SERVICE(Player player, Letter letter, long time) {
 		super(player);
 		this.serviceId = 3;
 		this.letter = letter;
 		this.time = time;
 	}
-	
+
 	public SM_MAIL_SERVICE(int letterId, int attachmentType) {
 		super(null);
 		this.serviceId = 5;
 		this.letterId = letterId;
 		this.attachmentType = attachmentType;
 	}
-	
+
 	public SM_MAIL_SERVICE(int[] letterIds) {
 		super(null);
 		this.serviceId = 6;
 		this.letterIds = letterIds;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		Mailbox mailbox = con.getActivePlayer().getMailbox();
@@ -96,32 +95,32 @@ public class SM_MAIL_SERVICE extends MailServicePacket
 		this.unreadBlackCloudCount = mailbox.getUnreadCountByType(LetterType.BLACKCLOUD);
 		writeC(serviceId);
 		switch (serviceId) {
-			case 0:
-				mailbox.isMailListUpdateRequired = true;
-				writeMailboxState(totalCount, unreadCount, unreadExpressCount, unreadBlackCloudCount);
+		case 0:
+			mailbox.isMailListUpdateRequired = true;
+			writeMailboxState(totalCount, unreadCount, unreadExpressCount, unreadBlackCloudCount);
 			break;
-			case 1:
-				writeMailMessage(mailMessage);
+		case 1:
+			writeMailMessage(mailMessage);
 			break;
-			case 2:
-				Collection<Letter> _letters;
-				if (!letters.isEmpty()) {
-					ListSplitter<Letter> splittedLetters = new ListSplitter<Letter>(letters, 100);
-					_letters = splittedLetters.getNext();
-				} else {
-					_letters = letters;
-				}
-				writeLettersList(_letters, player, isExpress, unreadExpressCount + unreadBlackCloudCount);
+		case 2:
+			Collection<Letter> _letters;
+			if (!letters.isEmpty()) {
+				ListSplitter<Letter> splittedLetters = new ListSplitter<Letter>(letters, 100);
+				_letters = splittedLetters.getNext();
+			} else {
+				_letters = letters;
+			}
+			writeLettersList(_letters, player, isExpress, unreadExpressCount + unreadBlackCloudCount);
 			break;
-			case 3:
-				writeLetterRead(letter, time, totalCount, unreadCount, unreadExpressCount, unreadBlackCloudCount);
+		case 3:
+			writeLetterRead(letter, time, totalCount, unreadCount, unreadExpressCount, unreadBlackCloudCount);
 			break;
-			case 5:
-				writeLetterState(letterId, attachmentType);
+		case 5:
+			writeLetterState(letterId, attachmentType);
 			break;
-			case 6:
-				mailbox.isMailListUpdateRequired = true;
-				writeLetterDelete(totalCount, unreadCount, unreadExpressCount, unreadBlackCloudCount, letterIds);
+		case 6:
+			mailbox.isMailListUpdateRequired = true;
+			writeLetterDelete(totalCount, unreadCount, unreadExpressCount, unreadBlackCloudCount, letterIds);
 			break;
 		}
 	}

@@ -37,35 +37,34 @@ import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "boost_events")
-public class BoostEventdata
-{
-    @XmlElement(name = "boost_event")
-    protected List<BoostEvents> bonusServiceBonusattr;
-	
-    @XmlTransient
-    private TIntObjectHashMap<BoostEvents> templates = new TIntObjectHashMap<BoostEvents>();
-	
-    @XmlTransient
-    private Map<Integer, BoostEvents> templatesMap = new HashMap<Integer, BoostEvents>();
-	
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        for (BoostEvents template : bonusServiceBonusattr) {
-            templates.put(template.getId(), template);
-            templatesMap.put(template.getId(), template);
-        }
-        bonusServiceBonusattr.clear();
-        bonusServiceBonusattr = null;
-    }
-	
-    public int size() {
-        return templates.size();
-    }
-	
-    public BoostEvents getInstanceBonusattr(int buffId) {
-        return templates.get(buffId);
-    }
-	
-    public Map<Integer, BoostEvents> getAll() {
-        return templatesMap;
-    }
+public class BoostEventdata {
+	@XmlElement(name = "boost_event")
+	protected List<BoostEvents> bonusServiceBonusattr;
+
+	@XmlTransient
+	private TIntObjectHashMap<BoostEvents> templates = new TIntObjectHashMap<BoostEvents>();
+
+	@XmlTransient
+	private Map<Integer, BoostEvents> templatesMap = new HashMap<Integer, BoostEvents>();
+
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		for (BoostEvents template : bonusServiceBonusattr) {
+			templates.put(template.getId(), template);
+			templatesMap.put(template.getId(), template);
+		}
+		bonusServiceBonusattr.clear();
+		bonusServiceBonusattr = null;
+	}
+
+	public int size() {
+		return templates.size();
+	}
+
+	public BoostEvents getInstanceBonusattr(int buffId) {
+		return templates.get(buffId);
+	}
+
+	public Map<Integer, BoostEvents> getAll() {
+		return templatesMap;
+	}
 }

@@ -44,19 +44,19 @@ public class ItemCleanupTemplate {
 	public byte resultTrade() {
 		return trade;
 	}
-	
+
 	public byte resultSell() {
 		return sell;
 	}
-	
+
 	public byte resultWH() {
 		return wh;
 	}
-	
+
 	public byte resultAccountWH() {
 		return awh;
 	}
-	
+
 	public byte resultLegionWH() {
 		return lwh;
 	}

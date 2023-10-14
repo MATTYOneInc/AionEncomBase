@@ -20,8 +20,6 @@ package com.aionemu.gameserver.model.towerofeternity;
  * Created by Wnkrz on 22/08/2017.
  */
 
-public enum TowerOfEternityStateType
-{
-    OPEN,
-    CLOSED;
+public enum TowerOfEternityStateType {
+	OPEN, CLOSED;
 }

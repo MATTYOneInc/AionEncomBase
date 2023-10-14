@@ -59,7 +59,8 @@ public class SiegeWeaponController extends SummonController {
 		getOwner().setTarget(getMaster());
 		getOwner().getAi2().onCreatureEvent(AIEventType.FOLLOW_ME, getMaster());
 		getOwner().getMoveController().moveToTargetObject();
-		getMaster().getController().addTask(TaskId.SUMMON_FOLLOW, FollowStartService.newFollowingToTargetCheckTask(getOwner(), getMaster()));
+		getMaster().getController().addTask(TaskId.SUMMON_FOLLOW,
+				FollowStartService.newFollowingToTargetCheckTask(getOwner(), getMaster()));
 	}
 
 	@Override
@@ -72,7 +73,8 @@ public class SiegeWeaponController extends SummonController {
 		getOwner().setTarget(target);
 		getOwner().getAi2().onCreatureEvent(AIEventType.FOLLOW_ME, target);
 		getOwner().getMoveController().moveToTargetObject();
-		getMaster().getController().addTask(TaskId.SUMMON_FOLLOW, FollowStartService.newFollowingToTargetCheckTask(getOwner(), target));
+		getMaster().getController().addTask(TaskId.SUMMON_FOLLOW,
+				FollowStartService.newFollowingToTargetCheckTask(getOwner(), target));
 	}
 
 	@Override

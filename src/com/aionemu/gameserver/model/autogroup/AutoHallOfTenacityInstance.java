@@ -27,10 +27,9 @@ import com.aionemu.gameserver.services.instance.HallOfTenacityService;
 /**
  * @author Ranastic
  */
-public class AutoHallOfTenacityInstance extends AutoInstance
-{
+public class AutoHallOfTenacityInstance extends AutoInstance {
 	private Logger log = LoggerFactory.getLogger(AutoHallOfTenacityInstance.class);
-	
+
 	@Override
 	public AGQuestion addPlayer(Player player, SearchInstance searchInstance) {
 		super.writeLock();
@@ -39,13 +38,13 @@ public class AutoHallOfTenacityInstance extends AutoInstance
 				return AGQuestion.FAILED;
 			}
 			players.put(player.getObjectId(), new AGPlayer(player));
-			return instance != null ? AGQuestion.ADDED : (players.size() == agt.getPlayerSize() ? AGQuestion.READY : AGQuestion.ADDED);
-		}
-		finally {
+			return instance != null ? AGQuestion.ADDED
+					: (players.size() == agt.getPlayerSize() ? AGQuestion.READY : AGQuestion.ADDED);
+		} finally {
 			super.writeUnlock();
 		}
 	}
-	
+
 	@Override
 	public void onPressEnter(Player player) {
 		super.onPressEnter(player);

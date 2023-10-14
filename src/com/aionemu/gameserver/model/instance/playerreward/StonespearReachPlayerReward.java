@@ -17,44 +17,48 @@
 package com.aionemu.gameserver.model.instance.playerreward;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class StonespearReachPlayerReward extends InstancePlayerReward
-{
+public class StonespearReachPlayerReward extends InstancePlayerReward {
 	private int scoreAP;
 	private int ceramium;
 	private boolean isRewarded = false;
 	private boolean isPlayerLeave = false;
-	
+
 	public StonespearReachPlayerReward(Integer object) {
 		super(object);
 	}
-	
+
 	public boolean isRewarded() {
 		return isRewarded;
 	}
+
 	public void setRewarded() {
 		isRewarded = true;
 	}
-	
+
 	public boolean isPlayerLeave() {
 		return isPlayerLeave;
 	}
+
 	public void setPlayerLeave() {
 		isPlayerLeave = true;
 	}
-	
+
 	public int getScoreAP() {
 		return scoreAP;
 	}
+
 	public void setScoreAP(int ap) {
 		this.scoreAP = ap;
 	}
-	
+
 	public int getCeramium() {
 		return ceramium;
 	}
+
 	public void setCeramium(int ceramium) {
 		this.ceramium = ceramium;
 	}

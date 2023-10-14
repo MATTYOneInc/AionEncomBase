@@ -78,7 +78,8 @@ public final class FloodManager {
 				_lastTick = currentTick;
 				Arrays.fill(_ticks, (short) 0);
 			} else if (_lastTick > currentTick) {
-				log.warn("The current tick (" + currentTick + ") is smaller than the last (" + _lastTick + ")!", new IllegalStateException());
+				log.warn("The current tick (" + currentTick + ") is smaller than the last (" + _lastTick + ")!",
+						new IllegalStateException());
 				_lastTick = currentTick;
 			} else
 				while (currentTick != _lastTick) {
@@ -88,7 +89,7 @@ public final class FloodManager {
 
 			if (increment) {
 				_ticks[_lastTick % _ticks.length]++;
-            }
+			}
 			for (FloodFilter filter : _filters) {
 				int previousSum = 0;
 				int currentSum = 0;
@@ -98,7 +99,7 @@ public final class FloodManager {
 
 					if (i != 0) {
 						previousSum += value;
-                    }
+					}
 					if (i != filter.getTickLimit()) {
 						currentSum += value;
 					}
@@ -106,7 +107,7 @@ public final class FloodManager {
 
 				if (previousSum > filter.getRejectLimit() || currentSum > filter.getRejectLimit()) {
 					return Result.REJECTED;
-                }
+				}
 				if (previousSum > filter.getWarnLimit() || currentSum > filter.getWarnLimit()) {
 					return Result.WARNED;
 				}
@@ -121,7 +122,7 @@ public final class FloodManager {
 		public static Result max(final Result r1, final Result r2) {
 			if (r1.ordinal() > r2.ordinal()) {
 				return r1;
-            }
+			}
 			return r2;
 		}
 	}
@@ -147,7 +148,7 @@ public final class FloodManager {
 
 		for (FloodFilter filter : _filters) {
 			max = Math.max(filter.getTickLimit() + 1, max);
-        }
+		}
 		_tickAmount = max;
 
 		NetFlusher.add(new Runnable() {
@@ -164,7 +165,7 @@ public final class FloodManager {
 			for (Iterator<LogEntry> it = _entries.values().iterator(); it.hasNext();) {
 				if (it.next().isActive()) {
 					continue;
-                }
+				}
 				it.remove();
 			}
 		} finally {
@@ -175,7 +176,7 @@ public final class FloodManager {
 	public Result isFlooding(final String key, final boolean increment) {
 		if (key == null || key.isEmpty()) {
 			return Result.REJECTED;
-        }
+		}
 		_lock.lock();
 		try {
 			LogEntry entry = _entries.get(key);

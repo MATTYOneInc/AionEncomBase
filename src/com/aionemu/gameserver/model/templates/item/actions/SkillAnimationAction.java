@@ -32,9 +32,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 @XmlType(name = "SkillAnimationAction")
 public class SkillAnimationAction extends AbstractItemAction {
 
-	@XmlAttribute(name="skin_id")
+	@XmlAttribute(name = "skin_id")
 	protected int skinId;
-	@XmlAttribute(name="minutes")
+	@XmlAttribute(name = "minutes")
 	protected int minutes;
 	private int expireTime = 0;
 
@@ -49,8 +49,9 @@ public class SkillAnimationAction extends AbstractItemAction {
 	@Override
 	public void act(Player player, Item parentItem, Item targetItem) {
 		ItemTemplate itemTemplate = parentItem.getItemTemplate();
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
-		if (minutes > 0 ) {
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+				parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
+		if (minutes > 0) {
 			expireTime = (int) (System.currentTimeMillis() / 1000 + minutes * 60);
 		}
 		player.getSkillSkinList().addSkillSkin(skinId, minutes * 60, expireTime);

@@ -51,7 +51,7 @@ public class FollowSummonTaskAI implements Runnable {
 		targetY = target.getY();
 		targetZ = target.getZ();
 	}
-	
+
 	@Override
 	public void run() {
 		if (target == null || summon == null || master == null) {
@@ -69,8 +69,7 @@ public class FollowSummonTaskAI implements Runnable {
 				setLeadingCoordinates();
 				onOutOfTargetRange();
 			}
-		}
-		else if (!master.equals(target)) {
+		} else if (!master.equals(target)) {
 			onDestination();
 		}
 	}

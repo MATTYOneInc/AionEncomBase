@@ -177,7 +177,7 @@ public class DDSConverter {
 		colorPoints[1] = colors[extremaIndices[1]];
 		if (colorPoints[0].equals(colorPoints[1])) {
 			return 0;
-        }
+		}
 		colorPoints[2].r = (2 * colorPoints[0].r + colorPoints[1].r + 1) / 3;
 		colorPoints[2].g = (2 * colorPoints[0].g + colorPoints[1].g + 1) / 3;
 		colorPoints[2].b = (2 * colorPoints[0].b + colorPoints[1].b + 1) / 3;

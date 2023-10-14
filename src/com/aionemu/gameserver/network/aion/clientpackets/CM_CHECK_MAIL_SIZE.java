@@ -21,22 +21,22 @@ import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class CM_CHECK_MAIL_SIZE extends AionClientPacket
-{
-	public int mailSize; 
-	
+public class CM_CHECK_MAIL_SIZE extends AionClientPacket {
+	public int mailSize;
+
 	public CM_CHECK_MAIL_SIZE(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		mailSize = readC();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();

@@ -23,20 +23,19 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 /**
  * @author (Encom)
  */
-public class SM_MEGAPHONE_MESSAGE extends AionServerPacket
-{
+public class SM_MEGAPHONE_MESSAGE extends AionServerPacket {
 	private Player player;
 	private String message;
 	private int itemId;
 	private boolean isAll;
-	
+
 	public SM_MEGAPHONE_MESSAGE(Player player, String message, int itemId, boolean isAll) {
 		this.player = player;
 		this.message = message;
 		this.itemId = itemId;
 		this.isAll = isAll;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection client) {
 		writeS(player.getName());

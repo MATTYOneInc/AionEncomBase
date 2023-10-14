@@ -31,7 +31,7 @@ import com.aionemu.gameserver.model.templates.pet.PetBonusAttr;
 import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"petBonusattr"})
+@XmlType(name = "", propOrder = { "petBonusattr" })
 @XmlRootElement(name = "pet_bonusattrs")
 public class PetBuffData {
 
@@ -57,7 +57,7 @@ public class PetBuffData {
 	public PetBonusAttr getPetBonusattr(int buffId) {
 		return templates.get(buffId);
 	}
-	
+
 	public PetBonusAttr getFoodCount(int count) {
 		return templates.get(count);
 	}

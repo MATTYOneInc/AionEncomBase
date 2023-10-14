@@ -43,8 +43,7 @@ public class CM_PETITION extends AionClientPacket {
 		action = readH();
 		if (action == 2) {
 			readD();
-		}
-		else {
+		} else {
 			String data = readS();
 			String[] dataArr = data.split("/", 3);
 			title = dataArr[0];
@@ -56,7 +55,7 @@ public class CM_PETITION extends AionClientPacket {
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
-		int playerObjId =  player.getObjectId();
+		int playerObjId = player.getObjectId();
 		if (action == 2) {
 			if (PetitionService.getInstance().hasRegisteredPetition(playerObjId)) {
 				int petitionId = PetitionService.getInstance().getPetition(playerObjId).getPetitionId();
@@ -68,7 +67,8 @@ public class CM_PETITION extends AionClientPacket {
 		}
 
 		if (!PetitionService.getInstance().hasRegisteredPetition(playerObjId)) {
-			Petition petition = PetitionService.getInstance().registerPetition(player, action, title, text, additionalData);
+			Petition petition = PetitionService.getInstance().registerPetition(player, action, title, text,
+					additionalData);
 			sendPacket(new SM_PETITION(petition));
 		}
 	}

@@ -24,56 +24,56 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.restrictions.RestrictionsManager;
 
 /**
- * @developer_note_dont_remove tool:165010001, 1st stone:166000094, 2nd stone: 166000095
+ * @developer_note_dont_remove tool:165010001, 1st stone:166000094, 2nd stone:
+ *                             166000095
  */
-public class CM_COMPOSITE_STONES extends AionClientPacket
-{
-    private int compinationToolItemObjectId;
-    private int firstItemObjectId;
-    private int secondItemObjectId;
-	
-    public CM_COMPOSITE_STONES(int opcode, AionConnection.State state, AionConnection.State... restStates) {
-        super(opcode, state, restStates);
-    }
-	
-    @Override
-    protected void readImpl() {
-        compinationToolItemObjectId = readD();
-        firstItemObjectId = readD();
-        secondItemObjectId = readD();
-    }
-	
-    @Override
-    protected void runImpl() {
-        Player player = getConnection().getActivePlayer();
-        if (player == null) {
-            return;
+public class CM_COMPOSITE_STONES extends AionClientPacket {
+	private int compinationToolItemObjectId;
+	private int firstItemObjectId;
+	private int secondItemObjectId;
+
+	public CM_COMPOSITE_STONES(int opcode, AionConnection.State state, AionConnection.State... restStates) {
+		super(opcode, state, restStates);
+	}
+
+	@Override
+	protected void readImpl() {
+		compinationToolItemObjectId = readD();
+		firstItemObjectId = readD();
+		secondItemObjectId = readD();
+	}
+
+	@Override
+	protected void runImpl() {
+		Player player = getConnection().getActivePlayer();
+		if (player == null) {
+			return;
 		}
-        if (player.isProtectionActive()) {
-            player.getController().stopProtectionActiveTask();
-        }
-        if (player.isCasting()) {
-            player.getController().cancelCurrentSkill();
-        }
-        Item tools = player.getInventory().getItemByObjId(compinationToolItemObjectId);
-        if (tools == null) {
-            return;
+		if (player.isProtectionActive()) {
+			player.getController().stopProtectionActiveTask();
 		}
-        Item first = player.getInventory().getItemByObjId(firstItemObjectId);
-        if (first == null) {
-            return;
+		if (player.isCasting()) {
+			player.getController().cancelCurrentSkill();
 		}
-        Item second = player.getInventory().getItemByObjId(secondItemObjectId);
-        if (second == null) {
-            return;
+		Item tools = player.getInventory().getItemByObjId(compinationToolItemObjectId);
+		if (tools == null) {
+			return;
 		}
-        if (!RestrictionsManager.canUseItem(player, tools)) {
-            return;
+		Item first = player.getInventory().getItemByObjId(firstItemObjectId);
+		if (first == null) {
+			return;
 		}
-        CompositionAction action = new CompositionAction();
-        if (!action.canAct(player, tools, first, second)) {
-            return;
+		Item second = player.getInventory().getItemByObjId(secondItemObjectId);
+		if (second == null) {
+			return;
 		}
-        action.act(player, tools, first, second);
-    }
+		if (!RestrictionsManager.canUseItem(player, tools)) {
+			return;
+		}
+		CompositionAction action = new CompositionAction();
+		if (!action.canAct(player, tools, first, second)) {
+			return;
+		}
+		action.act(player, tools, first, second);
+	}
 }

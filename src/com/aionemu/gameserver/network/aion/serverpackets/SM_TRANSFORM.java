@@ -23,22 +23,21 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.skillengine.model.TransformType;
 
-public class SM_TRANSFORM extends AionServerPacket
-{
+public class SM_TRANSFORM extends AionServerPacket {
 	private Creature creature;
 	private int state;
 	private int modelId;
 	private boolean applyEffect;
 	private int panelId;
 	private int itemId;
-	
+
 	public SM_TRANSFORM(Creature creature, boolean applyEffect) {
 		this.creature = creature;
 		this.state = creature.getState();
 		modelId = creature.getTransformModel().getModelId();
 		this.applyEffect = applyEffect;
 	}
-	
+
 	public SM_TRANSFORM(Creature creature, int panelId, boolean applyEffect, int itemId) {
 		this.creature = creature;
 		this.state = creature.getState();
@@ -47,7 +46,7 @@ public class SM_TRANSFORM extends AionServerPacket
 		this.applyEffect = applyEffect;
 		this.itemId = itemId;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(modelId);

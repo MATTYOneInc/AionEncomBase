@@ -80,18 +80,20 @@ public class MailService {
 	 * @param attachedItemCount
 	 * @param attachedKinahCount
 	 */
-	public void sendMail(Player sender, String recipientName, String title, String message, int attachedItemObjId, int attachedItemCount, int attachedKinahCount, int attachedApCount, LetterType letterType) {
+	public void sendMail(Player sender, String recipientName, String title, String message, int attachedItemObjId,
+			int attachedItemCount, int attachedKinahCount, int attachedApCount, LetterType letterType) {
 
 		if (letterType == LetterType.BLACKCLOUD || recipientName.length() > 16) {
 			return;
-        }
+		}
 		if (title.length() > 20) {
 			title = title.substring(0, 20);
-        }
+		}
 		if (message.length() > 1000) {
 			message = message.substring(0, 1000);
-        }
-		PlayerCommonData recipientCommonData = DAOManager.getDAO(PlayerDAO.class).loadPlayerCommonDataByName(recipientName);
+		}
+		PlayerCommonData recipientCommonData = DAOManager.getDAO(PlayerDAO.class)
+				.loadPlayerCommonDataByName(recipientName);
 
 		if (recipientCommonData == null) {
 			PacketSendUtility.sendPacket(sender, new SM_MAIL_SERVICE(MailMessage.NO_SUCH_CHARACTER_NAME));
@@ -109,15 +111,14 @@ public class MailService {
 				PacketSendUtility.sendPacket(sender, new SM_MAIL_SERVICE(MailMessage.RECIPIENT_MAILBOX_FULL));
 				return;
 			}
-		}
-		else if (recipientCommonData.getMailboxLetters() > 99) {
+		} else if (recipientCommonData.getMailboxLetters() > 99) {
 			PacketSendUtility.sendPacket(sender, new SM_MAIL_SERVICE(MailMessage.RECIPIENT_MAILBOX_FULL));
 			return;
 		}
 
 		if (!validateMailSendPrice(sender, attachedKinahCount, attachedItemObjId, attachedItemCount)) {
 			return;
-        }
+		}
 		Item attachedItem = null;
 		int finalAttachedKinahCount = 0;
 		int finaAttachedApCount = 0;
@@ -136,30 +137,30 @@ public class MailService {
 
 			if (!AdminService.getInstance().canOperate(sender, null, senderItem, "mail")) {
 				return;
-            }
+			}
 			float qualityPriceRate;
 			switch (senderItem.getItemTemplate().getItemQuality()) {
-				case JUNK:
-				case COMMON:
-					qualityPriceRate = 0.02f;
-					break;
+			case JUNK:
+			case COMMON:
+				qualityPriceRate = 0.02f;
+				break;
 
-				case RARE:
-					qualityPriceRate = 0.03f;
-					break;
+			case RARE:
+				qualityPriceRate = 0.03f;
+				break;
 
-				case LEGEND:
-				case UNIQUE:
-					qualityPriceRate = 0.04f;
-					break;
+			case LEGEND:
+			case UNIQUE:
+				qualityPriceRate = 0.04f;
+				break;
 
-				case MYTHIC:
-				case EPIC:
-					qualityPriceRate = 0.05f;
-					break;
+			case MYTHIC:
+			case EPIC:
+				qualityPriceRate = 0.05f;
+				break;
 
-				default:
-					qualityPriceRate = 0.02f;
+			default:
+				qualityPriceRate = 0.02f;
 				break;
 			}
 
@@ -170,16 +171,16 @@ public class MailService {
 			// Check Mailing untradables with Cash items (Special courier passes)
 			if (!senderItem.isTradeable(sender)) {
 				Disposition dispo = senderItem.getItemTemplate().getDisposition();
-				if (dispo == null || dispo.getId() == 0 || dispo.getCount() == 0) { //can not be traded, hack
+				if (dispo == null || dispo.getId() == 0 || dispo.getCount() == 0) { // can not be traded, hack
 					return;
-                }
+				}
 				if (senderInventory.getItemCountByItemId(dispo.getId()) >= dispo.getCount()) {
 					senderInventory.decreaseByItemId(dispo.getId(), dispo.getCount());
-				}
-				else {
+				} else {
 					return;
-                }
-				if (senderItem.getWrappableCount() <= senderItem.getItemTemplate().getWrappableCount() && !senderItem.isPacked()) {
+				}
+				if (senderItem.getWrappableCount() <= senderItem.getItemTemplate().getWrappableCount()
+						&& !senderItem.isPacked()) {
 					return;
 				}
 			}
@@ -189,19 +190,19 @@ public class MailService {
 				senderInventory.remove(senderItem);
 				PacketSendUtility.sendPacket(sender, new SM_DELETE_ITEM(attachedItemObjId));
 				attachedItem = senderItem;
-			}
-			else if (senderItem.getItemCount() > attachedItemCount) {
+			} else if (senderItem.getItemCount() > attachedItemCount) {
 				attachedItem = ItemFactory.newItem(senderItem.getItemTemplate().getTemplateId(), attachedItemCount);
 				senderInventory.decreaseItemCount(senderItem, attachedItemCount);
 			}
 
 			if (attachedItem == null) {
 				return;
-            }
+			}
 			attachedItem.setEquipped(false);
 			attachedItem.setEquipmentSlot(0);
 			attachedItem.setItemLocation(StorageType.MAILBOX.getId());
-			itemMailCommission = Math.round((attachedItem.getItemTemplate().getPrice() * attachedItem.getItemCount()) * qualityPriceRate);
+			itemMailCommission = Math.round(
+					(attachedItem.getItemTemplate().getPrice() * attachedItem.getItemCount()) * qualityPriceRate);
 		}
 
 		/**
@@ -213,7 +214,7 @@ public class MailService {
 				kinahMailCommission = Math.round(attachedKinahCount * 0.01f);
 			}
 		}
-		if(attachedApCount > 0){
+		if (attachedApCount > 0) {
 			finaAttachedApCount = attachedApCount;
 		}
 
@@ -221,15 +222,16 @@ public class MailService {
 
 		if (senderInventory.getKinah() > finalMailKinah) {
 			senderInventory.decreaseKinah(finalMailKinah);
-		}
-		else {
+		} else {
 			AuditLogger.info(sender, "Mail kinah exploit.");
 			return;
 		}
 
 		Timestamp time = new Timestamp(Calendar.getInstance().getTimeInMillis());
 
-		Letter newLetter = new Letter(IDFactory.getInstance().nextId(), recipientCommonData.getPlayerObjId(), attachedItem, finalAttachedKinahCount, finaAttachedApCount, title, message, sender.getName(), time, true, letterType);
+		Letter newLetter = new Letter(IDFactory.getInstance().nextId(), recipientCommonData.getPlayerObjId(),
+				attachedItem, finalAttachedKinahCount, finaAttachedApCount, title, message, sender.getName(), time,
+				true, letterType);
 
 		// first save attached item for FK consistency
 		if (attachedItem != null) {
@@ -240,7 +242,7 @@ public class MailService {
 		// save letter
 		if (!DAOManager.getDAO(MailDAO.class).storeLetter(time, newLetter)) {
 			return;
-        }
+		}
 		/**
 		 * Send mail update packets
 		 */
@@ -257,8 +259,10 @@ public class MailService {
 
 			// if recipient have opened mail list we should update it
 			if (recipientMailbox.mailBoxState != 0) {
-				boolean isPostman = (recipientMailbox.mailBoxState & PlayerMailboxState.EXPRESS) == PlayerMailboxState.EXPRESS;
-				PacketSendUtility.sendPacket(recipient, new SM_MAIL_SERVICE(recipient, recipientMailbox.getLetters(), isPostman));
+				boolean isPostman = (recipientMailbox.mailBoxState
+						& PlayerMailboxState.EXPRESS) == PlayerMailboxState.EXPRESS;
+				PacketSendUtility.sendPacket(recipient,
+						new SM_MAIL_SERVICE(recipient, recipientMailbox.getLetters(), isPostman));
 			}
 
 			if (letterType == LetterType.EXPRESS) {
@@ -305,39 +309,39 @@ public class MailService {
 
 		if (letter == null) {
 			return;
-        }
+		}
 		switch (attachmentType) {
-			case 0: {
-				Item attachedItem = letter.getAttachedItem();
-				if (attachedItem == null)
-					return;
-				if (player.getInventory().isFull()) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_FULL_INVENTORY);
-					return;
-				}
-				if (attachedItem.isPacked()) {
-					attachedItem.setPacked(false);
-				}
-				player.getInventory().add(attachedItem);
-				if (!DAOManager.getDAO(InventoryDAO.class).store(attachedItem, player.getObjectId())) {
-					return;
-                }
-				PacketSendUtility.sendPacket(player, new SM_MAIL_SERVICE(letterId, attachmentType));
-				letter.removeAttachedItem();
-				break;
+		case 0: {
+			Item attachedItem = letter.getAttachedItem();
+			if (attachedItem == null)
+				return;
+			if (player.getInventory().isFull()) {
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_FULL_INVENTORY);
+				return;
 			}
-			case 1: {
-				player.getInventory().increaseKinah(letter.getAttachedKinah());
-				PacketSendUtility.sendPacket(player, new SM_MAIL_SERVICE(letterId, attachmentType));
-				letter.removeAttachedKinah();
-				break;
+			if (attachedItem.isPacked()) {
+				attachedItem.setPacked(false);
 			}
-			case 2: {
-				AbyssPointsService.addAp(player, (int)letter.getAttachedAp());
-				PacketSendUtility.sendPacket(player, new SM_MAIL_SERVICE(letterId, attachmentType));
-				letter.removeAttachedAP();
-				break;
+			player.getInventory().add(attachedItem);
+			if (!DAOManager.getDAO(InventoryDAO.class).store(attachedItem, player.getObjectId())) {
+				return;
 			}
+			PacketSendUtility.sendPacket(player, new SM_MAIL_SERVICE(letterId, attachmentType));
+			letter.removeAttachedItem();
+			break;
+		}
+		case 1: {
+			player.getInventory().increaseKinah(letter.getAttachedKinah());
+			PacketSendUtility.sendPacket(player, new SM_MAIL_SERVICE(letterId, attachmentType));
+			letter.removeAttachedKinah();
+			break;
+		}
+		case 2: {
+			AbyssPointsService.addAp(player, (int) letter.getAttachedAp());
+			PacketSendUtility.sendPacket(player, new SM_MAIL_SERVICE(letterId, attachmentType));
+			letter.removeAttachedAP();
+			break;
+		}
 		}
 	}
 
@@ -361,7 +365,8 @@ public class MailService {
 	 * @param attachedItemCount
 	 * @return
 	 */
-	private boolean validateMailSendPrice(Player sender, int attachedKinahCount, int attachedItemObjId, int attachedItemCount) {
+	private boolean validateMailSendPrice(Player sender, int attachedKinahCount, int attachedItemObjId,
+			int attachedItemCount) {
 		int itemMailCommission = 0;
 		int kinahMailCommission = Math.round(attachedKinahCount * 0.01f);
 		if (attachedItemObjId != 0) {
@@ -371,37 +376,38 @@ public class MailService {
 			}
 			float qualityPriceRate;
 			switch (senderItem.getItemTemplate().getItemQuality()) {
-				case JUNK:
-				case COMMON:
-					qualityPriceRate = 0.02f;
-					break;
+			case JUNK:
+			case COMMON:
+				qualityPriceRate = 0.02f;
+				break;
 
-				case RARE:
-					qualityPriceRate = 0.03f;
-					break;
+			case RARE:
+				qualityPriceRate = 0.03f;
+				break;
 
-				case LEGEND:
-				case UNIQUE:
-					qualityPriceRate = 0.04f;
-					break;
+			case LEGEND:
+			case UNIQUE:
+				qualityPriceRate = 0.04f;
+				break;
 
-				case MYTHIC:
-				case EPIC:
-					qualityPriceRate = 0.05f;
-					break;
+			case MYTHIC:
+			case EPIC:
+				qualityPriceRate = 0.05f;
+				break;
 
-				default:
-					qualityPriceRate = 0.02f;
-					break;
+			default:
+				qualityPriceRate = 0.02f;
+				break;
 			}
-			itemMailCommission = Math.round((senderItem.getItemTemplate().getPrice() * attachedItemCount) * qualityPriceRate);
+			itemMailCommission = Math
+					.round((senderItem.getItemTemplate().getPrice() * attachedItemCount) * qualityPriceRate);
 		}
 
 		int finalMailPrice = 10 + itemMailCommission + kinahMailCommission;
 
 		if (sender.getInventory().getKinah() >= finalMailPrice) {
 			return true;
-        }
+		}
 		return false;
 	}
 

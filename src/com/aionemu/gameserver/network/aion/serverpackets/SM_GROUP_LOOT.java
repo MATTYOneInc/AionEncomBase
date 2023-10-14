@@ -19,8 +19,7 @@ package com.aionemu.gameserver.network.aion.serverpackets;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_GROUP_LOOT extends AionServerPacket
-{
+public class SM_GROUP_LOOT extends AionServerPacket {
 	private int groupId;
 	private int index;
 	private int unk2;
@@ -32,10 +31,10 @@ public class SM_GROUP_LOOT extends AionServerPacket
 	private long luck;
 
 	/**
-	 * @param Player
-	 *          Id must be 0 to start the Roll Options
+	 * @param Player Id must be 0 to start the Roll Options
 	 */
-	public SM_GROUP_LOOT(int groupId, int playerId, int itemId, int lootCorpseId, int distributionId, long luck, int index) {
+	public SM_GROUP_LOOT(int groupId, int playerId, int itemId, int lootCorpseId, int distributionId, long luck,
+			int index) {
 		this.groupId = groupId;
 		this.index = index;
 		this.unk2 = 1;
@@ -62,6 +61,6 @@ public class SM_GROUP_LOOT extends AionServerPacket
 		writeD(lootCorpseId);
 		writeC(distributionId);
 		writeD(playerId);
-		writeD((int)luck);
+		writeD((int) luck);
 	}
 }

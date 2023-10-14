@@ -33,36 +33,35 @@ import com.aionemu.gameserver.model.templates.spawns.Spawn;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RvrSpawn")
-public class RvrSpawn
-{
+public class RvrSpawn {
 	@XmlAttribute(name = "id")
 	private int id;
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	@XmlElement(name = "rvr_type")
 	private List<RvrSpawn.RvrStateTemplate> RvrStateTemplate;
-	
+
 	public List<RvrStateTemplate> getSiegeModTemplates() {
 		return RvrStateTemplate;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlType(name = "RvrStateTemplate")
 	public static class RvrStateTemplate {
-	
+
 		@XmlElement(name = "spawn")
 		private List<Spawn> spawns;
-		
+
 		@XmlAttribute(name = "rstate")
 		private RvrStateType rvrType;
-		
+
 		public List<Spawn> getSpawns() {
 			return spawns;
 		}
-		
+
 		public RvrStateType getRvrType() {
 			return rvrType;
 		}

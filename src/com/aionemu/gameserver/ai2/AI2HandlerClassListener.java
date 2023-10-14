@@ -37,10 +37,10 @@ public class AI2HandlerClassListener implements ClassListener {
 		for (Class<?> c : classes) {
 			if (log.isDebugEnabled()) {
 				log.debug("Load class " + c.getName());
-            }
+			}
 			if (!isValidClass(c)) {
 				continue;
-            }
+			}
 			if (ClassUtils.isSubclass(c, AbstractAI.class)) {
 				Class<? extends AbstractAI> tmp = (Class<? extends AbstractAI>) c;
 				if (tmp != null) {
@@ -64,10 +64,10 @@ public class AI2HandlerClassListener implements ClassListener {
 
 		if (Modifier.isAbstract(modifiers) || Modifier.isInterface(modifiers)) {
 			return false;
-        }
+		}
 		if (!Modifier.isPublic(modifiers)) {
 			return false;
-        }
+		}
 		return true;
 	}
 }

@@ -25,32 +25,32 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * Created by Wnkrz on 27/08/2017.
  */
 
-public class OutpostSpawnTemplate extends SpawnTemplate
-{
-    private int id;
-    private Race outpostRace;
-	
-    public OutpostSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
-        super(spawnGroup, spot);
-    }
-	
-    public OutpostSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
-        super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
-    }
-	
-    public int getId() {
-        return id;
-    }
-	
-    public void setId(int id) {
-        this.id = id;
-    }
-	
-    public Race getOutpostRace() {
-        return outpostRace;
-    }
-	
-    public void setOutpostRace(Race baseRace) {
-        this.outpostRace = baseRace;
-    }
+public class OutpostSpawnTemplate extends SpawnTemplate {
+	private int id;
+	private Race outpostRace;
+
+	public OutpostSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
+		super(spawnGroup, spot);
+	}
+
+	public OutpostSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
+		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Race getOutpostRace() {
+		return outpostRace;
+	}
+
+	public void setOutpostRace(Race baseRace) {
+		this.outpostRace = baseRace;
+	}
 }

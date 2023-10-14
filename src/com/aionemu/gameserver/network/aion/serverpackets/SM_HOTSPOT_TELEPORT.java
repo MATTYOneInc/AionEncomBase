@@ -24,50 +24,49 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
  * @author Ranastic
  */
 
-public class SM_HOTSPOT_TELEPORT extends AionServerPacket
-{
+public class SM_HOTSPOT_TELEPORT extends AionServerPacket {
 	int playerObjId;
 	int action;
 	int teleportId;
 	int cooldown;
-	
+
 	public SM_HOTSPOT_TELEPORT(int action, int playerObjId) {
 		this.action = action;
 		this.playerObjId = playerObjId;
 	}
-	
+
 	public SM_HOTSPOT_TELEPORT(int action, int playerObjId, int teleportId) {
 		this.action = action;
 		this.playerObjId = playerObjId;
 		this.teleportId = teleportId;
 	}
-	
+
 	public SM_HOTSPOT_TELEPORT(Player player, int action, int teleportId, int cooldown) {
-        this.playerObjId = player.getObjectId();
-        this.teleportId = teleportId;
-        this.action = action;
-        this.cooldown = cooldown;
-    }
-	
+		this.playerObjId = player.getObjectId();
+		this.teleportId = teleportId;
+		this.action = action;
+		this.cooldown = cooldown;
+	}
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeC(action);
 		switch (action) {
-		    case 0:
-			    writeD(playerObjId);
-		    break;
-		    case 1:
-			    writeD(playerObjId);
-			    writeD(teleportId);
-		    break;
-		    case 2:
-			    writeD(playerObjId);
-		    break;
-		    case 3:
-			    writeD(playerObjId);
-			    writeD(teleportId);
-			    writeD(cooldown);
-		    break;
+		case 0:
+			writeD(playerObjId);
+			break;
+		case 1:
+			writeD(playerObjId);
+			writeD(teleportId);
+			break;
+		case 2:
+			writeD(playerObjId);
+			break;
+		case 3:
+			writeD(playerObjId);
+			writeD(teleportId);
+			writeD(cooldown);
+			break;
 		}
 	}
 }

@@ -43,6 +43,7 @@ public class CM_GAMEGUARD extends AionClientPacket {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see com.aionemu.commons.network.packet.BaseClientPacket#readImpl()
 	 */
 	@Override
@@ -53,6 +54,7 @@ public class CM_GAMEGUARD extends AionClientPacket {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see com.aionemu.commons.network.packet.BaseClientPacket#runImpl()
 	 */
 	@Override

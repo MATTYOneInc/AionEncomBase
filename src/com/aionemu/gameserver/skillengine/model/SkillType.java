@@ -23,8 +23,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum SkillType {
 
-	NONE,
-	PHYSICAL,
-	MAGICAL,
-	ALL;
+	NONE, PHYSICAL, MAGICAL, ALL;
 }

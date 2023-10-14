@@ -27,18 +27,18 @@ import com.aionemu.gameserver.skillengine.effect.AbnormalState;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 
-public class CM_SUMMON_MOVE extends AionClientPacket
-{
+public class CM_SUMMON_MOVE extends AionClientPacket {
 	private byte type;
 	private byte heading;
-	private float x = 0f, y = 0f, z = 0f, x2 = 0f, y2 = 0f, z2 = 0f, vehicleX = 0f, vehicleY = 0f, vehicleZ = 0f, vectorX = 0f, vectorY = 0f, vectorZ = 0f;
+	private float x = 0f, y = 0f, z = 0f, x2 = 0f, y2 = 0f, z2 = 0f, vehicleX = 0f, vehicleY = 0f, vehicleZ = 0f,
+			vectorX = 0f, vectorY = 0f, vectorZ = 0f;
 	private byte glideFlag;
 	private int unk1, unk2;
-	
+
 	public CM_SUMMON_MOVE(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		Player player = getConnection().getActivePlayer();
@@ -61,9 +61,11 @@ public class CM_SUMMON_MOVE extends AionClientPacket
 				y2 = readF();
 				z2 = readF();
 			}
-		} if ((type & MovementMask.GLIDE) == MovementMask.GLIDE) {
+		}
+		if ((type & MovementMask.GLIDE) == MovementMask.GLIDE) {
 			glideFlag = (byte) readC();
-		} if ((type & MovementMask.VEHICLE) == MovementMask.VEHICLE) {
+		}
+		if ((type & MovementMask.VEHICLE) == MovementMask.VEHICLE) {
 			unk1 = readD();
 			unk2 = readD();
 			vehicleX = readF();
@@ -71,20 +73,22 @@ public class CM_SUMMON_MOVE extends AionClientPacket
 			vehicleZ = readF();
 		}
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
 		Summon summon = player.getSummon();
 		if (summon == null)
 			return;
-		if (summon.getEffectController().isAbnormalState(AbnormalState.CANT_MOVE_STATE) || summon.getEffectController().isUnderFear())
+		if (summon.getEffectController().isAbnormalState(AbnormalState.CANT_MOVE_STATE)
+				|| summon.getEffectController().isUnderFear())
 			return;
 		SummonMoveController m = summon.getMoveController();
 		m.movementMask = type;
 		if ((type & MovementMask.GLIDE) == MovementMask.GLIDE) {
 			m.glideFlag = glideFlag;
-		} if (type == 0) {
+		}
+		if (type == 0) {
 			summon.getController().onStopMove();
 		} else if ((type & MovementMask.STARTMOVE) == MovementMask.STARTMOVE) {
 			if ((type & MovementMask.MOUSE) == 0) {

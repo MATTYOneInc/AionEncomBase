@@ -43,7 +43,8 @@ public class RoadService {
 		for (RoadTemplate rt : DataManager.ROAD_DATA.getRoadTemplates()) {
 			Road r = new Road(rt);
 			r.spawn();
-			log.debug("Added " + r.getName() + " at m=" + r.getWorldId() + ",x=" + r.getX() + ",y=" + r.getY() + ",z=" + r.getZ());
+			log.debug("Added " + r.getName() + " at m=" + r.getWorldId() + ",x=" + r.getX() + ",y=" + r.getY() + ",z="
+					+ r.getZ());
 		}
 	}
 }

@@ -43,10 +43,9 @@ public abstract class PlayerCommand extends ChatCommand {
 		boolean success = false;
 		if (text.length() == getAlias().length()) {
 			success = this.run(player, EMPTY_PARAMS);
-		}
-		else {
+		} else {
 			success = this.run(player, text.substring(getAlias().length() + 1).split(" "));
-        }
+		}
 		return success;
 	}
 }

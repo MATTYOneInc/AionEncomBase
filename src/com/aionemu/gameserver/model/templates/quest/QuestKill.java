@@ -38,7 +38,7 @@ public class QuestKill {
 
 	@XmlAttribute(name = "npc_ids")
 	private List<Integer> npcIds;
-	
+
 	@XmlTransient
 	private Set<Integer> npcIdSet;
 

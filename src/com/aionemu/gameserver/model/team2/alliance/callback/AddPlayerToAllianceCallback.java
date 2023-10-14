@@ -27,24 +27,24 @@ import com.aionemu.gameserver.model.team2.alliance.PlayerAlliance;
 @SuppressWarnings("rawtypes")
 public abstract class AddPlayerToAllianceCallback implements Callback {
 
-    @Override
-    public CallbackResult beforeCall(Object obj, Object[] args) {
-        onBeforePlayerAddToAlliance((PlayerAlliance) args[0], (Player) args[1]);
-        return CallbackResult.newContinue();
-    }
+	@Override
+	public CallbackResult beforeCall(Object obj, Object[] args) {
+		onBeforePlayerAddToAlliance((PlayerAlliance) args[0], (Player) args[1]);
+		return CallbackResult.newContinue();
+	}
 
-    @Override
-    public CallbackResult afterCall(Object obj, Object[] args, Object methodResult) {
-        onAfterPlayerAddToAlliance((PlayerAlliance) args[0], (Player) args[1]);
-        return CallbackResult.newContinue();
-    }
+	@Override
+	public CallbackResult afterCall(Object obj, Object[] args, Object methodResult) {
+		onAfterPlayerAddToAlliance((PlayerAlliance) args[0], (Player) args[1]);
+		return CallbackResult.newContinue();
+	}
 
-    @Override
-    public Class<? extends Callback> getBaseClass() {
-        return AddPlayerToAllianceCallback.class;
-    }
+	@Override
+	public Class<? extends Callback> getBaseClass() {
+		return AddPlayerToAllianceCallback.class;
+	}
 
-    public abstract void onBeforePlayerAddToAlliance(PlayerAlliance alliance, Player player);
+	public abstract void onBeforePlayerAddToAlliance(PlayerAlliance alliance, Player player);
 
-    public abstract void onAfterPlayerAddToAlliance(PlayerAlliance alliance, Player player);
+	public abstract void onAfterPlayerAddToAlliance(PlayerAlliance alliance, Player player);
 }

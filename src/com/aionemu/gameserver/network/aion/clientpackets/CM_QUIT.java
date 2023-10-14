@@ -24,19 +24,18 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_QUIT_RESPONSE;
 import com.aionemu.gameserver.network.loginserver.LoginServer;
 import com.aionemu.gameserver.services.player.PlayerLeaveWorldService;
 
-public class CM_QUIT extends AionClientPacket
-{
+public class CM_QUIT extends AionClientPacket {
 	private boolean logout;
-	
+
 	public CM_QUIT(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		logout = readC() == 1;
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		AionConnection client = getConnection();
@@ -48,7 +47,8 @@ public class CM_QUIT extends AionClientPacket
 			}
 			PlayerLeaveWorldService.startLeaveWorld(player);
 			client.setActivePlayer(null);
-		} if (logout) {
+		}
+		if (logout) {
 			if (player != null && player.isInEditMode()) {
 				sendPacket(new SM_QUIT_RESPONSE(true));
 				player.setEditMode(false);

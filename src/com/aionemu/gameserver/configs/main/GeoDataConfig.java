@@ -25,13 +25,13 @@ public class GeoDataConfig {
 	 */
 	@Property(key = "gameserver.geodata.enable", defaultValue = "false")
 	public static boolean GEO_ENABLE;
-	
+
 	/**
 	 * Enable canSee checks using geodata.
 	 */
 	@Property(key = "gameserver.geodata.cansee.enable", defaultValue = "true")
 	public static boolean CANSEE_ENABLE;
-	
+
 	/**
 	 * Enable Fear skill using geodata.
 	 */
@@ -49,7 +49,7 @@ public class GeoDataConfig {
 	 */
 	@Property(key = "gameserver.geo.npc.aggro", defaultValue = "false")
 	public static boolean GEO_NPC_AGGRO;
-	
+
 	/**
 	 * Enable geo materials using skills
 	 */
@@ -67,19 +67,19 @@ public class GeoDataConfig {
 	 */
 	@Property(key = "gameserver.geo.shields.enable", defaultValue = "false")
 	public static boolean GEO_SHIELDS_ENABLE;
-	
+
 	/**
 	 * Enable geo doors
 	 */
 	@Property(key = "gameserver.geo.doors.enable", defaultValue = "false")
 	public static boolean GEO_DOORS_ENABLE;
-	
+
 	/**
 	 * Object factory for geodata primitives enabled
 	 */
 	@Property(key = "gameserver.geodata.objectfactory.enabled", defaultValue = "true")
 	public static boolean GEO_OBJECT_FACTORY_ENABLE;
-	
+
 	/**
 	 * If you use monon2 geo data for your server
 	 */

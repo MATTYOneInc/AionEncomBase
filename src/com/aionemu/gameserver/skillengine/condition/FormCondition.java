@@ -36,10 +36,12 @@ public class FormCondition extends Condition {
 
 	public boolean validate(Skill env) {
 		if ((env.getEffector() instanceof Player)) {
-			if ((env.getEffector().getTransformModel().isActive()) && (env.getEffector().getTransformModel().getType() == value)) {
+			if ((env.getEffector().getTransformModel().isActive())
+					&& (env.getEffector().getTransformModel().getType() == value)) {
 				return true;
 			}
-			PacketSendUtility.sendPacket((Player) env.getEffector(), SM_SYSTEM_MESSAGE.STR_SKILL_CAN_NOT_CAST_IN_THIS_FORM);
+			PacketSendUtility.sendPacket((Player) env.getEffector(),
+					SM_SYSTEM_MESSAGE.STR_SKILL_CAN_NOT_CAST_IN_THIS_FORM);
 			return false;
 		}
 		return true;

@@ -41,8 +41,7 @@ public abstract class PlayerMacrossesDAO implements DAO {
 	/**
 	 * Returns a list of macrosses for player
 	 * 
-	 * @param playerId
-	 *          Player object id.
+	 * @param playerId Player object id.
 	 * @return a list of macrosses for player
 	 */
 	public abstract MacroList restoreMacrosses(int playerId);
@@ -50,34 +49,26 @@ public abstract class PlayerMacrossesDAO implements DAO {
 	/**
 	 * Add a macro information into database
 	 * 
-	 * @param playerId
-	 *          player object id
-	 * @param macroPosition
-	 *          macro order # of player
-	 * @param macro
-	 *          macro contents.
+	 * @param playerId      player object id
+	 * @param macroPosition macro order # of player
+	 * @param macro         macro contents.
 	 */
 	public abstract void addMacro(int playerId, int macroPosition, String macro);
 
 	/**
 	 * Update a macro information into database
 	 * 
-	 * @param playerId
-	 *          player object id
-	 * @param macroPosition
-	 *          macro order # of player
-	 * @param macro
-	 *          macro contents.
+	 * @param playerId      player object id
+	 * @param macroPosition macro order # of player
+	 * @param macro         macro contents.
 	 */
 	public abstract void updateMacro(int playerId, int macroPosition, String macro);
 
 	/**
 	 * Remove macro in database
 	 * 
-	 * @param playerId
-	 *          player object id
-	 * @param macroPosition
-	 *          order of macro in macro list
+	 * @param playerId      player object id
+	 * @param macroPosition order of macro in macro list
 	 */
 	public abstract void deleteMacro(int playerId, int macroPosition);
 }

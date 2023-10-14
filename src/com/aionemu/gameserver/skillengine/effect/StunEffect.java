@@ -28,30 +28,30 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "StunEffect")
-public class StunEffect extends EffectTemplate
-{
+public class StunEffect extends EffectTemplate {
 	@Override
-    public void applyEffect(Effect effect) {
-        if (!effect.getEffected().getEffectController().isAbnormalSet(AbnormalState.CANNOT_MOVE)) {
-            effect.addToEffectedController();
-        }
-    }
-	
+	public void applyEffect(Effect effect) {
+		if (!effect.getEffected().getEffectController().isAbnormalSet(AbnormalState.CANNOT_MOVE)) {
+			effect.addToEffectedController();
+		}
+	}
+
 	@Override
 	public void calculate(Effect effect) {
 		super.calculate(effect, StatEnum.STUN_RESISTANCE, null);
 	}
-	
+
 	@Override
 	public void startEffect(Effect effect) {
 		final Creature effected = effect.getEffected();
 		effected.getController().cancelCurrentSkill();
-        effected.getMoveController().abortMove();
+		effected.getMoveController().abortMove();
 		effect.getEffected().getEffectController().setAbnormal(AbnormalState.STUN.getId());
 		effect.setAbnormal(AbnormalState.STUN.getId());
-        PacketSendUtility.broadcastPacketAndReceive(effect.getEffected(), new SM_TARGET_IMMOBILIZE(effect.getEffected()));
-    }
-	
+		PacketSendUtility.broadcastPacketAndReceive(effect.getEffected(),
+				new SM_TARGET_IMMOBILIZE(effect.getEffected()));
+	}
+
 	@Override
 	public void endEffect(Effect effect) {
 		effect.getEffected().getEffectController().unsetAbnormal(AbnormalState.STUN.getId());

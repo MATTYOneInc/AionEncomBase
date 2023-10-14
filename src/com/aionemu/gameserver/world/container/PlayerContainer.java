@@ -73,9 +73,9 @@ public class PlayerContainer implements Iterable<Player> {
 	/**
 	 * Get Player object by objectId.
 	 * 
-	 * @param objectId
-	 *          - ObjectId of player.
-	 * @return Player with given ojectId or null if Player with given objectId is not logged.
+	 * @param objectId - ObjectId of player.
+	 * @return Player with given ojectId or null if Player with given objectId is
+	 *         not logged.
 	 */
 	public Player get(int objectId) {
 		return playersById.get(objectId);
@@ -84,9 +84,9 @@ public class PlayerContainer implements Iterable<Player> {
 	/**
 	 * Get Player object by name.
 	 * 
-	 * @param name
-	 *          - name of player
-	 * @return Player with given name or null if Player with given name is not logged.
+	 * @param name - name of player
+	 * @return Player with given name or null if Player with given name is not
+	 *         logged.
 	 */
 	public Player get(String name) {
 		return playersByName.get(name);
@@ -103,14 +103,14 @@ public class PlayerContainer implements Iterable<Player> {
 	@SuppressWarnings("unused")
 	public void doOnAllPlayers(Visitor<Player> visitor) {
 		try {
-			for (FastMap.Entry<Integer, Player> e = playersById.head(), mapEnd = playersById.tail(); (e = e.getNext()) != mapEnd;) {
+			for (FastMap.Entry<Integer, Player> e = playersById.head(),
+					mapEnd = playersById.tail(); (e = e.getNext()) != mapEnd;) {
 				Player player = e.getValue();
 				if (player != null) {
 					visitor.visit(player);
 				}
 			}
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			log.error("Exception when running visitor on all players" + ex);
 		}
 	}

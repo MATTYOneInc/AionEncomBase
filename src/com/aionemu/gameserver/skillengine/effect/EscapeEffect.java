@@ -27,8 +27,7 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EscapeEffect")
-public class EscapeEffect extends EffectTemplate
-{
+public class EscapeEffect extends EffectTemplate {
 	@Override
 	public void applyEffect(Effect effect) {
 		if (effect.getEffected().isInInstance()) {
@@ -36,7 +35,7 @@ public class EscapeEffect extends EffectTemplate
 		}
 		TeleportService2.moveToBindLocation((Player) effect.getEffector(), true);
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		if (effect.getEffected().isSpawned()) {

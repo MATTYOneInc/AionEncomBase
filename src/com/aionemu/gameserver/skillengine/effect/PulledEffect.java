@@ -39,10 +39,12 @@ public class PulledEffect extends EffectTemplate {
 		final Creature effected = effect.getEffected();
 		effected.setPulledMulti(0);
 		effected.getController().cancelCurrentSkill();
-		World.getInstance().updatePosition(effected, effect.getTargetX(), effect.getTargetY(), effect.getTargetZ(), effected.getHeading());
-		PacketSendUtility.broadcastPacketAndReceive(effected, new SM_FORCED_MOVE(effect.getEffector(), effected.getObjectId(), effect.getTargetX(), effect.getTargetY(), effect.getTargetZ()));
+		World.getInstance().updatePosition(effected, effect.getTargetX(), effect.getTargetY(), effect.getTargetZ(),
+				effected.getHeading());
+		PacketSendUtility.broadcastPacketAndReceive(effected, new SM_FORCED_MOVE(effect.getEffector(),
+				effected.getObjectId(), effect.getTargetX(), effect.getTargetY(), effect.getTargetZ()));
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		if (!super.calculate(effect, StatEnum.PULLED_RESISTANCE, null)) {
@@ -55,14 +57,14 @@ public class PulledEffect extends EffectTemplate {
 		final float y1 = (float) Math.sin(radian);
 		effect.setTragetLoc(effector.getX() + x1, effector.getY() + y1, effector.getZ() + 0.25F);
 	}
-	
+
 	@Override
 	public void startEffect(Effect effect) {
 		final Creature effected = effect.getEffected();
 		effected.getEffectController().setAbnormal(AbnormalState.CANNOT_MOVE.getId());
 		effect.setAbnormal(AbnormalState.CANNOT_MOVE.getId());
 	}
-	
+
 	@Override
 	public void endEffect(Effect effect) {
 		effect.getEffected().setPulledMulti(1);

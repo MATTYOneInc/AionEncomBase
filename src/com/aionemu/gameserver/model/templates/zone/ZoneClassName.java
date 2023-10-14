@@ -21,17 +21,6 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlType(name = "ZoneClassName")
 @XmlEnum
-public enum ZoneClassName
-{
-	DUMMY,
-	SUB,
-	FLY,
-	ARTIFACT,
-	FORT,
-	LIMIT,
-	ITEM_USE,
-	PVP,
-	DUEL,
-	HOUSE,
-	WEATHER;
+public enum ZoneClassName {
+	DUMMY, SUB, FLY, ARTIFACT, FORT, LIMIT, ITEM_USE, PVP, DUEL, HOUSE, WEATHER;
 }

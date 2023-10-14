@@ -58,8 +58,7 @@ public class ArtifactLocation extends SiegeLocation {
 		long l = System.currentTimeMillis() - this.lastArtifactActivation;
 		if (l > i) {
 			return 0;
-		}
-		else {
+		} else {
 			return (int) ((i - l) / 1000);
 		}
 	}

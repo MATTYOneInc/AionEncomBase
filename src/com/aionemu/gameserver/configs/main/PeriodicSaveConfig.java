@@ -18,8 +18,7 @@ package com.aionemu.gameserver.configs.main;
 
 import com.aionemu.commons.configuration.Property;
 
-public class PeriodicSaveConfig
-{
+public class PeriodicSaveConfig {
 	@Property(key = "gameserver.periodicsave.player.general", defaultValue = "900")
 	public static int PLAYER_GENERAL;
 	@Property(key = "gameserver.periodicsave.player.items", defaultValue = "900")

@@ -30,48 +30,47 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class AnohaLocation
-{
+public class AnohaLocation {
 	protected int id;
 	protected boolean isActive;
 	protected AnohaTemplate template;
 	protected BerserkAnoha<AnohaLocation> activeAnoha;
 	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
 	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
+
 	public AnohaLocation() {
 	}
-	
+
 	public AnohaLocation(AnohaTemplate template) {
 		this.template = template;
 		this.id = template.getId();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveAnoha(BerserkAnoha<AnohaLocation> anoha) {
 		isActive = anoha != null;
 		this.activeAnoha = anoha;
 	}
-	
+
 	public BerserkAnoha<AnohaLocation> getActiveAnoha() {
 		return activeAnoha;
 	}
-	
+
 	public final AnohaTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}

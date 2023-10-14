@@ -42,20 +42,20 @@ public class DialogIdCondition extends QuestCondition {
 
 	/*
 	 * (non-Javadoc)
-	 * @see
-	 * com.aionemu.gameserver.questEngine.handlers.template.xmlQuest.condition.QuestCondition#doCheck(com.aionemu.gameserver
-	 * .questEngine.model.QuestEnv)
+	 * 
+	 * @see com.aionemu.gameserver.questEngine.handlers.template.xmlQuest.condition.
+	 * QuestCondition#doCheck(com.aionemu.gameserver .questEngine.model.QuestEnv)
 	 */
 	@Override
 	public boolean doCheck(QuestEnv env) {
 		int data = env.getDialogId();
 		switch (getOp()) {
-			case EQUAL:
-				return data == value;
-			case NOT_EQUAL:
-				return data != value;
-			default:
-				return false;
+		case EQUAL:
+			return data == value;
+		case NOT_EQUAL:
+			return data != value;
+		default:
+			return false;
 		}
 	}
 }

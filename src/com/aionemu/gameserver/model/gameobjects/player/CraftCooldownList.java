@@ -31,11 +31,11 @@ public class CraftCooldownList {
 	public boolean isCanCraft(int delayId) {
 		if (craftCooldowns == null || !craftCooldowns.containsKey(delayId)) {
 			return true;
-        }
+		}
 		Long coolDown = craftCooldowns.get(delayId);
 		if (coolDown == null) {
 			return true;
-        }
+		}
 		if (coolDown < System.currentTimeMillis()) {
 			craftCooldowns.remove(delayId);
 			return true;
@@ -46,7 +46,7 @@ public class CraftCooldownList {
 	public long getCraftCooldown(int delayId) {
 		if (craftCooldowns == null || !craftCooldowns.containsKey(delayId)) {
 			return 0;
-        }
+		}
 		return craftCooldowns.get(delayId);
 	}
 

@@ -22,11 +22,7 @@ import java.util.EnumSet;
  * @author Rolandas
  */
 public enum StaticDoorState {
-	NONE(0),
-	OPENED(1 << 0),
-	CLICKABLE(1 << 1),
-	CLOSEABLE(1 << 2),
-	ONEWAY(1 << 3);
+	NONE(0), OPENED(1 << 0), CLICKABLE(1 << 1), CLOSEABLE(1 << 2), ONEWAY(1 << 3);
 
 	private StaticDoorState(int flag) {
 		this.flag = flag;
@@ -45,8 +41,7 @@ public enum StaticDoorState {
 			}
 			if ((flags & states.flag) == 0) {
 				state.remove(states);
-			}
-			else {
+			} else {
 				state.add(states);
 			}
 		}

@@ -45,19 +45,19 @@ public class PetList {
 		List<PetCommonData> playerPets = DAOManager.getDAO(PlayerPetsDAO.class).getPlayerPets(player);
 		PetCommonData lastUsedPet = null;
 		for (PetCommonData pet : playerPets) {
-            if (pet.getExpireTime() > 0) {
-                ExpireTimerTask.getInstance().addTask(pet, player);
-            }
-            pets.put(pet.getPetId(), pet);
-            if (lastUsedPet == null || pet.getDespawnTime().after(lastUsedPet.getDespawnTime())) {
-                lastUsedPet = pet;
-            }
-        }
+			if (pet.getExpireTime() > 0) {
+				ExpireTimerTask.getInstance().addTask(pet, player);
+			}
+			pets.put(pet.getPetId(), pet);
+			if (lastUsedPet == null || pet.getDespawnTime().after(lastUsedPet.getDespawnTime())) {
+				lastUsedPet = pet;
+			}
+		}
 
-        if (lastUsedPet != null) {
-            lastUsedPetId = lastUsedPet.getPetId();
-        }
-    }
+		if (lastUsedPet != null) {
+			lastUsedPetId = lastUsedPet.getPetId();
+		}
+	}
 
 	public Collection<PetCommonData> getPets() {
 		return pets.values();
@@ -75,7 +75,7 @@ public class PetList {
 		return getPet(lastUsedPetId);
 	}
 
-	public void setLastUsedPetId(int lastUsedPetId){
+	public void setLastUsedPetId(int lastUsedPetId) {
 		this.lastUsedPetId = lastUsedPetId;
 	}
 
@@ -86,12 +86,13 @@ public class PetList {
 	 * @param name
 	 * @return
 	 */
-    public PetCommonData addPet(Player player, int petId, int decorationId, String name, int expireTime) {
-        return addPet(player, petId, decorationId, System.currentTimeMillis(), name, expireTime);
+	public PetCommonData addPet(Player player, int petId, int decorationId, String name, int expireTime) {
+		return addPet(player, petId, decorationId, System.currentTimeMillis(), name, expireTime);
 	}
 
-    public PetCommonData addPet(Player player, int petId, int decorationId, long birthday, String name, int expireTime) {
-        PetCommonData petCommonData = new PetCommonData(petId, player.getObjectId(), expireTime);
+	public PetCommonData addPet(Player player, int petId, int decorationId, long birthday, String name,
+			int expireTime) {
+		PetCommonData petCommonData = new PetCommonData(petId, player.getObjectId(), expireTime);
 		petCommonData.setDecoration(decorationId);
 		petCommonData.setName(name);
 		petCommonData.setBirthday(new Timestamp(birthday));

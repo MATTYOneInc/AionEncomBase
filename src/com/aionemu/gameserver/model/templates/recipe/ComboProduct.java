@@ -23,11 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ComboProduct")
-public class ComboProduct
-{
+public class ComboProduct {
 	@XmlAttribute
 	protected int itemid;
-	
+
 	public int getItemid() {
 		return itemid;
 	}

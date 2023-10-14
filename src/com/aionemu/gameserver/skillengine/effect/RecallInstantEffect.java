@@ -49,15 +49,18 @@ public class RecallInstantEffect extends EffectTemplate {
 		final byte locationH = effect.getSkill().getH();
 
 		/**
-		 * TODO need to confirm if cannot be summoned while on abnormal effects stunned, sleeping, feared, etc.
+		 * TODO need to confirm if cannot be summoned while on abnormal effects stunned,
+		 * sleeping, feared, etc.
 		 */
 		RequestResponseHandler rrh = new RequestResponseHandler(effector) {
 
 			@Override
 			public void denyRequest(Creature effector, Player effected) {
 
-				PacketSendUtility.sendPacket((Player) effector, SM_SYSTEM_MESSAGE.STR_MSG_Recall_Rejected_EFFECT(effected.getName()));
-				PacketSendUtility.sendPacket(effected, SM_SYSTEM_MESSAGE.STR_MSG_Recall_Rejected_EFFECT(effector.getName()));
+				PacketSendUtility.sendPacket((Player) effector,
+						SM_SYSTEM_MESSAGE.STR_MSG_Recall_Rejected_EFFECT(effected.getName()));
+				PacketSendUtility.sendPacket(effected,
+						SM_SYSTEM_MESSAGE.STR_MSG_Recall_Rejected_EFFECT(effector.getName()));
 			}
 
 			@Override
@@ -67,7 +70,9 @@ public class RecallInstantEffect extends EffectTemplate {
 		};
 
 		effected.getResponseRequester().putRequest(SM_QUESTION_WINDOW.STR_SUMMON_PARTY_DO_YOU_ACCEPT_REQUEST, rrh);
-		PacketSendUtility.sendPacket(effected, new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_SUMMON_PARTY_DO_YOU_ACCEPT_REQUEST, 0, 0, effector.getName(), "Summon Group Member", 30));
+		PacketSendUtility.sendPacket(effected,
+				new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_SUMMON_PARTY_DO_YOU_ACCEPT_REQUEST, 0, 0,
+						effector.getName(), "Summon Group Member", 30));
 	}
 
 	@Override
@@ -81,9 +86,11 @@ public class RecallInstantEffect extends EffectTemplate {
 
 		if (effected.getController().isInCombat()) {
 			return;
-        }
-		if (effector.getWorldId() == effected.getWorldId() && !effector.isInInstance() && !(effector.isEnemy(effected))) {
-			effect.getSkill().setTargetPosition(effector.getX(), effector.getY(), effector.getZ(), effector.getHeading());
+		}
+		if (effector.getWorldId() == effected.getWorldId() && !effector.isInInstance()
+				&& !(effector.isEnemy(effected))) {
+			effect.getSkill().setTargetPosition(effector.getX(), effector.getY(), effector.getZ(),
+					effector.getHeading());
 			effect.addSucessEffect(this);
 		}
 	}

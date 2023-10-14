@@ -23,14 +23,14 @@ import javax.xml.bind.annotation.XmlType;
 import com.aionemu.gameserver.skillengine.model.Effect;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BoostDropRateEffect")
-public class BoostDropRateEffect extends BuffEffect
-{
-    @Override
+public class BoostDropRateEffect extends BuffEffect {
+	@Override
 	public void calculate(Effect effect) {
 		effect.setBdrBoost(true);
 		effect.addSucessEffect(this);

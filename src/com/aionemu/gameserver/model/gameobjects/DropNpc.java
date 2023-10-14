@@ -65,8 +65,7 @@ public class DropNpc {
 	}
 
 	/**
-	 * @param player
-	 *          the lootingPlayer to set
+	 * @param player the lootingPlayer to set
 	 */
 	public void setBeingLooted(Player player) {
 		this.lootingPlayer = player;

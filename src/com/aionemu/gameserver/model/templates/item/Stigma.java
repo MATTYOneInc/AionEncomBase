@@ -31,17 +31,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlRootElement(name = "Stigma")
-public class Stigma
-{
+public class Stigma {
 	@XmlElement(name = "require_skill")
 	protected List<RequireSkill> requireSkill;
-	
+
 	@XmlAttribute
 	protected List<String> skill;
-	
+
 	@XmlAttribute
 	protected int shard;
-	
+
 	public List<StigmaSkill> getSkills() {
 		List<StigmaSkill> list = new ArrayList<StigmaSkill>();
 		for (String st : skill) {
@@ -50,48 +49,49 @@ public class Stigma
 		}
 		return list;
 	}
-	
+
 	public List<Integer> getSkillIdOnly() {
 		List<Integer> ids = new ArrayList<Integer>();
 		List<String> skill = this.skill;
 		if (skill.size() != 1) {
 			String[] tempArray = new String[0];
-			for (String parts : skill){
+			for (String parts : skill) {
 				tempArray = parts.split(":");
 				ids.add(Integer.parseInt(tempArray[1]));
 			}
 			return ids;
-		} for (String st : this.skill) {
+		}
+		for (String st : this.skill) {
 			String[] array = st.split(":");
 			ids.add(Integer.parseInt(array[1]));
 		}
 		return ids;
 	}
-	
+
 	public int getShard() {
 		return shard;
 	}
-	
+
 	public List<RequireSkill> getRequireSkill() {
 		if (requireSkill == null) {
 			requireSkill = new ArrayList<RequireSkill>();
 		}
 		return this.requireSkill;
 	}
-	
+
 	public static class StigmaSkill {
 		private int skillId;
 		private int skillLvl;
-		
+
 		public StigmaSkill(int skillLvl, int skillId) {
 			this.skillId = skillId;
 			this.skillLvl = skillLvl;
 		}
-		
+
 		public int getSkillLvl() {
 			return this.skillLvl;
 		}
-		
+
 		public int getSkillId() {
 			return this.skillId;
 		}

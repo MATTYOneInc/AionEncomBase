@@ -93,7 +93,7 @@ public class SM_LUNA_SHOP extends AionServerPacket {
 		this.item = item;
 		this.fail = fail;
 	}
-	
+
 	public SM_LUNA_SHOP(int actionId, int itemId, long itemCount) {
 		this.actionId = actionId;
 		this.itemId = itemId;
@@ -105,93 +105,95 @@ public class SM_LUNA_SHOP extends AionServerPacket {
 		Player player = con.getActivePlayer();
 		writeC(actionId);
 		switch (actionId) {
+		case 0:
+			writeC(0);
+			writeD(indun_id);
+			break;
+		case 2:
+			writeC(fail);
+			switch (fail) {
 			case 0:
-				writeC(0);
-				writeD(indun_id);
+				PacketSendUtility.sendPacket(player,
+						new SM_SYSTEM_MESSAGE(1330049, new DescriptionId(item.getNameId())));// Success
+				break;
+			case 1:
+				PacketSendUtility.sendPacket(player,
+						new SM_SYSTEM_MESSAGE(1330050, new DescriptionId(item.getNameId())));// Fail
+				break;
+			}
 			break;
-			case 2:
-				writeC(fail);
-				switch (fail) {
-					case 0:
-						PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1330049, new DescriptionId(item.getNameId())));// Success
-					break;
-					case 1:
-						PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1330050, new DescriptionId(item.getNameId())));// Fail
-					break;
+		case 3:
+			writeC(success ? 0 : 1);// Success = 0 Fail = 1
+			writeH(1);// unk 0x01
+			writeD(craftItemId);// productid
+			writeQ(craftItemCount);// quantity
+			break;
+		case 4:
+			writeC(0);
+			break;
+		case 5:
+			writeC(0);
+			writeC(0);
+			writeC(0);
+			break;
+		case 6:
+			writeD(53);
+			break;
+		case 7:
+			writeD(55);
+			break;
+		case 8:// dorinerk's wardrobe
+			writeC(0x00);
+			writeC(slotSize);
+			writeH(itemSize);
+			for (int i = 0; i < itemSize; i++) {
+				for (PlayerWardrobeEntry ce : player.getWardrobe().getAllWardrobe()) {
+					writeC(ce.getSlot());
+					writeD(ce.getItemId());
+					writeD(0x00);
+					writeD(0x01);
 				}
+			}
 			break;
-			case 3:
-				writeC(success ? 0 : 1);// Success = 0 Fail = 1
-				writeH(1);// unk 0x01
-				writeD(craftItemId);// productid
-				writeQ(craftItemCount);// quantity
+		case 9:
+			writeC(0x00);
+			writeC(slotSize); // Also possible = writeH(slotSize * 256)
 			break;
-			case 4:
-				writeC(0);
+		case 10:
+			writeC(isApply);
+			writeC(applySlot);
+			writeD(itemId);
+			writeD(unk1);
 			break;
-			case 5:
-				writeC(0);
-				writeC(0);
-				writeC(0);
+		case 11:
+			writeC(0x00);
+			writeC(indun_id);
+			writeD(0x01);
 			break;
-			case 6:
-				writeD(53);
+		case 12:// open chest
+			writeC(0);// unk
+			writeH(3);// size always 3
+			for (Map.Entry<Integer, Long> e : munirunerk_treasure.entrySet()) {
+				writeD(e.getKey());
+				writeQ(e.getValue());
+			}
 			break;
-			case 7:
-				writeD(55);
+		case 14:
+			writeC(1); // free enter = 1
+			writeD(indun_id);
 			break;
-			case 8:// dorinerk's wardrobe
-				writeC(0x00);
-				writeC(slotSize);
-				writeH(itemSize);
-				for (int i = 0; i < itemSize; i++) {
-					for (PlayerWardrobeEntry ce : player.getWardrobe().getAllWardrobe()) {
-						writeC(ce.getSlot());
-						writeD(ce.getItemId());
-						writeD(0x00);
-						writeD(0x01);
-					}
-				}
+		case 15: // TODO Golden Dice
+			int dice = player.getLunaDiceGame();
+			writeC(0);
+			writeC(dice);
+			writeC(0);
+			writeC(0);
 			break;
-			case 9:
-				writeC(0x00);
-				writeC(slotSize); // Also possible = writeH(slotSize * 256)
-			break;
-			case 10:
-				writeC(isApply);
-				writeC(applySlot);
-				writeD(itemId);
-				writeD(unk1);
-			break;
-			case 11:
-				writeC(0x00);
-				writeC(indun_id);
-				writeD(0x01);
-			break;
-			case 12:// open chest
-				writeC(0);// unk
-				writeH(3);// size always 3
-				for (Map.Entry<Integer, Long> e : munirunerk_treasure.entrySet()) {
-					writeD(e.getKey());
-					writeQ(e.getValue());
-				}
-			break;
-			case 14:
-				writeC(1); // free enter = 1
-				writeD(indun_id);
-			break;
-			case 15: // TODO Golden Dice
-				int dice = player.getLunaDiceGame();
-				writeC(0);
-				writeC(dice);
-				writeC(0);
-				writeC(0);
-			break;
-			case 16: // TODO Display Bug
-				writeC(0);
-				writeH(1);
-				writeD(itemId); // ItemId
-				writeQ(itemCount); // Item Count
+		case 16: // TODO Display Bug
+			writeC(0);
+			writeH(1);
+			writeD(itemId); // ItemId
+			writeQ(itemCount); // Item Count
 			break;
 		}
 	}

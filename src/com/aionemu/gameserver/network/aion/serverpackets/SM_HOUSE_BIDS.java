@@ -26,20 +26,20 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.HousingBidService;
 
-public class SM_HOUSE_BIDS extends AionServerPacket
-{
+public class SM_HOUSE_BIDS extends AionServerPacket {
 	private boolean isFirst;
 	private boolean isLast;
 	private HouseBidEntry playerBid;
 	private List<HouseBidEntry> houseBids;
-	
-	public SM_HOUSE_BIDS(boolean isFirstPacket, boolean isLastPacket, HouseBidEntry playerBid, List<HouseBidEntry> houseBids) {
+
+	public SM_HOUSE_BIDS(boolean isFirstPacket, boolean isLastPacket, HouseBidEntry playerBid,
+			List<HouseBidEntry> houseBids) {
 		isFirst = isFirstPacket;
 		isLast = isLastPacket;
 		this.playerBid = playerBid;
 		this.houseBids = houseBids;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		Player player = con.getActivePlayer();

@@ -16,53 +16,53 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 
 import javolution.util.FastList;
 
-public class WebshopService
-{
-    private static final Logger log = LoggerFactory.getLogger(WebshopService.class);
-	
-    private WebshopService() {
-        this.load();
-    }
-	
-    public static final WebshopService getInstance() {
-        return SingletonHolder.instance;
-    }
-	
-    private void load() {
-        ThreadPoolManager.getInstance().scheduleAtFixedRate(new Runnable() {
-            @Override
-            public void run() {
-                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-                    @Override
-                    public void visit(Player pl) {
-                        FastList<RewardEntryItem> liste = DAOManager.getDAO(RewardServiceDAO.class).getAvailable(pl.getObjectId());
-                        if (liste.isEmpty()) {
-                            return;
-                        } else {
-                            int i = 0;
-                            for (RewardEntryItem item: liste) {
-                                if (pl.getInventory().isFull()) {
-                                    PacketSendUtility.sendPacket(pl, SM_SYSTEM_MESSAGE.STR_MSG_FULL_INVENTORY);
-                                    return;
-                                } else {
-                                    if (DAOManager.getDAO(RewardServiceDAO.class).setUpdate(item.unique)) {
-                                        if (ItemService.addItem(pl, item.id, item.count) != 0) {
-                                            DAOManager.getDAO(RewardServiceDAO.class).setUpdateDown(item.unique);
-                                        } else {
-                                            i++;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-        }, 5 * 1000, 5 * 1000);
-    }
-	
-    @SuppressWarnings("synthetic-access")
-    private static class SingletonHolder {
-        protected static final WebshopService instance = new WebshopService();
-    }
+public class WebshopService {
+	private static final Logger log = LoggerFactory.getLogger(WebshopService.class);
+
+	private WebshopService() {
+		this.load();
+	}
+
+	public static final WebshopService getInstance() {
+		return SingletonHolder.instance;
+	}
+
+	private void load() {
+		ThreadPoolManager.getInstance().scheduleAtFixedRate(new Runnable() {
+			@Override
+			public void run() {
+				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player pl) {
+						FastList<RewardEntryItem> liste = DAOManager.getDAO(RewardServiceDAO.class)
+								.getAvailable(pl.getObjectId());
+						if (liste.isEmpty()) {
+							return;
+						} else {
+							int i = 0;
+							for (RewardEntryItem item : liste) {
+								if (pl.getInventory().isFull()) {
+									PacketSendUtility.sendPacket(pl, SM_SYSTEM_MESSAGE.STR_MSG_FULL_INVENTORY);
+									return;
+								} else {
+									if (DAOManager.getDAO(RewardServiceDAO.class).setUpdate(item.unique)) {
+										if (ItemService.addItem(pl, item.id, item.count) != 0) {
+											DAOManager.getDAO(RewardServiceDAO.class).setUpdateDown(item.unique);
+										} else {
+											i++;
+										}
+									}
+								}
+							}
+						}
+					}
+				});
+			}
+		}, 5 * 1000, 5 * 1000);
+	}
+
+	@SuppressWarnings("synthetic-access")
+	private static class SingletonHolder {
+		protected static final WebshopService instance = new WebshopService();
+	}
 }

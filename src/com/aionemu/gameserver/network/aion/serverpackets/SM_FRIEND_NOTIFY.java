@@ -45,10 +45,8 @@ public class SM_FRIEND_NOTIFY extends AionServerPacket {
 	/**
 	 * Constructs a new notify packet
 	 * 
-	 * @param code
-	 *          Message code
-	 * @param name
-	 *          Name of friend
+	 * @param code Message code
+	 * @param name Name of friend
 	 */
 	public SM_FRIEND_NOTIFY(int code, String name) {
 		this.code = code;

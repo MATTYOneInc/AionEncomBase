@@ -33,8 +33,7 @@ import com.aionemu.gameserver.model.templates.portal.PortalLoc;
 import com.aionemu.gameserver.model.templates.portal.PortalPath;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 
-public class AutoGeneralInstance extends AutoInstance
-{
+public class AutoGeneralInstance extends AutoInstance {
 	@Override
 	public AGQuestion addPlayer(Player player, SearchInstance searchInstance) {
 		super.writeLock();
@@ -80,13 +79,13 @@ public class AutoGeneralInstance extends AutoInstance
 				}
 			}
 			players.put(player.getObjectId(), new AGPlayer(player));
-			return instance != null ? AGQuestion.ADDED : (players.size() == agt.getPlayerSize() ? AGQuestion.READY : AGQuestion.ADDED);
-		}
-		finally {
+			return instance != null ? AGQuestion.ADDED
+					: (players.size() == agt.getPlayerSize() ? AGQuestion.READY : AGQuestion.ADDED);
+		} finally {
 			super.writeUnlock();
 		}
 	}
-	
+
 	@Override
 	public void onEnterInstance(Player player) {
 		super.onEnterInstance(player);
@@ -105,7 +104,7 @@ public class AutoGeneralInstance extends AutoInstance
 			instance.register(object);
 		}
 	}
-	
+
 	@Override
 	public void onPressEnter(Player player) {
 		super.onPressEnter(player);
@@ -118,20 +117,22 @@ public class AutoGeneralInstance extends AutoInstance
 		if (loc == null) {
 			return;
 		}
-		TeleportService2.teleportTo(player, worldId, instance.getInstanceId(), loc.getX(), loc.getY(), loc.getZ(), loc.getH());
+		TeleportService2.teleportTo(player, worldId, instance.getInstanceId(), loc.getX(), loc.getY(), loc.getZ(),
+				loc.getH());
 		if (player.getPortalCooldownList().getPortalCooldownItem(loc.getWorldId()) != null) {
-            player.getPortalCooldownList().addPortalCooldown(loc.getWorldId(), 1, DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCooltime(player, worldId));
-        } else {
-            player.getPortalCooldownList().addEntry(worldId);
-        }
+			player.getPortalCooldownList().addPortalCooldown(loc.getWorldId(), 1,
+					DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCooltime(player, worldId));
+		} else {
+			player.getPortalCooldownList().addEntry(worldId);
+		}
 	}
-	
+
 	@Override
 	public void onLeaveInstance(Player player) {
 		super.unregister(player);
 		PlayerGroupService.removePlayer(player);
 	}
-	
+
 	private List<AGPlayer> getPlayersByClass(PlayerClass playerClass) {
 		return select(players, having(on(AGPlayer.class).getPlayerClass(), equalTo(playerClass)));
 	}

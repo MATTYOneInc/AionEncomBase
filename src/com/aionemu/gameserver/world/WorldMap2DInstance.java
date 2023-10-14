@@ -85,8 +85,7 @@ public class WorldMap2DInstance extends WorldMapInstance {
 	}
 
 	/**
-	 * @param ownerId
-	 *          the ownerId to set
+	 * @param ownerId the ownerId to set
 	 */
 	public void setOwnerId(int ownerId) {
 		this.ownerId = ownerId;

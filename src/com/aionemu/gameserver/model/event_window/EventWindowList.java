@@ -27,8 +27,10 @@ import com.aionemu.gameserver.model.gameobjects.Creature;
  * @param <T>
  */
 public interface EventWindowList<T extends Creature> {
-	
+
 	boolean add(T creature, int id, Timestamp lastStamp, int elapsed);
+
 	boolean remove(T creature, int id);
+
 	int size();
 }

@@ -51,17 +51,17 @@ public class LunaData {
 		for (LunaTemplate lt : list) {
 			lunaData.put(lt.getId(), lt);
 			switch (lt.getRace()) {
-				case ASMODIANS:
-					asmos.add(lt);
-					break;
-				case ELYOS:
-					elyos.add(lt);
-					break;
-				case PC_ALL:
-					any.add(lt);
-					break;
-				default:
-					break;
+			case ASMODIANS:
+				asmos.add(lt);
+				break;
+			case ELYOS:
+				elyos.add(lt);
+				break;
+			case PC_ALL:
+				any.add(lt);
+				break;
+			default:
+				break;
 			}
 		}
 		list = null;

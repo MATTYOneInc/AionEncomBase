@@ -53,6 +53,7 @@ public class CM_CLIENT_COMMAND_LOC extends AionClientPacket {
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
-		sendPacket(SM_SYSTEM_MESSAGE.STR_CMD_LOCATION_DESC(player.getWorldId(), player.getX(), player.getY(), player.getZ()));
+		sendPacket(SM_SYSTEM_MESSAGE.STR_CMD_LOCATION_DESC(player.getWorldId(), player.getX(), player.getY(),
+				player.getZ()));
 	}
 }

@@ -50,8 +50,7 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class IuService
-{
+public class IuService {
 	private Map<Integer, IuLocation> iu;
 	private static final int duration = CustomConfig.IU_DURATION;
 	private final Map<Integer, Iu<?>> activeConcert = new FastMap<Integer, Iu<?>>().shared();
@@ -60,21 +59,21 @@ public class IuService
 	public void initConcertLocations() {
 		if (CustomConfig.IU_ENABLED) {
 			iu = DataManager.IU_DATA.getIuLocations();
-			for (IuLocation loc: getIuLocations().values()) {
+			for (IuLocation loc : getIuLocations().values()) {
 				spawn(loc, IuStateType.CLOSED);
 			}
 			log.info("[IuService] Loaded " + iu.size() + " locations.");
 			CronService.getInstance().schedule(new Runnable() {
 				@Override
 				public void run() {
-					for (IuLocation loc: getIuLocations().values()) {
-				        startConcert(loc.getId());
+					for (IuLocation loc : getIuLocations().values()) {
+						startConcert(loc.getId());
 					}
 					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					    @Override
-					    public void visit(Player player) {
+						@Override
+						public void visit(Player player) {
 							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_OPEN);
-					    }
+						}
 					});
 				}
 			}, CustomConfig.IU_SCHEDULE);
@@ -110,7 +109,7 @@ public class IuService
 			}
 		}, duration * 3600 * 1000);
 	}
-	
+
 	public void stopConcert(int id) {
 		if (!isConcertInProgress(id)) {
 			return;
@@ -118,12 +117,13 @@ public class IuService
 		Iu<?> circusBound;
 		synchronized (this) {
 			circusBound = activeConcert.remove(id);
-		} if (circusBound == null || circusBound.isFinished()) {
+		}
+		if (circusBound == null || circusBound.isFinished()) {
 			return;
 		}
 		circusBound.stop();
 	}
-	
+
 	public void spawn(IuLocation loc, IuStateType iustate) {
 		if (iustate.equals(IuStateType.OPEN)) {
 		}
@@ -137,82 +137,102 @@ public class IuService
 			}
 		}
 	}
-	
-   /**
-	* Live Party Concert Hall Countdown.
-	*/
+
+	/**
+	 * Live Party Concert Hall Countdown.
+	 */
 	public boolean lPCHCountdownMsg(int id) {
-        switch (id) {
-            case 1:
-				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						//The entrance to the Live Party Concert Hall appeared.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_OPEN, 0);
-						//The entrance to the Live Party Concert Hall closes in 90 minutes. Escape will engage.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_90M, 1800000);
-						//The entrance to the Live Party Concert Hall closes in 60 minutes. Escape will engage.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_60M, 3600000);
-						//The entrance to the Live Party Concert Hall closes in 30 minutes. Escape will engage.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_30M, 5400000);
-						//The entrance to the Live Party Concert Hall closes in 15 minutes. Escape will engage.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_15M, 6300000);
-						//The entrance to the Live Party Concert Hall closes in 10 minutes. Escape will engage.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_10M, 6600000);
-						//The entrance to the Live Party Concert Hall closes in 5 minutes. Escape will engage.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_5M, 6900000);
-						//The entrance to the Live Party Concert Hall closes in 3 minutes. Escape will engage.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_3M, 7020000);
-						//The entrance to the Live Party Concert Hall closes in 2 minutes. Escape will engage.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_2M, 7080000);
-						//The entrance to the Live Party Concert Hall closes in 1 minutes. Escape will engage.
-						PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_1M, 7140000);
-					}
-				});
-			    return true;
-            default:
-                return false;
+		switch (id) {
+		case 1:
+			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+				@Override
+				public void visit(Player player) {
+					// The entrance to the Live Party Concert Hall appeared.
+					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_OPEN,
+							0);
+					// The entrance to the Live Party Concert Hall closes in 90 minutes. Escape will
+					// engage.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_90M, 1800000);
+					// The entrance to the Live Party Concert Hall closes in 60 minutes. Escape will
+					// engage.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_60M, 3600000);
+					// The entrance to the Live Party Concert Hall closes in 30 minutes. Escape will
+					// engage.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_30M, 5400000);
+					// The entrance to the Live Party Concert Hall closes in 15 minutes. Escape will
+					// engage.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_15M, 6300000);
+					// The entrance to the Live Party Concert Hall closes in 10 minutes. Escape will
+					// engage.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_10M, 6600000);
+					// The entrance to the Live Party Concert Hall closes in 5 minutes. Escape will
+					// engage.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_5M, 6900000);
+					// The entrance to the Live Party Concert Hall closes in 3 minutes. Escape will
+					// engage.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_3M, 7020000);
+					// The entrance to the Live Party Concert Hall closes in 2 minutes. Escape will
+					// engage.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_2M, 7080000);
+					// The entrance to the Live Party Concert Hall closes in 1 minutes. Escape will
+					// engage.
+					PacketSendUtility.playerSendPacketTime(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_EVENT_DIRECT_PORTAL_CLOSE_TIMER_1M, 7140000);
+				}
+			});
+			return true;
+		default:
+			return false;
 		}
 	}
-	
+
 	public void despawn(IuLocation loc) {
 		if (loc.getSpawned() == null) {
-        	return;
-		} for (VisibleObject obj: loc.getSpawned()) {
-            Npc spawned = (Npc) obj;
-            spawned.setDespawnDelayed(true);
-            if (spawned.getAggroList().getList().isEmpty()) {
-                spawned.getController().cancelTask(TaskId.RESPAWN);
-                obj.getController().onDelete();
-            }
-        }
-        loc.getSpawned().clear();
+			return;
+		}
+		for (VisibleObject obj : loc.getSpawned()) {
+			Npc spawned = (Npc) obj;
+			spawned.setDespawnDelayed(true);
+			if (spawned.getAggroList().getList().isEmpty()) {
+				spawned.getController().cancelTask(TaskId.RESPAWN);
+				obj.getController().onDelete();
+			}
+		}
+		loc.getSpawned().clear();
 	}
-	
+
 	public boolean isConcertInProgress(int id) {
 		return activeConcert.containsKey(id);
 	}
-	
+
 	public Map<Integer, Iu<?>> getActiveIu() {
 		return activeConcert;
 	}
-	
+
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public IuLocation getIuLocation(int id) {
 		return iu.get(id);
 	}
-	
+
 	public Map<Integer, IuLocation> getIuLocations() {
 		return iu;
 	}
-	
+
 	public static IuService getInstance() {
 		return IuServiceHolder.INSTANCE;
 	}
-	
+
 	private static class IuServiceHolder {
 		private static final IuService INSTANCE = new IuService();
 	}

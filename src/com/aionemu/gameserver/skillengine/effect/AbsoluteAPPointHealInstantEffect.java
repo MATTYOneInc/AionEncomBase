@@ -23,11 +23,10 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_STATS_INFO;
 import com.aionemu.gameserver.skillengine.model.Effect;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class AbsoluteAPPointHealInstantEffect extends EffectTemplate
-{
+public class AbsoluteAPPointHealInstantEffect extends EffectTemplate {
 	@XmlAttribute(required = true)
 	protected int points;
-	
+
 	public void applyEffect(Effect effect) {
 		if ((effect.getEffected() instanceof Player)) {
 			Player player = (Player) effect.getEffected();

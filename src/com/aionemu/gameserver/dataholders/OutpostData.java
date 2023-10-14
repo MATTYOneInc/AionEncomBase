@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "outpost_locations")
-public class OutpostData
-{
-    @XmlElement(name = "outpost_location")
-    private List<OutpostTemplate> outpostTemplates;
-    @XmlTransient
-    private FastMap<Integer, OutpostLocation> out = new FastMap<Integer, OutpostLocation>();
-	
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        for (OutpostTemplate template : outpostTemplates) {
-            out.put(template.getId(), new OutpostLocation(template));
-        }
-    }
-	
-    public int size() {
-        return out.size();
-    }
-	
-    public FastMap<Integer, OutpostLocation> getOutpostLocations() {
-        return out;
-    }
+public class OutpostData {
+	@XmlElement(name = "outpost_location")
+	private List<OutpostTemplate> outpostTemplates;
+	@XmlTransient
+	private FastMap<Integer, OutpostLocation> out = new FastMap<Integer, OutpostLocation>();
+
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		for (OutpostTemplate template : outpostTemplates) {
+			out.put(template.getId(), new OutpostLocation(template));
+		}
+	}
+
+	public int size() {
+		return out.size();
+	}
+
+	public FastMap<Integer, OutpostLocation> getOutpostLocations() {
+		return out;
+	}
 }

@@ -38,7 +38,8 @@ public class PlayerSkillEntry extends SkillEntry {
 
 	private PersistentState persistentState;
 
-	public PlayerSkillEntry(int skillId, boolean isStigma, boolean isLinked, int skillLvl, int skinId, Timestamp activeSkinTime, int expireTime, boolean isActivated, PersistentState persistentState) {
+	public PlayerSkillEntry(int skillId, boolean isStigma, boolean isLinked, int skillLvl, int skinId,
+			Timestamp activeSkinTime, int expireTime, boolean isActivated, PersistentState persistentState) {
 		super(skillId, skillLvl, skinId, activeSkinTime, expireTime, isActivated);
 		this.isStigma = isStigma;
 		this.isLinked = isLinked;
@@ -51,7 +52,7 @@ public class PlayerSkillEntry extends SkillEntry {
 	public boolean isStigma() {
 		return this.isStigma;
 	}
-	
+
 	public boolean isLinked() {
 		return this.isLinked;
 	}
@@ -60,16 +61,16 @@ public class PlayerSkillEntry extends SkillEntry {
 		super.setSkillLvl(skillLevel);
 		setPersistentState(PersistentState.UPDATE_REQUIRED);
 	}
-	
+
 	public void setSkinId(int skinId) {
 		super.setSkinId(skinId);
 		setPersistentState(PersistentState.UPDATE_REQUIRED);
 	}
-	
+
 	public void setSkinActiveTime(Timestamp creationDate) {
 		super.setSkinActiveTime(creationDate);
 	}
-	
+
 	public void setSkinExpireTime(int minutes) {
 		super.setSkinExpireTime(minutes);
 	}
@@ -93,11 +94,9 @@ public class PlayerSkillEntry extends SkillEntry {
 		case 40010:
 			if (skillLevel > 449 && skillLevel < 500) {
 				return 5;
-			}
-			else if (skillLevel > 499 && skillLevel < 550) {
+			} else if (skillLevel > 499 && skillLevel < 550) {
 				return 6;
-			}
-			else {
+			} else {
 				return skillLevel / 100;
 			}
 		}
@@ -112,8 +111,7 @@ public class PlayerSkillEntry extends SkillEntry {
 	}
 
 	/**
-	 * @param currentXp
-	 *          the currentXp to set
+	 * @param currentXp the currentXp to set
 	 */
 	public void setCurrentXp(int currentXp) {
 		this.currentXp = currentXp;
@@ -127,9 +125,9 @@ public class PlayerSkillEntry extends SkillEntry {
 		this.currentXp += xp;
 		int requiredExp = (int) (0.23 * (skillLevel + 17.2) * (skillLevel + 17.2));
 		StatEnum boostStat = StatEnum.getModifier(skillId);
-		if(boostStat != null) {
+		if (boostStat != null) {
 			float statRate = player.getGameStats().getStat(boostStat, 100).getCurrent() / 100f;
-			if(statRate > 0) {
+			if (statRate > 0) {
 				requiredExp /= statRate;
 			}
 		}
@@ -142,41 +140,34 @@ public class PlayerSkillEntry extends SkillEntry {
 					if (skillUp > 99) {
 						skillUp = 99;
 					}
-				}
-				else if (skillLevel > 99 && skillLevel < 199) {
+				} else if (skillLevel > 99 && skillLevel < 199) {
 					if (skillUp > 199) {
 						skillUp = 199;
 					}
-				}
-				else if (skillLevel > 199 && skillLevel < 299) {
+				} else if (skillLevel > 199 && skillLevel < 299) {
 					if (skillUp > 299) {
 						skillUp = 299;
 					}
-				}
-				else if (skillLevel > 299 && skillLevel < 399) {
+				} else if (skillLevel > 299 && skillLevel < 399) {
 					if (skillUp > 399) {
 						skillUp = 399;
 					}
-				}
-				else if (skillLevel > 399 && skillLevel < 449) {
+				} else if (skillLevel > 399 && skillLevel < 449) {
 					if (skillUp > 449) {
 						skillUp = 449;
 					}
-				}
-				else if (skillLevel > 449 && skillLevel < 499) {
+				} else if (skillLevel > 449 && skillLevel < 499) {
 					if (skillUp > 499) {
 						skillUp = 499;
 					}
-				}
-				else if (skillLevel > 499 && skillLevel < 549) {
+				} else if (skillLevel > 499 && skillLevel < 549) {
 					if (skillUp > 549) {
 						skillUp = 549;
 					}
 				}
 				setSkillLvl(skillUp);
 				currentXp = 0;
-			}
-			else {
+			} else {
 				setSkillLvl(skillLevel + 1);
 				currentXp = 0;
 			}
@@ -193,27 +184,25 @@ public class PlayerSkillEntry extends SkillEntry {
 	}
 
 	/**
-	 * @param persistentState
-	 *          the pState to set
+	 * @param persistentState the pState to set
 	 */
 	public void setPersistentState(PersistentState persistentState) {
 		switch (persistentState) {
-			case DELETED:
-				if (this.persistentState == PersistentState.NEW) {
-					this.persistentState = PersistentState.NOACTION;
-				}
-				else
-					this.persistentState = PersistentState.DELETED;
-				break;
-			case UPDATE_REQUIRED:
-				if (this.persistentState != PersistentState.NEW) {
-					this.persistentState = PersistentState.UPDATE_REQUIRED;
-				}
-				break;
-			case NOACTION:
-				break;
-			default:
-				this.persistentState = persistentState;
+		case DELETED:
+			if (this.persistentState == PersistentState.NEW) {
+				this.persistentState = PersistentState.NOACTION;
+			} else
+				this.persistentState = PersistentState.DELETED;
+			break;
+		case UPDATE_REQUIRED:
+			if (this.persistentState != PersistentState.NEW) {
+				this.persistentState = PersistentState.UPDATE_REQUIRED;
+			}
+			break;
+		case NOACTION:
+			break;
+		default:
+			this.persistentState = persistentState;
 		}
 	}
 }

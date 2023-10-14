@@ -39,79 +39,85 @@ import javolution.util.FastMap;
  * Created by Wnkrz on 24/07/2017.
  */
 
-public class SeasonRankingService
-{
-    private static final Logger log = LoggerFactory.getLogger(SeasonRankingService.class);
-    private int lastUpdate;
-    private final FastMap<Integer, List<SM_SEASON_RANKING>> players = new FastMap<Integer, List<SM_SEASON_RANKING>>();
-	
-    public void loadPacketPlayer(Player player, int tableid) {
-        if (tableid == 1) {
-            loadGoldArenaScore(player);
-        } else if (tableid == 2) {
-            loadTowerScore(player);
-        } else if (tableid == 3) {
-            loadArena6v6Score(player);
-        } else if (tableid == 541) {
-            loadArenaOfTenacityScore(player);
-        } else {
-            return;
-        }
-    }
-	
-    public void loadGoldArenaScore(Player player) {
-        GoldArenaRank rank = getDAO().loadGoldArenaRank(player.getObjectId(), SeasonRankingEnum.HALL_OF_TENACITY.getId());
-        player.setArenaGoldRank(rank);
-        PacketSendUtility.sendPacket(player, new SM_MY_HISTORY(SeasonRankingEnum.HALL_OF_TENACITY.getId(), player.getArenaGoldRank()));
-    }
-	
-    public void loadTowerScore(Player player) {
-        TowerOfChallengeRank rank = getDAO().loadTowerOfChallengeRank(player.getObjectId(), SeasonRankingEnum.TOWER_OF_CHALLENGE.getId());
-        player.setTowerRank(rank);
-        PacketSendUtility.sendPacket(player, new SM_MY_HISTORY(SeasonRankingEnum.TOWER_OF_CHALLENGE.getId(), player.getTowerRank()));
-    }
-	
-    public void loadArena6v6Score(Player player) {
-        Arena6V6Ranking rank = getDAO().loadArena6v6Rank(player.getObjectId(), SeasonRankingEnum.ARENA_6V6.getId());
-        player.set6v6Rank(rank);
-        PacketSendUtility.sendPacket(player, new SM_MY_HISTORY(SeasonRankingEnum.ARENA_6V6.getId(), player.get6v6Rank()));
-    }
-	
-    public void loadArenaOfTenacityScore(Player player) {
-        ArenaOfTenacityRank rank = getDAO().loadArenaOfTenacityRank(player.getObjectId(), SeasonRankingEnum.ARENA_OF_TENACITY.getId());
-        player.setTenacityRank(rank);
-        PacketSendUtility.sendPacket(player, new SM_MY_HISTORY(SeasonRankingEnum.ARENA_OF_TENACITY.getId(), player.getTenacityRank()));
-    }
+public class SeasonRankingService {
+	private static final Logger log = LoggerFactory.getLogger(SeasonRankingService.class);
+	private int lastUpdate;
+	private final FastMap<Integer, List<SM_SEASON_RANKING>> players = new FastMap<Integer, List<SM_SEASON_RANKING>>();
 
-    public void saveCrusibleSpireTime(Player player, int newTime){
-        TowerOfChallengeRank rank = player.getTowerRank();
-        //update best time if new time is supp
-        if(rank.getBestTime() == 0){
-            rank.setCurrentTime(newTime );
-        } else if(rank.getBestTime() > newTime) {
-            rank.setBestTime(newTime);
-        }
-        //add last time
-        if(rank.getLastTime()== 0){
-            rank.setLastTime(newTime);
-        } else {
-            rank.setLastTime(rank.getCurrentTime());
-        }
-        //add curren time
-        rank.setCurrentTime(newTime);
-        //save to database
-        DAOManager.getDAO(SeasonRankingDAO.class).storeTowerRank(player);
-    }
-	
-    private SeasonRankingDAO getDAO() {
-        return DAOManager.getDAO(SeasonRankingDAO.class);
-    }
-	
-    public static final SeasonRankingService getInstance() {
-        return SingletonHolder.INSTANCE;
-    }
-	
-    private static class SingletonHolder {
-        protected static final SeasonRankingService INSTANCE = new SeasonRankingService();
-    }
+	public void loadPacketPlayer(Player player, int tableid) {
+		if (tableid == 1) {
+			loadGoldArenaScore(player);
+		} else if (tableid == 2) {
+			loadTowerScore(player);
+		} else if (tableid == 3) {
+			loadArena6v6Score(player);
+		} else if (tableid == 541) {
+			loadArenaOfTenacityScore(player);
+		} else {
+			return;
+		}
+	}
+
+	public void loadGoldArenaScore(Player player) {
+		GoldArenaRank rank = getDAO().loadGoldArenaRank(player.getObjectId(),
+				SeasonRankingEnum.HALL_OF_TENACITY.getId());
+		player.setArenaGoldRank(rank);
+		PacketSendUtility.sendPacket(player,
+				new SM_MY_HISTORY(SeasonRankingEnum.HALL_OF_TENACITY.getId(), player.getArenaGoldRank()));
+	}
+
+	public void loadTowerScore(Player player) {
+		TowerOfChallengeRank rank = getDAO().loadTowerOfChallengeRank(player.getObjectId(),
+				SeasonRankingEnum.TOWER_OF_CHALLENGE.getId());
+		player.setTowerRank(rank);
+		PacketSendUtility.sendPacket(player,
+				new SM_MY_HISTORY(SeasonRankingEnum.TOWER_OF_CHALLENGE.getId(), player.getTowerRank()));
+	}
+
+	public void loadArena6v6Score(Player player) {
+		Arena6V6Ranking rank = getDAO().loadArena6v6Rank(player.getObjectId(), SeasonRankingEnum.ARENA_6V6.getId());
+		player.set6v6Rank(rank);
+		PacketSendUtility.sendPacket(player,
+				new SM_MY_HISTORY(SeasonRankingEnum.ARENA_6V6.getId(), player.get6v6Rank()));
+	}
+
+	public void loadArenaOfTenacityScore(Player player) {
+		ArenaOfTenacityRank rank = getDAO().loadArenaOfTenacityRank(player.getObjectId(),
+				SeasonRankingEnum.ARENA_OF_TENACITY.getId());
+		player.setTenacityRank(rank);
+		PacketSendUtility.sendPacket(player,
+				new SM_MY_HISTORY(SeasonRankingEnum.ARENA_OF_TENACITY.getId(), player.getTenacityRank()));
+	}
+
+	public void saveCrusibleSpireTime(Player player, int newTime) {
+		TowerOfChallengeRank rank = player.getTowerRank();
+		// update best time if new time is supp
+		if (rank.getBestTime() == 0) {
+			rank.setCurrentTime(newTime);
+		} else if (rank.getBestTime() > newTime) {
+			rank.setBestTime(newTime);
+		}
+		// add last time
+		if (rank.getLastTime() == 0) {
+			rank.setLastTime(newTime);
+		} else {
+			rank.setLastTime(rank.getCurrentTime());
+		}
+		// add curren time
+		rank.setCurrentTime(newTime);
+		// save to database
+		DAOManager.getDAO(SeasonRankingDAO.class).storeTowerRank(player);
+	}
+
+	private SeasonRankingDAO getDAO() {
+		return DAOManager.getDAO(SeasonRankingDAO.class);
+	}
+
+	public static final SeasonRankingService getInstance() {
+		return SingletonHolder.INSTANCE;
+	}
+
+	private static class SingletonHolder {
+		protected static final SeasonRankingService INSTANCE = new SeasonRankingService();
+	}
 }

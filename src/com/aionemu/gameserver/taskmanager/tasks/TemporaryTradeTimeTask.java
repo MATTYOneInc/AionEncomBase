@@ -52,8 +52,7 @@ public class TemporaryTradeTimeTask extends AbstractPeriodicTaskManager {
 		try {
 			items.put(item, players);
 			itemById.put(item.getObjectId(), item);
-		}
-		finally {
+		} finally {
 			writeUnlock();
 		}
 	}
@@ -69,8 +68,7 @@ public class TemporaryTradeTimeTask extends AbstractPeriodicTaskManager {
 		readLock();
 		try {
 			return items.containsKey(item);
-		}
-		finally {
+		} finally {
 			readUnlock();
 		}
 	}
@@ -79,8 +77,7 @@ public class TemporaryTradeTimeTask extends AbstractPeriodicTaskManager {
 		readLock();
 		try {
 			return itemById.get(objectId);
-		}
-		finally {
+		} finally {
 			readUnlock();
 		}
 	}
@@ -96,15 +93,16 @@ public class TemporaryTradeTimeTask extends AbstractPeriodicTaskManager {
 					for (int playerId : entry.getValue()) {
 						Player player = World.getInstance().findPlayer(playerId);
 						if (player != null) {
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_END_OF_EXCHANGE_TIME(item.getNameId(), time));
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_MSG_END_OF_EXCHANGE_TIME(item.getNameId(), time));
 						}
 					}
-				}
-				else if (time <= 0) {
+				} else if (time <= 0) {
 					for (int playerId : entry.getValue()) {
 						Player player = World.getInstance().findPlayer(playerId);
 						if (player != null) {
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_EXCHANGE_TIME_OVER(item.getNameId()));
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_MSG_EXCHANGE_TIME_OVER(item.getNameId()));
 						}
 					}
 					item.setTemporaryExchangeTime(0);
@@ -112,8 +110,7 @@ public class TemporaryTradeTimeTask extends AbstractPeriodicTaskManager {
 					itemById.remove(item.getObjectId());
 				}
 			}
-		}
-		finally {
+		} finally {
 			writeUnlock();
 		}
 	}

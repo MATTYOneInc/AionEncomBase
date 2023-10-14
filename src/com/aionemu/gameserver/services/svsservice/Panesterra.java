@@ -26,18 +26,20 @@ import com.aionemu.gameserver.services.SvsService;
  * @author Rinzler (Encom)
  */
 
-public abstract class Panesterra<PL extends SvsLocation>
-{
+public abstract class Panesterra<PL extends SvsLocation> {
 	private boolean started;
 	private final PL svsLocation;
+
 	protected abstract void stopSvs();
+
 	protected abstract void startSvs();
+
 	private final AtomicBoolean finished = new AtomicBoolean();
-	
+
 	public Panesterra(PL svsLocation) {
 		this.svsLocation = svsLocation;
 	}
-	
+
 	public final void start() {
 		boolean doubleStart = false;
 		synchronized (this) {
@@ -46,34 +48,35 @@ public abstract class Panesterra<PL extends SvsLocation>
 			} else {
 				started = true;
 			}
-		} if (doubleStart) {
+		}
+		if (doubleStart) {
 			return;
 		}
 		startSvs();
 	}
-	
+
 	public final void stop() {
 		if (finished.compareAndSet(false, true)) {
 			stopSvs();
 		}
 	}
-	
+
 	protected void spawn(SvsStateType type) {
 		SvsService.getInstance().spawn(getSvsLocation(), type);
 	}
-	
+
 	protected void despawn() {
 		SvsService.getInstance().despawn(getSvsLocation());
 	}
-	
+
 	public boolean isFinished() {
 		return finished.get();
 	}
-	
+
 	public PL getSvsLocation() {
 		return svsLocation;
 	}
-	
+
 	public int getSvsLocationId() {
 		return svsLocation.getId();
 	}

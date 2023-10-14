@@ -108,7 +108,8 @@ public class MapRegion {
 	}
 
 	/**
-	 * Return an instance of {@link World}, which keeps map, to which belongs this region
+	 * Return an instance of {@link World}, which keeps map, to which belongs this
+	 * region
 	 */
 	public World getWorld() {
 		return getParent().getWorld();
@@ -177,8 +178,7 @@ public class MapRegion {
 		if (objects.put(object.getObjectId(), object) == null) {
 			if (object instanceof Player) {
 				checkActiveness(playerCount.incrementAndGet() > 0);
-			}
-			else if (DeveloperConfig.SPAWN_CHECK) {
+			} else if (DeveloperConfig.SPAWN_CHECK) {
 				Iterator<TreeSet<ZoneInstance>> zoneIter = zoneMap.values().iterator();
 				while (zoneIter.hasNext()) {
 					TreeSet<ZoneInstance> zones = zoneIter.next();
@@ -191,7 +191,8 @@ public class MapRegion {
 						}
 					}
 				}
-				log.warn("Outside any zones: id=" + object + " > X:" + object.getX() + ",Y:" + object.getY() + ",Z:" + object.getZ());
+				log.warn("Outside any zones: id=" + object + " > X:" + object.getX() + ",Y:" + object.getY() + ",Z:"
+						+ object.getZ());
 			}
 		}
 	}
@@ -212,8 +213,7 @@ public class MapRegion {
 	final void checkActiveness(boolean active) {
 		if (active && regionActive.compareAndSet(false, true)) {
 			startActivation();
-		}
-		else if (!active) {
+		} else if (!active) {
 			startDeactivation();
 		}
 	}
@@ -276,7 +276,8 @@ public class MapRegion {
 	 */
 	private void deactivateObjects() {
 		for (VisibleObject visObject : objects.values()) {
-			if (visObject instanceof Creature && !(SiegeConfig.BALAUR_AUTO_ASSAULT && visObject instanceof SiegeNpc || !(visObject instanceof BaseNpc))) { // Tweak
+			if (visObject instanceof Creature && !(SiegeConfig.BALAUR_AUTO_ASSAULT && visObject instanceof SiegeNpc
+					|| !(visObject instanceof BaseNpc))) { // Tweak
 				Creature creature = (Creature) visObject;
 				creature.getAi2().onGeneralEvent(AIEventType.DEACTIVATE);
 			}
@@ -298,7 +299,8 @@ public class MapRegion {
 	}
 
 	public void revalidateZones(Creature creature) {
-		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(), mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
+		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(),
+				mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
 			boolean foundZone = false;
 			int category = e.getKey();
 			TreeSet<ZoneInstance> zones = e.getValue();
@@ -322,7 +324,8 @@ public class MapRegion {
 
 	public List<ZoneInstance> getZones(Creature creature) {
 		List<ZoneInstance> z = new ArrayList<ZoneInstance>();
-		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(), mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
+		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(),
+				mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
 			TreeSet<ZoneInstance> zones = e.getValue();
 			for (ZoneInstance zone : zones) {
 				if (zone.isInsideCreature(creature)) {
@@ -334,7 +337,8 @@ public class MapRegion {
 	}
 
 	public boolean onDie(Creature attacker, Creature target) {
-		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(), mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
+		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(),
+				mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
 			TreeSet<ZoneInstance> zones = e.getValue();
 			for (ZoneInstance zone : zones) {
 				if (zone.isInsideCreature(target)) {
@@ -348,7 +352,8 @@ public class MapRegion {
 	}
 
 	public boolean isInsideZone(ZoneName zoneName, float x, float y, float z) {
-		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(), mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
+		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(),
+				mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
 			TreeSet<ZoneInstance> zones = e.getValue();
 			for (ZoneInstance zone : zones) {
 				if (zone.getZoneTemplate().getName() != zoneName) {
@@ -361,7 +366,8 @@ public class MapRegion {
 	}
 
 	public boolean isInsideZone(ZoneName zoneName, Creature creature) {
-		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(), mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
+		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(),
+				mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
 			TreeSet<ZoneInstance> zones = e.getValue();
 			for (ZoneInstance zone : zones) {
 				if (zone.getZoneTemplate().getName() != zoneName) {
@@ -374,14 +380,16 @@ public class MapRegion {
 	}
 
 	/**
-	 * Item use zones always have the same names instances, while we have unique names;
-	 * Thus, a special check for item use.
+	 * Item use zones always have the same names instances, while we have unique
+	 * names; Thus, a special check for item use.
+	 * 
 	 * @param zoneName
 	 * @param creature
 	 * @return
 	 */
 	public boolean isInsideItemUseZone(ZoneName zoneName, Creature creature) {
-		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(), mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
+		for (Entry<Integer, TreeSet<ZoneInstance>> e = zoneMap.head(),
+				mapEnd = zoneMap.tail(); (e = e.getNext()) != mapEnd;) {
 			TreeSet<ZoneInstance> zones = e.getValue();
 			for (ZoneInstance zone : zones) {
 				if (!zone.getZoneTemplate().getXmlName().startsWith(zoneName.toString())) {

@@ -44,8 +44,7 @@ import com.google.common.collect.Collections2;
 
 import javolution.util.FastMap;
 
-public class EffectController
-{
+public class EffectController {
 	private Creature owner;
 
 	protected Map<String, Effect> passiveEffectMap = new FastMap<String, Effect>().shared();
@@ -57,7 +56,7 @@ public class EffectController
 	protected int abnormals;
 
 	private boolean isUnderShield = false;
-	
+
 	public EffectController(Creature owner) {
 		this.owner = owner;
 	}
@@ -96,13 +95,13 @@ public class EffectController
 				Effect existingEffect = mapToUpdate.get(nextEffect.getStack());
 				if (existingEffect != null && existingEffect.isPassive()) {
 					// check stack level
-					if (existingEffect.getSkillStackLvl() > nextEffect.getSkillStackLvl()){
+					if (existingEffect.getSkillStackLvl() > nextEffect.getSkillStackLvl()) {
 						return;
 					}
 
 					// check skill level (when stack level same)
 					if (existingEffect.getSkillStackLvl() == nextEffect.getSkillStackLvl()
-						&& existingEffect.getSkillLevel() > nextEffect.getSkillLevel()){
+							&& existingEffect.getSkillLevel() > nextEffect.getSkillLevel()) {
 						return;
 					}
 					existingEffect.endEffect();
@@ -111,8 +110,8 @@ public class EffectController
 
 				if (useEffectId) {
 					/**
-					 * idea here is that effects with same effectId shouldnt stack
-					 * effect with higher basiclvl takes priority
+					 * idea here is that effects with same effectId shouldnt stack effect with
+					 * higher basiclvl takes priority
 					 */
 					for (Effect effect : mapToUpdate.values()) {
 						if (effect.getTargetSlot() == nextEffect.getTargetSlot()) {
@@ -127,8 +126,7 @@ public class EffectController
 									if (et.getEffectid() == et2.getEffectid()) {
 										if (et.getBasicLvl() > et2.getBasicLvl()) {
 											return;
-										}
-										else {
+										} else {
 											effect.endEffect();
 										}
 									}
@@ -143,23 +141,24 @@ public class EffectController
 			if (conflictedEffect != null) {
 				conflictedEffect.endEffect();
 			}
-			//Max 3 Chants Effect
-            if (nextEffect.isToggle()) {
-                int mts = 1;
-                if (nextEffect.getSkillSubType() == SkillSubType.CHANT) {
-                    mts = 3;
-                } else if (isAethertechEffect(nextEffect.getSkillId())) {
-                    mts = 6;
-                } else {
-                    mts = 1;
-                } if (mapToUpdate.size() >= mts) {
-                    Iterator<Effect> iter = mapToUpdate.values().iterator();
-                    Effect effect = iter.next();
-                    effect.endEffect();
-                    iter.remove();
-                }
-            }
-			//Max 4 Chants Effect
+			// Max 3 Chants Effect
+			if (nextEffect.isToggle()) {
+				int mts = 1;
+				if (nextEffect.getSkillSubType() == SkillSubType.CHANT) {
+					mts = 3;
+				} else if (isAethertechEffect(nextEffect.getSkillId())) {
+					mts = 6;
+				} else {
+					mts = 1;
+				}
+				if (mapToUpdate.size() >= mts) {
+					Iterator<Effect> iter = mapToUpdate.values().iterator();
+					Effect effect = iter.next();
+					effect.endEffect();
+					iter.remove();
+				}
+			}
+			// Max 4 Chants Effect
 			if (nextEffect.isChant()) {
 				Collection<Effect> chants = this.getChantEffects();
 				if (chants.size() >= 4) {
@@ -167,23 +166,22 @@ public class EffectController
 					chantIter.next().endEffect();
 				}
 			}
-			//Max 2 Ranger Effect
-            if(nextEffect.isRangerBuff()) {
-                Collection<Effect> rangerBuff = this.getRangerEffects();
-                if (rangerBuff.size() >= 2) {
-                    Iterator<Effect> rangerIter = rangerBuff.iterator();
-                    rangerIter.next().endEffect();
-                }
-            }
-			if (!nextEffect.isPassive()) {
-			    if (searchConflict(nextEffect)) {
-				    return;
+			// Max 2 Ranger Effect
+			if (nextEffect.isRangerBuff()) {
+				Collection<Effect> rangerBuff = this.getRangerEffects();
+				if (rangerBuff.size() >= 2) {
+					Iterator<Effect> rangerIter = rangerBuff.iterator();
+					rangerIter.next().endEffect();
 				}
-		        checkEffectCooldownId(nextEffect);
+			}
+			if (!nextEffect.isPassive()) {
+				if (searchConflict(nextEffect)) {
+					return;
+				}
+				checkEffectCooldownId(nextEffect);
 			}
 			mapToUpdate.put(nextEffect.getStack(), nextEffect);
-		}
-		finally {
+		} finally {
 			lock.unlock();
 		}
 		nextEffect.startEffect(false);
@@ -192,61 +190,61 @@ public class EffectController
 		}
 	}
 
-	public boolean isAethertechEffect(int skillId) { //4.8
-        switch (skillId) {
-            //Embark
-			case 2767:
-            case 2768:
-            case 2769:
-            case 2770:
-            case 2771:
-			case 2772:
-			case 2773:
-			case 2774:
-			case 2775:
-			case 2776:
-			case 2777:
-			case 2778:
-			//Kinetic Battery
-            case 2440:
-            case 2441:
-            case 2442:
-            case 2443:
-            case 2444:
-			case 2445:
-			case 2446:
-			case 2447:
-			case 2448:
-			case 2449:
-			//Kinetic Bulwark
-            case 2579:
-            case 2580:
-            case 2581:
-			//Mobility Thrusters
-            case 2421:
-            case 2422:
-			//Stability Thrusters
-            case 2736:
-            case 2737:
-            case 2738:
-            case 2739:
-            case 2740:
-			//Mounting Frustration
-			case 2838:
-			case 2839:
-			case 2840:
-			case 2841:
-			case 2842:
-			case 2843:
-			case 2844:
-			case 2845:
-			case 2846:
-			case 2847:
-			case 2848:
-                return true;
-        }
-        return false;
-    }
+	public boolean isAethertechEffect(int skillId) { // 4.8
+		switch (skillId) {
+		// Embark
+		case 2767:
+		case 2768:
+		case 2769:
+		case 2770:
+		case 2771:
+		case 2772:
+		case 2773:
+		case 2774:
+		case 2775:
+		case 2776:
+		case 2777:
+		case 2778:
+			// Kinetic Battery
+		case 2440:
+		case 2441:
+		case 2442:
+		case 2443:
+		case 2444:
+		case 2445:
+		case 2446:
+		case 2447:
+		case 2448:
+		case 2449:
+			// Kinetic Bulwark
+		case 2579:
+		case 2580:
+		case 2581:
+			// Mobility Thrusters
+		case 2421:
+		case 2422:
+			// Stability Thrusters
+		case 2736:
+		case 2737:
+		case 2738:
+		case 2739:
+		case 2740:
+			// Mounting Frustration
+		case 2838:
+		case 2839:
+		case 2840:
+		case 2841:
+		case 2842:
+		case 2843:
+		case 2844:
+		case 2845:
+		case 2846:
+		case 2847:
+		case 2848:
+			return true;
+		}
+		return false;
+	}
 
 	/**
 	 * @param mapToUpdate
@@ -255,11 +253,11 @@ public class EffectController
 	 */
 	private final Effect findConflictedEffect(Map<String, Effect> mapToUpdate, Effect newEffect) {
 		int conflictId = newEffect.getSkillTemplate().getConflictId();
-		if(conflictId == 0){
+		if (conflictId == 0) {
 			return null;
 		}
-		for(Effect effect : mapToUpdate.values()){
-			if(effect.getSkillTemplate().getConflictId() == conflictId){
+		for (Effect effect : mapToUpdate.values()) {
+			if (effect.getSkillTemplate().getConflictId() == conflictId) {
 				return effect;
 			}
 		}
@@ -394,8 +392,10 @@ public class EffectController
 	}
 
 	/**
-	 * Method used to calculate number of effects of given dispelcategory, targetslot and dispelLevel
-	 * used only in DispelBuffCounterAtk, therefore rest of cases are skipped
+	 * Method used to calculate number of effects of given dispelcategory,
+	 * targetslot and dispelLevel used only in DispelBuffCounterAtk, therefore rest
+	 * of cases are skipped
+	 * 
 	 * @param dispelCat
 	 * @param targetSlot
 	 * @param dispelLevel
@@ -407,21 +407,24 @@ public class EffectController
 		for (Effect effect : abnormalEffectMap.values()) {
 			DispelCategoryType dispelCat = effect.getDispelCategory();
 			SkillTargetSlot tragetSlot = effect.getSkillTemplate().getTargetSlot();
-			//effects with duration 86400000 cant be dispelled
-			//TODO recheck
+			// effects with duration 86400000 cant be dispelled
+			// TODO recheck
 			if (effect.getDuration() >= 86400000 && !removebleEffect(effect)) {
 				continue;
 			}
 			if (effect.isSanctuaryEffect()) {
 				continue;
 			}
-			//check for targetslot, effects with target slot higher or equal to 2 cant be removed (ex. skillId: 11885)
-			if (tragetSlot != SkillTargetSlot.BUFF && (tragetSlot != SkillTargetSlot.DEBUFF && dispelCat != DispelCategoryType.ALL) || effect.getTargetSlotLevel() >= 2) {
+			// check for targetslot, effects with target slot higher or equal to 2 cant be
+			// removed (ex. skillId: 11885)
+			if (tragetSlot != SkillTargetSlot.BUFF
+					&& (tragetSlot != SkillTargetSlot.DEBUFF && dispelCat != DispelCategoryType.ALL)
+					|| effect.getTargetSlotLevel() >= 2) {
 				continue;
-            }
+			}
 			switch (dispelCat) {
 			case ALL:
-			case BUFF: //DispelBuffCounterAtkEffect
+			case BUFF: // DispelBuffCounterAtkEffect
 				if (effect.getReqDispelLevel() <= dispelLevel) {
 					number++;
 				}
@@ -431,72 +434,74 @@ public class EffectController
 		return number;
 	}
 
-	public void removeEffectByDispelCat(DispelCategoryType dispelCat, SkillTargetSlot targetSlot, int count, int dispelLevel, int power, boolean itemTriggered) {
+	public void removeEffectByDispelCat(DispelCategoryType dispelCat, SkillTargetSlot targetSlot, int count,
+			int dispelLevel, int power, boolean itemTriggered) {
 		for (Effect effect : abnormalEffectMap.values()) {
 			if (count == 0) {
 				break;
 			}
-			//effects with duration 86400000 cant be dispelled
-			//TODO recheck
+			// effects with duration 86400000 cant be dispelled
+			// TODO recheck
 			if (effect.getDuration() >= 86400000 && !removebleEffect(effect)) {
 				continue;
 			}
 			if (effect.isSanctuaryEffect()) {
 				continue;
-            }
+			}
 			// If dispel is triggered by an item (ex. Healing Potion)
 			// and debuff is unpottable, do not dispel
 			if ((effect.getSkillTemplate().isUndispellableByPotions()) && itemTriggered) {
 				continue;
 			}
-			//check for targetslot, effects with target slot level higher or equal to 2 cant be removed (ex. skillId: 11885)
+			// check for targetslot, effects with target slot level higher or equal to 2
+			// cant be removed (ex. skillId: 11885)
 			if (effect.getTargetSlot() != targetSlot.ordinal() || effect.getTargetSlotLevel() >= 2) {
 				continue;
-            }
+			}
 			boolean remove = false;
 			switch (dispelCat) {
-				case ALL:
-					if ((effect.getDispelCategory() == DispelCategoryType.ALL
+			case ALL:
+				if ((effect.getDispelCategory() == DispelCategoryType.ALL
 						|| effect.getDispelCategory() == DispelCategoryType.DEBUFF_MENTAL
 						|| effect.getDispelCategory() == DispelCategoryType.DEBUFF_PHYSICAL)
 						&& effect.getReqDispelLevel() <= dispelLevel) {
-						remove = true;
-					}
+					remove = true;
+				}
 				break;
-				case DEBUFF_MENTAL:
-					if ((effect.getDispelCategory() == DispelCategoryType.ALL
+			case DEBUFF_MENTAL:
+				if ((effect.getDispelCategory() == DispelCategoryType.ALL
 						|| effect.getDispelCategory() == DispelCategoryType.DEBUFF_MENTAL)
 						&& effect.getReqDispelLevel() <= dispelLevel) {
-						remove = true;
-					}
+					remove = true;
+				}
 				break;
-				case DEBUFF_PHYSICAL:
-					if ((effect.getDispelCategory() == DispelCategoryType.ALL
+			case DEBUFF_PHYSICAL:
+				if ((effect.getDispelCategory() == DispelCategoryType.ALL
 						|| effect.getDispelCategory() == DispelCategoryType.DEBUFF_PHYSICAL)
 						&& effect.getReqDispelLevel() <= dispelLevel) {
-						remove = true;
-					}
+					remove = true;
+				}
 				break;
-				case BUFF:
-					if (effect.getDispelCategory() == DispelCategoryType.BUFF
+			case BUFF:
+				if (effect.getDispelCategory() == DispelCategoryType.BUFF
 						&& effect.getReqDispelLevel() <= dispelLevel) {
-						remove = true;
-					}
+					remove = true;
+				}
 				break;
-				case STUN:
-					if (effect.getDispelCategory() == DispelCategoryType.STUN) {
-						remove = true;
-					}
+			case STUN:
+				if (effect.getDispelCategory() == DispelCategoryType.STUN) {
+					remove = true;
+				}
 				break;
-				case NPC_BUFF:
-					if (effect.getDispelCategory() == DispelCategoryType.NPC_BUFF) {
-						remove = true;
-					}
+			case NPC_BUFF:
+				if (effect.getDispelCategory() == DispelCategoryType.NPC_BUFF) {
+					remove = true;
+				}
 				break;
-				case NPC_DEBUFF_PHYSICAL:
-					if (effect.getDispelCategory() == DispelCategoryType.NPC_DEBUFF_PHYSICAL) {
-						remove = true;
-					}
+			case NPC_DEBUFF_PHYSICAL:
+				if (effect.getDispelCategory() == DispelCategoryType.NPC_DEBUFF_PHYSICAL) {
+					remove = true;
+				}
 				break;
 			}
 
@@ -504,14 +509,12 @@ public class EffectController
 				if (removePower(effect, power)) {
 					effect.endEffect();
 					abnormalEffectMap.remove(effect.getStack());
-				}
-				else if (owner instanceof Player) {
-					PacketSendUtility.sendPacket((Player)owner, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_DISPELCOUNT);
+				} else if (owner instanceof Player) {
+					PacketSendUtility.sendPacket((Player) owner, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_DISPELCOUNT);
 				}
 				count--;
-			}
-			else if (owner instanceof Player) {
-				PacketSendUtility.sendPacket((Player)owner, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_DISPELLEVEL);
+			} else if (owner instanceof Player) {
+				PacketSendUtility.sendPacket((Player) owner, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_DISPELLEVEL);
 			}
 		}
 	}
@@ -528,17 +531,19 @@ public class EffectController
 			}
 			if (effect.isSanctuaryEffect()) {
 				continue;
-            }
-			if (tragetSlot != SkillTargetSlot.BUFF && (tragetSlot != SkillTargetSlot.DEBUFF && dispelCat != DispelCategoryType.ALL) || effect.getTargetSlotLevel() >= 2) {
+			}
+			if (tragetSlot != SkillTargetSlot.BUFF
+					&& (tragetSlot != SkillTargetSlot.DEBUFF && dispelCat != DispelCategoryType.ALL)
+					|| effect.getTargetSlotLevel() >= 2) {
 				continue;
-            }
+			}
 			boolean remove = false;
 			switch (dispelCat) {
-				case ALL:
-				case BUFF:
-					if (effect.getReqDispelLevel() <= dispelLevel) {
-						remove = true;
-					}
+			case ALL:
+			case BUFF:
+				if (effect.getReqDispelLevel() <= dispelLevel) {
+					remove = true;
+				}
 				break;
 			}
 
@@ -546,14 +551,12 @@ public class EffectController
 				if (removePower(effect, power)) {
 					effect.endEffect();
 					abnormalEffectMap.remove(effect.getStack());
-				}
-				else if (owner instanceof Player) {
-					PacketSendUtility.sendPacket((Player)owner, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_DISPELCOUNT);
+				} else if (owner instanceof Player) {
+					PacketSendUtility.sendPacket((Player) owner, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_DISPELCOUNT);
 				}
 				count--;
-			}
-			else if (owner instanceof Player) {
-				PacketSendUtility.sendPacket((Player)owner, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_DISPELLEVEL);
+			} else if (owner instanceof Player) {
+				PacketSendUtility.sendPacket((Player) owner, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_DISPELLEVEL);
 			}
 		}
 	}
@@ -561,19 +564,19 @@ public class EffectController
 	private boolean removebleEffect(Effect effect) {
 		int skillId = effect.getSkillId();
 		switch (skillId) {
-			case 20941:
-			case 20942:
-			case 19370:
-			case 19371:
-			case 19372:
-			case 20530:
-			case 20531:
-			case 19345:
-			case 19346:
-				//TODO
-				return true;
-			default:
-				return false;
+		case 20941:
+		case 20942:
+		case 19370:
+		case 19371:
+		case 19372:
+		case 20530:
+		case 20531:
+		case 19345:
+		case 19346:
+			// TODO
+			return true;
+		default:
+			return false;
 		}
 	}
 
@@ -589,11 +592,10 @@ public class EffectController
 
 	private boolean removePower(Effect effect, int power) {
 		int effectPower = effect.removePower(power);
-		
+
 		if (effectPower <= 0) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
@@ -635,7 +637,8 @@ public class EffectController
 	}
 
 	/**
-	 * Removes all effects from controllers and ends them appropriately Passive effect will not be removed
+	 * Removes all effects from controllers and ends them appropriately Passive
+	 * effect will not be removed
 	 */
 	public void removeAllEffects() {
 		this.removeAllEffects(false);
@@ -646,19 +649,13 @@ public class EffectController
 			Iterator<Map.Entry<String, Effect>> it = abnormalEffectMap.entrySet().iterator();
 			while (it.hasNext()) {
 				Map.Entry<String, Effect> entry = it.next();
-				if (!entry.getValue().getSkillTemplate().isNoRemoveAtDie() &&
-				    !entry.getValue().isXpBoost() &&
-					!entry.getValue().isApBoost() &&
-					!entry.getValue().isDrBoost() &&
-					!entry.getValue().isBdrBoost() &&
-					!entry.getValue().isEnchantBoost() &&
-					!entry.getValue().isIdunDropBoost() &&
-					!entry.getValue().isAuthorizeBoost() &&
-					!entry.getValue().isSprintFpReduce() &&
-					!entry.getValue().isReturnCoolReduce() &&
-					!entry.getValue().isEnchantOptionBoost() &&
-					!entry.getValue().isDeathPenaltyReduce() &&
-					!entry.getValue().isOdellaRecoverIncrease()) {
+				if (!entry.getValue().getSkillTemplate().isNoRemoveAtDie() && !entry.getValue().isXpBoost()
+						&& !entry.getValue().isApBoost() && !entry.getValue().isDrBoost()
+						&& !entry.getValue().isBdrBoost() && !entry.getValue().isEnchantBoost()
+						&& !entry.getValue().isIdunDropBoost() && !entry.getValue().isAuthorizeBoost()
+						&& !entry.getValue().isSprintFpReduce() && !entry.getValue().isReturnCoolReduce()
+						&& !entry.getValue().isEnchantOptionBoost() && !entry.getValue().isDeathPenaltyReduce()
+						&& !entry.getValue().isOdellaRecoverIncrease()) {
 					entry.getValue().endEffect();
 					it.remove();
 				}
@@ -669,7 +666,7 @@ public class EffectController
 			}
 			noshowEffects.clear();
 		} else {
-			//remove all effects on logout
+			// remove all effects on logout
 			for (Effect effect : abnormalEffectMap.values()) {
 				effect.endEffect();
 			}
@@ -721,8 +718,10 @@ public class EffectController
 	public boolean isUnderFear() {
 		return isAbnormalSet(AbnormalState.FEAR);
 	}
+
 	public void updatePlayerEffectIcons() {
 	}
+
 	public void updatePlayerEffectIconsImpl() {
 	}
 
@@ -752,6 +751,7 @@ public class EffectController
 			}
 		});
 	}
+
 	public Collection<Effect> getChantEffects() {
 		return Collections2.filter(abnormalEffectMap.values(), new Predicate<Effect>() {
 			@Override
@@ -760,22 +760,24 @@ public class EffectController
 			}
 		});
 	}
+
 	public Collection<Effect> getRangerEffects() {
-        return Collections2.filter(abnormalEffectMap.values(), new Predicate<Effect>() {
-            @Override
-            public boolean apply(Effect effect) {
-                return effect.isRangerBuff();
-            }
-        });
-    }
+		return Collections2.filter(abnormalEffectMap.values(), new Predicate<Effect>() {
+			@Override
+			public boolean apply(Effect effect) {
+				return effect.isRangerBuff();
+			}
+		});
+	}
+
 	public Collection<Effect> getBuffEffects() {
-        return Collections2.filter(abnormalEffectMap.values(), new Predicate<Effect>() {
-            @Override
-            public boolean apply(Effect effect) {
-                return effect.isBuff();
-            }
-        });
-    }
+		return Collections2.filter(abnormalEffectMap.values(), new Predicate<Effect>() {
+			@Override
+			public boolean apply(Effect effect) {
+				return effect.isBuff();
+			}
+		});
+	}
 
 	/**
 	 * ABNORMAL EFFECTS
@@ -834,15 +836,14 @@ public class EffectController
 		for (Effect eff : getAbnormalEffects()) {
 			if (eff.isDeityAvatar()) {
 				return TransformType.AVATAR;
-			}
-			else {
+			} else {
 				return eff.getTransformType();
 			}
 		}
-		return TransformType.NONE;		
+		return TransformType.NONE;
 	}
 
-	public boolean isEmpty(){
+	public boolean isEmpty() {
 		return abnormalEffectMap.isEmpty();
 	}
 
@@ -855,44 +856,45 @@ public class EffectController
 			return;
 		}
 		switch (delayId) {
-			case 2005:
-			case 2022:
-			case 2024:
-			case 2026:
-			case 2028:
-				size = 2;
+		case 2005:
+		case 2022:
+		case 2024:
+		case 2026:
+		case 2028:
+			size = 2;
 			break;
 		}
 		rDelay = delayId;
 
-		if(delayId == rDelay && effects.size() >= size){
+		if (delayId == rDelay && effects.size() >= size) {
 			int i = 0;
 			Effect toRemove = null;
 			Iterator<Effect> iter2 = effects.iterator();
-			while(iter2.hasNext()){
+			while (iter2.hasNext()) {
 				Effect nextEffect = iter2.next();
 				if (nextEffect.getSkillTemplate().getDelayId() == rDelay
-					&& nextEffect.getTargetSlot() == effect.getTargetSlot()){
+						&& nextEffect.getTargetSlot() == effect.getTargetSlot()) {
 					i++;
-					if(toRemove == null) {
+					if (toRemove == null) {
 						toRemove = nextEffect;
 					}
 				}
 			}
-			if(i >= size && toRemove != null) {
+			if (i >= size && toRemove != null) {
 				toRemove.endEffect();
 			}
 		}
 	}
 
 	private boolean checkExtraEffect(Effect effect) {
-	Effect existingEffect = getMapForEffect(effect).get(effect.getStack());
-	  if (existingEffect != null) {
-		    if (existingEffect.getDispelCategory() == DispelCategoryType.EXTRA && effect.getDispelCategory() == DispelCategoryType.EXTRA) {
-		        existingEffect.endEffect();
-		        return true;
-		    }
-	    }
+		Effect existingEffect = getMapForEffect(effect).get(effect.getStack());
+		if (existingEffect != null) {
+			if (existingEffect.getDispelCategory() == DispelCategoryType.EXTRA
+					&& effect.getDispelCategory() == DispelCategoryType.EXTRA) {
+				existingEffect.endEffect();
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -901,12 +903,13 @@ public class EffectController
 			return false;
 		}
 		for (Effect effect : abnormalEffectMap.values()) {
-			if (effect.getSkillSubType().equals(nextEffect.getSkillSubType()) || effect.getTargetSlotEnum().equals(nextEffect.getTargetSlotEnum())) {
-				for (EffectTemplate et : effect.getEffectTemplates())	{
+			if (effect.getSkillSubType().equals(nextEffect.getSkillSubType())
+					|| effect.getTargetSlotEnum().equals(nextEffect.getTargetSlotEnum())) {
+				for (EffectTemplate et : effect.getEffectTemplates()) {
 					if (et.getEffectid() == 0) {
 						continue;
 					}
-					for (EffectTemplate et2 : nextEffect.getEffectTemplates())	{
+					for (EffectTemplate et2 : nextEffect.getEffectTemplates()) {
 						if (et2.getEffectid() == 0) {
 							continue;
 						}
@@ -916,30 +919,31 @@ public class EffectController
 									nextEffect.setEffectResult(EffectResult.CONFLICT);
 								}
 								return true;
-							}
-							else {
+							} else {
 								effect.endEffect();
 							}
 						}
 					}
 				}
-		    }
+			}
 		}
 		return false;
 	}
 
 	private boolean priorityStigmaEffect(Effect nextEffect) {
 		for (Effect effect : abnormalEffectMap.values()) {
-			if (effect.getSkillTemplate().getStigmaType().getId() < nextEffect.getSkillTemplate().getStigmaType().getId() &&
-			    effect.getTargetSlot() == nextEffect.getTargetSlot() &&
-				effect.getTargetSlotLevel() == nextEffect.getTargetSlotLevel()) {
+			if (effect.getSkillTemplate().getStigmaType().getId() < nextEffect.getSkillTemplate().getStigmaType()
+					.getId() && effect.getTargetSlot() == nextEffect.getTargetSlot()
+					&& effect.getTargetSlotLevel() == nextEffect.getTargetSlotLevel()) {
 				for (EffectTemplate et : effect.getEffectTemplates()) {
 					if (et.getEffectid() == 0) {
 						continue;
-					} for (EffectTemplate et2: nextEffect.getEffectTemplates())	{
+					}
+					for (EffectTemplate et2 : nextEffect.getEffectTemplates()) {
 						if (et2.getEffectid() == 0) {
 							continue;
-						} if (et.getEffectid() == et2.getEffectid()) {
+						}
+						if (et.getEffectid() == et2.getEffectid()) {
 							effect.endEffect();
 						}
 						return true;

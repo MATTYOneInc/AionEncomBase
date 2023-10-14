@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "conquest")
-public class ConquestData
-{
+public class ConquestData {
 	@XmlElement(name = "conquest_location")
 	private List<ConquestTemplate> conquestTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, ConquestLocation> conquest = new FastMap<Integer, ConquestLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (ConquestTemplate template : conquestTemplates) {
 			conquest.put(template.getId(), new ConquestLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return conquest.size();
 	}
-	
+
 	public FastMap<Integer, ConquestLocation> getConquestLocations() {
 		return conquest;
 	}

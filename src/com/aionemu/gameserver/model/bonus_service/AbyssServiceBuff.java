@@ -36,20 +36,20 @@ import com.aionemu.gameserver.skillengine.change.Func;
  * @Author Rinzler (Encom)
  */
 
-public class AbyssServiceBuff implements StatOwner
-{
+public class AbyssServiceBuff implements StatOwner {
 	private static final Logger log = LoggerFactory.getLogger(AbyssServiceBuff.class);
 	private List<IStatFunction> functions = new ArrayList<IStatFunction>();
 	private AbyssServiceAttr abyssBonusAttr;
-	
+
 	public AbyssServiceBuff(int buffId) {
 		abyssBonusAttr = DataManager.ABYSS_BUFF_DATA.getInstanceBonusattr(buffId);
 	}
-	
+
 	public void applyAbyssEffect(Player player, int buffId) {
 		if (abyssBonusAttr == null) {
 			return;
-		} for (AbyssPenaltyAttr abyssPenaltyAttr: abyssBonusAttr.getPenaltyAttr()) {
+		}
+		for (AbyssPenaltyAttr abyssPenaltyAttr : abyssBonusAttr.getPenaltyAttr()) {
 			if (abyssPenaltyAttr.getFunc().equals(Func.PERCENT)) {
 				functions.add(new StatRateFunction(abyssPenaltyAttr.getStat(), abyssPenaltyAttr.getValue(), true));
 			} else {
@@ -59,7 +59,7 @@ public class AbyssServiceBuff implements StatOwner
 		player.setAbyssBonus(true);
 		player.getGameStats().addEffect(this, functions);
 	}
-	
+
 	public void endEffect(Player player, int buffId) {
 		functions.clear();
 		player.setAbyssBonus(false);

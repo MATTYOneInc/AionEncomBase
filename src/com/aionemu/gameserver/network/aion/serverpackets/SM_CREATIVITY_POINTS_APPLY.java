@@ -59,15 +59,15 @@ public class SM_CREATIVITY_POINTS_APPLY extends AionServerPacket {
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeH(0x01);
-		writeH(0x01); //No Loop should only return 1
+		writeH(0x01); // No Loop should only return 1
 		switch (type) {
-			case 0:
-				writeD(id);
-				writeH(slotPoint);
-				break;
-			case 1:
-				writeD(id);
-				writeH(slotPoint);
+		case 0:
+			writeD(id);
+			writeH(slotPoint);
+			break;
+		case 1:
+			writeD(id);
+			writeH(slotPoint);
 			break;
 		}
 	}

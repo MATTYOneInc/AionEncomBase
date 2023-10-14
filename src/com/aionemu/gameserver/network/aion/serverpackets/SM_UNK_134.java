@@ -23,10 +23,9 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
  * Created by wanke on 16/02/2017.
  */
 
-public class SM_UNK_134 extends AionServerPacket
-{
-    @Override
-    protected void writeImpl(AionConnection con) {
-        writeC(1);
-    }
+public class SM_UNK_134 extends AionServerPacket {
+	@Override
+	protected void writeImpl(AionConnection con) {
+		writeC(1);
+	}
 }

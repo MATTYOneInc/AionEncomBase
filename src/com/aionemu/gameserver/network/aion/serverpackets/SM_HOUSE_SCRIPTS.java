@@ -48,11 +48,9 @@ public class SM_HOUSE_SCRIPTS extends AionServerPacket {
 			byte[] bytes = script.getCompressedBytes();
 			if (bytes == null) {
 				writeH(-1);
-			}
-			else if (bytes.length == 0) {
+			} else if (bytes.length == 0) {
 				writeH(0);
-			}
-			else {
+			} else {
 				writeH(bytes.length + 8);
 				writeD(bytes.length);
 				writeD(script.getUncompressedSize());

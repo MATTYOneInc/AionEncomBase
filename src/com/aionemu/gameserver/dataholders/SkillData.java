@@ -38,65 +38,65 @@ public class SkillData {
 
 	@XmlElement(name = "skill_template")
 	private List<SkillTemplate> skillTemplates;
-	
+
 	private HashMap<Integer, ArrayList<Integer>> cooldownGroups;
-	
+
 	private TIntObjectHashMap<SkillTemplate> skillData = new TIntObjectHashMap<SkillTemplate>();
-	
+
 	private final Map<String, SkillTemplate> skillGroup = new FastMap<String, SkillTemplate>().shared();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
-        skillData.clear();
-        for (SkillTemplate st: skillTemplates) {
-            skillData.put(st.getSkillId(), st);
-            skillGroup.put(st.getStack().replace("SKILL_", ""), st);
-        }
-    }
-	
+		skillData.clear();
+		for (SkillTemplate st : skillTemplates) {
+			skillData.put(st.getSkillId(), st);
+			skillGroup.put(st.getStack().replace("SKILL_", ""), st);
+		}
+	}
+
 	public SkillTemplate getSkillTemplate(int skillId) {
-        return skillData.get(skillId);
-    }
-	
+		return skillData.get(skillId);
+	}
+
 	public int size() {
-        return skillData.size();
-    }
-	
+		return skillData.size();
+	}
+
 	public SkillTemplate getSkillTemplateByGroup(String name) {
-        return skillGroup.get(name);
-    }
-	
+		return skillGroup.get(name);
+	}
+
 	public int sizeOfGroup() {
-        return skillGroup.size();
-    }
-	
+		return skillGroup.size();
+	}
+
 	public List<SkillTemplate> getSkillTemplates() {
-        return skillTemplates;
-    }
-	
+		return skillTemplates;
+	}
+
 	public void setSkillTemplates(List<SkillTemplate> skillTemplates) {
-        this.skillTemplates = skillTemplates;
-        afterUnmarshal(null, null);
-    }
-	
+		this.skillTemplates = skillTemplates;
+		afterUnmarshal(null, null);
+	}
+
 	public void initializeCooldownGroups() {
-        cooldownGroups = new HashMap<Integer, ArrayList<Integer>>();
-        for (SkillTemplate skillTemplate: skillTemplates) {
-            int delayId = skillTemplate.getDelayId();
-            if (!cooldownGroups.containsKey(delayId)) {
-                cooldownGroups.put(delayId, new ArrayList<Integer>());
-            }
-            cooldownGroups.get(delayId).add(skillTemplate.getSkillId());
-        }
-    }
-	
+		cooldownGroups = new HashMap<Integer, ArrayList<Integer>>();
+		for (SkillTemplate skillTemplate : skillTemplates) {
+			int delayId = skillTemplate.getDelayId();
+			if (!cooldownGroups.containsKey(delayId)) {
+				cooldownGroups.put(delayId, new ArrayList<Integer>());
+			}
+			cooldownGroups.get(delayId).add(skillTemplate.getSkillId());
+		}
+	}
+
 	public ArrayList<Integer> getSkillsForDelayId(int delayId) {
-        if (cooldownGroups == null) {
-            initializeCooldownGroups();
-        }
-        return cooldownGroups.get(delayId);
-    }
-	
+		if (cooldownGroups == null) {
+			initializeCooldownGroups();
+		}
+		return cooldownGroups.get(delayId);
+	}
+
 	public TIntObjectHashMap<SkillTemplate> getSkillData() {
-        return skillData;
-    }
+		return skillData;
+	}
 }

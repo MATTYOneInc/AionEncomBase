@@ -16,8 +16,7 @@
  */
 package com.aionemu.gameserver.model.items;
 
-public class ItemMask
-{
+public class ItemMask {
 	public static final int LIMIT_ONE = 1;
 	public static final int TRADEABLE = (1 << 1);
 	public static final int SELLABLE = (1 << 2);

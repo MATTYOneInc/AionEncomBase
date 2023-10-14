@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "instance_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class InstanceSchedule
-{
+public class InstanceSchedule {
 	@XmlElement(name = "instance", required = true)
 	private List<Instance> instancesList;
-	
+
 	public List<Instance> getInstancesList() {
 		return instancesList;
 	}
-	
+
 	public void setInstancesList(List<Instance> instanceList) {
 		this.instancesList = instanceList;
 	}
-	
+
 	public static InstanceSchedule load() {
 		InstanceSchedule is;
 		try {
@@ -58,28 +57,28 @@ public class InstanceSchedule
 		}
 		return is;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "instance")
 	public static class Instance {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "instanceTime", required = true)
 		private List<String> instanceTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getInstanceTimes() {
 			return instanceTimes;
 		}
-		
+
 		public void setInstanceTimes(List<String> instanceTimes) {
 			this.instanceTimes = instanceTimes;
 		}

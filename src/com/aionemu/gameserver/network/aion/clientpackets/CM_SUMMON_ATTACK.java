@@ -26,10 +26,9 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 
-public class CM_SUMMON_ATTACK extends AionClientPacket
-{
+public class CM_SUMMON_ATTACK extends AionClientPacket {
 	private static final Logger log = LoggerFactory.getLogger(CM_SUMMON_ATTACK.class);
-	
+
 	private int summonObjId;
 	private int targetObjId;
 	@SuppressWarnings("unused")
@@ -37,11 +36,11 @@ public class CM_SUMMON_ATTACK extends AionClientPacket
 	private int time;
 	@SuppressWarnings("unused")
 	private int unk3;
-	
+
 	public CM_SUMMON_ATTACK(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		summonObjId = readD();
@@ -50,19 +49,20 @@ public class CM_SUMMON_ATTACK extends AionClientPacket
 		time = readH();
 		unk3 = readC();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
 		Summon summon = player.getSummon();
 		if (summon == null) {
 			return;
-		} if(summon.getObjectId() != summonObjId) {
+		}
+		if (summon.getObjectId() != summonObjId) {
 			return;
 		}
 		VisibleObject obj = summon.getKnownList().getObject(targetObjId);
-		if(obj != null && obj instanceof Creature) {
-			summon.getController().attackTarget((Creature)obj, time);
+		if (obj != null && obj instanceof Creature) {
+			summon.getController().attackTarget((Creature) obj, time);
 		}
 	}
 }

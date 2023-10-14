@@ -33,6 +33,6 @@ public class StatShieldMasteryFunction extends StatRateFunction {
 	public void apply(Stat2 stat) {
 		Player player = (Player) stat.getOwner();
 		if (player.getEquipment().isShieldEquipped())
-		super.apply(stat);
+			super.apply(stat);
 	}
 }

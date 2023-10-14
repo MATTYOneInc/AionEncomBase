@@ -73,8 +73,7 @@ public class CM_TARGET_SELECT extends AionClientPacket {
 		VisibleObject obj = null;
 		if (targetObjectId == player.getObjectId()) {
 			obj = player;
-		}
-		else {
+		} else {
 			obj = player.getKnownList().getObject(targetObjectId);
 
 			if (obj == null && player.isInTeam()) {
@@ -90,34 +89,33 @@ public class CM_TARGET_SELECT extends AionClientPacket {
 				if (obj.getTarget() == null)
 					return;
 				player.setTarget(obj.getTarget());
-			}
-			else {
+			} else {
 				player.setTarget(obj);
 			}
 			if (obj instanceof Player) {
 				Player target = (Player) obj;
 				if (player != obj && !player.canSee(target)) {
-					AuditLogger.info(player, "Possible radar hacker detected, targeting on invisible Player name: " + target.getName() + " objectId: " + target.getObjectId() + " by");
+					AuditLogger.info(player, "Possible radar hacker detected, targeting on invisible Player name: "
+							+ target.getName() + " objectId: " + target.getObjectId() + " by");
 				}
-			}
-			else if (obj instanceof Trap) {
+			} else if (obj instanceof Trap) {
 				Trap target = (Trap) obj;
 				boolean isSameTeamTrap = false;
 				if (target.getMaster() instanceof Player) {
 					isSameTeamTrap = ((Player) target.getMaster()).isInSameTeam(player);
 				}
 				if (player != obj && !player.canSee(target) && !isSameTeamTrap) {
-					AuditLogger.info(player, "Possible radar hacker detected, targeting on invisible Trap name: " + target.getName() + " objectId: " + target.getObjectId() + " by");
+					AuditLogger.info(player, "Possible radar hacker detected, targeting on invisible Trap name: "
+							+ target.getName() + " objectId: " + target.getObjectId() + " by");
 				}
-			}
-			else if (obj instanceof Creature) {
+			} else if (obj instanceof Creature) {
 				Creature target = (Creature) obj;
 				if (player != obj && !player.canSee(target)) {
-					AuditLogger.info(player, "Possible radar hacker detected, targeting on invisible Npc name: " + target.getName() + " objectId: " + target.getObjectId() + " by");
+					AuditLogger.info(player, "Possible radar hacker detected, targeting on invisible Npc name: "
+							+ target.getName() + " objectId: " + target.getObjectId() + " by");
 				}
 			}
-		}
-		else {
+		} else {
 			player.setTarget(null);
 		}
 		sendPacket(new SM_TARGET_SELECTED(player));

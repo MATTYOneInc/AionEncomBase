@@ -16,16 +16,10 @@
  */
 package com.aionemu.gameserver.model;
 
-public enum TeleportAnimation
-{
-    NO_ANIMATION(0, 0),
-    BEAM_ANIMATION(1, 3),
-    JUMP_ANIMATION(3, 10),
-    JUMP_ANIMATION_2(4, 10),
-    FIRE_ANIMATION(4, 0x0B),//5.0
-    JUMP_ANIMATION_3(8, 3),
-	MAGE_ANIMATION(8, 10);
-	
+public enum TeleportAnimation {
+	NO_ANIMATION(0, 0), BEAM_ANIMATION(1, 3), JUMP_ANIMATION(3, 10), JUMP_ANIMATION_2(4, 10), FIRE_ANIMATION(4, 0x0B), // 5.0
+	JUMP_ANIMATION_3(8, 3), MAGE_ANIMATION(8, 10);
+
 	private int startAnimation;
 	private int endAnimation;
 

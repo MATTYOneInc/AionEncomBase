@@ -30,16 +30,16 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "HouseLimitAction")
-public class HouseLimitAction extends AbstractItemAction
-{
+public class HouseLimitAction extends AbstractItemAction {
 	@XmlAttribute(name = "limit")
 	private LimitType limit;
-	
+
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		if (parentItem == null) {
@@ -48,22 +48,23 @@ public class HouseLimitAction extends AbstractItemAction
 		}
 		return true;
 	}
-	
+
 	@Override
 	public void act(Player player, Item parentItem, Item targetItem) {
 		if (!player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1)) {
 			return;
 		}
 		ItemTemplate itemTemplate = parentItem.getItemTemplate();
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+				parentItem.getObjectId(), itemTemplate.getTemplateId()), true);
 		switch (limit) {
-			case OWNER_POT:
-			case VISITOR_POT:
-			case STORAGE:
-			case POT:
-			case COOKING:
-			case PICTURE:
-			case JUKEBOX:
+		case OWNER_POT:
+		case VISITOR_POT:
+		case STORAGE:
+		case POT:
+		case COOKING:
+		case PICTURE:
+		case JUKEBOX:
 			break;
 		}
 	}

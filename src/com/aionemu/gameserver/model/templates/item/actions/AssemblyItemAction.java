@@ -37,39 +37,42 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AssemblyItemAction")
-public class AssemblyItemAction extends AbstractItemAction
-{
+public class AssemblyItemAction extends AbstractItemAction {
 	@XmlAttribute
 	private int item;
-	
+
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		AssemblyItem assemblyItem = getAssemblyItem();
 		if (assemblyItem == null) {
 			return false;
-		} for (Integer itemId: assemblyItem.getParts()) {
+		}
+		for (Integer itemId : assemblyItem.getParts()) {
 			if (player.getInventory().getFirstItemByItemId(itemId) == null) {
 				return false;
 			}
 		}
 		return true;
 	}
-	
+
 	public static void removeItems(Player player, int itemId, long itemCount) {
 		if (!player.getInventory().decreaseByItemId(itemId, itemCount)) {
 		}
 	}
-	
+
 	@Override
 	public void act(final Player player, final Item parentItem, Item targetItem) {
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemId(), 3000, 0, 0), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+				parentItem.getObjectId(), parentItem.getItemId(), 3000, 0, 0), true);
 		final ItemUseObserver observer = new ItemUseObserver() {
 			@Override
 			public void abort() {
 				player.getController().cancelTask(TaskId.ITEM_USE);
 				player.removeItemCoolDown(parentItem.getItemTemplate().getUseLimits().getDelayId());
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ITEM_CANCELED(new DescriptionId(parentItem.getItemTemplate().getNameId())));
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 2, 0), true);
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
+						.STR_ITEM_CANCELED(new DescriptionId(parentItem.getItemTemplate().getNameId())));
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+						parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 2, 0), true);
 				player.getObserveController().removeObserver(this);
 			}
 		};
@@ -81,12 +84,13 @@ public class AssemblyItemAction extends AbstractItemAction
 				player.getController().cancelTask(TaskId.ITEM_USE);
 				AssemblyItem assemblyItem = getAssemblyItem();
 				int itemType = 0;
-				for (Integer itemId: assemblyItem.getParts()) {
+				for (Integer itemId : assemblyItem.getParts()) {
 					if (!player.getInventory().decreaseByItemId(itemId, assemblyItem.getPartsNum())) {
 						return;
 					}
 					player.getInventory().decreaseByItemId(itemId, 1);
-					PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 1, 0), true);
+					PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(),
+							parentItem.getObjectId(), parentItem.getItemTemplate().getTemplateId(), 0, 1, 0), true);
 					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1401122));
 					if (assemblyItem.getProcAssembly() != 0) {
 						if (Rnd.get(1, 100) < 15) {
@@ -97,20 +101,21 @@ public class AssemblyItemAction extends AbstractItemAction
 					} else {
 						itemType = 1;
 					}
-				} switch(itemType) {
-					case 0:
+				}
+				switch (itemType) {
+				case 0:
 					break;
-					case 1:
-						ItemService.addItem(player, assemblyItem.getId(), 1);
+				case 1:
+					ItemService.addItem(player, assemblyItem.getId(), 1);
 					break;
-					case 2:
-						ItemService.addItem(player, assemblyItem.getProcAssembly(), 1);
+				case 2:
+					ItemService.addItem(player, assemblyItem.getProcAssembly(), 1);
 					break;
 				}
 			}
 		}, 3000));
 	}
-	
+
 	public AssemblyItem getAssemblyItem() {
 		return DataManager.ASSEMBLY_ITEM_DATA.getAssemblyItem(item);
 	}

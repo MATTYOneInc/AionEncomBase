@@ -25,27 +25,26 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Rinzler (Encom)
  */
 
-@XmlRootElement(name="game_experience_item")
+@XmlRootElement(name = "game_experience_item")
 @XmlAccessorType(XmlAccessType.NONE)
-public class GameExperience
-{
-	@XmlAttribute(name="id", required = true)
+public class GameExperience {
+	@XmlAttribute(name = "id", required = true)
 	private int id;
-	
-	@XmlAttribute(name="account_type", required = true)
+
+	@XmlAttribute(name = "account_type", required = true)
 	private AccountType accountType;
-	
-	@XmlAttribute(name="reward_item", required = true)
+
+	@XmlAttribute(name = "reward_item", required = true)
 	private int rewardItem;
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public AccountType getAccountType() {
 		return accountType;
 	}
-	
+
 	public int getRewardItem() {
 		return rewardItem;
 	}

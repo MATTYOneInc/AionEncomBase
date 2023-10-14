@@ -27,37 +27,37 @@ import com.google.common.base.Predicate;
  */
 public interface Team<M, TM extends TeamMember<M>> {
 
-    Integer getTeamId();
+	Integer getTeamId();
 
-    TM getMember(Integer objectId);
+	TM getMember(Integer objectId);
 
-    boolean hasMember(Integer objectId);
+	boolean hasMember(Integer objectId);
 
-    void addMember(TM member);
+	void addMember(TM member);
 
-    void removeMember(TM member);
+	void removeMember(TM member);
 
-    void removeMember(Integer objectId);
+	void removeMember(Integer objectId);
 
-    Collection<M> getMembers();
+	Collection<M> getMembers();
 
-    Collection<M> getOnlineMembers();
+	Collection<M> getOnlineMembers();
 
-    void onEvent(TeamEvent event);
+	void onEvent(TeamEvent event);
 
-    Collection<TM> filter(Predicate<TM> predicate);
+	Collection<TM> filter(Predicate<TM> predicate);
 
-    Collection<M> filterMembers(Predicate<M> predicate);
+	Collection<M> filterMembers(Predicate<M> predicate);
 
-    void sendPacket(AionServerPacket packet);
+	void sendPacket(AionServerPacket packet);
 
-    void sendPacket(AionServerPacket packet, Predicate<M> predicate);
+	void sendPacket(AionServerPacket packet, Predicate<M> predicate);
 
-    int onlineMembers();
+	int onlineMembers();
 
-    Race getRace();
+	Race getRace();
 
-    int size();
+	int size();
 
-    boolean isFull();
+	boolean isFull();
 }

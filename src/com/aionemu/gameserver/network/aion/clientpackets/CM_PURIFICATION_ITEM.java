@@ -31,8 +31,7 @@ import com.aionemu.gameserver.services.item.ItemUpgradeService;
  * @author Ranastic (Encom)
  */
 
-public class CM_PURIFICATION_ITEM extends AionClientPacket
-{
+public class CM_PURIFICATION_ITEM extends AionClientPacket {
 	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(CM_PURIFICATION_ITEM.class);
 	int playerObjectId;
@@ -44,11 +43,11 @@ public class CM_PURIFICATION_ITEM extends AionClientPacket
 	int requireItemObjectId4;
 	int requireItemObjectId5;
 	Item baseItem;
-	
+
 	public CM_PURIFICATION_ITEM(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		Player player = getConnection().getActivePlayer();
@@ -63,13 +62,14 @@ public class CM_PURIFICATION_ITEM extends AionClientPacket
 		Storage inventory = player.getInventory();
 		baseItem = inventory.getItemByObjId(upgradedItemObjectId);
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
 		if (player == null) {
 			return;
-		} if (!ItemUpgradeService.checkItemUpgrade(player, baseItem, resultItemId)) {
+		}
+		if (!ItemUpgradeService.checkItemUpgrade(player, baseItem, resultItemId)) {
 			return;
 		}
 		Item resultItem = ItemService.newItem(resultItemId, 1, null, 0, 0, 0);

@@ -69,5 +69,5 @@ public class Cylinder {
 
 	public Float getR() {
 		return r;
-	}	
+	}
 }

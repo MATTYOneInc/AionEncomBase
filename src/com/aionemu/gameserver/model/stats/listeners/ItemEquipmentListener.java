@@ -66,10 +66,10 @@ public class ItemEquipmentListener {
 		}
 		if (item.hasManaStones()) {
 			addStonesStats(item, item.getItemStones(), owner.getGameStats());
-        }
+		}
 		if (item.hasFusionStones()) {
 			addStonesStats(item, item.getFusionStones(), owner.getGameStats());
-        }
+		}
 		IdianStone idianStone = item.getIdianStone();
 		if (idianStone != null) {
 			idianStone.onEquip(owner);
@@ -113,7 +113,7 @@ public class ItemEquipmentListener {
 
 		if (item.hasFusionStones()) {
 			removeStoneStats(item.getFusionStones(), owner.getGameStats());
-        }
+		}
 		if (item.getConditioningInfo() != null) {
 			owner.getObserveController().removeObserver(item.getConditioningInfo());
 			item.getConditioningInfo().setPlayer(null);
@@ -171,28 +171,28 @@ public class ItemEquipmentListener {
 				if (weaponStats != null) {
 					int boostMagicalSkill = Math.round(0.1f * weaponStats.getBoostMagicalSkill());
 					int attack = Math.round(0.1f * weaponStats.getMeanDamage());
-					if (weaponType == WeaponType.ORB_2H ||
-						weaponType == WeaponType.BOOK_2H ||
-						weaponType == WeaponType.GUN_1H || //4.3
-						weaponType == WeaponType.CANNON_2H || //4.3
-						weaponType == WeaponType.HARP_2H || //4.3
-						weaponType == WeaponType.KEYBLADE_2H) { //4.5					    
+					if (weaponType == WeaponType.ORB_2H || weaponType == WeaponType.BOOK_2H
+							|| weaponType == WeaponType.GUN_1H || // 4.3
+							weaponType == WeaponType.CANNON_2H || // 4.3
+							weaponType == WeaponType.HARP_2H || // 4.3
+							weaponType == WeaponType.KEYBLADE_2H) { // 4.5
 						allModifiers.add(new StatAddFunction(StatEnum.MAGICAL_ATTACK, attack, false));
 						allModifiers.add(new StatAddFunction(StatEnum.BOOST_MAGICAL_SKILL, boostMagicalSkill, false));
 					} else {
 						allModifiers.add(new StatAddFunction(StatEnum.MAIN_HAND_POWER, attack, false));
 					}
 				}
-			} if (ArchDaevaConfig.ITEM_NOT_FOR_HIGHDAEVA_ENABLE) {
+			}
+			if (ArchDaevaConfig.ITEM_NOT_FOR_HIGHDAEVA_ENABLE) {
 				if (player.getLevel() >= 65 && !itemTemplate.isArchdaeva()) {
-					for (StatFunction a: modifiers) {
+					for (StatFunction a : modifiers) {
 						int value = a.getValue();
-						int formula = (int)(value * (20.0f / 100.0f));
+						int formula = (int) (value * (20.0f / 100.0f));
 						allModifiers.add(new StatAddFunction(a.getName(), -formula, false));
 					}
 				}
 			}
-			//ArchDaeva item level limitations
+			// ArchDaeva item level limitations
 			if (player.getLevel() >= 65 && itemTemplate.isArchdaeva()) {
 				int pLevel = player.getLevel();
 				int iLevel = itemTemplate.getLevel();
@@ -217,9 +217,10 @@ public class ItemEquipmentListener {
 					percentageDecrease = 18.0f;
 				} else if (iLevel - pLevel == 10) {
 					percentageDecrease = 20.0f;
-				} for (StatFunction a: modifiers) {
+				}
+				for (StatFunction a : modifiers) {
 					int value = a.getValue();
-					int formula = (int)(value * (percentageDecrease / 100.0f));
+					int formula = (int) (value * (percentageDecrease / 100.0f));
 					allModifiers.add(new StatAddFunction(a.getName(), -formula, false));
 				}
 			}
@@ -265,7 +266,7 @@ public class ItemEquipmentListener {
 	private static void recalculateItemSet(ItemSetTemplate itemSetTemplate, Player player, boolean isWeapon) {
 		if (itemSetTemplate == null) {
 			return;
-        }
+		}
 		// TODO quite
 		player.getGameStats().endEffect(itemSetTemplate);
 		// 1.- Check equipment for items already equip with this itemSetTemplate id
@@ -287,12 +288,11 @@ public class ItemEquipmentListener {
 			if (mainAndOffNotSame && isWeapon) {
 				// If the partbonus was not applied before, do it now
 				if (itempartbonus.getCount() <= itemSetPartsEquipped) {
-           			if (itempartbonus.getModifiers() != null) {
-           				player.getGameStats().addEffect(itemSetTemplate, itempartbonus.getModifiers());
-           			}
-                }
-			}
-			else if (!isWeapon) {
+					if (itempartbonus.getModifiers() != null) {
+						player.getGameStats().addEffect(itemSetTemplate, itempartbonus.getModifiers());
+					}
+				}
+			} else if (!isWeapon) {
 				// If the partbonus was not applied before, do it now
 				if (itempartbonus.getCount() <= itemSetPartsEquipped) {
 					player.getGameStats().addEffect(itemSetTemplate, itempartbonus.getModifiers());
@@ -300,10 +300,12 @@ public class ItemEquipmentListener {
 			}
 		}
 
-		// 3.- Finally check if all items are applied and set the full bonus if not already applied
+		// 3.- Finally check if all items are applied and set the full bonus if not
+		// already applied
 		FullBonus fullbonus = itemSetTemplate.getFullbonus();
 		if (fullbonus != null && itemSetPartsEquipped == fullbonus.getCount()) {
-			// Add the full bonus with index = total parts + 1 to avoid confusion with part bonus equal to number of
+			// Add the full bonus with index = total parts + 1 to avoid confusion with part
+			// bonus equal to number of
 			// objects
 			player.getGameStats().addEffect(itemSetTemplate, fullbonus.getModifiers());
 		}
@@ -318,7 +320,7 @@ public class ItemEquipmentListener {
 	private static void addStonesStats(Item item, Set<? extends ManaStone> itemStones, CreatureGameStats<?> cgs) {
 		if (itemStones == null || itemStones.size() == 0) {
 			return;
-        }
+		}
 		for (ManaStone stone : itemStones) {
 			addStoneStats(item, stone, cgs);
 		}
@@ -348,7 +350,7 @@ public class ItemEquipmentListener {
 	public static void removeStoneStats(Set<? extends ManaStone> itemStones, CreatureGameStats<?> cgs) {
 		if (itemStones == null || itemStones.size() == 0) {
 			return;
-        }
+		}
 		for (ManaStone stone : itemStones) {
 			List<StatFunction> modifiers = stone.getModifiers();
 			if (modifiers != null) {
@@ -356,7 +358,7 @@ public class ItemEquipmentListener {
 			}
 		}
 	}
-	
+
 	public static void removeStoneStats1(Item item, ManaStone stone, CreatureGameStats<?> cgs) {
 		if (stone == null || item == null) {
 			return;

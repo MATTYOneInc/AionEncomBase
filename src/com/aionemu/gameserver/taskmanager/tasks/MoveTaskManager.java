@@ -30,12 +30,11 @@ import com.google.common.base.Predicate;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
-public class MoveTaskManager extends AbstractPeriodicTaskManager
-{
+public class MoveTaskManager extends AbstractPeriodicTaskManager {
 	private final FastMap<Integer, Creature> movingCreatures = new FastMap<Integer, Creature>().shared();
-	
+
 	public static final int UPDATE_PERIOD = 100;
-	
+
 	private final Predicate<Creature> CREATURE_MOVE_PREDICATE = new Predicate<Creature>() {
 		@Override
 		public boolean apply(Creature creature) {
@@ -50,23 +49,24 @@ public class MoveTaskManager extends AbstractPeriodicTaskManager
 			return true;
 		}
 	};
-	
+
 	private MoveTaskManager() {
 		super(UPDATE_PERIOD);
 	}
-	
+
 	public void addCreature(Creature creature) {
 		movingCreatures.put(creature.getObjectId(), creature);
 	}
-	
+
 	public void removeCreature(Creature creature) {
 		movingCreatures.remove(creature.getObjectId());
 	}
-	
+
 	@Override
 	public void run() {
 		final FastList<Creature> copy = new FastList<Creature>();
-		for (FastMap.Entry<Integer, Creature> e = movingCreatures.head(), mapEnd = movingCreatures.tail(); (e = e.getNext()) != mapEnd;) {
+		for (FastMap.Entry<Integer, Creature> e = movingCreatures.head(),
+				mapEnd = movingCreatures.tail(); (e = e.getNext()) != mapEnd;) {
 			copy.add(e.getValue());
 		}
 		ForkJoinTask<Creature> task = forEach(copy, CREATURE_MOVE_PREDICATE);
@@ -74,11 +74,11 @@ public class MoveTaskManager extends AbstractPeriodicTaskManager
 			ThreadPoolManager.getInstance().getForkingPool().invoke(task);
 		}
 	}
-	
+
 	public static MoveTaskManager getInstance() {
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static final class SingletonHolder {
 		private static final MoveTaskManager INSTANCE = new MoveTaskManager();
 	}

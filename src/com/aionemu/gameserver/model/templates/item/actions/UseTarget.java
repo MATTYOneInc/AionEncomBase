@@ -23,26 +23,18 @@ import javax.xml.bind.annotation.XmlType;
  * @author Ranastic
  */
 
-@XmlType(name="UseTarget")
+@XmlType(name = "UseTarget")
 @XmlEnum
-public enum UseTarget
-{
-	ALL,
-	WING,
-	PLUME,
-	OTHER,
-	ARMOR,
-	WEAPON,
-	BRACELET,
-	ACCESSORY,
-	EQUIPMENT;
-	
-	private UseTarget() {}
-	
+public enum UseTarget {
+	ALL, WING, PLUME, OTHER, ARMOR, WEAPON, BRACELET, ACCESSORY, EQUIPMENT;
+
+	private UseTarget() {
+	}
+
 	public String value() {
 		return name();
 	}
-	
+
 	public static UseTarget fromValue(String v) {
 		return valueOf(v);
 	}

@@ -64,18 +64,18 @@ public class SM_DUEL extends AionServerPacket {
 		writeC(type);
 
 		switch (type) {
-			case 0x00:
-				writeD(requesterObjId);
-				break;
-			case 0x01:
-				writeC(result.getResultId()); // unknown
-				writeD(result.getMsgId());
-				writeS(playerName);
-				break;
-			case 0xE0:
-				break;
-			default:
-				throw new IllegalArgumentException("invalid SM_DUEL packet type " + type);
+		case 0x00:
+			writeD(requesterObjId);
+			break;
+		case 0x01:
+			writeC(result.getResultId()); // unknown
+			writeD(result.getMsgId());
+			writeS(playerName);
+			break;
+		case 0xE0:
+			break;
+		default:
+			throw new IllegalArgumentException("invalid SM_DUEL packet type " + type);
 		}
 	}
 }

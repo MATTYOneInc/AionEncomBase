@@ -26,27 +26,26 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GuardRankRestriction", propOrder = {"guardpenaltyAttr"})
-public class GuardRankRestriction
-{
-    @XmlElement(name = "guard_penalty_attr")
-    protected List<GuardRankPenaltyAttr> guardpenaltyAttr;
-	
-    @XmlAttribute(name = "rank_num", required = true)
-    protected int rankNum;
-	
+@XmlType(name = "GuardRankRestriction", propOrder = { "guardpenaltyAttr" })
+public class GuardRankRestriction {
+	@XmlElement(name = "guard_penalty_attr")
+	protected List<GuardRankPenaltyAttr> guardpenaltyAttr;
+
+	@XmlAttribute(name = "rank_num", required = true)
+	protected int rankNum;
+
 	public List<GuardRankPenaltyAttr> getGuardPenaltyAttr() {
-        if (guardpenaltyAttr == null) {
-            guardpenaltyAttr = new ArrayList<GuardRankPenaltyAttr>();
+		if (guardpenaltyAttr == null) {
+			guardpenaltyAttr = new ArrayList<GuardRankPenaltyAttr>();
 		}
 		return this.guardpenaltyAttr;
-    }
-	
-    public int getRankNum() {
-        return rankNum;
-    }
-	
+	}
+
+	public int getRankNum() {
+		return rankNum;
+	}
+
 	public void setRankNum(int value) {
-        this.rankNum = value;
-    }
+		this.rankNum = value;
+	}
 }

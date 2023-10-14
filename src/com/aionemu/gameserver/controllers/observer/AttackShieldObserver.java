@@ -52,7 +52,7 @@ public class AttackShieldObserver extends AttackCalcObserver {
 	private int shieldType;
 	private int probability = 100;
 	private int minradius = 0;
-	private int maxradius =  100;
+	private int maxradius = 100;
 	private HealType healType = null;
 	private int effectorDamage;
 	private int mpValue;
@@ -63,20 +63,24 @@ public class AttackShieldObserver extends AttackCalcObserver {
 	 * @param value
 	 * @param status
 	 */
-	public AttackShieldObserver(int hit, int totalHit, boolean percent, Effect effect, HitType type, int shieldType, int probability) {
-        this(hit, totalHit, percent, false, effect, type, shieldType, probability, 0, 100, null, 0, 0);
-    }
+	public AttackShieldObserver(int hit, int totalHit, boolean percent, Effect effect, HitType type, int shieldType,
+			int probability) {
+		this(hit, totalHit, percent, false, effect, type, shieldType, probability, 0, 100, null, 0, 0);
+	}
 
-    public AttackShieldObserver(int hit, int effectorDamage, int totalHit, boolean percent, Effect effect, HitType type, int shieldType, int probability) {
-        this(hit, totalHit, percent, false, effect, type, shieldType, probability, 0, 100, null, effectorDamage, 0);
-    }
+	public AttackShieldObserver(int hit, int effectorDamage, int totalHit, boolean percent, Effect effect, HitType type,
+			int shieldType, int probability) {
+		this(hit, totalHit, percent, false, effect, type, shieldType, probability, 0, 100, null, effectorDamage, 0);
+	}
 
-    public AttackShieldObserver(int hit, int totalHit, boolean percent, Effect effect, HitType type, int shieldType, int probability, int mpValue) {
-        this(hit, totalHit, percent, false, effect, type, shieldType, probability, 0, 100, null, 0, mpValue);
-    }
+	public AttackShieldObserver(int hit, int totalHit, boolean percent, Effect effect, HitType type, int shieldType,
+			int probability, int mpValue) {
+		this(hit, totalHit, percent, false, effect, type, shieldType, probability, 0, 100, null, 0, mpValue);
+	}
 
 	public AttackShieldObserver(int hit, int totalHit, boolean hitPercent, boolean totalHitPercent, Effect effect,
-		HitType type, int shieldType, int probability, int minradius, int maxradius, HealType healType, int effectorDamage, int mpValue) {
+			HitType type, int shieldType, int probability, int minradius, int maxradius, HealType healType,
+			int effectorDamage, int mpValue) {
 		this.hit = hit;
 		this.totalHit = totalHit;// total absorbed dmg for shield, percentage for reflector
 		this.effect = effect;
@@ -95,15 +99,18 @@ public class AttackShieldObserver extends AttackCalcObserver {
 	@Override
 	public void checkShield(List<AttackResult> attackList, Effect attackerEffect, Creature attacker) {
 		for (AttackResult attackResult : attackList) {
-			if (AttackStatus.getBaseStatus(attackResult.getAttackStatus()) == AttackStatus.DODGE || AttackStatus.getBaseStatus(attackResult.getAttackStatus()) == AttackStatus.RESIST) {
+			if (AttackStatus.getBaseStatus(attackResult.getAttackStatus()) == AttackStatus.DODGE
+					|| AttackStatus.getBaseStatus(attackResult.getAttackStatus()) == AttackStatus.RESIST) {
 				continue;
 			}
 			if (this.hitType != HitType.EVERYHIT) {
 				if ((attackResult.getDamageType() != null) && (attackResult.getDamageType() != this.hitType))
+					continue;
+			}
+			if (Rnd.get(0, 100) > probability) {
 				continue;
-			} if (Rnd.get(0, 100) > probability) {
-				continue;
-			} if (shieldType == 2) {
+			}
+			if (shieldType == 2) {
 				int damage = attackResult.getDamage();
 				int absorbedDamage = 0;
 				if (hitPercent) {
@@ -119,20 +126,23 @@ public class AttackShieldObserver extends AttackCalcObserver {
 				attackResult.setDamage(damage - absorbedDamage);
 				if (absorbedDamage >= damage && !isPunchShield(attackerEffect)) {
 					attackResult.setLaunchSubEffect(false);
-				} if (mpValue > 0) {
-                    attackResult.setShieldMp((int)(absorbedDamage * mpValue * 0.01f));
-                    effect.getEffected().getLifeStats().reduceMp((int)(absorbedDamage * mpValue * 0.01f));
-                    attackResult.setReflectedSkillId(effect.getSkillId());
-                } if (totalHit <= 0) {
-                    effect.endEffect();
-                    return;
-                }
-			} else if (shieldType == 1)	{
+				}
+				if (mpValue > 0) {
+					attackResult.setShieldMp((int) (absorbedDamage * mpValue * 0.01f));
+					effect.getEffected().getLifeStats().reduceMp((int) (absorbedDamage * mpValue * 0.01f));
+					attackResult.setReflectedSkillId(effect.getSkillId());
+				}
+				if (totalHit <= 0) {
+					effect.endEffect();
+					return;
+				}
+			} else if (shieldType == 1) {
 				if (minradius != 0) {
-                    if (MathUtil.isIn3dRange(attacker, effect.getEffected(), minradius)) {
-                        continue;
-                    }
-                } if(MathUtil.isIn3dRange(attacker, effect.getEffected(), maxradius)) {
+					if (MathUtil.isIn3dRange(attacker, effect.getEffected(), minradius)) {
+						continue;
+					}
+				}
+				if (MathUtil.isIn3dRange(attacker, effect.getEffected(), maxradius)) {
 					int reflectedDamage = attackResult.getDamage() * totalHit / 100;
 					int reflectedHit = Math.max(reflectedDamage, hit);
 					attackResult.setShieldType(shieldType);
@@ -143,7 +153,8 @@ public class AttackShieldObserver extends AttackCalcObserver {
 					attackResult.setReflectedSkillId(effect.getSkillId());
 					attacker.getController().onAttack(effect.getEffected(), reflectedHit, false);
 					if (effect.getEffected() instanceof Player) {
-						PacketSendUtility.sendPacket((Player)effect.getEffected(), SM_SYSTEM_MESSAGE.STR_SKILL_PROC_EFFECT_OCCURRED(effect.getSkillTemplate().getNameId()));
+						PacketSendUtility.sendPacket((Player) effect.getEffected(), SM_SYSTEM_MESSAGE
+								.STR_SKILL_PROC_EFFECT_OCCURRED(effect.getSkillTemplate().getNameId()));
 					}
 				}
 				break;
@@ -151,18 +162,22 @@ public class AttackShieldObserver extends AttackCalcObserver {
 				if (effect.getEffector() == null || effect.getEffector().getLifeStats().isAlreadyDead()) {
 					effect.endEffect();
 					break;
-				} if (effect.getEffector() instanceof Summon && (((Summon)effect.getEffector()).getMode() == SummonMode.RELEASE || ((Summon)effect.getEffector()).getMaster() == null)) {
+				}
+				if (effect.getEffector() instanceof Summon
+						&& (((Summon) effect.getEffector()).getMode() == SummonMode.RELEASE
+								|| ((Summon) effect.getEffector()).getMaster() == null)) {
 					effect.endEffect();
 					break;
-				} if(MathUtil.isIn3dRange(effect.getEffector(), effect.getEffected(), totalHit)) {
+				}
+				if (MathUtil.isIn3dRange(effect.getEffector(), effect.getEffected(), totalHit)) {
 					int damageProtected = 0;
 					int effectorDamage = 0;
 					if (hitPercent) {
-						damageProtected = ((int)(attackResult.getDamage() * hit * 0.01));
+						damageProtected = ((int) (attackResult.getDamage() * hit * 0.01));
 						if (this.effectorDamage == 0) {
 							this.effectorDamage = 100;
 						}
-						effectorDamage = ((int)(attackResult.getDamage() * this.effectorDamage * 0.01));
+						effectorDamage = ((int) (attackResult.getDamage() * this.effectorDamage * 0.01));
 					} else {
 						damageProtected = hit;
 					}
@@ -172,7 +187,8 @@ public class AttackShieldObserver extends AttackCalcObserver {
 					attackResult.setProtectedSkillId(effect.getSkillId());
 					attackResult.setProtectedDamage(effectorDamage);
 					attackResult.setProtectorId(effect.getEffectorId());
-					effect.getEffector().getController().onAttack(attacker, effect.getSkillId(), TYPE.PROTECTDMG, effectorDamage, false, LOG.REGULAR);
+					effect.getEffector().getController().onAttack(attacker, effect.getSkillId(), TYPE.PROTECTDMG,
+							effectorDamage, false, LOG.REGULAR);
 				}
 			} else if (shieldType == 0) {
 				int damage = attackResult.getDamage();
@@ -189,16 +205,21 @@ public class AttackShieldObserver extends AttackCalcObserver {
 					healValue = damage * hit / 100;
 				} else {
 					healValue = hit;
-				} switch (healType) {
-					case HP:
-						effect.getEffected().getLifeStats().increaseHp(TYPE.HP, healValue, effect.getSkillId(), LOG.REGULAR);
+				}
+				switch (healType) {
+				case HP:
+					effect.getEffected().getLifeStats().increaseHp(TYPE.HP, healValue, effect.getSkillId(),
+							LOG.REGULAR);
 					break;
-					case MP:
-						effect.getEffected().getLifeStats().increaseMp(TYPE.HEAL_MP, healValue, effect.getSkillId(), LOG.REGULAR);
+				case MP:
+					effect.getEffected().getLifeStats().increaseMp(TYPE.HEAL_MP, healValue, effect.getSkillId(),
+							LOG.REGULAR);
 					break;
-				} if (absorbedDamage >= damage && !isPunchShield(attackerEffect)) {
+				}
+				if (absorbedDamage >= damage && !isPunchShield(attackerEffect)) {
 					attackResult.setLaunchSubEffect(false);
-				} if (totalHit <= 0) {
+				}
+				if (totalHit <= 0) {
 					effect.endEffect();
 					return;
 				}
@@ -210,7 +231,7 @@ public class AttackShieldObserver extends AttackCalcObserver {
 		if (effect == null)
 			return false;
 		for (EffectTemplate template : effect.getEffectTemplates()) {
-			if(template.getSubEffect() != null) {
+			if (template.getSubEffect() != null) {
 				SkillTemplate skill = DataManager.SKILL_DATA.getSkillTemplate(template.getSubEffect().getSkillId());
 				if (skill.isProvoked()) {
 					return true;

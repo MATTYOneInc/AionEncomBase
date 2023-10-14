@@ -24,15 +24,14 @@ import org.slf4j.LoggerFactory;
 import com.aionemu.gameserver.model.gameobjects.PersistentState;
 import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
 
-public class AbyssRank
-{
+public class AbyssRank {
 	Logger log = LoggerFactory.getLogger(AbyssRank.class);
-	
-	//AP
+
+	// AP
 	private int dailyAP;
 	private int weeklyAP;
 	private int currentAp;
-	//GP
+	// GP
 	private int dailyGP;
 	private int weeklyGP;
 	private int currentGp;
@@ -47,33 +46,34 @@ public class AbyssRank
 	private int lastAP;
 	private int lastGP;
 	private long lastUpdate;
-	
-   /**
-	* @param dailyAP
-	* @param weeklyAP
-	* @param ap
-	*
-	* @param dailyGP
-	* @param weeklyGP
-	* @param gp
-	*
-	* @param rank
-	* @param dailyKill
-	* @param weeklyKill
-	* @param allKill
-	* @param maxRank
-	* @param lastKill
-	* @param lastAP
-	* @param lastGP
-	* @param lastUpdate
-	*/
-	public AbyssRank(int dailyAP, int dailyGP, int weeklyAP, int weeklyGP, int ap, int gp, int rank, int topRanking, int dailyKill, int weeklyKill,
-		int allKill, int maxRank, int lastKill, int lastAP, int lastGP, long lastUpdate) {
-		//AP
+
+	/**
+	 * @param dailyAP
+	 * @param weeklyAP
+	 * @param ap
+	 *
+	 * @param dailyGP
+	 * @param weeklyGP
+	 * @param gp
+	 *
+	 * @param rank
+	 * @param dailyKill
+	 * @param weeklyKill
+	 * @param allKill
+	 * @param maxRank
+	 * @param lastKill
+	 * @param lastAP
+	 * @param lastGP
+	 * @param lastUpdate
+	 */
+	public AbyssRank(int dailyAP, int dailyGP, int weeklyAP, int weeklyGP, int ap, int gp, int rank, int topRanking,
+			int dailyKill, int weeklyKill, int allKill, int maxRank, int lastKill, int lastAP, int lastGP,
+			long lastUpdate) {
+		// AP
 		this.dailyAP = dailyAP;
 		this.weeklyAP = weeklyAP;
 		this.currentAp = ap;
-		//GP
+		// GP
 		this.dailyGP = dailyGP;
 		this.weeklyGP = weeklyGP;
 		this.currentGp = gp;
@@ -91,21 +91,19 @@ public class AbyssRank
 	}
 
 	public enum AbyssRankUpdateType {
-		PLAYER_ELYOS (1),
-		PLAYER_ASMODIANS(2),
-		LEGION_ELYOS(4),
-		LEGION_ASMODIANS(8);
-		
+		PLAYER_ELYOS(1), PLAYER_ASMODIANS(2), LEGION_ELYOS(4), LEGION_ASMODIANS(8);
+
 		private int id;
+
 		AbyssRankUpdateType(int id) {
 			this.id = id;
 		}
-		
+
 		public int value() {
 			return id;
 		}
 	}
-	
+
 	/**
 	 * Add AP to a player (current player AP + added AP)
 	 * 
@@ -133,7 +131,7 @@ public class AbyssRank
 		}
 		setPersistentState(PersistentState.UPDATE_REQUIRED);
 	}
-	
+
 	/**
 	 * Add GP to a player (current player GP + added GP)
 	 * 
@@ -154,91 +152,91 @@ public class AbyssRank
 		}
 		setPersistentState(PersistentState.UPDATE_REQUIRED);
 	}
-	
+
 	/**
 	 * @return The daily <Abyss Point> count
 	 */
 	public int getDailyAP() {
 		return dailyAP;
 	}
-	
+
 	/**
 	 * @return The weekly <Abyss Point> count
 	 */
 	public int getWeeklyAP() {
 		return weeklyAP;
 	}
-	
+
 	/**
 	 * @return The all time <Abyss Point> count
 	 */
 	public int getAp() {
 		return currentAp;
 	}
-	
+
 	/**
 	 * @return The daily <Glory Point> count
 	 */
 	public int getDailyGP() {
 		return dailyGP;
 	}
-	
+
 	/**
 	 * @return The weekly <Glory Point> count
 	 */
 	public int getWeeklyGP() {
 		return weeklyGP;
 	}
-	
+
 	/**
 	 * @return The all time <Glory Point> count
 	 */
 	public int getGp() {
 		return currentGp;
 	}
-	
+
 	/**
 	 * @return the rank
 	 */
 	public AbyssRankEnum getRank() {
 		return rank;
 	}
-	
+
 	/**
 	 * @return The top ranking of the current rank
 	 */
 	public int getTopRanking() {
 		return topRanking;
 	}
-	
+
 	/**
 	 * @param topRanking
 	 */
 	public void setTopRanking(int topRanking) {
 		this.topRanking = topRanking;
 	}
-	
+
 	/**
 	 * @return The daily count kill
 	 */
 	public int getDailyKill() {
 		return dailyKill;
 	}
-	
+
 	/**
 	 * @return The weekly count kill
 	 */
 	public int getWeeklyKill() {
 		return weeklyKill;
 	}
-	
+
 	/**
 	 * @return all Kill
 	 */
 	public int getAllKill() {
 		return allKill;
 	}
-	
+
 	/**
 	 * Add one kill to a player
 	 */
@@ -247,38 +245,37 @@ public class AbyssRank
 		this.weeklyKill += 1;
 		this.allKill += 1;
 	}
-	
+
 	/**
 	 * @return max Rank
 	 */
 	public int getMaxRank() {
 		return maxRank;
 	}
-	
+
 	/**
 	 * @return The last week count kill
 	 */
 	public int getLastKill() {
 		return lastKill;
 	}
-	
+
 	/**
 	 * @return The last week <Abyss Point> count
 	 */
 	public int getLastAP() {
 		return lastAP;
 	}
-	
+
 	/**
 	 * @return The last week <Glory Point> count
 	 */
 	public int getLastGP() {
 		return lastGP;
 	}
-	
+
 	/**
-	 * @param rank
-	 * the rank to set
+	 * @param rank the rank to set
 	 */
 	public void setRank(AbyssRankEnum rank) {
 		if (rank.getId() > this.maxRank) {
@@ -297,30 +294,30 @@ public class AbyssRank
 		this.weeklyKill += 1;
 		this.allKill += 1;
 	}
+
 	/**
 	 * @return the persistentState
 	 */
 	public PersistentState getPersistentState() {
 		return persistentState;
 	}
-	
+
 	/**
-	 * @param persistentState
-	 *          the persistentState to set
+	 * @param persistentState the persistentState to set
 	 */
 	public void setPersistentState(PersistentState persistentState) {
 		if (persistentState != PersistentState.UPDATE_REQUIRED || this.persistentState != PersistentState.NEW) {
-		    this.persistentState = persistentState;
+			this.persistentState = persistentState;
 		}
 	}
-	
+
 	/**
 	 * @return The last update of the AbyssRank
 	 */
 	public long getLastUpdate() {
 		return lastUpdate;
 	}
-	
+
 	/**
 	 * Make an update for the daily/weekly/last kill & ap counts
 	 */
@@ -330,18 +327,20 @@ public class AbyssRank
 		lastCal.setTimeInMillis(lastUpdate);
 		Calendar curCal = Calendar.getInstance();
 		curCal.setTimeInMillis(System.currentTimeMillis());
-		// Checking the day - month & year are checked to prevent if a player come back after 1 month, the same day
+		// Checking the day - month & year are checked to prevent if a player come back
+		// after 1 month, the same day
 		if (lastCal.get(Calendar.DAY_OF_MONTH) != curCal.get(Calendar.DAY_OF_MONTH)
-			|| lastCal.get(Calendar.MONTH) != curCal.get(Calendar.MONTH)
-			|| lastCal.get(Calendar.YEAR) != curCal.get(Calendar.YEAR)) {
+				|| lastCal.get(Calendar.MONTH) != curCal.get(Calendar.MONTH)
+				|| lastCal.get(Calendar.YEAR) != curCal.get(Calendar.YEAR)) {
 			this.dailyAP = 0;
 			this.dailyGP = 0;
 			this.dailyKill = 0;
 			needUpdate = true;
 		}
-		// Checking the week - year is checked to prevent if a player come back after 1 year, the same week
+		// Checking the week - year is checked to prevent if a player come back after 1
+		// year, the same week
 		if (lastCal.get(Calendar.WEEK_OF_YEAR) != curCal.get(Calendar.WEEK_OF_YEAR)
-			|| lastCal.get(Calendar.YEAR) != curCal.get(Calendar.YEAR)) {
+				|| lastCal.get(Calendar.YEAR) != curCal.get(Calendar.YEAR)) {
 			this.lastKill = this.weeklyKill;
 			this.lastAP = this.weeklyAP;
 			this.lastGP = this.weeklyGP;
@@ -350,11 +349,11 @@ public class AbyssRank
 			this.weeklyGP = 0;
 			needUpdate = true;
 		}
-		//For offline changed ranks
+		// For offline changed ranks
 		if (rank.getId() > maxRank) {
-            maxRank = rank.getId();
-            needUpdate = true;
-        }
+			maxRank = rank.getId();
+			needUpdate = true;
+		}
 		// Finally, update the the last update
 		this.lastUpdate = System.currentTimeMillis();
 		if (needUpdate) {

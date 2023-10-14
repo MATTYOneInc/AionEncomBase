@@ -39,7 +39,8 @@ public class ChargeAction extends AbstractItemAction {
 
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
-		Collection<Item> conditioningItems = ItemChargeService.filterItemsToCondition(player, null, parentItem.getImprovement().getChargeWay());
+		Collection<Item> conditioningItems = ItemChargeService.filterItemsToCondition(player, null,
+				parentItem.getImprovement().getChargeWay());
 		return conditioningItems.size() > 0;
 	}
 
@@ -48,7 +49,8 @@ public class ChargeAction extends AbstractItemAction {
 		if (!player.getInventory().decreaseByObjectId(parentItem.getObjectId(), 1)) {
 			return;
 		}
-		Collection<Item> conditioningItems = ItemChargeService.filterItemsToCondition(player, null, parentItem.getImprovement().getChargeWay());
+		Collection<Item> conditioningItems = ItemChargeService.filterItemsToCondition(player, null,
+				parentItem.getImprovement().getChargeWay());
 		ItemChargeService.chargeItems(player, conditioningItems, capacity);
 	}
 }

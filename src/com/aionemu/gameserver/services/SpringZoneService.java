@@ -31,14 +31,14 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 import javolution.util.FastList;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class SpringZoneService
-{
+public class SpringZoneService {
 	Logger log = LoggerFactory.getLogger(SpringZoneService.class);
 	private FastList<SpringObject> springObjects = new FastList<SpringObject>();
-	
+
 	private SpringZoneService() {
 		for (SpringTemplate t : DataManager.SPRING_OBJECTS_DATA.getSpringObject()) {
 			SpringObject obj = new SpringObject(t, 0);
@@ -47,27 +47,28 @@ public class SpringZoneService
 		}
 		startSpring();
 	}
-	
+
 	private void startSpring() {
 		ThreadPoolManager.getInstance().scheduleAtFixedRate(new Runnable() {
 			public void run() {
 				for (final SpringObject obj : springObjects)
-				obj.getKnownList().doOnAllPlayers(new Visitor<Player>() {
-					public void visit(Player player) {
-						if ((MathUtil.isIn3dRange(obj, player, obj.getRange())) &&
-						   (!player.getEffectController().hasAbnormalEffect(17560))) { //Bless Of Guardian Spring.
-							SkillEngine.getInstance().getSkill(player, 17560, 1, player).useNoAnimationSkill();
+					obj.getKnownList().doOnAllPlayers(new Visitor<Player>() {
+						public void visit(Player player) {
+							if ((MathUtil.isIn3dRange(obj, player, obj.getRange()))
+									&& (!player.getEffectController().hasAbnormalEffect(17560))) { // Bless Of Guardian
+																									// Spring.
+								SkillEngine.getInstance().getSkill(player, 17560, 1, player).useNoAnimationSkill();
+							}
 						}
-					}
-				});
+					});
 			}
 		}, 1000, 1000);
 	}
-	
+
 	public static final SpringZoneService getInstance() {
 		return SingletonHolder.instance;
 	}
-	
+
 	private static class SingletonHolder {
 		protected static final SpringZoneService instance = new SpringZoneService();
 	}

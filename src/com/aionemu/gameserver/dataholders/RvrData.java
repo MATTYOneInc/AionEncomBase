@@ -36,24 +36,23 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "rvr")
-public class RvrData
-{
+public class RvrData {
 	@XmlElement(name = "rvr_location")
 	private List<RvrTemplate> rvrTemplates;
-	
+
 	@XmlTransient
 	private FastMap<Integer, RvrLocation> rvr = new FastMap<Integer, RvrLocation>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (RvrTemplate template : rvrTemplates) {
 			rvr.put(template.getId(), new RvrLocation(template));
 		}
 	}
-	
+
 	public int size() {
 		return rvr.size();
 	}
-	
+
 	public FastMap<Integer, RvrLocation> getRvrLocations() {
 		return rvr;
 	}

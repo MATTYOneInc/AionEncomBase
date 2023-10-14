@@ -51,7 +51,7 @@ public class ChainSkill {
 	}
 
 	public void increaseChainCount() {
-		chainCount ++;
+		chainCount++;
 	}
 
 	public long getUseTime() {

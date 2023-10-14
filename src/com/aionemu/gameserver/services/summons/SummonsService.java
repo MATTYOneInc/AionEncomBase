@@ -35,8 +35,7 @@ import com.aionemu.gameserver.spawnengine.VisibleObjectSpawner;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
-public class SummonsService
-{
+public class SummonsService {
 	public static final void createSummon(Player master, int npcId, int skillId, int skillLevel, int time) {
 		if (master.getSummon() != null) {
 			PacketSendUtility.sendPacket(master, new SM_SYSTEM_MESSAGE(1300072, new Object[0]));
@@ -51,7 +50,7 @@ public class SummonsService
 		PacketSendUtility.broadcastPacket(summon, new SM_EMOTION(summon, EmotionType.START_EMOTE2));
 		PacketSendUtility.broadcastPacket(summon, new SM_SUMMON_UPDATE(summon));
 	}
-	
+
 	public static final void release(Summon summon, UnsummonType unsummonType, boolean isAttacked) {
 		if (summon.getMode() == SummonMode.RELEASE)
 			return;
@@ -59,22 +58,24 @@ public class SummonsService
 		summon.setMode(SummonMode.RELEASE);
 		Player master = summon.getMaster();
 		switch (unsummonType) {
-		    case COMMAND:
-			    PacketSendUtility.sendPacket(master, SM_SYSTEM_MESSAGE.STR_SKILL_SUMMON_UNSUMMON_FOLLOWER(summon.getNameId()));
-			    PacketSendUtility.sendPacket(master, new SM_SUMMON_UPDATE(summon));
-		    break;
-		    case DISTANCE:
-			    PacketSendUtility.sendPacket(master, SM_SYSTEM_MESSAGE.STR_SKILL_SUMMON_UNSUMMON_BY_TOO_DISTANCE);
-			    PacketSendUtility.sendPacket(master, new SM_SUMMON_UPDATE(summon));
-		    break;
-		    case UNSPECIFIED:
-            case LOGOUT:
-            break;
+		case COMMAND:
+			PacketSendUtility.sendPacket(master,
+					SM_SYSTEM_MESSAGE.STR_SKILL_SUMMON_UNSUMMON_FOLLOWER(summon.getNameId()));
+			PacketSendUtility.sendPacket(master, new SM_SUMMON_UPDATE(summon));
+			break;
+		case DISTANCE:
+			PacketSendUtility.sendPacket(master, SM_SYSTEM_MESSAGE.STR_SKILL_SUMMON_UNSUMMON_BY_TOO_DISTANCE);
+			PacketSendUtility.sendPacket(master, new SM_SUMMON_UPDATE(summon));
+			break;
+		case UNSPECIFIED:
+		case LOGOUT:
+			break;
 		}
 		summon.getObserveController().notifySummonReleaseObservers();
-		summon.setReleaseTask(ThreadPoolManager.getInstance().schedule(new ReleaseSummonTask(summon, unsummonType, isAttacked), 5000));
+		summon.setReleaseTask(ThreadPoolManager.getInstance()
+				.schedule(new ReleaseSummonTask(summon, unsummonType, isAttacked), 5000));
 	}
-	
+
 	public static final void restMode(final Summon summon) {
 		summon.getController().cancelCurrentSkill();
 		summon.setMode(SummonMode.REST);
@@ -83,13 +84,13 @@ public class SummonsService
 		PacketSendUtility.sendPacket(master, new SM_SUMMON_UPDATE(summon));
 		summon.getLifeStats().triggerRestoreTask();
 	}
-	
+
 	public static final void setUnkMode(final Summon summon) {
 		summon.setMode(SummonMode.UNK);
 		Player master = summon.getMaster();
 		PacketSendUtility.sendPacket(master, new SM_SUMMON_UPDATE(summon));
 	}
-	
+
 	public static final void guardMode(final Summon summon) {
 		summon.getController().cancelCurrentSkill();
 		summon.setMode(SummonMode.GUARD);
@@ -98,7 +99,7 @@ public class SummonsService
 		PacketSendUtility.sendPacket(master, new SM_SUMMON_UPDATE(summon));
 		summon.getLifeStats().triggerRestoreTask();
 	}
-	
+
 	public static final void attackMode(final Summon summon) {
 		summon.setMode(SummonMode.ATTACK);
 		Player master = summon.getMaster();
@@ -106,54 +107,58 @@ public class SummonsService
 		PacketSendUtility.sendPacket(master, new SM_SUMMON_UPDATE(summon));
 		summon.getLifeStats().cancelRestoreTask();
 	}
-	
+
 	public static final void doMode(SummonMode summonMode, Summon summon) {
 		doMode(summonMode, summon, 0, null);
 	}
-	
+
 	public static final void doMode(SummonMode summonMode, Summon summon, UnsummonType unsummonType) {
 		doMode(summonMode, summon, 0, unsummonType);
 	}
-	
+
 	public static final void doMode(SummonMode summonMode, Summon summon, int targetObjId, UnsummonType unsummonType) {
 		if (summon.getLifeStats().isAlreadyDead()) {
 			return;
-		} if (unsummonType != null && unsummonType.equals(UnsummonType.COMMAND) && !summonMode.equals(SummonMode.RELEASE)) {
+		}
+		if (unsummonType != null && unsummonType.equals(UnsummonType.COMMAND)
+				&& !summonMode.equals(SummonMode.RELEASE)) {
 			summon.cancelReleaseTask();
 		}
 		SummonController summonController = summon.getController();
 		if (summonController == null) {
 			return;
-		} if (summon.getMaster() == null) {
+		}
+		if (summon.getMaster() == null) {
 			summon.getController().onDelete();
 			return;
-		} switch (summonMode) {
-		    case REST:
-			    summonController.restMode();
+		}
+		switch (summonMode) {
+		case REST:
+			summonController.restMode();
 			break;
-		    case ATTACK:
-			    summonController.attackMode(targetObjId);
+		case ATTACK:
+			summonController.attackMode(targetObjId);
 			break;
-		    case GUARD:
-			    summonController.guardMode();
+		case GUARD:
+			summonController.guardMode();
 			break;
-		    case RELEASE:
-			    if (unsummonType != null) {
-				    summonController.release(unsummonType);
-				}
+		case RELEASE:
+			if (unsummonType != null) {
+				summonController.release(unsummonType);
+			}
 			break;
-			case UNK:
-            break;
+		case UNK:
+			break;
 		}
 	}
-	
+
 	public static class ReleaseSummonTask implements Runnable {
 		private Summon owner;
 		private UnsummonType unsummonType;
 		private Player master;
 		private VisibleObject target;
 		private boolean isAttacked;
-		
+
 		public ReleaseSummonTask(Summon owner, UnsummonType unsummonType, boolean isAttacked) {
 			this.owner = owner;
 			this.unsummonType = unsummonType;
@@ -161,34 +166,35 @@ public class SummonsService
 			target = master.getTarget();
 			this.isAttacked = isAttacked;
 		}
-		
+
 		@Override
 		public void run() {
 			owner.getController().delete();
 			owner.setMaster(null);
 			master.setSummon(null);
 			switch (unsummonType) {
-                case COMMAND:
-                case DISTANCE:
-                case UNSPECIFIED:
-                    PacketSendUtility.sendPacket(master, SM_SYSTEM_MESSAGE.STR_SKILL_SUMMON_UNSUMMONED(owner.getNameId()));
-                    PacketSendUtility.sendPacket(master, new SM_SUMMON_OWNER_REMOVE(owner.getObjectId()));
-                    PacketSendUtility.sendPacket(master, new SM_SUMMON_PANEL_REMOVE());
-                    if (target instanceof Creature) {
-                        final Creature lastAttacker = (Creature) target;
-                        if (!master.getLifeStats().isAlreadyDead() && !lastAttacker.getLifeStats().isAlreadyDead() && isAttacked) {
-                            ThreadPoolManager.getInstance().schedule(new Runnable() {
-                                @Override
-                                public void run() {
-                                    lastAttacker.getAggroList().addHate(master, 1);
-                                }
-                            }, 1000);
-                        }
-                    }
-                    break;
-                case LOGOUT:
-                    break;
-            }
+			case COMMAND:
+			case DISTANCE:
+			case UNSPECIFIED:
+				PacketSendUtility.sendPacket(master, SM_SYSTEM_MESSAGE.STR_SKILL_SUMMON_UNSUMMONED(owner.getNameId()));
+				PacketSendUtility.sendPacket(master, new SM_SUMMON_OWNER_REMOVE(owner.getObjectId()));
+				PacketSendUtility.sendPacket(master, new SM_SUMMON_PANEL_REMOVE());
+				if (target instanceof Creature) {
+					final Creature lastAttacker = (Creature) target;
+					if (!master.getLifeStats().isAlreadyDead() && !lastAttacker.getLifeStats().isAlreadyDead()
+							&& isAttacked) {
+						ThreadPoolManager.getInstance().schedule(new Runnable() {
+							@Override
+							public void run() {
+								lastAttacker.getAggroList().addHate(master, 1);
+							}
+						}, 1000);
+					}
+				}
+				break;
+			case LOGOUT:
+				break;
+			}
 		}
 	}
 }

@@ -27,9 +27,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum ConjunctionType {
 
-	AND,
-	OR,
-	XOR;
+	AND, OR, XOR;
 
 	public String value() {
 		return name();

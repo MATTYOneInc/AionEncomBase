@@ -45,6 +45,7 @@ public class StringParamList {
 
 		@XmlAttribute(name = "id", required = true)
 		protected String id;
+
 		public String getId() {
 			return id;
 		}

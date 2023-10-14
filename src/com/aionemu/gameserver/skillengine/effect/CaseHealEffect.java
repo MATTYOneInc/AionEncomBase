@@ -81,19 +81,22 @@ public class CaseHealEffect extends AbstractHealEffect {
 					else {
 						possibleHealValue = valueWithDelta;
 					}
-					int finalHeal = effect.getEffected().getGameStats().getStat(StatEnum.HEAL_SKILL_BOOST, possibleHealValue).getCurrent();
+					int finalHeal = effect.getEffected().getGameStats()
+							.getStat(StatEnum.HEAL_SKILL_BOOST, possibleHealValue).getCurrent();
 
 					finalHeal = maxValue - currentValue < finalHeal ? maxValue - currentValue : finalHeal;
 
-					if ((type == HealType.HP) && (effect.getEffected().getEffectController().isAbnormalSet(AbnormalState.DISEASE))) {
+					if ((type == HealType.HP)
+							&& (effect.getEffected().getEffectController().isAbnormalSet(AbnormalState.DISEASE))) {
 						finalHeal = 0;
 					}
 
 					if (type == HealType.HP) {
-						effect.getEffected().getLifeStats().increaseHp(TYPE.HP, finalHeal, effect.getSkillId(), LOG.REGULAR);
-					}
-					else if (type == HealType.MP) {
-						effect.getEffected().getLifeStats().increaseMp(TYPE.MP, finalHeal, effect.getSkillId(), LOG.REGULAR);
+						effect.getEffected().getLifeStats().increaseHp(TYPE.HP, finalHeal, effect.getSkillId(),
+								LOG.REGULAR);
+					} else if (type == HealType.MP) {
+						effect.getEffected().getLifeStats().increaseMp(TYPE.MP, finalHeal, effect.getSkillId(),
+								LOG.REGULAR);
 					}
 					effect.endEffect();
 				}

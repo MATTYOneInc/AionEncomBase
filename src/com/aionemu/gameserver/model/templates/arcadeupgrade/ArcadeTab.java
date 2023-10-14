@@ -26,19 +26,18 @@ import javax.xml.bind.annotation.XmlType;
  * Created by wanke on 17/02/2017.
  */
 @XmlType(name = "ArcadeTab")
-public class ArcadeTab
-{
-    @XmlAttribute(name = "id")
-    private int id;
-	
-    @XmlElement(name = "item")
-    private List<ArcadeTabItem> arcadeTabItem;
-	
-    public int getId() {
-        return id;
-    }
-	
-    public List<ArcadeTabItem> getArcadeTabItems() {
-        return arcadeTabItem;
-    }
+public class ArcadeTab {
+	@XmlAttribute(name = "id")
+	private int id;
+
+	@XmlElement(name = "item")
+	private List<ArcadeTabItem> arcadeTabItem;
+
+	public int getId() {
+		return id;
+	}
+
+	public List<ArcadeTabItem> getArcadeTabItems() {
+		return arcadeTabItem;
+	}
 }

@@ -45,16 +45,13 @@ public class SM_SKILL_REMOVE extends AionServerPacket {
 		if (skillId >= 30001 && skillId <= 30003 || skillId >= 40001 && skillId <= 40010) {
 			writeC(0);
 			writeC(0);
-		}
-		else if (isStigma) {
+		} else if (isStigma) {
 			writeC(skillLevel);
 			writeC(1);
-		}
-		else if (isLinked) {
+		} else if (isLinked) {
 			writeC(1);
 			writeC(3);
-		}
-		else { // remove skills active or passive
+		} else { // remove skills active or passive
 			writeC(skillLevel);
 		}
 	}

@@ -56,7 +56,8 @@ public class InstanceBuff implements StatOwner {
 			StatEnum stat = instancePenaltyAttr.getStat();
 			int statToModified = player.getGameStats().getStat(stat, 0).getBase();
 			int value = instancePenaltyAttr.getValue();
-			int valueModified = instancePenaltyAttr.getFunc().equals(Func.PERCENT) ? (statToModified * value / 100) : (value);
+			int valueModified = instancePenaltyAttr.getFunc().equals(Func.PERCENT) ? (statToModified * value / 100)
+					: (value);
 			functions.add(new StatAddFunction(stat, valueModified, true));
 		}
 		player.getGameStats().addEffect(this, functions);
@@ -76,9 +77,9 @@ public class InstanceBuff implements StatOwner {
 		}
 		for (InstancePenaltyAttr instancePenaltyAttr : instanceBonusAttr.getPenaltyAttr()) {
 			if (instancePenaltyAttr.getFunc().equals(Func.PERCENT)) {
-				functions.add(new StatRateFunction(instancePenaltyAttr.getStat(), instancePenaltyAttr.getValue(), true));
-			}
-			else {
+				functions
+						.add(new StatRateFunction(instancePenaltyAttr.getStat(), instancePenaltyAttr.getValue(), true));
+			} else {
 				functions.add(new StatAddFunction(instancePenaltyAttr.getStat(), instancePenaltyAttr.getValue(), true));
 			}
 		}
@@ -102,9 +103,9 @@ public class InstanceBuff implements StatOwner {
 		startTime = System.currentTimeMillis();
 		for (InstancePenaltyAttr instancePenaltyAttr : instanceBonusAttr.getPenaltyAttr()) {
 			if (instancePenaltyAttr.getFunc().equals(Func.PERCENT)) {
-				functions.add(new StatRateFunction(instancePenaltyAttr.getStat(), instancePenaltyAttr.getValue(), true));
-			}
-			else {
+				functions
+						.add(new StatRateFunction(instancePenaltyAttr.getStat(), instancePenaltyAttr.getValue(), true));
+			} else {
 				functions.add(new StatAddFunction(instancePenaltyAttr.getStat(), instancePenaltyAttr.getValue(), true));
 			}
 		}

@@ -36,29 +36,31 @@ import com.aionemu.gameserver.skillengine.change.Func;
  * @author Ranastic (Encom)
  */
 
-public class PlayersBonus implements StatOwner
-{
+public class PlayersBonus implements StatOwner {
 	private static final Logger log = LoggerFactory.getLogger(PlayersBonus.class);
 	private List<IStatFunction> functions = new ArrayList<IStatFunction>();
 	private PlayersBonusServiceAttr playersServiceBonusattr;
-	
+
 	public PlayersBonus(int buffId) {
 		playersServiceBonusattr = DataManager.PLAYERS_BONUS_DATA.getInstanceBonusattr(buffId);
 	}
-	
+
 	public void applyEffect(Player player, int buffId) {
 		if (playersServiceBonusattr == null) {
 			return;
-		} for (PlayersBonusPenaltyAttr playersBonusPenaltyAttr: playersServiceBonusattr.getPenaltyAttr()) {
+		}
+		for (PlayersBonusPenaltyAttr playersBonusPenaltyAttr : playersServiceBonusattr.getPenaltyAttr()) {
 			if (playersBonusPenaltyAttr.getFunc().equals(Func.PERCENT)) {
-				functions.add(new StatRateFunction(playersBonusPenaltyAttr.getStat(), playersBonusPenaltyAttr.getValue(), true));
+				functions.add(new StatRateFunction(playersBonusPenaltyAttr.getStat(),
+						playersBonusPenaltyAttr.getValue(), true));
 			} else {
-				functions.add(new StatAddFunction(playersBonusPenaltyAttr.getStat(), playersBonusPenaltyAttr.getValue(), true));
+				functions.add(new StatAddFunction(playersBonusPenaltyAttr.getStat(), playersBonusPenaltyAttr.getValue(),
+						true));
 			}
 		}
 		player.getGameStats().addEffect(this, functions);
 	}
-	
+
 	public void endEffect(Player player, int buffId) {
 		functions.clear();
 		player.setPlayersBonusId(1);

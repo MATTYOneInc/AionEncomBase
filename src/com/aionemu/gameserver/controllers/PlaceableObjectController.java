@@ -31,23 +31,20 @@ import com.aionemu.gameserver.world.World;
 
 import javolution.util.FastMap;
 
-public class PlaceableObjectController<T extends PlaceableHouseObject> extends VisibleObjectController<HouseObject<T>>
-{
+public class PlaceableObjectController<T extends PlaceableHouseObject> extends VisibleObjectController<HouseObject<T>> {
 	FastMap<Integer, ActionObserver> observed = new FastMap<Integer, ActionObserver>().shared();
 
-	public void see(VisibleObject object)
-	{
-		Player p = (Player)object;
+	public void see(VisibleObject object) {
+		Player p = (Player) object;
 		ActionObserver observer = new ActionObserver(ObserverType.MOVE);
 		p.getObserveController().addObserver(observer);
 		observed.put(p.getObjectId(), observer);
 		PacketSendUtility.sendPacket(p, new SM_HOUSE_OBJECT(getOwner()));
 	}
 
-	public void notSee(VisibleObject object, boolean isOutOfRange)
-	{
-		Player p = (Player)object;
-		ActionObserver observer = (ActionObserver)observed.remove(p.getObjectId());
+	public void notSee(VisibleObject object, boolean isOutOfRange) {
+		Player p = (Player) object;
+		ActionObserver observer = (ActionObserver) observed.remove(p.getObjectId());
 		if (isOutOfRange) {
 			observer.moved();
 			PacketSendUtility.sendPacket(p, new SM_DELETE_HOUSE_OBJECT((getOwner()).getObjectId()));
@@ -59,8 +56,7 @@ public class PlaceableObjectController<T extends PlaceableHouseObject> extends V
 		getOwner().onDespawn();
 	}
 
-	public void delete()
-	{
+	public void delete() {
 		if (getOwner().isSpawned()) {
 			World.getInstance().despawn(getOwner(), false);
 		}

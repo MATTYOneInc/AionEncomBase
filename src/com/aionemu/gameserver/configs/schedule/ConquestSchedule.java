@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "conquest_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ConquestSchedule
-{
+public class ConquestSchedule {
 	@XmlElement(name = "conquest", required = true)
 	private List<Conquest> conquestsList;
-	
+
 	public List<Conquest> getConquestsList() {
 		return conquestsList;
 	}
-	
+
 	public void setOfferingList(List<Conquest> conquestList) {
 		this.conquestsList = conquestList;
 	}
-	
+
 	public static ConquestSchedule load() {
 		ConquestSchedule cs;
 		try {
@@ -58,28 +57,28 @@ public class ConquestSchedule
 		}
 		return cs;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "conquest")
 	public static class Conquest {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "offeringTime", required = true)
 		private List<String> offeringTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getOfferingTimes() {
 			return offeringTimes;
 		}
-		
+
 		public void setOfferingTimes(List<String> offeringTimes) {
 			this.offeringTimes = offeringTimes;
 		}

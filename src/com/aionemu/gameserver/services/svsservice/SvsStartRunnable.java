@@ -26,22 +26,21 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
  * @author Rinzler (Encom)
  */
 
-public class SvsStartRunnable implements Runnable
-{
+public class SvsStartRunnable implements Runnable {
 	private final int id;
-	
+
 	public SvsStartRunnable(int id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public void run() {
-		//Advance Corridor [Transidium Annex].
+		// Advance Corridor [Transidium Annex].
 		SvsService.getInstance().transidiumAnnexMsg(id);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-			    //Advance Corridor [Transidium Annex].
+				// Advance Corridor [Transidium Annex].
 				SvsService.getInstance().advanceCorridorSP(id);
 			}
 		}, 480000);

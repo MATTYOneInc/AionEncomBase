@@ -21,7 +21,8 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.trade.PricesService;
 
 /**
- * @author xavier, Sarynth modified by Wakizashi Price/tax in Influence ration dialog
+ * @author xavier, Sarynth modified by Wakizashi Price/tax in Influence ration
+ *         dialog
  */
 public class SM_PRICES extends AionServerPacket {
 

@@ -25,14 +25,13 @@ import com.aionemu.gameserver.services.VortexService;
  * @author Rinzler (Encom)
  */
 
-public class VortexStartRunnable implements Runnable
-{
+public class VortexStartRunnable implements Runnable {
 	private final int id;
-	
+
 	public VortexStartRunnable(int id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public void run() {
 		Map<Integer, VortexLocation> locations = VortexService.getInstance().getVortexLocations();

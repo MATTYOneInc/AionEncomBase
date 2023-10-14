@@ -106,23 +106,23 @@ public class Effect implements StatOwner {
 	private boolean isDamageEffect;
 	private boolean isPetOrder;
 	private boolean isSummoning;
-	//Xp Boost.
+	// Xp Boost.
 	private boolean isXpBoost;
-	//Ap Boost.
+	// Ap Boost.
 	private boolean isApBoost;
-	//Dr Boost.
+	// Dr Boost.
 	private boolean isDrBoost;
-	//Bdr Boost.
+	// Bdr Boost.
 	private boolean isBdrBoost;
-	//Authorize Boost.
+	// Authorize Boost.
 	private boolean isAuthorizeBoost;
-	//Enchant Boost.
+	// Enchant Boost.
 	private boolean isEnchantBoost;
-	//Enchant Option Boost.
+	// Enchant Option Boost.
 	private boolean isEnchantOptionBoost;
-	//Idun Drop Boost.
+	// Idun Drop Boost.
 	private boolean isIdunDropBoost;
-	//New Effect
+	// New Effect
 	private boolean isSprintFpReduce;
 	private boolean isReturnCoolReduce;
 	private boolean isDeathPenaltyReduce;
@@ -136,7 +136,7 @@ public class Effect implements StatOwner {
 	private boolean isNoResurrectPenalty;
 	private int tauntHate;
 	private int effectHate;
-	private Map<Integer,EffectTemplate> successEffects = new FastMap<Integer,EffectTemplate>().shared();
+	private Map<Integer, EffectTemplate> successEffects = new FastMap<Integer, EffectTemplate>().shared();
 	private int carvedSignet = 0;
 	private int signetBurstedCount = 0;
 	protected int abnormals;
@@ -148,7 +148,7 @@ public class Effect implements StatOwner {
 	private int power = 10;
 	private int accModBoost = 0;
 	private EffectResult effectResult = EffectResult.NORMAL;
-	
+
 	public final Skill getSkill() {
 		return skill;
 	}
@@ -172,7 +172,7 @@ public class Effect implements StatOwner {
 	}
 
 	public Effect(Creature effector, Creature effected, SkillTemplate skillTemplate, int skillLevel, int duration,
-		ItemTemplate itemTemplate) {
+			ItemTemplate itemTemplate) {
 		this(effector, effected, skillTemplate, skillLevel, duration);
 		this.itemTemplate = itemTemplate;
 	}
@@ -209,7 +209,7 @@ public class Effect implements StatOwner {
 	public SkillSubType getSkillSubType() {
 		return skillTemplate.getSubType();
 	}
-	
+
 	public int getSkillSetException() {
 		return skillTemplate.getSkillSetException();
 	}
@@ -339,23 +339,23 @@ public class Effect implements StatOwner {
 	}
 
 	public boolean isBuff() {
-        return skillTemplate.getTargetSlot() == SkillTargetSlot.BUFF;
-    }
+		return skillTemplate.getTargetSlot() == SkillTargetSlot.BUFF;
+	}
 
 	public boolean isRangerBuff() {
-        int skillId = skillTemplate.getSkillId();
-        switch(skillId) {
-            case 796: //Strong Shots.
-			case 809: //Dodging.
-            case 813: //Focused Shots.
-			case 888: //Hunter's Might.
-            case 889: //Bestial Fury.
-			case 1053: //Aiming.
-            case 1099: //Hunter's Eye.
-            return true;
-			default:
-            return false;
-        }
+		int skillId = skillTemplate.getSkillId();
+		switch (skillId) {
+		case 796: // Strong Shots.
+		case 809: // Dodging.
+		case 813: // Focused Shots.
+		case 888: // Hunter's Might.
+		case 889: // Bestial Fury.
+		case 1053: // Aiming.
+		case 1099: // Hunter's Eye.
+			return true;
+		default:
+			return false;
+		}
 	}
 
 	public int getTargetSlot() {
@@ -373,6 +373,7 @@ public class Effect implements StatOwner {
 	public DispelCategoryType getDispelCategory() {
 		return skillTemplate.getDispelCategory();
 	}
+
 	public int getReqDispelLevel() {
 		return skillTemplate.getReqDispelLevel();
 	}
@@ -386,8 +387,7 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param attackStatusObserver
-	 *          the attackCalcObserver to set
+	 * @param attackStatusObserver the attackCalcObserver to set
 	 */
 	public void setAttackStatusObserver(AttackCalcObserver attackStatusObserver, int i) {
 		if (this.attackStatusObserver == null) {
@@ -405,8 +405,7 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param attackShieldObserver
-	 *          the attackShieldObserver to set
+	 * @param attackShieldObserver the attackShieldObserver to set
 	 */
 	public void setAttackShieldObserver(AttackCalcObserver attackShieldObserver, int i) {
 		if (this.attackShieldObserver == null) {
@@ -434,8 +433,7 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param launchSubEffect
-	 *          the launchSubEffect to set
+	 * @param launchSubEffect the launchSubEffect to set
 	 */
 	public void setLaunchSubEffect(boolean launchSubEffect) {
 		this.launchSubEffect = launchSubEffect;
@@ -449,12 +447,12 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param shieldDefense
-	 *          the shieldDefense to set
+	 * @param shieldDefense the shieldDefense to set
 	 */
 	public void setShieldDefense(int shieldDefense) {
 		this.shieldDefense = shieldDefense;
 	}
+
 	/**
 	 * reflected damage
 	 * 
@@ -475,6 +473,7 @@ public class Effect implements StatOwner {
 	public void setReflectedSkillId(int value) {
 		this.reflectedSkillId = value;
 	}
+
 	public int getProtectedSkillId() {
 		return this.protectedSkillId;
 	}
@@ -482,7 +481,7 @@ public class Effect implements StatOwner {
 	public void setProtectedSkillId(int skillId) {
 		this.protectedSkillId = skillId;
 	}
-	
+
 	public int getProtectedDamage() {
 		return this.protectedDamage;
 	}
@@ -490,7 +489,7 @@ public class Effect implements StatOwner {
 	public void setProtectedDamage(int protectedDamage) {
 		this.protectedDamage = protectedDamage;
 	}
-	
+
 	public int getProtectorId() {
 		return this.protectorId;
 	}
@@ -507,8 +506,7 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param spellStatus
-	 *          the spellStatus to set
+	 * @param spellStatus the spellStatus to set
 	 */
 	public void setSpellStatus(SpellStatus spellStatus) {
 		this.spellStatus = spellStatus;
@@ -522,20 +520,21 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param dashStatus
-	 *          the dashStatus to set
+	 * @param dashStatus the dashStatus to set
 	 */
 	public void setDashStatus(DashStatus dashStatus) {
 		this.dashStatus = dashStatus;
 	}
-	
+
 	/**
 	 * Number of signets carved on target
+	 * 
 	 * @return
 	 */
 	public int getCarvedSignet() {
 		return this.carvedSignet;
 	}
+
 	public void setCarvedSignet(int value) {
 		this.carvedSignet = value;
 	}
@@ -548,8 +547,7 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param subEffect
-	 *          the subEffect to set
+	 * @param subEffect the subEffect to set
 	 */
 	public void setSubEffect(Effect subEffect) {
 		this.subEffect = subEffect;
@@ -567,8 +565,8 @@ public class Effect implements StatOwner {
 		}
 		return false;
 	}
-	
-	public TransformType getTransformType()	{
+
+	public TransformType getTransformType() {
 		for (EffectTemplate et : skillTemplate.getEffects().getEffects()) {
 			if (et instanceof TransformEffect) {
 				return ((TransformEffect) et).getTransformType();
@@ -576,114 +574,126 @@ public class Effect implements StatOwner {
 		}
 		return TransformType.NONE;
 	}
-	
+
 	public void setForcedDuration(boolean forcedDuration) {
 		this.forcedDuration = forcedDuration;
 	}
-	
+
 	public void setIsForcedEffect(boolean isForcedEffect) {
 		this.isForcedEffect = isForcedEffect;
 	}
-	
+
 	public boolean getIsForcedEffect() {
 		return this.isForcedEffect || DataManager.MATERIAL_DATA.isMaterialSkill(this.getSkillId());
 	}
 
 	/**
-	 * Correct lifecycle of Effect - INITIALIZE - APPLY - START - END
-	 * Do initialization with proper calculations
+	 * Correct lifecycle of Effect - INITIALIZE - APPLY - START - END Do
+	 * initialization with proper calculations
 	 */
 	public void initialize() {
-        if (skillTemplate.getEffects() == null) {
-            return;
-		} for (EffectTemplate template : getEffectTemplates()) {
-            template.calculate(this);
-            if (template instanceof DelayedSpellAttackInstantEffect) {
-                setDelayedDamage(true);
-			} if (template instanceof PetOrderUseUltraSkillEffect) {
-                setPetOrder(true);
-			} if (template instanceof SummonEffect) {
-                setSumonning(true);
-			} if (template instanceof DamageEffect) {
-                setDamageEffect(true);
-			} if (template instanceof HideEffect) {
-                isHideEffect = true;
-			} if (template instanceof ParalyzeEffect) {
-                isParalyzeEffect = true;
-			} if (template instanceof SanctuaryEffect) {
-                isSanctuaryEffect = true;
-			} if (template instanceof EnchantBoostEffect) {
+		if (skillTemplate.getEffects() == null) {
+			return;
+		}
+		for (EffectTemplate template : getEffectTemplates()) {
+			template.calculate(this);
+			if (template instanceof DelayedSpellAttackInstantEffect) {
+				setDelayedDamage(true);
+			}
+			if (template instanceof PetOrderUseUltraSkillEffect) {
+				setPetOrder(true);
+			}
+			if (template instanceof SummonEffect) {
+				setSumonning(true);
+			}
+			if (template instanceof DamageEffect) {
+				setDamageEffect(true);
+			}
+			if (template instanceof HideEffect) {
+				isHideEffect = true;
+			}
+			if (template instanceof ParalyzeEffect) {
+				isParalyzeEffect = true;
+			}
+			if (template instanceof SanctuaryEffect) {
+				isSanctuaryEffect = true;
+			}
+			if (template instanceof EnchantBoostEffect) {
 				isEnchantBoost = true;
-			} if (template instanceof AuthorizeBoostEffect) {
+			}
+			if (template instanceof AuthorizeBoostEffect) {
 				isAuthorizeBoost = true;
 			}
-        } for (EffectTemplate template : getEffectTemplates()) {
-            template.calculateHate(this);
-        } if (this.isLaunchSubEffect()) {
-            for (EffectTemplate template : successEffects.values()) {
-                template.calculateSubEffect(this);
-            }
-        } if (successEffects.isEmpty()) {
-            skillMoveType = SkillMoveType.RESIST;
-            if (getSkillType() == SkillType.PHYSICAL) {
-                if (getEffector() instanceof Player) {
-                    Player p = (Player) getEffector();
-                    if (p.getPlayerClass() == PlayerClass.GUNSLINGER ||
-					    p.getPlayerClass() == PlayerClass.AETHERTECH) {
-                        if (getAttackStatus() == AttackStatus.CRITICAL) {
-                            setAttackStatus(AttackStatus.CRITICAL_RESIST);
-                        } else {
-                            setAttackStatus(AttackStatus.RESIST);
-                        }
-                    } else {
-                        if (getAttackStatus() == AttackStatus.CRITICAL) {
-                            setAttackStatus(AttackStatus.CRITICAL_DODGE);
-                        } else {
-                            setAttackStatus(AttackStatus.DODGE);
-                        }
-                    }
-                } else {
-                    if (getAttackStatus() == AttackStatus.CRITICAL) {
-                        setAttackStatus(AttackStatus.CRITICAL_DODGE);
-                    } else {
-                        setAttackStatus(AttackStatus.DODGE);
-                    }
-                }
-            } else {
-                if (getAttackStatus() == AttackStatus.CRITICAL) {
-                    setAttackStatus(AttackStatus.CRITICAL_RESIST);
-                } else {
-                    setAttackStatus(AttackStatus.RESIST);
-                }
-            }
-        } switch (AttackStatus.getBaseStatus(getAttackStatus())) {
-            case DODGE:
-                setSpellStatus(SpellStatus.DODGE);
-            break;
-            case PARRY:
-                if (getSpellStatus() == SpellStatus.NONE) {
-                    setSpellStatus(SpellStatus.PARRY);
-                }
-            break;
-            case BLOCK:
-                if (getSpellStatus() == SpellStatus.NONE) {
-                    setSpellStatus(SpellStatus.BLOCK);
-                }
-            break;
-            case RESIST:
-                setSpellStatus(SpellStatus.RESIST);
-            break;
-			default:
+		}
+		for (EffectTemplate template : getEffectTemplates()) {
+			template.calculateHate(this);
+		}
+		if (this.isLaunchSubEffect()) {
+			for (EffectTemplate template : successEffects.values()) {
+				template.calculateSubEffect(this);
+			}
+		}
+		if (successEffects.isEmpty()) {
+			skillMoveType = SkillMoveType.RESIST;
+			if (getSkillType() == SkillType.PHYSICAL) {
+				if (getEffector() instanceof Player) {
+					Player p = (Player) getEffector();
+					if (p.getPlayerClass() == PlayerClass.GUNSLINGER || p.getPlayerClass() == PlayerClass.AETHERTECH) {
+						if (getAttackStatus() == AttackStatus.CRITICAL) {
+							setAttackStatus(AttackStatus.CRITICAL_RESIST);
+						} else {
+							setAttackStatus(AttackStatus.RESIST);
+						}
+					} else {
+						if (getAttackStatus() == AttackStatus.CRITICAL) {
+							setAttackStatus(AttackStatus.CRITICAL_DODGE);
+						} else {
+							setAttackStatus(AttackStatus.DODGE);
+						}
+					}
+				} else {
+					if (getAttackStatus() == AttackStatus.CRITICAL) {
+						setAttackStatus(AttackStatus.CRITICAL_DODGE);
+					} else {
+						setAttackStatus(AttackStatus.DODGE);
+					}
+				}
+			} else {
+				if (getAttackStatus() == AttackStatus.CRITICAL) {
+					setAttackStatus(AttackStatus.CRITICAL_RESIST);
+				} else {
+					setAttackStatus(AttackStatus.RESIST);
+				}
+			}
+		}
+		switch (AttackStatus.getBaseStatus(getAttackStatus())) {
+		case DODGE:
+			setSpellStatus(SpellStatus.DODGE);
 			break;
-        }
-    }
+		case PARRY:
+			if (getSpellStatus() == SpellStatus.NONE) {
+				setSpellStatus(SpellStatus.PARRY);
+			}
+			break;
+		case BLOCK:
+			if (getSpellStatus() == SpellStatus.NONE) {
+				setSpellStatus(SpellStatus.BLOCK);
+			}
+			break;
+		case RESIST:
+			setSpellStatus(SpellStatus.RESIST);
+			break;
+		default:
+			break;
+		}
+	}
 
 	/**
 	 * Apply all effect templates
 	 */
 	public void applyEffect() {
 
-		//TODO move it somewhere more appropriate
+		// TODO move it somewhere more appropriate
 		// Fear is not applied on players who are gliding
 		if (isFearEffect()) {
 			if (getEffected().isInState(CreatureState.GLIDING)) {
@@ -701,7 +711,7 @@ public class Effect implements StatOwner {
 		/**
 		 * broadcast final hate to all visible objects
 		 */
-		//TODO hostile_type?
+		// TODO hostile_type?
 		if (effectHate != 0) {
 			if (getEffected() instanceof Npc && !isDelayedDamage() && !isPetOrder() && !isSummoning()) {
 				getEffected().getAggroList().addHate(effector, 1);
@@ -724,8 +734,9 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * Start effect which includes: - start effect defined in template - start subeffect if possible - activate toogle
-	 * skill if needed - schedule end of effect
+	 * Start effect which includes: - start effect defined in template - start
+	 * subeffect if possible - activate toogle skill if needed - schedule end of
+	 * effect
 	 */
 	public void startEffect(boolean restored) {
 		if (successEffects.isEmpty()) {
@@ -736,19 +747,26 @@ public class Effect implements StatOwner {
 			template.startEffect(this);
 			checkUseEquipmentConditions();
 			checkCancelOnDmg();
-		} if (isToggle() && effector instanceof Player) {
+		}
+		if (isToggle() && effector instanceof Player) {
 			activateToggleSkill();
-		} if (!restored && !forcedDuration) {
+		}
+		if (!restored && !forcedDuration) {
 			duration = getEffectsDuration();
-		} if (isToggle()) {
-            duration = skillTemplate.getToggleTimer();
-		} if (isEnchantBoost() && effector instanceof Player) {
+		}
+		if (isToggle()) {
+			duration = skillTemplate.getToggleTimer();
+		}
+		if (isEnchantBoost() && effector instanceof Player) {
 			((Player) effector).setEnchantBoost(true);
-		} if (isAuthorizeBoost() && effector instanceof Player) {
+		}
+		if (isAuthorizeBoost() && effector instanceof Player) {
 			((Player) effector).setAuthorizeBoost(true);
-		} if (duration == 0) {
+		}
+		if (duration == 0) {
 			return;
-		} if (isOpenAerialSkill()) {
+		}
+		if (isOpenAerialSkill()) {
 			duration = skillTemplate.getDuration();
 		}
 		endTime = System.currentTimeMillis() + duration;
@@ -775,27 +793,31 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * End effect and all effect actions This method is synchronized and prevented to be called several times which could
-	 * cause unexpected behavior
+	 * End effect and all effect actions This method is synchronized and prevented
+	 * to be called several times which could cause unexpected behavior
 	 */
 	public synchronized void endEffect() {
 		if (isStopped) {
 			return;
-		} for (EffectTemplate template : successEffects.values()) {
+		}
+		for (EffectTemplate template : successEffects.values()) {
 			template.endEffect(this);
 		}
-		//If effect is a stance, remove stance from player
+		// If effect is a stance, remove stance from player
 		if (effector instanceof Player) {
 			Player player = (Player) effector;
 			if (player.getController().getStanceSkillId() == getSkillId()) {
 				PacketSendUtility.sendPacket(player, new SM_PLAYER_STANCE(player, 0));
 				player.getController().startStance(0);
 			}
-		} if (isToggle() && effector instanceof Player) {
+		}
+		if (isToggle() && effector instanceof Player) {
 			deactivateToggleSkill();
-		} if (isEnchantBoost() && effector instanceof Player) {
+		}
+		if (isEnchantBoost() && effector instanceof Player) {
 			((Player) effector).setEnchantBoost(false);
-		} if (isAuthorizeBoost() && effector instanceof Player) {
+		}
+		if (isAuthorizeBoost() && effector instanceof Player) {
 			((Player) effector).setAuthorizeBoost(false);
 		}
 		stopTasks();
@@ -875,8 +897,7 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param effectHate
-	 *          the effectHate to set
+	 * @param effectHate the effectHate to set
 	 */
 	public void setEffectHate(int effectHate) {
 		this.effectHate = effectHate;
@@ -890,8 +911,7 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param tauntHate
-	 *          the tauntHate to set
+	 * @param tauntHate the tauntHate to set
 	 */
 	public void setTauntHate(int tauntHate) {
 		this.tauntHate = tauntHate;
@@ -906,15 +926,14 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param observer
-	 *          the observer to set
+	 * @param observer the observer to set
 	 */
 	public void setActionObserver(ActionObserver observer, int i) {
-        if (actionObserver == null) {
-            actionObserver = new ActionObserver[4];
-        }
-        actionObserver[i - 1] = observer;
-    }
+		if (actionObserver == null) {
+			actionObserver = new ActionObserver[4];
+		}
+		actionObserver[i - 1] = observer;
+	}
 
 	public void addSucessEffect(EffectTemplate effect) {
 		successEffects.put(effect.getPosition(), effect);
@@ -923,10 +942,10 @@ public class Effect implements StatOwner {
 	public boolean isInSuccessEffects(int position) {
 		if (successEffects.get(position) != null) {
 			return true;
-        }
+		}
 		return false;
 	}
-	
+
 	/**
 	 * @return
 	 */
@@ -941,13 +960,13 @@ public class Effect implements StatOwner {
 		}
 	}
 
-	public void clearSucessEffects()	{
+	public void clearSucessEffects() {
 		successEffects.clear();
 	}
-	
+
 	private void shedulePeriodicActions() {
 		if (periodicActions == null || periodicActions.getPeriodicActions() == null
-			|| periodicActions.getPeriodicActions().isEmpty()) {
+				|| periodicActions.getPeriodicActions().isEmpty()) {
 			return;
 		}
 		int checktime = periodicActions.getChecktime();
@@ -971,8 +990,9 @@ public class Effect implements StatOwner {
 
 	public int getEffectsDuration() {
 		int duration = 0;
-			
-		//iterate skill's effects until we can calculate a duration time, which is valid for all of them
+
+		// iterate skill's effects until we can calculate a duration time, which is
+		// valid for all of them
 		Iterator<EffectTemplate> itr = successEffects.values().iterator();
 		while (itr.hasNext() && duration == 0) {
 			EffectTemplate et = itr.next();
@@ -983,16 +1003,16 @@ public class Effect implements StatOwner {
 			duration = duration > effectDuration ? duration : effectDuration;
 		}
 
-		//adjust with BOOST_DURATION
+		// adjust with BOOST_DURATION
 		switch (skillTemplate.getSubType()) {
-			case BUFF:
-				duration = effector.getGameStats().getStat(StatEnum.BOOST_DURATION_BUFF, duration).getCurrent();
-				break;
-			
-		    default:
-			    break;
+		case BUFF:
+			duration = effector.getGameStats().getStat(StatEnum.BOOST_DURATION_BUFF, duration).getCurrent();
+			break;
+
+		default:
+			break;
 		}
-		
+
 		// adjust with pvp duration
 		if (effected instanceof Player && skillTemplate.getPvpDuration() != 0) {
 			duration = duration * skillTemplate.getPvpDuration() / 100;
@@ -1044,8 +1064,7 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * @param skillMoveType
-	 *          the skillMoveType to set
+	 * @param skillMoveType the skillMoveType to set
 	 */
 	public void setSkillMoveType(SkillMoveType skillMoveType) {
 		this.skillMoveType = skillMoveType;
@@ -1089,96 +1108,127 @@ public class Effect implements StatOwner {
 	public void setXpBoost(boolean value) {
 		this.isXpBoost = value;
 	}
+
 	public boolean isXpBoost() {
 		return this.isXpBoost;
 	}
+
 	public void setApBoost(boolean value) {
 		this.isApBoost = value;
 	}
+
 	public boolean isApBoost() {
 		return this.isApBoost;
 	}
+
 	public void setDrBoost(boolean value) {
 		this.isDrBoost = value;
 	}
+
 	public boolean isDrBoost() {
 		return this.isDrBoost;
 	}
+
 	public void setBdrBoost(boolean value) {
 		this.isBdrBoost = value;
 	}
+
 	public boolean isBdrBoost() {
 		return this.isBdrBoost;
 	}
+
 	public void setAuthorizeBoost(boolean value) {
 		this.isAuthorizeBoost = value;
 	}
+
 	public boolean isAuthorizeBoost() {
 		return this.isAuthorizeBoost;
 	}
+
 	public void setEnchantBoost(boolean value) {
 		this.isEnchantBoost = value;
 	}
+
 	public boolean isEnchantBoost() {
 		return this.isEnchantBoost;
 	}
+
 	public void setEnchantOptionBoost(boolean value) {
 		this.isEnchantOptionBoost = value;
 	}
+
 	public boolean isEnchantOptionBoost() {
 		return this.isEnchantOptionBoost;
 	}
+
 	public void setIdunDropBoost(boolean value) {
 		this.isIdunDropBoost = value;
 	}
+
 	public boolean isIdunDropBoost() {
 		return this.isIdunDropBoost;
 	}
+
 	public void setNoDeathPenaltyReduce(boolean value) {
 		this.isNoDeathPenaltyReduce = value;
 	}
+
 	public boolean isNoDeathPenaltyReduce() {
 		return this.isNoDeathPenaltyReduce;
 	}
+
 	public void setNoDeathPenalty(boolean value) {
 		this.isNoDeathPenalty = value;
 	}
+
 	public boolean isNoDeathPenalty() {
 		return this.isNoDeathPenalty;
 	}
+
 	public void setNoResurrectPenalty(boolean value) {
 		this.isNoResurrectPenalty = value;
 	}
+
 	public boolean isNoResurrectPenalty() {
 		return this.isNoResurrectPenalty;
 	}
+
 	public void setHiPass(boolean value) {
 		this.isHiPass = value;
 	}
+
 	public boolean isHiPass() {
 		return this.isHiPass;
 	}
+
 	public void setReturnCoolReduce(boolean value) {
 		this.isReturnCoolReduce = value;
 	}
+
 	public boolean isReturnCoolReduce() {
 		return this.isReturnCoolReduce;
 	}
+
 	public void setOdellaRecoverIncrease(boolean value) {
 		this.isOdellaRecoverIncrease = value;
 	}
+
 	public boolean isOdellaRecoverIncrease() {
 		return this.isOdellaRecoverIncrease;
 	}
+
 	public void setSprintFpReduce(boolean value) {
 		this.isSprintFpReduce = value;
 	}
+
 	public boolean isSprintFpReduce() {
 		return this.isSprintFpReduce;
 	}
+
 	public void setDeathPenaltyReduce(boolean value) {
 		this.isDeathPenaltyReduce = value;
 	}
+
 	public boolean isDeathPenaltyReduce() {
 		return this.isDeathPenaltyReduce;
 	}
@@ -1200,7 +1250,7 @@ public class Effect implements StatOwner {
 		// If skill has use equipment conditions
 		// Observe for unequip event and remove effect if event occurs
 		if ((getSkillTemplate().getUseEquipmentconditions() != null)
-			&& (getSkillTemplate().getUseEquipmentconditions().getConditions().size() > 0)) {
+				&& (getSkillTemplate().getUseEquipmentconditions().getConditions().size() > 0)) {
 			ActionObserver observer = new ActionObserver(ObserverType.UNEQUIP) {
 
 				@Override
@@ -1218,7 +1268,8 @@ public class Effect implements StatOwner {
 	}
 
 	/**
-	 * Add Attacked/Dot_Attacked observers if this effect needs to be removed on damage received by effected
+	 * Add Attacked/Dot_Attacked observers if this effect needs to be removed on
+	 * damage received by effected
 	 */
 	private void checkCancelOnDmg() {
 		if (isCancelOnDmg()) {
@@ -1262,11 +1313,11 @@ public class Effect implements StatOwner {
 		}
 		return false;
 	}
-	
+
 	public boolean isDelayedDamage() {
 		return this.isDelayedDamage;
 	}
-	
+
 	public void setDelayedDamage(boolean value) {
 		this.isDelayedDamage = value;
 	}
@@ -1274,7 +1325,7 @@ public class Effect implements StatOwner {
 	public boolean isPetOrder() {
 		return this.isPetOrder;
 	}
-	
+
 	public void setPetOrder(boolean value) {
 		this.isPetOrder = value;
 	}
@@ -1282,226 +1333,227 @@ public class Effect implements StatOwner {
 	public boolean isSummoning() {
 		return this.isSummoning;
 	}
-	
+
 	public void setSumonning(boolean value) {
 		this.isSummoning = value;
 	}
-	
+
 	private int initializePower(SkillTemplate skill) {
 		if (skill.getActivationAttribute().equals(ActivationAttribute.MAINTAIN)) {
 			return 30;
-		} switch (skill.getSkillId()) {
-			case 4170: //Word Of Destruction I
-			case 4171: //Word Of Destruction II
-			case 4172: //Word Of Destruction III
-			case 4173: //Word Of Destruction IV
-			case 4174: //Word Of Destruction V
-			case 4175: //Word Of Destruction VI
-			case 1066: //Silence Arrow I
-			case 1067: //Silence Arrow II
-			case 1068: //Silence Arrow III
-			case 1069: //Silence Arrow IV
-			case 1070: //Silence Arrow V
-			case 1071: //Silence Arrow VI
-			case 1072: //Silence Arrow VII
-			case 1073: //Silence Arrow VIII
-			case 1074: //Silence Arrow IX
-				return 20;
-			case 2932: //Unwavering Devotion I
-			case 3127: //Iron Skin I
-			case 2922: //Empyrean Providence I
-			case 3128: //Prayer Of Freedom I
-			case 3839: //Spirit Preserve I
-			case 1832: //Elemental Screen I
-			case 1192: //Gain Mana I
-			case 1193: //Gain Mana II
-			case 1194: //Gain Mana III
-			case 1195: //Gain Mana IV
-			case 1196: //Gain Mana V
-			case 1197: //Gain Mana VI
-			case 1198: //Gain Mana VII
-			case 1199: //Gain Mana VIII
-			case 1200: //Gain Mana IX
-			case 1201: //Gain Mana X
-			case 1202: //Gain Mana XI
-			case 1203: //Gain Mana XII
-			case 4725: //[ArchDaeva] Gain Mana 5.1
-			case 1022: //Shackle Arrow I
-			case 1023: //Shackle Arrow II
-			case 1024: //Shackle Arrow III
-			case 1025: //Shackle Arrow IV
-			case 1026: //Shackle Arrow V
-			case 618: //Ankle Snare I
-			case 1329: //Curse Of Weakness I
-			case 1330: //Curse Of Weakness II
-			case 1331: //Curse Of Weakness II
-			case 1332: //Curse Of Weakness IV
-			case 1333: //Curse Of Weakness V
-			case 1334: //Curse Of Weakness VI
-			case 1335: //Curse Of Weakness VII
-			case 1336: //Curse Of Weakness VIII
-			case 4144: //Chain Of Suffering I
-			case 4145: //Chain Of Suffering II
-			case 4146: //Chain Of Suffering III
-			case 4147: //Chain Of Suffering IV
-			case 4148: //Chain Of Suffering V
-			case 4149: //Chain Of Suffering VI
-			case 1754: //Stilling Word I
-			case 3854: //Wing Root I
-			//Npc Skill
-			case 18214: //Protective Shield
-			case 18232: //Explosion Of Wrath
-			case 18239: //Soul Petrify
-				return 30;
-			case 3790: //Cursecloud	I
-			case 3791: //Cursecloud	II
-			case 3792: //Cursecloud	III
-			case 3793: //Cursecloud	IV
-			case 3794: //Cursecloud	V
-			case 3795: //Cursecloud	VI
-				return 40;
-			//Npc Skill
-			case 18889: //Submissive Strike I
-			case 18892: //Weeping Curtain I
-			case 18994: //Weakness I
-			case 19090: //Spinning Smash I
-			case 19148: //Resistance I
-			case 19504: //Canyonguard's Target I
-			case 19505: //Relic Explosion I
-			case 19512: //Sap Damage I
-			case 19513: //Sap Damage II
-			case 19514: //Sap Damage III
-			case 19515: //Sap Damage IV
-			case 19516: //Sap Damage V
-			case 19644: //Total Exhaustion I
-			case 19647: //Weaken I
-				return 255;
+		}
+		switch (skill.getSkillId()) {
+		case 4170: // Word Of Destruction I
+		case 4171: // Word Of Destruction II
+		case 4172: // Word Of Destruction III
+		case 4173: // Word Of Destruction IV
+		case 4174: // Word Of Destruction V
+		case 4175: // Word Of Destruction VI
+		case 1066: // Silence Arrow I
+		case 1067: // Silence Arrow II
+		case 1068: // Silence Arrow III
+		case 1069: // Silence Arrow IV
+		case 1070: // Silence Arrow V
+		case 1071: // Silence Arrow VI
+		case 1072: // Silence Arrow VII
+		case 1073: // Silence Arrow VIII
+		case 1074: // Silence Arrow IX
+			return 20;
+		case 2932: // Unwavering Devotion I
+		case 3127: // Iron Skin I
+		case 2922: // Empyrean Providence I
+		case 3128: // Prayer Of Freedom I
+		case 3839: // Spirit Preserve I
+		case 1832: // Elemental Screen I
+		case 1192: // Gain Mana I
+		case 1193: // Gain Mana II
+		case 1194: // Gain Mana III
+		case 1195: // Gain Mana IV
+		case 1196: // Gain Mana V
+		case 1197: // Gain Mana VI
+		case 1198: // Gain Mana VII
+		case 1199: // Gain Mana VIII
+		case 1200: // Gain Mana IX
+		case 1201: // Gain Mana X
+		case 1202: // Gain Mana XI
+		case 1203: // Gain Mana XII
+		case 4725: // [ArchDaeva] Gain Mana 5.1
+		case 1022: // Shackle Arrow I
+		case 1023: // Shackle Arrow II
+		case 1024: // Shackle Arrow III
+		case 1025: // Shackle Arrow IV
+		case 1026: // Shackle Arrow V
+		case 618: // Ankle Snare I
+		case 1329: // Curse Of Weakness I
+		case 1330: // Curse Of Weakness II
+		case 1331: // Curse Of Weakness II
+		case 1332: // Curse Of Weakness IV
+		case 1333: // Curse Of Weakness V
+		case 1334: // Curse Of Weakness VI
+		case 1335: // Curse Of Weakness VII
+		case 1336: // Curse Of Weakness VIII
+		case 4144: // Chain Of Suffering I
+		case 4145: // Chain Of Suffering II
+		case 4146: // Chain Of Suffering III
+		case 4147: // Chain Of Suffering IV
+		case 4148: // Chain Of Suffering V
+		case 4149: // Chain Of Suffering VI
+		case 1754: // Stilling Word I
+		case 3854: // Wing Root I
+			// Npc Skill
+		case 18214: // Protective Shield
+		case 18232: // Explosion Of Wrath
+		case 18239: // Soul Petrify
+			return 30;
+		case 3790: // Cursecloud I
+		case 3791: // Cursecloud II
+		case 3792: // Cursecloud III
+		case 3793: // Cursecloud IV
+		case 3794: // Cursecloud V
+		case 3795: // Cursecloud VI
+			return 40;
+		// Npc Skill
+		case 18889: // Submissive Strike I
+		case 18892: // Weeping Curtain I
+		case 18994: // Weakness I
+		case 19090: // Spinning Smash I
+		case 19148: // Resistance I
+		case 19504: // Canyonguard's Target I
+		case 19505: // Relic Explosion I
+		case 19512: // Sap Damage I
+		case 19513: // Sap Damage II
+		case 19514: // Sap Damage III
+		case 19515: // Sap Damage IV
+		case 19516: // Sap Damage V
+		case 19644: // Total Exhaustion I
+		case 19647: // Weaken I
+			return 255;
 		}
 		return 10;
 	}
-	
+
 	/**
 	 * @return the power
 	 */
 	public int getPower() {
 		return power;
 	}
-	
+
 	/**
 	 * @param power the power to set
 	 */
 	public void setPower(int power) {
 		this.power = power;
 	}
-	
+
 	public int removePower(int power) {
 		this.power -= power;
 		return this.power;
 	}
-	
+
 	public void setAccModBoost(int accModBoost) {
 		this.accModBoost = accModBoost;
 	}
-	
+
 	public int getAccModBoost() {
 		return this.accModBoost;
 	}
-	
+
 	public boolean isHideEffect() {
 		return isHideEffect;
 	}
-	
+
 	public boolean isParalyzeEffect() {
 		return isParalyzeEffect;
 	}
-	
-	public boolean isSanctuaryEffect(){
+
+	public boolean isSanctuaryEffect() {
 		return isSanctuaryEffect;
 	}
-	
+
 	/**
 	 * @return the isDamageEffect
 	 */
 	public boolean isDamageEffect() {
 		return isDamageEffect;
 	}
-	
+
 	/**
 	 * @param isDamageEffect the isDamageEffect to set
 	 */
 	public void setDamageEffect(boolean isDamageEffect) {
 		this.isDamageEffect = isDamageEffect;
 	}
-	
+
 	/**
 	 * @return the signetBurstedCount
 	 */
 	public int getSignetBurstedCount() {
 		return signetBurstedCount;
 	}
-	
+
 	/**
 	 * @param signetBurstedCount the signetBurstedCount to set
 	 */
 	public void setSignetBurstedCount(int signetBurstedCount) {
 		this.signetBurstedCount = signetBurstedCount;
 	}
-	
+
 	public final EffectResult getEffectResult() {
 		return effectResult;
 	}
-	
+
 	public final void setEffectResult(EffectResult effectResult) {
 		this.effectResult = effectResult;
 	}
-	
+
 	public int getMpShield() {
-        return this.mpShield;
-    }
-    
-    public void setMpShield(int mpShield) {
-        this.mpShield = mpShield;
-    }
-	
+		return this.mpShield;
+	}
+
+	public void setMpShield(int mpShield) {
+		this.mpShield = mpShield;
+	}
+
 	private boolean isPhysicalState = false;
 	private boolean isMagicalState = false;
-	
+
 	public boolean isPhysicalState() {
 		return isPhysicalState;
 	}
-	
+
 	public void setIsPhysicalState(boolean isPhysicalState) {
 		this.isPhysicalState = isPhysicalState;
 	}
-	
+
 	public boolean isMagicalState() {
 		return isMagicalState;
 	}
-	
+
 	public void setIsMagicalState(boolean isMagicalState) {
 		this.isMagicalState = isMagicalState;
 	}
-	
+
 	public void setTargetLoc(float x, float y, float z) {
 		this.targetX = x;
 		this.targetY = y;
 		this.targetZ = z;
 	}
-	
+
 	private boolean isOpenAerialSkill() {
 		switch (getSkillId()) {
-			case 8224:
-			case 8678:
-			case 9173:
-			case 19552:
-			case 20371:
-			case 20680:
-			case 20872:
-			case 21133:
-			case 21476:
-			case 21529:
-			case 21911:
-				return true;
+		case 8224:
+		case 8678:
+		case 9173:
+		case 19552:
+		case 20371:
+		case 20680:
+		case 20872:
+		case 21133:
+		case 21476:
+		case 21529:
+		case 21911:
+			return true;
 		}
 		return false;
 	}

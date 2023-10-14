@@ -76,10 +76,10 @@ public class AutoGroupService {
 	private FastMap<Integer, AutoInstance> autoInstances = new FastMap<Integer, AutoInstance>().shared();
 	private Collection<Integer> penaltys = new FastList<Integer>().shared();
 	private Lock lock = new ReentrantLock();
-	
+
 	private AutoGroupService() {
 	}
-	
+
 	public void startLooking(Player player, int instanceMaskId, EntryRequestType ert) {
 		AutoGroupType agt = AutoGroupType.getAGTByMaskId(instanceMaskId);
 		if (agt == null) {
@@ -106,50 +106,70 @@ public class AutoGroupService {
 			for (Player member : player.getPlayerGroup2().getOnlineMembers()) {
 				if (agt.isDredgion()) {
 					PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-				} if (agt.isAsyunatar()) {
+				}
+				if (agt.isAsyunatar()) {
 					PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-				} if (agt.isKamar()) {
+				}
+				if (agt.isKamar()) {
 					PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-				} if (agt.isOphidan()) {
+				}
+				if (agt.isOphidan()) {
 					PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-				} if (agt.isSuspiciousOphidan()) {
+				}
+				if (agt.isSuspiciousOphidan()) {
 					PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-				} if (agt.isBastion()) {
+				}
+				if (agt.isBastion()) {
 					PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-				} if (agt.isIdgelDome()) {
+				}
+				if (agt.isIdgelDome()) {
 					PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-				} if (agt.isIdgelDomeLandmark()) {
+				}
+				if (agt.isIdgelDomeLandmark()) {
 					PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-				} if (agt.isGrandArenaTrainingCamp()) {
+				}
+				if (agt.isGrandArenaTrainingCamp()) {
 					PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-				} if (agt.isIDRun()) {
+				}
+				if (agt.isIDRun()) {
 					PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6, true));
 				}
 				PacketSendUtility.sendPacket(member, new SM_SYSTEM_MESSAGE(1400194, agt.getInstanceMapId()));
-				PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 1, ert.getId(), player.getName()));
+				PacketSendUtility.sendPacket(member,
+						new SM_AUTO_GROUP(instanceMaskId, 1, ert.getId(), player.getName()));
 			}
 		} else {
 			if (agt.isDredgion()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-			} if (agt.isAsyunatar()) {
+			}
+			if (agt.isAsyunatar()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-			} if (agt.isKamar()) {
+			}
+			if (agt.isKamar()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-			} if (agt.isOphidan()) {
+			}
+			if (agt.isOphidan()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-			} if (agt.isSuspiciousOphidan()) {
+			}
+			if (agt.isSuspiciousOphidan()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-			} if (agt.isBastion()) {
+			}
+			if (agt.isBastion()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-			} if (agt.isIdgelDome()) {
+			}
+			if (agt.isIdgelDome()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-			} if (agt.isIdgelDomeLandmark()) {
+			}
+			if (agt.isIdgelDomeLandmark()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-			} if (agt.isHallOfTenacity()) {
+			}
+			if (agt.isHallOfTenacity()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-			} if (agt.isGrandArenaTrainingCamp()) {
+			}
+			if (agt.isGrandArenaTrainingCamp()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
-			} if (agt.isIDRun()) {
+			}
+			if (agt.isIDRun()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6, true));
 			}
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400194, agt.getInstanceMapId()));
@@ -157,20 +177,22 @@ public class AutoGroupService {
 		}
 		startSort(ert, instanceMaskId, true);
 	}
-	
+
 	public synchronized void pressEnter(Player player, int instanceMaskId) {
 		AutoInstance instance = getAutoInstance(player, instanceMaskId);
 		if (instance == null || instance.players.get(player.getObjectId()).isPressedEnter()) {
 			return;
-		} if (player.isInGroup2()) {
+		}
+		if (player.isInGroup2()) {
 			PlayerGroupService.removePlayer(player);
-		} if (player.isInAlliance2()) {
+		}
+		if (player.isInAlliance2()) {
 			PlayerAllianceService.removePlayer(player);
 		}
 		instance.onPressEnter(player);
 		PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 5));
 	}
-	
+
 	public void onEnterInstance(Player player) {
 		if (player.isInInstance()) {
 			Integer obj = player.getObjectId();
@@ -180,7 +202,7 @@ public class AutoGroupService {
 			}
 		}
 	}
-	
+
 	public void unregisterLooking(Player player, byte instanceMaskId) {
 		Integer obj = player.getObjectId();
 		LookingForParty lfp = searchers.get(obj);
@@ -197,7 +219,7 @@ public class AutoGroupService {
 			}
 		}
 	}
-	
+
 	public void cancelEnter(Player player, int instanceMaskId) {
 		AutoInstance autoInstance = getAutoInstance(player, instanceMaskId);
 		if (autoInstance != null) {
@@ -206,63 +228,126 @@ public class AutoGroupService {
 				autoInstance.unregister(player);
 				if (!searchers.containsKey(obj)) {
 					startPenalty(obj);
-				} if (autoInstance.agt.hasRegisterFast()) {
+				}
+				if (autoInstance.agt.hasRegisterFast()) {
 					startSort(EntryRequestType.FAST_GROUP_ENTRY, instanceMaskId, false);
-				} if (autoInstance.players.isEmpty()) {
+				}
+				if (autoInstance.players.isEmpty()) {
 					WorldMapInstance instance = autoInstance.instance;
 					autoInstance = autoInstances.remove(instance.getInstanceId());
 					InstanceService.destroyInstance(instance);
 					autoInstance.clear();
 				}
-			} if (autoInstance.agt.isDredgion() && DredgionService2.getInstance().isDredgionAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            } if (autoInstance.agt.isAsyunatar() && AsyunatarService.getInstance().isAsyunatarAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            } if (autoInstance.agt.isKamar() && KamarBattlefieldService.getInstance().isKamarAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            } if (autoInstance.agt.isOphidan() && EngulfedOphidanBridgeService.getInstance().isOphidanAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            } if (autoInstance.agt.isSuspiciousOphidan() && SuspiciousOphidanBridgeService.getInstance().isSuspiciousAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            } if (autoInstance.agt.isBastion() && IronWallWarfrontService.getInstance().isBastionAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            } if (autoInstance.agt.isIdgelDome() && IdgelDomeService.getInstance().isIdgelAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            } if (autoInstance.agt.isIdgelDomeLandmark() && IdgelDomeLandmarkService.getInstance().isLandmarkAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            } if (autoInstance.agt.isHallOfTenacity() && HallOfTenacityService.getInstance().isHallAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            } if (autoInstance.agt.isGrandArenaTrainingCamp() && GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            } if (autoInstance.agt.isIDRun() && IDRunService.getInstance().isIDRunAvailable()) {
-                PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-            }
+			}
+			if (autoInstance.agt.isDredgion() && DredgionService2.getInstance().isDredgionAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
+			if (autoInstance.agt.isAsyunatar() && AsyunatarService.getInstance().isAsyunatarAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
+			if (autoInstance.agt.isKamar() && KamarBattlefieldService.getInstance().isKamarAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
+			if (autoInstance.agt.isOphidan() && EngulfedOphidanBridgeService.getInstance().isOphidanAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
+			if (autoInstance.agt.isSuspiciousOphidan()
+					&& SuspiciousOphidanBridgeService.getInstance().isSuspiciousAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
+			if (autoInstance.agt.isBastion() && IronWallWarfrontService.getInstance().isBastionAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
+			if (autoInstance.agt.isIdgelDome() && IdgelDomeService.getInstance().isIdgelAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
+			if (autoInstance.agt.isIdgelDomeLandmark()
+					&& IdgelDomeLandmarkService.getInstance().isLandmarkAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
+			if (autoInstance.agt.isHallOfTenacity() && HallOfTenacityService.getInstance().isHallAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
+			if (autoInstance.agt.isGrandArenaTrainingCamp()
+					&& GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
+			if (autoInstance.agt.isIDRun() && IDRunService.getInstance().isIDRunAvailable()) {
+				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
+			}
 			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 2));
 		}
 	}
-	
+
 	public void onPlayerLogin(Player player) {
-		if (DredgionService2.getInstance().isDredgionAvailable() && player.getLevel() > DredgionService2.minLevel && player.getLevel() < DredgionService2.capLevel && !DredgionService2.getInstance().hasCoolDown(player)) {
-            PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(DredgionService2.getInstance().getInstanceMaskId(player), SM_AUTO_GROUP.wnd_EntryIcon));
-        } if (AsyunatarService.getInstance().isAsyunatarAvailable() && player.getLevel() > AsyunatarService.minLevel && player.getLevel() < AsyunatarService.capLevel && !AsyunatarService.getInstance().hasCoolDown(player)) {
-            PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(AsyunatarService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
-        } if (KamarBattlefieldService.getInstance().isKamarAvailable() && player.getLevel() > KamarBattlefieldService.minLevel && player.getLevel() < KamarBattlefieldService.capLevel && !KamarBattlefieldService.getInstance().hasCoolDown(player)) {
-			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(KamarBattlefieldService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
-        } if (EngulfedOphidanBridgeService.getInstance().isOphidanAvailable() && player.getLevel() > EngulfedOphidanBridgeService.minLevel && player.getLevel() < EngulfedOphidanBridgeService.capLevel && !EngulfedOphidanBridgeService.getInstance().hasCoolDown(player)) {
-			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(EngulfedOphidanBridgeService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
-		} if (SuspiciousOphidanBridgeService.getInstance().isSuspiciousAvailable() && player.getLevel() > SuspiciousOphidanBridgeService.minLevel && player.getLevel() < SuspiciousOphidanBridgeService.capLevel && !SuspiciousOphidanBridgeService.getInstance().hasCoolDown(player)) {
-			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(SuspiciousOphidanBridgeService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
-		} if (IronWallWarfrontService.getInstance().isBastionAvailable() && player.getLevel() > IronWallWarfrontService.minLevel && player.getLevel() < IronWallWarfrontService.capLevel && !IronWallWarfrontService.getInstance().hasCoolDown(player)) {
-			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(IronWallWarfrontService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
-		} if (IdgelDomeService.getInstance().isIdgelAvailable() && player.getLevel() > IdgelDomeService.minLevel && player.getLevel() < IdgelDomeService.capLevel && !IdgelDomeService.getInstance().hasCoolDown(player)) {
-			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(IdgelDomeService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
-		} if (IdgelDomeLandmarkService.getInstance().isLandmarkAvailable() && player.getLevel() > IdgelDomeLandmarkService.minLevel && player.getLevel() < IdgelDomeLandmarkService.capLevel && !IdgelDomeLandmarkService.getInstance().hasCoolDown(player)) {
-			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(IdgelDomeLandmarkService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
-		} if (HallOfTenacityService.getInstance().isHallAvailable() && player.getLevel() > HallOfTenacityService.minLevel && player.getLevel() < HallOfTenacityService.capLevel && !HallOfTenacityService.getInstance().hasCoolDown(player)) {
-			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(HallOfTenacityService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
-		} if (GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable() && player.getLevel() > GrandArenaTrainingCampService.minLevel && player.getLevel() < GrandArenaTrainingCampService.capLevel && !GrandArenaTrainingCampService.getInstance().hasCoolDown(player)) {
-			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(GrandArenaTrainingCampService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
-		} if (IDRunService.getInstance().isIDRunAvailable() && player.getLevel() > IDRunService.minLevel && player.getLevel() < IDRunService.capLevel && !IDRunService.getInstance().hasCoolDown(player)) {
+		if (DredgionService2.getInstance().isDredgionAvailable() && player.getLevel() > DredgionService2.minLevel
+				&& player.getLevel() < DredgionService2.capLevel
+				&& !DredgionService2.getInstance().hasCoolDown(player)) {
+			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(
+					DredgionService2.getInstance().getInstanceMaskId(player), SM_AUTO_GROUP.wnd_EntryIcon));
+		}
+		if (AsyunatarService.getInstance().isAsyunatarAvailable() && player.getLevel() > AsyunatarService.minLevel
+				&& player.getLevel() < AsyunatarService.capLevel
+				&& !AsyunatarService.getInstance().hasCoolDown(player)) {
+			PacketSendUtility.sendPacket(player,
+					new SM_AUTO_GROUP(AsyunatarService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
+		}
+		if (KamarBattlefieldService.getInstance().isKamarAvailable()
+				&& player.getLevel() > KamarBattlefieldService.minLevel
+				&& player.getLevel() < KamarBattlefieldService.capLevel
+				&& !KamarBattlefieldService.getInstance().hasCoolDown(player)) {
+			PacketSendUtility.sendPacket(player,
+					new SM_AUTO_GROUP(KamarBattlefieldService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
+		}
+		if (EngulfedOphidanBridgeService.getInstance().isOphidanAvailable()
+				&& player.getLevel() > EngulfedOphidanBridgeService.minLevel
+				&& player.getLevel() < EngulfedOphidanBridgeService.capLevel
+				&& !EngulfedOphidanBridgeService.getInstance().hasCoolDown(player)) {
+			PacketSendUtility.sendPacket(player,
+					new SM_AUTO_GROUP(EngulfedOphidanBridgeService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
+		}
+		if (SuspiciousOphidanBridgeService.getInstance().isSuspiciousAvailable()
+				&& player.getLevel() > SuspiciousOphidanBridgeService.minLevel
+				&& player.getLevel() < SuspiciousOphidanBridgeService.capLevel
+				&& !SuspiciousOphidanBridgeService.getInstance().hasCoolDown(player)) {
+			PacketSendUtility.sendPacket(player,
+					new SM_AUTO_GROUP(SuspiciousOphidanBridgeService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
+		}
+		if (IronWallWarfrontService.getInstance().isBastionAvailable()
+				&& player.getLevel() > IronWallWarfrontService.minLevel
+				&& player.getLevel() < IronWallWarfrontService.capLevel
+				&& !IronWallWarfrontService.getInstance().hasCoolDown(player)) {
+			PacketSendUtility.sendPacket(player,
+					new SM_AUTO_GROUP(IronWallWarfrontService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
+		}
+		if (IdgelDomeService.getInstance().isIdgelAvailable() && player.getLevel() > IdgelDomeService.minLevel
+				&& player.getLevel() < IdgelDomeService.capLevel
+				&& !IdgelDomeService.getInstance().hasCoolDown(player)) {
+			PacketSendUtility.sendPacket(player,
+					new SM_AUTO_GROUP(IdgelDomeService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
+		}
+		if (IdgelDomeLandmarkService.getInstance().isLandmarkAvailable()
+				&& player.getLevel() > IdgelDomeLandmarkService.minLevel
+				&& player.getLevel() < IdgelDomeLandmarkService.capLevel
+				&& !IdgelDomeLandmarkService.getInstance().hasCoolDown(player)) {
+			PacketSendUtility.sendPacket(player,
+					new SM_AUTO_GROUP(IdgelDomeLandmarkService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
+		}
+		if (HallOfTenacityService.getInstance().isHallAvailable() && player.getLevel() > HallOfTenacityService.minLevel
+				&& player.getLevel() < HallOfTenacityService.capLevel
+				&& !HallOfTenacityService.getInstance().hasCoolDown(player)) {
+			PacketSendUtility.sendPacket(player,
+					new SM_AUTO_GROUP(HallOfTenacityService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
+		}
+		if (GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()
+				&& player.getLevel() > GrandArenaTrainingCampService.minLevel
+				&& player.getLevel() < GrandArenaTrainingCampService.capLevel
+				&& !GrandArenaTrainingCampService.getInstance().hasCoolDown(player)) {
+			PacketSendUtility.sendPacket(player,
+					new SM_AUTO_GROUP(GrandArenaTrainingCampService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
+		}
+		if (IDRunService.getInstance().isIDRunAvailable() && player.getLevel() > IDRunService.minLevel
+				&& player.getLevel() < IDRunService.capLevel && !IDRunService.getInstance().hasCoolDown(player)) {
 			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(IDRunService.maskId, SM_AUTO_GROUP.wnd_EntryIcon));
 		}
 		Integer obj = player.getObjectId();
@@ -273,54 +358,102 @@ public class AutoGroupService {
 					int instanceMaskId = searchInstance.getInstanceMaskId();
 					lfp.unregisterInstance(instanceMaskId);
 					if (searchInstance.isDredgion() && DredgionService2.getInstance().isDredgionAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} if (searchInstance.isAsyunatar() && AsyunatarService.getInstance().isAsyunatarAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} if (searchInstance.isKamar() && KamarBattlefieldService.getInstance().isKamarAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} if (searchInstance.isOphidan() && EngulfedOphidanBridgeService.getInstance().isOphidanAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} if (searchInstance.isSuspiciousOphidan() && SuspiciousOphidanBridgeService.getInstance().isSuspiciousAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} if (searchInstance.isBastion() && IronWallWarfrontService.getInstance().isBastionAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} if (searchInstance.isIdgelDome() && IdgelDomeService.getInstance().isIdgelAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} if (searchInstance.isIdgelDomeLandmark() && IdgelDomeLandmarkService.getInstance().isLandmarkAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} if (searchInstance.isHallOfTenacity() && HallOfTenacityService.getInstance().isHallAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} if (searchInstance.isGrandArenaTrainingCamp() && GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
-					} if (searchInstance.isIDRun() && IDRunService.getInstance().isIDRunAvailable()) {
-						PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					}
+					if (searchInstance.isAsyunatar() && AsyunatarService.getInstance().isAsyunatarAvailable()) {
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					}
+					if (searchInstance.isKamar() && KamarBattlefieldService.getInstance().isKamarAvailable()) {
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					}
+					if (searchInstance.isOphidan() && EngulfedOphidanBridgeService.getInstance().isOphidanAvailable()) {
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					}
+					if (searchInstance.isSuspiciousOphidan()
+							&& SuspiciousOphidanBridgeService.getInstance().isSuspiciousAvailable()) {
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					}
+					if (searchInstance.isBastion() && IronWallWarfrontService.getInstance().isBastionAvailable()) {
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					}
+					if (searchInstance.isIdgelDome() && IdgelDomeService.getInstance().isIdgelAvailable()) {
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					}
+					if (searchInstance.isIdgelDomeLandmark()
+							&& IdgelDomeLandmarkService.getInstance().isLandmarkAvailable()) {
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					}
+					if (searchInstance.isHallOfTenacity() && HallOfTenacityService.getInstance().isHallAvailable()) {
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					}
+					if (searchInstance.isGrandArenaTrainingCamp()
+							&& GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()) {
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
+					}
+					if (searchInstance.isIDRun() && IDRunService.getInstance().isIDRunAvailable()) {
+						PacketSendUtility.sendPacket(player,
+								new SM_AUTO_GROUP(instanceMaskId, SM_AUTO_GROUP.wnd_EntryIcon));
 					}
 					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 2));
 					continue;
 				}
-				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), 8, searchInstance.getRemainingTime() + searchInstance.getEntryRequestType().getId(), player.getName()));
+				PacketSendUtility.sendPacket(player,
+						new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), 8,
+								searchInstance.getRemainingTime() + searchInstance.getEntryRequestType().getId(),
+								player.getName()));
 				if (searchInstance.isDredgion()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
-				} if (searchInstance.isAsyunatar()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
-				} if (searchInstance.isKamar()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
-				} if (searchInstance.isOphidan()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
-				} if (searchInstance.isSuspiciousOphidan()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
-				} if (searchInstance.isBastion()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
-				} if (searchInstance.isIdgelDome()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
-				} if (searchInstance.isIdgelDomeLandmark()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
-				} if (searchInstance.isHallOfTenacity()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
-				} if (searchInstance.isGrandArenaTrainingCamp()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
-				} if (searchInstance.isIDRun()) {
-					PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+				}
+				if (searchInstance.isAsyunatar()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+				}
+				if (searchInstance.isKamar()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+				}
+				if (searchInstance.isOphidan()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+				}
+				if (searchInstance.isSuspiciousOphidan()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+				}
+				if (searchInstance.isBastion()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+				}
+				if (searchInstance.isIdgelDome()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+				}
+				if (searchInstance.isIdgelDomeLandmark()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+				}
+				if (searchInstance.isHallOfTenacity()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+				}
+				if (searchInstance.isGrandArenaTrainingCamp()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
+				}
+				if (searchInstance.isIDRun()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_AUTO_GROUP(searchInstance.getInstanceMaskId(), SM_AUTO_GROUP.wnd_EntryIcon, true));
 				}
 			}
 			if (lfp.getSearchInstances().isEmpty()) {
@@ -333,7 +466,7 @@ public class AutoGroupService {
 			}
 		}
 	}
-	
+
 	public void onPlayerLogOut(Player player) {
 		Integer obj = player.getObjectId();
 		int instanceId = player.getInstanceId();
@@ -352,7 +485,7 @@ public class AutoGroupService {
 			AutoInstance autoInstance = autoInstances.get(instanceId);
 			if (autoInstance != null && autoInstance.players.containsKey(obj)) {
 				WorldMapInstance instance = autoInstance.instance;
-				if (instance != null ) {
+				if (instance != null) {
 					autoInstance.players.get(obj).setOnline(false);
 					if (select(autoInstance.players, having(on(AGPlayer.class).isOnline(), equalTo(true))).isEmpty()) {
 						autoInstance = autoInstances.remove(instanceId);
@@ -363,7 +496,7 @@ public class AutoGroupService {
 			}
 		}
 	}
-	
+
 	public void onLeaveInstance(Player player) {
 		if (player.isInInstance()) {
 			Integer obj = player.getObjectId();
@@ -383,7 +516,7 @@ public class AutoGroupService {
 			}
 		}
 	}
-	
+
 	private void startSort(EntryRequestType ert, Integer instanceMaskId, boolean checkNewGroup) {
 		lock.lock();
 		try {
@@ -392,7 +525,8 @@ public class AutoGroupService {
 				for (LookingForParty lfp : searchers.values()) {
 					if (lfp.getPlayer() == null || lfp.isOnStartEnterTask()) {
 						continue;
-					} for (AutoInstance autoInstance : autoInstances.values()) {
+					}
+					for (AutoInstance autoInstance : autoInstances.values()) {
 						int searchMaskId = autoInstance.agt.getInstanceMaskId();
 						SearchInstance searchInstance = lfp.getSearchInstance(searchMaskId);
 						if (searchInstance != null && searchInstance.getEntryRequestType().isFastGroupEntry()) {
@@ -445,7 +579,8 @@ public class AutoGroupService {
 							} else {
 								players.add(lfp.getPlayer());
 							}
-						} if (question.isReady()) {
+						}
+						if (question.isReady()) {
 							canCreate = true;
 							break;
 						}
@@ -471,12 +606,11 @@ public class AutoGroupService {
 				}
 				players.clear();
 			}
-		}
-		finally {
+		} finally {
 			lock.unlock();
 		}
 	}
-	
+
 	private boolean canEnter(Player player, EntryRequestType ert, AutoGroupType agt) {
 		int mapId = agt.getInstanceMapId();
 		int instanceMaskId = agt.getInstanceMaskId();
@@ -502,116 +636,150 @@ public class AutoGroupService {
 			return false;
 		} else if (agt.isHallOfTenacity() && !HallOfTenacityService.getInstance().isHallAvailable()) {
 			return false;
-		} else if (agt.isGrandArenaTrainingCamp() && !GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()) {
+		} else if (agt.isGrandArenaTrainingCamp()
+				&& !GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()) {
 			return false;
 		} else if (agt.isIDRun() && !IDRunService.getInstance().isIDRunAvailable()) {
 			return false;
 		} else if (hasCoolDown(player, mapId)) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANNOT_MAKE_INSTANCE_COOL_TIME);
 			return false;
-		} switch (ert) {
-			case NEW_GROUP_ENTRY:
-				if (!agt.hasRegisterNew()) {
-					return false;
-				}
-				if (agt.isHallOfTenacity() && HallOfTenacityService.getInstance().hasCoolDown(player)) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(player.getName()));
-					return false;
-				} else if (hasCoolDown(player, mapId)) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(player.getName()));
-					return false;
-				}
-				if (!agt.hasLevelPermit(player.getLevel())) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_LEVEL);
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(player.getName()));
-					return false;
-				}
+		}
+		switch (ert) {
+		case NEW_GROUP_ENTRY:
+			if (!agt.hasRegisterNew()) {
+				return false;
+			}
+			if (agt.isHallOfTenacity() && HallOfTenacityService.getInstance().hasCoolDown(player)) {
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(player.getName()));
+				return false;
+			} else if (hasCoolDown(player, mapId)) {
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(player.getName()));
+				return false;
+			}
+			if (!agt.hasLevelPermit(player.getLevel())) {
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_LEVEL);
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(player.getName()));
+				return false;
+			}
 			break;
-			case FAST_GROUP_ENTRY:
-				if (!agt.hasRegisterFast()) {
-					return false;
-				}
+		case FAST_GROUP_ENTRY:
+			if (!agt.hasRegisterFast()) {
+				return false;
+			}
 			break;
-			case GROUP_ENTRY:
-				if (!agt.hasRegisterGroup()) {
+		case GROUP_ENTRY:
+			if (!agt.hasRegisterGroup()) {
+				return false;
+			}
+			PlayerGroup group = player.getPlayerGroup2();
+			if (group == null || !group.isLeader(player)) {
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_NOT_LEADER);
+				return false;
+			}
+			if (agt.isHarmonyArena() || agt.isTrainingHarmonyArena()) {
+				if (group.getOnlineMembers().size() > 2) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_TOO_MANY_MEMBERS(3, Integer.toString(mapId)));
 					return false;
 				}
-				PlayerGroup group = player.getPlayerGroup2();
-				if (group == null || !group.isLeader(player)) {
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_NOT_LEADER);
+			}
+			for (Player member : group.getMembers()) {
+				if (group.getLeaderObject().equals(member)) {
+					continue;
+				}
+				LookingForParty lfp = searchers.get(member.getObjectId());
+				if (lfp != null && lfp.isRegistredInstance(instanceMaskId)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
 					return false;
 				}
-				if (agt.isHarmonyArena() || agt.isTrainingHarmonyArena()) {
-					if (group.getOnlineMembers().size() > 2) {
-						PacketSendUtility.sendPacket(player,  SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_TOO_MANY_MEMBERS(3, Integer.toString(mapId)));
-						return false;
-					}
-				} for (Player member: group.getMembers()) {
-					if (group.getLeaderObject().equals(member)) {
-						continue;
-					}
-					LookingForParty lfp = searchers.get(member.getObjectId());
-					if (lfp != null && lfp.isRegistredInstance(instanceMaskId) ) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isPvPSoloArena() || agt.isTrainingPvPSoloArena() || agt.isPvPFFAArena() ||
-					    agt.isTrainingPvPFFAArena() || agt.isTrainingHarmonyArena() || agt.isGloryArena() ||
-					    agt.isHarmonyArena()) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isDredgion() && DredgionService2.getInstance().hasCoolDown(member)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isAsyunatar() && AsyunatarService.getInstance().hasCoolDown(member)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isKamar() && KamarBattlefieldService.getInstance().hasCoolDown(member)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isOphidan() && EngulfedOphidanBridgeService.getInstance().hasCoolDown(member)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isSuspiciousOphidan() && SuspiciousOphidanBridgeService.getInstance().hasCoolDown(member)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isBastion() && IronWallWarfrontService.getInstance().hasCoolDown(member)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isIdgelDome() && IdgelDomeService.getInstance().hasCoolDown(member)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isIdgelDomeLandmark() && IdgelDomeLandmarkService.getInstance().hasCoolDown(member)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isGrandArenaTrainingCamp() && GrandArenaTrainingCampService.getInstance().hasCoolDown(member)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (agt.isIDRun() && IDRunService.getInstance().hasCoolDown(member)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} else if (hasCoolDown(member, mapId)) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					} if (!agt.hasLevelPermit(member.getLevel())) {
-						PacketSendUtility.sendPacket(member, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_LEVEL);
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
-						return false;
-					}
+				if (agt.isPvPSoloArena() || agt.isTrainingPvPSoloArena() || agt.isPvPFFAArena()
+						|| agt.isTrainingPvPFFAArena() || agt.isTrainingHarmonyArena() || agt.isGloryArena()
+						|| agt.isHarmonyArena()) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
 				}
+				if (agt.isDredgion() && DredgionService2.getInstance().hasCoolDown(member)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+				if (agt.isAsyunatar() && AsyunatarService.getInstance().hasCoolDown(member)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+				if (agt.isKamar() && KamarBattlefieldService.getInstance().hasCoolDown(member)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+				if (agt.isOphidan() && EngulfedOphidanBridgeService.getInstance().hasCoolDown(member)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+				if (agt.isSuspiciousOphidan() && SuspiciousOphidanBridgeService.getInstance().hasCoolDown(member)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+				if (agt.isBastion() && IronWallWarfrontService.getInstance().hasCoolDown(member)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+				if (agt.isIdgelDome() && IdgelDomeService.getInstance().hasCoolDown(member)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+				if (agt.isIdgelDomeLandmark() && IdgelDomeLandmarkService.getInstance().hasCoolDown(member)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+				if (agt.isGrandArenaTrainingCamp() && GrandArenaTrainingCampService.getInstance().hasCoolDown(member)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+				if (agt.isIDRun() && IDRunService.getInstance().hasCoolDown(member)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				} else if (hasCoolDown(member, mapId)) {
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+				if (!agt.hasLevelPermit(member.getLevel())) {
+					PacketSendUtility.sendPacket(member, SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_LEVEL);
+					PacketSendUtility.sendPacket(player,
+							SM_SYSTEM_MESSAGE.STR_MSG_CANT_INSTANCE_ENTER_MEMBER(member.getName()));
+					return false;
+				}
+			}
 			break;
 		}
 		return true;
 	}
-	
+
 	private AutoInstance getAutoInstance(Player player, int instanceMaskId) {
 		for (AutoInstance autoInstance : autoInstances.values()) {
-			if (autoInstance.agt.getInstanceMaskId() == instanceMaskId && autoInstance.players.containsKey(player.getObjectId())) {
+			if (autoInstance.agt.getInstanceMaskId() == instanceMaskId
+					&& autoInstance.players.containsKey(player.getObjectId())) {
 				return autoInstance;
 			}
 		}
 		return null;
 	}
-	
+
 	private boolean hasCoolDown(Player player, int worldId) {
 		int instanceCooldownRate = InstanceService.getInstanceRate(player, worldId);
 		int useDelay = 0;
@@ -625,7 +793,7 @@ public class AutoGroupService {
 		}
 		return player.getPortalCooldownList().isPortalUseDisabled(worldId) && useDelay > 0;
 	}
-	
+
 	private WorldMapInstance createInstance(int worldId, byte difficultId) {
 		WorldMap map = World.getInstance().getWorldMap(worldId);
 		int nextInstanceId = map.getNextInstanceId();
@@ -635,7 +803,7 @@ public class AutoGroupService {
 		InstanceEngine.getInstance().onInstanceCreate(worldMapInstance);
 		return worldMapInstance;
 	}
-	
+
 	private void startPenalty(final Integer obj) {
 		if (penaltys.contains(obj)) {
 			penaltys.remove(obj);
@@ -650,7 +818,7 @@ public class AutoGroupService {
 			}
 		}, 10000);
 	}
-	
+
 	public void unRegisterInstance(byte instanceMaskId) {
 		for (LookingForParty lfp : searchers.values()) {
 			if (lfp.isRegistredInstance(instanceMaskId)) {
@@ -665,7 +833,7 @@ public class AutoGroupService {
 			}
 		}
 	}
-	
+
 	private void unRegisterSearchInstance(Player player, SearchInstance si) {
 		int instanceMaskId = si.getInstanceMaskId();
 		if (si.getEntryRequestType().isGroupEntry() && si.getMembers() != null) {
@@ -680,17 +848,20 @@ public class AutoGroupService {
 						PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6));
 					} else if (si.isOphidan() && EngulfedOphidanBridgeService.getInstance().isOphidanAvailable()) {
 						PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6));
-					} else if (si.isSuspiciousOphidan() && SuspiciousOphidanBridgeService.getInstance().isSuspiciousAvailable()) {
+					} else if (si.isSuspiciousOphidan()
+							&& SuspiciousOphidanBridgeService.getInstance().isSuspiciousAvailable()) {
 						PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6));
 					} else if (si.isBastion() && IronWallWarfrontService.getInstance().isBastionAvailable()) {
 						PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6));
 					} else if (si.isIdgelDome() && IdgelDomeService.getInstance().isIdgelAvailable()) {
 						PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6));
-					} else if (si.isIdgelDomeLandmark() && IdgelDomeLandmarkService.getInstance().isLandmarkAvailable()) {
+					} else if (si.isIdgelDomeLandmark()
+							&& IdgelDomeLandmarkService.getInstance().isLandmarkAvailable()) {
 						PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6));
 					} else if (si.isHallOfTenacity() && HallOfTenacityService.getInstance().isHallAvailable()) {
 						PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6));
-					} else if (si.isGrandArenaTrainingCamp() && GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()) {
+					} else if (si.isGrandArenaTrainingCamp()
+							&& GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()) {
 						PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6));
 					} else if (si.isIDRun() && IDRunService.getInstance().isIDRunAvailable()) {
 						PacketSendUtility.sendPacket(member, new SM_AUTO_GROUP(instanceMaskId, 6));
@@ -708,7 +879,8 @@ public class AutoGroupService {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
 			} else if (si.isOphidan() && EngulfedOphidanBridgeService.getInstance().isOphidanAvailable()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-			} else if (si.isSuspiciousOphidan() && SuspiciousOphidanBridgeService.getInstance().isSuspiciousAvailable()) {
+			} else if (si.isSuspiciousOphidan()
+					&& SuspiciousOphidanBridgeService.getInstance().isSuspiciousAvailable()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
 			} else if (si.isBastion() && IronWallWarfrontService.getInstance().isBastionAvailable()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
@@ -718,7 +890,8 @@ public class AutoGroupService {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
 			} else if (si.isHallOfTenacity() && HallOfTenacityService.getInstance().isHallAvailable()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
-			} else if (si.isGrandArenaTrainingCamp() && GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()) {
+			} else if (si.isGrandArenaTrainingCamp()
+					&& GrandArenaTrainingCampService.getInstance().isGrandArenaTrainingCampAvailable()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
 			} else if (si.isIDRun() && IDRunService.getInstance().isIDRunAvailable()) {
 				PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 6));
@@ -726,7 +899,7 @@ public class AutoGroupService {
 			PacketSendUtility.sendPacket(player, new SM_AUTO_GROUP(instanceMaskId, 2));
 		}
 	}
-	
+
 	public void unRegisterInstance(Integer instanceId) {
 		AutoInstance autoInstance = autoInstances.remove(instanceId);
 		if (autoInstance != null) {
@@ -737,15 +910,15 @@ public class AutoGroupService {
 			autoInstance.clear();
 		}
 	}
-	
+
 	public boolean isAutoInstance(int instanceId) {
 		return autoInstances.containsKey(instanceId);
 	}
-	
+
 	public static AutoGroupService getInstance() {
 		return NewSingletonHolder.INSTANCE;
 	}
-	
+
 	private static class NewSingletonHolder {
 		private static final AutoGroupService INSTANCE = new AutoGroupService();
 	}

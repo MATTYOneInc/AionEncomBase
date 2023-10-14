@@ -28,8 +28,7 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ReturnEffect")
 
-public class ReturnEffect extends EffectTemplate
-{
+public class ReturnEffect extends EffectTemplate {
 	@Override
 	public void applyEffect(Effect effect) {
 		if (effect.getEffected().isInInstance()) {
@@ -37,7 +36,7 @@ public class ReturnEffect extends EffectTemplate
 		}
 		TeleportService2.moveToBindLocation((Player) effect.getEffector(), true);
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		if (effect.getEffected().isSpawned()) {

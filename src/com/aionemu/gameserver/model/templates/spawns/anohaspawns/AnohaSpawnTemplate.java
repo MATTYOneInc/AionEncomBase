@@ -25,39 +25,39 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * @author Rinzler (Encom)
  */
 
-public class AnohaSpawnTemplate extends SpawnTemplate
-{
+public class AnohaSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private AnohaStateType anohaType;
-	
+
 	public AnohaSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public AnohaSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public AnohaSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public AnohaStateType getCStateType() {
 		return anohaType;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void setCStateType(AnohaStateType anohaType) {
 		this.anohaType = anohaType;
 	}
-	
+
 	public final boolean isAnohaFight() {
 		return anohaType.equals(AnohaStateType.FIGHT);
 	}
-	
+
 	public final boolean isAnohaPeace() {
 		return anohaType.equals(AnohaStateType.PEACE);
 	}

@@ -31,29 +31,29 @@ import javolution.util.FastMap;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MentorMonsterHuntData")
-public class MentorMonsterHuntData extends MonsterHuntData
-{
+public class MentorMonsterHuntData extends MonsterHuntData {
 	@XmlAttribute(name = "min_mente_level")
 	protected int minMenteLevel = 1;
-	
+
 	@XmlAttribute(name = "max_mente_level")
 	protected int maxMenteLevel = 999;
-	
+
 	public int getMinMenteLevel() {
 		return minMenteLevel;
 	}
-	
+
 	public int getMaxMenteLevel() {
 		return maxMenteLevel;
 	}
-	
+
 	@Override
-    public void register(QuestEngine questEngine) {
-        FastMap<Monster, Set<Integer>> monsterNpcs = new FastMap<Monster, Set<Integer>>();
-        for (Monster m : monster) {
-            monsterNpcs.put(m, new HashSet<Integer>(m.getNpcIds()));
-        }
-        MentorMonsterHunt template = new MentorMonsterHunt(id, startNpcIds, endNpcIds, monsterNpcs, minMenteLevel, maxMenteLevel);
-        questEngine.addQuestHandler(template);
-    }
+	public void register(QuestEngine questEngine) {
+		FastMap<Monster, Set<Integer>> monsterNpcs = new FastMap<Monster, Set<Integer>>();
+		for (Monster m : monster) {
+			monsterNpcs.put(m, new HashSet<Integer>(m.getNpcIds()));
+		}
+		MentorMonsterHunt template = new MentorMonsterHunt(id, startNpcIds, endNpcIds, monsterNpcs, minMenteLevel,
+				maxMenteLevel);
+		questEngine.addQuestHandler(template);
+	}
 }

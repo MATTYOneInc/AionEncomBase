@@ -28,7 +28,7 @@ import com.aionemu.gameserver.instance.handlers.InstanceHandler;
 /**
  * @author ATracer
  */
-public class InstanceHandlerClassListener implements ClassListener{
+public class InstanceHandlerClassListener implements ClassListener {
 
 	private static final Logger log = LoggerFactory.getLogger(InstanceHandlerClassListener.class);
 
@@ -38,10 +38,10 @@ public class InstanceHandlerClassListener implements ClassListener{
 		for (Class<?> c : classes) {
 			if (log.isDebugEnabled()) {
 				log.debug("Load class " + c.getName());
-            }
+			}
 			if (!isValidClass(c)) {
 				continue;
-            }
+			}
 			if (ClassUtils.isSubclass(c, InstanceHandler.class)) {
 				Class<? extends InstanceHandler> tmp = (Class<? extends InstanceHandler>) c;
 				if (tmp != null) {
@@ -65,10 +65,10 @@ public class InstanceHandlerClassListener implements ClassListener{
 
 		if (Modifier.isAbstract(modifiers) || Modifier.isInterface(modifiers)) {
 			return false;
-        }
+		}
 		if (!Modifier.isPublic(modifiers)) {
 			return false;
-        }
+		}
 		return true;
 	}
 }

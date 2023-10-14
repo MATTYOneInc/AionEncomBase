@@ -16,34 +16,20 @@
  */
 package com.aionemu.gameserver.utils.stats.enums;
 
-public enum FLY_SPEED
-{
-	WARRIOR(9),
-	GLADIATOR(9),
-	TEMPLAR(9),
-	SCOUT(9),
-	ASSASSIN(9),
-	RANGER(9),
-	MAGE(9),
-	SORCERER(9),
-	SPIRIT_MASTER(9),
-	PRIEST(9),
-	CLERIC(9),
-	CHANTER(9),
-	//News Class 4.3
-	TECHNIST(9),
-	GUNSLINGER(9),
-	MUSE(9),
-	SONGWEAVER(9),
-	//News Class 4.5
+public enum FLY_SPEED {
+	WARRIOR(9), GLADIATOR(9), TEMPLAR(9), SCOUT(9), ASSASSIN(9), RANGER(9), MAGE(9), SORCERER(9), SPIRIT_MASTER(9),
+	PRIEST(9), CLERIC(9), CHANTER(9),
+	// News Class 4.3
+	TECHNIST(9), GUNSLINGER(9), MUSE(9), SONGWEAVER(9),
+	// News Class 4.5
 	AETHERTECH(9);
-	
+
 	private int value;
-	
+
 	private FLY_SPEED(int value) {
 		this.value = value;
 	}
-	
+
 	public int getValue() {
 		return value;
 	}

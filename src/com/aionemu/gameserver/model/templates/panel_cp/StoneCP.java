@@ -27,26 +27,25 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlType(name = "stone_cp")
 @XmlAccessorType(XmlAccessType.NONE)
-public class StoneCP
-{
-    @XmlAttribute
-    protected int id;
-	
-    @XmlAttribute
-    protected String name;
-	
-    @XmlAttribute
-    protected int cp;
-	
-    public int getId() {
-        return this.id;
-    }
-	
-    public String getName() {
-        return name;
-    }
-	
-    public int getCP() {
-        return cp;
-    }
+public class StoneCP {
+	@XmlAttribute
+	protected int id;
+
+	@XmlAttribute
+	protected String name;
+
+	@XmlAttribute
+	protected int cp;
+
+	public int getId() {
+		return this.id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getCP() {
+		return cp;
+	}
 }

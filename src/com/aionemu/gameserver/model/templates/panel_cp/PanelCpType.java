@@ -23,9 +23,6 @@ import javax.xml.bind.annotation.XmlEnum;
  */
 
 @XmlEnum
-public enum PanelCpType
-{
-	STAT_UP,
-	LEARN_SKILL,
-	ENCHANT_SKILL;
+public enum PanelCpType {
+	STAT_UP, LEARN_SKILL, ENCHANT_SKILL;
 }

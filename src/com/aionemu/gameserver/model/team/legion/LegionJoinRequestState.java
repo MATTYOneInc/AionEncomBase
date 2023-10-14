@@ -16,10 +16,6 @@
  */
 package com.aionemu.gameserver.model.team.legion;
 
-public enum LegionJoinRequestState
-{
-	ACCEPTED,
-	DENIED,
-	NONE,
-	CANCEL;
+public enum LegionJoinRequestState {
+	ACCEPTED, DENIED, NONE, CANCEL;
 }

@@ -22,16 +22,16 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
- 
+/**
+ * Author Rinzler (Encom) /
+ ****/
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LeaderSkillLight")
-public class LeaderSkillLight
-{
+public class LeaderSkillLight {
 	@XmlAttribute(name = "id")
 	protected int id;
-	
+
 	public int getId() {
 		return this.id;
 	}

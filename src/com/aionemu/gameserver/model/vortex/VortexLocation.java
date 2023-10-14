@@ -40,8 +40,7 @@ import com.aionemu.gameserver.world.zone.handler.ZoneHandler;
 
 import javolution.util.FastMap;
 
-public class VortexLocation implements ZoneHandler
-{
+public class VortexLocation implements ZoneHandler {
 	protected boolean isActive;
 	protected DimensionalVortex<VortexLocation> activeVortex;
 	protected RVController vortexController;
@@ -56,10 +55,10 @@ public class VortexLocation implements ZoneHandler
 	protected HomePoint home;
 	protected ResurrectionPoint resurrection;
 	protected StartPoint start;
-	
+
 	public VortexLocation() {
 	}
-	
+
 	public VortexLocation(VortexTemplate template) {
 		this.template = template;
 		this.id = template.getId();
@@ -70,104 +69,105 @@ public class VortexLocation implements ZoneHandler
 		this.resurrection = template.getResurrectionPoint();
 		this.start = template.getStartPoint();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveVortex(DimensionalVortex<VortexLocation> vortex) {
 		isActive = vortex != null;
 		this.activeVortex = vortex;
 	}
-	
+
 	public DimensionalVortex<VortexLocation> getActiveVortex() {
 		return activeVortex;
 	}
-	
+
 	public void setVortexController(RVController controller) {
 		this.vortexController = controller;
 	}
-	
+
 	public RVController getVortexController() {
 		return vortexController;
 	}
-	
+
 	public final VortexTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public WorldPosition getHomePoint() {
 		return home.getHomePoint();
 	}
-	
+
 	public WorldPosition getResurrectionPoint() {
 		return resurrection.getResurrectionPoint();
 	}
-	
+
 	public WorldPosition getStartPoint() {
 		return start.getStartPoint();
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public Race getDefendersRace() {
 		return defendsRace;
 	}
-	
+
 	public Race getInvadersRace() {
 		return offenceRace;
 	}
-	
+
 	public int getHomeWorldId() {
 		return home.getWorldId();
 	}
-	
+
 	public int getInvasionWorldId() {
 		return start.getWorldId();
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}
-	
+
 	public FastMap<Integer, Kisk> getInvadersKisks() {
 		return kisks;
 	}
-	
+
 	public boolean isInvaderInside(int objId) {
 		return isActive() && getVortexController().getPassedPlayers().containsKey(objId);
 	}
-	
+
 	public boolean isInsideActiveVortex(Player player) {
 		return isActive() && isInsideLocation(player);
 	}
-	
+
 	public void addZone(InvasionZoneInstance zone) {
 		this.zones.add(zone);
 		zone.addHandler(this);
 	}
-	
+
 	public boolean isInsideLocation(Creature creature) {
 		if (zones.isEmpty()) {
 			return false;
-		} for (int i = 0; i < zones.size(); i++) {
+		}
+		for (int i = 0; i < zones.size(); i++) {
 			if (zones.get(i).isInsideCreature(creature)) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	public List<InvasionZoneInstance> getZones() {
 		return zones;
 	}
-	
+
 	@Override
 	public void onEnterZone(Creature creature, ZoneInstance zone) {
 		if (creature instanceof Kisk) {
@@ -177,10 +177,11 @@ public class VortexLocation implements ZoneHandler
 		} else if (creature instanceof Player) {
 			Player player = (Player) creature;
 			if (!players.containsKey(player.getObjectId())) {
-				 players.putEntry(player.getObjectId(), player);
+				players.putEntry(player.getObjectId(), player);
 				if (isActive()) {
 					if (player.getRace().equals(getInvadersRace())) {
-						if (getVortexController().getPassedPlayers().containsKey(player.getObjectId()) && !getActiveVortex().getInvaders().containsKey(player.getObjectId())) {
+						if (getVortexController().getPassedPlayers().containsKey(player.getObjectId())
+								&& !getActiveVortex().getInvaders().containsKey(player.getObjectId())) {
 							getActiveVortex().addPlayer(player, true);
 						}
 					} else {
@@ -190,13 +191,14 @@ public class VortexLocation implements ZoneHandler
 			}
 		}
 	}
-	
+
 	@Override
 	public void onLeaveZone(Creature creature, ZoneInstance zone) {
 		if (!isInsideLocation(creature)) {
 			if (creature instanceof Kisk) {
 				kisks.remove(creature.getObjectId());
-			} if (creature instanceof Player) {
+			}
+			if (creature instanceof Player) {
 				final Player player = (Player) creature;
 				players.remove(player.getObjectId());
 				if (isActive()) {

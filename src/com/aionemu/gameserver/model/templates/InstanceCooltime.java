@@ -28,140 +28,139 @@ import com.aionemu.gameserver.model.instance.InstanceType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "InstanceCooltime")
-public class InstanceCooltime
-{
+public class InstanceCooltime {
 	@XmlElement(name = "type")
-    protected InstanceCoolTimeType coolTimeType;
-	
-    @XmlElement(name = "type_value")
-    protected String typeValue;
-	
-    @XmlElement(name = "ent_cool_time")
-    protected Integer entCoolTime;
-	
-    @XmlElement(name = "indun_type")
-    protected InstanceType indunType;
-	
-    @XmlElement(name = "max_member_light")
-    protected Integer maxMemberLight;
-	
-    @XmlElement(name = "max_member_dark")
-    protected Integer maxMemberDark;
-	
-    @XmlElement(name = "enter_min_level_light")
-    protected Integer enterMinLevelLight;
-	
-    @XmlElement(name = "enter_max_level_light")
-    protected Integer enterMaxLevelLight;
-	
-    @XmlElement(name = "enter_min_level_dark")
-    protected Integer enterMinLevelDark;
-	
-    @XmlElement(name = "enter_max_level_dark")
-    protected Integer enterMaxLevelDark;
-	
-    @XmlElement(name = "alarm_unit_score")
-    protected Integer alarmUnitScore;
-	
-    @XmlElement(name = "can_enter_mentor")
-    protected boolean canEnterMentor;
-	
-    @XmlElement(name = "enter_guild")
-    protected boolean enterGuild;
-	
-    @XmlElement(name = "max_count")
-    protected Integer max_count;
-	
-	//4.9
+	protected InstanceCoolTimeType coolTimeType;
+
+	@XmlElement(name = "type_value")
+	protected String typeValue;
+
+	@XmlElement(name = "ent_cool_time")
+	protected Integer entCoolTime;
+
+	@XmlElement(name = "indun_type")
+	protected InstanceType indunType;
+
+	@XmlElement(name = "max_member_light")
+	protected Integer maxMemberLight;
+
+	@XmlElement(name = "max_member_dark")
+	protected Integer maxMemberDark;
+
+	@XmlElement(name = "enter_min_level_light")
+	protected Integer enterMinLevelLight;
+
+	@XmlElement(name = "enter_max_level_light")
+	protected Integer enterMaxLevelLight;
+
+	@XmlElement(name = "enter_min_level_dark")
+	protected Integer enterMinLevelDark;
+
+	@XmlElement(name = "enter_max_level_dark")
+	protected Integer enterMaxLevelDark;
+
+	@XmlElement(name = "alarm_unit_score")
+	protected Integer alarmUnitScore;
+
+	@XmlElement(name = "can_enter_mentor")
+	protected boolean canEnterMentor;
+
+	@XmlElement(name = "enter_guild")
+	protected boolean enterGuild;
+
+	@XmlElement(name = "max_count")
+	protected Integer max_count;
+
+	// 4.9
 	@XmlElement(name = "count_build_up")
-    protected Integer countBuildUp;
-	
+	protected Integer countBuildUp;
+
 	@XmlElement(name = "count_build_up_level")
-    protected Integer countBuildUpLevel;
-	
-   /**
+	protected Integer countBuildUpLevel;
+
+	/**
 	*/
-    @XmlAttribute(required = true)
-    protected int id;
-	
-    @XmlAttribute(required = true)
-    protected int worldId;
-	
-    @XmlAttribute(required = true)
-    protected Race race;
-	
+	@XmlAttribute(required = true)
+	protected int id;
+
+	@XmlAttribute(required = true)
+	protected int worldId;
+
+	@XmlAttribute(required = true)
+	protected Race race;
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public int getWorldId() {
 		return worldId;
 	}
-	
+
 	public Race getRace() {
 		return race;
 	}
-	
+
 	public InstanceCoolTimeType getCoolTimeType() {
-        return coolTimeType;
-    }
-	
-    public String getTypeValue() {
-        return typeValue;
-    }
-	
-    public InstanceType getTypeInstance() {
-        return indunType;
-    }
-	
+		return coolTimeType;
+	}
+
+	public String getTypeValue() {
+		return typeValue;
+	}
+
+	public InstanceType getTypeInstance() {
+		return indunType;
+	}
+
 	public Integer getEntCoolTime() {
 		return entCoolTime;
 	}
-	
+
 	public Integer getMaxMemberLight() {
 		return maxMemberLight;
 	}
-	
+
 	public Integer getMaxMemberDark() {
 		return maxMemberDark;
 	}
-	
+
 	public Integer getEnterMinLevelLight() {
 		return enterMinLevelLight;
 	}
-	
+
 	public Integer getEnterMaxLevelLight() {
 		return enterMaxLevelLight;
 	}
-	
+
 	public Integer getEnterMinLevelDark() {
 		return enterMinLevelDark;
 	}
-	
+
 	public Integer getEnterMaxLevelDark() {
 		return enterMaxLevelDark;
 	}
-	
+
 	public Integer getAlarmUnitScore() {
 		return alarmUnitScore;
 	}
-	
+
 	public boolean getCanEnterMentor() {
 		return canEnterMentor;
 	}
-	
+
 	public boolean getEnterGuild() {
 		return enterGuild;
 	}
-	
+
 	public Integer getMaxEntriesCount() {
 		return max_count;
 	}
-	
+
 	public Integer getCountBuildUp() {
 		return countBuildUp;
 	}
-	
+
 	public Integer getCountBuildUpLevel() {
 		return countBuildUpLevel;
 	}

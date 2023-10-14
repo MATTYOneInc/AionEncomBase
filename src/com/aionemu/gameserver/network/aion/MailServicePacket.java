@@ -32,8 +32,7 @@ import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob;
  * @rework Ranastic
  *
  */
-public abstract class MailServicePacket extends AionServerPacket
-{
+public abstract class MailServicePacket extends AionServerPacket {
 	private static final Logger log = LoggerFactory.getLogger(MailServicePacket.class);
 	protected Player player;
 
@@ -49,8 +48,7 @@ public abstract class MailServicePacket extends AionServerPacket
 			if (isPostman) {
 				if (!letter.isExpress()) {
 					continue;
-				}
-				else if (!letter.isUnread()) {
+				} else if (!letter.isUnread()) {
 					continue;
 				}
 			}
@@ -82,7 +80,8 @@ public abstract class MailServicePacket extends AionServerPacket
 		writeH(blackCloudCount);
 	}
 
-	protected void writeLetterRead(Letter letter, long time, int totalCount, int unreadCount, int expressCount, int blackCloudCount) {
+	protected void writeLetterRead(Letter letter, long time, int totalCount, int unreadCount, int expressCount,
+			int blackCloudCount) {
 		writeD(letter.getRecipientId());
 		writeD(totalCount + unreadCount * 0x10000);
 		writeD(expressCount + blackCloudCount);
@@ -119,7 +118,8 @@ public abstract class MailServicePacket extends AionServerPacket
 		writeC(1);
 	}
 
-	protected void writeLetterDelete(int totalCount, int unreadCount, int expressCount, int blackCloudCount, int... letterIds) {
+	protected void writeLetterDelete(int totalCount, int unreadCount, int expressCount, int blackCloudCount,
+			int... letterIds) {
 		writeD(totalCount + unreadCount * 0x10000);
 		writeD(expressCount + blackCloudCount);
 		writeH(letterIds.length);

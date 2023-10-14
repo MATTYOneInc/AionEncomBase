@@ -26,8 +26,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum AttackType {
 
-	EVERYHIT,
-	PHYSICAL_SKILL,
-	MAGICAL_SKILL,
-	ALL_SKILL;
+	EVERYHIT, PHYSICAL_SKILL, MAGICAL_SKILL, ALL_SKILL;
 }

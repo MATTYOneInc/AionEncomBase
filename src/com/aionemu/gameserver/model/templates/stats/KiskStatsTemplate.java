@@ -23,25 +23,24 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "kisk_stats")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class KiskStatsTemplate
-{
+public class KiskStatsTemplate {
 	@XmlAttribute(name = "usemask")
 	private int useMask = 6;
-	
+
 	@XmlAttribute(name = "members")
 	private int maxMembers = 576;
-	
+
 	@XmlAttribute(name = "resurrects")
 	private int maxResurrects = 1728;
-	
+
 	public int getUseMask() {
 		return useMask;
 	}
-	
+
 	public int getMaxMembers() {
 		return maxMembers;
 	}
-	
+
 	public int getMaxResurrects() {
 		return maxResurrects;
 	}

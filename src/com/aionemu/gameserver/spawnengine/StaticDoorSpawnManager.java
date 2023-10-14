@@ -54,14 +54,16 @@ public class StaticDoorSpawnManager {
 			if (data.getDoorType() != DoorType.DOOR) {
 				continue;
 			}
-			SpawnTemplate spawn = new SpawnTemplate(new SpawnGroup2(worldId, 300001), data.getX(), data.getY(), data.getZ(), (byte) 0, 0, null, 0, 0);
+			SpawnTemplate spawn = new SpawnTemplate(new SpawnGroup2(worldId, 300001), data.getX(), data.getY(),
+					data.getZ(), (byte) 0, 0, null, 0, 0);
 			spawn.setEntityId(data.getDoorId());
 			int objectId = IDFactory.getInstance().nextId();
 			StaticDoor staticDoor = new StaticDoor(objectId, new StaticObjectController(), spawn, data, instanceIndex);
 			staticDoor.setKnownlist(new PlayerAwareKnownList(staticDoor));
 			bringIntoWorld(staticDoor, spawn, instanceIndex);
 			if (staticDoor.getDoorName() != null) {
-				GeoService.getInstance().setDoorState(worldId, instanceIndex, staticDoor.getDoorName(), staticDoor.isOpen());
+				GeoService.getInstance().setDoorState(worldId, instanceIndex, staticDoor.getDoorName(),
+						staticDoor.isOpen());
 			}
 			counter++;
 		}
@@ -78,7 +80,8 @@ public class StaticDoorSpawnManager {
 	private static void bringIntoWorld(VisibleObject visibleObject, SpawnTemplate spawn, int instanceIndex) {
 		World world = World.getInstance();
 		world.storeObject(visibleObject);
-		world.setPosition(visibleObject, spawn.getWorldId(), instanceIndex, spawn.getX(), spawn.getY(), spawn.getZ(), spawn.getHeading());
+		world.setPosition(visibleObject, spawn.getWorldId(), instanceIndex, spawn.getX(), spawn.getY(), spawn.getZ(),
+				spawn.getHeading());
 		world.spawn(visibleObject);
 	}
 }

@@ -37,36 +37,38 @@ import com.aionemu.gameserver.world.geo.GeoService;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "StaggerEffect")
-public class StaggerEffect extends EffectTemplate
-{
+public class StaggerEffect extends EffectTemplate {
 	@Override
-    public void applyEffect(Effect effect) {
-        if (!effect.getEffected().getEffectController().isAbnormalSet(AbnormalState.CANNOT_MOVE)) {
-            effect.addToEffectedController();
+	public void applyEffect(Effect effect) {
+		if (!effect.getEffected().getEffectController().isAbnormalSet(AbnormalState.CANNOT_MOVE)) {
+			effect.addToEffectedController();
 			effect.setIsPhysicalState(true);
-            final Creature effected = effect.getEffected();
-            if (effected instanceof Player && effected.isInState(CreatureState.GLIDING)) {
-                ((Player) effected).getFlyController().endFly(true);
-            }
-            effected.getController().cancelCurrentSkill();
-            effected.getEffectController().removeParalyzeEffects();
-            effected.getMoveController().abortMove();
-            PacketSendUtility.broadcastPacketAndReceive(effect.getEffected(), new SM_FORCED_MOVE(effect.getEffector(), effect.getEffected().getObjectId(), effect.getTargetX(), effect.getTargetY(), effect.getTargetZ()));
-            World.getInstance().updatePosition(effected, effect.getTargetX(), effect.getTargetY(), effect.getTargetZ(), effected.getHeading());
-        }
-    }
-	
+			final Creature effected = effect.getEffected();
+			if (effected instanceof Player && effected.isInState(CreatureState.GLIDING)) {
+				((Player) effected).getFlyController().endFly(true);
+			}
+			effected.getController().cancelCurrentSkill();
+			effected.getEffectController().removeParalyzeEffects();
+			effected.getMoveController().abortMove();
+			PacketSendUtility.broadcastPacketAndReceive(effect.getEffected(), new SM_FORCED_MOVE(effect.getEffector(),
+					effect.getEffected().getObjectId(), effect.getTargetX(), effect.getTargetY(), effect.getTargetZ()));
+			World.getInstance().updatePosition(effected, effect.getTargetX(), effect.getTargetY(), effect.getTargetZ(),
+					effected.getHeading());
+		}
+	}
+
 	@Override
 	public void startEffect(Effect effect) {
 		effect.getEffected().getEffectController().setAbnormal(AbnormalState.STAGGER.getId());
 		effect.setAbnormal(AbnormalState.STAGGER.getId());
 	}
-	
+
 	@Override
 	public void calculate(Effect effect) {
 		if (effect.getEffected().getEffectController().hasPhysicalStateEffect()) {
 			return;
-		} if (!super.calculate(effect, StatEnum.STAGGER_RESISTANCE, SpellStatus.STAGGER)) {
+		}
+		if (!super.calculate(effect, StatEnum.STAGGER_RESISTANCE, SpellStatus.STAGGER)) {
 			return;
 		}
 		effect.setSkillMoveType(SkillMoveType.STAGGER);
@@ -78,13 +80,14 @@ public class StaggerEffect extends EffectTemplate
 		float y1 = (float) (Math.sin(radian) * 3);
 		float z = effected.getZ();
 		byte intentions = (byte) (CollisionIntention.PHYSICAL.getId() | CollisionIntention.DOOR.getId());
-		Vector3f closestCollision = GeoService.getInstance().getClosestCollision(effected, effected.getX() + x1, effected.getY() + y1, effected.getZ(), false, intentions);
+		Vector3f closestCollision = GeoService.getInstance().getClosestCollision(effected, effected.getX() + x1,
+				effected.getY() + y1, effected.getZ(), false, intentions);
 		x1 = closestCollision.x;
 		y1 = closestCollision.y;
 		z = closestCollision.z;
 		effect.setTargetLoc(x1, y1, z);
 	}
-	
+
 	@Override
 	public void endEffect(Effect effect) {
 		effect.setIsPhysicalState(false);

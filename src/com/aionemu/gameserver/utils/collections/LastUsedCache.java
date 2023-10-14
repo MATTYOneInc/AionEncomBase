@@ -24,7 +24,7 @@ import com.aionemu.commons.utils.internal.chmv8.PlatformDependent;
 /**
  * @author Rolandas
  */
-@SuppressWarnings({"unchecked", "rawtypes"})
+@SuppressWarnings({ "unchecked", "rawtypes" })
 public class LastUsedCache<K extends Comparable, V> implements ICache<K, V>, Serializable {
 
 	private static final long serialVersionUID = 3674312987828041877L;
@@ -43,6 +43,7 @@ public class LastUsedCache<K extends Comparable, V> implements ICache<K, V>, Ser
 
 		public Item() {
 		}
+
 		public Comparable key;
 		public Object value;
 		public Item previous;
@@ -108,7 +109,7 @@ public class LastUsedCache<K extends Comparable, V> implements ICache<K, V>, Ser
 		Item cur = map.get(key);
 		if (cur == null) {
 			return null;
-        }
+		}
 		if (cur != startItem.next) {
 			moveToHead(cur);
 		}

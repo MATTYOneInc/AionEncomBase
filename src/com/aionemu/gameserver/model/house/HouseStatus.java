@@ -16,10 +16,6 @@
  */
 package com.aionemu.gameserver.model.house;
 
-public enum HouseStatus
-{
-	ACTIVE,
-	INACTIVE,
-	SELL_WAIT,
-	NOSALE;
+public enum HouseStatus {
+	ACTIVE, INACTIVE, SELL_WAIT, NOSALE;
 }

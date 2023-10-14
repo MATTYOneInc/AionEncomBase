@@ -32,6 +32,8 @@ public abstract class PlayerTitleListDAO implements DAO {
 	}
 
 	public abstract TitleList loadTitleList(int playerId);
+
 	public abstract boolean storeTitles(Player player, Title entry);
+
 	public abstract boolean removeTitle(int playerId, int titleId);
 }

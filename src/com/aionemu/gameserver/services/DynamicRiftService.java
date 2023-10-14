@@ -50,8 +50,7 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class DynamicRiftService
-{
+public class DynamicRiftService {
 	private Map<Integer, DynamicRiftLocation> dynamicRift;
 	private static final int duration = CustomConfig.DYNAMIC_RIFT_DURATION;
 	private final Map<Integer, DynamicRift<?>> activeDynamicRift = new FastMap<Integer, DynamicRift<?>>().shared();
@@ -60,7 +59,7 @@ public class DynamicRiftService
 	public void initDynamicRiftLocations() {
 		if (CustomConfig.DYNAMIC_RIFT_ENABLED) {
 			dynamicRift = DataManager.DYNAMIC_RIFT_DATA.getDynamicRiftLocations();
-			for (DynamicRiftLocation loc: getDynamicRiftLocations().values()) {
+			for (DynamicRiftLocation loc : getDynamicRiftLocations().values()) {
 				spawn(loc, DynamicRiftStateType.CLOSED);
 			}
 			log.info("[DynamicRiftService] Loaded " + dynamicRift.size() + " locations.");
@@ -70,10 +69,11 @@ public class DynamicRiftService
 					startDynamicRift(1);
 					startDynamicRift(3);
 					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					    @Override
-					    public void visit(Player player) {
-						    PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INSTANCE_PORTAL_OPEN_IDDF3_Dragon);
-					    }
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_MSG_INSTANCE_PORTAL_OPEN_IDDF3_Dragon);
+						}
 					});
 				}
 			}, CustomConfig.DYNAMIC_RIFT_DRAGON_SCHEDULE);
@@ -83,25 +83,26 @@ public class DynamicRiftService
 					startDynamicRift(2);
 					startDynamicRift(4);
 					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					    @Override
-					    public void visit(Player player) {
-						    PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INSTANCE_PORTAL_OPEN_IDLF3_Castle_Indratoo);
-					    }
+						@Override
+						public void visit(Player player) {
+							PacketSendUtility.sendPacket(player,
+									SM_SYSTEM_MESSAGE.STR_MSG_INSTANCE_PORTAL_OPEN_IDLF3_Castle_Indratoo);
+						}
 					});
 				}
 			}, CustomConfig.DYNAMIC_RIFT_INDRATOO_SCHEDULE);
-			//Shugo Merchant League
+			// Shugo Merchant League
 			CronService.getInstance().schedule(new Runnable() {
 				@Override
 				public void run() {
 					startDynamicRift(5);
 					startDynamicRift(6);
 					World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					    @Override
-					    public void visit(Player player) {
-						    //The Shugo Merchant League has arrived.
+						@Override
+						public void visit(Player player) {
+							// The Shugo Merchant League has arrived.
 							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_HF_ShugoCaravanAppear);
-					    }
+						}
 					});
 				}
 			}, CustomConfig.SHUGO_MERCHANT_LEAGUE_SCHEDULE);
@@ -135,7 +136,7 @@ public class DynamicRiftService
 			}
 		}, duration * 3600 * 1000);
 	}
-	
+
 	public void stopDynamicRift(int id) {
 		if (!isDynamicRiftInProgress(id)) {
 			return;
@@ -143,12 +144,13 @@ public class DynamicRiftService
 		DynamicRift<?> portal;
 		synchronized (this) {
 			portal = activeDynamicRift.remove(id);
-		} if (portal == null || portal.isClosed()) {
+		}
+		if (portal == null || portal.isClosed()) {
 			return;
 		}
 		portal.stop();
 	}
-	
+
 	public void spawn(DynamicRiftLocation loc, DynamicRiftStateType dstate) {
 		if (dstate.equals(DynamicRiftStateType.OPEN)) {
 		}
@@ -162,45 +164,46 @@ public class DynamicRiftService
 			}
 		}
 	}
-	
+
 	public void despawn(DynamicRiftLocation loc) {
 		if (loc.getSpawned() == null) {
-        	return;
-		} for (VisibleObject obj: loc.getSpawned()) {
-            Npc spawned = (Npc) obj;
-            spawned.setDespawnDelayed(true);
-            if (spawned.getAggroList().getList().isEmpty()) {
-                spawned.getController().cancelTask(TaskId.RESPAWN);
-                obj.getController().onDelete();
-            }
-        }
-        loc.getSpawned().clear();
+			return;
+		}
+		for (VisibleObject obj : loc.getSpawned()) {
+			Npc spawned = (Npc) obj;
+			spawned.setDespawnDelayed(true);
+			if (spawned.getAggroList().getList().isEmpty()) {
+				spawned.getController().cancelTask(TaskId.RESPAWN);
+				obj.getController().onDelete();
+			}
+		}
+		loc.getSpawned().clear();
 	}
-	
+
 	public boolean isDynamicRiftInProgress(int id) {
 		return activeDynamicRift.containsKey(id);
 	}
-	
+
 	public Map<Integer, DynamicRift<?>> getActiveDynamicRift() {
 		return activeDynamicRift;
 	}
-	
+
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public DynamicRiftLocation getDynamicRiftLocation(int id) {
 		return dynamicRift.get(id);
 	}
-	
+
 	public Map<Integer, DynamicRiftLocation> getDynamicRiftLocations() {
 		return dynamicRift;
 	}
-	
+
 	public static DynamicRiftService getInstance() {
 		return DynamicRiftServiceHolder.INSTANCE;
 	}
-	
+
 	private static class DynamicRiftServiceHolder {
 		private static final DynamicRiftService INSTANCE = new DynamicRiftService();
 	}

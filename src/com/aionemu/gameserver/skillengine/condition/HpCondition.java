@@ -40,7 +40,7 @@ public class HpCondition extends Condition {
 
 	@Override
 	public boolean validate(Skill skill) {
-		//exception for Servants, Totems to let them cast last skill and die
+		// exception for Servants, Totems to let them cast last skill and die
 		if (skill.getEffector() instanceof SummonedObject) {
 			return true;
 		}

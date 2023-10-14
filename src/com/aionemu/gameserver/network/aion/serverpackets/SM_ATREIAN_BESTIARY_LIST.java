@@ -25,25 +25,24 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
  * @author Ranastic
  */
 
-public class SM_ATREIAN_BESTIARY_LIST extends AionServerPacket
-{
+public class SM_ATREIAN_BESTIARY_LIST extends AionServerPacket {
 	PlayerABEntry[] allAB;
 	@SuppressWarnings("unused")
 	private Player player;
-	
+
 	public SM_ATREIAN_BESTIARY_LIST(Player player) {
 		this.player = player;
 		this.allAB = player.getAtreianBestiary().getAllAB();
 	}
-	
+
 	@Override
-    protected void writeImpl(AionConnection con) {
+	protected void writeImpl(AionConnection con) {
 		writeH(allAB.length);
 		for (PlayerABEntry entry : allAB) {
-			writeD(entry.getId()); //id
-	        writeD(entry.getKillCount()); //current kill
-	        writeC(entry.claimRewardLevel()); //claim Reward
-	        writeC(entry.getLevel()); //current level
+			writeD(entry.getId()); // id
+			writeD(entry.getKillCount()); // current kill
+			writeC(entry.claimRewardLevel()); // claim Reward
+			writeC(entry.getLevel()); // current level
 		}
-    }
+	}
 }

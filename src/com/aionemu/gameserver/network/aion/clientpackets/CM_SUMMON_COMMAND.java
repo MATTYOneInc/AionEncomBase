@@ -24,15 +24,14 @@ import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.services.summons.SummonsService;
 
-public class CM_SUMMON_COMMAND extends AionClientPacket
-{
+public class CM_SUMMON_COMMAND extends AionClientPacket {
 	private int mode;
 	private int targetObjId;
-	
+
 	public CM_SUMMON_COMMAND(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		mode = readC();
@@ -40,7 +39,7 @@ public class CM_SUMMON_COMMAND extends AionClientPacket
 		readD();
 		targetObjId = readD();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player activePlayer = getConnection().getActivePlayer();

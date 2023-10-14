@@ -57,36 +57,38 @@ public class CM_LS_CONTROL_RESPONSE extends LsClientPacket {
 		Player player = world.findPlayer(Util.convertName(playerName));
 		LoginServer.getInstance().accountUpdate(accountId, param, type);
 		switch (type) {
-			case 1:
-				if (!result) {
-					if (admin != null) {
-						PacketSendUtility.sendMessage(admin, playerName + " has been promoted Administrator with role " + param);
-					}
-					if (player != null) {
-						PacketSendUtility.sendMessage(player, "You have been promoted Administrator with role " + param + " by " + adminName);
-					}
+		case 1:
+			if (!result) {
+				if (admin != null) {
+					PacketSendUtility.sendMessage(admin,
+							playerName + " has been promoted Administrator with role " + param);
 				}
-				else {
-					if (admin != null) {
-						PacketSendUtility.sendMessage(admin, " Abnormal, the operation failed! ");
-					}
+				if (player != null) {
+					PacketSendUtility.sendMessage(player,
+							"You have been promoted Administrator with role " + param + " by " + adminName);
 				}
-				break;
-			case 2:
-				if (!result) {
-					if (admin != null) {
-						PacketSendUtility.sendMessage(admin, playerName + " has been promoted membership with level " + param);
-					}
-					if (player != null) {
-						player.setRates(Rates.getRatesFor(param));
-						PacketSendUtility.sendMessage(player, "You have been promoted membership with level " + param + " by " + adminName);
-					}
+			} else {
+				if (admin != null) {
+					PacketSendUtility.sendMessage(admin, " Abnormal, the operation failed! ");
 				}
-				else {
-					if (admin != null) {
-						PacketSendUtility.sendMessage(admin, " Abnormal, the operation failed! ");
-					}
+			}
+			break;
+		case 2:
+			if (!result) {
+				if (admin != null) {
+					PacketSendUtility.sendMessage(admin,
+							playerName + " has been promoted membership with level " + param);
 				}
+				if (player != null) {
+					player.setRates(Rates.getRatesFor(param));
+					PacketSendUtility.sendMessage(player,
+							"You have been promoted membership with level " + param + " by " + adminName);
+				}
+			} else {
+				if (admin != null) {
+					PacketSendUtility.sendMessage(admin, " Abnormal, the operation failed! ");
+				}
+			}
 			break;
 		}
 	}

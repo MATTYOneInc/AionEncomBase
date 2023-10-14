@@ -26,59 +26,57 @@ import com.aionemu.gameserver.services.abysslandingservice.landingspecialservice
 
 import javolution.util.FastMap;
 
-
-public class LandingSpecialLocation
-{
-    protected int id;
+public class LandingSpecialLocation {
+	protected int id;
 	protected boolean isActive;
 	protected LandingSpecialStateType type;
-    protected LandingSpecialTemplate template;
-    protected SpecialLanding<LandingSpecialLocation> activeLandingSpecial;
-    protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
-    private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
-    public LandingSpecialLocation() {
-    }
-	
-    public LandingSpecialLocation(LandingSpecialTemplate template) {
-        this.template = template;
-        this.id = template.getId();
-    }
-	
-    public boolean isActive() {
-        return isActive;
-    }
-	
-    public void setActiveLanding(SpecialLanding<LandingSpecialLocation> landingSpecial) {
-        isActive = landingSpecial != null;
-        this.activeLandingSpecial = landingSpecial;
-    }
-	
-    public SpecialLanding<LandingSpecialLocation> getActiveLandingSpecial() {
-        return activeLandingSpecial;
-    }
-	
-    public final LandingSpecialTemplate getTemplate() {
-        return template;
-    }
-	
-    public int getId() {
-        return id;
-    }
-	
-    public List<VisibleObject> getSpawned() {
-        return spawned;
-    }
-	
-    public FastMap<Integer, Player> getPlayers() {
-        return players;
-    }
-	
+	protected LandingSpecialTemplate template;
+	protected SpecialLanding<LandingSpecialLocation> activeLandingSpecial;
+	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
+	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
+
+	public LandingSpecialLocation() {
+	}
+
+	public LandingSpecialLocation(LandingSpecialTemplate template) {
+		this.template = template;
+		this.id = template.getId();
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActiveLanding(SpecialLanding<LandingSpecialLocation> landingSpecial) {
+		isActive = landingSpecial != null;
+		this.activeLandingSpecial = landingSpecial;
+	}
+
+	public SpecialLanding<LandingSpecialLocation> getActiveLandingSpecial() {
+		return activeLandingSpecial;
+	}
+
+	public final LandingSpecialTemplate getTemplate() {
+		return template;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public List<VisibleObject> getSpawned() {
+		return spawned;
+	}
+
+	public FastMap<Integer, Player> getPlayers() {
+		return players;
+	}
+
 	public void setType(LandingSpecialStateType type) {
-        this.type = type;
-    }
-	
-    public LandingSpecialStateType getType() {
-        return this.type;
-    }
+		this.type = type;
+	}
+
+	public LandingSpecialStateType getType() {
+		return this.type;
+	}
 }

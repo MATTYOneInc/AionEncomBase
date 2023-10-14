@@ -30,9 +30,11 @@ import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 import gnu.trove.map.hash.TIntObjectHashMap;
 
 /**
- * This is a container holding and serving all {@link NpcTemplate} instances.<br>
- * Briefly: Every {@link Npc} instance represents some class of NPCs among which each have the same id, name, items,
- * statistics. Data for such NPC class is defined in {@link NpcTemplate} and is uniquely identified by npc id.
+ * This is a container holding and serving all {@link NpcTemplate}
+ * instances.<br>
+ * Briefly: Every {@link Npc} instance represents some class of NPCs among which
+ * each have the same id, name, items, statistics. Data for such NPC class is
+ * defined in {@link NpcTemplate} and is uniquely identified by npc id.
  * 
  * @author Luno
  */
@@ -61,8 +63,7 @@ public class NpcData {
 	/**
 	 * /** Returns an {@link NpcTemplate} object with given id.
 	 * 
-	 * @param id
-	 *          id of NPC
+	 * @param id id of NPC
 	 * @return NpcTemplate object containing data about NPC with that id.
 	 */
 	public NpcTemplate getNpcTemplate(int id) {

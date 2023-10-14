@@ -87,7 +87,8 @@ public class CM_BLOCK_ADD extends AionClientPacket {
 
 		// Try and block player
 		else if (!SocialService.addBlockedUser(activePlayer, targetPlayer, reason)) {
-			log.error("Failed to add " + targetPlayer.getName() + " to the block list for " + activePlayer.getName() + " - check database setup.");
+			log.error("Failed to add " + targetPlayer.getName() + " to the block list for " + activePlayer.getName()
+					+ " - check database setup.");
 		}
 	}
 }

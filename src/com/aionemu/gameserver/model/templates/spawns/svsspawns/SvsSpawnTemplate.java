@@ -25,39 +25,39 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * @author Rinzler (Encom)
  */
 
-public class SvsSpawnTemplate extends SpawnTemplate
-{
+public class SvsSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private SvsStateType svsType;
-	
+
 	public SvsSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public SvsSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public SvsSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public SvsStateType getPStateType() {
 		return svsType;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void setPStateType(SvsStateType svsType) {
 		this.svsType = svsType;
 	}
-	
+
 	public final boolean isSvs() {
 		return svsType.equals(SvsStateType.SVS);
 	}
-	
+
 	public final boolean isSvsPeace() {
 		return svsType.equals(SvsStateType.PEACE);
 	}

@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "moltenus_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class MoltenusSchedule
-{
+public class MoltenusSchedule {
 	@XmlElement(name = "moltenus", required = true)
 	private List<Moltenus> moltenussList;
-	
+
 	public List<Moltenus> getMoltenussList() {
 		return moltenussList;
 	}
-	
+
 	public void setFightsList(List<Moltenus> moltenusList) {
 		this.moltenussList = moltenusList;
 	}
-	
+
 	public static MoltenusSchedule load() {
 		MoltenusSchedule ms;
 		try {
@@ -58,28 +57,28 @@ public class MoltenusSchedule
 		}
 		return ms;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "moltenus")
 	public static class Moltenus {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "fightTime", required = true)
 		private List<String> fightTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getFightTimes() {
 			return fightTimes;
 		}
-		
+
 		public void setFightTimes(List<String> fightTimes) {
 			this.fightTimes = fightTimes;
 		}

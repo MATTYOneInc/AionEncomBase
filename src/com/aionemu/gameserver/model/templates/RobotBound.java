@@ -21,16 +21,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RobotBound")
-public class RobotBound extends BoundRadius
-{
-    public RobotBound() {
+public class RobotBound extends BoundRadius {
+	public RobotBound() {
 	}
-	
+
 	public RobotBound(float front, float side, float upper) {
 		super(front, side, upper);
 	}

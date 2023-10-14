@@ -29,32 +29,31 @@ import com.aionemu.gameserver.model.stats.container.StatEnum;
  * @author Ranastic (Encom)
  */
 
-public class Accuracy implements StatOwner
-{
+public class Accuracy implements StatOwner {
 	private List<IStatFunction> accuracy = new ArrayList<IStatFunction>();
-	
+
 	public void onChange(Player player, int point) {
-        if (point >= 1) {
-            accuracy.clear();
-            player.getGameStats().endEffect(this);
-            accuracy.add(new StatAddFunction(StatEnum.ACCURACY, (int) (7.84f * point), true));
+		if (point >= 1) {
+			accuracy.clear();
+			player.getGameStats().endEffect(this);
+			accuracy.add(new StatAddFunction(StatEnum.ACCURACY, (int) (7.84f * point), true));
 			accuracy.add(new StatAddFunction(StatEnum.PHYSICAL_ACCURACY, (int) (3.84f * point), true));
 			accuracy.add(new StatAddFunction(StatEnum.MAGICAL_ACCURACY, (int) (6.00f * point), true));
-            player.getGameStats().addEffect(this, accuracy);
-        } else if (point == 0) {
-            accuracy.clear();
+			player.getGameStats().addEffect(this, accuracy);
+		} else if (point == 0) {
+			accuracy.clear();
 			accuracy.add(new StatAddFunction(StatEnum.ACCURACY, (int) (7.84f * point), false));
 			accuracy.add(new StatAddFunction(StatEnum.PHYSICAL_ACCURACY, (int) (3.84f * point), false));
 			accuracy.add(new StatAddFunction(StatEnum.MAGICAL_ACCURACY, (int) (6.00f * point), false));
-            player.getGameStats().endEffect(this);
-        }
-    }
-	
+			player.getGameStats().endEffect(this);
+		}
+	}
+
 	public static Accuracy getInstance() {
-        return NewSingletonHolder.INSTANCE;
-    }
-	
-    private static class NewSingletonHolder {
-        private static final Accuracy INSTANCE = new Accuracy();
-    }
+		return NewSingletonHolder.INSTANCE;
+	}
+
+	private static class NewSingletonHolder {
+		private static final Accuracy INSTANCE = new Accuracy();
+	}
 }

@@ -31,9 +31,10 @@ public class AbnormalDamageModifier extends ActionModifier {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see
-	 * com.aionemu.gameserver.skillengine.effect.modifier.ActionModifier#analyze(com.aionemu.gameserver.skillengine.model
-	 * .Effect)
+	 * com.aionemu.gameserver.skillengine.effect.modifier.ActionModifier#analyze(com
+	 * .aionemu.gameserver.skillengine.model .Effect)
 	 */
 	@Override
 	public int analyze(Effect effect) {
@@ -42,9 +43,10 @@ public class AbnormalDamageModifier extends ActionModifier {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see
-	 * com.aionemu.gameserver.skillengine.effect.modifier.ActionModifier#check(com.aionemu.gameserver.skillengine.model
-	 * .Effect)
+	 * com.aionemu.gameserver.skillengine.effect.modifier.ActionModifier#check(com.
+	 * aionemu.gameserver.skillengine.model .Effect)
 	 */
 	@Override
 	public boolean check(Effect effect) {

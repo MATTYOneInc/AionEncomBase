@@ -16,34 +16,23 @@
  */
 package com.aionemu.gameserver.utils.stats.enums;
 
-public enum POWER
-{
-	WARRIOR(110),
-	GLADIATOR(110),
-	TEMPLAR(110),
-	SCOUT(100),
-	ASSASSIN(110),
-	RANGER(90),
-	MAGE(90),
-	SORCERER(90),
-	SPIRIT_MASTER(90),
-	PRIEST(95),
-	CLERIC(105),
-	CHANTER(110),
+public enum POWER {
+	WARRIOR(110), GLADIATOR(110), TEMPLAR(110), SCOUT(100), ASSASSIN(110), RANGER(90), MAGE(90), SORCERER(90),
+	SPIRIT_MASTER(90), PRIEST(95), CLERIC(105), CHANTER(110),
 
-	//News Class 4.3
-	TECHNIST(100), //GOOD
-	GUNSLINGER(100), //GOOD
-	MUSE(95), //GOOD
+	// News Class 4.3
+	TECHNIST(100), // GOOD
+	GUNSLINGER(100), // GOOD
+	MUSE(95), // GOOD
 	SONGWEAVER(90), // 95?
-	AETHERTECH(110); //115?
+	AETHERTECH(110); // 115?
 
 	private int value;
-	
+
 	private POWER(int value) {
 		this.value = value;
 	}
-	
+
 	public int getValue() {
 		return value;
 	}

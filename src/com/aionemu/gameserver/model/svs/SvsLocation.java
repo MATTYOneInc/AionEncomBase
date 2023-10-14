@@ -30,48 +30,47 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class SvsLocation
-{
+public class SvsLocation {
 	protected int id;
 	protected boolean isActive;
 	protected SvsTemplate template;
 	protected Panesterra<SvsLocation> activeSvs;
 	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
 	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
+
 	public SvsLocation() {
 	}
-	
+
 	public SvsLocation(SvsTemplate template) {
 		this.template = template;
 		this.id = template.getId();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveSvs(Panesterra<SvsLocation> svs) {
 		isActive = svs != null;
 		this.activeSvs = svs;
 	}
-	
+
 	public Panesterra<SvsLocation> getActiveSvs() {
 		return activeSvs;
 	}
-	
+
 	public final SvsTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}

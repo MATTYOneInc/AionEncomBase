@@ -35,39 +35,39 @@ import gnu.trove.map.hash.TIntObjectHashMap;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name="enchant_templates")
+@XmlRootElement(name = "enchant_templates")
 public class ItemEnchantData {
 
 	@XmlElement(name = "enchant_template", required = true)
-    protected List<ItemEnchantTemplate> enchantTemplates;
+	protected List<ItemEnchantTemplate> enchantTemplates;
 
-    @XmlTransient
-    private TIntObjectHashMap<ItemEnchantTemplate> enchants = new TIntObjectHashMap<ItemEnchantTemplate>();
+	@XmlTransient
+	private TIntObjectHashMap<ItemEnchantTemplate> enchants = new TIntObjectHashMap<ItemEnchantTemplate>();
 
-    @XmlTransient
-    private TIntObjectHashMap<ItemEnchantTemplate> authorizes = new TIntObjectHashMap<ItemEnchantTemplate>();
+	@XmlTransient
+	private TIntObjectHashMap<ItemEnchantTemplate> authorizes = new TIntObjectHashMap<ItemEnchantTemplate>();
 
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        for (ItemEnchantTemplate it : enchantTemplates) {
-            getEnchantMap(it.getEnchantType()).put(it.getId(), it);
-        }
-    }
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		for (ItemEnchantTemplate it : enchantTemplates) {
+			getEnchantMap(it.getEnchantType()).put(it.getId(), it);
+		}
+	}
 
-    private TIntObjectHashMap<ItemEnchantTemplate> getEnchantMap(EnchantType type) {
-        if (type == EnchantType.ENCHANT) {
-            return enchants;
-        }
-        return authorizes;
-    }
+	private TIntObjectHashMap<ItemEnchantTemplate> getEnchantMap(EnchantType type) {
+		if (type == EnchantType.ENCHANT) {
+			return enchants;
+		}
+		return authorizes;
+	}
 
-    public ItemEnchantTemplate getEnchantTemplate(EnchantType type, int id) {
-        if (type == EnchantType.ENCHANT) {
-            return enchants.get(id);
-        }
-        return authorizes.get(id);
-    }
+	public ItemEnchantTemplate getEnchantTemplate(EnchantType type, int id) {
+		if (type == EnchantType.ENCHANT) {
+			return enchants.get(id);
+		}
+		return authorizes.get(id);
+	}
 
-    public int size() {
-        return enchants.size() + authorizes.size();
-    }
+	public int size() {
+		return enchants.size() + authorizes.size();
+	}
 }

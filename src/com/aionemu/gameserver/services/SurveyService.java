@@ -60,7 +60,8 @@ public class SurveyService {
 	public SurveyService() {
 		activeItems = FastMap.newInstance();
 		this.htmlTemplate = HTMLCache.getInstance().getHTML("surveyTemplate.xhtml");
-		ThreadPoolManager.getInstance().scheduleAtFixedRate(new TaskUpdate(), 2000, SecurityConfig.SURVEY_DELAY * 60000);
+		ThreadPoolManager.getInstance().scheduleAtFixedRate(new TaskUpdate(), 2000,
+				SecurityConfig.SURVEY_DELAY * 60000);
 	}
 
 	public void requestSurvey(Player player, int survId) {
@@ -87,18 +88,18 @@ public class SurveyService {
 			return;
 		}
 		if (DAOManager.getDAO(SurveyControllerDAO.class).useItem(item.uniqueId)) {
-			
+
 			ItemService.addItem(player, item.itemId, item.count);
 			if (item.itemId == ItemId.KINAH.value()) { // You received %num0 Kinah as reward for the survey.
 				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300945, item.count));
-			}
-			else if (item.count == 1) { // You received %0 item as reward for the survey.
-				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300945, new DescriptionId(template.getNameId())));
-			}
-			else {
+			} else if (item.count == 1) { // You received %0 item as reward for the survey.
+				PacketSendUtility.sendPacket(player,
+						new SM_SYSTEM_MESSAGE(1300945, new DescriptionId(template.getNameId())));
+			} else {
 				// You received %num1 %0 items as reward for the survey.
-				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300946, item.count, new DescriptionId(template.getNameId())));
-            }
+				PacketSendUtility.sendPacket(player,
+						new SM_SYSTEM_MESSAGE(1300946, item.count, new DescriptionId(template.getNameId())));
+			}
 			template = null;
 			activeItems.remove(survId);
 		}
@@ -108,7 +109,7 @@ public class SurveyService {
 		List<SurveyItem> newList = DAOManager.getDAO(SurveyControllerDAO.class).getAllNew();
 		if (newList.size() == 0) {
 			return;
-        }
+		}
 		List<Integer> players = FastList.newInstance();
 		int cnt = 0;
 		for (SurveyItem item : newList) {

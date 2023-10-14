@@ -45,48 +45,49 @@ import com.aionemu.gameserver.utils.RndSelector;
 import com.aionemu.gameserver.utils.captcha.CAPTCHAUtil;
 import com.aionemu.gameserver.world.World;
 
-public class GatherableController extends VisibleObjectController<Gatherable>
-{
+public class GatherableController extends VisibleObjectController<Gatherable> {
 	private int gatherCount;
 	private int currentGatherer;
 	private GatheringTask task;
 	private GatherState state = GatherState.IDLE;
 	private RndSelector<Material> mats;
-	
+
 	public enum GatherState {
-		GATHERED,
-		GATHERING,
-		IDLE
+		GATHERED, GATHERING, IDLE
 	}
-	
+
 	public void onStartUse(final Player player) {
 		final GatherableTemplate template = this.getOwner().getObjectTemplate();
 		int gatherId = template.getTemplateId();
 		if (player.getLevel() >= 10) {
 			switch (gatherId) {
-				case 400201: //Impure Iron Ore.
-				case 400251: //Impure Iron Ore.
-				case 400601: //Young Aria.
-				case 400651: //Young Azpha.
-				case 400701: //Mela Sapling.
-				case 400751: //Raydam Sapling.
-					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_GATHER_INCORRECT_SKILL);
+			case 400201: // Impure Iron Ore.
+			case 400251: // Impure Iron Ore.
+			case 400601: // Young Aria.
+			case 400651: // Young Azpha.
+			case 400701: // Mela Sapling.
+			case 400751: // Raydam Sapling.
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_GATHER_INCORRECT_SKILL);
 				break;
 			}
-		} if (template.getLevelLimit() > 0) {
+		}
+		if (template.getLevelLimit() > 0) {
 			// You must be at least level %0 to perform extraction.
 			if (player.getLevel() < template.getLevelLimit()) {
 				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400737, template.getLevelLimit()));
 				return;
 			}
-		} if (player.isInPlayerMode(PlayerMode.RIDE)) {
+		}
+		if (player.isInPlayerMode(PlayerMode.RIDE)) {
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1401096));
 			return;
-		} if (player.getInventory().isFull()) {
+		}
+		if (player.getInventory().isFull()) {
 			// You must have at least one free space in your cube to gather.
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1330036));
 			return;
-		} if (MathUtil.getDistance(getOwner(), player) > 6) {
+		}
+		if (MathUtil.getDistance(getOwner(), player) > 6) {
 			return;
 		}
 		// check is gatherable
@@ -103,15 +104,19 @@ public class GatherableController extends VisibleObjectController<Gatherable>
 		}
 		// CAPTCHA
 		if (SecurityConfig.CAPTCHA_ENABLE) {
-			if (SecurityConfig.CAPTCHA_APPEAR.equals(template.getSourceType()) || SecurityConfig.CAPTCHA_APPEAR.equals("ALL")) {
+			if (SecurityConfig.CAPTCHA_APPEAR.equals(template.getSourceType())
+					|| SecurityConfig.CAPTCHA_APPEAR.equals("ALL")) {
 				int rate = SecurityConfig.CAPTCHA_APPEAR_RATE;
 				if (template.getCaptchaRate() > 0) {
 					rate = (int) (template.getCaptchaRate() * 0.1f);
-				} if (Rnd.get(0, 100) < rate) {
+				}
+				if (Rnd.get(0, 100) < rate) {
 					player.setCaptchaWord(CAPTCHAUtil.getRandomWord());
 					player.setCaptchaImage(CAPTCHAUtil.createCAPTCHA(player.getCaptchaWord()).array());
-					PunishmentService.setIsNotGatherable(player, 0, true, SecurityConfig.CAPTCHA_EXTRACTION_BAN_TIME * 1000);
-					//You were poisoned during extraction and cannot extract for (Time remaining: 10Min)
+					PunishmentService.setIsNotGatherable(player, 0, true,
+							SecurityConfig.CAPTCHA_EXTRACTION_BAN_TIME * 1000);
+					// You were poisoned during extraction and cannot extract for (Time remaining:
+					// 10Min)
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_CAPTCHA_RESTRICTED("10"));
 					PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 600));
 				}
@@ -119,15 +124,15 @@ public class GatherableController extends VisibleObjectController<Gatherable>
 		}
 		List<Material> materials = null;
 		switch (result) {
-			case 1:
-				materials = template.getExtraMaterials().getMaterial();
+		case 1:
+			materials = template.getExtraMaterials().getMaterial();
 			break;
-			case 2:
-				materials = template.getMaterials().getMaterial();
+		case 2:
+			materials = template.getMaterials().getMaterial();
 			break;
 		}
 		mats = new RndSelector<Material>();
-		for (Material mat: materials) {
+		for (Material mat : materials) {
 			mats.add(mat, mat.getRate());
 		}
 		synchronized (state) {
@@ -142,26 +147,27 @@ public class GatherableController extends VisibleObjectController<Gatherable>
 						stopGatherProtection(player);
 					}
 				});
-				int skillLvlDiff = player.getSkillList().getSkillLevel(template.getHarvestSkill()) - template.getSkillLevel();
+				int skillLvlDiff = player.getSkillList().getSkillLevel(template.getHarvestSkill())
+						- template.getSkillLevel();
 				task = new GatheringTask(player, getOwner(), getMaterial(), skillLvlDiff);
 				task.start();
 			}
 		}
 	}
-	
+
 	public Material getMaterial() {
 		Material m = mats.select();
-        int chance = Rnd.get(m.getRate());
-        int current = 0;
-        current += m.getRate();
-        if (mats != null) {
-            if (current >= chance) {
-                return m;
-            }
-        }
-        return null;
+		int chance = Rnd.get(m.getRate());
+		int current = 0;
+		current += m.getRate();
+		if (mats != null) {
+			if (current >= chance) {
+				return m;
+			}
+		}
+		return null;
 	}
-	
+
 	private boolean checkPlayerSkill(final Player player, final GatherableTemplate template) {
 		int harvestSkillId = template.getHarvestSkill();
 		if (!player.getSkillList().isSkillPresent(harvestSkillId)) {
@@ -170,23 +176,26 @@ public class GatherableController extends VisibleObjectController<Gatherable>
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_GATHER_INCORRECT_SKILL);
 			} else {
 				// You must learn the %0 skill to start gathering.
-				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1330054, new DescriptionId(DataManager.SKILL_DATA.getSkillTemplate(harvestSkillId).getNameId())));
+				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1330054,
+						new DescriptionId(DataManager.SKILL_DATA.getSkillTemplate(harvestSkillId).getNameId())));
 			}
 			return false;
 			// Your %0 skill level is not high enough.
-		} if (player.getSkillList().getSkillLevel(harvestSkillId) < template.getSkillLevel()) {
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1330001, new DescriptionId(DataManager.SKILL_DATA.getSkillTemplate(harvestSkillId).getNameId())));
+		}
+		if (player.getSkillList().getSkillLevel(harvestSkillId) < template.getSkillLevel()) {
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1330001,
+					new DescriptionId(DataManager.SKILL_DATA.getSkillTemplate(harvestSkillId).getNameId())));
 			return false;
 		}
 		return true;
 	}
-	
+
 	private byte checkPlayerRequiredExtractor(final Player player, final GatherableTemplate template) {
 		if (template.getRequiredItemId() > 0) {
 			if (template.getCheckType() == 1) {
 				List<Item> items = player.getEquipment().getEquippedItemsByItemId(template.getRequiredItemId());
 				boolean condOk = false;
-				for (Item item: items) {
+				for (Item item : items) {
 					if (item.isEquipped()) {
 						condOk = true;
 						break;
@@ -194,8 +203,10 @@ public class GatherableController extends VisibleObjectController<Gatherable>
 				}
 				return (byte) (condOk ? 1 : 2);
 			} else if (template.getCheckType() == 2) {
-				if (player.getInventory().getItemCountByItemId(template.getRequiredItemId()) < template.getEraseValue()) {
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400376, new DescriptionId(template.getRequiredItemNameId())));
+				if (player.getInventory().getItemCountByItemId(template.getRequiredItemId()) < template
+						.getEraseValue()) {
+					PacketSendUtility.sendPacket(player,
+							new SM_SYSTEM_MESSAGE(1400376, new DescriptionId(template.getRequiredItemNameId())));
 					return 0;
 				} else {
 					return 1;
@@ -204,16 +215,18 @@ public class GatherableController extends VisibleObjectController<Gatherable>
 		}
 		return 2;
 	}
-	
+
 	private boolean checkGatherable(final Player player, final GatherableTemplate template) {
 		if (player.isNotGatherable()) {
-			//You are currently unable to extract. (Time remaining: 10Min)
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400273, (int) ((player.getGatherableTimer() - (System.currentTimeMillis() - player .getStopGatherable())) / 1000)));
+			// You are currently unable to extract. (Time remaining: 10Min)
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400273,
+					(int) ((player.getGatherableTimer() - (System.currentTimeMillis() - player.getStopGatherable()))
+							/ 1000)));
 			return false;
 		}
 		return true;
 	}
-	
+
 	public void completeInteraction() {
 		state = GatherState.IDLE;
 		gatherCount++;
@@ -221,21 +234,23 @@ public class GatherableController extends VisibleObjectController<Gatherable>
 			onDespawn();
 		}
 	}
-	
+
 	public void rewardPlayer(Player player) {
 		if (player != null) {
 			int skillLvl = getOwner().getObjectTemplate().getSkillLevel();
 			int xpReward = (int) ((0.0031 * (skillLvl + 5.3) * (skillLvl + 1592.8) + 60));
 			if (player.getSkillList().addSkillXp(player, getOwner().getObjectTemplate().getHarvestSkill(),
-				(int) RewardType.GATHERING.calcReward(player, xpReward), skillLvl)) {
+					(int) RewardType.GATHERING.calcReward(player, xpReward), skillLvl)) {
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_EXTRACT_GATHERING_SUCCESS_GETEXP);
 				player.getCommonData().addExp(xpReward, RewardType.GATHERING);
 			} else {
-				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_DONT_GET_PRODUCTION_EXP(new DescriptionId(DataManager.SKILL_DATA.getSkillTemplate(getOwner().getObjectTemplate().getHarvestSkill()).getNameId())));
+				PacketSendUtility.sendPacket(player,
+						SM_SYSTEM_MESSAGE.STR_MSG_DONT_GET_PRODUCTION_EXP(new DescriptionId(DataManager.SKILL_DATA
+								.getSkillTemplate(getOwner().getObjectTemplate().getHarvestSkill()).getNameId())));
 			}
 		}
 	}
-	
+
 	public void finishGathering(Player player) {
 		if (currentGatherer == player.getObjectId()) {
 			if (state == GatherState.GATHERING) {
@@ -245,24 +260,25 @@ public class GatherableController extends VisibleObjectController<Gatherable>
 			state = GatherState.IDLE;
 		}
 	}
-	
-   /**
-	* This is prevent "Pvp Uncivilized" when a player want gather in peace.
-	* The player become "Invisible" for other player.
-	*/
+
+	/**
+	 * This is prevent "Pvp Uncivilized" when a player want gather in peace. The
+	 * player become "Invisible" for other player.
+	 */
 	public void startGatherProtection(Player player) {
 		if (CraftConfig.PROTECTION_GATHER_ENABLE) {
-		    player.getEffectController().setAbnormal(AbnormalState.HIDE.getId());
+			player.getEffectController().setAbnormal(AbnormalState.HIDE.getId());
 			player.setVisualState(CreatureVisualState.HIDE3);
 			PacketSendUtility.broadcastPacket(player, new SM_PLAYER_STATE(player), true);
 		}
 	}
+
 	public void stopGatherProtection(Player player) {
 		player.getEffectController().unsetAbnormal(AbnormalState.HIDE.getId());
 		player.unsetVisualState(CreatureVisualState.HIDE3);
 		PacketSendUtility.broadcastPacket(player, new SM_PLAYER_STATE(player), true);
 	}
-	
+
 	@Override
 	public void onDespawn() {
 		Gatherable owner = getOwner();
@@ -271,12 +287,12 @@ public class GatherableController extends VisibleObjectController<Gatherable>
 		}
 		World.getInstance().despawn(owner);
 	}
-	
+
 	@Override
 	public void onBeforeSpawn() {
 		this.gatherCount = 0;
 	}
-	
+
 	@Override
 	public Gatherable getOwner() {
 		return super.getOwner();

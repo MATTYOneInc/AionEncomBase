@@ -106,9 +106,9 @@ public class NpcSkillList implements SkillList<Npc> {
 		}
 		return null;
 	}
-	
+
 	public NpcSkillEntry getUseInSpawnedSkill() {
-		if(this.skills == null) {
+		if (this.skills == null) {
 			return null;
 		}
 		Iterator<NpcSkillEntry> iter = skills.iterator();

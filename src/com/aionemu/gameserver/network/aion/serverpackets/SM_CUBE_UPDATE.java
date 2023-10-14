@@ -37,33 +37,31 @@ public class SM_CUBE_UPDATE extends AionServerPacket {
 	private int npcExpands;
 	private int questExpands;
 
-	public static SM_CUBE_UPDATE stigmaSlots(int slots)
-	{
+	public static SM_CUBE_UPDATE stigmaSlots(int slots) {
 		return new SM_CUBE_UPDATE(6, slots);
 	}
 
-	public static SM_CUBE_UPDATE cubeSize(StorageType type, Player player)
-	{
+	public static SM_CUBE_UPDATE cubeSize(StorageType type, Player player) {
 		int itemsCount = 0;
 		int npcExpands = 0;
 		int questExpands = 0;
-		switch(type) {
-			case CUBE:
-				itemsCount = player.getInventory().size();
-				npcExpands = player.getNpcExpands();
-				questExpands = player.getQuestExpands();
-				break;
-			case REGULAR_WAREHOUSE:
-				itemsCount = player.getWarehouse().size();
-				npcExpands = player.getWarehouseSize();
-				//questExpands = ?? //TODO!
-				break;
-			case LEGION_WAREHOUSE:
-				itemsCount = player.getLegion().getLegionWarehouse().size();
-				npcExpands = player.getLegion().getWarehouseLevel();
-				break;
+		switch (type) {
+		case CUBE:
+			itemsCount = player.getInventory().size();
+			npcExpands = player.getNpcExpands();
+			questExpands = player.getQuestExpands();
+			break;
+		case REGULAR_WAREHOUSE:
+			itemsCount = player.getWarehouse().size();
+			npcExpands = player.getWarehouseSize();
+			// questExpands = ?? //TODO!
+			break;
+		case LEGION_WAREHOUSE:
+			itemsCount = player.getLegion().getLegionWarehouse().size();
+			npcExpands = player.getLegion().getWarehouseLevel();
+			break;
 		}
-		
+
 		return new SM_CUBE_UPDATE(0, type.ordinal(), itemsCount, npcExpands, questExpands);
 	}
 
@@ -84,16 +82,16 @@ public class SM_CUBE_UPDATE extends AionServerPacket {
 		writeC(action);
 		writeC(actionValue);
 		switch (action) {
-			case 0:
-				writeD(itemsCount);
-				writeC(npcExpands); // cube size from npc (so max 5 for now)
-				writeC(questExpands); // cube size from quest (so max 2 for now)
-				writeC(0); // unk - expands from items?
-				break;
-			case 6:
-				break;
-			default:
-				break;
+		case 0:
+			writeD(itemsCount);
+			writeC(npcExpands); // cube size from npc (so max 5 for now)
+			writeC(questExpands); // cube size from quest (so max 2 for now)
+			writeC(0); // unk - expands from items?
+			break;
+		case 6:
+			break;
+		default:
+			break;
 		}
 	}
 }

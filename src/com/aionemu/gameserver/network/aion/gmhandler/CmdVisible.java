@@ -27,15 +27,15 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  */
 public class CmdVisible extends AbstractGMHandler {
 
-    public CmdVisible(Player admin, String params) {
-        super(admin, params);
-        run();
-    }
+	public CmdVisible(Player admin, String params) {
+		super(admin, params);
+		run();
+	}
 
-    private void run() {
-        admin.getEffectController().unsetAbnormal(AbnormalState.HIDE.getId());
-        admin.unsetVisualState(CreatureVisualState.HIDE20);
-        PacketSendUtility.broadcastPacket(admin, new SM_PLAYER_STATE(admin), true);
-        PacketSendUtility.sendMessage(admin, "You are invisible.");
-    }
+	private void run() {
+		admin.getEffectController().unsetAbnormal(AbnormalState.HIDE.getId());
+		admin.unsetVisualState(CreatureVisualState.HIDE20);
+		PacketSendUtility.broadcastPacket(admin, new SM_PLAYER_STATE(admin), true);
+		PacketSendUtility.sendMessage(admin, "You are invisible.");
+	}
 }

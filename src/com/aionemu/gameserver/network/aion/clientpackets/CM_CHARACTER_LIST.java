@@ -26,21 +26,20 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_0x14F;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ACCOUNT_PROPERTIES;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_CHARACTER_LIST;
 
-public class CM_CHARACTER_LIST extends AionClientPacket
-{
+public class CM_CHARACTER_LIST extends AionClientPacket {
 	private static Logger log = LoggerFactory.getLogger(CM_CHARACTER_LIST.class);
-	
+
 	private int playOk2;
-	
+
 	public CM_CHARACTER_LIST(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		playOk2 = readD();
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		boolean isGM = (getConnection()).getAccount().getAccessLevel() >= AdminConfig.GM_PANEL;

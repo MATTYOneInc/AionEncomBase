@@ -23,11 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SpawnedMonster")
-public class SpawnedMonster extends Monster
-{
+public class SpawnedMonster extends Monster {
 	@XmlAttribute(name = "spawner_object", required = true)
 	protected int spawnerObject;
-	
+
 	public int getSpawnerObject() {
 		return spawnerObject;
 	}

@@ -28,7 +28,7 @@ public class LimitedTradeNpc {
 
 	public LimitedTradeNpc(FastList<LimitedItem> limitedItems) {
 		this.limitedItems = limitedItems;
-		
+
 	}
 
 	public void putLimitedItems(FastList<LimitedItem> limitedItems) {

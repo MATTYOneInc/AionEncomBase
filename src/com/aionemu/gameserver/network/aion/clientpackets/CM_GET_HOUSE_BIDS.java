@@ -27,16 +27,15 @@ import com.aionemu.gameserver.services.HousingBidService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.collections.ListSplitter;
 
-public class CM_GET_HOUSE_BIDS extends AionClientPacket
-{
+public class CM_GET_HOUSE_BIDS extends AionClientPacket {
 	public CM_GET_HOUSE_BIDS(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
@@ -46,7 +45,8 @@ public class CM_GET_HOUSE_BIDS extends AionClientPacket
 		while (!splitter.isLast()) {
 			List<HouseBidEntry> packetBids = splitter.getNext();
 			HouseBidEntry playerData = splitter.isLast() ? playerBid : null;
-			PacketSendUtility.sendPacket(player, new SM_HOUSE_BIDS(splitter.isFirst(), splitter.isLast(), playerData, packetBids));
+			PacketSendUtility.sendPacket(player,
+					new SM_HOUSE_BIDS(splitter.isFirst(), splitter.isLast(), playerData, packetBids));
 		}
 	}
 }

@@ -32,9 +32,12 @@ public abstract class InGameShopDAO implements DAO {
 
 	public abstract FastMap<Byte, List<IGItem>> loadInGameShopItems();
 
-    public abstract void saveIngameShopItem(int paramInt1, int paramInt2, long paramLong1, long paramLong2, byte paramByte1, byte paramByte2, int paramInt3, int paramInt4, byte paramByte3, byte paramByte4, String paramString1, String paramString2);
+	public abstract void saveIngameShopItem(int paramInt1, int paramInt2, long paramLong1, long paramLong2,
+			byte paramByte1, byte paramByte2, int paramInt3, int paramInt4, byte paramByte3, byte paramByte4,
+			String paramString1, String paramString2);
 
 	public abstract boolean increaseSales(int object, int current);
+
 	@Override
 	public String getClassName() {
 		return InGameShopDAO.class.getName();

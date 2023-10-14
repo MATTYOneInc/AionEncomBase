@@ -18,8 +18,7 @@ package com.aionemu.gameserver.configs.main;
 
 import com.aionemu.commons.configuration.Property;
 
-public class RateConfig
-{
+public class RateConfig {
 
 	/**
 	 * Player glory Points Rates - Regular (1), Premium (2), VIP (3)
@@ -54,12 +53,12 @@ public class RateConfig
 	public static float PREMIUM_GATHERING_XP_RATE;
 	@Property(key = "gameserver.rate.vip.gathering.xp", defaultValue = "3")
 	public static float VIP_GATHERING_XP_RATE;
-    @Property(key="gameserver.rate.regular.gathering.count", defaultValue="1")
-    public static int GATHERING_COUNT_RATE;
-    @Property(key="gameserver.rate.premium.gathering.count", defaultValue="1")
-    public static int PREMIUM_GATHERING_COUNT_RATE;
-    @Property(key="gameserver.rate.vip.gathering.count", defaultValue="1")
-    public static int VIP_GATHERING_COUNT_RATE;
+	@Property(key = "gameserver.rate.regular.gathering.count", defaultValue = "1")
+	public static int GATHERING_COUNT_RATE;
+	@Property(key = "gameserver.rate.premium.gathering.count", defaultValue = "1")
+	public static int PREMIUM_GATHERING_COUNT_RATE;
+	@Property(key = "gameserver.rate.vip.gathering.count", defaultValue = "1")
+	public static int VIP_GATHERING_COUNT_RATE;
 	@Property(key = "gameserver.rate.regular.crafting.xp", defaultValue = "1")
 	public static float CRAFTING_XP_RATE;
 	@Property(key = "gameserver.rate.premium.crafting.xp", defaultValue = "2")
@@ -118,8 +117,8 @@ public class RateConfig
 	public static float VIP_DP_PLAYER_RATE;
 	@Property(key = "gameserver.rate.dredgion", defaultValue = "1.6")
 	public static float DREDGION_REWARD_RATE;
-	
-	//Arena Pvp.
+
+	// Arena Pvp.
 	@Property(key = "gameserver.rate.regular.pvparena.discipline", defaultValue = "1")
 	public static float PVP_ARENA_DISCIPLINE_REWARD_RATE;
 	@Property(key = "gameserver.rate.premium.pvparena.discipline", defaultValue = "1")
@@ -144,59 +143,59 @@ public class RateConfig
 	public static float PREMIUM_PVP_ARENA_GLORY_REWARD_RATE;
 	@Property(key = "gameserver.rate.vip.pvparena.glory", defaultValue = "1")
 	public static float VIP_PVP_ARENA_GLORY_REWARD_RATE;
-	
-	//Ingameshop.
-	@Property(key="gameserver.rate.regular.toll.reward", defaultValue="1")
-    public static float TOLL_REWARD_RATE;
-	@Property(key="gameserver.rate.premium.toll.reward", defaultValue="1")
-    public static float PREMIUM_TOLL_REWARD_RATE;
-	@Property(key="gameserver.rate.vip.toll.reward", defaultValue="1")
-    public static float VIP_TOLL_REWARD_RATE;
-	
-	//Abyss Points.
+
+	// Ingameshop.
+	@Property(key = "gameserver.rate.regular.toll.reward", defaultValue = "1")
+	public static float TOLL_REWARD_RATE;
+	@Property(key = "gameserver.rate.premium.toll.reward", defaultValue = "1")
+	public static float PREMIUM_TOLL_REWARD_RATE;
+	@Property(key = "gameserver.rate.vip.toll.reward", defaultValue = "1")
+	public static float VIP_TOLL_REWARD_RATE;
+
+	// Abyss Points.
 	@Property(key = "gameserver.rate.regular.quest.ap", defaultValue = "1")
 	public static float QUEST_AP_RATE;
 	@Property(key = "gameserver.rate.premium.quest.ap", defaultValue = "2")
 	public static float PREMIUM_QUEST_AP_RATE;
 	@Property(key = "gameserver.rate.vip.quest.ap", defaultValue = "3")
 	public static float VIP_QUEST_AP_RATE;
-	
-	//Glory Points.
+
+	// Glory Points.
 	@Property(key = "gameserver.rate.regular.quest.gp", defaultValue = "1")
 	public static float QUEST_GP_RATE;
 	@Property(key = "gameserver.rate.premium.quest.gp", defaultValue = "2")
 	public static float PREMIUM_QUEST_GP_RATE;
 	@Property(key = "gameserver.rate.vip.quest.gp", defaultValue = "3")
 	public static float VIP_QUEST_GP_RATE;
-	
-	//Abyss Landing
+
+	// Abyss Landing
 	@Property(key = "gameserver.rate.regular.quest.abyss_op", defaultValue = "1")
 	public static float QUEST_ABYSS_OP_RATE;
 	@Property(key = "gameserver.rate.premium.quest.abyss_op", defaultValue = "2")
 	public static float PREMIUM_QUEST_ABYSS_OP_RATE;
 	@Property(key = "gameserver.rate.vip.quest.abyss_op", defaultValue = "3")
 	public static float VIP_QUEST_ABYSS_OP_RATE;
-	
-	//Aura Of Growth
+
+	// Aura Of Growth
 	@Property(key = "gameserver.rate.aura.of.growth.chance", defaultValue = "50")
 	public static int AURA_OF_GROWTH;
-	
+
 	@Property(key = "gameserver.rate.regular.quest.exp_boost", defaultValue = "1")
 	public static float QUEST_EXP_BOOST_RATE;
 	@Property(key = "gameserver.rate.premium.quest.exp_boost", defaultValue = "2")
 	public static float PREMIUM_QUEST_EXP_BOOST_RATE;
 	@Property(key = "gameserver.rate.vip.quest.exp_boost", defaultValue = "3")
 	public static float VIP_QUEST_EXP_BOOST_RATE;
-	
-	//Global Drop Rates
+
+	// Global Drop Rates
 	@Property(key = "gameserver.rate.regular.global.drop", defaultValue = "1")
 	public static float GLOBAL_DROP_RATE;
 	@Property(key = "gameserver.rate.premium.global.drop", defaultValue = "2")
 	public static float PREMIUM_GLOBAL_DROP_RATE;
 	@Property(key = "gameserver.rate.vip.global.drop", defaultValue = "3")
 	public static float VIP_GLOBAL_DROP_RATE;
-	
-	//Atreian Bestiary
+
+	// Atreian Bestiary
 	@Property(key = "gameserver.rate.regular.book", defaultValue = "1")
 	public static float BOOK_RATE;
 	@Property(key = "gameserver.rate.premium.book", defaultValue = "2")
@@ -211,8 +210,8 @@ public class RateConfig
 	public static double ELITE_MOBS_RATE_HP;
 	@Property(key = "gameserver.rate.elite.monster.pw", defaultValue = "1.5")
 	public static double ELITE_MOBS_RATE_PW;
-	
-	//gp get
+
+	// gp get
 	@Property(key = "gameserver.rate.regular.gp.player.gain", defaultValue = "1")
 	public static float GP_PLAYER_GAIN_RATE;
 	@Property(key = "gameserver.rate.premium.gp.player.gain", defaultValue = "2")

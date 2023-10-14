@@ -30,33 +30,32 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AbyssGroupAttr")
-public class AbyssGroupAttr
-{
+public class AbyssGroupAttr {
 	@XmlAttribute(name = "buff_id", required = true)
 	protected int buffId;
-	
+
 	@XmlAttribute(name = "world")
 	protected List<Integer> world;
-	
+
 	@XmlAttribute(name = "name", required = true)
 	private String name;
-	
+
 	public int getBuffId() {
 		return buffId;
 	}
-	
+
 	public void setBuffId(int value) {
 		buffId = value;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public List<Integer> getWorldId() {
-        if (world == null) {
-            world = Collections.emptyList();
-        }
-        return this.world;
-    }
+		if (world == null) {
+			world = Collections.emptyList();
+		}
+		return this.world;
+	}
 }

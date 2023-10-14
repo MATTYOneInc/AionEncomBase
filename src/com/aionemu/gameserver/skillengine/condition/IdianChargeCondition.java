@@ -30,18 +30,17 @@ import com.aionemu.gameserver.skillengine.model.Skill;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "IdianChargeCondition")
-public class IdianChargeCondition extends ChargeCondition
-{
-    @Override
-    public boolean validate(Skill env) {
-        if (env.getEffector() instanceof Player) {
-            Player effector = (Player) env.getEffector();
-            for (Item item : effector.getEquipment().getEquippedItems()) {
-                if (item.getItemTemplate().isWeapon() && item.getIdianStone() != null) {
-                    item.getIdianStone().decreasePolishCharge(effector, 500);
+public class IdianChargeCondition extends ChargeCondition {
+	@Override
+	public boolean validate(Skill env) {
+		if (env.getEffector() instanceof Player) {
+			Player effector = (Player) env.getEffector();
+			for (Item item : effector.getEquipment().getEquippedItems()) {
+				if (item.getItemTemplate().isWeapon() && item.getIdianStone() != null) {
+					item.getIdianStone().decreasePolishCharge(effector, 500);
 				}
-            }
-        }
-        return true;
-    }
+			}
+		}
+		return true;
+	}
 }

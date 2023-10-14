@@ -28,12 +28,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ZoneAttributes")
 @XmlEnum(String.class)
 public enum ZoneAttributes {
-	BIND(1 << 0),
-	RECALL(1 << 1),
-	GLIDE(1 << 2),
-	FLY(1 << 3),
-	RIDE(1 << 4),
-	FLY_RIDE(1 << 5),
+	BIND(1 << 0), RECALL(1 << 1), GLIDE(1 << 2), FLY(1 << 3), RIDE(1 << 4), FLY_RIDE(1 << 5),
 
 	@XmlEnumValue("PVP")
 	PVP_ENABLED(1 << 6), // Only for PvP type zones

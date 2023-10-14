@@ -39,7 +39,7 @@ public class SkillUseData extends XMLQuest {
 	protected int endNpc;
 	@XmlElement(name = "skill", required = true)
 	protected List<QuestSkillData> skills;
-	
+
 	@Override
 	public void register(QuestEngine questEngine) {
 		FastMap<List<Integer>, QuestSkillData> questSkills = new FastMap<List<Integer>, QuestSkillData>();

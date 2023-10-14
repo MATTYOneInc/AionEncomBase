@@ -17,28 +17,30 @@
 package com.aionemu.gameserver.model.instance.playerreward;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class SmolderingPlayerReward extends InstancePlayerReward
-{
+public class SmolderingPlayerReward extends InstancePlayerReward {
 	private int smolderingKey;
 	private boolean isRewarded = false;
-	
+
 	public SmolderingPlayerReward(Integer object) {
 		super(object);
 	}
-	
+
 	public boolean isRewarded() {
 		return isRewarded;
 	}
+
 	public void setRewarded() {
 		isRewarded = true;
 	}
-	
+
 	public int getSmolderingKey() {
 		return smolderingKey;
 	}
+
 	public void setSmolderingKey(int smolderingKey) {
 		this.smolderingKey = smolderingKey;
 	}

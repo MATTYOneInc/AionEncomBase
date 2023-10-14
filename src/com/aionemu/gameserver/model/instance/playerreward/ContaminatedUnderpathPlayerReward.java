@@ -17,51 +17,57 @@
 package com.aionemu.gameserver.model.instance.playerreward;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
-public class ContaminatedUnderpathPlayerReward extends InstancePlayerReward
-{
+public class ContaminatedUnderpathPlayerReward extends InstancePlayerReward {
 	private int scoreAP;
 	private int contaminatedPremiumRewardBundle;
 	private int contaminatedHighestRewardBundle;
 	private int contaminatedUnderpathSpecialPouch;
 	private boolean isRewarded = false;
-	
+
 	public ContaminatedUnderpathPlayerReward(Integer object) {
 		super(object);
 	}
-	
+
 	public boolean isRewarded() {
 		return isRewarded;
 	}
+
 	public void setRewarded() {
 		isRewarded = true;
 	}
-	
+
 	public int getScoreAP() {
 		return scoreAP;
 	}
+
 	public void setScoreAP(int ap) {
 		this.scoreAP = ap;
 	}
-	
+
 	public int getContaminatedPremiumRewardBundle() {
 		return contaminatedPremiumRewardBundle;
 	}
+
 	public int getContaminatedHighestRewardBundle() {
 		return contaminatedHighestRewardBundle;
 	}
+
 	public int getContaminatedUnderpathSpecialPouch() {
 		return contaminatedUnderpathSpecialPouch;
 	}
-	
+
 	public void setContaminatedPremiumRewardBundle(int contaminatedPremiumRewardBundle) {
 		this.contaminatedPremiumRewardBundle = contaminatedPremiumRewardBundle;
 	}
+
 	public void setContaminatedHighestRewardBundle(int contaminatedHighestRewardBundle) {
 		this.contaminatedHighestRewardBundle = contaminatedHighestRewardBundle;
 	}
+
 	public void setContaminatedUnderpathSpecialPouch(int contaminatedUnderpathSpecialPouch) {
 		this.contaminatedUnderpathSpecialPouch = contaminatedUnderpathSpecialPouch;
 	}

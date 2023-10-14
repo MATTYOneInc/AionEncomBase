@@ -36,16 +36,18 @@ public class CM_REMOVE_ALTERED_STATE extends AionClientPacket {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see com.aionemu.commons.network.packet.BaseClientPacket#readImpl()
 	 */
 	@Override
 	protected void readImpl() {
 		skillid = readH();
-		readC();//4.3
+		readC();// 4.3
 	}
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see com.aionemu.commons.network.packet.BaseClientPacket#runImpl()
 	 */
 	@Override

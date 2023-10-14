@@ -23,8 +23,7 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_MESSAGE extends AionServerPacket
-{
+public class SM_MESSAGE extends AionServerPacket {
 	private Player player;
 	private int senderObjectId;
 	private String message;
@@ -58,51 +57,52 @@ public class SM_MESSAGE extends AionServerPacket
 	protected void writeImpl(AionConnection con) {
 		boolean canRead = true;
 		if (race != null) {
-			canRead = chatType.isSysMsg() || CustomConfig.SPEAKING_BETWEEN_FACTIONS || player.getAccessLevel() > 0 || (con.getActivePlayer() != null && con.getActivePlayer().getAccessLevel() > 0);
+			canRead = chatType.isSysMsg() || CustomConfig.SPEAKING_BETWEEN_FACTIONS || player.getAccessLevel() > 0
+					|| (con.getActivePlayer() != null && con.getActivePlayer().getAccessLevel() > 0);
 		}
 		writeC(chatType.toInteger());
 		writeC(canRead ? 0 : race.getRaceId() + 1);
 		writeD(senderObjectId);
 		switch (chatType) {
-			case NORMAL:
-			case GOLDEN_YELLOW:
-			case WHITE:
-			case YELLOW:
-			case BRIGHT_YELLOW:
-			case WHITE_CENTER:
-			case YELLOW_CENTER:
-			case BRIGHT_YELLOW_CENTER:
-				writeH(0x00);
-				writeS(message);
-				break;
-			case SHOUT:
-				writeS(senderName);
-				writeS(message);
-				writeF(x);
-				writeF(y);
-				writeF(z);
-				break;
-			case ALLIANCE:
-			case GROUP:
-			case GROUP_LEADER:
-			case LEGION:
-			case WHISPER:
-			case LEAGUE:
-			case LEAGUE_ALERT:
-			case CH1:
-			case CH2:
-			case CH3:
-			case CH4:
-			case CH5:
-			case CH6:
-			case CH7:
-			case CH8:
-			case CH9:
-			case CH10:
-			case COMMAND:
-			case ANNOUNCE:
-				writeS(senderName);
-				writeS(message);
+		case NORMAL:
+		case GOLDEN_YELLOW:
+		case WHITE:
+		case YELLOW:
+		case BRIGHT_YELLOW:
+		case WHITE_CENTER:
+		case YELLOW_CENTER:
+		case BRIGHT_YELLOW_CENTER:
+			writeH(0x00);
+			writeS(message);
+			break;
+		case SHOUT:
+			writeS(senderName);
+			writeS(message);
+			writeF(x);
+			writeF(y);
+			writeF(z);
+			break;
+		case ALLIANCE:
+		case GROUP:
+		case GROUP_LEADER:
+		case LEGION:
+		case WHISPER:
+		case LEAGUE:
+		case LEAGUE_ALERT:
+		case CH1:
+		case CH2:
+		case CH3:
+		case CH4:
+		case CH5:
+		case CH6:
+		case CH7:
+		case CH8:
+		case CH9:
+		case CH10:
+		case COMMAND:
+		case ANNOUNCE:
+			writeS(senderName);
+			writeS(message);
 			break;
 		}
 	}

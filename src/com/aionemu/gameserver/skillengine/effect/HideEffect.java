@@ -134,7 +134,8 @@ public class HideEffect extends BuffEffect {
 				}
 			});
 			/**
-			 * for player adding: Remove Hide when using any item action Remove hide when requesting dialog to any npc
+			 * for player adding: Remove Hide when using any item action Remove hide when
+			 * requesting dialog to any npc
 			 */
 			effected.getObserveController().attach(new ActionObserver(ObserverType.ITEMUSE) {
 
@@ -151,8 +152,7 @@ public class HideEffect extends BuffEffect {
 				}
 
 			});
-		}
-		else if (type == 0) {
+		} else if (type == 0) {
 			effect.setCancelOnDmg(true);
 
 			effected.getObserveController().attach(new ActionObserver(ObserverType.ATTACK) {

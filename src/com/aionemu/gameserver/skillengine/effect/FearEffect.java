@@ -58,15 +58,15 @@ public class FearEffect extends EffectTemplate {
 	}
 
 	@Override
-    public void applyEffect(Effect effect) {
-        effect.getEffected().getEffectController().removeHideEffects();
-        effect.addToEffectedController();
-    }
+	public void applyEffect(Effect effect) {
+		effect.getEffected().getEffectController().removeHideEffects();
+		effect.addToEffectedController();
+	}
 
 	@Override
-    public void calculate(Effect effect) {
-        super.calculate(effect, StatEnum.FEAR_RESISTANCE, null);
-    }
+	public void calculate(Effect effect) {
+		super.calculate(effect, StatEnum.FEAR_RESISTANCE, null);
+	}
 
 	@Override
 	public void startEffect(final Effect effect) {
@@ -81,11 +81,13 @@ public class FearEffect extends EffectTemplate {
 			((NpcAI2) effected.getAi2()).setStateIfNot(AIState.FEAR);
 		}
 		if (GeoDataConfig.FEAR_ENABLE) {
-			ScheduledFuture<?> fearTask = ThreadPoolManager.getInstance().scheduleAtFixedRate(new FearTask(effector, effected), 0, 1000);
+			ScheduledFuture<?> fearTask = ThreadPoolManager.getInstance()
+					.scheduleAtFixedRate(new FearTask(effector, effected), 0, 1000);
 			effect.setPeriodicTask(fearTask, position);
 		}
 
-		// resistchance of fear effect to damage, if value is lower than 100, fear can be interrupted bz damage
+		// resistchance of fear effect to damage, if value is lower than 100, fear can
+		// be interrupted bz damage
 		// example skillId: 540 Terrible howl
 		if (resistchance < 100) {
 			ActionObserver observer = new ActionObserver(ObserverType.ATTACKED) {
@@ -113,7 +115,8 @@ public class FearEffect extends EffectTemplate {
 		if (effect.getEffected() instanceof Npc) {
 			((NpcAI2) effect.getEffected().getAi2()).onCreatureEvent(AIEventType.ATTACK, effect.getEffector());
 		}
-		PacketSendUtility.broadcastPacketAndReceive(effect.getEffected(), new SM_TARGET_IMMOBILIZE(effect.getEffected()));
+		PacketSendUtility.broadcastPacketAndReceive(effect.getEffected(),
+				new SM_TARGET_IMMOBILIZE(effect.getEffected()));
 
 		if (resistchance < 100) {
 			ActionObserver observer = effect.getActionObserver(position);
@@ -147,16 +150,18 @@ public class FearEffect extends EffectTemplate {
 				float x1 = (float) (Math.cos(radian) * maxDistance);
 				float y1 = (float) (Math.sin(radian) * maxDistance);
 				byte intentions = (byte) (CollisionIntention.PHYSICAL.getId() | CollisionIntention.DOOR.getId());
-				Vector3f closestCollision = GeoService.getInstance().getClosestCollision(effected, x+x1, y+y1, effected.getZ(), true, intentions);
+				Vector3f closestCollision = GeoService.getInstance().getClosestCollision(effected, x + x1, y + y1,
+						effected.getZ(), true, intentions);
 				if (effected.isFlying()) {
 					closestCollision.setZ(effected.getZ());
 				}
 				if (effected instanceof Npc) {
 					((Npc) effected).getMoveController().resetMove();
-					((Npc) effected).getMoveController().moveToPoint(closestCollision.getX(), closestCollision.getY(), closestCollision.getZ());
-				}
-				else {
-					effected.getMoveController().setNewDirection(closestCollision.getX(), closestCollision.getY(), closestCollision.getZ(), moveAwayHeading);
+					((Npc) effected).getMoveController().moveToPoint(closestCollision.getX(), closestCollision.getY(),
+							closestCollision.getZ());
+				} else {
+					effected.getMoveController().setNewDirection(closestCollision.getX(), closestCollision.getY(),
+							closestCollision.getZ(), moveAwayHeading);
 					effected.getMoveController().startMovingToDestination();
 				}
 			}

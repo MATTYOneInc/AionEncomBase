@@ -43,7 +43,7 @@ public class HousePart {
 
 	@XmlAttribute(required = true)
 	protected PartType type;
-	
+
 	@XmlAttribute(required = true)
 	protected ItemQuality quality;
 
@@ -59,14 +59,14 @@ public class HousePart {
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		if (buildingTags == null) {
 			return;
-        }
+		}
 		for (String tag : buildingTags) {
 			tagsSet.add(tag);
-        }
+		}
 		buildingTags.clear();
 		buildingTags = null;
 	}
-	
+
 	public PartType getType() {
 		return type;
 	}
@@ -82,7 +82,7 @@ public class HousePart {
 	public int getId() {
 		return id;
 	}
-	
+
 	public Set<String> getTags() {
 		return tagsSet;
 	}

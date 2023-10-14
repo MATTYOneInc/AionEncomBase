@@ -48,7 +48,7 @@ public class SM_LEGION_SEND_EMBLEM extends AionServerPacket {
 	 * @param emblemDataSize
 	 */
 	public SM_LEGION_SEND_EMBLEM(int legionId, int emblemId, int color_r, int color_g, int color_b, String legionName,
-		LegionEmblemType emblemType, int emblemDataSize) {
+			LegionEmblemType emblemType, int emblemDataSize) {
 		this.legionId = legionId;
 		this.emblemId = emblemId;
 		this.color_r = color_r;

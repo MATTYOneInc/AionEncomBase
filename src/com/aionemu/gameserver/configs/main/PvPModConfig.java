@@ -22,8 +22,7 @@ import com.aionemu.commons.configuration.Property;
  * Created by wanke on 12/02/2017.
  */
 
-public class PvPModConfig
-{
-    @Property(key = "gameserver.pvp.mod.bg.enabled", defaultValue = "true")
-    public static boolean BG_ENABLED;
+public class PvPModConfig {
+	@Property(key = "gameserver.pvp.mod.bg.enabled", defaultValue = "true")
+	public static boolean BG_ENABLED;
 }

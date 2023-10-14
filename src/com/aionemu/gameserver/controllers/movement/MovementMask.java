@@ -16,8 +16,7 @@
  */
 package com.aionemu.gameserver.controllers.movement;
 
-public class MovementMask
-{
+public class MovementMask {
 	public static final byte IMMEDIATE = (byte) 0x00;
 	public static final byte GLIDE = (byte) 0x04;
 	public static final byte FALL = (byte) 0x08;

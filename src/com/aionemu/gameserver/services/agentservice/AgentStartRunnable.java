@@ -31,43 +31,42 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
  * @author Rinzler (Encom)
  */
 
-public class AgentStartRunnable implements Runnable
-{
+public class AgentStartRunnable implements Runnable {
 	private final int id;
-	
+
 	public AgentStartRunnable(int id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public void run() {
-		//The Agent battle will start in 10 minutes.
+		// The Agent battle will start in 10 minutes.
 		AgentService.getInstance().agentBattleMsg1(id);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-			    //The Agent battle will start in 5 minutes.
+				// The Agent battle will start in 5 minutes.
 				AgentService.getInstance().agentBattleMsg2(id);
 			}
 		}, 300000);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
 			@Override
 			public void run() {
-			    Map<Integer, AgentLocation> locations = AgentService.getInstance().getAgentLocations();
-				for (final AgentLocation loc: locations.values()) {
+				Map<Integer, AgentLocation> locations = AgentService.getInstance().getAgentLocations();
+				for (final AgentLocation loc : locations.values()) {
 					if (loc.getId() == id) {
-						//Governor Sunayaka 5.8
+						// Governor Sunayaka 5.8
 						AgentService.getInstance().governorSunayakaMsg(id);
-						//Berserker Sunayaka 5.8
+						// Berserker Sunayaka 5.8
 						AgentService.getInstance().berserkerSunayakaMsg(id);
-						//Agent Fight 4.7
+						// Agent Fight 4.7
 						AgentService.getInstance().startAgentFight(loc.getId());
 					}
 				}
 				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
 					@Override
 					public void visit(Player player) {
-						//An Agent has spawned.
+						// An Agent has spawned.
 						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_GodElite);
 					}
 				});

@@ -25,13 +25,12 @@ import com.aionemu.gameserver.model.stats.calc.Stat2;
 import com.aionemu.gameserver.model.stats.container.StatEnum;
 import com.aionemu.gameserver.model.templates.item.ArmorType;
 
-public class StatEnchantFunction extends StatAddFunction
-{
+public class StatEnchantFunction extends StatAddFunction {
 	private static final Logger log = LoggerFactory.getLogger(StatEnchantFunction.class);
-	
+
 	private Item item;
 	private int point;
-	
+
 	public StatEnchantFunction(Item owner, StatEnum stat, int point) {
 		this.stat = stat;
 		this.item = owner;
@@ -44,39 +43,49 @@ public class StatEnchantFunction extends StatAddFunction
 	}
 
 	@Override
-    public void apply(Stat2 stat) {
-        if (!item.isEquipped()) {
-            return;
-        }
-        int enchantLvl = this.item.getEnchantLevel();
-        if ((this.item.getItemTemplate().isAccessory())) {
-            enchantLvl = this.item.getAuthorize();
-        } if (enchantLvl == 0) {
-            return;
-        } if ((item.getEquipmentSlot() & ItemSlot.MAIN_OFF_HAND.getSlotIdMask()) != 0 || (item.getEquipmentSlot() & ItemSlot.SUB_OFF_HAND.getSlotIdMask()) != 0) {
-            return;
-        } if (item.getItemTemplate().getArmorType() == ArmorType.PLUME) {
-        	stat.addToBonus(getEnchantAdditionModifier(enchantLvl, stat));
-        } else {
-        	stat.addToBase(getEnchantAdditionModifier(enchantLvl, stat));
-        }
-    }
+	public void apply(Stat2 stat) {
+		if (!item.isEquipped()) {
+			return;
+		}
+		int enchantLvl = this.item.getEnchantLevel();
+		if ((this.item.getItemTemplate().isAccessory())) {
+			enchantLvl = this.item.getAuthorize();
+		}
+		if (enchantLvl == 0) {
+			return;
+		}
+		if ((item.getEquipmentSlot() & ItemSlot.MAIN_OFF_HAND.getSlotIdMask()) != 0
+				|| (item.getEquipmentSlot() & ItemSlot.SUB_OFF_HAND.getSlotIdMask()) != 0) {
+			return;
+		}
+		if (item.getItemTemplate().getArmorType() == ArmorType.PLUME) {
+			stat.addToBonus(getEnchantAdditionModifier(enchantLvl, stat));
+		} else {
+			stat.addToBase(getEnchantAdditionModifier(enchantLvl, stat));
+		}
+	}
 
 	private int getEnchantAdditionModifier(int enchantLvl, Stat2 stat) {
-        if (item.getItemTemplate().isWeapon()) {
-            return getWeaponModifiers(enchantLvl);
-        } if (this.item.getItemTemplate().isAccessory() && !this.item.getItemTemplate().isPlume() && !this.item.getItemTemplate().isBracelet()) {
-            if (this.point == 0) {
-                return getAccessoryModifiers(enchantLvl);
-            }
-            return this.point;
-        } if (this.item.getItemTemplate().isArmor() || this.item.getItemTemplate().isPlume() && !this.item.getItemTemplate().isBracelet()) {
-            return getArmorModifiers(enchantLvl, stat);
-        } if (this.item.getItemTemplate().isArmor() || this.item.getItemTemplate().isBracelet() && !this.item.getItemTemplate().isPlume()) {
+		if (item.getItemTemplate().isWeapon()) {
+			return getWeaponModifiers(enchantLvl);
+		}
+		if (this.item.getItemTemplate().isAccessory() && !this.item.getItemTemplate().isPlume()
+				&& !this.item.getItemTemplate().isBracelet()) {
+			if (this.point == 0) {
+				return getAccessoryModifiers(enchantLvl);
+			}
+			return this.point;
+		}
+		if (this.item.getItemTemplate().isArmor()
+				|| this.item.getItemTemplate().isPlume() && !this.item.getItemTemplate().isBracelet()) {
+			return getArmorModifiers(enchantLvl, stat);
+		}
+		if (this.item.getItemTemplate().isArmor()
+				|| this.item.getItemTemplate().isBracelet() && !this.item.getItemTemplate().isPlume()) {
 			return getBraceleteModifiers(enchantLvl);
 		}
-        return 0;
-    }
+		return 0;
+	}
 
 	private int getWeaponModifiers(int enchantLvl) {
 		switch (stat) {
@@ -130,39 +139,39 @@ public class StatEnchantFunction extends StatAddFunction
 
 	private int getAccessoryModifiers(int autorizeLvl) {
 		switch (this.stat) {
-		case PVP_ATTACK_RATIO: 
+		case PVP_ATTACK_RATIO:
 			switch (autorizeLvl) {
-			case 1: 
+			case 1:
 				return 2;
-			case 2: 
+			case 2:
 				return 7;
-			case 3: 
+			case 3:
 				return 12;
-			case 4: 
+			case 4:
 				return 17;
-			case 5: 
+			case 5:
 				return 25;
-			case 6: 
+			case 6:
 				return 60;
-			case 7: 
+			case 7:
 				return 75;
 			}
 			return 0;
-		case PVP_DEFEND_RATIO: 
+		case PVP_DEFEND_RATIO:
 			switch (autorizeLvl) {
-			case 1: 
+			case 1:
 				return 3;
-			case 2: 
+			case 2:
 				return 9;
-			case 3: 
+			case 3:
 				return 15;
-			case 4: 
+			case 4:
 				return 21;
-			case 5: 
+			case 5:
 				return 31;
-			case 6: 
+			case 6:
 				return 41;
-			case 7: 
+			case 7:
 				return 55;
 			}
 			return 0;
@@ -172,50 +181,50 @@ public class StatEnchantFunction extends StatAddFunction
 
 	private int getBraceleteModifiers(int autorizeLvl) {
 		switch (this.stat) {
-			case PVP_ATTACK_RATIO:
-				switch (autorizeLvl) {
-					case 1:
-					case 2:
-					case 3:
-					case 4:
-					case 5:
-						return 0;
-					case 6:
-						return 5;
-					case 7:
-						return 5;
-					case 8:
-						return 10;
-					case 9:
-						return 15;
-					case 10:
-						return 20;
-				}
+		case PVP_ATTACK_RATIO:
+			switch (autorizeLvl) {
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
 				return 0;
-			case PVP_DEFEND_RATIO:
-				switch (autorizeLvl) {
-					case 1:
-						return 3;
-					case 2:
-						return 7;
-					case 3:
-						return 11;
-					case 4:
-						return 16;
-					case 5:
-						return 21;
-					case 6:
-						return 27;
-					case 7:
-						return 33;
-					case 8:
-						return 40;
-					case 9:
-						return 48;
-					case 10:
-						return 57;
-				}
-				return 0;
+			case 6:
+				return 5;
+			case 7:
+				return 5;
+			case 8:
+				return 10;
+			case 9:
+				return 15;
+			case 10:
+				return 20;
+			}
+			return 0;
+		case PVP_DEFEND_RATIO:
+			switch (autorizeLvl) {
+			case 1:
+				return 3;
+			case 2:
+				return 7;
+			case 3:
+				return 11;
+			case 4:
+				return 16;
+			case 5:
+				return 21;
+			case 6:
+				return 27;
+			case 7:
+				return 33;
+			case 8:
+				return 40;
+			case 9:
+				return 48;
+			case 10:
+				return 57;
+			}
+			return 0;
 		}
 		return 0;
 	}
@@ -250,7 +259,7 @@ public class StatEnchantFunction extends StatAddFunction
 				case MAGICAL_DEFEND:
 					return 2 * enchantLvl;
 				}
-			    return 0;
+				return 0;
 			case 1 << 12:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
@@ -460,20 +469,20 @@ public class StatEnchantFunction extends StatAddFunction
 
 		case PLUME:
 			switch (this.stat) {
-			    case MAXHP: 
-				    return 150 * enchantLvl;
-			    case PHYSICAL_ATTACK: 
-				    return 4 * enchantLvl;
-			    case BOOST_MAGICAL_SKILL: 
-				    return 20 * enchantLvl;
-			    case PHYSICAL_CRITICAL:
-				    return 12 * enchantLvl;
-				case PHYSICAL_ACCURACY:
-				    return 16 * enchantLvl;
-			    case MAGICAL_ACCURACY:
-				    return 8 * enchantLvl;
-				case MAGICAL_CRITICAL:
-				    return 8 * enchantLvl;
+			case MAXHP:
+				return 150 * enchantLvl;
+			case PHYSICAL_ATTACK:
+				return 4 * enchantLvl;
+			case BOOST_MAGICAL_SKILL:
+				return 20 * enchantLvl;
+			case PHYSICAL_CRITICAL:
+				return 12 * enchantLvl;
+			case PHYSICAL_ACCURACY:
+				return 16 * enchantLvl;
+			case MAGICAL_ACCURACY:
+				return 8 * enchantLvl;
+			case MAGICAL_CRITICAL:
+				return 8 * enchantLvl;
 			}
 			return 0;
 		/**
@@ -481,18 +490,18 @@ public class StatEnchantFunction extends StatAddFunction
 		 */
 		case WING:
 			switch (this.stat) {
-				case PHYSICAL_ATTACK:
-				    return 1 * enchantLvl;
-				case BOOST_MAGICAL_SKILL:
-				    return 4 * enchantLvl;
-				case MAXHP:
-				    return 20 * enchantLvl;
-				case PHYSICAL_CRITICAL_RESIST:
-				    return 2 * enchantLvl;
-				case FLY_TIME:
-				    return 10 * enchantLvl;
-				case MAGICAL_CRITICAL_RESIST:
-				    return 1 * enchantLvl;
+			case PHYSICAL_ATTACK:
+				return 1 * enchantLvl;
+			case BOOST_MAGICAL_SKILL:
+				return 4 * enchantLvl;
+			case MAXHP:
+				return 20 * enchantLvl;
+			case PHYSICAL_CRITICAL_RESIST:
+				return 2 * enchantLvl;
+			case FLY_TIME:
+				return 10 * enchantLvl;
+			case MAGICAL_CRITICAL_RESIST:
+				return 1 * enchantLvl;
 			}
 			return 0;
 		}

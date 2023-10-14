@@ -30,52 +30,51 @@ import javolution.util.FastMap;
  * @author Rinzler (Encom)
  */
 
-public class ZorshivDredgionLocation
-{
+public class ZorshivDredgionLocation {
 	protected int id;
 	protected boolean isActive;
 	protected ZorshivDredgionTemplate template;
 	protected ZorshivDredgion<ZorshivDredgionLocation> activeZorshivDredgion;
 	protected FastMap<Integer, Player> players = new FastMap<Integer, Player>();
 	private final List<VisibleObject> spawned = new ArrayList<VisibleObject>();
-	
+
 	public ZorshivDredgionLocation() {
 	}
-	
+
 	public ZorshivDredgionLocation(ZorshivDredgionTemplate template) {
 		this.template = template;
 		this.id = template.getId();
 	}
-	
+
 	public boolean isActive() {
 		return isActive;
 	}
-	
+
 	public void setActiveZorshivDredgion(ZorshivDredgion<ZorshivDredgionLocation> zorshivDredgion) {
 		isActive = zorshivDredgion != null;
 		this.activeZorshivDredgion = zorshivDredgion;
 	}
-	
+
 	public ZorshivDredgion<ZorshivDredgionLocation> getActiveZorshivDredgion() {
 		return activeZorshivDredgion;
 	}
-	
+
 	public final ZorshivDredgionTemplate getTemplate() {
 		return template;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public String getName() {
 		return template.getName();
 	}
-	
+
 	public List<VisibleObject> getSpawned() {
 		return spawned;
 	}
-	
+
 	public FastMap<Integer, Player> getPlayers() {
 		return players;
 	}

@@ -32,9 +32,10 @@ import com.aionemu.gameserver.model.items.storage.Storage;
  * <ul>
  * <li>account id</li>
  * <li>account name</li>
- * <li> {@link AccountTime account time info}</li>
- * <li>a list of {@link PlayerAccountData} objects each of which keeping information about player that must be available
- * on character selection screen.</li>
+ * <li>{@link AccountTime account time info}</li>
+ * <li>a list of {@link PlayerAccountData} objects each of which keeping
+ * information about player that must be available on character selection
+ * screen.</li>
  * </ul>
  * 
  * @author SoulKeeper
@@ -104,8 +105,7 @@ public class Account implements Iterable<PlayerAccountData> {
 	}
 
 	/**
-	 * @param accessLevel
-	 *          the accessLevel to set
+	 * @param accessLevel the accessLevel to set
 	 */
 	public void setAccessLevel(byte accessLevel) {
 		this.accessLevel = accessLevel;
@@ -119,8 +119,7 @@ public class Account implements Iterable<PlayerAccountData> {
 	}
 
 	/**
-	 * @param membership
-	 *          the membership to set
+	 * @param membership the membership to set
 	 */
 	public void setMembership(byte membership) {
 		this.membership = membership;
@@ -159,11 +158,11 @@ public class Account implements Iterable<PlayerAccountData> {
 	public void addPlayerAccountData(PlayerAccountData accPlData) {
 		players.put(accPlData.getPlayerCommonData().getPlayerObjId(), accPlData);
 		switch (accPlData.getPlayerCommonData().getRace()) {
-			case ASMODIANS:
-				numberOfAsmos++;
-				break;
-			case ELYOS:
-				numberOfElyos++;
+		case ASMODIANS:
+			numberOfAsmos++;
+			break;
+		case ELYOS:
+			numberOfElyos++;
 			break;
 		}
 	}
@@ -176,8 +175,7 @@ public class Account implements Iterable<PlayerAccountData> {
 	}
 
 	/**
-	 * @param accountWarehouse
-	 *          the accountWarehouse to set
+	 * @param accountWarehouse the accountWarehouse to set
 	 */
 	public void setAccountWarehouse(Storage accountWarehouse) {
 		this.accountWarehouse = accountWarehouse;
@@ -212,8 +210,7 @@ public class Account implements Iterable<PlayerAccountData> {
 				Timestamp t2 = y.getPlayerCommonData().getLastOnline();
 				if (t2 == null) {
 					return 1;
-				}
-				else if (t1 == null) {
+				} else if (t1 == null) {
 					return -1;
 				}
 				return y.getPlayerCommonData().getLastOnline().compareTo(x.getPlayerCommonData().getLastOnline());
@@ -232,22 +229,22 @@ public class Account implements Iterable<PlayerAccountData> {
 
 	public int getNumberOf(Race race) {
 		switch (race) {
-			case ASMODIANS:
-				return numberOfAsmos;
-			case ELYOS:
-				return numberOfElyos;
+		case ASMODIANS:
+			return numberOfAsmos;
+		case ELYOS:
+			return numberOfElyos;
 		}
 		return 0;
 	}
 
 	public void decrementCountOf(Race race) {
 		switch (race) {
-			case ASMODIANS:
-				numberOfAsmos--;
-				break;
-			case ELYOS:
-				numberOfElyos--;
-				break;
+		case ASMODIANS:
+			numberOfAsmos--;
+			break;
+		case ELYOS:
+			numberOfElyos--;
+			break;
 		}
 	}
 
@@ -258,7 +255,7 @@ public class Account implements Iterable<PlayerAccountData> {
 	public long getToll() {
 		return tollCount;
 	}
-	
+
 	public void setLuna(long luna) {
 		lunaCount = luna;
 	}

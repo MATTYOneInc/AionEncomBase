@@ -23,23 +23,18 @@ import javax.xml.bind.annotation.XmlType;
  * @author Ranastic
  */
 
-@XmlType(name="WrappingUseTarget")
+@XmlType(name = "WrappingUseTarget")
 @XmlEnum
-public enum WrappingUseTarget
-{
-	ALL,
-	ARMOR,
-	OTHER,
-	WEAPON,
-	ACCESSORY,
-	EQUIPMENT;
-	
-	private WrappingUseTarget() {}
-	
+public enum WrappingUseTarget {
+	ALL, ARMOR, OTHER, WEAPON, ACCESSORY, EQUIPMENT;
+
+	private WrappingUseTarget() {
+	}
+
 	public String value() {
 		return name();
 	}
-	
+
 	public static WrappingUseTarget fromValue(String v) {
 		return valueOf(v);
 	}

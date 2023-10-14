@@ -34,8 +34,7 @@ public interface InstanceHandler {
 	 * Executed during instance creation.<br>
 	 * This method will run after spawns are loaded
 	 * 
-	 * @param instance
-	 *          created
+	 * @param instance created
 	 */
 	void onInstanceCreate(WorldMapInstance instance);
 

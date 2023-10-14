@@ -58,22 +58,25 @@ public class PostboxObject extends HouseObject<HousingPostbox> {
 		};
 		player.getObserveController().attach(observer);
 
-		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_HOUSING_OBJECT_USE(getObjectTemplate().getNameId()));
-		player.getController().addTask(TaskId.HOUSE_OBJECT_USE, ThreadPoolManager.getInstance().schedule(new Runnable() {
+		PacketSendUtility.sendPacket(player,
+				SM_SYSTEM_MESSAGE.STR_MSG_HOUSING_OBJECT_USE(getObjectTemplate().getNameId()));
+		player.getController().addTask(TaskId.HOUSE_OBJECT_USE,
+				ThreadPoolManager.getInstance().schedule(new Runnable() {
 
-			@Override
-			public void run() {
-				try {
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(getObjectId(), DialogPage.MAIL.id()));
-					player.getMailbox().sendMailList(false);
-					PacketSendUtility.sendPacket(player, new SM_OBJECT_USE_UPDATE(player.getObjectId(), 0, 0, PostboxObject.this));
-				}
-				finally {
-					player.getObserveController().removeObserver(observer);
-					usingPlayer.set(null);
-				}
-			}
-		}, 0));
+					@Override
+					public void run() {
+						try {
+							PacketSendUtility.sendPacket(player,
+									new SM_DIALOG_WINDOW(getObjectId(), DialogPage.MAIL.id()));
+							player.getMailbox().sendMailList(false);
+							PacketSendUtility.sendPacket(player,
+									new SM_OBJECT_USE_UPDATE(player.getObjectId(), 0, 0, PostboxObject.this));
+						} finally {
+							player.getObserveController().removeObserver(observer);
+							usingPlayer.set(null);
+						}
+					}
+				}, 0));
 	}
 
 	@Override

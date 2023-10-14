@@ -30,52 +30,52 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.TownService;
 
-public class SM_HOUSE_OWNER_INFO extends AionServerPacket
-{
+public class SM_HOUSE_OWNER_INFO extends AionServerPacket {
 	private Player player;
 	private House activeHouse;
-	
+
 	public SM_HOUSE_OWNER_INFO(Player player, House activeHouse) {
 		this.player = player;
 		this.activeHouse = activeHouse;
 	}
-	
+
 	@Override
-    protected void writeImpl(AionConnection con) {
-    	if (activeHouse == null) {
-            writeD(0);
-            writeD(player.isBuildingInState(PlayerHouseOwnerFlags.BUY_STUDIO_ALLOWED) ? 355000 : 0);
-        } else {
-            writeD(activeHouse.getAddress().getId());
-            writeD(activeHouse.getBuilding().getId());
-        }
-        writeC(player.getBuildingOwnerStates());
-        int townLevel = 1;
-        if (activeHouse != null && activeHouse.getAddress().getTownId() != 0) {
-            Town town = TownService.getInstance().getTownById(activeHouse.getAddress().getTownId());
-            townLevel = town.getLevel();
-        }
-        writeC(townLevel);
-        if (activeHouse == null || !activeHouse.isFeePaid() || activeHouse.getHouseType() == HouseType.STUDIO) {
-            writeC(0);
-        } else {
-            Timestamp nextPay = activeHouse.getNextPay();
-            float diff;
-            if (nextPay == null) {
-                diff = MaintenanceTask.getInstance().getPeriod();
-            } else {
-                long paytime = activeHouse.getNextPay().getTime();
-                diff = paytime - ((long) MaintenanceTask.getInstance().getRunTime() * 1000);
-            } if (diff < 0) {
-                writeC(0);
-            } else {
-                int weeks = (int) (Math.round(diff / MaintenanceTask.getInstance().getPeriod()));
-                if (DateTime.now().getDayOfWeek() != 7) {
-                    weeks++;
-                }
-                writeC(weeks);
-            }
-        }
+	protected void writeImpl(AionConnection con) {
+		if (activeHouse == null) {
+			writeD(0);
+			writeD(player.isBuildingInState(PlayerHouseOwnerFlags.BUY_STUDIO_ALLOWED) ? 355000 : 0);
+		} else {
+			writeD(activeHouse.getAddress().getId());
+			writeD(activeHouse.getBuilding().getId());
+		}
+		writeC(player.getBuildingOwnerStates());
+		int townLevel = 1;
+		if (activeHouse != null && activeHouse.getAddress().getTownId() != 0) {
+			Town town = TownService.getInstance().getTownById(activeHouse.getAddress().getTownId());
+			townLevel = town.getLevel();
+		}
+		writeC(townLevel);
+		if (activeHouse == null || !activeHouse.isFeePaid() || activeHouse.getHouseType() == HouseType.STUDIO) {
+			writeC(0);
+		} else {
+			Timestamp nextPay = activeHouse.getNextPay();
+			float diff;
+			if (nextPay == null) {
+				diff = MaintenanceTask.getInstance().getPeriod();
+			} else {
+				long paytime = activeHouse.getNextPay().getTime();
+				diff = paytime - ((long) MaintenanceTask.getInstance().getRunTime() * 1000);
+			}
+			if (diff < 0) {
+				writeC(0);
+			} else {
+				int weeks = (int) (Math.round(diff / MaintenanceTask.getInstance().getPeriod()));
+				if (DateTime.now().getDayOfWeek() != 7) {
+					weeks++;
+				}
+				writeC(weeks);
+			}
+		}
 		writeD(0);
 		writeD(0);
 		writeD(0);

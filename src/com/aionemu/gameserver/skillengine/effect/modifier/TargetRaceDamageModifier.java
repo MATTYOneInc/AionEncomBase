@@ -56,13 +56,11 @@ public class TargetRaceDamageModifier extends ActionModifier {
 					return newValue;
 				}
 			}
-		}
-		else if (effected instanceof Npc) {
+		} else if (effected instanceof Npc) {
 			Npc npc = (Npc) effected;
 			if (npc.getObjectTemplate().getRace().toString().equals(skillTargetRace.toString())) {
 				return newValue;
-			}
-			else {
+			} else {
 				return 0;
 			}
 		}
@@ -75,9 +73,9 @@ public class TargetRaceDamageModifier extends ActionModifier {
 		if (effected instanceof Player) {
 			Player player = (Player) effected;
 			Race race = player.getRace();
-			return race == Race.ASMODIANS && skillTargetRace == Race.ASMODIANS || race == Race.ELYOS && skillTargetRace == Race.ELYOS;
-		}
-		else if (effected instanceof Npc) {
+			return race == Race.ASMODIANS && skillTargetRace == Race.ASMODIANS
+					|| race == Race.ELYOS && skillTargetRace == Race.ELYOS;
+		} else if (effected instanceof Npc) {
 			Npc npc = (Npc) effected;
 			Race race = npc.getObjectTemplate().getRace();
 			if (race == null) {

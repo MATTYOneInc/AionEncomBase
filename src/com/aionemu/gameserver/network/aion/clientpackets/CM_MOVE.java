@@ -27,8 +27,7 @@ import com.aionemu.gameserver.taskmanager.tasks.TeamMoveUpdater;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 
-public class CM_MOVE extends AionClientPacket
-{
+public class CM_MOVE extends AionClientPacket {
 	private byte type;
 	private byte heading;
 	private float x;
@@ -46,11 +45,11 @@ public class CM_MOVE extends AionClientPacket
 	private byte glideFlag;
 	private int unk1;
 	private int unk2;
-	
+
 	public CM_MOVE(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
-	
+
 	@Override
 	protected void readImpl() {
 		Player player = getConnection().getActivePlayer();
@@ -75,9 +74,11 @@ public class CM_MOVE extends AionClientPacket
 				y2 = readF();
 				z2 = readF();
 			}
-		} if ((type & MovementMask.GLIDE) == MovementMask.GLIDE) {
+		}
+		if ((type & MovementMask.GLIDE) == MovementMask.GLIDE) {
 			glideFlag = (byte) readC();
-		} if ((type & MovementMask.VEHICLE) == MovementMask.VEHICLE) {
+		}
+		if ((type & MovementMask.VEHICLE) == MovementMask.VEHICLE) {
 			unk1 = readD();
 			unk2 = readD();
 			vehicleX = readF();
@@ -85,7 +86,7 @@ public class CM_MOVE extends AionClientPacket
 			vehicleZ = readF();
 		}
 	}
-	
+
 	@Override
 	protected void runImpl() {
 		Player player = getConnection().getActivePlayer();
@@ -97,7 +98,8 @@ public class CM_MOVE extends AionClientPacket
 		}
 		PlayerMoveController m = player.getMoveController();
 		m.movementMask = type;
-		if (player.getAdminTeleportation() && ((type & MovementMask.STARTMOVE) == MovementMask.STARTMOVE) && ((type & MovementMask.MOUSE) == MovementMask.MOUSE)) {
+		if (player.getAdminTeleportation() && ((type & MovementMask.STARTMOVE) == MovementMask.STARTMOVE)
+				&& ((type & MovementMask.MOUSE) == MovementMask.MOUSE)) {
 			m.setNewDirection(x2, y2, z2);
 			World.getInstance().updatePosition(player, x2, y2, z2, heading);
 			PacketSendUtility.broadcastPacketAndReceive(player, new SM_MOVE(player));
@@ -108,7 +110,8 @@ public class CM_MOVE extends AionClientPacket
 			player.getFlyController().switchToGliding();
 		} else {
 			player.getFlyController().onStopGliding(false);
-		} if (type == 0) {
+		}
+		if (type == 0) {
 			player.getController().onStopMove();
 			player.getFlyController().onStopGliding(false);
 		} else if ((type & MovementMask.STARTMOVE) == MovementMask.STARTMOVE) {
@@ -124,31 +127,36 @@ public class CM_MOVE extends AionClientPacket
 			player.getController().onMove();
 			if ((type & MovementMask.MOUSE) == 0) {
 				speed = player.getGameStats().getMovementSpeedFloat();
-				player.getMoveController().setNewDirection(x + m.vectorX * speed * 1.5f, y + m.vectorY * speed * 1.5f, z + m.vectorZ * speed * 1.5f, heading);
+				player.getMoveController().setNewDirection(x + m.vectorX * speed * 1.5f, y + m.vectorY * speed * 1.5f,
+						z + m.vectorZ * speed * 1.5f, heading);
 			}
-		} if ((type & MovementMask.VEHICLE) == MovementMask.VEHICLE) {
+		}
+		if ((type & MovementMask.VEHICLE) == MovementMask.VEHICLE) {
 			m.unk1 = unk1;
 			m.unk2 = unk2;
 			m.vehicleX = vehicleX;
 			m.vehicleY = vehicleY;
 			m.vehicleZ = vehicleZ;
 		}
-		
+
 		if (!AntiHackService.canMove(player, x, y, z, speed, type)) {
 			return;
 		}
-		
+
 		World.getInstance().updatePosition(player, x, y, z, heading);
 		m.updateLastMove();
 		if (player.isInGroup2() || player.isInAlliance2()) {
 			TeamMoveUpdater.getInstance().startTask(player);
-		} if ((type & MovementMask.STARTMOVE) == MovementMask.STARTMOVE || type == 0) {
+		}
+		if ((type & MovementMask.STARTMOVE) == MovementMask.STARTMOVE || type == 0) {
 			PacketSendUtility.broadcastPacket(player, new SM_MOVE(player));
-		} if ((type & MovementMask.FALL) == MovementMask.FALL) {
+		}
+		if ((type & MovementMask.FALL) == MovementMask.FALL) {
 			m.updateFalling(z);
 		} else {
 			m.stopFalling();
-		} if (type != 0 && player.isProtectionActive()) {
+		}
+		if (type != 0 && player.isProtectionActive()) {
 			player.getController().stopProtectionActiveTask();
 		}
 	}

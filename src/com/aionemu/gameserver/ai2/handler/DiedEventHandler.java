@@ -45,7 +45,7 @@ public class DiedEventHandler {
 
 		if (npcAI.poll(AIQuestion.CAN_SHOUT)) {
 			ShoutEventHandler.onDied(npcAI);
-        }
+		}
 		npcAI.setStateIfNot(AIState.DIED);
 		npcAI.setSubStateIfNot(AISubState.NONE);
 		npcAI.getOwner().getAggroList().clear();

@@ -26,24 +26,23 @@ import com.aionemu.gameserver.model.templates.spawns.basespawns.BaseSpawnTemplat
  * @author Ranastic
  */
 
-public class BaseNpc extends Npc
-{
+public class BaseNpc extends Npc {
 	private int baseId;
-	
+
 	public BaseNpc(int objId, NpcController controller, BaseSpawnTemplate spawnTemplate, NpcTemplate objectTemplate) {
 		super(objId, controller, spawnTemplate, objectTemplate);
 		this.baseId = spawnTemplate.getId();
 	}
-	
+
 	public int getBaseId() {
 		return baseId;
 	}
-	
+
 	@Override
 	public BaseSpawnTemplate getSpawn() {
 		return (BaseSpawnTemplate) super.getSpawn();
 	}
-	
+
 	@Override
 	public boolean isEnemyFrom(Creature creature) {
 		if (creature instanceof BaseNpc) {

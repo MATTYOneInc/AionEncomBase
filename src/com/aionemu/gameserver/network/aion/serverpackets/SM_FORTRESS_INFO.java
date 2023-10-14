@@ -31,9 +31,9 @@ public class SM_FORTRESS_INFO extends AionServerPacket {
 	}
 
 	protected void writeImpl(AionConnection con) {
-		writeD(1);//4.3 protocol changed
+		writeD(1);// 4.3 protocol changed
 		writeD(locationId);
-		writeD(unk);//4.3 protocol changed
+		writeD(unk);// 4.3 protocol changed
 		writeC(teleportStatus ? 1 : 0);
 	}
 }

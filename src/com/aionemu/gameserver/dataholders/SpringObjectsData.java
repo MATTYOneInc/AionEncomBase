@@ -30,29 +30,29 @@ import javax.xml.bind.annotation.XmlType;
 import com.aionemu.gameserver.model.templates.springzones.SpringTemplate;
 
 /****/
-/** Author Rinzler (Encom)
-/****/
+/**
+ * Author Rinzler (Encom) /
+ ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"springObject"})
+@XmlType(name = "", propOrder = { "springObject" })
 @XmlRootElement(name = "spring_objects")
-public class SpringObjectsData
-{
+public class SpringObjectsData {
 	@XmlElement(name = "spring_object")
 	protected List<SpringTemplate> springObject;
-	
+
 	@XmlTransient
 	private List<SpringTemplate> springObjects = new ArrayList<SpringTemplate>();
-	
+
 	void afterUnmarshal(Unmarshaller unmarshaller, Object parent) {
 		for (SpringTemplate template : springObject)
-		springObjects.add(template);
+			springObjects.add(template);
 	}
-	
+
 	public int size() {
 		return springObjects.size();
 	}
-	
+
 	public List<SpringTemplate> getSpringObject() {
 		return springObjects;
 	}

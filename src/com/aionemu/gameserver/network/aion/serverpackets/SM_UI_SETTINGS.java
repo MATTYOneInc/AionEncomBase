@@ -19,16 +19,15 @@ package com.aionemu.gameserver.network.aion.serverpackets;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_UI_SETTINGS extends AionServerPacket
-{
+public class SM_UI_SETTINGS extends AionServerPacket {
 	private byte[] data;
 	private int type;
-	
+
 	public SM_UI_SETTINGS(byte[] data, int type) {
 		this.data = data;
 		this.type = type;
 	}
-	
+
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeC(type);

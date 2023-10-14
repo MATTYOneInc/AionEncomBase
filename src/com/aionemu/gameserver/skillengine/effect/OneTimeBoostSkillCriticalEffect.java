@@ -26,6 +26,7 @@ import com.aionemu.gameserver.controllers.observer.AttackCalcObserver;
 import com.aionemu.gameserver.controllers.observer.AttackerCriticalStatus;
 import com.aionemu.gameserver.controllers.observer.AttackerCriticalStatusObserver;
 import com.aionemu.gameserver.skillengine.model.Effect;
+
 /**
  * @author Sippolo
  */
@@ -46,7 +47,8 @@ public class OneTimeBoostSkillCriticalEffect extends EffectTemplate {
 	public void startEffect(final Effect effect) {
 		super.startEffect(effect);
 
-		AttackerCriticalStatusObserver observer = new AttackerCriticalStatusObserver(AttackStatus.CRITICAL, count, value, percent) {
+		AttackerCriticalStatusObserver observer = new AttackerCriticalStatusObserver(AttackStatus.CRITICAL, count,
+				value, percent) {
 
 			public AttackerCriticalStatus checkAttackerCriticalStatus(AttackStatus stat, boolean isSkill) {
 				if ((stat == status) && (isSkill)) {
@@ -56,8 +58,7 @@ public class OneTimeBoostSkillCriticalEffect extends EffectTemplate {
 						decreaseCount();
 					}
 					acStatus.setResult(true);
-				}
-				else {
+				} else {
 					acStatus.setResult(false);
 				}
 				return acStatus;

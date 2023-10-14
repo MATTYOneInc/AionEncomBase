@@ -25,17 +25,17 @@ import com.aionemu.gameserver.services.NightmareCircusService;
  * @author Rinzler (Encom)
  */
 
-public class CircusStartRunnable implements Runnable
-{
+public class CircusStartRunnable implements Runnable {
 	private final int id;
-	
+
 	public CircusStartRunnable(int id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public void run() {
-		Map<Integer, NightmareCircusLocation> locations = NightmareCircusService.getInstance().getNightmareCircusLocations();
+		Map<Integer, NightmareCircusLocation> locations = NightmareCircusService.getInstance()
+				.getNightmareCircusLocations();
 		for (final NightmareCircusLocation loc : locations.values()) {
 			if (loc.getId() == id) {
 				NightmareCircusService.getInstance().startNightmareCircus(loc.getId());

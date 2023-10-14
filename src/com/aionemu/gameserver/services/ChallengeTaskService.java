@@ -49,38 +49,37 @@ import com.aionemu.gameserver.world.World;
 
 import javolution.util.FastMap;
 
-public class ChallengeTaskService
-{
+public class ChallengeTaskService {
 	private static final Logger log = LoggerFactory.getLogger(ChallengeTaskService.class);
 	private Map<Integer, Map<Integer, ChallengeTask>> cityTasks;
 	private Map<Integer, Map<Integer, ChallengeTask>> legionTasks;
-	
+
 	private static class SingletonHolder {
 		protected static final ChallengeTaskService instance = new ChallengeTaskService();
 	}
-	
+
 	public static final ChallengeTaskService getInstance() {
 		return SingletonHolder.instance;
 	}
-	
+
 	private ChallengeTaskService() {
 		cityTasks = new FastMap<Integer, Map<Integer, ChallengeTask>>().shared();
 		legionTasks = new FastMap<Integer, Map<Integer, ChallengeTask>>().shared();
 		log.info("ChallengeTaskService initialized.");
 	}
-	
+
 	public void showTaskList(Player player, ChallengeType challengeType, int ownerId) {
 		if (CustomConfig.CHALLENGE_TASKS_ENABLED) {
 			int ownerLevel = 0;
 			switch (challengeType) {
-				case LEGION:
-					ownerLevel = player.getLegion().getLegionLevel();
+			case LEGION:
+				ownerLevel = player.getLegion().getLegionLevel();
 				break;
-				case TOWN:
-					ownerLevel = TownService.getInstance().getTownById(ownerId).getLevel();
+			case TOWN:
+				ownerLevel = TownService.getInstance().getTownById(ownerId).getLevel();
 				break;
-				default:
-					break;
+			default:
+				break;
 			}
 			List<ChallengeTask> availableTasks = buildTaskList(player, challengeType, ownerId, ownerLevel);
 			PacketSendUtility.sendPacket(player, new SM_CHALLENGE_LIST(2, ownerId, challengeType, availableTasks));
@@ -89,13 +88,12 @@ public class ChallengeTaskService
 			}
 		}
 	}
-	
+
 	private List<ChallengeTask> buildTaskList(Player player, ChallengeType challengeType, int ownerId, int ownerLevel) {
 		Map<Integer, Map<Integer, ChallengeTask>> taskMap = null;
 		if (challengeType == ChallengeType.LEGION) {
 			taskMap = legionTasks;
-		}
-		else if (challengeType == ChallengeType.TOWN) {
+		} else if (challengeType == ChallengeType.TOWN) {
 			taskMap = cityTasks;
 		}
 		int playerTownId = TownService.getInstance().getTownResidence(player);
@@ -107,8 +105,7 @@ public class ChallengeTaskService
 		for (ChallengeTask ct : taskMap.get(ownerId).values()) {
 			if (ct.getTemplate().isRepeatable()) {
 				availableTasks.add(ct);
-			}
-			else if (!ct.isCompleted()) {
+			} else if (!ct.isCompleted()) {
 				availableTasks.add(ct);
 			}
 		}
@@ -118,7 +115,8 @@ public class ChallengeTaskService
 					if (ownerLevel >= template.getMinLevel() && ownerLevel <= template.getMaxLevel()) {
 						if (template.isTownResidence() && playerTownId != ownerId) {
 							continue;
-						} if (template.getPrevTask() == null) {
+						}
+						if (template.getPrevTask() == null) {
 							ChallengeTask task = new ChallengeTask(ownerId, template);
 							taskMap.get(ownerId).put(task.getTaskId(), task);
 							DAOManager.getDAO(ChallengeTasksDAO.class).storeTask(task);
@@ -142,19 +140,19 @@ public class ChallengeTaskService
 		}
 		return availableTasks;
 	}
-	
+
 	public void onChallengeQuestFinish(Player player, int questId) {
 		ChallengeTaskTemplate taskTemplate = DataManager.CHALLENGE_DATA.getTaskByQuestId(questId);
 		switch (taskTemplate.getType()) {
-			case TOWN:
-				onCityTaskFinish(player, taskTemplate, questId);
+		case TOWN:
+			onCityTaskFinish(player, taskTemplate, questId);
 			break;
-			case LEGION:
-				onLegionTaskFinish(player, taskTemplate, questId);
+		case LEGION:
+			onLegionTaskFinish(player, taskTemplate, questId);
 			break;
 		}
 	}
-	
+
 	private void onCityTaskFinish(Player player, ChallengeTaskTemplate taskTemplate, int questId) {
 		int townId = TownService.getInstance().getTownIdByPosition(player);
 		if (cityTasks.get(townId) == null) {
@@ -181,23 +179,24 @@ public class ChallengeTaskService
 				town.increasePoints(quest.getScorePerQuest());
 				if (task.isCompleted()) {
 					switch (taskTemplate.getReward().getType()) {
-						case POINT:
-							town.increasePoints(taskTemplate.getReward().getValue());
+					case POINT:
+						town.increasePoints(taskTemplate.getReward().getValue());
 						break;
-						case SPAWN:
+					case SPAWN:
 						break;
 					default:
 						break;
 					}
 				}
 				if (town.getLevel() != oldLevel) {
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1401520, town.getNameId(), town.getLevel()));
+					PacketSendUtility.sendPacket(player,
+							new SM_SYSTEM_MESSAGE(1401520, town.getNameId(), town.getLevel()));
 				}
 				DAOManager.getDAO(TownDAO.class).store(town);
 			}
 		}
 	}
-	
+
 	private void onLegionTaskFinish(Player player, ChallengeTaskTemplate taskTemplate, int questId) {
 		if (player.getLegion() == null) {
 			return;
@@ -232,7 +231,8 @@ public class ChallengeTaskService
 						member.getLegionMember().setChallengeScore(0);
 						continue;
 					} else {
-						LegionMember legionMember = DAOManager.getDAO(LegionMemberDAO.class).loadLegionMember(memberObjId);
+						LegionMember legionMember = DAOManager.getDAO(LegionMemberDAO.class)
+								.loadLegionMember(memberObjId);
 						int score = legionMember.getChallengeScore();
 						if (score <= 0) {
 							continue;
@@ -253,8 +253,10 @@ public class ChallengeTaskService
 								rewardsAdded++;
 								itemId = reward.getRewardId();
 								itemCount = reward.getItemCount();
-								String recipientName = DAOManager.getDAO(PlayerDAO.class).loadPlayerCommonData(objectId).getName();
-								SystemMailService.getInstance().sendMail("Legion reward", recipientName, "", "", itemId, itemCount, 0, 0, LetterType.NORMAL);
+								String recipientName = DAOManager.getDAO(PlayerDAO.class).loadPlayerCommonData(objectId)
+										.getName();
+								SystemMailService.getInstance().sendMail("Legion reward", recipientName, "", "", itemId,
+										itemCount, 0, 0, LetterType.NORMAL);
 								break;
 							}
 						}
@@ -266,7 +268,7 @@ public class ChallengeTaskService
 			}
 		}
 	}
-	
+
 	public boolean canRaiseLegionLevel(int legionId, int legionLevel) {
 		Map<Integer, ChallengeTask> tasks;
 		if (legionTasks.containsKey(legionId)) {
@@ -276,7 +278,7 @@ public class ChallengeTaskService
 		}
 		for (ChallengeTask task : tasks.values()) {
 			if (task.getTemplate().getMinLevel() == legionLevel && task.isCompleted()) {
-			    return true;
+				return true;
 			}
 		}
 		return false;

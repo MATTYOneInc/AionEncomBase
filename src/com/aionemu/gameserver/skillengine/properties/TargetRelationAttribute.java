@@ -26,9 +26,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum TargetRelationAttribute {
 
-	NONE,
-	ENEMY,
-	MYPARTY,
-	ALL,
-	FRIEND;
+	NONE, ENEMY, MYPARTY, ALL, FRIEND;
 }

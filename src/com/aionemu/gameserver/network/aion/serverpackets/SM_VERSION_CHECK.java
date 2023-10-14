@@ -60,25 +60,23 @@ public class SM_VERSION_CHECK extends AionServerPacket {
 	public SM_VERSION_CHECK(int version) {
 		this.version = version;
 
-		if (MembershipConfig.CHARACTER_ADDITIONAL_ENABLE != 10 && MembershipConfig.CHARACTER_ADDITIONAL_COUNT > GSConfig.CHARACTER_LIMIT_COUNT) {
+		if (MembershipConfig.CHARACTER_ADDITIONAL_ENABLE != 10
+				&& MembershipConfig.CHARACTER_ADDITIONAL_COUNT > GSConfig.CHARACTER_LIMIT_COUNT) {
 			characterLimitCount = MembershipConfig.CHARACTER_ADDITIONAL_COUNT;
-		}
-		else {
+		} else {
 			characterLimitCount = GSConfig.CHARACTER_LIMIT_COUNT;
 		}
 		characterLimitCount *= NetworkController.getInstance().getServerCount();
 
 		if (GSConfig.CHARACTER_CREATION_MODE < 0 || GSConfig.CHARACTER_CREATION_MODE > 2) {
 			characterFactionsMode = 0;
-		}
-		else {
+		} else {
 			characterFactionsMode = GSConfig.CHARACTER_CREATION_MODE;
 		}
 
 		if (GSConfig.CHARACTER_FACTION_LIMITATION_MODE < 0 || GSConfig.CHARACTER_FACTION_LIMITATION_MODE > 3) {
 			characterCreateMode = 0;
-		}
-		else {
+		} else {
 			characterCreateMode = GSConfig.CHARACTER_FACTION_LIMITATION_MODE * 0x04;
 		}
 	}
@@ -103,8 +101,7 @@ public class SM_VERSION_CHECK extends AionServerPacket {
 		}
 		if (version == 213) {
 			log.info("Authentication with Client Version 5.8");
-		}
-		else if (version < 213) {
+		} else if (version < 213) {
 			log.info("Authentication with Client Version lower than 5.8");
 		}
 		writeC(0x00);
@@ -113,7 +110,8 @@ public class SM_VERSION_CHECK extends AionServerPacket {
 		writeD(171201);// start year month day
 		writeD(0x00);// spacing
 		writeD(180205);// year month day
-		writeD((int) (Calendar.getInstance().getTimeInMillis() / 1000)); // Start Server Time in Seconds Unit (Need to Implements in Config Files)
+		writeD((int) (Calendar.getInstance().getTimeInMillis() / 1000)); // Start Server Time in Seconds Unit (Need to
+																			// Implements in Config Files)
 		writeC(0x00);// unk
 		writeC(GSConfig.SERVER_COUNTRY_CODE);// country code;
 		int serverMode = (characterLimitCount * 0x10) | characterFactionsMode;
@@ -122,9 +120,9 @@ public class SM_VERSION_CHECK extends AionServerPacket {
 		writeD(+10800);// 5.8 (-3600 = +1 Std, 0 = -1Std)
 		writeD(40014200);
 		// MOVED TO PACKET 168 (SM_UNK_168)
-        // writeC(GSConfig.CHARACTER_REENTRY_TIME);
-        // writeC(EventsConfig.ENABLE_DECOR);
-        // writeC(EventService.getInstance().getEventType().getId());
+		// writeC(GSConfig.CHARACTER_REENTRY_TIME);
+		// writeC(EventsConfig.ENABLE_DECOR);
+		// writeC(EventService.getInstance().getEventType().getId());
 		// MOVED TO PACKET 168 (SM_UNK_168)
 		writeD(0);
 		writeD(68536);

@@ -140,25 +140,25 @@ import com.aionemu.gameserver.world.knownlist.CreatureAwareKnownList;
 import com.aionemu.gameserver.world.knownlist.NpcKnownList;
 import com.aionemu.gameserver.world.knownlist.PlayerAwareKnownList;
 
-public class VisibleObjectSpawner
-{
+public class VisibleObjectSpawner {
 	private static final Logger log = LoggerFactory.getLogger(VisibleObjectSpawner.class);
-	
+
 	protected static NpcTemplate RatedTemplate(int objId) {
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objId);
 		if (!com.aionemu.gameserver.GameServer.npcs_count.contains(String.valueOf(objId))) {
 			double RateHP = 1.0;
 			double RatePW = 1.0;
 			switch (npcTemplate.getRating()) {
-				case NORMAL:
-					RateHP = RateConfig.NORMAL_MOBS_RATE_HP;
-					RatePW = RateConfig.NORMAL_MOBS_RATE_PW;
+			case NORMAL:
+				RateHP = RateConfig.NORMAL_MOBS_RATE_HP;
+				RatePW = RateConfig.NORMAL_MOBS_RATE_PW;
 				break;
-				case ELITE:
-					RateHP = RateConfig.ELITE_MOBS_RATE_HP;
-					RatePW = RateConfig.ELITE_MOBS_RATE_PW;
+			case ELITE:
+				RateHP = RateConfig.ELITE_MOBS_RATE_HP;
+				RatePW = RateConfig.ELITE_MOBS_RATE_PW;
 				break;
-			} if (npcTemplate.getLevel() >= 66) {
+			}
+			if (npcTemplate.getLevel() >= 66) {
 				int NewMaxHP = (int) (npcTemplate.getStatsTemplate().getMaxHp() * RateHP);
 				int NewPower = (int) (npcTemplate.getStatsTemplate().getPower() * RatePW);
 				npcTemplate.getStatsTemplate().setMaxHp(NewMaxHP);
@@ -168,7 +168,7 @@ public class VisibleObjectSpawner
 		}
 		return npcTemplate;
 	}
-	
+
 	protected static VisibleObject spawnNpc(SpawnTemplate spawn, int instanceIndex) {
 		int objectId = spawn.getNpcId();
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objectId);
@@ -188,23 +188,26 @@ public class VisibleObjectSpawner
 		try {
 			SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		} catch (Exception ex) {
-			log.error("Error during spawn of npc {}, world {}, x-y {}-{}", new Object[]{npcTemplate.getTemplateId(), spawn.getWorldId(), spawn.getX(), spawn.getY()});
+			log.error("Error during spawn of npc {}, world {}, x-y {}-{}",
+					new Object[] { npcTemplate.getTemplateId(), spawn.getWorldId(), spawn.getX(), spawn.getY() });
 			log.error("Npc {} will be despawned", npcTemplate.getTemplateId(), ex);
 			World.getInstance().despawn(npc);
 		}
 		return npc;
 	}
-	
-	public static SummonedHouseNpc spawnHouseNpc(SpawnTemplate spawn, int instanceIndex, House creator, String masterName) {
+
+	public static SummonedHouseNpc spawnHouseNpc(SpawnTemplate spawn, int instanceIndex, House creator,
+			String masterName) {
 		int npcId = spawn.getNpcId();
 		NpcTemplate template = DataManager.NPC_DATA.getNpcTemplate(npcId);
-		SummonedHouseNpc npc = new SummonedHouseNpc(IDFactory.getInstance().nextId(), new NpcController(), spawn, template, creator, masterName);
+		SummonedHouseNpc npc = new SummonedHouseNpc(IDFactory.getInstance().nextId(), new NpcController(), spawn,
+				template, creator, masterName);
 		npc.setKnownlist(new PlayerAwareKnownList(npc));
 		npc.setEffectController(new EffectController(npc));
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnBaseNpc(BaseSpawnTemplate spawn, int instanceIndex) {
 		int objectId = spawn.getNpcId();
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objectId);
@@ -218,7 +221,8 @@ public class VisibleObjectSpawner
 		Npc npc;
 		if (!isActive && spawn.getBaseRace() != base.getRace()) {
 			return null;
-		} if (isActive && spawn.getBaseRace() == base.getRace()) {
+		}
+		if (isActive && spawn.getBaseRace() == base.getRace()) {
 			npc = new BaseNpc(iDFactory.nextId(), new NpcController(), spawn, npcTemplate);
 			npc.setKnownlist(new NpcKnownList(npc));
 		} else {
@@ -228,7 +232,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnOutpostNpc(OutpostSpawnTemplate spawn, int instanceIndex) {
 		int objectId = spawn.getNpcId();
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objectId);
@@ -242,7 +246,8 @@ public class VisibleObjectSpawner
 		Npc npc;
 		if (!isActive && spawn.getOutpostRace() != outpost.getRace()) {
 			return null;
-		} if (isActive && spawn.getOutpostRace() == outpost.getRace()) {
+		}
+		if (isActive && spawn.getOutpostRace() == outpost.getRace()) {
 			npc = new OutpostNpc(iDFactory.nextId(), new NpcController(), spawn, npcTemplate);
 			npc.setKnownlist(new NpcKnownList(npc));
 		} else {
@@ -252,7 +257,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnRiftNpc(RiftSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.RIFT_ENABLED) {
 			return null;
@@ -276,7 +281,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnSiegeNpc(SiegeSpawnTemplate spawn, int instanceIndex) {
 		if (!SiegeConfig.SIEGE_ENABLED) {
 			return null;
@@ -290,7 +295,8 @@ public class VisibleObjectSpawner
 		Npc npc = null;
 		int spawnSiegeId = spawn.getSiegeId();
 		SiegeLocation loc = SiegeService.getInstance().getSiegeLocation(spawnSiegeId);
-		if ((spawn.isPeace() || loc.isVulnerable()) && spawnSiegeId == loc.getLocationId() && spawn.getSiegeRace() == loc.getRace()) {
+		if ((spawn.isPeace() || loc.isVulnerable()) && spawnSiegeId == loc.getLocationId()
+				&& spawn.getSiegeRace() == loc.getRace()) {
 			npc = new SiegeNpc(iDFactory.nextId(), new NpcController(), spawn, npcTemplate);
 			npc.setKnownlist(new NpcKnownList(npc));
 		} else if (spawn.isAssault() && loc.isVulnerable() && spawn.getSiegeRace().equals(SiegeRace.BALAUR)) {
@@ -303,7 +309,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnInvasionNpc(VortexSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.VORTEX_ENABLED) {
 			return null;
@@ -330,7 +336,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnBeritraNpc(BeritraSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.BERITRA_ENABLED) {
 			return null;
@@ -357,7 +363,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnAgentNpc(AgentSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.AGENT_ENABLED) {
 			return null;
@@ -384,7 +390,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnAnohaNpc(AnohaSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.ANOHA_ENABLED) {
 			return null;
@@ -411,7 +417,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnConquestNpc(ConquestSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.CONQUEST_ENABLED) {
 			return null;
@@ -438,7 +444,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnSvsNpc(SvsSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.SVS_ENABLED) {
 			return null;
@@ -465,7 +471,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnRvrNpc(RvrSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.RVR_ENABLED) {
 			return null;
@@ -492,7 +498,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnIuNpc(IuSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.IU_ENABLED) {
 			return null;
@@ -519,7 +525,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnMoltenusNpc(MoltenusSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.MOLTENUS_ENABLED) {
 			return null;
@@ -546,7 +552,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnDynamicRiftNpc(DynamicRiftSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.DYNAMIC_RIFT_ENABLED) {
 			return null;
@@ -573,7 +579,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnInstanceRiftNpc(InstanceRiftSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.INSTANCE_RIFT_ENABLED) {
 			return null;
@@ -600,7 +606,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnNightmareCircusNpc(NightmareCircusSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.NIGHTMARE_CIRCUS_ENABLE) {
 			return null;
@@ -627,7 +633,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnIdianDepthsNpc(IdianDepthsSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.IDIAN_DEPTHS_ENABLED) {
 			return null;
@@ -654,7 +660,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnZorshivDredgionNpc(ZorshivDredgionSpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.ZORSHIV_DREDGION_ENABLED) {
 			return null;
@@ -681,16 +687,17 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnGatherable(SpawnTemplate spawn, int instanceIndex) {
 		int objectId = spawn.getNpcId();
 		VisibleObjectTemplate template = DataManager.GATHERABLE_DATA.getGatherableTemplate(objectId);
-		Gatherable gatherable = new Gatherable(spawn, template, IDFactory.getInstance().nextId(), new GatherableController());
+		Gatherable gatherable = new Gatherable(spawn, template, IDFactory.getInstance().nextId(),
+				new GatherableController());
 		gatherable.setKnownlist(new PlayerAwareKnownList(gatherable));
 		SpawnEngine.bringIntoWorld(gatherable, spawn, instanceIndex);
 		return gatherable;
 	}
-	
+
 	public static Trap spawnTrap(SpawnTemplate spawn, int instanceIndex, Creature creator) {
 		int objectId = spawn.getNpcId();
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objectId);
@@ -703,7 +710,7 @@ public class VisibleObjectSpawner
 		PacketSendUtility.broadcastPacket(trap, new SM_PLAYER_STATE(trap));
 		return trap;
 	}
-	
+
 	public static GroupGate spawnGroupGate(SpawnTemplate spawn, int instanceIndex, Creature creator) {
 		int objectId = spawn.getNpcId();
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objectId);
@@ -714,7 +721,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(groupgate, spawn, instanceIndex);
 		return groupgate;
 	}
-	
+
 	public static Kisk spawnKisk(SpawnTemplate spawn, int instanceIndex, Player creator) {
 		int npcId = spawn.getNpcId();
 		NpcTemplate template = DataManager.NPC_DATA.getNpcTemplate(npcId);
@@ -725,7 +732,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(kisk, spawn, instanceIndex);
 		return kisk;
 	}
-	
+
 	public static Npc spawnPostman(final Player owner) {
 		int npcId = owner.getRace() == Race.ELYOS ? 798100 : 798101;
 		NpcData npcData = DataManager.NPC_DATA;
@@ -735,10 +742,10 @@ public class VisibleObjectSpawner
 		int instanceId = owner.getInstanceId();
 		double radian = Math.toRadians(MathUtil.convertHeadingToDegree(owner.getHeading()));
 		Vector3f pos = GeoService.getInstance().getClosestCollision(owner,
-		owner.getX() + (float) (Math.cos(radian) * 5),
-		owner.getY() + (float) (Math.sin(radian) * 5),
-		owner.getZ(), false, CollisionIntention.PHYSICAL.getId());
-		SpawnTemplate spawn = SpawnEngine.addNewSingleTimeSpawn(worldId, npcId, pos.getX(), pos.getY(), pos.getZ(), (byte) 0);
+				owner.getX() + (float) (Math.cos(radian) * 5), owner.getY() + (float) (Math.sin(radian) * 5),
+				owner.getZ(), false, CollisionIntention.PHYSICAL.getId());
+		SpawnTemplate spawn = SpawnEngine.addNewSingleTimeSpawn(worldId, npcId, pos.getX(), pos.getY(), pos.getZ(),
+				(byte) 0);
 		final Npc postman = new Npc(iDFactory.nextId(), new NpcController(), spawn, template);
 		postman.setKnownlist(new PlayerAwareKnownList(postman));
 		postman.setEffectController(new EffectController(postman));
@@ -747,7 +754,7 @@ public class VisibleObjectSpawner
 		owner.setPostman(postman);
 		return postman;
 	}
-	
+
 	public static Npc spawnFunctionalNpc(final Player owner, int npcId, SummonOwner summonOwner) {
 		NpcData npcData = DataManager.NPC_DATA;
 		NpcTemplate template = npcData.getNpcTemplate(npcId);
@@ -756,10 +763,10 @@ public class VisibleObjectSpawner
 		int instanceId = owner.getInstanceId();
 		double radian = Math.toRadians(MathUtil.convertHeadingToDegree(owner.getHeading()));
 		Vector3f pos = GeoService.getInstance().getClosestCollision(owner,
-		owner.getX() + (float) (Math.cos(radian) * 5),
-		owner.getY() + (float) (Math.sin(radian) * 5),
-		owner.getZ(), false, CollisionIntention.PHYSICAL.getId());
-		SpawnTemplate spawn = SpawnEngine.addNewSingleTimeSpawn(worldId, npcId, pos.getX(), pos.getY(), pos.getZ(), (byte) 0);
+				owner.getX() + (float) (Math.cos(radian) * 5), owner.getY() + (float) (Math.sin(radian) * 5),
+				owner.getZ(), false, CollisionIntention.PHYSICAL.getId());
+		SpawnTemplate spawn = SpawnEngine.addNewSingleTimeSpawn(worldId, npcId, pos.getX(), pos.getY(), pos.getZ(),
+				(byte) 0);
 		final Npc functionalNpc = new Npc(iDFactory.nextId(), new NpcController(), spawn, template);
 		functionalNpc.setKnownlist(new PlayerAwareKnownList(functionalNpc));
 		functionalNpc.setEffectController(new EffectController(functionalNpc));
@@ -767,14 +774,16 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(functionalNpc, spawn, instanceId);
 		return functionalNpc;
 	}
-	
-	public static Servant spawnServant(SpawnTemplate spawn, int instanceIndex, Creature creator, int skillId, int level, NpcObjectType objectType) {
+
+	public static Servant spawnServant(SpawnTemplate spawn, int instanceIndex, Creature creator, int skillId, int level,
+			NpcObjectType objectType) {
 		int objectId = spawn.getNpcId();
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objectId);
 		int creatureLevel = creator.getLevel();
 		level = SkillLearnService.getSkillLearnLevel(skillId, creatureLevel, level);
 		byte servantLevel = (byte) SkillLearnService.getSkillMinLevel(skillId, creatureLevel, level);
-		Servant servant = new Servant(IDFactory.getInstance().nextId(), new NpcController(), spawn, npcTemplate, servantLevel);
+		Servant servant = new Servant(IDFactory.getInstance().nextId(), new NpcController(), spawn, npcTemplate,
+				servantLevel);
 		servant.setKnownlist(new NpcKnownList(servant));
 		servant.setEffectController(new EffectController(servant));
 		servant.setCreator(creator);
@@ -788,11 +797,12 @@ public class VisibleObjectSpawner
 		}
 		return servant;
 	}
-	
+
 	public static Servant spawnEnemyServant(SpawnTemplate spawn, int instanceIndex, Creature creator, byte servantLvl) {
 		int objectId = spawn.getNpcId();
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objectId);
-		Servant servant = new Servant(IDFactory.getInstance().nextId(), new NpcController(), spawn, npcTemplate, servantLvl);
+		Servant servant = new Servant(IDFactory.getInstance().nextId(), new NpcController(), spawn, npcTemplate,
+				servantLvl);
 		servant.setKnownlist(new NpcKnownList(servant));
 		servant.setEffectController(new EffectController(servant));
 		servant.setCreator(creator);
@@ -800,14 +810,16 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(servant, spawn, instanceIndex);
 		return servant;
 	}
-	
-	public static Homing spawnHoming(SpawnTemplate spawn, int instanceIndex, Creature creator, int attackCount, int skillId, int level) {
+
+	public static Homing spawnHoming(SpawnTemplate spawn, int instanceIndex, Creature creator, int attackCount,
+			int skillId, int level) {
 		int objectId = spawn.getNpcId();
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objectId);
 		int creatureLevel = creator.getLevel();
 		level = SkillLearnService.getSkillLearnLevel(skillId, creatureLevel, level);
 		byte homingLevel = (byte) SkillLearnService.getSkillMinLevel(skillId, creatureLevel, level);
-		Homing homing = new Homing(IDFactory.getInstance().nextId(), new NpcController(), spawn, npcTemplate, homingLevel, skillId);
+		Homing homing = new Homing(IDFactory.getInstance().nextId(), new NpcController(), spawn, npcTemplate,
+				homingLevel, skillId);
 		homing.setState(CreatureState.WEAPON_EQUIPPED);
 		homing.setKnownlist(new NpcKnownList(homing));
 		homing.setEffectController(new EffectController(homing));
@@ -818,7 +830,8 @@ public class VisibleObjectSpawner
 			if (hmSkill != null) {
 				homingSkillId = hmSkill.getSkillId();
 			}
-		} if (homingSkillId != 0) {
+		}
+		if (homingSkillId != 0) {
 			homing.getSkillList().addSkill(homing, homingSkillId, 1);
 		}
 		homing.setActiveSkillId(homingSkillId);
@@ -826,7 +839,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(homing, spawn, instanceIndex);
 		return homing;
 	}
-	
+
 	public static Summon spawnSummon(Player creator, int npcId, int skillId, int skillLevel, int time) {
 		float x = creator.getX();
 		float y = creator.getY();
@@ -839,7 +852,9 @@ public class VisibleObjectSpawner
 		skillLevel = SkillLearnService.getSkillLearnLevel(skillId, creator.getCommonData().getLevel(), skillLevel);
 		byte level = (byte) SkillLearnService.getSkillMinLevel(skillId, creator.getCommonData().getLevel(), skillLevel);
 		boolean isSiegeWeapon = npcTemplate.getAi().equals("siege_weapon");
-		Summon summon = new Summon(IDFactory.getInstance().nextId(), isSiegeWeapon ? new SiegeWeaponController(npcId) : new SummonController(), spawn, npcTemplate, isSiegeWeapon ? npcTemplate.getLevel() : level, time);
+		Summon summon = new Summon(IDFactory.getInstance().nextId(),
+				isSiegeWeapon ? new SiegeWeaponController(npcId) : new SummonController(), spawn, npcTemplate,
+				isSiegeWeapon ? npcTemplate.getLevel() : level, time);
 		summon.setKnownlist(new CreatureAwareKnownList(summon));
 		summon.setEffectController(new EffectController(summon));
 		summon.setMaster(creator);
@@ -847,7 +862,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(summon, spawn, instanceId);
 		return summon;
 	}
-	
+
 	public static Pet spawnPet(Player player, int petId) {
 		PetCommonData petCommonData = player.getPetList().getPet(petId);
 		if (petCommonData == null) {
@@ -928,7 +943,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnLandingSpecialNpc(LandingSpecialSpawnTemplate spawn, int instanceIndex) {
 		int objectId = spawn.getNpcId();
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objectId);
@@ -952,7 +967,7 @@ public class VisibleObjectSpawner
 		SpawnEngine.bringIntoWorld(npc, spawn, instanceIndex);
 		return npc;
 	}
-	
+
 	protected static VisibleObject spawnTowerOfEternityNpc(TowerOfEternitySpawnTemplate spawn, int instanceIndex) {
 		if (!CustomConfig.TOWER_OF_ETERNITY_ENABLED) {
 			return null;

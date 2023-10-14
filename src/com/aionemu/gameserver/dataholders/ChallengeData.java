@@ -31,15 +31,14 @@ import com.aionemu.gameserver.model.templates.challenge.ChallengeQuestTemplate;
 import com.aionemu.gameserver.model.templates.challenge.ChallengeTaskTemplate;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"task"})
+@XmlType(name = "", propOrder = { "task" })
 @XmlRootElement(name = "challenge_tasks")
-public class ChallengeData
-{
+public class ChallengeData {
 	protected List<ChallengeTaskTemplate> task;
-	
+
 	@XmlTransient
 	protected Map<Integer, ChallengeTaskTemplate> tasksById = new HashMap<Integer, ChallengeTaskTemplate>();
-	
+
 	void afterUnmarshal(Unmarshaller u, Object parent) {
 		for (ChallengeTaskTemplate t : task) {
 			tasksById.put(t.getId(), t);
@@ -47,15 +46,15 @@ public class ChallengeData
 		task.clear();
 		task = null;
 	}
-	
+
 	public Map<Integer, ChallengeTaskTemplate> getTasks() {
 		return this.tasksById;
 	}
-	
+
 	public ChallengeTaskTemplate getTaskByTaskId(int taskId) {
 		return tasksById.get(taskId);
 	}
-	
+
 	public ChallengeTaskTemplate getTaskByQuestId(int questId) {
 		for (ChallengeTaskTemplate ct : tasksById.values()) {
 			for (ChallengeQuestTemplate cq : ct.getQuests()) {
@@ -66,7 +65,7 @@ public class ChallengeData
 		}
 		return null;
 	}
-	
+
 	public ChallengeQuestTemplate getQuestByQuestId(int questId) {
 		for (ChallengeTaskTemplate ct : tasksById.values()) {
 			for (ChallengeQuestTemplate cq : ct.getQuests()) {
@@ -77,7 +76,7 @@ public class ChallengeData
 		}
 		return null;
 	}
-	
+
 	public int size() {
 		return this.tasksById.size();
 	}

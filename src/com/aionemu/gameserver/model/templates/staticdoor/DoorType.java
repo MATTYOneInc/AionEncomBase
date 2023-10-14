@@ -25,7 +25,5 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "DoorType")
 @XmlEnum
 public enum DoorType {
-	DOOR,
-	ABYSS,
-	HOUSE
+	DOOR, ABYSS, HOUSE
 }

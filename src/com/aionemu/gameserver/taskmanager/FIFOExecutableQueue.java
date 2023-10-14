@@ -21,8 +21,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /**
- * @author NB4L1
- * Going to remove this - Nemesiss
+ * @author NB4L1 Going to remove this - Nemesiss
  */
 public abstract class FIFOExecutableQueue implements Runnable {
 
@@ -39,10 +38,9 @@ public abstract class FIFOExecutableQueue implements Runnable {
 		try {
 			if (state != NONE) {
 				return;
-            }
+			}
 			state = QUEUED;
-		}
-		finally {
+		} finally {
 			unlock();
 		}
 		ThreadPoolManager.getInstance().execute(this);
@@ -65,13 +63,11 @@ public abstract class FIFOExecutableQueue implements Runnable {
 					while (!isEmpty()) {
 						removeAndExecuteFirst();
 					}
-				}
-				finally {
+				} finally {
 					setState(RUNNING, QUEUED);
 				}
 			}
-		}
-		finally {
+		} finally {
 			setState(QUEUED, NONE);
 		}
 	}
@@ -82,8 +78,7 @@ public abstract class FIFOExecutableQueue implements Runnable {
 			if (state != expected) {
 				throw new IllegalStateException("state: " + state + ", expected: " + expected);
 			}
-		}
-		finally {
+		} finally {
 			state = value;
 
 			unlock();

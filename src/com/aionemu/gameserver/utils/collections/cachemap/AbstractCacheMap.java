@@ -59,7 +59,7 @@ abstract class AbstractCacheMap<K, V> implements CacheMap<K, V> {
 
 		if (cacheMap.containsKey(key)) {
 			throw new IllegalArgumentException("Key: " + key + " already exists in map");
-        }
+		}
 		Reference<V> entry = newReference(key, value, refQueue);
 
 		cacheMap.put(key, entry);
@@ -78,12 +78,12 @@ abstract class AbstractCacheMap<K, V> implements CacheMap<K, V> {
 
 		if (reference == null) {
 			return null;
-        }
+		}
 		V res = reference.get();
 
 		if (res != null && log.isDebugEnabled()) {
 			log.debug(cacheName + " : obtained " + valueName + " for key: " + key);
-        }
+		}
 		return res;
 	}
 

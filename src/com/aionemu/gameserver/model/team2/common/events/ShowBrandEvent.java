@@ -26,26 +26,27 @@ import com.google.common.base.Predicate;
 /**
  * @author ATracer
  */
-public class ShowBrandEvent<T extends TemporaryPlayerTeam<? extends TeamMember<Player>>> extends AlwaysTrueTeamEvent implements Predicate<Player> {
+public class ShowBrandEvent<T extends TemporaryPlayerTeam<? extends TeamMember<Player>>> extends AlwaysTrueTeamEvent
+		implements Predicate<Player> {
 
-    private final T team;
-    private final int targetObjId;
-    private final int brandId;
+	private final T team;
+	private final int targetObjId;
+	private final int brandId;
 
-    public ShowBrandEvent(T team, int targetObjId, int brandId) {
-        this.team = team;
-        this.targetObjId = targetObjId;
-        this.brandId = brandId;
-    }
+	public ShowBrandEvent(T team, int targetObjId, int brandId) {
+		this.team = team;
+		this.targetObjId = targetObjId;
+		this.brandId = brandId;
+	}
 
-    @Override
-    public void handleEvent() {
-        team.applyOnMembers(this);
-    }
+	@Override
+	public void handleEvent() {
+		team.applyOnMembers(this);
+	}
 
-    @Override
-    public boolean apply(Player member) {
-        PacketSendUtility.sendPacket(member, new SM_SHOW_BRAND(brandId, targetObjId));
-        return true;
-    }
+	@Override
+	public boolean apply(Player member) {
+		PacketSendUtility.sendPacket(member, new SM_SHOW_BRAND(brandId, targetObjId));
+		return true;
+	}
 }

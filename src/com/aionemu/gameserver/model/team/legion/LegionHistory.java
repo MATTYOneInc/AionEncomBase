@@ -29,7 +29,8 @@ public class LegionHistory {
 	private int tabId;
 	private String description = "";
 
-	public LegionHistory(LegionHistoryType legionHistoryType, String name, Timestamp time, int tabId, String description) {
+	public LegionHistory(LegionHistoryType legionHistoryType, String name, Timestamp time, int tabId,
+			String description) {
 		this.legionHistoryType = legionHistoryType;
 		this.name = name;
 		this.time = time;

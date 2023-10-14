@@ -20,22 +20,21 @@ import com.aionemu.gameserver.model.team.legion.LegionJoinRequest;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_LEGION_REQUEST_PLAYER extends AionServerPacket
-{
-    private LegionJoinRequest ljr;
-	
+public class SM_LEGION_REQUEST_PLAYER extends AionServerPacket {
+	private LegionJoinRequest ljr;
+
 	public SM_LEGION_REQUEST_PLAYER(LegionJoinRequest ljr) {
-    	this.ljr = ljr;
-    }
-	
+		this.ljr = ljr;
+	}
+
 	@Override
-    protected void writeImpl(AionConnection con) {
+	protected void writeImpl(AionConnection con) {
 		writeD(ljr.getPlayerId());
-    	writeS(ljr.getPlayerName());
-    	writeC(ljr.getPlayerClass());
-    	writeC(ljr.getGenderId());
-    	writeH(ljr.getLevel());
-    	writeS(ljr.getMsg());
-    	writeD((int) ljr.getDate().getTime());
-    }
+		writeS(ljr.getPlayerName());
+		writeC(ljr.getPlayerClass());
+		writeC(ljr.getGenderId());
+		writeH(ljr.getLevel());
+		writeS(ljr.getMsg());
+		writeD((int) ljr.getDate().getTime());
+	}
 }

@@ -25,39 +25,39 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
  * @author Rinzler (Encom)
  */
 
-public class IuSpawnTemplate extends SpawnTemplate
-{
+public class IuSpawnTemplate extends SpawnTemplate {
 	private int id;
 	private IuStateType iuType;
-	
+
 	public IuSpawnTemplate(SpawnGroup2 spawnGroup, SpawnSpotTemplate spot) {
 		super(spawnGroup, spot);
 	}
-	
-	public IuSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk, String walkerId, int entityId, int fly) {
+
+	public IuSpawnTemplate(SpawnGroup2 spawnGroup, float x, float y, float z, byte heading, int randWalk,
+			String walkerId, int entityId, int fly) {
 		super(spawnGroup, x, y, z, heading, randWalk, walkerId, entityId, fly);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public IuStateType getIUStateType() {
 		return iuType;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void setIUStateType(IuStateType iuType) {
 		this.iuType = iuType;
 	}
-	
+
 	public final boolean isOpen() {
 		return iuType.equals(IuStateType.OPEN);
 	}
-	
+
 	public final boolean isClosed() {
 		return iuType.equals(IuStateType.CLOSED);
 	}

@@ -35,19 +35,18 @@ import com.aionemu.commons.utils.xml.JAXBUtil;
 
 @XmlRootElement(name = "beritra_schedule")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class BeritraSchedule
-{
+public class BeritraSchedule {
 	@XmlElement(name = "beritra", required = true)
 	private List<Beritra> beritrasList;
-	
+
 	public List<Beritra> getBeritrasList() {
 		return beritrasList;
 	}
-	
+
 	public void setInvasionsList(List<Beritra> beritraList) {
 		this.beritrasList = beritraList;
 	}
-	
+
 	public static BeritraSchedule load() {
 		BeritraSchedule bs;
 		try {
@@ -58,28 +57,28 @@ public class BeritraSchedule
 		}
 		return bs;
 	}
-	
+
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "beritra")
 	public static class Beritra {
 		@XmlAttribute(required = true)
 		private int id;
-		
+
 		@XmlElement(name = "invasionTime", required = true)
 		private List<String> invasionTimes;
-		
+
 		public int getId() {
 			return id;
 		}
-		
+
 		public void setId(int id) {
 			this.id = id;
 		}
-		
+
 		public List<String> getInvasionTimes() {
 			return invasionTimes;
 		}
-		
+
 		public void setInvasionTimes(List<String> invasionTimes) {
 			this.invasionTimes = invasionTimes;
 		}

@@ -30,15 +30,14 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RequireSkill")
-public class RequireSkill
-{
+public class RequireSkill {
 	@XmlAttribute
-    protected List<Integer> skillIds;
-	
+	protected List<Integer> skillIds;
+
 	public List<Integer> getSkillIds() {
-        if (skillIds == null) {
-            skillIds = new ArrayList<Integer>();
-        }
-        return this.skillIds;
-    }
+		if (skillIds == null) {
+			skillIds = new ArrayList<Integer>();
+		}
+		return this.skillIds;
+	}
 }

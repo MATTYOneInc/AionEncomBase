@@ -29,27 +29,26 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 import com.aionemu.gameserver.utils.MathUtil;
 
-public class FlyRingObserver extends ActionObserver
-{
+public class FlyRingObserver extends ActionObserver {
 	private Player player;
 	private FlyRing ring;
 	private Point3D oldPosition;
-	SkillTemplate skillTemplate = DataManager.SKILL_DATA.getSkillTemplate(260); //Wings Of Aether 4.8
-	
+	SkillTemplate skillTemplate = DataManager.SKILL_DATA.getSkillTemplate(260); // Wings Of Aether 4.8
+
 	public FlyRingObserver() {
 		super(ObserverType.MOVE);
 		this.player = null;
 		this.ring = null;
 		this.oldPosition = null;
 	}
-	
+
 	public FlyRingObserver(FlyRing ring, Player player) {
 		super(ObserverType.MOVE);
 		this.player = player;
 		this.ring = ring;
 		this.oldPosition = new Point3D(player.getX(), player.getY(), player.getZ());
 	}
-	
+
 	@Override
 	public void moved() {
 		Point3D newPosition = new Point3D(player.getX(), player.getY(), player.getZ());
@@ -66,10 +65,11 @@ public class FlyRingObserver extends ActionObserver
 					passedThrough = true;
 				}
 			}
-		} if (passedThrough) {
-			if (ring.getTemplate().getMap() == 210020000 || //Eltnen.
-			    ring.getTemplate().getMap() == 220020000 || //Morheim.
-				ring.getTemplate().getMap() == 400010000 || isQuestActive() || isInstanceActive()) {
+		}
+		if (passedThrough) {
+			if (ring.getTemplate().getMap() == 210020000 || // Eltnen.
+					ring.getTemplate().getMap() == 220020000 || // Morheim.
+					ring.getTemplate().getMap() == 400010000 || isQuestActive() || isInstanceActive()) {
 				Effect speedUp = new Effect(player, player, skillTemplate, skillTemplate.getLvl(), 0);
 				speedUp.initialize();
 				speedUp.addAllEffectToSucess();
@@ -79,11 +79,11 @@ public class FlyRingObserver extends ActionObserver
 		}
 		oldPosition = newPosition;
 	}
-	
+
 	private boolean isInstanceActive() {
 		return ring.getPosition().getWorldMapInstance().getInstanceHandler().onPassFlyingRing(player, ring.getName());
 	}
-	
+
 	private boolean isQuestActive() {
 		int questId = player.getRace() == Race.ASMODIANS ? 2042 : 1044;
 		QuestState qs = player.getQuestStateList().getQuestState(questId);

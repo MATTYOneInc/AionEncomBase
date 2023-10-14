@@ -37,8 +37,7 @@ public class Precision implements StatOwner {
 			accuracy.add(new StatAddFunction(StatEnum.PHYSICAL_CRITICAL, (int) (3.75f * point), true));
 			accuracy.add(new StatAddFunction(StatEnum.MAGICAL_ACCURACY, (int) (3.35f * point), true));
 			player.getGameStats().addEffect(this, accuracy);
-		}
-		else if (point == 0) {
+		} else if (point == 0) {
 			accuracy.clear();
 			accuracy.add(new StatAddFunction(StatEnum.PHYSICAL_ACCURACY, (int) (5.6f * point), false));
 			accuracy.add(new StatAddFunction(StatEnum.PHYSICAL_CRITICAL, (int) (3.75f * point), false));

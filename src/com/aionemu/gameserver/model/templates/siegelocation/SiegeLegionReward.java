@@ -23,18 +23,17 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SiegeLegionReward")
-public class SiegeLegionReward
-{
+public class SiegeLegionReward {
 	@XmlAttribute(name = "itemid")
 	protected int itemId;
-	
+
 	@XmlAttribute(name = "m_count")
 	protected int mCount;
-	
+
 	public int getItemId() {
 		return itemId;
 	}
-	
+
 	public int getCount() {
 		return mCount;
 	}

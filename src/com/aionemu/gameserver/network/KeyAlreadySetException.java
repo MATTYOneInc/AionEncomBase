@@ -17,7 +17,8 @@
 package com.aionemu.gameserver.network;
 
 /**
- * This Exception will be thrown when <code>Crypt</code> setKey method will be called more than one time.
+ * This Exception will be thrown when <code>Crypt</code> setKey method will be
+ * called more than one time.
  * 
  * @author -Nemesiss-
  */
@@ -32,10 +33,10 @@ public class KeyAlreadySetException extends RuntimeException {
 	}
 
 	/**
-	 * Constructs an <code>KeyAlreadySetException</code> with the specified detail message.
+	 * Constructs an <code>KeyAlreadySetException</code> with the specified detail
+	 * message.
 	 * 
-	 * @param s
-	 *          the detail message.
+	 * @param s the detail message.
 	 */
 	public KeyAlreadySetException(String s) {
 		super(s);
@@ -44,10 +45,8 @@ public class KeyAlreadySetException extends RuntimeException {
 	/**
 	 * Creates new error
 	 * 
-	 * @param message
-	 *          exception description
-	 * @param cause
-	 *          reason of this exception
+	 * @param message exception description
+	 * @param cause   reason of this exception
 	 */
 	public KeyAlreadySetException(String message, Throwable cause) {
 		super(message, cause);
@@ -56,8 +55,7 @@ public class KeyAlreadySetException extends RuntimeException {
 	/**
 	 * Creates new error
 	 * 
-	 * @param cause
-	 *          reason of this exception
+	 * @param cause reason of this exception
 	 */
 	public KeyAlreadySetException(Throwable cause) {
 		super(cause);
