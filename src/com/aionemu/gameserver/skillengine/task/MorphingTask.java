@@ -16,7 +16,6 @@
  */
 package com.aionemu.gameserver.skillengine.task;
 
-import com.aionemu.gameserver.configs.main.CraftConfig;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.StaticObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;

@@ -16,13 +16,19 @@
  */
 package com.aionemu.gameserver.model.templates.housing;
 
-import com.aionemu.gameserver.dataholders.DataManager;
-import com.mysql.jdbc.StringUtils;
-
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.dataholders.DataManager;
+import com.mysql.jdbc.StringUtils;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {"parts"})

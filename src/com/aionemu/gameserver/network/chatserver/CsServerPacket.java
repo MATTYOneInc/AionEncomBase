@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.network.chatserver;
 
-import com.aionemu.commons.network.packet.BaseServerPacket;
-
 import java.nio.ByteBuffer;
+
+import com.aionemu.commons.network.packet.BaseServerPacket;
 
 public abstract class CsServerPacket extends BaseServerPacket
 {

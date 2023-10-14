@@ -16,13 +16,20 @@
  */
 package com.aionemu.gameserver.utils.stats;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.configs.main.FallDamageConfig;
 import com.aionemu.gameserver.controllers.attack.AttackStatus;
 import com.aionemu.gameserver.controllers.observer.AttackerCriticalStatus;
 import com.aionemu.gameserver.model.PlayerClass;
 import com.aionemu.gameserver.model.SkillElement;
-import com.aionemu.gameserver.model.gameobjects.*;
+import com.aionemu.gameserver.model.gameobjects.Creature;
+import com.aionemu.gameserver.model.gameobjects.Homing;
+import com.aionemu.gameserver.model.gameobjects.Item;
+import com.aionemu.gameserver.model.gameobjects.Npc;
+import com.aionemu.gameserver.model.gameobjects.Servant;
 import com.aionemu.gameserver.model.gameobjects.player.Equipment;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.player.RewardType;
@@ -39,8 +46,6 @@ import com.aionemu.gameserver.model.templates.npc.NpcRating;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ATTACK_STATUS;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.google.common.base.Preconditions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class StatFunctions {
 

@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.svsservice;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.svs.SvsLocation;
 import com.aionemu.gameserver.services.SvsService;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
-import java.util.Map;
 
 /**
  * @author Rinzler (Encom)

@@ -24,6 +24,8 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,9 +39,6 @@ import com.aionemu.gameserver.services.PunishmentService;
 import com.aionemu.gameserver.services.item.ItemService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
-
-import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 /**
  * @author PenguinJoe

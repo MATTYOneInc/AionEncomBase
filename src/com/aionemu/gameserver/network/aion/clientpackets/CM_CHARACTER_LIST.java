@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.configs.administration.AdminConfig;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_0x14F;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ACCOUNT_PROPERTIES;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_CHARACTER_LIST;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CM_CHARACTER_LIST extends AionClientPacket
 {

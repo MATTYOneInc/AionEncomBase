@@ -16,16 +16,16 @@
  */
 package com.aionemu.gameserver.services.siegeservice;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.siege.SiegeNpc;
 import com.aionemu.gameserver.model.siege.SiegeRace;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
 
 public class SiegeCounter
 {

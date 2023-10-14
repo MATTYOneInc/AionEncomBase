@@ -16,9 +16,6 @@
  */
 package com.aionemu.gameserver.geoEngine.utils;
 
-import com.aionemu.commons.utils.internal.chmv8.PlatformDependent;
-import com.aionemu.gameserver.geoEngine.math.Vector2f;
-import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -29,6 +26,10 @@ import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.WeakHashMap;
+
+import com.aionemu.commons.utils.internal.chmv8.PlatformDependent;
+import com.aionemu.gameserver.geoEngine.math.Vector2f;
+import com.aionemu.gameserver.geoEngine.math.Vector3f;
 
 /**
  * <code>BufferUtils</code> is a helper class for generating nio buffers from jME data classes such as Vectors and ColorRGBA.

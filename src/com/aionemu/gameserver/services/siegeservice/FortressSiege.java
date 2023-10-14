@@ -16,6 +16,12 @@
  */
 package com.aionemu.gameserver.services.siegeservice;
 
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.callbacks.util.GlobalCallbackHelper;
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.configs.main.SiegeConfig;
@@ -32,11 +38,15 @@ import com.aionemu.gameserver.model.siege.SiegeRace;
 import com.aionemu.gameserver.model.templates.siegelocation.SiegeLegionReward;
 import com.aionemu.gameserver.model.templates.siegelocation.SiegeReward;
 import com.aionemu.gameserver.model.templates.zone.ZoneType;
-import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.questEngine.QuestEngine;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
-import com.aionemu.gameserver.services.*;
+import com.aionemu.gameserver.services.AbyssLandingService;
+import com.aionemu.gameserver.services.AbyssLandingSpecialService;
+import com.aionemu.gameserver.services.BaseService;
+import com.aionemu.gameserver.services.LegionService;
+import com.aionemu.gameserver.services.MoltenusService;
+import com.aionemu.gameserver.services.SiegeService;
 import com.aionemu.gameserver.services.mail.AbyssSiegeLevel;
 import com.aionemu.gameserver.services.mail.MailFormatter;
 import com.aionemu.gameserver.services.mail.SiegeResult;
@@ -48,11 +58,6 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
 import com.aionemu.gameserver.world.zone.ZoneName;
 import com.google.common.collect.Lists;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.List;
-import java.util.Map;
 
 public class FortressSiege extends Siege<FortressLocation>
 {

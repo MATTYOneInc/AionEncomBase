@@ -17,12 +17,13 @@
  */
 package com.aionemu.gameserver.services.abysslandingservice;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.services.CronService;
 import com.aionemu.gameserver.configs.main.AbyssLandingConfig;
 import com.aionemu.gameserver.model.landing.LandingLocation;
 import com.aionemu.gameserver.services.AbyssLandingService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class LandingUpdateService
 {

@@ -16,14 +16,21 @@
  */
 package com.aionemu.gameserver.model.gameobjects.player;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 import com.aionemu.gameserver.model.gameobjects.Letter;
 import com.aionemu.gameserver.model.gameobjects.LetterType;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_MAIL_SERVICE;
 import com.aionemu.gameserver.services.mail.MailService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import javolution.util.FastMap;
 
-import java.util.*;
+import javolution.util.FastMap;
 
 /**
  * @author kosyachok

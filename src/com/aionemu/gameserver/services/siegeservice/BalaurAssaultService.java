@@ -16,6 +16,12 @@
  */
 package com.aionemu.gameserver.services.siegeservice;
 
+import java.util.Iterator;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.configs.main.LoggingConfig;
 import com.aionemu.gameserver.configs.main.SiegeConfig;
@@ -35,13 +41,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
+
 import javolution.util.FastList;
 import javolution.util.FastMap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.Iterator;
-import java.util.Map;
 
 public class BalaurAssaultService
 {

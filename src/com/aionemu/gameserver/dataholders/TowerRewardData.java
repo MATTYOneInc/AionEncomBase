@@ -16,14 +16,20 @@
  */
 package com.aionemu.gameserver.dataholders;
 
-import com.aionemu.gameserver.model.templates.tower_reward.TowerStageRewardTemplate;
-import gnu.trove.map.hash.TIntObjectHashMap;
-
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+import com.aionemu.gameserver.model.templates.tower_reward.TowerStageRewardTemplate;
+
+import gnu.trove.map.hash.TIntObjectHashMap;
 
 /**
  * Created by Wnkrz on 17/10/2017.

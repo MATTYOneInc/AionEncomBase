@@ -16,6 +16,26 @@
  */
 package com.aionemu.gameserver.model.templates.item.actions;
 
+import static ch.lambdaj.Lambda.having;
+import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.select;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.not;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.controllers.observer.ItemUseObserver;
 import com.aionemu.gameserver.dataholders.DataManager;
@@ -24,33 +44,27 @@ import com.aionemu.gameserver.model.PlayerClass;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.TaskId;
 import com.aionemu.gameserver.model.gameobjects.Item;
-import com.aionemu.gameserver.model.gameobjects.state.CreatureState;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.model.gameobjects.state.CreatureState;
 import com.aionemu.gameserver.model.items.storage.Storage;
 import com.aionemu.gameserver.model.templates.decomposable.SelectItem;
 import com.aionemu.gameserver.model.templates.decomposable.SelectItems;
-import com.aionemu.gameserver.model.templates.item.*;
+import com.aionemu.gameserver.model.templates.item.ExtractedItemsCollection;
+import com.aionemu.gameserver.model.templates.item.ItemCategory;
+import com.aionemu.gameserver.model.templates.item.ItemQuality;
+import com.aionemu.gameserver.model.templates.item.ItemTemplate;
+import com.aionemu.gameserver.model.templates.item.RandomItem;
+import com.aionemu.gameserver.model.templates.item.RandomType;
+import com.aionemu.gameserver.model.templates.item.ResultedItem;
+import com.aionemu.gameserver.model.templates.item.ResultedItemSet;
 import com.aionemu.gameserver.model.templates.itemset.ItemPart;
 import com.aionemu.gameserver.model.templates.itemset.ItemSetTemplate;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SELECT_ITEM;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_SELECT_ITEM_ADD;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.item.ItemService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import java.util.*;
-
-import static ch.lambdaj.Lambda.*;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.not;
 
 /**
  * @rework LightNing (Encom)

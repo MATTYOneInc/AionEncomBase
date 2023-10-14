@@ -16,14 +16,14 @@
  */
 package com.aionemu.gameserver.skillengine.action;
 
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.items.storage.Storage;
-import com.aionemu.gameserver.skillengine.model.Skill;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.model.items.storage.Storage;
+import com.aionemu.gameserver.skillengine.model.Skill;
 
 /**
  * @author ATracer

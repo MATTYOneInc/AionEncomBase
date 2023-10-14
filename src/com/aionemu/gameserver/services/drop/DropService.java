@@ -16,6 +16,17 @@
  */
 package com.aionemu.gameserver.services.drop;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.objects.filter.ObjectFilter;
 import com.aionemu.gameserver.configs.main.DropConfig;
 import com.aionemu.gameserver.dataholders.DataManager;
@@ -36,7 +47,11 @@ import com.aionemu.gameserver.model.team2.common.legacy.LootGroupRules;
 import com.aionemu.gameserver.model.team2.common.legacy.LootRuleType;
 import com.aionemu.gameserver.model.templates.item.ItemQuality;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
-import com.aionemu.gameserver.network.aion.serverpackets.*;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_GROUP_LOOT;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_LOOT_ITEMLIST;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_LOOT_STATUS;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.RespawnService;
 import com.aionemu.gameserver.services.item.ItemInfoService;
 import com.aionemu.gameserver.services.item.ItemService;
@@ -46,15 +61,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author ATracer, xTz
@@ -243,11 +249,16 @@ public class DropService {
 							dropNpc.addPlayerStatus(finalPlayer);
 							finalPlayer.setPlayerMode(PlayerMode.IN_ROLL, new InRoll(npcId, itemId, requestedItem.getIndex(), dropNpc.getDistributionId()));
 							PacketSendUtility.sendPacket(finalPlayer, new SM_GROUP_LOOT(finalPlayer.getCurrentTeamId(), 0, itemId, npcId, dropNpc.getDistributionId(), 1, requestedItem.getIndex()));
+							log.info("SM_GROUP_LOOT sended ");
 						}
 					}
+					
+					
 					lootGrouRules.setPlayersInRoll(dropNpc.getInRangePlayers(), dropNpc.getDistributionId() == 2 ? 17000 : 32000, requestedItem.getIndex(), npcId);
+					
 					if (!containDropItem) {
 						lootGrouRules.addItemToBeDistributed(requestedItem);
+						log.info("requestedItem " + requestedItem);
 					}
 					return false;
 				} else {

@@ -16,13 +16,13 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Collections;
+import java.util.List;
+
 import com.aionemu.gameserver.model.AbyssRankingResult;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @author Rhys2002, zdead, LokiReborn

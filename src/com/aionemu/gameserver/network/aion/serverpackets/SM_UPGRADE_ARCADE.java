@@ -16,14 +16,14 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.arcadeupgrade.ArcadeTab;
 import com.aionemu.gameserver.model.templates.arcadeupgrade.ArcadeTabItem;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.events.ArcadeUpgradeService;
-
-import java.util.List;
 
 /**
  * @author Ranastic

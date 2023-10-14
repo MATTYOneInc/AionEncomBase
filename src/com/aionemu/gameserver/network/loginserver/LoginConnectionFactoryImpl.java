@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.network.loginserver;
 
+import java.io.IOException;
+import java.nio.channels.SocketChannel;
+
 import com.aionemu.commons.network.AConnection;
 import com.aionemu.commons.network.ConnectionFactory;
 import com.aionemu.commons.network.Dispatcher;
-
-import java.io.IOException;
-import java.nio.channels.SocketChannel;
 
 /**
  * ConnectionFactory implementation that will be creating AionConnections

@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.dao;
 
+import java.sql.Timestamp;
+
 import com.aionemu.commons.database.dao.DAO;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.skill.PlayerSkillList;
-
-import java.sql.Timestamp;
 
 /**
  * Created on: 15.07.2009 19:33:07 Edited On: 13.09.2009 19:48:00

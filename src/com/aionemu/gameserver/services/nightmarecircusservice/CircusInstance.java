@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.nightmarecircusservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.nightmarecircus.NightmareCircusLocation;
 import com.aionemu.gameserver.model.nightmarecircus.NightmareCircusStateType;
 import com.aionemu.gameserver.services.NightmareCircusService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

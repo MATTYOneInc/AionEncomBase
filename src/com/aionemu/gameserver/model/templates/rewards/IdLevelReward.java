@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.model.templates.rewards;
 
-import com.aionemu.gameserver.model.templates.itemgroups.ItemRaceEntry;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.templates.itemgroups.ItemRaceEntry;
 
 /**
  * @author Rolandas

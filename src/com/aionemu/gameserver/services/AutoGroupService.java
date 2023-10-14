@@ -20,6 +20,16 @@ import static ch.lambdaj.Lambda.having;
 import static ch.lambdaj.Lambda.on;
 import static ch.lambdaj.Lambda.select;
 import static org.hamcrest.Matchers.equalTo;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.network.util.ThreadPoolManager;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.instance.InstanceEngine;
@@ -40,8 +50,8 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.instance.AsyunatarService;
 import com.aionemu.gameserver.services.instance.DredgionService2;
 import com.aionemu.gameserver.services.instance.EngulfedOphidanBridgeService;
-import com.aionemu.gameserver.services.instance.HallOfTenacityService;
 import com.aionemu.gameserver.services.instance.GrandArenaTrainingCampService;
+import com.aionemu.gameserver.services.instance.HallOfTenacityService;
 import com.aionemu.gameserver.services.instance.IDRunService;
 import com.aionemu.gameserver.services.instance.IdgelDomeLandmarkService;
 import com.aionemu.gameserver.services.instance.IdgelDomeService;
@@ -55,15 +65,9 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldMap;
 import com.aionemu.gameserver.world.WorldMapInstance;
 import com.aionemu.gameserver.world.WorldMapInstanceFactory;
+
 import javolution.util.FastList;
 import javolution.util.FastMap;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class AutoGroupService {
 

@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.model.towerofeternity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.towerofeternity.TowerOfEternityTemplate;
 import com.aionemu.gameserver.services.towerofeternityservice.TowerOfEternity;
-import javolution.util.FastMap;
 
-import java.util.ArrayList;
-import java.util.List;
+import javolution.util.FastMap;
 
 /**
  * Created by Wnkrz on 22/08/2017.

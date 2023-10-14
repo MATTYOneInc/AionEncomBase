@@ -17,6 +17,7 @@
 package com.aionemu.gameserver.controllers.movement;
 
 import com.aionemu.gameserver.model.gameobjects.Creature;
+
 import javolution.util.FastMap;
 
 public class SeenCreatureList {

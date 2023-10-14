@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.ai2;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 import com.aionemu.commons.callbacks.metadata.ObjectCallback;
 import com.aionemu.gameserver.ai2.event.AIEventLog;
 import com.aionemu.gameserver.ai2.event.AIEventType;
@@ -42,9 +45,6 @@ import com.aionemu.gameserver.spawnengine.SpawnEngine;
 import com.aionemu.gameserver.utils.MathUtil;
 import com.aionemu.gameserver.world.WorldPosition;
 import com.google.common.base.Preconditions;
-
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author ATracer

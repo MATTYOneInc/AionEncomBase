@@ -16,8 +16,10 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.model.gameobjects.Item;
-import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.item.ItemCategory;
@@ -26,13 +28,9 @@ import com.aionemu.gameserver.model.templates.item.actions.EnchantStigmaAction;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
-import com.aionemu.gameserver.services.EnchantService;
 import com.aionemu.gameserver.services.item.ItemSocketService;
 import com.aionemu.gameserver.services.trade.PricesService;
-import com.aionemu.gameserver.utils.MathUtil;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CM_ENCHANMENT_STONES extends AionClientPacket
 {

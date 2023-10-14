@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.model.templates.quest;
 
-import com.aionemu.gameserver.dataholders.DataManager;
-import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
-import com.aionemu.gameserver.questEngine.QuestEngine;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.aionemu.gameserver.dataholders.DataManager;
+import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
+import com.aionemu.gameserver.questEngine.QuestEngine;
 
 /**
  * @author MrPoke

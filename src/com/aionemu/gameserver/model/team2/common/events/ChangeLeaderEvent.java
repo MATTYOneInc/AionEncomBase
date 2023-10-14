@@ -16,11 +16,12 @@
  */
 package com.aionemu.gameserver.model.team2.common.events;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.team2.TemporaryPlayerTeam;
 import com.aionemu.gameserver.model.team2.group.events.ChangeGroupLeaderEvent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author ATracer

@@ -16,14 +16,14 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.zone.ZoneClassName;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
-
-import java.util.List;
 
 public class CM_SUBZONE_CHANGE extends AionClientPacket
 {

@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.model.gameobjects.player;
 
+import java.sql.Timestamp;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.PlayerPetsDAO;
 import com.aionemu.gameserver.dataholders.DataManager;
@@ -31,8 +33,6 @@ import com.aionemu.gameserver.services.toypet.PetHungryLevel;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
-
-import java.sql.Timestamp;
 
 public class PetCommonData extends VisibleObjectTemplate implements IExpirable
 {

@@ -16,14 +16,14 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.List;
+
 import com.aionemu.gameserver.configs.network.NetworkConfig;
 import com.aionemu.gameserver.model.house.House;
 import com.aionemu.gameserver.model.team.legion.LegionMemberEx;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.HousingService;
-
-import java.util.List;
 
 public class SM_LEGION_MEMBERLIST extends AionServerPacket
 {

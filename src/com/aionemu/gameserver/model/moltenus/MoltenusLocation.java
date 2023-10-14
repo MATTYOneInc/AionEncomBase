@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.model.moltenus;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.moltenus.MoltenusTemplate;
 import com.aionemu.gameserver.services.moltenusservice.MoltenusFight;
-import javolution.util.FastMap;
 
-import java.util.ArrayList;
-import java.util.List;
+import javolution.util.FastMap;
 
 /**
  * @author Rinzler (Encom)

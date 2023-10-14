@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.model.instance.playerreward;
 
+import java.util.List;
+
 import com.aionemu.gameserver.model.autogroup.AGPlayer;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
-
-import java.util.List;
 
 public class HarmonyGroupReward extends PvPArenaPlayerReward
 {

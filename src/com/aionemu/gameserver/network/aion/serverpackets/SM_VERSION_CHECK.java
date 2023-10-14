@@ -16,6 +16,11 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Calendar;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.network.IPRange;
 import com.aionemu.gameserver.configs.main.GSConfig;
 import com.aionemu.gameserver.configs.main.MembershipConfig;
@@ -25,9 +30,6 @@ import com.aionemu.gameserver.network.NetworkController;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.ChatService;
-import java.util.Calendar;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author -Nemesiss- CC fix

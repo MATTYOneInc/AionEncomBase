@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.model.broker;
 
-import com.aionemu.gameserver.model.gameobjects.BrokerItem;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.aionemu.gameserver.model.gameobjects.BrokerItem;
 
 /**
  * @author ATracer

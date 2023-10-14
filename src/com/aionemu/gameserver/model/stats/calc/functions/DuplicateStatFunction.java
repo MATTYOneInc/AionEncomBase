@@ -16,16 +16,18 @@
  */
 package com.aionemu.gameserver.model.stats.calc.functions;
 
+import static ch.lambdaj.Lambda.forEach;
+import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.selectMax;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.stats.calc.Stat2;
 import com.aionemu.gameserver.model.stats.container.StatEnum;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static ch.lambdaj.Lambda.*;
 
 class DuplicateStatFunction extends StatFunction
 {

@@ -16,10 +16,14 @@
  */
 package com.aionemu.gameserver.model.templates.event;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
-
-import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EventDrop")

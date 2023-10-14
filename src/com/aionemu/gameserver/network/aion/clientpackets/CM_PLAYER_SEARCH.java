@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import com.aionemu.gameserver.configs.main.CustomConfig;
 import com.aionemu.gameserver.model.gameobjects.player.FriendList.Status;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -26,10 +30,6 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.Util;
 import com.aionemu.gameserver.world.World;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class CM_PLAYER_SEARCH extends AionClientPacket
 {

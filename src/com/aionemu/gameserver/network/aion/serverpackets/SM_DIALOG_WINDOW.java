@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.List;
+
 import com.aionemu.gameserver.model.DialogPage;
 import com.aionemu.gameserver.model.gameobjects.AionObject;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -26,8 +28,6 @@ import com.aionemu.gameserver.services.player.PlayerMailboxState;
 import com.aionemu.gameserver.world.MapRegion;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
-
-import java.util.List;
 
 public class SM_DIALOG_WINDOW extends AionServerPacket
 {

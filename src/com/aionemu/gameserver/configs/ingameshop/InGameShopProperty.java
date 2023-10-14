@@ -16,17 +16,19 @@
  */
 package com.aionemu.gameserver.configs.ingameshop;
 
-import com.aionemu.commons.utils.xml.JAXBUtil;
-import com.aionemu.gameserver.model.templates.ingameshop.IGCategory;
-import org.apache.commons.io.FileUtils;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+
+import org.apache.commons.io.FileUtils;
+
+import com.aionemu.commons.utils.xml.JAXBUtil;
+import com.aionemu.gameserver.model.templates.ingameshop.IGCategory;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "in_game_shop")

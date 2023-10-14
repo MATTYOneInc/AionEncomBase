@@ -22,6 +22,7 @@ import com.aionemu.gameserver.model.items.ItemSlot;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.EnchantService;
+
 import javolution.util.FastList;
 
 public class SM_UPDATE_PLAYER_APPEARANCE extends AionServerPacket

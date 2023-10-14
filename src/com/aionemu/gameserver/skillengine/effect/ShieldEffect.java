@@ -16,15 +16,15 @@
  */
 package com.aionemu.gameserver.skillengine.effect;
 
-import com.aionemu.gameserver.controllers.observer.AttackCalcObserver;
-import com.aionemu.gameserver.controllers.observer.AttackShieldObserver;
-import com.aionemu.gameserver.model.Race;
-import com.aionemu.gameserver.skillengine.model.Effect;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.controllers.observer.AttackCalcObserver;
+import com.aionemu.gameserver.controllers.observer.AttackShieldObserver;
+import com.aionemu.gameserver.model.Race;
+import com.aionemu.gameserver.skillengine.model.Effect;
 
 /**
  * @author ATracer modified by Wakizashi, Sippolo, kecimis

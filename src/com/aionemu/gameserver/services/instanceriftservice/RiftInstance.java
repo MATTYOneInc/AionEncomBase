@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.instanceriftservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.instancerift.InstanceRiftLocation;
 import com.aionemu.gameserver.model.instancerift.InstanceRiftStateType;
 import com.aionemu.gameserver.services.InstanceRiftService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

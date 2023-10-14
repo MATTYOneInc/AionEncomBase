@@ -16,14 +16,20 @@
  */
 package com.aionemu.gameserver.model.drop;
 
-import com.aionemu.gameserver.model.Race;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-
-import javax.xml.bind.annotation.*;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.Race;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 @XmlRootElement(name = "npc_drop")
 @XmlAccessorType(XmlAccessType.FIELD)

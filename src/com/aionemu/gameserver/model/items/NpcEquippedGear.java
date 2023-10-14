@@ -16,15 +16,16 @@
  */
 package com.aionemu.gameserver.model.items;
 
-import com.aionemu.gameserver.dataholders.loadingutils.adapters.NpcEquipmentList;
-import com.aionemu.gameserver.dataholders.loadingutils.adapters.NpcEquippedGearAdapter;
-import com.aionemu.gameserver.model.templates.item.ItemTemplate;
-
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
+
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import com.aionemu.gameserver.dataholders.loadingutils.adapters.NpcEquipmentList;
+import com.aionemu.gameserver.dataholders.loadingutils.adapters.NpcEquippedGearAdapter;
+import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 
 /**
  * @author Luno

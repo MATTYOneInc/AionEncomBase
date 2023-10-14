@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.model.trade;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.services.RepurchaseService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author xTz

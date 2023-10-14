@@ -16,6 +16,14 @@
  */
 package com.aionemu.gameserver.services.toypet;
 
+import java.sql.Timestamp;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.controllers.MinionController;
@@ -47,12 +55,6 @@ import com.aionemu.gameserver.services.SkillLearnService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.knownlist.PlayerAwareKnownList;
-import java.sql.Timestamp;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /****/
 /** Reworked by G-Robson26

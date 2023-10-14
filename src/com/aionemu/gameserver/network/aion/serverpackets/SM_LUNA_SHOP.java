@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.aionemu.gameserver.model.DescriptionId;
 import com.aionemu.gameserver.model.dorinerk_wardrobe.PlayerWardrobeEntry;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -23,10 +26,6 @@ import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import java.util.HashMap;
-import java.util.Map;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class SM_LUNA_SHOP extends AionServerPacket {
 

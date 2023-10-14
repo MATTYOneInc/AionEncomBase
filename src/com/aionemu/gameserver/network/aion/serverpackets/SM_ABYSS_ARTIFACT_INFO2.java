@@ -16,13 +16,14 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.model.siege.SiegeLocation;
 import com.aionemu.gameserver.model.siege.SiegeType;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-import javolution.util.FastList;
 
-import java.util.Collection;
+import javolution.util.FastList;
 
 public class SM_ABYSS_ARTIFACT_INFO2 extends AionServerPacket {
 

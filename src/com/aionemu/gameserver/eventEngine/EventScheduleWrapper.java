@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.eventEngine;
 
-import com.aionemu.gameserver.utils.ThreadPoolManager;
-
 import java.util.concurrent.ScheduledFuture;
+
+import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /**
  * Created by wanke on 12/02/2017.

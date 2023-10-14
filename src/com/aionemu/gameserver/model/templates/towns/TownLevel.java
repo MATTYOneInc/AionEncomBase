@@ -16,12 +16,13 @@
  */
 package com.aionemu.gameserver.model.templates.towns;
 
-import com.aionemu.gameserver.model.templates.spawns.Spawn;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import java.util.List;
+
+import com.aionemu.gameserver.model.templates.spawns.Spawn;
 
 /**
  * @author ViAl

@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.skillengine.effect.modifier;
 
+import javax.xml.bind.annotation.XmlAttribute;
+
 import com.aionemu.gameserver.skillengine.effect.AbnormalState;
 import com.aionemu.gameserver.skillengine.model.Effect;
-
-import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  * @author kecimis

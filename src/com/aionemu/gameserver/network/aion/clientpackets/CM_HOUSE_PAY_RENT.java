@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import java.sql.Timestamp;
+
+import org.joda.time.DateTime;
+
 import com.aionemu.gameserver.configs.main.HousingConfig;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.house.House;
@@ -25,9 +29,6 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_HOUSE_PAY_RENT;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import org.joda.time.DateTime;
-
-import java.sql.Timestamp;
 
 public class CM_HOUSE_PAY_RENT extends AionClientPacket
 {

@@ -16,6 +16,12 @@
  */
 package com.aionemu.gameserver.services.base;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.commons.callbacks.EnhancedObject;
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.ai2.AbstractAI;
@@ -40,11 +46,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.Future;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler

@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.services.conquerors;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.stats.calc.StatOwner;
@@ -25,9 +28,6 @@ import com.aionemu.gameserver.model.stats.calc.functions.StatRateFunction;
 import com.aionemu.gameserver.model.templates.serial_killer.RankPenaltyAttr;
 import com.aionemu.gameserver.model.templates.serial_killer.RankRestriction;
 import com.aionemu.gameserver.skillengine.change.Func;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ConquerorBuffs implements StatOwner
 {

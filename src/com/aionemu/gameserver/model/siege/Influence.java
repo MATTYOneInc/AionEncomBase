@@ -16,14 +16,14 @@
  */
 package com.aionemu.gameserver.model.siege;
 
+import java.util.Iterator;
+
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_INFLUENCE_RATIO;
 import com.aionemu.gameserver.services.SiegeService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
-
-import java.util.Iterator;
 
 public class Influence
 {

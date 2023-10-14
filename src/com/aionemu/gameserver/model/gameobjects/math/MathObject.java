@@ -6,8 +6,6 @@ package com.aionemu.gameserver.model.gameobjects.math;
 import com.aionemu.gameserver.controllers.MathController;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
-import com.aionemu.gameserver.model.gameobjects.math.MathObjectReaction;
-import com.aionemu.gameserver.model.gameobjects.math.MathObjectType;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
 import com.aionemu.gameserver.world.WorldPosition;

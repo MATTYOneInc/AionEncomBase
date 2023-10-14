@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.model.gameobjects;
 
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 /**
  * @author Simple

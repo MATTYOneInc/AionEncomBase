@@ -16,6 +16,17 @@
  */
 package com.aionemu.gameserver.skillengine.model;
 
+import java.util.HashMap;
+import java.util.Iterator;
+
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.controllers.attack.AttackStatus;
 import com.aionemu.gameserver.skillengine.action.Actions;
@@ -28,11 +39,6 @@ import com.aionemu.gameserver.skillengine.effect.EffectType;
 import com.aionemu.gameserver.skillengine.effect.Effects;
 import com.aionemu.gameserver.skillengine.periodicaction.PeriodicActions;
 import com.aionemu.gameserver.skillengine.properties.Properties;
-
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
-import java.util.HashMap;
-import java.util.Iterator;
 
 /**
  * @author ATracer modified by Wakizashi

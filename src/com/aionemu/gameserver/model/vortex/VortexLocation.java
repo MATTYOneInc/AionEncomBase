@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.model.vortex;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.controllers.RVController;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.Creature;
@@ -34,10 +37,8 @@ import com.aionemu.gameserver.world.WorldPosition;
 import com.aionemu.gameserver.world.zone.InvasionZoneInstance;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
 import com.aionemu.gameserver.world.zone.handler.ZoneHandler;
-import javolution.util.FastMap;
 
-import java.util.ArrayList;
-import java.util.List;
+import javolution.util.FastMap;
 
 public class VortexLocation implements ZoneHandler
 {

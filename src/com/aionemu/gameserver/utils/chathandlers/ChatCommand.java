@@ -16,10 +16,11 @@
  */
 package com.aionemu.gameserver.utils.chathandlers;
 
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author KID

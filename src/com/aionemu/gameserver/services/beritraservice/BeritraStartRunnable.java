@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.beritraservice;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.beritra.BeritraLocation;
 import com.aionemu.gameserver.services.BeritraService;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
-import java.util.Map;
 
 /**
  * @author Rinzler (Encom)

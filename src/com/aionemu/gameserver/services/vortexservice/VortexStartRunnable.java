@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.services.vortexservice;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.vortex.VortexLocation;
 import com.aionemu.gameserver.services.VortexService;
-
-import java.util.Map;
 
 /**
  * @author Rinzler (Encom)

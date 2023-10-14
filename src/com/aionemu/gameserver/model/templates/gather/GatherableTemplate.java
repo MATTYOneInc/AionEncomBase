@@ -16,9 +16,13 @@
  */
 package com.aionemu.gameserver.model.templates.gather;
 
-import com.aionemu.gameserver.model.templates.VisibleObjectTemplate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-import javax.xml.bind.annotation.*;
+import com.aionemu.gameserver.model.templates.VisibleObjectTemplate;
 
 /**
  * @author ATracer, KID

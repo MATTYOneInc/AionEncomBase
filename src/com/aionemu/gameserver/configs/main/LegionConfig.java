@@ -16,11 +16,12 @@
  */
 package com.aionemu.gameserver.configs.main;
 
-import com.aionemu.commons.configuration.Property;
+import java.util.regex.Pattern;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.regex.Pattern;
+import com.aionemu.commons.configuration.Property;
 
 public class LegionConfig
 {

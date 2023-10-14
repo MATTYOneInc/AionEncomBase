@@ -8,10 +8,6 @@ import com.aionemu.gameserver.geoEngine.collision.Collidable;
 import com.aionemu.gameserver.geoEngine.collision.CollisionResult;
 import com.aionemu.gameserver.geoEngine.collision.CollisionResults;
 import com.aionemu.gameserver.geoEngine.collision.UnsupportedCollisionException;
-import com.aionemu.gameserver.geoEngine.math.AbstractTriangle;
-import com.aionemu.gameserver.geoEngine.math.Plane;
-import com.aionemu.gameserver.geoEngine.math.Triangle;
-import com.aionemu.gameserver.geoEngine.math.Vector3f;
 
 public final class Ray
 implements Cloneable,

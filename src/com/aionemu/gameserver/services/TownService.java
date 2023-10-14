@@ -16,6 +16,12 @@
  */
 package com.aionemu.gameserver.services;
 
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.TownDAO;
 import com.aionemu.gameserver.dataholders.DataManager;
@@ -32,11 +38,6 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_TOWNS_LIST;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.MapRegion;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.List;
-import java.util.Map;
 
 public class TownService
 {

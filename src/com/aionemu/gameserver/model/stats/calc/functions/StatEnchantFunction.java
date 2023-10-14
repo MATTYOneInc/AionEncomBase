@@ -16,13 +16,14 @@
  */
 package com.aionemu.gameserver.model.stats.calc.functions;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.items.ItemSlot;
 import com.aionemu.gameserver.model.stats.calc.Stat2;
 import com.aionemu.gameserver.model.stats.container.StatEnum;
 import com.aionemu.gameserver.model.templates.item.ArmorType;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class StatEnchantFunction extends StatAddFunction
 {

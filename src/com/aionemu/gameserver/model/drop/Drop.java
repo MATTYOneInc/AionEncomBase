@@ -16,20 +16,21 @@
  */
 package com.aionemu.gameserver.model.drop;
 
+import java.nio.ByteBuffer;
+import java.util.Collection;
+import java.util.Set;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.configs.main.RateConfig;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import java.nio.ByteBuffer;
-import java.util.Collection;
-import java.util.Set;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "drop")

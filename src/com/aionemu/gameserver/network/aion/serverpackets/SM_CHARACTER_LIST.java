@@ -16,8 +16,10 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
-import com.aionemu.gameserver.configs.main.GSConfig;
 import com.aionemu.gameserver.dao.MailDAO;
 import com.aionemu.gameserver.model.account.Account;
 import com.aionemu.gameserver.model.account.PlayerAccountData;
@@ -27,8 +29,6 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.PlayerInfo;
 import com.aionemu.gameserver.services.BrokerService;
 import com.aionemu.gameserver.services.player.PlayerService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * In this packet Server is sending Character List to client.

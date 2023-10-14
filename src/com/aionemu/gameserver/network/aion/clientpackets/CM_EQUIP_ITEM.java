@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.model.TaskId;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Equipment;
@@ -27,8 +30,6 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_UPDATE_PLAYER_APPEAR
 import com.aionemu.gameserver.restrictions.RestrictionsManager;
 import com.aionemu.gameserver.skillengine.effect.AbnormalState;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CM_EQUIP_ITEM extends AionClientPacket
 {

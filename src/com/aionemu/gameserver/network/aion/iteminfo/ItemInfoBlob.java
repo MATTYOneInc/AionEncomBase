@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.network.aion.iteminfo;
 
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.stats.calc.functions.IStatFunction;
@@ -25,10 +29,6 @@ import com.aionemu.gameserver.model.templates.item.EquipType;
 import com.aionemu.gameserver.model.templates.item.ItemCategory;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 import com.aionemu.gameserver.network.PacketWriteHelper;
-
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ItemInfoBlob extends PacketWriteHelper 
 {

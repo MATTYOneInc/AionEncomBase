@@ -16,6 +16,11 @@
  */
 package com.aionemu.gameserver.services.teleport;
 
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.configs.administration.AdminConfig;
 import com.aionemu.gameserver.configs.main.CustomConfig;
 import com.aionemu.gameserver.configs.main.MembershipConfig;
@@ -26,12 +31,16 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.items.storage.Storage;
 import com.aionemu.gameserver.model.siege.FortressLocation;
 import com.aionemu.gameserver.model.team2.alliance.PlayerAlliance;
-import com.aionemu.gameserver.model.team2.group.PlayerGroup;
-import com.aionemu.gameserver.model.team2.league.League;
 import com.aionemu.gameserver.model.team2.alliance.PlayerAllianceService;
+import com.aionemu.gameserver.model.team2.group.PlayerGroup;
 import com.aionemu.gameserver.model.team2.group.PlayerGroupService;
+import com.aionemu.gameserver.model.team2.league.League;
 import com.aionemu.gameserver.model.templates.InstanceCooltime;
-import com.aionemu.gameserver.model.templates.portal.*;
+import com.aionemu.gameserver.model.templates.portal.ItemReq;
+import com.aionemu.gameserver.model.templates.portal.PortalLoc;
+import com.aionemu.gameserver.model.templates.portal.PortalPath;
+import com.aionemu.gameserver.model.templates.portal.PortalReq;
+import com.aionemu.gameserver.model.templates.portal.QuestReq;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.questEngine.model.QuestState;
@@ -41,10 +50,6 @@ import com.aionemu.gameserver.services.instance.InstanceService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldMapInstance;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.List;
 
 public class PortalService
 {

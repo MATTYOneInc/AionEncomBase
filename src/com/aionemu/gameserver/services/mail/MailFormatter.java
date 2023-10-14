@@ -19,7 +19,6 @@ package com.aionemu.gameserver.services.mail;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.LetterType;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerCommonData;
 import com.aionemu.gameserver.model.house.House;
 import com.aionemu.gameserver.model.siege.SiegeLocation;

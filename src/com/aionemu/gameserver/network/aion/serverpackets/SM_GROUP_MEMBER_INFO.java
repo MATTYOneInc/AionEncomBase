@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerCommonData;
 import com.aionemu.gameserver.model.stats.container.PlayerLifeStats;
@@ -25,8 +27,6 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.skillengine.model.Effect;
 import com.aionemu.gameserver.world.WorldPosition;
-
-import java.util.List;
 
 public class SM_GROUP_MEMBER_INFO extends AionServerPacket
 {

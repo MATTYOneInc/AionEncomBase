@@ -16,13 +16,13 @@
  */
 package com.aionemu.gameserver.services.abysslandingservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.AbyssLandingDAO;
 import com.aionemu.gameserver.model.landing.LandingLocation;
 import com.aionemu.gameserver.model.landing.LandingStateType;
 import com.aionemu.gameserver.services.AbyssLandingService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class Landing<RL extends LandingLocation>
 {

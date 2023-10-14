@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.model.team2.common.legacy;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.model.actions.PlayerMode;
 import com.aionemu.gameserver.model.drop.DropItem;
 import com.aionemu.gameserver.model.gameobjects.player.InRoll;
@@ -23,8 +25,8 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.item.ItemQuality;
 import com.aionemu.gameserver.services.drop.DropDistributionService;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
+
 import javolution.util.FastList;
-import java.util.Collection;
 
 /**
  * @author ATracer, xTz
@@ -82,7 +84,9 @@ public class LootGroupRules {
             case MYTHIC: // Orange
                 return ethernal_item_above != 0;
 			case EPIC: // Purple
-				return true;	
+				return true;
+		default:
+			break;	
         }
         return false;
     }

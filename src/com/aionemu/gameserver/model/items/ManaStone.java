@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.model.items;
 
+import java.util.List;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.PersistentState;
 import com.aionemu.gameserver.model.stats.calc.functions.StatFunction;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
-
-import java.util.List;
 
 public class ManaStone extends ItemStone
 {

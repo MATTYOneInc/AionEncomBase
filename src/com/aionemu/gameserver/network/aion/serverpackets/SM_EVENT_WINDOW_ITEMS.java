@@ -16,15 +16,17 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.sql.Timestamp;
+import java.util.Collection;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.PlayerEventsWindowDAO;
 import com.aionemu.gameserver.model.templates.event.EventsWindow;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-import java.sql.Timestamp;
-import java.util.Collection;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class SM_EVENT_WINDOW_ITEMS extends AionServerPacket {
 

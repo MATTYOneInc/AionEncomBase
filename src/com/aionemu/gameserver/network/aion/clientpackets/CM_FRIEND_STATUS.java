@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.model.gameobjects.player.FriendList.Status;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_FRIEND_STATUS;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CM_FRIEND_STATUS extends AionClientPacket
 {

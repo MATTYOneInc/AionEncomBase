@@ -3,9 +3,6 @@
  */
 package com.aionemu.gameserver.geoEngine.math;
 
-import com.aionemu.gameserver.geoEngine.math.FastMath;
-import com.aionemu.gameserver.geoEngine.math.Matrix3f;
-import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import java.util.logging.Logger;
 
 public class Eigen3f {

@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.questEngine.handlers.template;
 
+import java.util.List;
+import java.util.Set;
+
 import com.aionemu.gameserver.configs.main.GroupConfig;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -26,10 +29,8 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.utils.MathUtil;
-import javolution.util.FastMap;
 
-import java.util.List;
-import java.util.Set;
+import javolution.util.FastMap;
 public class MentorMonsterHunt extends MonsterHunt
 {
 	private int menteMinLevel;

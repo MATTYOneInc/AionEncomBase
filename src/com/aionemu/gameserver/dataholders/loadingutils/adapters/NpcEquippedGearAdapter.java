@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.dataholders.loadingutils.adapters;
 
-import com.aionemu.gameserver.model.items.NpcEquippedGear;
-
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+
+import com.aionemu.gameserver.model.items.NpcEquippedGear;
 
 /**
  * @author Luno

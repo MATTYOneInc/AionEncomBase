@@ -3,13 +3,14 @@
  */
 package com.eleanor.processors.movement;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.eleanor.processors.AGameProcessor;
 import com.eleanor.processors.movement.motor.AMovementMotor;
 import com.eleanor.processors.movement.motor.ReturnMotor;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class MovementProcessor
 extends AGameProcessor {

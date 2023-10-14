@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.network.aion.iteminfo;
 
+import java.nio.ByteBuffer;
+
 import com.aionemu.gameserver.configs.administration.DeveloperConfig;
 import com.aionemu.gameserver.model.stats.calc.functions.StatRateFunction;
 import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
-
-import java.nio.ByteBuffer;
 
 /**
  * @author Rolandas

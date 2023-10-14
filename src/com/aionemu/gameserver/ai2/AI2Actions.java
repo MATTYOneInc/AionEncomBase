@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.ai2;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.controllers.observer.DialogObserver;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Creature;
@@ -29,8 +31,6 @@ import com.aionemu.gameserver.services.drop.DropRegistrationService;
 import com.aionemu.gameserver.skillengine.model.Effect;
 import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-
-import java.util.Collection;
 
 /**
  * Here will be placed some common AI2 actions. These methods have access to AI2's owner

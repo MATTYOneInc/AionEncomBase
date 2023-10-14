@@ -17,6 +17,10 @@
 // Credits To Magenik and to the Cinus
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Map.Entry;
+
+import org.apache.commons.lang.StringUtils;
+
 import com.aionemu.gameserver.model.NpcType;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.TribeClass;
@@ -33,9 +37,6 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.TownService;
-import org.apache.commons.lang.StringUtils;
-
-import java.util.Map.Entry;
 
 public class SM_NPC_INFO extends AionServerPacket
 {

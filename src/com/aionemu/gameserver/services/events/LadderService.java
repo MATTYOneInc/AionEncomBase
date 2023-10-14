@@ -16,6 +16,17 @@
  */
 package com.aionemu.gameserver.services.events;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ScheduledFuture;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.dao.LadderDAO;
@@ -29,17 +40,17 @@ import com.aionemu.gameserver.model.team.legion.LegionEmblem;
 import com.aionemu.gameserver.model.team.legion.LegionEmblemType;
 import com.aionemu.gameserver.model.team2.group.PlayerGroup;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_AUTO_GROUP;
-import com.aionemu.gameserver.services.events.bg.*;
+import com.aionemu.gameserver.services.events.bg.Battleground;
+import com.aionemu.gameserver.services.events.bg.DeathmatchBg;
+import com.aionemu.gameserver.services.events.bg.SoloSurvivorBg;
+import com.aionemu.gameserver.services.events.bg.TwoTeamBg;
+import com.aionemu.gameserver.services.events.bg.TwoTeamSmallBg;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-import javolution.util.FastMap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.*;
-import java.util.concurrent.ScheduledFuture;
+import javolution.util.FastMap;
 
 /**
  * @author Rinzler (Encom)

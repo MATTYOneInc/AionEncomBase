@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.questEngine.handlers.template;
 
+import java.util.Iterator;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.QuestTemplate;
@@ -34,8 +36,6 @@ import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.services.RecipeService;
 import com.aionemu.gameserver.services.item.ItemService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-
-import java.util.Iterator;
 
 public class WorkOrders extends QuestHandler
 {

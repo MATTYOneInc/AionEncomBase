@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.model.items;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.configs.main.CustomConfig;
@@ -38,8 +41,6 @@ import com.aionemu.gameserver.skillengine.model.Effect;
 import com.aionemu.gameserver.skillengine.model.Skill;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class GodStone extends ItemStone
 {

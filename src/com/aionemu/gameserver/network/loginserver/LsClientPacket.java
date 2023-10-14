@@ -16,9 +16,10 @@
  */
 package com.aionemu.gameserver.network.loginserver;
 
-import com.aionemu.commons.network.packet.BaseClientPacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.aionemu.commons.network.packet.BaseClientPacket;
 
 /**
  * @author -Nemesiss-

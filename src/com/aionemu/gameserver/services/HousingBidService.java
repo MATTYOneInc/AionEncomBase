@@ -16,6 +16,21 @@
  */
 package com.aionemu.gameserver.services;
 
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.joda.time.DateTime;
+import org.quartz.CronExpression;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.configs.main.HousingConfig;
@@ -48,16 +63,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldMapType;
-import javolution.util.FastMap;
-import org.joda.time.DateTime;
-import org.quartz.CronExpression;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.sql.Timestamp;
-import java.text.ParseException;
-import java.util.*;
-import java.util.Map.Entry;
+import javolution.util.FastMap;
 
 public class HousingBidService extends AbstractCronTask
 {

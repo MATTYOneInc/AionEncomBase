@@ -17,7 +17,6 @@
 package com.aionemu.gameserver.model.gameobjects;
 
 import java.sql.Timestamp;
-import com.aionemu.gameserver.model.gameobjects.LetterType;
 
 public class Letter extends AionObject
 {

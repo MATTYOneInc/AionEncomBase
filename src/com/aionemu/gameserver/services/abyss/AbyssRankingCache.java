@@ -16,6 +16,14 @@
  */
 package com.aionemu.gameserver.services.abyss;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.AbyssRankDAO;
 import com.aionemu.gameserver.model.AbyssRankingResult;
@@ -26,14 +34,8 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_ABYSS_RANKING_PLAYER
 import com.aionemu.gameserver.services.LegionService;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-import javolution.util.FastMap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javolution.util.FastMap;
 
 public class AbyssRankingCache
 {

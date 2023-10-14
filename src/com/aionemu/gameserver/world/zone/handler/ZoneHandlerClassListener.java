@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.world.zone.handler;
 
+import java.lang.reflect.Modifier;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.scripting.classlistener.ClassListener;
 import com.aionemu.commons.utils.ClassUtils;
 import com.aionemu.gameserver.instance.InstanceHandlerClassListener;
 import com.aionemu.gameserver.world.zone.ZoneService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.lang.reflect.Modifier;
 
 /**
  * @author MrPoke

@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.model.agent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.agent.AgentTemplate;
 import com.aionemu.gameserver.services.agentservice.AgentFight;
-import javolution.util.FastMap;
 
-import java.util.ArrayList;
-import java.util.List;
+import javolution.util.FastMap;
 
 /**
  * @author Rinzler (Encom)

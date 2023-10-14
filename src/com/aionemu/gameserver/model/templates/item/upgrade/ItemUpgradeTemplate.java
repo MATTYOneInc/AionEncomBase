@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.model.templates.item.upgrade;
 
-import com.aionemu.gameserver.model.stats.calc.StatOwner;
+import java.util.List;
 
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.List;
+
+import com.aionemu.gameserver.model.stats.calc.StatOwner;
 
 /**
  * @author Ranastic (Encom)

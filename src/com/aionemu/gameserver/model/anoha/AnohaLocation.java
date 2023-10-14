@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.model.anoha;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.anoha.AnohaTemplate;
 import com.aionemu.gameserver.services.anohaservice.BerserkAnoha;
-import javolution.util.FastMap;
 
-import java.util.ArrayList;
-import java.util.List;
+import javolution.util.FastMap;
 
 /**
  * @author Rinzler (Encom)

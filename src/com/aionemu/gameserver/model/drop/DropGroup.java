@@ -16,17 +16,18 @@
  */
 package com.aionemu.gameserver.model.drop;
 
-import com.aionemu.commons.utils.Rnd;
-import com.aionemu.gameserver.model.Race;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+
+import com.aionemu.commons.utils.Rnd;
+import com.aionemu.gameserver.model.Race;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "dropGroup", propOrder = { "drop" })

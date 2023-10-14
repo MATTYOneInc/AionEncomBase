@@ -16,14 +16,14 @@
  */
 package com.aionemu.gameserver.controllers.observer;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.geoEngine.collision.CollisionResults;
 import com.aionemu.gameserver.geoEngine.math.Ray;
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import com.aionemu.gameserver.geoEngine.scene.Spatial;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author MrPoke

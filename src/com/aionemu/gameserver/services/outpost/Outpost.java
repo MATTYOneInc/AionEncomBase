@@ -16,36 +16,28 @@
  */
 package com.aionemu.gameserver.services.outpost;
 
-import com.aionemu.commons.callbacks.EnhancedObject;
-import com.aionemu.commons.database.dao.DAOManager;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.commons.utils.Rnd;
-import com.aionemu.gameserver.ai2.AbstractAI;
-import com.aionemu.gameserver.dao.SiegeDAO;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.outpost.OutpostNpc;
 import com.aionemu.gameserver.model.outpost.OutpostLocation;
-import com.aionemu.gameserver.model.siege.SiegeLocation;
-import com.aionemu.gameserver.model.siege.SiegeModType;
-import com.aionemu.gameserver.model.siege.SiegeRace;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplateType;
 import com.aionemu.gameserver.model.templates.spawns.SpawnGroup2;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.model.templates.spawns.outpostspawns.OutpostSpawnTemplate;
 import com.aionemu.gameserver.services.OutpostService;
-import com.aionemu.gameserver.services.SiegeService;
 import com.aionemu.gameserver.spawnengine.SpawnEngine;
 import com.aionemu.gameserver.spawnengine.SpawnHandlerType;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.Future;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Created by Wnkrz on 27/08/2017.

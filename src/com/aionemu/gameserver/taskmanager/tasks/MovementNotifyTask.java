@@ -16,6 +16,13 @@
  */
 package com.aionemu.gameserver.taskmanager.tasks;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import com.aionemu.gameserver.ai2.AI2Logger;
 import com.aionemu.gameserver.ai2.AIState;
 import com.aionemu.gameserver.ai2.event.AIEventType;
@@ -27,9 +34,6 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.world.WorldMapTemplate;
 import com.aionemu.gameserver.taskmanager.AbstractFIFOPeriodicTaskManager;
 import com.aionemu.gameserver.world.knownlist.VisitorWithOwner;
-
-import java.util.*;
-import java.util.Map.Entry;
 
 public class MovementNotifyTask extends AbstractFIFOPeriodicTaskManager<Creature>
 {

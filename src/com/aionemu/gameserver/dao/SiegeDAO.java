@@ -16,12 +16,10 @@
  */
 package com.aionemu.gameserver.dao;
 
-import com.aionemu.commons.database.dao.DAO;
-import com.aionemu.commons.database.dao.DAOManager;
-import com.aionemu.gameserver.model.siege.SiegeLocation;
-import com.aionemu.gameserver.services.LegionService;
-
 import java.util.Map;
+
+import com.aionemu.commons.database.dao.DAO;
+import com.aionemu.gameserver.model.siege.SiegeLocation;
 
 /**
  * @author Sarynth

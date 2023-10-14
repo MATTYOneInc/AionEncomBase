@@ -16,11 +16,12 @@
  */
 package com.aionemu.gameserver.network.aion;
 
-import com.aionemu.gameserver.network.aion.serverpackets.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import com.aionemu.gameserver.network.aion.serverpackets.*;
 
 public class ServerPacketsOpcodes
 {

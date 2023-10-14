@@ -16,14 +16,11 @@
  */
 package com.aionemu.gameserver.model.drop;
 
-import com.aionemu.gameserver.dataholders.DataManager;
-import com.aionemu.gameserver.model.Race;
-import com.aionemu.gameserver.model.TribeClass;
-import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -31,11 +28,16 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import com.aionemu.gameserver.dataholders.DataManager;
+import com.aionemu.gameserver.model.Race;
+import com.aionemu.gameserver.model.TribeClass;
+import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 
 public class DropLists {
 

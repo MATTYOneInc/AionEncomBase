@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.network.aion.iteminfo;
 
+import java.nio.ByteBuffer;
+
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
-
-import java.nio.ByteBuffer;
 
 /**
  * This block is sent for all items that can be equipped. If item is equipped. This block says to which slot it's

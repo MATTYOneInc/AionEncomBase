@@ -16,15 +16,15 @@
  */
 package com.aionemu.gameserver.model.skill;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.templates.npcskill.NpcSkillTemplate;
 import com.aionemu.gameserver.model.templates.npcskill.NpcSkillTemplates;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * @author ATracer

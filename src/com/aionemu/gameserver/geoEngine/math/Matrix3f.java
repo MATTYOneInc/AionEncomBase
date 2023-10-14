@@ -7,12 +7,12 @@
  */
 package com.aionemu.gameserver.geoEngine.math;
 
-import com.aionemu.gameserver.configs.main.GeoDataConfig;
-import com.aionemu.gameserver.geoEngine.math.FastMath;
-import com.aionemu.gameserver.geoEngine.math.Vector3f;
-import com.aionemu.gameserver.geoEngine.utils.BufferUtils;
 import java.nio.FloatBuffer;
 import java.util.logging.Logger;
+
+import com.aionemu.gameserver.configs.main.GeoDataConfig;
+import com.aionemu.gameserver.geoEngine.utils.BufferUtils;
+
 import javolution.context.ObjectFactory;
 import javolution.lang.Reusable;
 

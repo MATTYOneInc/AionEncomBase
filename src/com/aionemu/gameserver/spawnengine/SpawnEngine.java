@@ -16,6 +16,11 @@
  */
 package com.aionemu.gameserver.spawnengine;
 
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.configs.administration.DeveloperConfig;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Gatherable;
@@ -51,10 +56,6 @@ import com.aionemu.gameserver.services.HousingService;
 import com.aionemu.gameserver.services.rift.RiftManager;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.List;
 
 /**
  * This class is responsible for NPCs spawn management. Current implementation is temporal and will be replaced in the

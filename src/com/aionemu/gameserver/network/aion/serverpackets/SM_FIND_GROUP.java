@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.model.gameobjects.FindGroup;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-
-import java.util.Collection;
 
 /**
  * @author cura, MrPoke

@@ -16,10 +16,11 @@
  */
 package com.aionemu.gameserver.world.zone;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
-import java.util.List;
 
 /**
  * @author Rolandas

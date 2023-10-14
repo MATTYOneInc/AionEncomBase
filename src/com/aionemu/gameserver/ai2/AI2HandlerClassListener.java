@@ -16,12 +16,13 @@
  */
 package com.aionemu.gameserver.ai2;
 
-import com.aionemu.commons.scripting.classlistener.ClassListener;
-import com.aionemu.commons.utils.ClassUtils;
+import java.lang.reflect.Modifier;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.Modifier;
+import com.aionemu.commons.scripting.classlistener.ClassListener;
+import com.aionemu.commons.utils.ClassUtils;
 
 /**
  * @author ATracer

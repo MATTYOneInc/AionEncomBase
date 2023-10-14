@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.skillengine.properties;
 
+import java.util.SortedMap;
+import java.util.TreeMap;
+
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.skillengine.model.Skill;
 import com.aionemu.gameserver.utils.MathUtil;
-
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 /**
  * @author MrPoke

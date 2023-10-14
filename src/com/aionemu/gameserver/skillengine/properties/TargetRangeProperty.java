@@ -16,6 +16,12 @@
  */
 package com.aionemu.gameserver.skillengine.properties;
 
+import java.util.List;
+
+import org.apache.commons.lang.math.FloatRange;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Summon;
 import com.aionemu.gameserver.model.gameobjects.Trap;
@@ -24,11 +30,6 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.skillengine.model.Skill;
 import com.aionemu.gameserver.utils.MathUtil;
 import com.aionemu.gameserver.utils.PositionUtil;
-import org.apache.commons.lang.math.FloatRange;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.List;
 
 /**
  * @author ATracer

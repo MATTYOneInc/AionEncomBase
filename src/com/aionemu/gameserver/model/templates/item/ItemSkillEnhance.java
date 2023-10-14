@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.model.templates.item;
 
-import com.aionemu.gameserver.model.PlayerClass;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.ArrayList;
-import java.util.List;
+
+import com.aionemu.gameserver.model.PlayerClass;
 
 /**
  * Created by wanke on 01/03/2017.

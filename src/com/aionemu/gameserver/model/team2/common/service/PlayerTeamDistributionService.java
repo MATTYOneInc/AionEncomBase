@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.model.team2.common.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.configs.main.CustomConfig;
 import com.aionemu.gameserver.configs.main.GroupConfig;
@@ -31,16 +34,13 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_STATS_INFO;
 import com.aionemu.gameserver.questEngine.QuestEngine;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.services.abyss.AbyssPointsService;
-import com.aionemu.gameserver.services.player.AtreianBestiaryService;
 import com.aionemu.gameserver.services.drop.DropRegistrationService;
+import com.aionemu.gameserver.services.player.AtreianBestiaryService;
 import com.aionemu.gameserver.services.player.GrowthEnergy;
 import com.aionemu.gameserver.utils.MathUtil;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.stats.StatFunctions;
 import com.google.common.base.Predicate;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class PlayerTeamDistributionService
 {

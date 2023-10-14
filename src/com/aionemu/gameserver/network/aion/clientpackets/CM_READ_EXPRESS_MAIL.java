@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import java.util.concurrent.Future;
+
 import com.aionemu.gameserver.model.TaskId;
 import com.aionemu.gameserver.model.gameobjects.LetterType;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -25,8 +27,6 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.spawnengine.VisibleObjectSpawner;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
-import java.util.concurrent.Future;
 
 public class CM_READ_EXPRESS_MAIL extends AionClientPacket
 {

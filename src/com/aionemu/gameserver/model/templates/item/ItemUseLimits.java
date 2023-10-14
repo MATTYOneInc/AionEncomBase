@@ -16,14 +16,14 @@
  */
 package com.aionemu.gameserver.model.templates.item;
 
-import com.aionemu.gameserver.model.Gender;
-import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
-import com.aionemu.gameserver.world.zone.ZoneName;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.Gender;
+import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
+import com.aionemu.gameserver.world.zone.ZoneName;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "UseLimits")

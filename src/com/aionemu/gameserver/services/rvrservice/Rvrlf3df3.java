@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.rvrservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.rvr.RvrLocation;
 import com.aionemu.gameserver.model.rvr.RvrStateType;
 import com.aionemu.gameserver.services.RvrService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

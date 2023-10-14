@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.model.gameobjects;
 
+import java.util.EnumSet;
+
 import com.aionemu.gameserver.controllers.StaticObjectController;
 import com.aionemu.gameserver.model.EmotionType;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
@@ -24,8 +26,6 @@ import com.aionemu.gameserver.model.templates.staticdoor.StaticDoorTemplate;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.geo.GeoService;
-
-import java.util.EnumSet;
 
 /**
  * @author MrPoke

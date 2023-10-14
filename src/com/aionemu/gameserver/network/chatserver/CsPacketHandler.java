@@ -16,13 +16,14 @@
  */
 package com.aionemu.gameserver.network.chatserver;
 
-import com.aionemu.gameserver.network.chatserver.ChatServerConnection.State;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.aionemu.gameserver.network.chatserver.ChatServerConnection.State;
 
 public class CsPacketHandler
 {

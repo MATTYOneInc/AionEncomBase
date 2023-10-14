@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.services.siegeservice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -34,9 +37,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class FortressAssault extends Assault<FortressSiege>
 {

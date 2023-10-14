@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.services.teleport;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.configs.network.NetworkConfig;
 import com.aionemu.gameserver.dao.PlayerTransformDAO;
@@ -29,7 +32,6 @@ import com.aionemu.gameserver.model.actions.PlayerMode;
 import com.aionemu.gameserver.model.gameobjects.Minion;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.Pet;
-import com.aionemu.gameserver.model.gameobjects.Minion;
 import com.aionemu.gameserver.model.gameobjects.Summon;
 import com.aionemu.gameserver.model.gameobjects.player.BindPointPosition;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -40,7 +42,8 @@ import com.aionemu.gameserver.model.templates.portal.InstanceExit;
 import com.aionemu.gameserver.model.templates.portal.PortalLoc;
 import com.aionemu.gameserver.model.templates.portal.PortalPath;
 import com.aionemu.gameserver.model.templates.portal.PortalScroll;
-import com.aionemu.gameserver.model.templates.revive_start_points.*;
+import com.aionemu.gameserver.model.templates.revive_start_points.InstanceReviveStartPoints;
+import com.aionemu.gameserver.model.templates.revive_start_points.WorldReviveStartPoints;
 import com.aionemu.gameserver.model.templates.robot.RobotInfo;
 import com.aionemu.gameserver.model.templates.spawns.SpawnSearchResult;
 import com.aionemu.gameserver.model.templates.spawns.SpawnSpotTemplate;
@@ -49,12 +52,31 @@ import com.aionemu.gameserver.model.templates.teleport.TeleportLocation;
 import com.aionemu.gameserver.model.templates.teleport.TeleportType;
 import com.aionemu.gameserver.model.templates.teleport.TeleporterTemplate;
 import com.aionemu.gameserver.model.templates.world.WorldMapTemplate;
-import com.aionemu.gameserver.network.aion.serverpackets.*;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_A_STATION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_A_STATION_MOVE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_BIND_POINT_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_CHANNEL_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_CONQUEROR_PROTECTOR;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DELETE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_LEGION_UPDATE_MEMBER;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_MOTION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_PLAYER_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_PLAYER_SPAWN;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_STATS_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_TELEPORT_LOC;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_TELEPORT_MAP;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_TRANSFORM;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_USE_ROBOT;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.*;
+import com.aionemu.gameserver.services.AStationService;
+import com.aionemu.gameserver.services.DisputeLandService;
+import com.aionemu.gameserver.services.DuelService;
+import com.aionemu.gameserver.services.PrivateStoreService;
+import com.aionemu.gameserver.services.ProtectorConquerorService;
 import com.aionemu.gameserver.services.instance.InstanceService;
-import com.aionemu.gameserver.services.toypet.MinionService;
 import com.aionemu.gameserver.services.trade.PricesService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
@@ -62,8 +84,6 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldMapInstance;
 import com.aionemu.gameserver.world.WorldMapType;
 import com.aionemu.gameserver.world.WorldPosition;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class TeleportService2 {
 

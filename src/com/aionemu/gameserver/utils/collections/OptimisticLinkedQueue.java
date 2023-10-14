@@ -16,12 +16,13 @@
  */
 package com.aionemu.gameserver.utils.collections;
 
-import javax.annotation.concurrent.ThreadSafe;
 import java.util.AbstractQueue;
 import java.util.Iterator;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+
+import javax.annotation.concurrent.ThreadSafe;
 
 /**
  * Optimistic approach to lock-free FIFO queue;

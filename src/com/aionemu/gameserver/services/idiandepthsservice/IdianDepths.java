@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.idiandepthsservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.idiandepths.IdianDepthsLocation;
 import com.aionemu.gameserver.model.idiandepths.IdianDepthsStateType;
 import com.aionemu.gameserver.services.IdianDepthsService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.model.skill;
 
+import java.sql.Timestamp;
+
 import com.aionemu.gameserver.configs.main.CraftConfig;
 import com.aionemu.gameserver.model.gameobjects.PersistentState;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.stats.container.StatEnum;
-
-import java.sql.Timestamp;
 
 /**
  * @author ATracer

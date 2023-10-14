@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.gameobjects.player.PlayerScripts;
 import com.aionemu.gameserver.model.house.PlayerScript;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-
-import java.util.Map;
 
 public class SM_HOUSE_SCRIPTS extends AionServerPacket {
 

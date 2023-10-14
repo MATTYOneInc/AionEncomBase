@@ -16,11 +16,15 @@
  */
 package com.aionemu.gameserver.model.templates.rewards;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
-
-import javax.xml.bind.annotation.*;
 
 /**
  * @author Rolandas

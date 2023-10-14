@@ -16,13 +16,14 @@
  */
 package com.aionemu.gameserver.network.aion.gmhandler;
 
+import java.util.List;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.skill.PlayerSkillEntry;
 import com.aionemu.gameserver.model.skill.PlayerSkillList;
 import com.aionemu.gameserver.services.SkillLearnService;
 import com.aionemu.gameserver.skillengine.model.SkillTemplate;
-import java.util.List;
 
 /**
  * Created by Kill3r

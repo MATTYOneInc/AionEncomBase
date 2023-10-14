@@ -16,11 +16,16 @@
  */
 package com.aionemu.gameserver.model.templates.itemset;
 
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.aionemu.gameserver.model.stats.calc.functions.StatFunction;
 import com.aionemu.gameserver.model.templates.stats.ModifiersTemplate;
-
-import javax.xml.bind.annotation.*;
-import java.util.List;
 
 /**
  * @author ATracer

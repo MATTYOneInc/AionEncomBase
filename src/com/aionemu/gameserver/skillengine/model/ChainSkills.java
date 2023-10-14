@@ -16,12 +16,13 @@
  */
 package com.aionemu.gameserver.skillengine.model;
 
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-import javolution.util.FastMap;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+
+import javolution.util.FastMap;
 
 public class ChainSkills {
 

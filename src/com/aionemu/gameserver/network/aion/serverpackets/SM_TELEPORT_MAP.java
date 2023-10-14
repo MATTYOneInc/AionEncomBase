@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.configs.main.CustomConfig;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -25,9 +28,8 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
+
 import javolution.util.FastList;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author alexa026 , orz

@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.towerofeternityservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.towerofeternity.TowerOfEternityLocation;
 import com.aionemu.gameserver.model.towerofeternity.TowerOfEternityStateType;
 import com.aionemu.gameserver.services.TowerOfEternityService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Created by Wnkrz on 22/08/2017.

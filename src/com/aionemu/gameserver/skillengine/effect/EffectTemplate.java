@@ -16,6 +16,19 @@
  */
 package com.aionemu.gameserver.skillengine.effect;
 
+import java.util.List;
+
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.ai2.poll.AIQuestion;
 import com.aionemu.gameserver.controllers.attack.AttackStatus;
@@ -29,15 +42,16 @@ import com.aionemu.gameserver.skillengine.change.Change;
 import com.aionemu.gameserver.skillengine.condition.Conditions;
 import com.aionemu.gameserver.skillengine.effect.modifier.ActionModifier;
 import com.aionemu.gameserver.skillengine.effect.modifier.ActionModifiers;
-import com.aionemu.gameserver.skillengine.model.*;
+import com.aionemu.gameserver.skillengine.model.Effect;
+import com.aionemu.gameserver.skillengine.model.HitType;
+import com.aionemu.gameserver.skillengine.model.HopType;
+import com.aionemu.gameserver.skillengine.model.SkillTemplate;
+import com.aionemu.gameserver.skillengine.model.SkillType;
+import com.aionemu.gameserver.skillengine.model.SpellStatus;
+import com.aionemu.gameserver.skillengine.model.TransformType;
 import com.aionemu.gameserver.utils.stats.StatFunctions;
-import javolution.util.FastList;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
-import java.util.List;
+import javolution.util.FastList;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Effect")

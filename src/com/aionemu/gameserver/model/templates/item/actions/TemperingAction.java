@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.model.templates.item.actions;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.configs.main.EnchantsConfig;
 import com.aionemu.gameserver.controllers.observer.ItemUseObserver;
@@ -31,10 +35,6 @@ import com.aionemu.gameserver.services.item.ItemPacketService;
 import com.aionemu.gameserver.services.item.ItemSocketService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
 
 /****/
 /** Author Ranastic (Encom)

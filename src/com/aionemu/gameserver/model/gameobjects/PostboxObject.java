@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.model.gameobjects;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 import com.aionemu.commons.network.util.ThreadPoolManager;
 import com.aionemu.gameserver.controllers.observer.ItemUseObserver;
 import com.aionemu.gameserver.model.DialogPage;
@@ -27,8 +29,6 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_OBJECT_USE_UPDATE;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-
-import java.util.concurrent.atomic.AtomicReference;
 
 public class PostboxObject extends HouseObject<HousingPostbox> {
 

@@ -16,9 +16,10 @@
  */
 package com.aionemu.gameserver.network.chatserver;
 
-import com.aionemu.commons.network.packet.BaseClientPacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.aionemu.commons.network.packet.BaseClientPacket;
 
 public abstract class CsClientPacket extends BaseClientPacket<ChatServerConnection> implements Cloneable
 {

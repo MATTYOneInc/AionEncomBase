@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.skillengine.model.Effect;
-
-import java.util.Collection;
 
 public class SM_ABNORMAL_STATE extends AionServerPacket
 {

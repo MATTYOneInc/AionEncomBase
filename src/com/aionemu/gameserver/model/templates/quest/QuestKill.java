@@ -16,10 +16,15 @@
  */
 package com.aionemu.gameserver.model.templates.quest;
 
-import javax.xml.bind.annotation.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * @author Rolandas

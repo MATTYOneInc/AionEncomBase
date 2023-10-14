@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.model.gameobjects.player;
 
-import com.aionemu.gameserver.model.templates.event.AtreianPassport;
-
 import java.util.Collection;
 import java.util.SortedMap;
 import java.util.TreeMap;
+
+import com.aionemu.gameserver.model.templates.event.AtreianPassport;
 
 /**
  * 

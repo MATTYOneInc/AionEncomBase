@@ -16,6 +16,11 @@
  */
 package com.aionemu.gameserver.services.territory;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.TreeMap;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.LegionDAO;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -29,12 +34,8 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldPosition;
-import javolution.util.FastMap;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.TreeMap;
+import javolution.util.FastMap;
 
 public class TerritoryService
 {

@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.model.TeleportAnimation;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
@@ -35,10 +39,6 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldMapInstance;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class CM_HOUSE_TELEPORT extends AionClientPacket
 {

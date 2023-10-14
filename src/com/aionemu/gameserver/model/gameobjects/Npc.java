@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.model.gameobjects;
 
+import java.util.Iterator;
+
+import org.apache.commons.lang.StringUtils;
+
 import com.aionemu.gameserver.ai2.AI2Engine;
 import com.aionemu.gameserver.ai2.AITemplate;
 import com.aionemu.gameserver.ai2.poll.AIQuestion;
@@ -33,7 +37,11 @@ import com.aionemu.gameserver.model.skill.NpcSkillList;
 import com.aionemu.gameserver.model.stats.container.NpcGameStats;
 import com.aionemu.gameserver.model.stats.container.NpcLifeStats;
 import com.aionemu.gameserver.model.templates.item.ItemAttackType;
-import com.aionemu.gameserver.model.templates.npc.*;
+import com.aionemu.gameserver.model.templates.npc.AbyssNpcType;
+import com.aionemu.gameserver.model.templates.npc.NpcRank;
+import com.aionemu.gameserver.model.templates.npc.NpcRating;
+import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
+import com.aionemu.gameserver.model.templates.npc.NpcTemplateType;
 import com.aionemu.gameserver.model.templates.npcshout.NpcShout;
 import com.aionemu.gameserver.model.templates.npcshout.ShoutEventType;
 import com.aionemu.gameserver.model.templates.npcshout.ShoutType;
@@ -48,9 +56,6 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.WorldPosition;
 import com.aionemu.gameserver.world.WorldType;
 import com.google.common.base.Preconditions;
-import org.apache.commons.lang.StringUtils;
-
-import java.util.Iterator;
 
 /**
  * This class is a base class for all in-game NPCs, what includes: monsters and npcs that player can talk to (aka

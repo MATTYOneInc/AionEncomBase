@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import java.nio.charset.Charset;
+
 import com.aionemu.gameserver.controllers.HouseController;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.house.House;
@@ -26,8 +28,6 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_HOUSE_ACQUIRE;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.HousingService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-
-import java.nio.charset.Charset;
 
 public class CM_HOUSE_SETTINGS extends AionClientPacket
 {

@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.dao;
 
-import com.aionemu.gameserver.model.gameobjects.BrokerItem;
-
 import java.util.List;
+
+import com.aionemu.gameserver.model.gameobjects.BrokerItem;
 
 public abstract class BrokerDAO implements IDFactoryAwareDAO {
 

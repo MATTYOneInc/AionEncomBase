@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.model.skill;
 
+import java.sql.Timestamp;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.skillengine.model.SkillTemplate;
-
-import java.sql.Timestamp;
 
 /**
  * @author ATracer

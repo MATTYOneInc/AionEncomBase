@@ -23,18 +23,8 @@ import com.aionemu.gameserver.dao.OutpostDAO;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.AionObject;
 import com.aionemu.gameserver.model.gameobjects.Creature;
-import com.aionemu.gameserver.model.gameobjects.Npc;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.siege.ArtifactLocation;
-import com.aionemu.gameserver.model.siege.SiegeLocation;
 import com.aionemu.gameserver.model.team2.TemporaryPlayerTeam;
-import com.aionemu.gameserver.network.aion.AionServerPacket;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.OutpostService;
-import com.aionemu.gameserver.services.SiegeService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
-import com.aionemu.gameserver.world.World;
-import com.aionemu.gameserver.world.knownlist.Visitor;
 
 /**
  * Created by Wnkrz on 27/08/2017.

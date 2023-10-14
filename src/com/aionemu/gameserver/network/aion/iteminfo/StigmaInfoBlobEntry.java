@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.network.aion.iteminfo;
 
+import java.nio.ByteBuffer;
+
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.templates.item.Stigma;
 import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
-
-import java.nio.ByteBuffer;
 
 /**
  * This blob contains stigma info.

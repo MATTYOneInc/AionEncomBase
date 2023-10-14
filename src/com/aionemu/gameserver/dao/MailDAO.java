@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.dao;
 
+import java.sql.Timestamp;
+
 import com.aionemu.gameserver.model.gameobjects.Letter;
 import com.aionemu.gameserver.model.gameobjects.player.Mailbox;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerCommonData;
-
-import java.sql.Timestamp;
 
 /**
  * @author kosyachok

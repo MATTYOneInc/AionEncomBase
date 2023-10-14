@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.services.nightmarecircusservice;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.nightmarecircus.NightmareCircusLocation;
 import com.aionemu.gameserver.services.NightmareCircusService;
-
-import java.util.Map;
 
 /**
  * @author Rinzler (Encom)

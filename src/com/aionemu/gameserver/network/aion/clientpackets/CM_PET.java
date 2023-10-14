@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.model.EmotionType;
 import com.aionemu.gameserver.model.gameobjects.Pet;
 import com.aionemu.gameserver.model.gameobjects.PetAction;
@@ -31,8 +34,6 @@ import com.aionemu.gameserver.services.toypet.PetMoodService;
 import com.aionemu.gameserver.services.toypet.PetService;
 import com.aionemu.gameserver.services.toypet.PetSpawnService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author M@xx, xTz

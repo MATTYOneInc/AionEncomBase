@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-
-import java.util.ArrayList;
-import java.util.Map;
 
 public class SM_SKILL_COOLDOWN extends AionServerPacket
 {

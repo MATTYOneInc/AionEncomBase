@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.services.protectors;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.stats.calc.StatOwner;
@@ -27,9 +30,6 @@ import com.aionemu.gameserver.model.templates.serial_guard.GuardRankRestriction;
 import com.aionemu.gameserver.model.templates.serial_guard.GuardTypePenaltyAttr;
 import com.aionemu.gameserver.model.templates.serial_guard.GuardTypeRestriction;
 import com.aionemu.gameserver.skillengine.change.Func;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ProtectorBuffs implements StatOwner
 {

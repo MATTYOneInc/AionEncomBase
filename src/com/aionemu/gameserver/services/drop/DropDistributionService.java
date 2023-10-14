@@ -16,6 +16,11 @@
  */
 package com.aionemu.gameserver.services.drop;
 
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.model.actions.PlayerMode;
 import com.aionemu.gameserver.model.drop.DropItem;
@@ -25,10 +30,6 @@ import com.aionemu.gameserver.model.team2.common.legacy.LootGroupRules;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_GROUP_LOOT;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.Set;
 
 /**
  * @author xTz
@@ -47,10 +48,13 @@ public class DropDistributionService {
 	public void handleRoll(Player player, int roll, int itemId, int npcId, int index) {
 		DropNpc dropNpc = DropRegistrationService.getInstance().getDropRegistrationMap().get(npcId);
 		if (player == null || dropNpc == null) {
+			log.info("player == null || dropNpc == null ");	
 			return;
 		}
 		int luck = 0;
 		if (player.isInGroup2() || player.isInAlliance2()) {
+			log.info("player.isInGroup2() || player.isInAlliance2() = OK ");
+			log.info("roll " + roll);
 			if (roll == 0) {
 				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_DICE_GIVEUP_ME);
 			}
@@ -66,6 +70,8 @@ public class DropDistributionService {
 				int teamId = member.getCurrentTeamId();
 				PacketSendUtility.sendPacket(member, new SM_GROUP_LOOT(teamId, member.getObjectId(), itemId, npcId, dropNpc.getDistributionId(), luck, index));
 				if (!player.equals(member) && member.isOnline()) {
+				log.info("!player.equals(member) && member.isOnline() = OK ");
+			    log.info("roll1 " + roll);
 					if (roll == 0) {
 						PacketSendUtility.sendPacket(member, SM_SYSTEM_MESSAGE.STR_MSG_DICE_GIVEUP_OTHER(player.getName()));
 					}

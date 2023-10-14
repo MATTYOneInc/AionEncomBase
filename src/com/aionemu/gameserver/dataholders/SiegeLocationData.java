@@ -16,15 +16,21 @@
  */
 package com.aionemu.gameserver.dataholders;
 
+import java.util.List;
+
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
 import com.aionemu.gameserver.model.siege.ArtifactLocation;
 import com.aionemu.gameserver.model.siege.FortressLocation;
 import com.aionemu.gameserver.model.siege.SiegeLocation;
 import com.aionemu.gameserver.model.templates.siegelocation.SiegeLocationTemplate;
-import javolution.util.FastMap;
 
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
-import java.util.List;
+import javolution.util.FastMap;
 
 @XmlRootElement(name = "siege_locations")
 @XmlAccessorType(XmlAccessType.FIELD)

@@ -16,25 +16,30 @@
  */
 package com.aionemu.gameserver.services.reward;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.apache.commons.lang.ArrayUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.dataholders.ItemGroupsData;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.QuestTemplate;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
-import com.aionemu.gameserver.model.templates.itemgroups.*;
+import com.aionemu.gameserver.model.templates.itemgroups.BonusItemGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.CraftGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.ItemRaceEntry;
+import com.aionemu.gameserver.model.templates.itemgroups.ManastoneGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.MedalGroup;
 import com.aionemu.gameserver.model.templates.quest.QuestBonuses;
 import com.aionemu.gameserver.model.templates.quest.QuestItems;
 import com.aionemu.gameserver.model.templates.rewards.BonusType;
 import com.aionemu.gameserver.model.templates.rewards.CraftItem;
 import com.aionemu.gameserver.model.templates.rewards.MedalItem;
-import org.apache.commons.lang.ArrayUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @author Rolandas

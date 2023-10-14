@@ -3,8 +3,6 @@
  */
 package com.aionemu.gameserver.geoEngine.math;
 
-import com.aionemu.gameserver.geoEngine.math.AbstractTriangle;
-import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import java.util.logging.Logger;
 
 public class Plane

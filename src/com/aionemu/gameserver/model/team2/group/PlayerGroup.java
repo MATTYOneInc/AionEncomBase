@@ -16,13 +16,14 @@
  */
 package com.aionemu.gameserver.model.team2.group;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.team2.TeamType;
 import com.aionemu.gameserver.model.team2.TemporaryPlayerTeam;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
-import javolution.util.FastMap;
 
-import java.util.Collection;
+import javolution.util.FastMap;
 
 public class PlayerGroup extends TemporaryPlayerTeam<PlayerGroupMember>
 {

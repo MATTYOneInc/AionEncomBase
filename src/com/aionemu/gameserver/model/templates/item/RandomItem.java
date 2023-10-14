@@ -16,11 +16,12 @@
  */
 package com.aionemu.gameserver.model.templates.item;
 
-import com.aionemu.commons.utils.Rnd;
-import org.slf4j.LoggerFactory;
-
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+
+import org.slf4j.LoggerFactory;
+
+import com.aionemu.commons.utils.Rnd;
 
 /**
  * @author vlog

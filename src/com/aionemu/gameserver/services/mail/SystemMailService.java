@@ -16,6 +16,12 @@
  */
 package com.aionemu.gameserver.services.mail;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.InventoryDAO;
 import com.aionemu.gameserver.dao.MailDAO;
@@ -29,8 +35,6 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerCommonData;
 import com.aionemu.gameserver.model.items.storage.StorageType;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
-import com.aionemu.gameserver.model.templates.mail.MailPart;
-import com.aionemu.gameserver.model.templates.mail.MailTemplate;
 import com.aionemu.gameserver.model.templates.mail_reward.MailRewardTemplate;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_MAIL_SERVICE;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
@@ -39,11 +43,6 @@ import com.aionemu.gameserver.services.player.PlayerMailboxState;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
 import com.aionemu.gameserver.world.World;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.sql.Timestamp;
-import java.util.Calendar;
 
 public class SystemMailService
 {

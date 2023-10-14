@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.utils.xml;
 
-import com.aionemu.gameserver.dataholders.StaticData;
+import java.io.File;
+import java.io.IOException;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.SchemaOutputResolver;
 import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;
-import java.io.File;
-import java.io.IOException;
+
+import com.aionemu.gameserver.dataholders.StaticData;
 
 public class SchemaGen {
 

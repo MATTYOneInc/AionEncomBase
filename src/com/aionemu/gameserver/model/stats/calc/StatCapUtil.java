@@ -16,11 +16,12 @@
  */
 package com.aionemu.gameserver.model.stats.calc;
 
-import com.aionemu.gameserver.model.stats.container.StatEnum;
+import java.util.HashMap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashMap;
+import com.aionemu.gameserver.model.stats.container.StatEnum;
 
 public class StatCapUtil
 {

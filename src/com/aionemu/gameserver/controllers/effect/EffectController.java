@@ -16,6 +16,14 @@
  */
 package com.aionemu.gameserver.controllers.effect;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ABNORMAL_EFFECT;
@@ -23,16 +31,18 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.skillengine.effect.AbnormalState;
 import com.aionemu.gameserver.skillengine.effect.EffectTemplate;
 import com.aionemu.gameserver.skillengine.effect.EffectType;
-import com.aionemu.gameserver.skillengine.model.*;
+import com.aionemu.gameserver.skillengine.model.DispelCategoryType;
+import com.aionemu.gameserver.skillengine.model.Effect;
+import com.aionemu.gameserver.skillengine.model.EffectResult;
+import com.aionemu.gameserver.skillengine.model.SkillSubType;
+import com.aionemu.gameserver.skillengine.model.SkillTargetSlot;
+import com.aionemu.gameserver.skillengine.model.TransformType;
 import com.aionemu.gameserver.taskmanager.tasks.PacketBroadcaster.BroadcastMode;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
-import javolution.util.FastMap;
 
-import java.util.*;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+import javolution.util.FastMap;
 
 public class EffectController
 {

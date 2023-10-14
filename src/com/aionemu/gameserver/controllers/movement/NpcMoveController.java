@@ -7,6 +7,11 @@
  */
 package com.aionemu.gameserver.controllers.movement;
 
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.ai2.AI2Logger;
 import com.aionemu.gameserver.ai2.AIState;
 import com.aionemu.gameserver.ai2.AISubState;
@@ -14,7 +19,6 @@ import com.aionemu.gameserver.ai2.NpcAI2;
 import com.aionemu.gameserver.ai2.handler.TargetEventHandler;
 import com.aionemu.gameserver.ai2.manager.WalkManager;
 import com.aionemu.gameserver.configs.main.GeoDataConfig;
-import com.aionemu.gameserver.controllers.movement.CreatureMoveController;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import com.aionemu.gameserver.model.actions.NpcActions;
@@ -38,9 +42,6 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.geo.GeoService;
 import com.eleanor.Global;
 import com.eleanor.processors.movement.motor.FollowMotor;
-import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class NpcMoveController
 extends CreatureMoveController<Npc> {

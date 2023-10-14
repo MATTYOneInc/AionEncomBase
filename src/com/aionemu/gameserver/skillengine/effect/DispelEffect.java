@@ -16,13 +16,14 @@
  */
 package com.aionemu.gameserver.skillengine.effect;
 
-import com.aionemu.gameserver.skillengine.model.DispelType;
-import com.aionemu.gameserver.skillengine.model.Effect;
-import com.aionemu.gameserver.skillengine.model.SkillTargetSlot;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import java.util.List;
+
+import com.aionemu.gameserver.skillengine.model.DispelType;
+import com.aionemu.gameserver.skillengine.model.Effect;
+import com.aionemu.gameserver.skillengine.model.SkillTargetSlot;
 
 /**
  * @author ATracer

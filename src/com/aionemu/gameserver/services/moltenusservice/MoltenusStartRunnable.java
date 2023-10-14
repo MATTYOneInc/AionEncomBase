@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.moltenusservice;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.moltenus.MoltenusLocation;
 import com.aionemu.gameserver.services.MoltenusService;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
-import java.util.Map;
 
 /**
  * @author Rinzler (Encom)

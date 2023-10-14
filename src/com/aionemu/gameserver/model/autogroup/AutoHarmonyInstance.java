@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.model.autogroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.instance.instancereward.HarmonyArenaReward;
 import com.aionemu.gameserver.model.instance.playerreward.HarmonyGroupReward;
@@ -26,9 +29,6 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_AUTO_GROUP;
 import com.aionemu.gameserver.services.AutoGroupService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.WorldMapInstance;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AutoHarmonyInstance extends AutoInstance
 {

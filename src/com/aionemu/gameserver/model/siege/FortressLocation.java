@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.model.siege;
 
+import java.util.List;
+
 import com.aionemu.gameserver.model.DescriptionId;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Kisk;
@@ -25,8 +27,6 @@ import com.aionemu.gameserver.model.templates.siegelocation.SiegeLocationTemplat
 import com.aionemu.gameserver.model.templates.siegelocation.SiegeReward;
 import com.aionemu.gameserver.model.templates.zone.ZoneType;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
-
-import java.util.List;
 
 /**
  * @author Source

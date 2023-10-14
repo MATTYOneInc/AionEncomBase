@@ -20,6 +20,7 @@ import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_INSTANCE_INFO;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
+
 import javolution.util.FastMap;
 
 public class PortalCooldownList

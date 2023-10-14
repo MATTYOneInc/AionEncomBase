@@ -16,16 +16,22 @@
  */
 package com.aionemu.gameserver.dataholders;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.aionemu.gameserver.model.PlayerClass;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.stats.CalculatedPlayerStatsTemplate;
 import com.aionemu.gameserver.model.templates.stats.PlayerStatsTemplate;
-import gnu.trove.map.hash.TIntObjectHashMap;
 
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
-import java.util.ArrayList;
-import java.util.List;
+import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlRootElement(name = "player_stats_templates")
 @XmlAccessorType(XmlAccessType.FIELD)

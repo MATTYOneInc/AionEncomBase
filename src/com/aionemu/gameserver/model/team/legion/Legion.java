@@ -16,19 +16,28 @@
  */
 package com.aionemu.gameserver.model.team.legion;
 
+import static ch.lambdaj.Lambda.having;
+import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.select;
+import static org.hamcrest.Matchers.equalTo;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.SortedSet;
+import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.configs.main.LegionConfig;
 import com.aionemu.gameserver.model.bonus_service.ServiceBuff;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.world.World;
+
 import javolution.util.FastMap;
-
-import java.sql.Timestamp;
-import java.util.*;
-import java.util.Map.Entry;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import static ch.lambdaj.Lambda.*;
-import static org.hamcrest.Matchers.equalTo;
 
 /**
  * @author Simple

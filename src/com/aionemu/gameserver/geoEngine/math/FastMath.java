@@ -3,8 +3,6 @@
  */
 package com.aionemu.gameserver.geoEngine.math;
 
-import com.aionemu.gameserver.geoEngine.math.Vector2f;
-import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import java.util.Random;
 
 public final class FastMath {

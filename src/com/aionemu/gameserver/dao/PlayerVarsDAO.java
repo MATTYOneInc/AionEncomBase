@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.dao;
 
-import com.aionemu.commons.database.dao.DAO;
-
 import java.util.Map;
+
+import com.aionemu.commons.database.dao.DAO;
 
 /**
  * @author KID

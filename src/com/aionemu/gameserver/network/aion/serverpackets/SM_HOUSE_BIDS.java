@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.house.House;
 import com.aionemu.gameserver.model.house.HouseBidEntry;
@@ -23,8 +25,6 @@ import com.aionemu.gameserver.model.house.HouseStatus;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.HousingBidService;
-
-import java.util.List;
 
 public class SM_HOUSE_BIDS extends AionServerPacket
 {

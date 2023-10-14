@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.configs.main.MembershipConfig;
 import com.aionemu.gameserver.model.gameobjects.player.emotion.Emotion;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-
-import java.util.Collection;
 
 public class SM_EMOTION_LIST extends AionServerPacket
 {

@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.anohaservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.anoha.AnohaLocation;
 import com.aionemu.gameserver.model.anoha.AnohaStateType;
 import com.aionemu.gameserver.services.AnohaService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

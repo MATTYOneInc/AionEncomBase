@@ -16,11 +16,12 @@
  */
 package com.aionemu.gameserver.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.flyring.FlyRing;
 import com.aionemu.gameserver.model.templates.flyring.FlyRingTemplate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author xavier

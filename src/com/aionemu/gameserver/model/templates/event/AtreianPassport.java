@@ -19,12 +19,17 @@ package com.aionemu.gameserver.model.templates.event;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.datatype.XMLGregorianCalendar;
+
+import org.joda.time.DateTime;
 
 import com.aionemu.gameserver.model.AttendType;
 import com.aionemu.gameserver.utils.gametime.DateTimeUtil;
-import org.joda.time.DateTime;
 
 /**
  * @author Ghostfur (Aion-Unique)

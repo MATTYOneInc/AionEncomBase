@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.siegeservice;
 
+import java.util.concurrent.Future;
+
 import com.aionemu.gameserver.model.gameobjects.siege.SiegeNpc;
 import com.aionemu.gameserver.model.siege.SiegeLocation;
 import com.aionemu.gameserver.model.siege.SiegeRace;
-
-import java.util.concurrent.Future;
 
 public abstract class Assault<siege extends Siege<?>> {
 

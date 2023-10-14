@@ -16,10 +16,11 @@
  */
 package com.aionemu.gameserver.dao;
 
-import com.aionemu.gameserver.model.house.House;
-import com.aionemu.gameserver.model.templates.housing.HousingLand;
 import java.util.Collection;
 import java.util.Map;
+
+import com.aionemu.gameserver.model.house.House;
+import com.aionemu.gameserver.model.templates.housing.HousingLand;
 
 /**
  * @author Rolandas

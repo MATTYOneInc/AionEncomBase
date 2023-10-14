@@ -16,6 +16,12 @@
  */
 package com.aionemu.gameserver.network.chatserver;
 
+import java.nio.channels.SelectionKey;
+import java.nio.channels.SocketChannel;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.network.Dispatcher;
 import com.aionemu.commons.network.NioServer;
 import com.aionemu.gameserver.configs.network.NetworkConfig;
@@ -24,11 +30,6 @@ import com.aionemu.gameserver.network.chatserver.serverpackets.SM_CS_PLAYER_AUTH
 import com.aionemu.gameserver.network.chatserver.serverpackets.SM_CS_PLAYER_LOGOUT;
 import com.aionemu.gameserver.network.factories.CsPacketHandlerFactory;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.nio.channels.SelectionKey;
-import java.nio.channels.SocketChannel;
 
 public class ChatServer
 {

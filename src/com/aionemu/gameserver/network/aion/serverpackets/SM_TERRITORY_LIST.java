@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.model.team.legion.LegionTerritory;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-
-import java.util.Collection;
 
 public class SM_TERRITORY_LIST extends AionServerPacket
 {

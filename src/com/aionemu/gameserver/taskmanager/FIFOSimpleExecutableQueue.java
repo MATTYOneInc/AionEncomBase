@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.taskmanager;
 
-import javolution.util.FastList;
-
 import java.util.Collection;
+
+import javolution.util.FastList;
 
 /**
  * @author NB4L1

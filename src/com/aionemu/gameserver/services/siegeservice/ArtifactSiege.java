@@ -16,11 +16,13 @@
  */
 package com.aionemu.gameserver.services.siegeservice;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.SiegeDAO;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.landing.LandingPointsEnum;
 import com.aionemu.gameserver.model.siege.ArtifactLocation;
 import com.aionemu.gameserver.model.siege.SiegeModType;
@@ -36,14 +38,9 @@ import com.aionemu.gameserver.services.LegionService;
 import com.aionemu.gameserver.services.OutpostService;
 import com.aionemu.gameserver.services.RvrService;
 import com.aionemu.gameserver.services.player.PlayerService;
-import com.aionemu.gameserver.spawnengine.SpawnEngine;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-import javolution.util.FastMap;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 
 public class ArtifactSiege extends Siege<ArtifactLocation>

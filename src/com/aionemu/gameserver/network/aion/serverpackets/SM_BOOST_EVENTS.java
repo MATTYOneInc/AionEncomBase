@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.templates.event.BoostEvents;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-
-import java.util.Map;
 
 /**
  * Created by wanke on 01/02/2017.

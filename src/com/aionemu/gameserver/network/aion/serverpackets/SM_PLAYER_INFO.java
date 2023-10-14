@@ -24,6 +24,7 @@ import com.aionemu.gameserver.services.events.FFAService;
 import com.aionemu.gameserver.services.events.LadderService;
 import com.aionemu.gameserver.services.events.bg.DeathmatchBg;
 import com.aionemu.gameserver.services.events.bg.SoloSurvivorBg;
+
 import javolution.util.FastList;
 
 public class SM_PLAYER_INFO extends AionServerPacket {

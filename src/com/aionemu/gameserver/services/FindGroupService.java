@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.services;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 import com.aionemu.commons.callbacks.util.GlobalCallbackHelper;
 import com.aionemu.commons.objects.filter.ObjectFilter;
 import com.aionemu.gameserver.model.Race;
@@ -35,11 +39,8 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_AUTO_GROUP;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_FIND_GROUP;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import javolution.util.FastMap;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
+import javolution.util.FastMap;
 
 /**
  * Find Group Service

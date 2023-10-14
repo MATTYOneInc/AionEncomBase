@@ -8,8 +8,7 @@
 package com.aionemu.gameserver.geoEngine.math;
 
 import com.aionemu.gameserver.configs.main.GeoDataConfig;
-import com.aionemu.gameserver.geoEngine.math.AbstractTriangle;
-import com.aionemu.gameserver.geoEngine.math.Vector3f;
+
 import javolution.context.ObjectFactory;
 import javolution.lang.Reusable;
 

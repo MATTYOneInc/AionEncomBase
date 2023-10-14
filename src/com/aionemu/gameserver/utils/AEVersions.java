@@ -16,11 +16,12 @@
  */
 package com.aionemu.gameserver.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.utils.AEInfos;
 import com.aionemu.commons.versionning.Version;
 import com.aionemu.gameserver.GameServer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author lord_rex

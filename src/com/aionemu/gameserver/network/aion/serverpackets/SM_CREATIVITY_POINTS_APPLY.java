@@ -16,7 +16,6 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
-import com.aionemu.gameserver.GameServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

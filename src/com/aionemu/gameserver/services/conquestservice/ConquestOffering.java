@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.services.conquestservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.commons.callbacks.EnhancedObject;
 import com.aionemu.gameserver.ai2.AbstractAI;
 import com.aionemu.gameserver.model.conquest.ConquestLocation;
@@ -23,8 +25,6 @@ import com.aionemu.gameserver.model.conquest.ConquestStateType;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.services.ConquestService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

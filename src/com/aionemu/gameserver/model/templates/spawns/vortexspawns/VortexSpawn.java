@@ -16,11 +16,16 @@
  */
 package com.aionemu.gameserver.model.templates.spawns.vortexspawns;
 
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.gameserver.model.templates.spawns.Spawn;
 import com.aionemu.gameserver.model.vortex.VortexStateType;
-
-import javax.xml.bind.annotation.*;
-import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "VortexSpawn")

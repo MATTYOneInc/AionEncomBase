@@ -16,6 +16,12 @@
  */
 package com.aionemu.gameserver.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.configs.main.EnchantsConfig;
 import com.aionemu.gameserver.controllers.observer.ItemUseObserver;
@@ -36,7 +42,13 @@ import com.aionemu.gameserver.model.stats.calc.functions.StatEnchantFunction;
 import com.aionemu.gameserver.model.stats.calc.functions.StatFunction;
 import com.aionemu.gameserver.model.stats.container.StatEnum;
 import com.aionemu.gameserver.model.stats.listeners.ItemEquipmentListener;
-import com.aionemu.gameserver.model.templates.item.*;
+import com.aionemu.gameserver.model.templates.item.ArmorType;
+import com.aionemu.gameserver.model.templates.item.EnchantType;
+import com.aionemu.gameserver.model.templates.item.ItemCategory;
+import com.aionemu.gameserver.model.templates.item.ItemEnchantBonus;
+import com.aionemu.gameserver.model.templates.item.ItemEnchantTemplate;
+import com.aionemu.gameserver.model.templates.item.ItemQuality;
+import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 import com.aionemu.gameserver.model.templates.item.actions.EnchantItemAction;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_INVENTORY_UPDATE_ITEM;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
@@ -50,11 +62,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.RndArray;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.utils.audit.AuditLogger;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Ranastic (Encom)

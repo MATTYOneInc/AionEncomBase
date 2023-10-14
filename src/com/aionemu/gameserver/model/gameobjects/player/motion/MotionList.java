@@ -16,16 +16,17 @@
  */
 package com.aionemu.gameserver.model.gameobjects.player.motion;
 
+import java.util.Collections;
+import java.util.Map;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.MotionDAO;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_MOTION;
 import com.aionemu.gameserver.taskmanager.tasks.ExpireTimerTask;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import javolution.util.FastMap;
 
-import java.util.Collections;
-import java.util.Map;
+import javolution.util.FastMap;
 
 public class MotionList
 {

@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.questEngine.handlers.template;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.rift.RiftLocation;
 import com.aionemu.gameserver.model.vortex.VortexLocation;
@@ -28,11 +32,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.services.RiftService;
 import com.aionemu.gameserver.services.VortexService;
-import javolution.util.FastMap;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import javolution.util.FastMap;
 
 public class MonsterHunt extends QuestHandler
 {

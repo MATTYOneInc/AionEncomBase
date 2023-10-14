@@ -16,14 +16,20 @@
  */
 package com.aionemu.gameserver.model.templates.world;
 
+import java.util.List;
+
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
 import com.aionemu.gameserver.configs.main.WorldConfig;
 import com.aionemu.gameserver.world.WorldDropType;
 import com.aionemu.gameserver.world.WorldType;
 import com.aionemu.gameserver.world.zone.ZoneAttributes;
-
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
-import java.util.List;
 
 @XmlRootElement(name = "map")
 @XmlAccessorType(XmlAccessType.NONE)

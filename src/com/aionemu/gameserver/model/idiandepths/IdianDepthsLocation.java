@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.model.idiandepths;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.idiandepths.IdianDepthsTemplate;
 import com.aionemu.gameserver.services.idiandepthsservice.IdianDepths;
-import javolution.util.FastMap;
 
-import java.util.ArrayList;
-import java.util.List;
+import javolution.util.FastMap;
 
 /**
  * @author Rinzler (Encom)
