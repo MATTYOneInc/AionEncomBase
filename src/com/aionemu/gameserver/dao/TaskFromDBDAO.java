@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.dao;
 
+import java.util.ArrayList;
+
 import com.aionemu.commons.database.dao.DAO;
 import com.aionemu.gameserver.model.tasks.TaskFromDB;
-
-import java.util.ArrayList;
 
 /**
  * @author Divinity

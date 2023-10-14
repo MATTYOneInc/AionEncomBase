@@ -16,23 +16,47 @@
  */
 package com.aionemu.gameserver.dataholders;
 
-import com.aionemu.gameserver.model.templates.itemgroups.*;
+import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.selectDistinct;
+import static ch.lambdaj.collection.LambdaCollections.with;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+import org.apache.commons.lang.math.IntRange;
+
+import com.aionemu.gameserver.model.templates.itemgroups.BonusItemGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.BossGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.CraftItemGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.CraftRecipeGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.EnchantGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.FeedGroups;
+import com.aionemu.gameserver.model.templates.itemgroups.FoodGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.GatherGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.ItemRaceEntry;
+import com.aionemu.gameserver.model.templates.itemgroups.ManastoneGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.MedalGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.MedicineGroup;
+import com.aionemu.gameserver.model.templates.itemgroups.OreGroup;
 import com.aionemu.gameserver.model.templates.pet.FoodType;
 import com.aionemu.gameserver.model.templates.rewards.CraftItem;
 import com.aionemu.gameserver.model.templates.rewards.CraftRecipe;
 import com.aionemu.gameserver.model.templates.rewards.CraftReward;
 import com.aionemu.gameserver.model.templates.rewards.IdLevelReward;
+
 import javolution.util.FastMap;
 import javolution.util.FastSet;
-import org.apache.commons.lang.math.IntRange;
-
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
-import java.util.*;
-
-import static ch.lambdaj.Lambda.on;
-import static ch.lambdaj.Lambda.selectDistinct;
-import static ch.lambdaj.collection.LambdaCollections.with;
 
 @XmlRootElement(name = "item_groups")
 @XmlType(name = "", propOrder = {"craftMaterials", "craftShop", "craftBundles", "craftRecipes", "manastonesCommon", "manastonesRare", "manastonesLegend", "manastonesEpic", "medals", "foodCommon", "foodRare", "foodLegendary",

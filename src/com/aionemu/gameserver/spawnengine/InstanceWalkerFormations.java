@@ -16,13 +16,20 @@
  */
 package com.aionemu.gameserver.spawnengine;
 
-import ch.lambdaj.group.Group;
+import static ch.lambdaj.Lambda.by;
+import static ch.lambdaj.Lambda.group;
+import static ch.lambdaj.Lambda.on;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.*;
-
-import static ch.lambdaj.Lambda.*;
+import ch.lambdaj.group.Group;
 
 /**
  * @author Rolandas

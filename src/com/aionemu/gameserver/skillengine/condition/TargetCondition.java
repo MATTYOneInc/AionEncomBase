@@ -16,6 +16,11 @@
  */
 package com.aionemu.gameserver.skillengine.condition;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
@@ -23,11 +28,6 @@ import com.aionemu.gameserver.skillengine.model.Skill;
 import com.aionemu.gameserver.skillengine.properties.FirstTargetAttribute;
 import com.aionemu.gameserver.skillengine.properties.TargetRangeAttribute;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
 
 /**
  * @author ATracer

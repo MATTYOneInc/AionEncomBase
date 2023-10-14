@@ -16,14 +16,32 @@
  */
 package com.aionemu.gameserver.model.templates;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.gameserver.model.Gender;
 import com.aionemu.gameserver.model.PlayerClass;
 import com.aionemu.gameserver.model.Race;
-import com.aionemu.gameserver.model.templates.quest.*;
-
-import javax.xml.bind.annotation.*;
-import java.util.ArrayList;
-import java.util.List;
+import com.aionemu.gameserver.model.templates.quest.CollectItems;
+import com.aionemu.gameserver.model.templates.quest.InventoryItems;
+import com.aionemu.gameserver.model.templates.quest.QuestBonuses;
+import com.aionemu.gameserver.model.templates.quest.QuestCategory;
+import com.aionemu.gameserver.model.templates.quest.QuestDrop;
+import com.aionemu.gameserver.model.templates.quest.QuestItems;
+import com.aionemu.gameserver.model.templates.quest.QuestKill;
+import com.aionemu.gameserver.model.templates.quest.QuestMentorType;
+import com.aionemu.gameserver.model.templates.quest.QuestRepeatCycle;
+import com.aionemu.gameserver.model.templates.quest.QuestTargetType;
+import com.aionemu.gameserver.model.templates.quest.QuestWorkItems;
+import com.aionemu.gameserver.model.templates.quest.Rewards;
+import com.aionemu.gameserver.model.templates.quest.XMLStartCondition;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Quest")

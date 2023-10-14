@@ -23,8 +23,6 @@ import com.aionemu.gameserver.model.cp.PlayerCPEntry;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-import com.aionemu.gameserver.services.player.CreativityPanel.CreativitySkillService;
-import com.aionemu.gameserver.services.player.CreativityPanel.CreativityTransfoService;
 import com.aionemu.gameserver.services.player.CreativityPanel.stats.Agility;
 import com.aionemu.gameserver.services.player.CreativityPanel.stats.Health;
 import com.aionemu.gameserver.services.player.CreativityPanel.stats.Knowledge;

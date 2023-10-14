@@ -16,9 +16,16 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.controllers.HouseController;
 import com.aionemu.gameserver.model.Race;
-import com.aionemu.gameserver.model.gameobjects.*;
+import com.aionemu.gameserver.model.gameobjects.HouseDecoration;
+import com.aionemu.gameserver.model.gameobjects.HouseObject;
+import com.aionemu.gameserver.model.gameobjects.HousingAction;
+import com.aionemu.gameserver.model.gameobjects.Item;
+import com.aionemu.gameserver.model.gameobjects.PersistentState;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.house.House;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
@@ -34,8 +41,6 @@ import com.aionemu.gameserver.services.item.HouseObjectFactory;
 import com.aionemu.gameserver.services.item.ItemPacketService.ItemDeleteType;
 import com.aionemu.gameserver.utils.audit.AuditLogger;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CM_HOUSE_EDIT extends AionClientPacket
 {

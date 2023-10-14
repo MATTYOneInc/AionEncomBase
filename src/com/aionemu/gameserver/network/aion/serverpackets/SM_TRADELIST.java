@@ -25,7 +25,6 @@ import com.aionemu.gameserver.model.templates.tradelist.TradeListTemplate.TradeT
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.LimitedItemTradeService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author Dr.Nism

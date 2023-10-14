@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.taskmanager.tasks;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.ShutdownHook;
 import com.aionemu.gameserver.ShutdownHook.ShutdownMode;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -24,8 +27,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author Divinity

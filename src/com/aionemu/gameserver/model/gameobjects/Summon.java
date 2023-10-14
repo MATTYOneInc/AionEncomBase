@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.model.gameobjects;
 
+import java.util.concurrent.Future;
+
 import com.aionemu.gameserver.ai2.AI2Engine;
 import com.aionemu.gameserver.controllers.CreatureController;
 import com.aionemu.gameserver.controllers.SummonController;
@@ -34,8 +36,6 @@ import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.model.templates.stats.SummonStatsTemplate;
 import com.aionemu.gameserver.world.WorldPosition;
-
-import java.util.concurrent.Future;
 
 /**
  * @author ATracer

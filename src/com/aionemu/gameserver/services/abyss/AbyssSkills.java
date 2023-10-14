@@ -16,9 +16,10 @@
  */
 package com.aionemu.gameserver.services.abyss;
 
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
-import org.slf4j.LoggerFactory;
 
 enum AbyssSkills {
 	SUPREME_COMMANDER(Race.ELYOS, AbyssRankEnum.SUPREME_COMMANDER, new int[] { 11889, 11898, 11900, 11903, 11904, 11905, 11906 }),

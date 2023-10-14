@@ -16,12 +16,13 @@
  */
 package com.aionemu.gameserver.model.autogroup;
 
-import com.aionemu.commons.taskmanager.AbstractLockManager;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-import javolution.util.FastList;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.aionemu.commons.taskmanager.AbstractLockManager;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+
+import javolution.util.FastList;
 
 public class LookingForParty extends AbstractLockManager
 {

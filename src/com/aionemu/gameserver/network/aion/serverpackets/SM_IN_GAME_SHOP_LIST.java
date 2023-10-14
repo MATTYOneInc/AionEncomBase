@@ -16,16 +16,17 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Collection;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.ingameshop.IGItem;
 import com.aionemu.gameserver.model.ingameshop.InGameShopEn;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
+
 import gnu.trove.map.hash.TIntObjectHashMap;
 import javolution.util.FastList;
-
-import java.util.Collection;
-import java.util.List;
 
 public class SM_IN_GAME_SHOP_LIST extends AionServerPacket
 {

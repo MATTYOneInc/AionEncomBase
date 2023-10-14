@@ -16,13 +16,13 @@
  */
 package com.aionemu.gameserver.model.autogroup;
 
-import com.aionemu.gameserver.model.gameobjects.player.Player;
+import static ch.lambdaj.Lambda.extract;
+import static ch.lambdaj.Lambda.on;
 
 import java.util.Collection;
 import java.util.List;
 
-import static ch.lambdaj.Lambda.extract;
-import static ch.lambdaj.Lambda.on;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 public class SearchInstance
 {

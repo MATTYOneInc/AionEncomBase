@@ -5,7 +5,6 @@ package com.aionemu.gameserver.geoEngine.math;
 
 import com.aionemu.gameserver.geoEngine.collision.Collidable;
 import com.aionemu.gameserver.geoEngine.collision.CollisionResults;
-import com.aionemu.gameserver.geoEngine.math.Vector3f;
 
 public abstract class AbstractTriangle
 implements Collidable {

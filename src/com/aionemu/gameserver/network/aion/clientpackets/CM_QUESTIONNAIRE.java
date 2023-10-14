@@ -16,13 +16,13 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.services.HTMLService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author xTz

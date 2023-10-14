@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.model.team2.alliance.events;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.player.RequestResponseHandler;
@@ -28,10 +32,6 @@ import com.aionemu.gameserver.model.team2.group.PlayerGroupService;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.google.common.base.Preconditions;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class PlayerAllianceInvite extends RequestResponseHandler
 {

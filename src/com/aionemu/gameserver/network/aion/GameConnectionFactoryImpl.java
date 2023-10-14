@@ -16,17 +16,18 @@
  */
 package com.aionemu.gameserver.network.aion;
 
+import java.io.IOException;
+import java.nio.channels.SocketChannel;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.network.AConnection;
 import com.aionemu.commons.network.ConnectionFactory;
 import com.aionemu.commons.network.Dispatcher;
 import com.aionemu.gameserver.configs.network.NetworkConfig;
 import com.aionemu.gameserver.network.sequrity.FloodManager;
 import com.aionemu.gameserver.network.sequrity.FloodManager.Result;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.IOException;
-import java.nio.channels.SocketChannel;
 
 /**
  * ConnectionFactory implementation that will be creating AionConnections

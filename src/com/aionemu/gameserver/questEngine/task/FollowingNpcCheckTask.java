@@ -18,13 +18,11 @@ package com.aionemu.gameserver.questEngine.task;
 
 import com.aionemu.gameserver.ai2.event.AIEventType;
 import com.aionemu.gameserver.model.TaskId;
-import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.QuestEngine;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.utils.MathUtil;
-import com.aionemu.gameserver.world.zone.ZoneName;
 
 /**
  * @author ATracer

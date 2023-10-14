@@ -7,9 +7,10 @@
  */
 package com.aionemu.gameserver.geoEngine.math;
 
-import com.aionemu.gameserver.configs.main.GeoDataConfig;
-import com.aionemu.gameserver.geoEngine.math.FastMath;
 import java.util.logging.Logger;
+
+import com.aionemu.gameserver.configs.main.GeoDataConfig;
+
 import javolution.context.ObjectFactory;
 import javolution.lang.Reusable;
 

@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.ai2.handler;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.ai2.NpcAI2;
 import com.aionemu.gameserver.dataholders.DataManager;
@@ -28,10 +32,6 @@ import com.aionemu.gameserver.model.templates.npcshout.ShoutType;
 import com.aionemu.gameserver.model.templates.walker.WalkerTemplate;
 import com.aionemu.gameserver.services.NpcShoutsService;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * @author Rolandas

@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.utils.collections.cachemap;
 
-import org.slf4j.Logger;
-
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.slf4j.Logger;
 
 /**
  * Base class for {@link WeakCacheMap} and {@link SoftCacheMap}

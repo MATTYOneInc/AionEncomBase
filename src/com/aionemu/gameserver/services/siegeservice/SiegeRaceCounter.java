@@ -16,6 +16,13 @@
  */
 package com.aionemu.gameserver.services.siegeservice;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
+
 import com.aionemu.commons.utils.GenericValidator;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -24,10 +31,8 @@ import com.aionemu.gameserver.model.team.legion.Legion;
 import com.aionemu.gameserver.world.World;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import javolution.util.FastMap;
 
-import java.util.*;
-import java.util.concurrent.atomic.AtomicLong;
+import javolution.util.FastMap;
 
 public class SiegeRaceCounter implements Comparable<SiegeRaceCounter>
 {

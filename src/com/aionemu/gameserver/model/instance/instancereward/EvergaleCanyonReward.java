@@ -16,22 +16,25 @@
  */
 package com.aionemu.gameserver.model.instance.instancereward;
 
+import static ch.lambdaj.Lambda.maxFrom;
+import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.sort;
+
+import java.util.Comparator;
+import java.util.List;
+
+import org.apache.commons.lang.mutable.MutableInt;
+
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.geometry.Point3D;
-import com.aionemu.gameserver.model.instance.playerreward.PvPArenaPlayerReward;
 import com.aionemu.gameserver.model.instance.playerreward.EvergaleCanyonPlayerReward;
+import com.aionemu.gameserver.model.instance.playerreward.PvPArenaPlayerReward;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_INSTANCE_SCORE;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.WorldMapInstance;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-import org.apache.commons.lang.mutable.MutableInt;
-
-import java.util.Comparator;
-import java.util.List;
-
-import static ch.lambdaj.Lambda.*;
 
 /****/
 /** Author Rinzler (Encom)

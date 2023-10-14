@@ -16,14 +16,14 @@
  */
 package com.aionemu.gameserver.services.player.CreativityPanel.stats;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.stats.calc.StatOwner;
 import com.aionemu.gameserver.model.stats.calc.functions.IStatFunction;
 import com.aionemu.gameserver.model.stats.calc.functions.StatAddFunction;
 import com.aionemu.gameserver.model.stats.container.StatEnum;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Ranastic (Encom)

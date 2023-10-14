@@ -16,8 +16,9 @@
  */
 package com.aionemu.gameserver.world.geo;
 
-import com.aionemu.gameserver.geoEngine.models.GeoMap;
 import org.apache.commons.lang.StringUtils;
+
+import com.aionemu.gameserver.geoEngine.models.GeoMap;
 
 /**
  * @author ATracer

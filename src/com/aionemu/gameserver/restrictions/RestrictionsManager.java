@@ -16,15 +16,16 @@
  */
 package com.aionemu.gameserver.restrictions;
 
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.Comparator;
+
+import org.apache.commons.lang.ArrayUtils;
+
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.skillengine.model.Skill;
-import org.apache.commons.lang.ArrayUtils;
-
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.Comparator;
 
 public final class RestrictionsManager
 {

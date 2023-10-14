@@ -16,9 +16,13 @@
  */
 package com.aionemu.gameserver.model.templates.itemgroups;
 
-import com.aionemu.gameserver.model.templates.rewards.BonusType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
-import javax.xml.bind.annotation.*;
+import com.aionemu.gameserver.model.templates.rewards.BonusType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BonusItemGroup")

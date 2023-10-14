@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.svsservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.svs.SvsLocation;
 import com.aionemu.gameserver.model.svs.SvsStateType;
 import com.aionemu.gameserver.services.SvsService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

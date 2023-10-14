@@ -16,12 +16,13 @@
  */
 package com.aionemu.gameserver.model.gameobjects.player;
 
-import com.aionemu.gameserver.model.gameobjects.PersistentState;
-import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
+import java.util.Calendar;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Calendar;
+import com.aionemu.gameserver.model.gameobjects.PersistentState;
+import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
 
 public class AbyssRank
 {

@@ -17,7 +17,31 @@
 package com.aionemu.gameserver.utils.stats;
 
 import com.aionemu.gameserver.model.PlayerClass;
-import com.aionemu.gameserver.utils.stats.enums.*;
+import com.aionemu.gameserver.utils.stats.enums.ACCURACY;
+import com.aionemu.gameserver.utils.stats.enums.AGILITY;
+import com.aionemu.gameserver.utils.stats.enums.ATTACK_RANGE;
+import com.aionemu.gameserver.utils.stats.enums.ATTACK_SPEED;
+import com.aionemu.gameserver.utils.stats.enums.BLOCK;
+import com.aionemu.gameserver.utils.stats.enums.CRIT_SPELL;
+import com.aionemu.gameserver.utils.stats.enums.EARTH_RESIST;
+import com.aionemu.gameserver.utils.stats.enums.EVASION;
+import com.aionemu.gameserver.utils.stats.enums.FIRE_RESIST;
+import com.aionemu.gameserver.utils.stats.enums.FLY_SPEED;
+import com.aionemu.gameserver.utils.stats.enums.HEALTH;
+import com.aionemu.gameserver.utils.stats.enums.KNOWLEDGE;
+import com.aionemu.gameserver.utils.stats.enums.MAGIC_ACCURACY;
+import com.aionemu.gameserver.utils.stats.enums.MAIN_HAND_ACCURACY;
+import com.aionemu.gameserver.utils.stats.enums.MAIN_HAND_ATTACK;
+import com.aionemu.gameserver.utils.stats.enums.MAIN_HAND_CRITRATE;
+import com.aionemu.gameserver.utils.stats.enums.MAXHP;
+import com.aionemu.gameserver.utils.stats.enums.PARRY;
+import com.aionemu.gameserver.utils.stats.enums.POWER;
+import com.aionemu.gameserver.utils.stats.enums.SPEED;
+import com.aionemu.gameserver.utils.stats.enums.SPELL_RESIST;
+import com.aionemu.gameserver.utils.stats.enums.STRIKE_RESIST;
+import com.aionemu.gameserver.utils.stats.enums.WATER_RESIST;
+import com.aionemu.gameserver.utils.stats.enums.WILL;
+import com.aionemu.gameserver.utils.stats.enums.WIND_RESIST;
 
 public class ClassStats
 {

@@ -16,6 +16,13 @@
  */
 package com.aionemu.gameserver.model.instance.instancereward;
 
+import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.sort;
+import static ch.lambdaj.Lambda.sum;
+
+import java.util.Comparator;
+import java.util.List;
+
 import com.aionemu.gameserver.model.autogroup.AGPlayer;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.instance.playerreward.HarmonyGroupReward;
@@ -24,12 +31,8 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_INSTANCE_SCORE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.WorldMapInstance;
 import com.aionemu.gameserver.world.knownlist.Visitor;
+
 import javolution.util.FastList;
-
-import java.util.Comparator;
-import java.util.List;
-
-import static ch.lambdaj.Lambda.*;
 
 public class HarmonyArenaReward extends PvPArenaReward
 {

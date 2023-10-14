@@ -16,6 +16,20 @@
  */
 package com.aionemu.gameserver.ai2;
 
+import static ch.lambdaj.Lambda.join;
+import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.selectDistinct;
+import static ch.lambdaj.collection.LambdaCollections.with;
+
+import java.io.File;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.CountDownLatch;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.scripting.classlistener.AggregatedClassListener;
 import com.aionemu.commons.scripting.classlistener.OnClassLoadUnloadListener;
 import com.aionemu.commons.scripting.classlistener.ScheduledTaskClassListener;
@@ -27,17 +41,6 @@ import com.aionemu.gameserver.model.GameEngine;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.File;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.CountDownLatch;
-
-import static ch.lambdaj.Lambda.*;
-import static ch.lambdaj.collection.LambdaCollections.with;
 
 /**
  * @author ATracer

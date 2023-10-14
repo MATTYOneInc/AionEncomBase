@@ -16,9 +16,13 @@
  */
 package com.aionemu.gameserver.model.templates.mail;
 
-import org.apache.commons.lang.StringUtils;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
-import javax.xml.bind.annotation.*;
+import org.apache.commons.lang.StringUtils;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MailPart")

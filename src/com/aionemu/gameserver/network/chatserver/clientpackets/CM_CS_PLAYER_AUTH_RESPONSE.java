@@ -16,10 +16,11 @@
  */
 package com.aionemu.gameserver.network.chatserver.clientpackets;
 
-import com.aionemu.gameserver.network.chatserver.CsClientPacket;
-import com.aionemu.gameserver.services.ChatService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.aionemu.gameserver.network.chatserver.CsClientPacket;
+import com.aionemu.gameserver.services.ChatService;
 
 public class CM_CS_PLAYER_AUTH_RESPONSE extends CsClientPacket
 {

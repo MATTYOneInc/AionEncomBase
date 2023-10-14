@@ -16,11 +16,16 @@
  */
 package com.aionemu.gameserver.model.templates.spawns.towerofeternityspawns;
 
-import com.aionemu.gameserver.model.towerofeternity.TowerOfEternityStateType;
-import com.aionemu.gameserver.model.templates.spawns.Spawn;
-
-import javax.xml.bind.annotation.*;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.templates.spawns.Spawn;
+import com.aionemu.gameserver.model.towerofeternity.TowerOfEternityStateType;
 
 /**
  * Created by Wnkrz on 23/08/2017.

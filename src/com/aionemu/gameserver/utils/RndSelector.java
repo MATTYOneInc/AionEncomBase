@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.utils;
 
-import com.aionemu.commons.utils.Rnd;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import com.aionemu.commons.utils.Rnd;
 
 /****/
 /** Author Ranastic (Encom)

@@ -16,6 +16,16 @@
  */
 package com.aionemu.gameserver.services;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.commons.utils.internal.chmv8.PlatformDependent;
 import com.aionemu.gameserver.controllers.HouseController;
@@ -34,18 +44,19 @@ import com.aionemu.gameserver.model.templates.housing.BuildingType;
 import com.aionemu.gameserver.model.templates.housing.HouseAddress;
 import com.aionemu.gameserver.model.templates.housing.HousingLand;
 import com.aionemu.gameserver.model.templates.spawns.SpawnType;
-import com.aionemu.gameserver.network.aion.serverpackets.*;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_FRIEND_LIST;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_HOUSE_ACQUIRE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_HOUSE_OWNER_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_MARK_FRIENDLIST;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.spawnengine.SpawnEngine;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldPosition;
+
 import javolution.util.FastList;
-import java.sql.Timestamp;
-import java.util.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class HousingService {
 

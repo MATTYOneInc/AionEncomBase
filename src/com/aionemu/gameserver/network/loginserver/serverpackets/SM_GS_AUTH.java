@@ -16,13 +16,13 @@
  */
 package com.aionemu.gameserver.network.loginserver.serverpackets;
 
+import java.util.List;
+
 import com.aionemu.commons.network.IPRange;
 import com.aionemu.gameserver.configs.network.IPConfig;
 import com.aionemu.gameserver.configs.network.NetworkConfig;
 import com.aionemu.gameserver.network.loginserver.LoginServerConnection;
 import com.aionemu.gameserver.network.loginserver.LsServerPacket;
-
-import java.util.List;
 
 /**
  * This is authentication packet that gs will send to login server for registration.

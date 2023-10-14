@@ -16,6 +16,17 @@
  */
 package com.aionemu.gameserver.services.drop;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.ai2.event.AIEventType;
 import com.aionemu.gameserver.configs.main.DropConfig;
@@ -35,10 +46,16 @@ import com.aionemu.gameserver.model.stats.container.StatEnum;
 import com.aionemu.gameserver.model.team2.common.legacy.LootGroupRules;
 import com.aionemu.gameserver.model.templates.event.EventDrop;
 import com.aionemu.gameserver.model.templates.event.EventTemplate;
-import com.aionemu.gameserver.model.templates.globaldrops.*;
+import com.aionemu.gameserver.model.templates.globaldrops.GlobalDropItem;
+import com.aionemu.gameserver.model.templates.globaldrops.GlobalDropMap;
+import com.aionemu.gameserver.model.templates.globaldrops.GlobalDropRace;
+import com.aionemu.gameserver.model.templates.globaldrops.GlobalDropRating;
+import com.aionemu.gameserver.model.templates.globaldrops.GlobalDropTribe;
+import com.aionemu.gameserver.model.templates.globaldrops.GlobalDropWorld;
+import com.aionemu.gameserver.model.templates.globaldrops.GlobalDropZone;
+import com.aionemu.gameserver.model.templates.globaldrops.GlobalRule;
 import com.aionemu.gameserver.model.templates.housing.HouseType;
 import com.aionemu.gameserver.model.templates.npc.AbyssNpcType;
-import com.aionemu.gameserver.model.templates.npc.NpcRank;
 import com.aionemu.gameserver.model.templates.npc.NpcRating;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 import com.aionemu.gameserver.model.templates.pet.PetFunctionType;
@@ -50,12 +67,9 @@ import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.stats.DropRewardEnum;
 import com.aionemu.gameserver.world.zone.ZoneName;
+
 import javolution.util.FastList;
 import javolution.util.FastMap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.*;
 
 public class DropRegistrationService {
 
@@ -253,7 +267,6 @@ public class DropRegistrationService {
 					if (rule.getGlobalRuleItems() == null) {
 						continue;
 					}
-					float boostGDropRate = npc.getGameStats().getStat(StatEnum.BOOST_DROP_RATE, 100).getCurrent() / 100f;
 					boostDropRate += genesis.getGameStats().getStat(StatEnum.DR_BOOST, 100).getCurrent() / 100f;
 					boostDropRate += genesis.getCommonData().getCurrentReposteEnergy() > 0 ? 0.05f : 0;
 					boostDropRate += genesis.getCommonData().getCurrentSalvationPercent() > 0 ? 0.05f : 0;
@@ -409,20 +422,6 @@ public class DropRegistrationService {
 		item.setCount(count);
 		item.setIndex(index);
 		return item;
-	}
-
-	private float getRankModifier(Npc npc) {
-		float rankModifier = 1f;
-		if (npc.getRank()!= null) {
-			if (npc.getRank().equals(NpcRank.DISCIPLINED)) {
-				rankModifier = 1f;
-			} else if (npc.getRank().equals(NpcRank.SEASONED)) {
-				rankModifier = 1.5f;
-			} else if (npc.getRank().equals(NpcRank.EXPERT)) {
-				rankModifier = 2f;
-			}
-		}
-		return rankModifier;
 	}
 
 	private float getRatingModifier(Npc npc) {

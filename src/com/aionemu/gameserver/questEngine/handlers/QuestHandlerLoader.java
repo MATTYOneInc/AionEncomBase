@@ -16,13 +16,14 @@
  */
 package com.aionemu.gameserver.questEngine.handlers;
 
-import com.aionemu.commons.scripting.classlistener.ClassListener;
-import com.aionemu.commons.utils.ClassUtils;
-import com.aionemu.gameserver.questEngine.QuestEngine;
+import java.lang.reflect.Modifier;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.Modifier;
+import com.aionemu.commons.scripting.classlistener.ClassListener;
+import com.aionemu.commons.utils.ClassUtils;
+import com.aionemu.gameserver.questEngine.QuestEngine;
 
 /**
  * @author MrPoke

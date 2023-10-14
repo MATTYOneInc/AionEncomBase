@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.model.drop;
 
-import com.aionemu.gameserver.model.Race;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-
 import java.util.Collection;
 import java.util.Set;
+
+import com.aionemu.gameserver.model.Race;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 /**
  * @author MrPoke

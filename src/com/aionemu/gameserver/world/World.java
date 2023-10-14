@@ -16,6 +16,13 @@
  */
 package com.aionemu.gameserver.world;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.utils.GenericValidator;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.dataholders.PlayerInitialData.LocationData;
@@ -29,21 +36,16 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.siege.SiegeNpc;
 import com.aionemu.gameserver.model.gameobjects.state.CreatureState;
 import com.aionemu.gameserver.model.templates.world.WorldMapTemplate;
-import com.aionemu.gameserver.services.outpost.Outpost;
 import com.aionemu.gameserver.utils.Util;
 import com.aionemu.gameserver.world.container.PlayerContainer;
 import com.aionemu.gameserver.world.exceptions.AlreadySpawnedException;
 import com.aionemu.gameserver.world.exceptions.DuplicateAionObjectException;
 import com.aionemu.gameserver.world.exceptions.WorldMapNotExistException;
 import com.aionemu.gameserver.world.knownlist.Visitor;
+
 import gnu.trove.map.hash.TIntObjectHashMap;
 import javolution.util.FastList;
 import javolution.util.FastMap;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class World {
 

@@ -16,13 +16,13 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_GROUP_DATA_EXCHANGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-
-import java.util.Collection;
 
 public class CM_GROUP_DATA_EXCHANGE extends AionClientPacket
 {

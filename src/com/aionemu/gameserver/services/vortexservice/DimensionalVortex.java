@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.services.vortexservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.commons.callbacks.EnhancedObject;
 import com.aionemu.gameserver.ai2.AbstractAI;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -24,9 +26,8 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.vortex.VortexLocation;
 import com.aionemu.gameserver.model.vortex.VortexStateType;
 import com.aionemu.gameserver.services.VortexService;
-import javolution.util.FastMap;
 
-import java.util.concurrent.atomic.AtomicBoolean;
+import javolution.util.FastMap;
 
 public abstract class DimensionalVortex<VL extends VortexLocation>
 {

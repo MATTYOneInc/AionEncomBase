@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.model.templates.npc;
 
-import com.aionemu.gameserver.model.gameobjects.state.CreatureSeeState;
-
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.gameobjects.state.CreatureSeeState;
 
 @XmlType(name = "rating")
 @XmlEnum

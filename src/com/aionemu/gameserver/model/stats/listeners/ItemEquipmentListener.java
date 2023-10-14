@@ -16,6 +16,13 @@
  */
 package com.aionemu.gameserver.model.stats.listeners;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.configs.main.ArchDaevaConfig;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -35,12 +42,6 @@ import com.aionemu.gameserver.model.templates.itemset.ItemSetTemplate;
 import com.aionemu.gameserver.model.templates.itemset.PartBonus;
 import com.aionemu.gameserver.services.EnchantService;
 import com.aionemu.gameserver.services.SkillLearnService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 /**
  * @author xavier modified by Wakizashi

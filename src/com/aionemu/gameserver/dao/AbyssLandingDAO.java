@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.dao;
 
+import java.util.Map;
+
 import com.aionemu.commons.database.dao.DAO;
 import com.aionemu.gameserver.model.landing.LandingLocation;
-
-import java.util.Map;
 
 public abstract class AbyssLandingDAO implements DAO
 {

@@ -16,7 +16,6 @@
  */
 package com.aionemu.gameserver.network.aion.gmhandler;
 
-import com.aionemu.gameserver.configs.administration.PanelConfig;
 import com.aionemu.gameserver.model.PlayerClass;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.utils.PacketSendUtility;

@@ -16,12 +16,13 @@
  */
 package com.aionemu.gameserver.model.templates.abyss_bonus;
 
+import java.util.Collections;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @Author Rinzler (Encom)

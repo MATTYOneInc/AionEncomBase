@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.controllers.observer;
 
+import java.util.List;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicReference;
+
 import com.aionemu.gameserver.configs.main.GeoDataConfig;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.geoEngine.collision.CollisionIntention;
@@ -37,10 +41,6 @@ import com.aionemu.gameserver.utils.gametime.DayTime;
 import com.aionemu.gameserver.utils.gametime.GameTime;
 import com.aionemu.gameserver.utils.gametime.GameTimeManager;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
-
-import java.util.List;
-import java.util.concurrent.Future;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class CollisionMaterialActor extends AbstractCollisionObserver implements IActor
 {

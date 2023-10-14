@@ -29,12 +29,12 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_QUESTION_WINDOW;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.RiftService;
 import com.aionemu.gameserver.services.VortexService;
-import com.aionemu.gameserver.services.abyss.AbyssPointsService;
 import com.aionemu.gameserver.services.rift.RiftEnum;
 import com.aionemu.gameserver.services.rift.RiftInformer;
 import com.aionemu.gameserver.services.rift.RiftManager;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.utils.PacketSendUtility;
+
 import javolution.util.FastMap;
 
 public class RVController extends NpcController
@@ -131,32 +131,6 @@ public class RVController extends NpcController
 			}
 		}
 	}
-	
-	private void sendRequestUseAp(Player player) {
-        RequestResponseHandler responseHandler = new RequestResponseHandler(getOwner()) {
-            @Override
-			public void acceptRequest(Creature requester, Player responder) {
-				if (onAccept(responder)) {
-					int worldId = slaveSpawnTemplate.getWorldId();
-					float x = slaveSpawnTemplate.getX();
-					float y = slaveSpawnTemplate.getY();
-					float z = slaveSpawnTemplate.getZ();
-					TeleportService2.teleportTo(responder, worldId, x, y, z);
-					AbyssPointsService.addAp(responder, -getAbyssPoint()); //Rift 5.6
-					PacketSendUtility.playerSendPacketTime(responder, SM_SYSTEM_MESSAGE.STR_MSG_RVR_DIRECT_PORTAL_OPEN_NOTICE, 10000);
-					syncPassed(false);
-				}
-            }
-            @Override
-            public void denyRequest(Creature requester, Player responder) {
-				onDeny(responder);
-            }
-        };
-        boolean requested = player.getResponseRequester().putRequest(SM_QUESTION_WINDOW.STR_ASK_PASS_BY_DIRECT_PORTAL_USE_AP, responseHandler);
-        if (requested) {
-            PacketSendUtility.sendPacket(player, new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_ASK_PASS_BY_DIRECT_PORTAL_USE_AP, 0, 0));
-        }
-    }
 	
 	private boolean onAccept(Player player) {
 		if (!isAccepting) {

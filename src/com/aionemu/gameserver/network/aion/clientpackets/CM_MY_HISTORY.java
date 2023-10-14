@@ -16,14 +16,13 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_MY_HISTORY;
 import com.aionemu.gameserver.services.ranking.SeasonRankingService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Created by Wnkrz on 24/07/2017.

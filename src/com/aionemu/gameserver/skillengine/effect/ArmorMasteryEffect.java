@@ -16,17 +16,18 @@
  */
 package com.aionemu.gameserver.skillengine.effect;
 
-import com.aionemu.gameserver.model.stats.calc.functions.IStatFunction;
-import com.aionemu.gameserver.model.stats.calc.functions.StatArmorMasteryFunction;
-import com.aionemu.gameserver.model.templates.item.ArmorType;
-import com.aionemu.gameserver.skillengine.model.Effect;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
-import java.util.ArrayList;
-import java.util.List;
+
+import com.aionemu.gameserver.model.stats.calc.functions.IStatFunction;
+import com.aionemu.gameserver.model.stats.calc.functions.StatArmorMasteryFunction;
+import com.aionemu.gameserver.model.templates.item.ArmorType;
+import com.aionemu.gameserver.skillengine.model.Effect;
 
 /**
  * @author ATracer

@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import java.sql.Timestamp;
+import java.util.List;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.configs.main.GSConfig;
 import com.aionemu.gameserver.configs.main.MembershipConfig;
@@ -37,9 +40,6 @@ import com.aionemu.gameserver.services.NameRestrictionService;
 import com.aionemu.gameserver.services.player.PlayerService;
 import com.aionemu.gameserver.utils.Util;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
-
-import java.sql.Timestamp;
-import java.util.List;
 
 public class CM_CREATE_CHARACTER extends AionClientPacket
 {

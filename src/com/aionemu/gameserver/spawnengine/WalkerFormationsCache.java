@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.spawnengine;
 
-import com.aionemu.commons.utils.internal.chmv8.PlatformDependent;
-
 import java.util.Map;
+
+import com.aionemu.commons.utils.internal.chmv8.PlatformDependent;
 
 /**
  * @author Rolandas

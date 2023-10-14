@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.model.templates.item;
 
-import com.aionemu.gameserver.model.SkillElement;
-
 import javax.xml.bind.annotation.XmlEnum;
+
+import com.aionemu.gameserver.model.SkillElement;
 
 /**
  * @author ATracer

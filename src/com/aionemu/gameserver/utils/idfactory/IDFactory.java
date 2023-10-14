@@ -16,15 +16,22 @@
  */
 package com.aionemu.gameserver.utils.idfactory;
 
-import com.aionemu.commons.database.dao.DAOManager;
-import com.aionemu.commons.utils.GenericValidator;
-import com.aionemu.gameserver.dao.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.BitSet;
 import java.util.Collection;
 import java.util.concurrent.locks.ReentrantLock;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.aionemu.commons.database.dao.DAOManager;
+import com.aionemu.commons.utils.GenericValidator;
+import com.aionemu.gameserver.dao.GuideDAO;
+import com.aionemu.gameserver.dao.HousesDAO;
+import com.aionemu.gameserver.dao.InventoryDAO;
+import com.aionemu.gameserver.dao.LegionDAO;
+import com.aionemu.gameserver.dao.MailDAO;
+import com.aionemu.gameserver.dao.PlayerDAO;
+import com.aionemu.gameserver.dao.PlayerRegisteredItemsDAO;
 
 /**
  * This class is responsible for id generation for all Aion-Emu objects.<br>

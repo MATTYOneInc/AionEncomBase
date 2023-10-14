@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.model.landing_special;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.landing_special.LandingSpecialTemplate;
 import com.aionemu.gameserver.services.abysslandingservice.landingspecialservice.SpecialLanding;
-import javolution.util.FastMap;
 
-import java.util.ArrayList;
-import java.util.List;
+import javolution.util.FastMap;
 
 
 public class LandingSpecialLocation

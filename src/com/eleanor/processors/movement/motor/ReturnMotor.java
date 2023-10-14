@@ -3,6 +3,8 @@
  */
 package com.eleanor.processors.movement.motor;
 
+import java.util.concurrent.ScheduledFuture;
+
 import com.aionemu.gameserver.ai2.event.AIEventType;
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -10,8 +12,6 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_MOVE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 import com.eleanor.processors.movement.MovementProcessor;
-import com.eleanor.processors.movement.motor.AMovementMotor;
-import java.util.concurrent.ScheduledFuture;
 
 public class ReturnMotor
 extends AMovementMotor {

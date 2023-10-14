@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.model.templates.road;
 
-import com.aionemu.gameserver.model.utils3d.Point3D;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.utils3d.Point3D;
 
 /**
  * @author SheppeR

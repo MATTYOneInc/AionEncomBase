@@ -16,6 +16,12 @@
  */
 package com.aionemu.gameserver.model.team2.league;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.callbacks.util.GlobalCallbackHelper;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.team2.alliance.PlayerAlliance;
@@ -30,11 +36,6 @@ import com.aionemu.gameserver.restrictions.RestrictionsManager;
 import com.aionemu.gameserver.services.AutoGroupService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.google.common.base.Preconditions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class LeagueService
 {

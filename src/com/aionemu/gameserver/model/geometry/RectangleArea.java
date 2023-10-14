@@ -16,11 +16,12 @@
  */
 package com.aionemu.gameserver.model.geometry;
 
+import java.awt.Point;
+import java.awt.Rectangle;
+
 import com.aionemu.gameserver.model.templates.zone.Point2D;
 import com.aionemu.gameserver.utils.MathUtil;
 import com.aionemu.gameserver.world.zone.ZoneName;
-
-import java.awt.*;
 
 /**
  * Rectangle area, most wide spread in the game

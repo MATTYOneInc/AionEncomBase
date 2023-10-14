@@ -16,11 +16,16 @@
  */
 package com.aionemu.gameserver.skillengine.model;
 
-import com.aionemu.gameserver.model.templates.item.WeaponType;
+import java.util.HashMap;
 
 import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
-import java.util.HashMap;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.templates.item.WeaponType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Times")

@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.model.geometry;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.configs.main.WorldConfig;
 import com.aionemu.gameserver.model.templates.zone.Point2D;
 import com.aionemu.gameserver.utils.MathUtil;
 import com.aionemu.gameserver.world.zone.ZoneName;
-
-import java.util.Collection;
 
 /**
  * Area of free form

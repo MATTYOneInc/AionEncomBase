@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.model.gameobjects.player.motion;
 
-import com.aionemu.gameserver.model.IExpirable;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import com.aionemu.gameserver.model.IExpirable;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 public class Motion implements IExpirable
 {

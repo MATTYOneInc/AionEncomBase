@@ -20,6 +20,7 @@ import com.aionemu.gameserver.model.team.legion.Legion;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.LegionService;
+
 import javolution.util.FastList;
 
 public class SM_LEGION_SEARCH extends AionServerPacket

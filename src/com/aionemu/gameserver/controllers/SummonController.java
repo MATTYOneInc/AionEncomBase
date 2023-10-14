@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.controllers;
 
+import org.apache.commons.lang.NullArgumentException;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.EmotionType;
 import com.aionemu.gameserver.model.gameobjects.Creature;
@@ -36,7 +38,6 @@ import com.aionemu.gameserver.skillengine.model.Skill;
 import com.aionemu.gameserver.taskmanager.tasks.PlayerMoveTaskManager;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-import org.apache.commons.lang.NullArgumentException;
 
 /**
  * @author ATracer

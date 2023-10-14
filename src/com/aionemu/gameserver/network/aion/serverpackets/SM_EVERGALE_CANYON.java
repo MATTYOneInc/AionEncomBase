@@ -18,7 +18,6 @@ package com.aionemu.gameserver.network.aion.serverpackets;
 
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-import java.util.Collection;
 
 public class SM_EVERGALE_CANYON extends AionServerPacket
 {

@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.sql.Timestamp;
+import java.util.Map;
+
 import com.aionemu.gameserver.model.team.legion.Legion;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-
-import java.sql.Timestamp;
-import java.util.Map;
 
 /**
  * @author Simple

@@ -16,12 +16,17 @@
  */
 package com.aionemu.gameserver.dao;
 
-import com.aionemu.gameserver.model.team.legion.*;
-import javolution.util.FastList;
-
 import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.TreeMap;
+
+import com.aionemu.gameserver.model.team.legion.Legion;
+import com.aionemu.gameserver.model.team.legion.LegionEmblem;
+import com.aionemu.gameserver.model.team.legion.LegionHistory;
+import com.aionemu.gameserver.model.team.legion.LegionJoinRequest;
+import com.aionemu.gameserver.model.team.legion.LegionWarehouse;
+
+import javolution.util.FastList;
 
 public abstract class LegionDAO implements IDFactoryAwareDAO
 {

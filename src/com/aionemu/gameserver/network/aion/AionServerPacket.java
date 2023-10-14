@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.network.aion;
 
+import java.nio.ByteBuffer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.network.packet.BaseServerPacket;
 import com.aionemu.gameserver.configs.network.NetworkConfig;
 import com.aionemu.gameserver.network.Crypt;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.nio.ByteBuffer;
 
 /**
  * Base class for every GS -> Aion Server Packet.

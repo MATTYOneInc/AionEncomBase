@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.model.team2;
 
+import java.util.Collection;
+
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.google.common.base.Predicate;
-
-import java.util.Collection;
 
 /**
  * @author ATracer

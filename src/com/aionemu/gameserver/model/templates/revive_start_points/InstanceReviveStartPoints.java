@@ -16,8 +16,6 @@
  */
 package com.aionemu.gameserver.model.templates.revive_start_points;
 
-import com.aionemu.gameserver.model.Race;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;

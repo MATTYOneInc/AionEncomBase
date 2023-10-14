@@ -16,10 +16,11 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
-import com.aionemu.gameserver.network.aion.AionClientPacket;
-import com.aionemu.gameserver.network.aion.AionConnection.State;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.aionemu.gameserver.network.aion.AionClientPacket;
+import com.aionemu.gameserver.network.aion.AionConnection.State;
 
 /**
  * @author Ranastic (Encom)

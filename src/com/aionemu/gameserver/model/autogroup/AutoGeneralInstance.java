@@ -16,6 +16,13 @@
  */
 package com.aionemu.gameserver.model.autogroup;
 
+import static ch.lambdaj.Lambda.having;
+import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.select;
+import static org.hamcrest.Matchers.equalTo;
+
+import java.util.List;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.PlayerClass;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -25,11 +32,6 @@ import com.aionemu.gameserver.model.team2.group.PlayerGroupService;
 import com.aionemu.gameserver.model.templates.portal.PortalLoc;
 import com.aionemu.gameserver.model.templates.portal.PortalPath;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
-
-import java.util.List;
-
-import static ch.lambdaj.Lambda.*;
-import static org.hamcrest.Matchers.equalTo;
 
 public class AutoGeneralInstance extends AutoInstance
 {

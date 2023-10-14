@@ -16,10 +16,11 @@
  */
 package com.aionemu.gameserver.ai2;
 
-import com.aionemu.gameserver.configs.main.AIConfig;
-import com.aionemu.gameserver.model.gameobjects.Creature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.aionemu.gameserver.configs.main.AIConfig;
+import com.aionemu.gameserver.model.gameobjects.Creature;
 
 /**
  * @author ATracer

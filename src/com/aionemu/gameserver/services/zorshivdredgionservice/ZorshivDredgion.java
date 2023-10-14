@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.zorshivdredgionservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.zorshivdredgion.ZorshivDredgionLocation;
 import com.aionemu.gameserver.model.zorshivdredgion.ZorshivDredgionStateType;
 import com.aionemu.gameserver.services.ZorshivDredgionService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

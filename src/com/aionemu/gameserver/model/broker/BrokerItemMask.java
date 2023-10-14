@@ -17,7 +17,12 @@
 package com.aionemu.gameserver.model.broker;
 
 import com.aionemu.gameserver.model.PlayerClass;
-import com.aionemu.gameserver.model.broker.filter.*;
+import com.aionemu.gameserver.model.broker.filter.BrokerContainsExtraFilter;
+import com.aionemu.gameserver.model.broker.filter.BrokerContainsFilter;
+import com.aionemu.gameserver.model.broker.filter.BrokerFilter;
+import com.aionemu.gameserver.model.broker.filter.BrokerMinMaxFilter;
+import com.aionemu.gameserver.model.broker.filter.BrokerPlayerClassExtraFilter;
+import com.aionemu.gameserver.model.broker.filter.BrokerRecipeFilter;
 import com.aionemu.gameserver.model.gameobjects.Item;
 
 public enum BrokerItemMask

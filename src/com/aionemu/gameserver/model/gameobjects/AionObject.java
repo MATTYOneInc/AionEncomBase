@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.model.gameobjects;
 
-import com.google.common.base.Function;
-
 import javax.annotation.Nullable;
+
+import com.google.common.base.Function;
 
 /**
  * This is the base class for all "in-game" objects, that player can interact with, such as: npcs, monsters, players,

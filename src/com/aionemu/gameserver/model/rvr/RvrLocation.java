@@ -16,14 +16,15 @@
  */
 package com.aionemu.gameserver.model.rvr;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.rvr.RvrTemplate;
 import com.aionemu.gameserver.services.rvrservice.Rvrlf3df3;
-import javolution.util.FastMap;
 
-import java.util.ArrayList;
-import java.util.List;
+import javolution.util.FastMap;
 
 /**
  * @author Rinzler (Encom)

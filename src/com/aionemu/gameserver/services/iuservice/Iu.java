@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.iuservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.iu.IuLocation;
 import com.aionemu.gameserver.model.iu.IuStateType;
 import com.aionemu.gameserver.services.IuService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

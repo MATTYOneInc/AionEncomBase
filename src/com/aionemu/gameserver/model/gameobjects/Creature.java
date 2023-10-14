@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.model.gameobjects;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.ai2.AI2;
 import com.aionemu.gameserver.ai2.AI2Engine;
 import com.aionemu.gameserver.controllers.CreatureController;
@@ -44,9 +47,8 @@ import com.aionemu.gameserver.taskmanager.tasks.PacketBroadcaster.BroadcastMode;
 import com.aionemu.gameserver.world.MapRegion;
 import com.aionemu.gameserver.world.WorldPosition;
 import com.aionemu.gameserver.world.zone.ZoneName;
+
 import javolution.util.FastMap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public abstract class Creature extends VisibleObject
 {

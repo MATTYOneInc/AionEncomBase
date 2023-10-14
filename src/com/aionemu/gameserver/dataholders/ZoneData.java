@@ -16,27 +16,39 @@
  */
 package com.aionemu.gameserver.dataholders;
 
-import com.aionemu.gameserver.model.geometry.*;
-import com.aionemu.gameserver.model.templates.zone.ZoneClassName;
-import com.aionemu.gameserver.model.templates.zone.ZoneInfo;
-import com.aionemu.gameserver.model.templates.zone.ZoneTemplate;
-import gnu.trove.map.hash.TIntObjectHashMap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.xml.sax.SAXException;
+
+import com.aionemu.gameserver.model.geometry.Area;
+import com.aionemu.gameserver.model.geometry.CylinderArea;
+import com.aionemu.gameserver.model.geometry.PolyArea;
+import com.aionemu.gameserver.model.geometry.SemisphereArea;
+import com.aionemu.gameserver.model.geometry.SphereArea;
+import com.aionemu.gameserver.model.templates.zone.ZoneClassName;
+import com.aionemu.gameserver.model.templates.zone.ZoneInfo;
+import com.aionemu.gameserver.model.templates.zone.ZoneTemplate;
+
+import gnu.trove.map.hash.TIntObjectHashMap;
 
 /**
  * @author ATracer

@@ -8,6 +8,7 @@
 package com.aionemu.gameserver.geoEngine.math;
 
 import com.aionemu.gameserver.configs.main.GeoDataConfig;
+
 import javolution.context.ObjectFactory;
 import javolution.lang.Reusable;
 

@@ -16,16 +16,23 @@
  */
 package com.aionemu.gameserver.dataholders;
 
+import java.util.List;
+
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.model.items.RandomBonusResult;
 import com.aionemu.gameserver.model.templates.item.bonuses.RandomBonus;
 import com.aionemu.gameserver.model.templates.item.bonuses.StatBonusType;
 import com.aionemu.gameserver.model.templates.stats.ModifiersTemplate;
-import gnu.trove.map.hash.TIntObjectHashMap;
 
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
-import java.util.List;
+import gnu.trove.map.hash.TIntObjectHashMap;
 
 /****/
 /** Author Rinzler (Encom)

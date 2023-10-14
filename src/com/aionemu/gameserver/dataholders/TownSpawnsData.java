@@ -16,16 +16,18 @@
  */
 package com.aionemu.gameserver.dataholders;
 
-import com.aionemu.gameserver.model.templates.spawns.Spawn;
-import com.aionemu.gameserver.model.templates.towns.TownLevel;
-import com.aionemu.gameserver.model.templates.towns.TownSpawn;
-import com.aionemu.gameserver.model.templates.towns.TownSpawnMap;
-import gnu.trove.map.hash.TIntObjectHashMap;
+import java.util.List;
 
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.List;
+
+import com.aionemu.gameserver.model.templates.spawns.Spawn;
+import com.aionemu.gameserver.model.templates.towns.TownLevel;
+import com.aionemu.gameserver.model.templates.towns.TownSpawn;
+import com.aionemu.gameserver.model.templates.towns.TownSpawnMap;
+
+import gnu.trove.map.hash.TIntObjectHashMap;
 
 @XmlRootElement(name = "town_spawns_data")
 public class TownSpawnsData

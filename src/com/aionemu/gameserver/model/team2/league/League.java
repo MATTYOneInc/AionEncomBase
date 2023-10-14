@@ -17,6 +17,11 @@
  */
 package com.aionemu.gameserver.model.team2.league;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.team2.GeneralTeam;
@@ -28,11 +33,6 @@ import com.aionemu.gameserver.utils.idfactory.IDFactory;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Lists;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 
 /**
  * @author ATracer

@@ -16,10 +16,11 @@
  */
 package com.aionemu.gameserver.model.stats.calc.functions;
 
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.stats.container.StatEnum;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.model.stats.container.StatEnum;
 
 public class PlayerStatFunctions
 {

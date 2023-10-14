@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.model.gameobjects;
 
+import java.util.List;
+import java.util.Set;
+
 import com.aionemu.gameserver.controllers.NpcController;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -28,11 +31,9 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
+
 import javolution.util.FastList;
 import javolution.util.FastSet;
-
-import java.util.List;
-import java.util.Set;
 
 public class Kisk extends SummonedObject<Player>
 {

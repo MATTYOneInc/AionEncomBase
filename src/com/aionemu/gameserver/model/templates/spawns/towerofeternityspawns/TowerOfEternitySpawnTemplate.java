@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.model.templates.spawns.towerofeternityspawns;
 
-import com.aionemu.gameserver.model.towerofeternity.TowerOfEternityStateType;
 import com.aionemu.gameserver.model.templates.spawns.SpawnGroup2;
 import com.aionemu.gameserver.model.templates.spawns.SpawnSpotTemplate;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
+import com.aionemu.gameserver.model.towerofeternity.TowerOfEternityStateType;
 
 /**
  * Created by Wnkrz on 23/08/2017.

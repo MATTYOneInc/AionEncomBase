@@ -16,6 +16,18 @@
  */
 package com.aionemu.gameserver.services.events.bg;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ScheduledFuture;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.dao.LadderDAO;
@@ -35,7 +47,15 @@ import com.aionemu.gameserver.model.team2.alliance.PlayerAllianceMember;
 import com.aionemu.gameserver.model.team2.alliance.PlayerAllianceService;
 import com.aionemu.gameserver.model.team2.group.PlayerGroup;
 import com.aionemu.gameserver.model.team2.group.PlayerGroupService;
-import com.aionemu.gameserver.network.aion.serverpackets.*;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ATTACK_STATUS;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_MOTION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_PLAYER_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_PLAYER_STATE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_QUEST_ACTION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SKILL_COOLDOWN;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_TARGET_SELECTED;
 import com.aionemu.gameserver.services.DuelService;
 import com.aionemu.gameserver.services.StaticDoorService;
 import com.aionemu.gameserver.services.events.LadderService;
@@ -51,11 +71,8 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldMapInstance;
 import com.aionemu.gameserver.world.WorldPosition;
+
 import javolution.util.FastMap;
-import java.util.*;
-import java.util.concurrent.ScheduledFuture;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @Author Rinzler (Encom)

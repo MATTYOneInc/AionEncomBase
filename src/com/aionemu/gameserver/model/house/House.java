@@ -16,6 +16,19 @@
  */
 package com.aionemu.gameserver.model.house;
 
+import java.io.ByteArrayOutputStream;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.configs.main.HousingConfig;
 import com.aionemu.gameserver.controllers.HouseController;
@@ -26,10 +39,20 @@ import com.aionemu.gameserver.dao.PlayerRegisteredItemsDAO;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.TribeClass;
-import com.aionemu.gameserver.model.gameobjects.*;
+import com.aionemu.gameserver.model.gameobjects.HouseDecoration;
+import com.aionemu.gameserver.model.gameobjects.Npc;
+import com.aionemu.gameserver.model.gameobjects.PersistentState;
+import com.aionemu.gameserver.model.gameobjects.SummonedHouseNpc;
+import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerHouseOwnerFlags;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerScripts;
-import com.aionemu.gameserver.model.templates.housing.*;
+import com.aionemu.gameserver.model.templates.housing.Building;
+import com.aionemu.gameserver.model.templates.housing.BuildingType;
+import com.aionemu.gameserver.model.templates.housing.HouseAddress;
+import com.aionemu.gameserver.model.templates.housing.HouseType;
+import com.aionemu.gameserver.model.templates.housing.HousingLand;
+import com.aionemu.gameserver.model.templates.housing.PartType;
+import com.aionemu.gameserver.model.templates.housing.Sale;
 import com.aionemu.gameserver.model.templates.spawns.HouseSpawn;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.model.templates.spawns.SpawnType;
@@ -44,14 +67,6 @@ import com.aionemu.gameserver.world.WorldPosition;
 import com.aionemu.gameserver.world.knownlist.PlayerAwareKnownList;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
 import com.aionemu.gameserver.world.zone.ZoneService;
-import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.ByteArrayOutputStream;
-import java.sql.Timestamp;
-import java.util.*;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class House extends VisibleObject
 {

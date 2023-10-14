@@ -18,7 +18,12 @@ package com.aionemu.gameserver.network.aion.clientpackets;
 
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
-import com.aionemu.gameserver.network.aion.serverpackets.*;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_0x125;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_0x126;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_BLACKCLOUD_TRADE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_CASH_BUFF;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_UNK_168;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_VERSION_CHECK;
 
 /**
  * @author -Nemesiss-

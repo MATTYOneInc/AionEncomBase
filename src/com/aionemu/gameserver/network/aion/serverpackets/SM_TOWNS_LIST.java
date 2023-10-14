@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.town.Town;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-
-import java.util.Map;
 
 public class SM_TOWNS_LIST extends AionServerPacket
 {

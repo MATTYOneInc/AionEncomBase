@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.model.gameobjects.player;
 
-import com.aionemu.commons.utils.internal.chmv8.PlatformDependent;
-
 import java.util.Iterator;
 import java.util.Map;
+
+import com.aionemu.commons.utils.internal.chmv8.PlatformDependent;
 
 public class BlockList implements Iterable<BlockedPlayer>
 {

@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.services.instanceriftservice;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.instancerift.InstanceRiftLocation;
 import com.aionemu.gameserver.services.InstanceRiftService;
-
-import java.util.Map;
 /**
  * @author Rinzler (Encom)
  */

@@ -16,14 +16,14 @@
  */
 package com.aionemu.gameserver.model.account;
 
+import java.sql.Timestamp;
+import java.util.List;
+
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerAppearance;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerCommonData;
 import com.aionemu.gameserver.model.team.legion.Legion;
 import com.aionemu.gameserver.model.team.legion.LegionMember;
-
-import java.sql.Timestamp;
-import java.util.List;
 
 /**
  * This class is holding information about player, that is displayed on char selection screen, such as: player

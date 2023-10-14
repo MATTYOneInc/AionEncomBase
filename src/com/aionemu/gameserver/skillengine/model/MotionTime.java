@@ -16,13 +16,13 @@
  */
 package com.aionemu.gameserver.skillengine.model;
 
-import com.aionemu.gameserver.model.Gender;
-import com.aionemu.gameserver.model.Race;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.Gender;
+import com.aionemu.gameserver.model.Race;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "motion_time", propOrder = {"am" , "af" , "em" , "ef"})

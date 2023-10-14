@@ -16,11 +16,16 @@
  */
 package com.aionemu.gameserver.model.templates.tribe;
 
-import com.aionemu.gameserver.model.TribeClass;
-
-import javax.xml.bind.annotation.*;
 import java.util.Collections;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.TribeClass;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Tribe")

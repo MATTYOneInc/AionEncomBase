@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.utils.collections;
 
-import com.aionemu.commons.utils.internal.chmv8.PlatformDependent;
-
 import java.io.Serializable;
 import java.util.Map;
+
+import com.aionemu.commons.utils.internal.chmv8.PlatformDependent;
 
 /**
  * @author Rolandas

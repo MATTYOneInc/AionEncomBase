@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.services.conquestservice;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.conquest.ConquestLocation;
 import com.aionemu.gameserver.services.ConquestService;
-
-import java.util.Map;
 /**
  * @author Rinzler (Encom)
  */

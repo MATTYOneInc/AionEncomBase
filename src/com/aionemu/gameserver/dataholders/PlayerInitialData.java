@@ -16,16 +16,23 @@
  */
 package com.aionemu.gameserver.dataholders;
 
-import com.aionemu.gameserver.model.PlayerClass;
-import com.aionemu.gameserver.model.Race;
-import com.aionemu.gameserver.model.templates.item.ItemTemplate;
-import gnu.trove.map.hash.THashMap;
-
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.aionemu.gameserver.model.PlayerClass;
+import com.aionemu.gameserver.model.Race;
+import com.aionemu.gameserver.model.templates.item.ItemTemplate;
+
+import gnu.trove.map.hash.THashMap;
 
 /**
  * This table contains all nesessary data for new players. <br/>

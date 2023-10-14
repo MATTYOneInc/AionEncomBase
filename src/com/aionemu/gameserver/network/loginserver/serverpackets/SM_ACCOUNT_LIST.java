@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.network.loginserver.serverpackets;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.loginserver.LoginServerConnection;
 import com.aionemu.gameserver.network.loginserver.LsServerPacket;
-
-import java.util.Map;
 
 /**
  * GameServer packet that sends list of logged in accounts

@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.model.gameobjects;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.aionemu.gameserver.controllers.NpcController;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -23,7 +25,6 @@ import com.aionemu.gameserver.model.stats.container.NpcLifeStats;
 import com.aionemu.gameserver.model.stats.container.SummonedObjectGameStats;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
-import org.apache.commons.lang.StringUtils;
 
 /**
  * @author ATracer

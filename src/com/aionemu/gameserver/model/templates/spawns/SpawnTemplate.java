@@ -16,11 +16,13 @@
  */
 package com.aionemu.gameserver.model.templates.spawns;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.templates.event.EventTemplate;
 import com.aionemu.gameserver.spawnengine.SpawnHandlerType;
+
 import javolution.util.FastList;
-import org.apache.commons.lang.StringUtils;
 
 public class SpawnTemplate
 {

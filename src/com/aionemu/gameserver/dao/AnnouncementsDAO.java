@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.dao;
 
+import java.util.Set;
+
 import com.aionemu.commons.database.dao.DAO;
 import com.aionemu.gameserver.model.Announcement;
-
-import java.util.Set;
 
 /**
  * DAO that manages Announcements

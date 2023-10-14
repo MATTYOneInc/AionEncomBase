@@ -16,13 +16,13 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import com.aionemu.gameserver.model.siege.SiegeLocation;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.SiegeService;
-
-import java.util.ArrayList;
-import java.util.Collection;
 
 public class SM_SHIELD_EFFECT extends AionServerPacket
 {

@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.model.stats.container;
 
-import com.aionemu.gameserver.model.items.ItemSlot;
-
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.items.ItemSlot;
 
 @XmlType(name = "StatEnum")
 @XmlEnum

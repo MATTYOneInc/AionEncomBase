@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.model;
 
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-
 import javax.xml.bind.annotation.XmlEnum;
+
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 @XmlEnum
 public enum PlayerClass

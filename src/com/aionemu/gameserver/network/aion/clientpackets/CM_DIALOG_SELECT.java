@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.actions.PlayerMode;
 import com.aionemu.gameserver.model.gameobjects.Creature;
@@ -28,8 +31,6 @@ import com.aionemu.gameserver.questEngine.QuestEngine;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.services.ClassChangeService;
 import com.aionemu.gameserver.services.QuestService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CM_DIALOG_SELECT extends AionClientPacket
 {

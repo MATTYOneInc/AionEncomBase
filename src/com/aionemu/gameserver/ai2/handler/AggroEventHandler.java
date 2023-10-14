@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.ai2.handler;
 
+import java.util.Collections;
+
 import com.aionemu.gameserver.ai2.NpcAI2;
 import com.aionemu.gameserver.ai2.event.AIEventType;
 import com.aionemu.gameserver.controllers.attack.AttackResult;
@@ -32,8 +34,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.geo.GeoService;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-
-import java.util.Collections;
 
 /**
  * @author ATracer

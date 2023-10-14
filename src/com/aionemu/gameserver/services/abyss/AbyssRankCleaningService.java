@@ -16,6 +16,13 @@
  */
 package com.aionemu.gameserver.services.abyss;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.configs.main.CleaningConfig;
 import com.aionemu.gameserver.dao.AbyssRankDAO;
@@ -23,12 +30,6 @@ import com.aionemu.gameserver.model.AbyssRankingResult;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.world.World;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AbyssRankCleaningService {
 

@@ -16,16 +16,17 @@
  */
 package com.aionemu.gameserver.spawnengine;
 
+import java.util.HashSet;
+
 import com.aionemu.gameserver.model.TaskId;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.templates.spawns.SpawnGroup2;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.model.templates.spawns.TemporarySpawn;
+
 import javolution.util.FastList;
 import javolution.util.FastMap;
-
-import java.util.HashSet;
 
 public class TemporarySpawnEngine {
 

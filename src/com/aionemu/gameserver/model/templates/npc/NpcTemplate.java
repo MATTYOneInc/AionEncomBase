@@ -16,6 +16,14 @@
  */
 package com.aionemu.gameserver.model.templates.npc;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
 import com.aionemu.gameserver.ai2.AiNames;
 import com.aionemu.gameserver.model.NpcType;
 import com.aionemu.gameserver.model.Race;
@@ -26,8 +34,6 @@ import com.aionemu.gameserver.model.templates.BoundRadius;
 import com.aionemu.gameserver.model.templates.VisibleObjectTemplate;
 import com.aionemu.gameserver.model.templates.stats.KiskStatsTemplate;
 import com.aionemu.gameserver.model.templates.stats.NpcStatsTemplate;
-
-import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlRootElement(name = "npc_template")

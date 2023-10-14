@@ -19,7 +19,6 @@ package com.aionemu.gameserver.network.factories;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.AionPacketHandler;
-import com.aionemu.gameserver.network.aion.clientpackets.CM_GM_COMMAND_SEND;
 import com.aionemu.gameserver.network.aion.clientpackets.*;
 
 public class AionPacketHandlerFactory {
@@ -219,7 +218,7 @@ public class AionPacketHandlerFactory {
 		addPacket(new CM_GROUP_PLAYER_STATUS_INFO(0x0138, State.IN_GAME)); //5.8
 		addPacket(new CM_CLIENT_COMMAND_ROLL(0x0137, State.IN_GAME)); //5.8
 		addPacket(new CM_CHAT_GROUP_INFO(0x104, State.IN_GAME)); //5.8
-		addPacket(new CM_GROUP_LOOT(0x175, State.IN_GAME)); //5.8
+		addPacket(new CM_GROUP_LOOT(0x0170, State.IN_GAME)); //5.8
 		addPacket(new CM_GROUP_DATA_EXCHANGE(0xB3, State.IN_GAME)); //5.8
 		addPacket(new CM_SKILL_ANIMATION(0x1D5, State.IN_GAME)); //5.8
 		addPacket(new CM_TUNE_RESULT(0x1CA, State.IN_GAME)); //5.8

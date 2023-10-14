@@ -22,7 +22,11 @@ import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplateType;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.utils.MathUtil;
-import com.aionemu.gameserver.world.*;
+import com.aionemu.gameserver.world.MapRegion;
+import com.aionemu.gameserver.world.World;
+import com.aionemu.gameserver.world.WorldDropType;
+import com.aionemu.gameserver.world.WorldPosition;
+import com.aionemu.gameserver.world.WorldType;
 import com.aionemu.gameserver.world.knownlist.KnownList;
 
 /**

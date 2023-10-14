@@ -16,6 +16,13 @@
  */
 package com.aionemu.gameserver.model.templates.item.actions;
 
+import java.util.Iterator;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.gameserver.configs.main.CustomConfig;
 import com.aionemu.gameserver.configs.main.EnchantsConfig;
 import com.aionemu.gameserver.controllers.observer.ItemUseObserver;
@@ -33,12 +40,6 @@ import com.aionemu.gameserver.services.item.ItemPacketService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import java.util.Iterator;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EnchantItemAction")

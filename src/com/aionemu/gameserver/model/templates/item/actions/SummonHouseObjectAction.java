@@ -16,13 +16,13 @@
  */
 package com.aionemu.gameserver.model.templates.item.actions;
 
-import com.aionemu.gameserver.model.gameobjects.Item;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+
+import com.aionemu.gameserver.model.gameobjects.Item;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SummonHouseObjectAction")

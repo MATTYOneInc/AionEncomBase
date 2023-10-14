@@ -16,7 +16,20 @@
  */
 package com.aionemu.gameserver.dataholders;
 
-import com.aionemu.gameserver.model.gameobjects.player.Player;
+import static org.apache.commons.io.filefilter.FileFilterUtils.and;
+import static org.apache.commons.io.filefilter.FileFilterUtils.makeSVNAware;
+import static org.apache.commons.io.filefilter.FileFilterUtils.notFileFilter;
+import static org.apache.commons.io.filefilter.FileFilterUtils.prefixFileFilter;
+import static org.apache.commons.io.filefilter.FileFilterUtils.suffixFileFilter;
+
+import java.io.File;
+import java.util.Collection;
+import java.util.List;
+
+import javax.xml.XMLConstants;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.HiddenFileFilter;
 import org.apache.commons.io.filefilter.IOFileFilter;
@@ -24,14 +37,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
-import javax.xml.XMLConstants;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
-import java.io.File;
-import java.util.Collection;
-import java.util.List;
-
-import static org.apache.commons.io.filefilter.FileFilterUtils.*;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 
 /**
  * @author ViAl

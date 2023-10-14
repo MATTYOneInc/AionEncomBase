@@ -16,11 +16,17 @@
  */
 package com.aionemu.gameserver.model.templates.staticdoor;
 
+import java.util.EnumSet;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.gameserver.geoEngine.bounding.BoundingBox;
 import com.aionemu.gameserver.model.templates.VisibleObjectTemplate;
-
-import javax.xml.bind.annotation.*;
-import java.util.EnumSet;
 
 /**
  * @author Wakizashi

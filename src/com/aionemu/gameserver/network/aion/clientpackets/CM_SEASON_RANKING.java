@@ -16,16 +16,15 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
-import com.aionemu.gameserver.network.aion.serverpackets.SM_SEASON_RANKING;
-import com.aionemu.gameserver.services.ranking.SeasonRankingUpdateService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
-
-import java.util.List;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SEASON_RANKING;
+import com.aionemu.gameserver.services.ranking.SeasonRankingUpdateService;
 
 /**
  * Created by Wnkrz on 24/07/2017.

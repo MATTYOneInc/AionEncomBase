@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.dao;
 
+import java.util.Set;
+
 import com.aionemu.commons.database.dao.DAO;
 import com.aionemu.gameserver.model.veteranrewards.VeteranRewards;
-
-import java.util.Set;
 
 public abstract class VeteranRewardsDAO implements DAO {
 	public abstract Set<VeteranRewards> getVeteranReward();

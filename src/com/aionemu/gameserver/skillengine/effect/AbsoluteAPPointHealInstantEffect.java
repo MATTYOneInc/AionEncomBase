@@ -16,12 +16,12 @@
  */
 package com.aionemu.gameserver.skillengine.effect;
 
+import javax.xml.bind.annotation.XmlAttribute;
+
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_STATS_INFO;
 import com.aionemu.gameserver.skillengine.model.Effect;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-
-import javax.xml.bind.annotation.XmlAttribute;
 
 public class AbsoluteAPPointHealInstantEffect extends EffectTemplate
 {

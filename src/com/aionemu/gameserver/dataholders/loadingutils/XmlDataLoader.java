@@ -16,18 +16,20 @@
  */
 package com.aionemu.gameserver.dataholders.loadingutils;
 
-import com.aionemu.gameserver.dataholders.StaticData;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
+import java.io.File;
+import java.io.FileReader;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import java.io.File;
-import java.io.FileReader;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.xml.sax.SAXException;
+
+import com.aionemu.gameserver.dataholders.StaticData;
 
 /**
  * This class is responsible for loading xml files. It uses JAXB to do the job.<br>

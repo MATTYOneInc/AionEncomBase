@@ -16,6 +16,8 @@
  */
 package com.aionemu.gameserver.dao;
 
+import java.util.ArrayList;
+
 import com.aionemu.commons.database.dao.DAO;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.player.ranking.Arena6V6Ranking;
@@ -23,8 +25,6 @@ import com.aionemu.gameserver.model.gameobjects.player.ranking.ArenaOfTenacityRa
 import com.aionemu.gameserver.model.gameobjects.player.ranking.GoldArenaRank;
 import com.aionemu.gameserver.model.gameobjects.player.ranking.TowerOfChallengeRank;
 import com.aionemu.gameserver.model.ranking.SeasonRankingResult;
-
-import java.util.ArrayList;
 
 /**
  * Created by Wnkrz on 24/07/2017.

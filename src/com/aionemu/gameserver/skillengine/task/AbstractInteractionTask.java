@@ -16,12 +16,11 @@
  */
 package com.aionemu.gameserver.skillengine.task;
 
-import com.aionemu.gameserver.configs.main.CraftConfig;
+import java.util.concurrent.Future;
+
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
-import java.util.concurrent.Future;
 
 public abstract class AbstractInteractionTask {
 

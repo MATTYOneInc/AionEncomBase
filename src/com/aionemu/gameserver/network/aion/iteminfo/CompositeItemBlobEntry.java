@@ -16,13 +16,13 @@
  */
 package com.aionemu.gameserver.network.aion.iteminfo;
 
-import com.aionemu.gameserver.model.gameobjects.Item;
-import com.aionemu.gameserver.model.items.ManaStone;
-import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
-
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Set;
+
+import com.aionemu.gameserver.model.gameobjects.Item;
+import com.aionemu.gameserver.model.items.ManaStone;
+import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
 
 public class CompositeItemBlobEntry extends ItemBlobEntry
 {

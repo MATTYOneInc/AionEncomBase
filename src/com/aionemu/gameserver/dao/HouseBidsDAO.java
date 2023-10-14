@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.dao;
 
-import com.aionemu.commons.database.dao.DAO;
-import com.aionemu.gameserver.model.house.PlayerHouseBid;
-
 import java.sql.Timestamp;
 import java.util.Set;
+
+import com.aionemu.commons.database.dao.DAO;
+import com.aionemu.gameserver.model.house.PlayerHouseBid;
 
 /**
  * @author Rolandas

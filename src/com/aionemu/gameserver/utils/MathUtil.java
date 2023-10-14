@@ -16,18 +16,18 @@
  */
 package com.aionemu.gameserver.utils;
 
-import com.aionemu.gameserver.controllers.movement.NpcMoveController;
-import com.aionemu.gameserver.model.gameobjects.Creature;
-import com.aionemu.gameserver.model.gameobjects.VisibleObject;
-import com.aionemu.gameserver.model.geometry.Point3D;
-import com.aionemu.gameserver.model.templates.zone.Point2D;
-
-import java.awt.*;
+import java.awt.Point;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+
+import com.aionemu.gameserver.controllers.movement.NpcMoveController;
+import com.aionemu.gameserver.model.gameobjects.Creature;
+import com.aionemu.gameserver.model.gameobjects.VisibleObject;
+import com.aionemu.gameserver.model.geometry.Point3D;
+import com.aionemu.gameserver.model.templates.zone.Point2D;
 
 public class MathUtil
 {

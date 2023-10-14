@@ -16,18 +16,18 @@
  */
 package com.aionemu.gameserver.model.autogroup;
 
-import com.aionemu.commons.taskmanager.AbstractLockManager;
-import com.aionemu.gameserver.model.gameobjects.Item;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.instance.instancereward.InstanceReward;
-import com.aionemu.gameserver.world.WorldMapInstance;
+import static ch.lambdaj.Lambda.on;
+import static ch.lambdaj.Lambda.sort;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static ch.lambdaj.Lambda.on;
-import static ch.lambdaj.Lambda.sort;
+import com.aionemu.commons.taskmanager.AbstractLockManager;
+import com.aionemu.gameserver.model.gameobjects.Item;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.model.instance.instancereward.InstanceReward;
+import com.aionemu.gameserver.world.WorldMapInstance;
 
 public abstract class AutoInstance extends AbstractLockManager implements AutoInstanceHandler
 {

@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.beritraservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.beritra.BeritraLocation;
 import com.aionemu.gameserver.model.beritra.BeritraStateType;
 import com.aionemu.gameserver.services.BeritraService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.model.rift;
 
-import com.aionemu.gameserver.model.gameobjects.VisibleObject;
-import com.aionemu.gameserver.model.templates.rift.RiftTemplate;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.aionemu.gameserver.model.gameobjects.VisibleObject;
+import com.aionemu.gameserver.model.templates.rift.RiftTemplate;
 
 /**
  * @author Source

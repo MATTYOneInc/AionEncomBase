@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.dynamicriftservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.dynamicrift.DynamicRiftLocation;
 import com.aionemu.gameserver.model.dynamicrift.DynamicRiftStateType;
 import com.aionemu.gameserver.services.DynamicRiftService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

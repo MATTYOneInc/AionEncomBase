@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.network.aion.iteminfo;
 
+import java.nio.ByteBuffer;
+
 import com.aionemu.gameserver.model.items.IdianStone;
 import com.aionemu.gameserver.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
-
-import java.nio.ByteBuffer;
 
 /**
  * @author Ranastic

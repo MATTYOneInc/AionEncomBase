@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.configs.main.MembershipConfig;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.PlayerClass;
@@ -28,8 +31,6 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SKILL_REMOVE;
 import com.aionemu.gameserver.skillengine.model.SkillLearnTemplate;
 import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class SkillLearnService
 {

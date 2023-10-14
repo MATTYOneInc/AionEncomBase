@@ -16,13 +16,19 @@
  */
 package com.aionemu.gameserver.dataholders;
 
-import com.aionemu.gameserver.model.beritra.BeritraLocation;
-import com.aionemu.gameserver.model.templates.beritra.BeritraTemplate;
-import javolution.util.FastMap;
+import java.util.List;
 
 import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
-import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+import com.aionemu.gameserver.model.beritra.BeritraLocation;
+import com.aionemu.gameserver.model.templates.beritra.BeritraTemplate;
+
+import javolution.util.FastMap;
 
 /**
  * @author Rinzler (Encom)

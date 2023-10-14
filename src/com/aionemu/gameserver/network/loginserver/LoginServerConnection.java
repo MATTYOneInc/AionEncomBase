@@ -16,19 +16,20 @@
  */
 package com.aionemu.gameserver.network.loginserver;
 
-import com.aionemu.commons.network.AConnection;
-import com.aionemu.commons.network.Dispatcher;
-import com.aionemu.gameserver.network.factories.LsPacketHandlerFactory;
-import com.aionemu.gameserver.network.loginserver.serverpackets.SM_GS_AUTH;
-import com.aionemu.gameserver.utils.ThreadPoolManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayDeque;
 import java.util.Deque;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.aionemu.commons.network.AConnection;
+import com.aionemu.commons.network.Dispatcher;
+import com.aionemu.gameserver.network.factories.LsPacketHandlerFactory;
+import com.aionemu.gameserver.network.loginserver.serverpackets.SM_GS_AUTH;
+import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /** 
  * Object representing connection between LoginServer and GameServer.

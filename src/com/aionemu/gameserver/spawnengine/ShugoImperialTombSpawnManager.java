@@ -16,6 +16,11 @@
  */
 package com.aionemu.gameserver.spawnengine;
 
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.services.CronService;
 import com.aionemu.gameserver.configs.main.EventsConfig;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
@@ -25,10 +30,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.WorldMapInstance;
 import com.aionemu.gameserver.world.knownlist.Visitor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 /****/
 /** Author Rinzler (Encom)

@@ -17,9 +17,9 @@
 package com.aionemu.gameserver.services.teleport;
 
 import com.aionemu.gameserver.dataholders.DataManager;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.TeleportAnimation;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.portal.PortalLoc;
 import com.aionemu.gameserver.services.instance.InstanceService;
 

@@ -16,6 +16,20 @@
  */
 package com.aionemu.gameserver.services;
 
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Nullable;
+
+import org.quartz.JobDetail;
+import org.quartz.Trigger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.commons.services.CronService;
 import com.aionemu.gameserver.GameServer;
@@ -28,14 +42,31 @@ import com.aionemu.gameserver.model.DescriptionId;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.siege.SiegeNpc;
-import com.aionemu.gameserver.model.siege.*;
+import com.aionemu.gameserver.model.siege.ArtifactLocation;
+import com.aionemu.gameserver.model.siege.FortressLocation;
+import com.aionemu.gameserver.model.siege.Influence;
+import com.aionemu.gameserver.model.siege.SiegeLocation;
+import com.aionemu.gameserver.model.siege.SiegeModType;
+import com.aionemu.gameserver.model.siege.SiegeRace;
 import com.aionemu.gameserver.model.templates.spawns.SpawnGroup2;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.model.templates.spawns.siegespawns.SiegeSpawnTemplate;
 import com.aionemu.gameserver.model.templates.world.WeatherEntry;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
-import com.aionemu.gameserver.network.aion.serverpackets.*;
-import com.aionemu.gameserver.services.siegeservice.*;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ABYSS_ARTIFACT_INFO3;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_FORTRESS_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_FORTRESS_STATUS;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_INFLUENCE_RATIO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_RIFT_ANNOUNCE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SHIELD_EFFECT;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SIEGE_LOCATION_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
+import com.aionemu.gameserver.services.siegeservice.ArtifactSiege;
+import com.aionemu.gameserver.services.siegeservice.FortressSiege;
+import com.aionemu.gameserver.services.siegeservice.Siege;
+import com.aionemu.gameserver.services.siegeservice.SiegeAutoRace;
+import com.aionemu.gameserver.services.siegeservice.SiegeException;
+import com.aionemu.gameserver.services.siegeservice.SiegeStartRunnable;
 import com.aionemu.gameserver.spawnengine.SpawnEngine;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
@@ -45,14 +76,8 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import javolution.util.FastMap;
-import org.quartz.JobDetail;
-import org.quartz.Trigger;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import javax.annotation.Nullable;
-import java.util.*;
+import javolution.util.FastMap;
 
 public class SiegeService
 {

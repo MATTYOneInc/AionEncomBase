@@ -16,17 +16,19 @@
  */
 package com.aionemu.gameserver.services.ranking;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.SeasonRankingDAO;
 import com.aionemu.gameserver.model.ranking.SeasonRankingEnum;
 import com.aionemu.gameserver.model.ranking.SeasonRankingResult;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SEASON_RANKING;
-import javolution.util.FastMap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import javolution.util.FastMap;
 
 /**
  * Created by Wnkrz on 24/07/2017.

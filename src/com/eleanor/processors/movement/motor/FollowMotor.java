@@ -3,6 +3,8 @@
  */
 package com.eleanor.processors.movement.motor;
 
+import java.util.concurrent.ScheduledFuture;
+
 import com.aionemu.gameserver.ai2.AIState;
 import com.aionemu.gameserver.ai2.AISubState;
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
@@ -14,9 +16,7 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.geo.GeoService;
 import com.eleanor.processors.movement.MovementProcessor;
 import com.eleanor.processors.movement.PathfindHelper;
-import com.eleanor.processors.movement.motor.AMovementMotor;
 import com.eleanor.utils.GeomUtil;
-import java.util.concurrent.ScheduledFuture;
 
 public class FollowMotor
 extends AMovementMotor {

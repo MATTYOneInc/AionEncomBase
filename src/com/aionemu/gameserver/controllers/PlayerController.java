@@ -1,6 +1,18 @@
 package com.aionemu.gameserver.controllers;
 
-import com.aionemu.gameserver.configs.main.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.concurrent.Future;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.aionemu.gameserver.configs.main.EventsConfig;
+import com.aionemu.gameserver.configs.main.HTMLConfig;
+import com.aionemu.gameserver.configs.main.MembershipConfig;
+import com.aionemu.gameserver.configs.main.PvPConfig;
+import com.aionemu.gameserver.configs.main.SecurityConfig;
 import com.aionemu.gameserver.controllers.attack.AttackUtil;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.dataholders.PlayerInitialData;
@@ -9,14 +21,22 @@ import com.aionemu.gameserver.model.EmotionType;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.TaskId;
 import com.aionemu.gameserver.model.actions.PlayerMode;
-import com.aionemu.gameserver.model.gameobjects.*;
+import com.aionemu.gameserver.model.gameobjects.Creature;
+import com.aionemu.gameserver.model.gameobjects.Gatherable;
+import com.aionemu.gameserver.model.gameobjects.Item;
+import com.aionemu.gameserver.model.gameobjects.Kisk;
 import com.aionemu.gameserver.model.gameobjects.Minion;
+import com.aionemu.gameserver.model.gameobjects.Npc;
+import com.aionemu.gameserver.model.gameobjects.Pet;
+import com.aionemu.gameserver.model.gameobjects.StaticObject;
+import com.aionemu.gameserver.model.gameobjects.Summon;
+import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.AbyssRank;
 import com.aionemu.gameserver.model.gameobjects.player.BindPointPosition;
+import com.aionemu.gameserver.model.gameobjects.player.MinionCommonData;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.state.CreatureState;
 import com.aionemu.gameserver.model.gameobjects.state.CreatureVisualState;
-import com.aionemu.gameserver.model.gameobjects.player.MinionCommonData;
 import com.aionemu.gameserver.model.house.House;
 import com.aionemu.gameserver.model.skill.PlayerSkillEntry;
 import com.aionemu.gameserver.model.stats.container.PlayerGameStats;
@@ -32,14 +52,45 @@ import com.aionemu.gameserver.model.templates.robot.RobotInfo;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.model.templates.stats.PlayerStatsTemplate;
 import com.aionemu.gameserver.model.templates.zone.ZoneClassName;
-import com.aionemu.gameserver.network.aion.serverpackets.*;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ATTACK_STATUS;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ATTACK_STATUS.LOG;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ATTACK_STATUS.TYPE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DELETE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION_NPC;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_GATHERABLE_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_HEADING_UPDATE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_KISK_UPDATE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_LEVEL_UPDATE;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_MINIONS;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_MOTION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_NEARBY_QUESTS;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_NPC_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_PET;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_PLAYER_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_PLAYER_STANCE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_PLAYER_STATE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_PRIVATE_STORE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SKILL_CANCEL;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SKILL_LIST;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_STATS_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_TRANSFORM;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_USE_ROBOT;
 import com.aionemu.gameserver.questEngine.QuestEngine;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.restrictions.RestrictionsManager;
-import com.aionemu.gameserver.services.*;
+import com.aionemu.gameserver.services.ClassChangeService;
+import com.aionemu.gameserver.services.DuelService;
+import com.aionemu.gameserver.services.HTMLService;
+import com.aionemu.gameserver.services.LegionService;
+import com.aionemu.gameserver.services.ProtectorConquerorService;
+import com.aionemu.gameserver.services.PvPSpreeService;
+import com.aionemu.gameserver.services.PvpService;
+import com.aionemu.gameserver.services.QuestService;
+import com.aionemu.gameserver.services.SkillLearnService;
 import com.aionemu.gameserver.services.abyss.AbyssService;
 import com.aionemu.gameserver.services.craft.CraftSkillUpdateService;
 import com.aionemu.gameserver.services.events.BanditService;
@@ -52,11 +103,16 @@ import com.aionemu.gameserver.services.item.ItemService;
 import com.aionemu.gameserver.services.player.CreativityPanel.CreativityEssenceService;
 import com.aionemu.gameserver.services.summons.SummonsService;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
-import com.aionemu.gameserver.services.toypet.PetSpawnService;
 import com.aionemu.gameserver.services.toypet.MinionService;
+import com.aionemu.gameserver.services.toypet.PetSpawnService;
 import com.aionemu.gameserver.skillengine.SkillEngine;
-import com.aionemu.gameserver.skillengine.model.*;
+import com.aionemu.gameserver.skillengine.model.DispelCategoryType;
+import com.aionemu.gameserver.skillengine.model.Effect;
+import com.aionemu.gameserver.skillengine.model.HealType;
+import com.aionemu.gameserver.skillengine.model.Skill;
 import com.aionemu.gameserver.skillengine.model.Skill.SkillMethod;
+import com.aionemu.gameserver.skillengine.model.SkillTargetSlot;
+import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 import com.aionemu.gameserver.spawnengine.SpawnEngine;
 import com.aionemu.gameserver.taskmanager.tasks.PlayerMoveTaskManager;
 import com.aionemu.gameserver.taskmanager.tasks.TeamEffectUpdater;
@@ -72,13 +128,8 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 import com.aionemu.gameserver.world.zone.ZoneInstance;
 import com.aionemu.gameserver.world.zone.ZoneName;
 import com.sun.istack.internal.NotNull;
+
 import javolution.util.FastMap;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.concurrent.Future;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * This class is for controlling players.
@@ -241,6 +292,8 @@ public class PlayerController extends CreatureController<Player> {
                     template.setEntityId(885);
                     autoPortals.put(832992, SpawnEngine.spawnObject(template, 1));
 			    break;
+			default:
+				break;
 			}
 		} else if (zone.getAreaTemplate().getZoneName() == ZoneName.get("RENTUS_RECOVERY_BASE_220080000")) {
 			switch (player.getRace()) {
@@ -256,6 +309,8 @@ public class PlayerController extends CreatureController<Player> {
                     template.setEntityId(900);
                     autoPortals.put(730399, SpawnEngine.spawnObject(template, 1));
 			    break;
+			default:
+				break;
 			}
 		} else if (zone.getAreaTemplate().getZoneName() == ZoneName.get("RUINHOLD_SCATTERINGS_210070000")) {
 			switch (player.getRace()) {
@@ -275,6 +330,8 @@ public class PlayerController extends CreatureController<Player> {
                     template.setEntityId(865);
                     autoPortals.put(832997, SpawnEngine.spawnObject(template, 1));
 			    break;
+			default:
+				break;
 			}
 		} else if (zone.getAreaTemplate().getZoneName() == ZoneName.get("DRAGONFALLS_GLARE_220080000")) {
 			switch (player.getRace()) {
@@ -294,6 +351,8 @@ public class PlayerController extends CreatureController<Player> {
                     template.setEntityId(422);
                     autoPortals.put(832998, SpawnEngine.spawnObject(template, 1));
 			    break;
+			default:
+				break;
 			}
 		} else if (zone.getAreaTemplate().getZoneName() == ZoneName.get("DANUAR_SANCTUARY_INSPECTOR_210070000")) {
 			switch (player.getRace()) {
@@ -309,6 +368,8 @@ public class PlayerController extends CreatureController<Player> {
                     template.setEntityId(888);
                     autoPortals.put(731549, SpawnEngine.spawnObject(template, 1));
 			    break;
+			default:
+				break;
 			}
 		} else if (zone.getAreaTemplate().getZoneName() == ZoneName.get("DANUAR_SANCTUARY_INVESTIGATION_AREA_220080000")) {
 			switch (player.getRace()) {
@@ -324,6 +385,8 @@ public class PlayerController extends CreatureController<Player> {
                     template.setEntityId(407);
                     autoPortals.put(731570, SpawnEngine.spawnObject(template, 1));
 			    break;
+			default:
+				break;
 			}
 		}
 	    /**
@@ -852,6 +915,8 @@ public class PlayerController extends CreatureController<Player> {
 			case DP:
 				getOwner().getCommonData().addDp(value);
 			break;
+		default:
+			break;
 		}
 	}
 
@@ -1088,6 +1153,8 @@ public class PlayerController extends CreatureController<Player> {
 				case ESTATE:
 				case PALACE:
 					return;
+			default:
+				break;
 			}
 		}
 		if (!player.havePermission(MembershipConfig.DISABLE_SOULSICKNESS)) {

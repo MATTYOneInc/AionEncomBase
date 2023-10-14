@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.services.item;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import com.aionemu.gameserver.model.DescriptionId;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Item;
@@ -32,9 +35,6 @@ import com.aionemu.gameserver.services.item.ItemPacketService.ItemUpdateType;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
-
-import java.util.Collection;
-import java.util.Collections;
 
 public class ItemChargeService
 {

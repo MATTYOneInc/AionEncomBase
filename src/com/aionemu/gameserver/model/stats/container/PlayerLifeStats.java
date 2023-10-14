@@ -16,6 +16,9 @@
  */
 package com.aionemu.gameserver.model.stats.container;
 
+import java.util.concurrent.Future;
+import java.util.concurrent.locks.ReentrantLock;
+
 import com.aionemu.gameserver.configs.administration.AdminConfig;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ATTACK_STATUS.LOG;
@@ -27,9 +30,6 @@ import com.aionemu.gameserver.services.LifeStatsRestoreService;
 import com.aionemu.gameserver.taskmanager.tasks.PacketBroadcaster.BroadcastMode;
 import com.aionemu.gameserver.taskmanager.tasks.TeamEffectUpdater;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-
-import java.util.concurrent.Future;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author ATracer, sphinx

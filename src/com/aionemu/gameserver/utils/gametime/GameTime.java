@@ -16,10 +16,10 @@
  */
 package com.aionemu.gameserver.utils.gametime;
 
+import java.security.InvalidParameterException;
+
 import com.aionemu.gameserver.services.WeatherService;
 import com.aionemu.gameserver.spawnengine.TemporarySpawnEngine;
-
-import java.security.InvalidParameterException;
 
 /**
  * Represents the internal clock for the time in aion world

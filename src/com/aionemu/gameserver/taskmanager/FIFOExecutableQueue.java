@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.taskmanager;
 
-import com.aionemu.gameserver.utils.ThreadPoolManager;
-
 import java.util.concurrent.locks.ReentrantLock;
+
+import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /**
  * @author NB4L1

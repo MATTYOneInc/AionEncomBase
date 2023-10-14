@@ -16,13 +16,14 @@
  */
 package com.aionemu.gameserver.world.container;
 
-import com.aionemu.gameserver.model.team.legion.Legion;
-import com.aionemu.gameserver.world.exceptions.DuplicateAionObjectException;
-import javolution.util.FastList;
-import javolution.util.FastMap;
-
 import java.util.Iterator;
 import java.util.Map;
+
+import com.aionemu.gameserver.model.team.legion.Legion;
+import com.aionemu.gameserver.world.exceptions.DuplicateAionObjectException;
+
+import javolution.util.FastList;
+import javolution.util.FastMap;
 
 public class LegionContainer implements Iterable<Legion>
 {

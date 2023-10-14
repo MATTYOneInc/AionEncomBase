@@ -16,12 +16,13 @@
  */
 package com.aionemu.gameserver.spawnengine;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
 import com.aionemu.gameserver.model.templates.walker.WalkerTemplate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Forms the walker groups on initial spawn<br>

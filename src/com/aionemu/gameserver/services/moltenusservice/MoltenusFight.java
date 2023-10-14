@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.moltenusservice;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.aionemu.gameserver.model.moltenus.MoltenusLocation;
 import com.aionemu.gameserver.model.moltenus.MoltenusStateType;
 import com.aionemu.gameserver.services.MoltenusService;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Rinzler (Encom)

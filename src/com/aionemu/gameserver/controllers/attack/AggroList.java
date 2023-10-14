@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.controllers.attack;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.aionemu.commons.callbacks.Callback;
 import com.aionemu.commons.callbacks.CallbackResult;
 import com.aionemu.commons.callbacks.metadata.ObjectCallback;
@@ -31,10 +35,8 @@ import com.aionemu.gameserver.model.team2.group.PlayerGroup;
 import com.aionemu.gameserver.questEngine.QuestEngine;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.utils.MathUtil;
+
 import javolution.util.FastMap;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author ATracer, KKnD

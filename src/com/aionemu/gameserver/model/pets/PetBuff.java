@@ -16,6 +16,10 @@
  */
 package com.aionemu.gameserver.model.pets;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ScheduledFuture;
+
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Pet;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -33,10 +37,6 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.skillengine.change.Func;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ScheduledFuture;
 
 public class PetBuff implements StatOwner
 {

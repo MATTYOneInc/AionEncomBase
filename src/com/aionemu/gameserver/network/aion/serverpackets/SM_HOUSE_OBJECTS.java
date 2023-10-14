@@ -20,6 +20,7 @@ import com.aionemu.gameserver.model.gameobjects.HouseObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
+
 import javolution.util.FastList;
 
 public class SM_HOUSE_OBJECTS extends AionServerPacket

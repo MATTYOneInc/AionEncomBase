@@ -16,6 +16,15 @@
  */
 package com.aionemu.gameserver.model.templates.spawns;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
 import com.aionemu.gameserver.model.templates.spawns.agentspawns.AgentSpawn;
 import com.aionemu.gameserver.model.templates.spawns.anohaspawns.AnohaSpawn;
 import com.aionemu.gameserver.model.templates.spawns.basespawns.BaseSpawn;
@@ -38,10 +47,6 @@ import com.aionemu.gameserver.model.templates.spawns.svsspawns.SvsSpawn;
 import com.aionemu.gameserver.model.templates.spawns.towerofeternityspawns.TowerOfEternitySpawn;
 import com.aionemu.gameserver.model.templates.spawns.vortexspawns.VortexSpawn;
 import com.aionemu.gameserver.model.templates.spawns.zorshivdredgionspawns.ZorshivDredgionSpawn;
-
-import javax.xml.bind.annotation.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SpawnMap")

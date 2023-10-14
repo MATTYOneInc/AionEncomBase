@@ -16,11 +16,11 @@
  */
 package com.aionemu.gameserver.services.rvrservice;
 
+import java.util.Map;
+
 import com.aionemu.gameserver.model.rvr.RvrLocation;
 import com.aionemu.gameserver.services.RvrService;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
-import java.util.Map;
 
 /**
  * @author Rinzler (Encom)

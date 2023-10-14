@@ -16,9 +16,9 @@
  */
 package com.aionemu.gameserver.configs.network;
 
-import com.aionemu.commons.configuration.Property;
-
 import java.net.InetSocketAddress;
+
+import com.aionemu.commons.configuration.Property;
 
 public class NetworkConfig {
 
