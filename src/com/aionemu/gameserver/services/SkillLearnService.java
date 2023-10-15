@@ -16,9 +16,6 @@
  */
 package com.aionemu.gameserver.services;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.aionemu.gameserver.configs.main.MembershipConfig;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.PlayerClass;
@@ -33,8 +30,6 @@ import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
 public class SkillLearnService {
-	private static final Logger log = LoggerFactory.getLogger(SkillLearnService.class);
-
 	public static void addNewSkills(Player player) {
 		int level = player.getCommonData().getLevel();
 		PlayerClass playerClass = player.getCommonData().getPlayerClass();
@@ -141,7 +136,7 @@ public class SkillLearnService {
 	public static void removeSkill(Player player, int skillId) {
 		if (player.getSkillList().isSkillPresent(skillId)) {
 			Integer skillLevel = player.getSkillList().getSkillLevel(skillId);
-			if (skillLevel == null) {
+			if (skillLevel == 0) {
 				skillLevel = 1;
 			}
 			if (player.getEffectController().hasAbnormalEffect(skillId)) {
@@ -156,7 +151,7 @@ public class SkillLearnService {
 	public static void removeLinkedSkill(Player player, int skillId) {
 		if (player.getSkillList().isSkillPresent(skillId)) {
 			Integer skillLevel = player.getSkillList().getSkillLevel(skillId);
-			if (skillLevel == null) {
+			if (skillLevel == 0) {
 				skillLevel = 1;
 			}
 			if (player.getEffectController().hasAbnormalEffect(skillId)) {
