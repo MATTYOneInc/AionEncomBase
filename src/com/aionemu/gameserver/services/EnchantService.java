@@ -441,6 +441,8 @@ public class EnchantService {
 			PacketSendUtility.sendPacket(player, new SM_INVENTORY_UPDATE_ITEM(player, targetItem));
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_EXCEED_SKILL_ENCHANT(
 					new DescriptionId(targetItem.getNameId()), targetItem.getEnchantLevel(), getRndSkills(targetItem)));
+					
+			player.getSkillList().addSkill(player, targetItem.getAmplificationSkill(), 1);			
 		} else if ((targetItem.isAmplified() || !targetItem.isAmplified()) && targetItem.getEnchantLevel() < 16) {
 			targetItem.setAmplificationSkill(0);
 			if (player.getSkillList().isSkillPresent(targetItem.getAmplificationSkill()) && targetItem.isEquipped()) {
