@@ -254,8 +254,15 @@ public abstract class CreatureLifeStats<T extends Creature> {
 		}
 	}
 
+	/**
+	 * @return HP percentage 0 - 100
+	 */
 	public int getHpPercentage() {
-		return (int) (100f * currentHp / getMaxHp());
+		if ((int) (100f * currentHp / getMaxHp()) == 0 && currentHp > 0) {
+			return 1;
+		} else {
+			return (int) (100f * currentHp / getMaxHp());
+		}
 	}
 
 	public int getMpPercentage() {

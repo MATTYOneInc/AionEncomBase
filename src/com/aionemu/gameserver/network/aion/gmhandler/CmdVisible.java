@@ -36,6 +36,6 @@ public class CmdVisible extends AbstractGMHandler {
 		admin.getEffectController().unsetAbnormal(AbnormalState.HIDE.getId());
 		admin.unsetVisualState(CreatureVisualState.HIDE20);
 		PacketSendUtility.broadcastPacket(admin, new SM_PLAYER_STATE(admin), true);
-		PacketSendUtility.sendMessage(admin, "You are invisible.");
+		PacketSendUtility.sendMessage(admin, "You are visible.");
 	}
 }

@@ -42,7 +42,7 @@ public class CmdAttrBonus extends AbstractGMHandler implements StatOwner {
 		Player tgtPlayer = target != null ? target : admin;
 
 		// get values from params with regex
-		Pattern pattern = Pattern.compile("((.*)\\s(\\d+))");
+		Pattern pattern = Pattern.compile("((.*)\\s(-?\\d+))");
 		Matcher matcher = pattern.matcher(params);
 		if (!matcher.find()) {
 			System.out.println("no matches found");
@@ -55,13 +55,7 @@ public class CmdAttrBonus extends AbstractGMHandler implements StatOwner {
 		System.out.println("func: " + func);
 		System.out.println("value: " + value);
 
-		AttrBonusAction a = null;
-		try {
-			a = AttrBonusAction.valueOf(func);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return;
-		}
+		AttrBonusAction a = AttrBonusAction.valueOf(func);
 
 		// special value handling
 		if (a.equals(AttrBonusAction.SPEED) && value >= 1000) {
@@ -76,7 +70,7 @@ public class CmdAttrBonus extends AbstractGMHandler implements StatOwner {
 		}
 
 		List<IStatFunction> functions = new ArrayList<IStatFunction>();
-		functions.add(new StatChangeFunction(StatEnum.SPEED, value));
+		functions.add(new StatChangeFunction(a.getStatEnum(), value));
 		tgtPlayer.getGameStats().addEffect(this, functions);
 		PacketSendUtility.broadcastPacket(tgtPlayer, new SM_EMOTION(tgtPlayer, EmotionType.START_EMOTE2, 0, 0), true);
 	}
@@ -138,6 +132,15 @@ public class CmdAttrBonus extends AbstractGMHandler implements StatOwner {
 		STAGGER_ARP("STAGGER ARP", StatEnum.STAGGER_RESISTANCE_PENETRATION), STR("STR", StatEnum.POWER),
 		STRVIT("STRVIT", StatEnum.STRVIT), STUMBLE_ARP("STUMBLE ARP", StatEnum.STUMBLE_RESISTANCE_PENETRATION),
 		STUN_ARP("STUN ARP", StatEnum.STUN_RESISTANCE_PENETRATION), VIT("VIT", StatEnum.HEALTH),
+		HITACCURACY("HITACCURACY", StatEnum.PHYSICAL_ACCURACY),
+		PHYATTACK("PHYATTACK", StatEnum.PHYSICAL_ATTACK),
+		EDEARTH("EDEARTH",StatEnum.EARTH_RESISTANCE),
+		EDFIRE("EDFIRE",StatEnum.FIRE_RESISTANCE),
+		EDAIR("EDAIR",StatEnum.WIND_RESISTANCE),
+		EDWATER("EDWATER",StatEnum.WATER_RESISTANCE),
+		EDDARK("EDDARK",StatEnum.DARK_RESISTANCE),
+		EDLIGHT("EDLIGHT",StatEnum.LIGHT_RESISTANCE),
+		MAXFP("MAXFP",StatEnum.FLY_TIME),
 		WIL("WIL", StatEnum.WILL);
 
 		private String value;
@@ -181,338 +184,351 @@ public class CmdAttrBonus extends AbstractGMHandler implements StatOwner {
 		public void apply(Stat2 stat) {
 			switch (this.stat) {
 			case SPEED:
-				stat.setBase(speed + (speed * modifier) / 100);
+				stat.addToBonus(speed + (speed * modifier) / 100);
 				break;
 			case FLY_SPEED:
-				stat.setBase(flyspeed + (flyspeed * modifier) / 100);
+				stat.addToBonus(flyspeed + (flyspeed * modifier) / 100);
 				break;
 			case POWER:
 				short modifierPower = (short) modifier;
-				stat.setBase(Math.round(modifierPower));
+				stat.addToBonus(Math.round(modifierPower));
 				break;
 			case MAXHP:
 				float modifierHp = (float) modifier;
-				stat.setBase(Math.round(modifierHp));
+				stat.addToBonus(Math.round(modifierHp));
 				break;
 			case MAXMP:
 				float modifierMp = (float) modifier;
-				stat.setBase(Math.round(modifierMp));
+				stat.addToBonus(Math.round(modifierMp));
 				break;
 			case REGEN_HP:
 				int baseHp = stat.getOwner().getLevel() + 3;
-				stat.setBase(baseHp *= modifier / 100f);
+				stat.addToBonus(baseHp *= modifier / 100f);
 				break;
 			case REGEN_MP:
 				int baseMp = stat.getOwner().getLevel() + 8;
-				stat.setBase(baseMp *= modifier / 100f);
+				stat.addToBonus(baseMp *= modifier / 100f);
 				break;
 			case MAXDP:
-				stat.setBase(maxDp + (maxDp * modifier) / 100);
+				float modifierDp = (float) modifier;
+				stat.addToBonus(Math.round(modifierDp));
 				break;
 			case ALLRESIST:
 				short modifierALLR = (short) modifier;
-				stat.setBase(Math.round(modifierALLR));
+				stat.addToBonus(Math.round(modifierALLR));
 				break;
 			case ABNORMAL_RESISTANCE_ALL:
 				short modifierAbnormalALLR = (short) modifier;
-				stat.setBase(Math.round(modifierAbnormalALLR));
+				stat.addToBonus(Math.round(modifierAbnormalALLR));
 				break;
 			case STRVIT:
 				short modifierStrvit = (short) modifier;
-				stat.setBase(Math.round(modifierStrvit));
+				stat.addToBonus(Math.round(modifierStrvit));
 				break;
 			case KNOWIL:
 				short modifierKnowil = (short) modifier;
-				stat.setBase(Math.round(modifierKnowil));
+				stat.addToBonus(Math.round(modifierKnowil));
 				break;
 			case AGIDEX:
 				short modifierAgidex = (short) modifier;
-				stat.setBase(Math.round(modifierAgidex));
+				stat.addToBonus(Math.round(modifierAgidex));
 				break;
 			case HEALTH:
 				short modifierHealth = (short) modifier;
-				stat.setBase(Math.round(modifierHealth));
+				stat.addToBonus(Math.round(modifierHealth));
 				break;
 			case ACCURACY:
 				short modifierAccuracy = (short) modifier;
-				stat.setBase(Math.round(modifierAccuracy));
+				stat.addToBonus(Math.round(modifierAccuracy));
 				break;
 			case AGILITY:
 				short modifierAgility = (short) modifier;
-				stat.setBase(Math.round(modifierAgility));
+				stat.addToBonus(Math.round(modifierAgility));
 				break;
 			case KNOWLEDGE:
 				short modifierKnow = (short) modifier;
-				stat.setBase(Math.round(modifierKnow));
+				stat.addToBonus(Math.round(modifierKnow));
 				break;
 			case WILL:
 				short modifierWill = (short) modifier;
-				stat.setBase(Math.round(modifierWill));
+				stat.addToBonus(Math.round(modifierWill));
 				break;
 			case WATER_RESISTANCE:
 				short modifierWaterRes = (short) modifier;
-				stat.setBase(Math.round(modifierWaterRes));
+				stat.addToBonus(Math.round(modifierWaterRes));
 				break;
 			case WIND_RESISTANCE:
 				short modifierWindRes = (short) modifier;
-				stat.setBase(Math.round(modifierWindRes));
+				stat.addToBonus(Math.round(modifierWindRes));
 				break;
 			case EARTH_RESISTANCE:
 				short modifierEarthRes = (short) modifier;
-				stat.setBase(Math.round(modifierEarthRes));
+				stat.addToBonus(Math.round(modifierEarthRes));
 				break;
 			case FIRE_RESISTANCE:
 				short modifierFireRes = (short) modifier;
-				stat.setBase(Math.round(modifierFireRes));
+				stat.addToBonus(Math.round(modifierFireRes));
 				break;
 			case REGEN_FP:
-				stat.setBase(Math.round(modifier));
+				stat.addToBonus(Math.round(modifier));
 				break;
 			case PHYSICAL_DEFENSE:
-				stat.setBase(Math.round(modifier));
+				stat.addToBonus(Math.round(modifier));
 				break;
 			case MAGICAL_ATTACK:
 				short modifierMAttack = (short) modifier;
-				stat.setBase(Math.round(modifierMAttack));
+				stat.addToBonus(Math.round(modifierMAttack));
 				break;
 			case MAGICAL_RESIST:
 				short modifierMResist = (short) modifier;
-				stat.setBase(Math.round(modifierMResist));
+				stat.addToBonus(Math.round(modifierMResist));
 				break;
 			case ATTACK_SPEED:
 				short modifierASpeed = (short) modifier;
-				stat.setBase(Math.round(modifierASpeed / 2));
+				stat.addToBonus(Math.round(modifierASpeed / 2));
 				break;
 			case EVASION:
 				short modifierEvasion = (short) modifier;
-				stat.setBase(Math.round(modifierEvasion));
+				stat.addToBonus(Math.round(modifierEvasion));
 				break;
 			case PARRY:
 				short modifierParry = (short) modifier;
-				stat.setBase(Math.round(modifierParry));
+				stat.addToBonus(Math.round(modifierParry));
 				break;
 			case BLOCK:
 				short modifierBlock = (short) modifier;
-				stat.setBase(Math.round(modifierBlock));
+				stat.addToBonus(Math.round(modifierBlock));
 				break;
 			case PHYSICAL_CRITICAL:
 				short modifierPCrit = (short) modifier;
-				stat.setBase(Math.round(modifierPCrit));
+				stat.addToBonus(Math.round(modifierPCrit));
 				break;
 			case HIT_COUNT:
 				short modifierHCount = (short) modifier;
-				stat.setBase(Math.round(modifierHCount));
+				stat.addToBonus(Math.round(modifierHCount));
 				break;
 			case ATTACK_RANGE:
 				float modifierARange = (float) modifier;
-				stat.setBase(Math.round(modifierARange));
+				stat.addToBonus(Math.round(modifierARange));
 				break;
 			case MAGICAL_CRITICAL:
 				short modifierMCrit = (short) modifier;
-				stat.setBase(Math.round(modifierMCrit));
+				stat.addToBonus(Math.round(modifierMCrit));
 				break;
 			case CONCENTRATION:
 				short modifierConcentration = (short) modifier;
-				stat.setBase(Math.round(modifierConcentration));
+				stat.addToBonus(Math.round(modifierConcentration));
 				break;
 			case POISON_RESISTANCE:
 				short modifierPResist = (short) modifier;
-				stat.setBase(Math.round(modifierPResist));
+				stat.addToBonus(Math.round(modifierPResist));
 				break;
 			case BLEED_RESISTANCE:
 				short modifierBResist = (short) modifier;
-				stat.setBase(Math.round(modifierBResist));
+				stat.addToBonus(Math.round(modifierBResist));
 				break;
 			case PARALYZE_RESISTANCE:
 				short modifierPAResist = (short) modifier;
-				stat.setBase(Math.round(modifierPAResist));
+				stat.addToBonus(Math.round(modifierPAResist));
 				break;
 			case SLEEP_RESISTANCE:
 				short modifierSResist = (short) modifier;
-				stat.setBase(Math.round(modifierSResist));
+				stat.addToBonus(Math.round(modifierSResist));
 				break;
 			case ROOT_RESISTANCE:
 				short modifierRResist = (short) modifier;
-				stat.setBase(Math.round(modifierRResist));
+				stat.addToBonus(Math.round(modifierRResist));
 				break;
 			case BLIND_RESISTANCE:
 				short modifierBLResist = (short) modifier;
-				stat.setBase(Math.round(modifierBLResist));
+				stat.addToBonus(Math.round(modifierBLResist));
 				break;
 			case CHARM_RESISTANCE:
 				short modifierCResist = (short) modifier;
-				stat.setBase(Math.round(modifierCResist));
+				stat.addToBonus(Math.round(modifierCResist));
 				break;
 			case DISEASE_RESISTANCE:
 				short modifierDResist = (short) modifier;
-				stat.setBase(Math.round(modifierDResist));
+				stat.addToBonus(Math.round(modifierDResist));
 				break;
 			case SILENCE_RESISTANCE:
 				short modifierSIResist = (short) modifier;
-				stat.setBase(Math.round(modifierSIResist));
+				stat.addToBonus(Math.round(modifierSIResist));
 				break;
 			case FEAR_RESISTANCE:
 				short modifierFResist = (short) modifier;
-				stat.setBase(Math.round(modifierFResist));
+				stat.addToBonus(Math.round(modifierFResist));
 				break;
 			case CURSE_RESISTANCE:
 				short modifierCUResist = (short) modifier;
-				stat.setBase(Math.round(modifierCUResist));
+				stat.addToBonus(Math.round(modifierCUResist));
 				break;
 			case CONFUSE_RESISTANCE:
 				short modifierCOResist = (short) modifier;
-				stat.setBase(Math.round(modifierCOResist));
+				stat.addToBonus(Math.round(modifierCOResist));
 				break;
 			case STUN_RESISTANCE:
 				short modifierSTResist = (short) modifier;
-				stat.setBase(Math.round(modifierSTResist));
+				stat.addToBonus(Math.round(modifierSTResist));
 				break;
 			case PERIFICATION_RESISTANCE:
 				short modifierPEResist = (short) modifier;
-				stat.setBase(Math.round(modifierPEResist));
+				stat.addToBonus(Math.round(modifierPEResist));
 				break;
 			case STUMBLE_RESISTANCE:
 				short modifierSTUResist = (short) modifier;
-				stat.setBase(Math.round(modifierSTUResist));
+				stat.addToBonus(Math.round(modifierSTUResist));
 				break;
 			case STAGGER_RESISTANCE:
 				short modifierSTAResist = (short) modifier;
-				stat.setBase(Math.round(modifierSTAResist));
+				stat.addToBonus(Math.round(modifierSTAResist));
 				break;
 			case OPENAREIAL_RESISTANCE:
 				short modifierOResist = (short) modifier;
-				stat.setBase(Math.round(modifierOResist));
+				stat.addToBonus(Math.round(modifierOResist));
 				break;
 			case SNARE_RESISTANCE:
 				short modifierSNResist = (short) modifier;
-				stat.setBase(Math.round(modifierSNResist));
+				stat.addToBonus(Math.round(modifierSNResist));
 				break;
 			case SLOW_RESISTANCE:
 				short modifierSLResist = (short) modifier;
-				stat.setBase(Math.round(modifierSLResist));
+				stat.addToBonus(Math.round(modifierSLResist));
 				break;
 			case SPIN_RESISTANCE:
 				short modifierSPResist = (short) modifier;
-				stat.setBase(Math.round(modifierSPResist));
+				stat.addToBonus(Math.round(modifierSPResist));
 				break;
 			case POISON_RESISTANCE_PENETRATION:
 				short modifierPRP = (short) modifier;
-				stat.setBase(Math.round(modifierPRP));
+				stat.addToBonus(Math.round(modifierPRP));
 				break;
 			case BLEED_RESISTANCE_PENETRATION:
 				short modifierBRP = (short) modifier;
-				stat.setBase(Math.round(modifierBRP));
+				stat.addToBonus(Math.round(modifierBRP));
 				break;
 			case PARALYZE_RESISTANCE_PENETRATION:
 				short modifierPARP = (short) modifier;
-				stat.setBase(Math.round(modifierPARP));
+				stat.addToBonus(Math.round(modifierPARP));
 				break;
 			case SLEEP_RESISTANCE_PENETRATION:
 				short modifierSRP = (short) modifier;
-				stat.setBase(Math.round(modifierSRP));
+				stat.addToBonus(Math.round(modifierSRP));
 				break;
 			case ROOT_RESISTANCE_PENETRATION:
 				short modifierRRP = (short) modifier;
-				stat.setBase(Math.round(modifierRRP));
+				stat.addToBonus(Math.round(modifierRRP));
 				break;
 			case BLIND_RESISTANCE_PENETRATION:
 				short modifierBLRP = (short) modifier;
-				stat.setBase(Math.round(modifierBLRP));
+				stat.addToBonus(Math.round(modifierBLRP));
 				break;
 			case CHARM_RESISTANCE_PENETRATION:
 				short modifierCRP = (short) modifier;
-				stat.setBase(Math.round(modifierCRP));
+				stat.addToBonus(Math.round(modifierCRP));
 				break;
 			case DISEASE_RESISTANCE_PENETRATION:
 				short modifierDRP = (short) modifier;
-				stat.setBase(Math.round(modifierDRP));
+				stat.addToBonus(Math.round(modifierDRP));
 				break;
 			case SILENCE_RESISTANCE_PENETRATION:
 				short modifierSIRP = (short) modifier;
-				stat.setBase(Math.round(modifierSIRP));
+				stat.addToBonus(Math.round(modifierSIRP));
 				break;
 			case FEAR_RESISTANCE_PENETRATION:
 				short modifierFRP = (short) modifier;
-				stat.setBase(Math.round(modifierFRP));
+				stat.addToBonus(Math.round(modifierFRP));
 				break;
 			case CURSE_RESISTANCE_PENETRATION:
 				short modifierCURP = (short) modifier;
-				stat.setBase(Math.round(modifierCURP));
+				stat.addToBonus(Math.round(modifierCURP));
 				break;
 			case CONFUSE_RESISTANCE_PENETRATION:
 				short modifierCORP = (short) modifier;
-				stat.setBase(Math.round(modifierCORP));
+				stat.addToBonus(Math.round(modifierCORP));
 				break;
 			case STUN_RESISTANCE_PENETRATION:
 				short modifierSTRP = (short) modifier;
-				stat.setBase(Math.round(modifierSTRP));
+				stat.addToBonus(Math.round(modifierSTRP));
 				break;
 			case PERIFICATION_RESISTANCE_PENETRATION:
 				short modifierPERP = (short) modifier;
-				stat.setBase(Math.round(modifierPERP));
+				stat.addToBonus(Math.round(modifierPERP));
 				break;
 			case STUMBLE_RESISTANCE_PENETRATION:
 				short modifierSTURP = (short) modifier;
-				stat.setBase(Math.round(modifierSTURP));
+				stat.addToBonus(Math.round(modifierSTURP));
 				break;
 			case STAGGER_RESISTANCE_PENETRATION:
 				short modifierSTARP = (short) modifier;
-				stat.setBase(Math.round(modifierSTARP));
+				stat.addToBonus(Math.round(modifierSTARP));
 				break;
 			case OPENAREIAL_RESISTANCE_PENETRATION:
 				short modifierORP = (short) modifier;
-				stat.setBase(Math.round(modifierORP));
+				stat.addToBonus(Math.round(modifierORP));
 				break;
 			case SNARE_RESISTANCE_PENETRATION:
 				short modifierSNRP = (short) modifier;
-				stat.setBase(Math.round(modifierSNRP));
+				stat.addToBonus(Math.round(modifierSNRP));
 				break;
 			case SLOW_RESISTANCE_PENETRATION:
 				short modifierSLRP = (short) modifier;
-				stat.setBase(Math.round(modifierSLRP));
+				stat.addToBonus(Math.round(modifierSLRP));
 				break;
 			case SPIN_RESISTANCE_PENETRATION:
 				short modifierSPRP = (short) modifier;
-				stat.setBase(Math.round(modifierSPRP));
+				stat.addToBonus(Math.round(modifierSPRP));
 				break;
 			case BOOST_MAGICAL_SKILL:
 				short modifierBMSkill = (short) modifier;
-				stat.setBase(Math.round(modifierBMSkill));
+				stat.addToBonus(Math.round(modifierBMSkill));
 				break;
 			case MAGICAL_ACCURACY:
 				short modifierMAccuracy = (short) modifier;
-				stat.setBase(Math.round(modifierMAccuracy));
+				stat.addToBonus(Math.round(modifierMAccuracy));
 				break;
 			case BOOST_CASTING_TIME:
 				short modifierBCTime = (short) modifier;
-				stat.setBase(Math.round(modifierBCTime));
+				stat.addToBonus(Math.round(modifierBCTime));
 				break;
 			case HEAL_BOOST:
 				short modifierHBoost = (short) modifier;
-				stat.setBase(Math.round(modifierHBoost));
+				stat.addToBonus(Math.round(modifierHBoost));
 				break;
 			case PHYSICAL_CRITICAL_RESIST:
 				short modifierPCResist = (short) modifier;
-				stat.setBase(Math.round(modifierPCResist));
+				stat.addToBonus(Math.round(modifierPCResist));
 				break;
 			case MAGICAL_CRITICAL_RESIST:
 				short modifierMCResist = (short) modifier;
-				stat.setBase(Math.round(modifierMCResist));
+				stat.addToBonus(Math.round(modifierMCResist));
 				break;
 			case PHYSICAL_CRITICAL_DAMAGE_REDUCE:
 				short modifierPCDReduce = (short) modifier;
-				stat.setBase(Math.round(modifierPCDReduce));
+				stat.addToBonus(Math.round(modifierPCDReduce));
 				break;
 			case MAGICAL_CRITICAL_DAMAGE_REDUCE:
 				short modifierMCDReduce = (short) modifier;
-				stat.setBase(Math.round(modifierMCDReduce));
+				stat.addToBonus(Math.round(modifierMCDReduce));
 				break;
 			case MAGICAL_DEFEND:
-				stat.setBase(Math.round(modifier));
+				stat.addToBonus(Math.round(modifier));
 				break;
 			case MAGIC_SKILL_BOOST_RESIST:
 				short modifierMSBResist = (short) modifier;
-				stat.setBase(Math.round(modifierMSBResist));
+				stat.addToBonus(Math.round(modifierMSBResist));
+				break;
+			case PHYSICAL_ATTACK:
+				short modifierPAttack = (short) modifier;
+				stat.addToBonus(Math.round(modifierPAttack));
+				break;
+			case PHYSICAL_ACCURACY:
+				short modifierAcc = (short) modifier;
+				stat.addToBonus(Math.round(modifierAcc));
+				break;
+			case FLY_TIME:
+				short modifierFlyt = (short) modifier;
+				stat.addToBonus(Math.round(modifierFlyt));
 				break;
 			default:
 				break;

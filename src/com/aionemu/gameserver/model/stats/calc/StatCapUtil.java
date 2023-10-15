@@ -141,13 +141,16 @@ public class StatCapUtil {
 		case PVP_DEFEND_RATIO_MAGICAL:
 			value = 900;
 			break;
+		case BOOST_MAGICAL_SKILL:
+			value = 32767;
+			break;
 		case MAXHP:
 		case MAXMP:
 		case HEAL_BOOST:
 		case HEAL_SKILL_BOOST:
 		case PHYSICAL_ACCURACY:
+		case PHYSICAL_ATTACK:
 		case PHYSICAL_CRITICAL:
-		case BOOST_MAGICAL_SKILL:
 		case PHYSICAL_DEFENSE:
 		case BOOST_DURATION_BUFF:
 		case MAGIC_SKILL_BOOST_RESIST:
