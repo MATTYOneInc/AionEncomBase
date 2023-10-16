@@ -16,7 +16,9 @@
  */
 package com.aionemu.gameserver.model.stats.calc;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -116,6 +118,8 @@ public class StatCapUtil {
 		case MAXMP:
 			value = 0;
 			break;
+		default:
+			break;
 		}
 		return value;
 	}
@@ -141,17 +145,22 @@ public class StatCapUtil {
 		case PVP_DEFEND_RATIO_MAGICAL:
 			value = 900;
 			break;
+		case BOOST_MAGICAL_SKILL:
+			value = 32767;
+			break;
 		case MAXHP:
 		case MAXMP:
 		case HEAL_BOOST:
 		case HEAL_SKILL_BOOST:
 		case PHYSICAL_ACCURACY:
+		case PHYSICAL_ATTACK:
 		case PHYSICAL_CRITICAL:
-		case BOOST_MAGICAL_SKILL:
 		case PHYSICAL_DEFENSE:
 		case BOOST_DURATION_BUFF:
 		case MAGIC_SKILL_BOOST_RESIST:
 			value = Integer.MAX_VALUE;
+			break;
+		default:
 			break;
 		}
 		return value;
@@ -163,5 +172,40 @@ public class StatCapUtil {
 		} else if (stat2.getCurrent() < lowerCap) {
 			stat2.setBonus(lowerCap - stat2.getBase());
 		}
+	}
+	
+		public static void dumpWrongStats(String ownerInfo, Stat2... stats) {
+		List<Stat2> wrongStats = null;
+		for (Stat2 stat : stats) {
+			Stat2 wrongStat = null;
+			if (stat.getCurrent() < getLowerCap(stat.getStat())) {
+				wrongStat = stat;
+			}
+			if (stat.getCurrent() > getUpperCap(stat.getStat())) {
+				wrongStat = stat;
+			}
+			if (wrongStat != null) {
+				if (wrongStats == null) {
+					wrongStats = new ArrayList<Stat2>();
+				}
+				wrongStats.add(wrongStat);
+			}
+		}
+		if (wrongStats == null) {
+			return;
+		}
+		StringBuilder msg = new StringBuilder();
+		msg.append(ownerInfo);
+		msg.append('\n');
+		for (Stat2 stat : wrongStats) {
+			msg.append(stat.getStat());
+			msg.append(": [");
+			msg.append(" Min: " + Integer.toString(getMinValue(stat.getStat())));
+			msg.append(" Max: " + Integer.toString(getMaxValue(stat.getStat())));
+			msg.append(" Base: " + Integer.toString(stat.getBase()));
+			msg.append(" Bonus: " + Integer.toString(stat.getBonus()));
+			msg.append("]\n");
+		}
+		log.error(msg.toString());
 	}
 }

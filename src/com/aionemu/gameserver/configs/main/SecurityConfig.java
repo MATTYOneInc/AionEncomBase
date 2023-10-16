@@ -79,4 +79,6 @@ public class SecurityConfig {
 	public static int SURVEY_DELAY;
 	@Property(key = "gameserver.security.integrity.check", defaultValue = "true")
 	public static boolean INTEGRITY_CHECK;
+	@Property(key = "gameserver.security.check.creature.stats", defaultValue = "false")
+	public static boolean STATS_CHECK;
 }

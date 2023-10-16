@@ -85,6 +85,7 @@ public class ItemEquipmentListener {
 		}
 		if (item.getAmplificationSkill() > 0) {
 			owner.getSkillList().addSkill(owner, item.getAmplificationSkill(), 1);
+			owner.getController().updatePassiveStats();
 		}
 		if (item.getItemSkinSkill() > 0) {
 			owner.getSkillList().addSkill(owner, item.getItemSkinSkill(), 1);
@@ -127,11 +128,24 @@ public class ItemEquipmentListener {
 		if (randomStats != null) {
 			randomStats.onUnEquip(owner);
 		}
+		
+		/**
+		 * onItemUnequipment Amplify skill must be removed same as effect. We leave only effects from long time playing skills.
+		 * after that we must to update passive skills stats.   
+		 */
 		if (item.getAmplificationSkill() > 0) {
 			if (owner.getSkillList().isSkillPresent(item.getAmplificationSkill())) {
+				if (item.getAmplificationSkill() == 13030 || item.getAmplificationSkill() == 13029) {
+					// dont do nothing here at this moment
+				} else {
+					owner.getEffectController().removeEffect(item.getAmplificationSkill());
+				}
 				SkillLearnService.removeSkill(owner, item.getAmplificationSkill());
+
+				owner.getGameStats().endEffect(item);
 			}
 		}
+
 		if (item.getItemSkinSkill() > 0) {
 			if (owner.getSkillList().isSkillPresent(item.getItemSkinSkill())) {
 				SkillLearnService.removeSkill(owner, item.getItemSkinSkill());
@@ -154,8 +168,6 @@ public class ItemEquipmentListener {
 		}
 
 		List<StatFunction> allModifiers = null;
-		List<StatFunction> decreaseAllModifiers = null;
-
 		if ((slot & ItemSlot.MAIN_OR_SUB.getSlotIdMask()) != 0) {
 			allModifiers = wrapModifiers(item, modifiers);
 			if (item.hasFusionedItem()) {

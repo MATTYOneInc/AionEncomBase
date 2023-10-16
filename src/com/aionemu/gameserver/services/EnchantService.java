@@ -441,6 +441,15 @@ public class EnchantService {
 			PacketSendUtility.sendPacket(player, new SM_INVENTORY_UPDATE_ITEM(player, targetItem));
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_EXCEED_SKILL_ENCHANT(
 					new DescriptionId(targetItem.getNameId()), targetItem.getEnchantLevel(), getRndSkills(targetItem)));
+			/**
+			 * after we have recived amplification skill we need to add stats to passive
+			 * skills4Glove same as just to not re equip item - add skill to skill list but
+			 * iteam must be equiped
+			 */
+			if (targetItem.isEquipped()) {
+				player.getSkillList().addSkill(player, targetItem.getAmplificationSkill(), 1);
+				player.getController().updatePassiveStats();
+			}
 		} else if ((targetItem.isAmplified() || !targetItem.isAmplified()) && targetItem.getEnchantLevel() < 16) {
 			targetItem.setAmplificationSkill(0);
 			if (player.getSkillList().isSkillPresent(targetItem.getAmplificationSkill()) && targetItem.isEquipped()) {

@@ -25,6 +25,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.aionemu.gameserver.configs.main.SecurityConfig;
 import com.aionemu.gameserver.model.SkillElement;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Item;
@@ -170,6 +171,11 @@ public abstract class CreatureGameStats<T extends Creature> {
 				}
 			}
 			StatCapUtil.calculateBaseValue(stat, ((Creature) owner).isPlayer());
+
+			if (SecurityConfig.STATS_CHECK) {
+				StatCapUtil.dumpWrongStats(owner.getName(), stat);
+			}
+
 			return stat;
 		} finally {
 			lock.readLock().unlock();
