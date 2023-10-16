@@ -174,22 +174,25 @@ public class _2007Wheres_Rae_This_Time extends QuestHandler
 					}
 				break;
 				case 700085:
-					if (var == 5) {
-						destroy(6, env);
-						return false;
-					}
+				if (var == 5) {
+                    qs.setQuestVarById(0, var + 1);
+					updateQuestStatus(env);
+					return false;
+				}
 				break;
 				case 700086:
-					if (var == 6) {
-						destroy(7, env);
-						return false;
-					}
+				if (var == 6) {
+                    qs.setQuestVarById(0, var + 1);
+					updateQuestStatus(env);
+					return false;
+				}
 				break;
 				case 700087:
-					if (var == 7) {
-						destroy(-1, env);
-						return false;
-					}
+                if (var == 7) {
+                    qs.setQuestVarById(0, var + 1);
+					updateQuestStatus(env);
+                    return false;
+				}
 				break;
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
@@ -204,33 +207,4 @@ public class _2007Wheres_Rae_This_Time extends QuestHandler
 		}
 		return false;
 	}
-	
-	private void destroy(final int var, final QuestEnv env) {
-		final int targetObjectId = env.getVisibleObject().getObjectId();
-		final Player player = env.getPlayer();
-		PacketSendUtility.sendPacket(player, new SM_USE_OBJECT(player.getObjectId(), targetObjectId, 3000, 1));
-		PacketSendUtility.broadcastPacket(player, new SM_EMOTION(player, EmotionType.NEUTRALMODE2, 0, targetObjectId), true);
-		ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				if (player.getTarget().getObjectId() != targetObjectId)
-					return;
-				PacketSendUtility.sendPacket(player, new SM_USE_OBJECT(player.getObjectId(), targetObjectId, 3000, 0));
-				PacketSendUtility.broadcastPacket(player, new SM_EMOTION(player, EmotionType.START_LOOT, 0, targetObjectId), true);
-				sendEmotion(env, player, EmotionId.STAND, true);
-				QuestState qs = player.getQuestStateList().getQuestState(questId);
-				switch (var) {
-					case 6:
-					case 7:
-						qs.setQuestVar(var);
-					break;
-					case -1:
-						playQuestMovie(env, 56);
-						qs.setQuestVar(8);
-					break;
-				}
-				updateQuestStatus(env);
-			}
-		}, 3000);
-	}
-}
+}	
