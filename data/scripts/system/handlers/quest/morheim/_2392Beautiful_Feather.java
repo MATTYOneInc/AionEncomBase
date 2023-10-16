@@ -74,6 +74,9 @@ public class _2392Beautiful_Feather extends QuestHandler
 					rewInd = 1;
 				else if (qs.getQuestVarById(0) == 3)
 					rewInd = 2;
+				removeQuestItem(env, 182204161, 1);
+				removeQuestItem(env, 182204160, 1);
+				removeQuestItem(env, 182204159, 1);
 				return sendQuestEndDialog(env, rewInd);
 			}
 		}

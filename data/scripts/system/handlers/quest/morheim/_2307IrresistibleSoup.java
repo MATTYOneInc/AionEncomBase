@@ -62,6 +62,10 @@ public class _2307IrresistibleSoup extends QuestHandler {
 			}
 
 			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+				    removeQuestItem(env, 182204105, 1);
+					removeQuestItem(env, 182204106, 1);
+					removeQuestItem(env, 182204107, 1);
+					removeQuestItem(env, 182204108, 1);
 				return sendQuestEndDialog(env);
 			}
 		}
