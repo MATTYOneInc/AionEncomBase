@@ -89,6 +89,9 @@ public class _24114You_Gotta_Stop_Umkata extends QuestHandler
 					case USE_OBJECT: {
 						if (var == 4) {
 							QuestService.addNewSpawn(220030000, 1, 210752, 2889.9834f, 1741.3108f, 254.75f, (byte) 0);
+							removeQuestItem(env, 182215474, 1);
+							removeQuestItem(env, 182215475, 1);
+							removeQuestItem(env, 182215476, 1);
 							return sendQuestDialog(env, 1693);
 						}
 					}

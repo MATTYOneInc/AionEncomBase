@@ -211,11 +211,11 @@
 		<monster var="0" end_var="1" npc_ids="212823"/>
 	</monster_hunt>
 	<monster_hunt id="2368" start_npc_ids="204338">
-		<monster var="0" end_var="2" npc_ids="212452"/>
-		<monster var="1" end_var="2" npc_ids="211386"/>
-		<monster var="2" end_var="2" npc_ids="212454"/>
-		<monster var="3" end_var="2" npc_ids="212458"/>
-		<monster var="4" end_var="2" npc_ids="212456"/>
+		<monster var="0" end_var="3" npc_ids="212452"/>
+		<monster var="1" end_var="3" npc_ids="211386"/>
+		<monster var="2" end_var="3" npc_ids="212454"/>
+		<monster var="3" end_var="3" npc_ids="212458"/>
+		<monster var="4" end_var="3" npc_ids="212456"/>
 	</monster_hunt>
 	<monster_hunt id="2370" start_npc_ids="798080">
 		<monster var="0" end_var="7" npc_ids="211453 211468"/>
