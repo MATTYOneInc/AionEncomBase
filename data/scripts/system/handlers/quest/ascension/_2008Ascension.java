@@ -249,12 +249,11 @@ public class _2008Ascension extends QuestHandler
 					if (var == 1) {
 						if (player.getInventory().getItemCountByItemId(182203009) == 0)
 							if (giveQuestItem(env, 182203009, 1)) {
-							return true;
+								qs.setQuestVar(2);
+						        updateQuestStatus(env);
+						        TeleportService2.teleportTo(player, 220010000, 940.74475f, 2295.5305f, 265.65674f, (byte) 46);
+							    return true;
 						}
-						qs.setQuestVar(2);
-						updateQuestStatus(env);
-						TeleportService2.teleportTo(player, 220010000, 940.74475f, 2295.5305f, 265.65674f, (byte) 46);
-						return true;
 					}
 				}
 			} else if (targetId == 790002) {
@@ -353,11 +352,6 @@ public class _2008Ascension extends QuestHandler
 					PacketSendUtility.sendPacket(player, new SM_ASCENSION_MORPH(1));
 					return true;
 				}
-			} if (var == 6) {
-				if (player.getWorldId() == 220010000) {
-					changeQuestStep(env, 6, 6, true);
-					return sendQuestDialog(env, 5);
-				}
 			}
 		}
 		return false;
@@ -385,6 +379,7 @@ public class _2008Ascension extends QuestHandler
 		ClassChangeService.setClass(player, playerClass);
 		player.getController().upgradePlayer();
 		TeleportService2.teleportTo(player, 220010000, 386.03476f, 1893.9309f, 327.62283f, (byte) 59);
+		changeQuestStep(env, 6, 6, true);
 		return true;
 	}
 	

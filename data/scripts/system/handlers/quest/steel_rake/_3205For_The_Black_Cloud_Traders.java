@@ -50,8 +50,8 @@ public class _3205For_The_Black_Cloud_Traders extends QuestHandler
 	
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-		final QuestState qs = player.getQuestStateList().getQuestState(questId);
+		Player player = env.getPlayer();
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		if (env.getVisibleObject() instanceof Npc) {
@@ -91,21 +91,7 @@ public class _3205For_The_Black_Cloud_Traders extends QuestHandler
 	
 	@Override
     public boolean onKillEvent(QuestEnv env) {
-        final Player player = env.getPlayer();
-		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs != null && qs.getStatus() == QuestStatus.START) {
-            int var = qs.getQuestVarById(0);
-            if (var == 0) {
-                int var1 = qs.getQuestVarById(1);
-                if (var1 >= 0 && var1 < 14) {
-                    return defaultOnKillEvent(env, Petrahulk_Sentinel, var1, var1 + 1, 1);
-                } else if (var1 == 14) {
-					qs.setQuestVar(15);
-					updateQuestStatus(env);
-                    return true;
-                }
-            }
-        }
-        return false;
+	int targetId = env.getTargetId();	
+    return defaultOnKillEvent(env, Petrahulk_Sentinel, 0, 15);  
     }
 }

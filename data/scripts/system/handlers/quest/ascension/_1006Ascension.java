@@ -46,8 +46,8 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _1006Ascension extends QuestHandler
-{
+public class _1006Ascension extends QuestHandler {
+
 	private final static int questId = 1006;
 	
 	public _1006Ascension() {
@@ -103,13 +103,12 @@ public class _1006Ascension extends QuestHandler
 						} case STEP_TO_1: {
 							if (player.getInventory().getItemCountByItemId(182200007) == 0) {
 								if (giveQuestItem(env, 182200007, 1)) {
+								   qs.setQuestVar(1);
+							       updateQuestStatus(env);
+							       TeleportService2.teleportTo(player, 210010000, 657f, 1071f, 99.375f, (byte) 72);
 									return true;
 								}
 							}
-							qs.setQuestVar(1);
-							updateQuestStatus(env);
-							TeleportService2.teleportTo(player, 210010000, 657f, 1071f, 99.375f, (byte) 72);
-							return true;
 						} case STEP_TO_3: {
 							WorldMapInstance newInstance = InstanceService.getNextAvailableInstance(310010000);
 							InstanceService.registerPlayerWithInstance(newInstance, player);
@@ -173,7 +172,6 @@ public class _1006Ascension extends QuestHandler
 							}
 						} case STEP_TO_2: {
 							playQuestMovie(env, 14);
-							return true;
 						}
 					}
 					break;
@@ -206,7 +204,8 @@ public class _1006Ascension extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 790001) { //Pernos.
 				player.getCommonData().setExp(126068, false);
 				return sendQuestEndDialog(env);
@@ -252,7 +251,8 @@ public class _1006Ascension extends QuestHandler
 					break;
 				}
 				return defaultOnKillEvent(env, 211042, 51, 54);
-			} else if (var == 54) {
+			} 
+			else if (var == 54) {
 				qs.setQuestVar(4);
 				updateQuestStatus(env);
 				Npc mob = (Npc) QuestService.addNewSpawn(310010000, player.getInstanceId(), 211043, (float) 226.7, (float) 251.5, (float) 205.5, (byte) 0);
@@ -291,6 +291,7 @@ public class _1006Ascension extends QuestHandler
 		ClassChangeService.setClass(player, playerClass);
 		player.getController().upgradePlayer();
 		TeleportService2.teleportTo(player, 210010000, 245.14868f, 1639.1372f, 100.35713f, (byte) 60);
+		changeQuestStep(env, 5, 5, true);
 		return true;
 	}
 	
@@ -323,14 +324,9 @@ public class _1006Ascension extends QuestHandler
 				} else {
 					PacketSendUtility.sendPacket(player, new SM_ASCENSION_MORPH(1));
 					return true;
-				}
-			} if (var == 5) {
-				if (player.getWorldId() == 210010000) {
-					changeQuestStep(env, 5, 5, true);
-					return sendQuestDialog(env, 5);
-				}
+				}	
 			}
-		}
+		} 
 		return false;
 	}
 	
@@ -351,7 +347,8 @@ public class _1006Ascension extends QuestHandler
 			qs.setQuestVar(5);
 			updateQuestStatus(env);
 			return true;
-		} else if (movieId == 14) {
+		} 
+		else if (movieId == 14) {
 			removeQuestItem(env, 182200008, 1);
 			giveQuestItem(env, 182200009, 1);
 			qs.setQuestVar(3);
