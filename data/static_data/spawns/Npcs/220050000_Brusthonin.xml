@@ -6066,7 +6066,7 @@
 			<spot x="970.51" y="1502.08" z="36.25" h="5" walker_id="E50F215746911766476C42FD03CB96174D552DBF"/>
 			<spot x="1126.22" y="1729.34" z="36.375" h="23" walker_id="5AE2D960007F8AFC14C1DC51E3585976E3C30196"/>
 		</spawn>
-		<!-- Spiked Cordilnus -->
+		<!-- Spiked Alitaur -->
 		<spawn npc_id="214415" respawn_time="295">
 			<spot x="699.61" y="1060.31" z="36.3994" h="7" random_walk="2"/>
 			<spot x="765.325" y="1160.56" z="36.125" h="41" random_walk="2"/>
