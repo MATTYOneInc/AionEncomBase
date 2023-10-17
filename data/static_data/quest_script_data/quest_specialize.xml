@@ -69,7 +69,7 @@
 
 	<!-- What's Up, Dock? (Asmodians Only) -->
 	<item_collecting id="24111" start_npc_ids="203606" end_npc_ids="203631" action_item_ids="700010"/>
-	<item_collecting id="24112" start_npc_ids="0"/>
+	
 	<!-- Sword To Secrecy (Asmodians Only) -->
 	<item_collecting id="24113" start_npc_ids="203654"/>
 	<item_collecting id="24120" start_npc_ids="0"/>

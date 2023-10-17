@@ -37,7 +37,7 @@ public class _2237AFertileField extends QuestHandler {
 
 	@Override
 	public void register() {
-		qe.registerQuestNpc(203629).addOnQuestStart(questId);
+		qe.registerQuestNpc(832822).addOnQuestStart(questId);
 		qe.registerQuestNpc(203629).addOnTalkEvent(questId);
 		qe.registerQuestNpc(700145).addOnTalkEvent(questId);
 	}
@@ -50,7 +50,7 @@ public class _2237AFertileField extends QuestHandler {
 		QuestDialog dialog = env.getDialog();
 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 203629) { // Daike
+			if (targetId == 832822) { // Anmurnerk
 				if (dialog == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				}

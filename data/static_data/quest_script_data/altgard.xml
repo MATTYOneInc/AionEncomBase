@@ -36,7 +36,6 @@
     <item_collecting id="2224" start_npc_ids="203620"/>
     <item_collecting id="2227" start_npc_ids="203639"/>
     <item_collecting id="2236" start_npc_ids="832822"/>
-	<item_collecting id="2237" start_npc_ids="832822" action_item_ids="700145"/>
     <item_collecting id="2238" start_npc_ids="832821" end_npc_ids="203616"/>
     <item_collecting id="2241" start_npc_ids="203630"/>
     <item_collecting id="2246" start_npc_ids="203645" action_item_ids="700147"/>
