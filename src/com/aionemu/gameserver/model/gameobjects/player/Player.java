@@ -24,6 +24,7 @@ import java.util.Map;
 
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.configs.administration.AdminConfig;
+import com.aionemu.gameserver.configs.main.AIConfig;
 import com.aionemu.gameserver.configs.main.MembershipConfig;
 import com.aionemu.gameserver.configs.main.SecurityConfig;
 import com.aionemu.gameserver.controllers.FlyController;
@@ -1464,7 +1465,7 @@ public class Player extends Creature {
 	@Override
 	public boolean isAggroFrom(Npc npc) {
 		return (isAggroIconTo(npc) && (npc.getTribe().isGuard()
-				|| npc.getObjectTemplate().getAbyssNpcType() != AbyssNpcType.NONE || npc.getLevel() + 1 > getLevel()
+				|| npc.getObjectTemplate().getAbyssNpcType() != AbyssNpcType.NONE || npc.getLevel() + AIConfig.AGGRO_LEVEL_IMMUNE > getLevel()
 				|| (npc.isInInstance() && InstanceService.isAggro(npc.getWorldId()))));
 	}
 

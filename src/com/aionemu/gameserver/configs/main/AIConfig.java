@@ -34,6 +34,13 @@ public class AIConfig {
 
 	@Property(key = "gameserver.ai.oncreate.debug", defaultValue = "false")
 	public static boolean ONCREATE_DEBUG;
+	
+	
+	/**
+	* Level difference with the creature to be immune to aggro
+	*/
+	@Property(key = "gameserver.ai.aggro.level.immune", defaultValue = "10")
+	public static int AGGRO_LEVEL_IMMUNE;
 
 	/**
 	 * Enable NPC movement
