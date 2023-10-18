@@ -13,7 +13,7 @@ import com.eleanor.processors.movement.motor.AMovementMotor;
 import com.eleanor.processors.movement.motor.ReturnMotor;
 
 public class MovementProcessor extends AGameProcessor {
-	private final ConcurrentHashMap<Creature, AMovementMotor> _registeredCreatures = new ConcurrentHashMap();
+	private final ConcurrentHashMap<Creature, AMovementMotor> _registeredCreatures = new ConcurrentHashMap<Creature, AMovementMotor>();
 
 	public MovementProcessor() {
 		super(12);

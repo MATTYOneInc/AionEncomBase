@@ -66,6 +66,8 @@ public class MathObjectObserver extends ActionObserver {
 			}
 			this.clearShedules();
 		}
+		default:
+			break;
 		}
 	}
 
@@ -98,6 +100,8 @@ public class MathObjectObserver extends ActionObserver {
 					this.creature, this.template.getDuration());
 			break;
 		}
+		default:
+			break;
 		}
 	}
 

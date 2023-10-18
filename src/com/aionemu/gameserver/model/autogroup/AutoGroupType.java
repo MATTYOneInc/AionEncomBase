@@ -857,6 +857,8 @@ public enum AutoGroupType {
 		case CHANTRA_DREDGION:
 		case TERATH_DREDGION:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -865,6 +867,8 @@ public enum AutoGroupType {
 		switch (this) {
 		case ASHUNATAL_DREDGION:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -873,6 +877,8 @@ public enum AutoGroupType {
 		switch (this) {
 		case KAMAR_BATTLEFIELD:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -881,6 +887,8 @@ public enum AutoGroupType {
 		switch (this) {
 		case ENGULFED_OPHIDAN_BRIDGE:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -889,6 +897,8 @@ public enum AutoGroupType {
 		switch (this) {
 		case OPHIDAN_WARPATH:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -897,6 +907,8 @@ public enum AutoGroupType {
 		switch (this) {
 		case IRON_WALL_WARFRONT:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -905,6 +917,8 @@ public enum AutoGroupType {
 		switch (this) {
 		case IDGEL_DOME:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -913,6 +927,8 @@ public enum AutoGroupType {
 		switch (this) {
 		case IDGEL_DOME_LANDMARK:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -921,6 +937,8 @@ public enum AutoGroupType {
 		switch (this) {
 		case HALL_OF_TENACITY:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -929,6 +947,8 @@ public enum AutoGroupType {
 		switch (this) {
 		case IDTM_LOBBY_P_01:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -937,6 +957,8 @@ public enum AutoGroupType {
 		switch (this) {
 		case IDRUN:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -985,6 +1007,8 @@ public enum AutoGroupType {
 		case ARENA_OF_DISCIPLINE_61_65_1:
 		case ARENA_OF_DISCIPLINE_66_83_1:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -997,6 +1021,8 @@ public enum AutoGroupType {
 		case DISCIPLINE_TRAINING_GROUNDS_61_65_1:
 		case DISCIPLINE_TRAINING_GROUNDS_66_83_1:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -1009,6 +1035,8 @@ public enum AutoGroupType {
 		case ARENA_OF_CHAOS_61_65_1:
 		case ARENA_OF_CHAOS_66_83_1:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -1021,6 +1049,8 @@ public enum AutoGroupType {
 		case CHAOS_TRAINING_GROUNDS_61_65_1:
 		case CHAOS_TRAINING_GROUNDS_66_83_1:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -1038,6 +1068,8 @@ public enum AutoGroupType {
 		case UNITY_TRAINING_GROUNDS_61_65_1:
 		case UNITY_TRAINING_GROUNDS_66_83_1:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -1050,6 +1082,8 @@ public enum AutoGroupType {
 		case ARENA_OF_HARMONY_61_65_1:
 		case ARENA_OF_HARMONY_66_83_1:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}
@@ -1060,6 +1094,8 @@ public enum AutoGroupType {
 		case ARENA_OF_GLORY_61_65_1:
 		case ARENA_OF_GLORY_66_83_1:
 			return true;
+		default:
+			break;
 		}
 		return false;
 	}

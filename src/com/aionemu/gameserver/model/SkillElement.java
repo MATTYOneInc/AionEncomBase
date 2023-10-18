@@ -49,6 +49,8 @@ public enum SkillElement {
 			return StatEnum.ELEMENTAL_RESISTANCE_LIGHT;
 		case DARK:
 			return StatEnum.ELEMENTAL_RESISTANCE_DARK;
+		default:
+			break;
 		}
 		return null;
 	}

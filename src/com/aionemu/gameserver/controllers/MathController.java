@@ -19,20 +19,20 @@ import com.aionemu.gameserver.world.knownlist.Visitor;
 import javolution.util.FastMap;
 
 public class MathController extends VisibleObjectController<MathObject> {
-	FastMap<Creature, MathObjectObserver> observers = new FastMap().shared();
+	FastMap<Creature, MathObjectObserver> observers = new FastMap<Creature, MathObjectObserver>().shared();
 
 	@Override
 	public void see(VisibleObject object) {
 		super.see(object);
-		if (((MathObject) this.getOwner()).getReaction() == MathObjectReaction.PC ? !(object instanceof Player)
-				: (((MathObject) this.getOwner()).getReaction() == MathObjectReaction.NPC ? !(object instanceof Npc)
-						: ((MathObject) this.getOwner()).getReaction() == MathObjectReaction.ALL
+		if (this.getOwner().getReaction() == MathObjectReaction.PC ? !(object instanceof Player)
+				: (this.getOwner().getReaction() == MathObjectReaction.NPC ? !(object instanceof Npc)
+						: this.getOwner().getReaction() == MathObjectReaction.ALL
 								&& !(object instanceof Creature))) {
 			return;
 		}
 		Creature creature = (Creature) object;
-		MathObjectObserver observer = new MathObjectObserver((MathObject) this.getOwner(), creature,
-				((MathObject) this.getOwner()).getType());
+		MathObjectObserver observer = new MathObjectObserver(this.getOwner(), creature,
+				this.getOwner().getType());
 		creature.getObserveController().addObserver(observer);
 		this.observers.put(creature, observer);
 		observer.moved();
@@ -41,15 +41,15 @@ public class MathController extends VisibleObjectController<MathObject> {
 	@Override
 	public void notSee(VisibleObject object, boolean isOutOfRange) {
 		super.notSee(object, isOutOfRange);
-		if (((MathObject) this.getOwner()).getReaction() == MathObjectReaction.PC ? !(object instanceof Player)
-				: (((MathObject) this.getOwner()).getReaction() == MathObjectReaction.NPC ? !(object instanceof Npc)
-						: ((MathObject) this.getOwner()).getReaction() == MathObjectReaction.ALL
+		if (this.getOwner().getReaction() == MathObjectReaction.PC ? !(object instanceof Player)
+				: (this.getOwner().getReaction() == MathObjectReaction.NPC ? !(object instanceof Npc)
+						: this.getOwner().getReaction() == MathObjectReaction.ALL
 								&& !(object instanceof Creature))) {
 			return;
 		}
 		if (isOutOfRange && object instanceof Creature) {
 			Creature creature = (Creature) object;
-			MathObjectObserver observer = (MathObjectObserver) this.observers.remove((Object) creature);
+			MathObjectObserver observer = this.observers.remove((Object) creature);
 			observer.clearShedules();
 			creature.getObserveController().removeObserver(observer);
 		}
@@ -81,10 +81,10 @@ public class MathController extends VisibleObjectController<MathObject> {
 
 	@Override
 	public void delete() {
-		if (((MathObject) this.getOwner()).getMaster() != null) {
-			((MathObject) this.getOwner()).getMaster().getController().delete();
+		if (this.getOwner().getMaster() != null) {
+			this.getOwner().getMaster().getController().delete();
 		}
-		((MathObject) this.getOwner()).getKnownList().doOnAllObjects(new Visitor<VisibleObject>() {
+		this.getOwner().getKnownList().doOnAllObjects(new Visitor<VisibleObject>() {
 
 			@Override
 			public void visit(VisibleObject object) {
@@ -92,7 +92,7 @@ public class MathController extends VisibleObjectController<MathObject> {
 					return;
 				}
 				Creature creature = (Creature) object;
-				MathObjectObserver observer = (MathObjectObserver) MathController.this.observers
+				MathObjectObserver observer = MathController.this.observers
 						.remove((Object) creature);
 				if (observer == null) {
 					return;

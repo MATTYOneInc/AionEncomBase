@@ -83,6 +83,8 @@ public class PlayerTeamCommandService {
 		case LEAGUE_EXPEL:
 			LeagueService.expelAlliance(teamSubjective, player);
 			break;
+		default:
+			break;
 		}
 	}
 

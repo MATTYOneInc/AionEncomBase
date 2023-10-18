@@ -25,7 +25,9 @@ import com.aionemu.gameserver.model.templates.panel_cp.PanelCp;
 import com.aionemu.gameserver.model.templates.panel_cp.PanelCpType;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_QUEST_ACTION;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_STATS_INFO;
+import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.player.CreativityPanel.CreativityEssenceService;
 import com.aionemu.gameserver.services.player.CreativityPanel.CreativitySkillService;
 import com.aionemu.gameserver.services.player.CreativityPanel.CreativityStatsService;
@@ -81,6 +83,23 @@ public class CM_CREATIVITY_POINTS extends AionClientPacket {
 				}
 			}
 			PacketSendUtility.sendPacket(activePlayer, new SM_STATS_INFO(activePlayer));
+
+			if (activePlayer.getQuestStateList().getQuestState(20522) != null
+					&& activePlayer.getQuestStateList().getQuestState(20522).getStatus() == QuestStatus.START) {
+				activePlayer.getQuestStateList().getQuestState(20522).setQuestVar(0);
+				activePlayer.getQuestStateList().getQuestState(20522).setStatus(QuestStatus.REWARD);
+				PacketSendUtility.sendPacket(activePlayer, new SM_QUEST_ACTION(20522, 4, 0));
+
+			}
+
+			if (activePlayer.getQuestStateList().getQuestState(10522) != null
+					&& activePlayer.getQuestStateList().getQuestState(10522).getStatus() == QuestStatus.START) {
+				activePlayer.getQuestStateList().getQuestState(10522).setQuestVar(0);
+				activePlayer.getQuestStateList().getQuestState(10522).setStatus(QuestStatus.REWARD);
+				PacketSendUtility.sendPacket(activePlayer, new SM_QUEST_ACTION(10522, 4, 0));
+
+			}
+
 			break;
 		case 1: // Reset
 			plusSize = readH();

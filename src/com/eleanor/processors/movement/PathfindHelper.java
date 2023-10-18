@@ -90,7 +90,7 @@ public class PathfindHelper {
 		int AngleStep = 60;
 		int randDist = (int) (Math.random() * (double) maxRange + (double) minRange);
 		int randAngle = (int) (Math.random() * 360.0);
-		for (int i = 0; i < 360; i += 60) {
+		for (int i = 0; i < SearchAngle; i += AngleStep) {
 			Vector2f rotated2D = GeomUtil.getNextPoint2D(new Vector2f(origin.x, origin.y), randAngle + i, randDist);
 		}
 		return null;

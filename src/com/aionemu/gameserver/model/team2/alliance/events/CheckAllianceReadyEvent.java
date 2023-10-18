@@ -56,6 +56,8 @@ public class CheckAllianceReadyEvent extends AlwaysTrueTeamEvent implements Pred
 		case ALLIANCE_CHECKREADY_NOTREADY:
 			readyStatus -= 1;
 			break;
+		default:
+			break;
 		}
 		alliance.setAllianceReadyStatus(readyStatus);
 		alliance.applyOnMembers(this);
@@ -85,6 +87,8 @@ public class CheckAllianceReadyEvent extends AlwaysTrueTeamEvent implements Pred
 			if (alliance.getAllianceReadyStatus() == 0) {
 				PacketSendUtility.sendPacket(member, new SM_ALLIANCE_READY_CHECK(0, 3));
 			}
+			break;
+		default:
 			break;
 		}
 		return true;

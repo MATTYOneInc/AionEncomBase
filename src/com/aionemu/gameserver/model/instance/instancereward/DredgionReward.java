@@ -117,6 +117,8 @@ public class DredgionReward extends InstanceReward<DredgionPlayerReward> {
 			return elyosPoins;
 		case ASMODIANS:
 			return asmodiansPoints;
+		default:
+			break;
 		}
 		return null;
 	}

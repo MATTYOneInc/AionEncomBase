@@ -18,11 +18,9 @@ package com.aionemu.gameserver.services.events.bg;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -41,8 +39,6 @@ public class TwoTeamBg extends Battleground {
 	private int maxRounds = 3;
 	private int roundsDone = 0;
 	private boolean endCalled = false;
-	private static Logger log = LoggerFactory.getLogger(TwoTeamBg.class);
-
 	public TwoTeamBg() {
 		super.name = "[Team VS Team]";
 		super.description = "Your must defeat the opposing team. There is " + maxRounds
@@ -830,7 +826,7 @@ public class TwoTeamBg extends Battleground {
 		if (lastAttacker instanceof Player || ((Player) lastAttacker).getObjectId() == player.getObjectId()) {
 			Player killer = (Player) lastAttacker;
 			if (killer.getPlayerGroup2() != null) {
-				for (Player pl : killer.getPlayerGroup2().getMembers()) {
+				for (Iterator<Player> iterator = killer.getPlayerGroup2().getMembers().iterator(); iterator.hasNext();) {
 					if (((Player) lastAttacker).getObjectId() != player.getObjectId()) {
 					}
 				}

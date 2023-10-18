@@ -157,6 +157,8 @@ public class VisibleObjectSpawner {
 				RateHP = RateConfig.ELITE_MOBS_RATE_HP;
 				RatePW = RateConfig.ELITE_MOBS_RATE_PW;
 				break;
+			default:
+				break;
 			}
 			if (npcTemplate.getLevel() >= 66) {
 				int NewMaxHP = (int) (npcTemplate.getStatsTemplate().getMaxHp() * RateHP);

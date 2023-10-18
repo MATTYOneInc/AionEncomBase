@@ -19,9 +19,6 @@ package com.aionemu.gameserver.model.bonus_service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.stats.calc.StatOwner;
@@ -39,7 +36,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  */
 
 public class ServiceBuff implements StatOwner {
-	private static final Logger log = LoggerFactory.getLogger(ServiceBuff.class);
 	private List<IStatFunction> functions = new ArrayList<IStatFunction>();
 	private BonusServiceAttr serviceBonusAttr;
 

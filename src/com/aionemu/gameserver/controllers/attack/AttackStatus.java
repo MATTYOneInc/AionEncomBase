@@ -75,6 +75,8 @@ public enum AttackStatus {
 			return OFFHAND_CRITICAL_BLOCK;
 		case CRITICAL_RESIST:
 			return OFFHAND_CRITICAL_RESIST;
+		default:
+			break;
 		}
 		throw new IllegalArgumentException("Invalid mainHandStatus " + mainHandStatus);
 	}

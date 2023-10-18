@@ -144,6 +144,8 @@ public class FirstTargetProperty {
 			skill.setFirstTarget(skill.getEffector());
 			skill.setFirstTargetRangeCheck(false);
 			return true;
+		default:
+			break;
 		}
 		if (skill.getFirstTarget() != null) {
 			skill.getEffectedList().add(skill.getFirstTarget());

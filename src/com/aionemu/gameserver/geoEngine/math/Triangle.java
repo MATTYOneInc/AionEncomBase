@@ -13,7 +13,7 @@ import javolution.context.ObjectFactory;
 import javolution.lang.Reusable;
 
 public class Triangle extends AbstractTriangle implements Reusable {
-	private static final ObjectFactory FACTORY = new ObjectFactory() {
+	private static final ObjectFactory<Object> FACTORY = new ObjectFactory<Object>() {
 
 		public Object create() {
 			return new Triangle();

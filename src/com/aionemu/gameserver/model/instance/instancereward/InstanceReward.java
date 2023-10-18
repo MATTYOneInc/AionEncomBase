@@ -30,8 +30,6 @@ public class InstanceReward<T extends InstancePlayerReward> {
 	private InstanceScoreType instanceScoreType = InstanceScoreType.START_PROGRESS;
 	protected Integer mapId;
 	protected int instanceId;
-	private long instanceTime;
-
 	public InstanceReward(Integer mapId, int instanceId) {
 		this.mapId = mapId;
 		this.instanceId = instanceId;
@@ -98,7 +96,7 @@ public class InstanceReward<T extends InstancePlayerReward> {
 	}
 
 	public void setInstanceStartTime() {
-		this.instanceTime = System.currentTimeMillis();
+		System.currentTimeMillis();
 	}
 
 	public void clear() {

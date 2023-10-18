@@ -18,9 +18,6 @@ package com.aionemu.gameserver.services.events.bg;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.team2.group.PlayerGroupService;
@@ -36,7 +33,6 @@ public class SoloSurvivorBg extends Battleground {
 	private int maxRounds = 3;
 	private int roundsDone = 0;
 	private boolean endCalled = false;
-	private static final Logger log = LoggerFactory.getLogger(SoloSurvivorBg.class);
 
 	public SoloSurvivorBg() {
 		super.name = "[1 VS 1]";

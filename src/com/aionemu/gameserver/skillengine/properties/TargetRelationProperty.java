@@ -97,6 +97,8 @@ public class TargetRelationProperty {
 				skill.setFirstTarget(effectedList.get(0));
 			}
 			break;
+		default:
+			break;
 		}
 		return true;
 	}

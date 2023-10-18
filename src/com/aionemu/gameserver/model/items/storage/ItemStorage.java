@@ -35,12 +35,9 @@ public class ItemStorage {
 	private FastMap<Integer, Item> items;
 	private int limit;
 	private int specialLimit;
-	private final StorageType storageType;
-
 	public ItemStorage(StorageType storageType) {
 		this.limit = storageType.getLimit();
 		this.specialLimit = storageType.getSpecialLimit();
-		this.storageType = storageType;
 		this.items = FastMap.newInstance();
 	}
 

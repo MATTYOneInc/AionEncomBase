@@ -23,6 +23,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import com.aionemu.gameserver.configs.main.GeoDataConfig;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.geoEngine.collision.CollisionIntention;
+import com.aionemu.gameserver.geoEngine.collision.CollisionResult;
 import com.aionemu.gameserver.geoEngine.collision.CollisionResults;
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import com.aionemu.gameserver.geoEngine.scene.Spatial;
@@ -36,6 +37,7 @@ import com.aionemu.gameserver.model.templates.zone.ZoneClassName;
 import com.aionemu.gameserver.services.WeatherService;
 import com.aionemu.gameserver.skillengine.SkillEngine;
 import com.aionemu.gameserver.skillengine.model.Skill;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.utils.gametime.DayTime;
 import com.aionemu.gameserver.utils.gametime.GameTime;
@@ -113,6 +115,10 @@ public class CollisionMaterialActor extends AbstractCollisionObserver implements
 		} else {
 			if (GeoDataConfig.GEO_MATERIALS_SHOWDETAILS && creature instanceof Player) {
 				Player player = (Player) creature;
+				if (player.isGM()) {
+					CollisionResult result = collisionResults.getClosestCollision();
+					PacketSendUtility.sendMessage(player, "Entered " + result.getGeometry().getName());
+				}
 			}
 			act();
 		}
@@ -134,6 +140,9 @@ public class CollisionMaterialActor extends AbstractCollisionObserver implements
 					if (!creature.getEffectController().hasAbnormalEffect(actSkill.getId())) {
 						if (GeoDataConfig.GEO_MATERIALS_SHOWDETAILS && creature instanceof Player) {
 							Player player = (Player) creature;
+							if (player.isGM()) {
+								PacketSendUtility.sendMessage(player, "Use skill=" + actSkill.getId());
+							}
 						}
 						Skill skill = SkillEngine.getInstance().getSkill(creature, actSkill.getId(),
 								actSkill.getSkillLevel(), creature);

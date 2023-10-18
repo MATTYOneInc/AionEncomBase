@@ -346,6 +346,8 @@ public class PlayerCommonData extends VisibleObjectTemplate {
 					PacketSendUtility.sendPacket(getPlayer(), SM_SYSTEM_MESSAGE.STR_GET_EXP(name, reward));
 				}
 				break;
+			default:
+				break;
 			}
 			if (this.isArchDaeva()) {
 				CreativityEssenceService.getInstance().pointPerExp(this.getPlayer());

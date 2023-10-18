@@ -16,7 +16,7 @@ import javolution.lang.Reusable;
 
 public final class Vector3f implements Cloneable, Reusable {
 	private static final Logger logger = Logger.getLogger(Vector3f.class.getName());
-	private static final ObjectFactory FACTORY = new ObjectFactory() {
+	private static final ObjectFactory<Object> FACTORY = new ObjectFactory<Object>() {
 
 		public Object create() {
 			return new Vector3f();

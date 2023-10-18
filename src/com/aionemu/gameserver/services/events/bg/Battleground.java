@@ -25,9 +25,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.dao.LadderDAO;
@@ -78,7 +75,6 @@ import javolution.util.FastMap;
  * @Author Rinzler (Encom)
  */
 public abstract class Battleground {
-	private static final Logger log = LoggerFactory.getLogger(Battleground.class);
 	protected static final int TELEPORT_DEFAULT_DELAY = 0;
 	protected final int K_VALUE = 20;
 

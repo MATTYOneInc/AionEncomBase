@@ -215,6 +215,8 @@ public class AttackShieldObserver extends AttackCalcObserver {
 					effect.getEffected().getLifeStats().increaseMp(TYPE.HEAL_MP, healValue, effect.getSkillId(),
 							LOG.REGULAR);
 					break;
+				default:
+					break;
 				}
 				if (absorbedDamage >= damage && !isPunchShield(attackerEffect)) {
 					attackResult.setLaunchSubEffect(false);

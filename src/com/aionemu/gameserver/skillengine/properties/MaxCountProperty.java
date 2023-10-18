@@ -51,6 +51,8 @@ public class MaxCountProperty {
 				skill.getEffectedList().add(creature);
 				areaCounter++;
 			}
+		default:
+			break;
 		}
 		return true;
 	}

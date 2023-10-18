@@ -23,9 +23,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.DescriptionId;
 import com.aionemu.gameserver.model.gameobjects.PersistentState;
@@ -43,7 +40,6 @@ import javolution.util.FastList;
  */
 public final class PlayerSkillList implements SkillList<Player> {
 
-	private static final Logger log = LoggerFactory.getLogger(PlayerSkillList.class);
 	private final Map<Integer, PlayerSkillEntry> basicSkills;
 	private final Map<Integer, PlayerSkillEntry> stigmaSkills;
 	private final Map<Integer, PlayerSkillEntry> linkedSkills;

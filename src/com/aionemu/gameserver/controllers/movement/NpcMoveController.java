@@ -46,7 +46,6 @@ import com.eleanor.processors.movement.motor.FollowMotor;
 public class NpcMoveController extends CreatureMoveController<Npc> {
 	private static final Logger log = LoggerFactory.getLogger(NpcMoveController.class);
 	public static final float MOVE_CHECK_OFFSET = 0.1f;
-	private static final float MOVE_OFFSET = 0.05f;
 	private Destination destination = Destination.TARGET_OBJECT;
 	private float pointX;
 	private float pointY;
@@ -57,7 +56,6 @@ public class NpcMoveController extends CreatureMoveController<Npc> {
 	List<RouteStep> currentRoute;
 	int currentPoint;
 	int walkPause;
-	private float cachedTargetZ;
 	private FollowMotor _followMotor;
 
 	private void applyFollow(VisibleObject target) {
@@ -177,24 +175,11 @@ public class NpcMoveController extends CreatureMoveController<Npc> {
 		this.updateLastMove();
 	}
 
-	private float getTargetZ(Npc npc, Creature creature) {
-		float targetZ = creature.getZ();
-		if (GeoDataConfig.GEO_NPC_MOVE && creature.isInFlyingState() && !npc.isInFlyingState()) {
-			if (npc.getGameStats().checkGeoNeedUpdate()) {
-				this.cachedTargetZ = GeoService.getInstance().getZ(creature);
-			}
-			targetZ = this.cachedTargetZ;
-		}
-		return targetZ;
-	}
-
 	protected void moveToLocation(float targetX, float targetY, float targetZ, float offset) {
 		boolean directionChanged = false;
 		float ownerX = ((Npc) this.owner).getX();
 		float ownerY = ((Npc) this.owner).getY();
 		float ownerZ = ((Npc) this.owner).getZ();
-		boolean bl = directionChanged = targetX != this.targetDestX || targetY != this.targetDestY
-				|| targetZ != this.targetDestZ;
 		if (directionChanged) {
 			this.heading = (byte) (Math.toDegrees(Math.atan2(targetY - ownerY, targetX - ownerX)) / 3.0);
 		}
@@ -288,7 +273,6 @@ public class NpcMoveController extends CreatureMoveController<Npc> {
 			mask = stat.getBonus() < 0 ? (byte) -30 : -28;
 		} else if (((Npc) this.owner).isInState(CreatureState.WALKING)
 				|| ((Npc) this.owner).isInState(CreatureState.ACTIVE)) {
-			byte by = mask = stat.getBonus() < 0 ? (byte) -24 : -22;
 		}
 		if (((Npc) this.owner).isFlying()) {
 			mask = (byte) (mask | 4);
@@ -429,7 +413,7 @@ public class NpcMoveController extends CreatureMoveController<Npc> {
 			return;
 		}
 		if (this.lastSteps == null) {
-			this.lastSteps = new LastUsedCache(10);
+			this.lastSteps = new LastUsedCache<Byte, Point3D>(10);
 		}
 		Point3D currentStep = new Point3D(((Npc) this.owner).getX(), ((Npc) this.owner).getY(),
 				((Npc) this.owner).getZ());
@@ -446,16 +430,14 @@ public class NpcMoveController extends CreatureMoveController<Npc> {
 
 	public Point3D recallPreviousStep() {
 		Point3D result = stepSequenceNr == 0 ? null : lastSteps.get(stepSequenceNr--);
-		Point3D point3D;
 		if (this.lastSteps == null) {
-			this.lastSteps = new LastUsedCache(10);
+			this.lastSteps = new LastUsedCache<Byte, Point3D>(10);
 		}
 		if (this.stepSequenceNr == 0) {
-			point3D = null;
 		} else {
 			byte by = this.stepSequenceNr;
 			this.stepSequenceNr = (byte) (by - 1);
-			point3D = result = this.lastSteps.get(by);
+			result = this.lastSteps.get(by);
 		}
 		if (result == null) {
 			if (((Npc) this.owner).getAi2().isLogging()) {

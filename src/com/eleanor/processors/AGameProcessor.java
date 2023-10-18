@@ -17,7 +17,6 @@ import com.aionemu.gameserver.configs.main.ThreadConfig;
 
 public class AGameProcessor {
 	protected static final Logger Log = LoggerFactory.getLogger(AGameProcessor.class);
-	private static final int MAX_DELAY = Integer.MAX_VALUE;
 	private ScheduledThreadPoolExecutor _processorPool;
 
 	protected AGameProcessor(int threadsCount) {
@@ -75,11 +74,11 @@ public class AGameProcessor {
 			return new Task();
 		}
 
-		public ScheduledFuture getTask() {
+		public ScheduledFuture<?> getTask() {
 			return this._task;
 		}
 
-		private void setTask(ScheduledFuture task) {
+		private void setTask(ScheduledFuture<?> task) {
 			this._task = task;
 		}
 	}

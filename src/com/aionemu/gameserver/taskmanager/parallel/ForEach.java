@@ -18,15 +18,11 @@ package com.aionemu.gameserver.taskmanager.parallel;
 
 import java.util.Collection;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.aionemu.commons.utils.internal.chmv8.CountedCompleter;
 import com.aionemu.commons.utils.internal.chmv8.ForkJoinTask;
 import com.google.common.base.Predicate;
 
 public final class ForEach<E> extends CountedCompleter<E> {
-	private static final Logger log = LoggerFactory.getLogger(ForEach.class);
 	private static final long serialVersionUID = 7902148320917998146L;
 
 	public static <E> ForkJoinTask<E> forEach(Collection<E> list, Predicate<E> operation) {
@@ -39,6 +35,7 @@ public final class ForEach<E> extends CountedCompleter<E> {
 		return null;
 	}
 
+	@SafeVarargs
 	public static <E> ForkJoinTask<E> forEach(Predicate<E> operation, E... list) {
 		if (list != null && list.length > 0) {
 			CountedCompleter<E> completer = new ForEach<E>(null, operation, 0, list.length, list);
@@ -51,6 +48,7 @@ public final class ForEach<E> extends CountedCompleter<E> {
 	final Predicate<E> operation;
 	final int lo, hi;
 
+	@SafeVarargs
 	private ForEach(CountedCompleter<E> rootTask, Predicate<E> operation, int lo, int hi, E... list) {
 		super(rootTask);
 		this.list = list;

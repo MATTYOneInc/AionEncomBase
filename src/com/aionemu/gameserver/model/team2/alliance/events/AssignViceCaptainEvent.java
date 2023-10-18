@@ -71,6 +71,10 @@ public class AssignViceCaptainEvent extends AbstractTeamPlayerEvent<PlayerAllian
 		case DEMOTE:
 			messageId = SM_ALLIANCE_INFO.FORCE_DEMOTE_MANAGER;
 			break;
+		case DEMOTE_CAPTAIN_TO_VICECAPTAIN:
+			break;
+		default:
+			break;
 		}
 		PacketSendUtility.sendPacket(player, new SM_ALLIANCE_INFO(team, messageId, eventPlayer.getName()));
 		return true;

@@ -429,6 +429,8 @@ public class EffectController {
 					number++;
 				}
 				break;
+			default:
+				break;
 			}
 		}
 		return number;
@@ -503,6 +505,8 @@ public class EffectController {
 					remove = true;
 				}
 				break;
+			default:
+				break;
 			}
 
 			if (remove) {
@@ -544,6 +548,8 @@ public class EffectController {
 				if (effect.getReqDispelLevel() <= dispelLevel) {
 					remove = true;
 				}
+				break;
+			default:
 				break;
 			}
 

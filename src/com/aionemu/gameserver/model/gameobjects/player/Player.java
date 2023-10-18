@@ -295,7 +295,6 @@ public class Player extends Creature {
 	private PlayerABList ab;
 	private PlayerEventWindowList ew;
 	private PlayerWardrobeList wardrobe;
-	private PlayerUpgradeArcade upgradeArcade;
 	private PlayerLunaShop lunaShop;
 	private PlayerSweep shugoSweep;
 	private int linkedSkill;
@@ -305,8 +304,6 @@ public class Player extends Creature {
 	private int cp_slot1 = 0, cp_slot2 = 0, cp_slot3 = 0, cp_slot4 = 0, cp_slot5 = 0, cp_slot6 = 0;
 	private boolean enchantBoost;
 	private boolean authorizeBoost;
-	private int enchantBoostValue;
-	private int authorizeBoostValue;
 	private boolean setMinionSpawned;
 	private Map<Integer, MaxCountOfDay> maxCountEvent;
 	private int LunaDiceGame;
@@ -1464,9 +1461,10 @@ public class Player extends Creature {
 
 	@Override
 	public boolean isAggroFrom(Npc npc) {
-		return (isAggroIconTo(npc) && (npc.getTribe().isGuard()
-				|| npc.getObjectTemplate().getAbyssNpcType() != AbyssNpcType.NONE || npc.getLevel() + AIConfig.AGGRO_LEVEL_IMMUNE > getLevel()
-				|| (npc.isInInstance() && InstanceService.isAggro(npc.getWorldId()))));
+		return (isAggroIconTo(npc)
+				&& (npc.getTribe().isGuard() || npc.getObjectTemplate().getAbyssNpcType() != AbyssNpcType.NONE
+						|| npc.getLevel() + AIConfig.AGGRO_LEVEL_IMMUNE > getLevel()
+						|| (npc.isInInstance() && InstanceService.isAggro(npc.getWorldId()))));
 	}
 
 	/**
@@ -1563,6 +1561,8 @@ public class Player extends Creature {
 				return false;
 			}
 			break;
+		default:
+			break;
 		}
 		return getRace() != race;
 	}
@@ -1612,8 +1612,6 @@ public class Player extends Creature {
 			return false;
 		}
 		Long coolDown = itemCoolDowns.get(limits.getDelayId()).getReuseTime();
-		if (coolDown == null)
-			return false;
 
 		if (coolDown < System.currentTimeMillis()) {
 			itemCoolDowns.remove(limits.getDelayId());
@@ -2805,7 +2803,6 @@ public class Player extends Creature {
 	}
 
 	public void setPlayerUpgradeArcade(PlayerUpgradeArcade pua) {
-		this.upgradeArcade = pua;
 	}
 
 	public void setPlayerLunaShop(PlayerLunaShop pls) {

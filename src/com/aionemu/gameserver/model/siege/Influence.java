@@ -257,6 +257,8 @@ public class Influence {
 				bonus = 1.1f;
 			}
 			break;
+		default:
+			break;
 		}
 		return bonus;
 	}
