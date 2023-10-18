@@ -72,27 +72,21 @@ public class _3055Fugitive_Scopind extends QuestHandler
 				case 798195: {
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							long itemCount = player.getInventory().getItemCountByItemId(182208040);
-							if (itemCount >= 1) {
-								return sendQuestDialog(env, 5);
-							}
-						} case SELECT_NO_REWARD: {
-							qs.setStatus(QuestStatus.COMPLETE);
-							qs.setCompleteCount(1);
-							removeQuestItem(env, 182208040, 1);
-							Rewards rewards = DataManager.QUEST_DATA.getQuestById(questId).getRewards().get(0);
-							int rewardExp = rewards.getExp();
-							int rewardKinah = (int) (player.getRates().getQuestKinahRate() * rewards.getGold());
-							giveQuestItem(env, 182400001, rewardKinah);
-							player.getCommonData().addExp(rewardExp, RewardType.QUEST);
-							PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(questId, QuestStatus.COMPLETE, 2));
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
-							updateQuestStatus(env);
-							return true;
+							if (player.getInventory().getItemCountByItemId(182208040) < 1) {
+							return sendQuestDialog(env, 2375);
 						}
 					}
+					removeQuestItem(env, 182208040, 1);
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					return sendQuestEndDialog(env);
+				    }
 				}
 			}
+			
+		} 
+		else if (qs.getStatus() == QuestStatus.REWARD && targetId == 798195) {
+			return sendQuestEndDialog(env);
 		}
 		return false;
 	}

@@ -36,6 +36,7 @@ public class _2876Votan_Emergency_Orders extends QuestHandler
 		qe.registerQuestNpc(278001).addOnQuestStart(questId); //Votan.
         qe.registerQuestNpc(278016).addOnTalkEvent(questId); //Lisya.
 		qe.registerQuestNpc(278017).addOnTalkEvent(questId); //Semotor.
+		qe.registerQuestNpc(278001).addOnTalkEvent(questId); //Votan.
     }
 	
     @Override
@@ -44,7 +45,7 @@ public class _2876Votan_Emergency_Orders extends QuestHandler
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 278501) { //Governor Michalis.
+			if (targetId == 278001) { //Votan.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 4762);
@@ -77,12 +78,14 @@ public class _2876Votan_Emergency_Orders extends QuestHandler
 					} case SELECT_ACTION_1353: {
 						return sendQuestDialog(env, 1353);
 					} case SET_REWARD: {
-                        changeQuestStep(env, 1, 2, true);
+                        changeQuestStep(env, 1, 2, false);
+						qs.setStatus(QuestStatus.REWARD);
 						return closeDialogWindow(env);
                     }
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+		else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278001) { //Votan.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
