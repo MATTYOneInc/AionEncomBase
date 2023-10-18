@@ -105,6 +105,7 @@ public class _1888In_Need_Of_Goods extends QuestHandler
 							return sendQuestDialog(env, 2376);
 						}
 					} case SET_REWARD: {
+						changeQuestStep(env, 4, 5, false);
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);

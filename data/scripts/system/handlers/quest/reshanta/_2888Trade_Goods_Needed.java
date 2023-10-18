@@ -105,6 +105,7 @@ public class _2888Trade_Goods_Needed extends QuestHandler
 							return sendQuestDialog(env, 2376);
 						}
 					} case SET_REWARD: {
+						changeQuestStep(env, 4, 5, false);
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);
@@ -112,7 +113,7 @@ public class _2888Trade_Goods_Needed extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-            if (targetId == 278651) { //Aurunerk.
+            if (targetId == 278151) { //Ickulnerk.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
 				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
