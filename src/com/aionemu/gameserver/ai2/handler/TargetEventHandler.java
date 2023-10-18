@@ -1,7 +1,4 @@
-/*
-
- *
- *  Encom is free software: you can redistribute it and/or modify
+/* Encom is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
@@ -41,33 +38,31 @@ public class TargetEventHandler {
 
 		AIState currentState = npcAI.getState();
 		switch (currentState) {
-		case FIGHT:
-			npcAI.getOwner().getMoveController().abortMove();
-			AttackManager.scheduleNextAttack(npcAI);
-			if (npcAI.getOwner().getMoveController().isFollowingTarget())
+			case FIGHT:
+				npcAI.getOwner().getMoveController().abortMove();
+				AttackManager.scheduleNextAttack(npcAI);
+				if (npcAI.getOwner().getMoveController().isFollowingTarget())
+					npcAI.getOwner().getMoveController().storeStep();
+				break;
+			case RETURNING:
+				npcAI.getOwner().getMoveController().abortMove();
+				npcAI.getOwner().getMoveController().recallPreviousStep();
+				if (npcAI.getOwner().isAtSpawnLocation())
+					npcAI.onGeneralEvent(AIEventType.BACK_HOME);
+				else
+					npcAI.onGeneralEvent(AIEventType.NOT_AT_HOME);
+				break;
+			case WALKING:
+				WalkManager.targetReached(npcAI);
+				checkAggro(npcAI);
+				break;	
+			case FOLLOWING:
+				npcAI.getOwner().getMoveController().abortMove();
 				npcAI.getOwner().getMoveController().storeStep();
-			break;
-		case RETURNING:
-			npcAI.getOwner().getMoveController().abortMove();
-			npcAI.getOwner().getMoveController().recallPreviousStep();
-			if (npcAI.getOwner().isAtSpawnLocation())
-				npcAI.onGeneralEvent(AIEventType.BACK_HOME);
-			else
-				npcAI.onGeneralEvent(AIEventType.NOT_AT_HOME);
-			break;
-		case WALKING:
-			WalkManager.targetReached(npcAI);
-			checkAggro(npcAI);
-			break;
-		case FOLLOWING:
-			npcAI.getOwner().getMoveController().abortMove();
-			npcAI.getOwner().getMoveController().storeStep();
-			break;
-		case FEAR: // TO DO remove this state
-			npcAI.getOwner().getMoveController().abortMove();
-			npcAI.getOwner().getMoveController().storeStep();
-			break;
-		default:
+				break;
+			case FEAR: //TO DO remove this state
+				npcAI.getOwner().getMoveController().abortMove();
+				npcAI.getOwner().getMoveController().storeStep();
 			break;
 		}
 	}
@@ -80,15 +75,15 @@ public class TargetEventHandler {
 			AI2Logger.info(npcAI, "onTargetTooFar");
 		}
 		switch (npcAI.getState()) {
-		case FIGHT:
-			AttackManager.targetTooFar(npcAI);
-			break;
-		case FOLLOWING:
-			FollowManager.targetTooFar(npcAI);
-			break;
-		case FEAR:
-			break;
-		default:
+			case FIGHT:
+				AttackManager.targetTooFar(npcAI);
+				break;
+			case FOLLOWING:
+				FollowManager.targetTooFar(npcAI);
+				break;
+			case FEAR:
+				break;
+			default:
 
 			if (npcAI.isLogging()) {
 				AI2Logger.info(npcAI, "default onTargetTooFar");
@@ -127,7 +122,7 @@ public class TargetEventHandler {
 			AttackManager.scheduleNextAttack(npcAI);
 		}
 	}
-
+	
 	private static void checkAggro(NpcAI2 npcAI) {
 		for (VisibleObject obj : npcAI.getOwner().getKnownList().getKnownObjects().values()) {
 			if (obj instanceof Creature) {
