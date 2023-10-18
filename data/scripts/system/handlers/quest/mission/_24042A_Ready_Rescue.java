@@ -77,7 +77,7 @@ public class _24042A_Ready_Rescue extends QuestHandler
                                 return sendQuestDialog(env, 1352);
                             }
 						} case STEP_TO_2: {
-						    TeleportService2.teleportTo(player, 400010000, 384.70587f, 360.83548f, 1675.3441f, (byte) 33);
+						    TeleportService2.teleportTo(player, 400010000, 679.1217f, 1541.4647f, 1605.3022f, (byte) 34);
                             return defaultCloseDialog(env, 1, 2);
 						}
                     }
