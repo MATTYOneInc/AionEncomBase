@@ -72,10 +72,9 @@ public class _3055Fugitive_Scopind extends QuestHandler
 				case 798195: {
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							if (player.getInventory().getItemCountByItemId(182208040) < 1) {
 							return sendQuestDialog(env, 2375);
 						}
-					}
+                    }
 					removeQuestItem(env, 182208040, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
@@ -83,8 +82,6 @@ public class _3055Fugitive_Scopind extends QuestHandler
 				    }
 				}
 			}
-			
-		} 
 		else if (qs.getStatus() == QuestStatus.REWARD && targetId == 798195) {
 			return sendQuestEndDialog(env);
 		}
