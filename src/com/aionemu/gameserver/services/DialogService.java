@@ -20,6 +20,7 @@ import com.aionemu.gameserver.model.templates.teleport.TeleportLocation;
 import com.aionemu.gameserver.model.templates.teleport.TeleporterTemplate;
 import com.aionemu.gameserver.model.templates.tradelist.TradeListTemplate;
 import com.aionemu.gameserver.model.templates.tradelist.TradeNpcType;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ATTACK_STATUS.TYPE;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_PET;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_PLASTIC_SURGERY;
@@ -1181,7 +1182,7 @@ public class DialogService {
 			break;
 		}
 		case 128: {
-			// Soul Healing.
+			// Soul Healing. Divine Soul Heal must give mp, fp and hp
 			final long expLost = player.getCommonData().getExpRecoverable();
 			if (expLost == 0) {
 				player.getEffectController().removeAbnormalEffectsByTargetSlot(SkillTargetSlot.SPEC2);
@@ -1196,6 +1197,11 @@ public class DialogService {
 						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_GET_EXP2(expLost));
 						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_SUCCESS_RECOVER_EXPERIENCE);
 						player.getCommonData().resetRecoverableExp();
+						
+						player.getLifeStats().increaseHp(TYPE.HP, player.getLifeStats().getMaxHp() + 1);
+                        player.getLifeStats().increaseMp(TYPE.MP, player.getLifeStats().getMaxMp() + 1);
+						player.getLifeStats().increaseFp(TYPE.AUTO_HEAL_FP, player.getLifeStats().getMaxFp() + 1);
+						
 						player.getInventory().decreaseKinah(price);
 						player.getEffectController().removeAbnormalEffectsByTargetSlot(SkillTargetSlot.SPEC2);
 						player.getCommonData().setDeathCount(0);
