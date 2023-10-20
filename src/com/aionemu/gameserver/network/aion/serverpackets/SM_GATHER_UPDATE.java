@@ -52,7 +52,7 @@ public class SM_GATHER_UPDATE extends AionServerPacket {
 
 		switch (action) {
 		case 0: {
-			writeQ(3);
+			writeQ(con.getActivePlayer().getRates().getGatheringCountRate());
 			writeD(success);
 			writeD(failure);
 			writeD(0);
@@ -64,7 +64,7 @@ public class SM_GATHER_UPDATE extends AionServerPacket {
 			break;
 		}
 		case 1: {
-			writeQ(3);
+			writeQ(con.getActivePlayer().getRates().getGatheringCountRate());
 			writeD(success);
 			writeD(failure);
 			writeD(700); // unk timer??
@@ -74,7 +74,7 @@ public class SM_GATHER_UPDATE extends AionServerPacket {
 			break;
 		}
 		case 2: {
-			writeQ(3);
+			writeQ(con.getActivePlayer().getRates().getGatheringCountRate());
 			writeD(success);
 			writeD(failure);
 			writeD(700);// unk timer??
@@ -84,7 +84,7 @@ public class SM_GATHER_UPDATE extends AionServerPacket {
 			break;
 		}
 		case 3: {
-			writeQ(3);
+			writeQ(con.getActivePlayer().getRates().getGatheringCountRate());
 			writeD(success);
 			writeD(failure);
 			writeD(700);// unk timer??
@@ -95,7 +95,7 @@ public class SM_GATHER_UPDATE extends AionServerPacket {
 		}
 		case 5: // you have stopped gathering
 		{
-			writeQ(3);
+			writeQ(con.getActivePlayer().getRates().getGatheringCountRate());
 			writeD(0);
 			writeD(0);
 			writeD(700);// unk timer??
@@ -105,7 +105,7 @@ public class SM_GATHER_UPDATE extends AionServerPacket {
 			break;
 		}
 		case 6: {
-			writeQ(3);
+			writeQ(con.getActivePlayer().getRates().getGatheringCountRate());
 			writeD(success);
 			writeD(failure);
 			writeD(700); // unk timer??
@@ -115,7 +115,7 @@ public class SM_GATHER_UPDATE extends AionServerPacket {
 			break;
 		}
 		case 7: {
-			writeQ(3);
+			writeQ(con.getActivePlayer().getRates().getGatheringCountRate());
 			writeD(success);
 			writeD(failure);
 			writeD(0);
