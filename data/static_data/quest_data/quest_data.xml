@@ -13639,7 +13639,7 @@
       <selectable_reward_item item_id="113601035" count="1" />
       <selectable_reward_item item_id="113501556" count="1" />
     </rewards>
-    <quest_drop npc_id="700450" item_id="182208071" chance="100" drop_each_member="1" collecting_step="1" />
+    <quest_drop npc_id="700450" item_id="182208071" chance="100" drop_each_member="1" />
   </quest>
   <quest id="3100" name="A Shugo's Best Friend" nameId="1113099" minlevel_permitted="47" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="IMPORTANT">
     <rewards exp="6937236">
@@ -17088,6 +17088,8 @@
       <selectable_reward_item item_id="125003839" count="1" />
     </extended_rewards>
     <quest_drop npc_id="218996" item_id="182209101" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="218997" item_id="182209101" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="218999" item_id="182209101" chance="100" drop_each_member="1" />
     <quest_drop npc_id="219003" item_id="182209101" chance="100" drop_each_member="1" />
     <quest_drop npc_id="218998" item_id="182209101" chance="100" drop_each_member="1" />
     <quest_drop npc_id="219002" item_id="182209101" chance="100" drop_each_member="1" />
@@ -17097,6 +17099,13 @@
     <quest_drop npc_id="219006" item_id="182209101" chance="100" drop_each_member="1" />
     <quest_drop npc_id="219010" item_id="182209101" chance="100" drop_each_member="1" />
     <quest_drop npc_id="219004" item_id="182209101" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="215003" item_id="182209101" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="215007" item_id="182209101" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="214985" item_id="182209101" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="214987" item_id="182209101" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="214990" item_id="182209101" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="214991" item_id="182209101" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="214992" item_id="182209101" chance="100" drop_each_member="1" />
     <start_conditions>
       <finished quest_id="4205" />
     </start_conditions>
@@ -37844,7 +37853,7 @@
       <collect_item item_id="186000108" count="1" />
     </collect_items>
     <rewards exp="5233353" />
-    <quest_drop npc_id="251039" item_id="182209513" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="215992" item_id="182209513" chance="100" drop_each_member="1" />
     <start_conditions>
       <finished quest_id="21453" />
     </start_conditions>
