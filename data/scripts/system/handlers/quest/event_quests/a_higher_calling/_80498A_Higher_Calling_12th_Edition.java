@@ -30,12 +30,12 @@ public class _80498A_Higher_Calling_12th_Edition extends QuestHandler
     public _80498A_Higher_Calling_12th_Edition() {
         super(questId);
     }
-	
+/*	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		return defaultOnLvlUpEvent(env);
 	}
-	
+*/	
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);

@@ -30,12 +30,12 @@ public class _80532Be_A_Better_Daeva_20th_Edition extends QuestHandler
     public _80532Be_A_Better_Daeva_20th_Edition() {
         super(questId);
     }
-	
+/*	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		return defaultOnLvlUpEvent(env);
 	}
-	
+*/	
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
