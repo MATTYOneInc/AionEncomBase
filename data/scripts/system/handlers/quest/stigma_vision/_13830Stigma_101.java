@@ -84,7 +84,7 @@ public class _13830Stigma_101 extends QuestHandler
 	public boolean onLvlUpEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getLevel() >= 20 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ELYOS) {
+		if (player.getLevel() >= 30 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ELYOS) {
 			giveQuestItem(env, 182216118, 1);
 			return QuestService.startQuest(env);
 		}

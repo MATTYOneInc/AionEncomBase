@@ -84,7 +84,7 @@ public class _13831Pelias_Aid extends QuestHandler
 	public boolean onLvlUpEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getLevel() >= 20 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ELYOS) {
+		if (player.getLevel() >= 40 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ELYOS) {
 			giveQuestItem(env, 182216119, 1);
 			return QuestService.startQuest(env);
 		}

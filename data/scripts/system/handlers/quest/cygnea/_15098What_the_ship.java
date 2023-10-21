@@ -30,12 +30,12 @@ public class _15098What_the_ship extends QuestHandler
 	public _15098What_the_ship() {
 		super(questId);
 	}
-	
+	/*
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		return defaultOnLvlUpEvent(env);
 	}
-	
+	*/
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);

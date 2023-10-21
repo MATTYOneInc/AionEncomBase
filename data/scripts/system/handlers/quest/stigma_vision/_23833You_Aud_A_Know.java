@@ -63,7 +63,7 @@ public class _23833You_Aud_A_Know extends QuestHandler
 	public boolean onLvlUpEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getLevel() >= 20 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ASMODIANS) {
+		if (player.getLevel() >= 50 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ASMODIANS) {
 			giveQuestItem(env, 182216126, 1);
 			return QuestService.startQuest(env);
 		}

@@ -64,7 +64,7 @@ public class _23831Stigma_Stones_May_Break_Your_Bones extends QuestHandler
 	public boolean onLvlUpEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getLevel() >= 20 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ASMODIANS) {
+		if (player.getLevel() >= 40 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ASMODIANS) {
 			giveQuestItem(env, 182216124, 1);
 			return QuestService.startQuest(env);
 		}

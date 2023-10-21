@@ -64,7 +64,7 @@ public class _23830A_Bundle_To_Enjoy extends QuestHandler
 	public boolean onLvlUpEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getLevel() >= 20 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ASMODIANS) {
+		if (player.getLevel() >= 30 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ASMODIANS) {
 			giveQuestItem(env, 182216123, 1);
 			return QuestService.startQuest(env);
 		}

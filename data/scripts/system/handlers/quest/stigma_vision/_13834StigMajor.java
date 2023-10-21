@@ -84,7 +84,7 @@ public class _13834StigMajor extends QuestHandler
 	public boolean onLvlUpEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getLevel() >= 20 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ELYOS) {
+		if (player.getLevel() >= 55 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ELYOS) {
 			giveQuestItem(env, 182216122, 1);
 			return QuestService.startQuest(env);
 		}

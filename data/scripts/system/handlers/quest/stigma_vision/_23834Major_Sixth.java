@@ -64,7 +64,7 @@ public class _23834Major_Sixth extends QuestHandler
 	public boolean onLvlUpEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getLevel() >= 20 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ASMODIANS) {
+		if (player.getLevel() >= 55 && (qs == null || qs.getStatus() == QuestStatus.NONE) && player.getRace() == Race.ASMODIANS) {
 			giveQuestItem(env, 182216127, 1);
 			return QuestService.startQuest(env);
 		}
