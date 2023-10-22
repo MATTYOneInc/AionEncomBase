@@ -25,6 +25,7 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.chathandlers.AdminCommand;
 import com.aionemu.gameserver.world.geo.GeoService;
+import com.aionemu.gameserver.model.TeleportAnimation;
 
 /**
  * @author Source
@@ -82,13 +83,13 @@ public class Warp extends AdminCommand {
 			z = GeoService.getInstance().getZ(mapL, x, y);
 			PacketSendUtility.sendMessage(player, "Map ID (" + mapL + ")\n" + "x: " + x + "y: " + y + "z: " + z + " L(" + layerI + ")");
 
-			if (mapL == 400010000) {
-				PacketSendUtility.sendMessage(player, "Sorry you can't warp at abyss");
-			}
-			else {
-				TeleportService2.teleportTo(player, mapL, x, y, z);
-				PacketSendUtility.sendMessage(player, "You have successfully warped to this location --- > " + LocS);
-			}
+			//if (mapL == 400010000) {
+			//	PacketSendUtility.sendMessage(player, "Sorry you can't warp at abyss");
+			//}
+			//else {
+			TeleportService2.teleportTo(player, mapL, x, y, z, player.getHeading(), TeleportAnimation.NO_ANIMATION);
+			PacketSendUtility.sendMessage(player, "You have successfully warped to this location --- > " + LocS);
+			//}
 
 		}
 		catch (NumberFormatException e) {
@@ -128,13 +129,13 @@ public class Warp extends AdminCommand {
 			zF = GeoService.getInstance().getZ(mapL, xF, yF);
 			PacketSendUtility.sendMessage(player, "MapId (" + mapL + ")\n" + "x:" + xF + " y:" + yF + " z:" + zF + " l(" + layerI + ")");
 
-			if (mapL == 400010000) {
-				PacketSendUtility.sendMessage(player, "Sorry you can't warp at abyss");
-			}
-			else {
-				TeleportService2.teleportTo(player, mapL, xF, yF, zF);
-				PacketSendUtility.sendMessage(player, "You have successfully warp -> " + locS);
-			}
+			//if (mapL == 400010000) {
+			//	PacketSendUtility.sendMessage(player, "Sorry you can't warp at abyss");
+			//}
+			//else {
+			TeleportService2.teleportTo(player, mapL, xF, yF, zF, player.getHeading(), TeleportAnimation.NO_ANIMATION);
+			PacketSendUtility.sendMessage(player, "You have successfully warp -> " + locS);
+			//}
 		}
 	}
 

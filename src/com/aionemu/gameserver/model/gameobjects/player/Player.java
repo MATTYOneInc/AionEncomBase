@@ -1463,8 +1463,7 @@ public class Player extends Creature {
 	public boolean isAggroFrom(Npc npc) {
 		return (isAggroIconTo(npc)
 				&& (npc.getTribe().isGuard() || npc.getObjectTemplate().getAbyssNpcType() != AbyssNpcType.NONE
-						|| npc.getLevel() + AIConfig.AGGRO_LEVEL_IMMUNE > getLevel()
-						|| (npc.isInInstance() && InstanceService.isAggro(npc.getWorldId()))));
+						|| npc.getLevel() + AIConfig.AGGRO_LEVEL_IMMUNE > getLevel()));
 	}
 
 	/**

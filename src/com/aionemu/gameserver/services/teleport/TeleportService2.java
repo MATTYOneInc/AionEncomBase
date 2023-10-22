@@ -515,7 +515,7 @@ public class TeleportService2 {
 		float y = kisk.getY();
 		float z = kisk.getZ();
 		byte heading = kisk.getHeading();
-		teleportTo(player, mapId, x, y, z, heading);
+		teleportTo(player, mapId, x, y, z, heading, TeleportAnimation.NO_ANIMATION);
 	}
 
 	public static void teleportToPrison(Player player) {
@@ -595,7 +595,7 @@ public class TeleportService2 {
 		InstanceService.onLeaveInstance(player);
 
 		if (useTeleport) {
-			teleportTo(player, worldId, x, y, z, h);
+			teleportTo(player, worldId, x, y, z, h, TeleportAnimation.NO_ANIMATION);
 		} else {
 			World.getInstance().setPosition(player, worldId, 1, x, y, z, h);
 		}

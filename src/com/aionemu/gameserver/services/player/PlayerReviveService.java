@@ -44,6 +44,7 @@ import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.WorldMap;
 import com.aionemu.gameserver.world.WorldPosition;
 import com.aionemu.gameserver.world.knownlist.Visitor;
+import com.aionemu.gameserver.model.TeleportAnimation;
 
 public class PlayerReviveService {
 	public static final void duelRevive(Player player) {
@@ -200,7 +201,7 @@ public class PlayerReviveService {
 		InstanceReviveStartPoints revivePoint = TeleportService2.getReviveInstanceStartPoints(map.getMapId());
 		if (map.isInstanceType() && revivePoint != null) {
 			TeleportService2.teleportTo(player, revivePoint.getReviveWorld(), revivePoint.getX(), revivePoint.getY(),
-					revivePoint.getZ(), revivePoint.getH());
+					revivePoint.getZ(), revivePoint.getH(), TeleportAnimation.NO_ANIMATION);
 		} else {
 			bindRevive(player);
 		}
