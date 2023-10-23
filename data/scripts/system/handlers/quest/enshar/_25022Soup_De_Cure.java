@@ -58,7 +58,7 @@ public class _25022Soup_De_Cure extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 804724) {
+			if (targetId == 804908) {
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
