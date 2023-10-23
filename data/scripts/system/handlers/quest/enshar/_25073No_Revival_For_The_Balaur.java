@@ -35,6 +35,7 @@ public class _25073No_Revival_For_The_Balaur extends QuestHandler
 	public void register() {
 		qe.registerQuestNpc(804918).addOnQuestStart(questId);
 		qe.registerQuestNpc(804918).addOnTalkEvent(questId);
+		qe.registerQuestNpc(804732).addOnTalkEvent(questId);
 		qe.registerQuestNpc(731556).addOnTalkEvent(questId);
 	}
 	
@@ -58,12 +59,20 @@ public class _25073No_Revival_For_The_Balaur extends QuestHandler
 				}
 			}
 		} else if (targetId == 731556) {
-			if (dialog == QuestDialog.USE_OBJECT) {
-				closeDialogWindow(env);
-				return true;
+				if (dialog == QuestDialog.USE_OBJECT) {
+					if (player.getInventory().getItemCountByItemId(182215725) == 1) {
+						return sendQuestDialog(env, 1011);
+					}
+				}
+				else if (dialog == QuestDialog.SET_REWARD) {
+					removeQuestItem(env, 182215725, 1);
+					changeQuestStep(env, 0, 1, true);
+					return closeDialogWindow(env);
+				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 804918) {
+		
+		else if (qs.getStatus() == QuestStatus.START) {
+			if (targetId == 804732) {
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
@@ -75,7 +84,7 @@ public class _25073No_Revival_For_The_Balaur extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 804918) {
+			if (targetId == 804732) {
 				return sendQuestEndDialog(env);
 			}
 		}

@@ -59,7 +59,8 @@ public class _25070Truth_Of_The_Crystal extends QuestHandler
 			}
 		} else if (targetId == 731552) {
 			if (dialog == QuestDialog.USE_OBJECT) {
-				closeDialogWindow(env);
+				giveQuestItem(env, 182215723, 1);
+				changeQuestStep(env, 0, 1, true);
 				return true;
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {

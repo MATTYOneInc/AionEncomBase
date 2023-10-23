@@ -39756,7 +39756,7 @@
       <finished quest_id="25062" />
     </start_conditions>
     <quest_work_items>
-      <quest_work_item item_id="182215723" />
+      <quest_work_item item_id="182215723" count="1"/>
     </quest_work_items>
   </quest>
   <quest id="25073" name="No Revival for the Balaur" nameId="1800854" minlevel_permitted="61" max_repeat_count="1" race_permitted="ASMODIANS" category="IMPORTANT">
