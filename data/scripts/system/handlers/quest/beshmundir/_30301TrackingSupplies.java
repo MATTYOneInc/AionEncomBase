@@ -47,8 +47,6 @@ public class _30301TrackingSupplies extends QuestHandler {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = 0;
-		if (player.getCommonData().getLevel() < 55)
-			return false;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		if (targetId == 799225) {

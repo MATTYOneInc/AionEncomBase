@@ -161,7 +161,6 @@ public class _10501Research_The_Ruins extends QuestHandler
             } if (var == 3) {
                 return HandlerResult.fromBoolean(useQuestItem(env, item, 3, 4, false));
             } if (var == 5) {
-				QuestService.addNewSpawn(210070000, 1, 236251, player.getX(), player.getY(), player.getZ(), (byte) 0); //Aetheric Field Watcher.
 				return HandlerResult.fromBoolean(useQuestItem(env, item, 5, 6, false));
             }
         }

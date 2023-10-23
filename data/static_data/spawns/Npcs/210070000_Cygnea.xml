@@ -4655,6 +4655,10 @@
             <spot x="2954.1545" y="2569.026" z="221.25" h="81" random_walk="3"/>
             <spot x="2948.419" y="2504.839" z="224.59282" h="90" random_walk="3"/>
 		</spawn>
+		<!--"Aetheric Field Watcher."-->
+		<spawn npc_id="236251" respawn_time="295">
+			<spot x="1653.9658" y="461.62567" z="542.42297" h="119"/>
+		</spawn>
 		<!-- LF5_I_HippoLizard_64_An -->
 		<spawn npc_id="235908" respawn_time="295">
 			<spot x="2938.7166" y="2437.4172" z="223.74802" h="0" random_walk="3"/>
