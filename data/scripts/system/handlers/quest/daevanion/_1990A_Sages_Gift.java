@@ -44,7 +44,9 @@ public class _1990A_Sages_Gift extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
-		int[] mobs = {253696, 253720, 253721, 253682, 253684, 253685};
+		//int[] mobs = {253696, 253720, 253721, 253682, 253684, 253685};
+		int[] mobs = {211869, 211870, 211046, 211871, 211872};
+		
 		qe.registerQuestNpc(203771).addOnQuestStart(questId);
 		qe.registerQuestNpc(203771).addOnTalkEvent(questId);
 		for (int mob: mobs) {
@@ -124,7 +126,9 @@ public class _1990A_Sages_Gift extends QuestHandler
 			int var = qs.getQuestVarById(0);
 			if (var == 2) {
 				switch (env.getTargetId()) {
-					case 253696: { //Smoking Ember.
+					case 211869: //Horned Abex
+					case 211870: //Horned Abex
+					{ 
 						if (A >= 0 && A < 30) {
 							++A;
 							ALL = C;
@@ -139,8 +143,8 @@ public class _1990A_Sages_Gift extends QuestHandler
 						}
 						break;
 					}
-					case 253720: //Lava Hoverstone.
-					case 253721: { //Lava Hoverstone.
+					case 211046: // Whitehawk Ettin
+					{
 						if (B >= 0 && B < 30) {
 							++B;
 							ALL = C;
@@ -155,9 +159,9 @@ public class _1990A_Sages_Gift extends QuestHandler
 						}
 						break;
 					}
-					case 253682: //Sulfur Oculazen.
-					case 253684: //Sulfur Oculazen.
-					case 253685: { //Sulfur Oculazen.
+					case 211871: // Fanged Worg
+					case 211872: // Fanged Worg
+					{ 
 						if (C >= 0 && C < 30) {
 							++C;
 							ALL = C;

@@ -42,7 +42,6 @@ public class _13403Portal_Predictions extends QuestHandler
     public void register() {
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203098).addOnQuestStart(questId); //Spatalos.
-		qe.registerQuestNpc(203098).addOnTalkEvent(questId); //Spatalos.
 		qe.registerQuestNpc(203096).addOnTalkEvent(questId); //William.
 		qe.registerQuestNpc(203106).addOnTalkEvent(questId); //Alisdair.
 		qe.registerQuestNpc(203133).addOnTalkEvent(questId); //Beris.
@@ -150,7 +149,9 @@ public class _13403Portal_Predictions extends QuestHandler
                         }
 					} case SET_REWARD: {
 						giveQuestItem(env, 182215797, 1); //Intact Circuit.
-                        changeQuestStep(env, 6, 7, true);
+                        changeQuestStep(env, 6, 7, false);
+						qs.setStatus(QuestStatus.REWARD);
+						updateQuestStatus(env);
 						return closeDialogWindow(env);
 					}
                 }

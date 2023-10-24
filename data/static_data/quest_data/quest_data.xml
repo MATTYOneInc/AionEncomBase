@@ -5456,7 +5456,7 @@
   <quest id="1926" name="Secret Library Access" nameId="1102926" minlevel_permitted="20" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="IMPORTANT">
     <rewards exp="74700" />
     <start_conditions>
-      <finished quest_id="24016" />
+      <finished quest_id="14016" />
     </start_conditions>
     <quest_work_items>
       <quest_work_item item_id="182206022" count="1" />
@@ -12091,6 +12091,9 @@
   </quest>
   <quest id="2938" name="Secret Library Access" nameId="1104138" minlevel_permitted="20" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="IMPORTANT">
     <rewards exp="83700" />
+	<start_conditions>
+      <finished quest_id="24016" />
+    </start_conditions>
     <quest_work_items>
       <quest_work_item item_id="182207026" count="1" />
     </quest_work_items>

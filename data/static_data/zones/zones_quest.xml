@@ -9,9 +9,15 @@
 		<sphere x="225.62485" y="1905.9359" z="170.39845" r="10.0"/>
 	</zone>
 	<!-- Eltnen -->
-	<zone mapid="210020000" name="LF2_SENSORY_AREA_Q1336_210020000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="410.34964" y="940.7636" z="296.0" r="10.0"/>
-	</zone>
+    <zone mapid="210020000" name="LF2_SENSORY_AREA_Q1336_1_210020000" area_type="SPHERE" zone_type="SUB">
+        <sphere x="410.34964" y="940.76361" z="296.0" r="10.0"/>
+    </zone>
+    <zone mapid="210020000" name="LF2_SENSORY_AREA_Q1336_2_210020000" area_type="SPHERE" zone_type="SUB">
+        <sphere x="666.51434" y="1496.7749" z="280.92999" r="10.0"/>
+    </zone>
+    <zone mapid="210020000" name="LF2_SENSORY_AREA_Q1336_3_210020000" area_type="SPHERE" zone_type="SUB">
+        <sphere x="887.58698" y="913.49323" z="289.0" r="10.0"/>
+    </zone>
 	<!-- Verteron -->
 	<zone mapid="210030000" name="LF1A_SENSORY_AREA_Q1194_210030000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="2532.0962" y="1160.4005" z="194.0" r="10.0"/>
@@ -75,10 +81,10 @@
         <sphere x="1586.9154" y="2078.2305" z="155.875" r="10.0"/>
     </zone>
 	<zone mapid="220030000" name="DF1A_ITEMUSEAREA_Q23403A" area_type="SPHERE" zone_type="SUB">
-        <sphere x="1761.3639" y="506.55444" z="247.3006" r="10.0"/>
+        <sphere x="1870.0000" y="1675.0000" z="247.3750" r="10.0"/>
     </zone>
 	<zone mapid="220030000" name="DF1A_ITEMUSEAREA_Q23403B" area_type="SPHERE" zone_type="SUB">
-        <sphere x="1870.0000" y="1675.0000" z="247.3750" r="10.0"/>
+        <sphere x="1761.3639" y="506.55444" z="247.3006" r="10.0"/>
     </zone>
 	<!-- Steel Rake -->
 	<zone mapid="300100000" name="IDShulack_ItemUseArea_Q3200" area_type="SPHERE" zone_type="SUB">

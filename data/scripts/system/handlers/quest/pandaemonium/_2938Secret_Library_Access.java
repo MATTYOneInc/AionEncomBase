@@ -28,7 +28,7 @@ import com.aionemu.gameserver.services.QuestService;
 public class _2938Secret_Library_Access extends QuestHandler
 {
 	public static final int questId = 2938;
-	private final static int[] npcs = {204267, 203557};
+	private final static int[] npcs = {204267};
 	
 	public _2938Secret_Library_Access() {
 		super(questId);

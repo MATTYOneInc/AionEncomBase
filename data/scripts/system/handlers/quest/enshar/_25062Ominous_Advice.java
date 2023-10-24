@@ -58,7 +58,7 @@ public class _25062Ominous_Advice extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 804918) {
+			if (targetId == 804917) {
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);

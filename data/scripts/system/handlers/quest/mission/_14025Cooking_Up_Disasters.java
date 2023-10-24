@@ -36,7 +36,7 @@ public class _14025Cooking_Up_Disasters extends QuestHandler {
 
 	private final static int questId = 14025;
 	private final static int[] npcs = { 203989, 204020, 203901 };
-	private final static int[] mobs = { 211017, 232133, 217090, };
+	private final static int[] mobs = { 211017, 211776, 217090, };
 
 	public _14025Cooking_Up_Disasters() {
 		super(questId);
@@ -73,11 +73,11 @@ public class _14025Cooking_Up_Disasters extends QuestHandler {
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
 			if (var == 5) {
-				int[] kaidan = { 211017, 232133 };
+				int[] kaidan = { 211017, 211776 };
 				int[] kalabar = { 217090 };
 				switch (targetId) {
 					case 211017:
-					case 232133: {
+					case 211776: {
 						return defaultOnKillEvent(env, kaidan, 0, 4, 1); // 1: 4x
 					}
 					case 217090: {
