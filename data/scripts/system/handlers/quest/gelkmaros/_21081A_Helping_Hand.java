@@ -56,7 +56,9 @@ public class _21081A_Helping_Hand extends QuestHandler {
 					case START_DIALOG:
 						return sendQuestDialog(env, 1011);
 					default: {
-						return sendQuestStartDialog(env, 182214016, 1);
+						if (!giveQuestItem(env, 182214017, 1))
+							updateQuestStatus(env);
+						return sendQuestStartDialog(env);
 					}
 				}
 			}
@@ -98,6 +100,7 @@ public class _21081A_Helping_Hand extends QuestHandler {
 							return sendQuestDialog(env, 2375);
 						}
 						case SELECT_REWARD: {
+							removeQuestItem(env, 182214017, 1);
 							return defaultCloseDialog(env, 2, 3, true, true);
 						}
 					}

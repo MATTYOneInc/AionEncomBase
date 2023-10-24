@@ -100,6 +100,7 @@ public class _11077AWeaponOfWorth extends QuestHandler {
 							return sendQuestDialog(env, 2375);
 						}
 						case SELECT_REWARD: {
+							removeQuestItem(env, 182214016, 1);
 							return defaultCloseDialog(env, 2, 3, true, true);
 						}
 					}
