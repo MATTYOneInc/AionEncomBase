@@ -37,25 +37,10 @@ public class _1336Scouting_For_Demokritos extends QuestHandler
 	public void register() {
 		qe.registerQuestNpc(204006).addOnQuestStart(questId); //Demokritos.
 		qe.registerQuestNpc(204006).addOnTalkEvent(questId); //Demokritos.
-		qe.registerOnEnterZone(ZoneName.get("LF2_SENSORY_AREA_Q1336_210020000"), questId);
-	}
-	
-	@Override
-	public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
-		if(zoneName != ZoneName.get("LF2_SENSORY_AREA_Q1336_210020000"))
-			return false;
-		Player player = env.getPlayer();
-		if (player == null)
-			return false;
-		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if(qs == null || qs.getQuestVars().getQuestVars() != 0)
-			return false;
-		if (qs.getStatus() != QuestStatus.START)
-			return false;
-		env.setQuestId(questId);
-		qs.setStatus(QuestStatus.REWARD);
-		updateQuestStatus(env);
-		return true;
+		qe.registerOnEnterZone(ZoneName.get("LF2_SENSORY_AREA_Q1336_1_210020000"), questId);
+		qe.registerOnEnterZone(ZoneName.get("LF2_SENSORY_AREA_Q1336_2_210020000"), questId);
+		qe.registerOnEnterZone(ZoneName.get("LF2_SENSORY_AREA_Q1336_3_210020000"), questId);
+		
 	}
 	
 	@Override
@@ -77,6 +62,41 @@ public class _1336Scouting_For_Demokritos extends QuestHandler
 			if (targetId == 204006) { //Demokritos.
 				return sendQuestEndDialog(env);
 			}
+		}
+		return false;
+	}
+	@Override
+	public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
+		Player player = env.getPlayer();
+		if (player == null)
+			return false;
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs != null && qs.getStatus() == QuestStatus.START) {
+  		    int var = qs.getQuestVarById(0);
+			//int var1 = qs.getQuestVarById(1);
+			//int var2 = qs.getQuestVarById(2);
+			//int var3 = qs.getQuestVarById(3);
+			
+			//if (var == 1) {
+			//if (var == 0) 
+			//{
+				if (zoneName == ZoneName.get("LF2_SENSORY_AREA_Q1336_1_210020000")) {
+					if (var == 0 ) { //&& var1 == 0
+						changeQuestStep(env, 0, 16, false);
+						return true;
+					}
+				} else if (zoneName == ZoneName.get("LF2_SENSORY_AREA_Q1336_2_210020000")) {
+					if (var == 16 ) { //&& var2 == 16
+						changeQuestStep(env, 16, 48, false);
+						return true;
+					}
+				} else if (zoneName == ZoneName.get("LF2_SENSORY_AREA_Q1336_3_210020000")) {
+					if (var == 48 ) { //&&  var3 == 48
+						changeQuestStep(env, 48, 48, true);
+						return true;
+					}
+				}
+			//}
 		}
 		return false;
 	}

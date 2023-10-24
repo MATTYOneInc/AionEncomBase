@@ -79,27 +79,28 @@ public class _1661Finding_The_Forges extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
   		    int var = qs.getQuestVarById(0);
-			int var1 = qs.getQuestVarById(1);
-			int var2 = qs.getQuestVarById(2);
-			int var3 = qs.getQuestVarById(3);
-			if (var == 1) {
+			//int var1 = qs.getQuestVarById(1);
+			//int var2 = qs.getQuestVarById(2);
+			//int var3 = qs.getQuestVarById(3);
+			//if (var == 1) {
+			//if (var == 0) {
 				if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1661_A_210040000")) {
-					if (var1 == 0) {
+					if (var == 0 ) { //&& var1 == 0
 						changeQuestStep(env, 0, 16, false);
 						return true;
 					}
 				} else if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1661_B_210040000")) {
-					if (var2 == 16) {
+					if (var == 16 ) { //&& var1 == 0
 						changeQuestStep(env, 16, 48, false);
 						return true;
 					}
 				} else if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1661_C_210040000")) {
-					if (var3 == 48) {
+					if (var == 48 ) { //&& var1 == 0
 						changeQuestStep(env, 48, 48, true);
 						return true;
 					}
 				}
-			}
+			//}
 		}
 		return false;
 	}

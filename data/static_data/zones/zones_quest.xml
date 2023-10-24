@@ -9,14 +9,17 @@
 		<sphere x="225.62485" y="1905.9359" z="170.39845" r="10.0"/>
 	</zone>
 	<!-- Eltnen -->
+	<zone mapid="210020000" name="LF2_SENSORY_AREA_Q1336_210020000" area_type="SPHERE" zone_type="SUB">
+		<sphere x="410.34964" y="940.7636" z="296.0" r="10.0"/>
+	</zone>
     <zone mapid="210020000" name="LF2_SENSORY_AREA_Q1336_1_210020000" area_type="SPHERE" zone_type="SUB">
-        <sphere x="410.34964" y="940.76361" z="296.0" r="10.0"/>
+        <sphere x="410.34964" y="940.76361" z="293.0" r="15.0"/>
     </zone>
     <zone mapid="210020000" name="LF2_SENSORY_AREA_Q1336_2_210020000" area_type="SPHERE" zone_type="SUB">
-        <sphere x="666.51434" y="1496.7749" z="280.92999" r="10.0"/>
+        <sphere x="666.51434" y="1496.7749" z="270.92999" r="15.0"/>
     </zone>
     <zone mapid="210020000" name="LF2_SENSORY_AREA_Q1336_3_210020000" area_type="SPHERE" zone_type="SUB">
-        <sphere x="887.58698" y="913.49323" z="289.0" r="10.0"/>
+        <sphere x="887.58698" y="913.49323" z="286.0" r="15.0"/>
     </zone>
 	<!-- Verteron -->
 	<zone mapid="210030000" name="LF1A_SENSORY_AREA_Q1194_210030000" area_type="SPHERE" zone_type="SUB">
@@ -39,13 +42,13 @@
 		<sphere x="554.712" y="1019.2897" z="140.0" r="10.0"/>
 	</zone>
 	<zone mapid="210040000" name="LF3_SENSORY_AREA_Q1661_A_210040000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="2350.4553" y="1592.0941" z="127.0" r="10.0"/>
+		<sphere x="2350.4553" y="1592.0941" z="127.0" r="15.0"/>
 	</zone>
 	<zone mapid="210040000" name="LF3_SENSORY_AREA_Q1661_B_210040000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="2435.9749" y="1523.4926" z="129.0" r="10.0"/>
+		<sphere x="2437.9749" y="1523.4926" z="128.0" r="15.0"/>
 	</zone>
 	<zone mapid="210040000" name="LF3_SENSORY_AREA_Q1661_C_210040000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="2505.341" y="1659.8507" z="137.0" r="10.0"/>
+		<sphere x="2505.341" y="1659.8507" z="134.0" r="15.0"/>
 	</zone>
 	<zone mapid="210040000" name="LF3_SENSORY_AREA_Q1670_A_210040000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="2847.48" y="2485.91" z="148.5" r="10.0"/>
@@ -67,6 +70,19 @@
 		<sphere x="1010.8538" y="1681.884" z="196.0" r="10.0"/>
 	</zone>
 	<zone mapid="210130000" name="LF4_SENSORY_AREA_Q11149_C_210130000" area_type="SPHERE" zone_type="SUB">
+		<sphere x="1109.1493" y="1688.0824" z="196.0" r="10.0"/>
+	</zone>
+	<!-- Inggison [Normal Server] -->
+	<zone mapid="210050000" name="LF4_SENSORY_AREA_Q11147_210050000" area_type="SPHERE" zone_type="SUB">
+		<sphere x="1096.5378" y="1129.3385" z="446.0" r="10.0"/>
+	</zone>
+	<zone mapid="210050000" name="LF4_SENSORY_AREA_Q11149_A_210050000" area_type="SPHERE" zone_type="SUB">
+		<sphere x="800.03" y="1412.66" z="196.0" r="10.0"/>
+	</zone>
+	<zone mapid="210050000" name="LF4_SENSORY_AREA_Q11149_B_210050000" area_type="SPHERE" zone_type="SUB">
+		<sphere x="1010.8538" y="1681.884" z="196.0" r="10.0"/>
+	</zone>
+	<zone mapid="210050000" name="LF4_SENSORY_AREA_Q11149_C_210050000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="1109.1493" y="1688.0824" z="196.0" r="10.0"/>
 	</zone>
 	<!-- Theobomos -->
@@ -149,13 +165,21 @@
 	<zone mapid="210070000" name="LF5_SENSORYAREA_Q10507_210070000" area_type="SPHERE" zone_type="SUB">
         <sphere x="375.49576" y="2483.521" z="278.85196" r="10.0"/>
     </zone>
-	<!-- Gelkmaros [Master Server] -->
+    <!-- Gelkmaros [Normal Server] -->
+	<zone mapid="220070000" name="DF4_ITEMUSEAREA_Q20033" area_type="SPHERE" zone_type="SUB">
+		<sphere x="278.7311" y="1535.613" z="356.4207" r="10.0"/>
+	</zone>
+	<zone mapid="220070000" name="DF4_ITEMUSEAREA_Q20035" area_type="SPHERE" zone_type="SUB">
+		<sphere x="1420.7408" y="1076.959" z="316.5951" r="10.0"/>
+	</zone>
+	<!-- Gelkmaros [Master Server] 
 	<zone mapid="220140000" name="DF4_ITEMUSEAREA_Q20033" area_type="SPHERE" zone_type="SUB">
 		<sphere x="278.7311" y="1535.613" z="356.4207" r="10.0"/>
 	</zone>
 	<zone mapid="220140000" name="DF4_ITEMUSEAREA_Q20035" area_type="SPHERE" zone_type="SUB">
 		<sphere x="1420.7408" y="1076.959" z="316.5951" r="10.0"/>
 	</zone>
+	-->
 	<!-- Enshar 4.8 -->
 	<zone mapid="220080000" name="DF5_SENSORYAREA_Q25084_220080000" area_type="SPHERE" zone_type="SUB">
         <sphere x="1478" y="68" z="206.625" r="10.0"/>
