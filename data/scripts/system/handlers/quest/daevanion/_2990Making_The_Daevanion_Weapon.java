@@ -38,7 +38,7 @@ public class _2990Making_The_Daevanion_Weapon extends QuestHandler
 	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 1989, true);
+		return defaultOnLvlUpEvent(env, 2989, true);
 	}
 	
 	@Override
