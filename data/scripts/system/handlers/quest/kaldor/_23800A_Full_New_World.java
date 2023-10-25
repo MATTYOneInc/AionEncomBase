@@ -45,7 +45,7 @@ public class _23800A_Full_New_World extends QuestHandler
 		qe.registerQuestNpc(804719).addOnQuestStart(questId);
 		qe.registerQuestNpc(804719).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804753).addOnTalkEvent(questId);
-		qe.registerQuestNpc(802431).addOnTalkEvent(questId); //Feroz.
+		qe.registerQuestNpc(802433).addOnTalkEvent(questId); //Feroz.
 	}
 	
 	@Override
