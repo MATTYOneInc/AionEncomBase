@@ -39,8 +39,6 @@ public class _28970Opening_Corridors extends QuestHandler
 		qe.registerQuestNpc(804927).addOnQuestStart(questId);
 		qe.registerQuestNpc(804927).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804924).addOnTalkEvent(questId);
-		qe.registerQuestNpc(805216).addOnTalkEvent(questId);
-		qe.registerQuestNpc(805217).addOnTalkEvent(questId);
 		qe.registerQuestNpc(805218).addOnTalkEvent(questId);
 	}
 	
@@ -51,6 +49,7 @@ public class _28970Opening_Corridors extends QuestHandler
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
+		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 804927) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -66,39 +65,25 @@ public class _28970Opening_Corridors extends QuestHandler
 				case 804924: {
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							return sendQuestDialog(env, 1352);
-						} case STEP_TO_1: {
-							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
-							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
-						}
-					}
-				}
-				case 805216:
-				case 805217:
-				case 805218: {
-					switch (env.getDialog()) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
+							return sendQuestDialog(env, 1011);
+						} case SET_REWARD: {
 							qs.setQuestVar(1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
+							return closeDialogWindow(env);
+					}   }
 				}
-			}
+			}	
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 805216 ||
-			    targetId == 805217 ||
-				targetId == 805218) {
+			if (targetId == 805218) {
 				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 10002);
+					}
 					case SELECT_REWARD: {
 						return sendQuestDialog(env, 5);
-					} default:
+					}
+					default:
 						return sendQuestEndDialog(env);
 				}
 			}
