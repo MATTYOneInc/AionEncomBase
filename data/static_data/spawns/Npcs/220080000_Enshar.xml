@@ -790,6 +790,10 @@
         <spawn npc_id="804983" respawn_time="295">
             <spot x="782.3418" y="1278.4918" z="251.5" h="82"/>
         </spawn>
+		<!--"DF5_SensoryArea_Q25084"-->
+		<spawn npc_id="206403" respawn_time="295">
+			<spot x="1478" y="68" z="206.625" h="119"/>
+		</spawn>
         <spawn npc_id="804984" respawn_time="295">
             <spot x="463.6042" y="2293.0398" z="216.45724" h="91"/>
         </spawn>

@@ -158,6 +158,7 @@ public class _20505Ancient_Crystal extends QuestHandler
 			if (var == 4) {
 				playQuestMovie(env, 863);
 				qs.setStatus(QuestStatus.REWARD);
+				changeQuestStep(env, 4, 5, false);
 				updateQuestStatus(env);
 				return true;
 			}

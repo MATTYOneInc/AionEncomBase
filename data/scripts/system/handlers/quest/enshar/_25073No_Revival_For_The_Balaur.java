@@ -66,24 +66,13 @@ public class _25073No_Revival_For_The_Balaur extends QuestHandler
 				}
 				else if (dialog == QuestDialog.SET_REWARD) {
 					removeQuestItem(env, 182215725, 1);
-					changeQuestStep(env, 0, 1, true);
+					qs.setStatus(QuestStatus.REWARD);
+					changeQuestStep(env, 0, 1, false);
+					updateQuestStatus(env);
 					return closeDialogWindow(env);
 				}
-			}
-		
-		else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 804732) {
-				switch (dialog) {
-					case START_DIALOG: {
-						return sendQuestDialog(env, 1011);
-					} case CHECK_COLLECTED_ITEMS: {
-						return checkQuestItems(env, 0, 0, true, 5, 2716);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+			}	
+		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804732) {
 				return sendQuestEndDialog(env);
 			}

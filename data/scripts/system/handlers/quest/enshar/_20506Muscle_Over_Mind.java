@@ -105,6 +105,7 @@ public class _20506Muscle_Over_Mind extends QuestHandler
 						return closeDialogWindow(env);
 					} case SET_REWARD: {
                         qs.setStatus(QuestStatus.REWARD);
+						changeQuestStep(env, 6, 7, false);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);
 					}

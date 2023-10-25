@@ -164,6 +164,7 @@ public class _20507Its_Worse_Than_We_Thought extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (movieId == 864) {
 			qs.setStatus(QuestStatus.REWARD);
+			changeQuestStep(env, 4, 5, false);
 			updateQuestStatus(env);
 			return true;
 		}
