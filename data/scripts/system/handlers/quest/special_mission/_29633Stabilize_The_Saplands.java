@@ -36,7 +36,6 @@ public class _29633Stabilize_The_Saplands extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(205150).addOnQuestStart(questId);
-		qe.registerQuestNpc(205150).addOnTalkEvent(questId);
 		qe.registerQuestNpc(205164).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
@@ -104,6 +103,7 @@ public class _29633Stabilize_The_Saplands extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

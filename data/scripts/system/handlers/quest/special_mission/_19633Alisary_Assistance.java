@@ -36,7 +36,6 @@ public class _19633Alisary_Assistance extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(800411).addOnQuestStart(questId);
-		qe.registerQuestNpc(800411).addOnTalkEvent(questId);
 		qe.registerQuestNpc(205304).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
@@ -104,6 +103,7 @@ public class _19633Alisary_Assistance extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

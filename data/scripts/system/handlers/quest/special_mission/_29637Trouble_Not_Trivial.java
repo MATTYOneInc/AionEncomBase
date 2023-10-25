@@ -42,7 +42,6 @@ public class _29637Trouble_Not_Trivial extends QuestHandler
 	public void register() {
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(799225).addOnQuestStart(questId);
-		qe.registerQuestNpc(799225).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799248).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
@@ -110,6 +109,7 @@ public class _29637Trouble_Not_Trivial extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

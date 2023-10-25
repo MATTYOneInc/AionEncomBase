@@ -47221,7 +47221,7 @@
   <quest id="30162" name="[Group] Better Our Hands Than Yours" nameId="1114285" minlevel_permitted="55" max_repeat_count="200" race_permitted="ASMODIANS" category="QUEST">
     <rewards exp="3453546" ap="306" />
   </quest>
-  <quest id="30201" name="Supplies Party" nameId="1114301" minlevel_permitted="53" max_repeat_count="1" race_permitted="ELYOS" category="IMPORTANT">
+  <quest id="30201" name="Supplies Party" nameId="1114301" minlevel_permitted="55" max_repeat_count="1" race_permitted="ELYOS" category="IMPORTANT">
     <collect_items>
       <collect_item item_id="182209601" count="1" />
     </collect_items>
@@ -47230,7 +47230,7 @@
     </rewards>
     <quest_drop npc_id="216436" item_id="182209601" chance="100" drop_each_member="1" />
   </quest>
-  <quest id="30202" name="Suspicious Ceremony" nameId="1114302" minlevel_permitted="53" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="IMPORTANT">
+  <quest id="30202" name="Suspicious Ceremony" nameId="1114302" minlevel_permitted="55" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="IMPORTANT">
     <rewards exp="6517414">
       <reward_item item_id="186000098" count="1" />
     </rewards>
@@ -47241,7 +47241,7 @@
       <quest_work_item item_id="182209602" />
     </quest_work_items>
   </quest>
-  <quest id="30203" name="[Group] Halt The Ceremony!" nameId="1114303" minlevel_permitted="53" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="IMPORTANT">
+  <quest id="30203" name="[Group] Halt The Ceremony!" nameId="1114303" minlevel_permitted="55" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="IMPORTANT">
     <rewards exp="6517414">
       <selectable_reward_item item_id="121001025" count="1" />
       <selectable_reward_item item_id="121001026" count="1" />
@@ -47250,7 +47250,7 @@
       <finished quest_id="30202" />
     </start_conditions>
   </quest>
-  <quest id="30204" name="Pilomenes' Advice" nameId="1114304" minlevel_permitted="53" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="QUEST">
+  <quest id="30204" name="Pilomenes' Advice" nameId="1114304" minlevel_permitted="55" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="QUEST">
     <rewards exp="6517414">
       <reward_item item_id="186000098" count="1" />
     </rewards>

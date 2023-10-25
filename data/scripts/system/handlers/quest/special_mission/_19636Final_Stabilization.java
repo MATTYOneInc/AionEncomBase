@@ -36,7 +36,6 @@ public class _19636Final_Stabilization extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(205304).addOnQuestStart(questId);
-		qe.registerQuestNpc(205304).addOnTalkEvent(questId);
 		qe.registerQuestNpc(798155).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
@@ -105,6 +104,7 @@ public class _19636Final_Stabilization extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

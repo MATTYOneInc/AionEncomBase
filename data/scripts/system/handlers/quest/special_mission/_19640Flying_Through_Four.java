@@ -36,7 +36,6 @@ public class _19640Flying_Through_Four extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(799022).addOnQuestStart(questId);
-		qe.registerQuestNpc(799022).addOnTalkEvent(questId);
 		qe.registerQuestNpc(798991).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
@@ -103,6 +102,7 @@ public class _19640Flying_Through_Four extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

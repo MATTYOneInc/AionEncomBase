@@ -42,7 +42,6 @@ public class _19631Coastal_Crush extends QuestHandler
 	public void register() {
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(798155).addOnQuestStart(questId);
-		qe.registerQuestNpc(798155).addOnTalkEvent(questId);
 		qe.registerQuestNpc(800411).addOnTalkEvent(questId);
 		qe.registerQuestNpc(214198).addOnKillEvent(questId);
 		qe.registerQuestNpc(214199).addOnKillEvent(questId);
@@ -112,6 +111,7 @@ public class _19631Coastal_Crush extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

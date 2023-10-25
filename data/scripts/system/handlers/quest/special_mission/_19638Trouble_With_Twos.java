@@ -36,7 +36,6 @@ public class _19638Trouble_With_Twos extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(798926).addOnQuestStart(questId);
-		qe.registerQuestNpc(798926).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799022).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
@@ -107,6 +106,7 @@ public class _19638Trouble_With_Twos extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}
