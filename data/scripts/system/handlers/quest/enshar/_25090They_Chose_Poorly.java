@@ -32,8 +32,8 @@ public class _25090They_Chose_Poorly extends QuestHandler
     }
 	
     public void register() {
-        qe.registerQuestNpc(804730).addOnQuestStart(questId);
-        qe.registerQuestNpc(804730).addOnTalkEvent(questId);
+        qe.registerQuestNpc(804928).addOnQuestStart(questId);
+        qe.registerQuestNpc(804928).addOnTalkEvent(questId);
 		qe.registerQuestNpc(220042).addOnKillEvent(questId);
     }
 	
@@ -44,7 +44,7 @@ public class _25090They_Chose_Poorly extends QuestHandler
         QuestState qs = player.getQuestStateList().getQuestState(questId);
         QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-            if (targetId == 804730) {
+            if (targetId == 804928) {
                 if (dialog == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
@@ -52,18 +52,17 @@ public class _25090They_Chose_Poorly extends QuestHandler
                 }
             }
         } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804730) {
+            if (targetId == 804928) {
                 if (dialog == QuestDialog.START_DIALOG) {
                     if (qs.getQuestVarById(0) == 1) {
                         return sendQuestDialog(env, 2375);
                     }
                 } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
                     return sendQuestEndDialog(env);
                 }
 			}
         } else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 804730) {
+			if (targetId == 804928) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);
 				} else {
@@ -82,6 +81,8 @@ public class _25090They_Chose_Poorly extends QuestHandler
                 case 220042:
                 if (qs.getQuestVarById(0) < 1) {
                     qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+					qs.setStatus(QuestStatus.REWARD);
+					changeQuestStep(env, 1, 2, false);
 					updateQuestStatus(env);
                     return true;
                 }

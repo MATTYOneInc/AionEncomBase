@@ -58,7 +58,6 @@ public class _25093A_Royal_Target extends QuestHandler
                         return sendQuestDialog(env, 2375);
                     }
                 } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
                     return sendQuestEndDialog(env);
                 }
 			}
@@ -82,6 +81,8 @@ public class _25093A_Royal_Target extends QuestHandler
                 case 220044:
                 if (qs.getQuestVarById(0) < 1) {
                     qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+					qs.setStatus(QuestStatus.REWARD);
+					changeQuestStep(env, 1, 2, false);
 					updateQuestStatus(env);
                     return true;
                 }

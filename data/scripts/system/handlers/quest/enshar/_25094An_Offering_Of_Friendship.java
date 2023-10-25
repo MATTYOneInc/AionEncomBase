@@ -64,7 +64,7 @@ public class _25094An_Offering_Of_Friendship extends QuestHandler
 				return true;
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 804740) {
+			if (targetId == 804929) {
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
@@ -72,7 +72,7 @@ public class _25094An_Offering_Of_Friendship extends QuestHandler
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
 					} case FINISH_DIALOG: {
 						return sendQuestSelectionDialog(env);
-					}
+					} 
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {

@@ -6330,7 +6330,7 @@
 			<spot x="2646.007" y="369.7472" z="248.875" h="54"/>
 		</spawn>
 		<!-- Queen Malnakai (Boss Elite) -->
-		<spawn npc_id="220044" respawn_time="1800">
+		<spawn npc_id="220044" respawn_time="295">
 			<spot x="2931.2087" y="853.10583" z="231.03676" h="86"/>
 		</spawn>
 		<!-- Cerulescale Buringo (Boss Elite) -->
