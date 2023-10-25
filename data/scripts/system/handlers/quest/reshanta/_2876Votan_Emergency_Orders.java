@@ -35,7 +35,6 @@ public class _2876Votan_Emergency_Orders extends QuestHandler
     public void register() {
 		qe.registerQuestNpc(278001).addOnQuestStart(questId); //Votan.
         qe.registerQuestNpc(278016).addOnTalkEvent(questId); //Lisya.
-		qe.registerQuestNpc(278017).addOnTalkEvent(questId); //Semotor.
 		qe.registerQuestNpc(278001).addOnTalkEvent(questId); //Votan.
     }
 	
@@ -80,6 +79,7 @@ public class _2876Votan_Emergency_Orders extends QuestHandler
 					} case SET_REWARD: {
                         changeQuestStep(env, 1, 2, false);
 						qs.setStatus(QuestStatus.REWARD);
+						updateQuestStatus(env);
 						return closeDialogWindow(env);
                     }
 				}

@@ -153,6 +153,7 @@ public class _20501What_The_Ruins_Say extends QuestHandler
 							return sendQuestDialog(env, 3058);
 						}
 					} case SET_REWARD: {
+						changeQuestStep(env, 6, 7, false); 
                         qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);

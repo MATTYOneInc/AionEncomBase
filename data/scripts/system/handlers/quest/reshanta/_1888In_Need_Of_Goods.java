@@ -39,9 +39,8 @@ public class _1888In_Need_Of_Goods extends QuestHandler
 	public void register() {
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(278591).addOnTalkEvent(questId); //Deidamia.
-		qe.registerQuestNpc(278651).addOnTalkEvent(questId); //Aurunerk.
 		qe.registerQuestNpc(278578).addOnTalkEvent(questId); //Ineias.
-		qe.registerQuestNpc(278592).addOnTalkEvent(questId); //Lamia.
+		qe.registerQuestNpc(278651).addOnTalkEvent(questId); //Aurunerk.
 	}
 	
 	@Override

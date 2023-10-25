@@ -148,6 +148,7 @@ public class _20503Ancient_Evil_Plans extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (movieId == 862) {
 			qs.setStatus(QuestStatus.REWARD);
+			changeQuestStep(env, 3, 4, false);
 			updateQuestStatus(env);
 			return true;
 		}

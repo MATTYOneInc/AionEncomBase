@@ -122,6 +122,7 @@ public class _20504Tiamats_Shadow extends QuestHandler
 						}
 					} case SET_REWARD: {
 						qs.setStatus(QuestStatus.REWARD);
+						changeQuestStep(env, 6, 7, false);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);
 					}
@@ -149,7 +150,6 @@ public class _20504Tiamats_Shadow extends QuestHandler
         if (qs != null && qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			int var1 = qs.getQuestVarById(1);
-			int var2 = qs.getQuestVarById(2);
 			int targetId = env.getTargetId();
             if (var == 1) {
 				int[] mobs1 = {219943, 219944, 219945};
@@ -173,9 +173,9 @@ public class _20504Tiamats_Shadow extends QuestHandler
                     case 219946: //Vengeful Aetheric Guard Dominator.
 					case 219947: //Vengeful Aetheric Guard Swiftshank.
                     case 219948: { //Vengeful Aetheric Guard Seersage.
-                        if (var2 >= 0 && var2 < 4) {
-							return defaultOnKillEvent(env, mobs2, var2, var2 + 1, 2);
-						} else if (var2 == 4) {
+                        if (var1 >= 0 && var1 < 4) {
+							return defaultOnKillEvent(env, mobs2, var1, var1 + 1, 1);
+						} else if (var1 == 4) {
 							qs.setQuestVar(4);
 							updateQuestStatus(env);
 							return true;

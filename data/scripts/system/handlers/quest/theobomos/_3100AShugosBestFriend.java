@@ -42,7 +42,6 @@ public class _3100AShugosBestFriend extends QuestHandler {
 	public void register() {
 		qe.registerQuestNpc(203792).addOnQuestStart(questId);
 		qe.registerQuestNpc(203792).addOnTalkEvent(questId);
-		qe.registerQuestNpc(798168).addOnTalkEvent(questId);
 		qe.registerQuestNpc(798169).addOnTalkEvent(questId);
 	}
 
@@ -94,6 +93,8 @@ public class _3100AShugosBestFriend extends QuestHandler {
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return true;
 						}
+						default:
+							break;
 					}
 				}
 			}

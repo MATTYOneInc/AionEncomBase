@@ -39,9 +39,8 @@ public class _2888Trade_Goods_Needed extends QuestHandler
 	public void register() {
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(278086).addOnTalkEvent(questId); //Sinjah.
-		qe.registerQuestNpc(278151).addOnTalkEvent(questId); //Ickulnerk.
 		qe.registerQuestNpc(278085).addOnTalkEvent(questId); //Durin.
-		qe.registerQuestNpc(278087).addOnTalkEvent(questId); //Gagrad.
+		qe.registerQuestNpc(278151).addOnTalkEvent(questId); //Ickulnerk.
 	}
 	
 	@Override

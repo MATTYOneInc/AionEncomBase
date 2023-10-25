@@ -65,38 +65,33 @@ public class _20502Evolving_Mysteries extends QuestHandler
         int targetId = 0;
         if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
-        } if (qs.getStatus() == QuestStatus.START) {
+        } 
+		if (qs.getStatus() == QuestStatus.START) {
             if (targetId == 804723) {
                 switch (env.getDialog()) {
                     case START_DIALOG: {
                         if (var == 0) {
                             return sendQuestDialog(env, 1011);
                         }
-					} case SELECT_ACTION_1012: {
-						if (var == 0) {
-							return sendQuestDialog(env, 1012);
-						}
 					} case STEP_TO_1: {
                         changeQuestStep(env, 0, 1, false); 
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 804724) {
+            } 
+			if (targetId == 804724) {
                 switch (env.getDialog()) {
                     case START_DIALOG: {
                         if (var == 1) {
                             return sendQuestDialog(env, 1352);
                         }
-					} case SELECT_ACTION_1353: {
-						if (var == 1) {
-							return sendQuestDialog(env, 1353);
-						}
 					} case STEP_TO_2: {
                         changeQuestStep(env, 1, 2, false); 
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 804725) {
+            } 
+			if (targetId == 804725) {
                 switch (env.getDialog()) {
                     case START_DIALOG: {
                         if (var == 2) {
@@ -106,18 +101,6 @@ public class _20502Evolving_Mysteries extends QuestHandler
                         } else if (var == 4) {
                             return sendQuestDialog(env, 2375);
                         }
-					} case SELECT_ACTION_1694: {
-						if (var == 2) {
-							return sendQuestDialog(env, 1694);
-						}
-					} case SELECT_ACTION_2035: {
-						if (var == 3) {
-							return sendQuestDialog(env, 2035);
-						}
-					} case SELECT_ACTION_2376: {
-						if (var == 4) {
-							return sendQuestDialog(env, 2376);
-						}
 					} case STEP_TO_3: {
                         changeQuestStep(env, 2, 3, false);
 						return closeDialogWindow(env);
@@ -134,24 +117,37 @@ public class _20502Evolving_Mysteries extends QuestHandler
 						}
 					}
                 }
-            } if (targetId == 804726) {
+            } 
+			if (targetId == 804726) {
                 switch (env.getDialog()) {
                     case START_DIALOG: {
                         if (var == 5) {
+                            return sendQuestDialog(env, 2716);
+                        }
+					} case STEP_TO_6: {
+						giveQuestItem(env, 182215638, 1);
+						changeQuestStep(env, 5, 6, false);
+						return closeDialogWindow(env);
+					}
+                }
+            }
+        }
+		if (targetId == 804727) {
+                switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        if (var == 6) {
                             return sendQuestDialog(env, 3057);
                         }
-					} case SELECT_ACTION_3058: {
-						if (var == 5) {
-							return sendQuestDialog(env, 3058);
-						}
 					} case SET_REWARD: {
+						removeQuestItem(env, 182215638, 1);
+						changeQuestStep(env, 6, 7, false);
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);
 					}
                 }
-            }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+            }		
+		else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 804723) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

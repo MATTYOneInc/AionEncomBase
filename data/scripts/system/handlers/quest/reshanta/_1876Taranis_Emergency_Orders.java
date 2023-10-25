@@ -35,7 +35,6 @@ public class _1876Taranis_Emergency_Orders extends QuestHandler
 	public void register() {
 		qe.registerQuestNpc(278501).addOnQuestStart(questId); // Mechalis
 		qe.registerQuestNpc(278502).addOnTalkEvent(questId); // Sakmis
-		qe.registerQuestNpc(278503).addOnTalkEvent(questId); // Calon
 		qe.registerQuestNpc(278501).addOnTalkEvent(questId); // Mechalis
 	}
 	
@@ -78,7 +77,9 @@ public class _1876Taranis_Emergency_Orders extends QuestHandler
 					} case SELECT_ACTION_1353: {
 						return sendQuestDialog(env, 1353);
 					} case SET_REWARD: {
-                        changeQuestStep(env, 1, 2, true);
+                        changeQuestStep(env, 1, 2, false);
+						qs.setStatus(QuestStatus.REWARD);
+						updateQuestStatus(env);
 						return closeDialogWindow(env);
                     }
 				}
