@@ -165,21 +165,22 @@
 	<zone mapid="210070000" name="LF5_SENSORYAREA_Q10507_210070000" area_type="SPHERE" zone_type="SUB">
         <sphere x="375.49576" y="2483.521" z="278.85196" r="10.0"/>
     </zone>
-    <!-- Gelkmaros [Normal Server] -->
+    <!-- Gelkmaros [Normal Server] 
 	<zone mapid="220070000" name="DF4_ITEMUSEAREA_Q20033" area_type="SPHERE" zone_type="SUB">
 		<sphere x="278.7311" y="1535.613" z="356.4207" r="10.0"/>
 	</zone>
 	<zone mapid="220070000" name="DF4_ITEMUSEAREA_Q20035" area_type="SPHERE" zone_type="SUB">
 		<sphere x="1420.7408" y="1076.959" z="316.5951" r="10.0"/>
 	</zone>
-	<!-- Gelkmaros [Master Server] 
+	-->
+	<!-- Gelkmaros [Master Server] -->
 	<zone mapid="220140000" name="DF4_ITEMUSEAREA_Q20033" area_type="SPHERE" zone_type="SUB">
 		<sphere x="278.7311" y="1535.613" z="356.4207" r="10.0"/>
 	</zone>
 	<zone mapid="220140000" name="DF4_ITEMUSEAREA_Q20035" area_type="SPHERE" zone_type="SUB">
 		<sphere x="1420.7408" y="1076.959" z="316.5951" r="10.0"/>
 	</zone>
-	-->
+	
 	<!-- Enshar 4.8 -->
 	<zone mapid="220080000" name="DF5_SENSORYAREA_Q25084_220080000" area_type="SPHERE" zone_type="SUB">
         <sphere x="1478" y="68" z="206.625" r="10.0"/>
