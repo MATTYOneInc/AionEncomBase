@@ -88,7 +88,7 @@ public class _10033Petrified_Subside extends QuestHandler
 							removeQuestItem(env, 182215625, 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							return checkQuestItems(env, 6, 7, true, 10000, 10001);
+							return defaultCloseDialog(env, 6, 7);
                         }
 					}
 					break;
@@ -128,7 +128,7 @@ public class _10033Petrified_Subside extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 798975) {
+			if (targetId == 798970) {
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				} else {
