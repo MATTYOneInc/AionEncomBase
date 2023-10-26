@@ -135,7 +135,8 @@ public class _10032Help_In_The_Hollow extends QuestHandler
 						PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403080));
 						return true;
 					} else {
-						if (giveQuestItem(env, 182215618, 1) && giveQuestItem(env, 182215619, 1)) {
+						//if (giveQuestItem(env, 182215618, 1) && giveQuestItem(env, 182215619, 1)) {
+						if (var == 2) { //detele if you want return giveitem 
 							WorldMapInstance talocHollow = InstanceService.getNextAvailableInstance(300190000);
 							InstanceService.registerPlayerWithInstance(talocHollow, player);
 							TeleportService2.teleportTo(player, 300190000, talocHollow.getInstanceId(), 202.26694f, 226.0532f, 1098.236f, (byte) 30);

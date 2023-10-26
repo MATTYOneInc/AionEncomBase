@@ -50,6 +50,7 @@ public class _10034Found_Underground extends QuestHandler
 		qe.registerQuestItem(182215628, questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerQuestNpc(216531).addOnKillEvent(questId);
+		qe.registerOnQuestTimerEnd(questId);
 	}
 	
 	@Override
@@ -200,6 +201,7 @@ public class _10034Found_Underground extends QuestHandler
 				qs.setStatus(QuestStatus.REWARD);
 				updateQuestStatus(env);
 				TeleportService2.teleportTo(env.getPlayer(), 210130000, 389.17194f, 980.16077f, 460.25f, (byte) 2);
+				QuestService.questTimerEnd(env);
 				return HandlerResult.SUCCESS;
 			}
 		}

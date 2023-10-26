@@ -82,9 +82,9 @@ public class _10035Soar_To_The_Corridor extends QuestHandler
                         } case STEP_TO_1: {
                             return defaultCloseDialog(env, 0, 1);
                         } case SET_REWARD: {
-                            qs.setQuestVar(8);
+							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-                            return defaultCloseDialog(env, 8, 8, true, false);
+                            return defaultCloseDialog(env, 7, 8);
                         }
                     }
                     break;
@@ -129,8 +129,6 @@ public class _10035Soar_To_The_Corridor extends QuestHandler
                             if (var == 6) {
                                 removeQuestItem(env, 182215629, 1);
 								Npc npc = (Npc) env.getVisibleObject();
-								npc.getController().scheduleRespawn();
-								npc.getController().onDelete();
 								qs.setQuestVar(7);
 								updateQuestStatus(env);
 								return closeDialogWindow(env);
@@ -142,7 +140,7 @@ public class _10035Soar_To_The_Corridor extends QuestHandler
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 798926) {
-                if (env.getDialog() == QuestDialog.USE_OBJECT) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
                 } else {
                     return sendQuestEndDialog(env);

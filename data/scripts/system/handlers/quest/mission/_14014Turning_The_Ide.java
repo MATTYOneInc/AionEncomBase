@@ -20,7 +20,6 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
@@ -105,18 +104,19 @@ public class _14014Turning_The_Ide extends QuestHandler
                                 return sendQuestDialog(env, 2034);
                             }
                         } case CHECK_COLLECTED_ITEMS: {
-						    if (QuestService.collectItemCheck(env, true)) {
-							    changeQuestStep(env, 3, 5, false);
-							    return sendQuestDialog(env, 10000);
-						    } else {
-							    return sendQuestDialog(env, 10001);
-						    }
-					    }
-                    }
-                    break;
-                }
-            }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+							return checkQuestItems(env, 3, 5, false, 10000, 10001); // 5
+						}
+						case FINISH_DIALOG: {
+							return sendQuestSelectionDialog(env);
+						}
+						default:
+							break;
+					}
+					break;
+				}
+			}
+		}
+		else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 203098) { //Spatalos.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
