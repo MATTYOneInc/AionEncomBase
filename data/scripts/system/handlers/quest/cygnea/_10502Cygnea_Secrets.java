@@ -122,7 +122,6 @@ public class _10502Cygnea_Secrets extends QuestHandler
             } if (targetId == 702669) { //Shining Lump Of Soil.
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
-                        giveQuestItem(env, 182215600, 1);
 						return closeDialogWindow(env);
 					}
                 }

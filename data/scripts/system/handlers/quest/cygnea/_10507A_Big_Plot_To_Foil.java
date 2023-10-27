@@ -241,6 +241,7 @@ public class _10507A_Big_Plot_To_Foil extends QuestHandler
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (movieId == 993) {
 			qs.setStatus(QuestStatus.REWARD);
+			changeQuestStep(env, 7, 8, false);
 			updateQuestStatus(env);
 			return true;
 		}

@@ -120,6 +120,7 @@ public class _10506Mind_Over_Matter extends QuestHandler
 					} case SET_REWARD: {
 						giveQuestItem(env, 182215613, 1);
 						qs.setStatus(QuestStatus.REWARD);
+						changeQuestStep(env, 6, 7, false);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);
 					}
@@ -140,7 +141,7 @@ public class _10506Mind_Over_Matter extends QuestHandler
                 }
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 804710) {
+			if (targetId == 804709) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 10002);
 				} else {
