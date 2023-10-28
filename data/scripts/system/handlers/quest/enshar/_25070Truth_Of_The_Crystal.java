@@ -57,13 +57,16 @@ public class _25070Truth_Of_The_Crystal extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (targetId == 731552) {
+		} 
+		else if (targetId == 731552) {
 			if (dialog == QuestDialog.USE_OBJECT) {
 				giveQuestItem(env, 182215723, 1);
-				changeQuestStep(env, 0, 1, true);
-				return true;
+				qs.setStatus(QuestStatus.REWARD);
+				changeQuestStep(env, 0, 1, false);
+				updateQuestStatus(env);
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} 
+		else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 804919) {
 				switch (dialog) {
 					case START_DIALOG: {
@@ -75,7 +78,8 @@ public class _25070Truth_Of_The_Crystal extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804919) {
 				return sendQuestEndDialog(env);
 			}

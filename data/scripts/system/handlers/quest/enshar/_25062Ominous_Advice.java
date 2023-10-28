@@ -57,19 +57,21 @@ public class _25062Ominous_Advice extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} 
+		else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 804917) {
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
-						return checkQuestItems(env, 0, 0, true, 5, 2716);
+						return checkQuestItems(env, 0, 0, true, 10000, 10001);
 					} case FINISH_DIALOG: {
 						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804918) {
 				return sendQuestEndDialog(env);
 			}

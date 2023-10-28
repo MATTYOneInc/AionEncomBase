@@ -47,7 +47,7 @@ public class _25232Treasure_Chest_Keys extends QuestHandler
 			if (targetId == 805226) {
 				switch (dialog) {
 					case START_DIALOG: {
-						return sendQuestDialog(env, 4762);
+						return sendQuestDialog(env, 1011);
 					}
 					case ACCEPT_QUEST:
 					case ACCEPT_QUEST_SIMPLE:
@@ -60,8 +60,8 @@ public class _25232Treasure_Chest_Keys extends QuestHandler
 			if (targetId == 805226) {
 				switch (dialog) {
 					case START_DIALOG: {
-						return sendQuestDialog(env, 1011);
-					} case CHECK_COLLECTED_ITEMS: {
+						return sendQuestDialog(env, 2375);
+					} case CHECK_COLLECTED_ITEMS_SIMPLE: {
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
 					} case FINISH_DIALOG: {
 						return sendQuestSelectionDialog(env);
