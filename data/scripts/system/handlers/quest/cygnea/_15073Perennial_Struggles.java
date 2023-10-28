@@ -34,10 +34,10 @@ public class _15073Perennial_Struggles extends QuestHandler
     public void register() {
         qe.registerQuestNpc(804709).addOnQuestStart(questId);
         qe.registerQuestNpc(804709).addOnTalkEvent(questId);
-		qe.registerQuestNpc(235888).addOnKillEvent(questId);
-		qe.registerQuestNpc(235889).addOnKillEvent(questId);
 		qe.registerQuestNpc(235892).addOnKillEvent(questId);
 		qe.registerQuestNpc(235893).addOnKillEvent(questId);
+		qe.registerQuestNpc(235888).addOnKillEvent(questId);
+		qe.registerQuestNpc(235889).addOnKillEvent(questId);
     }
 	
     @Override
@@ -57,9 +57,7 @@ public class _15073Perennial_Struggles extends QuestHandler
         } else if (qs.getStatus() == QuestStatus.START) {
             if (targetId == 804709) {
                 if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 5) {
-                        return sendQuestDialog(env, 2375);
-                    }
+                    return sendQuestDialog(env, 2375);
                 } if (dialog == QuestDialog.SELECT_REWARD) {
                     changeQuestStep(env, 5, 6, true);
                     return sendQuestEndDialog(env);
@@ -81,20 +79,53 @@ public class _15073Perennial_Struggles extends QuestHandler
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
         if (qs != null && qs.getStatus() == QuestStatus.START) {
-            switch (env.getTargetId()) {
-				case 235888:
-				case 235889:
-				case 235892:
-				case 235893:
-                if (qs.getQuestVarById(1) < 5) {
-					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
-					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 5) {
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
+			int var = qs.getQuestVarById(0);
+			if (var == 0) {
+				int[] ettins = { 235892, 235893 };
+				int[] lizards = { 235888, 235889 };
+				int targetId = env.getTargetId();
+				int var1 = qs.getQuestVarById(1);
+				int var2 = qs.getQuestVarById(2);
+				switch (targetId) {
+					case 235888:
+					case 235889: {
+						if (var1 < 4) {
+							return defaultOnKillEvent(env, lizards, 0, 4, 1);
+						}
+						else if (var1 == 4) {
+							if (var2 == 5) {
+								qs.setQuestVar(1);
+								qs.setStatus(QuestStatus.REWARD);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, lizards, 4, 5, 1);
+							}
+						}
+						break;
+					}
+					case 235892:
+					case 235893: {
+						if (var2 < 4) {
+							return defaultOnKillEvent(env, ettins, 0, 4, 2);
+						}
+						else if (var2 == 4) {
+							if (var1 == 5) {
+								qs.setQuestVar(1);
+								qs.setStatus(QuestStatus.REWARD);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, ettins, 4, 5, 2);
+							}
+						}
+						break;
+					}
 				}
-            }
-        }
-        return false;
-    }
+			}
+		}
+		return false;
+	}
 }

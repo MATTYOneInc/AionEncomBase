@@ -63,7 +63,7 @@ public class _13900When_Kaisinel_Calls extends QuestHandler
 						} case SELECT_ACTION_1353: {
 							return sendQuestDialog(env, 1353);
 						} case STEP_TO_1: {
-							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+							qs.setQuestVar(1);
 							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return true;
@@ -76,7 +76,7 @@ public class _13900When_Kaisinel_Calls extends QuestHandler
 						} case SELECT_ACTION_1694: {
 							return sendQuestDialog(env, 1694);
 						} case STEP_TO_2: {
-							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+							qs.setQuestVar(2);
 							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return true;
@@ -89,9 +89,9 @@ public class _13900When_Kaisinel_Calls extends QuestHandler
 						} case SELECT_ACTION_2035: {
 							return sendQuestDialog(env, 2035);
 						} case STEP_TO_3: {
-							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
-							updateQuestStatus(env);
+							qs.setQuestVar(3);
 							qs.setStatus(QuestStatus.REWARD);
+							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return true;
 						}

@@ -46,18 +46,19 @@ public class _25050Treasure_In_The_Deep_Sea extends QuestHandler
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-        int var = qs.getQuestVarById(0);
+		QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 804915) {
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                if (dialog == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
         } else if (qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
             if (targetId == 804915) {
-                switch (env.getDialog()) {
+                switch (dialog) {
 					case START_DIALOG: {
 					    if (var == 0) {
 							return sendQuestDialog(env, 1011);
@@ -82,31 +83,32 @@ public class _25050Treasure_In_The_Deep_Sea extends QuestHandler
 					}
 				}
             } if (targetId == 731553) {
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                if (dialog == QuestDialog.USE_OBJECT) {
                     if (var == 2 && player.getInventory().getItemCountByItemId(182215719) == 1) {
                         return sendQuestDialog(env, 1693);
                     }
-                } else if (env.getDialog() == QuestDialog.STEP_TO_3) {
+                } else if (dialog == QuestDialog.STEP_TO_3) {
 					removeQuestItem(env, 182215719, 1);
 					QuestService.addNewSpawn(220080000, player.getInstanceId(), 805160, 2046.8f, 1588.8f, 348.4f, (byte) 90);
 					changeQuestStep(env, 2, 3, false);
                     return closeDialogWindow(env);
                 }
             } if (targetId == 805160) {
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                if (dialog == QuestDialog.START_DIALOG) {
                     if (var == 3) {
                         return sendQuestDialog(env, 2034);
                     }
-                } else if (env.getDialog() == QuestDialog.SET_REWARD) {
+                } else if (dialog == QuestDialog.SET_REWARD) {
 					Npc npc = (Npc) env.getVisibleObject();
                     npc.getController().onDelete();
-					changeQuestStep(env, 3, 3, true);
+					qs.setStatus(QuestStatus.REWARD);
+					changeQuestStep(env, 3, 4, false);
                     return closeDialogWindow(env);
                 }
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 804915) {
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                if (dialog == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 2376);
                 } else {
                     return sendQuestEndDialog(env);

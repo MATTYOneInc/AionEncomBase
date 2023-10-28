@@ -39,7 +39,6 @@ public class _16942Foundry_Finds extends QuestHandler
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(802350).addOnQuestStart(questId); //Eljer.
 		qe.registerQuestNpc(802350).addOnTalkEvent(questId); //Eljer.
 		qe.registerQuestNpc(206361).addOnTalkEvent(questId); //Ketesivius.

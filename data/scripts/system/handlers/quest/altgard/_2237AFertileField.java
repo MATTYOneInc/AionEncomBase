@@ -38,7 +38,6 @@ public class _2237AFertileField extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(832822).addOnQuestStart(questId);
-		qe.registerQuestNpc(203629).addOnTalkEvent(questId);
 		qe.registerQuestNpc(700145).addOnTalkEvent(questId);
 	}
 
@@ -67,12 +66,12 @@ public class _2237AFertileField extends QuestHandler {
 					}
 					break;
 				}
-				case 203629: { // Daike
+				case 832822: { // Anmurnerk
 					switch (dialog) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 2375);
 						}
-						case CHECK_COLLECTED_ITEMS: {
+						case CHECK_COLLECTED_ITEMS_SIMPLE: {
 							return checkQuestItems(env, 0, 0, true, 5, 2716);
 						}
 						case FINISH_DIALOG: {
@@ -83,7 +82,7 @@ public class _2237AFertileField extends QuestHandler {
 			}
 		}
 		else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 203629) { // Daike
+			if (targetId == 832822) { // Anmurnerk
 				return sendQuestEndDialog(env);
 			}
 		}

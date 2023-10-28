@@ -57,9 +57,7 @@ public class _15001Lending_Both_Hands extends QuestHandler
         } else if (qs.getStatus() == QuestStatus.START) {
             if (targetId == 804698) {
                 if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 5) {
-                        return sendQuestDialog(env, 2375);
-                    }
+                    return sendQuestDialog(env, 2375);
                 } if (dialog == QuestDialog.SELECT_REWARD) {
                     changeQuestStep(env, 5, 6, true);
                     return sendQuestEndDialog(env);
@@ -81,20 +79,53 @@ public class _15001Lending_Both_Hands extends QuestHandler
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
         if (qs != null && qs.getStatus() == QuestStatus.START) {
-            switch (env.getTargetId()) {
-                case 235790:
-				case 235791:
-				case 235799:
-				case 235800:
-                if (qs.getQuestVarById(1) < 5) {
-					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
-					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 5) {
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
+			int var = qs.getQuestVarById(0);
+			if (var == 0) {
+				int[] varans = { 235790, 235791 };
+				int[] lizards = { 235799, 235800 };
+				int targetId = env.getTargetId();
+				int var1 = qs.getQuestVarById(1);
+				int var2 = qs.getQuestVarById(2);
+				switch (targetId) {
+					case 235790:
+					case 235791: {
+						if (var1 < 4) {
+							return defaultOnKillEvent(env, varans, 0, 4, 1);
+						}
+						else if (var1 == 4) {
+							if (var2 == 5) {
+								qs.setQuestVar(1);
+								qs.setStatus(QuestStatus.REWARD);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, varans, 4, 5, 1);
+							}
+						}
+						break;
+					}
+					case 235799:
+					case 235800: {
+						if (var2 < 4) {
+							return defaultOnKillEvent(env, lizards, 0, 4, 2);
+						}
+						else if (var2 == 4) {
+							if (var1 == 5) {
+								qs.setQuestVar(1);
+								qs.setStatus(QuestStatus.REWARD);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, lizards, 4, 5, 2);
+							}
+						}
+						break;
+					}
 				}
-            }
-        }
-        return false;
-    }
-}
+			}
+		}
+		return false;
+	}
+}	

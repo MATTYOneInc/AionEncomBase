@@ -24,6 +24,7 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.utils.PacketSendUtility;
+import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /****/
@@ -162,12 +163,11 @@ public class _2007Wheres_Rae_This_Time extends QuestHandler
 						break;
 						case STEP_TO_6:
 							if (var == 8) {
-								qs.setQuestVar(9);
-								updateQuestStatus(env);
 								qs.setQuestVar(8);
+								updateQuestStatus(env);
 								qs.setStatus(QuestStatus.REWARD);
 								updateQuestStatus(env);
-								closeDialogWindow(env);
+								TeleportService2.teleportTo(env.getPlayer(), 220010000, 590.01886f, 2453.0552f, 279.375f, (byte) 79);
 								return true;
 							}
 						break;

@@ -40,7 +40,6 @@ public class _23403Weapons_Here_Weapons_There extends QuestHandler
 	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203557).addOnQuestStart(questId); //Suthran.
 		qe.registerQuestNpc(203559).addOnTalkEvent(questId); //Meiyer.
 		qe.registerQuestNpc(203560).addOnTalkEvent(questId); //Morn.

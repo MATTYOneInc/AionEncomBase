@@ -56,9 +56,7 @@ public class _15100Desert_Vermin extends QuestHandler
         } else if (qs.getStatus() == QuestStatus.START) {
             if (targetId == 804711) {
                 if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 5) {
-                        return sendQuestDialog(env, 2375);
-                    }
+                    return sendQuestDialog(env, 2375);
                 } if (dialog == QuestDialog.SELECT_REWARD) {
                     changeQuestStep(env, 5, 6, true);
                     return sendQuestEndDialog(env);
@@ -80,19 +78,51 @@ public class _15100Desert_Vermin extends QuestHandler
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
         if (qs != null && qs.getStatus() == QuestStatus.START) {
-            switch (env.getTargetId()) {
-				case 235941:
-				case 235942:
-				case 235946:
-                if (qs.getQuestVarById(1) < 5) {
-					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
-					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 5) {
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
+			int var = qs.getQuestVarById(0);
+			if (var == 0) {
+				int[] mobs = { 235941, 235942 };
+				int targetId = env.getTargetId();
+				int var1 = qs.getQuestVarById(1);
+				int var2 = qs.getQuestVarById(2);
+				switch (targetId) {
+					case 235941:
+					case 235942: {
+						if (var1 < 4) {
+							return defaultOnKillEvent(env, mobs, 0, 4, 1);
+						}
+						else if (var1 == 4) {
+							if (var2 == 5) {
+								qs.setQuestVar(1);
+								qs.setStatus(QuestStatus.REWARD);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, mobs, 4, 5, 1);
+							}
+						}
+						break;
+					}
+					case 235946: {
+						if (var2 < 4) {
+							return defaultOnKillEvent(env, 235946, 0, 4, 2);
+						}
+						else if (var2 == 4) {
+							if (var1 == 5) {
+								qs.setQuestVar(1);
+								qs.setStatus(QuestStatus.REWARD);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, 235946, 4, 5, 2);
+							}
+						}
+						break;
+					}
 				}
-            }
-        }
-        return false;
-    }
+			}
+		}
+		return false;
+	}
 }

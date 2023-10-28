@@ -49,7 +49,7 @@ public class _25051Treasure_Of_Ancient_King extends QuestHandler
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-        int var = qs.getQuestVarById(0);
+        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 804915) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -59,8 +59,9 @@ public class _25051Treasure_Of_Ancient_King extends QuestHandler
                 }
             }
         } else if (qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
 			if (targetId == 731553) {
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.USE_OBJECT) {
                     if (var == 0) {
                         return sendQuestDialog(env, 1011);
                     }
@@ -81,7 +82,7 @@ public class _25051Treasure_Of_Ancient_King extends QuestHandler
                     return closeDialogWindow(env);
                 }
             } if (targetId == 731554) {
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.USE_OBJECT) {
                     if (var == 2) {
                         return sendQuestDialog(env, 1693);
                     }
@@ -91,20 +92,21 @@ public class _25051Treasure_Of_Ancient_King extends QuestHandler
                     return closeDialogWindow(env);
                 }
             } if (targetId == 731555) {
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.USE_OBJECT) {
                     if (var == 3) {
                         return sendQuestDialog(env, 2034);
                     }
-                } else if (env.getDialog() == QuestDialog.SET_REWARD) {
+                } else if (dialog == QuestDialog.SET_REWARD) {
 					removeQuestItem(env, 182215720, 1);
 					QuestService.addNewSpawn(220080000, player.getInstanceId(), 220031, 1933.8f, 1418.8f, 359.6f, (byte) 37);
-					changeQuestStep(env, 3, 4, true);
+					qs.setStatus(QuestStatus.REWARD);
+					changeQuestStep(env, 3, 4, false);
                     return closeDialogWindow(env);
                 }
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 804916) {
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                if (dialog == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 2376);
                 } else {
                     return sendQuestEndDialog(env);
