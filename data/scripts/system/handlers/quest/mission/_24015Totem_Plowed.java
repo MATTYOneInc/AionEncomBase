@@ -76,7 +76,7 @@ public class _24015Totem_Plowed extends QuestHandler
 						}
 					} case STEP_TO_1: {
                         if (var == 0) {
-							SkillEngine.getInstance().getSkill(player, 272, 1, player).useSkill(); //Mau Transformation.
+							SkillEngine.getInstance().applyEffectDirectly(272, player, player, 0); //Mau Transformation.
 							return defaultCloseDialog(env, 0, 1);
 						}
                     }
