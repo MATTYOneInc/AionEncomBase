@@ -39,7 +39,6 @@ public class _26942A_Jump_Ahead extends QuestHandler
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(802353).addOnQuestStart(questId); //Yasan.
 		qe.registerQuestNpc(802353).addOnTalkEvent(questId); //Yasan.
 		qe.registerQuestNpc(206362).addOnTalkEvent(questId); //Aitu.

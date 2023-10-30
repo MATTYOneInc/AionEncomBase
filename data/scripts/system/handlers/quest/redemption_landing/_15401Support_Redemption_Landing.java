@@ -77,6 +77,7 @@ public class _15401Support_Redemption_Landing extends QuestHandler
 						} case SET_REWARD: {
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
+							changeQuestStep(env, 0, 1, false);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return true;
 						}

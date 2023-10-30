@@ -1911,7 +1911,7 @@
             <spot x="1619.9393" y="1798.6019" z="197.64928" h="41" random_walk="2"/>
 		</spawn>
 		<!-- DF6_A1_WoodTesinon_66_An -->
-		<spawn npc_id="240375" respawn_time="295">
+		<spawn npc_id="241502" respawn_time="295">
 		    <spot x="1432.5385" y="2118.0615" z="175.18846" h="92" random_walk="2"/>
             <spot x="1461.6398" y="2050.0322" z="173.71707" h="110" random_walk="2"/>
             <spot x="1437.7249" y="1903.769" z="182.52734" h="69" random_walk="2"/>
@@ -1935,7 +1935,7 @@
             <spot x="1422.0372" y="1890.3269" z="176.9024" h="51" random_walk="2"/>
 		</spawn>
 		<!-- DF6_A1_WoodTesinon_67_An -->
-		<spawn npc_id="240376" respawn_time="295">
+		<spawn npc_id="241503" respawn_time="295">
 			<spot x="1467.0" y="1903.0" z="188.125" h="101" random_walk="2"/>
             <spot x="1483.3516" y="1929.6567" z="190.0484" h="105" random_walk="2"/>
             <spot x="1487.8224" y="1897.3088" z="191.36389" h="74" random_walk="2"/>
@@ -1958,7 +1958,7 @@
             <spot x="1384.0" y="1947.0" z="180.125" h="72" random_walk="2"/>
 		</spawn>
 		<!-- DF6_A1_Popoku_As_66_An -->
-		<spawn npc_id="240377" respawn_time="295">
+		<spawn npc_id="241504" respawn_time="295">
 		    <spot x="1828.8242" y="2317.4648" z="204.50659" h="91" random_walk="2"/>
             <spot x="1738.2662" y="2343.4424" z="202.84238" h="70" random_walk="2"/>
             <spot x="1826.0503" y="2357.237" z="211.94917" h="83" random_walk="2"/>
@@ -1982,7 +1982,7 @@
             <spot x="1904.3019" y="2355.5952" z="216.56903" h="58" random_walk="2"/>
 		</spawn>
 		<!-- DF6_A1_Popoku_As_67_An -->
-		<spawn npc_id="240378" respawn_time="295">
+		<spawn npc_id="241505" respawn_time="295">
 			<spot x="1618.9945" y="2346.2566" z="201.0" h="29" random_walk="2"/>
             <spot x="1780.9045" y="2361.2795" z="213.10298" h="68" random_walk="2"/>
             <spot x="1589.5259" y="2326.5942" z="204.06573" h="42" random_walk="2"/>
@@ -2205,78 +2205,6 @@
             <spot x="1814.0" y="1679.0" z="224.25" h="21" random_walk="2"/>
             <spot x="1754.0" y="1395.0" z="225.5" h="40" random_walk="2"/>
 		</spawn>
-		<!-- DF6_A2_Hiiv_67_N -->
-		<spawn npc_id="240383" respawn_time="295">
-		    <spot x="1502.7959" y="1457.018" z="199.875" h="50" random_walk="2"/>
-            <spot x="1594.9678" y="1698.0651" z="200.0" h="38" random_walk="2"/>
-            <spot x="1808.1389" y="1481.3699" z="217.625" h="27" random_walk="2"/>
-            <spot x="1822.0725" y="1623.9568" z="222.375" h="109" random_walk="2"/>
-            <spot x="1143.8726" y="1462.965" z="205.0" h="4" random_walk="2"/>
-            <spot x="1458.0" y="1527.0" z="208.25" h="20" random_walk="2"/>
-            <spot x="1486.0065" y="1453.9133" z="200.0" h="91" random_walk="2"/>
-            <spot x="1384.6228" y="1575.9808" z="221.33728" h="17" random_walk="2"/>
-            <spot x="1773.0" y="1648.0" z="222.5" h="10" random_walk="2"/>
-            <spot x="1765.0" y="1529.0" z="217.5" h="107" random_walk="2"/>
-            <spot x="1502.5221" y="1402.8661" z="199.875" h="22" random_walk="2"/>
-            <spot x="1103.0" y="1647.0" z="253.5" h="93" random_walk="2"/>
-            <spot x="1531.1453" y="1238.0825" z="206.375" h="9" random_walk="2"/>
-            <spot x="1594.8445" y="1598.9294" z="200.19191" h="8" random_walk="2"/>
-            <spot x="1591.0" y="1207.0" z="206.875" h="42" random_walk="2"/>
-            <spot x="1364.0" y="1515.0" z="200.0" h="108" random_walk="2"/>
-            <spot x="1582.0" y="1249.0" z="206.875" h="111" random_walk="2"/>
-            <spot x="1607.0" y="1275.0" z="206.875" h="69" random_walk="2"/>
-            <spot x="1790.0" y="1593.0" z="222.375" h="7" random_walk="2"/>
-            <spot x="1612.6488" y="1487.9841" z="202.75" h="40" random_walk="2"/>
-            <spot x="1485.1832" y="1473.5488" z="199.875" h="31" random_walk="2"/>
-            <spot x="1760.0" y="1495.0" z="217.5" h="4" random_walk="2"/>
-            <spot x="1516.6458" y="1548.9395" z="203.31628" h="108" random_walk="2"/>
-            <spot x="1550.0" y="1448.0" z="199.875" h="30" random_walk="2"/>
-            <spot x="1432.9287" y="1582.2253" z="218.91151" h="94" random_walk="2"/>
-            <spot x="1560.7301" y="1523.8217" z="199.95438" h="42" random_walk="2"/>
-            <spot x="1793.0" y="1664.0" z="222.5" h="28" random_walk="2"/>
-            <spot x="1579.0" y="1523.0" z="201.5625" h="83" random_walk="2"/>
-            <spot x="1582.0" y="1341.0" z="206.875" h="48" random_walk="2"/>
-            <spot x="1599.0952" y="1616.6648" z="200.0" h="7" random_walk="2"/>
-            <spot x="1456.9867" y="1487.6179" z="200.95058" h="89" random_walk="2"/>
-            <spot x="1523.6848" y="1431.942" z="199.875" h="63" random_walk="2"/>
-            <spot x="1494.0" y="1425.0" z="200.3125" h="59" random_walk="2"/>
-		</spawn>
-		<!-- DF6_A2_Hiiv_68_N -->
-		<spawn npc_id="240384" respawn_time="295">
-			<spot x="1609.0" y="1684.0" z="200.0" h="69" random_walk="2"/>
-            <spot x="1567.1879" y="1318.9302" z="206.875" h="53" random_walk="2"/>
-            <spot x="1175.4257" y="1439.4058" z="205.0" h="14" random_walk="2"/>
-            <spot x="1568.8225" y="1538.1959" z="202.08502" h="57" random_walk="2"/>
-            <spot x="1507.6534" y="1477.2924" z="199.875" h="44" random_walk="2"/>
-            <spot x="1116.3793" y="1480.2751" z="205.0" h="11" random_walk="2"/>
-            <spot x="1209.8762" y="1658.2255" z="233.375" h="96" random_walk="2"/>
-            <spot x="1605.0" y="1656.0" z="200.0" h="81" random_walk="2"/>
-            <spot x="1282.0" y="1415.0" z="205.125" h="38" random_walk="2"/>
-            <spot x="1474.2363" y="1511.6621" z="203.22272" h="30" random_walk="2"/>
-            <spot x="1459.0" y="1460.0" z="199.9375" h="94" random_walk="2"/>
-            <spot x="1538.0" y="1262.0" z="206.75" h="20" random_walk="2"/>
-            <spot x="1737.0" y="1487.0" z="217.375" h="26" random_walk="2"/>
-            <spot x="1655.5945" y="1531.534" z="202.75" h="75" random_walk="2"/>
-            <spot x="1384.0" y="1456.0" z="205.625" h="49" random_walk="2"/>
-            <spot x="1421.6448" y="1503.9033" z="202.0" h="100" random_walk="2"/>
-            <spot x="1441.0258" y="1427.995" z="199.75" h="116" random_walk="2"/>
-            <spot x="1323.7084" y="1456.5638" z="204.91107" h="74" random_walk="2"/>
-            <spot x="1565.6492" y="1470.692" z="199.875" h="68" random_walk="2"/>
-            <spot x="1493.0" y="1551.0" z="206.75" h="80" random_walk="2"/>
-            <spot x="1558.0" y="1222.0" z="206.625" h="18" random_walk="2"/>
-            <spot x="1855.8165" y="1631.1521" z="222.26147" h="106" random_walk="2"/>
-            <spot x="1441.9424" y="1454.0896" z="199.75" h="40" random_walk="2"/>
-            <spot x="1766.5476" y="1626.2955" z="222.60663" h="116" random_walk="2"/>
-            <spot x="1740.0" y="1512.0" z="217.5" h="18" random_walk="2"/>
-            <spot x="1500.0" y="1518.0" z="202.75" h="84" random_walk="2"/>
-            <spot x="1740.0" y="1538.0" z="217.5" h="115" random_walk="2"/>
-            <spot x="1307.0" y="1689.0" z="221.875" h="108" random_walk="2"/>
-            <spot x="1528.2654" y="1521.1177" z="203.055" h="116" random_walk="2"/>
-            <spot x="1824.7031" y="1602.0829" z="222.5" h="54" random_walk="2"/>
-            <spot x="1184.4647" y="1492.0967" z="205.0" h="3" random_walk="2"/>
-            <spot x="1620.0" y="1547.0" z="202.75" h="8" random_walk="2"/>
-            <spot x="1325.016" y="1545.959" z="200.0" h="97" random_walk="2"/>
-		</spawn>
 		<!-- DF6_A2_Mudthorn_67_An -->
 		<spawn npc_id="240385" respawn_time="295">
 		    <spot x="1140.0" y="1490.0" z="205.0" h="1"/>
@@ -2351,8 +2279,8 @@
             <spot x="1587.5465" y="1427.6628" z="212.27542" h="10" random_walk="2"/>
             <spot x="1648.8243" y="1552.6289" z="202.625" h="87" random_walk="2"/>
 		</spawn>
-		<!-- DF6_A2_Baku_67_An -->
-		<spawn npc_id="240389" respawn_time="295">
+		<!-- Sinyaya Serna 67 -->
+		<spawn npc_id="241516" respawn_time="295">
 		    <spot x="1301.0499" y="1512.6353" z="206.57233" h="113" random_walk="2"/>
             <spot x="1311.316" y="1566.8127" z="200.0" h="109" random_walk="2"/>
             <spot x="1454.7268" y="1445.1896" z="199.875" h="102" random_walk="2"/>
@@ -2385,8 +2313,8 @@
             <spot x="1356.5321" y="1488.3292" z="203.1753" h="69" random_walk="2"/>
             <spot x="1230.0974" y="1502.6514" z="206.57233" h="72" random_walk="2"/>
 		</spawn>
-		<!-- DF6_A2_Baku_68_An -->
-		<spawn npc_id="240390" respawn_time="295">
+		<!-- Sinyaya Serna 68 -->
+		<spawn npc_id="241517" respawn_time="295">
 			<spot x="1041.9506" y="1590.8422" z="256.58163" h="10" random_walk="2"/>
             <spot x="1270.6719" y="1429.1018" z="205.06886" h="40" random_walk="2"/>
             <spot x="1431.0" y="1397.0" z="199.75" h="24" random_walk="2"/>
@@ -3153,15 +3081,81 @@
             <spot h="4" z="202.31583" y="1463.343" x="1544.4082" random_walk="2"/>
             <spot h="8" z="205.531" y="1490.794" x="1584.0834" random_walk="2"/>
 		</spawn>
-		<!-- DF6_T_A2_Hiiv_67_N -->
+		<!-- Sumchatiy Haik 67 lvl -->
 		<spawn npc_id="241510" respawn_time="295">
+            <spot x="1502.7959" y="1457.018" z="199.875" h="50" random_walk="2"/>
+			<spot x="1594.9678" y="1698.0651" z="200.0" h="38" random_walk="2"/>
+			<spot x="1808.1389" y="1481.3699" z="217.625" h="27" random_walk="2"/>
+			<spot x="1822.0725" y="1623.9568" z="222.375" h="109" random_walk="2"/>
+			<spot x="1143.8726" y="1462.965" z="205.0" h="4" random_walk="2"/>
+			<spot x="1458.0" y="1527.0" z="208.25" h="20" random_walk="2"/>
+			<spot x="1486.0065" y="1453.9133" z="200.0" h="91" random_walk="2"/>
+			<spot x="1384.6228" y="1575.9808" z="221.33728" h="17" random_walk="2"/>
+			<spot x="1773.0" y="1648.0" z="222.5" h="10" random_walk="2"/>
+			<spot x="1765.0" y="1529.0" z="217.5" h="107" random_walk="2"/>
+			<spot x="1502.5221" y="1402.8661" z="199.875" h="22" random_walk="2"/>
+			<spot x="1103.0" y="1647.0" z="253.5" h="93" random_walk="2"/>
+			<spot x="1531.1453" y="1238.0825" z="206.375" h="9" random_walk="2"/>
+			<spot x="1594.8445" y="1598.9294" z="200.19191" h="8" random_walk="2"/>
+			<spot x="1591.0" y="1207.0" z="206.875" h="42" random_walk="2"/>
+			<spot x="1364.0" y="1515.0" z="200.0" h="108" random_walk="2"/>
+			<spot x="1582.0" y="1249.0" z="206.875" h="111" random_walk="2"/>
+			<spot x="1607.0" y="1275.0" z="206.875" h="69" random_walk="2"/>
+			<spot x="1790.0" y="1593.0" z="222.375" h="7" random_walk="2"/>
+			<spot x="1612.6488" y="1487.9841" z="202.75" h="40" random_walk="2"/>
+			<spot x="1485.1832" y="1473.5488" z="199.875" h="31" random_walk="2"/>
+			<spot x="1760.0" y="1495.0" z="217.5" h="4" random_walk="2"/>
+			<spot x="1516.6458" y="1548.9395" z="203.31628" h="108" random_walk="2"/>
+			<spot x="1550.0" y="1448.0" z="199.875" h="30" random_walk="2"/>
+			<spot x="1432.9287" y="1582.2253" z="218.91151" h="94" random_walk="2"/>
+			<spot x="1560.7301" y="1523.8217" z="199.95438" h="42" random_walk="2"/>
+			<spot x="1793.0" y="1664.0" z="222.5" h="28" random_walk="2"/>
+			<spot x="1579.0" y="1523.0" z="201.5625" h="83" random_walk="2"/>
+			<spot x="1582.0" y="1341.0" z="206.875" h="48" random_walk="2"/>
+			<spot x="1599.0952" y="1616.6648" z="200.0" h="7" random_walk="2"/>
+			<spot x="1456.9867" y="1487.6179" z="200.95058" h="89" random_walk="2"/>
+			<spot x="1523.6848" y="1431.942" z="199.875" h="63" random_walk="2"/>
+			<spot x="1494.0" y="1425.0" z="200.3125" h="59" random_walk="2"/>
 			<spot x="1653.4607" y="1483.0634" z="202.75" h="64" random_walk="2"/>
-            <spot x="1660.2916" y="1514.5741" z="202.75" h="46" random_walk="2"/>
+			<spot x="1660.2916" y="1514.5741" z="202.75" h="46" random_walk="2"/>
 		</spawn>
-		<!-- DF6_T_A2_Hiiv_68_N -->
+		<!-- Sumchatiy Haik 68 -->
 		<spawn npc_id="241511" respawn_time="295">
+			<spot x="1609.0" y="1684.0" z="200.0" h="69" random_walk="2"/>
+			<spot x="1567.1879" y="1318.9302" z="206.875" h="53" random_walk="2"/>
+			<spot x="1175.4257" y="1439.4058" z="205.0" h="14" random_walk="2"/>
+			<spot x="1568.8225" y="1538.1959" z="202.08502" h="57" random_walk="2"/>
+			<spot x="1507.6534" y="1477.2924" z="199.875" h="44" random_walk="2"/>
+			<spot x="1116.3793" y="1480.2751" z="205.0" h="11" random_walk="2"/>
+			<spot x="1209.8762" y="1658.2255" z="233.375" h="96" random_walk="2"/>
+			<spot x="1605.0" y="1656.0" z="200.0" h="81" random_walk="2"/>
+			<spot x="1282.0" y="1415.0" z="205.125" h="38" random_walk="2"/>
+			<spot x="1474.2363" y="1511.6621" z="203.22272" h="30" random_walk="2"/>
+			<spot x="1459.0" y="1460.0" z="199.9375" h="94" random_walk="2"/>
+			<spot x="1538.0" y="1262.0" z="206.75" h="20" random_walk="2"/>
+			<spot x="1737.0" y="1487.0" z="217.375" h="26" random_walk="2"/>
+			<spot x="1655.5945" y="1531.534" z="202.75" h="75" random_walk="2"/>
+			<spot x="1384.0" y="1456.0" z="205.625" h="49" random_walk="2"/>
+			<spot x="1421.6448" y="1503.9033" z="202.0" h="100" random_walk="2"/>
+			<spot x="1441.0258" y="1427.995" z="199.75" h="116" random_walk="2"/>
+			<spot x="1323.7084" y="1456.5638" z="204.91107" h="74" random_walk="2"/>
+			<spot x="1565.6492" y="1470.692" z="199.875" h="68" random_walk="2"/>
+			<spot x="1493.0" y="1551.0" z="206.75" h="80" random_walk="2"/>
+			<spot x="1558.0" y="1222.0" z="206.625" h="18" random_walk="2"/>
+			<spot x="1855.8165" y="1631.1521" z="222.26147" h="106" random_walk="2"/>
+			<spot x="1441.9424" y="1454.0896" z="199.75" h="40" random_walk="2"/>
+			<spot x="1766.5476" y="1626.2955" z="222.60663" h="116" random_walk="2"/>
+			<spot x="1740.0" y="1512.0" z="217.5" h="18" random_walk="2"/>
+			<spot x="1500.0" y="1518.0" z="202.75" h="84" random_walk="2"/>
+			<spot x="1740.0" y="1538.0" z="217.5" h="115" random_walk="2"/>
+			<spot x="1307.0" y="1689.0" z="221.875" h="108" random_walk="2"/>
+			<spot x="1528.2654" y="1521.1177" z="203.055" h="116" random_walk="2"/>
+			<spot x="1824.7031" y="1602.0829" z="222.5" h="54" random_walk="2"/>
+			<spot x="1184.4647" y="1492.0967" z="205.0" h="3" random_walk="2"/>
+			<spot x="1620.0" y="1547.0" z="202.75" h="8" random_walk="2"/>
+			<spot x="1325.016" y="1545.959" z="200.0" h="97" random_walk="2"/>
 			<spot x="1523.5326" y="1502.9445" z="199.93343" h="56" random_walk="2"/>
-            <spot x="1415.3036" y="1477.4141" z="199.75" h="110" random_walk="2"/>
+			<spot x="1415.3036" y="1477.4141" z="199.75" h="110" random_walk="2"/>
 		</spawn>
 		<!-- DF6_T_A2_Daru_67_N -->
 		<spawn npc_id="241518" respawn_time="295">

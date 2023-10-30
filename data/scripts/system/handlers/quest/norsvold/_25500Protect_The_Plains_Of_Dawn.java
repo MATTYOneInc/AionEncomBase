@@ -40,12 +40,17 @@ public class _25500Protect_The_Plains_Of_Dawn extends QuestHandler
 		qe.registerQuestNpc(240372).addOnKillEvent(questId);
 		qe.registerQuestNpc(240373).addOnKillEvent(questId);
 		qe.registerQuestNpc(240374).addOnKillEvent(questId);
-		qe.registerQuestNpc(240375).addOnKillEvent(questId);
-		qe.registerQuestNpc(240376).addOnKillEvent(questId);
-		qe.registerQuestNpc(240377).addOnKillEvent(questId);
-		qe.registerQuestNpc(240378).addOnKillEvent(questId);
+		qe.registerQuestNpc(241502).addOnKillEvent(questId);
+		qe.registerQuestNpc(241503).addOnKillEvent(questId);
+		qe.registerQuestNpc(241504).addOnKillEvent(questId);
+		qe.registerQuestNpc(241505).addOnKillEvent(questId);
 		qe.registerQuestNpc(241177).addOnKillEvent(questId);
 		qe.registerQuestNpc(241178).addOnKillEvent(questId);
+		qe.registerQuestNpc(241497).addOnKillEvent(questId);
+		qe.registerQuestNpc(243264).addOnKillEvent(questId);
+		qe.registerQuestNpc(243265).addOnKillEvent(questId);
+		qe.registerQuestNpc(241500).addOnKillEvent(questId);
+		qe.registerQuestNpc(241501).addOnKillEvent(questId);
     }
 	
     @Override
@@ -65,11 +70,11 @@ public class _25500Protect_The_Plains_Of_Dawn extends QuestHandler
         } else if (qs.getStatus() == QuestStatus.START) {
             if (targetId == 806101) {
                 if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 40) {
+                    if (qs.getQuestVarById(0) == 20) {
                         return sendQuestDialog(env, 2375);
                     }
                 } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 40, 41, true);
+                    changeQuestStep(env, 20, 21, true);
                     return sendQuestEndDialog(env);
                 }
 			}
@@ -98,16 +103,22 @@ public class _25500Protect_The_Plains_Of_Dawn extends QuestHandler
 				case 240372:
 				case 240373:
 				case 240374:
-				case 240375:
-				case 240376:
-				case 240377:
-				case 240378:
+				case 241502:
+				case 241503:
+				case 241504:
+				case 241505:
 				case 241177:
 				case 241178:
-                if (qs.getQuestVarById(1) < 40) {
+				case 241497:
+				case 243264:
+				case 243265:
+				case 241500:
+				case 241501:
+                if (qs.getQuestVarById(1) < 20) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 40) {
+				} if (qs.getQuestVarById(1) >= 20) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

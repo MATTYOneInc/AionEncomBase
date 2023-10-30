@@ -81,6 +81,7 @@ public class _25553Butterfly_March extends QuestHandler
 			} else if (zoneName == ZoneName.get("DF6_SENSORY_AREA_Q25553_F_TO_A_220110000")) {
 				if (var == 1) {
 					qs.setStatus(QuestStatus.REWARD);
+					changeQuestStep(env, 1, 2, false);
 					updateQuestStatus(env);
 					return true;
 				}

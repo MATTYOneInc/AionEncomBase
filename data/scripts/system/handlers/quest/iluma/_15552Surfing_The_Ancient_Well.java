@@ -81,6 +81,7 @@ public class _15552Surfing_The_Ancient_Well extends QuestHandler
 			} else if (zoneName == ZoneName.get("LF6_SENSORY_AREA_Q15552_D_TO_A_210100000")) {
 				if (var == 1) {
 					qs.setStatus(QuestStatus.REWARD);
+					changeQuestStep(env, 1, 2, false);
 					updateQuestStatus(env);
 					return true;
 				}

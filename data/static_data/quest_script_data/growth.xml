@@ -392,8 +392,8 @@
 	</monster_hunt>
 	<!-- [Growth] Palace Problems -->
 	<monster_hunt id="80446" start_npc_ids="831851">
-		<monster var="0" npc_ids="231360" end_var="2"/>
-		<monster var="1" npc_ids="213374" end_var="3"/>
+		<monster var="0" npc_ids="213360" end_var="2"/>
+		<monster var="1" npc_ids="213373" end_var="3"/>
 	</monster_hunt>
 	<!-- [Growth] Crush The Cellatu -->
 	<monster_hunt id="80447" start_npc_ids="831851">

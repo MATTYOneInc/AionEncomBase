@@ -388,10 +388,10 @@
 		<sphere x="1093.8724" y="1006.33386" z="352.125" r="10.0"/>
 	</zone>
 	<zone mapid="210100000" name="LF6_SENSORY_AREA_Q15554_A_TO_H_210100000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="1190.6617" y="2466.8726" z="360.76318" r="10.0"/>
+		<sphere x="1204.2769" y="2476.7117" z="360.42377" r="10.0"/>
 	</zone>
 	<zone mapid="210100000" name="LF6_SENSORY_AREA_Q15554_H_TO_A_210100000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="1284.2654" y="2089.75" z="335.25" r="10.0"/>
+		<sphere x="1276.2422" y="2099.9797" z="334.87875" r="10.0"/>
 	</zone>
 	<zone mapid="210100000" name="LF6_SENSORY_AREA_Q15606_A_DYNAMIC_ENV_210100000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="849.146" y="1841.1525" z="310.375" r="10.0"/>
@@ -435,19 +435,19 @@
 		<sphere x="1836.5714" y="1550.3615" z="242.16434" r="10.0"/>
 	</zone>
 	<zone mapid="220110000" name="DF6_SENSORY_AREA_Q25552_A_TO_D_220110000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="2040.7993" y="2473.6301" z="263.3278" r="10.0"/>
-	</zone>
-	<zone mapid="220110000" name="DF6_SENSORY_AREA_Q25552_D_TO_A_220110000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="2055.0337" y="2495.9204" z="325.65503" r="10.0"/>
 	</zone>
+	<zone mapid="220110000" name="DF6_SENSORY_AREA_Q25552_D_TO_A_220110000" area_type="SPHERE" zone_type="SUB">
+		<sphere x="1871.1951" y="2432.3909" z="262.27502" r="10.0"/>
+	</zone>
 	<zone mapid="220110000" name="DF6_SENSORY_AREA_Q25553_A_TO_F_220110000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="1009.56085" y="2168.0496" z="248.16551" r="10.0"/>
+		<sphere x="1023.1163" y="2179.6018" z="245.05121" r="10.0"/>
 	</zone>
 	<zone mapid="220110000" name="DF6_SENSORY_AREA_Q25553_F_TO_A_220110000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="1255.8547" y="1999.9285" z="187.53609" r="10.0"/>
 	</zone>
 	<zone mapid="220110000" name="DF6_SENSORY_AREA_Q25554_A_TO_H_220110000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="966.63135" y="973.0754" z="273.1278" r="10.0"/>
+		<sphere x="966.31793" y="976.9314" z="273.5781" r="10.0"/>
 	</zone>
 	<zone mapid="220110000" name="DF6_SENSORY_AREA_Q25554_H_TO_A_220110000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="1290.7921" y="1525.2797" z="213.8243" r="10.0"/>

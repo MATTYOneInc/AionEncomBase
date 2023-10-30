@@ -82,6 +82,7 @@ public class _15551Giddyup_Starturtle extends QuestHandler
 			} else if (zoneName == ZoneName.get("LF6_SENSORY_AREA_Q15551_B_TO_A_210100000")) {
 				if (var == 1) {
 					qs.setStatus(QuestStatus.REWARD);
+					changeQuestStep(env, 1, 2, false);
 					updateQuestStatus(env);
 					return true;
 				}

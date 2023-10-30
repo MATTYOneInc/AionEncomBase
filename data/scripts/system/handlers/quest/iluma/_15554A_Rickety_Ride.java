@@ -81,6 +81,7 @@ public class _15554A_Rickety_Ride extends QuestHandler
 			} else if (zoneName == ZoneName.get("LF6_SENSORY_AREA_Q15554_H_TO_A_210100000")) {
 				if (var == 1) {
 					qs.setStatus(QuestStatus.REWARD);
+					changeQuestStep(env, 1, 2, false);
 					updateQuestStatus(env);
 					return true;
 				}

@@ -42247,7 +42247,7 @@
     <rewards exp="6893106" ap="2500">
       <reward_item item_id="186000236" count="20" />
     </rewards>
-    <quest_drop npc_id="233887" item_id="182215786" chance="100" drop_each_member="1" collecting_step="1" />
+    <quest_drop npc_id="233887" item_id="182215787" chance="100" drop_each_member="1" collecting_step="1" />
     <quest_drop npc_id="234990" item_id="182215788" chance="100" drop_each_member="1" collecting_step="1" />
     <quest_drop npc_id="233898" item_id="182215788" chance="100" drop_each_member="1" collecting_step="1" />
     <quest_drop npc_id="234991" item_id="182215788" chance="100" drop_each_member="1" collecting_step="1" />
