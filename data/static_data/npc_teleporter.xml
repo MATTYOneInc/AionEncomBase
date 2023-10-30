@@ -13,6 +13,7 @@
 			<telelocation loc_id="81" price="1400" pricePvp="1400" type="REGULAR"/>
 			<telelocation loc_id="191" price="500" pricePvp="500" type="REGULAR"/>
 			<telelocation loc_id="299" price="32800" pricePvp="32800" type="REGULAR"/>
+			<telelocation loc_id="313" price="9300" pricePvp="9300" type="REGULAR" />
 			<telelocation loc_id="400" price="28800" pricePvp="28800" type="REGULAR"/>
 			<telelocation loc_id="444" price="30000" pricePvp="30000" requiredQuest="10520" type="REGULAR"/>
 			<telelocation loc_id="591" price="20027" pricePvp="20027" type="REGULAR"/>
