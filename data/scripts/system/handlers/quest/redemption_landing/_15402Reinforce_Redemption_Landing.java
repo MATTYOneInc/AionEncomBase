@@ -90,6 +90,7 @@ public class _15402Reinforce_Redemption_Landing extends QuestHandler
 							return sendQuestDialog(env, 1693);
 						} case SET_REWARD: {
 							qs.setStatus(QuestStatus.REWARD);
+							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return true;
@@ -98,7 +99,7 @@ public class _15402Reinforce_Redemption_Landing extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-            if (targetId == 805382) {
+            if (targetId == 805352) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
                 } else {
