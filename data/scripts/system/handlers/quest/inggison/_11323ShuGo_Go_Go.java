@@ -119,8 +119,8 @@ public class _11323ShuGo_Go_Go extends QuestHandler
 							return sendQuestDialog(env, 2375);
 						} case SET_REWARD: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
-							updateQuestStatus(env);
 							qs.setStatus(QuestStatus.REWARD);
+							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return true;
 						}

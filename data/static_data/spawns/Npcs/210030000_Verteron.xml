@@ -1136,15 +1136,6 @@
 		<!-- Jewel Box (Object Normal lvl:3) -->
 		<spawn npc_id="700005" respawn_time="295">
 			<spot x="1521.7412" y="1107.226" z="100.87598" entity_id="469"/>
-			<spot x="2115.0000" y="645.0000" z="100.15401" entity_id="1181"/>
-			<spot x="2098.7195" y="627.83313" z="100.16723" entity_id="1182"/>
-			<spot x="2130.0000" y="630.0000" z="110.79043" entity_id="1183"/>
-			<spot x="2140.0000" y="662.0000" z="116.93403" entity_id="1184"/>
-			<spot x="2134.0000" y="646.0000" z="102.91673" entity_id="1185"/>
-			<spot x="2139.0000" y="664.30365" z="105.83998" entity_id="1186"/>
-			<spot x="2086.0000" y="597.0000" z="122.6527" entity_id="1187"/>
-			<spot x="2093.8132" y="614.69196" z="122.70911" entity_id="1188"/>
-			<spot x="2125.0000" y="696.0000" z="100.14928" entity_id="1189"/>
 		</spawn>
 		<!-- Order Of The Dukaki Tribe -->
 		<spawn npc_id="700004" respawn_time="295">
@@ -2415,11 +2406,6 @@
 		<spawn npc_id="203354" respawn_time="295">
 			<spot x="1708.76" y="1489.18" z="121.668" h="58"/>
 			<spot x="1721.24" y="1490.51" z="121.938" h="55"/>
-		</spawn>
-		<!-- Map Of Eyvindr (Object Normal lvl:3) -->
-		<spawn npc_id="700139" respawn_time="295">
-			<spot x="2125.93" y="690.84" z="100.438" entity_id="485"/>
-			<spot x="1155.71" y="1856.87" z="105.543" entity_id="486"/>
 		</spawn>
 		<!-- Manos -->
 		<spawn npc_id="790000" respawn_time="295">

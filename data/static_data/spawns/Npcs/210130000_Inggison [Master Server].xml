@@ -4054,6 +4054,22 @@
 		<spawn npc_id="216730" respawn_time="295">
 			<spot x="1243.81" y="1577.49" z="368.447" h="57"/>
 		</spawn>
+		<!-- Izerrunerk -->
+		<spawn npc_id="702727" respawn_time="295">
+			<spot x="463.77988" y="195.59648" z="459.5888"/>
+		</spawn>
+		<!-- Zeirunerk -->
+		<spawn npc_id="702743" respawn_time="295">
+			<spot x="2094.8428" y="1195.9551" z="265.0"/>
+		</spawn>
+		<!-- Chubarunerk -->
+		<spawn npc_id="702744" respawn_time="295">
+			<spot x="2378.5332" y="274.28674" z="458.75"/>
+		</spawn>
+		<!-- Danirunerk -->
+		<spawn npc_id="702745" respawn_time="295">
+			<spot x="690.7653" y="1565.1354" z="337.5751"/>
+		</spawn>
 		<!-- Aerolink To Sanctum -->
 		<spawn npc_id="730220" respawn_time="295">
 			<spot x="1375.7186" y="367.51871" z="589.44086" entity_id="1314"/>

@@ -90,7 +90,7 @@ public class _14114Revolution_Intervention extends QuestHandler
 						return checkQuestItems(env, 3, 4, false, 10000, 10001);
 					} case FINISH_DIALOG: {
 						if (var == 4) {
-							defaultCloseDialog(env, 4, 4);
+							defaultCloseDialog(env, 4, 5);
 						} else if (var == 3) {
 							defaultCloseDialog(env, 3, 3);
 						}

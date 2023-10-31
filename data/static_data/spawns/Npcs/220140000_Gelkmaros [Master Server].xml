@@ -881,6 +881,22 @@
 			<spot x="2095.3523" y="2439.7808" z="453.25" entity_id="2912"/>
 			<spot x="2124.5356" y="2446.3418" z="453.40814" entity_id="2913"/>
 		</spawn>
+		<!-- Taserunerk -->
+		<spawn npc_id="702726" respawn_time="295">
+			<spot x="1890.8885" y="2852.5103" z="554.9787" h="73"/>
+		</spawn>
+		<!-- Zinarunerk -->
+		<spawn npc_id="702746" respawn_time="295">
+			<spot x="358.64276" y="2610.079" z="443.60574" h="73"/>
+		</spawn>
+		<!-- Ruinrunerk -->
+		<spawn npc_id="702747" respawn_time="295">
+			<spot x="2515.408" y="1009.0807" z="285.875" h="73"/>
+		</spawn>
+		<!-- Portarunerk -->
+		<spawn npc_id="702748" respawn_time="295">
+			<spot x="2823.1006" y="2659.5422" z="495.92657" h="73"/>
+		</spawn>
 		<!-- Aerolink To Pandaemonium -->
 		<spawn npc_id="730221" respawn_time="295">
 			<spot x="1892.33" y="2838.64" z="554.779" entity_id="1057"/>
