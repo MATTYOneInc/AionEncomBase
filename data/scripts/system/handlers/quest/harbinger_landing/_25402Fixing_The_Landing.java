@@ -89,6 +89,7 @@ public class _25402Fixing_The_Landing extends QuestHandler
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1693);
 						} case SET_REWARD: {
+							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
@@ -98,7 +99,7 @@ public class _25402Fixing_The_Landing extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-            if (targetId == 805405) {
+            if (targetId == 805357) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
                 } else {
