@@ -76,21 +76,16 @@ public class _19064Templar_Of_Construction extends QuestHandler
 				case 203752:
 					switch (dialog) {
 						case START_DIALOG: {
-							if (var == 1 && player.getInventory().getItemCountByItemId(182213237) >= 1 &&
-							    player.getInventory().getItemCountByItemId(186000081) >= 1) {
+							if (var == 1) {
 								return sendQuestDialog(env, 2375);
-							}
-						} case CHECK_COLLECTED_ITEMS: {
-							if (player.getInventory().getItemCountByItemId(182213237) >= 1 &&
-							    player.getInventory().getItemCountByItemId(186000081) >= 1) {
-								removeQuestItem(env, 182213237, 1);
-								removeQuestItem(env, 186000081, 1);
-								return defaultCloseDialog(env, 1, 1, true, false);
-							}
+						    }
+                        }						
+						case CHECK_COLLECTED_ITEMS_SIMPLE: {
+					        return checkQuestItemsSimple(env, var, var, true, 5, 0, 0);
 						}
 					}
 				break;
-			 }
+			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203701) {
 				if (dialog == QuestDialog.USE_OBJECT) {

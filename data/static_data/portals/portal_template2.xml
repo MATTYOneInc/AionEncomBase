@@ -5407,6 +5407,9 @@
 	<portal_scroll name="KAISINEL_ACADEMY_RETURN_AREA">
 		<portal_path loc_id="1100702" race="ELYOS"/>
 	</portal_scroll>
+	<portal_scroll name="WISPLIGHT_ABBEY_RETURN_AREA">
+		<portal_path loc_id="1300900" race="ELYOS"/>
+	</portal_scroll>
 	<portal_scroll name="ELTNEN_RETURN_AREA">
 		<portal_path loc_id="2100200" race="ELYOS"/>
 	</portal_scroll>
@@ -5445,6 +5448,9 @@
 	<portal_scroll name="MARCHUTAN_PRIORY_RETURN_AREA">
 		<portal_path loc_id="1200800" race="ASMODIANS"/>
 	</portal_scroll>
+	<portal_scroll name="FATEBOUND_ABBEY_RETURN_AREA">
+        <portal_path loc_id="1400100" race="ASMODIANS"/>
+    </portal_scroll>
 	<portal_scroll name="MORHEIM_RETURN_AREA">
 		<portal_path loc_id="2200200" race="ASMODIANS"/>
 	</portal_scroll>
