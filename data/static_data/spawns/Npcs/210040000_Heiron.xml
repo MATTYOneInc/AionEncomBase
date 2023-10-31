@@ -2318,7 +2318,7 @@
             <spot h="119" z="128.93951" y="728.3043" x="365.16855"/>
 		</spawn>
 		<!-- Indratu Defender -->
-		<spawn npc_id="213964" respawn_time="295">
+		<spawn npc_id="219106" respawn_time="295">
 			<spot x="2735.89" y="2443.28" z="152.486" h="2"/>
 			<spot x="2663.66" y="2385.93" z="145.275" h="49"/>
 			<spot x="2609" y="2567.79" z="142.227" h="105"/>
@@ -2351,7 +2351,7 @@
 			<spot x="2669.69" y="2413.21" z="146.0" h="114" walker_id="CC6403F5C952CDE4E697D5EDBCD2C6E853A77DD5"/>
 			<spot x="2590.39" y="2153.57" z="152.3" h="113"/>
 		</spawn>
-		<!-- Indratu Defender -->
+		<!-- Indratu Cleaver -->
 		<spawn npc_id="213965" respawn_time="295">
 			<spot x="2394.45" y="2413.39" z="167.262" h="88"/>
 			<spot x="2627.22" y="2674.93" z="141.785" h="78" random_walk="10"/>
@@ -2652,7 +2652,7 @@
 			<spot x="2599.61" y="2687.07" z="136.5" h="88" walker_id="19F595E2F997505D38BE819B3ABE2AC9BCE6DE5F"/>
 		</spawn>
 		<!-- Indratu Outrider -->
-		<spawn npc_id="213974" respawn_time="295">
+		<spawn npc_id="219112" respawn_time="295">
 			<spot x="2631.64" y="2377.1" z="141.3525" h="24" walker_id="76FC821FE778E40CFBD40A26A9555DCF0E460E9B"/>
 			<spot x="2550.07" y="2516.35" z="137.996" h="21"/>
 			<spot x="2786.69" y="2367.72" z="151.756" h="32"/>
@@ -8393,7 +8393,7 @@
 			<spot x="2557.38" y="2489.12" z="138.031" h="57"/>
 			<spot x="2475.9" y="2323.31" z="142.261" h="35"/>
 		</spawn>
-		<!-- Indratu Outrider -->
+		<!-- Indratu Thresher -->
 		<spawn npc_id="214055" respawn_time="295">
 			<spot x="2736.2" y="2171.95" z="141.477" h="25"/>
 			<spot x="2684.6" y="2122.52" z="149.458" h="50"/>
@@ -8452,7 +8452,7 @@
 		<spawn npc_id="219120" respawn_time="295">
 			<spot x="2596.85" y="2075.47" z="148.23126" h="33" walker_id="3EE08B309B8418B2BED2C27E82F670815C99D1E9"/>
 		</spawn>
-		<!-- Indratu Defender -->
+		<!-- Indratu Cleaver -->
 		<spawn npc_id="214046" respawn_time="295">
 			<spot x="2457.27" y="2541.88" z="144.647" h="7"/>
 			<spot x="2366.05" y="2501.75" z="146.94034" h="77" walker_id="A5AD39EEC8E16CAE2A308F2C7E65C0083E09E22C"/>
@@ -8475,7 +8475,7 @@
 			<spot x="2207.15" y="2085.4" z="128.626" h="99"/>
 			<spot x="2207.04" y="1955.81" z="137.994" h="38"/>
 		</spawn>
-		<!-- Indratu Defender -->
+		<!-- Indratu Cleaver -->
 		<spawn npc_id="214044" respawn_time="295">
 			<spot x="2650.47" y="2538.74" z="149.704" h="4"/>
 			<spot x="2767.12" y="2291.28" z="143.25" h="110"/>
@@ -8484,7 +8484,7 @@
 			<spot x="2711.93" y="2332.76" z="144.625" h="109"/>
 			<spot x="2703.2" y="2227.01" z="136.188" h="78"/>
 		</spawn>
-		<!-- Indratu Defender -->
+		<!-- Indratu Cleaver -->
 		<spawn npc_id="214045" respawn_time="295">
 			<spot x="2465.84" y="2143.83" z="138.24" h="20"/>
 			<spot x="2774.43" y="2163.69" z="143.387" h="13"/>
