@@ -44,7 +44,7 @@ public class _15400Aiding_General_Giscours extends QuestHandler
 		qe.registerQuestItem(182215897, questId); //Beritra Supply Mark.
 		qe.registerQuestItem(182215898, questId); //Repair Device Gear.
 		qe.registerQuestItem(182215899, questId); //Ereshkigal Legion Mark.
-		qe.registerQuestNpc(883643).addOnKillEvent(questId); //Ereshkigal's Searcher.
+		qe.registerQuestNpc(885101).addOnKillEvent(questId); //Ereshkigal's Searcher.
 		qe.registerOnEnterZone(ZoneName.get("KROTAN_REFUGE_400010000"), questId);
     }
 	
@@ -216,7 +216,7 @@ public class _15400Aiding_General_Giscours extends QuestHandler
             if (var == 6) {
                 int var1 = qs.getQuestVarById(1);
                 if (var1 >= 0 && var1 < 1) {
-                    return defaultOnKillEvent(env, 883643, var1, var1 + 1, 1); //Ereshkigal's Searcher.
+                    return defaultOnKillEvent(env, 885101, var1, var1 + 1, 1); //Ereshkigal's Searcher.
                 } else if (var1 == 1) {
                     qs.setQuestVar(7);
 					updateQuestStatus(env);
