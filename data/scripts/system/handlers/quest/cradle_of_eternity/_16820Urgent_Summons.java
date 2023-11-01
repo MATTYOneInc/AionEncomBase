@@ -54,6 +54,7 @@ public class _16820Urgent_Summons extends QuestHandler
 			if (qs != null && qs.getStatus() == QuestStatus.START) {
                 int var = qs.getQuestVars().getQuestVars();
                 if (var == 1) {
+					changeQuestStep(env, 1, 2, false);
                     qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}
