@@ -391,284 +391,353 @@
 	</decomposable>
 	<!-- Koa Log Bundle -->
 	<decomposable item_id="152000506">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000502" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000502" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Ulmus Log Bundle -->
 	<decomposable item_id="152000507">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000503" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000503" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Egrasi Log Bundle -->
 	<decomposable item_id="152000508">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000504" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000504" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Nanyu Log Bundle -->
 	<decomposable item_id="152000509">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000505" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000505" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Hefty Pakira Log -->
 	<decomposable item_id="152000511">
-		<items>
-			<item id="152000510" count="2"/>
+		<items chance="80">
+			<item id="152000510" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000510" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Smooth Pakira Log -->
 	<decomposable item_id="152000512">
-		<items>
-			<item id="152000511" count="2"/>
+		<items chance="80">
+			<item id="152000511" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000511" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Hefty Pirian Log -->
 	<decomposable item_id="152000514">
-		<items>
-			<item id="152000513" count="2"/>
+		<items chance="80">
+			<item id="152000513" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000513" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Smooth Pirian Log -->
 	<decomposable item_id="152000515">
-		<items>
-			<item id="152000514" count="2"/>
+		<items chance="80">
+			<item id="152000514" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000514" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Wrud Log Bundle -->
 	<decomposable item_id="152000557">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000552" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000552" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Salix Log Bundle -->
 	<decomposable item_id="152000558">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000553" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000553" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Asvata Log Bundle -->
 	<decomposable item_id="152000559">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000554" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000554" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Korie Log Bundle -->
 	<decomposable item_id="152000560">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000556" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000556" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Fess Fiber Bundle -->
 	<decomposable item_id="152000608">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000602" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000602" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Sobi Fiber Bundle -->
 	<decomposable item_id="152000609">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000603" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000603" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Linon Fiber Bundle -->
 	<decomposable item_id="152000610">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000604" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000604" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Prolix Fiber Bundle -->
 	<decomposable item_id="152000611">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000605" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000605" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Strong Ponica Fiber -->
 	<decomposable item_id="152000613">
-		<items>
-			<item id="152000612" count="2"/>
+		<items chance="80">
+			<item id="152000612" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000612" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Fine Ponica Fiber -->
 	<decomposable item_id="152000614">
-		<items>
-			<item id="152000613" count="2"/>
+		<items chance="80">
+			<item id="152000613" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000613" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Twisp Fiber Bundle -->
 	<decomposable item_id="152000658">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000652" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000652" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Xilix Fiber Bundle -->
 	<decomposable item_id="152000659">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000653" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000653" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Anathe Fiber Bundle -->
 	<decomposable item_id="152000660">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000654" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000654" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Hoca Fiber Bundle -->
 	<decomposable item_id="152000661">
-		<items chance="1">
+		<items chance="80">
 			<item id="152000656" count="3"/>
 		</items>
-		<items chance="1">
+		<items chance="20">
 			<item id="152000656" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Succulent Plucar -->
 	<decomposable item_id="152000715">
-		<items>
+		<items chance="80">
 			<item id="152000714" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000714" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Succulent Rava -->
 	<decomposable item_id="152000717">
-		<items>
+		<items chance="80">
 			<item id="152000716" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000716" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Savory Kucien -->
 	<decomposable item_id="152000814">
-		<items>
+		<items chance="80">
 			<item id="152000813" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000813" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Greater Aether Crystal -->
 	<decomposable item_id="152000903">
-		<items>
+		<items chance="80">
 			<item id="152000902" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000902" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Greater Aether Gem -->
 	<decomposable item_id="152000905">
-		<items>
+		<items chance="80">
 			<item id="152000904" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000904" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Pure Aether Gem -->
 	<decomposable item_id="152000906">
-		<items>
+		<items chance="80">
 			<item id="152000905" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000905" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Greater Aether -->
 	<decomposable item_id="152000908">
-		<items>
+		<items chance="80">
 			<item id="152000907" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000907" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Pure Aether -->
 	<decomposable item_id="152000909">
-		<items>
+		<items chance="80">
 			<item id="152000908" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000908" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Brilliant Aether -->
 	<decomposable item_id="152000910">
-		<items>
+		<items chance="80">
 			<item id="152000909" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000909" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Greater Magical Aether -->
 	<decomposable item_id="152000912">
-		<items>
+		<items chance="80">
 			<item id="152000911" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000911" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Pure Magical Aether -->
 	<decomposable item_id="152000913">
-		<items>
+		<items chance="80">
 			<item id="152000912" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000912" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Brilliant Magical Aether -->
 	<decomposable item_id="152000914">
-		<items>
+		<items chance="80">
 			<item id="152000913" count="3"/>
+		</items>
+		<items chance="20">
+			<item id="152000913" count="9"/>
 		</items>
 	</decomposable>
 	<!-- Greater Ancient Aether -->
 	<decomposable item_id="152000917">
-		<items>
+		<items chance="80">
 			<item id="152000916" count="2"/>
+		</items>
+		<items chance="20">
+			<item id="152000916" count="3"/>
 		</items>
 	</decomposable>
 	<!-- Pure Ancient Aether -->
 	<decomposable item_id="152000918">
-		<items>
+		<items chance="80">
 			<item id="152000917" count="2"/>
+		</items>
+		<items chance="20">
+			<item id="152000917" count="3"/>
 		</items>
 	</decomposable>
 	<!-- Polished Menthcrem -->
 	<decomposable item_id="152001007">
-		<items>
+		<items chance="80">
 			<item id="152001006" count="2"/>
+		</items>
+		<items chance="20">
+			<item id="152001006" count="3"/>
 		</items>
 	</decomposable>
 	<!-- Preserved Ide -->
 	<decomposable item_id="152003014">
-		<items>
+		<items chance="80">
 			<item id="152003013" count="2"/>
+		</items>
+		<items chance="20">
+			<item id="152003013" count="3"/>
 		</items>
 	</decomposable>
 	<!-- Flawless Ide -->
 	<decomposable item_id="152003015">
-		<items>
+		<items chance="80">
 			<item id="152003014" count="2"/>
+		</items>
+		<items chance="20">
+			<item id="152003014" count="3"/>
 		</items>
 	</decomposable>
 	<!-- Unknown Bundle -->
@@ -2873,6 +2942,50 @@
 	<decomposable item_id="186000243">
 		<items>
 			<item id="186000469" count="500"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188050989">
+		<items>
+			<item id="169240001" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240002" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240003" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240004" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240005" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240006" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240007" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240008" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240009" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240010" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240011" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240012" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240013" rnd_min="2" rnd_max="5"/>
+		</items>
+		<items>
+			<item id="169240014" rnd_min="2" rnd_max="5"/>
 		</items>
 	</decomposable>
 </decomposable_items>
