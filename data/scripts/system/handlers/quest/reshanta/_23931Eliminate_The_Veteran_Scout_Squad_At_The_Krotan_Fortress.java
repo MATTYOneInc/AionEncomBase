@@ -100,6 +100,7 @@ public class _23931Eliminate_The_Veteran_Scout_Squad_At_The_Krotan_Fortress exte
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 3) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

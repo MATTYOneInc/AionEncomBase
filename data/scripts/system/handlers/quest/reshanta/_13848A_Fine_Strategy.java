@@ -91,6 +91,7 @@ public class _13848A_Fine_Strategy extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

@@ -91,6 +91,7 @@ public class _23868Eliminate_The_Guardian_General_Of_The_Kysis_Fortress extends 
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

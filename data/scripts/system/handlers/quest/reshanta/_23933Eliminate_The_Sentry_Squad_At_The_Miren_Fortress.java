@@ -100,6 +100,7 @@ public class _23933Eliminate_The_Sentry_Squad_At_The_Miren_Fortress extends Ques
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

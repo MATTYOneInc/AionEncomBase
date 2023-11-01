@@ -39,8 +39,8 @@
 	<!-- Eltnen Job (Elyos Only) -->
 	<report_to id="14244" start_npc_ids="730019" end_npc_ids="800518"/>
 	<!-- Start With The Strongest (Elyos Only) -->
-	<monster_hunt id="14250" start_npc_ids="800413">
-		<monster var="0" npc_ids="213994 213995 214070 214071" end_var="10"/>
+	<monster_hunt id="14250" start_npc_ids="800413" end_npc_ids="800413">
+		<monster var="0" npc_ids="235506 235505" end_var="10"/>
 	</monster_hunt>
 	<!-- Because Caves Are Easy (Elyos Only) -->
 	<report_to id="14251" start_npc_ids="204602" end_npc_ids="832824"/>

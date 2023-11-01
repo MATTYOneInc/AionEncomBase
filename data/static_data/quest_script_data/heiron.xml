@@ -286,10 +286,10 @@
 		<monster var="0" end_var="5" npc_ids="211231 211246"/>
 		<monster var="1" end_var="10" npc_ids="212000 212001"/>
 	</monster_hunt>
-	<monster_hunt id="1668" start_npc_ids="204601">
-		<monster var="0" end_var="5" npc_ids="219109 213969 219137 214052 214053"/>
-		<monster var="1" end_var="5" npc_ids="219123 213988 219144 219145 214062"/>
-		<monster var="2" end_var="5" npc_ids="219106 213965 219131 214046 219132"/>
+	<monster_hunt id="1668" start_npc_ids="800413" end_npc_ids="800413">
+		<monster var="0" end_var="3" npc_ids="235512"/>
+		<monster var="1" end_var="3" npc_ids="235522"/>
+		<monster var="2" end_var="3" npc_ids="235517"/>
 	</monster_hunt>
 	<monster_hunt id="3504" start_npc_ids="204557">
 		<monster var="0" end_var="4" npc_ids="211933"/>
