@@ -115,10 +115,12 @@ public class _16807Hunting_Reliquarians extends QuestHandler
 				case 220325:
 				case 220328:
 				case 220331:
+				case 220310:
                 if (qs.getQuestVarById(1) < 30) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 30) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

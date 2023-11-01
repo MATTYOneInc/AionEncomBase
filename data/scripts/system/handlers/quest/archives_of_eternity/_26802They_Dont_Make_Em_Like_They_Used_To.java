@@ -130,6 +130,7 @@ public class _26802They_Dont_Make_Em_Like_They_Used_To extends QuestHandler
 					    qs.setQuestVarById(2, qs.getQuestVarById(2) + 1);
 					    updateQuestStatus(env);
 				    } if (qs.getQuestVarById(2) >= 2) {
+						qs.setQuestVarById(0, 1);
 					    qs.setStatus(QuestStatus.REWARD);
 					    updateQuestStatus(env);
 				    }

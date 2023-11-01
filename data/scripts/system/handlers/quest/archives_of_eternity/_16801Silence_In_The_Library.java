@@ -31,7 +31,7 @@ import com.aionemu.gameserver.services.QuestService;
 public class _16801Silence_In_The_Library extends QuestHandler
 {
     private final static int questId = 16801;
-	private final static int[] IDEternity01Mobs = {220305, 220308, 220311, 220314, 220317, 220323, 220327, 220329};
+	private final static int[] IDEternity01Mobs = {220305, 220308, 220311, 220314, 220317, 220323, 220327, 220329, 220326};
 	
     public _16801Silence_In_The_Library() {
         super(questId);
@@ -115,10 +115,12 @@ public class _16801Silence_In_The_Library extends QuestHandler
 				case 220323:
 				case 220327:
 				case 220329:
+				case 220326:
                 if (qs.getQuestVarById(1) < 30) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 30) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}
