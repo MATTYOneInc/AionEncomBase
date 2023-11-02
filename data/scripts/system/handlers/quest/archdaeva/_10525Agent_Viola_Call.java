@@ -141,71 +141,45 @@ public class _10525Agent_Viola_Call extends QuestHandler
 					}
 				}
 			} 
-			
-			
-			if (targetId == 806224 && var2 == 0) //Este.
-			{ 
-			    
-			    
-                			switch (env.getDialog()) {
-				    		case START_DIALOG: 
-				    		{
-				    		qs.setQuestVarById(1, 1);
-				    		
-				    		updateQuestStatus(env);
-						return closeDialogWindow(env);
-
-                    				}
-                			}
-            		   }
-			    else if(targetId == 806225 && var2 == 1) //Ovest.
-			    { 
-			    
-			    
-                			switch (env.getDialog()) {
-				    		case START_DIALOG: 
-				    		{		    	
-				    		qs.setQuestVarById(1, 3);
-				    		
-				    		updateQuestStatus(env);
-						return closeDialogWindow(env);
-				    		
-                    				}
-                			}
-            		   } 
-			    else if(targetId == 806226 && var2 == 3) //Meridies.
-			    { 
-			    
-			    
-                			switch (env.getDialog()) {
-				    		case START_DIALOG: 
-				    		{
-				    		qs.setQuestVarById(1, 7);			    	
-				    		
-				    		updateQuestStatus(env);
-						return closeDialogWindow(env);
-				    		
-                    				}
-                			}
-            		   }
-			    else if(targetId == 806227 && var2 == 7) //Ceber.
-			    { 
-			    
-			    
-                			switch (env.getDialog()) {
-				    		case START_DIALOG: 
-				    		{			
+			if (targetId == 806224 && var2 == 0) { //Este.
+			    switch (env.getDialog()) {
+				    case START_DIALOG: {
+						qs.setQuestVarById(1, 1);
+				    	updateQuestStatus(env);
+					return sendQuestDialog(env, 1779);
+					}
+                }
+            }
+			else if(targetId == 806225 && var2 == 1) { //Ovest.
+			        switch (env.getDialog()) {
+				        case START_DIALOG: {
+							qs.setQuestVarById(1, 3);
+				    	    updateQuestStatus(env);
+                        return sendQuestDialog(env, 1779);
+                    	}
+                	}
+            	} 
+			    else if(targetId == 806226 && var2 == 3) { //Meridies.
+                    switch (env.getDialog()) {
+				    	case START_DIALOG: {
+				    	qs.setQuestVarById(1, 7);			    	
+				    	updateQuestStatus(env);
+						return sendQuestDialog(env, 1779);
+                    	}
+                	}
+            	}
+			    else if(targetId == 806227 && var2 == 7) { //Ceber.
+                	switch (env.getDialog()) {
+				    	case START_DIALOG: {			
 						qs.setQuestVarById(1,0);
 						qs.setQuestVarById(0,2);			    	
-				    		updateQuestStatus(env);
+				    	updateQuestStatus(env);
 				    		
 						changeQuestStep(env, 2, 3, false);
-						return closeDialogWindow(env);
-                    				}
-                			}
-            		   }
-            		   
-            		   
+						return sendQuestDialog(env, 1779);
+                    	}
+                	}
+            	}   
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806075) { //Weatha.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {

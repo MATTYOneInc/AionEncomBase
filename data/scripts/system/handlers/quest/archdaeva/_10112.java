@@ -116,8 +116,9 @@ public class _10112 extends QuestHandler
 						return defaultCloseDialog(env, 1, 2, false, false, 182216232, 1, 0, 0); //ì²œì¡± ë?°ë°” êµ¬ê¸‰ìƒ?ìž?.
 					} case CHECK_COLLECTED_ITEMS: {
 						if (QuestService.collectItemCheck(env, true)) {
-							removeQuestItem(env, 182216243, 5); //ì²œì¡± ë³´ê¸‰í’ˆ ìƒ?ìž?.
-							changeQuestStep(env, 4, 5, true);
+							qs.setStatus(QuestStatus.REWARD);
+						    updateQuestStatus(env);
+							changeQuestStep(env, 4, 5, false);
 							return sendQuestDialog(env, 10000);
 						} else {
 							return sendQuestDialog(env, 10001);

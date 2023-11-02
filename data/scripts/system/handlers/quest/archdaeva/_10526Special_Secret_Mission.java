@@ -49,7 +49,7 @@ public class _10526Special_Secret_Mission extends QuestHandler
         }
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
-		qe.registerQuestItem(182216074, questId); //ìž ë“  ë?°ìž?ë³´ë³´.
+		qe.registerQuestItem(182216074, questId); 
 		qe.registerOnEnterZoneMissionEnd(questId);
     }
 	
@@ -128,7 +128,7 @@ public class _10526Special_Secret_Mission extends QuestHandler
 						return closeDialogWindow(env);
 					}
 				}
-			} if (targetId == 806291) { //ë?°ìž?ë³´ë³´.
+			} if (targetId == 806291) { //Dezabo
                 switch (env.getDialog()) {
                     case START_DIALOG: {
                         if (var == 3) {
@@ -139,72 +139,90 @@ public class _10526Special_Secret_Mission extends QuestHandler
 							return sendQuestDialog(env, 2292);
 						}
 					} case STEP_TO_4: {
-						//ìž ë“  ë?°ìž?ë³´ë³´.
 						giveQuestItem(env, 182216074, 1);
                         changeQuestStep(env, 3, 4, false);
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 703310) { //ìˆ˜ìƒ?í•œ ì˜¤ë“œ ì¡°ê°?.
+            } 
+			if (targetId == 806292) { // Awakened Dezabo
+				switch (env.getDialog()) {
+					case START_DIALOG:
+					    if (var == 5) {
+							return sendQuestDialog(env, 2716);
+						}
+						else if (var == 7) {
+							return sendQuestDialog(env, 3398);
+						}
+						else if (var == 9) {
+							return sendQuestDialog(env, 4080);
+						}
+						else if (var == 11) {
+						return sendQuestDialog(env, 6841);
+						}
+					case STEP_TO_6: {
+						Npc npc = (Npc) env.getVisibleObject();
+						npc.getController().onDelete();
+						return defaultCloseDialog(env, 5, 6); // 6
+					}	
+					case STEP_TO_8: {
+						Npc npc = (Npc) env.getVisibleObject();
+						npc.getController().onDelete();
+						return defaultCloseDialog(env, 7, 8); // 8
+					}	
+					case STEP_TO_10: {
+						Npc npc = (Npc) env.getVisibleObject();
+						npc.getController().onDelete();
+						return defaultCloseDialog(env, 9, 10); // 10
+					}	
+					case SET_REWARD: 
+						removeQuestItem(env, 164002347, 1);
+						qs.setStatus(QuestStatus.REWARD);
+						updateQuestStatus(env);
+						Npc npc = (Npc) env.getVisibleObject();
+						npc.getController().onDelete();
+						return defaultCloseDialog(env, 11, 12); // 12
+					default:
+						break;
+					}
+				}
+			if (targetId == 703310) { // Strange Aether Piece
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 6) {
                             return sendQuestDialog(env, 2717);
                         }
 					} case STEP_TO_6: {
-						//ìž ë“  ë?°ìž?ë³´ë³´.
 						giveQuestItem(env, 182216074, 1);
                         changeQuestStep(env, 6, 7, false);
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 703311) { //ë¶ˆê°€ì‚¬ì?˜í•œ ì˜¤ë“œ ì¡°ê°?.
+            } if (targetId == 703311) { // Mysterious Aether Piece
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 8) {
                             return sendQuestDialog(env, 3400);
                         }
 					} case STEP_TO_8: {
-						//ìž ë“  ë?°ìž?ë³´ë³´.
 						giveQuestItem(env, 182216074, 1);
                         changeQuestStep(env, 8, 9, false);
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 703312) { //ê¸°ë¬˜í•œ ì˜¤ë“œ ì¡°ê°?.
+            } if (targetId == 703312) { // Suspicious Aether Piece
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 10) {
                             return sendQuestDialog(env, 4081);
                         }
 					} case STEP_TO_10: {
-						//ìž ë“  ë?°ìž?ë³´ë³´.
-						giveQuestItem(env, 182216074, 1);
-						//ìž ì?´ ë“  ë?°ìž?ë³´ë³´.
 						giveQuestItem(env, 164002347, 1);
                         changeQuestStep(env, 10, 11, false);
-						QuestService.addNewSpawn(210100000, 1, 806292, player.getX(), player.getY(), player.getZ(), (byte) 0); //ìž ì—?ì„œ ê¹¬ ë?°ìž?ë³´ë³´.
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 806292) { //ìž ì—?ì„œ ê¹¬ ë?°ìž?ë³´ë³´.
-                switch (env.getDialog()) {
-                    case START_DIALOG: {
-                        if (var == 11) {
-                            return sendQuestDialog(env, 6843);
-                        }
-					} case SELECT_ACTION_6844: {
-						if (var == 11) {
-							return sendQuestDialog(env, 6844);
-						}
-					} case SET_REWARD: {
-						Npc npc = (Npc) env.getVisibleObject();
-						npc.getController().onDelete();
-						changeQuestStep(env, 11, 12, true);
-						return closeDialogWindow(env);
-					}
-                }
-            }
+            } 
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806075) { //Weatha.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -226,12 +244,14 @@ public class _10526Special_Secret_Mission extends QuestHandler
         if (qs != null && qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
             if (var == 5) {
-				TeleportService2.teleportTo(player, 210100000, 493.3918f, 1857.11f, 335.36966f, (byte) 51, TeleportAnimation.BEAM_ANIMATION);
-				return HandlerResult.fromBoolean(useQuestItem(env, item, 5, 6, false));
+				QuestService.addNewSpawn(210100000, 1, 806292, player.getX(), player.getY(), player.getZ(), (byte) 0); // Awakened Dezabo
+				return HandlerResult.fromBoolean(useQuestItem(env, item, 5, 5, false));
             } if (var == 7) {
-                return HandlerResult.fromBoolean(useQuestItem(env, item, 7, 8, false));
+				QuestService.addNewSpawn(210100000, 1, 806292, player.getX(), player.getY(), player.getZ(), (byte) 0); // Awakened Dezabo
+                return HandlerResult.fromBoolean(useQuestItem(env, item, 7, 7, false));
             } if (var == 9) {
-                return HandlerResult.fromBoolean(useQuestItem(env, item, 9, 10, false));
+				QuestService.addNewSpawn(210100000, 1, 806292, player.getX(), player.getY(), player.getZ(), (byte) 0); // Awakened Dezabo
+                return HandlerResult.fromBoolean(useQuestItem(env, item, 9, 9, false));
             }
         }
         return HandlerResult.FAILED;
