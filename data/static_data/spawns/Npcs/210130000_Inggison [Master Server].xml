@@ -5975,7 +5975,7 @@
 		</spawn>
 		<!-- Veloso -->
 		<spawn npc_id="798950" respawn_time="295">
-			<spot x="1937.64" y="239.791" z="506.89" h="86"/>
+			<spot x="1937.5803" y="235.41414" z="505.76514" h="109"/>
 		</spawn>
 		<!-- Adias -->
 		<spawn npc_id="798953" respawn_time="295">
