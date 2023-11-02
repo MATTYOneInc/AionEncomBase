@@ -32,8 +32,8 @@ public class _10031A_Risk_For_The_Obelisk extends QuestHandler
 {
     private final static int questId = 10031;
 	
-	private final static int[] armoredSpaller = {215508};
-	private final static int[] hikironFarmBalaur = {215504, 215505, 215509, 215516, 215517, 216463, 216464, 216647, 216783};
+	private final static int[] armoredSpaller = {215508, 215509};
+	private final static int[] hikironFarmBalaur = {215504, 215505, 215516, 215517, 216463, 216464, 216647, 216783};
 	
 	public _10031A_Risk_For_The_Obelisk() {
         super(questId);
