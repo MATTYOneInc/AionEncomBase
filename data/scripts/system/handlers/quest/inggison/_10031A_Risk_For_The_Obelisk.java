@@ -33,7 +33,7 @@ public class _10031A_Risk_For_The_Obelisk extends QuestHandler
     private final static int questId = 10031;
 	
 	private final static int[] armoredSpaller = {215508, 215509};
-	private final static int[] hikironFarmBalaur = {215504, 215505, 215516, 215517, 216463, 216464, 216647, 216783};
+	private final static int[] hikironFarmBalaur = {215504, 215505, 215516, 215517, 215518, 216463, 216464, 216647, 216783};
 	
 	public _10031A_Risk_For_The_Obelisk() {
         super(questId);
@@ -211,7 +211,7 @@ public class _10031A_Risk_For_The_Obelisk extends QuestHandler
         int var1 = qs.getQuestVarById(1);
         int var2 = qs.getQuestVarById(2);
 		int[] armoredSpaller = {215508, 215509};
-		int[] hikironFarmBalaur = {215504, 215505, 215516, 215517, 216463, 216464, 216647, 216783};
+		int[] hikironFarmBalaur = {215504, 215505, 215516, 215517, 215518, 216463, 216464, 216647, 216783};
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
             if (var == 9) {
 				if (var1 + var2 < 11) {
