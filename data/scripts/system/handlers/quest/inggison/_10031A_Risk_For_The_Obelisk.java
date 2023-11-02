@@ -210,12 +210,12 @@ public class _10031A_Risk_For_The_Obelisk extends QuestHandler
         int var = qs.getQuestVarById(0);
         int var1 = qs.getQuestVarById(1);
         int var2 = qs.getQuestVarById(2);
-		int[] armoredSpaller = {215508};
-		int[] hikironFarmBalaur = {215504, 215505, 215509, 215516, 215517, 216463, 216464, 216647, 216783};
+		int[] armoredSpaller = {215508, 215509};
+		int[] hikironFarmBalaur = {215504, 215505, 215516, 215517, 216463, 216464, 216647, 216783};
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
             if (var == 9) {
 				if (var1 + var2 < 11) {
-					if (targetId == 215508) { //Armored Spaller.
+					if (targetId == 215508 || targetId == 215509) { //Armored Spaller.
 						if (var2 < 2) {
 							return defaultOnKillEvent(env, armoredSpaller, var2, var2 + 1, 2);
 						}
