@@ -48,6 +48,7 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
         } 
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestItem(182216075, questId);
+		qe.registerQuestNpc(244107).addOnKillEvent(questId); 
 		qe.registerQuestNpc(244108).addOnKillEvent(questId); 
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerOnEnterZone(ZoneName.get("FALLOW_RUINS_210100000"), questId);
@@ -215,7 +216,7 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
             if (var == 11) {
                 int var1 = qs.getQuestVarById(1);
                 if (var1 >= 0 && var1 < 6) {
-                    return defaultOnKillEvent(env, 244108, var1, var1 + 1, 1);
+                    return defaultOnKillEvent(env, 244107, var1, var1 + 1, 1);
                 } else if (var1 == 6) {
 					qs.setQuestVar(12);
 					updateQuestStatus(env);
