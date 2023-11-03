@@ -38,8 +38,6 @@ public class _10529Protection_Artifact_2 extends QuestHandler
 {
     public static final int questId = 10529;
 	private final static int[] npcs = {806075, 806293, 806294, 806295, 703317, 731710};
-	private final static int[] LF6MissionDarkFi75An = {244111}; //그림�? 아칸 전투병.
-	private final static int[] LF6MissionDarkWi75An = {244112}; //그림�? 아칸 마법병.
 	
     public _10529Protection_Artifact_2() {
         super(questId);
@@ -49,15 +47,13 @@ public class _10529Protection_Artifact_2 extends QuestHandler
     public void register() {
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: LF6MissionDarkFi75An) {
-		    qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: LF6MissionDarkWi75An) {
-		    qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+        }
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
-		qe.registerQuestNpc(244113).addOnKillEvent(questId); //헬뇨르.
+		qe.registerQuestNpc(244111).addOnKillEvent(questId);
+		qe.registerQuestNpc(244112).addOnKillEvent(questId);
+		qe.registerQuestNpc(244113).addOnKillEvent(questId);
     }
 	
 	@Override
@@ -155,9 +151,6 @@ public class _10529Protection_Artifact_2 extends QuestHandler
 						}
 					} case STEP_TO_4: {
 						changeQuestStep(env, 3, 4, false);
-						removeQuestItem(env, 182216078, 20); //천족 회랑 장치 부품.
-						removeQuestItem(env, 182216079, 7); //천족 회랑 �?�력 장치.
-						removeQuestItem(env, 182216080, 1); //천족 회랑 �?�력핵.
 						WorldMapInstance AetherMine = InstanceService.getNextAvailableInstance(301690000); //오드광산.
 						InstanceService.registerPlayerWithInstance(AetherMine, player);
 						TeleportService2.teleportTo(player, 301690000, AetherMine.getInstanceId(), 323, 267, 259);
@@ -215,8 +208,9 @@ public class _10529Protection_Artifact_2 extends QuestHandler
 							return sendQuestDialog(env, 4081);
 						}
 					} case STEP_TO_10: {
-						//깊�?� 잠�? 빠진 �?��?보보.
 						giveQuestItem(env, 182216107, 1);
+						qs.setStatus(QuestStatus.REWARD);
+						updateQuestStatus(env);
 						changeQuestStep(env, 9, 10, false);
 						TeleportService2.teleportTo(player, 210100000, 639.8976f, 2404.188f, 248.18759f, (byte) 79);
 						return closeDialogWindow(env);
@@ -245,25 +239,56 @@ public class _10529Protection_Artifact_2 extends QuestHandler
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
             if (var == 6) {
-				int[] LF6MissionDarkFi75An = {244111}; //그림�? 아칸 전투병.
-				int[] LF6MissionDarkWi75An = {244112}; //그림�? 아칸 마법병.
+				int var1 = qs.getQuestVarById(1);
+				int var2 = qs.getQuestVarById(2);
 				switch (targetId) {
-					case 244111: { //그림�? 아칸 전투병.
-						return defaultOnKillEvent(env, LF6MissionDarkFi75An, 0, 7, 1);
-					} case 244112: { //그림�? 아칸 마법병.
-						qs.setQuestVar(7);
-					    updateQuestStatus(env);
-						return defaultOnKillEvent(env, LF6MissionDarkWi75An, 0, 3, 2);
+                    case 244111: {
+						if (var1 < 6) {
+							return defaultOnKillEvent(env, 244111, 0, 6, 1);
+						}
+						else if (var1 == 6) {
+							if (var2 == 3) {
+								qs.setQuestVar(7);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, 244111, 6, 7, 1);
+							}
+						}
+						break;
+					}
+					case 244112: {
+						if (var2 < 2) {
+							return defaultOnKillEvent(env, 244112, 0, 2, 2);
+						}
+						else if (var2 == 2) {
+							if (var1 == 7) {
+								qs.setQuestVar(7);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, 244112, 2, 3, 2);
+							}
+						}
+						break;
 					}
 				}
-            } else if (var == 8) {
+			}
+			else if (var == 8) {
 				switch (targetId) {
-                    case 244113: { //헬뇨르.
-						qs.setQuestVar(9);
-						updateQuestStatus(env);
-						return true;
+					case 244113: {
+						if (qs.getQuestVarById(1) != 0) {
+							qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
+							updateQuestStatus(env);
+						}
+						else {
+							qs.setQuestVarById(0, 9);
+							updateQuestStatus(env);
+						}
 					}
-                }
+				}
 			}
 		}
 		return false;

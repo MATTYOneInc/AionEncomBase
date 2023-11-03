@@ -49,7 +49,7 @@ public class _20526Special_Secret_Mission extends QuestHandler
         }
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
-		qe.registerQuestItem(182216086, questId); //잠든 위�?보보.
+		qe.registerQuestItem(182216086, questId); 
 		qe.registerOnEnterZoneMissionEnd(questId);
     }
 	
@@ -113,7 +113,7 @@ public class _20526Special_Secret_Mission extends QuestHandler
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 806394) { //Varotta.
+            } if (targetId == 806394) { //Barota.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
 						if (var == 2) {
@@ -123,12 +123,12 @@ public class _20526Special_Secret_Mission extends QuestHandler
 						if (var == 2) {
 							return sendQuestDialog(env, 1695);
 						}
-					} case SELECT_REWARD: {
+					} case STEP_TO_3: {
 						changeQuestStep(env, 2, 3, false);
 						return closeDialogWindow(env);
 					}
 				}
-			} if (targetId == 806296) { //�?��?보보.
+			} if (targetId == 806296) { //Wejabobo
                 switch (env.getDialog()) {
                     case START_DIALOG: {
                         if (var == 3) {
@@ -139,72 +139,88 @@ public class _20526Special_Secret_Mission extends QuestHandler
 							return sendQuestDialog(env, 2292);
 						}
 					} case STEP_TO_4: {
-						//잠든 위�?보보.
 						giveQuestItem(env, 182216086, 1);
                         changeQuestStep(env, 3, 4, false);
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 703318) { //수�?한 오드 파편.
+            } 
+			if (targetId == 806297) { // Awakened Wejabobo
+				switch (env.getDialog()) {
+					case START_DIALOG:
+					    if (var == 5) {
+							return sendQuestDialog(env, 2716);
+						}
+						else if (var == 7) {
+							return sendQuestDialog(env, 3398);
+						}
+						else if (var == 9) {
+							return sendQuestDialog(env, 4080);
+						}
+						else if (var == 11) {
+						return sendQuestDialog(env, 6841);
+						}
+					case STEP_TO_6: {
+						Npc npc = (Npc) env.getVisibleObject();
+						npc.getController().onDelete();
+						return defaultCloseDialog(env, 5, 6); // 6
+					}	
+					case STEP_TO_8: {
+						Npc npc = (Npc) env.getVisibleObject();
+						npc.getController().onDelete();
+						return defaultCloseDialog(env, 7, 8); // 8
+					}	
+					case STEP_TO_10: {
+						Npc npc = (Npc) env.getVisibleObject();
+						npc.getController().onDelete();
+						return defaultCloseDialog(env, 9, 10); // 10
+					}	
+					case SET_REWARD: 
+						removeQuestItem(env, 182216086, 1);
+						removeQuestItem(env, 164002348, 1);
+						qs.setStatus(QuestStatus.REWARD);
+						updateQuestStatus(env);
+						Npc npc = (Npc) env.getVisibleObject();
+						npc.getController().onDelete();
+						return defaultCloseDialog(env, 11, 12); // 12
+					default:
+						break;
+					}
+				}
+			if (targetId == 703318) { // Strange Aether Piece
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 6) {
                             return sendQuestDialog(env, 2717);
                         }
 					} case STEP_TO_6: {
-						//잠든 위�?보보.
-						giveQuestItem(env, 182216086, 1);
                         changeQuestStep(env, 6, 7, false);
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 703319) { //불가사�?�한 오드 파편.
+            } if (targetId == 703319) { // Mysterious Aether Piece
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 8) {
                             return sendQuestDialog(env, 3400);
                         }
 					} case STEP_TO_8: {
-						//잠든 위�?보보.
-						giveQuestItem(env, 182216086, 1);
                         changeQuestStep(env, 8, 9, false);
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 703320) { //기묘한 오드 파편.
+            } if (targetId == 703320) { // Suspicious Aether Piece
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 10) {
                             return sendQuestDialog(env, 4081);
                         }
 					} case STEP_TO_10: {
-						//잠든 위�?보보.
-						giveQuestItem(env, 182216086, 1);
-						//잠�?� 든 위�?보보.
-						giveQuestItem(env, 164002348, 1);
                         changeQuestStep(env, 10, 11, false);
-						QuestService.addNewSpawn(220110000, 1, 806297, player.getX(), player.getY(), player.getZ(), (byte) 0); //잠�?서 깬 위�?보보.
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 806297) { //잠�?서 깬 위�?보보.
-                switch (env.getDialog()) {
-                    case START_DIALOG: {
-                        if (var == 11) {
-                            return sendQuestDialog(env, 6843);
-                        }
-					} case SELECT_ACTION_6844: {
-						if (var == 11) {
-							return sendQuestDialog(env, 6844);
-						}
-					} case SET_REWARD: {
-						Npc npc = (Npc) env.getVisibleObject();
-						npc.getController().onDelete();
-						changeQuestStep(env, 11, 12, true);
-						return closeDialogWindow(env);
-					}
-                }
-            }
+            } 
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806079) { //Feregran.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -214,26 +230,8 @@ public class _20526Special_Secret_Mission extends QuestHandler
 				} else {
 					return sendQuestEndDialog(env);
 				}
-            }
-        }
+			}
+		}
         return false;
-    }
-	
-	@Override
-    public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
-        final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        if (qs != null && qs.getStatus() == QuestStatus.START) {
-            int var = qs.getQuestVarById(0);
-            if (var == 5) {
-				TeleportService2.teleportTo(player, 220110000, 1393.7161f, 2895.9714f, 253.41635f, (byte) 13, TeleportAnimation.BEAM_ANIMATION);
-				return HandlerResult.fromBoolean(useQuestItem(env, item, 5, 6, false));
-            } if (var == 7) {
-                return HandlerResult.fromBoolean(useQuestItem(env, item, 7, 8, false));
-            } if (var == 9) {
-                return HandlerResult.fromBoolean(useQuestItem(env, item, 9, 10, false));
-            }
-        }
-        return HandlerResult.FAILED;
     }
 }

@@ -33,13 +33,12 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author (Encom)
+/**  @author Phantom_KNA
 /****/
 
-public class _10528Protection_Artifact_1 extends QuestHandler
-{
+public class _10528Protection_Artifact_1 extends QuestHandler {
     public static final int questId = 10528;
-	private final static int[] npcs = {806075, 806291, 703316, 731708, 731709};
-	private final static int[] LF6MissionTesinon73An = {244109}; //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
+	private final static int[] npcs = {806075, 806291, 806292, 703316, 731708, 731709};
 	
     public _10528Protection_Artifact_1() {
         super(questId);
@@ -49,13 +48,12 @@ public class _10528Protection_Artifact_1 extends QuestHandler
     public void register() {
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: LF6MissionTesinon73An) {
-		    qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+        } 
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
-		qe.registerQuestItem(182216076, questId); //ìž ë“  ë?°ìž?ë³´ë³´.
-		qe.registerQuestNpc(244110).addOnKillEvent(questId); //íƒ?ìš•ìŠ¤ëŸ° ë?°ìŽ„ì˜¤.
+		qe.registerQuestItem(182216076, questId); 
+		qe.registerQuestNpc(244109).addOnKillEvent(questId);
+        qe.registerQuestNpc(244110).addOnKillEvent(questId); 		
 		qe.registerOnEnterZone(ZoneName.get("LF6_SENSORY_AREA_Q10528_A_210100000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("LF6_SENSORY_AREA_Q10528_B_210100000"), questId);
     }
@@ -71,91 +69,112 @@ public class _10528Protection_Artifact_1 extends QuestHandler
     }
 	
     @Override
-    public boolean onDialogEvent(QuestEnv env) {
-        final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        final Npc npc = (Npc) env.getVisibleObject();
-        if (qs == null) {
-            return false;
-        }
-        int var = qs.getQuestVarById(0);
-        int targetId = 0;
-        if (env.getVisibleObject() instanceof Npc) {
-            targetId = ((Npc) env.getVisibleObject()).getNpcId();
-        } if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806075) { //Weatha.
-                switch (env.getDialog()) {
-                    case START_DIALOG: {
-                        if (var == 0) {
-                            return sendQuestDialog(env, 1011);
-                        } else if (var == 2) {
-                            return sendQuestDialog(env, 1695);
-                        }
-					} case SELECT_ACTION_1012: {
-						if (var == 0) {
-							return sendQuestDialog(env, 1012);
-						}
-					} case SELECT_ACTION_1696: {
-						if (var == 2) {
-							return sendQuestDialog(env, 1696);
-						}
-					} case STEP_TO_1: {
-                        changeQuestStep(env, 0, 1, false);
-						return closeDialogWindow(env);
-					} case STEP_TO_3: {
-                        changeQuestStep(env, 2, 3, false);
-						return closeDialogWindow(env);
-					}
-                }
-            } if (targetId == 806291) { //ë?°ìž?ë³´ë³´.
-				switch (env.getDialog()) {
-					case START_DIALOG: {
-						if (var == 1) {
-							return sendQuestDialog(env, 1354);
-						}
-					} case SELECT_ACTION_1355: {
-						if (var == 1) {
-							return sendQuestDialog(env, 1355);
-						}
-					} case STEP_TO_2: {
-						//ìž ë“  ë?°ìž?ë³´ë³´.
-						giveQuestItem(env, 182216076, 1);
-						changeQuestStep(env, 1, 2, false);
-						return closeDialogWindow(env);
+	public boolean onDialogEvent(QuestEnv env) {
+		final Player player = env.getPlayer();
+		final QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null) {
+			return false;
+		}
+		int var = qs.getQuestVarById(0);
+		int targetId = 0;
+		QuestDialog dialog = env.getDialog();
+		if (env.getVisibleObject() instanceof Npc) {
+			targetId = ((Npc) env.getVisibleObject()).getNpcId();
+		}
+		if (qs.getStatus() == QuestStatus.START) {
+			switch (targetId) {
+				case 806075: { // Wedas
+					switch (env.getDialog()) {
+						case START_DIALOG:
+							if (var == 0) {
+								return sendQuestDialog(env, 1011);
+							}
+							else if (var == 2) {
+								return sendQuestDialog(env, 1693);
+							}
+						case STEP_TO_1:
+						    giveQuestItem(env, 182216076, 1);
+							return defaultCloseDialog(env, 0, 1); // 1
+						case STEP_TO_3:
+							return defaultCloseDialog(env, 2, 3); // 1
+						default:
+							break;
 					}
 				}
-			} if (targetId == 703316) { //ë°”ë¥´í…Œì˜¨ì?˜ ë³´ë¬¼ ìƒ?ìž?.
-                switch (env.getDialog()) {
-				    case USE_OBJECT: {
-						if (var == 5) {
-							qs.setQuestVar(6);
+					break;
+				case 806291: { // Dezabo
+					switch (env.getDialog()) {
+						case START_DIALOG:
+							if (var == 1) {
+								return sendQuestDialog(env, 1352);
+							}
+						case STEP_TO_2:
+							return defaultCloseDialog(env, 1, 2); // 2
+						default:
+							break;
+					}
+				}
+					break;
+				case 703316: { // Barteon's Treasure Chest
+					switch (dialog) {
+						case USE_OBJECT: {
+							return true;
+						}
+						default:
+							break;
+
+					}
+				}
+				case 806292: { // Awakened Wizabo
+					switch (env.getDialog()) {
+						case START_DIALOG:
+							if (var == 5) {
+								return sendQuestDialog(env, 2716);
+							}
+							else if (var == 8) {
+								return sendQuestDialog(env, 3739);
+							}
+							else if (var == 11) {
+								return sendQuestDialog(env, 6841);
+							}
+						case CHECK_COLLECTED_ITEMS: {
+							return checkQuestItems(env, 5, 6, false, 10000, 10001); 
+						}
+						case STEP_TO_9: {
+							giveQuestItem(env, 182216093, 1);
+							return defaultCloseDialog(env, 8, 9);
+						}
+						case SET_REWARD: {
+							removeQuestItem(env, 182216076, 1);
+							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							//ìƒ?ëª…ì?˜ ìˆ¨ê²°.
-							giveQuestItem(env, 182216077, 1);
+							changeQuestStep(env, 11, 12, true);
 						    return closeDialogWindow(env);
 						}
+						default:
+							break;
 					}
 				}
-            } if (targetId == 731708) {
-                switch (env.getDialog()) {
-                    case USE_OBJECT: {
-						if (var == 6) {
-							return sendQuestDialog(env, 3057);
+					break;
+				case 731708: { // Teleport
+					switch (env.getDialog()) {
+						case USE_OBJECT:
+							if (var == 6) {
+								return sendQuestDialog(env, 3057);
+							}
+						case STEP_TO_7: {
+							changeQuestStep(env, 6, 7, false);
+							TeleportService2.teleportTo(player, 210100000, 2497.7742f, 643.23785f, 458.36703f, (byte) 75);
+							return closeDialogWindow(env);
 						}
-					} case SELECT_ACTION_3058: {
-						if (var == 6) {
-							return sendQuestDialog(env, 3058);
-						}
-					} case STEP_TO_7: {
-						changeQuestStep(env, 6, 7, false);
-						TeleportService2.teleportTo(player, 210100000, 2497.7742f, 643.23785f, 458.36703f, (byte) 75);
-						return closeDialogWindow(env);
+						default:
+							break;
 					}
-                }
-            } if (targetId == 731709) {
-                switch (env.getDialog()) {
-                    case USE_OBJECT: {
-                        if (var == 9) {
+				}
+				case 731709: { // Artefact
+					switch (env.getDialog()) {
+						case USE_OBJECT: {
+						if (var == 9) {
 							return sendQuestDialog(env, 3739);
 						} else if (var == 10) {
 							return sendQuestDialog(env, 4080);
@@ -173,46 +192,21 @@ public class _10528Protection_Artifact_1 extends QuestHandler
 						return closeDialogWindow(env);
 					} case STEP_TO_10: {
 						playQuestMovie(env, 1005);
-						giveQuestItem(env, 182216093, 1); //ìƒ?ëª…ì?˜ ìˆ¨ê²°.
-						giveQuestItem(env, 182216076, 1); //ìž ë“  ë?°ìž?ë³´ë³´.
+						removeQuestItem(env, 182216093, 1);
 						changeQuestStep(env, 10, 11, false);
 						return closeDialogWindow(env);
 					}
-                }
-            }
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-            if (targetId == 806075) { //Weatha.
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 10002);
-				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
-					return sendQuestDialog(env, 5);
-				} else {
-					return sendQuestEndDialog(env);
 				}
 			}
 		}
-        return false;
-    }
-	
-	@Override
-	public boolean onKillEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int targetId = env.getTargetId();
-		if (qs != null && qs.getStatus() == QuestStatus.START) {
-			int var = qs.getQuestVarById(0);
-			if (var == 4) {
-				int[] LF6MissionTesinon73An = {244109}; //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-				switch (targetId) {
-					case 244109: { //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-						return defaultOnKillEvent(env, LF6MissionTesinon73An, 0, 10, 1);
-					}
-				} switch (targetId) {
-				    case 244110: { //íƒ?ìš•ìŠ¤ëŸ° ë?°ìŽ„ì˜¤.
-						qs.setQuestVar(5);
-						updateQuestStatus(env);
-						return true;
-					}
+	}
+		else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (targetId == 806075) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
+					return sendQuestDialog(env, 10002);
+				}
+				else {
+					return sendQuestEndDialog(env);
 				}
 			}
 		}
@@ -220,26 +214,53 @@ public class _10528Protection_Artifact_1 extends QuestHandler
 	}
 	
 	@Override
-    public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
-        final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        if (qs != null && qs.getStatus() == QuestStatus.START) {
-            int var = qs.getQuestVarById(0);
-			if (var == 8) {
-                return HandlerResult.fromBoolean(useQuestItem(env, item, 8, 9, false));
-            } if (var == 11) {
-				ThreadPoolManager.getInstance().schedule(new Runnable() {
-					@Override
-					public void run() {
-						giveQuestItem(env, 164002347, 1); //ìž ì?´ ë“  ë?°ìž?ë³´ë³´.
-						TeleportService2.teleportTo(env.getPlayer(), 210100000, 2412.4185f, 775.91626f, 236.68776f, (byte) 79);
+	public boolean onKillEvent(QuestEnv env) {
+		Player player = env.getPlayer();
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs != null && qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
+			if (var == 4) {
+				int targetId = env.getTargetId();
+				int var1 = qs.getQuestVarById(1);
+				int var2 = qs.getQuestVarById(2);
+				switch (targetId) {
+					case 244109: {
+						if (var1 < 9) {
+							return defaultOnKillEvent(env, 244109, 0, 9, 1);
+						}
+						else if (var1 == 9) {
+							if (var2 == 1) {
+								qs.setQuestVar(5);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, 244109, 9, 10, 1);
+							}
+						}
+						break;
 					}
-				}, 5000);
-                return HandlerResult.fromBoolean(useQuestItem(env, item, 11, 12, true));
-            }
-        }
-        return HandlerResult.FAILED;
-    }
+					case 244110: {
+						if (var2 < 1) {
+							return defaultOnKillEvent(env, 244110, 0, 1, 2);
+						}
+						else if (var2 == 0) {
+							if (var1 == 10) {
+								qs.setQuestVar(5);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, 244110, 0, 1, 2);
+							}
+						}
+						break;
+					}
+				}
+			}
+		}
+		return false;
+	}
 	
 	@Override
     public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {

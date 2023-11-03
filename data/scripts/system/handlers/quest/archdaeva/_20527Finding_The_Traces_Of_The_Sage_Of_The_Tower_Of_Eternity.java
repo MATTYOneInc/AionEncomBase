@@ -36,7 +36,6 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
 {
     public static final int questId = 20527;
 	private final static int[] npcs = {806079, 806296, 703321, 703322, 703323, 731711, 731712, 731713};
-	private final static int[] DF6MissionLightRa71An = {244123}; //서광�?� 잠입부대 가디언 정찰병.
 	
     public _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity() {
         super(questId);
@@ -46,11 +45,11 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
     public void register() {
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: DF6MissionLightRa71An) {
-            qe.registerQuestNpc(mob).addOnKillEvent(questId);
         }
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestItem(182216087, questId); //서광�?� 잠입부대 비밀 문서.
+		qe.registerQuestItem(182216087, questId); 
+		qe.registerQuestNpc(244123).addOnKillEvent(questId); 
+		qe.registerQuestNpc(244124).addOnKillEvent(questId); 
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerOnEnterZone(ZoneName.get("AZURELIGHT_FOREST_220110000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("ZENZEN_TRIBAL_GROUNDS_220110000"), questId);
@@ -114,8 +113,8 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
                         changeQuestStep(env, 2, 3, false);
 						return closeDialogWindow(env);
 					} case STEP_TO_14: {
-						removeQuestItem(env, 182216106, 1); //암호화 �?� 비밀 문서.
-						return defaultCloseDialog(env, 13, 14, false, false, 182216087, 1, 0, 0); //서광�?� 잠입부대 비밀 문서.
+						removeQuestItem(env, 182216106, 1); 
+						return defaultCloseDialog(env, 13, 14, false, false, 182216087, 1, 0, 0); 
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 12, 13, false, 10000, 10001);
 					} case FINISH_DIALOG: {
@@ -126,7 +125,7 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
 						}
 					}
                 }
-            } if (targetId == 806296) { //위�?보보.
+            } if (targetId == 806296) { //Wejabobo
 				switch (env.getDialog()) {
 					case START_DIALOG: {
 						if (var == 1) {
@@ -141,7 +140,7 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
 						return closeDialogWindow(env);
 					}
 				}
-			} if (targetId == 703321) { //움찔거리는 나무 �?쿨.
+			} if (targetId == 703321) { //Twitching Tree Vine
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 4) {
@@ -150,7 +149,7 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
                         }
 					}
                 }
-            } if (targetId == 731711) { //빛나는 �?�?�?� 탑 파편.
+            } if (targetId == 731711) { //Shining Tower of Eternity Fragment
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 5) {
@@ -159,7 +158,7 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
                         }
 					}
                 }
-            } if (targetId == 703322) { //움�?�?�는 가마솥.
+            } if (targetId == 703322) { //Moving Cauldron
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 7) {
@@ -168,7 +167,7 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
                         }
 					}
                 }
-            } if (targetId == 731712) { //�?롱한 �?�?�?� 탑 파편.
+            } if (targetId == 731712) { //Bright Tower of Eternity Fragment
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 8) {
@@ -177,18 +176,18 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
                         }
 					}
                 }
-            } if (targetId == 703323) { //꿈틀거리는 �?루.
+            } if (targetId == 703323) { //Writhing Sack
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 10) {
 							changeQuestStep(env, 10, 11, false);
-							QuestService.addNewSpawn(220110000, 1, 244123, 2014.653f, 634.15436f, 274.15616f, (byte) 36); //서광�?� 잠입부대 가디언 정찰병.
-							QuestService.addNewSpawn(220110000, 1, 244123, 2001.704f, 649.0103f, 274.18814f, (byte) 10); //서광�?� 잠입부대 가디언 정찰병.
-							QuestService.addNewSpawn(220110000, 1, 244123, 2005.439f, 635.8378f, 274.1702f, (byte) 20); //서광�?� 잠입부대 가디언 정찰병.
-							QuestService.addNewSpawn(220110000, 1, 244123, 2030.114f, 640.89404f, 274.76425f, (byte) 115); //서광�?� 잠입부대 가디언 정찰병.
-							QuestService.addNewSpawn(220110000, 1, 244123, 2022.2664f, 660.66705f, 273.7082f, (byte) 4); //서광�?� 잠입부대 가디언 정찰병.
-							QuestService.addNewSpawn(220110000, 1, 244123, 2022.0647f, 674.1195f, 274.75f, (byte) 92); //서광�?� 잠입부대 가디언 정찰병.
-							QuestService.addNewSpawn(220110000, 1, 244123, 2010.6356f, 652.08374f, 273.75f, (byte) 102); //서광�?� 잠입부대 가디언 정찰병.
+							QuestService.addNewSpawn(220110000, 1, 244123, 2014.653f, 634.15436f, 274.15616f, (byte) 36); 
+							QuestService.addNewSpawn(220110000, 1, 244123, 2001.704f, 649.0103f, 274.18814f, (byte) 10); 
+							QuestService.addNewSpawn(220110000, 1, 244123, 2005.439f, 635.8378f, 274.1702f, (byte) 20); 
+							QuestService.addNewSpawn(220110000, 1, 244123, 2030.114f, 640.89404f, 274.76425f, (byte) 115); 
+							QuestService.addNewSpawn(220110000, 1, 244123, 2022.2664f, 660.66705f, 273.7082f, (byte) 4); 
+							QuestService.addNewSpawn(220110000, 1, 244123, 2022.0647f, 674.1195f, 274.75f, (byte) 92); 
+							QuestService.addNewSpawn(220110000, 1, 244123, 2010.6356f, 652.08374f, 273.75f, (byte) 102); 
 							return closeDialogWindow(env);
                         }
 					}
@@ -217,11 +216,11 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
             if (var == 11) {
                 int var1 = qs.getQuestVarById(1);
                 if (var1 >= 0 && var1 < 6) {
-                    return defaultOnKillEvent(env, DF6MissionLightRa71An, var1, var1 + 1, 1);
+                    return defaultOnKillEvent(env, 244123, var1, var1 + 1, 1);
                 } else if (var1 == 6) {
 					qs.setQuestVar(12);
 					updateQuestStatus(env);
-					QuestService.addNewSpawn(220110000, 1, 244124, player.getX(), player.getY(), player.getZ(), (byte) 0); //잠입부대 부사관 �?�노메스.
+					QuestService.addNewSpawn(220110000, 1, 244124, player.getX(), player.getY(), player.getZ(), (byte) 0); 
                     return true;
                 }
             }

@@ -123,7 +123,7 @@ public class _10526Special_Secret_Mission extends QuestHandler
 						if (var == 2) {
 							return sendQuestDialog(env, 1695);
 						}
-					} case SELECT_REWARD: {
+					} case STEP_TO_3: {
 						changeQuestStep(env, 2, 3, false);
 						return closeDialogWindow(env);
 					}
@@ -177,6 +177,7 @@ public class _10526Special_Secret_Mission extends QuestHandler
 					}	
 					case SET_REWARD: 
 						removeQuestItem(env, 164002347, 1);
+						removeQuestItem(env, 182216074, 1);
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						Npc npc = (Npc) env.getVisibleObject();
@@ -193,7 +194,6 @@ public class _10526Special_Secret_Mission extends QuestHandler
                             return sendQuestDialog(env, 2717);
                         }
 					} case STEP_TO_6: {
-						giveQuestItem(env, 182216074, 1);
                         changeQuestStep(env, 6, 7, false);
 						return closeDialogWindow(env);
 					}
@@ -205,7 +205,6 @@ public class _10526Special_Secret_Mission extends QuestHandler
                             return sendQuestDialog(env, 3400);
                         }
 					} case STEP_TO_8: {
-						giveQuestItem(env, 182216074, 1);
                         changeQuestStep(env, 8, 9, false);
 						return closeDialogWindow(env);
 					}
@@ -217,7 +216,6 @@ public class _10526Special_Secret_Mission extends QuestHandler
                             return sendQuestDialog(env, 4081);
                         }
 					} case STEP_TO_10: {
-						giveQuestItem(env, 164002347, 1);
                         changeQuestStep(env, 10, 11, false);
 						return closeDialogWindow(env);
 					}
@@ -237,23 +235,4 @@ public class _10526Special_Secret_Mission extends QuestHandler
         return false;
     }
 	
-	@Override
-    public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
-        final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        if (qs != null && qs.getStatus() == QuestStatus.START) {
-            int var = qs.getQuestVarById(0);
-            if (var == 5) {
-				QuestService.addNewSpawn(210100000, 1, 806292, player.getX(), player.getY(), player.getZ(), (byte) 0); // Awakened Dezabo
-				return HandlerResult.fromBoolean(useQuestItem(env, item, 5, 5, false));
-            } if (var == 7) {
-				QuestService.addNewSpawn(210100000, 1, 806292, player.getX(), player.getY(), player.getZ(), (byte) 0); // Awakened Dezabo
-                return HandlerResult.fromBoolean(useQuestItem(env, item, 7, 7, false));
-            } if (var == 9) {
-				QuestService.addNewSpawn(210100000, 1, 806292, player.getX(), player.getY(), player.getZ(), (byte) 0); // Awakened Dezabo
-                return HandlerResult.fromBoolean(useQuestItem(env, item, 9, 9, false));
-            }
-        }
-        return HandlerResult.FAILED;
-    }
 }

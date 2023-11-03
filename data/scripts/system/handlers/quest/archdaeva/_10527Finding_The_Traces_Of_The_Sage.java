@@ -36,7 +36,6 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
 {
     public static final int questId = 10527;
 	private final static int[] npcs = {806075, 806291, 703313, 703314, 703315, 731705, 731706, 731707};
-	private final static int[] LF6MissionDarkRa71An = {244107}; //그림�? 잠입부대 아칸 정찰병.
 	
     public _10527Finding_The_Traces_Of_The_Sage() {
         super(questId);
@@ -46,11 +45,10 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
     public void register() {
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: LF6MissionDarkRa71An) {
-            qe.registerQuestNpc(mob).addOnKillEvent(questId);
-        }
+        } 
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestItem(182216075, questId); //그림�? 잠입부대 비밀 문서.
+		qe.registerQuestItem(182216075, questId);
+		qe.registerQuestNpc(244108).addOnKillEvent(questId); 
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerOnEnterZone(ZoneName.get("FALLOW_RUINS_210100000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("TARHA_KRALL_VILLAGE_210100000"), questId);
@@ -114,8 +112,8 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
                         changeQuestStep(env, 2, 3, false);
 						return closeDialogWindow(env);
 					} case STEP_TO_14: {
-						removeQuestItem(env, 182216105, 1); //밀봉�?� 비밀 문서.
-						return defaultCloseDialog(env, 13, 14, false, false, 182216075, 1, 0, 0); //그림�? 잠입부대 비밀 문서.
+						removeQuestItem(env, 182216105, 1); 
+						return defaultCloseDialog(env, 13, 14, false, false, 182216075, 1, 0, 0); 
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 12, 13, false, 10000, 10001);
 					} case FINISH_DIALOG: {
@@ -126,7 +124,7 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
 						}
 					}
                 }
-            } if (targetId == 806291) { //�?��?보보.
+            } if (targetId == 806291) { //Dejabobo
 				switch (env.getDialog()) {
 					case START_DIALOG: {
 						if (var == 1) {
@@ -141,7 +139,7 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
 						return closeDialogWindow(env);
 					}
 				}
-			} if (targetId == 703313) { //움찔거리는 나무 �?�굴.
+			} if (targetId == 703313) { //Twitching Tree Vine
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 4) {
@@ -150,7 +148,7 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
                         }
 					}
                 }
-            } if (targetId == 731705) { //빛나는 �?�?�?� 탑 조�?.
+            } if (targetId == 731705) { //Shining Tower of Eternity Fragment
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 5) {
@@ -159,7 +157,7 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
                         }
 					}
                 }
-            } if (targetId == 703314) { //움�?�?�는 냄비.
+            } if (targetId == 703314) { //Moving Pot
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 7) {
@@ -168,7 +166,7 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
                         }
 					}
                 }
-            } if (targetId == 731706) { //�?롱한 �?�?�?� 탑 조�?.
+            } if (targetId == 731706) { //Bright Tower of Eternity Fragment
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 8) {
@@ -177,18 +175,18 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
                         }
 					}
                 }
-            } if (targetId == 703315) { //꿈틀대는 �?루.
+            } if (targetId == 703315) { //Wriggling Grain Sack
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 10) {
 							changeQuestStep(env, 10, 11, false);
-							QuestService.addNewSpawn(210100000, 1, 244107, 2130.926f, 2857.0728f, 246.58539f, (byte) 106); //그림�? 잠입부대 아칸 정찰병.
-							QuestService.addNewSpawn(210100000, 1, 244107, 2140.2065f, 2846.4036f, 246.90082f, (byte) 61); //그림�? 잠입부대 아칸 정찰병.
-							QuestService.addNewSpawn(210100000, 1, 244107, 2136.1633f, 2837.4336f, 246.85143f, (byte) 51); //그림�? 잠입부대 아칸 정찰병.
-							QuestService.addNewSpawn(210100000, 1, 244107, 2115.5115f, 2826.012f, 246.7515f, (byte) 117); //그림�? 잠입부대 아칸 정찰병.
-							QuestService.addNewSpawn(210100000, 1, 244107, 2104.703f, 2824.9727f, 249.81421f, (byte) 75); //그림�? 잠입부대 아칸 정찰병.
-							QuestService.addNewSpawn(210100000, 1, 244107, 2122.6865f, 2793.037f, 251.90955f, (byte) 87); //그림�? 잠입부대 아칸 정찰병.
-							QuestService.addNewSpawn(210100000, 1, 244107, 2103.6562f, 2800.0583f, 252.26054f, (byte) 3); //그림�? 잠입부대 아칸 정찰병.
+							QuestService.addNewSpawn(210100000, 1, 244107, 2130.926f, 2857.0728f, 246.58539f, (byte) 106);
+							QuestService.addNewSpawn(210100000, 1, 244107, 2140.2065f, 2846.4036f, 246.90082f, (byte) 61);
+							QuestService.addNewSpawn(210100000, 1, 244107, 2136.1633f, 2837.4336f, 246.85143f, (byte) 51);
+							QuestService.addNewSpawn(210100000, 1, 244107, 2115.5115f, 2826.012f, 246.7515f, (byte) 117);
+							QuestService.addNewSpawn(210100000, 1, 244107, 2104.703f, 2824.9727f, 249.81421f, (byte) 75);
+							QuestService.addNewSpawn(210100000, 1, 244107, 2122.6865f, 2793.037f, 251.90955f, (byte) 87);
+							QuestService.addNewSpawn(210100000, 1, 244107, 2103.6562f, 2800.0583f, 252.26054f, (byte) 3);
 							return closeDialogWindow(env);
                         }
 					}
@@ -217,11 +215,11 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
             if (var == 11) {
                 int var1 = qs.getQuestVarById(1);
                 if (var1 >= 0 && var1 < 6) {
-                    return defaultOnKillEvent(env, LF6MissionDarkRa71An, var1, var1 + 1, 1);
+                    return defaultOnKillEvent(env, 244108, var1, var1 + 1, 1);
                 } else if (var1 == 6) {
 					qs.setQuestVar(12);
 					updateQuestStatus(env);
-					QuestService.addNewSpawn(210100000, 1, 244108, player.getX(), player.getY(), player.getZ(), (byte) 0); //잠입부대 부사관 투르�??.
+					QuestService.addNewSpawn(210100000, 1, 244108, player.getX(), player.getY(), player.getZ(), (byte) 0);
                     return true;
                 }
             }

@@ -48,6 +48,7 @@ public class _15503Most_Extreme_Elimination extends QuestHandler
 		qe.registerQuestNpc(241677).addOnKillEvent(questId);
 		qe.registerQuestNpc(241678).addOnKillEvent(questId);
 		qe.registerQuestNpc(241679).addOnKillEvent(questId);
+		qe.registerQuestNpc(243285).addOnKillEvent(questId);
     }
 	
     @Override
@@ -108,6 +109,7 @@ public class _15503Most_Extreme_Elimination extends QuestHandler
                 case 241677:
                 case 241678:
                 case 241679:
+				case 243285:
                 if (qs.getQuestVarById(1) < 40) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);

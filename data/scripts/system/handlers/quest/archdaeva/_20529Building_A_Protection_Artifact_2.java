@@ -38,8 +38,6 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
 {
     public static final int questId = 20529;
 	private final static int[] npcs = {806079, 806298, 806299, 806300, 703325, 731716};
-	private final static int[] DF6MissionLightFi75An = {244127}; //그림�? 아칸 전투병.
-	private final static int[] DF6MissionLightWi75An = {244128}; //서광�?� 가디언 마법병.
 	
     public _20529Building_A_Protection_Artifact_2() {
         super(questId);
@@ -49,15 +47,13 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
     public void register() {
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: DF6MissionLightFi75An) {
-		    qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: DF6MissionLightWi75An) {
-		    qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+        } 
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
-		qe.registerQuestNpc(244129).addOnKillEvent(questId); //유니우스.
+		qe.registerQuestNpc(244127).addOnKillEvent(questId); 
+		qe.registerQuestNpc(244128).addOnKillEvent(questId);
+		qe.registerQuestNpc(244129).addOnKillEvent(questId);
     }
 	
 	@Override
@@ -74,7 +70,7 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
     public boolean onEnterWorldEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        if (player.getWorldId() == 301690000) { //오드광산.
+        if (player.getWorldId() == 301690000) { 
 			if (qs != null && qs.getStatus() == QuestStatus.START) {
                 int var = qs.getQuestVars().getQuestVars();
                 if (var == 4) {
@@ -122,7 +118,7 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 806300) { //뷔스테.
+            } if (targetId == 806300) { //Viste.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
 						if (var == 1) {
@@ -137,7 +133,7 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
 						return closeDialogWindow(env);
 					}
 				}
-			} if (targetId == 731716) { //부서진 마족 회랑 장치.
+			} if (targetId == 731716) { //Broken Asmodian Corridor Device
                 switch (env.getDialog()) {
 				    case USE_OBJECT: {
 						if (var == 2) {
@@ -155,9 +151,6 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
 						}
 					} case STEP_TO_4: {
 						changeQuestStep(env, 3, 4, false);
-						removeQuestItem(env, 182216090, 20); //마족 회랑 장치 부품.
-						removeQuestItem(env, 182216091, 7); //마족 회랑 �?�력 장치.
-						removeQuestItem(env, 182216092, 1); //마족 회랑 �?�력핵.
 						WorldMapInstance AetherMine = InstanceService.getNextAvailableInstance(301690000); //오드광산.
 						InstanceService.registerPlayerWithInstance(AetherMine, player);
 						TeleportService2.teleportTo(player, 301690000, AetherMine.getInstanceId(), 323, 267, 259);
@@ -172,7 +165,7 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
 						}
 					}
 				}
-            } if (targetId == 806298) { //�?��?보보.
+            } if (targetId == 806298) { //Wejabobo
 				switch (env.getDialog()) {
 					case START_DIALOG: {
 						if (var == 5) {
@@ -187,7 +180,7 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
 						return closeDialogWindow(env);
 					}
 				}
-			} if (targetId == 703325) { //천족 차�?�?� 소용�?��?�.
+			} if (targetId == 703325) { //Elyos Dimensional Rift
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 7) {
@@ -204,7 +197,7 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
                         }
 					}
                 }
-            } if (targetId == 806299) { //쓰러진 위�?보보.
+            } if (targetId == 806299) { //Unconscious Wejabobo
 				switch (env.getDialog()) {
 					case START_DIALOG: {
 						if (var == 9) {
@@ -215,9 +208,10 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
 							return sendQuestDialog(env, 4081);
 						}
 					} case STEP_TO_10: {
-						//깊�?� 잠�? 빠진 위�?보보.
 						giveQuestItem(env, 182216108, 1);
 						changeQuestStep(env, 9, 10, false);
+						qs.setStatus(QuestStatus.REWARD);
+						updateQuestStatus(env);
 						TeleportService2.teleportTo(player, 220110000, 228.99796f, 209.33243f, 287.2919f, (byte) 69);
 						return closeDialogWindow(env);
 					}
@@ -245,25 +239,56 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
             if (var == 6) {
-				int[] DF6MissionLightFi75An = {244127}; //서광�?� 가디언 전투병.
-				int[] DF6MissionLightWi75An = {244128}; //서광�?� 가디언 마법병.
+				int var1 = qs.getQuestVarById(1);
+				int var2 = qs.getQuestVarById(2);
 				switch (targetId) {
-					case 244127: { //서광�?� 가디언 전투병.
-						return defaultOnKillEvent(env, DF6MissionLightFi75An, 0, 7, 1);
-					} case 244128: { //서광�?� 가디언 마법병.
-						qs.setQuestVar(7);
-					    updateQuestStatus(env);
-						return defaultOnKillEvent(env, DF6MissionLightWi75An, 0, 3, 2);
+                    case 244127: {
+						if (var1 < 6) {
+							return defaultOnKillEvent(env, 244127, 0, 6, 1);
+						}
+						else if (var1 == 6) {
+							if (var2 == 3) {
+								qs.setQuestVar(7);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, 244127, 6, 7, 1);
+							}
+						}
+						break;
+					}
+					case 244128: {
+						if (var2 < 2) {
+							return defaultOnKillEvent(env, 244128, 0, 2, 2);
+						}
+						else if (var2 == 2) {
+							if (var1 == 7) {
+								qs.setQuestVar(7);
+								updateQuestStatus(env);
+								return true;
+							}
+							else {
+								return defaultOnKillEvent(env, 244128, 2, 3, 2);
+							}
+						}
+						break;
 					}
 				}
-            } else if (var == 8) {
+			}
+			else if (var == 8) {
 				switch (targetId) {
-                    case 244129: { //유니우스.
-						qs.setQuestVar(9);
-						updateQuestStatus(env);
-						return true;
+					case 244129: {
+						if (qs.getQuestVarById(1) != 0) {
+							qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
+							updateQuestStatus(env);
+						}
+						else {
+							qs.setQuestVarById(0, 9);
+							updateQuestStatus(env);
+						}
 					}
-                }
+				}
 			}
 		}
 		return false;
