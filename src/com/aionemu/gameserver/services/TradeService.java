@@ -39,6 +39,10 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.SafeMath;
 import com.aionemu.gameserver.utils.audit.AuditLogger;
 
+/**
+ *  Fix: MATTY (ADev.Team)
+ */
+
 public class TradeService {
 	private static final Logger log = LoggerFactory.getLogger(TradeService.class);
 	private static final TradeListData tradeListData = DataManager.TRADE_LIST_DATA;
@@ -224,12 +228,10 @@ public class TradeService {
 	public static boolean performBuyFromRewardShop(Npc npc, Player player, TradeList tradeList) {
 		if (!RestrictionsManager.canTrade(player)) {
 			return false;
-		}
-		if (player.getInventory().isFull()) {
+		} if (player.getInventory().isFull()) {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_FULL_INVENTORY);
 			return false;
-		}
-		if (!validateBuyItems(npc, tradeList, player)) {
+		} if (!validateBuyItems(npc, tradeList, player)) {
 			PacketSendUtility.sendMessage(player, "Some items are not allowed to be selled from this npc");
 			return false;
 		}
@@ -237,8 +239,7 @@ public class TradeService {
 		int freeSlots = inventory.getFreeSlots();
 		if (!tradeList.calculateRewardBuyListPrice(player)) {
 			return false;
-		}
-		if (freeSlots < tradeList.size()) {
+		} if (freeSlots < tradeList.size()) {
 			return false;
 		}
 		LimitedItem item = null;
@@ -255,25 +256,20 @@ public class TradeService {
 					item.getBuyCount().putIfAbsent(player.getObjectId(), 0);
 					if (item.getBuyLimit() - tradeItem.getCount() < 0) {
 						return false;
-					}
-					if (item.getBuyCount().containsKey(player.getObjectId())) {
+					} if (item.getBuyCount().containsKey(player.getObjectId())) {
 						if (item.getBuyCount().get(player.getObjectId()) < item.getBuyLimit()) {
-							item.getBuyCount().put(player.getObjectId(),
-									item.getBuyCount().get(player.getObjectId()) + (int) tradeItem.getCount());
+							item.getBuyCount().put(player.getObjectId(), item.getBuyCount().get(player.getObjectId()) + (int) tradeItem.getCount());
 						} else {
 							return false;
 						}
 					}
 				} else if (item.getBuyLimit() != 0 && item.getDefaultSellLimit() != 0) {
 					item.getBuyCount().putIfAbsent(player.getObjectId(), 0);
-					if (item.getBuyLimit() - tradeItem.getCount() < 0
-							|| item.getSellLimit() - tradeItem.getCount() < 0) {
+					if (item.getBuyLimit() - tradeItem.getCount() < 0 || item.getSellLimit() - tradeItem.getCount() < 0) {
 						return false;
-					}
-					if (item.getBuyCount().containsKey(player.getObjectId())) {
+					} if (item.getBuyCount().containsKey(player.getObjectId())) {
 						if (item.getBuyCount().get(player.getObjectId()) < item.getBuyLimit()) {
-							item.getBuyCount().put(player.getObjectId(),
-									item.getBuyCount().get(player.getObjectId()) + (int) tradeItem.getCount());
+							item.getBuyCount().put(player.getObjectId(), item.getBuyCount().get(player.getObjectId()) + (int) tradeItem.getCount());
 						} else {
 							return false;
 						}
@@ -281,20 +277,16 @@ public class TradeService {
 					item.setSellLimit(item.getSellLimit() - (int) tradeItem.getCount());
 				}
 			}
-			// Map<Integer, Long> requiredItems = tradeList.getRequiredItems();
-			// for (Integer itemId : requiredItems.keySet()) {
-			// if (!player.getInventory().decreaseByItemId(itemId,
-			// requiredItems.get(itemId))) {
-			// AuditLogger.info(player, "Possible hack. Not removed items on buy in
-			// rewardshop.");
-			// return false;
-			// }
-			// }
+			Map<Integer, Long> requiredItems = tradeList.getRequiredItems();
+			for (Integer itemId : requiredItems.keySet()) {
+				if (!player.getInventory().decreaseByItemId(itemId, requiredItems.get(itemId))) {
+					AuditLogger.info(player, "Possible hack. Not removed items on buy in rewardshop.");
+					return false;
+				}
+			}
 			long count = ItemService.addItem(player, tradeItem.getItemTemplate().getTemplateId(), tradeItem.getCount());
 			if (count != 0) {
-				log.warn(String.format("CHECKPOINT: itemservice couldnt add all items on buy: %d %d %d %d",
-						player.getObjectId(), tradeItem.getItemTemplate().getTemplateId(), tradeItem.getCount(),
-						count));
+				log.warn(String.format("CHECKPOINT: itemservice couldnt add all items on buy: %d %d %d %d", player.getObjectId(), tradeItem.getItemTemplate().getTemplateId(), tradeItem.getCount(), count));
 				return false;
 			}
 		}
