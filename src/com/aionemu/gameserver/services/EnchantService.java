@@ -962,6 +962,9 @@ public class EnchantService {
 				if (item.getItemTemplate().getArmorType() == ArmorType.SHIELD) {
 					modifiers.add(new StatEnchantFunction(item, StatEnum.DAMAGE_REDUCE, 0));
 					modifiers.add(new StatEnchantFunction(item, StatEnum.BLOCK, 0));
+					modifiers.add(new StatEnchantFunction(item, StatEnum.MAXHP, 0));
+					modifiers.add(new StatEnchantFunction(item, StatEnum.PHYSICAL_DEFENSE, 0));
+					modifiers.add(new StatEnchantFunction(item, StatEnum.MAGIC_SKILL_BOOST_RESIST, 0));
 				}
 				/**
 				 * 5.0 Wings Enchant

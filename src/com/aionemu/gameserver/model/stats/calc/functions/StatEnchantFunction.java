@@ -66,8 +66,13 @@ public class StatEnchantFunction extends StatAddFunction {
 	}
 
 	private int getEnchantAdditionModifier(int enchantLvl, Stat2 stat) {
+		int enchantAdvLvl=0;
+		if (enchantLvl>15){
+			enchantAdvLvl=enchantLvl-15;
+			enchantLvl=15;
+		}
 		if (item.getItemTemplate().isWeapon()) {
-			return getWeaponModifiers(enchantLvl);
+			return getWeaponModifiers(enchantLvl, enchantAdvLvl);
 		}
 		if (this.item.getItemTemplate().isAccessory() && !this.item.getItemTemplate().isPlume()
 				&& !this.item.getItemTemplate().isBracelet()) {
@@ -78,7 +83,7 @@ public class StatEnchantFunction extends StatAddFunction {
 		}
 		if (this.item.getItemTemplate().isArmor()
 				|| this.item.getItemTemplate().isPlume() && !this.item.getItemTemplate().isBracelet()) {
-			return getArmorModifiers(enchantLvl, stat);
+			return getArmorModifiers(enchantLvl, enchantAdvLvl, stat);
 		}
 		if (this.item.getItemTemplate().isArmor()
 				|| this.item.getItemTemplate().isBracelet() && !this.item.getItemTemplate().isPlume()) {
@@ -87,7 +92,7 @@ public class StatEnchantFunction extends StatAddFunction {
 		return 0;
 	}
 
-	private int getWeaponModifiers(int enchantLvl) {
+	private int getWeaponModifiers(int enchantLvl, int enchantAdvLvl) {
 		switch (stat) {
 		case MAIN_HAND_POWER:
 		case OFF_HAND_POWER:
@@ -96,14 +101,14 @@ public class StatEnchantFunction extends StatAddFunction {
 			case GUN_1H:
 			case SWORD_1H:
 			case DAGGER_1H:
-				return 2 * enchantLvl;
+				return 2 * enchantLvl + 4 * enchantAdvLvl;
 			case BOW:
 			case SWORD_2H:
 			case POLEARM_2H:
-				return 4 * enchantLvl;
+				return 4 * enchantLvl + 8 * enchantAdvLvl;
 			case MACE_1H:
 			case STAFF_2H:
-				return 3 * enchantLvl;
+				return 3 * enchantLvl + 6 * enchantAdvLvl;
 			}
 			return 0;
 		case BOOST_MAGICAL_SKILL:
@@ -116,20 +121,20 @@ public class StatEnchantFunction extends StatAddFunction {
 			case STAFF_2H:
 			case CANNON_2H:
 			case KEYBLADE_2H:
-				return 20 * enchantLvl;
+				return 20 * enchantLvl + 40 * enchantAdvLvl;
 			}
 			return 0;
 		case MAGICAL_ATTACK:
 			switch (item.getItemTemplate().getWeaponType()) {
 			case GUN_1H:
-				return 2 * enchantLvl;
-			case ORB_2H:
+				return 2 * enchantLvl + 4 * enchantAdvLvl;
 			case BOOK_2H:
+				return 3 * enchantLvl + 6 * enchantAdvLvl;
+			case ORB_2H:
 			case HARP_2H:
-				return 3 * enchantLvl;
 			case CANNON_2H:
 			case KEYBLADE_2H:
-				return 4 * enchantLvl;
+				return 4 * enchantLvl + 8 * enchantAdvLvl;
 			}
 			return 0;
 		default:
@@ -229,7 +234,7 @@ public class StatEnchantFunction extends StatAddFunction {
 		return 0;
 	}
 
-	private int getArmorModifiers(int enchantLvl, Stat2 applyStat) {
+	private int getArmorModifiers(int enchantLvl, int enchantAdvLvl, Stat2 applyStat) {
 		ArmorType armorType = item.getItemTemplate().getArmorType();
 		if (armorType == null) {
 			return 0;
@@ -247,49 +252,49 @@ public class StatEnchantFunction extends StatAddFunction {
 			case 1 << 4:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return enchantLvl;
+					return enchantLvl + 2 * enchantAdvLvl;
 				case MAXHP:
-					return 20 * enchantLvl;
+					return 20 * enchantLvl + 40 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				}
 				return 0;
 			case 1 << 12:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				case MAXHP:
-					return 22 * enchantLvl;
+					return 22 * enchantLvl + 44 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				}
 				return 0;
 			case 1 << 3:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				case MAXHP:
-					return 24 * enchantLvl;
+					return 24 * enchantLvl + 48 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				}
 				return 0;
 			}
@@ -301,49 +306,49 @@ public class StatEnchantFunction extends StatAddFunction {
 			case 1 << 4:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				case MAXHP:
-					return 18 * enchantLvl;
+					return 18 * enchantLvl + 36 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				}
 				return 0;
 			case 1 << 12:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				case MAXHP:
-					return 20 * enchantLvl;
+					return 20 * enchantLvl + 40 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				}
 				return 0;
 			case 1 << 3:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case MAXHP:
-					return 22 * enchantLvl;
+					return 22 * enchantLvl + 44 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				}
 				return 0;
 			}
@@ -355,49 +360,49 @@ public class StatEnchantFunction extends StatAddFunction {
 			case 1 << 4:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				case MAXHP:
-					return 16 * enchantLvl;
+					return 16 * enchantLvl + 32 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				}
 				return 0;
 			case 1 << 12:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case MAXHP:
-					return 18 * enchantLvl;
+					return 18 * enchantLvl + 36 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				}
 				return 0;
 			case 1 << 3:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 5 * enchantLvl;
+					return 5 * enchantLvl + 10 * enchantAdvLvl;
 				case MAXHP:
-					return 20 * enchantLvl;
+					return 20 * enchantLvl + 40 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				}
 				return 0;
 			}
@@ -409,49 +414,49 @@ public class StatEnchantFunction extends StatAddFunction {
 			case 1 << 4:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case MAXHP:
-					return 14 * enchantLvl;
+					return 14 * enchantLvl + 28 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				}
 				return 0;
 			case 1 << 12:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 5 * enchantLvl;
+					return 5 * enchantLvl + 10 * enchantAdvLvl;
 				case MAXHP:
-					return 16 * enchantLvl;
+					return 16 * enchantLvl + 32 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 2 * enchantLvl;
+					return 2 * enchantLvl + 4 * enchantAdvLvl;
 				}
 				return 0;
 			case 1 << 3:
 				switch (stat) {
 				case PHYSICAL_ATTACK:
-					return 1 * enchantLvl;
+					return 1 * enchantLvl + 2 * enchantAdvLvl;
 				case BOOST_MAGICAL_SKILL:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case PHYSICAL_DEFENSE:
-					return 6 * enchantLvl;
+					return 6 * enchantLvl + 12 * enchantAdvLvl;
 				case MAXHP:
-					return 18 * enchantLvl;
+					return 18 * enchantLvl + 36 * enchantAdvLvl;
 				case PHYSICAL_CRITICAL_RESIST:
-					return 4 * enchantLvl;
+					return 4 * enchantLvl + 8 * enchantAdvLvl;
 				case MAGICAL_DEFEND:
-					return 3 * enchantLvl;
+					return 3 * enchantLvl + 6 * enchantAdvLvl;
 				}
 				return 0;
 			}
@@ -462,46 +467,67 @@ public class StatEnchantFunction extends StatAddFunction {
 				float reduceRate = enchantLvl > 10 ? 0.2f : enchantLvl * 0.02f;
 				return Math.round(reduceRate * applyStat.getBase());
 			case BLOCK:
-				if (enchantLvl > 10)
-					return 30 * (enchantLvl - 10);
-				return 0;
+				if (enchantLvl > 10) {
+					int blocktemp = 30 * (enchantLvl - 10 + enchantAdvLvl);
+					if (blocktemp>300)
+						blocktemp=300;				
+				return blocktemp;
+				}
+			case MAXHP:
+				return 100 * enchantAdvLvl;
+			case PHYSICAL_DEFENSE:
+				if (enchantAdvLvl>5)
+					return 50 * (enchantAdvLvl - 5);
+			case MAGIC_SKILL_BOOST_RESIST:
+				if (enchantAdvLvl>5)
+					return 20 * (enchantAdvLvl - 5);				
 			}
-
+			return 0;
 		case PLUME:
+			int plumeench = enchantLvl + enchantAdvLvl;
 			switch (this.stat) {
 			case MAXHP:
-				return 150 * enchantLvl;
+				return 150 * plumeench;
 			case PHYSICAL_ATTACK:
-				return 4 * enchantLvl;
+				return 4 * plumeench;
 			case BOOST_MAGICAL_SKILL:
-				return 20 * enchantLvl;
+				return 20 * plumeench;
 			case PHYSICAL_CRITICAL:
-				return 12 * enchantLvl;
+				return 12 * plumeench;
 			case PHYSICAL_ACCURACY:
-				return 16 * enchantLvl;
+				return 16 * plumeench;
 			case MAGICAL_ACCURACY:
-				return 8 * enchantLvl;
+				return 8 * plumeench;
 			case MAGICAL_CRITICAL:
-				return 8 * enchantLvl;
+				return 8 * plumeench;
 			}
 			return 0;
 		/**
 		 * 5.0 Wings Enchant
 		 */
+		 // lol
 		case WING:
-			switch (this.stat) {
+			if (enchantLvl+enchantAdvLvl<20)
+				enchantLvl = enchantLvl+enchantAdvLvl;
+			else
+				enchantLvl = 20;
+			if (enchantAdvLvl - 5 < 0) 
+				enchantAdvLvl = 0;
+			else
+				enchantAdvLvl -= 5;			
+			switch (this.stat) {		
 			case PHYSICAL_ATTACK:
-				return 1 * enchantLvl;
+				return 1 * enchantLvl + 2 * enchantAdvLvl;
 			case BOOST_MAGICAL_SKILL:
-				return 4 * enchantLvl;
+				return 4 * enchantLvl + 8 * enchantAdvLvl;
 			case MAXHP:
-				return 20 * enchantLvl;
+				return 40 * enchantLvl + 80 * enchantAdvLvl;
 			case PHYSICAL_CRITICAL_RESIST:
-				return 2 * enchantLvl;
+				return 2 * enchantLvl + 8 * enchantAdvLvl;
 			case FLY_TIME:
-				return 10 * enchantLvl;
+				return 10 * enchantLvl + 20 * enchantAdvLvl;
 			case MAGICAL_CRITICAL_RESIST:
-				return 1 * enchantLvl;
+				return 1 * enchantLvl + 4 * enchantAdvLvl;
 			}
 			return 0;
 		}

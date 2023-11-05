@@ -20,6 +20,7 @@ import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.services.item.ItemService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
+import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 
 /**
  * @author Antraxx
@@ -42,12 +43,18 @@ public final class CmdWishId extends AbstractGMHandler {
 
 		Integer qty = Integer.parseInt(p[0]);
 		Integer itemId = Integer.parseInt(p[1]);
-
+		ItemTemplate it = DataManager.ITEM_DATA.getItemTemplate(itemId);
+		long count =0;
 		if (qty > 0 && itemId > 0) {
-			if (DataManager.ITEM_DATA.getItemTemplate(itemId) == null) {
+			if (it == null) {
 				PacketSendUtility.sendMessage(admin, "Item id is incorrect: " + itemId);
 			} else {
-				long count = ItemService.addItem(t, itemId, qty);
+				if (it.getMaxAuthorize()!=0)
+					count = ItemService.addItemAndEnchant(t, it.getTemplateId(),1, qty);
+				else if (it.isStackable())
+					count = ItemService.addItem(t, itemId, qty);
+				else 
+					count = ItemService.addItem(t, itemId, 1);
 				if (count == 0) {
 					PacketSendUtility.sendMessage(admin,
 							"You successfully gave " + qty + " x [item:" + itemId + "] to " + t.getName() + ".");

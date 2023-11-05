@@ -39,6 +39,7 @@ import com.aionemu.gameserver.network.aion.gmhandler.CmdTeleportToNamed;
 import com.aionemu.gameserver.network.aion.gmhandler.CmdVisible;
 import com.aionemu.gameserver.network.aion.gmhandler.CmdWish;
 import com.aionemu.gameserver.network.aion.gmhandler.CmdWishId;
+import com.aionemu.gameserver.network.aion.gmhandler.CmdSetEnchantCount;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
@@ -154,6 +155,9 @@ public class CM_GM_COMMAND_SEND extends AionClientPacket {
 		case ADDSKILL:
 			new CmdAddSkill(admin, params);
 			break;
+		case SET_ENCHANTCOUNT:
+			new CmdSetEnchantCount(admin, params);
+			break;			
 		case SETINVENTORYGROWTH:
 		case SKILLPOINT:
 		case COMBINESKILL:

@@ -85,7 +85,7 @@ public class EnchantItemAction extends AbstractItemAction {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_MONEY);
 			return false;
 		}
-		if (targetItem.getEnchantLevel() == 25 && !parentItem.getItemTemplate().isManaStone()) {
+		if (targetItem.getEnchantLevel() == 255 && !parentItem.getItemTemplate().isManaStone()) {
 			// You cannot enchant %0 any further.
 			PacketSendUtility.sendPacket(player,
 					SM_SYSTEM_MESSAGE.STR_ENCHANT_ITEM_IT_CAN_NOT_BE_ENCHANTED_MORE_TIME(targetItem.getNameId()));

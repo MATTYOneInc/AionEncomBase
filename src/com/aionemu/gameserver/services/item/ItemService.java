@@ -445,22 +445,23 @@ public class ItemService {
 	}
 
 	private static void enchant(Player player, int enchant, Item item) {
-		if (isUpgradable(item)) {
-			if (item.getEnchantLevel() == enchant) {
-				return;
-			}
-			if (enchant > 25) {
-				enchant = 25;
-			}
-			if (enchant < 0) {
-				enchant = 0;
-			}
-			item.setEnchantLevel(enchant);
-			if (item.isEquipped()) {
-				player.getGameStats().updateStatsVisually();
-			}
-			ItemPacketService.updateItemAfterInfoChange(player, item);
+		if (item.getEnchantLevel() == enchant) {
+			return;
 		}
+		if (enchant > 255) {
+			enchant = 255;
+		}
+		if (enchant < 0) {
+			enchant = 0;
+		}
+		if (item.getItemTemplate().getMaxAuthorize()!=0)
+			item.setAuthorize(enchant);
+		else if (item.getItemTemplate().getMaxEnchantLevel()!=0)
+			item.setEnchantLevel(enchant);
+		if (item.isEquipped()) {
+			player.getGameStats().updateStatsVisually();
+		}
+		ItemPacketService.updateItemAfterInfoChange(player, item);
 	}
 
 	public static boolean isUpgradable(Item item) {

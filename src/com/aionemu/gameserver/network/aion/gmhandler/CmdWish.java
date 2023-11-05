@@ -65,14 +65,15 @@ public final class CmdWish extends AbstractGMHandler {
 		String[] itemN = params.split(" ");
 
 		String itemName = itemN[0];
-		Integer itemcount = Integer.parseInt(itemN[1]);
-		if (itemcount == 0) {
-			itemcount = 1;
-		}
+		Integer enchant = Integer.parseInt(itemN[1]);
 
 		for (ItemTemplate it : itemTemp.valueCollection()) {
 			if (it.getNamedesc() != null && it.getNamedesc().equalsIgnoreCase(itemName)) {
-				ItemService.addItem(admin, it.getTemplateId(), itemcount);
+				int maxauthorize = it.getMaxAuthorize();
+				if ((maxauthorize!=0)&&(enchant>maxauthorize))
+					ItemService.addItemAndEnchant(admin, it.getTemplateId(),1, maxauthorize);
+				else
+					ItemService.addItemAndEnchant(admin, it.getTemplateId(),1, enchant);
 			}
 		}
 	}
