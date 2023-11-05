@@ -104,11 +104,6 @@ public class _20110 extends QuestHandler
                         changeQuestStep(env, 0, 1, false);
 						return closeDialogWindow(env);
 					} case STEP_TO_3: {
-						playQuestMovie(env, 1007);
-						removeQuestItem(env, 182216233, 1);
-						removeQuestItem(env, 182216234, 1);
-						removeQuestItem(env, 182216235, 1);
-						removeQuestItem(env, 182216236, 1);
 						return defaultCloseDialog(env, 2, 3, false, false, 182216237, 1, 0, 0);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 1, 2, false, 10000, 10001);

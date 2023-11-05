@@ -40426,7 +40426,7 @@
     </rewards>
     <quest_drop npc_id="702833" item_id="182215900" chance="100" drop_each_member="1" />
     <quest_drop npc_id="702834" item_id="182215901" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="702834" item_id="182215902" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="702835" item_id="182215902" chance="100" drop_each_member="1" />
   </quest>
   <quest id="25401" name="Harbinger's Hero" nameId="1801784" minlevel_permitted="68" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="IMPORTANT">
     <rewards gold="101430" exp="9281610">

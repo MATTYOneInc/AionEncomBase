@@ -1843,30 +1843,36 @@
 		<spawn npc_id="221446">
 			<spot x="1538.1523" y="1566.0889" z="2898.4824" entity_id="2958"/>
 		</spawn>
-		<!-- [Ancien] Asteria's Gate Stone -->
-		<spawn npc_id="276507">
-			<spot x="452.74103" y="2498.9595" z="2894.2017" entity_id="208"/>
-			<spot x="479.65515" y="2479.1987" z="2729.8162" entity_id="209"/>
-		</spawn>
-		<!-- [Ancien] Roah Gate Stone -->
-		<spawn npc_id="276013">
-			<spot x="2212.7656" y="455.00037" z="2873.3899" entity_id="206"/>
-			<spot x="2242.8291" y="459.08405" z="2873.3862" entity_id="207"/>
-		</spawn>
 		<!-- Beritra Supply Unit Box  	
 		Looks like a box that the Beritra Legion uses to store supplies -->
 		<spawn npc_id="702830" respawn_time="60">
 			<spot x="2210.7461" y="426.35565" z="2872.3838" entity_id="51"/>
-			<spot x="513.70532" y="2496.3816" z="2893.0161" entity_id="52"/>
+			<spot x="2244.4321" y="490.31366" z="2872.3857" entity_id="52"/>
 		</spawn>
 		<!-- Destroyed Gate Reinforcer
 		Someone destroyed it on purpose -->
 		<spawn npc_id="702831" respawn_time="60">
-			<spot x="416.58911" y="2481.7920" z="2893.0161" entity_id="54"/>
+			<spot x="2212.7397" y="454.87805" z="2873.362" entity_id="206"/>
+			<spot x="2242.691" y="459.3647" z="2873.3635" entity_id="207"/>
 		</spawn>
 		<!-- Heavy Bomb Box -->
 		<spawn npc_id="702832" respawn_time="60">
-			<spot x="2244.3022" y="490.50452" z="2872.3838" entity_id="941"/>
+		    <spot x="2193.0278" y="464.44342" z="2872.0393" entity_id="104"/>
+			<spot x="2244.3022" y="490.50452" z="2872.3838" entity_id="104"/>
+		</spawn>
+		<!-- Beritra Supplies Box -->
+		<spawn npc_id="702833" respawn_time="60">
+			<spot x="416.9183" y="2481.9978" z="2893.0164" entity_id="54"/>
+			<spot x="513.64624" y="2496.1511" z="2893.016" entity_id="52"/>
+		</spawn>
+		<!-- Shattered Gate Reinforcer -->
+		<spawn npc_id="702834" respawn_time="60">
+			<spot x="452.6802" y="2498.6665" z="2894.189" entity_id="208"/>
+		</spawn>
+		<!-- Big Bomb Box -->
+		<spawn npc_id="702835" respawn_time="60">
+			<spot x="449.29514" y="2505.002" z="2893.01" entity_id="18"/>
+			<spot x="458.36404" y="2520.1401" z="2892.6309" entity_id="80"/>
 		</spawn>
 		<!-- Ab1_FOBJ_Supply_Box_Q10112A -->
 		<spawn npc_id="703465" respawn_time="60">
@@ -5726,6 +5732,14 @@
         </spawn>
         <spawn npc_id="884026" respawn_time="1800">
             <spot h="0" z="2764.3176" y="2329.3806" x="737.7228"/>
+        </spawn>
+		<spawn custom="true" respawn_time="295" npc_id="885101" difficult_id="0">
+            <spot h="42" z="2962.7505" y="938.5111" x="1552.4457"/>
+            <spot h="25" z="2962.3076" y="980.31824" x="1571.2278"/>
+            <spot h="102" z="2962.6382" y="945.6361" x="1580.7891"/>
+			<spot h="7" z="2912.1804" y="1945.9021" x="917.9676"/>
+            <spot h="99" z="2911.99" y="1962.157" x="928.38043"/>
+            <spot h="55" z="2913.5134" y="1950.4254" x="940.6749"/>
         </spawn>
 	</spawn_map>
 </spawns>

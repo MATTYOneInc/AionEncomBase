@@ -36,7 +36,7 @@ public class _25400Pontekane_Plight extends QuestHandler
 	
     @Override
     public void register() {
-        int[] npcs = {805356, 805357, 805358, 805359, 805360, 702830, 702831, 702832};
+        int[] npcs = {805356, 805357, 805358, 805359, 805360, 702833, 702834, 702835};
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
@@ -44,7 +44,7 @@ public class _25400Pontekane_Plight extends QuestHandler
 		qe.registerQuestItem(182215900, questId); //Beritra Supply Mark.
 		qe.registerQuestItem(182215901, questId); //Repair Device Gear.
 		qe.registerQuestItem(182215902, questId); //Ereshkigal Legion Mark.
-		qe.registerQuestNpc(883643).addOnKillEvent(questId); //Ereshkigal's Searcher.
+		qe.registerQuestNpc(885101).addOnKillEvent(questId); //Ereshkigal's Searcher.
 		qe.registerOnEnterZone(ZoneName.get("MIREN_ISLAND_400010000"), questId);
     }
 	
@@ -113,58 +113,46 @@ public class _25400Pontekane_Plight extends QuestHandler
 						return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 702830) { //Beritra Supply Unit Box.
+            } if (targetId == 702833) { //Beritra Supplies Box
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
-						switch (player.getRace()) {
-							case ASMODIANS:
-								giveQuestItem(env, 182215900, 1); //Beritra Supply Mark.
-							break;
-						}
-						return closeDialogWindow(env);
+					return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 702831) { //Destroyed Gate Reinforcer.
+            } if (targetId == 702834) { //Shattered Gate Reinforcer
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
-						switch (player.getRace()) {
-							case ASMODIANS:
-								giveQuestItem(env, 182215901, 1); //Repair Device Gear.
-							break;
-						}
-						return closeDialogWindow(env);
+					return closeDialogWindow(env);
 					}
                 }
-            } if (targetId == 702832) { //Heavy Bomb Box.
+            } if (targetId == 702835) { //Heavy Bomb Box.
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
-						switch (player.getRace()) {
-							case ASMODIANS:
-								giveQuestItem(env, 182215902, 1); //Ereshkigal Legion Mark.
-							break;
-						}
-						return closeDialogWindow(env);
+					return closeDialogWindow(env);
 					}
                 }
             } if (targetId == 805359) { //Dukas.
                 switch (env.getDialog()) {
                     case START_DIALOG: {
 						if (var == 3) {
-                            return sendQuestDialog(env, 2034);
-                        }
-					} case STEP_TO_4: {
-                        changeQuestStep(env, 4, 5, false);
-						return closeDialogWindow(env);
-					} case CHECK_COLLECTED_ITEMS: {
-						if (QuestService.collectItemCheck(env, true)) {
-							changeQuestStep(env, 3, 4, false);
-							return sendQuestDialog(env, 10000);
-						} else {
-							return sendQuestDialog(env, 10001);
+							return sendQuestDialog(env, 2034);
 						}
+						else if (var == 4) {
+							return sendQuestDialog(env, 2375);
+							}
+						}
+						case CHECK_COLLECTED_ITEMS: {
+							return checkQuestItems(env, 3, 4, false, 10000, 10001); // 4
+						}
+						case STEP_TO_5: {
+							changeQuestStep(env, 4, 5, false);
+							return closeDialogWindow(env);
+						}
+						default:
+							return sendQuestStartDialog(env);
 					}
-                }
-            } if (targetId == 805360) { //Lanpaz.
+				}
+			if (targetId == 805360) { //Lanpaz.
                 switch (env.getDialog()) {
                     case START_DIALOG: {
                         if (var == 6) {
@@ -216,7 +204,7 @@ public class _25400Pontekane_Plight extends QuestHandler
             if (var == 6) {
                 int var1 = qs.getQuestVarById(1);
                 if (var1 >= 0 && var1 < 1) {
-                    return defaultOnKillEvent(env, 883643, var1, var1 + 1, 1); //Ereshkigal's Searcher.
+                    return defaultOnKillEvent(env, 885101, var1, var1 + 1, 1); //Ereshkigal's Searcher.
                 } else if (var1 == 1) {
                     qs.setQuestVar(7);
 					updateQuestStatus(env);

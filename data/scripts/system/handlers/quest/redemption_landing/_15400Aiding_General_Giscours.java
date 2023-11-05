@@ -116,30 +116,18 @@ public class _15400Aiding_General_Giscours extends QuestHandler
             } if (targetId == 702830) { //Beritra Supply Unit Box.
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
-						switch (player.getRace()) {
-							case ELYOS:
-							break;
-						}
 						return closeDialogWindow(env);
 					}
                 }
             } if (targetId == 702831) { //Destroyed Gate Reinforcer.
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
-						switch (player.getRace()) {
-							case ELYOS:
-							break;
-						}
 						return closeDialogWindow(env);
 					}
                 }
             } if (targetId == 702832) { //Heavy Bomb Box.
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
-						switch (player.getRace()) {
-							case ELYOS:
-							break;
-						}
 						return closeDialogWindow(env);
 					}
                 }
