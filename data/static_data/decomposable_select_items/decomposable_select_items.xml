@@ -26,21 +26,39 @@
 	<!-- Rainbow Dye Pack I -->
 	<decomposable_select_item item_id="188051207">
 	    <items>
-            <item id="169220033"/>
-			<item id="169200004"/>
-			<item id="169231019"/>
-			<item id="169231020"/>
-			<item id="169230025"/>
-			<item id="169220009"/>
-			<item id="169231020"/>
+            <item id="169220048"/>
+			<item id="169220046"/>
+			<item id="169220042"/>
+			<item id="169220043"/>
+			<item id="169220047"/>
+			<item id="169220045"/>
+			<item id="169220044"/>
+			<item id="169220041"/>
         </items>
     </decomposable_select_item>
-	<decomposable_select_item item_id="188050002"/>
-	<decomposable_select_item item_id="188050003"/>
+	<decomposable_select_item item_id="188050002">
+	    <items>
+			<item id="152201481" race="ELYOS"/>
+			<item id="152201480" race="ELYOS"/>
+			<item id="152201478" race="ELYOS"/>
+			<item id="152201479" race="ELYOS"/>
+			<item id="152201477" race="ELYOS"/>
+			<item id="152201409" race="ELYOS"/>
+			<item id="152201413" race="ELYOS"/>
+			<item id="152201410" race="ELYOS"/>
+			<item id="152201412" race="ELYOS"/>
+			<item id="152201411" race="ELYOS"/>
+        </items>
+    </decomposable_select_item>
+	<decomposable_select_item item_id="188050003">
+	    <items>
+            <item id="101500714"/>
+        </items>
+    </decomposable_select_item>
 	<!-- Red Solorius Stocking -->
 	<decomposable_select_item item_id="188050004">
 	    <items>
-			<item id="160005048" count="5"/>
+	   <!-- <item id="160005048" count="5"/>
 			<item id="160010094" count="5"/>
 			<item id="160010095" count="5"/>
 			<item id="160010096" count="5"/>
@@ -49,86 +67,120 @@
 			<item id="160010201" count="5"/>
 			<item id="160010202" count="5"/>
 			<item id="184002026" count="1"/>
-			<item id="184002027" count="1"/>
+			<item id="184002027" count="1"/> -->
+
+			<item id="160010084" race="ELYOS"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Yellow Solorius Stocking -->
 	<decomposable_select_item item_id="188050005">
 	    <items>
-			<item id="160005048" count="5"/>
+	   <!-- <item id="160005048" count="5"/>
 			<item id="160010094" count="5"/>
 			<item id="160010095" count="5"/>
 			<item id="160010096" count="5"/>
 			<item id="160010196" count="5"/>
 			<item id="160010197" count="5"/>
 			<item id="160010201" count="5"/>
-			<item id="160010202" count="5"/>
+			<item id="160010202" count="5"/> -->
+
+			<item id="188100335"/>
+			<item id="160010086"/>
+			<item id="160010087"/>
+			<item id="160010088"/>
+			<item id="167000518"/>
+			<item id="160010084" race="ELYOS"/>
+			<item id="125040028"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Green Solorius Stocking -->
 	<decomposable_select_item item_id="188050006">
 	    <items>
-			<item id="160005048" count="5"/>
+	   <!-- <item id="160005048" count="5"/>
 			<item id="160010094" count="5"/>
 			<item id="160010095" count="5"/>
 			<item id="160010096" count="5"/>
 			<item id="160010196" count="5"/>
 			<item id="160010197" count="5"/>
 			<item id="160010201" count="5"/>
-			<item id="160010202" count="5"/>
+			<item id="160010202" count="5"/> -->
+
+			<item id="169200007"/>
+			<item id="169200005"/>
+			<item id="169200006"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Red Solorius Stocking -->
 	<decomposable_select_item item_id="188050007">
 	    <items>
-			<item id="160005048" count="5"/>
+	   <!-- <item id="160005048" count="5"/>
 			<item id="160010094" count="5"/>
 			<item id="160010095" count="5"/>
 			<item id="160010096" count="5"/>
 			<item id="160010196" count="5"/>
 			<item id="160010197" count="5"/>
 			<item id="160010201" count="5"/>
-			<item id="160010202" count="5"/>
+			<item id="160010202" count="5"/> -->
+
+			<item id="160010085" race="ASMODIANS"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Yellow Solorius Stocking -->
 	<decomposable_select_item item_id="188050008">
 	    <items>
-			<item id="160005048" count="5"/>
+	   <!-- <item id="160005048" count="5"/>
 			<item id="160010094" count="5"/>
 			<item id="160010095" count="5"/>
 			<item id="160010096" count="5"/>
 			<item id="160010196" count="5"/>
 			<item id="160010197" count="5"/>
 			<item id="160010201" count="5"/>
-			<item id="160010202" count="5"/>
+			<item id="160010202" count="5"/> -->
+
+			<item id="188100335"/>
+			<item id="160010086"/>
+			<item id="160010087"/>
+			<item id="160010088"/>
+			<item id="167000518"/>
+			<item id="160010085" race="ASMODIANS"/>
+			<item id="125040028"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Green Solorius Stocking -->
 	<decomposable_select_item item_id="188050009">
 	    <items>
-			<item id="160005048" count="5"/>
+	   <!-- <item id="160005048" count="5"/>
 			<item id="160010094" count="5"/>
 			<item id="160010095" count="5"/>
 			<item id="160010096" count="5"/>
 			<item id="160010196" count="5"/>
 			<item id="160010197" count="5"/>
 			<item id="160010201" count="5"/>
-			<item id="160010202" count="5"/>
+			<item id="160010202" count="5"/> -->
+
+			<item id="169200007"/>
+			<item id="169200005"/>
+			<item id="169200006"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lenatinerk's Gift -->
 	<decomposable_select_item item_id="188050010">
 	    <items>
-			<item id="160010201" count="5"/>
-			<item id="160010202" count="5"/>
+	   <!-- <item id="160010201" count="5"/>
+			<item id="160010202" count="5"/> -->
+
+			<item id="188050006" race="ELYOS"/>
+			<item id="188050005" race="ELYOS"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lenatinerk's Gift -->
 	<decomposable_select_item item_id="188050011">
 	    <items>
-			<item id="160010201" count="5"/>
-			<item id="160010202" count="5"/>
+	   <!-- <item id="160010201" count="5"/>
+			<item id="160010202" count="5"/> -->
+
+			<item id="188050009" race="ASMODIANS"/>
+			<item id="188050008" race="ASMODIANS"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050012">
@@ -941,10 +993,34 @@
 			<item id="101700798"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050174"/>
-	<decomposable_select_item item_id="188050175"/>
-	<decomposable_select_item item_id="188050176"/>
-	<decomposable_select_item item_id="188050177"/>
+	<decomposable_select_item item_id="188050174">
+		<items>
+			<item id="182006273"/>
+			<item id="182006272"/>
+			<item id="182006274"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050175">
+		<items>
+			<item id="182006273"/>
+			<item id="182006272"/>
+			<item id="182006274"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050176">
+		<items>
+			<item id="182006273"/>
+			<item id="182006272"/>
+			<item id="182006274"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050177">
+		<items>
+			<item id="182006273"/>
+			<item id="182006272"/>
+			<item id="182006274"/>
+		</items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188050178">
 		<items>
 			<item id="110101151"/>
@@ -2838,79 +2914,127 @@
 	<!-- Lesser Alabaster Order Supplies -->
 	<decomposable_select_item item_id="188050556">
 		<items>
-			<item id="162000004" count="10"/>
+	   <!-- <item id="162000004" count="10"/>
 			<item id="162000009" count="10"/>
 			<item id="160001013" count="10"/>
 			<item id="160001014" count="10"/>
 			<item id="160001019" count="10"/>
 			<item id="160001020" count="10"/>
 			<item id="164000068" count="10"/>
+			<item id="169000008" count="50"/> -->
+
+			<item id="164000068" count="10"/>
+			<item id="160001019" count="10"/>
+			<item id="160001013" count="10"/>
+			<item id="160001020" count="10"/>
 			<item id="169000008" count="50"/>
+			<item id="162000043" count="5"/>
+			<item id="160001014" count="5"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Alabaster Order Supplies -->
 	<decomposable_select_item item_id="188050557">
 		<items>
-			<item id="162000004" count="20"/>
+	   <!-- <item id="162000004" count="20"/>
 			<item id="162000009" count="20"/>
 			<item id="160001023" count="20"/>
 			<item id="160001024" count="20"/>
 			<item id="160001029" count="20"/>
 			<item id="160001030" count="20"/>
 			<item id="164000068" count="20"/>
-			<item id="169000008" count="100"/>
+			<item id="169000008" count="100"/> -->
+
+			<item id="164000068" count="10"/>
+			<item id="160001023" count="10"/>
+			<item id="160001029" count="10"/>
+			<item id="160001030" count="10"/>
+			<item id="169000008" count="50"/>
+			<item id="162000043" count="5"/>
+			<item id="160001024" count="5"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Alabaster Order Supplies -->
 	<decomposable_select_item item_id="188050558">
 		<items>
-			<item id="162000004" count="30"/>
+	   <!-- <item id="162000004" count="30"/>
 			<item id="162000009" count="30"/>
 			<item id="160001033" count="30"/>
 			<item id="160001034" count="30"/>
 			<item id="160001039" count="30"/>
 			<item id="160001040" count="30"/>
 			<item id="164000070" count="30"/>
-			<item id="169000010" count="150"/>
+			<item id="169000010" count="150"/> -->
+
+			<item id="160001033" count="10"/>
+			<item id="160001040" count="10"/>
+			<item id="164000070" count="10"/>
+			<item id="162000045" count="10"/>
+			<item id="169000010" count="50"/>
+			<item id="160001039" count="5"/>
+			<item id="160001034" count="5"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lesser Field Warden Supplies -->
 	<decomposable_select_item item_id="188050559">
 		<items>
-			<item id="162000004" count="10"/>
+	   <!-- <item id="162000004" count="10"/>
 			<item id="162000009" count="10"/>
 			<item id="160001013" count="10"/>
 			<item id="160001014" count="10"/>
 			<item id="160001019" count="10"/>
 			<item id="160001020" count="10"/>
 			<item id="164000068" count="10"/>
+			<item id="169000008" count="50"/> -->
+
+			<item id="164000068" count="10"/>
+			<item id="160002013" count="10"/>
+			<item id="160002019" count="10"/>
+			<item id="160002020" count="10"/>
 			<item id="169000008" count="50"/>
+			<item id="162000043" count="5"/>
+			<item id="160002014" count="5"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Field Warden Supplies -->
 	<decomposable_select_item item_id="188050560">
 		<items>
-			<item id="162000004" count="20"/>
+	   <!-- <item id="162000004" count="20"/>
 			<item id="162000009" count="20"/>
 			<item id="160001023" count="20"/>
 			<item id="160001024" count="20"/>
 			<item id="160001029" count="20"/>
 			<item id="160001030" count="20"/>
 			<item id="164000068" count="20"/>
-			<item id="169000008" count="100"/>
+			<item id="169000008" count="100"/> -->
+
+			<item id="164000068" count="10"/>
+			<item id="160002023" count="10"/>
+			<item id="169000008" count="10"/>
+			<item id="160002030" count="10"/>
+			<item id="162000043" count="50"/>
+			<item id="160002029" count="5"/>
+			<item id="160002024" count="5"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Field Warden Supplies -->
 	<decomposable_select_item item_id="188050561">
 		<items>
-			<item id="162000004" count="30"/>
+	   <!-- <item id="162000004" count="30"/>
 			<item id="162000009" count="30"/>
 			<item id="160001033" count="30"/>
 			<item id="160001034" count="30"/>
 			<item id="160001039" count="30"/>
 			<item id="160001040" count="30"/>
 			<item id="164000070" count="30"/>
-			<item id="169000010" count="150"/>
+			<item id="169000010" count="150"/> -->
+
+			<item id="160002033" count="10"/>
+			<item id="160002040" count="10"/>
+			<item id="164000070" count="10"/>
+			<item id="162000045" count="10"/>
+			<item id="169000010" count="50"/>
+			<item id="160002039" count="5"/>
+			<item id="160002034" count="5"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lesser Alabaster Order Reward -->
@@ -3060,6 +3184,7 @@
 			<item id="160001024" count="20"/>
 			<item id="160001029" count="20"/>
 			<item id="160001030" count="20"/>
+			<item id="162000043" count="20"/>
 			<item id="164000068" count="20"/>
 			<item id="169000008" count="100"/>
 		</items>
@@ -3073,6 +3198,7 @@
 			<item id="160001034" count="30"/>
 			<item id="160001039" count="30"/>
 			<item id="160001040" count="30"/>
+			<item id="162000045" count="30"/>
 			<item id="164000070" count="30"/>
 			<item id="169000010" count="150"/>
 		</items>
@@ -3082,10 +3208,11 @@
 		<items>
 			<item id="162000004" count="20"/>
 			<item id="162000009" count="20"/>
-			<item id="160001023" count="20"/>
-			<item id="160001024" count="20"/>
-			<item id="160001029" count="20"/>
-			<item id="160001030" count="20"/>
+			<item id="160002023" count="20"/>
+			<item id="160002024" count="20"/>
+			<item id="160002029" count="20"/>
+			<item id="160002030" count="20"/>
+			<item id="162000043" count="20"/>
 			<item id="164000068" count="20"/>
 			<item id="169000008" count="100"/>
 		</items>
@@ -3099,6 +3226,7 @@
 			<item id="160002034" count="20"/>
 			<item id="160002039" count="20"/>
 			<item id="160002040" count="20"/>
+			<item id="162000045" count="20"/>
 			<item id="164000070" count="20"/>
 			<item id="169000010" count="100"/>
 		</items>
@@ -3334,10 +3462,26 @@
 			<item id="186000066" count="2"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050593"/>
-	<decomposable_select_item item_id="188050594"/>
-	<decomposable_select_item item_id="188050595"/>
-	<decomposable_select_item item_id="188050596"/>
+	<decomposable_select_item item_id="188050593">
+	    <items>
+            <item id="162000082" count="2"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050594">
+	    <items>
+            <item id="162000083" count="2"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050595">
+	    <items>
+            <item id="162000082" count="2"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050596">
+	    <items>
+            <item id="162000083" count="2"/>
+		</items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188050597"/>
 	<decomposable_select_item item_id="188050598"/>
 	<decomposable_select_item item_id="188050599"/>
@@ -3456,57 +3600,201 @@
 	<!-- Veille's 1st Grade Reward -->
 	<decomposable_select_item item_id="188050702">
 		<items>
+			<item id="168000164"/>
+			<item id="168000173"/>
+			<item id="168000162"/>
+			<item id="168000169"/>
+			<item id="168000165"/>
+			<item id="168000167"/>
+			<item id="168000166"/>
+			<item id="168000171"/>
+			<item id="168000161"/>
+			<item id="168000177"/>
+			<item id="168000163"/>
+			<item id="168000170"/>
+			<item id="168000174"/>
+			<item id="168000175"/>
+			<item id="168000176"/>
+			<item id="168000172"/>
+			<item id="168000168"/>
+			<item id="169610112" race="ELYOS"/>
 			<item id="186000469" count="5"/>
-			<item id="182006282" count="2"/>
+			<item id="182006281" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Veille's 2nd Grade Reward -->
 	<decomposable_select_item item_id="188050703">
 		<items>
+			<item id="168000164"/>
+			<item id="168000173"/>
+			<item id="168000162"/>
+			<item id="168000169"/>
+			<item id="168000165"/>
+			<item id="168000167"/>
+			<item id="168000166"/>
+			<item id="168000171"/>
+			<item id="168000161"/>
+			<item id="168000177"/>
+			<item id="168000163"/>
+			<item id="168000170"/>
+			<item id="168000174"/>
+			<item id="168000175"/>
+			<item id="168000176"/>
+			<item id="168000172"/>
+			<item id="168000168"/>
+			<item id="169610112" race="ELYOS"/>
 			<item id="186000469" count="10"/>
-			<item id="182006282" count="4"/>
+			<item id="182006281" count="4"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Veille's 3rd Grade Reward -->
 	<decomposable_select_item item_id="188050704">
 		<items>
+			<item id="168000164"/>
+			<item id="168000173"/>
+			<item id="168000162"/>
+			<item id="168000169"/>
+			<item id="168000165"/>
+			<item id="168000167"/>
+			<item id="168000166"/>
+			<item id="168000171"/>
+			<item id="168000161"/>
+			<item id="168000177"/>
+			<item id="168000163"/>
+			<item id="168000170"/>
+			<item id="168000174"/>
+			<item id="168000175"/>
+			<item id="168000176"/>
+			<item id="168000172"/>
+			<item id="168000168"/>
+			<item id="169610112" race="ELYOS"/>
 			<item id="186000469" count="15"/>
-			<item id="182006282" count="6"/>
+			<item id="182006281" count="6"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Veille's 4th Grade Reward -->
 	<decomposable_select_item item_id="188050705">
 		<items>
+			<item id="168000164"/>
+			<item id="168000173"/>
+			<item id="168000162"/>
+			<item id="168000169"/>
+			<item id="168000165"/>
+			<item id="168000167"/>
+			<item id="168000166"/>
+			<item id="168000171"/>
+			<item id="168000161"/>
+			<item id="168000177"/>
+			<item id="168000163"/>
+			<item id="168000170"/>
+			<item id="168000174"/>
+			<item id="168000175"/>
+			<item id="168000176"/>
+			<item id="168000172"/>
+			<item id="168000168"/>
+			<item id="169610112" race="ELYOS"/>
 			<item id="186000469" count="20"/>
-			<item id="182006282" count="8"/>
+			<item id="182006281" count="8"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Mastarius's 1st Grade Reward -->
 	<decomposable_select_item item_id="188050706">
 		<items>
+			<item id="168000164"/>
+			<item id="168000173"/>
+			<item id="168000162"/>
+			<item id="168000169"/>
+			<item id="168000165"/>
+			<item id="168000167"/>
+			<item id="168000166"/>
+			<item id="168000171"/>
+			<item id="168000161"/>
+			<item id="168000177"/>
+			<item id="168000163"/>
+			<item id="168000170"/>
+			<item id="168000174"/>
+			<item id="168000175"/>
+			<item id="168000176"/>
+			<item id="168000172"/>
+			<item id="168000168"/>
+			<item id="169610312" race="ASMODIANS"/>
 			<item id="186000469" count="5"/>
-			<item id="182006281" count="2"/>
+			<item id="182006282" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Mastarius's 2nd Grade Reward -->
 	<decomposable_select_item item_id="188050707">
 		<items>
+			<item id="168000164"/>
+			<item id="168000173"/>
+			<item id="168000162"/>
+			<item id="168000169"/>
+			<item id="168000165"/>
+			<item id="168000167"/>
+			<item id="168000166"/>
+			<item id="168000171"/>
+			<item id="168000161"/>
+			<item id="168000177"/>
+			<item id="168000163"/>
+			<item id="168000170"/>
+			<item id="168000174"/>
+			<item id="168000175"/>
+			<item id="168000176"/>
+			<item id="168000172"/>
+			<item id="168000168"/>
+			<item id="169610312" race="ASMODIANS"/>
 			<item id="186000469" count="10"/>
-			<item id="182006281" count="4"/>
+			<item id="182006282" count="4"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Mastarius's 3rd Grade Reward -->
 	<decomposable_select_item item_id="188050708">
 		<items>
+			<item id="168000164"/>
+			<item id="168000173"/>
+			<item id="168000162"/>
+			<item id="168000169"/>
+			<item id="168000165"/>
+			<item id="168000167"/>
+			<item id="168000166"/>
+			<item id="168000171"/>
+			<item id="168000161"/>
+			<item id="168000177"/>
+			<item id="168000163"/>
+			<item id="168000170"/>
+			<item id="168000174"/>
+			<item id="168000175"/>
+			<item id="168000176"/>
+			<item id="168000172"/>
+			<item id="168000168"/>
+			<item id="169610312" race="ASMODIANS"/>
 			<item id="186000469" count="15"/>
-			<item id="182006281" count="6"/>
+			<item id="182006282" count="6"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Mastarius's 4th Grade Reward -->
 	<decomposable_select_item item_id="188050709">
 		<items>
+			<item id="168000164"/>
+			<item id="168000173"/>
+			<item id="168000162"/>
+			<item id="168000169"/>
+			<item id="168000165"/>
+			<item id="168000167"/>
+			<item id="168000166"/>
+			<item id="168000171"/>
+			<item id="168000161"/>
+			<item id="168000177"/>
+			<item id="168000163"/>
+			<item id="168000170"/>
+			<item id="168000174"/>
+			<item id="168000175"/>
+			<item id="168000176"/>
+			<item id="168000172"/>
+			<item id="168000168"/>
+			<item id="169610312" race="ASMODIANS"/>
 			<item id="186000469" count="20"/>
-			<item id="182006281" count="8"/>
+			<item id="182006282" count="8"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050710">
@@ -3522,23 +3810,164 @@
 	<decomposable_select_item item_id="188050712">
 		<items>
 			<item id="188100335" count="200"/>
+			<item id="167000294"/>
+			<item id="167000518"/>
+			<item id="167000522"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050713"/>
-	<decomposable_select_item item_id="188050714"/>
-	<decomposable_select_item item_id="188050715"/>
-	<decomposable_select_item item_id="188050717"/>
+	<decomposable_select_item item_id="188050713">
+		<items>
+			<item id="152000907"/>
+			<item id="152014014"/>
+			<item id="141000001" count="200"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050714">
+		<items>
+			<item id="110900084"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050715">
+		<items>
+			<item id="110900083"/>
+			<item id="111000010"/>
+			<item id="125040030"/>
+			<item id="114000010"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050717">
+		<items>
+			<item id="152000320"/>
+			<item id="152000324"/>
+			<item id="152000322"/>
+		</items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188050718">
 		<items>
 			<item id="188100335" count="200"/>
+			<item id="152001002" race="ELYOS"/>
+			<item id="152000403" race="ELYOS"/>
+			<item id="152000601" race="ELYOS"/>
+			<item id="152000702" race="ELYOS"/>
+			<item id="152000802" race="ELYOS"/>
+			<item id="152000701" race="ELYOS"/>
+			<item id="152000002" race="ELYOS"/>
+			<item id="152000001" race="ELYOS"/>
+			<item id="152001001" race="ELYOS"/>
+			<item id="152000003" race="ELYOS"/>
+			<item id="152000801" race="ELYOS"/>
+			<item id="152000703" race="ELYOS"/>
+			<item id="152000501" race="ELYOS"/>
+			<item id="152000401" race="ELYOS"/>
+			<item id="152000803" race="ELYOS"/>
+			<item id="152000704" race="ELYOS"/>
+			<item id="152000407" race="ELYOS"/>
+			<item id="152000005" race="ELYOS"/>
+			<item id="152000004" race="ELYOS"/>
+			<item id="152000705" race="ELYOS"/>
+			<item id="152000405" race="ELYOS"/>
+			<item id="152000804" race="ELYOS"/>
+			<item id="152000502" race="ELYOS"/>
+			<item id="152000602" race="ELYOS"/>
+			<item id="152000805" race="ELYOS"/>
+			<item id="152000006" race="ELYOS"/>
+			<item id="152000503" race="ELYOS"/>
+			<item id="152000007" race="ELYOS"/>
+			<item id="152000603" race="ELYOS"/>
+			<item id="152000806" race="ELYOS"/>
+			<item id="152000104" race="ELYOS"/>
+			<item id="152000401" race="ELYOS"/>
+			<item id="152000803" race="ELYOS"/>
+			<item id="152000707" race="ELYOS"/>
+			<item id="152000409" race="ELYOS"/>
+			<item id="152000706" race="ELYOS"/>
+			<item id="152000807" race="ELYOS"/>
+			<item id="152000411" race="ELYOS"/>
+			<item id="152000008" race="ELYOS"/>
+			<item id="152000708" race="ELYOS"/>
+			<item id="152000009" race="ELYOS"/>
+			<item id="152000710" race="ELYOS"/>
+			<item id="152001003" race="ELYOS"/>
+			<item id="152000604" race="ELYOS"/>
+			<item id="152000415" race="ELYOS"/>
+			<item id="152000413" race="ELYOS"/>
+			<item id="152000808" race="ELYOS"/>
+			<item id="152000709" race="ELYOS"/>
+			<item id="152000504" race="ELYOS"/>
+			<item id="152000417" race="ELYOS"/>
+			<item id="152000605" race="ELYOS"/>
+			<item id="152000809" race="ELYOS"/>
+			<item id="152000711" race="ELYOS"/>
+			<item id="152000505" race="ELYOS"/>
+			<item id="152000010" race="ELYOS"/>
+			<item id="152000810" race="ELYOS"/>
+			<item id="152000419" race="ELYOS"/>
+			<item id="152001005" race="ELYOS"/>
+			<item id="152000011" race="ELYOS"/>
+			<item id="152000012" race="ELYOS"/>
+			<item id="152000712" race="ELYOS"/>
+			<item id="152001004" race="ELYOS"/>
+			<item id="152000104"/>
+			<item id="152000204"/>
+			<item id="152000207"/>
+			<item id="152000107"/>
+			<item id="152000761"/>
+			<item id="152000467"/>
+			<item id="152000655"/>
+			<item id="152001054"/>
+			<item id="152000211"/>
+			<item id="152000859"/>
+			<item id="152000060"/>
+			<item id="152000555"/>
+			<item id="152000111"/>
+			<item id="152000319"/>
+			<item id="152000113"/>
+			<item id="152000214"/>
+			<item id="152000101"/>
+			<item id="152000201"/>
+			<item id="152000202"/>
+			<item id="152000102"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050719">
 		<items>
+			<item id="152000401" race="ELYOS"/>
+			<item id="152000403" race="ELYOS"/>
+			<item id="152000405" race="ELYOS"/>
+			<item id="152000407" race="ELYOS"/>
+			<item id="152000409" race="ELYOS"/>
+			<item id="152000411" race="ELYOS"/>
+			<item id="152000413" race="ELYOS"/>
+			<item id="152000415" race="ELYOS"/>
+			<item id="152000417" race="ELYOS"/>
+			<item id="152000419" race="ELYOS"/>
 			<item id="152000060"/>
+			<item id="152000102"/>
+			<item id="152000104"/>
+			<item id="152000107"/>
 			<item id="152000111"/>
+			<item id="152000113"/>
+			<item id="152000202"/>
+			<item id="152000204"/>
+			<item id="152000207"/>
 			<item id="152000211"/>
+			<item id="152000214"/>
+			<item id="152000301"/>
+			<item id="152000302"/>
+			<item id="152000303"/>
+			<item id="152000304"/>
+			<item id="152000305"/>
+			<item id="152000306"/>
+			<item id="152000307"/>
+			<item id="152000309"/>
+			<item id="152000311"/>
+			<item id="152000313"/>
+			<item id="152000315"/>
+			<item id="152000317"/>
 			<item id="152000319"/>
+			<item id="152000320"/>
+			<item id="152000322"/>
+			<item id="152000324"/>
 			<item id="152000467"/>
 			<item id="152000555"/>
 			<item id="152000655"/>
@@ -3549,163 +3978,311 @@
 	</decomposable_select_item>	
 	<decomposable_select_item item_id="188050720">
 		<items>
-			<item id="152000106"/>
-			<item id="152000206"/>
-			<item id="152000308"/>
-			<item id="152000310"/>
-			<item id="152000312"/>
-			<item id="152000109"/>
-			<item id="152000209"/>
-			<item id="152000314"/>
-			<item id="152000316"/>
-			<item id="152000318"/>
-			<item id="152000115"/>
-			<item id="152000216"/>
-			<item id="152000219"/>
-			<item id="152000321"/>
-			<item id="152000323"/>
-			<item id="152000325"/>
+			<item id="152000204"/>
+			<item id="152000307"/>
+			<item id="152000309"/>
+			<item id="152000311"/>
+			<item id="152000104"/>
+			<item id="152000317"/>
+			<item id="152000107"/>
+			<item id="152000207"/>
+			<item id="152000313"/>
+			<item id="152000315"/>
+			<item id="152000319"/>
+			<item id="152000111"/>
+			<item id="152000555"/>
+			<item id="152000060"/>
+			<item id="152000859"/>
+			<item id="152000211"/>
+			<item id="152001054"/>
+			<item id="152000655"/>
+			<item id="152000467"/>
+			<item id="152000761"/>
+			<item id="152000320"/>
+			<item id="152000214"/>
+			<item id="152000324"/>
+			<item id="152000113"/>
+			<item id="152000322"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050721">
 		<items>
-			<item id="152000112"/>
-			<item id="152000213"/>
-			<item id="152000116"/>
-			<item id="152000212"/>
-			<item id="152000217"/>
-			<item id="152000326"/>
-			<item id="152000327"/>
-			<item id="152000328"/>
+			<item id="152000107"/>
+			<item id="152000207"/>
+			<item id="152000319"/>
+			<item id="152000111"/>
+			<item id="152000555"/>
+			<item id="152000060"/>
+			<item id="152000859"/>
+			<item id="152000211"/>
+			<item id="152001054"/>
+			<item id="152000655"/>
+			<item id="152000467"/>
+			<item id="152000761"/>
+			<item id="152000320"/>
+			<item id="152000214"/>
+			<item id="152000324"/>
+			<item id="152000113"/>
+			<item id="152000322"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050722">
 		<items>
+			<item id="169240006"/>
+			<item id="169240007"/>
+			<item id="169240003"/>
 			<item id="169240002"/>
 			<item id="169240004"/>
+			<item id="169240005"/>
+			<item id="169240001"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050723">
 		<items>
 			<item id="100500822"/>
-			<item id="100200936"/>
+			<item id="101300771"/>
+			<item id="101700844"/>
 			<item id="100100801"/>
 			<item id="100900799"/>
-			<item id="115001090"/>
-			<item id="101300771"/>
 			<item id="100001056"/>
+			<item id="115001090"/>
 			<item id="101500827"/>
+			<item id="100200936"/>
 			<item id="100600877"/>
-			<item id="101700844"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050724"/>
+	<decomposable_select_item item_id="188050724">
+		<items>
+			<item id="152000320"/>
+			<item id="152000324"/>
+			<item id="152000322"/>
+		</items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188050725">
 		<items>
-			<item id="152000106"/>
-			<item id="152000206"/>
-			<item id="152000308"/>
-			<item id="152000310"/>
-			<item id="152000312"/>
-			<item id="152000109"/>
-			<item id="152000209"/>
-			<item id="152000314"/>
-			<item id="152000316"/>
-			<item id="152000318"/>
-			<item id="152000115"/>
-			<item id="152000216"/>
-			<item id="152000219"/>
-			<item id="152000321"/>
-			<item id="152000323"/>
-			<item id="152000325"/>
+			<item id="152000651" race="ASMODIANS"/>
+			<item id="152000551" race="ASMODIANS"/>
+			<item id="152000753" race="ASMODIANS"/>
+			<item id="152000751" race="ASMODIANS"/>
+			<item id="152000851" race="ASMODIANS"/>
+			<item id="152000752" race="ASMODIANS"/>
+			<item id="152000052" race="ASMODIANS"/>
+			<item id="152000853" race="ASMODIANS"/>
+			<item id="152000453" race="ASMODIANS"/>
+			<item id="152000053" race="ASMODIANS"/>
+			<item id="152001051" race="ASMODIANS"/>
+			<item id="152000051" race="ASMODIANS"/>
+			<item id="152000852" race="ASMODIANS"/>
+			<item id="152001052" race="ASMODIANS"/>
+			<item id="152000451" race="ASMODIANS"/>
+			<item id="152000552" race="ASMODIANS"/>
+			<item id="152000754" race="ASMODIANS"/>
+			<item id="152000652" race="ASMODIANS"/>
+			<item id="152000455" race="ASMODIANS"/>
+			<item id="152000054" race="ASMODIANS"/>
+			<item id="152000755" race="ASMODIANS"/>
+			<item id="152000457" race="ASMODIANS"/>
+			<item id="152000854" race="ASMODIANS"/>
+			<item id="152000855" race="ASMODIANS"/>
+			<item id="152000055" race="ASMODIANS"/>
+			<item id="152000057" race="ASMODIANS"/>
+			<item id="152000653" race="ASMODIANS"/>
+			<item id="152000553" race="ASMODIANS"/>
+			<item id="152000056" race="ASMODIANS"/>
+			<item id="152000857" race="ASMODIANS"/>
+			<item id="152000757" race="ASMODIANS"/>
+			<item id="152000459" race="ASMODIANS"/>
+			<item id="152000856" race="ASMODIANS"/>
+			<item id="152000461" race="ASMODIANS"/>
+			<item id="152000756" race="ASMODIANS"/>
+			<item id="152000058" race="ASMODIANS"/>
+			<item id="152000463" race="ASMODIANS"/>
+			<item id="152000758" race="ASMODIANS"/>
+			<item id="152000760" race="ASMODIANS"/>
+			<item id="152000759" race="ASMODIANS"/>
+			<item id="152000465" race="ASMODIANS"/>
+			<item id="152000059" race="ASMODIANS"/>
+			<item id="152000858" race="ASMODIANS"/>
+			<item id="152000554" race="ASMODIANS"/>
+			<item id="152000654" race="ASMODIANS"/>
+			<item id="152001053" race="ASMODIANS"/>
+			<item id="152000860" race="ASMODIANS"/>
+			<item id="152000063" race="ASMODIANS"/>
+			<item id="152001055" race="ASMODIANS"/>
+			<item id="152000468" race="ASMODIANS"/>
+			<item id="152000861" race="ASMODIANS"/>
+			<item id="152000762" race="ASMODIANS"/>
+			<item id="152000470" race="ASMODIANS"/>
+			<item id="152000556" race="ASMODIANS"/>
+			<item id="152000061" race="ASMODIANS"/>
+			<item id="152000656" race="ASMODIANS"/>
+			<item id="152001056" race="ASMODIANS"/>
+			<item id="152000763" race="ASMODIANS"/>
+			<item id="152000062" race="ASMODIANS"/>
+			<item id="152000101"/>
+			<item id="152000201"/>
+			<item id="152000202"/>
+			<item id="152000102"/>
+			<item id="152000104"/>
+			<item id="152000204"/>
+			<item id="152000207"/>
+			<item id="152000107"/>
+			<item id="152000761"/>
+			<item id="152000467"/>
+			<item id="152000655"/>
+			<item id="152001054"/>
+			<item id="152000211"/>
+			<item id="152000859"/>
+			<item id="152000060"/>
+			<item id="152000555"/>
+			<item id="152000111"/>
+			<item id="152000319"/>
+			<item id="152000113"/>
+			<item id="152000214"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050726">
 		<items>
-			<item id="152000060"/>
-			<item id="152000111"/>
-			<item id="152000211"/>
+			<item id="152000451" race="ASMODIANS"/>
+			<item id="152000461" race="ASMODIANS"/>
+			<item id="152000465" race="ASMODIANS"/>
+			<item id="152000457" race="ASMODIANS"/>
+			<item id="152000453" race="ASMODIANS"/>
+			<item id="152000470" race="ASMODIANS"/>
+			<item id="152000459" race="ASMODIANS"/>
+			<item id="152000468" race="ASMODIANS"/>
+			<item id="152000463" race="ASMODIANS"/>
+			<item id="152000455" race="ASMODIANS"/>
+			<item id="152000204"/>
+			<item id="152000302"/>
+			<item id="152000305"/>
+			<item id="152000320"/>
+			<item id="152000303"/>
+			<item id="152000317"/>
+			<item id="152000214"/>
 			<item id="152000319"/>
-			<item id="152000467"/>
+			<item id="152000324"/>
+			<item id="152000111"/>
+			<item id="152000307"/>
+			<item id="152000102"/>
 			<item id="152000555"/>
-			<item id="152000655"/>
-			<item id="152000761"/>
+			<item id="152000060"/>
+			<item id="152000309"/>
 			<item id="152000859"/>
+			<item id="152000211"/>
+			<item id="152000113"/>
 			<item id="152001054"/>
+			<item id="152000107"/>
+			<item id="152000311"/>
+			<item id="152000207"/>
+			<item id="152000104"/>
+			<item id="152000655"/>
+			<item id="152000301"/>
+			<item id="152000313"/>
+			<item id="152000315"/>
+			<item id="152000467"/>
+			<item id="152000202"/>
+			<item id="152000304"/>
+			<item id="152000322"/>
+			<item id="152000761"/>
+			<item id="152000306"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050727">
 		<items>
-			<item id="152000106"/>
-			<item id="152000206"/>
-			<item id="152000308"/>
-			<item id="152000310"/>
-			<item id="152000312"/>
-			<item id="152000109"/>
-			<item id="152000209"/>
-			<item id="152000314"/>
-			<item id="152000316"/>
-			<item id="152000318"/>
-			<item id="152000115"/>
-			<item id="152000216"/>
-			<item id="152000219"/>
-			<item id="152000321"/>
-			<item id="152000323"/>
-			<item id="152000325"/>
+			<item id="152000204"/>
+			<item id="152000320"/>
+			<item id="152000317"/>
+			<item id="152000214"/>
+			<item id="152000319"/>
+			<item id="152000324"/>
+			<item id="152000111"/>
+			<item id="152000307"/>
+			<item id="152000555"/>
+			<item id="152000060"/>
+			<item id="152000309"/>
+			<item id="152000859"/>
+			<item id="152000211"/>
+			<item id="152000113"/>
+			<item id="152001054"/>
+			<item id="152000107"/>
+			<item id="152000311"/>
+			<item id="152000207"/>
+			<item id="152000104"/>
+			<item id="152000655"/>
+			<item id="152000313"/>
+			<item id="152000315"/>
+			<item id="152000467"/>
+			<item id="152000322"/>
+			<item id="152000761"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050728">
 		<items>
-			<item id="152000112"/>
-			<item id="152000213"/>
-			<item id="152000116"/>
-			<item id="152000212"/>
-			<item id="152000217"/>
-			<item id="152000326"/>
-			<item id="152000327"/>
-			<item id="152000328"/>
+			<item id="152000320"/>
+			<item id="152000214"/>
+			<item id="152000319"/>
+			<item id="152000324"/>
+			<item id="152000111"/>
+			<item id="152000555"/>
+			<item id="152000060"/>
+			<item id="152000859"/>
+			<item id="152000211"/>
+			<item id="152000113"/>
+			<item id="152001054"/>
+			<item id="152000107"/>
+			<item id="152000207"/>
+			<item id="152000655"/>
+			<item id="152000467"/>
+			<item id="152000322"/>
+			<item id="152000761"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050729">
 		<items>
-			<item id="169240002"/>
-			<item id="169240004"/>
+			<item id="169240010"/>
+			<item id="169240009"/>
+			<item id="169240013"/>
+			<item id="169240014"/>
+			<item id="169240012"/>
+			<item id="169240011"/>
+			<item id="169240008"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050730">
 		<items>
 			<item id="100500822"/>
-			<item id="100200936"/>
+			<item id="101300771"/>
+			<item id="101700844"/>
 			<item id="100100801"/>
 			<item id="100900799"/>
-			<item id="115001090"/>
-			<item id="101300771"/>
 			<item id="100001056"/>
+			<item id="115001090"/>
 			<item id="101500827"/>
+			<item id="100200936"/>
 			<item id="100600877"/>
-			<item id="101700844"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050731">
 		<items>
-			<item id="168000042"/>
-			<item id="168000041"/>
-			<item id="168000039"/>
-			<item id="168000075"/>
-			<item id="168000074"/>
 			<item id="168000036"/>
+			<item id="168000039"/>
+			<item id="168000041"/>
+			<item id="168000042"/>
 			<item id="168000073"/>
+			<item id="168000074"/>
+			<item id="168000075"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050732">
 		<items>
-			<item id="168000042"/>
-			<item id="168000041"/>
-			<item id="168000039"/>
-			<item id="168000075"/>
-			<item id="168000074"/>
 			<item id="168000036"/>
+			<item id="168000039"/>
+			<item id="168000041"/>
+			<item id="168000042"/>
 			<item id="168000073"/>
+			<item id="168000074"/>
+			<item id="168000075"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050733">
@@ -3720,75 +4297,160 @@
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050735">
 		<items>
-			<item id="168000044"/>
-			<item id="168000046"/>
-			<item id="168000045"/>
 			<item id="168000043"/>
-			<item id="168000048"/>
-			<item id="168000050"/>
-			<item id="168000049"/>
+			<item id="168000044"/>
+			<item id="168000045"/>
+			<item id="168000046"/>
 			<item id="168000047"/>
+			<item id="168000048"/>
+			<item id="168000049"/>
+			<item id="168000050"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050736">
 		<items>
-			<item id="168000044"/>
-			<item id="168000046"/>
-			<item id="168000045"/>
 			<item id="168000043"/>
-			<item id="168000048"/>
-			<item id="168000050"/>
-			<item id="168000049"/>
+			<item id="168000044"/>
+			<item id="168000045"/>
+			<item id="168000046"/>
 			<item id="168000047"/>
+			<item id="168000048"/>
+			<item id="168000049"/>
+			<item id="168000050"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050737">
 		<items>
-			<item id="160001031" count="10"/>
-			<item id="160001032" count="10"/>
 			<item id="160001033" count="10"/>
 			<item id="160001034" count="10"/>
-			<item id="160001035" count="10"/>
-			<item id="160001036" count="10"/>
-			<item id="160001037" count="10"/>
-			<item id="160001038" count="10"/>
 			<item id="160001039" count="10"/>
 			<item id="160001040" count="10"/>
+			<item id="162000045" count="10"/>
 			<item id="164000070" count="10"/>
-			<item id="164000120" count="50"/>
-			<item id="162000056" count="10"/>
-			<item id="162000061" count="10"/>
+			<item id="169000010" count="50"/>
 		</items>
 	</decomposable_select_item>
 	<decomposable_select_item item_id="188050738">
 		<items>
-			<item id="160002031" count="10"/>
-			<item id="160002032" count="10"/>
-			<item id="160002033" count="10"/>
-			<item id="160002034" count="10"/>
-			<item id="160002035" count="10"/>
-			<item id="160002036" count="10"/>
-			<item id="160002037" count="10"/>
-			<item id="160002038" count="10"/>
-			<item id="160002039" count="10"/>
-			<item id="160002040" count="10"/>
+			<item id="160001033" count="10"/>
+			<item id="160001034" count="10"/>
+			<item id="160001039" count="10"/>
+			<item id="160001040" count="10"/>
+			<item id="162000045" count="10"/>
 			<item id="164000070" count="10"/>
-			<item id="164000120" count="50"/>
-			<item id="162000056" count="10"/>
-			<item id="162000061" count="10"/>
+			<item id="169000010" count="50"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050739"/>
-	<decomposable_select_item item_id="188050740"/>
-	<decomposable_select_item item_id="188050741"/>
-	<decomposable_select_item item_id="188050742"/>
-	<decomposable_select_item item_id="188050743"/>
-	<decomposable_select_item item_id="188050744"/>
-	<decomposable_select_item item_id="188050745"/>
-	<decomposable_select_item item_id="188050746"/>
-	<decomposable_select_item item_id="188050747"/>
-	<decomposable_select_item item_id="188050748"/>
-	<decomposable_select_item item_id="188050749"/>
+	<decomposable_select_item item_id="188050739">
+		<items>
+			<item id="152011002"/>
+			<item id="152011004"/>
+			<item id="152011022"/>
+			<item id="152011024"/>
+			<item id="152011042"/>
+			<item id="152011044"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050740">
+		<items>
+			<item id="152011002"/>
+			<item id="152011004"/>
+			<item id="152011006"/>
+			<item id="152011022"/>
+			<item id="152011024"/>
+			<item id="152011026"/>
+			<item id="152011042"/>
+			<item id="152011044"/>
+			<item id="152011046"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050741">
+		<items>
+			<item id="152011004"/>
+			<item id="152011006"/>
+			<item id="152011024"/>
+			<item id="152011026"/>
+			<item id="152011044"/>
+			<item id="152011046"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050742">
+		<items>
+			<item id="152011004"/>
+			<item id="152011006"/>
+			<item id="152011008"/>
+			<item id="152011024"/>
+			<item id="152011026"/>
+			<item id="152011028"/>
+			<item id="152011044"/>
+			<item id="152011046"/>
+			<item id="152011048"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050743">
+		<items>
+			<item id="152011006"/>
+			<item id="152011008"/>
+			<item id="152011026"/>
+			<item id="152011028"/>
+			<item id="152011046"/>
+			<item id="152011048"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050744">
+		<items>
+			<item id="113101127"/>
+			<item id="113301130"/>
+			<item id="113501106"/>
+			<item id="113601071"/>
+			<item id="182006387"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050745">
+		<items>
+			<item id="113101128"/>
+			<item id="113301131"/>
+			<item id="113501107"/>
+			<item id="113601072"/>
+			<item id="182006388"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050746">
+		<items>
+			<item id="113101129"/>
+			<item id="113301132"/>
+			<item id="113501108"/>
+			<item id="113601073"/>
+			<item id="182006389"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050747">
+		<items>
+			<item id="110101228"/>
+			<item id="110301158"/>
+			<item id="110501129"/>
+			<item id="110601111"/>
+			<item id="182006387"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050748">
+		<items>
+			<item id="110101229"/>
+			<item id="110301159"/>
+			<item id="110501130"/>
+			<item id="110601112"/>
+			<item id="182006388"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050749">
+		<items>
+			<item id="110101230"/>
+			<item id="110301160"/>
+			<item id="110501131"/>
+			<item id="110601113"/>
+			<item id="182006389"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Pets Gifts -->
 	<!-- Small Pet Gift -->
 	<decomposable_select_item item_id="188050750">
@@ -3802,6 +4464,7 @@
 			<item id="101300788"/>
 			<item id="101500845"/>
 			<item id="101700861"/>
+			<item id="182006390"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Pet Gift -->
@@ -3815,6 +4478,8 @@
 			<item id="100900820"/>
 			<item id="101300789"/>
 			<item id="101500846"/>
+			<item id="101700862"/>
+			<item id="182006391"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Large Pet Gift -->
@@ -3829,85 +4494,93 @@
 			<item id="101300790"/>
 			<item id="101500847"/>
 			<item id="101700863"/>
-			<item id="101700862"/>
+			<item id="182006392"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Pets Gifts -->
 	<!-- Minor Mellow Ksellid Bundle -->
 	<decomposable_select_item item_id="188050753">
 		<items>
-			<item id="152000101" count="2"/>
 			<item id="152000201" count="2"/>
+			<item id="188050739"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lesser Mellow Ksellid Bundle -->
 	<decomposable_select_item item_id="188050754">
 		<items>
-			<item id="152000102" count="2"/>
 			<item id="152000202" count="2"/>
+			<item id="188050740"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Mellow Ksellid Bundle -->
 	<decomposable_select_item item_id="188050755">
 		<items>
-			<item id="152000104" count="2"/>
 			<item id="152000204" count="2"/>
+			<item id="188050741"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Mellow Ksellid Bundle -->
 	<decomposable_select_item item_id="188050756">
 		<items>
-			<item id="152000107" count="2"/>
 			<item id="152000207" count="2"/>
+			<item id="188050742"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Major Mellow Ksellid Bundle -->
 	<decomposable_select_item item_id="188050757">
 		<items>
-			<item id="152000113" count="2"/>
-			<item id="152000117" count="2"/>
-			<item id="152000118" count="2"/>
 			<item id="152000214" count="2"/>
+			<item id="188050743"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Minor Button-Eye Mookie Bundle -->
 	<decomposable_select_item item_id="188050758">
 		<items>
+			<item id="152000101" count="2"/>
 			<item id="152000301" count="2"/>
 			<item id="152000302" count="2"/>
 			<item id="152000303" count="2"/>
+			<item id="188050739"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lesser Button-Eye Mookie Bundle -->
 	<decomposable_select_item item_id="188050759">
 		<items>
+			<item id="152000102" count="2"/>
 			<item id="152000304" count="2"/>
 			<item id="152000305" count="2"/>
 			<item id="152000306" count="2"/>
+			<item id="188050740"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Button-Eye Mookie Bundle -->
 	<decomposable_select_item item_id="188050760">
 		<items>
+			<item id="152000104" count="2"/>
 			<item id="152000307" count="2"/>
 			<item id="152000309" count="2"/>
 			<item id="152000311" count="2"/>
+			<item id="188050741"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Button-Eye Mookie Bundle -->
 	<decomposable_select_item item_id="188050761">
 		<items>
+			<item id="152000107" count="2"/>
 			<item id="152000313" count="2"/>
 			<item id="152000315" count="2"/>
 			<item id="152000317" count="2"/>
+			<item id="188050742"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Major Button-Eye Mookie Bundle -->
 	<decomposable_select_item item_id="188050762">
 		<items>
-			<item id="152000320" count="2"/>
-			<item id="152000322" count="2"/>
-			<item id="152000324" count="2"/>
+			<item id="152000107" count="2"/>
+			<item id="152000313" count="2"/>
+			<item id="152000315" count="2"/>
+			<item id="152000317" count="2"/>
+			<item id="188050743"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Minor Pudgy Porgus Bundle -->
@@ -3943,34 +4616,37 @@
 	<!-- Minor Aether Bundle -->
 	<decomposable_select_item item_id="188050768">
 		<items>
-			<item id="188100335" count="200"/>
+			<item id="152000901" count="3"/>
+			<item id="188050739"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lesser Aether Bundle -->
 	<decomposable_select_item item_id="188050769">
 		<items>
-			<item id="188100335" count="400"/>
+			<item id="152000902" count="3"/>
+			<item id="188050740"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Aether Bundle -->
 	<decomposable_select_item item_id="188050770">
 		<items>
-			<item id="152000904" count="2"/>
+			<item id="152000905"/>
+			<item id="152000904" count="3"/>
+			<item id="188050741"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Aether Bundle -->
 	<decomposable_select_item item_id="188050771">
 		<items>
-			<item id="152000907" count="2"/>
-			<item id="152003007" count="2"/>
-			<item id="152003008" count="2"/>
+			<item id="152000907" count="3"/>
+			<item id="188050742"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Major Aether Bundle -->
 	<decomposable_select_item item_id="188050772">
 		<items>
-			<item id="152000911" count="2"/>
-			<item id="152000915" count="2"/>
+			<item id="152000907" count="3"/>
+			<item id="188050743"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Bronze Coin Chest -->
@@ -5002,50 +5678,128 @@
 			<item id="186000010" count="10" race="ASMODIANS"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050935"/>
-	<decomposable_select_item item_id="188050936"/>
-	<decomposable_select_item item_id="188050937"/>
+	<decomposable_select_item item_id="188050935">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050936">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050937">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188050938">
 		<items>
-			<item id="186000019" count="5" race="ASMODIANS"/>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050939"/>
+	<decomposable_select_item item_id="188050939">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188050940">
 		<items>
-			<item id="186000019" count="5" race="ASMODIANS"/>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050941"/>
+	<decomposable_select_item item_id="188050941">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188050942">
 		<items>
-			<item id="186000019" count="5" race="ASMODIANS"/>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050943"/>
+	<decomposable_select_item item_id="188050943">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188050944">
 		<items>
-			<item id="186000019" count="5" race="ASMODIANS"/>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050945"/>
-	<decomposable_select_item item_id="188050946"/>
-	<decomposable_select_item item_id="188050947"/>
+	<decomposable_select_item item_id="188050945">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050946">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050947">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188050948">
 		<items>
-			<item id="186000019" count="5" race="ASMODIANS"/>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050949"/>
+	<decomposable_select_item item_id="188050949">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188050950">
 		<items>
-			<item id="186000019" count="5" race="ASMODIANS"/>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
 		</items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188050951"/>
-	<decomposable_select_item item_id="188050952"/>
+	<decomposable_select_item item_id="188050951">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188050952">
+		<items>
+			<item id="186000019" count="5" race="ELYOS"/>
+			<item id="186000018" count="5" race="ASMODIANS"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Minor Azure Drakie Bundle -->
 	<decomposable_select_item item_id="188050953">
+		<items>
+			<item id="152014005" count="2"/>
+		</items>
+	</decomposable_select_item>
+	<!-- Lesser Azure Drakie Bundle -->
+	<decomposable_select_item item_id="188050954">
+		<items>
+			<item id="152014005" count="2"/>
+		</items>
+	</decomposable_select_item>
+	<!-- Azure Drakie Bundle -->
+	<decomposable_select_item item_id="188050955">
 		<items>
 			<item id="152014001" count="2"/>
 			<item id="152014002" count="2"/>
@@ -5054,8 +5808,8 @@
 			<item id="152014005" count="2"/>
 		</items>
 	</decomposable_select_item>
-	<!-- Lesser Azure Drakie Bundle -->
-	<decomposable_select_item item_id="188050954">
+	<!-- Greater Azure Drakie Bundle -->
+	<decomposable_select_item item_id="188050956">
 		<items>
 			<item id="152014006" count="2"/>
 			<item id="152014007" count="2"/>
@@ -5064,62 +5818,110 @@
 			<item id="152014010" count="2"/>
 		</items>
 	</decomposable_select_item>
-	<!-- Azure Drakie Bundle -->
-	<decomposable_select_item item_id="188050955">
-		<items>
-			<item id="152014011" count="2"/>
-			<item id="152014012" count="2"/>
-			<item id="152014013" count="2"/>
-			<item id="152014014" count="2"/>
-			<item id="152014015" count="2"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Greater Azure Drakie Bundle -->
-	<decomposable_select_item item_id="188050956">
-		<items>
-			<item id="152014016" count="2"/>
-			<item id="152014017" count="2"/>
-			<item id="152014018" count="2"/>
-			<item id="152014019" count="2"/>
-			<item id="152014020" count="2"/>
-		</items>
-	</decomposable_select_item>
 	<!-- Major Azure Drakie Bundle -->
-	<decomposable_select_item item_id="188050957"/>
+	<decomposable_select_item item_id="188050957">
+		<items>
+			<item id="152014006" count="2"/>
+			<item id="152014007" count="2"/>
+			<item id="152014008" count="2"/>
+			<item id="152014009" count="2"/>
+			<item id="152014010" count="2"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Lesser Tin Narky Gift -->
 	<decomposable_select_item item_id="188050958">
 		<items>
-			<item id="152000901" count="2"/>
+			<item id="152000907" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Tin Narky Gift -->
 	<decomposable_select_item item_id="188050959">
 		<items>
-			<item id="152000902" count="2"/>
+			<item id="152000907" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Tin Narky Gift -->
 	<decomposable_select_item item_id="188050960">
 		<items>
-			<item id="152000904" count="2"/>
+			<item id="152000907" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lesser Pudgy Porgus Gift -->
 	<decomposable_select_item item_id="188050961">
 		<items>
 			<item id="188100335" count="200"/>
+			<item id="167000542"/>
+			<item id="167000541"/>
+			<item id="167000540"/>
+			<item id="167000539"/>
+			<item id="167000538"/>
+			<item id="167000537"/>
+			<item id="167000522"/>
+			<item id="167000519"/>
+			<item id="167000518"/>
+			<item id="167000515"/>
+			<item id="167000514"/>
+			<item id="167000491"/>
+			<item id="167000487"/>
+			<item id="167000483"/>
+			<item id="167000482"/>
+			<item id="167000459"/>
+			<item id="167000455"/>
+			<item id="167000454"/>
+			<item id="167000451"/>
+			<item id="167000450"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Pudgy Porgus Gift -->
 	<decomposable_select_item item_id="188050962">
 		<items>
 			<item id="188100335" count="200"/>
+			<item id="167000454"/>
+			<item id="167000518"/>
+			<item id="167000459"/>
+			<item id="167000491"/>
+			<item id="167000522"/>
+			<item id="167000450"/>
+			<item id="167000482"/>
+			<item id="167000514"/>
+			<item id="167000455"/>
+			<item id="167000487"/>
+			<item id="167000519"/>
+			<item id="167000539"/>
+			<item id="167000541"/>
+			<item id="167000537"/>
+			<item id="167000451"/>
+			<item id="167000483"/>
+			<item id="167000515"/>
+			<item id="167000540"/>
+			<item id="167000542"/>
+			<item id="167000538"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Pudgy Porgus Gift -->
 	<decomposable_select_item item_id="188050963">
 		<items>
 			<item id="188100335" count="500"/>
+			<item id="167000454"/>
+			<item id="167000518"/>
+			<item id="167000459"/>
+			<item id="167000491"/>
+			<item id="167000522"/>
+			<item id="167000450"/>
+			<item id="167000482"/>
+			<item id="167000514"/>
+			<item id="167000455"/>
+			<item id="167000487"/>
+			<item id="167000519"/>
+			<item id="167000539"/>
+			<item id="167000541"/>
+			<item id="167000537"/>
+			<item id="167000451"/>
+			<item id="167000483"/>
+			<item id="167000515"/>
+			<item id="167000540"/>
+			<item id="167000542"/>
+			<item id="167000538"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lesser Azure Drakie Gift -->
@@ -5130,21 +5932,51 @@
 			<item id="152014003" count="2"/>
 			<item id="152014004" count="2"/>
 			<item id="152014005" count="2"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Azure Drakie Gift -->
-	<decomposable_select_item item_id="188050965">
-		<items>
 			<item id="152014006" count="2"/>
 			<item id="152014007" count="2"/>
 			<item id="152014008" count="2"/>
 			<item id="152014009" count="2"/>
 			<item id="152014010" count="2"/>
+			<item id="152014011" count="2"/>
+			<item id="152014012" count="2"/>
+			<item id="152014013" count="2"/>
+			<item id="152014014" count="2"/>
+			<item id="152014015" count="2"/>
+		</items>
+	</decomposable_select_item>
+	<!-- Azure Drakie Gift -->
+	<decomposable_select_item item_id="188050965">
+		<items>
+			<item id="152014001" count="2"/>
+			<item id="152014002" count="2"/>
+			<item id="152014003" count="2"/>
+			<item id="152014004" count="2"/>
+			<item id="152014005" count="2"/>
+			<item id="152014006" count="2"/>
+			<item id="152014007" count="2"/>
+			<item id="152014008" count="2"/>
+			<item id="152014009" count="2"/>
+			<item id="152014010" count="2"/>
+			<item id="152014011" count="2"/>
+			<item id="152014012" count="2"/>
+			<item id="152014013" count="2"/>
+			<item id="152014014" count="2"/>
+			<item id="152014015" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Azure Drakie Gift -->
 	<decomposable_select_item item_id="188050966">
 		<items>
+			<item id="152014001" count="2"/>
+			<item id="152014002" count="2"/>
+			<item id="152014003" count="2"/>
+			<item id="152014004" count="2"/>
+			<item id="152014005" count="2"/>
+			<item id="152014006" count="2"/>
+			<item id="152014007" count="2"/>
+			<item id="152014008" count="2"/>
+			<item id="152014009" count="2"/>
+			<item id="152014010" count="2"/>
 			<item id="152014011" count="2"/>
 			<item id="152014012" count="2"/>
 			<item id="152014013" count="2"/>
@@ -5167,24 +5999,23 @@
 	<!-- Tin Narky Bundle -->
 	<decomposable_select_item item_id="188050969">
 		<items>
+			<item id="152000905"/>
 			<item id="152000904" count="2"/>
+			<item id="188050750"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Tin Narky Bundle -->
 	<decomposable_select_item item_id="188050970">
 		<items>
-			<item id="152000911" count="2"/>
-			<item id="152000912" count="2"/>
-			<item id="152000913" count="2"/>
+			<item id="152000907" count="2"/>
+			<item id="188050751"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Major Tin Narky Bundle -->
 	<decomposable_select_item item_id="188050971">
 		<items>
-			<item id="152000911" count="2"/>
-			<item id="152000912" count="2"/>
-			<item id="152000913" count="2"/>
-			<item id="152000914" count="2"/>
+			<item id="152000907" count="2"/>
+			<item id="188050752"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Minor Pink Griffo Bundle -->
@@ -5196,31 +6027,26 @@
 	<!-- Lesser Pink Griffo Bundle -->
 	<decomposable_select_item item_id="188050973">
 		<items>
-			<item id="152000907" count="2"/>
+			<item id="152000902" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Pink Griffo Bundle -->
 	<decomposable_select_item item_id="188050974">
 		<items>
-			<item id="152000911" count="2"/>
-			<item id="152000912" count="2"/>
+			<item id="152000904" count="2"/>
+			<item id="152000905"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Pink Griffo Bundle -->
 	<decomposable_select_item item_id="188050975">
 		<items>
-			<item id="152000911" count="2"/>
-			<item id="152000912" count="2"/>
-			<item id="152000913" count="2"/>
+			<item id="152000907" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Major Pink Griffo Bundle -->
 	<decomposable_select_item item_id="188050976">
 		<items>
-			<item id="152000911" count="2"/>
-			<item id="152000912" count="2"/>
-			<item id="152000913" count="2"/>
-			<item id="152000914" count="2"/>
+			<item id="152000907" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Minor Teasing Jefi Bundle -->
@@ -5292,118 +6118,302 @@
 	<!-- Minor Rotund Ayas Bundle -->
 	<decomposable_select_item item_id="188050988">
 		<items>
-			<item id="169240001" count="2"/>
-			<item id="169240002" count="2"/>
+			<item id="169200001" count="2"/>
+			<item id="169200002" count="2"/>
+			<item id="169200003" count="2"/>
+			<item id="169200004" count="2"/>
 			<item id="169240003" count="2"/>
-			<item id="169240004" count="2"/>
-			<item id="169240005" count="2"/>
 			<item id="169240006" count="2"/>
 			<item id="169240007" count="2"/>
-			<item id="169240008" count="2"/>
 			<item id="169240009" count="2"/>
 			<item id="169240010" count="2"/>
-			<item id="169240011" count="2"/>
 			<item id="169240012" count="2"/>
-			<item id="169240013" count="2"/>
-			<item id="169240014" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lesser Rotund Ayas Bundle -->
 	<decomposable_select_item item_id="188050989">
 		<items>
-			<item id="169240001" count="2"/>
-			<item id="169240002" count="2"/>
+			<item id="169200001" count="2"/>
+			<item id="169200002" count="2"/>
+			<item id="169200003" count="2"/>
+			<item id="169200004" count="2"/>
 			<item id="169240003" count="2"/>
 			<item id="169240004" count="2"/>
-			<item id="169240005" count="2"/>
-			<item id="169240006" count="2"/>
 			<item id="169240007" count="2"/>
-			<item id="169240008" count="2"/>
 			<item id="169240009" count="2"/>
-			<item id="169240010" count="2"/>
-			<item id="169240011" count="2"/>
 			<item id="169240012" count="2"/>
-			<item id="169240013" count="2"/>
 			<item id="169240014" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Rotund Ayas Bundle -->
 	<decomposable_select_item item_id="188050990">
 		<items>
-			<item id="169240001" count="2"/>
-			<item id="169240002" count="2"/>
+			<item id="169200001" count="2"/>
+			<item id="169200002" count="2"/>
+			<item id="169200003" count="2"/>
+			<item id="169200004" count="2"/>
 			<item id="169240003" count="2"/>
-			<item id="169240004" count="2"/>
 			<item id="169240005" count="2"/>
-			<item id="169240006" count="2"/>
 			<item id="169240007" count="2"/>
 			<item id="169240008" count="2"/>
 			<item id="169240009" count="2"/>
-			<item id="169240010" count="2"/>
-			<item id="169240011" count="2"/>
 			<item id="169240012" count="2"/>
-			<item id="169240013" count="2"/>
-			<item id="169240014" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Rotund Ayas Bundle -->
 	<decomposable_select_item item_id="188050991">
 		<items>
+			<item id="169200001" count="2"/>
+			<item id="169200002" count="2"/>
+			<item id="169200003" count="2"/>
+			<item id="169200004" count="2"/>
 			<item id="169240001" count="2"/>
-			<item id="169240002" count="2"/>
 			<item id="169240003" count="2"/>
-			<item id="169240004" count="2"/>
-			<item id="169240005" count="2"/>
-			<item id="169240006" count="2"/>
 			<item id="169240007" count="2"/>
-			<item id="169240008" count="2"/>
 			<item id="169240009" count="2"/>
-			<item id="169240010" count="2"/>
-			<item id="169240011" count="2"/>
 			<item id="169240012" count="2"/>
 			<item id="169240013" count="2"/>
-			<item id="169240014" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Major Rotund Ayas Bundle -->
 	<decomposable_select_item item_id="188050992">
 		<items>
-			<item id="169240001" count="2"/>
+			<item id="169200001" count="2"/>
+			<item id="169200002" count="2"/>
+			<item id="169200003" count="2"/>
+			<item id="169200004" count="2"/>
 			<item id="169240002" count="2"/>
 			<item id="169240003" count="2"/>
-			<item id="169240004" count="2"/>
-			<item id="169240005" count="2"/>
-			<item id="169240006" count="2"/>
 			<item id="169240007" count="2"/>
-			<item id="169240008" count="2"/>
 			<item id="169240009" count="2"/>
-			<item id="169240010" count="2"/>
 			<item id="169240011" count="2"/>
 			<item id="169240012" count="2"/>
-			<item id="169240013" count="2"/>
-			<item id="169240014" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Minor Hungry Porgus Bundle -->
-	<decomposable_select_item item_id="188050993"/>
+	<decomposable_select_item item_id="188050993">
+		<items>
+			<item id="125001793"/>
+			<item id="125001790"/>
+			<item id="125001800"/>
+			<item id="125001803"/>
+			<item id="125001786"/>
+			<item id="125001796"/>
+			<item id="125001816"/>
+			<item id="125001826"/>
+			<item id="125001806"/>
+			<item id="162000022" count="10"/>
+			<item id="162000043" count="10"/>
+			<item id="162000048" count="10"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Lesser Hungry Porgus Bundle -->
-	<decomposable_select_item item_id="188050994"/>
+	<decomposable_select_item item_id="188050994">
+		<items>
+			<item id="125001787"/>
+			<item id="125001791"/>
+			<item id="125001794"/>
+			<item id="125001797"/>
+			<item id="125001801"/>
+			<item id="125001804"/>
+			<item id="125001807"/>
+			<item id="125001817"/>
+			<item id="125001827"/>
+			<item id="162000022" count="10"/>
+			<item id="164000050" count="10"/>
+			<item id="164000054" count="10"/>
+			<item id="164000058" count="10"/>
+			<item id="164000062" count="10"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Hungry Porgus Bundle -->
-	<decomposable_select_item item_id="188050995"/>
+	<decomposable_select_item item_id="188050995">
+		<items>
+			<item id="125001788"/>
+			<item id="125001790"/>
+			<item id="125001795"/>
+			<item id="125001798"/>
+			<item id="125001800"/>
+			<item id="125001805"/>
+			<item id="125001808"/>
+			<item id="125001818"/>
+			<item id="125001828"/>
+			<item id="162000023" count="10"/>
+			<item id="162000043" count="10"/>
+			<item id="162000048" count="10"/>
+			<item id="164000050" count="10"/>
+			<item id="164000054" count="10"/>
+			<item id="164000058" count="10"/>
+			<item id="164000062" count="10"/>
+			<item id="164000073" count="10"/>
+			<item id="164000076" count="10"/>
+			<item id="164000079" count="10"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Greater Hungry Porgus Bundle -->
-	<decomposable_select_item item_id="188050996"/>
+	<decomposable_select_item item_id="188050996">
+		<items>
+			<item id="125001789"/>
+			<item id="125001791"/>
+			<item id="125001793"/>
+			<item id="125001799"/>
+			<item id="125001801"/>
+			<item id="125001803"/>
+			<item id="125001809"/>
+			<item id="125001819"/>
+			<item id="125001829"/>
+			<item id="162000023" count="10"/>
+			<item id="162000043" count="10"/>
+			<item id="162000048" count="10"/>
+			<item id="164000050" count="10"/>
+			<item id="164000054" count="10"/>
+			<item id="164000058" count="10"/>
+			<item id="164000062" count="10"/>
+			<item id="164000073" count="10"/>
+			<item id="164000076" count="10"/>
+			<item id="164000079" count="10"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Major Hungry Porgus Bundle -->
-	<decomposable_select_item item_id="188050997"/>
+	<decomposable_select_item item_id="188050997">
+		<items>
+			<item id="125001786"/>
+			<item id="125001792"/>
+			<item id="125001794"/>
+			<item id="125001796"/>
+			<item id="125001802"/>
+			<item id="125001804"/>
+			<item id="125001810"/>
+			<item id="125001820"/>
+			<item id="125001830"/>
+			<item id="162000023" count="10"/>
+			<item id="162000045" count="10"/>
+			<item id="162000050" count="10"/>
+			<item id="164000051" count="10"/>
+			<item id="164000055" count="10"/>
+			<item id="164000059" count="10"/>
+			<item id="164000063" count="10"/>
+			<item id="164000073" count="10"/>
+			<item id="164000076" count="10"/>
+			<item id="164000079" count="10"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Pet Produce_Hairpin Bundle_01b -->
-	<decomposable_select_item item_id="188050998"/>
+	<decomposable_select_item item_id="188050998">
+		<items>
+			<item id="125001786"/>
+			<item id="125001790"/>
+			<item id="125001793"/>
+			<item id="125001796"/>
+			<item id="125001800"/>
+			<item id="125001803"/>
+			<item id="125001811"/>
+			<item id="125001821"/>
+			<item id="125001831"/>
+			<item id="162000022" count="10"/>
+			<item id="162000043" count="10"/>
+			<item id="162000048" count="10"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Pet Produce_Hairpin Bundle_02b -->
-	<decomposable_select_item item_id="188050999"/>
+	<decomposable_select_item item_id="188050999">
+		<items>
+			<item id="125001787"/>
+			<item id="125001791"/>
+			<item id="125001794"/>
+			<item id="125001797"/>
+			<item id="125001801"/>
+			<item id="125001804"/>
+			<item id="125001812"/>
+			<item id="125001822"/>
+			<item id="125001832"/>
+			<item id="162000022" count="10"/>
+			<item id="162000043" count="10"/>
+			<item id="162000048" count="10"/>
+			<item id="164000050" count="10"/>
+			<item id="164000054" count="10"/>
+			<item id="164000058" count="10"/>
+			<item id="164000062" count="10"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Pet Produce_Hairpin Bundle_03b -->
-	<decomposable_select_item item_id="188051000"/>
+	<decomposable_select_item item_id="188051000">
+		<items>
+			<item id="125001788"/>
+			<item id="125001790"/>
+			<item id="125001795"/>
+			<item id="125001798"/>
+			<item id="125001800"/>
+			<item id="125001805"/>
+			<item id="125001813"/>
+			<item id="125001823"/>
+			<item id="125001833"/>
+			<item id="125002417"/>
+			<item id="125002420"/>
+			<item id="162000023" count="10"/>
+			<item id="162000043" count="10"/>
+			<item id="162000048" count="10"/>
+			<item id="164000050" count="10"/>
+			<item id="164000054" count="10"/>
+			<item id="164000058" count="10"/>
+			<item id="164000062" count="10"/>
+			<item id="164000073" count="10"/>
+			<item id="164000076" count="10"/>
+			<item id="164000079" count="10"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Pet Produce_Hairpin Bundle_04b -->
-	<decomposable_select_item item_id="188051001"/>
+	<decomposable_select_item item_id="188051001">
+		<items>
+			<item id="125001789"/>
+			<item id="125001791"/>
+			<item id="125001793"/>
+			<item id="125001799"/>
+			<item id="125001801"/>
+			<item id="125001803"/>
+			<item id="125001814"/>
+			<item id="125001824"/>
+			<item id="125001834"/>
+			<item id="125002419"/>
+			<item id="125002422"/>
+			<item id="162000023" count="10"/>
+			<item id="162000043" count="10"/>
+			<item id="162000048" count="10"/>
+			<item id="164000050" count="10"/>
+			<item id="164000054" count="10"/>
+			<item id="164000058" count="10"/>
+			<item id="164000062" count="10"/>
+			<item id="164000073" count="10"/>
+			<item id="164000076" count="10"/>
+			<item id="164000079" count="10"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Pet Produce_Hairpin Bundle_05b -->
-	<decomposable_select_item item_id="188051002"/>
+	<decomposable_select_item item_id="188051002">
+		<items>
+			<item id="125001786"/>
+			<item id="125001792"/>
+			<item id="125001794"/>
+			<item id="125001796"/>
+			<item id="125001802"/>
+			<item id="125001804"/>
+			<item id="125001815"/>
+			<item id="125001825"/>
+			<item id="125001835"/>
+			<item id="125002418"/>
+			<item id="125002421"/>
+			<item id="162000023" count="10"/>
+			<item id="162000045" count="10"/>
+			<item id="162000050" count="10"/>
+			<item id="164000051" count="10"/>
+			<item id="164000055" count="10"/>
+			<item id="164000059" count="10"/>
+			<item id="164000063" count="10"/>
+			<item id="164000073" count="10"/>
+			<item id="164000076" count="10"/>
+			<item id="164000079" count="10"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Minor Mean Poroco Bundle -->
 	<decomposable_select_item item_id="188051003">
 		<items>
@@ -5467,47 +6477,17 @@
 	<!-- Minor Golden Drakie Bundle -->
 	<decomposable_select_item item_id="188051013">
 		<items>
-			<item id="152014001" count="2"/>
-			<item id="152014002" count="2"/>
-			<item id="152014003" count="2"/>
-			<item id="152014004" count="2"/>
 			<item id="152014005" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lesser Golden Drakie Bundle -->
 	<decomposable_select_item item_id="188051014">
 		<items>
-			<item id="152014006" count="2"/>
-			<item id="152014007" count="2"/>
-			<item id="152014008" count="2"/>
-			<item id="152014009" count="2"/>
-			<item id="152014010" count="2"/>
+			<item id="152014005" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Golden Drakie Bundle -->
 	<decomposable_select_item item_id="188051015">
-		<items>
-			<item id="152014011" count="2"/>
-			<item id="152014012" count="2"/>
-			<item id="152014013" count="2"/>
-			<item id="152014014" count="2"/>
-			<item id="152014015" count="2"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Greater Golden Drakie Bundle -->
-	<decomposable_select_item item_id="188051016">
-		<items>
-			<item id="152014016" count="2"/>
-			<item id="152014017" count="2"/>
-			<item id="152014018" count="2"/>
-			<item id="152014019" count="2"/>
-			<item id="152014020" count="2"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Major Golden Drakie Bundle -->
-	<decomposable_select_item item_id="188051017"/>
-	<!-- Minor Sunset Drakie Bundle -->
-	<decomposable_select_item item_id="188051018">
 		<items>
 			<item id="152014001" count="2"/>
 			<item id="152014002" count="2"/>
@@ -5516,8 +6496,8 @@
 			<item id="152014005" count="2"/>
 		</items>
 	</decomposable_select_item>
-	<!-- Lesser Sunset Drakie Bundle -->
-	<decomposable_select_item item_id="188051019">
+	<!-- Greater Golden Drakie Bundle -->
+	<decomposable_select_item item_id="188051016">
 		<items>
 			<item id="152014006" count="2"/>
 			<item id="152014007" count="2"/>
@@ -5526,28 +6506,58 @@
 			<item id="152014010" count="2"/>
 		</items>
 	</decomposable_select_item>
+	<!-- Major Golden Drakie Bundle -->
+	<decomposable_select_item item_id="188051017">
+		<items>
+			<item id="152014006" count="2"/>
+			<item id="152014007" count="2"/>
+			<item id="152014008" count="2"/>
+			<item id="152014009" count="2"/>
+			<item id="152014010" count="2"/>
+		</items>
+	</decomposable_select_item>
+	<!-- Minor Sunset Drakie Bundle -->
+	<decomposable_select_item item_id="188051018">
+		<items>
+			<item id="152014005" count="2"/>
+		</items>
+	</decomposable_select_item>
+	<!-- Lesser Sunset Drakie Bundle -->
+	<decomposable_select_item item_id="188051019">
+		<items>
+			<item id="152014005" count="2"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Sunset Drakie Bundle -->
 	<decomposable_select_item item_id="188051020">
 		<items>
-			<item id="152014011" count="2"/>
-			<item id="152014012" count="2"/>
-			<item id="152014013" count="2"/>
-			<item id="152014014" count="2"/>
-			<item id="152014015" count="2"/>
+			<item id="152014001" count="2"/>
+			<item id="152014002" count="2"/>
+			<item id="152014003" count="2"/>
+			<item id="152014004" count="2"/>
+			<item id="152014005" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Sunset Drakie Bundle -->
 	<decomposable_select_item item_id="188051021">
 		<items>
-			<item id="152014016" count="2"/>
-			<item id="152014017" count="2"/>
-			<item id="152014018" count="2"/>
-			<item id="152014019" count="2"/>
-			<item id="152014020" count="2"/>
+			<item id="152014006" count="2"/>
+			<item id="152014007" count="2"/>
+			<item id="152014008" count="2"/>
+			<item id="152014009" count="2"/>
+			<item id="152014010" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Major Sunset Drakie Bundle -->
-	<decomposable_select_item item_id="188051022"/>
+	<decomposable_select_item item_id="188051022">
+		<items>
+			<item id="152014006" count="2"/>
+			<item id="152014007" count="2"/>
+			<item id="152014008" count="2"/>
+			<item id="152014009" count="2"/>
+			<item id="152014010" count="2"/>
+		</items>
+	</decomposable_select_item>
 	<!-- Minor Aqua Griffo Bundle -->
 	<decomposable_select_item item_id="188051023">
 		<items>
@@ -5564,22 +6574,19 @@
 	<decomposable_select_item item_id="188051025">
 		<items>
 			<item id="152000904" count="2"/>
+			<item id="152000905"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Greater Aqua Griffo Bundle -->
 	<decomposable_select_item item_id="188051026">
 		<items>
 			<item id="152000907" count="2"/>
-			<item id="152000911" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Major Aqua Griffo Bundle -->
 	<decomposable_select_item item_id="188051027">
 		<items>
-			<item id="152000911" count="2"/>
-			<item id="152000912" count="2"/>
-			<item id="152000913" count="2"/>
-			<item id="152000914" count="2"/>
+			<item id="152000907" count="2"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Lesser Mean Poroco Gift -->
@@ -67282,8 +68289,16 @@
             <item id="185000221	"/>
 	    </items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188058569"/>
-	<decomposable_select_item item_id="188058570"/>
+	<decomposable_select_item item_id="188058569"> 	<!-- Incorrect item id error -->
+	    <items>
+            <item id="185000221	"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058570"> 	<!-- Incorrect item id error -->
+	    <items>
+            <item id="185000221	"/>
+	    </items>
+	</decomposable_select_item>
 	<!-- 섭통령의 보물상자 -->
 	<decomposable_select_item item_id="188058571">
 	    <items>
@@ -67308,28 +68323,251 @@
 	<decomposable_select_item item_id="188058573"/>
 	<decomposable_select_item item_id="188058574"/>
 	<decomposable_select_item item_id="188058575"/>
-	<decomposable_select_item item_id="188058576"/>
-	<decomposable_select_item item_id="188058577"/>
+	<decomposable_select_item item_id="188058576">
+	    <items>
+		    <item id="188055335"/>
+			<item id="188055089"/>
+			<item id="188055791"/>
+			<item id="164002228"/>
+			<item id="162001071"/>
+			<item id="187300002"/>
+			<item id="190080014"/>
+			<item id="186000475"/>
+			<item id="188058363"/>
+			<item id="188058064"/>
+			<item id="188058269"/>
+		    <item id="187000241"/>
+			<item id="188054430"/>
+			<item id="188055651"/>
+			<item id="188055650"/>
+			<item id="165061003"/>
+			<item id="188057672"/>
+			<item id="166020000"/>
+			<item id="188058647"/>
+			<item id="188055591"/>
+			<item id="188058415"/>
+			<item id="188055630"/>
+			<item id="186000492"/>
+			<item id="188058313"/>
+			<item id="166030005"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058577">
+	    <items>
+		    <item id="164002167"/>
+			<item id="162002024"/>
+			<item id="162001071"/>
+			<item id="187300002"/>
+			<item id="166040001"/>
+			<item id="188100391"/>
+			<item id="185000319"/>
+			<item id="190080006"/>
+			<item id="188055653"/>
+			<item id="188052496"/>
+			<item id="188057819"/>
+		    <item id="190080005"/>
+			<item id="190080007"/>
+			<item id="190200000"/>
+			<item id="188057846"/>
+			<item id="166020000"/>
+			<item id="188057671"/>
+			<item id="188057670"/>
+			<item id="188057669"/>
+			<item id="166230005"/>
+			<item id="186000492"/>
+			<item id="188054431"/>
+			<item id="166030005"/>
+			<item id="188057030"/>
+			<item id="162000181"/>
+	    </items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188058578"/>
 	<decomposable_select_item item_id="188058579"/>
 	<decomposable_select_item item_id="188058580"/>
-	<decomposable_select_item item_id="188058581"/>
-	<decomposable_select_item item_id="188058582"/>
+	<decomposable_select_item item_id="188058581">
+	    <items>
+		    <item id="188058360"/>
+			<item id="190200000"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058582">
+	    <items>
+		    <item id="190200000"/>
+	    </items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188058583"/>
 	<decomposable_select_item item_id="188058584"/>
 	<decomposable_select_item item_id="188058585"/>
 	<decomposable_select_item item_id="188058586"/>
 	<decomposable_select_item item_id="188058587"/>
 	<decomposable_select_item item_id="188058588"/>
-	<decomposable_select_item item_id="188058589"/>
-	<decomposable_select_item item_id="188058590"/>
-	<decomposable_select_item item_id="188058591"/>
-	<decomposable_select_item item_id="188058592"/>
-	<decomposable_select_item item_id="188058593"/>
-	<decomposable_select_item item_id="188058594"/>
-	<decomposable_select_item item_id="188058595"/>
-	<decomposable_select_item item_id="188058596"/>
-	<decomposable_select_item item_id="188058597"/>
+	<decomposable_select_item item_id="188058589">
+	    <items>
+		    <item id="101901376"/>
+			<item id="114502147"/>
+			<item id="113502137"/>
+			<item id="111502129"/>
+			<item id="110551558"/>
+			<item id="112502063"/>
+			<item id="114302193"/>
+			<item id="101701673"/>
+			<item id="110601947"/>
+			<item id="113302148"/>
+			<item id="114502146"/>
+		    <item id="113502136"/>
+			<item id="102101315"/>
+			<item id="100201850"/>
+			<item id="111601917"/>
+			<item id="111101994"/>
+			<item id="100901690"/>
+			<item id="113601894"/>
+			<item id="111502128"/>
+			<item id="102001500"/>
+			<item id="110551557"/>
+			<item id="110302178"/>
+			<item id="113101995"/>
+			<item id="100101658"/>
+			<item id="100501623"/>
+		    <item id="112101932"/>
+			<item id="101801478"/>
+			<item id="101301577"/>
+			<item id="114302194"/>
+			<item id="110601948"/>
+			<item id="113302149"/>
+			<item id="114502145"/>
+			<item id="113502135"/>
+			<item id="111601918"/>
+			<item id="111101995"/>
+			<item id="113601895"/>
+		    <item id="111502127"/>
+			<item id="110551556"/>
+			<item id="110302179"/>
+			<item id="113101996"/>
+			<item id="112101933"/>
+			<item id="114601901"/>
+			<item id="114102036"/>
+			<item id="112302061"/>
+			<item id="112601900"/>
+			<item id="112502061"/>
+			<item id="110102190"/>
+			<item id="111302132"/>
+			<item id="114601900"/>
+			<item id="115002210"/>
+		    <item id="115002209"/>
+			<item id="114102035"/>
+			<item id="112302060"/>
+			<item id="112601899"/>
+			<item id="112502062"/>
+			<item id="100601728"/>
+			<item id="101501676"/>
+			<item id="100002222"/>
+			<item id="110102189"/>
+			<item id="111302131"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058590">
+	    <items>
+		    <item id="101901319"/>
+			<item id="101901321"/>
+			<item id="101701599"/>
+			<item id="101701601"/>
+			<item id="102101256"/>
+			<item id="102101258"/>
+			<item id="100201758"/>
+			<item id="100201760"/>
+			<item id="100901617"/>
+			<item id="100901619"/>
+			<item id="102001441"/>
+		    <item id="102001443"/>
+			<item id="100101579"/>
+			<item id="100101581"/>
+			<item id="100501536"/>
+			<item id="100501538"/>
+			<item id="101801413"/>
+			<item id="101801415"/>
+			<item id="101301496"/>
+			<item id="101301498"/>
+			<item id="115002075"/>
+			<item id="115002076"/>
+			<item id="100601648"/>
+			<item id="100601650"/>
+			<item id="101501597"/>
+		    <item id="101501599"/>
+			<item id="100002113"/>
+			<item id="100002115"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058591">
+	    <items>
+		    <item id="100501455"/>
+			<item id="101301416"/>
+			<item id="101901253"/>
+			<item id="101701513"/>
+			<item id="102101191"/>
+			<item id="100201678"/>
+			<item id="100901532"/>
+			<item id="102001376"/>
+			<item id="100101497"/>
+			<item id="101801348"/>
+			<item id="100601573"/>
+		    <item id="101501518"/>
+			<item id="100002015"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058592">
+	    <items>
+		    <item id="186000474"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058593">
+	    <items>
+		    <item id="190080008"/>
+			<item id="190080006"/>
+			<item id="190080005"/>
+			<item id="190080007"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058594">
+	    <items>
+		    <item id="169405426"/>
+			<item id="169405424"/>
+			<item id="169405425"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058595">
+	    <items>
+		    <item id="168000271"/>
+			<item id="168000260"/>
+			<item id="168000262"/>
+			<item id="168000272"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058596">
+	    <items>
+		    <item id="168000268"/>
+			<item id="168000270"/>
+			<item id="168000265"/>
+			<item id="168000264"/>
+		    <item id="168000269"/>
+			<item id="168000266"/>
+			<item id="168000267"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058597">
+	    <items>
+		    <item id="188057177"/>
+			<item id="188057170"/>
+			<item id="188057172"/>
+			<item id="188057171"/>
+		    <item id="188057167"/>
+			<item id="188057175"/>
+			<item id="188057169"/>
+		    <item id="188057176"/>
+			<item id="188057173"/>
+			<item id="188057174"/>
+			<item id="188057168"/>
+	    </items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188058598"/>
 	<decomposable_select_item item_id="188058599"/>
 	<decomposable_select_item item_id="188058600"/>
@@ -67377,13 +68615,61 @@
 	<decomposable_select_item item_id="188058626"/>
 	<decomposable_select_item item_id="188058627"/>
 	<decomposable_select_item item_id="188058628"/>
-	<decomposable_select_item item_id="188058629"/>
-	<decomposable_select_item item_id="188058630"/>
+	<decomposable_select_item item_id="188058629">
+	    <items>
+			<item id="120015059" race="ELYOS"/>
+			<item id="121001557" race="ELYOS"/>
+			<item id="122001842" race="ELYOS"/>
+			<item id="123001591" race="ELYOS"/>
+			<item id="120015060" race="ELYOS"/>
+			<item id="121001558" race="ELYOS"/>
+			<item id="122001843" race="ELYOS"/>
+			<item id="123001592" race="ELYOS"/>
+			<item id="120015061" race="ASMODIANS"/>
+			<item id="121001559" race="ASMODIANS"/>
+			<item id="122001844" race="ASMODIANS"/>
+			<item id="123001593" race="ASMODIANS"/>
+			<item id="120015062" race="ASMODIANS"/>
+			<item id="121001560" race="ASMODIANS"/>
+			<item id="122001845" race="ASMODIANS"/>
+			<item id="123001594" race="ASMODIANS"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058630">
+	    <items>
+			<item id="125005051" race="ELYOS"/>
+			<item id="125005058" race="ELYOS"/>
+			<item id="125005059" race="ELYOS"/>
+			<item id="125005053" race="ELYOS"/>
+			<item id="125005055" race="ELYOS"/>
+			<item id="125005060" race="ELYOS"/>
+			<item id="125005054" race="ELYOS"/>
+			<item id="125005052" race="ELYOS"/>
+			<item id="125005057" race="ELYOS"/>
+			<item id="125005056" race="ELYOS"/>
+			<item id="125005061" race="ELYOS"/>
+			<item id="125005062" race="ASMODIANS"/>
+			<item id="125005069" race="ASMODIANS"/>
+			<item id="125005070" race="ASMODIANS"/>
+			<item id="125005066" race="ASMODIANS"/>
+			<item id="125005071" race="ASMODIANS"/>
+			<item id="125005065" race="ASMODIANS"/>
+			<item id="125005063" race="ASMODIANS"/>
+			<item id="125005068" race="ASMODIANS"/>
+			<item id="125005067" race="ASMODIANS"/>
+			<item id="125005072" race="ASMODIANS"/>
+			<item id="125005064" race="ASMODIANS"/>
+	    </items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188058631"/>
 	<decomposable_select_item item_id="188058632"/>
 	<decomposable_select_item item_id="188058633"/>
 	<decomposable_select_item item_id="188058634"/>
-	<decomposable_select_item item_id="188058635"/>
+	<decomposable_select_item item_id="188058635">
+	    <items>
+		    <item id="185000319"/>
+	    </items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188058636"/>
 	<decomposable_select_item item_id="188058637"/>
 	<decomposable_select_item item_id="188058638"/>
@@ -67392,23 +68678,117 @@
 	<decomposable_select_item item_id="188058641"/>
 	<decomposable_select_item item_id="188058642"/>
 	<decomposable_select_item item_id="188058643"/>
-	<decomposable_select_item item_id="188058644"/>
-	<decomposable_select_item item_id="188058645"/>
+	<decomposable_select_item item_id="188058644">
+	    <items>
+		    <item id="101901321"/>
+			<item id="101701601"/>
+			<item id="102101258"/>
+			<item id="100201760"/>
+			<item id="100901619"/>
+			<item id="102001443"/>
+			<item id="100101581"/>
+			<item id="100501538"/>
+			<item id="101801415"/>
+			<item id="101301498"/>
+			<item id="115002076"/>
+			<item id="100601650"/>
+			<item id="101501599"/>
+			<item id="100002115"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058645">
+	    <items>
+		    <item id="114302089"/>
+			<item id="110601870"/>
+			<item id="113302052"/>
+			<item id="114502038"/>
+			<item id="113502030"/>
+			<item id="111601840"/>
+			<item id="111101904"/>
+			<item id="113601817"/>
+			<item id="111502020"/>
+			<item id="110551451"/>
+			<item id="115002076"/>
+			<item id="110302082"/>
+			<item id="113101911"/>
+			<item id="112101848"/>
+		    <item id="114601823"/>
+			<item id="114101945"/>
+			<item id="112301964"/>
+			<item id="112601821"/>
+			<item id="112501956"/>
+			<item id="110102106"/>
+			<item id="111302027"/>
+	    </items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188058646"/>
-	<decomposable_select_item item_id="188058647"/>
+	<decomposable_select_item item_id="188058647">
+	    <items>
+		    <item id="190100265"/>
+	    </items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188058648"/>
 	<decomposable_select_item item_id="188058649"/>
 	<decomposable_select_item item_id="188058650"/>
-	<decomposable_select_item item_id="188058651"/>
-	<decomposable_select_item item_id="188058652"/>
-	<decomposable_select_item item_id="188058653"/>
-	<decomposable_select_item item_id="188058654"/>
-	<decomposable_select_item item_id="188058655"/>
-	<decomposable_select_item item_id="188058656"/>
-	<decomposable_select_item item_id="188058657"/>
-	<decomposable_select_item item_id="188058658"/>
-	<decomposable_select_item item_id="188058659"/>
-	<decomposable_select_item item_id="188058660"/>
+	<decomposable_select_item item_id="188058651">
+	    <items>
+		    <item id="182495000"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058652">
+	    <items>
+		    <item id="182495000"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058653">
+	    <items>
+		    <item id="186000507"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058654">
+	    <items>
+		    <item id="186000508"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058655">
+	    <items>
+		    <item id="188058657"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058656">
+	    <items>
+		    <item id="188058658"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058657">
+	    <items>
+		    <item id="152012754"/>
+			<item id="152012753"/>
+			<item id="152012752"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058658">
+	    <items>
+		    <item id="152012761"/>
+			<item id="152012760"/>
+			<item id="152012759"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058659">
+	    <items>
+		    <item id="152012755"/>
+			<item id="152012754"/>
+			<item id="152012753"/>
+			<item id="152012752"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058660">
+	    <items>
+		    <item id="152012761"/>
+			<item id="152012760"/>
+			<item id="152012759"/>
+	    </items>
+	</decomposable_select_item>
 	<!-- 뒤틀린 수나야카의 무기 상자 -->
 	<decomposable_select_item item_id="188058661">
 	    <items>
@@ -67431,9 +68811,51 @@
 			<item id="101501790"/>
 	    </items>
 	</decomposable_select_item>
-	<decomposable_select_item item_id="188058663"/>
-	<decomposable_select_item item_id="188058664"/>
-	<decomposable_select_item item_id="188058665"/>
+	<decomposable_select_item item_id="188058663">
+	    <items>
+			<item id="101901375"/>
+			<item id="101701672"/>
+			<item id="102101314"/>
+			<item id="100201849"/>
+			<item id="100901689"/>
+			<item id="102001499"/>
+			<item id="100101657"/>
+			<item id="100501622"/>
+			<item id="101801477"/>
+			<item id="101301576"/>
+			<item id="115002208"/>
+			<item id="115002207"/>
+			<item id="100601727"/>
+			<item id="101501675"/>
+			<item id="100002219"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058664">
+	    <items>
+			<item id="160002513"/>
+			<item id="160002511"/>
+			<item id="160002510"/>
+			<item id="160002514"/>
+			<item id="160002515"/>
+			<item id="160002512"/>
+	    </items>
+	</decomposable_select_item>
+	<decomposable_select_item item_id="188058665">
+	    <items>
+			<item id="160001143"/>
+			<item id="160002142"/>
+			<item id="160002143"/>
+			<item id="160001146"/>
+			<item id="160001141"/>
+			<item id="160001142"/>
+			<item id="160001145"/>
+			<item id="160002145"/>
+			<item id="160002141"/>
+			<item id="160001144"/>
+			<item id="160002146"/>
+			<item id="160002144"/>
+	    </items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188058666"/>
 	<decomposable_select_item item_id="188058667"/>
 	<decomposable_select_item item_id="188058668"/>
@@ -67461,7 +68883,11 @@
             <item id="186000096" count="10"/>
         </items>
     </decomposable_select_item>
-	<decomposable_select_item item_id="188058676"/>
+	<decomposable_select_item item_id="188058676">
+	    <items>
+			<item id="190100273"/>
+	    </items>
+	</decomposable_select_item>
 	<decomposable_select_item item_id="188058677"/>
 	<decomposable_select_item item_id="188058678"/>
 	<decomposable_select_item item_id="188058679"/>
