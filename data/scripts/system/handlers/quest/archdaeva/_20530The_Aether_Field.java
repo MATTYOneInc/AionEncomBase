@@ -134,8 +134,6 @@ public class _20530The_Aether_Field extends QuestHandler
                         if (var == 2) {
                             changeQuestStep(env, 2, 3, false);
 							Npc npc = (Npc) env.getVisibleObject();
-							npc.getController().scheduleRespawn();
-							npc.getController().onDelete();
 							return closeDialogWindow(env);
                         }
 					}

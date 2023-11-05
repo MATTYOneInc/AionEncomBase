@@ -118,7 +118,6 @@ public class _15400Aiding_General_Giscours extends QuestHandler
                     case USE_OBJECT: {
 						switch (player.getRace()) {
 							case ELYOS:
-								giveQuestItem(env, 182215897, 1); //Beritra Supply Mark.
 							break;
 						}
 						return closeDialogWindow(env);
@@ -129,7 +128,6 @@ public class _15400Aiding_General_Giscours extends QuestHandler
                     case USE_OBJECT: {
 						switch (player.getRace()) {
 							case ELYOS:
-								giveQuestItem(env, 182215898, 1); //Repair Device Gear.
 							break;
 						}
 						return closeDialogWindow(env);
@@ -140,7 +138,6 @@ public class _15400Aiding_General_Giscours extends QuestHandler
                     case USE_OBJECT: {
 						switch (player.getRace()) {
 							case ELYOS:
-								giveQuestItem(env, 182215899, 1); //Ereshkigal Legion Mark.
 							break;
 						}
 						return closeDialogWindow(env);
@@ -150,21 +147,24 @@ public class _15400Aiding_General_Giscours extends QuestHandler
                 switch (env.getDialog()) {
                     case START_DIALOG: {
 						if (var == 3) {
-                            return sendQuestDialog(env, 2034);
-                        }
-					} case STEP_TO_4: {
-                        changeQuestStep(env, 4, 5, false);
-						return closeDialogWindow(env);
-					} case CHECK_COLLECTED_ITEMS: {
-						if (QuestService.collectItemCheck(env, true)) {
-							changeQuestStep(env, 3, 4, false);
-							return sendQuestDialog(env, 10000);
-						} else {
-							return sendQuestDialog(env, 10001);
+							return sendQuestDialog(env, 2034);
 						}
+						else if (var == 4) {
+							return sendQuestDialog(env, 2375);
+							}
+						}
+						case CHECK_COLLECTED_ITEMS: {
+							return checkQuestItems(env, 3, 4, false, 10000, 10001); // 4
+						}
+						case STEP_TO_5: {
+							changeQuestStep(env, 4, 5, false);
+							return closeDialogWindow(env);
+						}
+						default:
+							return sendQuestStartDialog(env);
 					}
-                }
-            } if (targetId == 805355) { //Ferriere.
+				}
+			if (targetId == 805355) { //Ferriere.
                 switch (env.getDialog()) {
                     case START_DIALOG: {
                         if (var == 6) {
@@ -177,7 +177,8 @@ public class _15400Aiding_General_Giscours extends QuestHandler
 					}
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } 
+		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805351) { //Giscours.
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
