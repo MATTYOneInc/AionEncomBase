@@ -6,7 +6,7 @@
  -->
 	<!-- [Daily/League] Thwarted Expedition (Elyos Only) -->
 	<monster_hunt id="11290" start_npc_ids="207045">
-		<monster var="0" npc_ids="218673 218671 218674" end_var="5"/>
+		<monster var="0" npc_ids="218680 218681" end_var="5"/>
 	</monster_hunt>
 	<!-- A Dramata Uncovered (Elyos Only) -->
 	<report_to id="11291" start_npc_ids="798926" end_npc_ids="799092"/>
