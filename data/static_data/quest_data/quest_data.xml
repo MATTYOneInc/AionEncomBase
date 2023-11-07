@@ -25714,8 +25714,8 @@
       <selectable_reward_item item_id="160002514" count="3" />
       <selectable_reward_item item_id="160002515" count="3" />
     </rewards>
-    <quest_drop npc_id="703390" item_id="182216164" chance="100" drop_each_member="1" collecting_step="7" />
-    <quest_drop npc_id="703387" item_id="182216167" chance="100" drop_each_member="1" collecting_step="7" />
+    <quest_drop npc_id="703390" item_id="182216164" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="703387" item_id="182216167" chance="100" drop_each_member="1" />
     <start_conditions>
       <finished quest_id="10529" />
     </start_conditions>
@@ -35106,7 +35106,7 @@
       <reward_item item_id="160001273" count="5" />
     </rewards>
     <start_conditions>
-      <finished quest_id="1007" reward="5" />
+      <finished quest_id="1007" reward="4" />
     </start_conditions>
     <class_permitted>GUNSLINGER AETHERTECH</class_permitted>
   </quest>
@@ -35115,7 +35115,7 @@
       <reward_item item_id="160001273" count="5" />
     </rewards>
     <start_conditions>
-      <finished quest_id="1007" reward="6" />
+      <finished quest_id="1007" reward="5" />
     </start_conditions>
     <class_permitted>SONGWEAVER</class_permitted>
   </quest>
@@ -36178,8 +36178,8 @@
       <selectable_reward_item item_id="160002514" count="3" />
       <selectable_reward_item item_id="160002515" count="3" />
     </rewards>
-    <quest_drop npc_id="703391" item_id="182216166" chance="100" drop_each_member="1" collecting_step="7" />
-    <quest_drop npc_id="703389" item_id="182216168" chance="100" drop_each_member="1" collecting_step="7" />
+    <quest_drop npc_id="703391" item_id="182216166" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="703389" item_id="182216168" chance="100" drop_each_member="1" />
     <start_conditions>
       <finished quest_id="20529" />
     </start_conditions>
@@ -45475,7 +45475,7 @@
       <reward_item item_id="160002273" count="5" />
     </rewards>
     <start_conditions>
-      <finished quest_id="2009" reward="5" />
+      <finished quest_id="2009" reward="4" />
     </start_conditions>
     <class_permitted>GUNSLINGER AETHERTECH</class_permitted>
     <quest_work_items>
@@ -45487,7 +45487,7 @@
       <reward_item item_id="160002273" count="5" />
     </rewards>
     <start_conditions>
-      <finished quest_id="2009" reward="6" />
+      <finished quest_id="2009" reward="5" />
     </start_conditions>
     <class_permitted>SONGWEAVER</class_permitted>
     <quest_work_items>
