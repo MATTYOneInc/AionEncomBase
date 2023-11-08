@@ -17,5 +17,10 @@
         <spawn custom="true" respawn_time="295" npc_id="702727" difficult_id="0">
             <spot h="23" z="459.5" y="195.0" x="460.0"/>
         </spawn>
+        <spawn custom="true" respawn_time="295" npc_id="215752" difficult_id="0">
+            <spot h="33" z="300.861" y="1803.03" x="308.531"/>
+            <spot h="85" z="287.43762" y="1821.9208" x="360.70984"/>
+            <spot h="112" z="308.02493" y="1820.5612" x="287.2194"/>
+        </spawn>
     </spawn_map>
 </spawns>
