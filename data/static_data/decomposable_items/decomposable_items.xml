@@ -1779,6 +1779,205 @@
 			<item id="114101721" player_class="SONGWEAVER" count="1"/>
 		</items>
 	</decomposable>
+
+	<!-- Flarestorm's Fabled Headgear Chest -->
+	<decomposable item_id="188051387">
+		<items>
+			<item id="125002269" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="125002268" player_class="SORCERER" count="1"/>
+			<item id="125002270" player_class="ASSASSIN" count="1"/>
+			<item id="125002271" player_class="RANGER" count="1"/>
+			<item id="125002272" player_class="CLERIC" count="1"/>
+			<item id="125002273" player_class="CHANTER" count="1"/>
+			<item id="125002274" player_class="GLADIATOR" count="1"/>
+			<item id="125002275" player_class="TEMPLAR" count="1"/>
+			<item id="125003315" player_class="SONGWEAVER" count="1"/>
+			<item id="125003314" player_class="GUNSLINGER" count="1"/>
+			<item id="125003835" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Isbariya's Fabled Jacket Chest -->
+	<decomposable item_id="188051388">
+		<items>
+			<item id="110101070" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="110101069" player_class="SORCERER" count="1"/>
+			<item id="110301018" player_class="ASSASSIN" count="1"/>
+			<item id="110301019" player_class="RANGER" count="1"/>
+			<item id="110500986" player_class="CLERIC" count="1"/>
+			<item id="110500987" player_class="CHANTER" count="1"/>
+			<item id="110600966" player_class="GLADIATOR" count="1"/>
+			<item id="110600967" player_class="TEMPLAR" count="1"/>
+			<item id="110101542" player_class="SONGWEAVER" count="1"/>
+			<item id="110301438" player_class="GUNSLINGER" count="1"/>
+			<item id="110551006" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Stormwing's Fabled Weapon Chest -->
+	<decomposable item_id="188051389">
+		<items>
+			<item id="100500697" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="100500834" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="100600754" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="100600889" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="100500697" player_class="SORCERER" count="1"/>
+			<item id="100500834" player_class="SORCERER" count="1"/>
+			<item id="100600754" player_class="SORCERER" count="1"/>
+			<item id="100600889" player_class="SORCERER" count="1"/>
+			<item id="100200806" player_class="ASSASSIN" count="1"/>
+			<item id="100000892" player_class="ASSASSIN" count="1"/>
+			<item id="100001007" player_class="ASSASSIN" count="1"/>
+			<item id="101700721" player_class="ASSASSIN" count="1"/>
+			<item id="101700856" player_class="ASSASSIN" count="1"/>
+			<item id="100200806" player_class="RANGER" count="1"/>
+			<item id="100000892" player_class="RANGER" count="1"/>
+			<item id="100001007" player_class="RANGER" count="1"/>
+			<item id="101700721" player_class="RANGER" count="1"/>
+			<item id="101700856" player_class="RANGER" count="1"/>
+			<item id="100100675" player_class="CLERIC" count="1"/>
+			<item id="101500697" player_class="CLERIC" count="1"/>
+			<item id="100100675" player_class="CHANTER" count="1"/>
+			<item id="101500697" player_class="CHANTER" count="1"/>
+			<item id="100000892" player_class="GLADIATOR" count="1"/>
+			<item id="100001007" player_class="GLADIATOR" count="1"/>
+			<item id="100100675" player_class="GLADIATOR" count="1"/>
+			<item id="100900683" player_class="GLADIATOR" count="1"/>
+			<item id="100900814" player_class="GLADIATOR" count="1"/>
+			<item id="100000892" player_class="TEMPLAR" count="1"/>
+			<item id="100001007" player_class="TEMPLAR" count="1"/>
+			<item id="100100675" player_class="TEMPLAR" count="1"/>
+			<item id="100200806" player_class="TEMPLAR" count="1"/>
+			<item id="100900683" player_class="TEMPLAR" count="1"/>
+			<item id="100900814" player_class="TEMPLAR" count="1"/>
+			<item id="101300654" player_class="TEMPLAR" count="1"/>
+			<item id="101300783" player_class="TEMPLAR" count="1"/>
+			<item id="101700721" player_class="TEMPLAR" count="1"/>
+			<item id="101700856" player_class="TEMPLAR" count="1"/>
+			<item id="102000661" player_class="SONGWEAVER" count="1"/>
+			<item id="102000747" player_class="SONGWEAVER" count="1"/>
+			<item id="101800866" player_class="GUNSLINGER" count="1"/>
+			<item id="101900626" player_class="GUNSLINGER" count="1"/>
+			<item id="102100755" player_class="AETHERTECH" count="1"/>
+			<item id="101800866" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Ahbana's Eternal Shoes Chest -->
+	<decomposable item_id="188051390">
+		<items>
+			<item id="114101003" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="114101003" player_class="SORCERER" count="1"/>
+			<item id="114301024" player_class="ASSASSIN" count="1"/>
+			<item id="114301024" player_class="RANGER" count="1"/>
+			<item id="114500967" player_class="CLERIC" count="1"/>
+			<item id="114500967" player_class="CHANTER" count="1"/>
+			<item id="114600926" player_class="GLADIATOR" count="1"/>
+			<item id="114600926" player_class="TEMPLAR" count="1"/>
+			<item id="114101003" player_class="SONGWEAVER" count="1"/>
+			<item id="114301588" player_class="GUNSLINGER" count="1"/>
+			<item id="114501590" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Macunbello's Eternal Gloves Chest -->
+	<decomposable item_id="188051391">
+		<items>
+			<item id="111100964" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="111100964" player_class="SORCERER" count="1"/>
+			<item id="111300969" player_class="ASSASSIN" count="1"/>
+			<item id="111300969" player_class="RANGER" count="1"/>
+			<item id="111500955" player_class="CLERIC" count="1"/>
+			<item id="111500955" player_class="CHANTER" count="1"/>
+			<item id="111600947" player_class="GLADIATOR" count="1"/>
+			<item id="111600947" player_class="TEMPLAR" count="1"/>
+			<item id="111100964" player_class="SONGWEAVER" count="1"/>
+			<item id="111301522" player_class="GUNSLINGER" count="1"/>
+			<item id="111501563" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Dorakiki The Bold's Eternal Shoulder Armor Chest -->
+	<decomposable item_id="188051392">
+		<items>
+			<item id="112100922" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="112100922" player_class="SORCERER" count="1"/>
+			<item id="112300920" player_class="ASSASSIN" count="1"/>
+			<item id="112300920" player_class="RANGER" count="1"/>
+			<item id="112500907" player_class="CLERIC" count="1"/>
+			<item id="112500907" player_class="CHANTER" count="1"/>
+			<item id="112600922" player_class="GLADIATOR" count="1"/>
+			<item id="112600922" player_class="TEMPLAR" count="1"/>
+			<item id="112100922" player_class="SONGWEAVER" count="1"/>
+			<item id="112301463" player_class="GUNSLINGER" count="1"/>
+			<item id="112501505" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Dorakiki The Bold's Eternal Shoulder Armor Chest -->
+	<decomposable item_id="188051393">
+		<items>
+			<item id="113100977" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="113100977" player_class="SORCERER" count="1"/>
+			<item id="113300990" player_class="ASSASSIN" count="1"/>
+			<item id="113300990" player_class="RANGER" count="1"/>
+			<item id="113500960" player_class="CLERIC" count="1"/>
+			<item id="113500960" player_class="CHANTER" count="1"/>
+			<item id="113600931" player_class="GLADIATOR" count="1"/>
+			<item id="113600931" player_class="TEMPLAR" count="1"/>
+			<item id="113100977" player_class="SONGWEAVER" count="1"/>
+			<item id="113301550" player_class="GUNSLINGER" count="1"/>
+			<item id="113501581" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Stormwing's Eternal Jacket Chest -->
+	<decomposable item_id="188051394">
+		<items>
+			<item id="110101071" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="110101071" player_class="SORCERER" count="1"/>
+			<item id="110301020" player_class="ASSASSIN" count="1"/>
+			<item id="110301020" player_class="RANGER" count="1"/>
+			<item id="110500988" player_class="CLERIC" count="1"/>
+			<item id="110500988" player_class="CHANTER" count="1"/>
+			<item id="110600968" player_class="GLADIATOR" count="1"/>
+			<item id="110600968" player_class="TEMPLAR" count="1"/>
+			<item id="110101071" player_class="SONGWEAVER" count="1"/>
+			<item id="110301584" player_class="GUNSLINGER" count="1"/>
+			<item id="110551005" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+	<!-- Stormwing's Eternal Weapon Chest -->
+	<decomposable item_id="188051395">
+		<items>
+			<item id="100500698" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="100600755" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="100500698" player_class="SORCERER" count="1"/>
+			<item id="100600755" player_class="SORCERER" count="1"/>
+			<item id="100001080" player_class="ASSASSIN" count="1"/>
+			<item id="100000893" player_class="ASSASSIN" count="1"/>
+			<item id="100200807" player_class="ASSASSIN" count="1"/>
+			<item id="101700722" player_class="ASSASSIN" count="1"/>
+			<item id="100001080" player_class="RANGER" count="1"/>
+			<item id="100000893" player_class="RANGER" count="1"/>
+			<item id="100200807" player_class="RANGER" count="1"/>
+			<item id="101700722" player_class="RANGER" count="1"/>
+			<item id="100100676" player_class="CLERIC" count="1"/>
+			<item id="101500698" player_class="CLERIC" count="1"/>
+			<item id="100100676" player_class="CHANTER" count="1"/>
+			<item id="101500698" player_class="CHANTER" count="1"/>
+			<item id="100000892" player_class="GLADIATOR" count="1"/>
+			<item id="100001007" player_class="GLADIATOR" count="1"/>
+			<item id="100100675" player_class="GLADIATOR" count="1"/>
+			<item id="100900683" player_class="GLADIATOR" count="1"/>
+			<item id="100001080" player_class="TEMPLAR" count="1"/>
+			<item id="100000893" player_class="TEMPLAR" count="1"/>
+			<item id="100100676" player_class="TEMPLAR" count="1"/>
+			<item id="100200807" player_class="TEMPLAR" count="1"/>
+			<item id="100900684" player_class="TEMPLAR" count="1"/>
+			<item id="101300655" player_class="TEMPLAR" count="1"/>
+			<item id="101700722" player_class="TEMPLAR" count="1"/>
+			<item id="102000662" player_class="SONGWEAVER" count="1"/>
+			<item id="101900627" player_class="GUNSLINGER" count="1"/>
+			<item id="101800867" player_class="GUNSLINGER" count="1"/>
+			<item id="102100756" player_class="AETHERTECH" count="1"/>
+			<item id="101800867" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+
 	<!-- Resurgent Daevanion Leather Box -->
 	<decomposable item_id="188053557">
 		<items>

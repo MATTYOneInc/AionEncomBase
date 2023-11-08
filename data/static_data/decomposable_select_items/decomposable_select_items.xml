@@ -10356,187 +10356,142 @@
 	<!-- [Event] Grazing Chest -->
 	<decomposable_select_item item_id="188051331">
 	    <items>
-			<item id="186000138" count="5"/>
+	   <!-- <item id="186000138" count="5"/>
 			<item id="186000139" count="5"/>
-			<item id="186000140" count="5"/>
+			<item id="186000140" count="5"/> -->
+
+			<item id="110900162"/>
+			<item id="110900163"/>
+			<item id="111000016"/>
+			<item id="111000017"/>
+			<item id="113000003"/>
+			<item id="113000004"/>
+			<item id="114000022"/>
+			<item id="114000023"/>
+			<item id="160005028"/>
+			<item id="162001011"/>
+			<item id="182006421"/>
+			<item id="182006422"/>
+			<item id="182006423"/>
+			<item id="182006424"/>
+			<item id="182006425"/>
+			<item id="182006426"/>
 		</items>
 	</decomposable_select_item>
 	<!-- [Event] Witch's Sack -->
 	<decomposable_select_item item_id="188051332">
 	    <items>
-			<item id="164002020" count="5"/>
-			<item id="164002021" count="5"/>
+			<item id="110900168"/>
+			<item id="110900169"/>
+			<item id="110900172"/>
+			<item id="110900173"/>
+			<item id="111000022"/>
+			<item id="111000023"/>
+			<item id="114000017"/>
+			<item id="114000018"/>
+			<item id="125040157"/>
+			<item id="125040158"/>
+			<item id="125040161"/>
+			<item id="166000035" count="5"/>
+			<item id="166000040" count="5"/>
+			<item id="166000045" count="5"/>
+			<item id="167000230" count="5"/>
+			<item id="167000235" count="5"/>
+			<item id="167000263" count="5"/>
+			<item id="167000267" count="5"/>
+			<item id="167000423" count="5"/>
+			<item id="167000427" count="5"/>
 		</items>
 	</decomposable_select_item>
 	<!-- [Event] Witch's Hoard -->
 	<decomposable_select_item item_id="188051333">
 	    <items>
-			<item id="164002020" count="5"/>
-			<item id="164002021" count="5"/>
+			<item id="110900168"/>
+			<item id="110900169"/>
+			<item id="110900172"/>
+			<item id="110900173"/>
+			<item id="111000022"/>
+			<item id="111000023"/>
+			<item id="114000017"/>
+			<item id="114000018"/>
+			<item id="125040157"/>
+			<item id="125040158"/>
+			<item id="125040161"/>
+			<item id="166000045" count="5"/>
+			<item id="166000050" count="5"/>
+			<item id="166000055" count="5"/>
+			<item id="167000263" count="5"/>
+			<item id="167000267" count="5"/>
+			<item id="167000294" count="5"/>
+			<item id="167000295" count="5"/>
+			<item id="167000299" count="5"/>
+			<item id="167000423" count="5"/>
+			<item id="167000427" count="5"/>
+			<item id="167000454" count="5"/>
+			<item id="167000455" count="5"/>
+			<item id="167000459" count="5"/>
 		</items>
 	</decomposable_select_item>
 	<!-- [Event] Witch's Surprise -->
 	<decomposable_select_item item_id="188051334">
 	    <items>
-			<item id="164002020" count="5"/>
-			<item id="164002021" count="5"/>
+			<item id="110900168"/>
+			<item id="110900169"/>
+			<item id="110900172"/>
+			<item id="110900173"/>
+			<item id="111000022"/>
+			<item id="111000023"/>
+			<item id="114000017"/>
+			<item id="114000018"/>
+			<item id="125040157"/>
+			<item id="125040158"/>
+			<item id="125040161"/>
+			<item id="166000055" count="5"/>
+			<item id="166000060" count="5"/>
+			<item id="166000065" count="5"/>
+			<item id="167000294" count="5"/>
+			<item id="167000295" count="5"/>
+			<item id="167000299" count="5"/>
+			<item id="167000327" count="5"/>
+			<item id="167000331" count="5"/>
+			<item id="167000454" count="5"/>
+			<item id="167000455" count="5"/>
+			<item id="167000459" count="5"/>
+			<item id="167000487" count="5"/>
+			<item id="167000491" count="5"/>
 		</items>
 	</decomposable_select_item>
 	<!-- [Event] Witch's Bundle -->
 	<decomposable_select_item item_id="188051335">
 	    <items>
-			<item id="164002020" count="5"/>
-			<item id="164002021" count="5"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Flarestorm's Fabled Headgear Chest -->
-	<decomposable_select_item item_id="188051387">
-		<items>
-			<item id="125002268"/>
-			<item id="125002269"/>
-			<item id="125002270"/>
-			<item id="125002271"/>
-			<item id="125002272"/>
-			<item id="125002273"/>
-			<item id="125002274"/>
-			<item id="125002275"/>
-			<item id="125003314"/>
-			<item id="125003315"/>
-			<item id="125003835"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Isbariya's Fabled Jacket Chest -->
-	<decomposable_select_item item_id="188051388">
-		<items>
-			<item id="110101069"/>
-		    <item id="110101070"/>
-			<item id="110101542"/>
-			<item id="110301018"/>
-			<item id="110301019"/>
-			<item id="110301438"/>
-			<item id="110500986"/>
-			<item id="110500987"/>
-			<item id="110551006"/>
-			<item id="110600966"/>
-			<item id="110600967"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Stormwing's Fabled Weapon Chest -->
-	<decomposable_select_item item_id="188051389">
-		<items>
-		    <item id="100000892"/>
-			<item id="100001007"/>
-			<item id="100100675"/>
-		    <item id="100200806"/>
-			<item id="100500697"/>
-			<item id="100500834"/>
-			<item id="100600754"/>
-			<item id="100600889"/>
-			<item id="100900683"/>
-			<item id="100900814"/>
-			<item id="101300654"/>
-			<item id="101300783"/>
-			<item id="101500697"/>
-			<item id="101700721"/>
-			<item id="101700856"/>
-			<item id="101800866"/>
-			<item id="101900626"/>
-			<item id="102000661"/>
-			<item id="102000747"/>
-			<item id="102100755"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Ahbana's Eternal Shoes Chest -->
-	<decomposable_select_item item_id="188051390">
-		<items>
-			<item id="114600924"/>
-			<item id="114600925"/>
-			<item id="114301022"/>
-			<item id="114301023"/>
-			<item id="114500965"/>
-			<item id="114500966"/>
-			<item id="114101001"/>
-			<item id="114101002"/>
-			<item id="114301589"/>
-			<item id="114101435"/>
-			<item id="114501591"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Macunbello's Eternal Gloves Chest -->
-	<decomposable_select_item item_id="188051391">
-		<items>
-			<item id="111600945"/>
-			<item id="111600946"/>
-			<item id="111300967"/>
-			<item id="111300968"/>
-			<item id="111500953"/>
-			<item id="111500954"/>
-			<item id="111100962"/>
-			<item id="111100963"/>
-			<item id="111301523"/>
-			<item id="111101388"/>
-			<item id="111501564"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Dorakiki The Bold's Eternal Shoulder Armor Chest -->
-	<decomposable_select_item item_id="188051392">
-		<items>
-			<item id="112600920"/>
-			<item id="112600921"/>
-			<item id="112300918"/>
-			<item id="112300919"/>
-			<item id="112500905"/>
-			<item id="112500906"/>
-			<item id="112301464"/>
-			<item id="112101342"/>
-			<item id="112501506"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Isbariya's Eternal Pants Chest -->
-	<decomposable_select_item item_id="188051393">
-		<items>
-			<item id="113600929"/>
-			<item id="113600930"/>
-			<item id="113300988"/>
-			<item id="113300989"/>
-			<item id="113500958"/>
-			<item id="113500959"/>
-			<item id="113100975"/>
-			<item id="113100976"/>
-			<item id="113301551"/>
-			<item id="113101404"/>
-			<item id="113501582"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Stormwing's Eternal Jacket Chest -->
-	<decomposable_select_item item_id="188051394">
-	    <items>
-			<item id="110600968"/>
-			<item id="110301020"/>
-			<item id="110500988"/>
-			<item id="110101071"/>
-			<item id="110301584"/>
-			<item id="110101071"/>
-			<item id="110551005"/>
-		</items>
-	</decomposable_select_item>
-	<!-- Stormwing's Eternal Weapon Chest -->
-	<decomposable_select_item item_id="188051395">
-	    <items>
-			<item id="100000893"/>
-			<item id="100001080"/>
-			<item id="100100676"/>
-			<item id="100200807"/>
-			<item id="100500698"/>
-			<item id="100600755"/>
-			<item id="100900684"/>
-			<item id="101300655"/>
-			<item id="101500698"/>
-			<item id="101700722"/>
-			<item id="101800867"/>
-			<item id="101900627"/>
-			<item id="102000662"/>
-			<item id="102100756"/>
+			<item id="110900168"/>
+			<item id="110900169"/>
+			<item id="110900172"/>
+			<item id="110900173"/>
+			<item id="111000022"/>
+			<item id="111000023"/>
+			<item id="114000017"/>
+			<item id="114000018"/>
+			<item id="125040157"/>
+			<item id="125040158"/>
+			<item id="125040161"/>
+			<item id="166000065" count="5"/>
+			<item id="166000070" count="5"/>
+			<item id="166000075" count="5"/>
+			<item id="167000327" count="5"/>
+			<item id="167000331" count="5"/>
+			<item id="167000358" count="5"/>
+			<item id="167000359" count="5"/>
+			<item id="167000363" count="5"/>
+			<item id="167000487" count="5"/>
+			<item id="167000491" count="5"/>
+			<item id="167000518" count="5"/>
+			<item id="167000519" count="5"/>
+			<item id="167000522" count="5"/>
+			<item id="167000547" count="5"/>
+			<item id="167000550" count="5"/>
+			<item id="167000555" count="5"/>
+			<item id="167000558" count="5"/>
 		</items>
 	</decomposable_select_item>
 	<!-- Judge's Fabled Weapon Chest -->
