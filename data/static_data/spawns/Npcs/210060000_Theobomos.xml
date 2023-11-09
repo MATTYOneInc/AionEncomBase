@@ -1092,12 +1092,10 @@
 		</spawn>
 		<!-- Belicanon [Miragent Holy Templar] -->
 		<spawn npc_id="798364" respawn_time="295">
-			<temporary_spawn spawn_time="2.*.*" despawn_time="3.*.*"/>
 			<spot x="2650.0386" y="1723.3495" z="93.294304" h="85"/>
 		</spawn>
 		<!-- Pater [Miragent Holy Templar] -->
 		<spawn npc_id="798366" respawn_time="295">
-			<temporary_spawn spawn_time="0.*.*" despawn_time="1.*.*"/>
 			<spot x="303.82922" y="632.90497" z="108.225464" h="32"/>
 		</spawn>
 		<!-- First Calydon Stone Plate -->

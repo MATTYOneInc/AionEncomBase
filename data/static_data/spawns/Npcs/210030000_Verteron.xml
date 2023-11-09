@@ -1084,7 +1084,6 @@
 		</spawn>
 		<!-- Pavel [Miragent Holy Templar] -->
 		<spawn npc_id="798361" respawn_time="295">
-			<temporary_spawn spawn_time="7.*.*" despawn_time="8.*.*"/>
 			<spot x="1113.82" y="1815.13" z="100.889" h="20"/>
 		</spawn>
 		<!-- High Priest Munuka -->

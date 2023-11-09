@@ -1366,7 +1366,6 @@
 		</spawn>
 		<!-- Navid [Miragent Holy Templar] -->
 		<spawn npc_id="798360" respawn_time="295">
-			<temporary_spawn spawn_time="10.*.*" despawn_time="11.*.*"/>
 			<spot x="134" y="1564" z="101.5" h="108"/>
 		</spawn>
 		<!-- Supervisor Duaguru -->

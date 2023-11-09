@@ -4808,12 +4808,10 @@
 		</spawn>
 		<!-- Poevius [Miragent Holy Templar] -->
 		<spawn npc_id="798363" respawn_time="295">
-			<temporary_spawn spawn_time="3.*.*" despawn_time="4.*.*"/>
 			<spot x="935.8521" y="2915.583" z="176.70119" h="94"/>
 		</spawn>
 		<!-- Mahelnu [Miragent Holy Templar] -->
 		<spawn npc_id="798365" respawn_time="295">
-			<temporary_spawn spawn_time="1.*.*" despawn_time="2.*.*"/>
 			<spot x="2329.0454" y="694.2876" z="350.57764" h="0"/>
 		</spawn>
 		<!-- Graveknight Fighter -->
