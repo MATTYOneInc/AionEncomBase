@@ -1837,21 +1837,21 @@
 			<item id="101500697" player_class="CLERIC" count="1"/>
 			<item id="100100675" player_class="CHANTER" count="1"/>
 			<item id="101500697" player_class="CHANTER" count="1"/>
-			<item id="100000892" player_class="GLADIATOR" count="1"/>
-			<item id="100001007" player_class="GLADIATOR" count="1"/>
-			<item id="100100675" player_class="GLADIATOR" count="1"/>
-			<item id="100900683" player_class="GLADIATOR" count="1"/>
-			<item id="100900814" player_class="GLADIATOR" count="1"/>
 			<item id="100000892" player_class="TEMPLAR" count="1"/>
 			<item id="100001007" player_class="TEMPLAR" count="1"/>
 			<item id="100100675" player_class="TEMPLAR" count="1"/>
-			<item id="100200806" player_class="TEMPLAR" count="1"/>
 			<item id="100900683" player_class="TEMPLAR" count="1"/>
 			<item id="100900814" player_class="TEMPLAR" count="1"/>
-			<item id="101300654" player_class="TEMPLAR" count="1"/>
-			<item id="101300783" player_class="TEMPLAR" count="1"/>
-			<item id="101700721" player_class="TEMPLAR" count="1"/>
-			<item id="101700856" player_class="TEMPLAR" count="1"/>
+			<item id="100000892" player_class="GLADIATOR" count="1"/>
+			<item id="100001007" player_class="GLADIATOR" count="1"/>
+			<item id="100100675" player_class="GLADIATOR" count="1"/>
+			<item id="100200806" player_class="GLADIATOR" count="1"/>
+			<item id="100900683" player_class="GLADIATOR" count="1"/>
+			<item id="100900814" player_class="GLADIATOR" count="1"/>
+			<item id="101300654" player_class="GLADIATOR" count="1"/>
+			<item id="101300783" player_class="GLADIATOR" count="1"/>
+			<item id="101700721" player_class="GLADIATOR" count="1"/>
+			<item id="101700856" player_class="GLADIATOR" count="1"/>
 			<item id="102000661" player_class="SONGWEAVER" count="1"/>
 			<item id="102000747" player_class="SONGWEAVER" count="1"/>
 			<item id="101800866" player_class="GUNSLINGER" count="1"/>
@@ -1959,17 +1959,17 @@
 			<item id="101500698" player_class="CLERIC" count="1"/>
 			<item id="100100676" player_class="CHANTER" count="1"/>
 			<item id="101500698" player_class="CHANTER" count="1"/>
-			<item id="100000892" player_class="GLADIATOR" count="1"/>
-			<item id="100001007" player_class="GLADIATOR" count="1"/>
-			<item id="100100675" player_class="GLADIATOR" count="1"/>
-			<item id="100900683" player_class="GLADIATOR" count="1"/>
-			<item id="100001080" player_class="TEMPLAR" count="1"/>
-			<item id="100000893" player_class="TEMPLAR" count="1"/>
-			<item id="100100676" player_class="TEMPLAR" count="1"/>
-			<item id="100200807" player_class="TEMPLAR" count="1"/>
-			<item id="100900684" player_class="TEMPLAR" count="1"/>
-			<item id="101300655" player_class="TEMPLAR" count="1"/>
-			<item id="101700722" player_class="TEMPLAR" count="1"/>
+			<item id="100000892" player_class="TEMPLAR" count="1"/>
+			<item id="100001007" player_class="TEMPLAR" count="1"/>
+			<item id="100100675" player_class="TEMPLAR" count="1"/>
+			<item id="100900683" player_class="TEMPLAR" count="1"/>
+			<item id="100001080" player_class="GLADIATOR" count="1"/>
+			<item id="100000893" player_class="GLADIATOR" count="1"/>
+			<item id="100100676" player_class="GLADIATOR" count="1"/>
+			<item id="100200807" player_class="GLADIATOR" count="1"/>
+			<item id="100900684" player_class="GLADIATOR" count="1"/>
+			<item id="101300655" player_class="GLADIATOR" count="1"/>
+			<item id="101700722" player_class="GLADIATOR" count="1"/>
 			<item id="102000662" player_class="SONGWEAVER" count="1"/>
 			<item id="101900627" player_class="GUNSLINGER" count="1"/>
 			<item id="101800867" player_class="GUNSLINGER" count="1"/>
@@ -1977,6 +1977,40 @@
 			<item id="101800867" player_class="AETHERTECH" count="1"/>
 		</items>
 	</decomposable>
+	<!-- Judge's Fabled Weapon Chest -->
+	<decomposable item_id="188051396">
+		<items>
+			<item id="100500204" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="100600219" player_class="SPIRIT_MASTER" count="1"/>
+			<item id="100500204" player_class="SORCERER" count="1"/>
+			<item id="100600219" player_class="SORCERER" count="1"/>
+			<item id="100000275" player_class="ASSASSIN" count="1"/>
+			<item id="100200298" player_class="ASSASSIN" count="1"/>
+			<item id="101700216" player_class="ASSASSIN" count="1"/>
+			<item id="100000275" player_class="RANGER" count="1"/>
+			<item id="100200298" player_class="RANGER" count="1"/>
+			<item id="101700216" player_class="RANGER" count="1"/>
+			<item id="100100191" player_class="CLERIC" count="1"/>
+			<item id="101500205" player_class="CLERIC" count="1"/>
+			<item id="100100191" player_class="CHANTER" count="1"/>
+			<item id="101500205" player_class="CHANTER" count="1"/>
+			<item id="100000275" player_class="TEMPLAR" count="1"/>
+			<item id="100100191" player_class="TEMPLAR" count="1"/>
+			<item id="100900197" player_class="TEMPLAR" count="1"/>
+			<item id="100000275" player_class="GLADIATOR" count="1"/>
+			<item id="100100191" player_class="GLADIATOR" count="1"/>
+			<item id="100200298" player_class="GLADIATOR" count="1"/>
+			<item id="100900197" player_class="GLADIATOR" count="1"/>
+			<item id="101300194" player_class="GLADIATOR" count="1"/>
+			<item id="101700216" player_class="GLADIATOR" count="1"/>
+			<item id="102000301" player_class="SONGWEAVER" count="1"/>
+			<item id="101800872" player_class="GUNSLINGER" count="1"/>
+			<item id="101900290" player_class="GUNSLINGER" count="1"/>
+			<item id="102100761" player_class="AETHERTECH" count="1"/>
+			<item id="101800872" player_class="AETHERTECH" count="1"/>
+		</items>
+	</decomposable>
+
 
 	<!-- Resurgent Daevanion Leather Box -->
 	<decomposable item_id="188053557">
