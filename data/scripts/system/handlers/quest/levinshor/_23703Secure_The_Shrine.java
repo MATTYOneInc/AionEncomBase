@@ -84,6 +84,7 @@ public class _23703Secure_The_Shrine extends QuestHandler
                 case 234642:
                 if (qs.getQuestVarById(0) < 1) {
                     qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+					qs.setQuestVarById(0, 1);
                     updateQuestStatus(env);
                     return true;
                 }

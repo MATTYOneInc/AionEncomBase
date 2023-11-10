@@ -84,6 +84,7 @@ public class _13703Igniting_The_Conflict extends QuestHandler
                 case 234645:
                 if (qs.getQuestVarById(0) < 1) {
                     qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+					qs.setQuestVarById(0, 1);
                     updateQuestStatus(env);
                     return true;
                 }
