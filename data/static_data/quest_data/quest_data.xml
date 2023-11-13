@@ -39187,7 +39187,7 @@
     <rewards gold="5220" exp="2691">
       <reward_item item_id="188053058" count="2" />
     </rewards>
-    <quest_drop npc_id="700010" item_id="182215472" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="700136" item_id="182215472" chance="100" drop_each_member="1" />
   </quest>
   <quest id="24112" name="No Laissez-faire for Lepharists" nameId="1129973" minlevel_permitted="14" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="IMPORTANT">
     <rewards gold="15480" exp="25255">
