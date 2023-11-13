@@ -25,10 +25,5 @@
             <spot h="68" z="282.87994" y="2247.4878" x="2525.9211"/>
             <spot h="4" z="283.0" y="2317.8218" x="2595.6653"/>
         </spawn>
-        <spawn custom="true" respawn_time="295" npc_id="798362" difficult_id="0">
-            <temporary_spawn spawn_time="5.*.*" despawn_time="6.*.*"/>
-            <spot h="89" z="16.6274" y="410.339" x="270.403"/>
-            <spot h="84" z="16.623405" y="411.37314" x="270.68033"/>
-        </spawn>
     </spawn_map>
 </spawns>

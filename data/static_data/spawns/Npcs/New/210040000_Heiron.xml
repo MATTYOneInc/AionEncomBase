@@ -51,15 +51,5 @@
             <spot h="64" z="145.44743" y="2531.8604" x="2412.176"/>
             <spot h="29" z="145.44853" y="2566.05" x="2409.8308"/>
         </spawn>
-        <spawn custom="true" respawn_time="295" npc_id="798363" difficult_id="0">
-            <temporary_spawn spawn_time="3.*.*" despawn_time="4.*.*"/>
-            <spot h="94" z="176.70119" y="2915.583" x="935.8521"/>
-            <spot h="92" z="177.3435" y="2917.4236" x="935.82983"/>
-        </spawn>
-        <spawn custom="true" respawn_time="295" npc_id="798365" difficult_id="0">
-            <temporary_spawn spawn_time="1.*.*" despawn_time="2.*.*"/>
-            <spot h="0" z="350.57764" y="694.2876" x="2329.0454"/>
-            <spot h="13" z="350.48837" y="695.2477" x="2330.186"/>
-        </spawn>
     </spawn_map>
 </spawns>
