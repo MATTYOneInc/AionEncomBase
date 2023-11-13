@@ -57,7 +57,7 @@
 	<!-- [Hero/Alliance] A Shadow Over Levinshor (Elyos Only) -->
 	<item_collecting id="13916" start_npc_ids="802350"/>
 	<!-- [Hero/Group] Snuffing Out A Flame (Elyos Only) -->
-	<monster_hunt id="13917" start_npc_ids="802328">
+	<monster_hunt id="13917" start_npc_ids="802350">
         <monster var="0" npc_ids="234645 234162" end_var="1"/>
     </monster_hunt>
 	<!-- [Hero/Group] Live By The Sword... (Elyos Only) -->

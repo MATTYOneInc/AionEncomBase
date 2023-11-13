@@ -15,7 +15,7 @@
 	</monster_hunt>
 	<!-- [Group] Slay Sheba, Blind Beritra (Elyos Only) -->
 	<monster_hunt id="18912" start_npc_ids="801945" end_npc_ids="801945">
-		<monster var="0" npc_ids="230847" end_var="5"/>
+		<monster var="0" npc_ids="230847" end_var="2"/>
 		<monster var="1" npc_ids="230858" end_var="1"/>
 	</monster_hunt>
 	<!-- [Group] What Sheba Hath Wrought (Elyos Only) -->
@@ -40,7 +40,7 @@
 	</monster_hunt>
 	<!-- [Group] Unlock The Mystery Box (Asmodians Only) -->
 	<monster_hunt id="28912" start_npc_ids="801947" end_npc_ids="801947">
-		<monster var="0" npc_ids="230847" end_var="5"/>
+		<monster var="0" npc_ids="230847" end_var="2"/>
 		<monster var="1" npc_ids="230858" end_var="1"/>
 	</monster_hunt>
 	<!-- [Group] Alas, Poor Shugo, Nyerk (Asmodians Only) -->
