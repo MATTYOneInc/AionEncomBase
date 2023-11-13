@@ -16,22 +16,25 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
-import com.aionemu.gameserver.dataholders.DataManager;
+import com.aionemu.gameserver.model.DescriptionId;
+import com.aionemu.gameserver.model.TaskId;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.templates.decomposable.SelectItem;
-import com.aionemu.gameserver.model.templates.decomposable.SelectItems;
+import com.aionemu.gameserver.model.templates.item.DisassembleItem;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SELECT_ITEM_ADD;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.services.item.ItemService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * Rework LightNing (ENCOM)
  */
 
-public class CM_SELECT_ITEM extends AionClientPacket {
+public class CM_SELECT_ITEM extends AionClientPacket
+{
 
 	private int uniqueItemId;
 	private int index;
@@ -43,12 +46,14 @@ public class CM_SELECT_ITEM extends AionClientPacket {
 	 * @param state
 	 * @param restStates
 	 */
-	public CM_SELECT_ITEM(int opcode, AionConnection.State state, AionConnection.State... restStates) {
+	public CM_SELECT_ITEM(int opcode, AionConnection.State state, AionConnection.State... restStates)
+	{
 		super(opcode, state, restStates);
 	}
 
 	@Override
-	protected void readImpl() {
+	protected void readImpl()
+	{
 		this.uniqueItemId = readD();
 		this.unk = readD();
 		this.index = readC();
@@ -56,23 +61,22 @@ public class CM_SELECT_ITEM extends AionClientPacket {
 	}
 
 	@Override
-	protected void runImpl() {
-		Player player = getConnection().getActivePlayer();
-		Item item = player.getInventory().getItemByObjId(this.uniqueItemId);
+	protected void runImpl()
+	{
+		final Player player = getConnection().getActivePlayer();
+		final Item item = player.getInventory().getItemByObjId(this.uniqueItemId);
 		if (item == null) {
 			return;
 		}
-		sendPacket(new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(), player.getObjectId().intValue(),
-				this.uniqueItemId, item.getItemId(), 0, 1, 1));
-		boolean delete = player.getInventory().decreaseByObjectId(this.uniqueItemId, 1L);
+		final int nameId = item.getNameId();
+		sendPacket(new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), player.getObjectId(), uniqueItemId, item.getItemId(), 0, 1, 1));
+		boolean delete = player.getInventory().decreaseByObjectId(uniqueItemId, 1L);
 		if (delete) {
-			SelectItems selectitem = DataManager.DECOMPOSABLE_SELECT_ITEM_DATA.getSelectItem(player.getPlayerClass(),
-					player.getRace(), item.getItemId());
-			SelectItem st = selectitem.getItems().get(this.index);
-			ItemService.addItem(player, st.getSelectItemId(), st.getCount());
-			sendPacket(new SM_SELECT_ITEM_ADD(this.uniqueItemId, 0));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300423, new DescriptionId(nameId)));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400452, new DescriptionId(nameId)));
+			DisassembleItem selectitem = player.getDisassemblyItemLists().get(index);
+			sendPacket(new SM_SELECT_ITEM_ADD(uniqueItemId, index));
+			ItemService.addItem(player, selectitem.getItemId(), selectitem.getCount());
 		}
-
 	}
-
 }

@@ -101,6 +101,7 @@ import com.aionemu.gameserver.model.team2.group.PlayerGroupService;
 import com.aionemu.gameserver.model.templates.BoundRadius;
 import com.aionemu.gameserver.model.templates.event.MaxCountOfDay;
 import com.aionemu.gameserver.model.templates.flypath.FlyPathEntry;
+import com.aionemu.gameserver.model.templates.item.DisassembleItem;
 import com.aionemu.gameserver.model.templates.item.ItemAttackType;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 import com.aionemu.gameserver.model.templates.item.ItemUseLimits;
@@ -3404,5 +3405,17 @@ public class Player extends Creature {
 			return true;
 		}
 		return false;
+	}
+
+	private List<DisassembleItem> disassemblyItemLists = new FastList<DisassembleItem>();
+
+	public List<DisassembleItem> getDisassemblyItemLists()
+	{
+		return disassemblyItemLists;
+	}
+
+	public void setDisassemblyItemLists(List<DisassembleItem> disassemblyItemLists)
+	{
+		this.disassemblyItemLists = disassemblyItemLists;
 	}
 }

@@ -70,7 +70,7 @@ public final class DataManager {
 	public static PetMerchandData PET_MERCHAND_DATA;
 	public static RoadData ROAD_DATA;
 	public static InstanceCooltimeData INSTANCE_COOLTIME_DATA;
-	public static DecomposableItemsData DECOMPOSABLE_ITEMS_DATA;
+	public static DisassemblyItemSetsData DISASSEMBLY_ITEMS_DATA;
 	public static AIData AI_DATA;
 	public static FlyPathData FLY_PATH;
 	public static WindstreamData WINDSTREAM_DATA;
@@ -134,7 +134,6 @@ public final class DataManager {
 	public static GameExperienceData GAME_EXPERIENCE_DATA;
 	public static AbyssOpData ABYSS_OP_DATA;
 	public static PanelCpData PANEL_CP_DATA;
-	public static DecomposableSelectItemsData DECOMPOSABLE_SELECT_ITEM_DATA;
 	public static PetBuffData PET_BUFF_DATA;
 	public static MultiReturnItemData MULTI_RETURN_ITEM_DATA;
 	public static LandingData LANDING_LOCATION_DATA;
@@ -217,7 +216,7 @@ public final class DataManager {
 		GUIDE_HTML_DATA = data.guideData;
 		ROAD_DATA = data.roadData;
 		INSTANCE_COOLTIME_DATA = data.instanceCooltimeData;
-		DECOMPOSABLE_ITEMS_DATA = data.decomposableItemsData;
+		DISASSEMBLY_ITEMS_DATA = data.disassemblyItemSetsData;
 		AI_DATA = data.aiData;
 		FLY_PATH = data.flyPath;
 		WINDSTREAM_DATA = data.windstreamsData;
@@ -282,7 +281,6 @@ public final class DataManager {
 		GAME_EXPERIENCE_DATA = data.gameExperienceData;
 		ABYSS_OP_DATA = data.abyssOpData;
 		PANEL_CP_DATA = data.panelCpData;
-		DECOMPOSABLE_SELECT_ITEM_DATA = data.decomposableSelectItemsData;
 		PET_BUFF_DATA = data.petBuffData;
 		MULTI_RETURN_ITEM_DATA = data.multiReturnItemData;
 		LANDING_LOCATION_DATA = data.landingLocationData;

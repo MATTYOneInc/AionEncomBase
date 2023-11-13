@@ -18,24 +18,23 @@ package com.aionemu.gameserver.network.aion.serverpackets;
 
 import java.util.List;
 
+import com.aionemu.gameserver.model.templates.item.DisassembleItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.aionemu.gameserver.dataholders.DataManager;
-import com.aionemu.gameserver.model.templates.decomposable.SelectItem;
-import com.aionemu.gameserver.model.templates.decomposable.SelectItems;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 public class SM_SELECT_ITEM extends AionServerPacket {
 	private int uniqueItemId;
-	private List<SelectItem> selsetitems;
+	private List<DisassembleItem> selsetitems;
 	private static final Logger log = LoggerFactory.getLogger(SM_SELECT_ITEM.class);
 
-	public SM_SELECT_ITEM(SelectItems selsetitem, int uniqueItemId) {
+	public SM_SELECT_ITEM(List<DisassembleItem> selsetitem, int uniqueItemId) {
 		this.uniqueItemId = uniqueItemId;
-		this.selsetitems = selsetitem.getItems();
+		this.selsetitems = selsetitem;
 	}
 
 	@Override
@@ -45,9 +44,9 @@ public class SM_SELECT_ITEM extends AionServerPacket {
 		writeC(this.selsetitems.size());
 		for (int slotCount = 0; slotCount < selsetitems.size(); slotCount++) {
 			writeC(slotCount);
-			SelectItem rt = this.selsetitems.get(slotCount);
-			ItemTemplate itemTemplate = DataManager.ITEM_DATA.getItemTemplate(rt.getSelectItemId());
-			writeD(rt.getSelectItemId());
+			DisassembleItem rt = this.selsetitems.get(slotCount);
+			ItemTemplate itemTemplate = DataManager.ITEM_DATA.getItemTemplate(rt.getItemId());
+			writeD(rt.getItemId());
 			writeD(rt.getCount());
 			writeC(itemTemplate.getOptionSlotBonus() > 0 ? 255 : 0);
 			writeC(itemTemplate.getMaxEnchantBonus() > 0 ? 255 : 0);

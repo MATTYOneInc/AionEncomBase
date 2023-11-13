@@ -64,7 +64,6 @@
 	<import file="bind_points/bind_points.xml"/>
 	<import file="chests/chest_templates.xml"/>
 	<import file="cube_expander/cube_expander.xml"/>
-	<import file="decomposable_items/decomposable_items.xml"/>
 	<import file="assembled_npcs/assembled_npcs.xml"/>
 	<import file="fly_rings/fly_rings.xml"/>
 	<import file="gatherables/gatherable_templates.xml"/>
@@ -210,7 +209,7 @@
 	<panel_cps>
 		<import file="creativity/panel_cps.xml" skipRoot="true"/>
 	</panel_cps>
-	<import file="decomposable_select_items/decomposable_select_items.xml"/>
+	<import file="items/disassembly_items.xml"/>
 	<import file="pets/pet_bonusattr.xml"/>
 	<import file="locations/landing/landing_locations.xml"/>
 	<import file="locations/landing_special/landing_special_locations.xml"/>

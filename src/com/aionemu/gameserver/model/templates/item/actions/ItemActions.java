@@ -41,7 +41,7 @@ public class ItemActions {
 			@XmlElement(name = "dye", type = DyeAction.class),
 			@XmlElement(name = "craftlearn", type = CraftLearnAction.class),
 			@XmlElement(name = "toypetspawn", type = ToyPetSpawnAction.class),
-			@XmlElement(name = "decompose", type = DecomposeAction.class),
+			@XmlElement(name = "disassemble", type = DisassemblyAction.class),
 			@XmlElement(name = "titleadd", type = TitleAddAction.class),
 			@XmlElement(name = "learnemotion", type = EmotionLearnAction.class),
 			@XmlElement(name = "read", type = ReadAction.class),

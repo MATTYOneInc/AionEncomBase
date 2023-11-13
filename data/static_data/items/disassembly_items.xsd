@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="../items/item/item_templates.xsd"/>
+    <xs:element name="disassemblyitemsets">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="disassemblyitemset" type="DisassemblyItemSet" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="DisassemblyItemSet">
+        <xs:sequence>
+            <xs:element name="disassemble_set_list" type="DisassembleSetList" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="disassemblyItem_Id" type="itemId" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="DisassembleSetList">
+        <xs:sequence>
+            <xs:element name="itemGroup" type="DisassembleItemGroups" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DisassembleItemGroups">
+        <xs:sequence>
+            <xs:element name="item" type="DisassembleItems" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="gProb" type="xs:int"/>
+        <xs:attribute name="minLevel" type="xs:int"/>
+        <xs:attribute name="maxLevel" type="xs:int"/>
+        <xs:attribute name="onlyClass" type="PlayerClassList"/>
+        <xs:attribute name="race" type="Race"/>
+    </xs:complexType>
+    <xs:complexType name="DisassembleItems">
+        <xs:sequence>
+            <xs:element name="create" type="DisassembleItem" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="iProb" type="xs:int"/>
+        <xs:attribute name="custom" type="xs:boolean"/>
+    </xs:complexType>
+    <xs:complexType name="DisassembleItem">
+        <xs:attribute name="itemId" type="xs:int"/>
+        <xs:attribute name="count" type="xs:int"/>
+    </xs:complexType>
+    <xs:simpleType name="PlayerClassList">
+        <xs:list itemType="playerClass"/>
+    </xs:simpleType>
+</xs:schema>

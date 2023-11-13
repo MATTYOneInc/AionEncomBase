@@ -115,8 +115,8 @@ public class StaticData {
 	public RoadData roadData;
 	@XmlElement(name = "instance_cooltimes")
 	public InstanceCooltimeData instanceCooltimeData;
-	@XmlElement(name = "decomposable_items")
-	public DecomposableItemsData decomposableItemsData;
+	@XmlElement(name = "disassemblyitemsets")
+	public DisassemblyItemSetsData disassemblyItemSetsData;
 	@XmlElement(name = "ai_templates")
 	public AIData aiData;
 	@XmlElement(name = "flypath_template")
@@ -247,8 +247,6 @@ public class StaticData {
 	public AbyssOpData abyssOpData;
 	@XmlElement(name = "panel_cps")
 	public PanelCpData panelCpData;
-	@XmlElement(name = "decomposable_select_items")
-	public DecomposableSelectItemsData decomposableSelectItemsData;
 	@XmlElement(name = "pet_bonusattrs")
 	public PetBuffData petBuffData;
 	@XmlElement(name = "landing")
@@ -347,8 +345,7 @@ public class StaticData {
 		DataManager.log.info("Loaded " + guideData.size() + " Guide");
 		DataManager.log.info("Loaded " + roadData.size() + " Road");
 		DataManager.log.info("Loaded " + instanceCooltimeData.size() + " Instance Cooltime");
-		DataManager.log.info("Loaded " + decomposableItemsData.size() + " Decomposable Item");
-		DataManager.log.info("Loaded " + decomposableSelectItemsData.size() + " Decomposable Select Item");
+		DataManager.log.info("Loaded " + disassemblyItemSetsData.size() + " Decomposable Item");
 		DataManager.log.info("Loaded " + aiData.size() + " Ai2 Template");
 		DataManager.log.info("Loaded " + flyPath.size() + " Flypath Template");
 		DataManager.log.info("Loaded " + windstreamsData.size() + " Windstream");
