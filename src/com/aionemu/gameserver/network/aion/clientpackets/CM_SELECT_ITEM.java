@@ -75,7 +75,7 @@ public class CM_SELECT_ITEM extends AionClientPacket
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300423, new DescriptionId(nameId)));
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400452, new DescriptionId(nameId)));
 			DisassembleItem selectitem = player.getDisassemblyItemLists().get(index);
-			sendPacket(new SM_SELECT_ITEM_ADD(uniqueItemId, index));
+			sendPacket(new SM_SELECT_ITEM_ADD(uniqueItemId, 0));
 			ItemService.addItem(player, selectitem.getItemId(), selectitem.getCount());
 		}
 	}

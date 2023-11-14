@@ -21,17 +21,17 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 public class SM_SELECT_ITEM_ADD extends AionServerPacket {
 	private int uniqueItemId;
-	private int index;
+	private int type;
 
-	public SM_SELECT_ITEM_ADD(int uniqueItemId, int index) {
+	public SM_SELECT_ITEM_ADD(int uniqueItemId, int type) {
 		this.uniqueItemId = uniqueItemId;
-		this.index = index;
+		this.type = type;
 	}
 
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeD(uniqueItemId);
 		writeD(0x00);
-		writeC(index);
+		writeC(type);
 	}
 }
