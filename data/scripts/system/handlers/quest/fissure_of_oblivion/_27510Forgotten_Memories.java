@@ -122,9 +122,18 @@ public class _27510Forgotten_Memories extends QuestHandler
 							return sendQuestDialog(env, 2376);
 						}
 					} case SET_REWARD: {
+						changeQuestStep(env, 4, 5, false);
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
-						TeleportService2.teleportTo(player, 220110000, 1440.2622f, 929.99585f, 224.06812f, (byte) 68);
+						TeleportService2.teleportTo(player, 220110000, 1876.4996f, 1952.8883f, 205.12239f, (byte) 68);
+						player.getEffectController().removeEffect(4808);
+						player.getEffectController().removeEffect(4813);
+						player.getEffectController().removeEffect(4818);
+						player.getEffectController().removeEffect(4824);
+						player.getEffectController().removeEffect(4831);
+						player.getEffectController().removeEffect(4834);
+						player.getEffectController().removeEffect(4835);
+						player.getEffectController().removeEffect(4836);
 						return closeDialogWindow(env);
 					}
                 }
