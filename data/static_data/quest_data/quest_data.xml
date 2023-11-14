@@ -31960,7 +31960,7 @@
   </quest>
   <quest id="16977" name="[Instance] Seized Goods" nameId="1801982" minlevel_permitted="63" max_repeat_count="10" race_permitted="ELYOS" category="IMPORTANT">
     <collect_items>
-      <collect_item item_id="182215945" count="6" />
+      <collect_item item_id="182215945" count="1" />
     </collect_items>
     <rewards exp="4825175" />
     <extended_rewards>
