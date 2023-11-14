@@ -89,7 +89,6 @@ public class _13702Tomul_Tap extends QuestHandler
 				case 235349:
                 if (qs.getQuestVarById(0) < 4) {
                     qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
-					qs.setQuestVarById(0, 1);
                     updateQuestStatus(env);
                     return true;
                 }
