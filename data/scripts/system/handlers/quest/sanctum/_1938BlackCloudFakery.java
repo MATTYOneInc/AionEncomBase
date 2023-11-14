@@ -31,7 +31,7 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1938BlackCloudFakery extends QuestHandler
 {
 	private final static int	questId	= 1938;
-	private final static int[]	npcs = {203703, 279001, 279008};
+	private final static int[]	npcs = {203703, 798069, 805836}; //npcs = {203703, 279001, 279008};
 	
 	public _1938BlackCloudFakery()
 	{
@@ -66,7 +66,7 @@ public class _1938BlackCloudFakery extends QuestHandler
 		{
 			switch(targetId)
 			{
-				case 279001:
+				case 798069:
 					switch(dialog)
 					{
 						case START_DIALOG:
@@ -76,18 +76,18 @@ public class _1938BlackCloudFakery extends QuestHandler
 							return defaultCloseDialog(env, 0, 1);
 					}
 					break;
-				case 279008:
+				case 805836:
 					switch(dialog)
 					{
 						case START_DIALOG:
 							if(var == 1)
 								return sendQuestDialog(env, 1693);
 						case STEP_TO_2:
-							return defaultCloseDialog(env, 1, 2, true, false);
+							return defaultCloseDialog(env, 1, 2, true, false);	
 					}
 					break;
 			}
 		}
-		return sendQuestRewardDialog(env, 203703, 2375);
+		return sendQuestRewardDialog(env, 805836, 2375);
 	}
 }
