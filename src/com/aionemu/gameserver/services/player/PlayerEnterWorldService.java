@@ -773,10 +773,10 @@ public final class PlayerEnterWorldService {
 	}
 
 	private static void sendMacroList(AionConnection client, Player player) {
-		client.sendPacket(new SM_MACRO_LIST(player, false));
-		if (player.getMacroList().getSize() > 7) {
-			client.sendPacket(new SM_MACRO_LIST(player, true));
-		}
+		client.sendPacket(new SM_MACRO_LIST(player, 1));
+		client.sendPacket(new SM_MACRO_LIST(player, 2));
+		client.sendPacket(new SM_MACRO_LIST(player, 3));
+		client.sendPacket(new SM_MACRO_LIST(player, 4));
 	}
 
 	private static void playerLoggedIn(Player player) {

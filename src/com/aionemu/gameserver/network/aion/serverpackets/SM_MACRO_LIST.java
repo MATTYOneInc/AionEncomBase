@@ -30,12 +30,14 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 public class SM_MACRO_LIST extends AionServerPacket {
 
 	private Player player;
+	private int packet;
 
 	/**
 	 * Constructs new <tt>SM_MACRO_LIST </tt> packet
 	 */
-	public SM_MACRO_LIST(Player player, boolean secondPart) {
+	public SM_MACRO_LIST(Player player, int packet) {
 		this.player = player;
+		this.packet = packet;
 	}
 
 	/**
@@ -45,13 +47,21 @@ public class SM_MACRO_LIST extends AionServerPacket {
 	protected void writeImpl(AionConnection con) {
 		writeD(player.getObjectId());// player id
 
-		int size = player.getMacroList().getSize();
+		Map<Integer, String> macrosToSend = player.getMacroList().getMarcosPart(packet);
 
-		writeC(0x01);
-		writeH(-size);
+		int size = macrosToSend.size();
+
+		if (packet == 1) {
+			writeC(1);
+		} else {
+			writeC(0);
+			size *= -1;
+		}
+
+		writeH(size);
 
 		if (size != 0) {
-			for (Map.Entry<Integer, String> entry : player.getMacroList().getMacrosses().entrySet()) {
+			for (Map.Entry<Integer, String> entry : macrosToSend.entrySet()) {
 				writeC(entry.getKey());// order
 				writeS(entry.getValue());// xml
 			}
