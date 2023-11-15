@@ -113,12 +113,26 @@ public class MacroList {
 
 	/**
 	 * Returns an unmodifiable map of macro id to macro contents. NOTE: Retail sends
-	 * only 7 macros per packet, that's why we have to split macros
+	 * only 6 macros per packet, that's why we have to split macros
+	 * todo what if we delete macro 3 in order? realucate the order number onDeleteMacro?
 	 */
-	public Map<Integer, String> getMarcosPart(boolean secondPart) {
+	public Map<Integer, String> getMarcosPart(int packet) {
 		Map<Integer, String> macrosPart = new HashMap<Integer, String>();
-		int currentIndex = secondPart ? 7 : 0;
-		int endIndex = secondPart ? 11 : 6;
+		int currentIndex;
+		int endIndex;
+		if (packet == 1) {
+			currentIndex = 1;
+			endIndex = 6;
+		} else if (packet == 2) {
+			currentIndex = 7;
+			endIndex = 12;
+		} else if (packet == 3) {
+			currentIndex = 13;
+			endIndex = 18;
+		} else { //packet == 4
+			currentIndex = 19;
+			endIndex = 24;
+		}
 
 		for (; currentIndex <= endIndex; currentIndex++) {
 			macrosPart.put(currentIndex, macrosses.get(currentIndex));
