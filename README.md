@@ -2,7 +2,8 @@
 
 - You can send errors to my site, so we will get your feedback faster!
 - Community Discord : https://discord.gg/NN3VBJd4Ar
-- Client: http://aionasteria.ru/uploads/AionLive5.8_cc1_rev002.torrent
+- Client (Cloud): http://cloud.imperivm.fun/index.php/s/kkKGEQqwiHAEirc
+- Client (Torrent): http://cdn.imperivm.fun/files/AionLive_rev002.torrent
 - Geo date from Monono2 https://drive.google.com/file/d/1jjLjPDoU5NQr7u7jfg1xqkhKfMdEX1RY/view?usp=sharing
 - Original Source Code developed by the Aion-Lightning team	
 - The Encom team took up the revision of the code
