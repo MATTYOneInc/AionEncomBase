@@ -67,8 +67,11 @@ public class WhatsInside extends AdminCommand
 					String IngameString = "[item: " + ITemplate.getTemplateId() + "]";
 					int ItemProb = i.getItemProb();
 					int ItemCount = i.getItem().getCount();
+					boolean disuse = i.getItem().isDisuse();
 					MaxValue += ItemProb;
 					PacketSendUtility.sendMessage(player, String.format("%s - Rate: %d - Count: %d", IngameString, ItemProb, ItemCount));
+					if (disuse)
+						PacketSendUtility.sendMessage(player, "This item is an Disuse Item, deactivated in 5.8");
 				}
 				if (MaxValue == 0) {
 					PacketSendUtility.sendMessage(player, "All fine, its an Select Box.\n");

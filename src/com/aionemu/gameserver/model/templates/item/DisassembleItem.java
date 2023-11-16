@@ -13,6 +13,8 @@ public class DisassembleItem
 	private int ItemId;
 	@XmlAttribute(name = "count")
 	private int Count;
+	@XmlAttribute(name = "disuse")
+	private boolean disuse;
 
 	public int getItemId()
 	{
@@ -22,5 +24,10 @@ public class DisassembleItem
 	public int getCount()
 	{
 		return Count;
+	}
+
+	public boolean isDisuse()
+	{
+		return disuse;
 	}
 }
