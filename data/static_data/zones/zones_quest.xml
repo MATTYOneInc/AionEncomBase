@@ -206,7 +206,7 @@
 		<sphere x="447.52753" y="1366.7305" z="913.3278" r="10.0"/>
 	</zone>
 	<zone mapid="301550000" name="IDETERNITY_02_Q16822_D_301550000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="153.95103" y="1486.3738" z="956.76874" r="10.0"/>
+		<sphere x="761.85913" y="859.5092" z="578.24963" r="10.0"/>
 	</zone>
 	<zone mapid="301550000" name="IDETERNITY_02_Q16823_A_301550000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="628.3722" y="716.6263" z="555.88275" r="10.0"/>
