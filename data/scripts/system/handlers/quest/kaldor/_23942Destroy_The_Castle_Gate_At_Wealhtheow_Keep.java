@@ -91,6 +91,7 @@ public class _23942Destroy_The_Castle_Gate_At_Wealhtheow_Keep extends QuestHandl
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

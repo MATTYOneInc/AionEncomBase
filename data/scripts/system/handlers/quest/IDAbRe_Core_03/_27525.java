@@ -143,6 +143,7 @@ public class _27525 extends QuestHandler
 				switch (targetId) {
 					case 248013: {
 						qs.setStatus(QuestStatus.REWARD);
+						changeQuestStep(env, 4, 5, false);
 						updateQuestStatus(env);
 						return true;
 					}

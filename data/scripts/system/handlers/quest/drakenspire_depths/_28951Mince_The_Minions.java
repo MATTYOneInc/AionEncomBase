@@ -40,7 +40,7 @@ public class _28951Mince_The_Minions extends QuestHandler
     public void register() {
         qe.registerQuestNpc(209743).addOnQuestStart(questId);
         qe.registerQuestNpc(209743).addOnTalkEvent(questId);
-		qe.registerQuestNpc(804711).addOnTalkEvent(questId);
+		qe.registerQuestNpc(804738).addOnTalkEvent(questId);
 		for (int mob: minion) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
@@ -138,6 +138,7 @@ public class _28951Mince_The_Minions extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 25) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}
