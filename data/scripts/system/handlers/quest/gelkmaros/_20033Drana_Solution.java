@@ -143,6 +143,7 @@ public class _20033Drana_Solution extends QuestHandler
                 PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
                 playQuestMovie(env, 553);
                 removeQuestItem(env, 182215594, 1);
+				changeQuestStep(env, 3, 4, false);
                 qs.setStatus(QuestStatus.REWARD);
                 updateQuestStatus(env);
             }

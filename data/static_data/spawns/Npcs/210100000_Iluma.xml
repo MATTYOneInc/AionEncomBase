@@ -21028,5 +21028,25 @@
         <spawn npc_id="244116" respawn_time="295">
             <spot h="8" z="227.84439" y="2222.4253" x="548.1838"/>
         </spawn>
+		<!-- LF6_FOBJ_Od_Track_Q15670_A -->
+		<spawn npc_id="703434" respawn_time="60">
+			<spot x="2817.5037" y="1132.0977" z="251.09724" entity_id="3310"/>
+		</spawn>
+		<!-- LF6_FOBJ_Od_Track_Q15670_B -->
+		<spawn npc_id="703435" respawn_time="60">
+			<spot x="2431.5010" y="1328.9498" z="225.43758" entity_id="3324"/>
+		</spawn>
+		<!-- LF6_FOBJ_Od_Track_Q15670_C -->
+		<spawn npc_id="703436" respawn_time="60">
+			<spot x="2892.0166" y="1726.6914" z="243.78575" entity_id="3325"/>
+		</spawn>
+		<!-- LF6_FOBJ_Od_Track_Q15670_D -->
+		<spawn npc_id="703437" respawn_time="60">
+			<spot x="2944.6753" y="1364.7593" z="218.79268" entity_id="3326"/>
+		</spawn>
+		<!-- LF6_FOBJ_Od_Track_Q15670_E -->
+		<spawn npc_id="731793" respawn_time="60">
+			<spot x="2726.4067" y="1424.1554" z="227.61403" entity_id="3327"/>
+		</spawn>
 	</spawn_map>
 </spawns>

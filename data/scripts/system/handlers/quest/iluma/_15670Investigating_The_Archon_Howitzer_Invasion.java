@@ -120,7 +120,9 @@ public class _15670Investigating_The_Archon_Howitzer_Invasion extends QuestHandl
 							return sendQuestDialog(env, 1693);
 						}
 					} case SET_REWARD: {
-						changeQuestStep(env, 2, 3, true);
+						changeQuestStep(env, 2, 3, false);
+						qs.setStatus(QuestStatus.REWARD);
+						updateQuestStatus(env);
 						return closeDialogWindow(env);
 					}
 				}

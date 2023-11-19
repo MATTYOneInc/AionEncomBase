@@ -85,7 +85,8 @@ public class _20035Silentera_Support extends QuestHandler
                             return defaultCloseDialog(env, 0, 1);
                         } case SET_REWARD: {
 							removeQuestItem(env, 182215660, 1);
-                            return defaultCloseDialog(env, 7, 7, true, false);
+							qs.setStatus(QuestStatus.REWARD);
+                            return defaultCloseDialog(env, 7, 8);
                         }
                     }
                     break;

@@ -194,6 +194,7 @@ public class _20031Go_To_Gelkmaros extends QuestHandler
 						if (var == 10) {
 						    removeQuestItem(env, 182215591, 1);
                             qs.setStatus(QuestStatus.REWARD);
+							changeQuestStep(env, 10, 11, false);
 						    updateQuestStatus(env);
 						    PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 						    return true;

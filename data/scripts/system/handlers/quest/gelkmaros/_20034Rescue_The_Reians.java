@@ -71,6 +71,7 @@ public class _20034Rescue_The_Reians extends QuestHandler
             } if (var == 6) {
                 if (player.getWorldId() == 220140000) {
                     qs.setStatus(QuestStatus.REWARD);
+					changeQuestStep(env, 6, 7, false);
                     updateQuestStatus(env);
                 }
             }
