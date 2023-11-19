@@ -118,6 +118,7 @@ public class _18992Another_Fragment_Another_Fight extends QuestHandler
 		} else if (var == 2) {
             if (targetId == 220426) { //아티팩트를 지배하는 �?소 군주.
                 qs.setStatus(QuestStatus.REWARD);
+				changeQuestStep(env, 2, 3, false);
 				updateQuestStatus(env);
             }
         }

@@ -122,6 +122,7 @@ public class _28990Fallen_Doorways extends QuestHandler
 		} else if (var == 2) {
             if (targetId == 220427) { //아티팩트를 지배하는 악령.
                 qs.setStatus(QuestStatus.REWARD);
+				changeQuestStep(env, 2, 3, false);
 				updateQuestStatus(env);
             }
         }

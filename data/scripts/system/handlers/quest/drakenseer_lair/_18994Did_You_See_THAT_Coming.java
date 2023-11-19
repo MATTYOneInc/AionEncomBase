@@ -26,7 +26,7 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _18994Did_You_See_THAT_Coming extends QuestHandler
 {
     private final static int questId = 18994;
-	private final static int[] IDF6DragonArtifactBoost = {703155}; //ìš©ì¡± ì°¨ì›?ë¬¸ ì¦?í?­ ìž¥ì¹˜.
+	private final static int[] IDF6DragonArtifactBoost = {857974,857975, 857976}; //ìš©ì¡± ì°¨ì›?ë¬¸ ì¦?í?­ ìž¥ì¹˜.
 	
     public _18994Did_You_See_THAT_Coming() {
         super(questId);
@@ -109,6 +109,7 @@ public class _18994Did_You_See_THAT_Coming extends QuestHandler
 				switch (targetId) {
                     case 220450: { //Drakenseer Akhal.
 						qs.setStatus(QuestStatus.REWARD);
+						changeQuestStep(env, 2, 3, false);
 					    updateQuestStatus(env);
 						return true;
 					}
