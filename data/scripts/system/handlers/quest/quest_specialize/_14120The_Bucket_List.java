@@ -38,6 +38,7 @@ public class _14120The_Bucket_List extends QuestHandler
 	
     @Override
     public void register() {
+		qe.registerOnLevelUp(questId);
         qe.registerQuestItem(182215478, questId);
 		qe.registerQuestNpc(203932).addOnQuestStart(questId); //Phomona
         qe.registerQuestNpc(203932).addOnTalkEvent(questId); //Phomona

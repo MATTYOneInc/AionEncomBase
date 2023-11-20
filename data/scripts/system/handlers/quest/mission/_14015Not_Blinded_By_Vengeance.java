@@ -68,7 +68,6 @@ public class _14015Not_Blinded_By_Vengeance extends QuestHandler
                     }
                 case CHECK_COLLECTED_ITEMS:
                     if (QuestService.collectItemCheck(env, true)) {
-                        qs.setQuestVarById(0, var + 1);
                         qs.setStatus(QuestStatus.REWARD);
                         updateQuestStatus(env);
                         return sendQuestDialog(env, 5);

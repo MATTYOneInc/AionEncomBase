@@ -53,7 +53,6 @@ public class _1100Kalios_Call extends QuestHandler
 			return false;
 		if (qs.getStatus() == QuestStatus.START) {
 			if (env.getDialog() == QuestDialog.START_DIALOG) {
-				qs.setQuestVar(1);
 				qs.setStatus(QuestStatus.REWARD);
 				updateQuestStatus(env);
 				return sendQuestDialog(env, 1011);

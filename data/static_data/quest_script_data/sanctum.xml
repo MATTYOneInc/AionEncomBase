@@ -249,7 +249,7 @@
 	</skill_use>
 	<!-- The Songweaver Preceptors Task -->
 	<skill_use id="19075" start_npc_id="801215">
-		<skill end_var="10" ids="4457"/>
+		<skill end_var="10" ids="4469"/>
 	</skill_use>
 	<!-- Master Aethertech -->
 	<skill_use id="19078" start_npc_id="801214">

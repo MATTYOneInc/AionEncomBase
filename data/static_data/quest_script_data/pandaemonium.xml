@@ -166,7 +166,7 @@
 	</skill_use>
 	<!-- The Songweaver Preceptors Test -->
 	<skill_use id="29075" start_npc_id="801223">
-		<skill end_var="10" ids="4457"/>
+		<skill end_var="10" ids="4469"/>
 	</skill_use>
 	<!-- Master Aethertech -->
 	<skill_use id="29078" start_npc_id="801222">
