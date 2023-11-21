@@ -1,0 +1,4 @@
+# GitIgnore BeckUp.Media Section for IntelliJ IDEA
+build
+.idea
+*.iml
