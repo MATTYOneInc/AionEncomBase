@@ -106,7 +106,7 @@ public class DisassemblyAction extends AbstractItemAction
 		// we exclude the min/max level, race and playerclass
 		List<DisassembleItemGroups> itemGroupCollectionFiltered = filterGroupsByLevelRaceClass(player, itemGroupCollection);
 		// now lets calc the chance for each group
-		List<DisassembleItemGroups> finalGroupCollection = calculateGroupChance(itemGroupCollectionFiltered);
+		List<DisassembleItemGroups> finalGroupCollection = calculateGroupChance(itemGroupCollectionFiltered, player, parentItem);
 		// lets calculate the chance for the items
 		final List<DisassembleItem> finalItemCollection;
 		// we dont need an itemUseObserver on SelectBox, comes from C_SELECT_ITEM in 5.8 instant
@@ -312,13 +312,17 @@ public class DisassemblyAction extends AbstractItemAction
 	 * @param filteredList
 	 * @return
 	 */
-	private List<DisassembleItemGroups> calculateGroupChance(List<DisassembleItemGroups> filteredList)
+	private List<DisassembleItemGroups> calculateGroupChance(List<DisassembleItemGroups> filteredList, Player player, Item parentitem)
 	{
 		List<DisassembleItemGroups> newCollection = new ArrayList<DisassembleItemGroups>();
 		for (DisassembleItemGroups group : filteredList) {
 			int rnd = Rnd.get(0, 1000);
 			if (rnd < group.getGroupProb())
 				newCollection.add(group);
+			if (group.getGroupProb() == -1 && this.mode == 0) {
+				PacketSendUtility.sendMessage(player, String.format(
+						"Something is wrong on %d", parentitem.getItemId()));
+			}
 		}
 		return newCollection;
 	}
