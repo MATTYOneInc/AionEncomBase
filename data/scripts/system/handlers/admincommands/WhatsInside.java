@@ -64,7 +64,7 @@ public class WhatsInside extends AdminCommand
 				int MaxValue = 0;
 				for (DisassembleItems i : group.getGroupItems()) {
 					ItemTemplate ITemplate = DataManager.ITEM_DATA.getItemTemplate(i.getItem().getItemId());
-					String IngameString = "[item: " + ITemplate.getTemplateId() + "]";
+					String IngameString = "[item: " + (ITemplate != null ? ITemplate.getTemplateId() : "missing in templates " + i.getItem().getItemId()) + "]";
 					int ItemProb = i.getItemProb();
 					int ItemCount = i.getItem().getCount();
 					boolean disuse = i.getItem().isDisuse();
