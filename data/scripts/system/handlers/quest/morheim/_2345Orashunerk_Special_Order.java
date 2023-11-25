@@ -37,6 +37,7 @@ public class _2345Orashunerk_Special_Order extends QuestHandler
 		qe.registerQuestNpc(798084).addOnQuestStart(questId);
 		qe.registerQuestNpc(798084).addOnTalkEvent(questId);
 		qe.registerQuestNpc(700238).addOnTalkEvent(questId);
+		qe.registerQuestNpc(204304).addOnTalkEvent(questId);
 	}
 	
 	@Override
@@ -85,8 +86,8 @@ public class _2345Orashunerk_Special_Order extends QuestHandler
 				return true;
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 798084) {
-				if (dialog == QuestDialog.USE_OBJECT) {
+			if (targetId == 204304) {
+				if (dialog == QuestDialog.START_DIALOG) {
 					if (qs.getQuestVarById(0) == 10) {
 						removeQuestItem(env, 182204137, 1);
 						return sendQuestDialog(env, 1693);
