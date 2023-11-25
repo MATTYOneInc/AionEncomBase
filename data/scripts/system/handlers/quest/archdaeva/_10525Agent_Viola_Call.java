@@ -47,7 +47,7 @@ public class _10525Agent_Viola_Call extends QuestHandler
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestItem(182216072, questId); //ì˜¤ë“œ ì¦?í?­ ë§ˆë ¥ì„?.
+		qe.registerQuestItem(182216072, questId); //Aether Boost Magic Stone
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerOnEnterZone(ZoneName.get("LF6_ITEMUSEAREA_Q10525"), questId);
     }
@@ -126,10 +126,7 @@ public class _10525Agent_Viola_Call extends QuestHandler
 						changeQuestStep(env, 3, 4, false);
 						return closeDialogWindow(env);
 					} case STEP_TO_6: {
-						removeQuestItem(env, 182216069, 20); //ë‹¬ë¹›ì?˜ ë§ˆë ¥ì„?.
-						removeQuestItem(env, 182216070, 20); //ë³„ë¹›ì?˜ ë§ˆë ¥ì„?.
-						removeQuestItem(env, 182216071, 5); //ê¸ˆë¹›ì?˜ ë§ˆë ¥ì„?.
-						return defaultCloseDialog(env, 5, 6, false, false, 182216072, 1, 0, 0); //ì˜¤ë“œ ì¦?í?­ ë§ˆë ¥ì„?.
+						return defaultCloseDialog(env, 5, 6, false, false, 182216072, 1, 0, 0); //Aether Boost Magic Stone
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 4, 5, false, 10000, 10001);
 					} case FINISH_DIALOG: {
@@ -204,11 +201,10 @@ public class _10525Agent_Viola_Call extends QuestHandler
 			}
             int var = qs.getQuestVarById(0);
             if (var == 6) {
-				giveQuestItem(env, 182216072, 1); //ì˜¤ë“œ ì¦?í?­ ë§ˆë ¥ì„?.
-				giveQuestItem(env, 182216073, 1); //íƒˆì§„í•œ ë?°ìž?ë³´ë³´.
+				giveQuestItem(env, 182216073, 1); //Exhausted Dejabobo
                 return HandlerResult.fromBoolean(useQuestItem(env, item, 6, 6, true));
             }
-        }
+        } 
         return HandlerResult.FAILED;
     }
 }

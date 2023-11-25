@@ -417,28 +417,14 @@ public class _10521Memories_Of_Eternity extends QuestHandler
 				if (env.getTargetId() == 857785 || //IDEternity_Q_HD_Fire_Li_M_N_65_An.
 				    env.getTargetId() == 857792) { //IDEternity_Q_HD_Fire_Li_F_N_65_An.
 					changeQuestStep(env, 13, 14, false);
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
 					return true;
 				}
 			}
 		}
 		return false;
 	}
-	
-	@Override
-    public boolean onEnterWorldEvent(QuestEnv env) {
-        Player player = env.getPlayer();
-		QuestState qs = player.getQuestStateList().getQuestState(questId);
-        if (player.getWorldId() == 210100000) { //Iluma.
-			if (qs != null && qs.getStatus() == QuestStatus.START) {
-                int var = qs.getQuestVars().getQuestVars();
-                if (var == 14) {
-                    changeQuestStep(env, 14, 14, true);
-					return true;
-				}
-			}
-		}
-        return false;
-    }
 	
 	@Override
 	public boolean onDieEvent(QuestEnv env) {

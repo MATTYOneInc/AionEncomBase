@@ -414,7 +414,7 @@ public class _20521Recovered_Destiny extends QuestHandler
 			} if (var == 13) {
 				if (env.getTargetId() == 857796 || //IDEternity_Q_HD_Fire_Da_M_N_65_An.
 				    env.getTargetId() == 857800) { //IDEternity_Q_HD_Fire_Da_L_N_65_An.
-					changeQuestStep(env, 13, 14, true);
+					changeQuestStep(env, 13, 14, false);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return true;
