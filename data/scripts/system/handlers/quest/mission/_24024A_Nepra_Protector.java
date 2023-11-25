@@ -62,9 +62,9 @@ public class _24024A_Nepra_Protector extends QuestHandler
             QuestState qs = player.getQuestStateList().getQuestState(questId);
             if (qs != null && qs.getStatus() == QuestStatus.START) {
                 int var = qs.getQuestVarById(0);
-                if (var == 2) {
+                if (var == 3) {
                     playQuestMovie(env, 81);
-                    changeQuestStep(env, 2, 3, false);
+                    changeQuestStep(env, 3, 4, false);
                     return true;
                 }
             }
@@ -74,7 +74,7 @@ public class _24024A_Nepra_Protector extends QuestHandler
 	
     @Override
     public boolean onKillEvent(QuestEnv env) {
-        return defaultOnKillEvent(env, 212861, 3, true);
+        return defaultOnKillEvent(env, 212861, 4, true);
     }
 	
     @Override
@@ -111,7 +111,7 @@ public class _24024A_Nepra_Protector extends QuestHandler
                             }
                         case STEP_TO_2:
                             if (var == 1) {
-                                return defaultCloseDialog(env, 1, 2);
+                                return defaultCloseDialog(env, 1, 3);
                             }
 
                     }
