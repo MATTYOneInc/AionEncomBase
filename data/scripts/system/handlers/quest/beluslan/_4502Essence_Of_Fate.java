@@ -23,9 +23,7 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _4502Essence_Of_Fate extends QuestHandler
 {
 	private final static int questId = 4502;
-	
-	private final static int[] npcs = {204837, 730192, 204182};
-	private final static int[] mobs = {214894, 214895, 214896, 214897, 214904};
+	private final static int[] mobs = {214894, 214895, 214896, 214897};
 	
 	public _4502Essence_Of_Fate() {
 		super(questId);
@@ -40,9 +38,9 @@ public class _4502Essence_Of_Fate extends QuestHandler
 	public void register() {
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(204837).addOnQuestStart(questId);
-		for (int npc: npcs) {
-			qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-		} for (int mob: mobs) {
+		qe.registerQuestNpc(204837).addOnTalkEvent(questId);
+		qe.registerQuestNpc(730192).addOnTalkEvent(questId);
+        for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
 	}
@@ -68,7 +66,7 @@ public class _4502Essence_Of_Fate extends QuestHandler
 						}
 					}
 				break;
-				case 204182: //Heimdall.
+				case 204837: //Hresvelgr
 					switch (dialog) {
 						case START_DIALOG: {
 							if (var == 2) {
@@ -132,11 +130,6 @@ public class _4502Essence_Of_Fate extends QuestHandler
 							return true;
 						}
 						return true;
-					}
-				break;
-				case 214904: //Brigade General Anuhart.
-					if (var == 2 && var1 == 1 && var2 == 1 && var3 == 1) {
-						return defaultOnKillEvent(env, 214904, 2, false);
 					}
 				break;
 			}
