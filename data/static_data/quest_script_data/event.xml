@@ -1212,4 +1212,8 @@
     <report_to_many id="80952" start_npc_ids="835553" end_npc_ids="835553" start_dialog_id="4762">
 		<npc_infos npc_id="835553" var="0" quest_dialog="10002" close_dialog="1009"/>
 	</report_to_many>
+	<!-- Pumpkin Kings Haunt Event -->
+    <item_collecting start_npc_ids="835994" id="80975" start_dialog_id="4762" start_dialog_id2="5"/>
+    <item_collecting start_npc_ids="835994" id="80976" start_dialog_id="4762" start_dialog_id2="5"/>
+    <item_collecting start_npc_ids="835994" id="80977" start_dialog_id="4762" start_dialog_id2="5"/>
 </quest_scripts>
