@@ -8012,7 +8012,6 @@
 		<!-- Fishing Tool Box (Object Normal lvl:3) -->
 		<spawn npc_id="700321" respawn_time="295">
 			<spot x="1084.809" y="2008.276" z="213.125" entity_id="569"/>
-			<spot x="633.000" y="2910.000" z="315.2432" entity_id="935"/>
 			<spot x="1128.789" y="2017.218" z="213.125" entity_id="1201"/>
 			<spot x="1128.033" y="2071.574" z="213.125" entity_id="1202"/>
 			<spot x="1163.284" y="2052.676" z="213.125" entity_id="1203"/>
