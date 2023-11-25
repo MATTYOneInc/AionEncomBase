@@ -80,75 +80,87 @@ public class _10032Help_In_The_Hollow extends QuestHandler
 		QuestDialog dialog = env.getDialog();
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-		} if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 798952) {
+		} 		if (qs.getStatus() == QuestStatus.START) {
+			switch(targetId) {
+				case 798952: { //Crosia
+					switch (env.getDialog()) {
+						case START_DIALOG: {
+							if (var == 0) {
+								return sendQuestDialog(env, 1011);
+							}
+						}
+						case STEP_TO_1:{
+							return defaultCloseDialog(env, 0, 1);
+						}
+						default:
+							break;
+					}
+				}
+				case 798954: { //Tialla
+					switch (env.getDialog()) {
+						case START_DIALOG: {
+							if (var == 1) {
+								return sendQuestDialog(env, 1352);
+							}
+						}
+						case STEP_TO_2: {
+							return defaultCloseDialog(env, 1, 2);
+						}
+						default:
+							break;
+					}
+				}
+				case 799022: { // Lothas
+					switch (env.getDialog()) {
+						case START_DIALOG: {
+							if (var == 2)
+								return sendQuestDialog(env, 1693);
+						}
+						case STEP_TO_3: {
+							if (player.isInGroup2()) {
+								return sendQuestDialog(env, 1864);
+							} else {
+								//if (giveQuestItem(env, 182215618, 1) && giveQuestItem(env, 182215619, 1)) {
+						        if (var == 2) { //detele if you want return giveitem 
+							        WorldMapInstance talocHollow = InstanceService.getNextAvailableInstance(300190000);
+							        InstanceService.registerPlayerWithInstance(talocHollow, player);
+							        TeleportService2.teleportTo(player, 300190000, talocHollow.getInstanceId(), 202.26694f, 226.0532f, 1098.236f, (byte) 30);
+							        changeQuestStep(env, 2, 3, false);
+									return closeDialogWindow(env);
+								} else {
+									PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_WAREHOUSE_FULL_INVENTORY);
+									return sendQuestStartDialog(env);
+								}
+							}
+						}
+						default:
+							break;
+					}
+				}
+				case 799503: { //Taloc's Mirage
+					switch (env.getDialog()) {
+						case START_DIALOG: {
+							if (var == 6) {
+								return sendQuestDialog(env, 3057);
+							}
+						}
+						case CHECK_COLLECTED_ITEMS: {
+							return checkQuestItems(env, 6, 7, false, 10000, 10001); // 7
+						}
+						case FINISH_DIALOG: {
+							return sendQuestSelectionDialog(env);
+						}
+						default:
+							break;
+					}
+				}
+			}
+		} else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (targetId == 798952) { //Crosia
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 10002);
 				} else {
 					return sendQuestEndDialog(env);
-				}
-			}
-			return false;
-		} else if (qs.getStatus() != QuestStatus.START) {
-			return false;
-		} if (targetId == 798952) { 
-			switch (env.getDialog()) {
-				case START_DIALOG: {
-					if (var == 0) {
-						return sendQuestDialog(env, 1011);			
-					}
-				} case SELECT_ACTION_1012: {
-					if (var == 0) {
-						return sendQuestDialog(env, 1012);
-					}
-				} case STEP_TO_1: {
-					return defaultCloseDialog(env, 0, 1);
-				}
-			}
-		} else if (targetId == 798954) {
-			switch (env.getDialog()) {
-				case START_DIALOG: {
-					if (var == 1) {
-						return sendQuestDialog(env, 1352);					
-					}
-				} case SELECT_ACTION_1353: {
-					if (var == 1) {
-						return sendQuestDialog(env, 1353);
-					}
-				} case STEP_TO_2: {
-					return defaultCloseDialog(env, 1, 2);
-				}
-			}
-		} else if (targetId == 799022) {
-			switch (env.getDialog()) {
-				case START_DIALOG: {
-                    if (var == 2) {
-                        return sendQuestDialog(env, 1693);
-                    }
-				} case SELECT_ACTION_1694: {
-					if (var == 2) {
-						return sendQuestDialog(env, 1694);
-					}
-				} case STEP_TO_3: {
-					if (player.isInGroup2()) {
-						//You must leave your group or alliance to enter.
-						PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403080));
-						return true;
-					} else {
-						//if (giveQuestItem(env, 182215618, 1) && giveQuestItem(env, 182215619, 1)) {
-						if (var == 2) { //detele if you want return giveitem 
-							WorldMapInstance talocHollow = InstanceService.getNextAvailableInstance(300190000);
-							InstanceService.registerPlayerWithInstance(talocHollow, player);
-							TeleportService2.teleportTo(player, 300190000, talocHollow.getInstanceId(), 202.26694f, 226.0532f, 1098.236f, (byte) 30);
-							changeQuestStep(env, 2, 3, false);
-							return closeDialogWindow(env);
-						} else {
-							PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_WAREHOUSE_FULL_INVENTORY);
-							return sendQuestSelectionDialog(env);
-						}
-					}
-				} case FINISH_DIALOG: {
-					return sendQuestSelectionDialog(env);
 				}
 			}
 		}
@@ -168,7 +180,7 @@ public class _10032Help_In_The_Hollow extends QuestHandler
 		} switch (targetId) {
 			case 215488: //Celestius.
 				if (qs.getQuestVarById(0) == 6) {
-					return defaultOnKillEvent(env, 215488, 6, 7);
+					return defaultOnKillEvent(env, 215488, 6, 6);
 				}
 			break;
 		}
