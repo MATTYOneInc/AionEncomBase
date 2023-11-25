@@ -91,6 +91,7 @@ public class _10504Confiscate_The_Slate extends QuestHandler
 						return closeDialogWindow(env);
 					} case CHECK_COLLECTED_ITEMS: {
 						if (QuestService.collectItemCheck(env, true)) {
+							removeQuestItem(env, 182215607, 1);
 							removeQuestItem(env, 182215606, 1);
 							changeQuestStep(env, 3, 4, true);
 							return sendQuestDialog(env, 10000);
@@ -103,8 +104,6 @@ public class _10504Confiscate_The_Slate extends QuestHandler
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
 						giveQuestItem(env, 182215607, 1);
-						qs.setStatus(QuestStatus.REWARD);
-						updateQuestStatus(env);
 						return closeDialogWindow(env);
 					}
                 }

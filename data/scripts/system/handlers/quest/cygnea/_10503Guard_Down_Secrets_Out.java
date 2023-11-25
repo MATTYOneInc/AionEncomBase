@@ -113,7 +113,6 @@ public class _10503Guard_Down_Secrets_Out extends QuestHandler
 						return closeDialogWindow(env);
 					} case CHECK_COLLECTED_ITEMS: {
 						if (QuestService.collectItemCheck(env, true)) {
-							removeQuestItem(env, 182215603, 1);
 							return sendQuestDialog(env, 10000);
 						} else {
 							return sendQuestDialog(env, 10001);
@@ -125,7 +124,6 @@ public class _10503Guard_Down_Secrets_Out extends QuestHandler
                     case USE_OBJECT: {
 						if (var == 2) {
 							changeQuestStep(env, 2, 3, false);
-							giveQuestItem(env, 182215603, 1);
 							return closeDialogWindow(env);
 						}
 					}

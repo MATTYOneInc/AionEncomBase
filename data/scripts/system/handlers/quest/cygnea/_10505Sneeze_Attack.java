@@ -128,7 +128,6 @@ public class _10505Sneeze_Attack extends QuestHandler
             } if (targetId == 702672) { //Torn Plan Page.
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
-                        giveQuestItem(env, 182215610, 1);
 						return closeDialogWindow(env);
 					}
                 }

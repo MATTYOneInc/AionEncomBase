@@ -120,7 +120,7 @@ public class _10506Mind_Over_Matter extends QuestHandler
 					} case SET_REWARD: {
 						giveQuestItem(env, 182215613, 1);
 						qs.setStatus(QuestStatus.REWARD);
-						changeQuestStep(env, 6, 7, false);
+						changeQuestStep(env, 7, 8, false);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);
 					}

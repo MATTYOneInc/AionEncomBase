@@ -84,6 +84,7 @@ public class _10500Expedition_Coalition extends QuestHandler
 						}
 					} case SET_REWARD: {
                         qs.setStatus(QuestStatus.REWARD);
+						changeQuestStep(env, 0, 1, false);
                         updateQuestStatus(env);
                         PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
                         return true;
