@@ -4,7 +4,7 @@
     Event
 	Make & Remake By (Encom)
  -->
-	<active>Thecla Royan;Museum Inventory;Museum;The Fortune Fayre;Doppelgangers;Ascension Energy Inventory;Ascension Energy;Daru Days;Ardent Heat Inventory;Ardent Heat;Valentine's Day Event;Event Growth;October Fest;Patron Mark Inventory;Event Maid Promotion;Pink Petal Inventory;Pink Petal Event;Pumpkin Cookie Inventory;Pumpkin Cookie Event;Fluffy Snow Crystal Inventory;Fluffy Snow Event;Gift Giver Inventory;Gift Giver Event;Celebrate Solorius Inventory;Solorius Coin Inventory;Celebrate Solorius Event;New Year Event;Guardian General Event;Mega Kinah Event;Code Red: Atreia;Captain Harlock Inventory;Captain Harlock Event;Dafarunerk Inventory;Dafarunerk Event;Snowy Freezy Inventory;Snowy Freezy;Shop Event;All Dolled Up;Summer Block Party Event;The Alchemist Event;Sweet Fruits Drop;Sweet Fruits;Flower Day Event;The Lost Words Drop;The Lost Words;Divine Bonfire Inventory;Divine Bonfire;Daeva Day New Inventory;Daeva Day New;Legendary Symphony Event;Joker Wild Event;White Day Inventory;Rainbow Snake Inventory 1;Rainbow Snake Inventory 2;Rainbow Snake Inventory 3;Rainbow Snake Festival;Wishing Fountain Inventory;Wishing Fountain Event;Black Star Event;9th Anniversary Inventory;9th Anniversary Event;Dreaming Nether Weapon Event;Prestige Pack Inventory;Prestige Pack Event;Luna Event;Wings With Stars Event;Holy Water Event;Homeward Bound Event;Toy Festival;Enemy Land Event;Buff Event;Curse Of Aion Event;IDEvent S3 Event;Miniring Event;Shugo Ranger Event;Creativity Event;Archdaeva Growth Event;Mooncake Event;Haunted Energy;Secrets Of The Ancients;Dark Dragon King Weapons;Novice Event Inventory;Novice Event;Golden Feather Inventory;Golden Feather Event</active>
+	<active>Thecla Royan;Museum Inventory;Museum;The Fortune Fayre;Doppelgangers;Ascension Energy Inventory;Ascension Energy;Daru Days;Ardent Heat Inventory;Ardent Heat;Valentine's Day Event;Event Growth;October Fest;Patron Mark Inventory;Event Maid Promotion;Pink Petal Inventory;Pink Petal Event;Pumpkin Cookie Inventory;Pumpkin Cookie Event;Fluffy Snow Crystal Inventory;Fluffy Snow Event;Gift Giver Inventory;Gift Giver Event;Celebrate Solorius Inventory;Solorius Coin Inventory;Celebrate Solorius Event;New Year Event;Guardian General Event;Mega Kinah Event;Code Red: Atreia;Captain Harlock Inventory;Captain Harlock Event;Dafarunerk Inventory;Dafarunerk Event;Snowy Freezy Inventory;Snowy Freezy;Shop Event;All Dolled Up;Summer Block Party Event;The Alchemist Event;Sweet Fruits Drop;Sweet Fruits;Flower Day Event;The Lost Words Drop;The Lost Words;Divine Bonfire Inventory;Divine Bonfire;Daeva Day New Inventory;Daeva Day New;Legendary Symphony Event;Joker Wild Event;White Day Inventory;Rainbow Snake Inventory 1;Rainbow Snake Inventory 2;Rainbow Snake Inventory 3;Rainbow Snake Festival;Wishing Fountain Inventory;Wishing Fountain Event;Black Star Event;9th Anniversary Inventory;9th Anniversary Event;Dreaming Nether Weapon Event;Prestige Pack Inventory;Prestige Pack Event;Luna Event;Wings With Stars Event;Holy Water Event;Homeward Bound Event;Toy Festival;Enemy Land Event;Buff Event;Curse Of Aion Event;IDEvent S3 Event;Miniring Event;Shugo Ranger Event;Creativity Event;Archdaeva Growth Event;Mooncake Event;Haunted Energy;Secrets Of The Ancients;Dark Dragon King Weapons;Novice Event Inventory;Novice Event;Golden Feather Inventory;Golden Feather Event;Pumpkin Kings Haunt Inventory;Pumpkin Kings Haunt</active>
   	<events>
 		<event name="Thecla Royan" start="2021-06-21T00:00:00+00:00" end="2021-06-30T00:00:00+00:00">
             <spawns>
@@ -4143,6 +4143,165 @@
                     <!-- Dargnyr (NPC Normal lvl:65) -->
                     <spawn npc_id="831866">
                         <spot x="1251.830" y="1408.020" z="208.125" h="40"/>
+                    </spawn>
+                </spawn_map>
+            </spawns>
+        </event>
+		<event name="Pumpkin Kings Haunt Inventory" start="2020-10-25T00:00:00+00:00" end="2020-11-22T00:00:00+00:00">
+            <inventory_drop startlevel="66" interval="30" endlevel="76" maxCountOfDay="10" cleanTime="9">182007423</inventory_drop>
+        </event> 
+        <event name="Pumpkin Kings Haunt" start="2020-10-25T00:00:00+00:00" end="2020-11-22T00:00:00+00:00">          
+            <spawns>
+                <spawn_map map_id="110010000"><!-- Sanctum -->
+                    <!-- First Candle ||| World_event_halloween_candle_01 -->
+                    <spawn npc_id="835619" respawn_time="295">
+                        <spot x="1497.23" y="1511.62" z="565.93933" h="0"/>
+                    </spawn>
+                    <!-- Second Candle ||| World_event_halloween_candle_02 -->
+                    <spawn npc_id="835620" respawn_time="295">
+                        <spot x="1512.54" y="1546.19" z="565.94104" h="104"/>
+                    </spawn>
+                    <!-- Third Candle ||| World_event_halloween_candle_03 -->
+                    <spawn npc_id="835621" respawn_time="295">
+                        <spot x="1551.68" y="1531.81" z="565.8589" h="63"/>
+                    </spawn>
+                    <!-- Fourth Candle ||| World_event_halloween_candle_04 -->
+                    <spawn npc_id="835622" respawn_time="295">
+                        <spot x="1551.52" y="1491.03" z="565.8589" h="65"/>
+                    </spawn>
+                    <!-- Fifth Candle ||| World_event_halloween_candle_05 -->
+                    <spawn npc_id="835623" respawn_time="295">
+                        <spot x="1512.89" y="1476.79" z="565.94165" h="15"/>
+                    </spawn>
+                    <!-- A Nobleman’s Coffin ||| World_event_halloween_buff_coffin -->
+                    <spawn npc_id="835989" respawn_time="295">
+                        <spot x="1523.69" y="1511.55" z="565.905" h="90"/>
+                    </spawn>
+                    <!-- Kabe ||| World_event_halloween_cat_01 -->
+                    <spawn npc_id="835990" respawn_time="295">
+                        <spot x="1529.53" y="1506.59" z="565.8959" h="60"/>
+                    </spawn>
+                    <!-- None ||| World_event_halloween_pot_01 -->
+                    <spawn npc_id="835992" respawn_time="295">
+                        <spot x="1532.98" y="1504.34" z="565.9" h="60"/>
+                    </spawn>
+                    <!-- None ||| World_event_halloween_magicdesign_01 -->
+                    <spawn npc_id="835993" respawn_time="295">
+                        <spot x="1523.69" y="1511.55" z="565.905" h="60"/>
+                    </spawn>
+                    <!-- Esta ||| world_event_halloween_milkyway_01 -->
+                    <spawn npc_id="835994" respawn_time="295">
+                        <spot x="1528.9" y="1505.29" z="565.89923" h="60"/>
+                    </spawn>
+                    <!-- Ista ||| world_event_halloween_milkyway_02 -->
+                    <spawn npc_id="835995" respawn_time="295">
+                        <spot x="1530.8" y="1507.0" z="565.89386" h="60"/>
+                    </spawn>
+                    <!-- Esta ||| world_event_halloween_milkyway_03 -->
+                    <spawn npc_id="835996" respawn_time="295">
+                        <spot x="1529.68" y="1504.09" z="565.90137" h="60"/>
+                    </spawn>
+                    <!-- Ista ||| world_event_halloween_milkyway_04 -->
+                    <spawn npc_id="835997" respawn_time="295">
+                        <spot x="1530.36" y="1505.53" z="565.8976" h="60"/>
+                    </spawn>
+                    <!-- Melen ||| World_event_halloween_npc_etc -->
+                    <spawn npc_id="836143" respawn_time="295">
+                        <spot x="1497.22" y="1510.14" z="565.9411" h="60"/>
+                    </spawn>
+                </spawn_map>
+                <spawn_map map_id="120010000"><!-- Pandaemonium -->
+                    <!-- First Candle ||| World_event_halloween_candle_01 -->
+                    <spawn npc_id="835619" respawn_time="295">
+                        <spot x="1275.77" y="1303.65" z="204.42006" h="0"/>
+                    </spawn>
+                    <!-- Second Candle ||| World_event_halloween_candle_02 -->
+                    <spawn npc_id="835620" respawn_time="295">
+                        <spot x="1252.47" y="1327.4" z="203.67366" h="0"/>
+                    </spawn>
+                    <!-- Third Candle ||| World_event_halloween_candle_03 -->
+                    <spawn npc_id="835621" respawn_time="295">
+                        <spot x="1254.61" y="1368.61" z="203.67368" h="0"/>
+                    </spawn>
+                    <!-- Fourth Candle ||| World_event_halloween_candle_04 -->
+                    <spawn npc_id="835622" respawn_time="295">
+                        <spot x="1297.43" y="1370.42" z="203.67369" h="0"/>
+                    </spawn>
+                    <!-- Fifth Candle ||| World_event_halloween_candle_05 -->
+                    <spawn npc_id="835623" respawn_time="295">
+                        <spot x="1299.59" y="1327.47" z="203.67366" h="0"/>
+                    </spawn>
+                    <!-- A Nobleman’s Coffin ||| World_event_halloween_buff_coffin -->
+                    <spawn npc_id="835989" respawn_time="295">
+                        <spot x="1275.71" y="1339.51" z="204.42003" h="90"/>
+                    </spawn>
+                    <!-- Kabe ||| World_event_halloween_cat_01 -->
+                    <spawn npc_id="835990" respawn_time="295">
+                        <spot x="1274.82" y="1343.74" z="204.41998" h="90"/>
+                    </spawn>
+                    <!-- None ||| World_event_halloween_pot_01 -->
+                    <spawn npc_id="835992" respawn_time="295">
+                        <spot x="1275.74" y="1347.42" z="204.46078" h="30"/>
+                    </spawn>
+                    <!-- None ||| World_event_halloween_magicdesign_01 -->
+                    <spawn npc_id="835993" respawn_time="295">
+                        <spot x="1275.71" y="1339.51" z="204.42003" h="30"/>
+                    </spawn>
+                    <!-- Esta ||| world_event_halloween_milkyway_01 -->
+                    <spawn npc_id="835994" respawn_time="295">
+                        <spot x="1276.67" y="1343.73" z="204.42003" h="90"/>
+                    </spawn>
+                    <!-- Ista ||| world_event_halloween_milkyway_02 -->
+                    <spawn npc_id="835995" respawn_time="295">
+                        <spot x="1277.79" y="1345.29" z="204.46078" h="90"/>
+                    </spawn>
+                    <!-- Esta ||| world_event_halloween_milkyway_03 -->
+                    <spawn npc_id="835996" respawn_time="295">
+                        <spot x="1273.66" y="1345.27" z="204.46078" h="90"/>
+                    </spawn>
+                    <!-- Ista ||| world_event_halloween_milkyway_04 -->
+                    <spawn npc_id="835997" respawn_time="295">
+                        <spot x="1275.76" y="1345.25" z="204.46078" h="90"/>
+                    </spawn>
+                    <!-- Melen ||| World_event_halloween_npc_etc -->
+                    <spawn npc_id="836143" respawn_time="295">
+                        <spot x="1273.94" y="1303.77" z="204.41998" h="30"/>
+                    </spawn>
+                </spawn_map>
+                <spawn_map map_id="301540000"><!-- Library of Knowledge -->
+                    <!-- Awakened Pumpkin King ||| World_event_halloween_JOL_party -->
+                    <spawn npc_id="248556" respawn_time="295">
+                        <spot x="232.86" y="495.67" z="468.8022" h="0"/>
+                    </spawn>
+                </spawn_map>
+                <spawn_map map_id="301550000"><!-- Garden of Knowledge -->
+                    <!-- Awakened Pumpkin King ||| World_event_halloween_JOL_party -->
+                    <spawn npc_id="248556" respawn_time="295">
+                        <spot x="631.32" y="700.47" z="555.8916" h="0"/>
+                    </spawn>
+                </spawn_map>
+                <spawn_map map_id="301600000"><!-- Adma Ruins -->
+                    <!-- Awakened Pumpkin King ||| World_event_halloween_JOL_party -->
+                    <spawn npc_id="248556" respawn_time="295">
+                        <spot x="461.69" y="548.48" z="173.68057" h="0"/>
+                    </spawn>
+                </spawn_map>
+                <spawn_map map_id="301610000"><!-- Elemental Lord's Laboratory -->
+                    <!-- Awakened Pumpkin King ||| World_event_halloween_JOL_party -->
+                    <spawn npc_id="248556" respawn_time="295">
+                        <spot x="208.36" y="121.79" z="196.75912" h="0"/>
+                    </spawn>
+                </spawn_map>
+                <spawn_map map_id="301620000"><!-- Arkhal's Hidden Space -->
+                    <!-- Awakened Pumpkin King ||| World_event_halloween_JOL_party -->
+                    <spawn npc_id="248556" respawn_time="295">
+                        <spot x="326.0" y="216.68" z="318.06277" h="0"/>
+                    </spawn>
+                </spawn_map>
+                <spawn_map map_id="302100000"><!-- Rift of Oblivion -->
+                    <!-- Pumpkin King ||| World_event_halloween_JOL_solo -->
+                    <spawn npc_id="248557" respawn_time="295">
+                        <spot x="410.83" y="513.35" z="342.32922" h="0"/>
                     </spawn>
                 </spawn_map>
             </spawns>
