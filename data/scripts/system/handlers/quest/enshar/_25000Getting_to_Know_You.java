@@ -90,6 +90,7 @@ public class _25000Getting_to_Know_You extends QuestHandler
 							return sendQuestDialog(env, 1693);
 						} case SET_REWARD: {
 							qs.setStatus(QuestStatus.REWARD);
+							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return true;
