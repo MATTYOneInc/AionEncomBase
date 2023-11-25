@@ -208,7 +208,6 @@
       <collect_item item_id="182200223" count="3" />
     </collect_items>
     <rewards gold="960" exp="1595" />
-    <rewards gold="450" exp="1150" />
     <quest_drop npc_id="210261" item_id="182200223" chance="100" drop_each_member="1" />
     <quest_drop npc_id="210674" item_id="182200223" chance="100" drop_each_member="1" />
   </quest>
@@ -17695,7 +17694,7 @@
       <reward_item item_id="186000019" count="30" />
       <reward_item item_id="152206592" count="1" />
     </rewards>
-    <quest_drop npc_id="214904" item_id="182204534" chance="100" drop_each_member="1" collecting_step="266306" />
+    <quest_drop npc_id="214904" item_id="182204534" chance="100" drop_each_member="1"/>
   </quest>
   <quest id="4504" name="More Priceless Coral" nameId="1103754" minlevel_permitted="42" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="QUEST">
     <collect_items>
@@ -25489,7 +25488,7 @@
       <reward_item item_id="186000231" count="25" />
       <reward_item item_id="186000237" count="60" />
     </rewards>
-    <quest_drop npc_id="702670" item_id="182215603" chance="100" drop_each_member="1" collecting_step="2" />
+    <quest_drop npc_id="702670" item_id="182215603" chance="100" drop_each_member="1" />
     <start_conditions>
       <finished quest_id="10502" />
     </start_conditions>
@@ -25511,7 +25510,7 @@
       <reward_item item_id="186000231" count="25" />
       <reward_item item_id="186000237" count="60" />
     </rewards>
-    <quest_drop npc_id="702671" item_id="182215607" chance="100" drop_each_member="1" collecting_step="3" />
+    <quest_drop npc_id="702671" item_id="182215607" chance="100" drop_each_member="1" />
     <start_conditions>
       <finished quest_id="10503" />
     </start_conditions>
@@ -28536,6 +28535,7 @@
       <selectable_reward_item item_id="101901126" count="1" />
       <selectable_reward_item item_id="102001245" count="1" />
       <selectable_reward_item item_id="102101071" count="1" />
+	  <reward_item item_id="190080012" count="20" />
     </rewards>
     <quest_drop npc_id="233873" item_id="182215317" chance="100" drop_each_member="1" />
     <class_permitted>GLADIATOR TEMPLAR ASSASSIN RANGER SORCERER SPIRIT_MASTER CHANTER CLERIC GUNSLINGER SONGWEAVER TECHNIST AETHERTECH</class_permitted>
@@ -28615,13 +28615,6 @@
       <selectable_reward_item item_id="125004152" count="1" />
       <reward_item item_id="162000048" count="6" />
     </rewards>
-    <rewards exp="893476" title="10">
-      <selectable_reward_item item_id="125004149" count="1" />
-      <selectable_reward_item item_id="125004150" count="1" />
-      <selectable_reward_item item_id="125004151" count="1" />
-      <selectable_reward_item item_id="125004152" count="1" />
-      <reward_item item_id="162000048" count="6" />
-    </rewards>
     <quest_drop npc_id="235480" item_id="182215322" drop_each_member="1" collecting_step="2" />
     <quest_drop npc_id="232131" item_id="182215322" drop_each_member="1" collecting_step="2" />
     <quest_drop npc_id="235481" item_id="182215322" drop_each_member="1" collecting_step="2" />
@@ -28652,6 +28645,7 @@
       <selectable_reward_item item_id="110601629" count="1" />
       <reward_item item_id="188053407" count="3" />
       <reward_item item_id="186000003" count="30" />
+	  <reward_item item_id="190200000" count="10" />
     </rewards>
     <class_permitted>GLADIATOR TEMPLAR ASSASSIN RANGER SORCERER SPIRIT_MASTER CHANTER CLERIC GUNSLINGER SONGWEAVER TECHNIST AETHERTECH</class_permitted>
   </quest>
@@ -38883,21 +38877,6 @@
       <selectable_reward_item item_id="102101072" count="1" />
       <reward_item item_id="190080012" count="20" />
     </rewards>
-    <rewards exp="228880" title="57">
-      <selectable_reward_item item_id="100001737" count="1" />
-      <selectable_reward_item item_id="100101334" count="1" />
-      <selectable_reward_item item_id="100201503" count="1" />
-      <selectable_reward_item item_id="100501314" count="1" />
-      <selectable_reward_item item_id="100601431" count="1" />
-      <selectable_reward_item item_id="100901375" count="1" />
-      <selectable_reward_item item_id="101301267" count="1" />
-      <selectable_reward_item item_id="101501357" count="1" />
-      <selectable_reward_item item_id="101701368" count="1" />
-      <selectable_reward_item item_id="101801218" count="1" />
-      <selectable_reward_item item_id="101901127" count="1" />
-      <selectable_reward_item item_id="102001246" count="1" />
-      <selectable_reward_item item_id="102101072" count="1" />
-    </rewards>
     <class_permitted>GLADIATOR TEMPLAR ASSASSIN RANGER SORCERER SPIRIT_MASTER CHANTER CLERIC GUNSLINGER SONGWEAVER TECHNIST AETHERTECH</class_permitted>
   </quest>
   <quest id="24020" name="Aegir's Orders" nameId="1129893" minlevel_permitted="21" max_repeat_count="1" cannot_share="true" cannot_giveup="true" race_permitted="ASMODIANS" category="MISSION">
@@ -39003,6 +38982,7 @@
       <selectable_reward_item item_id="114501744" count="1" />
       <selectable_reward_item item_id="114601583" count="1" />
       <reward_item item_id="186000008" count="20" />
+	  <reward_item item_id="190200000" count="10" />
     </rewards>
     <class_permitted>GLADIATOR TEMPLAR ASSASSIN RANGER SORCERER SPIRIT_MASTER CHANTER CLERIC GUNSLINGER SONGWEAVER TECHNIST AETHERTECH</class_permitted>
   </quest>
