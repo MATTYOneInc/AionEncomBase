@@ -1277,7 +1277,11 @@
 		<!-- Frosted Ellianan
 		<Guestbloom Of Wishing> -->
 		<spawn npc_id="703386" respawn_time="1800">
-		    <spot x="1540.9883" y="1457.1543" z="572.86218" entity_id="287"/>
+		    	<spot x="1540.9883" y="1457.1543" z="572.86218" entity_id="287"/>
+        	</spawn>
+		<!-- Archmage's Incense Burner -->
+		<spawn custom="true" respawn_time="295" npc_id="703387" difficult_id="0">
+            		<spot h="54" z="576.8802" y="1739.6317" x="1969.6891"/>
 		</spawn>
 		<!-- Magic Ward Of Dark Energy -->
 		<spawn npc_id="703390" respawn_time="295">
@@ -1322,9 +1326,10 @@
 		    <spot x="1947.4" y="1577.64" z="590.364" h="90"/>
 	    </spawn>
 		<!-- Nebrith (NPC Normal lvl:60) -->
-		<spawn npc_id="831031" respawn_time="295">
-            <spot x="1429.028" y="1653.4441" z="573.19714" h="44"/>
-        </spawn>
+	<spawn npc_id="831031" respawn_time="295">
+			<spot h="44" z="573.19714" y="1653.4441" x="1429.028"/>
+			<spot h="22" z="567.9748" y="1507.1344" x="1319.5321"/>
+	</spawn>
 		<!-- Zephyrin (NPC Normal lvl:60) -->
 		<spawn npc_id="831384" respawn_time="295">
             <spot x="1393.9044" y="1696.9183" z="573.28613" h="100"/>
