@@ -56,6 +56,7 @@ public class _10520Covert_Communiques extends QuestHandler
 		qe.registerQuestItem(182215953, questId); //Orders To Report To Iluma.
 		qe.registerQuestItem(182215973, questId); //Sealed Letter From Pernos.
 		qe.registerOnEnterZone(ZoneName.get("LF6_SENSORY_AREA_Q10520_210100000"), questId);
+		qe.registerOnMovieEndQuest(995, questId);
     }
 	
 	@Override
@@ -180,20 +181,22 @@ public class _10520Covert_Communiques extends QuestHandler
 			if (zoneName == ZoneName.get("LF6_SENSORY_AREA_Q10520_210100000")) {
 				if (var == 4) {
 					playQuestMovie(env, 995);
-					changeQuestStep(env, 4, 5, false);
-					ThreadPoolManager.getInstance().schedule(new Runnable() {
-						@Override
-						public void run() {
-							if (player != null) {
-							    WorldMapInstance SanctuaryDungeon = InstanceService.getNextAvailableInstance(301580000);
-							    InstanceService.registerPlayerWithInstance(SanctuaryDungeon, player);
-							    TeleportService2.teleportTo(player, 301580000, SanctuaryDungeon.getInstanceId(), 431, 491, 99);
-							}
-						}
-					}, 43000);
 					return true;
 				}
 			}
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean onMovieEndEvent(QuestEnv env, int movieId) {
+		Player player = env.getPlayer();
+		if (movieId == 995) {
+			changeQuestStep(env, 4, 5, false);
+			WorldMapInstance SanctuaryDungeon = InstanceService.getNextAvailableInstance(301580000);
+			InstanceService.registerPlayerWithInstance(SanctuaryDungeon, player);
+			TeleportService2.teleportTo(player, 301580000, SanctuaryDungeon.getInstanceId(), 431, 491, 99);
+			return true;
 		}
 		return false;
 	}

@@ -56,6 +56,7 @@ public class _20520Lost_Destiny extends QuestHandler
 		qe.registerQuestItem(182215954, questId); //Orders To Report To Norsvold.
 		qe.registerQuestItem(182215974, questId); //Sealed Letter From Munin.
 		qe.registerOnEnterZone(ZoneName.get("DF6_SENSORY_AREA_Q20520_220110000"), questId);
+		qe.registerOnMovieEndQuest(867, questId);
     }
 	
 	@Override
@@ -180,20 +181,22 @@ public class _20520Lost_Destiny extends QuestHandler
 			if (zoneName == ZoneName.get("DF6_SENSORY_AREA_Q20520_220110000")) {
 				if (var == 4) {
 					playQuestMovie(env, 867);
-					changeQuestStep(env, 4, 5, false);
-					ThreadPoolManager.getInstance().schedule(new Runnable() {
-						@Override
-						public void run() {
-							if (player != null) {
-							    WorldMapInstance SanctuaryDungeon = InstanceService.getNextAvailableInstance(301580000);
-							    InstanceService.registerPlayerWithInstance(SanctuaryDungeon, player);
-							    TeleportService2.teleportTo(player, 301580000, SanctuaryDungeon.getInstanceId(), 431, 491, 99);
-							}
-						}
-					}, 43000);
 					return true;
 				}
 			}
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean onMovieEndEvent(QuestEnv env, int movieId) {
+		Player player = env.getPlayer();
+		if (movieId == 867) {
+			changeQuestStep(env, 4, 5, false);
+			WorldMapInstance SanctuaryDungeon = InstanceService.getNextAvailableInstance(301580000);
+			InstanceService.registerPlayerWithInstance(SanctuaryDungeon, player);
+			TeleportService2.teleportTo(player, 301580000, SanctuaryDungeon.getInstanceId(), 431, 491, 99);
+			return true;
 		}
 		return false;
 	}
