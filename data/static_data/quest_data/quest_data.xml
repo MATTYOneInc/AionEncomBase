@@ -28625,7 +28625,7 @@
     <collect_items>
       <collect_item item_id="182215323" count="1" />
     </collect_items>
-    <rewards exp="3504765" title="10">
+    <rewards exp="3504765">
       <selectable_reward_item item_id="120001538" count="1" />
       <selectable_reward_item item_id="120001539" count="1" />
       <reward_item item_id="169000008" count="400" />
@@ -28644,7 +28644,7 @@
       <selectable_reward_item item_id="110551156" count="1" />
       <selectable_reward_item item_id="110601629" count="1" />
       <reward_item item_id="188053407" count="3" />
-      <reward_item item_id="186000003" count="30" />
+      <reward_item item_id="186000003" count="40" />
 	  <reward_item item_id="190200000" count="10" />
     </rewards>
     <class_permitted>GLADIATOR TEMPLAR ASSASSIN RANGER SORCERER SPIRIT_MASTER CHANTER CLERIC GUNSLINGER SONGWEAVER TECHNIST AETHERTECH</class_permitted>
