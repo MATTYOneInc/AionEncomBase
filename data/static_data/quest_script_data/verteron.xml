@@ -17,7 +17,6 @@
 	<report_to id="1184" start_npc_ids="203165" end_npc_ids="203097"/>
 	<report_to id="1188" start_npc_ids="203164" end_npc_ids="203167"/>
 	<report_to id="1191" start_npc_ids="203099" end_npc_ids="203183" item_id="182200555"/>
-	<report_to id="1198" start_npc_ids="203339" end_npc_ids="203098" item_id="182200559"/>
 	<report_to id="1199" start_npc_ids="203161" end_npc_ids="203893" item_id="182200560"/>
 	<report_to id="1224" start_npc_ids="203110" end_npc_ids="203179"/>
 	
