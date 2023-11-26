@@ -150,7 +150,7 @@ public class _20101Unraveling_The_Mystery extends QuestHandler
 							removeQuestItem(env, 182215522, 1);
                             return checkQuestItems(env, 7, 8, false, 10000, 10001);
                         } case SET_REWARD: {
-							giveQuestItem(env, 182215578, 1);
+							removeQuestItem(env, 182215578, 1);
 							TeleportService2.teleportTo(player, 600090000, 407.16f, 1371.84f, 164.7f, (byte) 84, TeleportAnimation.BEAM_ANIMATION);
 							return defaultCloseDialog(env, 8, 9, true, false);
 						}
@@ -160,8 +160,7 @@ public class _20101Unraveling_The_Mystery extends QuestHandler
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 802433) { //Keroz.
-                if (env.getDialog() == QuestDialog.USE_OBJECT) {
-                    removeQuestItem(env, 182215578, 1);
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 10002);
                 } else {
                     return sendQuestEndDialog(env);
