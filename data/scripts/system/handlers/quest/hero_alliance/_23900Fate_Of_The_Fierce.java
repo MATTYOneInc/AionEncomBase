@@ -85,30 +85,22 @@ public class _23900Fate_Of_The_Fierce extends QuestHandler
 				} case 798718: {
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							return sendQuestDialog(env, 2034);
-						} case SELECT_ACTION_2035: {
-							return sendQuestDialog(env, 2035);
-						} case STEP_TO_3: {
-							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+							return sendQuestDialog(env, 2375);
+						} case SELECT_REWARD: {
 							updateQuestStatus(env);
+							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+							return sendQuestEndDialog(env);
 						}
 					}
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798718) {
-				if (env.getDialog() == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 10002);
-				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
-					return sendQuestDialog(env, 5);
-				} else {
 					return sendQuestEndDialog(env);
 				}
 			}
-		}
 		return false;
 	}
 }
