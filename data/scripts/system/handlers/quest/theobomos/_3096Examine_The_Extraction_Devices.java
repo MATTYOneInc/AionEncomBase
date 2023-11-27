@@ -29,8 +29,7 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3096Examine_The_Extraction_Devices extends QuestHandler
-{
+public class _3096Examine_The_Extraction_Devices extends QuestHandler {
 	private final static int questId = 3096;
 	
 	public _3096Examine_The_Extraction_Devices() {
@@ -70,29 +69,15 @@ public class _3096Examine_The_Extraction_Devices extends QuestHandler
 				case 798225: {
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							long itemCount1 = player.getInventory().getItemCountByItemId(182208067);
-							long itemCount2 = player.getInventory().getItemCountByItemId(182208068);
-							long itemCount3 = player.getInventory().getItemCountByItemId(182208069);
-							long itemCount4 = player.getInventory().getItemCountByItemId(182208070);
-							if (itemCount1 >= 1 && itemCount2 >= 1 && itemCount3 >= 1 && itemCount4 >= 1) {
-								return sendQuestDialog(env, 5);
-							}
-						} case SELECT_NO_REWARD: {
-							qs.setStatus(QuestStatus.COMPLETE);
-							qs.setCompleteCount(qs.getCompleteCount() + 1);
-							removeQuestItem(env, 182208067, 1);
-							removeQuestItem(env, 182208068, 1);
-							removeQuestItem(env, 182208069, 1);
-							removeQuestItem(env, 182208070, 1);
-							Rewards rewards = DataManager.QUEST_DATA.getQuestById(questId).getRewards().get(0);
-							int rewardExp = rewards.getExp();
-							int rewardKinah = (int) (player.getRates().getQuestKinahRate() * rewards.getGold());
-							giveQuestItem(env, 182400001, rewardKinah);
-							player.getCommonData().addExp(rewardExp, RewardType.QUEST);
-							PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(questId, QuestStatus.COMPLETE, 2));
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
+							return sendQuestDialog(env, 2375);
+						}	
+						case CHECK_COLLECTED_ITEMS: {
+							return checkQuestItems(env, 0, 0, true, 5, 2716);
+						} 
+						case SET_REWARD: {
+							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							return true;
+							return sendQuestEndDialog(env);
 						}
 					}
 				} case 700423: {
@@ -128,8 +113,11 @@ public class _3096Examine_The_Extraction_Devices extends QuestHandler
 						}
 					}
 				}
+
 			}
-		}
+		} else if (qs.getStatus() == QuestStatus.REWARD && targetId == 798225) {
+			return sendQuestEndDialog(env);
+		}	
 		return false;
 	}
 }
