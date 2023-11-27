@@ -54,6 +54,7 @@ public class _2122AshesToAshes extends QuestHandler {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
+		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 0) {
@@ -70,11 +71,15 @@ public class _2122AshesToAshes extends QuestHandler {
 			if (targetId == 203551) {
 				switch (dialog) {
 					case START_DIALOG: {
+						if (var == 0) {
 						return sendQuestDialog(env, 1011);
+						}
 					}
 					case SELECT_ACTION_1012: {
+						if (var == 0) {
 						removeQuestItem(env, 182203120, 1);
 						return sendQuestDialog(env, 1012);
+						}
 					}
 					case STEP_TO_1: {
 						return defaultCloseDialog(env, 0, 1);
