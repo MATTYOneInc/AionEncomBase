@@ -39106,6 +39106,7 @@
       <selectable_reward_item item_id="102101080" count="1" />
       <reward_item item_id="162000050" count="40" />
       <reward_item item_id="186000009" count="20" />
+	  <reward_item item_id="188053200" count="1" />
     </rewards>
     <quest_drop npc_id="213281" item_id="182215377" chance="100" drop_each_member="1" collecting_step="5" />
     <quest_drop npc_id="213282" item_id="182215377" chance="100" drop_each_member="1" collecting_step="5" />
