@@ -209,30 +209,14 @@ public class DrakenspireDepthsInstance extends GeneralInstanceHandler
 				}
 			break;
 			case 236225: //Fountless Lava Protector.
-			    //The Protector that shares the Fount is still alive.
-				sendMsgByRace(1402690, Race.PC_ALL, 0);
-				//The vanquished Protector will be resurrected by the power of the Fount in 15 seconds.
-				sendMsgByRace(1402691, Race.PC_ALL, 2000);
-				//The Protector that shares the Fount has successfully resurrected.
-				sendMsgByRace(1402692, Race.PC_ALL, 4000);
-			break;
 			case 236226: //Fountless Heatvent Protector.
-			    //The Protector that shares the Fount is still alive.
-				sendMsgByRace(1402690, Race.PC_ALL, 0);
-				//The vanquished Protector will be resurrected by the power of the Fount in 15 seconds.
-				sendMsgByRace(1402691, Race.PC_ALL, 2000);
-				//The Protector that shares the Fount has successfully resurrected.
-				sendMsgByRace(1402692, Race.PC_ALL, 4000);
-			break;
-			case 236227: //Lava Protector.
-			case 236228: //Heatvent Protector.
 				deleteNpc(702404); //Twin's Firewall.
 				deleteNpc(702695); //Breakwall Twin's Boss.
 				deleteNpc(702696); //Breakwall Twin's Boss.
 				//The Protectors' Fount has been destroyed and they will not be resurrected.
 				sendMsgByRace(1402688, Race.PC_ALL, 0);
-				Npc lavaProtector = instance.getNpc(236227); //Lava Protector.
-			    Npc heatventProtector = instance.getNpc(236228); //Heatvent Protector.
+				Npc lavaProtector = instance.getNpc(236225); //Fountless Lava Protector.
+			    Npc heatventProtector = instance.getNpc(236226); //Fountless Heatvent Protector.
 			    if (isDead(lavaProtector) && isDead(heatventProtector)) {
 				    if (player != null) {
 				        switch (player.getRace()) {
@@ -259,7 +243,7 @@ public class DrakenspireDepthsInstance extends GeneralInstanceHandler
 										NpcShoutsService.getInstance().sendMsg(PCGuard_Li_Talk_A, 1402729, PCGuard_Li_Talk_A.getObjectId(), 0, 10000);
 										NpcShoutsService.getInstance().sendMsg(PCGuard_Li_Talk_A, 1402730, PCGuard_Li_Talk_A.getObjectId(), 0, 14000);
 									}
-								}, 30000);
+								}, 10000);
 								ThreadPoolManager.getInstance().schedule(new Runnable() {
 								    @Override
 									public void run() {
@@ -272,7 +256,7 @@ public class DrakenspireDepthsInstance extends GeneralInstanceHandler
 										spawn(209698, 583.8417f, 177.45332f, 1683.7301f, (byte) 8);
 										spawn(209700, 582.48083f, 183.74684f, 1683.7301f, (byte) 116);
 									}
-								}, 45000);
+								}, 15000);
 								ThreadPoolManager.getInstance().schedule(new Runnable() {
 									@Override
 									public void run() {
@@ -284,7 +268,7 @@ public class DrakenspireDepthsInstance extends GeneralInstanceHandler
 										//Just let me blast us a path...
 										NpcShoutsService.getInstance().sendMsg(Masionel, 1501310, Masionel.getObjectId(), 0, 12000);
 									}
-								}, 55000);
+								}, 25000);
 								ThreadPoolManager.getInstance().schedule(new Runnable() {
 									@Override
 									public void run() {
@@ -297,7 +281,7 @@ public class DrakenspireDepthsInstance extends GeneralInstanceHandler
 										//Please take care.
 										NpcShoutsService.getInstance().sendMsg(Masionel, 1501313, Masionel.getObjectId(), 0, 6000);
 									}
-								}, 70000);
+								}, 30000);
 							break;
 							case ASMODIANS:
 							    ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -322,7 +306,7 @@ public class DrakenspireDepthsInstance extends GeneralInstanceHandler
 										NpcShoutsService.getInstance().sendMsg(PCGuard_Da_Talk_A, 1402729, PCGuard_Da_Talk_A.getObjectId(), 0, 10000);
 										NpcShoutsService.getInstance().sendMsg(PCGuard_Da_Talk_A, 1402730, PCGuard_Da_Talk_A.getObjectId(), 0, 14000);
 									}
-								}, 30000);
+								}, 10000);
 								ThreadPoolManager.getInstance().schedule(new Runnable() {
 								    @Override
 									public void run() {
@@ -335,7 +319,7 @@ public class DrakenspireDepthsInstance extends GeneralInstanceHandler
 										spawn(209763, 583.8417f, 177.45332f, 1683.7301f, (byte) 8);
 										spawn(209765, 582.48083f, 183.74684f, 1683.7301f, (byte) 116);
 									}
-								}, 45000);
+								}, 15000);
 								ThreadPoolManager.getInstance().schedule(new Runnable() {
 									@Override
 									public void run() {
@@ -347,7 +331,7 @@ public class DrakenspireDepthsInstance extends GeneralInstanceHandler
 										//Just let me blast us a path...
 										NpcShoutsService.getInstance().sendMsg(Parsia, 1501310, Parsia.getObjectId(), 0, 12000);
 									}
-								}, 55000);
+								}, 25000);
 								ThreadPoolManager.getInstance().schedule(new Runnable() {
 									@Override
 									public void run() {
@@ -360,7 +344,7 @@ public class DrakenspireDepthsInstance extends GeneralInstanceHandler
 										//Please take care.
 										NpcShoutsService.getInstance().sendMsg(Parsia, 1501313, Parsia.getObjectId(), 0, 6000);
 									}
-								}, 70000);
+								}, 30000);
 							break;
 						}
 					}

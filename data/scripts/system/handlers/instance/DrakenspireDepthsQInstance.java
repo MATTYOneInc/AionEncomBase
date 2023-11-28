@@ -58,8 +58,7 @@ import java.util.concurrent.Future;
 /****/
 
 @InstanceID(301520000)
-public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
-{
+public class DrakenspireDepthsQInstance extends GeneralInstanceHandler {
 	private int deathCharQ;
 	private Race sealSceneRaceQ;
 	private Future<?> drakenspireQTask;
@@ -81,17 +80,6 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 		SpawnTemplate IDsealFire2st = SpawnEngine.addNewSingleTimeSpawn(301520000, 702696, 558.32593f, 212.02460f, 1683.0303f, (byte) 0);
 		IDsealFire2st.setEntityId(409);
 		objects.put(702696, SpawnEngine.spawnObject(IDsealFire2st, instanceId));
-		switch (Rnd.get(1, 3)) {
-			case 1:
-				spawn(237225, 850.943f, 343.2288f, 1723.6771f, (byte) 26); //Rapacious Kadena.
-			break;
-			case 2:
-				spawn(237225, 879.0986f, 276.86612f, 1715.0032f, (byte) 76); //Rapacious Kadena.
-			break;
-			case 3:
-				spawn(237225, 786.0551f, 363.54608f, 1697.079f, (byte) 86); //Rapacious Kadena.
-			break;
-		}
 	}
 	
 	public void onDropRegistered(Npc npc) {
@@ -115,7 +103,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 				public void run() {
 				    spawnIDSealScene01();
 				}
-			}, 20000);
+			}, 0);
         } switch (player.getRace()) {
 			case ELYOS:
 				kaisinelLight();
@@ -123,6 +111,25 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 				sendMsgByRace(1403030, Race.ELYOS, 10000);
 				//The Agent's presence has greatly boosted your combat skills.
 				sendMsgByRace(1403123, Race.ELYOS, 20000);
+				// Start
+				spawn(209823, 351.19638f, 192.30641f, 1684.2166f, (byte) 90); // Detachment Entry Soldier
+				spawn(209823, 347.11496f, 192.31288f, 1684.2166f, (byte) 90); // Detachment Entry Soldier
+				spawn(209824, 353.4427f, 182.63031f, 1684.2166f, (byte) 60); // Detachment Entry Leader
+				spawn(209881, 351.18042f, 173.7679f, 1684.2166f, (byte) 30); // Detachment Demolisher
+				spawn(209881, 347.099f, 173.77437f, 1684.2166f, (byte) 30); // Detachment Demolisher
+				// Start Attacker
+				spawn(209821, 392.2124f, 175.88617f, 1684.216f, (byte) 0); // Kaisinel Elite Mage
+				spawn(209825, 423.92587f, 179.96892f, 1682.2166f, (byte) 0); // Kaisinel Elite Combatant
+				spawn(209825, 403.4316f, 180.21465f, 1684.216f, (byte) 90); // Kaisinel Elite Combatant
+				spawn(209825, 403.47638f, 186.16238f, 1684.216f, (byte) 30); // Kaisinel Elite Combatant
+				spawn(209825, 435.78302f, 177.08868f, 1682.2167f, (byte) 0); // Kaisinel Elite Combatant
+				spawn(209826, 392.62598f, 190.2562f, 1684.216f, (byte) 0); // Kaisinel Elite Archer
+				spawn(209826, 431.28027f, 179.74289f, 1682.2166f, (byte) 45); // Kaisinel Elite Archer
+				spawn(209827, 437.78033f, 184.66359f, 1682.2167f, (byte) 45); // Kaisinel Elite Mage
+				spawn(209828, 407.54904f, 190.72981f, 1684.216f, (byte) 60); // Kaisinel Elite Priest
+				spawn(209828, 407.55682f, 175.88617f, 1684.216f, (byte) 60); // Kaisinel Elite Priest
+				spawn(209828, 426.9866f, 186.64618f, 1682.2166f, (byte) 0); // Kaisinel Elite Priest
+				spawn(209828, 436.94476f, 194.55673f, 1682.2168f, (byte) 90); // Kaisinel Elite Priest
 			break;
 			case ASMODIANS:
 				marchutanGrace();
@@ -130,6 +137,25 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 				sendMsgByRace(1403030, Race.ASMODIANS, 10000);
 				//The Agent's presence has greatly boosted your combat skills.
 				sendMsgByRace(1403123, Race.ASMODIANS, 20000);
+				// Start
+				spawn(209840, 351.19638f, 192.30641f, 1684.2166f, (byte) 90); // Detachment Entry Soldier
+				spawn(209840, 347.11496f, 192.31288f, 1684.2166f, (byte) 90); // Detachment Entry Soldier
+				spawn(209841, 353.4427f, 182.63031f, 1684.2166f, (byte) 60); // Detachment Entry Leader
+				spawn(209900, 351.18042f, 173.7679f, 1684.2166f, (byte) 30); // Detachment Demolisher
+				spawn(209900, 347.099f, 173.77437f, 1684.2166f, (byte) 30); // Detachment Demolisher
+				// Start Attacker
+				spawn(209844, 392.2124f, 175.88617f, 1684.216f, (byte) 0); // Marchutan Elite Mage
+				spawn(209842, 423.92587f, 179.96892f, 1682.2166f, (byte) 0); // Marchutan Elite Combatant
+				spawn(209842, 403.4316f, 180.21465f, 1684.216f, (byte) 90); // Marchutan Elite Combatant
+				spawn(209842, 403.47638f, 186.16238f, 1684.216f, (byte) 30); // Marchutan Elite Combatant
+				spawn(209842, 435.78302f, 177.08868f, 1682.2167f, (byte) 0); // Marchutan Elite Combatant
+				spawn(209843, 392.62598f, 190.2562f, 1684.216f, (byte) 0); // Marchutan Elite Archer
+				spawn(209843, 431.28027f, 179.74289f, 1682.2166f, (byte) 45); // Marchutan Elite Archer
+				spawn(209850, 437.78033f, 184.66359f, 1682.2167f, (byte) 45); // Marchutan Elite Mage
+				spawn(209845, 407.54904f, 190.72981f, 1684.216f, (byte) 60); // Marchutan Elite Priest
+				spawn(209845, 407.55682f, 175.88617f, 1684.216f, (byte) 60); // Marchutan Elite Priest
+				spawn(209845, 426.9866f, 186.64618f, 1682.2166f, (byte) 0); // Marchutan Elite Priest
+				spawn(209845, 436.94476f, 194.55673f, 1682.2168f, (byte) 90); // Marchutan Elite Priest
 			break;
 		}
     }
@@ -177,7 +203,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									spawn(209684, 498.19083f, 215.10863f, 1688.1915f, (byte) 0);
 									spawn(209685, 504.2284f, 211.17325f, 1688.1797f, (byte) 1);
 								}
-							}, 5000);
+							}, 0);
 						break;
 						case ASMODIANS:
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -189,7 +215,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									spawn(209749, 498.19083f, 215.10863f, 1688.1915f, (byte) 0);
 									spawn(209750, 504.2284f, 211.17325f, 1688.1797f, (byte) 1);
 								}
-							}, 5000);
+							}, 0);
 						break;
 					}
 				}
@@ -207,7 +233,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									spawn(209684, 498.11224f, 155.47922f, 1688.2467f, (byte) 0);
 									spawn(209685, 504.3097f, 152.23334f, 1688.1984f, (byte) 0);
 								}
-							}, 5000);
+							}, 0);
 						break;
 						case ASMODIANS:
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -219,7 +245,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									spawn(209749, 498.11224f, 155.47922f, 1688.2467f, (byte) 0);
 									spawn(209750, 504.3097f, 152.23334f, 1688.1984f, (byte) 0);
 								}
-							}, 5000);
+							}, 0);
 						break;
 					}
 				}
@@ -235,142 +261,96 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 				deleteNpc(702404); //Twin's Firewall.
 				deleteNpc(702695); //Breakwall Twin's Boss.
 				deleteNpc(702696); //Breakwall Twin's Boss.
-				Npc lavaProtector = instance.getNpc(237228); //Lava Protector.
-			    Npc heatventProtector = instance.getNpc(237229); //Heatvent Protector.
-			    if (isDead(lavaProtector) && isDead(heatventProtector)) {
 				    if (player != null) {
 				        switch (player.getRace()) {
 					        case ELYOS:
+							    deleteNpc(237228);
+							    deleteNpc(237229);
+								spawn(209690, 552.93365f, 155.68227f, 1683.7301f, (byte) 0);
+								spawn(209690, 552.90247f, 215.51768f, 1683.7301f, (byte) 0);
+								spawn(209693, 552.98486f, 148.64922f, 1683.7301f, (byte) 1);
+								spawn(209693, 553.1255f, 208.44653f, 1683.7301f, (byte) 1);
+								//The Empyrean Elite started to advance.
+								sendMsgByRace(1402994, Race.ELYOS, 0);
+								spawn(209695, 582.48083f, 183.74684f, 1683.7301f, (byte) 116);
+								Npc PCGuard_Li_Talk_A = getNpc(209695);
+								NpcShoutsService.getInstance().sendMsg(PCGuard_Li_Talk_A, 1402727, PCGuard_Li_Talk_A.getObjectId(), 0, 2000);
+								NpcShoutsService.getInstance().sendMsg(PCGuard_Li_Talk_A, 1402728, PCGuard_Li_Talk_A.getObjectId(), 0, 6000);
+								NpcShoutsService.getInstance().sendMsg(PCGuard_Li_Talk_A, 1402729, PCGuard_Li_Talk_A.getObjectId(), 0, 10000);
+								NpcShoutsService.getInstance().sendMsg(PCGuard_Li_Talk_A, 1402730, PCGuard_Li_Talk_A.getObjectId(), 0, 14000);
+									deleteNpc(209695);
+									//Eliminate the Fetid Phantomscorch Master and choose a path to proceed.
+									sendMsgByRace(1402995, Race.ELYOS, 0);
+									//Obtain the Crossroads Choice Key carried by the Fetid Phantomscorch Master.
+									sendMsgByRace(1403121, Race.ELYOS, 10000);
+									spawn(209700, 582.48083f, 183.74684f, 1683.7301f, (byte) 116);
+									spawn(209863, 582.5062f, 180.2349f, 1683.7301f, (byte) 1); //Masionel.
+									Npc Masionel = getNpc(209863);
+									//Thanks to you, the Detachment got through without any losses. Excellent work!
+									NpcShoutsService.getInstance().sendMsg(Masionel, 1501314, Masionel.getObjectId(), 0, 0);
+									//This place is protected by a dark power. It cannot be destroyed.
+									NpcShoutsService.getInstance().sendMsg(Masionel, 1501312, Masionel.getObjectId(), 0, 6000);
+									//Just let me blast us a path...
+									NpcShoutsService.getInstance().sendMsg(Masionel, 1501310, Masionel.getObjectId(), 0, 12000);
 							    ThreadPoolManager.getInstance().schedule(new Runnable() {
-							        @Override
-								    public void run() {
-										spawn(209690, 552.93365f, 155.68227f, 1683.7301f, (byte) 0);
-										spawn(209690, 552.90247f, 215.51768f, 1683.7301f, (byte) 0);
-										spawn(209693, 552.98486f, 148.64922f, 1683.7301f, (byte) 1);
-										spawn(209693, 553.1255f, 208.44653f, 1683.7301f, (byte) 1);
-								    }
-							    }, 2000);
-								ThreadPoolManager.getInstance().schedule(new Runnable() {
-								    @Override
-									public void run() {
-										//The Empyrean Elite started to advance.
-										sendMsgByRace(1402994, Race.ELYOS, 0);
-									    spawn(209694, 583.8417f, 177.45332f, 1683.7301f, (byte) 8);
-										spawn(209695, 582.48083f, 183.74684f, 1683.7301f, (byte) 116);
-										Npc PCGuard_Li_Talk_A = getNpc(209695);
-										NpcShoutsService.getInstance().sendMsg(PCGuard_Li_Talk_A, 1402727, PCGuard_Li_Talk_A.getObjectId(), 0, 2000);
-										NpcShoutsService.getInstance().sendMsg(PCGuard_Li_Talk_A, 1402728, PCGuard_Li_Talk_A.getObjectId(), 0, 6000);
-										NpcShoutsService.getInstance().sendMsg(PCGuard_Li_Talk_A, 1402729, PCGuard_Li_Talk_A.getObjectId(), 0, 10000);
-										NpcShoutsService.getInstance().sendMsg(PCGuard_Li_Talk_A, 1402730, PCGuard_Li_Talk_A.getObjectId(), 0, 14000);
-									}
-								}, 30000);
-								ThreadPoolManager.getInstance().schedule(new Runnable() {
-								    @Override
-									public void run() {
-									    deleteNpc(209694);
-										deleteNpc(209695);
-										//Eliminate the Fetid Phantomscorch Master and choose a path to proceed.
-										sendMsgByRace(1402995, Race.ELYOS, 0);
-										//Obtain the Crossroads Choice Key carried by the Fetid Phantomscorch Master.
-										sendMsgByRace(1403121, Race.ELYOS, 10000);
-										spawn(209698, 583.8417f, 177.45332f, 1683.7301f, (byte) 8);
-										spawn(209700, 582.48083f, 183.74684f, 1683.7301f, (byte) 116);
-										spawn(209863, 582.5062f, 180.2349f, 1683.7301f, (byte) 1); //Masionel.
-									}
-								}, 45000);
-								ThreadPoolManager.getInstance().schedule(new Runnable() {
 									@Override
 									public void run() {
-										Npc Masionel = getNpc(209863);
-										//Thanks to you, the Detachment got through without any losses. Excellent work!
-										NpcShoutsService.getInstance().sendMsg(Masionel, 1501314, Masionel.getObjectId(), 0, 0);
-										//This place is protected by a dark power. It cannot be destroyed.
-										NpcShoutsService.getInstance().sendMsg(Masionel, 1501312, Masionel.getObjectId(), 0, 6000);
-										//Just let me blast us a path...
-										NpcShoutsService.getInstance().sendMsg(Masionel, 1501310, Masionel.getObjectId(), 0, 12000);
+									killNpc(getNpcs(731580));
+									Npc Masionel = getNpc(209863);
+									//Detachment Demolisher has opened the path to the next area.
+									sendMsgByRace(1402689, Race.ELYOS, 0);
+									//We can get through now.
+									NpcShoutsService.getInstance().sendMsg(Masionel, 1501311, Masionel.getObjectId(), 0, 0);
+									//Please take care.
+									NpcShoutsService.getInstance().sendMsg(Masionel, 1501313, Masionel.getObjectId(), 0, 6000);
 									}
-								}, 55000);
-								ThreadPoolManager.getInstance().schedule(new Runnable() {
-									@Override
-									public void run() {
-										killNpc(getNpcs(731580));
-										Npc Masionel = getNpc(209863);
-										//Detachment Demolisher has opened the path to the next area.
-										sendMsgByRace(1402689, Race.ELYOS, 0);
-										//We can get through now.
-										NpcShoutsService.getInstance().sendMsg(Masionel, 1501311, Masionel.getObjectId(), 0, 0);
-										//Please take care.
-										NpcShoutsService.getInstance().sendMsg(Masionel, 1501313, Masionel.getObjectId(), 0, 6000);
-									}
-								}, 70000);
+								}, 10000);	
 							break;
 							case ASMODIANS:
-							    ThreadPoolManager.getInstance().schedule(new Runnable() {
-							        @Override
-								    public void run() {
-										spawn(209755, 552.93365f, 155.68227f, 1683.7301f, (byte) 0);
-										spawn(209755, 552.90247f, 215.51768f, 1683.7301f, (byte) 0);
-										spawn(209758, 552.98486f, 148.64922f, 1683.7301f, (byte) 1);
-										spawn(209758, 553.1255f, 208.44653f, 1683.7301f, (byte) 1);
+						            deleteNpc(237228);
+							        deleteNpc(237229);
+									spawn(209755, 552.93365f, 155.68227f, 1683.7301f, (byte) 0);
+									spawn(209755, 552.90247f, 215.51768f, 1683.7301f, (byte) 0);
+									spawn(209758, 552.98486f, 148.64922f, 1683.7301f, (byte) 1);
+									spawn(209758, 553.1255f, 208.44653f, 1683.7301f, (byte) 1);
+									//The Empyrean Elite started to advance.
+									sendMsgByRace(1402994, Race.ASMODIANS, 0);
+									spawn(209760, 582.48083f, 183.74684f, 1683.7301f, (byte) 116);
+									Npc PCGuard_Da_Talk_A = getNpc(209760);
+									NpcShoutsService.getInstance().sendMsg(PCGuard_Da_Talk_A, 1402727, PCGuard_Da_Talk_A.getObjectId(), 0, 2000);
+									NpcShoutsService.getInstance().sendMsg(PCGuard_Da_Talk_A, 1402728, PCGuard_Da_Talk_A.getObjectId(), 0, 6000);
+									NpcShoutsService.getInstance().sendMsg(PCGuard_Da_Talk_A, 1402729, PCGuard_Da_Talk_A.getObjectId(), 0, 10000);
+									NpcShoutsService.getInstance().sendMsg(PCGuard_Da_Talk_A, 1402730, PCGuard_Da_Talk_A.getObjectId(), 0, 14000);
+									deleteNpc(209760);
+									//Eliminate the Fetid Phantomscorch Master and choose a path to proceed.
+									sendMsgByRace(1402995, Race.ASMODIANS, 0);
+									//Obtain the Crossroads Choice Key carried by the Fetid Phantomscorch Master.
+									sendMsgByRace(1403121, Race.ASMODIANS, 10000);
+									spawn(209765, 582.48083f, 183.74684f, 1683.7301f, (byte) 116);
+									spawn(209883, 582.5062f, 180.2349f, 1683.7301f, (byte) 1); //Parsia.
+									Npc Parsia = getNpc(209883);
+									//Thanks to you, the Detachment got through without any losses. Excellent work!
+									NpcShoutsService.getInstance().sendMsg(Parsia, 1501314, Parsia.getObjectId(), 0, 0);
+									//This place is protected by a dark power. It cannot be destroyed.
+									NpcShoutsService.getInstance().sendMsg(Parsia, 1501312, Parsia.getObjectId(), 0, 6000);
+									//Just let me blast us a path...
+									NpcShoutsService.getInstance().sendMsg(Parsia, 1501310, Parsia.getObjectId(), 0, 12000);
+								ThreadPoolManager.getInstance().schedule(new Runnable() {
+									@Override
+									public void run() {
+									killNpc(getNpcs(731580));
+									Npc Parsia = getNpc(209883);
+									//Detachment Demolisher has opened the path to the next area.
+									sendMsgByRace(1402689, Race.ASMODIANS, 0);
+									//We can get through now.
+									NpcShoutsService.getInstance().sendMsg(Parsia, 1501311, Parsia.getObjectId(), 0, 0);
+									//Please take care.
+									NpcShoutsService.getInstance().sendMsg(Parsia, 1501313, Parsia.getObjectId(), 0, 6000);
 								    }
-							    }, 2000);
-								ThreadPoolManager.getInstance().schedule(new Runnable() {
-								    @Override
-									public void run() {
-										//The Empyrean Elite started to advance.
-										sendMsgByRace(1402994, Race.ASMODIANS, 0);
-									    spawn(209759, 583.8417f, 177.45332f, 1683.7301f, (byte) 8);
-										spawn(209760, 582.48083f, 183.74684f, 1683.7301f, (byte) 116);
-										Npc PCGuard_Da_Talk_A = getNpc(209760);
-										NpcShoutsService.getInstance().sendMsg(PCGuard_Da_Talk_A, 1402727, PCGuard_Da_Talk_A.getObjectId(), 0, 2000);
-										NpcShoutsService.getInstance().sendMsg(PCGuard_Da_Talk_A, 1402728, PCGuard_Da_Talk_A.getObjectId(), 0, 6000);
-										NpcShoutsService.getInstance().sendMsg(PCGuard_Da_Talk_A, 1402729, PCGuard_Da_Talk_A.getObjectId(), 0, 10000);
-										NpcShoutsService.getInstance().sendMsg(PCGuard_Da_Talk_A, 1402730, PCGuard_Da_Talk_A.getObjectId(), 0, 14000);
-									}
-								}, 30000);
-								ThreadPoolManager.getInstance().schedule(new Runnable() {
-								    @Override
-									public void run() {
-									    deleteNpc(209759);
-										deleteNpc(209760);
-										//Eliminate the Fetid Phantomscorch Master and choose a path to proceed.
-										sendMsgByRace(1402995, Race.ASMODIANS, 0);
-										//Obtain the Crossroads Choice Key carried by the Fetid Phantomscorch Master.
-										sendMsgByRace(1403121, Race.ASMODIANS, 10000);
-										spawn(209763, 583.8417f, 177.45332f, 1683.7301f, (byte) 8);
-										spawn(209765, 582.48083f, 183.74684f, 1683.7301f, (byte) 116);
-										spawn(209883, 582.5062f, 180.2349f, 1683.7301f, (byte) 1); //Parsia.
-									}
-								}, 45000);
-								ThreadPoolManager.getInstance().schedule(new Runnable() {
-									@Override
-									public void run() {
-										Npc Parsia = getNpc(209883);
-										//Thanks to you, the Detachment got through without any losses. Excellent work!
-										NpcShoutsService.getInstance().sendMsg(Parsia, 1501314, Parsia.getObjectId(), 0, 0);
-										//This place is protected by a dark power. It cannot be destroyed.
-										NpcShoutsService.getInstance().sendMsg(Parsia, 1501312, Parsia.getObjectId(), 0, 6000);
-										//Just let me blast us a path...
-										NpcShoutsService.getInstance().sendMsg(Parsia, 1501310, Parsia.getObjectId(), 0, 12000);
-									}
-								}, 55000);
-								ThreadPoolManager.getInstance().schedule(new Runnable() {
-									@Override
-									public void run() {
-										killNpc(getNpcs(731580));
-										Npc Parsia = getNpc(209883);
-										//Detachment Demolisher has opened the path to the next area.
-										sendMsgByRace(1402689, Race.ASMODIANS, 0);
-										//We can get through now.
-										NpcShoutsService.getInstance().sendMsg(Parsia, 1501311, Parsia.getObjectId(), 0, 0);
-										//Please take care.
-										NpcShoutsService.getInstance().sendMsg(Parsia, 1501313, Parsia.getObjectId(), 0, 6000);
-									}
-								}, 70000);
+								}, 10000);
 							break;
 						}
 					}
-				}
 			break;
 			case 237213: //Frantic Phantomscorch Bonerival.
 			case 237214: //Frantic Phantomscorch Chimera.
@@ -396,14 +376,14 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 										spawn(209704, 821.6019f, 523.7112f, 1706.6428f, (byte) 33);
 										spawn(209705, 815.1346f, 522.75665f, 1706.7778f, (byte) 32);
 								    }
-							    }, 2000);
+							    }, 0);
 								ThreadPoolManager.getInstance().schedule(new Runnable() {
 							        @Override
 								    public void run() {
 										spawn(237231, 812.2527f, 568.7095f, 1701.0443f, (byte) 93); //Orissan.
 										spawn(856554, 812.2527f, 568.7095f, 1701.0443f, (byte) 93); //ShapeChange Flash.
 								    }
-							    }, 16000);
+							    }, 0);
 						    break;
 						    case ASMODIANS:
 							    ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -418,14 +398,14 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 										spawn(209769, 821.6019f, 523.7112f, 1706.6428f, (byte) 33);
 										spawn(209770, 815.1346f, 522.75665f, 1706.7778f, (byte) 32);
 								    }
-							    }, 2000);
+							    }, 0);
 								ThreadPoolManager.getInstance().schedule(new Runnable() {
 							        @Override
 								    public void run() {
 										spawn(237231, 812.2527f, 568.7095f, 1701.0443f, (byte) 93); //Exhausted Orissan.
 										spawn(856554, 812.2527f, 568.7095f, 1701.0443f, (byte) 93); //ShapeChange Flash.
 								    }
-							    }, 16000);
+							    }, 0);
 						    break;
 						}
 					}
@@ -443,7 +423,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 								    spawn(209706, 810.4212f, 550.19934f, 1701.044f, (byte) 31);
 									spawn(209707, 818.40704f, 552.7704f, 1701.044f, (byte) 36);
 								}
-							}, 10000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
@@ -452,7 +432,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									spawn(209711, 814.1693f, 588.4347f, 1701.0449f, (byte) 34);
 									spawn(209711, 806.99536f, 587.9815f, 1701.0448f, (byte) 30);
 								}
-							}, 15000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
@@ -464,7 +444,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									NpcShoutsService.getInstance().sendMsg(PCGuard_Li, 1402729, PCGuard_Li.getObjectId(), 0, 10000);
 									NpcShoutsService.getInstance().sendMsg(PCGuard_Li, 1402730, PCGuard_Li.getObjectId(), 0, 14000);
 								}
-							}, 20000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 								@Override
 								public void run() {
@@ -476,7 +456,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									//Just let me blast us a path...
 									NpcShoutsService.getInstance().sendMsg(Masionel, 1501310, Masionel.getObjectId(), 0, 12000);
 								}
-							}, 35000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 								@Override
 								public void run() {
@@ -491,7 +471,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									//Please take care.
 									NpcShoutsService.getInstance().sendMsg(Masionel, 1501313, Masionel.getObjectId(), 0, 6000);
 								}
-							}, 50000);
+							}, 0);
 						break;
 						case ASMODIANS:
 						    sendMovie(player, 917);
@@ -501,7 +481,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 								    spawn(209771, 810.4212f, 550.19934f, 1701.044f, (byte) 31);
 									spawn(209772, 818.40704f, 552.7704f, 1701.044f, (byte) 36);
 								}
-							}, 10000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
@@ -510,7 +490,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									spawn(209776, 814.1693f, 588.4347f, 1701.0449f, (byte) 34);
 									spawn(209776, 806.99536f, 587.9815f, 1701.0448f, (byte) 30);
 								}
-							}, 15000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
@@ -522,7 +502,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									NpcShoutsService.getInstance().sendMsg(PCGuard_Da, 1402729, PCGuard_Da.getObjectId(), 0, 10000);
 									NpcShoutsService.getInstance().sendMsg(PCGuard_Da, 1402730, PCGuard_Da.getObjectId(), 0, 14000);
 								}
-							}, 20000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 								@Override
 								public void run() {
@@ -534,7 +514,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									//Just let me blast us a path...
 									NpcShoutsService.getInstance().sendMsg(Parsia, 1501310, Parsia.getObjectId(), 0, 12000);
 								}
-							}, 35000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 								@Override
 								public void run() {
@@ -549,7 +529,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									//Please take care.
 									NpcShoutsService.getInstance().sendMsg(Parsia, 1501313, Parsia.getObjectId(), 0, 6000);
 								}
-							}, 50000);
+							}, 0);
 						break;
 				    }
 				}
@@ -564,7 +544,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 								    spawn(209722, 631.6413f, 847.15717f, 1599.8486f, (byte) 90);
 									spawn(209722, 639.45526f, 847.40265f, 1599.9614f, (byte) 90);
 								}
-							}, 5000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
@@ -573,13 +553,13 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									spawn(209731, 640.8788f, 891.53687f, 1600.5566f, (byte) 94);
 									spawn(209731, 629.2198f, 891.1963f, 1600.5817f, (byte) 92);
 								}
-							}, 10000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
 								    spawnIDSeal4ThStageElyos();
 								}
-							}, 12000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
@@ -591,7 +571,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									//If the Detachment loses too many soldiers, they will not be able to assist during the battle against Beritra.
 									sendMsgByRace(1402706, Race.ELYOS, 10000);
 								}
-							}, 15000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
@@ -642,7 +622,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 								    spawn(209787, 631.6413f, 847.15717f, 1599.8486f, (byte) 90);
 									spawn(209787, 639.45526f, 847.40265f, 1599.9614f, (byte) 90);
 								}
-							}, 5000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
@@ -651,13 +631,13 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									spawn(209796, 640.8788f, 891.53687f, 1600.5566f, (byte) 94);
 									spawn(209796, 629.2198f, 891.1963f, 1600.5817f, (byte) 92);
 								}
-							}, 10000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
 								    spawnIDSeal4ThStageAsmodians();
 								}
-							}, 12000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
@@ -669,7 +649,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 									//If the Detachment loses too many soldiers, they will not be able to assist during the battle against Beritra.
 									sendMsgByRace(1402706, Race.ASMODIANS, 10000);
 								}
-							}, 15000);
+							}, 0);
 							ThreadPoolManager.getInstance().schedule(new Runnable() {
 							    @Override
 								public void run() {
@@ -954,7 +934,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 										}
 									});
 								}
-							}, 10000);
+							}, 1000);
 						break;
 						case ASMODIANS:
 						    sendMovie(player, 922);
@@ -983,7 +963,7 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 										}
 									});
 								}
-							}, 10000);
+							}, 1000);
 						break;
 					}
 				}
@@ -1070,14 +1050,6 @@ public class DrakenspireDepthsQInstance extends GeneralInstanceHandler
 		sendMsgByRace(1402991, Race.PC_ALL, 10000);
 		//Choose a path to proceed.
 		sendMsgByRace(1402992, Race.PC_ALL, 60000);
-        final int pcGuard1 = sealSceneRaceQ == Race.ASMODIANS ? 209744 : 209679;
-		final int pcGuard2 = sealSceneRaceQ == Race.ASMODIANS ? 209744 : 209679;
-        final int pcGuard3 = sealSceneRaceQ == Race.ASMODIANS ? 209745 : 209680;
-        final int pcGuard4 = sealSceneRaceQ == Race.ASMODIANS ? 209746 : 209681;
-		spawn(pcGuard1, 353.3932f, 185.61818f, 1684.2164f, (byte) 1);
-		spawn(pcGuard2, 353.4143f, 179.24579f, 1684.2164f, (byte) 0);
-        spawn(pcGuard3, 349.18713f, 192.32655f, 1684.2164f, (byte) 119);
-        spawn(pcGuard4, 349.34637f, 173.6827f, 1684.2164f, (byte) 1);
     }
 	
 	private void spawnIDSealSceneEnding() {
