@@ -24,10 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28952Drakenspire_Domination extends QuestHandler
-{
+public class _28952Drakenspire_Domination extends QuestHandler {
+	
     private final static int questId = 28952;
-	private final static int[] boss = {236227, 236228, 236229, 236232, 236238, 236247};
+	private final static int[] boss = {236225, 236226, 236229, 236232, 236238, 236244, 236245, 236246};
 	
     public _28952Drakenspire_Domination() {
         super(questId);
@@ -87,28 +87,36 @@ public class _28952Drakenspire_Domination extends QuestHandler
             return false;
         }
         int var = qs.getQuestVarById(0);
+		int var1 = qs.getQuestVarById(1);
+		int var2 = qs.getQuestVarById(2);
+		int var3 = qs.getQuestVarById(3);
+		int var4 = qs.getQuestVarById(4);
         int targetId = 0;
         Npc npc = null;
         if (env.getVisibleObject() instanceof Npc) {
             npc = (Npc) env.getVisibleObject();
             targetId = npc.getNpcId();
         } switch (targetId) {
-            case 236227:
-			case 236228:
-                qs.setQuestVarById(0, var + 1);
+            case 236225:
+			case 236226:
+                qs.setQuestVarById(1, var1 + 1);
                 updateQuestStatus(env);
                 return true;
             case 236229:
 			case 236232:
-                qs.setQuestVarById(0, var + 1);
+                qs.setQuestVarById(2, var2 + 1);
                 updateQuestStatus(env);
                 return true;
             case 236238:
-                qs.setQuestVarById(0, var + 1);
+                qs.setQuestVarById(3, var3 + 1);
                 updateQuestStatus(env);
                 return true;
-            case 236247:
-                qs.setStatus(QuestStatus.REWARD);
+            case 236244:
+			case 236245:
+			case 236246:
+			    qs.setQuestVarById(4, var4 + 1);
+				qs.setQuestVarById(0, var + 1);
+				qs.setStatus(QuestStatus.REWARD);
                 updateQuestStatus(env);
                 return true;
         }
