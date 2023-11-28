@@ -53,9 +53,11 @@ public class AggressiveNpcAI2 extends GeneralNpcAI2
 	@Override
 	protected void handleAttack(Creature creature) {
 		AttackEventHandler.onAttack(this, creature);
+		/*
 		if (Rnd.get(1, 100) < 10 && !getOwner().isInInstance()) {
 			checkPercentage(getLifeStats().getHpPercentage());
 		}
+		*/
 	}
 	
 	@Override

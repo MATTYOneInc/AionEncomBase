@@ -36,15 +36,11 @@ public class Accuracy implements StatOwner {
 		if (point >= 1) {
 			accuracy.clear();
 			player.getGameStats().endEffect(this);
-			accuracy.add(new StatAddFunction(StatEnum.ACCURACY, (int) (7.84f * point), true));
-			accuracy.add(new StatAddFunction(StatEnum.PHYSICAL_ACCURACY, (int) (3.84f * point), true));
-			accuracy.add(new StatAddFunction(StatEnum.MAGICAL_ACCURACY, (int) (6.00f * point), true));
+			accuracy.add(new StatAddFunction(StatEnum.HAGI, point, true));
 			player.getGameStats().addEffect(this, accuracy);
 		} else if (point == 0) {
 			accuracy.clear();
-			accuracy.add(new StatAddFunction(StatEnum.ACCURACY, (int) (7.84f * point), false));
-			accuracy.add(new StatAddFunction(StatEnum.PHYSICAL_ACCURACY, (int) (3.84f * point), false));
-			accuracy.add(new StatAddFunction(StatEnum.MAGICAL_ACCURACY, (int) (6.00f * point), false));
+			accuracy.add(new StatAddFunction(StatEnum.HAGI, point, false));
 			player.getGameStats().endEffect(this);
 		}
 	}

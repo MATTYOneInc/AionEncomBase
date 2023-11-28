@@ -54,6 +54,12 @@
 			<xs:enumeration value="KNOWLEDGE"/>
 			<xs:enumeration value="PARRY"/>
 			<xs:enumeration value="POWER"/>
+			<xs:enumeration value="HSTR"/>
+			<xs:enumeration value="HVIT"/>
+			<xs:enumeration value="HDEX"/>
+			<xs:enumeration value="HAGI"/>
+			<xs:enumeration value="HKNO"/>
+			<xs:enumeration value="HWIL"/>
 			<xs:enumeration value="SPEED"/>
 			<xs:enumeration value="ALLSPEED"/>
 			<xs:enumeration value="HIT_COUNT"/>

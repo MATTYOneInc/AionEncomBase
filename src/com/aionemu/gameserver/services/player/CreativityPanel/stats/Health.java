@@ -33,15 +33,11 @@ public class Health implements StatOwner {
 		if (point >= 1) {
 			health.clear();
 			player.getGameStats().endEffect(this);
-			health.add(new StatAddFunction(StatEnum.MAXHP, (int) (22.5f * point), true));
-			health.add(new StatAddFunction(StatEnum.BLOCK, (int) (5.5f * point), true));
-			health.add(new StatAddFunction(StatEnum.REGEN_HP, (int) (2.5f * point), true));
+			health.add(new StatAddFunction(StatEnum.HVIT, point, true));
 			player.getGameStats().addEffect(this, health);
 		} else if (point == 0) {
 			health.clear();
-			health.add(new StatAddFunction(StatEnum.MAXHP, (int) (22.5f * point), false));
-			health.add(new StatAddFunction(StatEnum.BLOCK, (int) (5.5f * point), false));
-			health.add(new StatAddFunction(StatEnum.REGEN_HP, (int) (2.5f * point), false));
+			health.add(new StatAddFunction(StatEnum.HVIT, point, false));
 			player.getGameStats().endEffect(this);
 		}
 	}

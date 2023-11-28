@@ -85,7 +85,14 @@ public enum StatEnum {
 
 	// 4.8
 	ENCHANT_BOOST, AP_REDUCE_RATE, AUTHORIZE_BOOST, INDUN_DROP_BOOST, DEATH_PENALTY_REDUCE, ENCHANT_OPTION_BOOST,
-	ORDALIE_REWARD;
+	ORDALIE_REWARD,
+	
+	HSTR,  
+	HVIT,  
+	HDEX,  
+	HAGI,  
+	HKNO,  
+	HWIL;
 
 	private boolean replace;
 	private int sign;

@@ -33,17 +33,11 @@ public class Agility implements StatOwner {
 		if (point >= 1) {
 			agility.clear();
 			player.getGameStats().endEffect(this);
-			agility.add(new StatAddFunction(StatEnum.CONCENTRATION, (int) (0.56f * point), true));
-			agility.add(new StatAddFunction(StatEnum.PARRY, (int) (5.6f * point), true));
-			agility.add(new StatAddFunction(StatEnum.EVASION, (int) (3.7f * point), true));
-			agility.add(new StatAddFunction(StatEnum.PHYSICAL_CRITICAL_RESIST, (int) (2.4f * point), true));
+			agility.add(new StatAddFunction(StatEnum.HDEX, point, true));
 			player.getGameStats().addEffect(this, agility);
 		} else if (point == 0) {
 			agility.clear();
-			agility.add(new StatAddFunction(StatEnum.CONCENTRATION, (int) (0.56f * point), false));
-			agility.add(new StatAddFunction(StatEnum.PARRY, (int) (5.6f * point), false));
-			agility.add(new StatAddFunction(StatEnum.EVASION, (int) (3.7f * point), false));
-			agility.add(new StatAddFunction(StatEnum.PHYSICAL_CRITICAL_RESIST, (int) (2.4f * point), false));
+			agility.add(new StatAddFunction(StatEnum.HDEX, point, false));
 			player.getGameStats().endEffect(this);
 		}
 	}

@@ -142,12 +142,12 @@ public class SM_STATS_INFO extends AionServerPacket {
 		writeQ(pcd.getBerdinStar()); // Berdin's Favor.
 		writeQ(pcd.getAuraOfGrowth()); // Aura Of Growth.
 		writeQ(pcd.getAbyssFavor()); // Abyss Favor.
-		writeH(player.getCPSlot1());
-		writeH(player.getCPSlot2());
-		writeH(player.getCPSlot3());
-		writeH(player.getCPSlot4());
-		writeH(player.getCPSlot5());
-		writeH(player.getCPSlot6());
+        writeH(pgs.getStat(StatEnum.HSTR, 0).getCurrent());
+        writeH(pgs.getStat(StatEnum.HVIT, 0).getCurrent());
+        writeH(pgs.getStat(StatEnum.HDEX, 0).getCurrent());
+        writeH(pgs.getStat(StatEnum.HAGI, 0).getCurrent());
+        writeH(pgs.getStat(StatEnum.HKNO, 0).getCurrent());
+        writeH(pgs.getStat(StatEnum.HWIL, 0).getCurrent());
 		writeH(1000);// unk
 		writeH(0);
 		writeH(pgs.getPower().getBase());
