@@ -178,5 +178,17 @@
 			<spot x="690.4874" y="822.40784" z="1609.5748" entity_id="405"/>
 			<spot x="572.9444" y="940.03577" z="1620.0454" entity_id="407"/>
 		</spawn>
+		<!-- Rapacious Kadena ||| IDSeal_Q_Spaller_SN_65_Ah_01 -->
+		<spawn npc_id="237225">
+			<spot x="894.34625" y="287.30704" z="1714.9932" h="75"/>
+		</spawn>
+		<!-- Rapacious Kadena ||| IDSeal_Q_Spaller_SN_65_Ah_02 -->
+		<spawn npc_id="237226">
+			<spot x="856.27374" y="362.04288" z="1723.6619" h="90"/>
+		</spawn>
+		<!-- Rapacious Kadena ||| IDSeal_Q_Spaller_SN_65_Ah_03 -->
+		<spawn npc_id="237227">
+			<spot x="787.00006" y="379.6728" z="1697.0371" h="90"/>
+		</spawn>
 	</spawn_map>
 </spawns>
