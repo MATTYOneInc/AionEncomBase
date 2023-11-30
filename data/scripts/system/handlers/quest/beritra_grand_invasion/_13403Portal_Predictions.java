@@ -24,9 +24,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _13403Portal_Predictions extends QuestHandler
-{
+public class _13403Portal_Predictions extends QuestHandler {
+	
     public static final int questId = 13403;
 	
     public _13403Portal_Predictions() {
@@ -40,7 +39,6 @@ public class _13403Portal_Predictions extends QuestHandler
 	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203098).addOnQuestStart(questId); //Spatalos.
 		qe.registerQuestNpc(203096).addOnTalkEvent(questId); //William.
 		qe.registerQuestNpc(203106).addOnTalkEvent(questId); //Alisdair.
@@ -57,7 +55,6 @@ public class _13403Portal_Predictions extends QuestHandler
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203098) { //Spatalos.
                 switch (env.getDialog()) {
@@ -72,6 +69,7 @@ public class _13403Portal_Predictions extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
 			if (targetId == 203096) { //William.
 				switch (env.getDialog()) {
 					case START_DIALOG: {

@@ -24,9 +24,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _23403Weapons_Here_Weapons_There extends QuestHandler
-{
+public class _23403Weapons_Here_Weapons_There extends QuestHandler {
+	
     public static final int questId = 23403;
 	
     public _23403Weapons_Here_Weapons_There() {
@@ -40,7 +39,6 @@ public class _23403Weapons_Here_Weapons_There extends QuestHandler
 	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203557).addOnQuestStart(questId); //Suthran.
 		qe.registerQuestNpc(203559).addOnTalkEvent(questId); //Meiyer.
 		qe.registerQuestNpc(203560).addOnTalkEvent(questId); //Morn.
@@ -57,7 +55,6 @@ public class _23403Weapons_Here_Weapons_There extends QuestHandler
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203557) { //Suthran.
                 switch (env.getDialog()) {
@@ -72,6 +69,7 @@ public class _23403Weapons_Here_Weapons_There extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
 			if (targetId == 203559) { //Meiyer.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
