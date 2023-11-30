@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _14120The_Bucket_List extends QuestHandler
-{
+public class _14120The_Bucket_List extends QuestHandler {
+	
     private final static int questId = 14120;
 	
     public _14120The_Bucket_List() {
@@ -38,7 +37,6 @@ public class _14120The_Bucket_List extends QuestHandler
 	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestItem(182215478, questId);
 		qe.registerQuestNpc(203932).addOnQuestStart(questId); //Phomona
         qe.registerQuestNpc(203932).addOnTalkEvent(questId); //Phomona
@@ -52,7 +50,6 @@ public class _14120The_Bucket_List extends QuestHandler
         final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 203932) { //Phomona.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -62,6 +59,7 @@ public class _14120The_Bucket_List extends QuestHandler
                 }
             }
         } else if (qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
             if (targetId == 730019) { //Lodas
                 switch (env.getDialog()) {
                     case START_DIALOG: {
