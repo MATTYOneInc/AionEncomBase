@@ -26,9 +26,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _3076Bolstering_The_Aetheric_Field extends QuestHandler
-{
+public class _3076Bolstering_The_Aetheric_Field extends QuestHandler {
+	
 	private final static int questId = 3076;
 	
 	public _3076Bolstering_The_Aetheric_Field() {
@@ -48,7 +47,6 @@ public class _3076Bolstering_The_Aetheric_Field extends QuestHandler
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
 		QuestDialog dialog = env.getDialog();
 		if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
@@ -68,6 +66,7 @@ public class _3076Bolstering_The_Aetheric_Field extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
 		    if (targetId == 278503) { //Calon.
 				switch (env.getDialog()) {
                     case START_DIALOG: {
