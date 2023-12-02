@@ -23,9 +23,8 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _14201Weapon_Of_Past_Destruction extends QuestHandler
-{
+public class _14201Weapon_Of_Past_Destruction extends QuestHandler {
+	
     private final static int questId = 14201;
 	
     public _14201Weapon_Of_Past_Destruction() {
@@ -45,7 +44,6 @@ public class _14201Weapon_Of_Past_Destruction extends QuestHandler
         final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-		int var = qs.getQuestVarById(0);
         int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 798155) { //Atropos.
@@ -56,6 +54,7 @@ public class _14201Weapon_Of_Past_Destruction extends QuestHandler
                 }
             }
 		} else if (qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
 			if (targetId == 800407) { //Hongras.
 				switch (dialog) {
 					case START_DIALOG: {
