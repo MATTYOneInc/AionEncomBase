@@ -343,6 +343,21 @@
       <quest_work_item item_id="182200215" count="1" />
     </quest_work_items>
   </quest>
+  <quest id="1129" name="Scouting Timolia Mine" nameId="1102229" minlevel_permitted="8" max_repeat_count="1" race_permitted="ELYOS" category="QUEST">
+    <collect_items>
+        <collect_item item_id="182200213" count="5"/>
+    </collect_items>
+    <rewards exp="7205">
+        <reward_item item_id="125001836" count="1"/>
+    </rewards>
+    <quest_drop npc_id="210182" item_id="182200213" chance="80"/>
+    <quest_drop npc_id="210161" item_id="182200213" chance="80"/>
+    <quest_drop npc_id="210162" item_id="182200213"/>
+    <quest_drop npc_id="210097" item_id="182200213" chance="80"/>
+    <quest_drop npc_id="210101" item_id="182200213" chance="80"/>
+    <quest_drop npc_id="210686" item_id="182200213" chance="80"/>
+    <quest_drop npc_id="210687" item_id="182200213" chance="80"/>
+  </quest>
   <quest id="1131" name="Undelivered Armour" nameId="1102301" minlevel_permitted="10" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="IMPORTANT">
     <rewards gold="610" exp="18809">
       <reward_item item_id="162000048" count="5" />
