@@ -22,10 +22,6 @@
 	<monster_hunt id="14151" start_npc_ids="204583" end_npc_ids="204502">
 		<monster var="0" npc_ids="212120" end_var="1"/>
 	</monster_hunt>
-	<!-- Eternal Flames (Elyos Only) -->
-	<monster_hunt id="14200" start_npc_ids="798155" end_npc_ids="798155">
-		<monster var="0" npc_ids="700390" end_var="3"/>
-	</monster_hunt>
 	<!-- Two Hands Are Better Than None (Elyos Only) -->
 	<report_to id="14202" start_npc_ids="204500" end_npc_ids="798155"/>
 	<!-- A Triumph's A Triumph (Elyos Only) -->
