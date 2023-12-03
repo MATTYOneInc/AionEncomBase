@@ -494,4 +494,8 @@
 	<zone mapid="220110000" name="DF6_SENSORY_AREA_Q25606_C_DYNAMIC_ENV_220110000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="566.99786" y="1300.4863" z="291.53223" r="10.0"/>
 	</zone>
+	<!-- Lower_udas_temple -->
+    <zone mapid="300160000" name="SENSORYAREA_Q30011_300160000" area_type="SPHERE" zone_type="SUB">
+        <sphere x="1641.6322" y="978.67078" z="110.00001" r="10.0"/>
+    </zone>
 </zones>
