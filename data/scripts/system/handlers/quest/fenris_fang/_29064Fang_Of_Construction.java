@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _29064Fang_Of_Construction extends QuestHandler
-{
+public class _29064Fang_Of_Construction extends QuestHandler {
+	
 	private final static int questId = 29064;
 	
 	public _29064Fang_Of_Construction() {
@@ -76,30 +75,22 @@ public class _29064Fang_Of_Construction extends QuestHandler
 				case 204075:
 					switch (dialog) {
 						case START_DIALOG: {
-							if (var == 1 && player.getInventory().getItemCountByItemId(182213239) >= 1 &&
-							    player.getInventory().getItemCountByItemId(186000085) >= 1) {
+							if (var == 1) {
 								return sendQuestDialog(env, 2375);
 							}
-						} case CHECK_COLLECTED_ITEMS: {
-							if (player.getInventory().getItemCountByItemId(182213239) >= 1 &&
-							    player.getInventory().getItemCountByItemId(186000085) >= 1) {
-								removeQuestItem(env, 182213239, 1);
-								removeQuestItem(env, 186000085, 1);
-								return defaultCloseDialog(env, 1, 1, true, false);
-							}
+						}						
+						case CHECK_COLLECTED_ITEMS_SIMPLE: {
+					        return checkQuestItemsSimple(env, 1, 2, true, 5, 0, 0);
+						}
+						case SELECT_NO_REWARD: {
+							return sendQuestEndDialog(env);
 						}
 					}
 				break;
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204075) {
-				if (dialog == QuestDialog.USE_OBJECT) {
-					return sendQuestDialog(env, 5);
-				} else {
 					return sendQuestEndDialog(env);
 				}
-			}
-		}
 		return false;
 	}
 }
