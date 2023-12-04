@@ -26,9 +26,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _2989Ceremony_Of_The_Wise extends QuestHandler
-{
+public class _2989Ceremony_Of_The_Wise extends QuestHandler {
+	
 	private final static int questId = 2989;
 	
 	public _2989Ceremony_Of_The_Wise() {
@@ -119,8 +118,7 @@ public class _2989Ceremony_Of_The_Wise extends QuestHandler
 					switch (env.getDialog()) {
 						case START_DIALOG:
 							if (playerClass == PlayerClass.CLERIC ||
-							    playerClass == PlayerClass.CHANTER ||
-							    playerClass == PlayerClass.AETHERTECH)
+							    playerClass == PlayerClass.CHANTER)
 								return sendQuestDialog(env, 2375);
 							else
 								return sendQuestDialog(env, 2461);
@@ -133,7 +131,8 @@ public class _2989Ceremony_Of_The_Wise extends QuestHandler
 				case 801222:
 					switch (env.getDialog()) {
 						case START_DIALOG:
-							if (playerClass == PlayerClass.GUNSLINGER)
+							if (playerClass == PlayerClass.GUNSLINGER ||
+							    playerClass == PlayerClass.AETHERTECH)
 								return sendQuestDialog(env, 2548);
 							else
 								return sendQuestDialog(env, 2568);

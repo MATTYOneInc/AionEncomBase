@@ -26,9 +26,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _1989A_Sages_Teachings extends QuestHandler
-{
+public class _1989A_Sages_Teachings extends QuestHandler {
+	
 	private final static int questId = 1989;
 	
 	public _1989A_Sages_Teachings() {
@@ -120,8 +119,7 @@ public class _1989A_Sages_Teachings extends QuestHandler
 					switch (env.getDialog()) {
 						case START_DIALOG:
 							if (playerClass == PlayerClass.CLERIC ||
-							    playerClass == PlayerClass.CHANTER ||
-								playerClass == PlayerClass.AETHERTECH)
+							    playerClass == PlayerClass.CHANTER)
 								return sendQuestDialog(env, 2375);
 							else
 								return sendQuestDialog(env, 2461);
@@ -134,7 +132,8 @@ public class _1989A_Sages_Teachings extends QuestHandler
 				case 801214:
 					switch (env.getDialog()) {
 						case START_DIALOG:
-							if (playerClass == PlayerClass.GUNSLINGER)
+							if (playerClass == PlayerClass.GUNSLINGER ||
+								playerClass == PlayerClass.AETHERTECH)
 								return sendQuestDialog(env, 2548);
 							else
 								return sendQuestDialog(env, 2568);
