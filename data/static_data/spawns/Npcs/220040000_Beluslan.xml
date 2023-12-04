@@ -2456,12 +2456,10 @@
 		</spawn>
 		<!-- Landsberg [Fenris's Fang]-->
 		<spawn npc_id="798372" respawn_time="295">
-			<temporary_spawn spawn_time="2.*.*" despawn_time="3.*.*"/>
 			<spot x="2804" y="1108" z="374.5" h="57"/>
 		</spawn>
 		<!-- Lonergan [Fenris's Fang]-->
 		<spawn npc_id="798374" respawn_time="295">
-			<temporary_spawn spawn_time="0.*.*" despawn_time="1.*.*"/>
 			<spot x="853" y="2825" z="345.688" h="31"/>
 		</spawn>
 		<!-- Cowardly Recruit -->

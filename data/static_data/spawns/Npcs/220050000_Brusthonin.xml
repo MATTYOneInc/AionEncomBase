@@ -691,12 +691,10 @@
 		</spawn>
 		<!-- Needham [Fenris's Fang]-->
 		<spawn npc_id="798371" respawn_time="295">
-			<temporary_spawn spawn_time="3.*.*" despawn_time="5.*.*"/>
 			<spot x="2819.15" y="1716.67" z="11.7963" h="116"/>
 		</spawn>
 		<!-- Levinard [Fenris's Fang]-->
 		<spawn npc_id="798373" respawn_time="295">
-			<temporary_spawn spawn_time="1.*.*" despawn_time="2.*.*"/>
 			<spot x="969.211" y="2417.28" z="104.448" h="53"/>
 		</spawn>
 		<!-- Corpse In The Stone Coffin -->

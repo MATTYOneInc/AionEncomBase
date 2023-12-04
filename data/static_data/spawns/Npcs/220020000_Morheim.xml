@@ -3283,12 +3283,10 @@
 		</spawn>
 		<!-- Gellner [Fenris's Fang]-->
 		<spawn npc_id="798369" respawn_time="295">
-			<temporary_spawn spawn_time="7.*.*" despawn_time="9.*.*"/>
 			<spot x="2126.96" y="1279.72" z="169.389" h="64"/>
 		</spawn>
 		<!-- Natorp [Fenris's Fang]-->
 		<spawn npc_id="798370" respawn_time="295">
-			<temporary_spawn spawn_time="5.*.*" despawn_time="7.*.*"/>
 			<spot x="1765.54" y="2183.49" z="243.493" h="64"/>
 		</spawn>
 		<!-- Muir -->
