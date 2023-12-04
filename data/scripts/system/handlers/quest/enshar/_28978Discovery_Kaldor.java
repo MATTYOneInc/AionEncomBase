@@ -23,9 +23,8 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _28978Discovery_Kaldor extends QuestHandler
-{
+public class _28978Discovery_Kaldor extends QuestHandler {
+	
 	private static final int questId = 28978;
 	
 	public _28978Discovery_Kaldor() {
@@ -38,9 +37,7 @@ public class _28978Discovery_Kaldor extends QuestHandler
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(802433).addOnQuestStart(questId);
-		qe.registerQuestNpc(805218).addOnTalkEvent(questId);
 		qe.registerQuestNpc(805218).addOnTalkEvent(questId);
 	}
 	

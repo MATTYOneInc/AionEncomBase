@@ -23,9 +23,8 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _28976Kaldor_Fragments extends QuestHandler
-{
+public class _28976Kaldor_Fragments extends QuestHandler {
+	
 	private static final int questId = 28976;
 	
 	public _28976Kaldor_Fragments() {
@@ -39,7 +38,6 @@ public class _28976Kaldor_Fragments extends QuestHandler
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(805218).addOnQuestStart(questId);
 		qe.registerQuestNpc(805218).addOnTalkEvent(questId);
 	}

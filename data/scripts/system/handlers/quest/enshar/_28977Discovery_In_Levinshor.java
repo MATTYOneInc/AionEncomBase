@@ -23,9 +23,8 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _28977Discovery_In_Levinshor extends QuestHandler
-{
+public class _28977Discovery_In_Levinshor extends QuestHandler {
+	
 	private static final int questId = 28977;
 	
 	public _28977Discovery_In_Levinshor() {
@@ -39,9 +38,7 @@ public class _28977Discovery_In_Levinshor extends QuestHandler
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(802353).addOnQuestStart(questId);
-		qe.registerQuestNpc(805218).addOnTalkEvent(questId);
 		qe.registerQuestNpc(805218).addOnTalkEvent(questId);
 	}
 	
