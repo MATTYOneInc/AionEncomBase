@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _19064Templar_Of_Construction extends QuestHandler
-{
+public class _19064Templar_Of_Construction extends QuestHandler {
+	
 	private final static int questId = 19064;
 	
 	public _19064Templar_Of_Construction() {
@@ -81,20 +80,17 @@ public class _19064Templar_Of_Construction extends QuestHandler
 						    }
                         }						
 						case CHECK_COLLECTED_ITEMS_SIMPLE: {
-					        return checkQuestItemsSimple(env, var, var, true, 5, 0, 0);
+					        return checkQuestItemsSimple(env, 1, 2, true, 5, 0, 0);
+						}
+						case SELECT_NO_REWARD: {
+							return sendQuestEndDialog(env);
 						}
 					}
 				break;
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 203701) {
-				if (dialog == QuestDialog.USE_OBJECT) {
-					return sendQuestDialog(env, 5);
-				} else {
 					return sendQuestEndDialog(env);
 				}
-			}
-		}
 		return false;
 	}
 }
