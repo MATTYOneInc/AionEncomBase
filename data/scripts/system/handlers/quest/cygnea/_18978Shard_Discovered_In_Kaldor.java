@@ -23,9 +23,7 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _18978Shard_Discovered_In_Kaldor extends QuestHandler
-{
+public class _18978Shard_Discovered_In_Kaldor extends QuestHandler {
 	private static final int questId = 18978;
 	
 	public _18978Shard_Discovered_In_Kaldor() {
@@ -38,9 +36,7 @@ public class _18978Shard_Discovered_In_Kaldor extends QuestHandler
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(802431).addOnQuestStart(questId);
-		qe.registerQuestNpc(805215).addOnTalkEvent(questId);
 		qe.registerQuestNpc(805215).addOnTalkEvent(questId);
 	}
 	

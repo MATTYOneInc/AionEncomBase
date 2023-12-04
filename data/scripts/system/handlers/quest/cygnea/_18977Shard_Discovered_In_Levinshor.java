@@ -24,8 +24,7 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _18977Shard_Discovered_In_Levinshor extends QuestHandler
-{
+public class _18977Shard_Discovered_In_Levinshor extends QuestHandler {
 	private static final int questId = 18977;
 	
 	public _18977Shard_Discovered_In_Levinshor() {
@@ -39,9 +38,7 @@ public class _18977Shard_Discovered_In_Levinshor extends QuestHandler
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(802350).addOnQuestStart(questId);
-		qe.registerQuestNpc(805215).addOnTalkEvent(questId);
 		qe.registerQuestNpc(805215).addOnTalkEvent(questId);
 	}
 	
