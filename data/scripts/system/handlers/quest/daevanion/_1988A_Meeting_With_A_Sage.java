@@ -25,9 +25,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _1988A_Meeting_With_A_Sage extends QuestHandler
-{
+public class _1988A_Meeting_With_A_Sage extends QuestHandler {
+	
 	private final static int questId = 1988;
 	
 	public _1988A_Meeting_With_A_Sage() {
@@ -62,7 +61,8 @@ public class _1988A_Meeting_With_A_Sage extends QuestHandler
 				else
 					return sendQuestStartDialog(env);
 			}
-		} else if (targetId == 203989) {
+		} 
+		else if (targetId == 203989) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
@@ -74,7 +74,8 @@ public class _1988A_Meeting_With_A_Sage extends QuestHandler
 				} else
 					return sendQuestStartDialog(env);
 			}
-		} else if (targetId == 798018) {
+		} 
+		else if (targetId == 798018) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1693);
@@ -86,7 +87,8 @@ public class _1988A_Meeting_With_A_Sage extends QuestHandler
 				} else
 					return sendQuestStartDialog(env);
 			}
-		} else if (targetId == 203771) {
+		} 
+		else if (targetId == 203771) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2034);
@@ -95,18 +97,11 @@ public class _1988A_Meeting_With_A_Sage extends QuestHandler
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				} else
-					return sendQuestStartDialog(env);
-			} else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
-				if (env.getDialog() == QuestDialog.START_DIALOG)
-					return sendQuestDialog(env, 4080);
-				else if (env.getDialogId() == 1009) {
-					qs.setQuestVar(8);
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				} else
+					return sendQuestEndDialog(env);
+			} 
+			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
 					return sendQuestEndDialog(env);
 			}
 		}
