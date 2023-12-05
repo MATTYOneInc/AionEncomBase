@@ -66,13 +66,9 @@ public class _28978Discovery_Kaldor extends QuestHandler {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
-						if (QuestService.collectItemCheck(env, true)) {
-							qs.setStatus(QuestStatus.REWARD);
-							updateQuestStatus(env);
-							return sendQuestDialog(env, 10000);
-						} else {
-							return sendQuestDialog(env, 10001);
-						}
+					    return checkQuestItems(env, 0, 0, true, 5, 2716);
+					} case SELECT_REWARD: {
+						return sendQuestEndDialog(env);
 					}
 				}
 			}
