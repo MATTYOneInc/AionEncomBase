@@ -54,7 +54,6 @@ public class _14010Terrain_Of_The_Verteron_Fortress extends QuestHandler
             return false;
         } if (qs.getStatus() == QuestStatus.START) {
             if (env.getDialog() == QuestDialog.START_DIALOG) {
-                qs.setQuestVar(1);
                 qs.setStatus(QuestStatus.REWARD);
                 updateQuestStatus(env);
                 return sendQuestDialog(env, 1011);
