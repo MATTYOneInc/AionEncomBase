@@ -95,10 +95,10 @@ public class _3006TheShugoFugitive extends QuestHandler {
 								return sendQuestDialog(env, 1693);
 							}
 						}
-						case SELECT_ACTION_1694: {
+						case STEP_TO_2: {
 							if (qs.getQuestVarById(0) == 1) {
 								playQuestMovie(env, 361);
-								return true;
+								return closeDialogWindow(env);
 							}
 						}
 					}
@@ -128,6 +128,6 @@ public class _3006TheShugoFugitive extends QuestHandler {
 		qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 		qs.setStatus(QuestStatus.REWARD);
 		updateQuestStatus(env);
-		return sendQuestDialog(env, 1353);
+		return true;
 	}
 }

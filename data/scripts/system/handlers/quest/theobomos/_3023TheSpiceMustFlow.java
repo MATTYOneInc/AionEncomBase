@@ -67,7 +67,7 @@ public class _3023TheSpiceMustFlow extends QuestHandler {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return sendQuestEndDialog(env);
 				}
 				else
 					return sendQuestStartDialog(env);
@@ -85,21 +85,6 @@ public class _3023TheSpiceMustFlow extends QuestHandler {
 				}
 				else
 					return sendQuestStartDialog(env);
-			}
-		}
-		else if (targetId == 798138) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START)
-					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
-					qs.setQuestVar(3);
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
-					return sendQuestEndDialog(env);
-				}
-				else
-					return sendQuestEndDialog(env);
 			}
 		}
 		return false;
