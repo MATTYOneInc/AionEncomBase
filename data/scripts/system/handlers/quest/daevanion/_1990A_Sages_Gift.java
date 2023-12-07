@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _1990A_Sages_Gift extends QuestHandler
-{
+public class _1990A_Sages_Gift extends QuestHandler {
+	
 	private final static int questId = 1990;
 	
 	private int A = 0;
@@ -44,7 +43,6 @@ public class _1990A_Sages_Gift extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
-		//int[] mobs = {253696, 253720, 253721, 253682, 253684, 253685};
 		int[] mobs = {211869, 211870, 211046, 211871, 211872};
 		
 		qe.registerQuestNpc(203771).addOnQuestStart(questId);
@@ -127,8 +125,7 @@ public class _1990A_Sages_Gift extends QuestHandler
 			if (var == 2) {
 				switch (env.getTargetId()) {
 					case 211869: //Horned Abex
-					case 211870: //Horned Abex
-					{ 
+					case 211870: { //Horned Abex
 						if (A >= 0 && A < 30) {
 							++A;
 							ALL = C;
@@ -143,8 +140,7 @@ public class _1990A_Sages_Gift extends QuestHandler
 						}
 						break;
 					}
-					case 211046: // Whitehawk Ettin
-					{
+					case 211046: { // Whitehawk Ettin
 						if (B >= 0 && B < 30) {
 							++B;
 							ALL = C;
@@ -160,8 +156,7 @@ public class _1990A_Sages_Gift extends QuestHandler
 						break;
 					}
 					case 211871: // Fanged Worg
-					case 211872: // Fanged Worg
-					{ 
+					case 211872: {  // Fanged Worg
 						if (C >= 0 && C < 30) {
 							++C;
 							ALL = C;

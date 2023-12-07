@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _2990Making_The_Daevanion_Weapon extends QuestHandler
-{
+public class _2990Making_The_Daevanion_Weapon extends QuestHandler {
+	
 	private final static int questId = 2990;
 	
 	private int A = 0;
@@ -44,7 +43,6 @@ public class _2990Making_The_Daevanion_Weapon extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
-		//int[] mobs = {253696, 253720, 253721, 253682, 253684, 253684};
 		int[] mobs = {213011, 213012, 213009, 213010, 213007, 213008};
 		
 		qe.registerQuestNpc(204146).addOnQuestStart(questId);
@@ -127,8 +125,7 @@ public class _2990Making_The_Daevanion_Weapon extends QuestHandler
 			if (var == 2) {
 				switch (env.getTargetId()) {
 					case 213011: // Meek Crestlich
-					case 213012: // Meek Crestlich
-					{ 
+					case 213012: {  // Meek Crestlich
 						if (A >= 0 && A < 30) {
 							++A;
 							ALL = C;
@@ -143,9 +140,8 @@ public class _2990Making_The_Daevanion_Weapon extends QuestHandler
 						}
 						break;
 					}
-					case 213009: // Blue Jaw Monitor
-					case 213010: // Blue Jaw Monitor
-					{
+					case 213007: // Plains Vespine
+					case 213008: {  // Plains Vespine
 						if (B >= 0 && B < 30) {
 							++B;
 							ALL = C;
@@ -160,9 +156,8 @@ public class _2990Making_The_Daevanion_Weapon extends QuestHandler
 						}
 						break;
 					}
-					case 213007: // Plains Vespine
-					case 213008: // Plains Vespine
-					{ 
+					case 213009: // Blue Jaw Monitor
+					case 213010: { // Blue Jaw Monitor
 						if (C >= 0 && C < 30) {
 							++C;
 							ALL = C;
