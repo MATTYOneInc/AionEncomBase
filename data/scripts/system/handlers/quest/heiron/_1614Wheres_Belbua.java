@@ -19,14 +19,13 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1614Wheres_Belbua extends QuestHandler
-{
+public class _1614Wheres_Belbua extends QuestHandler {
+	
 	private final static int questId = 1614;
 	
 	public _1614Wheres_Belbua() {
@@ -66,8 +65,14 @@ public class _1614Wheres_Belbua extends QuestHandler
 							if (qs.getQuestVarById(0) == 0) {
 								return sendQuestDialog(env, 1011);
 							}
+							if (qs.getQuestVarById(0) == 1) {
+								return sendQuestDialog(env, 1352);
+						    }
 						} case STEP_TO_1: {
-							return defaultStartFollowEvent(env, (Npc) env.getVisibleObject(), ZoneName.get("LF3_HIDDENNPC_Q1614_204648_8_210040000"), 0, 1);
+							return defaultCloseDialog(env, 0, 1);
+						}
+						case STEP_TO_2: {
+							return defaultStartFollowEvent(env, (Npc) env.getVisibleObject(), 376f, 529f, 133f, 1, 2);
 						}
 					}
 				}
@@ -90,8 +95,8 @@ public class _1614Wheres_Belbua extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			if (var == 1) {
-				changeQuestStep(env, 1, 0, false);
+			if (var == 2) {
+				changeQuestStep(env, 2, 1, false);
 			}
 		}
 		return false;
@@ -99,11 +104,11 @@ public class _1614Wheres_Belbua extends QuestHandler
 	
 	@Override
 	public boolean onNpcReachTargetEvent(QuestEnv env) {
-		return defaultFollowEndEvent(env, 1, 1, true);
+		return defaultFollowEndEvent(env, 2, 2, true);
 	}
 	
 	@Override
 	public boolean onNpcLostTargetEvent(QuestEnv env) {
-		return defaultFollowEndEvent(env, 1, 0, false);
+		return defaultFollowEndEvent(env, 2, 1, false);
 	}
 }

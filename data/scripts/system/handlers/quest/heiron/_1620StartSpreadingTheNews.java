@@ -78,11 +78,11 @@ public class _1620StartSpreadingTheNews extends QuestHandler {
 		else if (targetId == 730001) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
-					return sendQuestDialog(env, 1352);
-				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
+					return sendQuestDialog(env, 1693);
+				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 1693));
+					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return true;
 				}
 				else
