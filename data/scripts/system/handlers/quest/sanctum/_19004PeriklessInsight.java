@@ -52,7 +52,6 @@ public class _19004PeriklessInsight extends QuestHandler {
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203757) { // Perikles
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -98,7 +97,7 @@ public class _19004PeriklessInsight extends QuestHandler {
 					}
 					case SELECT_REWARD: {
 						changeQuestStep(env, 2, 2, true); // reward
-						return sendQuestDialog(env, 5);
+						return sendQuestEndDialog(env);
 					}
 				}
 			}

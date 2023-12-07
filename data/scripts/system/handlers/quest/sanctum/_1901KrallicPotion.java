@@ -57,20 +57,17 @@ public class _1901KrallicPotion extends QuestHandler {
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (targetId == 203830)// Marmeia
-		{
+		if (targetId == 203830) { 
 			if (env.getDialog() == QuestDialog.START_DIALOG)
 				return sendQuestDialog(env, 1011);
 			else
 				return sendQuestStartDialog(env);
 		}
 		else {
-			if (targetId == 203864) {
+			if (targetId == 203864) { // Marmeia 
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
-					qs.setQuestVar(7);
+				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE && qs.getStatus() != QuestStatus.NONE) {
 					updateQuestStatus(env);
 					qs.setStatus(QuestStatus.REWARD);
 					return sendQuestEndDialog(env);

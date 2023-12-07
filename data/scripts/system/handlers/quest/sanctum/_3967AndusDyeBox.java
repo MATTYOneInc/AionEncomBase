@@ -48,32 +48,21 @@ public class _3967AndusDyeBox extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = 0;
-
-		QuestState qs2 = player.getQuestStateList().getQuestState(3966);
-		if (qs2 == null || qs2.getStatus() != QuestStatus.COMPLETE)
-			return false;
-
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
-		if (targetId == 798391)// Andu
-		{
+		if (targetId == 798391) { // Andu
 			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-				if (env.getDialog() == QuestDialog.USE_OBJECT)
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
-
-		if (targetId == 798309)// Arenzes
-		{
+		if (targetId == 798309) { // Arenzes
 			if (qs.getStatus() == QuestStatus.START && var == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
@@ -90,9 +79,8 @@ public class _3967AndusDyeBox extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (targetId == 798391 && qs.getStatus() == QuestStatus.REWARD)// Andu
-		{
-			if (env.getDialog() == QuestDialog.USE_OBJECT)
+		else if (targetId == 798391 && qs.getStatus() == QuestStatus.REWARD) { // Andu
+			if (env.getDialog() == QuestDialog.START_DIALOG)
 				return sendQuestDialog(env, 2375);
 			else if (env.getDialogId() == 1009) {
 				removeQuestItem(env, 182206122, 1);

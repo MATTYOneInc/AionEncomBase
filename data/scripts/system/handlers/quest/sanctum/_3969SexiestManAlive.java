@@ -48,17 +48,13 @@ public class _3969SexiestManAlive extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = 0;
-
 		QuestState qs2 = player.getQuestStateList().getQuestState(3968);
 		if (qs2 == null || qs2.getStatus() != QuestStatus.COMPLETE)
 			return false;
-
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
-		if (targetId == 798390)// Palentine
-		{
+		if (targetId == 798390) { // Palentine
 			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 				if (env.getDialog() == QuestDialog.USE_OBJECT)
 					return sendQuestDialog(env, 1011);
@@ -72,14 +68,10 @@ public class _3969SexiestManAlive extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
-
-		if (targetId == 798391)// Andu
-		{
+		if (targetId == 798391)	{ // Andu
 			if (qs.getStatus() == QuestStatus.START && var == 0) {
 				if (env.getDialog() == QuestDialog.USE_OBJECT)
 					return sendQuestDialog(env, 1352);
@@ -97,8 +89,7 @@ public class _3969SexiestManAlive extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (targetId == 798390)// Palentine
-		{
+		else if (targetId == 798390) { // Palentine
 			if (qs.getStatus() == QuestStatus.REWARD) {
 				if (env.getDialog() == QuestDialog.USE_OBJECT)
 					return sendQuestDialog(env, 2375);

@@ -27,8 +27,7 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3970Kinah_Digging_Daughter extends QuestHandler
-{
+public class _3970Kinah_Digging_Daughter extends QuestHandler {
 	private final static int questId = 3970;
 	
 	public _3970Kinah_Digging_Daughter() {
@@ -38,7 +37,7 @@ public class _3970Kinah_Digging_Daughter extends QuestHandler
 	public void register() {
 		qe.registerQuestNpc(203893).addOnQuestStart(questId);
 		qe.registerQuestNpc(798072).addOnTalkEvent(questId);
-		qe.registerQuestNpc(279020).addOnTalkEvent(questId);
+		qe.registerQuestNpc(798137).addOnTalkEvent(questId);
 		qe.registerQuestNpc(798053).addOnTalkEvent(questId);
 		qe.registerQuestNpc(798386).addOnTalkEvent(questId);
 	}
@@ -68,7 +67,7 @@ public class _3970Kinah_Digging_Daughter extends QuestHandler
 					giveQuestItem(env, 182206113, 1);
 					return defaultCloseDialog(env, 0, 1);
 				}
-			} if (targetId == 279020) {
+			} if (targetId == 798137) {
 				if (dialog == QuestDialog.START_DIALOG) {
 					if(qs.getQuestVarById(0) == 1) {
 						return sendQuestDialog(env, 1693);
