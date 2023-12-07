@@ -137,6 +137,8 @@
 		<spawn npc_id="700169" respawn_time="295">
 			<spot x="571.08301" y="158.4556" z="308.31958" entity_id="462"/>
 			<spot x="572.53522" y="150.94637" z="308.7049" entity_id="623"/>
+			<spot x="564.152" y="149.734" z="306.263" entity_id="536"/>
+			<spot x="563.197" y="158.246" z="306.091" entity_id="537"/>
 		</spawn>
 		<!-- Fertile Soil -->
 		<spawn npc_id="700164" respawn_time="295">
@@ -187,11 +189,6 @@
 			<spot x="2163" y="943" z="421.31"/>
 			<spot x="2062" y="976" z="401.62" h="59"/>
 			<spot x="2026" y="1940" z="362.65" h="50"/>
-		</spawn>
-		<!-- Wriggling Klaw Spawner (Object Normal lvl:3) -->
-		<spawn npc_id="700245" respawn_time="295">
-			<spot x="564.152" y="149.734" z="306.263" entity_id="536"/>
-			<spot x="563.197" y="158.246" z="306.091" entity_id="537"/>
 		</spawn>
 		<!-- Secret Beacon Mound (Object Normal lvl:3) -->
 		<spawn npc_id="700267" respawn_time="295">

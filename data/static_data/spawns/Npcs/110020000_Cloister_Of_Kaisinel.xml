@@ -19,6 +19,10 @@
 		<spawn npc_id="730266" respawn_time="295">
 			<spot x="2154.17" y="1566.9" z="1204.87" entity_id="17"/>
 		</spawn>
+		<!-- Mysteris | Hilarus -->
+		<spawn npc_id="798500" respawn_time="295">
+			<spot x="2177.9" y="1588.8" z="1206.1138" h="70"/>
+		</spawn>
 		<!-- Cantor
 		<Stigma Researcher> -->
 		<spawn npc_id="206353" respawn_time="295">
