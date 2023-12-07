@@ -15,19 +15,16 @@ import com.aionemu.gameserver.world.zone.ZoneName;
  * @author Ritsu
  * 
  */
-public class _1345BearerOfBadNews extends QuestHandler
-{
+public class _1345BearerOfBadNews extends QuestHandler {
 
-	private final static int	questId	= 1345;
+	private final static int questId = 1345;
 
-	public _1345BearerOfBadNews()
-	{
+	public _1345BearerOfBadNews() {
 		super(questId);
 	}
 
 	@Override
-	public void register()
-	{
+	public void register() {
 		qe.registerQuestNpc(204006).addOnQuestStart(questId); //Demokritos
 		qe.registerQuestNpc(204006).addOnTalkEvent(questId);
 		qe.registerQuestNpc(203765).addOnTalkEvent(questId); //Kreon
@@ -35,8 +32,7 @@ public class _1345BearerOfBadNews extends QuestHandler
 	}
 
 	@Override
-	public HandlerResult onItemUseEvent(final QuestEnv env, Item item) 
-	{
+	public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START){
@@ -47,22 +43,20 @@ public class _1345BearerOfBadNews extends QuestHandler
 	}
 
 	@Override
-	public boolean onDialogEvent(QuestEnv env)
-	{
+	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = 0;
 		QuestDialog dialog = env.getDialog();
 		if(env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		
 		if(qs == null || qs.getStatus() == QuestStatus.NONE){
 			if (targetId == 204006){//Demokritos
 				if (dialog == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
-				else if (dialog == QuestDialog.ACCEPT_QUEST){
-					if (!giveQuestItem(env, 182201320, 1))
-						return true;
+				else if (dialog == QuestDialog.ACCEPT_QUEST) {
+					if (player.getInventory().getItemCountByItemId(186000015) == 1)
+					giveQuestItem(env, 182201320, 1);
 					return sendQuestStartDialog(env);
 				}
 				else
@@ -75,6 +69,7 @@ public class _1345BearerOfBadNews extends QuestHandler
 				switch (dialog){
 					case START_DIALOG:
 						if (var == 0)
+							removeQuestItem(env, 186000015, 1);
 							return sendQuestDialog(env, 1352);
 					case STEP_TO_1:
 						if (var == 0)

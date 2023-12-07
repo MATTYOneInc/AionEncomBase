@@ -30,7 +30,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /**
  * @author Balthazar
  */
-
 public class _1482ATeleportationAdventure extends QuestHandler {
 
 	private final static int questId = 1482;
@@ -50,11 +49,9 @@ public class _1482ATeleportationAdventure extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203919) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -66,7 +63,6 @@ public class _1482ATeleportationAdventure extends QuestHandler {
 		}
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 203337: {
@@ -81,15 +77,12 @@ public class _1482ATeleportationAdventure extends QuestHandler {
 									if (itemCount1 >= 3) {
 										qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 										updateQuestStatus(env);
-										return sendQuestDialog(env, 1352);
+										return sendQuestDialog(env, 1693);
 									}
 									else
 										return sendQuestDialog(env, 10001);
 								}
 								case 2: {
-									return sendQuestDialog(env, 1693);
-								}
-								case 3: {
 									return sendQuestDialog(env, 10002);
 								}
 							}
@@ -105,6 +98,7 @@ public class _1482ATeleportationAdventure extends QuestHandler {
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							TeleportService2.teleportTo(player, 220020000, 1, 638, 2337, 425, (byte) 20);
+							removeQuestItem(env, 182201399, 3);
 							return true;
 						}
 						default:

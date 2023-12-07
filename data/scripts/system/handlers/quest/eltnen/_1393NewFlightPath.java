@@ -16,12 +16,16 @@
  */
 package quest.eltnen;
 
+import com.aionemu.gameserver.model.EmotionType;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.model.gameobjects.state.CreatureState;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /**
@@ -47,11 +51,9 @@ public class _1393NewFlightPath extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204041) {
 				switch (env.getDialog()) {
@@ -65,7 +67,22 @@ public class _1393NewFlightPath extends QuestHandler {
 		}
 		if (qs == null)
 			return false;
-
+		if (qs.getStatus() == QuestStatus.START) {
+			if (targetId == 204041) {
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 1003);
+					}
+					case STEP_TO_1: {
+						player.setState(CreatureState.FLIGHT_TELEPORT);
+						player.unsetState(CreatureState.ACTIVE);
+						player.setFlightTeleportId(17001);
+						PacketSendUtility.sendPacket(player, new SM_EMOTION(player, EmotionType.START_FLYTELEPORT, 17001, 0));
+						return closeDialogWindow(env);
+					}
+				}
+			}
+		}
 		if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204041) {
 				switch (env.getDialog()) {
@@ -76,7 +93,7 @@ public class _1393NewFlightPath extends QuestHandler {
 						qs.setQuestVar(1);
 						qs.setStatus(QuestStatus.COMPLETE);
 						updateQuestStatus(env);
-						return true;
+						return sendQuestEndDialog(env);
 					}
 					default:
 						return sendQuestEndDialog(env);
@@ -94,10 +111,8 @@ public class _1393NewFlightPath extends QuestHandler {
 		if (player == null)
 			return false;
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null)
 			return false;
-
 		if (qs.getQuestVarById(0) == 0) {
 			qs.setStatus(QuestStatus.REWARD);
 			updateQuestStatus(env);

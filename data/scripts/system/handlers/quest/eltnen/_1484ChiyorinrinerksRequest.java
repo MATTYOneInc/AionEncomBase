@@ -79,11 +79,11 @@ public class _1484ChiyorinrinerksRequest extends QuestHandler {
 		else if (targetId == 204048) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
-					return sendQuestDialog(env, 1352);
-				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
+					return sendQuestDialog(env, 1693);
+				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 1693));
+					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return true;
 				}
 				else
@@ -93,11 +93,11 @@ public class _1484ChiyorinrinerksRequest extends QuestHandler {
 		else if (targetId == 204011) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
-					return sendQuestDialog(env, 1352);
-				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
+					return sendQuestDialog(env, 2034);
+				else if (env.getDialog() == QuestDialog.STEP_TO_3) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 1693));
+					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return true;
 				}
 				else
