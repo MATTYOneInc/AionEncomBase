@@ -28630,6 +28630,13 @@
             <need_abyss_point count="2210000"/>
         </upgrade_result_item>
     </item_upgrade>
+    <item_upgrade upgrade_base_item="115002329">
+        <upgrade_result_item item_id="115002343"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <item_upgrade upgrade_base_item="100002315">
         <upgrade_result_item item_id="100002321" check_enchant_count="10">
             <upgrade_materials>
@@ -29994,6 +30001,15 @@
         <upgrade_result_item item_id="110102190" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+    <!-- world_cash_rb_torso_s8_80a -->
+    <item_upgrade upgrade_base_item="110102315">
+    <!-- world_cash_rb_torso_s8_80a -->
+        <upgrade_result_item item_id="110102321"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <!-- event_lt_torso_n_m5_idab1_ere_80a -->
     <item_upgrade upgrade_base_item="110302303">
         <!-- lt_torso_n_m5_idab1_ere_80a -->
@@ -30004,6 +30020,15 @@
     <item_upgrade upgrade_base_item="110302304">
         <!-- lt_torso_n_m5_idab1_ere_80b -->
         <upgrade_result_item item_id="110302179" check_enchant_count="15">
+        </upgrade_result_item>
+    </item_upgrade>
+    <!-- world_cash_lt_torso_s8_80a -->
+    <item_upgrade upgrade_base_item="110302305">
+    <!-- world_cash_lt_torso_s8_80a -->
+        <upgrade_result_item item_id="110302309"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <!-- event_ch_torso_n_m5_idab1_ere_80b -->
@@ -30024,6 +30049,16 @@
         <upgrade_result_item item_id="110551558" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+    <!-- world_cash_ch_torso_s8_80a -->
+    <item_upgrade upgrade_base_item="110551698">
+    <!-- world_cash_ch_torso_s8_80a -->
+        <upgrade_result_item item_id="110551703"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+
     <!-- event_pl_torso_n_m5_idab1_ere_80a -->
     <item_upgrade upgrade_base_item="110602055">
         <!-- pl_torso_n_m5_idab1_ere_80a -->
@@ -30034,6 +30069,15 @@
     <item_upgrade upgrade_base_item="110602056">
         <!-- pl_torso_n_m5_idab1_ere_80b -->
         <upgrade_result_item item_id="110601948" check_enchant_count="15">
+        </upgrade_result_item>
+    </item_upgrade>
+    <!-- world_cash_pl_torso_s8_80a -->
+    <item_upgrade upgrade_base_item="110602057">
+    <!-- world_cash_pl_torso_s8_80a -->
+        <upgrade_result_item item_id="110602062"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <!-- event_rb_glove_n_m5_idab1_ere_80a -->
@@ -30048,6 +30092,15 @@
         <upgrade_result_item item_id="111101995" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+    <!-- world_cash_rb_glove_s8_80a -->
+    <item_upgrade upgrade_base_item="111102119">
+    <!-- world_cash_rb_glove_s8_80a -->
+        <upgrade_result_item item_id="111102123"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <!-- event_lt_glove_n_m5_idab1_ere_80a -->
     <item_upgrade upgrade_base_item="111302256">
         <!-- lt_glove_n_m5_idab1_ere_80a -->
@@ -30058,6 +30111,15 @@
     <item_upgrade upgrade_base_item="111302257">
         <!-- lt_glove_n_m5_idab1_ere_80b -->
         <upgrade_result_item item_id="111302132" check_enchant_count="15">
+        </upgrade_result_item>
+    </item_upgrade>
+        <!-- world_cash_lt_glove_s8_80a -->
+    <item_upgrade upgrade_base_item="111302258">
+        <!-- world_cash_lt_glove_s8_80a -->
+        <upgrade_result_item item_id="111302262"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <!-- event_ch_glove_n_m5_idab1_ere_80b -->
@@ -30078,6 +30140,15 @@
         <upgrade_result_item item_id="111502129" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+    <!-- world_cash_ch_glove_s8_80a -->
+    <item_upgrade upgrade_base_item="111502269">
+    <!-- world_cash_ch_glove_s8_80a -->
+        <upgrade_result_item item_id="111502274"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <!-- event_pl_glove_n_m5_idab1_ere_80a -->
     <item_upgrade upgrade_base_item="111602025">
         <!-- pl_glove_n_m5_idab1_ere_80a -->
@@ -30088,6 +30159,15 @@
     <item_upgrade upgrade_base_item="111602026">
         <!-- pl_glove_n_m5_idab1_ere_80b -->
         <upgrade_result_item item_id="111601918" check_enchant_count="15">
+        </upgrade_result_item>
+    </item_upgrade>
+    <!-- world_cash_pl_glove_s8_80a -->
+    <item_upgrade upgrade_base_item="111602027">
+    <!-- world_cash_pl_glove_s8_80a -->
+        <upgrade_result_item item_id="111602032"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <!-- event_rb_shoulder_n_m5_idab1_ere_80a -->
@@ -30102,6 +30182,16 @@
         <upgrade_result_item item_id="112101933" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+        <!-- world_cash_rb_shoulder_s8_80a -->
+    <item_upgrade upgrade_base_item="112102057">
+        <!-- world_cash_rb_shoulder_s8_80a -->
+        <upgrade_result_item item_id="112102061"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+
     <!-- event_lt_shoulder_n_m5_idab1_ere_80a -->
     <item_upgrade upgrade_base_item="112302185">
         <!-- lt_shoulder_n_m5_idab1_ere_80a -->
@@ -30114,6 +30204,16 @@
         <upgrade_result_item item_id="112302061" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+    <!-- world_cash_lt_shoulder_s8_80a -->
+    <item_upgrade upgrade_base_item="112302187">
+    <!-- world_cash_lt_shoulder_s8_80a -->
+        <upgrade_result_item item_id="112302191"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+
     <!-- event_ch_shoulder_n_m5_idab1_ere_80b -->
     <item_upgrade upgrade_base_item="112502200">
         <!-- ch_shoulder_n_m5_idab1_ere_80b -->
@@ -30130,6 +30230,24 @@
     <item_upgrade upgrade_base_item="112502202">
         <!-- ch_shoulder_n_m5_idab1_ere_80c -->
         <upgrade_result_item item_id="112502063" check_enchant_count="15">
+        </upgrade_result_item>
+    </item_upgrade>
+    <!-- world_cash_ch_shoulder_s8_80a -->
+    <item_upgrade upgrade_base_item="112502203">
+    <!-- world_cash_ch_shoulder_s8_80a -->
+        <upgrade_result_item item_id="112502208"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <!-- world_cash_pl_shoulder_s8_80a -->
+    <item_upgrade upgrade_base_item="112602007">
+    <!-- world_cash_pl_shoulder_s8_80a -->
+        <upgrade_result_item item_id="112602014"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <!-- event_pl_shoulder_n_m5_idab1_ere_80a -->
@@ -30156,6 +30274,15 @@
         <upgrade_result_item item_id="113101996" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+        <!-- world_cash_rb_pants_s8_80a -->
+    <item_upgrade upgrade_base_item="113102115">
+        <!-- world_cash_rb_pants_s8_80a -->
+        <upgrade_result_item item_id="113102118"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <!-- event_lt_pants_n_m5_idab1_ere_80a -->
     <item_upgrade upgrade_base_item="113302268">
         <!-- lt_pants_n_m5_idab1_ere_80a -->
@@ -30166,6 +30293,15 @@
     <item_upgrade upgrade_base_item="113302269">
         <!-- lt_pants_n_m5_idab1_ere_80b -->
         <upgrade_result_item item_id="113302149" check_enchant_count="15">
+        </upgrade_result_item>
+    </item_upgrade>
+    <!-- world_cash_lt_pants_s8_80a -->
+    <item_upgrade upgrade_base_item="113302270">
+    <!-- world_cash_lt_pants_s8_80a -->
+        <upgrade_result_item item_id="113302273"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <!-- event_ch_pants_n_m5_idab1_ere_80b -->
@@ -30186,6 +30322,15 @@
         <upgrade_result_item item_id="113502137" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+        <!-- world_cash_ch_pants_s8_80a -->
+    <item_upgrade upgrade_base_item="113502274">
+        <!-- world_cash_ch_pants_s8_80a -->
+        <upgrade_result_item item_id="113502278"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <!-- event_pl_pants_n_m5_idab1_ere_80a -->
     <item_upgrade upgrade_base_item="113601998">
         <!-- pl_pants_n_m5_idab1_ere_80a -->
@@ -30196,6 +30341,15 @@
     <item_upgrade upgrade_base_item="113601999">
         <!-- pl_pants_n_m5_idab1_ere_80b -->
         <upgrade_result_item item_id="113601895" check_enchant_count="15">
+        </upgrade_result_item>
+    </item_upgrade>
+    <!-- world_cash_pl_pants_s8_80a -->
+    <item_upgrade upgrade_base_item="113602000">
+    <!-- world_cash_pl_pants_s8_80a -->
+        <upgrade_result_item item_id="113602003"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <!-- event_rb_shoes_n_m5_idab1_ere_80a -->
@@ -30210,6 +30364,16 @@
         <upgrade_result_item item_id="114102036" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+    <!-- world_cash_rb_shoes_s8_80a -->
+    <item_upgrade upgrade_base_item="114102160">
+    <!-- world_cash_rb_shoes_s8_80a -->
+        <upgrade_result_item item_id="114102164"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+
     <!-- event_lt_shoes_n_m5_idab1_ere_80a -->
     <item_upgrade upgrade_base_item="114302318">
         <!-- lt_shoes_n_m5_idab1_ere_80a -->
@@ -30222,6 +30386,16 @@
         <upgrade_result_item item_id="114302194" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+    <!-- world_cash_lt_shoes_s8_80a -->
+    <item_upgrade upgrade_base_item="114302320">
+    <!-- world_cash_lt_shoes_s8_80a -->
+        <upgrade_result_item item_id="114302324"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+
     <!-- event_ch_shoes_n_m5_idab1_ere_80b -->
     <item_upgrade upgrade_base_item="114502284">
         <!-- ch_shoes_n_m5_idab1_ere_80b -->
@@ -30240,6 +30414,15 @@
         <upgrade_result_item item_id="114502147" check_enchant_count="15">
         </upgrade_result_item>
     </item_upgrade>
+        <!-- world_cash_ch_shoes_s8_80a -->
+    <item_upgrade upgrade_base_item="114502287">
+        <!-- world_cash_ch_shoes_s8_80a -->
+        <upgrade_result_item item_id="114502292"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <!-- event_pl_shoes_n_m5_idab1_ere_80a -->
     <item_upgrade upgrade_base_item="114602008">
         <!-- pl_shoes_n_m5_idab1_ere_80a -->
@@ -30250,6 +30433,15 @@
     <item_upgrade upgrade_base_item="114602009">
         <!-- pl_shoes_n_m5_idab1_ere_80b -->
         <upgrade_result_item item_id="114601901" check_enchant_count="15">
+        </upgrade_result_item>
+    </item_upgrade>
+        <!-- world_cash_pl_shoes_s8_80a -->
+    <item_upgrade upgrade_base_item="114602010">
+        <!-- world_cash_pl_shoes_s8_80a -->
+        <upgrade_result_item item_id="114602015"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="50"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <!-- sword_n_m3_ideternity02_new_75a -->
