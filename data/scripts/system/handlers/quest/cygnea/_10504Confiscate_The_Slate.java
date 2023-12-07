@@ -89,15 +89,12 @@ public class _10504Confiscate_The_Slate extends QuestHandler
 						giveQuestItem(env, 182215606, 1);
                         changeQuestStep(env, 0, 1, false);
 						return closeDialogWindow(env);
-					} case CHECK_COLLECTED_ITEMS: {
-						if (QuestService.collectItemCheck(env, true)) {
-							removeQuestItem(env, 182215607, 1);
-							removeQuestItem(env, 182215606, 1);
-							changeQuestStep(env, 3, 4, true);
-							return sendQuestDialog(env, 10000);
-						} else {
-							return sendQuestDialog(env, 10001);
-						}
+                    } case CHECK_COLLECTED_ITEMS: {
+					    return checkQuestItems(env, 3, 4, true, 5, 2716);
+                    } case SELECT_REWARD: {
+                        qs.setStatus(QuestStatus.REWARD);
+						updateQuestStatus(env);
+						return sendQuestEndDialog(env);
 					}
                 }
             } if (targetId == 702671) { //Cracked Oath Slate.
@@ -110,15 +107,9 @@ public class _10504Confiscate_The_Slate extends QuestHandler
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 804706) {
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 10002);
-				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
-					return sendQuestDialog(env, 5);
-				} else {
 					return sendQuestEndDialog(env);
 				}
 			}
-		}
         return false;
     }
 	
