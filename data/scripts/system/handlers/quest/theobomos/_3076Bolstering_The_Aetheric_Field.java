@@ -109,7 +109,7 @@ public class _3076Bolstering_The_Aetheric_Field extends QuestHandler {
 						}
 					} case SELECT_REWARD: {
                         changeQuestStep(env, 2, 3, true);
-						return closeDialogWindow(env);
+						return sendQuestEndDialog(env);
 					}
 				}
 			}
