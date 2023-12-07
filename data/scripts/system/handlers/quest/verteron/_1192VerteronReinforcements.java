@@ -108,7 +108,7 @@ public class _1192VerteronReinforcements extends QuestHandler {
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+							return sendQuestEndDialog(env);
 						}
 						default: {
 							return sendQuestEndDialog(env);
@@ -119,9 +119,6 @@ public class _1192VerteronReinforcements extends QuestHandler {
 		}
 		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203098) {
-				if (env.getDialogId() == 1009)
-					return sendQuestDialog(env, 5);
-				else
 					return sendQuestEndDialog(env);
 			}
 		}
