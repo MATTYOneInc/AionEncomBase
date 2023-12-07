@@ -26,9 +26,8 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _10501Research_The_Ruins extends QuestHandler
-{
+public class _10501Research_The_Ruins extends QuestHandler {
+	
     public static final int questId = 10501;
 	
     public _10501Research_The_Ruins() {
@@ -89,18 +88,12 @@ public class _10501Research_The_Ruins extends QuestHandler
 						giveQuestItem(env, 182215598, 1);
                         changeQuestStep(env, 0, 1, false);
 						return closeDialogWindow(env);
-					} case CHECK_COLLECTED_ITEMS: {
-                        if (QuestService.collectItemCheck(env, true)) {
-                            qs.setStatus(QuestStatus.REWARD);
-                            updateQuestStatus(env);
-                            return sendQuestDialog(env, 10000);
-                        } else {
-                            return sendQuestDialog(env, 10001);
-						}
-                    } case SET_REWARD: {
+                    } case CHECK_COLLECTED_ITEMS: {
+					    return checkQuestItems(env, 6, 7, true, 5, 2716);
+                    } case SELECT_REWARD: {
                         qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
-						return closeDialogWindow(env);
+						return sendQuestEndDialog(env);
 					}
                 }
             } if (targetId == 731536) { //Collapsed Ruins.
@@ -138,15 +131,9 @@ public class _10501Research_The_Ruins extends QuestHandler
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 804700) {
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 10002);
-				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
-					return sendQuestDialog(env, 5);
-				} else {
 					return sendQuestEndDialog(env);
 				}
 			}
-		}
         return false;
     }
 	
