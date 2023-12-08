@@ -28,7 +28,7 @@
 	<report_to id="14241" start_npc_ids="203996" end_npc_ids="203900"/>
 	<!-- Kralls Bugging Kralls (Elyos Only) -->
 	<monster_hunt id="14242" start_npc_ids="204004">
-		<monster var="0" npc_ids="235466 235467 235464 235465 235469" end_var="9"/>
+		<monster var="0" npc_ids="235466 235467 235464 235465 235468 235469" end_var="9"/>
 	</monster_hunt>
 	<!-- Golden Son, Gone (Elyos Only) -->
 	<report_to id="14243" start_npc_ids="203965" end_npc_ids="790004"/>
