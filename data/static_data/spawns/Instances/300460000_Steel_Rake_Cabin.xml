@@ -702,7 +702,7 @@
 		    <spot x="528.69678" y="513.43597" z="1023.20215" h="67"/>
 	    </spawn>
 	    <!-- Tamer Anikiki (Npc Normal lvl:42) -->
-        <spawn npc_id="219037">
+        <spawn npc_id="219040">
 		    <spot x="611.6527" y="544.30304" z="937.1711" h="30"/>
 	    </spawn>
 	    <!-- Treasure Box (Object Normal lvl:3) -->
