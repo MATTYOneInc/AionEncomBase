@@ -39,14 +39,13 @@ public class _1548KlawControl extends QuestHandler {
 	public void register() {
 		qe.registerQuestNpc(204583).addOnQuestStart(questId); // Senea
 		qe.registerQuestNpc(204583).addOnTalkEvent(questId); // Senea
-		qe.registerQuestNpc(700169).addOnKillEvent(questId); // Klaw Spawner
+		qe.registerQuestNpc(700209).addOnKillEvent(questId); // Klaw Spawner
 	}
 
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = 0;
-
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
@@ -70,13 +69,12 @@ public class _1548KlawControl extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() != QuestStatus.START)
 			return false;
-
 		int var = qs.getQuestVarById(0);
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		switch (targetId) {
-			case 700169:
+			case 700209:
 				if (var >= 0 && var < 4) {
 					qs.setQuestVarById(0, var + 1);
 					updateQuestStatus(env);
@@ -84,7 +82,6 @@ public class _1548KlawControl extends QuestHandler {
 				}
 				else if (var == 4) {
 					qs.setQuestVarById(0, var + 1);
-					updateQuestStatus(env);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return true;

@@ -1025,7 +1025,7 @@
 		</spawn>
 		<!-- Litonos -->
 		<spawn npc_id="204616" respawn_time="295">
-			<temporary_spawn spawn_time="21.*.*" despawn_time="4.*.*"/>
+		    <temporary_spawn spawn_time="21.*.*" despawn_time="4.*.*"/>
 			<spot x="1120.32" y="1725.46" z="107.934" h="2"/>
 		</spawn>
 		<!-- Kishar Greatpriest -->
@@ -7941,12 +7941,12 @@
 		    <spot h="2" z="118.53475" y="621.7562" x="1661.8857"/>
 		    <spot h="98" z="116.7525" y="631.6138" x="1688.9728"/>
 		    <spot h="81" z="118.88005" y="640.16473" x="1707.9192"/>
-		    <spot h="77" z="123.07616" y="647.9952" x="1656.7719"/>
+		    <spot h="77" z="120.014046" y="647.9952" x="1656.7719"/>
 		    <spot h="35" z="119.37988" y="680.8564" x="1651.2218"/>
 		    <spot h="33" z="124.144226" y="641.00745" x="1616.6849"/>
 		    <spot h="84" z="123.90787" y="615.3977" x="1604.5325"/>
 		    <spot h="44" z="118.5" y="656.5644" x="1610.9012"/>
-		    <spot h="101" z="122.95043" y="687.9629" x="1587.3925"/>
+		    <spot h="101" z="119.76181" y="687.9629" x="1587.3925"/>
 		    <spot h="44" z="138.75" y="661.76715" x="1757.9934"/>
 		    <spot h="42" z="138.99704" y="653.9587" x="1746.1301"/>
 		    <spot h="46" z="138.46698" y="671.1356" x="1737.3679"/>
@@ -9331,16 +9331,9 @@
 		</spawn>
 		<!-- Ancient Shield (Object Normal lvl:3) -->
 		<spawn npc_id="700202" respawn_time="295">
-			<spot x="1420.47" y="2511.46" z="129.741" entity_id="758"/>
-			<spot x="1433.85" y="2350.98" z="135.75" entity_id="784"/>
 			<spot x="1388.15" y="2313.73" z="139.259" entity_id="819"/>
 			<spot x="1466.17" y="2358.48" z="125.981" entity_id="790"/>
 			<spot x="1639.99" y="2454.09" z="118.5" entity_id="788"/>
-			<spot x="1527.95" y="2393.7" z="121.5" entity_id="786"/>
-			<spot x="1651.59" y="2423.8" z="118.664" entity_id="780"/>
-			<spot x="1611.08" y="2439.25" z="120.614" entity_id="778"/>
-			<spot x="1556.34" y="2379.28" z="126.541" entity_id="785"/>
-			<spot x="1424.51" y="2428.75" z="135.875" entity_id="577"/>
 			<spot x="1375.72" y="2508.29" z="126.581" entity_id="787"/>
 			<spot x="1469.62" y="2382.64" z="122.899" entity_id="781"/>
 			<spot x="1565.44" y="2319.09" z="136.288" entity_id="779"/>
@@ -9459,7 +9452,7 @@
 		<spawn npc_id="700239" respawn_time="295">
 			<spot x="181.92534" y="2703.9514" z="143.57455" entity_id="1144"/>
 		</spawn>
-		<!-- Wriggling Klaw Spawner (Object Normal lvl:3) -->
+		<!-- Wriggling Klaw Spawner (Object Normal lvl:3)
 		<spawn npc_id="700245" respawn_time="295">
 			<spot x="1141.49" y="266.931" z="111.662" entity_id="578"/>
 			<spot x="1173.78" y="279.268" z="117.262" entity_id="588"/>
@@ -9480,7 +9473,7 @@
 			<spot x="1104.31" y="285.214" z="105.954" entity_id="287"/>
 			<spot x="1012.33" y="333.081" z="104.395" entity_id="586"/>
 			<spot x="1114.89" y="331.12" z="112.34" entity_id="592"/>
-		</spawn>
+		</spawn> -->
 		<!-- Wriggling Klaw Spawner (Object Normal lvl:3) -->
 		<spawn npc_id="700249" respawn_time="295">
 			<spot x="1299.3" y="339.401" z="123.062" entity_id="597"/>
@@ -9546,10 +9539,6 @@
 		<spawn npc_id="730011" respawn_time="295">
 			<spot x="1677.0000" y="2520.0000" z="100.38159" entity_id="331"/>
 		</spawn> -->
-		<!-- Jewel Box (Object Normal lvl:3) -->
-		<spawn npc_id="730032" respawn_time="295">
-			<spot x="134.44017" y="1598.0187" z="120.24195" entity_id="1409"/>
-		</spawn>
 		<!-- Secret Passage Of Indratu Legion (Object Normal lvl:3) -->
 		<spawn npc_id="730040" respawn_time="295">
 			<spot x="2321.6301" y="1423.0613" z="125.21158" entity_id="281"/>

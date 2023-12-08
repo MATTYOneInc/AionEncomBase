@@ -28,9 +28,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _1323Lost_Jewel_Box extends QuestHandler
-{
+public class _1323Lost_Jewel_Box extends QuestHandler {
+	
 	private final static int questId = 1323;
 	
 	public _1323Lost_Jewel_Box() {
@@ -39,6 +38,7 @@ public class _1323Lost_Jewel_Box extends QuestHandler
 	
 	@Override
 	public void register() {
+		qe.registerQuestNpc(730032).addOnTalkEvent(questId);
 		qe.registerQuestNpc(730019).addOnTalkEvent(questId);
 		qe.registerQuestNpc(203830).addOnTalkEvent(questId);
 		qe.registerQuestItem(182201309, questId);
@@ -66,9 +66,19 @@ public class _1323Lost_Jewel_Box extends QuestHandler
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
 					return closeDialogWindow(env);
+				    }
+			    }
+			}	
+		if (targetId == 730032) {
+				switch (env.getDialog()) {
+					case USE_OBJECT: {
+						return giveQuestItem(env, 182201309, 1);
+					}
+					default:
+						break;
 				}
-			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+			}	
+		else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 730019) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1352);

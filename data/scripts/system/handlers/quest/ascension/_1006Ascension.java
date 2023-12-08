@@ -172,6 +172,7 @@ public class _1006Ascension extends QuestHandler {
 							}
 						} case STEP_TO_2: {
 							playQuestMovie(env, 14);
+							return closeDialogWindow(env);
 						}
 					}
 					break;

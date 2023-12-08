@@ -16,9 +16,11 @@
  */
 package quest.heiron;
 
+import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
+import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
@@ -44,8 +46,19 @@ public class _1559WhatsintheBox extends QuestHandler {
 		qe.registerQuestNpc(798072).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204571).addOnTalkEvent(questId);
 		qe.registerQuestNpc(798013).addOnTalkEvent(questId);
+		qe.registerQuestItem(182201823, questId);
 	}
 
+	@Override
+	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
+		Player player = env.getPlayer();
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			return HandlerResult.fromBoolean(sendQuestDialog(env, 4));
+		}
+		return HandlerResult.FAILED;
+	}
+	
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
@@ -53,15 +66,15 @@ public class _1559WhatsintheBox extends QuestHandler {
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 		if (targetId == 0) {
-			if (env.getDialogId() == 1002) {
+			if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 				QuestService.startQuest(env);
-				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-				return true;
-			}
-		}
-		else if (targetId == 700513) {
-			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+				return closeDialogWindow(env);
+			    }
+		    }
+		}	
+        if (targetId == 700513) {
 				switch (env.getDialog()) {
 					case USE_OBJECT: {
 						if (player.getInventory().getItemCountByItemId(182201823) == 0) {
@@ -70,10 +83,6 @@ public class _1559WhatsintheBox extends QuestHandler {
 					}
 				}
 			}
-		}
-		if (qs == null)
-			return false;
-
 		int var = qs.getQuestVarById(0);
 		if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798072) {
@@ -93,7 +102,7 @@ public class _1559WhatsintheBox extends QuestHandler {
 				case START_DIALOG:
 					if (var == 0)
 						return sendQuestDialog(env, 1352);
-				case STEP_TO_1:
+				case STEP_TO_1: 
 					if (var == 0) {
 						qs.setQuestVarById(0, var + 1);
 						updateQuestStatus(env);
@@ -125,12 +134,10 @@ public class _1559WhatsintheBox extends QuestHandler {
 						return sendQuestDialog(env, 2034);
 				case STEP_TO_3:
 					if (var == 2) {
-						{
 							qs.setQuestVarById(0, var + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							if (giveQuestItem(env, 182201824, 1))
-								;
+							if (giveQuestItem(env, 182201824, 1)) {
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return true;
 						}

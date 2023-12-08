@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _14150Secrets_Of_The_Superus extends QuestHandler
-{
+public class _14150Secrets_Of_The_Superus extends QuestHandler {
+	
     private final static int questId = 14150;
 	
     public _14150Secrets_Of_The_Superus() {
@@ -75,11 +74,12 @@ public class _14150Secrets_Of_The_Superus extends QuestHandler
 							return sendQuestDialog(env, 2375);
 						}
 					} case CHECK_COLLECTED_ITEMS_SIMPLE: {
-						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
-						removeQuestItem(env, 182215458, 1);
-						return closeDialogWindow(env);
+						return checkQuestItems(env, 1, 2, true, 5, 2716);
 					}
+					case FINISH_DIALOG: {
+					    return sendQuestSelectionDialog(env);
+				    }
 				}
 			} else if (targetId == 204582) { //Ibelia
 				switch (env.getDialog()) {

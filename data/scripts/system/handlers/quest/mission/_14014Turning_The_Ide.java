@@ -104,7 +104,7 @@ public class _14014Turning_The_Ide extends QuestHandler
                                 return sendQuestDialog(env, 2034);
                             }
                         } case CHECK_COLLECTED_ITEMS: {
-							return checkQuestItems(env, 3, 5, false, 10000, 10001); // 5
+							return checkQuestItems(env, 3, 5, false, 0, 0); // 5
 						}
 						case FINISH_DIALOG: {
 							return sendQuestSelectionDialog(env);

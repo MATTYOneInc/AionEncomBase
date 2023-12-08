@@ -27,7 +27,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /**
  * @author Balthazar
  */
-
 public class _1582ThePriestsNightmare extends QuestHandler {
 
 	private final static int questId = 1582;
@@ -48,11 +47,9 @@ public class _1582ThePriestsNightmare extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204560) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -89,7 +86,7 @@ public class _1582ThePriestsNightmare extends QuestHandler {
 							if (qs.getQuestVarById(0) == 1) {
 								qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 								updateQuestStatus(env);
-								return sendQuestDialog(env, 10);
+								return closeDialogWindow(env);
 							}
 						}
 					}
@@ -106,7 +103,7 @@ public class _1582ThePriestsNightmare extends QuestHandler {
 								qs.setQuestVar(2);
 								qs.setStatus(QuestStatus.REWARD);
 								updateQuestStatus(env);
-								return sendQuestDialog(env, 10);
+								return closeDialogWindow(env);
 							}
 						}
 					}
