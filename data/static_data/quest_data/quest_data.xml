@@ -3056,12 +3056,12 @@
       <selectable_reward_item item_id="113501729" count="1" />
       <selectable_reward_item item_id="113601573" count="1" />
     </rewards>
-    <quest_drop npc_id="210839" item_id="182201418" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="212060" item_id="182201418" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="212061" item_id="182201418" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="210867" item_id="182201419" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="212058" item_id="182201419" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="212059" item_id="182201419" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="235481" item_id="182201418" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="235461" item_id="182201418" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="235462" item_id="182201418" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="235482" item_id="182201419" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="235460" item_id="182201419" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="235459" item_id="182201419" chance="100" drop_each_member="1" />
     <class_permitted>GLADIATOR TEMPLAR ASSASSIN RANGER SORCERER SPIRIT_MASTER CHANTER CLERIC PRIEST GUNSLINGER SONGWEAVER</class_permitted>
   </quest>
   <quest id="1501" name="Eliminating Ettins" nameId="1102701" minlevel_permitted="30" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="QUEST">
