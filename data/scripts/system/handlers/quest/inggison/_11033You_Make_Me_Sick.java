@@ -27,9 +27,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _11033You_Make_Me_Sick extends QuestHandler {
 
-public class _11033You_Make_Me_Sick extends QuestHandler
-{
 	private final static int questId = 11033;
 	
 	public _11033You_Make_Me_Sick() {
@@ -41,19 +40,6 @@ public class _11033You_Make_Me_Sick extends QuestHandler
 		qe.registerQuestItem(182206728, questId);
 		qe.registerQuestNpc(798959).addOnQuestStart(questId);
 		qe.registerQuestNpc(798959).addOnTalkEvent(questId);
-		qe.registerQuestNpc(798959).addOnAtDistanceEvent(questId);
-	}
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
-		}
-		return false;
 	}
 	
 	@Override
@@ -63,6 +49,8 @@ public class _11033You_Make_Me_Sick extends QuestHandler
 		int targetId = env.getTargetId();
 		int var = qs.getQuestVarById(0);
 		QuestDialog dialog = env.getDialog();
+		if (sendQuestNoneDialog(env, 798959, 4762))
+			return true;
 		if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 798959) {
 				switch (env.getDialog()) {

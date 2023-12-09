@@ -94,36 +94,25 @@ public class _11032Everything_Better_With_Tentacles extends QuestHandler {
 									return true;
 								qs.setQuestVarById(0, var + 1);
 								updateQuestStatus(env);
+                            return sendQuestSelectionDialog(env); 
 							}
 							return true;
-					}
+				}
 			}
 		}
 		return false;
 	}
 
 	@Override
-	public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
-		final Player player = env.getPlayer();
-		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		final int id = item.getItemTemplate().getTemplateId();
-		final int itemObjId = item.getObjectId();
-
-		if (id != 182206726)
-			return HandlerResult.UNKNOWN;
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 1000, 0,
-			0), true);
-		ThreadPoolManager.getInstance().schedule(new Runnable() {
-
-			@Override
-			public void run() {
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0,
-					1, 0), true);
-				removeQuestItem(env, 182206726, 1);
-				qs.setStatus(QuestStatus.REWARD);
-				updateQuestStatus(env);
-			}
-		}, 1000);
-		return HandlerResult.SUCCESS;
-	}
+    public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
+        final Player player = env.getPlayer();
+        final QuestState qs = player.getQuestStateList().getQuestState(questId);
+        if (qs != null && qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
+			if (var == 2) {
+                return HandlerResult.fromBoolean(useQuestItem(env, item, 2, 3, true));
+            }
+        }
+        return HandlerResult.FAILED;
+    }
 }

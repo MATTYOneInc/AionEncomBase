@@ -30,16 +30,13 @@ import com.aionemu.gameserver.skillengine.SkillEngine;
 import com.aionemu.gameserver.utils.MathUtil;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /****/
 /** Author (Encom)
 /****/
-
 @AIName("anikiki")
-public class AnikikiAI2 extends AggressiveNpcAI2
-{
+public class AnikikiAI2 extends AggressiveNpcAI2 {
 	private AtomicBoolean isStartedWalkEvent = new AtomicBoolean(false);
 	
 	@Override
@@ -71,7 +68,7 @@ public class AnikikiAI2 extends AggressiveNpcAI2
 	protected void handleMoveArrived() {
 		int point = getOwner().getMoveController().getCurrentPoint();
 		super.handleMoveArrived();
-		if (getNpcId() == 219037) { //Tamer Anikiki.
+		if (getNpcId() == 219040) { //Tamer Anikiki.
 			if (point == 8) {
 				getOwner().setState(64);
 				PacketSendUtility.broadcastPacket(getOwner(), new SM_EMOTION(getOwner(), EmotionType.START_EMOTE2, 0, getObjectId()));
@@ -79,7 +76,7 @@ public class AnikikiAI2 extends AggressiveNpcAI2
 				getSpawnTemplate().setWalkerId(null);
 				WalkManager.stopWalking(this);
 				AI2Actions.deleteOwner(this);
-				spawn(219040, 736.2967f, 510.07104f, 941.4781f, (byte) 72); //Tamer Anikiki.
+				spawn(219037, 736.2967f, 510.07104f, 941.4781f, (byte) 72); //Tamer Anikiki.
 			}
 		}
 	}
@@ -87,7 +84,7 @@ public class AnikikiAI2 extends AggressiveNpcAI2
 	@Override
 	protected void handleSpawned() {
 		super.handleSpawned();
-		if (getNpcId() != 219037) { //Tamer Anikiki.
+		if (getNpcId() != 219040) { //Tamer Anikiki.
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
 				@Override
 				public void run() {
@@ -96,15 +93,5 @@ public class AnikikiAI2 extends AggressiveNpcAI2
 				}
 			}, 5000);
 		}
-	}
-	
-	@Override
-	public int modifyOwnerDamage(int damage) {
-		return 1;
-	}
-	
-	@Override
-	public int modifyDamage(int damage) {
-		return 1;
 	}
 }
