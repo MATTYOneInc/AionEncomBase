@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _19634Further_Aid_For_Alisary extends QuestHandler {
 
-public class _19634Further_Aid_For_Alisary extends QuestHandler
-{
 	private final static int questId = 19634;
 	private final static int[] mobs = {214226, 214227, 214228};
 	
@@ -36,7 +35,6 @@ public class _19634Further_Aid_For_Alisary extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(205304).addOnQuestStart(questId);
-		qe.registerQuestNpc(205304).addOnTalkEvent(questId);
 		qe.registerQuestNpc(205304).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);

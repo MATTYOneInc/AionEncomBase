@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _19631Coastal_Crush extends QuestHandler {
 
-public class _19631Coastal_Crush extends QuestHandler
-{
 	private final static int questId = 19631;
 	private final static int[] mobs = {214198, 214199, 214216, 214217};
 	
@@ -40,13 +39,11 @@ public class _19631Coastal_Crush extends QuestHandler
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(798155).addOnQuestStart(questId);
 		qe.registerQuestNpc(800411).addOnTalkEvent(questId);
-		qe.registerQuestNpc(214198).addOnKillEvent(questId);
-		qe.registerQuestNpc(214199).addOnKillEvent(questId);
-		qe.registerQuestNpc(214216).addOnKillEvent(questId);
-		qe.registerQuestNpc(214217).addOnKillEvent(questId);
+		for (int mob: mobs) {
+			qe.registerQuestNpc(mob).addOnKillEvent(questId);
+		}
 	}
 	
 	@Override

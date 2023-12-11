@@ -31,7 +31,6 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /**
  * @author Balthazar
  */
-
 public class _1393NewFlightPath extends QuestHandler {
 
 	private final static int questId = 1393;
@@ -86,14 +85,8 @@ public class _1393NewFlightPath extends QuestHandler {
 		if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204041) {
 				switch (env.getDialog()) {
-					case SELECT_REWARD: {
+					case START_DIALOG: {
 						return sendQuestDialog(env, 5);
-					}
-					case SELECT_NO_REWARD: {
-						qs.setQuestVar(1);
-						qs.setStatus(QuestStatus.COMPLETE);
-						updateQuestStatus(env);
-						return sendQuestEndDialog(env);
 					}
 					default:
 						return sendQuestEndDialog(env);

@@ -26,9 +26,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3044Recruiting_Announcement extends QuestHandler {
 
-public class _3044Recruiting_Announcement extends QuestHandler
-{
 	private final static int questId = 3044;
 	
 	public _3044Recruiting_Announcement() {
@@ -56,8 +55,6 @@ public class _3044Recruiting_Announcement extends QuestHandler
 						return sendQuestDialog(env, 4762);
 					} case STEP_TO_1: {
 						QuestService.startQuest(env);
-						updateQuestStatus(env);
-						qs.setStatus(QuestStatus.REWARD);
 						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 						return true;
 					} default:
@@ -69,14 +66,14 @@ public class _3044Recruiting_Announcement extends QuestHandler
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				} else if (env.getDialogId() == 1009) {
-					return defaultCloseDialog(env, 0, 1, true, true);
+                    qs.setStatus(QuestStatus.REWARD);
+                    updateQuestStatus(env);
+					return sendQuestEndDialog(env);
 				}
 			}
 		} else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 798206) {
 				return sendQuestEndDialog(env);
 			}
-		}
 		return false;
 	}
 }

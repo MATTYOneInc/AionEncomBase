@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _29634Scared_Skurvs extends QuestHandler {
 
-public class _29634Scared_Skurvs extends QuestHandler
-{
 	private final static int questId = 29634;
 	private final static int[] mobs = {214371, 214372, 214440, 214441};
 	
@@ -36,7 +35,6 @@ public class _29634Scared_Skurvs extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(205164).addOnQuestStart(questId);
-		qe.registerQuestNpc(205164).addOnTalkEvent(questId);
 		qe.registerQuestNpc(205164).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);

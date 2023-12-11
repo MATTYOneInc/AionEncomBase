@@ -26,9 +26,8 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _1670Invisible_Bridges extends QuestHandler {
 
-public class _1670Invisible_Bridges extends QuestHandler
-{
 	private final static int questId = 1670;
 	
 	public _1670Invisible_Bridges() {
@@ -85,27 +84,22 @@ public class _1670Invisible_Bridges extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
   		    int var = qs.getQuestVarById(0);
-			int var1 = qs.getQuestVarById(1);
-			int var2 = qs.getQuestVarById(2);
-			int var3 = qs.getQuestVarById(3);
-			if (var == 1) {
 				if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1670_A_210040000")) {
-					if (var1 == 0) {
+					if (var == 0) {
 						changeQuestStep(env, 0, 16, false);
 						return true;
 					}
 				} else if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1670_B_210040000")) {
-					if (var2 == 16) {
+					if (var == 16) {
 						changeQuestStep(env, 16, 48, false);
 						return true;
 					}
 				} else if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1670_C_210040000")) {
-					if (var3 == 48) {
+					if (var == 48) {
 						changeQuestStep(env, 48, 48, true);
 						return true;
 					}
 				}
-			}
 		}
 		return false;
 	}

@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _29635Beach_Day extends QuestHandler {
 
-public class _29635Beach_Day extends QuestHandler
-{
 	private final static int questId = 29635;
 	private final static int[] mobs = {214482, 214483, 214486, 214487};
 	
@@ -36,7 +35,6 @@ public class _29635Beach_Day extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(205164).addOnQuestStart(questId);
-		qe.registerQuestNpc(205164).addOnTalkEvent(questId);
 		qe.registerQuestNpc(205164).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);

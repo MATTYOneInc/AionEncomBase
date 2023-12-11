@@ -74,7 +74,7 @@ public class _1111InsomniaMedicine extends QuestHandler {
 				else if (env.getDialogId() == 1009)
 					return sendQuestDialog(env, qs.getQuestVarById(0) + 3);
 				else if (env.getDialogId() == 23) {
-					QuestService.finishQuest(env, qs.getQuestVarById(0) - 2);
+					QuestService.finishQuest(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return true;
 				}

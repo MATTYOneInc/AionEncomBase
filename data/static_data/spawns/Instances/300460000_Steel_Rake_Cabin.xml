@@ -810,10 +810,6 @@
 		    <spot x="699.17" y="458.485" z="1019.58" entity_id="66"/>
 		    <spot x="500.293" y="552.641" z="960.056" entity_id="42"/>
 		</spawn>
-		<!-- Red Journal (Object Normal lvl:3) -->
-        <spawn npc_id="730148">
-		    <spot x="355.678" y="594.705" z="948.904" entity_id="65"/>
-		</spawn>
 		<!-- Groggets Safe Door (Object Normal lvl:3) -->
 		<spawn npc_id="730199">
 	        <spot x="691.00214" y="500.95282" z="942.59943" entity_id="63"/>

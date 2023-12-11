@@ -24,9 +24,7 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _14114Revolution_Intervention extends QuestHandler
-{
+public class _14114Revolution_Intervention extends QuestHandler {
     private final static int questId = 14114;
 	
     public _14114Revolution_Intervention() {
@@ -75,7 +73,7 @@ public class _14114Revolution_Intervention extends QuestHandler
 						}
 					} case STEP_TO_1: {
 						playQuestMovie(env, 30);
-                        SkillEngine.getInstance().getSkill(player, 8197, 1, player).useSkill(); //Transforming Plumis.
+                        SkillEngine.getInstance().applyEffectDirectly(8197, player, player, 0); //Transforming Plumis.
                         updateQuestStatus(env);
                         return defaultCloseDialog(env, 0, 1);
                     } case STEP_TO_2: {

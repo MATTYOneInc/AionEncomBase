@@ -24,7 +24,6 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
 public class _14152_Spoiler_Alert extends QuestHandler {
 
     private final static int questId = 14152;
@@ -49,10 +48,8 @@ public class _14152_Spoiler_Alert extends QuestHandler {
         if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
         }
-
         QuestState qs = player.getQuestStateList().getQuestState(questId);
         QuestDialog dialog = env.getDialog();
-
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 204504) { //Sofne.
                 switch (dialog) {
@@ -68,7 +65,7 @@ public class _14152_Spoiler_Alert extends QuestHandler {
                         updateQuestStatus(env);
                         return sendQuestDialog(env, 1003);
                     }
-                    case REFUSE_QUEST_2: {
+                    case REFUSE_QUEST: {
                         return sendQuestDialog(env, 1004);
                     }
                     default:

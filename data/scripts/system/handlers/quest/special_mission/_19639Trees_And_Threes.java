@@ -24,10 +24,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19639Trees_And_Threes extends QuestHandler
-{
+public class _19639Trees_And_Threes extends QuestHandler {
+
 	private final static int questId = 19639;
-	private final static int[] mobs = {215524, 215526};
 	
 	public _19639Trees_And_Threes() {
 		super(questId);
@@ -36,7 +35,6 @@ public class _19639Trees_And_Threes extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(799022).addOnQuestStart(questId);
-		qe.registerQuestNpc(799022).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799022).addOnTalkEvent(questId);
 		qe.registerQuestNpc(215524).addOnKillEvent(questId);
 		qe.registerQuestNpc(215526).addOnKillEvent(questId);

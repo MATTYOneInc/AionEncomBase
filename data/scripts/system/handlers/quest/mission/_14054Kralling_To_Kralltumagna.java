@@ -25,9 +25,8 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _14054Kralling_To_Kralltumagna extends QuestHandler {
 
-public class _14054Kralling_To_Kralltumagna extends QuestHandler
-{
     private final static int questId = 14054;
 	
     public _14054Kralling_To_Kralltumagna() {
@@ -153,6 +152,7 @@ public class _14054Kralling_To_Kralltumagna extends QuestHandler
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
         }
         int var = qs.getQuestVarById(0);
+        if (var == 2) {
         if (targetId == 214010 || targetId == 214013 || targetId == 214014 ||
 		    targetId == 214015 || targetId == 214016 || targetId == 214017 ||
 			targetId == 214018 || targetId == 214019 || targetId == 214020 ||
@@ -184,6 +184,7 @@ public class _14054Kralling_To_Kralltumagna extends QuestHandler
                         return true;
                     }
                     return true;
+                    }
                 }
             }
         } else if (targetId == 233861) { //Officer Vitusa.

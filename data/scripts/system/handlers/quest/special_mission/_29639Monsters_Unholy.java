@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _29639Monsters_Unholy extends QuestHandler {
 
-public class _29639Monsters_Unholy extends QuestHandler
-{
 	private final static int questId = 29639;
 	private final static int[] mobs = {215988, 215989};
 	
@@ -36,7 +35,6 @@ public class _29639Monsters_Unholy extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(799248).addOnQuestStart(questId);
-		qe.registerQuestNpc(799248).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799248).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);

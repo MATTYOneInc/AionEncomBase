@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _19635Southern_Quell extends QuestHandler {
 
-public class _19635Southern_Quell extends QuestHandler
-{
 	private final static int questId = 19635;
 	private final static int[] mobs = {214257, 214258, 214600, 214601};
 	
@@ -36,7 +35,6 @@ public class _19635Southern_Quell extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(205304).addOnQuestStart(questId);
-		qe.registerQuestNpc(205304).addOnTalkEvent(questId);
 		qe.registerQuestNpc(205304).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);

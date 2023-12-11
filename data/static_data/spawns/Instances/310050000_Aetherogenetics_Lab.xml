@@ -174,11 +174,6 @@
 		<spawn npc_id="700279">
 			<spot x="255.302" y="310.364" z="128.25" entity_id="64"/>
 		</spawn>
-		<!-- Red Journal -->
-		<spawn npc_id="730148">
-			<spot x="328.204" y="275.623" z="142.929" entity_id="61"/>
-			<spot x="327.362" y="267.952" z="143.02" entity_id="206"/>
-		</spawn>
 		<!-- Research Center Cabinet -->
 		<spawn npc_id="700362">
 			<spot x="175.471" y="206.045" z="132.599" entity_id="185"/>

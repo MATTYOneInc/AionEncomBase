@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _29636Back_To_Surt extends QuestHandler {
 
-public class _29636Back_To_Surt extends QuestHandler
-{
 	private final static int questId = 29636;
 	private final static int[] mobs = {214489, 214490, 214491, 214492};
 	

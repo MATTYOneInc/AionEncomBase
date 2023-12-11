@@ -136,7 +136,7 @@
 	<item_collecting id="3918" start_npc_ids="804603"/>
 	<item_collecting id="3919" start_npc_ids="804603"/>
 	<item_collecting id="3975" start_npc_ids="798321"/>
-	<item_collecting id="19042" start_npc_ids="798322" end_npc_ids="798444"/>
+	<item_collecting id="19042" start_npc_ids="798322" end_npc_ids="798322"/>
 	<item_collecting id="19043" start_npc_ids="798444"/>
 	
 	<monster_hunt id="1939" start_npc_ids="203703">

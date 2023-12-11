@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _19637Onboard_For_One extends QuestHandler {
 
-public class _19637Onboard_For_One extends QuestHandler
-{
 	private final static int questId = 19637;
 	private final static int[] mobs = {215500, 215501, 215502, 215503};
 	
@@ -40,9 +39,7 @@ public class _19637Onboard_For_One extends QuestHandler
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(798926).addOnQuestStart(questId);
-		qe.registerQuestNpc(798926).addOnTalkEvent(questId);
 		qe.registerQuestNpc(798926).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);

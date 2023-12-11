@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _19641Fidgety_Fives extends QuestHandler {
 
-public class _19641Fidgety_Fives extends QuestHandler
-{
 	private final static int questId = 19641;
 	private final static int[] mobs = {215654, 215655, 215658, 215659};
 	
@@ -36,7 +35,6 @@ public class _19641Fidgety_Fives extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerQuestNpc(798991).addOnQuestStart(questId);
-		qe.registerQuestNpc(798991).addOnTalkEvent(questId);
 		qe.registerQuestNpc(798991).addOnTalkEvent(questId);
 		for (int mob: mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);

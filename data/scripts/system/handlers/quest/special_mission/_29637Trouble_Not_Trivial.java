@@ -23,9 +23,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _29637Trouble_Not_Trivial extends QuestHandler {
 
-public class _29637Trouble_Not_Trivial extends QuestHandler
-{
 	private final static int questId = 29637;
 	private final static int[] mobs = {215879, 215880, 215937};
 	
@@ -40,7 +39,6 @@ public class _29637Trouble_Not_Trivial extends QuestHandler
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(799225).addOnQuestStart(questId);
 		qe.registerQuestNpc(799248).addOnTalkEvent(questId);
 		for (int mob: mobs) {

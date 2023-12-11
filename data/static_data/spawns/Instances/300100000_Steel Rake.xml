@@ -1056,7 +1056,7 @@
 		<spawn npc_id="281324">
 			<spot x="689.335" y="495.924" z="868"/>
 		</spawn>
-		<!-- Red Journal -->
+		<!-- Steel Rake Logbook -->
 		<spawn npc_id="700524">
 			<spot x="355.647247" y="594.669434" z="949.453674" entity_id="65"/>
 		</spawn>

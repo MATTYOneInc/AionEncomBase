@@ -16,6 +16,7 @@ import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
@@ -24,9 +25,8 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _1391RM_12B extends QuestHandler {
 
-public class _1391RM_12B extends QuestHandler
-{
 	private final static int questId = 1391;
 	
 	public _1391RM_12B() {
@@ -41,15 +41,12 @@ public class _1391RM_12B extends QuestHandler
 	
 	@Override
 	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
-		Player player = env.getPlayer();
-		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		final Player player = env.getPlayer();
+		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (QuestService.startQuest(env)) {
-				changeQuestStep(env, 0, 0, true);
-				return HandlerResult.fromBoolean(sendQuestDialog(env, 4));
-			}
+			return HandlerResult.fromBoolean(sendQuestDialog(env, 4));
 		}
-		return HandlerResult.UNKNOWN;
+		return HandlerResult.FAILED;
 	}
 	
 	@Override
@@ -58,13 +55,27 @@ public class _1391RM_12B extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			return false;
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204500) {
-				removeQuestItem(env, 182201342, 1);
-				return sendQuestEndDialog(env);
+			if (targetId == 0) {
+				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
+					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				}
+				else if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+					return closeDialogWindow(env);
+				}
 			}
-		}
+        }
+        else if (targetId == 204500) { 
+		    if (env.getDialog() == QuestDialog.START_DIALOG) {
+					return sendQuestDialog(env, 2375);
+				} else if (env.getDialogId() == 1009) {
+                    qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					return sendQuestEndDialog(env);
+				} else {
+					return sendQuestEndDialog(env);
+				}
+			} 
 		return false;
 	}
 }

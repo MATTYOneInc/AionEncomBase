@@ -260,11 +260,6 @@
 			<spot x="1966.11" y="1816.59" z="350.433" h="77"/>
 			<spot x="1963.68" y="1847.69" z="345.935" h="118"/>
 		</spawn>
-		<!-- Red Journal (Object Normal lvl:3) -->
-		<spawn npc_id="730148" respawn_time="295">
-			<spot x="2321.67" y="2607.14" z="273.243" entity_id="795"/>
-			<spot x="2322.17" y="2610.54" z="273.243" entity_id="798"/>
-		</spawn>
 		<!-- Stolen Item Of Sanctum (Object Normal lvl:3) -->
 		<spawn npc_id="700316" respawn_time="295">
 			<spot x="904.475" y="1886.844" z="262.028" entity_id="1185"/>

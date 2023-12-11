@@ -73,10 +73,6 @@
 		<spawn npc_id="806208">
 	        <spot x="252.98584" y="121.23068" z="196.52226" entity_id="37"/>
 		</spawn>
-		<!-- Red Journal (Object Normal lvl:3) -->
-		<spawn npc_id="730148">
-			<spot x="225.88861" y="371.80148" z="203.07074" entity_id="268"/>
-		</spawn>
 		<!-- Assistants Journal (Object Normal lvl:3) -->
 		<spawn npc_id="730153">
 			<spot x="208.73872" y="371.31787" z="203.87508" entity_id="92"/>
