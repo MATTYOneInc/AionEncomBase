@@ -16,9 +16,13 @@
  */
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import com.aionemu.gameserver.configs.main.GeoDataConfig;
 import com.aionemu.gameserver.model.gameobjects.Creature;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.network.PacketLoggerService;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
+import com.aionemu.gameserver.world.geo.GeoService;
 
 /**
  * @author Sweetkr
@@ -31,11 +35,17 @@ public class SM_TARGET_IMMOBILIZE extends AionServerPacket {
 		this.creature = creature;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+    //modified (Aion Reconstruction Project - Yoress) - Added geoZ check for non player entities to avoid floating mobs.
+    //and update check to mob altitude when they are stunned (mobs should appear to float in the air less often).
 	@Override
 	protected void writeImpl(AionConnection con) {
+		if (!(creature instanceof Player)) {
+			if (GeoDataConfig.GEO_ENABLE && creature.getGameStats().checkGeoNeedUpdate()) {
+				float z = GeoService.getInstance().getZ(creature.getWorldId(), creature.getX(), creature.getY(), creature.getZ(), 0.0F, creature.getInstanceId());
+				creature.setXYZH(null, null, z, null);
+			}
+		}
+		PacketLoggerService.getInstance().logPacketSM(this.getPacketName());
 		writeD(creature.getObjectId());
 		writeF(creature.getX());
 		writeF(creature.getY());
