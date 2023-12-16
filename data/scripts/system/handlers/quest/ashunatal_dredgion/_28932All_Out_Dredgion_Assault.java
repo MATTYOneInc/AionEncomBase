@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28932All_Out_Dredgion_Assault extends QuestHandler {
 
-public class _28932All_Out_Dredgion_Assault extends QuestHandler
-{
     private final static int questId = 28932;
 	private final static int[] frigateCommanderAshunatal = {243816}; //Frigate Commander Ashunatal.
 	
@@ -36,9 +35,7 @@ public class _28932All_Out_Dredgion_Assault extends QuestHandler
 		qe.registerQuestNpc(806261).addOnQuestStart(questId);
 		qe.registerQuestNpc(806261).addOnTalkEvent(questId);
 		qe.registerQuestNpc(806260).addOnTalkEvent(questId);
-		for (int mob: frigateCommanderAshunatal) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(243816).addOnKillEvent(questId); //Frigate Commander Ashunatal.
     }
 	
     @Override

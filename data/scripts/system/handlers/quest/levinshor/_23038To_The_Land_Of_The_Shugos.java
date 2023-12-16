@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _23038To_The_Land_Of_The_Shugos extends QuestHandler {
 
-public class _23038To_The_Land_Of_The_Shugos extends QuestHandler
-{
     private final static int questId = 23038;
 	
     public _23038To_The_Land_Of_The_Shugos() {
@@ -32,13 +31,7 @@ public class _23038To_The_Land_Of_The_Shugos extends QuestHandler
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(804599).addOnQuestStart(questId); //Gartner.
 		qe.registerQuestNpc(804599).addOnTalkEvent(questId); //Gartner.
 		qe.registerQuestNpc(804599).addOnTalkEvent(questId); //Gartner.

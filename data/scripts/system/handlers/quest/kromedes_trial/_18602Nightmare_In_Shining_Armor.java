@@ -28,9 +28,8 @@ import com.aionemu.gameserver.world.WorldMapInstance;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _18602Nightmare_In_Shining_Armor extends QuestHandler {
 
-public class _18602Nightmare_In_Shining_Armor extends QuestHandler
-{
 	private final static int questId = 18602;
 	private final static int[] kaliga = {217005, 217006};
 	private final static int[] npc_ids = {205229, 700939};
@@ -40,14 +39,8 @@ public class _18602Nightmare_In_Shining_Armor extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 18601);
-	}
-	
-	@Override
 	public void register() {
 		qe.registerOnDie(questId);
-		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnMovieEndQuest(454, questId);
 		for (int npc_id: npc_ids) {

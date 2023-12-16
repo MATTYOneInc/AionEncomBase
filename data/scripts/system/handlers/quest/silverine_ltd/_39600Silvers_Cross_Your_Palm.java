@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _39600Silvers_Cross_Your_Palm extends QuestHandler {
 
-public class _39600Silvers_Cross_Your_Palm extends QuestHandler
-{
     private final static int questId = 39600;
-	
     public _39600Silvers_Cross_Your_Palm() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(800939).addOnQuestStart(questId); //Danurinerk.
 		qe.registerQuestNpc(800939).addOnTalkEvent(questId); //Danurinerk.
 		qe.registerQuestNpc(800939).addOnTalkEvent(questId); //Danurinerk.

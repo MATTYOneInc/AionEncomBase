@@ -29,11 +29,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /**
  * @author Balthazar
  */
-
 public class _3006TheShugoFugitive extends QuestHandler {
 
 	private final static int questId = 3006;
-
 	public _3006TheShugoFugitive() {
 		super(questId);
 	}
@@ -103,14 +101,27 @@ public class _3006TheShugoFugitive extends QuestHandler {
 						}
 					}
 				}
+		    case 798132: {
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						if (qs.getQuestVarById(0) == 2) {
+							return sendQuestDialog(env, 2375);
+						}
+					}
+					case SELECT_REWARD: {
+						if (qs.getQuestVarById(0) == 2) {
+                            qs.setQuestVarById(0, qs.getQuestVarById(0) + 1); 
+                            qs.setStatus(QuestStatus.REWARD);
+                            updateQuestStatus(env);
+						return sendQuestEndDialog(env);
+						}
+					}
+				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+	} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798132) {
-				if (env.getDialogId() == 1009)
-					return sendQuestDialog(env, 5);
-				else
-					return sendQuestEndDialog(env);
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;
@@ -126,7 +137,6 @@ public class _3006TheShugoFugitive extends QuestHandler {
 			return false;
 
 		qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
-		qs.setStatus(QuestStatus.REWARD);
 		updateQuestStatus(env);
 		return true;
 	}

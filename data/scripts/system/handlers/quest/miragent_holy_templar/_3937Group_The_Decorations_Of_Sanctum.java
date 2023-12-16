@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3937Group_The_Decorations_Of_Sanctum extends QuestHandler {
 
-public class _3937Group_The_Decorations_Of_Sanctum extends QuestHandler
-{
 	private final static int questId = 3937;
-	
 	public _3937Group_The_Decorations_Of_Sanctum() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 3936, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203708).addOnQuestStart(questId);
 		qe.registerQuestNpc(203708).addOnTalkEvent(questId);
 	}

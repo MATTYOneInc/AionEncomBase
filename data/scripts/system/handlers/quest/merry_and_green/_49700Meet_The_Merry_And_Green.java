@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _49700Meet_The_Merry_And_Green extends QuestHandler {
 
-public class _49700Meet_The_Merry_And_Green extends QuestHandler
-{
     private final static int questId = 49700;
 	
     public _49700Meet_The_Merry_And_Green() {
@@ -32,13 +31,7 @@ public class _49700Meet_The_Merry_And_Green extends QuestHandler
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(800948).addOnQuestStart(questId); //Sununnerk.
 		qe.registerQuestNpc(800948).addOnTalkEvent(questId); //Sununnerk.
 		qe.registerQuestNpc(800948).addOnTalkEvent(questId); //Sununnerk.

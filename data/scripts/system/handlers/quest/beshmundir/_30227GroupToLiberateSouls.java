@@ -145,7 +145,7 @@ public class _30227GroupToLiberateSouls extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 
 		switch (targetId) {
-			case 216586:
+			case 216590:
 				if (qs.getQuestVarById(0) == 1) {
 					QuestService.questTimerEnd(env);
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);

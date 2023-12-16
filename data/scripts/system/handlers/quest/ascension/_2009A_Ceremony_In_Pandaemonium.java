@@ -33,20 +33,15 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author (Encom)
 /****/
+public class _2009A_Ceremony_In_Pandaemonium extends QuestHandler {
 
-public class _2009A_Ceremony_In_Pandaemonium extends QuestHandler
-{
 	private final static int questId = 2009;
-	
 	public _2009A_Ceremony_In_Pandaemonium() {
 		super(questId);
 	}
 	
 	@Override
 	public void register() {
-		if (CustomConfig.ENABLE_SIMPLE_2NDCLASS) {
-			return;
-		}
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203550).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204182).addOnTalkEvent(questId);

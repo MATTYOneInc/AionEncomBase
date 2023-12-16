@@ -23,12 +23,10 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _23955Diversion_Tactics extends QuestHandler {
 
-public class _23955Diversion_Tactics extends QuestHandler
-{
     private final static int questId = 23955;
 	private final static int[] IDAb1Ere1RoundDrakanFi = {247113, 247133, 247181, 246556, 246855, 246865};
-	private final static int[] IDAb1Ere2RoundDrakanHighFi = {246561};
 	
     public _23955Diversion_Tactics() {
         super(questId);
@@ -40,9 +38,8 @@ public class _23955Diversion_Tactics extends QuestHandler
 		qe.registerQuestNpc(806591).addOnTalkEvent(questId);
 		for (int mob: IDAb1Ere1RoundDrakanFi) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: IDAb1Ere2RoundDrakanHighFi) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		} 
+		qe.registerQuestNpc(246561).addOnKillEvent(questId);
 	}
 	
 	@Override

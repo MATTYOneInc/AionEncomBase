@@ -54,9 +54,9 @@ public class _3969SexiestManAlive extends QuestHandler {
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (targetId == 798390) { // Palentine
+		if (targetId == 798390) {
 			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-				if (env.getDialog() == QuestDialog.USE_OBJECT)
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else if (env.getDialogId() == 1002) {
 					if (giveQuestItem(env, 182206126, 1)) {
@@ -66,34 +66,37 @@ public class _3969SexiestManAlive extends QuestHandler {
 				}
 				else
 					return sendQuestStartDialog(env);
+			    }
+			else if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 2375);
+				else if (env.getDialogId() == 1009) {
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					return sendQuestEndDialog(env);
+				}
+				else
+					return sendQuestEndDialog(env);
+			}
+            else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+		        return sendQuestEndDialog(env);
 			}
 		}
-		if (qs == null)
-			return false;
-		int var = qs.getQuestVarById(0);
-		if (targetId == 798391)	{ // Andu
-			if (qs.getStatus() == QuestStatus.START && var == 0) {
-				if (env.getDialog() == QuestDialog.USE_OBJECT)
+		else if (targetId == 798391) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
-					if (player.getInventory().getItemCountByItemId(182206126) > 0) {
-						removeQuestItem(env, 182206126, 1);
-						qs.setQuestVar(++var);
-						qs.setStatus(QuestStatus.REWARD);
-						updateQuestStatus(env);
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					}
+                if (player.getInventory().getItemCountByItemId(182206126) == 1) { 
+                    removeQuestItem(env, 182206126, 1);
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+					updateQuestStatus(env);
+					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
+                }
 					return true;
 				}
 				else
 					return sendQuestStartDialog(env);
-			}
-		}
-		else if (targetId == 798390) { // Palentine
-			if (qs.getStatus() == QuestStatus.REWARD) {
-				if (env.getDialog() == QuestDialog.USE_OBJECT)
-					return sendQuestDialog(env, 2375);
-				return sendQuestEndDialog(env);
 			}
 		}
 		return false;

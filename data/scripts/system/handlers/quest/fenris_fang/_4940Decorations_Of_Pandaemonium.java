@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _4940Decorations_Of_Pandaemonium extends QuestHandler {
 
-public class _4940Decorations_Of_Pandaemonium extends QuestHandler
-{
 	private final static int questId = 4940;
-	
 	public _4940Decorations_Of_Pandaemonium() {
 		super(questId);
 	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 4939, true);
-	}
-	
+
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(204050).addOnQuestStart(questId);
 		qe.registerQuestNpc(204050).addOnTalkEvent(questId);
 	}

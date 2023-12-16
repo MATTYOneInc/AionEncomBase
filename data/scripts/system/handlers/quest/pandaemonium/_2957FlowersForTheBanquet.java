@@ -23,7 +23,6 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-
 /**
  * @author Cheatkiller
  *
@@ -48,7 +47,6 @@ public class _2957FlowersForTheBanquet extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204127) { 
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -64,28 +62,32 @@ public class _2957FlowersForTheBanquet extends QuestHandler {
 				if (dialog == QuestDialog.START_DIALOG) {
 					if(qs.getQuestVarById(0) == 0) {
 						return sendQuestDialog(env, 1352);
-					}
+					} 
+                    if(qs.getQuestVarById(0) == 2) {
+					    return sendQuestDialog(env, 2375);
+				    }
 				}
 				else if (dialog == QuestDialog.STEP_TO_1) {
 					return defaultCloseDialog(env, 0, 1);
 				}
+				else if (dialog == QuestDialog.SELECT_REWARD) {
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					return sendQuestEndDialog(env);
+				}
 			}
-			else if (targetId == 798065) {
-				if (dialog == QuestDialog.START_DIALOG) {
-					if(qs.getQuestVarById(0) == 1)
-						return sendQuestDialog(env, 1693);
+		else if (targetId == 798065) {
+			if (dialog == QuestDialog.START_DIALOG) {
+				if(qs.getQuestVarById(0) == 1)
+					return sendQuestDialog(env, 1693);
 				}
 				else if (dialog == QuestDialog.STEP_TO_2) {
-					qs.setQuestVar(3);
-					return defaultCloseDialog(env, 3, 3, true, false);
+					return defaultCloseDialog(env, 1, 2);
 				}
 			}
 		}
 		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204129) {
-				if (dialog == QuestDialog.USE_OBJECT) {
-					return sendQuestDialog(env, 2375);
-				}
 				return sendQuestEndDialog(env);
 			}
 		}

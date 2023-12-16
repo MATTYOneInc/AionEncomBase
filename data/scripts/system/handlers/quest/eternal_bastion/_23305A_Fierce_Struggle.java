@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _23305A_Fierce_Struggle extends QuestHandler {
 
-public class _23305A_Fierce_Struggle extends QuestHandler
-{
 	public static final int questId = 23305;
 	
 	public _23305A_Fierce_Struggle() {
@@ -32,13 +31,7 @@ public class _23305A_Fierce_Struggle extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(801280).addOnQuestStart(questId); //Lundvarr.
 		qe.registerQuestNpc(801280).addOnTalkEvent(questId); //Lundvarr.
 		qe.registerQuestNpc(801280).addOnTalkEvent(questId); //Lundvarr.

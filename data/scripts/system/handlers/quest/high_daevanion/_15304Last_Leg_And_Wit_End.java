@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15304Last_Leg_And_Wit_End extends QuestHandler {
 
-public class _15304Last_Leg_And_Wit_End extends QuestHandler
-{
     private final static int questId = 15304;
 	private final static int[] Ab1NewMobs = {883285, 883286, 883287, 883288, 883290, 883291, 883297, 883298, 883299};
-	
 	public _15304Last_Leg_And_Wit_End() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(805327).addOnQuestStart(questId); //Rike.
 		qe.registerQuestNpc(805327).addOnTalkEvent(questId); //Rike.
 		qe.registerQuestNpc(805328).addOnTalkEvent(questId); //Efaion.

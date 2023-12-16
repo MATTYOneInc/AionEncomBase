@@ -20,23 +20,16 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28600Suspicious_Errand extends QuestHandler {
 
-public class _28600Suspicious_Errand extends QuestHandler
-{
 	private final static int questId = 28600;
 	
 	public _28600Suspicious_Errand() {
 		super(questId);
 	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+		
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = {204702, 205233, 804607};
 		for (int npc: npcs) {
 			qe.registerQuestNpc(npc).addOnTalkEvent(questId);

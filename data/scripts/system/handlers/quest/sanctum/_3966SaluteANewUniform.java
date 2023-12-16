@@ -40,10 +40,10 @@ public class _3966SaluteANewUniform extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(798391).addOnQuestStart(questId);
+		qe.registerQuestNpc(798391).addOnTalkEvent(questId);
 		qe.registerQuestNpc(203994).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204030).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204568).addOnTalkEvent(questId);
-		qe.registerQuestNpc(798391).addOnTalkEvent(questId);
 	}
 
 	@Override
@@ -60,19 +60,27 @@ public class _3966SaluteANewUniform extends QuestHandler {
 				else
 					return sendQuestStartDialog(env);
 			}
+			else if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 3) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 2375);
+				else if (env.getDialogId() == 1009) {
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					return sendQuestEndDialog(env);
+				}
+				else
+					return sendQuestEndDialog(env);
+			}
+            else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+		        return sendQuestEndDialog(env);
+			}
 		}
-
-		if (qs == null)
-			return false;
-
-		int var = qs.getQuestVarById(0);
-
-		if (targetId == 203994) {
-			if (qs.getStatus() == QuestStatus.START && var == 0) {
+		else if (targetId == 203994) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
-					qs.setQuestVar(++var);
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return true;
@@ -82,11 +90,11 @@ public class _3966SaluteANewUniform extends QuestHandler {
 			}
 		}
 		else if (targetId == 204030) {
-			if (qs.getStatus() == QuestStatus.START && var == 1) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1693);
 				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
-					qs.setQuestVar(++var);
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return true;
@@ -95,13 +103,12 @@ public class _3966SaluteANewUniform extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (targetId == 204568) {
-			if (qs.getStatus() == QuestStatus.START && var == 2) {
+        else if (targetId == 204568) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2034);
 				else if (env.getDialog() == QuestDialog.STEP_TO_3) {
-					qs.setQuestVar(++var);
-					qs.setStatus(QuestStatus.REWARD);
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return true;
@@ -109,11 +116,6 @@ public class _3966SaluteANewUniform extends QuestHandler {
 				else
 					return sendQuestStartDialog(env);
 			}
-		}
-		else if (targetId == 798391) {
-			if (env.getDialog() == QuestDialog.USE_OBJECT && qs.getStatus() == QuestStatus.REWARD)
-				return sendQuestDialog(env, 2375);
-			return sendQuestEndDialog(env);
 		}
 		return false;
 	}

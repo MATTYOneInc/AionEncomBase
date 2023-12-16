@@ -23,7 +23,6 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-
 /**
  * @author zhkchi
  *
@@ -31,31 +30,24 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _18847Housewarming  extends QuestHandler  {
 
 	private static final int questId = 18847;
-
-	public _18847Housewarming()
-	{
+	public _18847Housewarming() {
 		super(questId);
 	}
 
 	@Override
-	public void register() 
-	{
+	public void register() {
 		qe.registerQuestNpc(830226).addOnQuestStart(questId);
 		qe.registerQuestNpc(830226).addOnTalkEvent(questId);
 	}
 	
 	@Override
-	public boolean onDialogEvent(QuestEnv env)
-	{
+	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		
-		if(qs == null || qs.getStatus() == QuestStatus.NONE)
-		{
-			if (targetId == 830226) 
-			{
+		if(qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 830226) {
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
@@ -66,9 +58,8 @@ public class _18847Housewarming  extends QuestHandler  {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.START)
-		{
-			if(targetId == 830226){
+		else if (qs.getStatus() == QuestStatus.START) {
+			if(targetId == 830226) {
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1003);
@@ -80,10 +71,8 @@ public class _18847Housewarming  extends QuestHandler  {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) 
-		{
-			if (targetId == 830226)
-			{
+		else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (targetId == 830226) {
 				return sendQuestEndDialog(env);
 			}
 		}

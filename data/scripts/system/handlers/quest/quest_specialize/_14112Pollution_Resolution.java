@@ -24,18 +24,12 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14112Pollution_Resolution extends QuestHandler
-{
+public class _14112Pollution_Resolution extends QuestHandler {
+
 	private final static int questId = 14112;
-	private final static int[] poisonousBubblegut = {210318};
 	
 	public _14112Pollution_Resolution() {
 		super(questId);
-	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
 	}
 	
 	@Override
@@ -44,9 +38,7 @@ public class _14112Pollution_Resolution extends QuestHandler
 		qe.registerQuestNpc(203149).addOnQuestStart(questId);
 		qe.registerQuestNpc(203148).addOnTalkEvent(questId);
 		qe.registerQuestNpc(203195).addOnTalkEvent(questId);
-		for (int mob: poisonousBubblegut) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(210318).addOnKillEvent(questId);
 	}
 	
 	@Override

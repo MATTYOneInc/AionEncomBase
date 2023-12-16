@@ -31,25 +31,18 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _24154Better_Than_Last_Time extends QuestHandler {
 
-public class _24154Better_Than_Last_Time extends QuestHandler
-{
     private final static int questId = 24154;
 	
     public _24154Better_Than_Last_Time() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
 		qe.registerOnDie(questId);
         qe.registerOnLogOut(questId);
-		qe.registerOnLevelUp(questId);
         qe.registerOnEnterWorld(questId);
 		qe.registerQuestItem(182215463, questId);
         qe.registerOnMovieEndQuest(250, questId);
@@ -65,7 +58,6 @@ public class _24154Better_Than_Last_Time extends QuestHandler
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 204774) { //Tristran
             	switch (env.getDialog()) {
@@ -97,12 +89,14 @@ public class _24154Better_Than_Last_Time extends QuestHandler
             			}
             		}
             	} case 700359: { //Secret Port Entrance
+                    int var = qs.getQuestVarById(0); 
             		if (env.getDialog() == QuestDialog.USE_OBJECT && var == 2) {
             			return playQuestMovie(env, 250);
             		}
             	}
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } 
+        else if (qs.getStatus() == QuestStatus.REWARD) {
         	if (targetId == 204774) { // Tristran
     			if (env.getDialog() == QuestDialog.USE_OBJECT) {
     				return sendQuestDialog(env, 10002);

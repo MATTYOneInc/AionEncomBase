@@ -29,7 +29,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /**
  * @author dta3000
  */
-
 public class _11001KindMeira extends QuestHandler {
 
 	private final static int questId = 11001;
@@ -51,11 +50,9 @@ public class _11001KindMeira extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (targetId == 798945) {
 			if (qs == null) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -70,10 +67,8 @@ public class _11001KindMeira extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 798918: {
@@ -121,7 +116,6 @@ public class _11001KindMeira extends QuestHandler {
 							return sendQuestDialog(env, 2375);
 						}
 						case SELECT_REWARD: {
-							qs.setQuestVar(4);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							return sendQuestEndDialog(env);

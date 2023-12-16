@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3721Disarm_The_Chantra_Dredgion extends QuestHandler {
 
-public class _3721Disarm_The_Chantra_Dredgion extends QuestHandler
-{
 	private static final int questId = 3721;
 	
 	public _3721Disarm_The_Chantra_Dredgion() {
@@ -46,7 +45,6 @@ public class _3721Disarm_The_Chantra_Dredgion extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798928) { //Yulia.
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -56,6 +54,7 @@ public class _3721Disarm_The_Chantra_Dredgion extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0); 
 			if (targetId == 799069) { //Yannis.
 				switch (dialog) {
 					case START_DIALOG: {

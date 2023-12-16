@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _30767An_Asmodian_Hero extends QuestHandler {
 
-public class _30767An_Asmodian_Hero extends QuestHandler
-{
     private final static int questId = 30767;
-	
     public _30767An_Asmodian_Hero() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(800460).addOnQuestStart(questId);
 		qe.registerQuestNpc(800460).addOnTalkEvent(questId);
 		qe.registerQuestNpc(800460).addOnTalkEvent(questId);

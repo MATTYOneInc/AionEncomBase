@@ -26,10 +26,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3093Secret_Dumpling_Recipe extends QuestHandler
-{
+public class _3093Secret_Dumpling_Recipe extends QuestHandler {
+
 	private final static int questId = 3093;
-	
 	public _3093Secret_Dumpling_Recipe() {
 		super(questId);
 	}
@@ -60,10 +59,11 @@ public class _3093Secret_Dumpling_Recipe extends QuestHandler
 				} else
 					return sendQuestStartDialog(env);
 			}
-		} else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs != null && qs.getStatus() == QuestStatus.START) {
 			if (env.getDialog() == QuestDialog.START_DIALOG)
 				return sendQuestDialog(env, 2375);
 			else if (env.getDialogId() == 1009) {
+                qs.setStatus(QuestStatus.REWARD);
 				removeQuestItem(env, 182208052, 1);
 				return sendQuestEndDialog(env);
 			} else
@@ -98,7 +98,6 @@ public class _3093Secret_Dumpling_Recipe extends QuestHandler
 					return sendQuestDialog(env, 2034);
 				else if (env.getDialog() == QuestDialog.STEP_TO_3) {
 					if (giveQuestItem(env, 182208052, 1));
-					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return true;

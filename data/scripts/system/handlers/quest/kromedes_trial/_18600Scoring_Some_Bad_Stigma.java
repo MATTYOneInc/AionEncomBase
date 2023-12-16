@@ -24,9 +24,7 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _18600Scoring_Some_Bad_Stigma extends QuestHandler
-{
+public class _18600Scoring_Some_Bad_Stigma extends QuestHandler {
 	private final static int questId = 18600;
 	
 	public _18600Scoring_Some_Bad_Stigma() {
@@ -34,13 +32,7 @@ public class _18600Scoring_Some_Bad_Stigma extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = {204500, 804601, 205228};
 		for (int npc: npcs) {
 			qe.registerQuestNpc(npc).addOnTalkEvent(questId);

@@ -29,19 +29,12 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _2989Ceremony_Of_The_Wise extends QuestHandler {
 	
 	private final static int questId = 2989;
-	
 	public _2989Ceremony_Of_The_Wise() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 2988, true);
-	}
-	
-	@Override
 	public void register() {
-	    qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(204056).addOnQuestStart(questId);
 		qe.registerQuestNpc(204057).addOnQuestStart(questId);
 		qe.registerQuestNpc(204058).addOnQuestStart(questId);

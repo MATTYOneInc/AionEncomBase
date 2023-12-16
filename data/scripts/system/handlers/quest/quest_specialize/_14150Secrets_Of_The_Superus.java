@@ -32,13 +32,7 @@ public class _14150Secrets_Of_The_Superus extends QuestHandler {
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestItem(182215458, questId);
         qe.registerQuestNpc(204501).addOnQuestStart(questId);//Sarantus
 		qe.registerQuestNpc(204501).addOnTalkEvent(questId); //Sarantus
@@ -51,7 +45,6 @@ public class _14150Secrets_Of_The_Superus extends QuestHandler {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		} if (qs == null || qs.getStatus() == QuestStatus.NONE) {
@@ -65,6 +58,7 @@ public class _14150Secrets_Of_The_Superus extends QuestHandler {
         } if (qs == null) {
 		    return false;
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 204501) { //Sarantus
 				switch (env.getDialog()) {
 					case START_DIALOG: {

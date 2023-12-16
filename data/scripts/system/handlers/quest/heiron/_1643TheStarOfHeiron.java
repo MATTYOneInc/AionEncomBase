@@ -28,18 +28,15 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /**
  * @author Balthazar
  */
-
 public class _1643TheStarOfHeiron extends QuestHandler {
 
 	private final static int questId = 1643;
-
 	public _1643TheStarOfHeiron() {
 		super(questId);
 	}
 
 	@Override
 	public void register() {
-		qe.registerOnEnterWorld(questId);
 		qe.registerQuestNpc(204545).addOnQuestStart(questId);
 		qe.registerQuestNpc(204545).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204630).addOnTalkEvent(questId);
@@ -50,11 +47,9 @@ public class _1643TheStarOfHeiron extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204545) {
 				switch (env.getDialog()) {
@@ -73,10 +68,8 @@ public class _1643TheStarOfHeiron extends QuestHandler {
 				}
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 204630: {

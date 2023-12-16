@@ -23,23 +23,16 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _24155Leather_Wing_And_Shiny_Things extends QuestHandler {
 
-public class _24155Leather_Wing_And_Shiny_Things extends QuestHandler
-{
     private final static int questId = 24155;
 	
     public _24155Leather_Wing_And_Shiny_Things() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
     	qe.registerQuestItem(182204318, questId);
 		qe.registerQuestNpc(204701).addOnQuestStart(questId); //Hod
     	qe.registerQuestNpc(204701).addOnTalkEvent(questId); //Hod

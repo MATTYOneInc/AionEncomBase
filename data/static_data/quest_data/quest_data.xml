@@ -6391,9 +6391,6 @@
       <finished quest_id="2947" />
     </start_conditions>
   </quest>
-  <quest id="2077" name="Regarding Hierni" nameId="1103177" minlevel_permitted="999" max_repeat_count="1" cannot_share="true" cannot_giveup="true" race_permitted="ASMODIANS" category="QUEST">
-    <rewards gold="2070" />
-  </quest>
   <quest id="2100" name="Order of the Captain" nameId="1103200" minlevel_permitted="3" max_repeat_count="1" cannot_share="true" cannot_giveup="true" race_permitted="ASMODIANS" category="MISSION">
     <rewards exp="10">
       <selectable_reward_item item_id="100000107" count="1" />
@@ -45416,31 +45413,6 @@
     <quest_work_items>
       <quest_work_item item_id="182212233" />
     </quest_work_items>
-  </quest>
-  <quest id="29060" name="New Trainer" nameId="1199441" minlevel_permitted="999" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="IMPORTANT">
-    <rewards gold="40050" exp="1495244" />
-    <class_permitted>WARRIOR GLADIATOR TEMPLAR</class_permitted>
-    <quest_work_items>
-      <quest_work_item item_id="182215168" count="1" />
-    </quest_work_items>
-  </quest>
-  <quest id="29061" name="New Trainer" nameId="1199444" minlevel_permitted="999" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="IMPORTANT">
-    <rewards gold="40050" exp="1495244" />
-    <class_permitted>SCOUT ASSASSIN RANGER</class_permitted>
-    <quest_work_items>
-      <quest_work_item item_id="182215169" count="1" />
-    </quest_work_items>
-  </quest>
-  <quest id="29062" name="New Trainer" nameId="1199447" minlevel_permitted="999" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="IMPORTANT">
-    <rewards gold="40050" exp="1495244" />
-    <class_permitted>MAGE SORCERER SPIRIT_MASTER</class_permitted>
-    <quest_work_items>
-      <quest_work_item item_id="182215170" count="1" />
-    </quest_work_items>
-  </quest>
-  <quest id="29063" name="New Trainer" nameId="1199450" minlevel_permitted="999" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="IMPORTANT">
-    <rewards gold="40050" exp="1495244" />
-    <class_permitted>PRIEST CHANTER CLERIC</class_permitted>
   </quest>
   <quest id="29064" name="Fang Of Construction" nameId="1137046" minlevel_permitted="45" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="QUEST">
     <collect_items>

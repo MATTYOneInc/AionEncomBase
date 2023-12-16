@@ -24,23 +24,15 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15401Support_Redemption_Landing extends QuestHandler {
 
-public class _15401Support_Redemption_Landing extends QuestHandler
-{
     private final static int questId = 15401;
-	
     public _15401Support_Redemption_Landing() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(804699).addOnQuestStart(questId);
 		qe.registerQuestNpc(804699).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804782).addOnTalkEvent(questId);

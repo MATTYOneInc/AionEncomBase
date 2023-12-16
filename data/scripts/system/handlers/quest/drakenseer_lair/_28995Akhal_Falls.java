@@ -22,11 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
-public class _28995Akhal_Falls extends QuestHandler
-{
+public class _28995Akhal_Falls extends QuestHandler {
     private final static int questId = 28995;
-	private final static int[] IDF6DragonMessenger69Ah = {220450}; //Drakenseer Akhal.
 	
     public _28995Akhal_Falls() {
         super(questId);
@@ -35,9 +32,7 @@ public class _28995Akhal_Falls extends QuestHandler
     public void register() {
 		qe.registerQuestNpc(806242).addOnQuestStart(questId); //Bakao.
         qe.registerQuestNpc(806242).addOnTalkEvent(questId); //Bakao.
-		for (int mob: IDF6DragonMessenger69Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(220450).addOnKillEvent(questId);
     }
 	
     @Override

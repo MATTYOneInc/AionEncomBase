@@ -24,9 +24,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25401Harbinger_Hero extends QuestHandler {
 
-public class _25401Harbinger_Hero extends QuestHandler
-{
     private final static int questId = 25401;
 	
     public _25401Harbinger_Hero() {
@@ -34,13 +33,7 @@ public class _25401Harbinger_Hero extends QuestHandler
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(804719).addOnQuestStart(questId);
 		qe.registerQuestNpc(804719).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804753).addOnTalkEvent(questId);

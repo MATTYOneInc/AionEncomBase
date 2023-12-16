@@ -42,7 +42,7 @@ public class _1725CenturionsForgetfulness extends QuestHandler {
 	public void register() {
 		qe.registerQuestNpc(278520).addOnQuestStart(questId);
 		qe.registerQuestNpc(278520).addOnTalkEvent(questId);
-		qe.registerQuestNpc(278514).addOnTalkEvent(questId);
+		qe.registerQuestNpc(278513).addOnTalkEvent(questId);
 		qe.registerQuestNpc(278590).addOnTalkEvent(questId);
 	}
 
@@ -53,7 +53,6 @@ public class _1725CenturionsForgetfulness extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 278520) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -72,7 +71,7 @@ public class _1725CenturionsForgetfulness extends QuestHandler {
 			}
 		}
 		else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 278514) {
+			if (targetId == 278513) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
@@ -95,7 +94,7 @@ public class _1725CenturionsForgetfulness extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD && targetId == 278590) {
+		else if (qs.getStatus() == QuestStatus.REWARD ) {
 			return sendQuestEndDialog(env);
 		}
 		return false;

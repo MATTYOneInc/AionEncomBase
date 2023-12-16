@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _30717The_Finer_Things extends QuestHandler {
 
-public class _30717The_Finer_Things extends QuestHandler
-{
     private final static int questId = 30717;
-	
     public _30717The_Finer_Things() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(800460).addOnQuestStart(questId);
 		qe.registerQuestNpc(800460).addOnTalkEvent(questId);
 		qe.registerQuestNpc(800460).addOnTalkEvent(questId);

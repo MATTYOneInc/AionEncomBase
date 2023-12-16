@@ -22,22 +22,14 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25301First_Steps_As_A_Protector extends QuestHandler {
 
-public class _25301First_Steps_As_A_Protector extends QuestHandler
-{
     private final static int questId = 25301;
-	
 	public _25301First_Steps_As_A_Protector() {
         super(questId);
     }
 	
-    @Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(805339).addOnQuestStart(questId);
 		qe.registerQuestNpc(805339).addOnTalkEvent(questId);
 		qe.registerQuestNpc(805340).addOnTalkEvent(questId);

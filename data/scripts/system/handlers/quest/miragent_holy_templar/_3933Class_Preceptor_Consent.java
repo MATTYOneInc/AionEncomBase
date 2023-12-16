@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3933Class_Preceptor_Consent extends QuestHandler {
 
-public class _3933Class_Preceptor_Consent extends QuestHandler
-{
 	private final static int questId = 3933;
 	
 	public _3933Class_Preceptor_Consent() {
@@ -32,13 +31,7 @@ public class _3933Class_Preceptor_Consent extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = {203704, 203705, 203706, 203707, 203752, 203701, 801214, 801215};
 		qe.registerQuestNpc(203701).addOnQuestStart(questId);
 		for (int npc: npcs)

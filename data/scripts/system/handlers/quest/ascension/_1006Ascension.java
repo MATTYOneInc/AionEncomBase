@@ -49,16 +49,12 @@ import java.util.List;
 public class _1006Ascension extends QuestHandler {
 
 	private final static int questId = 1006;
-	
 	public _1006Ascension() {
 		super(questId);
 	}
 	
 	@Override
 	public void register() {
-		if (CustomConfig.ENABLE_SIMPLE_2NDCLASS) {
-			return;
-		}
 		int[] mobs = {211042, 211043};
 		int[] npcs = {790001, 730008, 205000};
 		qe.registerOnLevelUp(questId);
@@ -208,7 +204,6 @@ public class _1006Ascension extends QuestHandler {
 		} 
 		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 790001) { //Pernos.
-				player.getCommonData().setExp(126068, false);
 				return sendQuestEndDialog(env);
 			}
 		}

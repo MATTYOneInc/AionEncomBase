@@ -23,25 +23,17 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _24153The_Efficacy_Of_Fire extends QuestHandler {
 
-public class _24153The_Efficacy_Of_Fire extends QuestHandler
-{
     private final static int questId = 24153;
-	
     private final static int[] mob_ids = {213730, 213788, 213789, 213790, 213791};
 	
     public _24153The_Efficacy_Of_Fire() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(204787).addOnQuestStart(questId); //Delris
         qe.registerQuestNpc(204787).addOnTalkEvent(questId); //Chieftain Akagitan
         qe.registerQuestNpc(204784).addOnTalkEvent(questId); //Delris

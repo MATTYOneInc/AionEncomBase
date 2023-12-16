@@ -104,11 +104,6 @@ public class _3008WickedThiefKelaino extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 798150) {
-				return sendQuestEndDialog(env);
-			}
-		}
 		return false;
 	}
 }

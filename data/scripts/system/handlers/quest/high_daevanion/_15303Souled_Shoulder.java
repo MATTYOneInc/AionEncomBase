@@ -22,22 +22,14 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15303Souled_Shoulder extends QuestHandler {
 
-public class _15303Souled_Shoulder extends QuestHandler
-{
     private final static int questId = 15303;
-	
     public _15303Souled_Shoulder() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(805327).addOnQuestStart(questId); //Rike.
 		qe.registerQuestNpc(805327).addOnTalkEvent(questId); //Rike.
 		qe.registerQuestNpc(805328).addOnTalkEvent(questId); //Efaion.

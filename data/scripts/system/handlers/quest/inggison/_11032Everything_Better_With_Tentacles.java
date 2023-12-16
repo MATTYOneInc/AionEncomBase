@@ -39,24 +39,27 @@ public class _11032Everything_Better_With_Tentacles extends QuestHandler {
 
 	@Override
 	public void register() {
-		int[] npcs = { 798959 };
-		for (int npc : npcs)
-			qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-		qe.registerQuestItem(182206726, questId);
 		qe.registerQuestNpc(798959).addOnQuestStart(questId);
+		qe.registerQuestNpc(798959).addOnTalkEvent(questId);
+		qe.registerQuestItem(182206726, questId);
 	}
 
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
-		if (sendQuestNoneDialog(env, 798959, 4762))
-			return true;
-
 		final Player player = env.getPlayer();
-
-		QuestState qs = env.getPlayer().getQuestStateList().getQuestState(questId);
+		final QuestState qs = player.getQuestStateList().getQuestState(questId);
+		int targetId = env.getTargetId();
+		QuestDialog dialog = env.getDialog();
+		if (targetId == 798959) {
+			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 4762);
+				else
+					return sendQuestStartDialog(env);
+			}
+        }
 		if (qs == null)
 			return false;
-		int var = qs.getQuestVarById(0);
 		if (qs.getStatus() == QuestStatus.REWARD) {
 			if (env.getTargetId() == 798959) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -69,6 +72,7 @@ public class _11032Everything_Better_With_Tentacles extends QuestHandler {
 			return false;
 		}
 		if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			switch (env.getTargetId()) {
 				case 798959:
 					switch (env.getDialog()) {
@@ -83,10 +87,9 @@ public class _11032Everything_Better_With_Tentacles extends QuestHandler {
 									qs.setQuestVarById(0, var + 1);
 									updateQuestStatus(env);
 									PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-									return true;
-								}
-								else
-									return sendQuestDialog(env, 10001);
+								return sendQuestDialog(env, 10000);
+							} else 
+								return sendQuestDialog(env, 10001);
 							}
 						case STEP_TO_2:
 							if (var == 1) {
@@ -95,8 +98,8 @@ public class _11032Everything_Better_With_Tentacles extends QuestHandler {
 								qs.setQuestVarById(0, var + 1);
 								updateQuestStatus(env);
                             return sendQuestSelectionDialog(env); 
-							}
-							return true;
+						}
+						return true;
 				}
 			}
 		}

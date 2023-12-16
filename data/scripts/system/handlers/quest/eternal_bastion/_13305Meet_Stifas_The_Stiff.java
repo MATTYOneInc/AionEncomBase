@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _13305Meet_Stifas_The_Stiff extends QuestHandler {
 
-public class _13305Meet_Stifas_The_Stiff extends QuestHandler
-{
 	public static final int questId = 13305;
 	
 	public _13305Meet_Stifas_The_Stiff() {
@@ -32,13 +31,7 @@ public class _13305Meet_Stifas_The_Stiff extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(801281).addOnQuestStart(questId); //Demades.
 		qe.registerQuestNpc(801281).addOnTalkEvent(questId); //Demades.
 		qe.registerQuestNpc(801281).addOnTalkEvent(questId); //Demades.

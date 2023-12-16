@@ -39,9 +39,8 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author (Encom)
 /** Source KOR: https://www.youtube.com/watch?v=8Qt-ZODwhoA
 /****/
+public class _20521Recovered_Destiny extends QuestHandler {
 
-public class _20521Recovered_Destiny extends QuestHandler
-{
 	public static final int questId = 20521;
 	private final static int[] npcs = {806079, 806135, 806136, 806137, 703130, 703165, 731667, 731668, 731669};
 	
@@ -65,8 +64,6 @@ public class _20521Recovered_Destiny extends QuestHandler
 		qe.registerOnEnterZone(ZoneName.get("ID_ETERNITY_Q_SENSORYAREA_B_301570000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("ID_ETERNITY_Q_SENSORYAREA_C_301570000"), questId);
 		qe.registerOnMovieEndQuest(871, questId);
-		qe.registerOnMovieEndQuest(923, questId);
-		qe.registerOnMovieEndQuest(924, questId);
     }
 	
 	@Override
@@ -250,12 +247,29 @@ public class _20521Recovered_Destiny extends QuestHandler
                         if (var == 12) {
 							switch (player.getGender()) {
 								case MALE:
-							        playQuestMovie(env, 923);
+							        PacketSendUtility.sendPacket(player, new SM_PLAY_MOVIE(0, 923));
+									ThreadPoolManager.getInstance().schedule(new Runnable() {
+										@Override
+										public void run() {
+											//You are graced with the aura of Blessed Breath.
+											PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403364));
+											QuestService.addNewSpawn(301570000, player.getInstanceId(), 857799, (float) 231.63109, (float) 511.9707, (float) 468.80215, (byte) 0); //IDEternity_Q_HD_Wind_Da_M_N_65_An.
+										}
+									}, 50000);
 								break;
 								case FEMALE:
-									playQuestMovie(env, 924);
+									PacketSendUtility.sendPacket(player, new SM_PLAY_MOVIE(0, 924));
+									ThreadPoolManager.getInstance().schedule(new Runnable() {
+										@Override
+										public void run() {
+											//You are graced with the aura of Blessed Breath.
+											PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403364));
+											QuestService.addNewSpawn(301570000, player.getInstanceId(), 857803, (float) 231.63109, (float) 511.9707, (float) 468.80215, (byte) 0); //IDEternity_Q_HD_Wind_Da_F_N_65_An.
+										}
+									}, 50000);
 								break;
 							}
+							changeQuestStep(env, 12, 13, false);
 							return closeDialogWindow(env);
 						}
 					}
@@ -308,7 +322,7 @@ public class _20521Recovered_Destiny extends QuestHandler
 			} if (var == 13) {
 				if (env.getTargetId() == 857796 || //IDEternity_Q_HD_Fire_Da_M_N_65_An.
 				    env.getTargetId() == 857800) { //IDEternity_Q_HD_Fire_Da_L_N_65_An.
-					changeQuestStep(env, 13, 14, false);
+					changeQuestStep(env, 13, 13, true);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return true;
@@ -326,18 +340,6 @@ public class _20521Recovered_Destiny extends QuestHandler
 			InstanceService.registerPlayerWithInstance(ArchivesOfEternity, player);
 			TeleportService2.teleportTo(player, 301570000, ArchivesOfEternity.getInstanceId(), 737, 512, 469);
 			changeQuestStep(env, 2, 3, false);
-			return true;
-		}
-		if (movieId == 923) {
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403364));
-			QuestService.addNewSpawn(301570000, player.getInstanceId(), 857799, (float) 231.63109, (float) 511.9707, (float) 468.80215, (byte) 0); //IDEternity_Q_HD_Wind_Da_M_N_65_An.
-			changeQuestStep(env, 12, 13, false);
-			return true;
-		}
-		if (movieId == 924) {
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403364));
-			QuestService.addNewSpawn(301570000, player.getInstanceId(), 857803, (float) 231.63109, (float) 511.9707, (float) 468.80215, (byte) 0); //IDEternity_Q_HD_Wind_Da_F_N_65_An.
-			changeQuestStep(env, 12, 13, false);
 			return true;
 		}
 		return false;

@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28601Nightmares_And_Dreamscapes extends QuestHandler {
 
-public class _28601Nightmares_And_Dreamscapes extends QuestHandler
-{
 	private final static int questId = 28601;
 	
 	private final static int[] npc_ids = {204702, 205234};
@@ -34,13 +33,7 @@ public class _28601Nightmares_And_Dreamscapes extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 28600);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		for (int npc_id: npc_ids) {
 		    qe.registerQuestNpc(npc_id).addOnTalkEvent(questId);
 		    qe.registerQuestNpc(204702).addOnQuestStart(questId);

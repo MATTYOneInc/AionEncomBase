@@ -34,13 +34,7 @@ public class _2988The_Wise_In_Disguise extends QuestHandler {
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(204182).addOnQuestStart(questId);
 		qe.registerQuestNpc(204182).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204338).addOnTalkEvent(questId);

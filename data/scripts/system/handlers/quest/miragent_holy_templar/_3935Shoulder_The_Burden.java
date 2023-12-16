@@ -23,23 +23,15 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3935Shoulder_The_Burden extends QuestHandler {
 
-public class _3935Shoulder_The_Burden extends QuestHandler
-{
 	private final static int questId = 3935;
-	
 	public _3935Shoulder_The_Burden() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 3934, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = {203316, 203702, 203329, 203752, 203701};
 		qe.registerQuestNpc(203701).addOnQuestStart(questId);
 		for (int npc: npcs) {

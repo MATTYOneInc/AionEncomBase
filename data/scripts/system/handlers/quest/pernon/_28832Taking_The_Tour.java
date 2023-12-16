@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28832Taking_The_Tour extends QuestHandler {
 
-public class _28832Taking_The_Tour extends QuestHandler 
-{
 	private static final int questId = 28832;
-	
 	public _28832Taking_The_Tour() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(830532).addOnQuestStart(questId);
 		qe.registerQuestNpc(830532).addOnTalkEvent(questId);
 		qe.registerQuestNpc(830085).addOnTalkEvent(questId);

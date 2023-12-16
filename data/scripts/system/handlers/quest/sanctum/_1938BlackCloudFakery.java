@@ -18,76 +18,89 @@ package quest.sanctum;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-
+import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author zhkchi
  *
  */
-public class _1938BlackCloudFakery extends QuestHandler
-{
-	private final static int	questId	= 1938;
-	private final static int[]	npcs = {203703, 798069, 805836}; //npcs = {203703, 279001, 279008};
+public class _1938BlackCloudFakery extends QuestHandler {
+
+	private final static int questId = 1938;
+	private final static int[] npcs = {203703, 798069, 805836};
 	
-	public _1938BlackCloudFakery()
-	{
+	public _1938BlackCloudFakery() {
 		super(questId);
 	}
 
 	@Override
-	public void register()
-	{
+	public void register() {
 		qe.registerQuestNpc(203703).addOnQuestStart(questId);
 		for(int npc: npcs)
 			qe.registerQuestNpc(npc).addOnTalkEvent(questId);
 	}
 
 	@Override
-	public boolean onDialogEvent(QuestEnv env)
-	{
+	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
 		QuestDialog dialog = env.getDialog();
-		
-		if(sendQuestNoneDialog(env, 203703))
-			return true;
-
-		if(qs == null)
-			return false;
-
-		int var = qs.getQuestVarById(0);
-		
-		if(qs.getStatus() == QuestStatus.START)
-		{
-			switch(targetId)
-			{
-				case 798069:
-					switch(dialog)
-					{
-						case START_DIALOG:
-							if(var == 0)
-								return sendQuestDialog(env, 1352);
-						case STEP_TO_1:
-							return defaultCloseDialog(env, 0, 1);
-					}
-					break;
-				case 805836:
-					switch(dialog)
-					{
-						case START_DIALOG:
-							if(var == 1)
-								return sendQuestDialog(env, 1693);
-						case STEP_TO_2:
-							return defaultCloseDialog(env, 1, 2, true, false);	
-					}
-					break;
+		if (targetId == 203703) {
+			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 1011);
+				else
+					return sendQuestStartDialog(env);
+			}
+			else if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 2375);
+				else if (env.getDialogId() == 1009) {
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					return sendQuestEndDialog(env);
+				}
+				else
+					return sendQuestEndDialog(env);
+			}
+            else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+		        return sendQuestEndDialog(env);
 			}
 		}
-		return sendQuestRewardDialog(env, 805836, 2375);
+		else if (targetId == 798069) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 1352);
+				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+					updateQuestStatus(env);
+					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
+					return true;
+				}
+				else
+					return sendQuestStartDialog(env);
+			}
+		}
+		else if (targetId == 805836) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 1693);
+				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+					updateQuestStatus(env);
+					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
+					return true;
+				}
+				else
+					return sendQuestStartDialog(env);
+			}
+		}
+		return false;
 	}
 }

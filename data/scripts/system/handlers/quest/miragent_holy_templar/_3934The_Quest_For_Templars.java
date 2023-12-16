@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3934The_Quest_For_Templars extends QuestHandler {
 
-public class _3934The_Quest_For_Templars extends QuestHandler
-{
 	private final static int questId = 3934;
-	
 	public _3934The_Quest_For_Templars() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 3933, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = {798359, 798360, 798361, 798362, 798363, 798364, 798365, 798366, 203752, 203701};
 		qe.registerQuestNpc(203701).addOnQuestStart(questId);
 		for (int npc: npcs) {

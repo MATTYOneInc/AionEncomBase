@@ -26,23 +26,15 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15613Prometheus_Unbound extends QuestHandler {
 
-public class _15613Prometheus_Unbound extends QuestHandler
-{
     public static final int questId = 15613;
-	
     public _15613Prometheus_Unbound() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(806113).addOnQuestStart(questId); //Volter.
 		qe.registerQuestNpc(806113).addOnTalkEvent(questId); //Volter.
 		qe.registerQuestNpc(806166).addOnTalkEvent(questId); //세다르.

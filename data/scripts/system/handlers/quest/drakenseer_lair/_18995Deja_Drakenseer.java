@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _18995Deja_Drakenseer extends QuestHandler {
 
-public class _18995Deja_Drakenseer extends QuestHandler
-{
     private final static int questId = 18995;
-	private final static int[] IDF6DragonMessenger69Ah = {220450}; //Drakenseer Akhal.
 	
     public _18995Deja_Drakenseer() {
         super(questId);
@@ -35,9 +33,7 @@ public class _18995Deja_Drakenseer extends QuestHandler
     public void register() {
         qe.registerQuestNpc(806241).addOnQuestStart(questId); //Riseon.
         qe.registerQuestNpc(806241).addOnTalkEvent(questId); //Riseon.
-        for (int mob: IDF6DragonMessenger69Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(220450).addOnKillEvent(questId);
     }
 	
     @Override

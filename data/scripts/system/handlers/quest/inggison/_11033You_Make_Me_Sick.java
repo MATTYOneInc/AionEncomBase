@@ -15,6 +15,7 @@ package quest.inggison;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
@@ -37,9 +38,9 @@ public class _11033You_Make_Me_Sick extends QuestHandler {
 	
 	@Override
 	public void register() {
-		qe.registerQuestItem(182206728, questId);
 		qe.registerQuestNpc(798959).addOnQuestStart(questId);
 		qe.registerQuestNpc(798959).addOnTalkEvent(questId);
+        qe.registerQuestItem(182206728, questId);
 	}
 	
 	@Override
@@ -47,11 +48,17 @@ public class _11033You_Make_Me_Sick extends QuestHandler {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
 		QuestDialog dialog = env.getDialog();
-		if (sendQuestNoneDialog(env, 798959, 4762))
-			return true;
+		if (targetId == 798959) {
+			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 4762);
+				else
+					return sendQuestStartDialog(env);
+			}
+        }
 		if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 798959) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -59,15 +66,7 @@ public class _11033You_Make_Me_Sick extends QuestHandler {
 							return sendQuestDialog(env, 1011);
 						} if (var == 1) {
 							return sendQuestDialog(env, 1352);
-						}
-					} case SELECT_ACTION_1012: {
-						if (var == 0) {
-							return sendQuestDialog(env, 1012);
-						}
-					} case SELECT_ACTION_1353: {
-						if (var == 1) {
-							return sendQuestDialog(env, 1353);
-						}
+						} 
 					} case CHECK_COLLECTED_ITEMS: {
 						if (var == 0) {
 						    if (QuestService.collectItemCheck(env, true)) {
@@ -81,10 +80,8 @@ public class _11033You_Make_Me_Sick extends QuestHandler {
 						if (var == 1) {
 						    giveQuestItem(env, 182206728, 1);
 							changeQuestStep(env, 1, 2, false);
-							return closeDialogWindow(env);
+							return sendQuestSelectionDialog(env);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}

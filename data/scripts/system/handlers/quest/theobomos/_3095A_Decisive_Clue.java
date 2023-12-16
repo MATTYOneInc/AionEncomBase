@@ -87,7 +87,7 @@ public class _3095A_Decisive_Clue extends QuestHandler
 					} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
-						return closeDialogWindow(env);
+						return sendQuestEndDialog(env);
 					}
 				}
 			} if (targetId == 804604) { //Ohelah.

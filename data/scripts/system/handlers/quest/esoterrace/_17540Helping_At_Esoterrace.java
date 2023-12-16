@@ -23,22 +23,15 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _17540Helping_At_Esoterrace extends QuestHandler {
 
-public class _17540Helping_At_Esoterrace extends QuestHandler
-{
     private final static int questId = 17540;
 	
     public _17540Helping_At_Esoterrace() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
         qe.registerQuestNpc(799553).addOnQuestStart(questId); //Daidra.
         qe.registerQuestNpc(799553).addOnTalkEvent(questId); //Daidra.

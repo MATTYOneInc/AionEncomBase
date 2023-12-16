@@ -43,21 +43,6 @@ public class _3081VisitingtheLibrary extends QuestHandler {
 				else
 					return sendQuestStartDialog(env);
 			}
-			else if (qs != null && qs.getStatus() == QuestStatus.START) {
-				if (env.getDialog() == QuestDialog.START_DIALOG)
-					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009) {
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				}
-				else
-					return sendQuestEndDialog(env);
-			}
-			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
-				return sendQuestEndDialog(env);
-			}
 		}
 		else if (targetId == 203830) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
@@ -74,18 +59,20 @@ public class _3081VisitingtheLibrary extends QuestHandler {
 			}
 		}
 		else if (targetId == 798116) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START)
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
-					qs.setQuestVar(3);
+				else if (env.getDialogId() == 1009) {
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
 				else
 					return sendQuestEndDialog(env);
+			}
+		else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+			return sendQuestEndDialog(env);
 			}
 		}
 		return false;

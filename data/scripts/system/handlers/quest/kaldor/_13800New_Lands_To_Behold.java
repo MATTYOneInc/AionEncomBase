@@ -25,9 +25,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _13800New_Lands_To_Behold extends QuestHandler {
 
-public class _13800New_Lands_To_Behold extends QuestHandler
-{
 	private final static int questId = 13800;
 	
 	public _13800New_Lands_To_Behold() {
@@ -35,13 +34,7 @@ public class _13800New_Lands_To_Behold extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(804699).addOnQuestStart(questId);
 		qe.registerQuestNpc(804699).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804782).addOnTalkEvent(questId);

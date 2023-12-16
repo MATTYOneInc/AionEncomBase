@@ -25,9 +25,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28917When_One_Door_Closes extends QuestHandler {
 
-public class _28917When_One_Door_Closes extends QuestHandler
-{
 	private final static int questId = 28917;
 	
 	public _28917When_One_Door_Closes() {
@@ -35,13 +34,7 @@ public class _28917When_One_Door_Closes extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(801007).addOnQuestStart(questId); //Captain Faun.
 		qe.registerQuestNpc(802353).addOnTalkEvent(questId); //Yasan.
 		qe.registerQuestNpc(801947).addOnTalkEvent(questId); //Giriltia.

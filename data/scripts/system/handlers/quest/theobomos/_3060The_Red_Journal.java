@@ -116,7 +116,7 @@ public class _3060The_Red_Journal extends QuestHandler
 					return sendQuestDialog(env, 2375);
 				} else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE && qs.getStatus() != QuestStatus.NONE) {
 					removeQuestItem(env, 182208043, 1); //The Red Journal.
-					qs.setQuestVar(1);
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);

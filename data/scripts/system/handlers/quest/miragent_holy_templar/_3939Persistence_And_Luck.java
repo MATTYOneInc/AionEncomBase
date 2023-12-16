@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3939Persistence_And_Luck extends QuestHandler {
 
-public class _3939Persistence_And_Luck extends QuestHandler
-{
 	private final static int questId = 3939;
-	
 	public _3939Persistence_And_Luck() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 3938, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = { 203701, 203780, 203781, 203752, 700537 };
 		qe.registerQuestNpc(203701).addOnQuestStart(questId);
 		for (int npc: npcs) {

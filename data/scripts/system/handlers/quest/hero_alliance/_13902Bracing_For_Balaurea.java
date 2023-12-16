@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _13902Bracing_For_Balaurea extends QuestHandler {
 
-public class _13902Bracing_For_Balaurea extends QuestHandler
-{
     private final static int questId = 13902;
 	
     public _13902Bracing_For_Balaurea() {
@@ -32,13 +31,7 @@ public class _13902Bracing_For_Balaurea extends QuestHandler
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(798926).addOnQuestStart(questId); //Outremus.
 		qe.registerQuestNpc(798926).addOnTalkEvent(questId); //Outremus.
 		qe.registerQuestNpc(798926).addOnTalkEvent(questId); //Outremus.

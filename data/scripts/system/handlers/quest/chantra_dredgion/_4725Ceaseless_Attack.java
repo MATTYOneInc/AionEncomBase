@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _4725Ceaseless_Attack extends QuestHandler {
 
-public class _4725Ceaseless_Attack extends QuestHandler
-{
 	private static final int questId = 4725;
 	
 	public _4725Ceaseless_Attack() {
@@ -46,8 +45,6 @@ public class _4725Ceaseless_Attack extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		int var1 = qs.getQuestVarById(1);
-		int var2 = qs.getQuestVarById(2);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 799403) { //Yorgen.
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -57,6 +54,8 @@ public class _4725Ceaseless_Attack extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var1 = qs.getQuestVarById(1);
+		    int var2 = qs.getQuestVarById(2);
 			if (targetId == 799226) { //Valetta.
 				if (dialog == QuestDialog.START_DIALOG) {
 					if (var1 == 6 && var2 == 15) {

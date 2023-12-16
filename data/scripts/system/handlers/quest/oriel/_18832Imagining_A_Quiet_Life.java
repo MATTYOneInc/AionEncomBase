@@ -23,22 +23,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _18832Imagining_A_Quiet_Life extends QuestHandler 
-{
+public class _18832Imagining_A_Quiet_Life extends QuestHandler {
+
 	private static final int questId = 18832;
-	
 	public _18832Imagining_A_Quiet_Life() {
 		super(questId);
 	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(830365).addOnQuestStart(questId);
 		qe.registerQuestNpc(830365).addOnTalkEvent(questId);
 		qe.registerQuestNpc(830001).addOnTalkEvent(questId);

@@ -25,23 +25,15 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _18917Dont_Wait_Infiltrate extends QuestHandler {
 
-public class _18917Dont_Wait_Infiltrate extends QuestHandler
-{
 	private final static int questId = 18917;
-	
 	public _18917Dont_Wait_Infiltrate() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(801026).addOnQuestStart(questId); //Tribunus Pippus.
 		qe.registerQuestNpc(802350).addOnTalkEvent(questId); //Eljer.
 		qe.registerQuestNpc(801945).addOnTalkEvent(questId); //Kanix.

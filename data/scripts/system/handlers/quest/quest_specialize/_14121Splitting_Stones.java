@@ -22,23 +22,16 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _14121Splitting_Stones extends QuestHandler {
 
-public class _14121Splitting_Stones extends QuestHandler
-{
     private final static int questId = 14121;
 	
     public _14121Splitting_Stones() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(203903).addOnQuestStart(questId); //Valerius
         qe.registerQuestNpc(203903).addOnTalkEvent(questId); //Valerius
 		qe.registerQuestNpc(204032).addOnTalkEvent(questId); //Lakaias
@@ -49,7 +42,6 @@ public class _14121Splitting_Stones extends QuestHandler
         final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203903) { //Valerius
 			    if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -59,6 +51,7 @@ public class _14121Splitting_Stones extends QuestHandler
 			    }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 204032) { //Lakaias
 				switch (env.getDialog()) {
 					case START_DIALOG: {

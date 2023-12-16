@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _11319Tour_De_Cygnea extends QuestHandler {
 
-public class _11319Tour_De_Cygnea extends QuestHandler
-{
     private final static int questId = 11319;
 	
     public _11319Tour_De_Cygnea() {
@@ -32,13 +31,7 @@ public class _11319Tour_De_Cygnea extends QuestHandler
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(800245).addOnQuestStart(questId);
 		qe.registerQuestNpc(800245).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804782).addOnTalkEvent(questId);

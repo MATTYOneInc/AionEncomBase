@@ -25,9 +25,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28253Start_Of_The_Second_Ordeal extends QuestHandler {
 
-public class _28253Start_Of_The_Second_Ordeal extends QuestHandler
-{
     private final static int questId = 28253;
 	
     public _28253Start_Of_The_Second_Ordeal() {
@@ -36,10 +35,7 @@ public class _28253Start_Of_The_Second_Ordeal extends QuestHandler
 	
 	@Override
 	public void register() {
-		int[] npcs = {798804};
-        for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        }
+        qe.registerQuestNpc(798804).addOnTalkEvent(questId);
 		qe.registerQuestNpc(247245).addOnKillEvent(questId);
 		qe.registerQuestNpc(798804).addOnAtDistanceEvent(questId);
 	}

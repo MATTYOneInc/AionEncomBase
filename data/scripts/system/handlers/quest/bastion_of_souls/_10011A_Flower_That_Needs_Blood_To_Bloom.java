@@ -24,13 +24,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _10011A_Flower_That_Needs_Blood_To_Bloom extends QuestHandler {
 
-public class _10011A_Flower_That_Needs_Blood_To_Bloom extends QuestHandler
-{
 	public static final int questId = 10011;
-	
 	private final static int[] npcs = {806075, 806585, 806589, 731785, 731786, 731787};
-	private final static int[] bossNeutl75Ah = {246810};
 	private final static int[] bossWitchAh = {246506, 246507, 246508, 246509};
 	
 	public _10011A_Flower_That_Needs_Blood_To_Bloom() {
@@ -41,9 +38,9 @@ public class _10011A_Flower_That_Needs_Blood_To_Bloom extends QuestHandler
     public void register() {
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: bossNeutl75Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: bossWitchAh) {
+        } 
+		qe.registerQuestNpc(246810).addOnKillEvent(questId);
+		for (int mob: bossWitchAh) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
 		qe.registerOnLevelUp(questId);
@@ -210,7 +207,7 @@ public class _10011A_Flower_That_Needs_Blood_To_Bloom extends QuestHandler
             if (var == 5) {
 				int var1 = qs.getQuestVarById(1);
                 if (var1 >= 0 && var1 < 4) {
-                    return defaultOnKillEvent(env, bossNeutl75Ah, var1, var1 + 1, 1);
+                    return defaultOnKillEvent(env, 246810, var1, var1 + 1, 1);
                 } else if (var1 == 4) {
 					qs.setQuestVar(6);
 					updateQuestStatus(env);

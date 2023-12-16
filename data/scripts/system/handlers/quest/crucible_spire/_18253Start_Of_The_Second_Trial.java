@@ -25,9 +25,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _18253Start_Of_The_Second_Trial extends QuestHandler {
 
-public class _18253Start_Of_The_Second_Trial extends QuestHandler
-{
     private final static int questId = 18253;
 	
     public _18253Start_Of_The_Second_Trial() {
@@ -36,10 +35,7 @@ public class _18253Start_Of_The_Second_Trial extends QuestHandler
 	
 	@Override
 	public void register() {
-		int[] npcs = {798604};
-        for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        }
+        qe.registerQuestNpc(798604).addOnTalkEvent(questId);
 		qe.registerQuestNpc(247245).addOnKillEvent(questId);
 		qe.registerQuestNpc(798604).addOnAtDistanceEvent(questId);
 	}

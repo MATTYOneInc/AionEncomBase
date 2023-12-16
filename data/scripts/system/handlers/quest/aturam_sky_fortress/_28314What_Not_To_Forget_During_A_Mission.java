@@ -22,13 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28314What_Not_To_Forget_During_A_Mission extends QuestHandler {
 
-public class _28314What_Not_To_Forget_During_A_Mission extends QuestHandler
-{
     private final static int questId = 28314;
-	
-	private final static int[] balaurSpyCrystal = {702656};
-	
     public _28314What_Not_To_Forget_During_A_Mission() {
         super(questId);
     }
@@ -36,9 +32,7 @@ public class _28314What_Not_To_Forget_During_A_Mission extends QuestHandler
     public void register() {
         qe.registerQuestNpc(799530).addOnQuestStart(questId);
         qe.registerQuestNpc(799530).addOnTalkEvent(questId);
-		for (int mob: balaurSpyCrystal) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(702656).addOnKillEvent(questId); //Balaur Spy Crystal.
     }
 	
     @Override

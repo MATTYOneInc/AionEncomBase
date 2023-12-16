@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2990Making_The_Daevanion_Weapon extends QuestHandler {
 	
 	private final static int questId = 2990;
-	
 	private int A = 0;
 	private int B = 0;
 	private int C = 0;
@@ -36,15 +35,8 @@ public class _2990Making_The_Daevanion_Weapon extends QuestHandler {
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 2989, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] mobs = {213011, 213012, 213009, 213010, 213007, 213008};
-		
 		qe.registerQuestNpc(204146).addOnQuestStart(questId);
 		qe.registerQuestNpc(204146).addOnTalkEvent(questId);
 		for (int mob: mobs) {

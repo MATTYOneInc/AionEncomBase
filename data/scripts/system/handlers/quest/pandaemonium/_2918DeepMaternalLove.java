@@ -1,8 +1,9 @@
 package quest.pandaemonium;
 
+import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
+import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
@@ -25,6 +26,17 @@ public class _2918DeepMaternalLove extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(203574).addOnTalkEvent(questId);
+        qe.registerQuestItem(182207009, questId);
+	}
+
+	@Override
+	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
+		Player player = env.getPlayer();
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			return HandlerResult.fromBoolean(sendQuestDialog(env, 4));
+		}
+		return HandlerResult.FAILED;
 	}
 
 	@Override
@@ -34,16 +46,14 @@ public class _2918DeepMaternalLove extends QuestHandler {
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (env.getDialogId() == 1002) {
-				QuestService.startQuest(env);
-				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-				return true;
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 0) { 
+				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
+					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				    }
+			    }
 			}
-			else
-				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-		}
 		if (targetId == 203574) {
 			if (qs != null) {
 				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START)

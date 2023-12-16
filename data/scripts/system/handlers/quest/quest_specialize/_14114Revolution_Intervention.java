@@ -31,14 +31,8 @@ public class _14114Revolution_Intervention extends QuestHandler {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerOnMovieEndQuest(23, questId);
 		qe.registerQuestNpc(203098).addOnQuestStart(questId); //Spatalos
         qe.registerQuestNpc(203098).addOnTalkEvent(questId); //Spatalos
@@ -51,7 +45,6 @@ public class _14114Revolution_Intervention extends QuestHandler {
         final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 203098) { //Spatalos
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -61,6 +54,7 @@ public class _14114Revolution_Intervention extends QuestHandler {
                 }
             }
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);   
 			if (targetId == 203183) { //Khidia
 				switch (env.getDialog()) {
 					case START_DIALOG: {

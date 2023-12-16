@@ -26,13 +26,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author (Encom)
 /****/
+public class _28990Fallen_Doorways extends QuestHandler {
 
-public class _28990Fallen_Doorways extends QuestHandler
-{
     private final static int questId = 28990;
-	private final static int[] IDF6AdmaZombieSN67Ae = {220417}; //악령�?� 저주를 받�?� 지투른.
-	private final static int[] IDF6AdmaPrincessSN67Ae = {220418}; //악령�?� 저주를 받�?� 카르미웬.
-	private final static int[] IDF6AdmaEvilSpirit67Ah = {220427}; //아티팩트를 지배하는 악령.
 	
     public _28990Fallen_Doorways() {
         super(questId);
@@ -42,13 +38,9 @@ public class _28990Fallen_Doorways extends QuestHandler
         qe.registerQuestNpc(806079).addOnQuestStart(questId); //Feregran.
 		qe.registerQuestNpc(806079).addOnTalkEvent(questId); //Feregran.
 		qe.registerQuestNpc(806216).addOnTalkEvent(questId); //Petur.
-		for (int mob: IDF6AdmaZombieSN67Ae) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: IDF6AdmaPrincessSN67Ae) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: IDF6AdmaEvilSpirit67Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(220417).addOnKillEvent(questId);
+	    qe.registerQuestNpc(220418).addOnKillEvent(questId);
+		qe.registerQuestNpc(220427).addOnKillEvent(questId);
     }
 	
     @Override

@@ -34,9 +34,8 @@ import com.aionemu.gameserver.world.WorldMapInstance;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _4200A_Suspicious_Call extends QuestHandler {
 
-public class _4200A_Suspicious_Call extends QuestHandler
-{
 	private final static int questId = 4200;
 	private final static int[] npc_ids = {204839, 798332, 700522, 205233, 805839};
 	
@@ -45,13 +44,7 @@ public class _4200A_Suspicious_Call extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(204839).addOnQuestStart(questId); //Uikinerk.
 		qe.registerQuestItem(182209097, questId); //Teleport Scroll.
 		for (int npc_id: npc_ids)

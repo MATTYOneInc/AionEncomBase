@@ -28,9 +28,8 @@ import com.aionemu.gameserver.world.WorldMapInstance;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28602Into_The_Unknown extends QuestHandler {
 
-public class _28602Into_The_Unknown extends QuestHandler
-{
 	private final static int questId = 28602;
 	private final static int[] kaliga = {217005, 217006};
 	private final static int[] npc_ids = {205234, 700939};
@@ -40,14 +39,8 @@ public class _28602Into_The_Unknown extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 28601);
-	}
-	
-	@Override
 	public void register() {
 		qe.registerOnDie(questId);
-		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnMovieEndQuest(454, questId);
 		for (int npc_id: npc_ids) {

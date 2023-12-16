@@ -22,22 +22,14 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25305Guardian_Of_Life extends QuestHandler {
 
-public class _25305Guardian_Of_Life extends QuestHandler
-{
     private final static int questId = 25305;
-	
     public _25305Guardian_Of_Life() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(805339).addOnQuestStart(questId);
 		qe.registerQuestNpc(805339).addOnTalkEvent(questId);
 		qe.registerQuestNpc(805341).addOnTalkEvent(questId);

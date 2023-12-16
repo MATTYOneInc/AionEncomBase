@@ -29,19 +29,12 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _1989A_Sages_Teachings extends QuestHandler {
 	
 	private final static int questId = 1989;
-	
 	public _1989A_Sages_Teachings() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 1988, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203704).addOnQuestStart(questId);
 		qe.registerQuestNpc(203705).addOnQuestStart(questId);
 		qe.registerQuestNpc(203706).addOnQuestStart(questId);

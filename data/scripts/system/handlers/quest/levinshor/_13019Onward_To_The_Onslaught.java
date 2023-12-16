@@ -22,23 +22,16 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _13019Onward_To_The_Onslaught extends QuestHandler {
 
-public class _13019Onward_To_The_Onslaught extends QuestHandler
-{
     private final static int questId = 13019;
 	
     public _13019Onward_To_The_Onslaught() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(804598).addOnQuestStart(questId); //Floric.
 		qe.registerQuestNpc(804598).addOnTalkEvent(questId); //Floric.
 		qe.registerQuestNpc(804598).addOnTalkEvent(questId); //Floric.

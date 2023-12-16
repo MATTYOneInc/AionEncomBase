@@ -25,19 +25,12 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _29064Fang_Of_Construction extends QuestHandler {
 	
 	private final static int questId = 29064;
-	
 	public _29064Fang_Of_Construction() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 4939, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = {798452, 204075, 204053};
 		qe.registerQuestNpc(204053).addOnQuestStart(questId);
 		for (int npc: npcs) {

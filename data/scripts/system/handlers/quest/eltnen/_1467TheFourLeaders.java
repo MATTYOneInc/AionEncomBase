@@ -29,7 +29,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /**
  * @author Balthazar
  */
-
 public class _1467TheFourLeaders extends QuestHandler {
 
 	private final static int questId = 1467;
@@ -52,18 +51,13 @@ public class _1467TheFourLeaders extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204045) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						return sendQuestDialog(env, 4762);
-					}
-					case ACCEPT_QUEST: {
 						return sendQuestDialog(env, 1011);
 					}
 					case STEP_TO_1: {
@@ -104,10 +98,8 @@ public class _1467TheFourLeaders extends QuestHandler {
 				}
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204045) {
 				switch (env.getDialog()) {
@@ -146,13 +138,10 @@ public class _1467TheFourLeaders extends QuestHandler {
 		if (qs == null || qs.getStatus() != QuestStatus.START) {
 			return false;
 		}
-
 		int var = 0;
 		int targetId = 0;
-
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		switch (targetId) {
 			case 211696: {
 				if (qs.getQuestVarById(0) == 1) {

@@ -24,23 +24,16 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _14123The_Shadow_Of_Vengeance extends QuestHandler {
 
-public class _14123The_Shadow_Of_Vengeance extends QuestHandler
-{
     private final static int questId = 14123;
 	
     public _14123The_Shadow_Of_Vengeance() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(203933).addOnQuestStart(questId); //Actaeon
         qe.registerQuestNpc(203933).addOnTalkEvent(questId); //Actaeon
 		qe.registerQuestNpc(203991).addOnTalkEvent(questId); //Dionera
@@ -53,7 +46,6 @@ public class _14123The_Shadow_Of_Vengeance extends QuestHandler
         final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 203933) { //Actaeon
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -63,6 +55,7 @@ public class _14123The_Shadow_Of_Vengeance extends QuestHandler
                 }
             }
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 203991) { //Dionera
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -78,10 +71,8 @@ public class _14123The_Shadow_Of_Vengeance extends QuestHandler
 					} case SELECT_REWARD: {
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
-						return sendQuestDialog(env, 5);
-					} case FINISH_DIALOG: {
-                        return sendQuestSelectionDialog(env);
-                    }
+						return sendQuestEndDialog(env);
+					}
 				}
 			}
         } else if (qs.getStatus() == QuestStatus.REWARD) {

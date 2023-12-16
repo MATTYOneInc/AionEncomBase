@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3921Shoshinerk_Reward extends QuestHandler {
 
-public class _3921Shoshinerk_Reward extends QuestHandler
-{
     private final static int questId = 3921;
 	
     public _3921Shoshinerk_Reward() {
@@ -32,13 +31,7 @@ public class _3921Shoshinerk_Reward extends QuestHandler
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(804603).addOnQuestStart(questId);
 		qe.registerQuestNpc(804603).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804603).addOnTalkEvent(questId);

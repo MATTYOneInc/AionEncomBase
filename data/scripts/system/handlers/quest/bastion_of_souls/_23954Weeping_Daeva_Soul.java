@@ -25,12 +25,10 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _23954Weeping_Daeva_Soul extends QuestHandler {
 
-public class _23954Weeping_Daeva_Soul extends QuestHandler
-{
 	private final static int questId = 23954;
 	private final static int[] npcs = {806599, 204153, 806591};
-	private final static int[] IDAb1EreQuestDebrie66N = {247093};
 	
 	public _23954Weeping_Daeva_Soul() {
 		super(questId);
@@ -39,9 +37,8 @@ public class _23954Weeping_Daeva_Soul extends QuestHandler
 	public void register() {
 		for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: IDAb1EreQuestDebrie66N) {
-            qe.registerQuestNpc(mob).addOnKillEvent(questId);
-        }
+        } 
+        qe.registerQuestNpc(247093).addOnKillEvent(questId);
 		qe.registerQuestItem(182216188, questId);
 		qe.registerQuestNpc(806599).addOnAtDistanceEvent(questId);
 	}

@@ -25,22 +25,14 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _17505Support_Operation_For_The_Ophidan_Warpath extends QuestHandler {
 
-public class _17505Support_Operation_For_The_Ophidan_Warpath extends QuestHandler
-{
     private final static int questId = 17505;
-	
     public _17505Support_Operation_For_The_Ophidan_Warpath() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerQuestItem(182216067, questId); //슈고�?� 특수 물약.
 		qe.registerQuestNpc(806266).addOnQuestStart(questId); //세베루스.

@@ -23,23 +23,15 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25307Marchutan_Oath extends QuestHandler {
 
-public class _25307Marchutan_Oath extends QuestHandler
-{
 	private static final int questId = 25307;
-	
 	public _25307Marchutan_Oath() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(805339).addOnQuestStart(questId);
 		qe.registerQuestNpc(805339).addOnTalkEvent(questId);
 	}

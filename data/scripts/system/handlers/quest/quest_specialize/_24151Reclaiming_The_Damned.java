@@ -23,25 +23,17 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _24151Reclaiming_The_Damned extends QuestHandler {
 
-public class _24151Reclaiming_The_Damned extends QuestHandler
-{
     private final static int questId = 24151;
-	
     private final static int[] mob_ids = {213044, 213045, 214092, 214093};
 	
     public _24151Reclaiming_The_Damned() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(204715).addOnQuestStart(questId); //Grundt
         qe.registerQuestNpc(204715).addOnTalkEvent(questId); //Grundt
         qe.registerQuestNpc(204801).addOnTalkEvent(questId); //Gigrite

@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _4942Proving_Proficiency extends QuestHandler {
 
-public class _4942Proving_Proficiency extends QuestHandler
-{
 	private final static int questId = 4942;
-	
 	public _4942Proving_Proficiency() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 4941, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = {204104, 204108, 204106, 204110, 204100, 204102, 798317, 204075, 204053};
 		qe.registerQuestNpc(204053).addOnQuestStart(questId);
 		for (int npc: npcs) {

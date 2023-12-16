@@ -27,10 +27,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3018Fork_Ear_Rokes extends QuestHandler
-{
+public class _3018Fork_Ear_Rokes extends QuestHandler {
+
     private final static int questId = 3018;
-	
     public _3018Fork_Ear_Rokes() {
         super(questId);
     }
@@ -40,7 +39,6 @@ public class _3018Fork_Ear_Rokes extends QuestHandler
         qe.registerQuestNpc(730105).addOnQuestStart(questId);
         qe.registerQuestNpc(730105).addOnTalkEvent(questId);
         qe.registerQuestNpc(798150).addOnTalkEvent(questId);
-        qe.registerGetingItem(182208009, questId);
     }
 	
     @Override
@@ -71,39 +69,20 @@ public class _3018Fork_Ear_Rokes extends QuestHandler
                 switch (dialog) {
                     case START_DIALOG: {
                         if (var == 0) {
-                            return sendQuestDialog(env, 1352);
+                            return sendQuestDialog(env, 1011);
                         }
-					} case CHECK_COLLECTED_ITEMS: {
-                        if (QuestService.collectItemCheck(env, true)) {
-                            if (!giveQuestItem(env, 182208009, 1)) {
-                                return true;
-                            }
-                            qs.setStatus(QuestStatus.REWARD);
-                            updateQuestStatus(env);
-                            PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                            return true;
-                        } else {
-                            return sendQuestDialog(env, 5);
-                        }
+				    } case CHECK_COLLECTED_ITEMS: {
+                        return checkQuestItems(env, 0, 1, true, 5, 2716);
+                       } 
+                    case FINISH_DIALOG: {
+                        return sendQuestEndDialog(env);
                     }
                 }
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 798150) {
-                removeQuestItem(env, 182208009, 1);
                 return sendQuestEndDialog(env);
             }
-        }
-        return false;
-    }
-	
-    @Override
-    public boolean onGetItemEvent(QuestEnv env) {
-        Player player = env.getPlayer();
-        QuestState qs = player.getQuestStateList().getQuestState(questId);
-        if (qs != null && qs.getStatus() == QuestStatus.START) {
-            changeQuestStep(env, 0, 0, true);
-            return true;
         }
         return false;
     }

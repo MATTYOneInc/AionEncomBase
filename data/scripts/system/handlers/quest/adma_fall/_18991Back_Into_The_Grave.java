@@ -26,11 +26,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author (Encom)
 /****/
+public class _18991Back_Into_The_Grave extends QuestHandler {
 
-public class _18991Back_Into_The_Grave extends QuestHandler
-{
     private final static int questId = 18991;
-	private final static int[] IDF6AdmaEvilSpirit67Ah = {220427}; //아티팩트를 지배하는 악령.
 	
     public _18991Back_Into_The_Grave() {
         super(questId);
@@ -39,9 +37,7 @@ public class _18991Back_Into_The_Grave extends QuestHandler
     public void register() {
         qe.registerQuestNpc(806214).addOnQuestStart(questId); //Enosi.
 		qe.registerQuestNpc(806214).addOnTalkEvent(questId); //Enosi.
-		for (int mob: IDF6AdmaEvilSpirit67Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+	    qe.registerQuestNpc(220427).addOnKillEvent(questId);
     }
 	
     @Override

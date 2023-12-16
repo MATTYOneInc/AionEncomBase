@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler {
 
-public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler
-{
 	private final static int questId = 4938;
-	
 	public _4938Work_Of_The_Fenris_Fangs() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 4937, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = {204053, 798367, 798368, 798369, 798370, 798371, 798372, 798373, 798374, 204075};
 		qe.registerQuestNpc(204053).addOnQuestStart(questId);
 		for (int npc: npcs) {

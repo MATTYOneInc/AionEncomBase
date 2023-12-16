@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _18601Nightmare_On_My_Street extends QuestHandler {
 
-public class _18601Nightmare_On_My_Street extends QuestHandler
-{
 	private final static int questId = 18601;
 	
 	private final static int[] npc_ids = {204500, 205229};
@@ -34,13 +33,7 @@ public class _18601Nightmare_On_My_Street extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 18600);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		for (int npc_id: npc_ids) {
 		    qe.registerQuestNpc(npc_id).addOnTalkEvent(questId);
 		    qe.registerQuestNpc(204500).addOnQuestStart(questId);

@@ -22,12 +22,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _4944Loyalty_And_Affableness extends QuestHandler {
 
-public class _4944Loyalty_And_Affableness extends QuestHandler
-{
 	private static final int questId = 4944;
 	private static final int[] npcs = {204053, 204075};
-	
 	private static final int[] mobs = {214823,
 	220257, 220258, 220259, 220260, 220261, 220262, 220263,
 	220265, 220266, 220267, 220268, 220269, 220270, 220271,
@@ -39,15 +37,9 @@ public class _4944Loyalty_And_Affableness extends QuestHandler
 	public _4944Loyalty_And_Affableness() {
 		super(questId);
 	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 4943, true);
-	}
-	
+
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(204053).addOnQuestStart(questId);
 		for (int npc: npcs) {
 			qe.registerQuestNpc(npc).addOnTalkEvent(questId);

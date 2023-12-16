@@ -23,23 +23,15 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _4939Proving_Ground extends QuestHandler {
 
-public class _4939Proving_Ground extends QuestHandler
-{
 	private final static int questId = 4939;
-	
 	public _4939Proving_Ground() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 4938, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = {204055, 204273, 204054, 204075, 204053};
 		qe.registerQuestNpc(204053).addOnQuestStart(questId);
 		for (int npc: npcs) {

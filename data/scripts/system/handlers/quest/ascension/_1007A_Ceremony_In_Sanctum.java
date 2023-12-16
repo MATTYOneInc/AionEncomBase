@@ -30,11 +30,9 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 /****/
 /** Author (Encom)
 /****/
+public class _1007A_Ceremony_In_Sanctum extends QuestHandler {
 
-public class _1007A_Ceremony_In_Sanctum extends QuestHandler
-{
 	private final static int questId = 1007;
-	
 	public _1007A_Ceremony_In_Sanctum() {
 		super(questId);
 	}
@@ -47,9 +45,6 @@ public class _1007A_Ceremony_In_Sanctum extends QuestHandler
 	@Override
 	public void register() {
 		int[] npcs = {790001, 203725, 203752, 203758, 203759, 203760, 203761, 801212, 801213};
-		if (CustomConfig.ENABLE_SIMPLE_2NDCLASS) {
-			return;
-		}
 		qe.registerOnLevelUp(questId);
 		for (int npc: npcs) {
 			qe.registerQuestNpc(npc).addOnTalkEvent(questId);

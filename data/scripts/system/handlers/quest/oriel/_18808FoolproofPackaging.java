@@ -27,36 +27,28 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
  * 
  * @author Bobobear & Ritsu
  */
-public class _18808FoolproofPackaging extends QuestHandler 
-{
+public class _18808FoolproofPackaging extends QuestHandler {
 
 	private static final int questId = 18808;
-
-	public _18808FoolproofPackaging()
-	{
+	public _18808FoolproofPackaging() {
 		super(questId);
 	}
 
 	@Override
-	public void register() 
-	{
+	public void register() {
 		qe.registerQuestNpc(830193).addOnQuestStart(questId);
 		qe.registerQuestNpc(830193).addOnTalkEvent(questId);
 		qe.registerQuestNpc(730534).addOnTalkEvent(questId);
 	}
 
 	@Override
-	public boolean onDialogEvent(QuestEnv env)
-	{
+	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
-		if(qs == null || qs.getStatus() == QuestStatus.NONE)
-		{
-			if (targetId == 830193) 
-			{
+		if(qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 830193) {
 				if (dialog == QuestDialog.START_DIALOG) 
 					return sendQuestDialog(env, 1011); 
 				if (dialog == QuestDialog.ACCEPT_QUEST_SIMPLE) 
@@ -70,22 +62,16 @@ public class _18808FoolproofPackaging extends QuestHandler
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.START)
-		{
+		else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			switch (targetId)
-			{
-				case 730534: 
-				{
-					switch (dialog)
-					{
-						case USE_OBJECT: 
-						{
+			switch (targetId) {
+				case 730534: {
+					switch (dialog) {
+						case USE_OBJECT: {
 							if (var == 0) 
 								return sendQuestDialog(env, 2375);
 						}
-						case SELECT_REWARD:
-						{
+						case SELECT_REWARD: {
 							changeQuestStep(env, 0, 0, true);
 							return sendQuestDialog(env, 5);
 						}
@@ -94,8 +80,7 @@ public class _18808FoolproofPackaging extends QuestHandler
 
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) 
-		{
+		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 730534) 
 				return sendQuestEndDialog(env);
 		}

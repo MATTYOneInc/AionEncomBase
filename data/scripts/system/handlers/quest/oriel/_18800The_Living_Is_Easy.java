@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _18800The_Living_Is_Easy extends QuestHandler {
 
-public class _18800The_Living_Is_Easy extends QuestHandler
-{
     private final static int questId = 18800;
 	
     public _18800The_Living_Is_Easy() {
@@ -32,13 +31,7 @@ public class _18800The_Living_Is_Easy extends QuestHandler
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(798458).addOnQuestStart(questId); //Harinus.
 		qe.registerQuestNpc(798458).addOnTalkEvent(questId); //Harinus.
 		qe.registerQuestNpc(830365).addOnTalkEvent(questId); //Izunius.

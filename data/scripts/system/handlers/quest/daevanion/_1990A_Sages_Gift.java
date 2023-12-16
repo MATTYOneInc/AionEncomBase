@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1990A_Sages_Gift extends QuestHandler {
 	
 	private final static int questId = 1990;
-	
 	private int A = 0;
 	private int B = 0;
 	private int C = 0;
@@ -36,15 +35,8 @@ public class _1990A_Sages_Gift extends QuestHandler {
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 1989, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] mobs = {211869, 211870, 211046, 211871, 211872};
-		
 		qe.registerQuestNpc(203771).addOnQuestStart(questId);
 		qe.registerQuestNpc(203771).addOnTalkEvent(questId);
 		for (int mob: mobs) {

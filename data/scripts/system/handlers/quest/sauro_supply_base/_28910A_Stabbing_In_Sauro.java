@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28910A_Stabbing_In_Sauro extends QuestHandler {
 
-public class _28910A_Stabbing_In_Sauro extends QuestHandler
-{
     private final static int questId = 28910;
-	
     public _28910A_Stabbing_In_Sauro() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(801947).addOnQuestStart(questId); //Giriltia.
 		qe.registerQuestNpc(801947).addOnTalkEvent(questId); //Giriltia.
 		qe.registerQuestNpc(801947).addOnTalkEvent(questId); //Giriltia.

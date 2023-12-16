@@ -34,13 +34,7 @@ public class _1988A_Meeting_With_A_Sage extends QuestHandler {
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203725).addOnQuestStart(questId);
 		qe.registerQuestNpc(203725).addOnTalkEvent(questId);
 		qe.registerQuestNpc(203989).addOnTalkEvent(questId);

@@ -42,7 +42,6 @@ public class _4012TroublesomePromise extends QuestHandler {
 		qe.registerQuestNpc(730104).addOnTalkEvent(questId);
 		qe.registerQuestNpc(700342).addOnTalkEvent(questId);
 		qe.addHandlerSideQuestDrop(questId, 700342, 182209005, 1, 100);
-		qe.registerGetingItem(182209005, questId);
 	}
 
 	@Override
@@ -69,18 +68,16 @@ public class _4012TroublesomePromise extends QuestHandler {
 					break;
 				}
 				case 730104: {
-					if (qs.getQuestVarById(0) == 1) {
-						if (env.getDialog() == QuestDialog.START_DIALOG)
-							return sendQuestDialog(env, 2375);
-						else if (env.getDialogId() == 34) {
-							removeQuestItem(env, 182209005, 1);
-							qs.setStatus(QuestStatus.REWARD);
-							updateQuestStatus(env);
-							return sendQuestDialog(env, 5);
-						}
-						else
-							return sendQuestEndDialog(env);
+					if (env.getDialog() == QuestDialog.START_DIALOG)
+						return sendQuestDialog(env, 1352);
+					else if (env.getDialogId() == 1009) {
+						removeQuestItem(env, 182209005, 1);
+						qs.setStatus(QuestStatus.REWARD);
+						updateQuestStatus(env);
+						return sendQuestDialog(env, 5);
 					}
+					else
+					return sendQuestEndDialog(env);
 				}
 			}
 		}
@@ -89,10 +86,5 @@ public class _4012TroublesomePromise extends QuestHandler {
 				return sendQuestEndDialog(env);
 		}
 		return false;
-	}
-
-	@Override
-	public boolean onGetItemEvent(QuestEnv env) {
-		return defaultOnGetItemEvent(env, 0, 0, true); // reward
 	}
 }

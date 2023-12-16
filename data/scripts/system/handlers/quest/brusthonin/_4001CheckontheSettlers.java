@@ -16,7 +16,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _4001CheckontheSettlers extends QuestHandler {
 
 	private final static int questId = 4001;
-
 	public _4001CheckontheSettlers() {
 		super(questId);
 	}
@@ -51,7 +50,7 @@ public class _4001CheckontheSettlers extends QuestHandler {
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return sendQuestEndDialog(env);
 				}
 				else
 					return sendQuestEndDialog(env);
@@ -89,20 +88,19 @@ public class _4001CheckontheSettlers extends QuestHandler {
 			}
 		}
 		else if (targetId == 205121) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START)
-					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
-					qs.setQuestVar(3);
-					qs.setStatus(QuestStatus.REWARD);
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 2034);
+				else if (env.getDialog() == QuestDialog.STEP_TO_3) {
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					return sendQuestEndDialog(env);
+					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
+					return true;
 				}
 				else
-					return sendQuestEndDialog(env);
+					return sendQuestStartDialog(env);
 			}
-		}
+		}		
 		return false;
 	}
 }

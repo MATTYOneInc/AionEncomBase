@@ -23,23 +23,15 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15307Kaisinel_Oath extends QuestHandler {
 
-public class _15307Kaisinel_Oath extends QuestHandler
-{
 	private static final int questId = 15307;
-	
 	public _15307Kaisinel_Oath() {
 		super(questId);
 	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(805327).addOnQuestStart(questId); //Rike.
 		qe.registerQuestNpc(805327).addOnTalkEvent(questId); //Rike.
 	}

@@ -29,7 +29,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /**
  * @author dta3000
  */
-
 public class _11000WisplightMoralTour extends QuestHandler {
 
 	private final static int questId = 11000;
@@ -51,11 +50,9 @@ public class _11000WisplightMoralTour extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798927) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -64,10 +61,8 @@ public class _11000WisplightMoralTour extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 798929: {
@@ -115,7 +110,6 @@ public class _11000WisplightMoralTour extends QuestHandler {
 							return sendQuestDialog(env, 2375);
 						}
 						case SELECT_REWARD: {
-							qs.setQuestVar(4);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							return sendQuestEndDialog(env);

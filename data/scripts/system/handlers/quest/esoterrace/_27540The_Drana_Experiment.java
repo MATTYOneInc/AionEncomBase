@@ -23,22 +23,15 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _27540The_Drana_Experiment extends QuestHandler {
 
-public class _27540The_Drana_Experiment extends QuestHandler
-{
     private final static int questId = 27540;
 	
     public _27540The_Drana_Experiment() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
         qe.registerQuestNpc(799558).addOnQuestStart(questId); //Luigir.
         qe.registerQuestNpc(799558).addOnTalkEvent(questId); //Luigir.

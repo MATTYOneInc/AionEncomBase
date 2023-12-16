@@ -25,9 +25,8 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _23800A_Full_New_World extends QuestHandler {
 
-public class _23800A_Full_New_World extends QuestHandler
-{
 	private final static int questId = 23800;
 	
 	public _23800A_Full_New_World() {
@@ -35,13 +34,7 @@ public class _23800A_Full_New_World extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(804719).addOnQuestStart(questId);
 		qe.registerQuestNpc(804719).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804753).addOnTalkEvent(questId);

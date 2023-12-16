@@ -15,19 +15,15 @@ import com.aionemu.gameserver.world.zone.ZoneName;
  * @author Ritsu
  *
  */
-public class _1573SomeTastyMushrooms extends QuestHandler
-{
+public class _1573SomeTastyMushrooms extends QuestHandler {
 
 	private final static int	questId	= 1573;
-
-	public _1573SomeTastyMushrooms()
-	{
+	public _1573SomeTastyMushrooms() {
 		super(questId);
 	}
 
 	@Override
-	public void register()
-	{
+	public void register() {
 		qe.registerQuestItem(182201784, questId);
 		qe.registerQuestNpc(730025).addOnQuestStart(questId);
 		qe.registerQuestNpc(730025).addOnTalkEvent(questId);
@@ -35,14 +31,11 @@ public class _1573SomeTastyMushrooms extends QuestHandler
 	}
 
 	@Override
-	public HandlerResult onItemUseEvent(final QuestEnv env, Item item) 
-	{
+	public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs != null && qs.getStatus() == QuestStatus.START) 
-		{
-			if (player.isInsideZone(ZoneName.get("LF3_ITEMUSEAREA_Q1573"))) 
-			{
+		if (qs != null && qs.getStatus() == QuestStatus.START) {
+			if (player.isInsideZone(ZoneName.get("LF3_ITEMUSEAREA_Q1573"))) {
 					removeQuestItem(env, 182201784, 1);
 					return HandlerResult.fromBoolean(useQuestItem(env, item, 1, 2, false, 182201735, 1, 0));
 			}
@@ -52,16 +45,14 @@ public class _1573SomeTastyMushrooms extends QuestHandler
 
 
 	@Override
-	public boolean onDialogEvent(QuestEnv env)
-	{
+	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		if(env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-		
-		if(qs == null || qs.getStatus() == QuestStatus.NONE){
+		if(qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 730025){
 				if (dialog == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 4762);
@@ -69,13 +60,13 @@ public class _1573SomeTastyMushrooms extends QuestHandler
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.START){
+		else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			if (targetId == 700194){
+			if (targetId == 700194) {
 				return true;
 			}
-			if (targetId == 730025){
-				switch (dialog){
+			if (targetId == 730025) {
+				switch (dialog) {
 					case START_DIALOG:
 						if (var == 0)
 							return sendQuestDialog(env, 1011);
@@ -92,7 +83,7 @@ public class _1573SomeTastyMushrooms extends QuestHandler
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD){
+		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 730025)
 				return sendQuestEndDialog(env);
 		}

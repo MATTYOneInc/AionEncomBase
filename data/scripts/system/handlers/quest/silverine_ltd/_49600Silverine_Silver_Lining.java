@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _49600Silverine_Silver_Lining extends QuestHandler {
 
-public class _49600Silverine_Silver_Lining extends QuestHandler
-{
     private final static int questId = 49600;
-	
     public _49600Silverine_Silver_Lining() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(800942).addOnQuestStart(questId); //Dumurinerk.
 		qe.registerQuestNpc(800942).addOnTalkEvent(questId); //Dumurinerk.
 		qe.registerQuestNpc(800942).addOnTalkEvent(questId); //Dumurinerk.

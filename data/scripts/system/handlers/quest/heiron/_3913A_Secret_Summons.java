@@ -24,23 +24,15 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3913A_Secret_Summons extends QuestHandler {
 
-public class _3913A_Secret_Summons extends QuestHandler
-{
 	private final static int questId = 3913;
-	
 	public _3913A_Secret_Summons() {
 		super(questId);
 	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(204504).addOnQuestStart(questId); //Sofne.
 		qe.registerQuestNpc(204504).addOnTalkEvent(questId); //Sofne.
 		qe.registerQuestNpc(204505).addOnTalkEvent(questId); //Sulates.

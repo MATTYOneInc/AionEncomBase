@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28800Give_My_Regards_To_Pernon extends QuestHandler {
 
-public class _28800Give_My_Regards_To_Pernon extends QuestHandler
-{
     private final static int questId = 28800;
-	
     public _28800Give_My_Regards_To_Pernon() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(798459).addOnQuestStart(questId); //Randiten.
 		qe.registerQuestNpc(798459).addOnTalkEvent(questId); //Randiten.
 		qe.registerQuestNpc(830532).addOnTalkEvent(questId); //Hariton.

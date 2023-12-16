@@ -37,9 +37,8 @@ import com.aionemu.gameserver.world.WorldMapInstance;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3200Price_Of_Goodwill extends QuestHandler {
 
-public class _3200Price_Of_Goodwill extends QuestHandler
-{
 	private final static int questId = 3200;
 	private final static int[] npc_ids = {204658, 798332, 700522, 804601, 805832};
 	
@@ -48,13 +47,7 @@ public class _3200Price_Of_Goodwill extends QuestHandler
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(204658).addOnQuestStart(questId); //Roikinerk.
 		qe.registerQuestItem(182209082, questId); //Teleport Scroll.
 		for (int npc_id: npc_ids)

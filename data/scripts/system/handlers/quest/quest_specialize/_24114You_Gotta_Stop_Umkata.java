@@ -23,9 +23,8 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
- 
-public class _24114You_Gotta_Stop_Umkata extends QuestHandler
-{
+public class _24114You_Gotta_Stop_Umkata extends QuestHandler {
+
     private final static int questId = 24114;
 	
 	private final static int[] heroSpirit = {210722, 210588}; //Hero Spirit
@@ -34,14 +33,8 @@ public class _24114You_Gotta_Stop_Umkata extends QuestHandler
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(203649).addOnQuestStart(questId); //Gulkalla
         qe.registerQuestNpc(203649).addOnTalkEvent(questId); //Gulkalla
 		qe.registerQuestNpc(700097).addOnTalkEvent(questId); //Umkata's Jewel Box
@@ -57,7 +50,6 @@ public class _24114You_Gotta_Stop_Umkata extends QuestHandler
         final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 203649) { //Gulkalla
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -67,6 +59,7 @@ public class _24114You_Gotta_Stop_Umkata extends QuestHandler
                 }
             }
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 203649) { //Gulkalla
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -88,12 +81,11 @@ public class _24114You_Gotta_Stop_Umkata extends QuestHandler
 				switch (env.getDialog()) {
 					case USE_OBJECT: {
 						if (var == 4) {
-							QuestService.addNewSpawn(220030000, 1, 210752, 2889.9834f, 1741.3108f, 254.75f, (byte) 0);
-							removeQuestItem(env, 182215474, 1);
-							removeQuestItem(env, 182215475, 1);
-							removeQuestItem(env, 182215476, 1);
 							return sendQuestDialog(env, 1693);
 						}
+                        } case CHECK_COLLECTED_ITEMS: {
+                            QuestService.addNewSpawn(220030000, 1, 210752, 2889.9834f, 1741.3108f, 254.75f, (byte) 0);
+						return checkQuestItems(env, 4, 4, false, 0, 0);
 					}
 				}
 			}

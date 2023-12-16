@@ -26,11 +26,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author (Encom)
 /****/
-
-public class _28991Return_To_Adma extends QuestHandler
-{
+public class _28991Return_To_Adma extends QuestHandler {
     private final static int questId = 28991;
-	private final static int[] IDF6AdmaEvilSpirit67Ah = {220427}; //아티팩트를 지배하는 악령.
 	
     public _28991Return_To_Adma() {
         super(questId);
@@ -39,9 +36,7 @@ public class _28991Return_To_Adma extends QuestHandler
     public void register() {
         qe.registerQuestNpc(806216).addOnQuestStart(questId); //Petur.
 		qe.registerQuestNpc(806216).addOnTalkEvent(questId); //Petur.
-		for (int mob: IDF6AdmaEvilSpirit67Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(220427).addOnKillEvent(questId);
     }
 	
     @Override

@@ -43,19 +43,15 @@ import com.aionemu.gameserver.world.WorldMapInstance;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _2008Ascension extends QuestHandler
-{
-	private final static int questId = 2008;
-	
+public class _2008Ascension extends QuestHandler {
+
+	private final static int questId = 2008;	
 	public _2008Ascension() {
 		super(questId);
 	}
 	
 	@Override
 	public void register() {
-		if (CustomConfig.ENABLE_SIMPLE_2NDCLASS) {
-			return;
-		}
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203550).addOnTalkEvent(questId);
 		qe.registerQuestNpc(790003).addOnTalkEvent(questId);
@@ -325,7 +321,6 @@ public class _2008Ascension extends QuestHandler
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203550) {
-				player.getCommonData().setExp(126068, false);
 				return sendQuestEndDialog(env);
 			}
 		}
@@ -379,7 +374,7 @@ public class _2008Ascension extends QuestHandler
 		ClassChangeService.setClass(player, playerClass);
 		player.getController().upgradePlayer();
 		TeleportService2.teleportTo(player, 220010000, 386.03476f, 1893.9309f, 327.62283f, (byte) 59);
-		changeQuestStep(env, 6, 6, true);
+		changeQuestStep(env, 6, 7, true);
 		return true;
 	}
 	

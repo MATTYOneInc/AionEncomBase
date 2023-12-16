@@ -40,8 +40,8 @@ public class _3967AndusDyeBox extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(798391).addOnQuestStart(questId);// Andu
-		qe.registerQuestNpc(798309).addOnTalkEvent(questId);// Arenzes
 		qe.registerQuestNpc(798391).addOnTalkEvent(questId);// Andu
+		qe.registerQuestNpc(798309).addOnTalkEvent(questId);// Arenzes
 	}
 
 	@Override
@@ -58,36 +58,37 @@ public class _3967AndusDyeBox extends QuestHandler {
 				else
 					return sendQuestStartDialog(env);
 			}
+		else if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 2375);
+				else if (env.getDialogId() == 1009) {
+                    removeQuestItem(env, 182206122, 1); 
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					return sendQuestEndDialog(env);
+				}
+				else
+					return sendQuestEndDialog(env);
+			}
+            else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+		        return sendQuestEndDialog(env);
+			}
 		}
-		if (qs == null)
-			return false;
-		int var = qs.getQuestVarById(0);
-		if (targetId == 798309) { // Arenzes
-			if (qs.getStatus() == QuestStatus.START && var == 0) {
+		else if (targetId == 798309) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
-					if (giveQuestItem(env, 182206122, 1)) {
-						qs.setQuestVar(++var);
-						qs.setStatus(QuestStatus.REWARD);
-						updateQuestStatus(env);
-					}
+                if (giveQuestItem(env, 182206122, 1)) {
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
+                }
 					return true;
 				}
 				else
 					return sendQuestStartDialog(env);
 			}
-		}
-		else if (targetId == 798391 && qs.getStatus() == QuestStatus.REWARD) { // Andu
-			if (env.getDialog() == QuestDialog.START_DIALOG)
-				return sendQuestDialog(env, 2375);
-			else if (env.getDialogId() == 1009) {
-				removeQuestItem(env, 182206122, 1);
-				return sendQuestEndDialog(env);
-			}
-			else
-				return sendQuestEndDialog(env);
 		}
 		return false;
 	}

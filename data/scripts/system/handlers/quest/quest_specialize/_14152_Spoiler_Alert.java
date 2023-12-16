@@ -96,8 +96,7 @@ public class _14152_Spoiler_Alert extends QuestHandler {
                     }
                     case STEP_TO_2: {
                         removeQuestItem(env, 182215481, 1);
-                        qs.setQuestVarById(5, 0);
-                        qs.setQuestVarById(0, 0);
+                        qs.setQuestVarById(5, 3);
                         updateQuestStatus(env);
                         return closeDialogWindow(env);
                     }
@@ -105,18 +104,25 @@ public class _14152_Spoiler_Alert extends QuestHandler {
                         break;
                 }
             }
-        }
-        else if (qs.getStatus() == QuestStatus.REWARD) {
-            if (targetId == 204504) { //Sofne.
-                int var = qs.getQuestVarById(0);
-                if (env.getDialog() == QuestDialog.USE_OBJECT && var == 1) {
+            else if (targetId == 204504) { //Sofne.
+                switch (dialog) {
+                case START_DIALOG: {
                     return sendQuestDialog(env, 2375);
                 }
-                else {
+                case SELECT_REWARD: {
+                    qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+                    qs.setStatus(QuestStatus.REWARD);
+                    updateQuestStatus(env);
+                    return sendQuestEndDialog(env);
+                    }
+                }
+            }
+        }   
+        else if (qs.getStatus() == QuestStatus.REWARD) {
+            if (targetId == 204504) { //Sofne.
                     return sendQuestEndDialog(env);
                 }
             }
-        }
         return false;
     }
 
@@ -134,7 +140,6 @@ public class _14152_Spoiler_Alert extends QuestHandler {
         }
         if (targetId == 212151 && var == 0) { // Chairman Garnis
             qs.setQuestVarById(0, 1);
-            qs.setStatus(QuestStatus.REWARD);
             updateQuestStatus(env);
             return true;
         }

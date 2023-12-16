@@ -24,22 +24,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _30800The_Hall_Of_Tenacity extends QuestHandler {
 
-public class _30800The_Hall_Of_Tenacity extends QuestHandler
-{
 	private final static int questId = 30800;
 	
 	public _30800The_Hall_Of_Tenacity() {
 		super(questId);
 	}
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestItem(182216169, questId); //What do you know about the Arena of Tenacity ?
 		qe.registerQuestNpc(834987).addOnQuestStart(questId); //Peronerk.
 		qe.registerQuestNpc(834987).addOnTalkEvent(questId); //Peronerk.

@@ -22,23 +22,16 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25304Walk_The_Walk extends QuestHandler {
 
-public class _25304Walk_The_Walk extends QuestHandler
-{
     private final static int questId = 25304;
 	private final static int[] Ab1NewMobs = {883285, 883286, 883287, 883288, 883290, 883291, 883297, 883298, 883299};
 	
 	public _25304Walk_The_Walk() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(805339).addOnQuestStart(questId);
 		qe.registerQuestNpc(805339).addOnTalkEvent(questId);
 		qe.registerQuestNpc(805340).addOnTalkEvent(questId);

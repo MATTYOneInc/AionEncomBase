@@ -22,9 +22,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _23902Prepare_To_Prevail extends QuestHandler {
 
-public class _23902Prepare_To_Prevail extends QuestHandler
-{
     private final static int questId = 23902;
 	
     public _23902Prepare_To_Prevail() {
@@ -32,13 +31,7 @@ public class _23902Prepare_To_Prevail extends QuestHandler
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(799225).addOnQuestStart(questId); //Richelle.
 		qe.registerQuestNpc(799225).addOnTalkEvent(questId); //Richelle.
 		qe.registerQuestNpc(799225).addOnTalkEvent(questId); //Richelle.

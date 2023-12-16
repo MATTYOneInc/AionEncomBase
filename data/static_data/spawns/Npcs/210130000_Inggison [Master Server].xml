@@ -5285,7 +5285,7 @@
 		</spawn>
 		<!-- Light Aerial Aether Searcher -->
 		<spawn npc_id="700614" respawn_time="295">
-			<spot x="2819.3884" y="275.13474" z="355.72525" entity_id="622"/>
+			<spot x="2819.3884" y="275.13474" z="355.72525" entity_id="649"/>
 		</spawn>
 		<!-- Pucas Sack -->
 		<spawn npc_id="700615" respawn_time="295">

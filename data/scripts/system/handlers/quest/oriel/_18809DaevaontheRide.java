@@ -23,7 +23,6 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-
 /**
  * @author zhkchi
  *
@@ -31,9 +30,7 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _18809DaevaontheRide extends QuestHandler {
 
 	private static final int questId = 18809;
-
-	public _18809DaevaontheRide()
-	{
+	public _18809DaevaontheRide() {
 		super(questId);
 	}
 	
@@ -46,17 +43,13 @@ public class _18809DaevaontheRide extends QuestHandler {
 	}
 
 	@Override
-	public boolean onDialogEvent(QuestEnv env)
-	{
+	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		
-		if(qs == null || qs.getStatus() == QuestStatus.NONE)
-		{
-			if (targetId == 830168) 
-			{
+		if(qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 830168) {
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
@@ -67,12 +60,9 @@ public class _18809DaevaontheRide extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.START)
-		{
-			switch (targetId)
-			{
-				case 830263: 
-				{
+		else if (qs.getStatus() == QuestStatus.START) {
+			switch (targetId) {
+				case 830263: {
 					switch (dialog) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1352);

@@ -26,13 +26,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author (Encom)
 /****/
+public class _18990A_New_Phenomenon extends QuestHandler {
 
-public class _18990A_New_Phenomenon extends QuestHandler
-{
     private final static int questId = 18990;
-	private final static int[] IDF6AdmaZombieSN67Ae = {220417}; //악령�?� 저주를 받�?� 지투른.
-	private final static int[] IDF6AdmaPrincessSN67Ae = {220418}; //악령�?� 저주를 받�?� 카르미웬.
-	private final static int[] IDF6AdmaEvilSpirit67Ah = {220427}; //아티팩트를 지배하는 악령.
 	
     public _18990A_New_Phenomenon() {
         super(questId);
@@ -42,13 +38,9 @@ public class _18990A_New_Phenomenon extends QuestHandler
         qe.registerQuestNpc(806075).addOnQuestStart(questId); //Weatha.
 		qe.registerQuestNpc(806075).addOnTalkEvent(questId); //Weatha.
 		qe.registerQuestNpc(806214).addOnTalkEvent(questId); //Enosi.
-		for (int mob: IDF6AdmaZombieSN67Ae) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: IDF6AdmaPrincessSN67Ae) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: IDF6AdmaEvilSpirit67Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(220417).addOnKillEvent(questId);
+		qe.registerQuestNpc(220418).addOnKillEvent(questId);
+		qe.registerQuestNpc(220427).addOnKillEvent(questId);
     }
 	
     @Override

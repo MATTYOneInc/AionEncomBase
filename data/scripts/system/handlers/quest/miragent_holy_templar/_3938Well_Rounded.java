@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3938Well_Rounded extends QuestHandler {
 
-public class _3938Well_Rounded extends QuestHandler
-{
 	private final static int questId = 3938;
-	
 	public _3938Well_Rounded() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 3937, true);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		int[] npcs = {203788, 203792, 203790, 203793, 203784, 203786, 798316, 203752, 203701};
 		qe.registerQuestNpc(203701).addOnQuestStart(questId);
 		for (int npc: npcs) {
