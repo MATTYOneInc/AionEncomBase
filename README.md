@@ -2,7 +2,7 @@
 
 This is a repository for Aion 5.8 Community Emulator
 
-Community Discord : https://discord.gg/NN3VBJd4Ar
+Community Discord : https://discord.gg/Nt7rBd8mnN
 
 ## Geo data
 [original geo](https://drive.google.com/file/d/1KdprwGV0huFnrAsJwb1QwgTpbZg7haaX/view?usp=sharing) (incomplete)
