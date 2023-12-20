@@ -45,7 +45,7 @@ public class _13834StigMajor extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestNpc(203711).addOnTalkEvent(questId); //Miriya.
+		qe.registerQuestNpc(203711).addOnTalkEndEvent(questId); //Miriya.
 		qe.registerQuestItem(182216122, questId); //
 		qe.registerOnEnterWorld(questId);
 	}

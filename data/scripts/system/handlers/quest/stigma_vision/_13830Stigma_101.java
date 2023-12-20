@@ -45,7 +45,7 @@ public class _13830Stigma_101 extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestNpc(203711).addOnTalkEvent(questId); //Miriya.
+		qe.registerQuestNpc(203711).addOnTalkEndEvent(questId); //Miriya.
 		qe.registerQuestItem(182216118, questId); //
 		//qe.registerOnEnterZone(ZoneName.get("EXALTED_PATH_110010000"), questId);
 		qe.registerOnEnterWorld(questId);

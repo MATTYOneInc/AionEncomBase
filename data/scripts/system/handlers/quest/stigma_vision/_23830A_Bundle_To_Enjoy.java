@@ -41,7 +41,7 @@ public class _23830A_Bundle_To_Enjoy extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestNpc(204061).addOnTalkEvent(questId); //Aud.
+		qe.registerQuestNpc(204061).addOnTalkEndEvent(questId); //Aud.
 		qe.registerQuestItem(182216123, questId); //판데모니움 보급품 안내서1.
 		qe.registerOnEnterWorld(questId);
 	}

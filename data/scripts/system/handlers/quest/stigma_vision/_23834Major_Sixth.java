@@ -41,7 +41,7 @@ public class _23834Major_Sixth extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestNpc(204061).addOnTalkEvent(questId); //Aud.
+		qe.registerQuestNpc(204061).addOnTalkEndEvent(questId); //Aud.
 		qe.registerQuestItem(182216127, questId); //판데모니움 보급품 안내서5.
 		qe.registerOnEnterWorld(questId);
 	}

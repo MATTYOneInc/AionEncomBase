@@ -40,7 +40,7 @@ public class _23833You_Aud_A_Know extends QuestHandler
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestNpc(204061).addOnTalkEvent(questId); //Aud.
+		qe.registerQuestNpc(204061).addOnTalkEndEvent(questId); //Aud.
 		qe.registerQuestItem(182216126, questId); //판데모니움 보급품 안내서4.
 		qe.registerOnEnterWorld(questId);
 	}
