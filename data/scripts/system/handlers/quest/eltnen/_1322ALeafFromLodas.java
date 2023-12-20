@@ -51,8 +51,7 @@ public class _1322ALeafFromLodas extends QuestHandler {
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (targetId == 730019) // Lodas
-		{
+		if (targetId == 730019) { // Lodas
 			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
@@ -76,8 +75,7 @@ public class _1322ALeafFromLodas extends QuestHandler {
 				return sendQuestEndDialog(env);
 			}
 		}
-		else if (targetId == 730008) // Daminu
-		{
+		else if (targetId == 730008) { // Daminu
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);

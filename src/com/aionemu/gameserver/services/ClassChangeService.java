@@ -127,7 +127,7 @@ public class ClassChangeService {
 					break;
 				}
 				completeQuest(player, 1006);
-				completeQuest(player, 1007);
+                /* completeQuest(player, 1007); */
 				if (player.havePermission(MembershipConfig.STIGMA_SLOT_QUEST)) {
 					completeQuest(player, 1929);
 					player.getController().upgradePlayer();
@@ -169,13 +169,13 @@ public class ClassChangeService {
 					break;
 				}
 				completeQuest(player, 2008);
-				completeQuest(player, 2009);
+                /* completeQuest(player, 2009); */
 				if (player.havePermission(MembershipConfig.STIGMA_SLOT_QUEST)) {
 					completeQuest(player, 2900);
 					player.getController().upgradePlayer();
-				}
+				} 
 			}
-			SkillLearnService.addMissingSkills(player);
+            /* SkillLearnService.addMissingSkills(player); */
 		}
 	}
 
@@ -184,14 +184,13 @@ public class ClassChangeService {
 		Calendar calendar = Calendar.getInstance();
 		Timestamp timeStamp = new Timestamp(calendar.getTime().getTime());
 		if (qs == null) {
-			player.getQuestStateList().addQuest(questId,
-					new QuestState(questId, QuestStatus.COMPLETE, 0, 1, null, 0, timeStamp));
+			player.getQuestStateList().addQuest(questId, new QuestState(questId, QuestStatus.COMPLETE, 0, 1, null, 0, timeStamp));
 			PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(questId, QuestStatus.COMPLETE.value(), 0));
 		} else {
 			qs.setStatus(QuestStatus.COMPLETE);
 			qs.setCompleteCount(qs.getCompleteCount() + 1);
-			PacketSendUtility.sendPacket(player,
-					new SM_QUEST_ACTION(questId, qs.getStatus(), qs.getQuestVars().getQuestVars()));
+            player.getCommonData().setExp(126150, true); //exp give from quest 1006, 2008 
+			PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(questId, qs.getStatus(), qs.getQuestVars().getQuestVars()));
 		}
 	}
 

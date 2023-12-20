@@ -37,8 +37,7 @@ public class TalkEventHandler {
 		onSimpleTalk(npcAI, creature);
 		if (creature instanceof Player) {
 			Player player = (Player) creature;
-			List<Integer> relatedQuests = QuestEngine.getInstance().getQuestNpc(npcAI.getOwner().getNpcId())
-					.getOnTalkEvent();
+			List<Integer> relatedQuests = QuestEngine.getInstance().getQuestNpc(npcAI.getOwner().getNpcId()).getOnTalkEndEvent();
 			if (QuestEngine.getInstance().onDialog(new QuestEnv(npcAI.getOwner(), player, 0, -1))) {
 				return;
 			}
