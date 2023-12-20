@@ -54,7 +54,7 @@ public class _1354Pratical_Aerobatics extends QuestHandler
 				changeQuestStep(env, 6, 7, false);
 				return true;
 			} else if (rings[6].equals(flyingRing) && qs.getQuestVars().getQuestVars() == 7) {
-				changeQuestStep(env, 7, 8, true);
+				changeQuestStep(env, 7, 8, false);
 				QuestService.questTimerEnd(env);
 				return true;
 			}
@@ -94,7 +94,7 @@ public class _1354Pratical_Aerobatics extends QuestHandler
 					case START_DIALOG:
 						if (qs.getQuestVarById(0) == 0)
 							return sendQuestDialog(env, 1003);
-						if (qs.getQuestVarById(0) == 8)
+						if (qs.getQuestVars().getQuestVars() == 8)
 							return sendQuestDialog(env, 2375);
 					case STEP_TO_1:
 						if (qs.getQuestVarById(0) == 0){
@@ -102,6 +102,7 @@ public class _1354Pratical_Aerobatics extends QuestHandler
 							return defaultCloseDialog(env, 0, 1);
 						}
 					case SELECT_REWARD:
+                        qs.setStatus(QuestStatus.REWARD);
 						return sendQuestEndDialog(env);
 				}
 			}

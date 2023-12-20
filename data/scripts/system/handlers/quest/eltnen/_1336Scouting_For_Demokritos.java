@@ -24,11 +24,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _1336Scouting_For_Demokritos extends QuestHandler {
 
-public class _1336Scouting_For_Demokritos extends QuestHandler
-{
 	private final static int questId = 1336;
-
 	public _1336Scouting_For_Demokritos() {
 		super(questId);
 	}
@@ -73,30 +71,25 @@ public class _1336Scouting_For_Demokritos extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
   		    int var = qs.getQuestVarById(0);
-			//int var1 = qs.getQuestVarById(1);
-			//int var2 = qs.getQuestVarById(2);
-			//int var3 = qs.getQuestVarById(3);
-			
-			//if (var == 1) {
-			//if (var == 0) 
-			//{
 				if (zoneName == ZoneName.get("LF2_SENSORY_AREA_Q1336_1_210020000")) {
-					if (var == 0 ) { //&& var1 == 0
+					if (var == 0 ) { 
+                        playQuestMovie(env, 43);
 						changeQuestStep(env, 0, 16, false);
 						return true;
 					}
 				} else if (zoneName == ZoneName.get("LF2_SENSORY_AREA_Q1336_2_210020000")) {
-					if (var == 16 ) { //&& var2 == 16
+					if (var == 16 ) { 
+                        playQuestMovie(env, 44);
 						changeQuestStep(env, 16, 48, false);
 						return true;
 					}
 				} else if (zoneName == ZoneName.get("LF2_SENSORY_AREA_Q1336_3_210020000")) {
-					if (var == 48 ) { //&&  var3 == 48
+					if (var == 48 ) { 
+                        playQuestMovie(env, 45);
 						changeQuestStep(env, 48, 48, true);
 						return true;
-					}
 				}
-			//}
+			}
 		}
 		return false;
 	}
