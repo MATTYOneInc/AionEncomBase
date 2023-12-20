@@ -58,6 +58,12 @@ public class _1467TheFourLeaders extends QuestHandler {
 			if (targetId == 204045) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
+						return sendQuestDialog(env, 4762);
+					}
+					case ASK_ACCEPTION: {
+						return sendQuestDialog(env, 4);
+					} 
+					case ACCEPT_QUEST: {
 						return sendQuestDialog(env, 1011);
 					}
 					case STEP_TO_1: {
@@ -93,8 +99,7 @@ public class _1467TheFourLeaders extends QuestHandler {
 							return true;
 						}
 					}
-					default:
-						return sendQuestStartDialog(env);
+                    return sendQuestStartDialog(env);  
 				}
 			}
 		}
