@@ -17324,6 +17324,20 @@
 	<item_upgrade upgrade_base_item="115002076">
 		<upgrade_result_item item_id="115002078" check_authorize_count="7"/>			
 	</item_upgrade>
+    <item_upgrade upgrade_base_item="100002070">
+        <upgrade_result_item item_id="100002359" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100002072">
+        <upgrade_result_item item_id="100002359" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <item_upgrade upgrade_base_item="100002167">
         <upgrade_result_item item_id="100002173" check_enchant_count="10">
             <upgrade_materials>
@@ -27233,6 +27247,13 @@
             <need_abyss_point count="3320000"/>
         </upgrade_result_item>
     </item_upgrade>
+    <item_upgrade upgrade_base_item="100201936">
+        <upgrade_result_item item_id="100201937"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <item_upgrade upgrade_base_item="100501705">
         <upgrade_result_item item_id="100501697" check_enchant_count="10">
             <upgrade_materials>
@@ -27286,6 +27307,181 @@
                 <sub_material_item id="100901662" count="1"/>
             </upgrade_materials>
             <need_abyss_point count="3320000"/>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100901770">
+        <upgrade_result_item item_id="100901771"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100901584">
+        <upgrade_result_item item_id="100901779" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100901586">
+        <upgrade_result_item item_id="100901779" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100601623">
+        <upgrade_result_item item_id="100601831" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100601625">
+        <upgrade_result_item item_id="100601831" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101301465">
+        <upgrade_result_item item_id="101301666" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101301467">
+        <upgrade_result_item item_id="101301666" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101501571">
+        <upgrade_result_item item_id="101501781" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101501569">
+        <upgrade_result_item item_id="101501781" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101701570">
+        <upgrade_result_item item_id="101701764" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101701568">
+        <upgrade_result_item item_id="101701764" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101801397">
+        <upgrade_result_item item_id="101801521" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101801395">
+        <upgrade_result_item item_id="101801521" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101901301">
+        <upgrade_result_item item_id="101901418" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101901303">
+        <upgrade_result_item item_id="101901418" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="102001423">
+        <upgrade_result_item item_id="102001542" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="102001425">
+        <upgrade_result_item item_id="102001542" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="102101240">
+        <upgrade_result_item item_id="102101357" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="102101238">
+        <upgrade_result_item item_id="102101357" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100501511">
+        <upgrade_result_item item_id="100501727" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100501513">
+        <upgrade_result_item item_id="100501727" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100201729">
+        <upgrade_result_item item_id="100201945" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100201727">
+        <upgrade_result_item item_id="100201945" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100101548">
+        <upgrade_result_item item_id="100101763" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="100101550">
+        <upgrade_result_item item_id="100101763" check_enchant_count="15">
+            <upgrade_materials>
+		        <sub_material_item id="166020000" count="300"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <item_upgrade upgrade_base_item="101301645">
@@ -27343,6 +27539,13 @@
             <need_abyss_point count="3320000"/>
         </upgrade_result_item>
     </item_upgrade>
+    <item_upgrade upgrade_base_item="101801515">
+        <upgrade_result_item item_id="101801516"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <item_upgrade upgrade_base_item="101901411">
         <upgrade_result_item item_id="101901407" check_enchant_count="10">
             <upgrade_materials>
@@ -27352,6 +27555,13 @@
                 <sub_material_item id="101901358" count="1"/>
             </upgrade_materials>
             <need_abyss_point count="3320000"/>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101901412">
+        <upgrade_result_item item_id="101901413"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <item_upgrade upgrade_base_item="102001535">
@@ -27374,6 +27584,13 @@
                 <sub_material_item id="102101297" count="1"/>
             </upgrade_materials>
             <need_abyss_point count="3320000"/>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="102101351">
+        <upgrade_result_item item_id="102101352"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <item_upgrade upgrade_base_item="110102295">
@@ -28661,6 +28878,13 @@
             <need_kinah count="19800000"/>
         </upgrade_result_item>
     </item_upgrade>
+    <item_upgrade upgrade_base_item="100002343">
+        <upgrade_result_item item_id="100002344"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <item_upgrade upgrade_base_item="100101734">
         <upgrade_result_item item_id="100101738" check_enchant_count="10">
             <upgrade_materials>
@@ -28701,6 +28925,13 @@
             <need_kinah count="19800000"/>
         </upgrade_result_item>
     </item_upgrade>
+    <item_upgrade upgrade_base_item="100501718">
+        <upgrade_result_item item_id="100501719"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <item_upgrade upgrade_base_item="100601803">
         <upgrade_result_item item_id="100601807" check_enchant_count="10">
             <upgrade_materials>
@@ -28733,6 +28964,13 @@
             <need_kinah count="19800000"/>
         </upgrade_result_item>
     </item_upgrade>
+    <item_upgrade upgrade_base_item="101301657">
+        <upgrade_result_item item_id="101301658"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <item_upgrade upgrade_base_item="101501752">
         <upgrade_result_item item_id="101501756" check_enchant_count="10">
             <upgrade_materials>
@@ -28755,6 +28993,13 @@
                 <sub_material_item id="186000492" count="60"/>
             </upgrade_materials>
             <need_kinah count="19800000"/>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="101701755">
+        <upgrade_result_item item_id="101701756"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <item_upgrade upgrade_base_item="101801511">
@@ -28869,6 +29114,13 @@
             <need_kinah count="19800000"/>
         </upgrade_result_item>
     </item_upgrade>
+    <item_upgrade upgrade_base_item="100601822">
+        <upgrade_result_item item_id="100601823"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <item_upgrade upgrade_base_item="100901756">
         <upgrade_result_item item_id="100901758" check_enchant_count="10">
             <upgrade_materials>
@@ -28909,6 +29161,13 @@
             <need_kinah count="19800000"/>
         </upgrade_result_item>
     </item_upgrade>
+    <item_upgrade upgrade_base_item="101501772">
+        <upgrade_result_item item_id="101501773"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
+        </upgrade_result_item>
+    </item_upgrade>
     <item_upgrade upgrade_base_item="101801512">
         <upgrade_result_item item_id="101801514" check_enchant_count="10">
             <upgrade_materials>
@@ -28931,6 +29190,13 @@
                 <sub_material_item id="186000492" count="60"/>
             </upgrade_materials>
             <need_kinah count="19800000"/>
+        </upgrade_result_item>
+    </item_upgrade>
+    <item_upgrade upgrade_base_item="102001536">
+        <upgrade_result_item item_id="102001537"  check_authorize_count="9">
+            <upgrade_materials>
+		        <sub_material_item id="166030005" count="100"/>
+            </upgrade_materials>
         </upgrade_result_item>
     </item_upgrade>
     <item_upgrade upgrade_base_item="102101348">

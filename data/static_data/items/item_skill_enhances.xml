@@ -550,4 +550,18 @@
     <item_skill_enhance id="374" player_class="TEMPLAR" skill_id="2864"/>
     <item_skill_enhance id="375" player_class="TEMPLAR" skill_id="3084"/>
     <item_skill_enhance id="376" player_class="CLERIC" skill_id="4176"/>
+
+    <item_skill_enhance id="377" skill_id="644 4721 4774"/>
+    <item_skill_enhance id="380" skill_id="4779 4730"/>
+    <item_skill_enhance id="382" skill_id="4774"/>
+    <item_skill_enhance id="383" skill_id="4726 4784"/>
+    <item_skill_enhance id="385" skill_id="4726 4784"/>
+    <item_skill_enhance id="387" skill_id="4721"/>
+    <item_skill_enhance id="388" skill_id="4716"/>
+    <item_skill_enhance id="389" skill_id="4779 4730"/>
+    <item_skill_enhance id="391" skill_id="4723"/>
+    <item_skill_enhance id="392" skill_id="2132"/>
+    <item_skill_enhance id="393" skill_id="4786"/>
+    <item_skill_enhance id="394" skill_id="4790"/>
+    <item_skill_enhance id="395" skill_id="4795"/>
 </item_skill_enhances>
