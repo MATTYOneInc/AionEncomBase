@@ -1672,6 +1672,11 @@
       <reward_item item_id="152201407" count="1" />
       <reward_item item_id="186000003" count="1" />
     </rewards>
+    <quest_drop npc_id="210784" item_id="152015003" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="210790" item_id="152015003" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="210871" item_id="152015003" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="210896" item_id="152015003" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="210819" item_id="152015003" chance="100" drop_each_member="1" />
     <start_conditions>
       <finished quest_id="1367" />
     </start_conditions>
@@ -5750,6 +5755,12 @@
       <quest_work_item item_id="182206029" count="1" />
     </quest_work_items>
   </quest>
+   <quest id="1963" name="Delivery for the Outer Port" nameId="1102963" minlevel_permitted="10" max_repeat_count="100" race_permitted="ELYOS" category="QUEST">
+    <rewards gold="500" exp="150"/>
+    <quest_work_items>
+      <quest_work_item item_id="182206032" count="1"/>
+    </quest_work_items>
+   </quest>
   <quest id="1964" name="A Souvenir For Noris" nameId="1102964" minlevel_permitted="19" max_repeat_count="10" cannot_share="true" race_permitted="ELYOS" category="QUEST">
     <rewards gold="1000" exp="750" />
     <quest_work_items>
