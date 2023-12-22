@@ -90,6 +90,7 @@ public class _28738Bombs_For_Everyone extends QuestHandler
 							changeQuestStep(env, var1, var1 + 1, false, 1);
 							return HandlerResult.SUCCESS;
 						} else if (var1 == 9) {
+                            qs.setQuestVarById(0, 1);  
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							return HandlerResult.SUCCESS;

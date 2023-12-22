@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _2876Votan_Emergency_Orders extends QuestHandler {
 
-public class _2876Votan_Emergency_Orders extends QuestHandler
-{
     private final static int questId = 2876;
-	
     public _2876Votan_Emergency_Orders() {
         super(questId);
     }
@@ -35,7 +33,8 @@ public class _2876Votan_Emergency_Orders extends QuestHandler
     public void register() {
 		qe.registerQuestNpc(278001).addOnQuestStart(questId); //Votan.
         qe.registerQuestNpc(278016).addOnTalkEvent(questId); //Lisya.
-		qe.registerQuestNpc(278001).addOnTalkEvent(questId); //Votan.
+        qe.registerQuestNpc(278017).addOnTalkEvent(questId); //Semotor.
+		qe.registerQuestNpc(278001).addOnTalkEndEvent(questId); //Votan.
     }
 	
     @Override

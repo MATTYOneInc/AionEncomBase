@@ -24,12 +24,10 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _14042A_Rescue_Operation extends QuestHandler {
 
-public class _14042A_Rescue_Operation extends QuestHandler
-{
     private final static int questId = 14042;
     private final static int[] npcs = {278502, 278517, 278590, 253623};
-	
     public _14042A_Rescue_Operation() {
         super(questId);
     }
@@ -44,6 +42,7 @@ public class _14042A_Rescue_Operation extends QuestHandler
         qe.registerOnLogOut(questId);
         qe.registerAddOnReachTargetEvent(questId);
         qe.registerAddOnLostTargetEvent(questId);
+        qe.registerQuestNpc(278517).addOnTalkEndEvent(questId); 
     }
 	
     @Override

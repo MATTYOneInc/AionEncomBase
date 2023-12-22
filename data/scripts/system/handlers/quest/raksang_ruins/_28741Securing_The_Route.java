@@ -24,19 +24,17 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28741Securing_The_Route extends QuestHandler{
 
-public class _28741Securing_The_Route extends QuestHandler
-{
     private final static int questId = 28741;
 	private final static int[] embercrackStepsDrillCorps = {236018, 236019, 236020, 236021, 236096, 236097, 236098};
-	
     public _28741Securing_The_Route() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
-		qe.registerQuestNpc(804732).addOnTalkEvent(questId);
+		qe.registerQuestNpc(804732).addOnTalkEndEvent(questId);
 		for (int mob: embercrackStepsDrillCorps) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
@@ -103,6 +101,7 @@ public class _28741Securing_The_Route extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 50) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

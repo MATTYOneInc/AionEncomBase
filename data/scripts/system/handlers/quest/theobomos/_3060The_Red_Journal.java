@@ -30,11 +30,9 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3060The_Red_Journal extends QuestHandler {
 
-public class _3060The_Red_Journal extends QuestHandler
-{
 	private final static int questId = 3060;
-
 	public _3060The_Red_Journal() {
 		super(questId);
 	}
@@ -116,7 +114,6 @@ public class _3060The_Red_Journal extends QuestHandler
 					return sendQuestDialog(env, 2375);
 				} else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE && qs.getStatus() != QuestStatus.NONE) {
 					removeQuestItem(env, 182208043, 1); //The Red Journal.
-					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);

@@ -37,12 +37,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author (Encom)
 /** Source KOR: https://www.youtube.com/watch?v=8Qt-ZODwhoA
 /****/
+public class _10520Covert_Communiques extends QuestHandler {
 
-public class _10520Covert_Communiques extends QuestHandler
-{
 	public static final int questId = 10520;
 	private final static int[] npcs = {203726, 203752, 806073, 806076};
-	
 	public _10520Covert_Communiques() {
 		super(questId);
 	}

@@ -23,11 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _1364Journey_To_Agairon extends QuestHandler {
 
-public class _1364Journey_To_Agairon extends QuestHandler
-{
 	private final static int questId = 1364;
-	
 	public _1364Journey_To_Agairon() {
 		super(questId);
 	}
@@ -69,16 +67,23 @@ public class _1364Journey_To_Agairon extends QuestHandler
 						}
 					}
 				}
+				case 790007: { //Dellome.
+					switch (env.getDialog()) {
+						case START_DIALOG: {
+							if (qs.getQuestVarById(0) == 2)
+								return sendQuestDialog(env, 1352);
+						} case SELECT_REWARD: {
+                            qs.setStatus(QuestStatus.REWARD); 
+							return sendQuestEndDialog(env);
+						}
+					}
+				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 790007) { //Dellome.
-				if (env.getDialog() == QuestDialog.START_DIALOG) {
-					return sendQuestDialog(env, 1352);
-				} else {
 					return sendQuestEndDialog(env);
 				}
 			}
-		}
 		return false;
 	}
 	
@@ -97,7 +102,7 @@ public class _1364Journey_To_Agairon extends QuestHandler
 	
 	@Override
 	public boolean onNpcReachTargetEvent(QuestEnv env) {
-		return defaultFollowEndEvent(env, 1, 1, true);
+		return defaultFollowEndEvent(env, 1, 2, false);
 	}
 	
 	@Override

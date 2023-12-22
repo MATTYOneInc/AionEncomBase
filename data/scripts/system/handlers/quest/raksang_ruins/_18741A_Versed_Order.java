@@ -24,19 +24,17 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _18741A_Versed_Order extends QuestHandler{
 
-public class _18741A_Versed_Order extends QuestHandler
-{
     private final static int questId = 18741;
 	private final static int[] embercrackStepsDrillCorps = {236018, 236019, 236020, 236021, 236096, 236097, 236098};
-	
     public _18741A_Versed_Order() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
-		qe.registerQuestNpc(804707).addOnTalkEvent(questId);
+		qe.registerQuestNpc(804707).addOnTalkEndEvent(questId);
 		for (int mob: embercrackStepsDrillCorps) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
@@ -103,6 +101,7 @@ public class _18741A_Versed_Order extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 50) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

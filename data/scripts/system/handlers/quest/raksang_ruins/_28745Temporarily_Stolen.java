@@ -73,7 +73,7 @@ public class _28745Temporarily_Stolen extends QuestHandler
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
 					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
+						return sendQuestEndDialog(env);
 					}
 				}
 			}

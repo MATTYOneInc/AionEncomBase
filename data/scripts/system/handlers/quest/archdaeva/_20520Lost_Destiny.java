@@ -37,12 +37,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author (Encom)
 /** Source KOR: https://www.youtube.com/watch?v=8Qt-ZODwhoA
 /****/
+public class _20520Lost_Destiny extends QuestHandler {
 
-public class _20520Lost_Destiny extends QuestHandler
-{
 	public static final int questId = 20520;
 	private final static int[] npcs = {204075, 204191, 806077, 806080};
-	
 	public _20520Lost_Destiny() {
 		super(questId);
 	}
@@ -97,7 +95,6 @@ public class _20520Lost_Destiny extends QuestHandler
 							return sendQuestDialog(env, 1012);
 						}
 					} case STEP_TO_1: {
-						//Sealed Letter From Munin.
 						giveQuestItem(env, 182215974, 1);
 						changeQuestStep(env, 0, 1, false);
 						return closeDialogWindow(env);
@@ -114,7 +111,6 @@ public class _20520Lost_Destiny extends QuestHandler
 							return sendQuestDialog(env, 1694);
 						}
 					} case STEP_TO_3: {
-						//Orders To Report To Norsvold.
 						giveQuestItem(env, 182215954, 1);
 						changeQuestStep(env, 2, 3, false);
 						return closeDialogWindow(env);
@@ -132,7 +128,6 @@ public class _20520Lost_Destiny extends QuestHandler
 						}
 					} case STEP_TO_4: {
 						TeleportService2.teleportTo(env.getPlayer(), 220110000, 1757.3667f, 2008.911f, 196.59653f, (byte) 0);
-						//Orders To Report To Norsvold.
 						removeQuestItem(env, 182215954, 1);
 						changeQuestStep(env, 3, 4, false);
 						return closeDialogWindow(env);

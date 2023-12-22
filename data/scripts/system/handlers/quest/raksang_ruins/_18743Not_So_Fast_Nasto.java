@@ -24,12 +24,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _18743Not_So_Fast_Nasto extends QuestHandler {
 
-public class _18743Not_So_Fast_Nasto extends QuestHandler
-{
     private final static int questId = 18743;
 	private final static int[] reviverNasto = {236306}; //Reviver Nasto.
-	
     public _18743Not_So_Fast_Nasto() {
         super(questId);
     }
@@ -97,6 +95,7 @@ public class _18743Not_So_Fast_Nasto extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

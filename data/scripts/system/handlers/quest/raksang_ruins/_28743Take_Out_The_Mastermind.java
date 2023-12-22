@@ -24,12 +24,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28743Take_Out_The_Mastermind extends QuestHandler {
 
-public class _28743Take_Out_The_Mastermind extends QuestHandler
-{
     private final static int questId = 28743;
 	private final static int[] reviverNasto = {236306}; //Reviver Nasto.
-	
     public _28743Take_Out_The_Mastermind() {
         super(questId);
     }
@@ -97,6 +95,7 @@ public class _28743Take_Out_The_Mastermind extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

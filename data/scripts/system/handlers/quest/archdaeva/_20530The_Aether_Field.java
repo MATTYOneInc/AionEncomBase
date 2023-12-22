@@ -28,9 +28,8 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author (Encom)
 /****/
+public class _20530The_Aether_Field extends QuestHandler {
 
-public class _20530The_Aether_Field extends QuestHandler
-{
     public static final int questId = 20530;
 	private final static int[] npcs = {204075, 204173, 204182, 798443, 806556, 703388, 703389, 703391, 703395};
 	
@@ -102,7 +101,7 @@ public class _20530The_Aether_Field extends QuestHandler
 						removeQuestItem(env, 182216168, 1);
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
-						return closeDialogWindow(env);
+						return sendQuestEndDialog(env);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 8, 9, false, 10000, 10001);
 					} case FINISH_DIALOG: {
