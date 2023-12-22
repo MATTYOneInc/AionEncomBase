@@ -24,11 +24,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _28740Its_A_Dirty_Job extends QuestHandler {
 
-public class _28740Its_A_Dirty_Job extends QuestHandler
-{
     private final static int questId = 28740;
-	
     public _28740Its_A_Dirty_Job() {
         super(questId);
     }
@@ -50,14 +48,11 @@ public class _28740Its_A_Dirty_Job extends QuestHandler
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
-					} case CHECK_COLLECTED_ITEMS: {
-						if (QuestService.collectItemCheck(env, true)) {
-							qs.setStatus(QuestStatus.REWARD);
-							updateQuestStatus(env);
-							return sendQuestDialog(env, 10000);
-						} else {
-							return sendQuestDialog(env, 10001);
-						}
+				    } case CHECK_COLLECTED_ITEMS: {
+                        return checkQuestItems(env, 0, 1, true, 5, 2716);
+                    } 
+                    case FINISH_DIALOG: {
+                        return sendQuestEndDialog(env);
 					}
 				}
 			}

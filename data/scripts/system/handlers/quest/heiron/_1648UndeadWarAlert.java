@@ -13,11 +13,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /**
  * @author Balthazar
  */
-
 public class _1648UndeadWarAlert extends QuestHandler {
 
 	private final static int questId = 1648;
-
 	public _1648UndeadWarAlert() {
 		super(questId);
 	}
@@ -28,18 +26,16 @@ public class _1648UndeadWarAlert extends QuestHandler {
 		qe.registerQuestNpc(204545).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204612).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204500).addOnTalkEvent(questId);
-		qe.registerQuestNpc(204590).addOnTalkEvent(questId);
+		qe.registerQuestNpc(204590).addOnTalkEndEvent(questId);
 	}
 
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204545) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -49,10 +45,8 @@ public class _1648UndeadWarAlert extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 204612: {

@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _1876Taranis_Emergency_Orders extends QuestHandler {
 
-public class _1876Taranis_Emergency_Orders extends QuestHandler
-{
     private final static int questId = 1876;
-	
     public _1876Taranis_Emergency_Orders() {
         super(questId);
     }
@@ -35,7 +33,8 @@ public class _1876Taranis_Emergency_Orders extends QuestHandler
 	public void register() {
 		qe.registerQuestNpc(278501).addOnQuestStart(questId); // Mechalis
 		qe.registerQuestNpc(278502).addOnTalkEvent(questId); // Sakmis
-		qe.registerQuestNpc(278501).addOnTalkEvent(questId); // Mechalis
+        qe.registerQuestNpc(278503).addOnTalkEvent(questId); //Calon
+		qe.registerQuestNpc(278501).addOnTalkEndEvent(questId); // Mechalis
 	}
 	
     @Override

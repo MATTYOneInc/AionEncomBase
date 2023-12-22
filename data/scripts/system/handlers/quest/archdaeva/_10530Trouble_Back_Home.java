@@ -28,12 +28,10 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author (Encom)
 /****/
+public class _10530Trouble_Back_Home extends QuestHandler {
 
-public class _10530Trouble_Back_Home extends QuestHandler
-{
     public static final int questId = 10530;
 	private final static int[] npcs = {203725, 203752, 203852, 798440, 806555, 703386, 703387, 703390, 703394};
-	
     public _10530Trouble_Back_Home() {
         super(questId);
     }
@@ -102,9 +100,9 @@ public class _10530Trouble_Back_Home extends QuestHandler
 						removeQuestItem(env, 182216167, 1);
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
-						return closeDialogWindow(env);
+						return sendQuestEndDialog(env);
 					} case CHECK_COLLECTED_ITEMS: {
-						return checkQuestItems(env, 8, 9, false, 10000, 10001);
+						return checkQuestItems(env, 8, 9, true, 10000, 10001);
 					} case FINISH_DIALOG: {
 						if (var == 9) {
 							defaultCloseDialog(env, 9, 9);

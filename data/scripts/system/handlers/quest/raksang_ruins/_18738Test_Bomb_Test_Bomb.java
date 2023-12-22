@@ -26,11 +26,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _18738Test_Bomb_Test_Bomb extends QuestHandler {
 
-public class _18738Test_Bomb_Test_Bomb extends QuestHandler
-{
     private final static int questId = 18738;
-	
     public _18738Test_Bomb_Test_Bomb() {
         super(questId);
     }
@@ -90,6 +88,7 @@ public class _18738Test_Bomb_Test_Bomb extends QuestHandler
 							changeQuestStep(env, var1, var1 + 1, false, 1);
 							return HandlerResult.SUCCESS;
 						} else if (var1 == 9) {
+                            qs.setQuestVarById(0, 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							return HandlerResult.SUCCESS;

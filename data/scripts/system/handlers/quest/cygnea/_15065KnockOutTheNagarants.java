@@ -30,7 +30,6 @@ public class _15065KnockOutTheNagarants extends QuestHandler {
 
 	private final static int questId = 15065;
 	int[] mobs = { 235883, 235884, 235885, 235886 };
-
 	public _15065KnockOutTheNagarants() {
 		super(questId);
 	}
@@ -38,7 +37,7 @@ public class _15065KnockOutTheNagarants extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(804707).addOnQuestStart(questId);
-		qe.registerQuestNpc(804707).addOnTalkEvent(questId);
+		qe.registerQuestNpc(804707).addOnTalkEndEvent(questId);
 		for (int mob : mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
@@ -72,7 +71,6 @@ public class _15065KnockOutTheNagarants extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 804707) {
 				if (dialog == QuestDialog.START_DIALOG) {

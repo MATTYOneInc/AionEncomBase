@@ -35,11 +35,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author (Encom)
 /**  @author Phantom_KNA
 /****/
-
 public class _10528Protection_Artifact_1 extends QuestHandler {
+
     public static final int questId = 10528;
 	private final static int[] npcs = {806075, 806291, 806292, 703316, 731708, 731709};
-	
     public _10528Protection_Artifact_1() {
         super(questId);
     }
@@ -101,7 +100,7 @@ public class _10528Protection_Artifact_1 extends QuestHandler {
 							break;
 					}
 				}
-					break;
+                break;
 				case 806291: { // Dezabo
 					switch (env.getDialog()) {
 						case START_DIALOG:
@@ -114,7 +113,7 @@ public class _10528Protection_Artifact_1 extends QuestHandler {
 							break;
 					}
 				}
-					break;
+                break;
 				case 703316: { // Barteon's Treasure Chest
 					switch (dialog) {
 						case USE_OBJECT: {
@@ -122,9 +121,9 @@ public class _10528Protection_Artifact_1 extends QuestHandler {
 						}
 						default:
 							break;
-
 					}
 				}
+                break;
 				case 806292: { // Awakened Wizabo
 					switch (env.getDialog()) {
 						case START_DIALOG:
@@ -155,7 +154,7 @@ public class _10528Protection_Artifact_1 extends QuestHandler {
 							break;
 					}
 				}
-					break;
+                break;
 				case 731708: { // Teleport
 					switch (env.getDialog()) {
 						case USE_OBJECT:
@@ -200,7 +199,7 @@ public class _10528Protection_Artifact_1 extends QuestHandler {
 			}
 		}
 	}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+    else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806075) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 10002);
@@ -241,8 +240,8 @@ public class _10528Protection_Artifact_1 extends QuestHandler {
 						break;
 					}
 					case 244110: {
-						if (var2 < 1) {
-							return defaultOnKillEvent(env, 244110, 0, 1, 2);
+						if (var2 < 0) {
+							return defaultOnKillEvent(env, 244110, 0, 0, 2);
 						}
 						else if (var2 == 0) {
 							if (var1 == 10) {
@@ -271,17 +270,17 @@ public class _10528Protection_Artifact_1 extends QuestHandler {
 			if (zoneName == ZoneName.get("LF6_SENSORY_AREA_Q10528_A_210100000")) {
 				if (var == 3) {
 					changeQuestStep(env, 3, 4, false);
-					QuestService.addNewSpawn(210100000, 1, 244109, 2889.9578f, 2380.9097f, 236.62764f, (byte) 74); //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-                    QuestService.addNewSpawn(210100000, 1, 244109, 2906.218f, 2378.6492f, 235.3418f, (byte) 65); //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-                    QuestService.addNewSpawn(210100000, 1, 244109, 2891.9438f, 2361.2007f, 233.62851f, (byte) 35); //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-                    QuestService.addNewSpawn(210100000, 1, 244109, 2914.7168f, 2370.3203f, 236.04294f, (byte) 70); //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-                    QuestService.addNewSpawn(210100000, 1, 244109, 2874.361f, 2380.2175f, 237.0f, (byte) 94); //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-					QuestService.addNewSpawn(210100000, 1, 244109, 2890.476f, 2352.9487f, 233.9343f, (byte) 90); //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-					QuestService.addNewSpawn(210100000, 1, 244109, 2868.4194f, 2341.2292f, 237.02196f, (byte) 16); //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-					QuestService.addNewSpawn(210100000, 1, 244109, 2873.2576f, 2352.1912f, 237.20416f, (byte) 112); //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-					QuestService.addNewSpawn(210100000, 1, 244109, 2851.1619f, 2370.3933f, 237.10155f, (byte) 110); //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-					QuestService.addNewSpawn(210100000, 1, 244109, 2881.8997f, 2341.9282f, 235.0179f, (byte) 110); //ë°”ë¥´íƒˆ í•´ì ? ì?¼ê¾¼.
-					QuestService.addNewSpawn(210100000, 1, 244110, 2865.538f, 2363.0034f, 237.20416f, (byte) 111); //íƒ?ìš•ìŠ¤ëŸ° ë?°ìŽ„ì˜¤.
+					QuestService.addNewSpawn(210100000, 1, 244109, 2889.9578f, 2380.9097f, 236.62764f, (byte) 74);
+                    QuestService.addNewSpawn(210100000, 1, 244109, 2906.218f, 2378.6492f, 235.3418f, (byte) 65);
+                    QuestService.addNewSpawn(210100000, 1, 244109, 2891.9438f, 2361.2007f, 233.62851f, (byte) 35);
+                    QuestService.addNewSpawn(210100000, 1, 244109, 2914.7168f, 2370.3203f, 236.04294f, (byte) 70);
+                    QuestService.addNewSpawn(210100000, 1, 244109, 2874.361f, 2380.2175f, 237.0f, (byte) 94);
+					QuestService.addNewSpawn(210100000, 1, 244109, 2890.476f, 2352.9487f, 233.9343f, (byte) 90);
+					QuestService.addNewSpawn(210100000, 1, 244109, 2868.4194f, 2341.2292f, 237.02196f, (byte) 16);
+					QuestService.addNewSpawn(210100000, 1, 244109, 2873.2576f, 2352.1912f, 237.20416f, (byte) 112);
+					QuestService.addNewSpawn(210100000, 1, 244109, 2851.1619f, 2370.3933f, 237.10155f, (byte) 110);
+					QuestService.addNewSpawn(210100000, 1, 244109, 2881.8997f, 2341.9282f, 235.0179f, (byte) 110);
+					QuestService.addNewSpawn(210100000, 1, 244110, 2865.538f, 2363.0034f, 237.20416f, (byte) 111);
 					return true;
 				}
 			} else if (zoneName == ZoneName.get("LF6_SENSORY_AREA_Q10528_B_210100000")) {

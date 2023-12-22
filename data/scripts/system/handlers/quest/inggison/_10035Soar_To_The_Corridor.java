@@ -24,12 +24,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _10035Soar_To_The_Corridor extends QuestHandler {
 
-public class _10035Soar_To_The_Corridor extends QuestHandler
-{
     private final static int questId = 10035;
     private final static int[] basrasaTrapper = {216775, 220021, 220022};
-	
     public _10035Soar_To_The_Corridor() {
         super(questId);
     }
@@ -42,6 +40,7 @@ public class _10035Soar_To_The_Corridor extends QuestHandler
         } for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
+        qe.registerQuestNpc(798926).addOnTalkEndEvent(questId);
 		qe.registerOnLevelUp(questId);
         qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerOnEnterZone(ZoneName.get("ANGRIEF_GATE_210130000"), questId);

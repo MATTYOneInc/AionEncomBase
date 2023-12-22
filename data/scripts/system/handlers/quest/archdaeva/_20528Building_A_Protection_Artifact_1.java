@@ -34,12 +34,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author (Encom)
 /****/
+public class _20528Building_A_Protection_Artifact_1 extends QuestHandler {
 
-public class _20528Building_A_Protection_Artifact_1 extends QuestHandler
-{
     public static final int questId = 20528;
 	private final static int[] npcs = {806079, 806296, 703324, 731714, 731715};
-	
     public _20528Building_A_Protection_Artifact_1() {
         super(questId);
     }
@@ -101,7 +99,7 @@ public class _20528Building_A_Protection_Artifact_1 extends QuestHandler
 							break;
 					}
 				}
-					break;
+                break; 
 				case 806296: { // Wejabobo
 					switch (env.getDialog()) {
 						case START_DIALOG:
@@ -114,7 +112,7 @@ public class _20528Building_A_Protection_Artifact_1 extends QuestHandler
 							break;
 					}
 				}
-					break;
+                break;  
 				case 703324: { // Anima's Treasure
 					switch (dialog) {
 						case USE_OBJECT: {
@@ -122,9 +120,9 @@ public class _20528Building_A_Protection_Artifact_1 extends QuestHandler
 						}
 						default:
 							break;
-
 					}
 				}
+                break;
 				case 806297: { // Awakened Wejabobo
 					switch (env.getDialog()) {
 						case START_DIALOG:
@@ -155,7 +153,7 @@ public class _20528Building_A_Protection_Artifact_1 extends QuestHandler
 							break;
 					}
 				}
-					break;
+                break;  
 				case 731714: { // Hidden Sky Island Teleporter
 					switch (env.getDialog()) {
 						case USE_OBJECT:
@@ -241,8 +239,8 @@ public class _20528Building_A_Protection_Artifact_1 extends QuestHandler
 						break;
 					}
 					case 244126: {
-						if (var2 < 1) {
-							return defaultOnKillEvent(env, 244126, 0, 1, 2);
+						if (var2 < 0) {
+							return defaultOnKillEvent(env, 244126, 0, 0, 2);
 						}
 						else if (var2 == 0) {
 							if (var1 == 10) {

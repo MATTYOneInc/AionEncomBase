@@ -29,11 +29,9 @@ import com.aionemu.gameserver.world.WorldMapInstance;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15300Taking_Arms extends QuestHandler {
 
-public class _15300Taking_Arms extends QuestHandler
-{
 	public static final int questId = 15300;
-	
 	public _15300Taking_Arms() {
 		super(questId);
 	}
@@ -44,6 +42,7 @@ public class _15300Taking_Arms extends QuestHandler
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
+        qe.registerQuestNpc(805327).addOnTalkEndEvent(questId); 
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerQuestNpc(237228).addOnKillEvent(questId); //Lava Protector.

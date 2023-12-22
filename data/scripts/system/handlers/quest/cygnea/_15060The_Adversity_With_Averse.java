@@ -22,19 +22,17 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15060The_Adversity_With_Averse extends QuestHandler {
 
-public class _15060The_Adversity_With_Averse extends QuestHandler
-{
     private final static int questId = 15060;
 	private final static int[] LF5FDrakan60An = {235876, 235877};
-	
     public _15060The_Adversity_With_Averse() {
         super(questId);
     }
 	
     public void register() {
         qe.registerQuestNpc(804707).addOnQuestStart(questId);
-        qe.registerQuestNpc(804707).addOnTalkEvent(questId);
+        qe.registerQuestNpc(804707).addOnTalkEndEvent(questId);
 		for (int mob: LF5FDrakan60An) {
             qe.registerQuestNpc(mob).addOnKillEvent(questId);
         }

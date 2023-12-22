@@ -25,11 +25,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _13900When_Kaisinel_Calls extends QuestHandler {
 
-public class _13900When_Kaisinel_Calls extends QuestHandler
-{
     private final static int questId = 13900;
-	
     public _13900When_Kaisinel_Calls() {
         super(questId);
     }
@@ -85,28 +83,22 @@ public class _13900When_Kaisinel_Calls extends QuestHandler
 				} case 798514: {
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							return sendQuestDialog(env, 2034);
-						} case SELECT_ACTION_2035: {
-							return sendQuestDialog(env, 2035);
-						} case STEP_TO_3: {
+							return sendQuestDialog(env, 2375);
+						} case SELECT_ACTION_2376: {
+							return sendQuestDialog(env, 2376);
+						} case SELECT_REWARD: {
 							qs.setQuestVar(3);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+							return sendQuestEndDialog(env);
 						}
 					}
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798514) {
-				if (env.getDialog() == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 10002);
-				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
-					return sendQuestDialog(env, 5);
-				} else {
-					return sendQuestEndDialog(env);
-				}
+                return sendQuestEndDialog(env);
 			}
 		}
 		return false;

@@ -33,12 +33,10 @@ import com.aionemu.gameserver.world.WorldMapInstance;
 /****/
 /** Author (Encom)
 /****/
+public class _20529Building_A_Protection_Artifact_2 extends QuestHandler {
 
-public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
-{
     public static final int questId = 20529;
 	private final static int[] npcs = {806079, 806298, 806299, 806300, 703325, 731716};
-	
     public _20529Building_A_Protection_Artifact_2() {
         super(questId);
     }
@@ -47,7 +45,8 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler
     public void register() {
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } 
+        }
+        qe.registerQuestNpc(806079).addOnTalkEndEvent(questId);  
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);

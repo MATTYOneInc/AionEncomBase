@@ -25,11 +25,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _10505Sneeze_Attack extends QuestHandler {
 
-public class _10505Sneeze_Attack extends QuestHandler
-{
     public static final int questId = 10505;
-	
     public _10505Sneeze_Attack() {
         super(questId);
     }
@@ -40,6 +38,7 @@ public class _10505Sneeze_Attack extends QuestHandler
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
+        qe.registerQuestNpc(804707).addOnTalkEndEvent(questId);
 		qe.registerOnLevelUp(questId);
 		qe.registerOnMovieEndQuest(992, questId);
 		qe.registerQuestItem(182215612, questId);

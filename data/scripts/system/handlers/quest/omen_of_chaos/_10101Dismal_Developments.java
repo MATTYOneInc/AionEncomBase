@@ -31,12 +31,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _10101Dismal_Developments extends QuestHandler {
 
-public class _10101Dismal_Developments extends QuestHandler
-{
     private final static int questId = 10101;
     private final static int[] npcs = {802462, 731530, 804556, 731532, 802357, 802431};
-	
     public _10101Dismal_Developments() {
         super(questId);
     }
@@ -48,6 +46,7 @@ public class _10101Dismal_Developments extends QuestHandler
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerQuestNpc(234680).addOnKillEvent(questId);
+        qe.registerQuestNpc(802431).addOnTalkEndEvent(questId);
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }

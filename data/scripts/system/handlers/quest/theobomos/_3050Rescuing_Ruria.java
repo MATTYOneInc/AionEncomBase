@@ -24,11 +24,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _3050Rescuing_Ruria extends QuestHandler {
 
-public class _3050Rescuing_Ruria extends QuestHandler
-{
 	private final static int questId = 3050;
-
 	public _3050Rescuing_Ruria() {
 		super(questId);
 	}
@@ -75,9 +73,10 @@ public class _3050Rescuing_Ruria extends QuestHandler
 						} 
 						case SELECT_ACTION_1012: {
 							removeQuestItem(env, 182208035, 1);
+                            changeQuestStep(env, 0, 1, false);
 						} case STEP_TO_1: {
 							playQuestMovie(env, 370);
-							return defaultStartFollowEvent(env, (Npc) env.getVisibleObject(), ZoneName.get("LF2A_SENSORYAREA_Q3050_206082_2_210060000"), 0, 1);
+							return defaultStartFollowEvent(env, (Npc) env.getVisibleObject(), 798208, 1, 2); // 1
 						}
 					}
 				}
@@ -85,11 +84,11 @@ public class _3050Rescuing_Ruria extends QuestHandler
 				case 798208: { //Melleas.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							if (qs.getQuestVarById(0) == 2) {
+							if (qs.getQuestVarById(0) == 3) {
 								return sendQuestDialog(env, 2034);
 							}
 						} case SET_REWARD: {
-							return defaultCloseDialog(env, 2, 2, true, false);
+							return defaultCloseDialog(env, 3, 3, true, false);
 						}
 					}
 				}
@@ -113,7 +112,7 @@ public class _3050Rescuing_Ruria extends QuestHandler
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
 			if (var == 1) {
-				changeQuestStep(env, 1, 0, false);
+				changeQuestStep(env, 2, 0, false);
 			}
 		}
 		return false;
@@ -121,11 +120,11 @@ public class _3050Rescuing_Ruria extends QuestHandler
 	
 	@Override
 	public boolean onNpcReachTargetEvent(QuestEnv env) {
-		return defaultFollowEndEvent(env, 1, 2, false);
+		return defaultFollowEndEvent(env, 2, 3, false);
 	}
 	
 	@Override
 	public boolean onNpcLostTargetEvent(QuestEnv env) {
-		return defaultFollowEndEvent(env, 1, 0, false);
+		return defaultFollowEndEvent(env, 2, 0, false);
 	}
 }

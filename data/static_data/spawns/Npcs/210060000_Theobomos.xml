@@ -475,7 +475,11 @@
 			<spot x="2576.1" y="945.874" z="97.5297" h="8"/>
 		</spawn>
 		<!-- Red Journal -->
-		<spawn npc_id="730148" respawn_time="295">
+        <spawn custom="true" respawn_time="295" npc_id="730148" difficult_id="0">
+            <spot h="30" z="75.7177" y="231.0" x="1665.6"/>
+        </spawn>
+		<!-- Journal of Melleas -->
+		<spawn npc_id="730179" respawn_time="295">
 		    <spot x="468.66486" y="2110.1646" z="55.762753" entity_id="88"/>
 		</spawn>
 		<!-- Skullmask Spiner -->

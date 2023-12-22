@@ -326,7 +326,7 @@ public class _10521Memories_Of_Eternity extends QuestHandler {
 			} if (var == 13) {
 				if (env.getTargetId() == 857785 || //IDEternity_Q_HD_Fire_Li_M_N_65_An.
 				    env.getTargetId() == 857792) { //IDEternity_Q_HD_Fire_Li_F_N_65_An.
-					changeQuestStep(env, 13, 13, true);
+					changeQuestStep(env, 13, 13, false);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return true;

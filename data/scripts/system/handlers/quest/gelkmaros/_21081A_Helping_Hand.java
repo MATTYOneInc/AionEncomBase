@@ -29,7 +29,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _21081A_Helping_Hand extends QuestHandler {
 
 	private final static int questId = 21081;
-
 	public _21081A_Helping_Hand() {
 		super(questId);
 	}
@@ -49,13 +48,15 @@ public class _21081A_Helping_Hand extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 799225) {
 				switch (dialog) {
 					case START_DIALOG:
 						return sendQuestDialog(env, 1011);
-					default: {
+					case ASK_ACCEPTION: {
+						return sendQuestDialog(env, 4);
+					} 
+					case ACCEPT_QUEST: {
 						if (!giveQuestItem(env, 182214017, 1))
 							updateQuestStatus(env);
 						return sendQuestStartDialog(env);
@@ -65,8 +66,7 @@ public class _21081A_Helping_Hand extends QuestHandler {
 		}
 		else if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
-				case 799332: // Brontes
-				{
+				case 799332: { // Brontes
 					switch (dialog) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1353);
@@ -79,8 +79,7 @@ public class _21081A_Helping_Hand extends QuestHandler {
 						}
 					}
 				}
-				case 799217: // Pilipides
-				{
+				case 799217: { // Pilipides
 					switch (dialog) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1693);
@@ -93,30 +92,22 @@ public class _21081A_Helping_Hand extends QuestHandler {
 						}
 					}
 				}
-				case 799202: // Drenia
-				{
+				case 799202: { // Drenia
 					switch (dialog) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 2375);
 						}
 						case SELECT_REWARD: {
 							removeQuestItem(env, 182214017, 1);
-							return defaultCloseDialog(env, 2, 3, true, true);
+							changeQuestStep(env, 2, 3, true);
+							return sendQuestEndDialog(env);
 						}
 					}
 				}
 			}
 		}
 		else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 799202) // Drenia
-			{
-				switch (env.getDialogId()) {
-					case 1009: {
-						return sendQuestDialog(env, 5);
-					}
-					default:
-						return sendQuestEndDialog(env);
-				}
+			if (targetId == 799202) { // Drenia
 			}
 		}
 		return false;

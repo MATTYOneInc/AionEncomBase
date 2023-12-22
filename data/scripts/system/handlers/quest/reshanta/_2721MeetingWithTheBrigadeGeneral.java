@@ -32,7 +32,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _2721MeetingWithTheBrigadeGeneral extends QuestHandler {
 
 	private final static int questId = 2721;
-
 	public _2721MeetingWithTheBrigadeGeneral() {
 		super(questId);
 	}
