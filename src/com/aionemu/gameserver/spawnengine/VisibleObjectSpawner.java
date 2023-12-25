@@ -173,12 +173,27 @@ public class VisibleObjectSpawner {
 
 	protected static VisibleObject spawnNpc(SpawnTemplate spawn, int instanceIndex) {
 		int objectId = spawn.getNpcId();
+		if (spawn.getAlternateIds()!=null){
+			int[] selectprobs = spawn.getSelectProbs();
+			int[] alternateIds = spawn.getAlternateIds();
+			double rand = Math.random()*10000;
+			int temp =10000;
+			for (int i =0; i< alternateIds.length; i++){
+				if ((alternateIds[i]!=0)&&(rand<selectprobs[i])&&(selectprobs[i]<temp)){
+					temp = selectprobs[i];
+					objectId = alternateIds[i];
+				}
+			}
+		}
+		
 		NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(objectId);
 		if (npcTemplate == null) {
 			log.error("<No Template For NPC> " + String.valueOf(objectId));
 			return null;
 		}
-		IDFactory iDFactory = IDFactory.getInstance();
+		IDFactory iDFactory = IDFactory.getInstance();	
+		if (!spawn.canFly())
+			spawn.setZ(GeoService.getInstance().getZ(spawn.getWorldId(), spawn.getX(), spawn.getY(), spawn.getZ(), 100f, 1));
 		Npc npc = new Npc(iDFactory.nextId(), new NpcController(), spawn, npcTemplate);
 		npc.setCreatorId(spawn.getCreatorId());
 		npc.setMasterName(spawn.getMasterName());

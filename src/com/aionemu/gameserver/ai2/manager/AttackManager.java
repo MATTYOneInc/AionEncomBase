@@ -26,6 +26,7 @@ import com.aionemu.gameserver.model.gameobjects.Npc;
 
 /**
  * @author ATracer
+ * @modified Yon (Aion Reconstruction Project) -- removed non-retail-like leash in {@link #checkGiveupDistance(NpcAI2)}.
  */
 public class AttackManager {
 
@@ -138,14 +139,14 @@ public class AttackManager {
 		// if npc is far away from home
 		int chaseHome = npc.isBoss() ? 150
 				: npc.getPosition().getWorldMapInstance().getTemplate().getAiInfo().getChaseHome();
-		if (distanceToHome > chaseHome) {
-			return true;
-		}
+		//if (distanceToHome > chaseHome) {
+		//	return true;
+		//}
 		// start thinking about home after 100 meters and no attack for 10 seconds (only
 		// for default monsters)
 		if (chaseHome <= 6) { // TODO: Check Client and use chase_user_by_trace value
 			if ((npc.getGameStats().getLastAttackTimeDelta() > 20 && npc.getGameStats().getLastAttackedTimeDelta() > 20)
-					|| (distanceToHome > chaseHome / 2 && npc.getGameStats().getLastAttackedTimeDelta() > 2)) {
+				/*	|| (distanceToHome > chaseHome / 2 && npc.getGameStats().getLastAttackedTimeDelta() > 2)*/) {
 				return true;
 			}
 		}

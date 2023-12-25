@@ -52,11 +52,23 @@ public class WalkerTemplate {
 	@XmlAttribute(name = "rows")
 	private String rowValues;
 
+	@XmlAttribute(name = "offsetsx")
+	private String offsetsxValues;
+	
+	@XmlAttribute(name = "offsetsy")
+	private String offsetsyValues;
+
 	@XmlElement(name = "routestep")
 	private List<RouteStep> routeStepList;
 
 	@XmlTransient
 	private int[] rows;
+	
+	@XmlTransient
+	private int[] offsetsx;
+	
+	@XmlTransient
+	private int[] offsetsy;
 
 	public WalkerTemplate() {
 	}
@@ -101,7 +113,7 @@ public class WalkerTemplate {
 		routeStepList.get(routeStepList.size() - 1).setRouteStep(routeStepList.size());
 		routeStepList.get(routeStepList.size() - 1).setNextStep(routeStepList.get(0));
 
-		if (pool == 2) {
+		if ((pool == 2) && (formation != WalkerGroupType.OFFSET)) {
 			formation = WalkerGroupType.SQUARE;
 			rows = new int[1];
 			rows[0] = 2;
@@ -114,6 +126,16 @@ public class WalkerTemplate {
 				}
 			} else {
 				formation = WalkerGroupType.POINT;
+			}
+		}
+		if (offsetsxValues != null) {
+			String[] valuesX = offsetsxValues.split(",");
+			String[] valuesY = offsetsyValues.split(",");
+			offsetsx = new int[valuesX.length];
+			offsetsy = new int[valuesY.length];
+			for (int i = 0; i < valuesX.length; i++) {
+				offsetsx[i] = Integer.parseInt(valuesX[i]);
+				offsetsy[i] = Integer.parseInt(valuesY[i]);
 			}
 		}
 		rowValues = null;
@@ -161,4 +183,12 @@ public class WalkerTemplate {
 	public int[] getRows() {
 		return rows;
 	}
+	
+	public int[] getoffsetsX() {
+		return offsetsx;
+	}
+	
+	public int[] getoffsetsY() {
+		return offsetsy;
+	}	
 }

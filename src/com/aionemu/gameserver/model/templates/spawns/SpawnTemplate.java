@@ -56,6 +56,8 @@ public class SpawnTemplate {
 	private int iustate;
 	private int opstate;
 	private int creatorId;
+	private String alternateIdValues;
+	private String selectprobValues;
 	private String masterName = StringUtils.EMPTY;
 	private TemporarySpawn temporarySpawn;
 	private VisibleObject visibleObject;
@@ -90,6 +92,8 @@ public class SpawnTemplate {
 		zstate = spot.getZState();
 		iustate = spot.getIUState();
 		opstate = spot.getOPState();
+		alternateIdValues = spot.getAlternateIds();
+		selectprobValues = spot.getSelectProbs();
 		temporarySpawn = spot.getTemporarySpawn();
 	}
 
@@ -311,6 +315,38 @@ public class SpawnTemplate {
 		return opstate;
 	}
 
+	public int[] getAlternateIds() {
+		int[] alternateIds;
+		if (alternateIdValues!=null){
+			String[] values = alternateIdValues.split(",");
+			alternateIds = new int[values.length];
+			for (int i = 0; i < values.length; i++) {
+				alternateIds[i] = Integer.parseInt(values[i]);
+			}
+		}
+		else
+		{
+			alternateIds = new int[1];
+		}
+		return alternateIds;
+	}
+
+	public int[] getSelectProbs() {
+		int[] selectProbs;
+		if (selectprobValues!=null){
+			String[] values = selectprobValues.split(",");
+			selectProbs = new int[values.length];
+			for (int i = 0; i < values.length; i++) {
+				selectProbs[i] = Integer.parseInt(values[i]);
+			}
+		}
+		else
+		{
+			selectProbs = new int[1];	
+		}
+		return selectProbs;
+	}	
+	
 	public int getCreatorId() {
 		return creatorId;
 	}

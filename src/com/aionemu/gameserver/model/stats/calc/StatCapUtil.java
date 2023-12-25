@@ -150,6 +150,8 @@ public class StatCapUtil {
 			break;
 		case MAXHP:
 		case MAXMP:
+		case REGEN_HP:
+		case REGEN_MP:
 		case HEAL_BOOST:
 		case HEAL_SKILL_BOOST:
 		case PHYSICAL_ACCURACY:

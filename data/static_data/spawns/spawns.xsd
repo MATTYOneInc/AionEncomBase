@@ -482,6 +482,8 @@
 		<xs:attribute name="walker_index" type="xs:int" use="optional" default="0"/>
 		<xs:attribute name="fly" type="xs:int" use="optional" default="0"/>
 		<xs:attribute name="anchor" type="xs:string"/>
+		<xs:attribute name="alternate_id" type="xs:string"/>
+		<xs:attribute name="select_prob" type="xs:string"/>
 		<xs:attribute name="state" type="xs:int" use="optional" default="0"/>
 		<xs:attribute name="astate" type="xs:int" use="optional" default="0"/>
 		<xs:attribute name="bstate" type="xs:int" use="optional" default="0"/>

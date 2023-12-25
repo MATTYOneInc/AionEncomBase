@@ -119,7 +119,22 @@ public class WalkerGroup {
 			}
 		} else if (getWalkType() == WalkerGroupType.CIRCLE) {
 			// TODO: if needed
-		} else if (getWalkType() == WalkerGroupType.POINT) {
+		} else if (getWalkType() == WalkerGroupType.OFFSET) {
+			int[] offsetsX = members.get(0).getWalkTemplate().getoffsetsX();
+			int[] offsetsY = members.get(0).getWalkTemplate().getoffsetsY();
+			Point2D origin = new Point2D(walkerXpos, walkerYpos);
+			Point2D destination = new Point2D(members.get(0).getWalkTemplate().getRouteStep(2).getX(), members.get(0).getWalkTemplate().getRouteStep(2).getY());
+			for (int i =0; i< members.size(); i++)
+			{
+				WalkerGroupShift shift = new WalkerGroupShift(offsetsX[i], offsetsY[i]);
+				Point2D loc = getLinePoint(origin, destination, shift);
+				members.get(i).setX(loc.getX());
+				members.get(i).setY(loc.getY());
+				Npc member = members.get(i).getNpc();
+				member.setWalkerGroup(this);
+				member.setWalkerGroupShift(shift);
+			}
+		}else if (getWalkType() == WalkerGroupType.POINT) {
 			log.warn("No formation specified for walk cluster " + members.get(0).getWalkTemplate().getRouteId());
 		}
 	}

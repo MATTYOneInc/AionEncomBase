@@ -15,6 +15,8 @@
     <xs:attribute name="reversed" type="xs:boolean" use="optional"/>
     <xs:attribute name="formation" type="formationType" use="optional" default="POINT"/>
     <xs:attribute name="rows" type="xs:string" use="optional"/>
+	<xs:attribute name="offsetsx" type="xs:string" use="optional"/>
+	<xs:attribute name="offsetsy" type="xs:string" use="optional"/>
   </xs:complexType>
   <xs:complexType name="RouteStep">
     <xs:attribute name="step" type="xs:int" use="required"/>
@@ -28,6 +30,7 @@
       <xs:enumeration value="POINT"/>
       <xs:enumeration value="SQUARE"/>
       <xs:enumeration value="CIRCLE"/>
+	  <xs:enumeration value="OFFSET"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

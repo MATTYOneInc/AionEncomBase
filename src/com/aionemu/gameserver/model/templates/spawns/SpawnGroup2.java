@@ -407,9 +407,9 @@ public class SpawnGroup2 extends AbstractLockManager {
 		super.readLock();
 		try {
 			for (SpawnTemplate template : allTemplates) {
-				if (!isTemplateUsed(instanceId, template)) {
+				//if (!isTemplateUsed(instanceId, template)) {
 					templates.add(template);
-				}
+				//}
 			}
 			if (templates.size() == 0) {
 				log.warn("Pool size more then spots, npcId: " + npcId + ", worldId: " + worldId);

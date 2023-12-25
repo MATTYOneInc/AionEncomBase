@@ -323,22 +323,14 @@ extends CreatureMoveController<Npc> {
             }
             localPoint2D = WalkerGroup.getLinePoint(new Point2D(paramRouteStep2.getX(), paramRouteStep2.getY()), new Point2D(paramRouteStep1.getX(), paramRouteStep1.getY()), ((Npc)this.owner).getWalkerGroupShift());
             this.pointZ = paramRouteStep2.getZ();
-            if (GeoDataConfig.GEO_ENABLE && GeoDataConfig.GEO_NPC_MOVE) {
-                Vector3f localVector3f = GeoService.getInstance().getClosestCollision((Creature)this.owner, paramRouteStep2.getX(), paramRouteStep2.getY(), paramRouteStep2.getZ(), false, (byte)0);
-                this.pointZ = localVector3f.getZ();
-                if (this.pointZ == 0.0f || paramRouteStep2.getZ() - this.pointZ > 2.0f) {
-                    this.pointZ = paramRouteStep2.getZ();
-                }
+            if (GeoDataConfig.GEO_ENABLE && GeoDataConfig.GEO_NPC_MOVE && !(this.owner.isInFlyingState())) {
+				this.pointZ = GeoService.getInstance().getZ(((Creature)this.owner).getWorldId(), paramRouteStep2.getX(), paramRouteStep2.getY(), paramRouteStep2.getZ()-1, 100f, 1);
             }
             ((Npc)this.owner).getWalkerGroup().setStep((Npc)this.owner, paramRouteStep1.getRouteStep());
         } else {
             this.pointZ = paramRouteStep1.getZ();
-            if (GeoDataConfig.GEO_ENABLE && GeoDataConfig.GEO_NPC_MOVE) {
-                Vector3f localVector3f = GeoService.getInstance().getClosestCollision((Creature)this.owner, paramRouteStep1.getX(), paramRouteStep1.getY(), paramRouteStep1.getZ(), false, (byte)0);
-                this.pointZ = localVector3f.getZ();
-                if (this.pointZ == 0.0f || paramRouteStep1.getZ() - this.pointZ > 2.0f) {
-                    this.pointZ = paramRouteStep1.getZ();
-                }
+            if (GeoDataConfig.GEO_ENABLE && GeoDataConfig.GEO_NPC_MOVE && !(this.owner.isInFlyingState())) {
+				this.pointZ = GeoService.getInstance().getZ(((Creature)this.owner).getWorldId(), paramRouteStep1.getX(), paramRouteStep1.getY(), paramRouteStep1.getZ()-1, 100f, 1);
             }
         }
         this.currentPoint = paramRouteStep1.getRouteStep() - 1;

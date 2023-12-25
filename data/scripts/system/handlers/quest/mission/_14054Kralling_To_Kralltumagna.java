@@ -44,7 +44,7 @@ public class _14054Kralling_To_Kralltumagna extends QuestHandler {
 		int[] mobs = {214010, 214013, 214014, 214015, 214016, 214017,
 		214018, 214019, 214020, 214021, 214022, 214023,
 		214081, 214082, 214083, 214084, 214085, 214086,
-		214087, 214088, 700220, 233861};
+		214087, 214088, 702040, 233861};
 		//****//
         for (int mob: mobs) {
             qe.registerQuestNpc(mob).addOnKillEvent(questId);
@@ -172,7 +172,7 @@ public class _14054Kralling_To_Kralltumagna extends QuestHandler {
                     return true;
                 }
             }
-        } else if (targetId == 700220) { //[702040 Baranath Crusher]
+        } else if (targetId == 702040) { //[702040 Baranath Crusher]
             switch (qs.getQuestVarById(2)) {
                 case 0:
                 case 1:

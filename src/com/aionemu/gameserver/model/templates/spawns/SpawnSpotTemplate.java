@@ -89,6 +89,12 @@ public class SpawnSpotTemplate {
 	@XmlAttribute(name = "walker_id")
 	private String walkerId;
 
+	@XmlAttribute(name = "alternate_id")
+	private String alternateIdValues;
+	
+	@XmlAttribute(name = "select_prob")
+	private String selectprobValues;
+
 	@XmlAttribute(name = "random_walk")
 	private Integer randomWalk = 0;
 
@@ -433,6 +439,14 @@ public class SpawnSpotTemplate {
 			return 0;
 		}
 		return opstate;
+	}
+	
+	public String getAlternateIds() {
+		return alternateIdValues;
+	}
+	
+	public String getSelectProbs() {
+		return selectprobValues;
 	}
 
 	public TemporarySpawn getTemporarySpawn() {
