@@ -105,8 +105,8 @@ public class _20111 extends QuestHandler
 						changeQuestStep(env, 1, 2, false);
 						return closeDialogWindow(env);
 					} case SET_REWARD: {
+                        changeQuestStep(env, 4, 5, false);
 						qs.setStatus(QuestStatus.REWARD);
-						changeQuestStep(env, 4, 5, false);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);
 					}

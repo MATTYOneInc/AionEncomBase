@@ -77,8 +77,8 @@ public class _2917ArekedilsHeritage extends QuestHandler {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009) {
-					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE && qs.getStatus() != QuestStatus.NONE) {
+                    qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
@@ -86,9 +86,9 @@ public class _2917ArekedilsHeritage extends QuestHandler {
 				else
 					return sendQuestEndDialog(env);
 			}
-		}
 		else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
-			return sendQuestEndDialog(env);
+				return sendQuestEndDialog(env);
+			}
 		}
 		return false;
 	}

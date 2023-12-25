@@ -22,7 +22,6 @@
 	<report_to id="2286" start_npc_ids="203557" end_npc_ids="203560" item_id="182203259"/>
 	<report_to id="2287" start_npc_ids="203557" end_npc_ids="203558" item_id="182203260"/>
 	<report_to id="2291" start_npc_ids="203639" end_npc_ids="203617"/>
-	<report_to id="2296" start_npc_ids="203656" end_npc_ids="798036" item_id="182203263"/>
     <!-- COLLECTING QUESTS -->
     <item_collecting id="2147" start_npc_ids="203659"/>
     <item_collecting id="2203" start_npc_ids="203556" action_item_ids="700055"/>

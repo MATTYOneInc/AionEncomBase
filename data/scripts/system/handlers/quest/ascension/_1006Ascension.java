@@ -55,6 +55,9 @@ public class _1006Ascension extends QuestHandler {
 	
 	@Override
 	public void register() {
+		if (CustomConfig.ENABLE_SIMPLE_2NDCLASS) {
+			return;
+		}
 		int[] mobs = {211042, 211043};
 		int[] npcs = {790001, 730008, 205000};
 		qe.registerOnLevelUp(questId);

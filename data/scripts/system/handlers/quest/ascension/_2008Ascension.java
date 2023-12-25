@@ -52,6 +52,9 @@ public class _2008Ascension extends QuestHandler {
 	
 	@Override
 	public void register() {
+		if (CustomConfig.ENABLE_SIMPLE_2NDCLASS) {
+			return;
+		}
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203550).addOnTalkEvent(questId);
 		qe.registerQuestNpc(790003).addOnTalkEvent(questId);
