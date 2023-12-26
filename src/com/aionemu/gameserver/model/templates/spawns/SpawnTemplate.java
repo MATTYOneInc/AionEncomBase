@@ -315,6 +315,20 @@ public class SpawnTemplate {
 		return opstate;
 	}
 
+	public boolean needsGrounding() {
+		switch (spawnGroup.getWorldId()) {
+		case 210020000:
+		case 210030000:
+		case 210040000:
+		case 210060000:
+		case 310010000:
+		case 310020000:
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	public int[] getAlternateIds() {
 		int[] alternateIds;
 		if (alternateIdValues!=null){

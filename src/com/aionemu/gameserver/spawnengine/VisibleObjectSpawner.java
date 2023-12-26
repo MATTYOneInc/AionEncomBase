@@ -192,7 +192,7 @@ public class VisibleObjectSpawner {
 			return null;
 		}
 		IDFactory iDFactory = IDFactory.getInstance();	
-		if (!spawn.canFly())
+		if (!spawn.canFly() && (spawn.needsGrounding()))
 			spawn.setZ(GeoService.getInstance().getZ(spawn.getWorldId(), spawn.getX(), spawn.getY(), spawn.getZ(), 100f, 1));
 		Npc npc = new Npc(iDFactory.nextId(), new NpcController(), spawn, npcTemplate);
 		npc.setCreatorId(spawn.getCreatorId());
