@@ -50,7 +50,7 @@
 	<item_collecting id="4918" start_npc_ids="831392"/>
 	<item_collecting id="4919" start_npc_ids="831392"/>
 	<item_collecting id="4975" start_npc_ids="204283"/>
-	<item_collecting id="29042" start_npc_ids="204286" end_npc_ids="798445"/>
+	<item_collecting id="29042" start_npc_ids="204286" end_npc_ids="204286"/>
 	<item_collecting id="29043" start_npc_ids="798445"/>
 	<monster_hunt id="4977" start_npc_ids="203385">
 		<monster var="0" end_var="8" npc_ids="214850 214851 214849 215389 214880 215388 214894 214896 214897 214895"/>

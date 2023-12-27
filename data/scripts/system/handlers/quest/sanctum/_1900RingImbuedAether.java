@@ -29,7 +29,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1900RingImbuedAether extends QuestHandler {
 
 	private final static int questId = 1900;
-
 	public _1900RingImbuedAether() {
 		super(questId);
 	}
@@ -42,13 +41,12 @@ public class _1900RingImbuedAether extends QuestHandler {
 		qe.registerQuestNpc(203766).addOnTalkEvent(questId);
 		qe.registerQuestNpc(203797).addOnTalkEvent(questId);
 		qe.registerQuestNpc(203795).addOnTalkEvent(questId);
-		qe.registerQuestNpc(203830).addOnTalkEvent(questId);
+		qe.registerQuestNpc(203830).addOnTalkEndEvent(questId);
 	}
 
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
-
 		if (sendQuestNoneDialog(env, 203757, 182206003, 1))
 			return true;
 
@@ -101,16 +99,15 @@ public class _1900RingImbuedAether extends QuestHandler {
 			}
 		}
 		else if (env.getTargetId() == 203830) {
-			if (env.getDialog() == QuestDialog.USE_OBJECT && qs.getStatus() == QuestStatus.REWARD)
+			if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.REWARD)
 				return sendQuestDialog(env, 2716);
-			else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-				&& qs.getStatus() != QuestStatus.NONE) {
+			else if (env.getDialogId() == 1009) {
 				removeQuestItem(env, 182206003, 1);
 				return sendQuestDialog(env, 5);
 			}
 			else
 				return sendQuestEndDialog(env);
 		}
-		return sendQuestRewardDialog(env, 203830, 0);
+        return false;
 	}
 }

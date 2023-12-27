@@ -25,10 +25,9 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 
-public class _2284Escaping_Asmodae extends QuestHandler
-{
+public class _2284Escaping_Asmodae extends QuestHandler {
+
 	private final static int questId = 2284;
-	
 	public _2284Escaping_Asmodae() {
 		super(questId);
 	}
@@ -81,7 +80,7 @@ public class _2284Escaping_Asmodae extends QuestHandler
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798034) { 
-			  if (env.getDialogId() == QuestDialog.SELECT_NO_REWARD.id()) {
+			  if (env.getDialogId() == 1009) {
 					return sendQuestDialog(env, 10002);
 				}
 				else {

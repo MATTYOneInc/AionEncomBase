@@ -25,11 +25,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _24050Neritas_Orders extends QuestHandler {
 
-public class _24050Neritas_Orders extends QuestHandler
-{
     private final static int questId = 24050;
-	
     public _24050Neritas_Orders() {
         super(questId);
     }
@@ -56,7 +54,6 @@ public class _24050Neritas_Orders extends QuestHandler
 				return sendQuestDialog(env, 10002);
 			} else if (env.getDialogId() == 1009) {
 				qs.setStatus(QuestStatus.REWARD);
-				qs.setQuestVarById(0, 1);
 				updateQuestStatus(env);
 				return sendQuestDialog(env, 5);
 			}

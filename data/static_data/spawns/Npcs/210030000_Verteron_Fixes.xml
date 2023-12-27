@@ -29,6 +29,27 @@
       <spot x="2353.010010" y="1471.176636" z="183.000000" h="15" random_walk="2" />
       <spot x="2252.954102" y="1045.911743" z="148.000000" h="15" random_walk="2" />
       <spot x="2404.664307" y="1373.413818" z="200.000000" h="15" random_walk="2" />
-    </spawn>	
+    </spawn>
+	<!-- Tiny Arachna -->
+	<spawn npc_id="210689" respawn_time="295">
+		<spot x="1584.72" y="2360.01" z="134.876" h="17" random_walk="2"/>
+		<spot x="1585.33" y="2356.1" z="134.917" h="9" random_walk="2"/>
+		<spot x="1607.03" y="2428.05" z="133.75" h="112" random_walk="2"/>
+		<spot x="1587.95" y="2456.55" z="133.656" h="71" random_walk="2"/>
+		<spot x="1590.73" y="2363.68" z="134.534" h="33" random_walk="2"/>
+		<spot x="1574.14" y="2394.3" z="135.633" h="111" random_walk="2"/>
+	</spawn>
+	<!-- Damaged Invasion Generator
+	A power generator made by the Balaur.
+	It seems to be broken and remains unattended -->
+	<spawn npc_id="731643" respawn_time="295">
+		<spot x="2453.9646" y="826.74506" z="98.87721" h="119"/>
+	</spawn>
+	<!-- Inoperable Invasion Generator
+	A power generator made by the Balaur.
+	It seems to be broken and remains unattended -->
+	<spawn npc_id="731644" respawn_time="295">
+		<spot x="2512.4429" y="820.2726" z="99.205284" h="57"/>
+	</spawn>	
   </spawn_map>
 </spawns>

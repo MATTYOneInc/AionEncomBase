@@ -48,7 +48,9 @@ public class _4937Recognition_Of_The_Preceptors extends QuestHandler {
 			if (targetId == 204053) { //Kvasir.
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 4762);
-				} else {
+				} else if (env.getDialog() == QuestDialog.ASK_ACCEPTION) {
+					return sendQuestDialog(env, 4);
+                } else if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					giveQuestItem(env, 182207112, 1);
 					return sendQuestStartDialog(env);
 				}

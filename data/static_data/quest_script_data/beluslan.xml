@@ -64,7 +64,7 @@
 	<item_collecting id="2596" start_npc_ids="204735"/>
 	<item_collecting id="2597" start_npc_ids="204735"/>
 	<item_collecting id="2599" start_npc_ids="204725"/>
-	<item_collecting id="2602" start_npc_ids="204808"/>
+	<item_collecting id="2602" start_npc_ids="204808" action_item_ids="700332"/>
 	<item_collecting id="2612" start_npc_ids="204790"/>
 	<item_collecting id="2614" start_npc_ids="204784"/>
 	<item_collecting id="2617" start_npc_ids="204750" action_item_ids="700334"/>
