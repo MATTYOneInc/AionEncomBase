@@ -23,11 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _26820Urgent_Call extends QuestHandler
-{
+public class _26820Urgent_Call extends QuestHandler {
+
     private final static int questId = 26820;
 	private final static int[] npcs = {806233, 806135};
-	
     public _26820Urgent_Call() {
         super(questId);
     }
@@ -37,7 +36,7 @@ public class _26820Urgent_Call extends QuestHandler
 		for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-		qe.registerOnLevelUp(questId);
+        qe.registerQuestNpc(806075).addOnQuestStart(questId); 
 		qe.registerOnEnterWorld(questId);
 	}
 	
@@ -62,24 +61,34 @@ public class _26820Urgent_Call extends QuestHandler
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-        if (qs == null || qs.getStatus() == QuestStatus.START) {
-			if (targetId == 806233) { //엔피�?타.
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 806135) { //Corto.
 				switch (env.getDialog()) {
                     case START_DIALOG: {
-                        return sendQuestDialog(env, 1011);
+                        return sendQuestDialog(env, 4762);
 					} case ACCEPT_QUEST:
 					case ACCEPT_QUEST_SIMPLE: {
 						return sendQuestStartDialog(env);
 					} case REFUSE_QUEST_SIMPLE: {
 				        return closeDialogWindow(env);
-					} case STEP_TO_1: {
+					}
+                }
+			}
+		}
+        if (qs == null || qs.getStatus() == QuestStatus.START) {
+			if (targetId == 806233) { //Astride.
+				switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 1011);
+					} 
+                    case STEP_TO_1: {
                         changeQuestStep(env, 0, 1, false);
 						return closeDialogWindow(env);
 					}
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-            if (targetId == 806135) { //콘르투.
+            if (targetId == 806135) { //Corto.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
                 } else {

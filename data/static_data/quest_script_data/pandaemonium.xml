@@ -15,7 +15,8 @@
 	<report_to id="2961" start_npc_ids="204055" end_npc_ids="204253"/>
 	<report_to id="2964" start_npc_ids="204253" end_npc_ids="278137" item_id="182207043"/>
 	<report_to id="2984" start_npc_ids="204138" end_npc_ids="204121" item_id="182207064"/>
-	<report_to id="4920" start_npc_ids="730212" end_npc_ids="831392"/>
+    <report_to id="4917" start_npc_ids="204837" end_npc_ids="804609"/>
+	<report_to id="4920" start_npc_ids="804609" end_npc_ids="804609" item_id="182207100"/>
 	<report_to id="4964" start_npc_ids="204286" end_npc_ids="204051"/>
 	<report_to id="4965" start_npc_ids="204182" end_npc_ids="204207" item_id="182207135"/>
 	<report_to id="29040" start_npc_ids="798385" end_npc_ids="798443"/>
@@ -46,9 +47,8 @@
 	<item_collecting id="4907" start_npc_ids="204208" action_item_ids="700511"/>
 	<item_collecting id="4915" start_npc_ids="204837"/>
 	<item_collecting id="4916" start_npc_ids="204837"/>
-	<item_collecting id="4917" start_npc_ids="204837" end_npc_ids="831392"/>
-	<item_collecting id="4918" start_npc_ids="831392"/>
-	<item_collecting id="4919" start_npc_ids="831392"/>
+	<item_collecting id="4918" start_npc_ids="804609"/>
+	<item_collecting id="4919" start_npc_ids="804609"/>
 	<item_collecting id="4975" start_npc_ids="204283"/>
 	<item_collecting id="29042" start_npc_ids="204286" end_npc_ids="204286"/>
 	<item_collecting id="29043" start_npc_ids="798445"/>

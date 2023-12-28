@@ -16,7 +16,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _2512FoodforRemotePlaces extends QuestHandler {
 
 	private final static int questId = 2512;
-
 	public _2512FoodforRemotePlaces() {
 		super(questId);
 	}
@@ -42,21 +41,6 @@ public class _2512FoodforRemotePlaces extends QuestHandler {
 					return sendQuestDialog(env, 1011);
 				else
 					return sendQuestStartDialog(env);
-			}
-			else if (qs != null && qs.getStatus() == QuestStatus.START) {
-				if (env.getDialog() == QuestDialog.START_DIALOG)
-					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009) {
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				}
-				else
-					return sendQuestEndDialog(env);
-			}
-			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
-				return sendQuestEndDialog(env);
 			}
 		}
 		else if (targetId == 204801) {
@@ -86,6 +70,9 @@ public class _2512FoodforRemotePlaces extends QuestHandler {
 				}
 				else
 					return sendQuestEndDialog(env);
+			}
+			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;

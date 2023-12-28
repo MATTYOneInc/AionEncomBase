@@ -32,8 +32,7 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _2663AcquiringanAntidote extends QuestHandler {
 
 	private final static int questId = 2663;
-	private final static int[] npc_ids = { 204777, 204790 };
-
+	private final static int[] npc_ids = {204777, 204790};
 	public _2663AcquiringanAntidote() {
 		super(questId);
 	}
@@ -62,7 +61,6 @@ public class _2663AcquiringanAntidote extends QuestHandler {
 		}
 		if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
 		if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204777) {
@@ -84,10 +82,10 @@ public class _2663AcquiringanAntidote extends QuestHandler {
 						return sendQuestDialog(env, 1352);
 				case STEP_TO_1:
 					if (var == 0) {
-						qs.setQuestVarById(0, var + 1);
+						qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 						qs.setStatus(QuestStatus.REWARD);
-						if (!giveQuestItem(env, 182204489, 1))
-							updateQuestStatus(env);
+						giveQuestItem(env, 182204489, 1);
+						updateQuestStatus(env);
 						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 						return true;
 					}

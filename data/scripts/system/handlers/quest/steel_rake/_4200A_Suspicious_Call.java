@@ -38,7 +38,6 @@ public class _4200A_Suspicious_Call extends QuestHandler {
 
 	private final static int questId = 4200;
 	private final static int[] npc_ids = {204839, 798332, 700522, 205233, 805839};
-	
 	public _4200A_Suspicious_Call() {
 		super(questId);
 	}
@@ -56,7 +55,6 @@ public class _4200A_Suspicious_Call extends QuestHandler {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = 0;
-		int var = qs.getQuestVarById(0);
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		} if (qs == null || qs.getStatus() == QuestStatus.NONE) {
@@ -80,6 +78,7 @@ public class _4200A_Suspicious_Call extends QuestHandler {
 			}
 			return false;
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 204839) { //Uikinerk.
 				switch (env.getDialog()) {
 					case START_DIALOG: {

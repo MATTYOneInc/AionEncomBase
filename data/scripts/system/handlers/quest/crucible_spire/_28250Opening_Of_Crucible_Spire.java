@@ -26,10 +26,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28250Opening_Of_Crucible_Spire extends QuestHandler
-{
+public class _28250Opening_Of_Crucible_Spire extends QuestHandler {
+
     private final static int questId = 28250;
-	
     public _28250Opening_Of_Crucible_Spire() {
         super(questId);
     }
@@ -40,7 +39,7 @@ public class _28250Opening_Of_Crucible_Spire extends QuestHandler
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-		qe.registerQuestNpc(806135).addOnAtDistanceEvent(questId);
+		qe.registerQuestNpc(806135).addOnQuestStart(questId);
 	}
 	
 	@Override
@@ -48,8 +47,21 @@ public class _28250Opening_Of_Crucible_Spire extends QuestHandler
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 806135) { //Corto.
+				switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
         if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 798804: {

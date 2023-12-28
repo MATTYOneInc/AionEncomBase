@@ -68,7 +68,6 @@ public class _2505LetCookingExpertsCook extends QuestHandler {
 		}
 		if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
 		if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204720) {
@@ -91,8 +90,9 @@ public class _2505LetCookingExpertsCook extends QuestHandler {
 				case STEP_TO_1:
 					if (var == 0) {
 						removeQuestItem(env, 182204404, 1);
-						if (!giveQuestItem(env, 182204405, 1))
-							qs.setStatus(QuestStatus.REWARD);
+						giveQuestItem(env, 182204405, 1);
+                        qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 						return true;

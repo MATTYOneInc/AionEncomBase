@@ -23,34 +23,27 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23950Find_The_Missing_Daevas extends QuestHandler
-{
+public class _23950Find_The_Missing_Daevas extends QuestHandler {
+
     private final static int questId = 23950;
-	
     public _23950Find_The_Missing_Daevas() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
 		int[] npcs = {806079, 805356, 806591, 806592};
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
+        qe.registerQuestNpc(806079).addOnQuestStart(questId);
 	}
 	
 	@Override
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
+        final QuestState qs = player.getQuestStateList().getQuestState(questId); 
 		int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806079) { //Feregran.
@@ -66,6 +59,7 @@ public class _23950Find_The_Missing_Daevas extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 805356) { //Pontekane.
 				switch (env.getDialog()) {
 					case START_DIALOG: {

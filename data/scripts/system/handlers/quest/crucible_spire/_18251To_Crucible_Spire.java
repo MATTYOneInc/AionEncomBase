@@ -25,11 +25,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _18251To_Crucible_Spire extends QuestHandler {
 
-public class _18251To_Crucible_Spire extends QuestHandler
-{
     private final static int questId = 18251;
-	
     public _18251To_Crucible_Spire() {
         super(questId);
     }
@@ -40,7 +38,7 @@ public class _18251To_Crucible_Spire extends QuestHandler
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-		qe.registerQuestNpc(806729).addOnAtDistanceEvent(questId);
+		qe.registerQuestNpc(806729).addOnQuestStart(questId);
 	}
 	
 	@Override
@@ -48,8 +46,21 @@ public class _18251To_Crucible_Spire extends QuestHandler
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 806729) { //Yusia.
+				switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 798604: {
@@ -67,19 +78,6 @@ public class _18251To_Crucible_Spire extends QuestHandler
 		    if (targetId == 798604) {
 			    return sendQuestEndDialog(env);
 		    }
-		}
-		return false;
-	}
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			QuestService.startQuest(env);
-			changeQuestStep(env, 0, 0, false);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
 		}
 		return false;
 	}

@@ -23,22 +23,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4921Chocorunerk_Reward extends QuestHandler
-{
+public class _4921Chocorunerk_Reward extends QuestHandler {
+
     private final static int questId = 4921;
-	
     public _4921Chocorunerk_Reward() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(804609).addOnQuestStart(questId);
 		qe.registerQuestNpc(804609).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804609).addOnTalkEvent(questId);

@@ -20,23 +20,16 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-public class _4502Essence_Of_Fate extends QuestHandler
-{
+public class _4502Essence_Of_Fate extends QuestHandler {
+
 	private final static int questId = 4502;
 	private final static int[] mobs = {214894, 214895, 214896, 214897};
-	
 	public _4502Essence_Of_Fate() {
 		super(questId);
 	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+		
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(204837).addOnQuestStart(questId);
 		qe.registerQuestNpc(204837).addOnTalkEvent(questId);
 		qe.registerQuestNpc(730192).addOnTalkEvent(questId);
@@ -50,11 +43,27 @@ public class _4502Essence_Of_Fate extends QuestHandler
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
 		QuestDialog dialog = env.getDialog();
 		if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
-        } if (qs.getStatus() == QuestStatus.START) {
+        } 
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 204837) { //Hresvelgr
+                switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ASK_ACCEPTION: {
+					    return sendQuestDialog(env, 4);
+					} case ACCEPT_QUEST: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
+        if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			switch (targetId) {
 				case 730192: //Balaur Operation Orders.
 					if (var == 0) {

@@ -23,34 +23,27 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13950Location_Of_The_Missing_Daevas extends QuestHandler
-{
+public class _13950Location_Of_The_Missing_Daevas extends QuestHandler {
+
     private final static int questId = 13950;
-	
     public _13950Location_Of_The_Missing_Daevas() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
 		int[] npcs = {806075, 805351, 806582, 806583};
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
+        qe.registerQuestNpc(806075).addOnQuestStart(questId); 
 	}
 	
 	@Override
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806075) { //Weatha.
@@ -66,6 +59,7 @@ public class _13950Location_Of_The_Missing_Daevas extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 805351) { //Giscours.
 				switch (env.getDialog()) {
 					case START_DIALOG: {

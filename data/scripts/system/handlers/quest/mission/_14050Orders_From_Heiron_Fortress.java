@@ -41,7 +41,6 @@ public class _14050Orders_From_Heiron_Fortress extends QuestHandler
                 return sendQuestDialog(env, 10002);
             } else if (env.getDialogId() == 1009) {
                 qs.setStatus(QuestStatus.REWARD);
-                qs.setQuestVarById(0, 1);
                 updateQuestStatus(env);
                 return sendQuestDialog(env, 5);
             }
