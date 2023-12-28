@@ -31,23 +31,15 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _14153A_Storm_Of_Vengeance extends QuestHandler {
 
-public class _14153A_Storm_Of_Vengeance extends QuestHandler
-{
     private final static int questId = 14153;
-	
     public _14153A_Storm_Of_Vengeance() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerOnMovieEndQuest(193, questId);
         qe.registerQuestItem(182215459, questId);
         qe.registerQuestNpc(204504).addOnQuestStart(questId);
@@ -62,7 +54,6 @@ public class _14153A_Storm_Of_Vengeance extends QuestHandler
         final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
         if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
         } if (qs == null || qs.getStatus() == QuestStatus.NONE) {
@@ -73,15 +64,10 @@ public class _14153A_Storm_Of_Vengeance extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } if (qs == null) {
-		    return false;
-		} if (qs.getStatus() == QuestStatus.REWARD) {
+        }  
+        else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
             if (targetId == 204505) {
-                return sendQuestEndDialog(env);
-            }
-        } else if (qs.getStatus() != QuestStatus.START) {
-            return false;
-        } if (targetId == 204505) {
             switch (env.getDialog()) {
                 case START_DIALOG:
                     if (var == 0) {
@@ -143,12 +129,19 @@ public class _14153A_Storm_Of_Vengeance extends QuestHandler
                     return false;
 					default:
 					break;
-            }
-        } else if (targetId == 700282 && var == 2) {
-            if (env.getDialog() == QuestDialog.USE_OBJECT) {
-                return playQuestMovie(env, 193);
+                }
+            } 
+            else if (targetId == 700282 && var == 2) {
+                if (env.getDialog() == QuestDialog.USE_OBJECT) {
+                    return playQuestMovie(env, 193);
+                }
             }
         }
+        else if (qs.getStatus() == QuestStatus.REWARD) {
+            if (targetId == 204505) { //Sofne.
+                    return sendQuestEndDialog(env);
+                }
+            }
         return false;
     }
 	

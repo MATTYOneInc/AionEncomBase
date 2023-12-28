@@ -23,22 +23,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _26990Protection_Tower_Researcher_Kamaz extends QuestHandler
-{
+public class _26990Protection_Tower_Researcher_Kamaz extends QuestHandler {
+
     private final static int questId = 26990;
-	
     public _26990Protection_Tower_Researcher_Kamaz() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(802049).addOnQuestStart(questId); //Kamaz.
 		qe.registerQuestNpc(802049).addOnTalkEvent(questId); //Kamaz.
 		qe.registerQuestNpc(802049).addOnTalkEvent(questId); //Kamaz.

@@ -23,22 +23,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _16990Strengthen_The_Defense extends QuestHandler
-{
+public class _16990Strengthen_The_Defense extends QuestHandler {
+
     private final static int questId = 16990;
-	
     public _16990Strengthen_The_Defense() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(802048).addOnQuestStart(questId); //Tolanda.
 		qe.registerQuestNpc(802048).addOnTalkEvent(questId); //Tolanda.
 		qe.registerQuestNpc(802048).addOnTalkEvent(questId); //Tolanda.

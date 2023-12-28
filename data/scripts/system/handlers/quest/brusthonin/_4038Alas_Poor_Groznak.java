@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _4038Alas_Poor_Groznak extends QuestHandler {
 
-public class _4038Alas_Poor_Groznak extends QuestHandler
-{
 	private final static int questId = 4038;
-	
 	public _4038Alas_Poor_Groznak() {
 		super(questId);
 	}
@@ -70,9 +68,8 @@ public class _4038Alas_Poor_Groznak extends QuestHandler
 						} case CHECK_COLLECTED_ITEMS: {
 							return checkQuestItems(env, 1, 2, false, 10000, 10001);
 						} case STEP_TO_3: {
-							return defaultCloseDialog(env, 2, 2, true, false);
-						} case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
+                            changeQuestStep(env, 2, 3, true);
+							return closeDialogWindow(env);
 						}
 					}
 					break;

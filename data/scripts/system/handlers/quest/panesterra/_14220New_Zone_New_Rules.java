@@ -25,12 +25,10 @@ import java.util.Set;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _14220New_Zone_New_Rules extends QuestHandler {
 
-public class _14220New_Zone_New_Rules extends QuestHandler
-{
     private final static int questId = 14220;
 	private static final Set<Integer> GAB1PangaeaScout;
-	
     public _14220New_Zone_New_Rules() {
         super(questId);
     }
@@ -57,30 +55,39 @@ public class _14220New_Zone_New_Rules extends QuestHandler
 		GAB1PangaeaScout.add(804091);
 	}
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
 		Iterator<Integer> iter = GAB1PangaeaScout.iterator();
 		while (iter.hasNext()) {
 		    int GAB1Id = iter.next();
-		    qe.registerOnLevelUp(questId);
 		    qe.registerQuestNpc(GAB1Id).addOnTalkEvent(questId);
 		}
+        qe.registerQuestNpc(802540).addOnQuestStart(questId);
 	}
 	
 	@Override
     public boolean onDialogEvent(QuestEnv env) {
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 802540) { //Cadmar.
+				switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
 		if (!GAB1PangaeaScout.contains(targetId)) {
 			return false;
 		} if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 802541) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {

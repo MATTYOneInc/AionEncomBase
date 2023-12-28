@@ -38,9 +38,9 @@
 	<item_collecting id="4085" start_npc_ids="205170" end_npc_ids="205164"/>
 	<item_collecting id="4089" start_npc_ids="205203"/>
 	<item_collecting id="4090" start_npc_ids="205205"/>
-	<item_collecting id="4091" start_npc_ids="205156"/>
+	<item_collecting id="4091" start_npc_ids="205225"/>
 	<item_collecting id="4092" start_npc_ids="205225"/>
-	<item_collecting id="4094" start_npc_ids="205226" action_item_ids="700433 700434 700435 700436"/>
+	<item_collecting id="4094" start_npc_ids="205225" action_item_ids="700433 700434 700435 700436"/>
 	<item_collecting id="4095" start_npc_ids="205206"/>
 	<item_collecting id="4098" start_npc_ids="205190" end_npc_ids="205187"/>
 	<item_collecting id="4099" start_npc_ids="205149" action_item_ids="700451"/>
@@ -122,7 +122,7 @@
 		<monster var="0" end_var="12" npc_ids="214411 214412"/>
 	</monster_hunt>
 	<monster_hunt id="4093" start_npc_ids="205225">
-		<monster var="0" end_var="1" npc_ids="214696"/>
+		<monster var="0" end_var="1" npc_ids="237244"/>
 	</monster_hunt>
 	<monster_hunt id="4096" start_npc_ids="205201">
 		<monster var="0" end_var="10" npc_ids="214550 214551"/>
@@ -155,7 +155,7 @@
 		<monster var="0" end_var="1" npc_ids="214696"/>
 	</monster_hunt>
 	<!-- Vengeful Spirit Consolation -->
-    <monster_hunt id="4120" start_npc_ids="205150" end_npc_ids="282370">
-        <monster var="0" npc_ids="214698" end_var="1"/>
+    <monster_hunt id="4120" start_npc_ids="205150" end_npc_ids="205225">
+        <monster var="0" npc_ids="237155" end_var="1"/> 
     </monster_hunt>
 </quest_scripts>

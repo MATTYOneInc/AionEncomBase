@@ -28,24 +28,36 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _18252Start_Of_The_First_Trial extends QuestHandler {
 
     private final static int questId = 18252;
-	
     public _18252Start_Of_The_First_Trial() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
+		qe.registerQuestNpc(798604).addOnQuestStart(questId);
         qe.registerQuestNpc(798604).addOnTalkEvent(questId);
 		qe.registerQuestNpc(247240).addOnKillEvent(questId);
-		qe.registerQuestNpc(798604).addOnAtDistanceEvent(questId);
 	}
 	
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 798604) { //Walzen.
+				switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
 		if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 798604) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -56,18 +68,6 @@ public class _18252Start_Of_The_First_Trial extends QuestHandler {
 					return sendQuestEndDialog(env);
 				}
 			}
-		}
-		return false;
-	}
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
 		}
 		return false;
 	}

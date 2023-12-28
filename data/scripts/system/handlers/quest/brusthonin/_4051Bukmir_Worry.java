@@ -25,17 +25,18 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _4051Bukmir_Worry extends QuestHandler {
 
-public class _4051Bukmir_Worry extends QuestHandler
-{
 	private final static int questId = 4051;
-
 	public _4051Bukmir_Worry() {
 		super(questId);
 	}
 	
 	@Override
 	public void register() {
+		qe.registerOnLogOut(questId);
+		qe.registerAddOnReachTargetEvent(questId);
+		qe.registerAddOnLostTargetEvent(questId);
 		qe.registerQuestNpc(730152).addOnQuestStart(questId); //Heavy Bukmir.
 		qe.registerQuestNpc(730152).addOnTalkEvent(questId); //Heavy Bukmir.
 		qe.registerQuestNpc(205202).addOnTalkEvent(questId); //BuBu Chi.
@@ -63,16 +64,34 @@ public class _4051Bukmir_Worry extends QuestHandler
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				} else if (env.getDialog() == QuestDialog.STEP_TO_1) {
-					qs.setQuestVar(1);
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return defaultStartFollowEvent(env, (Npc) env.getVisibleObject(), 476.097f, 1650.99f, 219.875f, 0, 1);
 				} else {
 					return sendQuestStartDialog(env);
 				}
 			}
 		}
 		return false;
+	}
+    @Override
+	public boolean onLogOutEvent(QuestEnv env) {
+		Player player = env.getPlayer();
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs != null && qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
+			if (var == 1) {
+				changeQuestStep(env, 1, 0, false);
+			}
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean onNpcReachTargetEvent(QuestEnv env) {
+		return defaultFollowEndEvent(env, 1, 2, true);
+	}
+	
+	@Override
+	public boolean onNpcLostTargetEvent(QuestEnv env) {
+		return defaultFollowEndEvent(env, 1, 0, false);
 	}
 }

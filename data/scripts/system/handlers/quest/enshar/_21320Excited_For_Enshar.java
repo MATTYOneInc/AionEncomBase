@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _21320Excited_For_Enshar extends QuestHandler {
 
-public class _21320Excited_For_Enshar extends QuestHandler
-{
     private final static int questId = 21320;
-	
     public _21320Excited_For_Enshar() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(205847).addOnQuestStart(questId);
 		qe.registerQuestNpc(205847).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804753).addOnTalkEvent(questId);

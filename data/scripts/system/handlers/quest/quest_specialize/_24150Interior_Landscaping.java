@@ -22,22 +22,14 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _24150Interior_Landscaping extends QuestHandler {
 
-public class _24150Interior_Landscaping extends QuestHandler
-{
     private final static int questId = 24150;
-	
     public _24150Interior_Landscaping() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(204702).addOnQuestStart(questId); //Nerita
         qe.registerQuestNpc(204702).addOnTalkEvent(questId); //Nerita
         qe.registerQuestNpc(204733).addOnTalkEvent(questId); //Bestla

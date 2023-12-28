@@ -25,11 +25,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _4052Bukmir_Old_Friend extends QuestHandler {
 
-public class _4052Bukmir_Old_Friend extends QuestHandler
-{
 	private final static int questId = 4052;
-	
 	public _4052Bukmir_Old_Friend() {
 		super(questId);
 	}
@@ -64,7 +62,7 @@ public class _4052Bukmir_Old_Friend extends QuestHandler
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return sendQuestEndDialog(env);
 				} else {
 					return sendQuestEndDialog(env);
 				}
@@ -110,20 +108,7 @@ public class _4052Bukmir_Old_Friend extends QuestHandler
 					return sendQuestStartDialog(env);
 				}
 			}
-		} else if (targetId == 730152) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START) {
-					return sendQuestDialog(env, 2375);
-				} else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE && qs.getStatus() != QuestStatus.NONE) {
-					qs.setQuestVar(3);
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
-					return sendQuestEndDialog(env);
-				} else {
-					return sendQuestEndDialog(env);
-				}
-			}
-		}
+		} 
 		return false;
 	}
 }
