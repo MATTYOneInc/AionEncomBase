@@ -82,4 +82,17 @@ public class _28250Opening_Of_Crucible_Spire extends QuestHandler {
 		}
 		return false;
 	}
+	
+	@Override
+	public boolean onAtDistanceEvent(QuestEnv env) {
+		final Player player = env.getPlayer();
+        final QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			QuestService.startQuest(env);
+			changeQuestStep(env, 0, 0, false);
+			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
+			return true;
+		}
+		return false;
+	}
 }

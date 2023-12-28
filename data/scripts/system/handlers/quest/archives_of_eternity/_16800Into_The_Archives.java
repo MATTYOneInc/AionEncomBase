@@ -27,23 +27,15 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author (Encom)
 /****/
+public class _16800Into_The_Archives extends QuestHandler {
 
-public class _16800Into_The_Archives extends QuestHandler
-{
     private final static int questId = 16800;
-	
     public _16800Into_The_Archives() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(806075).addOnQuestStart(questId); //Weatha.
         qe.registerQuestNpc(806075).addOnTalkEvent(questId); //Weatha.
 		qe.registerQuestNpc(806232).addOnTalkEvent(questId); //Etezar.
@@ -56,7 +48,6 @@ public class _16800Into_The_Archives extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806075) { //Weatha.
@@ -76,6 +67,7 @@ public class _16800Into_The_Archives extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 		    if (targetId == 806232) { //Etezar.
 				switch (env.getDialog()) {
 					case START_DIALOG: {

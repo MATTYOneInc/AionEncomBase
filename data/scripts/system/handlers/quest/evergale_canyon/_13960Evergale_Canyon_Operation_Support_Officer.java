@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13960Evergale_Canyon_Operation_Support_Officer extends QuestHandler
-{
+public class _13960Evergale_Canyon_Operation_Support_Officer extends QuestHandler {
+
     private final static int questId = 13960;
-	
     public _13960Evergale_Canyon_Operation_Support_Officer() {
         super(questId);
     }
@@ -42,7 +41,7 @@ public class _13960Evergale_Canyon_Operation_Support_Officer extends QuestHandle
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
 		qe.registerOnEnterWorld(questId);
-		qe.registerQuestNpc(835217).addOnAtDistanceEvent(questId);
+		qe.registerQuestNpc(835217).addOnQuestStart(questId);
 		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_WAR_Q13960_302350000"), questId);
 	}
 	
@@ -50,9 +49,23 @@ public class _13960Evergale_Canyon_Operation_Support_Officer extends QuestHandle
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 835217) { //Benian.
+				switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
 		if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 835218) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -79,18 +92,6 @@ public class _13960Evergale_Canyon_Operation_Support_Officer extends QuestHandle
 					return sendQuestEndDialog(env);
 				}
 			}
-		}
-		return false;
-	}
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
 		}
 		return false;
 	}

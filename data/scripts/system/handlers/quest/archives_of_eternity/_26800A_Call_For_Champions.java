@@ -27,23 +27,15 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author (Encom)
 /****/
+public class _26800A_Call_For_Champions extends QuestHandler {
 
-public class _26800A_Call_For_Champions extends QuestHandler
-{
     private final static int questId = 26800;
-	
     public _26800A_Call_For_Champions() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(806079).addOnQuestStart(questId); //Feregan.
         qe.registerQuestNpc(806079).addOnTalkEvent(questId); //Feregan.
 		qe.registerQuestNpc(806233).addOnTalkEvent(questId); //Enfitenta.
@@ -56,7 +48,6 @@ public class _26800A_Call_For_Champions extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806079) { //Feregan.
@@ -76,6 +67,7 @@ public class _26800A_Call_For_Champions extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);  
 		    if (targetId == 806233) { //Enfitenta.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
