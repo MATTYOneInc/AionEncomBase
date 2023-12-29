@@ -7,8 +7,6 @@
 	<report_to id="21018" start_npc_ids="799245" end_npc_ids="799256"/>
 	<report_to id="21019" start_npc_ids="799246" end_npc_ids="799247"/>
 	<report_to id="21064" start_npc_ids="799249" end_npc_ids="799252"/>
-	<report_to id="21065" start_npc_ids="799231" end_npc_ids="799322"/>
-	<report_to id="21066" start_npc_ids="799232" end_npc_ids="799242"/>
 	<report_to id="21067" start_npc_ids="799238" end_npc_ids="799245" item_id="182207912"/>
 	<report_to id="21103" start_npc_ids="799280" end_npc_ids="799276"/>
 	<report_to id="21110" start_npc_ids="799263" end_npc_ids="799289"/>
@@ -35,6 +33,7 @@
 	<report_to id="30138" start_npc_ids="799336" end_npc_ids="799336"/>
 	<!-- 손상된 기동쇠 (Asmodians Only) -->
 	<report_to id="30140" start_npc_ids="799336" end_npc_ids="799336"/>
+
 	<item_collecting id="21000" start_npc_ids="799202" action_item_ids="700708"/>
 	<item_collecting id="21001" start_npc_ids="799227"/>
 	<item_collecting id="21015" start_npc_ids="799246" action_item_ids="700721"/>

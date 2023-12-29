@@ -27,15 +27,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _13403Portal_Predictions extends QuestHandler {
 	
     public static final int questId = 13403;
-	
     public _13403Portal_Predictions() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
 	
     @Override
     public void register() {

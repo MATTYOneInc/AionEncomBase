@@ -33,12 +33,10 @@ import com.aionemu.gameserver.world.WorldMapInstance;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _20034Rescue_The_Reians extends QuestHandler {
 
-public class _20034Rescue_The_Reians extends QuestHandler
-{
     private final static int questId = 20034;
     private final static int[] npc_ids = {799295, 799297, 730243, 799513, 799514, 799515, 799516, 799341, 700706};
-	
     public _20034Rescue_The_Reians() {
         super(questId);
     }
@@ -176,12 +174,16 @@ public class _20034Rescue_The_Reians extends QuestHandler
             }
         } else if (targetId == 799341) {
             switch (env.getDialog()) {
-                case USE_OBJECT: {
+                case START_DIALOG: {
+                   if (var == 5) {
+                        return sendQuestDialog(env, 2717);
+                    }
+				} case STEP_TO_6: {
                     if (var == 5) {
                         changeQuestStep(env, 5, 6, false);
                         npc.getController().onDelete();
                         return closeDialogWindow(env);
-					}
+                    }
 				}
 			}
         } else if (targetId == 700706) {

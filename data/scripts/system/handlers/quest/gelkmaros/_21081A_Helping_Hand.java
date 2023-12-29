@@ -108,6 +108,7 @@ public class _21081A_Helping_Hand extends QuestHandler {
 		}
 		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 799202) { // Drenia
+                return sendQuestEndDialog(env);
 			}
 		}
 		return false;

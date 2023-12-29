@@ -30,7 +30,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _2767AFruitfulPartnership extends QuestHandler {
 
 	private final static int questId = 2767;
-
 	public _2767AFruitfulPartnership() {
 		super(questId);
 	}
@@ -39,8 +38,8 @@ public class _2767AFruitfulPartnership extends QuestHandler {
 	public void register() {
 		qe.registerQuestNpc(279004).addOnQuestStart(questId);
 		qe.registerQuestNpc(279004).addOnTalkEvent(questId);
-		qe.registerQuestNpc(279024).addOnTalkEvent(questId);
-		qe.registerQuestNpc(279022).addOnTalkEvent(questId);
+		qe.registerQuestNpc(279026).addOnTalkEvent(questId);
+		qe.registerQuestNpc(279061).addOnTalkEvent(questId);
 	}
 
 	@Override
@@ -64,7 +63,7 @@ public class _2767AFruitfulPartnership extends QuestHandler {
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return sendQuestEndDialog(env);
 				}
 				else
 					return sendQuestEndDialog(env);
@@ -73,7 +72,7 @@ public class _2767AFruitfulPartnership extends QuestHandler {
 				return sendQuestEndDialog(env);
 			}
 		}
-		else if (targetId == 279024) {
+		else if (targetId == 279026) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
@@ -87,7 +86,7 @@ public class _2767AFruitfulPartnership extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (targetId == 279022) {
+		else if (targetId == 279061) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1693);
@@ -99,20 +98,6 @@ public class _2767AFruitfulPartnership extends QuestHandler {
 				}
 				else
 					return sendQuestStartDialog(env);
-			}
-		}
-		else if (targetId == 279004) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START)
-					return sendQuestDialog(env, 5);
-				else if (env.getDialogId() == 23) {
-					qs.setQuestVar(3);
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
-					return sendQuestEndDialog(env);
-				}
-				else
-					return sendQuestEndDialog(env);
 			}
 		}
 		return false;

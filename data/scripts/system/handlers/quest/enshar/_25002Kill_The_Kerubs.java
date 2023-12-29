@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25002Kill_The_Kerubs extends QuestHandler {
 
-public class _25002Kill_The_Kerubs extends QuestHandler
-{
     private final static int questId = 25002;
-	
     public _25002Kill_The_Kerubs() {
         super(questId);
     }
@@ -86,6 +84,7 @@ public class _25002Kill_The_Kerubs extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

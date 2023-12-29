@@ -9,10 +9,6 @@
 	<report_to id="2729" start_npc_ids="278057" end_npc_ids="278091" item_id="182205601"/>
 	<report_to id="2731" start_npc_ids="278091" end_npc_ids="278088" item_id="182205602"/>
 	
-	<report_to_many id="2725" start_npc_ids="278003" end_npc_ids="278086" end_dialog_id="1009">
-		<npc_infos npc_id="278091" var="0" quest_dialog="1352" close_dialog="10000"/>
-	</report_to_many>
-	
 	<!-- Silver For The Fountain -->
 	<fountain_rewards id="1717" start_npc_ids="806559"/>
 	<fountain_rewards id="2717" start_npc_ids="806560"/>

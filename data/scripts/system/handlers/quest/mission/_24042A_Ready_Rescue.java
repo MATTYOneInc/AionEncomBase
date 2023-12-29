@@ -24,12 +24,10 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _24042A_Ready_Rescue extends QuestHandler {
 
-public class _24042A_Ready_Rescue extends QuestHandler
-{
     private final static int questId = 24042;
     private final static int[] npcs = {278002, 278019, 278088, 253626};
-	
     public _24042A_Ready_Rescue() {
         super(questId);
     }
@@ -44,6 +42,7 @@ public class _24042A_Ready_Rescue extends QuestHandler
         for (int npc : npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
+        qe.registerQuestNpc(278019).addOnTalkEndEvent(questId);  
     }
 	
     @Override

@@ -27,15 +27,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _23403Weapons_Here_Weapons_There extends QuestHandler {
 	
     public static final int questId = 23403;
-	
     public _23403Weapons_Here_Weapons_There() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
 	
     @Override
     public void register() {

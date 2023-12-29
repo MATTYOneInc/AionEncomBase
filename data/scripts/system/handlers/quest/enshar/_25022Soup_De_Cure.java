@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25022Soup_De_Cure extends QuestHandler {
 
-public class _25022Soup_De_Cure extends QuestHandler
-{
 	private static final int questId = 25022;
-	
 	public _25022Soup_De_Cure() {
 		super(questId);
 	}
@@ -63,7 +61,7 @@ public class _25022Soup_De_Cure extends QuestHandler
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
-						return checkQuestItems(env, 0, 0, true, 5, 2716);
+						return checkQuestItems(env, 0, 1, true, 10000, 10001);
 					} case FINISH_DIALOG: {
 						return sendQuestSelectionDialog(env);
 					}
