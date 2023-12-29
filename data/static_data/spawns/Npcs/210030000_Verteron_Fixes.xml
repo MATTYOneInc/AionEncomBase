@@ -50,6 +50,10 @@
 	It seems to be broken and remains unattended -->
 	<spawn npc_id="731644" respawn_time="295">
 		<spot x="2512.4429" y="820.2726" z="99.205284" h="57"/>
-	</spawn>	
+	</spawn>
+	<!-- Stone ||| Taiotus -->
+	<spawn npc_id="203121" respawn_time="295">
+		<spot x="1670.84" y="1496.7" z="119.193" h="50"/>
+	</spawn>
   </spawn_map>
 </spawns>
