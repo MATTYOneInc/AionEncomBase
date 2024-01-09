@@ -680,47 +680,56 @@ public abstract class Battleground {
 		}, 10 * getMatchLength() * 1000);
 	}
 
-	protected void zCheck() {
-		if (getGroups().size() > 0) {
-			for (PlayerGroup group : getGroups()) {
-				for (Player pl : group.getMembers()) {
-					if (pl == null || pl.getLifeStats().isAlreadyDead() || map.getMapId() != pl.getWorldId()
-							|| pl.getBattleground() == null) {
+	protected void zCheck()
+	{
+		if (getGroups().size() > 0)
+		{
+			for (PlayerGroup group : getGroups())
+			{
+				for (Player pl : group.getMembers())
+				{
+					if ((pl == null) || pl.getLifeStats().isAlreadyDead() || (map.getMapId() != pl.getWorldId()) || (pl.getBattleground() == null))
+					{
 						continue;
 					}
-					if (pl.getZ() < map.getKillZ()) {
+					if (pl.getZ() < map.getKillZ())
+					{
 						pl.getLifeStats().reduceHp(100000, pl);
-						PacketSendUtility.sendPacket(pl,
-								new SM_ATTACK_STATUS(pl, SM_ATTACK_STATUS.TYPE.FALL_DAMAGE, 0, -100000));
+						//	new SM_ATTACK_STATUS(pl, SM_ATTACK_STATUS.TYPE.FALL_DAMAGE, 0, -100000));
 					}
 				}
 			}
 		}
-		if (getAlliances().size() > 0) {
-			for (PlayerAlliance alliance : getAlliances()) {
-				for (Player pl : alliance.getMembers()) {
-					if (pl == null || pl.getLifeStats().isAlreadyDead() || map.getMapId() != pl.getWorldId()
-							|| pl.getBattleground() == null) {
+		if (getAlliances().size() > 0)
+		{
+			for (PlayerAlliance alliance : getAlliances())
+			{
+				for (Player pl : alliance.getMembers())
+				{
+					if ((pl == null) || pl.getLifeStats().isAlreadyDead() || (map.getMapId() != pl.getWorldId()) || (pl.getBattleground() == null))
+					{
 						continue;
 					}
-					if (pl.getZ() < map.getKillZ()) {
+					if (pl.getZ() < map.getKillZ())
+					{
 						pl.getLifeStats().reduceHp(100000, pl);
-						PacketSendUtility.sendPacket(pl,
-								new SM_ATTACK_STATUS(pl, SM_ATTACK_STATUS.TYPE.FALL_DAMAGE, 0, -100000));
+						//	new SM_ATTACK_STATUS(pl, SM_ATTACK_STATUS.TYPE.FALL_DAMAGE, 0, -100000));
 					}
 				}
 			}
 		}
-		if (getPlayers().size() > 0) {
-			for (Player pl : getPlayers()) {
-				if (pl == null || pl.getLifeStats().isAlreadyDead() || map.getMapId() != pl.getWorldId()
-						|| pl.getBattleground() == null) {
+		if (getPlayers().size() > 0)
+		{
+			for (Player pl : getPlayers())
+			{
+				if ((pl == null) || pl.getLifeStats().isAlreadyDead() || (map.getMapId() != pl.getWorldId()) || (pl.getBattleground() == null))
+				{
 					continue;
 				}
-				if (pl.getZ() < map.getKillZ()) {
+				if (pl.getZ() < map.getKillZ())
+				{
 					pl.getLifeStats().reduceHp(100000, pl);
-					PacketSendUtility.sendPacket(pl,
-							new SM_ATTACK_STATUS(pl, SM_ATTACK_STATUS.TYPE.FALL_DAMAGE, 0, -100000));
+					//	new SM_ATTACK_STATUS(pl, SM_ATTACK_STATUS.TYPE.FALL_DAMAGE, 0, -100000));
 				}
 			}
 		}

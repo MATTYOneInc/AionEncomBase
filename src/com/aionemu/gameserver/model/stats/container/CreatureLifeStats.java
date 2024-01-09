@@ -121,10 +121,11 @@ public abstract class CreatureLifeStats<T extends Creature> {
 	}
 
 	protected void sendAttackStatusPacketUpdate(TYPE type, int value, int skillId, LOG log) {
-		if (owner == null) {
+		if (owner == null)// possible?
+		{
 			return;
 		}
-		PacketSendUtility.broadcastPacketAndReceive(owner, new SM_ATTACK_STATUS(owner, type, skillId, value, log));
+		PacketSendUtility.broadcastPacketAndReceive(owner, new SM_ATTACK_STATUS(owner, owner, type, skillId, value, log));
 	}
 
 	public int increaseHp(TYPE type, int value) {

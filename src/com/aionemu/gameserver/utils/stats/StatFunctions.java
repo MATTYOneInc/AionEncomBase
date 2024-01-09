@@ -1021,19 +1021,21 @@ public class StatFunctions {
 		if (player.isInvul()) {
 			return false;
 		}
+
 		if (distance >= FallDamageConfig.MAXIMUM_DISTANCE_DAMAGE || !stoped) {
 			player.getController().onStopMove();
 			player.getFlyController().onStopGliding(false);
 			player.getLifeStats().reduceHp(player.getLifeStats().getMaxHp() + 1, player);
 			return true;
-		} else if (distance >= FallDamageConfig.MINIMUM_DISTANCE_DAMAGE) {
+		}
+		else if (distance >= FallDamageConfig.MINIMUM_DISTANCE_DAMAGE) {
 			float dmgPerMeter = player.getLifeStats().getMaxHp() * FallDamageConfig.FALL_DAMAGE_PERCENTAGE / 100f;
 			int damage = (int) (distance * dmgPerMeter);
 			player.getLifeStats().reduceHp(damage, player);
 			player.getObserveController().notifyAttackedObservers(player);
-			PacketSendUtility.sendPacket(player,
-					new SM_ATTACK_STATUS(player, SM_ATTACK_STATUS.TYPE.FALL_DAMAGE, 0, -damage));
+			PacketSendUtility.sendPacket(player, new SM_ATTACK_STATUS(player, player, SM_ATTACK_STATUS.TYPE.FALL_DAMAGE, 0, -damage));
 		}
+
 		return false;
 	}
 

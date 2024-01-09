@@ -1,18 +1,18 @@
-/*
-
+/**
+ * This file is part of Aion-Lightning <aion-lightning.org>.
  *
- *  Encom is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Lesser Public License as published by
+ *  Aion-Lightning is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  Encom is distributed in the hope that it will be useful,
+ *  Aion-Lightning is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Lesser Public License for more details.
- *
- *  You should have received a copy of the GNU Lesser Public License
- *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
+ *  GNU General Public License for more details. *
+ *  You should have received a copy of the GNU General Public License
+ *  along with Aion-Lightning.
+ *  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.aionemu.gameserver.skillengine.effect;
 
@@ -29,9 +29,13 @@ import com.aionemu.gameserver.network.aion.serverpackets.SM_ATTACK_STATUS.TYPE;
 import com.aionemu.gameserver.skillengine.model.Effect;
 import com.aionemu.gameserver.skillengine.model.HealType;
 
+/**
+ * @author ATracer modified by Wakizashi, kecimis
+ */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AbstractHealEffect")
 public abstract class AbstractHealEffect extends EffectTemplate {
+
 	@XmlAttribute
 	protected boolean percent;
 
@@ -40,37 +44,44 @@ public abstract class AbstractHealEffect extends EffectTemplate {
 			return;
 		}
 		Creature effector = effect.getEffector();
+
 		int valueWithDelta = value + delta * effect.getSkillLevel();
 		int currentValue = getCurrentStatValue(effect);
 		int maxCurValue = getMaxStatValue(effect);
 		int possibleHealValue = 0;
 		if (percent) {
 			possibleHealValue = maxCurValue * valueWithDelta / 100;
-		} else {
+		}
+		else {
 			possibleHealValue = valueWithDelta;
 		}
+
 		int finalHeal = possibleHealValue;
+
 		if (healType == HealType.HP) {
 			int baseHeal = possibleHealValue;
 			if (effect.getItemTemplate() == null) {
 				int boostHealAdd = effector.getGameStats().getStat(StatEnum.HEAL_BOOST, 0).getCurrent();
-				int boostHeal = (effector.getGameStats().getStat(StatEnum.HEAL_BOOST, baseHeal).getCurrent()
-						- boostHealAdd);
+				// Apply percent Heal Boost bonus (ex. Passive skills)
+				int boostHeal = (effector.getGameStats().getStat(StatEnum.HEAL_BOOST, baseHeal).getCurrent() - boostHealAdd);
+				// Apply Add Heal Boost bonus (ex. Skills like Benevolence)
 				boostHeal += boostHeal * boostHealAdd / 1000;
 				finalHeal = effector.getGameStats().getStat(StatEnum.HEAL_SKILL_BOOST, boostHeal).getCurrent();
 			}
-			finalHeal = effect.getEffected().getGameStats().getStat(StatEnum.HEAL_SKILL_DEBOOST, finalHeal)
-					.getCurrent();
+			finalHeal = effector.getGameStats().getStat(StatEnum.HEAL_SKILL_DEBOOST, finalHeal).getCurrent();
 		}
+
 		if (finalHeal < 0) {
 			finalHeal = currentValue > -finalHeal ? finalHeal : -currentValue;
-		} else {
+		}
+		else {
 			finalHeal = maxCurValue - currentValue < finalHeal ? (maxCurValue - currentValue) : finalHeal;
 		}
-		if (healType == HealType.HP
-				&& effect.getEffected().getEffectController().isAbnormalSet(AbnormalState.DISEASE)) {
+
+		if (healType == HealType.HP && effect.getEffected().getEffectController().isAbnormalSet(AbnormalState.DISEASE)) {
 			finalHeal = 0;
 		}
+
 		effect.setReservedInt(position, finalHeal);
 		effect.setReserved1(-finalHeal);
 	}
@@ -78,35 +89,40 @@ public abstract class AbstractHealEffect extends EffectTemplate {
 	public void applyEffect(Effect effect, HealType healType) {
 		Creature effected = effect.getEffected();
 		int healValue = effect.getReservedInt(position);
+
 		if (healValue == 0) {
 			return;
 		}
+
 		switch (healType) {
-		case HP:
-			if (this instanceof ProcHealInstantEffect
-					|| effect.getSkillTemplate().getEffects().isEffectTypePresent(EffectType.HEALINSTANT)) {
-				effected.getLifeStats().increaseHp(TYPE.HP, healValue, 0, LOG.REGULAR);
-			} else {
+			case HP:
+				if (this instanceof ProcHealInstantEffect)// item heal, eg potions
+				{
+					effected.getLifeStats().increaseHp(TYPE.HP, healValue, 0, LOG.REGULAR);
+				}
+				else // TODO shouldnt send value, on retail sm_attack_status is send only to update hp bar
 				if (healValue > 0) {
 					effected.getLifeStats().increaseHp(TYPE.REGULAR, healValue, 0, LOG.REGULAR);
-				} else {
+				}
+				else {
 					effected.getLifeStats().reduceHp(-healValue, effected);
 				}
-			}
-			break;
-		case MP:
-			if (this instanceof ProcMPHealInstantEffect) {
-				effected.getLifeStats().increaseMp(TYPE.MP, healValue, 0, LOG.REGULAR);
-			} else {
-				effected.getLifeStats().increaseMp(TYPE.HEAL_MP, healValue, 0, LOG.REGULAR);
-			}
-			break;
-		case FP:
-			effected.getLifeStats().increaseFp(TYPE.FP, healValue);
-			break;
-		case DP:
-			((Player) effected).getCommonData().addDp(healValue);
-			break;
+				break;
+			case MP:
+				if (this instanceof ProcMPHealInstantEffect)// item heal, eg potions
+				{
+					effected.getLifeStats().increaseMp(TYPE.MP, healValue, 0, LOG.REGULAR);
+				}
+				else {
+					effected.getLifeStats().increaseMp(TYPE.HEAL_MP, healValue, 0, LOG.REGULAR);
+				}
+				break;
+			case FP:
+				effected.getLifeStats().increaseFp(TYPE.FP, healValue);
+				break;
+			case DP:
+				((Player) effected).getCommonData().addDp(healValue);
+				break;
 		}
 	}
 

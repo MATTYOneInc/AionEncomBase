@@ -470,9 +470,11 @@ public class NpcController extends CreatureController<Npc> {
 		// summon should gain its own aggro
 		if (creature instanceof Summon) {
 			actingCreature = creature;
-		} else {
+		}
+		else {
 			actingCreature = creature.getActingCreature();
 		}
+
 		super.onAttack(actingCreature, skillId, type, damage, notifyAttack, log);
 
 		Npc npc = getOwner();
@@ -480,7 +482,8 @@ public class NpcController extends CreatureController<Npc> {
 		if (actingCreature instanceof Player) {
 			QuestEngine.getInstance().onAttack(new QuestEnv(npc, (Player) actingCreature, 0, 0));
 		}
-		PacketSendUtility.broadcastPacket(npc, new SM_ATTACK_STATUS(npc, type, skillId, damage, log));
+
+		PacketSendUtility.broadcastPacket(npc, new SM_ATTACK_STATUS(npc, actingCreature, type, skillId, damage, log));
 	}
 
 	@Override
