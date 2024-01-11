@@ -25,23 +25,17 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _23900Fate_Of_The_Fierce extends QuestHandler {
 
-public class _23900Fate_Of_The_Fierce extends QuestHandler
-{
     private final static int questId = 23900;
-	
     public _23900Fate_Of_The_Fierce() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-	    qe.registerOnLevelUp(questId);
+		qe.registerQuestNpc(804719).addOnQuestStart(questId);
+		qe.registerQuestNpc(804719).addOnTalkEvent(questId); 
 		qe.registerQuestNpc(799225).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204182).addOnTalkEvent(questId);
 		qe.registerQuestNpc(798718).addOnTalkEvent(questId);
@@ -54,7 +48,20 @@ public class _23900Fate_Of_The_Fierce extends QuestHandler
 		int targetId = env.getTargetId();
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-		} if (qs.getStatus() == QuestStatus.START) {
+		} 
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 804719) { 
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 1011);
+					}
+					case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE:
+						return sendQuestStartDialog(env);
+				}
+			}
+		}
+        if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 799225: {
 					switch (env.getDialog()) {
@@ -87,9 +94,9 @@ public class _23900Fate_Of_The_Fierce extends QuestHandler
 						case START_DIALOG: {
 							return sendQuestDialog(env, 2375);
 						} case SELECT_REWARD: {
-							updateQuestStatus(env);
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
+							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return sendQuestEndDialog(env);
 						}

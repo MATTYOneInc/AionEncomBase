@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _16974Monster_Abridged extends QuestHandler {
 
-public class _16974Monster_Abridged extends QuestHandler
-{
     private final static int questId = 16974;
-	
     public _16974Monster_Abridged() {
         super(questId);
     }
@@ -54,26 +52,11 @@ public class _16974Monster_Abridged extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 801763) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 1) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
         } else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 801763) {
-				if (env.getDialogId() == 1352) {
-					return sendQuestDialog(env, 5);
-				} else {
 					return sendQuestEndDialog(env);
 				}
 			}
-		}
         return false;
     }
 	
@@ -88,6 +71,7 @@ public class _16974Monster_Abridged extends QuestHandler
 				case 235771:
                 if (qs.getQuestVarById(0) < 1) {
                     qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+                    qs.setStatus(QuestStatus.REWARD);
                     updateQuestStatus(env);
                     return true;
                 }

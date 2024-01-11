@@ -25,11 +25,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25550A_Norsvold_Story extends QuestHandler {
 
-public class _25550A_Norsvold_Story extends QuestHandler
-{
 	private final static int questId = 25550;
-	
 	public _25550A_Norsvold_Story() {
 		super(questId);
 	}
@@ -89,23 +87,18 @@ public class _25550A_Norsvold_Story extends QuestHandler
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1693);
 						} case SELECT_REWARD: {
+                            qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+							return sendQuestEndDialog(env);
 						}
 					}
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806101) { //Vadorei.
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 10002);
-				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
-					return sendQuestDialog(env, 5);
-				} else {
-					return sendQuestEndDialog(env);
-				}
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;

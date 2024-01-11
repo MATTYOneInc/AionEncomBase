@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25094An_Offering_Of_Friendship extends QuestHandler {
 
-public class _25094An_Offering_Of_Friendship extends QuestHandler
-{
 	private static final int questId = 25094;
-	
 	public _25094An_Offering_Of_Friendship() {
 		super(questId);
 	}
@@ -35,8 +33,8 @@ public class _25094An_Offering_Of_Friendship extends QuestHandler
 	public void register() {
 		qe.registerQuestNpc(804929).addOnQuestStart(questId);
 		qe.registerQuestNpc(804929).addOnTalkEvent(questId);
-		qe.registerQuestNpc(804740).addOnTalkEvent(questId);
 		qe.registerQuestNpc(702768).addOnTalkEvent(questId);
+		qe.registerQuestNpc(804740).addOnTalkEvent(questId);
 	}
 	
 	@Override
@@ -58,21 +56,22 @@ public class _25094An_Offering_Of_Friendship extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (targetId == 702768) {
+		} else if (qs.getStatus() == QuestStatus.START) {
+            if (targetId == 702768) { 
 			if (dialog == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
-			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 804929) {
+			   }
+		    }   
+            if (targetId == 804929) {
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
-						return checkQuestItems(env, 0, 0, true, 5, 2716);
+						return checkQuestItems(env, 0, 1, true, 10000, 10001);
 					} case FINISH_DIALOG: {
 						return sendQuestSelectionDialog(env);
-					} 
+					}
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {

@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _24210Burning_The_Dragon extends QuestHandler {
 
-public class _24210Burning_The_Dragon extends QuestHandler
-{
     private final static int questId = 24210;
-	
     public _24210Burning_The_Dragon() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(802465).addOnQuestStart(questId);
 		qe.registerQuestNpc(802663).addOnTalkEvent(questId);
 		qe.registerQuestNpc(802664).addOnTalkEvent(questId);

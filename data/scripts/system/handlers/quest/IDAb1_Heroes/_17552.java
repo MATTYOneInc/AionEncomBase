@@ -13,25 +13,20 @@
 package quest.IDAb1_Heroes;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _17552 extends QuestHandler {
 
-public class _17552 extends QuestHandler
-{
     private final static int questId = 17552;
-	private final static int[] npcs = {806789};
-	
+	private final static int[] npcs = {835782, 806789};
     public _17552() {
         super(questId);
     }
@@ -41,7 +36,7 @@ public class _17552 extends QuestHandler
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
 		qe.registerQuestNpc(248025).addOnKillEvent(questId);
-		qe.registerQuestNpc(835782).addOnAtDistanceEvent(questId);
+        qe.registerQuestNpc(835782).addOnQuestStart(questId);
 		qe.registerOnEnterZone(ZoneName.get("REDEMPTION_LANDING_400010000"), questId);
     }
 	
@@ -50,6 +45,20 @@ public class _17552 extends QuestHandler
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 835782) { 
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+				}
+			}
+		}
 		if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806789) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -63,18 +72,6 @@ public class _17552 extends QuestHandler
 		}
         return false;
     }
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
-		}
-		return false;
-	}
 	
 	@Override
     public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {

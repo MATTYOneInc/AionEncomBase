@@ -46,7 +46,6 @@ public class _17505Support_Operation_For_The_Ophidan_Warpath extends QuestHandle
     public boolean onDialogEvent(QuestEnv env) {
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
         int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806266) { //세베루스.
@@ -62,6 +61,7 @@ public class _17505Support_Operation_For_The_Ophidan_Warpath extends QuestHandle
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            		int var = qs.getQuestVarById(0);
 			if (targetId == 806270) { //히요린.
 				switch (env.getDialog()) {
                     case START_DIALOG: {

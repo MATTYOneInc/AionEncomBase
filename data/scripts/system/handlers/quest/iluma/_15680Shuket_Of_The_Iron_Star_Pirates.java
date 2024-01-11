@@ -29,13 +29,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15680Shuket_Of_The_Iron_Star_Pirates extends QuestHandler {
 
-public class _15680Shuket_Of_The_Iron_Star_Pirates extends QuestHandler
-{
 	private final static int questId = 15680;
-	
 	private final static int[] npcs = {806093, 806691, 806693, 806694};
-	
 	public _15680Shuket_Of_The_Iron_Star_Pirates() {
 		super(questId);
 	}
@@ -45,7 +42,7 @@ public class _15680Shuket_Of_The_Iron_Star_Pirates extends QuestHandler
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
 		qe.registerQuestItem(182216204, questId);
-		qe.registerQuestNpc(806093).addOnAtDistanceEvent(questId);
+		qe.registerQuestNpc(806093).addOnQuestStart(questId);
 		qe.registerOnEnterZone(ZoneName.get("DF6_ITEMUSEAREA_Q15680"), questId);
 	}
 	
@@ -53,12 +50,27 @@ public class _15680Shuket_Of_The_Iron_Star_Pirates extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		final Npc npc = (Npc) env.getVisibleObject();
 		if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
-        } if (qs.getStatus() == QuestStatus.START) {
+        } 
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 806093) { 
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+				}
+			}
+		}
+        if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0); 
 			if (targetId == 806691) {
 				switch (env.getDialog()) {
 				    case START_DIALOG: {
@@ -183,16 +195,4 @@ public class _15680Shuket_Of_The_Iron_Star_Pirates extends QuestHandler
         }
         return HandlerResult.FAILED;
     }
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
-		}
-		return false;
-	}
 }

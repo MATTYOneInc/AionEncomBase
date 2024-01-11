@@ -33,13 +33,9 @@ public class _13900When_Kaisinel_Calls extends QuestHandler {
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-	    qe.registerOnLevelUp(questId);
+		qe.registerQuestNpc(804699).addOnQuestStart(questId);
+		qe.registerQuestNpc(804699).addOnTalkEvent(questId); 
 		qe.registerQuestNpc(798926).addOnTalkEvent(questId);
 		qe.registerQuestNpc(203726).addOnTalkEvent(questId);
 		qe.registerQuestNpc(798514).addOnTalkEvent(questId);
@@ -52,7 +48,20 @@ public class _13900When_Kaisinel_Calls extends QuestHandler {
 		int targetId = env.getTargetId();
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-		} if (qs.getStatus() == QuestStatus.START) {
+		} 
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 804699) { 
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 1011);
+					}
+					case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE:
+						return sendQuestStartDialog(env);
+				}
+			}
+		}
+        if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 798926: {
 					switch (env.getDialog()) {

@@ -25,13 +25,10 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25670Investigating_The_Ancient_Guardian_Weapon_Invasion extends QuestHandler {
 
-public class _25670Investigating_The_Ancient_Guardian_Weapon_Invasion extends QuestHandler
-{
 	private final static int questId = 25670;
-	
 	private final static int[] npcs = {806116, 806105, 703439, 703440, 703441, 703442, 731794};
-	
 	public _25670Investigating_The_Ancient_Guardian_Weapon_Invasion() {
 		super(questId);
 	}
@@ -40,14 +37,13 @@ public class _25670Investigating_The_Ancient_Guardian_Weapon_Invasion extends Qu
 		for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-		qe.registerQuestNpc(806116).addOnAtDistanceEvent(questId);
+		qe.registerQuestNpc(806116).addOnQuestStart(questId);
 	}
 	
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806116) {
@@ -63,6 +59,7 @@ public class _25670Investigating_The_Ancient_Guardian_Weapon_Invasion extends Qu
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 806105) {
 				switch (env.getDialog()) {
 				    case START_DIALOG: {
@@ -137,18 +134,6 @@ public class _25670Investigating_The_Ancient_Guardian_Weapon_Invasion extends Qu
 					return sendQuestEndDialog(env);
 				}
 			}
-		}
-		return false;
-	}
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
 		}
 		return false;
 	}

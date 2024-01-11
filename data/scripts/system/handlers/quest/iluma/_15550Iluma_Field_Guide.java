@@ -25,11 +25,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15550Iluma_Field_Guide extends QuestHandler {
 
-public class _15550Iluma_Field_Guide extends QuestHandler
-{
 	private final static int questId = 15550;
-	
 	public _15550Iluma_Field_Guide() {
 		super(questId);
 	}
@@ -89,23 +87,18 @@ public class _15550Iluma_Field_Guide extends QuestHandler
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1693);
 						} case SELECT_REWARD: {
+                            qs.setQuestVarById(0, qs.getQuestVarById(0) + 1); 
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+							return sendQuestEndDialog(env);
 						}
 					}
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806089) { //Aquaris.
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 10002);
-				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
-					return sendQuestDialog(env, 5);
-				} else {
-					return sendQuestEndDialog(env);
-				}
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;

@@ -22,13 +22,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25203Creatures_Of_Cloudtalon_Valley extends QuestHandler {
 
-public class _25203Creatures_Of_Cloudtalon_Valley extends QuestHandler
-{
     private final static int questId = 25203;
-	
 	private final static int[] mobs = {219692, 219693, 219694, 219695, 219696, 219697, 219698};
-	
     public _25203Creatures_Of_Cloudtalon_Valley() {
         super(questId);
     }
@@ -94,6 +91,7 @@ public class _25203Creatures_Of_Cloudtalon_Valley extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

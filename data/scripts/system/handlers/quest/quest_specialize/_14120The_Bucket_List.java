@@ -25,15 +25,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _14120The_Bucket_List extends QuestHandler {
 	
     private final static int questId = 14120;
-	
     public _14120The_Bucket_List() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
 	
     @Override
     public void register() {

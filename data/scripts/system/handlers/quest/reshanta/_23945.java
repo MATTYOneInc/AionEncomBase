@@ -19,17 +19,13 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _23945 extends QuestHandler {
 
-public class _23945 extends QuestHandler
-{
     private final static int questId = 23945;
-	
 	private final static int[] Ab1Boss = {884544, 884622, 884700, 884778, 884856};
 	
     public _23945() {
@@ -40,7 +36,6 @@ public class _23945 extends QuestHandler
         qe.registerQuestNpc(835724).addOnQuestStart(questId);
         qe.registerQuestNpc(835724).addOnTalkEvent(questId);
 		qe.registerQuestNpc(836180).addOnTalkEvent(questId);
-		qe.registerQuestNpc(835724).addOnAtDistanceEvent(questId);
 		for (int mob: Ab1Boss) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
@@ -50,10 +45,24 @@ public class _23945 extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		QuestDialog dialog = env.getDialog();
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 835724) { 
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+				}
+			}
+		}
 		if (qs.getStatus() == QuestStatus.START) {
+		    int var = qs.getQuestVarById(0);
 			if (targetId == 836180) {
 				switch (env.getDialog()) {
                     case START_DIALOG: {
@@ -83,18 +92,6 @@ public class _23945 extends QuestHandler
 		}
         return false;
     }
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
-		}
-		return false;
-	}
 	
 	@Override
     public boolean onKillEvent(QuestEnv env) {

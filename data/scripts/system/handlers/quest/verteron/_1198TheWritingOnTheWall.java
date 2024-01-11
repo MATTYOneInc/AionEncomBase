@@ -71,7 +71,6 @@ public class _1198TheWritingOnTheWall extends QuestHandler {
 					return sendQuestDialog(env, 2375);
 				}
 				else if (dialog == QuestDialog.SELECT_REWARD) {
-					removeQuestItem(env, 182213168, 1);
 					return defaultCloseDialog(env, 0, 1, true, true);
 				}
 			}

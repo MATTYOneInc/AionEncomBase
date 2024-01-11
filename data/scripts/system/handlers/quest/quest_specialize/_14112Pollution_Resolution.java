@@ -23,19 +23,17 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
-
 public class _14112Pollution_Resolution extends QuestHandler {
 
 	private final static int questId = 14112;
-	
 	public _14112Pollution_Resolution() {
 		super(questId);
 	}
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(203149).addOnQuestStart(questId);
+        qe.registerQuestNpc(203149).addOnTalkEvent(questId);
 		qe.registerQuestNpc(203148).addOnTalkEvent(questId);
 		qe.registerQuestNpc(203195).addOnTalkEvent(questId);
 		qe.registerQuestNpc(210318).addOnKillEvent(questId);

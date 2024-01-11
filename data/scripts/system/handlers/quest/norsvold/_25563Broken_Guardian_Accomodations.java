@@ -12,45 +12,30 @@
  */
 package quest.norsvold;
 
+import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
+import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25563Broken_Guardian_Accomodations extends QuestHandler {
 
-public class _25563Broken_Guardian_Accomodations extends QuestHandler
-{
 	private final static int questId = 25563;
-	
 	public _25563Broken_Guardian_Accomodations() {
 		super(questId);
 	}
 	
 	@Override
 	public void register() {
+        qe.registerQuestItem(182215977, questId);  
 		qe.registerQuestNpc(806116).addOnTalkEvent(questId); //Reinhard.
-		qe.registerOnEnterZone(ZoneName.get("AZPHEL_SANCTUARY_220110000"), questId);
-	}
-	
-	@Override
-    public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
-        final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (zoneName == ZoneName.get("AZPHEL_SANCTUARY_220110000")) {
-			if (qs == null || qs.canRepeat()) {
-				env.setQuestId(questId);
-				if (QuestService.startQuest(env)) {
-					return true;
-				}
-			}
-		}
-		return false;
 	}
 	
 	@Override
@@ -58,10 +43,23 @@ public class _25563Broken_Guardian_Accomodations extends QuestHandler
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
+        QuestDialog dialog = env.getDialog();  
+		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
+			if (targetId == 0) {
+                switch (dialog) {
+                    case ACCEPT_QUEST:
+				    case ACCEPT_QUEST_SIMPLE: {
+					    return sendQuestStartDialog(env);
+				    } case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+                    }
+                }
+			}
+        }
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 806116: { //Reinhard.
-					switch (env.getDialog()) {
+					switch (dialog) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 10002);
 						} case SELECT_REWARD: {
@@ -77,5 +75,14 @@ public class _25563Broken_Guardian_Accomodations extends QuestHandler
 		    }
 		}
 		return false;
+	}
+	@Override
+	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
+		Player player = env.getPlayer();
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
+			QuestService.startQuest(env);
+		}
+		return HandlerResult.FAILED;
 	}
 }

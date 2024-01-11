@@ -22,15 +22,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25201Tejhi_Termination extends QuestHandler {
 
-public class _25201Tejhi_Termination extends QuestHandler
-{
     private final static int questId = 25201;
-	
-	private final static int[] mobs =
-	{219802, 219803, 219804, 219805, 219806, 219807,
-	219808, 219809, 219810, 219811, 219813, 219814};
-	
+	private final static int[] mobs = {219802, 219803, 219804, 219805, 219806, 219807, 219808, 219809, 219810, 219811, 219813, 219814};
     public _25201Tejhi_Termination() {
         super(questId);
     }
@@ -101,6 +96,7 @@ public class _25201Tejhi_Termination extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

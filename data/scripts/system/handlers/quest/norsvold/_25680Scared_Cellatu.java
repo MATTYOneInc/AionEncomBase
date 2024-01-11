@@ -29,14 +29,11 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25680Scared_Cellatu extends QuestHandler {
 
-public class _25680Scared_Cellatu extends QuestHandler
-{
 	private final static int questId = 25680;
-	
 	private final static int[] npcs = {806105, 806194, 806692, 806695};
 	private final static int[] F6QTauricAn = {247074};
-	
 	public _25680Scared_Cellatu() {
 		super(questId);
 	}
@@ -48,7 +45,7 @@ public class _25680Scared_Cellatu extends QuestHandler
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
 		qe.registerQuestItem(182216206, questId);
-		qe.registerQuestNpc(806105).addOnAtDistanceEvent(questId);
+		qe.registerQuestNpc(806105).addOnQuestStart(questId);
 		qe.registerOnEnterZone(ZoneName.get("LF6_ITEMUSEAREA_Q25680"), questId);
 	}
 	
@@ -56,12 +53,27 @@ public class _25680Scared_Cellatu extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		final Npc npc = (Npc) env.getVisibleObject();
 		if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
-        } if (qs.getStatus() == QuestStatus.START) {
+        } 
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 806105) { 
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+				}
+			}
+		}
+        if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 806194) {
 				switch (env.getDialog()) {
 				    case START_DIALOG: {
@@ -169,18 +181,6 @@ public class _25680Scared_Cellatu extends QuestHandler
 					return true;
 				}
 			}
-		}
-		return false;
-	}
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
 		}
 		return false;
 	}

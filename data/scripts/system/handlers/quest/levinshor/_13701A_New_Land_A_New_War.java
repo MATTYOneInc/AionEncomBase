@@ -22,25 +22,17 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _13701A_New_Land_A_New_War extends QuestHandler {
 
-public class _13701A_New_Land_A_New_War extends QuestHandler
-{
     private final static int questId = 13701;
-	
     public _13701A_New_Land_A_New_War() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
-		qe.registerQuestNpc(802350).addOnQuestStart(questId); //Eljer.
-		qe.registerQuestNpc(802350).addOnTalkEvent(questId); //Eljer.
+		qe.registerQuestNpc(798926).addOnQuestStart(questId); //Outremus.
+		qe.registerQuestNpc(798926).addOnTalkEvent(questId); //Outremus.
 		qe.registerQuestNpc(802350).addOnTalkEvent(questId); //Eljer.
 	}
 	
@@ -51,7 +43,7 @@ public class _13701A_New_Land_A_New_War extends QuestHandler
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 802350) { //Eljer.
+			if (targetId == 802350) { //Outremus.
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);

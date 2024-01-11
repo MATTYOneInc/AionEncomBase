@@ -25,15 +25,14 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _23902Prepare_To_Prevail extends QuestHandler {
 
     private final static int questId = 23902;
-	
     public _23902Prepare_To_Prevail() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
-		qe.registerQuestNpc(799225).addOnQuestStart(questId); //Richelle.
-		qe.registerQuestNpc(799225).addOnTalkEvent(questId); //Richelle.
+		qe.registerQuestNpc(798718).addOnQuestStart(questId); //Halia.
+		qe.registerQuestNpc(798718).addOnTalkEvent(questId); //Halia.
 		qe.registerQuestNpc(799225).addOnTalkEvent(questId); //Richelle.
 	}
 	
@@ -44,7 +43,7 @@ public class _23902Prepare_To_Prevail extends QuestHandler {
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 799225) { //Richelle.
+			if (targetId == 798718) { //Halia.
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);

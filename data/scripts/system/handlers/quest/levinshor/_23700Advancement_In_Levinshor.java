@@ -22,25 +22,17 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _23700Advancement_In_Levinshor extends QuestHandler {
 
-public class _23700Advancement_In_Levinshor extends QuestHandler
-{
     private final static int questId = 23700;
-	
     public _23700Advancement_In_Levinshor() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
-		qe.registerQuestNpc(802353).addOnQuestStart(questId); //Yasan.
-		qe.registerQuestNpc(802353).addOnTalkEvent(questId); //Yasan.
+		qe.registerQuestNpc(804719).addOnQuestStart(questId); //Haldor.
+		qe.registerQuestNpc(804719).addOnTalkEvent(questId); //Haldor.
 		qe.registerQuestNpc(802353).addOnTalkEvent(questId); //Yasan.
 	}
 	
@@ -51,7 +43,7 @@ public class _23700Advancement_In_Levinshor extends QuestHandler
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 802353) { //Yasan.
+			if (targetId == 804719) { //Haldor.
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);

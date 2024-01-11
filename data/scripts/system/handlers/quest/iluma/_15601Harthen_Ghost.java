@@ -23,31 +23,20 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15601Harthen_Ghost extends QuestHandler {
 
-public class _15601Harthen_Ghost extends QuestHandler
-{
     public static final int questId = 15601;
-	private final static int[] Barthor = {241150}; //Barthor.
-	
     public _15601Harthen_Ghost() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(806158).addOnQuestStart(questId); //Luabo.
 		qe.registerQuestNpc(806158).addOnTalkEvent(questId); //Luabo.
         qe.registerQuestNpc(806193).addOnTalkEvent(questId); //Harden Ghost.
 		qe.registerQuestNpc(703135).addOnTalkEvent(questId); //Old Pirate Chest.
-		for (int boss: Barthor) {
-            qe.registerQuestNpc(boss).addOnKillEvent(questId);
-        }
+        qe.registerQuestNpc(241150).addOnKillEvent(questId); //Barthor.
 		qe.registerOnEnterZone(ZoneName.get("BARTHOR_LANDING_210100000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("LOST_COVE_210100000"), questId);
     }
@@ -56,7 +45,6 @@ public class _15601Harthen_Ghost extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806158) { //Luabo.
@@ -72,6 +60,7 @@ public class _15601Harthen_Ghost extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 806193) { //Harden Ghost.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -101,7 +90,7 @@ public class _15601Harthen_Ghost extends QuestHandler
                     case USE_OBJECT: {
                         if (var == 3) {
 							playQuestMovie(env, 1001);
-                            giveQuestItem(env, 182215993, 1); //ë‚¡ì?€ í•´ì ? ì?¼ì§€.
+                            giveQuestItem(env, 182215993, 1); //Old Pirate's Journal.
 							changeQuestStep(env, 3, 4, false);
 							return closeDialogWindow(env);
                         }

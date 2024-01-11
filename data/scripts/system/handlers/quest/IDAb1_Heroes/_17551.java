@@ -13,28 +13,23 @@
 package quest.IDAb1_Heroes;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _17551 extends QuestHandler {
 
-public class _17551 extends QuestHandler
-{
     private final static int questId = 17551;
 	private final static int[] npcs = {806789, 835782};
 	private final static int[] IDAb1HeroesDrakan = {248015, 248016, 248017, 248018, 248019, 248022, 248024};
 	private final static int[] IDAb1HeroesWaveDoor = {248440, 248441, 248442, 248443};
 	private final static int[] IDAb1HeroesBoss73Ah = {248025};
-	
     public _17551() {
         super(questId);
     }
@@ -49,7 +44,7 @@ public class _17551 extends QuestHandler
 		} for (int mob: IDAb1HeroesBoss73Ah) {
 		    qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
-		qe.registerQuestNpc(806789).addOnAtDistanceEvent(questId);
+        qe.registerQuestNpc(806789).addOnQuestStart(questId);
 		qe.registerOnEnterZone(ZoneName.get("REDEMPTION_LANDING_400010000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("IDAB1_HEROES_L_Q17551_310160000"), questId);
     }
@@ -58,9 +53,23 @@ public class _17551 extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 806789) { 
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+				}
+			}
+		}
         if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);   
 			if (targetId == 835782) {
                 switch (env.getDialog()) {
                     case START_DIALOG: {
@@ -90,19 +99,7 @@ public class _17551 extends QuestHandler
 		}
         return false;
     }
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
-		}
-		return false;
-	}
-	
+
 	@Override
     public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
         final Player player = env.getPlayer();

@@ -22,12 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _17526 extends QuestHandler {
 
-public class _17526 extends QuestHandler
-{
     private final static int questId = 17526;
-	private final static int[] IDAbReCore03WitchBossAe = {248013};
-	
     public _17526() {
         super(questId);
     }
@@ -35,9 +32,7 @@ public class _17526 extends QuestHandler
     public void register() {
 		qe.registerQuestNpc(806781).addOnQuestStart(questId);
 		qe.registerQuestNpc(806781).addOnTalkEvent(questId);
-		for (int mob: IDAbReCore03WitchBossAe) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(248013).addOnKillEvent(questId);
     }
 	
     @Override

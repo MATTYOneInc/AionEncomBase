@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25073No_Revival_For_The_Balaur extends QuestHandler {
 
-public class _25073No_Revival_For_The_Balaur extends QuestHandler
-{
 	private static final int questId = 25073;
-	
 	public _25073No_Revival_For_The_Balaur() {
 		super(questId);
 	}
@@ -35,8 +33,8 @@ public class _25073No_Revival_For_The_Balaur extends QuestHandler
 	public void register() {
 		qe.registerQuestNpc(804918).addOnQuestStart(questId);
 		qe.registerQuestNpc(804918).addOnTalkEvent(questId);
-		qe.registerQuestNpc(804732).addOnTalkEvent(questId);
 		qe.registerQuestNpc(731556).addOnTalkEvent(questId);
+		qe.registerQuestNpc(804732).addOnTalkEndEvent(questId);
 	}
 	
 	@Override

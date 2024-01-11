@@ -19,37 +19,27 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _27525 extends QuestHandler {
 
-public class _27525 extends QuestHandler
-{
     private final static int questId = 27525;
-	private final static int[] npcs = {805356};
-	private final static int[] IDAbReCore03A1WitchAn = {248382};
 	private final static int[] IDAbReCore03A2Witch = {248423, 248424, 248426};
-	private final static int[] IDAbReCore03WitchBossAe = {248013};
-	
     public _27525() {
         super(questId);
     }
 	
     public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: IDAbReCore03A2Witch) {
+        qe.registerQuestNpc(805356).addOnQuestStart(questId); 
+        qe.registerQuestNpc(805356).addOnTalkEvent(questId);
+        for (int mob: IDAbReCore03A2Witch) {
 		    qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: IDAbReCore03WitchBossAe) {
-		    qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: IDAbReCore03A1WitchAn) {
-		    qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
-		qe.registerQuestNpc(805356).addOnAtDistanceEvent(questId);
+        }
+		qe.registerQuestNpc(248013).addOnKillEvent(questId);
+		qe.registerQuestNpc(248382).addOnKillEvent(questId);
 		qe.registerOnEnterZone(ZoneName.get("IDABRE_CORE_03_Q17525_A_301720000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("IDABRE_CORE_03_Q17525_B_301720000"), questId);
     }
@@ -60,6 +50,20 @@ public class _27525 extends QuestHandler
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 805356) { 
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+				}
+			}
+		}
         if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805356) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -73,18 +77,6 @@ public class _27525 extends QuestHandler
 		}
         return false;
     }
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
-		}
-		return false;
-	}
 	
 	@Override
     public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {

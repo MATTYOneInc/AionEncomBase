@@ -23,24 +23,17 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13700The_Unknown_Balaurea extends QuestHandler
-{
+public class _13700The_Unknown_Balaurea extends QuestHandler {
+
     private final static int questId = 13700;
-	
     public _13700The_Unknown_Balaurea() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
-		qe.registerQuestNpc(802350).addOnQuestStart(questId); //Eljer.
-		qe.registerQuestNpc(802350).addOnTalkEvent(questId); //Eljer.
+		qe.registerQuestNpc(804699).addOnQuestStart(questId); //Atmis.
+		qe.registerQuestNpc(804699).addOnTalkEvent(questId); //Atmis.
 		qe.registerQuestNpc(802350).addOnTalkEvent(questId); //Eljer.
 	}
 	
@@ -51,7 +44,7 @@ public class _13700The_Unknown_Balaurea extends QuestHandler
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 802350) { //Eljer.
+			if (targetId == 804699) { //Atmis.
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);

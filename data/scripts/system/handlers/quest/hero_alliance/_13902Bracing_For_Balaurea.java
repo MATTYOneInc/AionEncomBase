@@ -25,15 +25,14 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _13902Bracing_For_Balaurea extends QuestHandler {
 
     private final static int questId = 13902;
-	
     public _13902Bracing_For_Balaurea() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
-		qe.registerQuestNpc(798926).addOnQuestStart(questId); //Outremus.
-		qe.registerQuestNpc(798926).addOnTalkEvent(questId); //Outremus.
+		qe.registerQuestNpc(798514).addOnQuestStart(questId); //Adrass.
+		qe.registerQuestNpc(798514).addOnTalkEvent(questId); //Adrass.
 		qe.registerQuestNpc(798926).addOnTalkEvent(questId); //Outremus.
 	}
 	
@@ -44,7 +43,7 @@ public class _13902Bracing_For_Balaurea extends QuestHandler {
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 798926) { //Outremus.
+			if (targetId == 798514) { //Outremus.
 				switch (dialog) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);

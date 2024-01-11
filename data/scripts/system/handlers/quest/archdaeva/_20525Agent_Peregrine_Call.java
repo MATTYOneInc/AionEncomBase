@@ -30,12 +30,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author (Encom)
 /****/
+public class _20525Agent_Peregrine_Call extends QuestHandler {
 
-public class _20525Agent_Peregrine_Call extends QuestHandler
-{
     public static final int questId = 20525;
 	private final static int[] npcs = {806079, 806135, 806228, 806229, 806230, 806231};
-	
     public _20525Agent_Peregrine_Call() {
         super(questId);
     }
@@ -46,7 +44,7 @@ public class _20525Agent_Peregrine_Call extends QuestHandler
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestItem(182216084, questId); //ì˜¤ë“œ ì¦?í?­ ë§ˆë ¥ì„?.
+		qe.registerQuestItem(182216084, questId); //Aether Boost Magic Stone.
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerOnEnterZone(ZoneName.get("DF6_ITEMUSEAREA_Q20525"), questId);
     }
@@ -69,6 +67,7 @@ public class _20525Agent_Peregrine_Call extends QuestHandler
             return false;
         }
         int var = qs.getQuestVarById(0);
+        int var2 = qs.getQuestVarById(1);
         int targetId = 0;
         if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
@@ -123,10 +122,7 @@ public class _20525Agent_Peregrine_Call extends QuestHandler
 						changeQuestStep(env, 3, 4, false);
 						return closeDialogWindow(env);
 					} case STEP_TO_6: {
-						removeQuestItem(env, 182216081, 20); //ë‹¬ë¹›ì?˜ ë§ˆë²•ì„?.
-						removeQuestItem(env, 182216082, 20); //ë³„ë¹›ì?˜ ë§ˆë²•ì„?.
-						removeQuestItem(env, 182216083, 5); //ê¸ˆë¹›ì?˜ ë§ˆë²•ì„?.
-						return defaultCloseDialog(env, 5, 6, false, false, 182216084, 1, 0, 0); //ì˜¤ë“œ ì¦?í?­ ë§ˆë²•ì„?.
+						return defaultCloseDialog(env, 5, 6, false, false, 182216084, 1, 0, 0); //Aether Boost Magic Stone.
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 4, 5, false, 10000, 10001);
 					} case FINISH_DIALOG: {
@@ -137,17 +133,49 @@ public class _20525Agent_Peregrine_Call extends QuestHandler
 						}
 					}
 				}
-			} if (targetId == 806228 || //Bastok.
-			    targetId == 806229 || //Duisys.
-				targetId == 806230 || //Sieden.
-				targetId == 806231) { //Norte.
-                switch (env.getDialog()) {
-				    case START_DIALOG: {
-                        changeQuestStep(env, 2, 3, false);
-						return closeDialogWindow(env);
-                    }
+			} if (targetId == 806228 && var2 == 0) { //Bastok.
+			    switch (env.getDialog()) {
+				    case START_DIALOG: 
+					    return sendQuestDialog(env, 1694);
+
+					case SELECT_ACTION_1695: 
+						qs.setQuestVarById(1, 1);
+				    	updateQuestStatus(env);	
+                    return sendQuestDialog(env, 1695); 
                 }
             }
+			else if(targetId == 806229 && var2 == 1) { //Dagny.
+			    switch (env.getDialog()) {
+				    case START_DIALOG: 
+                        return sendQuestDialog(env, 1779);
+
+					case SELECT_ACTION_1780: 
+						qs.setQuestVarById(1, 3);
+				    	updateQuestStatus(env);	
+                    return sendQuestDialog(env, 1780);
+                	}
+            	} 
+			    else if(targetId == 806230 && var2 == 3) { //Ziden.
+                    switch (env.getDialog()) {
+				    	case START_DIALOG: 
+						    return sendQuestDialog(env, 1864);
+                    	case SELECT_ACTION_1865:
+				            qs.setQuestVarById(1, 7);
+				    	    updateQuestStatus(env);	 
+                        return sendQuestDialog(env, 1865);
+                	}
+            	}
+			    else if(targetId == 806231 && var2 == 7) { //Renate.
+                	switch (env.getDialog()) {
+				    	case START_DIALOG: 			
+						    return sendQuestDialog(env, 1949);
+                    	case SELECT_ACTION_1950:
+						    qs.setQuestVarById(1,0);
+						    changeQuestStep(env, 2, 3, false);		    	
+				    	    updateQuestStatus(env); 
+                        return sendQuestDialog(env, 1950);
+                	}
+            	}   
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806079) { //Feregran.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -172,8 +200,7 @@ public class _20525Agent_Peregrine_Call extends QuestHandler
 			}
             int var = qs.getQuestVarById(0);
             if (var == 6) {
-				giveQuestItem(env, 182216084, 1); //ì˜¤ë“œ ì¦?í?­ ë§ˆë²•ì„?.
-				giveQuestItem(env, 182216085, 1); //íƒˆì§„í•œ ìœ„ìž?ë³´ë³´.
+				giveQuestItem(env, 182216085, 1); //Exhausted Wejabobo.
                 return HandlerResult.fromBoolean(useQuestItem(env, item, 6, 6, true));
             }
         }

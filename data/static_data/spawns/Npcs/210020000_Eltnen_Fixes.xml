@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <spawns>
   <spawn_map map_id="210020000">
-
+	<!-- Ferenna -->
+	<spawn npc_id="203931" respawn_time="295">
+		<spot x="275.915" y="2764.91" z="263.517" h="30"/>
+	</spawn>
   </spawn_map>
 </spawns>

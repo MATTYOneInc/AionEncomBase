@@ -46,7 +46,6 @@ public class _27505Support_Operation_For_The_Ophidan_Warpath extends QuestHandle
     public boolean onDialogEvent(QuestEnv env) {
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
         int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806268) { //ë°”ìš°í”„ë?¼.
@@ -62,6 +61,7 @@ public class _27505Support_Operation_For_The_Ophidan_Warpath extends QuestHandle
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 806271) { //í† ê³ ë§?.
 				switch (env.getDialog()) {
                     case START_DIALOG: {

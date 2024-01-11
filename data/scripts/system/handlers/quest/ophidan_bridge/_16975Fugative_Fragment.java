@@ -20,21 +20,19 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
+import com.aionemu.gameserver.services.QuestService;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _16975Fugative_Fragment extends QuestHandler {
 
-public class _16975Fugative_Fragment extends QuestHandler
-{
 	private final static int questId = 16975;
-	
 	public _16975Fugative_Fragment() {
 		super(questId);
 	}
 	
 	public void register() {
-		qe.registerQuestNpc(801763).addOnQuestStart(questId); //Theana.
 		qe.registerQuestNpc(801763).addOnTalkEvent(questId); //Theana.
 		qe.registerQuestItem(182215759, questId);
 	}
@@ -46,19 +44,19 @@ public class _16975Fugative_Fragment extends QuestHandler
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 801763) { //Theana.
-				if (dialog == QuestDialog.START_DIALOG) {
-					return sendQuestDialog(env, 1011);
-				} else {
-					return sendQuestStartDialog(env, 182215759, 1);
-				}
+			if (targetId == 0) {
+                switch (dialog) {
+                    case ACCEPT_QUEST:
+				    case ACCEPT_QUEST_SIMPLE: {  
+					    return sendQuestStartDialog(env);
+				    } case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+                    }
+                }
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 801763) { //Theana.
-				if (dialog == QuestDialog.USE_OBJECT) {
-					return sendQuestDialog(env, 2375);
-				}
-				removeQuestItem(env, 182215759, 1);
+        }
+        else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (targetId == 801765) { //Rohellein.
 				return sendQuestEndDialog(env);
 			}
 		}
@@ -69,12 +67,10 @@ public class _16975Fugative_Fragment extends QuestHandler
 	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs != null && qs.getStatus() == QuestStatus.START) {
-			if (qs.getQuestVarById(0) == 0) {
-				qs.setQuestVar(1);
-				changeQuestStep(env, 1, 1, true);
-				return HandlerResult.SUCCESS;
-			}
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+            QuestService.startQuest(env);
+            qs.setStatus(QuestStatus.REWARD);
+            updateQuestStatus(env);   
 		}
 		return HandlerResult.FAILED;
 	}

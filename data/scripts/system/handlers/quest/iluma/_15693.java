@@ -25,25 +25,21 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15693 extends QuestHandler {
 
-public class _15693 extends QuestHandler
-{
     private final static int questId = 15693;
-	private final static int[] npcs = {806114};
 	private final static int[] DF6EventG3 = {240579, 240580, 240582};
-	
     public _15693() {
         super(questId);
     }
 	
     @Override
     public void register() {
-        for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        }  for (int mob: DF6EventG3) {
+        for (int mob: DF6EventG3) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
-		qe.registerQuestNpc(806114).addOnAtDistanceEvent(questId);
+		qe.registerQuestNpc(806114).addOnQuestStart(questId);
+        qe.registerQuestNpc(806114).addOnTalkEvent(questId); 
     }
 	
     @Override
@@ -51,6 +47,20 @@ public class _15693 extends QuestHandler
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
+			if (targetId == 806114) {
+				switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
 		if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806114) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -62,18 +72,6 @@ public class _15693 extends QuestHandler
 				}
             }
         }
-		return false;
-	}
-	
-	@Override
-	public boolean onAtDistanceEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
-			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-			return true;
-		}
 		return false;
 	}
 	
