@@ -34,7 +34,6 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _24154Better_Than_Last_Time extends QuestHandler {
 
     private final static int questId = 24154;
-	
     public _24154Better_Than_Last_Time() {
         super(questId);
     }
@@ -77,7 +76,7 @@ public class _24154Better_Than_Last_Time extends QuestHandler {
             switch (targetId) {
             	case 204809: { //Stua
             		switch (env.getDialog()) {
-            			case START_DIALOG: {
+            			case USE_OBJECT: {
             				return sendQuestDialog(env, 1352);
             			} case STEP_TO_2: {
             				qs.setQuestVar(2);

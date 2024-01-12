@@ -175,7 +175,7 @@ public class ClassChangeService {
 					player.getController().upgradePlayer();
 				} 
 			}
-            /* SkillLearnService.addMissingSkills(player); */
+            SkillLearnService.addMissingSkills(player);
 		}
 	}
 
@@ -189,7 +189,6 @@ public class ClassChangeService {
 		} else {
 			qs.setStatus(QuestStatus.COMPLETE);
 			qs.setCompleteCount(qs.getCompleteCount() + 1);
-            player.getCommonData().setExp(126150, true); //exp give from quest 1006, 2008 
 			PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(questId, qs.getStatus(), qs.getQuestVars().getQuestVars()));
 		}
 	}
