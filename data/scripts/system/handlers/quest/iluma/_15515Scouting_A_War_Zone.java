@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15515Scouting_A_War_Zone extends QuestHandler {
 
-public class _15515Scouting_A_War_Zone extends QuestHandler
-{
     private final static int questId = 15515;
-	
     public _15515Scouting_A_War_Zone() {
         super(questId);
     }
@@ -81,18 +79,8 @@ public class _15515Scouting_A_War_Zone extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806094) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 60) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 60, 61, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }  
+        else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806094) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -142,10 +130,10 @@ public class _15515Scouting_A_War_Zone extends QuestHandler
 				case 242795:
 				case 242799:
 				case 242803:
-                if (qs.getQuestVarById(1) < 60) {
+                if (qs.getQuestVarById(1) < 30) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 60) {
+				} if (qs.getQuestVarById(1) >= 30) {
 					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);

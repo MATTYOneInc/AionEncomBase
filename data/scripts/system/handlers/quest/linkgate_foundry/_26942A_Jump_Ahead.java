@@ -23,18 +23,11 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _26942A_Jump_Ahead extends QuestHandler {
 
-public class _26942A_Jump_Ahead extends QuestHandler
-{
 	public static final int questId = 26942;
-	
 	public _26942A_Jump_Ahead() {
 		super(questId);
-	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
 	}
 	
 	@Override

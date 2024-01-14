@@ -80,7 +80,7 @@ public class _21323The_Shugo_Runaround extends QuestHandler
 							return true;
 						}
 					}
-				} case 702728: { //Uzirunerk.
+				} case 702746: { //Zinarunerk.
 				    switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1352);
@@ -91,7 +91,7 @@ public class _21323The_Shugo_Runaround extends QuestHandler
 							return true;
 						}
 					}
-				} case 702746: { //Zinarunerk.
+				} case 702748: { //Potarunerk.
 				    switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1693);
@@ -113,14 +113,14 @@ public class _21323The_Shugo_Runaround extends QuestHandler
 							return true;
 						}
 					}
-				} case 702748: { //Potarunerk.
+				} case 702728: { //Uzirunerk.
 				    switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 2375);
 						} case SET_REWARD: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+                            qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							qs.setStatus(QuestStatus.REWARD);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 							return true;
 						}
@@ -129,7 +129,7 @@ public class _21323The_Shugo_Runaround extends QuestHandler
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 799226) { //Barretta.
-				if (dialog == QuestDialog.USE_OBJECT) {
+				if (dialog == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 10002);
 				} else {
 					return sendQuestEndDialog(env);

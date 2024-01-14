@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _80275Empires_Past extends QuestHandler {
 
-public class _80275Empires_Past extends QuestHandler
-{
     private final static int questId = 80275;
-	
     public _80275Empires_Past() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(831117).addOnQuestStart(questId); //Indianerk.
 		qe.registerQuestNpc(831117).addOnTalkEvent(questId); //Indianerk.
 	}
@@ -49,7 +41,7 @@ public class _80275Empires_Past extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		if (qs == null || qs.canRepeat()) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 831117) { //Indianerk.
 				if (dialog == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);

@@ -25,23 +25,15 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15606The_Hall_Of_Zephyr extends QuestHandler {
 
-public class _15606The_Hall_Of_Zephyr extends QuestHandler
-{
     public static final int questId = 15606;
-	
     public _15606The_Hall_Of_Zephyr() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 15605);
-	}
-	
+
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(806163).addOnQuestStart(questId); //Thaleia.
 		qe.registerQuestNpc(806163).addOnTalkEvent(questId); //Thaleia.
 		qe.registerQuestNpc(703147).addOnTalkEvent(questId); //Ancient Daeva Of Zephyr's Chest.
@@ -53,7 +45,6 @@ public class _15606The_Hall_Of_Zephyr extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806163) { //Thaleia.
@@ -69,6 +60,7 @@ public class _15606The_Hall_Of_Zephyr extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 806163) { //Thaleia.
 				switch (env.getDialog()) {
                     case START_DIALOG: {

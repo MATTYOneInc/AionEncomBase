@@ -22,16 +22,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25536Protect_Zenzen_Tribal_Grounds extends QuestHandler {
 
-public class _25536Protect_Zenzen_Tribal_Grounds extends QuestHandler
-{
     private final static int questId = 25536;
-	
-	private final static int[] Q25536 = {
-		241637, 241638, 241639, 242427, 242431, 242435, 242439, 242443,
-		242447, 242451, 242455, 242459, 242463, 242467, 242471, 242475,
-		242479, 242483, 242387, 242391, 242395, 242399, 242403};
-	
+	private final static int[] Q25536 = {241637, 241638, 241639, 242427, 242431, 242435, 242439, 242443, 242447, 242451, 242455, 242459, 242463, 242467, 242471, 242475, 242479, 242483, 242387, 242391, 242395, 242399, 242403};
     public _25536Protect_Zenzen_Tribal_Grounds() {
         super(questId);
     }
@@ -58,18 +52,8 @@ public class _25536Protect_Zenzen_Tribal_Grounds extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806255) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 60) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 60, 61, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } 
+        else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806255) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -111,10 +95,10 @@ public class _25536Protect_Zenzen_Tribal_Grounds extends QuestHandler
 				case 242395:
 				case 242399:
 				case 242403:
-                if (qs.getQuestVarById(1) < 60) {
+                if (qs.getQuestVarById(1) < 30) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 60) {
+				} if (qs.getQuestVarById(1) >= 30) {
 					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);

@@ -4595,7 +4595,7 @@
       <reward_item item_id="186000005" count="20" />
     </rewards>
   </quest>
-  <quest id="1669" name="Hanuman's Insignia" nameId="1102860" minlevel_permitted="44" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="IMPORTANT">
+  <quest id="1669" name="Discouraging Balaur" nameId="1102860" minlevel_permitted="44" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="IMPORTANT">
     <collect_items>
       <collect_item item_id="182201769" count="10" />
     </collect_items>
@@ -4603,12 +4603,8 @@
       <reward_item item_id="186000005" count="25" />
       <reward_item item_id="162000050" count="10" />
     </rewards>
-    <quest_drop npc_id="213996" item_id="182201769" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="214072" item_id="182201769" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="213997" item_id="182201769" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="214003" item_id="182201769" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="214077" item_id="182201769" chance="100" drop_each_member="1" />
-    <quest_drop npc_id="214004" item_id="182201769" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="235505" item_id="182201769" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="235506" item_id="182201769" chance="100" drop_each_member="1" />
   </quest>
   <quest id="1670" name="Invisible Bridges" nameId="1102861" minlevel_permitted="38" max_repeat_count="1" cannot_share="true" race_permitted="ELYOS" category="QUEST">
     <rewards gold="46650" exp="3218619">

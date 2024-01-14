@@ -26,30 +26,19 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25604Prison_Of_Silence extends QuestHandler {
 
-public class _25604Prison_Of_Silence extends QuestHandler
-{
     public static final int questId = 25604;
-	private final static int[] DF6FOBJSacrificeGuardian01 = {703125};
-	
     public _25604Prison_Of_Silence() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 25602);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(806115).addOnQuestStart(questId); //Svanhild.
 		qe.registerQuestNpc(806115).addOnTalkEvent(questId); //Svanhild.
 		qe.registerQuestNpc(806173).addOnTalkEvent(questId); //Groma.
-		for (int mobs: DF6FOBJSacrificeGuardian01) {
-            qe.registerQuestNpc(mobs).addOnKillEvent(questId);
-        }
+        qe.registerQuestNpc(703125).addOnKillEvent(questId);
 		qe.registerOnEnterZone(ZoneName.get("DF6_SENSORY_AREA_Q25604_A_DYNAMIC_ENV_220110000"), questId);
     }
 	
@@ -57,7 +46,6 @@ public class _25604Prison_Of_Silence extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		final Npc npc = (Npc) env.getVisibleObject();
 		if (env.getVisibleObject() instanceof Npc) {
@@ -76,6 +64,7 @@ public class _25604Prison_Of_Silence extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+           	int var = qs.getQuestVarById(0);
 			if (targetId == 806173) { //Groma.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -132,7 +121,7 @@ public class _25604Prison_Of_Silence extends QuestHandler
             if (var == 2) {
                 int var1 = qs.getQuestVarById(1);
                 if (var1 >= 0 && var1 < 2) {
-                    return defaultOnKillEvent(env, DF6FOBJSacrificeGuardian01, var1, var1 + 1, 1);
+                    return defaultOnKillEvent(env, 703125, var1, var1 + 1, 1);
                 } else if (var1 == 2) {
 					qs.setQuestVar(3);
 					updateQuestStatus(env);

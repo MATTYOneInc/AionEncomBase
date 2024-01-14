@@ -4058,6 +4058,10 @@
 		<spawn npc_id="702727" respawn_time="295">
 			<spot x="463.77988" y="195.59648" z="459.5888"/>
 		</spawn>
+		<!-- Gadarunerk -->
+        <spawn npc_id="702725" respawn_time="295">
+            <spot h="103" z="589.4215" y="281.17572" x="1329.6571"/>
+        </spawn>
 		<!-- Zeirunerk -->
 		<spawn npc_id="702743" respawn_time="295">
 			<spot x="2094.8428" y="1195.9551" z="265.0"/>

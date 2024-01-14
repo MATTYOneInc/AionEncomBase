@@ -11,34 +11,28 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
  * @author Ritsu
  *
  */
-public class _30154FleshtoStone extends QuestHandler 
-{
+public class _30154FleshtoStone extends QuestHandler {
 
-	private final static int	questId	= 30154;
-
-	public _30154FleshtoStone()
-	{
+	private final static int questId = 30154;
+	public _30154FleshtoStone() {
 		super(questId);
 	}
 
 	@Override
-	public void register()
-	{
+	public void register() {
 		qe.registerQuestNpc(799234).addOnQuestStart(questId); 
 		qe.registerQuestNpc(799234).addOnTalkEvent(questId); 
 		qe.registerQuestNpc(204433).addOnTalkEvent(questId);
 	}
 
 	@Override
-	public boolean onDialogEvent(QuestEnv env)
-	{
+	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-		
-		if(qs == null || qs.getStatus() == QuestStatus.NONE){
-			if (targetId == 799234){
+		if(qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 799234) {
 			if(dialog == QuestDialog.START_DIALOG)
 				return sendQuestDialog(env, 1011);
 			else
@@ -51,8 +45,8 @@ public class _30154FleshtoStone extends QuestHandler
 		}
 		else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			if (targetId == 204433){
-				switch (dialog){
+			if (targetId == 204433) {
+				switch (dialog) {
 					case START_DIALOG:
 						if (var == 0)
 							return sendQuestDialog(env, 1352);
@@ -61,8 +55,8 @@ public class _30154FleshtoStone extends QuestHandler
 							return defaultCloseDialog(env, 0, 1);
 				}
 			}
-			if (targetId == 799234){
-				switch (dialog){
+			if (targetId == 799234) {
+				switch (dialog) {
 					case START_DIALOG:
 						if (var == 1)
 							return sendQuestDialog(env, 2375);

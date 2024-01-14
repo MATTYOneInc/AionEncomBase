@@ -24,31 +24,20 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15605Mystery_Of_The_Aetherion extends QuestHandler {
 
-public class _15605Mystery_Of_The_Aetherion extends QuestHandler
-{
     public static final int questId = 15605;
-	private final static int[] Auronos = {241162}; //Auronos.
-	
     public _15605Mystery_Of_The_Aetherion() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 15604);
-	}
-	
+
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(806162).addOnQuestStart(questId); //Polonius.
 		qe.registerQuestNpc(806162).addOnTalkEvent(questId); //Polonius.
 		qe.registerQuestNpc(703137).addOnTalkEvent(questId); //Solar Relic.
 		qe.registerQuestNpc(703138).addOnTalkEvent(questId); //Lunar Relic.
-		for (int boss: Auronos) {
-            qe.registerQuestNpc(boss).addOnKillEvent(questId);
-        }
+        qe.registerQuestNpc(241162).addOnKillEvent(questId); //Auronos.
 		qe.registerOnEnterZone(ZoneName.get("COURT_OF_AURONUS_210100000"), questId);
     }
 	
@@ -56,7 +45,6 @@ public class _15605Mystery_Of_The_Aetherion extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806162) { //Polonius.
@@ -72,6 +60,7 @@ public class _15605Mystery_Of_The_Aetherion extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+           	int var = qs.getQuestVarById(0);
 			if (targetId == 806162) { //Polonius.
 				switch (env.getDialog()) {
                     case START_DIALOG: {

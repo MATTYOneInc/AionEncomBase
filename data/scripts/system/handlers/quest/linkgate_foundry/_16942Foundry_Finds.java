@@ -23,18 +23,11 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _16942Foundry_Finds extends QuestHandler {
 
-public class _16942Foundry_Finds extends QuestHandler
-{
 	public static final int questId = 16942;
-	
 	public _16942Foundry_Finds() {
 		super(questId);
-	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
 	}
 	
 	@Override

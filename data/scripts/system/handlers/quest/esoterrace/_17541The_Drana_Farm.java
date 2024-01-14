@@ -24,16 +24,14 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _17541The_Drana_Farm extends QuestHandler
-{
+public class _17541The_Drana_Farm extends QuestHandler {
+
     private final static int questId = 17541;
-	
     public _17541The_Drana_Farm() {
         super(questId);
     }
 	
     public void register() {
-		qe.registerOnEnterWorld(questId);
         qe.registerQuestNpc(799553).addOnQuestStart(questId); //Daidra.
         qe.registerQuestNpc(799553).addOnTalkEvent(questId); //Daidra.
         qe.registerQuestNpc(217185).addOnKillEvent(questId); //Dalia Charlands.
@@ -47,6 +45,20 @@ public class _17541The_Drana_Farm extends QuestHandler
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 799553) {
+                switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
 		if (qs.getStatus() == QuestStatus.START) {
             if (targetId == 799553) { //Daidra.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -69,21 +81,6 @@ public class _17541The_Drana_Farm extends QuestHandler
 				}
 			}
 		}
-        return false;
-    }
-	
-	@Override
-    public boolean onEnterWorldEvent(QuestEnv env) {
-        final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getWorldId() == 300250000) {
-            if (qs == null || qs.canRepeat()) {
-                env.setQuestId(questId);
-                if (QuestService.startQuest(env)) {
-					return true;
-				}
-            }
-        }
         return false;
     }
 	

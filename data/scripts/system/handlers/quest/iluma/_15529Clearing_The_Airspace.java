@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15529Clearing_The_Airspace extends QuestHandler {
 
-public class _15529Clearing_The_Airspace extends QuestHandler
-{
     private final static int questId = 15529;
-	
     public _15529Clearing_The_Airspace() {
         super(questId);
     }
@@ -51,18 +49,8 @@ public class _15529Clearing_The_Airspace extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806098) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 20) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 20, 21, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }  
+        else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806098) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -82,10 +70,10 @@ public class _15529Clearing_The_Airspace extends QuestHandler
         if (qs != null && qs.getStatus() == QuestStatus.START) {
             switch (env.getTargetId()) {
 				case 703072:
-                if (qs.getQuestVarById(1) < 20) {
+                if (qs.getQuestVarById(1) < 10) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 20) {
+				} if (qs.getQuestVarById(1) >= 10) {
 					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);

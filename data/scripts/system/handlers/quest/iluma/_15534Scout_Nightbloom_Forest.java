@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15534Scout_Nightbloom_Forest extends QuestHandler {
 
-public class _15534Scout_Nightbloom_Forest extends QuestHandler
-{
     private final static int questId = 15534;
-	
     public _15534Scout_Nightbloom_Forest() {
         super(questId);
     }
@@ -71,18 +69,8 @@ public class _15534Scout_Nightbloom_Forest extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806100) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 60) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 60, 61, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }  
+        else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806100) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -122,10 +110,10 @@ public class _15534Scout_Nightbloom_Forest extends QuestHandler
 				case 242535:
 				case 242539:
 				case 242543:
-                if (qs.getQuestVarById(1) < 60) {
+                if (qs.getQuestVarById(1) < 30) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 60) {
+				} if (qs.getQuestVarById(1) >= 30) {
 					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);

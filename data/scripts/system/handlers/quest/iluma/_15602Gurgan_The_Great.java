@@ -25,30 +25,20 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15602Gurgan_The_Great extends QuestHandler
-{
+public class _15602Gurgan_The_Great extends QuestHandler {
+
     public static final int questId = 15602;
-	private final static int[] Gurgan = {241153}; //Gurgan.
-	
     public _15602Gurgan_The_Great() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 15601);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(806159).addOnQuestStart(questId); //Alexandria.
 		qe.registerQuestNpc(806159).addOnTalkEvent(questId); //Alexandria.
         qe.registerQuestNpc(806194).addOnTalkEvent(questId); //Celaday.
 		qe.registerQuestNpc(703136).addOnTalkEvent(questId); //Cauldron.
-		for (int boss: Gurgan) {
-            qe.registerQuestNpc(boss).addOnKillEvent(questId);
-        }
+        qe.registerQuestNpc(241153).addOnKillEvent(questId); //Gurgan.
 		qe.registerOnEnterZone(ZoneName.get("CELLATUN_CIRCLE_210100000"), questId);
     }
 	
@@ -56,7 +46,6 @@ public class _15602Gurgan_The_Great extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806159) { //Alexandria.
@@ -72,6 +61,7 @@ public class _15602Gurgan_The_Great extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+		    int var = qs.getQuestVarById(0);
 			if (targetId == 806194) { //Celaday.
 				switch (env.getDialog()) {
                     case START_DIALOG: {

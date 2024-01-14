@@ -48,7 +48,6 @@ public class _15613Prometheus_Unbound extends QuestHandler {
     public boolean onDialogEvent(QuestEnv env) {
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		final Npc npc = (Npc) env.getVisibleObject();
 		if (env.getVisibleObject() instanceof Npc) {
@@ -67,6 +66,7 @@ public class _15613Prometheus_Unbound extends QuestHandler {
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 806166) { //세다르.
 				switch (env.getDialog()) {
                     case START_DIALOG: {

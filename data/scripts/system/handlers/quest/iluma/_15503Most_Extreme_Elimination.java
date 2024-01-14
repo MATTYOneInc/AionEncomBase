@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15503Most_Extreme_Elimination extends QuestHandler {
 
-public class _15503Most_Extreme_Elimination extends QuestHandler
-{
     private final static int questId = 15503;
-	
     public _15503Most_Extreme_Elimination() {
         super(questId);
     }
@@ -65,18 +63,8 @@ public class _15503Most_Extreme_Elimination extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806090) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 40) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 40, 41, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }  
+        else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806090) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -110,10 +98,10 @@ public class _15503Most_Extreme_Elimination extends QuestHandler
                 case 241678:
                 case 241679:
 				case 243285:
-                if (qs.getQuestVarById(1) < 40) {
+                if (qs.getQuestVarById(1) < 20) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 40) {
+				} if (qs.getQuestVarById(1) >= 20) {
 					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);

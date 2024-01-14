@@ -14,19 +14,15 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
  * @author Ritsu
  *
  */
-public class _30157VilisMind extends QuestHandler 
-{
+public class _30157VilisMind extends QuestHandler {
 
-	private final static int	questId	= 30157;
-
-	public _30157VilisMind()
-	{
+	private final static int questId = 30157;
+	public _30157VilisMind() {
 		super(questId);
 	}
 
 	@Override
-	public void register()
-	{
+	public void register() {
 		qe.registerQuestNpc(204304).addOnQuestStart(questId); //Vili
 		qe.registerQuestNpc(204304).addOnTalkEvent(questId); //Vili
 		qe.registerQuestNpc(799234).addOnTalkEvent(questId); //Nep
@@ -35,15 +31,13 @@ public class _30157VilisMind extends QuestHandler
 	}
 
 	@Override
-	public boolean onDialogEvent(QuestEnv env)
-	{
+	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-		
-		if(qs == null || qs.getStatus() == QuestStatus.NONE){
-			if (targetId == 204304){
+		if(qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 204304) {
 				if(dialog == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else if (dialog == QuestDialog.ACCEPT_QUEST)
@@ -57,8 +51,8 @@ public class _30157VilisMind extends QuestHandler
 			}
 		}
 		else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 799234){
-				switch (dialog){
+			if (targetId == 799234) {
+				switch (dialog) {
 					case USE_OBJECT:
 						return sendQuestDialog(env, 2375);
 					case SELECT_REWARD:
@@ -68,28 +62,27 @@ public class _30157VilisMind extends QuestHandler
 		}
 		else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			if (targetId == 700570){
-				switch (dialog){
+			if (targetId == 700570) {
+				switch (dialog) {
 					case USE_OBJECT:
-						if (var == 0){
+						if (var == 0) {
 							QuestService.addNewSpawn(600110000, 1, 799339, (float) 545.3877, (float) 1232.0298, (float) 304.3357, (byte) 76);
 							return useQuestObject(env, 0, 0, false, 0, 0, 0, 182209254, 1);
 						}
 				}
 			}
-			if (targetId == 799339){
-				switch (dialog){
+			if (targetId == 799339) {
+				switch (dialog) {
 					case START_DIALOG:
 						if (var == 0)
 							return sendQuestDialog(env, 1352);
 					case STEP_TO_1:
-						if (var == 0){
+						if (var == 0) {
 							defaultCloseDialog(env, 0, 0, true, false);
 							final Npc npc = (Npc)env.getVisibleObject();
-							ThreadPoolManager.getInstance().schedule(new Runnable(){
+							ThreadPoolManager.getInstance().schedule(new Runnable() {
 								@Override
-								public void run()
-								{
+								public void run() {
 									npc.getController().onDelete();	
 								}
 							}, 40000);	

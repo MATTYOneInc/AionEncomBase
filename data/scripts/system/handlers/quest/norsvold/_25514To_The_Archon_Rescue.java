@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25514To_The_Archon_Rescue extends QuestHandler {
 
-public class _25514To_The_Archon_Rescue extends QuestHandler
-{
 	private static final int questId = 25514;
-	
 	public _25514To_The_Archon_Rescue() {
 		super(questId);
 	}
@@ -52,18 +50,8 @@ public class _25514To_The_Archon_Rescue extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806105) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 20) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 20, 21, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } 
+        else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806105) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -83,10 +71,10 @@ public class _25514To_The_Archon_Rescue extends QuestHandler
         if (qs != null && qs.getStatus() == QuestStatus.START) {
             switch (env.getTargetId()) {
 				case 703078:
-                if (qs.getQuestVarById(1) < 20) {
+                if (qs.getQuestVarById(1) < 10) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 20) {
+				} if (qs.getQuestVarById(1) >= 10) {
 					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);

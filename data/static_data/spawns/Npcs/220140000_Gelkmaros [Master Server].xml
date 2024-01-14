@@ -885,6 +885,10 @@
 		<spawn npc_id="702726" respawn_time="295">
 			<spot x="1890.8885" y="2852.5103" z="554.9787" h="73"/>
 		</spawn>
+		<!-- Ujirunerk -->
+		<spawn npc_id="702728" respawn_time="295">
+			<spot x="897.90643" y="1014.6499" z="313.06683" h="73"/>
+		</spawn>
 		<!-- Zinarunerk -->
 		<spawn npc_id="702746" respawn_time="295">
 			<spot x="358.64276" y="2610.079" z="443.60574" h="73"/>

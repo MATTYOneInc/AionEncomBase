@@ -23,13 +23,10 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25674Light_Armored_Archon_Carrier_Support extends QuestHandler {
 
-public class _25674Light_Armored_Archon_Carrier_Support extends QuestHandler
-{
 	private final static int questId = 25674;
-	
 	private final static int[] npcs = {806116, 703443};
-	
 	public _25674Light_Armored_Archon_Carrier_Support() {
 		super(questId);
 	}
@@ -45,7 +42,6 @@ public class _25674Light_Armored_Archon_Carrier_Support extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		QuestDialog dialog = env.getDialog();
 		if (targetId == 703443) { //LF6_FOBJ_Od_Stone_Q25674_A.

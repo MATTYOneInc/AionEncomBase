@@ -25,33 +25,22 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25606The_White_Sinsye extends QuestHandler {
 
-public class _25606The_White_Sinsye extends QuestHandler
-{
     public static final int questId = 25606;
-	private final static int[] DF6G6NamedSinsi68Ah = {241220}; //백신시.
-	
     public _25606The_White_Sinsye() {
         super(questId);
     }
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 25605);
-	}
-	
+		
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(806175).addOnQuestStart(questId); //Chaelsean.
 		qe.registerQuestNpc(806175).addOnTalkEvent(questId); //Chaelsean.
 		qe.registerQuestNpc(806178).addOnTalkEvent(questId); //배회하는 �?혼.
 		qe.registerQuestNpc(806156).addOnTalkEvent(questId); //기억�?� 잃�?� 여�?�.
 		qe.registerQuestNpc(806157).addOnTalkEvent(questId); //리니.
 		qe.registerQuestNpc(703140).addOnTalkEvent(questId); //리니�?� 소품 �?�?.
-		for (int mobs: DF6G6NamedSinsi68Ah) {
-            qe.registerQuestNpc(mobs).addOnKillEvent(questId);
-        }
+        qe.registerQuestNpc(241220).addOnKillEvent(questId); //White Sinsye.
 		qe.registerOnEnterZone(ZoneName.get("DF6_SENSORY_AREA_Q25606_A_DYNAMIC_ENV_220110000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("DF6_SENSORY_AREA_Q25606_B_DYNAMIC_ENV_220110000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("DF6_SENSORY_AREA_Q25606_C_DYNAMIC_ENV_220110000"), questId);
@@ -61,7 +50,6 @@ public class _25606The_White_Sinsye extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		final Npc npc = (Npc) env.getVisibleObject();
 		if (env.getVisibleObject() instanceof Npc) {
@@ -82,6 +70,7 @@ public class _25606The_White_Sinsye extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 806178) { //배회하는 �?혼.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -161,7 +150,7 @@ public class _25606The_White_Sinsye extends QuestHandler
             int var = qs.getQuestVarById(0);
             if (var == 5) {
 				switch (targetId) {
-                    case 241220: { //백신시.
+                    case 241220: { //White Sinsye.
 						qs.setQuestVar(6);
 					    updateQuestStatus(env);
 						QuestService.addNewSpawn(220110000, 1, 806157, npc.getX(), npc.getY(), npc.getZ(), (byte) 0); //리니.

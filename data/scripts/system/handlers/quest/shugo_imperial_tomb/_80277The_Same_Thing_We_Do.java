@@ -22,23 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _80277The_Same_Thing_We_Do extends QuestHandler {
 
-public class _80277The_Same_Thing_We_Do extends QuestHandler
-{
     private final static int questId = 80277;
-	
     public _80277The_Same_Thing_We_Do() {
         super(questId);
     }
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(831131).addOnQuestStart(questId); //Alberto Einshudison.
 		qe.registerQuestNpc(831131).addOnTalkEvent(questId); //Alberto Einshudison.
 	}
@@ -49,7 +41,7 @@ public class _80277The_Same_Thing_We_Do extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		if (qs == null || qs.canRepeat()) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 831131) { //Alberto Einshudison.
 				if (dialog == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);

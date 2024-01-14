@@ -26,7 +26,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _27540The_Drana_Experiment extends QuestHandler {
 
     private final static int questId = 27540;
-	
     public _27540The_Drana_Experiment() {
         super(questId);
     }
@@ -44,9 +43,23 @@ public class _27540The_Drana_Experiment extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 799558) {
+                switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
 		if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 799563) { //Nepion.
                 switch (env.getDialog()) {
                     case START_DIALOG: {

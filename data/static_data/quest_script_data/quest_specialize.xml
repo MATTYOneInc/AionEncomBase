@@ -15,8 +15,8 @@
 	<item_collecting id="14113" start_npc_ids="203178"/>
 	<!-- Murky Waters (Elyos Only) -->
 	<monster_hunt id="14124" start_npc_ids="203946">
-		<monster var="0" npc_ids="210946" end_var="3"/>
-		<monster var="1" npc_ids="210947" end_var="3"/>
+		<monster var="0" npc_ids="210946 210968" end_var="3"/>
+		<monster var="1" npc_ids="210947 210969" end_var="3"/>
 	</monster_hunt>
 	<!-- Target Practice With A Queen (Elyos Only) -->
 	<monster_hunt id="14151" start_npc_ids="204583" end_npc_ids="204502">

@@ -30,14 +30,14 @@ import com.aionemu.gameserver.services.QuestService;
 public class _48002CharlirunerksDaemonsWantYou extends QuestHandler {
 
 	public static final int questId = 48002;
-
 	public _48002CharlirunerksDaemonsWantYou() {
 		super(questId);
 	}
 
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
+        qe.registerQuestNpc(205847).addOnQuestStart(questId);
+		qe.registerQuestNpc(205847).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799886).addOnTalkEvent(questId);
 	}
 
@@ -47,6 +47,20 @@ public class _48002CharlirunerksDaemonsWantYou extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 205847) {
+                switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
 			if (targetId == 799886) { // Tikalanerk
 				if (dialog == QuestDialog.START_DIALOG) {

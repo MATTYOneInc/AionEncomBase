@@ -25,29 +25,19 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15608Spoiled_Spores extends QuestHandler
-{
+public class _15608Spoiled_Spores extends QuestHandler {
+
     public static final int questId = 15608;
-	private final static int[] Tentaklis = {241175}; //Tentaklis.
-	
     public _15608Spoiled_Spores() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 15606);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(806165).addOnQuestStart(questId); //Canella.
 		qe.registerQuestNpc(806165).addOnTalkEvent(questId); //Canella.
 		qe.registerQuestNpc(703139).addOnTalkEvent(questId); //Basedes Mushroom.
-		for (int boss: Tentaklis) {
-            qe.registerQuestNpc(boss).addOnKillEvent(questId);
-        }
+        qe.registerQuestNpc(241175).addOnKillEvent(questId); //Tentaklis.
 		qe.registerOnEnterZone(ZoneName.get("LF6_SENSORY_AREA_Q15608_A_DYNAMIC_ENV_210100000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("LF6_SENSORY_AREA_Q15608_B_DYNAMIC_ENV_210100000"), questId);
     }
@@ -56,7 +46,6 @@ public class _15608Spoiled_Spores extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806165) { //Canella.
@@ -73,6 +62,7 @@ public class _15608Spoiled_Spores extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
 			if (targetId == 806165) { //Canella.
 				switch (env.getDialog()) {
                     case START_DIALOG: {

@@ -24,36 +24,39 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25545A_New_Comrade_For_A_Archdaeva extends QuestHandler {
 
-public class _25545A_New_Comrade_For_A_Archdaeva extends QuestHandler
-{
 	private final static int questId = 25545;
-	
 	public _25545A_New_Comrade_For_A_Archdaeva() {
 		super(questId);
 	}
 	
 	@Override
 	public void register() {
-		int[] npcs = {835515};
-        for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        }
-		qe.registerOnLevelUp(questId);
+        qe.registerQuestNpc(835515).addOnQuestStart(questId);
+        qe.registerQuestNpc(835515).addOnTalkEvent(questId);
 		qe.registerQuestNpc(835515).addOnAtDistanceEvent(questId);
-	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
 	}
 	
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 835515) { //Arund.
+                switch (env.getDialog()) {
+                    case START_DIALOG: {
+                        return sendQuestDialog(env, 4762);
+					} case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE: {
+						return sendQuestStartDialog(env);
+					} case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+					}
+                }
+			}
+		}
 		if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835515) { //Arund.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {

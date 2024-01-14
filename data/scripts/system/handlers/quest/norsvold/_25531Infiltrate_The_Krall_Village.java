@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25531Infiltrate_The_Krall_Village extends QuestHandler {
 
-public class _25531Infiltrate_The_Krall_Village extends QuestHandler
-{
     private final static int questId = 25531;
-	
     public _25531Infiltrate_The_Krall_Village() {
         super(questId);
     }
@@ -78,18 +76,8 @@ public class _25531Infiltrate_The_Krall_Village extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806111) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 60) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 60, 61, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } 
+        else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806111) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -136,10 +124,10 @@ public class _25531Infiltrate_The_Krall_Village extends QuestHandler
 				case 243195:
 				case 243199:
 				case 243203:
-                if (qs.getQuestVarById(1) < 60) {
+                if (qs.getQuestVarById(1) < 30) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 60) {
+				} if (qs.getQuestVarById(1) >= 30) {
 					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);

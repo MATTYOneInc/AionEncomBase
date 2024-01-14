@@ -23,29 +23,18 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15604Queen_Of_The_Copperclaws extends QuestHandler {
 
-public class _15604Queen_Of_The_Copperclaws extends QuestHandler
-{
     public static final int questId = 15604;
-	private final static int[] Copperclaw_Arachna = {241161}; //Copperclaw Arachna.
-	
     public _15604Queen_Of_The_Copperclaws() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 15602);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
         qe.registerQuestNpc(806161).addOnQuestStart(questId); //Cyclon.
 		qe.registerQuestNpc(806161).addOnTalkEvent(questId); //Cyclon.
-		for (int mobs: Copperclaw_Arachna) {
-            qe.registerQuestNpc(mobs).addOnKillEvent(questId);
-        }
+        qe.registerQuestNpc(241161).addOnKillEvent(questId); //Copperclaw Arachna.
 		qe.registerQuestNpc(241160).addOnKillEvent(questId); //Olthrax.
 		qe.registerOnEnterZone(ZoneName.get("ERASMID_HOLLOW_210100000"), questId);
     }
@@ -54,7 +43,6 @@ public class _15604Queen_Of_The_Copperclaws extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 806161) { //Cyclon.
@@ -70,6 +58,7 @@ public class _15604Queen_Of_The_Copperclaws extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+           	int var = qs.getQuestVarById(0);
 			if (targetId == 806161) { //Cyclon.
 				switch (env.getDialog()) {
                     case START_DIALOG: {
@@ -111,7 +100,7 @@ public class _15604Queen_Of_The_Copperclaws extends QuestHandler
             if (var == 1) {
                 int var1 = qs.getQuestVarById(1);
                 if (var1 >= 0 && var1 < 4) {
-                    return defaultOnKillEvent(env, Copperclaw_Arachna, var1, var1 + 1, 1);
+                    return defaultOnKillEvent(env, 241161, var1, var1 + 1, 1);
                 } else if (var1 == 4) {
 					qs.setQuestVar(2);
 					updateQuestStatus(env);

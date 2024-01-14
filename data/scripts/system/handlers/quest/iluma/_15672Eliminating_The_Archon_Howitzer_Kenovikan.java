@@ -23,11 +23,9 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15672Eliminating_The_Archon_Howitzer_Kenovikan extends QuestHandler {
 
-public class _15672Eliminating_The_Archon_Howitzer_Kenovikan extends QuestHandler
-{
     private final static int questId = 15672;
-	
     public _15672Eliminating_The_Archon_Howitzer_Kenovikan() {
         super(questId);
     }

@@ -27,31 +27,20 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25605An_Adventure_In_Time extends QuestHandler {
 
-public class _25605An_Adventure_In_Time extends QuestHandler
-{
     public static final int questId = 25605;
-	private final static int[] DF6F224NamedDeathKnight70Al = {241217}; //íŽ˜ë¥´ì†?.
-	
     public _25605An_Adventure_In_Time() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 25604);
-	}
-	
     @Override
     public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestItem(182216005, questId); //ê°„ì?´ ì‹œê³µê°„ ì œì–´ê¸°.
         qe.registerQuestNpc(806174).addOnQuestStart(questId); //Chardelil.
 		qe.registerQuestNpc(806174).addOnTalkEvent(questId); //Chardelil.
 		qe.registerQuestNpc(806199).addOnTalkEvent(questId); //ì°¨ì›?ì—? ë¬¶ì?¸ ë?°ë°”.
-		for (int mobs: DF6F224NamedDeathKnight70Al) {
-            qe.registerQuestNpc(mobs).addOnKillEvent(questId);
-        }
+        qe.registerQuestNpc(241217).addOnKillEvent(questId); //Ferson.
 		qe.registerOnEnterZone(ZoneName.get("DF6_ITEMUSEAREA_Q25605B_DYNAMIC_ENV"), questId);
 		qe.registerOnEnterZone(ZoneName.get("DF6_SENSORY_AREA_Q25605_A_DYNAMIC_ENV_220110000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("DF6_SENSORY_AREA_Q25605_B_DYNAMIC_ENV_220110000"), questId);
@@ -61,7 +50,6 @@ public class _25605An_Adventure_In_Time extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		final Npc npc = (Npc) env.getVisibleObject();
 		if (env.getVisibleObject() instanceof Npc) {
@@ -80,6 +68,7 @@ public class _25605An_Adventure_In_Time extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);  
 			if (targetId == 806174) { //Chardelil.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -138,7 +127,7 @@ public class _25605An_Adventure_In_Time extends QuestHandler
             int var = qs.getQuestVarById(0);
             if (var == 6) {
 				switch (targetId) {
-                    case 241217: { //íŽ˜ë¥´ì†?.
+                    case 241217: { //Ferson.
 						qs.setStatus(QuestStatus.REWARD);
 					    updateQuestStatus(env);
 						return true;

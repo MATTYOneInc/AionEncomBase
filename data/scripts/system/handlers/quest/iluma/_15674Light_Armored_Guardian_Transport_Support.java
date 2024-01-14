@@ -23,13 +23,10 @@ import com.aionemu.gameserver.services.QuestService;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _15674Light_Armored_Guardian_Transport_Support extends QuestHandler {
 
-public class _15674Light_Armored_Guardian_Transport_Support extends QuestHandler
-{
 	private final static int questId = 15674;
-	
 	private final static int[] npcs = {806114, 703438};
-	
 	public _15674Light_Armored_Guardian_Transport_Support() {
 		super(questId);
 	}
@@ -45,7 +42,6 @@ public class _15674Light_Armored_Guardian_Transport_Support extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		QuestDialog dialog = env.getDialog();
 		if (targetId == 703438) { //DF6_FOBJ_Od_Stone_Q15674_A.
