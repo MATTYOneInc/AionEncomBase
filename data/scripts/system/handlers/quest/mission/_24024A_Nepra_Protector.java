@@ -18,16 +18,15 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
+import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _24024A_Nepra_Protector extends QuestHandler {
 
-public class _24024A_Nepra_Protector extends QuestHandler
-{
     private final static int questId = 24024;
-	
     public _24024A_Nepra_Protector() {
         super(questId);
     }
@@ -38,6 +37,7 @@ public class _24024A_Nepra_Protector extends QuestHandler
 		qe.registerOnEnterZoneMissionEnd(questId);
         qe.registerQuestNpc(212861).addOnKillEvent(questId);
         qe.registerQuestNpc(204369).addOnTalkEvent(questId);
+        qe.registerQuestNpc(730739).addOnTalkEvent(questId);
         qe.registerQuestNpc(204361).addOnTalkEvent(questId);
 		qe.registerOnEnterZone(ZoneName.get("ALTAR_OF_THE_BLACK_DRAGON_220020000"), questId);
     }
@@ -111,7 +111,22 @@ public class _24024A_Nepra_Protector extends QuestHandler
                             }
                         case STEP_TO_2:
                             if (var == 1) {
-                                return defaultCloseDialog(env, 1, 3);
+                                return defaultCloseDialog(env, 1, 2);
+                            }
+
+                    }
+                }
+                break;
+                case 730739: {
+                    switch (env.getDialog()) {
+                        case START_DIALOG:
+                            if (var == 2) {
+                                return sendQuestDialog(env, 1693);
+                            }
+                        case STEP_TO_3:
+                            if (var == 2) {
+                                TeleportService2.teleportTo(env.getPlayer(), 220020000, 2035.9752f, 923.08563f, 222.1174f, (byte) 114);
+                                return defaultCloseDialog(env, 2, 3);
                             }
 
                     }

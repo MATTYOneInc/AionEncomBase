@@ -8724,5 +8724,9 @@
             <spot h="87" z="171.42047" y="1122.7277" x="2790.5688"/>
             <spot h="26" z="127.27081" y="2216.605" x="2349.0833"/>
         </spawn>
+        <!-- Mist Mane Teleport Statue -->   
+        <spawn npc_id="730739" respawn_time="295">
+            <spot h="2" z="171.25" y="1095.2135" x="2794.6345"/>
+        </spawn>
 	</spawn_map>
 </spawns>
