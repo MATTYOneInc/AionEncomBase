@@ -60,25 +60,16 @@ public class PlayerEventService {
 			if (EventsConfig.ENABLE_VIP_TICKETS) {
 				if (player.getClientConnection().getAccount().getMembership() == 1) {
 					HTMLService.sendGuideHtml(player, "Premium_Benefits");
-					// You can become stronger with the VIP benefits.\n See the VIP Tickets in the
-					// in-game shop.
-					PacketSendUtility.sendPacket(player,
-							new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_VIP_LOBBY_NOTICE_CASE12_POPUP_01, 0, 0));
 				}
 				if (player.getClientConnection().getAccount().getMembership() == 2) {
 					HTMLService.sendGuideHtml(player, "Vip_Benefits");
-					// You can become stronger with the VIP benefits.\n See the VIP Tickets in the
-					// in-game shop.
-					PacketSendUtility.sendPacket(player,
-							new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_VIP_LOBBY_NOTICE_CASE12_POPUP_01, 0, 0));
 				}
 				if (player.getClientConnection().getAccount().getMembership() == 0) {
 					HTMLService.sendGuideHtml(player, "Regular_Benefits");
 					// You can become stronger with the VIP benefits.\n See the VIP Tickets in the
 					// in-game shop.
+				    PacketSendUtility.sendPacket(player, new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_VIP_LOBBY_NOTICE_CASE12_POPUP_01, 0, 0));
 				}
-				PacketSendUtility.sendPacket(player,
-						new SM_QUESTION_WINDOW(SM_QUESTION_WINDOW.STR_VIP_LOBBY_NOTICE_CASE12_POPUP_01, 0, 0));
 			}
 		}
 	};
