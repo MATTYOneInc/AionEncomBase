@@ -201,8 +201,7 @@ public final class PlayerEnterWorldService {
 	private static final void showPasskey(final int objectId, final AionConnection client) {
 		client.getAccount().getCharacterPasskey().setConnectType(ConnectType.ENTER);
 		client.getAccount().getCharacterPasskey().setObjectId(objectId);
-		boolean isExistPasskey = DAOManager.getDAO(PlayerPasskeyDAO.class)
-				.existCheckPlayerPasskey(client.getAccount().getId());
+		boolean isExistPasskey = DAOManager.getDAO(PlayerPasskeyDAO.class).existCheckPlayerPasskey(client.getAccount().getId());
 		if (!isExistPasskey) {
 			client.sendPacket(new SM_CHARACTER_SELECT(0));
 		} else {
@@ -254,8 +253,7 @@ public final class PlayerEnterWorldService {
 		final Player player = PlayerService.getPlayer(objectId, account);
 		if (player != null && client.setActivePlayer(player)) {
 			player.setClientConnection(client);
-			log.info("[MAC_AUDIT] Player " + player.getName() + " (account " + account.getName()
-					+ ") has entered world with " + client.getMacAddress() + " MAC.");
+			log.info("[MAC_AUDIT] Player " + player.getName() + " (account " + account.getName() + ") has entered world with " + client.getMacAddress() + " MAC.");
 			World.getInstance().storeObject(player);
 			StigmaService.onPlayerLogin(player);
 			if (playerAccData.getPlayerCommonData().getLastOnline() != null) {
@@ -458,8 +456,9 @@ public final class PlayerEnterWorldService {
 			// PacketSendUtility.sendWhiteMessage(player, alInfo);
 			// "\uE026" //Timer.
 			// "\uE027" //Speaker.
+
 			player.setRates(Rates.getRatesFor(client.getAccount().getMembership()));
-			if (CustomConfig.PREMIUM_NOTIFY) {
+			if (CustomConfig.PREMIUM_NOTIFY_ENABLE) {
 				showPremiumAccountInfo(client, account);
 			}
 
@@ -472,10 +471,7 @@ public final class PlayerEnterWorldService {
 			}
 
 			if (player.isGM()) {
-				if (AdminConfig.INVULNERABLE_GM_CONNECTION || AdminConfig.INVISIBLE_GM_CONNECTION
-						|| AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Neutral")
-						|| AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Enemy")
-						|| AdminConfig.VISION_GM_CONNECTION || AdminConfig.WHISPER_GM_CONNECTION) {
+				if (AdminConfig.INVULNERABLE_GM_CONNECTION || AdminConfig.INVISIBLE_GM_CONNECTION || AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Neutral") || AdminConfig.ENEMITY_MODE_GM_CONNECTION.equalsIgnoreCase("Enemy") || AdminConfig.VISION_GM_CONNECTION || AdminConfig.WHISPER_GM_CONNECTION) {
 					PacketSendUtility.sendMessage(player, "=============================");
 					if (AdminConfig.INVULNERABLE_GM_CONNECTION) {
 						player.setInvul(true);
@@ -526,38 +522,37 @@ public final class PlayerEnterWorldService {
 			if (player.getMembership() >= 0) {
 				serviceBuff = new ServiceBuff(2);
 				serviceBuff.applyEffect(player, 2);
+				// Homerun Energy.
 				// SkillEngine.getInstance().applyEffectDirectly(323, player, player, 0);
-				// //Homerun Energy.
+                // [Event] Stigma Preservation.
 				// SkillEngine.getInstance().applyEffectDirectly(4714, player, player, 0);
-				// //[Event] Stigma Preservation.
-				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0); // [Event] Accessory Ascension
-																						// Benefits.
+				// [Event] Accessory Ascension
+				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0); 
 			}
 			// Service Security Buff.
 			if (player.getMembership() >= 1) {
 				serviceBuff = new ServiceBuff(220599);
 				serviceBuff.applyEffect(player, 220599);
+				// Homerun Energy.
 				// SkillEngine.getInstance().applyEffectDirectly(323, player, player, 0);
-				// //Homerun Energy.
+                // [Event] Stigma Preservation.
 				// SkillEngine.getInstance().applyEffectDirectly(4714, player, player, 0);
-				// //[Event] Stigma Preservation.
-				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0); // [Event] Accessory Ascension
-																						// Benefits.
+				// [Event] Accessory Ascension
+				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0);
 			}
 			// Service Security Buff.
 			if (player.getMembership() >= 2) {
 				serviceBuff = new ServiceBuff(230599);
 				serviceBuff.applyEffect(player, 230599);
+				// Homerun Energy.
 				// SkillEngine.getInstance().applyEffectDirectly(323, player, player, 0);
-				// //Homerun Energy.
+                // [Event] Stigma Preservation.
 				// SkillEngine.getInstance().applyEffectDirectly(4714, player, player, 0);
-				// //[Event] Stigma Preservation.
-				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0); // [Event] Accessory Ascension
-																						// Benefits.
+				// [Event] Accessory Ascension
+				SkillEngine.getInstance().applyEffectDirectly(4843, player, player, 0);
 			}
 			// PC Cafe Login Benefits.
-			if (player.getClientConnection().getAccount().getMembership() == 2 && player.getLevel() >= 66
-					&& player.getLevel() <= 83) {
+			if (player.getClientConnection().getAccount().getMembership() == 2 && player.getLevel() >= 66 && player.getLevel() <= 83) {
 				serviceBuff = new ServiceBuff(4);
 				serviceBuff.applyEffect(player, 4);
 				PacketSendUtility.sendBrightYellowMessageOnCenter(player, "Your account vip ! You get extra service!");
@@ -606,11 +601,9 @@ public final class PlayerEnterWorldService {
 			PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_MSG_CHARGE_EXP_POINT, 60000);
 			// "Auto PowerShard ON"
 			if (player.getEquipment().isPowerShardEquipped() && CustomConfig.ENABLE_AUTO_POWERSHARD) {
-				PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_WEAPON_BOOST_BOOST_MODE_STARTED,
-						7000);
+				PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_WEAPON_BOOST_BOOST_MODE_STARTED, 7000);
 				player.setState(CreatureState.POWERSHARD);
-				PacketSendUtility.playerSendPacketTime(player, new SM_EMOTION(player, EmotionType.POWERSHARD_ON, 0, 0),
-						7000);
+				PacketSendUtility.playerSendPacketTime(player, new SM_EMOTION(player, EmotionType.POWERSHARD_ON, 0, 0), 7000);
 			}
 			// Alliance Packet after SetBindPoint.
 			PlayerAllianceService.onPlayerLogin(player);
@@ -694,12 +687,8 @@ public final class PlayerEnterWorldService {
 					}
 				}
 			}
-			player.getController().addTask(TaskId.PLAYER_UPDATE,
-					ThreadPoolManager.getInstance().scheduleAtFixedRate(new GeneralUpdateTask(player.getObjectId()),
-							PeriodicSaveConfig.PLAYER_GENERAL * 1000, PeriodicSaveConfig.PLAYER_GENERAL * 1000));
-			player.getController().addTask(TaskId.INVENTORY_UPDATE,
-					ThreadPoolManager.getInstance().scheduleAtFixedRate(new ItemUpdateTask(player.getObjectId()),
-							PeriodicSaveConfig.PLAYER_ITEMS * 1000, PeriodicSaveConfig.PLAYER_ITEMS * 1000));
+			player.getController().addTask(TaskId.PLAYER_UPDATE, ThreadPoolManager.getInstance().scheduleAtFixedRate(new GeneralUpdateTask(player.getObjectId()), PeriodicSaveConfig.PLAYER_GENERAL * 1000, PeriodicSaveConfig.PLAYER_GENERAL * 1000));
+			player.getController().addTask(TaskId.INVENTORY_UPDATE, ThreadPoolManager.getInstance().scheduleAtFixedRate(new ItemUpdateTask(player.getObjectId()), PeriodicSaveConfig.PLAYER_ITEMS * 1000, PeriodicSaveConfig.PLAYER_ITEMS * 1000));
 			SurveyService.getInstance().showAvailable(player);
 			if (EventsConfig.ENABLE_EVENT_SERVICE) {
 				EventService.getInstance().onPlayerLogin(player);
@@ -780,8 +769,7 @@ public final class PlayerEnterWorldService {
 	}
 
 	private static void playerLoggedIn(Player player) {
-		log.info("Player logged in: " + player.getName() + " Account: "
-				+ player.getClientConnection().getAccount().getName());
+		log.info("Player logged in: " + player.getName() + " Account: " + player.getClientConnection().getAccount().getName());
 		player.getCommonData().setOnline(true);
 		DAOManager.getDAO(PlayerDAO.class).onlinePlayer(player, true);
 		player.onLoggedIn();
@@ -814,29 +802,18 @@ public final class PlayerEnterWorldService {
 		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "============================"));
 		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0] Welcome to Aion 5.8"));
 		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "============================"));
-		PacketSendUtility.sendPacket(player,
-				new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0] Aion Account Information"));
-		PacketSendUtility.sendPacket(player,
-				new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:Toll Points：;0 1 0] "
-						+ player.getClientConnection().getAccount().getToll()));
-		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
-				"[color:Info：;0 1 0][color:Luna Points：;0 1 0] " + player.getLunaAccount()));
+		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0] Aion Account Information"));
+		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:Toll Points：;0 1 0] " + player.getClientConnection().getAccount().getToll()));
+		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:Luna Points：;0 1 0] " + player.getLunaAccount()));
 		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "============================"));
-		PacketSendUtility.sendPacket(player,
-				new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:Player Name：;0 1 0] " + player.getName()));
+		PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:Player Name：;0 1 0] " + player.getName()));
 		if (player.getAccessLevel() > 0) {
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
-					"[color:Info：;0 1 0][color:PvP Attack Ratio：;0 1 0] " + pvpAttackRatio * 0.01f + "%"));
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
-					"[color:Info：;0 1 0][color:PvP Defense Ratio：;0 1 0] " + pvpDefenseRatio * 0.01f + "%"));
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
-					"[color:Info：;0 1 0][color:PvP Physc Attack Ratio：;0 1 0] " + pvpAttackPhyscRatio * 0.1f + "%"));
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
-					"[color:Info：;0 1 0][color:PvP Magic Attack Ratio：;0 1 0] " + pvpAttackMagicRatio * 0.1f + "%"));
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
-					"[color:Info：;0 1 0][color:PvP Physc Defend Ratio：;0 1 0] " + pvpDefensePhyscRatio * 0.1f + "%"));
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564,
-					"[color:Info：;0 1 0][color:PvP Magic Defend Ratio：;0 1 0] " + pvpDefenseMagicRatio * 0.1f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Attack Ratio：;0 1 0] " + pvpAttackRatio * 0.01f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Defense Ratio：;0 1 0] " + pvpDefenseRatio * 0.01f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Physc Attack Ratio：;0 1 0] " + pvpAttackPhyscRatio * 0.1f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Magic Attack Ratio：;0 1 0] " + pvpAttackMagicRatio * 0.1f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Physc Defend Ratio：;0 1 0] " + pvpDefensePhyscRatio * 0.1f + "%"));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1300564, "[color:Info：;0 1 0][color:PvP Magic Defend Ratio：;0 1 0] " + pvpDefenseMagicRatio * 0.1f + "%"));
 		}
 	}
 }

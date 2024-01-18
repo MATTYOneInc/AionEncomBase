@@ -75,10 +75,10 @@ public class MembershipConfig {
 	/**
 	 * Membership Tags
 	 */
-	@Property(key = "gameserver.membership.tag.display", defaultValue = "true")
-	public static boolean PREMIUM_TAG_DISPLAY;
-	@Property(key = "gameserver.membership.tag.vip", defaultValue = "\uE02E %s")
+	@Property(key = "gameserver.membership.tag.display.enable", defaultValue = "true")
+	public static boolean PREMIUM_TAG_DISPLAY_ENABLE;
+	@Property(key = "gameserver.membership.tag.vip", defaultValue = "\uE06A %s")
 	public static String TAG_VIP;
-	@Property(key = "gameserver.membership.tag.premium", defaultValue = "\uE02D %s")
+	@Property(key = "gameserver.membership.tag.premium", defaultValue = "\uE055 %s")
 	public static String TAG_PREMIUM;
 }

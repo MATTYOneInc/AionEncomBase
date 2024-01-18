@@ -64,17 +64,9 @@ public class GMService {
 		if (player.isGM()) {
 			gms.put(player.getObjectId(), player);
 			if (announceAny) {
-				PacketSendUtility.broadcastPacket(player,
-						new SM_MESSAGE(player,
-								"Announce: " + player.getCustomTag(true) + player.getName() + " appear !!",
-								ChatType.BRIGHT_YELLOW_CENTER),
-						true);
+				PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "Announce: " + player.getCustomTag(true) + player.getName() + " appear !!", ChatType.BRIGHT_YELLOW_CENTER), true);
 			} else if (announceList.contains(Byte.valueOf(player.getAccessLevel()))) {
-				PacketSendUtility.broadcastPacket(player,
-						new SM_MESSAGE(player,
-								"Announce: " + player.getCustomTag(true) + player.getName() + " appear !!",
-								ChatType.BRIGHT_YELLOW_CENTER),
-						true);
+				PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "Announce: " + player.getCustomTag(true) + player.getName() + " appear !!", ChatType.BRIGHT_YELLOW_CENTER), true);
 			}
 		}
 	}
@@ -90,16 +82,16 @@ public class GMService {
 			StringBuilder sb = new StringBuilder(adminTag);
 
 			// * = Premium & VIP Membership
-			if (MembershipConfig.PREMIUM_TAG_DISPLAY) {
+			if (MembershipConfig.PREMIUM_TAG_DISPLAY_ENABLE) {
 				switch (player.getClientConnection().getAccount().getMembership()) {
-				case 1:
-					adminTag = sb.replace(0, sb.length(), MembershipConfig.TAG_PREMIUM).toString();
-					break;
-				case 2:
-					adminTag = sb.replace(0, sb.length(), MembershipConfig.TAG_VIP).toString();
-					break;
+					case 1:
+						adminTag = sb.replace(0, sb.length(), MembershipConfig.TAG_PREMIUM).toString();
+						break;
+					case 2:
+						adminTag = sb.replace(0, sb.length(), MembershipConfig.TAG_VIP).toString();
+						break;
+					}
 				}
-			}
 
 			// * = Wedding
 			if (player.isMarried()) {
@@ -107,31 +99,10 @@ public class GMService {
 				adminTag += "\uE020" + partnerName;
 			}
 
-			// * = Server Staff Access Level
-			// if (AdminConfig.ADMIN_TAG_ENABLE && player.isGmMode()) {
-			// switch (player.getClientConnection().getAccount().getAccessLevel()) {
-			// case 1:
-			// adminTag = AdminConfig.ADMIN_TAG_1.replace("%s", sb.toString());
-			// break;
-			// case 2:
-			// adminTag = AdminConfig.ADMIN_TAG_2.replace("%s", sb.toString());
-			// break;
-			// case 3:
-			// adminTag = AdminConfig.ADMIN_TAG_3.replace("%s", sb.toString());
-			// break;
-			// case 4:
-			// adminTag = AdminConfig.ADMIN_TAG_4.replace("%s", sb.toString());
-			// break;
-			// case 5:
-			// adminTag = AdminConfig.ADMIN_TAG_5.replace("%s", sb.toString());
-			// break;
-			// }
-			// }
 
 			Iterator<Player> iter = World.getInstance().getPlayersIterator();
 			while (iter.hasNext()) {
-				PacketSendUtility.sendBrightYellowMessageOnCenter(iter.next(), "Information : "
-						+ String.format(adminTag, player.getName()) + " is now available for support!");
+				PacketSendUtility.sendBrightYellowMessageOnCenter(iter.next(), "Information : " + String.format(adminTag, player.getName()) + " is now available for support!");
 			}
 		}
 	}
@@ -141,25 +112,6 @@ public class GMService {
 		String adminTag = "%s";
 		StringBuilder sb = new StringBuilder(adminTag);
 
-		// * = Premium & VIP Membership
-		// if (MembershipConfig.PREMIUM_TAG_DISPLAY) {
-		// switch (player.getClientConnection().getAccount().getMembership()) {
-		// case 1:
-		// adminTag = sb.replace(0, sb.length(),
-		// MembershipConfig.TAG_PREMIUM).toString();
-		// break;
-		// case 2:
-		// adminTag = sb.replace(0, sb.length(), MembershipConfig.TAG_VIP).toString();
-		// break;
-		// }
-		// }
-
-		// * = Wedding
-		// if (player.isMarried()) {
-		// String partnerName =
-		// DAOManager.getDAO(PlayerDAO.class).getPlayerNameByObjId(player.getPartnerId());
-		// adminTag += "\uE020"+ partnerName;
-		// }
 
 		// * = Server Staff Access Level
 		if (AdminConfig.ADMIN_TAG_ENABLE && player.isGmMode()) {
@@ -184,8 +136,7 @@ public class GMService {
 
 		Iterator<Player> iter = World.getInstance().getPlayersIterator();
 		while (iter.hasNext()) {
-			PacketSendUtility.sendBrightYellowMessageOnCenter(iter.next(),
-					"Information : " + String.format(adminTag, player.getName()) + " is now unavailable for support!");
+			PacketSendUtility.sendBrightYellowMessageOnCenter(iter.next(), "Information : " + String.format(adminTag, player.getName()) + " is now unavailable for support!");
 		}
 	}
 

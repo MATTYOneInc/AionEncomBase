@@ -54,8 +54,8 @@ public class CustomConfig {
 	public static boolean FACTION_CMD_CHANNEL;
 	@Property(key = "gameserver.faction.chatchannels", defaultValue = "false")
 	public static boolean FACTION_CHAT_CHANNEL;
-	@Property(key = "gameserver.premium.notify", defaultValue = "false")
-	public static boolean PREMIUM_NOTIFY;
+	@Property(key = "gameserver.premium.notify.enable", defaultValue = "false")
+	public static boolean PREMIUM_NOTIFY_ENABLE;
 	@Property(key = "gameserver.enchant.announce.enable", defaultValue = "true")
 	public static boolean ENABLE_ENCHANT_ANNOUNCE;
 	@Property(key = "gameserver.chat.factions.enable", defaultValue = "false")

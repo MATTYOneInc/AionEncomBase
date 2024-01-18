@@ -24,6 +24,7 @@ import com.aionemu.gameserver.services.events.FFAService;
 import com.aionemu.gameserver.services.events.LadderService;
 import com.aionemu.gameserver.services.events.bg.DeathmatchBg;
 import com.aionemu.gameserver.services.events.bg.SoloSurvivorBg;
+import com.aionemu.gameserver.model.account.Account;
 
 import javolution.util.FastList;
 
@@ -51,11 +52,9 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		final int raceId;
 		int bgIndex = 0;
 
-		if (player.getAdminNeutral() > 1 || activePlayer.getAdminNeutral() > 1 || player.isInPvEMode()
-				|| activePlayer.isInPvEMode()) {
+		if (player.getAdminNeutral() > 1 || activePlayer.getAdminNeutral() > 1 || player.isInPvEMode() || activePlayer.isInPvEMode()) {
 			raceId = activePlayer.getRace().getRaceId();
-		} else if (FFAService.getInstance().isInArena(activePlayer) && activePlayer.isFFA() || activePlayer.isInPkMode()
-				|| activePlayer.isBandit()) {
+		} else if (FFAService.getInstance().isInArena(activePlayer) && activePlayer.isFFA() || activePlayer.isInPkMode() || activePlayer.isBandit()) {
 			if (player.getRace() == activePlayer.getRace() && player != activePlayer) {
 				raceId = (player.getRace().getRaceId() == 0 ? 1 : 0);
 			} else if (player != activePlayer) {
@@ -69,10 +68,8 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 			raceId = player.getRace().getRaceId();
 		}
 
-		if (!player.isSpectating() && player.getBattleground() != null
-				&& (player.isInGroup2() || player.isInAlliance2())) {
-			bgIndex = (player.isInGroup2()) ? player.getPlayerGroup2().getBgIndex()
-					: player.getPlayerAlliance2().getBgIndex();
+		if (!player.isSpectating() && player.getBattleground() != null && (player.isInGroup2() || player.isInAlliance2())) {
+			bgIndex = (player.isInGroup2()) ? player.getPlayerGroup2().getBgIndex() : player.getPlayerAlliance2().getBgIndex();
 		} else {
 			bgIndex = player.getBgIndex();
 		}
@@ -113,15 +110,14 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		writeH(player.getState());
 		writeB(new byte[8]);
 		writeC(player.getHeading());
-		String nameFormat = "%s";
-
+        String nameFormat = "%s";   
 		/**
 		 * Premium & VIP Membership
 		 */
 		StringBuilder sb = new StringBuilder(nameFormat);
 		if (player.getClientConnection() != null) {
 			// * = Premium & VIP Membership
-			if (MembershipConfig.PREMIUM_TAG_DISPLAY) {
+			if (MembershipConfig.PREMIUM_TAG_DISPLAY_ENABLE) {
 				switch (player.getClientConnection().getAccount().getMembership()) {
 				case 1:
 					nameFormat = sb.replace(0, sb.length(), MembershipConfig.TAG_PREMIUM).toString();
@@ -176,8 +172,7 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		writeH(player.getCommonData().isHaveMentorFlag() ? 1 : 0);
 		writeH(player.getCastingSkillId());
 
-		if (player.isLegionMember() && !player.isBandit() || player.isLegionMember() && !player.isFFA()
-				|| player.isLegionMember() && player.getBattleground() == null) {
+		if (player.isLegionMember() && !player.isBandit() || player.isLegionMember() && !player.isFFA() || player.isLegionMember() && player.getBattleground() == null) {
 			writeD(player.getLegion().getLegionId());
 			writeC(player.getLegion().getLegionEmblem().getEmblemId());
 			writeC(player.getLegion().getLegionEmblem().getEmblemType().getValue());
@@ -186,10 +181,8 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 			writeC(player.getLegion().getLegionEmblem().getColor_g());
 			writeC(player.getLegion().getLegionEmblem().getColor_b());
 			writeS(player.getLegion().getLegionName());
-		} else if (!player.isSpectating() && player.getBattleground() != null
-				&& (player.isInGroup2() || player.isInAlliance2())) {
-			bgIndex = (player.isInGroup2()) ? player.getPlayerGroup2().getBgIndex()
-					: player.getPlayerAlliance2().getBgIndex();
+		} else if (!player.isSpectating() && player.getBattleground() != null && (player.isInGroup2() || player.isInAlliance2())) {
+			bgIndex = (player.isInGroup2()) ? player.getPlayerGroup2().getBgIndex() : player.getPlayerAlliance2().getBgIndex();
 			LegionEmblem emblem = LadderService.getInstance().getCapeEmblemByIndex(bgIndex);
 			writeD(bgIndex + 1);
 			writeC(emblem.getEmblemId());
@@ -199,9 +192,7 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 			writeC(player.isLegionMember() ? player.getLegion().getLegionEmblem().getColor_g() : 0);
 			writeC(player.isLegionMember() ? player.getLegion().getLegionEmblem().getColor_b() : 0);
 			writeS(LadderService.getInstance().getNameByIndex(bgIndex));
-		} else if (!player.isSpectating() && player.getBattleground() != null && player.getBattleground().is1v1()
-				&& (player.getBattleground() instanceof DeathmatchBg
-						|| player.getBattleground() instanceof SoloSurvivorBg)) {
+		} else if (!player.isSpectating() && player.getBattleground() != null && player.getBattleground().is1v1() && (player.getBattleground() instanceof DeathmatchBg || player.getBattleground() instanceof SoloSurvivorBg)) {
 			writeD(bgIndex + 1);
 			LegionEmblem emblem = LadderService.getInstance().getCapeEmblemByIndex(player.getBgIndex());
 			writeC(emblem.getEmblemId());
@@ -352,8 +343,7 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		writeH(player.getLevel()); // [level]
 		writeH(player.getPlayerSettings().getDisplay()); // unk - 0x04
 		writeH(player.getPlayerSettings().getDeny()); // unk - 0x00
-		writeH((player.isFFA() || player.getBattleground() != null || player.isBandit()) ? 0
-				: player.getAbyssRank().getRank().getId()); // abyss rank
+		writeH((player.isFFA() || player.getBattleground() != null || player.isBandit()) ? 0 : player.getAbyssRank().getRank().getId()); // abyss rank
 		writeH(0x00); // unk - 0x01
 		writeD(player.getTarget() == null ? 0 : player.getTarget().getObjectId());
 		writeC(0); // suspect id
@@ -362,15 +352,23 @@ public class SM_PLAYER_INFO extends AionServerPacket {
 		writeD(player.getHouseOwnerId());
 
 		/**
-		 * System By Ranastic
+		 * System By Ranastic. Remade DainAvenger
 		 */
-		writeD(player.getPlayersBonusId());
-		writeD(10); // Player Buff.
-		writeD(0); // New Buff Icons.
+	    writeD(player.getPlayersBonusId());
+        // writeD(10); // Player Buff.
+        if (MembershipConfig.PREMIUM_TAG_DISPLAY_ENABLE) {
+            if (player.getMembership() == 1) {
+		        writeD(10); // Player Buff.
+		        writeC(6); // Vip Rank Icon.
+            } 
+            if (player.getMembership() == 2) {
+		        writeD(10); // Player Buff.
+		        writeD(0); // New Buff Icons.
+            }
+        }
 		writeC(raceId == 0 ? 3 : 5); // Language: Asmodians 3/Elyos 5
 		writeC(player.getConquerorInfo().getRank()); // Conqueror 4.8
 		writeC(player.getProtectorInfo().getRank()); // Protector 4.8
-		writeC(6); // Vip Rank Icon.
-		writeD(1); // unk 5.5
+        writeD(1); // unk 5.5
 	}
 }
