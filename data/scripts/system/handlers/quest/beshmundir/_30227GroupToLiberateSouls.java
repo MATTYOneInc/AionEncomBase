@@ -28,22 +28,19 @@ import com.aionemu.gameserver.services.QuestService;
 /**
  * @author Gigi
  */
-
 public class _30227GroupToLiberateSouls extends QuestHandler {
 
 	private final static int questId = 30227;
-
 	public _30227GroupToLiberateSouls() {
 		super(questId);
 	}
 
 	@Override
 	public void register() {
-		int[] mobs = { 216590, 216735, 216734, 216737, 216245 };
+		int[] mobs = {216590, 216735, 216734, 216737, 216245};
 		qe.registerQuestNpc(798946).addOnQuestStart(questId);
 		qe.registerQuestNpc(798946).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799521).addOnTalkEvent(questId);
-		qe.registerQuestNpc(799517).addOnTalkEvent(questId);
 		for (int mob : mobs)
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		qe.registerOnQuestTimerEnd(questId);
@@ -53,10 +50,8 @@ public class _30227GroupToLiberateSouls extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = env.getTargetId();
 		QuestDialog dialog = env.getDialog();
-			
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798946) {
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -67,10 +62,8 @@ public class _30227GroupToLiberateSouls extends QuestHandler {
 				}
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 799521: {
@@ -81,15 +74,8 @@ public class _30227GroupToLiberateSouls extends QuestHandler {
 							}
 						}
 						case STEP_TO_1: 
+                            QuestService.questTimerStart(env, 300); 
 							return defaultCloseDialog(env, 0, 1);
-					}
-				}
-				case 799517: {
-					switch (dialog) {
-						case STEP_TO_1: {
-							QuestService.questTimerStart(env, 300);
-							return true;
-						}
 					}
 				}
 			}
@@ -115,12 +101,9 @@ public class _30227GroupToLiberateSouls extends QuestHandler {
 	public boolean onQuestTimerEndEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
-
 		if (qs.getStatus() == QuestStatus.START) {
 			if (var == 1) {
 				qs.setQuestVarById(0, 0);
@@ -135,22 +118,20 @@ public class _30227GroupToLiberateSouls extends QuestHandler {
 	public boolean onKillEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null || qs.getStatus() != QuestStatus.START) {
 			return false;
 		}
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
+        int var = qs.getQuestVarById(0);   
 		switch (targetId) {
 			case 216590:
-				if (qs.getQuestVarById(0) == 1) {
-					QuestService.questTimerEnd(env);
-					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+				if (var == 1) {
+					qs.setQuestVarById(0, var + 1);
 					updateQuestStatus(env);
 					playQuestMovie(env, 445);
+					QuestService.questTimerEnd(env);
 					return true;
 				}
 				break;
@@ -158,7 +139,8 @@ public class _30227GroupToLiberateSouls extends QuestHandler {
 			case 216734:
 			case 216737:
 			case 216245:
-				if (qs.getQuestVarById(0) == 2) {
+				if (var == 2) {
+                    qs.setQuestVarById(0, var + 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return true;
