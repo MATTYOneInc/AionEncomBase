@@ -37,12 +37,11 @@ public class _30227GroupToLiberateSouls extends QuestHandler {
 
 	@Override
 	public void register() {
-		int[] mobs = {216590, 216735, 216734, 216737, 216245};
 		qe.registerQuestNpc(798946).addOnQuestStart(questId);
 		qe.registerQuestNpc(798946).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799521).addOnTalkEvent(questId);
-		for (int mob : mobs)
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
+		qe.registerQuestNpc(216586).addOnKillEvent(questId);
+		qe.registerQuestNpc(216245).addOnKillEvent(questId);
 		qe.registerOnQuestTimerEnd(questId);
 	}
 
@@ -116,37 +115,30 @@ public class _30227GroupToLiberateSouls extends QuestHandler {
 
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
-		Player player = env.getPlayer();
-		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() != QuestStatus.START) {
-			return false;
-		}
-		int targetId = 0;
-		if (env.getVisibleObject() instanceof Npc)
-			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-        int var = qs.getQuestVarById(0);   
+        final Player player = env.getPlayer();
+        final QuestState qs = player.getQuestStateList().getQuestState(questId);
+        int targetId = env.getTargetId();
+		if (qs != null && qs.getStatus() == QuestStatus.START) {
+        int var = qs.getQuestVarById(0);
 		switch (targetId) {
-			case 216590:
+			case 216586: {
 				if (var == 1) {
-					qs.setQuestVarById(0, var + 1);
-					updateQuestStatus(env);
+			        QuestService.questTimerEnd(env);
+			        qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+			        updateQuestStatus(env);
 					playQuestMovie(env, 445);
-					QuestService.questTimerEnd(env);
 					return true;
-				}
-				break;
-			case 216735:
-			case 216734:
-			case 216737:
-			case 216245:
+				    }
+                }
+			    case 216245: {
 				if (var == 2) {
-                    qs.setQuestVarById(0, var + 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return true;
-				}
-				break;
-		}
+				    }
+                } 
+		    }
+        }
 		return false;
 	}
 }
