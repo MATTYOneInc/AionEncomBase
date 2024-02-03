@@ -16,6 +16,11 @@
         </actions>
         <uselimits gender="FEMALE"/>
     </item_template>
+	    <item_template id="190100302" name="Phantom Steed" desc="1761555" level="10" mask="4172" category="NONE" max_stack_count="1" item_type="NORMAL" quality="EPIC" price="5" race="PC_ALL" restrict="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" bonus_apply="INVENTORY" activate_target="STANDALONE" activate_count="1000">
+        <actions>
+            <ride npc_id="2000116"/>
+        </actions>
+    </item_template>
 	    <item_template id="190100303" name="Phantom Steed" desc="1761555" level="10" mask="4172" category="NONE" max_stack_count="1" item_type="NORMAL" quality="EPIC" price="5" race="PC_ALL" restrict="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" bonus_apply="INVENTORY" activate_target="STANDALONE" activate_count="1000">
         <actions>
             <ride npc_id="2000116"/>
