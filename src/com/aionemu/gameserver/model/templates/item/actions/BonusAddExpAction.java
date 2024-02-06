@@ -35,28 +35,29 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BonusAddExpAction")
-public class BonusAddExpAction extends AbstractItemAction {
-	@XmlAttribute(name = "rate")
-	protected Integer rate;
+public class BonusAddExpAction extends AbstractItemAction
+{
+    @XmlAttribute(name = "rate")
+    protected Integer rate;
 
-	@XmlAttribute()
-	protected boolean isPercent = true;
+    @XmlAttribute()
+    protected boolean isPercent = true;
 
-	public BonusAddExpAction() {
-	}
-
-	public BonusAddExpAction(Integer rate) {
-		this.rate = rate;
-	}
-
-	public Integer getRate() {
-		return rate;
-	}
-
-	public void setRate(Integer rate) {
-		this.rate = rate;
-	}
-
+    public BonusAddExpAction() {
+    }
+	
+    public BonusAddExpAction(Integer rate) {
+        this.rate = rate;
+    }
+	
+    public Integer getRate() {
+        return rate;
+    }
+	
+    public void setRate(Integer rate) {
+        this.rate = rate;
+    }
+	
 	@Override
 	public boolean canAct(Player player, Item parentItem, Item targetItem) {
 		if (parentItem == null) {
@@ -65,18 +66,17 @@ public class BonusAddExpAction extends AbstractItemAction {
 		}
 		return true;
 	}
-
-	@Override
+	
+    @Override
 	public void act(final Player player, final Item parentItem, final Item targetItem) {
-		long exp = player.getCommonData().getExpNeed();
-		long expPercent = isPercent ? exp * rate / 100 : rate;
-		if (player.getInventory().decreaseByObjectId(parentItem.getObjectId().intValue(), 1)) {
-			player.getCommonData().setExp(player.getCommonData().getExp() + expPercent, false);
-			player.getObserveController().notifyItemuseObservers(parentItem);
+        long exp = player.getCommonData().getExpNeed();
+        long expPercent = Math.round((exp * rate) / 100f);
+        if (player.getInventory().decreaseByObjectId(parentItem.getObjectId().intValue(), 1)) {
+            player.getCommonData().addExp(expPercent, null);
+            player.getObserveController().notifyItemuseObservers(parentItem);
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_GET_EXP2(expPercent));
-			ItemTemplate itemTemplate = parentItem.getItemTemplate();
-			PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(),
-					parentItem.getObjectId().intValue(), itemTemplate.getTemplateId()), true);
-		}
-	}
+            ItemTemplate itemTemplate = parentItem.getItemTemplate();
+            PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId().intValue(), parentItem.getObjectId().intValue(), itemTemplate.getTemplateId()), true);
+        }
+    }
 }

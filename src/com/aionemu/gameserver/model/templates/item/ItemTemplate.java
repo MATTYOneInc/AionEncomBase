@@ -326,7 +326,7 @@ public class ItemTemplate extends VisibleObjectTemplate {
 		int requiredLevel = restricts[playerClass.ordinal()];
 		// A player can equip item between 66-83 but have not full stats apply.
 		if (requiredLevel >= 66 && requiredLevel <= 83) {
-			return 66;
+			return requiredLevel;
 		}
 		if (requiredLevel == 0) {
 			return -1;
