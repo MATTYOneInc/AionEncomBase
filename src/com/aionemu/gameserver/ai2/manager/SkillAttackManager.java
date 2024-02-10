@@ -30,7 +30,9 @@ import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 import com.aionemu.gameserver.skillengine.model.SkillType;
 import com.aionemu.gameserver.utils.MathUtil;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
-
+/**
+* @modified Yon (Aion Reconstruction Project) -- removed extra delay from {@link #performAttack(NpcAI2, int)}
+*/
 public class SkillAttackManager {
 
 	public static void performAttack(NpcAI2 npcAI, int delay) {
@@ -44,8 +46,8 @@ public class SkillAttackManager {
 		}
 		if (npcAI.setSubStateIfNot(AISubState.CAST)) {
 			if (delay > 0) {
-				ThreadPoolManager.getInstance().schedule(new SkillAction(npcAI),
-						delay + DataManager.SKILL_DATA.getSkillTemplate(npcAI.getSkillId()).getDuration());
+				//Who added the extra delay? The cast time will be handled later, this delay is for when the cast starts.
+				ThreadPoolManager.getInstance().schedule(new SkillAction(npcAI), delay/* + DataManager.SKILL_DATA.getSkillTemplate(npcAI.getSkillId()).getDuration()*/);
 			} else {
 				skillAction(npcAI);
 			}

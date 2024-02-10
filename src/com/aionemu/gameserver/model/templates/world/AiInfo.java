@@ -31,7 +31,7 @@ public class AiInfo {
 	public static final AiInfo DEFAULT = new AiInfo();
 
 	@XmlAttribute(name = "chase_target")
-	private int chaseTarget = 50;
+	private int chaseTarget = 80;
 	@XmlAttribute(name = "chase_home")
 	private int chaseHome = 200;
 
