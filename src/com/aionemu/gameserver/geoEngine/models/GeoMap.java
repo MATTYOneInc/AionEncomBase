@@ -424,7 +424,7 @@ public class GeoMap extends Node {
 					// check if the terrain quad is removed.
 					if (terrainCutoutData != null) {
 						if (Arrays.binarySearch(terrainCutoutData, index) >= 0) {
-							// return true; //TODO
+							return null;
 						}
 					}
 				} else {

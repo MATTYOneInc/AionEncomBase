@@ -2298,7 +2298,7 @@
       <spot x="325.690369" y="1654.225586" z="256.000000" h="46" />
       <spot x="210.383179" y="1607.871338" z="273.150574" h="0" />
     </spawn>
-    <spawn npc_id="210840" respawn_time="600">
+    <spawn npc_id="235480" respawn_time="600">
       <spot x="1312.500000" y="2458.031982" z="271.000000" h="90" />
       <spot x="1371.307251" y="2464.177002" z="287.165985" h="33" />
       <spot x="1257.156738" y="2481.294189" z="266.000000" h="3" />
@@ -2359,7 +2359,7 @@
     <spawn npc_id="790006" respawn_time="300">
       <spot x="1942.376221" y="1991.076782" z="356.725006" h="106" />
     </spawn>
-    <spawn npc_id="212072" respawn_time="600">
+    <spawn npc_id="235472" respawn_time="600">
       <spot x="1339.738159" y="2761.333496" z="318.068939" h="53" />
     </spawn>
     <spawn npc_id="210930" respawn_time="240">
@@ -2784,7 +2784,7 @@
     <spawn npc_id="205251" respawn_time="60">
       <spot x="1783.131836" y="882.162415" z="423.000000" h="46" />
     </spawn>
-    <spawn npc_id="210840" respawn_time="600">
+    <spawn npc_id="235479" respawn_time="600">
       <spot x="1227.969971" y="2614.149902" z="295.000000" h="51" />
       <spot x="1423.651489" y="2540.066650" z="313.000000" h="0" random_walk="2" walker_id="LF2_H_MobPath_PG_KrallScoutHK_29" />
       <spot x="1458.434082" y="2589.525879" z="313.000000" h="58" random_walk="2" walker_id="LF2_H_MobPath_PG_KrallScoutHK_29_3" />
@@ -4449,7 +4449,7 @@
     <spawn npc_id="203933" respawn_time="600">
       <spot x="1530.363770" y="517.690979" z="358.313202" h="60" />
     </spawn>
-    <spawn npc_id="212074" respawn_time="600">
+    <spawn npc_id="235474" respawn_time="600">
       <spot x="1313.315186" y="2639.536377" z="291.061981" h="80" />
       <spot x="1268.802124" y="2609.842041" z="290.000000" h="0" />
       <spot x="1273.086060" y="2654.961426" z="295.000000" h="75" />
@@ -4526,7 +4526,7 @@
       <spot x="2482.718750" y="328.650269" z="494.806458" h="60" />
       <spot x="2513.675537" y="341.057129" z="494.806458" h="60" />
     </spawn>
-    <spawn npc_id="210869" respawn_time="600">
+    <spawn npc_id="235476" respawn_time="600">
       <spot x="1244.752075" y="2634.912109" z="295.000000" h="113" />
       <spot x="1377.915039" y="2636.152100" z="300.061981" h="91" />
       <spot x="1231.948975" y="2722.572754" z="311.154114" h="51" />
@@ -4566,7 +4566,7 @@
     <spawn npc_id="211805" respawn_time="14400">
       <spot x="308.791229" y="192.994507" z="35.099998" h="0" random_walk="0" walker_id="LF2_C3_Mobpath_N_7C_DevaNamed_33" />
     </spawn>
-    <spawn npc_id="212063" respawn_time="600">
+    <spawn npc_id="235463" respawn_time="600">
       <spot x="1349.945068" y="2722.521240" z="307.068939" h="76" />
       <spot x="1372.091797" y="2604.932373" z="298.000000" h="26" />
       <spot x="1439.071289" y="2645.942383" z="302.000000" h="73" />
@@ -4764,7 +4764,7 @@
       <spot x="355.702576" y="240.462723" z="213.000000" h="0" random_walk="0" walker_id="LF2_C3_MobPath_G_3C_DritonPath_30_2" />
     </spawn>
     <spawn npc_id="211697" respawn_time="1200">
-      <spot x="1396.317871" y="2634.149170" z="300.000000" h="83" alternate_id="212075" select_prob="7102" />
+      <spot x="1396.317871" y="2634.149170" z="300.000000" h="83" alternate_id="235475" select_prob="7102" />
     </spawn>
     <spawn npc_id="210342" respawn_time="60">
       <spot x="429.647736" y="2647.810791" z="155.000000" h="90" random_walk="2" />
@@ -5133,7 +5133,7 @@
       <spot x="264.235870" y="2733.646240" z="270.967896" h="15" walker_id="LF2_NPC_Guard_OutPost_Path_5" />
       <spot x="269.660004" y="2789.040039" z="274.000000" h="105" walker_id="LF2_NPC_Guard_OutPost_Path_3" />
     </spawn>
-    <spawn npc_id="210892" respawn_time="600">
+    <spawn npc_id="235477" respawn_time="600">
       <spot x="1364.449951" y="2692.199951" z="308.959991" h="40" />
       <spot x="1367.045532" y="2717.475098" z="308.682861" h="83" />
       <spot x="1324.195557" y="2722.888428" z="304.000000" h="81" />
@@ -5931,7 +5931,7 @@
     <spawn npc_id="203992" respawn_time="180">
       <spot x="1620.424561" y="2253.448242" z="295.000000" h="0" />
     </spawn>
-    <spawn npc_id="212075" respawn_time="600">
+    <spawn npc_id="235475" respawn_time="600">
       <spot x="1259.845703" y="2763.719482" z="308.000000" h="96" />
       <spot x="1421.140015" y="2642.550049" z="303.000000" h="70" />
     </spawn>
@@ -6038,7 +6038,7 @@
       <spot x="1895.660034" y="2684.540039" z="281.000000" h="0" random_walk="2" />
     </spawn>
     <spawn npc_id="211698" respawn_time="1200">
-      <spot x="1376.446533" y="2705.218994" z="308.000000" h="53" alternate_id="210892" select_prob="7102" />
+      <spot x="1376.446533" y="2705.218994" z="308.000000" h="53" alternate_id="235477" select_prob="7102" />
     </spawn>
     <spawn npc_id="210833" respawn_time="240">
       <spot x="1621.183350" y="2084.381348" z="282.000000" h="60" random_walk="0" />
