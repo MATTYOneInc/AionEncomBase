@@ -30,6 +30,7 @@ import com.aionemu.gameserver.model.DescriptionId;
 import com.aionemu.gameserver.model.TaskId;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.model.templates.item.ArmorType;
 import com.aionemu.gameserver.model.stats.container.StatEnum;
 import com.aionemu.gameserver.model.templates.item.ItemCategory;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
@@ -85,11 +86,17 @@ public class EnchantItemAction extends AbstractItemAction {
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_NOT_ENOUGH_MONEY);
 			return false;
 		}
-		if (targetItem.getEnchantLevel() == 255 && !parentItem.getItemTemplate().isManaStone()) {
-			// You cannot enchant %0 any further.
-			PacketSendUtility.sendPacket(player,
-					SM_SYSTEM_MESSAGE.STR_ENCHANT_ITEM_IT_CAN_NOT_BE_ENCHANTED_MORE_TIME(targetItem.getNameId()));
-			return false;
+		if (!player.isGM()) { // If the player is not a GM
+    	if (targetItem.getEnchantLevel() >= 15 || (targetItem.getEnchantLevel() == 15 && targetItem.getItemTemplate().getArmorType() == ArmorType.WING)) {
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ENCHANT_ITEM_IT_CAN_NOT_BE_ENCHANTED_MORE_TIME(targetItem.getNameId()));
+        	return false;
+			}
+		}
+		else { // If the player is GM
+		if (targetItem.getEnchantLevel() >= 255 || (targetItem.getEnchantLevel() == 255 && !parentItem.getItemTemplate().isManaStone() && !(targetItem.getItemTemplate().getArmorType() == ArmorType.WING))) {
+			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ENCHANT_ITEM_IT_CAN_NOT_BE_ENCHANTED_MORE_TIME(targetItem.getNameId()));
+        	return false;
+			}
 		}
 		int msID = parentItem.getItemTemplate().getTemplateId() / 1000000;
 		int tID = targetItem.getItemTemplate().getTemplateId() / 1000000;
