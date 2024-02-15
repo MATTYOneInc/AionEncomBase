@@ -17,14 +17,14 @@
 package com.aionemu.gameserver.geoEngine.collision;
 
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
-import com.aionemu.gameserver.geoEngine.scene.Geometry;
+import com.aionemu.gameserver.geoEngine.scene.Spatial;
 
 /**
  * @author Kirill
  */
 public class CollisionResult implements Comparable<CollisionResult> {
 
-	private Geometry geometry;
+	private Spatial geometry;
 	private Vector3f contactPoint;
 	private Vector3f contactNormal;
 	private float distance;
@@ -60,7 +60,7 @@ public class CollisionResult implements Comparable<CollisionResult> {
 		this.contactNormal = norm;
 	}
 
-	public void setGeometry(Geometry geom) {
+	public void setGeometry(Spatial geom) {
 		this.geometry = geom;
 	}
 
@@ -72,7 +72,7 @@ public class CollisionResult implements Comparable<CollisionResult> {
 		return contactPoint;
 	}
 
-	public Geometry getGeometry() {
+	public Spatial getGeometry() {
 		return geometry;
 	}
 

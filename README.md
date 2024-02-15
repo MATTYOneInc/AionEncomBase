@@ -1,3 +1,28 @@
+# Navmesh branch
+This branch uses navigational meshes for npc pathing, meaning that mobs will properly avoid obstacles, use bridges and in general move in a more retail-like fashion.
+
+Navigation code was taken from [Aion Reconstruction Project](https://github.com/Yoress/ARP/tree/master)
+
+Before using this branch, make sure to follow these instructions:
+
+1. use Monono2 Geodata
+
+2. add **gameserver.geo.nav.pathfinding.enable = true** to your geodata.properties
+
+3. download archive with navmeshes [link](https://drive.google.com/file/d/1ulkx0TwdDZnFZL5ildkVFtD1WQ3jGA7p/view?usp=sharing) and put the **nav** folder from the archive into your AL-Game\data folder
+
+RAM usage will increase by around 2GB and the initial starting time will increase substantially.
+
+Current issues:
+
+1. If the player constantly moves, mob might move back a little before continuing to follow the player
+
+2. Sometimes standing next to a wall or in a corner will cause npc to just stay in place
+
+3. Rarely, mob can run into the wall or under the ground and get stuck
+
+Once atleast the latter two problems are solved, navmesh pathfinding will be added to the main branch
+
 # Aion 5.8 Community Project
 
 This is a repository for Aion 5.8 Community Emulator
@@ -5,14 +30,7 @@ This is a repository for Aion 5.8 Community Emulator
 Community Discord : https://discord.gg/Nt7rBd8mnN
 
 ## Geo data
-[original geo](https://drive.google.com/file/d/1KdprwGV0huFnrAsJwb1QwgTpbZg7haaX/view?usp=sharing) (incomplete)
-
 [Monono2](https://drive.google.com/file/d/1jjLjPDoU5NQr7u7jfg1xqkhKfMdEX1RY/view?usp=sharing) (requires setting **gameserver.geodata.monon2.in.use = true** in geodata.properties)
-
-[large geo](https://drive.google.com/file/d/1JrkdV3lTRgo4J9LSJQNBmLSd9Gcq1jv7/view?usp=sharing) (requires around 6 GB of RAM)
-
-When using original or large geo, set **gameserver.geodata.monon2.in.use = false** in geodata.properties
-
 ## Known Developers
 ### Teams:
 

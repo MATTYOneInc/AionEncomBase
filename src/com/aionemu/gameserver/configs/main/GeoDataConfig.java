@@ -85,4 +85,6 @@ public class GeoDataConfig {
 	 */
 	@Property(key = "gameserver.geodata.monon2.in.use", defaultValue = "fasle")
 	public static boolean GEO_MONONO2_IN_USE;
+	@Property(key = "gameserver.geo.nav.pathfinding.enable", defaultValue = "false")
+	public static boolean GEO_NAV_ENABLE;
 }
