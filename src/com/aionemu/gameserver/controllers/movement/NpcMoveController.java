@@ -206,9 +206,9 @@ extends CreatureMoveController<Npc> {
     private float getTargetZ(Npc npc, Creature creature) {
         float targetZ = creature.getZ();
         if (GeoDataConfig.GEO_NPC_MOVE && creature.isInFlyingState() && !npc.isInFlyingState()) {
-            if (npc.getGameStats().checkGeoNeedUpdate()) {
-                this.cachedTargetZ = GeoService.getInstance().getZ(creature);
-            }
+//            if (npc.getGameStats().checkGeoNeedUpdate()) {
+            this.cachedTargetZ = GeoService.getInstance().getZ(creature);
+ //           }
             targetZ = this.cachedTargetZ;
         }
         return targetZ;
@@ -216,10 +216,10 @@ extends CreatureMoveController<Npc> {
     private float getTargetZ(Npc npc, float x, float y, float z) {
         float targetZ = z;
         if (GeoDataConfig.GEO_NPC_MOVE && !npc.isFlying()) {
-            if (npc.getGameStats().checkGeoNeedUpdate()) {
-                cachedTargetZ = GeoService.getInstance().getZ(npc.getWorldId(), x, y, z, 1.1F, npc.getInstanceId());
-                targetZ = cachedTargetZ;
-            }
+//            if (npc.getGameStats().checkGeoNeedUpdate()) {
+            cachedTargetZ = GeoService.getInstance().getZ(npc.getWorldId(), x, y, z, 1.1F, npc.getInstanceId());
+            targetZ = cachedTargetZ;
+//            }
         }
         return targetZ;
     }
