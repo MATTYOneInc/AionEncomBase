@@ -275,16 +275,16 @@ public class CraftSkillUpdateService {
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1330069));
 			return;
 		}
-		// CRAFTING
-		if (skillLvl == 499 // [Artisan]
-				&& ((skillId == 40001 && (!player.isCompleteQuest(19039) || !player.isCompleteQuest(29039)))
-						|| (skillId == 40002 && (!player.isCompleteQuest(19009) || !player.isCompleteQuest(29009)))
-						|| (skillId == 40003 && (!player.isCompleteQuest(19015) || !player.isCompleteQuest(29015)))
-						|| (skillId == 40004 && (!player.isCompleteQuest(19021) || !player.isCompleteQuest(29021)))
-						|| (skillId == 40007 && (!player.isCompleteQuest(19033) || !player.isCompleteQuest(29033)))
-						|| (skillId == 40008 && (!player.isCompleteQuest(19027) || !player.isCompleteQuest(29027)))
-						|| (skillId == 40010 && (!player.isCompleteQuest(19058) || !player.isCompleteQuest(29058))))) {
-			// You must pass the Master test in order to be promoted.
+		//CRAFTING
+		// You must do quest before being able to buy master update (499 to 500)
+		if (skillLvl == 499 //[Artisan]
+			&& ((skillId == 40001 && (!player.isCompleteQuest(29039) || !player.isCompleteQuest(19039)))
+			|| (skillId == 40002 && (!player.isCompleteQuest(29009) || !player.isCompleteQuest(19009)))
+			|| (skillId == 40003 && (!player.isCompleteQuest(29015) || !player.isCompleteQuest(19015)))
+			|| (skillId == 40004 && (!player.isCompleteQuest(29021) || !player.isCompleteQuest(19021)))
+			|| (skillId == 40007 && (!player.isCompleteQuest(29033) || !player.isCompleteQuest(19033)))
+			|| (skillId == 40008 && (!player.isCompleteQuest(29027) || !player.isCompleteQuest(19027)))
+			|| (skillId == 40010 && (!player.isCompleteQuest(29058) || !player.isCompleteQuest(19058))))) {
 			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1400286));
 			return;
 		}
