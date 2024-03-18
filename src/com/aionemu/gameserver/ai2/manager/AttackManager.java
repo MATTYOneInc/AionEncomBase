@@ -23,6 +23,8 @@ import com.aionemu.gameserver.ai2.NpcAI2;
 import com.aionemu.gameserver.ai2.event.AIEventType;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Npc;
+import com.aionemu.gameserver.configs.main.GeoDataConfig;
+import com.aionemu.gameserver.world.geo.GeoService;
 
 /**
  * @author ATracer
@@ -72,17 +74,17 @@ public class AttackManager {
 			return;
 		}
 		switch (attackIntention) {
-		case SIMPLE_ATTACK:
-			SimpleAttackManager.performAttack(npcAI, delay);
-			break;
-		case SKILL_ATTACK:
-			SkillAttackManager.performAttack(npcAI, delay);
-			break;
-		case FINISH_ATTACK:
-			npcAI.think();
-			break;
-		default:
-			break;
+			case SIMPLE_ATTACK:
+				SimpleAttackManager.performAttack(npcAI, delay);
+				break;
+			case SKILL_ATTACK:
+				SkillAttackManager.performAttack(npcAI, delay);
+				break;
+			case FINISH_ATTACK:
+				npcAI.think();
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -115,7 +117,16 @@ public class AttackManager {
 			npcAI.onGeneralEvent(AIEventType.TARGET_GIVEUP);
 			return;
 		}
-		if (npcAI.isMoveSupported()) {
+		//Check the NAV navigation on status.
+		if (!GeoDataConfig.GEO_NAV_ENABLE) {
+			//If the NPC loses its target or vision.
+			if (!GeoService.getInstance().canSee(npc,npc.getTarget())) {
+				npcAI.onGeneralEvent(AIEventType.TARGET_GIVEUP);
+				return;
+			}
+
+		}
+		if (npcAI.isMoveSupported()){
 			npc.getMoveController().moveToTargetObject();
 			return;
 		}
@@ -130,23 +141,21 @@ public class AttackManager {
 			AI2Logger.info(npcAI, "AttackManager: distanceToTarget " + distanceToTarget);
 		}
 		// TODO may be ask AI too
-		int chaseTarget = npc.isBoss() ? 50
-				: npc.getPosition().getWorldMapInstance().getTemplate().getAiInfo().getChaseTarget();
+		int chaseTarget = npc.isBoss() ? 200 : npc.getPosition().getWorldMapInstance().getTemplate().getAiInfo().getChaseTarget();
 		if (distanceToTarget > chaseTarget) {
 			return true;
 		}
+
 		double distanceToHome = npc.getDistanceToSpawnLocation();
+		int chaseHome = npc.isBoss() ? 350 : npc.getPosition().getWorldMapInstance().getTemplate().getAiInfo().getChaseHome();
+//        if (distanceToHome > chaseHome) { //Leashes like this don't exist on retail (with very few exceptions)
+//            return true;
+//        }
 		// if npc is far away from home
-		int chaseHome = npc.isBoss() ? 150
-				: npc.getPosition().getWorldMapInstance().getTemplate().getAiInfo().getChaseHome();
-		//if (distanceToHome > chaseHome) {
-		//	return true;
-		//}
-		// start thinking about home after 100 meters and no attack for 10 seconds (only
-		// for default monsters)
-		if (chaseHome <= 200) { // TODO: Check Client and use chase_user_by_trace value
+		// start thinking about home after 100 meters and no attack for 10 seconds (only for default monsters)
+		if (chaseHome <= 200 || distanceToHome > chaseHome) { // TODO: Check Client and use chase_user_by_trace value
 			if ((npc.getGameStats().getLastAttackTimeDelta() > 10 && npc.getGameStats().getLastAttackedTimeDelta() > 10)
-				/*	|| (distanceToHome > chaseHome / 2 && npc.getGameStats().getLastAttackedTimeDelta() > 2)*/) {
+				/*|| (distanceToHome > chaseHome / 2 && npc.getGameStats().getLastAttackedTimeDelta() > 10)*/) {
 				return true;
 			}
 		}
