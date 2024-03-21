@@ -324,6 +324,8 @@ public class Player extends Creature {
 	private int hallOfTenacityCoupleId = 0;
 	private int hallOfTenacityVSId = 0;
 	private int hallOfTenacityOpponentId = 0;
+
+	private boolean isInDuel;
 	/**
 	 * Player Skill Animation List
 	 */
@@ -3409,13 +3411,19 @@ public class Player extends Creature {
 
 	private List<DisassembleItem> disassemblyItemLists = new FastList<DisassembleItem>();
 
-	public List<DisassembleItem> getDisassemblyItemLists()
-	{
+	public List<DisassembleItem> getDisassemblyItemLists() {
 		return disassemblyItemLists;
 	}
 
-	public void setDisassemblyItemLists(List<DisassembleItem> disassemblyItemLists)
-	{
+	public void setDisassemblyItemLists(List<DisassembleItem> disassemblyItemLists) {
 		this.disassemblyItemLists = disassemblyItemLists;
+	}
+
+	public boolean isInDuel() {
+		return isInDuel;
+	}
+
+	public void setInDuel(boolean isInDuel) {
+		this.isInDuel = isInDuel;
 	}
 }
