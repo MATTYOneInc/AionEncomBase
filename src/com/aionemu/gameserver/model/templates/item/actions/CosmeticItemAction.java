@@ -97,14 +97,7 @@ public class CosmeticItemAction extends AbstractItemAction {
 		DAOManager.getDAO(PlayerAppearanceDAO.class).store(player);
 		player.getInventory().delete(targetItem);
 		PacketSendUtility.sendPacket(player, new SM_PLAYER_INFO(player, false));
-		player.getKnownList().doOnAllPlayers(new Visitor<Player>() {
-
-			@Override
-			public void visit(Player rangePlayer) {
-				if (rangePlayer.isOnline()) {
-					PacketSendUtility.sendPacket(rangePlayer, new SM_PLAYER_INFO(player, player.isEnemy(rangePlayer)));
-				}
-			}
-		});
+		player.clearKnownlist();
+		player.updateKnownlist();
 	}
 }
