@@ -580,7 +580,9 @@ public class PlayerController extends CreatureController<Player> {
 		AbyssRank ar = player.getAbyssRank();
 		if (AbyssService.isOnPvpMap(player) && ar != null) {
 			if (ar.getRank().getId() >= 1) {
-				AbyssService.rankedKillAnnounce(player);
+				if (!player.isInDuel()) {
+				    AbyssService.rankedKillAnnounce(player);
+				}
 			}
 		}
 		if (DuelService.getInstance().isDueling(player.getObjectId())) {
