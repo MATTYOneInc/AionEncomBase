@@ -16,12 +16,32 @@
         </actions>
         <uselimits gender="FEMALE"/>
     </item_template>
-	    <item_template id="190100302" name="Phantom Steed" desc="1761555" level="10" mask="4172" category="NONE" max_stack_count="1" item_type="NORMAL" quality="EPIC" price="5" race="PC_ALL" restrict="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" bonus_apply="INVENTORY" activate_target="STANDALONE" activate_count="1000">
+	<item_template id="190100302" name="Phantom Steed" desc="1761555" level="10" mask="4172" category="NONE" max_stack_count="1" item_type="NORMAL" quality="EPIC" price="5" race="PC_ALL" restrict="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" bonus_apply="INVENTORY" activate_target="STANDALONE" activate_count="1000">
         <actions>
             <ride npc_id="2000116"/>
         </actions>
     </item_template>
-	    <item_template id="190100303" name="Phantom Steed" desc="1761555" level="10" mask="4172" category="NONE" max_stack_count="1" item_type="NORMAL" quality="EPIC" price="5" race="PC_ALL" restrict="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" bonus_apply="INVENTORY" activate_target="STANDALONE" activate_count="1000">
+    <item_template id="190100303" name="Phantom Steed" desc="1761555" level="10" mask="4172" category="NONE" max_stack_count="1" item_type="NORMAL" quality="EPIC" price="5" race="PC_ALL" restrict="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" bonus_apply="INVENTORY" activate_target="STANDALONE" activate_count="1000">
+        <actions>
+            <ride npc_id="2000116"/>
+        </actions>
+    </item_template>
+    <item_template id="190100304" name="Phantom Steed (1 day)" desc="1761557" name_desc="world_cash_rider_Ghosthorse_01_1day" level="10" mask="4168" category="NONE" max_stack_count="1" item_type="NORMAL" quality="EPIC" price="5" race="PC_ALL" restrict="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" bonus_apply="INVENTORY" activate_target="STANDALONE" activate_count="1000" expire_time="1441">
+        <actions>
+            <ride npc_id="2000116"/>
+        </actions>
+    </item_template>
+    <item_template id="190100305" name="Phantom Steed (7 days)" desc="1761559" name_desc="world_cash_rider_Ghosthorse_01_7day" level="10" mask="4168" category="NONE" max_stack_count="1" item_type="NORMAL" quality="EPIC" price="5" race="PC_ALL" restrict="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" bonus_apply="INVENTORY" activate_target="STANDALONE" activate_count="1000" expire_time="10081">
+        <actions>
+            <ride npc_id="2000116"/>
+        </actions>
+    </item_template>
+    <item_template id="190100306" name="Phantom Steed (15 days)" desc="1761561" name_desc="world_cash_rider_Ghosthorse_01_15day" level="10" mask="4168" category="NONE" max_stack_count="1" item_type="NORMAL" quality="EPIC" price="5" race="PC_ALL" restrict="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" bonus_apply="INVENTORY" activate_target="STANDALONE" activate_count="1000" expire_time="21601">
+        <actions>
+            <ride npc_id="2000116"/>
+        </actions>
+    </item_template>
+    <item_template id="190100307" name="Phantom Steed (30 days)" desc="1761563" name_desc="world_cash_rider_Ghosthorse_01_30day" level="10" mask="4168" category="NONE" max_stack_count="1" item_type="NORMAL" quality="EPIC" price="5" race="PC_ALL" restrict="10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10" bonus_apply="INVENTORY" activate_target="STANDALONE" activate_count="1000" expire_time="43201">
         <actions>
             <ride npc_id="2000116"/>
         </actions>

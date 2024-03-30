@@ -39,6 +39,7 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 /****/
 /**
  * Author Ranastic (Encom) /
+ * mod yayaya
  ****/
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -49,6 +50,15 @@ public class TemperingAction extends AbstractItemAction {
 		if (targetItem.getItemTemplate().getMaxAuthorize() == 0) {
 			return false;
 		}
+		
+		// if you don't check your inventory and fill it, the plume won't be deleted because it's
+        // impossible to drop into full inventory
+        // To extract, there must be at least one free cell in the cube.
+		if (player.getInventory().isFull()) {
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1330081));
+			return false;
+		}
+		
 		if (targetItem.getItemTemplate().isAccessory() && targetItem.getAuthorize() >= 15) {
 			// %0 cannot be tempered anymore.
 			PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE
