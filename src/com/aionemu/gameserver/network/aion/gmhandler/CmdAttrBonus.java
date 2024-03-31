@@ -45,15 +45,15 @@ public class CmdAttrBonus extends AbstractGMHandler implements StatOwner {
 		Pattern pattern = Pattern.compile("((.*)\\s(-?\\d+))");
 		Matcher matcher = pattern.matcher(params);
 		if (!matcher.find()) {
-			System.out.println("no matches found");
+//			System.out.println("no matches found");
 			return;
 		}
 
 		String func = matcher.group(2).toUpperCase();
 		Integer value = Integer.parseInt(matcher.group(3));
 
-		System.out.println("func: " + func);
-		System.out.println("value: " + value);
+//		System.out.println("func: " + func);
+//		System.out.println("value: " + value);
 
 		AttrBonusAction a = AttrBonusAction.valueOf(func);
 
