@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<spawns>
+  <spawn_map map_id="220040000">
+	<spawn npc_id="258312" respawn_time="295">
+		<spot x="2693.2727" y="1021.4082" z="377.125" h="51"/>
+	</spawn>
+	<!-- Recaro (NPC Normal lvl:65) -->
+	<spawn npc_id="805846" respawn_time="295">
+		<spot x="2298.18" y="1313.49" z="473.88" h="90"/>
+	</spawn>
+	<!-- DF3_ShulackShip_Entrance (NPC Normal lvl:65) -->
+	<spawn npc_id="805849" respawn_time="295">
+		<spot x="2681.37" y="996.71" z="378.86" h="0"/>
+	</spawn>
+	<!-- DF3_ShulackShip_Solo_Entrance (NPC Normal lvl:65) -->
+	<spawn npc_id="805851" respawn_time="295">
+		<spot x="2681.42" y="999.01" z="378.86" h="110"/>
+	</spawn>
+	<!-- DF3_ShulackShip_Merchant (NPC Normal lvl:65) -->
+	<spawn npc_id="805853" respawn_time="295">
+		<spot x="2691.22" y="990.76" z="378.86" h="15"/>
+	</spawn>
+	<!-- Fairringring (NPC Normal lvl:65) -->
+	<spawn npc_id="805839" respawn_time="295">
+		<spot x="2679.43" y="1000.71" z="378.86" h="15"/>
+	</spawn>
+	<!-- Halfringring (NPC Normal lvl:65) -->
+	<spawn npc_id="805840" respawn_time="295">
+		<spot x="2385.16" y="1283.91" z="468.89" h="75"/>
+	</spawn>
+	<!-- Muguring (NPC Normal lvl:65) -->
+	<spawn npc_id="805841" respawn_time="295">
+		<spot x="2685.09" y="995.23" z="378.86" h="15"/>
+	</spawn>
+	<!-- Terryroong (NPC Normal lvl:65) -->
+	<spawn npc_id="805842" respawn_time="295">
+		<spot x="2329.83" y="1258.87" z="468.89" h="15"/>
+	</spawn>
+	<!-- Hasiroong (NPC Normal lvl:65) -->
+	<spawn npc_id="805843" respawn_time="295">
+		<spot x="2288.12" y="1244.36" z="467.09" h="110"/>
+	</spawn>
+	<!-- Kaorun (NPC Normal lvl:65) -->
+	<spawn npc_id="805844" respawn_time="295">
+		<spot x="2274.19" y="1263.55" z="475.58" h="0"/>
+	</spawn>
+	<!-- Onnaring (NPC Normal lvl:65) -->
+	<spawn npc_id="805845" respawn_time="295">
+		<spot x="2241.30" y="1248.31" z="475.38" h="0"/>
+	</spawn>	
+	<!-- Broha 4.7.5 (NPC Normal lvl:65) -->
+	<spawn npc_id="804607" respawn_time="295">
+		<spot x="413.2901" y="372.2946" z="231.15352" h="110"/>
+	</spawn>
+	<!-- Zavah 4.7.5 (NPC Normal lvl:65) -->
+	<spawn npc_id="804608" respawn_time="295">
+		<spot x="2417.5815" y="2063.8042" z="579.6372" h="13"/>
+	</spawn>
+	<!-- Chocorunerk 4.7.5 (NPC Normal lvl:65) -->
+	<spawn npc_id="804609" respawn_time="295">
+		<spot x="2414.926" y="2066.8672" z="579.5708" h="100"/>
+	</spawn>
+	<!-- Alberich 4.7 (NPC Normal lvl:65) -->
+	<spawn npc_id="832820" respawn_time="295">
+		<spot x="1609.5603" y="2717.2847" z="705.0528" h="69"/>
+	</spawn>
+	<!-- Dojer 4.8 (NPC Normal lvl:65) -->
+	<spawn npc_id="802364" respawn_time="295">
+		<spot x="508.35638" y="2208.7864" z="382.92343" h="50"/>
+	</spawn>
+	<!-- Beluslan 4.9 -->
+	<!-- Zahawk 4.9 (NPC Normal lvl:50) -->
+	<spawn npc_id="805295" respawn_time="295">
+		<spot x="2745.7468" y="2106.634" z="549.5" h="62"/>
+	</spawn>
+	<!-- DF3_D_Option_Seller 4.9 -->
+	<spawn npc_id="805376" respawn_time="295">
+		<spot x="280.7386" y="400.0576" z="236.16115" h="97"/>
+	</spawn>
+	<!-- Suspicious Egg [Q2672 A Careful Eggs-Amination] -->
+	<spawn npc_id="700337" respawn_time="295">
+		<spot h="77" z="584.5767" y="2176.74" x="1739.4249"/>
+		<spot h="14" z="584.83734" y="2212.389" x="1740.4707"/>
+		<spot h="84" z="586.3294" y="2090.267" x="1743.7758"/>
+		<spot h="28" z="584.7487" y="2107.2903" x="1725.6676"/>
+		<spot h="97" z="584.5542" y="2119.1516" x="1843.9297"/>
+		<spot h="31" z="584.4584" y="2122.6575" x="1858.7"/>
+		<spot h="2" z="579.4147" y="2190.0112" x="2026.4059"/>
+		<spot h="11" z="579.21674" y="2222.084" x="2036.1492"/>
+		<spot h="98" z="597.43475" y="2077.8088" x="2015.4252"/>
+		<spot h="72" z="593.86273" y="2082.9785" x="1993.1486"/>
+		<spot h="87" z="599.2814" y="2059.0432" x="1982.4608"/>
+		<spot h="59" z="586.2003" y="2046.5541" x="1900.2932"/>
+		<spot h="49" z="585.3898" y="2055.9402" x="1904.126"/>
+		<spot h="23" z="585.81714" y="2011.0016" x="1837.8853"/>
+		<spot h="25" z="583.28" y="2010.8057" x="1854.2323"/>
+		<spot h="69" z="585.5651" y="2195.475" x="1973.2833"/>
+		<spot h="101" z="586.5757" y="2207.1191" x="1964.418"/>
+		<spot h="117" z="586.7967" y="2137.4363" x="2022.9578"/>
+		<spot h="59" z="584.55817" y="2132.639" x="2045.6522"/>
+		<spot h="88" z="584.5203" y="2033.118" x="1906.9874"/>
+		<spot h="116" z="584.7219" y="2027.3198" x="1913.5577"/>
+		<spot h="64" z="584.5704" y="2034.5184" x="1921.1458"/>
+		<spot h="21" z="585.2331" y="2038.5184" x="1843.173"/>
+		<spot h="23" z="588.4964" y="2046.6267" x="1831.4019"/>
+		<spot h="6" z="584.6906" y="2127.2983" x="1850.1306"/>
+	</spawn>	
+  </spawn_map>
+</spawns>

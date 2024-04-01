@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<spawns>
+  <spawn_map map_id="220030000">
+	<!-- Shezen 4.7.0.8 (NPC Normal lvl:65) -->
+	<spawn npc_id="804605" respawn_time="295">
+		<spot x="2911.1099" y="1468.6195" z="252.59264" h="46"/>
+	</spawn>
+	<!-- Brodir 4.7 (NPC Normal lvl:65) -->
+	<spawn npc_id="832821" respawn_time="295">
+		<spot x="1517.2192" y="517.8378" z="281.62613" h="101"/>
+	</spawn>
+	<!-- Anmurnerk 4.7 (NPC Normal lvl:65) -->
+	<spawn npc_id="832822" respawn_time="295">
+		<spot x="1519.0444" y="519.7945" z="281.40347" h="104"/>
+	</spawn>
+	<!-- Ruined Invasion Generator
+	A power generator made by the Balaur.
+	It seems to be broken and remains unattended -->
+	<spawn npc_id="731645" respawn_time="295">
+		<spot x="2907.1672" y="1531.0836" z="252.09888" h="68"/>
+	</spawn>
+	<!-- Malfunctioning Invasion Generator
+	A power generator made by the Balaur.
+	It seems to be broken and remains unattended -->
+	<spawn npc_id="731646" respawn_time="295">
+		<spot x="2872.0000" y="1504.0000" z="249.37500" h="7"/>
+	</spawn>
+	<!-- Iskam
+	<Manastone Trader> -->
+	<spawn npc_id="805373" respawn_time="295">
+		<spot x="1718.0" y="1863.0" z="254.8125" h="60"/>
+	</spawn>
+  </spawn_map>
+</spawns>
