@@ -27,6 +27,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.model.templates.panels.SkillPanel;
 import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 
 import gnu.trove.map.hash.TIntObjectHashMap;
@@ -94,6 +96,28 @@ public class SkillData {
 			initializeCooldownGroups();
 		}
 		return cooldownGroups.get(delayId);
+	}
+
+	public ArrayList<Integer> getSkillsForCooldownId(int cooldownId, Player player) {
+		if (this.cooldownGroups == null)
+			initializeCooldownGroups();
+		ArrayList<Integer> result = new ArrayList<>();
+		for (Integer skillId : this.cooldownGroups.get(cooldownId)) {
+			if (!player.getSkillList().isSkillPresent(skillId)) {
+				continue;
+			}
+			result.add(skillId);
+		}
+		if (player.getTransformModel().isActive() && player.getTransformModel().getPanelId() != 0) {
+			SkillPanel skillPanel = DataManager.PANEL_SKILL_DATA.getSkillPanel(player.getTransformModel().getPanelId());
+			for (Integer skillId : this.cooldownGroups.get(cooldownId)) {
+				if (!skillPanel.isSkillPresent(skillId)) {
+					continue;
+				}
+				result.add(skillId);
+			}
+		}
+		return result;
 	}
 
 	public TIntObjectHashMap<SkillTemplate> getSkillData() {

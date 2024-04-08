@@ -48,4 +48,13 @@ public class SkillPanel {
 		}
 		return false;
 	}
+
+	public boolean isSkillPresent(int skillId) {
+		for (Integer skill : this.skills) {
+			if (skill >> 8 == skillId) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

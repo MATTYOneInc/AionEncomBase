@@ -20,8 +20,11 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.aionemu.gameserver.dataholders.DataManager;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.network.PacketLoggerService;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
+import com.aionemu.gameserver.skillengine.model.SkillTemplate;
 
 public class SM_SKILL_COOLDOWN extends AionServerPacket {
 	private Map<Integer, Long> cooldowns;
@@ -32,26 +35,31 @@ public class SM_SKILL_COOLDOWN extends AionServerPacket {
 
 	@Override
 	protected void writeImpl(AionConnection con) {
-		writeH(calculateSize());
-		writeC(1);
+		PacketLoggerService.getInstance().logPacketSM(this.getPacketName());
 		long currentTime = System.currentTimeMillis();
-		for (Map.Entry<Integer, Long> entry : cooldowns.entrySet()) {
-			int left = (int) ((entry.getValue() - currentTime) / 1000);
-			ArrayList<Integer> skillsWithCooldown = DataManager.SKILL_DATA.getSkillsForDelayId(entry.getKey());
-			for (int index = 0; index < skillsWithCooldown.size(); index++) {
-				int skillId = skillsWithCooldown.get(index);
+
+		writeH(calculateSize(con.getActivePlayer()));
+		writeC(1);
+
+		for (Map.Entry<Integer, Long> entry : this.cooldowns.entrySet()) {
+			int left = (int)(entry.getValue() - currentTime);
+			ArrayList<Integer> skillsWithCooldown = DataManager.SKILL_DATA.getSkillsForCooldownId(entry.getKey(), con.getActivePlayer());
+			for (Integer index : skillsWithCooldown) {
+				int skillId = index;
+				SkillTemplate skillTemplate = DataManager.SKILL_DATA.getSkillTemplate(skillId);
+				int cooldown = skillTemplate.getCooldown();
+
 				writeH(skillId);
-				writeD(left > 0 ? left : 0);
-				writeD(DataManager.SKILL_DATA.getSkillTemplate(skillId).getCooldown());
+				writeD(Math.max(left, 0));
+				writeD(cooldown * 100);
 			}
 		}
 	}
 
-	private int calculateSize() {
+	private int calculateSize(Player player) {
 		int size = 0;
-		for (Map.Entry<Integer, Long> entry : cooldowns.entrySet()) {
-			size += DataManager.SKILL_DATA.getSkillsForDelayId(entry.getKey()).size();
-		}
+		for (Map.Entry<Integer, Long> entry : this.cooldowns.entrySet())
+			size += DataManager.SKILL_DATA.getSkillsForCooldownId(entry.getKey(), player).size();
 		return size;
 	}
 }
