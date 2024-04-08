@@ -146,6 +146,9 @@ public class CM_GM_COMMAND_SEND extends AionClientPacket {
 		case COMBINESKILL:
 			new CmdCombineSkill(admin, params);
 			break;
+		case RESET_INVEN:
+			new CmdResetInven(admin, params);
+			break;
 		case SETINVENTORYGROWTH:
 		case DELETESKILL:
 		case ENCHANT100:
