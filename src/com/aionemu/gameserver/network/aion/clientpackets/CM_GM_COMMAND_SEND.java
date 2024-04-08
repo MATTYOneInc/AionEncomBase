@@ -119,7 +119,7 @@ public class CM_GM_COMMAND_SEND extends AionClientPacket {
 			new CmdGiveTitle(admin, params);
 			break;
 		case DELETE_ITEMS:
-			PacketSendUtility.sendMessage(admin, "Invalid command: " + cmd.toString());
+			new CmdDeleteItems(admin, params);
 			break;
 		case CHANGECLASS:
 			new CmdChangeClass(admin, params);
