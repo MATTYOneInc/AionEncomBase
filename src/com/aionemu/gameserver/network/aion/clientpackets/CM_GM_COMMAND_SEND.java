@@ -22,24 +22,8 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gm.GmPanelCommands;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdAddSkill;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdAttrBonus;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdChangeClass;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdDeleteQuest;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdEndQuest;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdGiveTitle;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdInvisible;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdItemCoolTime;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdLevelUpDown;
+import com.aionemu.gameserver.network.aion.gmhandler.*;
 import com.aionemu.gameserver.network.aion.gmhandler.CmdLevelUpDown.LevelUpDownState;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdResurrect;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdStartQuest;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdTeleportTo;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdTeleportToNamed;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdVisible;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdWish;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdWishId;
-import com.aionemu.gameserver.network.aion.gmhandler.CmdSetEnchantCount;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
@@ -157,10 +141,12 @@ public class CM_GM_COMMAND_SEND extends AionClientPacket {
 			break;
 		case SET_ENCHANTCOUNT:
 			new CmdSetEnchantCount(admin, params);
-			break;			
-		case SETINVENTORYGROWTH:
+			break;
 		case SKILLPOINT:
 		case COMBINESKILL:
+			new CmdCombineSkill(admin, params);
+			break;
+		case SETINVENTORYGROWTH:
 		case DELETESKILL:
 		case ENCHANT100:
 		case SEARCH:
