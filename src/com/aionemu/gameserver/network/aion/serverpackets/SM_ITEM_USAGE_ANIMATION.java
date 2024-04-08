@@ -30,6 +30,9 @@ public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket {
 	private int time;
 	private int end;
 	private int unk;
+	private int unk1;
+	private int unk2 = 1;
+	private int unk3;
 
 	public SM_ITEM_USAGE_ANIMATION(int playerObjId, int itemObjId, int itemId) {
 		this.playerObjId = playerObjId;
@@ -38,7 +41,7 @@ public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket {
 		this.itemId = itemId;
 		this.time = 0;
 		this.end = 1;
-		this.unk = 1;
+		this.unk3 = 1;
 	}
 
 	public SM_ITEM_USAGE_ANIMATION(int playerObjId, int itemObjId, int itemId, int time, int end) {
@@ -57,11 +60,20 @@ public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket {
 		this.itemId = itemId;
 		this.time = time;
 		this.end = end;
-		this.unk = unk;
+		this.unk3 = unk;
 	}
 
-	public SM_ITEM_USAGE_ANIMATION(int playerObjId, int targetObjId, int itemObjId, int itemId, int time, int end,
-			int unk) {
+	public SM_ITEM_USAGE_ANIMATION(int playerObjId, int targetObjId, int itemObjId, int itemId, int time, int end, int unk) {
+		this.playerObjId = playerObjId;
+		this.targetObjId = targetObjId;
+		this.itemObjId = itemObjId;
+		this.itemId = itemId;
+		this.time = time;
+		this.end = end;
+		this.unk3 = unk;
+	}
+
+	public SM_ITEM_USAGE_ANIMATION(int playerObjId, int targetObjId, int itemObjId, int itemId, int time, int end, int unk, int unk1, int unk2, int unk3) {
 		this.playerObjId = playerObjId;
 		this.targetObjId = targetObjId;
 		this.itemObjId = itemObjId;
@@ -69,6 +81,9 @@ public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket {
 		this.time = time;
 		this.end = end;
 		this.unk = unk;
+		this.unk1 = unk1;
+		this.unk2 = unk2;
+		this.unk3 = unk3;
 	}
 
 	@Override
@@ -84,9 +99,9 @@ public class SM_ITEM_USAGE_ANIMATION extends AionServerPacket {
 		writeD(itemId);
 		writeD(time);
 		writeC(end);
-		writeC(0);
-		writeC(1);
-		writeD(unk);
-		writeC(0);
+		writeC(unk);
+		writeC(unk1);
+		writeC(unk2);
+		writeD(unk3);
 	}
 }

@@ -19,6 +19,9 @@ package com.aionemu.gameserver.services.toypet;
 import java.util.Collection;
 import java.util.List;
 
+import com.aionemu.gameserver.model.templates.item.actions.SkillUseAction;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
+import com.aionemu.gameserver.skillengine.SkillEngine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -211,10 +214,16 @@ public class PetService {
 					player.addItemCoolDown(limit.getDelayId(), System.currentTimeMillis() + useDelay, useDelay / 1000);
 					break;
 				}
-				player.getController().cancelCurrentSkill();
 				for (AbstractItemAction itemAction : itemActions.getItemActions()) {
-					if (itemAction.canAct(player, useItem, null)) {
-						itemAction.act(player, useItem, null);
+					if (itemAction instanceof SkillUseAction) {
+						PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), player.getObjectId(), useItem.getObjectId(), useItem.getItemId(), 0, 1, 1, 1, 0, 15360), true);
+						SkillEngine.getInstance().applyEffectDirectly(((SkillUseAction) itemAction).getSkillid(), player, player, 0);
+						player.addItemCoolDown(limit.getDelayId(), System.currentTimeMillis() + player.getItemCooldown(useItem.getItemTemplate()), player.getItemCooldown(useItem.getItemTemplate()) / 1000);
+						if (useItem.getItemTemplate().getMaxStackCount() != 1 && useItem.getItemTemplate().getActivationCount() != 1000){
+							player.getInventory().decreaseByItemId(useItem.getItemId(), 1);
+						}
+					} else {
+						log.warn("Pet attempt to use item without SkillUseAction");
 					}
 				}
 				break;
