@@ -169,10 +169,10 @@ public class NpcController extends CreatureController<Npc> {
 				new SM_EMOTION(owner, EmotionType.DIE, 0, owner.equals(lastAttacker) ? 0 : lastAttacker.getObjectId()));
 
 		try {
+			owner.getPosition().getWorldMapInstance().getInstanceHandler().onDie(owner);
 			if (owner.getAi2().poll(AIQuestion.SHOULD_REWARD)) {
 				this.doReward();
 			}
-			owner.getPosition().getWorldMapInstance().getInstanceHandler().onDie(owner);
 			owner.getAi2().onGeneralEvent(AIEventType.DIED);
 		} finally { // always make sure npc is schedulled to respawn
 			if (owner.getAi2().poll(AIQuestion.SHOULD_DECAY)) {

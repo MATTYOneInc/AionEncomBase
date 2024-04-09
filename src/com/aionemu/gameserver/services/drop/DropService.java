@@ -24,6 +24,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+import com.aionemu.gameserver.ai2.event.AIEventType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -397,6 +398,7 @@ public class DropService {
 			if (dropItems.size() == 0) {
 				Npc npc = (Npc) World.getInstance().findVisibleObject(npcId);
 				if (npc != null) {
+					npc.getAi2().onGeneralEvent(AIEventType.DIED);
 					npc.getController().onDelete();
 				}
 			}

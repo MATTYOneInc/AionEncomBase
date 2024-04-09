@@ -412,6 +412,7 @@ public class DropRegistrationService {
 			PacketSendUtility.sendPacket(player, new SM_PET(true, npcObjId));
 			Set<DropItem> drops = getCurrentDropMap().get(npcObjId);
 			if (drops == null || drops.size() == 0) {
+				npc.getAi2().onGeneralEvent(AIEventType.DIED);
 				npc.getController().onDelete();
 			} else {
 				DropItem[] dropItems = drops.toArray(new DropItem[0]);
