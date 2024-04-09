@@ -33,24 +33,20 @@ public abstract class PlayerMinionsDAO implements DAO {
 		return PlayerMinionsDAO.class.getName();
 	}
 
-	public abstract void insertPlayerMinion(MinionCommonData minionCommonData);
+	public abstract void insertPlayerMinions(MinionCommonData minionCommonData, String minionName);
 
-	public abstract void removePlayerMinion(Player player, int minionObjId);
+	public abstract void removePlayerMinions(Player player, int minionId, String minionName);
 
-	public abstract void updateMinionName(MinionCommonData minionCommonData);
+	public abstract void updateMinionsName(MinionCommonData minionCommonData, String OldName);
 
 	public abstract List<MinionCommonData> getPlayerMinions(Player player);
 
-	public abstract void updatePlayerMinionGrowthPoint(Player player, MinionCommonData minionCommonData);
+	public abstract void lockMinions(Player player, int minionId, int isLocked);
 
-	public abstract boolean PlayerMinions(int playerid, int miniona);
+	public abstract void evolutionMinion(Player player, int oldMinionId, int newMinionId, MinionCommonData petCommonData);
 
-	public abstract void evolutionMinion(Player player, MinionCommonData minionCommonData);
+	public abstract void updateMinionsGrowthPoint(MinionCommonData minionCommonData);
 
-	public abstract void lockMinions(Player player, int minionObjId, int isLocked);
-
-	public abstract void saveDopingBag(Player player, MinionCommonData minionCommonData, MinionDopingBag bag);
-
-	public abstract void saveBirthday(MinionCommonData minionCommonData);
+	public abstract void saveDopingBag(Player player, MinionCommonData petCommonData, MinionDopingBag bag);
 
 }

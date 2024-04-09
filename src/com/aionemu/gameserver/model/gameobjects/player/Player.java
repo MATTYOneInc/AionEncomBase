@@ -305,7 +305,6 @@ public class Player extends Creature {
 	private int cp_slot1 = 0, cp_slot2 = 0, cp_slot3 = 0, cp_slot4 = 0, cp_slot5 = 0, cp_slot6 = 0;
 	private boolean enchantBoost;
 	private boolean authorizeBoost;
-	private boolean setMinionSpawned;
 	private Map<Integer, MaxCountOfDay> maxCountEvent;
 	private int LunaDiceGame;
 	private int LunaDiceGameTry = 0;
@@ -398,7 +397,6 @@ public class Player extends Creature {
 		protectorList = new Protector(this);
 		conquerorList = new Conqueror(this);
 		absStatsHolder = new AbsoluteStatOwner(this, 0);
-		this.setMinionSpawned = false;
 	}
 
 	public boolean isInPlayerMode(PlayerMode mode) {
@@ -527,12 +525,8 @@ public class Player extends Creature {
 		this.minion = minion;
 	}
 
-	public void setMinionSpawned(boolean setMinionSpawned) {
-		this.setMinionSpawned = setMinionSpawned;
-	}
-
-	public boolean isMinionSpawned() {
-		return setMinionSpawned;
+	public final MinionList getMinionList() {
+		return minionList;
 	}
 
 	/**
@@ -629,10 +623,6 @@ public class Player extends Creature {
 
 	public final PetList getPetList() {
 		return toyPetList;
-	}
-
-	public final MinionList getMinionList() {
-		return minionList;
 	}
 
 	@Override
@@ -3387,14 +3377,6 @@ public class Player extends Creature {
 
 	public void setThievesTimer(int delay) {
 
-	}
-
-	public int getMinionSkillPoints() {
-		return this.getCommonData().getMinionSkillPoints();
-	}
-
-	public void setMinionSkillPoints(int minionSkillPoints) {
-		this.getCommonData().setMinionSkillPoints(minionSkillPoints);
 	}
 
 	public boolean isMagicalTypeClass() {

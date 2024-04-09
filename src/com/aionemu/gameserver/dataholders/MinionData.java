@@ -30,34 +30,32 @@ import com.aionemu.gameserver.model.templates.minion.MinionTemplate;
 
 import gnu.trove.map.hash.TIntObjectHashMap;
 
-@XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "minions")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class MinionData {
+
 	@XmlElement(name = "minion")
-	private List<MinionTemplate> minionTemplates;
+	private List<MinionTemplate> minions;
 	@XmlTransient
 	private TIntObjectHashMap<MinionTemplate> minionData = new TIntObjectHashMap<>();
-	@XmlTransient
-	private List<Integer> minionDataList = new ArrayList<Integer>();
 
-	void afterUnmarshal(final Unmarshaller unmarshaller, final Object o) {
-		for (MinionTemplate minionTemplate : minionTemplates) {
-			minionData.put(minionTemplate.getId(), minionTemplate);
-			minionDataList.add(minionTemplate.getId());
+	void afterUnmarshal(Unmarshaller u, Object parent) {
+		for (MinionTemplate minion : minions) {
+			minionData.put(minion.getId(), minion);
 		}
-		minionTemplates.clear();
-		minionTemplates = null;
+		minions.clear();
+		minions = null;
 	}
 
 	public int size() {
 		return minionData.size();
 	}
 
-	public MinionTemplate getMinionTemplate(int minionId) {
-		return minionData.get(minionId);
+	public MinionTemplate getMinionTemplate(int id) {
+		return minionData.get(id);
 	}
 
-	public List<Integer> getAll() {
-		return minionDataList;
+	public TIntObjectHashMap<MinionTemplate> getMinionData() {
+		return minionData;
 	}
 }

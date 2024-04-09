@@ -147,7 +147,6 @@ import com.aionemu.gameserver.services.ranking.SeasonRankingUpdateService;
 import com.aionemu.gameserver.services.reward.RewardService;
 import com.aionemu.gameserver.services.teleport.HotspotTeleportService;
 import com.aionemu.gameserver.services.territory.TerritoryService;
-import com.aionemu.gameserver.services.toypet.MinionService;
 import com.aionemu.gameserver.services.transfers.PlayerTransferService;
 import com.aionemu.gameserver.services.veteranreward.VeteranRewardsService;
 import com.aionemu.gameserver.spawnengine.ShugoImperialTombSpawnManager;
@@ -268,8 +267,6 @@ public class GameServer {
 		 */
 		Util.printSection(" *** Luna Shop System *** ");
 		LunaShopService.getInstance().init();
-		Util.printSection(" *** Minion System *** ");
-		MinionService.getInstance().init();
 		Util.printSection(" *** Shugo Sweep System *** ");
 		ShugoSweepService.getInstance().initShugoSweep();
 		Util.printSection(" *** Atreian Passport System *** ");

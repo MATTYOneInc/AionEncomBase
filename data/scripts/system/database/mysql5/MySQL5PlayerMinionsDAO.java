@@ -17,6 +17,7 @@ package mysql5;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,43 +39,41 @@ public class MySQL5PlayerMinionsDAO extends PlayerMinionsDAO {
 	private static final Logger log = LoggerFactory.getLogger(MySQL5PlayerMinionsDAO.class);
 
 	@Override
-	public void insertPlayerMinion(MinionCommonData minionCommonData) {
+	public void insertPlayerMinions(MinionCommonData minionCommonData, String name) {
 		Connection con = null;
 		try {
 			con = DatabaseFactory.getConnection();
-			PreparedStatement stmt = con.prepareStatement("INSERT INTO player_minions(player_id, object_id, minion_id, name, grade, level) VALUES(?, ?, ?, ?, ?, ?)");
+			PreparedStatement stmt = con.prepareStatement("INSERT INTO player_minions(player_id, minion_id, name, birthday, growth_point, despawn_time, expire_time) VALUES(?,?,?,?,?,?,?)");
 			stmt.setInt(1, minionCommonData.getMasterObjectId());
-			stmt.setInt(2, minionCommonData.getObjectId());
-			stmt.setInt(3, minionCommonData.getMinionId());
-			stmt.setString(4, minionCommonData.getName());
-			stmt.setString(5, minionCommonData.getMinionGrade());
-			stmt.setInt(6, minionCommonData.getMinionLevel());
+			stmt.setInt(2, minionCommonData.getMinionId());
+			stmt.setString(3, name);
+			stmt.setTimestamp(4, minionCommonData.getBirthdayTimestamp());
+			stmt.setInt(5, minionCommonData.getGrowthPoint());
+			stmt.setTimestamp(6, minionCommonData.getDespawnTime());
+			stmt.setInt(7, minionCommonData.getExpireTime());
 			stmt.execute();
 			stmt.close();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			log.error("Error inserting new minion #" + minionCommonData.getMinionId() + "[" + minionCommonData.getName() + "]", e);
-		}
-		finally {
+		} finally {
 			DatabaseFactory.close(con);
 		}
 	}
 
 	@Override
-	public void removePlayerMinion(Player player, int minionObjectId) {
+	public void removePlayerMinions(Player player, int minionId, String minionName) {
 		Connection con = null;
 		try {
 			con = DatabaseFactory.getConnection();
-			PreparedStatement stmt = con.prepareStatement("DELETE FROM player_minions WHERE player_id = ? AND object_id = ?");
+			PreparedStatement stmt = con.prepareStatement("DELETE FROM player_minions WHERE player_id = ? AND minion_id = ? AND name=?");
 			stmt.setInt(1, player.getObjectId());
-			stmt.setInt(2, minionObjectId);
+			stmt.setInt(2, minionId);
+			stmt.setString(3, minionName);
 			stmt.execute();
 			stmt.close();
-		}
-		catch (Exception e) {
-			log.error("Error removing minion #" + minionObjectId, e);
-		}
-		finally {
+		} catch (Exception e) {
+			log.error("Error removing minion #" + minionId, e);
+		} finally {
 			DatabaseFactory.close(con);
 		}
 	}
@@ -89,171 +88,139 @@ public class MySQL5PlayerMinionsDAO extends PlayerMinionsDAO {
 			stmt.setInt(1, player.getObjectId());
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				MinionCommonData minionCommonData = new MinionCommonData(rs.getInt("minion_id"), player.getObjectId(), rs.getString("name"), rs.getString("grade"), rs.getInt("level"), rs.getInt("growthpoints"));
-				minionCommonData.setObjectId(rs.getInt("object_id"));
+				MinionCommonData minionCommonData = new MinionCommonData(rs.getInt("minion_id"), player.getObjectId(), rs.getInt("expire_time"));
+				minionCommonData.setName(rs.getString("name"));
 				minionCommonData.setBirthday(rs.getTimestamp("birthday"));
-				minionCommonData.setLock(rs.getInt("is_locked") == 1 ? true : false);
+				minionCommonData.setGrowthPoint(rs.getInt("growth_point"));
+				Timestamp ts = null;
+				try {
+					ts = rs.getTimestamp("despawn_time");
+				} catch (Exception e) {
+				}
+				if (ts == null) {
+					ts = new Timestamp(System.currentTimeMillis());
+				}
 				if (minionCommonData.getDopingBag() != null) {
-                    String Bag = rs.getString("buff_bag");
-                    if (Bag != null && Bag.length() > 6) {
-                        String[] ids = Bag.split(",");
-                        for (int i = 0; i < ids.length; i++) {
-                            minionCommonData.getDopingBag().setItem(Integer.parseInt(ids[i]), i);
-                        }
-                    }
-                }
+					String dopings = rs.getString("buff_item");
+					if (dopings != null && dopings.length() > 6) {
+						String[] ids = dopings.split(",");
+						for (int i = 0; i < ids.length; i++) {
+							minionCommonData.getDopingBag().setItem(Integer.parseInt(ids[i]), i);
+						}
+					}
+				}
+				minionCommonData.setDespawnTime(ts);
 				minions.add(minionCommonData);
 			}
 			stmt.close();
-		}
-		catch (Exception e) {
-			log.error("Error getting minions for " + player.getObjectId(), e);
-		}
-		finally {
+		} catch (Exception e) {
+			log.error("Error getting minion for " + player.getObjectId(), e);
+		} finally {
 			DatabaseFactory.close(con);
 		}
 		return minions;
 	}
 
 	@Override
-	public void updateMinionName(MinionCommonData minionCommonData) {
+	public void updateMinionsName(MinionCommonData petCommonData, String OldName) {
 		Connection con = null;
 		try {
 			con = DatabaseFactory.getConnection();
-			PreparedStatement stmt = con.prepareStatement("UPDATE player_minions SET name = ? WHERE player_id = ? AND object_id = ?");
-			stmt.setString(1, minionCommonData.getName());
-			stmt.setInt(2, minionCommonData.getMasterObjectId());
-			stmt.setInt(3, minionCommonData.getObjectId());
+			PreparedStatement stmt = con
+					.prepareStatement("UPDATE player_minions SET name = ? WHERE player_id = ? AND minion_id = ? AND name=?");
+			stmt.setString(1, petCommonData.getName());
+			stmt.setInt(2, petCommonData.getMasterObjectId());
+			stmt.setInt(3, petCommonData.getMinionId());
+			stmt.setString(4, OldName);
 			stmt.execute();
 			stmt.close();
-		}
-		catch (Exception e) {
-			log.error("Error update minion #" + minionCommonData.getMinionId(), e);
-		}
-		finally {
-			DatabaseFactory.close(con);
-		}
-	}
-	
-	@Override
-	public void updatePlayerMinionGrowthPoint(Player player, MinionCommonData minionCommonData) {
-		Connection con = null;
-		try {
-			con = DatabaseFactory.getConnection();
-			PreparedStatement stmt = con.prepareStatement("UPDATE player_minions SET growthpoints = ? WHERE player_id = ? AND object_id = ?");
-			stmt.setInt(1, minionCommonData.getMinionGrowthPoint());
-			stmt.setInt(2, minionCommonData.getMasterObjectId());
-			stmt.setInt(3, minionCommonData.getObjectId());
-			stmt.execute();
-			stmt.close();
-		}
-		catch (Exception e) {
-			log.error("Error update minion #" + minionCommonData.getMinionId(), e);
-		}
-		finally {
-			DatabaseFactory.close(con);
-		}
-	}
-	
-	public boolean PlayerMinions(int playerid, int minionObjId) {
-		Connection con = null;
-		try {
-			con = DatabaseFactory.getConnection();
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM player_minions WHERE player_id = ?");
-			stmt.setInt(1, playerid);
-			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) {
-				if(rs.getInt("object_id") == minionObjId) return true;
-			}
-			stmt.close();
-		}
-		catch (Exception e) {
-			log.error("Error getting minions for " + playerid, e);
-		}
-		finally {
-			DatabaseFactory.close(con);
-		}
-		return false;
-	}
-
-	@Override
-	public void evolutionMinion(Player player, MinionCommonData minionCommonData) {
-		Connection con = null;
-		try {
-			con = DatabaseFactory.getConnection();
-			PreparedStatement stmt = con.prepareStatement("UPDATE player_minions SET minion_id = ?, growthpoints = 0, level = ? WHERE player_id = ? AND object_id = ?");
-			stmt.setInt(1, minionCommonData.getMinionId());
-			stmt.setInt(2, minionCommonData.getMinionLevel());
-			stmt.setInt(3, minionCommonData.getMasterObjectId());
-			stmt.setInt(4, minionCommonData.getObjectId());
-			stmt.execute();
-			stmt.close();
-		}
-		catch (Exception e) {
-			log.error("Error update minion #" + minionCommonData.getMinionId(), e);
-		}
-		finally {
+		} catch (Exception e) {
+			log.error("Error update minion #" + petCommonData.getMinionId(), e);
+		} finally {
 			DatabaseFactory.close(con);
 		}
 	}
 
 	@Override
-	public void lockMinions(Player player, int minionObjId, int isLocked) {
-		Connection con = null;
-        try {
-            con = DatabaseFactory.getConnection();
-            PreparedStatement stmt = con.prepareStatement("UPDATE player_minions SET is_locked = ? WHERE player_id = ? AND object_id = ?");
-            stmt.setInt(1, isLocked);
-            stmt.setInt(2, player.getObjectId());
-            stmt.setInt(3, minionObjId);
-            stmt.execute();
-            stmt.close();
-        } catch (Exception e) {
-            log.error("Error update minionId #" + minionObjId, e);
-        } finally {
-            DatabaseFactory.close(con);
-        }
-	}
-	
-	@Override
-    public void saveDopingBag(Player player, MinionCommonData minionCommonData, MinionDopingBag bag) {
-        Connection con = null;
-        try {
-            con = DatabaseFactory.getConnection();
-            PreparedStatement stmt = con.prepareStatement("UPDATE player_minions SET buff_bag = ? WHERE player_id = ? AND object_id = ?");
-            String itemIds = bag.getFoodItem() + "," + bag.getDrinkItem();
-            for (int itemId : bag.getScrollsUsed()) {
-                itemIds += "," + Integer.toString(itemId);
-            }
-            stmt.setString(1, itemIds);
-            stmt.setInt(2, player.getObjectId());
-            stmt.setInt(3, minionCommonData.getObjectId());
-            stmt.execute();
-            stmt.close();
-        } catch (Exception e) {
-            log.error("Error update doping for minion #" + minionCommonData.getObjectId(), e);
-        } finally {
-            DatabaseFactory.close(con);
-        }
-    }
-	public void saveBirthday(MinionCommonData minionCommonData) {
+	public void lockMinions(Player player, int minionId, int isLocked) {
 		Connection con = null;
 		try {
 			con = DatabaseFactory.getConnection();
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM player_minions WHERE player_id = ? AND object_id = ?");
-			stmt.setInt(1, minionCommonData.getMasterObjectId());
-			stmt.setInt(2, minionCommonData.getObjectId());
-			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) {
-				minionCommonData.setBirthday(rs.getTimestamp("birthday"));
-			}
+			PreparedStatement stmt = con
+					.prepareStatement("UPDATE player_minions SET is_locked = ? WHERE player_id = ? AND minion_id = ?");
+			stmt.setInt(1, isLocked);
+			stmt.setInt(2, player.getObjectId());
+			stmt.setInt(3, minionId);
+			stmt.execute();
 			stmt.close();
+		} catch (Exception e) {
+			log.error("Error update minionId #" + minionId, e);
+		} finally {
+			DatabaseFactory.close(con);
 		}
-		catch (Exception e) {
-			log.error("Error getting minions for " + minionCommonData.getMasterObjectId(), e);
-        } finally {
-            DatabaseFactory.close(con);
-        }
+	}
+
+	@Override
+	public void evolutionMinion(Player player, int oldMinionId, int newMinionId, MinionCommonData petCommonData) {
+		Connection con = null;
+		try {
+			con = DatabaseFactory.getConnection();
+			PreparedStatement stmt = con
+					.prepareStatement("UPDATE player_minions SET minion_id = ? WHERE player_id = ? AND minion_id = ? AND name=?");
+			stmt.setInt(1, newMinionId);
+			stmt.setInt(2, player.getObjectId());
+			stmt.setInt(3, oldMinionId);
+			stmt.setString(4, petCommonData.getRealName());
+			stmt.execute();
+			stmt.close();
+		} catch (Exception e) {
+			log.error("Error update minion #" + petCommonData.getMinionId(), e);
+		} finally {
+			DatabaseFactory.close(con);
+		}
+	}
+
+	@Override
+	public void saveDopingBag(Player player, MinionCommonData petCommonData, MinionDopingBag bag) {
+		Connection con = null;
+		try {
+			con = DatabaseFactory.getConnection();
+			PreparedStatement stmt = con.prepareStatement("UPDATE player_minions SET buff_item = ? WHERE player_id = ? AND minion_id = ? AND name=?");
+			String itemIds = bag.getFoodItem() + "," + bag.getDrinkItem();
+			for (int itemId : bag.getScrollsUsed()) {
+				itemIds += "," + Integer.toString(itemId);
+			}
+			stmt.setString(1, itemIds);
+			stmt.setInt(2, player.getObjectId());
+			stmt.setInt(3, petCommonData.getMinionId());
+			stmt.setString(3, petCommonData.getRealName());
+			stmt.execute();
+			stmt.close();
+		} catch (Exception e) {
+			log.error("Error update doping for minion #" + petCommonData.getMinionId(), e);
+		} finally {
+			DatabaseFactory.close(con);
+		}
+	}
+
+	@Override
+	public void updateMinionsGrowthPoint(MinionCommonData petCommonData) {
+		Connection con = null;
+		try {
+			con = DatabaseFactory.getConnection();
+			PreparedStatement stmt = con
+					.prepareStatement("UPDATE player_minions SET growth_point = ? WHERE player_id = ? AND minion_id = ? AND name=?");
+			stmt.setInt(1, petCommonData.getGrowthPoint());
+			stmt.setInt(2, petCommonData.getMasterObjectId());
+			stmt.setInt(3, petCommonData.getMinionId());
+			stmt.setString(4, petCommonData.getRealName());
+			stmt.execute();
+			stmt.close();
+		} catch (Exception e) {
+			log.error("Error update minion #" + petCommonData.getMinionId(), e);
+		} finally {
+			DatabaseFactory.close(con);
+		}
 	}
 
 	@Override

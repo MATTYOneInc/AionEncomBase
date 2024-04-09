@@ -222,6 +222,7 @@
 			<xs:element name="houselimit" type="HouseLimitAction" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="assemble" type="AssemblyItemAction" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="adoptpet" type="AdoptPetAction" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="adoptminion" type="AdoptMinionAction" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="composition" type="CompositionAction" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="retuning" type="RetuningAction" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="wrapping" type="WrappingAction" minOccurs="0" maxOccurs="1"/>
@@ -510,6 +511,15 @@
 				<xs:attribute name="minutes" type="xs:int" use="optional"/>
 				<xs:attribute name="sidekick" type="xs:boolean" default="false"/>
 				<xs:attribute name="petId" type="xs:int"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AdoptMinionAction">
+		<xs:complexContent>
+			<xs:extension base="AbstractItemAction">
+				<xs:attribute name="minutes" type="xs:int" use="optional"/>
+				<xs:attribute name="minion_id" type="xs:int" use="optional"/>
+				<xs:attribute name="tier_grade" type="xs:string" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

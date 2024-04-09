@@ -104,7 +104,7 @@ import com.aionemu.gameserver.services.item.ItemService;
 import com.aionemu.gameserver.services.player.CreativityPanel.CreativityEssenceService;
 import com.aionemu.gameserver.services.summons.SummonsService;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
-import com.aionemu.gameserver.services.toypet.MinionService;
+import com.aionemu.gameserver.services.minion.MinionService;
 import com.aionemu.gameserver.services.toypet.PetSpawnService;
 import com.aionemu.gameserver.skillengine.SkillEngine;
 import com.aionemu.gameserver.skillengine.model.DispelCategoryType;
@@ -178,8 +178,7 @@ public class PlayerController extends CreatureController<Player> {
 			if (player.getMinion() != null) {
 				LoggerFactory.getLogger(PlayerController.class)
 						.debug("Player " + getOwner().getName() + " sees " + object.getName() + " that has minion");
-				MinionCommonData commonData = player.getMinionList().getMinion(object.getObjectId());
-				PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(5, commonData));
+				PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(5, player.getMinion()));
 			}
 			player.getEffectController().sendEffectIconsTo(getOwner());
 		} else if (object instanceof Kisk) {
@@ -209,8 +208,7 @@ public class PlayerController extends CreatureController<Player> {
 		} else if (object instanceof Pet) {
 			PacketSendUtility.sendPacket(getOwner(), new SM_PET(3, (Pet) object));
 		} else if (object instanceof Minion) {
-			MinionCommonData commonData = getOwner().getMinionList().getMinion(object.getObjectId());
-			PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(5, commonData));
+			PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(5, (Minion) object));
 		}
 	}
 
@@ -225,8 +223,7 @@ public class PlayerController extends CreatureController<Player> {
 		if (object instanceof Pet) {
 			PacketSendUtility.sendPacket(getOwner(), new SM_PET(4, (Pet) object));
 		} else if (object instanceof Minion) {
-			MinionCommonData commonData = getOwner().getMinionList().getMinion(object.getObjectId());
-			PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(6, commonData));
+			PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(6, (Minion) object));
 		} else {
 			PacketSendUtility.sendPacket(getOwner(), new SM_DELETE(object, isOutOfRange ? 0 : 15));
 		}
@@ -634,7 +631,7 @@ public class PlayerController extends CreatureController<Player> {
 		 */
 		Minion minion = player.getMinion();
 		if (minion != null) {
-			MinionService.getInstance().despawnMinion(player, minion.getObjectId());
+			MinionService.getInstance().dismissMinion(player, true);
 		}
 
 		if (player.isInState(CreatureState.FLYING)) {

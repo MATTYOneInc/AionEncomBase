@@ -36,4 +36,8 @@ public class TimeUtil {
 		String localDate = d.toLocaleString();
 		return localDate;
 	}
+
+	public static long getAddDaysTimestamp(int day){
+		return System.currentTimeMillis() + (day * 24 * 60 * 60 * 1000L) ;
+	}
 }

@@ -16,7 +16,9 @@
  */
 package com.aionemu.gameserver.model.gameobjects.player;
 
+import java.sql.Timestamp;
 import java.util.Collection;
+import java.util.List;
 
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.PlayerMinionsDAO;
@@ -27,67 +29,89 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import javolution.util.FastMap;
 
 public class MinionList {
-	private final Player player;
-	private int lastUsedObjId;
-	private FastMap<Integer, MinionCommonData> minions = new FastMap<Integer, MinionCommonData>();
 
-	public MinionList(Player player) {
+	private final Player player;
+	private int lastUsedMinionsId;
+	private FastMap<Integer, MinionCommonData> minions = new FastMap<>();
+
+	MinionList(Player player) {
 		this.player = player;
 		loadMinions();
 	}
 
 	public void loadMinions() {
-		for (MinionCommonData minionCommonData : DAOManager.getDAO(PlayerMinionsDAO.class).getPlayerMinions(player)) {
-			if (minionCommonData.getExpireTime() > 0) {
-				ExpireTimerTask.getInstance().addTask(minionCommonData, player);
+		List<MinionCommonData> playerMinions = DAOManager.getDAO(PlayerMinionsDAO.class).getPlayerMinions(player);
+		MinionCommonData lastUsedMinions = null;
+		for (MinionCommonData minion : playerMinions) {
+			if (minion.getExpireTime() > 0) {
+				ExpireTimerTask.getInstance().addTask(minion, player);
 			}
-			minions.put(minionCommonData.getObjectId(), minionCommonData);
+			minions.put(minion.getObjectId(), minion);
+			if (lastUsedMinions == null || minion.getDespawnTime().after(lastUsedMinions.getDespawnTime())) {
+				lastUsedMinions = minion;
+			}
+		}
+
+		if (lastUsedMinions != null) {
+			lastUsedMinionsId = lastUsedMinions.getMinionId();
 		}
 	}
+
 
 	public Collection<MinionCommonData> getMinions() {
-		return (Collection<MinionCommonData>) minions.values();
+		return minions.values();
 	}
 
-	public void updateMinionsList() {
-		minions.clear();
-		for (MinionCommonData minionCommonData : DAOManager.getDAO(PlayerMinionsDAO.class).getPlayerMinions(player)) {
-			minions.put(minionCommonData.getObjectId(), minionCommonData);
-		}
-		if (minions != null) {
-			PacketSendUtility.sendPacket(player, new SM_MINIONS(0, player.getMinionList().getMinions()));
-		}
-		return;
+	/**
+	 * @param objectId
+	 * @return
+	 */
+	public MinionCommonData getMinion(int objectId) {
+		return minions.get(objectId);
 	}
 
-	public MinionCommonData getMinion(int minionObjId) {
-		return minions.get(minionObjId);
+	public MinionCommonData getLastUsedMinion() {
+		return getMinion(lastUsedMinionsId);
 	}
 
-	public MinionCommonData addNewMinion(Player player, int minionId, String name, String grade, int level) {
-		MinionCommonData minionCommonData = new MinionCommonData(minionId, player.getObjectId(), name, grade, level, 0);
-		DAOManager.getDAO(PlayerMinionsDAO.class).insertPlayerMinion(minionCommonData);
-		DAOManager.getDAO(PlayerMinionsDAO.class).saveBirthday(minionCommonData);
-		minions.put(minionId, minionCommonData);
+	public void setLastUsedMinionsId(int lastUsedMinionId) {
+		this.lastUsedMinionsId = lastUsedMinionId;
+	}
+
+	/**
+	 * @param player
+	 * @param petId
+	 * @param name
+	 * @return
+	 */
+	public MinionCommonData addMinion(Player player, int petId, String name, int expireTime) {
+		return addMinion(player, petId, System.currentTimeMillis(), name, expireTime);
+	}
+
+	public MinionCommonData addMinion(Player player, int petId, long birthday, String name, int expireTime) {
+		MinionCommonData minionCommonData = new MinionCommonData(petId, player.getObjectId(), expireTime);
+		minionCommonData.setName(name);
+		minionCommonData.setBirthday(new Timestamp(birthday));
+		minionCommonData.setDespawnTime(new Timestamp(System.currentTimeMillis()));
+		DAOManager.getDAO(PlayerMinionsDAO.class).insertPlayerMinions(minionCommonData, name);
+		minions.put(minionCommonData.getObjectId(), minionCommonData);
 		return minionCommonData;
 	}
 
-	public boolean hasMinion(int n) {
-		return minions.containsKey(n);
+	/**
+	 * @param minionId
+	 * @return
+	 */
+	public boolean hasMinion(int minionId) {
+		return minions.containsKey(minionId);
 	}
 
-	public void deleteMinion(int minionObjId) {
-		if (hasMinion(minionObjId)) {
-			DAOManager.getDAO(PlayerMinionsDAO.class).removePlayerMinion(player, minionObjId);
-			minions.remove(minionObjId);
+	/**
+	 * @param objtId
+	 */
+	public void deleteMinion(int objtId) {
+		if (hasMinion(objtId)) {
+			minions.remove(objtId);
 		}
-	}
-
-	public void setLastUsed(int lastUsedObjId) {
-		this.lastUsedObjId = lastUsedObjId;
-	}
-
-	public int getLastUsed() {
-		return lastUsedObjId;
 	}
 }

@@ -910,8 +910,15 @@ public class VisibleObjectSpawner {
 	 * @return
 	 */
 	public static Minion spawnMinion(Player player, int minionId) {
+		int minionObjtId = minionId;
+		for (MinionCommonData list : player.getMinionList().getMinions()) {
+			if (list.getObjectId() == minionId) {
+				minionId = list.getMinionId();
+				break;
+			}
+		}
+		MinionCommonData minionCommonData = player.getMinionList().getMinion(minionObjtId);
 
-		MinionCommonData minionCommonData = player.getMinionList().getMinion(minionId);
 		if (minionCommonData == null) {
 			return null;
 		}
@@ -925,14 +932,13 @@ public class VisibleObjectSpawner {
 		minion.setKnownlist(new PlayerAwareKnownList(minion));
 		player.setMinion(minion);
 
-		float x = player.getX() - 2;
+		float x = player.getX();
 		float y = player.getY();
 		float z = player.getZ();
 		byte heading = player.getHeading();
 		int worldId = player.getWorldId();
 		int instanceId = player.getInstanceId();
 		SpawnTemplate spawn = SpawnEngine.createSpawnTemplate(worldId, minionId, x, y, z, heading);
-
 		SpawnEngine.bringIntoWorld(minion, spawn, instanceId);
 		return minion;
 	}

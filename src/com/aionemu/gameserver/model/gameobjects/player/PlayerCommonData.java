@@ -113,8 +113,11 @@ public class PlayerCommonData extends VisibleObjectTemplate {
 	private int resetBoard;
 	// Atreian Passport Creation Date
 	private Timestamp creationDate;
-	private int minionSkillPoints;
+	// Minion
+	private int minionPoint;
 	private Timestamp minionFunctionTime;
+	private boolean minionAutoRenew;
+	private boolean minionAutoCharge;
 
 	public PlayerCommonData(int objId) {
 		this.playerObjId = objId;
@@ -1112,12 +1115,12 @@ public class PlayerCommonData extends VisibleObjectTemplate {
 	/**
 	 * @Minions
 	 */
-	public int getMinionSkillPoints() {
-		return minionSkillPoints;
+	public int getMinionPoint() {
+		return minionPoint;
 	}
 
-	public void setMinionSkillPoints(int minionSkillPoints) {
-		this.minionSkillPoints = minionSkillPoints;
+	public void setMinionPoint(int minionPoint) {
+		this.minionPoint = minionPoint;
 	}
 
 	public Timestamp getMinionFunctionTime() {
@@ -1126,5 +1129,21 @@ public class PlayerCommonData extends VisibleObjectTemplate {
 
 	public void setMinionFunctionTime(Timestamp minionFunctionTime) {
 		this.minionFunctionTime = minionFunctionTime;
+	}
+
+	public boolean isMinionAutoCharge() {
+		return minionAutoCharge;
+	}
+
+	public void setMinionAutoCharge(boolean auto) {
+		this.minionAutoCharge = auto;
+	}
+
+	public boolean isMinionAutoRenew() {
+		return minionAutoRenew;
+	}
+
+	public void setMinionAutoRenew(boolean auto) {
+		this.minionAutoRenew = auto;
 	}
 }

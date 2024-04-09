@@ -1,1519 +1,811 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <minions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="minions.xsd">
-    <minion id="980010" name="Kerubar" nameid="1614348" grade="D" level="1" growthPoints="10">
-        <modifiers>
-            <add name="MAXHP" value="50"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4909" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2"/>
-        <bound front="0.22" side="0.22" upper="0.49"/>
-    </minion>
-    <minion id="980011" name="Kerubian" nameid="1614350" grade="C" level="1" growthPoints="100">
-        <modifiers>
-            <add name="MAXHP" value="100"/>
-            <add name="PHYSICAL_ATTACK" value="1"/>
-            <add name="BOOST_MAGICAL_SKILL" value="6"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4908" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2"/>
-        <bound front="0.22" side="0.22" upper="0.49"/>
-    </minion>
-    <minion id="980012" name="Kerubiel" nameid="1614352" grade="B" level="1" growthPoints="1300">
-        <modifiers>
-            <add name="MAXHP" value="110"/>
-            <add name="PHYSICAL_ATTACK" value="1"/>
-            <add name="PHYSICAL_CRITICAL" value="3"/>
-            <add name="BOOST_MAGICAL_SKILL" value="7"/>
-            <add name="MAGICAL_ACCURACY" value="4"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4907" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2"/>
-        <bound front="0.22" side="0.22" upper="0.49"/>
-    </minion>
-    <minion id="980013" name="Arch Kerubiel" nameid="1614354" grade="A" level="1" growthPoints="4000">
-        <modifiers>
-            <add name="MAXHP" value="161"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="5"/>
-            <add name="PHYSICAL_ACCURACY" value="7"/>
-            <add name="BOOST_MAGICAL_SKILL" value="11"/>
-            <add name="MAGICAL_ACCURACY" value="6"/>
-            <add name="MAGICAL_CRITICAL" value="4"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4906" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2"/>
-        <bound front="0.22" side="0.22" upper="0.49"/>
-    </minion>
-    <minion id="980020" name="Seiren" nameid="1614356" grade="C" level="1" growthPoints="100" growthMax="2000" growthCost="100000">
-        <modifiers>
-            <add name="MAXHP" value="104"/>
-            <add name="PHYSICAL_ATTACK" value="1"/>
-            <add name="BOOST_MAGICAL_SKILL" value="6"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4902" energyCost="120"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="10" evolvedCost="20000000"/>
-    </minion>
-    <minion id="980021" name="Seiren" nameid="1614356" grade="C" level="2" growthPoints="200" growthMax="2000" growthCost="100000">
-        <modifiers>
-            <add name="MAXHP" value="116"/>
-            <add name="PHYSICAL_ATTACK" value="3"/>
-            <add name="BOOST_MAGICAL_SKILL" value="14"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4903" energyCost="120"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="20" evolvedCost="20000000"/>
-    </minion>
-    <minion id="980022" name="Seiren" nameid="1614356" grade="C" level="3" growthPoints="300" growthMax="2000" growthCost="100000">
-        <modifiers>
-            <add name="MAXHP" value="128"/>
-            <add name="PHYSICAL_ATTACK" value="5"/>
-            <add name="BOOST_MAGICAL_SKILL" value="22"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4903" energyCost="120"/>
-            <skill skill_id="4904" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="40" evolvedCost="20000000"/>
-    </minion>
-    <minion id="980023" name="Seiren" nameid="1614356" grade="C" level="4" growthPoints="400" growthMax="2000" growthCost="100000">
-        <modifiers>
-            <add name="MAXHP" value="140"/>
-            <add name="PHYSICAL_ATTACK" value="7"/>
-            <add name="BOOST_MAGICAL_SKILL" value="30"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4903" energyCost="120"/>
-            <skill skill_id="4905" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="80" evolvedCost="20000000"/>
-    </minion>
-    <minion id="980030" name="Steel Rose" nameid="1614358" grade="C" level="1" growthPoints="100" growthMax="2000" growthCost="100000">
-        <modifiers>
-            <add name="MAXHP" value="104"/>
-            <add name="PHYSICAL_ATTACK" value="1"/>
-            <add name="BOOST_MAGICAL_SKILL" value="6"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4898" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.17" side="0.17" upper="0.47"/>
-        <evolved itemId="190200000" evolvedNum="10" evolvedCost="20000000"/>
-    </minion>
-    <minion id="980031" name="Steel Rose" nameid="1614358" grade="C" level="2" growthPoints="200" growthMax="2000" growthCost="100000">
-        <modifiers>
-            <add name="MAXHP" value="116"/>
-            <add name="PHYSICAL_ATTACK" value="3"/>
-            <add name="BOOST_MAGICAL_SKILL" value="14"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4899" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.17" side="0.17" upper="0.47"/>
-        <evolved itemId="190200000" evolvedNum="20" evolvedCost="20000000"/>
-    </minion>
-    <minion id="980032" name="Steel Rose" nameid="1614358" grade="C" level="3" growthPoints="300" growthMax="2000" growthCost="100000">
-        <modifiers>
-            <add name="MAXHP" value="128"/>
-            <add name="PHYSICAL_ATTACK" value="5"/>
-            <add name="BOOST_MAGICAL_SKILL" value="22"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4899" energyCost="48"/>
-            <skill skill_id="4900" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.17" side="0.17" upper="0.47"/>
-        <evolved itemId="190200000" evolvedNum="40" evolvedCost="20000000"/>
-    </minion>
-    <minion id="980033" name="Steel Rose" nameid="1614358" grade="C" level="4" growthPoints="400" growthMax="2000" growthCost="100000">
-        <modifiers>
-            <add name="MAXHP" value="140"/>
-            <add name="PHYSICAL_ATTACK" value="7"/>
-            <add name="BOOST_MAGICAL_SKILL" value="30"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4899" energyCost="48"/>
-            <skill skill_id="4901" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.17" side="0.17" upper="0.47"/>
-        <evolved itemId="190200000" evolvedNum="80" evolvedCost="20000000"/>
-    </minion>
-    <minion id="980040" name="Abija" nameid="1614360" grade="B" level="1" growthPoints="1300" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="110"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="4"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="7"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4894" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="75" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980041" name="Abija" nameid="1614360" grade="B" level="2" growthPoints="2600" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="170"/>
-            <add name="PHYSICAL_ATTACK" value="6"/>
-            <add name="PHYSICAL_CRITICAL" value="12"/>
-            <add name="BOOST_MAGICAL_SKILL" value="28"/>
-            <add name="MAGICAL_ACCURACY" value="17"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4895" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="125" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980042" name="Abija" nameid="1614360" grade="B" level="3" growthPoints="3900" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="230"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="20"/>
-            <add name="BOOST_MAGICAL_SKILL" value="46"/>
-            <add name="MAGICAL_ACCURACY" value="27"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4895" energyCost="48"/>
-            <skill skill_id="4896" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="250" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980043" name="Abija" nameid="1614360" grade="B" level="4" growthPoints="5200" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="290"/>
-            <add name="PHYSICAL_ATTACK" value="14"/>
-            <add name="PHYSICAL_CRITICAL" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="64"/>
-            <add name="MAGICAL_ACCURACY" value="37"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4895" energyCost="48"/>
-            <skill skill_id="4897" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="500" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980050" name="Hamerun" nameid="1614362" grade="B" level="1" growthPoints="1300" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="110"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="4"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="7"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4890" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="75" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980051" name="Hamerun" nameid="1614362" grade="B" level="2" growthPoints="2600" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="170"/>
-            <add name="PHYSICAL_ATTACK" value="6"/>
-            <add name="PHYSICAL_CRITICAL" value="12"/>
-            <add name="BOOST_MAGICAL_SKILL" value="28"/>
-            <add name="MAGICAL_ACCURACY" value="17"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4891" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="125" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980052" name="Hamerun" nameid="1614362" grade="B" level="3" growthPoints="3900" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="230"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="20"/>
-            <add name="BOOST_MAGICAL_SKILL" value="46"/>
-            <add name="MAGICAL_ACCURACY" value="27"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4891" energyCost="48"/>
-            <skill skill_id="4892" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="250" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980053" name="Hamerun" nameid="1614362" grade="B" level="4" growthPoints="5200" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="290"/>
-            <add name="PHYSICAL_ATTACK" value="14"/>
-            <add name="PHYSICAL_CRITICAL" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="64"/>
-            <add name="MAGICAL_ACCURACY" value="37"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4891" energyCost="48"/>
-            <skill skill_id="4893" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="500" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980060" name="Grendal" nameid="1614364" grade="A" level="1" growthPoints="4000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="324"/>
-            <add name="PHYSICAL_ATTACK" value="3"/>
-            <add name="PHYSICAL_CRITICAL" value="6"/>
-            <add name="PHYSICAL_ACCURACY" value="10"/>
-            <add name="BOOST_MAGICAL_SKILL" value="16"/>
-            <add name="MAGICAL_ACCURACY" value="12"/>
-            <add name="MAGICAL_CRITICAL" value="8"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4886" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.15" side="0.15" upper="0.60"/>
-        <evolved itemId="190200000" evolvedNum="600" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980061" name="Grendal" nameid="1614364" grade="A" level="2" growthPoints="8000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="1216"/>
-            <add name="PHYSICAL_ATTACK" value="15"/>
-            <add name="PHYSICAL_CRITICAL" value="30"/>
-            <add name="PHYSICAL_ACCURACY" value="46"/>
-            <add name="BOOST_MAGICAL_SKILL" value="70"/>
-            <add name="MAGICAL_ACCURACY" value="42"/>
-            <add name="MAGICAL_CRITICAL" value="28"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4887" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.15" side="0.15" upper="0.60"/>
-        <evolved itemId="190200000" evolvedNum="1000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980062" name="Grendal" nameid="1614364" grade="A" level="3" growthPoints="12000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="2108"/>
-            <add name="PHYSICAL_ATTACK" value="27"/>
-            <add name="PHYSICAL_CRITICAL" value="54"/>
-            <add name="PHYSICAL_ACCURACY" value="82"/>
-            <add name="BOOST_MAGICAL_SKILL" value="124"/>
-            <add name="MAGICAL_ACCURACY" value="72"/>
-            <add name="MAGICAL_CRITICAL" value="48"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4887" energyCost="48"/>
-            <skill skill_id="4888" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.15" side="0.15" upper="0.60"/>
-        <evolved itemId="190200000" evolvedNum="2000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980063" name="Grendal" nameid="1614364" grade="A" level="4" growthPoints="16000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="3000"/>
-            <add name="PHYSICAL_ATTACK" value="39"/>
-            <add name="PHYSICAL_CRITICAL" value="78"/>
-            <add name="PHYSICAL_ACCURACY" value="118"/>
-            <add name="BOOST_MAGICAL_SKILL" value="178"/>
-            <add name="MAGICAL_ACCURACY" value="102"/>
-            <add name="MAGICAL_CRITICAL" value="68"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4887" energyCost="48"/>
-            <skill skill_id="4889" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.15" side="0.15" upper="0.60"/>
-        <evolved itemId="190200000" evolvedNum="4000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980070" name="Sita" nameid="1614366" grade="A" level="1" growthPoints="4000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="324"/>
-            <add name="PHYSICAL_ATTACK" value="3"/>
-            <add name="PHYSICAL_CRITICAL" value="6"/>
-            <add name="PHYSICAL_ACCURACY" value="10"/>
-            <add name="BOOST_MAGICAL_SKILL" value="16"/>
-            <add name="MAGICAL_ACCURACY" value="12"/>
-            <add name="MAGICAL_CRITICAL" value="8"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4882" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="600" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980071" name="Sita" nameid="1614366" grade="A" level="2" growthPoints="8000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="1216"/>
-            <add name="PHYSICAL_ATTACK" value="15"/>
-            <add name="PHYSICAL_CRITICAL" value="30"/>
-            <add name="PHYSICAL_ACCURACY" value="46"/>
-            <add name="BOOST_MAGICAL_SKILL" value="70"/>
-            <add name="MAGICAL_ACCURACY" value="42"/>
-            <add name="MAGICAL_CRITICAL" value="28"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4883" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="1000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980072" name="Sita" nameid="1614366" grade="A" level="3" growthPoints="12000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="2108"/>
-            <add name="PHYSICAL_ATTACK" value="27"/>
-            <add name="PHYSICAL_CRITICAL" value="54"/>
-            <add name="PHYSICAL_ACCURACY" value="82"/>
-            <add name="BOOST_MAGICAL_SKILL" value="124"/>
-            <add name="MAGICAL_ACCURACY" value="72"/>
-            <add name="MAGICAL_CRITICAL" value="48"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4883" energyCost="48"/>
-            <skill skill_id="4884" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="2000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980073" name="Sita" nameid="1614366" grade="A" level="4" growthPoints="16000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="3000"/>
-            <add name="PHYSICAL_ATTACK" value="39"/>
-            <add name="PHYSICAL_CRITICAL" value="78"/>
-            <add name="PHYSICAL_ACCURACY" value="118"/>
-            <add name="BOOST_MAGICAL_SKILL" value="178"/>
-            <add name="MAGICAL_ACCURACY" value="102"/>
-            <add name="MAGICAL_CRITICAL" value="68"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4883" energyCost="48"/>
-            <skill skill_id="4885" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="4000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980074" name="Karemiwen" nameid="1614378" grade="B" level="1" growthPoints="1300" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="110"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="4"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="7"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4967" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="75" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980075" name="Karemiwen" nameid="1614378" grade="B" level="2" growthPoints="2600" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="170"/>
-            <add name="PHYSICAL_ATTACK" value="6"/>
-            <add name="PHYSICAL_CRITICAL" value="12"/>
-            <add name="BOOST_MAGICAL_SKILL" value="28"/>
-            <add name="MAGICAL_ACCURACY" value="17"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4968" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="125" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980076" name="Karemiwen" nameid="1614378" grade="B" level="3" growthPoints="3900" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="230"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="20"/>
-            <add name="BOOST_MAGICAL_SKILL" value="46"/>
-            <add name="MAGICAL_ACCURACY" value="27"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4968" energyCost="48"/>
-            <skill skill_id="4969" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="250" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980077" name="Karemiwen" nameid="1614378" grade="B" level="4" growthPoints="5200" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="290"/>
-            <add name="PHYSICAL_ATTACK" value="14"/>
-            <add name="PHYSICAL_CRITICAL" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="64"/>
-            <add name="MAGICAL_ACCURACY" value="37"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4968" energyCost="48"/>
-            <skill skill_id="4970" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="500" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980078" name="Saendukal" nameid="1614380" grade="B" level="1" growthPoints="1300" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="110"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="4"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="7"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4971" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="75" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980079" name="Saendukal" nameid="1614380" grade="B" level="2" growthPoints="2600" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="170"/>
-            <add name="PHYSICAL_ATTACK" value="6"/>
-            <add name="PHYSICAL_CRITICAL" value="12"/>
-            <add name="BOOST_MAGICAL_SKILL" value="28"/>
-            <add name="MAGICAL_ACCURACY" value="17"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4972" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="125" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980080" name="Saendukal" nameid="1614380" grade="B" level="3" growthPoints="3900" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="230"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="20"/>
-            <add name="BOOST_MAGICAL_SKILL" value="46"/>
-            <add name="MAGICAL_ACCURACY" value="27"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4972" energyCost="48"/>
-            <skill skill_id="4973" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="250" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980081" name="Saendukal" nameid="1614380" grade="B" level="4" growthPoints="5200" growthMax="10000" growthCost="300000">
-        <modifiers>
-            <add name="MAXHP" value="290"/>
-            <add name="PHYSICAL_ATTACK" value="14"/>
-            <add name="PHYSICAL_CRITICAL" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="64"/>
-            <add name="MAGICAL_ACCURACY" value="37"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4972" energyCost="48"/>
-            <skill skill_id="4974" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="500" evolvedCost="80000000"/>
-    </minion>
-    <minion id="980082" name="Weda" nameid="1614372" grade="A" level="1" growthPoints="4000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="324"/>
-            <add name="PHYSICAL_ATTACK" value="3"/>
-            <add name="PHYSICAL_CRITICAL" value="6"/>
-            <add name="PHYSICAL_ACCURACY" value="10"/>
-            <add name="BOOST_MAGICAL_SKILL" value="16"/>
-            <add name="MAGICAL_ACCURACY" value="12"/>
-            <add name="MAGICAL_CRITICAL" value="8"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4955" energyCost="60"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="600" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980083" name="Weda" nameid="1614372" grade="A" level="2" growthPoints="8000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="1216"/>
-            <add name="PHYSICAL_ATTACK" value="15"/>
-            <add name="PHYSICAL_CRITICAL" value="30"/>
-            <add name="PHYSICAL_ACCURACY" value="46"/>
-            <add name="BOOST_MAGICAL_SKILL" value="70"/>
-            <add name="MAGICAL_ACCURACY" value="42"/>
-            <add name="MAGICAL_CRITICAL" value="28"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4956" energyCost="60"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="1000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980084" name="Weda" nameid="1614372" grade="A" level="3" growthPoints="12000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="2108"/>
-            <add name="PHYSICAL_ATTACK" value="27"/>
-            <add name="PHYSICAL_CRITICAL" value="54"/>
-            <add name="PHYSICAL_ACCURACY" value="82"/>
-            <add name="BOOST_MAGICAL_SKILL" value="124"/>
-            <add name="MAGICAL_ACCURACY" value="72"/>
-            <add name="MAGICAL_CRITICAL" value="48"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4956" energyCost="60"/>
-            <skill skill_id="4957" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="2000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980085" name="Weda" nameid="1614372" grade="A" level="4" growthPoints="16000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="3000"/>
-            <add name="PHYSICAL_ATTACK" value="39"/>
-            <add name="PHYSICAL_CRITICAL" value="78"/>
-            <add name="PHYSICAL_ACCURACY" value="118"/>
-            <add name="BOOST_MAGICAL_SKILL" value="178"/>
-            <add name="MAGICAL_ACCURACY" value="102"/>
-            <add name="MAGICAL_CRITICAL" value="68"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4956" energyCost="60"/>
-            <skill skill_id="4958" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="4000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980086" name="Kromede" nameid="1614374" grade="A" level="1" growthPoints="4000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="324"/>
-            <add name="PHYSICAL_ATTACK" value="3"/>
-            <add name="PHYSICAL_CRITICAL" value="6"/>
-            <add name="PHYSICAL_ACCURACY" value="10"/>
-            <add name="BOOST_MAGICAL_SKILL" value="16"/>
-            <add name="MAGICAL_ACCURACY" value="12"/>
-            <add name="MAGICAL_CRITICAL" value="8"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4959" energyCost="60"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="600" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980087" name="Kromede" nameid="1614374" grade="A" level="2" growthPoints="8000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="1216"/>
-            <add name="PHYSICAL_ATTACK" value="15"/>
-            <add name="PHYSICAL_CRITICAL" value="30"/>
-            <add name="PHYSICAL_ACCURACY" value="46"/>
-            <add name="BOOST_MAGICAL_SKILL" value="70"/>
-            <add name="MAGICAL_ACCURACY" value="42"/>
-            <add name="MAGICAL_CRITICAL" value="28"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4960" energyCost="60"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="1000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980088" name="Kromede" nameid="1614374" grade="A" level="3" growthPoints="12000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="2108"/>
-            <add name="PHYSICAL_ATTACK" value="27"/>
-            <add name="PHYSICAL_CRITICAL" value="54"/>
-            <add name="PHYSICAL_ACCURACY" value="82"/>
-            <add name="BOOST_MAGICAL_SKILL" value="124"/>
-            <add name="MAGICAL_ACCURACY" value="72"/>
-            <add name="MAGICAL_CRITICAL" value="48"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4960" energyCost="60"/>
-            <skill skill_id="4961" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="2000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980089" name="Kromede" nameid="1614374" grade="A" level="4" growthPoints="16000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="3000"/>
-            <add name="PHYSICAL_ATTACK" value="39"/>
-            <add name="PHYSICAL_CRITICAL" value="78"/>
-            <add name="PHYSICAL_ACCURACY" value="118"/>
-            <add name="BOOST_MAGICAL_SKILL" value="178"/>
-            <add name="MAGICAL_ACCURACY" value="102"/>
-            <add name="MAGICAL_CRITICAL" value="68"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4960" energyCost="60"/>
-            <skill skill_id="4962" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="4000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980090" name="Hyperion" nameid="1614376" grade="A" level="1" growthPoints="4000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="324"/>
-            <add name="PHYSICAL_ATTACK" value="3"/>
-            <add name="PHYSICAL_CRITICAL" value="6"/>
-            <add name="PHYSICAL_ACCURACY" value="10"/>
-            <add name="BOOST_MAGICAL_SKILL" value="16"/>
-            <add name="MAGICAL_ACCURACY" value="12"/>
-            <add name="MAGICAL_CRITICAL" value="8"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4963" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="600" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980091" name="Hyperion" nameid="1614376" grade="A" level="2" growthPoints="8000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="1216"/>
-            <add name="PHYSICAL_ATTACK" value="15"/>
-            <add name="PHYSICAL_CRITICAL" value="30"/>
-            <add name="PHYSICAL_ACCURACY" value="46"/>
-            <add name="BOOST_MAGICAL_SKILL" value="70"/>
-            <add name="MAGICAL_ACCURACY" value="42"/>
-            <add name="MAGICAL_CRITICAL" value="28"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4964" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="1000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980092" name="Hyperion" nameid="1614376" grade="A" level="3" growthPoints="12000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="2108"/>
-            <add name="PHYSICAL_ATTACK" value="27"/>
-            <add name="PHYSICAL_CRITICAL" value="54"/>
-            <add name="PHYSICAL_ACCURACY" value="82"/>
-            <add name="BOOST_MAGICAL_SKILL" value="124"/>
-            <add name="MAGICAL_ACCURACY" value="72"/>
-            <add name="MAGICAL_CRITICAL" value="48"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4964" energyCost="48"/>
-            <skill skill_id="4965" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="2000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="980093" name="Hyperion" nameid="1614376" grade="A" level="4" growthPoints="16000" growthMax="50000" growthCost="500000">
-        <modifiers>
-            <add name="MAXHP" value="3000"/>
-            <add name="PHYSICAL_ATTACK" value="39"/>
-            <add name="PHYSICAL_CRITICAL" value="78"/>
-            <add name="PHYSICAL_ACCURACY" value="118"/>
-            <add name="BOOST_MAGICAL_SKILL" value="178"/>
-            <add name="MAGICAL_ACCURACY" value="102"/>
-            <add name="MAGICAL_CRITICAL" value="68"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4964" energyCost="48"/>
-            <skill skill_id="4966" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="4000" evolvedCost="150000000"/>
-    </minion>
-    <minion id="981010" name="Kerubar" nameid="1614348" grade="D" level="1" growthPoints="10">
-        <modifiers>
-            <add name="MAXHP" value="50"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5002" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2"/>
-        <bound front="0.22" side="0.22" upper="0.49"/>
-    </minion>
-    <minion id="981011" name="Kerubian" nameid="1614350" grade="C" level="1" growthPoints="100">
-        <modifiers>
-            <add name="MAXHP" value="62"/>
-            <add name="PHYSICAL_ATTACK" value="1"/>
-            <add name="BOOST_MAGICAL_SKILL" value="6"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5001" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2"/>
-        <bound front="0.22" side="0.22" upper="0.49"/>
-    </minion>
-    <minion id="981012" name="Kerubiel" nameid="1614352" grade="B" level="1" growthPoints="1300">
-        <modifiers>
-            <add name="MAXHP" value="66"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="4"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="7"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5000" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2"/>
-        <bound front="0.22" side="0.22" upper="0.49"/>
-    </minion>
-    <minion id="981013" name="Arch Kerubiel" nameid="1614354" grade="A" level="1" growthPoints="4000">
-        <modifiers>
-            <add name="MAXHP" value="198"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="5"/>
-            <add name="PHYSICAL_ACCURACY" value="6"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="8"/>
-            <add name="MAGICAL_CRITICAL" value="5"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4999" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2"/>
-        <bound front="0.22" side="0.22" upper="0.49"/>
-    </minion>
-    <minion id="981020" name="Seiren" nameid="1614356" grade="C" level="1" growthPoints="100" growthMax="2000" growthCost="10000">
-        <modifiers>
-            <add name="MAXHP" value="62"/>
-            <add name="PHYSICAL_ATTACK" value="1"/>
-            <add name="BOOST_MAGICAL_SKILL" value="6"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4995" energyCost="120"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="10" evolvedCost="2000000"/>
-    </minion>
-    <minion id="981021" name="Seiren" nameid="1614356" grade="C" level="2" growthPoints="200" growthMax="2000" growthCost="10000">
-        <modifiers>
-            <add name="MAXHP" value="70"/>
-            <add name="PHYSICAL_ATTACK" value="3"/>
-            <add name="BOOST_MAGICAL_SKILL" value="14"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4996" energyCost="120"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="20" evolvedCost="2000000"/>
-    </minion>
-    <minion id="981022" name="Seiren" nameid="1614356" grade="C" level="3" growthPoints="300" growthMax="2000" growthCost="10000">
-        <modifiers>
-            <add name="MAXHP" value="78"/>
-            <add name="PHYSICAL_ATTACK" value="5"/>
-            <add name="BOOST_MAGICAL_SKILL" value="22"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4996" energyCost="120"/>
-            <skill skill_id="4997" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="40" evolvedCost="2000000"/>
-    </minion>
-    <minion id="981023" name="Seiren" nameid="1614356" grade="C" level="4" growthPoints="400" growthMax="2000" growthCost="10000">
-        <modifiers>
-            <add name="MAXHP" value="86"/>
-            <add name="PHYSICAL_ATTACK" value="7"/>
-            <add name="BOOST_MAGICAL_SKILL" value="30"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4996" energyCost="120"/>
-            <skill skill_id="4998" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="80" evolvedCost="2000000"/>
-    </minion>
-    <minion id="981030" name="Steel Rose" nameid="1614358" grade="C" level="1" growthPoints="100" growthMax="2000" growthCost="10000">
-        <modifiers>
-            <add name="MAXHP" value="62"/>
-            <add name="PHYSICAL_ATTACK" value="1"/>
-            <add name="BOOST_MAGICAL_SKILL" value="6"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4991" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.17" side="0.17" upper="0.47"/>
-        <evolved itemId="190200000" evolvedNum="10" evolvedCost="2000000"/>
-    </minion>
-    <minion id="981031" name="Steel Rose" nameid="1614358" grade="C" level="2" growthPoints="200" growthMax="2000" growthCost="10000">
-        <modifiers>
-            <add name="MAXHP" value="70"/>
-            <add name="PHYSICAL_ATTACK" value="3"/>
-            <add name="BOOST_MAGICAL_SKILL" value="14"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4992" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.17" side="0.17" upper="0.47"/>
-        <evolved itemId="190200000" evolvedNum="20" evolvedCost="2000000"/>
-    </minion>
-    <minion id="981032" name="Steel Rose" nameid="1614358" grade="C" level="3" growthPoints="300" growthMax="2000" growthCost="10000">
-        <modifiers>
-            <add name="MAXHP" value="78"/>
-            <add name="PHYSICAL_ATTACK" value="5"/>
-            <add name="BOOST_MAGICAL_SKILL" value="22"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4992" energyCost="48"/>
-            <skill skill_id="4993" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.17" side="0.17" upper="0.47"/>
-        <evolved itemId="190200000" evolvedNum="40" evolvedCost="2000000"/>
-    </minion>
-    <minion id="981033" name="Steel Rose" nameid="1614358" grade="C" level="4" growthPoints="400" growthMax="2000" growthCost="10000">
-        <modifiers>
-            <add name="MAXHP" value="86"/>
-            <add name="PHYSICAL_ATTACK" value="7"/>
-            <add name="BOOST_MAGICAL_SKILL" value="30"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4992" energyCost="48"/>
-            <skill skill_id="4994" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.17" side="0.17" upper="0.47"/>
-        <evolved itemId="190200000" evolvedNum="80" evolvedCost="2000000"/>
-    </minion>
-    <minion id="981040" name="Abija" nameid="1614360" grade="B" level="1" growthPoints="1300" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="66"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="4"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="7"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4987" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="75" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981041" name="Abija" nameid="1614360" grade="B" level="2" growthPoints="2600" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="102"/>
-            <add name="PHYSICAL_ATTACK" value="6"/>
-            <add name="PHYSICAL_CRITICAL" value="12"/>
-            <add name="BOOST_MAGICAL_SKILL" value="28"/>
-            <add name="MAGICAL_ACCURACY" value="17"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4988" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="125" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981042" name="Abija" nameid="1614360" grade="B" level="3" growthPoints="3900" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="138"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="20"/>
-            <add name="BOOST_MAGICAL_SKILL" value="46"/>
-            <add name="MAGICAL_ACCURACY" value="27"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4988" energyCost="48"/>
-            <skill skill_id="4989" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="250" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981043" name="Abija" nameid="1614360" grade="B" level="4" growthPoints="5200" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="174"/>
-            <add name="PHYSICAL_ATTACK" value="14"/>
-            <add name="PHYSICAL_CRITICAL" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="64"/>
-            <add name="MAGICAL_ACCURACY" value="37"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4988" energyCost="48"/>
-            <skill skill_id="4990" energyCost="240"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="500" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981050" name="Hamerun" nameid="1614362" grade="B" level="1" growthPoints="1300" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="66"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="4"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="7"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4983" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="75" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981051" name="Hamerun" nameid="1614362" grade="B" level="2" growthPoints="2600" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="102"/>
-            <add name="PHYSICAL_ATTACK" value="6"/>
-            <add name="PHYSICAL_CRITICAL" value="12"/>
-            <add name="BOOST_MAGICAL_SKILL" value="28"/>
-            <add name="MAGICAL_ACCURACY" value="17"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4984" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="125" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981052" name="Hamerun" nameid="1614362" grade="B" level="3" growthPoints="3900" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="138"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="20"/>
-            <add name="BOOST_MAGICAL_SKILL" value="46"/>
-            <add name="MAGICAL_ACCURACY" value="27"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4984" energyCost="48"/>
-            <skill skill_id="4985" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="250" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981053" name="Hamerun" nameid="1614362" grade="B" level="4" growthPoints="5200" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="174"/>
-            <add name="PHYSICAL_ATTACK" value="14"/>
-            <add name="PHYSICAL_CRITICAL" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="64"/>
-            <add name="MAGICAL_ACCURACY" value="37"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4984" energyCost="48"/>
-            <skill skill_id="4986" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="500" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981060" name="Grendal" nameid="1614364" grade="A" level="1" growthPoints="4000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="198"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="5"/>
-            <add name="PHYSICAL_ACCURACY" value="6"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="8"/>
-            <add name="MAGICAL_CRITICAL" value="5"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4979" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.15" side="0.15" upper="0.60"/>
-        <evolved itemId="190200000" evolvedNum="600" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981061" name="Grendal" nameid="1614364" grade="A" level="2" growthPoints="8000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="732"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="19"/>
-            <add name="PHYSICAL_ACCURACY" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="42"/>
-            <add name="MAGICAL_ACCURACY" value="26"/>
-            <add name="MAGICAL_CRITICAL" value="19"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4980" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.15" side="0.15" upper="0.60"/>
-        <evolved itemId="190200000" evolvedNum="1000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981062" name="Grendal" nameid="1614364" grade="A" level="3" growthPoints="12000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="1266"/>
-            <add name="PHYSICAL_ATTACK" value="18"/>
-            <add name="PHYSICAL_CRITICAL" value="33"/>
-            <add name="PHYSICAL_ACCURACY" value="50"/>
-            <add name="BOOST_MAGICAL_SKILL" value="74"/>
-            <add name="MAGICAL_ACCURACY" value="44"/>
-            <add name="MAGICAL_CRITICAL" value="33"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4980" energyCost="48"/>
-            <skill skill_id="4981" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.15" side="0.15" upper="0.60"/>
-        <evolved itemId="190200000" evolvedNum="2000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981063" name="Grendal" nameid="1614364" grade="A" level="4" growthPoints="16000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="1800"/>
-            <add name="PHYSICAL_ATTACK" value="26"/>
-            <add name="PHYSICAL_CRITICAL" value="47"/>
-            <add name="PHYSICAL_ACCURACY" value="72"/>
-            <add name="BOOST_MAGICAL_SKILL" value="106"/>
-            <add name="MAGICAL_ACCURACY" value="62"/>
-            <add name="MAGICAL_CRITICAL" value="47"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4980" energyCost="48"/>
-            <skill skill_id="4982" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.15" side="0.15" upper="0.60"/>
-        <evolved itemId="190200000" evolvedNum="4000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981070" name="Sita" nameid="1614366" grade="A" level="1" growthPoints="4000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="198"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="5"/>
-            <add name="PHYSICAL_ACCURACY" value="6"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="8"/>
-            <add name="MAGICAL_CRITICAL" value="5"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4975" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="600" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981071" name="Sita" nameid="1614366" grade="A" level="2" growthPoints="8000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="732"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="19"/>
-            <add name="PHYSICAL_ACCURACY" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="42"/>
-            <add name="MAGICAL_ACCURACY" value="26"/>
-            <add name="MAGICAL_CRITICAL" value="19"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4976" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="1000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981072" name="Sita" nameid="1614366" grade="A" level="3" growthPoints="12000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="1266"/>
-            <add name="PHYSICAL_ATTACK" value="18"/>
-            <add name="PHYSICAL_CRITICAL" value="33"/>
-            <add name="PHYSICAL_ACCURACY" value="50"/>
-            <add name="BOOST_MAGICAL_SKILL" value="74"/>
-            <add name="MAGICAL_ACCURACY" value="44"/>
-            <add name="MAGICAL_CRITICAL" value="33"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4976" energyCost="48"/>
-            <skill skill_id="4977" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="2000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981073" name="Sita" nameid="1614366" grade="A" level="4" growthPoints="16000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="1800"/>
-            <add name="PHYSICAL_ATTACK" value="26"/>
-            <add name="PHYSICAL_CRITICAL" value="47"/>
-            <add name="PHYSICAL_ACCURACY" value="72"/>
-            <add name="BOOST_MAGICAL_SKILL" value="106"/>
-            <add name="MAGICAL_ACCURACY" value="62"/>
-            <add name="MAGICAL_CRITICAL" value="47"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="4976" energyCost="48"/>
-            <skill skill_id="4978" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="4000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981074" name="Karemiwen" nameid="1614378" grade="B" level="1" growthPoints="1300" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="66"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="4"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="7"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5015" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="75" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981075" name="Karemiwen" nameid="1614378" grade="B" level="2" growthPoints="2600" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="102"/>
-            <add name="PHYSICAL_ATTACK" value="6"/>
-            <add name="PHYSICAL_CRITICAL" value="12"/>
-            <add name="BOOST_MAGICAL_SKILL" value="28"/>
-            <add name="MAGICAL_ACCURACY" value="17"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5016" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="125" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981076" name="Karemiwen" nameid="1614378" grade="B" level="3" growthPoints="3900" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="138"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="20"/>
-            <add name="BOOST_MAGICAL_SKILL" value="46"/>
-            <add name="MAGICAL_ACCURACY" value="27"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5016" energyCost="48"/>
-            <skill skill_id="5017" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="250" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981077" name="Karemiwen" nameid="1614378" grade="B" level="4" growthPoints="5200" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="174"/>
-            <add name="PHYSICAL_ATTACK" value="14"/>
-            <add name="PHYSICAL_CRITICAL" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="64"/>
-            <add name="MAGICAL_ACCURACY" value="37"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5016" energyCost="48"/>
-            <skill skill_id="5018" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="500" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981078" name="Saendukal" nameid="1614380" grade="B" level="1" growthPoints="1300" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="66"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="4"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="7"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5019" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="75" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981079" name="Saendukal" nameid="1614380" grade="B" level="2" growthPoints="2600" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="102"/>
-            <add name="PHYSICAL_ATTACK" value="6"/>
-            <add name="PHYSICAL_CRITICAL" value="12"/>
-            <add name="BOOST_MAGICAL_SKILL" value="28"/>
-            <add name="MAGICAL_ACCURACY" value="17"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5020" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="125" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981080" name="Saendukal" nameid="1614380" grade="B" level="3" growthPoints="3900" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="138"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="20"/>
-            <add name="BOOST_MAGICAL_SKILL" value="46"/>
-            <add name="MAGICAL_ACCURACY" value="27"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5020" energyCost="48"/>
-            <skill skill_id="5021" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="250" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981081" name="Saendukal" nameid="1614380" grade="B" level="4" growthPoints="5200" growthMax="10000" growthCost="30000">
-        <modifiers>
-            <add name="MAXHP" value="174"/>
-            <add name="PHYSICAL_ATTACK" value="14"/>
-            <add name="PHYSICAL_CRITICAL" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="64"/>
-            <add name="MAGICAL_ACCURACY" value="37"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5020" energyCost="48"/>
-            <skill skill_id="5022" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="500" evolvedCost="8000000"/>
-    </minion>
-    <minion id="981082" name="Weda" nameid="1614372" grade="A" level="1" growthPoints="4000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="198"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="5"/>
-            <add name="PHYSICAL_ACCURACY" value="6"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="8"/>
-            <add name="MAGICAL_CRITICAL" value="5"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5003" energyCost="60"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="600" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981083" name="Weda" nameid="1614372" grade="A" level="2" growthPoints="8000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="732"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="19"/>
-            <add name="PHYSICAL_ACCURACY" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="42"/>
-            <add name="MAGICAL_ACCURACY" value="26"/>
-            <add name="MAGICAL_CRITICAL" value="19"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5004" energyCost="60"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="1000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981084" name="Weda" nameid="1614372" grade="A" level="3" growthPoints="12000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="1266"/>
-            <add name="PHYSICAL_ATTACK" value="18"/>
-            <add name="PHYSICAL_CRITICAL" value="33"/>
-            <add name="PHYSICAL_ACCURACY" value="50"/>
-            <add name="BOOST_MAGICAL_SKILL" value="74"/>
-            <add name="MAGICAL_ACCURACY" value="44"/>
-            <add name="MAGICAL_CRITICAL" value="33"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5004" energyCost="60"/>
-            <skill skill_id="5005" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="2000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981085" name="Weda" nameid="1614372" grade="A" level="4" growthPoints="16000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="1800"/>
-            <add name="PHYSICAL_ATTACK" value="26"/>
-            <add name="PHYSICAL_CRITICAL" value="47"/>
-            <add name="PHYSICAL_ACCURACY" value="72"/>
-            <add name="BOOST_MAGICAL_SKILL" value="106"/>
-            <add name="MAGICAL_ACCURACY" value="62"/>
-            <add name="MAGICAL_CRITICAL" value="47"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5004" energyCost="60"/>
-            <skill skill_id="5006" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="4000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981086" name="Kromede" nameid="1614374" grade="A" level="1" growthPoints="4000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="198"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="5"/>
-            <add name="PHYSICAL_ACCURACY" value="6"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="8"/>
-            <add name="MAGICAL_CRITICAL" value="5"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5007" energyCost="60"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="600" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981087" name="Kromede" nameid="1614374" grade="A" level="2" growthPoints="8000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="732"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="19"/>
-            <add name="PHYSICAL_ACCURACY" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="42"/>
-            <add name="MAGICAL_ACCURACY" value="26"/>
-            <add name="MAGICAL_CRITICAL" value="19"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5008" energyCost="60"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="1000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981088" name="Kromede" nameid="1614374" grade="A" level="3" growthPoints="12000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="1266"/>
-            <add name="PHYSICAL_ATTACK" value="18"/>
-            <add name="PHYSICAL_CRITICAL" value="33"/>
-            <add name="PHYSICAL_ACCURACY" value="50"/>
-            <add name="BOOST_MAGICAL_SKILL" value="74"/>
-            <add name="MAGICAL_ACCURACY" value="44"/>
-            <add name="MAGICAL_CRITICAL" value="33"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5008" energyCost="60"/>
-            <skill skill_id="5009" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="2000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981089" name="Kromede" nameid="1614374" grade="A" level="4" growthPoints="16000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="1800"/>
-            <add name="PHYSICAL_ATTACK" value="26"/>
-            <add name="PHYSICAL_CRITICAL" value="47"/>
-            <add name="PHYSICAL_ACCURACY" value="72"/>
-            <add name="BOOST_MAGICAL_SKILL" value="106"/>
-            <add name="MAGICAL_ACCURACY" value="62"/>
-            <add name="MAGICAL_CRITICAL" value="47"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5008" energyCost="60"/>
-            <skill skill_id="5010" energyCost="300"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="4000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981090" name="Hyperion" nameid="1614376" grade="A" level="1" growthPoints="4000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="198"/>
-            <add name="PHYSICAL_ATTACK" value="2"/>
-            <add name="PHYSICAL_CRITICAL" value="5"/>
-            <add name="PHYSICAL_ACCURACY" value="6"/>
-            <add name="BOOST_MAGICAL_SKILL" value="10"/>
-            <add name="MAGICAL_ACCURACY" value="8"/>
-            <add name="MAGICAL_CRITICAL" value="5"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5011" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="600" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981091" name="Hyperion" nameid="1614376" grade="A" level="2" growthPoints="8000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="732"/>
-            <add name="PHYSICAL_ATTACK" value="10"/>
-            <add name="PHYSICAL_CRITICAL" value="19"/>
-            <add name="PHYSICAL_ACCURACY" value="28"/>
-            <add name="BOOST_MAGICAL_SKILL" value="42"/>
-            <add name="MAGICAL_ACCURACY" value="26"/>
-            <add name="MAGICAL_CRITICAL" value="19"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5012" energyCost="48"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="1000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981092" name="Hyperion" nameid="1614376" grade="A" level="3" growthPoints="12000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="1266"/>
-            <add name="PHYSICAL_ATTACK" value="18"/>
-            <add name="PHYSICAL_CRITICAL" value="33"/>
-            <add name="PHYSICAL_ACCURACY" value="50"/>
-            <add name="BOOST_MAGICAL_SKILL" value="74"/>
-            <add name="MAGICAL_ACCURACY" value="44"/>
-            <add name="MAGICAL_CRITICAL" value="33"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5012" energyCost="48"/>
-            <skill skill_id="5013" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="2000" evolvedCost="15000000"/>
-    </minion>
-    <minion id="981093" name="Hyperion" nameid="1614376" grade="A" level="4" growthPoints="16000" growthMax="50000" growthCost="50000">
-        <modifiers>
-            <add name="MAXHP" value="1800"/>
-            <add name="PHYSICAL_ATTACK" value="26"/>
-            <add name="PHYSICAL_CRITICAL" value="47"/>
-            <add name="PHYSICAL_ACCURACY" value="72"/>
-            <add name="BOOST_MAGICAL_SKILL" value="106"/>
-            <add name="MAGICAL_ACCURACY" value="62"/>
-            <add name="MAGICAL_CRITICAL" value="47"/>
-        </modifiers>
-        <actions>
-            <skill skill_id="5012" energyCost="48"/>
-            <skill skill_id="5014" energyCost="360"/>
-        </actions>
-        <minionstats run_speed="6.0" walk_speed="1.132" height="1.2" altitude="1.5"/>
-        <bound front="0.24" side="0.24" upper="0.49"/>
-        <evolved itemId="190200000" evolvedNum="4000" evolvedCost="15000000"/>
+    <minion id="980010" name="Kerubim" nameid="1614348" group_set="TESTFAMILIARGROUP02" tier_grade="D" star_grade="1" is_only_feeds="true" use_func_option="false" skill01="4909" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.20" growth_pt="10">
+        <physical_attr stat="MAXHP" func="ADD" value="50"/>
+        <magical_attr stat="MAXHP" func="ADD" value="50"/>
+    </minion>
+    <minion id="980011" name="Kerubian" nameid="1614350" group_set="TESTFAMILIARGROUP09" tier_grade="C" star_grade="1" is_only_feeds="true" use_func_option="false" skill01="4908" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.20" growth_pt="100">
+        <physical_attr stat="MAXHP" func="ADD" value="100"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="1"/>
+        <magical_attr stat="MAXHP" func="ADD" value="100"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="6"/>
+    </minion>
+    <minion id="980012" name="Kerubiel" nameid="1614352" group_set="TESTFAMILIARGROUP10" tier_grade="B" star_grade="1" is_only_feeds="true" use_func_option="false" skill01="4907" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.20" growth_pt="1300">
+        <physical_attr stat="MAXHP" func="ADD" value="110"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="1"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="3"/>
+        <magical_attr stat="MAXHP" func="ADD" value="110"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="7"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="4"/>
+    </minion>
+    <minion id="980013" name="Arch Kerubiel" nameid="1614354" group_set="TESTFAMILIARGROUP11" tier_grade="A" star_grade="1" is_only_feeds="true" use_func_option="false" skill01="4906" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.20" growth_pt="4000">
+        <physical_attr stat="MAXHP" func="ADD" value="161"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="5"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="7"/>
+        <magical_attr stat="MAXHP" func="ADD" value="161"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="11"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="6"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="4"/>
+    </minion>
+    <minion id="980020" name="Seiren" nameid="1614356" group_set="TESTFAMILIARGROUP03" tier_grade="C" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4902" skill01_energy="120" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="100" growth_cost="100000" evolve_item="190200000" evolve_item_num="10" evolve_cost="20000000">
+        <physical_attr stat="MAXHP" func="ADD" value="104"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="1"/>
+        <magical_attr stat="MAXHP" func="ADD" value="104"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="6"/>
+    </minion>
+    <minion id="980021" name="Seiren" nameid="1614356" group_set="TESTFAMILIARGROUP03" tier_grade="C" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4903" skill01_energy="120" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="200" growth_cost="100000" evolve_item="190200000" evolve_item_num="20" evolve_cost="20000000">
+        <physical_attr stat="MAXHP" func="ADD" value="116"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="3"/>
+        <magical_attr stat="MAXHP" func="ADD" value="116"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="14"/>
+    </minion>
+    <minion id="980022" name="Seiren" nameid="1614356" group_set="TESTFAMILIARGROUP03" tier_grade="C" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4903" skill01_energy="120" skill02="4904" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="300" growth_cost="100000" evolve_item="190200000" evolve_item_num="40" evolve_cost="20000000">
+        <physical_attr stat="MAXHP" func="ADD" value="128"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="5"/>
+        <magical_attr stat="MAXHP" func="ADD" value="128"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="22"/>
+    </minion>
+    <minion id="980023" name="Seiren" nameid="1614356" group_set="TESTFAMILIARGROUP03" tier_grade="C" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4903" skill01_energy="120" skill02="4905" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="400" growth_cost="100000" evolve_item="190200000" evolve_item_num="80" evolve_cost="20000000">
+        <physical_attr stat="MAXHP" func="ADD" value="140"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="7"/>
+        <magical_attr stat="MAXHP" func="ADD" value="140"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="30"/>
+    </minion>
+    <minion id="980030" name="Steel Rose" nameid="1614358" group_set="TESTFAMILIARGROUP04" tier_grade="C" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4898" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="100" growth_cost="100000" evolve_item="190200000" evolve_item_num="10" evolve_cost="20000000">
+        <physical_attr stat="MAXHP" func="ADD" value="104"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="1"/>
+        <magical_attr stat="MAXHP" func="ADD" value="104"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="6"/>
+    </minion>
+    <minion id="980031" name="Steel Rose" nameid="1614358" group_set="TESTFAMILIARGROUP04" tier_grade="C" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4899" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="200" growth_cost="100000" evolve_item="190200000" evolve_item_num="20" evolve_cost="20000000">
+        <physical_attr stat="MAXHP" func="ADD" value="116"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="3"/>
+        <magical_attr stat="MAXHP" func="ADD" value="116"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="14"/>
+    </minion>
+    <minion id="980032" name="Steel Rose" nameid="1614358" group_set="TESTFAMILIARGROUP04" tier_grade="C" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4899" skill01_energy="48" skill02="4900" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="300" growth_cost="100000" evolve_item="190200000" evolve_item_num="40" evolve_cost="20000000">
+        <physical_attr stat="MAXHP" func="ADD" value="128"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="5"/>
+        <magical_attr stat="MAXHP" func="ADD" value="128"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="22"/>
+    </minion>
+    <minion id="980033" name="Steel Rose" nameid="1614358" group_set="TESTFAMILIARGROUP04" tier_grade="C" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4899" skill01_energy="48" skill02="4901" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="400" growth_cost="100000" evolve_item="190200000" evolve_item_num="80" evolve_cost="20000000">
+        <physical_attr stat="MAXHP" func="ADD" value="140"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="7"/>
+        <magical_attr stat="MAXHP" func="ADD" value="140"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="30"/>
+    </minion>
+    <minion id="980040" name="Abija" nameid="1614360" group_set="TESTFAMILIARGROUP05" tier_grade="B" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4894" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="1300" growth_cost="300000" evolve_item="190200000" evolve_item_num="75" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="110"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="4"/>
+        <magical_attr stat="MAXHP" func="ADD" value="110"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="7"/>
+    </minion>
+    <minion id="980041" name="Abija" nameid="1614360" group_set="TESTFAMILIARGROUP05" tier_grade="B" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4895" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="2600" growth_cost="300000" evolve_item="190200000" evolve_item_num="125" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="170"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="12"/>
+        <magical_attr stat="MAXHP" func="ADD" value="170"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="28"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="17"/>
+    </minion>
+    <minion id="980042" name="Abija" nameid="1614360" group_set="TESTFAMILIARGROUP05" tier_grade="B" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4895" skill01_energy="48" skill02="4896" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="3900" growth_cost="300000" evolve_item="190200000" evolve_item_num="250" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="230"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="20"/>
+        <magical_attr stat="MAXHP" func="ADD" value="230"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="46"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="27"/>
+    </minion>
+    <minion id="980043" name="Abija" nameid="1614360" group_set="TESTFAMILIARGROUP05" tier_grade="B" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4895" skill01_energy="48" skill02="4897" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="5200" growth_cost="300000" evolve_item="190200000" evolve_item_num="500" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="290"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="14"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="290"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="64"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="37"/>
+    </minion>
+    <minion id="980050" name="Hamerun" nameid="1614362" group_set="TESTFAMILIARGROUP06" tier_grade="B" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4890" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="1300" growth_cost="300000" evolve_item="190200000" evolve_item_num="75" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="110"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="4"/>
+        <magical_attr stat="MAXHP" func="ADD" value="110"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="7"/>
+    </minion>
+    <minion id="980051" name="Hamerun" nameid="1614362" group_set="TESTFAMILIARGROUP06" tier_grade="B" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4891" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="2600" growth_cost="300000" evolve_item="190200000" evolve_item_num="125" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="170"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="12"/>
+        <magical_attr stat="MAXHP" func="ADD" value="170"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="28"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="17"/>
+    </minion>
+    <minion id="980052" name="Hamerun" nameid="1614362" group_set="TESTFAMILIARGROUP06" tier_grade="B" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4891" skill01_energy="48" skill02="4892" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="3900" growth_cost="300000" evolve_item="190200000" evolve_item_num="250" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="230"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="20"/>
+        <magical_attr stat="MAXHP" func="ADD" value="230"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="46"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="27"/>
+    </minion>
+    <minion id="980053" name="Hamerun" nameid="1614362" group_set="TESTFAMILIARGROUP06" tier_grade="B" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4891" skill01_energy="48" skill02="4893" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="5200" growth_cost="300000" evolve_item="190200000" evolve_item_num="500" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="290"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="14"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="290"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="64"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="37"/>
+    </minion>
+    <minion id="980060" name="Modor" nameid="1614364" group_set="TESTFAMILIARGROUP07" tier_grade="A" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4886" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="4000" growth_cost="500000" evolve_item="190200000" evolve_item_num="600" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="324"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="3"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="10"/>
+        <magical_attr stat="MAXHP" func="ADD" value="324"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="16"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="12"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="8"/>
+    </minion>
+    <minion id="980061" name="Modor" nameid="1614364" group_set="TESTFAMILIARGROUP07" tier_grade="A" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4887" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="8000" growth_cost="500000" evolve_item="190200000" evolve_item_num="1000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1216"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="15"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="30"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="46"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1216"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="70"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="42"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="28"/>
+    </minion>
+    <minion id="980062" name="Modor" nameid="1614364" group_set="TESTFAMILIARGROUP07" tier_grade="A" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4887" skill01_energy="48" skill02="4888" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="12000" growth_cost="500000" evolve_item="190200000" evolve_item_num="2000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="2108"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="27"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="54"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="82"/>
+        <magical_attr stat="MAXHP" func="ADD" value="2108"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="124"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="72"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="48"/>
+    </minion>
+    <minion id="980063" name="Modor" nameid="1614364" group_set="TESTFAMILIARGROUP07" tier_grade="A" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4887" skill01_energy="48" skill02="4889" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="16000" growth_cost="500000" evolve_item="190200000" evolve_item_num="4000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="3000"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="39"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="78"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="118"/>
+        <magical_attr stat="MAXHP" func="ADD" value="3000"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="178"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="102"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="68"/>
+    </minion>
+    <minion id="980070" name="Sheba" nameid="1614366" group_set="TESTFAMILIARGROUP08" tier_grade="A" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4882" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="4000" growth_cost="500000" evolve_item="190200000" evolve_item_num="600" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="324"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="3"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="10"/>
+        <magical_attr stat="MAXHP" func="ADD" value="324"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="16"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="12"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="8"/>
+    </minion>
+    <minion id="980071" name="Sheba" nameid="1614366" group_set="TESTFAMILIARGROUP08" tier_grade="A" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4883" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="8000" growth_cost="500000" evolve_item="190200000" evolve_item_num="1000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1216"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="15"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="30"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="46"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1216"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="70"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="42"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="28"/>
+    </minion>
+    <minion id="980072" name="Sheba" nameid="1614366" group_set="TESTFAMILIARGROUP08" tier_grade="A" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4883" skill01_energy="48" skill02="4884" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="12000" growth_cost="500000" evolve_item="190200000" evolve_item_num="2000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="2108"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="27"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="54"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="82"/>
+        <magical_attr stat="MAXHP" func="ADD" value="2108"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="124"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="72"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="48"/>
+    </minion>
+    <minion id="980073" name="Sheba" nameid="1614366" group_set="TESTFAMILIARGROUP08" tier_grade="A" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4883" skill01_energy="48" skill02="4885" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="16000" growth_cost="500000" evolve_item="190200000" evolve_item_num="4000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="3000"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="39"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="78"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="118"/>
+        <magical_attr stat="MAXHP" func="ADD" value="3000"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="178"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="102"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="68"/>
+    </minion>
+    <minion id="980074" name="Karemiwen" nameid="1614378" group_set="TESTFAMILIARGROUP12" tier_grade="B" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4967" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="1300" growth_cost="300000" evolve_item="190200000" evolve_item_num="75" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="110"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="4"/>
+        <magical_attr stat="MAXHP" func="ADD" value="110"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="7"/>
+    </minion>
+    <minion id="980075" name="Karemiwen" nameid="1614378" group_set="TESTFAMILIARGROUP12" tier_grade="B" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4968" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="2600" growth_cost="300000" evolve_item="190200000" evolve_item_num="125" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="170"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="12"/>
+        <magical_attr stat="MAXHP" func="ADD" value="170"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="28"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="17"/>
+    </minion>
+    <minion id="980076" name="Karemiwen" nameid="1614378" group_set="TESTFAMILIARGROUP12" tier_grade="B" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4968" skill01_energy="48" skill02="4969" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="3900" growth_cost="300000" evolve_item="190200000" evolve_item_num="250" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="230"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="20"/>
+        <magical_attr stat="MAXHP" func="ADD" value="230"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="46"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="27"/>
+    </minion>
+    <minion id="980077" name="Karemiwen" nameid="1614378" group_set="TESTFAMILIARGROUP12" tier_grade="B" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4968" skill01_energy="48" skill02="4970" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="5200" growth_cost="300000" evolve_item="190200000" evolve_item_num="500" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="290"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="14"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="290"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="64"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="37"/>
+    </minion>
+    <minion id="980078" name="Saendukal" nameid="1614380" group_set="TESTFAMILIARGROUP13" tier_grade="B" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4971" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="1300" growth_cost="300000" evolve_item="190200000" evolve_item_num="75" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="110"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="4"/>
+        <magical_attr stat="MAXHP" func="ADD" value="110"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="7"/>
+    </minion>
+    <minion id="980079" name="Saendukal" nameid="1614380" group_set="TESTFAMILIARGROUP13" tier_grade="B" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4972" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="2600" growth_cost="300000" evolve_item="190200000" evolve_item_num="125" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="170"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="12"/>
+        <magical_attr stat="MAXHP" func="ADD" value="170"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="28"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="17"/>
+    </minion>
+    <minion id="980080" name="Saendukal" nameid="1614380" group_set="TESTFAMILIARGROUP13" tier_grade="B" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4972" skill01_energy="48" skill02="4973" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="3900" growth_cost="300000" evolve_item="190200000" evolve_item_num="250" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="230"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="20"/>
+        <magical_attr stat="MAXHP" func="ADD" value="230"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="46"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="27"/>
+    </minion>
+    <minion id="980081" name="Saendukal" nameid="1614380" group_set="TESTFAMILIARGROUP13" tier_grade="B" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4972" skill01_energy="48" skill02="4974" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="5200" growth_cost="300000" evolve_item="190200000" evolve_item_num="500" evolve_cost="80000000">
+        <physical_attr stat="MAXHP" func="ADD" value="290"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="14"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="290"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="64"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="37"/>
+    </minion>
+    <minion id="980082" name="Viola" nameid="1614372" group_set="TESTFAMILIARGROUP14" tier_grade="A" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4955" skill01_energy="60" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="4000" growth_cost="500000" evolve_item="190200000" evolve_item_num="600" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="324"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="3"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="10"/>
+        <magical_attr stat="MAXHP" func="ADD" value="324"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="16"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="12"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="8"/>
+    </minion>
+    <minion id="980083" name="Viola" nameid="1614372" group_set="TESTFAMILIARGROUP14" tier_grade="A" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4956" skill01_energy="60" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="8000" growth_cost="500000" evolve_item="190200000" evolve_item_num="1000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1216"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="15"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="30"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="46"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1216"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="70"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="42"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="28"/>
+    </minion>
+    <minion id="980084" name="Viola" nameid="1614372" group_set="TESTFAMILIARGROUP14" tier_grade="A" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4956" skill01_energy="60" skill02="4957" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="12000" growth_cost="500000" evolve_item="190200000" evolve_item_num="2000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="2108"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="27"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="54"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="82"/>
+        <magical_attr stat="MAXHP" func="ADD" value="2108"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="124"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="72"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="48"/>
+    </minion>
+    <minion id="980085" name="Viola" nameid="1614372" group_set="TESTFAMILIARGROUP14" tier_grade="A" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4956" skill01_energy="60" skill02="4958" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="16000" growth_cost="500000" evolve_item="190200000" evolve_item_num="4000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="3000"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="39"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="78"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="118"/>
+        <magical_attr stat="MAXHP" func="ADD" value="3000"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="178"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="102"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="68"/>
+    </minion>
+    <minion id="980086" name="Kromede" nameid="1614374" group_set="TESTFAMILIARGROUP15" tier_grade="A" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4959" skill01_energy="60" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="4000" growth_cost="500000" evolve_item="190200000" evolve_item_num="600" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="324"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="3"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="10"/>
+        <magical_attr stat="MAXHP" func="ADD" value="324"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="16"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="12"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="8"/>
+    </minion>
+    <minion id="980087" name="Kromede" nameid="1614374" group_set="TESTFAMILIARGROUP15" tier_grade="A" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4960" skill01_energy="60" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="8000" growth_cost="500000" evolve_item="190200000" evolve_item_num="1000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1216"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="15"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="30"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="46"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1216"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="70"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="42"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="28"/>
+    </minion>
+    <minion id="980088" name="Kromede" nameid="1614374" group_set="TESTFAMILIARGROUP15" tier_grade="A" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4960" skill01_energy="60" skill02="4961" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="12000" growth_cost="500000" evolve_item="190200000" evolve_item_num="2000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="2108"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="27"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="54"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="82"/>
+        <magical_attr stat="MAXHP" func="ADD" value="2108"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="124"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="72"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="48"/>
+    </minion>
+    <minion id="980089" name="Kromede" nameid="1614374" group_set="TESTFAMILIARGROUP15" tier_grade="A" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4960" skill01_energy="60" skill02="4962" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="16000" growth_cost="500000" evolve_item="190200000" evolve_item_num="4000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="3000"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="39"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="78"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="118"/>
+        <magical_attr stat="MAXHP" func="ADD" value="3000"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="178"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="102"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="68"/>
+    </minion>
+    <minion id="980090" name="Hyperion" nameid="1614376" group_set="TESTFAMILIARGROUP16" tier_grade="A" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4963" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="4000" growth_cost="500000" evolve_item="190200000" evolve_item_num="600" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="324"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="3"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="10"/>
+        <magical_attr stat="MAXHP" func="ADD" value="324"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="16"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="12"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="8"/>
+    </minion>
+    <minion id="980091" name="Hyperion" nameid="1614376" group_set="TESTFAMILIARGROUP16" tier_grade="A" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4964" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="8000" growth_cost="500000" evolve_item="190200000" evolve_item_num="1000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1216"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="15"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="30"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="46"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1216"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="70"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="42"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="28"/>
+    </minion>
+    <minion id="980092" name="Hyperion" nameid="1614376" group_set="TESTFAMILIARGROUP16" tier_grade="A" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4964" skill01_energy="48" skill02="4965" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="12000" growth_cost="500000" evolve_item="190200000" evolve_item_num="2000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="2108"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="27"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="54"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="82"/>
+        <magical_attr stat="MAXHP" func="ADD" value="2108"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="124"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="72"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="48"/>
+    </minion>
+    <minion id="980093" name="Hyperion" nameid="1614376" group_set="TESTFAMILIARGROUP16" tier_grade="A" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4964" skill01_energy="48" skill02="4966" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="16000" growth_cost="500000" evolve_item="190200000" evolve_item_num="4000" evolve_cost="150000000">
+        <physical_attr stat="MAXHP" func="ADD" value="3000"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="39"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="78"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="118"/>
+        <magical_attr stat="MAXHP" func="ADD" value="3000"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="178"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="102"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="68"/>
+    </minion>
+    <minion id="981010" name="Kerubim" nameid="1614348" group_set="MASTER_TESTFAMILIARGROUP02" tier_grade="D" star_grade="1" is_only_feeds="true" use_func_option="false" skill01="5002" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.20" growth_pt="10">
+        <physical_attr stat="MAXHP" func="ADD" value="50"/>
+        <magical_attr stat="MAXHP" func="ADD" value="50"/>
+    </minion>
+    <minion id="981011" name="Kerubian" nameid="1614350" group_set="MASTER_TESTFAMILIARGROUP09" tier_grade="C" star_grade="1" is_only_feeds="true" use_func_option="false" skill01="5001" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.20" growth_pt="100">
+        <physical_attr stat="MAXHP" func="ADD" value="62"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="1"/>
+        <magical_attr stat="MAXHP" func="ADD" value="62"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="6"/>
+    </minion>
+    <minion id="981012" name="Kerubiel" nameid="1614352" group_set="MASTER_TESTFAMILIARGROUP10" tier_grade="B" star_grade="1" is_only_feeds="true" use_func_option="false" skill01="5000" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.20" growth_pt="1300">
+        <physical_attr stat="MAXHP" func="ADD" value="66"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="4"/>
+        <magical_attr stat="MAXHP" func="ADD" value="66"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="7"/>
+    </minion>
+    <minion id="981013" name="Arch Kerubiel" nameid="1614354" group_set="MASTER_TESTFAMILIARGROUP11" tier_grade="A" star_grade="1" is_only_feeds="true" use_func_option="false" skill01="4999" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.20" growth_pt="4000">
+        <physical_attr stat="MAXHP" func="ADD" value="198"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="5"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="6"/>
+        <magical_attr stat="MAXHP" func="ADD" value="198"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="8"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="5"/>
+    </minion>
+    <minion id="981020" name="Seiren" nameid="1614356" group_set="MASTER_TESTFAMILIARGROUP03" tier_grade="C" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4995" skill01_energy="120" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="100" growth_cost="10000" evolve_item="190200000" evolve_item_num="10" evolve_cost="2000000">
+        <physical_attr stat="MAXHP" func="ADD" value="62"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="1"/>
+        <magical_attr stat="MAXHP" func="ADD" value="62"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="6"/>
+    </minion>
+    <minion id="981021" name="Seiren" nameid="1614356" group_set="MASTER_TESTFAMILIARGROUP03" tier_grade="C" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4996" skill01_energy="120" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="200" growth_cost="10000" evolve_item="190200000" evolve_item_num="20" evolve_cost="2000000">
+        <physical_attr stat="MAXHP" func="ADD" value="70"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="3"/>
+        <magical_attr stat="MAXHP" func="ADD" value="70"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="14"/>
+    </minion>
+    <minion id="981022" name="Seiren" nameid="1614356" group_set="MASTER_TESTFAMILIARGROUP03" tier_grade="C" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4996" skill01_energy="120" skill02="4997" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="300" growth_cost="10000" evolve_item="190200000" evolve_item_num="40" evolve_cost="2000000">
+        <physical_attr stat="MAXHP" func="ADD" value="78"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="5"/>
+        <magical_attr stat="MAXHP" func="ADD" value="78"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="22"/>
+    </minion>
+    <minion id="981023" name="Seiren" nameid="1614356" group_set="MASTER_TESTFAMILIARGROUP03" tier_grade="C" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4996" skill01_energy="120" skill02="4998" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="400" growth_cost="10000" evolve_item="190200000" evolve_item_num="80" evolve_cost="2000000">
+        <physical_attr stat="MAXHP" func="ADD" value="86"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="7"/>
+        <magical_attr stat="MAXHP" func="ADD" value="86"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="30"/>
+    </minion>
+    <minion id="981030" name="Steel Rose" nameid="1614358" group_set="MASTER_TESTFAMILIARGROUP04" tier_grade="C" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4991" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="100" growth_cost="10000" evolve_item="190200000" evolve_item_num="10" evolve_cost="2000000">
+        <physical_attr stat="MAXHP" func="ADD" value="62"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="1"/>
+        <magical_attr stat="MAXHP" func="ADD" value="62"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="6"/>
+    </minion>
+    <minion id="981031" name="Steel Rose" nameid="1614358" group_set="MASTER_TESTFAMILIARGROUP04" tier_grade="C" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4992" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="200" growth_cost="10000" evolve_item="190200000" evolve_item_num="20" evolve_cost="2000000">
+        <physical_attr stat="MAXHP" func="ADD" value="70"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="3"/>
+        <magical_attr stat="MAXHP" func="ADD" value="70"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="14"/>
+    </minion>
+    <minion id="981032" name="Steel Rose" nameid="1614358" group_set="MASTER_TESTFAMILIARGROUP04" tier_grade="C" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4992" skill01_energy="48" skill02="4993" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="300" growth_cost="10000" evolve_item="190200000" evolve_item_num="40" evolve_cost="2000000">
+        <physical_attr stat="MAXHP" func="ADD" value="78"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="5"/>
+        <magical_attr stat="MAXHP" func="ADD" value="78"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="22"/>
+    </minion>
+    <minion id="981033" name="Steel Rose" nameid="1614358" group_set="MASTER_TESTFAMILIARGROUP04" tier_grade="C" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4992" skill01_energy="48" skill02="4994" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="2000" growth_pt="400" growth_cost="10000" evolve_item="190200000" evolve_item_num="80" evolve_cost="2000000">
+        <physical_attr stat="MAXHP" func="ADD" value="86"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="7"/>
+        <magical_attr stat="MAXHP" func="ADD" value="86"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="30"/>
+    </minion>
+    <minion id="981040" name="Abija" nameid="1614360" group_set="MASTER_TESTFAMILIARGROUP05" tier_grade="B" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4987" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="1300" growth_cost="30000" evolve_item="190200000" evolve_item_num="75" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="66"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="4"/>
+        <magical_attr stat="MAXHP" func="ADD" value="66"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="7"/>
+    </minion>
+    <minion id="981041" name="Abija" nameid="1614360" group_set="MASTER_TESTFAMILIARGROUP05" tier_grade="B" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4988" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="2600" growth_cost="30000" evolve_item="190200000" evolve_item_num="125" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="102"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="12"/>
+        <magical_attr stat="MAXHP" func="ADD" value="102"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="28"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="17"/>
+    </minion>
+    <minion id="981042" name="Abija" nameid="1614360" group_set="MASTER_TESTFAMILIARGROUP05" tier_grade="B" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4988" skill01_energy="48" skill02="4989" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="3900" growth_cost="30000" evolve_item="190200000" evolve_item_num="250" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="138"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="20"/>
+        <magical_attr stat="MAXHP" func="ADD" value="138"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="46"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="27"/>
+    </minion>
+    <minion id="981043" name="Abija" nameid="1614360" group_set="MASTER_TESTFAMILIARGROUP05" tier_grade="B" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4988" skill01_energy="48" skill02="4990" skill02_energy="240" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="5200" growth_cost="30000" evolve_item="190200000" evolve_item_num="500" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="174"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="14"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="174"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="64"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="37"/>
+    </minion>
+    <minion id="981050" name="Hamerun" nameid="1614362" group_set="MASTER_TESTFAMILIARGROUP06" tier_grade="B" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4983" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="1300" growth_cost="30000" evolve_item="190200000" evolve_item_num="75" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="66"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="4"/>
+        <magical_attr stat="MAXHP" func="ADD" value="66"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="7"/>
+    </minion>
+    <minion id="981051" name="Hamerun" nameid="1614362" group_set="MASTER_TESTFAMILIARGROUP06" tier_grade="B" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4984" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="2600" growth_cost="30000" evolve_item="190200000" evolve_item_num="125" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="102"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="12"/>
+        <magical_attr stat="MAXHP" func="ADD" value="102"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="28"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="17"/>
+    </minion>
+    <minion id="981052" name="Hamerun" nameid="1614362" group_set="MASTER_TESTFAMILIARGROUP06" tier_grade="B" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4984" skill01_energy="48" skill02="4985" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="3900" growth_cost="30000" evolve_item="190200000" evolve_item_num="250" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="138"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="20"/>
+        <magical_attr stat="MAXHP" func="ADD" value="138"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="46"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="27"/>
+    </minion>
+    <minion id="981053" name="Hamerun" nameid="1614362" group_set="MASTER_TESTFAMILIARGROUP06" tier_grade="B" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4984" skill01_energy="48" skill02="4986" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="5200" growth_cost="30000" evolve_item="190200000" evolve_item_num="500" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="174"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="14"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="174"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="64"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="37"/>
+    </minion>
+    <minion id="981060" name="Modor" nameid="1614364" group_set="MASTER_TESTFAMILIARGROUP07" tier_grade="A" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4979" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="4000" growth_cost="50000" evolve_item="190200000" evolve_item_num="600" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="198"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="5"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="6"/>
+        <magical_attr stat="MAXHP" func="ADD" value="198"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="8"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="5"/>
+    </minion>
+    <minion id="981061" name="Modor" nameid="1614364" group_set="MASTER_TESTFAMILIARGROUP07" tier_grade="A" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4980" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="8000" growth_cost="50000" evolve_item="190200000" evolve_item_num="1000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="732"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="19"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="732"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="42"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="26"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="19"/>
+    </minion>
+    <minion id="981062" name="Modor" nameid="1614364" group_set="MASTER_TESTFAMILIARGROUP07" tier_grade="A" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4980" skill01_energy="48" skill02="4981" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="12000" growth_cost="50000" evolve_item="190200000" evolve_item_num="2000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1266"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="18"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="33"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="50"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1266"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="74"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="44"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="33"/>
+    </minion>
+    <minion id="981063" name="Modor" nameid="1614364" group_set="MASTER_TESTFAMILIARGROUP07" tier_grade="A" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4980" skill01_energy="48" skill02="4982" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="16000" growth_cost="50000" evolve_item="190200000" evolve_item_num="4000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1800"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="26"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="47"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="72"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1800"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="106"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="62"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="47"/>
+    </minion>
+    <minion id="981070" name="Sheba" nameid="1614366" group_set="MASTER_TESTFAMILIARGROUP08" tier_grade="A" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="4975" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="4000" growth_cost="50000" evolve_item="190200000" evolve_item_num="600" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="198"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="5"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="6"/>
+        <magical_attr stat="MAXHP" func="ADD" value="198"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="8"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="5"/>
+    </minion>
+    <minion id="981071" name="Sheba" nameid="1614366" group_set="MASTER_TESTFAMILIARGROUP08" tier_grade="A" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="4976" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="8000" growth_cost="50000" evolve_item="190200000" evolve_item_num="1000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="732"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="19"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="732"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="42"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="26"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="19"/>
+    </minion>
+    <minion id="981072" name="Sheba" nameid="1614366" group_set="MASTER_TESTFAMILIARGROUP08" tier_grade="A" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="4976" skill01_energy="48" skill02="4977" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="12000" growth_cost="50000" evolve_item="190200000" evolve_item_num="2000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1266"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="18"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="33"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="50"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1266"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="74"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="44"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="33"/>
+    </minion>
+    <minion id="981073" name="Sheba" nameid="1614366" group_set="MASTER_TESTFAMILIARGROUP08" tier_grade="A" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="4976" skill01_energy="48" skill02="4978" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="16000" growth_cost="50000" evolve_item="190200000" evolve_item_num="4000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1800"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="26"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="47"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="72"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1800"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="106"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="62"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="47"/>
+    </minion>
+    <minion id="981074" name="Karemiwen" nameid="1614378" group_set="MASTER_TESTFAMILIARGROUP12" tier_grade="B" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="5015" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="1300" growth_cost="30000" evolve_item="190200000" evolve_item_num="75" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="66"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="4"/>
+        <magical_attr stat="MAXHP" func="ADD" value="66"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="7"/>
+    </minion>
+    <minion id="981075" name="Karemiwen" nameid="1614378" group_set="MASTER_TESTFAMILIARGROUP12" tier_grade="B" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="5016" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="2600" growth_cost="30000" evolve_item="190200000" evolve_item_num="125" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="102"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="12"/>
+        <magical_attr stat="MAXHP" func="ADD" value="102"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="28"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="17"/>
+    </minion>
+    <minion id="981076" name="Karemiwen" nameid="1614378" group_set="MASTER_TESTFAMILIARGROUP12" tier_grade="B" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="5016" skill01_energy="48" skill02="5017" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="3900" growth_cost="30000" evolve_item="190200000" evolve_item_num="250" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="138"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="20"/>
+        <magical_attr stat="MAXHP" func="ADD" value="138"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="46"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="27"/>
+    </minion>
+    <minion id="981077" name="Karemiwen" nameid="1614378" group_set="MASTER_TESTFAMILIARGROUP12" tier_grade="B" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="5016" skill01_energy="48" skill02="5018" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="5200" growth_cost="30000" evolve_item="190200000" evolve_item_num="500" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="174"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="14"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="174"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="64"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="37"/>
+    </minion>
+    <minion id="981078" name="Saendukal" nameid="1614380" group_set="MASTER_TESTFAMILIARGROUP13" tier_grade="B" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="5019" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="1300" growth_cost="30000" evolve_item="190200000" evolve_item_num="75" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="66"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="4"/>
+        <magical_attr stat="MAXHP" func="ADD" value="66"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="7"/>
+    </minion>
+    <minion id="981079" name="Saendukal" nameid="1614380" group_set="MASTER_TESTFAMILIARGROUP13" tier_grade="B" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="5020" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="2600" growth_cost="30000" evolve_item="190200000" evolve_item_num="125" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="102"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="6"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="12"/>
+        <magical_attr stat="MAXHP" func="ADD" value="102"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="28"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="17"/>
+    </minion>
+    <minion id="981080" name="Saendukal" nameid="1614380" group_set="MASTER_TESTFAMILIARGROUP13" tier_grade="B" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="5020" skill01_energy="48" skill02="5021" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="3900" growth_cost="30000" evolve_item="190200000" evolve_item_num="250" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="138"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="20"/>
+        <magical_attr stat="MAXHP" func="ADD" value="138"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="46"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="27"/>
+    </minion>
+    <minion id="981081" name="Saendukal" nameid="1614380" group_set="MASTER_TESTFAMILIARGROUP13" tier_grade="B" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="5020" skill01_energy="48" skill02="5022" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="10000" growth_pt="5200" growth_cost="30000" evolve_item="190200000" evolve_item_num="500" evolve_cost="8000000">
+        <physical_attr stat="MAXHP" func="ADD" value="174"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="14"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="174"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="64"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="37"/>
+    </minion>
+    <minion id="981082" name="Viola" nameid="1614372" group_set="MASTER_TESTFAMILIARGROUP14" tier_grade="A" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="5003" skill01_energy="60" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="4000" growth_cost="50000" evolve_item="190200000" evolve_item_num="600" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="198"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="5"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="6"/>
+        <magical_attr stat="MAXHP" func="ADD" value="198"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="8"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="5"/>
+    </minion>
+    <minion id="981083" name="Viola" nameid="1614372" group_set="MASTER_TESTFAMILIARGROUP14" tier_grade="A" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="5004" skill01_energy="60" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="8000" growth_cost="50000" evolve_item="190200000" evolve_item_num="1000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="732"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="19"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="732"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="42"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="26"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="19"/>
+    </minion>
+    <minion id="981084" name="Viola" nameid="1614372" group_set="MASTER_TESTFAMILIARGROUP14" tier_grade="A" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="5004" skill01_energy="60" skill02="5005" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="12000" growth_cost="50000" evolve_item="190200000" evolve_item_num="2000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1266"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="18"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="33"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="50"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1266"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="74"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="44"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="33"/>
+    </minion>
+    <minion id="981085" name="Viola" nameid="1614372" group_set="MASTER_TESTFAMILIARGROUP14" tier_grade="A" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="5004" skill01_energy="60" skill02="5006" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="16000" growth_cost="50000" evolve_item="190200000" evolve_item_num="4000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1800"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="26"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="47"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="72"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1800"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="106"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="62"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="47"/>
+    </minion>
+    <minion id="981086" name="Kromede" nameid="1614374" group_set="MASTER_TESTFAMILIARGROUP15" tier_grade="A" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="5007" skill01_energy="60" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="4000" growth_cost="50000" evolve_item="190200000" evolve_item_num="600" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="198"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="5"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="6"/>
+        <magical_attr stat="MAXHP" func="ADD" value="198"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="8"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="5"/>
+    </minion>
+    <minion id="981087" name="Kromede" nameid="1614374" group_set="MASTER_TESTFAMILIARGROUP15" tier_grade="A" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="5008" skill01_energy="60" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="8000" growth_cost="50000" evolve_item="190200000" evolve_item_num="1000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="732"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="19"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="732"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="42"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="26"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="19"/>
+    </minion>
+    <minion id="981088" name="Kromede" nameid="1614374" group_set="MASTER_TESTFAMILIARGROUP15" tier_grade="A" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="5008" skill01_energy="60" skill02="5009" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="12000" growth_cost="50000" evolve_item="190200000" evolve_item_num="2000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1266"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="18"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="33"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="50"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1266"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="74"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="44"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="33"/>
+    </minion>
+    <minion id="981089" name="Kromede" nameid="1614374" group_set="MASTER_TESTFAMILIARGROUP15" tier_grade="A" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="5008" skill01_energy="60" skill02="5010" skill02_energy="300" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="16000" growth_cost="50000" evolve_item="190200000" evolve_item_num="4000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1800"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="26"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="47"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="72"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1800"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="106"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="62"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="47"/>
+    </minion>
+    <minion id="981090" name="Hyperion" nameid="1614376" group_set="MASTER_TESTFAMILIARGROUP16" tier_grade="A" star_grade="1" is_only_feeds="false" use_func_option="true" skill01="5011" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="4000" growth_cost="50000" evolve_item="190200000" evolve_item_num="600" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="198"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="2"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="5"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="6"/>
+        <magical_attr stat="MAXHP" func="ADD" value="198"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="10"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="8"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="5"/>
+    </minion>
+    <minion id="981091" name="Hyperion" nameid="1614376" group_set="MASTER_TESTFAMILIARGROUP16" tier_grade="A" star_grade="2" is_only_feeds="false" use_func_option="true" skill01="5012" skill01_energy="48" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="8000" growth_cost="50000" evolve_item="190200000" evolve_item_num="1000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="732"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="10"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="19"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="28"/>
+        <magical_attr stat="MAXHP" func="ADD" value="732"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="42"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="26"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="19"/>
+    </minion>
+    <minion id="981092" name="Hyperion" nameid="1614376" group_set="MASTER_TESTFAMILIARGROUP16" tier_grade="A" star_grade="3" is_only_feeds="false" use_func_option="true" skill01="5012" skill01_energy="48" skill02="5013" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="12000" growth_cost="50000" evolve_item="190200000" evolve_item_num="2000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1266"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="18"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="33"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="50"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1266"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="74"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="44"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="33"/>
+    </minion>
+    <minion id="981093" name="Hyperion" nameid="1614376" group_set="MASTER_TESTFAMILIARGROUP16" tier_grade="A" star_grade="4" is_only_feeds="false" use_func_option="true" skill01="5012" skill01_energy="48" skill02="5014" skill02_energy="360" iserect="1" walk="1.132" run="6.0" height="1.2" alti="1.5" max_growth_value="50000" growth_pt="16000" growth_cost="50000" evolve_item="190200000" evolve_item_num="4000" evolve_cost="15000000">
+        <physical_attr stat="MAXHP" func="ADD" value="1800"/>
+        <physical_attr stat="PHYSICAL_ATTACK" func="ADD" value="26"/>
+        <physical_attr stat="PHYSICAL_CRITICAL" func="ADD" value="47"/>
+        <physical_attr stat="PHYSICAL_ACCURACY" func="ADD" value="72"/>
+        <magical_attr stat="MAXHP" func="ADD" value="1800"/>
+        <magical_attr stat="BOOST_MAGICAL_SKILL" func="ADD" value="106"/>
+        <magical_attr stat="MAGICAL_ACCURACY" func="ADD" value="62"/>
+        <magical_attr stat="MAGICAL_CRITICAL" func="ADD" value="47"/>
     </minion>
 </minions>

@@ -181,6 +181,27 @@ public class Skill {
 			return false;
 		}
 
+		//Check Minion Energy
+		if (effector instanceof Player) {
+			Player player = (Player) effector;
+			if (skillTemplate.isMinionSkill()) {
+				if (player.getMinion() != null) {
+					int energyUse = 0;
+					if (skillTemplate.getSkillId() == DataManager.MINION_DATA.getMinionTemplate(player.getMinion().getMinionId()).getSkill1()) {
+						energyUse = DataManager.MINION_DATA.getMinionTemplate(player.getMinion().getMinionId()).getSkill1Energy();
+					} else if (skillTemplate.getSkillId() == DataManager.MINION_DATA.getMinionTemplate(player.getMinion().getMinionId()).getSkill2()) {
+						energyUse = DataManager.MINION_DATA.getMinionTemplate(player.getMinion().getMinionId()).getSkill2Energy();
+					}
+					if (player.getCommonData().getMinionPoint() < energyUse) {
+						PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1404326));
+						return false;
+					}
+				} else {
+					return false;
+				}
+			}
+		}
+
 		if (!preCastCheck()) {
 			return false;
 		}

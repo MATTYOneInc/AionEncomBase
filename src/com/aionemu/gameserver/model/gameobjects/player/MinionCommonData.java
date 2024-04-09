@@ -20,122 +20,105 @@ import java.sql.Timestamp;
 
 import com.aionemu.commons.database.dao.DAOManager;
 import com.aionemu.gameserver.dao.PlayerMinionsDAO;
+import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.IExpirable;
 import com.aionemu.gameserver.model.templates.VisibleObjectTemplate;
 import com.aionemu.gameserver.model.templates.minion.MinionDopingBag;
+import com.aionemu.gameserver.model.templates.minion.MinionTemplate;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
+import com.aionemu.gameserver.services.toypet.PetAdoptionService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
 
 public class MinionCommonData extends VisibleObjectTemplate implements IExpirable {
 
+	private final int petObjectId;
+	private final int masterObjectId;
+	MinionDopingBag dopingBag = null;
+	private String name;
 	private int minionId;
 	private Timestamp birthday;
-	private int minionObjId = 0;
-	private int masterObjectId;
-	private String minionGrade;
-	private String name;
-	private int minionLevel;
-	private int miniongrowthpoint = 0;
-	private boolean lock = false;
-	private boolean IsBuffing = false;
-	private boolean isLooting = false;
-	MinionDopingBag dopingBag = null;
+	private int lastSentPoints;
+	private int expireTime;
+	private int growthPoint;
+	private int isErect;
 	private Timestamp despawnTime;
-	private int minionSkillPoints;
-	private Timestamp minionFunctionTime;
+	private int isLocked;
+	private boolean isBuffing = false;
+	private boolean isLooting = false;
 
-	public MinionCommonData(int minionId, int masterObjectId, String name, String minionGrade, int minionLevel,
-			int miniongrowthpoint) {
-		switch (this.minionObjId) {
-		case 0: {
-			this.minionObjId = IDFactory.getInstance().nextId();
-			break;
-		}
-		default:
-			do {
-				if (DAOManager.getDAO(PlayerMinionsDAO.class).PlayerMinions(masterObjectId, minionObjId)) {
-					this.minionObjId = IDFactory.getInstance().nextId();
-				}
-			} while (DAOManager.getDAO(PlayerMinionsDAO.class).PlayerMinions(masterObjectId, minionObjId));
-			break;
-		}
+	public MinionCommonData(int minionId, int masterObjectId, int expireTime) {
+		this.petObjectId = IDFactory.getInstance().nextId();
 		this.minionId = minionId;
 		this.masterObjectId = masterObjectId;
-		this.name = name;
-		this.minionGrade = minionGrade;
-		this.minionLevel = minionLevel;
-		this.miniongrowthpoint = miniongrowthpoint;
-		if (minionId > 980013) {
-			this.dopingBag = new MinionDopingBag();
+		this.expireTime = expireTime;
+		MinionTemplate template = DataManager.MINION_DATA.getMinionTemplate(minionId);
+		if (template.isUseFuncOption()) {
+			dopingBag = new MinionDopingBag();
 		}
 	}
 
-	public void setObjectId(int minionObjId) {
-		this.minionObjId = minionObjId;
+	public final String getName() {
+		if(name.contains("NEW_")){
+			return "";
+		}
+		return name;
 	}
 
-	public int getObjectId() {
-		return minionObjId;
+	public final String getRealName() {
+		return name;
 	}
 
-	public int getMasterObjectId() {
-		return masterObjectId;
+	public final void setName(String name) {
+		this.name = name;
 	}
 
-	public int getMinionId() {
+	public final int getMinionId() {
 		return minionId;
 	}
 
-	public int setMinionId(int minionId) {
-		return this.minionId = minionId;
+	public final void setMinionId(int minionId) {
+		this.minionId = minionId;
 	}
 
-	public String getMinionGrade() {
-		return minionGrade;
+	public int getGrowthPoint() {
+		return growthPoint;
 	}
 
-	public int getMinionLevel() {
-		return minionLevel;
+	public void setGrowthPoint(int growthPoint) {
+		this.growthPoint = growthPoint;
 	}
 
-	public int setMinionLevel(int minionLevel) {
-		return this.minionLevel = minionLevel;
+	public int getIsErect() {
+		return isErect;
+	}
+
+	public void setIsErect(int isErect) {
+		this.isErect = isErect;
 	}
 
 	public int getBirthday() {
 		if (birthday == null) {
 			return 0;
 		}
-		return (int) (birthday.getTime() / 1000);
-	}
 
-	public Timestamp getBirthdayTimestamp() {
-		return birthday;
+		return (int) (birthday.getTime() / 1000);
 	}
 
 	public void setBirthday(Timestamp birthday) {
 		this.birthday = birthday;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public Timestamp getBirthdayTimestamp() {
+		return birthday;
 	}
 
-	@Override
-	public int getExpireTime() {
-		return 0;
+	public int getObjectId() {
+		return petObjectId;
 	}
 
-	@Override
-	public void expireEnd(Player player) {
-	}
-
-	@Override
-	public boolean canExpireNow() {
-		return false;
-	}
-
-	@Override
-	public void expireMessage(Player player, int n) {
+	public int getMasterObjectId() {
+		return masterObjectId;
 	}
 
 	@Override
@@ -144,49 +127,17 @@ public class MinionCommonData extends VisibleObjectTemplate implements IExpirabl
 	}
 
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	@Override
 	public int getNameId() {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	public int getMinionGrowthPoint() {
-		return miniongrowthpoint;
+	public final int getLastSentPoints() {
+		return lastSentPoints;
 	}
 
-	public void setMinionGrowthPoint(int miniongrowthpoint) {
-		this.miniongrowthpoint = miniongrowthpoint;
-	}
-
-	public boolean isLock() {
-		return lock;
-	}
-
-	public void setLock(boolean lock) {
-		this.lock = lock;
-	}
-
-	public MinionDopingBag getDopingBag() {
-		return this.dopingBag;
-	}
-
-	public boolean IsBuffing() {
-		return IsBuffing;
-	}
-
-	public void setIsBuffing(boolean isBuffing) {
-		IsBuffing = isBuffing;
-	}
-
-	public void setIsLooting(boolean isLooting) {
-		this.isLooting = isLooting;
-	}
-
-	public boolean isLooting() {
-		return this.isLooting;
+	public final void setLastSentPoints(int points) {
+		lastSentPoints = points;
 	}
 
 	/**
@@ -203,31 +154,54 @@ public class MinionCommonData extends VisibleObjectTemplate implements IExpirabl
 		this.despawnTime = despawnTime;
 	}
 
-	/**
-	 * @return the minionSkillPoints
-	 */
-	public int getMinionSkillPoints() {
-		return minionSkillPoints;
+	public boolean isLocked() {
+		return isLocked == 0 ? false : true;
 	}
 
-	/**
-	 * @param minionSkillPoints the minionSkillPoints to set
-	 */
-	public void setMinionSkillPoints(int minionSkillPoints) {
-		this.minionSkillPoints = minionSkillPoints;
+	public void setLocked(int locked) {
+		this.isLocked = locked;
 	}
 
-	/**
-	 * @return the minionFunctionTime
-	 */
-	public Timestamp getMinionFunctionTime() {
-		return minionFunctionTime;
+	public MinionDopingBag getDopingBag() {
+		return dopingBag;
 	}
 
-	/**
-	 * @param minionFunctionTime the minionFunctionTime to set
-	 */
-	public void setMinionFunctionTime(Timestamp minionFunctionTime) {
-		this.minionFunctionTime = minionFunctionTime;
+	public void setIsBuffing(boolean isBuffing) {
+		this.isBuffing = isBuffing;
+	}
+
+	public boolean isBuffing() {
+		return this.isBuffing;
+	}
+
+	@Override
+	public int getExpireTime() {
+		return expireTime;
+	}
+
+	@Override
+	public void expireEnd(Player player) {
+		if (player == null) {
+			return;
+		}
+		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_PET_ABANDON_EXPIRE_TIME_COMPLETE(name));
+		PetAdoptionService.surrenderPet(player, minionId);
+	}
+
+	@Override
+	public boolean canExpireNow() {
+		return true;
+	}
+
+	@Override
+	public void expireMessage(Player player, int time) {
+	}
+
+	public void setIsLooting(boolean isLooting) {
+		this.isLooting = isLooting;
+	}
+
+	public boolean isLooting() {
+		return this.isLooting;
 	}
 }

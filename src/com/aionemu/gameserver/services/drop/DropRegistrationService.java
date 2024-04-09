@@ -426,17 +426,18 @@ public class DropRegistrationService {
 			}
 		}
 		if (player.getMinion() != null && player.getMinion().getCommonData().isLooting()) {
-			PacketSendUtility.sendPacket(player, new SM_MINIONS(8, 1, npcObjId, true));
+			PacketSendUtility.sendPacket(player, new SM_MINIONS(npc));
 			Set<DropItem> drops = getCurrentDropMap().get(npcObjId);
 			if (drops == null || drops.size() == 0) {
+				npc.getAi2().onGeneralEvent(AIEventType.DIED);
 				npc.getController().onDelete();
 			} else {
-				DropItem[] dropItems = drops.toArray(new DropItem[drops.size()]);
+				DropItem[] dropItems = drops.toArray(new DropItem[0]);
 				for (int i = 0; i < dropItems.length; i++) {
 					DropService.getInstance().requestDropItem(player, npcObjId, dropItems[i].getIndex(), true);
 				}
 			}
-			PacketSendUtility.sendPacket(player, new SM_MINIONS(8, 1, npcObjId, true));
+			PacketSendUtility.sendPacket(player, new SM_MINIONS(npc));
 			if (drops == null || drops.size() == 0) {
 				return;
 			}

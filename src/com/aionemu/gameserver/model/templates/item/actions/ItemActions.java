@@ -70,7 +70,9 @@ public class ItemActions {
 			@XmlElement(name = "enhance", type = EnhanceAction.class),
 			@XmlElement(name = "enchant_stigma", type = EnchantStigmaAction.class),
 			@XmlElement(name = "sweep", type = ShugoSweepAction.class),
-			@XmlElement(name = "skill_skin", type = SkillAnimationAction.class), })
+			@XmlElement(name = "skill_skin", type = SkillAnimationAction.class),
+			@XmlElement(name = "adoptminion", type = AdoptMinionAction.class),
+	})
 	protected List<AbstractItemAction> itemActions;
 
 	public List<AbstractItemAction> getItemActions() {
@@ -172,6 +174,18 @@ public class ItemActions {
 		for (AbstractItemAction action : itemActions) {
 			if (action instanceof AdoptPetAction) {
 				return (AdoptPetAction) action;
+			}
+		}
+		return null;
+	}
+
+	public AdoptMinionAction getAdoptMinionAction() {
+		if (itemActions == null) {
+			return null;
+		}
+		for (AbstractItemAction action : itemActions) {
+			if (action instanceof AdoptMinionAction) {
+				return (AdoptMinionAction) action;
 			}
 		}
 		return null;

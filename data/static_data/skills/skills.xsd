@@ -60,6 +60,7 @@
 		<xs:attribute name="noremoveatdie" type="xs:boolean"/>
 		<xs:attribute name="charge_set_name" type="xs:string"/>
 		<xs:attribute name="minion_energy" type="xs:int" use="optional" default="0"/>
+		<xs:attribute name="is_minion_skill" type="xs:boolean" use="optional"/>
 	</xs:complexType>
 	<xs:complexType name="Effects">
 		<xs:sequence minOccurs="0" maxOccurs="unbounded">

@@ -28,7 +28,7 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_PET;
 import com.aionemu.gameserver.services.NameRestrictionService;
-import com.aionemu.gameserver.services.toypet.MinionService;
+import com.aionemu.gameserver.services.minion.MinionService;
 import com.aionemu.gameserver.services.toypet.PetAdoptionService;
 import com.aionemu.gameserver.services.toypet.PetMoodService;
 import com.aionemu.gameserver.services.toypet.PetService;
@@ -171,7 +171,7 @@ public class CM_PET extends AionClientPacket {
 			break;
 		case SPAWN:
 			if (player.getMinion() != null) {
-				MinionService.getInstance().despawnMinion(player, 0);
+				MinionService.getInstance().dismissMinion(player, true);
 			}
 			PetService.getInstance().switchOffBuff(player);
 			PetSpawnService.summonPet(player, petId, true);

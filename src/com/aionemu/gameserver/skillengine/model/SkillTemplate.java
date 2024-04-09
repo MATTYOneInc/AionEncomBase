@@ -128,6 +128,8 @@ public class SkillTemplate {
 	protected String charge_set_name;
 	@XmlAttribute(name = "stigma")
 	protected StigmaType stigmaType = StigmaType.NONE;
+	@XmlAttribute(name = "is_minion_skill")
+	protected boolean isminionSkill = false;
 	@XmlTransient
 	protected HashMap<Integer, Integer> effectIds = null;
 	@XmlAttribute(name = "skill_group")
@@ -472,6 +474,10 @@ public class SkillTemplate {
 
 	public boolean isNoRemoveAtDie() {
 		return noRemoveAtDie;
+	}
+
+	public boolean isMinionSkill() {
+		return isminionSkill;
 	}
 
 	public String getChargeSetName() {
