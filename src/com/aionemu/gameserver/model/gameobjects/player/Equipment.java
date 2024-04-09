@@ -611,20 +611,21 @@ public class Equipment {
 	/**
 	 * @return List<Item>
 	 */
-	public FastList<Item> getEquippedItemsWithoutStigma() {
-		FastList<Item> equippedItems = FastList.newInstance();
-		Item twoHanded = null;
+	public List<Item> getEquippedItemsWithoutStigma() {
+		List<Item> equippedItems = new ArrayList<>();
+		List<Item> twoHanded = new ArrayList<>();
 		for (Item item : equipment.values()) {
 			if (!ItemSlot.isStigma(item.getEquipmentSlot())) {
 				if (item.getItemTemplate().isTwoHandWeapon()) {
-					if (twoHanded != null) {
+					if (twoHanded.contains(item))
 						continue;
-					}
-					twoHanded = item;
+					twoHanded.add(item);
 				}
 				equippedItems.add(item);
 			}
 		}
+		twoHanded.clear();
+		twoHanded = null;
 		return equippedItems;
 	}
 
