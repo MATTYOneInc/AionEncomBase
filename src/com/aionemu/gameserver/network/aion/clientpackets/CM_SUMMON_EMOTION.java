@@ -59,6 +59,8 @@ public class CM_SUMMON_EMOTION extends AionClientPacket {
 		switch (emotionType) {
 		case FLY:
 		case LAND:
+		case START_GLIDE:
+		case END_GLIDE:
 			PacketSendUtility.broadcastPacket(summon, new SM_EMOTION(summon, EmotionType.START_EMOTE2));
 			PacketSendUtility.broadcastPacket(summon, new SM_EMOTION(summon, emotionType));
 			break;
