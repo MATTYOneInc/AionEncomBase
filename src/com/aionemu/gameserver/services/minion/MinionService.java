@@ -20,10 +20,13 @@ import java.sql.Timestamp;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import com.aionemu.gameserver.dao.PlayerPetsDAO;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.gameobjects.Minion;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 import com.aionemu.gameserver.model.templates.item.actions.SkillUseAction;
+import com.aionemu.gameserver.model.templates.minion.MinionDopingBag;
+import com.aionemu.gameserver.model.templates.pet.PetDopingBag;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_MINIONS;
 import com.aionemu.gameserver.skillengine.SkillEngine;
@@ -394,6 +397,11 @@ public class MinionService {
 
 			if (minionStatBuff != null) {
 				minionStatBuff.endEffect(player);
+			}
+
+			MinionDopingBag bag = player.getMinionList().getMinion(minions.getObjectId()).getDopingBag();
+			if (bag != null && bag.isDirty()) {
+				DAOManager.getDAO(PlayerMinionsDAO.class).saveDopingBag(player, minions.getCommonData(), bag);
 			}
 
 			player.getMinionList().setLastUsedMinionsId(0);

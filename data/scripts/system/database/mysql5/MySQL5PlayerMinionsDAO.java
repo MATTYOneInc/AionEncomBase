@@ -193,7 +193,7 @@ public class MySQL5PlayerMinionsDAO extends PlayerMinionsDAO {
 			stmt.setString(1, itemIds);
 			stmt.setInt(2, player.getObjectId());
 			stmt.setInt(3, petCommonData.getMinionId());
-			stmt.setString(3, petCommonData.getRealName());
+			stmt.setString(4, petCommonData.getRealName());
 			stmt.execute();
 			stmt.close();
 		} catch (Exception e) {
