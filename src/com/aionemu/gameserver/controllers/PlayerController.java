@@ -223,7 +223,9 @@ public class PlayerController extends CreatureController<Player> {
 		if (object instanceof Pet) {
 			PacketSendUtility.sendPacket(getOwner(), new SM_PET(4, (Pet) object));
 		} else if (object instanceof Minion) {
-			PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(6, (Minion) object));
+			if (((Minion)object).getMaster() != getOwner() && object != getOwner().getMinion()){
+				PacketSendUtility.sendPacket(getOwner(), new SM_MINIONS(6, (Minion) object));
+			}
 		} else {
 			PacketSendUtility.sendPacket(getOwner(), new SM_DELETE(object, isOutOfRange ? 0 : 15));
 		}
