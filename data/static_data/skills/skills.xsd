@@ -246,9 +246,11 @@
 		<xs:attribute name="first_target" type="FirstTargetAttribute"/>
 		<xs:attribute name="target_status" type="StatusList"/>
 		<xs:attribute name="revision_distance" type="xs:int"/>
-		<xs:attribute name="effective_width" type="xs:int"/>
+		<xs:attribute name="effective_range" type="xs:int" />
+		<xs:attribute name="effective_dist" type="xs:int"/>
 		<xs:attribute name="effective_angle" type="xs:int"/>
-		<xs:attribute name="direction" type="xs:int" default="0"/>
+		<xs:attribute name="effective_altitude" type="xs:int" />
+		<xs:attribute default="NONE" name="direction" type="Directions"/>
 		<xs:attribute name="target_species" type="TargetSpeciesAttribute" default="ALL"/>
 	</xs:complexType>
 	<xs:complexType name="Actions">
@@ -1656,6 +1658,13 @@
 			<xs:enumeration value="MYPARTY"/>
 			<xs:enumeration value="ALL"/>
 			<xs:enumeration value="FRIEND"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Directions">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NONE" />
+			<xs:enumeration value="FRONT" />
+			<xs:enumeration value="BACK" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="TargetSpeciesAttribute">
