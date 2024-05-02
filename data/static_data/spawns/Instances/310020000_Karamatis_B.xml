@@ -2,94 +2,94 @@
 <spawns>
   <spawn_map map_id="310020000">
     <spawn npc_id="205013" respawn_time="1">
-      <spot x="192.625000" y="254.375000" z="220.000000" h="66" walker_id="NPCPath_IDAbProL2_4" walker_index="0" fly="1" />
-      <spot x="198.875000" y="236.375000" z="219.875000" h="60" walker_id="NPCPath_IDAbProL2_4_1" walker_index="0" fly="1" />
+      <spot x="192.625000" y="254.375000" z="220.0" h="66" walker_id="NPCPath_IDAbProL2_4" walker_index="0" fly="1" />
+      <spot x="198.875000" y="236.375000" z="219.875" h="60" walker_id="NPCPath_IDAbProL2_4_1" walker_index="0" fly="1" />
     </spawn>
     <spawn npc_id="205014" respawn_time="1">
-      <spot x="192.625000" y="254.375000" z="220.000000" h="66" walker_id="NPCPath_IDAbProL2_4" walker_index="1" fly="1" />
-      <spot x="198.875000" y="236.375000" z="219.875000" h="60" walker_id="NPCPath_IDAbProL2_4_1" walker_index="1" fly="1" />
+      <spot x="192.625000" y="254.375000" z="220.0" h="66" walker_id="NPCPath_IDAbProL2_4" walker_index="1" fly="1" />
+      <spot x="198.875000" y="236.375000" z="219.875" h="60" walker_id="NPCPath_IDAbProL2_4_1" walker_index="1" fly="1" />
     </spawn>
     <spawn npc_id="205009" respawn_time="1">
-      <spot x="164.000000" y="239.000000" z="220.000000" h="48" random_walk="1" fly="1" />
-      <spot x="164.000000" y="221.000000" z="220.000000" h="76" random_walk="1" fly="1" />
-      <spot x="127.000000" y="203.000000" z="225.000000" h="30" random_walk="1" fly="1" />
-      <spot x="166.000000" y="190.000000" z="203.000000" h="70" random_walk="1" fly="1" />
-      <spot x="175.000000" y="268.000000" z="212.000000" h="66" random_walk="1" fly="1" />
+      <spot x="164.000000" y="239.000000" z="220.0" h="48" random_walk="1" fly="1" />
+      <spot x="164.000000" y="221.000000" z="220.0" h="76" random_walk="1" fly="1" />
+      <spot x="127.000000" y="203.000000" z="225.0" h="30" random_walk="1" fly="1" />
+      <spot x="166.000000" y="190.000000" z="203.0" h="70" random_walk="1" fly="1" />
+      <spot x="175.000000" y="268.000000" z="212.0" h="66" random_walk="1" fly="1" />
     </spawn>
     <spawn npc_id="205016" respawn_time="1">
-      <spot x="287.000000" y="231.000000" z="210.500000" h="110" random_walk="1" />
-      <spot x="254.000000" y="303.000000" z="207.250000" h="75" random_walk="1" />
+      <spot x="287.000000" y="231.000000" z="209.60332" h="110" random_walk="1" />
+      <spot x="254.000000" y="303.000000" z="205.55412" h="75" random_walk="1" />
     </spawn>
     <spawn npc_id="211044" respawn_time="1">
-      <spot x="236.500000" y="289.625000" z="208.125000" h="76" random_walk="2" walker_id="AssassinPath_IDAbProL2_2" />
-      <spot x="254.000000" y="300.000000" z="208.250000" h="26" random_walk="2" />
-      <spot x="296.000000" y="276.000000" z="208.375000" h="26" random_walk="2" />
-      <spot x="288.000000" y="229.000000" z="211.500000" h="38" random_walk="2" />
-      <spot x="301.000000" y="255.000000" z="208.125000" h="60" random_walk="4" walker_id="AssassinPath_IDAbProL2_6" />
-      <spot x="253.000000" y="240.000000" z="210.750000" h="55" random_walk="2" walker_id="AssassinPath_IDAbProL2_3" />
-      <spot x="256.000000" y="303.000000" z="208.250000" h="60" random_walk="2" />
-      <spot x="248.125000" y="218.875000" z="208.000000" h="45" random_walk="2" walker_id="AssassinPath_IDAbProL2_4" />
-      <spot x="279.000000" y="295.000000" z="208.000000" h="70" random_walk="4" walker_id="AssassinPath_IDAbProL2_5" />
-      <spot x="299.000000" y="276.000000" z="208.375000" h="33" random_walk="2" />
-      <spot x="222.000000" y="285.625000" z="209.000000" h="91" random_walk="2" walker_id="AssassinPath_IDAbProL2_1" />
-      <spot x="285.000000" y="229.000000" z="211.500000" h="16" random_walk="2" />
+      <spot x="236.500000" y="289.625000" z="206.45367" h="76" random_walk="2" walker_id="AssassinPath_IDAbProL2_2" />
+      <spot x="254.000000" y="300.000000" z="206.7753" h="26" random_walk="2" />
+      <spot x="296.000000" y="276.000000" z="206.35698" h="26" random_walk="2" />
+      <spot x="288.000000" y="229.000000" z="209.37006" h="38" random_walk="2" />
+      <spot x="301.000000" y="255.000000" z="205.54303" h="60" random_walk="4" walker_id="AssassinPath_IDAbProL2_6" />
+      <spot x="253.000000" y="240.000000" z="208.80693" h="55" random_walk="2" walker_id="AssassinPath_IDAbProL2_3" />
+      <spot x="256.000000" y="303.000000" z="205.98273" h="60" random_walk="2" />
+      <spot x="248.125000" y="218.875000" z="206.01643" h="45" random_walk="2" walker_id="AssassinPath_IDAbProL2_4" />
+      <spot x="279.000000" y="295.000000" z="206.06717" h="70" random_walk="4" walker_id="AssassinPath_IDAbProL2_5" />
+      <spot x="299.000000" y="276.000000" z="206.44777" h="33" random_walk="2" />
+      <spot x="222.000000" y="285.625000" z="206.84122" h="91" random_walk="2" walker_id="AssassinPath_IDAbProL2_1" />
+      <spot x="285.000000" y="229.000000" z="209.36214" h="16" random_walk="2" />
     </spawn>
     <spawn npc_id="205018" respawn_time="1">
-      <spot x="65.750000" y="179.375000" z="231.000000" h="56" />
-      <spot x="59.500000" y="181.750000" z="232.000000" h="80" />
+      <spot x="65.750000" y="179.375000" z="228.8462" h="56" />
+      <spot x="59.500000" y="181.750000" z="228.75467" h="80" />
     </spawn>
     <spawn npc_id="203000" respawn_time="1">
-      <spot x="215.000000" y="243.000000" z="208.000000" h="0" random_walk="1" fly="1" />
-      <spot x="226.000000" y="213.000000" z="210.000000" h="0" random_walk="1" fly="1" />
-      <spot x="202.000000" y="215.000000" z="216.000000" h="0" random_walk="1" fly="1" />
+      <spot x="214.125000" y="241.875000" z="208.0" h="0" random_walk="1" fly="1" />
+      <spot x="226.000000" y="213.000000" z="210.0" h="0" random_walk="1" fly="1" />
+      <spot x="202.000000" y="215.000000" z="216.0" h="0" random_walk="1" fly="1" />
     </spawn>
     <spawn npc_id="205002" respawn_time="1">
-      <spot x="69.750000" y="181.375000" z="231.000000" h="70" />
+      <spot x="69.750000" y="181.375000" z="228.4128" h="70" />
     </spawn>
     <spawn npc_id="205007" respawn_time="1">
-      <spot x="185.000000" y="238.000000" z="223.000000" h="86" random_walk="1" fly="1" />
-      <spot x="190.000000" y="202.000000" z="219.000000" h="46" random_walk="1" fly="1" />
-      <spot x="164.000000" y="188.000000" z="203.000000" h="11" random_walk="1" fly="1" />
-      <spot x="110.000000" y="206.000000" z="213.000000" h="33" random_walk="1" fly="1" />
-      <spot x="162.000000" y="219.000000" z="220.000000" h="15" random_walk="1" fly="1" />
-      <spot x="126.000000" y="205.000000" z="225.000000" h="90" random_walk="1" fly="1" />
+      <spot x="185.000000" y="238.000000" z="223.0" h="86" random_walk="1" fly="1" />
+      <spot x="190.000000" y="202.000000" z="219.0" h="46" random_walk="1" fly="1" />
+      <spot x="164.000000" y="188.000000" z="203.0" h="11" random_walk="1" fly="1" />
+      <spot x="110.000000" y="206.000000" z="213.0" h="33" random_walk="1" fly="1" />
+      <spot x="162.000000" y="219.000000" z="220.0" h="15" random_walk="1" fly="1" />
+      <spot x="126.000000" y="205.000000" z="225.0" h="90" random_walk="1" fly="1" />
     </spawn>
     <spawn npc_id="205019" respawn_time="1">
-      <spot x="67.500000" y="185.750000" z="232.000000" h="81" />
-      <spot x="61.750000" y="176.375000" z="231.000000" h="58" />
+      <spot x="67.500000" y="185.750000" z="228.4363" h="81" />
+      <spot x="61.750000" y="176.375000" z="228.98203" h="58" />
     </spawn>
     <spawn npc_id="205011" respawn_time="1">
-      <spot x="118.500000" y="213.375000" z="221.875000" h="3" walker_id="NPCPath_IDAbProL2_3_1" walker_index="0" fly="1" />
-      <spot x="126.250000" y="199.625000" z="222.125000" h="3" walker_id="NPCPath_IDAbProL2_3" walker_index="0" fly="1" />
+      <spot x="118.500000" y="213.375000" z="221.875" h="3" walker_id="NPCPath_IDAbProL2_3_1" walker_index="0" fly="1" />
+      <spot x="126.250000" y="199.625000" z="222.125" h="3" walker_id="NPCPath_IDAbProL2_3" walker_index="0" fly="1" />
     </spawn>
     <spawn npc_id="205012" respawn_time="1">
-      <spot x="118.500000" y="213.375000" z="221.875000" h="3" walker_id="NPCPath_IDAbProL2_3_1" walker_index="1" fly="1" />
-      <spot x="126.250000" y="199.625000" z="222.125000" h="3" walker_id="NPCPath_IDAbProL2_3" walker_index="1" fly="1" />
+      <spot x="118.500000" y="213.375000" z="221.875" h="3" walker_id="NPCPath_IDAbProL2_3_1" walker_index="1" fly="1" />
+      <spot x="126.250000" y="199.625000" z="222.125" h="3" walker_id="NPCPath_IDAbProL2_3" walker_index="1" fly="1" />
     </spawn>
     <spawn npc_id="205015" respawn_time="1">
-      <spot x="205.000000" y="283.000000" z="216.000000" h="83" random_walk="0" walker_id="NPCPath_IDAbProL2_5" fly="1" />
+      <spot x="205.000000" y="283.000000" z="216.0" h="83" random_walk="0" walker_id="NPCPath_IDAbProL2_5" fly="1" />
     </spawn>
     <spawn npc_id="205008" respawn_time="1">
-      <spot x="150.000000" y="222.000000" z="213.000000" h="11" random_walk="1" fly="1" />
-      <spot x="162.000000" y="240.000000" z="220.000000" h="106" random_walk="1" fly="1" />
-      <spot x="173.000000" y="267.000000" z="212.000000" h="6" random_walk="1" fly="1" />
-      <spot x="141.000000" y="234.000000" z="199.000000" h="100" random_walk="1" fly="1" />
+      <spot x="150.000000" y="222.000000" z="213.0" h="11" random_walk="1" fly="1" />
+      <spot x="162.000000" y="240.000000" z="220.0" h="106" random_walk="1" fly="1" />
+      <spot x="173.000000" y="267.000000" z="212.0" h="6" random_walk="1" fly="1" />
+      <spot x="141.000000" y="234.000000" z="199.0" h="100" random_walk="1" fly="1" />
     </spawn>
     <spawn npc_id="205010" respawn_time="1">
-      <spot x="185.000000" y="236.000000" z="223.000000" h="26" random_walk="1" fly="1" />
-      <spot x="152.000000" y="224.000000" z="213.000000" h="70" random_walk="1" fly="1" />
-      <spot x="188.000000" y="204.000000" z="219.000000" h="110" random_walk="1" fly="1" />
-      <spot x="143.000000" y="232.000000" z="199.000000" h="50" random_walk="1" fly="1" />
-      <spot x="109.000000" y="208.000000" z="213.000000" h="93" random_walk="1" fly="1" />
+      <spot x="185.000000" y="236.000000" z="223.0" h="26" random_walk="1" fly="1" />
+      <spot x="152.000000" y="224.000000" z="213.0" h="70" random_walk="1" fly="1" />
+      <spot x="188.000000" y="204.000000" z="219.0" h="110" random_walk="1" fly="1" />
+      <spot x="143.000000" y="232.000000" z="199.0" h="50" random_walk="1" fly="1" />
+      <spot x="109.000000" y="208.000000" z="213.0" h="93" random_walk="1" fly="1" />
     </spawn>
     <spawn npc_id="205017" respawn_time="1">
-      <spot x="297.000000" y="278.000000" z="207.375000" h="90" random_walk="1" />
+      <spot x="297.000000" y="278.000000" z="206.6896" h="90" random_walk="1" />
     </spawn>
     <spawn npc_id="205000" respawn_time="1">
-      <spot x="85.000000" y="191.000000" z="232.000000" h="66" />
+      <spot x="85.000000" y="191.000000" z="231.65077" h="66" />
     </spawn>
     <spawn npc_id="205001" respawn_time="1">
-      <spot x="63.500000" y="183.750000" z="232.000000" h="86" />
+      <spot x="63.500000" y="183.750000" z="228.71973" h="86" />
     </spawn>
   </spawn_map>
 </spawns>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<spawns>
+  <spawn_map map_id="220050000">
+	<!-- Skam
+	<Manastone Trader> -->
+	<spawn npc_id="805375" respawn_time="295">
+		<spot x="1307.8346" y="1999.4736" z="46.25" h="96"/>
+	</spawn>
+	<!-- Theobomos Lab Asmodians [Inter 3.5] (Obejct Normal lvl:3) -->
+	<spawn npc_id="730672" respawn_time="295">
+		<spot x="1530.6813" y="362.34375" z="231.5332" h="40"/>
+	</spawn>	
+  </spawn_map>
+</spawns>

@@ -418,7 +418,8 @@ public class TradeService {
 	 * Purchase List AP 4.3
 	 **/
 	public static boolean performSellForAPToShop(Player player, TradeList tradeList,
-			TradeListTemplate purchaseTemplate) {
+			TradeListTemplate purchaseTemplate)
+	{
 		if (!RestrictionsManager.canTrade(player)) {
 			return false;
 		}
@@ -426,6 +427,7 @@ public class TradeService {
 		for (TradeItem tradeItem : tradeList.getTradeItems()) {
 			int itemObjectId = tradeItem.getItemId();
 			long count = tradeItem.getCount();
+			int priceModifier = purchaseTemplate.getBuyPriceRate(); // todo should be getApBuyPriceRate(), but parsed wrong
 			Item item = inventory.getItemByObjId(itemObjectId);
 			if (item == null) {
 				return false;
@@ -443,7 +445,7 @@ public class TradeService {
 				return false;
 			}
 			if (inventory.decreaseByObjectId(itemObjectId, count)) {
-				AbyssPointsService.addAp(player, item.getItemTemplate().getAcquisition().getRequiredAp() * (int) count);
+				AbyssPointsService.addAp(player, (item.getItemTemplate().getAcquisition().getRequiredAp() * priceModifier / 1000) * (int) count);
 			}
 		}
 		return true;

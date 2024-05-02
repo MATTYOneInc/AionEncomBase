@@ -989,10 +989,11 @@ public class DialogService {
 				}
 				break;
 			}
-			// PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId,
-			// tradeListTemplate, 100));
-			PacketSendUtility.sendPacket(player,
-					new SM_SELL_ITEM(targetObjectId, PricesService.getVendorSellModifier(player.getRace())));
+			// todo it should be the AP PRICE RATE - Encom has parsed incorrect
+			int tradeModifier = tradeListTemplate.getBuyPriceRate() / 10; // client waits for 100 or 150 as example
+
+			PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId,
+					tradeModifier, tradeListTemplate));
 			break;
 		}
 		case 104: {

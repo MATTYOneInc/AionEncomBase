@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<spawns>
+  <spawn_map map_id="220020000">
+	<!-- Flamyar 4.7 (NPC Normal lvl:65) -->
+	<spawn npc_id="804606" respawn_time="295">
+		<spot x="1587.9595" y="975.28436" z="140.80232" h="1"/>
+	</spawn>
+	<!-- Morheim 4.9 -->
+	<!-- Troka
+	<Manastone Trader> -->
+	<spawn npc_id="805374" respawn_time="295">
+		<spot x="294.52927" y="2433.7117" z="454.44693" h="100"/>
+	</spawn>
+  </spawn_map>
+</spawns>

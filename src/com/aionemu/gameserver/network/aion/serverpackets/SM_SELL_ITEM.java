@@ -1,48 +1,70 @@
 package com.aionemu.gameserver.network.aion.serverpackets;
 
 import com.aionemu.gameserver.model.templates.tradelist.TradeListTemplate;
-import com.aionemu.gameserver.model.templates.tradelist.TradeNpcType;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
-public class SM_SELL_ITEM extends AionServerPacket {
-
+/**
+ * correct name is S_STORE_PURCHASE_INFO
+ *
+ * @author BeckUp.Media
+ */
+public class SM_SELL_ITEM extends AionServerPacket
+{
 	private int targetObjectId;
-	private int sellPercentage;
-	private TradeListTemplate tradeListTemplate;
-	@SuppressWarnings("unused")
-	private byte action = 0x01;
+	private TradeListTemplate buylist;
+	private int priceModifier;
+	private byte action = 1;
+	private byte unk1 = 0;
+	private byte unk2 = 0;
 
-	public SM_SELL_ITEM(int targetObjectId, int sellPercentage) {
-		this.sellPercentage = sellPercentage;
+	/**
+	 * Normal sell
+	 *
+	 * @param targetObjectId
+	 * @param priceModifier
+	 */
+	public SM_SELL_ITEM(int targetObjectId, int priceModifier)
+	{
+		this.action = 1;
+		this.priceModifier = priceModifier;
 		this.targetObjectId = targetObjectId;
+		this.unk1 = 1;
+		this.unk2 = 1;
 	}
 
-	public SM_SELL_ITEM(int targetObjectId, TradeListTemplate tradeListTemplate) {
+	/**
+	 * sell ap relics
+	 *
+	 * @param targetObjectId
+	 * @param priceModifier
+	 * @param buyList
+	 */
+	public SM_SELL_ITEM(int targetObjectId, int priceModifier, TradeListTemplate buyList)
+	{
+		this.action = 2;
+		this.priceModifier = priceModifier;
 		this.targetObjectId = targetObjectId;
-		this.tradeListTemplate = tradeListTemplate;
-		this.sellPercentage = tradeListTemplate.getBuyPriceRate();
-		if (tradeListTemplate.getTradeNpcType() == TradeNpcType.ABYSS) {
-			this.action = 0x02;
-		}
+		this.buylist = buyList;
+		this.unk1 = 0;
+		this.unk2 = 1;
 	}
 
 	@Override
-	protected void writeImpl(AionConnection con) {
-		if ((this.tradeListTemplate != null) && (this.tradeListTemplate.getNpcId() != 0)
-				&& (this.tradeListTemplate.getCount() != 0)) {
-			writeD(this.targetObjectId);
-			writeC(this.tradeListTemplate.getTradeNpcType().index());
-			writeD(this.sellPercentage);
-			writeH(256);
-			writeH(this.tradeListTemplate.getCount());
-			for (TradeListTemplate.TradeTab tradeTabl : this.tradeListTemplate.getTradeTablist())
-				writeD(tradeTabl.getId());
+	protected void writeImpl(AionConnection con)
+	{
+		writeD(targetObjectId); // npc obj id
+		writeC(action); // action
+		writeD(priceModifier); // modifier
+		writeC(unk1);// unk
+		writeC(unk2);// unk
+		if (buylist != null) {
+			writeH(buylist.getCount());// buyList size
+			for (TradeListTemplate.TradeTab tTab : buylist.getTradeTablist()) {
+				writeD(tTab.getId()); // id of tab
+			}
 		} else {
-			writeD(this.targetObjectId);
-			writeD(5121);
-			writeD(65792);
-			writeC(0);
+			writeH(0);// buyList size
 		}
 	}
 }
