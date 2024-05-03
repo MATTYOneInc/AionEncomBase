@@ -117,15 +117,6 @@ public class AttackManager {
 			npcAI.onGeneralEvent(AIEventType.TARGET_GIVEUP);
 			return;
 		}
-		//Check the NAV navigation on status.
-		if (!GeoDataConfig.GEO_NAV_ENABLE) {
-			//If the NPC loses its target or vision.
-			if (!GeoService.getInstance().canSee(npc,npc.getTarget())) {
-				npcAI.onGeneralEvent(AIEventType.TARGET_GIVEUP);
-				return;
-			}
-
-		}
 		if (npcAI.isMoveSupported()){
 			npc.getMoveController().moveToTargetObject();
 			return;
