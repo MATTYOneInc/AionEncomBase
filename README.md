@@ -4,14 +4,15 @@ This is a repository for Aion 5.8 Community Emulator
 
 Community Discord : https://discord.gg/Nt7rBd8mnN
 
-## Geo data
-[original geo](https://drive.google.com/file/d/1KdprwGV0huFnrAsJwb1QwgTpbZg7haaX/view?usp=sharing) (incomplete)
+## NPC Navigation
 
-[Monono2](https://drive.google.com/file/d/1jjLjPDoU5NQr7u7jfg1xqkhKfMdEX1RY/view?usp=sharing) (requires setting **gameserver.geodata.monon2.in.use = true** in geodata.properties)
+[Monono2 Geodata](https://drive.google.com/file/d/1jjLjPDoU5NQr7u7jfg1xqkhKfMdEX1RY/view?usp=sharing) (requires setting **gameserver.geodata.monon2.in.use = true** in geodata.properties)
 
-[large geo](https://drive.google.com/file/d/1JrkdV3lTRgo4J9LSJQNBmLSd9Gcq1jv7/view?usp=sharing) (requires around 6 GB of RAM)
+[Navmeshes](https://drive.google.com/file/d/1ulkx0TwdDZnFZL5ildkVFtD1WQ3jGA7p/view?usp=sharing)
 
-When using original or large geo, set **gameserver.geodata.monon2.in.use = false** in geodata.properties
+The **nav** folder from the archive goes into your AL-Game\data folder. Make sure that you have **gameserver.geo.nav.pathfinding.enable = true** in geodata.properties
+
+The use of navmeshes is optional. However, they drastically improve npc navigation at the cost of additional 2GB RAM usage.
 
 ## Known Developers
 ### Teams:

@@ -22,10 +22,13 @@ import com.aionemu.gameserver.ai2.NpcAI2;
 import com.aionemu.gameserver.ai2.manager.EmoteManager;
 import com.aionemu.gameserver.ai2.manager.WalkManager;
 import com.aionemu.gameserver.model.gameobjects.Npc;
-import com.aionemu.gameserver.model.geometry.Point3D;
+import com.aionemu.gameserver.model.templates.spawns.SpawnTemplate;
+import com.aionemu.gameserver.spawnengine.SpawnEngine;
 
 /**
  * @author ATracer
+ * @modified Yon (Aion Reconstruction Project) -- added handling to {@link #onNotAtHome(NpcAI2)} for when the entity cannot move;
+ * removed deprecated method calls
  */
 public class ReturningEventHandler {
 
@@ -44,11 +47,29 @@ public class ReturningEventHandler {
 		}
 		if (npcAI.isInState(AIState.RETURNING)) {
 			Npc npc = (Npc) npcAI.getOwner();
-			if (npc.hasWalkRoutes()) {
-				WalkManager.startWalking(npcAI);
+			if (npcAI.isMoveSupported() && npc.getDistanceToSpawnLocation() < 100) { //Arbitrary distance
+//					Point3D prevStep = npc.getMoveController().recallPreviousStep();
+//					npcAI.getOwner().getMoveController().moveToPoint(prevStep.getX(), prevStep.getY(), prevStep.getZ());
+				npc.getMoveController().abortMove();
+				npc.getMoveController().moveToHome();
 			} else {
-				Point3D prevStep = npcAI.getOwner().getMoveController().recallPreviousStep();
-				npcAI.getOwner().getMoveController().moveToPoint(prevStep.getX(), prevStep.getY(), prevStep.getZ());
+				if (npc.isDeleteDelayed()) {
+					onBackHome(npcAI);
+				} else {
+					//FIXME: Maybe there's better handling here?
+					/*
+					 * The idea is the entity cannot move, but has been moved from its spawn...
+					 * so instead of moving it back to spawn (not possible), it should just
+					 * despawn and then respawn back at the original spawn point.
+					 *
+					 * Or, if the entity can move, but is too far away from spawn to worry about
+					 * moving back directly (which can happen since mob leashes have been removed).
+					 */
+					SpawnTemplate spawn = npc.getSpawn();
+					int instanceId = npc.getInstanceId();
+					npc.getController().onDelete();
+					SpawnEngine.spawnObject(spawn, instanceId);
+				}
 			}
 		}
 	}
@@ -60,7 +81,7 @@ public class ReturningEventHandler {
 		if (npcAI.isLogging()) {
 			AI2Logger.info(npcAI, "onBackHome");
 		}
-		npcAI.getOwner().getMoveController().clearBackSteps();
+//		npcAI.getOwner().getMoveController().clearBackSteps();
 		if (npcAI.setStateIfNot(AIState.IDLE)) {
 			EmoteManager.emoteStartIdling(npcAI.getOwner());
 			ThinkEventHandler.thinkIdle(npcAI);

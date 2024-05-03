@@ -167,6 +167,7 @@ import com.aionemu.gameserver.utils.idfactory.IDFactory;
 import com.aionemu.gameserver.utils.javaagent.JavaAgentUtils;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.geo.GeoService;
+import com.aionemu.gameserver.world.geo.nav.NavService;
 import com.aionemu.gameserver.world.zone.ZoneService;
 
 import ch.lambdaj.Lambda;
@@ -281,6 +282,7 @@ public class GameServer {
 		 */
 		Util.printSection(" *** Geodata *** ");
 		GeoService.getInstance().initializeGeo();
+		NavService.getInstance().initializeNav();
 		DropRegistrationService.getInstance();
 		GameServer gs = new GameServer();
 		DAOManager.getDAO(PlayerDAO.class).setPlayersOffline(false);

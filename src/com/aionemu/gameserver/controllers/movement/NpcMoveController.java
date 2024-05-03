@@ -7,6 +7,7 @@
  */
 package com.aionemu.gameserver.controllers.movement;
 
+import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.ai2.AI2Logger;
 import com.aionemu.gameserver.ai2.AIState;
 import com.aionemu.gameserver.ai2.AISubState;
@@ -14,9 +15,7 @@ import com.aionemu.gameserver.ai2.NpcAI2;
 import com.aionemu.gameserver.ai2.handler.TargetEventHandler;
 import com.aionemu.gameserver.ai2.manager.WalkManager;
 import com.aionemu.gameserver.configs.main.GeoDataConfig;
-import com.aionemu.gameserver.controllers.movement.CreatureMoveController;
 import com.aionemu.gameserver.dataholders.DataManager;
-import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import com.aionemu.gameserver.model.actions.NpcActions;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -36,17 +35,19 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.collections.LastUsedCache;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.geo.GeoService;
-import com.eleanor.Global;
-import com.eleanor.processors.movement.motor.FollowMotor;
+import com.aionemu.gameserver.world.geo.nav.NavService;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.eleanor.Global;
+import com.eleanor.processors.movement.motor.FollowMotor;
 
 public class NpcMoveController
-extends CreatureMoveController<Npc> {
+        extends CreatureMoveController<Npc> {
     private static final Logger log = LoggerFactory.getLogger(NpcMoveController.class);
     public static final float MOVE_CHECK_OFFSET = 0.1f;
     private static final float MOVE_OFFSET = 0.05f;
+    private int returnAttempts;
     private Destination destination = Destination.TARGET_OBJECT;
     private float pointX;
     private float pointY;
@@ -58,10 +59,20 @@ extends CreatureMoveController<Npc> {
     int currentPoint;
     int walkPause;
     private float cachedTargetZ;
+    private boolean cachedPathValid;
+    private float[][] cachedPath;
     private FollowMotor _followMotor;
 
+    public NpcMoveController(Npc owner) {
+        super(owner);
+    }
+    private static enum Destination {
+        TARGET_OBJECT,
+        POINT,
+        HOME,
+    }
     private void applyFollow(VisibleObject target) {
-        if (this._followMotor != null && this._followMotor._target == target) {
+        if ((this._followMotor != null && this._followMotor._target == target)) {
             return;
         }
         if (this._followMotor != null) {
@@ -70,106 +81,178 @@ extends CreatureMoveController<Npc> {
         this._followMotor = new FollowMotor(Global.MovementProcessor, (Npc)this.owner, target);
         this._followMotor.start();
     }
-
     private void cancelFollow() {
-        if (this._followMotor != null) {
+        if ((this._followMotor != null)) {
             this._followMotor.stop();
             this._followMotor = null;
         }
     }
 
-    public NpcMoveController(Npc owner) {
-        super(owner);
-    }
-
     public void moveToTargetObject() {
-        if (this.started.compareAndSet(false, true)) {
-            if (((Npc)this.owner).getAi2().isLogging()) {
-                AI2Logger.moveinfo((Creature)this.owner, "MC: \u5f00\u59cb\u79fb\u52a8\u5230\u76ee\u6807");
+        if (started.compareAndSet(false, true)) {
+            if (owner.getAi2().isLogging()) {
+                AI2Logger.moveinfo(owner, "MC: moveToTarget started");
             }
-            this.destination = Destination.TARGET_OBJECT;
-            this.updateLastMove();
-            MoveTaskManager.getInstance().addCreature((Creature)this.owner);
+            destination = Destination.TARGET_OBJECT;
+            updateLastMove();
+            MoveTaskManager.getInstance().addCreature(owner);
         }
     }
 
     public void moveToPoint(float x, float y, float z) {
-        if (this.started.compareAndSet(false, true)) {
-            if (((Npc)this.owner).getAi2().isLogging()) {
-                AI2Logger.moveinfo((Creature)this.owner, "MC: \u5f00\u59cb\u79fb\u52a8\u5230\u70b9");
+        if (started.compareAndSet(false, true)) {
+            if (owner.getAi2().isLogging()) {
+                AI2Logger.moveinfo(owner, "MC: moveToPoint started");
             }
-            this.destination = Destination.POINT;
-            this.pointX = x;
-            this.pointY = y;
-            this.pointZ = z;
-            this.updateLastMove();
-            MoveTaskManager.getInstance().addCreature((Creature)this.owner);
+            destination = Destination.POINT;
+            pointX = x;
+            pointY = y;
+            pointZ = z;
+            updateLastMove();
+            MoveTaskManager.getInstance().addCreature(owner);
+        }
+    }
+
+
+    public void moveToHome() {
+        if (started.compareAndSet(false, true)) {
+            if (owner.getAi2().isLogging()) {
+                AI2Logger.moveinfo(owner, "MC: moveToHome started");
+            }
+            cachedPathValid = false;
+            float x = owner.getSpawn().getX(), y = owner.getSpawn().getY(), z = owner.getSpawn().getZ();
+            destination = Destination.HOME;
+            pointX = x;
+            pointY = y;
+            pointZ = z;
+            updateLastMove();
+            MoveTaskManager.getInstance().addCreature(owner);
         }
     }
 
     public void moveToNextPoint() {
-        if (this.started.compareAndSet(false, true)) {
-            if (((Npc)this.owner).getAi2().isLogging()) {
-                AI2Logger.moveinfo((Creature)this.owner, "MC: \u79fb\u52a8\u5230\u4e0b\u4e00\u4e2a\u70b9\u5f00\u59cb");
+        if (started.compareAndSet(false, true)) {
+            if (owner.getAi2().isLogging()) {
+                AI2Logger.moveinfo(owner, "MC: moveToNextPoint started");
             }
-            this.destination = Destination.POINT;
-            this.updateLastMove();
-            MoveTaskManager.getInstance().addCreature((Creature)this.owner);
+            destination = Destination.POINT;
+            updateLastMove();
+            MoveTaskManager.getInstance().addCreature(owner);
         }
     }
 
     @Override
     public void moveToDestination() {
-        if (((Npc)this.owner).getAi2().isLogging()) {
-            AI2Logger.moveinfo((Creature)this.owner, "\u79fb\u81f3\u76ee\u7684\u5730: " + (Object)((Object)this.destination));
+        if (owner.getAi2().isLogging()) {
+            AI2Logger.moveinfo(owner, "moveToDestination destination: " + destination);
         }
-        if (NpcActions.isAlreadyDead((Creature)this.owner)) {
-            this.abortMove();
+        if (NpcActions.isAlreadyDead(owner)) {
+            abortMove();
             return;
         }
-        if (!((Npc)this.owner).canPerformMove() || ((Npc)this.owner).getAi2().getSubState() == AISubState.CAST) {
-            if (((Npc)this.owner).getAi2().isLogging()) {
-                AI2Logger.moveinfo((Creature)this.owner, "\u79fb\u52a8\u5230\u76ee\u7684\u5730\u65e0\u6cd5\u6267\u884c\u79fb\u52a8");
+        if (!owner.canPerformMove() || (owner.getAi2().getSubState() == AISubState.CAST)) {
+            if (owner.getAi2().isLogging()) {
+                AI2Logger.moveinfo(owner, "moveToDestination can't perform move");
             }
-            if (this.started.compareAndSet(true, false)) {
-                this.cancelFollow();
-                this.setAndSendStopMove((Creature)this.owner);
+            if (started.compareAndSet(true, false)) {
+                cancelFollow();
+                setAndSendStopMove(owner);
             }
-            this.updateLastMove();
+            updateLastMove();
             return;
+        } else if (started.compareAndSet(false, true)) {
+            movementMask = MovementMask.NPC_STARTMOVE;
+            PacketSendUtility.broadcastPacket(owner, new SM_MOVE(owner));
         }
-        if (this.started.compareAndSet(false, true)) {
-            this.movementMask = (byte)-32;
-            PacketSendUtility.broadcastPacket(this.owner, new SM_MOVE((Creature)this.owner));
+
+        if (!started.get()) {
+            if (owner.getAi2().isLogging()) {
+                AI2Logger.moveinfo(owner, "moveToDestination not started");
+            }
         }
-        if (!this.started.get() && ((Npc)this.owner).getAi2().isLogging()) {
-            AI2Logger.moveinfo((Creature)this.owner, "\u79fb\u81f3\u76ee\u7684\u5730\u5c1a\u672a\u5f00\u59cb");
-        }
-        switch (this.destination) {
-            case TARGET_OBJECT: {
-                Npc npc = (Npc)this.owner;
-                VisibleObject target = ((Npc)this.owner).getTarget();
-                if (target == null) {
-                    this.cancelFollow();
-                    return;
+        switch (destination) {
+            case TARGET_OBJECT:
+                if (GeoDataConfig.GEO_NAV_ENABLE) {
+                    returnAttempts = 0;
+                    VisibleObject target = owner.getTarget();// todo no target
+                    if (target == null) { //This check is not needed, but I'll leave it for clarity.
+                        return;
+                    }
+                    if (!(target instanceof Creature)) { //instanceof returns false if target is null.
+                        return;
+                    }
+                    if ((MathUtil.getDistance(target.getX(), target.getY(), pointZ, pointX, pointY, pointZ) > MOVE_CHECK_OFFSET)) {
+                        Creature creature = (Creature) target;
+                        offset = owner.getController().getAttackDistanceToTarget();
+                        pointX = target.getX();
+                        pointY = target.getY();
+                        pointZ = getTargetZ(owner, creature);
+                        cachedPathValid = false;
+                    }
+                    if (!cachedPathValid || cachedPath == null) {
+                        cachedPath = NavService.getInstance().navigateToTarget(owner, (Creature) target);
+                        if (cachedPath != null) { //Add a bit of randomness to the last point to prevent entities from stacking directly ontop of eachother.
+                            //TODO: Move to NavService and make sure this random point is on the navmesh!
+                            if (cachedPath.length != 1) {
+                                if (Rnd.nextBoolean()) {
+                                    cachedPath[cachedPath.length - 1][0] += Rnd.nextDouble() * owner.getObjectTemplate().getBoundRadius().getSide();
+                                } else {
+                                    cachedPath[cachedPath.length - 1][0] -= Rnd.nextDouble() * owner.getObjectTemplate().getBoundRadius().getSide();
+                                }
+                                if (Rnd.nextBoolean()) {
+                                    cachedPath[cachedPath.length - 1][1] += Rnd.nextDouble() * owner.getObjectTemplate().getBoundRadius().getSide();
+                                } else {
+                                    cachedPath[cachedPath.length - 1][1] -= Rnd.nextDouble() * owner.getObjectTemplate().getBoundRadius().getSide();
+                                }
+                            }
+                        }
+                        cachedPathValid = true;
+                    }
+                    if (cachedPath != null && cachedPath.length > 0) {
+                        float[] p1 = cachedPath[0];
+                        assert p1.length == 3;
+                        moveToLocation(p1[0], p1[1], getTargetZ(owner, p1[0], p1[1], p1[2]), offset);
+                    } else {
+                        if (cachedPath != null) cachedPath = null;
+                        moveToLocation(pointX, pointY, pointZ, offset);
+                    }
+                } else {
+                    Npc npc = owner;
+                    VisibleObject target = owner.getTarget();
+                    if (target == null) {
+                        cancelFollow();
+                        return;
+                    }
+                    if (!(target instanceof Creature)) {
+                        cancelFollow();
+                        return;
+                    }
+                    if (owner.getAi2().getState() == AIState.FOLLOWING) {
+                        cancelFollow();
+                        offset = npc.getController().getAttackDistanceToTarget();
+                        moveToLocation(target.getX(), target.getY(), target.getZ(), offset);
+                        break;
+                    }
+                    applyFollow(target);
                 }
-                if (!(target instanceof Creature)) {
-                    this.cancelFollow();
-                    return;
-                }
-                if (((Npc)this.owner).getAi2().getState() == AIState.FOLLOWING) {
-                    this.cancelFollow();
-                    this.offset = npc.getController().getAttackDistanceToTarget();
-                    this.moveToLocation(target.getX(), target.getY(), target.getZ(), this.offset);
-                    break;
-                }
-                this.applyFollow(target);
+                break;
+            case POINT: {
+                cancelFollow();
+                moveToLocation(pointX, pointY, pointZ, offset);
                 break;
             }
-            case POINT: {
-                this.cancelFollow();
-                this.offset = 0.1f;
-                this.moveToLocation(this.pointX, this.pointY, this.pointZ, this.offset);
+            case HOME: {
+                if ((!cachedPathValid || cachedPath == null) && (returnAttempts<3)) {
+                    cachedPath = NavService.getInstance().navigateToLocation(owner, pointX, pointY, pointZ);
+                    returnAttempts++;
+                    cachedPathValid = true;
+                }
+                if ((cachedPath != null) && (cachedPath.length > 0) && (returnAttempts<3)) {
+                    float[] p1 = cachedPath[0];
+                    moveToLocation(p1[0], p1[1], getTargetZ(owner, p1[0], p1[1], p1[2]), offset);
+                } else{
+                    moveToLocation(pointX, pointY, pointZ, offset);
+                }
             }
         }
         this.updateLastMove();
@@ -178,10 +261,20 @@ extends CreatureMoveController<Npc> {
     private float getTargetZ(Npc npc, Creature creature) {
         float targetZ = creature.getZ();
         if (GeoDataConfig.GEO_NPC_MOVE && creature.isInFlyingState() && !npc.isInFlyingState()) {
-            if (npc.getGameStats().checkGeoNeedUpdate()) {
-                this.cachedTargetZ = GeoService.getInstance().getZ(creature);
-            }
+//            if (npc.getGameStats().checkGeoNeedUpdate()) {
+            this.cachedTargetZ = GeoService.getInstance().getZ(creature);
+ //           }
             targetZ = this.cachedTargetZ;
+        }
+        return targetZ;
+    }
+    private float getTargetZ(Npc npc, float x, float y, float z) {
+        float targetZ = z;
+        if (GeoDataConfig.GEO_NPC_MOVE && !npc.isFlying()) {
+//            if (npc.getGameStats().checkGeoNeedUpdate()) {
+            cachedTargetZ = GeoService.getInstance().getZ(npc.getWorldId(), x, y, z, 1.1F, npc.getInstanceId());
+            targetZ = cachedTargetZ;
+//            }
         }
         return targetZ;
     }
@@ -228,6 +321,19 @@ extends CreatureMoveController<Npc> {
         if (futureDistPassed > dist) {
             futureDistPassed = dist;
         }
+        if (futureDistPassed == dist
+                && (destination == Destination.TARGET_OBJECT || destination == Destination.HOME)) {
+            if (cachedPath != null && cachedPath.length > 0) {
+                float[][] tempCache = new float[cachedPath.length - 1][];
+                if (tempCache.length > 0) {
+                    System.arraycopy(cachedPath, 1, tempCache, 0, cachedPath.length - 1);
+                    cachedPath = tempCache;
+                } else {
+                    cachedPath = null;
+                    cachedPathValid = false;
+                }
+            }
+        }
         float distFraction = futureDistPassed / dist;
         float newX = (this.targetDestX - ownerX) * distFraction + ownerX;
         float newY = (this.targetDestY - ownerY) * distFraction + ownerY;
@@ -235,15 +341,15 @@ extends CreatureMoveController<Npc> {
         if (ownerX == newX && ownerY == newY && ((Npc)this.owner).getSpawn().getRandomWalk() > 0) {
             return;
         }
-        if (GeoDataConfig.GEO_NPC_MOVE && GeoDataConfig.GEO_ENABLE && ((Npc)this.owner).getAi2().getSubState() != AISubState.WALK_PATH && ((Npc)this.owner).getAi2().getState() != AIState.RETURNING && ((Npc)this.owner).getGameStats().getLastGeoZUpdate() < System.currentTimeMillis()) {
-            if (((Npc)this.owner).getSpawn().getX() != this.targetDestX || ((Npc)this.owner).getSpawn().getY() != this.targetDestY || ((Npc)this.owner).getSpawn().getZ() != this.targetDestZ) {
-                float geoZ = GeoService.getInstance().getZ(((Npc)this.owner).getWorldId(), newX, newY, newZ, 0.0f, ((Npc)this.owner).getInstanceId());
-                if (Math.abs(newZ - geoZ) > 1.0f) {
+        if (GeoDataConfig.GEO_NPC_MOVE && GeoDataConfig.GEO_ENABLE && owner.getAi2().getSubState() != AISubState.WALK_PATH && owner.getAi2().getState() != AIState.RETURNING
+                && owner.getGameStats().checkGeoNeedUpdate()) {
+            if (owner.getSpawn().getX() != targetDestX || owner.getSpawn().getY() != targetDestY || owner.getSpawn().getZ() != targetDestZ) {
+                float geoZ = GeoService.getInstance().getZ(owner.getWorldId(), newX, newY, newZ, 0, owner.getInstanceId());
+                if (Math.abs(newZ - geoZ) > 1) {
                     directionChanged = true;
                 }
-                newZ = geoZ + ((Npc)this.owner).getObjectTemplate().getBoundRadius().getUpper() - ((Npc)this.owner).getObjectTemplate().getHeight();
+                newZ = geoZ ;
             }
-            ((Npc)this.owner).getGameStats().setLastGeoZUpdate(System.currentTimeMillis() + 1000L);
         }
         if (((Npc)this.owner).getAi2().isLogging()) {
             AI2Logger.moveinfo((Creature)this.owner, "newX=" + newX + " newY=" + newY + " newZ=" + newZ + " mask=" + this.movementMask);
@@ -261,23 +367,23 @@ extends CreatureMoveController<Npc> {
 
     private byte getMoveMask(boolean directionChanged) {
         if (directionChanged) {
-            return -32;
+            return MovementMask.NPC_STARTMOVE;
         }
         if (((Npc)this.owner).getAi2().getState() == AIState.RETURNING) {
-            return -30;
+            return MovementMask.NPC_RUN_FAST;
         }
         if (((Npc)this.owner).getAi2().getState() == AIState.FOLLOWING) {
-            return -22;
+            return MovementMask.NPC_WALK_SLOW;
         }
-        byte mask = 0;
+        byte mask = MovementMask.IMMEDIATE;
         Stat2 stat = ((Npc)this.owner).getGameStats().getMovementSpeed();
         if (((Npc)this.owner).isInState(CreatureState.WEAPON_EQUIPPED)) {
-            mask = stat.getBonus() < 0 ? (byte)-30 : -28;
+            mask = stat.getBonus() < 0 ? MovementMask.NPC_RUN_FAST : MovementMask.NPC_RUN_SLOW;
         } else if (((Npc)this.owner).isInState(CreatureState.WALKING) || ((Npc)this.owner).isInState(CreatureState.ACTIVE)) {
-            byte by = mask = stat.getBonus() < 0 ? (byte)-24 : -22;
+            byte by = mask = stat.getBonus() < 0 ? MovementMask.NPC_WALK_FAST : MovementMask.NPC_WALK_SLOW;
         }
         if (((Npc)this.owner).isFlying()) {
-            mask = (byte)(mask | 4);
+            mask |= MovementMask.GLIDE;
         }
         return mask;
     }
@@ -292,22 +398,22 @@ extends CreatureMoveController<Npc> {
     }
 
     public void resetMove() {
-        if (((Npc)this.owner).getAi2().isLogging()) {
-            AI2Logger.moveinfo((Creature)this.owner, "MC \u505c\u6b62");
+        if (owner.getAi2().isLogging()) {
+            AI2Logger.moveinfo(owner, "MC perform stop");
         }
-        this.cancelFollow();
-        this.started.set(false);
-        this.targetDestX = 0.0f;
-        this.targetDestY = 0.0f;
-        this.targetDestZ = 0.0f;
-        this.pointX = 0.0f;
-        this.pointY = 0.0f;
-        this.pointZ = 0.0f;
+        cancelFollow();
+        started.set(false);
+        targetDestX = 0;
+        targetDestY = 0;
+        targetDestZ = 0;
+        pointX = 0;
+        pointY = 0;
+        pointZ = 0;
     }
 
     public void setCurrentRoute(List<RouteStep> currentRoute) {
         if (currentRoute == null) {
-            AI2Logger.info(((Npc)this.owner).getAi2(), String.format("MC: \u7f6e\u5f53\u524d\u8def\u7ebf\u5c06\u8def\u7ebf\u8bbe\u7f6e\u4e3a\u7a7a (NPC id: {})!!!", ((Npc)this.owner).getNpcId()));
+            AI2Logger.info(owner.getAi2(), String.format("MC: setCurrentRoute is setting route to null (NPC id: {})!!!", owner.getNpcId()));
         } else {
             this.currentRoute = currentRoute;
         }
@@ -324,13 +430,13 @@ extends CreatureMoveController<Npc> {
             localPoint2D = WalkerGroup.getLinePoint(new Point2D(paramRouteStep2.getX(), paramRouteStep2.getY()), new Point2D(paramRouteStep1.getX(), paramRouteStep1.getY()), ((Npc)this.owner).getWalkerGroupShift());
             this.pointZ = paramRouteStep2.getZ();
             if (GeoDataConfig.GEO_ENABLE && GeoDataConfig.GEO_NPC_MOVE && !(this.owner.isInFlyingState())) {
-				this.pointZ = GeoService.getInstance().getZ(((Creature)this.owner).getWorldId(), paramRouteStep2.getX(), paramRouteStep2.getY(), paramRouteStep2.getZ()-1, 100f, 1);
+                this.pointZ = GeoService.getInstance().getZ(((Creature)this.owner).getWorldId(), paramRouteStep2.getX(), paramRouteStep2.getY(), paramRouteStep2.getZ()-1, 100f, 1);
             }
             ((Npc)this.owner).getWalkerGroup().setStep((Npc)this.owner, paramRouteStep1.getRouteStep());
         } else {
             this.pointZ = paramRouteStep1.getZ();
             if (GeoDataConfig.GEO_ENABLE && GeoDataConfig.GEO_NPC_MOVE && !(this.owner.isInFlyingState())) {
-				this.pointZ = GeoService.getInstance().getZ(((Creature)this.owner).getWorldId(), paramRouteStep1.getX(), paramRouteStep1.getY(), paramRouteStep1.getZ()-1, 100f, 1);
+                this.pointZ = GeoService.getInstance().getZ(((Creature)this.owner).getWorldId(), paramRouteStep1.getX(), paramRouteStep1.getY(), paramRouteStep1.getZ()-1, 100f, 1);
             }
         }
         this.currentPoint = paramRouteStep1.getRouteStep() - 1;
@@ -447,15 +553,8 @@ extends CreatureMoveController<Npc> {
         this.movementMask = 0;
     }
 
-    private static enum Destination {
-        TARGET_OBJECT,
-        POINT;
-
+    @Override
+    public void skillMovement() {
+        // TODO Auto-generated method stub
     }
-	@Override
-	public void skillMovement() {
-		// TODO Auto-generated method stub
-		
-	}
 }
-
