@@ -32,6 +32,12 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.services.ClassChangeService;
 import com.aionemu.gameserver.services.QuestService;
 
+/**
+ * @author KKnD
+ * @author orz
+ * @author avol
+ * @author BeckUp.Media
+ */
 public class CM_DIALOG_SELECT extends AionClientPacket {
 	private int targetObjectId;
 	private int dialogId;
@@ -40,14 +46,23 @@ public class CM_DIALOG_SELECT extends AionClientPacket {
 	private int lastPage;
 	private int questId;
 	private int unk;
+	private int unk02;
 
 	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(CM_DIALOG_SELECT.class);
 
+	/**
+	 * Constructs new instance of <tt>CM_CM_REQUEST_DIALOG </tt> packet
+	 *
+	 * @param opcode
+	 */
 	public CM_DIALOG_SELECT(int opcode, State state, State... restStates) {
 		super(opcode, state, restStates);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected void readImpl() {
 		targetObjectId = readD();
@@ -56,17 +71,18 @@ public class CM_DIALOG_SELECT extends AionClientPacket {
 		unk = readH();
 		lastPage = readH();
 		questId = readD();
-		readH();
+		unk02 = readH(); // todo need to be checked for what - BeckUp.Media
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected void runImpl() {
 		final Player player = getConnection().getActivePlayer();
 		QuestTemplate questTemplate = DataManager.QUEST_DATA.getQuestById(questId);
 		QuestEnv env = new QuestEnv(null, player, questId, 0);
-		if (player.isInPlayerMode(PlayerMode.RIDE)) {
-			player.unsetPlayerMode(PlayerMode.RIDE);
-		}
+
 		if (player.isTrading()) {
 			return;
 		}
