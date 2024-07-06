@@ -22,23 +22,21 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _80315The_Reason_Why_The_Hero_Of_Guardians_Shines extends QuestHandler {
 
-public class _80315The_Reason_Why_The_Hero_Of_Guardians_Shines extends QuestHandler
-{
     private final static int questId = 80315;
-	
     public _80315The_Reason_Why_The_Hero_Of_Guardians_Shines() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
+	// @Override
+	// public boolean onLvlUpEvent(QuestEnv env) {
+		// return defaultOnLvlUpEvent(env);
+	// }
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
+		// qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(831423).addOnQuestStart(questId); //Celta.
 		qe.registerQuestNpc(831423).addOnTalkEvent(questId); //Celta.
 		qe.registerQuestNpc(831423).addOnTalkEvent(questId); //Celta.

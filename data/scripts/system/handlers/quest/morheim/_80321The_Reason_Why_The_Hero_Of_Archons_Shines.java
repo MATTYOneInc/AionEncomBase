@@ -23,22 +23,21 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _80321The_Reason_Why_The_Hero_Of_Archons_Shines extends QuestHandler
-{
+public class _80321The_Reason_Why_The_Hero_Of_Archons_Shines extends QuestHandler {
+
     private final static int questId = 80321;
-	
     public _80321The_Reason_Why_The_Hero_Of_Archons_Shines() {
         super(questId);
     }
 	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
+	// @Override
+	// public boolean onLvlUpEvent(QuestEnv env) {
+		// return defaultOnLvlUpEvent(env);
+	// }
 	
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
+		// qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(831427).addOnQuestStart(questId); //Soraya.
 		qe.registerQuestNpc(831427).addOnTalkEvent(questId); //Soraya.
 		qe.registerQuestNpc(831427).addOnTalkEvent(questId); //Soraya.

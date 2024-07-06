@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1607Mapping_The_Revolutionaries extends QuestHandler
-{
+public class _1607Mapping_The_Revolutionaries extends QuestHandler {
+
 	private static final int questId = 1607;
-	
 	public _1607Mapping_The_Revolutionaries() {
 		super(questId);
 	}
@@ -51,9 +50,7 @@ public class _1607Mapping_The_Revolutionaries extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (QuestService.startQuest(env)) {
-				return HandlerResult.fromBoolean(sendQuestDialog(env, 4));
-			}
+			return HandlerResult.fromBoolean(sendQuestDialog(env, 4));
 		}
 		return HandlerResult.FAILED;
 	}
@@ -64,9 +61,18 @@ public class _1607Mapping_The_Revolutionaries extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		if (qs == null) {
-			return false;
-		} if (qs.getStatus() == QuestStatus.START) {
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 0) { 
+				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
+					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				    }
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+					return closeDialogWindow(env);
+				    }
+			    }
+			} 
+        if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
 			int var1 = qs.getQuestVarById(1);
 			int var2 = qs.getQuestVarById(2);
