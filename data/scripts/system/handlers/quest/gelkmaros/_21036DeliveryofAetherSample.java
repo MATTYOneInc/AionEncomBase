@@ -27,14 +27,13 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _21036DeliveryofAetherSample extends QuestHandler {
 
 	private final static int questId = 21036;
-
 	public _21036DeliveryofAetherSample() {
 		super(questId);
 	}
 
 	@Override
 	public void register() {
-		int[] npcs = { 799258, 799238, 798713, 799239 };
+		int[] npcs = {799258, 799238, 798713, 799239};
 		for (int npc : npcs)
 			qe.registerQuestNpc(npc).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799258).addOnQuestStart(questId);
@@ -42,13 +41,23 @@ public class _21036DeliveryofAetherSample extends QuestHandler {
 
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
-		if (sendQuestNoneDialog(env, 799258, 182207832, 1))
-			return true;
-
 		QuestState qs = env.getPlayer().getQuestStateList().getQuestState(questId);
-		if (qs == null)
+		if (env.getTargetId() == 799258) {
+			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+				switch (env.getDialog()) {
+					case START_DIALOG:
+					   return sendQuestDialog(env, 1011);
+                    case ASK_ACCEPTION: {
+                       return sendQuestDialog(env, 4);
+                    }   
+				    case ACCEPT_QUEST: {
+					   giveQuestItem(env, 182207832, 1);
+					   return sendQuestStartDialog(env);
+				    } 
+                }
+			}
+		} if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
 		if (qs.getStatus() == QuestStatus.START) {
 			if (env.getTargetId() == 799238) {
@@ -66,10 +75,22 @@ public class _21036DeliveryofAetherSample extends QuestHandler {
 						if (var == 1)
 							return sendQuestDialog(env, 1693);
 					case STEP_TO_2:
-						return defaultCloseDialog(env, 1, 2, true, false);
+						qs.setQuestVarById(0, var + 1);
+					    qs.setStatus(QuestStatus.REWARD);
+					    updateQuestStatus(env);
+                    return closeDialogWindow(env);
 				}
 			}
 		}
-		return sendQuestRewardDialog(env, 799239, 2375);
+		else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (env.getTargetId() == 799239) {
+				switch (env.getDialog()) {
+					case START_DIALOG:
+					return sendQuestDialog(env, 2375);
+				} 
+					return sendQuestEndDialog(env);
+			}
+		}
+		return false;
 	}
 }

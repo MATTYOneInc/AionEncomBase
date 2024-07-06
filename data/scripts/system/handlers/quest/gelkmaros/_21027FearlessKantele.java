@@ -34,7 +34,7 @@ public class _21027FearlessKantele extends QuestHandler {
 
 	@Override
 	public void register() {
-		int[] npcs = { 799254, 799255 };
+		int[] npcs = {799254, 799255};
 		for (int npc : npcs)
 			qe.registerQuestNpc(npc).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799254).addOnQuestStart(questId);
@@ -42,11 +42,21 @@ public class _21027FearlessKantele extends QuestHandler {
 
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
-		if (sendQuestNoneDialog(env, 799254, 4762))
-			return true;
-
 		QuestState qs = env.getPlayer().getQuestStateList().getQuestState(questId);
-		if (qs == null)
+		if (env.getTargetId() == 799254) {
+			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+				switch (env.getDialog()) {
+					case START_DIALOG:
+					   return sendQuestDialog(env, 4762);
+                    case ASK_ACCEPTION: {
+                      return sendQuestDialog(env, 4);
+                    }
+				    case ACCEPT_QUEST: {
+					   return sendQuestStartDialog(env);
+				    } 
+                 }   
+			}
+		} if (qs == null)
 			return false;
 		int var = qs.getQuestVarById(0);
 		if (qs.getStatus() == QuestStatus.START) {
@@ -64,6 +74,15 @@ public class _21027FearlessKantele extends QuestHandler {
 				}
 			}
 		}
-		return sendQuestRewardDialog(env, 799254, 10002);
+		else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (env.getTargetId() == 799254) {
+				switch (env.getDialog()) {
+					case START_DIALOG:
+					return sendQuestDialog(env, 10002);
+				} 
+					return sendQuestEndDialog(env);
+			}
+		}
+		return false;
 	}
 }

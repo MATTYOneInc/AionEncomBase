@@ -30,7 +30,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _11216How_Many_Draks_Does_It_Take_To_Map extends QuestHandler {
 
 	private final static int questId = 11216;
-	
 	public _11216How_Many_Draks_Does_It_Take_To_Map() {
 		super(questId);
 	}
@@ -60,6 +59,9 @@ public class _11216How_Many_Draks_Does_It_Take_To_Map extends QuestHandler {
 					QuestService.startQuest(env);
 					return closeDialogWindow(env);
 				}
+			    if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+				   return closeDialogWindow(env);
+			    }
 			}
 		} if (qs == null)
 			return false;

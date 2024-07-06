@@ -65,6 +65,9 @@ public class _21125Mystery_Blueprint extends QuestHandler
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
 			}
+			if (env.getDialogId() == 1003) {
+				return closeDialogWindow(env);
+			}
 		} else if (targetId == 799295) {
 			if (qs != null) {
 				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START) {

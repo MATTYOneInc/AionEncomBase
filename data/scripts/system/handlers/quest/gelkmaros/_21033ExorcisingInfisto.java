@@ -27,14 +27,13 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _21033ExorcisingInfisto extends QuestHandler {
 
 	private final static int questId = 21033;
-
 	public _21033ExorcisingInfisto() {
 		super(questId);
 	}
 
 	@Override
 	public void register() {
-		int[] npcs = { 799256, 204734 };
+		int[] npcs = {799256, 204734};
 		for (int npc : npcs)
 			qe.registerQuestNpc(npc).addOnTalkEvent(questId);
 		qe.registerQuestNpc(799256).addOnQuestStart(questId);
@@ -42,13 +41,23 @@ public class _21033ExorcisingInfisto extends QuestHandler {
 
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
-		if (sendQuestNoneDialog(env, 799256, 182207829, 1))
-			return true;
-
 		QuestState qs = env.getPlayer().getQuestStateList().getQuestState(questId);
-		if (qs == null)
+		if (env.getTargetId() == 799256) {
+			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+				switch (env.getDialog()) {
+					case START_DIALOG:
+					   return sendQuestDialog(env, 1011);
+                    case ASK_ACCEPTION: {
+                       return sendQuestDialog(env, 4);
+                    }   
+				    case ACCEPT_QUEST: {
+					   giveQuestItem(env, 182207829, 1);
+					   return sendQuestStartDialog(env);
+				    } 
+                }
+			}
+		} if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
 		if (qs.getStatus() == QuestStatus.START) {
 			if (env.getTargetId() == 204734) {
@@ -57,10 +66,24 @@ public class _21033ExorcisingInfisto extends QuestHandler {
 						if (var == 0)
 							return sendQuestDialog(env, 1352);
 					case STEP_TO_1:
-						return defaultCloseDialog(env, 0, 1, true, false, 182207830, 1, 182207829, 1);
+                        removeQuestItem(env, 182207829, 1);
+                        giveQuestItem(env, 182207830, 1);
+						qs.setQuestVarById(0, var + 1);
+					    qs.setStatus(QuestStatus.REWARD);
+					    updateQuestStatus(env);
+                    return closeDialogWindow(env);
 				}
 			}
 		}
-		return sendQuestRewardDialog(env, 799256, 2375);
+		else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (env.getTargetId() == 799256) {
+				switch (env.getDialog()) {
+					case START_DIALOG:
+					return sendQuestDialog(env, 2375);
+				} 
+					return sendQuestEndDialog(env);
+			}
+		}
+		return false;
 	}
 }

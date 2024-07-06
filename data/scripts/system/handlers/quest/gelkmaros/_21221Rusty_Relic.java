@@ -66,6 +66,9 @@ public class _21221Rusty_Relic extends QuestHandler
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
 			}
+			if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+				return closeDialogWindow(env);
+			}
 		} else if (targetId == 799239) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {

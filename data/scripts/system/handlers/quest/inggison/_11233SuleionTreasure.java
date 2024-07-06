@@ -34,7 +34,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _11233SuleionTreasure extends QuestHandler {
 
 	private final static int questId = 11233;
-
 	public _11233SuleionTreasure() {
 		super(questId);
 	}
@@ -52,13 +51,15 @@ public class _11233SuleionTreasure extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 0) { 
 				if (dialog == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
 					return closeDialogWindow(env);
 				}
+			    if (dialog == QuestDialog.REFUSE_QUEST) {
+				   return closeDialogWindow(env);
+			    }
 			}
 		}
 		else if (qs.getStatus() == QuestStatus.START) {
@@ -96,7 +97,7 @@ public class _11233SuleionTreasure extends QuestHandler {
 		return false;
 	}
 					
-						
+					
 	@Override
 	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
 		Player player = env.getPlayer();

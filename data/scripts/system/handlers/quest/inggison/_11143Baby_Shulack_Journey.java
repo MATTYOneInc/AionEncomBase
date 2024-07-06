@@ -27,10 +27,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _11143Baby_Shulack_Journey extends QuestHandler
-{
+public class _11143Baby_Shulack_Journey extends QuestHandler {
+
 	private final static int questId = 11143;
-	
 	public _11143Baby_Shulack_Journey() {
 		super(questId);
 	}
@@ -68,6 +67,9 @@ public class _11143Baby_Shulack_Journey extends QuestHandler
 					QuestService.startQuest(env);
 					return closeDialogWindow(env);
 				}
+			    if (dialog == QuestDialog.REFUSE_QUEST) {
+				   return closeDialogWindow(env);
+			    }
 			} else if (targetId == 700909) {
 				Npc npc = (Npc) env.getVisibleObject();
 				giveQuestItem(env, 182206866, 1);

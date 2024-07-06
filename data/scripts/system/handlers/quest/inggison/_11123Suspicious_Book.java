@@ -27,10 +27,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _11123Suspicious_Book extends QuestHandler
-{
+public class _11123Suspicious_Book extends QuestHandler {
+
 	private final static int questId = 11123;
-	
 	public _11123Suspicious_Book() {
 		super(questId);
 	}
@@ -66,6 +65,9 @@ public class _11123Suspicious_Book extends QuestHandler
 					QuestService.startQuest(env);
 					return closeDialogWindow(env);
 				}
+			    if (dialog == QuestDialog.REFUSE_QUEST) {
+				   return closeDialogWindow(env);
+			    }
 			} else if (targetId == 700616) {
 				Npc npc = (Npc) env.getVisibleObject();
 				giveQuestItem(env, 182206798, 1);

@@ -29,10 +29,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _11212Balaur_Records extends QuestHandler
-{
+public class _11212Balaur_Records extends QuestHandler {
+
 	private final static int questId = 11212;
-	
 	public _11212Balaur_Records() {
 		super(questId);
 	}
@@ -65,6 +64,9 @@ public class _11212Balaur_Records extends QuestHandler
 				QuestService.startQuest(env);
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
+			}
+			if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+				return closeDialogWindow(env);
 			}
 		} else if (targetId == 799010) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
