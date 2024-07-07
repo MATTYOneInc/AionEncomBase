@@ -31,7 +31,6 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _30011Arachnophobia extends QuestHandler {
 
 	private final static int questId = 30011;
-
 	public _30011Arachnophobia() {
 		super(questId);
 	}
@@ -41,7 +40,6 @@ public class _30011Arachnophobia extends QuestHandler {
 		qe.registerQuestNpc(799031).addOnQuestStart(questId);
 		qe.registerQuestNpc(799031).addOnTalkEvent(questId);
 		qe.registerQuestNpc(215792).addOnKillEvent(questId);
-		qe.registerQuestNpc(246015).addOnKillEvent(questId);
 		qe.registerOnEnterZone(ZoneName.get("SENSORYAREA_Q30011_300160000"), questId);
 	}
 	
@@ -59,35 +57,37 @@ public class _30011Arachnophobia extends QuestHandler {
 				switch (dialog) {
 					case START_DIALOG:
 						return sendQuestDialog(env, 1011);
-					default:
-						return sendQuestStartDialog(env);
+				    case ASK_ACCEPTION: {
+					    return sendQuestDialog(env, 4);
+				    }
+				    case ACCEPT_QUEST: {
+					    return sendQuestStartDialog(env);
+				    }
+				    case REFUSE_QUEST: {
+					   return closeDialogWindow(env);
+                    }
 				}
-			}
-		}	
-	if (targetId == 799031) { // Steurios
-			if (qs.getStatus() == QuestStatus.START) {
-				int var = qs.getQuestVarById(0);
-				switch (dialog) {
-					case START_DIALOG:
-						if (var == 2) {
-							return sendQuestDialog(env, 2375);
-						}
-					case SELECT_REWARD:
-						qs.setStatus(QuestStatus.REWARD);
-						updateQuestStatus(env);
-						return sendQuestEndDialog(env);
-					default:
-						break;
-				}
-			}
-
-            if (qs.getStatus() == QuestStatus.REWARD) {
-				return sendQuestEndDialog(env);
 			}
 		}
-		return false;
+        if (qs == null || qs.getStatus() == QuestStatus.START) {
+            switch (targetId) {
+			case 730189: 
+			    switch (dialog) {	 
+                case START_DIALOG: {
+				     return sendQuestDialog(env, 1352);
+                }
+                case SELECT_REWARD: {
+				    return sendQuestEndDialog(env);
+                    }
+                }  
+            }
+        }
+        if (qs.getStatus() == QuestStatus.REWARD) {
+			return sendQuestEndDialog(env);
+		}
+		return false;  
 	}
-	
+
 	@Override
     public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
         Player player = env.getPlayer();
@@ -103,24 +103,9 @@ public class _30011Arachnophobia extends QuestHandler {
         }
         return false;
 	}
-	
+
+	@Override
 	public boolean onKillEvent(QuestEnv env) {
-        Player player = env.getPlayer();
-        QuestState qs = player.getQuestStateList().getQuestState(questId);
-        if (qs != null && qs.getStatus() == QuestStatus.START) {
-            switch (env.getTargetId()) {
-                case 215792:
-				case 246015:
-                if (qs.getQuestVarById(1) < 1) {
-					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
-					updateQuestStatus(env);
-				} if (qs.getQuestVarById(1) >= 1) {
-					qs.setQuestVarById(0, 1);
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
-				}
-            }
-        }
-        return false;
-    }
+		return defaultOnKillEvent(env, 215792, 1, true);
+	}
 }
