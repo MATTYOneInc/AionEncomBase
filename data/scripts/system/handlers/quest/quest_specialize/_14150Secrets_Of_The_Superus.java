@@ -62,9 +62,7 @@ public class _14150Secrets_Of_The_Superus extends QuestHandler {
 			if (targetId == 204501) { //Sarantus
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 0) {
-							return sendQuestDialog(env, 1011);
-						} else if (var == 1) {
+						if (var == 1) {
 							return sendQuestDialog(env, 2375);
 						}
 					} case CHECK_COLLECTED_ITEMS_SIMPLE: {
@@ -92,8 +90,8 @@ public class _14150Secrets_Of_The_Superus extends QuestHandler {
 			} else if (targetId == 700217 && qs.getQuestVarById(0) == 1) { //Engraved Stone Tablet
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
-						giveQuestItem(env, 182215458, 1);
-						return closeDialogWindow(env);
+						// giveQuestItem(env, 182215458, 1);
+						return true;
 					}
                 }
             }

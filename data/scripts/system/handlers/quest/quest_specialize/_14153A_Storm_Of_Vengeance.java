@@ -157,7 +157,7 @@ public class _14153A_Storm_Of_Vengeance extends QuestHandler {
         }
         qs.setQuestVar(3);
         updateQuestStatus(env);
-        SkillEngine.getInstance().applyEffectDirectly(1864, player, player, 15000);
+        SkillEngine.getInstance().applyEffectDirectly(10217, player, player, 15000);
         return true;
     }
 	

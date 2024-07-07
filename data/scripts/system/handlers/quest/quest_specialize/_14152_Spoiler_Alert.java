@@ -60,13 +60,13 @@ public class _14152_Spoiler_Alert extends QuestHandler {
                         return sendQuestDialog(env, 4);
                     }
                     case ACCEPT_QUEST: {
-                        QuestService.startQuest(env);
-                        qs.setQuestVarById(5, 1);
-                        updateQuestStatus(env);
-                        return sendQuestDialog(env, 1003);
+					     QuestService.startQuest(env);
+						 qs.setQuestVarById(5, 1);
+						 updateQuestStatus(env);
+					     return closeDialogWindow(env);
                     }
                     case REFUSE_QUEST: {
-                        return sendQuestDialog(env, 1004);
+                        return closeDialogWindow(env);
                     }
                     default:
                         break;
@@ -96,8 +96,9 @@ public class _14152_Spoiler_Alert extends QuestHandler {
                     }
                     case STEP_TO_2: {
                         removeQuestItem(env, 182215481, 1);
-                        qs.setQuestVarById(5, 3);
-                        updateQuestStatus(env);
+						qs.setQuestVarById(5, 0);
+						qs.setQuestVarById(0, 0);
+						updateQuestStatus(env);
                         return closeDialogWindow(env);
                     }
                     default:
@@ -110,7 +111,6 @@ public class _14152_Spoiler_Alert extends QuestHandler {
                     return sendQuestDialog(env, 2375);
                 }
                 case SELECT_REWARD: {
-                    qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
                     qs.setStatus(QuestStatus.REWARD);
                     updateQuestStatus(env);
                     return sendQuestEndDialog(env);
