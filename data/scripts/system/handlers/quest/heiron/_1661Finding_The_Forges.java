@@ -25,10 +25,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1661Finding_The_Forges extends QuestHandler
-{
+public class _1661Finding_The_Forges extends QuestHandler {
+
 	private final static int questId = 1661;
-	
 	public _1661Finding_The_Forges() {
 		super(questId);
 	}
@@ -79,11 +78,6 @@ public class _1661Finding_The_Forges extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
   		    int var = qs.getQuestVarById(0);
-			//int var1 = qs.getQuestVarById(1);
-			//int var2 = qs.getQuestVarById(2);
-			//int var3 = qs.getQuestVarById(3);
-			//if (var == 1) {
-			//if (var == 0) {
 				if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1661_A_210040000")) {
 					if (var == 0 ) { //&& var1 == 0
 						changeQuestStep(env, 0, 16, false);
@@ -100,7 +94,6 @@ public class _1661Finding_The_Forges extends QuestHandler
 						return true;
 					}
 				}
-			//}
 		}
 		return false;
 	}

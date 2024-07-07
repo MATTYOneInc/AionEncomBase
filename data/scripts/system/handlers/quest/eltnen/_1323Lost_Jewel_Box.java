@@ -68,6 +68,9 @@ public class _1323Lost_Jewel_Box extends QuestHandler {
 					return closeDialogWindow(env);
 				    }
 			    }
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+					return closeDialogWindow(env);
+			    }
 			}	
 		if (targetId == 730032) {
 				switch (env.getDialog()) {

@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1376AMountaineOfTrouble extends QuestHandler {
 
 	private final static int questId = 1376;
-
 	public _1376AMountaineOfTrouble() {
 		super(questId);
 	}
@@ -48,13 +47,11 @@ public class _1376AMountaineOfTrouble extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = 0;
-
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 203947) // Beramones
-			{
+			if (targetId == 203947) { // Beramones
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else
@@ -62,8 +59,7 @@ public class _1376AMountaineOfTrouble extends QuestHandler {
 			}
 		}
 		else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 203964) // Agrips
-			{
+			if (targetId == 203964) { // Agrips
 				if (env.getDialog() == QuestDialog.USE_OBJECT)
 					return sendQuestDialog(env, 1352);
 				return sendQuestEndDialog(env);

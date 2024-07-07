@@ -37,7 +37,6 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 public class _1644AVeryOldLetter extends QuestHandler {
 
 	private final static int questId = 1644;
-
 	public _1644AVeryOldLetter() {
 		super(questId);
 	}
@@ -54,19 +53,19 @@ public class _1644AVeryOldLetter extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (targetId == 0) {
 			if (env.getDialogId() == 1002) {
 				QuestService.startQuest(env);
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
 			}
+			if (env.getDialogId() == 1003) {
+                return closeDialogWindow(env);
+			}
 		}
-
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 204545: {
@@ -122,26 +121,20 @@ public class _1644AVeryOldLetter extends QuestHandler {
 		final int itemObjId = item.getObjectId();
 		final int id = item.getItemTemplate().getTemplateId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (id != 182201765) {
 			return HandlerResult.UNKNOWN;
 		}
-
 		if (qs != null) {
 			if (qs.getStatus() == QuestStatus.COMPLETE) {
 				removeQuestItem(env, 182201765, 1);
 				return HandlerResult.FAILED;
 			}
 		}
-
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0,
-			0), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
-
 			@Override
 			public void run() {
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0,
-					1, 0), true);
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
 				sendQuestDialog(env, 4);
 			}
 		}, 3000);

@@ -60,6 +60,9 @@ public class _2296ABillFoundinaBox extends QuestHandler {
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
 			}
+			if (env.getDialogId() == 1003) {
+				return closeDialogWindow(env);
+			}
 		}
 		else if (targetId == 203656) {
 			if (qs != null && qs.getStatus() == QuestStatus.START) {

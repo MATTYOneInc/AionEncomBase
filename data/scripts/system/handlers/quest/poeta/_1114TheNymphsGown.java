@@ -38,7 +38,6 @@ public class _1114TheNymphsGown extends QuestHandler {
 
 	private final static int questId = 1114;
 	private final static int[] npc_ids = { 203075, 203058, 700008 };
-
 	public _1114TheNymphsGown() {
 		super(questId);
 	}
@@ -57,15 +56,12 @@ public class _1114TheNymphsGown extends QuestHandler {
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (targetId == 0) {
 			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 				if (env.getDialogId() == 1002) {
 					QuestService.startQuest(env);
-					if (!giveQuestItem(env, 182200226, 1))
-						;
-					removeQuestItem(env, 182200214, 1); // Namus's Diary with double-click to start the
-																											// quest
+					if (!giveQuestItem(env, 182200226, 1));
+					removeQuestItem(env, 182200214, 1); // Namus's Diary with double-click to start the quest
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 					return true;
 				}
@@ -73,15 +69,11 @@ public class _1114TheNymphsGown extends QuestHandler {
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
-
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 203075 && var == 4) // Namus
-			{
+			if (targetId == 203075 && var == 4) { // Namus
 				if (env.getDialog() == QuestDialog.USE_OBJECT)
 					return sendQuestDialog(env, 2375);
 				else if (env.getDialogId() == 1009)
@@ -94,9 +86,7 @@ public class _1114TheNymphsGown extends QuestHandler {
 		}
 		else if (qs.getStatus() != QuestStatus.START)
 			return false;
-
-		if (targetId == 203075) // Namus
-		{
+		if (targetId == 203075) { // Namus
 			switch (env.getDialog()) {
 				case START_DIALOG:
 					if (var == 0)
@@ -105,7 +95,6 @@ public class _1114TheNymphsGown extends QuestHandler {
 						return sendQuestDialog(env, 1693);
 					else if (var == 3)
 						return sendQuestDialog(env, 2375);
-
 				case SELECT_REWARD:
 					if (var == 2) {
 						qs.setQuestVarById(0, var + 2);
@@ -158,8 +147,7 @@ public class _1114TheNymphsGown extends QuestHandler {
 					return true;
 			}
 		}
-		if (targetId == 203058) // Asteros
-		{
+		if (targetId == 203058) {// Asteros
 			switch (env.getDialog()) {
 				case START_DIALOG:
 					if (var == 3)
@@ -187,7 +175,6 @@ public class _1114TheNymphsGown extends QuestHandler {
 		final int id = item.getItemTemplate().getTemplateId();
 		final int itemObjId = item.getObjectId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (id != 182200214)
 			return HandlerResult.UNKNOWN;
 		PacketSendUtility.broadcastPacket(player,

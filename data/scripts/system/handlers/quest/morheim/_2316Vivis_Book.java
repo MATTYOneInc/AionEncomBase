@@ -25,10 +25,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class _2316Vivis_Book extends QuestHandler
-{
+public class _2316Vivis_Book extends QuestHandler {
+
 	private final static int questId = 2316;
-	
 	public _2316Vivis_Book() {
 		super(questId);
 	}
@@ -60,6 +59,9 @@ public class _2316Vivis_Book extends QuestHandler
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
 				}
 			}

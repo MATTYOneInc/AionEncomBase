@@ -29,10 +29,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4053Glossy_Hoe extends QuestHandler
-{
+public class _4053Glossy_Hoe extends QuestHandler {
+
 	private final static int questId = 4053;
-	
 	public _4053Glossy_Hoe() {
 		super(questId);
 	}
@@ -67,6 +66,9 @@ public class _4053Glossy_Hoe extends QuestHandler
 				QuestService.startQuest(env);
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
+			}
+			if (env.getDialogId() == 1003) {
+				return closeDialogWindow(env);
 			}
 		} else if (targetId == 205165) { //BuBu Don.
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {

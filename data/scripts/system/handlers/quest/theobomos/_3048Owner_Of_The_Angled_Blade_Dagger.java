@@ -69,6 +69,9 @@ public class _3048Owner_Of_The_Angled_Blade_Dagger extends QuestHandler
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
 			}
+			if (env.getDialogId() == 1003) {
+                return closeDialogWindow(env);
+			}
 		} else if (targetId == 798208) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {

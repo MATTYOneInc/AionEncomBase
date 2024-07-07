@@ -29,10 +29,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4042Message_In_A_Bottle extends QuestHandler
-{
+public class _4042Message_In_A_Bottle extends QuestHandler {
+
 	private final static int questId = 4042;
-	
 	public _4042Message_In_A_Bottle() {
 		super(questId);
 	}
@@ -66,6 +65,9 @@ public class _4042Message_In_A_Bottle extends QuestHandler
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
 				}
 			}

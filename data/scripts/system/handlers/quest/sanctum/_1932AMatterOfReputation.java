@@ -31,7 +31,6 @@ public class _1932AMatterOfReputation extends QuestHandler  {
 
 	private final static int questId = 1932;
 	private final static int[] npcs = {203893, 203946};
-	
 	public _1932AMatterOfReputation() {
 		super(questId);
 	}
@@ -39,8 +38,8 @@ public class _1932AMatterOfReputation extends QuestHandler  {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(203893).addOnQuestStart(questId);
-		for(int npc: npcs)
-			qe.registerQuestNpc(npc).addOnTalkEvent(questId);
+		qe.registerQuestNpc(203893).addOnTalkEvent(questId);
+		qe.registerQuestNpc(203946).addOnTalkEvent(questId);
 	}
 
 	@Override
@@ -49,8 +48,23 @@ public class _1932AMatterOfReputation extends QuestHandler  {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
 		QuestDialog dialog = env.getDialog();
-		if(sendQuestNoneDialog(env, 203893))
-			return true;
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+           switch(targetId) {   
+		     case 203893:
+				switch(dialog) {
+					case START_DIALOG: {
+					return sendQuestDialog(env, 1011);
+                   }
+                    case ASK_ACCEPTION:
+                       return sendQuestDialog(env, 4);
+					case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE:
+						return sendQuestStartDialog(env);
+					case REFUSE_QUEST_SIMPLE:
+				        return closeDialogWindow(env);
+                 }
+			}
+        }
 		if(qs == null)
 			return false;
 		int var = qs.getQuestVarById(0);
@@ -73,9 +87,13 @@ public class _1932AMatterOfReputation extends QuestHandler  {
 						case CHECK_COLLECTED_ITEMS:
 							return checkQuestItems(env, 1, 2, true, 5, 2716);
 					}
-					break;
+                    break;
 			}
 		}
-		return sendQuestRewardDialog(env, 203893, 0);
+		else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (targetId == 203893)
+				return sendQuestEndDialog(env);
+		}
+		return false;
 	}
 }

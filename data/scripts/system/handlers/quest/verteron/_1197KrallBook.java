@@ -39,7 +39,6 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 public class _1197KrallBook extends QuestHandler {
 
 	private final static int questId = 1197;
-
 	public _1197KrallBook() {
 		super(questId);
 	}
@@ -55,7 +54,6 @@ public class _1197KrallBook extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
@@ -64,6 +62,9 @@ public class _1197KrallBook extends QuestHandler {
 				QuestService.startQuest(env);
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
+			}
+			if (env.getDialogId() == 1003) {
+                return closeDialogWindow(env);
 			}
 		}
 		else if (targetId == 700004) {
@@ -105,17 +106,13 @@ public class _1197KrallBook extends QuestHandler {
 		final Player player = env.getPlayer();
 		final int id = item.getItemTemplate().getTemplateId();
 		final int itemObjId = item.getObjectId();
-
 		if (id != 182200558)
 			return HandlerResult.UNKNOWN;
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0,
-			0), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
-
 			@Override
 			public void run() {
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0,
-					1, 0), true);
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
 				sendQuestDialog(env, 4);
 			}
 		}, 3000);

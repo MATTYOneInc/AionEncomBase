@@ -67,7 +67,10 @@ public class _1355The_Fire_Temple_Key extends QuestHandler {
 					return closeDialogWindow(env);
 				    }
 			    }
-			}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+					return closeDialogWindow(env);
+				    }
+			    }
 		else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 203933) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {

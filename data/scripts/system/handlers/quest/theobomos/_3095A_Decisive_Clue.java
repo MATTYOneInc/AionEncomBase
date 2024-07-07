@@ -29,10 +29,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3095A_Decisive_Clue extends QuestHandler
-{
+public class _3095A_Decisive_Clue extends QuestHandler {
+
 	private final static int questId = 3095;
-	
 	public _3095A_Decisive_Clue() {
 		super(questId);
 	}
@@ -65,6 +64,9 @@ public class _3095A_Decisive_Clue extends QuestHandler
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
 				}
 			}

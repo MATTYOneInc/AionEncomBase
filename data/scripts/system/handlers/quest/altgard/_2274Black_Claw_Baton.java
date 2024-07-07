@@ -33,10 +33,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author (Encom)
 /****/
 
-public class _2274Black_Claw_Baton extends QuestHandler
-{
+public class _2274Black_Claw_Baton extends QuestHandler {
+
 	private final static int questId = 2274;
-	
 	public _2274Black_Claw_Baton() {
 		super(questId);
 	}
@@ -69,6 +68,9 @@ public class _2274Black_Claw_Baton extends QuestHandler
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
 				}
 			}

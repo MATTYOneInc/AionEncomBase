@@ -51,11 +51,9 @@ public class _1687TheTigrakiAgreement extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 204601) { // Brosia
 				if (env.getDialog() == QuestDialog.START_DIALOG)

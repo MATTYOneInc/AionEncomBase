@@ -39,7 +39,6 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 public class _1561TheMisersMap extends QuestHandler {
 
 	private final static int questId = 1561;
-
 	public _1561TheMisersMap() {
 		super(questId);
 	}
@@ -57,16 +56,12 @@ public class _1561TheMisersMap extends QuestHandler {
 		final int id = item.getItemTemplate().getTemplateId();
 		final int itemObjId = item.getObjectId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000,
-				0, 0), true);
+			PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
 			ThreadPoolManager.getInstance().schedule(new Runnable() {
-
 				@Override
 				public void run() {
-					PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0,
-						1, 0), true);
+					PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
 					removeQuestItem(env, id, 1);
 					QuestService.startQuest(env);
 					//sendQuestDialog(env, 4);
@@ -87,7 +82,6 @@ public class _1561TheMisersMap extends QuestHandler {
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 700188) { // Jewel Box
 				if (var == 0) {

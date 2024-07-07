@@ -68,6 +68,9 @@ public class _3049Blood_Mark_The_Spot extends QuestHandler
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
 			}
+			if (env.getDialogId() == 1003) {
+                return closeDialogWindow(env);
+			}
 		} else if (targetId == 798211) { //Ruria.
 			if (qs != null) {
 				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START) {

@@ -29,10 +29,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _2435The_Blue_Vine_Necklace extends QuestHandler
-{
-	private final static int questId = 2435;
+public class _2435The_Blue_Vine_Necklace extends QuestHandler {
 
+	private final static int questId = 2435;
 	public _2435The_Blue_Vine_Necklace() {
 		super(questId);
 	}
@@ -65,6 +64,9 @@ public class _2435The_Blue_Vine_Necklace extends QuestHandler
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
 				}
 			}

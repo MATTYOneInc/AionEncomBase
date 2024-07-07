@@ -27,10 +27,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _2409Propaganda extends QuestHandler
-{
+public class _2409Propaganda extends QuestHandler {
+
 	private final static int questId = 2409;
-	
 	public _2409Propaganda() {
 		super(questId);
 	}
@@ -64,6 +63,9 @@ public class _2409Propaganda extends QuestHandler
 			if (targetId == 0) { 
 				if (dialog == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				}
+				if (dialog == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
 				}
 			}

@@ -72,6 +72,9 @@ public class _1559WhatsintheBox extends QuestHandler {
 				QuestService.startQuest(env);
 				return closeDialogWindow(env);
 			    }
+			if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+				return closeDialogWindow(env);
+			    }
 		    }
 		}	
         if (targetId == 700513) {

@@ -16,19 +16,15 @@ import com.aionemu.gameserver.world.zone.ZoneName;
  * @author Ritsu
  *
  */
-public class _1373WaterTherapy extends QuestHandler
-{
+public class _1373WaterTherapy extends QuestHandler {
 
 	private final static int   questId   = 1373;
-
-	public _1373WaterTherapy()
-	{
+	public _1373WaterTherapy() {
 		super(questId);
 	}
 
 	@Override
-	public void register()
-	{
+	public void register() {
 		qe.registerQuestNpc(203949).addOnQuestStart(questId); //Aerope
 		qe.registerQuestNpc(203949).addOnTalkEvent(questId);
 		qe.registerQuestItem(182201372, questId);
@@ -36,14 +32,11 @@ public class _1373WaterTherapy extends QuestHandler
 	}
 
 	@Override
-	public HandlerResult onItemUseEvent(final QuestEnv env, Item item)
-	{
+	public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs != null && qs.getStatus() == QuestStatus.START) 
-		{
-			if (player.isInsideZone(ZoneName.get("LF2_ITEMUSEAREA_Q1373"))) 
-			{
+		if (qs != null && qs.getStatus() == QuestStatus.START) {
+			if (player.isInsideZone(ZoneName.get("LF2_ITEMUSEAREA_Q1373"))) {
 				removeQuestItem(env, 182201372, 1);
 				useQuestItem(env, item, 0, 2, false, 182201373, 1, 0);
 				QuestService.questTimerStart(env, 180);
@@ -54,45 +47,34 @@ public class _1373WaterTherapy extends QuestHandler
 	}
 
 	@Override
-	public boolean onDialogEvent(QuestEnv env)
-	{
+	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = 0;
 		QuestDialog dialog = env.getDialog();
 		if(env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		
-		if(qs == null || qs.getStatus() == QuestStatus.NONE)
-		{
-			if(targetId == 203949) //Aerope
-			{
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 203949) { //Aerope 
 				if (dialog == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
-				else if (dialog == QuestDialog.ACCEPT_QUEST)
-				{
+				else if (dialog == QuestDialog.ACCEPT_QUEST) {
 					if (!giveQuestItem(env, 182201372, 1))
 						return true;
-					return sendQuestStartDialog(env);
-				}
+					return sendQuestStartDialog(env); 
+               }
 				else
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.START)
-		{
-			switch(targetId)
-			{
-				case 203949:
-				{
-					if (qs.getQuestVarById(0) == 2)
-					{
+		else if (qs.getStatus() == QuestStatus.START) {
+			switch(targetId) {
+				case 203949: {
+					if (qs.getQuestVarById(0) == 2) {
 						if (dialog == QuestDialog.START_DIALOG)
 							return sendQuestDialog(env, 2375);
-						else if (dialog == QuestDialog.CHECK_COLLECTED_ITEMS)
-						{							
-							if (player.getInventory().getItemCountByItemId(182201373) == 1)
-							{
+						else if (dialog == QuestDialog.CHECK_COLLECTED_ITEMS) {							
+							if (player.getInventory().getItemCountByItemId(182201373) == 1) {
 								QuestService.questTimerEnd(env);
 								return checkQuestItems(env, 2, 3, true, 5, 2716);
 							}
@@ -103,8 +85,7 @@ public class _1373WaterTherapy extends QuestHandler
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD)
-		{
+		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if(targetId == 203949)
 				return sendQuestEndDialog(env);
 		}
@@ -112,12 +93,10 @@ public class _1373WaterTherapy extends QuestHandler
 	}
 	
 	@Override
-	public boolean onQuestTimerEndEvent(QuestEnv env) 
-	{
+	public boolean onQuestTimerEndEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs != null && qs.getStatus() == QuestStatus.START)
-		{
+		if (qs != null && qs.getStatus() == QuestStatus.START) {
 			removeQuestItem(env, 182201373, 1);
 			QuestService.abandonQuest(player, questId);
 			player.getController().updateNearbyQuests();

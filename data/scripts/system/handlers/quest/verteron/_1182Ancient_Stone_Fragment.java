@@ -29,10 +29,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1182Ancient_Stone_Fragment extends QuestHandler
-{
+public class _1182Ancient_Stone_Fragment extends QuestHandler {
+
 	private final static int questId = 1182;
-	
 	public _1182Ancient_Stone_Fragment() {
 		super(questId);
 	}
@@ -66,6 +65,9 @@ public class _1182Ancient_Stone_Fragment extends QuestHandler
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
 			}
+			if (env.getDialogId() == 1003) {
+                return closeDialogWindow(env);
+            }
 		} else if (targetId == 203099) {
 			if (qs != null) {
 				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START) {

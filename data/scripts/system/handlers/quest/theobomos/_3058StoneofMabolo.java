@@ -55,6 +55,9 @@ public class _3058StoneofMabolo extends QuestHandler {
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
 			}
+			if (env.getDialogId() == 1003) {
+                return closeDialogWindow(env);
+			}
         }  
 		else if (targetId == 798189) { //Oileus.
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {

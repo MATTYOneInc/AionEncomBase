@@ -67,6 +67,9 @@ public class _1309Manduri_Diary extends QuestHandler
 					QuestService.startQuest(env);
 					return closeDialogWindow(env);
 				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+					return closeDialogWindow(env);
+			    }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 203932) {

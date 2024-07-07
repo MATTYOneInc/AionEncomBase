@@ -54,6 +54,9 @@ public class _1670Invisible_Bridges extends QuestHandler {
 					QuestService.startQuest(env);
 					return closeDialogWindow(env);
 				}
+				if (dialog == QuestDialog.REFUSE_QUEST) {
+					return closeDialogWindow(env);
+				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 203837) {

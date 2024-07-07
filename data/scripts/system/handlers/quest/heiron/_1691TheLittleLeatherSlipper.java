@@ -33,7 +33,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _1691TheLittleLeatherSlipper extends QuestHandler {
 
 	private final static int questId = 1691;
-
 	public _1691TheLittleLeatherSlipper() {
 		super(questId);
 	}
@@ -50,11 +49,9 @@ public class _1691TheLittleLeatherSlipper extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798386) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -66,7 +63,6 @@ public class _1691TheLittleLeatherSlipper extends QuestHandler {
 		}
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 790005: {

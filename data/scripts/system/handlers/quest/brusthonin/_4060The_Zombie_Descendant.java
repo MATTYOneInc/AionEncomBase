@@ -69,6 +69,9 @@ public class _4060The_Zombie_Descendant extends QuestHandler
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
 			}
+			if (env.getDialogId() == 1003) {
+                return closeDialogWindow(env);
+			}
 		} else if (targetId == 205156) { //Ervin.
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {

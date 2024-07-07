@@ -32,7 +32,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _1535TheColdColdGround extends QuestHandler {
 
 	private final static int questId = 1535;
-
 	public _1535TheColdColdGround() {
 		super(questId);
 	}
@@ -44,20 +43,13 @@ public class _1535TheColdColdGround extends QuestHandler {
 	}
 
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-
-	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (targetId != 204580)
 			return false;
-
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -65,12 +57,10 @@ public class _1535TheColdColdGround extends QuestHandler {
 			else
 				return sendQuestStartDialog(env);
 		}
-
 		if (qs.getStatus() == QuestStatus.START) {
 			boolean abexSkins = player.getInventory().getItemCountByItemId(182201818) > 4;
 			boolean worgSkins = player.getInventory().getItemCountByItemId(182201819) > 2;
 			boolean karnifSkins = player.getInventory().getItemCountByItemId(182201820) > 0;
-
 			switch (env.getDialog()) {
 				case USE_OBJECT:
 				case START_DIALOG:

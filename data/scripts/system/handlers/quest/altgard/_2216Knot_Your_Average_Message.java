@@ -33,10 +33,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author (Encom)
 /****/
 
-public class _2216Knot_Your_Average_Message extends QuestHandler
-{
+public class _2216Knot_Your_Average_Message extends QuestHandler {
+
 	private final static int questId = 2216;
-	
 	public _2216Knot_Your_Average_Message() {
 		super(questId);
 	}
@@ -68,6 +67,9 @@ public class _2216Knot_Your_Average_Message extends QuestHandler
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
 				}
 			}

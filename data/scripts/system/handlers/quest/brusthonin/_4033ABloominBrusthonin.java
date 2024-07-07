@@ -52,15 +52,13 @@ public class _4033ABloominBrusthonin extends QuestHandler {
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (targetId == 205155) // Heintz
-		{
+		if (targetId == 205155) { // Heintz
 			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else
 					return sendQuestStartDialog(env);
 			}
-
 			else if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
@@ -77,7 +75,6 @@ public class _4033ABloominBrusthonin extends QuestHandler {
 				else
 					return sendQuestStartDialog(env);
 			}
-
 			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2034);
@@ -90,7 +87,6 @@ public class _4033ABloominBrusthonin extends QuestHandler {
 					return sendQuestEndDialog(env);
 			}
 		}
-
 		else if (qs != null && qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 700379: { // Portaro's Tomb

@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1414OperationWindmill extends QuestHandler {
 
 	private final static int questId = 1414;
-
 	public _1414OperationWindmill() {
 		super(questId);
 	}
@@ -50,8 +49,7 @@ public class _1414OperationWindmill extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 203989) // Tumblusen
-			{
+			if (targetId == 203989) { // Tumblusen
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else if (env.getDialogId() == 1002) {
@@ -63,12 +61,10 @@ public class _1414OperationWindmill extends QuestHandler {
 				else
 					return sendQuestStartDialog(env);
 			}
-
 		}
 		else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
 			return sendQuestEndDialog(env);
 		}
-
 		else if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 			switch (targetId) {
 				case 700175: { // Old Gear

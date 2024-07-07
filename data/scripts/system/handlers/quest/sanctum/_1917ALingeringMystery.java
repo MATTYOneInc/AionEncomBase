@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1917ALingeringMystery extends QuestHandler {
 
 	private final static int questId = 1917;
-
 	public _1917ALingeringMystery() {
 		super(questId);
 	}
@@ -49,24 +48,31 @@ public class _1917ALingeringMystery extends QuestHandler {
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
-		if (sendQuestNoneDialog(env, 203835))
-			return true;
-
-		if (qs == null)
-			return false;
-
+	    if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		    if (targetId == 203835) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
+					return sendQuestDialog(env, 1011);
+				else
+					return sendQuestStartDialog(env);
+			}
+        }
 		if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 203075) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
-					if (qs.getQuestVarById(0) == 0)
-						return sendQuestDialog(env, 1352);
+					return sendQuestDialog(env, 1352);
 				}
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
-					return defaultCloseDialog(env, 0, 1, true, false);
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+                    qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+                    return closeDialogWindow(env);
 				}
 			}
 		}
-		return sendQuestRewardDialog(env, 203835, 0);
+		else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (targetId == 203835)
+				return sendQuestEndDialog(env);
+		}
+		return false;
 	}
 }
