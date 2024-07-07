@@ -128,6 +128,18 @@
             <spot h="81" z="300.32092" y="726.2106" x="1099.5515"/>
             <spot h="58" z="307.80603" y="704.24884" x="1059.9249"/>
 		</spawn>
+		<!-- Stinging Sheluk -->
+		<spawn npc_id="216364" respawn_time="295">
+			<spot x="572.932" y="1235.487" z="314.512" h="65" random_walk="8"/>
+			<spot x="636.650" y="1250.325" z="307.042" h="9" random_walk="8"/>
+			<spot x="621.678" y="1291.850" z="311.625" h="32" random_walk="8"/>
+			<spot x="599.986" y="292.048" z="311.020" h="31" random_walk="8"/>
+			<spot x="620.185" y="310.045" z="308.712" h="82"/>
+			<spot x="620.022" y="278.925" z="308.384" h="79" random_walk="8"/>
+			<spot x="649.552" y="245.189" z="314.175" h="55"/>
+			<spot x="801.393" y="343.201" z="309.713" h="29"/>
+			<spot x="800.272" y="401.678" z="310.794" h="43" random_walk="8"/>
+		</spawn>
 		<!-- Brown Arachna
 		One of the poisonous insects found across the Silentera Canyon -->
 		<spawn npc_id="216365" respawn_time="60">
