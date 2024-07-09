@@ -44,6 +44,7 @@ public class _24154Better_Than_Last_Time extends QuestHandler {
         qe.registerOnLogOut(questId);
         qe.registerOnEnterWorld(questId);
 		qe.registerQuestItem(182215463, questId);
+        qe.registerOnMovieEndQuest(249, questId);
         qe.registerOnMovieEndQuest(250, questId);
     	qe.registerQuestNpc(204774).addOnQuestStart(questId); //Tristran
         qe.registerQuestNpc(204774).addOnTalkEvent(questId); //Tristran
@@ -76,13 +77,17 @@ public class _24154Better_Than_Last_Time extends QuestHandler {
             switch (targetId) {
             	case 204809: { //Stua
             		switch (env.getDialog()) {
-            			case USE_OBJECT: {
+            			case START_DIALOG: {
             				return sendQuestDialog(env, 1352);
-            			} case STEP_TO_2: {
+            			 }   
+                         case SELECT_ACTION_1353: {
+                            giveQuestItem(env, 182215463, 1);
+            				giveQuestItem(env, 185000006, 1);  
+            				return sendQuestDialog(env, 1353);
+                         } 
+                         case STEP_TO_2: {
             				qs.setQuestVar(2);
             				updateQuestStatus(env);
-            				giveQuestItem(env, 182215463, 1);
-            				giveQuestItem(env, 185000006, 1);
             				SkillEngine.getInstance().applyEffectDirectly(267, player, player, (350 * 1000));
             				return closeDialogWindow(env);
             			}
@@ -112,6 +117,9 @@ public class _24154Better_Than_Last_Time extends QuestHandler {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
        	if (qs != null && qs.getStatus() == QuestStatus.START) {
+            if (movieId == 249) {
+               changeQuestStep(env, 0, 1, false);
+            }
     		if (movieId == 250) {
     			TeleportService2.teleportTo(player, 220040000, 2452f, 2471f, 673f, (byte) 28);
                 changeQuestStep(env, 2, 3, false);
@@ -132,6 +140,7 @@ public class _24154Better_Than_Last_Time extends QuestHandler {
         if (item.getItemId() != 182215463) {
             return HandlerResult.UNKNOWN;
         } if (player.isInsideZone(ZoneName.get("DF3_ITEMUSEAREA_Q2058"))) {
+              player.getEffectController().removeEffect(267); 
             return HandlerResult.fromBoolean(useQuestItem(env, item, 4, 4, true, 251));
         }
         return HandlerResult.FAILED;

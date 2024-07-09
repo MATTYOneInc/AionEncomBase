@@ -34,7 +34,6 @@ public class _4921Chocorunerk_Reward extends QuestHandler {
 	public void register() {
 		qe.registerQuestNpc(804609).addOnQuestStart(questId);
 		qe.registerQuestNpc(804609).addOnTalkEvent(questId);
-		qe.registerQuestNpc(804609).addOnTalkEvent(questId);
 	}
 	
 	@Override
@@ -49,6 +48,8 @@ public class _4921Chocorunerk_Reward extends QuestHandler {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					}
+                    case ASK_ACCEPTION:
+                        return sendQuestDialog(env, 4);
 					case ACCEPT_QUEST:
 					case ACCEPT_QUEST_SIMPLE:
 						return sendQuestStartDialog(env);

@@ -12,7 +12,6 @@
 	<report_to id="1955" start_npc_ids="203786" end_npc_ids="278510" item_id="182206028"/>
 	<report_to id="1956" start_npc_ids="203793" end_npc_ids="278511" item_id="182206029"/>
 	<report_to id="3917" start_npc_ids="204656" end_npc_ids="804603"/>
-	<report_to id="3920" start_npc_ids="730212" end_npc_ids="804603"/>
 	<report_to id="3960" start_npc_ids="798322" end_npc_ids="203711"/>
 	<report_to id="3971" start_npc_ids="798386" end_npc_ids="203893" item_id="182206135"/>
 	<report_to id="3974" start_npc_ids="798949" end_npc_ids="203893"/>

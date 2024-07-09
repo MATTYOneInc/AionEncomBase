@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _3921Shoshinerk_Reward extends QuestHandler {
 
     private final static int questId = 3921;
-	
     public _3921Shoshinerk_Reward() {
         super(questId);
     }
@@ -33,7 +32,6 @@ public class _3921Shoshinerk_Reward extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(804603).addOnQuestStart(questId);
-		qe.registerQuestNpc(804603).addOnTalkEvent(questId);
 		qe.registerQuestNpc(804603).addOnTalkEvent(questId);
 	}
 	
@@ -49,6 +47,8 @@ public class _3921Shoshinerk_Reward extends QuestHandler {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					}
+                    case ASK_ACCEPTION:
+                        return sendQuestDialog(env, 4);
 					case ACCEPT_QUEST:
 					case ACCEPT_QUEST_SIMPLE:
 						return sendQuestStartDialog(env);
