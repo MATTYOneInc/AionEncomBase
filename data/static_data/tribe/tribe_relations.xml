@@ -13,7 +13,7 @@
   </tribe>
   <tribe name="GUARD">
     <aggressive>LDF8_SNOOWA LDF8_LEGA GUARD_DRAGON GUARD_DARK</aggressive>
-    <friendly>DUMMY DUMMY2 LIGHT_MOB LDF5_DUMMY1 LDF5_DUMMY1_LGUARD TARGETBASFELT_DF1</friendly>
+    <friendly>PC DUMMY DUMMY2 LIGHT_MOB LDF5_DUMMY1 LDF5_DUMMY1_LGUARD TARGETBASFELT_DF1</friendly>
     <none>LDF7_SEP_EVENT_D</none>
   </tribe>
   <tribe name="PC_DARK">
@@ -28,7 +28,7 @@
   </tribe>
   <tribe name="GUARD_DARK">
     <aggressive>LDF8_SNOOWA LDF8_LEGA GUARD_DRAGON GUARD</aggressive>
-    <friendly>DUMMY DUMMY2 DARK_MOB DF5_DUMMY1 DF5_DUMMY1_DGUARD TARGETBASFELT_DF1</friendly>
+    <friendly>PC_DARK DUMMY DUMMY2 DARK_MOB DF5_DUMMY1 DF5_DUMMY1_DGUARD TARGETBASFELT_DF1</friendly>
     <none>LDF7_SEP_EVENT_L</none>
   </tribe>
   <tribe name="PC_DRAGON">

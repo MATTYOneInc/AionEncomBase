@@ -68,6 +68,9 @@ public class _4208Truth_Of_The_Bookmark extends QuestHandler
 					QuestService.startQuest(env);
 					return closeDialogWindow(env);
 				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+					return closeDialogWindow(env);
+				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 204170) {

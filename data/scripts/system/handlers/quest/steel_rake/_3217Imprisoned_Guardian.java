@@ -25,33 +25,17 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3217Imprisoned_Guardian extends QuestHandler
-{
+public class _3217Imprisoned_Guardian extends QuestHandler {
+
 	private final static int questId = 3217;
-	
 	public _3217Imprisoned_Guardian() {
 		super(questId);
 	}
 	
-	@Override
-    public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
-        Player player = env.getPlayer();
-        QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (zoneName == ZoneName.get("INSIDE_STEEL_RAKE_1_300100000")) {
-			if (qs == null || qs.canRepeat()) {
-				env.setQuestId(questId);
-				if (QuestService.startQuest(env)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	
 	public void register() {
+		qe.registerQuestNpc(798335).addOnQuestStart(questId);
 		qe.registerQuestNpc(798335).addOnTalkEvent(questId);
 		qe.registerQuestNpc(204590).addOnTalkEvent(questId);
-		qe.registerOnEnterZone(ZoneName.get("INSIDE_STEEL_RAKE_1_300100000"), questId);
     }
 	
     @Override
@@ -61,20 +45,39 @@ public class _3217Imprisoned_Guardian extends QuestHandler
 		int targetId = env.getTargetId();
 		if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
-        } if (qs.getStatus() == QuestStatus.START) {
+        } 
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 798335) { //Nasuri.
+                switch (env.getDialog()) {
+				case START_DIALOG: {
+					return sendQuestDialog(env, 4762);
+				}  case ASK_ACCEPTION: {
+					return sendQuestDialog(env, 4);
+				}  case ACCEPT_QUEST: {
+					return sendQuestStartDialog(env);
+				}  case REFUSE_QUEST: {
+					return sendQuestDialog(env, 1004);
+				}
+			}
+			return false;
+		  }
+       }  if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 798335) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
-					} case SET_REWARD: {
-						qs.setStatus(QuestStatus.REWARD);
-						updateQuestStatus(env);
-					} case CHECK_COLLECTED_ITEMS: {
+					}  case CHECK_COLLECTED_ITEMS: {
 						if (QuestService.collectItemCheck(env, true)) {
 							return sendQuestDialog(env, 10000);
 						} else {
 							return sendQuestDialog(env, 10001);
-						}
+						   }
+                       }
+                       case SET_REWARD: {
+						qs.setQuestVar(1);
+                        qs.setStatus(QuestStatus.REWARD);  
+						updateQuestStatus(env);
+                        return closeDialogWindow(env);
 					}
 				}
 			}

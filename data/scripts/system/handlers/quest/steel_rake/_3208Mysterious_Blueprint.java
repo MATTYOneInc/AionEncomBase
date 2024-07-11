@@ -68,6 +68,9 @@ public class _3208Mysterious_Blueprint extends QuestHandler
 					QuestService.startQuest(env);
 					return closeDialogWindow(env);
 				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+					return closeDialogWindow(env);
+				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 798026) {
