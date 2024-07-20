@@ -26,16 +26,10 @@ import com.aionemu.gameserver.services.QuestService;
 public class _18975Fragment_Discovered_In_Levinshor extends QuestHandler {
 	
 	private static final int questId = 18975;
-	
 	public _18975Fragment_Discovered_In_Levinshor() {
 		super(questId);
 	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	@Override
 	public void register() {
 		qe.registerQuestNpc(805215).addOnQuestStart(questId);

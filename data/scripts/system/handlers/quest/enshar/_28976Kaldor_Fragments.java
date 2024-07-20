@@ -26,16 +26,10 @@ import com.aionemu.gameserver.services.QuestService;
 public class _28976Kaldor_Fragments extends QuestHandler {
 	
 	private static final int questId = 28976;
-	
 	public _28976Kaldor_Fragments() {
 		super(questId);
 	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	@Override
 	public void register() {
 		qe.registerQuestNpc(805218).addOnQuestStart(questId);

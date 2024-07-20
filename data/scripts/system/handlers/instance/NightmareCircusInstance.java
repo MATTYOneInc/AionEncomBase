@@ -52,9 +52,9 @@ import java.util.Set;
 /** Author (Encom)
 /****/
 
-@InstanceID(301160000)
-public class NightmareCircusInstance extends GeneralInstanceHandler
-{
+@InstanceID(301200000)
+public class NightmareCircusInstance extends GeneralInstanceHandler {
+
 	private int freneticNightmareKilled;
 	private List<Integer> movies = new ArrayList<Integer>();
 	private FastMap<Integer, VisibleObject> objects = new FastMap<Integer, VisibleObject>();
@@ -62,10 +62,10 @@ public class NightmareCircusInstance extends GeneralInstanceHandler
 	@Override
 	public void onInstanceCreate(WorldMapInstance instance) {
 		super.onInstanceCreate(instance);
-		SpawnTemplate ClosedCage = SpawnEngine.addNewSingleTimeSpawn(301160000, 831627, 522.39825f, 564.69006f, 199.03371f, (byte) 0);
+		SpawnTemplate ClosedCage = SpawnEngine.addNewSingleTimeSpawn(301200000, 831627, 522.39825f, 564.69006f, 199.03371f, (byte) 0);
 		ClosedCage.setEntityId(142);
 		objects.put(831627, SpawnEngine.spawnObject(ClosedCage, instanceId));
-		SpawnTemplate SolidIronChain = SpawnEngine.addNewSingleTimeSpawn(301160000, 831572, 522.04095f, 565.48944f, 199.34138f, (byte) 0);
+		SpawnTemplate SolidIronChain = SpawnEngine.addNewSingleTimeSpawn(301200000, 831572, 522.04095f, 565.48944f, 199.34138f, (byte) 0);
 		SolidIronChain.setEntityId(17);
 		objects.put(831572, SpawnEngine.spawnObject(SolidIronChain, instanceId));
 	}
@@ -307,7 +307,7 @@ public class NightmareCircusInstance extends GeneralInstanceHandler
 				spawnNightmareCrate();
 				spawnGreaterNightmareCrate();
 				sendMsg("[SUCCES]: You have finished <Nightmare Circus>");
-				SpawnTemplate OpenCage = SpawnEngine.addNewSingleTimeSpawn(301160000, 831598, 522.39825f, 564.69006f, 199.03371f, (byte) 0);
+				SpawnTemplate OpenCage = SpawnEngine.addNewSingleTimeSpawn(301200000, 831598, 522.39825f, 564.69006f, 199.03371f, (byte) 0);
 				OpenCage.setEntityId(14);
 				objects.put(831598, SpawnEngine.spawnObject(OpenCage, instanceId));
 				spawn(831576, 483.582581f, 567.211487f, 201.734894f, (byte) 0); //Nightmare Circus Exit.

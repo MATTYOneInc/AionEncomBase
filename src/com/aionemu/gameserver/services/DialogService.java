@@ -633,14 +633,7 @@ public class DialogService {
 		case 44: {
 			// Flight & Teleport.
 			if (CustomConfig.ENABLE_SIMPLE_2NDCLASS) {
-				int level = player.getLevel();
-				if (level < 9) {
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 27));
-				} else {
-					TeleportService2.showMap(player, targetObjectId, npc.getNpcId());
-				}
-			} else {
-				int level = player.getLevel();
+				int level = player.getLevel(); 
 				switch (npc.getNpcId()) {
 				case 203194: // Daines [Poeta]
 					if (player.getRace() == Race.ELYOS) {
@@ -730,9 +723,9 @@ public class DialogService {
 				default: {
 					TeleportService2.showMap(player, targetObjectId, npc.getNpcId());
 				}
-				}
 			}
 			break;
+            }  
 		}
 		case 45:
 		case 46: {

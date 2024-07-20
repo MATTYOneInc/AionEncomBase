@@ -26,14 +26,8 @@ import com.aionemu.gameserver.services.QuestService;
 public class _28977Discovery_In_Levinshor extends QuestHandler {
 	
 	private static final int questId = 28977;
-	
 	public _28977Discovery_In_Levinshor() {
 		super(questId);
-	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
 	}
 	
 	@Override

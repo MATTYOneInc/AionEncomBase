@@ -26,14 +26,8 @@ import com.aionemu.gameserver.services.QuestService;
 public class _18976Fragment_Discovered_In_Kaldor extends QuestHandler {
 	
 	private static final int questId = 18976;
-	
 	public _18976Fragment_Discovered_In_Kaldor() {
 		super(questId);
-	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
 	}
 	
 	@Override

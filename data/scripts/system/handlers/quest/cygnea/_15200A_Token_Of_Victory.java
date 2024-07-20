@@ -29,10 +29,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15200A_Token_Of_Victory extends QuestHandler
-{
+public class _15200A_Token_Of_Victory extends QuestHandler {
+
 	private final static int questId = 15200;
-	
 	public _15200A_Token_Of_Victory() {
 		super(questId);
 	}
@@ -64,6 +63,9 @@ public class _15200A_Token_Of_Victory extends QuestHandler
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
 				}
 			}
