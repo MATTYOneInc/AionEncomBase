@@ -125,7 +125,7 @@ public class _24024A_Nepra_Protector extends QuestHandler {
                             }
                         case STEP_TO_3:
                             if (var == 2) {
-                                TeleportService2.teleportTo(env.getPlayer(), 220020000, 2035.9752f, 923.08563f, 222.1174f, (byte) 114);
+                                TeleportService2.teleportTo(env.getPlayer(), 220020000, 1979.7205f, 853.2568f, 248.5204f, (byte) 115);
                                 return defaultCloseDialog(env, 2, 3);
                             }
 

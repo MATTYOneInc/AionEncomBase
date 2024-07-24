@@ -1728,10 +1728,6 @@
     <portal_dialog npc_id="730539">
         <portal_path dialog="10000" loc_id="6000201" race="ELYOS"/>
     </portal_dialog>
-	<!-- Mist Mane Teleport Statue -->
-	<portal_dialog npc_id="730739">
-		<portal_path dialog="10000" loc_id="2200206" race="ASMODIANS"/>
-	</portal_dialog>
 	
 	<!-- TIAMAT STRONGHOLD 4.8 -->
 	<!-- Tiamat Stronghold Entrance [Elyos] -->
@@ -2183,7 +2179,13 @@
 		<portal_path dialog="1013" loc_id="2201411" race="ASMODIANS"/>
 	</portal_dialog>
 	<!-- TALOC'S HOLLOW END -->
-	
+
+	<!-- Mist Mane Teleport Statue -->
+	<portal_dialog npc_id="730739">
+		<portal_path dialog="104" loc_id="2200209" race="ASMODIANS"/>
+	</portal_dialog>
+    <!-- Mist Mane Teleport Statue END -->
+
 	<!-- UDAS TEMPLE/LOVER UDAS 2.0 -->
 	<!-- Udas Temple Elyos Entrance -->
 	<portal_dialog npc_id="730277">
@@ -2601,55 +2603,55 @@
 	<!-- NIGHTMARE CIRCUS 4.3 -->
 	<!-- Arika [IU's Friend] -->
 	<portal_dialog npc_id="831541">
-		<portal_path dialog="10000" loc_id="3011600" player_count="6" instance="true">
+		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
 		    <portal_req min_level="30" max_level="75"/>
 		</portal_path>
 	</portal_dialog>
 	<!-- Ailee [IU's Friend] -->
 	<portal_dialog npc_id="831542">
-		<portal_path dialog="10000" loc_id="3011600" player_count="6" instance="true">
+		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
 		    <portal_req min_level="30" max_level="75"/>
 		</portal_path>
 	</portal_dialog>
 	<!-- Adiva [IU's Friend] -->
 	<portal_dialog npc_id="831543">
-		<portal_path dialog="10000" loc_id="3011600" player_count="6" instance="true">
+		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
 		    <portal_req min_level="30" max_level="75"/>
 		</portal_path>
 	</portal_dialog>
 	<!-- Aine [IU's Friend] -->
 	<portal_dialog npc_id="831544">
-		<portal_path dialog="10000" loc_id="3011600" player_count="6" instance="true">
+		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
 		    <portal_req min_level="30" max_level="75"/>
 		</portal_path>
 	</portal_dialog>
 	<!-- Adana [IU's Friend] -->
 	<portal_dialog npc_id="831545">
-		<portal_path dialog="10000" loc_id="3011600" player_count="6" instance="true">
+		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
 		    <portal_req min_level="30" max_level="75"/>
 		</portal_path>
 	</portal_dialog>
 	<!-- Arari [IU's Friend] -->
 	<portal_dialog npc_id="831546">
-		<portal_path dialog="10000" loc_id="3011600" player_count="6" instance="true">
+		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
 		    <portal_req min_level="30" max_level="75"/>
 		</portal_path>
 	</portal_dialog>
 	<!-- Airin [IU's Friend] -->
 	<portal_dialog npc_id="831547">
-		<portal_path dialog="10000" loc_id="3011600" player_count="6" instance="true">
+		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
 		    <portal_req min_level="30" max_level="75"/>
 		</portal_path>
 	</portal_dialog>
 	<!-- Aberri [IU's Friend] -->
 	<portal_dialog npc_id="831548">
-		<portal_path dialog="10000" loc_id="3011600" player_count="6" instance="true">
+		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
 		    <portal_req min_level="30" max_level="75"/>
 		</portal_path>
 	</portal_dialog>
 	<!-- Avina [IU's Friend] -->
 	<portal_dialog npc_id="831549">
-		<portal_path dialog="10000" loc_id="3011600" player_count="6" instance="true">
+		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
 		    <portal_req min_level="30" max_level="75"/>
 		</portal_path>
 	</portal_dialog>
@@ -2673,64 +2675,7 @@
 		<portal_path dialog="104" loc_id="1200107" race="ASMODIANS"/>
 	</portal_dialog>
 	<!-- LIVE PARTY CONCERT HALL END -->
-	
-	<!-- RUKIBUKI CIRCUS TROUPE CAMP 4.3 -->
-	<!-- Ailee [IU's Friend] -->
-	<portal_dialog npc_id="831709">
-		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
-		    <portal_req min_level="30" max_level="75"/>
-		</portal_path>
-	</portal_dialog>
-	<!-- Dinos [IU's Friend] -->
-	<portal_dialog npc_id="831710">
-		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
-		    <portal_req min_level="30" max_level="75"/>
-		</portal_path>
-	</portal_dialog>
-	<!-- Dinos [IU's Friend] -->
-	<portal_dialog npc_id="831711">
-		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
-		    <portal_req min_level="30" max_level="75"/>
-		</portal_path>
-	</portal_dialog>
-	<!-- Adana [IU's Friend] -->
-	<portal_dialog npc_id="831712">
-		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
-		    <portal_req min_level="30" max_level="75"/>
-		</portal_path>
-	</portal_dialog>
-	<!-- Romantic [IU's Friend] -->
-	<portal_dialog npc_id="831713">
-		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
-		    <portal_req min_level="30" max_level="75"/>
-		</portal_path>
-	</portal_dialog>
-	<!-- Adiva [IU's Friend] -->
-	<portal_dialog npc_id="831714">
-		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
-		    <portal_req min_level="30" max_level="75"/>
-		</portal_path>
-	</portal_dialog>
-	<!-- Aine [IU's Friend] -->
-	<portal_dialog npc_id="831715">
-		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
-		    <portal_req min_level="30" max_level="75"/>
-		</portal_path>
-	</portal_dialog>
-	<!-- Arika [IU's Friend] -->
-	<portal_dialog npc_id="831716">
-		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
-		    <portal_req min_level="30" max_level="75"/>
-		</portal_path>
-	</portal_dialog>
-	<!-- Arari [IU's Friend] -->
-	<portal_dialog npc_id="831717">
-		<portal_path dialog="10000" loc_id="3012000" player_count="6" instance="true">
-		    <portal_req min_level="30" max_level="75"/>
-		</portal_path>
-	</portal_dialog>
-	<!-- RUKIBUKI CIRCUS TROUPE CAMP END -->
-	
+
 	<!-- PURPLE REIGN -->
 	<!-- Dark Poeta -->
 	<portal_dialog npc_id="832753">
