@@ -26,14 +26,8 @@ import com.aionemu.gameserver.services.QuestService;
 public class _18977Shard_Discovered_In_Levinshor extends QuestHandler {
 	
 	private static final int questId = 18977;
-	
 	public _18977Shard_Discovered_In_Levinshor() {
 		super(questId);
-	}
-	
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
 	}
 	
 	@Override

@@ -26,15 +26,10 @@ import com.aionemu.gameserver.services.QuestService;
 public class _18978Shard_Discovered_In_Kaldor extends QuestHandler {
 	
 	private static final int questId = 18978;
-	
 	public _18978Shard_Discovered_In_Kaldor() {
 		super(questId);
 	}
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
+
 	@Override
 	public void register() {
 		qe.registerQuestNpc(802431).addOnQuestStart(questId);

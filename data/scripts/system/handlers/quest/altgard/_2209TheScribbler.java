@@ -51,7 +51,7 @@ public class _2209TheScribbler extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		}
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203555) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);

@@ -26,13 +26,8 @@ import com.aionemu.gameserver.services.QuestService;
 public class _28978Discovery_Kaldor extends QuestHandler {
 	
 	private static final int questId = 28978;
-	
 	public _28978Discovery_Kaldor() {
 		super(questId);
-	}
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
 	}
 	
 	@Override

@@ -29,10 +29,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25200Break_Elyos_Take_Token extends QuestHandler
-{
+public class _25200Break_Elyos_Take_Token extends QuestHandler {
+
 	private final static int questId = 25200;
-	
 	public _25200Break_Elyos_Take_Token() {
 		super(questId);
 	}
@@ -64,6 +63,9 @@ public class _25200Break_Elyos_Take_Token extends QuestHandler
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					QuestService.startQuest(env);
+					return closeDialogWindow(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
 				}
 			}
