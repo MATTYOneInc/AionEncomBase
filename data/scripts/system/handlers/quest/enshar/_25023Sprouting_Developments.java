@@ -113,10 +113,11 @@ public class _25023Sprouting_Developments extends QuestHandler {
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
         if (qs != null && qs.getStatus() == QuestStatus.START) { 
         if (player.isInsideZone(ZoneName.get("DF5_ITEMUSEAREA_Q25023"))) {
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), false);
-		ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
+        PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
+        ThreadPoolManager.getInstance().schedule(new Runnable() {
+            @Override
+            public void run() {
+                PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
 				QuestService.addNewSpawn(220080000, player.getInstanceId(), 805161, player.getX() + 2, player.getY() + 2, player.getZ() + 1, (byte) 0);
 				removeQuestItem(env, 182215711, 1);
 				qs.setStatus(QuestStatus.REWARD);

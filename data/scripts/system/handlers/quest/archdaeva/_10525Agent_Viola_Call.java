@@ -20,11 +20,14 @@ import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
+import com.aionemu.gameserver.utils.PacketSendUtility;
+import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
@@ -67,7 +70,7 @@ public class _10525Agent_Viola_Call extends QuestHandler {
             return false;
         }
         int var = qs.getQuestVarById(0);
-        int var2 = qs.getQuestVarById(1);
+        int var1 = qs.getQuestVarById(1);
         int targetId = 0;
         if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
@@ -134,48 +137,68 @@ public class _10525Agent_Viola_Call extends QuestHandler {
 					}
 				}
 			} 
-			if (targetId == 806224 && var2 == 0) { //Este.
+			if (targetId == 806224) { //Este.
 			    switch (env.getDialog()) {
 				    case START_DIALOG: 
 					return sendQuestDialog(env, 1694);
 
 					case SELECT_ACTION_1695: 
-						qs.setQuestVarById(1, 1);
-				    	updateQuestStatus(env);	
-                    return sendQuestDialog(env, 1695); 
+						qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
+                        updateQuestStatus(env); 
+					if (qs.getQuestVarById(1) == 15) {
+                        qs.setQuestVarById(1,0);
+						changeQuestStep(env, 2, 3, false);		    	
+				    	updateQuestStatus(env);
+                    }
+                    return closeDialogWindow(env);	
                 }
             }
-			else if(targetId == 806225 && var2 == 1) { //Ovest.
+			else if(targetId == 806225) { //Ovest.
 			    switch (env.getDialog()) {
 				    case START_DIALOG: 
                     return sendQuestDialog(env, 1779);
 
 					case SELECT_ACTION_1780: 
-						qs.setQuestVarById(1, 3);
-				    	updateQuestStatus(env);	
-                    return sendQuestDialog(env, 1780);
+						qs.setQuestVarById(1, qs.getQuestVarById(1) + 2);
+                        updateQuestStatus(env);
+					if (qs.getQuestVarById(1) == 15) {
+                        qs.setQuestVarById(1,0);
+						changeQuestStep(env, 2, 3, false);		    	
+				    	updateQuestStatus(env); 
+                    } 
+                    return closeDialogWindow(env);	
                 	}
             	} 
-			    else if(targetId == 806226 && var2 == 3) { //Meridies.
+			    else if(targetId == 806226) { //Meridies.
                     switch (env.getDialog()) {
 				    	case START_DIALOG: 
 						return sendQuestDialog(env, 1864);
 
                     	case SELECT_ACTION_1865:
-				            qs.setQuestVarById(1, 7);
-				    	    updateQuestStatus(env);	 
-                        return sendQuestDialog(env, 1865);
+							qs.setQuestVarById(1, qs.getQuestVarById(1) + 4);
+                            updateQuestStatus(env);
+						if (qs.getQuestVarById(1) == 15) {
+                            qs.setQuestVarById(1,0);
+						    changeQuestStep(env, 2, 3, false);		    	
+				    	    updateQuestStatus(env);
+                        } 
+                        return closeDialogWindow(env);	 
                 	}
             	}
-			    else if(targetId == 806227 && var2 == 7) { //Ceber.
+			    else if(targetId == 806227) { //Ceber.
                 	switch (env.getDialog()) {
 				    	case START_DIALOG: 			
 						return sendQuestDialog(env, 1949);
+
                     	case SELECT_ACTION_1950:
-						    qs.setQuestVarById(1,0);
+                            qs.setQuestVarById(1, qs.getQuestVarById(1) + 8);
+                            updateQuestStatus(env);
+						if (qs.getQuestVarById(1) == 15) {
+                            qs.setQuestVarById(1,0);
 						    changeQuestStep(env, 2, 3, false);		    	
 				    	    updateQuestStatus(env); 
-                        return sendQuestDialog(env, 1950);
+                        }
+                        return closeDialogWindow(env);	
                 	}
             	}  
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
@@ -194,18 +217,25 @@ public class _10525Agent_Viola_Call extends QuestHandler {
 	
 	@Override
     public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
-        final Player player = env.getPlayer();
+		final Player player = env.getPlayer();
+		final int id = item.getItemTemplate().getTemplateId();
+		final int itemObjId = item.getObjectId();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         if (qs != null && qs.getStatus() == QuestStatus.START) {
-			if (!player.isInsideZone(ZoneName.get("LF6_ITEMUSEAREA_Q10525"))) {
-				return HandlerResult.UNKNOWN;
-			}
-            int var = qs.getQuestVarById(0);
-            if (var == 6) {
-				giveQuestItem(env, 182216073, 1); //Exhausted Dejabobo
-                return HandlerResult.fromBoolean(useQuestItem(env, item, 6, 6, true));
+		if (player.isInsideZone(ZoneName.get("LF6_ITEMUSEAREA_Q10525"))) {
+        PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
+        ThreadPoolManager.getInstance().schedule(new Runnable() {
+            @Override
+            public void run() {
+                PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
+                removeQuestItem(env, 182216072, 1); //Aether Boost Magic Stone
+				giveQuestItem(env, 182216073, 1); //Exhausted Wejabobo.
+				qs.setStatus(QuestStatus.REWARD);
+				updateQuestStatus(env);
+			    }
+		    }, 3000);
             }
         } 
-        return HandlerResult.FAILED;
+        return HandlerResult.SUCCESS;
     }
 }

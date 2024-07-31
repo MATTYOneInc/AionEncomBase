@@ -20,7 +20,6 @@ import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.SystemMessageId;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_PLAY_MOVIE;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
@@ -64,6 +63,7 @@ public class _10521Memories_Of_Eternity extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("ID_ETERNITY_Q_SENSORYAREA_A_301570000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("ID_ETERNITY_Q_SENSORYAREA_B_301570000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("ID_ETERNITY_Q_SENSORYAREA_C_301570000"), questId);
+        qe.registerOnMovieEndQuest(923, questId);
 		qe.registerOnMovieEndQuest(999, questId);
     }
 	
@@ -249,41 +249,21 @@ public class _10521Memories_Of_Eternity extends QuestHandler {
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
                         if (var == 12) {
-							switch (player.getGender()) {
-								case MALE:
-							        PacketSendUtility.sendPacket(player, new SM_PLAY_MOVIE(0, 923));
-									ThreadPoolManager.getInstance().schedule(new Runnable() {
-										@Override
-										public void run() {
-											//You are graced with the aura of Blessed Breath.
-											PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403364));
-											QuestService.addNewSpawn(301570000, player.getInstanceId(), 857788, (float) 231.63109, (float) 511.9707, (float) 468.80215, (byte) 0); //IDEternity_Q_HD_Wind_Li_M_N_65_An.
-										}
-									}, 50000);
-								break;
-								case FEMALE:
-									PacketSendUtility.sendPacket(player, new SM_PLAY_MOVIE(0, 924));
-									ThreadPoolManager.getInstance().schedule(new Runnable() {
-										@Override
-										public void run() {
-											//You are graced with the aura of Blessed Breath.
-											PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403364));
-											QuestService.addNewSpawn(301570000, player.getInstanceId(), 857795, (float) 231.63109, (float) 511.9707, (float) 468.80215, (byte) 0); //IDEternity_Q_HD_Wind_Li_F_N_65_An.
-										}
-									}, 50000);
-								break;
-							}
-							changeQuestStep(env, 12, 13, false);
+							playQuestMovie(env, 923);
 							return closeDialogWindow(env);
 						}
 					}
                 }
             }
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (env.getDialog() == QuestDialog.USE_OBJECT) {
-				return sendQuestDialog(env, 10002);
-			} else {
-				return sendQuestEndDialog(env);
+            if (targetId == 806075) { //Weatha.
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                    return sendQuestDialog(env, 10002);
+				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
+					return sendQuestDialog(env, 5);
+				} else {
+					return sendQuestEndDialog(env);
+				}
 			}
 		}
 		return false;
@@ -326,7 +306,7 @@ public class _10521Memories_Of_Eternity extends QuestHandler {
 			} if (var == 13) {
 				if (env.getTargetId() == 857785 || //IDEternity_Q_HD_Fire_Li_M_N_65_An.
 				    env.getTargetId() == 857792) { //IDEternity_Q_HD_Fire_Li_F_N_65_An.
-					changeQuestStep(env, 13, 13, false);
+					changeQuestStep(env, 13, 14, false);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return true;
@@ -339,6 +319,22 @@ public class _10521Memories_Of_Eternity extends QuestHandler {
 	@Override
 	public boolean onMovieEndEvent(QuestEnv env, int movieId) {
 		Player player = env.getPlayer();
+		if (movieId == 923) {
+            switch (player.getGender()) {
+			case MALE: {
+			    PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403364));
+			    QuestService.addNewSpawn(301570000, player.getInstanceId(), 857788, (float) 231.63109, (float) 511.9707, (float) 468.80215, (byte) 0); //IDEternity_Q_HD_Wind_Li_M_N_65_An.
+                changeQuestStep(env, 12, 13, false);
+                return true;
+            }
+			case FEMALE: {
+			    PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1403364));
+			    QuestService.addNewSpawn(301570000, player.getInstanceId(), 857795, (float) 231.63109, (float) 511.9707, (float) 468.80215, (byte) 0); //IDEternity_Q_HD_Wind_Li_F_N_65_An.
+                changeQuestStep(env, 12, 13, false); 
+                return true;
+                }
+            }  
+		}
 		if (movieId == 999) {
 			WorldMapInstance ArchivesOfEternity = InstanceService.getNextAvailableInstance(301570000);
 			InstanceService.registerPlayerWithInstance(ArchivesOfEternity, player);
