@@ -31718,22 +31718,22 @@
   </quest>
   <quest id="16821" name="[Instance Dungeon/Group] Lost Agent Viola" nameId="1802580" minlevel_permitted="66" max_repeat_count="1" cannot_share="true" cannot_giveup="true" race_permitted="ELYOS" category="MISSION">
     <rewards gold="371040" exp="32354564">
-      <reward_item item_id="167010274" count="1" />
-      <reward_item item_id="167010275" count="1" />
-      <reward_item item_id="167010276" count="1" />
-      <reward_item item_id="167010277" count="1" />
-      <reward_item item_id="167010278" count="1" />
-      <reward_item item_id="167010279" count="1" />
+      <selectable_reward_item item_id="167010274" count="1" />
+      <selectable_reward_item item_id="167010275" count="1" />
+      <selectable_reward_item item_id="167010276" count="1" />
+      <selectable_reward_item item_id="167010277" count="1" />
+      <selectable_reward_item item_id="167010278" count="1" />
+      <selectable_reward_item item_id="167010279" count="1" />
     </rewards>
   </quest>
   <quest id="16822" name="[Instance Dungeon/Group] Traveling with the Earth Jotun" nameId="1802581" minlevel_permitted="66" max_repeat_count="1" cannot_share="true" cannot_giveup="true" race_permitted="ELYOS" category="MISSION">
     <rewards gold="393720" exp="37738382">
-      <reward_item item_id="167010274" count="1" />
-      <reward_item item_id="167010275" count="1" />
-      <reward_item item_id="167010276" count="1" />
-      <reward_item item_id="167010277" count="1" />
-      <reward_item item_id="167010278" count="1" />
-      <reward_item item_id="167010279" count="1" />
+      <selectable_reward_item item_id="167010274" count="1" />
+      <selectable_reward_item item_id="167010275" count="1" />
+      <selectable_reward_item item_id="167010276" count="1" />
+      <selectable_reward_item item_id="167010277" count="1" />
+      <selectable_reward_item item_id="167010278" count="1" />
+      <selectable_reward_item item_id="167010279" count="1" />
     </rewards>
     <start_conditions>
       <finished quest_id="16821" />
@@ -42132,7 +42132,7 @@
   <quest id="26835" name="[Instanced Dungeon/Group] Path to the Trials of Eternity" nameId="1803210" minlevel_permitted="66" max_repeat_count="1" race_permitted="ASMODIANS" category="SIGNIFICANT">
     <rewards gold="310320" exp="17736250" />
   </quest>
-  <quest id="26836" name="악화되는 지식의 아티팩트" nameId="1803211" minlevel_permitted="66" max_repeat_count="1" race_permitted="ASMODIANS" category="MISSION">
+  <quest id="26836" name="Weakened Artifact of Knowledge" nameId="1803211" minlevel_permitted="66" max_repeat_count="1" race_permitted="ASMODIANS" category="MISSION">
     <rewards gold="405720" exp="40757397">
       <selectable_reward_item item_id="167010280" count="1" />
       <selectable_reward_item item_id="167010281" count="1" />

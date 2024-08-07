@@ -35,7 +35,7 @@ public class _28253Start_Of_The_Second_Ordeal extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(798804).addOnQuestStart(questId);
-        qe.registerQuestNpc(798804).addOnTalkEvent(questId);
+        qe.registerQuestNpc(798804).addOnTalkEndEvent(questId);
 		qe.registerQuestNpc(247245).addOnKillEvent(questId);
 	}
 	
@@ -44,20 +44,6 @@ public class _28253Start_Of_The_Second_Ordeal extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 798804) { //Kijan.
-				switch (env.getDialog()) {
-                    case START_DIALOG: {
-                        return sendQuestDialog(env, 4762);
-					} case ACCEPT_QUEST:
-					case ACCEPT_QUEST_SIMPLE: {
-						return sendQuestStartDialog(env);
-					} case REFUSE_QUEST_SIMPLE: {
-				        return closeDialogWindow(env);
-					}
-                }
-			}
-		}
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798804) { //Kijan.
 				switch (env.getDialog()) {
@@ -96,6 +82,7 @@ public class _28253Start_Of_The_Second_Ordeal extends QuestHandler {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

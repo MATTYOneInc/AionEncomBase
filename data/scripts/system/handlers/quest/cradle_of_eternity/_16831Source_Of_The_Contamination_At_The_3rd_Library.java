@@ -14,30 +14,28 @@ package quest.cradle_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _16831Source_Of_The_Contamination_At_The_3rd_Library extends QuestHandler
-{
+public class _16831Source_Of_The_Contamination_At_The_3rd_Library extends QuestHandler {
+
     private final static int questId = 16831;
-	private final static int[] npcs = {806283}; //ë?¼ë”œë¦¬ìŠ¤.
-	
     public _16831Source_Of_The_Contamination_At_The_3rd_Library() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        }
+        qe.registerQuestNpc(806283).addOnTalkEvent(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_02_Q16831_A_301550000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_02_Q16831_B_301550000"), questId);
@@ -50,8 +48,25 @@ public class _16831Source_Of_The_Contamination_At_The_3rd_Library extends QuestH
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs.getStatus() == QuestStatus.REWARD) {
-            QuestService.finishQuest(env);
-        }
+            if (targetId == 806283) {
+                if (env.getDialogId() == 31) {
+                    return sendQuestDialog(env, 10002);
+				} else if (env.getDialogId() == 1009) {
+					return sendQuestDialog(env, 5);
+				} else {
+					return sendQuestEndDialog(env);
+				}
+			}
+			else { // Bounty Quest made DragonicK?
+				// Selected item is not optional.
+				env.setDialogId(8);
+				env.setExtendedRewardIndex(1);
+				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(806283, 0));
+				if (QuestService.finishQuest(env)) {
+					return closeDialogWindow(env);
+				}
+			}
+		}
 		return false;
 	}
 	

@@ -194,7 +194,7 @@
 	</zone>
 	<!-- Cradle Of Eternity 5.1 -->
 	<zone mapid="301550000" name="IDETERNITY_02_Q16821_A_301550000" area_type="SPHERE" zone_type="SUB">
-		<sphere x="1090.8156" y="783.30963" z="508.76425" r="10.0"/>
+		<sphere x="1208.6294" y="774.4955" z="1035.6702" r="10.0"/>
 	</zone>
 	<zone mapid="301550000" name="IDETERNITY_02_Q16821_B_301550000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="1074.5386" y="783.024" z="512.17706" r="10.0"/>

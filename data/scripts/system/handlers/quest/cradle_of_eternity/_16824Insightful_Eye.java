@@ -14,41 +14,54 @@ package quest.cradle_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _16824Insightful_Eye extends QuestHandler
-{
+public class _16824Insightful_Eye extends QuestHandler {
+
     private final static int questId = 16824;
-	private final static int[] npcs = {220587}; //í’€ë ¤ë‚œ ëŒ€ì§€ì?˜ ëŠ?ë¹Œë¦¼.
-	private final static int[] IDEternity02TowerBoss75Ah = {220526}; //ì‹¬ì•ˆì?˜ ëˆˆë?™ìž?.
-	
     public _16824Insightful_Eye() {
         super(questId);
     }
 	
     public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: IDEternity02TowerBoss75Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+        qe.registerQuestNpc(220587).addOnTalkEndEvent(questId);
+	    qe.registerQuestNpc(220526).addOnKillEvent(questId);
 		qe.registerOnEnterWorld(questId);
     }
 	
     @Override
     public boolean onDialogEvent(QuestEnv env) {
-        Player player = env.getPlayer();
-        int targetId = env.getTargetId();
-        QuestState qs = player.getQuestStateList().getQuestState(questId);
+		final Player player = env.getPlayer();
+        final QuestState qs = player.getQuestStateList().getQuestState(questId);
+		int targetId = env.getTargetId();
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			QuestService.finishQuest(env);
+            if (targetId == 220587) {
+                if (env.getDialogId() == 31) {
+                    return sendQuestDialog(env, 10002);
+				} else if (env.getDialogId() == 1009) {
+					return sendQuestDialog(env, 5);
+				} else {
+					return sendQuestEndDialog(env);
+				}
+			}
+			else { // Bounty Quest made DragonicK?
+				// Selected item is not optional. correct for Selected item Reward DainAvenger
+				env.setDialogId(8);
+				env.setExtendedRewardIndex(8);
+				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(220587, 0));
+				if (QuestService.finishQuest(env)) {
+					return closeDialogWindow(env);
+				}
+			}
 		}
         return false;
     }

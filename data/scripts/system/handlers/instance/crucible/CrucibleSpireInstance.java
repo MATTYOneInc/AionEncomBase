@@ -59,8 +59,8 @@ import java.util.concurrent.Future;
 /****/
 
 @InstanceID(302400000)
-public class CrucibleSpireInstance extends GeneralInstanceHandler
-{
+public class CrucibleSpireInstance extends GeneralInstanceHandler {
+
 	private byte floor;
 	private Race spawnRace;
 	private Map<Integer, StaticDoor> doors;
@@ -155,7 +155,7 @@ public class CrucibleSpireInstance extends GeneralInstanceHandler
         f1.spawn();
     }
 	
-	private void spawnNextFloor(int next) {
+    private void spawnNextFloor(int next) {
 		switch (next) {
 			case 2:
 				sp(247249, 241.18533f, 1256.9836f, 240.63419f, (byte) 61, 2000, 0, null); //IDInfinity_Normal_02_01.
@@ -551,17 +551,14 @@ public class CrucibleSpireInstance extends GeneralInstanceHandler
 				}
 			break;
 			//Floor 8
-			case 247353:
-			    despawnNpc(npc);
-			    spawn(247478, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading()); //IDInfinity_Meat.
-			break;
+            case 247353:
 			case 247237:
 			    despawnNpc(npc);
-			    if (getNpcs(247237).isEmpty()) {
+			    if (getNpcs(247353).isEmpty() &&
+				    getNpcs(247237).isEmpty()) {
 					floor = 9;
 					deleteNpc(701000);
 					despawnNpcs(getNpcs(247478)); //IDInfinity_Meat.
-					despawnNpcs(getNpcs(247353)); //IDInfinity_Berrel.
 					despawnNpcs(getNpcs(247401)); //IDInfinity_Summon_Tog.
 					sp(701773, 280.65912f, 1249.3933f, 240.99275f, (byte) 0, 114, 1500, 0, null);
 					sendPacket(player, "Condition_Infinity_THIS_SEASON_Floor_Reward", floor - 1);
@@ -1031,10 +1028,11 @@ public class CrucibleSpireInstance extends GeneralInstanceHandler
 			    despawnNpc(npc);
 			    if (getNpcs(247245).isEmpty()) {
 					sendPacket(player, "Condition_Infinity_THIS_SEASON_Floor_Reward", 100);
-					player.setFloor(floor - 1);
+			        floor = 41;
+                    player.setFloor(floor - 1); 
 					rewardForFloorId(player);
 					bossTimerEnd = System.currentTimeMillis() - bossTimerStart;
-					//SeasonRankingService.getInstance().saveCrusibleSpireTime(player, (int)bossTimerEnd);
+					// SeasonRankingService.getInstance().saveCrusibleSpireTime(player, (int)bossTimerEnd);
 				}
 			break;
 		}
@@ -1178,7 +1176,6 @@ public class CrucibleSpireInstance extends GeneralInstanceHandler
 	protected void teleportFloor(Player player, float x, float y, float z, byte h) {
 		TeleportService2.teleportTo(player, mapId, instanceId, x, y, z, h);
 	}
-	
 	protected void sp(final int npcId, final float x, final float y, final float z, final byte h, final int time) {
         sp(npcId, x, y, z, h, 0, time, 0, null);
     }

@@ -18,21 +18,22 @@ package quest.archives_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author (Encom)
 /****/
 
-public class _16807Hunting_Reliquarians extends QuestHandler
-{
+public class _16807Hunting_Reliquarians extends QuestHandler {
+
     private final static int questId = 16807;
 	private final static int[] IDEternity01Mobs = {220307, 220310, 220313, 220316, 220319, 220325, 220328, 220331};
-	
     public _16807Hunting_Reliquarians() {
         super(questId);
     }
@@ -62,27 +63,26 @@ public class _16807Hunting_Reliquarians extends QuestHandler
 						return sendQuestStartDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 806148: {
-					switch (env.getDialog()) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 2375);
-						} case SELECT_REWARD: {
-							changeQuestStep(env, 0, 0, true);
-							return sendQuestEndDialog(env);
-						}
-					}
+		} 
+        else if (qs.getStatus() == QuestStatus.REWARD) {
+            if (targetId == 806148) {
+                if (env.getDialogId() == 31) {
+                    return sendQuestDialog(env, 10002);
+				} else if (env.getDialogId() == 1009) {
+					return sendQuestDialog(env, 5);
+				} else {
+					return sendQuestEndDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-		    if (targetId == 806148) {
-				if (env.getDialog() == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 10002);
-                } else {
-                    return sendQuestEndDialog(env);
-                }
-		    }
+			else { // Bounty Quest made DragonicK?
+				// Selected item is not optional.
+				env.setDialogId(8);
+				env.setExtendedRewardIndex(1);
+				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(806148, 0));
+				if (QuestService.finishQuest(env)) {
+					return closeDialogWindow(env);
+				}
+			}
 		}
 		return false;
 	}

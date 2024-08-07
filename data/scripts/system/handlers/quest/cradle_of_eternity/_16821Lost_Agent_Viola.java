@@ -14,23 +14,23 @@ package quest.cradle_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _16821Lost_Agent_Viola extends QuestHandler
-{
+public class _16821Lost_Agent_Viola extends QuestHandler {
+
     private final static int questId = 16821;
 	private final static int[] npcs = {806281, 806426, 220587};
-	private final static int[] IDEternity02All = {220458, 220459, 220460, 220462, 220465,
-	220467, 220469, 220475, 220476, 220477, 220479, 220670, 220671};
-	
+	private final static int[] IDEternity02All = {220458, 220459, 220460, 220462, 220465, 220467, 220469, 220475, 220476, 220477, 220479, 220670, 220671};
     public _16821Lost_Agent_Viola() {
         super(questId);
     }
@@ -82,8 +82,26 @@ public class _16821Lost_Agent_Viola extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-		    QuestService.finishQuest(env);
+		} 
+        else if (qs.getStatus() == QuestStatus.REWARD) {
+            if (targetId == 220587) {
+                if (env.getDialogId() == 31) {
+                    return sendQuestDialog(env, 10002);
+				} else if (env.getDialogId() == 1009) {
+					return sendQuestDialog(env, 5);
+				} else {
+					return sendQuestEndDialog(env);
+				}
+			}
+			else { // Bounty Quest made DragonicK?
+				// Selected item is not optional.
+				env.setDialogId(8);
+				env.setExtendedRewardIndex(8);
+				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(220587, 0));
+				if (QuestService.finishQuest(env)) {
+					return closeDialogWindow(env);
+				}
+			}
 		}
 		return false;
 	}
@@ -141,12 +159,12 @@ public class _16821Lost_Agent_Viola extends QuestHandler
             int var = qs.getQuestVarById(0);
 			if (zoneName == ZoneName.get("IDETERNITY_02_Q16821_A_301550000")) {
 				if (var == 3) {
-					playQuestMovie(env, 937);
 					changeQuestStep(env, 3, 4, false);
 					return true;
 				}
 			} else if (zoneName == ZoneName.get("IDETERNITY_02_Q16821_B_301550000")) {
 				if (var == 4) {
+					playQuestMovie(env, 937);
 					changeQuestStep(env, 4, 5, false);
 					return true;
 				}

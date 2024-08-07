@@ -14,32 +14,29 @@ package quest.cradle_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _16830Sleeping_Fairy_Queen extends QuestHandler
-{
+public class _16830Sleeping_Fairy_Queen extends QuestHandler {
+
     private final static int questId = 16830;
-	private final static int[] npcs = {834039}; //잠들어 있는 여왕 알브.
-	
     public _16830Sleeping_Fairy_Queen() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        }
+        qe.registerQuestNpc(834122).addOnTalkEvent(questId);
 		qe.registerOnEnterWorld(questId);
-		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_02_Q16830_A_301550000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_02_Q16830_B_301550000"), questId);
 	}
 	
@@ -49,8 +46,25 @@ public class _16830Sleeping_Fairy_Queen extends QuestHandler
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs.getStatus() == QuestStatus.REWARD) {
-            QuestService.finishQuest(env);
-        }
+            if (targetId == 834122) {
+                if (env.getDialogId() == 31) {
+                    return sendQuestDialog(env, 10002);
+				} else if (env.getDialogId() == 1009) {
+					return sendQuestDialog(env, 5);
+				} else {
+					return sendQuestEndDialog(env);
+				}
+			}
+			else { // Bounty Quest made DragonicK?
+				// Selected item is not optional.
+				env.setDialogId(8);
+				env.setExtendedRewardIndex(1);
+				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(834122, 0));
+				if (QuestService.finishQuest(env)) {
+					return closeDialogWindow(env);
+				}
+			}
+		}
 		return false;
 	}
 	
@@ -74,21 +88,13 @@ public class _16830Sleeping_Fairy_Queen extends QuestHandler
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
         if (qs != null && qs.getStatus() == QuestStatus.START) {
-            int var = qs.getQuestVarById(0);
-			if (zoneName == ZoneName.get("IDETERNITY_02_Q16830_A_301550000")) {
-				if (var == 0) {
-					changeQuestStep(env, 0, 1, false);
-					return true;
-				}
-			} else if (zoneName == ZoneName.get("IDETERNITY_02_Q16830_B_301550000")) {
-				if (var == 1) {
-					qs.setQuestVar(2);
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
-					return true;
-				}
-			}
+        if (zoneName == ZoneName.get("IDETERNITY_02_Q16830_B_301550000")) {
+			qs.setQuestVar(1);
+			qs.setStatus(QuestStatus.REWARD);
+			updateQuestStatus(env);
+			return true;
 		}
-		return false;
+	 }
+	 return false;
 	}
 }

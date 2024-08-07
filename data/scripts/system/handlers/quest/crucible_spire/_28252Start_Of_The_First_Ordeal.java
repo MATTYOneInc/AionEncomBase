@@ -35,7 +35,7 @@ public class _28252Start_Of_The_First_Ordeal extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(798804).addOnQuestStart(questId);
-        qe.registerQuestNpc(798804).addOnTalkEvent(questId);
+        qe.registerQuestNpc(798804).addOnTalkEndEvent(questId);
 		qe.registerQuestNpc(247240).addOnKillEvent(questId);
 	}
 	
@@ -82,6 +82,7 @@ public class _28252Start_Of_The_First_Ordeal extends QuestHandler {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

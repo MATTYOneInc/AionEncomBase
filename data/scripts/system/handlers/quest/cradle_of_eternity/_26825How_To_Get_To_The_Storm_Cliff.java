@@ -14,34 +14,28 @@ package quest.cradle_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _26825How_To_Get_To_The_Storm_Cliff extends QuestHandler
-{
+public class _26825How_To_Get_To_The_Storm_Cliff extends QuestHandler {
+
     private final static int questId = 26825;
-	private final static int[] npcs = {806288}; //스티게터.
-	private final static int[] IDEternity02TowerBoss75Ah = {220534}; //타�?�한 물�?� �?빌림.
-	private final static int[] IDEternity02CKeyRa75Ae = {220597}; //오염�?� 제3 서고 입구 잠금장치.
-	
     public _26825How_To_Get_To_The_Storm_Cliff() {
         super(questId);
     }
 	
     public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: IDEternity02TowerBoss75Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: IDEternity02CKeyRa75Ae) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+        qe.registerQuestNpc(806288).addOnTalkEvent(questId);
+		qe.registerQuestNpc(220534).addOnKillEvent(questId);
+		qe.registerQuestNpc(220597).addOnKillEvent(questId);
 		qe.registerOnEnterWorld(questId);
     }
 	
@@ -51,8 +45,25 @@ public class _26825How_To_Get_To_The_Storm_Cliff extends QuestHandler
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs.getStatus() == QuestStatus.REWARD) {
-            QuestService.finishQuest(env);
-        }
+            if (targetId == 806288) {
+                if (env.getDialogId() == 31) {
+                    return sendQuestDialog(env, 10002);
+				} else if (env.getDialogId() == 1009) {
+					return sendQuestDialog(env, 5);
+				} else {
+					return sendQuestEndDialog(env);
+				}
+			}
+			else { // Bounty Quest made DragonicK?
+				// Selected item is not optional. correct for Selected item Reward DainAvenger
+				env.setDialogId(8);
+				env.setExtendedRewardIndex(8);
+				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(806288, 0));
+				if (QuestService.finishQuest(env)) {
+					return closeDialogWindow(env);
+				}
+			}
+		}
         return false;
     }
 	

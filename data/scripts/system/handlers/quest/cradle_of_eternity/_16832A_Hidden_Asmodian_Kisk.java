@@ -14,31 +14,27 @@ package quest.cradle_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _16832A_Hidden_Asmodian_Kisk extends QuestHandler
-{
+public class _16832A_Hidden_Asmodian_Kisk extends QuestHandler {
+
     private final static int questId = 16832;
-	private final static int[] npcs = {806284}; //웨다.
-	private final static int[] IDEternity02DEventStartDa = {834042};
-	
     public _16832A_Hidden_Asmodian_Kisk() {
         super(questId);
     }
 	
     public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: IDEternity02DEventStartDa) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+        qe.registerQuestNpc(806284).addOnTalkEvent(questId);
+	    qe.registerQuestNpc(834042).addOnKillEvent(questId);
 		qe.registerOnEnterWorld(questId);
     }
 	
@@ -47,9 +43,26 @@ public class _16832A_Hidden_Asmodian_Kisk extends QuestHandler
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
-            QuestService.finishQuest(env);
-        }
+        if (qs.getStatus() == QuestStatus.REWARD) {
+            if (targetId == 806284) {
+                if (env.getDialogId() == 31) {
+                    return sendQuestDialog(env, 10002);
+				} else if (env.getDialogId() == 1009) {
+					return sendQuestDialog(env, 5);
+				} else {
+					return sendQuestEndDialog(env);
+				}
+			}
+			else { // Bounty Quest made DragonicK?
+				// Selected item is not optional.
+				env.setDialogId(8);
+				env.setExtendedRewardIndex(1);
+				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(806284, 0));
+				if (QuestService.finishQuest(env)) {
+					return closeDialogWindow(env);
+				}
+			}
+		}
         return false;
     }
 	

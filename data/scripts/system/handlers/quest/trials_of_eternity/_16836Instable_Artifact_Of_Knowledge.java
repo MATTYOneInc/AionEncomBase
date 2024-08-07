@@ -14,23 +14,23 @@ package quest.trials_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
-import com.aionemu.gameserver.questEngine.model.QuestDialog;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.world.zone.ZoneName;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _16836Instable_Artifact_Of_Knowledge extends QuestHandler
-{
+public class _16836Instable_Artifact_Of_Knowledge extends QuestHandler {
+
     private final static int questId = 16836;
 	private final static int[] npcs = {806563, 806569};
 	private final static int[] IDEternity03GuardBoss = {246431, 246432};
-	
     public _16836Instable_Artifact_Of_Knowledge() {
         super(questId);
     }
@@ -42,6 +42,7 @@ public class _16836Instable_Artifact_Of_Knowledge extends QuestHandler
         } for (int mob: IDEternity03GuardBoss) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
+        qe.registerQuestNpc(247075).addOnKillEvent(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_03_Q16836_A_301560000"), questId);
@@ -85,14 +86,24 @@ public class _16836Instable_Artifact_Of_Knowledge extends QuestHandler
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-            if (targetId == 806569) { //Viola.
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+		} 
+        else if (qs.getStatus() == QuestStatus.REWARD) {
+            if (targetId == 806569) {
+                if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);
-				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
+				} else if (env.getDialogId() == 1009) {
 					return sendQuestDialog(env, 5);
 				} else {
 					return sendQuestEndDialog(env);
+				}
+			}
+			else { // Bounty Quest made DragonicK?
+				// Selected item is not optional.
+				env.setDialogId(8);
+				env.setExtendedRewardIndex(8);
+				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(806569, 0));
+				if (QuestService.finishQuest(env)) {
+					return closeDialogWindow(env);
 				}
 			}
 		}
@@ -113,29 +124,30 @@ public class _16836Instable_Artifact_Of_Knowledge extends QuestHandler
         }
         return false;
     }
-	
+
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
-		final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs != null && qs.getStatus() == QuestStatus.START) {
-			int var = qs.getQuestVarById(0);
-			if (var == 8) {
-				if (env.getTargetId() == 246431 || env.getTargetId() == 246432) {
+        Player player = env.getPlayer();
+        QuestState qs = player.getQuestStateList().getQuestState(questId);
+        if (qs != null && qs.getStatus() == QuestStatus.START) {
+            switch (env.getTargetId()) {
+				case 246431:
+                case 246432: {
+					qs.setQuestVar(9);
 					playQuestMovie(env, 952);
-					changeQuestStep(env, 8, 9, false);
-					return true;
-				}
-			} else if (var == 13) {
-				if (env.getTargetId() == 247075) {
-					changeQuestStep(env, 13, 14, true);
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	
+					return defaultOnKillEvent(env, 246431, 0, 1, 1) && defaultOnKillEvent(env, 246432, 0, 2, 1);
+                }  
+				case 247075: {
+					qs.setQuestVar(14);
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					return defaultOnKillEvent(env, 247075, 0, 1, 1);
+                }
+            }
+        }
+        return false;
+    }
+
 	@Override
     public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
         final Player player = env.getPlayer();

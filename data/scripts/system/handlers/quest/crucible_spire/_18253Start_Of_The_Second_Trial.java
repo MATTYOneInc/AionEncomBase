@@ -35,7 +35,7 @@ public class _18253Start_Of_The_Second_Trial extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(798604).addOnQuestStart(questId);
-        qe.registerQuestNpc(798604).addOnTalkEvent(questId);
+        qe.registerQuestNpc(798604).addOnTalkEndEvent(questId);
 		qe.registerQuestNpc(247245).addOnKillEvent(questId);
 	}
 	
@@ -82,6 +82,7 @@ public class _18253Start_Of_The_Second_Trial extends QuestHandler {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

@@ -14,30 +14,28 @@ package quest.cradle_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _26829Left_Behind_Archon_Shadow_Agent extends QuestHandler
-{
+public class _26829Left_Behind_Archon_Shadow_Agent extends QuestHandler {
+
     private final static int questId = 26829;
-	private final static int[] npcs = {806287}; //우베페.
-	private final static int[] IDEternity02AS72Ae = {220458, 220465, 220466, 220469,
-	220475, 220476, 220477, 220479};
-	
+	private final static int[] IDEternity02AS72Ae = {220458, 220465, 220466, 220469, 220475, 220476, 220477, 220479};
     public _26829Left_Behind_Archon_Shadow_Agent() {
         super(questId);
     }
 	
     public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: IDEternity02AS72Ae) {
+        qe.registerQuestNpc(806287).addOnTalkEvent(questId);
+        for (int mob: IDEternity02AS72Ae) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
     }
@@ -48,8 +46,25 @@ public class _26829Left_Behind_Archon_Shadow_Agent extends QuestHandler
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs.getStatus() == QuestStatus.REWARD) {
-            QuestService.finishQuest(env);
-        }
+            if (targetId == 806287) {
+                if (env.getDialogId() == 31) {
+                    return sendQuestDialog(env, 10002);
+				} else if (env.getDialogId() == 1009) {
+					return sendQuestDialog(env, 5);
+				} else {
+					return sendQuestEndDialog(env);
+				}
+			}
+			else { // Bounty Quest made DragonicK?
+				// Selected item is not optional.
+				env.setDialogId(8);
+				env.setExtendedRewardIndex(1);
+				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(806287, 0));
+				if (QuestService.finishQuest(env)) {
+					return closeDialogWindow(env);
+				}
+			}
+		}
         return false;
     }
 	
