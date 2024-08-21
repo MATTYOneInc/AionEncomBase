@@ -35,10 +35,9 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.WorldMapInstance;
 
-public class _2900No_Escaping_Destiny extends QuestHandler
-{
+public class _2900No_Escaping_Destiny extends QuestHandler {
+
 	private final static int questId = 2900;
-	
 	public _2900No_Escaping_Destiny() {
 		super(questId);
 	}
@@ -63,16 +62,15 @@ public class _2900No_Escaping_Destiny extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		int var = qs.getQuestVars().getQuestVars();
 		if (qs == null) {
 			return false;
 		}
-		int var = qs.getQuestVars().getQuestVars();
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 204182: { //Heimdall.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 0) {								
 								return sendQuestDialog(env, 1011);
@@ -84,7 +82,7 @@ public class _2900No_Escaping_Destiny extends QuestHandler
 					}
 					break;
 				} case 203550: { //Munin.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 1) {
 								return sendQuestDialog(env, 1352);
@@ -101,7 +99,7 @@ public class _2900No_Escaping_Destiny extends QuestHandler
 					}
 					break;
 				} case 790003: { //Urd.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 2) {
 								return sendQuestDialog(env, 1693);
@@ -113,7 +111,7 @@ public class _2900No_Escaping_Destiny extends QuestHandler
 					}
 					break;
 				} case 790002: { //Verdandi.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 3) {
 								return sendQuestDialog(env, 2034);
@@ -125,7 +123,7 @@ public class _2900No_Escaping_Destiny extends QuestHandler
 					}
 					break;
 				} case 203546: { //Skuld.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 4) {
 								return sendQuestDialog(env, 2375);
@@ -148,7 +146,7 @@ public class _2900No_Escaping_Destiny extends QuestHandler
 					}
 					break;
 				} case 204264: { //Skuld.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case USE_OBJECT: {
 							if (var == 99 && !isStigmaEquipped(env)) {
 								return sendQuestDialog(env, 3057);

@@ -22,22 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _30161Hexway_Hideout extends QuestHandler
-{
+public class _30161Hexway_Hideout extends QuestHandler {
+
 	private final static int questId = 30161;
-	
 	public _30161Hexway_Hideout() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(799225).addOnTalkEvent(questId); //Richelle.
 		qe.registerQuestNpc(799383).addOnTalkEvent(questId); //Vergelan.
 	}

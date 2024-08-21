@@ -24,10 +24,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _18500Illegal_Odium extends QuestHandler
-{
+public class _18500Illegal_Odium extends QuestHandler {
+
 	private final static int questId = 18500;
-	
 	public _18500Illegal_Odium() {
 		super(questId);
 	}
@@ -40,19 +39,23 @@ public class _18500Illegal_Odium extends QuestHandler
 			qe.registerQuestNpc(npc).addOnTalkEvent(questId);
 		}
 		qe.registerOnEnterZone(ZoneName.get("HARAMEL_300200000"), questId);
+	    qe.registerOnEnterZone(ZoneName.get("LF1A_SENSORY_AREA_Q18500_210030000"), questId);
+		qe.registerOnMovieEndQuest(175, questId);
+		qe.registerOnMovieEndQuest(456, questId);
 	}
 	
 	@Override
 	public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
+	Player player = env.getPlayer();
+	final QuestState qs = player.getQuestStateList().getQuestState(questId);
+	if (zoneName == ZoneName.get("LF1A_SENSORY_AREA_Q18500_210030000")) {
+		if (qs.getQuestVars().getQuestVars() == 3) {
+			playQuestMovie(env, 175);
+			return true;
+			}
+	    }
 		if (zoneName == ZoneName.get("HARAMEL_300200000")) {
-			final Player player = env.getPlayer();
-			if (player == null)
-				return false;
-			final QuestState qs = player.getQuestStateList().getQuestState(questId);
-			if (qs == null)
-				return false;
-			if (qs.getQuestVars().getQuestVars() == 3) {
-				changeQuestStep(env, 3, 3, true);
+			if (qs.getQuestVars().getQuestVars() == 4) {
 				playQuestMovie(env, 456);
 				return true;
 			}
@@ -64,11 +67,12 @@ public class _18500Illegal_Odium extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
+        if (qs == null)
+		return false;
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203106) { //Alisdair.
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 4762);
 				} else {
 					return sendQuestStartDialog(env);
@@ -78,50 +82,79 @@ public class _18500Illegal_Odium extends QuestHandler
 			int var = qs.getQuestVarById(0);
 			switch (targetId) {
 				case 203166: { //Zephyros.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 0) {
 								return sendQuestDialog(env, 1011);
 							}
-						} case STEP_TO_1: {
-							return defaultCloseDialog(env, 0, 1);
+						}
+                        case SELECT_ACTION_1012: {
+							if (var == 0) {
+							return sendQuestDialog(env, 1012);
+							}
+						}
+                        case STEP_TO_1: {
+							if (var == 0) {
+				            changeQuestStep(env, 0, 1, false);
+                            return closeDialogWindow(env);
+							}
 						}
 					}
 					break;
 				} case 730304: { //Suspicious Odium Piece.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case USE_OBJECT: {
 							if (var == 1) {
 								return sendQuestDialog(env, 1352);
 							}
-						} case STEP_TO_2: {
-							return defaultCloseDialog(env, 1, 2);
+						}
+                        case STEP_TO_2: {
+				            changeQuestStep(env, 1, 2, false);
+                            return closeDialogWindow(env);
 						}
 					}
 					break;
 				} case 730305: { //Suspicious Odium Pile.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case USE_OBJECT: {
 							if (var == 2) {
 								return sendQuestDialog(env, 1693);
 							}
-						} case STEP_TO_3: {
-							playQuestMovie(env, 175);
-							return defaultCloseDialog(env, 2, 3);
+						}
+                        case STEP_TO_3: {
+				            changeQuestStep(env, 2, 3, false);
+                            return closeDialogWindow(env);
 						}
 					}
 				}
 			}
 		} else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 799522) { //Moorilerk.
-				if (dialog == QuestDialog.USE_OBJECT) {
+				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
-				} else if (dialog == QuestDialog.SELECT_REWARD) {
+				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
 					return sendQuestDialog(env, 5);
 				} else {
 					return sendQuestEndDialog(env);
 				}
 			}
+		}
+		return false;
+	}
+
+    @Override
+	public boolean onMovieEndEvent(QuestEnv env, int movieId) {
+		final Player player = env.getPlayer();
+        final QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (movieId == 175) {
+			changeQuestStep(env, 3, 4, false);
+			updateQuestStatus(env);
+			return true;
+		}
+		if (movieId == 456) {
+			changeQuestStep(env, 4, 4, true);
+			updateQuestStatus(env);
+			return true;
 		}
 		return false;
 	}

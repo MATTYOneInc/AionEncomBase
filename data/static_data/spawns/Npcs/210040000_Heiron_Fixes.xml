@@ -56,6 +56,16 @@
 	<spawn npc_id="805318" respawn_time="295">
       <spot x="2761.8367" y="1883.5164" z="153.75107" entity_id="1770"/>
     </spawn>
+	<!-- Vengeful Spirit Of Prapero -->
+	<spawn npc_id="204614" respawn_time="295">
+		<spot x="1591.45" y="2774.31" z="127.633" h="94"/>
+	</spawn>
+	<!-- Litonos ||| LF3_Ghost_Litonos -->
+	<spawn npc_id="204616" respawn_time="295">
+		<spot x="1120.32" y="1725.46" z="107.934" h="2">
+			<temporary_spawn spawn_time="21.*.*" despawn_time="4.*.*"/>
+		</spot>
+	</spawn>
 	<!-- added in new patches -->	
   </spawn_map>
 </spawns>

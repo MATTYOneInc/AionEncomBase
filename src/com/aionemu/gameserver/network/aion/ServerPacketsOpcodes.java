@@ -190,10 +190,10 @@ public class ServerPacketsOpcodes {
 		addPacketOpcode(SM_DP_INFO.class, 0x07, idSet); // 5.8
 		addPacketOpcode(SM_PLAYER_STANCE.class, 0x1F, idSet); // 5.8
 		addPacketOpcode(SM_FORTRESS_STATUS.class, 0x56, idSet); // 5.8
-		addPacketOpcode(SM_FORTRESS_INFO.class, 0xF4, idSet); // 5.8
+		addPacketOpcode(SM_FORTRESS_INFO.class, 0xF5, idSet); // 5.8 before 0xF4 need check! is it work?
 		addPacketOpcode(SM_QUESTION_WINDOW.class, 0x34, idSet); // 5.8
 		addPacketOpcode(SM_MANTRA_EFFECT.class, 0xD0, idSet); // 5.8
-		addPacketOpcode(SM_LEARN_RECIPE.class, 0xF2, idSet); // 5.8
+		addPacketOpcode(SM_LEARN_RECIPE.class, 0xF3, idSet); // 5.8 before 0xF2
 		addPacketOpcode(SM_TRADE_IN_LIST.class, 0x097, idSet); // 5.8
 		addPacketOpcode(SM_REPURCHASE.class, 0xA7, idSet); // 5.8
 		addPacketOpcode(SM_TARGET_IMMOBILIZE.class, 0xCC, idSet); // 5.8
@@ -236,7 +236,7 @@ public class ServerPacketsOpcodes {
 		addPacketOpcode(SM_CRAFT_UPDATE.class, 0xB5, idSet); // 5.8
 		addPacketOpcode(SM_ASCENSION_MORPH.class, 0xB6, idSet); // 5.8
 		addPacketOpcode(SM_FRIEND_UPDATE.class, 0xF1, idSet); // 5.8
-		addPacketOpcode(SM_RECIPE_DELETE.class, 0xF3, idSet); // 5.8
+		addPacketOpcode(SM_RECIPE_DELETE.class, 0xF4, idSet); // 5.8 before 0xF3
 		addPacketOpcode(SM_RECEIVE_BIDS.class, 0x103, idSet); // 5.8
 		addPacketOpcode(SM_OBJECT_USE_UPDATE.class, 0x10A, idSet); // 5.8
 		addPacketOpcode(SM_GROUP_DATA_EXCHANGE.class, 0xB3, idSet); // 5.8

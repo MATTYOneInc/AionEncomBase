@@ -38,10 +38,9 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.WorldMapInstance;
 
-public class _1929A_Sliver_Of_Darkness extends QuestHandler
-{
+public class _1929A_Sliver_Of_Darkness extends QuestHandler {
+
 	private final static int questId = 1929;
-	
 	public _1929A_Sliver_Of_Darkness() {
 		super(questId);
 	}
@@ -66,16 +65,15 @@ public class _1929A_Sliver_Of_Darkness extends QuestHandler
 	public boolean onDialogEvent(final QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		int targetId = env.getTargetId();
 		if (qs == null) {
 			return false;
 		}
-		QuestDialog dialog = env.getDialog();
-		int targetId = env.getTargetId();
 		int var = qs.getQuestVars().getQuestVars();
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 203752: { //Jucleas.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 0) {
 								return sendQuestDialog(env, 1011);
@@ -88,7 +86,7 @@ public class _1929A_Sliver_Of_Darkness extends QuestHandler
 					}
 					break;
 				} case 203852: { //Ludina.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 1) {
 								return sendQuestDialog(env, 1352);
@@ -102,7 +100,7 @@ public class _1929A_Sliver_Of_Darkness extends QuestHandler
 					}
 					break;
 				} case 203164: { //Morai.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 2) {
 								return sendQuestDialog(env, 1693);
@@ -124,7 +122,7 @@ public class _1929A_Sliver_Of_Darkness extends QuestHandler
 					}
 					break;
 				} case 205110: { //Icaronix.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 93) {
 								return sendQuestDialog(env, 2034);
@@ -142,14 +140,14 @@ public class _1929A_Sliver_Of_Darkness extends QuestHandler
 					}
 					break;
 				} case 700240: { //Icaronix's Box.
-					if (dialog == QuestDialog.USE_OBJECT) {
+					if (env.getDialog() == QuestDialog.USE_OBJECT) {
 						if (var == 94) {
 							return playQuestMovie(env, 155);
 						}
 					}
 					break;
 				} case 205111: { //Ecus.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case USE_OBJECT: {
 							if (var == 96) {
 								if (isStigmaEquipped(env)) {
@@ -182,7 +180,7 @@ public class _1929A_Sliver_Of_Darkness extends QuestHandler
 					}
 					break;
 				} case 203701: { //Lavirintos.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 9) {
 								return sendQuestDialog(env, 3398);
@@ -195,8 +193,10 @@ public class _1929A_Sliver_Of_Darkness extends QuestHandler
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203711) { //Miriya.
-				if (dialog == QuestDialog.USE_OBJECT) {
-					return sendQuestDialog(env, 10002);
+                if (env.getDialog() == QuestDialog.USE_OBJECT) {
+                    return sendQuestDialog(env, 10002);
+				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
+					return sendQuestDialog(env, 5);
 				} else {
 					return sendQuestEndDialog(env);
 				}

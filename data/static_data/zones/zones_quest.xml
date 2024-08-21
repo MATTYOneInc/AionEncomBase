@@ -28,6 +28,9 @@
 	<zone mapid="210030000" name="LF1A_SENSORY_AREA_Q14114_210030000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="2096.1797" y="612.72784" z="104.52399" r="10.0"/>
 	</zone>
+	<zone mapid="210030000" name="LF1A_SENSORY_AREA_Q18500_210030000" area_type="SPHERE" zone_type="SUB">
+		<sphere x="2530.0000" y="834.0000" z="103.0000" r="25.0"/>
+	</zone>
 	<!-- Heiron -->
 	<zone mapid="210040000" name="LF3_SENSORY_AREA_Q1607_A_210040000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="359.1732" y="507.5434" z="140.0" r="10.0"/>
@@ -58,6 +61,9 @@
 	</zone>
 	<zone mapid="210040000" name="LF3_SENSORY_AREA_Q1670_C_210040000" area_type="SPHERE" zone_type="SUB">
 		<sphere x="2919.9475" y="2554.2466" z="184.0" r="10.0"/>
+	</zone>
+	<zone mapid="210040000" name="LF3_ITEM_USE_AREA_Q1636" area_type="SPHERE" zone_type="SUB">
+		<sphere x="181.0000" y="2712.0000" z="141.0000" r="25.0"/>
 	</zone>
 	<!-- Inggison [Master Server] -->
 	<zone mapid="210130000" name="LF4_SENSORY_AREA_Q11147_210130000" area_type="SPHERE" zone_type="SUB">
@@ -102,6 +108,9 @@
 	<zone mapid="220030000" name="DF1A_ITEMUSEAREA_Q23403B" area_type="SPHERE" zone_type="SUB">
         <sphere x="1761.3639" y="506.55444" z="247.3006" r="10.0"/>
     </zone>
+	<zone mapid="220030000" name="DF1A_SENSORY_AREA_Q28500_220030000" area_type="SPHERE" zone_type="SUB">
+		<sphere x="2904.0000" y="1473.0000" z="252.0000" r="25.0"/>
+	</zone>
 	<!-- Steel Rake -->
 	<zone mapid="300100000" name="IDShulack_ItemUseArea_Q3200" area_type="SPHERE" zone_type="SUB">
         <sphere x="405.27905" y="506.47733" z="885.7603" r="10.0"/>

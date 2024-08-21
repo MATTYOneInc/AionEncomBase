@@ -22,22 +22,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _30061Cache_Ing_In_On_Turmoil extends QuestHandler
-{
+public class _30061Cache_Ing_In_On_Turmoil extends QuestHandler {
+
 	private final static int questId = 30061;
-	
 	public _30061Cache_Ing_In_On_Turmoil() {
 		super(questId);
 	}
 	
 	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	
-	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(798927).addOnTalkEvent(questId); //Versetti.
 		qe.registerQuestNpc(799381).addOnTalkEvent(questId); //Lania.
 	}

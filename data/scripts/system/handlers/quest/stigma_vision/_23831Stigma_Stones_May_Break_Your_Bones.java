@@ -40,7 +40,7 @@ public class _23831Stigma_Stones_May_Break_Your_Bones extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestNpc(204061).addOnTalkEndEvent(questId); //Aud.
+		qe.registerQuestNpc(204061).addOnTalkEvent(questId); //Aud.
 		qe.registerQuestItem(182216124, questId); //판데모니움 보급품 안내서2.
 		qe.registerOnEnterWorld(questId);
 	}
@@ -85,9 +85,12 @@ public class _23831Stigma_Stones_May_Break_Your_Bones extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
+		if (qs == null) {
+			return false;
+		}
 		if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 204061) { //Aud.
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.USE_OBJECT) {
                     return sendQuestDialog(env, 10002);
 				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
 					return sendQuestDialog(env, 5);

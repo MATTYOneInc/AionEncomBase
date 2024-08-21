@@ -33,7 +33,6 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _1636AFluteForTheFixing extends QuestHandler {
 
 	private final static int questId = 1636;
-
 	public _1636AFluteForTheFixing() {
 		super(questId);
 	}
@@ -50,24 +49,30 @@ public class _1636AFluteForTheFixing extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204535) { // Maximus
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 4762);
-				}
-				else {
+				else if (env.getDialog() == QuestDialog.SELECT_ACTION_4763) {
+					return sendQuestDialog(env, 4763);
+                }
+				else if (env.getDialog() == QuestDialog.ASK_ACCEPTION) {
+					return sendQuestDialog(env, 4);
+                }
+				else if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					return sendQuestStartDialog(env);
-				}
-			}
-		}
+                }
+				else if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+					return closeDialogWindow(env);
+                }
+            }
+        }
 		else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
 			switch (targetId) {
 				case 203792: { // Utsida
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 0) {
 								return sendQuestDialog(env, 1011);
@@ -79,10 +84,17 @@ public class _1636AFluteForTheFixing extends QuestHandler {
 								return sendQuestDialog(env, 2034);
 							}
 						}
+						case SELECT_ACTION_1012: {
+							return sendQuestDialog(env, 1012);
+						}
+						case SELECT_ACTION_1013: {
+							return sendQuestDialog(env, 1013);
+						}
 						case STEP_TO_1: {
 							return defaultCloseDialog(env, 0, 1); // 1
 						}
 						case CHECK_COLLECTED_ITEMS: {
+							removeQuestItem(env, 182201789, 1);
 							return checkQuestItems(env, 1, 2, false, 10000, 10001); // 2
 						}
 						case STEP_TO_4: {
@@ -97,12 +109,12 @@ public class _1636AFluteForTheFixing extends QuestHandler {
 		}
 		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204535) { // Maximus
-				if (dialog == QuestDialog.USE_OBJECT) {
+				if (env.getDialog() == QuestDialog.USE_OBJECT)
 					return sendQuestDialog(env, 10002);
-				}
-				else {
+				else if (env.getDialogId() == 1009)
+					return sendQuestDialog(env, 5);
+				else
 					return sendQuestEndDialog(env);
-				}
 			}
 		}
 		return false;
@@ -113,7 +125,7 @@ public class _1636AFluteForTheFixing extends QuestHandler {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
-			if (player.isInsideZone(ZoneName.get("LF3_ITEMUSEAREA_Q1636"))) {
+			if (player.isInsideZone(ZoneName.get("LF3_ITEM_USE_AREA_Q1636"))) {
 				return HandlerResult.fromBoolean(useQuestItem(env, item, 3, 3, true));
 			}
 		}

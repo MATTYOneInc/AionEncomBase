@@ -4,18 +4,22 @@ import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
+import com.aionemu.gameserver.utils.PacketSendUtility;
+import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /**
  * @author Ritsu
  *
  */
+
 public class _1373WaterTherapy extends QuestHandler {
 
 	private final static int   questId   = 1373;
@@ -33,18 +37,27 @@ public class _1373WaterTherapy extends QuestHandler {
 
 	@Override
 	public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
-		Player player = env.getPlayer();
-		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		final Player player = env.getPlayer();
+		final int id = item.getItemTemplate().getTemplateId();
+		final int itemObjId = item.getObjectId();
+		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
-			if (player.isInsideZone(ZoneName.get("LF2_ITEMUSEAREA_Q1373"))) {
-				removeQuestItem(env, 182201372, 1);
-				useQuestItem(env, item, 0, 2, false, 182201373, 1, 0);
+		if (player.isInsideZone(ZoneName.get("LF2_ITEMUSEAREA_Q1373"))) 
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
+		ThreadPoolManager.getInstance().schedule(new Runnable() {
+			@Override
+			public void run() {
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
+                removeQuestItem(env, 182201372, 1);
+				giveQuestItem(env, 182201373, 1);
+				qs.setQuestVar(2);
 				QuestService.questTimerStart(env, 180);
-				return HandlerResult.SUCCESS;
-			}
-		}
-		return HandlerResult.FAILED;
-	}
+				updateQuestStatus(env);
+			    }
+		     }, 3000);
+	     }
+	   return HandlerResult.SUCCESS;
+    }
 
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {

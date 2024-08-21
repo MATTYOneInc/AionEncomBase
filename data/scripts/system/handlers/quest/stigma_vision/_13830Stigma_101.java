@@ -41,8 +41,8 @@ public class _13830Stigma_101 extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestNpc(203711).addOnTalkEndEvent(questId); //Miriya.
-		qe.registerQuestItem(182216118, questId); //
+		qe.registerQuestNpc(203711).addOnTalkEvent(questId); //Miriya.
+		qe.registerQuestItem(182216118, questId);
 		qe.registerOnEnterWorld(questId);
 	}
 	
@@ -85,9 +85,12 @@ public class _13830Stigma_101 extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
+		if (qs == null) {
+			return false;
+		}
 		if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 203711) { //Miriya.
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.USE_OBJECT) {
                     return sendQuestDialog(env, 10002);
 				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
 					return sendQuestDialog(env, 5);

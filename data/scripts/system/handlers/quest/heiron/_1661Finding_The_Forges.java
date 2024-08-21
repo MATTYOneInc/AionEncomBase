@@ -48,22 +48,45 @@ public class _1661Finding_The_Forges extends QuestHandler {
 		if(env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204600) { 
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
-				} else if (dialog == QuestDialog.ACCEPT_QUEST) {
-					playQuestMovie(env, 200);
-					return sendQuestStartDialog(env);
-				} else
-					return sendQuestStartDialog(env);
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+                }  
+			    if (env.getDialog() == QuestDialog.SELECT_ACTION_1012) {
+                    return sendQuestDialog(env, 1012);
+			    }
+			    if (env.getDialog() == QuestDialog.ASK_ACCEPTION) {
+                    return sendQuestDialog(env, 4);
+                }
+			    if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
+                    playQuestMovie(env, 200);
+                    return sendQuestStartDialog(env);
+                }
+			    if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+                    return sendQuestStartDialog(env);
+                }
+		    }
+	   } 
+       else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 204600) {
-				if (dialog == QuestDialog.START_DIALOG) {
+			  if (env.getDialog() == QuestDialog.START_DIALOG) {
+				  return sendQuestDialog(env, 1352);
+              } 
+              if (env.getDialog() == QuestDialog.SELECT_REWARD) {
+                  qs.setStatus(QuestStatus.REWARD);
+                  updateQuestStatus(env);
+                  return sendQuestEndDialog(env); 
+                }
+			}
+        }
+        else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (targetId == 204600) {
+				if (env.getDialog() == QuestDialog.USE_OBJECT)
 					return sendQuestDialog(env, 1352);
-				} else
+				else if (env.getDialogId() == 1009)
+					return sendQuestDialog(env, 5);
+				else
 					return sendQuestEndDialog(env);
 			}
 		}
@@ -73,27 +96,53 @@ public class _1661Finding_The_Forges extends QuestHandler {
 	@Override
 	public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
 		Player player = env.getPlayer();
-		if (player == null)
-			return false;
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
-  		    int var = qs.getQuestVarById(0);
-				if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1661_A_210040000")) {
-					if (var == 0 ) { //&& var1 == 0
-						changeQuestStep(env, 0, 16, false);
-						return true;
-					}
-				} else if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1661_B_210040000")) {
-					if (var == 16 ) { //&& var1 == 0
-						changeQuestStep(env, 16, 48, false);
-						return true;
-					}
-				} else if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1661_C_210040000")) {
-					if (var == 48 ) { //&& var1 == 0
-						changeQuestStep(env, 48, 48, true);
-						return true;
-					}
+			if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1661_A_210040000")) {
+                if (qs.getQuestVarById(1) == 0) {
+ 			        qs.setQuestVarById(0, qs.getQuestVarById(0) + 16);
+                    qs.setQuestVarById(1,1);
+                    updateQuestStatus(env); 
+		        if (qs.getQuestVarById(0) == 112) {
+                    qs.setQuestVarById(1,0);
+                    qs.setQuestVarById(2,0);
+                    qs.setQuestVarById(3,0);
+			        changeQuestStep(env, 0, 1, false);		    	
+			        updateQuestStatus(env);
+                    return true;
+                    }
 				}
+			} 
+            else if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1661_B_210040000")) {
+                 if (qs.getQuestVarById(2) == 0) {
+ 			        qs.setQuestVarById(0, qs.getQuestVarById(0) + 32);
+                    qs.setQuestVarById(2,1);
+                    updateQuestStatus(env); 
+		         if (qs.getQuestVarById(0) == 112) {
+                    qs.setQuestVarById(1,0);
+                    qs.setQuestVarById(2,0);
+                    qs.setQuestVarById(3,0);
+			        changeQuestStep(env, 0, 1, false);		    	
+			        updateQuestStatus(env);
+                    return true;
+                    }
+				}
+			} 
+            else if (zoneName == ZoneName.get("LF3_SENSORY_AREA_Q1661_C_210040000")) {
+                 if (qs.getQuestVarById(3) == 0) {
+ 			        qs.setQuestVarById(0, qs.getQuestVarById(0) + 64);
+                    qs.setQuestVarById(3,1);
+                    updateQuestStatus(env); 
+		         if (qs.getQuestVarById(0) == 112) {
+                    qs.setQuestVarById(1,0);
+                    qs.setQuestVarById(2,0);
+                    qs.setQuestVarById(3,0);
+			        changeQuestStep(env, 0, 1, false);		    	
+			        updateQuestStatus(env);
+                    return true;
+                    }
+				}
+			}
 		}
 		return false;
 	}

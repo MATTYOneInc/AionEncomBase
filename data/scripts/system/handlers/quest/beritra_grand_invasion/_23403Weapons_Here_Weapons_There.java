@@ -79,9 +79,11 @@ public class _23403Weapons_Here_Weapons_There extends QuestHandler {
 							return sendQuestDialog(env, 1013);
 						}
 					} case STEP_TO_1: {
+						if (var == 0) {
 					    giveQuestItem(env, 182215798, 1); //Infiltration Sensor.
 						changeQuestStep(env, 0, 1, false);
 						return closeDialogWindow(env);
+						}
 					}
 				}
 			} if (targetId == 203628) { //Kueve.
@@ -99,10 +101,11 @@ public class _23403Weapons_Here_Weapons_There extends QuestHandler {
 							return sendQuestDialog(env, 1695);
 						}
 					} case STEP_TO_3: {
-						giveQuestItem(env, 182215798, 1); //Infiltration Sensor.
+						if (var == 2) {
 						giveQuestItem(env, 182215799, 1); //Infiltration Detector.
 						changeQuestStep(env, 2, 3, false);
 						return closeDialogWindow(env);
+						}
 					}
 				}
 			} if (targetId == 804605) { //Shezen.
@@ -116,9 +119,10 @@ public class _23403Weapons_Here_Weapons_There extends QuestHandler {
 							return sendQuestDialog(env, 2375);
 						}
 					} case STEP_TO_5: {
-						giveQuestItem(env, 182215799, 1); //Infiltration Detector.
+						if (var == 4) {
 						changeQuestStep(env, 4, 5, false);
 						return closeDialogWindow(env);
+						}
 					}
 				}
 			} if (targetId == 731645) { //Ruined Invasion Generator.
@@ -128,9 +132,11 @@ public class _23403Weapons_Here_Weapons_There extends QuestHandler {
                             return sendQuestDialog(env, 2716);
                         }
 					} case STEP_TO_6: {
+                        if (var == 5) {
 						giveQuestItem(env, 182215800, 1); //Maintained Circuit.
                         changeQuestStep(env, 5, 6, false);
 						return closeDialogWindow(env);
+                        }
 					}
                 }
             } if (targetId == 731646) { //Malfunctioning Invasion Generator.
@@ -140,11 +146,13 @@ public class _23403Weapons_Here_Weapons_There extends QuestHandler {
                             return sendQuestDialog(env, 3057);
                         }
 					} case SET_REWARD: {
+                        if (var == 6) {
 						giveQuestItem(env, 182215801, 1); //Undamaged Circuit.
                         changeQuestStep(env, 6, 7, false);
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);
+                        }
 					}
                 }
             }
