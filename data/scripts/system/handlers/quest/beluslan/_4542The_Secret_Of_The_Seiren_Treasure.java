@@ -10,7 +10,7 @@
  * You have agree with all of Term of Services agreement with Aion-Unique Development   *
  * =====================================================================================*
  */
-package quest.mission;
+package quest.beluslan;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
@@ -23,17 +23,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4542The_Secret_Of_The_Seiren_Treasure extends QuestHandler
-{
+public class _4542The_Secret_Of_The_Seiren_Treasure extends QuestHandler {
+
     private final static int questId = 4542;
-	
     public _4542The_Secret_Of_The_Seiren_Treasure() {
         super(questId);
     }
 	
     @Override
     public void register() {
-        qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(204768).addOnQuestStart(questId);
         qe.registerQuestNpc(204768).addOnTalkEvent(questId);
         qe.registerQuestNpc(204743).addOnTalkEvent(questId);
@@ -44,11 +42,10 @@ public class _4542The_Secret_Of_The_Seiren_Treasure extends QuestHandler
     public boolean onDialogEvent(QuestEnv env) {
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 204768) {
-                switch (dialog) {
+                switch (env.getDialog()) {
                     case START_DIALOG:
                         return sendQuestDialog(env, 4762);
                     case ACCEPT_QUEST_SIMPLE:
@@ -64,8 +61,6 @@ public class _4542The_Secret_Of_The_Seiren_Treasure extends QuestHandler
                         case START_DIALOG:
                             if (var == 0) {
                                 return sendQuestDialog(env, 1011);
-                            } if (var == 6 && player.getInventory().getItemCountByItemId(182215330) >= 1) {
-                                return sendQuestDialog(env, 3057);
                             }
                         case STEP_TO_1:
                             if (var == 0) {
@@ -73,19 +68,6 @@ public class _4542The_Secret_Of_The_Seiren_Treasure extends QuestHandler
                                 removeQuestItem(env, 182215327, 1);
                                 return defaultCloseDialog(env, 0, 1);
                             }
-                        case STEP_TO_3:
-                            return defaultCloseDialog(env, 2, 3);
-                        case SELECT_REWARD: {
-                            removeQuestItem(env, 182215330, 1);
-                            return defaultCloseDialog(env, 6, 6, true, true);
-                        }
-                        case SELECT_ACTION_3143:
-                            return sendQuestDialog(env, 3143);
-                        case STEP_TO_7: {
-                            playQuestMovie(env, 239);
-                            removeQuestItem(env, 182215330, 1);
-                            return defaultCloseDialog(env, 6, 6, true, true);
-                        }
                     }
                     break;
                 case 204768:
@@ -102,7 +84,8 @@ public class _4542The_Secret_Of_The_Seiren_Treasure extends QuestHandler
                             return defaultCloseDialog(env, 1, 2);
                         case SELECT_REWARD:
                             removeQuestItem(env, 182215330, 1);
-                            return defaultCloseDialog(env, 5, 5, true, false);
+					        changeQuestStep(env, 5, 6, true);
+                            return sendQuestEndDialog(env);
                     }
                     break;
                 case 204808:

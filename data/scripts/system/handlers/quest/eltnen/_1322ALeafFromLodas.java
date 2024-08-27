@@ -18,13 +18,11 @@ package quest.eltnen;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author MrPoke remod By Xitanium
@@ -32,7 +30,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _1322ALeafFromLodas extends QuestHandler {
 
 	private final static int questId = 1322;
-
 	public _1322ALeafFromLodas() {
 		super(questId);
 	}
@@ -55,38 +52,48 @@ public class _1322ALeafFromLodas extends QuestHandler {
 			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
-				else
-					return sendQuestStartDialog(env);
-			}
-			else if (qs != null && qs.getStatus() == QuestStatus.START) {
-				if (env.getDialog() == QuestDialog.START_DIALOG)
-					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009) {
-					qs.setQuestVar(2);
-					updateQuestStatus(env);
-					return sendQuestEndDialog(env);
+				if (env.getDialog() == QuestDialog.SELECT_ACTION_1012) {
+					return sendQuestDialog(env, 1012);
 				}
-				else
-					return sendQuestEndDialog(env);
+				if (env.getDialog() == QuestDialog.ASK_ACCEPTION) {
+					return sendQuestDialog(env, 4);
+				}
+				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
+			        giveQuestItem(env, 182201308, 1);
+					return sendQuestStartDialog(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+				    return closeDialogWindow(env);
+				}
 			}
 			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
 				if (env.getDialog() == QuestDialog.USE_OBJECT)
 					return sendQuestDialog(env, 2375);
-				return sendQuestEndDialog(env);
+				if (env.getDialog() == QuestDialog.SELECT_ACTION_2376) {
+			        removeQuestItem(env, 182201374, 1);
+					return sendQuestDialog(env, 2376);
+				}
+				else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
+					return sendQuestDialog(env, 5);
+				} else {
+					return sendQuestEndDialog(env);
+				}
 			}
 		}
 		else if (targetId == 730008) { // Daminu
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
-				else if (env.getDialog() == QuestDialog.STEP_TO_1 || env.getDialog() == QuestDialog.STEP_TO_2) {
+				if (env.getDialog() == QuestDialog.SELECT_ACTION_1353) {
+			        removeQuestItem(env, 182201308, 1);
+					return sendQuestDialog(env, 1353);
+				}
+				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
+			        giveQuestItem(env, 182201374, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+				    return closeDialogWindow(env);
 				}
-				else
-					return sendQuestStartDialog(env);
 			}
 		}
 		return false;

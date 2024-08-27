@@ -24,11 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1346Killing_For_Castor extends QuestHandler 
-{
+public class _1346Killing_For_Castor extends QuestHandler  {
+
 	private final static int questId = 1346;
 	private final static int[] mob_ids = {210844, 210872, 210878, 210898, 210821, 210845, 210873, 210900};
-
 	public _1346Killing_For_Castor() {
 		super(questId);
 	}
@@ -76,8 +75,6 @@ public class _1346Killing_For_Castor extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getCommonData().getLevel() < 27)
-			return false;
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
@@ -86,20 +83,30 @@ public class _1346Killing_For_Castor extends QuestHandler
 			if (targetId == 203966) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
-				} else {
+				} 
+				if (env.getDialog() == QuestDialog.SELECT_ACTION_1012) {
+					return sendQuestDialog(env, 1012);
+				}
+				if (env.getDialog() == QuestDialog.SELECT_ACTION_1013) {
+					return sendQuestDialog(env, 1013);
+				}
+				if (env.getDialog() == QuestDialog.ACCEPT_QUEST_SIMPLE) {
 					return sendQuestStartDialog(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST_SIMPLE) {
+				    return closeDialogWindow(env);
 				}
 			}
 		} 
 		else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 203965) {
 				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getQuestVarById(0) == 9) {
+					return sendQuestDialog(env, 1352);
+				} if (env.getDialog() == QuestDialog.SELECT_REWARD) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					return sendQuestDialog(env, 1352);
-				} else {
-					return sendQuestStartDialog(env);
+					return sendQuestEndDialog(env);
 				}
 			}
 		} 

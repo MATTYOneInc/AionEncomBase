@@ -10,7 +10,7 @@
  * You have agree with all of Term of Services agreement with Aion-Unique Development   *
  * =====================================================================================*
  */
-package quest.mission;
+package quest.heiron;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3547Enemy_Harassing_The_Elim extends QuestHandler
-{
+public class _3547Enemy_Harassing_The_Elim extends QuestHandler {
+
     private final static int questId = 3547;
-	
     public _3547Enemy_Harassing_The_Elim() {
         super(questId);
     }
@@ -44,10 +43,9 @@ public class _3547Enemy_Harassing_The_Elim extends QuestHandler
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 730024) {
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 1011);
                 } else {
                     return sendQuestStartDialog(env);
@@ -58,7 +56,7 @@ public class _3547Enemy_Harassing_The_Elim extends QuestHandler
         } if (qs != null && qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
             if (targetId == 204647) {
-                switch (dialog) {
+                switch (env.getDialog()) {
                     case START_DIALOG:
                         if (var == 0) {
                             return sendQuestDialog(env, 1352);
