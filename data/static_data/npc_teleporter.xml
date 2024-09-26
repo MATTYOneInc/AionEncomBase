@@ -110,7 +110,7 @@
 			<telelocation loc_id="96" price="9300" pricePvp="9300" type="REGULAR"/>
 		</locations>
 	</teleporter_template>
-	<teleporter_template npc_ids="800245 730220" teleportId="8">
+	<teleporter_template npc_ids="800245 800468 730220 731834" teleportId="8">
 		<locations>
 			<telelocation loc_id="2" price="9300" pricePvp="9300" type="REGULAR"/>
 			<telelocation loc_id="315" price="6400" pricePvp="6400" type="REGULAR"/>
@@ -329,18 +329,18 @@
 			<telelocation loc_id="132" price="1356" pricePvp="1356" type="REGULAR"/>
 		</locations>
 	</teleporter_template>
-	<teleporter_template npc_ids="798901" teleportId="116">
+	<teleporter_template npc_ids="798901 731836" teleportId="116">
 		<locations>
 			<telelocation loc_id="100" teleportid="100001" price="2600" pricePvp="2600" type="FLIGHT"/>
 			<telelocation loc_id="101" teleportid="98001" price="2500" pricePvp="2500" type="FLIGHT"/>
 		</locations>
 	</teleporter_template>
-	<teleporter_template npc_ids="798962" teleportId="117">
+	<teleporter_template npc_ids="798962 731837" teleportId="117">
 		<locations>
 			<telelocation loc_id="99" teleportid="101001" price="2600" pricePvp="2600" type="FLIGHT"/>
 		</locations>
 	</teleporter_template>
-	<teleporter_template npc_ids="799057" teleportId="118">
+	<teleporter_template npc_ids="799057 731838" teleportId="118">
 		<locations>
 			<telelocation loc_id="99" teleportid="99001" price="2500" pricePvp="2500" type="FLIGHT"/>
 		</locations>
