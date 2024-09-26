@@ -38,7 +38,7 @@
     <friendly>USEALL_TELEPORTER_LI USEALL_TELEPORTER_DA</friendly>
   </tribe>
   <tribe name="GUARD_DRAGON">
-	<aggressive>GUARD GUARD_DARK</aggressive>
+	<aggressive>GUARD GUARD_DARK PROTECTGUARD_LIGHT PROTECTGUARD_DARK</aggressive>
     <friendly>USEALL_TELEPORTER_LI USEALL_TELEPORTER_DA</friendly>
   </tribe>
   <tribe name="MONSTER">
@@ -173,8 +173,7 @@
     <hostile>KERUBIM_AFARMER_LF1</hostile>
   </tribe>
   <tribe name="KERUBIM_AFARMER_LF1" base="MONSTER">
-    <aggressive>FARMER_HKERUBIM_LF1</aggressive>
-    <hostile>GUARD_LIGHT_AKERUBIM_LF1</hostile>
+    <aggressive>FARMER_HKERUBIM_LF1 GUARD_LIGHT_AKERUBIM_LF1</aggressive>
   </tribe>
   <tribe name="GUARD_LIGHT_AKERUBIM_LF1" base="GUARD">
     <aggressive>KERUBIM_AFARMER_LF1</aggressive>
