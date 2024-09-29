@@ -1051,9 +1051,6 @@
     <spawn npc_id="203056" respawn_time="60">
       <spot x="1049.110718" y="1208.145752" z="109.57888" h="90" random_walk="0" />
     </spawn>
-    <spawn npc_id="801032" respawn_time="60">
-      <spot x="830.739258" y="1249.638062" z="118.875" h="106" />
-    </spawn>
     <spawn npc_id="203061" respawn_time="60">
       <spot x="847.263367" y="1256.882935" z="119.0" h="91" />
     </spawn>
