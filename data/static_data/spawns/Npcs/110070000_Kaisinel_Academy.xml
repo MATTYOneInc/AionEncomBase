@@ -1,431 +1,220 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-    ンペル訓練所へ移動します。 5.6
-	Spawn By (Encom)
+	Parsed By Angry Catster
+
  -->
 <spawns>
-	<spawn_map map_id="110070000">
-		<!-- Mailbox -->
-	    <spawn npc_id="700000" respawn_time="295">
-            <spot x="466.73800" y="252.016000" z="126.976" h="60"/>
-        </spawn>
-	    <!-- Kaisinel Academy To Sanctum -->
-	    <spawn npc_id="730424" respawn_time="295">
-		    <spot x="443.57170" y="258.000000" z="126.95238" entity_id="328"/>
-	    </spawn>
-	    <!-- Kaisinel Academy To Inggison -->
-	    <spawn npc_id="730425" respawn_time="295">
-		    <spot x="460.00000" y="251.580140" z="127.05328" entity_id="1601"/>
-	    </spawn>
-	    <!-- Empyrean Crucible -->
-	    <spawn npc_id="730430" respawn_time="295">
-		    <spot x="513.85760" y="213.90277" z="131.78000" entity_id="1"/>
-	    </spawn>
-	    <!-- Crucible Challenge -->
-	    <spawn npc_id="730461" respawn_time="295">
-		    <spot x="489.10739" y="213.73048" z="131.87000" entity_id="15"/>
-	    </spawn>
-	    <!-- Dojo Of Discipline -->
-	    <spawn npc_id="730481" respawn_time="295">
-	        <spot x="599.34058" y="268.438480" z="131.79332" entity_id="17"/>
-        </spawn>
-	    <!-- Arena Of Chaos -->
-	    <spawn npc_id="730483" respawn_time="295">
-	        <spot x="600.48114" y="236.699070" z="131.79332" entity_id="31"/>
-        </spawn>
-		<!-- Arena Of Harmony -->
-	    <spawn npc_id="730576" respawn_time="295">
-	        <spot x="570.25458" y="268.427730" z="131.79332" entity_id="36"/>
-	    </spawn>
-	    <!-- Arena Of Glory -->
-	    <spawn npc_id="730644" respawn_time="295">
-	        <spot x="569.33881" y="236.885440" z="131.79332" entity_id="77"/>
-	    </spawn>
-		<!-- Tower Of Challenge -->
-	    <spawn npc_id="835564" respawn_time="295">
-	        <spot x="501.46271" y="214.848020" z="127.14033" entity_id="239"/>
-	    </spawn>
-		
-		<!-- Crucible Guard
-		<Crucible Defender> -->
-		<spawn npc_id="799632" respawn_time="295">
-			<spot x="510.0093" y="215.29237" z="127.483376" h="30"/>
-            <spot x="484.9504" y="215.18774" z="127.54647" h="30"/>
-		    <spot x="533.094" y="249.669" z="127.442" h="59"/>
-		    <spot x="461.251" y="235.52" z="126.972" h="59"/>
-		    <spot x="461.115" y="260.059" z="126.972" h="60"/>
-		    <spot x="507.04" y="289.678" z="127.352" h="90"/>
-		    <spot x="564.78516" y="256.47882" z="127.26962" h="0"/>
-            <spot x="602.9962" y="240.35365" z="127.44449" h="44"/>
-            <spot x="601.49097" y="265.1438" z="127.44102" h="75"/>
-		    <spot x="519.98193" y="252.91771" z="126.97587" h="0" walker_id="CRUCIBLEGUARDKAISINELACADEMY000000000003"/>
-		    <spot x="519.734" y="230.574" z="126.976" h="60" walker_id="CRUCIBLEGUARDKAISINELACADEMY000000000001"/>
-		</spawn>
-		<!-- Crucible Guard
-		<Crucible Defender> -->
-		<spawn npc_id="799633" respawn_time="295">
-			<spot x="517.8493" y="215.39539" z="127.463165" h="30"/>
-            <spot x="492.7272" y="215.45586" z="127.49387" h="30"/>
-		    <spot x="533.098" y="256.333" z="127.445" h="60"/>
-		    <spot x="500.185" y="289.678" z="127.352" h="90"/>
-		    <spot x="461.17" y="243.164" z="126.972" h="60"/>
-		    <spot x="461.13" y="267.774" z="126.972" h="60"/>
-		    <spot x="596.8723" y="234.23032" z="127.44238" h="44"/>
-            <spot x="595.78217" y="270.8527" z="127.44157" h="75"/>
-            <spot x="564.7853" y="249.71608" z="127.270386" h="0"/>
-		    <spot x="591.5792" y="257.4536" z="127.0083" h="44" walker_id="CRUCIBLEGUARDKAISINELACADEMY000000000002"/>
-		    <spot x="503.571" y="327.464" z="126.935" h="89" walker_id="CRUCIBLEGUARDKAISINELACADEMY000000000000"/>
-		</spawn>
-		<!-- Hall Guard
-		<Crucible Defender> -->
-		<spawn npc_id="702556" respawn_time="295">
-			<spot x="499.153" y="334.821" z="126.935" h="90"/>
-		</spawn>
-		<!-- Hall Guard
-		<Crucible Defender> -->
-		<spawn npc_id="702557" respawn_time="295">
-			<spot x="507.773" y="334.695" z="126.935" h="90"/>
-		</spawn>
-		<!-- Hall Guard
-		<Crucible Defender> -->
-		<spawn npc_id="702558" respawn_time="295">
-			<spot x="516.93" y="434.56" z="132.90" h="37"/>
-		</spawn>
-		<!-- Molfus
-		<Crucible Combat Sergeant> -->
-		<spawn npc_id="205309" respawn_time="295">
-			<spot x="492.715" y="251.371" z="127.008" h="60"/>
-		</spawn>
-		<!-- Howkis
-		<Armor Distributor> -->
-		<spawn npc_id="205310" respawn_time="295">
-			<spot x="567.441" y="323.944" z="126.097" h="60"/>
-		</spawn>
-		<!-- Kirroy
-		<Weapon Distributor> -->
-		<spawn npc_id="205311" respawn_time="295">
-			<spot x="567.439" y="325.875" z="126.097" h="60"/>
-		</spawn>
-		<!-- Tanato
-		<Clothing Importer> -->
-		<spawn npc_id="205312" respawn_time="295">
-			<spot x="551.438" y="340.177" z="126.097" h="90"/>
-		</spawn>
-		<!-- Monilou
-		<Consumable Item Distributor> -->
-		<spawn npc_id="205313" respawn_time="295">
-			<spot x="553.266" y="340.185" z="126.097" h="90"/>
-		</spawn>
-		<!-- Inggril
-		<Daeva Of Time> -->
-		<spawn npc_id="205316" respawn_time="295">
-			<spot x="479.409" y="279.182" z="127.515" h="90"/>
-		</spawn>
-		<!-- Helbe
-		<Crucible Trainee> -->
-		<spawn npc_id="205317" respawn_time="295">
-			<spot x="524.146" y="227.765" z="126.976" h="96"/>
-		</spawn>
-		<!-- Rakwis
-		<Crucible Trainee> -->
-		<spawn npc_id="205318" respawn_time="295">
-			<spot x="522.252" y="220.899" z="126.976" h="40"/>
-		</spawn>
-		<!-- Adel
-		<Crucible Trainee> -->
-		<spawn npc_id="205319" respawn_time="295">
-			<spot x="525.734" y="222.624" z="126.976" h="55"/>
-		</spawn>
-		<!-- Modaro
-		<Warehouse Manager> -->
-		<spawn npc_id="205443" respawn_time="295">
-			<spot x="440.452" y="325.101" z="126.097"/>
-		</spawn>
-		<!-- Romonia
-		<General Goods Merchant> -->
-		<spawn npc_id="205444" respawn_time="295">
-			<spot x="455.823" y="309.688" z="126.097" h="30"/>
-		</spawn>
-		<!-- Adinale
-		<Stigma Master> -->
-		<spawn npc_id="205451" respawn_time="295">
-			<spot x="455.706" y="340.224" z="126.097" h="90"/>
-		</spawn>
-		<!-- Barius
-		<Conditioning Officer> -->
-		<spawn npc_id="205456" respawn_time="295">
-			<spot x="476.982" y="271.428" z="126.976" h="90"/>
-		</spawn>
-		<!-- Quilven
-		<Crucible Outreach> -->
-		<spawn npc_id="205471" respawn_time="295">
-			<spot x="481.141" y="271.106" z="126.976" h="86"/>
-		</spawn>
-		<!-- Jailos
-		<Divine Armor Merchant>-->
-		<spawn npc_id="205488" respawn_time="295">
-			<spot x="551.414" y="309.711" z="126.097" h="30"/>
-		</spawn>
-		<!-- Polus
-		<Divine Weapon Merchant> -->
-		<spawn npc_id="205489" respawn_time="295">
-			<spot x="553.241" y="309.697" z="126.097" h="30"/>
-		</spawn>
-		<!-- Junos
-		<Crucible Combat Sergeant> -->
-		<spawn npc_id="205985" respawn_time="295">
-			<spot x="529.379" y="256.779" z="127.295" h="40"/>
-		</spawn>
-		<!-- Tyri
-		<Divine Weapon Upgrader> -->
-		<spawn npc_id="207023" respawn_time="295">
-			<spot x="559.890" y="314.447" z="126.097" h="45"/>
-		</spawn>
-		<!-- Forde
-		<Divine Armor Upgrader> -->
-		<spawn npc_id="207024" respawn_time="295">
-			<spot x="558.581" y="314.039" z="126.097" h="45"/>
-		</spawn>
-		<!-- Sutien
-		<Accessory Distributor> -->
-		<spawn npc_id="207031" respawn_time="295">
-			<spot x="567.486" y="324.926" z="126.097" h="60"/>
-		</spawn>
-		<!-- Taina
-		<Discipline Instructor> -->
-		<spawn npc_id="207056" respawn_time="295">
-			<spot x="603.4698" y="245.46532" z="126.981514" h="54"/>
-		</spawn>
-		<!-- Cades
-		<Chaos Instructor> -->
-		<spawn npc_id="207057" respawn_time="295">
-			<spot x="602.3116" y="259.87424" z="126.981514" h="59"/>
-		</spawn>
-		<!-- Poria
-		<Crucible Quartermaster> -->
-		<spawn npc_id="207092" respawn_time="295">
-			<spot x="604.6654" y="251.68721" z="126.981514" h="59"/>
-		</spawn>
-		<!-- Ambos
-		<Crucible Administrator> -->
-		<spawn npc_id="207095" respawn_time="295">
-			<spot x="604.6689" y="252.79822" z="126.981514" h="59"/>
-		</spawn>
-	    <!-- Nasmi
-		<Arena of Harmony Instructor> -->
-	    <spawn npc_id="207097" respawn_time="295">
-			<spot x="580.158" y="272.916" z="126.982" h="90"/>
-	    </spawn>
-		<!-- Valdia
-		<Training Camp Instructor> -->
-		<spawn npc_id="207121" respawn_time="295">
-			<spot x="580.16534" y="232.73637" z="126.981514" h="29"/>
-		</spawn>
-		<!-- Moeris
-		<Training Camp Instructor> -->
-		<spawn npc_id="207125" respawn_time="295">
-			<spot x="569.7739" y="262.65436" z="127.22302" h="95"/>
-        </spawn>
-		<!-- Porpirion
-		<Arena Weapon Merchant> -->
-		<spawn npc_id="207155" respawn_time="295">
-            <spot x="496.16226" y="258.854" z="127.00828" h="41"/>
-        </spawn>
-		<!-- Arianrod
-		<Arena Armor Merchant> -->
-        <spawn npc_id="207156" respawn_time="295">
-            <spot x="499.0118" y="259.76746" z="127.00828" h="34"/>
-        </spawn>
-		<!-- Breno
-		<Arena Consumables Merchant> -->
-        <spawn npc_id="207157" respawn_time="295">
-            <spot x="501.8715" y="259.67764" z="127.00828" h="29"/>
-        </spawn>
-		<!-- Ionike
-		<Arena Consumables Merchant> -->
-        <spawn npc_id="207158" respawn_time="295">
-            <spot x="504.56885" y="258.46436" z="127.00829" h="20"/>
-        </spawn>
-		<!-- Perbano
-		<Crucible Administrator> -->
-		<spawn npc_id="207163" respawn_time="295">
-			<spot x="483.309" y="251.072" z="126.976" h="60"/>
-		</spawn>
-		<!-- Alkarurops
-		<Arena Weapon Merchant> -->
-		<spawn npc_id="207165" respawn_time="295">
-		    <spot x="548.822" y="246.921" z="127.286" h="30"/>
-        </spawn>
-		<!-- Spika
-		<Arena Armor Merchant> -->
-		<spawn npc_id="207166" respawn_time="295">
-		    <spot x="547.071" y="246.945" z="127.286" h="30"/>
-        </spawn>
-		<!-- Rikardo
-		<Arena Consumables Merchant> -->
-		<spawn npc_id="207167" respawn_time="295">
-		    <spot x="548.811" y="259.063" z="127.286" h="90"/>
-        </spawn>
-		<!-- Arachnis
-		<Arena Consumables Merchant> -->
-		<spawn npc_id="207168" respawn_time="295">
-		    <spot x="547.079" y="259.100" z="127.286" h="90"/>
-        </spawn>
-		<!-- Adrass
-		<Tactician> -->
-		<spawn npc_id="798514" respawn_time="295">
-            <spot x="482.425690" y="392.874054" z="127.563004" h="0"/>
-        </spawn>
-		<!-- Perna
-		<Tactician> -->
-		<spawn npc_id="798515" respawn_time="295">
-            <spot x="482.425751" y="394.588745" z="127.563004" h="0"/>
-        </spawn>
-		<!-- Walzen
-		<Crucible Director> -->
-		<spawn npc_id="798604" respawn_time="295">
-            <spot x="500.35254" y="237.65253" z="127.00828" h="90"/>
-        </spawn>
-		<!-- Millen
-		<General's Consumable Item Distributor> -->
-		<spawn npc_id="798714" respawn_time="295">
-			<spot x="503.5204" y="422.45883" z="130.7633" h="30"/>
-		</spawn>
-		<!-- Iriana
-		<Officer's Special Item Distributor> -->
-		<spawn npc_id="798715" respawn_time="295">
-			<spot h="0" z="126.78955" y="404.62726" x="493.33707"/>
-		</spawn>
-	    <!-- Giniki
-		<Sanctum Strategic HQ> -->
-	    <spawn npc_id="800500" respawn_time="295">
-	        <spot x="448.152" y="234.529" z="126.972" h="22"/>
-	    </spawn>
-	    <!-- Radaman
-		<Sanctum Dimensional Research> -->
-	    <spawn npc_id="800501" respawn_time="295">
-	        <spot x="454.959" y="234.807" z="126.972" h="31"/>
-	    </spawn>
-	    <!-- Jigor
-		<Divine Accessory Distributor> -->
-	    <spawn npc_id="800514" respawn_time="295">
-	        <spot x="604.57" y="250.358" z="126.982" h="59"/>
-	    </spawn>
-	    <!-- Nanami
-		<Veteran Divine Accessory Distributor> -->
-	    <spawn npc_id="800515" respawn_time="295">
-	        <spot x="604.45" y="253.962" z="126.982" h="60"/>
-	    </spawn>
-		<!-- Millen
-		<Contribution Officer> -->
-		<spawn npc_id="802213" respawn_time="295">
-            <spot h="22" z="130.76343" y="423.94998" x="496.42487"/>
-        </spawn>
-		<!-- Kilix
-		<General's Special Item Distributor> -->
-		<spawn npc_id="802216" respawn_time="295">
-			<spot x="506.02652" y="422.71796" z="130.76343" h="31"/>
-		</spawn>
-		<!-- Tisiphone
-		<Entrance Manager> -->
-		<spawn npc_id="802437" respawn_time="295">
-			<spot x="499.50522" y="412.49075" z="126.789635" h="102"/>
-		</spawn>
-		<!-- Keraunos
-		<Entrance Manager> -->
-		<spawn npc_id="802438" respawn_time="295">
-			<spot x="508.78" y="415.57" z="127.43" h="45"/>
-		</spawn>
-		<!-- Agaron
-		<Special Equipment Distributor> -->
-		<spawn npc_id="804184" respawn_time="295">
-            <spot h="0" z="126.78955" y="376.62595" x="493.30435"/>
-        </spawn>
-		<!-- Chthonios
-		<Veteran Officer's Distributor> -->
-        <spawn npc_id="804186" respawn_time="295">
-            <spot h="0" z="126.78955" y="383.5998" x="493.3493"/>
-        </spawn>
-		<!-- Artemis
-		<Governor's Steward> -->
-        <spawn npc_id="804187" respawn_time="295">
-            <spot x="500.97244" y="422.62073" z="130.76343" h="29"/>
-        </spawn>
-		<!-- Allea
-		<Divine Equipment Distributor> -->
-        <spawn npc_id="804673" respawn_time="295">
-            <spot h="0" z="126.78955" y="397.56854" x="493.40253"/>
-        </spawn>
-		<!-- Hypsitos
-		<Divine Equipment Distributor> -->
-        <spawn npc_id="804674" respawn_time="295">
-            <spot h="0" z="126.78955" y="390.55133" x="493.35046"/>
-        </spawn>
-		<!-- Segneth
-		<Kaisinel's Aide> -->
-		<spawn npc_id="831336" respawn_time="295">
-            <temporary_spawn spawn_time="22.*.*" despawn_time="5.*.*"/>
-			<spot x="499.29108" y="244.74673" z="127.00828" h="88"/>
-        </spawn>
-		<!-- Derdin
-		<Honorable Weapon Distributor> -->
-		<spawn npc_id="831355" respawn_time="295">
-            <spot x="553.8271" y="256.59738" z="127.285904" h="67"/>
-        </spawn>
-		<!-- Kapis
-		<Honorable Weapon Enchanter> -->
-        <spawn npc_id="831356" respawn_time="295">
-            <spot x="553.14325" y="260.0184" z="127.2859" h="74"/>
-        </spawn>
-		<!-- Lenian
-		<Honorable Weapon Exchange Officer> -->
-        <spawn npc_id="831357" respawn_time="295">
-            <spot x="542.5171" y="260.5819" z="127.28589" h="105"/>
-        </spawn>
-		<!-- Twain
-		<Honorable Armor Distributor> -->
-        <spawn npc_id="831358" respawn_time="295">
-            <spot x="542.5331" y="256.55884" z="127.285904" h="112"/>
-        </spawn>
-		<!-- Sorian
-		<Honorable Armor Enchanter> -->
-        <spawn npc_id="831361" respawn_time="295">
-            <spot x="542.534" y="249.55037" z="127.2859" h="9"/>
-        </spawn>
-		<!-- Leestein
-		<Honorable Accessory Distributor> -->
-		<spawn npc_id="832734" respawn_time="295">
-            <spot x="553.34" y="249.57562" z="127.2859" h="54"/>
-        </spawn>
-		<!-- Heirin
-		<Honorable Weapon Distributor> -->
-		<spawn npc_id="832897" respawn_time="295">
-            <spot x="542.57043" y="245.51146" z="127.2859" h="11"/>
-        </spawn>
-		<!-- Nicorun
-		<Honorable Ceramium Trader> -->
-        <spawn npc_id="832898" respawn_time="295">
-            <spot x="553.7046" y="245.64928" z="127.28589" h="48"/>
-        </spawn>
-		<!-- Baloy
-		<Honorable Ceramium Trader> -->
-        <spawn npc_id="832903" respawn_time="295">
-            <spot x="551.3356" y="245.31897" z="127.28589" h="30"/>
-        </spawn>
-		<!-- Rapaeon
-		<Prime Guardian Weapon Contributor> -->
-		<spawn npc_id="834936" respawn_time="295">
-		    <spot h="60" z="126.78955" y="397.71213" x="521.3545"/>
-		</spawn>
-		<!-- Tegrao
-		<Prime Guardian Armor Contributor> -->
-		<spawn npc_id="834937" respawn_time="295">
-		    <spot h="60" z="126.78955" y="390.75403" x="521.4605"/>
-		</spawn>
-		<!-- Feita
-		<Prime Guardian Accessory Contributor> -->
-		<spawn npc_id="834938" respawn_time="295">
-		    <spot h="59" z="126.78955" y="394.23157" x="521.4129"/>
-		</spawn>
-	</spawn_map>
+  <spawn_map map_id="110070000">
+    <spawn npc_id="834938" respawn_time="1">
+      <spot x="524.044922" y="396.548157" z="126.78955" h="60" />
+    </spawn>
+    <spawn npc_id="798604" respawn_time="60">
+      <spot x="500.809052" y="240.072327" z="127.00828" h="90" />
+    </spawn>
+    <spawn npc_id="799633" respawn_time="60">
+      <spot x="492.374512" y="217.415329" z="127.271866" h="30" />
+      <spot x="568.392395" y="240.612595" z="127.24576" h="15" />
+      <spot x="574.351318" y="269.563599" z="127.24577" h="106" />
+      <spot x="600.562500" y="264.354187" z="127.245735" h="76" />
+      <spot x="595.343872" y="269.693817" z="127.24574" h="76" />
+      <spot x="596.437744" y="235.839508" z="127.24576" h="43" />
+      <spot x="573.116211" y="235.994904" z="127.24575" h="15" />
+      <spot x="517.454529" y="217.417862" z="127.25578" h="30" />
+      <spot x="569.007874" y="264.284698" z="127.24573" h="106" />
+      <spot x="601.463318" y="240.916092" z="127.245735" h="46" />
+    </spawn>
+    <spawn npc_id="205317" respawn_time="60">
+      <spot x="524.146484" y="227.764862" z="126.97587" h="96" />
+    </spawn>
+    <spawn npc_id="798715" respawn_time="1">
+      <spot x="509.352783" y="401.241241" z="126.78955" h="60" />
+    </spawn>
+    <spawn npc_id="800501" respawn_time="60">
+      <spot x="456.698090" y="234.687485" z="126.97164" h="30" />
+    </spawn>
+    <spawn npc_id="799632" respawn_time="60">
+      <spot x="485.372894" y="217.389709" z="127.24924" h="30" />
+      <spot x="510.452881" y="217.392242" z="127.26487" h="30" />
+    </spawn>
+    <spawn npc_id="205316" respawn_time="60">
+      <spot x="479.409241" y="279.182495" z="127.51458" h="90" />
+    </spawn>
+    <spawn npc_id="205310" respawn_time="60">
+      <spot x="567.440857" y="323.231384" z="126.096664" h="60" />
+    </spawn>
+    <spawn npc_id="207153" respawn_time="60">
+      <spot x="604.726563" y="251.516617" z="126.981514" h="60" />
+    </spawn>
+    <spawn npc_id="730481" respawn_time="60">
+      <spot x="599.141479" y="266.125183" z="127.24588" h="0" entity_id="17" />
+    </spawn>
+    <spawn npc_id="731691" respawn_time="60">
+      <spot x="599.141479" y="266.125183" z="127.24588" h="0" entity_id="17" />
+    </spawn>
+    <spawn npc_id="802438" respawn_time="1">
+      <spot x="508.775909" y="415.615204" z="126.78955" h="45" />
+    </spawn>
+    <spawn npc_id="802216" respawn_time="1">
+      <spot x="517.014648" y="435.020233" z="130.76157" h="36" />
+    </spawn>
+    <spawn npc_id="207092" respawn_time="60">
+      <spot x="604.741516" y="252.978195" z="126.981514" h="60" />
+    </spawn>
+    <spawn npc_id="804186" respawn_time="1">
+      <spot x="497.352783" y="401.241241" z="126.78955" h="0" />
+    </spawn>
+    <spawn npc_id="731842" respawn_time="60">
+      <spot x="459.836578" y="251.627304" z="127.13356" h="0" entity_id="1601" />
+    </spawn>
+    <spawn npc_id="205309" respawn_time="60">
+      <spot x="492.091644" y="251.650070" z="127.00828" h="60" />
+    </spawn>
+    <spawn npc_id="835564" respawn_time="60">
+      <spot x="501.478271" y="215.124390" z="127.58731" h="0" entity_id="239" />
+    </spawn>
+    <spawn npc_id="835566" respawn_time="60">
+      <spot x="501.478271" y="215.124390" z="127.58731" h="0" entity_id="239" />
+    </spawn>
+    <spawn npc_id="205315" respawn_time="60">
+      <spot x="483.309052" y="251.072327" z="126.97587" h="60" />
+    </spawn>
+    <spawn npc_id="207095" respawn_time="60">
+      <spot x="604.749695" y="254.321075" z="126.981514" h="60" />
+    </spawn>
+    <spawn npc_id="800500" respawn_time="60">
+      <spot x="448.237366" y="234.687485" z="126.97164" h="30" />
+    </spawn>
+    <spawn npc_id="730461" respawn_time="60">
+      <spot x="488.990448" y="213.659607" z="127.60689" h="0" entity_id="15" />
+    </spawn>
+    <spawn npc_id="730967" respawn_time="1">
+      <spot x="490.261505" y="409.850494" z="126.78955" h="90" entity_id="215" />
+    </spawn>
+    <spawn npc_id="730940" respawn_time="1">
+      <spot x="503.624298" y="460.202362" z="132.08101" h="90" entity_id="257" />
+    </spawn>
+    <spawn npc_id="205444" respawn_time="60">
+      <spot x="455.822937" y="309.688354" z="126.096664" h="30" />
+    </spawn>
+    <spawn npc_id="702647" respawn_time="1">
+      <spot x="503.520050" y="406.253052" z="126.789635" h="0" />
+    </spawn>
+    <spawn npc_id="207168" respawn_time="60">
+      <spot x="547.078979" y="259.100464" z="127.2859" h="90" />
+    </spawn>
+    <spawn npc_id="702556" respawn_time="1">
+      <spot x="509.372314" y="394.219696" z="126.78955" h="60" />
+    </spawn>
+    <spawn npc_id="207167" respawn_time="60">
+      <spot x="548.811462" y="259.062653" z="127.2859" h="90" />
+    </spawn>
+    <spawn npc_id="205318" respawn_time="60">
+      <spot x="521.251526" y="220.899414" z="126.97587" h="40" />
+    </spawn>
+    <spawn npc_id="730483" respawn_time="60">
+      <spot x="599.402100" y="237.441071" z="127.34005" h="0" entity_id="31" />
+    </spawn>
+    <spawn npc_id="731693" respawn_time="60">
+      <spot x="599.402100" y="237.441071" z="127.34005" h="0" entity_id="31" />
+    </spawn>
+    <spawn npc_id="205456" respawn_time="60">
+      <spot x="476.981903" y="271.427917" z="126.97587" h="90" />
+    </spawn>
+    <spawn npc_id="207166" respawn_time="60">
+      <spot x="547.070801" y="246.944504" z="127.285904" h="30" />
+    </spawn>
+    <spawn npc_id="205312" respawn_time="60">
+      <spot x="550.968384" y="340.177399" z="126.096664" h="90" />
+    </spawn>
+    <spawn npc_id="834937" respawn_time="1">
+      <spot x="524.044922" y="394.048157" z="126.78955" h="60" />
+    </spawn>
+    <spawn npc_id="804673" respawn_time="1">
+      <spot x="497.372314" y="394.219696" z="126.78955" h="0" />
+    </spawn>
+    <spawn npc_id="207024" respawn_time="60">
+      <spot x="558.580872" y="314.039154" z="126.09673" h="45" />
+    </spawn>
+    <spawn npc_id="205443" respawn_time="60">
+      <spot x="440.451935" y="325.100983" z="126.096664" h="0" />
+    </spawn>
+    <spawn npc_id="798714" respawn_time="1">
+      <spot x="515.208740" y="431.950562" z="130.76291" h="36" />
+    </spawn>
+    <spawn npc_id="205319" respawn_time="60">
+      <spot x="524.734436" y="222.623627" z="126.97587" h="55" />
+    </spawn>
+    <spawn npc_id="730576" respawn_time="60">
+      <spot x="571.383057" y="267.393768" z="127.245964" h="0" entity_id="36" />
+    </spawn>
+    <spawn npc_id="731695" respawn_time="60">
+      <spot x="571.383057" y="267.393768" z="127.245964" h="0" entity_id="36" />
+    </spawn>
+    <spawn npc_id="702836" respawn_time="1">
+      <spot x="503.520050" y="406.253052" z="126.789635" h="0" />
+    </spawn>
+    <spawn npc_id="834936" respawn_time="1">
+      <spot x="524.044922" y="391.548157" z="126.78955" h="60" />
+    </spawn>
+    <spawn npc_id="798515" respawn_time="1">
+      <spot x="482.425751" y="394.588745" z="126.78955" h="0" />
+    </spawn>
+    <spawn npc_id="207022" respawn_time="60">
+      <spot x="562.011414" y="332.796967" z="126.096725" h="73" />
+    </spawn>
+    <spawn npc_id="802540" respawn_time="1">
+      <spot x="494.657990" y="409.109924" z="126.78955" h="90" />
+    </spawn>
+    <spawn npc_id="207023" respawn_time="60">
+      <spot x="559.890259" y="314.447357" z="126.096725" h="43" />
+    </spawn>
+    <spawn npc_id="205451" respawn_time="60">
+      <spot x="455.705627" y="340.224457" z="126.096664" h="90" />
+    </spawn>
+    <spawn npc_id="798514" respawn_time="1">
+      <spot x="482.425690" y="392.874054" z="126.78955" h="0" />
+    </spawn>
+    <spawn npc_id="205311" respawn_time="60">
+      <spot x="567.439392" y="326.537903" z="126.096664" h="60" />
+    </spawn>
+    <spawn npc_id="804674" respawn_time="1">
+      <spot x="497.372314" y="397.719696" z="126.78955" h="0" />
+    </spawn>
+    <spawn npc_id="731721" respawn_time="60">
+      <spot x="443.878601" y="258.603699" z="126.97165" h="0" entity_id="328" />
+    </spawn>
+    <spawn npc_id="802541" respawn_time="1">
+      <spot x="512.770874" y="409.067505" z="126.78955" h="90" />
+    </spawn>
+    <spawn npc_id="205985" respawn_time="60">
+      <spot x="529.379395" y="256.778625" z="127.29545" h="60" />
+    </spawn>
+    <spawn npc_id="207151" respawn_time="60">
+      <spot x="604.726563" y="250.124725" z="126.981514" h="60" />
+    </spawn>
+    <spawn npc_id="730644" respawn_time="60">
+      <spot x="570.111389" y="237.775635" z="127.33166" h="0" entity_id="77" />
+    </spawn>
+    <spawn npc_id="731697" respawn_time="60">
+      <spot x="570.111389" y="237.775635" z="127.33166" h="0" entity_id="77" />
+    </spawn>
+    <spawn npc_id="205488" respawn_time="60">
+      <spot x="550.967957" y="309.589478" z="126.096664" h="30" />
+    </spawn>
+    <spawn npc_id="802437" respawn_time="1">
+      <spot x="499.505493" y="411.488007" z="126.789635" h="90" />
+    </spawn>
+    <spawn npc_id="207165" respawn_time="60">
+      <spot x="548.821899" y="246.921036" z="127.2859" h="30" />
+    </spawn>
+    <spawn npc_id="207021" respawn_time="60">
+      <spot x="563.086792" y="318.388000" z="126.09673" h="53" />
+    </spawn>
+    <spawn npc_id="730430" respawn_time="60">
+      <spot x="513.445679" y="214.108383" z="127.56741" h="0" entity_id="1" />
+    </spawn>
+    <spawn npc_id="207031" respawn_time="60">
+      <spot x="567.485718" y="324.926361" z="126.096664" h="60" />
+    </spawn>
+  </spawn_map>
 </spawns>
