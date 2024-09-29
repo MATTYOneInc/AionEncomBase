@@ -50,14 +50,11 @@ public class SteelRakeCabineInstance extends GeneralInstanceHandler
 	@Override
 	public void onInstanceCreate(WorldMapInstance instance) {
 		super.onInstanceCreate(instance);
-		switch (Rnd.get(1, 3)) {
-		    case 1:
-				spawn(219026, 353.814f, 491.557f, 949.466f, (byte) 119); //Sweeper Nunukin.
-			break;
-			case 2:
+		switch (Rnd.get(1, 2)) {
+			case 1:
 				spawn(219032, 462.71558f, 512.5599f, 952.5455f, (byte) 1); //Madame Bovariki.
 			break;
-			case 3:
+			case 2:
 				spawn(219032, 506.1134f, 545.7197f, 952.4226f, (byte) 74); //Madame Bovariki.
 			break;
 		}
@@ -127,7 +124,7 @@ public class SteelRakeCabineInstance extends GeneralInstanceHandler
 			    despawnNpc(npc);
 			break;
 			case 219033: //Golden Eye Mantutu.
-				sendMsg("[SUCCES]: You have finished <Steel Rake Cabine>");
+				////sendMsg("[SUCCES]: You have finished <Steel Rake Cabine>");
 				spawn(700554, 736.64728f, 493.73834f, 941.4781f, (byte) 45); //Pirate Ship Treasure Box.
 				spawn(700554, 720.41028f, 511.63718f, 939.7604f, (byte) 90); //Pirate Ship Treasure Box.
 		        spawn(700554, 739.51251f, 506.14313f, 941.4781f, (byte) 77); //Pirate Ship Treasure Box.

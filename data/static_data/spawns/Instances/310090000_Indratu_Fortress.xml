@@ -1,343 +1,286 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-	インドラト要塞
-	Spawn By (Encom)
+	Parsed By Angry Catster
+
  -->
 <spawns>
-	<spawn_map map_id="310090000">
-		<!-- Indratu Dragonblade
-		<Indratu Legion> -->
-		<spawn npc_id="214105">
-		    <spot h="36" z="995.89087" y="614.276" x="417.2629"/>
-            <spot h="36" z="995.57306" y="613.4127" x="415.05566"/>
-            <spot h="67" z="1017.6261" y="632.205" x="648.6912"/>
-            <spot h="71" z="1017.7253" y="634.1229" x="647.41187"/>
-            <spot h="2" z="1007.4512" y="394.80594" x="552.0765" random_walk="6"/>
-            <spot h="6" z="987.3322" y="471.2398" x="339.8946"/>
-            <spot h="6" z="987.6102" y="468.76163" x="340.73328"/>
-            <spot h="61" z="1007.7949" y="639.4982" x="482.4678"/>
-            <spot h="61" z="1007.6811" y="641.865" x="482.28348"/>
-            <spot h="32" z="1006.83936" y="393.76688" x="543.3813" random_walk="6"/>
-            <spot h="63" z="1006.7066" y="423.7634" x="557.9687" random_walk="6"/>
-		</spawn>
-		<!-- Indratu Dragonblade
-		<Indratu Legion> -->
-		<spawn npc_id="214106">
-		    <spot h="64" z="1013.97076" y="505.5478" x="672.38605"/>
-            <spot h="52" z="1012.2416" y="605.87726" x="529.4315" random_walk="3"/>
-            <spot h="53" z="995.8755" y="506.7122" x="406.6016" random_walk="3"/>
-            <spot h="34" z="983.7435" y="504.6382" x="318.5953"/>
-		</spawn>
-		<!-- Indratu Infiltrator
-		<Indratu Legion> -->
-		<spawn npc_id="214107">
-		    <spot h="62" z="1013.88324" y="379.95413" x="602.1386" random_walk="6"/>
-            <spot h="50" z="1012.38556" y="387.55063" x="602.07965" random_walk="6"/>
-            <spot h="8" z="1008.5171" y="391.34503" x="505.7056" random_walk="6"/>
-            <spot h="41" z="986.36255" y="548.2426" x="354.34094"/>
-            <spot h="42" z="987.13556" y="549.38116" x="355.74518"/>
-            <spot h="1" z="1008.07056" y="385.49142" x="506.62802" random_walk="6"/>
-		</spawn>
-		<!-- Indratu Infiltrator
-		<Indratu Legion> -->
-		<spawn npc_id="214108">
-		    <spot h="72" z="1018.1215" y="697.5442" x="570.21796"/>
-            <spot h="72" z="1018.34296" y="695.80743" x="571.53705"/>
-            <spot h="79" z="1019.6802" y="723.8284" x="558.318"/>
-            <spot h="79" z="1019.601" y="724.9252" x="556.56836"/>
-            <spot h="88" z="1019.32135" y="670.599" x="607.7101"/>
-            <spot h="88" z="1019.3243" y="670.5258" x="609.47107"/>
-		</spawn>
-		<!-- Indratu Breeder
-		<Indratu Legion> -->
-		<spawn npc_id="214109">
-		    <spot h="16" z="1012.4701" y="531.85266" x="613.19336"/>
-            <spot h="36" z="1023.1189" y="368.81445" x="633.4512"/>
-		</spawn>
-		<!-- Indratu Wardrake
-		<Indratu Legion> -->
-		<spawn npc_id="214111">
-		    <spot x="376.27789" y="624.27637" z="995.41772" random_walk="6"/>
-		    <spot x="583.3761" y="668.50061" z="1024.4596" random_walk="6"/>
-		    <spot x="490.16254" y="388.0654" z="1010.9826" random_walk="6"/>
-		    <spot x="328.36401" y="442.7894" z="995.42847" random_walk="6"/>
-		    <spot x="692.17444" y="396.6369" z="1038.7115" random_walk="6"/>
-		    <spot x="344.88211" y="624.67297" z="998.7016" random_walk="6"/>
-		    <spot x="610.34906" y="604.12061" z="1024.3936" random_walk="6"/>
-		    <spot x="277.04163" y="517.52808" z="988.25885" random_walk="6"/>
-		    <spot x="643.70282" y="549.95343" z="1024.3936" random_walk="6"/>
-		    <spot x="444.57751" y="651.89984" z="1006.6437" random_walk="6"/>
-		    <spot x="648.59314" y="406.72412" z="1025.6505" random_walk="6"/>
-		    <spot x="606.53503" y="621.91687" z="1024.3936" random_walk="6"/>
-		    <spot x="652.58185" y="502.83197" z="1024.3936" random_walk="6"/>
-		    <spot x="423.24603" y="427.69717" z="1008.5741" random_walk="6"/>
-		    <spot x="653.65521" y="478.81091" z="1017.7173" random_walk="6"/>
-		    <spot x="362.03714" y="456.77417" z="1008.5741" random_walk="6"/>
-		    <spot x="512.70972" y="719.16888" z="1017.3111" random_walk="6"/>
-		    <spot x="641.40759" y="565.00989" z="1024.3936" random_walk="6"/>
-		    <spot x="467.47223" y="694.11029" z="1020.8287" random_walk="6"/>
-		    <spot x="527.74225" y="393.87106" z="1010.9826" random_walk="6"/>
-		    <spot x="300.68732" y="592.70557" z="985.08722" random_walk="6"/>
-		    <spot x="322.87595" y="537.15668" z="995.41772" random_walk="6"/>
-		    <spot x="347.72556" y="590.21918" z="993.28448" random_walk="6"/>
-		    <spot x="503.12836" y="701.86292" z="1020.1094" random_walk="6"/>
-		    <spot x="245.28885" y="509.07361" z="995.41772" random_walk="6"/>
-		    <spot x="432.37149" y="395.88351" z="1021.0667" random_walk="6"/>
-		    <spot x="373.28204" y="589.9223" z="999.63055" random_walk="6"/>
-		    <spot x="294.17142" y="604.49841" z="985.08722" random_walk="6"/>
-		    <spot x="640.71814" y="526.9743" z="1019.1951" random_walk="6"/>
-		    <spot x="265.91318" y="490.47794" z="995.41772" random_walk="6"/>
-		    <spot x="596.53235" y="693.5144" z="1024.3936" random_walk="6"/>
-		    <spot x="660.00854" y="334.46826" z="1039.0262" random_walk="6"/>
-		    <spot x="464.20206" y="629.22833" z="1012.5274" random_walk="6"/>
-		    <spot x="302.49106" y="525.25903" z="987.20294" random_walk="6"/>
-		    <spot x="467.13193" y="395.22278" z="1020.8469" random_walk="6"/>
-		    <spot x="631.4173" y="589.78345" z="1024.3936" random_walk="6"/>
-		    <spot x="313.57809" y="573.67181" z="995.41772" random_walk="6"/>
-		    <spot x="712.03137" y="358.6705" z="1044.7739" random_walk="6"/>
-		    <spot x="312.84467" y="455.62781" z="997.18738" random_walk="6"/>
-		    <spot x="636.42493" y="423.32956" z="1018.6527" random_walk="6"/>
-		    <spot x="621.92719" y="616.98096" z="1024.3936" random_walk="6"/>
-		    <spot x="643.63599" y="393.64572" z="1025.6505" random_walk="6"/>
-		    <spot x="533.3053" y="716.20258" z="1017.3111" random_walk="6"/>
-		    <spot x="617.7688" y="386.50159" z="1028.8557" random_walk="6"/>
-		    <spot x="395.91046" y="437.58264" z="1011.0356" random_walk="6"/>
-		    <spot x="578.86536" y="398.23569" z="1013.4352" random_walk="6"/>
-		    <spot x="287.55179" y="495.38043" z="995.41772" random_walk="6"/>
-		    <spot x="627.12585" y="319.36417" z="1034.7178" random_walk="6"/>
-		</spawn>
-		<!-- Indratu Bloodblade
-		<Indratu Legion> -->
-		<spawn npc_id="214112">
-		    <spot h="60" z="1016.41284" y="584.12836" x="675.02466"/>
-            <spot h="60" z="1016.375" y="581.5245" x="675.2541"/>
-            <spot h="71" z="1014.83954" y="516.8758" x="528.84644"/>
-            <spot h="5" z="1014.8405" y="500.83426" x="492.78262"/>
-            <spot h="118" z="1014.8395" y="543.8232" x="474.81125"/>
-            <spot h="104" z="980.5768" y="604.3906" x="320.05704"/>
-            <spot h="101" z="980.95526" y="605.8152" x="321.65527"/>
-            <spot h="65" z="1014.8395" y="558.9559" x="508.0661"/>
-		</spawn>
-		<!-- Indratu Bloodblade
-		<Indratu Legion> -->
-		<spawn npc_id="214113">
-		    <spot h="77" z="1009.75476" y="415.08273" x="444.03033"/>
-		</spawn>
-		<!-- Indratu Warder
-		<Indratu Legion> -->
-		<spawn npc_id="214114">
-		    <spot h="9" z="1008.14355" y="414.39417" x="521.11847" random_walk="2"/>
-		</spawn>
-		<!-- Indratu Stormblade
-		<Indratu Legion> -->
-		<spawn npc_id="214115">
-            <spot h="104" z="1014.52246" y="509.14005" x="496.8698"/>
-            <spot h="90" z="1014.5216" y="517.89105" x="519.80676"/>
-            <spot h="98" z="1014.4492" y="500.978" x="515.11884"/>
-            <spot h="49" z="1014.5208" y="551.0146" x="504.31583"/>
-            <spot h="29" z="1014.5199" y="541.8398" x="484.1189"/>
-            <spot h="119" z="1013.30286" y="539.1465" x="575.04034" random_walk="3"/>
-            <spot h="103" z="1002.5457" y="684.3312" x="444.8811" random_walk="6"/>
-            <spot h="3" z="1001.1995" y="638.3251" x="443.6644" random_walk="6"/>
-            <spot h="94" z="1000.6223" y="680.15674" x="421.47943"/>
-            <spot h="95" z="1000.2247" y="679.5836" x="419.75018"/>
-		</spawn>
-		<!-- Indratu Stormblade
-		<Indratu Legion> -->
-		<spawn npc_id="214116">
-		    <spot h="54" z="1027.5527" y="522.5457" x="532.0558"/>
-            <spot h="103" z="1012.2388" y="460.5781" x="528.088"/>
-            <spot h="91" z="1012.0875" y="464.75015" x="537.5593"/>
-            <spot h="117" z="1026.9739" y="538.871" x="472.1001"/>
-            <spot h="20" z="1011.90234" y="593.65436" x="465.47568"/>
-            <spot h="54" z="1011.9705" y="598.68787" x="475.27747"/>
-            <spot h="88" z="1026.974" y="558.31964" x="513.3381"/>
-            <spot h="25" z="1027.5544" y="499.46582" x="488.4789"/>
-		</spawn>
-		<!-- Indratu Terrorblade
-		<Indratu Legion> -->
-		<spawn npc_id="214117">
-		    <spot h="7" z="981.57635" y="541.77277" x="290.95963" random_walk="6"/>
-            <spot h="68" z="1018.2842" y="488.3161" x="609.6243" random_walk="3"/>
-            <spot h="87" z="1006.6429" y="716.5506" x="480.05667" random_walk="6"/>
-		</spawn>
-		<!-- Indratu Battle Mage
-		<Indratu Legion> -->
-		<spawn npc_id="214118">
-		    <spot h="26" z="1014.3469" y="376.97736" x="445.61072"/>
-            <spot h="26" z="1014.303" y="377.44504" x="443.15558"/>
-            <spot h="57" z="1025.1633" y="372.86853" x="659.8491" random_walk="6"/>
-            <spot h="117" z="1013.3436" y="658.81244" x="550.27313" random_walk="6"/>
-            <spot h="42" z="1000.25867" y="551.0126" x="418.90387" random_walk="6"/>
-            <spot h="10" z="994.58984" y="435.21448" x="374.6031" random_walk="6"/>
-            <spot h="24" z="999.2946" y="469.34598" x="385.52148" random_walk="3"/>
-            <spot h="34" z="1013.73065" y="585.9582" x="629.89667" random_walk="6"/>
-            <spot h="85" z="1012.15234" y="458.3779" x="633.4025" random_walk="6"/>
-		</spawn>
-		<!-- Indratu Battle Mage
-		<Indratu Legion> -->
-		<spawn npc_id="214119">
-		    <spot h="117" z="1010.7033" y="455.0717" x="473.42438" random_walk="6"/>
-            <spot h="67" z="1007.04083" y="488.15842" x="440.8136" random_walk="6"/>
-            <spot h="34" z="1027.335" y="356.48026" x="650.1462" random_walk="6"/>
-		</spawn>
-		<!-- Indratu Warlock
-		<Indratu Legion> -->
-		<spawn npc_id="214120">
-		    <spot h="53" z="1014.441" y="560.5242" x="492.2284"/>
-            <spot h="23" z="1014.4529" y="555.99615" x="482.5335"/>
-		</spawn>
-		<!-- Indratu Deathpriest
-		<Indratu Legion> -->
-		<spawn npc_id="214121">
-		    <spot h="62" z="1011.26263" y="682.9412" x="524.48596" random_walk="6"/>
-		</spawn>
-		<!-- Indratu Deathpriest
-		<Indratu Legion> -->
-		<spawn npc_id="214122">
-		    <spot h="61" z="1014.5933" y="647.88184" x="510.5629" random_walk="3"/>
-            <spot h="78" z="1009.9703" y="414.09375" x="445.4416"/>
-            <spot h="93" z="1007.6402" y="424.5218" x="537.69037"/>
-		</spawn>
-		<!-- Indratu Excorcist
-		<Indratu Legion> -->
-		<spawn npc_id="214123">
-		    <spot h="59" z="996.6659" y="519.5167" x="471.0052"/>
-            <spot h="59" z="997.33136" y="522.0235" x="471.0872"/>
-            <spot h="99" z="1007.5717" y="532.3079" x="492.1517"/>
-            <spot h="99" z="1007.43805" y="538.59393" x="505.47803"/>
-            <spot h="99" z="1015.85455" y="515.5217" x="507.85306"/>
-		</spawn>
-		<!-- Indratu Elite Praetor
-		<Indratu Legion> -->
-		<spawn npc_id="214124">
-		    <spot h="38" z="1015.81885" y="542.4844" x="495.63416"/>
-            <spot h="89" z="984.85895" y="478.4493" x="491.6991"/>
-            <spot h="59" z="984.9751" y="475.6872" x="494.38318"/>
-            <spot h="30" z="966.4977" y="479.64835" x="522.1655"/>
-		</spawn>
-		<!-- Indratu Elite Praetor
-		<Indratu Legion> -->
-		<spawn npc_id="214125">
-		    <spot h="65" z="996.70197" y="553.72797" x="545.0505"/>
-            <spot h="81" z="996.70197" y="565.3237" x="536.9097"/>
-            <spot h="39" z="1007.6439" y="521.9129" x="505.19308"/>
-		</spawn>
-		<!-- Indratu Aegis
-		<Indratu Legion> -->
-		<spawn npc_id="214126">
-		    <spot h="112" z="967.40295" y="501.05307" x="517.5504"/>
-            <spot h="48" z="992.2676" y="490.67523" x="468.3451"/>
-            <spot h="24" z="981.4334" y="487.02478" x="545.8381"/>
-            <spot h="43" z="991.8129" y="527.3932" x="542.64813"/>
-            <spot h="117" z="968.8898" y="471.7327" x="508.1261"/>
-            <spot h="12" z="1004.2551" y="538.72705" x="475.10254"/>
-            <spot h="9" z="969.23627" y="531.27435" x="504.0459"/>
-            <spot h="17" z="998.22705" y="542.7357" x="523.34955"/>
-            <spot h="113" z="967.40295" y="510.076" x="521.2378"/>
-            <spot h="96" z="969.23627" y="496.57635" x="489.29193"/>
-		</spawn>
-		<!-- Indratu Aegis
-		<Indratu Legion> -->
-		<spawn npc_id="214127">
-		    <spot h="112" z="969.23627" y="507.678" x="505.5991"/>
-            <spot h="113" z="969.23627" y="511.97888" x="507.14844"/>
-            <spot h="41" z="1023.2445" y="367.03754" x="631.0895"/>
-		</spawn>
-		<!-- Indratu Sarvan
-		<Indratu Legion> -->
-		<spawn npc_id="214128">
-		    <spot h="48" z="966.15515" y="485.7268" x="533.35895"/>
-            <spot h="66" z="966.1569" y="511.18713" x="542.82135"/>
-            <spot h="17" z="966.1547" y="482.22614" x="511.1024"/>
-		</spawn>
-		<!-- Indratu Sarvan
-		<Indratu Legion> -->
-		<spawn npc_id="214129">
-		    <spot h="53" z="967.1022" y="499.4535" x="543.32574"/>
-            <spot h="53" z="967.10223" y="493.2883" x="540.8582"/>
-            <spot h="76" z="966.6076" y="523.0213" x="537.37665"/>
-		</spawn>
-		<!-- Indratu Physician
-		<Indratu Legion> -->
-		<spawn npc_id="214130">
-		    <spot h="9" z="969.23627" y="527.37866" x="506.0704"/>
-		</spawn>
-		<!-- Indratu Physician
-		<Indratu Legion> -->
-		<spawn npc_id="214131">
-		    <spot h="98" z="969.23627" y="498.53683" x="494.2255"/>
-		</spawn>
-		<!-- Indratu Guard Tower
-		<Indratu Legion> -->
-        <spawn npc_id="214155">
-            <spot x="512.4389" y="443.51074" z="1012.2885" h="105"/>
-            <spot x="552.12115" y="460.01025" z="1010.4662" h="75"/>
-            <spot x="477.52277" y="617.87854" z="1008.0823" h="56"/>
-            <spot x="441.53018" y="603.10736" z="1003.9219" h="14"/>
-		</spawn>
-		<!-- Praetorius Artair
-		<Indratu Legion> -->
-		<spawn npc_id="214156">
-		    <spot h="99" z="1028.8584" y="528.5219" x="501.0722"/>
-		</spawn>
-		<!-- Staff Captain Lahumu
-		<Indratu Legion> -->
-		<spawn npc_id="214158">
-		    <spot h="52" z="966.9907" y="493.82925" x="548.0471"/>
-		</spawn>
-		<!-- Brigadier Indratu
-		<Indratu Legion>
-		A Balaur so powerful, he commands an entire legion.
-		He commands an Abyss fortress that can be reached through
-		the Heiron Abyss Gate deep in the Nute Warrens -->
-		<spawn npc_id="214159">
-		    <spot h="112" z="968.9094" y="514.9001" x="493.31345"/>
-		</spawn>
-		<!-- Indratu Mender
-		<Indratu Legion> -->
-		<spawn npc_id="214160">
-		    <spot h="87" z="1008.5629" y="418.34988" x="575.94934" random_walk="6"/>
-		</spawn>
-		<!-- Indratu Mender
-		<Indratu Legion> -->
-		<spawn npc_id="214161">
-		    <spot h="19" z="1012.7516" y="530.6599" x="615.2412"/>
-		</spawn>
-		<!-- Adjutant Ursanafi
-		<Indratu Legion> -->
-		<spawn npc_id="214163">
-		    <spot h="72" z="997.0809" y="566.34717" x="550.72546"/>
-		</spawn>
-		<!-- Commander Inshar
-		<Indratu Legion> -->
-		<spawn npc_id="214164">
-		    <spot h="92" z="1005.33105" y="670.3475" x="465.39813" random_walk="6"/>
-		</spawn>
-		
-		<!-- Erebus
-		<Daeva Of Zephyr>
-		A Daeva Of Zephyr infiltrating the Indratu Fortress -->
-		<spawn npc_id="204651">
-			<spot x="571.47500" y="354.72200" z="1013.1900" h="79"/>
-		</spawn>
-		<!-- Major Blessed Relics -->
-		<spawn npc_id="831989">
-            <spot x="557.18760" y="339.38150" z="1015.1280" h="34"/>
-        </spawn>
-		<!-- Indratu Fortress Exit -->
-		<spawn npc_id="700271">
-			<spot x="564.38025" y="324.95798" z="1015.7567" entity_id="28"/>
-		</spawn>
-		<!-- Indratu Fortress Gate -->
-		<spawn npc_id="700372">
-            <spot x="524.15771" y="481.23468" z="1013.5057" entity_id="52"/>
-			<spot x="480.01099" y="575.73517" z="1013.5405" entity_id="53"/>
-		</spawn>
-		<!-- Balaur Artifact
-		An Artifact inside Indratu Fortress -->
-		<spawn npc_id="700515">
-			<spot x="491.68869" y="516.29236" z="968.84601" entity_id="54"/>
-		</spawn>
-	</spawn_map>
+  <spawn_map map_id="310090000">
+    <spawn npc_id="214107">
+      <spot x="506.966339" y="385.494568" z="1008.0408" h="3" />
+      <spot x="602.258301" y="387.455902" z="1012.44305" h="60" />
+      <spot x="357.144043" y="549.053223" z="987.4595" h="33" />
+      <spot x="601.937378" y="379.931671" z="1013.8437" h="60" />
+      <spot x="354.051575" y="548.637817" z="986.2448" h="33" />
+      <spot x="505.922729" y="391.376892" z="1008.4972" h="3" />
+    </spawn>
+    <spawn npc_id="214105">
+      <spot x="552.023132" y="394.901062" z="1007.44305" h="63" />
+      <spot x="543.393005" y="394.111816" z="1006.84174" h="3" />
+      <spot x="416.764801" y="617.653625" z="995.78156" h="38" />
+      <spot x="413.927551" y="616.504517" z="995.3582" h="38" />
+      <spot x="558.381653" y="423.899139" z="1006.7199" h="100" />
+      <spot x="647.667236" y="635.165649" z="1018.0732" h="66" />
+      <spot x="482.999146" y="639.500244" z="1007.8636" h="61" />
+      <spot x="339.646454" y="471.479187" z="987.2853" h="93" />
+      <spot x="483.034454" y="642.652771" z="1007.7491" h="61" />
+      <spot x="648.594971" y="632.350708" z="1017.6339" h="66" />
+      <spot x="342.738922" y="472.068146" z="987.48224" h="93" />
+    </spawn>
+    <spawn npc_id="214118">
+      <spot x="660.159607" y="372.753296" z="1025.2234" h="60" />
+      <spot x="633.527832" y="457.655579" z="1012.12103" h="83" random_walk="2" />
+      <spot x="373.624115" y="434.063629" z="994.3991" h="26" random_walk="2" />
+      <spot x="383.685944" y="470.885803" z="999.5243" h="100" />
+      <spot x="416.573151" y="553.361389" z="1000.1794" h="66" />
+      <spot x="550.630981" y="658.648193" z="1013.3983" h="6" />
+      <spot x="443.440521" y="377.818237" z="1014.2422" h="20" />
+      <spot x="620.102417" y="585.222595" z="1013.6724" h="10" />
+    </spawn>
+    <spawn npc_id="214111">
+      <spot x="245.288849" y="509.073608" z="985.10596" h="60" random_walk="12" />
+      <spot x="578.865356" y="398.235687" z="1009.293" h="60" random_walk="12" />
+      <spot x="660.008545" y="334.468262" z="1032.1517" h="60" random_walk="12" />
+      <spot x="347.725555" y="590.219177" z="985.2075" h="60" random_walk="8" />
+      <spot x="533.305298" y="716.202576" z="1014.3743" h="60" random_walk="8" />
+      <spot x="512.709717" y="719.168884" z="1009.7886" h="60" random_walk="8" />
+      <spot x="490.162537" y="388.065399" z="1009.53656" h="60" random_walk="8" />
+      <spot x="617.768799" y="386.501587" z="1015.848" h="60" random_walk="8" />
+      <spot x="640.718140" y="526.974304" z="1016.2929" h="60" random_walk="12" />
+      <spot x="294.171417" y="604.498413" z="978.00726" h="60" random_walk="8" />
+      <spot x="322.875946" y="537.156677" z="983.04553" h="60" random_walk="12" />
+      <spot x="423.246033" y="427.697174" z="1005.4906" h="60" random_walk="12" />
+      <spot x="464.202057" y="629.228333" z="1005.4389" h="60" random_walk="12" />
+      <spot x="373.282043" y="589.922302" z="991.8874" h="60" random_walk="12" />
+      <spot x="631.417297" y="589.783447" z="1013.55005" h="60" random_walk="8" />
+      <spot x="312.844666" y="455.627808" z="986.9253" h="60" random_walk="8" />
+      <spot x="636.424927" y="423.329559" z="1014.7009" h="60" random_walk="12" />
+      <spot x="648.593140" y="406.724121" z="1016.54047" h="60" random_walk="8" />
+      <spot x="672.571167" y="501.366760" z="1013.6801" h="50" />
+      <spot x="712.031372" y="358.670502" z="1036.2515" h="60" random_walk="12" />
+      <spot x="641.407593" y="565.009888" z="1015.0281" h="60" random_walk="8" />
+      <spot x="432.371490" y="395.883514" z="1011.5861" h="60" random_walk="8" />
+      <spot x="596.532349" y="693.514404" z="1020.01624" h="60" random_walk="8" />
+      <spot x="313.578094" y="573.671814" z="980.5894" h="60" random_walk="12" />
+      <spot x="444.577515" y="651.899841" z="1001.93805" h="60" random_walk="12" />
+      <spot x="583.376099" y="668.500610" z="1018.25446" h="60" random_walk="12" />
+      <spot x="302.491058" y="525.259033" z="982.8995" h="60" random_walk="8" />
+      <spot x="467.131927" y="395.222778" z="1011.5582" h="60" random_walk="12" />
+      <spot x="606.535034" y="621.916870" z="1014.0011" h="60" random_walk="8" />
+      <spot x="277.041626" y="517.528076" z="983.81995" h="60" random_walk="8" />
+      <spot x="328.364014" y="442.789398" z="987.9071" h="60" random_walk="8" />
+      <spot x="518.213806" y="689.222168" z="1011.1685" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_18" walker_index="1" />
+      <spot x="643.635986" y="393.645721" z="1018.3984" h="60" random_walk="8" />
+      <spot x="265.913177" y="490.477936" z="984.9074" h="60" random_walk="12" />
+      <spot x="287.551788" y="495.380432" z="983.7474" h="60" random_walk="12" />
+      <spot x="467.472229" y="694.110291" z="1005.66833" h="60" random_walk="12" />
+      <spot x="300.687317" y="592.705566" z="978.7144" h="60" random_walk="8" />
+      <spot x="395.910461" y="437.582642" z="1000.2743" h="60" random_walk="8" />
+      <spot x="692.174438" y="396.636902" z="1028.341" h="60" random_walk="12" />
+      <spot x="627.125854" y="319.364166" z="1028.6621" h="60" random_walk="12" />
+      <spot x="362.037140" y="456.774170" z="988.85376" h="60" random_walk="12" />
+      <spot x="621.927185" y="616.980957" z="1013.8087" h="60" random_walk="8" />
+      <spot x="503.128357" y="701.862915" z="1008.55786" h="60" random_walk="12" />
+      <spot x="376.277893" y="624.276367" z="989.9192" h="60" random_walk="12" />
+      <spot x="653.655212" y="478.810913" z="1013.02155" h="60" random_walk="8" />
+      <spot x="643.702820" y="549.953430" z="1015.22845" h="60" random_walk="8" />
+      <spot x="527.742249" y="393.871063" z="1006.8349" h="60" random_walk="8" />
+      <spot x="344.882111" y="624.672974" z="988.0534" h="60" random_walk="12" />
+      <spot x="610.349060" y="604.120605" z="1012.94653" h="60" random_walk="8" />
+      <spot x="652.581848" y="502.831970" z="1015.325" h="60" random_walk="8" />
+      <spot x="318.214630" y="499.463989" z="983.92255" h="46" />
+    </spawn>
+    <spawn npc_id="214108">
+      <spot x="552.836548" y="725.613770" z="1019.22174" h="106" />
+      <spot x="609.176575" y="668.011841" z="1019.1806" h="73" />
+      <spot x="570.225708" y="697.496338" z="1018.1198" h="73" />
+      <spot x="607.808838" y="670.645264" z="1019.3244" h="73" />
+      <spot x="518.213806" y="689.222168" z="1011.1685" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_18" walker_index="0" />
+      <spot x="572.989746" y="694.774109" z="1018.6568" h="73" />
+      <spot x="558.424316" y="723.884827" z="1019.7007" h="63" />
+    </spawn>
+    <spawn npc_id="214161">
+      <spot x="614.984924" y="528.905884" z="1012.6874" h="13" />
+    </spawn>
+    <spawn npc_id="214163">
+      <spot x="551.979980" y="567.330017" z="997.0809" h="71" />
+    </spawn>
+    <spawn npc_id="214109">
+      <spot x="287.230469" y="508.125977" z="983.7939" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_3" walker_index="0" />
+      <spot x="665.866211" y="536.164978" z="1016.28687" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_12" walker_index="1" />
+      <spot x="666.154907" y="544.592834" z="1016.182" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_4" walker_index="0" />
+      <spot x="600.354736" y="418.450256" z="1009.5035" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_2" walker_index="0" />
+      <spot x="405.808685" y="428.771698" z="1003.64514" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_7" walker_index="0" />
+      <spot x="328.063324" y="455.832489" z="986.58563" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_6" walker_index="0" />
+      <spot x="628.723511" y="321.852478" z="1028.6128" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_8" walker_index="0" />
+      <spot x="613.060364" y="531.851929" z="1012.4506" h="13" />
+      <spot x="282.212555" y="588.076294" z="978.2039" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_13" walker_index="0" />
+      <spot x="563.334717" y="671.667419" z="1016.00494" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_10" walker_index="0" />
+      <spot x="633.350525" y="368.683136" z="1023.13544" h="20" />
+    </spawn>
+    <spawn npc_id="214160">
+      <spot x="287.230469" y="508.125977" z="983.7939" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_3" walker_index="1" />
+      <spot x="665.866211" y="536.164978" z="1016.28687" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_12" walker_index="0" />
+      <spot x="666.154907" y="544.592834" z="1016.182" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_4" walker_index="1" />
+      <spot x="328.063324" y="455.832489" z="986.58563" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_6" walker_index="1" />
+      <spot x="561.164734" y="425.580078" z="1006.87695" h="100" />
+      <spot x="282.212555" y="588.076294" z="978.2039" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_13" walker_index="1" />
+      <spot x="563.334717" y="671.667419" z="1016.00494" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_10" walker_index="1" />
+    </spawn>
+    <spawn npc_id="214126">
+      <spot x="468.406830" y="491.136536" z="992.29913" h="35" />
+      <spot x="538.464600" y="532.295288" z="993.58154" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_5" />
+      <spot x="600.354736" y="418.450256" z="1009.5035" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_2" walker_index="1" />
+      <spot x="405.808685" y="428.771698" z="1003.64514" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_7" walker_index="1" />
+      <spot x="504.564606" y="531.620117" z="969.23627" h="10" />
+      <spot x="628.723511" y="321.852478" z="1028.6128" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_8" walker_index="1" />
+      <spot x="520.064026" y="508.468323" z="967.40295" h="53" />
+      <spot x="489.694244" y="496.627014" z="969.23627" h="96" />
+      <spot x="545.690002" y="488.709991" z="981.83136" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_3" />
+      <spot x="524.565430" y="547.722107" z="998.4601" h="0" random_walk="2" walker_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_4" />
+      <spot x="517.728455" y="502.094879" z="967.40295" h="51" />
+      <spot x="471.029907" y="535.374146" z="1002.12604" h="13" />
+      <spot x="510.279999" y="471.237213" z="969.37836" h="0" random_walk="2" walker_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_10" />
+    </spawn>
+    <spawn npc_id="214122">
+      <spot x="505.054474" y="647.083130" z="1014.6316" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_9" />
+      <spot x="444.970490" y="414.100372" z="1009.94476" h="75" />
+    </spawn>
+    <spawn npc_id="214116">
+      <spot x="529.886108" y="458.917297" z="1012.2857" h="96" />
+      <spot x="465.171265" y="593.327393" z="1011.9068" h="38" />
+      <spot x="513.196533" y="557.833618" z="1026.9738" h="83" />
+      <spot x="488.879364" y="500.508453" z="1027.5538" h="20" />
+      <spot x="472.209229" y="538.951721" z="1026.9739" h="113" />
+      <spot x="476.415680" y="598.477661" z="1011.9587" h="38" />
+      <spot x="537.748352" y="462.204163" z="1012.12756" h="96" />
+      <spot x="531.274170" y="521.850281" z="1027.553" h="53" />
+    </spawn>
+    <spawn npc_id="214155">
+      <spot x="449.137695" y="592.713562" z="1008.3876" h="37" />
+      <spot x="515.587524" y="448.400055" z="1012.1411" h="38" />
+      <spot x="554.596680" y="465.246368" z="1010.73364" h="38" />
+      <spot x="486.798737" y="610.053223" z="1008.8408" h="38" />
+    </spawn>
+    <spawn npc_id="214125">
+      <spot x="545.307556" y="551.904236" z="996.70197" h="43" />
+      <spot x="535.506287" y="565.840942" z="996.70197" h="101" />
+      <spot x="504.833252" y="522.965088" z="1007.77637" h="40" />
+    </spawn>
+    <spawn npc_id="214113">
+      <spot x="677.046021" y="581.391418" z="1016.4976" h="66" />
+      <spot x="442.985626" y="416.233521" z="1009.53516" h="75" />
+      <spot x="516.568542" y="536.015503" z="1029.1024" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_3" walker_index="1" />
+      <spot x="486.981842" y="521.677795" z="1029.1022" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_2" walker_index="1" />
+      <spot x="323.036163" y="605.846497" z="981.06964" h="100" />
+    </spawn>
+    <spawn npc_id="214115">
+      <spot x="514.255981" y="502.096313" z="1014.4621" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_5" />
+      <spot x="421.380066" y="682.313477" z="1000.97723" h="96" random_walk="2" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_15" />
+      <spot x="440.372650" y="693.031433" z="1004.1076" h="96" random_walk="2" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_14" />
+      <spot x="503.886139" y="547.302551" z="1014.52" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_6" />
+      <spot x="443.400116" y="686.026062" z="1002.352" h="96" random_walk="2" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_17" />
+      <spot x="496.171082" y="506.881439" z="1014.52136" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_1" />
+      <spot x="423.632355" y="675.519409" z="1000.19434" h="96" random_walk="2" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_16" />
+      <spot x="522.010010" y="518.766418" z="1014.5215" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_4" />
+      <spot x="575.199585" y="539.132568" z="1013.29956" h="6" />
+    </spawn>
+    <spawn npc_id="214120">
+      <spot x="482.567932" y="556.939209" z="1014.44525" h="97" />
+      <spot x="491.877655" y="561.474182" z="1014.43524" h="97" />
+    </spawn>
+    <spawn npc_id="214159">
+      <spot x="494.685791" y="514.371643" z="968.9094" h="111" />
+    </spawn>
+    <spawn npc_id="214112">
+      <spot x="507.942108" y="558.770203" z="1014.8395" h="67" />
+      <spot x="474.940369" y="543.973145" z="1014.8394" h="8" />
+      <spot x="675.802490" y="583.998413" z="1016.4646" h="66" />
+      <spot x="320.094574" y="604.505493" z="980.6001" h="100" />
+      <spot x="492.977539" y="500.955261" z="1014.83954" h="9" />
+      <spot x="528.944580" y="517.062866" z="1014.83954" h="69" />
+    </spawn>
+    <spawn npc_id="214127">
+      <spot x="508.059692" y="511.284973" z="969.23627" h="111" />
+      <spot x="506.524872" y="507.594421" z="969.23627" h="111" />
+      <spot x="630.302368" y="368.004791" z="1022.9744" h="20" />
+    </spawn>
+    <spawn npc_id="214124">
+      <spot x="469.631134" y="521.786255" z="997.159" h="60" />
+      <spot x="505.937256" y="537.506470" z="1007.4389" h="98" />
+      <spot x="510.811981" y="509.263184" z="1014.94794" h="98" />
+      <spot x="469.063599" y="518.721375" z="996.3133" h="53" />
+      <spot x="488.484528" y="470.255646" z="986.48517" h="60" />
+      <spot x="522.417786" y="480.343079" z="966.49084" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_9" />
+      <spot x="492.666595" y="531.101135" z="1007.5717" h="98" />
+      <spot x="487.317474" y="474.352570" z="986.3267" h="66" />
+      <spot x="490.800629" y="488.244354" z="967.40295" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_8" walker_index="0" />
+      <spot x="490.800629" y="488.244354" z="967.40295" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_8" walker_index="1" />
+    </spawn>
+    <spawn npc_id="214119">
+      <spot x="443.300262" y="488.060364" z="1008.08215" h="66" />
+      <spot x="445.845428" y="376.751160" z="1014.3791" h="20" />
+      <spot x="471.571655" y="456.504333" z="1010.47797" h="66" />
+      <spot x="660.369995" y="366.190063" z="1026.581" h="60" />
+    </spawn>
+    <spawn npc_id="700372">
+      <spot x="480.012939" y="575.755493" z="1013.52594" entity_id="53" />
+      <spot x="524.283691" y="480.831024" z="1013.434" entity_id="52" />
+    </spawn>
+    <spawn npc_id="214156">
+      <spot x="501.874512" y="528.606750" z="1028.8584" h="38" />
+    </spawn>
+    <spawn npc_id="214123">
+      <spot x="548.181396" y="392.277527" z="1007.09534" h="0" random_walk="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_5" />
+    </spawn>
+    <spawn npc_id="214128">
+      <spot x="533.768433" y="484.189697" z="966.15497" h="40" />
+      <spot x="543.133362" y="509.663422" z="966.1569" h="60" />
+      <spot x="516.568542" y="536.015503" z="1029.1024" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_3" walker_index="0" />
+      <spot x="486.981842" y="521.677795" z="1029.1022" h="0" walker_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_2" walker_index="0" />
+      <spot x="511.428772" y="484.471222" z="966.1551" h="20" />
+    </spawn>
+    <spawn npc_id="214129">
+      <spot x="538.808899" y="496.586609" z="967.2023" h="52" random_walk="0" walker_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_7" />
+      <spot x="543.391541" y="494.769806" z="967.07117" h="52" />
+      <spot x="537.925964" y="523.712280" z="966.61725" h="75" />
+    </spawn>
+    <spawn npc_id="214106">
+      <spot x="318.305695" y="504.432007" z="983.74866" h="46" />
+      <spot x="672.469849" y="505.621368" z="1013.9781" h="50" />
+      <spot x="405.991638" y="507.219208" z="995.6831" h="0" random_walk="2" />
+      <spot x="529.821899" y="605.463196" z="1012.27655" h="16" />
+    </spawn>
+    <spawn npc_id="214158">
+      <spot x="550.757507" y="491.519958" z="967.0836" h="51" />
+    </spawn>
+    <spawn npc_id="700515">
+      <spot x="492.296021" y="516.604736" z="968.9094" entity_id="54" />
+    </spawn>
+    <spawn npc_id="214117">
+      <spot x="290.986938" y="541.741028" z="981.57996" h="1" />
+      <spot x="480.571289" y="720.306091" z="1007.0641" h="90" />
+      <spot x="609.475586" y="488.284546" z="1018.2818" h="100" />
+    </spawn>
+    <spawn npc_id="700361">
+      <spot x="564.178772" y="327.079712" z="1016.7643" entity_id="28" />
+    </spawn>
+    <spawn npc_id="214130">
+      <spot x="506.669861" y="527.524719" z="969.23627" h="10" />
+    </spawn>
+    <spawn npc_id="204651">
+      <spot x="570.801697" y="355.390778" z="1013.0282" h="85" />
+    </spawn>
+    <spawn npc_id="214164">
+      <spot x="427.037659" y="695.728882" z="1005.2625" h="96" />
+    </spawn>
+    <spawn npc_id="214121">
+      <spot x="525.091003" y="683.603882" z="1011.1984" h="0" random_walk="0" walker_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_1" />
+    </spawn>
+    <spawn npc_id="214114">
+      <spot x="521.105957" y="414.481293" z="1008.15326" h="3" />
+    </spawn>
+    <spawn npc_id="214131">
+      <spot x="494.556000" y="498.580048" z="969.23627" h="96" />
+    </spawn>
+  </spawn_map>
 </spawns>

@@ -71,27 +71,27 @@ public class NochsanaTrainingCampInstance extends GeneralInstanceHandler
         }
     }
 	
-	@Override
-	public void onDie(Npc npc) {
-		Player player = npc.getAggroList().getMostPlayerDamage();
-		switch (npc.getObjectTemplate().getTemplateId()) {
-			case 256689: //Nochsana Guard.
-				despawnNpc(npc);
-				sendMsg("<Nochsana General> appear"); // Появился Лорд Насана
-				spawn(256693, 331.097f, 269.36f, 384.553f, (byte) 25); //Nochsana General.
-			break;
-			case 256693: //Nochsana General.
-			    sendMsg("<Nochsana Abyss Gate> is now open");
-				spawn(700438, 466.7858f, 706.5129f, 346.2541f, (byte) 0, 14);
-			break;
-		}
-	}
+//	@Override
+//	public void onDie(Npc npc) {
+//		Player player = npc.getAggroList().getMostPlayerDamage();
+//		switch (npc.getObjectTemplate().getTemplateId()) {
+//			case 256689: //Nochsana Guard.
+//				despawnNpc(npc);
+//				sendMsg("<Nochsana General> appear"); // Появился Лорд Насана
+//				spawn(256693, 331.097f, 269.36f, 384.553f, (byte) 25); //Nochsana General.
+//			break;
+//			case 256693: //Nochsana General.
+//			    sendMsg("<Nochsana Abyss Gate> is now open");
+//				spawn(700438, 466.7858f, 706.5129f, 346.2541f, (byte) 0, 14);
+//			break;
+//		}
+//	}
 	
 	@Override
 	public void handleUseItemFinish(Player player, Npc npc) {
 		switch(npc.getNpcId()) {
 			case 700437: //Nochsana Artifact.
-				sendMsg("You win effect <Shield Of Compassion>");
+				//sendMsg("You win effect <Shield Of Compassion>");
 				SkillEngine.getInstance().getSkill(npc, 276, 10, player).useNoAnimationSkill();
 			break;
 		}

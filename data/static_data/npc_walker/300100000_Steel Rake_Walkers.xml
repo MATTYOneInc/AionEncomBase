@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<npc_walker xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <walker_template route_id="NPCPathIDShulackShip_NPC109" pool="1">
+    <routestep step="1" x="603.776001" y="477.761627" z="872.954834" />
+    <routestep step="2" x="609.047791" y="477.989166" z="872.954834" />
+    <routestep step="3" x="610.467957" y="478.096954" z="872.854858" rest_time="3000" />
+    <routestep step="3" x="609.066223" y="478.010071" z="872.954834" />
+    <routestep step="4" x="603.803589" y="477.724792" z="872.954834" />
+    <routestep step="5" x="600.116394" y="477.466614" z="872.954834" />
+    <routestep step="6" x="595.852661" y="477.327209" z="872.854858" />
+    <routestep step="7" x="591.540527" y="476.876129" z="872.854858" />
+    <routestep step="8" x="588.694458" y="476.129059" z="872.854858" />
+    <routestep step="9" x="587.196899" y="475.641266" z="872.954834" rest_time="1000" />
+    <routestep step="9" x="588.644226" y="476.087555" z="872.854858" />
+    <routestep step="10" x="591.623047" y="476.780823" z="872.854858" />
+    <routestep step="11" x="595.852783" y="477.336548" z="872.954834" />
+    <routestep step="12" x="600.053528" y="477.421204" z="872.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P2_Flame_2" pool="1">
+    <routestep step="1" x="751.716248" y="486.128174" z="1015.184814" />
+    <routestep step="2" x="751.793701" y="486.130493" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC94" pool="1">
+    <routestep step="1" x="563.123657" y="544.713074" z="884.954834" />
+    <routestep step="2" x="566.556091" y="544.674927" z="884.954834" />
+    <routestep step="3" x="569.431702" y="544.593018" z="884.854858" />
+    <routestep step="4" x="571.696899" y="544.416748" z="884.854858" />
+    <routestep step="5" x="574.562256" y="544.221436" z="884.954834" rest_time="3000" />
+    <routestep step="5" x="571.714600" y="544.415039" z="884.854858" />
+    <routestep step="6" x="569.424988" y="544.581055" z="884.854858" />
+    <routestep step="7" x="566.541138" y="544.713013" z="884.954834" />
+    <routestep step="8" x="563.118652" y="544.717407" z="884.954834" />
+    <routestep step="9" x="559.791321" y="544.740051" z="884.954834" />
+    <routestep step="10" x="555.575623" y="544.951538" z="884.854858" />
+    <routestep step="11" x="549.998840" y="545.248840" z="884.854858" />
+    <routestep step="12" x="545.080383" y="545.545166" z="884.854858" />
+    <routestep step="13" x="542.886169" y="545.740417" z="884.954834" rest_time="1000" />
+    <routestep step="13" x="545.074219" y="545.512024" z="884.854858" />
+    <routestep step="14" x="549.988953" y="545.244141" z="884.854858" />
+    <routestep step="15" x="555.560181" y="544.929749" z="884.954834" />
+    <routestep step="16" x="559.728455" y="544.694641" z="884.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P3_Flame_1" pool="1">
+    <routestep step="1" x="752.993591" y="526.735229" z="1015.184814" />
+    <routestep step="2" x="753.071045" y="526.737549" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC113" pool="1">
+    <routestep step="1" x="593.308350" y="531.820801" z="885.954834" />
+    <routestep step="2" x="585.743164" y="531.828369" z="885.954834" />
+    <routestep step="3" x="577.860168" y="531.617615" z="885.954834" />
+    <routestep step="4" x="572.836853" y="531.606140" z="885.854858" />
+    <routestep step="5" x="567.059509" y="531.619263" z="885.854858" />
+    <routestep step="6" x="572.820435" y="531.606140" z="885.854858" />
+    <routestep step="7" x="577.842041" y="531.622009" z="885.954834" />
+    <routestep step="8" x="585.674866" y="531.804443" z="885.954834" />
+    <routestep step="9" x="593.315247" y="531.806335" z="885.954834" />
+    <routestep step="10" x="595.569275" y="531.850403" z="885.954834" />
+    <routestep step="11" x="604.503235" y="531.890076" z="885.854858" />
+    <routestep step="12" x="595.620605" y="531.816345" z="885.954834" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC112" pool="1">
+    <routestep step="1" x="594.952942" y="533.847229" z="872.854858" />
+    <routestep step="2" x="597.884094" y="536.485046" z="872.954834" />
+    <routestep step="3" x="600.366333" y="540.356995" z="872.954834" />
+    <routestep step="4" x="600.971375" y="541.573914" z="872.854858" rest_time="1000" />
+    <routestep step="4" x="600.364258" y="540.372009" z="872.954834" />
+    <routestep step="5" x="597.878906" y="536.505127" z="872.954834" />
+    <routestep step="6" x="594.952637" y="533.822815" z="872.854858" />
+    <routestep step="7" x="590.546570" y="532.144104" z="872.954834" />
+    <routestep step="8" x="587.362610" y="530.800537" z="872.854858" />
+    <routestep step="9" x="584.869080" y="529.672729" z="872.854858" />
+    <routestep step="10" x="581.109131" y="527.512268" z="872.854858" />
+    <routestep step="11" x="580.076782" y="526.918884" z="872.954834" rest_time="3000" />
+    <routestep step="11" x="581.093384" y="527.510193" z="872.854858" />
+    <routestep step="12" x="584.874451" y="529.671997" z="872.854858" />
+    <routestep step="13" x="587.334595" y="530.798035" z="872.954834" />
+    <routestep step="14" x="590.483704" y="532.098694" z="872.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P2_Flame_8" pool="1">
+    <routestep step="1" x="732.931396" y="473.154083" z="1015.184814" />
+    <routestep step="2" x="733.008850" y="473.156403" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC46" pool="1">
+    <routestep step="1" x="461.217804" y="537.513611" z="887.954834" />
+    <routestep step="2" x="453.652679" y="537.521179" z="887.954834" />
+    <routestep step="3" x="447.406128" y="539.353516" z="887.954834" />
+    <routestep step="4" x="453.584351" y="537.497253" z="887.954834" />
+    <routestep step="5" x="461.224731" y="537.499146" z="887.954834" />
+    <routestep step="6" x="463.478760" y="537.543213" z="887.954834" />
+    <routestep step="7" x="470.369751" y="537.520874" z="887.854858" />
+    <routestep step="8" x="476.952759" y="538.295715" z="887.854858" />
+    <routestep step="9" x="470.438263" y="537.568176" z="887.954834" />
+    <routestep step="10" x="463.530090" y="537.509155" z="887.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_B_4" pool="1">
+    <routestep step="1" x="738.094421" y="524.992188" z="1013.746216" />
+    <routestep step="2" x="738.171875" y="524.994507" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC111" pool="1">
+    <routestep step="1" x="592.330872" y="536.082825" z="872.954834" />
+    <routestep step="2" x="595.995483" y="538.575195" z="872.954834" />
+    <routestep step="3" x="598.864624" y="541.492065" z="872.854858" />
+    <routestep step="4" x="599.823486" y="542.619019" z="872.854858" rest_time="1000" />
+    <routestep step="4" x="598.864685" y="541.516602" z="872.854858" />
+    <routestep step="5" x="596.057373" y="538.610657" z="872.954834" />
+    <routestep step="6" x="592.356567" y="536.135193" z="872.954834" />
+    <routestep step="7" x="588.531494" y="533.873718" z="872.954834" />
+    <routestep step="8" x="584.944092" y="532.073303" z="872.854858" />
+    <routestep step="9" x="581.683289" y="530.284302" z="872.854858" />
+    <routestep step="10" x="579.143005" y="528.531494" z="872.854858" />
+    <routestep step="11" x="578.171509" y="527.737915" z="872.954834" rest_time="3000" />
+    <routestep step="11" x="579.130371" y="528.546814" z="872.854858" />
+    <routestep step="12" x="581.700500" y="530.293762" z="872.854858" />
+    <routestep step="13" x="584.959290" y="532.063477" z="872.954834" />
+    <routestep step="14" x="588.494019" y="533.825989" z="872.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P2_Flame_3" pool="1">
+    <routestep step="1" x="746.523743" y="482.819611" z="1015.184814" />
+    <routestep step="2" x="746.601196" y="482.821930" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC84" pool="1">
+    <routestep step="1" x="379.215302" y="495.965973" z="895.954834" />
+    <routestep step="2" x="379.264221" y="488.609497" z="895.954834" />
+    <routestep step="3" x="377.802765" y="486.711456" z="895.854858" />
+    <routestep step="4" x="374.315002" y="486.082458" z="895.854858" />
+    <routestep step="5" x="369.821716" y="486.151703" z="895.854858" />
+    <routestep step="6" x="368.168365" y="485.443329" z="895.854858" />
+    <routestep step="7" x="366.853882" y="482.836304" z="895.854858" />
+    <routestep step="8" x="366.520721" y="479.785309" z="895.854858" />
+    <routestep step="9" x="365.291901" y="477.996338" z="895.854858" />
+    <routestep step="10" x="363.279572" y="476.677521" z="895.854858" />
+    <routestep step="11" x="362.182343" y="476.013367" z="895.854858" rest_time="3000" />
+    <routestep step="11" x="363.275116" y="476.656860" z="895.854858" />
+    <routestep step="12" x="365.276703" y="477.939880" z="895.854858" />
+    <routestep step="13" x="366.521942" y="479.735748" z="895.954834" />
+    <routestep step="14" x="366.873657" y="482.882111" z="895.854858" />
+    <routestep step="15" x="368.158264" y="485.422211" z="895.854858" />
+    <routestep step="16" x="369.793549" y="486.179840" z="895.854858" />
+    <routestep step="17" x="374.352966" y="486.123566" z="895.854858" />
+    <routestep step="18" x="377.753418" y="486.686798" z="895.854858" />
+    <routestep step="19" x="379.246155" y="488.560852" z="895.954834" />
+    <routestep step="20" x="379.202148" y="495.982117" z="895.954834" />
+    <routestep step="21" x="379.176239" y="498.137634" z="895.954834" />
+    <routestep step="22" x="378.439911" y="500.345520" z="895.854858" />
+    <routestep step="23" x="377.735718" y="501.276764" z="895.954834" rest_time="1000" />
+    <routestep step="23" x="378.448792" y="500.391083" z="895.854858" />
+    <routestep step="24" x="379.183929" y="498.164642" z="895.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P3_Flame_4" pool="1">
+    <routestep step="1" x="740.139465" y="531.826294" z="1015.184814" />
+    <routestep step="2" x="740.216919" y="531.828613" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC77" pool="1">
+    <routestep step="1" x="280.340881" y="504.600891" z="902.954834" />
+    <routestep step="2" x="280.530792" y="497.060547" z="902.954834" />
+    <routestep step="3" x="280.664948" y="489.186401" z="902.954834" />
+    <routestep step="4" x="280.668549" y="486.397858" z="902.854858" />
+    <routestep step="5" x="280.218536" y="483.600220" z="902.954834" />
+    <routestep step="6" x="278.927124" y="481.716187" z="902.954834" rest_time="1000" />
+    <routestep step="6" x="280.218292" y="483.612854" z="902.954834" />
+    <routestep step="7" x="280.678009" y="486.395844" z="902.854858" />
+    <routestep step="8" x="280.656616" y="489.178162" z="902.954834" />
+    <routestep step="9" x="280.550232" y="497.044983" z="902.954834" />
+    <routestep step="10" x="280.338959" y="504.610016" z="902.954834" />
+    <routestep step="11" x="279.986267" y="506.845428" z="902.954834" />
+    <routestep step="12" x="279.159119" y="509.707214" z="902.854858" />
+    <routestep step="13" x="277.945648" y="511.624878" z="902.954834" rest_time="3000" />
+    <routestep step="13" x="279.152893" y="509.712402" z="902.954834" />
+    <routestep step="14" x="280.020355" y="506.896759" z="902.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_reset" pool="1">
+    <routestep step="1" x="745.286682" y="508.784180" z="1013.746216" />
+    <routestep step="2" x="745.364136" y="508.786499" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC25" pool="1">
+    <routestep step="1" x="489.015198" y="479.561249" z="960.937500" />
+    <routestep step="2" x="485.831177" y="479.528564" z="960.937500" />
+    <routestep step="3" x="480.675598" y="479.564972" z="960.937500" />
+    <routestep step="4" x="477.416901" y="479.528625" z="960.937500" />
+    <routestep step="5" x="474.771179" y="479.526917" z="960.937500" rest_time="5000" />
+    <routestep step="5" x="477.428345" y="479.547974" z="960.937500" />
+    <routestep step="6" x="480.594543" y="479.563690" z="960.937500" />
+    <routestep step="7" x="485.803070" y="479.544830" z="960.937500" />
+    <routestep step="8" x="489.022125" y="479.546783" z="960.937500" />
+    <routestep step="9" x="491.276154" y="479.590851" z="960.937500" />
+    <routestep step="10" x="498.690857" y="479.553528" z="960.937500" />
+    <routestep step="11" x="502.972412" y="479.594879" z="960.937500" />
+    <routestep step="12" x="511.460449" y="479.599579" z="960.937500" />
+    <routestep step="13" x="515.918762" y="479.639862" z="960.937500" rest_time="5000" />
+    <routestep step="13" x="511.443451" y="479.636627" z="960.937500" />
+    <routestep step="14" x="502.948883" y="479.566162" z="960.937500" />
+    <routestep step="15" x="498.628082" y="479.539917" z="960.937500" />
+    <routestep step="16" x="494.809052" y="479.609314" z="960.937500" />
+    <routestep step="17" x="491.327484" y="479.556763" z="960.937500" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC3" pool="1">
+    <routestep step="1" x="312.708008" y="506.196930" z="951.100037" />
+    <routestep step="2" x="309.401001" y="506.200684" z="951.100037" rest_time="20000" />
+    <routestep step="2" x="312.655853" y="506.182404" z="951.100037" />
+    <routestep step="3" x="317.089722" y="506.243744" z="951.100037" />
+    <routestep step="4" x="324.482086" y="506.265381" z="951.099976" />
+    <routestep step="5" x="328.811707" y="506.293518" z="951.099976" />
+    <routestep step="6" x="331.287354" y="506.302551" z="951.099976" />
+    <routestep step="7" x="333.955566" y="506.300751" z="951.000000" rest_time="60000" />
+    <routestep step="7" x="331.400818" y="506.311615" z="951.099976" />
+    <routestep step="8" x="328.815796" y="506.292389" z="951.099976" />
+    <routestep step="9" x="324.493073" y="506.261017" z="951.099976" />
+    <routestep step="10" x="320.658844" y="506.259369" z="951.099976" />
+    <routestep step="11" x="317.142761" y="506.243622" z="951.100037" />
+  </walker_template>
+  <walker_template route_id="IDShip_mobpath_ShulackCaptainNmd_46_Ah" pool="1">
+    <routestep step="1" x="427.451233" y="509.883118" z="1078.463989" />
+    <routestep step="2" x="423.563171" y="509.887054" z="1078.463989" />
+    <routestep step="3" x="417.507446" y="509.979340" z="1078.463989" />
+    <routestep step="4" x="412.206116" y="510.085541" z="1078.463989" />
+    <routestep step="5" x="403.876221" y="510.134399" z="1078.463989" />
+    <routestep step="6" x="412.166565" y="510.092102" z="1078.463989" />
+    <routestep step="7" x="417.538055" y="509.982574" z="1078.463989" />
+    <routestep step="8" x="423.553925" y="509.877625" z="1078.463989" />
+    <routestep step="9" x="426.501709" y="509.876312" z="1078.463989" />
+    <routestep step="10" x="428.055725" y="509.892273" z="1078.463989" />
+    <routestep step="11" x="428.762024" y="509.886475" z="1078.463989" />
+    <routestep step="12" x="427.641663" y="509.901642" z="1078.463989" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC82" pool="1">
+    <routestep step="1" x="460.422729" y="515.322388" z="960.765381" />
+    <routestep step="2" x="460.293671" y="510.600830" z="960.765381" />
+    <routestep step="3" x="460.145020" y="504.292542" z="960.765381" />
+    <routestep step="4" x="460.208649" y="497.234009" z="960.765381" />
+    <routestep step="5" x="460.190277" y="490.142700" z="960.765381" rest_time="15000" />
+    <routestep step="5" x="460.214417" y="497.259674" z="960.765381" />
+    <routestep step="6" x="460.214569" y="504.240570" z="960.765381" />
+    <routestep step="7" x="460.246521" y="510.629913" z="960.765381" />
+    <routestep step="8" x="460.404541" y="515.273621" z="960.765381" />
+    <routestep step="9" x="460.382385" y="518.043823" z="960.765381" />
+    <routestep step="10" x="460.264282" y="524.566956" z="960.765381" />
+    <routestep step="11" x="460.216492" y="531.529541" z="960.765381" />
+    <routestep step="12" x="460.678009" y="539.285828" z="960.765381" />
+    <routestep step="13" x="465.511139" y="544.351074" z="960.665344" />
+    <routestep step="14" x="473.099152" y="548.094543" z="960.665344" />
+    <routestep step="15" x="480.238434" y="548.031982" z="960.765381" rest_time="15000" />
+    <routestep step="15" x="473.144836" y="548.080872" z="960.665344" />
+    <routestep step="16" x="465.543243" y="544.369995" z="960.665344" />
+    <routestep step="17" x="460.649780" y="539.197388" z="960.765381" />
+    <routestep step="18" x="460.171143" y="531.528442" z="960.765381" />
+    <routestep step="19" x="460.264923" y="524.571167" z="960.765381" />
+    <routestep step="20" x="460.330719" y="521.573975" z="960.765381" />
+    <routestep step="21" x="460.468811" y="518.252319" z="960.765381" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC20" pool="1">
+    <routestep step="1" x="462.408386" y="446.444519" z="948.802856" />
+    <routestep step="2" x="458.168274" y="445.608307" z="948.802856" />
+    <routestep step="3" x="462.415314" y="446.512238" z="948.802856" />
+    <routestep step="4" x="464.669342" y="446.761902" z="948.802856" rest_time="10000" />
+    <routestep step="4" x="473.517151" y="448.132111" z="948.802856" />
+    <routestep step="5" x="479.153473" y="449.166199" z="948.802856" />
+    <routestep step="6" x="487.937775" y="451.094543" z="948.802856" />
+    <routestep step="7" x="479.176758" y="449.171234" z="948.802856" />
+    <routestep step="8" x="473.509186" y="448.140594" z="948.802856" />
+    <routestep step="9" x="468.755920" y="447.339081" z="948.802856" />
+    <routestep step="10" x="464.720673" y="446.727814" z="948.802856" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC108" pool="1">
+    <routestep step="1" x="603.009094" y="479.985382" z="872.954834" />
+    <routestep step="2" x="609.187439" y="480.247467" z="872.954834" />
+    <routestep step="3" x="610.493408" y="480.274261" z="872.854858" rest_time="3000" />
+    <routestep step="3" x="609.273560" y="480.241516" z="872.954834" />
+    <routestep step="4" x="603.084045" y="480.016235" z="872.954834" />
+    <routestep step="5" x="597.345947" y="479.726257" z="872.954834" />
+    <routestep step="6" x="593.082214" y="479.586853" z="872.854858" />
+    <routestep step="7" x="588.770081" y="479.135773" z="872.854858" />
+    <routestep step="8" x="585.924011" y="478.388702" z="872.854858" />
+    <routestep step="9" x="583.806213" y="477.576416" z="872.954834" rest_time="1000" />
+    <routestep step="9" x="585.873779" y="478.347198" z="872.854858" />
+    <routestep step="10" x="588.852600" y="479.040466" z="872.854858" />
+    <routestep step="11" x="593.082336" y="479.596191" z="872.954834" />
+    <routestep step="12" x="597.283081" y="479.680847" z="872.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P3_Bomb_2" pool="1">
+    <routestep step="1" x="736.552673" y="535.461914" z="1013.634521" />
+    <routestep step="2" x="736.630127" y="535.464233" z="1013.631226" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P3_Flame_2" pool="1">
+    <routestep step="1" x="753.220398" y="533.120605" z="1015.184814" />
+    <routestep step="2" x="753.297852" y="533.122925" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_A_4" pool="1">
+    <routestep step="1" x="737.295837" y="504.925476" z="1013.746216" />
+    <routestep step="2" x="737.373291" y="504.927795" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P1_Flame_5" pool="1">
+    <routestep step="1" x="762.592102" y="493.247467" z="1015.184814" />
+    <routestep step="2" x="762.669556" y="493.249786" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_B_1" pool="1">
+    <routestep step="1" x="728.260254" y="514.476563" z="1013.746216" />
+    <routestep step="2" x="728.337708" y="514.478882" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC89" pool="1">
+    <routestep step="1" x="560.202820" y="465.389862" z="884.954834" />
+    <routestep step="2" x="553.470947" y="462.774658" z="884.954834" />
+    <routestep step="3" x="547.743713" y="460.875824" z="884.854858" />
+    <routestep step="4" x="544.156311" y="460.102661" z="884.854858" />
+    <routestep step="5" x="542.799072" y="459.980103" z="884.954834" rest_time="3000" />
+    <routestep step="5" x="544.156311" y="460.071777" z="884.854858" />
+    <routestep step="6" x="547.674683" y="460.842072" z="884.854858" />
+    <routestep step="7" x="553.495117" y="462.812378" z="884.954834" />
+    <routestep step="8" x="560.240540" y="465.375427" z="884.954834" />
+    <routestep step="9" x="562.729553" y="466.281738" z="884.954834" />
+    <routestep step="10" x="566.037598" y="468.062286" z="884.854858" />
+    <routestep step="11" x="571.212646" y="471.088348" z="884.854858" />
+    <routestep step="12" x="574.195923" y="473.920258" z="884.854858" />
+    <routestep step="13" x="574.980286" y="474.886200" z="884.954834" rest_time="1000" />
+    <routestep step="13" x="574.204773" y="473.904297" z="884.854858" />
+    <routestep step="14" x="571.215881" y="471.110291" z="884.854858" />
+    <routestep step="15" x="566.026917" y="468.040405" z="884.954834" />
+    <routestep step="16" x="562.751038" y="466.275543" z="884.954834" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC132" pool="1">
+    <routestep step="1" x="513.140015" y="470.834656" z="1035.525024" />
+    <routestep step="2" x="513.071960" y="467.501892" z="1035.525024" />
+    <routestep step="3" x="512.292786" y="465.528931" z="1035.525024" />
+    <routestep step="4" x="510.383881" y="464.515198" z="1035.525024" />
+    <routestep step="5" x="508.090210" y="464.563599" z="1035.525024" />
+    <routestep step="6" x="506.393738" y="465.559937" z="1035.525024" />
+    <routestep step="7" x="505.724091" y="467.218750" z="1035.525024" />
+    <routestep step="8" x="505.647797" y="471.086670" z="1035.525024" />
+    <routestep step="9" x="505.743805" y="474.893127" z="1035.525024" />
+    <routestep step="10" x="505.757172" y="480.606750" z="1035.525024" />
+    <routestep step="11" x="507.240570" y="482.412750" z="1035.525024" />
+    <routestep step="12" x="509.158417" y="483.043182" z="1035.425049" />
+    <routestep step="13" x="511.914703" y="482.156006" z="1035.525024" />
+    <routestep step="14" x="513.142334" y="480.409485" z="1035.525024" />
+    <routestep step="15" x="513.089844" y="474.421692" z="1035.525024" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P3_Flame_8" pool="1">
+    <routestep step="1" x="731.362915" y="543.793823" z="1015.184814" />
+    <routestep step="2" x="731.440369" y="543.796143" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Captain_Sum_1" pool="1">
+    <routestep step="1" x="384.574921" y="495.839874" z="1076.000000" />
+    <routestep step="2" x="385.524078" y="497.196869" z="1076.000000" />
+    <routestep step="3" x="387.030731" y="497.723358" z="1076.000000" />
+    <routestep step="4" x="392.163269" y="497.845428" z="1076.000000" />
+    <routestep step="5" x="398.325836" y="497.882599" z="1076.000000" />
+    <routestep step="6" x="404.880829" y="497.930939" z="1076.000000" />
+    <routestep step="7" x="412.550812" y="497.962860" z="1076.000000" />
+    <routestep step="8" x="418.388428" y="498.012787" z="1076.000000" />
+    <routestep step="9" x="428.109009" y="498.005920" z="1076.000000" />
+    <routestep step="10" x="418.394226" y="498.012634" z="1076.000000" />
+    <routestep step="11" x="412.544678" y="497.960815" z="1076.000000" />
+    <routestep step="12" x="404.906250" y="497.924744" z="1076.000000" />
+    <routestep step="13" x="398.306885" y="497.865173" z="1076.000000" />
+    <routestep step="14" x="392.175079" y="497.833130" z="1076.000000" />
+    <routestep step="15" x="387.005646" y="497.720215" z="1076.000000" />
+    <routestep step="16" x="385.497040" y="497.179810" z="1076.000000" />
+    <routestep step="17" x="384.579224" y="495.817505" z="1076.000000" />
+    <routestep step="18" x="384.681641" y="488.191864" z="1076.000000" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC85" pool="1">
+    <routestep step="1" x="376.399872" y="495.521271" z="895.954834" />
+    <routestep step="2" x="374.947540" y="493.933746" z="895.954834" />
+    <routestep step="3" x="370.356476" y="493.970917" z="895.854858" />
+    <routestep step="4" x="365.496307" y="494.136475" z="895.854858" />
+    <routestep step="5" x="360.786285" y="493.989014" z="895.854858" />
+    <routestep step="6" x="355.737946" y="494.002991" z="895.854858" />
+    <routestep step="7" x="349.888794" y="493.858856" z="895.854858" />
+    <routestep step="8" x="348.647308" y="493.867828" z="895.954834" rest_time="3000" />
+    <routestep step="8" x="349.918030" y="493.878754" z="895.854858" />
+    <routestep step="9" x="355.727814" y="493.953400" z="895.854858" />
+    <routestep step="10" x="360.902588" y="494.017181" z="895.854858" />
+    <routestep step="11" x="365.461975" y="494.033142" z="895.854858" />
+    <routestep step="12" x="370.307129" y="493.874054" z="895.854858" />
+    <routestep step="13" x="374.930511" y="493.946747" z="895.954834" />
+    <routestep step="14" x="376.408142" y="495.537445" z="895.954834" />
+    <routestep step="15" x="376.425140" y="497.306915" z="895.954834" />
+    <routestep step="16" x="376.384552" y="499.361847" z="895.854858" />
+    <routestep step="17" x="376.382660" y="500.787323" z="895.954834" rest_time="1000" />
+    <routestep step="17" x="376.383331" y="499.360382" z="895.854858" />
+    <routestep step="18" x="376.432831" y="497.333923" z="895.954834" />
+  </walker_template>
+  <walker_template route_id="IDShip_Mobpath_ShulackAsFirstmateKnmd_45_Ae" pool="1">
+    <routestep step="1" x="474.153687" y="508.992157" z="1034.819946" />
+    <routestep step="2" x="480.126404" y="509.093292" z="1034.819946" />
+    <routestep step="3" x="485.033997" y="509.093292" z="1034.819946" />
+    <routestep step="4" x="490.369446" y="509.159363" z="1034.819946" />
+    <routestep step="5" x="495.759338" y="509.038574" z="1034.819946" />
+    <routestep step="6" x="501.391022" y="509.038574" z="1034.819946" />
+    <routestep step="7" x="506.811035" y="509.019501" z="1034.819946" />
+    <routestep step="8" x="511.836365" y="509.019501" z="1034.819946" />
+    <routestep step="9" x="517.878235" y="508.866516" z="1034.819946" />
+    <routestep step="10" x="523.248718" y="508.851746" z="1034.819946" rest_time="600000" />
+    <routestep step="10" x="517.866272" y="508.864166" z="1034.819946" />
+    <routestep step="11" x="511.806458" y="508.901062" z="1034.819946" />
+    <routestep step="12" x="506.875793" y="509.001282" z="1034.819946" />
+    <routestep step="13" x="501.414703" y="509.075073" z="1034.819946" />
+    <routestep step="14" x="495.748047" y="508.964844" z="1034.819946" />
+    <routestep step="15" x="490.368652" y="509.108368" z="1034.819946" />
+    <routestep step="16" x="484.944427" y="509.071472" z="1034.819946" />
+    <routestep step="17" x="480.105194" y="509.102325" z="1034.819946" />
+    <routestep step="18" x="473.368683" y="508.975800" z="1034.819946" />
+  </walker_template>
+  <walker_template route_id="IDShip_Mobpath_ShulackRaAtilleryChKnmd_45_Ah" pool="1">
+    <routestep step="1" x="755.432190" y="509.046814" z="1013.672485" />
+    <routestep step="2" x="752.916931" y="509.009674" z="1013.672485" />
+    <routestep step="3" x="749.610291" y="509.001923" z="1013.672485" />
+    <routestep step="4" x="746.183105" y="508.942810" z="1013.672485" />
+    <routestep step="5" x="749.593750" y="508.964111" z="1013.672485" />
+    <routestep step="6" x="752.936035" y="509.036804" z="1013.672485" />
+    <routestep step="7" x="755.858582" y="509.031525" z="1013.672485" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Captain_Sum_4" pool="1">
+    <routestep step="1" x="428.088593" y="525.346619" z="1076.099976" />
+    <routestep step="2" x="427.822479" y="521.843079" z="1076.099976" />
+    <routestep step="3" x="427.926086" y="514.687622" z="1076.000000" />
+    <routestep step="4" x="426.976929" y="513.330627" z="1076.000000" />
+    <routestep step="5" x="425.470276" y="512.804138" z="1076.000000" />
+    <routestep step="6" x="420.337738" y="512.682068" z="1076.000000" />
+    <routestep step="7" x="414.175171" y="512.644897" z="1076.000000" />
+    <routestep step="8" x="407.620178" y="512.596558" z="1076.000000" />
+    <routestep step="9" x="399.950195" y="512.564636" z="1076.000000" />
+    <routestep step="10" x="394.112579" y="512.514709" z="1076.000000" />
+    <routestep step="11" x="388.506042" y="512.483093" z="1076.000000" />
+    <routestep step="12" x="383.663177" y="512.564148" z="1076.000000" />
+    <routestep step="13" x="377.166718" y="512.548523" z="1076.000000" />
+    <routestep step="14" x="383.692322" y="512.578796" z="1076.000000" />
+    <routestep step="15" x="388.521057" y="512.521606" z="1076.000000" />
+    <routestep step="16" x="394.106750" y="512.514893" z="1076.000000" />
+    <routestep step="17" x="399.956299" y="512.566711" z="1076.000000" />
+    <routestep step="18" x="407.594727" y="512.602783" z="1076.000000" />
+    <routestep step="19" x="414.194122" y="512.662354" z="1076.000000" />
+    <routestep step="20" x="420.325928" y="512.694397" z="1076.000000" />
+    <routestep step="21" x="425.495361" y="512.807312" z="1076.000000" />
+    <routestep step="22" x="427.003967" y="513.347717" z="1076.000000" />
+    <routestep step="23" x="427.921783" y="514.710022" z="1076.000000" />
+    <routestep step="24" x="427.819336" y="521.847717" z="1076.000000" />
+    <routestep step="25" x="428.073059" y="525.345764" z="1076.000000" />
+    <routestep step="26" x="428.937500" y="525.934143" z="1076.099976" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P2_Flame_5" pool="1">
+    <routestep step="1" x="733.737610" y="485.375183" z="1015.184814" />
+    <routestep step="2" x="733.815063" y="485.377502" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P1_Flame_4" pool="1">
+    <routestep step="1" x="767.172974" y="498.933594" z="1015.184814" />
+    <routestep step="2" x="767.250427" y="498.935913" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P2_Flame_7" pool="1">
+    <routestep step="1" x="741.096619" y="477.499695" z="1015.184814" />
+    <routestep step="2" x="741.174072" y="477.502014" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_A_1" pool="1">
+    <routestep step="1" x="728.260254" y="494.409912" z="1013.746216" />
+    <routestep step="2" x="728.337708" y="494.412231" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC36" pool="1">
+    <routestep step="1" x="364.522034" y="526.034119" z="901.850830" />
+    <routestep step="2" x="356.956909" y="526.041626" z="901.850830" />
+    <routestep step="3" x="349.108337" y="526.037842" z="901.850830" />
+    <routestep step="4" x="341.049591" y="526.573059" z="901.850830" />
+    <routestep step="5" x="349.137634" y="526.031433" z="901.850830" rest_time="15000" />
+    <routestep step="5" x="356.888580" y="526.017700" z="901.850830" />
+    <routestep step="6" x="364.528961" y="526.019653" z="901.850830" />
+    <routestep step="7" x="366.771179" y="526.035950" z="901.850830" />
+    <routestep step="8" x="370.831299" y="526.068909" z="901.850830" />
+    <routestep step="9" x="366.818176" y="526.034180" z="901.850830" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P3_Flame_3" pool="1">
+    <routestep step="1" x="745.911560" y="535.057983" z="1015.184814" />
+    <routestep step="2" x="745.989014" y="535.060303" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC131" pool="1">
+    <routestep step="1" x="514.956848" y="556.083801" z="1035.525024" />
+    <routestep step="2" x="514.888794" y="552.751038" z="1035.525024" />
+    <routestep step="3" x="514.109619" y="550.778076" z="1035.525024" />
+    <routestep step="4" x="512.200745" y="549.764343" z="1035.525024" />
+    <routestep step="5" x="509.907043" y="549.812744" z="1035.525024" />
+    <routestep step="6" x="508.210571" y="550.809082" z="1035.525024" />
+    <routestep step="7" x="507.540924" y="552.467896" z="1035.525024" />
+    <routestep step="8" x="507.464630" y="556.335815" z="1035.525024" />
+    <routestep step="9" x="507.560638" y="560.142273" z="1035.525024" />
+    <routestep step="10" x="507.574005" y="565.855896" z="1035.525024" />
+    <routestep step="11" x="509.057404" y="567.661865" z="1035.525024" />
+    <routestep step="12" x="510.975250" y="568.292297" z="1035.425049" />
+    <routestep step="13" x="513.731567" y="567.405151" z="1035.525024" />
+    <routestep step="14" x="514.959167" y="565.658630" z="1035.525024" />
+    <routestep step="15" x="514.906677" y="559.670837" z="1035.525024" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC2" pool="1">
+    <routestep step="1" x="264.910736" y="504.163330" z="948.765381" />
+    <routestep step="2" x="264.991882" y="498.921051" z="948.765381" />
+    <routestep step="3" x="265.268463" y="490.890076" z="948.765381" />
+    <routestep step="4" x="265.037079" y="498.892059" z="948.765381" />
+    <routestep step="5" x="264.891968" y="504.191345" z="948.765381" rest_time="10000" />
+    <routestep step="5" x="264.870270" y="506.514832" z="948.765381" />
+    <routestep step="6" x="264.840118" y="510.071747" z="948.665344" />
+    <routestep step="7" x="264.800354" y="514.156494" z="948.765381" />
+    <routestep step="8" x="264.857056" y="520.472046" z="948.765381" />
+    <routestep step="9" x="264.879822" y="520.407471" z="948.765381" />
+    <routestep step="10" x="264.788818" y="514.144226" z="948.765381" />
+    <routestep step="11" x="264.808289" y="510.063843" z="948.765381" />
+    <routestep step="12" x="264.882477" y="506.590027" z="948.765381" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC72" pool="1">
+    <routestep step="1" x="513.439392" y="463.125946" z="953.802856" />
+    <routestep step="2" x="513.416504" y="458.543457" z="953.802856" />
+    <routestep step="3" x="511.692841" y="456.228149" z="953.922668" />
+    <routestep step="4" x="509.248596" y="455.005249" z="953.702881" />
+    <routestep step="5" x="505.353180" y="454.333618" z="952.712158" />
+    <routestep step="6" x="500.221130" y="453.502228" z="951.550903" />
+    <routestep step="7" x="505.327728" y="454.349518" z="952.693054" rest_time="10000" />
+    <routestep step="7" x="509.292633" y="455.058594" z="953.702881" />
+    <routestep step="8" x="511.698242" y="456.212982" z="953.939575" />
+    <routestep step="9" x="513.417725" y="458.543396" z="953.802856" />
+    <routestep step="10" x="513.433777" y="463.122894" z="953.802856" />
+    <routestep step="11" x="513.412659" y="466.854065" z="953.802856" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC97" pool="1">
+    <routestep step="1" x="562.264099" y="442.200134" z="1025.109863" />
+    <routestep step="2" x="559.044983" y="442.075653" z="1025.109863" />
+    <routestep step="3" x="555.026489" y="442.004791" z="1025.109863" />
+    <routestep step="4" x="552.697205" y="442.014984" z="1025.109863" />
+    <routestep step="5" x="551.084717" y="442.106049" z="1025.109863" />
+    <routestep step="6" x="552.702881" y="442.018372" z="1025.109863" />
+    <routestep step="7" x="555.034729" y="441.976105" z="1025.109863" />
+    <routestep step="8" x="559.075073" y="442.078522" z="1025.109863" />
+    <routestep step="9" x="562.270996" y="442.185669" z="1025.109863" />
+    <routestep step="10" x="564.525024" y="442.229736" z="1025.109863" />
+    <routestep step="11" x="571.410095" y="442.520630" z="1025.109863" />
+    <routestep step="12" x="575.372742" y="442.779236" z="1025.109863" />
+    <routestep step="13" x="580.602112" y="443.313965" z="1025.109863" />
+    <routestep step="14" x="583.325562" y="443.648438" z="1025.109863" />
+    <routestep step="15" x="580.610413" y="443.284302" z="1025.109863" />
+    <routestep step="16" x="575.365845" y="442.773895" z="1025.109863" />
+    <routestep step="17" x="571.412292" y="442.524414" z="1025.109863" />
+    <routestep step="18" x="568.057922" y="442.351349" z="1025.109863" />
+    <routestep step="19" x="564.576355" y="442.195648" z="1025.109863" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_A_3" pool="1">
+    <routestep step="1" x="738.094421" y="494.413879" z="1013.746216" />
+    <routestep step="2" x="738.171875" y="494.416199" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P3_Bomb_1" pool="1">
+    <routestep step="1" x="751.357239" y="531.275513" z="1013.634521" />
+    <routestep step="2" x="751.434692" y="531.277832" z="1013.631226" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P1_Bomb_1" pool="1">
+    <routestep step="1" x="762.849915" y="497.902435" z="1015.493225" />
+    <routestep step="2" x="762.927368" y="497.904755" z="1015.489929" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_1F_Engineer_MobPath" pool="1">
+    <routestep step="1" x="695.756775" y="508.365295" z="868.099976" />
+    <routestep step="2" x="711.478271" y="514.362061" z="868.099976" />
+    <routestep step="3" x="713.277283" y="514.820557" z="868.000000" />
+    <routestep step="4" x="707.298828" y="517.060913" z="868.000000" />
+    <routestep step="5" x="702.073181" y="522.855103" z="868.000000" />
+    <routestep step="6" x="701.035217" y="529.490784" z="868.000000" />
+    <routestep step="7" x="701.486389" y="530.989014" z="868.000000" />
+    <routestep step="8" x="698.705200" y="521.593201" z="868.000000" />
+    <routestep step="9" x="694.943176" y="513.644226" z="868.000000" />
+    <routestep step="10" x="689.346497" y="504.485901" z="868.000000" />
+    <routestep step="11" x="684.516968" y="492.921448" z="868.000000" />
+    <routestep step="12" x="683.128906" y="487.820770" z="868.000000" />
+    <routestep step="13" x="683.128784" y="484.308777" z="868.000000" />
+    <routestep step="14" x="679.612671" y="492.132080" z="868.000000" />
+    <routestep step="15" x="675.580322" y="495.436127" z="868.000000" />
+    <routestep step="16" x="669.460144" y="497.894928" z="868.000000" />
+    <routestep step="17" x="667.291443" y="496.986664" z="868.000000" />
+    <routestep step="18" x="675.663818" y="501.070313" z="868.000000" />
+    <routestep step="19" x="685.153442" y="504.927124" z="868.000000" />
+    <routestep step="20" x="691.157959" y="506.592468" z="868.000000" />
+    <routestep step="21" x="697.798279" y="508.523621" z="868.099976" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC76" pool="1">
+    <routestep step="1" x="314.976379" y="572.697937" z="901.801025" rest_time="1000" />
+    <routestep step="1" x="314.059570" y="570.574280" z="901.801025" rest_time="1000" />
+    <routestep step="1" x="314.050690" y="568.150696" z="901.700989" rest_time="1000" />
+    <routestep step="1" x="315.190460" y="565.945251" z="901.700989" rest_time="1000" />
+    <routestep step="1" x="316.813019" y="564.697510" z="901.801025" rest_time="1000" />
+    <routestep step="1" x="319.080414" y="564.048279" z="901.801025" rest_time="1000" />
+    <routestep step="1" x="321.119568" y="564.264343" z="901.700989" rest_time="1000" />
+    <routestep step="1" x="323.183289" y="565.360535" z="901.700989" rest_time="1000" />
+    <routestep step="1" x="324.423859" y="567.210815" z="901.700989" rest_time="1000" />
+    <routestep step="1" x="324.906769" y="569.216675" z="901.700989" rest_time="1000" />
+    <routestep step="1" x="324.685944" y="571.310791" z="901.700989" rest_time="1000" />
+    <routestep step="1" x="323.893494" y="572.703125" z="901.801025" rest_time="1000" />
+    <routestep step="1" x="322.746338" y="573.973694" z="901.801025" rest_time="1000" />
+    <routestep step="1" x="320.866302" y="574.688477" z="901.700989" rest_time="1000" />
+    <routestep step="1" x="318.764862" y="574.919067" z="901.700989" rest_time="1000" />
+    <routestep step="1" x="316.985901" y="574.492920" z="901.801025" rest_time="1000" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_B_2" pool="1">
+    <routestep step="1" x="728.260254" y="524.988159" z="1013.746216" />
+    <routestep step="2" x="728.337708" y="524.990479" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_A_2" pool="1">
+    <routestep step="1" x="728.260254" y="504.921509" z="1013.746216" />
+    <routestep step="2" x="728.337708" y="504.923828" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="BIDShulack_EngineerSum_NPCPath" pool="1">
+    <routestep step="1" x="688.590820" y="509.239136" z="868.099976" />
+    <routestep step="2" x="689.697510" y="509.234589" z="868.099976" />
+    <routestep step="3" x="688.564880" y="509.234161" z="868.099976" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC19" pool="1">
+    <routestep step="1" x="409.906891" y="440.684540" z="948.802856" />
+    <routestep step="2" x="404.510864" y="441.644806" z="948.802856" />
+    <routestep step="3" x="400.241272" y="442.369354" z="948.802856" rest_time="10000" />
+    <routestep step="3" x="404.444275" y="441.563080" z="948.802856" />
+    <routestep step="4" x="409.826996" y="440.670074" z="948.802856" />
+    <routestep step="5" x="412.920227" y="440.453705" z="948.802856" />
+    <routestep step="6" x="416.375580" y="440.401550" z="948.702881" />
+    <routestep step="7" x="412.971558" y="440.419617" z="948.802856" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC119" pool="1">
+    <routestep step="1" x="638.108765" y="452.902435" z="1029.897949" />
+    <routestep step="2" x="634.753784" y="453.376526" z="1031.416870" />
+    <routestep step="3" x="629.802795" y="454.426056" z="1033.681030" />
+    <routestep step="4" x="634.758728" y="453.458557" z="1031.403809" />
+    <routestep step="5" x="638.109863" y="452.911072" z="1029.870483" />
+    <routestep step="6" x="640.321838" y="452.616455" z="1028.925049" />
+    <routestep step="7" x="643.972900" y="452.664368" z="1026.993896" />
+    <routestep step="8" x="649.350647" y="451.999969" z="1024.376465" />
+    <routestep step="9" x="656.853699" y="451.892670" z="1022.059326" />
+    <routestep step="10" x="649.402588" y="452.024597" z="1024.370972" />
+    <routestep step="11" x="643.896790" y="452.664368" z="1027.023804" />
+    <routestep step="12" x="640.354187" y="452.602356" z="1028.925049" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P1_Flame_3" pool="1">
+    <routestep step="1" x="767.172974" y="518.371460" z="1015.184814" />
+    <routestep step="2" x="767.250427" y="518.373779" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P2_Bomb_2" pool="1">
+    <routestep step="1" x="736.552673" y="481.041687" z="1013.634521" />
+    <routestep step="2" x="736.630127" y="481.044006" z="1013.631226" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC130" pool="1">
+    <routestep step="1" x="507.215118" y="540.965393" z="1035.525024" />
+    <routestep step="2" x="507.283203" y="544.298157" z="1035.525024" />
+    <routestep step="3" x="508.062378" y="546.271118" z="1035.525024" />
+    <routestep step="4" x="509.971252" y="547.284851" z="1035.525024" />
+    <routestep step="5" x="512.264893" y="547.236450" z="1035.525024" />
+    <routestep step="6" x="513.961365" y="546.240112" z="1035.525024" />
+    <routestep step="7" x="514.631042" y="544.581299" z="1035.525024" />
+    <routestep step="8" x="514.707336" y="540.713379" z="1035.525024" />
+    <routestep step="9" x="514.611328" y="536.906921" z="1035.525024" />
+    <routestep step="10" x="514.597961" y="531.193298" z="1035.525024" />
+    <routestep step="11" x="513.114563" y="529.387329" z="1035.525024" />
+    <routestep step="12" x="511.196716" y="528.756897" z="1035.425049" />
+    <routestep step="13" x="508.440430" y="529.644043" z="1035.525024" />
+    <routestep step="14" x="507.212799" y="531.390564" z="1035.525024" />
+    <routestep step="15" x="507.265289" y="537.378357" z="1035.525024" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC133" pool="1">
+    <routestep step="1" x="505.398285" y="455.716309" z="1035.525024" />
+    <routestep step="2" x="505.466370" y="459.049072" z="1035.525024" />
+    <routestep step="3" x="506.245544" y="461.022034" z="1035.525024" />
+    <routestep step="4" x="508.154419" y="462.035767" z="1035.525024" />
+    <routestep step="5" x="510.448090" y="461.987366" z="1035.525024" />
+    <routestep step="6" x="512.144531" y="460.991028" z="1035.525024" />
+    <routestep step="7" x="512.814209" y="459.332214" z="1035.525024" />
+    <routestep step="8" x="512.890503" y="455.464294" z="1035.525024" />
+    <routestep step="9" x="512.794495" y="451.657837" z="1035.525024" />
+    <routestep step="10" x="512.781128" y="445.944214" z="1035.525024" />
+    <routestep step="11" x="511.297729" y="444.138214" z="1035.525024" />
+    <routestep step="12" x="509.379883" y="443.507782" z="1035.425049" />
+    <routestep step="13" x="506.623596" y="444.394958" z="1035.525024" />
+    <routestep step="14" x="505.395966" y="446.141479" z="1035.525024" />
+    <routestep step="15" x="505.448456" y="452.129272" z="1035.525024" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC127" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,-1">
+    <routestep step="1" x="601.544189" y="527.580383" z="1026.519897" />
+    <routestep step="2" x="598.360168" y="527.547729" z="1026.519897" />
+    <routestep step="3" x="593.204590" y="527.584106" z="1026.519897" />
+    <routestep step="4" x="589.945862" y="527.547791" z="1026.519897" />
+    <routestep step="5" x="587.300171" y="527.546082" z="1026.519897" />
+    <routestep step="6" x="589.957336" y="527.567139" z="1026.519897" />
+    <routestep step="7" x="593.123535" y="527.582825" z="1026.519897" />
+    <routestep step="8" x="598.332031" y="527.563965" z="1026.519897" />
+    <routestep step="9" x="601.551086" y="527.565918" z="1026.519897" />
+    <routestep step="10" x="603.805115" y="527.609985" z="1026.519897" />
+    <routestep step="11" x="611.219849" y="527.572693" z="1026.519897" />
+    <routestep step="12" x="617.902466" y="527.526184" z="1026.519897" />
+    <routestep step="13" x="611.157043" y="527.559082" z="1026.519897" />
+    <routestep step="14" x="607.338013" y="527.628479" z="1026.519897" />
+    <routestep step="15" x="603.856445" y="527.575928" z="1026.519897" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P3_Flame_7" pool="1">
+    <routestep step="1" x="732.648926" y="538.187988" z="1015.184814" />
+    <routestep step="2" x="732.726379" y="538.190308" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC55" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,-1">
+    <routestep step="1" x="591.282471" y="489.692535" z="1026.519897" />
+    <routestep step="2" x="588.098450" y="489.659851" z="1026.519897" />
+    <routestep step="3" x="582.942871" y="489.696259" z="1026.519897" />
+    <routestep step="4" x="579.684143" y="489.659912" z="1026.519897" />
+    <routestep step="5" x="577.038452" y="489.658203" z="1026.519897" />
+    <routestep step="6" x="579.695618" y="489.679260" z="1026.519897" />
+    <routestep step="7" x="582.861816" y="489.694977" z="1026.519897" />
+    <routestep step="8" x="588.070313" y="489.676117" z="1026.519897" />
+    <routestep step="9" x="591.289368" y="489.678070" z="1026.519897" />
+    <routestep step="10" x="593.543396" y="489.722137" z="1026.519897" />
+    <routestep step="11" x="600.958130" y="489.684814" z="1026.519897" />
+    <routestep step="12" x="605.239685" y="489.726166" z="1026.519897" />
+    <routestep step="13" x="613.727722" y="489.730865" z="1026.519897" />
+    <routestep step="14" x="618.186035" y="489.771149" z="1026.519897" />
+    <routestep step="15" x="613.710693" y="489.767914" z="1026.519897" />
+    <routestep step="16" x="605.216125" y="489.697449" z="1026.519897" />
+    <routestep step="17" x="600.895325" y="489.671204" z="1026.519897" />
+    <routestep step="18" x="597.076294" y="489.740601" z="1026.519897" />
+    <routestep step="19" x="593.594727" y="489.688049" z="1026.519897" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_C_2" pool="1">
+    <routestep step="1" x="746.665161" y="504.921509" z="1013.746216" />
+    <routestep step="2" x="746.742615" y="504.923828" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P3_Flame_6" pool="1">
+    <routestep step="1" x="738.122925" y="540.265381" z="1015.184814" />
+    <routestep step="2" x="738.200378" y="540.267700" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P2_Flame_1" pool="1">
+    <routestep step="1" x="752.993591" y="491.205688" z="1015.184814" />
+    <routestep step="2" x="753.071045" y="491.208008" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC52" pool="1">
+    <routestep step="1" x="545.257202" y="548.892700" z="883.216675" />
+    <routestep step="2" x="547.920288" y="544.636841" z="883.116699" />
+    <routestep step="3" x="551.974731" y="541.692261" z="883.043823" />
+    <routestep step="4" x="556.576233" y="540.911072" z="883.116699" />
+    <routestep step="5" x="561.785767" y="541.534729" z="883.116699" />
+    <routestep step="6" x="565.408325" y="541.953247" z="883.116699" />
+    <routestep step="7" x="567.964294" y="543.281311" z="883.116699" />
+    <routestep step="8" x="570.278687" y="547.943054" z="883.116699" />
+    <routestep step="9" x="571.154358" y="555.149109" z="883.116699" />
+    <routestep step="10" x="570.914734" y="560.511475" z="883.116699" />
+    <routestep step="11" x="569.589539" y="564.204773" z="883.116699" />
+    <routestep step="12" x="565.802185" y="566.975403" z="883.116699" />
+    <routestep step="13" x="559.344360" y="568.023071" z="883.116699" />
+    <routestep step="14" x="552.750305" y="567.919678" z="883.116699" />
+    <routestep step="15" x="547.649414" y="564.969910" z="883.116699" />
+    <routestep step="16" x="545.690918" y="562.002747" z="883.216675" />
+    <routestep step="17" x="544.551208" y="557.897217" z="883.216675" />
+    <routestep step="18" x="544.557495" y="554.293823" z="883.216675" />
+    <routestep step="19" x="544.693542" y="551.167053" z="883.216675" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_C_1" pool="1">
+    <routestep step="1" x="748.768738" y="494.409912" z="1013.746216" />
+    <routestep step="2" x="748.846191" y="494.412231" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="IDShip_FShulackWiBreeder_42_Ae_Path" pool="1">
+    <routestep step="1" x="611.654907" y="544.387451" z="938.189575" />
+    <routestep step="2" x="611.655640" y="544.456543" z="938.189575" />
+    <routestep step="3" x="611.705627" y="543.848572" z="938.189575" />
+    <routestep step="4" x="611.726440" y="539.783447" z="938.189575" />
+    <routestep step="5" x="612.022034" y="533.308899" z="938.189575" />
+    <routestep step="6" x="613.573914" y="526.193665" z="938.189575" />
+    <routestep step="7" x="616.855347" y="522.385071" z="938.189575" />
+    <routestep step="8" x="621.315796" y="522.178894" z="938.189575" />
+    <routestep step="9" x="625.802246" y="527.556885" z="938.191284" />
+    <routestep step="10" x="628.279419" y="526.791504" z="938.191284" />
+    <routestep step="11" x="630.950806" y="521.959534" z="938.191284" />
+    <routestep step="12" x="628.329956" y="526.828308" z="938.191284" />
+    <routestep step="13" x="625.778320" y="527.612915" z="938.189575" />
+    <routestep step="14" x="621.325745" y="522.208801" z="938.189575" />
+    <routestep step="15" x="616.878540" y="522.392517" z="938.189575" />
+    <routestep step="16" x="613.546631" y="526.179016" z="938.189575" />
+    <routestep step="17" x="612.038269" y="533.403076" z="938.189575" />
+    <routestep step="18" x="611.744141" y="539.751648" z="938.189575" />
+    <routestep step="19" x="611.667358" y="544.247864" z="938.189575" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC7" pool="1">
+    <routestep step="1" x="289.226929" y="536.314758" z="954.765381" />
+    <routestep step="2" x="286.042908" y="536.282104" z="954.765381" />
+    <routestep step="3" x="280.887329" y="536.318481" z="954.765381" />
+    <routestep step="4" x="277.628632" y="536.282166" z="954.765381" />
+    <routestep step="5" x="274.598450" y="536.280457" z="954.765381" />
+    <routestep step="6" x="277.640076" y="536.301514" z="954.765381" />
+    <routestep step="7" x="280.806274" y="536.317200" z="954.765381" />
+    <routestep step="8" x="286.014801" y="536.298340" z="954.765381" />
+    <routestep step="9" x="289.233856" y="536.300293" z="954.765381" />
+    <routestep step="10" x="291.487885" y="536.344360" z="954.765381" />
+    <routestep step="11" x="298.089264" y="536.363770" z="954.765381" />
+    <routestep step="12" x="295.020782" y="536.362854" z="954.765381" />
+    <routestep step="13" x="291.539215" y="536.310303" z="954.765381" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC6" pool="1">
+    <routestep step="1" x="289.543976" y="476.047516" z="954.765381" />
+    <routestep step="2" x="286.359955" y="476.014832" z="954.765381" />
+    <routestep step="3" x="281.204376" y="476.051239" z="954.765381" />
+    <routestep step="4" x="277.945679" y="476.014893" z="954.765381" />
+    <routestep step="5" x="274.759399" y="476.013184" z="954.765381" />
+    <routestep step="6" x="277.957123" y="476.034241" z="954.765381" />
+    <routestep step="7" x="281.123322" y="476.049957" z="954.765381" />
+    <routestep step="8" x="286.331848" y="476.031097" z="954.765381" />
+    <routestep step="9" x="289.550903" y="476.033051" z="954.765381" />
+    <routestep step="10" x="291.804932" y="476.077118" z="954.765381" />
+    <routestep step="11" x="302.108765" y="476.096466" z="954.765381" />
+    <routestep step="12" x="295.337830" y="476.095581" z="954.765381" />
+    <routestep step="13" x="291.856262" y="476.043030" z="954.765381" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Captain_Sum_2" pool="1">
+    <routestep step="1" x="384.574921" y="523.434204" z="1076.199951" />
+    <routestep step="2" x="385.524078" y="522.077209" z="1076.199951" />
+    <routestep step="3" x="387.030731" y="521.550720" z="1076.199951" />
+    <routestep step="4" x="392.163269" y="521.428650" z="1076.199951" />
+    <routestep step="5" x="398.325836" y="521.391479" z="1076.199951" />
+    <routestep step="6" x="404.880829" y="521.343140" z="1076.199951" />
+    <routestep step="7" x="412.550812" y="521.311218" z="1076.199951" />
+    <routestep step="8" x="418.388428" y="521.261292" z="1076.199951" />
+    <routestep step="9" x="428.109009" y="521.268188" z="1076.199951" />
+    <routestep step="10" x="418.394226" y="521.261475" z="1076.199951" />
+    <routestep step="11" x="412.544678" y="521.313293" z="1076.199951" />
+    <routestep step="12" x="404.906250" y="521.349365" z="1076.199951" />
+    <routestep step="13" x="398.306885" y="521.408936" z="1076.199951" />
+    <routestep step="14" x="392.175079" y="521.440979" z="1076.199951" />
+    <routestep step="15" x="387.005646" y="521.553894" z="1076.199951" />
+    <routestep step="16" x="385.497040" y="522.094299" z="1076.199951" />
+    <routestep step="17" x="384.579224" y="523.456604" z="1076.199951" />
+    <routestep step="18" x="384.681641" y="530.224548" z="1076.199951" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P2_Flame_4" pool="1">
+    <routestep step="1" x="740.434387" y="485.398560" z="1015.184814" />
+    <routestep step="2" x="740.511841" y="485.400879" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC47" pool="1">
+    <routestep step="1" x="496.992310" y="530.355103" z="888.216675" />
+    <routestep step="2" x="496.865814" y="536.554871" z="888.216675" />
+    <routestep step="3" x="496.819031" y="530.269836" z="888.216675" />
+    <routestep step="4" x="496.998047" y="524.837891" z="888.216675" />
+    <routestep step="5" x="496.829071" y="519.211182" z="888.116699" />
+    <routestep step="6" x="496.966827" y="524.789368" z="888.216675" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P2_Bomb_1" pool="1">
+    <routestep step="1" x="751.357239" y="487.975952" z="1013.634521" />
+    <routestep step="2" x="751.434692" y="487.978271" z="1013.631226" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_D_3" pool="1">
+    <routestep step="1" x="758.602905" y="519.300293" z="1013.746216" />
+    <routestep step="2" x="758.680359" y="519.302612" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P1_Flame_6" pool="1">
+    <routestep step="1" x="761.414368" y="523.161987" z="1015.184814" />
+    <routestep step="2" x="761.491821" y="523.164307" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC90" pool="1">
+    <routestep step="1" x="559.254700" y="467.443085" z="884.954834" />
+    <routestep step="2" x="552.723389" y="464.984344" z="884.954834" />
+    <routestep step="3" x="547.877136" y="463.232513" z="884.854858" />
+    <routestep step="4" x="544.070190" y="462.250946" z="884.854858" />
+    <routestep step="5" x="542.935608" y="462.087463" z="884.954834" rest_time="3000" />
+    <routestep step="5" x="544.076538" y="462.241119" z="884.854858" />
+    <routestep step="6" x="547.895508" y="463.214172" z="884.854858" />
+    <routestep step="7" x="552.698608" y="464.972992" z="884.954834" />
+    <routestep step="8" x="559.292419" y="467.428650" z="884.954834" />
+    <routestep step="9" x="561.765503" y="468.292603" z="884.954834" />
+    <routestep step="10" x="565.204041" y="469.962708" z="884.854858" />
+    <routestep step="11" x="569.790527" y="472.899780" z="884.854858" />
+    <routestep step="12" x="573.108826" y="475.565399" z="884.854858" />
+    <routestep step="13" x="573.982666" y="476.283081" z="884.954834" rest_time="1000" />
+    <routestep step="13" x="573.103760" y="475.554291" z="884.854858" />
+    <routestep step="14" x="569.818909" y="472.946869" z="884.854858" />
+    <routestep step="15" x="565.269104" y="469.903259" z="884.954834" />
+    <routestep step="16" x="561.788574" y="468.284180" z="884.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_D_1" pool="1">
+    <routestep step="1" x="747.483276" y="514.476563" z="1013.746216" />
+    <routestep step="2" x="747.560730" y="514.478882" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_2FBoss_Foods" pool="1">
+    <routestep step="1" x="739.841187" y="501.171387" z="942.172974" />
+    <routestep step="2" x="740.035583" y="501.170624" z="942.174133" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_E" pool="1">
+    <routestep step="1" x="758.602905" y="509.045044" z="1013.746216" />
+    <routestep step="2" x="758.680359" y="509.047363" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC4" pool="1">
+    <routestep step="1" x="287.939209" y="502.396301" z="951.765381" />
+    <routestep step="2" x="286.682373" y="496.238159" z="951.765381" />
+    <routestep step="3" x="282.993469" y="489.680664" z="951.765381" />
+    <routestep step="4" x="282.981842" y="489.638550" z="951.765381" />
+    <routestep step="5" x="286.714783" y="496.275177" z="951.765381" rest_time="30000" />
+    <routestep step="5" x="287.968414" y="502.436737" z="951.765381" />
+    <routestep step="6" x="287.891968" y="506.092041" z="951.765381" />
+    <routestep step="7" x="287.863983" y="509.472717" z="951.665344" />
+    <routestep step="8" x="286.511078" y="515.172668" z="951.765381" />
+    <routestep step="9" x="281.780701" y="522.495361" z="951.765381" />
+    <routestep step="10" x="281.671448" y="522.498291" z="951.765381" />
+    <routestep step="11" x="286.529053" y="515.220825" z="951.765381" />
+    <routestep step="12" x="287.887848" y="509.541992" z="951.765381" />
+    <routestep step="13" x="287.978394" y="506.300537" z="951.765381" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P3_Flame_5" pool="1">
+    <routestep step="1" x="733.932678" y="531.947021" z="1015.184814" />
+    <routestep step="2" x="734.010132" y="531.949341" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_C_3" pool="1">
+    <routestep step="1" x="758.602905" y="499.233582" z="1013.746216" />
+    <routestep step="2" x="758.680359" y="499.235901" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC35" pool="1">
+    <routestep step="1" x="356.636200" y="550.723145" z="902.954834" />
+    <routestep step="2" x="353.305695" y="554.623596" z="902.954834" />
+    <routestep step="3" x="347.417725" y="558.130676" z="902.954834" />
+    <routestep step="4" x="343.228821" y="559.963867" z="904.091919" />
+    <routestep step="5" x="341.091339" y="560.792480" z="905.555847" rest_time="15000" />
+    <routestep step="5" x="343.135406" y="559.981445" z="904.133362" />
+    <routestep step="6" x="347.426880" y="558.141968" z="902.954834" />
+    <routestep step="7" x="353.269958" y="554.586060" z="902.954834" />
+    <routestep step="8" x="356.588806" y="550.834290" z="902.954834" />
+    <routestep step="9" x="358.195618" y="546.164917" z="902.954834" />
+    <routestep step="10" x="358.498505" y="540.485352" z="902.854858" />
+    <routestep step="11" x="358.510468" y="537.865112" z="902.954834" rest_time="5000" />
+    <routestep step="11" x="358.528076" y="540.522888" z="902.954834" />
+    <routestep step="12" x="358.175171" y="546.102539" z="902.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P1_Bomb_2" pool="1">
+    <routestep step="1" x="762.849915" y="518.377563" z="1013.634521" />
+    <routestep step="2" x="762.927368" y="518.379883" z="1013.631226" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P2_Flame_6" pool="1">
+    <routestep step="1" x="733.585266" y="478.674744" z="1015.184814" />
+    <routestep step="2" x="733.662720" y="478.677063" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_B_3" pool="1">
+    <routestep step="1" x="737.295837" y="514.480591" z="1013.746216" />
+    <routestep step="2" x="737.373291" y="514.482910" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P1_Flame_1" pool="1">
+    <routestep step="1" x="776.058655" y="500.941528" z="1015.184814" />
+    <routestep step="2" x="776.136108" y="500.943848" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_D_2" pool="1">
+    <routestep step="1" x="748.768738" y="524.988159" z="1013.746216" />
+    <routestep step="2" x="748.846191" y="524.990479" z="1013.742920" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC62" pool="1">
+    <routestep step="1" x="716.907104" y="504.284576" z="1014.109863" />
+    <routestep step="2" x="715.778625" y="500.743866" z="1014.109863" />
+    <routestep step="3" x="713.112549" y="498.849243" z="1014.109863" />
+    <routestep step="4" x="709.609314" y="498.259186" z="1014.109863" />
+    <routestep step="5" x="704.642822" y="498.261230" z="1014.109863" rest_time="20000" />
+    <routestep step="5" x="709.595398" y="498.284119" z="1014.109863" />
+    <routestep step="6" x="713.123657" y="498.837219" z="1014.109863" />
+    <routestep step="7" x="715.776794" y="500.808380" z="1014.109863" />
+    <routestep step="8" x="716.924744" y="504.324829" z="1014.109863" />
+    <routestep step="9" x="716.967834" y="509.161713" z="1014.109863" />
+    <routestep step="10" x="716.446960" y="512.045105" z="1014.109863" />
+    <routestep step="11" x="714.891724" y="514.718079" z="1014.109863" />
+    <routestep step="12" x="712.566711" y="515.996399" z="1014.109863" />
+    <routestep step="13" x="709.810730" y="516.443481" z="1014.109863" />
+    <routestep step="14" x="705.323303" y="515.975403" z="1014.009888" rest_time="20000" />
+    <routestep step="14" x="709.792175" y="516.402039" z="1014.109863" />
+    <routestep step="15" x="712.548584" y="516.022400" z="1014.109863" />
+    <routestep step="16" x="714.914185" y="514.690735" z="1014.109863" />
+    <routestep step="17" x="716.433777" y="512.021790" z="1014.109863" />
+    <routestep step="18" x="716.977356" y="509.185425" z="1014.109863" />
+  </walker_template>
+  <walker_template route_id="IDShip_NpcPath_Middle_Cannon" pool="1">
+    <routestep step="1" x="521.962585" y="508.461975" z="1023.848755" />
+    <routestep step="2" x="520.836365" y="508.461975" z="1023.848877" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC120" pool="2" formation="OFFSET" offsetsx="0,0" offsetsy="1,-1">
+    <routestep step="1" x="677.676697" y="454.718445" z="1019.232117" />
+    <routestep step="2" x="674.025818" y="453.902924" z="1019.483215" />
+    <routestep step="3" x="669.195007" y="453.177216" z="1019.809265" />
+    <routestep step="4" x="674.030396" y="453.952087" z="1019.475586" />
+    <routestep step="5" x="677.643677" y="454.760254" z="1019.205505" />
+    <routestep step="6" x="680.228088" y="455.109039" z="1019.148438" />
+    <routestep step="7" x="683.758850" y="456.029236" z="1018.823181" />
+    <routestep step="8" x="689.226013" y="456.834595" z="1018.320374" />
+    <routestep step="9" x="694.672302" y="457.655518" z="1018.022583" />
+    <routestep step="10" x="689.233887" y="456.853149" z="1018.318726" />
+    <routestep step="11" x="683.758057" y="456.041809" z="1018.792725" />
+    <routestep step="12" x="680.260437" y="455.094940" z="1019.148438" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Captain_Sum_3" pool="1">
+    <routestep step="1" x="428.082062" y="493.654114" z="1075.900024" />
+    <routestep step="2" x="427.962067" y="498.619202" z="1075.900024" />
+    <routestep step="3" x="427.926086" y="505.763062" z="1076.000122" />
+    <routestep step="4" x="426.976929" y="507.120056" z="1076.000122" />
+    <routestep step="5" x="425.470276" y="507.646545" z="1076.000122" />
+    <routestep step="6" x="420.337738" y="507.768616" z="1076.000122" />
+    <routestep step="7" x="414.175171" y="507.805786" z="1076.000122" />
+    <routestep step="8" x="407.620178" y="507.854126" z="1076.000122" />
+    <routestep step="9" x="399.950195" y="507.886047" z="1076.000122" />
+    <routestep step="10" x="394.112579" y="507.935974" z="1076.000122" />
+    <routestep step="11" x="388.506042" y="507.967590" z="1076.000122" />
+    <routestep step="12" x="383.663177" y="507.886536" z="1076.000122" />
+    <routestep step="13" x="377.166718" y="507.902161" z="1076.000122" />
+    <routestep step="14" x="383.692322" y="507.871918" z="1076.000122" />
+    <routestep step="15" x="388.521057" y="507.929108" z="1076.000122" />
+    <routestep step="16" x="394.106750" y="507.935822" z="1076.000122" />
+    <routestep step="17" x="399.956299" y="507.884003" z="1076.000122" />
+    <routestep step="18" x="407.594727" y="507.847931" z="1076.000122" />
+    <routestep step="19" x="414.194122" y="507.788361" z="1076.000122" />
+    <routestep step="20" x="420.325928" y="507.756317" z="1076.000122" />
+    <routestep step="21" x="425.495361" y="507.643402" z="1076.000122" />
+    <routestep step="22" x="427.003967" y="507.102997" z="1076.000122" />
+    <routestep step="23" x="427.921783" y="505.740692" z="1076.000122" />
+    <routestep step="24" x="427.968811" y="498.602966" z="1076.000000" />
+    <routestep step="25" x="428.108612" y="493.652740" z="1076.000000" />
+    <routestep step="26" x="429.213562" y="492.590485" z="1075.900024" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC79" pool="1">
+    <routestep step="1" x="281.677002" y="506.109009" z="902.954834" />
+    <routestep step="2" x="281.956940" y="497.495209" z="902.954834" />
+    <routestep step="3" x="281.856781" y="490.622467" z="902.954834" />
+    <routestep step="4" x="281.885498" y="488.006805" z="902.854858" />
+    <routestep step="5" x="281.738159" y="483.559784" z="902.954834" />
+    <routestep step="6" x="280.808777" y="481.658173" z="902.854858" />
+    <routestep step="7" x="279.517944" y="480.372711" z="902.954834" rest_time="1000" />
+    <routestep step="7" x="280.806000" y="481.664215" z="902.854858" />
+    <routestep step="8" x="281.749786" y="483.570313" z="902.954834" />
+    <routestep step="9" x="281.882416" y="488.035309" z="902.854858" />
+    <routestep step="10" x="281.857635" y="490.627838" z="902.954834" />
+    <routestep step="11" x="281.900513" y="497.472534" z="902.954834" />
+    <routestep step="12" x="281.666565" y="506.103485" z="902.954834" />
+    <routestep step="13" x="281.324005" y="508.345062" z="902.954834" />
+    <routestep step="14" x="279.300049" y="512.037781" z="902.854858" />
+    <routestep step="15" x="278.218658" y="512.836304" z="902.954834" rest_time="3000" />
+    <routestep step="15" x="279.316254" y="512.042969" z="902.954834" />
+    <routestep step="16" x="281.358093" y="508.396393" z="902.954834" />
+  </walker_template>
+  <walker_template route_id="IDShulackShip_Cannon_P1_Flame_2" pool="1">
+    <routestep step="1" x="776.058655" y="516.302612" z="1015.184814" />
+    <routestep step="2" x="776.136108" y="516.304932" z="1015.181519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC93" pool="1">
+    <routestep step="1" x="563.114685" y="543.189453" z="884.954834" />
+    <routestep step="2" x="566.604614" y="543.186829" z="884.954834" />
+    <routestep step="3" x="569.392883" y="543.151001" z="884.854858" />
+    <routestep step="4" x="571.740234" y="543.111694" z="884.854858" />
+    <routestep step="5" x="574.493958" y="543.151550" z="884.954834" rest_time="3000" />
+    <routestep step="5" x="571.735168" y="543.110535" z="884.854858" />
+    <routestep step="6" x="569.374451" y="543.131287" z="884.854858" />
+    <routestep step="7" x="566.583740" y="543.187195" z="884.954834" />
+    <routestep step="8" x="563.106506" y="543.178162" z="884.954834" />
+    <routestep step="9" x="559.808105" y="543.264404" z="884.954834" />
+    <routestep step="10" x="555.544373" y="543.355957" z="884.854858" />
+    <routestep step="11" x="550.031311" y="543.787964" z="884.854858" />
+    <routestep step="12" x="545.106689" y="544.115662" z="884.854858" />
+    <routestep step="13" x="542.841675" y="544.287170" z="884.954834" rest_time="1000" />
+    <routestep step="13" x="545.102600" y="544.120361" z="884.854858" />
+    <routestep step="14" x="550.021423" y="543.769043" z="884.854858" />
+    <routestep step="15" x="555.544495" y="543.364685" z="884.954834" />
+    <routestep step="16" x="559.745239" y="543.218994" z="884.954834" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC110" pool="1">
+    <routestep step="1" x="572.758789" y="576.577515" z="884.084656" />
+    <routestep step="2" x="573.947021" y="577.236633" z="884.084656" />
+    <routestep step="3" x="575.194580" y="578.283691" z="883.984680" rest_time="1000" />
+    <routestep step="3" x="573.932617" y="577.202332" z="884.084656" />
+    <routestep step="4" x="572.739258" y="576.554993" z="884.084656" />
+    <routestep step="5" x="571.388306" y="576.149536" z="884.084717" />
+    <routestep step="6" x="567.124573" y="576.010132" z="882.484863" />
+    <routestep step="7" x="563.569031" y="575.982849" z="879.753540" />
+    <routestep step="8" x="561.839050" y="575.951294" z="877.662292" />
+    <routestep step="9" x="561.224915" y="575.876526" z="877.536987" rest_time="10000" />
+    <routestep step="9" x="561.838684" y="575.956909" z="877.671082" />
+    <routestep step="10" x="563.655884" y="575.983582" z="879.725098" />
+    <routestep step="11" x="567.124695" y="576.019470" z="882.492859" />
+    <routestep step="12" x="571.325439" y="576.104126" z="884.084717" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDShulackShip_NPC30" pool="1">
+    <routestep step="1" x="528.708801" y="511.168823" z="960.099976" />
+    <routestep step="2" x="528.699341" y="507.999664" z="960.099976" />
+    <routestep step="3" x="528.685547" y="502.901367" z="960.099976" />
+    <routestep step="4" x="528.668518" y="497.890350" z="960.099976" />
+    <routestep step="5" x="528.687378" y="494.049072" z="960.099976" rest_time="5000" />
+    <routestep step="5" x="528.660950" y="497.942230" z="960.099976" />
+    <routestep step="6" x="528.660522" y="502.888367" z="960.099976" />
+    <routestep step="7" x="528.683105" y="508.016174" z="960.099976" />
+    <routestep step="8" x="528.732483" y="511.870575" z="960.099976" />
+    <routestep step="9" x="528.697205" y="513.462280" z="960.099976" />
+    <routestep step="10" x="528.643188" y="522.433228" z="960.099976" />
+    <routestep step="11" x="528.500244" y="530.499207" z="960.099976" />
+    <routestep step="12" x="525.919983" y="533.720642" z="960.099976" />
+    <routestep step="13" x="522.931946" y="533.840088" z="960.099976" rest_time="15000" />
+    <routestep step="13" x="525.932129" y="533.697754" z="960.099976" />
+    <routestep step="14" x="528.525818" y="530.488708" z="960.099976" />
+    <routestep step="15" x="528.639526" y="522.465759" z="960.099976" />
+    <routestep step="16" x="528.777100" y="516.992432" z="960.099976" />
+    <routestep step="17" x="528.783630" y="513.670776" z="960.099976" />
+  </walker_template>
+</npc_walker>

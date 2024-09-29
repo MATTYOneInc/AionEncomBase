@@ -117,33 +117,18 @@ public class DraupnirCaveInstance extends GeneralInstanceHandler
 		}
 	}
 	
-	@Override
-    public void onInstanceCreate(WorldMapInstance instance) {
-        super.onInstanceCreate(instance);
-		switch (Rnd.get(1, 4)) {
-		    case 1:
-				spawn(213587, 567.438f, 700.875f, 538.701f, (byte) 7); //Hungry Ooze.
-			break;
-			case 2:
-				spawn(213588, 166.8f, 536.285f, 505.802f, (byte) 9); //Lucky Golden Saam.
-			break;
-			case 3:
-				spawn(213771, 497.006f, 434.713f, 616.584f, (byte) 71); //Protector Rakkan.
-			break;
-			case 4:
-				spawn(213773, 380.694f, 611.956f, 598.523f, (byte) 98); //Dragonpriest Tairgus.
-			break;
-        }
-    }
-	
     @Override
     public void onDie(Npc npc) {
         Player player = npc.getAggroList().getMostPlayerDamage();
 		switch (npc.getObjectTemplate().getTemplateId()) {
 			case 213776: //Instructor Afrane.
+			case 237264:
 			case 213778: //Beautiful Lakshmi.
+			case 237265:
 			case 213779: //Commander Nimbarka.
+			case 237266:
 			case 213802: //Kind Saraswati.
+			case 237267:
 				adjutantsKilled++;
 				if (adjutantsKilled == 1) {
 					//You must kill 3 more Adjutants to make Commander Bakarma appear.
@@ -161,8 +146,8 @@ public class DraupnirCaveInstance extends GeneralInstanceHandler
 					deleteNpc(214026); //Deputy Brigade General Yavant.
 				}
 			break;
-			case 213780: //Commander Bakarma.
-				sendMsg("[SUCCES]: You have finished <Draupnir Cave>");
+			case 236929: //Commander Bakarma.
+				//sendMsg("[SUCCES]: You have finished <Draupnir Cave>");
 				switch (Rnd.get(1, 2)) {
 		            case 1:
 				        spawn(702658, 787.32513f, 431.49173f, 319.62155f, (byte) 33); //Abbey Box.
@@ -233,7 +218,7 @@ public class DraupnirCaveInstance extends GeneralInstanceHandler
 	}
 	
 	private void spawnCommanderBakarma() {
-		spawn(213780, 777.46985f, 431.09888f, 321.7541f, (byte) 62); //Commander Bakarma.
+		spawn(236929, 777.46985f, 431.09888f, 321.7541f, (byte) 62); //Commander Bakarma.
 	}
 	
 	private void spawnAkhal() {

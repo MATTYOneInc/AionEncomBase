@@ -1,524 +1,415 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-	悪夢
-	Spawn By (Encom)
+	Parsed By Angry Catster
+
  -->
 <spawns>
-	<spawn_map map_id="300230000">
-	    <!-- Troll Lookout -->
-		<spawn npc_id="216961">
-		    <spot h="16" z="187.36568" y="245.13164" x="276.42352" random_walk="2"/>
-            <spot h="36" z="187.22237" y="261.7446" x="307.89368" random_walk="2"/>
-            <spot h="51" z="193.28183" y="269.31204" x="329.49762" random_walk="2"/>
-            <spot h="81" z="187.50809" y="282.1011" x="294.15552" random_walk="2"/>
-		</spawn>
-		<!-- Trollkin Lookout -->
-		<spawn npc_id="216962">
-		    <spot h="18" z="186.84685" y="254.85274" x="291.57413" random_walk="2"/>
-            <spot h="71" z="192.70828" y="288.55914" x="315.05914" random_walk="2"/>
-		</spawn>
-		<!-- Watching Kalgolem -->
-		<spawn npc_id="216963">
-		    <spot h="71" z="172.32661" y="339.79294" x="443.0721" random_walk="2"/>
-            <spot h="60" z="170.49171" y="338.4174" x="471.9797" random_walk="2"/>
-		</spawn>
-		<!-- Net Arachna -->
-		<spawn npc_id="216964">
-            <spot h="74" z="174.71028" y="324.7577" x="421.3997" random_walk="2"/>
-            <spot h="55" z="165.68385" y="339.88333" x="515.9569" random_walk="2"/>
-			<spot h="16" z="192.03412" y="256.91098" x="359.89804" walker_id="Net_Arachna_1"/>
-			<spot h="101" z="153.39685" y="287.42685" x="549.22565" walker_id="Net_Arachna_2"/>
-		</spawn>
-		<!-- Temple Mugolem -->
-		<spawn npc_id="216965">
-		    <spot h="106" z="146.71289" y="190.50787" x="358.42145"/>
-            <spot h="45" z="146.71289" y="176.13567" x="372.6886"/>
-            <spot h="14" z="140.60266" y="234.10822" x="426.9322"/>
-            <spot h="14" z="140.60266" y="245.9517" x="416.05273"/>
-            <spot h="71" z="170.9916" y="354.8965" x="470.956"/>
-            <spot h="36" z="142.20296" y="239.19368" x="515.72864"/>
-		</spawn>
-		<!-- Faithful Temple Nagolem -->
-		<spawn npc_id="216966">
-		    <spot h="25" z="143.86298" y="231.08423" x="526.2673" random_walk="2"/>
-            <spot h="21" z="142.8498" y="229.05534" x="482.8243" random_walk="2"/>
-            <spot h="75" z="142.67352" y="255.66296" x="521.2905" random_walk="2"/>
-            <spot h="104" z="139.07825" y="254.97017" x="475.75888" random_walk="2"/>
-			<spot h="15" z="145.48969" y="227.30206" x="409.85956" walker_id="Faithful_Temple_Nagolem_1"/>
-			<spot h="45" z="145.8918" y="197.59729" x="376.37048" walker_id="Faithful_Temple_Nagolem_2"/>
-            <spot h="105" z="145.8918" y="193.9301" x="379.60992" walker_id="Faithful_Temple_Nagolem_3"/>
-		</spawn>
-		<!-- Petrahulk Gatekeeper -->
-		<spawn npc_id="216967">
-		    <spot h="14" z="145.86018" y="207.43259" x="389.8168"/>
-		</spawn>
-		<!-- Divine Hisen
-		<Siel's Spear Legion> -->
-		<spawn npc_id="216968">
-		    <spot h="75" z="146.22021" y="170.15617" x="351.9014"/>
-		</spawn>
-		<!-- Captive -->
-		<spawn npc_id="216970">
-		    <spot h="119" z="201.19109" y="656.25574" x="645.7019"/>
-            <spot h="0" z="201.19109" y="615.5086" x="646.3564"/>
-		</spawn>
-		<!-- Prisoner -->
-		<spawn npc_id="216971">
-		    <spot h="119" z="201.19109" y="600.1707" x="642.90546"/>
-            <spot h="119" z="201.19109" y="653.24756" x="652.0386"/>
-            <spot h="30" z="201.19109" y="597.29047" x="663.38293"/>
-            <spot h="29" z="201.19109" y="594.93" x="649.4757"/>
-		</spawn>
-		<!-- Captive -->
-		<spawn npc_id="216972">
-		    <spot h="105" z="201.19109" y="655.94904" x="655.0894"/>
-            <spot h="119" z="201.19109" y="665.28986" x="642.3002"/>
-            <spot h="31" z="201.19109" y="596.95667" x="666.8828"/>
-		</spawn>
-		<!-- Dungeon Guard
-		<Shadow Executor> -->
-		<spawn npc_id="216973">
-		    <spot h="20" z="197.93004" y="506.07977" x="687.9939"/>
-            <spot h="78" z="198.53848" y="546.457" x="730.9819"/>
-		</spawn>
-		<!-- Dungeon Sentry
-		<Shadow Executor> -->
-		<spawn npc_id="216974">
-		    <spot h="111" z="197.8742" y="524.5952" x="723.22266"/>
-            <spot h="17" z="198.53848" y="544.80255" x="729.7093"/>
-		</spawn>
-		<!-- Dungeon Guard
-		<Shadow Executor> -->
-		<spawn npc_id="216975">
-		    <spot h="92" z="197.88681" y="522.9521" x="709.8245"/>
-		</spawn>
-		<!-- Dungeon Sentry
-		<Shadow Executor> -->
-		<spawn npc_id="216976">
-		    <spot h="87" z="197.88681" y="543.4736" x="707.85803"/>
-		</spawn>
-		<!-- Dungeon Servant -->
-		<spawn npc_id="216977">
-		    <spot h="98" z="197.8742" y="544.4813" x="723.9969"/>
-            <spot h="99" z="197.8742" y="515.0759" x="717.576" walker_id="Dungeon_Servant"/>
-		</spawn>
-		<!-- Dungeon Maid -->
-		<spawn npc_id="216978">
-		    <spot h="113" z="198.73691" y="518.075" x="740.63715"/>
-		</spawn>
-		<!-- Shadow Executor Asusin -->
-		<spawn npc_id="216979">
-		    <spot h="0" z="215.3561" y="638.63904" x="544.45935"/>
-		</spawn>
-		<!-- Warden Baal
-		<Key Keeper> -->
-		<spawn npc_id="216980">
-		    <spot h="90" z="200.1199" y="643.9003" x="688.6453" walker_id="Warden_Baal"/>
-		</spawn>
-		<!-- Manor Guard Captain
-		<Key Keeper> -->
-		<spawn npc_id="216981">
-		    <spot h="60" z="199.31773" y="531.6455" x="740.06555"/>
-		</spawn>
-		<!-- Hamam The Torturer
-		<Shadow Executor> -->
-		<spawn npc_id="216982">
-		    <spot h="50" z="197.54474" y="625.14954" x="750.3578"/>
-		</spawn>
-		<!-- Manor Servant -->
-		<spawn npc_id="216983">
-		    <spot h="30" z="215.5286" y="589.62463" x="507.2921"/>
-            <spot h="82" z="215.97673" y="780.549" x="506.9953"/>
-            <spot h="67" z="215.55" y="703.0869" x="534.75586"/>
-			<spot h="0" z="215.00104" y="640.2694" x="551.7394" walker_id="Manor_Servant_1"/>
-			<spot h="46" z="215.55" y="696.3979" x="498.1552" walker_id="Manor_Servant_2"/>
-		</spawn>
-		<!-- Manor Maid -->
-		<spawn npc_id="216984">
-		    <spot h="30" z="215.5286" y="589.65424" x="518.34534"/>
-            <spot h="37" z="215.97673" y="780.35535" x="518.0174"/>
-            <spot h="0" z="215.5286" y="683.35254" x="494.18622" random_walk="3"/>
-			<spot h="6" z="215.55" y="701.50256" x="530.4901" walker_id="Manor_Maid"/>
-		</spawn>
-		<!-- Manor Servant -->
-		<spawn npc_id="216985">
-		    <spot h="15" z="208.13853" y="633.593" x="579.4906"/>
-            <spot h="78" z="201.51595" y="658.4406" x="542.2626"/>
-            <spot h="102" z="208.98833" y="658.7296" x="593.2132"/>
-            <spot h="101" z="208.98837" y="618.7839" x="593.8706"/>
-		</spawn>
-		<!-- Manor Guest
-		<Shadow Executor> -->
-		<spawn npc_id="216987">
-		    <spot h="0" z="215.5286" y="688.7089" x="559.28296"/>
-            <spot h="90" z="215.55" y="702.0353" x="494.74448"/>
-            <spot h="46" z="215.5286" y="721.35376" x="535.17236"/>
-            <spot h="60" z="214.99915" y="670.2326" x="513.81116"/>
-            <spot h="60" z="214.99915" y="611.648" x="513.72986"/>
-		</spawn>
-		<!-- Manor Scribe -->
-		<spawn npc_id="216988">
-		    <spot h="91" z="215.56647" y="769.94055" x="571.5777"/>
-            <spot h="30" z="215.88853" y="785.42993" x="560.57764"/>
-            <spot h="30" z="225.78215" y="827.4668" x="582.54956"/>
-            <spot h="90" z="225.7734" y="754.5951" x="557.6112"/>
-		</spawn>
-		<!-- Manor Guard
-		<Shadow Executor>
-		A minion of Shadow Judge Kaliga.
-		He guards the entrance to the Kaliga Manor -->
-		<spawn npc_id="216989">
-		    <spot h="10" z="215.5286" y="754.36774" x="500.99774"/>
-            <spot h="105" z="215.5286" y="769.9941" x="501.9588"/>
-            <spot h="59" z="215.5286" y="756.4766" x="524.77875"/>
-            <spot h="79" z="215.5286" y="770.897" x="523.9355"/>
-		</spawn>
-		<!-- Manor Defender
-		<Shadow Executor>
-		A minion of Shadow Judge Kaliga.
-		He guards the entrance to the Kaliga Manor -->
-		<spawn npc_id="216990">
-		    <spot h="31" z="215.5286" y="765.23" x="504.12503"/>
-		</spawn>
-		<!-- Manor Gardener -->
-		<spawn npc_id="216991">
-		    <spot h="88" z="201.54736" y="630.4706" x="492.45248"/>
-            <spot h="116" z="201.77348" y="656.1606" x="529.462"/>
-            <spot h="51" z="201.69308" y="657.8348" x="496.07587"/>
-		</spawn>
-		<!-- Manor Gardener -->
-		<spawn npc_id="216992">
-		    <spot h="97" z="201.58432" y="655.2268" x="508.2731"/>
-            <spot h="10" z="201.4863" y="619.2882" x="507.26282"/>
-            <spot h="103" z="201.62129" y="627.26697" x="533.55774"/>
-		</spawn>
-		<!-- Bloodlust Dionae -->
-		<spawn npc_id="216993">
-            <spot h="104" z="201.76843" y="656.0956" x="520.7884" random_walk="1"/>
-            <spot h="77" z="201.59676" y="627.46735" x="521.1036" random_walk="1"/>
-        </spawn>
-		<!-- Yulina -->
-		<spawn npc_id="216994">
-            <spot x="512.52356" y="775.71" z="215.55608" h="90" walker_id="Yulina_Kiernook"/>
-        </spawn>
-		<!-- Kiernook -->
-		<spawn npc_id="216995">
-            <spot x="512.52356" y="775.71" z="215.55608" h="90" walker_id="Yulina_Kiernook"/>
-        </spawn>
-		<!-- Manor Kitchen Maid -->
-		<spawn npc_id="216996">
-		    <spot h="0" z="208.44672" y="640.2562" x="586.8489"/>
-		</spawn>
-		<!-- Pet Tog -->
-		<spawn npc_id="216997">
-		    <spot h="14" z="201.63188" y="649.44434" x="496.47342" random_walk="2"/>
-		</spawn>
-		<!-- Manduri Jester -->
-		<spawn npc_id="216998">
-            <spot h="67" z="201.62624" y="634.8044" x="502.16705" random_walk="1"/>
-        </spawn>
-		<!-- Jeeves -->
-		<spawn npc_id="216999">
-		    <spot h="1" z="215.57028" y="774.1439" x="586.72986"/>
-		</spawn>
-		<!-- Lady Angerr -->
-		<spawn npc_id="217000">
-		    <spot h="30" z="216.88846" y="570.96924" x="512.7573"/>
-		</spawn>
-		<!-- Justicetaker Wyr
-		<Shadow Judge> -->
-		<spawn npc_id="217002">
-		    <spot h="30" z="225.82628" y="836.9906" x="567.8111"/>
-		</spawn>
-		<!-- Crazy Prisoner -->
-		<spawn npc_id="217026">
-		    <spot h="13" z="201.19109" y="644.9884" x="651.7154"/>
-            <spot h="114" z="201.19109" y="606.4772" x="652.512"/>
-            <spot h="13" z="201.19109" y="645.49786" x="663.8951"/>
-            <spot h="9" z="201.19109" y="646.28564" x="645.5517"/>
-		</spawn>
-		<!-- Crazy Captive -->
-		<spawn npc_id="217027">
-		    <spot h="3" z="201.19109" y="603.46246" x="645.9329"/>
-            <spot h="113" z="201.19109" y="655.2819" x="661.32654"/>
-            <spot h="108" z="201.19109" y="611.2659" x="662.674"/>
-		</spawn>
-		<!-- Dungeon Guard
-		<Shadow Executor> -->
-		<spawn npc_id="217028">
-            <spot h="0" z="201.19109" y="650.9171" x="672.8682"/>
-            <spot h="0" z="201.05258" y="628.6986" x="679.0803"/>
-            <spot h="0" z="201.19109" y="606.31067" x="673.23413"/>
-            <spot h="97" z="209.04085" y="586.90216" x="638.4198"/>
-			<spot h="29" z="200.1199" y="593.1446" x="687.58997"/>
-			<spot h="0" z="197.8742" y="530.17126" x="696.4844" walker_id="Dungeon_Guard"/>
-		</spawn>
-		<!-- Dungeon Sentry
-		<Shadow Executor> -->
-		<spawn npc_id="217029">
-            <spot h="49" z="200.1199" y="622.90027" x="694.79156"/>
-			<spot h="74" z="197.90062" y="507.1016" x="689.03827" walker_id="Dungeon_Sentry"/>
-		</spawn>
-		<!-- Guard Bitin
-		<Shadow Executor> -->
-		<spawn npc_id="217030">
-		    <spot h="29" z="198.9078" y="580.61816" x="656.99786"/>
-		</spawn>
-		<!-- Manor Maid -->
-		<spawn npc_id="217031">
-		    <spot h="77" z="208.9933" y="578.2342" x="592.1133"/>
-            <spot h="18" z="208.1411" y="646.32324" x="576.2578"/>
-            <spot h="7" z="208.98904" y="656.4024" x="605.76135"/>
-            <spot h="114" z="208.98907" y="623.98834" x="606.0369"/>
-		</spawn>
-		<!-- Manor Visitor
-		<Shadow Executor> -->
-		<spawn npc_id="217033">
-		    <spot h="60" z="215.5286" y="688.9424" x="561.18256"/>
-            <spot h="0" z="214.99915" y="670.18524" x="511.60596"/>
-            <spot h="106" z="215.5286" y="722.99756" x="533.3715"/>
-            <spot h="29" z="215.55" y="700.02185" x="494.7101"/>
-            <spot h="0" z="214.99915" y="611.61426" x="511.7669"/>
-		</spawn>
-		<!-- Manor Librarian -->
-		<spawn npc_id="217034">
-		    <spot h="42" z="225.78215" y="817.73004" x="556.59937"/>
-            <spot h="90" z="215.53482" y="757.80365" x="581.62555"/>
-            <spot h="87" z="225.78215" y="803.81335" x="554.84564"/>
-            <spot h="88" z="225.77342" y="798.6062" x="584.36536"/>
-            <spot h="91" z="215.53482" y="797.9315" x="571.21985"/>
-            <spot h="116" z="225.78215" y="805.44763" x="586.7302"/>
-			<spot h="38" z="215.56647" y="764.674" x="563.63776" walker_id="Manor_Librarian"/>
-		</spawn>
-		<!-- Manor Guard
-		<Shadow Executor>
-		A minion of Shadow Judge Kaliga.
-		He guards the entrance to the Kaliga Manor -->
-		<spawn npc_id="217035">
-		    <spot h="113" z="215.3561" y="653.7943" x="545.368"/>
-            <spot h="29" z="215.3561" y="617.0674" x="560.49"/>
-            <spot h="0" z="215.3561" y="642.3202" x="544.5124"/>
-            <spot h="111" z="208.44661" y="638.45374" x="594.5469"/>
-			<spot h="90" z="208.9933" y="608.8817" x="596.2173" walker_id="Manor_Guard_1"/>
-			<spot h="60" z="201.57852" y="611.96814" x="532.6717" walker_id="Manor_Guard_2"/>
-			<spot h="60" z="201.60101" y="667.99365" x="532.3444" walker_id="Manor_Guard_3"/>
-			<spot h="59" z="208.98785" y="640.29004" x="611.3159" walker_id="Manor_Guard_4"/>
-		</spawn>
-		<!-- Manor Defender
-		<Shadow Executor>
-		A minion of Shadow Judge Kaliga.
-		He guards the entrance to the Kaliga Manor -->
-		<spawn npc_id="217036">
-		    <spot h="10" z="208.44669" y="642.2762" x="594.6307"/>
-            <spot h="73" z="215.3561" y="662.77094" x="563.5845"/>
-            <spot h="6" z="215.3561" y="626.87537" x="545.3088"/>
-            <spot h="1" z="208.9933" y="583.5582" x="594.34955" walker_id="Manor_Defender_1"/>
-			<spot h="30" z="201.57715" y="621.35077" x="483.93323" walker_id="Manor_Defender_2"/>
-		</spawn>
-		<!-- Scared Prisoner -->
-		<spawn npc_id="217113">
-		    <spot h="89" z="201.19109" y="633.991" x="659.6249"/>
-            <spot h="117" z="201.19109" y="628.72437" x="667.83673"/>
-		</spawn>
-		<!-- Scared Captive -->
-		<spawn npc_id="217114">
-		    <spot h="0" z="201.19109" y="630.0177" x="650.5536"/>
-            <spot h="23" z="201.19109" y="622.5731" x="662.53455"/>
-		</spawn>
-		<!-- Torture Tog -->
-		<spawn npc_id="217115">
-		    <spot h="119" z="196.77457" y="633.5111" x="724.1569" random_walk="2"/>
-            <spot h="0" z="196.77457" y="627.98315" x="721.22974" random_walk="2"/>
-            <spot h="57" z="196.77457" y="630.2786" x="740.2482" random_walk="2"/>
-		</spawn>
-		<!-- Manor Visitor
-		<Shadow Executor> -->
-		<spawn npc_id="217117">
-		    <spot x="512.19318" y="706.12494" z="216.02803" h="0"/>
-		    <spot x="512.09680" y="697.06409" z="216.02803" h="0"/>
-		</spawn>
-		<!-- Manor Guest
-		<Shadow Executor> -->
-		<spawn npc_id="217118">
-		    <spot x="518.12451" y="701.69336" z="216.02803" h="0"/>
-			<spot x="506.22302" y="701.51855" z="215.55972" h="1"/>
-		</spawn>
-		<!-- Relic Guardian -->
-		<spawn npc_id="217130">
-		    <spot h="74" z="215.58362" y="778.81006" x="611.13727"/>
-            <spot h="54" z="215.58362" y="769.84735" x="611.1284"/>
-		</spawn>
-		<!-- Watchdog Tog -->
-		<spawn npc_id="217131">
-		    <spot h="47" z="197.90062" y="505.86838" x="689.4614"/>
-			<spot h="29" z="200.1199" y="592.70874" x="688.9017"/>
-		</spawn>
-		<!-- Dungeon Guard
-		<Shadow Executor> -->
-		<spawn npc_id="217134">
-		    <spot h="19" z="200.1199" y="663.30084" x="686.03894"/>
-		</spawn>
-		<!-- Dungeon Sentry
-		<Shadow Executor> -->
-		<spawn npc_id="217135">
-		    <spot h="39" z="200.1199" y="662.38336" x="688.8818"/>
-		</spawn>
-		
-		<!-- Blood Wing -->
-		<spawn npc_id="282091">
-            <spot x="651.52014" y="564.18964" z="206.85417" h="54"/>
-        </spawn>
-		<!-- Altar Of Healing -->
-		<spawn npc_id="282092">
-		    <spot x="643.93500" y="795.35126" z="219.0564" h="0"/>
-		    <spot x="643.91718" y="753.29901" z="219.2851" h="0"/>
-		</spawn>
-		<!-- Ancient Temple Nagolem -->
-		<spawn npc_id="282126">
-		    <spot x="653.90796" y="793.66876" z="218.9695" h="0"/>
-		    <spot x="613.88916" y="793.74280" z="218.9695" h="0"/>
-		    <spot x="633.66956" y="793.66626" z="218.9695" h="0"/>
-		    <spot x="613.90295" y="754.87146" z="218.9695" h="0"/>
-		    <spot x="633.68335" y="754.79492" z="218.9695" h="0"/>
-		    <spot x="623.78314" y="754.77661" z="218.9695" h="0"/>
-		    <spot x="653.92175" y="754.79742" z="218.9695" h="0"/>
-		    <spot x="623.76935" y="793.64795" z="218.9695" h="0"/>
-		</spawn>
-		<!-- Minor Blessed Relics -->
-		<spawn npc_id="831988">
-            <spot x="254.68591" y="239.32385" z="189.49161" h="112"/>
-        </spawn>
-		<!-- Robstin's Corpse -->
-		<spawn npc_id="700939">
-		    <spot x="656.92" y="585.74" z="199.04"/>
-		</spawn>
-		<!-- Lost Rotan -->
-		<spawn npc_id="730309">
-		    <spot x="462.528" y="353.395" z="171.347" h="90"/>
-		</spawn>
-		<!-- Magas Potion -->
-		<spawn npc_id="730341">
-		    <spot x="542.38751" y="640.62500" z="217.09160" entity_id="553"/>
-		</spawn>
-		<!-- Old Relic Chest -->
-		<spawn npc_id="730340">
-		    <spot x="741.71100" y="530.55896" z="199.32249" entity_id="319"/>
-		</spawn>
-		<!-- Prophets Tower -->
-		<spawn npc_id="730339">
-		    <spot x="591.07068" y="640.16711" z="212.91092" entity_id="15"/>
-		</spawn>
-		<!-- Porgus Barbecue -->
-		<spawn npc_id="730338">
-		    <spot x="504.42490" y="767.33325" z="216.88873" entity_id="69"/>
-		</spawn>
-		<!-- Fruit Basket -->
-		<spawn npc_id="730337">
-		    <spot x="523.17877" y="756.25970" z="216.61475" entity_id="70"/>
-		</spawn>
-		<!-- Garden Fountain -->
-		<spawn npc_id="730336">
-		    <spot x="512.50000" y="640.37000" z="202.46429" entity_id="14"/>
-		</spawn>
-		<!-- Kaliga's Sword Rack -->
-		<spawn npc_id="730326">
-		    <spot x="644.22687" y="763.31689" z="216.11694" entity_id="206"/>
-		</spawn>
-		<!-- Kaliga's Greatsword Rack -->
-		<spawn npc_id="730327">
-		    <spot x="613.78210" y="785.07477" z="216.11694" entity_id="13"/>
-		</spawn>
-		<!-- Kaliga's Dagger Rack -->
-		<spawn npc_id="730328">
-		    <spot x="644.20538" y="785.07477" z="216.11694" entity_id="197"/>
-		</spawn>
-		<!-- Kaliga's Polearm Rack -->
-		<spawn npc_id="730329">
-		    <spot x="653.43909" y="785.07477" z="216.11694" entity_id="200"/>
-		</spawn>
-		<!-- Kaliga's Bow Rack -->
-		<spawn npc_id="730330">
-		    <spot x="634.14545" y="785.07477" z="216.11694" entity_id="195"/>
-		</spawn>
-		<!-- Kaliga's Mace Rack -->
-		<spawn npc_id="730331">
-		    <spot x="653.41669" y="763.31689" z="216.11694" entity_id="202"/>
-		</spawn>
-		<!-- Kaliga's Staff Rack -->
-		<spawn npc_id="730332">
-		    <spot x="623.69482" y="763.31689" z="216.11694" entity_id="260"/>
-		</spawn>
-		<!-- Kaliga's Spellbook Rack -->
-		<spawn npc_id="730333">
-		    <spot x="623.68225" y="785.07477" z="216.11694" entity_id="193"/>
-		</spawn>
-		<!-- Kaliga's Orb Rack -->
-		<spawn npc_id="730334">
-		    <spot x="634.16602" y="763.31689" z="216.11694" entity_id="208"/>
-		</spawn>
-		<!-- Kaliga's Shield Rack -->
-		<spawn npc_id="730335">
-		    <spot x="613.78210" y="763.31689" z="216.11694" entity_id="268"/>
-		</spawn>
-		<!-- Kaliga's Gun Rack -->
-		<spawn npc_id="730775">
-		    <spot x="613.78424" y="789.63318" z="216.11694" entity_id="978"/>
-		</spawn>
-		<!-- Kaliga's Cannon Rack -->
-		<spawn npc_id="730776">
-		    <spot x="623.67999" y="789.59003" z="216.12000" entity_id="979"/>
-		</spawn>
-		<!-- Kaliga's Harp Rack -->
-		<spawn npc_id="730777">
-		    <spot x="613.75140" y="758.83832" z="216.12000" entity_id="980"/>
-		</spawn>
-		<!-- Kaliga's Cipher-Blade Rack -->
-		<spawn npc_id="730887">
-		    <spot x="623.70129" y="758.83691" z="216.12000" entity_id="984"/>
-		</spawn>
-		<!-- Sleep Flower -->
-		<spawn npc_id="730325">
-		    <spot x="492.04623" y="628.59943" z="201.34204" entity_id="79"/>
-		</spawn>
-		<!-- Magas Potion -->
-		<spawn npc_id="730308">
-		    <spot x="350.28241" y="168.37091" z="148.17850" entity_id="6"/>
-		</spawn>
-		<!-- Sealed Stone Door -->
-		<spawn npc_id="700835">
-		    <spot x="504.79822" y="346.01190" z="170.59793" entity_id="3"/>
-		</spawn>
-		<!-- Grave Robbers Corpse -->
-		<spawn npc_id="700961">
-		    <spot x="467.36282" y="350.65765" z="170.39073" entity_id="56"/>
-		</spawn>
-		<!-- Torture Chamber Door -->
- 	    <spawn npc_id="700922">
-		    <spot x="712.81427" y="629.12433" z="196.85588" entity_id="320"/>
-	    </spawn>
-		<!-- Secret Safe Door -->
-		<spawn npc_id="700924">
-		    <spot x="588.07721" y="774.25677" z="217.88255" entity_id="5"/>
-		</spawn>
-		<!-- Bedroom Door -->
- 	    <spawn npc_id="700926">
-		    <spot x="560.41272" y="615.37274" z="214.66789" entity_id="80"/>
-	    </spawn>
-		<!-- Forbidden Book Repository Door -->
- 	    <spawn npc_id="700927">
-		    <spot x="576.76520" y="800.68561" z="224.82986" entity_id="66"/>
-	    </spawn> 
-		<!-- Emergency Exit -->
-		<spawn npc_id="700928">
-		    <spot x="679.96356" y="774.28571" z="216.85425" entity_id="105"/>
-		</spawn>
-		<!-- Mana Relic -->
-		<spawn npc_id="282093">
-		    <spot x="661.26282" y="766.38861" z="218.40755" entity_id="87"/>
-		</spawn>
-		<!-- Strength Relic -->
-		<spawn npc_id="282095">
-		    <spot x="661.00769" y="782.60962" z="218.40755" entity_id="84"/>
-		</spawn>
-	</spawn_map>
+  <spawn_map map_id="300230000">
+    <spawn npc_id="217033">
+      <spot x="494.791443" y="699.930908" z="215.55" h="30" />
+      <spot x="511.566040" y="611.648193" z="214.99918" h="0" />
+      <spot x="561.229187" y="688.764648" z="215.5286" h="60" />
+      <spot x="533.195007" y="723.060913" z="215.5286" h="106" />
+      <spot x="511.463745" y="670.257080" z="214.99918" h="0" />
+    </spawn>
+    <spawn npc_id="206154">
+      <spot x="445.943298" y="341.276093" z="172.04875" h="0" />
+    </spawn>
+    <spawn npc_id="282126">
+      <spot x="613.889160" y="793.742798" z="216.09479" h="90" />
+      <spot x="653.907959" y="793.668762" z="216.09479" h="90" />
+      <spot x="653.921753" y="754.797424" z="216.09479" h="30" />
+      <spot x="633.669556" y="793.666260" z="216.09479" h="90" />
+      <spot x="623.769348" y="793.647949" z="216.09479" h="90" />
+      <spot x="633.683350" y="754.794922" z="216.09479" h="30" />
+      <spot x="623.783142" y="754.776611" z="216.09479" h="30" />
+      <spot x="613.902954" y="754.871460" z="216.09479" h="30" />
+    </spawn>
+    <spawn npc_id="217029">
+      <spot x="694.755615" y="623.906067" z="200.1199" h="45" />
+      <spot x="689.110413" y="509.839722" z="197.90062" h="30" random_walk="2" walker_id="NPCPathIDCromede_Mob4" />
+    </spawn>
+    <spawn npc_id="730335">
+      <spot x="613.669800" y="763.253723" z="216.10057" entity_id="268" />
+    </spawn>
+    <spawn npc_id="216968" pool="1">
+      <spot x="352.209991" y="170.309998" z="146.22021" h="16" />
+      <spot x="365.451660" y="183.655655" z="147.994568" h="16" />
+      <spot x="350.283966" y="169.959595" z="147.850479" h="16" />
+    </spawn>
+    <spawn npc_id="216981">
+      <spot x="739.617737" y="532.058044" z="199.31773" h="60" />
+    </spawn>
+    <spawn npc_id="216985">
+      <spot x="593.031311" y="658.459839" z="208.9879" h="0" random_walk="0" walker_id="NPCPathIDCromede_02Up45" />
+      <spot x="580.633911" y="634.364624" z="208.13837" h="30" />
+      <spot x="541.411560" y="659.375122" z="201.5147" h="90" random_walk="2" walker_id="NPCPathIDCromede_02Up36" />
+      <spot x="594.023499" y="618.685913" z="208.98837" h="0" random_walk="2" walker_id="NPCPathIDCromede_02Up21" />
+    </spawn>
+    <spawn npc_id="217028">
+      <spot x="675.499268" y="606.519165" z="201.19109" h="0" />
+      <spot x="679.164673" y="629.104309" z="201.05258" h="0" />
+      <spot x="638.470520" y="588.055725" z="209.04085" h="90" />
+      <spot x="693.056091" y="530.607056" z="197.90062" h="60" />
+      <spot x="673.855774" y="651.035522" z="201.19109" h="60" />
+    </spawn>
+    <spawn npc_id="730308">
+      <spot x="350.283966" y="169.959595" z="146.34906" entity_id="6" />
+    </spawn>
+    <spawn npc_id="216999">
+      <spot x="585.943176" y="774.209656" z="215.57028" h="0" />
+    </spawn>
+    <spawn npc_id="216980">
+      <spot x="688.715210" y="644.315796" z="200.1199" h="90" random_walk="0" walker_id="NPCPathIDCromede_Mob3" />
+    </spawn>
+    <spawn npc_id="730327">
+      <spot x="613.790710" y="784.886597" z="216.10057" entity_id="13" />
+    </spawn>
+    <spawn npc_id="282092">
+      <spot x="643.917175" y="753.299011" z="216.15863" h="30" />
+      <spot x="643.934998" y="795.351257" z="216.15863" h="30" />
+    </spawn>
+    <spawn npc_id="216972">
+      <spot x="642.106873" y="665.264221" z="201.19109" h="0" />
+      <spot x="666.619507" y="596.917603" z="201.19109" h="53" />
+      <spot x="655.049683" y="656.039001" z="201.19109" h="53" />
+    </spawn>
+    <spawn npc_id="216965">
+      <spot x="514.886963" y="237.741257" z="142.42912" h="40" />
+      <spot x="472.129547" y="353.380463" z="170.9699" h="73" />
+      <spot x="414.913239" y="246.489471" z="140.60266" h="17" />
+      <spot x="358.519592" y="190.824356" z="146.71289" h="106" />
+      <spot x="427.234924" y="234.250610" z="140.60266" h="17" />
+      <spot x="372.981415" y="176.137344" z="146.71289" h="46" />
+    </spawn>
+    <spawn npc_id="217035">
+      <spot x="560.404785" y="616.831543" z="215.3561" h="30" />
+      <spot x="611.674255" y="640.506287" z="208.988" h="60" random_walk="2" walker_id="NPCPathIDCromede_02Up41" />
+      <spot x="595.977600" y="608.608398" z="208.9933" h="90" walker_id="NPCPathIDCromede_Mob5" />
+      <spot x="544.873352" y="641.568481" z="215.3561" h="60" />
+      <spot x="595.130371" y="639.505981" z="208.44667" h="30" />
+      <spot x="532.043701" y="612.345642" z="201.58784" h="60" random_walk="2" walker_id="NPCPathIDCromede_02Up4" />
+      <spot x="546.372009" y="656.987000" z="215.3561" h="113" />
+      <spot x="532.070007" y="668.531860" z="201.58728" h="60" random_walk="2" walker_id="NPCPathIDCromede_02Up39" />
+    </spawn>
+    <spawn npc_id="216971">
+      <spot x="649.306641" y="594.834595" z="201.19109" h="55" />
+      <spot x="642.635376" y="600.211548" z="201.19109" h="15" />
+      <spot x="662.988464" y="597.074768" z="201.19109" h="6" />
+      <spot x="651.799927" y="653.309082" z="201.19109" h="6" />
+    </spawn>
+    <spawn npc_id="217036">
+      <spot x="626.311707" y="583.733215" z="208.99329" h="60" random_walk="0" walker_id="NPCPathIDCromede_Mob6" />
+      <spot x="563.566284" y="662.795715" z="215.3561" h="75" />
+      <spot x="546.252869" y="623.722656" z="215.3561" h="6" />
+      <spot x="595.122437" y="641.472717" z="208.4467" h="90" />
+      <spot x="484.684357" y="620.056946" z="201.59451" h="30" random_walk="2" walker_id="NPCPathIDCromede_02Up2" />
+    </spawn>
+    <spawn npc_id="217115">
+      <spot x="738.790527" y="623.041077" z="196.77457" h="103" />
+      <spot x="720.716553" y="627.955261" z="196.77457" h="103" random_walk="2" walker_id="NPCPathIDCromede_02Low12" />
+      <spot x="723.590027" y="633.544983" z="196.77457" h="36" />
+    </spawn>
+    <spawn npc_id="217131">
+      <spot x="689.972473" y="505.883789" z="197.90062" h="60" />
+    </spawn>
+    <spawn npc_id="216962">
+      <spot x="315.251312" y="288.562683" z="192.71242" h="60" random_walk="6" />
+      <spot x="291.322296" y="254.721466" z="186.85431" h="90" random_walk="6" />
+    </spawn>
+    <spawn npc_id="700947">
+      <spot x="752.761047" y="620.355469" z="197.54474" h="30" />
+      <spot x="754.364624" y="617.890747" z="197.17694" h="43" />
+    </spawn>
+    <spawn npc_id="216966">
+      <spot x="482.812836" y="229.142090" z="142.83469" h="0" random_walk="0" walker_id="NPCPathIDCromede_9" />
+      <spot x="475.889557" y="255.299118" z="139.04938" h="50" random_walk="2" walker_id="NPCPathIDCromede_World4" />
+      <spot x="526.255981" y="230.906006" z="143.91792" h="76" random_walk="2" walker_id="NPCPathIDCromede_11" />
+      <spot x="409.317444" y="228.037140" z="145.48969" h="16" random_walk="2" walker_id="NPCPathIDCromede_World3" />
+      <spot x="521.480591" y="255.613754" z="142.67888" h="50" random_walk="2" walker_id="NPCPathIDCromede_10" />
+    </spawn>
+    <spawn npc_id="730337">
+      <spot x="522.862793" y="755.249390" z="216.63829" entity_id="70" />
+    </spawn>
+    <spawn npc_id="730775">
+      <spot x="613.879028" y="789.606079" z="216.11526" entity_id="978" />
+    </spawn>
+    <spawn npc_id="730887">
+      <spot x="623.679260" y="758.856873" z="216.11046" entity_id="984" />
+    </spawn>
+    <spawn npc_id="217027">
+      <spot x="662.502136" y="611.377869" z="201.19109" h="0" walker_id="NPCPathIDCromede_02Low19" />
+      <spot x="661.159790" y="655.351318" z="201.19109" h="0" walker_id="NPCPathIDCromede_02Low18" />
+      <spot x="645.674194" y="603.367310" z="201.19109" h="0" />
+    </spawn>
+    <spawn npc_id="282095">
+      <spot x="662.258179" y="782.548950" z="216.23436" entity_id="84" />
+    </spawn>
+    <spawn npc_id="216989">
+      <spot x="500.900879" y="754.345703" z="215.5286" h="6" />
+      <spot x="524.242310" y="771.226013" z="215.5286" h="80" />
+      <spot x="501.833282" y="770.132202" z="215.5286" h="106" />
+      <spot x="525.248474" y="756.397217" z="215.5286" h="60" />
+    </spawn>
+    <spawn npc_id="216987">
+      <spot x="494.788116" y="702.252686" z="215.55" h="90" />
+      <spot x="513.953125" y="611.613037" z="214.99918" h="60" />
+      <spot x="559.318481" y="688.809265" z="215.5286" h="0" />
+      <spot x="535.154358" y="721.257202" z="215.5286" h="46" />
+      <spot x="513.850830" y="670.221924" z="214.99918" h="60" />
+    </spawn>
+    <spawn npc_id="216961">
+      <spot x="293.024170" y="282.666992" z="187.68924" h="16" random_walk="7" />
+      <spot x="276.677521" y="245.358307" z="187.35538" h="16" random_walk="7" />
+      <spot x="307.760071" y="261.660675" z="187.20868" h="16" random_walk="7" />
+      <spot x="329.489441" y="269.364929" z="193.28517" h="16" random_walk="7" />
+    </spawn>
+    <spawn npc_id="216964">
+      <spot x="346.982788" y="254.899353" z="192.55458" h="16" random_walk="0" walker_id="NPCPathIDCromede_5" />
+      <spot x="549.005432" y="287.729218" z="153.4535" h="106" random_walk="2" walker_id="NPCPathIDCromede_8" />
+      <spot x="422.572479" y="325.975128" z="174.65141" h="80" random_walk="2" walker_id="NPCPathIDCromede_6" />
+      <spot x="516.350891" y="340.705078" z="165.72743" h="113" random_walk="2" walker_id="NPCPathIDCromede_7" />
+    </spawn>
+    <spawn npc_id="216977">
+      <spot x="715.344666" y="515.406555" z="197.8742" h="60" random_walk="0" walker_id="NPCPathIDCromede_02Low14" />
+      <spot x="725.903320" y="548.627136" z="197.8742" h="90" random_walk="2" walker_id="NPCPathIDCromede_02Low15" />
+    </spawn>
+    <spawn npc_id="217117">
+      <spot x="512.193176" y="706.124939" z="215.55972" h="90" />
+      <spot x="512.096802" y="697.064087" z="215.55972" h="30" />
+    </spawn>
+    <spawn npc_id="217002">
+      <spot x="567.989014" y="835.773560" z="225.82628" h="30" />
+    </spawn>
+    <spawn npc_id="730333">
+      <spot x="623.599060" y="784.950256" z="216.10057" entity_id="193" />
+    </spawn>
+    <spawn npc_id="216963">
+      <spot x="472.338837" y="338.409027" z="170.48991" h="106" random_walk="0" walker_id="NPCPathIDCromede_12" />
+      <spot x="443.358429" y="339.756989" z="172.30913" h="106" random_walk="2" walker_id="NPCPathIDCromede_3" />
+    </spawn>
+    <spawn npc_id="217034">
+      <spot x="559.693420" y="809.393372" z="225.78215" h="25" random_walk="0" walker_id="NPCPathIDCromede_02Up34" />
+      <spot x="579.773926" y="797.621826" z="225.77342" h="90" />
+      <spot x="585.653931" y="808.628174" z="225.78215" h="60" />
+      <spot x="571.113281" y="798.051880" z="215.53482" h="90" />
+      <spot x="556.696411" y="817.422974" z="225.78215" h="46" />
+      <spot x="581.646301" y="757.733337" z="215.56212" h="90" />
+      <spot x="558.005371" y="768.489746" z="215.55212" h="30" random_walk="2" walker_id="NPCPathIDCromede_02Up44" />
+    </spawn>
+    <spawn npc_id="730336">
+      <spot x="512.254456" y="640.270020" z="202.50076" entity_id="14" />
+    </spawn>
+    <spawn npc_id="216978">
+      <spot x="740.660950" y="518.034302" z="198.73691" h="113" />
+    </spawn>
+    <spawn npc_id="730340">
+      <spot x="741.755127" y="530.597046" z="199.31773" entity_id="319" />
+    </spawn>
+    <spawn npc_id="730776">
+      <spot x="623.744812" y="789.600830" z="216.12527" entity_id="979" />
+    </spawn>
+    <spawn npc_id="282116">
+      <spot x="677.825317" y="584.140442" z="210.46408" h="0" fly="1" />
+    </spawn>
+    <spawn npc_id="217030">
+      <spot x="655.153137" y="581.586914" z="198.92435" h="20" />
+    </spawn>
+    <spawn npc_id="216983">
+      <spot x="507.044128" y="780.743652" z="215.97673" h="81" />
+      <spot x="507.197021" y="589.254761" z="215.5286" h="0" />
+      <spot x="498.004791" y="696.471924" z="215.55" h="90" random_walk="2" walker_id="NPCPathIDCromede_02Up28" />
+      <spot x="535.163940" y="702.714050" z="215.55" h="75" />
+      <spot x="551.634277" y="640.289551" z="215.00104" h="30" random_walk="2" walker_id="NPCPathIDCromede_02Up31" />
+    </spawn>
+    <spawn npc_id="216988">
+      <spot x="571.524475" y="769.922668" z="215.56647" h="90" />
+      <spot x="577.417603" y="824.088013" z="225.78215" h="6" random_walk="2" walker_id="NPCPathIDCromede_02Up33" />
+      <spot x="561.106323" y="783.345825" z="215.88855" h="6" random_walk="2" walker_id="NPCPathIDCromede_02Up32" />
+      <spot x="557.710022" y="754.997864" z="225.7734" h="90" />
+    </spawn>
+    <spawn npc_id="730338">
+      <spot x="503.469666" y="769.131531" z="216.6719" entity_id="69" />
+    </spawn>
+    <spawn npc_id="730339">
+      <spot x="591.206482" y="640.570496" z="208.67542" entity_id="15" />
+    </spawn>
+    <spawn npc_id="217130">
+      <spot x="609.304016" y="778.099060" z="215.58362" h="60" />
+      <spot x="609.293701" y="770.662354" z="215.58362" h="60" />
+    </spawn>
+    <spawn npc_id="700926">
+      <spot x="560.931946" y="614.941284" z="215.6" entity_id="80" />
+    </spawn>
+    <spawn npc_id="217026">
+      <spot x="663.677185" y="645.437988" z="201.19109" h="0" random_walk="0" />
+      <spot x="651.561035" y="644.893433" z="201.19109" h="0" random_walk="2" walker_id="NPCPathIDCromede_02Low17" />
+      <spot x="645.380188" y="646.173706" z="201.19109" h="0" random_walk="2" />
+      <spot x="652.286865" y="606.529297" z="201.19109" h="0" random_walk="2" walker_id="NPCPathIDCromede_02Low16" />
+    </spawn>
+    <spawn npc_id="700927">
+      <spot x="576.580322" y="800.753357" z="225.77342" entity_id="66" />
+    </spawn>
+    <spawn npc_id="216991">
+      <spot x="528.823242" y="653.414001" z="201.73323" h="15" random_walk="0" />
+      <spot x="492.273224" y="631.610596" z="201.50708" h="90" />
+      <spot x="496.482635" y="657.781250" z="201.7133" h="46" />
+    </spawn>
+    <spawn npc_id="216984">
+      <spot x="518.132446" y="589.209412" z="215.5286" h="60" />
+      <spot x="530.299133" y="701.389099" z="215.55" h="30" random_walk="2" walker_id="NPCPathIDCromede_02Up42" />
+      <spot x="494.256409" y="683.269592" z="215.5286" h="15" />
+      <spot x="517.932617" y="780.408630" z="215.97673" h="100" />
+    </spawn>
+    <spawn npc_id="217031">
+      <spot x="606.043091" y="624.088196" z="208.98906" h="73" />
+      <spot x="576.122803" y="646.451782" z="208.14114" h="90" />
+      <spot x="591.765930" y="577.934143" z="208.9933" h="15" />
+      <spot x="605.899719" y="656.405823" z="208.98906" h="73" />
+    </spawn>
+    <spawn npc_id="216992">
+      <spot x="533.519836" y="627.239319" z="201.62213" h="90" />
+      <spot x="508.324341" y="655.207642" z="201.58203" h="0" random_walk="2" walker_id="NPCPathIDCromede_02Up40" />
+      <spot x="507.208893" y="619.299744" z="201.48712" h="0" random_walk="2" />
+    </spawn>
+    <spawn npc_id="700949">
+      <spot x="229.358124" y="252.256927" z="191.1684" h="110" />
+    </spawn>
+    <spawn npc_id="700835">
+      <spot x="502.409210" y="345.996399" z="168.90405" entity_id="3" />
+    </spawn>
+    <spawn npc_id="216973">
+      <spot x="730.875793" y="546.466553" z="198.53848" h="80" />
+      <spot x="687.919739" y="505.863281" z="197.90062" h="0" />
+    </spawn>
+    <spawn npc_id="206165">
+      <spot x="597.929749" y="620.435608" z="208.9886" h="0" />
+    </spawn>
+    <spawn npc_id="730330">
+      <spot x="634.267456" y="785.091858" z="216.10057" entity_id="195" />
+    </spawn>
+    <spawn npc_id="700922">
+      <spot x="711.599121" y="629.358582" z="196.82828" entity_id="320" />
+    </spawn>
+    <spawn npc_id="730777">
+      <spot x="613.771301" y="758.770630" z="216.11046" entity_id="980" />
+    </spawn>
+    <spawn npc_id="282111">
+      <spot x="643.919983" y="753.299988" z="216.15863" h="30" />
+      <spot x="643.937805" y="795.352234" z="216.15863" h="30" />
+    </spawn>
+    <spawn npc_id="216974">
+      <spot x="729.619568" y="544.490723" z="198.53848" h="20" />
+      <spot x="723.335938" y="524.702087" z="197.8742" h="96" />
+    </spawn>
+    <spawn npc_id="217114">
+      <spot x="650.280212" y="630.030701" z="201.19109" h="110" />
+      <spot x="662.308228" y="622.497192" z="201.19109" h="73" />
+    </spawn>
+    <spawn npc_id="730332">
+      <spot x="623.643860" y="763.160156" z="216.10057" entity_id="260" />
+    </spawn>
+    <spawn npc_id="730331">
+      <spot x="653.249084" y="763.350830" z="216.10057" entity_id="202" />
+    </spawn>
+    <spawn npc_id="216976">
+      <spot x="710.045715" y="543.248047" z="197.88681" h="80" />
+    </spawn>
+    <spawn npc_id="216970">
+      <spot x="646.176819" y="615.593933" z="201.19109" h="10" />
+      <spot x="645.524963" y="656.332886" z="201.19109" h="10" />
+    </spawn>
+    <spawn npc_id="282093">
+      <spot x="661.222412" y="767.659180" z="216.23436" entity_id="87" />
+    </spawn>
+    <spawn npc_id="216982">
+      <spot x="750.314087" y="625.115906" z="197.54474" h="105" />
+    </spawn>
+    <spawn npc_id="282087">
+      <spot x="654.749329" y="561.478882" z="205.21884" h="0" />
+    </spawn>
+    <spawn npc_id="216967">
+      <spot x="392.146149" y="209.729950" z="145.85693" h="15" />
+    </spawn>
+    <spawn npc_id="730309">
+      <spot x="465.809998" y="354.239990" z="170.25269" h="0" random_walk="0" />
+    </spawn>
+    <spawn npc_id="217113">
+      <spot x="659.347961" y="634.124084" z="201.19109" h="10" />
+      <spot x="668.367859" y="628.765137" z="201.19109" h="0" />
+    </spawn>
+    <spawn npc_id="216975">
+      <spot x="709.933838" y="523.457031" z="197.88681" h="80" />
+    </spawn>
+    <spawn npc_id="206163">
+      <spot x="566.783936" y="762.207581" z="215.56647" h="0" />
+    </spawn>
+    <spawn npc_id="700946">
+      <spot x="757.089050" y="621.965088" z="197.54474" h="30" />
+      <spot x="754.036987" y="622.718567" z="197.54474" h="53" />
+    </spawn>
+    <spawn npc_id="730325">
+      <spot x="492.224518" y="628.733032" z="201.67581" entity_id="79" />
+    </spawn>
+    <spawn npc_id="217000">
+      <spot x="512.492493" y="571.459595" z="216.88846" h="30" />
+    </spawn>
+    <spawn npc_id="217118">
+      <spot x="518.124512" y="701.693359" z="215.55972" h="60" />
+    </spawn>
+    <spawn npc_id="730334">
+      <spot x="634.113647" y="763.342651" z="216.10057" entity_id="208" />
+    </spawn>
+    <spawn npc_id="206164">
+      <spot x="701.836975" y="516.260071" z="197.8742" h="0" />
+    </spawn>
+    <spawn npc_id="217134">
+      <spot x="685.169006" y="661.939514" z="200.1199" h="33" />
+    </spawn>
+    <spawn npc_id="730326">
+      <spot x="644.206421" y="763.198669" z="216.10057" entity_id="206" />
+    </spawn>
+    <spawn npc_id="216990">
+      <spot x="504.041412" y="765.164673" z="215.5286" h="30" />
+    </spawn>
+    <spawn npc_id="282091">
+      <spot x="365.451660" y="183.655655" z="146.83829" h="76" />
+    </spawn>
+    <spawn npc_id="730329">
+      <spot x="653.365601" y="784.778381" z="216.10057" entity_id="200" />
+    </spawn>
+    <spawn npc_id="216997">
+      <spot x="496.764587" y="649.261780" z="201.64091" h="21" random_walk="0" walker_id="NPCPathIDCromede_02Up1" />
+    </spawn>
+    <spawn npc_id="700924">
+      <spot x="587.671082" y="774.231995" z="215.59996" entity_id="5" />
+    </spawn>
+    <spawn npc_id="700965">
+      <spot x="657.200745" y="585.777771" z="199.04715" h="113" />
+    </spawn>
+    <spawn npc_id="217135">
+      <spot x="689.836182" y="661.176453" z="200.1199" h="26" />
+    </spawn>
+    <spawn npc_id="282119">
+      <spot x="585.929443" y="774.284424" z="215.57028" h="60" />
+    </spawn>
+    <spawn npc_id="700961">
+      <spot x="467.187653" y="351.885925" z="170.3279" entity_id="56" />
+    </spawn>
+    <spawn npc_id="216979">
+      <spot x="544.481384" y="639.781311" z="215.3561" h="60" />
+    </spawn>
+    <spawn npc_id="730328">
+      <spot x="644.249939" y="784.973450" z="216.10057" entity_id="197" />
+    </spawn>
+    <spawn npc_id="700928">
+      <spot x="680.778381" y="774.010132" z="216.88036" entity_id="105" />
+    </spawn>
+    <spawn npc_id="730341">
+      <spot x="542.481018" y="641.374512" z="217.48947" entity_id="553" />
+    </spawn>
+    <spawn npc_id="216996">
+      <spot x="586.752014" y="640.252563" z="208.44672" h="90" random_walk="0" walker_id="NPCPathIDCromede_02Up19" />
+    </spawn>
+  </spawn_map>
 </spawns>

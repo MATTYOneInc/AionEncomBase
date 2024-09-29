@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<npc_walker xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob2_3" pool="1">
+    <routestep step="1" x="484.286682" y="447.747742" z="1040.034790" />
+    <routestep step="2" x="479.746735" y="452.868774" z="1039.934814" />
+    <routestep step="3" x="462.149170" y="450.725830" z="1039.934814" />
+    <routestep step="4" x="453.619415" y="441.338196" z="1039.934814" />
+    <routestep step="5" x="462.174469" y="450.672211" z="1039.934814" />
+    <routestep step="6" x="479.729340" y="452.866028" z="1040.034790" />
+    <routestep step="7" x="486.192749" y="445.561646" z="1039.934814" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob3_2" pool="1">
+    <routestep step="1" x="485.314545" y="400.840942" z="1021.234375" />
+    <routestep step="2" x="488.182678" y="391.591858" z="1021.234375" />
+    <routestep step="3" x="490.077698" y="385.624115" z="1021.234375" />
+    <routestep step="4" x="491.898407" y="379.836792" z="1021.334351" />
+    <routestep step="5" x="490.095581" y="385.630066" z="1022.234375" />
+    <routestep step="6" x="488.216553" y="391.597473" z="1022.234375" />
+    <routestep step="7" x="485.338776" y="400.848694" z="1022.234375" />
+    <routestep step="8" x="484.975464" y="402.016235" z="1022.334351" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob2_6" pool="1">
+    <routestep step="1" x="507.964264" y="413.895203" z="1055.970093" />
+    <routestep step="2" x="512.085938" y="414.440002" z="1055.970093" />
+    <routestep step="3" x="516.041138" y="426.782990" z="1055.970093" />
+    <routestep step="4" x="516.701355" y="436.124207" z="1055.970093" />
+    <routestep step="5" x="513.564575" y="445.735352" z="1055.970093" />
+    <routestep step="6" x="507.167114" y="456.057251" z="1055.970093" />
+    <routestep step="7" x="502.745758" y="455.491455" z="1055.970093" />
+    <routestep step="8" x="502.745911" y="455.498627" z="1055.870117" />
+    <routestep step="9" x="507.163879" y="456.076935" z="1055.970093" />
+    <routestep step="10" x="513.601990" y="445.755829" z="1055.970093" />
+    <routestep step="11" x="516.741394" y="436.151337" z="1055.970093" />
+    <routestep step="12" x="515.978394" y="426.749603" z="1055.970093" />
+    <routestep step="13" x="512.075256" y="414.458984" z="1055.970093" />
+    <routestep step="14" x="507.949646" y="413.909515" z="1055.970093" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_0" pool="1">
+    <routestep step="1" x="332.227722" y="441.232788" z="1033.076538" />
+    <routestep step="2" x="346.897644" y="454.850372" z="1029.668701" />
+    <routestep step="3" x="349.528259" y="466.133423" z="1025.289185" />
+    <routestep step="4" x="363.768311" y="476.586182" z="1023.120483" />
+    <routestep step="5" x="382.714813" y="480.152954" z="1016.120361" />
+    <routestep step="6" x="413.455994" y="498.992828" z="1004.963379" />
+    <routestep step="7" x="431.287354" y="521.807190" z="995.630676" />
+    <routestep step="8" x="412.814575" y="499.530151" z="1003.940491" />
+    <routestep step="9" x="382.262787" y="481.056366" z="1015.244690" />
+    <routestep step="10" x="363.435791" y="477.191833" z="1022.813599" />
+    <routestep step="11" x="348.712769" y="466.384094" z="1025.012329" />
+    <routestep step="12" x="346.135986" y="455.040802" z="1029.515991" />
+    <routestep step="13" x="332.280762" y="441.129211" z="1033.076538" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob2_7" pool="1">
+    <routestep step="1" x="484.561646" y="463.721649" z="1044.270020" />
+    <routestep step="2" x="486.099792" y="452.111420" z="1044.270020" />
+    <routestep step="3" x="486.762085" y="446.988892" z="1044.270020" />
+    <routestep step="4" x="494.877716" y="439.938812" z="1044.270020" />
+    <routestep step="5" x="497.796722" y="436.160309" z="1044.270020" />
+    <routestep step="6" x="498.447968" y="430.602814" z="1044.270020" />
+    <routestep step="7" x="496.767395" y="426.470917" z="1044.270020" />
+    <routestep step="8" x="490.784180" y="417.851471" z="1044.270020" />
+    <routestep step="9" x="491.387054" y="412.492188" z="1044.270020" />
+    <routestep step="10" x="492.806183" y="400.716064" z="1044.270020" />
+    <routestep step="11" x="492.805054" y="400.716431" z="1044.270020" />
+    <routestep step="12" x="491.368439" y="412.473572" z="1044.270020" />
+    <routestep step="13" x="490.734375" y="417.837128" z="1044.270020" />
+    <routestep step="14" x="496.723969" y="426.505920" z="1044.270020" />
+    <routestep step="15" x="498.417084" y="430.629303" z="1044.270020" />
+    <routestep step="16" x="497.777313" y="436.126678" z="1044.270020" />
+    <routestep step="17" x="494.868652" y="439.905548" z="1044.270020" />
+    <routestep step="18" x="486.733215" y="446.986084" z="1044.270020" />
+    <routestep step="19" x="486.066284" y="452.118134" z="1044.270020" />
+    <routestep step="20" x="484.529694" y="463.752228" z="1044.270020" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob3_5" pool="1">
+    <routestep step="1" x="456.247772" y="391.666626" z="1018.838928" />
+    <routestep step="2" x="447.147247" y="391.516357" z="1017.594788" />
+    <routestep step="3" x="440.394135" y="391.935059" z="1015.970642" />
+    <routestep step="4" x="436.824524" y="392.037750" z="1013.775940" />
+    <routestep step="5" x="436.824127" y="392.046692" z="1013.782166" />
+    <routestep step="6" x="440.406097" y="391.948151" z="1015.952881" />
+    <routestep step="7" x="447.128967" y="391.530579" z="1017.544739" />
+    <routestep step="8" x="456.227661" y="391.679199" z="1018.738953" />
+    <routestep step="9" x="465.064575" y="394.330994" z="1018.838928" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_2" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="539.981873" y="604.211975" z="986.702881" />
+    <routestep step="2" x="545.613098" y="609.650208" z="986.602905" />
+    <routestep step="3" x="551.449463" y="615.283569" z="986.602905" />
+    <routestep step="4" x="556.713562" y="620.032043" z="986.702881" />
+    <routestep step="5" x="562.960022" y="622.564575" z="986.602905" />
+    <routestep step="6" x="571.219238" y="629.285706" z="986.602905" />
+    <routestep step="7" x="579.990540" y="632.915710" z="986.602905" />
+    <routestep step="8" x="589.398010" y="640.435120" z="986.702881" />
+    <routestep step="9" x="598.921570" y="645.759583" z="986.602905" />
+    <routestep step="10" x="608.130676" y="641.667114" z="986.602905" />
+    <routestep step="11" x="613.699646" y="633.260620" z="986.702881" />
+    <routestep step="12" x="619.721924" y="622.898926" z="986.602905" />
+    <routestep step="13" x="626.259460" y="611.881348" z="986.702881" />
+    <routestep step="14" x="626.293640" y="611.902527" z="986.702881" />
+    <routestep step="15" x="619.797485" y="623.003906" z="986.602905" />
+    <routestep step="16" x="613.875671" y="633.330994" z="986.702881" />
+    <routestep step="17" x="608.230347" y="641.736084" z="986.602905" />
+    <routestep step="18" x="598.788025" y="645.826294" z="986.602905" />
+    <routestep step="19" x="589.239136" y="640.519958" z="986.702881" />
+    <routestep step="20" x="579.880859" y="632.961487" z="986.602905" />
+    <routestep step="21" x="571.211243" y="629.378479" z="986.702881" />
+    <routestep step="22" x="562.911865" y="622.645203" z="986.602905" />
+    <routestep step="23" x="556.571106" y="620.115417" z="986.602905" />
+    <routestep step="24" x="551.404358" y="615.400391" z="986.602905" />
+    <routestep step="25" x="545.586731" y="609.772766" z="986.602905" />
+    <routestep step="26" x="539.929443" y="604.243591" z="986.702881" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob2_0" pool="1">
+    <routestep step="1" x="451.621246" y="468.434570" z="1057.016113" />
+    <routestep step="2" x="458.706573" y="471.711426" z="1057.150635" />
+    <routestep step="3" x="475.194183" y="474.696106" z="1057.253174" />
+    <routestep step="4" x="485.945465" y="471.990570" z="1057.130859" />
+    <routestep step="5" x="489.502197" y="470.753326" z="1057.086060" />
+    <routestep step="6" x="489.497620" y="470.747253" z="1057.084595" />
+    <routestep step="7" x="485.942841" y="471.969757" z="1057.128296" />
+    <routestep step="8" x="475.164551" y="474.685089" z="1057.250000" />
+    <routestep step="9" x="458.746216" y="471.692230" z="1057.248291" />
+    <routestep step="10" x="444.406464" y="464.532928" z="1056.868652" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob3_6" pool="1">
+    <routestep step="1" x="431.579224" y="394.656189" z="1011.210815" />
+    <routestep step="2" x="424.767548" y="399.040558" z="1011.210815" />
+    <routestep step="3" x="417.062164" y="404.748535" z="1011.210815" />
+    <routestep step="4" x="412.444702" y="417.952789" z="1007.814941" />
+    <routestep step="5" x="412.458282" y="417.960205" z="1007.866943" />
+    <routestep step="6" x="417.088898" y="404.756042" z="1011.210815" />
+    <routestep step="7" x="424.756958" y="399.063477" z="1011.210815" />
+    <routestep step="8" x="431.564972" y="394.687622" z="1011.110840" />
+    <routestep step="9" x="434.377991" y="392.740143" z="1011.210815" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_4" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="478.777710" y="282.783386" z="1003.709473" />
+    <routestep step="2" x="472.495544" y="298.643311" z="1003.709473" />
+    <routestep step="3" x="449.293121" y="306.223755" z="1003.709473" />
+    <routestep step="4" x="428.848602" y="319.929565" z="1003.709473" />
+    <routestep step="5" x="428.880859" y="319.965393" z="1003.709473" />
+    <routestep step="6" x="449.358185" y="306.321045" z="1003.709473" />
+    <routestep step="7" x="472.581238" y="298.758545" z="1003.709473" />
+    <routestep step="8" x="480.056946" y="279.810120" z="1003.709473" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob2_5" pool="1">
+    <routestep step="1" x="479.129486" y="388.197784" z="1049.838379" />
+    <routestep step="2" x="486.575806" y="388.914948" z="1049.838379" />
+    <routestep step="3" x="493.111389" y="391.898407" z="1049.838379" />
+    <routestep step="4" x="499.684174" y="395.451294" z="1049.838379" />
+    <routestep step="5" x="506.619263" y="393.909119" z="1049.838379" />
+    <routestep step="6" x="503.617676" y="388.921143" z="1049.838379" />
+    <routestep step="7" x="490.536865" y="379.615234" z="1049.838379" />
+    <routestep step="8" x="468.187653" y="377.690796" z="1049.838379" />
+    <routestep step="9" x="450.256836" y="384.957001" z="1049.838379" />
+    <routestep step="10" x="450.238464" y="387.096710" z="1049.838379" />
+    <routestep step="11" x="456.231262" y="389.716675" z="1049.838379" />
+    <routestep step="12" x="461.145599" y="389.416107" z="1049.838379" />
+    <routestep step="13" x="465.642853" y="387.509613" z="1049.838379" />
+    <routestep step="14" x="471.041168" y="386.541290" z="1049.838379" />
+    <routestep step="15" x="478.013550" y="387.934113" z="1049.838379" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob2_4" pool="1">
+    <routestep step="1" x="467.371796" y="472.967316" z="1049.801147" />
+    <routestep step="2" x="459.247437" y="472.230591" z="1049.801147" />
+    <routestep step="3" x="454.082611" y="469.454071" z="1049.801147" />
+    <routestep step="4" x="450.937408" y="466.541351" z="1049.801147" />
+    <routestep step="5" x="445.980682" y="465.132507" z="1049.801147" />
+    <routestep step="6" x="439.912567" y="466.250916" z="1049.801147" />
+    <routestep step="7" x="440.389130" y="468.112305" z="1049.701172" />
+    <routestep step="8" x="446.014252" y="473.213440" z="1049.801147" />
+    <routestep step="9" x="454.114868" y="480.105133" z="1049.801147" />
+    <routestep step="10" x="478.421356" y="483.735321" z="1049.801147" />
+    <routestep step="11" x="488.988739" y="477.376343" z="1049.801147" />
+    <routestep step="12" x="494.104462" y="476.744843" z="1049.801147" />
+    <routestep step="13" x="495.568604" y="473.170990" z="1049.801147" />
+    <routestep step="14" x="490.285004" y="470.792847" z="1049.801147" />
+    <routestep step="15" x="484.974182" y="471.122772" z="1049.801147" />
+    <routestep step="16" x="476.656982" y="473.992249" z="1049.801147" />
+    <routestep step="17" x="469.017822" y="473.137787" z="1049.801147" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob3_0" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="446.564240" y="422.925171" z="992.663696" />
+    <routestep step="2" x="441.859772" y="417.133881" z="992.663696" />
+    <routestep step="3" x="438.136566" y="412.428680" z="992.663696" />
+    <routestep step="4" x="431.541260" y="404.007782" z="992.663696" />
+    <routestep step="5" x="438.353790" y="412.211639" z="992.663696" />
+    <routestep step="6" x="442.048492" y="416.969482" z="992.663696" />
+    <routestep step="7" x="447.251801" y="423.775940" z="992.663696" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_5" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="673.636047" y="486.193359" z="990.309326" />
+    <routestep step="2" x="678.188599" y="494.681793" z="990.309326" />
+    <routestep step="3" x="682.856873" y="503.389893" z="990.444336" />
+    <routestep step="4" x="685.627563" y="518.460510" z="990.309326" />
+    <routestep step="5" x="688.598755" y="534.068848" z="990.309326" />
+    <routestep step="6" x="691.108948" y="546.898621" z="990.309326" />
+    <routestep step="7" x="691.402954" y="562.521484" z="980.681763" />
+    <routestep step="8" x="679.765076" y="576.015686" z="990.309326" />
+    <routestep step="9" x="669.123535" y="589.854797" z="979.383606" />
+    <routestep step="10" x="655.254456" y="587.205444" z="990.309326" />
+    <routestep step="11" x="639.395569" y="596.033020" z="976.492188" />
+    <routestep step="12" x="639.308777" y="595.781799" z="975.298035" />
+    <routestep step="13" x="655.105042" y="586.356689" z="990.309326" />
+    <routestep step="14" x="668.996582" y="589.711914" z="977.620422" />
+    <routestep step="15" x="679.161194" y="575.213928" z="990.309326" />
+    <routestep step="16" x="690.747864" y="562.262573" z="981.456360" />
+    <routestep step="17" x="690.395386" y="547.087280" z="990.309326" />
+    <routestep step="18" x="688.031799" y="534.220825" z="990.309326" />
+    <routestep step="19" x="685.087402" y="518.683533" z="990.309326" />
+    <routestep step="20" x="682.285278" y="503.537781" z="990.309326" />
+    <routestep step="21" x="677.569092" y="494.822876" z="990.309326" />
+    <routestep step="22" x="673.384644" y="486.015106" z="990.309326" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_18" pool="1">
+    <routestep step="1" x="575.627625" y="429.224915" z="1033.993042" />
+    <routestep step="2" x="595.799438" y="419.972137" z="1028.308105" />
+    <routestep step="3" x="610.158997" y="419.034637" z="1022.646057" />
+    <routestep step="4" x="624.072571" y="416.777496" z="1019.352783" />
+    <routestep step="5" x="633.903320" y="420.390625" z="1016.508179" />
+    <routestep step="6" x="645.051453" y="422.474579" z="1011.882813" />
+    <routestep step="7" x="654.841919" y="430.863281" z="1006.901062" />
+    <routestep step="8" x="661.439087" y="444.607880" z="1002.914856" />
+    <routestep step="9" x="660.688416" y="444.766754" z="1003.032837" />
+    <routestep step="10" x="653.419983" y="431.954285" z="1006.702209" />
+    <routestep step="11" x="644.632629" y="423.616150" z="1011.717285" />
+    <routestep step="12" x="633.388367" y="421.499695" z="1016.436646" />
+    <routestep step="13" x="623.514648" y="418.136017" z="1019.408936" />
+    <routestep step="14" x="610.045410" y="420.390717" z="1022.723083" />
+    <routestep step="15" x="595.825806" y="420.821899" z="1029.977783" />
+    <routestep step="16" x="576.002502" y="429.876038" z="1034.359253" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_6" pool="1">
+    <routestep step="1" x="360.188538" y="348.956818" z="1012.852600" />
+    <routestep step="2" x="381.104919" y="344.872406" z="1007.209961" />
+    <routestep step="3" x="393.841370" y="336.373657" z="1004.347229" />
+    <routestep step="4" x="398.956665" y="331.722321" z="1003.127686" />
+    <routestep step="5" x="399.010864" y="332.004791" z="1003.632019" />
+    <routestep step="6" x="393.821808" y="336.331055" z="1005.576965" />
+    <routestep step="7" x="381.093353" y="344.802582" z="1007.742065" />
+    <routestep step="8" x="360.152374" y="348.899384" z="1012.852600" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob3_4" pool="1">
+    <routestep step="1" x="409.551086" y="429.995789" z="999.545898" />
+    <routestep step="2" x="413.341705" y="437.258362" z="999.545898" />
+    <routestep step="3" x="418.207123" y="443.111542" z="999.545898" />
+    <routestep step="4" x="422.980042" y="446.654358" z="999.545898" />
+    <routestep step="5" x="428.068298" y="449.539001" z="999.545898" />
+    <routestep step="6" x="431.026428" y="449.933624" z="999.545898" />
+    <routestep step="7" x="431.004272" y="449.530457" z="999.545898" />
+    <routestep step="8" x="428.170929" y="449.193481" z="999.545898" />
+    <routestep step="9" x="423.098175" y="446.258636" z="999.545898" />
+    <routestep step="10" x="418.325836" y="442.839081" z="999.545898" />
+    <routestep step="11" x="413.577087" y="437.211578" z="999.445923" />
+    <routestep step="12" x="409.851776" y="429.902069" z="999.545898" />
+    <routestep step="13" x="408.295868" y="422.843323" z="999.545898" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob2_8" pool="1">
+    <routestep step="1" x="479.885345" y="431.126404" z="1031.807983" />
+    <routestep step="2" x="475.008423" y="441.251221" z="1032.851807" />
+    <routestep step="3" x="466.932709" y="442.452515" z="1035.983887" />
+    <routestep step="4" x="461.539795" y="441.871796" z="1038.033203" />
+    <routestep step="5" x="456.626221" y="439.229156" z="1039.908936" />
+    <routestep step="6" x="448.313446" y="434.714752" z="1039.447632" />
+    <routestep step="7" x="443.127533" y="426.217865" z="1038.666870" />
+    <routestep step="8" x="450.849091" y="419.125916" z="1039.221558" />
+    <routestep step="9" x="460.076996" y="416.983551" z="1040.557983" />
+    <routestep step="10" x="465.075104" y="415.904358" z="1038.913940" />
+    <routestep step="11" x="470.022736" y="416.023041" z="1036.241577" />
+    <routestep step="12" x="478.504089" y="420.684479" z="1032.314941" />
+    <routestep step="13" x="479.827118" y="430.628235" z="1031.717773" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob2_1" pool="1">
+    <routestep step="1" x="461.723175" y="387.650391" z="1056.871460" />
+    <routestep step="2" x="470.300995" y="385.169067" z="1056.871460" />
+    <routestep step="3" x="487.428558" y="388.027008" z="1056.871460" />
+    <routestep step="4" x="496.043091" y="394.017365" z="1056.871460" />
+    <routestep step="5" x="499.215027" y="396.252502" z="1056.871460" />
+    <routestep step="6" x="499.212921" y="396.254456" z="1056.871460" />
+    <routestep step="7" x="496.034485" y="394.029785" z="1056.871460" />
+    <routestep step="8" x="487.416534" y="388.032104" z="1056.871460" />
+    <routestep step="9" x="470.318298" y="385.194031" z="1056.771484" />
+    <routestep step="10" x="454.237610" y="389.814087" z="1056.871460" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_8" pool="1">
+    <routestep step="1" x="362.358795" y="411.617340" z="1041.640137" />
+    <routestep step="2" x="345.169189" y="412.602051" z="1037.700439" />
+    <routestep step="3" x="332.115387" y="431.414764" z="1034.804077" />
+    <routestep step="4" x="345.388031" y="413.484192" z="1037.785400" />
+    <routestep step="5" x="362.325562" y="412.346588" z="1041.640137" />
+    <routestep step="6" x="374.085541" y="412.712830" z="1041.640137" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob2_2" pool="1">
+    <routestep step="1" x="489.303223" y="418.002930" z="1040.034790" />
+    <routestep step="2" x="484.781769" y="410.027771" z="1040.134766" />
+    <routestep step="3" x="467.221893" y="407.591675" z="1040.134766" />
+    <routestep step="4" x="456.624268" y="414.757294" z="1040.134766" />
+    <routestep step="5" x="467.235748" y="407.659729" z="1040.134766" />
+    <routestep step="6" x="484.715485" y="410.057281" z="1040.034790" />
+    <routestep step="7" x="489.877014" y="419.163483" z="1040.134766" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_9" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="661.278320" y="311.143951" z="1013.878052" />
+    <routestep step="2" x="671.001831" y="308.087952" z="1013.778076" />
+    <routestep step="3" x="681.424744" y="305.288574" z="1013.878052" />
+    <routestep step="4" x="686.809021" y="311.580597" z="1013.778076" />
+    <routestep step="5" x="692.771423" y="318.507751" z="1013.127258" />
+    <routestep step="6" x="688.685425" y="327.822205" z="1013.778076" />
+    <routestep step="7" x="685.425293" y="335.134247" z="1009.924133" />
+    <routestep step="8" x="685.370422" y="343.516571" z="1013.778076" />
+    <routestep step="9" x="685.836914" y="351.221344" z="1007.039612" />
+    <routestep step="10" x="679.446228" y="358.041992" z="1013.778076" />
+    <routestep step="11" x="672.989136" y="367.834137" z="1005.464417" />
+    <routestep step="12" x="674.207336" y="374.948669" z="1013.778076" />
+    <routestep step="13" x="674.190002" y="385.022949" z="1013.778076" />
+    <routestep step="14" x="672.970337" y="398.730865" z="1006.039551" />
+    <routestep step="15" x="673.727783" y="384.843567" z="1013.778076" />
+    <routestep step="16" x="673.541260" y="374.832489" z="1013.778076" />
+    <routestep step="17" x="672.346863" y="367.073517" z="1005.225159" />
+    <routestep step="18" x="678.868896" y="357.578308" z="1013.778076" />
+    <routestep step="19" x="684.904724" y="351.403534" z="1007.189880" />
+    <routestep step="20" x="684.654541" y="343.626404" z="1013.778076" />
+    <routestep step="21" x="684.391357" y="335.127441" z="1010.326965" />
+    <routestep step="22" x="687.624207" y="326.979858" z="1013.778076" />
+    <routestep step="23" x="691.522522" y="318.338348" z="1013.075562" />
+    <routestep step="24" x="686.067871" y="312.434265" z="1013.778076" />
+    <routestep step="25" x="681.142212" y="306.361450" z="1013.878052" />
+    <routestep step="26" x="671.112061" y="308.836823" z="1013.778076" />
+    <routestep step="27" x="661.319275" y="311.240387" z="1013.878052" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_10" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="558.560181" y="300.305634" z="1011.919067" />
+    <routestep step="2" x="566.835022" y="301.154877" z="1011.819092" />
+    <routestep step="3" x="573.711182" y="301.695770" z="1011.819092" />
+    <routestep step="4" x="580.776489" y="297.388062" z="1011.819092" />
+    <routestep step="5" x="586.444397" y="293.879730" z="1011.819092" />
+    <routestep step="6" x="594.756287" y="294.201599" z="1011.819092" />
+    <routestep step="7" x="598.249695" y="298.426636" z="1011.819092" />
+    <routestep step="8" x="602.541199" y="302.680450" z="1011.819092" />
+    <routestep step="9" x="610.455566" y="302.272461" z="1011.819092" />
+    <routestep step="10" x="616.790405" y="301.900909" z="1011.819092" />
+    <routestep step="11" x="624.953003" y="308.406311" z="1011.819092" />
+    <routestep step="12" x="631.035706" y="313.128387" z="1011.819092" />
+    <routestep step="13" x="640.042847" y="318.474548" z="1011.819092" />
+    <routestep step="14" x="647.636292" y="322.540680" z="1011.919067" />
+    <routestep step="15" x="640.369019" y="317.940247" z="1011.819092" />
+    <routestep step="16" x="631.471924" y="312.346832" z="1011.819092" />
+    <routestep step="17" x="625.440125" y="307.748779" z="1011.819092" />
+    <routestep step="18" x="617.099243" y="301.013336" z="1011.819092" />
+    <routestep step="19" x="610.299805" y="301.258240" z="1011.819092" />
+    <routestep step="20" x="602.502014" y="301.689026" z="1011.819092" />
+    <routestep step="21" x="599.001282" y="297.837311" z="1011.819092" />
+    <routestep step="22" x="594.879333" y="293.052063" z="1011.819092" />
+    <routestep step="23" x="586.348511" y="292.828888" z="1011.819092" />
+    <routestep step="24" x="580.725220" y="296.369873" z="1011.819092" />
+    <routestep step="25" x="573.540405" y="300.772095" z="1011.819092" />
+    <routestep step="26" x="566.836243" y="300.512634" z="1011.819092" />
+    <routestep step="27" x="558.477966" y="300.290497" z="1011.919067" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_11" pool="1">
+    <routestep step="1" x="590.420715" y="479.403961" z="998.877197" />
+    <routestep step="2" x="568.238098" y="474.698425" z="998.877197" />
+    <routestep step="3" x="553.744873" y="490.396423" z="998.877197" />
+    <routestep step="4" x="552.264832" y="519.347778" z="998.877197" />
+    <routestep step="5" x="551.929932" y="489.925629" z="998.877197" />
+    <routestep step="6" x="567.901550" y="472.769592" z="998.877197" />
+    <routestep step="7" x="590.389526" y="479.498840" z="998.877197" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_12" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="643.412476" y="362.676422" z="1003.951904" />
+    <routestep step="2" x="644.663574" y="354.205597" z="1003.951904" />
+    <routestep step="3" x="646.389282" y="337.134827" z="1003.951904" />
+    <routestep step="4" x="641.707153" y="333.142609" z="1003.951904" />
+    <routestep step="5" x="625.148499" y="344.261780" z="1003.951904" />
+    <routestep step="6" x="625.125000" y="344.237823" z="1003.951904" />
+    <routestep step="7" x="641.685242" y="333.001617" z="1003.951904" />
+    <routestep step="8" x="646.567993" y="337.137939" z="1003.951904" />
+    <routestep step="9" x="644.783325" y="354.225250" z="1003.951904" />
+    <routestep step="10" x="643.511902" y="362.666046" z="1003.951904" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_13" pool="1">
+    <routestep step="1" x="318.955444" y="436.805573" z="1032.319336" />
+    <routestep step="2" x="308.474731" y="437.373535" z="1032.319336" />
+    <routestep step="3" x="299.066162" y="428.738312" z="1032.319336" />
+    <routestep step="4" x="296.586426" y="415.642334" z="1032.319336" />
+    <routestep step="5" x="299.157867" y="400.287384" z="1032.319336" />
+    <routestep step="6" x="307.245697" y="390.996124" z="1032.319336" />
+    <routestep step="7" x="315.872955" y="383.244141" z="1032.319336" />
+    <routestep step="8" x="307.221527" y="390.894104" z="1032.319336" />
+    <routestep step="9" x="299.073242" y="400.242004" z="1032.319336" />
+    <routestep step="10" x="296.551758" y="415.641052" z="1032.319336" />
+    <routestep step="11" x="298.996521" y="428.799316" z="1032.319336" />
+    <routestep step="12" x="308.454285" y="437.411530" z="1032.319336" />
+    <routestep step="13" x="318.958527" y="436.865417" z="1032.319336" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_14" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="440.878174" y="543.948853" z="991.055664" />
+    <routestep step="2" x="446.445313" y="547.606689" z="991.055664" />
+    <routestep step="3" x="451.574493" y="551.058289" z="991.055664" />
+    <routestep step="4" x="457.503967" y="554.875061" z="991.155640" />
+    <routestep step="5" x="465.745300" y="557.541199" z="991.055664" />
+    <routestep step="6" x="473.206024" y="560.011047" z="991.055664" />
+    <routestep step="7" x="480.832977" y="562.497070" z="991.155640" />
+    <routestep step="8" x="487.821259" y="564.864868" z="991.155640" />
+    <routestep step="9" x="480.792664" y="562.552002" z="991.155640" />
+    <routestep step="10" x="473.230103" y="560.087830" z="991.055664" />
+    <routestep step="11" x="465.680176" y="557.613342" z="991.055664" />
+    <routestep step="12" x="457.410309" y="555.009888" z="991.155640" />
+    <routestep step="13" x="451.523804" y="551.108948" z="991.055664" />
+    <routestep step="14" x="446.400085" y="547.617249" z="991.155640" />
+    <routestep step="15" x="440.811951" y="544.025330" z="991.055664" />
+    <routestep step="16" x="437.844818" y="540.537476" z="991.155640" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_15" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="489.722870" y="584.941101" z="991.155640" />
+    <routestep step="2" x="490.678955" y="570.227173" z="991.155640" />
+    <routestep step="3" x="500.102905" y="557.915466" z="991.155640" />
+    <routestep step="4" x="516.559204" y="556.974426" z="991.155640" />
+    <routestep step="5" x="528.869507" y="568.199402" z="991.155640" />
+    <routestep step="6" x="529.195435" y="587.867004" z="991.155640" />
+    <routestep step="7" x="517.144226" y="600.088562" z="991.155640" />
+    <routestep step="8" x="499.178192" y="597.632141" z="991.155640" />
+    <routestep step="9" x="489.890656" y="586.327026" z="991.155640" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_16" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="343.684265" y="483.505341" z="1017.461060" />
+    <routestep step="2" x="341.995972" y="479.375031" z="1017.361084" />
+    <routestep step="3" x="339.271545" y="472.240906" z="1017.361084" />
+    <routestep step="4" x="337.344513" y="467.488495" z="1017.361084" />
+    <routestep step="5" x="335.461823" y="462.694946" z="1017.361084" />
+    <routestep step="6" x="333.368195" y="457.310577" z="1017.461060" />
+    <routestep step="7" x="329.117676" y="455.906006" z="1017.361084" />
+    <routestep step="8" x="323.455841" y="454.200897" z="1017.361084" />
+    <routestep step="9" x="317.401123" y="452.455048" z="1017.361084" />
+    <routestep step="10" x="311.012512" y="450.715424" z="1017.361084" />
+    <routestep step="11" x="304.470032" y="448.832428" z="1017.361084" />
+    <routestep step="12" x="299.046600" y="447.293976" z="1017.461060" />
+    <routestep step="13" x="294.398987" y="443.370605" z="1017.361084" />
+    <routestep step="14" x="289.855957" y="439.462524" z="1017.361084" />
+    <routestep step="15" x="284.363007" y="434.753357" z="1017.361084" />
+    <routestep step="16" x="278.997009" y="430.085419" z="1017.461060" />
+    <routestep step="17" x="278.992096" y="430.093079" z="1017.461060" />
+    <routestep step="18" x="284.205078" y="434.908600" z="1017.361084" />
+    <routestep step="19" x="289.712891" y="439.756439" z="1017.361084" />
+    <routestep step="20" x="294.116089" y="443.750549" z="1017.361084" />
+    <routestep step="21" x="298.712677" y="447.664642" z="1017.461060" />
+    <routestep step="22" x="304.143951" y="449.327606" z="1017.361084" />
+    <routestep step="23" x="310.587769" y="451.077362" z="1017.361084" />
+    <routestep step="24" x="317.036041" y="452.928741" z="1017.361084" />
+    <routestep step="25" x="323.078094" y="454.671173" z="1017.361084" />
+    <routestep step="26" x="329.204163" y="456.290527" z="1017.361084" />
+    <routestep step="27" x="333.147888" y="457.600189" z="1017.461060" />
+    <routestep step="28" x="335.113373" y="462.980713" z="1017.361084" />
+    <routestep step="29" x="336.842010" y="467.640656" z="1017.361084" />
+    <routestep step="30" x="338.764740" y="472.445770" z="1017.361084" />
+    <routestep step="31" x="341.452698" y="479.483154" z="1017.361084" />
+    <routestep step="32" x="343.469025" y="483.586975" z="1017.461060" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob1_17" pool="1">
+    <routestep step="1" x="585.707458" y="341.301971" z="1009.672180" />
+    <routestep step="2" x="589.328491" y="332.590210" z="1009.672180" />
+    <routestep step="3" x="599.962036" y="323.845306" z="1009.672180" />
+    <routestep step="4" x="618.821045" y="322.245361" z="1009.572205" />
+    <routestep step="5" x="624.733032" y="310.624329" z="1009.672180" />
+    <routestep step="6" x="635.941650" y="297.097382" z="1009.672180" />
+    <routestep step="7" x="624.088440" y="309.893921" z="1009.672180" />
+    <routestep step="8" x="618.183044" y="321.181641" z="1009.572205" />
+    <routestep step="9" x="599.243286" y="322.395630" z="1009.572205" />
+    <routestep step="10" x="588.577820" y="332.009918" z="1009.672180" />
+    <routestep step="11" x="585.442810" y="341.715546" z="1009.672180" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob3_3" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="436.684418" y="442.188354" z="992.749878" />
+    <routestep step="2" x="439.613708" y="433.397858" z="992.749878" />
+    <routestep step="3" x="445.036804" y="426.230835" z="992.749878" />
+    <routestep step="4" x="440.054962" y="433.612030" z="992.749878" />
+    <routestep step="5" x="437.273254" y="442.277985" z="992.749878" />
+    <routestep step="6" x="437.375580" y="451.338379" z="992.749878" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Lehpar_Mob3_1" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="466.382263" y="416.768646" z="993.420410" />
+    <routestep step="2" x="458.028687" y="418.340118" z="993.320435" />
+    <routestep step="3" x="450.495422" y="422.077240" z="993.420410" />
+    <routestep step="4" x="457.805603" y="418.106598" z="993.320435" />
+    <routestep step="5" x="466.463135" y="416.368988" z="993.420410" />
+    <routestep step="6" x="476.245514" y="418.131653" z="993.420410" />
+  </walker_template>
+</npc_walker>

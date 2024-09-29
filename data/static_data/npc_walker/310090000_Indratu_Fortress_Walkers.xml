@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<npc_walker xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_13" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="295.792297" y="556.121643" z="981.766541" />
+    <routestep step="2" x="348.580353" y="552.727356" z="986.261719" />
+    <routestep step="3" x="326.662933" y="597.547119" z="986.202087" />
+    <routestep step="4" x="359.454010" y="610.458130" z="988.500122" />
+    <routestep step="5" x="328.612854" y="596.562622" z="986.931641" />
+    <routestep step="6" x="348.601593" y="554.497803" z="988.000183" />
+    <routestep step="7" x="296.782532" y="557.985779" z="982.540833" />
+    <routestep step="8" x="283.260864" y="587.400940" z="981.223511" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_1" pool="1">
+    <routestep step="1" x="525.592407" y="684.417908" z="1020.431396" />
+    <routestep step="2" x="528.724976" y="695.874146" z="1012.732788" />
+    <routestep step="3" x="544.812927" y="698.032471" z="1015.677307" />
+    <routestep step="4" x="552.502136" y="720.992371" z="1021.816101" />
+    <routestep step="5" x="556.530212" y="719.604309" z="1021.558044" />
+    <routestep step="6" x="556.713867" y="704.174622" z="1016.107117" />
+    <routestep step="7" x="566.838135" y="689.350403" z="1020.674438" />
+    <routestep step="8" x="555.293335" y="684.699097" z="1015.133484" />
+    <routestep step="9" x="546.590576" y="675.042419" z="1013.784119" />
+    <routestep step="10" x="556.028381" y="661.179260" z="1016.505371" />
+    <routestep step="11" x="547.060791" y="675.321045" z="1013.827820" />
+    <routestep step="12" x="555.805542" y="684.253235" z="1015.615723" />
+    <routestep step="13" x="567.587402" y="689.348572" z="1020.569580" />
+    <routestep step="14" x="557.187134" y="704.994690" z="1017.084961" />
+    <routestep step="15" x="556.755554" y="719.828979" z="1022.230469" />
+    <routestep step="16" x="552.432251" y="721.377930" z="1021.532471" />
+    <routestep step="17" x="544.668579" y="698.300049" z="1015.755676" />
+    <routestep step="18" x="528.302063" y="696.816772" z="1012.655884" />
+    <routestep step="19" x="525.146606" y="684.022522" z="1020.531372" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_7" pool="1">
+    <routestep step="1" x="531.669189" y="500.222534" z="967.444214" />
+    <routestep step="2" x="528.007080" y="501.741577" z="967.502930" />
+    <routestep step="3" x="523.687683" y="503.559204" z="967.502930" />
+    <routestep step="4" x="528.033508" y="501.809204" z="967.499878" />
+    <routestep step="5" x="531.781860" y="500.444214" z="967.623474" />
+    <routestep step="6" x="537.642761" y="497.926544" z="967.502930" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_2" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="603.048462" y="412.403900" z="1016.114929" />
+    <routestep step="2" x="606.128662" y="404.260437" z="1016.114929" />
+    <routestep step="3" x="623.545532" y="400.321686" z="1016.114929" />
+    <routestep step="4" x="633.890747" y="402.677399" z="1016.114929" />
+    <routestep step="5" x="620.296875" y="417.902649" z="1016.114929" />
+    <routestep step="6" x="618.885254" y="434.146484" z="1016.114929" />
+    <routestep step="7" x="619.150818" y="434.218018" z="1016.114929" />
+    <routestep step="8" x="620.521729" y="417.994873" z="1016.114929" />
+    <routestep step="9" x="634.533997" y="402.566345" z="1016.114929" />
+    <routestep step="10" x="623.499817" y="399.955780" z="1016.114929" />
+    <routestep step="11" x="605.879517" y="403.944214" z="1016.114929" />
+    <routestep step="12" x="602.807434" y="412.307495" z="1016.114929" />
+    <routestep step="13" x="600.677368" y="417.823700" z="1016.114929" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_9" pool="1">
+    <routestep step="1" x="523.728638" y="475.988861" z="968.951233" />
+    <routestep step="2" x="522.343750" y="483.765564" z="968.697083" />
+    <routestep step="3" x="521.504578" y="491.029663" z="969.165161" />
+    <routestep step="4" x="522.471008" y="496.695862" z="969.508484" />
+    <routestep step="5" x="521.125244" y="504.506317" z="969.648254" />
+    <routestep step="6" x="526.432739" y="509.490875" z="969.609741" />
+    <routestep step="7" x="529.730713" y="514.511841" z="969.165161" />
+    <routestep step="8" x="532.523865" y="517.518127" z="968.804688" />
+    <routestep step="9" x="535.850220" y="521.163818" z="968.835754" />
+    <routestep step="10" x="536.034912" y="520.853088" z="968.839172" />
+    <routestep step="11" x="532.732849" y="517.325806" z="968.802856" />
+    <routestep step="12" x="529.940491" y="514.247742" z="969.149719" />
+    <routestep step="13" x="526.608521" y="509.096375" z="969.502258" />
+    <routestep step="14" x="521.497498" y="504.457520" z="969.648254" />
+    <routestep step="15" x="522.760071" y="496.714661" z="969.465027" />
+    <routestep step="16" x="521.854187" y="491.068024" z="969.142944" />
+    <routestep step="17" x="522.681030" y="483.760345" z="968.851257" />
+    <routestep step="18" x="524.015076" y="475.828003" z="968.700623" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_2" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="490.642426" y="523.270142" z="1031.099976" />
+    <routestep step="2" x="494.237915" y="524.912720" z="1031.099976" />
+    <routestep step="3" x="497.013306" y="521.787964" z="1031.099976" />
+    <routestep step="4" x="500.765930" y="520.286743" z="1031.099976" />
+    <routestep step="5" x="505.619446" y="521.036316" z="1031.099976" />
+    <routestep step="6" x="508.813904" y="524.078369" z="1031.099976" />
+    <routestep step="7" x="510.250946" y="527.850220" z="1031.099976" />
+    <routestep step="8" x="509.864410" y="530.007202" z="1031.099976" />
+    <routestep step="9" x="509.506989" y="532.069336" z="1031.099976" />
+    <routestep step="10" x="509.471588" y="532.056396" z="1031.099976" />
+    <routestep step="11" x="509.856812" y="530.001282" z="1031.099976" />
+    <routestep step="12" x="510.234406" y="527.825073" z="1031.099976" />
+    <routestep step="13" x="508.827881" y="524.122253" z="1031.099976" />
+    <routestep step="14" x="505.666534" y="521.049927" z="1031.099976" />
+    <routestep step="15" x="500.755615" y="520.264709" z="1031.099976" />
+    <routestep step="16" x="497.001556" y="521.800659" z="1031.099976" />
+    <routestep step="17" x="494.255035" y="524.899414" z="1031.000000" />
+    <routestep step="18" x="490.664001" y="523.270203" z="1031.099976" />
+    <routestep step="19" x="488.077026" y="522.106873" z="1031.099976" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_5" pool="1">
+    <routestep step="1" x="509.283936" y="502.921356" z="1014.620422" />
+    <routestep step="2" x="501.619476" y="503.923309" z="1014.637878" />
+    <routestep step="3" x="498.868256" y="509.167206" z="1014.617981" />
+    <routestep step="4" x="494.299927" y="513.933960" z="1014.388550" />
+    <routestep step="5" x="491.550079" y="519.805359" z="1011.099365" />
+    <routestep step="6" x="491.816071" y="528.618225" z="1008.111816" />
+    <routestep step="7" x="491.979401" y="528.642822" z="1008.046997" />
+    <routestep step="8" x="491.666931" y="519.850220" z="1011.017517" />
+    <routestep step="9" x="494.367554" y="514.028992" z="1014.347412" />
+    <routestep step="10" x="499.030762" y="509.234375" z="1014.722351" />
+    <routestep step="11" x="501.712006" y="504.023254" z="1014.633179" />
+    <routestep step="12" x="509.283813" y="503.040741" z="1014.578003" />
+    <routestep step="13" x="515.066101" y="500.731873" z="1014.498108" />
+    <routestep step="14" x="516.665588" y="506.433319" z="1014.561951" />
+    <routestep step="15" x="520.460571" y="513.209595" z="1014.710205" />
+    <routestep step="16" x="518.586487" y="518.522522" z="1014.739319" />
+    <routestep step="17" x="518.137695" y="525.389160" z="1014.080811" />
+    <routestep step="18" x="514.434021" y="531.642090" z="1010.404846" />
+    <routestep step="19" x="508.175690" y="536.144714" z="1008.111938" />
+    <routestep step="20" x="508.275299" y="536.310059" z="1008.092041" />
+    <routestep step="21" x="514.517700" y="531.701355" z="1010.506592" />
+    <routestep step="22" x="518.141724" y="525.550476" z="1014.220398" />
+    <routestep step="23" x="518.758972" y="518.528137" z="1014.662537" />
+    <routestep step="24" x="520.575928" y="513.279358" z="1014.670349" />
+    <routestep step="25" x="516.783447" y="506.399811" z="1014.561646" />
+    <routestep step="26" x="515.116882" y="500.706635" z="1014.490906" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_3" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="270.789978" y="507.509491" z="986.389771" />
+    <routestep step="2" x="252.050629" y="518.197266" z="986.389771" />
+    <routestep step="3" x="244.363754" y="536.212280" z="986.389771" />
+    <routestep step="4" x="245.315643" y="556.485413" z="986.389771" />
+    <routestep step="5" x="258.177460" y="569.062561" z="986.389771" />
+    <routestep step="6" x="266.910187" y="571.690552" z="986.389771" />
+    <routestep step="7" x="274.402985" y="573.845520" z="986.389771" />
+    <routestep step="8" x="274.494385" y="573.590027" z="986.389771" />
+    <routestep step="9" x="266.910187" y="571.377258" z="986.389771" />
+    <routestep step="10" x="258.431519" y="568.728027" z="986.389771" />
+    <routestep step="11" x="245.871048" y="556.404358" z="986.389771" />
+    <routestep step="12" x="244.803696" y="536.334473" z="986.389771" />
+    <routestep step="13" x="252.398636" y="518.554932" z="986.389771" />
+    <routestep step="14" x="270.827484" y="507.814423" z="986.389771" />
+    <routestep step="15" x="287.139893" y="507.960815" z="986.389771" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_3" pool="1">
+    <routestep step="1" x="544.941406" y="485.669312" z="981.879089" />
+    <routestep step="2" x="543.078918" y="481.541931" z="980.689575" />
+    <routestep step="3" x="534.324219" y="475.197205" z="978.453796" />
+    <routestep step="4" x="528.399109" y="469.663330" z="975.700439" />
+    <routestep step="5" x="524.196045" y="467.437042" z="974.831848" />
+    <routestep step="6" x="519.636353" y="467.901642" z="972.995300" />
+    <routestep step="7" x="514.714722" y="468.593262" z="971.225525" />
+    <routestep step="8" x="519.663391" y="467.988068" z="972.676514" />
+    <routestep step="9" x="524.172607" y="467.578400" z="974.337463" />
+    <routestep step="10" x="528.382446" y="469.782623" z="975.448792" />
+    <routestep step="11" x="534.225586" y="475.292206" z="978.007629" />
+    <routestep step="12" x="543.020020" y="481.659912" z="980.522217" />
+    <routestep step="13" x="544.851990" y="485.684235" z="981.574036" />
+    <routestep step="14" x="545.820740" y="487.991974" z="983.100037" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_1" pool="1">
+    <routestep step="1" x="487.085480" y="510.716095" z="1017.000000" />
+    <routestep step="2" x="477.590179" y="531.457947" z="1017.000000" />
+    <routestep step="3" x="481.679382" y="541.801819" z="1017.000000" />
+    <routestep step="4" x="481.699249" y="541.793274" z="1017.000000" />
+    <routestep step="5" x="477.597748" y="531.444702" z="1017.000000" />
+    <routestep step="6" x="487.073059" y="510.715698" z="1017.000000" />
+    <routestep step="7" x="495.613678" y="507.266174" z="1017.099976" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_4" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="665.832642" y="584.985901" z="1017.669983" />
+    <routestep step="2" x="630.971863" y="579.426147" z="1015.326599" />
+    <routestep step="3" x="625.259216" y="602.630676" z="1014.180298" />
+    <routestep step="4" x="643.771179" y="621.346313" z="1016.972168" />
+    <routestep step="5" x="638.744507" y="638.340149" z="1017.897888" />
+    <routestep step="6" x="601.769531" y="645.395203" z="1018.559998" />
+    <routestep step="7" x="638.538025" y="638.048157" z="1018.123657" />
+    <routestep step="8" x="643.550781" y="621.985535" z="1017.008911" />
+    <routestep step="9" x="624.869202" y="602.578857" z="1014.183472" />
+    <routestep step="10" x="630.756592" y="579.002380" z="1015.415588" />
+    <routestep step="11" x="666.096802" y="585.141846" z="1016.851318" />
+    <routestep step="12" x="666.146362" y="544.931824" z="1019.194519" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_5" pool="1">
+    <routestep step="1" x="546.096008" y="401.929688" z="1007.762695" />
+    <routestep step="2" x="543.265442" y="414.627991" z="1007.599609" />
+    <routestep step="3" x="539.034546" y="437.204224" z="1009.855286" />
+    <routestep step="4" x="533.081116" y="463.573761" z="1015.089905" />
+    <routestep step="5" x="539.738525" y="437.298859" z="1009.789673" />
+    <routestep step="6" x="543.830139" y="414.680725" z="1007.937317" />
+    <routestep step="7" x="546.439026" y="402.025665" z="1007.998840" />
+    <routestep step="8" x="548.476440" y="392.403229" z="1007.576111" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_6" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="330.958710" y="455.717468" z="996.443054" />
+    <routestep step="2" x="349.483612" y="459.767365" z="996.543030" />
+    <routestep step="3" x="359.230316" y="471.861359" z="996.543030" />
+    <routestep step="4" x="361.648682" y="488.206604" z="996.543030" />
+    <routestep step="5" x="353.408875" y="504.783112" z="996.443054" />
+    <routestep step="6" x="344.348969" y="513.373047" z="996.543030" />
+    <routestep step="7" x="332.782379" y="519.877869" z="996.543030" />
+    <routestep step="8" x="311.788513" y="516.843445" z="996.543030" />
+    <routestep step="9" x="304.607147" y="514.012878" z="996.443054" />
+    <routestep step="10" x="296.819275" y="511.098877" z="996.543030" />
+    <routestep step="11" x="296.869965" y="510.958069" z="996.543030" />
+    <routestep step="12" x="304.611206" y="513.713379" z="996.443054" />
+    <routestep step="13" x="311.907654" y="516.540527" z="996.543030" />
+    <routestep step="14" x="332.772766" y="519.152832" z="996.543030" />
+    <routestep step="15" x="343.868866" y="513.088501" z="996.543030" />
+    <routestep step="16" x="353.083221" y="504.358826" z="996.443054" />
+    <routestep step="17" x="360.996857" y="487.848633" z="996.543030" />
+    <routestep step="18" x="359.023163" y="472.182739" z="996.543030" />
+    <routestep step="19" x="349.230499" y="460.065674" z="996.543030" />
+    <routestep step="20" x="328.427887" y="455.366150" z="996.543030" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_16" pool="1">
+    <routestep step="1" x="423.170074" y="676.880981" z="1008.169250" />
+    <routestep step="2" x="433.841431" y="680.479980" z="1010.129578" />
+    <routestep step="3" x="444.040558" y="684.095825" z="1010.941223" />
+    <routestep step="4" x="444.410614" y="683.536499" z="1010.726868" />
+    <routestep step="5" x="434.369415" y="679.757019" z="1010.236694" />
+    <routestep step="6" x="423.354736" y="676.120789" z="1008.155762" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_7" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="427.956360" y="425.382599" z="1016.114929" />
+    <routestep step="2" x="439.883484" y="411.039429" z="1016.114929" />
+    <routestep step="3" x="445.702881" y="380.306366" z="1016.114929" />
+    <routestep step="4" x="478.512360" y="381.957336" z="1016.114929" />
+    <routestep step="5" x="445.030212" y="381.756989" z="1016.114929" />
+    <routestep step="6" x="440.925140" y="410.331299" z="1016.114929" />
+    <routestep step="7" x="428.635071" y="426.552032" z="1016.114929" />
+    <routestep step="8" x="406.240631" y="428.733917" z="1016.114929" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_8" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="640.624146" y="333.304596" z="1035.503906" />
+    <routestep step="2" x="649.565430" y="338.503021" z="1035.603882" />
+    <routestep step="3" x="646.897583" y="383.114685" z="1027.193604" />
+    <routestep step="4" x="659.078552" y="344.930115" z="1035.503906" />
+    <routestep step="5" x="681.107239" y="341.968872" z="1035.603882" />
+    <routestep step="6" x="702.571411" y="352.578766" z="1035.603882" />
+    <routestep step="7" x="698.657043" y="382.138092" z="1035.503906" />
+    <routestep step="8" x="682.138062" y="388.104279" z="1035.603882" />
+    <routestep step="9" x="699.107910" y="382.221710" z="1035.503906" />
+    <routestep step="10" x="702.716858" y="352.230347" z="1035.603882" />
+    <routestep step="11" x="681.058533" y="341.746033" z="1035.603882" />
+    <routestep step="12" x="658.399048" y="344.390259" z="1035.503906" />
+    <routestep step="13" x="647.263367" y="381.221161" z="1028.107422" />
+    <routestep step="14" x="650.037903" y="338.295654" z="1035.603882" />
+    <routestep step="15" x="640.898071" y="332.718109" z="1035.503906" />
+    <routestep step="16" x="628.858643" y="321.880585" z="1035.603882" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_6" pool="1">
+    <routestep step="1" x="504.465363" y="548.297180" z="1015.190796" />
+    <routestep step="2" x="513.126465" y="552.487305" z="1015.192078" />
+    <routestep step="3" x="522.751953" y="557.060242" z="1019.233765" />
+    <routestep step="4" x="524.858398" y="557.559937" z="1019.558594" />
+    <routestep step="5" x="530.224609" y="545.892883" z="1019.540100" />
+    <routestep step="6" x="535.157349" y="535.993164" z="1025.058594" />
+    <routestep step="7" x="537.964111" y="529.004822" z="1028.842529" />
+    <routestep step="8" x="536.929810" y="524.234924" z="1028.179932" />
+    <routestep step="9" x="534.592224" y="522.727661" z="1028.024902" />
+    <routestep step="10" x="534.563171" y="523.306274" z="1028.086426" />
+    <routestep step="11" x="536.668030" y="524.584534" z="1027.777832" />
+    <routestep step="12" x="537.484375" y="529.004333" z="1029.397339" />
+    <routestep step="13" x="534.790466" y="535.556030" z="1025.453369" />
+    <routestep step="14" x="529.836731" y="545.705627" z="1019.686035" />
+    <routestep step="15" x="524.667236" y="557.054321" z="1019.557434" />
+    <routestep step="16" x="522.985291" y="556.693787" z="1019.187683" />
+    <routestep step="17" x="513.275879" y="552.036926" z="1015.090820" />
+    <routestep step="18" x="504.678040" y="547.825867" z="1015.192078" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_8" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="491.082520" y="487.423309" z="968.293030" />
+    <routestep step="2" x="499.626801" y="490.212341" z="968.293030" />
+    <routestep step="3" x="506.226959" y="494.401184" z="968.293030" />
+    <routestep step="4" x="512.334717" y="499.999969" z="968.293030" />
+    <routestep step="5" x="515.133118" y="505.686554" z="968.293030" />
+    <routestep step="6" x="517.061157" y="511.980347" z="968.293030" />
+    <routestep step="7" x="517.130432" y="520.678650" z="968.293030" />
+    <routestep step="8" x="516.019470" y="528.426880" z="968.293030" />
+    <routestep step="9" x="512.911987" y="535.698364" z="968.293030" />
+    <routestep step="10" x="513.316223" y="535.919250" z="968.293030" />
+    <routestep step="11" x="516.390198" y="528.511719" z="968.293030" />
+    <routestep step="12" x="517.521790" y="520.777100" z="968.293030" />
+    <routestep step="13" x="517.348083" y="511.912811" z="968.293030" />
+    <routestep step="14" x="515.505676" y="505.613708" z="968.293030" />
+    <routestep step="15" x="512.687439" y="499.744812" z="968.293030" />
+    <routestep step="16" x="506.605835" y="494.061829" z="968.293030" />
+    <routestep step="17" x="499.877045" y="489.793488" z="968.293030" />
+    <routestep step="18" x="491.199524" y="486.887543" z="968.293030" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_9" pool="1">
+    <routestep step="1" x="511.545349" y="647.623169" z="1018.107117" />
+    <routestep step="2" x="519.126892" y="645.326294" z="1018.107117" />
+    <routestep step="3" x="531.674255" y="635.016785" z="1018.107117" />
+    <routestep step="4" x="548.848999" y="635.168152" z="1018.107117" />
+    <routestep step="5" x="554.852844" y="631.161865" z="1018.107117" />
+    <routestep step="6" x="554.744385" y="631.081177" z="1018.107117" />
+    <routestep step="7" x="548.812256" y="635.073853" z="1018.107117" />
+    <routestep step="8" x="531.619141" y="634.908020" z="1018.107117" />
+    <routestep step="9" x="519.052185" y="645.227844" z="1018.107117" />
+    <routestep step="10" x="511.510651" y="647.534058" z="1018.107117" />
+    <routestep step="11" x="505.412903" y="646.872620" z="1018.107117" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_10" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="565.313049" y="659.756470" z="1021.352478" />
+    <routestep step="2" x="571.259949" y="653.310608" z="1021.352478" />
+    <routestep step="3" x="580.338562" y="649.910767" z="1021.352478" />
+    <routestep step="4" x="591.873596" y="651.547852" z="1021.352478" />
+    <routestep step="5" x="598.563660" y="659.273010" z="1021.352478" />
+    <routestep step="6" x="600.652893" y="670.692627" z="1021.252502" />
+    <routestep step="7" x="596.602356" y="680.579163" z="1021.352478" />
+    <routestep step="8" x="587.081116" y="686.226807" z="1021.252502" />
+    <routestep step="9" x="575.924377" y="684.953430" z="1021.352478" />
+    <routestep step="10" x="567.627563" y="680.188232" z="1021.252502" />
+    <routestep step="11" x="563.189392" y="671.677551" z="1021.352478" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_4" pool="1">
+    <routestep step="1" x="524.665710" y="548.157166" z="998.714172" />
+    <routestep step="2" x="534.203491" y="554.763062" z="998.614197" />
+    <routestep step="3" x="544.430237" y="561.860657" z="998.614197" />
+    <routestep step="4" x="544.463135" y="561.832458" z="998.614197" />
+    <routestep step="5" x="534.280640" y="554.659302" z="998.614197" />
+    <routestep step="6" x="524.784912" y="548.079163" z="998.714172" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_3" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="512.998108" y="534.048889" z="1031.080078" />
+    <routestep step="2" x="509.402618" y="532.406555" z="1031.051514" />
+    <routestep step="3" x="506.627228" y="535.530823" z="1031.105957" />
+    <routestep step="4" x="502.874603" y="537.031860" z="1031.132202" />
+    <routestep step="5" x="498.021088" y="536.282410" z="1031.119141" />
+    <routestep step="6" x="494.826630" y="533.240784" z="1031.066040" />
+    <routestep step="7" x="493.389587" y="529.469543" z="1031.000244" />
+    <routestep step="8" x="493.776123" y="527.312866" z="1030.962524" />
+    <routestep step="9" x="494.133545" y="525.251038" z="1030.926514" />
+    <routestep step="10" x="494.168945" y="525.263977" z="1030.926758" />
+    <routestep step="11" x="493.783722" y="527.318787" z="1030.962646" />
+    <routestep step="12" x="493.406128" y="529.494690" z="1031.000610" />
+    <routestep step="13" x="494.812653" y="533.196899" z="1031.065308" />
+    <routestep step="14" x="497.973999" y="536.268799" z="1031.118896" />
+    <routestep step="15" x="502.884918" y="537.053894" z="1031.132568" />
+    <routestep step="16" x="506.638977" y="535.518127" z="1031.105713" />
+    <routestep step="17" x="509.385498" y="532.421631" z="1030.951782" />
+    <routestep step="18" x="512.976501" y="534.048828" z="1031.080078" />
+    <routestep step="19" x="515.563538" y="535.211975" z="1031.100464" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_2_Mob_4" pool="1">
+    <routestep step="1" x="525.035583" y="528.207214" z="1017.000000" />
+    <routestep step="2" x="515.676086" y="548.878967" z="1017.000000" />
+    <routestep step="3" x="505.272430" y="552.390381" z="1017.000000" />
+    <routestep step="4" x="505.284546" y="552.412842" z="1017.000000" />
+    <routestep step="5" x="515.644287" y="548.881226" z="1017.000000" />
+    <routestep step="6" x="525.017334" y="528.214539" z="1017.000000" />
+    <routestep step="7" x="522.286987" y="518.961853" z="1017.099976" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_10" pool="1">
+    <routestep step="1" x="509.086945" y="470.309540" z="970.889648" />
+    <routestep step="2" x="503.832855" y="472.654114" z="969.892090" />
+    <routestep step="3" x="499.100098" y="475.178650" z="968.893066" />
+    <routestep step="4" x="493.521301" y="480.265717" z="968.893066" />
+    <routestep step="5" x="491.292297" y="485.608978" z="969.212402" />
+    <routestep step="6" x="491.838074" y="485.893402" z="969.212402" />
+    <routestep step="7" x="494.216766" y="480.821991" z="968.893066" />
+    <routestep step="8" x="499.604828" y="475.706726" z="968.893066" />
+    <routestep step="9" x="504.152863" y="473.277466" z="969.966309" />
+    <routestep step="10" x="509.508545" y="471.296631" z="971.010071" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_18" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="518.327393" y="691.815979" z="1017.034546" />
+    <routestep step="2" x="493.139709" y="678.946716" z="1014.552856" />
+    <routestep step="3" x="471.612366" y="659.212097" z="1011.751587" />
+    <routestep step="4" x="468.451935" y="632.771667" z="1012.213318" />
+    <routestep step="5" x="463.035217" y="612.482117" z="1014.340637" />
+    <routestep step="6" x="443.375641" y="617.830261" z="1008.601685" />
+    <routestep step="7" x="424.428467" y="629.594971" z="1003.385315" />
+    <routestep step="8" x="399.025757" y="625.434692" z="999.046082" />
+    <routestep step="9" x="369.988617" y="615.287537" z="995.187073" />
+    <routestep step="10" x="369.520020" y="616.771423" z="994.822998" />
+    <routestep step="11" x="398.565613" y="627.057068" z="998.890747" />
+    <routestep step="12" x="424.457855" y="630.935059" z="1003.384155" />
+    <routestep step="13" x="444.207184" y="618.866333" z="1008.909180" />
+    <routestep step="14" x="462.423645" y="614.178345" z="1012.592346" />
+    <routestep step="15" x="466.964508" y="632.685242" z="1011.560669" />
+    <routestep step="16" x="470.106781" y="659.619812" z="1011.373291" />
+    <routestep step="17" x="492.473846" y="680.067322" z="1014.237183" />
+    <routestep step="18" x="517.708313" y="693.014771" z="1016.683716" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_3_Mob_5" pool="1">
+    <routestep step="1" x="541.136719" y="529.817139" z="993.122375" />
+    <routestep step="2" x="543.637024" y="525.859863" z="991.754028" />
+    <routestep step="3" x="544.816589" y="521.083374" z="990.650574" />
+    <routestep step="4" x="546.381409" y="515.904053" z="989.304138" />
+    <routestep step="5" x="547.994629" y="509.373108" z="988.129822" />
+    <routestep step="6" x="549.135986" y="505.337738" z="986.489929" />
+    <routestep step="7" x="549.095581" y="503.205353" z="985.920898" />
+    <routestep step="8" x="548.486145" y="499.963074" z="985.724915" />
+    <routestep step="9" x="547.889709" y="497.495422" z="984.381470" />
+    <routestep step="10" x="548.417847" y="499.990570" z="985.474304" />
+    <routestep step="11" x="549.016296" y="503.211639" z="985.687500" />
+    <routestep step="12" x="549.021545" y="505.288513" z="986.269226" />
+    <routestep step="13" x="547.887695" y="509.338531" z="987.969910" />
+    <routestep step="14" x="546.259338" y="515.819214" z="989.193726" />
+    <routestep step="15" x="544.678833" y="521.013062" z="990.532593" />
+    <routestep step="16" x="543.498596" y="525.747803" z="991.707458" />
+    <routestep step="17" x="541.016907" y="529.684387" z="993.066467" />
+    <routestep step="18" x="538.846863" y="531.615540" z="994.514099" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_17" pool="1">
+    <routestep step="1" x="442.284515" y="687.935181" z="1011.935181" />
+    <routestep step="2" x="431.584198" y="683.962952" z="1011.506531" />
+    <routestep step="3" x="421.787506" y="680.230225" z="1009.565857" />
+    <routestep step="4" x="421.996460" y="679.528931" z="1009.261292" />
+    <routestep step="5" x="431.795837" y="683.275085" z="1011.038330" />
+    <routestep step="6" x="442.531921" y="687.227783" z="1011.741028" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_15" pool="1">
+    <routestep step="1" x="420.420410" y="684.121399" z="1008.169250" />
+    <routestep step="2" x="431.091766" y="687.720398" z="1010.129578" />
+    <routestep step="3" x="441.290894" y="691.336243" z="1010.941223" />
+    <routestep step="4" x="441.660950" y="690.776917" z="1010.726868" />
+    <routestep step="5" x="431.619751" y="686.997437" z="1010.236694" />
+    <routestep step="6" x="420.605072" y="683.361206" z="1008.155762" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_14" pool="1">
+    <routestep step="1" x="439.534851" y="695.175598" z="1011.935181" />
+    <routestep step="2" x="428.834534" y="691.203369" z="1011.506531" />
+    <routestep step="3" x="419.037842" y="687.470642" z="1009.565857" />
+    <routestep step="4" x="419.246796" y="686.769348" z="1009.261292" />
+    <routestep step="5" x="429.046173" y="690.515503" z="1011.038330" />
+    <routestep step="6" x="439.782257" y="694.468201" z="1011.741028" />
+  </walker_template>
+  <walker_template route_id="NPCPathIDLF3_Castle_Indratoo_1_Mob_12" pool="2" formation="OFFSET" offsetsx="1,-1" offsetsy="0,0">
+    <routestep step="1" x="644.700562" y="537.483826" z="1018.345825" />
+    <routestep step="2" x="643.458740" y="517.052246" z="1018.345825" />
+    <routestep step="3" x="664.598206" y="516.323059" z="1018.345825" />
+    <routestep step="4" x="664.967834" y="490.436157" z="1018.345825" />
+    <routestep step="5" x="642.556519" y="491.001160" z="1018.345825" />
+    <routestep step="6" x="640.808044" y="470.678375" z="1018.345825" />
+    <routestep step="7" x="642.017029" y="491.793060" z="1018.445801" />
+    <routestep step="8" x="664.413818" y="491.081543" z="1018.345825" />
+    <routestep step="9" x="664.066467" y="516.492737" z="1018.345825" />
+    <routestep step="10" x="643.817749" y="517.222229" z="1018.345825" />
+    <routestep step="11" x="645.380615" y="537.248779" z="1018.345825" />
+    <routestep step="12" x="665.555786" y="536.132446" z="1018.445801" />
+  </walker_template>
+</npc_walker>

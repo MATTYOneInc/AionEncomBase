@@ -1,232 +1,187 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-	レパル団の秘密研究所
-    Spawn By (Encom)
+	Parsed By Angry Catster
+
  -->
 <spawns>
-	<spawn_map map_id="310050000">
-		<!-- Giant Flask -->
-		<spawn npc_id="700219">
-			<spot x="225.72" y="303.19" z="129.35" entity_id="174"/>
-			<spot x="236.52" y="303.01" z="129.35" entity_id="173"/>
-			<spot x="177.56" y="245.98" z="136.99" entity_id="179"/>
-			<spot x="236.52" y="342.82" z="129.35" entity_id="176"/>
-			<spot x="215.51" y="343" z="129.35" entity_id="178"/>
-			<spot x="177.56" y="224.56" z="136.99" entity_id="181"/>
-			<spot x="177.56" y="235.86" z="136.99" entity_id="180"/>
-			<spot x="177.56" y="213.31" z="137.04" entity_id="182"/>
-			<spot x="215.51" y="303.19" z="129.35" entity_id="175"/>
-			<spot x="225.72" y="343" z="129.35" entity_id="177"/>
-		</spawn>
-		<!-- Minor Blessed Relics (Object Normal lvl:3) -->
-		<spawn npc_id="831988">
-            <spot x="352.24338" y="230.00955" z="147.60162" h="60"/>
-        </spawn>
-		<!-- Gatekeeper -->
-		<spawn npc_id="212173">
-			<spot x="312.18" y="230.16" z="144.146" h="25"/>
-		</spawn>
-		<!-- Special Lab Defender -->
-		<spawn npc_id="212172">
-			<spot x="333.94" y="240.63" z="144.151" h="93"/>
-		</spawn>
-		<!-- Expert Lab Scholar -->
-		<spawn npc_id="212175">
-			<spot x="353.075" y="286.934" z="141.965" h="14"/>
-		</spawn>
-		<!-- Special Lab Ambusher -->
-		<spawn npc_id="212169">
-			<spot x="298.129" y="228.134" z="141.964" h="115"/>
-			<spot x="296.994" y="232.597" z="141.668" h="81"/>
-		</spawn>
-		<!-- Special Lab Security Guard -->
-		<spawn npc_id="212171">
-			<spot x="334.012" y="219.472" z="144.15" h="39"/>
-			<spot x="315.78" y="230.19" z="144.14403" h="2" walker_id="4730AA2DDAE9042F39FD053CB2BEC2E2694BAA37"/>
-		</spawn>
-		<!-- Special Lab Vaegir -->
-		<spawn npc_id="212180">
-			<spot x="330.531" y="262.05" z="141.971" h="33"/>
-		</spawn>
-		<!-- Head Chef Pamsey -->
-		<spawn npc_id="212181">
-			<spot x="322.078" y="168.792" z="141.872" h="24"/>
-		</spawn>
-		<!-- RM-108C -->
-		<spawn npc_id="212191">
-			<spot x="177.6112" y="224.5528" z="134.15515" h="39"/>
-		</spawn>
-		<!-- RM-113B -->
-		<spawn npc_id="212192">
-			<spot x="177.7362" y="235.8028" z="134.15515" h="99"/>
-		</spawn>
-		<!-- RM-78C -->
-		<spawn npc_id="212211">
-			<spot x="260.97" y="322.952" z="128.653" h="64"/>
-		</spawn>
-		<!-- Expert Lab Investigator -->
-		<spawn npc_id="212183">
-			<spot x="363.681" y="170.253" z="142.009" h="1"/>
-		</spawn>
-		<!-- Expert Lab Scholar -->
-		<spawn npc_id="212176">
-			<spot x="335.12" y="266.912" z="141.978" h="62"/>
-		</spawn>
-		<!-- Expert Lab Scholar -->
-		<spawn npc_id="212177">
-			<spot x="357.171" y="275.845" z="141.969" h="11"/>
-			<spot x="331.49" y="275.94" z="141.98189" h="16" walker_id="D301AE3303D8FB2F4BF0F5294DBA3A6F88B2E60C"/>
-		</spawn>
-		<!-- Special Lab Strategist -->
-		<spawn npc_id="212178">
-			<spot x="333.277" y="287.703" z="141.983" h="112"/>
-			<spot x="354.396" y="256.722" z="141.984" h="1"/>
-		</spawn>
-		<!-- Special Lab Fencer -->
-		<spawn npc_id="212179">
-			<spot x="355.703" y="254.638" z="141.984" h="49"/>
-		</spawn>
-		<!-- Special Lab Assassin -->
-		<spawn npc_id="212188">
-			<spot x="317.143" y="210.538" z="144.176" h="12"/>
-		</spawn>
-		<!-- Special Lab Assassin -->
-		<spawn npc_id="212189">
-			<spot x="338.191" y="168.033" z="141.872" h="75"/>
-			<spot x="363.859" y="199.201" z="141.872" h="115"/>
-		</spawn>
-		<!-- Special Lab Sniper -->
-		<spawn npc_id="212190">
-			<spot x="334.12" y="183.12" z="141.63165" h="120" walker_id="8F5553B0CC2B070B793FE3244755A842856DDD16"/>
-		</spawn>
-		<!-- Expert Lab Medic -->
-		<spawn npc_id="212184">
-			<spot x="341.415" y="192.073" z="141.872" h="88"/>
-			<spot x="317.003" y="192.002" z="141.872" h="119"/>
-		</spawn>
-		<!-- Special Lab Overseer -->
-		<spawn npc_id="212185">
-			<spot x="364.538" y="201.043" z="141.872" h="108"/>
-		</spawn>
-		<!-- Special Lab Footsoldier -->
-		<spawn npc_id="212186">
-			<spot x="316.285" y="193.252" z="141.872" h="102"/>
-			<spot x="343.88" y="200.75" z="141.87166" h="63" walker_id="4E0D9D253A6B9B29271428D2F5B9C4391CD210B6"/>
-		</spawn>
-		<!-- Special Lab Footsoldier -->
-		<spawn npc_id="212187">
-			<spot x="339.279" y="192.202" z="141.872" h="80"/>
-			<spot x="362.016" y="202.417" z="141.872" h="90"/>
-			<spot x="337.822" y="169.789" z="141.872" h="14"/>
-			<spot x="318.27" y="173.286" z="141.872" h="102"/>
-		</spawn>
-		<!-- Laboratory Rotron -->
-		<spawn npc_id="212199">
-			<spot x="196.83" y="245.975" z="132.602" h="81"/>
-            <spot x="189.301" y="205.553" z="132.602" h="95"/>
-            <spot x="186.407" y="224.512" z="132.602" h="119"/>
-            <spot x="186.694" y="246.218" z="132.602" h="104"/>
-            <spot x="216.97766" y="212.22154" z="132.83424" h="3"/>
-            <spot x="206.97191" y="228.11487" z="132.8334" h="112"/>
-            <spot x="204.21588" y="206.53561" z="132.83435" h="12"/>
-            <spot x="240.54929" y="225.58258" z="132.83458" h="101"/>
-            <spot x="222.4665" y="221.04" z="132.834" h="109"/>
-		</spawn>
-		<!-- Pretor Lab Sentry -->
-		<spawn npc_id="212195">
-			<spot x="228.577" y="255.631" z="132.834" h="5"/>
-			<spot x="207.88" y="251.205" z="132.834" h="116"/>
-			<spot x="207.47" y="241.428" z="132.834" h="47"/>
-			<spot x="222.1" y="239.27" z="132.834" h="34"/>
-			<spot x="188.8" y="254.25" z="132.6022" h="30" walker_id="46992BBCA4A0E2EB2FFCDBFEEC9DB6281D7695C5"/>
-			<spot x="188.8" y="254.25" z="132.6022" h="30" walker_id="46992BBCA4A0E2EB2FFCDBFEEC9DB6281D7695C5"/>
-			<spot x="191.63" y="214.88" z="132.6022" h="41" walker_id="3EF986A7F93A1BCF245D88994AB6E063F2A5B92F"/>
-		</spawn>
-		<!-- Pretor Lab Sentry -->
-		<spawn npc_id="212194">
-			<spot x="238.459" y="255.572" z="132.834" h="31"/>
-			<spot x="268.986" y="233.678" z="136.756" h="62"/>
-			<spot x="269.033" y="227.218" z="136.756" h="15"/>
-			<spot x="235.74" y="238.69" z="132.835" h="84"/>
-			<spot x="244.63" y="246.75" z="132.83458" h="63" walker_id="4F5E1234E9045A833FADF5D3CE65F66549BD66CE"/>
-			<spot x="244.63" y="246.75" z="132.83458" h="63" walker_id="4F5E1234E9045A833FADF5D3CE65F66549BD66CE"/>
-		</spawn>
-		<!-- Perfected Pretor -->
-		<spawn npc_id="212205">
-			<spot x="222.954" y="323.428" z="124.997" h="39"/>
-		</spawn>
-		<!-- Enhanced Rotron -->
-		<spawn npc_id="212204">
-			<spot x="180.177" y="299.928" z="124.855" h="76"/>
-            <spot x="197.486" y="298.678" z="124.855" h="96"/>
-            <spot x="180.177" y="315.303" z="124.855" h="120"/>
-            <spot x="180.11" y="344.553" z="124.855" h="91"/>
-            <spot x="180.177" y="328.428" z="124.855" h="75"/>
-            <spot x="238.46263" y="206.28464" z="132.8345" h="16"/>
-            <spot x="231.67276" y="226.8317" z="132.83458" h="109"/>
-            <spot x="232.8887" y="213.56412" z="132.83432" h="3"/>
-		</spawn>
-		<!-- The Gatekeeper -->
-		<spawn npc_id="212202">
-			<spot x="198.31" y="323.46" z="124.855" h="6"/>
-		</spawn>
-		<!-- Lepharist Secret Safe -->
-		<spawn npc_id="700279">
-			<spot x="255.302" y="310.364" z="128.25" entity_id="64"/>
-		</spawn>
-		<!-- Research Center Cabinet -->
-		<spawn npc_id="700362">
-			<spot x="175.471" y="206.045" z="132.599" entity_id="185"/>
-			<spot x="250.113" y="253.606" z="132.837" entity_id="186"/>
-			<spot x="327.493" y="284.263" z="142.001" entity_id="189"/>
-			<spot x="368.324" y="186.23" z="141.872" entity_id="188"/>
-			<spot x="244.785" y="347.201" z="124.971" entity_id="184"/>
-			<spot x="250.075" y="205.785" z="132.837" entity_id="187"/>
-		</spawn>
-		<!-- Old Book -->
-		<spawn npc_id="730195">
-			<spot x="348.8" y="279.798" z="144.827" entity_id="191"/>
-			<spot x="331.331" y="265.599" z="144.013" entity_id="190"/>
-		</spawn>
-		<!-- Aetherogenetics Lab Exit (Object Normal lvl:3) -->
-	    <spawn npc_id="730035">
-		    <spot x="385.33084" y="230.23882" z="158.76749" entity_id="183"/>
-	    </spawn>
-	    <!-- Stolen Book Q1931 (Object Normal lvl:3) -->
-	    <spawn npc_id="700230">
-		    <spot x="351.15067" y="259.8998" z="143.16003" h="51"/>
-	    </spawn>
-	    <!-- Lepharist Research Data (Object Normal lvl:3) -->
-	    <spawn npc_id="700352">
-	        <spot x="249.913254" y="253.594803" z="134.000000" h="00"/>
-		    <spot x="366.895294" y="186.083817" z="142.405701" h="00"/>
-		    <spot x="327.831238" y="284.247009" z="142.698669" h="00"/>
-		    <spot x="176.029739" y="205.986328" z="133.367065" h="00"/>
-	    </spawn>
-	    <!-- Lepharist Research Diary (Object Normal lvl:3 Q4907) -->
-	    <spawn npc_id="700511">
-	        <spot x="328.240692" y="275.639191" z="144.000000" h="00"/>
-	    </spawn>
-	    <!-- Report Of The Research On Mutant Creatures 2 (Object Normal lvl:3) -->
-	    <spawn npc_id="730131">
-	        <spot x="327.833496" y="268.000000" z="143.404205" h="00"/>
-	    </spawn>
-		<!-- The Keykeeper -->
-		<spawn npc_id="212341">
-			<spot x="360.645" y="171.253" z="141.872" h="93"/>
-		</spawn>
-		<!-- Key Eater -->
-		<spawn npc_id="212342">
-			<spot x="196.986" y="345.928" z="124.855" h="64"/>
-		</spawn>
-		<!-- Enhanced Pretor -->
-		<spawn npc_id="212203">
-			<spot x="189.1" y="330.5" z="124.85524" h="91" walker_id="70CCB1FE7D023565447D87F6870B5979D0AE12AC"/>
-			<spot x="189.1" y="330.5" z="124.85524" h="91" walker_id="70CCB1FE7D023565447D87F6870B5979D0AE12AC"/>
-		</spawn>
-		<!-- Special Lab Fighter -->
-		<spawn npc_id="212170">
-			<spot x="315.78" y="230.19" z="144.14403" h="2" walker_id="4730AA2DDAE9042F39FD053CB2BEC2E2694BAA37"/>
-		</spawn>
-	</spawn_map>
+  <spawn_map map_id="310050000">
+    <spawn npc_id="212193">
+      <spot x="205.474731" y="246.045029" z="132.83458" h="0" />
+    </spawn>
+    <spawn npc_id="212177">
+      <spot x="329.446594" y="226.322647" z="144.14818" h="90" random_walk="0" walker_id="Path_IDLF3LP_ID1R_LehparWi_2" />
+      <spot x="185.180450" y="229.516388" z="132.6022" h="30" />
+      <spot x="179.765839" y="257.846100" z="132.6022" h="90" random_walk="2" walker_id="NPCPathIDLF3LP_Design8" />
+      <spot x="195.327255" y="253.452606" z="132.6022" h="105" />
+      <spot x="356.955566" y="274.667053" z="141.96971" h="0" />
+      <spot x="331.712250" y="275.810883" z="141.98207" h="0" random_walk="2" walker_id="IDLF3LP_2_ID2R_LehparWi_42_1" />
+    </spawn>
+    <spawn npc_id="212199">
+      <spot x="183.644821" y="242.805389" z="132.8555" h="60" walker_id="NPCPathIDLF3LP_Mob_3.17" />
+      <spot x="189.670502" y="206.946869" z="132.6022" h="30" random_walk="2" walker_id="NPCPathIDLF3LP_Design6" />
+      <spot x="197.690308" y="225.876358" z="132.6022" h="60" random_walk="2" walker_id="NPCPathIDLF3LP_Design7" />
+      <spot x="183.569183" y="221.468506" z="132.8555" h="60" walker_id="NPCPathIDLF3LP_Mob_3.16" />
+    </spawn>
+    <spawn npc_id="212169">
+      <spot x="279.707153" y="232.899124" z="137.12578" h="0" random_walk="0" />
+      <spot x="304.820618" y="226.779343" z="143.7218" h="0" random_walk="2" walker_id="NPCPathIDLF3LP_Design_3.4" />
+    </spawn>
+    <spawn npc_id="212334">
+      <spot x="358.799988" y="275.260010" z="142.86548" />
+    </spawn>
+    <spawn npc_id="212335">
+      <spot x="210.491806" y="205.931427" z="145.34358" />
+    </spawn>
+    <spawn npc_id="212194">
+      <spot x="235.919662" y="238.724808" z="132.83458" h="30" random_walk="0" />
+      <spot x="270.651703" y="213.459213" z="136.75626" h="0" random_walk="2" walker_id="NPCPathIDLF3LP_Mob_3.12" />
+      <spot x="245.361206" y="246.177795" z="132.83458" h="60" walker_id="IDLF3LP_MPath_ID4R_Pretor_42_1" walker_index="0" />
+      <spot x="270.945953" y="248.225647" z="136.75626" h="0" walker_id="NPCPathIDLF3LP_Mob_3.13" />
+      <spot x="239.801010" y="254.024765" z="132.83458" h="90" random_walk="3" />
+    </spawn>
+    <spawn npc_id="212341">
+      <spot x="359.947449" y="172.018234" z="141.87166" h="46" />
+    </spawn>
+    <spawn npc_id="212180">
+      <spot x="330.530884" y="262.050079" z="141.97113" h="90" />
+      <spot x="351.528412" y="284.288757" z="141.96852" h="25" random_walk="2" />
+      <spot x="331.286102" y="284.628571" z="141.98726" h="25" random_walk="2" />
+    </spawn>
+    <spawn npc_id="212204">
+      <spot x="180.226227" y="331.625122" z="124.85524" h="0" />
+      <spot x="191.488251" y="340.458344" z="124.85524" h="0" random_walk="2" walker_id="NPCPathIDLF3LP_Design9" />
+      <spot x="199.135544" y="303.988678" z="124.85524" h="75" />
+      <spot x="196.360260" y="318.351624" z="124.85524" h="60" />
+      <spot x="180.176971" y="315.302795" z="124.85524" h="0" />
+    </spawn>
+    <spawn npc_id="212203">
+      <spot x="190.111206" y="330.302795" z="124.85524" h="90" walker_id="IDLF3LP_MPath_ID5R_Pretor_43_1" walker_index="0" />
+    </spawn>
+    <spawn npc_id="212197">
+      <spot x="235.833038" y="214.269623" z="132.83458" h="25" random_walk="0" />
+      <spot x="245.383224" y="226.935501" z="132.83458" h="25" random_walk="2" />
+      <spot x="232.394180" y="227.139572" z="132.83458" h="25" random_walk="2" />
+      <spot x="240.761215" y="205.240433" z="132.81345" h="25" random_walk="2" />
+    </spawn>
+    <spawn npc_id="700352">
+      <spot x="249.913254" y="253.594803" z="132.83458" entity_id="186" />
+      <spot x="366.895294" y="186.083817" z="141.87166" entity_id="188" />
+      <spot x="327.831238" y="284.247009" z="141.98549" entity_id="189" />
+      <spot x="176.029739" y="205.986328" z="132.6022" entity_id="185" />
+    </spawn>
+    <spawn npc_id="212188">
+      <spot x="317.143280" y="210.538284" z="144.17572" h="0" />
+      <spot x="318.997253" y="184.164581" z="141.87166" h="0" random_walk="2" walker_id="NPCPathIDLF3LP_Design_3.1" />
+    </spawn>
+    <spawn npc_id="212198">
+      <spot x="220.824585" y="223.962311" z="132.83458" h="25" random_walk="0" />
+      <spot x="227.071472" y="212.593460" z="132.83458" h="25" random_walk="2" />
+      <spot x="207.833084" y="227.991608" z="132.83458" h="25" random_walk="2" />
+      <spot x="217.796555" y="209.876068" z="132.83458" h="25" random_walk="2" />
+    </spawn>
+    <spawn npc_id="212186">
+      <spot x="318.914459" y="192.980606" z="141.87166" h="0" random_walk="0" />
+      <spot x="344.111206" y="200.677795" z="141.87166" h="30" random_walk="2" walker_id="IDLF3LP_MPath_ID3R_LehparFi_41_1" />
+    </spawn>
+    <spawn npc_id="700219">
+      <spot x="177.352097" y="212.890472" z="134.20831" entity_id="182" />
+      <spot x="177.400894" y="246.506851" z="134.15515" entity_id="179" />
+      <spot x="177.489944" y="236.355255" z="134.15515" entity_id="180" />
+      <spot x="177.949173" y="224.715500" z="134.15515" entity_id="181" />
+    </spawn>
+    <spawn npc_id="212205">
+      <spot x="225.191605" y="322.755737" z="124.99656" h="60" />
+    </spawn>
+    <spawn npc_id="212178">
+      <spot x="350.642303" y="258.040985" z="141.98645" h="70" />
+      <spot x="352.645966" y="247.840958" z="144.19699" h="60" random_walk="2" walker_id="Path_IDLF3LP_2_F_ID2R_LehparKn_42" />
+      <spot x="333.266846" y="286.763397" z="141.98401" h="0" />
+    </spawn>
+    <spawn npc_id="212195">
+      <spot x="188.590607" y="254.800003" z="132.6022" h="30" walker_id="IDLF3LP_MPath_ID4R_Pretor_43_2" walker_index="0" />
+      <spot x="220.308777" y="241.588608" z="132.83458" h="30" random_walk="2" />
+      <spot x="229.314194" y="254.728119" z="132.83458" h="90" random_walk="2" />
+      <spot x="191.986206" y="214.427795" z="132.6022" h="30" random_walk="2" walker_id="IDLF3LP_MPath_ID4R_Pretor_43_1" />
+    </spawn>
+    <spawn npc_id="212172">
+      <spot x="333.940216" y="240.629654" z="144.15102" h="90" />
+    </spawn>
+    <spawn npc_id="700511">
+      <spot x="328.240692" y="275.639191" z="142.91132" entity_id="61" />
+    </spawn>
+    <spawn npc_id="730035">
+      <spot x="385.269775" y="230.069717" z="158.81822" entity_id="183" />
+    </spawn>
+    <spawn npc_id="212211">
+      <spot x="253.660339" y="322.552795" z="127.27161" h="60" />
+    </spawn>
+    <spawn npc_id="212187">
+      <spot x="320.442932" y="170.690094" z="141.87166" h="103" />
+      <spot x="362.016083" y="202.416763" z="141.87166" h="100" />
+      <spot x="339.278687" y="192.202362" z="141.87166" h="10" />
+      <spot x="185.107651" y="231.098328" z="132.6022" h="90" />
+      <spot x="346.102386" y="167.610382" z="141.87166" h="30" random_walk="2" />
+    </spawn>
+    <spawn npc_id="212171">
+      <spot x="334.012268" y="219.471558" z="144.14966" h="30" />
+    </spawn>
+    <spawn npc_id="212192">
+      <spot x="177.861206" y="245.927795" z="134.15515" h="0" />
+      <spot x="177.486206" y="213.302795" z="134.20831" h="0" />
+      <spot x="177.736206" y="235.802795" z="134.15515" h="0" />
+    </spawn>
+    <spawn npc_id="212189">
+      <spot x="363.859131" y="199.200592" z="141.87166" h="40" />
+      <spot x="366.208649" y="184.964417" z="141.87166" h="60" random_walk="2" walker_id="NPCPathIDLF3LP_Design1" />
+      <spot x="337.242126" y="175.162766" z="141.87166" h="16" />
+    </spawn>
+    <spawn npc_id="700230">
+      <spot x="348.906708" y="280.016479" z="141.97375" entity_id="191" />
+    </spawn>
+    <spawn npc_id="212191">
+      <spot x="177.611206" y="224.552795" z="134.15515" h="0" />
+    </spawn>
+    <spawn npc_id="212176">
+      <spot x="335.119690" y="266.911621" z="141.97816" h="90" />
+    </spawn>
+    <spawn npc_id="212202">
+      <spot x="198.309998" y="323.459991" z="124.85524" h="60" />
+    </spawn>
+    <spawn npc_id="212179">
+      <spot x="349.979614" y="257.496796" z="141.98743" h="16" />
+    </spawn>
+    <spawn npc_id="212190">
+      <spot x="342.697845" y="185.224655" z="141.87166" h="90" random_walk="0" />
+    </spawn>
+    <spawn npc_id="212342">
+      <spot x="196.986206" y="345.927795" z="124.85524" h="90" />
+    </spawn>
+    <spawn npc_id="212174">
+      <spot x="356.220428" y="283.625824" z="141.96455" h="60" />
+    </spawn>
+    <spawn npc_id="212181" pool="1">
+      <spot x="322.077789" y="168.792038" z="141.87166" h="30" />
+    </spawn>
+    <spawn npc_id="212173">
+      <spot x="312.179993" y="230.160004" z="144.14554" h="0" />
+    </spawn>
+    <spawn npc_id="212196">
+      <spot x="207.861206" y="215.927795" z="132.83458" h="25" random_walk="0" />
+    </spawn>
+    <spawn npc_id="730131">
+      <spot x="327.833496" y="268.000000" z="142.86548" entity_id="206" />
+    </spawn>
+    <spawn npc_id="212184">
+      <spot x="341.415161" y="192.073410" z="141.87166" h="40" />
+    </spawn>
+    <spawn npc_id="212183">
+      <spot x="357.196198" y="174.890335" z="141.87166" h="15" random_walk="0" walker_id="NPCPathIDLF3LP_Design4" />
+    </spawn>
+    <spawn npc_id="212185">
+      <spot x="364.537903" y="201.042801" z="141.87166" h="53" />
+    </spawn>
+    <spawn npc_id="700279">
+      <spot x="255.161255" y="309.836639" z="128.24498" entity_id="64" />
+    </spawn>
+  </spawn_map>
 </spawns>
