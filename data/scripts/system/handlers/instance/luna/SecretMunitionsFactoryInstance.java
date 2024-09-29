@@ -403,7 +403,7 @@ public class SecretMunitionsFactoryInstance extends GeneralInstanceHandler
             @Override
             public void run() {
 				startFactoryRaid1();
-				sendMsg("[START]: Wave <1/3>");
+				//sendMsg("[START]: Wave <1/3>");
             }
         }, 120000)); //...2Min
 		factoryTask1.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -411,7 +411,7 @@ public class SecretMunitionsFactoryInstance extends GeneralInstanceHandler
             public void run() {
 				startFactoryRaid2();
 				factoryTaskA1.cancel(true);
-				sendMsg("[START]: Wave <2/3>");
+				//sendMsg("[START]: Wave <2/3>");
 				//The Maintenance Soldier’s Footlocker has appeared inside the Munitions Factory.
 				sendMsgByRace(1403641, Race.PC_ALL, 3000);
 				spawn(703376, 138.75412f, 269.4629f, 191.8727f, (byte) 0); //Maintenance Soldier’s Footlocker.
@@ -422,7 +422,7 @@ public class SecretMunitionsFactoryInstance extends GeneralInstanceHandler
             public void run() {
 				startFactoryRaid3();
 				factoryTaskA2.cancel(true);
-				sendMsg("[START]: Wave <3/3>");
+				//sendMsg("[START]: Wave <3/3>");
             }
         }, 360000)); //...6Min
 		factoryTask1.add(ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -480,7 +480,7 @@ public class SecretMunitionsFactoryInstance extends GeneralInstanceHandler
 			doReward(player);
 		}
 		startPrepareTimer();
-		spawnLunaDetachment();
+		//spawnLunaDetachment();
 		final int lunaDetachement = skillRace == Race.ASMODIANS ? 21348 : 21347;
 		SkillEngine.getInstance().applyEffectDirectly(lunaDetachement, player, player, 3000000 * 1);
 	}
@@ -508,20 +508,21 @@ public class SecretMunitionsFactoryInstance extends GeneralInstanceHandler
 		}
 		startTime = System.currentTimeMillis();
 		instanceReward.setInstanceScoreType(InstanceScoreType.START_PROGRESS);
+		spawnLunaDetachment();
 		sendPacket(0, 0);
 	}
 	
 	private void spawnLunaDetachment() {
-	    spawn(833826, 385.30814f, 286.88065f, 198.56099f, (byte) 6); //Roxy.
-		spawn(833827, 386.10965f, 282.91656f, 198.24266f, (byte) 11); //Mak.
-		spawn(833828, 386.33496f, 290.52594f, 198.5f, (byte) 115); //Manad.
-		spawn(833829, 382.25574f, 283.81686f, 198.50284f, (byte) 7); //Herez.
-		spawn(833897, 388.17896f, 279.8141f, 197.98882f, (byte) 14); //Joel.
+		sp(833829, 382.25574f, 283.81686f, 198.50284f, (byte) 7, 5, "NPCPathAlly_NPC_Path2");//Herez.
+		sp(833827, 386.10965f, 282.91656f, 198.24266f, (byte) 11, 5, "NPCPathAlly_NPC_Path3");//Mak.
+		sp(833897, 388.17896f, 279.8141f, 197.98882f, (byte) 14, 5, "NPCPathAlly_NPC_Path4");//Joel.
+		sp(833826, 385.30814f, 286.88065f, 198.56099f, (byte) 6, 5, "NPCPathAlly_NPC_Path5");//Roxy.
+		sp(833828, 386.33496f, 290.52594f, 198.5f, (byte) 115, 5, "NPCPathAlly_NPC_Path6");//Manad.
 	}
 	
 	protected void stopInstance1(Player player) {
 		stopInstanceTask1();
-		sendMsg("[SUCCES]: You survived !!! :) ");
+		////sendMsg("[SUCCES]: You survived !!! :) ");
 	}
 	
 	protected void stopInstance2(Player player) {
@@ -530,7 +531,7 @@ public class SecretMunitionsFactoryInstance extends GeneralInstanceHandler
 		instanceReward.setRank(checkRank(instanceReward.getPoints()));
 		instanceReward.setInstanceScoreType(InstanceScoreType.END_PROGRESS);
 		doReward(player);
-		sendMsg("[SUCCES]: You have finished <Secret Munitions Factory>");
+		////sendMsg("[SUCCES]: You have finished <Secret Munitions Factory>");
 		sendPacket(0, 0);
 	}
 	

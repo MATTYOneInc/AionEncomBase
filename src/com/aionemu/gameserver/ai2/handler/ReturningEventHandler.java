@@ -47,7 +47,9 @@ public class ReturningEventHandler {
 		}
 		if (npcAI.isInState(AIState.RETURNING)) {
 			Npc npc = (Npc) npcAI.getOwner();
-			if (npcAI.isMoveSupported() && npc.getDistanceToSpawnLocation() < 100) { //Arbitrary distance
+			if (npc.hasWalkRoutes()) {
+				WalkManager.startWalking(npcAI);
+			}else if (npcAI.isMoveSupported() && npc.getDistanceToSpawnLocation() < 100) { //Arbitrary distance
 //					Point3D prevStep = npc.getMoveController().recallPreviousStep();
 //					npcAI.getOwner().getMoveController().moveToPoint(prevStep.getX(), prevStep.getY(), prevStep.getZ());
 				npc.getMoveController().abortMove();
