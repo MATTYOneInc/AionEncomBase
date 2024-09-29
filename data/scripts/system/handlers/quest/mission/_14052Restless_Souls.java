@@ -52,7 +52,7 @@ public class _14052Restless_Souls extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14051, false);
+        return defaultOnLvlUpEvent(env, 14050, false);
     }
 	
     @Override

@@ -51,7 +51,7 @@ public class _24015Totem_Plowed extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24014, false);
+        return defaultOnLvlUpEvent(env, 24010, false);
     }
 	
     @Override

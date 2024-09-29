@@ -44,7 +44,7 @@ public class _1004Neutralizing_Odium extends QuestHandler
 	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 1003, false);
+		return defaultOnLvlUpEvent(env, 1100, false);
 	}
 	
 	@Override

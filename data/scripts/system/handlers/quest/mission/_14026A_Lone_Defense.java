@@ -75,13 +75,13 @@ public class _14026A_Lone_Defense extends QuestHandler
 	
 	@Override
     public boolean onZoneMissionEndEvent(QuestEnv env) {
-        int[] quests = {14020, 14021, 14022, 14023, 14025};
+        int[] quests = {14020, 14021, 14022, 14023, 14024, 14025};
         return defaultOnZoneMissionEndEvent(env, quests);
     }
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        int[] quests = {14020, 14021, 14022, 14023, 14025};
+        int[] quests = {14020, 14021, 14022, 14023, 14024, 14025};
         return defaultOnLvlUpEvent(env, quests, false);
     }
 	

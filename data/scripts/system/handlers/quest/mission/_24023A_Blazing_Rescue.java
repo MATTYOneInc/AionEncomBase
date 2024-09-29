@@ -53,7 +53,7 @@ public class _24023A_Blazing_Rescue extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24022, false);
+        return defaultOnLvlUpEvent(env, 24020, false);
     }
 	
     @Override

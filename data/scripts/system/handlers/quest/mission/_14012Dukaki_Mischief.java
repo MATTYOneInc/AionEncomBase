@@ -50,7 +50,7 @@ public class _14012Dukaki_Mischief extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14011, false);
+        return defaultOnLvlUpEvent(env, 14010, false);
     }
 	
     @Override

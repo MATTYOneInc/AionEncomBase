@@ -48,7 +48,7 @@ public class _2003Treasure_Of_The_Deceased extends QuestHandler
 	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 2002, false);
+		return defaultOnLvlUpEvent(env, 2100, false);
 	}
 	
 	@Override

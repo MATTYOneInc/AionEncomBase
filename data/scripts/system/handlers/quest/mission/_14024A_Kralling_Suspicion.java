@@ -49,7 +49,7 @@ public class _14024A_Kralling_Suspicion extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14023, false);
+        return defaultOnLvlUpEvent(env, 14020, false);
     }
 	
     @Override

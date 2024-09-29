@@ -51,7 +51,7 @@ public class _1002Request_Of_The_Elim extends QuestHandler
 	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 1001, false);
+		return defaultOnLvlUpEvent(env, 1100, false);
 	}
 	
 	@Override

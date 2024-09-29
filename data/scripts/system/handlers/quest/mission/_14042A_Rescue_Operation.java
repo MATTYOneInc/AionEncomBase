@@ -152,6 +152,6 @@ public class _14042A_Rescue_Operation extends QuestHandler {
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 14041, false);
+        return defaultOnLvlUpEvent(env, 14040, false);
     }
 }

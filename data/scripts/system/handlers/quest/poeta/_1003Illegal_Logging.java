@@ -45,7 +45,7 @@ public class _1003Illegal_Logging extends QuestHandler
 	
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env, 1002, false);
+		return defaultOnLvlUpEvent(env, 1100, false);
 	}
 	
 	@Override

@@ -49,7 +49,7 @@ public class _24024A_Nepra_Protector extends QuestHandler {
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24023, false);
+        return defaultOnLvlUpEvent(env, 24020, false);
     }
 	
     @Override

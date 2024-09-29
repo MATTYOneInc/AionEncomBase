@@ -266,6 +266,6 @@ public class _2002Wheres_Rae extends QuestHandler {
 
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 2001, false);
+        return defaultOnLvlUpEvent(env, 2100, false);
     }
 }

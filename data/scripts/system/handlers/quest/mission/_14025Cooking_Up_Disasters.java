@@ -56,13 +56,12 @@ public class _14025Cooking_Up_Disasters extends QuestHandler {
 
 	@Override
 	public boolean onZoneMissionEndEvent(QuestEnv env) {
-		return defaultOnZoneMissionEndEvent(env, 14024);
+		return defaultOnZoneMissionEndEvent(env);
 	}
 
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
-		int[] quests = { 14020, 14024 };
-		return defaultOnLvlUpEvent(env, quests, false);
+		return defaultOnLvlUpEvent(env, 14020, false);
 	}
 
 	@Override

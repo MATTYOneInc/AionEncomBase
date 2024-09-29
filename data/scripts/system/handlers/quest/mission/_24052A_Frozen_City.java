@@ -58,7 +58,7 @@ public class _24052A_Frozen_City extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24051, false);
+        return defaultOnLvlUpEvent(env, 24050, false);
     }
 	
     @Override

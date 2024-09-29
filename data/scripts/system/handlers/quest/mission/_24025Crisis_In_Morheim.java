@@ -51,7 +51,7 @@ public class _24025Crisis_In_Morheim extends QuestHandler
 	
     @Override
     public boolean onLvlUpEvent(QuestEnv env) {
-        return defaultOnLvlUpEvent(env, 24024, false);
+        return defaultOnLvlUpEvent(env, 24020, false);
     }
 	
     @Override
