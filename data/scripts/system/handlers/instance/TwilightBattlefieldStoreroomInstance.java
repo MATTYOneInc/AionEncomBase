@@ -194,7 +194,7 @@ public class TwilightBattlefieldStoreroomInstance extends GeneralInstanceHandler
 				doors.get(79).setOpen(true);
 				doors.get(80).setOpen(true);
 				twilightBattlefieldTask.cancel(true);
-				sendMsg("[SUCCES]: You have finished <Miren Chamber>");
+				//sendMsg("[SUCCES]: You have finished <Miren Chamber>");
 				instance.doOnAllPlayers(new Visitor<Player>() {
 			        @Override
 			        public void visit(Player player) {

@@ -783,7 +783,7 @@ public class PandaemoniumInstance extends GeneralInstanceHandler
 	protected void stopInstance(Player player) {
         stopInstanceTask();
 		doReward(player);
-		sendMsg("[SUCCES]: You have finished <Dredgion Defense: Pandaemonium>");
+		//sendMsg("[SUCCES]: You have finished <Dredgion Defense: Pandaemonium>");
 	}
 	
    /**

@@ -221,7 +221,7 @@ public class AdmaStrongholdInstance extends GeneralInstanceHandler
 			    }, 3000);
             break;
 			case 237239: //Death Reaper.
-				sendMsg("[SUCCES]: You have finished <Adma Stronghold>");
+				//sendMsg("[SUCCES]: You have finished <Adma Stronghold>");
 				switch (Rnd.get(1, 2)) {
 		            case 1:
 				        spawn(702658, 614.9905f, 745.60156f, 198.75998f, (byte) 60); //Abbey Box.

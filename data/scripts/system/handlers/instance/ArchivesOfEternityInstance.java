@@ -508,7 +508,7 @@ public class ArchivesOfEternityInstance extends GeneralInstanceHandler
 				final int ArchivesToCradle = spawnRace == Race.ASMODIANS ? 806057 : 806055;
 				spawn(ArchivesToCradle, 256.28693f, 512.5591f, 468.84964f, (byte) 118);
 				spawn(806153, 245.83438f, 512.4957f, 468.80215f, (byte) 119); //Cryptograph Cube.
-				sendMsg("[SUCCES]: You have finished <Archives Of Eternity>");
+				//sendMsg("[SUCCES]: You have finished <Archives Of Eternity>");
 			break;
 		}
 	}

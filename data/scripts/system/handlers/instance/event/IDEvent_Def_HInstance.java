@@ -594,7 +594,7 @@ public class IDEvent_Def_HInstance extends GeneralInstanceHandler
 		instanceReward.setRank(checkRank(instanceReward.getPoints()));
 		instanceReward.setInstanceScoreType(InstanceScoreType.END_PROGRESS);
 		doReward(player);
-		sendMsg("[SUCCES]: You survived !!! :) ");
+		//sendMsg("[SUCCES]: You survived !!! :) ");
 		sendPacket(0, 0);
 	}
 	

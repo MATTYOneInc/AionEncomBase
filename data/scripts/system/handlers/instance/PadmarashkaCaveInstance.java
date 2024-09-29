@@ -155,7 +155,7 @@ public class PadmarashkaCaveInstance extends GeneralInstanceHandler
 			    dramataTask.cancel(true);
 				//Padmarashka has died. You will be removed from Padmarashka's Cave in 30 minutes.
 				sendMsgByRace(1400675, Race.PC_ALL, 10000);
-				sendMsg("[SUCCES]: You have finished <Padmarashka Cave>");
+				//sendMsg("[SUCCES]: You have finished <Padmarashka Cave>");
 				instance.doOnAllPlayers(new Visitor<Player>() {
 			        @Override
 			        public void visit(Player player) {

@@ -603,7 +603,7 @@ public class DarkPoetaInstance extends GeneralInstanceHandler
         instanceReward.setRank(6);
 		instanceReward.setRank(checkRank(instanceReward.getPoints()));
 		instanceReward.setInstanceScoreType(InstanceScoreType.END_PROGRESS);
-		sendMsg("[SUCCES]: You have finished <Dark Poeta>");
+		//sendMsg("[SUCCES]: You have finished <Dark Poeta>");
 		sendPacket(0, 0);
 	}
 	

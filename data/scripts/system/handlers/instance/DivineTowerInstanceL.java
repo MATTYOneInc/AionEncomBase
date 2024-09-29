@@ -201,7 +201,7 @@ public class DivineTowerInstanceL extends GeneralInstanceHandler
 				}
 			break;
 			case 248025: //IDAb1_Heroes_Boss_73_Ah.
-				sendMsg("[SUCCES]: You have finished <Divine Tower>");
+				//sendMsg("[SUCCES]: You have finished <Divine Tower>");
 				sp(806731, 239.40633f, 249.12549f, 404.25793f, (byte) 9, 0, 0, 0, null); //Vokes.
 			break;
 		}

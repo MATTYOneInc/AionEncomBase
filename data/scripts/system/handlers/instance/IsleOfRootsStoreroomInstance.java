@@ -194,7 +194,7 @@ public class IsleOfRootsStoreroomInstance extends GeneralInstanceHandler
 				doors.get(79).setOpen(true);
 				doors.get(80).setOpen(true);
 				isleOfRootsStoreroomTask.cancel(true);
-				sendMsg("[SUCCES]: You have finished <Krotan Chamber>");
+				//sendMsg("[SUCCES]: You have finished <Krotan Chamber>");
 				instance.doOnAllPlayers(new Visitor<Player>() {
 			        @Override
 			        public void visit(Player player) {

@@ -397,7 +397,7 @@ public class SmolderingFireTempleInstance extends GeneralInstanceHandler
 		instanceReward.setRank(checkRank(instanceReward.getPoints()));
 		instanceReward.setInstanceScoreType(InstanceScoreType.END_PROGRESS);
 		doReward(player);
-		sendMsg("[SUCCES]: You have finished <Smoldering Fire Temple>");
+		//sendMsg("[SUCCES]: You have finished <Smoldering Fire Temple>");
 		sendPacket(0, 0);
 	}
 	

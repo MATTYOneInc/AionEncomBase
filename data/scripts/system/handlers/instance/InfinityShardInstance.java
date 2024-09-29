@@ -128,7 +128,7 @@ public class InfinityShardInstance extends GeneralInstanceHandler
 				sendMsgByRace(1401795, Race.PC_ALL, 0);
             break;
 			case 231073: //Hyperion.
-			    sendMsg("[SUCCES]: You have finished <Infinity Shard>");
+			    //sendMsg("[SUCCES]: You have finished <Infinity Shard>");
 				spawn(730842, 124.669853f, 137.840668f, 113.942917f, (byte) 0); //Infinity Shard Exit.
 				spawn(802184, 127.32316f, 131.72421f, 112.17429f, (byte) 25); //Infinity Shard Opportunity Bundle.
 			break;

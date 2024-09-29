@@ -152,7 +152,7 @@ public class ArchivesOfEternityQInstance extends GeneralInstanceHandler
 				spawn(806179, 222.71474f, 511.98355f, 468.78000f, (byte) 0, 35); //Eternity Rift.
 				//An Eternity Rift has opened, allowing you to leave the Archives of Eternity.
 				sendMsgByRace(1403304, Race.PC_ALL, 0);
-				sendMsg("[SUCCES]: you are a <Archdaeva>");
+				//sendMsg("[SUCCES]: you are a <Archdaeva>");
 			break;
 		   /**
 			* FEMALE ELYOS
@@ -181,7 +181,7 @@ public class ArchivesOfEternityQInstance extends GeneralInstanceHandler
 				spawn(806179, 222.71474f, 511.98355f, 468.78000f, (byte) 0, 35); //Eternity Rift.
 				//An Eternity Rift has opened, allowing you to leave the Archives of Eternity.
 				sendMsgByRace(1403304, Race.PC_ALL, 0);
-				sendMsg("[SUCCES]: you are a <Archdaeva>");
+				//sendMsg("[SUCCES]: you are a <Archdaeva>");
 			break;
 		   /**
 			* MALE ASMODIANS
@@ -210,7 +210,7 @@ public class ArchivesOfEternityQInstance extends GeneralInstanceHandler
 				spawn(806180, 222.71474f, 511.98355f, 468.78000f, (byte) 0, 35); //Eternity Rift.
 				//An Eternity Rift has opened, allowing you to leave the Archives of Eternity.
 				sendMsgByRace(1403304, Race.PC_ALL, 0);
-				sendMsg("[SUCCES]: you are a <Archdaeva>");
+				//sendMsg("[SUCCES]: you are a <Archdaeva>");
 			break;
 		   /**
 			* FEMALE ASMODIANS
@@ -239,7 +239,7 @@ public class ArchivesOfEternityQInstance extends GeneralInstanceHandler
 				spawn(806180, 222.71474f, 511.98355f, 468.78000f, (byte) 0, 35); //Eternity Rift.
 				//An Eternity Rift has opened, allowing you to leave the Archives of Eternity.
 				sendMsgByRace(1403304, Race.PC_ALL, 0);
-				sendMsg("[SUCCES]: you are a <Archdaeva>");
+				//sendMsg("[SUCCES]: you are a <Archdaeva>");
 			break;
 		}
 	}

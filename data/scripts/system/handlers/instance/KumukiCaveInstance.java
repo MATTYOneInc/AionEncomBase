@@ -301,7 +301,7 @@ public class KumukiCaveInstance extends GeneralInstanceHandler
 	protected void stopInstance2(Player player) {
 		stopInstanceTask();
 		onInstanceDestroy();
-		sendMsg("[SUCCES]: You managed to save all <Poppy> :) ");
+		//sendMsg("[SUCCES]: You managed to save all <Poppy> :) ");
 	}
 	
 	private void deleteNpc(int npcId) {

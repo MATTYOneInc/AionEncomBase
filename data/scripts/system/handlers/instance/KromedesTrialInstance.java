@@ -399,7 +399,7 @@ public class KromedesTrialInstance extends GeneralInstanceHandler
 				}
             break;
 			case 216982: //Hamam The Torturer.
-				sendMsg("<Wounded Hamam> appear");
+				//sendMsg("<Wounded Hamam> appear");
 				spawn(217004, 651.186f, 767.856f, 215.584f, (byte) 59); //Wounded Hamam.
 				switch (player.getPlayerClass()) {
 				    case TEMPLAR:
@@ -449,7 +449,7 @@ public class KromedesTrialInstance extends GeneralInstanceHandler
 				}
             break;
 			case 217000: //Lady Angerr.
-			    sendMsg("<Distraught Lady Angerr> appear");
+			    //sendMsg("<Distraught Lady Angerr> appear");
 				spawn(217001, 650.679f, 774.197f, 215.584f, (byte) 60); //Distraught Lady Angerr.
 				switch (player.getPlayerClass()) {
 				    case TEMPLAR:
@@ -474,13 +474,13 @@ public class KromedesTrialInstance extends GeneralInstanceHandler
 				}
             break;
 			case 217002: //Justicetaker Wyr.
-			    sendMsg("<Injured Justicetaker Wyr> appear");
+			    //sendMsg("<Injured Justicetaker Wyr> appear");
 				spawn(217003, 651.341f, 780.757f, 215.584f, (byte) 59); //Injured Justicetaker Wyr.
             break;
 			case 217005: //Shadow Judge Kaliga.
 			case 217006: //Kaliga The Unjust.
 			    sendMovie(player, 455);
-				sendMsg("[SUCCES]: You have finished <Kromede's Trial>");
+				////sendMsg("[SUCCES]: You have finished <Kromede's Trial>");
 				ItemService.addItem(player, 188900010, 1); //Secret Remedy Of Growth IV.
             break;
         }

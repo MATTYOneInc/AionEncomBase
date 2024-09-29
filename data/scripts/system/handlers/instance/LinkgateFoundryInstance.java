@@ -216,7 +216,7 @@ public class LinkgateFoundryInstance extends GeneralInstanceHandler
 		    case 233898: //Volatile Belsagos.
 			case 234990: //Wounded Belsagos.
 			case 234991: //Furious Belsagos.
-				sendMsg("[SUCCES]: You have finished <Linkgate Foundry >");
+				//sendMsg("[SUCCES]: You have finished <Linkgate Foundry >");
 				spawn(702338, 225.60777f, 259.7162f, 312.62796f, (byte) 119); //Linkgate Foundry Exit.
 			break;
 		}

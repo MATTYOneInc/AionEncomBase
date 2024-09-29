@@ -143,7 +143,7 @@ public class Lucky_DanuarReliquaryInstance extends GeneralInstanceHandler
 			break;
 			case 231305: //Enraged Queen's Modor.
 				luckyReliquaryTask.cancel(true);
-				sendMsg("[SUCCES]: You have finished <[Lucky] Danuar Reliquary>");
+				//sendMsg("[SUCCES]: You have finished <[Lucky] Danuar Reliquary>");
 				spawn(730907, 256.45197f, 257.91986f, 241.78688f, (byte) 90); //Lucky Danuar Reliquary Exit.
 				spawn(701795, 256.39725f, 255.52034f, 241.78006f, (byte) 90); //Lucky Danuar Reliquary Box.
 				instance.doOnAllPlayers(new Visitor<Player>() {

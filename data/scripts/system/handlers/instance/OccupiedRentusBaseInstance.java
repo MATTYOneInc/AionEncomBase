@@ -182,7 +182,7 @@ public class OccupiedRentusBaseInstance extends GeneralInstanceHandler
 				boostMorale();
 				sendMovie(player, 481);
 				reianOccupiedSecureBridge();
-				sendMsg("[SUCCES]: You have finished <Occupied Rentus Base>");
+				//sendMsg("[SUCCES]: You have finished <Occupied Rentus Base>");
 				spawn(730520, 193.6f, 436.5f, 262f, (byte) 86); //Occupied Rentus Base Exit.
 			break;
 			case 236299: //Umatha The Crazed.

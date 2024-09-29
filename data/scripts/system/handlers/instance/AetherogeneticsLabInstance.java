@@ -85,26 +85,13 @@ public class AetherogeneticsLabInstance extends GeneralInstanceHandler
         }
     }
 	
-    @Override
-	public void onInstanceCreate(WorldMapInstance instance) {
-		super.onInstanceCreate(instance);
-		doors = instance.getDoors();
-		switch (Rnd.get(1, 2)) {
-			case 1:
-				spawn(212193, 206.10997f, 245.62978f, 132.8339f, (byte) 0); //Pretor Key Keeper.
-			break;
-			case 2:
-				spawn(212193, 205.3984f, 215.02821f, 132.83458f, (byte) 0); //Pretor Key Keeper.
-			break;
-		}
-	}
 	
     @Override
     public void onDie(Npc npc) {
         Player player = npc.getAggroList().getMostPlayerDamage();
 		switch (npc.getObjectTemplate().getTemplateId()) {
 			case 212211: //RM-78C.
-			    sendMsg("Congratulation]: you finish <Aetherogenetics Lab>");
+			    //sendMsg("Congratulation]: you finish <Aetherogenetics Lab>");
 			break;
 		}
     }

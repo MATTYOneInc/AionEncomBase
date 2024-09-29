@@ -272,7 +272,7 @@ public class SeizedDanuarSanctuaryInstance extends GeneralInstanceHandler
 				seizedDanuarSanctuaryBoss ++;
 				if (seizedDanuarSanctuaryBoss == 3) {
 					spawnAbbeyNobleBox();
-					sendMsg("[SUCCES]: You have finished <Seized Danuar Sanctuary>");
+					//sendMsg("[SUCCES]: You have finished <Seized Danuar Sanctuary>");
 					spawn(701876, 1057.1633f, 557.6902f, 284.73123f, (byte) 30); //Seized Danuar Sanctuary Exit.
 				}
 			break;

@@ -99,7 +99,7 @@ public class LowerUdasTempleInstance extends GeneralInstanceHandler
 		switch (npc.getObjectTemplate().getTemplateId()) {
 			case 215795: //Debilkarim The Maker.
 			    chestUdasTempleTask.cancel(true);
-				sendMsg("[SUCCES]: You have finished <Lower Udas Temple>");
+				//sendMsg("[SUCCES]: You have finished <Lower Udas Temple>");
 				switch (Rnd.get(1, 2)) {
 		            case 1:
 				        spawn(702658, 575.1232f, 1295.7212f, 187.85898f, (byte) 113); //Abbey Box.

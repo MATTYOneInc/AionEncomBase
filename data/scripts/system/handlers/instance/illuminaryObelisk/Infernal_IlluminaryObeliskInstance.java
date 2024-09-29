@@ -433,7 +433,7 @@ public class Infernal_IlluminaryObeliskInstance extends GeneralInstanceHandler
 			break;
 			case 234686: //Remodeled Dynatoum.
 				despawnNpc(npc);
-				sendMsg("[SUCCES]: You have finished <[Infernal] Illuminary Obelisk>");
+				//sendMsg("[SUCCES]: You have finished <[Infernal] Illuminary Obelisk>");
 				spawn(702018, 258.84213f, 251.32626f, 455.12192f, (byte) 105); //Supply Box.
 				spawn(730905, 255.36038f, 254.56577f, 455.12015f, (byte) 105); //[Infernal] Illuminary Obelisk Exit.
 				switch (Rnd.get(1, 2)) {

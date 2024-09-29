@@ -267,7 +267,7 @@ public class SauroSupplyBaseInstance extends GeneralInstanceHandler
 				}
 				spawn(801967, 708.9197f, 884.59625f, 411.57986f, (byte) 45); //Sauro Supply Base Exit.
 				spawn(802181, 710.25726f, 889.6806f, 411.59103f, (byte) 0); //Sauro Supply Base Opportunity Bundle.
-				sendMsg("[SUCCES]: You have finished <Sauro Supply Base>");
+				//sendMsg("[SUCCES]: You have finished <Sauro Supply Base>");
 			break;
 			case 230858: //Brigade General Sheba.
 				switch (Rnd.get(1, 2)) {
@@ -280,7 +280,7 @@ public class SauroSupplyBaseInstance extends GeneralInstanceHandler
 				}
 				spawn(801967, 905.3781f, 895.2461f, 411.57785f, (byte) 75); //Sauro Supply Base Exit.
 				spawn(802181, 906.9721f, 889.6604f, 411.59854f, (byte) 0); //Sauro Supply Base Opportunity Bundle.
-				sendMsg("[SUCCES]: You have finished <Sauro Supply Base>");
+				//sendMsg("[SUCCES]: You have finished <Sauro Supply Base>");
 			break;
 		}
     }

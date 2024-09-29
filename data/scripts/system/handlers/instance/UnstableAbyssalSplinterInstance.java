@@ -126,13 +126,13 @@ public class UnstableAbyssalSplinterInstance extends GeneralInstanceHandler
 			break;
 			case 219555: //Durable Yamennes Blindsight.
 			    despawnNpc(npc);
-				sendMsg("[SUCCES]: You have finished <Unstable Abyssal Splinter>");
+				//sendMsg("[SUCCES]: You have finished <Unstable Abyssal Splinter>");
 				spawn(701577, 328.41187f, 759.68880f, 197.14168f, (byte) 93); //Abyssal Treasure Box.
 				spawn(730317, 308.19241f, 756.48370f, 196.75534f, (byte) 0, 123); //Abyssal Splinter Exit.
 			break;
 			case 219563: //Unstable Yamennes Painflare.
 			    despawnNpc(npc);
-				sendMsg("[SUCCES]: You have finished <Unstable Abyssal Splinter>");
+				//sendMsg("[SUCCES]: You have finished <Unstable Abyssal Splinter>");
 				spawn(701578, 328.41187f, 759.68880f, 197.14168f, (byte) 93); //Abyssal Treasure Box.
 				spawn(730317, 308.19241f, 756.48370f, 196.75534f, (byte) 0, 123); //Abyssal Splinter Exit.
 			break;

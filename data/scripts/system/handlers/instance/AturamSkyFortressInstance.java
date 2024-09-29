@@ -321,7 +321,7 @@ public class AturamSkyFortressInstance extends GeneralInstanceHandler
 				//There is a huge Surkana device here.
 				//Since Ashunatal risked her life to protect it, you should destroy it and interfere with the Balaur's plans.
 				sendMsgByRace(1401401, Race.PC_ALL, 2000);
-				sendMsg("[SUCCES]: You have finished <Aturam Sky Fortress>");
+				//sendMsg("[SUCCES]: You have finished <Aturam Sky Fortress>");
             break;
 			case 217369: //Drakan Crewhand.
 			case 217368: //Drakan Combatant.

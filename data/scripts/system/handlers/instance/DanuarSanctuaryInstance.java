@@ -270,7 +270,7 @@ public class DanuarSanctuaryInstance extends GeneralInstanceHandler
 			case 235625: //Chief Medic Tagnu.
 			case 235626: //Virulent Ukahim.
 				spawnAbbeyNobleBox();
-				sendMsg("[SUCCES]: You have finished <Danuar Sanctuary>");
+				//sendMsg("[SUCCES]: You have finished <Danuar Sanctuary>");
 				spawn(701876, 1057.1633f, 557.6902f, 284.73123f, (byte) 30); //Danuar Sanctuary Exit.
 			break;
         }

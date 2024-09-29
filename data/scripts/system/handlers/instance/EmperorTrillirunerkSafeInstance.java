@@ -428,7 +428,7 @@ public class EmperorTrillirunerkSafeInstance extends GeneralInstanceHandler
 		instanceReward.setRank(checkRank(instanceReward.getPoints()));
 		instanceReward.setInstanceScoreType(InstanceScoreType.END_PROGRESS);
 		doReward(player);
-		sendMsg("[SUCCES]: You have finished <Emperor Trillirunerk's Safe>");
+		//sendMsg("[SUCCES]: You have finished <Emperor Trillirunerk's Safe>");
 		sendPacket(0, 0);
 	}
 	

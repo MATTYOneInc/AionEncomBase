@@ -218,7 +218,7 @@ public class OphidanBridgeInstance extends GeneralInstanceHandler
 			case 235769: //Velkur Aethercaster.
 			case 235770: //Velkur Aetherpriest.
 			case 235771: //Velkur Aetherknife.
-				sendMsg("[SUCCES]: You have finished <Ophidan Bridge>");
+				//sendMsg("[SUCCES]: You have finished <Ophidan Bridge>");
 				switch (Rnd.get(1, 2)) {
 		            case 1:
 				        spawn(702658, 349.57327f, 495.25214f, 606.76013f, (byte) 91); //Abbey Box.

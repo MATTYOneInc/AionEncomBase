@@ -199,7 +199,7 @@ public class CradleOfEternityInstance extends GeneralInstanceHandler
 				spawn(CradleToTrials, 595.58984f, 536.9435f, 509.43015f, (byte) 8);
 				spawn(834005, 601.02045f, 534.01807f, 509.43015f, (byte) 32); //Cradle Exit.
 				spawn(834090, 604.9655f, 536.7014f, 509.43015f, (byte) 24); //Cryptograph Cube.
-				sendMsg("[SUCCES]: You have finished <Cradle Of Eternity>");
+				//sendMsg("[SUCCES]: You have finished <Cradle Of Eternity>");
 			break;
 			case 220541: //Vile Typhon.
 				//The Vile Glycon is dead, quickly kill the Fiery Glycon!

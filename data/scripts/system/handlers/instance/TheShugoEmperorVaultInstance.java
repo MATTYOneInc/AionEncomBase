@@ -428,7 +428,7 @@ public class TheShugoEmperorVaultInstance extends GeneralInstanceHandler
 		instanceReward.setRank(checkRank(instanceReward.getPoints()));
 		instanceReward.setInstanceScoreType(InstanceScoreType.END_PROGRESS);
 		doReward(player);
-		sendMsg("[SUCCES]: You have finished <The Shugo Emperor's Vault>");
+		//sendMsg("[SUCCES]: You have finished <The Shugo Emperor's Vault>");
 		sendPacket(0, 0);
 	}
 	

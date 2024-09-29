@@ -769,7 +769,7 @@ public class SanctumInstance extends GeneralInstanceHandler
 	protected void stopInstance(Player player) {
         stopInstanceTask();
 		doReward(player);
-		sendMsg("[SUCCES]: You have finished <Dredgion Defense: Sanctum>");
+		//sendMsg("[SUCCES]: You have finished <Dredgion Defense: Sanctum>");
 	}
 	
    /**

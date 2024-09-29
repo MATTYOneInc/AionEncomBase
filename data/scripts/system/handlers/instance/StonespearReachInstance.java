@@ -4445,7 +4445,7 @@ public class StonespearReachInstance extends GeneralInstanceHandler
 		instanceReward.setRank(checkRank(instanceReward.getPoints()));
 		instanceReward.setInstanceScoreType(InstanceScoreType.END_PROGRESS);
 		doReward(player);
-		sendMsg("[SUCCES]: You have finished <Stonespear Reach>");
+		//sendMsg("[SUCCES]: You have finished <Stonespear Reach>");
 		sendPacket(0, 0);
 	}
 	

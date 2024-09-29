@@ -263,7 +263,7 @@ public class TheobomosLabInstance extends GeneralInstanceHandler
 			    }, 3000);
 			break;
 			case 237251: //Corrupted Ifrit.
-			    sendMsg("Congratulation]: you finish <Theobomos Lab>");
+			    //sendMsg("Congratulation]: you finish <Theobomos Lab>");
 				switch (Rnd.get(1, 2)) {
 		            case 1:
 				        spawn(702658, 602.04486f, 488.82837f, 196.01512f, (byte) 60); //Abbey Box.

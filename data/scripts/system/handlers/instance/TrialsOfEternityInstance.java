@@ -368,7 +368,7 @@ public class TrialsOfEternityInstance extends GeneralInstanceHandler
 				spawn(731744, 236.54419f, 1025.4613f, 706.75494f, (byte) 60); //Exit.
 				spawn(835408, 222.55490f, 1031.6270f, 706.75494f, (byte) 15); //Treasure Chest A.
 				spawn(835409, 222.53116f, 1019.2116f, 706.75494f, (byte) 105); //Treasure Chest B.
-				sendMsg("[SUCCES]: You have finished <Trials Of Eternity>");
+				//sendMsg("[SUCCES]: You have finished <Trials Of Eternity>");
 			break;
 		   /**
 			* You will now receive "1,200 GP" instead of "200 Gp" for killing "Heart Of Boliag" in the Trials of Eternity instance.
@@ -518,7 +518,7 @@ public class TrialsOfEternityInstance extends GeneralInstanceHandler
 	
 	protected void stopInstance(Player player) {
 		stopInstanceTask();
-		sendMsg("[SUCCES]: You survived !!! :) ");
+		//sendMsg("[SUCCES]: You survived !!! :) ");
 	}
 	
 	protected void dimensionBoss01(Player player) {

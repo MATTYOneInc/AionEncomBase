@@ -52,11 +52,11 @@ public class FireTempleInstance extends GeneralInstanceHandler
 		switch (npc.getObjectTemplate().getTemplateId()) {
             case 212846: //Kromede The Corrupt.
 			    spawnKromedeTreasureChest();
-				sendMsg("[SUCCES]: You have finished <Fire Temple>");
+				//sendMsg("[SUCCES]: You have finished <Fire Temple>");
             break;
 			case 214621: //Vile Judge Kromede.
 				spawnKromedeTreasureChest();
-				sendMsg("[SUCCES]: You have finished <Fire Temple>");
+				//sendMsg("[SUCCES]: You have finished <Fire Temple>");
             break;
 		}
 	}

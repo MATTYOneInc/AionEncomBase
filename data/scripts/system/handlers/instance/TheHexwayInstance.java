@@ -108,7 +108,7 @@ public class TheHexwayInstance extends GeneralInstanceHandler
 			    despawnNpc(npc);
 			break;
 			case 219609: //Captain Jarka.
-				sendMsg("[SUCCES]: You have finished <The Hexway>");
+				//sendMsg("[SUCCES]: You have finished <The Hexway>");
 				if (!isStartTimer1) {
 					isStartTimer1 = true;
 					System.currentTimeMillis();

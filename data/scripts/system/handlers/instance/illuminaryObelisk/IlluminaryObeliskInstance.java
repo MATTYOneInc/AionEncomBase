@@ -433,7 +433,7 @@ public class IlluminaryObeliskInstance extends GeneralInstanceHandler
 			break;
 			case 233740: //Test Weapon Dynatoum.
 				despawnNpc(npc);
-				sendMsg("[SUCCES]: You have finished <Illuminary Obelisk>");
+				//sendMsg("[SUCCES]: You have finished <Illuminary Obelisk>");
 				spawn(702018, 258.84213f, 251.32626f, 455.12192f, (byte) 105); //Supply Box.
 				spawn(730905, 255.36038f, 254.56577f, 455.12015f, (byte) 105); //Illuminary Obelisk Exit.
 				switch (Rnd.get(1, 2)) {

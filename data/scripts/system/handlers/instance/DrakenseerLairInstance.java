@@ -189,7 +189,7 @@ public class DrakenseerLairInstance extends GeneralInstanceHandler
 			break;
 			case 220450: //Akhal The Oracle.
 			    spawn(806240, 299.1905f, 258.07004f, 319.67477f, (byte) 110); //Drakenseer's Lair Exit.
-				sendMsg("[SUCCES]: You have finished <Drakenseer's Lair>");
+				//sendMsg("[SUCCES]: You have finished <Drakenseer's Lair>");
 			break;
 		}
 	}

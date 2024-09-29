@@ -228,7 +228,7 @@ public class EsoterraceInstance extends GeneralInstanceHandler
 			*/
 			case 217204: //Kexkra.
 			    despawnNpc(npc);
-				sendMsg("[SUCCES]: You have finished <Esoterrace>");
+				//sendMsg("[SUCCES]: You have finished <Esoterrace>");
 				spawn(701044, 1341.19f, 1181.25f, 51.515f, (byte) 67); //Esoterrace Dimensional Rift Exit.
 				spawn(701027, 1326.7705f, 1173.1145f, 51.493996f, (byte) 70, 726); //Laboratory Treasure Chest.
 				spawn(701027, 1321.9897f, 1179.5394f, 51.493996f, (byte) 79, 727); //Laboratory Treasure Chest.
@@ -246,7 +246,7 @@ public class EsoterraceInstance extends GeneralInstanceHandler
 			* one of which has a chance to contain Fabled armor from the Surama series, and the other Fabled weapons from the Surama series. 
 			*/
             case 217206: //Warden Surama.
-				sendMsg("[SUCCES]: You have finished <Esoterrace>");
+				//sendMsg("[SUCCES]: You have finished <Esoterrace>");
 				spawn(701044, 1341.19f, 1181.25f, 51.515f, (byte) 67); //Esoterrace Dimensional Rift Exit.
 				spawn(701027, 1326.7705f, 1173.1145f, 51.493996f, (byte) 70, 726); //Laboratory Treasure Chest.
 				spawn(701027, 1321.9897f, 1179.5394f, 51.493996f, (byte) 79, 727); //Laboratory Treasure Chest.

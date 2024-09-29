@@ -350,7 +350,7 @@ public class SealedArgentManorInstance extends GeneralInstanceHandler
 		instanceReward.setRank(checkRank(instanceReward.getPoints()));
 		instanceReward.setInstanceScoreType(InstanceScoreType.END_PROGRESS);
 		doReward(player);
-		sendMsg("[SUCCES]: You have finished <Sealed Argent Manor>");
+		//sendMsg("[SUCCES]: You have finished <Sealed Argent Manor>");
 		sendPacket(0, 0);
 	}
 	

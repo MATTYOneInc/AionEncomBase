@@ -235,7 +235,7 @@ public class FallenPoetaInstance extends GeneralInstanceHandler
 			break;
 			case 243684: //Artifact Overlord Kroban.
 				despawnNpc(npc);
-				sendMsg("[SUCCES]: You have finished <Fallen Poeta>");
+				//sendMsg("[SUCCES]: You have finished <Fallen Poeta>");
 				spawn(703373, npc.getX(), npc.getY(), npc.getZ(), (byte) 0); //Kroban's Treasure Chest.
 				spawn(833852, 1179.0000f, 1223.0000f, 146.00000f, (byte) 0, 223); //Burning Base Exit.
 			break;
@@ -248,7 +248,7 @@ public class FallenPoetaInstance extends GeneralInstanceHandler
 		//Lieutenant Anuhart has given up the pursuit and has disappeared.
 		sendMsgByRace(1403444, Race.PC_ALL, 0);
 		killNpc(getNpcs(243682)); //Lieutenant Anuhart.
-		sendMsg("[SUCCES]: You managed to escape from <Lieutenant Anuhart> :) ");
+		//sendMsg("[SUCCES]: You managed to escape from <Lieutenant Anuhart> :) ");
 	}
 	
 	@Override

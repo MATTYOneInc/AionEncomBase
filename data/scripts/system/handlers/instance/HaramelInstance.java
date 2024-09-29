@@ -105,7 +105,7 @@ public class HaramelInstance extends GeneralInstanceHandler
 			    sendMovie(player, 457);
 				//Hamerun has dropped a treasure chest.
 				sendMsgByRace(1400713, Race.PC_ALL, 0);
-				sendMsg("[SUCCES]: You have finished <Haramel>");
+				////sendMsg("[SUCCES]: You have finished <Haramel>");
 			    spawn(700829, 224.137f, 268.608f, 144.898f, (byte) 90); //Ancient Treasure Box.
 				spawn(700852, 223.93062f, 337.5487f, 142.43079f, (byte) 90); //Opened Dimensional Gate.
 			    ItemService.addItem(player, 188900008, 1); //Secret Remedy Of Growth II.

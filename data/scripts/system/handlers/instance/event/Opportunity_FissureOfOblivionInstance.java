@@ -1202,7 +1202,7 @@ public class Opportunity_FissureOfOblivionInstance extends GeneralInstanceHandle
 		instanceReward.setRank(checkRank(instanceReward.getPoints()));
 		instanceReward.setInstanceScoreType(InstanceScoreType.END_PROGRESS);
 		doReward(player);
-		sendMsg("[SUCCES]: You have finished <Fissure Of Oblivion>");
+		//sendMsg("[SUCCES]: You have finished <Fissure Of Oblivion>");
 		sendPacket(0, 0);
 	}
 	

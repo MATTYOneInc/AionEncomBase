@@ -308,7 +308,7 @@ public class TransidiumAnnexInstance extends GeneralInstanceHandler
 				despawnNpc(npc);
 			break;
 			case 277224: //Ahserion.
-				sendMsg("[SUCCES]: You have finished <Transidium Annex>");
+				//sendMsg("[SUCCES]: You have finished <Transidium Annex>");
 				final int Pasha = spawnRace == Race.ASMODIANS ? 804750 : 804749;
 				spawn(Pasha, 499.92294f, 512.67365f, 675.0881f, (byte) 0);
             break;

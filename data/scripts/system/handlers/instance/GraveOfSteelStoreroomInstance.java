@@ -194,7 +194,7 @@ public class GraveOfSteelStoreroomInstance extends GeneralInstanceHandler
 				doors.get(79).setOpen(true);
 				doors.get(80).setOpen(true);
 				graveOfSteelStoreroomTask.cancel(true);
-				sendMsg("[SUCCES]: You have finished <Kysis Chamber>");
+				//sendMsg("[SUCCES]: You have finished <Kysis Chamber>");
 				instance.doOnAllPlayers(new Visitor<Player>() {
 			        @Override
 			        public void visit(Player player) {

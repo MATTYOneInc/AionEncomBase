@@ -306,7 +306,7 @@ public class NightmareCircusInstance extends GeneralInstanceHandler {
 				deleteNpc(831573); //IU In The Cage.
 				spawnNightmareCrate();
 				spawnGreaterNightmareCrate();
-				sendMsg("[SUCCES]: You have finished <Nightmare Circus>");
+				//sendMsg("[SUCCES]: You have finished <Nightmare Circus>");
 				SpawnTemplate OpenCage = SpawnEngine.addNewSingleTimeSpawn(301200000, 831598, 522.39825f, 564.69006f, 199.03371f, (byte) 0);
 				OpenCage.setEntityId(14);
 				objects.put(831598, SpawnEngine.spawnObject(OpenCage, instanceId));

@@ -480,7 +480,7 @@ public class BastionOfSoulsInstance extends GeneralInstanceHandler
 			//Boss Hard Elyos.
 			case 246493: //Suffering Opel.
 			    spawnBastionHardChest();
-				sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
+				//sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
 				final int IDAb1EreVideo1 = videoRace == Race.ASMODIANS ? 961 : 959;
 				PacketSendUtility.sendPacket(player, new SM_PLAY_MOVIE(0, IDAb1EreVideo1));
 				//Bastion Exit.
@@ -490,7 +490,7 @@ public class BastionOfSoulsInstance extends GeneralInstanceHandler
 			//Boss Normal Elyos.
 			case 246494: //Cursed Opel.
 			    spawnBastionNormalChest();
-			    sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
+			    //sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
 				final int IDAb1EreVideo2 = videoRace == Race.ASMODIANS ? 961 : 959;
 				PacketSendUtility.sendPacket(player, new SM_PLAY_MOVIE(0, IDAb1EreVideo2));
 				//Bastion Exit.
@@ -500,7 +500,7 @@ public class BastionOfSoulsInstance extends GeneralInstanceHandler
 			//Boss Easy Elyos.
 			case 246495: //Twisted Opel.
 			    spawnBastionEasyChest();
-				sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
+				//sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
 				final int IDAb1EreVideo3 = videoRace == Race.ASMODIANS ? 961 : 959;
 				PacketSendUtility.sendPacket(player, new SM_PLAY_MOVIE(0, IDAb1EreVideo3));
 				//Bastion Exit.
@@ -511,7 +511,7 @@ public class BastionOfSoulsInstance extends GeneralInstanceHandler
 			//Boss Hard Asmodians.
 			case 246496: //Suffering Opel.
 			    spawnBastionHardChest();
-				sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
+				//sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
 				final int IDAb1EreVideo4 = videoRace == Race.ASMODIANS ? 961 : 959;
 				PacketSendUtility.sendPacket(player, new SM_PLAY_MOVIE(0, IDAb1EreVideo4));
 				//Bastion Exit.
@@ -521,7 +521,7 @@ public class BastionOfSoulsInstance extends GeneralInstanceHandler
 			//Boss Normal Asmodians.
 			case 246497: //Cursed Opel.
 			    spawnBastionNormalChest();
-			    sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
+			    //sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
 				final int IDAb1EreVideo5 = videoRace == Race.ASMODIANS ? 961 : 959;
 				PacketSendUtility.sendPacket(player, new SM_PLAY_MOVIE(0, IDAb1EreVideo5));
 				//Bastion Exit.
@@ -531,7 +531,7 @@ public class BastionOfSoulsInstance extends GeneralInstanceHandler
 			//Boss Easy Asmodians.
 			case 246498: //Twisted Opel.
 			    spawnBastionEasyChest();
-				sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
+				//sendMsg("[SUCCES]: You have finished <Bastion Of Souls>");
 				final int IDAb1EreVideo6 = videoRace == Race.ASMODIANS ? 961 : 959;
 				PacketSendUtility.sendPacket(player, new SM_PLAY_MOVIE(0, IDAb1EreVideo6));
 				//Bastion Exit.
@@ -1304,7 +1304,7 @@ public class BastionOfSoulsInstance extends GeneralInstanceHandler
 	
 	protected void stopInstance(Player player) {
 		stopInstanceTask();
-		sendMsg("[SUCCES]: You survived !!! :) ");
+		//sendMsg("[SUCCES]: You survived !!! :) ");
 	}
 	
 	private int getTime() {

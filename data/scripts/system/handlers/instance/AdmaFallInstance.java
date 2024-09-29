@@ -114,7 +114,7 @@ public class AdmaFallInstance extends GeneralInstanceHandler
 			case 220427: //Reaper Of Adma Castle.
 			    spawn(806205, 532.3307f, 510.2517f, 197.94453f, (byte) 60); //Adma's Fall Exit.
 				spawn(806220, 525.2205f, 510.08893f, 197.72095f, (byte) 44); //Adma Family Coffers.
-			    sendMsg("[SUCCES]: You have finished <Adma's Fall>");
+			    //sendMsg("[SUCCES]: You have finished <Adma's Fall>");
 			break;
 		}
 	}

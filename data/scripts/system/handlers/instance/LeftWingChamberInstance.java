@@ -73,7 +73,7 @@ public class LeftWingChamberInstance extends GeneralInstanceHandler
 			    despawnNpc(npc);
 			break;
 			case 215424: //Treasurer Nabatma.
-				sendMsg("[SUCCES]: You have finished <Left Wing Chamber>");
+				//sendMsg("[SUCCES]: You have finished <Left Wing Chamber>");
 				if (!isStartTimer1) {
 					isStartTimer1 = true;
 					System.currentTimeMillis();

@@ -126,13 +126,13 @@ public class AbyssalSplinterInstance extends GeneralInstanceHandler
 			break;
 			case 216952: //Yamennes Blindsight.
 			    despawnNpc(npc);
-				sendMsg("[SUCCES]: You have finished <Abyssal Splinter>");
+				////sendMsg("[SUCCES]: You have finished <Abyssal Splinter>");
 				spawn(700937, 328.41187f, 759.68880f, 197.14168f, (byte) 93); //Abyssal Treasure Box.
 				spawn(730317, 308.19241f, 756.48370f, 196.75534f, (byte) 0, 123); //Abyssal Splinter Exit.
 			break;
 			case 216960: //Yamennes Painflare.
 			    despawnNpc(npc);
-				sendMsg("[SUCCES]: You have finished <Abyssal Splinter>");
+				////sendMsg("[SUCCES]: You have finished <Abyssal Splinter>");
 				spawn(700938, 328.41187f, 759.68880f, 197.14168f, (byte) 93); //Abyssal Treasure Box.
 				spawn(730317, 308.19241f, 756.48370f, 196.75534f, (byte) 0, 123); //Abyssal Splinter Exit.
 			break;

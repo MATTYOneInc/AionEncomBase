@@ -168,7 +168,7 @@ public class RentusBaseInstance extends GeneralInstanceHandler
 				boostMorale();
 				reianSecureBridge();
 				sendMovie(player, 481);
-				sendMsg("[SUCCES]: You have finished <Rentus Base>");
+				//sendMsg("[SUCCES]: You have finished <Rentus Base>");
 				spawn(730520, 193.6f, 436.5f, 262f, (byte) 86); //Rentus Base Exit.
 			break;
 			case 217315: //Umatha The Crazed.

@@ -248,7 +248,7 @@ public class RaksangRuinsInstance extends GeneralInstanceHandler
 				hellpathSecondWave();
 			break;
 			case 236306: //Reviver Nasto.
-				sendMsg("[SUCCES]: You have finished <Raksang Ruins>");
+				//sendMsg("[SUCCES]: You have finished <Raksang Ruins>");
 				spawn(730445, 648.5508f, 700.05725f, 522.0487f, (byte) 80); //Raksang Exit.
 			break;
 		}

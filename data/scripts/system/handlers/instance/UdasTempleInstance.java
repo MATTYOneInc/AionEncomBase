@@ -126,7 +126,7 @@ public class UdasTempleInstance extends GeneralInstanceHandler
 				spawn(215793, 636.641f, 439.788f, 138.0f, (byte) 30); //Devoted Anurati.
 			break;
 			case 215783: //Nexus.
-				sendMsg("[SUCCES]: You have finished <Udas Temple>");
+				//sendMsg("[SUCCES]: You have finished <Udas Temple>");
 				spawn(730255, 508.3610f, 362.7170f, 137.0000f, (byte) 31); //Udas Temple Exit.
 				switch (Rnd.get(1, 2)) {
 		            case 1:

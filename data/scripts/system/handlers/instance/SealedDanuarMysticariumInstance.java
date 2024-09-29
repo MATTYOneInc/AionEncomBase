@@ -153,7 +153,7 @@ public class SealedDanuarMysticariumInstance extends GeneralInstanceHandler
 				despawnNpc(npc);
 				deleteNpc(219979); //Ancient Danuar Relic.
 				raidTask.cancel(true);
-				sendMsg("[SUCCES]: You have finished <Sealed Danuar Mysticarium>");
+				//sendMsg("[SUCCES]: You have finished <Sealed Danuar Mysticarium>");
 				spawn(701572, 556.5924f, 416.37885f, 96.81002f, (byte) 43); //Sealed Danuar Mysticarium Exit.
             break;
 		}
