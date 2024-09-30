@@ -1023,22 +1023,22 @@
       <spot x="1449.625732" y="1289.409546" z="555.4952" h="25" random_walk="0" />
       <spot x="1442.862427" y="1284.859253" z="555.59607" h="25" random_walk="2" />
     </spawn>
-    <spawn npc_id="211272" pool="3" respawn_time="30">
+    <spawn npc_id="211272" respawn_time="30">
       <spot x="1444.632446" y="1280.508789" z="555.6423" h="25" random_walk="0" />
     </spawn>
-    <spawn npc_id="211274" pool="2" respawn_time="30">
+    <spawn npc_id="211274" respawn_time="30">
       <spot x="1449.246094" y="1309.035645" z="555.2405" h="25" random_walk="0" />
     </spawn>
-    <spawn npc_id="211278" pool="3" respawn_time="30">
+    <spawn npc_id="211278" respawn_time="30">
       <spot x="1444.752930" y="1298.441162" z="555.4067" h="25" random_walk="0" />
     </spawn>
-    <spawn npc_id="211275" pool="2" respawn_time="30">
+    <spawn npc_id="211275" respawn_time="30">
       <spot x="1437.973877" y="1281.646362" z="555.668" h="25" random_walk="0" />
     </spawn>
-    <spawn npc_id="211273" pool="2" respawn_time="30">
+    <spawn npc_id="211273" respawn_time="30">
       <spot x="1453.432983" y="1306.037231" z="555.25415" h="25" random_walk="0" />
     </spawn>
-    <spawn npc_id="211276" pool="2" respawn_time="30">
+    <spawn npc_id="211276" respawn_time="30">
       <spot x="1454.213257" y="1297.583496" z="555.3601" h="25" random_walk="0" />
     </spawn>
     <spawn npc_id="748010" respawn_time="60">

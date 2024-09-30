@@ -6555,13 +6555,6 @@
     <routestep step="11" x="972.894348" y="945.135803" z="255.701843" />
     <routestep step="12" x="967.728516" y="945.143188" z="254.694794" />
   </walker_template>
-  <walker_template route_id="NPCPathDF3_NPC_Ostmark" pool="1">
-    <routestep step="1" x="380.114777" y="352.897614" z="231.100006" rest_time="5000" />
-    <routestep step="1" x="380.401306" y="361.115753" z="231.097626" rest_time="10000" />
-    <routestep step="1" x="383.217224" y="358.049683" z="231.099945" rest_time="10000" />
-    <routestep step="1" x="380.173401" y="350.415985" z="231.101349" rest_time="3000" />
-    <routestep step="1" x="380.128784" y="351.796082" z="231.100952" />
-  </walker_template>
   <walker_template route_id="DF3_C1_G_MobPath_Sprigg4_34_2" pool="2" formation="OFFSET" offsetsx="0,0" offsetsy="0,-3">
     <routestep step="1" x="389.690002" y="1269.829956" z="260.100006" />
     <routestep step="2" x="379.591858" y="1274.740845" z="258.398132" />
