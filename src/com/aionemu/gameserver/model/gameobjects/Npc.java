@@ -163,7 +163,7 @@ public class Npc extends Creature {
 	}
 
 	public boolean hasWalkRoutes() {
-		return getSpawn().getWalkerId() != null || (getSpawn().hasRandomWalk() && AIConfig.ACTIVE_NPC_MOVEMENT);
+		return getSpawn().getWalkerId() != null;
 	}
 
 	public NpcRating getRating() {
