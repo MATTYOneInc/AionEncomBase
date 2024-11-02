@@ -176,7 +176,27 @@ public class CmdTeleportTo extends AbstractGMHandler {
 		// Silentera
 		else if (destination.equalsIgnoreCase("Silentera"))
 			goTo(admin, 600010000, 583, 767, 300);
+		
+        // 4.8 Maps
+        else if (destination.equalsIgnoreCase("Cygnea") || destination.equalsIgnoreCase("Signia"))
+            goTo(admin, 210070000, 2748, 710, 552);
+        else if (destination.equalsIgnoreCase("Enshar") || destination.equalsIgnoreCase("Vengar"))
+            goTo(admin, 220080000, 515, 2549, 185);
+        else if (destination.equalsIgnoreCase("Kaldor"))
+            goTo(admin, 600090000, 743, 1159, 151);
+        else if (destination.equalsIgnoreCase("Levinshor") || destination.equalsIgnoreCase("Akaron"))
+            goTo(admin, 600100000, 875, 1090, 334);
 
+        // 5.0 Maps
+        else if (destination.equalsIgnoreCase("Iluma") || destination.equalsIgnoreCase("Esterra"))
+            goTo(admin, 210100000, 1624, 1377, 310);
+        else if (destination.equalsIgnoreCase("Norsvold") || destination.equalsIgnoreCase("Nosra"))
+            goTo(admin, 220110000, 1589, 2090, 186);
+        else if (destination.equalsIgnoreCase("Tower of Eternity Elyos") || destination.equalsIgnoreCase("TOEE"))
+            goTo(admin, 210110000, 498, 500, 303);
+        else if (destination.equalsIgnoreCase("Tower of Eternity Asmo") || destination.equalsIgnoreCase("TOEA"))
+            goTo(admin, 220120000, 498, 500, 303);
+		
 		/**
 		 * Abyss
 		 */
