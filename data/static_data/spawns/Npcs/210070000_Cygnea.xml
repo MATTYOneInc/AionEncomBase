@@ -6484,5 +6484,8 @@
     <spawn npc_id="804890" respawn_time="180">
       <spot x="2232.271240" y="2851.171631" z="325.32233" h="60" />
     </spawn>
+	<spawn npc_id="804782" respawn_time="180">
+      <spot x="2903.994873" y="797.754089" z="570.595825" h="30" />
+    </spawn>
   </spawn_map>
 </spawns>

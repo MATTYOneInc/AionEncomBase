@@ -23,6 +23,7 @@ import com.aionemu.gameserver.controllers.observer.ActionObserver;
 import com.aionemu.gameserver.controllers.observer.ObserverType;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.TaskId;
+import com.aionemu.gameserver.model.TeleportAnimation;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_HOTSPOT_TELEPORT;
@@ -66,7 +67,7 @@ public class HotspotTeleportService {
 								ThreadPoolManager.getInstance().schedule(new Runnable() {
 									@Override
 									public void run() {
-										TeleportService2.teleportTo(player, worldId, getX, getY, getZ);
+										TeleportService2.teleportTo(player, worldId, getX, getY, getZ, player.getHeading(), TeleportAnimation.NO_ANIMATION);
 										player.getInventory().decreaseKinah(price);
 										PacketSendUtility.sendPacket(player,
 												new SM_HOTSPOT_TELEPORT(player, 3, teleportId, cooldown));
