@@ -1,16 +1,10 @@
-/*
- * Decompiled with CFR 0.150.
- * 
- * Could not load the following classes:
- *  gnu.trove.map.hash.TIntObjectHashMap
- *  org.slf4j.Logger
- *  org.slf4j.LoggerFactory
- */
 package com.aionemu.gameserver.world.geo;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,55 +19,84 @@ import com.aionemu.gameserver.utils.Util;
 import gnu.trove.map.hash.TIntObjectHashMap;
 
 public class RealGeoData implements GeoData {
-	private static final Logger log = LoggerFactory.getLogger(RealGeoData.class);
-	private TIntObjectHashMap<GeoMap> geoMaps = new TIntObjectHashMap();
+    private static final Logger log = LoggerFactory.getLogger(RealGeoData.class);
+    private final TIntObjectHashMap<GeoMap> geoMaps = new TIntObjectHashMap<>();
+    private final ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
-	@Override
-	public void loadGeoMaps() {
-		Map<String, Spatial> models = this.loadMeshes();
-		this.loadWorldMaps(models);
-		models.clear();
-		models = null;
-		log.info("Geodata: " + this.geoMaps.size() + " geo maps loaded!");
-	}
+    @Override
+    public void loadGeoMaps() {
+        final Map<String, Spatial> models = loadMeshes();
+        loadWorldMaps(models);
+        models.clear();
+        executorService.shutdown();
+        try {
+            if (!executorService.awaitTermination(60, TimeUnit.SECONDS)) {
+                executorService.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executorService.shutdownNow();
+        }
+        log.info("Geodata: {} geo maps loaded!", geoMaps.size());
+    }
 
-	protected void loadWorldMaps(Map<String, Spatial> models) {
-		log.info("Loading geo maps..");
-		Util.printProgressBarHeader(DataManager.WORLD_MAPS_DATA.size());
-		ArrayList<Integer> mapsWithErrors = new ArrayList<Integer>();
-		for (WorldMapTemplate map : DataManager.WORLD_MAPS_DATA) {
-			GeoMap geoMap = new GeoMap(Integer.toString(map.getMapId()), map.getWorldSize());
-			try {
-				if (GeoWorldLoader.loadWorld(map.getMapId(), models, geoMap)) {
-					geoMaps.put(map.getMapId(), geoMap);
-				}
-			} catch (Throwable t) {
-				mapsWithErrors.add(map.getMapId());
-				geoMaps.put(map.getMapId(), DummyGeoData.DUMMY_MAP);
-			}
-			Util.printCurrentProgress();
-		}
-		Util.printEndProgress();
-		if (mapsWithErrors.size() > 0) {
-			log.warn("Some maps were not loaded correctly and reverted to dummy implementation: ");
-			log.warn(((Object) mapsWithErrors).toString());
-		}
-	}
+    protected void loadWorldMaps(final Map<String, Spatial> models) {
+        log.info("Loading geo maps..");
+        Util.printProgressBarHeader(DataManager.WORLD_MAPS_DATA.size());
+        final List<Integer> mapsWithErrors = new ArrayList<>();
+        List<Callable<Void>> tasks = new ArrayList<>();
 
-	protected Map<String, Spatial> loadMeshes() {
-		log.info("Loading meshes..");
-		Map<String, Spatial> models = null;
-		try {
-			models = GeoWorldLoader.loadMeshs("data/geo/meshs.geo");
-		} catch (IOException e) {
-			throw new IllegalStateException("Problem loading meshes", e);
-		}
-		return models;
-	}
+        for (final WorldMapTemplate map : DataManager.WORLD_MAPS_DATA) {
+            tasks.add(new Callable<Void>() {
+                @Override
+                public Void call() throws Exception {
+                    int mapId = map.getMapId();
+                    int worldSize = map.getWorldSize();
+                    GeoMap geoMap = new GeoMap(String.valueOf(mapId), worldSize);
+                    try {
+                        if (GeoWorldLoader.loadWorld(mapId, models, geoMap)) {
+                            synchronized (geoMaps) {
+                                geoMaps.put(mapId, geoMap);
+                            }
+                        }
+                    } catch (Throwable t) {
+                        synchronized (mapsWithErrors) {
+                            mapsWithErrors.add(mapId);
+                            geoMaps.put(mapId, DummyGeoData.DUMMY_MAP);
+                        }
+                    }
+                    Util.printCurrentProgress();
+                    return null;
+                }
+            });
+        }
 
-	@Override
-	public GeoMap getMap(int worldId) {
-		GeoMap geoMap = (GeoMap) this.geoMaps.get(worldId);
-		return geoMap != null ? geoMap : DummyGeoData.DUMMY_MAP;
-	}
+        try {
+            List<Future<Void>> futures = executorService.invokeAll(tasks);
+            for (Future<Void> future : futures) {
+                future.get();
+            }
+        } catch (InterruptedException | ExecutionException e) {
+            log.error("Error during geo map loading", e);
+        }
+
+        Util.printEndProgress();
+        if (!mapsWithErrors.isEmpty()) {
+            log.warn("Some maps were not loaded correctly and reverted to dummy implementation: {}", mapsWithErrors);
+        }
+    }
+
+    protected Map<String, Spatial> loadMeshes() {
+        log.info("Loading meshes..");
+        try {
+            return GeoWorldLoader.loadMeshs("data/geo/meshs.geo");
+        } catch (IOException e) {
+            throw new IllegalStateException("Problem loading meshes", e);
+        }
+    }
+
+    @Override
+    public GeoMap getMap(int worldId) {
+        GeoMap geoMap = geoMaps.get(worldId);
+        return geoMap != null ? geoMap : DummyGeoData.DUMMY_MAP;
+    }
 }

@@ -50,7 +50,7 @@ public class GeoService {
 			log.info("MONONO2 GEO: active in geodata.properties, you must use only MONONO2 GEODATA here |data|geo");
 		} else {
 			log.info(
-					"MONONO2 GEO: deactivated in geodata.properties, you must use only STANDERT GEODATA here |data|geo");
+					"MONONO2 GEO: deactivated in geodata.properties, you must use only STANDART GEODATA here |data|geo");
 		}
 
 		this.geoData.loadGeoMaps();
