@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="al-commons" default="jar" basedir=".">
+    <description></description>
+	<property name="jre" location="${java.home}/lib"/>
+    <property name="src" location="src"/>
+    <property name="lib" location="libs"/>
+    <property name="build" location="build"/>
+    <property name="build.classes" location="${build}/classes"/>
+	<path id="classpath">
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	<target name="clean" description="Removes build directory.">
+		<delete dir="${build}" />
+	</target>
+	<target name="init" depends="clean" description="Create the output directories.">
+		<mkdir dir="${build}" />
+		<mkdir dir="${build.classes}" />
+	</target>
+	<target name="compile" depends="init" description="Compile the source.">
+		<javac destdir="${build.classes}" optimize="on" debug="on"
+			nowarn="off" source="1.8" target="1.8" includeantruntime="false">
+			<src path="${src}" />
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+	<target name="jar" depends="compile" description="Create the jar file">
+		<jar destfile="${build}/al-commons.jar">
+            <fileset dir="${build.classes}"/>
+            <manifest>
+				<attribute name="Can-Redefine-Classes" value="true"/>
+				<attribute name="Can-Retransform-Classes" value="true"/>
+                <attribute name="Premain-Class" value="com.aionemu.commons.callbacks.JavaAgentEnhancer"/>
+            	<attribute name="Revision" value="${revision}"/>
+            	<attribute name="Date" value="${date}"/>
+            </manifest>
+        </jar>
+	</target>
+</project>
