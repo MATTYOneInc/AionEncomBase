@@ -14,6 +14,8 @@
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
+
+
 package mysql5;
 
 import java.sql.Connection;
@@ -130,54 +132,15 @@ public class MySQL5PremiumDAO extends PremiumDAO {
 			}
 		}
 		catch (Exception e) {
-			log.error("getLuna [select luna] "+accountId, e);
+			log.error("getLuna [select Luna] "+accountId, e);
 		}
 		finally {
 			DB.close(st);
 		}
-		
-		FastList<Integer> rewarded = FastList.newInstance();
-		st = DB.prepareStatement("SELECT uniqId,luna FROM account_rewards WHERE accountId=? AND rewarded=0");
-		try {
-			st.setInt(1, accountId);
-			ResultSet rs = st.executeQuery();
-			if (rs.next()) {
-				int uniqId = rs.getInt("uniqId");
-				luna += rs.getLong("luna");
-				log.info("Account "+accountId+" has received uniqId #"+uniqId);
-				rewarded.add(uniqId);
-			}
-		}
-		catch (Exception e) {
-			log.error("getLuna [get rewards] "+accountId, e);
-		}
-		finally {
-			DB.close(st);
-		}
-		
-		if(rewarded.size() > 0) {
-			Connection con = null;
-			try {
-				con = DatabaseFactory.getConnection();
-				PreparedStatement stmt;
-				for(int uniqid : rewarded) {
-					stmt = con.prepareStatement("UPDATE account_rewards SET rewarded=1,received=NOW() WHERE uniqId=?");
-					stmt.setInt(1, uniqid);
-					stmt.execute();
-					stmt.close();
-				}
-			}
-			catch (Exception e) {
-				log.error("getPoints [update uniq] "+accountId, e);
-			}
-			finally {
-				DatabaseFactory.close(con);
-			}
-		}
-		
 		return luna;
 	}
 		
+	
 	@Override
 	public boolean updateLuna(int accountId, long luna) {
 		Connection con = null;
