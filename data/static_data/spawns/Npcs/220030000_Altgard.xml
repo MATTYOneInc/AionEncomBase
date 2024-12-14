@@ -3113,6 +3113,12 @@
     <spawn npc_id="210603" respawn_time="3600">
       <spot x="1986.767090" y="2687.803955" z="352.96326" h="85" />
     </spawn>
+
+	<!-- Groken's Sailing Boat -->
+    <spawn npc_id="700178" respawn_time="295">
+     <spot x="1216" y="1217" z="247.375" h="81"/>
+    </spawn>
+
     <spawn npc_id="700821" respawn_time="240">
       <spot x="2686.749512" y="1020.901123" z="313.23004" entity_id="1384" />
     </spawn>
