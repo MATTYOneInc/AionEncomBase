@@ -16,7 +16,6 @@
  */
 package quest.sanctum;
 
-import com.aionemu.gameserver.model.gameobjects.LetterType;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
@@ -24,17 +23,15 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.mail.SystemMailService;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1940Wing_Of_Mastery extends QuestHandler
-{
+public class _1940Wing_Of_Mastery extends QuestHandler {
+
 	private final static int questId = 1940;
-	
 	public _1940Wing_Of_Mastery() {
 		super(questId);
 	}
@@ -58,13 +55,6 @@ public class _1940Wing_Of_Mastery extends QuestHandler
         if (qs != null && qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			int instanceId = player.getInstanceId();
-			//if (zoneName == ZoneName.get("EXALTED_PATH_110010000")) {
-			//	if (var == 0) {
-			//		SystemMailService.getInstance().sendMail("Idomeneus", player.getName(), "[Wing Feather Tuner]",
-			//		"I'am Idomeneus and I expect you at Sanctum. Come join me.", 0, 0, 0, 0, LetterType.NORMAL);
-			//		return true;
-			//	}
-			//}
 		}
 		return false;
 	}

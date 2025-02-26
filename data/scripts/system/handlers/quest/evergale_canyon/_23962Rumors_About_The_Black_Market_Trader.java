@@ -24,11 +24,10 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23962Rumors_About_The_Black_Market_Trader extends QuestHandler
-{
+public class _23962Rumors_About_The_Black_Market_Trader extends QuestHandler {
+
     private final static int questId = 23962;
 	private final static int[] npcs = {835221, 835220};
-	
     public _23962Rumors_About_The_Black_Market_Trader() {
         super(questId);
     }
@@ -60,7 +59,8 @@ public class _23962Rumors_About_The_Black_Market_Trader extends QuestHandler
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835220) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

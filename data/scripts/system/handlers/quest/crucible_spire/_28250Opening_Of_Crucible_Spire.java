@@ -62,7 +62,7 @@ public class _28250Opening_Of_Crucible_Spire extends QuestHandler {
                 }
 			}
 		}
-        if (qs.getStatus() == QuestStatus.START) {
+        if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 798804: {
 					switch (dialog) {
@@ -75,7 +75,8 @@ public class _28250Opening_Of_Crucible_Spire extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 798804) {
 			    return sendQuestEndDialog(env);
 		    }

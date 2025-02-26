@@ -18,22 +18,19 @@ package quest.altgard;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author (Encom)
 /****/
 
-public class _2266A_Trustworthy_Messenger extends QuestHandler
-{
+public class _2266A_Trustworthy_Messenger extends QuestHandler {
+
 	private final static int questId = 2266;
-	
 	public _2266A_Trustworthy_Messenger() {
 		super(questId);
 	}
@@ -79,8 +76,7 @@ public class _2266A_Trustworthy_Messenger extends QuestHandler
 						if (var == 0) {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 						}
 					}
 				}
@@ -88,20 +84,21 @@ public class _2266A_Trustworthy_Messenger extends QuestHandler
 				switch (dialog) {
 					case START_DIALOG: {
 						if (var == 1) {
-							qs.setQuestVar(3);
-							qs.setStatus(QuestStatus.REWARD);
-							updateQuestStatus(env);
+							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							return sendQuestDialog(env, 2375);
 						}
 					} case SELECT_REWARD: {
-						if (var == 3) {
+						if (var == 2) {
+							qs.setStatus(QuestStatus.REWARD);
+							updateQuestStatus(env);
 							removeQuestItem(env, 182203244, 1);
 							return sendQuestEndDialog(env);
 						}
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+            if (targetId == 203654)
 			return sendQuestEndDialog(env);
 		}
 		return false;

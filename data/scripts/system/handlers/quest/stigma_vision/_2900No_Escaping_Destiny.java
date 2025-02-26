@@ -62,11 +62,11 @@ public class _2900No_Escaping_Destiny extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVars().getQuestVars();
+		int targetId = env.getTargetId();
 		if (qs == null) {
 			return false;
 		}
-		int targetId = env.getTargetId();
+		int var = qs.getQuestVars().getQuestVars();
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 204182: { //Heimdall.
@@ -191,7 +191,8 @@ public class _2900No_Escaping_Destiny extends QuestHandler {
 					break;
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204061) { //Aud.
 				return sendQuestEndDialog(env);
 			}

@@ -15,24 +15,20 @@ package quest.reshanta;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _2718Trading_Down extends QuestHandler
-{
+public class _2718Trading_Down extends QuestHandler {
+
 	private final static int questId = 2718;
-	
 	public _2718Trading_Down() {
 		super(questId);
 	}
@@ -66,8 +62,10 @@ public class _2718Trading_Down extends QuestHandler
 		} if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
-					QuestService.startQuest(env);
-					return closeDialogWindow(env);
+					return sendQuestStartDialog(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+                    return closeDialogWindow(env);
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
@@ -78,8 +76,7 @@ public class _2718Trading_Down extends QuestHandler
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
 					giveQuestItem(env, 182205669, 1); //Wood Armor.
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			} else if (targetId == 204386) { //Vivi.
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -88,8 +85,7 @@ public class _2718Trading_Down extends QuestHandler
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
 					giveQuestItem(env, 182205670, 1); //Pressa Muffin.
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			} else if (targetId == 204811) { //Gark.
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -98,8 +94,7 @@ public class _2718Trading_Down extends QuestHandler
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
 					giveQuestItem(env, 182205671, 1); //Transparent Crystal.
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			} else if (targetId == 279029) { //Lugbug.
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -108,11 +103,10 @@ public class _2718Trading_Down extends QuestHandler
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return sendQuestEndDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD && targetId == 279029) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD && targetId == 279029) {
 			return sendQuestEndDialog(env);
 		}
 		return false;

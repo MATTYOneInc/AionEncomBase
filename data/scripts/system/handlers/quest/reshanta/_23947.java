@@ -27,12 +27,11 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23947 extends QuestHandler
-{
+public class _23947 extends QuestHandler {
+
     private final static int questId = 23947;
 	private final static int[] npcs = {835725};
 	private final static int[] Ab11011Page2Guard = {885038, 885039, 885040};
-	
     public _23947() {
         super(questId);
     }
@@ -52,7 +51,7 @@ public class _23947 extends QuestHandler
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835725) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

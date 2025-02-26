@@ -57,7 +57,7 @@ public class _27550 extends QuestHandler {
 				}
 			}
 		}
-		if (qs.getStatus() == QuestStatus.START) {
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 806790: {
 				     switch (env.getDialog()) {
@@ -70,7 +70,8 @@ public class _27550 extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 806790) {
 			    return sendQuestEndDialog(env);
 		    }

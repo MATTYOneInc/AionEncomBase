@@ -58,16 +58,16 @@ public class _23950Find_The_Missing_Daevas extends QuestHandler {
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-            int var = qs.getQuestVarById(0);
+		} 
+        else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 805356) { //Pontekane.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 0) {
+						if (qs.getQuestVarById(0) == 0) {
 							return sendQuestDialog(env, 1011);
 						}
 					} case SELECT_ACTION_1012: {
-						if (var == 0) {
+						if (qs.getQuestVarById(0) == 0) {
 							return sendQuestDialog(env, 1012);
 						}
 					} case STEP_TO_1: {
@@ -78,11 +78,11 @@ public class _23950Find_The_Missing_Daevas extends QuestHandler {
 			} if (targetId == 806591) { //Vatiskhan.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 1) {
+						if (qs.getQuestVarById(0) == 1) {
 							return sendQuestDialog(env, 1352);
 						}
 					} case SELECT_ACTION_1353: {
-						if (var == 1) {
+						if (qs.getQuestVarById(0) == 1) {
 							return sendQuestDialog(env, 1353);
 						}
 					} case STEP_TO_2: {
@@ -91,7 +91,8 @@ public class _23950Find_The_Missing_Daevas extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806592) { //Start Vatiskhan.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -26,12 +26,10 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23849The_Sulfur_Tree_Nest extends QuestHandler
-{
+public class _23849The_Sulfur_Tree_Nest extends QuestHandler {
+
     private final static int questId = 23849;
-	
 	private final static int[] IDAbReLowDivineA = {214733, 214734, 214735, 214736, 214737, 214738, 214739, 214803};
-	
     public _23849The_Sulfur_Tree_Nest() {
         super(questId);
     }
@@ -50,19 +48,7 @@ public class _23849The_Sulfur_Tree_Nest extends QuestHandler
         final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
-        if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 264798) { //Aulen.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 40) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 40, 41, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 264798) { //Aulen.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

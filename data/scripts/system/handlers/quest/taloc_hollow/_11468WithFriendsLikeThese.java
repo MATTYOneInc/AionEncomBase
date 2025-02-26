@@ -31,7 +31,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _11468WithFriendsLikeThese extends QuestHandler {
 
 	private final static int questId = 11468;
-
 	public _11468WithFriendsLikeThese() {
 		super(questId);
 	}
@@ -111,9 +110,6 @@ public class _11468WithFriendsLikeThese extends QuestHandler {
 	
 	private void reward(QuestState qs, QuestEnv env) {
 		if(qs.getQuestVarById(1) == 10 && qs.getQuestVarById(2) == 5 && qs.getQuestVarById(3) == 3) {
-			qs.setQuestVarById(1, 0);
-			qs.setQuestVarById(2, 0);
-			qs.setQuestVarById(3, 0);
 			qs.setStatus(QuestStatus.REWARD);
 			updateQuestStatus(env);
 		}

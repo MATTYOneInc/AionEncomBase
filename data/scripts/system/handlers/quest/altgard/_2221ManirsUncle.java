@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2221ManirsUncle extends QuestHandler {
 
 	private final static int questId = 2221;
-
 	public _2221ManirsUncle() {
 		super(questId);
 	}
@@ -49,11 +48,9 @@ public class _2221ManirsUncle extends QuestHandler {
 		Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203607) { // Manir
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				}
 				else {
@@ -65,7 +62,7 @@ public class _2221ManirsUncle extends QuestHandler {
 			int var = qs.getQuestVarById(0);
 			switch (targetId) {
 				case 203608: { // Groken
-					if (dialog == QuestDialog.START_DIALOG) {
+					if (env.getDialog() == QuestDialog.START_DIALOG) {
 						if (var == 0) {
 							return sendQuestDialog(env, 1352);
 						}
@@ -73,10 +70,10 @@ public class _2221ManirsUncle extends QuestHandler {
 							return sendQuestDialog(env, 2375);
 						}
 					}
-					else if (dialog == QuestDialog.STEP_TO_1) {
+					else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 						return defaultCloseDialog(env, 0, 1); // 1
 					}
-					else if (dialog == QuestDialog.SELECT_REWARD) {
+					else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
 						removeQuestItem(env, 182203215, 1);
 						changeQuestStep(env, 2, 2, true); // reward
 						return sendQuestDialog(env, 5);
@@ -84,18 +81,19 @@ public class _2221ManirsUncle extends QuestHandler {
 					break;
 				}
 				case 700214: { // Groken's Safe
-					if (dialog == QuestDialog.USE_OBJECT) {
+					if (env.getDialog() == QuestDialog.USE_OBJECT) {
 						if (var == 1) {
 							return sendQuestDialog(env, 1693);
 						}
 					}
-					else if (dialog == QuestDialog.STEP_TO_2) {
+					else if (env.getDialog() == QuestDialog.STEP_TO_2) {
+                        giveQuestItem(env, 182203215, 1);  
 						return closeDialogWindow(env);
 					}
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203608) { // Groken
 				return sendQuestEndDialog(env);
 			}

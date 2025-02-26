@@ -25,10 +25,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28742A_Flurry_Of_Activity extends QuestHandler
-{
+public class _28742A_Flurry_Of_Activity extends QuestHandler {
+
     private final static int questId = 28742;
-	
     public _28742A_Flurry_Of_Activity() {
         super(questId);
     }
@@ -43,22 +42,18 @@ public class _28742A_Flurry_Of_Activity extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.START) {
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 804732) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 				    } case CHECK_COLLECTED_ITEMS: {
                         return checkQuestItems(env, 0, 1, true, 5, 2716);
-                    } 
-                    case FINISH_DIALOG: {
-                        return sendQuestEndDialog(env);
-					}
+                    }
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804732) {
 				return sendQuestEndDialog(env);
 			}

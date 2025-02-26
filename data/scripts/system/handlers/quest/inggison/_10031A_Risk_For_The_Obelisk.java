@@ -28,13 +28,11 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _10031A_Risk_For_The_Obelisk extends QuestHandler
-{
+public class _10031A_Risk_For_The_Obelisk extends QuestHandler {
+
     private final static int questId = 10031;
-	
 	private final static int[] armoredSpaller = {215508, 215509};
 	private final static int[] hikironFarmBalaur = {215504, 215505, 215516, 215517, 215518, 216463, 216464, 216647, 216783};
-	
 	public _10031A_Risk_For_The_Obelisk() {
         super(questId);
     }
@@ -171,7 +169,8 @@ public class _10031A_Risk_For_The_Obelisk extends QuestHandler
 					} case STEP_TO_8: {
 						if (var == 7) {
 						    removeQuestItem(env, 182215616, 1);
-							return defaultCloseDialog(env, 7, 8);
+							changeQuestStep(env, 7, 8, false);
+							return closeDialogWindow(env);
 						}
 					}
                 }

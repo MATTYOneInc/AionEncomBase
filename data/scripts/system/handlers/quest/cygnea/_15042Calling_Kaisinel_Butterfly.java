@@ -26,10 +26,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15042Calling_Kaisinel_Butterfly extends QuestHandler
-{
+public class _15042Calling_Kaisinel_Butterfly extends QuestHandler {
+
 	private final static int questId = 15042;
-	
 	public _15042Calling_Kaisinel_Butterfly() {
 		super(questId);
 	}
@@ -55,7 +54,7 @@ public class _15042Calling_Kaisinel_Butterfly extends QuestHandler
 					return sendQuestStartDialog(env, 182215676, 1);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804885) { //Telos
 				if (dialog == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 10002);

@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25672Eliminating_The_Ancient_Guardian_Weapon_Tetranon extends QuestHandler
-{
+public class _25672Eliminating_The_Ancient_Guardian_Weapon_Tetranon extends QuestHandler {
+
     private final static int questId = 25672;
-	
     public _25672Eliminating_The_Ancient_Guardian_Weapon_Tetranon() {
         super(questId);
     }
@@ -44,7 +43,7 @@ public class _25672Eliminating_The_Ancient_Guardian_Weapon_Tetranon extends Ques
 		final Player player = env.getPlayer();
         int targetId = env.getTargetId();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806116) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

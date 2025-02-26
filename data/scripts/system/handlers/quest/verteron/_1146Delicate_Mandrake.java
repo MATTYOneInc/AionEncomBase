@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1146Delicate_Mandrake extends QuestHandler
-{
-	private final static int questId = 1146;
+public class _1146Delicate_Mandrake extends QuestHandler {
 
+	private final static int questId = 1146;
 	public _1146Delicate_Mandrake() {
 		super(questId);
 	}
@@ -62,8 +61,6 @@ public class _1146Delicate_Mandrake extends QuestHandler
 						}
 					} case REFUSE_QUEST: {
 						return sendQuestDialog(env, 1004);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
@@ -82,7 +79,7 @@ public class _1146Delicate_Mandrake extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203139) { //Krodis.
 				return sendQuestEndDialog(env);
 			}

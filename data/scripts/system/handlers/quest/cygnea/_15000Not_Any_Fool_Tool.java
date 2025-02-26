@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15000Not_Any_Fool_Tool extends QuestHandler
-{
+public class _15000Not_Any_Fool_Tool extends QuestHandler {
+
 	private static final int questId = 15000;
-	
 	public _15000Not_Any_Fool_Tool() {
 		super(questId);
 	}
@@ -63,12 +62,10 @@ public class _15000Not_Any_Fool_Tool extends QuestHandler
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804874) {
 				return sendQuestEndDialog(env);
 			}

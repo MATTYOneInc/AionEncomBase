@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15050Guardians_In_The_Gardens extends QuestHandler
-{
+public class _15050Guardians_In_The_Gardens extends QuestHandler {
+
     private final static int questId = 15050;
-	
     public _15050Guardians_In_The_Gardens() {
         super(questId);
     }
@@ -52,18 +51,8 @@ public class _15050Guardians_In_The_Gardens extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804706) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 7) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 7, 8, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804706) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

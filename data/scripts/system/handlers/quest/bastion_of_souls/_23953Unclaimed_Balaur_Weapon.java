@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23953Unclaimed_Balaur_Weapon extends QuestHandler
-{
+public class _23953Unclaimed_Balaur_Weapon extends QuestHandler {
+
 	private final static int questId = 23953;
-	
 	public _23953Unclaimed_Balaur_Weapon() {
 		super(questId);
 	}
@@ -56,7 +55,8 @@ public class _23953Unclaimed_Balaur_Weapon extends QuestHandler
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806591) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

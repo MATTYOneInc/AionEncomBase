@@ -26,12 +26,10 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13862The_Enraged_Krotan_Guardian extends QuestHandler
-{
+public class _13862The_Enraged_Krotan_Guardian extends QuestHandler {
+
     private final static int questId = 13862;
-	
 	private final static int[] Ab1221BossE = {279443, 267811};
-	
     public _13862The_Enraged_Krotan_Guardian() {
         super(questId);
     }
@@ -50,19 +48,7 @@ public class _13862The_Enraged_Krotan_Guardian extends QuestHandler
         final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
-        if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806514) { //Jeves.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 1) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806514) { //Jeves.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

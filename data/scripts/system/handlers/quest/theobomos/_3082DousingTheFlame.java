@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 
-
 /**
  * @author Cheatkiller
  *
@@ -33,7 +32,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _3082DousingTheFlame extends QuestHandler {
 
 	private final static int questId = 3082;
-
 	public _3082DousingTheFlame() {
 		super(questId);
 	}
@@ -51,7 +49,6 @@ public class _3082DousingTheFlame extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798116) { 
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -86,7 +83,7 @@ public class _3082DousingTheFlame extends QuestHandler {
 				return useQuestObject(env, 2, 2, true, false);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798155) {
 				switch (dialog) {
 					case USE_OBJECT: {
@@ -101,4 +98,3 @@ public class _3082DousingTheFlame extends QuestHandler {
 		return false;
 	}
 }
-		

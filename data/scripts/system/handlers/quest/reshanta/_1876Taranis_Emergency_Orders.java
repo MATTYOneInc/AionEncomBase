@@ -34,7 +34,7 @@ public class _1876Taranis_Emergency_Orders extends QuestHandler {
 		qe.registerQuestNpc(278501).addOnQuestStart(questId); // Mechalis
 		qe.registerQuestNpc(278502).addOnTalkEvent(questId); // Sakmis
         qe.registerQuestNpc(278503).addOnTalkEvent(questId); //Calon
-		qe.registerQuestNpc(278501).addOnTalkEndEvent(questId); // Mechalis
+		qe.registerQuestNpc(278501).addOnTalkEvent(questId); // Mechalis
 	}
 	
     @Override
@@ -57,7 +57,8 @@ public class _1876Taranis_Emergency_Orders extends QuestHandler {
 					}
 				}
 			}
-		} if (qs.getStatus() == QuestStatus.START) {
+		} 
+        if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 278502) { //Sakmis.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -83,7 +84,8 @@ public class _1876Taranis_Emergency_Orders extends QuestHandler {
                     }
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278501) { //Governor Michalis.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

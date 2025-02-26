@@ -26,10 +26,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15453Dupor_Request extends QuestHandler
-{
+public class _15453Dupor_Request extends QuestHandler {
+
     private final static int questId = 15453;
-	
     public _15453Dupor_Request() {
         super(questId);
     }
@@ -51,7 +50,7 @@ public class _15453Dupor_Request extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805397) { //Dupor.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

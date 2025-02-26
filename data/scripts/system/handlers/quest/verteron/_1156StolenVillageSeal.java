@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1156StolenVillageSeal extends QuestHandler {
 
 	private final static int questId = 1156;
-
 	public _1156StolenVillageSeal() {
 		super(questId);
 	}
@@ -49,7 +48,6 @@ public class _1156StolenVillageSeal extends QuestHandler {
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203128) { // Santenius
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -88,7 +86,7 @@ public class _1156StolenVillageSeal extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798003) { // Gaphyrk
 				return sendQuestEndDialog(env);
 			}

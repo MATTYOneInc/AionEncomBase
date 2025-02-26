@@ -25,10 +25,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3122Spiteful_Domination extends QuestHandler
-{
+public class _3122Spiteful_Domination extends QuestHandler {
+
 	private final static int questId = 3122;
-	
 	public _3122Spiteful_Domination() {
 		super(questId);
 	}
@@ -83,7 +82,7 @@ public class _3122Spiteful_Domination extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 798155) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

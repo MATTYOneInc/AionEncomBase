@@ -40,7 +40,7 @@ public class _30161Hexway_Hideout extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.START) {
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 799225) { //Richelle.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -59,7 +59,8 @@ public class _30161Hexway_Hideout extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 799383) { //Vergelan.
 				return sendQuestEndDialog(env);
 			}

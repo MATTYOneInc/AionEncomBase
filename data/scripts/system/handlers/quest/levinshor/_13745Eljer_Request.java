@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13745Eljer_Request extends QuestHandler
-{
+public class _13745Eljer_Request extends QuestHandler {
+
     private final static int questId = 13745;
-	
     public _13745Eljer_Request() {
         super(questId);
     }
@@ -52,7 +51,7 @@ public class _13745Eljer_Request extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 802350) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -23,7 +23,6 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-
 /**
  * @author Cheatkiller
  *
@@ -31,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _3036LetSeeWhatItDoes extends QuestHandler {
 
 	private final static int questId = 3036;
-
 	public _3036LetSeeWhatItDoes() {
 		super(questId);
 	}
@@ -48,7 +46,6 @@ public class _3036LetSeeWhatItDoes extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798155) { 
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -65,7 +62,7 @@ public class _3036LetSeeWhatItDoes extends QuestHandler {
 				return useQuestObject(env, 0, 1, true, false);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798155) {
 				switch (dialog) {
 					case USE_OBJECT: {

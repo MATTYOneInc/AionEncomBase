@@ -31,7 +31,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _24112NoLaissezfaireforLepharists extends QuestHandler {
 
 	private final static int questId = 24112;
-
 	public _24112NoLaissezfaireforLepharists() {
 		super(questId);
 	}
@@ -51,28 +50,26 @@ public class _24112NoLaissezfaireforLepharists extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		}
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
-		
-		if (targetId == 203631) { // Nokir
-			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-				switch (dialog) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		    if (targetId == 203631) { // Nokir
+				switch (env.getDialog()) {
 					case START_DIALOG:
 						return sendQuestDialog(env, 1011);
-					default:
-						return sendQuestStartDialog(env);
+					case ACCEPT_QUEST_SIMPLE:
+						return sendQuestStartDialog(env, 5, 1);
+					case REFUSE_QUEST_SIMPLE:
+				        return closeDialogWindow(env);
 				}
 			}
 		}
-		
-	if (targetId == 832821) { // Brodir
-			if (qs.getStatus() == QuestStatus.START) {
-				int var = qs.getQuestVarById(0);
-				switch (dialog) {
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
+	        if (targetId == 832821) { // Brodir
+				switch (env.getDialog()) {
 					case START_DIALOG:
-						if (var == 0) { 
+						if (qs.getQuestVarById(0) == 0) { 
 							return sendQuestDialog(env, 1352);
 						}
-						else if (var == 1) {
+						else if (qs.getQuestVarById(0) == 1) {
 							return sendQuestDialog(env, 2375);
 						}
 					case STEP_TO_1:
@@ -82,13 +79,12 @@ public class _24112NoLaissezfaireforLepharists extends QuestHandler {
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return sendQuestEndDialog(env);
-					default:
-						break;
+                    }
 				}
 			}
-
-            if (qs.getStatus() == QuestStatus.REWARD) {
-				return sendQuestEndDialog(env);
+            if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+	            if (targetId == 832821) { // Brodir
+				    return sendQuestEndDialog(env);
 			}
 		}
 		return false;
@@ -98,14 +94,8 @@ public class _24112NoLaissezfaireforLepharists extends QuestHandler {
 	public boolean onKillEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() != QuestStatus.START) {
-			return false;
-		}
-
 		int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
-
-		if (var == 0 && targetId == 210510) {
+		if (qs.getQuestVarById(0) == 1 && targetId == 210510) {
 			qs.setQuestVarById(0, 1);
 			updateQuestStatus(env);
 			return true;

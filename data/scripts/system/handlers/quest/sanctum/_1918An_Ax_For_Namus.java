@@ -27,10 +27,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1918An_Ax_For_Namus extends QuestHandler
-{
+public class _1918An_Ax_For_Namus extends QuestHandler {
+
 	private final static int questId = 1918;
-	
 	public _1918An_Ax_For_Namus() {
 		super(questId);
 	}
@@ -63,11 +62,10 @@ public class _1918An_Ax_For_Namus extends QuestHandler
 					}
 				} else if (dialog == QuestDialog.STEP_TO_1) {
 					giveQuestItem(env, 182206002, 1);
-					qs.setQuestVar(1);
-					return defaultCloseDialog(env, 1, 1, true, false);
+					return defaultCloseDialog(env, 0, 1, true, false);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203835) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 2375);

@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25596Protect_Norsvold extends QuestHandler
-{
+public class _25596Protect_Norsvold extends QuestHandler {
+
 	private final static int questId = 25596;
-	
 	public _25596Protect_Norsvold() {
 		super(questId);
 	}
@@ -71,7 +70,7 @@ public class _25596Protect_Norsvold extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806116) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

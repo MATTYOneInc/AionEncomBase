@@ -12,19 +12,13 @@
  */
 package quest.theobomos;
 
-import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.gameobjects.player.RewardType;
-import com.aionemu.gameserver.model.templates.quest.Rewards;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_QUEST_ACTION;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -58,8 +52,7 @@ public class _3055Fugitive_Scopind extends QuestHandler {
 						return sendQuestDialog(env, 4762);
 					} case STEP_TO_1: {
 						QuestService.startQuest(env);
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-						return true;
+						return closeDialogWindow(env);
 					} default:
 						return sendQuestStartDialog(env);
 				}
@@ -76,9 +69,6 @@ public class _3055Fugitive_Scopind extends QuestHandler {
                         case CHECK_COLLECTED_ITEMS: {
                             return checkQuestItems(env, 0, 1, true, 5, 2716);
                         } 
-                        case FINISH_DIALOG: {
-                            return sendQuestEndDialog(env);
-                        }
                     }
 				}
 			}

@@ -34,7 +34,7 @@ public class _18741A_Versed_Order extends QuestHandler{
 	
 	@Override
 	public void register() {
-		qe.registerQuestNpc(804707).addOnTalkEndEvent(questId);
+		qe.registerQuestNpc(804707).addOnTalkEvent(questId);
 		for (int mob: embercrackStepsDrillCorps) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
@@ -45,20 +45,8 @@ public class _18741A_Versed_Order extends QuestHandler{
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804707) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 50) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 50, 51, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804707) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

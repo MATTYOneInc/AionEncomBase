@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2222ManirsMessage extends QuestHandler {
 
 	private final static int questId = 2222;
-
 	public _2222ManirsMessage() {
 		super(questId);
 	}
@@ -51,8 +50,8 @@ public class _2222ManirsMessage extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		}
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (targetId == 203607) {
-			if (qs == null) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		    if (targetId == 203607) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				}
@@ -69,27 +68,23 @@ public class _2222ManirsMessage extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					return defaultCloseDialog(env, 0, 1); // 1
 				}
-				else {
-					return sendQuestStartDialog(env);
-				}
 			}
 		}
 		else if (targetId == 203631) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 2375);
 				}
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
+				else if (env.getDialogId() == 1009) {
 					qs.setQuestVar(2);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
-				else {
-					return sendQuestEndDialog(env);
-				}
 			}
+		    else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+				return sendQuestEndDialog(env);
+		    }
 		}
 		return false;
 	}

@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1919Welcome_To_The_Artisant_Hall extends QuestHandler
-{
+public class _1919Welcome_To_The_Artisant_Hall extends QuestHandler {
+
     private final static int questId = 1919;
-	
     public _1919Welcome_To_The_Artisant_Hall() {
         super(questId);
     }
@@ -42,11 +41,9 @@ public class _1919Welcome_To_The_Artisant_Hall extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
-		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 203779) {
-				switch (dialog) {
+			if (env.getTargetId() == 203779) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 4762);
 					}
@@ -58,9 +55,9 @@ public class _1919Welcome_To_The_Artisant_Hall extends QuestHandler
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
+			switch (env.getTargetId()) {
 				case 798316: {
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 10002);
 						} case SELECT_REWARD: {
@@ -70,8 +67,8 @@ public class _1919Welcome_To_The_Artisant_Hall extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-		    if (targetId == 798316) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+		    if (env.getTargetId() == 798316) {
 			    return sendQuestEndDialog(env);
 		    }
 		}

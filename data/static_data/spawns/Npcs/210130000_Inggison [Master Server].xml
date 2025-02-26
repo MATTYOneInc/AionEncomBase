@@ -7191,7 +7191,7 @@
     <spawn npc_id="836135" respawn_time="120">
       <spot x="1322.112427" y="364.764771" z="589.9694" h="8" />
     </spawn>
-    <spawn npc_id="731834" respawn_time="60">
+    <spawn npc_id="730220" respawn_time="60">
       <spot x="1375.884521" y="367.847748" z="589.59973" entity_id="1314" />
     </spawn>
     <spawn npc_id="731837" respawn_time="60">

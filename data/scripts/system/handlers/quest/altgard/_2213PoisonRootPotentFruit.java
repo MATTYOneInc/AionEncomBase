@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2213PoisonRootPotentFruit extends QuestHandler {
 
 	private final static int questId = 2213;
-
 	public _2213PoisonRootPotentFruit() {
 		super(questId);
 	}
@@ -53,7 +52,7 @@ public class _2213PoisonRootPotentFruit extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		}
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203604) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
@@ -81,14 +80,11 @@ public class _2213PoisonRootPotentFruit extends QuestHandler {
 							updateQuestStatus(env);
 							return sendQuestEndDialog(env);
 						}
-						else {
-							return sendQuestEndDialog(env);
-						}
 					}
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203604) {
 				return sendQuestEndDialog(env);
 			}

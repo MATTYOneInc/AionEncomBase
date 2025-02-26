@@ -24,10 +24,9 @@ import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4736Victory_Against_The_8th extends QuestHandler
-{
+public class _4736Victory_Against_The_8th extends QuestHandler {
+
 	private final static int questId = 4736;
-	
 	public _4736Victory_Against_The_8th() {
 		super(questId);
 	}
@@ -63,7 +62,8 @@ public class _4736Victory_Against_The_8th extends QuestHandler
 				        return closeDialogWindow(env);
 					}
 				}
-			} if (qs.getStatus() == QuestStatus.REWARD) {
+			} 
+            if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 				if (targetId == 278035) { //Konto.
 				    if (env.getDialog() == QuestDialog.START_DIALOG) {
 						return sendQuestDialog(env, 10002);

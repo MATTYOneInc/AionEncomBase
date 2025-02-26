@@ -31,7 +31,6 @@ import com.aionemu.gameserver.utils.MathUtil;
 public class _1157GaphyrksLove extends QuestHandler {
 
 	private final static int questId = 1157;
-
 	public _1157GaphyrksLove() {
 		super(questId);
 	}
@@ -48,18 +47,14 @@ public class _1157GaphyrksLove extends QuestHandler {
 	public boolean onAttackEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null || qs.getStatus() != QuestStatus.START)
 			return false;
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		if (targetId != 210319)
 			return false;
-
 		final Npc npc = (Npc) env.getVisibleObject();
-
 		if (MathUtil.getDistance(892, 2024, 166, npc.getX(), npc.getY(), npc.getZ()) > 13) {
 			return false;
 		}
@@ -73,11 +68,9 @@ public class _1157GaphyrksLove extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798003) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -86,7 +79,7 @@ public class _1157GaphyrksLove extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798003) {
 				if (env.getDialog() == QuestDialog.USE_OBJECT)
 					return sendQuestDialog(env, 2375);

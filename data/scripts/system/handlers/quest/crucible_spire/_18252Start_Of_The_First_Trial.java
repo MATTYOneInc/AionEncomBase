@@ -58,7 +58,7 @@ public class _18252Start_Of_The_First_Trial extends QuestHandler {
                 }
 			}
 		}
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 798604) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

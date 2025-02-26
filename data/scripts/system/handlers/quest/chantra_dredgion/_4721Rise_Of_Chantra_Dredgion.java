@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _4721Rise_Of_Chantra_Dredgion extends QuestHandler {
 
 	private static final int questId = 4721;
-
 	public _4721Rise_Of_Chantra_Dredgion() {
 		super(questId);
 	}
@@ -37,6 +36,7 @@ public class _4721Rise_Of_Chantra_Dredgion extends QuestHandler {
 		qe.registerQuestNpc(799403).addOnTalkEvent(questId); //Yorgen.
 		qe.registerQuestNpc(700948).addOnTalkEvent(questId); //Balaur Weapon.
 		qe.registerQuestNpc(216886).addOnKillEvent(questId); //Captain Zanata.
+		qe.registerGetingItem(182205691, questId);
 	}
 	
 	@Override
@@ -68,11 +68,10 @@ public class _4721Rise_Of_Chantra_Dredgion extends QuestHandler {
 				}
 			} else if (targetId == 700948) { //Balaur Weapon.
 				if (dialog == QuestDialog.USE_OBJECT) {
-					closeDialogWindow(env);
-					return true;
+					return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 799226) { //Valetta.
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
@@ -87,5 +86,10 @@ public class _4721Rise_Of_Chantra_Dredgion extends QuestHandler {
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
 		return defaultOnKillEvent(env, 216886, 2, true); //Captain Zanata.
+	}
+
+	@Override
+	public boolean onGetItemEvent(QuestEnv env) {
+		return defaultOnGetItemEvent(env, 1, 2, false);
 	}
 }

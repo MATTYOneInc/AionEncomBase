@@ -24,10 +24,9 @@ import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4742Victory_Against_The_2nd extends QuestHandler
-{
+public class _4742Victory_Against_The_2nd extends QuestHandler {
+
 	private final static int questId = 4742;
-	
 	public _4742Victory_Against_The_2nd() {
 		super(questId);
 	}
@@ -63,7 +62,8 @@ public class _4742Victory_Against_The_2nd extends QuestHandler
 				        return closeDialogWindow(env);
 					}
 				}
-			} if (qs.getStatus() == QuestStatus.REWARD) {
+			} 
+            if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 				if (targetId == 278035) { //Konto.
 				    if (env.getDialog() == QuestDialog.START_DIALOG) {
 						return sendQuestDialog(env, 10002);

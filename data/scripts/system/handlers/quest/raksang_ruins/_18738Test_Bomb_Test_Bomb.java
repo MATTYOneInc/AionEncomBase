@@ -44,11 +44,9 @@ public class _18738Test_Bomb_Test_Bomb extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
-		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 804965) {
-				if (dialog == QuestDialog.USE_OBJECT) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+			if (env.getTargetId() == 804965) {
+				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				}
 				return sendQuestEndDialog(env);

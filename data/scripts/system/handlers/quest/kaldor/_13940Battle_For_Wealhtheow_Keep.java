@@ -23,13 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13940Battle_For_Wealhtheow_Keep extends QuestHandler
-{
+public class _13940Battle_For_Wealhtheow_Keep extends QuestHandler {
+
     private final static int questId = 13940;
-	
-	private final static int[] LDF5Fortress7011Guard = {251920, 251925, 251930, 251945, 251950, 251955,
-	252100, 252000, 252010, 252020, 252025, 252030, 252035, 252105};
-	
+	private final static int[] LDF5Fortress7011Guard = {251920, 251925, 251930, 251945, 251950, 251955, 252100, 252000, 252010, 252020, 252025, 252030, 252035, 252105};
     public _13940Battle_For_Wealhtheow_Keep() {
         super(questId);
     }
@@ -56,18 +53,8 @@ public class _13940Battle_For_Wealhtheow_Keep extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 802431) { //Alphioh.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 10) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 10, 11, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 802431) { //Alphioh.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

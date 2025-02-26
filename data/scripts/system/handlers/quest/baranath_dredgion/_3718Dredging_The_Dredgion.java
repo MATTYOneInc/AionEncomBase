@@ -19,10 +19,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3718Dredging_The_Dredgion extends QuestHandler
-{
-	private final static int questId = 3718;
+public class _3718Dredging_The_Dredgion extends QuestHandler {
 
+	private final static int questId = 3718;
 	public _3718Dredging_The_Dredgion() {
 		super(questId);
 	}
@@ -40,9 +39,12 @@ public class _3718Dredging_The_Dredgion extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
+        if (qs == null) {
+            return false;
+        }
 		int var1 = qs.getQuestVarById(1);
 		int var2 = qs.getQuestVarById(2);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		if (qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 279045) { 
 				if (dialog == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 4762);

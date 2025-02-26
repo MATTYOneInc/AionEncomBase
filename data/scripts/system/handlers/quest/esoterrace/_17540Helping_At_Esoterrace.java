@@ -58,16 +58,15 @@ public class _17540Helping_At_Esoterrace extends QuestHandler {
                 }
 			}
 		}
-		if (qs.getStatus() == QuestStatus.START) {
-           	int var = qs.getQuestVarById(0);
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 799563) { //Nepion.
                 switch (env.getDialog()) {
                     case START_DIALOG: {
-                        if (var == 1) {
+                        if (qs.getQuestVarById(0) == 1) {
                             return sendQuestDialog(env, 1352);
                         }
 					} case SELECT_ACTION_1353: {
-						if (var == 1) {
+						if (qs.getQuestVarById(0) == 1) {
 							playQuestMovie(env, 473);
 							return sendQuestDialog(env, 1353);
 						}
@@ -79,11 +78,11 @@ public class _17540Helping_At_Esoterrace extends QuestHandler {
             } else if (targetId == 799553) { //Daidra.
                 switch (env.getDialog()) {
                     case START_DIALOG: {
-                        if (var == 4) {
+                        if (qs.getQuestVarById(0) == 4) {
                             return sendQuestDialog(env, 2375);
                         }
 					} case SELECT_ACTION_2376: {
-						if (var == 4) {
+						if (qs.getQuestVarById(0) == 4) {
 							return sendQuestDialog(env, 2376);
 						}
 					} case CHECK_COLLECTED_ITEMS: {
@@ -97,7 +96,7 @@ public class _17540Helping_At_Esoterrace extends QuestHandler {
 					}
 				}
             }
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 799553) { //Daidra.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -129,10 +128,9 @@ public class _17540Helping_At_Esoterrace extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
-			int var = qs.getQuestVarById(0);
-			if (var == 2) { //Dalia Charlands.
+			if (qs.getQuestVarById(0) == 2) { //Dalia Charlands.
 				return defaultOnKillEvent(env, 217185, 2, 3);
-			} else if (var == 3) { //Captain Murugan.
+			} else if (qs.getQuestVarById(0) == 3) { //Captain Murugan.
 				return defaultOnKillEvent(env, 217195, 3, 4);
 			}
 		}

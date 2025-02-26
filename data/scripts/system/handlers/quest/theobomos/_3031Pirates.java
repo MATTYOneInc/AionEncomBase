@@ -14,22 +14,19 @@ package quest.theobomos;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3031Pirates extends QuestHandler
-{
+public class _3031Pirates extends QuestHandler {
+
 	private final static int questId = 3031;
-	
 	public _3031Pirates() {
 		super(questId);
 	}
@@ -59,7 +56,6 @@ public class _3031Pirates extends QuestHandler
 						return sendQuestDialog(env, 4762);
 					} case STEP_TO_1: {
 						QuestService.startQuest(env);
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 						return true;
 					} default:
 						return sendQuestStartDialog(env);

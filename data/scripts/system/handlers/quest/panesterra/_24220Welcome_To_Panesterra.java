@@ -86,8 +86,8 @@ public class _24220Welcome_To_Panesterra extends QuestHandler {
 		}
 		if (!GAB1PangaeaScout.contains(targetId)) {
 			return false;
-		} if (qs.getStatus() == QuestStatus.START) {
-            int var = qs.getQuestVarById(0); 
+		} 
+        if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 802543) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -105,9 +105,7 @@ public class _24220Welcome_To_Panesterra extends QuestHandler {
 				  targetId == 804082) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 1) {
-							return sendQuestDialog(env, 1352);
-						}
+						return sendQuestDialog(env, 1352);
 					} case SELECT_ACTION_1353: {
 						return sendQuestDialog(env, 1353);
 					} case STEP_TO_2: {
@@ -122,9 +120,7 @@ public class _24220Welcome_To_Panesterra extends QuestHandler {
 				  targetId == 804085) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 1) {
-							return sendQuestDialog(env, 1693);
-						}
+						return sendQuestDialog(env, 1693);
 					} case SELECT_ACTION_1694: {
 						return sendQuestDialog(env, 1694);
 					} case STEP_TO_2: {
@@ -139,9 +135,7 @@ public class _24220Welcome_To_Panesterra extends QuestHandler {
 				  targetId == 804088) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 1) {
-							return sendQuestDialog(env, 2034);
-						}
+						return sendQuestDialog(env, 2034);
 					} case SELECT_ACTION_2035: {
 						return sendQuestDialog(env, 2035);
 					} case STEP_TO_2: {
@@ -156,9 +150,7 @@ public class _24220Welcome_To_Panesterra extends QuestHandler {
 				  targetId == 804091) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 1) {
-							return sendQuestDialog(env, 2375);
-						}
+						return sendQuestDialog(env, 2375);
 					} case SELECT_ACTION_2376: {
 						return sendQuestDialog(env, 2376);
 					} case STEP_TO_2: {
@@ -168,7 +160,8 @@ public class _24220Welcome_To_Panesterra extends QuestHandler {
 					}
 				}
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 802542) {
                 return sendQuestEndDialog(env);
 			}

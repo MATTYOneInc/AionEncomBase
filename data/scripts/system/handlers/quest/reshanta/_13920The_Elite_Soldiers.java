@@ -23,12 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13920The_Elite_Soldiers extends QuestHandler
-{
+public class _13920The_Elite_Soldiers extends QuestHandler {
+
     private final static int questId = 13920;
-	
 	private final static int[] Ab1131Guard = {263021, 263036, 263051, 263066, 263230, 263026, 263041, 263056, 263071, 263235};
-	
     public _13920The_Elite_Soldiers() {
         super(questId);
     }
@@ -46,27 +44,16 @@ public class _13920The_Elite_Soldiers extends QuestHandler
         final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
             if (targetId == 278517) { //Nereus.
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 278517) { //Nereus.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 10) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 10, 11, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278517) { //Nereus.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

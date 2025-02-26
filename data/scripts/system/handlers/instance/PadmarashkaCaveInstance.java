@@ -93,10 +93,10 @@ public class PadmarashkaCaveInstance extends GeneralInstanceHandler
 						dropItems.add(DropRegistrationService.getInstance().regDropItem(index++, player.getObjectId(), npcId, 188053789, 1)); //Major Stigma Support Bundle.
 					} switch (Rnd.get(1, 2)) {
 				        case 1:
-				            dropItems.add(DropRegistrationService.getInstance().regDropItem(index++, player.getObjectId(), npcId, 188052946, 1)); //Padmarashka's Raging Weapon Box.
+				            dropItems.add(DropRegistrationService.getInstance().regDropItem(index++, player.getObjectId(), npcId, 188057935, 1)); //Padmarashka's Raging Weapon Box.
 					    break;
 						case 2:
-				            dropItems.add(DropRegistrationService.getInstance().regDropItem(index++, player.getObjectId(), npcId, 188052727, 1)); //Padmarashka's Weapon Chest.
+				            dropItems.add(DropRegistrationService.getInstance().regDropItem(index++, player.getObjectId(), npcId, 188057935, 1)); //Padmarashka's Weapon Chest.
 					    break;
 					} switch (Rnd.get(1, 14)) {
 				        case 1:

@@ -2,13 +2,11 @@ package quest.theobomos;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /*
  * author : Altaress
@@ -16,7 +14,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _3083SearchingfortheElderofWisdom extends QuestHandler {
 
 	private final static int questId = 3083;
-
 	public _3083SearchingfortheElderofWisdom() {
 		super(questId);
 	}
@@ -49,11 +46,8 @@ public class _3083SearchingfortheElderofWisdom extends QuestHandler {
 				else if (env.getDialogId() == 1009) {
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return sendQuestEndDialog(env);
 				}
-				else
-					return sendQuestEndDialog(env);
 			}
 			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
 				return sendQuestEndDialog(env);
@@ -66,11 +60,8 @@ public class _3083SearchingfortheElderofWisdom extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
-				else
-					return sendQuestStartDialog(env);
 			}
 		}
 		else if (targetId == 798215) {
@@ -80,11 +71,8 @@ public class _3083SearchingfortheElderofWisdom extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
-				else
-					return sendQuestStartDialog(env);
 			}
 		}
 		return false;

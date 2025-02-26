@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25062Ominous_Advice extends QuestHandler
-{
+public class _25062Ominous_Advice extends QuestHandler {
+
 	private static final int questId = 25062;
-	
 	public _25062Ominous_Advice() {
 		super(questId);
 	}
@@ -65,13 +64,11 @@ public class _25062Ominous_Advice extends QuestHandler
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 0, 0, true, 10000, 10001);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
 		} 
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804918) {
 				return sendQuestEndDialog(env);
 			}

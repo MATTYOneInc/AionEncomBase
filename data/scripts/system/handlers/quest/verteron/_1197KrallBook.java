@@ -20,17 +20,12 @@ import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
-import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /**
  * @author MrPoke
@@ -59,9 +54,7 @@ public class _1197KrallBook extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		if (targetId == 0) {
 			if (env.getDialogId() == 1002) {
-				QuestService.startQuest(env);
-				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-				return true;
+				return sendQuestStartDialog(env);
 			}
 			if (env.getDialogId() == 1003) {
                 return closeDialogWindow(env);
@@ -82,40 +75,32 @@ public class _1197KrallBook extends QuestHandler {
 			return true;
 		}
 		else if (targetId == 203129) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START) {
+			if (qs != null && qs.getStatus() == QuestStatus.START) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 2375);
 				}
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
+				else if (env.getDialogId() == 1009) {
 					removeQuestItem(env, 182200558, 1);
 					qs.setQuestVar(1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
-				else
-					return sendQuestEndDialog(env);
+			}
+		    else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;
 	}
 
 	@Override
-	public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
-		final Player player = env.getPlayer();
-		final int id = item.getItemTemplate().getTemplateId();
-		final int itemObjId = item.getObjectId();
-		if (id != 182200558)
-			return HandlerResult.UNKNOWN;
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
-		ThreadPoolManager.getInstance().schedule(new Runnable() {
-			@Override
-			public void run() {
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
-				sendQuestDialog(env, 4);
-			}
-		}, 3000);
-		return HandlerResult.SUCCESS;
+	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
+		Player player = env.getPlayer();
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			return HandlerResult.fromBoolean(sendQuestDialog(env, 4));
+		}
+		return HandlerResult.FAILED;
 	}
 }

@@ -40,7 +40,7 @@ public class _30061Cache_Ing_In_On_Turmoil extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.START) {
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 798927) { //Versetti.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -59,7 +59,8 @@ public class _30061Cache_Ing_In_On_Turmoil extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 799381) { //Lania.
 				return sendQuestEndDialog(env);
 			}

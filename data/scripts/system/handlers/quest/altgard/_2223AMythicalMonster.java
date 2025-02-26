@@ -29,10 +29,10 @@ import com.aionemu.gameserver.services.QuestService;
  * @modified by Gigi
  * @reworked vlog
  */
+
 public class _2223AMythicalMonster extends QuestHandler {
 
 	private final static int questId = 2223;
-
 	public _2223AMythicalMonster() {
 		super(questId);
 	}
@@ -53,10 +53,9 @@ public class _2223AMythicalMonster extends QuestHandler {
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203616) { // Gefion
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				}
 				else {
@@ -68,7 +67,7 @@ public class _2223AMythicalMonster extends QuestHandler {
 			int var = qs.getQuestVarById(0);
 			switch (targetId) {
 				case 203620: { // Lamir
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 0) {
 								return sendQuestDialog(env, 1352);
@@ -86,47 +85,22 @@ public class _2223AMythicalMonster extends QuestHandler {
 						case STEP_TO_1: {
 							return defaultCloseDialog(env, 0, 1, 182203217, 1, 0, 0); // 1
 						}
-						case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
-						}
 					}
 					break;
 				}
 				case 700134: { // Old Incense Burner
 					if (env.getDialog() == QuestDialog.USE_OBJECT) {
 						if (player.getInventory().getItemCountByItemId(182203217) == 1) {
-							return useQuestObject(env, 1, 1, false, 0, 0, 0, 182203217, 1, 67, true); // movie + die
+							return useQuestObject(env, 1, 1, false, 0, 0, 0, 182203217, 1, 67, true);
 						}
 					}
 					break;
 				}
-				case 203616: { // Gefion
-					switch (dialog) {
-						case START_DIALOG: {
-							if (var == 0) {
-								return sendQuestDialog(env, 2716);
-							}
-						}
-						case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
-						}
-					}
-				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203616) { // Gefion
-				switch (dialog) {
-					case USE_OBJECT: {
-						return sendQuestDialog(env, 2375);
-					}
-					case SELECT_REWARD: {
-						return sendQuestDialog(env, 5);
-					}
-					default: {
-						return sendQuestEndDialog(env);
-					}
-				}
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;

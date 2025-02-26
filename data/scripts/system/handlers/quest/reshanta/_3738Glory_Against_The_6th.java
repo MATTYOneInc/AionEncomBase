@@ -24,10 +24,9 @@ import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3738Glory_Against_The_6th extends QuestHandler
-{
+public class _3738Glory_Against_The_6th extends QuestHandler {
+
 	private final static int questId = 3738;
-	
 	public _3738Glory_Against_The_6th() {
 		super(questId);
 	}
@@ -63,7 +62,8 @@ public class _3738Glory_Against_The_6th extends QuestHandler
 				        return closeDialogWindow(env);
 					}
 				}
-			} if (qs.getStatus() == QuestStatus.REWARD) {
+			} 
+            if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 				if (targetId == 278535) { //Maius.
 				    if (env.getDialog() == QuestDialog.START_DIALOG) {
 						return sendQuestDialog(env, 10002);

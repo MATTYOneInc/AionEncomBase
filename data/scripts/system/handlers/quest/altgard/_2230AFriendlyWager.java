@@ -28,7 +28,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _2230AFriendlyWager extends QuestHandler {
 
 	private final static int questId = 2230;
-
 	public _2230AFriendlyWager() {
 		super(questId);
 	}
@@ -56,11 +55,11 @@ public class _2230AFriendlyWager extends QuestHandler {
 				case STEP_TO_1:
 					if (QuestService.startQuest(env)) {
 						QuestService.questTimerStart(env, 1800);
-						return true;
-					}
-					else {
-						return false;
-					}
+					return sendQuestSelectionDialog(env);
+				    }
+				    else {
+					    return sendQuestStartDialog(env);
+				    }
 				}
 			}
 		}

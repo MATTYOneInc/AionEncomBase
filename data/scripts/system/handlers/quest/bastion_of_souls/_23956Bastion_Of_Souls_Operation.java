@@ -25,11 +25,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23956Bastion_Of_Souls_Operation extends QuestHandler
-{
+public class _23956Bastion_Of_Souls_Operation extends QuestHandler {
+
     private final static int questId = 23956;
 	private final static int[] IDAb1EreBossLeader = {246544, 246545, 246546};
-	
     public _23956Bastion_Of_Souls_Operation() {
         super(questId);
     }
@@ -52,7 +51,7 @@ public class _23956Bastion_Of_Souls_Operation extends QuestHandler
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806591) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

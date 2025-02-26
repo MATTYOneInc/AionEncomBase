@@ -64,17 +64,12 @@ public class _3920TheSecretofSurkana extends QuestHandler {
 					}
 				}
             } 
-            if (targetId == 804603) {
-            if (env.getDialog() == QuestDialog.START_DIALOG)
-                removeQuestItem(env, 182206074, 1);
-				return sendQuestDialog(env, 2375);
-			} 
-            if (env.getDialogId() == 1009) { 
-				return sendQuestEndDialog(env);
-            }
         }
         else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
-		     return sendQuestEndDialog(env);
+            if (targetId == 804603) {
+            removeQuestItem(env, 182206074, 1);
+		    return sendQuestEndDialog(env);
+            }
         }
 		return false;
 	}

@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15041Flak_From_The_Brohum extends QuestHandler
-{
+public class _15041Flak_From_The_Brohum extends QuestHandler {
+
     private final static int questId = 15041;
-	
     public _15041Flak_From_The_Brohum() {
         super(questId);
     }
@@ -54,18 +53,8 @@ public class _15041Flak_From_The_Brohum extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804704) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 8) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 8, 9, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804704) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

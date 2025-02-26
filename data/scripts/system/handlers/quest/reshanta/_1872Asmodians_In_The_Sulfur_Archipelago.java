@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1872Asmodians_In_The_Sulfur_Archipelago extends QuestHandler
-{
+public class _1872Asmodians_In_The_Sulfur_Archipelago extends QuestHandler {
+
     private final static int questId = 1872;
-	
     public _1872Asmodians_In_The_Sulfur_Archipelago() {
         super(questId);
     }
@@ -59,7 +58,7 @@ public class _1872Asmodians_In_The_Sulfur_Archipelago extends QuestHandler
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278503) { //Calon.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

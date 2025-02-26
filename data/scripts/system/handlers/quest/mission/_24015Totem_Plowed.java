@@ -26,10 +26,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24015Totem_Plowed extends QuestHandler
-{
+public class _24015Totem_Plowed extends QuestHandler {
+
     private final static int questId = 24015;
-	
     public _24015Totem_Plowed() {
         super(questId);
     }
@@ -58,6 +57,9 @@ public class _24015Totem_Plowed extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null) {
+			return false;
+		}
         int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		final Npc npc = (Npc) env.getVisibleObject();

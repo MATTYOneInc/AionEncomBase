@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15596Give_No_Quarter extends QuestHandler
-{
+public class _15596Give_No_Quarter extends QuestHandler {
+
 	private final static int questId = 15596;
-	
 	public _15596Give_No_Quarter() {
 		super(questId);
 	}
@@ -71,7 +70,7 @@ public class _15596Give_No_Quarter extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806114) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

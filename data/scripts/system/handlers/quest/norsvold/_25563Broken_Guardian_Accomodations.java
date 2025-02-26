@@ -56,7 +56,7 @@ public class _25563Broken_Guardian_Accomodations extends QuestHandler {
                 }
 			}
         }
-		if (qs.getStatus() == QuestStatus.START) {
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 806116: { //Reinhard.
 					switch (dialog) {
@@ -69,7 +69,8 @@ public class _25563Broken_Guardian_Accomodations extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 806116) { //Reinhard.
 			    return sendQuestEndDialog(env);
 		    }

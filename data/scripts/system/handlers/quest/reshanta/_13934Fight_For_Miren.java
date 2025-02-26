@@ -23,12 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13934Fight_For_Miren extends QuestHandler
-{
+public class _13934Fight_For_Miren extends QuestHandler {
+
     private final static int questId = 13934;
-	
 	private final static int[] Ab1_1241Guard = {279456, 279471, 279481, 279496, 279511, 279526, 882616, 882621, 882626, 882631, 882636};
-	
     public _13934Fight_For_Miren() {
         super(questId);
     }
@@ -46,27 +44,16 @@ public class _13934Fight_For_Miren extends QuestHandler
         final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
             if (targetId == 805380) { //Lagranjia.
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 805380) { //Lagranjia.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 3) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 3, 4, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805380) { //Lagranjia.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

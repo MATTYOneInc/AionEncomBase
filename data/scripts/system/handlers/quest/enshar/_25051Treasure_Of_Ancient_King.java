@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25051Treasure_Of_Ancient_King extends QuestHandler
-{
+public class _25051Treasure_Of_Ancient_King extends QuestHandler {
+
     private final static int questId = 25051;
-	
     public _25051Treasure_Of_Ancient_King() {
         super(questId);
     }
@@ -104,7 +103,7 @@ public class _25051Treasure_Of_Ancient_King extends QuestHandler
                     return closeDialogWindow(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 804916) {
                 if (dialog == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 2376);

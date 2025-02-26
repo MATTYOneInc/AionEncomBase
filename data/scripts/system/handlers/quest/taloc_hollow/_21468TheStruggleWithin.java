@@ -31,7 +31,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _21468TheStruggleWithin extends QuestHandler {
 
 	private final static int questId = 21468;
-
 	public _21468TheStruggleWithin() {
 		super(questId);
 	}
@@ -50,7 +49,6 @@ public class _21468TheStruggleWithin extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 799526) { 
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -111,9 +109,6 @@ public class _21468TheStruggleWithin extends QuestHandler {
 	
 	private void reward(QuestState qs, QuestEnv env) {
 		if(qs.getQuestVarById(1) == 10 && qs.getQuestVarById(2) == 5 && qs.getQuestVarById(3) == 3) {
-			qs.setQuestVarById(1, 0);
-			qs.setQuestVarById(2, 0);
-			qs.setQuestVarById(3, 0);
 			qs.setStatus(QuestStatus.REWARD);
 			updateQuestStatus(env);
 		}

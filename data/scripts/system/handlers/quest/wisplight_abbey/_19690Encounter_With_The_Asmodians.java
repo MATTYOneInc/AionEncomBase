@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19690Encounter_With_The_Asmodians extends QuestHandler
-{
+public class _19690Encounter_With_The_Asmodians extends QuestHandler {
+
 	private final static int questId = 19690;
-	
 	public _19690Encounter_With_The_Asmodians() {
 		super(questId);
 	}
@@ -55,8 +54,8 @@ public class _19690Encounter_With_The_Asmodians extends QuestHandler
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (env.getTargetId() == 806698) {
-			if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
+		   if (env.getTargetId() == 806698) {
 			    switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 4762);
@@ -66,7 +65,8 @@ public class _19690Encounter_With_The_Asmodians extends QuestHandler
 						return sendQuestStartDialog(env);
 					}
 				}
-			} if (qs.getStatus() == QuestStatus.REWARD) {
+			} 
+            if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 				if (targetId == 806698) {
 				    if (env.getDialog() == QuestDialog.START_DIALOG) {
 						return sendQuestDialog(env, 10002);

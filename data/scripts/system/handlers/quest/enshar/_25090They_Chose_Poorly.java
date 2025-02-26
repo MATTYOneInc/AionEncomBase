@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25090They_Chose_Poorly extends QuestHandler
-{
+public class _25090They_Chose_Poorly extends QuestHandler {
+
     private final static int questId = 25090;
-	
     public _25090They_Chose_Poorly() {
         super(questId);
     }
@@ -51,17 +50,8 @@ public class _25090They_Chose_Poorly extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804928) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 1) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804928) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);
@@ -82,7 +72,6 @@ public class _25090They_Chose_Poorly extends QuestHandler
                 if (qs.getQuestVarById(0) < 1) {
                     qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					qs.setStatus(QuestStatus.REWARD);
-					changeQuestStep(env, 1, 2, false);
 					updateQuestStatus(env);
                     return true;
                 }

@@ -28,8 +28,8 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 
 public class _3970Kinah_Digging_Daughter extends QuestHandler {
+
 	private final static int questId = 3970;
-	
 	public _3970Kinah_Digging_Daughter() {
 		super(questId);
 	}
@@ -85,11 +85,10 @@ public class _3970Kinah_Digging_Daughter extends QuestHandler {
 				} else if (dialog == QuestDialog.STEP_TO_3) {
 					removeQuestItem(env, 182206114, 1);
 					giveQuestItem(env, 182206115, 1);
-					qs.setQuestVar(3);
-					return defaultCloseDialog(env, 3, 3, true, false);
+					return defaultCloseDialog(env, 2, 3, true, false);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798386) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 2375);

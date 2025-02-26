@@ -26,10 +26,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15671Destroying_The_Light_Armored_Archon_Carrier extends QuestHandler
-{
+public class _15671Destroying_The_Light_Armored_Archon_Carrier extends QuestHandler {
+
     private final static int questId = 15671;
-	
 	private final static int[] Ilisia = {806114};
 	private final static int[] F6RaidSum = {246481, 246482, 246483, 246484};
 	private final static int[] F6RaidGuard = {246688, 246689, 246690, 246691, 246692, 246693};
@@ -54,7 +53,7 @@ public class _15671Destroying_The_Light_Armored_Archon_Carrier extends QuestHand
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806114) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

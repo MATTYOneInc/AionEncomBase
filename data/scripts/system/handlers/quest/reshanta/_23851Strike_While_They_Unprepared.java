@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23851Strike_While_They_Unprepared extends QuestHandler
-{
+public class _23851Strike_While_They_Unprepared extends QuestHandler {
+
     private final static int questId = 23851;
-	
     public _23851Strike_While_They_Unprepared() {
         super(questId);
     }
@@ -59,7 +58,7 @@ public class _23851Strike_While_They_Unprepared extends QuestHandler
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278019) { //Lakadi.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

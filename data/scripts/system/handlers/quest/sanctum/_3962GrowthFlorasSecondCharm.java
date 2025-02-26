@@ -33,7 +33,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _3962GrowthFlorasSecondCharm extends QuestHandler {
 
 	private final static int questId = 3962;
-
 	public _3962GrowthFlorasSecondCharm() {
 		super(questId);
 	}
@@ -49,11 +48,9 @@ public class _3962GrowthFlorasSecondCharm extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798384) { // Flora
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -90,12 +87,10 @@ public class _3962GrowthFlorasSecondCharm extends QuestHandler {
 							}
 							else
 								return sendQuestDialog(env, 2716);
-						case FINISH_DIALOG:
-							return defaultCloseDialog(env, 1, 1);
-					}
+				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798384) { // Flora
 				return sendQuestEndDialog(env);
 			}

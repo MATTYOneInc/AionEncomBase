@@ -57,7 +57,7 @@ public class _15545A_New_Friend_For_A_Archdaeva extends QuestHandler {
                 }
 			}
 		}
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835514) { //Leona.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -59,18 +59,7 @@ public class _17541The_Drana_Farm extends QuestHandler {
                 }
 			}
 		}
-		if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 799553) { //Daidra.
-                if (env.getDialog() == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 2) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (env.getDialog() == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 799553) { //Daidra.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

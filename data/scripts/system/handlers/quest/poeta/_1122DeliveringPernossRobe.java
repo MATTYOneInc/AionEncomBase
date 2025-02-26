@@ -33,7 +33,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _1122DeliveringPernossRobe extends QuestHandler {
 
 	private final static int questId = 1122;
-
 	public _1122DeliveringPernossRobe() {
 		super(questId);
 	}
@@ -52,8 +51,8 @@ public class _1122DeliveringPernossRobe extends QuestHandler {
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (targetId == 203060) {
-			if (qs == null) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		   if (targetId == 203060) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else if (env.getDialogId() == 1002) {

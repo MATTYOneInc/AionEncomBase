@@ -57,7 +57,7 @@ public class _25545A_New_Comrade_For_A_Archdaeva extends QuestHandler {
                 }
 			}
 		}
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835515) { //Arund.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

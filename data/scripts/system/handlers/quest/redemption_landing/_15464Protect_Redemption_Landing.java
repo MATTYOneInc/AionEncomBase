@@ -26,10 +26,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15464Protect_Redemption_Landing extends QuestHandler
-{
+public class _15464Protect_Redemption_Landing extends QuestHandler {
+
     private final static int questId = 15464;
-	
     public _15464Protect_Redemption_Landing() {
         super(questId);
     }
@@ -51,7 +50,7 @@ public class _15464Protect_Redemption_Landing extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805382) { //Makidarlene.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

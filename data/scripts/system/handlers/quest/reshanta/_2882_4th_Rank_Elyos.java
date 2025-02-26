@@ -28,10 +28,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _2882_4th_Rank_Elyos extends QuestHandler
-{
+public class _2882_4th_Rank_Elyos extends QuestHandler {
+
     private final static int questId = 2882;
-	
     public _2882_4th_Rank_Elyos() {
         super(questId);
     }
@@ -53,7 +52,7 @@ public class _2882_4th_Rank_Elyos extends QuestHandler
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278017) { //Semotor.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

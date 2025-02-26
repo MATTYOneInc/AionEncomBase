@@ -12,26 +12,20 @@
  */
 package quest.theobomos;
 
-import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.gameobjects.player.RewardType;
-import com.aionemu.gameserver.model.templates.quest.Rewards;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_QUEST_ACTION;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
 public class _3096Examine_The_Extraction_Devices extends QuestHandler {
+
 	private final static int questId = 3096;
-	
 	public _3096Examine_The_Extraction_Devices() {
 		super(questId);
 	}
@@ -115,7 +109,7 @@ public class _3096Examine_The_Extraction_Devices extends QuestHandler {
 				}
 
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD && targetId == 798225) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD && targetId == 798225) {
 			return sendQuestEndDialog(env);
 		}	
 		return false;

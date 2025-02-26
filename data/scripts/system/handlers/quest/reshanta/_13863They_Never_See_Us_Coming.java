@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13863They_Never_See_Us_Coming extends QuestHandler
-{
+public class _13863They_Never_See_Us_Coming extends QuestHandler {
+
     private final static int questId = 13863;
-	
     public _13863They_Never_See_Us_Coming() {
         super(questId);
     }
@@ -59,7 +58,7 @@ public class _13863They_Never_See_Us_Coming extends QuestHandler
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805380) { //Lagranjia.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

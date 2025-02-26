@@ -23,12 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13941Leaders_Of_Wealhtheow_Keep extends QuestHandler
-{
+public class _13941Leaders_Of_Wealhtheow_Keep extends QuestHandler {
+
     private final static int questId = 13941;
-	
 	private final static int[] LDF5Fortress7011GBBoss = {251960, 251961, 251962, 252040, 252041, 252042};
-	
     public _13941Leaders_Of_Wealhtheow_Keep() {
         super(questId);
     }
@@ -55,18 +53,8 @@ public class _13941Leaders_Of_Wealhtheow_Keep extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 802431) { //Alphioh.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 1) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 802431) { //Alphioh.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

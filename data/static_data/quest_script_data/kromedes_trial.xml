@@ -76,8 +76,7 @@
 	<!-- ASMODIANS QUEST -->
 	<!-- Seeking Slumber (Asmodian Only) -->
 	<monster_hunt start_npc_ids="205235" id="28605">
-		<monster var="0" npc_ids="216971" end_var="8"/>
-		<monster var="1" npc_ids="217026 217027" end_var="8"/>
+		<monster var="0" npc_ids="216971 217026 217027" end_var="8"/>
     </monster_hunt>
 	<!-- An Honorable Death (Asmodian Only) -->
 	<monster_hunt start_npc_ids="205236" id="28606">

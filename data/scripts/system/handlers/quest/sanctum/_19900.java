@@ -25,10 +25,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19900 extends QuestHandler
-{
+public class _19900 extends QuestHandler {
+
 	private final static int questId = 19900;
-	
 	public _19900() {
 		super(questId);
 	}
@@ -52,9 +51,8 @@ public class _19900 extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
-            if (targetId == 836073) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+            if (env.getTargetId() == 836073) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
 				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {

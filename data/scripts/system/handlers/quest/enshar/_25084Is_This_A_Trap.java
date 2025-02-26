@@ -25,11 +25,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25084Is_This_A_Trap extends QuestHandler {
 
-public class _25084Is_This_A_Trap extends QuestHandler
-{
     private final static int questId = 25084;
-	
     public _25084Is_This_A_Trap() {
         super(questId);
     }
@@ -76,7 +74,7 @@ public class _25084Is_This_A_Trap extends QuestHandler
                     return closeDialogWindow(env);
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 804927) {
                 if (dialog == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 2034);

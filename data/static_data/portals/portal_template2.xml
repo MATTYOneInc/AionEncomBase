@@ -2452,6 +2452,10 @@
 	<portal_dialog npc_id="730266">
 		<portal_path dialog="10000" loc_id="1100102"/>
 	</portal_dialog>
+	<!-- Kaisinel Academy to Sanctum -->
+	<portal_dialog npc_id="731721">
+		<portal_path dialog="10000" loc_id="1100102" />
+	</portal_dialog>
 	<!-- Inggison To Kaisinel Academy [Noratha] -->
 	<portal_dialog npc_id="205314">
 		<portal_path dialog="10000" loc_id="1100700">

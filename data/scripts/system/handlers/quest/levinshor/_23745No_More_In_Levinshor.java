@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23745No_More_In_Levinshor extends QuestHandler
-{
+public class _23745No_More_In_Levinshor extends QuestHandler {
+
     private final static int questId = 23745;
-	
     public _23745No_More_In_Levinshor() {
         super(questId);
     }
@@ -52,7 +51,7 @@ public class _23745No_More_In_Levinshor extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 802353) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

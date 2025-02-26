@@ -35,7 +35,6 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 public class _2208MauInTenMinutesADay extends QuestHandler {
 
 	private final static int questId = 2208;
-
 	public _2208MauInTenMinutesADay() {
 		super(questId);
 	}
@@ -86,11 +85,11 @@ public class _2208MauInTenMinutesADay extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					return sendQuestSelectionDialog(env);
+				    return closeDialogWindow(env);
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203591) {
 				return sendQuestEndDialog(env);
 			}
@@ -103,7 +102,6 @@ public class _2208MauInTenMinutesADay extends QuestHandler {
 		final Player player = env.getPlayer();
 		final int id = item.getItemTemplate().getTemplateId();
 		final int itemObjId = item.getObjectId();
-
 		if (id != 182203205) {
 			return HandlerResult.UNKNOWN;
 		}
@@ -113,7 +111,6 @@ public class _2208MauInTenMinutesADay extends QuestHandler {
 		}
 		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
-
 			@Override
 			public void run() {
 				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);

@@ -26,12 +26,10 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13841Occupy_Siel_Western_Fortress extends QuestHandler
-{
+public class _13841Occupy_Siel_Western_Fortress extends QuestHandler {
+
     private final static int questId = 13841;
-	
 	private final static int[] IDAbReLowWcielE = {214740, 214741, 214742, 214743, 214824, 214825, 214826, 215424};
-	
     public _13841Occupy_Siel_Western_Fortress() {
         super(questId);
     }
@@ -50,19 +48,7 @@ public class _13841Occupy_Siel_Western_Fortress extends QuestHandler
         final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
-		if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 263295) { //Hippodamia.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 40) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 40, 41, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 263295) { //Hippodamia.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15471Setting_Up_The_Outposts extends QuestHandler
-{
+public class _15471Setting_Up_The_Outposts extends QuestHandler {
+
     private final static int questId = 15471;
-	
     public _15471Setting_Up_The_Outposts() {
         super(questId);
     }
@@ -62,20 +61,10 @@ public class _15471Setting_Up_The_Outposts extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 805798) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 1) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805798) {
-				if (env.getDialogId() == 1352) {
+				if (env.getDialogId() == 2375) {
 					return sendQuestDialog(env, 5);
 				} else {
 					return sendQuestEndDialog(env);

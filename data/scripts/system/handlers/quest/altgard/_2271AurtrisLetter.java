@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2271AurtrisLetter extends QuestHandler {
 
 	private final static int questId = 2271;
-
 	public _2271AurtrisLetter() {
 		super(questId);
 	}
@@ -68,11 +67,6 @@ public class _2271AurtrisLetter extends QuestHandler {
 					return sendQuestStartDialog(env);
 				}
 			}
-			else if (qs.getStatus() == QuestStatus.START) {
-				if (env.getDialog() == QuestDialog.START_DIALOG) {
-					return sendQuestDialog(env, 2375);
-				}
-			}
 		}
 		else if (targetId == 203654) {
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
@@ -82,27 +76,23 @@ public class _2271AurtrisLetter extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					return defaultCloseDialog(env, 0, 1); // 1
 				}
-				else {
-					return sendQuestStartDialog(env);
-				}
 			}
 		}
 		else if (targetId == 203557) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 2375);
 				}
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
+				else if (env.getDialogId() == 1009) {
 					qs.setQuestVar(3);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
-				else {
-					return sendQuestEndDialog(env);
-				}
 			}
+		    else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+		         return sendQuestEndDialog(env);
+		    }
 		}
 		return false;
 	}

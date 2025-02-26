@@ -27,10 +27,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
  * @author Mr.Poke
  * @reworked vlog
  */
+
 public class _2237AFertileField extends QuestHandler {
 
 	private final static int questId = 2237;
-
 	public _2237AFertileField() {
 		super(questId);
 	}
@@ -38,6 +38,7 @@ public class _2237AFertileField extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(832822).addOnQuestStart(questId);
+		qe.registerQuestNpc(832822).addOnTalkEvent(questId);
 		qe.registerQuestNpc(700145).addOnTalkEvent(questId);
 	}
 
@@ -46,11 +47,9 @@ public class _2237AFertileField extends QuestHandler {
 		Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 832822) { // Anmurnerk
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				}
 				else {
@@ -61,27 +60,24 @@ public class _2237AFertileField extends QuestHandler {
 		else if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 700145: { // Fertilizer Sack
-					if (dialog == QuestDialog.USE_OBJECT) {
+					if (env.getDialog() == QuestDialog.USE_OBJECT) {
 						return true; // loot
 					}
 					break;
 				}
 				case 832822: { // Anmurnerk
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 2375);
 						}
 						case CHECK_COLLECTED_ITEMS_SIMPLE: {
 							return checkQuestItems(env, 0, 0, true, 5, 2716);
 						}
-						case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
-						}
 					}
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 832822) { // Anmurnerk
 				return sendQuestEndDialog(env);
 			}

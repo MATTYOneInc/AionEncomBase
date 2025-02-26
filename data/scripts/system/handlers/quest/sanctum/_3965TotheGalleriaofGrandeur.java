@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _3965TotheGalleriaofGrandeur extends QuestHandler {
 
 	private final static int questId = 3965;
-
 	public _3965TotheGalleriaofGrandeur() {
 		super(questId);
 	}
@@ -46,13 +45,10 @@ public class _3965TotheGalleriaofGrandeur extends QuestHandler {
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
-		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 798311) { // Senarinrinerk
-				if (dialog == QuestDialog.START_DIALOG) {
+			if (env.getTargetId() == 798311) { // Senarinrinerk
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				}
 				else {
@@ -62,9 +58,9 @@ public class _3965TotheGalleriaofGrandeur extends QuestHandler {
 		}
 		else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			switch (targetId) {
+			switch (env.getTargetId()) {
 				case 798391: { // Andu
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 0) {
 								return sendQuestDialog(env, 1352);
@@ -77,7 +73,7 @@ public class _3965TotheGalleriaofGrandeur extends QuestHandler {
 					break;
 				}
 				case 798390: { // Palentine
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 1) {
 								return sendQuestDialog(env, 2375);
@@ -86,14 +82,14 @@ public class _3965TotheGalleriaofGrandeur extends QuestHandler {
 						case SELECT_REWARD: {
 							changeQuestStep(env, 1, 1, true);
 							removeQuestItem(env, 182206120, 1);
-							return sendQuestDialog(env, 5);
+							return sendQuestEndDialog(env);
 						}
 					}
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 798390) { // Palentine
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+			if (env.getTargetId() == 798390) { // Palentine
 				return sendQuestEndDialog(env);
 			}
 		}

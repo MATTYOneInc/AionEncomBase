@@ -24,11 +24,10 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23961Main_Mission_To_Retrieve_The_Core_Fragment extends QuestHandler
-{
+public class _23961Main_Mission_To_Retrieve_The_Core_Fragment extends QuestHandler {
+
     private final static int questId = 23961;
 	private final static int[] npcs = {835222, 835224};
-	
     public _23961Main_Mission_To_Retrieve_The_Core_Fragment() {
         super(questId);
     }
@@ -47,7 +46,7 @@ public class _23961Main_Mission_To_Retrieve_The_Core_Fragment extends QuestHandl
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
-        if (qs.getStatus() == QuestStatus.START) {
+        if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 835222) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -70,7 +69,8 @@ public class _23961Main_Mission_To_Retrieve_The_Core_Fragment extends QuestHandl
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835224) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

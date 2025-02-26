@@ -23,17 +23,16 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Remake Rinzler (Encom)
 /****/
 
-public class _28511Souper_Passion extends QuestHandler
-{
+public class _28511Souper_Passion extends QuestHandler {
+
 	private static final int questId = 28511;
-	
 	public _28511Souper_Passion() {
 		super(questId);
 	}
 	
 	@Override
 	public void register() {
-		int[] npcs = {799522, 700954, 700952, 798031};
+		int[] npcs = {799522, 700954, 730359, 798031};
 		qe.registerQuestNpc(799522).addOnQuestStart(questId);
 		qe.registerGetingItem(182212023, questId);
 		for (int npc: npcs) {
@@ -60,7 +59,7 @@ public class _28511Souper_Passion extends QuestHandler
 			switch (targetId) {
 				case 700954: {
 					return true;
-				} case 700952: {
+				} case 730359: {
 					switch (dialog) {
 						case USE_OBJECT: {
 							if (var == 0) {
@@ -77,7 +76,7 @@ public class _28511Souper_Passion extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798031) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

@@ -35,7 +35,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _3092VisonTheDrakie extends QuestHandler {
 
 	private final static int questId = 3092;
-
 	public _3092VisonTheDrakie() {
 		super(questId);
 	}
@@ -52,11 +51,9 @@ public class _3092VisonTheDrakie extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798191) { // Tityus
 				switch (env.getDialog()) {
@@ -96,7 +93,7 @@ public class _3092VisonTheDrakie extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798191) { 
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 5);

@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23952Harogen_Journal extends QuestHandler
-{
+public class _23952Harogen_Journal extends QuestHandler {
+
 	private final static int questId = 23952;
-	
 	public _23952Harogen_Journal() {
 		super(questId);
 	}
@@ -44,9 +43,7 @@ public class _23952Harogen_Journal extends QuestHandler
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			return false;
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806591) {
 				removeQuestItem(env, 182216186, 1);
 				return sendQuestEndDialog(env);

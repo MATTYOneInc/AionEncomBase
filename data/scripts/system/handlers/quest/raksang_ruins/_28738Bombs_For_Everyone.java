@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28738Bombs_For_Everyone extends QuestHandler
-{
+public class _28738Bombs_For_Everyone extends QuestHandler {
+
     private final static int questId = 28738;
-	
     public _28738Bombs_For_Everyone() {
         super(questId);
     }
@@ -46,11 +45,9 @@ public class _28738Bombs_For_Everyone extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
-		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 804966) {
-				if (dialog == QuestDialog.USE_OBJECT) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+			if (env.getTargetId() == 804966) {
+				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				}
 				return sendQuestEndDialog(env);
