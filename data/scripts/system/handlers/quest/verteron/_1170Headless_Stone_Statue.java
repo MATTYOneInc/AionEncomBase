@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _1170Headless_Stone_Statue extends QuestHandler
-{
+public class _1170Headless_Stone_Statue extends QuestHandler {
+
 	private final static int questId = 1170;
-	
 	public _1170Headless_Stone_Statue() {
 		super(questId);
 	}
@@ -62,7 +61,7 @@ public class _1170Headless_Stone_Statue extends QuestHandler
 					return giveQuestItem(env, 182200504, 1);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 730000) { //Headless Stone Statue.
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 1352);

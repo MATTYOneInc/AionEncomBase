@@ -26,7 +26,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 
-
 /**
  * @author Cheatkiller
  *
@@ -34,8 +33,7 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 public class _1693AreYouMyFather extends QuestHandler {
 
 	private final static int questId = 1693;
-	private final static int[] npcs = { 798386, 204514, 798388, 203893 };
-
+	private final static int[] npcs = {798386, 204514, 798388, 203893};
 	public _1693AreYouMyFather() {
 		super(questId);
 	}
@@ -56,11 +54,9 @@ public class _1693AreYouMyFather extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798386) { 
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -109,7 +105,7 @@ public class _1693AreYouMyFather extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203893) { 
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 10002);

@@ -14,7 +14,6 @@ package quest.theobomos;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
@@ -27,10 +26,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3090In_Search_Of_Pippi_The_Porgus extends QuestHandler
-{
-	private final static int questId = 3090;
+public class _3090In_Search_Of_Pippi_The_Porgus extends QuestHandler {
 
+	private final static int questId = 3090;
 	public _3090In_Search_Of_Pippi_The_Porgus() {
 		super(questId);
 	}
@@ -83,7 +81,6 @@ public class _3090In_Search_Of_Pippi_The_Porgus extends QuestHandler
 				int var2 = qs.getQuestVarById(2);
 				if (var == 1 && var2 == 0) {
 					changeQuestStep(env, 0, 1, false, 2);
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(true, 1111007, player.getObjectId(), 0));
 					changeStep(qs, env);
 					return true;
 				}
@@ -101,7 +98,7 @@ public class _3090In_Search_Of_Pippi_The_Porgus extends QuestHandler
 					return defaultCloseDialog(env, 3, 3, true, false);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798182) {
 				switch (dialog) {
 					case USE_OBJECT: {
@@ -128,7 +125,6 @@ public class _3090In_Search_Of_Pippi_The_Porgus extends QuestHandler
 				int var1 = qs.getQuestVarById(1);
                 if (var == 1 && var1 == 0) {
 					changeQuestStep(env, 0, 1, false, 1);
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(true, 1111006, player.getObjectId(), 0));
 					changeStep(qs, env);
                     return true;
                 }

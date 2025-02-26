@@ -32,7 +32,6 @@ import com.aionemu.gameserver.utils.MathUtil;
 public class _1604ToCatchASpy extends QuestHandler {
 
 	private final static int questId = 1604;
-
 	public _1604ToCatchASpy() {
 		super(questId);
 	}
@@ -48,11 +47,9 @@ public class _1604ToCatchASpy extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204576) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -61,10 +58,8 @@ public class _1604ToCatchASpy extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204576) {
 				if (env.getDialogId() == 1009)
@@ -84,7 +79,6 @@ public class _1604ToCatchASpy extends QuestHandler {
 		if (qs == null || qs.getStatus() != QuestStatus.START || qs.getQuestVars().getQuestVars() != 0) {
 			return false;
 		}
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
@@ -92,13 +86,11 @@ public class _1604ToCatchASpy extends QuestHandler {
 		if (targetId != 212615) {
 			return false;
 		}
-
 		if (MathUtil.getDistance(env.getVisibleObject(), 717.78f, 623.50f, 130) < 8) {
 			((Npc) env.getVisibleObject()).getController().onDie(player);
 			qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 			qs.setStatus(QuestStatus.REWARD);
 			updateQuestStatus(env);
-
 		}
 		return false;
 	}

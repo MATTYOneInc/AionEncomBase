@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2843OperationAnnihilate extends QuestHandler {
 
 	private final static int questId = 2843;
-
 	public _2843OperationAnnihilate() {
 		super(questId);
 	}
@@ -100,9 +99,7 @@ public class _2843OperationAnnihilate extends QuestHandler {
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
-
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.getStatus() == QuestStatus.COMPLETE) {
 			if (env.getTargetId() == 268081) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -115,7 +112,7 @@ public class _2843OperationAnnihilate extends QuestHandler {
 			if (env.getTargetId() == 268081)
 				return true;
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD && env.getTargetId() == 268081) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD && env.getTargetId() == 268081) {
 			qs.setQuestVarById(0, 0);
 			updateQuestStatus(env);
 			return sendQuestEndDialog(env);
@@ -128,7 +125,6 @@ public class _2843OperationAnnihilate extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() != QuestStatus.START)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			if (player.getCommonData().getPosition().getMapId() == 300140000) {
 				if (qs.getQuestVarById(0) < 79) {

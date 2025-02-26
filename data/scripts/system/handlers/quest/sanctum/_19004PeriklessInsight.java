@@ -33,7 +33,6 @@ public class _19004PeriklessInsight extends QuestHandler {
 
 	private final static int questId = 19004;
 	private final static int[] npcs = { 203757, 203752, 203701, 798500 };
-
 	public _19004PeriklessInsight() {
 		super(questId);
 	}
@@ -51,10 +50,9 @@ public class _19004PeriklessInsight extends QuestHandler {
 		Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203757) { // Perikles
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				}
 				else {
@@ -65,7 +63,7 @@ public class _19004PeriklessInsight extends QuestHandler {
 		else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
 			if (targetId == 203752) { // Jucleas
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						if (var == 0) {
 							return sendQuestDialog(env, 1352);
@@ -77,7 +75,7 @@ public class _19004PeriklessInsight extends QuestHandler {
 				}
 			}
 			else if (targetId == 203701) { // Lavirintos
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						if (var == 1) {
 							return sendQuestDialog(env, 1693);
@@ -89,7 +87,7 @@ public class _19004PeriklessInsight extends QuestHandler {
 				}
 			}
 			else if (targetId == 798500) { // Mysteris
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						if (var == 2) {
 							return sendQuestDialog(env, 2375);
@@ -102,7 +100,7 @@ public class _19004PeriklessInsight extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798500) { // Mysteris
 				return sendQuestEndDialog(env);
 			}

@@ -23,12 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13942Gate_Crasher extends QuestHandler
-{
+public class _13942Gate_Crasher extends QuestHandler {
+
     private final static int questId = 13942;
-	
 	private final static int[] LDF5Fortress7011Door = {252116, 252117};
-	
     public _13942Gate_Crasher() {
         super(questId);
     }
@@ -55,18 +53,8 @@ public class _13942Gate_Crasher extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 802431) { //Alphioh.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 1) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 802431) { //Alphioh.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25595Attack_Iluma extends QuestHandler
-{
+public class _25595Attack_Iluma extends QuestHandler {
+
 	private final static int questId = 25595;
-	
 	public _25595Attack_Iluma() {
 		super(questId);
 	}
@@ -71,7 +70,7 @@ public class _25595Attack_Iluma extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806116) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

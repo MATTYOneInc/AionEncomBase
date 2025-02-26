@@ -49,7 +49,8 @@ public class _25674Light_Armored_Archon_Carrier_Support extends QuestHandler {
 				closeDialogWindow(env);
 				return true;
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806116) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -67,7 +68,8 @@ public class _25674Light_Armored_Archon_Carrier_Support extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806116) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

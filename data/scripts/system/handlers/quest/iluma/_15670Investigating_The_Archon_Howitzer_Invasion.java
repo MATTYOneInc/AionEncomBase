@@ -58,7 +58,8 @@ public class _15670Investigating_The_Archon_Howitzer_Invasion extends QuestHandl
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			if (targetId == 806093) {
 				switch (env.getDialog()) {
@@ -82,8 +83,6 @@ public class _15670Investigating_The_Archon_Howitzer_Invasion extends QuestHandl
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			} if (targetId == 703434) { //LF6_FOBJ_Od_Track_Q15670_A
@@ -124,7 +123,8 @@ public class _15670Investigating_The_Archon_Howitzer_Invasion extends QuestHandl
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806114) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

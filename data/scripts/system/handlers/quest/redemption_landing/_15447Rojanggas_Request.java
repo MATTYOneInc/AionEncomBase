@@ -26,10 +26,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15447Rojanggas_Request extends QuestHandler
-{
+public class _15447Rojanggas_Request extends QuestHandler {
+
     private final static int questId = 15447;
-	
     public _15447Rojanggas_Request() {
         super(questId);
     }
@@ -51,7 +50,7 @@ public class _15447Rojanggas_Request extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805388) { //Rojangess.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

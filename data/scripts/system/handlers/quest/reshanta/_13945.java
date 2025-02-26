@@ -45,7 +45,6 @@ public class _13945 extends QuestHandler {
         final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 835722) { 
 				switch (env.getDialog()) {
@@ -60,25 +59,7 @@ public class _13945 extends QuestHandler {
 				}
 			}
 		}
-		if (qs.getStatus() == QuestStatus.START) {
- 		    int var = qs.getQuestVarById(0);
-			if (targetId == 836179) {
-				switch (env.getDialog()) {
-                    case START_DIALOG: {
-                        if (var == 0) {
-                            return sendQuestDialog(env, 1011);
-                        }
-					} case SELECT_ACTION_1012: {
-                        if (var == 0) {
-                            return sendQuestDialog(env, 1012);
-                        }
-					} case STEP_TO_1: {
-						changeQuestStep(env, 0, 1, false);
-						return closeDialogWindow(env);
-					}
-				}
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835722) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -31,7 +31,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2841CleansingtheAsteriaChamber extends QuestHandler {
 
 	private final static int questId = 2841;
-
 	public _2841CleansingtheAsteriaChamber() {
 		super(questId);
 	}
@@ -59,7 +58,6 @@ public class _2841CleansingtheAsteriaChamber extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.getStatus() == QuestStatus.COMPLETE) {
 			if (targetId == 271068) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -72,7 +70,7 @@ public class _2841CleansingtheAsteriaChamber extends QuestHandler {
 			if (targetId == 271068)
 				return true;
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD && targetId == 271068) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD && targetId == 271068) {
 			qs.setQuestVarById(0, 0);
 			updateQuestStatus(env);
 			return sendQuestEndDialog(env);
@@ -85,7 +83,6 @@ public class _2841CleansingtheAsteriaChamber extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() != QuestStatus.START)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			if (player.getCommonData().getPosition().getMapId() == 300050000) {
 				if (qs.getQuestVarById(0) < 43) {

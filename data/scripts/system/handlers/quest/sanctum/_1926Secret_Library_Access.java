@@ -25,11 +25,10 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1926Secret_Library_Access extends QuestHandler
-{
+public class _1926Secret_Library_Access extends QuestHandler {
+
 	public static final int questId = 1926;
 	private final static int[] npcs = {203894};
-	
 	public _1926Secret_Library_Access() {
 		super(questId);
 	}

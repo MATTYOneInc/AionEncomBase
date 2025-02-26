@@ -18,12 +18,10 @@ package quest.heiron;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author Balthazar
@@ -86,14 +84,12 @@ public class _1643TheStarOfHeiron extends QuestHandler {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							removeQuestItem(env, 182201764, 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
-							return true;
+                            return closeDialogWindow(env);
 						}
 						case SET_REWARD: {
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
-							return true;
+                            return closeDialogWindow(env);
 						}
 					}
 				}
@@ -101,20 +97,19 @@ public class _1643TheStarOfHeiron extends QuestHandler {
 					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (qs.getQuestVarById(0) == 1) {
-								return sendQuestDialog(env, 1011);
+								return sendQuestDialog(env, 1352);
 							}
 						}
-						case STEP_TO_1: {
+						case STEP_TO_2: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                            return closeDialogWindow(env);
 						}
 					}
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204545) {
 				if (env.getDialogId() == 1009)
 					return sendQuestDialog(env, 5);
@@ -129,11 +124,9 @@ public class _1643TheStarOfHeiron extends QuestHandler {
 	public boolean onEnterWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null) {
 			return false;
 		}
-
 		if (qs.getStatus() == QuestStatus.START) {
 			if (qs.getQuestVarById(0) == 1) {
 				qs.setQuestVar(0);

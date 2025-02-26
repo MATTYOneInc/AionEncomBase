@@ -34,7 +34,7 @@ public class _2876Votan_Emergency_Orders extends QuestHandler {
 		qe.registerQuestNpc(278001).addOnQuestStart(questId); //Votan.
         qe.registerQuestNpc(278016).addOnTalkEvent(questId); //Lisya.
         qe.registerQuestNpc(278017).addOnTalkEvent(questId); //Semotor.
-		qe.registerQuestNpc(278001).addOnTalkEndEvent(questId); //Votan.
+		qe.registerQuestNpc(278001).addOnTalkEvent(questId); //Votan.
     }
 	
     @Override
@@ -57,7 +57,8 @@ public class _2876Votan_Emergency_Orders extends QuestHandler {
 					}
 				}
 			}
-		} if (qs.getStatus() == QuestStatus.START) {
+		} 
+        if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 278016) { //Lisya.
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -84,7 +85,7 @@ public class _2876Votan_Emergency_Orders extends QuestHandler {
 				}
 			}
 		} 
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278001) { //Votan.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

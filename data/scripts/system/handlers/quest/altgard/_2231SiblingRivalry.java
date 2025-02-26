@@ -27,10 +27,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /**
  * @author Akiro
  */
+
 public class _2231SiblingRivalry extends QuestHandler {
 
 	private final static int questId = 2231;
-
 	public _2231SiblingRivalry() {
 		super(questId);
 	}
@@ -52,8 +52,8 @@ public class _2231SiblingRivalry extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		}
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (targetId == 203620) {
-			if (qs == null) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		    if (targetId == 203620) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				}
@@ -70,9 +70,6 @@ public class _2231SiblingRivalry extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					return defaultCloseDialog(env, 0, 1); // 1
 				}
-				else {
-					return sendQuestStartDialog(env);
-				}
 			}
 		}
 		else if (targetId == 203612) {
@@ -83,27 +80,23 @@ public class _2231SiblingRivalry extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					return defaultCloseDialog(env, 1, 2); // 2
 				}
-				else {
-					return sendQuestStartDialog(env);
-				}
 			}
 		}
 		else if (targetId == 203610) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 2375);
 				}
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
+				else if (env.getDialogId() == 1009) {
 					qs.setQuestVar(2);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
-				else {
-					return sendQuestEndDialog(env);
-				}
 			}
+		    else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+				return sendQuestEndDialog(env);
+		    }
 		}
 		return false;
 	}

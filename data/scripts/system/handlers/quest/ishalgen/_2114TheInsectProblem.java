@@ -32,7 +32,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _2114TheInsectProblem extends QuestHandler {
 
 	private final static int questId = 2114;
-
 	public _2114TheInsectProblem() {
 		super(questId);
 	}
@@ -101,14 +100,11 @@ public class _2114TheInsectProblem extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs.getStatus() != QuestStatus.START)
-			return false;
 		switch (targetId) {
 			case 210734:
 				if (var >= 1 && var < 10) {
@@ -119,7 +115,6 @@ public class _2114TheInsectProblem extends QuestHandler {
 				else if (var == 10) {
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return true;
 				}
 			case 210380:
@@ -132,7 +127,6 @@ public class _2114TheInsectProblem extends QuestHandler {
 				else if (var == 20) {
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return true;
 				}
 		}

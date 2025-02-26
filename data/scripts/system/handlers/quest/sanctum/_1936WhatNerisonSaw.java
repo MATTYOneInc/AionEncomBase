@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1936WhatNerisonSaw extends QuestHandler {
 
 	private final static int questId = 1936;
-
 	public _1936WhatNerisonSaw() {
 		super(questId);
 	}
@@ -54,8 +53,8 @@ public class _1936WhatNerisonSaw extends QuestHandler {
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (targetId == 203833) {
-			if (qs == null) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		   if (targetId == 203833) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else
@@ -63,18 +62,18 @@ public class _1936WhatNerisonSaw extends QuestHandler {
 			}
 		}
 		else if (targetId == 204573) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START)
+			if (qs != null && qs.getStatus() == QuestStatus.START) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
+				else if (env.getDialogId() == 1009) {
 					qs.setQuestVar(1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
-				else
-					return sendQuestEndDialog(env);
+			}
+			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;

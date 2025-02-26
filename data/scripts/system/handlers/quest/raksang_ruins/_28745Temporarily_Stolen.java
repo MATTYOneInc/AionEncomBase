@@ -25,10 +25,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28745Temporarily_Stolen extends QuestHandler
-{
+public class _28745Temporarily_Stolen extends QuestHandler {
+
 	private static final int questId = 28745;
-	
 	public _28745Temporarily_Stolen() {
 		super(questId);
 	}
@@ -62,7 +61,6 @@ public class _28745Temporarily_Stolen extends QuestHandler
 			}
 		} else if (targetId == 702958) {
 			if (dialog == QuestDialog.USE_OBJECT) {
-				closeDialogWindow(env);
 				return true;
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
@@ -72,12 +70,10 @@ public class _28745Temporarily_Stolen extends QuestHandler
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
-					} case FINISH_DIALOG: {
-						return sendQuestEndDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804732) {
 				return sendQuestEndDialog(env);
 			}

@@ -30,6 +30,7 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1582ThePriestsNightmare extends QuestHandler {
 
 	private final static int questId = 1582;
+	private int reward;
 	public _1582ThePriestsNightmare() {
 		super(questId);
 	}
@@ -97,10 +98,18 @@ public class _1582ThePriestsNightmare extends QuestHandler {
 						}
 						case STEP_TO_3: {
 							if (qs.getQuestVarById(0) == 2) {
-								qs.setQuestVar(2);
-								qs.setStatus(QuestStatus.REWARD);
-								updateQuestStatus(env);
-								return closeDialogWindow(env);
+						        reward = 0;
+					            qs.setStatus(QuestStatus.REWARD);
+					            updateQuestStatus(env);
+					            return closeDialogWindow(env);
+							}
+						}
+						case STEP_TO_4: {
+							if (qs.getQuestVarById(0) == 2) {
+						        reward = 1;
+					            qs.setStatus(QuestStatus.REWARD);
+					            updateQuestStatus(env);
+					            return closeDialogWindow(env);
 							}
 						}
 					}
@@ -109,8 +118,8 @@ public class _1582ThePriestsNightmare extends QuestHandler {
 		}
 		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 700196) {
-				return sendQuestEndDialog(env);
-			}
+				return sendQuestEndDialog(env, reward);
+            }
 		}
 		return false;
 	}

@@ -65,7 +65,7 @@
 	<!-- [Group] Unfortunate Baba Hun (Asmodians Only) -->
 	<monster_hunt id="4213" start_npc_ids="204792">
 		<monster npc_ids="215032" var="0" end_var="4"/>
-		<monster npc_ids="215038" var="1" end_var="4"/>
+		<monster npc_ids="215410" var="1" end_var="4"/>
 	</monster_hunt>
 	<!-- [Group] Black Cloud Ledgers (Asmodians Only) -->
 	<item_collecting id="4214" start_npc_ids="805843"/>

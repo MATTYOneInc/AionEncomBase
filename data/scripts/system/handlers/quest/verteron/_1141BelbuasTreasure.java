@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1141BelbuasTreasure extends QuestHandler {
 
 	private final static int questId = 1141;
-
 	public _1141BelbuasTreasure() {
 		super(questId);
 	}
@@ -47,7 +46,6 @@ public class _1141BelbuasTreasure extends QuestHandler {
 		Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 730001) { // Nola
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -69,7 +67,7 @@ public class _1141BelbuasTreasure extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 700122) { // Belbua's Wine Barrel
 				return sendQuestEndDialog(env);
 			}

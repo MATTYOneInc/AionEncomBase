@@ -19,18 +19,15 @@ package quest.reshanta;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 public class _2722TheComfortsofHome extends QuestHandler {
 
 	private final static int questId = 2722;
-
 	public _2722TheComfortsofHome() {
 		super(questId);
 	}
@@ -56,7 +53,6 @@ public class _2722TheComfortsofHome extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 278047) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -73,8 +69,7 @@ public class _2722TheComfortsofHome extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					qs.setQuestVarById(0, var + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			}
 			else if (targetId == 278126) {
@@ -83,8 +78,7 @@ public class _2722TheComfortsofHome extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
 					qs.setQuestVarById(0, var + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			}
 			else if (targetId == 278043) {
@@ -93,8 +87,7 @@ public class _2722TheComfortsofHome extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_3) {
 					qs.setQuestVarById(0, var + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			}
 			else if (targetId == 278032) {
@@ -103,8 +96,7 @@ public class _2722TheComfortsofHome extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_4) {
 					qs.setQuestVarById(0, var + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			}
 			else if (targetId == 278037) {
@@ -113,8 +105,7 @@ public class _2722TheComfortsofHome extends QuestHandler {
 				else if (env.getDialogId() == 10004) {
 					qs.setQuestVarById(0, var + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			}
 			else if (targetId == 278040) {
@@ -123,8 +114,7 @@ public class _2722TheComfortsofHome extends QuestHandler {
 				else if (env.getDialogId() == 10005) {
 					qs.setQuestVarById(0, var + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			}
 			else if (targetId == 278068) {
@@ -133,8 +123,7 @@ public class _2722TheComfortsofHome extends QuestHandler {
 				else if (env.getDialogId() == 10006) {
 					qs.setQuestVarById(0, var + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			}
 			else if (targetId == 278066) {
@@ -142,16 +131,14 @@ public class _2722TheComfortsofHome extends QuestHandler {
 					return sendQuestDialog(env, 3398);
 
 				else if (env.getDialogId() == 10255) {
-					if (!giveQuestItem(env, 182205654, 1))
-						return true;
+					giveQuestItem(env, 182205654, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD && targetId == 278047) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD && targetId == 278047) {
 			return sendQuestEndDialog(env);
 		}
 		return false;

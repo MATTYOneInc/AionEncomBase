@@ -9,11 +9,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.services.item.ItemService;
 
-public class _3074Dangerous_Probability extends QuestHandler
-{
+public class _3074Dangerous_Probability extends QuestHandler {
+
 	private final static int questId = 3074;
 	private int reward = -1;
-	
 	public _3074Dangerous_Probability() {
 		super(questId);
 	}
@@ -76,7 +75,7 @@ public class _3074Dangerous_Probability extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798193) { //Nagrunerk.
 				if (dialog == QuestDialog.SELECT_NO_REWARD) {
 					switch (reward) {

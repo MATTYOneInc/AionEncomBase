@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13952Logion_Journal extends QuestHandler
-{
+public class _13952Logion_Journal extends QuestHandler {
+
 	private final static int questId = 13952;
-	
 	public _13952Logion_Journal() {
 		super(questId);
 	}
@@ -44,9 +43,7 @@ public class _13952Logion_Journal extends QuestHandler
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			return false;
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806582) {
 				removeQuestItem(env, 182216177, 1);
 				return sendQuestEndDialog(env);

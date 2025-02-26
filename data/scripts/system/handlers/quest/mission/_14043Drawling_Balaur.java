@@ -24,15 +24,15 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.utils.PacketSendUtility;
+import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14043Drawling_Balaur extends QuestHandler
-{
-    private final static int questId = 14043;
+public class _14043Drawling_Balaur extends QuestHandler {
 
+    private final static int questId = 14043;
     public _14043Drawling_Balaur() {
         super(questId);
     }
@@ -104,7 +104,7 @@ public class _14043Drawling_Balaur extends QuestHandler
                         return sendQuestDialog(env, 1352);
                     } else if (var == 4) {
                         return sendQuestDialog(env, 2375);
-                    } else if (var == 6) {
+                    } else if (var == 6 || var == 8) {
                         return sendQuestDialog(env, 3057);
                     }
                 case STEP_TO_5:
@@ -118,7 +118,7 @@ public class _14043Drawling_Balaur extends QuestHandler
                     }
                     return false;
                 case STEP_TO_7:
-                    if (var == 6) {
+                   if (var == 6 || var == 8) {
                         qs.setStatus(QuestStatus.REWARD);
                         updateQuestStatus(env);
                         PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
@@ -134,7 +134,8 @@ public class _14043Drawling_Balaur extends QuestHandler
                     }
                 case STEP_TO_11:
                     if (var == 1 && player.getInventory().tryDecreaseKinah(20000)) {
-                        qs.setQuestVarById(0, var + 1);
+						giveQuestItem(env, 182215351, 1);
+                        qs.setQuestVarById(0, var + 6);
                         updateQuestStatus(env);
                         PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
                         return true;
@@ -142,7 +143,7 @@ public class _14043Drawling_Balaur extends QuestHandler
                         return sendQuestDialog(env, 1355);
                     }
                 case STEP_TO_12:
-                    if (var == 2) {
+                    if (var == 1) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
                         PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
@@ -174,9 +175,7 @@ public class _14043Drawling_Balaur extends QuestHandler
                     return false;
                 case STEP_TO_4:
                     if (var == 3) {
-                        if (!giveQuestItem(env, 182215352, 1)) {
-                            return true;
-                        }
+                        giveQuestItem(env, 182215352, 1);
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
                         PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
@@ -188,22 +187,24 @@ public class _14043Drawling_Balaur extends QuestHandler
         return false;
     }
 	
-    @Override
-    public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
-        final Player player = env.getPlayer();
-        final int id = item.getItemTemplate().getTemplateId();
-        final int itemObjId = item.getObjectId();
-        if (id != 182215351) {
-            return HandlerResult.UNKNOWN;
-        }
+	@Override
+    public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
+		final Player player = env.getPlayer();
+		final int id = item.getItemTemplate().getTemplateId();
+		final int itemObjId = item.getObjectId();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        if (qs == null) {
-            return HandlerResult.FAILED;
-        }
-        PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 1, 1, 0), true);
-        removeQuestItem(env, 182215351, 1);
-        qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
-        updateQuestStatus(env);
+        if (qs != null && qs.getStatus() == QuestStatus.START) {
+        PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
+        ThreadPoolManager.getInstance().schedule(new Runnable() {
+            @Override
+            public void run() {
+                PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
+                removeQuestItem(env, 182215351, 1);
+                qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+				updateQuestStatus(env);
+			    }
+		    }, 3000);
+        } 
         return HandlerResult.SUCCESS;
     }
 }

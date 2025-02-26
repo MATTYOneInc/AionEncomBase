@@ -384,7 +384,7 @@
     <spawn npc_id="700924">
       <spot x="587.671082" y="774.231995" z="215.59996" entity_id="5" />
     </spawn>
-    <spawn npc_id="700965">
+    <spawn npc_id="700939">
       <spot x="657.200745" y="585.777771" z="199.04715" h="113" />
     </spawn>
     <spawn npc_id="217135">

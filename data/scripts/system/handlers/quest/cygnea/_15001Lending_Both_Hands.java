@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15001Lending_Both_Hands extends QuestHandler
-{
+public class _15001Lending_Both_Hands extends QuestHandler {
+
     private final static int questId = 15001;
-	
     public _15001Lending_Both_Hands() {
         super(questId);
     }
@@ -54,16 +53,8 @@ public class _15001Lending_Both_Hands extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804698) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 2375);
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 5, 6, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804698) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

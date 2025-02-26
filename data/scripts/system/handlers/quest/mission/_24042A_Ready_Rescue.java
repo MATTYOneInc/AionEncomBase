@@ -42,7 +42,7 @@ public class _24042A_Ready_Rescue extends QuestHandler {
         for (int npc : npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-        qe.registerQuestNpc(278019).addOnTalkEndEvent(questId);  
+        qe.registerQuestNpc(278019).addOnTalkEvent(questId);  
     }
 	
     @Override

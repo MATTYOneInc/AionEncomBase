@@ -25,10 +25,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13951An_Undelivered_Letter extends QuestHandler
-{
+public class _13951An_Undelivered_Letter extends QuestHandler {
+
 	private final static int questId = 13951;
-	
 	public _13951An_Undelivered_Letter() {
 		super(questId);
 	}
@@ -57,7 +56,8 @@ public class _13951An_Undelivered_Letter extends QuestHandler
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806582) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

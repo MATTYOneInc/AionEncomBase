@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _18974Protect_Erivale extends QuestHandler
-{
+public class _18974Protect_Erivale extends QuestHandler {
+
     private final static int questId = 18974;
-	
     public _18974Protect_Erivale() {
         super(questId);
     }
@@ -52,18 +51,8 @@ public class _18974Protect_Erivale extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 805215) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 6) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 6, 7, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805215) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

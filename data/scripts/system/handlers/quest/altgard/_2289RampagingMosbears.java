@@ -29,7 +29,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2289RampagingMosbears extends QuestHandler {
 
 	private static final int questId = 2289;
-
 	public _2289RampagingMosbears() {
 		super(questId);
 	}
@@ -48,12 +47,10 @@ public class _2289RampagingMosbears extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203616) { // Gefion
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				}
 				else {
@@ -65,7 +62,7 @@ public class _2289RampagingMosbears extends QuestHandler {
 			int var = qs.getQuestVarById(0);
 			switch (targetId) {
 				case 203616: { // Gefion
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case STEP_TO_1: {
 							return sendQuestSelectionDialog(env);
 						}
@@ -87,14 +84,11 @@ public class _2289RampagingMosbears extends QuestHandler {
 						case CHECK_COLLECTED_ITEMS: {
 							return checkQuestItems(env, 7, 7, true, 5, 2120); // reward
 						}
-						case FINISH_DIALOG: {
-							return defaultCloseDialog(env, 7, 7);
-						}
 					}
 					break;
 				}
 				case 203618: { // Skanin
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 6) {
 								return sendQuestDialog(env, 1693);
@@ -107,7 +101,7 @@ public class _2289RampagingMosbears extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203616) { // Gefion
 				return sendQuestEndDialog(env);
 			}

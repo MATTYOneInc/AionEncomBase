@@ -48,8 +48,8 @@ public class _30111CenterOfTheWeb extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		if (targetId == 799335) { // Sulbanyer
-			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		    if (targetId == 799335) { // Sulbanyer
 				switch (dialog) {
 					case START_DIALOG:
 						return sendQuestDialog(env, 1011);
@@ -65,20 +65,8 @@ public class _30111CenterOfTheWeb extends QuestHandler {
 				}
 			}
 		}
-        if (qs == null || qs.getStatus() == QuestStatus.START) {
-            switch (targetId) {
-			case 799335: 
-			    switch (dialog) {	 
-                case START_DIALOG: {
-				     return sendQuestDialog(env, 1352);
-                }
-                case SELECT_REWARD: {
-				    return sendQuestEndDialog(env);
-                    }
-                }  
-            }
-        }
-        if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+		    if (targetId == 799335) // Sulbanyer
 			return sendQuestEndDialog(env);
 		}
 		return false;  

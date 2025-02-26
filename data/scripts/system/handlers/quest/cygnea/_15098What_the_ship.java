@@ -23,22 +23,15 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15098What_the_ship extends QuestHandler
-{
+public class _15098What_the_ship extends QuestHandler {
+
 	public static final int questId = 15098;
-	
 	public _15098What_the_ship() {
 		super(questId);
 	}
-	/*
-	@Override
-	public boolean onLvlUpEvent(QuestEnv env) {
-		return defaultOnLvlUpEvent(env);
-	}
-	*/
+
 	@Override
 	public void register() {
-		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(804964).addOnQuestStart(questId); //LF5_Ship_ZoneTeleport_L.
 		qe.registerQuestNpc(804964).addOnTalkEvent(questId); //LF5_Ship_ZoneTeleport_L.
 		qe.registerQuestNpc(804964).addOnTalkEvent(questId); //LF5_Ship_ZoneTeleport_L.
@@ -76,7 +69,7 @@ public class _15098What_the_ship extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804964) { //LF5_Ship_ZoneTeleport_L.
 			    return sendQuestEndDialog(env);
 		    }

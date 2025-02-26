@@ -29,7 +29,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _14200EternalFlames extends QuestHandler {
 
     private final static int questId = 14200;
-
     public _14200EternalFlames() {
         super(questId);
     }
@@ -94,7 +93,7 @@ public class _14200EternalFlames extends QuestHandler {
                 }
             }
         }
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 798155) { // Atropos
                 return sendQuestEndDialog(env);
             }

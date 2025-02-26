@@ -25,11 +25,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13967A_Fragment_Fallen_At_The_Cave extends QuestHandler
-{
+public class _13967A_Fragment_Fallen_At_The_Cave extends QuestHandler {
+
     private final static int questId = 13967;
 	private final static int[] npcs = {835217};
-	
     public _13967A_Fragment_Fallen_At_The_Cave() {
         super(questId);
     }
@@ -49,7 +48,7 @@ public class _13967A_Fragment_Fallen_At_The_Cave extends QuestHandler
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835217) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

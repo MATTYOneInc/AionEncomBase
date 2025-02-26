@@ -63,7 +63,7 @@
     <spawn npc_id="804186" respawn_time="1">
       <spot x="497.352783" y="401.241241" z="126.78955" h="0" />
     </spawn>
-    <spawn npc_id="731842" respawn_time="60">
+    <spawn npc_id="730425" respawn_time="60">
       <spot x="459.836578" y="251.627304" z="127.13356" h="0" entity_id="1601" />
     </spawn>
     <spawn npc_id="205309" respawn_time="60">

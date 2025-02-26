@@ -47,7 +47,7 @@ public class _4217The_Imprisoned_Executor extends QuestHandler {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
         } 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 798335) { //Nasuri.
+			if (targetId == 798336) {
                 switch (env.getDialog()) {
 				case START_DIALOG: {
 					return sendQuestDialog(env, 4762);
@@ -62,7 +62,7 @@ public class _4217The_Imprisoned_Executor extends QuestHandler {
 			return false;
 		  }
        }
-         if (qs.getStatus() == QuestStatus.START) {
+       if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 798336) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -82,7 +82,8 @@ public class _4217The_Imprisoned_Executor extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204773) {
 				return sendQuestEndDialog(env);
 			}

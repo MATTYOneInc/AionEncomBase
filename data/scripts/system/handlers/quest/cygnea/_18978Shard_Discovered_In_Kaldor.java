@@ -67,7 +67,7 @@ public class _18978Shard_Discovered_In_Kaldor extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805215) {
 				return sendQuestEndDialog(env);
 			}

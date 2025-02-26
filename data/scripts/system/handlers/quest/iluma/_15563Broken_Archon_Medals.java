@@ -59,7 +59,7 @@ public class _15563Broken_Archon_Medals extends QuestHandler {
                 }
 			}
         }
-		if (qs.getStatus() == QuestStatus.START) {
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 806114: { //Ilisia.
 					switch (dialog) {
@@ -73,7 +73,7 @@ public class _15563Broken_Archon_Medals extends QuestHandler {
 				}
 			}
 		}
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 806114) { //Ilisia.
 			    return sendQuestEndDialog(env);
 		    }

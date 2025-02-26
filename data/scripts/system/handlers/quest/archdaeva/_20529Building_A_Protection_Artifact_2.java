@@ -46,7 +46,6 @@ public class _20529Building_A_Protection_Artifact_2 extends QuestHandler {
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-        qe.registerQuestNpc(806079).addOnTalkEndEvent(questId);  
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);

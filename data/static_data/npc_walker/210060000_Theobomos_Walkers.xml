@@ -2499,7 +2499,7 @@
     <routestep step="50" x="2058.275879" y="854.799561" z="40.199974" />
     <routestep step="51" x="2065.031250" y="843.272095" z="40.199974" />
   </walker_template>
-  <walker_template route_id="NPCPathLF2B_NPC_Town3" pool="2" formation="OFFSET" offsetsx="0,0" offsetsy="0,-2">
+  <walker_template route_id="NPCPathLF2B_NPC_Town3" pool="3" formation="OFFSET" offsetsx="0,0" offsetsy="0,-2">
     <routestep step="1" x="456.753235" y="1246.588379" z="130.198975" />
     <routestep step="2" x="456.613983" y="1241.595093" z="130.225769" />
     <routestep step="3" x="455.936981" y="1235.133789" z="130.169495" />
@@ -4190,7 +4190,7 @@
     <routestep step="15" x="535.241577" y="168.101151" z="169.908295" />
     <routestep step="16" x="523.033936" y="167.638168" z="172.168320" />
   </walker_template>
-  <walker_template route_id="LF2B_NPCPath_Sanctuary_Guard_F1" pool="3" formation="OFFSET" offsetsx="0,-1,1" offsetsy="0,-1,-1">
+  <walker_template route_id="LF2B_NPCPath_Sanctuary_Guard_F1" pool="4" formation="OFFSET" offsetsx="0,-1,1" offsetsy="0,-1,-1">
     <routestep step="1" x="2276.321777" y="2214.392090" z="63.079247" />
     <routestep step="2" x="2272.211426" y="2212.011475" z="63.079247" />
     <routestep step="3" x="2269.476074" y="2209.650391" z="63.079247" />

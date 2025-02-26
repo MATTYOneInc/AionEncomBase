@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1647DressingUpForBollvig extends QuestHandler {
 
 	private final static int questId = 1647;
-
 	public _1647DressingUpForBollvig() {
 		super(questId);
 	}
@@ -48,7 +47,6 @@ public class _1647DressingUpForBollvig extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 790019) { // Zetus
 				switch (dialog) {
@@ -65,18 +63,16 @@ public class _1647DressingUpForBollvig extends QuestHandler {
 			if (targetId == 700272) { // Suspicious Stone Statue
 				if (dialog == QuestDialog.USE_OBJECT) {
 					// Wearing Stenon Blouse and Stenon Skirt
-					if (!player.getEquipment().getEquippedItemsByItemId(110100150).isEmpty()
-						&& !player.getEquipment().getEquippedItemsByItemId(113100144).isEmpty()) {
+					if (!player.getEquipment().getEquippedItemsByItemId(110100150).isEmpty() && !player.getEquipment().getEquippedItemsByItemId(113100144).isEmpty()) {
 						// Having Myanee's Flute
 						if (player.getInventory().getItemCountByItemId(182201783) > 0) {
-							// TODO: movie
 							return useQuestObject(env, 0, 0, true, false); // reward
 						}
 					}
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 790019) { // Zetus
 				switch (dialog) {
 					case START_DIALOG: {

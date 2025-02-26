@@ -24,10 +24,9 @@ import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3745Asmodian_Generals_Defeated extends QuestHandler
-{
+public class _3745Asmodian_Generals_Defeated extends QuestHandler {
+
 	private final static int questId = 3745;
-	
 	public _3745Asmodian_Generals_Defeated() {
 		super(questId);
 	}
@@ -63,7 +62,8 @@ public class _3745Asmodian_Generals_Defeated extends QuestHandler
 				        return closeDialogWindow(env);
 					}
 				}
-			} if (qs.getStatus() == QuestStatus.REWARD) {
+			} 
+            if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 				if (targetId == 278535) { //Maius.
 				    if (env.getDialog() == QuestDialog.START_DIALOG) {
 						return sendQuestDialog(env, 10002);

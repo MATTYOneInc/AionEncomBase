@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13953Ownerless_Balaur_Sword extends QuestHandler
-{
+public class _13953Ownerless_Balaur_Sword extends QuestHandler {
+
 	private final static int questId = 13953;
-	
 	public _13953Ownerless_Balaur_Sword() {
 		super(questId);
 	}
@@ -56,7 +55,8 @@ public class _13953Ownerless_Balaur_Sword extends QuestHandler
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806582) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

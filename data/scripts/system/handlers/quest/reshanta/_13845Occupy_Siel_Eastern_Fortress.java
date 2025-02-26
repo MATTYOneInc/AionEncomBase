@@ -26,12 +26,10 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13845Occupy_Siel_Eastern_Fortress extends QuestHandler
-{
+public class _13845Occupy_Siel_Eastern_Fortress extends QuestHandler {
+
     private final static int questId = 13845;
-	
 	private final static int[] IDAbReLowEcielE = {214744, 214745, 214746, 214747, 214748, 214749, 214750, 214751, 214803};
-	
     public _13845Occupy_Siel_Eastern_Fortress() {
         super(questId);
     }
@@ -50,19 +48,7 @@ public class _13845Occupy_Siel_Eastern_Fortress extends QuestHandler
         final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
-		if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 263597) { //Silvius.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 40) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 40, 41, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 263597) { //Silvius.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

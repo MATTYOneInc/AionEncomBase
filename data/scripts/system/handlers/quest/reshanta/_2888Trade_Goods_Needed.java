@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _2888Trade_Goods_Needed extends QuestHandler
-{
-	private final static int questId = 2888;
+public class _2888Trade_Goods_Needed extends QuestHandler {
 
+	private final static int questId = 2888;
 	public _2888Trade_Goods_Needed() {
 		super(questId);
 	}
@@ -111,7 +110,8 @@ public class _2888Trade_Goods_Needed extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278151) { //Ickulnerk.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

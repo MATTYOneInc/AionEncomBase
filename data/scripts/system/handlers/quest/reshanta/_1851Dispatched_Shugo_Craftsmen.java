@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1851Dispatched_Shugo_Craftsmen extends QuestHandler
-{
+public class _1851Dispatched_Shugo_Craftsmen extends QuestHandler {
+
 	private final static int questId = 1851;
-	
 	public _1851Dispatched_Shugo_Craftsmen() {
 		super(questId);
 	}
@@ -46,7 +45,8 @@ public class _1851Dispatched_Shugo_Craftsmen extends QuestHandler
 		int targetId = env.getTargetId();
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-		} if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		} 
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 278533) { //Rentia
             	switch (env.getDialog()) {
             		case START_DIALOG: {
@@ -60,7 +60,8 @@ public class _1851Dispatched_Shugo_Craftsmen extends QuestHandler
             		}
             	}
             }
-		} if (qs.getStatus() == QuestStatus.START) {
+		} 
+        if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 279025: { //Guuminerk
 					switch (env.getDialog()) {
@@ -85,7 +86,8 @@ public class _1851Dispatched_Shugo_Craftsmen extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278533) { //Rentia
             	switch (env.getDialog()) {
 					case START_DIALOG: {

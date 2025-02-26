@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4718Pressing_The_Attack extends QuestHandler
-{
+public class _4718Pressing_The_Attack extends QuestHandler {
+
 	private final static int questId = 4718;
-	
 	public _4718Pressing_The_Attack() {
 		super(questId);
 	}
@@ -44,9 +43,12 @@ public class _4718Pressing_The_Attack extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
+        if (qs == null) {
+            return false;
+        }
 		int var1 = qs.getQuestVarById(1);
 		int var2 = qs.getQuestVarById(2);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+		if (qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 278001) { 
 				if (dialog == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 4762);
@@ -54,7 +56,8 @@ public class _4718Pressing_The_Attack extends QuestHandler
 					return sendQuestStartDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} 
+        else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 278001) {
 				if (dialog == QuestDialog.START_DIALOG) {
 					if(qs.getQuestVarById(0) == 0) {
@@ -68,7 +71,8 @@ public class _4718Pressing_The_Attack extends QuestHandler
 					return defaultCloseDialog(env, 1, 1, true, true);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 278001) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

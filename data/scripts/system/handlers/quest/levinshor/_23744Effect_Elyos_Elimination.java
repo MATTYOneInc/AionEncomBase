@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23744Effect_Elyos_Elimination extends QuestHandler
-{
+public class _23744Effect_Elyos_Elimination extends QuestHandler {
+
 	private final static int questId = 23744;
-	
 	public _23744Effect_Elyos_Elimination() {
 		super(questId);
 	}
@@ -59,7 +58,7 @@ public class _23744Effect_Elyos_Elimination extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 832841) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

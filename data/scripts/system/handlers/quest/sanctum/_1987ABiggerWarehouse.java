@@ -7,10 +7,9 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-public class _1987ABiggerWarehouse extends QuestHandler
-{
+public class _1987ABiggerWarehouse extends QuestHandler {
+
 	private static final int questId = 1987;
-	
 	public _1987ABiggerWarehouse() {
 		super(questId);
 	}
@@ -26,19 +25,17 @@ public class _1987ABiggerWarehouse extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
-		int targetId = env.getTargetId();
-		if (qs == null) {
-			if (targetId == 203700) { //Fasimedes.
-				if (dialog == QuestDialog.START_DIALOG) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (env.getTargetId() == 203700) { //Fasimedes.
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 4762);
 				} else {
 					return sendQuestStartDialog(env);
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 203749) { //Bustant.
-				switch (dialog) {
+			if (env.getTargetId() == 203749) { //Bustant.
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 2375);
 					} case SELECT_REWARD: {
@@ -47,8 +44,8 @@ public class _1987ABiggerWarehouse extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 203749) { //Bustant.
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+			if (env.getTargetId() == 203749) { //Bustant.
 				return sendQuestEndDialog(env);
 			}
 		}

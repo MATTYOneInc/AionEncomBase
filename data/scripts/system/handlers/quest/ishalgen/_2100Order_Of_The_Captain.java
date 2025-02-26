@@ -26,10 +26,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _2100Order_Of_The_Captain extends QuestHandler
-{
+public class _2100Order_Of_The_Captain extends QuestHandler {
+
 	private final static int questId = 2100;
-	
 	public _2100Order_Of_The_Captain() {
 		super(questId);
 	}

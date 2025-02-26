@@ -117,10 +117,10 @@ public class AdmaStrongholdInstance extends GeneralInstanceHandler
 						dropItems.add(DropRegistrationService.getInstance().regDropItem(index++, player.getObjectId(), npcId, 188053083, 1)); //Tempering Solution Chest.
 					} switch (Rnd.get(1, 2)) {
 				        case 1:
-				            dropItems.add(DropRegistrationService.getInstance().regDropItem(index++, player.getObjectId(), npcId, 188054177, 1)); //Master Lanmark's Weapon Box.
+				            dropItems.add(DropRegistrationService.getInstance().regDropItem(index++, player.getObjectId(), npcId, 188054548, 1)); //Master Lanmark's Weapon Box.
 					    break;
 					    case 2:
-				            dropItems.add(DropRegistrationService.getInstance().regDropItem(index++, player.getObjectId(), npcId, 188054181, 1)); //Master Accessory Treasure Box.
+				            dropItems.add(DropRegistrationService.getInstance().regDropItem(index++, player.getObjectId(), npcId, 188053273, 1)); //Master Accessory Treasure Box.
 					    break;
 					}
 				}

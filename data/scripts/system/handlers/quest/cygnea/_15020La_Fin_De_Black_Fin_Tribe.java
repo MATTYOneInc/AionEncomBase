@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15020La_Fin_De_Black_Fin_Tribe extends QuestHandler
-{
+public class _15020La_Fin_De_Black_Fin_Tribe extends QuestHandler {
+
     private final static int questId = 15020;
-	
     public _15020La_Fin_De_Black_Fin_Tribe() {
         super(questId);
     }
@@ -52,16 +51,8 @@ public class _15020La_Fin_De_Black_Fin_Tribe extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804876) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 2375);
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 5, 6, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804876) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

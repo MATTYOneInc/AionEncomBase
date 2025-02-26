@@ -18,13 +18,11 @@ package quest.reshanta;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author Hilgert
@@ -32,7 +30,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _1724ReaperExpertise extends QuestHandler {
 
 	private final static int questId = 1724;
-
 	public _1724ReaperExpertise() {
 		super(questId);
 	}
@@ -52,9 +49,8 @@ public class _1724ReaperExpertise extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (targetId == 278519) {
-			if (qs == null) {
+			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else if (env.getDialogId() == 1003) {
@@ -74,21 +70,18 @@ public class _1724ReaperExpertise extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+            		return closeDialogWindow(env);
 				}
 			}
 			else if (targetId == 278599) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1693);
 				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
-					if (!giveQuestItem(env, 182202152, 1))
-						return true;
+					giveQuestItem(env, 182202152, 1);
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+            		return closeDialogWindow(env);
 				}
 			}
 		}

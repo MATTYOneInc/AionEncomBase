@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<spawns>
+  <spawn_map map_id="210030000">
+	<!-- Tiny Arachna -->
+	<spawn npc_id="210689" respawn_time="180">
+		<spot x="1574.14" y="2394.3" z="135.633" h="111"/>
+		<spot x="1584.72" y="2360.01" z="134.876" h="17"/>
+		<spot x="1585.33" y="2356.1" z="134.917" h="9"/>
+		<spot x="1587.95" y="2456.55" z="133.656" h="71"/>
+		<spot x="1590.73" y="2363.68" z="134.534" h="33"/>
+		<spot x="1607.03" y="2428.05" z="133.75" h="112"/>
+	</spawn>
+  </spawn_map>
+</spawns>

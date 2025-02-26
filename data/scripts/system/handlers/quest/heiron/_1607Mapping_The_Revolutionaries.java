@@ -20,7 +20,6 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
@@ -59,19 +58,17 @@ public class _1607Mapping_The_Revolutionaries extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
-					QuestService.startQuest(env);
-					return closeDialogWindow(env);
+					return sendQuestStartDialog(env);
 				    }
 				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
-				    }
-			    }
-			} 
+				}
+			}
+		} 
         if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
 			int var1 = qs.getQuestVarById(1);
@@ -79,7 +76,7 @@ public class _1607Mapping_The_Revolutionaries extends QuestHandler {
 			int var3 = qs.getQuestVarById(3);
 			int var4 = qs.getQuestVarById(4);
 			if (targetId == 204578) { //Kuobe.
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					} case STEP_TO_1: {
@@ -87,16 +84,17 @@ public class _1607Mapping_The_Revolutionaries extends QuestHandler {
 					}
 				}
 			} else if (targetId == 204574) { //Finn.
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					if (var == 1 && var1 == 1 && var2 == 1 && var3 == 1 && var4 == 1) {
 						return sendQuestDialog(env, 10002);
 					}
-				} else if (dialog == QuestDialog.SELECT_REWARD) {
+				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
 					changeQuestStep(env, 1, 1, true);
 					return sendQuestDialog(env, 5);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204574) { //Finn.
 				return sendQuestEndDialog(env);
 			}

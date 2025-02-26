@@ -26,10 +26,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15673Astera_Tower_Fragment_Retrieval_Operation_Support_Officer extends QuestHandler
-{
+public class _15673Astera_Tower_Fragment_Retrieval_Operation_Support_Officer extends QuestHandler {
+
     private final static int questId = 15673;
-	
     public _15673Astera_Tower_Fragment_Retrieval_Operation_Support_Officer() {
         super(questId);
     }
@@ -58,7 +57,7 @@ public class _15673Astera_Tower_Fragment_Retrieval_Operation_Support_Officer ext
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806114) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

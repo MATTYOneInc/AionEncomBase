@@ -32,7 +32,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _2288PutYourMoneyWhereYourMouthIs extends QuestHandler {
 
 	private final static int questId = 2288;
-
 	public _2288PutYourMoneyWhereYourMouthIs() {
 		super(questId);
 	}
@@ -55,9 +54,6 @@ public class _2288PutYourMoneyWhereYourMouthIs extends QuestHandler {
 	public boolean onKillEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null) {
-			return false;
-        }
 		int var = qs.getQuestVarById(0);
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc) {
@@ -116,13 +112,14 @@ public class _2288PutYourMoneyWhereYourMouthIs extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					QuestService.questTimerStart(env, 600);
 					qs.setQuestVarById(0, 1);
+					updateQuestStatus(env);
 					return sendQuestSelectionDialog(env);
 				}
 				else {
 					return sendQuestStartDialog(env);
 				}
 			}
-			else if (qs.getStatus() == QuestStatus.REWARD) {
+			else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 				return sendQuestEndDialog(env);
 			}
 		}
@@ -133,12 +130,10 @@ public class _2288PutYourMoneyWhereYourMouthIs extends QuestHandler {
 	public boolean onQuestTimerEndEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null) {
 			return false;
         }
 		int var = qs.getQuestVarById(0);
-
 		if (qs.getStatus() == QuestStatus.START) {
 			if (var > 0 && var < 3) {
 				qs.setQuestVarById(0, 0);

@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _3721Disarm_The_Chantra_Dredgion extends QuestHandler {
 
 	private static final int questId = 3721;
-	
 	public _3721Disarm_The_Chantra_Dredgion() {
 		super(questId);
 	}
@@ -37,6 +36,7 @@ public class _3721Disarm_The_Chantra_Dredgion extends QuestHandler {
 		qe.registerQuestNpc(799069).addOnTalkEvent(questId); //Yannis.
 		qe.registerQuestNpc(700948).addOnTalkEvent(questId); //Balaur Weapon.
 		qe.registerQuestNpc(216886).addOnKillEvent(questId); //Captain Zanata.
+		qe.registerGetingItem(182202193, questId);
 	}
 	
 	@Override
@@ -67,11 +67,10 @@ public class _3721Disarm_The_Chantra_Dredgion extends QuestHandler {
 				}
 			} else if (targetId == 700948) { //Balaur Weapon.
 				if (dialog == QuestDialog.USE_OBJECT) {
-					closeDialogWindow(env);
-					return true;
+					return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798928) { //Yulia.
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
@@ -86,5 +85,10 @@ public class _3721Disarm_The_Chantra_Dredgion extends QuestHandler {
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
 		return defaultOnKillEvent(env, 216886, 2, true);
+	}
+
+	@Override
+	public boolean onGetItemEvent(QuestEnv env) {
+		return defaultOnGetItemEvent(env, 1, 2, false);
 	}
 }

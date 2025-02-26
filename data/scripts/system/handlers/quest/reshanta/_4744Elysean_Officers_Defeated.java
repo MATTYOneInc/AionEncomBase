@@ -24,10 +24,9 @@ import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4744Elysean_Officers_Defeated extends QuestHandler
-{
+public class _4744Elysean_Officers_Defeated extends QuestHandler {
+
 	private final static int questId = 4744;
-	
 	public _4744Elysean_Officers_Defeated() {
 		super(questId);
 	}
@@ -63,7 +62,8 @@ public class _4744Elysean_Officers_Defeated extends QuestHandler
 				        return closeDialogWindow(env);
 					}
 				}
-			} if (qs.getStatus() == QuestStatus.REWARD) {
+			} 
+            if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 				if (targetId == 278035) { //Konto.
 				    if (env.getDialog() == QuestDialog.START_DIALOG) {
 						return sendQuestDialog(env, 10002);

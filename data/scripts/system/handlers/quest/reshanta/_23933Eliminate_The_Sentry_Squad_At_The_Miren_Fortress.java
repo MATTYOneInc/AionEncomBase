@@ -23,12 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23933Eliminate_The_Sentry_Squad_At_The_Miren_Fortress extends QuestHandler
-{
+public class _23933Eliminate_The_Sentry_Squad_At_The_Miren_Fortress extends QuestHandler {
+
     private final static int questId = 23933;
-	
 	private final static int[] Ab1_1241Guard = {279162, 279177, 279187, 279202, 279217, 279232, 882616, 882621, 882626, 882631, 882636};
-	
     public _23933Eliminate_The_Sentry_Squad_At_The_Miren_Fortress() {
         super(questId);
     }
@@ -46,27 +44,16 @@ public class _23933Eliminate_The_Sentry_Squad_At_The_Miren_Fortress extends Ques
         final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
             if (targetId == 805403) { //Labori.
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 805403) { //Labori.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 10) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 10, 11, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805403) { //Labori.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

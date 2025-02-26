@@ -27,7 +27,6 @@ public class _23955Diversion_Tactics extends QuestHandler {
 
     private final static int questId = 23955;
 	private final static int[] IDAb1Ere1RoundDrakanFi = {247113, 247133, 247181, 246556, 246855, 246865};
-	
     public _23955Diversion_Tactics() {
         super(questId);
     }
@@ -47,7 +46,7 @@ public class _23955Diversion_Tactics extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806591) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

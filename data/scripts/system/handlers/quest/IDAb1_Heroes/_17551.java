@@ -68,25 +68,21 @@ public class _17551 extends QuestHandler {
 				}
 			}
 		}
-        if (qs.getStatus() == QuestStatus.START) {
-            int var = qs.getQuestVarById(0);   
+        if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 835782) {
                 switch (env.getDialog()) {
                     case START_DIALOG: {
-                        if (var == 1) {
-                            return sendQuestDialog(env, 1352);
-                        }
+                         return sendQuestDialog(env, 1352);
 					} case SELECT_ACTION_1353: {
-						if (var == 1) {
-							return sendQuestDialog(env, 1353);
-						}
+						 return sendQuestDialog(env, 1353);
 					} case STEP_TO_2: {
 						changeQuestStep(env, 1, 2, false);
 						return closeDialogWindow(env);
 					}
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806789) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

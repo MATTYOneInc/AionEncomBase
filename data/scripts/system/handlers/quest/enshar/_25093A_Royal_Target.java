@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25093A_Royal_Target extends QuestHandler
-{
+public class _25093A_Royal_Target extends QuestHandler {
+
     private final static int questId = 25093;
-	
     public _25093A_Royal_Target() {
         super(questId);
     }
@@ -42,26 +41,16 @@ public class _25093A_Royal_Target extends QuestHandler
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 804928) {
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804928) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 1) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804928) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);
@@ -82,7 +71,6 @@ public class _25093A_Royal_Target extends QuestHandler
                 if (qs.getQuestVarById(0) < 1) {
                     qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					qs.setStatus(QuestStatus.REWARD);
-					changeQuestStep(env, 1, 2, false);
 					updateQuestStatus(env);
                     return true;
                 }

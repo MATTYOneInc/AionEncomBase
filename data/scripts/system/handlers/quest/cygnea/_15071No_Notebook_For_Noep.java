@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15071No_Notebook_For_Noep extends QuestHandler
-{
+public class _15071No_Notebook_For_Noep extends QuestHandler {
+
 	private static final int questId = 15071;
-	
 	public _15071No_Notebook_For_Noep() {
 		super(questId);
 	}
@@ -59,7 +58,6 @@ public class _15071No_Notebook_For_Noep extends QuestHandler
 			}
 		} else if (targetId == 702739) {
 			if (dialog == QuestDialog.USE_OBJECT) {
-				closeDialogWindow(env);
 				return true;
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
@@ -69,12 +67,10 @@ public class _15071No_Notebook_For_Noep extends QuestHandler
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804709) {
 				return sendQuestEndDialog(env);
 			}

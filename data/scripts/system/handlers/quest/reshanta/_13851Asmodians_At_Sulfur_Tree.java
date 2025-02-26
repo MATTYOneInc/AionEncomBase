@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13851Asmodians_At_Sulfur_Tree extends QuestHandler
-{
+public class _13851Asmodians_At_Sulfur_Tree extends QuestHandler {
+
     private final static int questId = 13851;
-	
     public _13851Asmodians_At_Sulfur_Tree() {
         super(questId);
     }
@@ -59,7 +58,7 @@ public class _13851Asmodians_At_Sulfur_Tree extends QuestHandler
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278517) { //Nereus.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

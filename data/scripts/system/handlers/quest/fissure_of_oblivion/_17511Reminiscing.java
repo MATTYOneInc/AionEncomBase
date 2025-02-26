@@ -25,12 +25,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _17511Reminiscing extends QuestHandler
-{
+public class _17511Reminiscing extends QuestHandler {
+
     private final static int questId = 17511;
-	
 	private final static int[] npcs = {806075};
-	
 	private final static int[] IDTransformMobs1 = {
 		244458, 244459, 244460, 244461, 244462, 244463, 244464, 244465, 244466, 244467, 244468, 244469,
 		244499, 244500, 244501, 244502, 244503, 244504, 244505, 244506, 244507, 244508, 244509, 244510,
@@ -105,7 +103,7 @@ public class _17511Reminiscing extends QuestHandler
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806075) { //Weatha.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

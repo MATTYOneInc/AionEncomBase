@@ -14,14 +14,11 @@ package quest.theobomos;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -29,7 +26,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _3076Bolstering_The_Aetheric_Field extends QuestHandler {
 	
 	private final static int questId = 3076;
-	
 	public _3076Bolstering_The_Aetheric_Field() {
 		super(questId);
 	}
@@ -47,7 +43,6 @@ public class _3076Bolstering_The_Aetheric_Field extends QuestHandler {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		if (env.getVisibleObject() instanceof Npc) {
             targetId = ((Npc) env.getVisibleObject()).getNpcId();
         } if (qs == null || qs.getStatus() == QuestStatus.NONE) {
@@ -55,11 +50,10 @@ public class _3076Bolstering_The_Aetheric_Field extends QuestHandler {
                 switch (env.getDialog()) {
                     case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
-					} case ACCEPT_QUEST: {
-						QuestService.startQuest(env);
-					    return sendQuestDialog(env, 1003);
 					} case ASK_ACCEPTION: {
 					    return sendQuestDialog(env, 4);
+					} case ACCEPT_QUEST: {
+						return sendQuestStartDialog(env);
 					} case REFUSE_QUEST_SIMPLE: {
 				        return closeDialogWindow(env);
 					}
@@ -113,9 +107,9 @@ public class _3076Bolstering_The_Aetheric_Field extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 798155) { //Atropos.
-			    switch (dialog) {
+			    switch (env.getDialog()) {
 					case SELECT_REWARD: {
 						return sendQuestDialog(env, 5);
 					} default:

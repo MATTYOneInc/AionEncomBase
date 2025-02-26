@@ -25,11 +25,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23965A_Fragment_That_Appeared_At_The_Temple extends QuestHandler
-{
+public class _23965A_Fragment_That_Appeared_At_The_Temple extends QuestHandler {
+
     private final static int questId = 23965;
 	private final static int[] npcs = {835220};
-	
     public _23965A_Fragment_That_Appeared_At_The_Temple() {
         super(questId);
     }
@@ -48,7 +47,7 @@ public class _23965A_Fragment_That_Appeared_At_The_Temple extends QuestHandler
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835220) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

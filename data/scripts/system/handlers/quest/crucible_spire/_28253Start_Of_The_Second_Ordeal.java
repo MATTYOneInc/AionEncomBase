@@ -35,7 +35,7 @@ public class _28253Start_Of_The_Second_Ordeal extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(798804).addOnQuestStart(questId);
-        qe.registerQuestNpc(798804).addOnTalkEndEvent(questId);
+        qe.registerQuestNpc(798804).addOnTalkEvent(questId);
 		qe.registerQuestNpc(247245).addOnKillEvent(questId);
 	}
 	
@@ -58,7 +58,7 @@ public class _28253Start_Of_The_Second_Ordeal extends QuestHandler {
                 }
 			}
 		}
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 798804) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

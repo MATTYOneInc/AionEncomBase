@@ -25,10 +25,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _1194Reducing_Tursin_Strength extends QuestHandler
-{
-	private final static int questId = 1194;
+public class _1194Reducing_Tursin_Strength extends QuestHandler {
 
+	private final static int questId = 1194;
 	public _1194Reducing_Tursin_Strength() {
 		super(questId);
 	}
@@ -56,12 +55,10 @@ public class _1194Reducing_Tursin_Strength extends QuestHandler
 				} else
 					return sendQuestStartDialog(env);
 			}
-		} if (qs == null)
+		} 
+        if (qs == null)
 			return false;
-		if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203098) {
 				switch (env.getDialog()) {
 					case USE_OBJECT: {

@@ -18,13 +18,11 @@ package quest.cygnea;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author pralinka
@@ -33,7 +31,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _18970The_Corridor_Lore extends QuestHandler {
 
 	public static final int questId = 18970;
-
 	public _18970The_Corridor_Lore() {
 		super(questId);
 	}
@@ -50,7 +47,6 @@ public class _18970The_Corridor_Lore extends QuestHandler {
 		Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 804709) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -72,7 +68,7 @@ public class _18970The_Corridor_Lore extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if ((targetId == 804865) || (targetId == 805215)) {
 				return sendQuestEndDialog(env);
 			}

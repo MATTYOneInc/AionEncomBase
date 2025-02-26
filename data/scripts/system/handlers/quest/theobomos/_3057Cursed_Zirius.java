@@ -25,10 +25,9 @@ import com.aionemu.gameserver.utils.MathUtil;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3057Cursed_Zirius extends QuestHandler
-{
+public class _3057Cursed_Zirius extends QuestHandler {
+
 	private final static int questId = 3057;
-	
 	public _3057Cursed_Zirius() {
 		super(questId);
 	}
@@ -53,7 +52,7 @@ public class _3057Cursed_Zirius extends QuestHandler
 					return sendQuestStartDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798213) {
 				switch (dialog) {
 					case USE_OBJECT: {

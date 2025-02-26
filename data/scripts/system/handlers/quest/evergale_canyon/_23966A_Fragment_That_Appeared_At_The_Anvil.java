@@ -24,12 +24,11 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23966A_Fragment_That_Appeared_At_The_Anvil extends QuestHandler
-{
+public class _23966A_Fragment_That_Appeared_At_The_Anvil extends QuestHandler {
+
     private final static int questId = 23966;
 	private final static int[] npcs = {835220};
 	private final static int[] WindyGorgeBoss2 = {246701, 246702};
-	
     public _23966A_Fragment_That_Appeared_At_The_Anvil() {
         super(questId);
     }
@@ -49,7 +48,7 @@ public class _23966A_Fragment_That_Appeared_At_The_Anvil extends QuestHandler
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835220) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _18973Protect_Andrea extends QuestHandler
-{
+public class _18973Protect_Andrea extends QuestHandler {
+
     private final static int questId = 18973;
-	
     public _18973Protect_Andrea() {
         super(questId);
     }
@@ -53,18 +52,8 @@ public class _18973Protect_Andrea extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 805214) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 6) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 6, 7, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805214) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

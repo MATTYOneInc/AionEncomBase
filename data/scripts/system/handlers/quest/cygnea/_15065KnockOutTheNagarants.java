@@ -37,7 +37,7 @@ public class _15065KnockOutTheNagarants extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(804707).addOnQuestStart(questId);
-		qe.registerQuestNpc(804707).addOnTalkEndEvent(questId);
+		qe.registerQuestNpc(804707).addOnTalkEvent(questId);
 		for (int mob : mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
@@ -69,11 +69,10 @@ public class _15065KnockOutTheNagarants extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 804707) {
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 4762);
 				}
 				else {
@@ -81,9 +80,9 @@ public class _15065KnockOutTheNagarants extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804707) {
-				if (dialog == QuestDialog.USE_OBJECT) {
+				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				}
 				return sendQuestEndDialog(env);

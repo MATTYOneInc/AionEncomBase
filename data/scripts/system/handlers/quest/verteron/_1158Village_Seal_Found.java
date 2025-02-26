@@ -8,10 +8,9 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-public class _1158Village_Seal_Found extends QuestHandler
-{
+public class _1158Village_Seal_Found extends QuestHandler {
+
 	private final static int questId = 1158;
-	
 	public _1158Village_Seal_Found() {
 		super(questId);
 	}
@@ -53,8 +52,7 @@ public class _1158Village_Seal_Found extends QuestHandler
 					case SELECT_ACTION_1353:
 						return sendQuestDialog(env, 1353);
 					case STEP_TO_1: {
-						if (!giveQuestItem(env, 182200502, 1))
-							return true;
+						giveQuestItem(env, 182200502, 1);
 						qs.setQuestVarById(0, 1);
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
@@ -62,7 +60,7 @@ public class _1158Village_Seal_Found extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203128) {
 				switch (dialog) {
 					case USE_OBJECT:

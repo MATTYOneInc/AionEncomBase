@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25050Treasure_In_The_Deep_Sea extends QuestHandler
-{
+public class _25050Treasure_In_The_Deep_Sea extends QuestHandler {
+
     private final static int questId = 25050;
-	
     public _25050Treasure_In_The_Deep_Sea() {
         super(questId);
     }
@@ -106,7 +105,7 @@ public class _25050Treasure_In_The_Deep_Sea extends QuestHandler
                     return closeDialogWindow(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 804915) {
                 if (dialog == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 2376);

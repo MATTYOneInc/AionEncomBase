@@ -27,10 +27,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23871Reclaim_Kysis_Fortress extends QuestHandler
-{
+public class _23871Reclaim_Kysis_Fortress extends QuestHandler {
+
     private final static int questId = 23871;
-	
     public _23871Reclaim_Kysis_Fortress() {
         super(questId);
     }
@@ -59,7 +58,7 @@ public class _23871Reclaim_Kysis_Fortress extends QuestHandler
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805403) { //Labori.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -42,7 +42,7 @@ public class _14042A_Rescue_Operation extends QuestHandler {
         qe.registerOnLogOut(questId);
         qe.registerAddOnReachTargetEvent(questId);
         qe.registerAddOnLostTargetEvent(questId);
-        qe.registerQuestNpc(278517).addOnTalkEndEvent(questId); 
+        qe.registerQuestNpc(278517).addOnTalkEvent(questId); 
     }
 	
     @Override

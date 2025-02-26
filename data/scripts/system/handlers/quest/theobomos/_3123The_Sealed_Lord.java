@@ -25,10 +25,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3123The_Sealed_Lord extends QuestHandler
-{
+public class _3123The_Sealed_Lord extends QuestHandler {
+
 	private final static int questId = 3123;
-	
 	public _3123The_Sealed_Lord() {
 		super(questId);
 	}
@@ -83,7 +82,7 @@ public class _3123The_Sealed_Lord extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 237258) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25230Treasure_Box_Keys extends QuestHandler
-{
+public class _25230Treasure_Box_Keys extends QuestHandler {
+
 	private static final int questId = 25230;
-	
 	public _25230Treasure_Box_Keys() {
 		super(questId);
 	}
@@ -41,11 +40,10 @@ public class _25230Treasure_Box_Keys extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 805226) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					}
@@ -58,17 +56,15 @@ public class _25230Treasure_Box_Keys extends QuestHandler
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 805226) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 2375);
 					} case CHECK_COLLECTED_ITEMS_SIMPLE: {
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805226) {
 				return sendQuestEndDialog(env);
 			}

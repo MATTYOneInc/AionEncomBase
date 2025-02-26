@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15073Perennial_Struggles extends QuestHandler
-{
+public class _15073Perennial_Struggles extends QuestHandler {
+
     private final static int questId = 15073;
-	
     public _15073Perennial_Struggles() {
         super(questId);
     }
@@ -45,25 +44,16 @@ public class _15073Perennial_Struggles extends QuestHandler
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 804709) {
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804709) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    return sendQuestDialog(env, 2375);
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 5, 6, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804709) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

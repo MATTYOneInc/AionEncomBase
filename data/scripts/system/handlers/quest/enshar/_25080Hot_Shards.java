@@ -22,11 +22,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
+public class _25080Hot_Shards extends QuestHandler {
 
-public class _25080Hot_Shards extends QuestHandler
-{
 	private static final int questId = 25080;
-	
 	public _25080Hot_Shards() {
 		super(questId);
 	}
@@ -69,12 +67,10 @@ public class _25080Hot_Shards extends QuestHandler
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804922) {
 				return sendQuestEndDialog(env);
 			}

@@ -29,7 +29,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _3973LovesMessenger extends QuestHandler {
 
 	private final static int questId = 3973;
-	
 	public _3973LovesMessenger() {
 		super(questId);
 	}
@@ -93,7 +92,7 @@ public class _3973LovesMessenger extends QuestHandler {
 					return sendQuestEndDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 				return sendQuestEndDialog(env);
 		}
 		return false;

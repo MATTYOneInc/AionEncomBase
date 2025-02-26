@@ -68,13 +68,13 @@
 	<item_collecting id="11230" start_npc_ids="799077"/>
 	<item_collecting id="11231" start_npc_ids="799077"/>
 	<item_collecting id="11232" start_npc_ids="799077"/>
-	<item_collecting id="11268" start_npc_ids="798958"/>
+<!-- 	<item_collecting id="11268" start_npc_ids="798958"/>
 	<item_collecting id="11269" start_npc_ids="798958"/>
 	<item_collecting id="11270" start_npc_ids="798958"/>
 	<item_collecting id="11271" start_npc_ids="798958"/>
 	<item_collecting id="11272" start_npc_ids="798958"/>
 	<item_collecting id="11273" start_npc_ids="798958"/>
-	<item_collecting id="11274" start_npc_ids="798958"/>
+	<item_collecting id="11274" start_npc_ids="798958"/> -->
 	<item_collecting id="11452" start_npc_ids="798933"/>
 	<item_collecting id="11454" start_npc_ids="799070"/>
 	<item_collecting id="11457" start_npc_ids="798953" action_item_ids="700635"/>

@@ -56,7 +56,7 @@ public class _1917ALingeringMystery extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
         }
-		if (qs.getStatus() == QuestStatus.START) {
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 203075) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1352);
@@ -69,7 +69,7 @@ public class _1917ALingeringMystery extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203835)
 				return sendQuestEndDialog(env);
 		}

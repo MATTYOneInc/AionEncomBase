@@ -17,7 +17,7 @@ import com.aionemu.gameserver.world.zone.ZoneName;
  */
 public class _1573SomeTastyMushrooms extends QuestHandler {
 
-	private final static int	questId	= 1573;
+	private final static int questId = 1573;
 	public _1573SomeTastyMushrooms() {
 		super(questId);
 	}
@@ -51,10 +51,9 @@ public class _1573SomeTastyMushrooms extends QuestHandler {
 		if(env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		if(qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 730025){
-				if (dialog == QuestDialog.START_DIALOG)
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 4762);
 				else
 					return sendQuestStartDialog(env);
@@ -66,7 +65,7 @@ public class _1573SomeTastyMushrooms extends QuestHandler {
 				return true;
 			}
 			if (targetId == 730025) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG:
 						if (var == 0)
 							return sendQuestDialog(env, 1011);
@@ -83,7 +82,7 @@ public class _1573SomeTastyMushrooms extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 730025)
 				return sendQuestEndDialog(env);
 		}

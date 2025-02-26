@@ -19,15 +19,13 @@ package quest.ishalgen;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
 /**
@@ -38,7 +36,6 @@ public class _2136TheLostAxe extends QuestHandler {
 
 	private final static int questId = 2136;
 	private final static int[] npc_ids = { 700146, 790009 };
-
 	public _2136TheLostAxe() {
 		super(questId);
 	}
@@ -57,27 +54,21 @@ public class _2136TheLostAxe extends QuestHandler {
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (env.getDialogId() == 1002) {
-				QuestService.startQuest(env);
-				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-				return true;
+			if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
+				return sendQuestStartDialog(env);
 			}
-			else
-				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
+			if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+				return closeDialogWindow(env);
+			}
 		}
-
 		if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
-
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 790009) {
 				final Npc npc = (Npc) env.getVisibleObject();
 				ThreadPoolManager.getInstance().schedule(new Runnable() {
-
 					@Override
 					public void run() {
 						npc.getController().onDelete();
@@ -86,10 +77,9 @@ public class _2136TheLostAxe extends QuestHandler {
 				return sendQuestEndDialog(env);
 			}
 		}
-		else if (qs.getStatus() != QuestStatus.START)
-			return false;
-
-		if (targetId == 790009) {
+		else if (qs.getStatus() == QuestStatus.START) {
+		switch (targetId) {
+		case 790009: {
 			switch (env.getDialog()) {
 				case START_DIALOG:
 					if (var == 1)
@@ -99,29 +89,28 @@ public class _2136TheLostAxe extends QuestHandler {
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						removeQuestItem(env, 182203130, 1);
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
 						return sendQuestDialog(env, 6);
-					}
+				}
 				case STEP_TO_2:
 					if (var == 1) {
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						removeQuestItem(env, 182203130, 1);
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
 						return sendQuestDialog(env, 5);
-					}
+				}
 			}
 		}
-		else if (targetId == 700146) {
+		case 700146: {
 			switch (env.getDialog()) {
 				case USE_OBJECT:
-					if (var == 0) {
+					if (var == 0)
 						playQuestMovie(env, 59);
 						qs.setQuestVarById(0, 1);
 						updateQuestStatus(env);
 						QuestService.addNewSpawn(220010000, player.getInstanceId(), 790009, 1080.1555f, 2374.5107f, 247.75f, (byte) 73);
 						return true;
 					}	
+                }
 			}
 		}
 		return false;
@@ -129,17 +118,11 @@ public class _2136TheLostAxe extends QuestHandler {
 
 	@Override
 	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
-		final Player player = env.getPlayer();
-		final int id = item.getItemTemplate().getTemplateId();
-		final int itemObjId = item.getObjectId();
+		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
-		if (id != 182203130)
-			return HandlerResult.UNKNOWN;
-		PacketSendUtility.broadcastPacket(player,
-			new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 20, 1, 0), true);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE)
-			sendQuestDialog(env, 4);
-		return HandlerResult.SUCCESS;
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			return HandlerResult.fromBoolean(sendQuestDialog(env, 4));
+		}
+		return HandlerResult.FAILED;
 	}
 }

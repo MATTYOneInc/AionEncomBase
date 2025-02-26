@@ -29,7 +29,6 @@ public class _13954Weeping_Soul extends QuestHandler {
 
 	private final static int questId = 13954;
 	private final static int[] npcs = {806590, 203840, 806582};
-	
 	public _13954Weeping_Soul() {
 		super(questId);
 	}
@@ -47,21 +46,20 @@ public class _13954Weeping_Soul extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.START) {
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806590) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 0) {
+						if (qs.getQuestVarById(0) == 0) {
 							return sendQuestDialog(env, 1011);
 						}
 					} case SELECT_ACTION_1012: {
-						if (var == 0) {
+						if (qs.getQuestVarById(0) == 0) {
 							return sendQuestDialog(env, 1012);
 						}
 					} case SELECT_ACTION_1013: {
-						if (var == 0) {
+						if (qs.getQuestVarById(0) == 0) {
 							return sendQuestDialog(env, 1013);
 						}
 					} case STEP_TO_1: {
@@ -73,21 +71,21 @@ public class _13954Weeping_Soul extends QuestHandler {
 			} if (targetId == 203840) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 1) {
+						if (qs.getQuestVarById(0) == 1) {
 							return sendQuestDialog(env, 1352);
-						} if (var == 3) {
+						} if (qs.getQuestVarById(0) == 3) {
 							return sendQuestDialog(env, 2120);
 						}
 					} case SELECT_ACTION_1353: {
-						if (var == 1) {
+						if (qs.getQuestVarById(0) == 1) {
 							return sendQuestDialog(env, 1353);
 						}
 					} case SELECT_ACTION_2034: {
-						if (var == 3) {
+						if (qs.getQuestVarById(0) == 3) {
 							return sendQuestDialog(env, 2034);
 						}
 					} case SELECT_ACTION_2035: {
-						if (var == 3) {
+						if (qs.getQuestVarById(0) == 3) {
 							return sendQuestDialog(env, 2035);
 						}
 					} case STEP_TO_2: {
@@ -100,7 +98,8 @@ public class _13954Weeping_Soul extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806582) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

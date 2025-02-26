@@ -61,7 +61,7 @@ public class _18250To_Crucible_Spire extends QuestHandler {
                 }
 			}
 		}
-        if (qs.getStatus() == QuestStatus.START) {
+        if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 798604: {
 					switch (dialog) {
@@ -74,7 +74,8 @@ public class _18250To_Crucible_Spire extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 798604) {
 			    return sendQuestEndDialog(env);
 		    }
