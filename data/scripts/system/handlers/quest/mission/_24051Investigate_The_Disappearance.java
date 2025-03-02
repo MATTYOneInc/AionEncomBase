@@ -29,11 +29,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24051Investigate_The_Disappearance extends QuestHandler
-{
+public class _24051Investigate_The_Disappearance extends QuestHandler {
+
     private final static int questId = 24051;
     private final static int[] npcs = {204707, 204749, 204800, 700359};
-	
     public _24051Investigate_The_Disappearance() {
         super(questId);
     }
@@ -84,14 +83,12 @@ public class _24051Investigate_The_Disappearance extends QuestHandler
                     } if (dialog == QuestDialog.STEP_TO_4) {
                         return defaultCloseDialog(env, 3, 4);
                     }
-                    break;
                 } case 204749: { //Paeru.
                     if (dialog == QuestDialog.START_DIALOG && var == 1) {
                         return sendQuestDialog(env, 1352);
                     } if (dialog == QuestDialog.STEP_TO_2) {
                         return defaultCloseDialog(env, 1, 2, 182215375, 1, 0, 0);
                     }
-                    break;
                 } case 204800: { //Hammel.
                     if (dialog == QuestDialog.START_DIALOG && var == 4) {
                         return sendQuestDialog(env, 2375);
@@ -99,13 +96,11 @@ public class _24051Investigate_The_Disappearance extends QuestHandler
                         giveQuestItem(env, 182215376, 1);
                         return defaultCloseDialog(env, 4, 5);
                     }
-                    break;
                 } case 700359: { //Port.
                     if (dialog == QuestDialog.USE_OBJECT && var == 5 && player.getInventory().getItemCountByItemId(182215377) >= 1) {
                         TeleportService2.teleportTo(player, player.getWorldId(), player.getInstanceId(), 1757.82f, 1392.94f, 401.75f, (byte) 94);
                         return true;
                     }
-                    break;
                 }
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {

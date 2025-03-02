@@ -61,7 +61,7 @@ public class _15608Spoiled_Spores extends QuestHandler {
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			if (targetId == 806165) { //Canella.
 				switch (env.getDialog()) {
@@ -91,7 +91,7 @@ public class _15608Spoiled_Spores extends QuestHandler {
 					}
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806165) { //Canella.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
 					removeQuestItem(env, 182215995, 1);

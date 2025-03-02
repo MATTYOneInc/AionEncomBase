@@ -14,22 +14,19 @@ package quest.harbinger_landing;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25402Fixing_The_Landing extends QuestHandler
-{
+public class _25402Fixing_The_Landing extends QuestHandler {
+
 	private final static int questId = 25402;
-	
 	public _25402Fixing_The_Landing() {
 		super(questId);
 	}
@@ -69,8 +66,7 @@ public class _25402Fixing_The_Landing extends QuestHandler
 						} case STEP_TO_1: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 						}
 					}
 				} case 805404: {
@@ -80,8 +76,7 @@ public class _25402Fixing_The_Landing extends QuestHandler
 						} case STEP_TO_2: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 						}
 					}
 				} case 805405: {
@@ -92,8 +87,7 @@ public class _25402Fixing_The_Landing extends QuestHandler
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 						}
 					}
 				}

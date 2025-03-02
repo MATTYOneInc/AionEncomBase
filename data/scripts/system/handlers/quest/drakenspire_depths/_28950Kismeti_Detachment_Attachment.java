@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28950Kismeti_Detachment_Attachment extends QuestHandler
-{
+public class _28950Kismeti_Detachment_Attachment extends QuestHandler {
+
     private final static int questId = 28950;
-	
     public _28950Kismeti_Detachment_Attachment() {
         super(questId);
     }

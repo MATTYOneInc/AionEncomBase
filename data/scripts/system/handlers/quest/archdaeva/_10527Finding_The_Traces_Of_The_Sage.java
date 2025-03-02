@@ -117,12 +117,6 @@ public class _10527Finding_The_Traces_Of_The_Sage extends QuestHandler
 						return defaultCloseDialog(env, 13, 14, false, false, 182216075, 1, 0, 0); 
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 12, 13, false, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 13) {
-							defaultCloseDialog(env, 13, 13);
-						} else if (var == 12) {
-							defaultCloseDialog(env, 12, 12);
-						}
 					}
                 }
             } if (targetId == 806291) { //Dejabobo

@@ -28,11 +28,10 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14047Chaining_Memories extends QuestHandler
-{
+public class _14047Chaining_Memories extends QuestHandler {
+
     private final static int questId = 14047;
     private final static int[] npc_ids = {203704, 798154, 204574, 802051, 802052, 278500};
-	
     public _14047Chaining_Memories() {
         super(questId);
     }
@@ -86,8 +85,7 @@ public class _14047Chaining_Memories extends QuestHandler
                     if (var == 0) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+					    return closeDialogWindow(env);
                     }
             }
         } else if (targetId == 798154) {
@@ -100,8 +98,7 @@ public class _14047Chaining_Memories extends QuestHandler
                     if (var == 1) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+					    return closeDialogWindow(env);
                     }
             }
         } else if (targetId == 204574) {
@@ -114,8 +111,7 @@ public class _14047Chaining_Memories extends QuestHandler
                     if (var == 2) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+					    return closeDialogWindow(env);
                     }
             }
         } else if (targetId == 802051) {
@@ -143,8 +139,7 @@ public class _14047Chaining_Memories extends QuestHandler
                     if (var == 6) {
                         qs.setStatus(QuestStatus.REWARD);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+					    return closeDialogWindow(env);
                     }
             }
         } else if (targetId == 802052) {

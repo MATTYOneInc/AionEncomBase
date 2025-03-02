@@ -26,10 +26,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14010Terrain_Of_The_Verteron_Fortress extends QuestHandler
-{
+public class _14010Terrain_Of_The_Verteron_Fortress extends QuestHandler {
+
     private final static int questId = 14010;
-	
     public _14010Terrain_Of_The_Verteron_Fortress() {
         super(questId);
     }

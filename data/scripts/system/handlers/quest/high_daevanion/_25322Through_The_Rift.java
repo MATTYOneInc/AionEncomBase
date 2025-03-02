@@ -13,29 +13,25 @@
 package quest.high_daevanion;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25322Through_The_Rift extends QuestHandler
-{
+public class _25322Through_The_Rift extends QuestHandler {
+
     public static final int questId = 25322;
-	
 	private final static int[] LF5_B = {235801, 235802, 235803, 235804, 235805, 235806, 235807, 235808, 235809, 235810, 235811, 235812};
 	private final static int[] LF5_D = {235852, 235853, 235854, 235855, 235856, 235857, 235858, 235859, 235860, 235861};
 	private final static int[] LF5_F = {235876, 235877, 235878, 235879, 235882, 235883, 235884, 235885, 235886};
 	private final static int[] LF5_H = {235888, 235889, 235890, 235891, 235892, 235893, 235894, 235895, 235896};
-	
     public _25322Through_The_Rift() {
         super(questId);
     }
@@ -66,7 +62,6 @@ public class _25322Through_The_Rift extends QuestHandler
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 			return true;
 		}
 		return false;
@@ -77,7 +72,7 @@ public class _25322Through_The_Rift extends QuestHandler
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805342) { //Hikait.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -95,11 +90,12 @@ public class _25322Through_The_Rift extends QuestHandler
     public boolean onKillEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
-		int var1 = qs.getQuestVarById(1);
 		if (qs == null || qs.getStatus() != QuestStatus.START) {
             return false;
-        } if (var == 1 && var1 >= 0 && var1 < 9) {
+        }  
+        int var = qs.getQuestVarById(0);
+		int var1 = qs.getQuestVarById(1);
+        if (var == 1 && var1 >= 0 && var1 < 9) {
 			return defaultOnKillEvent(env, LF5_B, var1, var1 + 1, 1);
 		} else if (var == 1 && var1 == 9) {
 			qs.setQuestVarById(1, 0);

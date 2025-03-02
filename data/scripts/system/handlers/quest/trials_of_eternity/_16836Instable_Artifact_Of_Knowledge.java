@@ -30,7 +30,6 @@ public class _16836Instable_Artifact_Of_Knowledge extends QuestHandler {
 
     private final static int questId = 16836;
 	private final static int[] npcs = {806563, 806569};
-	private final static int[] IDEternity03GuardBoss = {246431, 246432};
     public _16836Instable_Artifact_Of_Knowledge() {
         super(questId);
     }
@@ -39,9 +38,9 @@ public class _16836Instable_Artifact_Of_Knowledge extends QuestHandler {
 	public void register() {
 		for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: IDEternity03GuardBoss) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+        }
+        qe.registerQuestNpc(246431).addOnKillEvent(questId);
+        qe.registerQuestNpc(246432).addOnKillEvent(questId);
         qe.registerQuestNpc(247075).addOnKillEvent(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
@@ -87,7 +86,7 @@ public class _16836Instable_Artifact_Of_Knowledge extends QuestHandler {
                 }
 			}
 		} 
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806569) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

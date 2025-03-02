@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24211Agent_Appreciation extends QuestHandler
-{
+public class _24211Agent_Appreciation extends QuestHandler {
+
 	private final static int questId = 24211;
-	
 	public _24211Agent_Appreciation() {
 		super(questId);
 	}
@@ -70,7 +69,7 @@ public class _24211Agent_Appreciation extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804750) { //Pasha.
 			    Npc npc = (Npc) env.getVisibleObject();
                 npc.getController().onDelete();

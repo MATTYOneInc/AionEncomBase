@@ -45,7 +45,9 @@ public class _25304Walk_The_Walk extends QuestHandler {
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
+        if (qs == null) {
+            return false;
+        }
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 805339) {
                 switch (env.getDialog()) {
@@ -60,6 +62,7 @@ public class _25304Walk_The_Walk extends QuestHandler {
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+		    int var = qs.getQuestVarById(0);
 			if (targetId == 805340) {
 				switch (env.getDialog()) {
                     case START_DIALOG: {
@@ -86,12 +89,6 @@ public class _25304Walk_The_Walk extends QuestHandler {
 						return closeDialogWindow(env);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 1, 2, false, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 1) {
-							defaultCloseDialog(env, 2, 2);
-						} else if (var == 1) {
-							defaultCloseDialog(env, 1, 1);
-						}
 					}
                 }
 			}

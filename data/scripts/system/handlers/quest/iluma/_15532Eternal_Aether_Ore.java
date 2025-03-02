@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15532Eternal_Aether_Ore extends QuestHandler
-{
+public class _15532Eternal_Aether_Ore extends QuestHandler {
+
 	private static final int questId = 15532;
-	
 	public _15532Eternal_Aether_Ore() {
 		super(questId);
 	}
@@ -59,11 +58,11 @@ public class _15532Eternal_Aether_Ore extends QuestHandler
 				}
 			}
 		} else if (targetId == 703073) {
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806099) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -76,12 +75,10 @@ public class _15532Eternal_Aether_Ore extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806099) {
 				return sendQuestEndDialog(env);
 			}

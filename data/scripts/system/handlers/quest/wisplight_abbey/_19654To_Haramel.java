@@ -28,10 +28,9 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _19654To_Haramel extends QuestHandler
-{
+public class _19654To_Haramel extends QuestHandler {
+
 	private final static int questId = 19654;
-	
 	public _19654To_Haramel() {
 		super(questId);
 	}
@@ -58,8 +57,7 @@ public class _19654To_Haramel extends QuestHandler
 						if (player.getInventory().getItemCountByItemId(164000335) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -82,8 +80,7 @@ public class _19654To_Haramel extends QuestHandler
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                            return sendQuestEndDialog(env);
 						}
 					}
 				}

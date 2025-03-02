@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28931Seizing_The_Ashunatal_Supplies extends QuestHandler
-{
+public class _28931Seizing_The_Ashunatal_Supplies extends QuestHandler {
+
 	private static final int questId = 28931;
-	
 	public _28931Seizing_The_Ashunatal_Supplies() {
 		super(questId);
 	}
@@ -70,12 +69,10 @@ public class _28931Seizing_The_Ashunatal_Supplies extends QuestHandler
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806260) {
 				return sendQuestEndDialog(env);
 			}

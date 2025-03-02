@@ -23,11 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _80606The_Good_News_And_Bad extends QuestHandler
-{
+public class _80606The_Good_News_And_Bad extends QuestHandler {
+
 	private final static int questId = 80606;
-	private final static int[] captainAnusa = {219264}; //Captain Anusa.
-	
 	public _80606The_Good_News_And_Bad() {
 		super(questId);
 	}
@@ -37,9 +35,7 @@ public class _80606The_Good_News_And_Bad extends QuestHandler
 		qe.registerQuestNpc(831832).addOnQuestStart(questId);
 		qe.registerQuestNpc(831832).addOnTalkEvent(questId); 
 		qe.registerQuestNpc(800327).addOnTalkEvent(questId);
-		for (int mob: captainAnusa) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(219264).addOnKillEvent(questId);
 	}
 	
 	@Override
@@ -106,6 +102,7 @@ public class _80606The_Good_News_And_Bad extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

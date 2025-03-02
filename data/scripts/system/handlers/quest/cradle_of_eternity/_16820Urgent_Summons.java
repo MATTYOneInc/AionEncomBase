@@ -89,7 +89,7 @@ public class _16820Urgent_Summons extends QuestHandler {
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806134) { //Ador.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

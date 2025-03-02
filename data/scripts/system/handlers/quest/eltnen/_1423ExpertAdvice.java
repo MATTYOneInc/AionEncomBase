@@ -31,7 +31,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1423ExpertAdvice extends QuestHandler {
 
 	private final static int questId = 1423;
-
 	public _1423ExpertAdvice() {
 		super(questId);
 	}
@@ -46,11 +45,9 @@ public class _1423ExpertAdvice extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203983) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -60,10 +57,8 @@ public class _1423ExpertAdvice extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 203983: {

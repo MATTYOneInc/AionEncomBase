@@ -47,7 +47,7 @@ public class _26831Reason_For_The_Contamination_At_The_3rd_Library extends Quest
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806288) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

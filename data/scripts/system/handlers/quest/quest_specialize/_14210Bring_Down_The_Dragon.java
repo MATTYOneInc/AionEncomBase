@@ -58,7 +58,11 @@ public class _14210Bring_Down_The_Dragon extends QuestHandler {
 						return sendQuestStartDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		}
+        if (qs == null) {
+		    return false;
+		} 
+        else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 802465 ||
 			    targetId == 802663 ||
 				targetId == 802664 ||

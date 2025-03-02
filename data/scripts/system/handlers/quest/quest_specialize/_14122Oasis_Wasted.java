@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14122Oasis_Wasted extends QuestHandler
-{
+public class _14122Oasis_Wasted extends QuestHandler {
+
     private final static int questId = 14122;
-	
     public _14122Oasis_Wasted() {
         super(questId);
     }
@@ -53,7 +52,7 @@ public class _14122Oasis_Wasted extends QuestHandler
 				   return sendQuestStartDialog(env, 182215480, 1);
 			    }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 203992) { //Ophelos
 			    if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1352);
@@ -71,11 +70,9 @@ public class _14122Oasis_Wasted extends QuestHandler
 					return sendQuestDialog(env, 2375);
 				} else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
 					return checkQuestItems(env, 2, 2, true, 5, 2716);
-				} else if (env.getDialog() == QuestDialog.FINISH_DIALOG) {
-					return sendQuestEndDialog(env);
 				}
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203934) { //Sirink
                 return sendQuestEndDialog(env);
 			}

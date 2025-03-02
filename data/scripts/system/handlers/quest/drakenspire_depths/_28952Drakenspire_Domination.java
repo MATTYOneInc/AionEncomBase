@@ -28,7 +28,6 @@ public class _28952Drakenspire_Domination extends QuestHandler {
 	
     private final static int questId = 28952;
 	private final static int[] boss = {236225, 236226, 236229, 236232, 236238, 236244, 236245, 236246};
-	
     public _28952Drakenspire_Domination() {
         super(questId);
     }
@@ -47,27 +46,16 @@ public class _28952Drakenspire_Domination extends QuestHandler {
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
             if (targetId == 209743) {
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804738) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 5) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 5, 6, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804738) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

@@ -14,23 +14,20 @@ package quest.mission;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14051Root_Of_The_Problem extends QuestHandler
-{
+public class _14051Root_Of_The_Problem extends QuestHandler {
+
     private final static int questId = 14051;
     private final static int[] npc_ids = {204500, 204549, 730026, 730024};
-	
     public _14051Root_Of_The_Problem() {
         super(questId);
     }
@@ -81,8 +78,7 @@ public class _14051Root_Of_The_Problem extends QuestHandler
                     if (var == 0) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+					    return closeDialogWindow(env);
                     }
             }
         } else if (targetId == 204549) {
@@ -106,15 +102,13 @@ public class _14051Root_Of_The_Problem extends QuestHandler
                     if (var == 1) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+					    return closeDialogWindow(env);
                     }
                 case STEP_TO_3:
                     if (var == 2) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+					    return closeDialogWindow(env);
                     }
                     return false;
             }
@@ -129,8 +123,7 @@ public class _14051Root_Of_The_Problem extends QuestHandler
                         removeQuestItem(env, 182215339, 1);
                         qs.setStatus(QuestStatus.REWARD);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+					    return closeDialogWindow(env);
                     }
                     return false;
             }

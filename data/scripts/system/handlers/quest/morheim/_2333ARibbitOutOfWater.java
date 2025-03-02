@@ -44,7 +44,6 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _2333ARibbitOutOfWater extends QuestHandler {
 
 	private final static int questId = 2333;
-	
 	public _2333ARibbitOutOfWater() {
 		super(questId);
 	}
@@ -66,7 +65,6 @@ public class _2333ARibbitOutOfWater extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798084) { 
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -99,7 +97,7 @@ public class _2333ARibbitOutOfWater extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798084) {
 				return sendQuestEndDialog(env);
 			}

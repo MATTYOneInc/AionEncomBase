@@ -13,13 +13,11 @@
 package quest.harbinger_landing;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -27,7 +25,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _25401Harbinger_Hero extends QuestHandler {
 
     private final static int questId = 25401;
-	
     public _25401Harbinger_Hero() {
         super(questId);
     }
@@ -44,11 +41,10 @@ public class _25401Harbinger_Hero extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 804719) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 4762);
 					}
@@ -68,11 +64,10 @@ public class _25401Harbinger_Hero extends QuestHandler {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1011);
 						} case SET_REWARD: {
+					        qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							changeQuestStep(env, 0, 1, false);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+						    return closeDialogWindow(env);
 						}
 					}
 				}

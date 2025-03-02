@@ -55,7 +55,11 @@ public class _24150Interior_Landscaping extends QuestHandler {
             		}
             	}
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
+        }
+        if (qs == null) {
+		    return false;
+		} 
+        else if (qs.getStatus() == QuestStatus.START) {
             switch (targetId) {
             	case 204733: { //Bestla
             		switch (env.getDialog()) {

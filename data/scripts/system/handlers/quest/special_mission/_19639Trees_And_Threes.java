@@ -27,7 +27,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _19639Trees_And_Threes extends QuestHandler {
 
 	private final static int questId = 19639;
-	
 	public _19639Trees_And_Threes() {
 		super(questId);
 	}
@@ -60,20 +59,8 @@ public class _19639Trees_And_Threes extends QuestHandler {
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 799022: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 799022) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

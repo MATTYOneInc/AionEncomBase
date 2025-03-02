@@ -23,10 +23,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23913Sword_Over_Scales extends QuestHandler
-{
+public class _23913Sword_Over_Scales extends QuestHandler {
+
 	private final static int questId = 23913;
-	
 	public _23913Sword_Over_Scales() {
 		super(questId);
 	}
@@ -45,7 +44,7 @@ public class _23913Sword_Over_Scales extends QuestHandler
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			return false;
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798719) { //Eldran.
 				return sendQuestEndDialog(env);
 			}

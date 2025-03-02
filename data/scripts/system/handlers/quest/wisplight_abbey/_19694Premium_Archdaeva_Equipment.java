@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19694Premium_Archdaeva_Equipment extends QuestHandler
-{
+public class _19694Premium_Archdaeva_Equipment extends QuestHandler {
+
 	private static final int questId = 19694;
-	
 	public _19694Premium_Archdaeva_Equipment() {
 		super(questId);
 	}
@@ -74,7 +73,7 @@ public class _19694Premium_Archdaeva_Equipment extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806698) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

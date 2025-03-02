@@ -65,17 +65,6 @@ public class _25070Truth_Of_The_Crystal extends QuestHandler {
 				updateQuestStatus(env);
 			}
 		} 
-		else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 804919) {
-				switch (dialog) {
-					case START_DIALOG: {
-						return sendQuestDialog(env, 1011);
-					} case CHECK_COLLECTED_ITEMS: {
-						return checkQuestItems(env, 0, 0, true, 5, 2716);
-					}
-				}
-			}
-		} 
 		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804919) {
 				return sendQuestEndDialog(env);

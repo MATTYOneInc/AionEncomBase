@@ -46,7 +46,7 @@ public class _16829Left_Behind_Hymn_Of_Aion_Agent extends QuestHandler {
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806282) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

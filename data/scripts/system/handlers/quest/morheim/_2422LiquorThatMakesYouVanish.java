@@ -32,7 +32,6 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 public class _2422LiquorThatMakesYouVanish extends QuestHandler {
 
 	private final static int questId = 2422;
-
 	public _2422LiquorThatMakesYouVanish() {
 		super(questId);
 	}
@@ -51,7 +50,6 @@ public class _2422LiquorThatMakesYouVanish extends QuestHandler {
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204326) { // Hapenill
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -76,7 +74,6 @@ public class _2422LiquorThatMakesYouVanish extends QuestHandler {
 							return defaultCloseDialog(env, 0, 1); // 1
 						}
 					}
-					break;
 				}
 				case 204375: { // Otis
 					switch (dialog) {
@@ -89,18 +86,14 @@ public class _2422LiquorThatMakesYouVanish extends QuestHandler {
 							qs.setQuestVar(2);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							TeleportService2.teleportTo(player, 210020000, player.getInstanceId(), (float) 535.46, (float) 2555.62,
-								(float) 326.63605, (byte) 112);
-							return true;
-						}
-						case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
+							TeleportService2.teleportTo(player, 210020000, player.getInstanceId(), (float) 535.46, (float) 2555.62, (float) 326.63605, (byte) 112);
+					        return closeDialogWindow(env);
 						}
 					}
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204326) { // Hapenill
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25404Gather_Hitonium_Pieces extends QuestHandler
-{
+public class _25404Gather_Hitonium_Pieces extends QuestHandler {
+
 	private static final int questId = 25404;
-	
 	public _25404Gather_Hitonium_Pieces() {
 		super(questId);
 	}
@@ -43,11 +42,10 @@ public class _25404Gather_Hitonium_Pieces extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 805401) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 4762);
 					}
@@ -58,9 +56,9 @@ public class _25404Gather_Hitonium_Pieces extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 805401) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
@@ -74,7 +72,7 @@ public class _25404Gather_Hitonium_Pieces extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805401) {
 				return sendQuestEndDialog(env);
 			}

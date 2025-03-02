@@ -23,11 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _30600Fight_Of_The_Navigators extends QuestHandler
-{
+public class _30600Fight_Of_The_Navigators extends QuestHandler {
+
 	private final static int questId = 30600;
-	private final static int[] captainAnusa = {219264}; //Captain Anusa.
-	
 	public _30600Fight_Of_The_Navigators() {
 		super(questId);
 	}
@@ -37,9 +35,7 @@ public class _30600Fight_Of_The_Navigators extends QuestHandler
 		qe.registerQuestNpc(205842).addOnQuestStart(questId);
 		qe.registerQuestNpc(205842).addOnTalkEvent(questId); 
 		qe.registerQuestNpc(800325).addOnTalkEvent(questId);
-		for (int mob: captainAnusa) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(219264).addOnKillEvent(questId);
 	}
 	
 	@Override
@@ -106,6 +102,7 @@ public class _30600Fight_Of_The_Navigators extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

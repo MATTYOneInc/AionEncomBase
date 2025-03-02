@@ -31,15 +31,15 @@ public class _30154FleshtoStone extends QuestHandler {
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-		if(qs == null || qs.getStatus() == QuestStatus.NONE) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 799234) {
-			if(dialog == QuestDialog.START_DIALOG)
+			if (dialog == QuestDialog.START_DIALOG)
 				return sendQuestDialog(env, 1011);
 			else
 				return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 799234)
 				return sendQuestEndDialog(env);
 		}

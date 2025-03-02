@@ -73,7 +73,11 @@ public class _24154Better_Than_Last_Time extends QuestHandler {
         			}
             	}
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
+        }
+        if (qs == null) {
+		    return false;
+		} 
+        else if (qs.getStatus() == QuestStatus.START) {
             switch (targetId) {
             	case 204809: { //Stua
             		switch (env.getDialog()) {

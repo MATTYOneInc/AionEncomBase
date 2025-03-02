@@ -15,7 +15,6 @@ package quest.mission;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
@@ -32,10 +31,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24052A_Frozen_City extends QuestHandler
-{
+public class _24052A_Frozen_City extends QuestHandler {
+
     private final static int questId = 24052;
-	
     public _24052A_Frozen_City() {
         super(questId);
     }
@@ -99,8 +97,7 @@ public class _24052A_Frozen_City extends QuestHandler
                         giveQuestItem(env, 182215380, 1);
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+					    return closeDialogWindow(env);
                     }
             }
         }

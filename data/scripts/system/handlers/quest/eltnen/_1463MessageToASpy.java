@@ -18,13 +18,11 @@ package quest.eltnen;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author Balthazar
@@ -33,7 +31,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _1463MessageToASpy extends QuestHandler {
 
 	private final static int questId = 1463;
-
 	public _1463MessageToASpy() {
 		super(questId);
 	}
@@ -50,11 +47,9 @@ public class _1463MessageToASpy extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203940) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -66,7 +61,6 @@ public class _1463MessageToASpy extends QuestHandler {
 		}
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 203903: {
@@ -81,12 +75,10 @@ public class _1463MessageToASpy extends QuestHandler {
 						}
 						case STEP_TO_1: {
 							if (player.getInventory().getItemCountByItemId(182201382) == 0)
-								if (!giveQuestItem(env, 182201382, 1))
-									return true;
+                            giveQuestItem(env, 182201382, 1);
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+				            return closeDialogWindow(env);
 						}
 						case SELECT_REWARD: {
 							qs.setQuestVar(3);
@@ -108,14 +100,10 @@ public class _1463MessageToASpy extends QuestHandler {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							removeQuestItem(env, 182201382, 1);
 							if (player.getInventory().getItemCountByItemId(182201383) == 0)
-								if (!giveQuestItem(env, 182201383, 1))
-									return true;
+							giveQuestItem(env, 182201383, 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+				            return closeDialogWindow(env);
 						}
-						default:
-							return sendQuestEndDialog(env);
 					}
 				}
 			}

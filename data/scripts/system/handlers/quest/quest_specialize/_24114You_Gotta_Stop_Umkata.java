@@ -58,7 +58,11 @@ public class _24114You_Gotta_Stop_Umkata extends QuestHandler {
                     return sendQuestStartDialog(env);
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.START) {
+		}
+        if (qs == null) {
+		    return false;
+		}  
+        else if (qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			if (targetId == 203649) { //Gulkalla
 				switch (env.getDialog()) {

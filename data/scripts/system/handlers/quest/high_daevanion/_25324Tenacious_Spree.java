@@ -23,14 +23,12 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25324Tenacious_Spree extends QuestHandler
-{
+public class _25324Tenacious_Spree extends QuestHandler {
+
 	private static final int questId = 25324;
-	
 	private final static int[] Enshar = {219791, 219792, 219793, 219794, 219795, 219796, 219797, 219798, 219799, 219800, 219997, 220012};
 	private final static int[] Levinshor = {233921, 233922, 233923, 233924, 233925, 233926, 233927, 233928};
 	private final static int[] Kaldor = {234273, 234275, 234276, 234523};
-	
     public _25324Tenacious_Spree() {
         super(questId);
     }
@@ -61,7 +59,7 @@ public class _25324Tenacious_Spree extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805343) { //Mashinee.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -79,11 +77,12 @@ public class _25324Tenacious_Spree extends QuestHandler
     public boolean onKillEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
-		int var1 = qs.getQuestVarById(1);
 		if (qs == null || qs.getStatus() != QuestStatus.START) {
             return false;
-        } if (var == 0 && var1 >= 0 && var1 < 19) {
+        }
+        int var = qs.getQuestVarById(0);
+		int var1 = qs.getQuestVarById(1);
+        if (var == 0 && var1 >= 0 && var1 < 19) {
 			return defaultOnKillEvent(env, Enshar, var1, var1 + 1, 1);
 		} else if (var == 0 && var1 == 19) {
 			qs.setQuestVarById(1, 0);

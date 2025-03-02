@@ -14,13 +14,11 @@ package quest.daevanion;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -28,7 +26,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _1988A_Meeting_With_A_Sage extends QuestHandler {
 	
 	private final static int questId = 1988;
-	
 	public _1988A_Meeting_With_A_Sage() {
 		super(questId);
 	}
@@ -61,12 +58,8 @@ public class _1988A_Meeting_With_A_Sage extends QuestHandler {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
-					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
-					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				} else
-					return sendQuestStartDialog(env);
+                    return defaultCloseDialog(env, 0, 1);
+				}
 			}
 		} 
 		else if (targetId == 798018) {
@@ -74,12 +67,8 @@ public class _1988A_Meeting_With_A_Sage extends QuestHandler {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1693);
 				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
-					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
-					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				} else
-					return sendQuestStartDialog(env);
+                    return defaultCloseDialog(env, 1, 2);
+				}
 			}
 		} 
 		else if (targetId == 203771) {
@@ -90,10 +79,8 @@ public class _1988A_Meeting_With_A_Sage extends QuestHandler {
 					removeQuestItem(env, 186000039, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 					return sendQuestEndDialog(env);
-				} else
-					return sendQuestEndDialog(env);
+				}
 			} 
 			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
 					return sendQuestEndDialog(env);

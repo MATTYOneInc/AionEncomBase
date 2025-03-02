@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25526The_Eternity_Flower extends QuestHandler
-{
+public class _25526The_Eternity_Flower extends QuestHandler {
+
 	private static final int questId = 25526;
-	
 	public _25526The_Eternity_Flower() {
 		super(questId);
 	}
@@ -43,7 +42,6 @@ public class _25526The_Eternity_Flower extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 806109) {
@@ -59,11 +57,11 @@ public class _25526The_Eternity_Flower extends QuestHandler
 				}
 			}
 		} else if (targetId == 703082) {
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806109) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -76,12 +74,10 @@ public class _25526The_Eternity_Flower extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806109) {
 				return sendQuestEndDialog(env);
 			}

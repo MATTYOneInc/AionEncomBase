@@ -28,11 +28,10 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _19645Eliminating_The_Hindrance_In_The_Supply_Route extends QuestHandler
-{
+public class _19645Eliminating_The_Hindrance_In_The_Supply_Route extends QuestHandler {
+
 	private final static int questId = 19645;
 	private final static int[] mobs = {235798, 235805};
-	
 	public _19645Eliminating_The_Hindrance_In_The_Supply_Route() {
 		super(questId);
 	}
@@ -62,8 +61,7 @@ public class _19645Eliminating_The_Hindrance_In_The_Supply_Route extends QuestHa
 						if (player.getInventory().getItemCountByItemId(164000335) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -74,20 +72,8 @@ public class _19645Eliminating_The_Hindrance_In_The_Supply_Route extends QuestHa
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 804699: { //LF5 Atmos.
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804699) { //LF5 Atmos.
 			    switch (dialog) {
 					case SELECT_REWARD: {
@@ -114,6 +100,7 @@ public class _19645Eliminating_The_Hindrance_In_The_Supply_Route extends QuestHa
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

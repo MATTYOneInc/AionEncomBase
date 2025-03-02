@@ -87,7 +87,7 @@ public class _26836Weakened_Artifact_Of_Knowledge extends QuestHandler {
                 }
 			}
 		} 
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806578) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

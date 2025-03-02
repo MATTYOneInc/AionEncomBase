@@ -64,7 +64,6 @@ public class _4939Proving_Ground extends QuestHandler {
 						case STEP_TO_1:
 							return defaultCloseDialog(env, 0, 1);
 					}
-				break;
 				case 204273:
 					if (var == 1) {
 						switch (dialog) {
@@ -74,7 +73,6 @@ public class _4939Proving_Ground extends QuestHandler {
 								return defaultCloseDialog(env, 1, 2);
 						}
 					}
-				break;
 				case 204054:
 					if (var == 2) {
 						switch (dialog) {
@@ -95,7 +93,6 @@ public class _4939Proving_Ground extends QuestHandler {
 									return sendQuestDialog(env, 10001);
 						}
 					}
-				break;
 				case 204075:
 					switch (dialog) {
 						case START_DIALOG: {
@@ -109,13 +106,8 @@ public class _4939Proving_Ground extends QuestHandler {
 							} else {
 								return sendQuestDialog(env, 2461);
 							}
-						} case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
 						}
 					}
-					break;
-				default:
-					return sendQuestStartDialog(env);
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204053) {

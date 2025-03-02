@@ -27,7 +27,6 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _14123The_Shadow_Of_Vengeance extends QuestHandler {
 
     private final static int questId = 14123;
-	
     public _14123The_Shadow_Of_Vengeance() {
         super(questId);
     }
@@ -54,7 +53,7 @@ public class _14123The_Shadow_Of_Vengeance extends QuestHandler {
                     return sendQuestStartDialog(env);
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			if (targetId == 203991) { //Dionera
 				switch (env.getDialog()) {
@@ -75,7 +74,7 @@ public class _14123The_Shadow_Of_Vengeance extends QuestHandler {
 					}
 				}
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203991) { //Dionera
                 return sendQuestEndDialog(env);
 			}

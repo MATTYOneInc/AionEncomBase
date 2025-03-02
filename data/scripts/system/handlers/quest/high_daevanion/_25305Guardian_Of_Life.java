@@ -40,6 +40,9 @@ public class _25305Guardian_Of_Life extends QuestHandler {
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
+        if (qs == null) {
+            return false;
+        }
 		int var = qs.getQuestVarById(0);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 805339) {
@@ -80,12 +83,6 @@ public class _25305Guardian_Of_Life extends QuestHandler {
 						return closeDialogWindow(env);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 1, 2, false, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 1) {
-							defaultCloseDialog(env, 2, 2);
-						} else if (var == 1) {
-							defaultCloseDialog(env, 1, 1);
-						}
 					}
                 }
 			}

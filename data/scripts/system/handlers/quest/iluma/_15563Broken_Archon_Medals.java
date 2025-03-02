@@ -43,10 +43,9 @@ public class _15563Broken_Archon_Medals extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-        QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 0) {
-                switch (dialog) {
+                switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 4762);
                     }
@@ -62,7 +61,7 @@ public class _15563Broken_Archon_Medals extends QuestHandler {
 		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 806114: { //Ilisia.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 10002);
 						} case SELECT_REWARD: {

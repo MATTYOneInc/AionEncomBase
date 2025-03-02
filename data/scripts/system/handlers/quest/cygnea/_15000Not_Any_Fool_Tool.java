@@ -61,7 +61,7 @@ public class _15000Not_Any_Fool_Tool extends QuestHandler {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
-						return checkQuestItems(env, 0, 0, true, 5, 2716);
+						return checkQuestItems(env, 0, 0, true, 10000, 10001);
 					}
 				}
 			}

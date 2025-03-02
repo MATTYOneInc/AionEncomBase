@@ -65,7 +65,7 @@ public class _15613Prometheus_Unbound extends QuestHandler {
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			if (targetId == 806166) { //세다르.
 				switch (env.getDialog()) {
@@ -121,7 +121,7 @@ public class _15613Prometheus_Unbound extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806113) { //Volter.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

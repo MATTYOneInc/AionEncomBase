@@ -36,7 +36,6 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _1361FindingDrinkingWater extends QuestHandler {
 
 	private final static int questId = 1361;
-
 	public _1361FindingDrinkingWater() {
 		super(questId);
 	}
@@ -54,7 +53,6 @@ public class _1361FindingDrinkingWater extends QuestHandler {
 		final Player player = env.getPlayer();
 		final int id = item.getItemTemplate().getTemplateId();
 		final int itemObjId = item.getObjectId();
-
 		if (id != 182201326) // Empty Bucket
 			return HandlerResult.UNKNOWN;
 		if (!player.isInsideZone(ZoneName.get("LF2_ITEMUSEAREA_Q1361")))
@@ -62,14 +60,11 @@ public class _1361FindingDrinkingWater extends QuestHandler {
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null)
 			return HandlerResult.UNKNOWN;
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0,
-			0), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
-
 			@Override
 			public void run() {
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0,
-					1, 0), true);
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
 				player.getInventory().decreaseByObjectId(itemObjId, 1);
 				giveQuestItem(env, 182201327, 1);
 				qs.setQuestVar(1);
@@ -87,8 +82,7 @@ public class _1361FindingDrinkingWater extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 203943) // Turiel
-			{
+			if (targetId == 203943) { // Turiel
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else if (env.getDialogId() == 1002) {
@@ -101,8 +95,7 @@ public class _1361FindingDrinkingWater extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs != null && qs.getStatus() == QuestStatus.REWARD) // Reward
-		{
+		else if (qs != null && qs.getStatus() == QuestStatus.REWARD) { // Reward
 			if (env.getDialog() == QuestDialog.START_DIALOG)
 				return sendQuestDialog(env, 2375);
 			else if (env.getDialogId() == 1009) {
@@ -111,10 +104,7 @@ public class _1361FindingDrinkingWater extends QuestHandler {
 				updateQuestStatus(env);
 				return sendQuestEndDialog(env);
 			}
-			else
-				return sendQuestEndDialog(env);
 		}
-
 		else if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
 			switch (targetId) {
 				case 700173: { // Water Tank

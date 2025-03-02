@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23702Blood_For_Blood_Literally extends QuestHandler
-{
+public class _23702Blood_For_Blood_Literally extends QuestHandler {
+
     private final static int questId = 23702;
-	
     public _23702Blood_For_Blood_Literally() {
         super(questId);
     }
@@ -66,7 +65,7 @@ public class _23702Blood_For_Blood_Literally extends QuestHandler
                     return sendQuestEndDialog(env);
                 }
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 802354) {
 				if (env.getDialogId() == 1009) {
 					return sendQuestDialog(env, 5);

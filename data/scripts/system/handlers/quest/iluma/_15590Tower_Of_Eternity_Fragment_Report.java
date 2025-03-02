@@ -24,10 +24,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15590Tower_Of_Eternity_Fragment_Report extends QuestHandler
-{
+public class _15590Tower_Of_Eternity_Fragment_Report extends QuestHandler {
+
 	private final static int questId = 15590;
-	
 	public _15590Tower_Of_Eternity_Fragment_Report() {
 		super(questId);
 	}

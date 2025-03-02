@@ -32,8 +32,8 @@
 	<item_collecting id="23807" start_npc_ids="802434"/>
 	<!-- Keeping The Keep Clear (Asmodians Only) -->
 	<monster_hunt id="23808" start_npc_ids="802433">
-        <monster var="0" npc_ids="234294 234530" end_var="5"/>
-		<monster var="1" npc_ids="234529" end_var="3"/>
+		<monster var="0" npc_ids="234529" end_var="3"/>
+        <monster var="1" npc_ids="234294 234530" end_var="5"/>
     </monster_hunt>
 	<!-- Memory Of The Collapsed Rune (Asmodians Only) -->
 	<item_collecting id="23810" start_npc_ids="802430"/>

@@ -45,7 +45,7 @@ public class _26827Completed_Records_Of_Life extends QuestHandler {
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806287) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

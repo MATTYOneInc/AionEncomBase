@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15505Archon_Trap_Disposal extends QuestHandler
-{
+public class _15505Archon_Trap_Disposal extends QuestHandler {
+
     private final static int questId = 15505;
-	
     public _15505Archon_Trap_Disposal() {
         super(questId);
     }
@@ -43,7 +42,6 @@ public class _15505Archon_Trap_Disposal extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 806090) {
 				switch (env.getDialog()) {
@@ -58,11 +56,11 @@ public class _15505Archon_Trap_Disposal extends QuestHandler
 				}
 			}
 		} else if (targetId == 703064) {
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806090) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -75,12 +73,10 @@ public class _15505Archon_Trap_Disposal extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806090) {
 				return sendQuestEndDialog(env);
 			}

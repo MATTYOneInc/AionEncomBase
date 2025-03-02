@@ -32,7 +32,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _2477ADishForDukar extends QuestHandler {
 
 	private final static int questId = 2477;
-	
 	public _2477ADishForDukar() {
 		super(questId);
 	}
@@ -49,7 +48,6 @@ public class _2477ADishForDukar extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204355) { 
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -87,7 +85,7 @@ public class _2477ADishForDukar extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204355) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

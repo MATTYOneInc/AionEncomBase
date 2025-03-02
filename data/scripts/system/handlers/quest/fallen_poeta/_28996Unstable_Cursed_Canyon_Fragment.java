@@ -81,7 +81,7 @@ public class _28996Unstable_Cursed_Canyon_Fragment extends QuestHandler {
 					}
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806079) { //Feregran.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

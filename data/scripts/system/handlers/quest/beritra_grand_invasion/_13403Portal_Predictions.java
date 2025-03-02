@@ -156,7 +156,7 @@ public class _13403Portal_Predictions extends QuestHandler {
 					}
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 203106) { //Alisdair.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

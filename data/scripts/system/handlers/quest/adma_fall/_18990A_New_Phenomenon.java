@@ -48,37 +48,16 @@ public class _18990A_New_Phenomenon extends QuestHandler {
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 806075) { //Weatha.
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806214) { //Enosi.
-                if (dialog == QuestDialog.START_DIALOG) {
-					return sendQuestDialog(env, 1011);
-                } if (dialog == QuestDialog.STEP_TO_1) {
-					qs.setQuestVarById(0, 1);
-					updateQuestStatus(env);
-					return closeDialogWindow(env);
-                }
-            }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806075) { //Weatha.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 3) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 2, 3, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806075) { //Weatha.
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

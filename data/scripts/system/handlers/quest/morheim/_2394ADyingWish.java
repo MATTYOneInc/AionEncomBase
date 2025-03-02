@@ -36,7 +36,6 @@ import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
-
 /**
  * @author Cheatkiller
  *
@@ -44,7 +43,6 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _2394ADyingWish extends QuestHandler {
 
 	private final static int questId = 2394;
-	
 	public _2394ADyingWish() {
 		super(questId);
 	}
@@ -67,7 +65,6 @@ public class _2394ADyingWish extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204343) { 
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -81,7 +78,7 @@ public class _2394ADyingWish extends QuestHandler {
 		else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 204381) { 
 				if (dialog == QuestDialog.START_DIALOG) {
-						return sendQuestDialog(env, 1011);
+					return sendQuestDialog(env, 1011);
 				}
 				else if (dialog == QuestDialog.STEP_TO_1) {
 					Npc orlan = (Npc)QuestService.spawnQuestNpc(player.getWorldId(), player.getInstanceId(), 790021, player.getX(), player.getY(), player.getZ(), (byte) 8);

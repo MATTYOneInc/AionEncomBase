@@ -24,11 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19636Final_Stabilization extends QuestHandler
-{
+public class _19636Final_Stabilization extends QuestHandler {
+
 	private final static int questId = 19636;
 	private final static int[] mobs = {214263, 214264, 214265, 214266};
-	
 	public _19636Final_Stabilization() {
 		super(questId);
 	}
@@ -62,20 +61,8 @@ public class _19636Final_Stabilization extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 798155: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 798155) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

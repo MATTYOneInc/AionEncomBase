@@ -103,12 +103,6 @@ public class _10530Trouble_Back_Home extends QuestHandler {
 						return sendQuestEndDialog(env);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 8, 9, true, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 9) {
-							defaultCloseDialog(env, 9, 9);
-						} else if (var == 8) {
-							defaultCloseDialog(env, 8, 8);
-						}
 					}
                 }
             } if (targetId == 203725) { //Leah.

@@ -42,6 +42,9 @@ public class _15307Kaisinel_Oath extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
+        if (qs == null) {
+            return false;
+        }
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 805327) { //Rike.
 				switch (dialog) {

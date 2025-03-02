@@ -24,10 +24,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25590Collating_The_Reports extends QuestHandler
-{
+public class _25590Collating_The_Reports extends QuestHandler {
+
 	private final static int questId = 25590;
-	
 	public _25590Collating_The_Reports() {
 		super(questId);
 	}

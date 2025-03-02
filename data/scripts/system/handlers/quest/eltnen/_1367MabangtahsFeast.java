@@ -31,7 +31,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1367MabangtahsFeast extends QuestHandler {
 
 	private final static int questId = 1367;
-
 	public _1367MabangtahsFeast() {
 		super(questId);
 	}
@@ -108,11 +107,10 @@ public class _1367MabangtahsFeast extends QuestHandler {
 				else
 					return sendQuestStartDialog(env);
 			}
-			else if (qs.getStatus() == QuestStatus.REWARD) {
+			else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 				return sendQuestEndDialog(env);
 			}
 		}
 		return false;
 	}
-
 }

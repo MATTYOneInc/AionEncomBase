@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23703Secure_The_Shrine extends QuestHandler
-{
+public class _23703Secure_The_Shrine extends QuestHandler {
+
     private final static int questId = 23703;
-	
     public _23703Secure_The_Shrine() {
         super(questId);
     }
@@ -63,7 +62,7 @@ public class _23703Secure_The_Shrine extends QuestHandler
                     return sendQuestEndDialog(env);
                 }
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 802353) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

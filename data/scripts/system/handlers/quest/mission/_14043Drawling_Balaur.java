@@ -15,7 +15,6 @@ package quest.mission;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
@@ -92,8 +91,7 @@ public class _14043Drawling_Balaur extends QuestHandler {
                     if (var == 0) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+						return closeDialogWindow(env);
                     }
                     return false;
             }
@@ -113,32 +111,28 @@ public class _14043Drawling_Balaur extends QuestHandler {
                         updateQuestStatus(env);
                         removeQuestItem(env, 182215352, 1);
                         giveQuestItem(env, 182215351, 1);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+						return closeDialogWindow(env);
                     }
                     return false;
                 case STEP_TO_7:
                    if (var == 6 || var == 8) {
                         qs.setStatus(QuestStatus.REWARD);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+						return closeDialogWindow(env);
                     }
                     return false;
                 case STEP_TO_2:
                     if (var == 1) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+						return closeDialogWindow(env);
                     }
                 case STEP_TO_11:
                     if (var == 1 && player.getInventory().tryDecreaseKinah(20000)) {
 						giveQuestItem(env, 182215351, 1);
                         qs.setQuestVarById(0, var + 6);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+						return closeDialogWindow(env);
                     } else {
                         return sendQuestDialog(env, 1355);
                     }
@@ -146,8 +140,7 @@ public class _14043Drawling_Balaur extends QuestHandler {
                     if (var == 1) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+						return closeDialogWindow(env);
                     }
                     return false;
             }
@@ -161,8 +154,7 @@ public class _14043Drawling_Balaur extends QuestHandler {
                     if (var == 2) {
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+						return closeDialogWindow(env);
                     }
                     return false;
             }
@@ -178,8 +170,7 @@ public class _14043Drawling_Balaur extends QuestHandler {
                         giveQuestItem(env, 182215352, 1);
                         qs.setQuestVarById(0, var + 1);
                         updateQuestStatus(env);
-                        PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                        return true;
+						return closeDialogWindow(env);
                     }
                     return false;
             }

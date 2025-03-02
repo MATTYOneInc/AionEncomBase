@@ -18,13 +18,11 @@ package quest.eltnen;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author MrPoke remod By Xitanium
@@ -32,7 +30,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _1385RescuingGriffo extends QuestHandler {
 
 	private final static int questId = 1385;
-
 	public _1385RescuingGriffo() {
 		super(questId);
 	}
@@ -69,8 +66,6 @@ public class _1385RescuingGriffo extends QuestHandler {
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
-				else
-					return sendQuestEndDialog(env);
 			}
 			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
 				return sendQuestEndDialog(env);
@@ -83,8 +78,6 @@ public class _1385RescuingGriffo extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					return defaultStartFollowEvent(env, (Npc) env.getVisibleObject(), 1923.47f, 2541.46f, 355.61f, 0, 1);
 				}
-				else
-					return sendQuestStartDialog(env);
 			}
 		}
 		return false;

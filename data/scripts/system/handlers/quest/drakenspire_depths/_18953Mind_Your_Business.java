@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _18953Mind_Your_Business extends QuestHandler
-{
+public class _18953Mind_Your_Business extends QuestHandler {
+
 	private static final int questId = 18953;
-	
 	public _18953Mind_Your_Business() {
 		super(questId);
 	}
@@ -70,8 +69,6 @@ public class _18953Mind_Your_Business extends QuestHandler
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}

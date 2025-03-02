@@ -18,7 +18,6 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -26,7 +25,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _24155Leather_Wing_And_Shiny_Things extends QuestHandler {
 
     private final static int questId = 24155;
-	
     public _24155Leather_Wing_And_Shiny_Things() {
         super(questId);
     }
@@ -53,16 +51,17 @@ public class _24155Leather_Wing_And_Shiny_Things extends QuestHandler {
         			} case ASK_ACCEPTION: {
         				return sendQuestDialog(env, 4);
         			} case ACCEPT_QUEST: {
-        				QuestService.startQuest(env);
-                        qs.setQuestVarById(5, 1);
-                        updateQuestStatus(env);
-                        return closeDialogWindow(env);
+        				return sendQuestStartDialog(env);
         			} case REFUSE_QUEST: {
         				return sendQuestDialog(env, 1004);
         			}
             	}
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
+        }
+        if (qs == null) {
+		    return false;
+		} 
+        else if (qs.getStatus() == QuestStatus.START) {
         	switch (targetId) {
                 case 204785: { //Gwendolin
                     switch (env.getDialog()) {
@@ -103,10 +102,11 @@ public class _24155Leather_Wing_And_Shiny_Things extends QuestHandler {
     public boolean onKillEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
         if (qs == null || qs.getStatus() != QuestStatus.START) {
             return false;
-        } if (var < 3) {
+        }
+		int var = qs.getQuestVarById(0);
+        if (var < 3) {
             return defaultOnKillEvent(env, 700290, var, var + 1);
         }
         return false;

@@ -24,11 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _29641Move_Along_Now extends QuestHandler
-{
+public class _29641Move_Along_Now extends QuestHandler {
+
 	private final static int questId = 29641;
 	private final static int[] mobs = {215942, 216045, 216046};
-	
 	public _29641Move_Along_Now() {
 		super(questId);
 	}
@@ -62,20 +61,8 @@ public class _29641Move_Along_Now extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 799297: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 799297) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

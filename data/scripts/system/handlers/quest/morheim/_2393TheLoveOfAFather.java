@@ -36,7 +36,6 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _2393TheLoveOfAFather extends QuestHandler {
 
 	private final static int questId = 2393;
-
 	public _2393TheLoveOfAFather() {
 		super(questId);
 	}
@@ -53,7 +52,6 @@ public class _2393TheLoveOfAFather extends QuestHandler {
 		final Player player = env.getPlayer();
 		final int id = item.getItemTemplate().getTemplateId();
 		final int itemObjId = item.getObjectId();
-
 		if (id != 182204162)
 			return HandlerResult.UNKNOWN;
 		if (!player.isInsideZone(ZoneName.get("DF2_ITEMUSEAREA_Q2393")))
@@ -61,14 +59,11 @@ public class _2393TheLoveOfAFather extends QuestHandler {
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null)
 			return HandlerResult.UNKNOWN;
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0,
-			0), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
-
 			@Override
 			public void run() {
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0,
-					1, 0), true);
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
 				player.getInventory().decreaseByObjectId(itemObjId, 1);
 				giveQuestItem(env, 182204163, 1);
 				qs.setStatus(QuestStatus.REWARD);
@@ -98,18 +93,12 @@ public class _2393TheLoveOfAFather extends QuestHandler {
 				else
 					return sendQuestStartDialog(env);
 			}
-
-			else if (qs.getStatus() == QuestStatus.REWARD) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.REWARD)
+			else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2375);
 				else if (env.getDialogId() == 1009) {
-					qs.setQuestVar(2);
-					qs.setStatus(QuestStatus.REWARD);
-					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
-				else
-					return sendQuestEndDialog(env);
 			}
 		}
 		return false;

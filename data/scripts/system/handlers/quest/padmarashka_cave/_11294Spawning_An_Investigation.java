@@ -14,22 +14,19 @@ package quest.padmarashka_cave;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _11294Spawning_An_Investigation extends QuestHandler
-{
+public class _11294Spawning_An_Investigation extends QuestHandler {
+
 	private final static int questId = 11294;
-	
 	public _11294Spawning_An_Investigation() {
 		super(questId);
 	}
@@ -49,7 +46,7 @@ public class _11294Spawning_An_Investigation extends QuestHandler
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null) {
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 799092) { //Jamia.
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
@@ -72,8 +69,7 @@ public class _11294Spawning_An_Investigation extends QuestHandler
 						} case STEP_TO_1: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 						}
 					}
 				} case 799010: { //Wivius.
@@ -85,8 +81,7 @@ public class _11294Spawning_An_Investigation extends QuestHandler
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
 							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
+						}
 					}
 				}
 			}

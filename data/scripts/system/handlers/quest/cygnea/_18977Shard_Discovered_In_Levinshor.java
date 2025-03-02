@@ -18,7 +18,6 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -61,7 +60,7 @@ public class _18977Shard_Discovered_In_Levinshor extends QuestHandler {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
-					    return checkQuestItems(env, 0, 0, true, 5, 2716);
+					    return checkQuestItems(env, 0, 0, true, 10000, 10001);
 					} case SELECT_REWARD: {
 						return sendQuestEndDialog(env);
 					}

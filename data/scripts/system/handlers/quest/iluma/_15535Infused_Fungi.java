@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15535Infused_Fungi extends QuestHandler
-{
+public class _15535Infused_Fungi extends QuestHandler {
+
 	private static final int questId = 15535;
-	
 	public _15535Infused_Fungi() {
 		super(questId);
 	}
@@ -43,7 +42,6 @@ public class _15535Infused_Fungi extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 806100) {
@@ -59,11 +57,11 @@ public class _15535Infused_Fungi extends QuestHandler
 				}
 			}
 		} else if (targetId == 703074) {
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806100) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -76,12 +74,10 @@ public class _15535Infused_Fungi extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806100) {
 				return sendQuestEndDialog(env);
 			}

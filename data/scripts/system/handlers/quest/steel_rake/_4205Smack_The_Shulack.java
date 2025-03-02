@@ -23,11 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4205Smack_The_Shulack extends QuestHandler
-{
+public class _4205Smack_The_Shulack extends QuestHandler {
+
 	private final static int questId = 4205;
 	private final static int[] Steel_Rake_Watcher = {218972, 218974, 218975, 218976, 218979};
-	
 	public _4205Smack_The_Shulack() {
 		super(questId);
 	}
@@ -81,7 +80,7 @@ public class _4205Smack_The_Shulack extends QuestHandler
 					}
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 805842) {
 			    return sendQuestEndDialog(env);
 		    }

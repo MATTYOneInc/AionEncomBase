@@ -25,10 +25,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15334Devoted_Prayers extends QuestHandler
-{
+public class _15334Devoted_Prayers extends QuestHandler {
+
 	private final static int questId = 15334;
-	
 	public _15334Devoted_Prayers() {
 		super(questId);
 	}
@@ -54,7 +53,7 @@ public class _15334Devoted_Prayers extends QuestHandler
 					return sendQuestStartDialog(env, 182215919, 1);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805330) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

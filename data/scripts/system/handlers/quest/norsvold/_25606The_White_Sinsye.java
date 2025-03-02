@@ -69,7 +69,7 @@ public class _25606The_White_Sinsye extends QuestHandler {
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			if (targetId == 806178) { //ë°°íšŒí•˜ëŠ” ì˜?í˜¼.
 				switch (env.getDialog()) {
@@ -123,7 +123,7 @@ public class _25606The_White_Sinsye extends QuestHandler {
 					}
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806175) { //Chaelsean.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
 					removeQuestItem(env, 182216006, 1); //ë¦¬ë‹ˆì?˜ ì?¼ê¸°ìž¥.

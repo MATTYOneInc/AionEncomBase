@@ -20,8 +20,6 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -36,37 +34,39 @@ public class _28738Bombs_For_Everyone extends QuestHandler {
 	
 	@Override
 	public void register() {
-		qe.registerQuestItem(164000342, questId); //Improved Life Drain Bomb.
+		qe.registerQuestNpc(206395).addOnQuestStart(questId);
+		qe.registerQuestNpc(206396).addOnQuestStart(questId);
+		qe.registerQuestNpc(206397).addOnQuestStart(questId);
 		qe.registerQuestNpc(804966).addOnTalkEvent(questId);
-		qe.registerOnEnterZone(ZoneName.get("RAKSANG_ENTRANCE_300610000"), questId);
+		qe.registerQuestItem(164000342, questId); //Improved Life Drain Bomb.
 	}
 	
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		int targetId = env.getTargetId();
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 206395 || targetId == 206396 || targetId == 206397) {
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 4762);
+					}
+					case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE:
+					    giveQuestItem(env, 164000342, 10); //Improved Life Drain Bomb.
+						return sendQuestStartDialog(env);
+					case REFUSE_QUEST_SIMPLE:
+				        return closeDialogWindow(env);
+				}
+			}
+		}
 		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
-			if (env.getTargetId() == 804966) {
+			if (targetId == 804966) {
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				}
 				return sendQuestEndDialog(env);
-			}
-		}
-		return false;
-	}
-	
-	@Override
-    public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
-        Player player = env.getPlayer();
-        QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (zoneName == ZoneName.get("RAKSANG_ENTRANCE_300610000")) {
-			if (qs == null) {
-				env.setQuestId(questId);
-				if (QuestService.startQuest(env)) {
-					giveQuestItem(env, 164000342, 10); //Improved Life Drain Bomb.
-					return true;
-				}
 			}
 		}
 		return false;

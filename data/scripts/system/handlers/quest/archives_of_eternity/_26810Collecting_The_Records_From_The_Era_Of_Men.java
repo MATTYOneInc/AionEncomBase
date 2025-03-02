@@ -29,10 +29,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author (Encom)
 /****/
 
-public class _26810Collecting_The_Records_From_The_Era_Of_Men extends QuestHandler
-{
+public class _26810Collecting_The_Records_From_The_Era_Of_Men extends QuestHandler {
+
 	private final static int questId = 26810;
-	
 	public _26810Collecting_The_Records_From_The_Era_Of_Men() {
 		super(questId);
 	}
@@ -61,9 +60,7 @@ public class _26810Collecting_The_Records_From_The_Era_Of_Men extends QuestHandl
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			return false;
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806079) {
 				removeQuestItem(env, 182215990, 1);
 				return sendQuestEndDialog(env);

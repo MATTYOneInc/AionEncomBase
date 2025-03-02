@@ -107,12 +107,6 @@ public class _10110 extends QuestHandler
 						return defaultCloseDialog(env, 2, 3, false, false, 182216231, 1, 0, 0);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 1, 2, false, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 2) {
-							defaultCloseDialog(env, 2, 2);
-						} else if (var == 1) {
-							defaultCloseDialog(env, 1, 1);
-						}
 					}
                 }
             } if (targetId == 703463) {

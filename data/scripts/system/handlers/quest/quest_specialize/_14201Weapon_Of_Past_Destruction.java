@@ -26,7 +26,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _14201Weapon_Of_Past_Destruction extends QuestHandler {
 	
     private final static int questId = 14201;
-	
     public _14201Weapon_Of_Past_Destruction() {
         super(questId);
     }    
@@ -53,7 +52,7 @@ public class _14201Weapon_Of_Past_Destruction extends QuestHandler {
                     return sendQuestStartDialog(env);
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
 			if (targetId == 800407) { //Hongras.
 				switch (dialog) {
@@ -96,7 +95,7 @@ public class _14201Weapon_Of_Past_Destruction extends QuestHandler {
 					}
 				}
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798155) { //Atropos.
                 return sendQuestEndDialog(env);
 			}

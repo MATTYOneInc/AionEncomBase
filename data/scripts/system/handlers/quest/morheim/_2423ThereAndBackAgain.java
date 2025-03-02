@@ -26,7 +26,6 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 
-
 /**
  * @author Cheatkiller
  *
@@ -34,7 +33,6 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 public class _2423ThereAndBackAgain extends QuestHandler {
 
 	private final static int questId = 2423;
-
 	public _2423ThereAndBackAgain() {
 		super(questId);
 	}
@@ -91,7 +89,7 @@ public class _2423ThereAndBackAgain extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204375) { 
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

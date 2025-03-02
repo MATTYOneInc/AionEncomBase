@@ -100,7 +100,7 @@ public class _1990A_Sages_Gift extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203771) {
 				return sendQuestEndDialog(env);
 			}

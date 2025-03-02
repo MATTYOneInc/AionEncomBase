@@ -23,13 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15560Archon_Shadow_Scout extends QuestHandler
-{
+public class _15560Archon_Shadow_Scout extends QuestHandler {
+
     private final static int questId = 15560;
-	
-	private final static int[] warshipInvasionA = {240615, 240616, 240617, 240618, 240651, 240652,
-	240663, 240664, 240665, 240666, 241470, 241471, 241472, 241473};
-	
+	private final static int[] warshipInvasionA = {240615, 240616, 240617, 240618, 240651, 240652, 240663, 240664, 240665, 240666, 241470, 241471, 241472, 241473};
     public _15560Archon_Shadow_Scout() {
         super(questId);
     }
@@ -47,27 +44,16 @@ public class _15560Archon_Shadow_Scout extends QuestHandler
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
             if (targetId == 731684) {
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806090) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 3) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 3, 4, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806090) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

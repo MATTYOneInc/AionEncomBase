@@ -19,7 +19,6 @@ import com.aionemu.gameserver.model.EmotionType;
 import com.aionemu.gameserver.model.TeleportAnimation;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
@@ -39,11 +38,10 @@ import java.util.List;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24026A_Hand_From_Each_Side extends QuestHandler
-{
+public class _24026A_Hand_From_Each_Side extends QuestHandler {
+
     private final static int questId = 24026;
     private static List<Integer> mobs = new ArrayList<Integer>();
-	
     static {
         mobs.add(213576); //Draconute Scout.
 		mobs.add(213577); //Chandala Mage.
@@ -105,7 +103,6 @@ public class _24026A_Hand_From_Each_Side extends QuestHandler
                             TeleportService2.teleportTo(player, 220020000, 2795.9f, 478.37f, 265.86f, (byte) 51, TeleportAnimation.BEAM_ANIMATION);
                             return defaultCloseDialog(env, 0, 1);
                     }
-                    break;
                 } case 204403: { //Taisan. 
                     switch (env.getDialog()) {
                         case START_DIALOG:
@@ -117,7 +114,6 @@ public class _24026A_Hand_From_Each_Side extends QuestHandler
                             TeleportService2.teleportTo(player, 220020000, 3025.54f, 868.31f, 363.22f, (byte) 14, TeleportAnimation.BEAM_ANIMATION);
                             return defaultCloseDialog(env, 1, 2);
                     }
-                    break;
                 } case 204432: { //Kargate.
                     switch (env.getDialog()) {
                         case START_DIALOG: {
@@ -131,19 +127,17 @@ public class _24026A_Hand_From_Each_Side extends QuestHandler
                         } case STEP_TO_3: {
                             qs.setQuestVar(3);
                             updateQuestStatus(env);
-                            PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
                             QuestService.questTimerStart(env, 120);
                             spawn(player);
-                            return true;
+					        return closeDialogWindow(env);
                         } case STEP_TO_4: {
                             removeQuestItem(env, 182215371, 1);
                             qs.setStatus(QuestStatus.REWARD);
                             updateQuestStatus(env);
                             TeleportService2.teleportTo(player, 220020000, 248.52255f, 2398.9722f, 452.81012f, (byte) 48, TeleportAnimation.BEAM_ANIMATION);
-                            return true;
+					        return closeDialogWindow(env);
                         }
                     }
-                    break;
                 }
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {

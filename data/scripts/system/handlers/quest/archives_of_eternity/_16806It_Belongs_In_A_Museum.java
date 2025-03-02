@@ -67,7 +67,7 @@ public class _16806It_Belongs_In_A_Museum extends QuestHandler {
 				}
 			}
 		} 
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806148) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

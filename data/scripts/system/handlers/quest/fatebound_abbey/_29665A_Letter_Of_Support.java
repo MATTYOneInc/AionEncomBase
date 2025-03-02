@@ -25,10 +25,9 @@ import com.aionemu.gameserver.questEngine.model.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _29665A_Letter_Of_Support extends QuestHandler
-{
+public class _29665A_Letter_Of_Support extends QuestHandler {
+
 	private final static int questId = 29665;
-	
 	public _29665A_Letter_Of_Support() {
 		super(questId);
 	}
@@ -68,7 +67,7 @@ public class _29665A_Letter_Of_Support extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804662) {
 			    return sendQuestEndDialog(env);
 		    }

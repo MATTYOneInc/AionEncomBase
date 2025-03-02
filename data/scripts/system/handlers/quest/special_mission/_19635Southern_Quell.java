@@ -27,7 +27,6 @@ public class _19635Southern_Quell extends QuestHandler {
 
 	private final static int questId = 19635;
 	private final static int[] mobs = {214257, 214258, 214600, 214601};
-	
 	public _19635Southern_Quell() {
 		super(questId);
 	}
@@ -61,20 +60,8 @@ public class _19635Southern_Quell extends QuestHandler {
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 205304: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 205304) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

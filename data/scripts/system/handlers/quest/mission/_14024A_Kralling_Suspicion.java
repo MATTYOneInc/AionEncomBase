@@ -25,8 +25,8 @@ import com.aionemu.gameserver.model.TeleportAnimation;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14024A_Kralling_Suspicion extends QuestHandler
-{
+public class _14024A_Kralling_Suspicion extends QuestHandler {
+
     private final static int questId = 14024;
     private final static int[] npc_ids = {203904, 204045, 204004, 204020};
     public _14024A_Kralling_Suspicion() {
@@ -112,15 +112,10 @@ public class _14024A_Kralling_Suspicion extends QuestHandler
                         return checkQuestItems(env, 2, 3, false, 2120, 2035);
                     }
                     case STEP_TO_4: {
-                      TeleportService2.teleportTo(player, 210020000, 1610f, 1528f, 318f, (byte) 2, TeleportAnimation.BEAM_ANIMATION);
+                        TeleportService2.teleportTo(player, 210020000, 1610f, 1528f, 318f, (byte) 2, TeleportAnimation.BEAM_ANIMATION);
                         changeQuestStep(env, 3, 3, true);
-                        return true;
+						return closeDialogWindow(env);
                     }
-                    case FINISH_DIALOG: {
-                        return closeDialogWindow(env);
-                    }
-                    default:
-                        break;
                 }
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {

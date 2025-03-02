@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _30515Reian_Whereabouts extends QuestHandler
-{
+public class _30515Reian_Whereabouts extends QuestHandler {
+
     private final static int questId = 30515;
-	
     public _30515Reian_Whereabouts() {
         super(questId);
     }
@@ -43,11 +42,10 @@ public class _30515Reian_Whereabouts extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 804879) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 4762);
 					}
@@ -60,9 +58,9 @@ public class _30515Reian_Whereabouts extends QuestHandler
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
             if (targetId == 805156) {
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
-                } if (dialog == QuestDialog.STEP_TO_1) {
+                } if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					qs.setQuestVarById(0, 1);
 					updateQuestStatus(env);
 					return closeDialogWindow(env);
@@ -70,16 +68,16 @@ public class _30515Reian_Whereabouts extends QuestHandler
             }
         } else if (qs.getStatus() == QuestStatus.START) {
             if (targetId == 805156) {
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     if (qs.getQuestVarById(0) == 1) {
                         return sendQuestDialog(env, 2375);
                     }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
+                } if (env.getDialog() == QuestDialog.SELECT_REWARD) {
                     changeQuestStep(env, 0, 1, true);
                     return sendQuestEndDialog(env);
                 }
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805156) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

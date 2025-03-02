@@ -18,13 +18,11 @@ package quest.beluslan;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author VladimirZ
@@ -33,7 +31,6 @@ public class _2633DestroyingBalaurWeapons extends QuestHandler {
 
 	private final static int questId = 2633;
 	private final static int[] npc_ids = { 204700, 204807, 700296 };
-
 	public _2633DestroyingBalaurWeapons() {
 		super(questId);
 	}
@@ -63,8 +60,6 @@ public class _2633DestroyingBalaurWeapons extends QuestHandler {
 		}
 		if (qs == null)
 			return false;
-
-		int var = qs.getQuestVarById(0);
 		if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204700) {
 				if (env.getDialog() == QuestDialog.USE_OBJECT)
@@ -76,8 +71,7 @@ public class _2633DestroyingBalaurWeapons extends QuestHandler {
 			}
 		}
 		else if (qs.getStatus() != QuestStatus.START) {
-			return false;
-		}
+		int var = qs.getQuestVarById(0);
 		if (targetId == 204807) {
 			switch (env.getDialog()) {
 				case START_DIALOG:
@@ -87,16 +81,15 @@ public class _2633DestroyingBalaurWeapons extends QuestHandler {
 					if (var == 0) {
 						qs.setQuestVarById(0, var + 1);
 						updateQuestStatus(env);
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-						return true;
+                        return closeDialogWindow(env);
 					}
-					return false;
 			}
 		}
 		else if (targetId == 700296) {
 			switch (env.getDialog()) {
 				case USE_OBJECT:
 					return useQuestObject(env, 1, 2, false, 0); // 2
+                }
 			}
 		}
 		return false;
@@ -108,12 +101,10 @@ public class _2633DestroyingBalaurWeapons extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null)
 			return false;
-
 		int var = qs.getQuestVarById(0);
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs.getStatus() != QuestStatus.START)
 			return false;
 		switch (targetId) {

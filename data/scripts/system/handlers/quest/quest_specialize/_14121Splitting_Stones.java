@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _14121Splitting_Stones extends QuestHandler {
 
     private final static int questId = 14121;
-	
     public _14121Splitting_Stones() {
         super(questId);
     }
@@ -50,7 +49,7 @@ public class _14121Splitting_Stones extends QuestHandler {
 				   return sendQuestStartDialog(env);
 			    }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			if (targetId == 204032) { //Lakaias
 				switch (env.getDialog()) {
@@ -64,12 +63,10 @@ public class _14121Splitting_Stones extends QuestHandler {
 						return defaultCloseDialog(env, 0, 1);
 					} case CHECK_COLLECTED_ITEMS_SIMPLE: {
 						return checkQuestItems(env, 1, 1, true, 5, 2716);
-					} case FINISH_DIALOG: {
-                        return sendQuestSelectionDialog(env);
-                    }
+					}
 				}
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204032) { //Lakaias
                 return sendQuestEndDialog(env);
 			}

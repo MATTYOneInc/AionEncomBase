@@ -128,12 +128,6 @@ public class _20525Agent_Peregrine_Call extends QuestHandler {
 						return defaultCloseDialog(env, 5, 6, false, false, 182216084, 1, 0, 0); //Aether Boost Magic Stone.
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 4, 5, false, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 5) {
-							defaultCloseDialog(env, 5, 5);
-						} else if (var == 4) {
-							defaultCloseDialog(env, 4, 4);
-						}
 					}
 				}
 			} if (targetId == 806228) { //Bastok.

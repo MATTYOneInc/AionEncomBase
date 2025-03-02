@@ -38,7 +38,7 @@ public class _28741Securing_The_Route extends QuestHandler{
 		for (int mob: embercrackStepsDrillCorps) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
-		qe.registerOnEnterZone(ZoneName.get("ERIVALE_TERRITORY_VILLAGE_210070000"), questId);
+		qe.registerOnEnterZone(ZoneName.get("BOMIRE_VILLAGE_220080000"), questId);
 	}
 	
 	@Override
@@ -62,7 +62,7 @@ public class _28741Securing_The_Route extends QuestHandler{
     public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (zoneName == ZoneName.get("ERIVALE_TERRITORY_VILLAGE_210070000")) {
+		if (zoneName == ZoneName.get("BOMIRE_VILLAGE_220080000")) {
 			if (qs == null || qs.canRepeat()) {
 				env.setQuestId(questId);
 				if (QuestService.startQuest(env)) {

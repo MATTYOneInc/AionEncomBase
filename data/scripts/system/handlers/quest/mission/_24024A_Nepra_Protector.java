@@ -102,7 +102,6 @@ public class _24024A_Nepra_Protector extends QuestHandler {
                             }
                     }
                 }
-                break;
                 case 204361: {
                     switch (env.getDialog()) {
                         case START_DIALOG:
@@ -116,7 +115,6 @@ public class _24024A_Nepra_Protector extends QuestHandler {
 
                     }
                 }
-                break;
                 case 730739: {
                     switch (env.getDialog()) {
                         case START_DIALOG:
@@ -131,7 +129,6 @@ public class _24024A_Nepra_Protector extends QuestHandler {
 
                     }
                 }
-                break;
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 204369) {

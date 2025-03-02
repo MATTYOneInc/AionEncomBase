@@ -52,7 +52,7 @@ public class _14120The_Bucket_List extends QuestHandler {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
             if (targetId == 730019) { //Lodas
                 switch (env.getDialog()) {
@@ -62,8 +62,6 @@ public class _14120The_Bucket_List extends QuestHandler {
                         }
                     } case CHECK_COLLECTED_ITEMS_SIMPLE: {
                         return checkQuestItems(env, 1, 1, true, 5, 2716);
-                    } case FINISH_DIALOG: {
-                        return sendQuestSelectionDialog(env);
                     }
                 }
             } else if (targetId == 700157) { //Kerubian Bucket
@@ -79,7 +77,7 @@ public class _14120The_Bucket_List extends QuestHandler {
                     return defaultCloseDialog(env, 0, 1);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 730019) { //Lodas.
                 return sendQuestEndDialog(env);
             }

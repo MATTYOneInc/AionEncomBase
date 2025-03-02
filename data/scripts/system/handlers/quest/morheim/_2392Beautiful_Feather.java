@@ -7,10 +7,9 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-public class _2392Beautiful_Feather extends QuestHandler
-{
+public class _2392Beautiful_Feather extends QuestHandler {
+
 	private final static int questId = 2392;
-	
 	public _2392Beautiful_Feather() {
 		super(questId);
 	}

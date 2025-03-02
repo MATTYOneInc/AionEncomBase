@@ -18,7 +18,6 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -27,7 +26,6 @@ public class _24151Reclaiming_The_Damned extends QuestHandler {
 
     private final static int questId = 24151;
     private final static int[] mob_ids = {213044, 213045, 214092, 214093};
-	
     public _24151Reclaiming_The_Damned() {
         super(questId);
     }
@@ -55,16 +53,17 @@ public class _24151Reclaiming_The_Damned extends QuestHandler {
         			} case ASK_ACCEPTION: {
         				return sendQuestDialog(env, 4);
         			} case ACCEPT_QUEST: {
-        				QuestService.startQuest(env);
-                        qs.setQuestVarById(5, 1);
-                        updateQuestStatus(env);
-                        return closeDialogWindow(env);
+        				return sendQuestStartDialog(env);
         			} case REFUSE_QUEST: {
         				return sendQuestDialog(env, 1004);
         			}
             	}
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
+        }
+        if (qs == null) {
+		    return false;
+		}  
+        else if (qs.getStatus() == QuestStatus.START) {
         	int var = qs.getQuestVarById(0);
             if (targetId == 204801) { //Gigrite
                 switch (env.getDialog()) {
@@ -100,10 +99,11 @@ public class _24151Reclaiming_The_Damned extends QuestHandler {
     public boolean onKillEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
         if (qs == null || qs.getStatus() != QuestStatus.START) {
             return false;
-        } if (var < 5) {
+        }
+		int var = qs.getQuestVarById(0);
+        if (var < 5) {
             return defaultOnKillEvent(env, mob_ids, var, var + 1);
         }
         return false;

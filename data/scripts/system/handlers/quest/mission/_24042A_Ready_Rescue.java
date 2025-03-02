@@ -68,7 +68,6 @@ public class _24042A_Ready_Rescue extends QuestHandler {
                             return defaultCloseDialog(env, 0, 1);
 						}
                     }
-                break;
 				case 278019: //Lakadi.
                     switch (env.getDialog()) {
                         case START_DIALOG: {
@@ -80,7 +79,6 @@ public class _24042A_Ready_Rescue extends QuestHandler {
                             return defaultCloseDialog(env, 1, 2);
 						}
                     }
-                break;
 				case 278088: // Glati.
                     switch (env.getDialog()) {
                         case START_DIALOG: {
@@ -92,7 +90,6 @@ public class _24042A_Ready_Rescue extends QuestHandler {
                             return defaultCloseDialog(env, 2, 3);
 						}
                     }
-                break;
 				case 253626: //Captured Asmodian Prisoner.
                     switch (env.getDialog()) {
                         case START_DIALOG: {
@@ -106,7 +103,6 @@ public class _24042A_Ready_Rescue extends QuestHandler {
 							return defaultStartFollowEvent(env, (Npc) env.getVisibleObject(), 253641, 3, 4); //Prison Camp Asmodian Search Squad.
                         }
                     }
-                break;
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 278019) { //Lakadi.

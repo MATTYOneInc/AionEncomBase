@@ -30,7 +30,6 @@ public class _30005HealMeKillMe extends QuestHandler {
 
 	private final static int questId = 30005;
 	private int[] mobs = { 215857, 215814, 215858, 215815 };
-
 	public _30005HealMeKillMe() {
 		super(questId);
 	}
@@ -58,7 +57,7 @@ public class _30005HealMeKillMe extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (env.getTargetId() == 799029) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1352);

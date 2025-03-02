@@ -27,10 +27,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author (Encom)
 /****/
 
-public class _18213The_Broken_Insignia extends QuestHandler
-{
-	private final static int questId = 18213;
+public class _18213The_Broken_Insignia extends QuestHandler {
 
+	private final static int questId = 18213;
 	public _18213The_Broken_Insignia() {
 		super(questId);
 	}
@@ -47,7 +46,7 @@ public class _18213The_Broken_Insignia extends QuestHandler
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        if (qs == null) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 205985) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 1011);
@@ -55,7 +54,7 @@ public class _18213The_Broken_Insignia extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs != null && qs.getStatus() == QuestStatus.START) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
             switch (targetId) {
                 case 205316:
@@ -86,7 +85,7 @@ public class _18213The_Broken_Insignia extends QuestHandler
                     }
                 break;
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 798604) {
                 if (env.getDialog() == QuestDialog.USE_OBJECT) {
                     return sendQuestDialog(env, 5);

@@ -57,7 +57,7 @@ public class _15604Queen_Of_The_Copperclaws extends QuestHandler {
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
            	int var = qs.getQuestVarById(0);
 			if (targetId == 806161) { //Cyclon.
 				switch (env.getDialog()) {
@@ -76,7 +76,7 @@ public class _15604Queen_Of_The_Copperclaws extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806161) { //Cyclon.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

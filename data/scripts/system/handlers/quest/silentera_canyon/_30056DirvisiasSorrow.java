@@ -36,9 +36,9 @@ public class _30056DirvisiasSorrow extends QuestHandler  {
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-		if(qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if(targetId == 798929) {
-				if(dialog == QuestDialog.START_DIALOG)
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 798929) {
+				if (dialog == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else if (dialog == QuestDialog.ACCEPT_QUEST) {
 					if (!giveQuestItem(env, 182209223, 1))
@@ -49,7 +49,7 @@ public class _30056DirvisiasSorrow extends QuestHandler  {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203901) {
 				switch (dialog) {
 					case USE_OBJECT:

@@ -78,7 +78,7 @@ public class _26802They_Dont_Make_Em_Like_They_Used_To extends QuestHandler {
 				}
 			}
 		}        
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806149) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

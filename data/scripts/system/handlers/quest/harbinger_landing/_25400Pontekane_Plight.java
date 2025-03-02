@@ -26,10 +26,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25400Pontekane_Plight extends QuestHandler
-{
+public class _25400Pontekane_Plight extends QuestHandler {
+
 	public static final int questId = 25400;
-	
 	public _25400Pontekane_Plight() {
 		super(questId);
 	}
@@ -148,8 +147,6 @@ public class _25400Pontekane_Plight extends QuestHandler
 							changeQuestStep(env, 4, 5, false);
 							return closeDialogWindow(env);
 						}
-						default:
-							return sendQuestStartDialog(env);
 					}
 				}
 			if (targetId == 805360) { //Lanpaz.

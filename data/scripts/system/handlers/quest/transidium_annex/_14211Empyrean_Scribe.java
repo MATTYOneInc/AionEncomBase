@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14211Empyrean_Scribe extends QuestHandler
-{
+public class _14211Empyrean_Scribe extends QuestHandler {
+
 	private final static int questId = 14211;
-	
 	public _14211Empyrean_Scribe() {
 		super(questId);
 	}
@@ -70,7 +69,7 @@ public class _14211Empyrean_Scribe extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804749) { //Pasha.
 			    Npc npc = (Npc) env.getVisibleObject();
                 npc.getController().onDelete();

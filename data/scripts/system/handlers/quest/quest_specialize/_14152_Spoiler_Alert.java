@@ -27,7 +27,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _14152_Spoiler_Alert extends QuestHandler {
 
     private final static int questId = 14152;
-
     public _14152_Spoiler_Alert() {
         super(questId);
     }
@@ -60,20 +59,18 @@ public class _14152_Spoiler_Alert extends QuestHandler {
                         return sendQuestDialog(env, 4);
                     }
                     case ACCEPT_QUEST: {
-					     QuestService.startQuest(env);
-						 qs.setQuestVarById(5, 1);
-						 updateQuestStatus(env);
-					     return closeDialogWindow(env);
+                        return sendQuestStartDialog(env);
                     }
                     case REFUSE_QUEST: {
                         return closeDialogWindow(env);
                     }
-                    default:
-                        break;
                 }
             }
         }
-        else if (qs.getStatus() == QuestStatus.START) {
+        if (qs == null) {
+		    return false;
+		} 
+        else if (qs == null || qs.getStatus() == QuestStatus.START) {
             if (targetId == 204574) { //Finn.
                 switch (dialog) {
                     case START_DIALOG: {
@@ -85,8 +82,6 @@ public class _14152_Spoiler_Alert extends QuestHandler {
                         giveQuestItem(env, 182215481, 1);
                         return closeDialogWindow(env);
                     }
-                    default:
-                        break;
                 }
             }
             else if (targetId == 203705) { //Jumentis.
@@ -101,8 +96,6 @@ public class _14152_Spoiler_Alert extends QuestHandler {
 						updateQuestStatus(env);
                         return closeDialogWindow(env);
                     }
-                    default:
-                        break;
                 }
             }
             else if (targetId == 204504) { //Sofne.

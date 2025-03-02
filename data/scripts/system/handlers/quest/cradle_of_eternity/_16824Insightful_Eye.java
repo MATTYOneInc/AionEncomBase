@@ -43,7 +43,7 @@ public class _16824Insightful_Eye extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 220587) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

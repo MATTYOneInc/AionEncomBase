@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _29675Attack_On_The_Nightmare_Instanced_Dungeon extends QuestHandler
-{
+public class _29675Attack_On_The_Nightmare_Instanced_Dungeon extends QuestHandler {
+
     private final static int questId = 29675;
-	
     public _29675Attack_On_The_Nightmare_Instanced_Dungeon() {
         super(questId);
     }
@@ -52,18 +51,8 @@ public class _29675Attack_On_The_Nightmare_Instanced_Dungeon extends QuestHandle
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806700) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 1) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806700) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -88,6 +77,7 @@ public class _29675Attack_On_The_Nightmare_Instanced_Dungeon extends QuestHandle
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

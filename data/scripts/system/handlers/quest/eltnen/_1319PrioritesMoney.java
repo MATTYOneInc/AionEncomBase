@@ -18,13 +18,11 @@ package quest.eltnen;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author Xitanium, Dr.Nism
@@ -32,7 +30,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _1319PrioritesMoney extends QuestHandler {
 
 	private final static int questId = 1319;
-
 	public _1319PrioritesMoney() {
 		super(questId);
 	}
@@ -58,8 +55,8 @@ public class _1319PrioritesMoney extends QuestHandler {
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 203908) { // Priorite
+		if (targetId == 203908) { // Priorite
+		    if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				}
@@ -67,19 +64,13 @@ public class _1319PrioritesMoney extends QuestHandler {
 					return sendQuestStartDialog(env);
 				}
 			}
-		}
 		else if (qs != null && qs.getStatus() == QuestStatus.REWARD) { // Reward
 			if (env.getDialog() == QuestDialog.START_DIALOG) {
 				return sendQuestDialog(env, 4080);
 			}
 			else if (env.getDialogId() == 1009) {
-				qs.setQuestVar(8);
-				qs.setStatus(QuestStatus.REWARD);
-				updateQuestStatus(env);
 				return sendQuestEndDialog(env);
-			}
-			else {
-				return sendQuestEndDialog(env);
+		        }
 			}
 		}
 		else if (targetId == 203923) { // Krato
@@ -90,11 +81,7 @@ public class _1319PrioritesMoney extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				}
-				else {
-					return sendQuestStartDialog(env);
+				    return closeDialogWindow(env);
 				}
 			}
 		}
@@ -106,11 +93,7 @@ public class _1319PrioritesMoney extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				}
-				else {
-					return sendQuestStartDialog(env);
+				    return closeDialogWindow(env);
 				}
 			}
 		}
@@ -122,11 +105,7 @@ public class _1319PrioritesMoney extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_3) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				}
-				else {
-					return sendQuestStartDialog(env);
+				    return closeDialogWindow(env);
 				}
 			}
 		}
@@ -138,11 +117,7 @@ public class _1319PrioritesMoney extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_4) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				}
-				else {
-					return sendQuestStartDialog(env);
+				    return closeDialogWindow(env);
 				}
 			}
 		}
@@ -154,11 +129,7 @@ public class _1319PrioritesMoney extends QuestHandler {
 				else if (env.getDialogId() == 10004) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				}
-				else {
-					return sendQuestStartDialog(env);
+				    return closeDialogWindow(env);
 				}
 			}
 		}
@@ -170,11 +141,7 @@ public class _1319PrioritesMoney extends QuestHandler {
 				else if (env.getDialogId() == 10005) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				}
-				else {
-					return sendQuestStartDialog(env);
+				    return closeDialogWindow(env);
 				}
 			}
 		}
@@ -186,11 +153,7 @@ public class _1319PrioritesMoney extends QuestHandler {
 				else if (env.getDialogId() == 10006) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				}
-				else {
-					return sendQuestStartDialog(env);
+				    return closeDialogWindow(env);
 				}
 			}
 		}
@@ -199,14 +162,10 @@ public class _1319PrioritesMoney extends QuestHandler {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 3739);
 				}
-				else if (env.getDialogId() == 10007 && qs.getStatus() != QuestStatus.COMPLETE && qs.getStatus() != QuestStatus.NONE) {
+				else if (env.getDialogId() == 10007) {
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
-				}
-				else {
-					return sendQuestStartDialog(env);
+				    return closeDialogWindow(env);
 				}
 			}
 		}

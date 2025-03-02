@@ -26,11 +26,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24021Ghosts_In_The_Desert extends QuestHandler
-{
+public class _24021Ghosts_In_The_Desert extends QuestHandler {
+
     private final static int questId = 24021;
     private int itemId = 182215363;
-	
     public _24021Ghosts_In_The_Desert() {
         super(questId);
     }
@@ -75,7 +74,6 @@ public class _24021Ghosts_In_The_Desert extends QuestHandler
                             return defaultCloseDialog(env, 0, 1);
                         }
                     }
-                    break;
                 } case 204329: { //Tofa.
                     switch (dialog) {
                         case START_DIALOG: {
@@ -108,8 +106,7 @@ public class _24021Ghosts_In_The_Desert extends QuestHandler
                             } else {
                                 return sendQuestSelectionDialog(env);
                             }
-                        } case FINISH_DIALOG:
-                            return sendQuestSelectionDialog(env);
+                        }
                     }
                 }
             }

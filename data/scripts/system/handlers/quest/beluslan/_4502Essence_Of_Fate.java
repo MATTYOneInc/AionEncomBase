@@ -62,7 +62,7 @@ public class _4502Essence_Of_Fate extends QuestHandler {
                 }
 			}
 		}
-        if (qs.getStatus() == QuestStatus.START) {
+        else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			switch (targetId) {
 				case 730192: //Balaur Operation Orders.
@@ -83,13 +83,11 @@ public class _4502Essence_Of_Fate extends QuestHandler {
 							}
 						} case CHECK_COLLECTED_ITEMS: {
 							return checkQuestItems(env, 2, 2, true, 5, 10001);
-						} case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
 						}
 					}
 				break;
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204837) {
 				return sendQuestEndDialog(env);
 			}

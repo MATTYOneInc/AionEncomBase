@@ -28,11 +28,10 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _29647Assisting_Grangund extends QuestHandler
-{
+public class _29647Assisting_Grangund extends QuestHandler {
+
 	private final static int questId = 29647;
-	private final static int[] mobs = {219704, 219705, 219730, 219731};
-	
+	private final static int[] mobs = {219704, 219705, 219706, 219730, 219731};
 	public _29647Assisting_Grangund() {
 		super(questId);
 	}
@@ -62,8 +61,7 @@ public class _29647Assisting_Grangund extends QuestHandler
 						if (player.getInventory().getItemCountByItemId(164000336) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -74,20 +72,8 @@ public class _29647Assisting_Grangund extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 804914: { //DF5 Grangund.
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804914) { //DF5 Grangund.
 			    switch (dialog) {
 					case SELECT_REWARD: {
@@ -110,12 +96,14 @@ public class _29647Assisting_Grangund extends QuestHandler
 		} switch (targetId) {
 			case 219704:
 			case 219705:
+			case 219706:
 			case 219730:
 			case 219731:
 				if (qs.getQuestVarById(1) < 10) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

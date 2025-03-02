@@ -66,7 +66,7 @@ public class _39600Silvers_Cross_Your_Palm extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 800939) { //Danurinerk.
 			    return sendQuestEndDialog(env);
 		    }

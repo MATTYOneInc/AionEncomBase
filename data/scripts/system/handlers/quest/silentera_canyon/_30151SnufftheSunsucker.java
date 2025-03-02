@@ -45,9 +45,9 @@ public class _30151SnufftheSunsucker extends QuestHandler {
 	
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
-		if(env.getVisibleObject() instanceof Player){
+		if (env.getVisibleObject() instanceof Player){
 			Player killed = ((Player) env.getVisibleObject());
-			if((killed.getLevel() + 9) >= env.getPlayer().getLevel() || (killed.getLevel() -5 ) <= env.getPlayer().getLevel()){
+			if ((killed.getLevel() + 9) >= env.getPlayer().getLevel() || (killed.getLevel() -5 ) <= env.getPlayer().getLevel()){
 				return defaultOnKillRankedEvent(env, 0, 7, true);
 			}
 		}

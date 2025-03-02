@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24044Change_The_Future extends QuestHandler
-{
+public class _24044Change_The_Future extends QuestHandler {
+
     private final static int questId = 24044;
-	
     public _24044Change_The_Future() {
         super(questId);
     }
@@ -65,7 +64,6 @@ public class _24044Change_The_Future extends QuestHandler
                             return defaultCloseDialog(env, 0, 1);
                         }
                     }
-                    break;
                 } case 203550: { //Munin
                     switch (dialog) {
                         case START_DIALOG: {
@@ -76,7 +74,6 @@ public class _24044Change_The_Future extends QuestHandler
                             return defaultCloseDialog(env, 1, 2);
                         }
                     }
-                    break;
                 } case 204207: { //Kasir
                     switch (dialog) {
                         case START_DIALOG: {
@@ -87,7 +84,6 @@ public class _24044Change_The_Future extends QuestHandler
                             return defaultCloseDialog(env, 2, 3);
                         }
                     }
-                    break;
                 } case 798067: { //Lyeanenerk
                     switch (dialog) {
                         case START_DIALOG: {
@@ -98,7 +94,6 @@ public class _24044Change_The_Future extends QuestHandler
                             return defaultCloseDialog(env, 3, 4);
                         }
                     }
-                    break;
                 } case 279029: { //Lugbug
                     switch (dialog) {
                         case START_DIALOG: {
@@ -113,7 +108,6 @@ public class _24044Change_The_Future extends QuestHandler
                             return defaultCloseDialog(env, 6, 6, true, false);
                         }
                     }
-                    break;
                 } case 700355: { //Artifact Of The Inception.
                     switch (dialog) {
                         case USE_OBJECT: {
@@ -124,7 +118,6 @@ public class _24044Change_The_Future extends QuestHandler
                             }
                         }
                     }
-                    break;
                 }
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {

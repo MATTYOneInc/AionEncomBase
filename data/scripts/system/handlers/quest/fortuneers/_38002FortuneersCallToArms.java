@@ -30,7 +30,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _38002FortuneersCallToArms extends QuestHandler {
 
 	public static final int questId = 38002;
-
 	public _38002FortuneersCallToArms() {
 		super(questId);
 	}
@@ -55,15 +54,13 @@ public class _38002FortuneersCallToArms extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
 			if (targetId == 799840) { // Juris Po
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 10002);
 				}
-				else if (dialog == QuestDialog.SELECT_REWARD) {
+				else if (env.getDialog() == QuestDialog.SELECT_REWARD) {
 					changeQuestStep(env, 0, 0, true);
 					return sendQuestDialog(env, 5);
 				}

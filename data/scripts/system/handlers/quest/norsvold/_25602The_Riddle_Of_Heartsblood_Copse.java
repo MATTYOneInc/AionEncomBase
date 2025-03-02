@@ -61,7 +61,7 @@ public class _25602The_Riddle_Of_Heartsblood_Copse extends QuestHandler {
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
 			if (targetId == 806171) { //Phyndar.
 				switch (env.getDialog()) {
@@ -85,7 +85,7 @@ public class _25602The_Riddle_Of_Heartsblood_Copse extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806171) { //Phyndar.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

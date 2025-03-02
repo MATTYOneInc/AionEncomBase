@@ -93,7 +93,7 @@ public class _27505Support_Operation_For_The_Ophidan_Warpath extends QuestHandle
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806268) { //ë°”ìš°í”„ë?¼.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

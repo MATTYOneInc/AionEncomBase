@@ -23,18 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25640Mysterious_Organisms_In_Norsvold extends QuestHandler
-{
+public class _25640Mysterious_Organisms_In_Norsvold extends QuestHandler {
+
     private final static int questId = 25640;
-	
-	private final static int[] Q25640 = {
-		241947, 241951, 241955, 241959, 241963, 241967, 241971, 241975, 241979, 241983,
-		241987, 241991, 241995, 241999, 242003, 242087, 242091, 242095, 242099, 242103,
-		242107, 242111, 242115, 242119, 242123, 242127, 242131, 242135, 242139, 242143,
-		242287, 242291, 242295, 242299, 242303, 242307, 242311, 242315, 242319, 242323,
-		242327, 242331, 242335, 242339, 242343, 242487, 242491, 242495, 242499, 242503,
-		242507, 242511, 242515, 242519, 242523, 242527, 242531, 242535, 242539, 242543};
-	
+	private final static int[] Q25640 = {241947, 241951, 241955, 241959, 241963, 241967, 241971, 241975, 241979, 241983, 241987, 241991, 241995, 241999, 242003, 242087, 242091, 242095, 242099, 242103, 242107, 242111, 242115, 242119, 242123, 242127, 242131, 242135, 242139, 242143, 242287, 242291, 242295, 242299, 242303, 242307, 242311, 242315, 242319, 242323, 242327, 242331, 242335, 242339, 242343, 242487, 242491, 242495, 242499, 242503, 242507, 242511, 242515, 242519, 242523, 242527, 242531, 242535, 242539, 242543};
     public _25640Mysterious_Organisms_In_Norsvold() {
         super(questId);
     }
@@ -52,27 +44,16 @@ public class _25640Mysterious_Organisms_In_Norsvold extends QuestHandler
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
             if (targetId == 806101) { //Vadorei.
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806101) { //Vadorei.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 30) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 30, 31, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806101) { //Vadorei.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -66,7 +66,7 @@ public class _18910The_Sauro_Supply_Base extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 801945) { //Kanix.
 			    return sendQuestEndDialog(env);
 		    }

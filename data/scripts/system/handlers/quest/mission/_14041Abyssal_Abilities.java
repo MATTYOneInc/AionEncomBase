@@ -24,11 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14041Abyssal_Abilities extends QuestHandler
-{
+public class _14041Abyssal_Abilities extends QuestHandler {
+
     private final static int questId = 14041;
     private final static int[] npc_ids = {278627, 278628, 278629, 278630, 278631, 278632, 278633, 278554};
-	
     public _14041Abyssal_Abilities() {
         super(questId);
     }

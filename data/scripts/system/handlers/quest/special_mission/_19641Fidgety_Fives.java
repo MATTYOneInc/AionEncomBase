@@ -27,7 +27,6 @@ public class _19641Fidgety_Fives extends QuestHandler {
 
 	private final static int questId = 19641;
 	private final static int[] mobs = {215654, 215655, 215658, 215659};
-	
 	public _19641Fidgety_Fives() {
 		super(questId);
 	}
@@ -61,20 +60,8 @@ public class _19641Fidgety_Fives extends QuestHandler {
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 798991: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 798991) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

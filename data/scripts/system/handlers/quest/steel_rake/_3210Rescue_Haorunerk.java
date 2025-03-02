@@ -30,10 +30,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3210Rescue_Haorunerk extends QuestHandler
-{
+public class _3210Rescue_Haorunerk extends QuestHandler {
+
 	private final static int questId = 3210;
-	
 	public _3210Rescue_Haorunerk() {
 		super(questId);
 	}
@@ -80,8 +79,7 @@ public class _3210Rescue_Haorunerk extends QuestHandler
 					} case STEP_TO_1: {
 						qs.setQuestVarById(0, 1);
 						updateQuestStatus(env);
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-						return true;
+						return closeDialogWindow(env);
 					}
 				}
 			}
@@ -89,13 +87,15 @@ public class _3210Rescue_Haorunerk extends QuestHandler
 			if (qs != null && qs.getStatus() == QuestStatus.START) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 10002);
-				} if (env.getDialog() == QuestDialog.SELECT_REWARD && qs.getQuestVarById(1) == 1 && qs.getQuestVarById(2) == 1) {
+				} if (env.getDialog() == QuestDialog.SELECT_REWARD) {
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestDialog(env, 5);
 				}
 			}
+         else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
 			return sendQuestEndDialog(env);
+		    }
 		}
 		return false;
 	}

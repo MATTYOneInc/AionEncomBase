@@ -48,7 +48,7 @@ public class _28740Its_A_Dirty_Job extends QuestHandler {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 				    } case CHECK_COLLECTED_ITEMS: {
-                        return checkQuestItems(env, 0, 1, true, 5, 2716);
+                        return checkQuestItems(env, 0, 1, true, 10000, 10001);
                     } 
 				}
 			}
@@ -59,7 +59,7 @@ public class _28740Its_A_Dirty_Job extends QuestHandler {
 		}
 		return false;
 	}
-	
+
 	@Override
     public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
         Player player = env.getPlayer();

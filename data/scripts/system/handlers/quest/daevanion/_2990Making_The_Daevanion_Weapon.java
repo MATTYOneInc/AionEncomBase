@@ -29,7 +29,6 @@ public class _2990Making_The_Daevanion_Weapon extends QuestHandler {
 	private int B = 0;
 	private int C = 0;
 	private int ALL = 0;
-	
 	public _2990Making_The_Daevanion_Weapon() {
 		super(questId);
 	}
@@ -48,7 +47,6 @@ public class _2990Making_The_Daevanion_Weapon extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204146) {
@@ -66,7 +64,7 @@ public class _2990Making_The_Daevanion_Weapon extends QuestHandler {
 			int var = qs.getQuestVarById(0);
 			int var1 = qs.getQuestVarById(1);
 			if (targetId == 204146) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						if (var == 0) {
 							return sendQuestDialog(env, 1011);
@@ -95,12 +93,10 @@ public class _2990Making_The_Daevanion_Weapon extends QuestHandler {
 						qs.setQuestVar(3);
 						updateQuestStatus(env);
 						return sendQuestSelectionDialog(env);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204146) {
 				return sendQuestEndDialog(env);
 			}

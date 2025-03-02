@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14012Dukaki_Mischief extends QuestHandler
-{
+public class _14012Dukaki_Mischief extends QuestHandler {
+
     private final static int questId = 14012;
-	
     public _14012Dukaki_Mischief() {
         super(questId);
     }

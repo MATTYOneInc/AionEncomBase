@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15502The_Eternal_Shard_Of_Light extends QuestHandler
-{
+public class _15502The_Eternal_Shard_Of_Light extends QuestHandler {
+
 	private static final int questId = 15502;
-	
 	public _15502The_Eternal_Shard_Of_Light() {
 		super(questId);
 	}
@@ -44,7 +43,6 @@ public class _15502The_Eternal_Shard_Of_Light extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 806089) {
 				switch (env.getDialog()) {
@@ -59,11 +57,11 @@ public class _15502The_Eternal_Shard_Of_Light extends QuestHandler
 				}
 			}
 		} else if (targetId == 703063) {
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806089) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -76,12 +74,10 @@ public class _15502The_Eternal_Shard_Of_Light extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806089) {
 				return sendQuestEndDialog(env);
 			}

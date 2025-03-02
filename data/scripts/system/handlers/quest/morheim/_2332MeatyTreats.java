@@ -32,7 +32,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _2332MeatyTreats extends QuestHandler {
 
 	private final static int questId = 2332;
-
 	public _2332MeatyTreats() {
 		super(questId);
 	}

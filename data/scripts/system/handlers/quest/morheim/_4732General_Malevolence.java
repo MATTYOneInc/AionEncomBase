@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4732General_Malevolence extends QuestHandler
-{
+public class _4732General_Malevolence extends QuestHandler {
+
 	private static final int questId = 4732;
-	
 	public _4732General_Malevolence() {
 		super(questId);
 	}
@@ -53,7 +52,7 @@ public class _4732General_Malevolence extends QuestHandler
 					return sendQuestStartDialog(env, 182205676, 1);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 800519) { //Kelmar.
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

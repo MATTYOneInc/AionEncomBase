@@ -35,10 +35,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4212Missing_Sidrunerk extends QuestHandler
-{
+public class _4212Missing_Sidrunerk extends QuestHandler {
+
 	private final static int questId = 4212;
-	
 	public _4212Missing_Sidrunerk() {
 		super(questId);
 	}
@@ -104,7 +103,7 @@ public class _4212Missing_Sidrunerk extends QuestHandler
 				npc.getController().delete();
 				return true;
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798058) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

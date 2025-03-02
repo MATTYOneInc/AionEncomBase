@@ -18,13 +18,11 @@ package quest.beshmundir;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author Nephis
@@ -32,7 +30,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _30202SuspiciousCeremony extends QuestHandler {
 
 	private final static int questId = 30202;
-
 	public _30202SuspiciousCeremony() {
 		super(questId);
 	}
@@ -71,10 +68,8 @@ public class _30202SuspiciousCeremony extends QuestHandler {
 				else if (env.getDialogId() == 1009) {
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-					return sendQuestDialog(env, 5);
+				    return sendQuestEndDialog(env);
 				}
-				else
-					return sendQuestStartDialog(env);
 			}
 			else if (qs != null && qs.getStatus() == QuestStatus.REWARD)
 				return sendQuestEndDialog(env);
@@ -87,11 +82,8 @@ public class _30202SuspiciousCeremony extends QuestHandler {
 					removeQuestItem(env, 182209602, 1);
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
-				else
-					return sendQuestStartDialog(env);
 			}
 		}
 		else if (targetId == 798943) {
@@ -101,14 +93,10 @@ public class _30202SuspiciousCeremony extends QuestHandler {
 				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-					return true;
+					return closeDialogWindow(env);
 				}
-				else
-					return sendQuestStartDialog(env);
 			}
 		}
-
 		return false;
 	}
 }

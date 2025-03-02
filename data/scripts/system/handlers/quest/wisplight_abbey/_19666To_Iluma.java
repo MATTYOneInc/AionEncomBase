@@ -28,18 +28,18 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _19666To_Iluma extends QuestHandler
-{
+public class _19666To_Iluma extends QuestHandler {
+
 	private final static int questId = 19666;
-	
 	public _19666To_Iluma() {
 		super(questId);
 	}
 	
 	@Override
 	public void register() {
-		qe.registerQuestNpc(806243).addOnQuestStart(questId); //Gilios.
+		qe.registerQuestNpc(804651).addOnQuestStart(questId); //Lena.
 		qe.registerQuestNpc(806243).addOnTalkEvent(questId); //Gilios.
+		qe.registerQuestNpc(806134).addOnTalkEvent(questId); //Ador.
 		qe.registerQuestNpc(806114).addOnTalkEvent(questId); //Ilisia.
 	}
 	
@@ -52,14 +52,13 @@ public class _19666To_Iluma extends QuestHandler
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		} if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
-			if (targetId == 806243) { //Gilios.
+			if (targetId == 804651) { //Lena.
 				switch (dialog) {
 					case START_DIALOG: {
 						if (player.getInventory().getItemCountByItemId(164000335) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -74,16 +73,26 @@ public class _19666To_Iluma extends QuestHandler
 			return false;
 		} if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
-				case 806114: { //Ilisia.
+				case 806243: { //Gilios.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
+							return sendQuestDialog(env, 1011);
+						} case STEP_TO_1: {
+							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+							updateQuestStatus(env);
+				            return closeDialogWindow(env);
+						}
+					}
+				}
+				case 806134: { //Ador.
+					switch (env.getDialog()) {
+						case START_DIALOG: {
+							return sendQuestDialog(env, 1352);
+						} case SET_REWARD: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+				            return closeDialogWindow(env);
 						}
 					}
 				}

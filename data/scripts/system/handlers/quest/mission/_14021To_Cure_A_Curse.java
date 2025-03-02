@@ -24,12 +24,11 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14021To_Cure_A_Curse extends QuestHandler
-{
+public class _14021To_Cure_A_Curse extends QuestHandler {
+
     private final static int questId = 14021;
     private final static int[] mob_ids = {210771, 210758, 210763, 210764, 210759, 210770};
     private final static int[] npc_ids = {203902, 700179, 204043, 204030};
-	
     public _14021To_Cure_A_Curse() {
         super(questId);
     }
@@ -78,7 +77,6 @@ public class _14021To_Cure_A_Curse extends QuestHandler
                         case STEP_TO_1:
                             return defaultCloseDialog(env, 0, 1);
                     }
-                break;
                 case 700179:
                     if (var == 7) {
                         switch (env.getDialog()) {
@@ -90,7 +88,6 @@ public class _14021To_Cure_A_Curse extends QuestHandler
                             }
                         }
                     }
-                break;
                 case 204043:
                     switch (env.getDialog()) {
                         case START_DIALOG:
@@ -101,7 +98,6 @@ public class _14021To_Cure_A_Curse extends QuestHandler
                             changeQuestStep(env, 8, 9, false);
                             return sendQuestDialog(env, 0);
                     }
-                break;
                 case 204030:
                     switch (env.getDialog()) {
                         case START_DIALOG:
@@ -111,7 +107,6 @@ public class _14021To_Cure_A_Curse extends QuestHandler
                         case STEP_TO_5:
                             return defaultCloseDialog(env, 9, 9, true, false);
                     }
-				break;
             }
         } if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 203902) {

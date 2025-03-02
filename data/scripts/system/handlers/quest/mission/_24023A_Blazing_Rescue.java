@@ -14,24 +14,21 @@ package quest.mission;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24023A_Blazing_Rescue extends QuestHandler
-{
+public class _24023A_Blazing_Rescue extends QuestHandler {
+
     private final static int questId = 24023;
     private final static int[] npc_ids = {204317, 204372, 204408};
-	
     public _24023A_Blazing_Rescue() {
         super(questId);
     }
@@ -92,12 +89,10 @@ public class _24023A_Blazing_Rescue extends QuestHandler
                             if (var == 0) {
                                 qs.setQuestVarById(0, 1);
                                 updateQuestStatus(env);
-                                PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                                return true;
+					            return closeDialogWindow(env);
                             }
                     }
                 }
-                break;
                 case 204408: {
                     switch (env.getDialog()) {
                         case START_DIALOG:
@@ -108,14 +103,11 @@ public class _24023A_Blazing_Rescue extends QuestHandler
                             }
                         case STEP_TO_2:
                             if (var == 1) {
-                                if (!giveQuestItem(env, 182215369, 1)) {
-                                    return true;
-                                }
+                                giveQuestItem(env, 182215369, 1);
                                 playQuestMovie(env, 78);
                                 qs.setQuestVarById(0, 2);
                                 updateQuestStatus(env);
-                                PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                                return true;
+					            return closeDialogWindow(env);
                             }
                         case CHECK_COLLECTED_ITEMS:
                             if (var == 3) {
@@ -128,10 +120,8 @@ public class _24023A_Blazing_Rescue extends QuestHandler
                                     return sendQuestDialog(env, 10001);
                                 }
                             }
-
                     }
                 }
-                break;
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 204372) {

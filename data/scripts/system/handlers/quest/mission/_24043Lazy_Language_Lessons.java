@@ -27,10 +27,9 @@ import com.aionemu.gameserver.utils.MathUtil;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24043Lazy_Language_Lessons extends QuestHandler
-{
+public class _24043Lazy_Language_Lessons extends QuestHandler {
+
     private final static int questId = 24043;
-	
     public _24043Lazy_Language_Lessons() {
         super(questId);
     }
@@ -68,7 +67,6 @@ public class _24043Lazy_Language_Lessons extends QuestHandler
                             return defaultCloseDialog(env, 0, 1);
                         }
                     }
-                    break;
                 } case 278086: { //Sinjah.
                     switch (dialog) {
                         case START_DIALOG: {
@@ -79,7 +77,6 @@ public class _24043Lazy_Language_Lessons extends QuestHandler
                             return defaultCloseDialog(env, 1, 2);
                         }
                     }
-                    break;
                 } case 278039: { //Grunn.
                     switch (dialog) {
                         case START_DIALOG: {
@@ -90,7 +87,6 @@ public class _24043Lazy_Language_Lessons extends QuestHandler
                             return defaultCloseDialog(env, 3, 4);
                         }
                     }
-                    break;
                 } case 279027: { //Kaoranerk.
                     switch (dialog) {
                         case START_DIALOG: {
@@ -109,7 +105,6 @@ public class _24043Lazy_Language_Lessons extends QuestHandler
                             return defaultCloseDialog(env, 6, 6, true, false);
                         }
                     }
-                    break;
                 } case 204210: { //Phosphor.
                     switch (dialog) {
                         case START_DIALOG: {

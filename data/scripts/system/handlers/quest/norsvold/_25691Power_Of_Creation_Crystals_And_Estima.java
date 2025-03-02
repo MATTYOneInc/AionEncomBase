@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25691Power_Of_Creation_Crystals_And_Estima extends QuestHandler
-{
+public class _25691Power_Of_Creation_Crystals_And_Estima extends QuestHandler {
+
 	private static final int questId = 25691;
-	
 	public _25691Power_Of_Creation_Crystals_And_Estima() {
 		super(questId);
 	}
@@ -43,7 +42,6 @@ public class _25691Power_Of_Creation_Crystals_And_Estima extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 806697) {
 				switch (env.getDialog()) {
@@ -57,7 +55,7 @@ public class _25691Power_Of_Creation_Crystals_And_Estima extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806697) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -70,12 +68,10 @@ public class _25691Power_Of_Creation_Crystals_And_Estima extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806697) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

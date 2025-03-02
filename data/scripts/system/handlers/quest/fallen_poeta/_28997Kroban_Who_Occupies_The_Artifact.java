@@ -23,11 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28997Kroban_Who_Occupies_The_Artifact extends QuestHandler
-{
+public class _28997Kroban_Who_Occupies_The_Artifact extends QuestHandler {
+
     private final static int questId = 28997;
-	private final static int[] IDLF1TVanqNamed73Ah = {243684}; //아티팩트를 지배하는 �?�로반.
-	
     public _28997Kroban_Who_Occupies_The_Artifact() {
         super(questId);
     }
@@ -35,9 +33,7 @@ public class _28997Kroban_Who_Occupies_The_Artifact extends QuestHandler
     public void register() {
         qe.registerQuestNpc(806253).addOnQuestStart(questId); //Vienste.
 		qe.registerQuestNpc(806253).addOnTalkEvent(questId); //Vienste.
-		for (int mob: IDLF1TVanqNamed73Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(243684).addOnKillEvent(questId);
     }
 	
     @Override
@@ -45,27 +41,16 @@ public class _28997Kroban_Who_Occupies_The_Artifact extends QuestHandler
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
             if (targetId == 806253) { //Vienste.
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806253) { //Vienste.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 2) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806253) { //Vienste.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

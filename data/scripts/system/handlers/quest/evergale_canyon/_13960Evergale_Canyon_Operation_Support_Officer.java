@@ -13,14 +13,11 @@
 package quest.evergale_canyon;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
@@ -65,15 +62,14 @@ public class _13960Evergale_Canyon_Operation_Support_Officer extends QuestHandle
 			}
 		}
 		if (qs == null || qs.getStatus() == QuestStatus.START) {
-            int var = qs.getQuestVarById(0);
 			if (targetId == 835218) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 1) {
+						if (qs.getQuestVarById(0) == 1) {
 							return sendQuestDialog(env, 1352);
 						}
 					} case SELECT_ACTION_1353: {
-						if (var == 1) {
+						if (qs.getQuestVarById(0) == 1) {
 							return sendQuestDialog(env, 1353);
 						}
 					} case STEP_TO_2: {
@@ -121,6 +117,7 @@ public class _13960Evergale_Canyon_Operation_Support_Officer extends QuestHandle
             int var = qs.getQuestVarById(0);
 			if (zoneName == ZoneName.get("IDETERNITY_WAR_Q13960_302350000")) {
 				if (var == 2) {
+					changeQuestStep(env, 2, 3, false);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return true;

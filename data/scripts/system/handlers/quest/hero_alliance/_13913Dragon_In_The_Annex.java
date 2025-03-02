@@ -23,10 +23,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13913Dragon_In_The_Annex extends QuestHandler
-{
+public class _13913Dragon_In_The_Annex extends QuestHandler {
+
 	private final static int questId = 13913;
-	
 	public _13913Dragon_In_The_Annex() {
 		super(questId);
 	}
@@ -45,7 +44,7 @@ public class _13913Dragon_In_The_Annex extends QuestHandler
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			return false;
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798515) { //Perna.
 				return sendQuestEndDialog(env);
 			}

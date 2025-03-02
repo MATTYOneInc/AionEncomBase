@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1470HannetsVengeance extends QuestHandler {
 
 	private final static int questId = 1470;
-
 	public _1470HannetsVengeance() {
 		super(questId);
 	}
@@ -47,7 +46,6 @@ public class _1470HannetsVengeance extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		int targetId = 0;
-
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
@@ -58,7 +56,7 @@ public class _1470HannetsVengeance extends QuestHandler {
 				else
 					return sendQuestStartDialog(env);
 			}
-			else if (qs.getStatus() == QuestStatus.REWARD) {
+			else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 				return sendQuestEndDialog(env);
 			}
 		}
@@ -71,7 +69,6 @@ public class _1470HannetsVengeance extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() != QuestStatus.START)
 			return false;
-
 		int var = qs.getQuestVarById(0);
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)

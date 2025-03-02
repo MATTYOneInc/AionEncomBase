@@ -16,6 +16,7 @@ import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
+import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
@@ -43,9 +44,33 @@ public class _13952Logion_Journal extends QuestHandler {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 0) {
+                switch (env.getDialog()) {
+				    case ACCEPT_QUEST_SIMPLE: {
+					    return sendQuestStartDialog(env);
+				    } case REFUSE_QUEST_SIMPLE: {
+				        return closeDialogWindow(env);
+                    }
+                }
+			}
+        }
+		if (qs == null || qs.getStatus() == QuestStatus.START) {
+			switch (targetId) {
+				case 806591: {
+				switch (env.getDialog()) {
+					case START_DIALOG:
+						return sendQuestDialog(env, 10002);
+					case SELECT_REWARD:
+				        removeQuestItem(env, 182216177, 1);
+						changeQuestStep(env, 0, 0, true);
+						return sendQuestEndDialog(env);
+                    }
+			   }
+		   }
+	   }
+       else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806582) {
-				removeQuestItem(env, 182216177, 1);
 				return sendQuestEndDialog(env);
 			}
 		}
@@ -54,14 +79,11 @@ public class _13952Logion_Journal extends QuestHandler {
 	
 	@Override
 	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
-		final Player player = env.getPlayer();
-		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (QuestService.startQuest(env)) {
-				changeQuestStep(env, 0, 0, true);
-				return HandlerResult.fromBoolean(sendQuestDialog(env, 4762));
-			}
+		Player player = env.getPlayer();
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
+			QuestService.startQuest(env);
 		}
-		return HandlerResult.UNKNOWN;
+		return HandlerResult.FAILED;
 	}
 }

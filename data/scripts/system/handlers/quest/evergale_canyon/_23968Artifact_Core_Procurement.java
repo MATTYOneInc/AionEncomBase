@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23968Artifact_Core_Procurement extends QuestHandler
-{
+public class _23968Artifact_Core_Procurement extends QuestHandler {
+
     private final static int questId = 23968;
-	
     public _23968Artifact_Core_Procurement() {
         super(questId);
     }
@@ -42,7 +41,6 @@ public class _23968Artifact_Core_Procurement extends QuestHandler
 		final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 835220) {
 				switch (env.getDialog()) {
@@ -69,12 +67,10 @@ public class _23968Artifact_Core_Procurement extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835220) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -30,7 +30,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _48001CallOfTheCrusade extends QuestHandler {
 
 	public static final int questId = 48001;
-
 	public _48001CallOfTheCrusade() {
 		super(questId);
 	}
@@ -57,7 +56,6 @@ public class _48001CallOfTheCrusade extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
 			if (targetId == 799868) { // Viscum
 				if (dialog == QuestDialog.START_DIALOG) {

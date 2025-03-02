@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1351EarningMaranasRespect extends QuestHandler {
 
 	private final static int questId = 1351;
-
 	public _1351EarningMaranasRespect() {
 		super(questId);
 	}
@@ -73,8 +72,6 @@ public class _1351EarningMaranasRespect extends QuestHandler {
 					else
 						return sendQuestDialog(env, 2716);
 				}
-				else
-					return sendQuestStartDialog(env);
 			}
 			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
 				return sendQuestEndDialog(env);

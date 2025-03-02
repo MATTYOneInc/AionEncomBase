@@ -23,16 +23,14 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15306Wielding_Power extends QuestHandler
-{
+public class _15306Wielding_Power extends QuestHandler {
+
     private final static int questId = 15306;
-	
 	private final static int[] LDF4AdvanceMobs = {233939, 233940, 233941, 233942, 233900, 234312, 234313, 234692};
 	private final static int[] LDF5FortressMobs = {234292, 234294, 234295, 234296, 234298, 234529};
 	private final static int[] Ab1NewMobs = {883301, 883302, 883303, 883304, 883305, 883306, 883307, 883308};
 	private final static int[] Boss1 = {232853, 233491, 234190, 233544};
 	private final static int[] Boss2 = {236277, 231073, 231130};
-	
 	public _15306Wielding_Power() {
         super(questId);
     }
@@ -61,7 +59,9 @@ public class _15306Wielding_Power extends QuestHandler
         Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
+        if (qs == null) {
+            return false;
+        }
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 805327) { //Rike.
                 switch (env.getDialog()) {
@@ -76,6 +76,7 @@ public class _15306Wielding_Power extends QuestHandler
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+		    int var = qs.getQuestVarById(0);
 			if (targetId == 805328) { //Efaion.
 				switch (env.getDialog()) {
                     case START_DIALOG: {
@@ -109,12 +110,6 @@ public class _15306Wielding_Power extends QuestHandler
 						return closeDialogWindow(env);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 1, 2, false, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 1) {
-							defaultCloseDialog(env, 2, 2);
-						} else if (var == 1) {
-							defaultCloseDialog(env, 1, 1);
-						}
 					}
                 }
 			} else if (targetId == 702829) { //Sealed Book.

@@ -18,13 +18,11 @@ package quest.beluslan;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author Ritsu
@@ -32,7 +30,7 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
  */
 public class _2646TheInscrutableStranger extends QuestHandler {
 
-	private final static int	questId	= 2646;
+	private final static int questId = 2646;
 	public _2646TheInscrutableStranger() {
 		super(questId);
 	}
@@ -68,12 +66,12 @@ public class _2646TheInscrutableStranger extends QuestHandler {
 				switch (dialog){
 					case START_DIALOG:
 						if (var == 3) {
-							qs.setStatus(QuestStatus.REWARD);
-							updateQuestStatus(env);
 							return sendQuestDialog(env, 2375);
 						}
 					case SELECT_REWARD:
 						if (var == 3)
+							qs.setStatus(QuestStatus.REWARD);
+							updateQuestStatus(env);
 							return sendQuestDialog(env, 5);
 				}
 			}
@@ -84,15 +82,11 @@ public class _2646TheInscrutableStranger extends QuestHandler {
 							return sendQuestDialog(env, 1352);
 					case STEP_TO_1:
 						if (var == 0) {
-							if (!giveQuestItem(env, 182204515, 1))
-								return true;
-							if (!giveQuestItem(env, 182204516, 1))
-								return true;
+							giveQuestItem(env, 182204515, 1);
+							giveQuestItem(env, 182204516, 1);
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility
-								.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                            return closeDialogWindow(env);
 						}
 				}
 			}
@@ -106,9 +100,7 @@ public class _2646TheInscrutableStranger extends QuestHandler {
 							removeQuestItem(env, 182204515, 1);
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility
-								.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                            return closeDialogWindow(env);
 						}
 				}
 			}
@@ -122,14 +114,12 @@ public class _2646TheInscrutableStranger extends QuestHandler {
 							removeQuestItem(env, 182204516, 1);
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility
-								.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                            return closeDialogWindow(env);
 						}
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204817) {
 				return sendQuestEndDialog(env);
 			}

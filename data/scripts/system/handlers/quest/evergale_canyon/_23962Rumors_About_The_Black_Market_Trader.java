@@ -18,7 +18,6 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -38,6 +37,7 @@ public class _23962Rumors_About_The_Black_Market_Trader extends QuestHandler {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
 		qe.registerOnEnterWorld(questId);
+		qe.registerQuestNpc(835221).addOnQuestStart(questId);
 		qe.registerQuestNpc(835385).addOnAtDistanceEvent(questId);
 	}
 	
@@ -73,21 +73,6 @@ public class _23962Rumors_About_The_Black_Market_Trader extends QuestHandler {
 		}
 		return false;
 	}
-	
-	@Override
-    public boolean onEnterWorldEvent(QuestEnv env) {
-        final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getWorldId() == 302350000) { //Windy Gorge 5.5
-            if (qs == null) {
-                env.setQuestId(questId);
-                if (QuestService.startQuest(env)) {
-					return true;
-				}
-            }
-        }
-        return false;
-    }
 	
 	@Override
 	public boolean onAtDistanceEvent(QuestEnv env) {

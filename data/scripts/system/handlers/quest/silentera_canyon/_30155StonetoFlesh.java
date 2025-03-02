@@ -44,7 +44,7 @@ public class _30155StonetoFlesh extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			int var = qs.getQuestVarById(0);
 			if (targetId == 204304) {
 				if (var == 3)

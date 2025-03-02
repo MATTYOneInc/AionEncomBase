@@ -28,11 +28,10 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _29645A_Tidy_Supply_Route extends QuestHandler
-{
+public class _29645A_Tidy_Supply_Route extends QuestHandler {
+
 	private final static int questId = 29645;
 	private final static int[] mobs = {219662, 219663, 219668};
-	
 	public _29645A_Tidy_Supply_Route() {
 		super(questId);
 	}
@@ -62,8 +61,7 @@ public class _29645A_Tidy_Supply_Route extends QuestHandler
 						if (player.getInventory().getItemCountByItemId(164000336) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -74,20 +72,8 @@ public class _29645A_Tidy_Supply_Route extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 804719: { //DF5 Haldor.
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804719) { //DF5 Haldor.
 			    switch (dialog) {
 					case SELECT_REWARD: {
@@ -115,6 +101,7 @@ public class _29645A_Tidy_Supply_Route extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

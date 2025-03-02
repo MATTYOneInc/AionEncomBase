@@ -47,8 +47,7 @@ public class _16904Lepharist_Mark extends QuestHandler {
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
-					QuestService.startQuest(env);
-					return closeDialogWindow(env);
+                    return sendQuestStartDialog(env);
 				}
 				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
 					return closeDialogWindow(env);
@@ -68,7 +67,7 @@ public class _16904Lepharist_Mark extends QuestHandler {
              } 
           }   
        }
-       else if (qs.getStatus() == QuestStatus.REWARD) {
+       else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 801189) {
 				return sendQuestEndDialog(env);
 			}

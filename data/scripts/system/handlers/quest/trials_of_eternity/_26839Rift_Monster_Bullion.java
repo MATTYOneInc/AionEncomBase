@@ -13,37 +13,30 @@
 package quest.trials_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _26839Rift_Monster_Bullion extends QuestHandler
-{
+public class _26839Rift_Monster_Bullion extends QuestHandler {
+
     private final static int questId = 26839;
-	private final static int[] npcs = {806572, 806578};
-	private final static int[] IDEternity03DimensionBoss01 = {246440};
-	
     public _26839Rift_Monster_Bullion() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: IDEternity03DimensionBoss01) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+        qe.registerQuestNpc(806578).addOnTalkEvent(questId);
+        qe.registerQuestNpc(806572).addOnTalkEvent(questId);
+		qe.registerQuestNpc(246440).addOnKillEvent(questId);
 		qe.registerQuestNpc(806572).addOnAtDistanceEvent(questId);
 		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_03_Q16836_G_301560000"), questId);
 	}
@@ -53,7 +46,7 @@ public class _26839Rift_Monster_Bullion extends QuestHandler
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806578) { //Peregrine.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -73,7 +66,6 @@ public class _26839Rift_Monster_Bullion extends QuestHandler
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 			return true;
 		}
 		return false;

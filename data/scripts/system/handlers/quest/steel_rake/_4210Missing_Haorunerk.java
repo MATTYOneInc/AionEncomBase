@@ -27,10 +27,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _4210Missing_Haorunerk extends QuestHandler
-{
+public class _4210Missing_Haorunerk extends QuestHandler {
+
 	private final static int questId = 4210;
-	
 	public _4210Missing_Haorunerk() {
 		super(questId);
 	}
@@ -76,7 +75,7 @@ public class _4210Missing_Haorunerk extends QuestHandler
 					return defaultCloseDialog(env, 1, 1, true, true);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798331) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

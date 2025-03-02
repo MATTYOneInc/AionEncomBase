@@ -32,7 +32,6 @@ public class _15672Eliminating_The_Archon_Howitzer_Kenovikan extends QuestHandle
 	
     public void register() {
 		qe.registerOnEnterWorld(questId);
-        qe.registerQuestNpc(806114).addOnQuestStart(questId);
         qe.registerQuestNpc(806114).addOnTalkEvent(questId);
 		qe.registerQuestNpc(246478).addOnKillEvent(questId);
     }

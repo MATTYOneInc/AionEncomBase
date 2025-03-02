@@ -31,7 +31,6 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 public class _1430ATeleportationExperiment extends QuestHandler {
 
 	private final static int questId = 1430;
-
 	public _1430ATeleportationExperiment() {
 		super(questId);
 	}
@@ -58,7 +57,6 @@ public class _1430ATeleportationExperiment extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		else if (targetId == 203337) { // Sonirim
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -70,8 +68,6 @@ public class _1430ATeleportationExperiment extends QuestHandler {
 					TeleportService2.teleportTo(player, 220020000, 1, 638, 2337, 425, (byte) 20);
 					return closeDialogWindow(env);
 				}
-				else
-					return sendQuestStartDialog(env);
 			}
 			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) { // Reward
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -81,10 +77,7 @@ public class _1430ATeleportationExperiment extends QuestHandler {
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
-				else
-					return sendQuestEndDialog(env);
 			}
-
 		}
 		return false;
 	}

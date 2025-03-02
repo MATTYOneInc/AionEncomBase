@@ -117,12 +117,6 @@ public class _20527Finding_The_Traces_Of_The_Sage_Of_The_Tower_Of_Eternity exten
 						return defaultCloseDialog(env, 13, 14, false, false, 182216087, 1, 0, 0); 
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 12, 13, false, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 13) {
-							defaultCloseDialog(env, 13, 13);
-						} else if (var == 12) {
-							defaultCloseDialog(env, 12, 12);
-						}
 					}
                 }
             } if (targetId == 806296) { //Wejabobo

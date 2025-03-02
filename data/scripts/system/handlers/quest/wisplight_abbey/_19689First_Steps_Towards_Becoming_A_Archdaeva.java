@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19689First_Steps_Towards_Becoming_A_Archdaeva extends QuestHandler
-{
+public class _19689First_Steps_Towards_Becoming_A_Archdaeva extends QuestHandler {
+
 	private static final int questId = 19689;
-	
 	public _19689First_Steps_Towards_Becoming_A_Archdaeva() {
 		super(questId);
 	}
@@ -74,7 +73,7 @@ public class _19689First_Steps_Towards_Becoming_A_Archdaeva extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806698) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

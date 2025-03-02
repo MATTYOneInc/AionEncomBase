@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15323Top_Secret_Order extends QuestHandler
-{
+public class _15323Top_Secret_Order extends QuestHandler {
+
 	private static final int questId = 15323;
-	
 	public _15323Top_Secret_Order() {
 		super(questId);
 	}
@@ -44,6 +43,9 @@ public class _15323Top_Secret_Order extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
+        if (qs == null) {
+            return false;
+        }
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 805330) {
 				switch (dialog) {

@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2484OurManInElysea extends QuestHandler {
 
 	private final static int questId = 2484;
-
 	public _2484OurManInElysea() {
 		super(questId);
 	}
@@ -79,10 +78,8 @@ public class _2484OurManInElysea extends QuestHandler {
 						else if (env.getDialog() == QuestDialog.START_DIALOG) {
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							return sendQuestDialog(env, 5);
-						}
-						else
 							return sendQuestEndDialog(env);
+						}
 					}
 				}
 			}

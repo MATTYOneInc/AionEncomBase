@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _18737Where_Did_Abiso_Go extends QuestHandler
-{
+public class _18737Where_Did_Abiso_Go extends QuestHandler {
+
     private final static int questId = 18737;
-	
     public _18737Where_Did_Abiso_Go() {
         super(questId);
     }

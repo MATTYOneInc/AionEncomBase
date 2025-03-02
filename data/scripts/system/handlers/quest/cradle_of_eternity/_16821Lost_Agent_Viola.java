@@ -83,7 +83,7 @@ public class _16821Lost_Agent_Viola extends QuestHandler {
 				}
 			}
 		} 
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 220587) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

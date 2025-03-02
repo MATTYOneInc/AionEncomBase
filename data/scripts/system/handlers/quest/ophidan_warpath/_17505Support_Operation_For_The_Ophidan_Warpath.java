@@ -61,7 +61,7 @@ public class _17505Support_Operation_For_The_Ophidan_Warpath extends QuestHandle
                 }
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
-            		int var = qs.getQuestVarById(0);
+            int var = qs.getQuestVarById(0);
 			if (targetId == 806270) { //히요린.
 				switch (env.getDialog()) {
                     case START_DIALOG: {
@@ -93,7 +93,7 @@ public class _17505Support_Operation_For_The_Ophidan_Warpath extends QuestHandle
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806266) { //세베루스.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14203Enraged_Excavating extends QuestHandler
-{
+public class _14203Enraged_Excavating extends QuestHandler {
+
     private final static int questId = 14203;
-	
     public _14203Enraged_Excavating() {
         super(questId);
     }
@@ -52,18 +51,8 @@ public class _14203Enraged_Excavating extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 798201) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 8) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 8, 9, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798201) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

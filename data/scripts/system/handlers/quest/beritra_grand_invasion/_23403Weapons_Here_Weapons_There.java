@@ -156,7 +156,7 @@ public class _23403Weapons_Here_Weapons_There extends QuestHandler {
 					}
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 203560) { //Morn.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

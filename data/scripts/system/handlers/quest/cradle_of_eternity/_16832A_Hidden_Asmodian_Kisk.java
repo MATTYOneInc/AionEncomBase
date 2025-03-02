@@ -43,7 +43,7 @@ public class _16832A_Hidden_Asmodian_Kisk extends QuestHandler {
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806284) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

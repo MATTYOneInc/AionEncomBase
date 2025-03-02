@@ -112,12 +112,6 @@ public class _10502Cygnea_Secrets extends QuestHandler {
                         return closeDialogWindow(env);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 2, 3, false, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 3) {
-							defaultCloseDialog(env, 3, 3);
-						} else if (var == 2) {
-							defaultCloseDialog(env, 2, 2);
-						}
 					}
                 }
             } if (targetId == 702669) { //Shining Lump Of Soil.

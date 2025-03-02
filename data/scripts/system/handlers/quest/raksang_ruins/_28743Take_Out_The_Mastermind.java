@@ -18,8 +18,6 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -27,18 +25,17 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _28743Take_Out_The_Mastermind extends QuestHandler {
 
     private final static int questId = 28743;
-	private final static int[] reviverNasto = {236306}; //Reviver Nasto.
     public _28743Take_Out_The_Mastermind() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
+		qe.registerQuestNpc(206395).addOnQuestStart(questId);
+		qe.registerQuestNpc(206396).addOnQuestStart(questId);
+		qe.registerQuestNpc(206397).addOnQuestStart(questId);
 		qe.registerQuestNpc(804732).addOnTalkEvent(questId);
-		for (int mob: reviverNasto) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
-		qe.registerOnEnterZone(ZoneName.get("RAKSANG_ENTRANCE_300610000"), questId);
+		qe.registerQuestNpc(236306).addOnKillEvent(questId);
 	}
 	
 	@Override
@@ -46,27 +43,26 @@ public class _28743Take_Out_The_Mastermind extends QuestHandler {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 206395 || targetId == 206396 || targetId == 206397) {
+				switch (env.getDialog()) {
+					case START_DIALOG: {
+						return sendQuestDialog(env, 4762);
+					}
+					case ACCEPT_QUEST:
+					case ACCEPT_QUEST_SIMPLE:
+						return sendQuestStartDialog(env);
+					case REFUSE_QUEST_SIMPLE:
+				        return closeDialogWindow(env);
+				}
+			}
+		}
         if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804732) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);
 				} else {
 					return sendQuestEndDialog(env);
-				}
-			}
-		}
-		return false;
-	}
-	
-	@Override
-    public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
-        Player player = env.getPlayer();
-        QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (zoneName == ZoneName.get("RAKSANG_ENTRANCE_300610000")) {
-			if (qs == null || qs.canRepeat()) {
-				env.setQuestId(questId);
-				if (QuestService.startQuest(env)) {
-					return true;
 				}
 			}
 		}

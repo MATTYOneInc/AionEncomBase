@@ -24,11 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19642Success_For_Six extends QuestHandler
-{
+public class _19642Success_For_Six extends QuestHandler {
+
 	private final static int questId = 19642;
 	private final static int[] mobs = {215650, 215651, 215652, 215653};
-	
 	public _19642Success_For_Six() {
 		super(questId);
 	}
@@ -62,20 +61,8 @@ public class _19642Success_For_Six extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 798926: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 798926) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

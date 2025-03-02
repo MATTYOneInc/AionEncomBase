@@ -40,14 +40,14 @@ public class _30054PetrificationandPride extends QuestHandler  {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798929) {// Gellius
 				return sendQuestEndDialog(env);
 			}
 		}
 		else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			if(targetId == 798929) {
+			if (targetId == 798929) {
 				switch (dialog) {
 					case START_DIALOG:
 						if (var == 1)

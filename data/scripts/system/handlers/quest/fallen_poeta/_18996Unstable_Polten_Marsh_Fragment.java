@@ -80,7 +80,7 @@ public class _18996Unstable_Polten_Marsh_Fragment extends QuestHandler {
 					}
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806075) { //Weatha.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

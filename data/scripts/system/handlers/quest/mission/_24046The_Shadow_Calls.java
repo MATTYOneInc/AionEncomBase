@@ -29,11 +29,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24046The_Shadow_Calls extends QuestHandler
-{
+public class _24046The_Shadow_Calls extends QuestHandler {
+
     private final static int questId = 24046;
     private final static int[] npcs = {798300, 204253, 700369, 204089, 203550};
-	
     public _24046The_Shadow_Calls() {
         super(questId);
     }
@@ -79,7 +78,6 @@ public class _24046The_Shadow_Calls extends QuestHandler
                     } if (dialog == QuestDialog.STEP_TO_1) {
                         return defaultCloseDialog(env, 0, 1);
                     }
-                    break;
                 } case 204253: { //Khrudgelmir.
                     if (dialog == QuestDialog.START_DIALOG && var == 2) {
                         return sendQuestDialog(env, 1693);
@@ -91,14 +89,12 @@ public class _24046The_Shadow_Calls extends QuestHandler
                     } if (dialog == QuestDialog.SET_REWARD) {
                         return defaultCloseDialog(env, 6, 6, true, false);
                     }
-                    break;
                 } case 700369: { //Shadow Court Dungeon Exit.
                     if (dialog == QuestDialog.USE_OBJECT && var == 5) {
 						TeleportService2.teleportTo(player, 120010000, 1003.02637f, 1531.2028f, 222.19403f, (byte) 105, TeleportAnimation.BEAM_ANIMATION);
                         changeQuestStep(env, 5, 6, false);
                         return true;
                     }
-                    break;
                 } case 204089: { //Garm.
                     if (dialog == QuestDialog.START_DIALOG && var == 3) {
                         return sendQuestDialog(env, 2034);
@@ -109,7 +105,6 @@ public class _24046The_Shadow_Calls extends QuestHandler
 						changeQuestStep(env, 3, 5, false);
                         return closeDialogWindow(env);
                     }
-                    break;
                 }
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {

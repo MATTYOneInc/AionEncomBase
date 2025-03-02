@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13702Tomul_Tap extends QuestHandler
-{
+public class _13702Tomul_Tap extends QuestHandler {
+
     private final static int questId = 13702;
-	
     public _13702Tomul_Tap() {
         super(questId);
     }
@@ -66,7 +65,7 @@ public class _13702Tomul_Tap extends QuestHandler
                     return sendQuestEndDialog(env);
                 }
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 802352) {
 				if (env.getDialogId() == 1009) {
 					return sendQuestDialog(env, 5);

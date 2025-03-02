@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _16979Engulfed_Bridge extends QuestHandler
-{
+public class _16979Engulfed_Bridge extends QuestHandler {
+
 	public static final int questId = 16979;
-	
 	public _16979Engulfed_Bridge() {
 		super(questId);
 	}
@@ -42,22 +41,21 @@ public class _16979Engulfed_Bridge extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 802025) { //Moireste.
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
-				} else if (dialog == QuestDialog.ASK_ACCEPTION) {
+				} else if (env.getDialog() == QuestDialog.ASK_ACCEPTION) {
                     return sendQuestDialog(env, 4);
-				} else if (dialog == QuestDialog.ACCEPT_QUEST) {
+				} else if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
 					return sendQuestStartDialog(env);
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 801762: { //Timarchus.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 2375);
 						} case SELECT_REWARD: {
@@ -67,7 +65,7 @@ public class _16979Engulfed_Bridge extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 801762) { //Timarchus.
 			    return sendQuestEndDialog(env);
 		    }

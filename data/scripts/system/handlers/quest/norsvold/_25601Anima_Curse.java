@@ -69,7 +69,7 @@ public class _25601Anima_Curse extends QuestHandler {
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0); 
 			if (targetId == 806170) { //Hekadun.
 				switch (env.getDialog()) {
@@ -106,7 +106,7 @@ public class _25601Anima_Curse extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806170) { //Hekadun.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

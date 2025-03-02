@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _80875Defeat_Mechaturerk extends QuestHandler
-{
+public class _80875Defeat_Mechaturerk extends QuestHandler {
+
 	private static final int questId = 80875;
-	
 	public _80875Defeat_Mechaturerk() {
 		super(questId);
 	}
@@ -44,7 +43,6 @@ public class _80875Defeat_Mechaturerk extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 834166) { //Eli.
 				switch (env.getDialog()) {
@@ -59,7 +57,7 @@ public class _80875Defeat_Mechaturerk extends QuestHandler
 				}
 			}
 		} else if (targetId == 703381) { //Mechaturerk’s Footlocker.
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
@@ -76,12 +74,10 @@ public class _80875Defeat_Mechaturerk extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 834166) { //Eli.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

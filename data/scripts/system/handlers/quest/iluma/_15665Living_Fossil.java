@@ -23,10 +23,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15665Living_Fossil extends QuestHandler
-{
+public class _15665Living_Fossil extends QuestHandler {
+
 	private static final int questId = 15665;
-	
 	public _15665Living_Fossil() {
 		super(questId);
 	}
@@ -55,7 +54,7 @@ public class _15665Living_Fossil extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806089) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -68,12 +67,10 @@ public class _15665Living_Fossil extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806089) {
 				return sendQuestEndDialog(env);
 			}

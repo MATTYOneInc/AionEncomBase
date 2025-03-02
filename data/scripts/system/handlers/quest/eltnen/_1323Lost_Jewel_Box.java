@@ -63,8 +63,7 @@ public class _1323Lost_Jewel_Box extends QuestHandler {
 		} if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 0) { 
 				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
-					QuestService.startQuest(env);
-					return closeDialogWindow(env);
+					return sendQuestStartDialog(env);
 				    }
 			    }
 				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
@@ -76,8 +75,6 @@ public class _1323Lost_Jewel_Box extends QuestHandler {
 					case USE_OBJECT: {
 						return giveQuestItem(env, 182201309, 1);
 					}
-					default:
-						break;
 				}
 			}	
 		else if (qs.getStatus() == QuestStatus.START) {
@@ -104,7 +101,7 @@ public class _1323Lost_Jewel_Box extends QuestHandler {
 					return sendQuestEndDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD && targetId == 203939) {
+		} else if (qs == null ||  qs.getStatus() == QuestStatus.REWARD && targetId == 203939) {
 			return sendQuestEndDialog(env);
 		}
 		return false;

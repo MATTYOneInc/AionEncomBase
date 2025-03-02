@@ -155,7 +155,7 @@ public class QuestEngine implements GameEngine {
 				env.setQuestId(0);
 			}
 		} catch (Exception ex) {
-			// log.error("QE: exception in onDialog", ex);
+			log.error("QE: exception in onDialog", ex);
 			return false;
 		}
 		return false;
@@ -172,7 +172,7 @@ public class QuestEngine implements GameEngine {
 				}
 			}
 		} catch (Exception ex) {
-			// log.error("QE: exception in onKill", ex);
+			log.error("QE: exception in onKill", ex);
 			return false;
 		}
 		return true;

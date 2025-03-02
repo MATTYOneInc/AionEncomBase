@@ -24,11 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _29633Stabilize_The_Saplands extends QuestHandler
-{
+public class _29633Stabilize_The_Saplands extends QuestHandler {
+
 	private final static int questId = 29633;
 	private final static int[] mobs = {214408, 214429, 214430};
-	
 	public _29633Stabilize_The_Saplands() {
 		super(questId);
 	}
@@ -62,20 +61,8 @@ public class _29633Stabilize_The_Saplands extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 205164: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 205164) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

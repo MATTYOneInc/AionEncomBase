@@ -24,11 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19638Trouble_With_Twos extends QuestHandler
-{
+public class _19638Trouble_With_Twos extends QuestHandler {
+
 	private final static int questId = 19638;
 	private final static int[] mobs = {215510, 215511, 215514, 215515, 216649, 216651};
-	
 	public _19638Trouble_With_Twos() {
 		super(questId);
 	}
@@ -62,20 +61,8 @@ public class _19638Trouble_With_Twos extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 799022: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 799022) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

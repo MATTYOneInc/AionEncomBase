@@ -84,7 +84,7 @@ public class _26823Reunion_With_Agent_Peregrine extends QuestHandler {
                 }
 			}
 		}         
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null && qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806290) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

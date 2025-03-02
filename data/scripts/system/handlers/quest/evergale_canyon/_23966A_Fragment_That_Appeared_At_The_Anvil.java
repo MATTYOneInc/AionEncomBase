@@ -27,7 +27,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _23966A_Fragment_That_Appeared_At_The_Anvil extends QuestHandler {
 
     private final static int questId = 23966;
-	private final static int[] npcs = {835220};
 	private final static int[] WindyGorgeBoss2 = {246701, 246702};
     public _23966A_Fragment_That_Appeared_At_The_Anvil() {
         super(questId);
@@ -35,9 +34,8 @@ public class _23966A_Fragment_That_Appeared_At_The_Anvil extends QuestHandler {
 	
 	@Override
 	public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        } for (int mob: WindyGorgeBoss2) {
+        qe.registerQuestNpc(835220).addOnTalkEvent(questId);
+        for (int mob: WindyGorgeBoss2) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
 		qe.registerOnEnterWorld(questId);

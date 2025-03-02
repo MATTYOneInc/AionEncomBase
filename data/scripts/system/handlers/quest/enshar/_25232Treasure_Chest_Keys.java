@@ -60,7 +60,7 @@ public class _25232Treasure_Chest_Keys extends QuestHandler {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 2375);
 					} case CHECK_COLLECTED_ITEMS_SIMPLE: {
-						return checkQuestItems(env, 0, 0, true, 5, 2716);
+						return checkQuestItems(env, 0, 0, true, 10000, 10001);
 					}
 				}
 			}

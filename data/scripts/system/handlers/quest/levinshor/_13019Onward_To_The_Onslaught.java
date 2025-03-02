@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _13019Onward_To_The_Onslaught extends QuestHandler {
 
     private final static int questId = 13019;
-	
     public _13019Onward_To_The_Onslaught() {
         super(questId);
     }
@@ -54,7 +53,7 @@ public class _13019Onward_To_The_Onslaught extends QuestHandler {
 						return sendQuestStartDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 804598: { //Floric.
 					switch (dialog) {
@@ -67,7 +66,7 @@ public class _13019Onward_To_The_Onslaught extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804598) { //Floric.
 			    return sendQuestEndDialog(env);
 		    }

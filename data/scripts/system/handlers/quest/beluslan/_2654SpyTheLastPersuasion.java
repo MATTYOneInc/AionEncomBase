@@ -11,10 +11,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /**
  * @author gigi
  */
+
 public class _2654SpyTheLastPersuasion extends QuestHandler {
 
 	private final static int questId = 2654;
-
 	public _2654SpyTheLastPersuasion() {
 		super(questId);
 	}
@@ -39,7 +39,7 @@ public class _2654SpyTheLastPersuasion extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (targetId == 204775) {
-			if (qs == null) {
+			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
 				else
@@ -47,18 +47,18 @@ public class _2654SpyTheLastPersuasion extends QuestHandler {
 			}
 		}
 		else if (targetId == 204655) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START)
+			if (qs != null && qs.getStatus() == QuestStatus.START) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
+				else if (env.getDialogId() == 1009) {
 					qs.setQuestVar(0);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
-				else
-					return sendQuestEndDialog(env);
+			}
+			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;

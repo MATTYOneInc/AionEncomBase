@@ -15,13 +15,11 @@ package quest.daevanion;
 import com.aionemu.gameserver.model.PlayerClass;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -75,10 +73,7 @@ public class _1989A_Sages_Teachings extends QuestHandler {
 							else
 								return sendQuestDialog(env, 1438);
 						case STEP_TO_1:
-							qs.setQuestVarById(0, var + 1);
-							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                        return defaultCloseDialog(env, 0, 1);
 					}
 				case 203705:
 					switch (env.getDialog()) {
@@ -89,10 +84,7 @@ public class _1989A_Sages_Teachings extends QuestHandler {
 							else
 								return sendQuestDialog(env, 1779);
 						case STEP_TO_1:
-							qs.setQuestVarById(0, var + 1);
-							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                        return defaultCloseDialog(env, 0, 1);
 					}
 				case 203706:
 					switch (env.getDialog()) {
@@ -103,10 +95,7 @@ public class _1989A_Sages_Teachings extends QuestHandler {
 							else
 								return sendQuestDialog(env, 2120);
 						case STEP_TO_1:
-							qs.setQuestVarById(0, var + 1);
-							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                        return defaultCloseDialog(env, 0, 1);
 					}
 				case 203707:
 					switch (env.getDialog()) {
@@ -117,10 +106,7 @@ public class _1989A_Sages_Teachings extends QuestHandler {
 							else
 								return sendQuestDialog(env, 2461);
 						case STEP_TO_1:
-							qs.setQuestVarById(0, var + 1);
-							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                        return defaultCloseDialog(env, 0, 1);
 					}
 				case 801214:
 					switch (env.getDialog()) {
@@ -131,10 +117,7 @@ public class _1989A_Sages_Teachings extends QuestHandler {
 							else
 								return sendQuestDialog(env, 2568);
 						case STEP_TO_1:
-							qs.setQuestVarById(0, var + 1);
-							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                        return defaultCloseDialog(env, 0, 1);
 					}
 				case 801215:
 					switch (env.getDialog()) {
@@ -144,10 +127,7 @@ public class _1989A_Sages_Teachings extends QuestHandler {
 							else
 								return sendQuestDialog(env, 2653);
 						case STEP_TO_1:
-							qs.setQuestVarById(0, var + 1);
-							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                        return defaultCloseDialog(env, 0, 1);
 					}
 				case 203771:
 					switch (env.getDialog()) {
@@ -189,16 +169,14 @@ public class _1989A_Sages_Teachings extends QuestHandler {
 						case STEP_TO_4:
 							qs.setQuestVarById(0, 3);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 						case STEP_TO_5:
 							qs.setQuestVarById(0, 4);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 					}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203771)
 				return sendQuestEndDialog(env);
 		}

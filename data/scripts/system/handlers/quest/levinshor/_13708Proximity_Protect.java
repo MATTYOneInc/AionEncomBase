@@ -25,10 +25,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13708Proximity_Protect extends QuestHandler
-{
+public class _13708Proximity_Protect extends QuestHandler {
+
 	private final static int questId = 13708;
-	
 	public _13708Proximity_Protect() {
 		super(questId);
 	}
@@ -43,19 +42,18 @@ public class _13708Proximity_Protect extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 802332) { //Feleus.
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				} else {
 					return sendQuestStartDialog(env, 182215529, 1); //Proximity Alarm.
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 802332) { //Feleus.
-				if (dialog == QuestDialog.USE_OBJECT) {
+				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 2375);
 				}
 				removeQuestItem(env, 182215529, 1); //Proximity Alarm.

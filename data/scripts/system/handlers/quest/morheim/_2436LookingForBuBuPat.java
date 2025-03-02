@@ -24,7 +24,6 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-
 /**
  * @author Cheatkiller
  *
@@ -33,7 +32,6 @@ public class _2436LookingForBuBuPat extends QuestHandler {
 
 	private final static int questId = 2436;
 	private final static int[] npcs = { 204390, 204401 };
-
 	public _2436LookingForBuBuPat() {
 		super(questId);
 	}
@@ -53,11 +51,9 @@ public class _2436LookingForBuBuPat extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204390) { 
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -76,7 +72,7 @@ public class _2436LookingForBuBuPat extends QuestHandler {
 					return defaultStartFollowEvent(env, (Npc) env.getVisibleObject(), 204390, 0, 1); // 1
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204390) { 
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1693);

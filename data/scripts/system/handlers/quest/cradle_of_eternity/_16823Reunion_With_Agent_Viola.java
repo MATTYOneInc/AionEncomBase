@@ -84,7 +84,7 @@ public class _16823Reunion_With_Agent_Viola extends QuestHandler {
                 }
 			}
 		} 
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806285) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

@@ -29,10 +29,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author (Encom)
 /****/
 
-public class _16811Completed_History_Of_The_Empyrean_Lords extends QuestHandler
-{
+public class _16811Completed_History_Of_The_Empyrean_Lords extends QuestHandler {
+
 	private final static int questId = 16811;
-	
 	public _16811Completed_History_Of_The_Empyrean_Lords() {
 		super(questId);
 	}
@@ -61,9 +60,7 @@ public class _16811Completed_History_Of_The_Empyrean_Lords extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			return false;
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806075) {
 				removeQuestItem(env, 182215988, 1);
 				return sendQuestEndDialog(env);

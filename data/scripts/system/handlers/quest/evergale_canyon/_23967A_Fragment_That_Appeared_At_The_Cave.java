@@ -28,16 +28,13 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _23967A_Fragment_That_Appeared_At_The_Cave extends QuestHandler {
 
     private final static int questId = 23967;
-	private final static int[] npcs = {835220};
     public _23967A_Fragment_That_Appeared_At_The_Cave() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        }
+        qe.registerQuestNpc(835220).addOnTalkEvent(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_WAR_Q13967_A_302350000"), questId);
 		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_WAR_Q13967_B_302350000"), questId);

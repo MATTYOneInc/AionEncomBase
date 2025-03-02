@@ -27,7 +27,6 @@ public class _19637Onboard_For_One extends QuestHandler {
 
 	private final static int questId = 19637;
 	private final static int[] mobs = {215500, 215501, 215502, 215503};
-	
 	public _19637Onboard_For_One() {
 		super(questId);
 	}
@@ -66,20 +65,8 @@ public class _19637Onboard_For_One extends QuestHandler {
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 798926: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 798926) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

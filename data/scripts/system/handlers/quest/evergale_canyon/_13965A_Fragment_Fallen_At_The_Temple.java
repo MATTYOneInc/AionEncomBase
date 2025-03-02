@@ -28,16 +28,13 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _13965A_Fragment_Fallen_At_The_Temple extends QuestHandler {
 
     private final static int questId = 13965;
-	private final static int[] npcs = {835217};
     public _13965A_Fragment_Fallen_At_The_Temple() {
         super(questId);
     }
 	
 	@Override
 	public void register() {
-		for (int npc: npcs) {
-            qe.registerQuestNpc(npc).addOnTalkEvent(questId);
-        }
+        qe.registerQuestNpc(835217).addOnTalkEvent(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_WAR_Q13965_302350000"), questId);
 	}

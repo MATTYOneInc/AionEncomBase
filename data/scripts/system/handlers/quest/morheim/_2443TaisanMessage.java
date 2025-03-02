@@ -28,7 +28,6 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-
 /**
  * @author Cheatkiller
  *
@@ -36,7 +35,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _2443TaisanMessage extends QuestHandler {
 
 	private final static int questId = 2443;
-
 	public _2443TaisanMessage() {
 		super(questId);
 	}
@@ -85,7 +83,7 @@ public class _2443TaisanMessage extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 790016) { 
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

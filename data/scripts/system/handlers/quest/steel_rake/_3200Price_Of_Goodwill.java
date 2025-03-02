@@ -17,11 +17,8 @@
 package quest.steel_rake;
 
 import com.aionemu.gameserver.model.gameobjects.Item;
-import com.aionemu.gameserver.model.TeleportAnimation;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
@@ -30,8 +27,6 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.instance.InstanceService;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
-import com.aionemu.gameserver.utils.PacketSendUtility;
-import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.WorldMapInstance;
 
 /****/
@@ -41,7 +36,6 @@ public class _3200Price_Of_Goodwill extends QuestHandler {
 
 	private final static int questId = 3200;
 	private final static int[] npc_ids = {204658, 798332, 700522, 804601, 805832};
-	
 	public _3200Price_Of_Goodwill() {
 		super(questId);
 	}
@@ -58,11 +52,9 @@ public class _3200Price_Of_Goodwill extends QuestHandler {
 	public boolean onDialogEvent(final QuestEnv env) {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc) 
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();	
-		
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204658) { //Roikinerk.
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -73,10 +65,8 @@ public class _3200Price_Of_Goodwill extends QuestHandler {
 			}
 			return false;
 		}
-
 		int var = qs.getQuestVarById(0);
-		
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805832) { //Tramine.
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
@@ -116,8 +106,7 @@ public class _3200Price_Of_Goodwill extends QuestHandler {
 					} case STEP_TO_2: {
 						qs.setQuestVarById(0, var + 1);
 						updateQuestStatus(env);
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-						return true;
+						return closeDialogWindow(env);
 					}
 				}
 			}
@@ -137,10 +126,9 @@ public class _3200Price_Of_Goodwill extends QuestHandler {
 					} case SELECT_ACTION_2035: {
 						return sendQuestDialog(env, 2035);
 					} case SET_REWARD: {
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
-						return true;
+						return closeDialogWindow(env);
 					}
 				}
 			}

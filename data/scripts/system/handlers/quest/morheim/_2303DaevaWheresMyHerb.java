@@ -31,7 +31,6 @@ public class _2303DaevaWheresMyHerb extends QuestHandler {
 
 	private static final int questId = 2303;
 	private int choice = 0;
-
 	public _2303DaevaWheresMyHerb() {
 		super(questId);
 	}
@@ -53,7 +52,6 @@ public class _2303DaevaWheresMyHerb extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798082) { // Bicorunerk
 				switch (dialog) {
@@ -89,9 +87,6 @@ public class _2303DaevaWheresMyHerb extends QuestHandler {
 							return sendQuestSelectionDialog(env);
 						}
 					}
-					case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
-					}
 				}
 			}
 		}
@@ -121,7 +116,7 @@ public class _2303DaevaWheresMyHerb extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			int var = qs.getQuestVarById(0);
 			if (targetId == 204378) { // Bicorunerk
 				switch (dialog) {

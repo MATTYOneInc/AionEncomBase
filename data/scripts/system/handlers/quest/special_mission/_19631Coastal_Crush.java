@@ -27,7 +27,6 @@ public class _19631Coastal_Crush extends QuestHandler {
 
 	private final static int questId = 19631;
 	private final static int[] mobs = {214198, 214199, 214216, 214217};
-	
 	public _19631Coastal_Crush() {
 		super(questId);
 	}
@@ -66,20 +65,8 @@ public class _19631Coastal_Crush extends QuestHandler {
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 800411: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 800411) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

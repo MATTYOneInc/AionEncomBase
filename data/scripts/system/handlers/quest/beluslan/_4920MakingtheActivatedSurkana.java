@@ -61,20 +61,15 @@ public class _4920MakingtheActivatedSurkana extends QuestHandler {
                         qs.setQuestVarById(0, 1);
 						updateQuestStatus(env);
 						return closeDialogWindow(env);
-					}
-				}
-            } 
-            if (targetId == 804609) {
-            if (env.getDialog() == QuestDialog.START_DIALOG)
-                removeQuestItem(env, 182207101, 1);
-				return sendQuestDialog(env, 2375);
-			} 
-            if (env.getDialogId() == 1009) { 
-				return sendQuestEndDialog(env);
-            }
-        }
+                      } 
+				 }
+		     }
+        } 
         else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+        if (targetId == 804609) {
+             removeQuestItem(env, 182207101, 1);
 		     return sendQuestEndDialog(env);
+             }
         }
 		return false;
 	}

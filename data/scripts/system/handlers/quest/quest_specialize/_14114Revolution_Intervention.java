@@ -25,8 +25,8 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 public class _14114Revolution_Intervention extends QuestHandler {
+
     private final static int questId = 14114;
-	
     public _14114Revolution_Intervention() {
         super(questId);
     }
@@ -53,7 +53,7 @@ public class _14114Revolution_Intervention extends QuestHandler {
                     return sendQuestStartDialog(env);
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);   
 			if (targetId == 203183) { //Khidia
 				switch (env.getDialog()) {
@@ -80,16 +80,10 @@ public class _14114Revolution_Intervention extends QuestHandler {
 						return closeDialogWindow(env);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 3, 4, false, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 4) {
-							defaultCloseDialog(env, 4, 5);
-						} else if (var == 3) {
-							defaultCloseDialog(env, 3, 3);
-						}
 					}
 				}
 			}
-		} else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203098) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 2375);

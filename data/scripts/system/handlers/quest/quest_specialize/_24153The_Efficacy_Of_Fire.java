@@ -56,16 +56,17 @@ public class _24153The_Efficacy_Of_Fire extends QuestHandler {
         			} case ASK_ACCEPTION: {
         				return sendQuestDialog(env, 4);
         			} case ACCEPT_QUEST: {
-        				QuestService.startQuest(env);
-                        qs.setQuestVarById(5, 1);
-                        updateQuestStatus(env);
-                        return closeDialogWindow(env);
+                        return sendQuestStartDialog(env);
         			} case REFUSE_QUEST: {
         				return sendQuestDialog(env, 1004);
         			}
             	}
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
+        }
+        if (qs == null) {
+		    return false;
+		} 
+        else if (qs.getStatus() == QuestStatus.START) {
         	switch (targetId) {
         		case 204784: { //Delris
         			switch (env.getDialog()) {
@@ -107,14 +108,15 @@ public class _24153The_Efficacy_Of_Fire extends QuestHandler {
 		int targetId = env.getTargetId();
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null || qs.getStatus() != QuestStatus.START) {
+            return false;
+        }
         int var = qs.getQuestVarById(0);
         int var1 = qs.getQuestVarById(1);
         int var2 = qs.getQuestVarById(2);
         int var3 = qs.getQuestVarById(3);
         int var4 = qs.getQuestVarById(4);
-		if (qs == null || qs.getStatus() != QuestStatus.START) {
-            return false;
-        } if (targetId == 213730 && var == 0 && var < 1) { //Glaciont The Hardy
+        if (targetId == 213730 && var == 0 && var < 1) { //Glaciont The Hardy
             qs.setQuestVarById(0, 1);
             updateQuestStatus(env);
         } else if (targetId == 213788 && var1 == 0 && var1 < 1) { //Frostfist

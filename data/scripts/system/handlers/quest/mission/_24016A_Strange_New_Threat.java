@@ -29,11 +29,10 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 * Rework: MATTY (ADev.Team)
 */
 
-public class _24016A_Strange_New_Threat extends QuestHandler
-{
+public class _24016A_Strange_New_Threat extends QuestHandler {
+
     private final static int questId = 24016;
     private final static int[] npcs = {203557, 700140, 700184};
-	
     public _24016A_Strange_New_Threat() {
         super(questId);
     }
@@ -73,7 +72,6 @@ public class _24016A_Strange_New_Threat extends QuestHandler
             return false;
         }
         int var = qs.getQuestVarById(0);
-
         if (qs.getStatus() == QuestStatus.START) {
             switch (targetId) {
                 case 203557: { // Suthran
@@ -87,13 +85,11 @@ public class _24016A_Strange_New_Threat extends QuestHandler
                         playQuestMovie(env, 66);
                         return sendQuestDialog(env, 1013);
                     }
-                    break;
                 }
                 case 700140: { // Gate Guardian Stone
                     if (var == 2) {
                         if (env.getDialog() == QuestDialog.USE_OBJECT) {
-                            QuestService.addNewSpawn(320030000, player.getInstanceId(), 233876, (float) 260.12, (float) 234.93,
-                                    (float) 216.00, (byte) 90);
+                            QuestService.addNewSpawn(320030000, player.getInstanceId(), 233876, (float) 260.12, (float) 234.93, (float) 216.00, (byte) 90);
                             return useQuestObject(env, 2, 3, false, false); // 3
                         }
                     } else if (var == 4) {

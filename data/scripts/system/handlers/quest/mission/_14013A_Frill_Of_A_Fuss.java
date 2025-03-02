@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14013A_Frill_Of_A_Fuss extends QuestHandler
-{
+public class _14013A_Frill_Of_A_Fuss extends QuestHandler {
+
     private final static int questId = 14013;
-	
     public _14013A_Frill_Of_A_Fuss() {
         super(questId);
     }
@@ -62,9 +61,6 @@ public class _14013A_Frill_Of_A_Fuss extends QuestHandler
             return false;
         } if (qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
-            int var1 = qs.getQuestVarById(1);
-            int var2 = qs.getQuestVarById(2);
-            int var3 = qs.getQuestVarById(3);
             switch (targetId) {
                 case (203129): {
                     switch (dialog) {

@@ -25,10 +25,9 @@ import com.aionemu.gameserver.questEngine.model.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _19665Getting_Settled extends QuestHandler
-{
+public class _19665Getting_Settled extends QuestHandler {
+
 	private final static int questId = 19665;
-	
 	public _19665Getting_Settled() {
 		super(questId);
 	}
@@ -68,7 +67,7 @@ public class _19665Getting_Settled extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804651) {
 			    return sendQuestEndDialog(env);
 		    }

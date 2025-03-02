@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _80872Weird_Sisters extends QuestHandler
-{
+public class _80872Weird_Sisters extends QuestHandler {
+
 	private static final int questId = 80872;
-	
 	public _80872Weird_Sisters() {
 		super(questId);
 	}
@@ -45,7 +44,6 @@ public class _80872Weird_Sisters extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 833825) { //Jay.
 				switch (env.getDialog()) {
@@ -60,12 +58,12 @@ public class _80872Weird_Sisters extends QuestHandler
 				}
 			}
 		} else if (targetId == 703378) { //Remirunrunerk’s Footlocker.
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
 		} else if (targetId == 703379) { //Bomirunrunerk’s Footlocker.
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
@@ -82,12 +80,10 @@ public class _80872Weird_Sisters extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 834167) { //Jay.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

@@ -14,22 +14,19 @@ package quest.mission;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14044Shards_Of_Memory extends QuestHandler
-{
+public class _14044Shards_Of_Memory extends QuestHandler {
+
     private final static int questId = 14044;
-	
     public _14044Shards_Of_Memory() {
         super(questId);
     }
@@ -67,12 +64,10 @@ public class _14044Shards_Of_Memory extends QuestHandler
                             if (var == 0) {
                                 qs.setQuestVarById(0, var + 1);
                                 updateQuestStatus(env);
-                                PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                                return true;
+						        return closeDialogWindow(env);
                             }
                     }
                 }
-                break;
                 case 279029: {
                     switch (env.getDialog()) {
                         case START_DIALOG:
@@ -84,12 +79,10 @@ public class _14044Shards_Of_Memory extends QuestHandler
                                 qs.setQuestVarById(0, var + 1);
                                 updateQuestStatus(env);
                                 playQuestMovie(env, 271);
-                                PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
-                                return true;
+						        return closeDialogWindow(env);
                             }
                     }
                 }
-                break;
                 case 700355:
                     return useQuestObject(env, 3, 3, true, false);
                 case 790001: {
@@ -102,8 +95,7 @@ public class _14044Shards_Of_Memory extends QuestHandler
                             if (var == 1) {
                                 qs.setQuestVarById(0, var + 1);
                                 updateQuestStatus(env);
-                                PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                                return true;
+						        return closeDialogWindow(env);
                             }
                     }
                 }

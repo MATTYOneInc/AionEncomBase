@@ -31,7 +31,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2527TheStarvingSprigg extends QuestHandler {
 
 	private final static int questId = 2527;
-
 	public _2527TheStarvingSprigg() {
 		super(questId);
 	}
@@ -49,7 +48,7 @@ public class _2527TheStarvingSprigg extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-		if (qs == null) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204811) { // Gark
 				if (dialog == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
@@ -74,7 +73,7 @@ public class _2527TheStarvingSprigg extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204811) { // Gark
 				return sendQuestEndDialog(env);
 			}

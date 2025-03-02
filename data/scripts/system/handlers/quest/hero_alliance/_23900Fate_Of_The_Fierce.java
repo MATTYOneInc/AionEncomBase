@@ -101,7 +101,7 @@ public class _23900Fate_Of_The_Fierce extends QuestHandler {
 		} 
         else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798718) {
-					return sendQuestEndDialog(env);
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;

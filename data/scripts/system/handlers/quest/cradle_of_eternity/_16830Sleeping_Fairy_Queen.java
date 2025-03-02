@@ -45,7 +45,7 @@ public class _16830Sleeping_Fairy_Queen extends QuestHandler {
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null && qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 834122) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

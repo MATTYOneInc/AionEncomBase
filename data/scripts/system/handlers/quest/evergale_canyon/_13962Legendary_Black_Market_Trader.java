@@ -37,7 +37,7 @@ public class _13962Legendary_Black_Market_Trader extends QuestHandler {
 		for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-		qe.registerOnEnterWorld(questId);
+		qe.registerQuestNpc(835218).addOnQuestStart(questId);
 		qe.registerQuestNpc(835385).addOnAtDistanceEvent(questId);
 	}
 	
@@ -59,7 +59,7 @@ public class _13962Legendary_Black_Market_Trader extends QuestHandler {
 					}
                 }
 			}
-		} 
+		}
         else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835217) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -85,19 +85,4 @@ public class _13962Legendary_Black_Market_Trader extends QuestHandler {
 		}
 		return false;
 	}
-	
-	@Override
-    public boolean onEnterWorldEvent(QuestEnv env) {
-        final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getWorldId() == 302350000) { //Windy Gorge 5.5
-            if (qs == null) {
-                env.setQuestId(questId);
-                if (QuestService.startQuest(env)) {
-					return true;
-				}
-            }
-        }
-        return false;
-    }
 }

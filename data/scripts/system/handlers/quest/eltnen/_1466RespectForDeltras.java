@@ -36,7 +36,6 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 public class _1466RespectForDeltras extends QuestHandler {
 
 	private final static int questId = 1466;
-
 	public _1466RespectForDeltras() {
 		super(questId);
 	}
@@ -54,7 +53,6 @@ public class _1466RespectForDeltras extends QuestHandler {
 		final Player player = env.getPlayer();
 		final int id = item.getItemTemplate().getTemplateId();
 		final int itemObjId = item.getObjectId();
-
 		if (id != 182201385)
 			return HandlerResult.UNKNOWN;
 		if (!player.isInsideZone(ZoneName.get("EXECUTION_GROUND_OF_DELTRAS_220020000")))
@@ -62,14 +60,11 @@ public class _1466RespectForDeltras extends QuestHandler {
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null)
 			return HandlerResult.UNKNOWN;
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0,
-			0), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
-
 			@Override
 			public void run() {
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0,
-					1, 0), true);
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
 				player.getInventory().decreaseByObjectId(itemObjId, 1);
 				qs.setStatus(QuestStatus.REWARD);
 				updateQuestStatus(env);
@@ -99,20 +94,19 @@ public class _1466RespectForDeltras extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		else if (targetId == 203903) {
-			if (qs != null) {
-				if (env.getDialog() == QuestDialog.START_DIALOG && qs.getStatus() == QuestStatus.START)
+			if (qs != null && qs.getStatus() == QuestStatus.START) {
+				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2375);
-				else if (env.getDialogId() == 1009 && qs.getStatus() != QuestStatus.COMPLETE
-					&& qs.getStatus() != QuestStatus.NONE) {
+				else if (env.getDialogId() == 1009) {
 					qs.setQuestVar(2);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
-				else
-					return sendQuestEndDialog(env);
+			}
+			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+				return sendQuestEndDialog(env);
 			}
 		}
 		return false;

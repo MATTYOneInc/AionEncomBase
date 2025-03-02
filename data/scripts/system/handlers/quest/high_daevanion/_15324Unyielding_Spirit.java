@@ -23,14 +23,12 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15324Unyielding_Spirit extends QuestHandler
-{
+public class _15324Unyielding_Spirit extends QuestHandler {
+
 	private static final int questId = 15324;
-	
 	private final static int[] Cygnea = {235939, 235940, 235941, 235942, 235943, 235944, 235945, 235946, 235947};
 	private final static int[] Levinshor = {233929, 233930, 233931, 233932, 233933, 233934, 233935, 233936};
 	private final static int[] Kaldor = {234277, 234278, 234279, 234280, 234524, 234526, 234527, 234528, 234531, 234532};
-	
     public _15324Unyielding_Spirit() {
         super(questId);
     }
@@ -61,7 +59,7 @@ public class _15324Unyielding_Spirit extends QuestHandler
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805331) { //Machina.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -79,11 +77,12 @@ public class _15324Unyielding_Spirit extends QuestHandler
     public boolean onKillEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
-		int var1 = qs.getQuestVarById(1);
 		if (qs == null || qs.getStatus() != QuestStatus.START) {
             return false;
-        } if (var == 0 && var1 >= 0 && var1 < 19) {
+        }
+        int var = qs.getQuestVarById(0);
+		int var1 = qs.getQuestVarById(1);
+        if (var == 0 && var1 >= 0 && var1 < 19) {
 			return defaultOnKillEvent(env, Cygnea, var1, var1 + 1, 1);
 		} else if (var == 0 && var1 == 19) {
 			qs.setQuestVarById(1, 0);

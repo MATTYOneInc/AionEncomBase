@@ -75,7 +75,7 @@ public class _26803Approaching_The_Final_Archive extends QuestHandler {
 				}
 			}
 		} 
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806149) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

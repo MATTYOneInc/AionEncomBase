@@ -43,9 +43,8 @@ public class _25674Light_Armored_Archon_Carrier_Support extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		if (targetId == 703443) { //LF6_FOBJ_Od_Stone_Q25674_A.
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
@@ -63,8 +62,6 @@ public class _25674Light_Armored_Archon_Carrier_Support extends QuestHandler {
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}

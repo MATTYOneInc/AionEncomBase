@@ -28,18 +28,18 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _29666To_Norsvold extends QuestHandler
-{
+public class _29666To_Norsvold extends QuestHandler {
+
 	private final static int questId = 29666;
-	
 	public _29666To_Norsvold() {
 		super(questId);
 	}
 	
 	@Override
 	public void register() {
-		qe.registerQuestNpc(806244).addOnQuestStart(questId); //Biolis.
+		qe.registerQuestNpc(804662).addOnQuestStart(questId); //Melanka.
 		qe.registerQuestNpc(806244).addOnTalkEvent(questId); //Biolis.
+		qe.registerQuestNpc(806135).addOnTalkEvent(questId); //Corto.
 		qe.registerQuestNpc(806116).addOnTalkEvent(questId); //Reinhard.
 	}
 	
@@ -52,14 +52,13 @@ public class _29666To_Norsvold extends QuestHandler
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		} if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
-			if (targetId == 806244) { //Biolis.
+			if (targetId == 804662) { //Melanka.
 				switch (dialog) {
 					case START_DIALOG: {
 						if (player.getInventory().getItemCountByItemId(164000336) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -74,16 +73,26 @@ public class _29666To_Norsvold extends QuestHandler
 			return false;
 		} if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
-				case 806116: { //Reinhard.
+				case 806244: { //Biolis.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
+							return sendQuestDialog(env, 1011);
+						} case STEP_TO_1: {
+							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+							updateQuestStatus(env);
+				            return closeDialogWindow(env);
+						}
+					}
+				}
+				case 806135: { //Corto.
+					switch (env.getDialog()) {
+						case START_DIALOG: {
+							return sendQuestDialog(env, 1352);
+						} case SET_REWARD: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+				            return closeDialogWindow(env);
 						}
 					}
 				}

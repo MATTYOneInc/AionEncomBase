@@ -25,10 +25,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23704Loud_Noises extends QuestHandler
-{
+public class _23704Loud_Noises extends QuestHandler {
+
 	private final static int questId = 23704;
-	
 	public _23704Loud_Noises() {
 		super(questId);
 	}
@@ -43,19 +42,18 @@ public class _23704Loud_Noises extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 802343) { //Rink.
-				if (dialog == QuestDialog.START_DIALOG) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
 				} else {
 					return sendQuestStartDialog(env, 182215533, 1); //Intrusion Mine.
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 802343) { //Rink.
-				if (dialog == QuestDialog.USE_OBJECT) {
+				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 2375);
 				}
 				removeQuestItem(env, 182215533, 1); //Intrusion Mine.

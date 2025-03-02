@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15538Kobold_Weapons extends QuestHandler
-{
+public class _15538Kobold_Weapons extends QuestHandler {
+
 	private static final int questId = 15538;
-	
 	public _15538Kobold_Weapons() {
 		super(questId);
 	}
@@ -59,11 +58,11 @@ public class _15538Kobold_Weapons extends QuestHandler
 				}
 			}
 		} else if (targetId == 703294) {
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806254) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -79,7 +78,7 @@ public class _15538Kobold_Weapons extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806254) {
 				return sendQuestEndDialog(env);
 			}

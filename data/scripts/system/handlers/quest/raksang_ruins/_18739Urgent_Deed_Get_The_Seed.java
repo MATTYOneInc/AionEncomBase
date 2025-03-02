@@ -34,7 +34,7 @@ public class _18739Urgent_Deed_Get_The_Seed extends QuestHandler {
 	@Override
 	public void register() {
 		qe.registerQuestNpc(804707).addOnTalkEvent(questId);
-		qe.registerOnEnterZone(ZoneName.get("ERIVALE_TERRITORY_VILLAGE_210070000"), questId);
+	    qe.registerOnEnterZone(ZoneName.get("ERIVALE_TERRITORY_VILLAGE_210070000"), questId);
 	}
 	
 	@Override
@@ -49,11 +49,8 @@ public class _18739Urgent_Deed_Get_The_Seed extends QuestHandler {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 				    } case CHECK_COLLECTED_ITEMS: {
-                        return checkQuestItems(env, 0, 1, true, 5, 2716);
+                        return checkQuestItems(env, 0, 1, true, 10000, 10001);
                     } 
-                    case FINISH_DIALOG: {
-                        return sendQuestEndDialog(env);
-					}
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
@@ -63,7 +60,7 @@ public class _18739Urgent_Deed_Get_The_Seed extends QuestHandler {
 		}
 		return false;
 	}
-	
+
 	@Override
     public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
         Player player = env.getPlayer();

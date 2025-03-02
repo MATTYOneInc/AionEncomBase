@@ -29,10 +29,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author (Encom)
 /****/
 
-public class _16810Completed_Record_Of_The_Humans extends QuestHandler
-{
+public class _16810Completed_Record_Of_The_Humans extends QuestHandler {
+
 	private final static int questId = 16810;
-	
 	public _16810Completed_Record_Of_The_Humans() {
 		super(questId);
 	}
@@ -61,9 +60,7 @@ public class _16810Completed_Record_Of_The_Humans extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			return false;
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806075) {
 				removeQuestItem(env, 182215987, 1);
 				return sendQuestEndDialog(env);

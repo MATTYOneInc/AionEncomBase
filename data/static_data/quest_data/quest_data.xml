@@ -17387,6 +17387,32 @@
       <selectable_reward_item item_id="122001057" count="1" />
       <selectable_reward_item item_id="122001058" count="1" />
     </rewards>
+    <quest_drop npc_id="212918" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212919" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212901" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212903" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212907" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212925" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212927" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212917" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212926" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212902" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212904" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212905" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212924" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212906" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212908" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212909" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212910" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212923" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212921" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212920" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212916" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212915" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212914" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212913" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212912" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212911" item_id="186000047" chance="100" drop_each_member="1" />
   </quest>
   <quest id="4305" name="[Group] Burning Oaths" nameId="1103702" minlevel_permitted="37" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="QUEST">
     <collect_items>
@@ -17397,6 +17423,32 @@
       <selectable_reward_item item_id="120000921" count="1" />
       <reward_item item_id="188100335" count="168" />
     </rewards>
+    <quest_drop npc_id="212918" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212919" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212901" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212903" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212907" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212925" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212927" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212917" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212926" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212902" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212904" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212905" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212924" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212906" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212908" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212909" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212910" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212923" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212921" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212920" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212916" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212915" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212914" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212913" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212912" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212911" item_id="186000047" chance="100" drop_each_member="1" />
   </quest>
   <quest id="4306" name="[Group] Reckless For A Necklace" nameId="1103703" minlevel_permitted="37" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="QUEST">
     <collect_items>
@@ -17407,6 +17459,32 @@
       <selectable_reward_item item_id="121000841" count="1" />
       <reward_item item_id="188050589" count="5" />
     </rewards>
+    <quest_drop npc_id="212918" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212919" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212901" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212903" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212907" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212925" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212927" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212917" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212926" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212902" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212904" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212905" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212924" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212906" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212908" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212909" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212910" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212923" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212921" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212920" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212916" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212915" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212914" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212913" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212912" item_id="186000047" chance="100" drop_each_member="1" />
+    <quest_drop npc_id="212911" item_id="186000047" chance="100" drop_each_member="1" />
   </quest>
   <quest id="4307" name="Suspicious Beverage" nameId="1103704" minlevel_permitted="37" max_repeat_count="1" cannot_share="true" race_permitted="ASMODIANS" category="QUEST">
     <rewards exp="1496758">

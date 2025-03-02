@@ -29,11 +29,10 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14046Piecing_The_Memory extends QuestHandler
-{
+public class _14046Piecing_The_Memory extends QuestHandler {
+
     private final static int questId = 14046;
     private final static int[] npc_ids = {278500, 203834, 203786, 203754, 203704};
-	
     public _14046Piecing_The_Memory() {
         super(questId);
     }

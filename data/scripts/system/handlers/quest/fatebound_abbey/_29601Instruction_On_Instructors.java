@@ -28,10 +28,9 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _29601Instruction_On_Instructors extends QuestHandler
-{
+public class _29601Instruction_On_Instructors extends QuestHandler {
+
 	private final static int questId = 29601;
-	
 	public _29601Instruction_On_Instructors() {
 		super(questId);
 	}
@@ -62,8 +61,7 @@ public class _29601Instruction_On_Instructors extends QuestHandler
 						if (player.getInventory().getItemCountByItemId(164000336) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -81,46 +79,42 @@ public class _29601Instruction_On_Instructors extends QuestHandler
 				case 805305: { //Brunk.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							return sendQuestDialog(env, 1352);
-						} case STEP_TO_2: {
+							return sendQuestDialog(env, 1011);
+						} case STEP_TO_1: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+				            return closeDialogWindow(env);
 						}
 					}
 				} case 804663: { //Alda.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							return sendQuestDialog(env, 1693);
-						} case STEP_TO_3: {
+							return sendQuestDialog(env, 1352);
+						} case STEP_TO_2: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+				            return closeDialogWindow(env);
 						}
 					}
 				} case 804664: { //Leopold.
 				    switch (env.getDialog()) {
 						case START_DIALOG: {
-							return sendQuestDialog(env, 2034);
-						} case SET_REWARD: {
+							return sendQuestDialog(env, 1693);
+						} case STEP_TO_3: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+				            return closeDialogWindow(env);
 						}
 					}
 				} case 804665: { //Madril.
 				    switch (env.getDialog()) {
 						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
+							return sendQuestDialog(env, 2034);
+						} case SET_REWARD: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 						}
 					}
 				}

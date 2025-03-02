@@ -13,24 +13,20 @@
 package quest.trials_of_eternity;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _16837Artifact_Protector_Ganesh extends QuestHandler
-{
+public class _16837Artifact_Protector_Ganesh extends QuestHandler {
+
     private final static int questId = 16837;
-	private final static int[] IDEternity03DefBoss75 = {246418}; //가네슈.
-	
     public _16837Artifact_Protector_Ganesh() {
         super(questId);
     }
@@ -39,9 +35,7 @@ public class _16837Artifact_Protector_Ganesh extends QuestHandler
         qe.registerQuestNpc(806564).addOnQuestStart(questId);
         qe.registerQuestNpc(806564).addOnTalkEvent(questId);
 		qe.registerQuestNpc(806568).addOnTalkEvent(questId);
-		for (int mob: IDEternity03DefBoss75) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(246418).addOnKillEvent(questId);
 		qe.registerQuestNpc(806564).addOnAtDistanceEvent(questId);
     }
 	
@@ -50,7 +44,7 @@ public class _16837Artifact_Protector_Ganesh extends QuestHandler
         final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806568) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -70,7 +64,6 @@ public class _16837Artifact_Protector_Ganesh extends QuestHandler
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 			return true;
 		}
 		return false;

@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14015Not_Blinded_By_Vengeance extends QuestHandler
-{
+public class _14015Not_Blinded_By_Vengeance extends QuestHandler {
+
     private final static int questId = 14015;
-	
     public _14015Not_Blinded_By_Vengeance() {
         super(questId);
     }

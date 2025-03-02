@@ -18,7 +18,6 @@ package quest.mission;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
@@ -26,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.model.TeleportAnimation;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author pralinka
@@ -37,7 +35,6 @@ public class _14025Cooking_Up_Disasters extends QuestHandler {
 	private final static int questId = 14025;
 	private final static int[] npcs = { 203989, 204020, 203901 };
 	private final static int[] mobs = { 211017, 211776, 232133, 217090, };
-
 	public _14025Cooking_Up_Disasters() {
 		super(questId);
 	}
@@ -96,14 +93,12 @@ public class _14025Cooking_Up_Disasters extends QuestHandler {
 		if (qs == null) {
 			return false;
 		}
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		}
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 203901) // Telemachus
-			{
+			if (targetId == 203901) { // Telemachus
 				return sendQuestEndDialog(env);
 			}
 		}
@@ -157,11 +152,6 @@ public class _14025Cooking_Up_Disasters extends QuestHandler {
 						return defaultCloseDialog(env, 4, 5);
 					case STEP_TO_6:
 						return defaultCloseDialog(env, 5, 6, true, false);
-					case FINISH_DIALOG: {
-						return closeDialogWindow(env);
-					}
-					default:
-						break;
 				}
 			}
 			else if (targetId == 204020) { // Mabangtah
@@ -175,8 +165,6 @@ public class _14025Cooking_Up_Disasters extends QuestHandler {
 						TeleportService2.teleportTo(player, 210020000, 1759.697f, 905.983f, 427.812f, (byte) 23, TeleportAnimation.BEAM_ANIMATION);
 						return defaultCloseDialog(env, 3, 4);
 					}
-					default:
-						break;
 				}
 			}
 		}

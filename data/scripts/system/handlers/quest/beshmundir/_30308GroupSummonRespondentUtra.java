@@ -37,7 +37,6 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 public class _30308GroupSummonRespondentUtra extends QuestHandler {
 
 	private final static int questId = 30308;
-
 	public _30308GroupSummonRespondentUtra() {
 		super(questId);
 	}
@@ -53,12 +52,10 @@ public class _30308GroupSummonRespondentUtra extends QuestHandler {
 	@Override
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 799322) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -71,10 +68,8 @@ public class _30308GroupSummonRespondentUtra extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 799506:
@@ -85,7 +80,7 @@ public class _30308GroupSummonRespondentUtra extends QuestHandler {
 							env.getVisibleObject().getController().delete();
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							return true;
+					        return closeDialogWindow(env);
 					}
 			}
 		}
@@ -101,7 +96,6 @@ public class _30308GroupSummonRespondentUtra extends QuestHandler {
 		final Player player = env.getPlayer();
 		final int id = item.getItemTemplate().getTemplateId();
 		final int itemObjId = item.getObjectId();
-
 		if (id != 182209710)
 			return HandlerResult.UNKNOWN;
 		if (player.getWorldId() != 300170000) // TODO: Use zone instead of map
@@ -109,18 +103,13 @@ public class _30308GroupSummonRespondentUtra extends QuestHandler {
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null)
 			return HandlerResult.UNKNOWN;
-
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0,
-			0), true);
+		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0, 0), true);
 		ThreadPoolManager.getInstance().schedule(new Runnable() {
-
 			@Override
 			public void run() {
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0,
-					1, 0), true);
+				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
 				player.getInventory().decreaseByObjectId(itemObjId, 1);
-				QuestService.addNewSpawn(player.getWorldId(), player.getInstanceId(), 799506, player.getX(), player.getY(),
-					player.getZ(), player.getHeading());
+				QuestService.addNewSpawn(player.getWorldId(), player.getInstanceId(), 799506, player.getX(), player.getY(), player.getZ(), player.getHeading());
 			}
 		}, 3000);
 		return HandlerResult.SUCCESS;

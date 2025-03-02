@@ -28,10 +28,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _10503Guard_Down_Secrets_Out extends QuestHandler
-{
+public class _10503Guard_Down_Secrets_Out extends QuestHandler {
+
     public static final int questId = 10503;
-	
     public _10503Guard_Down_Secrets_Out() {
         super(questId);
     }
@@ -45,6 +44,7 @@ public class _10503Guard_Down_Secrets_Out extends QuestHandler
 		qe.registerOnLevelUp(questId);
 		qe.registerOnMovieEndQuest(991, questId);
 		qe.registerQuestItem(182215604, questId);
+		qe.registerGetingItem(182215603, questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerQuestNpc(236252).addOnKillEvent(questId); //Aetheric Field Guard.
 		qe.registerOnEnterZone(ZoneName.get("LF5_SENSORYAREA_Q10503_210070000"), questId);
@@ -123,7 +123,6 @@ public class _10503Guard_Down_Secrets_Out extends QuestHandler
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
 						if (var == 2) {
-							changeQuestStep(env, 2, 3, false);
 							return closeDialogWindow(env);
 						}
 					}
@@ -191,6 +190,11 @@ public class _10503Guard_Down_Secrets_Out extends QuestHandler
         }
         return false;
     }
+
+	@Override
+	public boolean onGetItemEvent(QuestEnv env) {
+		return defaultOnGetItemEvent(env, 2, 3, false);
+	}
 	
 	@Override
     public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {

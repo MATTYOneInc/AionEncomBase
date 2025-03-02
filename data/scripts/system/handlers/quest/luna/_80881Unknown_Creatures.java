@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _80881Unknown_Creatures extends QuestHandler
-{
+public class _80881Unknown_Creatures extends QuestHandler {
+
 	private static final int questId = 80881;
-	
 	public _80881Unknown_Creatures() {
 		super(questId);
 	}
@@ -43,7 +42,6 @@ public class _80881Unknown_Creatures extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		QuestDialog dialog = env.getDialog();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 834463) { //Underground Medic Officer.
 				switch (env.getDialog()) {
@@ -70,12 +68,10 @@ public class _80881Unknown_Creatures extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 834463) { //Underground Medic Officer.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

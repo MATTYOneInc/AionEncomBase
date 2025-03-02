@@ -30,10 +30,9 @@ import com.aionemu.gameserver.world.WorldMapInstance;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25300A_Bloody_Battle_With_Beritra extends QuestHandler
-{
+public class _25300A_Bloody_Battle_With_Beritra extends QuestHandler {
+
 	public static final int questId = 25300;
-	
 	public _25300A_Bloody_Battle_With_Beritra() {
 		super(questId);
 	}

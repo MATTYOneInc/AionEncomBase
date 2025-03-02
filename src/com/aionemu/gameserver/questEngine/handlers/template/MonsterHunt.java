@@ -195,8 +195,8 @@ public class MonsterHunt extends QuestHandler {
 								qs.setQuestVarById(varsUsed, value);
 							}
 							int var = qs.getQuestVarById(0);
-							int var1 = qs.getQuestVarById(1);
-							if (var == 0 && m.getVar() == 1 && varId == 2 && var1 == m.getEndVar()) {
+							if (var == 0 && m.getVar() == 1 && varId == 2 && total == m.getEndVar()) {
+/* 							if (var == 0 && m.getVar() == 1 && varId == 2 && var1 == m.getEndVar()) { old for rollback */
 								qs.setQuestVarById(0, 1);
 								qs.setStatus(QuestStatus.REWARD);
 								updateQuestStatus(env);

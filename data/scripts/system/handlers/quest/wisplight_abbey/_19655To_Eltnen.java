@@ -28,10 +28,9 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _19655To_Eltnen extends QuestHandler
-{
+public class _19655To_Eltnen extends QuestHandler {
+
 	private final static int questId = 19655;
-	
 	public _19655To_Eltnen() {
 		super(questId);
 	}
@@ -82,8 +81,7 @@ public class _19655To_Eltnen extends QuestHandler
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                            return sendQuestEndDialog(env);
 						}
 					}
 				}

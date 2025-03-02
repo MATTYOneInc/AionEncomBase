@@ -23,7 +23,6 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-
 /**
  * @author Cheatkiller
  *
@@ -31,9 +30,7 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2448ChaomirkSendsForHelp extends QuestHandler {
 
 	private final static int questId = 2448;
-	
 	int rewardIndex;
-	
 	public _2448ChaomirkSendsForHelp() {
 		super(questId);
 	}
@@ -50,7 +47,6 @@ public class _2448ChaomirkSendsForHelp extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798115) { 
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -64,8 +60,8 @@ public class _2448ChaomirkSendsForHelp extends QuestHandler {
 		else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 798115) { 
 				if (dialog == QuestDialog.START_DIALOG) {
-						return sendQuestDialog(env, 1003);
-				}
+				return sendQuestDialog(env, 1003);
+			}
 			else if (dialog == QuestDialog.SELECT_ACTION_1012) {
 				return sendQuestDialog(env, 1012);
 			}
@@ -87,12 +83,12 @@ public class _2448ChaomirkSendsForHelp extends QuestHandler {
 			}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798080 && qs.getQuestVarById(0) == 10) {
 				if (dialog == QuestDialog.USE_OBJECT) {
-						return sendQuestDialog(env, 1352);
-					}
+					return sendQuestDialog(env, 1352);
 				}
+			}
 			else if(targetId == 798079 && qs.getQuestVarById(0) == 20) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 1693);

@@ -40,11 +40,10 @@ public class _13902Bracing_For_Balaurea extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 798514) { //Outremus.
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					}
@@ -53,10 +52,10 @@ public class _13902Bracing_For_Balaurea extends QuestHandler {
 						return sendQuestStartDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 798926: { //Outremus.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 2375);
 						} case SELECT_REWARD: {
@@ -66,7 +65,7 @@ public class _13902Bracing_For_Balaurea extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 798926) { //Outremus.
 			    return sendQuestEndDialog(env);
 		    }

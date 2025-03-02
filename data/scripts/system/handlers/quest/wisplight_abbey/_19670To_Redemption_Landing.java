@@ -28,10 +28,9 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _19670To_Redemption_Landing extends QuestHandler
-{
+public class _19670To_Redemption_Landing extends QuestHandler {
+
 	private final static int questId = 19670;
-	
 	public _19670To_Redemption_Landing() {
 		super(questId);
 	}
@@ -40,8 +39,8 @@ public class _19670To_Redemption_Landing extends QuestHandler
 	public void register() {
 		qe.registerQuestNpc(804651).addOnQuestStart(questId); //Rena.
 		qe.registerQuestNpc(804651).addOnTalkEvent(questId); //Rena.
-		qe.registerQuestNpc(804654).addOnTalkEvent(questId); //Agnes.
-		qe.registerQuestNpc(804782).addOnTalkEvent(questId); //Vernea.
+		qe.registerQuestNpc(806243).addOnTalkEvent(questId); //Gilios.
+		qe.registerQuestNpc(805773).addOnTalkEvent(questId); //Manto.
 		qe.registerQuestNpc(805351).addOnTalkEvent(questId); //Giscours.
 	}
 	
@@ -60,8 +59,7 @@ public class _19670To_Redemption_Landing extends QuestHandler
 						if (player.getInventory().getItemCountByItemId(164000335) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -76,26 +74,25 @@ public class _19670To_Redemption_Landing extends QuestHandler
 			return false;
 		} if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
-				case 804654: { //Agnes.
+				case 806243: { //Gilios.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1011);
 						} case STEP_TO_1: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+				            return closeDialogWindow(env);
 						}
 					}
-				} case 804782: { //Vernea.
+				} case 805773: { //Manto.
 				    switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1352);
 						} case SET_REWARD: {
+							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+				            return closeDialogWindow(env);
 						}
 					}
 				}

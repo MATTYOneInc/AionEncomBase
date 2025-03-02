@@ -66,7 +66,6 @@ public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler {
 							return defaultCloseDialog(env, 0, 1);
 						}
 					}
-					break;
 				} case 798368: { //Herosir.
 					switch (dialog) {
 						case START_DIALOG: {
@@ -78,7 +77,6 @@ public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler {
 							return defaultCloseDialog(env, 1, 2);
 						}
 					}
-					break;
 				} case 798369: { //Gellner.
 					switch (dialog) {
 						case START_DIALOG: {
@@ -90,7 +88,6 @@ public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler {
 							return defaultCloseDialog(env, 2, 3);
 						}
 					}
-					break;
 				} case 798370: { //Natorp.
 					switch (dialog) {
 						case START_DIALOG: {
@@ -102,7 +99,6 @@ public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler {
 							return defaultCloseDialog(env, 3, 4);
 						}
 					}
-					break;
 				} case 798371: { //Needham.
 					switch (dialog) {
 						case START_DIALOG: {
@@ -114,7 +110,6 @@ public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler {
 							return defaultCloseDialog(env, 4, 5);
 						}
 					}
-					break;
 				} case 798372: { //Landsberg.
 					switch (dialog) {
 						case START_DIALOG: {
@@ -126,7 +121,6 @@ public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler {
 							return defaultCloseDialog(env, 5, 6);
 						}
 					}
-					break;
 				} case 798373: { //Levinard.
 					switch (dialog) {
 						case START_DIALOG: {
@@ -138,7 +132,6 @@ public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler {
 							return defaultCloseDialog(env, 6, 7);
 						}
 					}
-					break;
 				} case 798374: { //Lonergan.
 					switch (dialog) {
 						case START_DIALOG: {
@@ -150,7 +143,6 @@ public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler {
 							return defaultCloseDialog(env, 7, 8);
 						}
 					}
-					break;
 				} case 204075: { //Balder.
 					switch (dialog) {
 						case START_DIALOG: {
@@ -164,14 +156,11 @@ public class _4938Work_Of_The_Fenris_Fangs extends QuestHandler {
 							} else {
 								return sendQuestDialog(env, 3825);
 							}
-						} case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
 						}
 					}
-					break;
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204053) { //Kvasir.
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

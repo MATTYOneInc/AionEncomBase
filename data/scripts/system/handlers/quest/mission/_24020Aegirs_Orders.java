@@ -26,10 +26,9 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24020Aegirs_Orders extends QuestHandler
-{
+public class _24020Aegirs_Orders extends QuestHandler {
+
     private final static int questId = 24020;
-	
     public _24020Aegirs_Orders() {
         super(questId);
     }

@@ -29,10 +29,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author (Encom)
 /****/
 
-public class _26809Collecting_The_Histories_Of_Atreia extends QuestHandler
-{
+public class _26809Collecting_The_Histories_Of_Atreia extends QuestHandler {
+
 	private final static int questId = 26809;
-	
 	public _26809Collecting_The_Histories_Of_Atreia() {
 		super(questId);
 	}
@@ -61,9 +60,7 @@ public class _26809Collecting_The_Histories_Of_Atreia extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			return false;
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+        if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806079) {
 				removeQuestItem(env, 182215989, 1);
 				return sendQuestEndDialog(env);

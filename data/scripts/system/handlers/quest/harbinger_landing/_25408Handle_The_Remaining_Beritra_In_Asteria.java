@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25408Handle_The_Remaining_Beritra_In_Asteria extends QuestHandler
-{
+public class _25408Handle_The_Remaining_Beritra_In_Asteria extends QuestHandler {
+
     private final static int questId = 25408;
-	
     public _25408Handle_The_Remaining_Beritra_In_Asteria() {
         super(questId);
     }
@@ -53,27 +52,16 @@ public class _25408Handle_The_Remaining_Beritra_In_Asteria extends QuestHandler
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
             if (targetId == 805401) {
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 805401) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 4) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 4, 5, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805401) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

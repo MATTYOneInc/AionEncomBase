@@ -43,10 +43,9 @@ public class _25563Broken_Guardian_Accomodations extends QuestHandler {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-        QuestDialog dialog = env.getDialog();  
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 0) {
-                switch (dialog) {
+                switch (env.getDialog()) {
                     case ACCEPT_QUEST:
 				    case ACCEPT_QUEST_SIMPLE: {
 					    return sendQuestStartDialog(env);
@@ -59,7 +58,7 @@ public class _25563Broken_Guardian_Accomodations extends QuestHandler {
 		if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 806116: { //Reinhard.
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 10002);
 						} case SELECT_REWARD: {
@@ -69,7 +68,7 @@ public class _25563Broken_Guardian_Accomodations extends QuestHandler {
 					}
 				}
 			}
-		} 
+		}
         else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 806116) { //Reinhard.
 			    return sendQuestEndDialog(env);
@@ -77,6 +76,7 @@ public class _25563Broken_Guardian_Accomodations extends QuestHandler {
 		}
 		return false;
 	}
+
 	@Override
 	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
 		Player player = env.getPlayer();

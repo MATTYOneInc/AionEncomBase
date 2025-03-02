@@ -18,17 +18,14 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13964Operation_Under_The_Detachment_Leader extends QuestHandler
-{
+public class _13964Operation_Under_The_Detachment_Leader extends QuestHandler {
+
     private final static int questId = 13964;
-	private final static int[] WindyGorgeBoss_D = {246709};
-	
     public _13964Operation_Under_The_Detachment_Leader() {
         super(questId);
     }
@@ -37,10 +34,7 @@ public class _13964Operation_Under_The_Detachment_Leader extends QuestHandler
         qe.registerQuestNpc(835218).addOnQuestStart(questId);
         qe.registerQuestNpc(835218).addOnTalkEvent(questId);
 		qe.registerQuestNpc(835217).addOnTalkEvent(questId);
-		for (int mob: WindyGorgeBoss_D) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
-		qe.registerOnEnterWorld(questId);
+		qe.registerQuestNpc(246709).addOnKillEvent(questId);
     }
 	
     @Override
@@ -48,27 +42,16 @@ public class _13964Operation_Under_The_Detachment_Leader extends QuestHandler
         final Player player = env.getPlayer();
 		int targetId = env.getTargetId();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 835218) {
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 835217) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 1) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 1, 2, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 835217) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -92,23 +75,9 @@ public class _13964Operation_Under_The_Detachment_Leader extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
+					qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
-				}
-            }
-        }
-        return false;
-    }
-	
-	@Override
-    public boolean onEnterWorldEvent(QuestEnv env) {
-        final Player player = env.getPlayer();
-        final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (player.getWorldId() == 302350000) { //Windy Gorge 5.5
-            if (qs == null) {
-                env.setQuestId(questId);
-                if (QuestService.startQuest(env)) {
-					return true;
 				}
             }
         }

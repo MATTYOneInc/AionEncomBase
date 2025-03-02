@@ -39,7 +39,7 @@ public class _30055ForMyWife extends QuestHandler  {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798929) {
 				return sendQuestEndDialog(env);
 			}

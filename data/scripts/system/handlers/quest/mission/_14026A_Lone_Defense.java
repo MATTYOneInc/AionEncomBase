@@ -42,11 +42,10 @@ import java.util.List;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14026A_Lone_Defense extends QuestHandler
-{
+public class _14026A_Lone_Defense extends QuestHandler {
+
     private final static int questId = 14026;
     private static List<Integer> mobs = new ArrayList<Integer>();
-	
     static {
         mobs.add(213576); //Draconute Scout.
 		mobs.add(213577); //Chandala Mage.
@@ -105,9 +104,8 @@ public class _14026A_Lone_Defense extends QuestHandler
                         } case STEP_TO_1: {
                             qs.setQuestVar(1);
                             updateQuestStatus(env);
-                            PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
                             TeleportService2.teleportTo(player, WorldMapType.ELTNEN.getId(), 1596.1948f, 1529.9152f, 317, (byte) 120, TeleportAnimation.BEAM_ANIMATION);
-                            return true;
+                            return closeDialogWindow(env);
                         }
                     }
                 } case 204020: { //Mabangtah.
@@ -120,9 +118,8 @@ public class _14026A_Lone_Defense extends QuestHandler
                             qs.setQuestVar(2);
                             updateQuestStatus(env);
                             giveQuestItem(env, 182215324, 1);
-                            PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
                             TeleportService2.teleportTo(player, WorldMapType.ELTNEN.getId(), 2500.15f, 780.9f, 409, (byte) 15, TeleportAnimation.BEAM_ANIMATION);
-                            return true;
+                            return closeDialogWindow(env);
                         }
                     }
                 } case 204044: { //Kimeia.
@@ -138,15 +135,14 @@ public class _14026A_Lone_Defense extends QuestHandler
                         } case STEP_TO_3: {
                             qs.setQuestVar(3);
                             updateQuestStatus(env);
-                            PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
                             QuestService.questTimerStart(env, 120);
                             spawn(player);
-                            return true;
+                            return closeDialogWindow(env);
                         } case STEP_TO_4: {
                             qs.setStatus(QuestStatus.REWARD);
                             updateQuestStatus(env);
                             TeleportService2.teleportTo(player, WorldMapType.ELTNEN.getId(), 271.69f, 2787.04f, 272.47f, (byte) 50, TeleportAnimation.BEAM_ANIMATION);
-                            return true;
+                            return closeDialogWindow(env);
                         }
                     }
                 }

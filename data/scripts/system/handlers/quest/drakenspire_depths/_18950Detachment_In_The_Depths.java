@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _18950Detachment_In_The_Depths extends QuestHandler
-{
+public class _18950Detachment_In_The_Depths extends QuestHandler {
+
     private final static int questId = 18950;
-	
     public _18950Detachment_In_The_Depths() {
         super(questId);
     }
@@ -42,11 +41,10 @@ public class _18950Detachment_In_The_Depths extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 804711) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 4762);
 					}
@@ -60,7 +58,7 @@ public class _18950Detachment_In_The_Depths extends QuestHandler
 		} else if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 209678: {
-					switch (dialog) {
+					switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 10002);
 						} case SELECT_REWARD: {
@@ -70,7 +68,7 @@ public class _18950Detachment_In_The_Depths extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 209678) {
 			    return sendQuestEndDialog(env);
 		    }

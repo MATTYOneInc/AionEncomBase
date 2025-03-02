@@ -28,11 +28,10 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _29667Protect_The_Morninglight_Plains extends QuestHandler
-{
+public class _29667Protect_The_Morninglight_Plains extends QuestHandler {
+
 	private final static int questId = 29667;
 	private final static int[] mobs = {240369, 240370, 240371, 240372, 240373, 240374, 240375, 240376, 240377, 240378};
-	
 	public _29667Protect_The_Morninglight_Plains() {
 		super(questId);
 	}
@@ -59,11 +58,10 @@ public class _29667Protect_The_Morninglight_Plains extends QuestHandler
 			if (targetId == 806244) {
 				switch (dialog) {
 					case START_DIALOG: {
-						if (player.getInventory().getItemCountByItemId(164000335) >= 1) { //Abbey Return Stone.
+						if (player.getInventory().getItemCountByItemId(164000336) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -76,18 +74,8 @@ public class _29667Protect_The_Morninglight_Plains extends QuestHandler
 			}
 		} if (qs == null) {
 			return false;
-		} if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806101) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 12) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 12, 13, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806101) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);
@@ -121,6 +109,7 @@ public class _29667Protect_The_Morninglight_Plains extends QuestHandler
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 12) {
+                    qs.setQuestVarById(0, 1);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}

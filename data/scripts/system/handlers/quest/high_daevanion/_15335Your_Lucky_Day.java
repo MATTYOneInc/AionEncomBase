@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15335Your_Lucky_Day extends QuestHandler
-{
+public class _15335Your_Lucky_Day extends QuestHandler {
+
 	private static final int questId = 15335;
-	
 	public _15335Your_Lucky_Day() {
 		super(questId);
 	}
@@ -43,6 +42,9 @@ public class _15335Your_Lucky_Day extends QuestHandler
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
+        if (qs == null) {
+            return false;
+        }
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 805738) {

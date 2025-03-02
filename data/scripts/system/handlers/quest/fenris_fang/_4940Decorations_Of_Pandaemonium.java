@@ -79,9 +79,6 @@ public class _4940Decorations_Of_Pandaemonium extends QuestHandler {
 							else
 								return sendQuestDialog(env, 10001);
 					}
-					break;
-				default:
-					return sendQuestStartDialog(env);
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204050)

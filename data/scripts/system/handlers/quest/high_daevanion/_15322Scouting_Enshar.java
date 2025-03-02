@@ -13,29 +13,25 @@
 package quest.high_daevanion;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15322Scouting_Enshar extends QuestHandler
-{
+public class _15322Scouting_Enshar extends QuestHandler {
+
     public static final int questId = 15322;
-	
 	private final static int[] DF5_B = {219670, 219671, 219672, 219673, 219674, 219675, 219676, 219677, 219678, 219679, 219988};
 	private final static int[] DF5_D = {219702, 219703, 219704, 219705, 219706, 219707, 219708, 219709, 219710, 219711, 219712, 219713};
 	private final static int[] DF5_F = {219733, 219734, 219735, 219736, 219737, 219740, 219741, 219992, 219993};
 	private final static int[] DF5_H = {219752, 219753, 219754, 219755, 219756, 219757, 219758, 219759, 219760, 219761};
-	
     public _15322Scouting_Enshar() {
         super(questId);
     }
@@ -66,7 +62,6 @@ public class _15322Scouting_Enshar extends QuestHandler
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 			return true;
 		}
 		return false;
@@ -77,7 +72,7 @@ public class _15322Scouting_Enshar extends QuestHandler
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 805330) { //Potencia.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -95,11 +90,12 @@ public class _15322Scouting_Enshar extends QuestHandler
     public boolean onKillEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
-		int var1 = qs.getQuestVarById(1);
 		if (qs == null || qs.getStatus() != QuestStatus.START) {
             return false;
-        } if (var == 1 && var1 >= 0 && var1 < 9) {
+        }
+        int var = qs.getQuestVarById(0);
+		int var1 = qs.getQuestVarById(1);
+        if (var == 1 && var1 >= 0 && var1 < 9) {
 			return defaultOnKillEvent(env, DF5_B, var1, var1 + 1, 1);
 		} else if (var == 1 && var1 == 9) {
 			qs.setQuestVarById(1, 0);

@@ -66,7 +66,7 @@ public class _49600Silverine_Silver_Lining extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 800942) { //Dumurinerk.
 			    return sendQuestEndDialog(env);
 		    }

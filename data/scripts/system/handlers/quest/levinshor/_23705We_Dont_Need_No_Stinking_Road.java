@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _23705We_Dont_Need_No_Stinking_Road extends QuestHandler
-{
+public class _23705We_Dont_Need_No_Stinking_Road extends QuestHandler {
+
     private final static int questId = 23705;
-	
     public _23705We_Dont_Need_No_Stinking_Road() {
         super(questId);
     }
@@ -63,7 +62,7 @@ public class _23705We_Dont_Need_No_Stinking_Road extends QuestHandler
                     return sendQuestEndDialog(env);
                 }
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 802345) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

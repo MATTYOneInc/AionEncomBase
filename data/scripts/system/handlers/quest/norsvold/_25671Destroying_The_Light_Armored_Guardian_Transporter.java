@@ -13,14 +13,12 @@
 package quest.norsvold;
 
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
@@ -71,12 +69,12 @@ public class _25671Destroying_The_Light_Armored_Guardian_Transporter extends Que
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-        int var = qs.getQuestVarById(0);
-        int var1 = qs.getQuestVarById(1);
-        int var2 = qs.getQuestVarById(2);
 		int[] DF6RaidSum = {246463, 246464, 246465, 246466};
 		int[] DF6RaidGuard = {246682, 246683, 246684, 246685, 246686, 246687};
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
+        int var = qs.getQuestVarById(0);
+        int var1 = qs.getQuestVarById(1);
+        int var2 = qs.getQuestVarById(2);
             if (var == 0) {
 				if (var1 + var2 < 6) {
 					if (targetId == 246682 || targetId == 246683 || targetId == 246684 ||
@@ -106,7 +104,6 @@ public class _25671Destroying_The_Light_Armored_Guardian_Transporter extends Que
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			QuestService.startQuest(env);
-			PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 			return true;
 		}
 		return false;

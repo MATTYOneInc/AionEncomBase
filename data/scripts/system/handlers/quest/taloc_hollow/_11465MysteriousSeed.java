@@ -18,18 +18,12 @@ package quest.taloc_hollow;
 
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.QuestService;
-import com.aionemu.gameserver.utils.PacketSendUtility;
-import com.aionemu.gameserver.utils.ThreadPoolManager;
-
 
 /**
  * @author madison
@@ -38,7 +32,6 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 public class _11465MysteriousSeed extends QuestHandler {
 
 	private final static int questId = 11465;
-
 	public _11465MysteriousSeed() {
 		super(questId);
 	}
@@ -52,25 +45,20 @@ public class _11465MysteriousSeed extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
-		if (targetId == 0) {
-			if (env.getDialogId() == 1002) {
-				QuestService.startQuest(env);
-				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-				return true;
-			}else if(env.getDialogId() == 1003){
-				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
-				return true;
+        if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			if (targetId == 0) { 
+				if (env.getDialog() == QuestDialog.ACCEPT_QUEST) {
+					return sendQuestStartDialog(env);
+				}
+				if (env.getDialog() == QuestDialog.REFUSE_QUEST) {
+					return closeDialogWindow(env);
+			    }
 			}
-		}
-		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			return false;
 		}
 		else if (qs.getStatus() == QuestStatus.START){
 			if(targetId == 279000){
-				switch (dialog){
+				switch (env.getDialog()){
 					case USE_OBJECT:
 						return sendQuestDialog(env, 2375);
 					case SELECT_REWARD:{
@@ -81,7 +69,7 @@ public class _11465MysteriousSeed extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 279000) {
 				return sendQuestEndDialog(env);
 			}
@@ -91,24 +79,12 @@ public class _11465MysteriousSeed extends QuestHandler {
 	}
 
 	@Override
-	public HandlerResult onItemUseEvent(final QuestEnv env, Item item) {
-		final Player player = env.getPlayer();
-		final int id = item.getItemTemplate().getTemplateId();
-		final int itemObjId = item.getObjectId();
-		
-		if (id != 182209523)
-			return HandlerResult.UNKNOWN;
-		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0,
-			0), true);
-		ThreadPoolManager.getInstance().schedule(new Runnable() {
-
-			@Override
-			public void run() {
-				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0,
-					1, 0), true);
-				sendQuestDialog(env, 4);
-			}
-		}, 3000);
-		return HandlerResult.SUCCESS;
+	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
+		Player player = env.getPlayer();
+		QuestState qs = player.getQuestStateList().getQuestState(questId);
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+			return HandlerResult.fromBoolean(sendQuestDialog(env, 4));
+		}
+		return HandlerResult.FAILED;
 	}
 }

@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25323Endure_And_Report extends QuestHandler
-{
+public class _25323Endure_And_Report extends QuestHandler {
+
 	private static final int questId = 25323;
-	
 	public _25323Endure_And_Report() {
 		super(questId);
 	}
@@ -44,6 +43,9 @@ public class _25323Endure_And_Report extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
+        if (qs == null) {
+            return false;
+        }
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 805342) {
 				switch (dialog) {

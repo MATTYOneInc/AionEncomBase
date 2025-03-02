@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _29671Rasi_Welcome extends QuestHandler
-{
+public class _29671Rasi_Welcome extends QuestHandler {
+
 	private final static int questId = 29671;
-	
 	public _29671Rasi_Welcome() {
 		super(questId);
 	}
@@ -68,7 +67,7 @@ public class _29671Rasi_Welcome extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806700) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

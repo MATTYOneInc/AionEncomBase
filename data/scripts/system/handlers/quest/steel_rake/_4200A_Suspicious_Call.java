@@ -19,7 +19,6 @@ package quest.steel_rake;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.HandlerResult;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
@@ -28,7 +27,6 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.instance.InstanceService;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.WorldMapInstance;
 
 /****/
@@ -66,7 +64,7 @@ public class _4200A_Suspicious_Call extends QuestHandler {
 				}
 			}
 			return false;
-		} if (qs.getStatus() == QuestStatus.REWARD) {
+		} if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 805839) { //Peorinerk.
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
@@ -104,8 +102,7 @@ public class _4200A_Suspicious_Call extends QuestHandler {
 					} case STEP_TO_2: {
 						qs.setQuestVarById(0, var + 1);
 						updateQuestStatus(env);
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-						return true;
+					    return closeDialogWindow(env);
 					}
 				}
 			} else if (targetId == 700522 && var == 2) { //Haorunerk's Bag.
@@ -123,10 +120,9 @@ public class _4200A_Suspicious_Call extends QuestHandler {
 					} case SELECT_ACTION_2035: {
 						return sendQuestDialog(env, 2035);
 					} case SET_REWARD: {
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
-						return true;
+					    return closeDialogWindow(env);
 					}
 				}
 			}

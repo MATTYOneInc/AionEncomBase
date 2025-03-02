@@ -44,7 +44,7 @@ public class _16825Escape_From_The_Contaminated_Library extends QuestHandler {
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs.getStatus() == QuestStatus.REWARD) {
+		if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806283) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

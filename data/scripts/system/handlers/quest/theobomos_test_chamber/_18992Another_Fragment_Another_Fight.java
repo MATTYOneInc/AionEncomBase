@@ -23,13 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _18992Another_Fragment_Another_Fight extends QuestHandler
-{
+public class _18992Another_Fragment_Another_Fight extends QuestHandler {
+
     private final static int questId = 18992;
-	private final static int[] IDF6LapShelukSN67Ae = {220424}; //í”¼ì?˜ ê³„ì•½ì?„ ë§ºì?€ ì•„ë?¼í?¬ë„¤.
-	private final static int[] IDF6LapPrincessSN67Ae = {220425}; //í”¼ì?˜ ê³„ì•½ì?„ ë§ºì?€ ê°ˆë?¼í…Œì?´ì•„.
-	private final static int[] IDF6LapGodElemental67Ah = {220426}; //ì•„í‹°íŒ©íŠ¸ë¥¼ ì§€ë°°í•˜ëŠ” ì›?ì†Œ êµ°ì£¼.
-	
     public _18992Another_Fragment_Another_Fight() {
         super(questId);
     }
@@ -38,13 +34,9 @@ public class _18992Another_Fragment_Another_Fight extends QuestHandler
         qe.registerQuestNpc(806075).addOnQuestStart(questId); //Weatha.
 		qe.registerQuestNpc(806075).addOnTalkEvent(questId); //Weatha.
         qe.registerQuestNpc(806215).addOnTalkEvent(questId); //Stochio.
-		for (int mob: IDF6LapShelukSN67Ae) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: IDF6LapPrincessSN67Ae) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		} for (int mob: IDF6LapGodElemental67Ah) {
-			qe.registerQuestNpc(mob).addOnKillEvent(questId);
-		}
+		qe.registerQuestNpc(220424).addOnKillEvent(questId);
+		qe.registerQuestNpc(220425).addOnKillEvent(questId);
+		qe.registerQuestNpc(220426).addOnKillEvent(questId);
     }
 	
     @Override
@@ -52,10 +44,9 @@ public class _18992Another_Fragment_Another_Fight extends QuestHandler
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE) {
             if (targetId == 806075) { //Weatha.
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
@@ -63,26 +54,16 @@ public class _18992Another_Fragment_Another_Fight extends QuestHandler
             }
         } else if (qs.getStatus() == QuestStatus.START) {
             if (targetId == 806215) { //Stochio.
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1011);
-                } if (dialog == QuestDialog.STEP_TO_1) {
+                } if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					qs.setQuestVarById(0, 1);
 					updateQuestStatus(env);
 					return closeDialogWindow(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 806075) { //Weatha.
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 3) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 2, 3, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806075) { //Weatha.
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

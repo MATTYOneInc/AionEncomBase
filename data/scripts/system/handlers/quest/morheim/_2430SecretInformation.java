@@ -31,7 +31,6 @@ import com.aionemu.gameserver.services.QuestService;
 public class _2430SecretInformation extends QuestHandler {
 
 	private final static int questId = 2430;
-
 	public _2430SecretInformation() {
 		super(questId);
 	}
@@ -51,7 +50,6 @@ public class _2430SecretInformation extends QuestHandler {
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204327) { // Sveinn
 				switch (dialog) {
@@ -66,9 +64,6 @@ public class _2430SecretInformation extends QuestHandler {
 					}
 					case ACCEPT_QUEST: {
 						return sendQuestDialog(env, 1003);
-					}
-					case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 					case STEP_TO_1: {
 						if (player.getInventory().getKinah() >= 500) {
@@ -137,7 +132,6 @@ public class _2430SecretInformation extends QuestHandler {
 							return defaultCloseDialog(env, 7, 8); // 8
 						}
 					}
-					break;
 				}
 				case 204377: { // Grall
 					switch (dialog) {
@@ -152,7 +146,6 @@ public class _2430SecretInformation extends QuestHandler {
 							return sendQuestDialog(env, 5);
 						}
 					}
-					break;
 				}
 				case 798078: { // Hugorunerk
 					switch (dialog) {
@@ -165,7 +158,6 @@ public class _2430SecretInformation extends QuestHandler {
 							return defaultCloseDialog(env, 4, 5); // 5
 						}
 					}
-					break;
 				}
 				case 798081: { // Nicoyerk
 					switch (dialog) {
@@ -178,7 +170,6 @@ public class _2430SecretInformation extends QuestHandler {
 							return defaultCloseDialog(env, 5, 6); // 6
 						}
 					}
-					break;
 				}
 				case 798082: { // Bicorunerk
 					switch (dialog) {
@@ -192,7 +183,6 @@ public class _2430SecretInformation extends QuestHandler {
 							return sendQuestDialog(env, 6);
 						}
 					}
-					break;
 				}
 				case 204300: { // Bolverk
 					switch (dialog) {
@@ -211,33 +201,27 @@ public class _2430SecretInformation extends QuestHandler {
 							changeQuestStep(env, 8, 8, true); // reward 2
 							return sendQuestDialog(env, 7);
 						}
-						case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
-						}
 					}
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			int var = qs.getQuestVarById(0);
 			switch (targetId) {
 				case 204377: { // Grall
 					if (var == 2) {
 						return sendQuestEndDialog(env, 0);
 					}
-					break;
 				}
 				case 798082: { // Bicorunerk
 					if (var == 6) {
 						return sendQuestEndDialog(env, 1);
 					}
-					break;
 				}
 				case 204300: { // Bolverk
 					if (var == 8) {
 						return sendQuestEndDialog(env, 2);
 					}
-					break;
 				}
 			}
 		}

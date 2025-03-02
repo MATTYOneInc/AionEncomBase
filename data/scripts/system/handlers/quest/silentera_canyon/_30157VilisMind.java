@@ -36,12 +36,11 @@ public class _30157VilisMind extends QuestHandler {
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-		if(qs == null || qs.getStatus() == QuestStatus.NONE) {
+		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204304) {
-				if(dialog == QuestDialog.START_DIALOG)
+				if (dialog == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1011);
-				else if (dialog == QuestDialog.ACCEPT_QUEST)
-				{
+				else if (dialog == QuestDialog.ACCEPT_QUEST) {
 					if (!giveQuestItem(env, 182209254, 1))
 						return true;
 					return sendQuestStartDialog(env);
@@ -50,7 +49,7 @@ public class _30157VilisMind extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 799234) {
 				switch (dialog) {
 					case USE_OBJECT:

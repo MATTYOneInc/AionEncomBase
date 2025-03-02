@@ -24,11 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19633Alisary_Assistance extends QuestHandler
-{
+public class _19633Alisary_Assistance extends QuestHandler {
+
 	private final static int questId = 19633;
 	private final static int[] mobs = {214193, 214259, 214260};
-	
 	public _19633Alisary_Assistance() {
 		super(questId);
 	}
@@ -62,20 +61,8 @@ public class _19633Alisary_Assistance extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 205304: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 205304) {
 			    switch (dialog) {
 					case SELECT_REWARD: {

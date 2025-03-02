@@ -27,11 +27,10 @@ import java.util.Set;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25480Clearing_The_Way extends QuestHandler
-{
+public class _25480Clearing_The_Way extends QuestHandler {
+
     private final static int questId = 25480;
 	private static final Set<Integer> ab1BLv8D;
-	
     public _25480Clearing_The_Way() {
         super(questId);
     }
@@ -79,10 +78,9 @@ public class _25480Clearing_The_Way extends QuestHandler
 		if (!ab1BLv8D.contains(targetId)) {
 			return false;
 		}
-        QuestDialog dialog = env.getDialog();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
         if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
-            switch (dialog) {
+            switch (env.getDialog()) {
 				case START_DIALOG: {
 					return sendQuestDialog(env, 4762);
 				} case ACCEPT_QUEST:
@@ -92,16 +90,8 @@ public class _25480Clearing_The_Way extends QuestHandler
 				    return closeDialogWindow(env);
 				}
 			}
-        } else if (qs.getStatus() == QuestStatus.START) {
-            switch (dialog) {
-				case START_DIALOG: {
-					return sendQuestDialog(env, 2375);
-				} case SELECT_REWARD: {
-					changeQuestStep(env, 1, 2, true);
-					return sendQuestEndDialog(env);
-				}
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        }
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (env.getDialog() == QuestDialog.START_DIALOG) {
                 return sendQuestDialog(env, 10002);
 		    } else {

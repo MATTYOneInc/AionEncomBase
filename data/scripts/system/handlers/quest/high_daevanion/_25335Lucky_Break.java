@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25335Lucky_Break extends QuestHandler
-{
+public class _25335Lucky_Break extends QuestHandler {
+
 	private static final int questId = 25335;
-	
 	public _25335Lucky_Break() {
 		super(questId);
 	}
@@ -44,6 +43,9 @@ public class _25335Lucky_Break extends QuestHandler
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
+        if (qs == null) {
+            return false;
+        }
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
 			if (targetId == 805739) {
 				switch (dialog) {

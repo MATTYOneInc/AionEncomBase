@@ -28,10 +28,9 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _19626Fight_On_Ophidan extends QuestHandler
-{
+public class _19626Fight_On_Ophidan extends QuestHandler {
+
 	private final static int questId = 19626;
-	
 	public _19626Fight_On_Ophidan() {
 		super(questId);
 	}
@@ -58,8 +57,7 @@ public class _19626Fight_On_Ophidan extends QuestHandler
 						if (player.getInventory().getItemCountByItemId(164000335) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -82,13 +80,12 @@ public class _19626Fight_On_Ophidan extends QuestHandler
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+                            return sendQuestEndDialog(env);
 						}
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 801763) { //IDLDF5_Under_01_Theano.
 			    switch (dialog) {
 					case SELECT_REWARD: {

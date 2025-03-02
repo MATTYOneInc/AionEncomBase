@@ -31,7 +31,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2493BringingUpTayga extends QuestHandler {
 
 	private final static int questId = 2493;
-
 	public _2493BringingUpTayga() {
 		super(questId);
 	}
@@ -50,7 +49,6 @@ public class _2493BringingUpTayga extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204325) { // Ipoderr
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -78,7 +76,7 @@ public class _2493BringingUpTayga extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204325) { // Ipoderr
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

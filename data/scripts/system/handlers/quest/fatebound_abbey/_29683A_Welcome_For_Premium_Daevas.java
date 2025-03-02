@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _29683A_Welcome_For_Premium_Daevas extends QuestHandler
-{
+public class _29683A_Welcome_For_Premium_Daevas extends QuestHandler {
+
 	private final static int questId = 29683;
-	
 	public _29683A_Welcome_For_Premium_Daevas() {
 		super(questId);
 	}
@@ -68,7 +67,7 @@ public class _29683A_Welcome_For_Premium_Daevas extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806700) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

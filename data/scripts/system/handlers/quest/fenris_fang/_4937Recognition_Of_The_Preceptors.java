@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _4937Recognition_Of_The_Preceptors extends QuestHandler {
 
 	private final static int questId = 4937;
-	
 	public _4937Recognition_Of_The_Preceptors() {
 		super(questId);
 	}
@@ -66,7 +65,6 @@ public class _4937Recognition_Of_The_Preceptors extends QuestHandler {
 							return defaultCloseDialog(env, 0, 1);
 						}
 					}
-					break;
 				} case 204058: { //Sif.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
@@ -77,7 +75,6 @@ public class _4937Recognition_Of_The_Preceptors extends QuestHandler {
 							return defaultCloseDialog(env, 1, 2);
 						}
 					}
-					break;
 				} case 204057: { //Sigyn.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
@@ -88,7 +85,6 @@ public class _4937Recognition_Of_The_Preceptors extends QuestHandler {
 							return defaultCloseDialog(env, 2, 3);
 						}
 					}
-					break;
 				} case 204056: { //Traufnir.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
@@ -99,7 +95,6 @@ public class _4937Recognition_Of_The_Preceptors extends QuestHandler {
 							return defaultCloseDialog(env, 3, 4, 182207113, 1, 182207112, 1);
 						}
 					}
-					break;
 				} case 801222: { //Hadubrant.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
@@ -110,7 +105,6 @@ public class _4937Recognition_Of_The_Preceptors extends QuestHandler {
 							return defaultCloseDialog(env, 4, 5);
 						}
 					}
-					break;
 				} case 801223: { //Brynhilde.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
@@ -121,22 +115,19 @@ public class _4937Recognition_Of_The_Preceptors extends QuestHandler {
 							return defaultCloseDialog(env, 5, 6);
 						}
 					}
-					break;
 				} case 204075: { //Balder.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
 							if (var == 6 && checkItemExistence(env, 182207113, 1, false)) {
 								return sendQuestDialog(env, 3058);
 							}
-						} case FINISH_DIALOG: {
-							return defaultCloseDialog(env, var, var);
 						} case SET_REWARD: {
 							return checkItemExistence(env, 6, 7, true, 186000084, 1, true, 0, 3143, 0, 0);
 						}
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204053) { //Kvasir.
 				if (env.getDialog() == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

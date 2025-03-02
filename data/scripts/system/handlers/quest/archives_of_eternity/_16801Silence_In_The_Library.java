@@ -64,7 +64,7 @@ public class _16801Silence_In_The_Library extends QuestHandler {
 				}
 			}
 		}  
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806148) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

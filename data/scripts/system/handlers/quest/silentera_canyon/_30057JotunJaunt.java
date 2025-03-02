@@ -28,13 +28,13 @@ public class _30057JotunJaunt extends QuestHandler {
 
 	@Override
 	public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
-		if(zoneName != ZoneName.get("SILENTERA_WESTGATE_600110000"))
+		if (zoneName != ZoneName.get("SILENTERA_WESTGATE_600110000"))
 			return false;
 		final Player player = env.getPlayer();
 		if (player == null)
 			return false;
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if(qs == null || qs.getQuestVars().getQuestVars() != 0)
+		if (qs == null || qs.getQuestVars().getQuestVars() != 0)
 			return false;
 		if (qs.getStatus() != QuestStatus.START)
 			return false;
@@ -50,18 +50,18 @@ public class _30057JotunJaunt extends QuestHandler {
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
-		if(targetId == 799381) {
-			if(qs == null || qs.getStatus() == QuestStatus.NONE) {
-				if(dialog == QuestDialog.START_DIALOG)
+		if (targetId == 799381) {
+			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
+				if (dialog == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 4762);
 				else
 					return sendQuestStartDialog(env);
 			}
 
-			else if(qs != null && qs.getStatus() == QuestStatus.REWARD) {
-				if(dialog == QuestDialog.USE_OBJECT)
+			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+				if (dialog == QuestDialog.USE_OBJECT)
 					return sendQuestDialog(env, 10002);
-				else if(dialog == QuestDialog.SELECT_REWARD)
+				else if (dialog == QuestDialog.SELECT_REWARD)
 					return sendQuestDialog(env, 5);
 				else 
 					return sendQuestEndDialog(env);

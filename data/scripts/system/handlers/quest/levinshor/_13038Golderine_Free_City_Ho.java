@@ -20,13 +20,12 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
 /****/
-/** Author Ghostfur & Unknown (Aion-Unique)
+/** Author Ghostfur & Unknown (Aion-Unique) Category: Danaria Level: 999 delete!
 /****/
 
-public class _13038Golderine_Free_City_Ho extends QuestHandler
-{
+public class _13038Golderine_Free_City_Ho extends QuestHandler {
+
     private final static int questId = 13038;
-	
     public _13038Golderine_Free_City_Ho() {
         super(questId);
     }
@@ -61,7 +60,7 @@ public class _13038Golderine_Free_City_Ho extends QuestHandler
 						return sendQuestStartDialog(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 804598: { //Floric.
 					switch (dialog) {
@@ -74,7 +73,7 @@ public class _13038Golderine_Free_City_Ho extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804598) { //Floric.
 			    return sendQuestEndDialog(env);
 		    }

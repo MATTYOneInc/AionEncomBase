@@ -41,11 +41,10 @@ public class _26975A_Mysterious_Shard extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 0) {
-                switch (dialog) {
+                switch (env.getDialog()) {
                     case ACCEPT_QUEST:
 				    case ACCEPT_QUEST_SIMPLE: { 
 					    return sendQuestStartDialog(env);
@@ -55,7 +54,7 @@ public class _26975A_Mysterious_Shard extends QuestHandler {
                 }
 			}
         }
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 801765) { //Rohellein.
 				return sendQuestEndDialog(env);
 			}

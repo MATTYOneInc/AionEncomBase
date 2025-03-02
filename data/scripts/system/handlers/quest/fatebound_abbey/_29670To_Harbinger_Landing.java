@@ -28,10 +28,9 @@ import com.aionemu.gameserver.utils.*;
 /** Author Rinzler (Encom)
 /****/
 
-public class _29670To_Harbinger_Landing extends QuestHandler
-{
+public class _29670To_Harbinger_Landing extends QuestHandler {
+
 	private final static int questId = 29670;
-	
 	public _29670To_Harbinger_Landing() {
 		super(questId);
 	}
@@ -40,8 +39,8 @@ public class _29670To_Harbinger_Landing extends QuestHandler
 	public void register() {
 		qe.registerQuestNpc(804662).addOnQuestStart(questId); //Melrania.
 		qe.registerQuestNpc(804662).addOnTalkEvent(questId); //Melrania.
-		qe.registerQuestNpc(804665).addOnTalkEvent(questId); //Madril.
-		qe.registerQuestNpc(804753).addOnTalkEvent(questId); //Migrak.
+		qe.registerQuestNpc(804665).addOnTalkEvent(questId); //Vioris.
+		qe.registerQuestNpc(804753).addOnTalkEvent(questId); //Ortiga.
 		qe.registerQuestNpc(805356).addOnTalkEvent(questId); //Pontekane.
 	}
 	
@@ -57,11 +56,10 @@ public class _29670To_Harbinger_Landing extends QuestHandler
 			if (targetId == 804662) { //Melrania.
 				switch (dialog) {
 					case START_DIALOG: {
-						if (player.getInventory().getItemCountByItemId(164000335) >= 1) { //Abbey Return Stone.
+						if (player.getInventory().getItemCountByItemId(164000336) >= 1) { //Abbey Return Stone.
 						    return sendQuestDialog(env, 4762);
 						} else {
-							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player,
-							"You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
+							PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "You must have <Abbey Return Stone>", ChatType.BRIGHT_YELLOW_CENTER), true);
 							return true;
 						}
 					}
@@ -76,26 +74,25 @@ public class _29670To_Harbinger_Landing extends QuestHandler
 			return false;
 		} if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
-				case 804665: { //Madril.
+				case 806244: { //Vioris.
 					switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1011);
 						} case STEP_TO_1: {
 							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 						}
 					}
-				} case 804753: { //Migrak.
+				} case 805748: { //Ortiga.
 				    switch (env.getDialog()) {
 						case START_DIALOG: {
 							return sendQuestDialog(env, 1352);
 						} case SET_REWARD: {
+							qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 						}
 					}
 				}

@@ -24,11 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24041Training_In_The_Abyss extends QuestHandler
-{
+public class _24041Training_In_The_Abyss extends QuestHandler {
+
     private final static int questId = 24041;
     private final static int[] npc_ids = {278126, 278127, 278128, 278129, 278130, 278131, 278136, 278054};
-	
     public _24041Training_In_The_Abyss() {
         super(questId);
     }

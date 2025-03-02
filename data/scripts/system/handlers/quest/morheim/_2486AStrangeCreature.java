@@ -31,8 +31,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2486AStrangeCreature extends QuestHandler {
 
 	private final static int questId = 2486;
-	
-	
 	public _2486AStrangeCreature() {
 		super(questId);
 	}
@@ -51,7 +49,6 @@ public class _2486AStrangeCreature extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204053) { 
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -65,31 +62,30 @@ public class _2486AStrangeCreature extends QuestHandler {
 		else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 204208) { 
 				if (dialog == QuestDialog.START_DIALOG) {
-						return sendQuestDialog(env, 1352);
+					return sendQuestDialog(env, 1352);
 				}
-			  else if (dialog == QuestDialog.STEP_TO_1) {
-			  	return defaultCloseDialog(env, 0, 1);
-			}
-		}
-			else if (targetId == 204092) { 
+			    else if (dialog == QuestDialog.STEP_TO_1) {
+			  	    return defaultCloseDialog(env, 0, 1);
+			    }
+		     }
+		     else if (targetId == 204092) { 
 				if (dialog == QuestDialog.START_DIALOG) {
-						return sendQuestDialog(env, 1693);
+					return sendQuestDialog(env, 1693);
 				}
-			  else if (dialog == QuestDialog.STEP_TO_2) {
-			  	return defaultCloseDialog(env, 1, 2);
-			}
-		}
-			else if (targetId == 798063) { 
+			    else if (dialog == QuestDialog.STEP_TO_2) {
+			  	    return defaultCloseDialog(env, 1, 2);
+			    }
+		     }
+			 else if (targetId == 798063) { 
 				if (dialog == QuestDialog.START_DIALOG) {
-						return sendQuestDialog(env, 2034);
+					return sendQuestDialog(env, 2034);
 				}
 			  else if (dialog == QuestDialog.STEP_TO_3) {
-			  	qs.setQuestVar(3);
-			  	return defaultCloseDialog(env, 3, 3, true, false);
-			}
+			  	   return defaultCloseDialog(env, 2, 3, true, false);
+			  }
+		   }
 		}
-		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204342) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 2375);

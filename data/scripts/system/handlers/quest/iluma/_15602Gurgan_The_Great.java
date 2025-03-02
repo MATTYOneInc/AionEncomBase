@@ -60,7 +60,7 @@ public class _15602Gurgan_The_Great extends QuestHandler {
 					}
                 }
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 		    int var = qs.getQuestVarById(0);
 			if (targetId == 806194) { //Celaday.
 				switch (env.getDialog()) {
@@ -99,7 +99,7 @@ public class _15602Gurgan_The_Great extends QuestHandler {
 					}
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806159) { //Alexandria.
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

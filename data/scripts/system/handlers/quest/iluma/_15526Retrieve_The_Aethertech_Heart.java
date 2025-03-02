@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _15526Retrieve_The_Aethertech_Heart extends QuestHandler
-{
+public class _15526Retrieve_The_Aethertech_Heart extends QuestHandler {
+
 	private static final int questId = 15526;
-	
 	public _15526Retrieve_The_Aethertech_Heart() {
 		super(questId);
 	}
@@ -59,11 +58,11 @@ public class _15526Retrieve_The_Aethertech_Heart extends QuestHandler
 				}
 			}
 		} else if (targetId == 703071) {
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806097) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -76,12 +75,10 @@ public class _15526Retrieve_The_Aethertech_Heart extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806097) {
 				return sendQuestEndDialog(env);
 			}

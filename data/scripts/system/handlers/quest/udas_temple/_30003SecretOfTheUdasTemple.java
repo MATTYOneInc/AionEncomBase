@@ -29,7 +29,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _30003SecretOfTheUdasTemple extends QuestHandler {
 
 	private static final int questId = 30003;
-
 	public _30003SecretOfTheUdasTemple() {
 		super(questId);
 	}
@@ -47,7 +46,6 @@ public class _30003SecretOfTheUdasTemple extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 799029) { // Honeus
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -73,7 +71,7 @@ public class _30003SecretOfTheUdasTemple extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 799029) { // Honeus
 				removeQuestItem(env, 182209161, 1);
 				return sendQuestEndDialog(env);

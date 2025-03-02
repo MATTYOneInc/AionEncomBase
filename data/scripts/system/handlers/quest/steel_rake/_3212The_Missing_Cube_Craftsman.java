@@ -35,10 +35,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _3212The_Missing_Cube_Craftsman extends QuestHandler
-{
+public class _3212The_Missing_Cube_Craftsman extends QuestHandler {
+
 	private final static int questId = 3212;
-	
 	public _3212The_Missing_Cube_Craftsman() {
 		super(questId);
 	}
@@ -104,7 +103,7 @@ public class _3212The_Missing_Cube_Craftsman extends QuestHandler
 				npc.getController().delete();
 				return true;
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 798011) {
 				if (dialog == QuestDialog.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);

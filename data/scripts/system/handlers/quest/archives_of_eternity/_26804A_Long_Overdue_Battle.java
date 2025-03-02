@@ -75,7 +75,7 @@ public class _26804A_Long_Overdue_Battle extends QuestHandler {
 				}
 			}
 		}
-        else if (qs.getStatus() == QuestStatus.REWARD) {
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806149) {
                 if (env.getDialogId() == 31) {
                     return sendQuestDialog(env, 10002);

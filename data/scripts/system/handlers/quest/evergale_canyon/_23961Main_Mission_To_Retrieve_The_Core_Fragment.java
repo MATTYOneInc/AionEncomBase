@@ -44,24 +44,17 @@ public class _23961Main_Mission_To_Retrieve_The_Core_Fragment extends QuestHandl
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 835222) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 0) {
 							return sendQuestDialog(env, 1011);
-						}
 					} case SELECT_ACTION_1012: {
-						if (var == 0) {
 							playQuestMovie(env, 963);
 							return sendQuestDialog(env, 1012);
-						}
 					} case SELECT_ACTION_1013: {
-						if (var == 0) {
 							return sendQuestDialog(env, 1013);
-						}
 					} case SET_REWARD: {
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);

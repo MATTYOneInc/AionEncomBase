@@ -81,7 +81,7 @@ public class _3205For_The_Black_Cloud_Traders extends QuestHandler
 					}
                 }
             }
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 805835) {
 			    return sendQuestEndDialog(env);
 		    }

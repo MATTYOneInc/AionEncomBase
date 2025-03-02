@@ -24,10 +24,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _14011Fragment_In_The_Sky extends QuestHandler
-{
+public class _14011Fragment_In_The_Sky extends QuestHandler {
+
     private final static int questId = 14011;
-	
     public _14011Fragment_In_The_Sky() {
         super(questId);
     }

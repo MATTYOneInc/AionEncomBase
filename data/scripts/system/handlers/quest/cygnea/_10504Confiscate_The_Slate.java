@@ -90,17 +90,12 @@ public class _10504Confiscate_The_Slate extends QuestHandler
                         changeQuestStep(env, 0, 1, false);
 						return closeDialogWindow(env);
                     } case CHECK_COLLECTED_ITEMS: {
-					    return checkQuestItems(env, 3, 4, true, 5, 2716);
-                    } case SELECT_REWARD: {
-                        qs.setStatus(QuestStatus.REWARD);
-						updateQuestStatus(env);
-						return sendQuestEndDialog(env);
-					}
+					    return checkQuestItems(env, 3, 4, true, 10000, 10001);
+                    }
                 }
             } if (targetId == 702671) { //Cracked Oath Slate.
                 switch (env.getDialog()) {
                     case USE_OBJECT: {
-						giveQuestItem(env, 182215607, 1);
 						return closeDialogWindow(env);
 					}
                 }

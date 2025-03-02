@@ -23,16 +23,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28951Mince_The_Minions extends QuestHandler
-{
+public class _28951Mince_The_Minions extends QuestHandler {
+
     private final static int questId = 28951;
-	
-	private final static int[] minion = {
-		236106, 236109, 236113, 236116, 236119, 236120, 236124, 236126, 236128, 236129, 236131, 236132,
-		236137, 236141, 236142, 236154, 236155, 236156, 236157, 236159, 236162, 236163, 236165, 236166,
-		236167, 236168, 236170, 236172, 236174, 236175, 236177, 236186, 236185, 236187, 236192, 236194,
-		236199, 236201, 236204, 236205, 236206, 236216, 236217, 236218, 236219, 236220};
-		
+	private final static int[] minion = {236106, 236109, 236113, 236116, 236119, 236120, 236124, 236126, 236128, 236129, 236131, 236132, 236137, 236141, 236142, 236154, 236155, 236156, 236157, 236159, 236162, 236163, 236165, 236166, 236167, 236168, 236170, 236172, 236174, 236175, 236177, 236186, 236185, 236187, 236192, 236194, 236199, 236201, 236204, 236205, 236206, 236216, 236217, 236218, 236219, 236220};
     public _28951Mince_The_Minions() {
         super(questId);
     }
@@ -51,27 +45,16 @@ public class _28951Mince_The_Minions extends QuestHandler
         Player player = env.getPlayer();
         int targetId = env.getTargetId();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
-        QuestDialog dialog = env.getDialog();
         if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
             if (targetId == 209743) {
-                if (dialog == QuestDialog.START_DIALOG) {
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 4762);
                 } else {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.START) {
-            if (targetId == 804738) {
-                if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 25) {
-                        return sendQuestDialog(env, 2375);
-                    }
-                } if (dialog == QuestDialog.SELECT_REWARD) {
-                    changeQuestStep(env, 25, 26, true);
-                    return sendQuestEndDialog(env);
-                }
-			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } 
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804738) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

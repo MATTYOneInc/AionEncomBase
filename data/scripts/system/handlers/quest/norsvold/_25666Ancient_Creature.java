@@ -23,10 +23,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _25666Ancient_Creature extends QuestHandler
-{
+public class _25666Ancient_Creature extends QuestHandler {
+
 	private static final int questId = 25666;
-	
 	public _25666Ancient_Creature() {
 		super(questId);
 	}
@@ -55,7 +54,7 @@ public class _25666Ancient_Creature extends QuestHandler
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 806102) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
@@ -68,12 +67,10 @@ public class _25666Ancient_Creature extends QuestHandler
 						} else {
 							return sendQuestDialog(env, 10001);
 						}
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806102) {
 				return sendQuestEndDialog(env);
 			}

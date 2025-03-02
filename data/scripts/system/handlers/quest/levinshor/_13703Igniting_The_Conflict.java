@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13703Igniting_The_Conflict extends QuestHandler
-{
+public class _13703Igniting_The_Conflict extends QuestHandler {
+
     private final static int questId = 13703;
-	
     public _13703Igniting_The_Conflict() {
         super(questId);
     }
@@ -63,7 +62,7 @@ public class _13703Igniting_The_Conflict extends QuestHandler
                     return sendQuestEndDialog(env);
                 }
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 802350) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

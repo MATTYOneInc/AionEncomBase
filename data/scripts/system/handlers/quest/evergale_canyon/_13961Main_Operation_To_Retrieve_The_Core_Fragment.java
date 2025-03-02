@@ -44,24 +44,17 @@ public class _13961Main_Operation_To_Retrieve_The_Core_Fragment extends QuestHan
     public boolean onDialogEvent(QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
         if (qs == null || qs.getStatus() == QuestStatus.START) {
 			if (targetId == 835219) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
-						if (var == 0) {
-							return sendQuestDialog(env, 1011);
-						}
+						return sendQuestDialog(env, 1011);
 					} case SELECT_ACTION_1012: {
-						if (var == 0) {
-							playQuestMovie(env, 962);
-							return sendQuestDialog(env, 1012);
-						}
+						playQuestMovie(env, 962);
+						return sendQuestDialog(env, 1012);
 					} case SELECT_ACTION_1013: {
-						if (var == 0) {
-							return sendQuestDialog(env, 1013);
-						}
+						return sendQuestDialog(env, 1013);
 					} case SET_REWARD: {
 						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
@@ -83,7 +76,7 @@ public class _13961Main_Operation_To_Retrieve_The_Core_Fragment extends QuestHan
 		}
 		return false;
 	}
-	
+
 	@Override
     public boolean onEnterWorldEvent(QuestEnv env) {
         final Player player = env.getPlayer();

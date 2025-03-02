@@ -64,7 +64,6 @@ public class _29064Fang_Of_Construction extends QuestHandler {
 						case STEP_TO_1:
 							return defaultCloseDialog(env, 0, 1);
 					}
-				break;
 				case 204075:
 					switch (dialog) {
 						case START_DIALOG: {
@@ -79,11 +78,10 @@ public class _29064Fang_Of_Construction extends QuestHandler {
 							return sendQuestEndDialog(env);
 						}
 					}
-				break;
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-					return sendQuestEndDialog(env);
-				}
+			return sendQuestEndDialog(env);
+		}
 		return false;
 	}
 }

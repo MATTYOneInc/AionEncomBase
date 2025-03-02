@@ -66,7 +66,7 @@ public class _28910A_Stabbing_In_Sauro extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 801947) { //Giriltia.
 			    return sendQuestEndDialog(env);
 		    }

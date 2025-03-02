@@ -78,7 +78,6 @@ public class _4943Luck_And_Persistence extends QuestHandler {
 									return sendQuestDialog(env, 10001);
 						}
 					}
-				break;
 				case 204097:
 					if (var == 1) {
 						switch (dialog) {
@@ -97,12 +96,10 @@ public class _4943Luck_And_Persistence extends QuestHandler {
 								}
 						}
 					}
-				break;
 				case 700538:
 					if (dialog == QuestDialog.USE_OBJECT && var == 2) {
 						return useQuestObject(env, 2, 2, false, 0);
 					}
-				break;
 				case 204075:
 					switch (dialog) {
 						case START_DIALOG: {
@@ -116,13 +113,8 @@ public class _4943Luck_And_Persistence extends QuestHandler {
 							} else {
 								return sendQuestDialog(env, 2120);
 							}
-						} case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
 						}
 					}
-					break;
-				default:
-					return sendQuestStartDialog(env);
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204053) {

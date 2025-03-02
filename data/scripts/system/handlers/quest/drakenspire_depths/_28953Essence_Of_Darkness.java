@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28953Essence_Of_Darkness extends QuestHandler
-{
+public class _28953Essence_Of_Darkness extends QuestHandler {
+
 	private static final int questId = 28953;
-	
 	public _28953Essence_Of_Darkness() {
 		super(questId);
 	}
@@ -43,11 +42,10 @@ public class _28953Essence_Of_Darkness extends QuestHandler
 	public boolean onDialogEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 209743) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 4762);
 					}
@@ -59,23 +57,21 @@ public class _28953Essence_Of_Darkness extends QuestHandler
 				}
 			}
 		} else if (targetId == 702769) { //Ominous Darkness.
-			if (dialog == QuestDialog.USE_OBJECT) {
+			if (env.getDialog() == QuestDialog.USE_OBJECT) {
 				closeDialogWindow(env);
 				return true;
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			if (targetId == 804738) {
-				switch (dialog) {
+				switch (env.getDialog()) {
 					case START_DIALOG: {
 						return sendQuestDialog(env, 1011);
 					} case CHECK_COLLECTED_ITEMS: {
 						return checkQuestItems(env, 0, 0, true, 5, 2716);
-					} case FINISH_DIALOG: {
-						return sendQuestSelectionDialog(env);
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804738) {
 				return sendQuestEndDialog(env);
 			}

@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _13705Coastal_Bypass_Operation extends QuestHandler
-{
+public class _13705Coastal_Bypass_Operation extends QuestHandler {
+
     private final static int questId = 13705;
-	
     public _13705Coastal_Bypass_Operation() {
         super(questId);
     }
@@ -63,7 +62,7 @@ public class _13705Coastal_Bypass_Operation extends QuestHandler
                     return sendQuestEndDialog(env);
                 }
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 802333) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

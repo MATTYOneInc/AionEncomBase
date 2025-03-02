@@ -25,10 +25,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _29685Daeva_Growth_Support_2 extends QuestHandler
-{
+public class _29685Daeva_Growth_Support_2 extends QuestHandler {
+
 	private static final int questId = 29685;
-	
 	public _29685Daeva_Growth_Support_2() {
 		super(questId);
 	}
@@ -74,7 +73,7 @@ public class _29685Daeva_Growth_Support_2 extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806700) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);

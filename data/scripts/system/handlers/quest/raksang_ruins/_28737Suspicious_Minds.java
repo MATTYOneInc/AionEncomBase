@@ -23,10 +23,9 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _28737Suspicious_Minds extends QuestHandler
-{
+public class _28737Suspicious_Minds extends QuestHandler {
+
     private final static int questId = 28737;
-	
     public _28737Suspicious_Minds() {
         super(questId);
     }

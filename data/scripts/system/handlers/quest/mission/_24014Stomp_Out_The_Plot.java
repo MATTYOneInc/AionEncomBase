@@ -14,21 +14,18 @@ package quest.mission;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /****/
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _24014Stomp_Out_The_Plot extends QuestHandler
-{
+public class _24014Stomp_Out_The_Plot extends QuestHandler {
+
     private final static int questId = 24014;
-	
     public _24014Stomp_Out_The_Plot() {
         super(questId);
     }
@@ -73,11 +70,9 @@ public class _24014Stomp_Out_The_Plot extends QuestHandler
                             if (var == 0) {
                                 return sendQuestDialog(env, 1011);
                             }
-                        break;
                         case STEP_TO_1:
                             return defaultCloseDialog(env, 0, 1);
                     }
-                break;
                 case 203668:
                     switch (env.getDialog()) {
                         case START_DIALOG:
@@ -88,18 +83,15 @@ public class _24014Stomp_Out_The_Plot extends QuestHandler
                             } else if (var == 6) {
                                 return sendQuestDialog(env, 2034);
                             }
-                        break;
                         case STEP_TO_2:
                             if (var == 1) {
                                 qs.setQuestVarById(0, var + 1);
                                 updateQuestStatus(env);
-                                PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-                                return true;
+					            return closeDialogWindow(env);
                             }
                         case CHECK_COLLECTED_ITEMS:
                             return checkQuestItems(env, 5, 5, true, 5, 2120);
                     }
-                break;
             }
         } else if (qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 203668) {

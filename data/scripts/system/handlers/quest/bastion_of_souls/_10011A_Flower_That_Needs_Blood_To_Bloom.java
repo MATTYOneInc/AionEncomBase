@@ -29,7 +29,6 @@ public class _10011A_Flower_That_Needs_Blood_To_Bloom extends QuestHandler {
 	public static final int questId = 10011;
 	private final static int[] npcs = {806075, 806585, 806589, 731785, 731786, 731787};
 	private final static int[] bossWitchAh = {246506, 246507, 246508, 246509};
-	
 	public _10011A_Flower_That_Needs_Blood_To_Bloom() {
 		super(questId);
 	}

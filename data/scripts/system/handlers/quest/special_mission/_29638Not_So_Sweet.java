@@ -27,7 +27,6 @@ public class _29638Not_So_Sweet extends QuestHandler {
 
 	private final static int questId = 29638;
 	private final static int[] mobs = {215907, 215918, 215919};
-	
 	public _29638Not_So_Sweet() {
 		super(questId);
 	}
@@ -61,20 +60,8 @@ public class _29638Not_So_Sweet extends QuestHandler {
 				        return closeDialogWindow(env);
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.START) {
-			switch (targetId) {
-				case 799248: {
-					switch (dialog) {
-						case START_DIALOG: {
-							return sendQuestDialog(env, 10002);
-						} case SELECT_REWARD: {
-							return sendQuestEndDialog(env);
-						} default:
-							return sendQuestEndDialog(env);
-					}
-				}
-			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		}
+        else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 799248) {
 			    switch (dialog) {
 					case SELECT_REWARD: {
