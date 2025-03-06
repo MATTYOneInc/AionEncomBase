@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Nutritious Ginseng -->
+	<npc_drop npc_id="246293">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182006892" chance="1.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+			<drop item_id="182006892" chance="3.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Key Box -->
+	<npc_drop npc_id="246294">
+		<drop_group name="KEY_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="185000295" chance="9.62" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Iron Fence Key"/>
+			<drop item_id="185000295" chance="7.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Iron Fence Key"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Suspicious Box -->
+	<npc_drop npc_id="246295">
+		<drop_group name="KEY_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="185000296" chance="1.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Kumuki Crate Key"/>
+			<drop item_id="185000296" chance="2.00" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Kumuki Crate Key"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Chef Bakaki -->
+	<npc_drop npc_id="246305">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182006892" chance="1.02" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+			<drop item_id="182006892" chance="5.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Asmodian Supply Box -->
+	<npc_drop npc_id="233514">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000285" chance="3.54" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Stun Grenade"/>
+			<drop item_id="164000287" chance="3.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Siege Turret Fuel"/>
+			<drop item_id="164000285" chance="2.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Stun Grenade"/>
+			<drop item_id="164000287" chance="7.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Siege Turret Fuel"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Hangar Supplies of the 43rd Army -->
+	<npc_drop npc_id="233563">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000287" chance="6.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Siege Turret Fuel"/>
+			<drop item_id="164000288" chance="8.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Siege Cannonball"/>
+			<drop item_id="164000287" chance="3.09" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Siege Turret Fuel"/>
+			<drop item_id="164000288" chance="6.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Siege Cannonball"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

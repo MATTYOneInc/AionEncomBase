@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<npc_drop npc_id="233954">
+		<drop_group name="ELDER_DROP" use_category="true">
+			<drop item_id="101900313" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Aethercannon"/>
+			<drop item_id="114300533" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Boots"/>
+			<drop item_id="110600509" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breastplate"/>
+			<drop item_id="113300519" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breeches"/>
+			<drop item_id="114500499" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Brogans"/>
+			<drop item_id="113500492" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Chausses"/>
+			<drop item_id="102100295" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Cipher-Blade"/>
+			<drop item_id="100200339" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Dagger"/>
+			<drop item_id="111600480" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gauntlets"/>
+			<drop item_id="111100504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gloves"/>
+			<drop item_id="100900235" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="100900567" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="113600476" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greaves"/>
+			<drop item_id="111500493" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Handguards"/>
+			<drop item_id="102000326" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Harp"/>
+			<drop item_id="110500514" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Hauberk"/>
+			<drop item_id="110300536" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jerkin"/>
+			<drop item_id="100500242" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jewel"/>
+			<drop item_id="113100503" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Leggings"/>
+			<drop item_id="101700256" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Longbow"/>
+			<drop item_id="112100468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pauldrons"/>
+			<drop item_id="101800312" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pistol"/>
+			<drop item_id="114600466" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sabatons"/>
+			<drop item_id="115000504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shield"/>
+			<drop item_id="114100520" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoes"/>
+			<drop item_id="112300468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderguards"/>
+			<drop item_id="112600461" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderplates"/>
+			<drop item_id="112500456" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spaulders"/>
+			<drop item_id="101300232" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spear"/>
+			<drop item_id="101500244" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="101500583" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="100000318" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sword"/>
+			<drop item_id="100600258" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tome"/>
+			<drop item_id="110100575" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tunic"/>
+			<drop item_id="111300506" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Vambrace"/>
+			<drop item_id="100100231" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Warhammer"/>
+			<drop item_id="122001040" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elders Tears"/>
+		</drop_group>
+		<drop_group name="ENCHANT" use_category="true">
+			<drop item_id="166022007" chance="50" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Omega"/>
+			<drop item_id="166030005" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Temper"/>
+			<drop item_id="188054423" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MS"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="233953">
+		<drop_group name="ELDER_DROP" use_category="true">
+			<drop item_id="101900313" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Aethercannon"/>
+			<drop item_id="114300533" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Boots"/>
+			<drop item_id="110600509" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breastplate"/>
+			<drop item_id="113300519" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breeches"/>
+			<drop item_id="114500499" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Brogans"/>
+			<drop item_id="113500492" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Chausses"/>
+			<drop item_id="102100295" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Cipher-Blade"/>
+			<drop item_id="100200339" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Dagger"/>
+			<drop item_id="111600480" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gauntlets"/>
+			<drop item_id="111100504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gloves"/>
+			<drop item_id="100900235" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="100900567" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="113600476" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greaves"/>
+			<drop item_id="111500493" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Handguards"/>
+			<drop item_id="102000326" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Harp"/>
+			<drop item_id="110500514" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Hauberk"/>
+			<drop item_id="110300536" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jerkin"/>
+			<drop item_id="100500242" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jewel"/>
+			<drop item_id="113100503" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Leggings"/>
+			<drop item_id="101700256" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Longbow"/>
+			<drop item_id="112100468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pauldrons"/>
+			<drop item_id="101800312" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pistol"/>
+			<drop item_id="114600466" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sabatons"/>
+			<drop item_id="115000504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shield"/>
+			<drop item_id="114100520" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoes"/>
+			<drop item_id="112300468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderguards"/>
+			<drop item_id="112600461" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderplates"/>
+			<drop item_id="112500456" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spaulders"/>
+			<drop item_id="101300232" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spear"/>
+			<drop item_id="101500244" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="101500583" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="100000318" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sword"/>
+			<drop item_id="100600258" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tome"/>
+			<drop item_id="110100575" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tunic"/>
+			<drop item_id="111300506" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Vambrace"/>
+			<drop item_id="100100231" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Warhammer"/>
+			<drop item_id="122001040" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elders Tears"/>
+		</drop_group>
+		<drop_group name="ENCHANT" use_category="true">
+			<drop item_id="166022007" chance="50" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Omega"/>
+			<drop item_id="166030005" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Temper"/>
+			<drop item_id="188054423" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MS"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="234719">
+		<drop_group name="ELDER_DROP" use_category="true">
+			<drop item_id="101900313" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Aethercannon"/>
+			<drop item_id="114300533" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Boots"/>
+			<drop item_id="110600509" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breastplate"/>
+			<drop item_id="113300519" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breeches"/>
+			<drop item_id="114500499" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Brogans"/>
+			<drop item_id="113500492" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Chausses"/>
+			<drop item_id="102100295" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Cipher-Blade"/>
+			<drop item_id="100200339" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Dagger"/>
+			<drop item_id="111600480" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gauntlets"/>
+			<drop item_id="111100504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gloves"/>
+			<drop item_id="100900235" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="100900567" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="113600476" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greaves"/>
+			<drop item_id="111500493" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Handguards"/>
+			<drop item_id="102000326" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Harp"/>
+			<drop item_id="110500514" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Hauberk"/>
+			<drop item_id="110300536" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jerkin"/>
+			<drop item_id="100500242" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jewel"/>
+			<drop item_id="113100503" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Leggings"/>
+			<drop item_id="101700256" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Longbow"/>
+			<drop item_id="112100468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pauldrons"/>
+			<drop item_id="101800312" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pistol"/>
+			<drop item_id="114600466" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sabatons"/>
+			<drop item_id="115000504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shield"/>
+			<drop item_id="114100520" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoes"/>
+			<drop item_id="112300468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderguards"/>
+			<drop item_id="112600461" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderplates"/>
+			<drop item_id="112500456" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spaulders"/>
+			<drop item_id="101300232" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spear"/>
+			<drop item_id="101500244" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="101500583" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="100000318" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sword"/>
+			<drop item_id="100600258" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tome"/>
+			<drop item_id="110100575" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tunic"/>
+			<drop item_id="111300506" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Vambrace"/>
+			<drop item_id="100100231" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Warhammer"/>
+			<drop item_id="122001040" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elders Tears"/>
+		</drop_group>
+		<drop_group name="ENCHANT" use_category="true">
+			<drop item_id="166022007" chance="50" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Omega"/>
+			<drop item_id="166030005" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Temper"/>
+			<drop item_id="188054423" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MS"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="233956">
+		<drop_group name="ELDER_DROP" use_category="true">
+			<drop item_id="101900313" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Aethercannon"/>
+			<drop item_id="114300533" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Boots"/>
+			<drop item_id="110600509" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breastplate"/>
+			<drop item_id="113300519" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breeches"/>
+			<drop item_id="114500499" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Brogans"/>
+			<drop item_id="113500492" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Chausses"/>
+			<drop item_id="102100295" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Cipher-Blade"/>
+			<drop item_id="100200339" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Dagger"/>
+			<drop item_id="111600480" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gauntlets"/>
+			<drop item_id="111100504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gloves"/>
+			<drop item_id="100900235" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="100900567" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="113600476" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greaves"/>
+			<drop item_id="111500493" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Handguards"/>
+			<drop item_id="102000326" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Harp"/>
+			<drop item_id="110500514" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Hauberk"/>
+			<drop item_id="110300536" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jerkin"/>
+			<drop item_id="100500242" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jewel"/>
+			<drop item_id="113100503" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Leggings"/>
+			<drop item_id="101700256" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Longbow"/>
+			<drop item_id="112100468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pauldrons"/>
+			<drop item_id="101800312" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pistol"/>
+			<drop item_id="114600466" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sabatons"/>
+			<drop item_id="115000504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shield"/>
+			<drop item_id="114100520" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoes"/>
+			<drop item_id="112300468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderguards"/>
+			<drop item_id="112600461" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderplates"/>
+			<drop item_id="112500456" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spaulders"/>
+			<drop item_id="101300232" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spear"/>
+			<drop item_id="101500244" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="101500583" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="100000318" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sword"/>
+			<drop item_id="100600258" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tome"/>
+			<drop item_id="110100575" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tunic"/>
+			<drop item_id="111300506" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Vambrace"/>
+			<drop item_id="100100231" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Warhammer"/>
+			<drop item_id="122001040" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elders Tears"/>
+		</drop_group>
+		<drop_group name="ENCHANT" use_category="true">
+			<drop item_id="166022007" chance="50" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Omega"/>
+			<drop item_id="166030005" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Temper"/>
+			<drop item_id="188054423" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MS"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="883291">
+		<drop_group name="ELDER_DROP" use_category="true">
+			<drop item_id="101900313" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Aethercannon"/>
+			<drop item_id="114300533" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Boots"/>
+			<drop item_id="110600509" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breastplate"/>
+			<drop item_id="113300519" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breeches"/>
+			<drop item_id="114500499" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Brogans"/>
+			<drop item_id="113500492" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Chausses"/>
+			<drop item_id="102100295" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Cipher-Blade"/>
+			<drop item_id="100200339" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Dagger"/>
+			<drop item_id="111600480" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gauntlets"/>
+			<drop item_id="111100504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gloves"/>
+			<drop item_id="100900235" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="100900567" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="113600476" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greaves"/>
+			<drop item_id="111500493" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Handguards"/>
+			<drop item_id="102000326" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Harp"/>
+			<drop item_id="110500514" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Hauberk"/>
+			<drop item_id="110300536" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jerkin"/>
+			<drop item_id="100500242" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jewel"/>
+			<drop item_id="113100503" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Leggings"/>
+			<drop item_id="101700256" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Longbow"/>
+			<drop item_id="112100468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pauldrons"/>
+			<drop item_id="101800312" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pistol"/>
+			<drop item_id="114600466" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sabatons"/>
+			<drop item_id="115000504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shield"/>
+			<drop item_id="114100520" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoes"/>
+			<drop item_id="112300468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderguards"/>
+			<drop item_id="112600461" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderplates"/>
+			<drop item_id="112500456" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spaulders"/>
+			<drop item_id="101300232" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spear"/>
+			<drop item_id="101500244" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="101500583" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="100000318" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sword"/>
+			<drop item_id="100600258" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tome"/>
+			<drop item_id="110100575" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tunic"/>
+			<drop item_id="111300506" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Vambrace"/>
+			<drop item_id="100100231" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Warhammer"/>
+			<drop item_id="122001040" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elders Tears"/>
+		</drop_group>
+		<drop_group name="ENCHANT" use_category="true">
+			<drop item_id="166022007" chance="50" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Omega"/>
+			<drop item_id="166030005" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Temper"/>
+			<drop item_id="188054423" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MS"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="883299">
+		<drop_group name="ELDER_DROP" use_category="true">
+			<drop item_id="101900313" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Aethercannon"/>
+			<drop item_id="114300533" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Boots"/>
+			<drop item_id="110600509" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breastplate"/>
+			<drop item_id="113300519" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breeches"/>
+			<drop item_id="114500499" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Brogans"/>
+			<drop item_id="113500492" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Chausses"/>
+			<drop item_id="102100295" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Cipher-Blade"/>
+			<drop item_id="100200339" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Dagger"/>
+			<drop item_id="111600480" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gauntlets"/>
+			<drop item_id="111100504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gloves"/>
+			<drop item_id="100900235" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="100900567" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="113600476" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greaves"/>
+			<drop item_id="111500493" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Handguards"/>
+			<drop item_id="102000326" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Harp"/>
+			<drop item_id="110500514" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Hauberk"/>
+			<drop item_id="110300536" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jerkin"/>
+			<drop item_id="100500242" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jewel"/>
+			<drop item_id="113100503" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Leggings"/>
+			<drop item_id="101700256" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Longbow"/>
+			<drop item_id="112100468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pauldrons"/>
+			<drop item_id="101800312" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pistol"/>
+			<drop item_id="114600466" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sabatons"/>
+			<drop item_id="115000504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shield"/>
+			<drop item_id="114100520" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoes"/>
+			<drop item_id="112300468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderguards"/>
+			<drop item_id="112600461" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderplates"/>
+			<drop item_id="112500456" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spaulders"/>
+			<drop item_id="101300232" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spear"/>
+			<drop item_id="101500244" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="101500583" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="100000318" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sword"/>
+			<drop item_id="100600258" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tome"/>
+			<drop item_id="110100575" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tunic"/>
+			<drop item_id="111300506" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Vambrace"/>
+			<drop item_id="100100231" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Warhammer"/>
+			<drop item_id="122001040" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elders Tears"/>
+		</drop_group>
+		<drop_group name="ENCHANT" use_category="true">
+			<drop item_id="166022007" chance="50" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Omega"/>
+			<drop item_id="166030005" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Temper"/>
+			<drop item_id="188054423" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MS"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="883290">
+		<drop_group name="ELDER_DROP" use_category="true">
+			<drop item_id="101900313" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Aethercannon"/>
+			<drop item_id="114300533" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Boots"/>
+			<drop item_id="110600509" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breastplate"/>
+			<drop item_id="113300519" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breeches"/>
+			<drop item_id="114500499" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Brogans"/>
+			<drop item_id="113500492" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Chausses"/>
+			<drop item_id="102100295" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Cipher-Blade"/>
+			<drop item_id="100200339" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Dagger"/>
+			<drop item_id="111600480" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gauntlets"/>
+			<drop item_id="111100504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gloves"/>
+			<drop item_id="100900235" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="100900567" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="113600476" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greaves"/>
+			<drop item_id="111500493" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Handguards"/>
+			<drop item_id="102000326" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Harp"/>
+			<drop item_id="110500514" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Hauberk"/>
+			<drop item_id="110300536" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jerkin"/>
+			<drop item_id="100500242" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jewel"/>
+			<drop item_id="113100503" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Leggings"/>
+			<drop item_id="101700256" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Longbow"/>
+			<drop item_id="112100468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pauldrons"/>
+			<drop item_id="101800312" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pistol"/>
+			<drop item_id="114600466" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sabatons"/>
+			<drop item_id="115000504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shield"/>
+			<drop item_id="114100520" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoes"/>
+			<drop item_id="112300468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderguards"/>
+			<drop item_id="112600461" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderplates"/>
+			<drop item_id="112500456" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spaulders"/>
+			<drop item_id="101300232" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spear"/>
+			<drop item_id="101500244" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="101500583" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="100000318" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sword"/>
+			<drop item_id="100600258" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tome"/>
+			<drop item_id="110100575" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tunic"/>
+			<drop item_id="111300506" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Vambrace"/>
+			<drop item_id="100100231" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Warhammer"/>
+			<drop item_id="122001040" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elders Tears"/>
+		</drop_group>
+		<drop_group name="ENCHANT" use_category="true">
+			<drop item_id="166022007" chance="50" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Omega"/>
+			<drop item_id="166030005" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Temper"/>
+			<drop item_id="188054423" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MS"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="883288">
+		<drop_group name="ELDER_DROP" use_category="true">
+			<drop item_id="101900313" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Aethercannon"/>
+			<drop item_id="114300533" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Boots"/>
+			<drop item_id="110600509" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breastplate"/>
+			<drop item_id="113300519" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breeches"/>
+			<drop item_id="114500499" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Brogans"/>
+			<drop item_id="113500492" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Chausses"/>
+			<drop item_id="102100295" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Cipher-Blade"/>
+			<drop item_id="100200339" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Dagger"/>
+			<drop item_id="111600480" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gauntlets"/>
+			<drop item_id="111100504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gloves"/>
+			<drop item_id="100900235" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="100900567" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="113600476" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greaves"/>
+			<drop item_id="111500493" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Handguards"/>
+			<drop item_id="102000326" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Harp"/>
+			<drop item_id="110500514" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Hauberk"/>
+			<drop item_id="110300536" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jerkin"/>
+			<drop item_id="100500242" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jewel"/>
+			<drop item_id="113100503" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Leggings"/>
+			<drop item_id="101700256" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Longbow"/>
+			<drop item_id="112100468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pauldrons"/>
+			<drop item_id="101800312" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pistol"/>
+			<drop item_id="114600466" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sabatons"/>
+			<drop item_id="115000504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shield"/>
+			<drop item_id="114100520" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoes"/>
+			<drop item_id="112300468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderguards"/>
+			<drop item_id="112600461" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderplates"/>
+			<drop item_id="112500456" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spaulders"/>
+			<drop item_id="101300232" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spear"/>
+			<drop item_id="101500244" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="101500583" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="100000318" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sword"/>
+			<drop item_id="100600258" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tome"/>
+			<drop item_id="110100575" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tunic"/>
+			<drop item_id="111300506" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Vambrace"/>
+			<drop item_id="100100231" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Warhammer"/>
+			<drop item_id="122001040" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elders Tears"/>
+		</drop_group>
+		<drop_group name="ENCHANT" use_category="true">
+			<drop item_id="166022007" chance="50" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Omega"/>
+			<drop item_id="166030005" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Temper"/>
+			<drop item_id="188054423" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MS"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="883285">
+		<drop_group name="ELDER_DROP" use_category="true">
+			<drop item_id="101900313" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Aethercannon"/>
+			<drop item_id="114300533" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Boots"/>
+			<drop item_id="110600509" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breastplate"/>
+			<drop item_id="113300519" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breeches"/>
+			<drop item_id="114500499" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Brogans"/>
+			<drop item_id="113500492" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Chausses"/>
+			<drop item_id="102100295" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Cipher-Blade"/>
+			<drop item_id="100200339" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Dagger"/>
+			<drop item_id="111600480" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gauntlets"/>
+			<drop item_id="111100504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gloves"/>
+			<drop item_id="100900235" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="100900567" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="113600476" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greaves"/>
+			<drop item_id="111500493" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Handguards"/>
+			<drop item_id="102000326" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Harp"/>
+			<drop item_id="110500514" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Hauberk"/>
+			<drop item_id="110300536" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jerkin"/>
+			<drop item_id="100500242" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jewel"/>
+			<drop item_id="113100503" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Leggings"/>
+			<drop item_id="101700256" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Longbow"/>
+			<drop item_id="112100468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pauldrons"/>
+			<drop item_id="101800312" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pistol"/>
+			<drop item_id="114600466" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sabatons"/>
+			<drop item_id="115000504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shield"/>
+			<drop item_id="114100520" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoes"/>
+			<drop item_id="112300468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderguards"/>
+			<drop item_id="112600461" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderplates"/>
+			<drop item_id="112500456" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spaulders"/>
+			<drop item_id="101300232" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spear"/>
+			<drop item_id="101500244" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="101500583" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="100000318" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sword"/>
+			<drop item_id="100600258" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tome"/>
+			<drop item_id="110100575" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tunic"/>
+			<drop item_id="111300506" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Vambrace"/>
+			<drop item_id="100100231" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Warhammer"/>
+			<drop item_id="122001040" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elders Tears"/>
+		</drop_group>
+		<drop_group name="ENCHANT" use_category="true">
+			<drop item_id="166022007" chance="50" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Omega"/>
+			<drop item_id="166030005" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Temper"/>
+			<drop item_id="188054423" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MS"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="883286">
+		<drop_group name="ELDER_DROP" use_category="true">
+			<drop item_id="101900313" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Aethercannon"/>
+			<drop item_id="114300533" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Boots"/>
+			<drop item_id="110600509" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breastplate"/>
+			<drop item_id="113300519" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Breeches"/>
+			<drop item_id="114500499" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Brogans"/>
+			<drop item_id="113500492" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Chausses"/>
+			<drop item_id="102100295" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Cipher-Blade"/>
+			<drop item_id="100200339" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Dagger"/>
+			<drop item_id="111600480" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gauntlets"/>
+			<drop item_id="111100504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Gloves"/>
+			<drop item_id="100900235" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="100900567" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greatsword"/>
+			<drop item_id="113600476" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Greaves"/>
+			<drop item_id="111500493" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Handguards"/>
+			<drop item_id="102000326" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Harp"/>
+			<drop item_id="110500514" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Hauberk"/>
+			<drop item_id="110300536" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jerkin"/>
+			<drop item_id="100500242" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Jewel"/>
+			<drop item_id="113100503" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Leggings"/>
+			<drop item_id="101700256" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Longbow"/>
+			<drop item_id="112100468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pauldrons"/>
+			<drop item_id="101800312" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Pistol"/>
+			<drop item_id="114600466" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sabatons"/>
+			<drop item_id="115000504" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shield"/>
+			<drop item_id="114100520" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoes"/>
+			<drop item_id="112300468" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderguards"/>
+			<drop item_id="112600461" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Shoulderplates"/>
+			<drop item_id="112500456" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spaulders"/>
+			<drop item_id="101300232" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Spear"/>
+			<drop item_id="101500244" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="101500583" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Staff"/>
+			<drop item_id="100000318" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Sword"/>
+			<drop item_id="100600258" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tome"/>
+			<drop item_id="110100575" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Tunic"/>
+			<drop item_id="111300506" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Vambrace"/>
+			<drop item_id="100100231" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elder Warhammer"/>
+			<drop item_id="122001040" chance="5" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Elders Tears"/>
+		</drop_group>
+		<drop_group name="ENCHANT" use_category="true">
+			<drop item_id="166022007" chance="50" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Omega"/>
+			<drop item_id="166030005" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Temper"/>
+			<drop item_id="188054423" chance="50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MS"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="220323">
+		<drop_group name="MANASTONE" use_category="true">
+			<drop item_id="167010274" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +4"/>
+			<drop item_id="167010275" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +4"/>
+			<drop item_id="167010276" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+			<drop item_id="167010277" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +4"/>
+			<drop item_id="167010278" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +4"/>
+			<drop item_id="167010279" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +4"/>
+			<drop item_id="167010280" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +5"/>
+			<drop item_id="167010281" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +5"/>
+			<drop item_id="167010282" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +5"/>
+			<drop item_id="167010283" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +5"/>
+			<drop item_id="167010284" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +5"/>
+			<drop item_id="167010285" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +5"/>
+			<drop item_id="167010286" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +6"/>
+			<drop item_id="167010287" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +6"/>
+			<drop item_id="167010288" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +6"/>
+			<drop item_id="167010289" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +6"/>
+			<drop item_id="167010290" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +6"/>
+			<drop item_id="167010291" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +6"/>
+			<drop item_id="167010292" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +7"/>
+			<drop item_id="167010293" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +7"/>
+			<drop item_id="167010294" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +7"/>
+			<drop item_id="167010295" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +7"/>
+			<drop item_id="167010296" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +7"/>
+			<drop item_id="167010297" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +7"/>
+			<drop item_id="167010298" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +8"/>
+			<drop item_id="167010299" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +8"/>
+			<drop item_id="167010300" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +8"/>
+			<drop item_id="167010301" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +8"/>
+			<drop item_id="167010302" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +8"/>
+			<drop item_id="167010303" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +8"/>
+		</drop_group>
+		<drop_group name="STONE" use_category="true">
+			<drop item_id="152012712" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Cold Dimension Stone"/>
+			<drop item_id="152012713" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Tough Dimension Stone"/>
+			<drop item_id="152012711" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Bright Dimension Stone"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="220329">
+		<drop_group name="MANASTONE" use_category="true">
+			<drop item_id="167010274" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +4"/>
+			<drop item_id="167010275" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +4"/>
+			<drop item_id="167010276" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+			<drop item_id="167010277" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +4"/>
+			<drop item_id="167010278" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +4"/>
+			<drop item_id="167010279" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +4"/>
+			<drop item_id="167010280" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +5"/>
+			<drop item_id="167010281" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +5"/>
+			<drop item_id="167010282" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +5"/>
+			<drop item_id="167010283" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +5"/>
+			<drop item_id="167010284" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +5"/>
+			<drop item_id="167010285" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +5"/>
+			<drop item_id="167010286" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +6"/>
+			<drop item_id="167010287" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +6"/>
+			<drop item_id="167010288" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +6"/>
+			<drop item_id="167010289" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +6"/>
+			<drop item_id="167010290" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +6"/>
+			<drop item_id="167010291" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +6"/>
+			<drop item_id="167010292" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +7"/>
+			<drop item_id="167010293" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +7"/>
+			<drop item_id="167010294" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +7"/>
+			<drop item_id="167010295" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +7"/>
+			<drop item_id="167010296" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +7"/>
+			<drop item_id="167010297" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +7"/>
+			<drop item_id="167010298" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +8"/>
+			<drop item_id="167010299" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +8"/>
+			<drop item_id="167010300" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +8"/>
+			<drop item_id="167010301" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +8"/>
+			<drop item_id="167010302" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +8"/>
+			<drop item_id="167010303" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +8"/>
+		</drop_group>
+		<drop_group name="STONE" use_category="true">
+			<drop item_id="152012712" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Cold Dimension Stone"/>
+			<drop item_id="152012713" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Tough Dimension Stone"/>
+			<drop item_id="152012711" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Bright Dimension Stone"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="220465">
+		<drop_group name="MANASTONE" use_category="true">
+			<drop item_id="167010274" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +4"/>
+			<drop item_id="167010275" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +4"/>
+			<drop item_id="167010276" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+			<drop item_id="167010277" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +4"/>
+			<drop item_id="167010278" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +4"/>
+			<drop item_id="167010279" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +4"/>
+			<drop item_id="167010280" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +5"/>
+			<drop item_id="167010281" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +5"/>
+			<drop item_id="167010282" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +5"/>
+			<drop item_id="167010283" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +5"/>
+			<drop item_id="167010284" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +5"/>
+			<drop item_id="167010285" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +5"/>
+			<drop item_id="167010286" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +6"/>
+			<drop item_id="167010287" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +6"/>
+			<drop item_id="167010288" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +6"/>
+			<drop item_id="167010289" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +6"/>
+			<drop item_id="167010290" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +6"/>
+			<drop item_id="167010291" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +6"/>
+			<drop item_id="167010292" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +7"/>
+			<drop item_id="167010293" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +7"/>
+			<drop item_id="167010294" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +7"/>
+			<drop item_id="167010295" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +7"/>
+			<drop item_id="167010296" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +7"/>
+			<drop item_id="167010297" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +7"/>
+			<drop item_id="167010298" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +8"/>
+			<drop item_id="167010299" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +8"/>
+			<drop item_id="167010300" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +8"/>
+			<drop item_id="167010301" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +8"/>
+			<drop item_id="167010302" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +8"/>
+			<drop item_id="167010303" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +8"/>
+		</drop_group>
+		<drop_group name="STONE" use_category="true">
+			<drop item_id="152012712" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Cold Dimension Stone"/>
+			<drop item_id="152012713" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Tough Dimension Stone"/>
+			<drop item_id="152012711" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Bright Dimension Stone"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="220466">
+		<drop_group name="MANASTONE" use_category="true">
+			<drop item_id="167010274" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +4"/>
+			<drop item_id="167010275" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +4"/>
+			<drop item_id="167010276" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+			<drop item_id="167010277" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +4"/>
+			<drop item_id="167010278" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +4"/>
+			<drop item_id="167010279" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +4"/>
+			<drop item_id="167010280" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +5"/>
+			<drop item_id="167010281" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +5"/>
+			<drop item_id="167010282" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +5"/>
+			<drop item_id="167010283" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +5"/>
+			<drop item_id="167010284" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +5"/>
+			<drop item_id="167010285" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +5"/>
+			<drop item_id="167010286" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +6"/>
+			<drop item_id="167010287" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +6"/>
+			<drop item_id="167010288" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +6"/>
+			<drop item_id="167010289" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +6"/>
+			<drop item_id="167010290" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +6"/>
+			<drop item_id="167010291" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +6"/>
+			<drop item_id="167010292" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +7"/>
+			<drop item_id="167010293" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +7"/>
+			<drop item_id="167010294" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +7"/>
+			<drop item_id="167010295" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +7"/>
+			<drop item_id="167010296" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +7"/>
+			<drop item_id="167010297" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +7"/>
+			<drop item_id="167010298" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +8"/>
+			<drop item_id="167010299" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +8"/>
+			<drop item_id="167010300" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +8"/>
+			<drop item_id="167010301" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +8"/>
+			<drop item_id="167010302" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +8"/>
+			<drop item_id="167010303" chance="15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +8"/>
+		</drop_group>
+		<drop_group name="STONE" use_category="true">
+			<drop item_id="152012712" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Cold Dimension Stone"/>
+			<drop item_id="152012713" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Tough Dimension Stone"/>
+			<drop item_id="152012711" chance="10" min_amount="1" max_amount="3" no_reduce="false" eachmember="false" name="Bright Dimension Stone"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="701388">
+		<drop_group name="MANASTONE" use_category="true">
+			<drop item_id="166020000" chance="1" min_amount="1" max_amount="2" no_reduce="false" eachmember="false" name="Manastone: Power +4"/>
+			<drop item_id="166030005" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +4"/>
+			<drop item_id="188055335" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="701389">
+		<drop_group name="MANASTONE" use_category="true">
+			<drop item_id="166020000" chance="1" min_amount="1" max_amount="2" no_reduce="false" eachmember="false" name="Manastone: Power +4"/>
+			<drop item_id="166030005" chance="1" min_amount="1" max_amount="2" no_reduce="false" eachmember="false" name="Manastone: HP +4"/>
+			<drop item_id="188055592" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="701390">
+		<drop_group name="MANASTONE" use_category="true">
+			<drop item_id="166020000" chance="1" min_amount="1" max_amount="2" no_reduce="false" eachmember="false" name="Manastone: Power +4"/>
+			<drop item_id="166030005" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +4"/>
+			<drop item_id="188055592" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+			<drop item_id="188052693" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+			<drop item_id="188057645" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+		</drop_group>
+	</npc_drop>
+	<npc_drop npc_id="857464">
+		<drop_group name="MANASTONE" use_category="true">
+			<drop item_id="188057310" chance="1" min_amount="1" max_amount="2" no_reduce="false" eachmember="false" name="Manastone: Power +4"/>
+			<drop item_id="188057309" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +4"/>
+			<drop item_id="188057311" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+			<drop item_id="188057308" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+			<drop item_id="188056927" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+			<drop item_id="188057783" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+			<drop item_id="188057037" chance="1" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +4"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

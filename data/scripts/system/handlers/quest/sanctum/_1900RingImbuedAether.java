@@ -57,7 +57,7 @@ public class _1900RingImbuedAether extends QuestHandler {
 			}
 		}
 		if (env.getTargetId() == 203739) {
-			if (qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1352);
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
@@ -66,7 +66,7 @@ public class _1900RingImbuedAether extends QuestHandler {
 			}
 		}
 		else if (env.getTargetId() == 203766) {
-			if (qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 1693);
 				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
@@ -75,7 +75,7 @@ public class _1900RingImbuedAether extends QuestHandler {
 			}
 		}
 		else if (env.getTargetId() == 203797) {
-			if (qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2034);
 				else if (env.getDialog() == QuestDialog.STEP_TO_3) {
@@ -84,7 +84,7 @@ public class _1900RingImbuedAether extends QuestHandler {
 			}
 		}
 		else if (env.getTargetId() == 203795) {
-			if (qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 3) {
+			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 3) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
 					return sendQuestDialog(env, 2375);
 				else if (env.getDialog() == QuestDialog.STEP_TO_4) {

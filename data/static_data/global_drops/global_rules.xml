@@ -1,20 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
-	Global Drop
-	Made By (Encom)
- -->
+<!-- Global Drop Made By (SUNBSN) -->
 <global_rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="global_rules.xsd">
-    <gd_rules>
-        <gd_rule rule_name="Kinah 1" min_count="1" max_count="1" base_chance="1" min_diff="1" max_diff="75">
-            <gd_worlds>
-                <gd_world wd_type="NONE"/>
-            </gd_worlds>
-            <gd_ratings>
-                <gd_rating rating="JUNK"/>
-            </gd_ratings>
-            <gd_items>
-                <gd_item id="-1" name="Kinah"/>
-            </gd_items>
-        </gd_rule>
-    </gd_rules>
+	<gd_rules>
+		<!-- JUNK -->
+		<gd_rule rule_name="1" min_count="50" max_count="225" base_chance="10" min_diff="1" max_diff="83">
+			<gd_items>
+				<gd_item id="182400001" name="Kinah"/>
+			</gd_items>
+			<gd_ratings>
+				<gd_rating rating="JUNK"/>
+			</gd_ratings>
+		</gd_rule>
+		<!-- NORMAL -->
+		<gd_rule rule_name="A" min_count="150" max_count="850" base_chance="10" min_diff="1" max_diff="83">
+			<gd_items>
+				<gd_item id="182400001" name="Kinah"/>
+			</gd_items>
+			<gd_ratings>
+				<gd_rating rating="NORMAL"/>
+			</gd_ratings>
+		</gd_rule>
+		<!-- ELITE -->
+		<gd_rule rule_name="B" min_count="2500" max_count="5500" base_chance="15" min_diff="1" max_diff="83">
+			<gd_items>
+				<gd_item id="182400001" name="Kinah"/>
+			</gd_items>
+			<gd_ratings>
+				<gd_rating rating="ELITE"/>
+			</gd_ratings>
+		</gd_rule>
+		<!-- HERO -->
+		<gd_rule rule_name="C" min_count="5500" max_count="17500" base_chance="25" min_diff="1" max_diff="83">
+			<gd_items>
+				<gd_item id="182400001" name="Kinah"/>
+			</gd_items>
+			<gd_ratings>
+				<gd_rating rating="HERO"/>
+			</gd_ratings>
+		</gd_rule>
+		<!-- LEGENDARY -->
+		<gd_rule rule_name="D" min_count="17500" max_count="52255" base_chance="55" min_diff="1" max_diff="83">
+			<gd_items>
+				<gd_item id="182400001" name="Kinah"/>
+			</gd_items>
+			<gd_ratings>
+				<gd_rating rating="LEGENDARY"/>
+			</gd_ratings>
+		</gd_rule>
+	</gd_rules>
 </global_rules>

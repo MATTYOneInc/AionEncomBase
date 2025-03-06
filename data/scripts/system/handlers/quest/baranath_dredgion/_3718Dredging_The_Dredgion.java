@@ -42,8 +42,6 @@ public class _3718Dredging_The_Dredgion extends QuestHandler {
         if (qs == null) {
             return false;
         }
-		int var1 = qs.getQuestVarById(1);
-		int var2 = qs.getQuestVarById(2);
 		if (qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 279045) { 
 				if (dialog == QuestDialog.START_DIALOG) {
@@ -53,6 +51,8 @@ public class _3718Dredging_The_Dredgion extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
+		int var1 = qs.getQuestVarById(1);
+		int var2 = qs.getQuestVarById(2);
 			if (targetId == 279045) {
 				if (dialog == QuestDialog.START_DIALOG) {
 					if(qs.getQuestVarById(0) == 0) {

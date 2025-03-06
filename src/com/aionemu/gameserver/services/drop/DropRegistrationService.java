@@ -91,55 +91,56 @@ public class DropRegistrationService {
 		}
 	}
 
-	public final void init() {
-		NpcDropData npcDrop = DataManager.NPC_DROP_DATA;
-		for (NpcDrop drop : npcDrop.getNpcDrop()) {
-			NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(drop.getNpcId());
-			if (npcTemplate == null) {
-				continue;
-			}
-			if (npcTemplate.getNpcDrop() != null) {
-				NpcDrop currentDrop = npcTemplate.getNpcDrop();
-				for (DropGroup dg : currentDrop.getDropGroup()) {
-					Iterator<Drop> iter = dg.getDrop().iterator();
-					while (iter.hasNext()) {
-						Drop d = iter.next();
-						for (DropGroup dg2 : drop.getDropGroup()) {
-							for (Drop d2 : dg2.getDrop()) {
-								if (d.getItemId() == d2.getItemId()) {
-									iter.remove();
-								}
-							}
-						}
-					}
-				}
-				List<DropGroup> list = new ArrayList<DropGroup>();
-				for (DropGroup dg : drop.getDropGroup()) {
-					boolean added = false;
-					for (DropGroup dg2 : currentDrop.getDropGroup()) {
-						if (dg2.getGroupName().equals(dg.getGroupName())) {
-							dg2.getDrop().addAll(dg.getDrop());
-							added = true;
-						}
-					}
-					if (!added) {
-						list.add(dg);
-					}
-				}
-				if (!list.isEmpty()) {
-					currentDrop.getDropGroup().addAll(list);
-				}
-			} else {
-				npcTemplate.setNpcDrop(drop);
-			}
-		}
-	}
+   public final void init() {
+        NpcDropData npcDrop = DataManager.NPC_DROP_DATA;
+        for (NpcDrop drop : npcDrop.getNpcDrop()) {
+            NpcTemplate npcTemplate = DataManager.NPC_DATA.getNpcTemplate(drop.getNpcId());
+            if (npcTemplate == null) {
+                continue;
+            }
+            if (npcTemplate.getNpcDrop() != null) {
+                NpcDrop currentDrop = npcTemplate.getNpcDrop();
+                for (DropGroup dg : currentDrop.getDropGroup()) {
+                    List<Drop> list = new ArrayList<Drop>();
+                    for (Drop d : dg.getDrop()) {
+                        for (DropGroup dg2 : drop.getDropGroup()) {
+                            for (Drop d2 : dg2.getDrop()) {
+                                if (d.getItemId() == d2.getItemId()) {
+                                    list.add(d);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    dg.getDrop().remove(list);
+                }
+                List<DropGroup> list = new ArrayList<DropGroup>();
+                for (DropGroup dg : drop.getDropGroup()) {
+                    boolean added = false;
+                    for (DropGroup dg2 : currentDrop.getDropGroup()) {
+                        if (dg2.getGroupName().equals(dg.getGroupName())) {
+                            dg2.getDrop().addAll(dg.getDrop());
+                            added = true;
+                        }
+                    }
+                    if (!added) {
+                        list.add(dg);
+                    }
+                }
+                if (!list.isEmpty()) {
+                    currentDrop.getDropGroup().addAll(list);
+                }
+            } else {
+                npcTemplate.setNpcDrop(drop);
+            }
+        }
+    }
 
 	/**
 	 * After NPC dies, it can register arbitrary drop
 	 */
 	public void registerDrop(Npc npc, Player player, int heighestLevel, Collection<Player> groupMembers) {
-
+		boolean stepCheck = false;
 		if (player == null) {
 			return;
 		}
@@ -225,7 +226,13 @@ public class DropRegistrationService {
 				: 0;
 		boostDropRate += genesis.getGameStats().getStat(StatEnum.BOOST_DROP_RATE, 100).getCurrent() / 100f - 1;
 		boostDropRate += genesis.getGameStats().getStat(StatEnum.DR_BOOST, 100).getCurrent() / 100f - 1;
-		float dropRate = genesis.getRates().getDropRate() * boostDropRate * dropChance / 100f;
+		// ?????????? / Comments for drop rate calculation
+		// ??NPC???? / Add NPC rating modification
+		float ratingModifier = getRatingModifier(npc);
+		// ??????? = ????? * ???? * ????? * ???? / 100
+		// Final drop rate = base drop rate * boost rate * level difference modifier * rating modifier / 100
+		float dropRate = genesis.getRates().getDropRate() * boostDropRate * dropChance * ratingModifier / 100f;
+		
 		if (npcDrop != null) {
 			index = npcDrop.dropCalculator(droppedItems, index, dropRate, genesis.getRace(), groupMembers);
 		}
@@ -264,8 +271,7 @@ public class DropRegistrationService {
 		}
 		if (DropConfig.ENABLE_GLOBAL_DROPS) {
 			boolean isNpcChest = npc.getAi2().getName().equals("chest");
-			boolean stepCheck = false;
-			if ((!isNpcChest && npc.getLevel() > 1 && npc.getAbyssNpcType() == AbyssNpcType.NONE) || isNpcChest) {
+			if ((!isNpcChest && npc.getLevel() > 1) || isNpcChest) {
 				GlobalDropData globalDrops = DataManager.GLOBAL_DROP_DATA;
 				List<GlobalRule> globalrules = globalDrops.getAllRules();
 				for (GlobalRule rule : globalrules) {
@@ -387,11 +393,9 @@ public class DropRegistrationService {
 					long count = 1;
 					if (rndItemId == 182400001) {
 						count = rule.getMaxCount() > 1
-								? Rnd.get((int) (rule.getMinCount() * npc.getLevel() * getRatingModifier(npc)),
-										(int) (rule.getMaxCount() * npc.getLevel() * getRatingModifier(npc)
-												* npc.getHpGauge()))
-								: (int) (rule.getMinCount() * npc.getLevel() * getRatingModifier(npc)
-										* npc.getHpGauge());
+								? Rnd.get((int) rule.getMinCount(), (int) rule.getMaxCount())
+								: rule.getMinCount();
+
 					} else {
 						count = rule.getMaxCount() > 1 ? Rnd.get((int) rule.getMinCount(), (int) rule.getMaxCount())
 								: rule.getMinCount();
@@ -461,13 +465,24 @@ public class DropRegistrationService {
 	}
 
 	private float getRatingModifier(Npc npc) {
-		float ratingModifier = 1f;
-		if (npc.getRating() != null) {
-			if (npc.getRating().equals(NpcRating.NORMAL)) {
-				ratingModifier = 1f;
-			} else if (npc.getRating().equals(NpcRating.ELITE)) {
-				ratingModifier = 1.5f;
-			}
+		float ratingModifier = 1f; // ?????? / Default modifier
+		
+		switch (npc.getRating()) { // ??NPC???????????? / Set modifier based on NPC rating
+			case NORMAL:
+				ratingModifier = 1f;   // ???????? / Normal monster modifier
+				break;
+			case ELITE:
+				ratingModifier = 3f;   // ???????? / Elite monster modifier
+				break;
+			case HERO:
+				ratingModifier = 5f;   // ???????? / Hero monster modifier
+				break;
+			case LEGENDARY:
+				ratingModifier = 7f;   // ???????? / Legendary monster modifier
+				break;
+			default:
+				ratingModifier = 1f;   // ????????? / Use default value for unknown rating
+				break;
 		}
 		return ratingModifier;
 	}

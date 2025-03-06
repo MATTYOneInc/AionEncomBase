@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Essence Protector Meizrem -->
+	<npc_drop npc_id="246400">
+		<drop_group name="ARMOR_SHARD_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000010" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +40"/>
+		</drop_group>
+		<drop_group name="NONE_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="2.04" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="2.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+		<drop_group name="NONE_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="167010334" chance="4.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +1"/>
+			<drop item_id="167010335" chance="5.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +1"/>
+			<drop item_id="167010336" chance="4.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +1"/>
+			<drop item_id="167010337" chance="7.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +1"/>
+			<drop item_id="167010338" chance="9.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +1"/>
+			<drop item_id="167010339" chance="4.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +1"/>
+			<drop item_id="167010340" chance="3.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +2"/>
+			<drop item_id="167010341" chance="3.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +2"/>
+			<drop item_id="167010342" chance="7.43" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +2"/>
+			<drop item_id="167010343" chance="8.01" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +2"/>
+			<drop item_id="167010344" chance="1.25" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +2"/>
+			<drop item_id="167010345" chance="7.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +2"/>
+			<drop item_id="167010346" chance="8.09" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +3"/>
+			<drop item_id="167010347" chance="5.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +3"/>
+			<drop item_id="167010348" chance="7.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +3"/>
+			<drop item_id="167010349" chance="1.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +3"/>
+			<drop item_id="167010350" chance="8.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +3"/>
+			<drop item_id="167010351" chance="8.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +3"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Essence Protector Megerion -->
+	<npc_drop npc_id="246403">
+		<drop_group name="ARMOR_SHARD_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000010" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +40"/>
+		</drop_group>
+		<drop_group name="NONE_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="2.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="3.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+		<drop_group name="NONE_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="167010334" chance="9.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +1"/>
+			<drop item_id="167010335" chance="4.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +1"/>
+			<drop item_id="167010336" chance="4.81" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +1"/>
+			<drop item_id="167010337" chance="1.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +1"/>
+			<drop item_id="167010338" chance="6.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +1"/>
+			<drop item_id="167010339" chance="4.43" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +1"/>
+			<drop item_id="167010340" chance="1.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +2"/>
+			<drop item_id="167010341" chance="9.01" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +2"/>
+			<drop item_id="167010342" chance="6.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +2"/>
+			<drop item_id="167010343" chance="4.65" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +2"/>
+			<drop item_id="167010344" chance="9.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +2"/>
+			<drop item_id="167010345" chance="7.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +2"/>
+			<drop item_id="167010346" chance="6.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +3"/>
+			<drop item_id="167010347" chance="2.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +3"/>
+			<drop item_id="167010348" chance="4.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +3"/>
+			<drop item_id="167010349" chance="6.17" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +3"/>
+			<drop item_id="167010350" chance="5.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +3"/>
+			<drop item_id="167010351" chance="2.21" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +3"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Essence Protector Meizrem -->
+	<npc_drop npc_id="246404">
+		<drop_group name="ARMOR_SHARD_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000010" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +40"/>
+		</drop_group>
+		<drop_group name="NONE_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="8.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="8.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+		<drop_group name="NONE_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="167010334" chance="3.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +1"/>
+			<drop item_id="167010335" chance="1.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +1"/>
+			<drop item_id="167010336" chance="6.53" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +1"/>
+			<drop item_id="167010337" chance="5.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +1"/>
+			<drop item_id="167010338" chance="5.19" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +1"/>
+			<drop item_id="167010339" chance="4.04" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +1"/>
+			<drop item_id="167010340" chance="6.20" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +2"/>
+			<drop item_id="167010341" chance="5.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +2"/>
+			<drop item_id="167010342" chance="2.04" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +2"/>
+			<drop item_id="167010343" chance="1.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +2"/>
+			<drop item_id="167010344" chance="1.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +2"/>
+			<drop item_id="167010345" chance="3.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +2"/>
+			<drop item_id="167010346" chance="2.02" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +3"/>
+			<drop item_id="167010347" chance="5.55" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +3"/>
+			<drop item_id="167010348" chance="7.52" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +3"/>
+			<drop item_id="167010349" chance="5.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +3"/>
+			<drop item_id="167010350" chance="4.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +3"/>
+			<drop item_id="167010351" chance="3.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +3"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Essence Protector Mezrian -->
+	<npc_drop npc_id="246405">
+		<drop_group name="ARMOR_SHARD_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000010" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +40"/>
+		</drop_group>
+		<drop_group name="NONE_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="9.15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="7.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+		<drop_group name="NONE_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="167010334" chance="6.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +1"/>
+			<drop item_id="167010335" chance="2.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +1"/>
+			<drop item_id="167010336" chance="5.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +1"/>
+			<drop item_id="167010337" chance="3.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +1"/>
+			<drop item_id="167010338" chance="1.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +1"/>
+			<drop item_id="167010339" chance="2.24" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +1"/>
+			<drop item_id="167010340" chance="3.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +2"/>
+			<drop item_id="167010341" chance="5.68" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +2"/>
+			<drop item_id="167010342" chance="7.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +2"/>
+			<drop item_id="167010343" chance="7.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +2"/>
+			<drop item_id="167010344" chance="6.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +2"/>
+			<drop item_id="167010345" chance="1.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +2"/>
+			<drop item_id="167010346" chance="1.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +3"/>
+			<drop item_id="167010347" chance="9.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +3"/>
+			<drop item_id="167010348" chance="7.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +3"/>
+			<drop item_id="167010349" chance="8.55" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +3"/>
+			<drop item_id="167010350" chance="9.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +3"/>
+			<drop item_id="167010351" chance="1.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +3"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Essence Protector Mezaris -->
+	<npc_drop npc_id="246406">
+		<drop_group name="ARMOR_SHARD_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000010" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +40"/>
+		</drop_group>
+		<drop_group name="NONE_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="3.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="8.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+		<drop_group name="NONE_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="167010334" chance="2.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +1"/>
+			<drop item_id="167010335" chance="6.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +1"/>
+			<drop item_id="167010336" chance="3.02" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +1"/>
+			<drop item_id="167010337" chance="4.88" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +1"/>
+			<drop item_id="167010338" chance="7.63" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +1"/>
+			<drop item_id="167010339" chance="7.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +1"/>
+			<drop item_id="167010340" chance="6.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +2"/>
+			<drop item_id="167010341" chance="2.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +2"/>
+			<drop item_id="167010342" chance="3.78" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +2"/>
+			<drop item_id="167010343" chance="2.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +2"/>
+			<drop item_id="167010344" chance="9.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +2"/>
+			<drop item_id="167010345" chance="9.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +2"/>
+			<drop item_id="167010346" chance="2.88" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +3"/>
+			<drop item_id="167010347" chance="4.08" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +3"/>
+			<drop item_id="167010348" chance="7.88" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +3"/>
+			<drop item_id="167010349" chance="6.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +3"/>
+			<drop item_id="167010350" chance="7.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +3"/>
+			<drop item_id="167010351" chance="9.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +3"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Essence Protector Megerion -->
+	<npc_drop npc_id="246407">
+		<drop_group name="ARMOR_SHARD_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000010" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +40"/>
+		</drop_group>
+		<drop_group name="NONE_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="1.02" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+		<drop_group name="NONE_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="167010334" chance="5.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +1"/>
+			<drop item_id="167010335" chance="8.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +1"/>
+			<drop item_id="167010336" chance="4.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +1"/>
+			<drop item_id="167010337" chance="7.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +1"/>
+			<drop item_id="167010338" chance="6.65" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +1"/>
+			<drop item_id="167010339" chance="9.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +1"/>
+			<drop item_id="167010340" chance="3.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +2"/>
+			<drop item_id="167010341" chance="2.00" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +2"/>
+			<drop item_id="167010342" chance="7.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +2"/>
+			<drop item_id="167010343" chance="4.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +2"/>
+			<drop item_id="167010344" chance="7.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +2"/>
+			<drop item_id="167010345" chance="9.78" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +2"/>
+			<drop item_id="167010346" chance="7.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +3"/>
+			<drop item_id="167010347" chance="3.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +3"/>
+			<drop item_id="167010348" chance="2.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +3"/>
+			<drop item_id="167010349" chance="3.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +3"/>
+			<drop item_id="167010350" chance="9.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +3"/>
+			<drop item_id="167010351" chance="3.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +3"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Guardian Shardgolem -->
+	<npc_drop npc_id="246408">
+		<drop_group name="NONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000301" chance="6.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Black Tome"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Essence Guardian Fleshgolem -->
+	<npc_drop npc_id="246410">
+		<drop_group name="NONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000297" chance="3.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Restricted Library Card"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Unyielding Guardian Shardgolem -->
+	<npc_drop npc_id="246416">
+		<drop_group name="ARMOR_GLOVES_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="111101987" chance="1.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Gloves"/>
+			<drop item_id="111101988" chance="1.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Gloves"/>
+			<drop item_id="111302122" chance="1.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Vambrace"/>
+			<drop item_id="111302123" chance="1.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Vambrace"/>
+			<drop item_id="111502122" chance="1.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Handguards"/>
+			<drop item_id="111502123" chance="0.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Handguards"/>
+			<drop item_id="111502124" chance="0.88" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Battle Handguards"/>
+			<drop item_id="111601915" chance="1.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Gauntlets"/>
+			<drop item_id="111601916" chance="0.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Gauntlets"/>
+		</drop_group>
+		<drop_group name="ARMOR_HELMET_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="125005207" chance="0.67" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Bandana"/>
+			<drop item_id="125005208" chance="1.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Bandana"/>
+			<drop item_id="125005209" chance="0.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Hat"/>
+			<drop item_id="125005210" chance="1.93" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Hat"/>
+			<drop item_id="125005211" chance="1.31" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Chain Helm"/>
+			<drop item_id="125005212" chance="0.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Chain Helm"/>
+			<drop item_id="125005213" chance="0.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Battle Chain Helm"/>
+			<drop item_id="125005214" chance="1.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Helm"/>
+			<drop item_id="125005215" chance="0.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Helm"/>
+		</drop_group>
+		<drop_group name="ARMOR_JACKET_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="110102187" chance="1.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Tunic"/>
+			<drop item_id="110102188" chance="1.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Tunic"/>
+			<drop item_id="110302176" chance="0.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Jerkin"/>
+			<drop item_id="110302177" chance="1.88" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Jerkin"/>
+			<drop item_id="110551553" chance="0.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Hauberk"/>
+			<drop item_id="110551554" chance="0.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Hauberk"/>
+			<drop item_id="110551555" chance="1.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Battle Hauberk"/>
+			<drop item_id="110601945" chance="0.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Breastplate"/>
+			<drop item_id="110601946" chance="1.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Breastplate"/>
+		</drop_group>
+		<drop_group name="ARMOR_PANTS_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="113101993" chance="1.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Leggings"/>
+			<drop item_id="113101994" chance="1.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Leggings"/>
+			<drop item_id="113302146" chance="1.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Breeches"/>
+			<drop item_id="113302147" chance="0.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Breeches"/>
+			<drop item_id="113502132" chance="1.43" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Chausses"/>
+			<drop item_id="113502133" chance="1.00" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Chausses"/>
+			<drop item_id="113502134" chance="0.81" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Battle Chausses"/>
+			<drop item_id="113601892" chance="0.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Greaves"/>
+			<drop item_id="113601893" chance="1.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Greaves"/>
+		</drop_group>
+		<drop_group name="ARMOR_SHOES_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="114102028" chance="1.67" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Shoes"/>
+			<drop item_id="114102029" chance="1.60" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Shoes"/>
+			<drop item_id="114302184" chance="0.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Boots"/>
+			<drop item_id="114302185" chance="1.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Boots"/>
+			<drop item_id="114502140" chance="1.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Brogans"/>
+			<drop item_id="114502141" chance="0.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Brogans"/>
+			<drop item_id="114502142" chance="0.21" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Battle Brogans"/>
+			<drop item_id="114601898" chance="1.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Sabatons"/>
+			<drop item_id="114601899" chance="1.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Sabatons"/>
+		</drop_group>
+		<drop_group name="ARMOR_SHOULDERS_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="112101930" chance="1.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Pauldrons"/>
+			<drop item_id="112101931" chance="1.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Pauldrons"/>
+			<drop item_id="112302058" chance="1.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Shoulderguards"/>
+			<drop item_id="112302059" chance="0.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Shoulderguards"/>
+			<drop item_id="112502058" chance="0.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Spaulders"/>
+			<drop item_id="112502059" chance="0.52" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Spaulders"/>
+			<drop item_id="112502060" chance="0.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Combat Spaulders"/>
+			<drop item_id="112601897" chance="0.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Shoulderplates"/>
+			<drop item_id="112601898" chance="1.60" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Apollon's Reinforced Shoulderplates"/>
+		</drop_group>
+		<drop_group name="NONE_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="188057231" chance="6.04" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Goblet Bundle"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Essence Guardian's Hetgolem -->
+	<npc_drop npc_id="246939">
+		<drop_group name="ARMOR_SHARD_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000010" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +40"/>
+		</drop_group>
+		<drop_group name="NONE_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="9.25" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="1.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+		<drop_group name="NONE_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="167010334" chance="6.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +1"/>
+			<drop item_id="167010335" chance="6.65" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +1"/>
+			<drop item_id="167010336" chance="9.81" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +1"/>
+			<drop item_id="167010337" chance="2.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +1"/>
+			<drop item_id="167010338" chance="8.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +1"/>
+			<drop item_id="167010339" chance="5.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +1"/>
+			<drop item_id="167010340" chance="7.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +2"/>
+			<drop item_id="167010341" chance="3.39" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +2"/>
+			<drop item_id="167010342" chance="8.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +2"/>
+			<drop item_id="167010343" chance="1.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +2"/>
+			<drop item_id="167010344" chance="2.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +2"/>
+			<drop item_id="167010345" chance="1.40" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +2"/>
+			<drop item_id="167010346" chance="2.45" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +3"/>
+			<drop item_id="167010347" chance="9.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +3"/>
+			<drop item_id="167010348" chance="1.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +3"/>
+			<drop item_id="167010349" chance="1.31" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +3"/>
+			<drop item_id="167010350" chance="6.01" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +3"/>
+			<drop item_id="167010351" chance="4.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +3"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Essence Guardian's Orkanimum Mask -->
+	<npc_drop npc_id="246940">
+		<drop_group name="ARMOR_SHARD_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000010" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +40"/>
+		</drop_group>
+		<drop_group name="NONE_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="3.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+		<drop_group name="NONE_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="167010334" chance="7.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +1"/>
+			<drop item_id="167010335" chance="6.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +1"/>
+			<drop item_id="167010336" chance="7.21" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +1"/>
+			<drop item_id="167010337" chance="5.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +1"/>
+			<drop item_id="167010338" chance="9.15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +1"/>
+			<drop item_id="167010339" chance="5.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +1"/>
+			<drop item_id="167010340" chance="9.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +2"/>
+			<drop item_id="167010341" chance="5.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +2"/>
+			<drop item_id="167010342" chance="2.19" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +2"/>
+			<drop item_id="167010343" chance="2.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +2"/>
+			<drop item_id="167010344" chance="1.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +2"/>
+			<drop item_id="167010345" chance="7.45" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +2"/>
+			<drop item_id="167010346" chance="7.01" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Power +3"/>
+			<drop item_id="167010347" chance="1.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: HP +3"/>
+			<drop item_id="167010348" chance="5.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Agility +3"/>
+			<drop item_id="167010349" chance="4.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Precision +3"/>
+			<drop item_id="167010350" chance="9.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Knowledge +3"/>
+			<drop item_id="167010351" chance="8.68" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Manastone: Will +3"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

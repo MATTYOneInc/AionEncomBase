@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Calindi Flame Lord -->
+	<npc_drop npc_id="219359">
+		<drop_group name="ARMOR_EPIC" use_category="true" race="PC_ALL">
+			<drop item_id="110101459" chance="0.62" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Tunic"/>
+			<drop item_id="110301369" chance="0.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Jerkin"/>
+			<drop item_id="110301580" chance="0.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Jerkin"/>
+			<drop item_id="110501344" chance="1.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Hauberk"/>
+			<drop item_id="110601317" chance="1.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Breastplate"/>
+			<drop item_id="111101317" chance="0.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Gloves"/>
+			<drop item_id="111301312" chance="1.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Vambrace"/>
+			<drop item_id="111301518" chance="1.65" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Vambrace"/>
+			<drop item_id="111501304" chance="0.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Handguards"/>
+			<drop item_id="111601282" chance="0.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Gauntlets"/>
+			<drop item_id="112101274" chance="1.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Pauldrons"/>
+			<drop item_id="112301255" chance="0.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoulderguards"/>
+			<drop item_id="112301459" chance="1.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Shoulderguards"/>
+			<drop item_id="112501244" chance="1.88" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Spaulders"/>
+			<drop item_id="112601262" chance="0.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoulderplates"/>
+			<drop item_id="113101334" chance="0.63" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Leggings"/>
+			<drop item_id="113301336" chance="0.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Breeches"/>
+			<drop item_id="113301546" chance="0.40" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Breeches"/>
+			<drop item_id="113501319" chance="1.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Chausses"/>
+			<drop item_id="113601271" chance="0.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Greaves"/>
+			<drop item_id="114101363" chance="1.42" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoes"/>
+			<drop item_id="114301369" chance="1.24" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Boots"/>
+			<drop item_id="114301584" chance="1.02" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Boots"/>
+			<drop item_id="114501325" chance="0.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Brogans"/>
+			<drop item_id="114601266" chance="0.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Sabatons"/>
+			<drop item_id="110101459" chance="1.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Tunic"/>
+			<drop item_id="110301369" chance="0.19" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Jerkin"/>
+			<drop item_id="110301580" chance="1.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Jerkin"/>
+			<drop item_id="110501344" chance="1.55" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Hauberk"/>
+			<drop item_id="110601317" chance="1.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Breastplate"/>
+			<drop item_id="111101317" chance="0.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Gloves"/>
+			<drop item_id="111301312" chance="1.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Vambrace"/>
+			<drop item_id="111301518" chance="1.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Vambrace"/>
+			<drop item_id="111501304" chance="1.67" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Handguards"/>
+			<drop item_id="111601282" chance="0.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Gauntlets"/>
+			<drop item_id="112101274" chance="0.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Pauldrons"/>
+			<drop item_id="112301255" chance="0.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoulderguards"/>
+			<drop item_id="112301459" chance="0.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Shoulderguards"/>
+			<drop item_id="112501244" chance="1.63" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Spaulders"/>
+			<drop item_id="112601262" chance="0.67" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoulderplates"/>
+			<drop item_id="113101334" chance="1.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Leggings"/>
+			<drop item_id="113301336" chance="0.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Breeches"/>
+			<drop item_id="113301546" chance="0.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Breeches"/>
+			<drop item_id="113501319" chance="1.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Chausses"/>
+			<drop item_id="113601271" chance="1.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Greaves"/>
+			<drop item_id="114101363" chance="0.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoes"/>
+			<drop item_id="114301369" chance="1.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Boots"/>
+			<drop item_id="114301584" chance="1.01" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Boots"/>
+			<drop item_id="114501325" chance="0.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Brogans"/>
+			<drop item_id="114601266" chance="1.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Sabatons"/>
+		</drop_group>
+		<drop_group name="COINS_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="186000201" chance="3.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Protectorate Coin"/>
+			<drop item_id="186000201" chance="6.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Protectorate Coin"/>
+		</drop_group>
+		<drop_group name="COMMON_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="166100011" chance="4.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Supplements (Mythic)"/>
+			<drop item_id="166100011" chance="3.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Supplements (Mythic)"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Large Tiamat Treasure Chest -->
+	<npc_drop npc_id="702729">
+		<drop_group name="ARMOR_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="110101880" chance="0.93" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Jacket"/>
+			<drop item_id="110301873" chance="1.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Jerkin"/>
+			<drop item_id="110301874" chance="0.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Jerkin"/>
+			<drop item_id="110551203" chance="0.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Hauberk"/>
+			<drop item_id="110551204" chance="1.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Chain Hauberk"/>
+			<drop item_id="110551205" chance="1.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tempered Dragon Lord's Hauberk"/>
+			<drop item_id="110601667" chance="0.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Breastplate"/>
+			<drop item_id="111101695" chance="0.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Gloves"/>
+			<drop item_id="111301811" chance="0.19" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Vambraces"/>
+			<drop item_id="111301812" chance="1.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Vambraces"/>
+			<drop item_id="111501762" chance="1.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Handguards"/>
+			<drop item_id="111501763" chance="1.53" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Handguards"/>
+			<drop item_id="111501764" chance="0.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tempered Dragon Lord's Handguards"/>
+			<drop item_id="111601630" chance="1.52" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Gauntlets"/>
+			<drop item_id="112101644" chance="0.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Pauldrons"/>
+			<drop item_id="112301750" chance="0.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Shoulderguards"/>
+			<drop item_id="112301751" chance="0.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Shoulderguards"/>
+			<drop item_id="112501701" chance="0.24" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Spaulders"/>
+			<drop item_id="112501702" chance="0.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Pauldrons"/>
+			<drop item_id="112501703" chance="1.39" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tempered Dragon Lord's Spaulders"/>
+			<drop item_id="112601612" chance="0.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Shoulderplates"/>
+			<drop item_id="113101706" chance="1.67" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Leggings"/>
+			<drop item_id="113301842" chance="1.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Legguards"/>
+			<drop item_id="113301843" chance="0.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Legguards"/>
+			<drop item_id="113501780" chance="0.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Chausses"/>
+			<drop item_id="113501781" chance="1.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Chausses"/>
+			<drop item_id="113501782" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tempered Dragon Lord's Chausses"/>
+			<drop item_id="113601613" chance="0.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Greaves"/>
+			<drop item_id="114101740" chance="0.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Shoes"/>
+			<drop item_id="114301879" chance="1.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Boots"/>
+			<drop item_id="114301880" chance="1.31" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Boots"/>
+			<drop item_id="114501790" chance="0.40" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Brogans"/>
+			<drop item_id="114501791" chance="1.09" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Brogans"/>
+			<drop item_id="114501792" chance="1.68" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tempered Dragon Lord's Brogans"/>
+			<drop item_id="114601620" chance="1.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Sabatons"/>
+			<drop item_id="115001833" chance="0.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Sigh"/>
+			<drop item_id="115001834" chance="2.00" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Agony"/>
+			<drop item_id="125004294" chance="1.52" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Helm"/>
+			<drop item_id="125004295" chance="1.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Chain Helm"/>
+			<drop item_id="125004296" chance="1.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Magic Chain Helm"/>
+			<drop item_id="125004297" chance="1.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Hat"/>
+			<drop item_id="125004298" chance="0.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Magic Hat"/>
+			<drop item_id="125004299" chance="1.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Bandana"/>
+			<drop item_id="187000156" chance="0.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat's Glimmering Wings"/>
+			<drop item_id="110101880" chance="1.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Jacket"/>
+			<drop item_id="110301873" chance="1.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Jerkin"/>
+			<drop item_id="110301874" chance="0.65" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Jerkin"/>
+			<drop item_id="110551203" chance="1.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Hauberk"/>
+			<drop item_id="110551204" chance="1.81" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Chain Hauberk"/>
+			<drop item_id="110551205" chance="0.19" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tempered Dragon Lord's Hauberk"/>
+			<drop item_id="110601667" chance="1.52" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Breastplate"/>
+			<drop item_id="111101695" chance="0.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Gloves"/>
+			<drop item_id="111301811" chance="0.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Vambraces"/>
+			<drop item_id="111301812" chance="1.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Vambraces"/>
+			<drop item_id="111501762" chance="0.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Handguards"/>
+			<drop item_id="111501763" chance="0.40" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Handguards"/>
+			<drop item_id="111501764" chance="0.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tempered Dragon Lord's Handguards"/>
+			<drop item_id="111601630" chance="0.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Gauntlets"/>
+			<drop item_id="112101644" chance="1.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Pauldrons"/>
+			<drop item_id="112301750" chance="0.40" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Shoulderguards"/>
+			<drop item_id="112301751" chance="0.72" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Shoulderguards"/>
+			<drop item_id="112501701" chance="1.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Spaulders"/>
+			<drop item_id="112501702" chance="1.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Pauldrons"/>
+			<drop item_id="112501703" chance="1.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tempered Dragon Lord's Spaulders"/>
+			<drop item_id="112601612" chance="1.45" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Shoulderplates"/>
+			<drop item_id="113101706" chance="0.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Leggings"/>
+			<drop item_id="113301842" chance="1.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Legguards"/>
+			<drop item_id="113301843" chance="0.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Legguards"/>
+			<drop item_id="113501780" chance="0.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Chausses"/>
+			<drop item_id="113501781" chance="1.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Chausses"/>
+			<drop item_id="113501782" chance="1.97" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tempered Dragon Lord's Chausses"/>
+			<drop item_id="113601613" chance="1.24" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Greaves"/>
+			<drop item_id="114101740" chance="0.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Shoes"/>
+			<drop item_id="114301879" chance="1.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Boots"/>
+			<drop item_id="114301880" chance="0.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Boots"/>
+			<drop item_id="114501790" chance="1.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Brogans"/>
+			<drop item_id="114501791" chance="0.72" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Brogans"/>
+			<drop item_id="114501792" chance="1.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tempered Dragon Lord's Brogans"/>
+			<drop item_id="114601620" chance="1.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Sabatons"/>
+			<drop item_id="115001833" chance="0.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Sigh"/>
+			<drop item_id="115001834" chance="1.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Agony"/>
+			<drop item_id="125004294" chance="1.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Helm"/>
+			<drop item_id="125004295" chance="0.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Chain Helm"/>
+			<drop item_id="125004296" chance="1.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Magic Chain Helm"/>
+			<drop item_id="125004297" chance="0.13" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Hat"/>
+			<drop item_id="125004298" chance="0.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glowing Dragon Lord's Magic Hat"/>
+			<drop item_id="125004299" chance="0.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Bandana"/>
+			<drop item_id="187000156" chance="0.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat's Glimmering Wings"/>
+		</drop_group>
+		<drop_group name="COMMON_EPIC" use_category="true" race="PC_ALL">
+			<drop item_id="188053707" chance="7.13" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Treasure Chest of Dragon Lord Tiamat"/>
+			<drop item_id="188053783" chance="5.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Stigma Sack"/>
+			<drop item_id="188053707" chance="2.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Treasure Chest of Dragon Lord Tiamat"/>
+			<drop item_id="188053783" chance="2.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Stigma Sack"/>
+		</drop_group>
+		<drop_group name="COMMON_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="169405391" chance="9.04" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Sword of the Fierce Battle Prototype"/>
+			<drop item_id="169405392" chance="7.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Mace of the Fierce Battle Prototype"/>
+			<drop item_id="169405393" chance="5.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Dagger of the Fierce Battle Prototype"/>
+			<drop item_id="169405394" chance="4.01" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Greatsword of the Fierce Battle Prototype"/>
+			<drop item_id="169405395" chance="1.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Polearm of the Fierce Battle Prototype"/>
+			<drop item_id="169405396" chance="1.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Staff of the Fierce Battle Prototype"/>
+			<drop item_id="169405391" chance="7.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Sword of the Fierce Battle Prototype"/>
+			<drop item_id="169405392" chance="4.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Mace of the Fierce Battle Prototype"/>
+			<drop item_id="169405393" chance="7.40" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Dagger of the Fierce Battle Prototype"/>
+			<drop item_id="169405394" chance="3.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Greatsword of the Fierce Battle Prototype"/>
+			<drop item_id="169405395" chance="9.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Polearm of the Fierce Battle Prototype"/>
+			<drop item_id="169405396" chance="3.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Upgraded Distorted Staff of the Fierce Battle Prototype"/>
+		</drop_group>
+		<drop_group name="QUEST_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="182215691" chance="4.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lonely Sabat's Song"/>
+			<drop item_id="182215691" chance="1.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lonely Sabat's Song"/>
+		</drop_group>
+		<drop_group name="WEAPON_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="100001797" chance="0.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Wrath"/>
+			<drop item_id="100101389" chance="1.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Delight"/>
+			<drop item_id="100201562" chance="1.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Murderous Intent"/>
+			<drop item_id="100501355" chance="0.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Arrogance"/>
+			<drop item_id="100601472" chance="0.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Distrust"/>
+			<drop item_id="100901424" chance="0.30" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Hatred"/>
+			<drop item_id="101301313" chance="1.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Greed"/>
+			<drop item_id="101501404" chance="1.45" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Pride"/>
+			<drop item_id="101701408" chance="0.81" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Jealousy"/>
+			<drop item_id="101801266" chance="1.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Fighting Spirit"/>
+			<drop item_id="101901173" chance="0.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Courage"/>
+			<drop item_id="102001292" chance="1.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Shudder"/>
+			<drop item_id="102101109" chance="1.02" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Craving"/>
+			<drop item_id="100001797" chance="0.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Wrath"/>
+			<drop item_id="100101389" chance="0.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Delight"/>
+			<drop item_id="100201562" chance="0.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Murderous Intent"/>
+			<drop item_id="100501355" chance="0.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Arrogance"/>
+			<drop item_id="100601472" chance="1.13" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Distrust"/>
+			<drop item_id="100901424" chance="0.20" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Hatred"/>
+			<drop item_id="101301313" chance="1.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Greed"/>
+			<drop item_id="101501404" chance="0.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Pride"/>
+			<drop item_id="101701408" chance="0.20" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Jealousy"/>
+			<drop item_id="101801266" chance="1.52" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Fighting Spirit"/>
+			<drop item_id="101901173" chance="0.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Courage"/>
+			<drop item_id="102001292" chance="0.67" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Shudder"/>
+			<drop item_id="102101109" chance="0.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Glimmering Dragon Lord's Craving"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Fire Tamer -->
+	<npc_drop npc_id="237224">
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000244" chance="5.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Crossroads Choice Key"/>
+			<drop item_id="185000244" chance="6.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Crossroads Choice Key"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

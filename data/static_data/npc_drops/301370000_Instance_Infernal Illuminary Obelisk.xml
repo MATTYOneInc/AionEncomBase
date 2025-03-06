@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Converted Dynatum Prototype -->
+	<npc_drop npc_id="234686">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000010" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +40"/>
+			<drop item_id="169000010" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +40"/>
+		</drop_group>
+		<drop_group name="ARMOR_EPIC" use_category="true" race="PC_ALL">
+			<drop item_id="187000130" chance="1.93" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Bulwark Burster"/>
+			<drop item_id="187000130" chance="0.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Bulwark Burster"/>
+		</drop_group>
+		<drop_group name="ARMOR_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="187000129" chance="1.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Brazen Bulwark Burster"/>
+			<drop item_id="187000143" chance="1.25" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pure Dynatoum's Radiant Wing Feather"/>
+			<drop item_id="187000129" chance="1.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Brazen Bulwark Burster"/>
+			<drop item_id="187000143" chance="0.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pure Dynatoum's Radiant Wing Feather"/>
+		</drop_group>
+		<drop_group name="BALIC_MATERIAL_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="152014021" chance="2.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Gleaming Balaur Horn"/>
+			<drop item_id="152014021" chance="4.81" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Gleaming Balaur Horn"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152013040" chance="1.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mortal Envy"/>
+			<drop item_id="152013040" chance="4.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mortal Envy"/>
+		</drop_group>
+		<drop_group name="COMMON_EPIC" use_category="true" race="PC_ALL">
+			<drop item_id="188053093" chance="8.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Dynatoum's Curiosity Box"/>
+			<drop item_id="188053094" chance="1.93" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illuminary Obelisk Supplies Bundle"/>
+			<drop item_id="188053093" chance="6.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Dynatoum's Curiosity Box"/>
+			<drop item_id="188053094" chance="6.54" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illuminary Obelisk Supplies Bundle"/>
+		</drop_group>
+		<drop_group name="COMMON_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="168000212" chance="0.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Aion's Sorrow"/>
+			<drop item_id="168000213" chance="0.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Fasimedes' Authority"/>
+			<drop item_id="168000214" chance="0.15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Thrasymedes' Foresight"/>
+			<drop item_id="168000215" chance="0.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Freyr’s Esprit"/>
+			<drop item_id="168000216" chance="0.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Vidar's Nobility"/>
+			<drop item_id="168000217" chance="1.13" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Charna's Cleverness"/>
+			<drop item_id="168000218" chance="1.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Sif's Extensive Knowledge"/>
+			<drop item_id="168000219" chance="0.65" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Jumentis' Agility"/>
+			<drop item_id="168000220" chance="0.24" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Sigyn's Brightness"/>
+			<drop item_id="168000221" chance="1.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Boreas' Encouragement"/>
+			<drop item_id="168000222" chance="1.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Traufnir's Spirit"/>
+			<drop item_id="168000223" chance="0.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Bollvig's Grief"/>
+			<drop item_id="168000224" chance="0.88" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Helkes' Vengeance"/>
+			<drop item_id="168000225" chance="0.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Deltras' Loyalty"/>
+			<drop item_id="168000226" chance="0.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Orissan’s Blood"/>
+			<drop item_id="168000227" chance="0.25" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Mahisha's Wrath"/>
+			<drop item_id="168000228" chance="0.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Khrudgelmir's Silence"/>
+			<drop item_id="168000212" chance="0.97" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Aion's Sorrow"/>
+			<drop item_id="168000213" chance="0.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Fasimedes' Authority"/>
+			<drop item_id="168000214" chance="0.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Thrasymedes' Foresight"/>
+			<drop item_id="168000215" chance="0.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Freyr’s Esprit"/>
+			<drop item_id="168000216" chance="1.42" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Vidar's Nobility"/>
+			<drop item_id="168000217" chance="1.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Charna's Cleverness"/>
+			<drop item_id="168000218" chance="0.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Sif's Extensive Knowledge"/>
+			<drop item_id="168000219" chance="1.68" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Jumentis' Agility"/>
+			<drop item_id="168000220" chance="1.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Sigyn's Brightness"/>
+			<drop item_id="168000221" chance="1.24" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Boreas' Encouragement"/>
+			<drop item_id="168000222" chance="1.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Traufnir's Spirit"/>
+			<drop item_id="168000223" chance="1.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Bollvig's Grief"/>
+			<drop item_id="168000224" chance="0.17" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Helkes' Vengeance"/>
+			<drop item_id="168000225" chance="1.62" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Deltras' Loyalty"/>
+			<drop item_id="168000226" chance="1.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Orissan’s Blood"/>
+			<drop item_id="168000227" chance="1.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Mahisha's Wrath"/>
+			<drop item_id="168000228" chance="0.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Khrudgelmir's Silence"/>
+		</drop_group>
+		<drop_group name="COMMON_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="188053295" chance="3.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Empyrean Plume Chest"/>
+			<drop item_id="188053295" chance="5.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Empyrean Plume Chest"/>
+		</drop_group>
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="152014022" chance="4.20" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Gleaming Balaur Scale"/>
+			<drop item_id="152014023" chance="9.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Gleaming Balaur Skin"/>
+			<drop item_id="152014024" chance="3.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Gleaming Balaur Blood"/>
+			<drop item_id="152014025" chance="3.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Gleaming Balaur Meat"/>
+			<drop item_id="186000235" chance="8.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Divine Balaur Heart"/>
+			<drop item_id="152014022" chance="8.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Gleaming Balaur Scale"/>
+			<drop item_id="152014023" chance="8.63" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Gleaming Balaur Skin"/>
+			<drop item_id="152014024" chance="1.21" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Gleaming Balaur Blood"/>
+			<drop item_id="152014025" chance="8.30" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Gleaming Balaur Meat"/>
+			<drop item_id="186000235" chance="6.10" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Divine Balaur Heart"/>
+		</drop_group>
+		<drop_group name="COMMON_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="168000229" chance="0.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Lumiel's Interference"/>
+			<drop item_id="168000230" chance="0.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Meslamtaeda's Ambition"/>
+			<drop item_id="168000231" chance="1.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Yustiel's Consolation"/>
+			<drop item_id="168000232" chance="1.63" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Vaizel's Vow"/>
+			<drop item_id="168000233" chance="0.09" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Ereshkigal's Reputation"/>
+			<drop item_id="168000234" chance="1.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Marchutan's Justice"/>
+			<drop item_id="168000235" chance="0.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Triniel's Intellect"/>
+			<drop item_id="168000236" chance="1.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Beritra's Conceit"/>
+			<drop item_id="168000237" chance="0.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Meslamtaeda's Remorse"/>
+			<drop item_id="168000238" chance="0.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Tiamat's Retaliation"/>
+			<drop item_id="168000239" chance="1.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Tiamat's Rage"/>
+			<drop item_id="168000240" chance="0.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Fregion's Stratagem"/>
+			<drop item_id="168000241" chance="1.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Nezekan's Charge"/>
+			<drop item_id="168000242" chance="0.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Kaisinel's Mirage"/>
+			<drop item_id="168000243" chance="1.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Zikel's Arrogance"/>
+			<drop item_id="168000244" chance="0.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Fregion's Scheme"/>
+			<drop item_id="168000245" chance="1.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Beritra's Plot"/>
+			<drop item_id="188052824" chance="7.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illuminary Obelisk Enhancement Chest"/>
+			<drop item_id="168000229" chance="1.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Lumiel's Interference"/>
+			<drop item_id="168000230" chance="1.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Meslamtaeda's Ambition"/>
+			<drop item_id="168000231" chance="0.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Yustiel's Consolation"/>
+			<drop item_id="168000232" chance="0.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Vaizel's Vow"/>
+			<drop item_id="168000233" chance="0.54" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Ereshkigal's Reputation"/>
+			<drop item_id="168000234" chance="1.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Marchutan's Justice"/>
+			<drop item_id="168000235" chance="0.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Triniel's Intellect"/>
+			<drop item_id="168000236" chance="1.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Beritra's Conceit"/>
+			<drop item_id="168000237" chance="1.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Meslamtaeda's Remorse"/>
+			<drop item_id="168000238" chance="0.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Tiamat's Retaliation"/>
+			<drop item_id="168000239" chance="0.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Tiamat's Rage"/>
+			<drop item_id="168000240" chance="1.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Fregion's Stratagem"/>
+			<drop item_id="168000241" chance="1.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Nezekan's Charge"/>
+			<drop item_id="168000242" chance="1.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Kaisinel's Mirage"/>
+			<drop item_id="168000243" chance="1.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Zikel's Arrogance"/>
+			<drop item_id="168000244" chance="1.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Fregion's Scheme"/>
+			<drop item_id="168000245" chance="0.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illusion Godstone: Beritra's Plot"/>
+			<drop item_id="188052824" chance="7.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Illuminary Obelisk Enhancement Chest"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152013037" chance="8.10" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mortal Wrath"/>
+			<drop item_id="152013043" chance="2.20" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mortal Pride"/>
+			<drop item_id="152013037" chance="6.17" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mortal Wrath"/>
+			<drop item_id="152013043" chance="5.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mortal Pride"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054205" chance="6.52" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Superior Manastone Ore"/>
+			<drop item_id="188054205" chance="2.60" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Superior Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Towering Idium -->
+	<npc_drop npc_id="730884">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000289" chance="5.39" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Crystalline Idium Piece"/>
+			<drop item_id="164000289" chance="8.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Crystalline Idium Piece"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Rune ammunition box -->
+	<npc_drop npc_id="730885">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000290" chance="9.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Danuar Cannonball"/>
+			<drop item_id="164000290" chance="7.00" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Danuar Cannonball"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

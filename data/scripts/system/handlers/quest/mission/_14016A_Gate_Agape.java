@@ -79,10 +79,11 @@ public class _14016A_Gate_Agape extends QuestHandler {
 								return sendQuestDialog(env, 1011);
 							}
 						case STEP_TO_1:
-							TeleportService2.teleportTo(player, 210030000, 2683.2085f, 1068.8977f, 199.375f, (byte) 0, TeleportAnimation.BEAM_ANIMATION);
 							changeQuestStep(env, 0, 1, false);
+							TeleportService2.teleportTo(player, 210030000, 2683.2085f, 1068.8977f, 199.375f, (byte) 0, TeleportAnimation.BEAM_ANIMATION);
 							return closeDialogWindow(env);
-					}
+                }
+                break;
 				case 700141: //Abyss Gate.
 					playQuestMovie(env, 153);
 					removeQuestItem(env, 182215317, 1);

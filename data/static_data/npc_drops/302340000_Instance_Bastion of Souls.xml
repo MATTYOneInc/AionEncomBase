@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Shivering Mahorosh -->
+	<npc_drop npc_id="246546">
+		<drop_group name="COMMON_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="188057570" chance="4.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Chaotic Dimension Stone Fragment Bundle"/>
+			<drop item_id="188057570" chance="3.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Chaotic Dimension Stone Fragment Bundle"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Sahidtan -->
+	<npc_drop npc_id="246727">
+		<drop_group name="KEY_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="185000308" chance="1.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Meditation Chamber Key"/>
+			<drop item_id="185000308" chance="5.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Meditation Chamber Key"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Shuratna -->
+	<npc_drop npc_id="246728">
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188057192" chance="7.63" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Bloodied Investigation Notes"/>
+			<drop item_id="188057192" chance="6.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Bloodied Investigation Notes"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Manusha -->
+	<npc_drop npc_id="246730">
+		<drop_group name="KEY_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="185000309" chance="4.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lift to Enlightenment Key"/>
+			<drop item_id="185000309" chance="8.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lift to Enlightenment Key"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Kramush -->
+	<npc_drop npc_id="246731">
+		<drop_group name="KEY_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="185000310" chance="3.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Enlightenment Key"/>
+			<drop item_id="185000310" chance="2.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Enlightenment Key"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Kargata -->
+	<npc_drop npc_id="246798">
+		<drop_group name="COMMON_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="185000311" chance="7.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Black Oil"/>
+			<drop item_id="185000311" chance="5.42" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Black Oil"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Drakan Attack Officer of the Fallusha Army -->
+	<npc_drop npc_id="246881">
+		<drop_group name="COMMON_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="164002394" chance="8.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Jail Key"/>
+			<drop item_id="164002394" chance="1.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Jail Key"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Drakan Fighter of the Fallusha Army -->
+	<npc_drop npc_id="246885">
+		<drop_group name="KEY_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="185000302" chance="5.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Purification Chamber Key - 4"/>
+			<drop item_id="185000302" chance="6.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Purification Chamber Key - 4"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Drakan Fighter of the Fallusha Army -->
+	<npc_drop npc_id="246895">
+		<drop_group name="KEY_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="185000303" chance="2.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Purification Chamber Key - 3"/>
+			<drop item_id="185000303" chance="5.08" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Purification Chamber Key - 3"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Drakan Fighter of the Fallusha Army -->
+	<npc_drop npc_id="246905">
+		<drop_group name="KEY_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="185000304" chance="2.53" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Purification Chamber Key - 2"/>
+			<drop item_id="185000304" chance="9.02" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Purification Chamber Key - 2"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Drakan Fighter of the Fallusha Army -->
+	<npc_drop npc_id="247181">
+		<drop_group name="KEY_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="185000302" chance="6.65" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Purification Chamber Key - 4"/>
+			<drop item_id="185000302" chance="5.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Purification Chamber Key - 4"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Box containing Glyph Chains -->
+	<npc_drop npc_id="835444">
+		<drop_group name="COMMON_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="164002393" chance="1.24" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Stigma Chains"/>
+			<drop item_id="164002393" chance="4.00" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Stigma Chains"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Slightly Opened Box -->
+	<npc_drop npc_id="835445">
+		<drop_group name="COMMON_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="188100423" chance="2.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Crude Wick"/>
+			<drop item_id="188100423" chance="5.30" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Crude Wick"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Slightly Opened Box -->
+	<npc_drop npc_id="835446">
+		<drop_group name="COMMON_UNIQUE" use_category="true" race="PC_ALL">
+			<drop item_id="188100424" chance="1.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Crude Gunpowder"/>
+			<drop item_id="188100424" chance="3.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Crude Gunpowder"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

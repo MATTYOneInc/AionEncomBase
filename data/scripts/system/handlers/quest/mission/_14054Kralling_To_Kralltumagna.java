@@ -28,7 +28,6 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 public class _14054Kralling_To_Kralltumagna extends QuestHandler {
 
     private final static int questId = 14054;
-	
     public _14054Kralling_To_Kralltumagna() {
         super(questId);
     }
@@ -41,10 +40,7 @@ public class _14054Kralling_To_Kralltumagna extends QuestHandler {
         qe.registerQuestNpc(800413).addOnTalkEvent(questId);
         qe.registerQuestNpc(802050).addOnTalkEvent(questId);
         //****//
-		int[] mobs = {214010, 214013, 214014, 214015, 214016, 214017,
-		214018, 214019, 214020, 214021, 214022, 214023,
-		214081, 214082, 214083, 214084, 214085, 214086,
-		214087, 214088, 702040, 233861};
+		int[] mobs = {214010, 214013, 214014, 214015, 214016, 214017, 214018, 214019, 214020, 214021, 214022, 214023, 214081, 214082, 214083, 214084, 214085, 214086, 214087, 214088, 702040, 233861, 235484, 235494, 235495, 235498, 235502};
 		//****//
         for (int mob: mobs) {
             qe.registerQuestNpc(mob).addOnKillEvent(questId);
@@ -159,7 +155,9 @@ public class _14054Kralling_To_Kralltumagna extends QuestHandler {
 			targetId == 214021 || targetId == 214022 || targetId == 214023 ||
 			targetId == 214081 || targetId == 214082 || targetId == 214083 ||
 			targetId == 214084 || targetId == 214085 || targetId == 214086 ||
-			targetId == 214087 || targetId == 214088) {
+			targetId == 214087 || targetId == 214088 || targetId == 235484 || 
+            targetId == 235494 || targetId == 235495 || targetId == 235498 || 
+            targetId == 235502) {
             switch (qs.getQuestVarById(1)) {
                 case 0:
                 case 1:

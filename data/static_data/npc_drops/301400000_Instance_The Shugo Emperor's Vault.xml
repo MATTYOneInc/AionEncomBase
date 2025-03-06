@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Supply Box -->
+	<npc_drop npc_id="235643">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182006892" chance="1.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+			<drop item_id="182006892" chance="3.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Imperial Chest -->
+	<npc_drop npc_id="832929">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182006892" chance="8.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+			<drop item_id="182006892" chance="4.45" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Big Imperial Chest -->
+	<npc_drop npc_id="832930">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182006892" chance="7.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+			<drop item_id="182006892" chance="9.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Golden Imperial Chest -->
+	<npc_drop npc_id="832931">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182006892" chance="1.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+			<drop item_id="182006892" chance="4.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

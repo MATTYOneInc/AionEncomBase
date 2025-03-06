@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Manor Informant -->
+	<npc_drop npc_id="237190">
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000242" chance="9.01" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Rechargeable Electric Fuel"/>
+			<drop item_id="185000242" chance="7.00" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Rechargeable Electric Fuel"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Argent Manor Treasure Chest -->
+	<npc_drop npc_id="702816">
+		<drop_group name="COMMON_EPIC" use_category="true" race="PC_ALL">
+			<drop item_id="166100008" chance="8.13" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Supplements (Eternal)"/>
+			<drop item_id="166100008" chance="3.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Supplements (Eternal)"/>
+		</drop_group>
+		<drop_group name="COMMON_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="162000124" chance="1.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Superior Recovery Serum"/>
+			<drop item_id="188054117" chance="2.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Argent Manor Composite Manastone Bundle"/>
+			<drop item_id="162000124" chance="9.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Superior Recovery Serum"/>
+			<drop item_id="188054117" chance="8.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Argent Manor Composite Manastone Bundle"/>
+		</drop_group>
+		<drop_group name="COMMON_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="166100011" chance="2.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Supplements (Mythic)"/>
+			<drop item_id="166100011" chance="8.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Supplements (Mythic)"/>
+		</drop_group>
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="162000121" chance="5.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Superior Recovery Potion"/>
+			<drop item_id="188054118" chance="9.43" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Argent Manor Ancient Coin Bundle"/>
+			<drop item_id="162000121" chance="3.00" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Superior Recovery Potion"/>
+			<drop item_id="188054118" chance="9.43" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Argent Manor Ancient Coin Bundle"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

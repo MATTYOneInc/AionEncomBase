@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Bomb Chest -->
+	<npc_drop npc_id="834168">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000413" chance="8.54" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Support Bomb"/>
+			<drop item_id="164000413" chance="5.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Support Bomb"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Chained Bomb Chest -->
+	<npc_drop npc_id="834169">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000414" chance="4.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Support Restraining Bomb"/>
+			<drop item_id="164000414" chance="2.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Support Restraining Bomb"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

@@ -32,7 +32,7 @@ public class _10031A_Risk_For_The_Obelisk extends QuestHandler {
 
     private final static int questId = 10031;
 	private final static int[] armoredSpaller = {215508, 215509};
-	private final static int[] hikironFarmBalaur = {215504, 215505, 215516, 215517, 215518, 216463, 216464, 216647, 216783};
+	private final static int[] hikironFarmBalaur = {215504, 215505, 215516, 215517, 215518, 216463, 216464, 216647, 216783, 215519, 216648, 216691, 216692};
 	public _10031A_Risk_For_The_Obelisk() {
         super(questId);
     }
@@ -206,19 +206,16 @@ public class _10031A_Risk_For_The_Obelisk extends QuestHandler {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
+		if (qs != null && qs.getStatus() == QuestStatus.START) {
         int var = qs.getQuestVarById(0);
         int var1 = qs.getQuestVarById(1);
         int var2 = qs.getQuestVarById(2);
-		int[] armoredSpaller = {215508, 215509};
-		int[] hikironFarmBalaur = {215504, 215505, 215516, 215517, 215518, 216463, 216464, 216647, 216783};
-		if (qs != null && qs.getStatus() == QuestStatus.START) {
             if (var == 9) {
 				if (var1 + var2 < 11) {
-					if (targetId == 215508 || targetId == 215509) { //Armored Spaller.
 						if (var2 < 2) {
 							return defaultOnKillEvent(env, armoredSpaller, var2, var2 + 1, 2);
 						}
-					} else {
+					 else {
 						if (var1 < 10) {
 							return defaultOnKillEvent(env, hikironFarmBalaur, var1, var1 + 1, 1);
 						}
