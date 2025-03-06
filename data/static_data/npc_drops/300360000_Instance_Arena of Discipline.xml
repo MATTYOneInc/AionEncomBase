@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Treasure Box -->
+	<npc_drop npc_id="218802">
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="164000180" chance="4.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Fine Crucible Coliseum Restraint Water"/>
+			<drop item_id="164000181" chance="3.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Fine Crucible Coliseum Courage Water"/>
+			<drop item_id="164000182" chance="6.25" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Fine Crucible Coliseum Ascension Water"/>
+			<drop item_id="164000183" chance="9.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Fine Crucible Coliseum Recovery Water"/>
+			<drop item_id="164000180" chance="3.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Fine Crucible Coliseum Restraint Water"/>
+			<drop item_id="164000181" chance="4.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Fine Crucible Coliseum Courage Water"/>
+			<drop item_id="164000182" chance="6.54" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Fine Crucible Coliseum Ascension Water"/>
+			<drop item_id="164000183" chance="6.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Fine Crucible Coliseum Recovery Water"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

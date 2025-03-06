@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Drudgelord Kakiti -->
+	<npc_drop npc_id="216897">
+		<drop_group name="ARMOR_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="121001029" chance="0.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Hamerun's Jewel Necklace"/>
+			<drop item_id="121001030" chance="0.10" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Hamerun's Crystal Necklace"/>
+			<drop item_id="121001029" chance="0.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Hamerun's Jewel Necklace"/>
+			<drop item_id="121001030" chance="1.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Hamerun's Crystal Necklace"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="3.81" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="9.40" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="1.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="4.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="2.45" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="5.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="6.13" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="4.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+		<drop_group name="WEAPON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="100900811" chance="1.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Kakiti's Big Club"/>
+			<drop item_id="100900811" chance="0.63" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Kakiti's Big Club"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dukaki Peon -->
+	<npc_drop npc_id="216898">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="2.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="7.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="5.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="4.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="8.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="6.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="2.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="5.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dukaki Seeker -->
+	<npc_drop npc_id="216899">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="4.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="8.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="8.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="7.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="1.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="4.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="2.17" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="6.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dukaki Watchman -->
+	<npc_drop npc_id="216901">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="7.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="8.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="2.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="1.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="7.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="5.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="7.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="4.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dukaki Protector -->
+	<npc_drop npc_id="216902">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="5.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="2.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="3.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="6.04" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="7.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="9.25" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="4.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="4.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dukaki Weakarm -->
+	<npc_drop npc_id="216903">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="1.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="9.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="3.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="9.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="6.68" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="3.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="4.54" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="1.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dukaki Digger -->
+	<npc_drop npc_id="216904">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="6.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="9.97" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="8.81" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="5.39" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="3.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="8.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="3.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="2.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dukaki Lifter -->
+	<npc_drop npc_id="216905">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="7.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="6.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="9.45" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="6.53" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="3.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="6.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="7.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="6.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- MuMu Carrier -->
+	<npc_drop npc_id="216906">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="8.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="5.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="2.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="4.09" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003776" chance="9.31" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+			<drop item_id="182003776" chance="5.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="3.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="9.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- MuMu Ham the Grey -->
+	<npc_drop npc_id="216907">
+		<drop_group name="ARMOR_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="122001264" chance="0.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Hamerun's Jewel Ring"/>
+			<drop item_id="122001265" chance="1.88" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Hamerun's Crystal Ring"/>
+			<drop item_id="122001264" chance="1.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Hamerun's Jewel Ring"/>
+			<drop item_id="122001265" chance="1.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Hamerun's Crystal Ring"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="6.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="9.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="3.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="5.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003776" chance="9.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+			<drop item_id="182003776" chance="8.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="6.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="8.17" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+		<drop_group name="WEAPON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="100001071" chance="1.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MuMu Ham's Odella Flower Sword"/>
+			<drop item_id="100001071" chance="0.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="MuMu Ham's Odella Flower Sword"/>
+		</drop_group>
+	</npc_drop>
+	<!-- MuMu Assistant -->
+	<npc_drop npc_id="216908">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="5.78" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="3.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="7.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="4.20" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003776" chance="6.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+			<drop item_id="182003776" chance="7.00" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="5.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="4.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- MuMu Fighter -->
+	<npc_drop npc_id="216909">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="1.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="1.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="4.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="5.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003776" chance="2.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+			<drop item_id="182003776" chance="6.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="4.10" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="4.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- MuMu Lookout -->
+	<npc_drop npc_id="216910">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="7.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="1.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="5.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="1.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003776" chance="4.72" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+			<drop item_id="182003776" chance="5.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="9.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="1.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- MuMu Farmer -->
+	<npc_drop npc_id="216911">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="7.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="8.93" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="4.68" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="8.45" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003776" chance="1.20" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+			<drop item_id="182003776" chance="5.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="8.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="8.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- MuMu Porter -->
+	<npc_drop npc_id="216912">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="9.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="5.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="2.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="9.04" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003776" chance="5.60" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+			<drop item_id="182003776" chance="9.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="9.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="9.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Captured Tursin Guard -->
+	<npc_drop npc_id="216913">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="9.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="7.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="2.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="4.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003756" chance="9.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Krall Armor"/>
+			<drop item_id="182003756" chance="5.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Krall Armor"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="1.17" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="5.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Captured Black Claw Informer -->
+	<npc_drop npc_id="216914">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="5.63" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="9.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="2.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="7.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003766" chance="5.31" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Mau Armor"/>
+			<drop item_id="182003766" chance="9.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Mau Armor"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="6.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="3.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Overseer Nukiti -->
+	<npc_drop npc_id="216915">
+		<drop_group name="ARMOR_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="123001094" chance="1.68" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Thick Belt of Kobold"/>
+			<drop item_id="123001095" chance="1.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Kobold's Big Belt"/>
+			<drop item_id="123001094" chance="0.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Thick Belt of Kobold"/>
+			<drop item_id="123001095" chance="1.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Kobold's Big Belt"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="6.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="4.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="8.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="9.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="3.55" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="4.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="2.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="6.02" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+		<drop_group name="WEAPON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="100100811" chance="1.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Nukiti's Hammer"/>
+			<drop item_id="100100811" chance="1.54" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Nukiti's Hammer"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dukaki Screamer -->
+	<npc_drop npc_id="216916">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="4.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="6.08" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="6.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="3.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="4.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="9.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="9.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="6.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dukaki Jailer -->
+	<npc_drop npc_id="216919">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="5.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="4.43" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="1.42" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="1.62" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003746" chance="2.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+			<drop item_id="182003746" chance="7.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Old Shackle"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="7.72" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="9.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Treasure Box -->
+	<npc_drop npc_id="216925">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="162000048" chance="3.55" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Recovery Serum"/>
+			<drop item_id="162000050" chance="5.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Recovery Serum"/>
+			<drop item_id="162000048" chance="1.93" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Recovery Serum"/>
+			<drop item_id="162000050" chance="7.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Recovery Serum"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Keymaster MuMu Dang -->
+	<npc_drop npc_id="217025">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="5.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="1.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="152011022" chance="9.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="8.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003776" chance="3.04" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+			<drop item_id="182003776" chance="7.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="4.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="4.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000103" chance="5.15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Rusty Key"/>
+			<drop item_id="185000103" chance="8.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Rusty Key"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- MuMu Mechanic -->
+	<npc_drop npc_id="217108">
+		<drop_group name="ARMOR_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+			<drop item_id="169000005" chance="8.88" min_amount="5" max_amount="100" no_reduce="false" eachmember="false" name="Power Shard: +20"/>
+		</drop_group>
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011022" chance="4.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="7.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="185000107" chance="2.55" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lubricating Oil"/>
+			<drop item_id="152011022" chance="3.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Armor Flux"/>
+			<drop item_id="152011042" chance="2.25" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Accessory Flux"/>
+			<drop item_id="185000107" chance="7.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lubricating Oil"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003776" chance="3.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+			<drop item_id="182003776" chance="1.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Worn Herb Sack"/>
+		</drop_group>
+		<drop_group name="FLUX_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="152011002" chance="2.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+			<drop item_id="152011002" chance="4.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Weapon Flux"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Severely Rusted Box -->
+	<npc_drop npc_id="700853">
+		<drop_group name="COMMON_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188100335" chance="3.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Enchantment Stone Dust"/>
+			<drop item_id="188100335" chance="4.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Enchantment Stone Dust"/>
+		</drop_group>
+		<drop_group name="MANASTONE_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+			<drop item_id="188054200" chance="0.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Manastone Ore"/>
+		</drop_group>
+		<drop_group name="WEAPON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="101500837" chance="0.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Dukaki Peon's Shovel"/>
+			<drop item_id="101500837" chance="1.24" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Dukaki Peon's Shovel"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

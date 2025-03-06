@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Poison Slime -->
+	<npc_drop npc_id="214342">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004771" chance="2.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Dark Red Slime Fluid"/>
+			<drop item_id="182004771" chance="4.02" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Dark Red Slime Fluid"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Venomtip Mudthorn -->
+	<npc_drop npc_id="214343">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004561" chance="7.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mottled Mudthorn Thorn"/>
+			<drop item_id="182004561" chance="8.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mottled Mudthorn Thorn"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Zombie Sweeper -->
+	<npc_drop npc_id="214344">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182005091" chance="9.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Zombie Bone"/>
+			<drop item_id="182005091" chance="1.08" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Zombie Bone"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Skeleton Guard -->
+	<npc_drop npc_id="214345">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004761" chance="5.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Jeweled Anubite Armor"/>
+			<drop item_id="182004761" chance="7.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Jeweled Anubite Armor"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Unfest Guard Captain -->
+	<npc_drop npc_id="214347">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004301" chance="3.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Bone"/>
+			<drop item_id="182004301" chance="2.63" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Bone"/>
+		</drop_group>
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000014" chance="8.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 3 Key 1"/>
+			<drop item_id="185000014" chance="4.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 3 Key 1"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Fierce Karnif -->
+	<npc_drop npc_id="214348">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004381" chance="8.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Karnif Claw"/>
+			<drop item_id="182004381" chance="5.54" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Karnif Claw"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dyspeptic Karnif -->
+	<npc_drop npc_id="214349">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004381" chance="2.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Karnif Claw"/>
+			<drop item_id="182004381" chance="4.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Karnif Claw"/>
+		</drop_group>
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000011" chance="2.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 2 Key 1"/>
+			<drop item_id="185000011" chance="1.21" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 2 Key 1"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Insane Tayga -->
+	<npc_drop npc_id="214350">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004091" chance="9.30" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Tayga Bone"/>
+			<drop item_id="182004091" chance="4.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Tayga Bone"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dyspepsic Tayga -->
+	<npc_drop npc_id="214351">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004091" chance="8.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Tayga Bone"/>
+			<drop item_id="182004091" chance="3.85" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Tayga Bone"/>
+		</drop_group>
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000012" chance="7.54" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 2 Key 2"/>
+			<drop item_id="185000012" chance="6.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 2 Key 2"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Tamed Snowy Mosbear -->
+	<npc_drop npc_id="214352">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004541" chance="7.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lustrous Mosbear Leather"/>
+			<drop item_id="182004541" chance="1.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lustrous Mosbear Leather"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Bejeweled Mosbear -->
+	<npc_drop npc_id="214353">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004541" chance="1.67" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lustrous Mosbear Leather"/>
+			<drop item_id="182004541" chance="9.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lustrous Mosbear Leather"/>
+		</drop_group>
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000013" chance="1.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 2 Key 3"/>
+			<drop item_id="185000013" chance="9.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 2 Key 3"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Troll Prison Guard -->
+	<npc_drop npc_id="214354">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004941" chance="6.39" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Troll Bone"/>
+			<drop item_id="182004941" chance="2.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Troll Bone"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Gladiator Wraith -->
+	<npc_drop npc_id="214355">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004981" chance="9.20" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Soul Fragment"/>
+			<drop item_id="182004981" chance="2.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Soul Fragment"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Sorcerer Wraith -->
+	<npc_drop npc_id="214356">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004981" chance="5.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Soul Fragment"/>
+			<drop item_id="182004981" chance="6.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Soul Fragment"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Cleric Wraith -->
+	<npc_drop npc_id="214357">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004982" chance="3.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Cursed Soul Fragment"/>
+			<drop item_id="182004982" chance="8.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Cursed Soul Fragment"/>
+		</drop_group>
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000009" chance="8.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 1 Key 2"/>
+			<drop item_id="185000009" chance="6.55" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 1 Key 2"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Gladiator Spirit -->
+	<npc_drop npc_id="214358">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004961" chance="3.67" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Asmodian Fragment"/>
+			<drop item_id="182004961" chance="6.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Asmodian Fragment"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Captive Sorcerer Spirit -->
+	<npc_drop npc_id="214359">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004961" chance="6.25" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Asmodian Fragment"/>
+			<drop item_id="182004961" chance="6.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Asmodian Fragment"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Ranger Spirit -->
+	<npc_drop npc_id="214360">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004962" chance="8.75" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Cursed Asmodian Fragment"/>
+			<drop item_id="182004962" chance="1.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Cursed Asmodian Fragment"/>
+		</drop_group>
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000010" chance="4.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 1 Key 3"/>
+			<drop item_id="185000010" chance="8.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 1 Key 3"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Slaver Guard Spirit -->
+	<npc_drop npc_id="214361">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004961" chance="8.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Asmodian Fragment"/>
+			<drop item_id="182004961" chance="4.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Asmodian Fragment"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Slavehunter Spirit -->
+	<npc_drop npc_id="214362">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182004961" chance="4.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Asmodian Fragment"/>
+			<drop item_id="182004961" chance="7.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Huge Asmodian Fragment"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Prison Guard -->
+	<npc_drop npc_id="214530">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003731" chance="6.04" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Archon Brigade General Rank Pin"/>
+			<drop item_id="182003731" chance="5.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Archon Brigade General Rank Pin"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Prison Guard -->
+	<npc_drop npc_id="214531">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182003732" chance="4.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Archon Commander Rank Pin"/>
+			<drop item_id="182003732" chance="3.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Archon Commander Rank Pin"/>
+		</drop_group>
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000008" chance="4.53" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 1 Key 1"/>
+			<drop item_id="185000008" chance="8.58" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Arena Basement Level 1 Key 1"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Artillery Officer -->
+	<npc_drop npc_id="230753">
+		<drop_group name="COMMON_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="188052600" chance="8.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Supply Box"/>
+			<drop item_id="188052600" chance="6.30" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Supply Box"/>
+		</drop_group>
+		<drop_group name="KEY_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="185000137" chance="1.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mobile Turret Key"/>
+			<drop item_id="185000137" chance="8.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mobile Turret Key"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Officer of the Storm -->
+	<npc_drop npc_id="230757">
+		<drop_group name="COMMON_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="188052600" chance="5.42" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Supply Box"/>
+			<drop item_id="188052600" chance="4.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Supply Box"/>
+		</drop_group>
+		<drop_group name="KEY_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="185000137" chance="2.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mobile Turret Key"/>
+			<drop item_id="185000137" chance="9.97" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Mobile Turret Key"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Capture Wagon -->
+	<npc_drop npc_id="230784">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="5.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="8.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="1.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.08" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Flame Tank of the 43rd Army -->
+	<npc_drop npc_id="230785">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="3.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="9.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="2.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="8.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Soldier of the Storm -->
+	<npc_drop npc_id="231115">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="3.30" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="4.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="9.53" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Battle Mage -->
+	<npc_drop npc_id="231116">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="1.08" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="3.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="2.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Fighter -->
+	<npc_drop npc_id="231117">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="9.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="2.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="7.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="9.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Protector -->
+	<npc_drop npc_id="231118">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="7.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="3.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="2.63" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="7.78" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Ambusher -->
+	<npc_drop npc_id="231119">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="6.31" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="1.81" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="1.31" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="9.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Spy -->
+	<npc_drop npc_id="231120">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="8.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="8.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="3.17" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="3.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Reinforcements -->
+	<npc_drop npc_id="231122">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="6.60" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="3.21" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="9.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="9.60" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Battle Mage -->
+	<npc_drop npc_id="231123">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="9.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="4.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Foot Soldier -->
+	<npc_drop npc_id="231124">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="1.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="8.15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="9.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="3.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Spiritmaster -->
+	<npc_drop npc_id="231125">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="4.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="8.97" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="5.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="7.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Cavalry -->
+	<npc_drop npc_id="231126">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="8.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="3.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="8.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="8.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Cannoneer -->
+	<npc_drop npc_id="231127">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="3.31" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="4.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="2.41" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="5.65" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Elite Landing Site Healer -->
+	<npc_drop npc_id="231128">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="1.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="5.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="4.25" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="9.24" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Siege Tank of the 43rd Army -->
+	<npc_drop npc_id="231137">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="6.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="7.49" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="2.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="5.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Siege Tank of the 43rd Army -->
+	<npc_drop npc_id="231138">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="8.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="9.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="2.52" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="7.31" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Siege Cannon of the 43rd Army -->
+	<npc_drop npc_id="231144">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="7.54" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="7.23" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="9.43" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="8.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Dredgion Signal Tower -->
+	<npc_drop npc_id="231148">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="9.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="1.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="9.60" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="2.45" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Battering Ram of the 43rd Beritra Army -->
+	<npc_drop npc_id="231150">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="2.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.02" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="8.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Commander of the Scout Troop Azut -->
+	<npc_drop npc_id="231168">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="8.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="3.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="7.78" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Commander Zest of the 43rd Scout Troop -->
+	<npc_drop npc_id="231169">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="1.94" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="6.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="4.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="7.42" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Commander Sartas of the 43rd Scout Troop -->
+	<npc_drop npc_id="231170">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="2.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="9.52" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="8.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="5.69" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Landing Site Commander Hakunta -->
+	<npc_drop npc_id="231178">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="9.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="1.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="6.43" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="4.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+		<drop_group name="COMMON_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="188052600" chance="5.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Supply Box"/>
+			<drop item_id="188052600" chance="1.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Supply Box"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Landing Site Commander Lakunta -->
+	<npc_drop npc_id="231179">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="3.93" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="3.35" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="8.20" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="4.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+		<drop_group name="COMMON_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="188052600" chance="8.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Supply Box"/>
+			<drop item_id="188052600" chance="1.20" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Supply Box"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Pashid Army Palisade -->
+	<npc_drop npc_id="231181">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182007005" chance="7.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="3.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+			<drop item_id="182007005" chance="7.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Accessory Bits"/>
+			<drop item_id="182007014" chance="9.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Pitted Relic Bits"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Supply Chest -->
+	<npc_drop npc_id="801269">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="182006995" chance="9.44" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Aetheric Cannonball"/>
+			<drop item_id="182006995" chance="2.09" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Aetheric Cannonball"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Balaur Supply Chest -->
+	<npc_drop npc_id="831328">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="182006995" chance="3.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Aetheric Cannonball"/>
+			<drop item_id="182006995" chance="8.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Aetheric Cannonball"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Balaur Cannon Ammunition Chest -->
+	<npc_drop npc_id="831329">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="182006995" chance="2.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Aetheric Cannonball"/>
+			<drop item_id="182006996" chance="8.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Case Shot"/>
+			<drop item_id="182006997" chance="8.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Armor-Piercing Shot"/>
+			<drop item_id="182006995" chance="9.70" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Aetheric Cannonball"/>
+			<drop item_id="182006996" chance="6.67" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Case Shot"/>
+			<drop item_id="182006997" chance="8.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Armor-Piercing Shot"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

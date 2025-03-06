@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Menehune -->
+	<npc_drop npc_id="243817">
+		<drop_group name="ARMOR_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="125004864" chance="1.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Operation Soldier’s Lost Glasses"/>
+			<drop item_id="125004864" chance="0.27" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Operation Soldier’s Lost Glasses"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Gatekeeper Menes -->
+	<npc_drop npc_id="243821">
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000269" chance="2.09" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Captain's Cabin Key"/>
+			<drop item_id="185000269" chance="8.76" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Captain's Cabin Key"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

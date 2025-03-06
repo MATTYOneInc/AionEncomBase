@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Fighter of the 44th Raider Squad -->
+	<npc_drop npc_id="232841">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="8.86" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="6.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Battle Mage of the 44th Raider Squad -->
+	<npc_drop npc_id="232842">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="5.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="9.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Raider of the 44th Raider Squad -->
+	<npc_drop npc_id="232843">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="9.77" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="7.33" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Rhapsodist of the 44th Raider Squad -->
+	<npc_drop npc_id="232844">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="1.30" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="9.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Assaulter of the 44th Raider Squad -->
+	<npc_drop npc_id="232845">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="5.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="4.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Slayer of the 44th Occupation Squad -->
+	<npc_drop npc_id="232847">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="3.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="5.97" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- High Magus of the 44th Occupation Squad -->
+	<npc_drop npc_id="232848">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="5.43" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="2.73" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Gunner Officer of the 44th Occupation Squad -->
+	<npc_drop npc_id="232849">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="6.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="6.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Bard Officer of the 44th Occupation Squad -->
+	<npc_drop npc_id="232850">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="9.68" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="6.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Attack Officer of the 44th Occupation Squad -->
+	<npc_drop npc_id="232851">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="9.16" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="5.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Ambusher of the 44th Raider Squad -->
+	<npc_drop npc_id="233260">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="7.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="7.64" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Strategist of the 44th Occupation Squad -->
+	<npc_drop npc_id="233261">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000276" chance="1.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+			<drop item_id="164000276" chance="3.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Beritran Explosive Shell"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Fuel Barrel -->
+	<npc_drop npc_id="801773">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="164000262" chance="9.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Siege's Power"/>
+			<drop item_id="186000258" chance="4.07" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Kamar Siege Cannonball"/>
+			<drop item_id="164000262" chance="1.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Siege's Power"/>
+			<drop item_id="186000258" chance="5.14" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Kamar Siege Cannonball"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Stall -->
+	<npc_drop npc_id="801777">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="162000134" chance="1.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="The Kamar Special"/>
+			<drop item_id="162000134" chance="8.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="The Kamar Special"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Wine glass -->
+	<npc_drop npc_id="801778">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="162000135" chance="9.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Kamar Concoction"/>
+			<drop item_id="162000135" chance="6.00" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Kamar Concoction"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

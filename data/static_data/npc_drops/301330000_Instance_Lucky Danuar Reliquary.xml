@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Treasure Chest -->
+	<npc_drop npc_id="832259">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182006892" chance="5.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+			<drop item_id="182006892" chance="8.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

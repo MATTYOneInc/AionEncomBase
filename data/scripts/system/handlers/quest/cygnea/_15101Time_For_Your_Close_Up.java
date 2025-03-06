@@ -78,6 +78,8 @@ public class _15101Time_For_Your_Close_Up extends QuestHandler {
         Player player = env.getPlayer();
         QuestState qs = player.getQuestStateList().getQuestState(questId);
         if (qs != null && qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
+			if (var == 1) {
             switch (env.getTargetId()) {
 				case 235939:
 				case 235940:
@@ -85,9 +87,10 @@ public class _15101Time_For_Your_Close_Up extends QuestHandler {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 10) {
-					qs.setQuestVarById(0, 1);
+					qs.setQuestVar(2);
 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
+                    }
 				}
             }
         }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Test Subject 48012-C -->
+	<npc_drop npc_id="219963">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="186000063" chance="4.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Ancient Icon"/>
+			<drop item_id="186000064" chance="2.17" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Ancient Icon"/>
+			<drop item_id="186000065" chance="9.42" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Icon"/>
+			<drop item_id="186000063" chance="7.09" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Ancient Icon"/>
+			<drop item_id="186000064" chance="1.97" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Ancient Icon"/>
+			<drop item_id="186000065" chance="4.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Icon"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Test Subject 48013-C -->
+	<npc_drop npc_id="219964">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="186000063" chance="6.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Ancient Icon"/>
+			<drop item_id="186000064" chance="1.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Ancient Icon"/>
+			<drop item_id="186000065" chance="3.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Icon"/>
+			<drop item_id="186000063" chance="6.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Ancient Icon"/>
+			<drop item_id="186000064" chance="6.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Ancient Icon"/>
+			<drop item_id="186000065" chance="2.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Icon"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Test Subject 48015-C -->
+	<npc_drop npc_id="219965">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="186000063" chance="8.79" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Ancient Icon"/>
+			<drop item_id="186000064" chance="5.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Ancient Icon"/>
+			<drop item_id="186000065" chance="6.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Icon"/>
+			<drop item_id="186000063" chance="8.59" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Ancient Icon"/>
+			<drop item_id="186000064" chance="4.11" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Ancient Icon"/>
+			<drop item_id="186000065" chance="8.25" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Icon"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Test Subject 48023-B -->
+	<npc_drop npc_id="219966">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="186000059" chance="9.45" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Ancient Seal"/>
+			<drop item_id="186000060" chance="9.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Ancient Seal"/>
+			<drop item_id="186000061" chance="9.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Seal"/>
+			<drop item_id="186000059" chance="6.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Ancient Seal"/>
+			<drop item_id="186000060" chance="2.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Ancient Seal"/>
+			<drop item_id="186000061" chance="6.93" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Seal"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Test Subject 48027-B -->
+	<npc_drop npc_id="219968">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="186000059" chance="1.65" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Ancient Seal"/>
+			<drop item_id="186000060" chance="4.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Ancient Seal"/>
+			<drop item_id="186000061" chance="4.19" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Seal"/>
+			<drop item_id="186000059" chance="9.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Major Ancient Seal"/>
+			<drop item_id="186000060" chance="5.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Ancient Seal"/>
+			<drop item_id="186000061" chance="1.68" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ancient Seal"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Contaminated Monitoring Device -->
+	<npc_drop npc_id="236706">
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000224" chance="5.98" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Prison Key"/>
+			<drop item_id="185000225" chance="6.04" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Shabby Prison Key"/>
+			<drop item_id="185000224" chance="5.46" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Prison Key"/>
+			<drop item_id="185000225" chance="3.12" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Shabby Prison Key"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Ancient Box -->
+	<npc_drop npc_id="702700">
+		<drop_group name="COMMON_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="186000066" chance="2.56" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Ancient Icon"/>
+			<drop item_id="186000066" chance="9.28" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Lesser Ancient Icon"/>
+		</drop_group>
+		<drop_group name="KEY_COMMON" use_category="true" race="PC_ALL">
+			<drop item_id="185000224" chance="4.34" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Prison Key"/>
+			<drop item_id="185000224" chance="4.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Solid Prison Key"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Antriksha -->
+	<npc_drop npc_id="277224">
+		<drop_group name="COMMON_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="188056857" chance="8.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ahserion's Heavy Reward Box"/>
+			<drop item_id="188056857" chance="7.32" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Ahserion's Heavy Reward Box"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

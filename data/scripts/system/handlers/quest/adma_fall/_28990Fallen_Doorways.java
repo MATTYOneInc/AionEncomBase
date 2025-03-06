@@ -56,6 +56,17 @@ public class _28990Fallen_Doorways extends QuestHandler {
                 }
             }
         }
+        else if (qs == null || qs.getStatus() == QuestStatus.START) {
+            if (targetId == 806216) { //Petur.
+                if (env.getDialog() == QuestDialog.START_DIALOG) {
+					return sendQuestDialog(env, 1011);
+                } if (env.getDialog() == QuestDialog.STEP_TO_1) {
+					qs.setQuestVarById(0, 1);
+					updateQuestStatus(env);
+					return closeDialogWindow(env);
+                }
+            }
+        }
         else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 806079) { //Feregran.
 				if (env.getDialogId() == 1352) {
@@ -75,11 +86,12 @@ public class _28990Fallen_Doorways extends QuestHandler {
         if (qs == null) {
             return false;
         }
-        int var = qs.getQuestVarById(0);
         int targetId = env.getTargetId();
         if (qs.getStatus() != QuestStatus.START) {
             return false;
-        } if (var == 1) {
+        }
+        int var = qs.getQuestVarById(0);
+        if (var == 1) {
 			if (targetId == 220417) { //악령�?� 저주를 받�?� 지투른.
 				qs.setQuestVarById(1, 1);
 			} else if (targetId == 220418) { //악령�?� 저주를 받�?� 카르미웬.

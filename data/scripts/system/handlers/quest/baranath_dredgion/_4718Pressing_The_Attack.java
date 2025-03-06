@@ -32,7 +32,7 @@ public class _4718Pressing_The_Attack extends QuestHandler {
 	
 	public void register() {
 		qe.registerOnDredgionReward(questId);
-		qe.registerQuestNpc(278001).addOnQuestStart(questId);
+		qe.registerQuestNpc(279042).addOnQuestStart(questId);
 		qe.registerQuestNpc(278001).addOnTalkEvent(questId);
 		qe.registerQuestNpc(214814).addOnKillEvent(questId);
 	}
@@ -46,10 +46,8 @@ public class _4718Pressing_The_Attack extends QuestHandler {
         if (qs == null) {
             return false;
         }
-		int var1 = qs.getQuestVarById(1);
-		int var2 = qs.getQuestVarById(2);
 		if (qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 278001) { 
+			if (targetId == 279042) { 
 				if (dialog == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 4762);
 				} else {
@@ -58,6 +56,8 @@ public class _4718Pressing_The_Attack extends QuestHandler {
 			}
 		} 
         else if (qs.getStatus() == QuestStatus.START) {
+		int var1 = qs.getQuestVarById(1);
+		int var2 = qs.getQuestVarById(2);
 			if (targetId == 278001) {
 				if (dialog == QuestDialog.START_DIALOG) {
 					if(qs.getQuestVarById(0) == 0) {

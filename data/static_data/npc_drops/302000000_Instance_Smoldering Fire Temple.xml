@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Potions Chest -->
+	<npc_drop npc_id="244435">
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182006892" chance="4.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+			<drop item_id="182006892" chance="7.38" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Fine Treasure Chest -->
+	<npc_drop npc_id="833058">
+		<drop_group name="COINS_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="186000236" chance="5.37" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Blood Mark"/>
+			<drop item_id="186000236" chance="2.60" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Blood Mark"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182006892" chance="8.84" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+			<drop item_id="182006892" chance="8.03" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+		</drop_group>
+	</npc_drop>
+	<!-- Noble Treasure Chest -->
+	<npc_drop npc_id="833059">
+		<drop_group name="COINS_RARE" use_category="true" race="PC_ALL">
+			<drop item_id="186000236" chance="6.65" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Blood Mark"/>
+			<drop item_id="186000236" chance="9.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Blood Mark"/>
+		</drop_group>
+		<drop_group name="COMMON_JUNK" use_category="true" race="PC_ALL">
+			<drop item_id="182006892" chance="9.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+			<drop item_id="182006892" chance="4.09" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Broken Crystal Ball"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>

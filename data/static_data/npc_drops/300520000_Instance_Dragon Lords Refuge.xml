@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sunbsn @2025 -->
+<npc_drops xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="npc_drops.xsd">
+	<!-- Calindi Flame Lord -->
+	<npc_drop npc_id="219359">
+		<drop_group name="ARMOR_EPIC" use_category="true" race="PC_ALL">
+			<drop item_id="110101459" chance="0.61" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Tunic"/>
+			<drop item_id="110301369" chance="1.51" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Jerkin"/>
+			<drop item_id="110301580" chance="0.96" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Jerkin"/>
+			<drop item_id="110501344" chance="0.26" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Hauberk"/>
+			<drop item_id="110601317" chance="0.48" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Breastplate"/>
+			<drop item_id="111101317" chance="1.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Gloves"/>
+			<drop item_id="111301312" chance="0.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Vambrace"/>
+			<drop item_id="111301518" chance="1.87" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Vambrace"/>
+			<drop item_id="111501304" chance="0.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Handguards"/>
+			<drop item_id="111601282" chance="0.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Gauntlets"/>
+			<drop item_id="112101274" chance="0.62" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Pauldrons"/>
+			<drop item_id="112301255" chance="1.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoulderguards"/>
+			<drop item_id="112301459" chance="1.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Shoulderguards"/>
+			<drop item_id="112501244" chance="0.66" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Spaulders"/>
+			<drop item_id="112601262" chance="0.90" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoulderplates"/>
+			<drop item_id="113101334" chance="0.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Leggings"/>
+			<drop item_id="113301336" chance="1.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Breeches"/>
+			<drop item_id="113301546" chance="0.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Breeches"/>
+			<drop item_id="113501319" chance="0.71" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Chausses"/>
+			<drop item_id="113601271" chance="0.13" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Greaves"/>
+			<drop item_id="114101363" chance="0.42" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoes"/>
+			<drop item_id="114301369" chance="1.30" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Boots"/>
+			<drop item_id="114301584" chance="0.74" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Boots"/>
+			<drop item_id="114501325" chance="1.47" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Brogans"/>
+			<drop item_id="114601266" chance="1.50" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Sabatons"/>
+			<drop item_id="110101459" chance="1.91" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Tunic"/>
+			<drop item_id="110301369" chance="1.05" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Jerkin"/>
+			<drop item_id="110301580" chance="0.22" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Jerkin"/>
+			<drop item_id="110501344" chance="1.80" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Hauberk"/>
+			<drop item_id="110601317" chance="0.62" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Breastplate"/>
+			<drop item_id="111101317" chance="0.68" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Gloves"/>
+			<drop item_id="111301312" chance="0.92" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Vambrace"/>
+			<drop item_id="111301518" chance="1.17" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Vambrace"/>
+			<drop item_id="111501304" chance="1.30" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Handguards"/>
+			<drop item_id="111601282" chance="0.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Gauntlets"/>
+			<drop item_id="112101274" chance="0.81" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Pauldrons"/>
+			<drop item_id="112301255" chance="0.15" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoulderguards"/>
+			<drop item_id="112301459" chance="0.55" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Shoulderguards"/>
+			<drop item_id="112501244" chance="1.57" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Spaulders"/>
+			<drop item_id="112601262" chance="1.36" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoulderplates"/>
+			<drop item_id="113101334" chance="0.09" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Leggings"/>
+			<drop item_id="113301336" chance="1.83" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Breeches"/>
+			<drop item_id="113301546" chance="0.17" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Breeches"/>
+			<drop item_id="113501319" chance="0.82" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Chausses"/>
+			<drop item_id="113601271" chance="0.29" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Greaves"/>
+			<drop item_id="114101363" chance="1.01" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Shoes"/>
+			<drop item_id="114301369" chance="1.39" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Boots"/>
+			<drop item_id="114301584" chance="1.97" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Magic Boots"/>
+			<drop item_id="114501325" chance="1.18" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Brogans"/>
+			<drop item_id="114601266" chance="1.89" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Tiamat Guard's Sabatons"/>
+		</drop_group>
+		<drop_group name="COINS_LEGEND" use_category="true" race="PC_ALL">
+			<drop item_id="186000201" chance="4.99" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Protectorate Coin"/>
+			<drop item_id="186000201" chance="6.06" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Protectorate Coin"/>
+		</drop_group>
+		<drop_group name="COMMON_MYTHIC" use_category="true" race="PC_ALL">
+			<drop item_id="166100011" chance="8.95" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Supplements (Mythic)"/>
+			<drop item_id="166100011" chance="9.72" min_amount="1" max_amount="1" no_reduce="false" eachmember="false" name="Greater Supplements (Mythic)"/>
+		</drop_group>
+	</npc_drop>
+</npc_drops>
