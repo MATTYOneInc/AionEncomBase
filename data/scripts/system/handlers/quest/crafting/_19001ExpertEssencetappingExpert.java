@@ -24,10 +24,9 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-public class _19001ExpertEssencetappingExpert extends QuestHandler
-{
+public class _19001ExpertEssencetappingExpert extends QuestHandler {
+
 	private final static int questId = 19001;
-	
 	public _19001ExpertEssencetappingExpert() {
 		super(questId);
 	}
@@ -71,10 +70,12 @@ public class _19001ExpertEssencetappingExpert extends QuestHandler
 				case 203700: {
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							qs.setStatus(QuestStatus.REWARD);
-							updateQuestStatus(env);
 							return sendQuestDialog(env, 2375);
 						}
+						case SELECT_REWARD:
+							qs.setStatus(QuestStatus.REWARD);
+							updateQuestStatus(env);
+					        return sendQuestEndDialog(env);
 					}
 				}
 			}

@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1982ExpertAPassionForTailoring extends QuestHandler {
 
 	private final static int questId = 1982;
-
 	public _1982ExpertAPassionForTailoring() {
 		super(questId);
 	}
@@ -45,11 +44,9 @@ public class _1982ExpertAPassionForTailoring extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203793) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -58,7 +55,6 @@ public class _1982ExpertAPassionForTailoring extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 203793: {
@@ -78,7 +74,7 @@ public class _1982ExpertAPassionForTailoring extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203793) {
 				if (env.getDialogId() == 39)
 					return sendQuestDialog(env, 5);

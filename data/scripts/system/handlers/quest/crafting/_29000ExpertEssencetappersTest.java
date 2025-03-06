@@ -24,10 +24,9 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 
-public class _29000ExpertEssencetappersTest extends QuestHandler
-{
+public class _29000ExpertEssencetappersTest extends QuestHandler {
+
 	private final static int questId = 29000;
-	
 	public _29000ExpertEssencetappersTest() {
 		super(questId);
 	}
@@ -92,13 +91,11 @@ public class _29000ExpertEssencetappersTest extends QuestHandler
 							}
 						} case CHECK_COLLECTED_ITEMS: {
 							return checkQuestItems(env, 1, 1, true, 5, 10001);
-						} case FINISH_DIALOG: {
-							return defaultCloseDialog(env, 1, 1);
 						}
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204096) {
 				return sendQuestEndDialog(env);
 			}

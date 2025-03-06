@@ -62,7 +62,10 @@ public class _1918An_Ax_For_Namus extends QuestHandler {
 					}
 				} else if (dialog == QuestDialog.STEP_TO_1) {
 					giveQuestItem(env, 182206002, 1);
-					return defaultCloseDialog(env, 0, 1, true, false);
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					return closeDialogWindow(env);
 				}
 			}
 		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {

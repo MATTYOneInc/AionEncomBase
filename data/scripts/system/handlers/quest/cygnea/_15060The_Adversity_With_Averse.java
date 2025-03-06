@@ -32,7 +32,7 @@ public class _15060The_Adversity_With_Averse extends QuestHandler {
 	
     public void register() {
         qe.registerQuestNpc(804707).addOnQuestStart(questId);
-        qe.registerQuestNpc(804707).addOnTalkEndEvent(questId);
+        qe.registerQuestNpc(804707).addOnTalkEvent(questId);
 		for (int mob: LF5FDrakan60An) {
             qe.registerQuestNpc(mob).addOnKillEvent(questId);
         }
@@ -52,7 +52,7 @@ public class _15060The_Adversity_With_Averse extends QuestHandler {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 804707) {
                 if (dialog == QuestDialog.USE_OBJECT) {
                     return sendQuestDialog(env, 10002);

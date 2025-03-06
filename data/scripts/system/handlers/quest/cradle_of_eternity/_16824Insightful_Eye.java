@@ -33,7 +33,7 @@ public class _16824Insightful_Eye extends QuestHandler {
     }
 	
     public void register() {
-        qe.registerQuestNpc(220587).addOnTalkEndEvent(questId);
+        qe.registerQuestNpc(220587).addOnTalkEvent(questId);
 	    qe.registerQuestNpc(220526).addOnKillEvent(questId);
 		qe.registerOnEnterWorld(questId);
     }

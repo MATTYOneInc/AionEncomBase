@@ -42,13 +42,14 @@ public class _15300Taking_Arms extends QuestHandler {
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-        qe.registerQuestNpc(805327).addOnTalkEndEvent(questId); 
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerQuestNpc(237228).addOnKillEvent(questId); //Lava Protector.
 		qe.registerQuestNpc(237229).addOnKillEvent(questId); //Heatvent Protector.
 		qe.registerQuestNpc(237224).addOnKillEvent(questId); //Fetid Phantomscorch Chimera.
 		qe.registerQuestNpc(237225).addOnKillEvent(questId); //Rapacious Kadena.
+		qe.registerQuestNpc(237226).addOnKillEvent(questId); //Rapacious Kadena.
+		qe.registerQuestNpc(237227).addOnKillEvent(questId); //Rapacious Kadena.
 		qe.registerQuestNpc(237231).addOnKillEvent(questId); //Exhausted Orissan.
 		qe.registerQuestNpc(237236).addOnKillEvent(questId); //Commander Virtsha.
 		qe.registerQuestNpc(237238).addOnKillEvent(questId); //Beritra [Dragon Form].
@@ -220,7 +221,9 @@ public class _15300Taking_Arms extends QuestHandler {
                 }
 			} else if (var == 6) {
 				switch (targetId) {
-					case 237225: { //Rapacious Kadena.
+                    case 237225:
+                    case 237226:
+					case 237227: { //Rapacious Kadena.
 						qs.setQuestVar(7);
 						updateQuestStatus(env);
 						return true;

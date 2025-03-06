@@ -28,13 +28,12 @@ import com.aionemu.gameserver.services.instance.InstanceService;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.world.WorldMapInstance;
 
-public class _2947Following_Through extends QuestHandler
-{
+public class _2947Following_Through extends QuestHandler {
+
     private int choice = 0;
 	private final static int questId = 2947;
 	private final static int[] npcIds = {204053, 204301, 204089, 700268};
 	private final static int[] mobIds = {212396, 212611, 212408, 213583, 290048, 211987, 290047, 290050, 211986, 290049, 213584, 211982};
-	
 	public _2947Following_Through() {
 		super(questId);
 	}
@@ -84,10 +83,6 @@ public class _2947Following_Through extends QuestHandler
 							} else if (var == 4) {
 								return defaultCloseDialog(env, 4, 4);
 							}
-						} case FINISH_DIALOG: {
-							if (var == 0) {
-								return defaultCloseDialog(env, 0, 0);
-							}
 						}
 					}
 					break;
@@ -106,10 +101,10 @@ public class _2947Following_Through extends QuestHandler
 							changeQuestStep(env, 4, 5, false);
 							return closeDialogWindow(env);
 						} case STEP_TO_4: {
-							qs.setStatus(QuestStatus.REWARD);
 							qs.setQuestVar(9);
+							qs.setStatus(QuestStatus.REWARD);
 							updateQuestStatus(env);
-							return defaultCloseDialog(env, 9, 9, true, false);
+				            return closeDialogWindow(env);
 						}
 					}
 					break;

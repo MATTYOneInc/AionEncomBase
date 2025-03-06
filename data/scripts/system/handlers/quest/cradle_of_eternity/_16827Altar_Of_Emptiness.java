@@ -35,7 +35,7 @@ public class _16827Altar_Of_Emptiness extends QuestHandler {
 	
 	@Override
 	public void register() {
-        qe.registerQuestNpc(806282).addOnTalkEndEvent(questId);
+        qe.registerQuestNpc(806282).addOnTalkEvent(questId);
 		qe.registerOnEnterWorld(questId);
 		qe.registerOnEnterZone(ZoneName.get("IDETERNITY_02_Q16827_A_301550000"), questId);
 	}

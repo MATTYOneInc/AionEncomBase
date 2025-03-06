@@ -18,13 +18,11 @@ package quest.crafting;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
 import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
  * @author Thuatan
@@ -32,7 +30,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class _29026MasterHandicraftersPotential extends QuestHandler {
 
 	private final static int questId = 29026;
-
 	public _29026MasterHandicraftersPotential() {
 		super(questId);
 	}
@@ -48,11 +45,9 @@ public class _29026MasterHandicraftersPotential extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204108) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -61,10 +56,8 @@ public class _29026MasterHandicraftersPotential extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs == null)
 			return false;
-
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 798060:
@@ -72,23 +65,17 @@ public class _29026MasterHandicraftersPotential extends QuestHandler {
 						case START_DIALOG:
 							return sendQuestDialog(env, 1011);
 						case STEP_TO_10:
-							if (!giveQuestItem(env, 152207051, 1))
-								return true;
-							if (!giveQuestItem(env, 152029250, 1))
-								return true;
+							giveQuestItem(env, 152207051, 1);
+							giveQuestItem(env, 152029250, 1);
 							qs.setQuestVarById(0, 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 						case STEP_TO_20:
-							if (!giveQuestItem(env, 152207052, 1))
-								return true;
-							if (!giveQuestItem(env, 152029250, 1))
-								return true;
+							giveQuestItem(env, 152207052, 1);
+							giveQuestItem(env, 152029250, 1);
 							qs.setQuestVarById(0, 1);
 							updateQuestStatus(env);
-							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-							return true;
+					        return closeDialogWindow(env);
 					}
 				case 204108:
 					switch (env.getDialog()) {

@@ -40,7 +40,6 @@ public class _10035Soar_To_The_Corridor extends QuestHandler {
         } for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-        qe.registerQuestNpc(798926).addOnTalkEndEvent(questId);
 		qe.registerOnLevelUp(questId);
         qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerOnEnterZone(ZoneName.get("ANGRIEF_GATE_210130000"), questId);

@@ -71,10 +71,12 @@ public class _19003ExpertAethertappingExpert extends QuestHandler
 				case 203700: {
 					switch (env.getDialog()) {
 						case START_DIALOG: {
-							qs.setStatus(QuestStatus.REWARD);
-							updateQuestStatus(env);
 							return sendQuestDialog(env, 2375);
 						}
+						case SELECT_REWARD:
+							qs.setStatus(QuestStatus.REWARD);
+							updateQuestStatus(env);
+					        return sendQuestEndDialog(env);
 					}
 				}
 			}

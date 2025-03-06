@@ -46,7 +46,6 @@ public class _10101Dismal_Developments extends QuestHandler {
 		qe.registerOnLevelUp(questId);
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerQuestNpc(234680).addOnKillEvent(questId);
-        qe.registerQuestNpc(802431).addOnTalkEndEvent(questId);
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }

@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _18932All_Out_Dredgion_Attack extends QuestHandler {
 
     private final static int questId = 18932;
-	
     public _18932All_Out_Dredgion_Attack() {
         super(questId);
     }
@@ -54,7 +53,7 @@ public class _18932All_Out_Dredgion_Attack extends QuestHandler {
         } else if (qs.getStatus() == QuestStatus.START) {
             if (targetId == 806258) {
                 if (dialog == QuestDialog.START_DIALOG) {
-                    if (qs.getQuestVarById(0) == 2) {
+                    if (qs.getQuestVarById(0) == 1) {
                         return sendQuestDialog(env, 2375);
                     }
                 } if (dialog == QuestDialog.SELECT_REWARD) {
@@ -62,7 +61,7 @@ public class _18932All_Out_Dredgion_Attack extends QuestHandler {
                     return sendQuestEndDialog(env);
                 }
 			}
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
             if (targetId == 806258) {
                 if (env.getDialog() == QuestDialog.START_DIALOG) {
                     return sendQuestDialog(env, 10002);
@@ -87,7 +86,8 @@ public class _18932All_Out_Dredgion_Attack extends QuestHandler {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
 				} if (qs.getQuestVarById(1) >= 1) {
-					qs.setStatus(QuestStatus.REWARD);
+                    qs.setQuestVarById(0, 1);
+ 					qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
 				}
             }

@@ -38,7 +38,6 @@ public class _10505Sneeze_Attack extends QuestHandler {
         for (int npc: npcs) {
             qe.registerQuestNpc(npc).addOnTalkEvent(questId);
         }
-        qe.registerQuestNpc(804707).addOnTalkEndEvent(questId);
 		qe.registerOnLevelUp(questId);
 		qe.registerOnMovieEndQuest(992, questId);
 		qe.registerQuestItem(182215612, questId);
@@ -116,12 +115,6 @@ public class _10505Sneeze_Attack extends QuestHandler {
 					} case CHECK_COLLECTED_ITEMS: {
 						removeQuestItem(env, 182215608, 1);
 						return checkQuestItems(env, 2, 3, false, 10000, 10001);
-					} case FINISH_DIALOG: {
-						if (var == 3) {
-							defaultCloseDialog(env, 3, 3);
-						} else if (var == 2) {
-							defaultCloseDialog(env, 2, 2);
-						}
 					}
                 }
             } if (targetId == 702672) { //Torn Plan Page.

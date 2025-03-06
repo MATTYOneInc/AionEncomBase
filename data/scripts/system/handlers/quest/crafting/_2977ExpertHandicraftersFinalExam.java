@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _2977ExpertHandicraftersFinalExam extends QuestHandler {
 
 	private final static int questId = 2977;
-
 	public _2977ExpertHandicraftersFinalExam() {
 		super(questId);
 	}
@@ -45,11 +44,9 @@ public class _2977ExpertHandicraftersFinalExam extends QuestHandler {
 	public boolean onDialogEvent(QuestEnv env) {
 		final Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204108) {
 				if (env.getDialog() == QuestDialog.START_DIALOG)
@@ -58,7 +55,6 @@ public class _2977ExpertHandicraftersFinalExam extends QuestHandler {
 					return sendQuestStartDialog(env);
 			}
 		}
-
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
 				case 204108: {
@@ -78,7 +74,7 @@ public class _2977ExpertHandicraftersFinalExam extends QuestHandler {
 				}
 			}
 		}
-		else if (qs.getStatus() == QuestStatus.REWARD) {
+		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 204108) {
 				if (env.getDialogId() == 39)
 					return sendQuestDialog(env, 5);

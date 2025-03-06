@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19034Crafty_Crafter extends QuestHandler
-{
+public class _19034Crafty_Crafter extends QuestHandler {
+
 	private static final int questId = 19034;
-	
 	public _19034Crafty_Crafter() {
 		super(questId);
 	}
@@ -68,7 +67,7 @@ public class _19034Crafty_Crafter extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203786) {
 				return sendQuestEndDialog(env);
 			}

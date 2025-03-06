@@ -49,6 +49,8 @@ public class _25300A_Bloody_Battle_With_Beritra extends QuestHandler {
 		qe.registerQuestNpc(237229).addOnKillEvent(questId); //Heatvent Protector.
 		qe.registerQuestNpc(237224).addOnKillEvent(questId); //Fetid Phantomscorch Chimera.
 		qe.registerQuestNpc(237225).addOnKillEvent(questId); //Rapacious Kadena.
+		qe.registerQuestNpc(237226).addOnKillEvent(questId); //Rapacious Kadena.
+		qe.registerQuestNpc(237227).addOnKillEvent(questId); //Rapacious Kadena.
 		qe.registerQuestNpc(237231).addOnKillEvent(questId); //Exhausted Orissan.
 		qe.registerQuestNpc(237236).addOnKillEvent(questId); //Commander Virtsha.
 		qe.registerQuestNpc(237238).addOnKillEvent(questId); //Beritra [Dragon Form].
@@ -220,7 +222,9 @@ public class _25300A_Bloody_Battle_With_Beritra extends QuestHandler {
                 }
 			} else if (var == 6) {
 				switch (targetId) {
-					case 237225: { //Rapacious Kadena.
+                    case 237225:
+                    case 237226:
+					case 237227: { //Rapacious Kadena.
 						qs.setQuestVar(7);
 						updateQuestStatus(env);
 						return true;

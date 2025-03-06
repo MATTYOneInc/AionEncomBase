@@ -60,7 +60,8 @@ public class _1909ASongOfPraise extends QuestHandler {
 					return sendQuestDialog(env, 1352);
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					giveQuestItem(env, 182206001, 1);
-					qs.setQuestVar(1);
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+					updateQuestStatus(env);
                     return closeDialogWindow(env);
 				}
 			}
@@ -73,10 +74,12 @@ public class _1909ASongOfPraise extends QuestHandler {
 					removeQuestItem(env, 182206001, 1);
 					qs.setQuestVar(2);
 					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
 					return sendQuestEndDialog(env);
 				}
 			}
 			else if (qs != null && qs.getStatus() == QuestStatus.REWARD) {
+            if (env.getTargetId() == 203099)
 				return sendQuestEndDialog(env);
 			}
 		}

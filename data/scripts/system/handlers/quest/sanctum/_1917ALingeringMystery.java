@@ -30,6 +30,7 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _1917ALingeringMystery extends QuestHandler {
 
 	private final static int questId = 1917;
+	private int rewardId;
 	public _1917ALingeringMystery() {
 		super(questId);
 	}
@@ -63,15 +64,49 @@ public class _1917ALingeringMystery extends QuestHandler {
 				}
 				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
-                    qs.setStatus(QuestStatus.REWARD);
 					updateQuestStatus(env);
                     return closeDialogWindow(env);
+				}
+			}
+			if (targetId == 203835) {
+				if (env.getDialog() == QuestDialog.START_DIALOG) {
+					return sendQuestDialog(env, 1693);
+				}
+				else if (env.getDialogId() == 1694) {
+					rewardId = 0;
+                    return sendQuestDialog(env, 1694);
+				}
+				else if (env.getDialogId() == 1779) {
+					rewardId = 1;
+                    return sendQuestDialog(env, 1779);
+				}
+				else if (env.getDialogId() == 1864) {
+					rewardId = 2;
+                    return sendQuestDialog(env, 1864);
+				}
+				else if (env.getDialog() == QuestDialog.STEP_TO_1) {
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+                    qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+                    return sendQuestDialog(env, 5);
+				}
+				else if (env.getDialog() == QuestDialog.STEP_TO_2) {
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+                    qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+                    return sendQuestDialog(env, 6);
+				}
+				else if (env.getDialog() == QuestDialog.STEP_TO_3) {
+					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
+                    qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+                    return sendQuestDialog(env, 7);
 				}
 			}
 		}
 		else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203835)
-				return sendQuestEndDialog(env);
+				return sendQuestEndDialog(env, rewardId);
 		}
 		return false;
 	}

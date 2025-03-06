@@ -68,7 +68,7 @@ public class _25052An_Offering_Of_Peace extends QuestHandler {
 				updateQuestStatus(env);
                 return closeDialogWindow(env);
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804915) {
 				return sendQuestEndDialog(env);
 			}

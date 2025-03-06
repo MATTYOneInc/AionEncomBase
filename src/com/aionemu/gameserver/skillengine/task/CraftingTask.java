@@ -42,8 +42,7 @@ public class CraftingTask extends AbstractCraftTask {
 	protected int maxCritCount;
 	private int bonus;
 
-	public CraftingTask(Player requestor, StaticObject responder, RecipeTemplate recipeTemplate, int skillLvlDiff,
-			int bonus) {
+	public CraftingTask(Player requestor, StaticObject responder, RecipeTemplate recipeTemplate, int skillLvlDiff, int bonus) {
 		super(requestor, responder, skillLvlDiff);
 		this.recipeTemplate = recipeTemplate;
 		this.maxCritCount = recipeTemplate.getComboProductSize();
@@ -90,10 +89,8 @@ public class CraftingTask extends AbstractCraftTask {
 
 	@Override
 	protected void onFailureFinish() {
-		PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplate,
-				currentSuccessValue, currentFailureValue, 6));
-		PacketSendUtility.broadcastPacket(requestor,
-				new SM_CRAFT_ANIMATION(requestor.getObjectId(), responder.getObjectId(), 0, 3), true);
+		PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplate, currentSuccessValue, currentFailureValue, 6));
+		PacketSendUtility.broadcastPacket(requestor, new SM_CRAFT_ANIMATION(requestor.getObjectId(), responder.getObjectId(), 0, 3), true);
 	}
 
 	@Override
@@ -103,22 +100,17 @@ public class CraftingTask extends AbstractCraftTask {
 				critCount++;
 			}
 			craftSetup();
-			PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplateReal,
-					maxSuccessValue, maxFailureValue, 3));
+			PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplateReal, maxSuccessValue, maxFailureValue, 3));
 			return false;
 		} else {
 			if (critCount > 0 && this.checkCrit()) {
-				PacketSendUtility.broadcastPacket(requestor,
-						new SM_CRAFT_ANIMATION(requestor.getObjectId(), responder.getObjectId(), 0, 2), true);
-				PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(),
-						itemTemplateReal, currentSuccessValue, currentFailureValue, 5));
+				PacketSendUtility.broadcastPacket(requestor, new SM_CRAFT_ANIMATION(requestor.getObjectId(), responder.getObjectId(), 0, 2), true);
+				PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplateReal, currentSuccessValue, currentFailureValue, 5));
 				CraftService.finishCrafting(requestor, recipeTemplate, critCount, bonus);
 				return true;
 			}
-			PacketSendUtility.broadcastPacket(requestor,
-					new SM_CRAFT_ANIMATION(requestor.getObjectId(), responder.getObjectId(), 0, 2), true);
-			PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplateReal,
-					currentSuccessValue, currentFailureValue, 5));
+			PacketSendUtility.broadcastPacket(requestor, new SM_CRAFT_ANIMATION(requestor.getObjectId(), responder.getObjectId(), 0, 2), true);
+			PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplateReal, currentSuccessValue, currentFailureValue, 5));
 			CraftService.finishCrafting(requestor, recipeTemplate, critCount, bonus);
 			return true;
 		}
@@ -126,8 +118,7 @@ public class CraftingTask extends AbstractCraftTask {
 
 	@Override
 	protected void sendInteractionUpdate() {
-		PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplate,
-				currentSuccessValue, currentFailureValue, this.critType.getPacketId()));
+		PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplate, currentSuccessValue, currentFailureValue, this.critType.getPacketId()));
 		if (this.critType == CraftCritType.PURPLE) {
 			this.critType = CraftCritType.NONE;
 		}
@@ -135,11 +126,10 @@ public class CraftingTask extends AbstractCraftTask {
 
 	@Override
 	protected void onInteractionAbort() {
-		PacketSendUtility.sendPacket(requestor,
-				new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplate, 0, 0, 4));
-		PacketSendUtility.broadcastPacket(requestor,
-				new SM_CRAFT_ANIMATION(requestor.getObjectId(), responder.getObjectId(), 0, 2), true);
+		PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplate, 0, 0, 4));
+		PacketSendUtility.broadcastPacket(requestor, new SM_CRAFT_ANIMATION(requestor.getObjectId(), responder.getObjectId(), 0, 2), true);
 		requestor.setCraftingTask(null);
+        stop(true);
 	}
 
 	@Override
@@ -152,9 +142,9 @@ public class CraftingTask extends AbstractCraftTask {
 		this.itemTemplate = DataManager.ITEM_DATA.getItemTemplate(recipeTemplate.getProductid());
 		this.itemTemplateReal = this.itemTemplate;
 		craftSetup();
-		if ((this.recipeTemplate.getMaxProductionCount() != null)
-				&& (this.itemTemplateReal.getCategory() == ItemCategory.QUEST)) {
+		if ((this.recipeTemplate.getMaxProductionCount() != null) && (this.itemTemplateReal.getCategory() == ItemCategory.QUEST)) {
 			this.requestor.getRecipeList().deleteRecipe(this.requestor, this.recipeTemplate.getId());
+		    onInteractionAbort();
 		}
 		int chance = requestor.getRates().getCraftCritRate();
 		if (maxCritCount > 0) {
@@ -180,13 +170,10 @@ public class CraftingTask extends AbstractCraftTask {
 				purpleCrit = true;
 			}
 		}
-		PacketSendUtility.sendPacket(requestor,
-				new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplate, maxSuccessValue, maxFailureValue, 0));
+		PacketSendUtility.sendPacket(requestor, new SM_CRAFT_UPDATE(recipeTemplate.getSkillid(), itemTemplate, maxSuccessValue, maxFailureValue, 0));
 		this.onInteraction();
-		PacketSendUtility.broadcastPacket(requestor, new SM_CRAFT_ANIMATION(requestor.getObjectId(),
-				responder.getObjectId(), recipeTemplate.getSkillid(), 0), true);
-		PacketSendUtility.broadcastPacket(requestor, new SM_CRAFT_ANIMATION(requestor.getObjectId(),
-				responder.getObjectId(), recipeTemplate.getSkillid(), 1), true);
+		PacketSendUtility.broadcastPacket(requestor, new SM_CRAFT_ANIMATION(requestor.getObjectId(), responder.getObjectId(), recipeTemplate.getSkillid(), 0), true);
+		PacketSendUtility.broadcastPacket(requestor, new SM_CRAFT_ANIMATION(requestor.getObjectId(), responder.getObjectId(), recipeTemplate.getSkillid(), 1), true);
 	}
 
 	@Override

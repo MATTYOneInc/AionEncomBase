@@ -25,7 +25,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _11319Tour_De_Cygnea extends QuestHandler {
 
     private final static int questId = 11319;
-	
     public _11319Tour_De_Cygnea() {
         super(questId);
     }
@@ -69,7 +68,7 @@ public class _11319Tour_De_Cygnea extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804782) {
 			    return sendQuestEndDialog(env);
 		    }

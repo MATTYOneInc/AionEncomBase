@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _19038MasterCooksPotential extends QuestHandler {
 
 	private final static int questId = 19038;
-
 	public _19038MasterCooksPotential() {
 		super(questId);
 	}
@@ -52,7 +51,6 @@ public class _19038MasterCooksPotential extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 203784) { // Hestia
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -146,9 +144,6 @@ public class _19038MasterCooksPotential extends QuestHandler {
 								return defaultCloseDialog(env, 10, 11, 152202203, 1, 0, 0); // 11
 							}
 						}
-						case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
-						}
 					}
 					break;
 				}
@@ -182,9 +177,6 @@ public class _19038MasterCooksPotential extends QuestHandler {
 						case STEP_TO_41: {
 							return checkItemExistence(env, 11, 11, true, 182206776, 1, true, 5, 3057, 0, 0); // reward
 						}
-						case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
-						}
 					}
 				}
 			}
@@ -205,18 +197,22 @@ public class _19038MasterCooksPotential extends QuestHandler {
 			switch (itemId) {
 				case 182206773: {
 					changeQuestStep(env, 2, 1, false); // 1
+                    updateQuestStatus(env);
 					return true;
 				}
 				case 182206774: {
 					changeQuestStep(env, 5, 4, false); // 4
+                    updateQuestStatus(env);
 					return true;
 				}
 				case 182206775: {
 					changeQuestStep(env, 8, 7, false); // 7
+                    updateQuestStatus(env);
 					return true;
 				}
 				case 182206776: {
 					changeQuestStep(env, 11, 10, false); // 10
+                    updateQuestStatus(env);
 					return true;
 				}
 			}

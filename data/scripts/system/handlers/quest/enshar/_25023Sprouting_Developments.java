@@ -97,7 +97,7 @@ public class _25023Sprouting_Developments extends QuestHandler {
 						break;
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804910) {
 				return sendQuestEndDialog(env);
 			}

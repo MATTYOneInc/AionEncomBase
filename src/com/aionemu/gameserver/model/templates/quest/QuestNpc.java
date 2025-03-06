@@ -35,7 +35,6 @@ public class QuestNpc {
 	private final List<Integer> onQuestStart;
 	private final List<Integer> onKillEvent;
 	private final List<Integer> onTalkEvent;
-    private final List<Integer> onTalkEndEvent;
 	private final List<Integer> onAttackEvent;
 	private final List<Integer> onLostTargetEvent;
 	private final List<Integer> onReachTargetEvent;
@@ -48,7 +47,6 @@ public class QuestNpc {
 		onQuestStart = new ArrayList<Integer>();
 		onKillEvent = new ArrayList<Integer>();
 		onTalkEvent = new ArrayList<Integer>();
-		onTalkEndEvent = new ArrayList<Integer>();
 		onAttackEvent = new ArrayList<Integer>();
 		onLostTargetEvent = new ArrayList<Integer>();
 		onReachTargetEvent = new ArrayList<Integer>();
@@ -108,17 +106,6 @@ public class QuestNpc {
 
 	public List<Integer> getOnTalkEvent() {
 		return onTalkEvent;
-	}
-
-	public void addOnTalkEndEvent(int questId) {
-		if (!onTalkEndEvent.contains(questId)) {
-			onTalkEndEvent.add(questId);
-			registerCanAct(questId, npcId);
-		}
-	}
-
-	public List<Integer> getOnTalkEndEvent() {
-		return onTalkEndEvent;
 	}
 
 	public void addOnReachTargetEvent(int questId) {

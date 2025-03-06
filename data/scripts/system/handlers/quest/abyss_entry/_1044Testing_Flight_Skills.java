@@ -24,13 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 
-public class _1044Testing_Flight_Skills extends QuestHandler
-{
+public class _1044Testing_Flight_Skills extends QuestHandler {
+
 	private final static int questId = 1044;
-	
-	private String[] rings = {"ELTNEN_AIR_BOOSTER_1", "ELTNEN_AIR_BOOSTER_2", "ELTNEN_AIR_BOOSTER_3",
-	"ELTNEN_AIR_BOOSTER_4", "ELTNEN_AIR_BOOSTER_5", "ELTNEN_AIR_BOOSTER_6"};
-	
+	private String[] rings = {"ELTNEN_AIR_BOOSTER_1", "ELTNEN_AIR_BOOSTER_2", "ELTNEN_AIR_BOOSTER_3", "ELTNEN_AIR_BOOSTER_4", "ELTNEN_AIR_BOOSTER_5", "ELTNEN_AIR_BOOSTER_6"};
 	public _1044Testing_Flight_Skills() {
 		super(questId);
 	}
@@ -73,8 +70,6 @@ public class _1044Testing_Flight_Skills extends QuestHandler
 							}
 						} case STEP_TO_1: {
 							return defaultCloseDialog(env, 0, 1);
-						} case FINISH_DIALOG: {
-							return defaultCloseDialog(env, 0, 0);
 						}
 					}
 					break;
@@ -107,10 +102,8 @@ public class _1044Testing_Flight_Skills extends QuestHandler
 							if (var == 9) {
 								qs.setStatus(QuestStatus.REWARD);
 								updateQuestStatus(env);
-								return sendQuestSelectionDialog(env);
+				                return closeDialogWindow(env);
 							}
-						} case FINISH_DIALOG: {
-							return defaultCloseDialog(env, 9, 9);
 						}
 						default:
 							break;

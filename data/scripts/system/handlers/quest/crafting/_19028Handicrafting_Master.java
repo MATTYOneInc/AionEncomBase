@@ -24,10 +24,9 @@ import com.aionemu.gameserver.services.QuestService;
 /** Author Ghostfur & Unknown (Aion-Unique)
 /****/
 
-public class _19028Handicrafting_Master extends QuestHandler
-{
+public class _19028Handicrafting_Master extends QuestHandler {
+
 	private static final int questId = 19028;
-	
 	public _19028Handicrafting_Master() {
 		super(questId);
 	}
@@ -68,7 +67,7 @@ public class _19028Handicrafting_Master extends QuestHandler
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203792) {
 				return sendQuestEndDialog(env);
 			}

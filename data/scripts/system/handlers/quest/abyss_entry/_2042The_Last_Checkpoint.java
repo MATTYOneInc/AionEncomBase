@@ -24,13 +24,10 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 
-public class _2042The_Last_Checkpoint extends QuestHandler
-{
+public class _2042The_Last_Checkpoint extends QuestHandler {
+
 	private final static int questId = 2042;
-	
-	private String[] rings = {"MORHEIM_AIR_BOOSTER_1", "MORHEIM_AIR_BOOSTER_2", "MORHEIM_AIR_BOOSTER_3",
-	"MORHEIM_AIR_BOOSTER_4", "MORHEIM_AIR_BOOSTER_5", "MORHEIM_AIR_BOOSTER_6"};
-	
+	private String[] rings = {"MORHEIM_AIR_BOOSTER_1", "MORHEIM_AIR_BOOSTER_2", "MORHEIM_AIR_BOOSTER_3", "MORHEIM_AIR_BOOSTER_4", "MORHEIM_AIR_BOOSTER_5", "MORHEIM_AIR_BOOSTER_6"};
 	public _2042The_Last_Checkpoint() {
 		super(questId);
 	}
@@ -73,8 +70,6 @@ public class _2042The_Last_Checkpoint extends QuestHandler
 							}
 						} case STEP_TO_1: {
 							return defaultCloseDialog(env, 0, 1);
-						} case FINISH_DIALOG: {
-							return defaultCloseDialog(env, 0, 0);
 						}
 					}
 					break;
@@ -106,10 +101,8 @@ public class _2042The_Last_Checkpoint extends QuestHandler
 							if (var == 8) {
 								qs.setStatus(QuestStatus.REWARD);
 								updateQuestStatus(env);
-								return sendQuestSelectionDialog(env);
+				                return closeDialogWindow(env);
 							}
-						} case FINISH_DIALOG: {
-							return defaultCloseDialog(env, 9, 9);
 						}
 					}
 				}

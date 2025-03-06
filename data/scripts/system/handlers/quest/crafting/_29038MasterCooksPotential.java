@@ -30,7 +30,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 public class _29038MasterCooksPotential extends QuestHandler {
 
 	private final static int questId = 29038;
-
 	public _29038MasterCooksPotential() {
 		super(questId);
 	}
@@ -52,7 +51,6 @@ public class _29038MasterCooksPotential extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		QuestDialog dialog = env.getDialog();
 		int targetId = env.getTargetId();
-
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 			if (targetId == 204100) { // Lainita
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
@@ -146,9 +144,6 @@ public class _29038MasterCooksPotential extends QuestHandler {
 								return defaultCloseDialog(env, 10, 11, 152207205, 1, 0, 0); // 11
 							}
 						}
-						case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
-						}
 					}
 					break;
 				}
@@ -181,9 +176,6 @@ public class _29038MasterCooksPotential extends QuestHandler {
 						}
 						case STEP_TO_41: {
 							return checkItemExistence(env, 11, 11, true, 182207910, 1, true, 5, 3057, 0, 0); // reward
-						}
-						case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
 						}
 					}
 				}

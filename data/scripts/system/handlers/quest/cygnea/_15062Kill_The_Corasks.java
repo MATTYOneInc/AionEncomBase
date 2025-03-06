@@ -31,7 +31,7 @@ public class _15062Kill_The_Corasks extends QuestHandler {
 	
     public void register() {
         qe.registerQuestNpc(804707).addOnQuestStart(questId);
-        qe.registerQuestNpc(804707).addOnTalkEndEvent(questId);
+        qe.registerQuestNpc(804707).addOnTalkEvent(questId);
 		qe.registerQuestNpc(235878).addOnKillEvent(questId);
 		qe.registerQuestNpc(235879).addOnKillEvent(questId);
     }
@@ -50,7 +50,7 @@ public class _15062Kill_The_Corasks extends QuestHandler {
                     return sendQuestStartDialog(env);
                 }
             }
-        } else if (qs.getStatus() == QuestStatus.REWARD) {
+        } else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 804707) {
 				if (env.getDialogId() == 1352) {
 					return sendQuestDialog(env, 5);

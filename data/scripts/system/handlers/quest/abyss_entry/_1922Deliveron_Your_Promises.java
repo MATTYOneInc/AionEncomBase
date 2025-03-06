@@ -29,13 +29,12 @@ import com.aionemu.gameserver.services.instance.InstanceService;
 import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.world.WorldMapInstance;
 
-public class _1922Deliveron_Your_Promises extends QuestHandler
-{
+public class _1922Deliveron_Your_Promises extends QuestHandler {
+
 	private int choice = 0;
 	private final static int questId = 1922;
 	private final static int[] npcIds = {203830, 203901, 203764};
     private final static int[] mobIds = {213580, 213581, 213582};
-	
 	public _1922Deliveron_Your_Promises() {
 		super(questId);
 	}
@@ -81,8 +80,6 @@ public class _1922Deliveron_Your_Promises extends QuestHandler
 						} case STEP_TO_12: {
 							choice = 1;
 							return defaultCloseDialog(env, 0, 4);
-						} case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
 						}
 					}
 					break;

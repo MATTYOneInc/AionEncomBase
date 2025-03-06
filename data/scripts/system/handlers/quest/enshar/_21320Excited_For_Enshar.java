@@ -68,7 +68,7 @@ public class _21320Excited_For_Enshar extends QuestHandler {
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 		    if (targetId == 804753) {
 			    return sendQuestEndDialog(env);
 		    }

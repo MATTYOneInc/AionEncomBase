@@ -24,10 +24,9 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 
-public class _19000ExpertEssencetappersTest extends QuestHandler
-{
+public class _19000ExpertEssencetappersTest extends QuestHandler {
+
 	private final static int questId = 19000;
-	
 	public _19000ExpertEssencetappersTest() {
 		super(questId);
 	}
@@ -93,13 +92,11 @@ public class _19000ExpertEssencetappersTest extends QuestHandler
 							}
 						} case CHECK_COLLECTED_ITEMS: {
 							return checkQuestItems(env, 1, 1, true, 5, 10001);
-						} case FINISH_DIALOG: {
-							return sendQuestSelectionDialog(env);
 						}
 					}
 				}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
+		} else if (qs == null || qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 203780) { //Cornelius.
 				return sendQuestEndDialog(env);
 			}
